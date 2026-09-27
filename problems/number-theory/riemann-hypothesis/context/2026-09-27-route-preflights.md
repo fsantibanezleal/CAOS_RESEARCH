@@ -193,3 +193,58 @@ the Cohn-Elkies improvement is prior art (Chirre-Goncalves-de Laat 0.6792).
 Decision: RH-032 is closed with the obstruction recorded; focus `RH-F5` is
 closed. Reopen only with a Hilbert-space (norm-type) representation of a
 sign-constrained tail.
+
+## RH-027: reduction of the Tang-type target
+
+Target A asks for the EXP-010 moment (A),
+
+$$
+\int w(t)\,|V\psi(\sigma_0+it)|^2\,dt=c(P,Q,R,\nu)\,\widehat w(0)+O(H/L),
+$$
+
+for `nu` beyond `theta-1/2`. Expanding `|psi|^2` reduces it to twisted
+moments `int w(t)(h/k)^(it) zeta(sigma_0+alpha+it)zeta(sigma_0+beta-it) dt`
+with `(h,k)=1`, `h,k<=y=T^nu`, and shifts `|alpha|,|beta|<<1/L`, summed with
+weights `mu(h)mu(k)P[h]P[k]/sqrt(hk)` (derivatives of `Q` come from the
+shifts).
+
+What Tang supplies (arXiv:2608.14852v1, Theorem 1, read in full): for distinct
+odd primes `p,q`, no shifts, a Gaussian window of width `H=T^delta`, the
+twisted moment equals the diagonal main term, plus a dual moment
+`sum_{chi mod p} chi(q) int G_{T,H}(1/2+it)(...)|L(1/2+it,chi)|^2 dt` over an
+effective `t`-range of length `T/H`, plus `O((T/H)(pqT)^eps((p/q)^(1/2)+(q/p)^(1/2)))`.
+
+What target A needs beyond Tang:
+
+1. General coprime `h,k` in place of primes (Khan's global formula already
+   covers general coprime twists; the short-window version must be redone).
+2. Shifts `alpha,beta`, uniformly in `|alpha|,|beta|<<1/L`.
+3. The summed dual moments, with weights `a_h a_k/sqrt(hk)`, shown to be
+   `o(H)`, or evaluated if they carry a main term.
+
+Heuristic ranges [I]:
+
+- Error term alone: with mollifier weights the summed Tang error is
+  `(T/H)M^(1+eps)`, so `nu<2theta-1`.
+- Dual moments bounded trivially: per pair about `sqrt(h)(T/H)log T`
+  (orthogonality over characters mod `h` on a range of length `T/H`), summed
+  to `(T/H)M^(3/2)`, so `nu<(2/3)(2theta-1)` (target A'). A large-sieve
+  saving in the sum over moduli, using the character sums
+  `sum_k a_k chi(k)/sqrt(k)`, is what would push this toward `2theta-1`.
+
+Value (RH-031 machinery, scratch):
+
+| Range | Onset | `h_L(0.534)` |
+|---|---|---|
+| `theta-1/2` (proved, EXP-010) | 0.53396 | 0.00006 |
+| `(2/3)(2theta-1)` (target A', trivial dual bound) | 0.53067 | 0.00558 |
+| `2theta-1` (target A) | 0.52571 | 0.0166 |
+
+Decision. Target A' is the next analytic declaration candidate: it is the
+smallest statement with a clear value (onset about `0.5307`, density at `0.534`
+about 90 times EXP-010's), and every ingredient is a known technique
+(Khan-Tang reciprocity, shifts, trivial large sieve). It is not declared
+today: EXP-011 is declared only with a written proof plan whose steps are
+referenced to Tang's and Khan's lemmas, per methodology 02 and 12. Target B
+(Steuding-type) stays behind it: it needs an Atkinson-Motohashi evaluation of
+the off-diagonal uniform in shifts and in general `Q`, a much larger project.
