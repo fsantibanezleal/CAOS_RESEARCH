@@ -1,0 +1,103 @@
+{
+ "schema": "riemann-source-manifest-extension-v1",
+ "reviewed_on": "2026-09-27",
+ "repositories": [],
+ "documents": [
+  {
+   "filename": "tang-2608.14852v1.pdf",
+   "source_url": "https://arxiv.org/pdf/2608.14852v1",
+   "bytes": 377416,
+   "sha256": "f260788058cc127c9d1a37fe0d513b1f8d0ce3dce22c6cedf6522babfcc2def1",
+   "note": "Tang, reciprocity for the short twisted second moment. Theorem 1: prime-ratio twist, no shifts, admissibility H^2/max(p,q)>T^(1+eps).",
+   "retrieved_on": "2026-09-27",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:2608.14852v1",
+   "cache_path": "source-cache/tang-2608.14852v1.pdf",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-literature-and-representation-sweep.md"
+  },
+  {
+   "filename": "tang-2608.14852v1-source.tar",
+   "source_url": "https://arxiv.org/src/2608.14852v1",
+   "bytes": 17981,
+   "sha256": "0574dca4e188be4709bbd81865235bb58c59a0bb21da7634ee5693a84f67230f",
+   "note": "TeX source of Tang; main.tex lines 160-206 hold Theorem 1 and Corollary 1.",
+   "retrieved_on": "2026-09-27",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:2608.14852v1 source",
+   "cache_path": "source-cache/tang-2608.14852v1-source.tar",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-literature-and-representation-sweep.md"
+  },
+  {
+   "filename": "zhu-2608.24827v2.pdf",
+   "source_url": "https://arxiv.org/pdf/2608.24827v2",
+   "bytes": 924766,
+   "sha256": "70332e428dd7ab82a352131787ac3db4b321459f0e12a6765a8ab1e6fbc22026",
+   "note": "Zhu, Weil positivity in compact windows (RH-036).",
+   "retrieved_on": "2026-09-27",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:2608.24827v2",
+   "cache_path": "source-cache/zhu-2608.24827v2.pdf",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-literature-and-representation-sweep.md"
+  },
+  {
+   "filename": "conrey-kwan-2607.00282v1.pdf",
+   "source_url": "https://arxiv.org/pdf/2607.00282v1",
+   "bytes": 1406261,
+   "sha256": "f39921db3546b0ae143642c909f68cd494d7ae2ee71ee73791b6566d67b99975",
+   "note": "Critical zeros and unconditional mean value theorems for twisted PGL(2) and PGL(3) L-functions; template for hybrid short t-window mean values.",
+   "retrieved_on": "2026-09-27",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:2607.00282v1",
+   "cache_path": "source-cache/conrey-kwan-2607.00282v1.pdf",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-literature-and-representation-sweep.md"
+  },
+  {
+   "filename": "wang-2609.07918v1-source.tar",
+   "source_url": "https://arxiv.org/src/2609.07918v1",
+   "bytes": 12830,
+   "sha256": "8600c05ac28f2b338a45a4c2984dbf34295a62818029bf958f73a778ab96cc76",
+   "note": "TeX source of Wang short-interval paper; zeros.tex lines 136-215 (Theorem 1.1, theta_0, Steuding's vartheta<3/8) and 277-290 (Theorem 2.1, 0<lambda<theta<1).",
+   "retrieved_on": "2026-09-27",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:2609.07918v1 source",
+   "cache_path": "source-cache/wang-2609.07918v1-source.tar",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-literature-and-representation-sweep.md"
+  },
+  {
+   "filename": "cfkltb-2508.11108v1-source.tar",
+   "source_url": "https://arxiv.org/src/2508.11108v1",
+   "bytes": 3084734,
+   "sha256": "df00e73a611548015783fc8f760c518d86896b4f0f4f2c0a56a8e87f9a5574d9",
+   "note": "TeX source of Short mollifiers; Theorem 1.1 kappa>2theta/3 with P(x)=x.",
+   "retrieved_on": "2026-09-27",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:2508.11108v1 source",
+   "cache_path": "source-cache/cfkltb-2508.11108v1-source.tar",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-literature-and-representation-sweep.md"
+  }
+ ]
+}
