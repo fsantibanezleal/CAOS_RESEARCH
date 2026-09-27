@@ -1,5 +1,22 @@
 # Riemann hypothesis history
 
+## 2026-09-27: literature sweep, RH-027 correction and strategic review
+
+A sweep of 2026 zero-proportion results, short-interval moment technology,
+Fourier optimization, families and function fields, and cross-field
+reformulations found no external result above the EXP-009 constant or the
+EXP-010 onset. Wang's printed global gain is `delta_0=6.66624e-8`, read from
+the cached v1 source; EXP-009 is about `2.9e-8` above `C_0+delta_0`. The
+Yang group retracted its density-one preprint on 2026-09-03. The review
+corrected the RH-027 premise: Steuding's short-window error is proved for
+degree-one `Q`, fixed shifts and `nu<3/8`, and `(3theta-1)/4` is an inference.
+It also corrected the title of reference 28. arXiv, Zenodo and Springer full
+text were unreachable, so snippet-level statements are gated behind RH-030.
+The program adopted methodology 13 records (`research-governance.json`,
+`manuscript-map.md`) with active focus `RH-F4` and added RH-030 to RH-037. No
+experiment was declared and no verdict changed.
+[Dossier](../context/2026-09-27-literature-and-representation-sweep.md).
+
 ## 2026-09-26: Levinson manuscript v0.01 published and EXP-010 promoted
 
 EXP-010 merged to `develop` through PR #341 and was promoted to `main` through

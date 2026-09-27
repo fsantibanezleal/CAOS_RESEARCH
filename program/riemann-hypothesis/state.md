@@ -1,6 +1,6 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-26. Latest completed public application release:
+Updated: 2026-09-27. Latest completed public application release:
 **0.73.000**, live-verified from main commit
 `e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-010 is confirmed on its work
 branch after two referee passes, merged to `develop` and promoted to `main`; its
@@ -9,6 +9,12 @@ manuscript `short-interval-levinson` v0.01 is published at
 workbench does not yet show it.
 
 The Riemann hypothesis remains open.
+
+Strategic review 2026-09-27: no external result improves the EXP-010 onset or
+the EXP-009 constant; RH-027 is re-scoped to a new general-`Q` theorem, and the
+active focus is `RH-F4` in [research-governance.json](research-governance.json).
+See the [plan](plan.md) and the
+[sweep dossier](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-literature-and-representation-sweep.md).
 
 ## Current strongest short-interval result
 
