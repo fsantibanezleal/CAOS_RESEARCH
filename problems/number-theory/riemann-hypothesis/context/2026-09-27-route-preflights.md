@@ -53,3 +53,36 @@ suffices, and the value lies in the analytic range, not in the detector. The
 stop condition "no partial extension moves the onset" is not met. RH-027 is
 retained with target A first, because Tang's identity already evaluates the
 off-diagonal for prime twists without shifts.
+
+## RH-033: Wang's spectral term inside EXP-010
+
+Source read in full: Wang arXiv:2609.24167v1, Proposition 2.1
+(`lem:stability`) and Section 5. The added term is
+`Delta_K(Z)=tr Psi(G_K)`, where `G_K=(K(x_j-x_l))` runs over the simple real
+elements only and `Psi(t)=(t-1)^2` on `[0,2]`, `2t-3` beyond. It is estimated
+from below by `a(n-2N/H)`, with `n` the number of simple critical zeros and
+`a=2e(H)/3`. The assembly is `(1-a)n>=(2-C)N-2aN/H`, i.e.
+`u_H=(C_0-2a_H/H)/(1-a_H)`.
+
+Invariant reproduced: `a_0=4.9418e-7`, `delta_0=6.66625e-8`,
+`C_0+delta_0=0.6725007703419` (floating point, matching the paper).
+
+Findings:
+
+1. `Psi` is the stability function of the ainta lineage, which EXP-002 and
+   EXP-007 already credit as prior art; Wang's contribution is the three-point
+   packing estimate of `tr Psi(G_K)`, which EXP-009 already sharpened
+   (`R(alpha,beta)<=sqrt2`). The program therefore already owns the dominant
+   version of this term globally.
+2. In short intervals the gain is proportional to the simple count `n` and
+   carries the penalty `-2aN/H`. At the onset the simple count is zero, so the
+   term cannot lower any onset: for Wang's own curve it moves the root of
+   `c(theta)` up by about `2a_0/H_0=2.7e-7` unless `H` is sent to infinity,
+   where the gain vanishes. The same holds inside the EXP-006 product, whose
+   onset is also the zero of the simple-count bound.
+3. Away from the onset the relative density gain is of order `a_0`, about
+   `5e-7`.
+
+Decision: RH-033 is closed as `research-record`. No experiment is warranted;
+the term neither moves the EXP-010 onset nor gives a gain worth a
+declaration, and the global version is already dominated by EXP-009.
