@@ -268,9 +268,10 @@ frequency cutoff `T=200`) is not replayed.
 | 8 | `3.24e-11` | `4.08e-7` |
 | 14 | `2.87e-15` | `3.23e-10` |
 | 20 | `2.047e-17` | `1.03e-11` |
+| 24 | `1.746e-17` | `9.59e-12` |
 
-Zhu's certified window is `8.9e-18<=lambda*(0.8)<=2.27e-17`. The `N=20` value
-lies inside it and slightly below his upper bound, consistent with his remark
+Zhu's certified window is `8.9e-18<=lambda*(0.8)<=2.27e-17`. The `N=20` and
+`N=24` values lie inside it, still decreasing toward the certified floor, and slightly below his upper bound, consistent with his remark
 that the sine basis behind that upper bound loses a little through the
 boundary condition `f(+-L)=0`. The spectral gap to the second eigenvalue
 (about six orders) is consistent with his simple, even ground state.
