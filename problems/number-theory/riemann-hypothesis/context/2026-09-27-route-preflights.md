@@ -86,3 +86,48 @@ Findings:
 Decision: RH-033 is closed as `research-record`. No experiment is warranted;
 the term neither moves the EXP-010 onset nor gives a gain worth a
 declaration, and the global version is already dominated by EXP-009.
+
+## RH-028: a second mollifier piece at short-window length
+
+Script: [`rh028_two_piece.py`](2026-09-27-preflights/rh028_two_piece.py).
+It evaluates the Bui-Conrey-Young main term `c=c1+2c12+c2`
+(arXiv:1002.4127v1, Theorems 3-5; TeX source read in full) for
+`psi=psi1+psi2`, where `psi2` is their `chi(s)`-type piece built from the
+coefficients of `1/zeta^2` with `P2` vanishing to third order. `c12` and `c2`
+are mixed derivatives at `x=y=0` of three- and four-fold integrals, taken by
+central differences and Gauss-Legendre quadrature; `c` is quadratic in the
+coefficients of `P2`, so the optimal `P2` is a linear solve.
+
+Anchor at the published parameters (`theta1=4/7`, `theta2=1/2`, `R=1.28`):
+
+- `c1` matches the exact EXP-010 routine: `c1=2.135890`, `kappa1=0.40712`.
+- The optimal `P2` for the published `P1`, `Q`, `R` reproduces the published
+  coefficients to about 2% (`0.02450,-0.00615,0.00585` against
+  `0.02454,-0.00636,0.00603`), so the ratio of `c12` to `c2` is right.
+- The resulting `kappa=0.40886` is below the published `0.4105`; the published
+  value corresponds exactly to a second-piece contribution twice ours
+  (`c1-2x0.004737` gives `kappa=0.41061`). Both integrals are stable to
+  `1e-6` under refinement. Either the implementation misses a common factor
+  two in `c12` and `c2`, or the published evaluation carries one. Both
+  normalizations are reported below; the decision does not depend on it.
+
+Short-window lengths (`theta1=nu`, `theta2=nu-1e-9`, RH-031 optimal `Q`, `P1`,
+`R`; `P2` in `x^3..x^7`):
+
+| `nu` | `R` | one-piece `kappa` | two-piece `kappa` | relative gain |
+|---|---|---|---|---|
+| 0.15 | 6.40 | 0.107686 | 0.107686 | `3.5e-10` absolute (about `3e-9` relative) |
+| 0.068 | 14.18 | 0.048779 | 0.048779 | below `1e-9` |
+
+At short length the second piece is negligible: `c12` is of order `1e-2`
+against `c1` near 300 (the `e^(2R)` scale of the optimal `R`), and `c2` carries
+a `1/theta2` weight. The doubled normalization changes nothing visible.
+
+Limitation: this computes the Bui-Conrey-Young second piece, not Feng's
+`mu*Lambda^(*k)` pieces. In Feng's main term the `k`-th piece enters with
+factors of order `theta^(k-1)` [I, not re-derived here], so its relative gain
+should also vanish as `nu->0`.
+
+Decision: RH-028 is closed as `research-record` (gain far below the 1% bar).
+Reopen only if a small-`theta` evaluation of Feng's formula shows a gain above
+1% of `kappa`.
