@@ -25,13 +25,23 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'riemann-wangglobal2026', label: 'Wang global refinement 2026',
-    citation: 'Wang B. (2026). A refinement of the two-thirds theorem for simple critical zeros of the Riemann zeta-function. arXiv:2609.24167v1, submitted September 21. EXP-009 imports its global framework and replaces one non-sharp auxiliary estimate.',
+    citation: 'Wang B. (2026). Proportions of the non-trivial zeros of the Riemann zeta function. arXiv:2609.24167v1, submitted September 21. EXP-009 imports its global framework and replaces one non-sharp auxiliary estimate.',
     url: 'https://arxiv.org/abs/2609.24167v1',
   },
   {
     id: 'riemann-sharpkernel2026', label: 'CAOS EXP-009: sharp kernel',
     citation: 'Santibáñez-Leal F. (2026). A sharp three-point kernel bound and improved proportions of zeta zeros. CAOS Research preprint v0.01. The elementary sharp ratio theorem is proved directly; the zeta transfer is relative to Wang arXiv:2609.24167v1.',
     url: 'https://doi.org/10.5281/zenodo.22940291',
+  },
+  {
+    id: 'riemann-levinson2026', label: 'CAOS EXP-010: short-interval Levinson',
+    citation: 'Santibáñez-Leal F. (2026). Levinson\'s method in short intervals and simple zeros of the zeta function. CAOS Research preprint v0.01. Localized Levinson-Conrey moment for nu < theta - 1/2, a distinct sign-change count, certified degree-201 detectors and the onset theta >= 0.534; the onset uses Wang arXiv:2609.07918v1.',
+    url: 'https://doi.org/10.5281/zenodo.22984155',
+  },
+  {
+    id: 'riemann-tang2026', label: 'Tang 2026',
+    citation: 'Tang Z. S. (2026). Reciprocity for the short twisted second moment of the Riemann zeta function. arXiv:2608.14852v1. Its dual moment is the obstruction recorded in EXP-012.',
+    url: 'https://arxiv.org/abs/2608.14852v1',
   },
   {
     id: 'riemann-pearcecrump2026', label: 'Pearce-Crump 2026',

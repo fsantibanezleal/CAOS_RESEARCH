@@ -55,12 +55,30 @@ live release. General RH remains open.
 
 ## 5. Next actions
 
-1. RH-027: a uniform two-shift short-window moment for general `Q` in
-   Steuding's range `nu<(3theta-1)/4`, which would make positivity hold for
-   every `theta>1/2`.
-2. RH-026: replay v9 and release.
-3. Pursue independent rank-six reconstruction (RH-021) and external review of
-   Wang's frameworks before strengthening any attributed claim.
+The 2026-09-27 strategic review
+([dossier](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-literature-and-representation-sweep.md),
+[plan](plan.md#strategic-review-after-exp-010-2026-09-27),
+[governance](research-governance.json), [manuscript map](manuscript-map.md))
+found no external result above EXP-009 or EXP-010 and re-scoped RH-027:
+Steuding's short-window moment is proved only for degree-one `Q`, fixed
+shifts and `nu<3/8`; `(3theta-1)/4` is inferred. Active focus `RH-F4`.
+
+1. Done 2026-09-27: RH-030 (full-text verification), RH-031 (value of
+   information), and the route preflights RH-028, RH-032, RH-033, RH-035,
+   RH-036 (all closed with recorded reasons), RH-037 (records hygiene); see
+   [route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md).
+2. EXP-011 is confirmed (2026-09-28): the linear candidate `Q>=2N+3O-4S` is
+   false for the Montgomery-Taylor window and no linear refinement with
+   `beta>=2.365` holds, so this route is closed
+   ([verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/verdict.md)).
+3. EXP-012 is inconclusive (2026-09-28): Tang's dual moment is about
+   `sqrt(h)sqrt(T)` per pair, so the planned trivial bound gives only
+   `nu<(2/3)(theta-1/2)` and a large-sieve sketch gives `theta-1/2`
+   ([verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/verdict.md)).
+   Next: RH-038, an asymptotic evaluation of that dual family.
+4. RH-026 replay v9 and release. RH-021 remains an integrity task.
+
+No experiment is in flight. RH-038 is the next research action.
 
 ## 6. Where everything lives
 

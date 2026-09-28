@@ -24,6 +24,7 @@ reported honestly in the dossiers and was concentrated on theorem dependencies a
 | [Rank-six local transfer](2026-09-20-rank-six-local-transfer.md) | EXP-008 source boundary, fixed-rank localization, onset comparison, and interdisciplinary next routes |
 | [Interdisciplinary update and defect-parity seam](2026-09-20-interdisciplinary-update-and-defect-parity.md) | Post-cutoff sources, cross-area route evaluation, and the EXP-007 spectral-defect parity preflight |
 | [Localized Levinson-Conrey preflight](2026-09-26-levinson-localization-preflight.md) | EXP-010 sources and gates: short-interval shifted moment, distinct sign-change counting, certified detector constants, route decision |
+| [Literature and representation sweep](2026-09-27-literature-and-representation-sweep.md) | Post-EXP-010 external standing, the RH-027 source correction, kernel versus second-order levers, cross-field representations ranked by proportion channel |
 
 Full text whose public redistribution permission was not identified is retained locally in
 `source-cache/`. The public record contains provenance and independently authored analysis.

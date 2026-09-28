@@ -45,9 +45,15 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
         "EXP-007-spectral-defect-parity",
         "EXP-008-rank-six-local-transfer",
         "EXP-009-wang-kernel-sharpening",
+        "EXP-010-levinson-parity-transfer",
+        "EXP-011-linear-refinement-barrier",
+        "EXP-012-tang-short-window-moment",
     }
-    assert riemann["schema"] == "riemann-replay-v8"
-    assert riemann["reviewed_on"] == "2026-09-24"
+    assert riemann["schema"] == "riemann-replay-v9"
+    assert riemann["reviewed_on"] == "2026-09-26"
+    assert riemann["levinson_result"]["accepted"] is True
+    assert riemann["barrier_result"]["accepted"] is True
+    assert riemann["tang_check_output"]["model_within_2_percent"] is True
     exp009 = next(record for record in exps["experiments"]
                   if record["slug"] == "EXP-009-wang-kernel-sharpening")
     assert any(artifact["name"] == "canonical/result.json"

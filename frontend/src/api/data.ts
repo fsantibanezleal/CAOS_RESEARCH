@@ -271,8 +271,35 @@ export type RiemannWangKernelReview = {
   source_sha256: Record<'hypothesis' | 'amendment' | 'mathematical_proof' | 'runner' |
     'focused_test' | 'result' | 'execution_receipt' | 'adversarial_audit', string>;
 };
+export type RiemannInterval40 = { lower: string; upper: string; arb: string };
+export type RiemannLevinsonRow = {
+  theta: string; nu: string; kappa_lower_used: string; wang_c: RiemannInterval40;
+  h_L: RiemannInterval40; target: string; pass: boolean;
+};
+export type RiemannLevinsonResult = {
+  experiment: 'EXP-010'; schema: 'exp010-canonical-v1'; accepted: boolean;
+  checks: Record<string, boolean>;
+  detector_constants: { nu: string; degree_Q: number; kappa: RiemannInterval40; kappa_over_nu_lower: string }[];
+  onset: { rows: RiemannLevinsonRow[]; exp008_comparison: { ratio_h_L_over_h6_lower: string; pass: boolean } };
+  bindings_sha256: Record<string, string>;
+};
+export type RiemannLevinsonReview = {
+  schema: 'riemann-exp010-proof-review-v1';
+  scientific_verdict: 'confirmed-with-scope-correction-to-prediction-A';
+  declaration_commit: string; canonical_execution_commit: string;
+  confirmed_conclusion: string; scope_correction: string; critical_limitation: string;
+  source_sha256: Record<string, string>;
+};
+export type RiemannArbRecord = { mid: string; rad: string; arb: string };
+export type RiemannBarrierResult = {
+  experiment: 'EXP-011'; schema: 'exp011-canonical-v1'; accepted: boolean;
+  checks: Record<'A' | 'B' | 'C' | 'D', boolean>;
+  C1: { N: number; O: number; S: number; Q: RiemannArbRecord; slack_L: RiemannArbRecord };
+  C2: { N: number; O: number; S: number; ratio_Q_minus_2N_over_O: RiemannArbRecord };
+};
+export type RiemannTangCheck = { model_within_2_percent: boolean; rows: Record<string, string>[] };
 export type RiemannData = {
-  schema: 'riemann-replay-v8';
+  schema: 'riemann-replay-v9';
   reviewed_on: string;
   result: {
     theta: string; radius: string; delta: string;
@@ -318,6 +345,10 @@ export type RiemannData = {
   rank_six_review: RiemannRankSixReview;
   wang_kernel_result: RiemannWangKernelResult;
   wang_kernel_review: RiemannWangKernelReview;
+  levinson_result: RiemannLevinsonResult;
+  levinson_review: RiemannLevinsonReview;
+  barrier_result: RiemannBarrierResult;
+  tang_check_output: RiemannTangCheck;
   provenance: {
     role: string; source_exp: string; path: string; source_commit: string;
     bytes: number; sha256: string;

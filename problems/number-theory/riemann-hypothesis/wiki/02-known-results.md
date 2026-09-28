@@ -152,6 +152,14 @@ assuming a moment formula does not prove that formula. The detailed objections
 and [Palomar candidate](https://github.com/teal-sea/zeta-lab/blob/main/lean/PALOMAR.md)
 scope questions are preserved in the
 [successor review](../context/2026-09-12-original-and-successor-review.md).
+On 2026-09-03 the same group retracted its "density one" preprint (Zenodo
+22065921; repository `JoshuaHKU/zeta-density-one-reproduction`, commit
+`ac85152`), citing a reviewer's argument that finite unconditional bounds on
+higher even trace moments of the compressed Weil matrix would force
+power-law zero-free regions. The 79.62 percent repository, last changed on
+2026-08-17, rests on the same kind of sixth-moment input and has not been
+retracted; the quarantine stands and is strengthened
+([2026-09-27 sweep](../context/2026-09-27-literature-and-representation-sweep.md)).
 
 Finally, EXP-001 checks a concrete normalization issue in the revised source:
 
