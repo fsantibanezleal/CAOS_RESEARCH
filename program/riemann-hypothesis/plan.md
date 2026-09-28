@@ -158,8 +158,65 @@ The new manuscript `short-interval-levinson` is built from the verdict and
 published at DOI 10.5281/zenodo.22984155. The public workbench (replay
 v9) and a serialized release are separate later gates.
 
-Next routes, in order of expected onset gain: a uniform two-shift
-short-window moment for general `Q` in Steuding's range `nu<(3theta-1)/4`,
-which would make positivity hold for every `theta>1/2`; a localized
-two-piece mollifier to raise the slope above `0.7173`; and the independent
-rank-six reconstruction (RH-021), which remains an integrity task.
+The next routes are set by the 2026-09-27 strategic review below.
+
+## Strategic review after EXP-010 (2026-09-27)
+
+A methodology 13 review followed a literature and cross-field sweep
+([dossier](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-literature-and-representation-sweep.md)).
+Full-text arXiv, Zenodo and Springer access was blocked in that session, so
+its snippet-level statements are inputs to verify, not premises.
+
+Findings that change the plan:
+
+1. No external 2026 result improves the EXP-010 onset `0.534` or the EXP-009
+   constant. Wang's printed global gain is `delta_0=6.66624e-8`; EXP-009 sits
+   about `2.9e-8` above `C_0+delta_0`. Wang also states that his `Delta_K`
+   refinement transfers to short intervals.
+2. The Steuding range behind RH-027 was overstated. His short-window error
+   `O(T^(1/3+eps)M^(4/3))` is proved for degree-one `Q`, fixed shifts,
+   `nu<3/8`, orders at most two. `(3theta-1)/4` is inferred. The general-`Q`,
+   uniform-shift version is a new theorem.
+3. Kernel choice is nearly exhausted: the Montgomery-Taylor threshold is the
+   recorded `0.55019`, and a Cohn-Elkies relaxation reaches only about
+   `0.5487` in floating point. EXP-010 is already below both. Onset gains come
+   from second-order inequalities (EXP-006 product, `Delta_K`, multi-point
+   constraints) or from longer admissible mollifiers.
+4. Of the cross-field representations reviewed, only finite compressions of
+   Weil's Hermitian form have a proportion channel. Families and function
+   fields support reading `theta=1/2` as an artifact of the approximate
+   functional equation. Spectral triples, heat flow, Jensen polynomials,
+   horocycles, Lee-Yang stability and multiplicative chaos remain a watch
+   list.
+
+Retained focus: `RH-F4`, the short-interval simple-critical onset and density
+(see [research-governance.json](research-governance.json)). Ordered routes:
+
+| Order | Item | Status 2026-09-27 |
+|---|---|---|
+| done | RH-030 source gate | Completed; dossier section 6 |
+| done | RH-031 value of information | Tang-type onset 0.5257; Steuding-type positive for every `theta>1/2` |
+| done | RH-033 `Delta_K` | Closed: cannot move any onset |
+| done | RH-028 second piece | Closed: gain below `1e-9` at short length |
+| done | RH-032 Cohn-Elkies | Closed: no unconditional sign beyond the support |
+| done | RH-035 below 1/2 | Closed: needs an explicit odd density of 8% to 36% |
+| done | RH-036 Zhu replay | Closed: `2.047e-17` inside Zhu's window, no proportion channel |
+| done | RH-034 / EXP-011 | Confirmed barrier: (L) false for the Montgomery-Taylor window; `beta<=2.3589`; linear refinements capped near 0.5324 |
+| done | RH-027 / EXP-012 | Inconclusive: Tang's dual moment is about `sqrt(h)sqrt(T)`; standard bounds give at best `nu<theta-1/2` |
+| next | RH-038 | Asymptotic evaluation of the dual family (CIS-type), the only located way beyond `theta-1/2` |
+| then | RH-026 | Serialized release with replay v9 |
+
+Details: [route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md).
+EXP-011 removed (L). EXP-012 showed that the mollifier range cannot be extended with trivial or large-sieve bounds on Tang's dual moment; RH-038 is the remaining lever.
+
+Every route reproduces a known value before any new number is trusted. Each
+new experiment still needs its own declaration and methodology 12 preflight.
+RH-021 stays an integrity task. RH-026 waits for the RH-037 records hygiene.
+
+RH-030 was completed later the same day after network access was restored:
+the Steuding correction is confirmed and sharpened (the theorem also fixes
+`P(x)=x`), Tang's short-window reciprocity gives a cheaper intermediate
+target `nu<2theta-1` for RH-027, the RH-028 benchmark was already met by
+the 2026-09-26 preflight, and Lamzouri's Proposition 2.1 weakens the
+Cohn-Elkies route.
+

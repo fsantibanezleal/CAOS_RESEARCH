@@ -1,0 +1,27 @@
+{
+ "experiment": "EXP-011",
+ "window": {
+  "description": "Montgomery-Taylor window used by Lamzouri: eta^2 proportional to cos(sqrt2 u) on (-1/2, 1/2), K = (eta^2)^, K(0) = 1",
+  "closed_form": "K(xi) = [sin((b-c)a)/(b-c) + sin((b+c)a)/(b+c)] / (2 sin(ab)/b), a = 1/2, b = sqrt2, c = 2 pi xi"
+ },
+ "C1": {
+  "description": "six real triples around one simple conjugate pair",
+  "real_triples": ["0.949374", "1.9925", "3.03254", "-0.949373", "-1.9925", "-3.03254"],
+  "pair_imaginary_part": "0.24556",
+  "pair_real_part": "0",
+  "exploratory_slack_float": -0.05821800022
+ },
+ "C2": {
+  "description": "finite lattice: triples at n*s, five simple conjugate pairs per cell at n*s + o_j*s +- i y_j, |n| <= M",
+  "s": "5.999",
+  "y": ["0.475", "0.407", "0.494", "0.407", "0.475"],
+  "offsets": ["0.657", "0.815", "0.5", "0.185", "0.343"],
+  "M": 5000,
+  "exploratory_ratio_float": 2.358864
+ },
+ "thresholds": {
+  "A_C1_slack_upper": "-0.05",
+  "B_C2_ratio_upper": "2.365",
+  "C_onset_lower_for_beta": "2.365"
+ }
+}

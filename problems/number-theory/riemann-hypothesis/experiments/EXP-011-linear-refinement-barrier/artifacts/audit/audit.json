@@ -1,0 +1,18 @@
+{
+ "C1_quadrature_kernel": {
+  "Q": "57.94178199978319576647026",
+  "pass": true,
+  "slack": "-0.05821800021680423353"
+ },
+ "C2_M5_quadrature_vs_float": {
+  "float": "361.40417705723735",
+  "pass": true,
+  "quadrature": "361.40417705723764"
+ },
+ "C2_float_closed_form": {
+  "canonical_mid": "[2.358863695426207465296142 +/- 3.13e-25]",
+  "pass": true,
+  "ratio": "np.float64(2.3588636954262485)"
+ },
+ "accepted": true
+}

@@ -1,5 +1,80 @@
 # Riemann hypothesis history
 
+## 2026-09-28: EXP-012 stopped at step 3
+
+The step-3 value check of EXP-012 showed that Tang's dual weight has size
+`|G(1/2+it)|=(H/sqrt T)sqrt(1/2)` on `|t|<<T/H` (mpmath, three heights), so the
+dual moment is about `sqrt(h)sqrt(T)` per pair. The planned trivial bound then
+gives only `nu<(2/3)(theta-1/2)` and a hybrid large-sieve sketch gives exactly
+EXP-010's `theta-1/2`. The stop rule applied; the verdict is inconclusive and
+the preflight target A' is withdrawn. The remaining lever is an asymptotic
+evaluation of the dual family (RH-038).
+
+## 2026-09-28: EXP-011 confirmed, EXP-012 declared
+
+A structured test refuted the RH-034 candidate: six real triples around one
+near-real conjugate pair violate `Q>=2N+3O-4S` for the Montgomery-Taylor
+window. EXP-011 was declared (`9886f07`, Prediction C amended before
+implementation in `136b40f`) and confirmed with Arb at 128 bits: slack
+`-0.0582180002168...` for that configuration, and `(Q-2N)/O=2.35886369543...`
+for a 10001-cell lattice, so no linear refinement with `beta>=2.365` holds for
+this window, and with the EXP-010 detectors such refinements cannot reach
+`theta=0.532`. The independent audit's first run failed a check because of an
+inaccurate unsubdivided quadrature at large `|xi|` (kept); the corrected run
+passed. EXP-012 was declared with a fixed proof plan for a short-window moment
+with `nu<(2/3)(2theta-1)` through Tang-Khan reciprocity.
+
+## 2026-09-27: route preflights RH-028 to RH-037
+
+Every route in the post-review plan was worked with exploratory,
+floating-point preflights (scripts in `context/2026-09-27-preflights/`).
+RH-031 reproduced the EXP-010 onset and Steuding's 0.590 and 0.552, and
+priced the RH-027 targets: a Tang-type range would move the onset to about
+0.5257; a Steuding-type range would give positivity for every `theta>1/2`.
+Closed with recorded reasons: RH-033 (Wang's `Delta_K` vanishes at the onset),
+RH-028 (a Bui-Conrey-Young second piece gains below `1e-9` at short length;
+the published 0.4105 implies a second-piece contribution twice ours, recorded),
+RH-032 (no unconditional sign for Cohn-Elkies tails), RH-035 (below `1/2` needs
+an explicit odd density of 8% to 36%), RH-036 (Zhu's window infimum replayed at
+`2.047e-17`, no proportion channel). RH-037 fixed the records. Two declaration
+candidates remain: RH-027 target A' (`nu<(2/3)(2theta-1)`, onset about 0.5307)
+and RH-034, the finite inequality `Q>=2N+3O-4S`, which is false for
+edge-concentrated windows but survives every stress test for the
+Montgomery-Taylor window and would move the onset to about 0.5296. No
+experiment was declared and no verdict changed.
+[Route preflights](../context/2026-09-27-route-preflights.md).
+
+## 2026-09-27: RH-030 primary-source verification
+
+After network access was restored, the pinned archive was re-verified (68
+documents) and six new sources were pinned. Full-text reading confirmed
+Wang's short-interval theorem and pair formula as used, and sharpened the
+Steuding correction: Theorem 2.1 fixes `P(x)=x` and `F=zeta+zeta'/L`, and the
+`theta<3/8` cap comes from the constraint `G<=T^(5/6)` in the error balance.
+Tang's short-window reciprocity constrains only `max{p,q}`, which suggests a
+Tang-type target `nu<2theta-1` for RH-027. The RH-028 benchmark was already
+met on 2026-09-26. Lamzouri's Proposition 2.1 requires compactly supported
+`eta`, weakening RH-032. Two pinned documents (Anthropic page, Karatsuba URL)
+no longer reproduce from their URLs. No verdict changed.
+[Dossier section 6](../context/2026-09-27-literature-and-representation-sweep.md).
+
+## 2026-09-27: literature sweep, RH-027 correction and strategic review
+
+A sweep of 2026 zero-proportion results, short-interval moment technology,
+Fourier optimization, families and function fields, and cross-field
+reformulations found no external result above the EXP-009 constant or the
+EXP-010 onset. Wang's printed global gain is `delta_0=6.66624e-8`, read from
+the cached v1 source; EXP-009 is about `2.9e-8` above `C_0+delta_0`. The
+Yang group retracted its density-one preprint on 2026-09-03. The review
+corrected the RH-027 premise: Steuding's short-window error is proved for
+degree-one `Q`, fixed shifts and `nu<3/8`, and `(3theta-1)/4` is an inference.
+It also corrected the title of reference 28. arXiv, Zenodo and Springer full
+text were unreachable, so snippet-level statements are gated behind RH-030.
+The program adopted methodology 13 records (`research-governance.json`,
+`manuscript-map.md`) with active focus `RH-F4` and added RH-030 to RH-037. No
+experiment was declared and no verdict changed.
+[Dossier](../context/2026-09-27-literature-and-representation-sweep.md).
+
 ## 2026-09-26: Levinson manuscript v0.01 published and EXP-010 promoted
 
 EXP-010 merged to `develop` through PR #341 and was promoted to `main` through

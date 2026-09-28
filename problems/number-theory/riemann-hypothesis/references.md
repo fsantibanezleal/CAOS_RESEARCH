@@ -144,7 +144,8 @@ certificate of this unit's entire short-interval theorem.
     is part of the analytic lineage cited by the recent theorem.
 
 13. **Daniel A. Goldston and Ade Irma Suriajaya.**
-    [arXiv:2511.20059](https://arxiv.org/abs/2511.20059) and
+    [arXiv:2511.20059](https://arxiv.org/abs/2511.20059) (published in
+    Analysis Mathematica, 2026, DOI 10.1007/s10476-026-00186-w) and
     [arXiv:2603.28104](https://arxiv.org/abs/2603.28104).
     The double-sum criterion and narrow-box consequences explain earlier
     ways of relating complex zero geometry to simple-critical counts.
@@ -267,8 +268,9 @@ apparently new short-interval consequence from inherited global methods.
     of Anthropic's `gc`. EXP-007 treats that parameterized spectral content as
     prior art and claims only the defect-parity coupling and its transfer.
 
-28. **Biao Wang.** *A refinement of the two-thirds theorem for simple
-    critical zeros of the Riemann zeta-function.*
+28. **Biao Wang.** *Proportions of the non-trivial zeros of the Riemann
+    zeta function.* (Title corrected 2026-09-27 against the cached v1 source;
+    an earlier entry carried a descriptive title.)
     [arXiv:2609.24167v1](https://arxiv.org/abs/2609.24167v1), submitted
     September 21, 2026. EXP-009 imports the finite spectral framework, block
     lemma, analytic pair statistic, smoothing argument and triple packing. It

@@ -40,6 +40,24 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 | RH-024 | EXP-010: localize Levinson's method with general `Q`, prove the distinct sign-change count, certify degree-201 detectors and move the parity onset | done; canonical certificate, independent audit, controls and two referee passes confirmed; Prediction A scope corrected to `Q(0)=1` | P0 |
 | RH-025 | Deposit the `short-interval-levinson` manuscript v0.01 on Zenodo through the vault tooling and record the receipt | done; DOI 10.5281/zenodo.22984155, public bytes verified | P0 |
 | RH-026 | Export replay v9, integrate EXP-010 into the public workbench, and complete a serialized release with rendered QA | open | P1 |
-| RH-027 | Uniform two-shift short-window mollified moment for general `Q` in Steuding's range `nu<(3theta-1)/4`; with the certified slope this would give positivity for every `theta>1/2` | open | P1 |
-| RH-028 | Localized two-piece (Feng-type) mollifier to raise `kappa/nu` above `0.7173` | open | P2 |
+| RH-027 | Short-window moment beyond `nu<theta-1/2` | EXP-012 inconclusive 2026-09-28: Tang's dual moment is about `sqrt(h)sqrt(T)` per pair; trivial bound gives `nu<(2/3)(theta-1/2)`, hybrid large sieve gives `theta-1/2`; target A' withdrawn. Continues as RH-038 | P1 |
+| RH-028 | Second mollifier piece at short length | closed 2026-09-27: Bui-Conrey-Young piece gains below `1e-9` at `nu=0.068,0.15` ([route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md)); Feng pieces not computed | P2 |
 | RH-029 | Proof hygiene: record in EXP-005/008 that the rectangle-sign detour defect is paid by the discarded Littlewood contribution of on-line detector zeros | open | P2 |
+| RH-030 | Primary-source gate for the 2026-09-27 sweep | done 2026-09-27: Wang 2609.07918, Steuding 1999, Tang 2608.14852, arXiv:2508.11108 and Lamzouri v2 read in full; versions current; sources pinned in `context/source-manifest-rh030.json`; see dossier section 6 | P0 |
+| RH-031 | Value of information for RH-027 | done 2026-09-27: invariants reproduced (0.53396, 0.590, 0.552); Tang-type onset 0.5257, Steuding-type positive for every `theta>1/2` ([route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md)) | P1 |
+| RH-032 | Cohn-Elkies admissibility without RH | closed 2026-09-27: the unconditional framework sees the pair sum only as a norm with compactly supported `eta`; no sign for `F` beyond the support ([route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md)) | P3 |
+| RH-033 | Wang's `Delta_K` inside EXP-010 | closed 2026-09-27: vanishes with the simple count, cannot move any onset; global version dominated by EXP-009 ([route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md)) | P2 |
+| RH-034 | Linear Hilbert-parity refinement | closed 2026-09-28 by EXP-011 (confirmed): `Q>=2N+3O-4S` is false for the Montgomery-Taylor window (certified slack `-0.0582`), and no refinement with `beta>=2.365` holds (certified lattice ratio `2.3589`); with the EXP-010 detectors such refinements cannot reach `theta=0.532` | P1 |
+| RH-035 | Route below `theta=1/2` | closed 2026-09-27: needs an explicit odd density of 8% to 36% ([route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md)) | P4 |
+| RH-036 | Zhu window replay | closed 2026-09-27: Galerkin upper bound `2.047e-17` at `N=20`, inside Zhu's window; no proportion channel ([route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md)) | P4 |
+| RH-037 | Records hygiene before RH-026 | done 2026-09-27: reference 28 and frontend citation titles, 2511.20059 journal metadata, retraction note, EXP-009 comparison wording | P1 |
+
+The 2026-09-27 literature and representation sweep
+([dossier](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-literature-and-representation-sweep.md))
+found no external result above the EXP-009 constant or the EXP-010 onset. It
+re-scoped RH-027 and RH-028 and added RH-030 to RH-037.
+All routes RH-028 to RH-037 were worked on 2026-09-27 ([route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md)).
+EXP-011 closed RH-034 and EXP-012 stopped the Tang route with standard bounds
+(2026-09-28). Next: RH-038 (asymptotic large sieve for the dual family), then
+RH-026 (release).
+| RH-038 | Asymptotic evaluation of the dual family for moduli `h<=T^nu` and `t`-ranges of length `T/H`, to beat `nu<theta-1/2` | preflight 2026-09-28: CIS arXiv:1808.02879 Theorem 1 covers twists up to `Q^vartheta`, `vartheta<1`, at the central point only; the dual family sits at `vartheta=1` with an extra `t`-average. Needs a hybrid (modulus and `t`) asymptotic large sieve with shifts; none located | open, research-level | P1 |
