@@ -391,3 +391,38 @@ The heuristic "dual moments bounded trivially: per pair about
 correct price list for the ranges, but no located tool reaches them. See the
 [EXP-012 verdict](../experiments/EXP-012-tang-short-window-moment/verdict.md).
 
+
+## RH-038 preflight: the asymptotic large sieve for the dual family (2026-09-28)
+
+EXP-012 reduced a longer short-window mollifier to an asymptotic evaluation of
+
+$$
+\sum_{h\le M}a_h\frac{\sqrt h}{\varphi(h)}\sum_{\chi\bmod h}\int_{|t|\ll T/H}
+G_{T,H}(\tfrac12+it)\,A_\chi(t)\,|L(\tfrac12+it,\chi)|^2\,dt,\qquad
+A_\chi(t)=\sum_{k\le M}a_k\chi(k)k^{-it},
+$$
+
+with `M=T^nu`. Sources read (pinned in
+[`source-manifest-rh030.json`](source-manifest-rh030.json)):
+
+- Conrey-Iwaniec-Soundararajan, arXiv:1808.02879, Theorem 1: for moduli
+  `q~Q` (smooth weight `W(q/Q)`), primitive characters, shifts `<<1/log Q`, the
+  twisted second moment `sum_q sum_chi |L(1/2,chi)|^2 chi(h)conj(chi)(k)`
+  equals an explicit diagonal main term plus remainders whose weighted sum over
+  `h,k<=Q^vartheta` is `O(Q^(2-(1-vartheta)/2+eps))`, for every fixed
+  `vartheta<1`. It is a central-point statement without a `t`-average.
+- Conrey-Iwaniec-Soundararajan, arXiv:1105.1177 (56% critical zeros of
+  Dirichlet `L`-functions): Levinson's method over the family of characters
+  with the asymptotic large sieve, the closest structural template.
+
+Comparison [I]. In the dual family the moduli and the twists have the same
+length `M`, so the twist exponent is `vartheta=1`, exactly the boundary that
+Theorem 1 excludes. The extra average over `|t|<<T/H` enlarges the family
+from about `M^2` to about `M^2 T/H` members, which is what could make room for
+twists of length `M`; but no hybrid (modulus and `t`) version of Theorem 1 has
+been located. That hybrid theorem, with shifts, is the precise missing input.
+
+Decision. RH-038 stays open as a research-level analytic target; it is not
+declared as an experiment until a hybrid asymptotic large sieve with an
+explicit admissible range is located or a proof plan for it is written. The
+value table of RH-031 prices what each range would give.

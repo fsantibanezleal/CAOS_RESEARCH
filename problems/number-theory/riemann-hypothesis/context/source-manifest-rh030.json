@@ -1,6 +1,6 @@
 {
  "schema": "riemann-source-manifest-extension-v1",
- "reviewed_on": "2026-09-27",
+ "reviewed_on": "2026-09-28",
  "repositories": [],
  "documents": [
   {
@@ -98,6 +98,70 @@
    "cache_path": "source-cache/cfkltb-2508.11108v1-source.tar",
    "tracked_fulltext": false,
    "review_dossier": "2026-09-27-literature-and-representation-sweep.md"
+  },
+  {
+   "filename": "cis-1808.02879.pdf",
+   "source_url": "https://arxiv.org/pdf/1808.02879",
+   "bytes": 335675,
+   "sha256": "1e11dc4e21de5325d2e7ce62de7799b85aa861f39af66ecda09c1823a0750e5a",
+   "note": "Conrey-Iwaniec-Soundararajan, mean square of a Dirichlet L-function times a Dirichlet polynomial; Theorem 1 (moduli q~Q, twists <= Q^vartheta, vartheta<1). RH-038.",
+   "retrieved_on": "2026-09-28",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:1808.02879",
+   "cache_path": "source-cache/cis-1808.02879.pdf",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-route-preflights.md"
+  },
+  {
+   "filename": "cis-1808.02879-source.tar",
+   "source_url": "https://arxiv.org/src/1808.02879",
+   "bytes": 25025,
+   "sha256": "4d3faedbf2f53710762398c59814abbb3f4819bc3338bab9b55c29392f78ce6c",
+   "note": "TeX source; Theorem 1 at main.tex line 120.",
+   "retrieved_on": "2026-09-28",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:1808.02879 source",
+   "cache_path": "source-cache/cis-1808.02879-source.tar",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-route-preflights.md"
+  },
+  {
+   "filename": "cis-1105.1177.pdf",
+   "source_url": "https://arxiv.org/pdf/1105.1177",
+   "bytes": 263611,
+   "sha256": "6366374afd7fd16e12cfac0deec25b6d4faa253d49febff30b7e0763d6d7360b",
+   "note": "Conrey-Iwaniec-Soundararajan, Critical zeros of Dirichlet L-functions (asymptotic large sieve with Levinson). RH-038.",
+   "retrieved_on": "2026-09-28",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:1105.1177",
+   "cache_path": "source-cache/cis-1105.1177.pdf",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-route-preflights.md"
+  },
+  {
+   "filename": "cis-1105.1177-source.tar",
+   "source_url": "https://arxiv.org/src/1105.1177",
+   "bytes": 19757,
+   "sha256": "1a5d0f836163902f22f9e0901d1a5ad4bb79ddf570298eb5169497526254b864",
+   "note": "TeX source.",
+   "retrieved_on": "2026-09-28",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:1105.1177 source",
+   "cache_path": "source-cache/cis-1105.1177-source.tar",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-27-route-preflights.md"
   }
  ]
 }

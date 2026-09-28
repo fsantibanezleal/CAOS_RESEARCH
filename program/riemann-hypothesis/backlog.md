@@ -60,4 +60,4 @@ All routes RH-028 to RH-037 were worked on 2026-09-27 ([route preflights](../../
 EXP-011 closed RH-034 and EXP-012 stopped the Tang route with standard bounds
 (2026-09-28). Next: RH-038 (asymptotic large sieve for the dual family), then
 RH-026 (release).
-| RH-038 | Asymptotic evaluation of the dual family (Conrey-Iwaniec-Soundararajan asymptotic large sieve type) for moduli `h<=T^nu` and `t`-ranges of length `T/H`, to beat `nu<theta-1/2` | open; first action: read CIS 2013 (Crelle 681) and check whether its admissible ranges cover the dual family of EXP-012 | P1 |
+| RH-038 | Asymptotic evaluation of the dual family for moduli `h<=T^nu` and `t`-ranges of length `T/H`, to beat `nu<theta-1/2` | preflight 2026-09-28: CIS arXiv:1808.02879 Theorem 1 covers twists up to `Q^vartheta`, `vartheta<1`, at the central point only; the dual family sits at `vartheta=1` with an extra `t`-average. Needs a hybrid (modulus and `t`) asymptotic large sieve with shifts; none located | open, research-level | P1 |
