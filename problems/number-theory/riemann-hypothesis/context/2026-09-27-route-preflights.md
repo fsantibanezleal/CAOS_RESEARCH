@@ -350,3 +350,32 @@ candidate beside RH-027 target A'. It is a finite statement, so a proof or a
 counterexample is decisive. The first bounded action is a proof attempt that
 refines the first Gram-Schmidt range per cluster; the local ratio condition
 shows which property of the window the proof must use.
+
+### RH-034 refutation (2026-09-28)
+
+A structured test found what the random stress missed. The local analysis
+says one near-real conjugate pair can lose against a triple at distance
+`x0` (a real zero of `K`) in proportion to the ratio
+`|int u eta^2 sin(2pi x0 u)|^2/mu2`; with several triples around the same pair
+the losses add. For the Montgomery-Taylor window the two-sided sums of the
+ratios over the first zeros are `0.503, 0.619, 0.669, 0.698, ...`, crossing
+`2/3` at the third zero.
+
+Counterexample ([`rh034_counterexample.py`](2026-09-27-preflights/rh034_counterexample.py),
+closed-form kernel, 40 digits): real triples at `+-0.949374`, `+-1.9925`,
+`+-3.03254` and one simple conjugate pair at `+-0.24556 i`. Then `N=20`,
+`O=6`, `S=0`, and
+
+$$
+Q=57.9417819997\ldots<58=2N+3O-4S .
+$$
+
+The EXP-006 product still holds for this configuration
+(`(Q-S)(N-O)=811.18>=800`). With eight triples the slack is `-0.0818`
+(`(Q-2N)/O=2.9898`).
+
+Verdict on the candidate: (L) is false for the Montgomery-Taylor window, so
+RH-034 as stated is refuted. It is not declared as an experiment. The
+remaining question is the best constant `beta*` in `Q>=2N+beta* O` for `S=0`;
+any `beta*>2` would still improve the product near the onset. The follow-up
+search is [`rh034_beta_search.py`](2026-09-27-preflights/rh034_beta_search.py).
