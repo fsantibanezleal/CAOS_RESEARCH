@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 44060070,
+  "bytes": 44168540,
   "path": "research/riemann.json",
-  "sha256": "28787e940fccf8f2613546bcd08354c839a62acd782efaea658a1ecb57773ad1"
+  "sha256": "2ab63d2ea76c0db466473e1c63ea81064d2af2bae20e83cc0b53eb5e613b824f"
  },
  "case_id": "riemann",
  "gate": {
@@ -540,6 +540,214 @@
    "source_exp": "EXP-009-wang-kernel-sharpening"
   },
   {
+   "bytes": 2520,
+   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest-exp010.json",
+   "role": "levinson_source_manifest",
+   "sha256": "c55194b34987210fc1cd780257590c031dd4372ae99ce4a61c82bd221e5131fe",
+   "source_commit": "2f7aaa6b3542dd9c8306c52813e392988e9c65fc",
+   "source_exp": "source-review"
+  },
+  {
+   "bytes": 88540,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/canonical/result.json",
+   "role": "levinson_result",
+   "sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 331,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/canonical/execution-receipt.json",
+   "role": "levinson_receipt",
+   "sha256": "e0270d54d2003636648b0bd2981a5985fc941f3a36dc2b6ab10f2f26a632666e",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 11370,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/hypothesis.md",
+   "role": "levinson_hypothesis",
+   "sha256": "4d4a6051f155c99d296cfa43fed972c844c01cede93bef25b61fcfe6147514de",
+   "source_commit": "2f7aaa6b3542dd9c8306c52813e392988e9c65fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 70113,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/frozen-parameters.json",
+   "role": "levinson_frozen",
+   "sha256": "602ab84cb40c4ebc786d33fba1c0976e5fa8f9b4c072e20a65d09a2a24fa2e4d",
+   "source_commit": "2f7aaa6b3542dd9c8306c52813e392988e9c65fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 18848,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/run.py",
+   "role": "levinson_runner",
+   "sha256": "b6ee96ce409150f56f9c34757354e1addb417d2fc1be7c7e281a2c97ee1a27df",
+   "source_commit": "f05dbb646d9f76101e1992e53a97ce6d5c156b3d",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 12487,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/audit.py",
+   "role": "levinson_auditor",
+   "sha256": "e6c73074f29e45c417fb0185584969ae0ef74c1c83c33c8c18c79f3e3b990f06",
+   "source_commit": "3dba086fed900d5a828bb78182fc68541b641d8a",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 10630,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/audit/audit.json",
+   "role": "levinson_audit_output",
+   "sha256": "b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 17160,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/controls.py",
+   "role": "levinson_controls",
+   "sha256": "e2448c4b29aeade6faac6728382e560d36692ea3c935f72f63afea017e3a44b2",
+   "source_commit": "770003367350b04be70e672d076ba0e5d3d99ecf",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 41819,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/controls/controls.json",
+   "role": "levinson_controls_output",
+   "sha256": "6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 23159,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/mathematical-proof.md",
+   "role": "levinson_proof",
+   "sha256": "d7fed000d944c4a57d83c9505e229ee3453829bb4632e6d1c01df2339502323e",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 10474,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/adversarial-audit.md",
+   "role": "levinson_audit",
+   "sha256": "60e18e4aed52de051322c43f2594202ad42d2b02b1b2fc34b422274e1c0e6ef8",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 8162,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/verdict.md",
+   "role": "levinson_verdict",
+   "sha256": "2b46382257b80e135cac287421e58995060815a112153d669750dff14ee03562",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 4366,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/proof-review.json",
+   "role": "levinson_review",
+   "sha256": "54e3f450996bb00a239171ea85db5d3c27a23b2929b8c6ed3542e6849b50cc37",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 2939,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/artifacts/canonical/result.json",
+   "role": "barrier_result",
+   "sha256": "d53992d7b2bc7e8fade30315a5e3b69a0ef0929265f5d451a1f1d4c567822c01",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 306,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/artifacts/canonical/execution-receipt.json",
+   "role": "barrier_receipt",
+   "sha256": "af065e4e3a38b751a25550ee61d8d84c790d9fb7739e913131093c22d0df7045",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 4652,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/hypothesis.md",
+   "role": "barrier_hypothesis",
+   "sha256": "ab1ceac01d4263e699917e84827ecd8e7057ff638daffd56b8ef2f42e41a0810",
+   "source_commit": "136b40f01d17b0bb4a4d3e5ad8b57fac74af44a8",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 1010,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/frozen-parameters.json",
+   "role": "barrier_frozen",
+   "sha256": "b8180bb6cf057ba44b1e337969580429dc26907b0857ede2d5be8a8019b82330",
+   "source_commit": "9886f07bc05928c635754261fe282034af08904f",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 10259,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/run.py",
+   "role": "barrier_runner",
+   "sha256": "5258c93b0d4e098dd7217c640d8e1f06f598d3673ce98759de338585b4f8e518",
+   "source_commit": "96b6e8442f55253d5a4dc76ed0fcdd689ca611f7",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 5059,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/audit.py",
+   "role": "barrier_auditor",
+   "sha256": "51120ded7c3408a96bf97aedb755a711eca6cd0e0177517b5bbb7afc944531e8",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 420,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/artifacts/audit/audit.json",
+   "role": "barrier_audit_output",
+   "sha256": "29de599a055cc0892b771b74fc054c9db5ad16620f9cd32cf2f54321f707de15",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 3344,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/verdict.md",
+   "role": "barrier_verdict",
+   "sha256": "1074cffabfc215e188a4346668705b99097c46fa4c8f6b33a16c948078625639",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 4100,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/hypothesis.md",
+   "role": "tang_hypothesis",
+   "sha256": "22554e5aa38dd76626476f775fa5b09653f1be678bb2756cf3cea5262554aeb8",
+   "source_commit": "76c4439830027619f52163a6c344d55d96ed26b4",
+   "source_exp": "EXP-012-tang-short-window-moment"
+  },
+  {
+   "bytes": 1918,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/weight_size.py",
+   "role": "tang_check",
+   "sha256": "49c77c10de7c5b8b6fb00d9959e8340ab3bd67dea880e82e9f74de4867b5842c",
+   "source_commit": "96c90a7e761fef5c247659fbb53e7adece2fc861",
+   "source_exp": "EXP-012-tang-short-window-moment"
+  },
+  {
+   "bytes": 1510,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/artifacts/canonical/weight-size.json",
+   "role": "tang_check_output",
+   "sha256": "658430a8290fc9ec846032a858eacbd92270fc1f750f593e4ab6ab76e845765c",
+   "source_commit": "1a8a4cc05da8b99ce2a421a4b523b06fabecc42a",
+   "source_exp": "EXP-012-tang-short-window-moment"
+  },
+  {
+   "bytes": 2761,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/verdict.md",
+   "role": "tang_verdict",
+   "sha256": "2113dc1610c892f35aac59d69f40be780406fbf3cefb9624a75e72bfb30ed0a7",
+   "source_commit": "1a8a4cc05da8b99ce2a421a4b523b06fabecc42a",
+   "source_exp": "EXP-012-tang-short-window-moment"
+  },
+  {
    "bytes": 17333,
    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/stage-b/candidate-1/pressure-certificate.json",
    "role": "pressure_certificate_1",
@@ -642,6 +850,22 @@
    "sha256": "e491639de533bd4a83f459745ac8feb1683a25e4bd4a9933d9a7d87d53877f3d",
    "source_commit": "61bfc39ebe5944f177041b738240443c4ecfae98",
    "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 5111,
+   "path": "tests/test_riemann_levinson_parity.py",
+   "role": "levinson_test",
+   "sha256": "6286030676c31bd876a25faac1a83ae59ce1efd4cce38baf4a5888015f82110a",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 3083,
+   "path": "tests/test_riemann_linear_refinement_barrier.py",
+   "role": "barrier_test",
+   "sha256": "ffcec01feb37f42c963f7ed1c9ebeabb2d4d84657011808da61d9a37c0a9851a",
+   "source_commit": "1a8a4cc05da8b99ce2a421a4b523b06fabecc42a",
+   "source_exp": "EXP-011-linear-refinement-barrier"
   }
  ]
 }
