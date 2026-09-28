@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderToString } from 'katex';
 import type { RiemannData } from '../api/data';
-import { decimalCenter, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence, wangKernelEvidence } from '../lib/riemannReplay';
+import { barrierEvidence, decimalCenter, hilbertParityEvidence, levinsonEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence, tangStopEvidence, wangKernelEvidence } from '../lib/riemannReplay';
 import { riemannArchitecture } from '../lib/riemannArchitecture';
 import { ARCHITECTURE } from '../lib/architecture';
 import { CITATIONS } from '../data/citations';
@@ -16,7 +16,7 @@ function parityFixture(): RiemannData {
   const data = replay();
   const roles = ['parity_result', 'parity_hypothesis', 'parity_proof', 'parity_audit', 'parity_verdict'] as const;
   const sourceSha256 = Object.fromEntries(roles.map((role) => [role, `${role}-hash`])) as Record<typeof roles[number], string>;
-  data.schema = 'riemann-replay-v8';
+  data.schema = 'riemann-replay-v9';
   data.parity_result = {
     schema: 'riemann-exp004-results-v1', experiment: 'EXP-004-parity-density-transfer',
     arithmetic_status: 'verified',
@@ -224,12 +224,12 @@ describe('Riemann contextual architecture', () => {
     }
     const science = config.tabs.find((tab) => tab.id === 'science')!;
     const method = config.tabs.find((tab) => tab.id === 'method')!;
-    expect(science.svg).toContain('EXP-007-spectral-defect-parity/mathematical-proof.md');
+    expect(science.svg).toContain('EXP-010-levinson-parity-transfer/mathematical-proof.md');
     expect(science.svg).toContain('EXP-008-rank-six-local-transfer/mathematical-proof.md');
     expect(science.svg).toContain(lang === 'en' ? 'Certified global and local bounds' : 'Cotas globales y locales certificadas');
     expect(method.svg).toContain('docs/guides/riemann-replay.md');
-    expect(method.svg).toContain('EXP-001 · EXP-002 · EXP-003 · EXP-004');
-    expect(method.svg).toContain('EXP-006 · EXP-007 · EXP-008 · EXP-009');
+    expect(method.svg).toContain('EXP-001 · EXP-002 · … · EXP-006');
+    expect(method.svg).toContain('EXP-007 · EXP-008 · … · EXP-012');
     expect(method.svg).toContain(lang === 'en' ? 'Audit parity and pressure' : 'Auditar paridad y presión');
     expect(method.body_en).toContain('0.5458837 < θ6 < 0.5458838');
     expect(science.body_en).toContain('None of these results proves RH');
@@ -240,3 +240,40 @@ describe('Riemann contextual architecture', () => {
     expect(science.body_es).toContain('Ninguno de estos resultados prueba RH');
   });
 });
+
+describe('replay v9 evidence for EXP-010 to EXP-012', () => {
+  it('surfaces the EXP-010 onset only with its bound review', () => {
+    const data = replay();
+    expect(data.schema).toBe('riemann-replay-v9');
+    const evidence = levinsonEvidence(data);
+    expect(evidence?.onset.theta).toBe('267/500');
+    expect(Number(evidence?.onset.h_L.lower)).toBeGreaterThan(1e-5);
+    expect(Number(evidence?.point.h_L.lower)).toBeGreaterThan(0.0177);
+  });
+
+  it('rejects EXP-010 evidence with a failed check or a mismatched source', () => {
+    const failed = replay();
+    failed.levinson_result.checks.prediction_d_thresholds = false;
+    expect(levinsonEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance = mismatched.provenance.map((source) =>
+      source.role === 'levinson_proof' ? { ...source, sha256: 'tampered' } : source);
+    expect(levinsonEvidence(mismatched)).toBeUndefined();
+  });
+
+  it('shows the EXP-011 barrier and the stopped EXP-012 route only when accepted', () => {
+    const data = replay();
+    expect(barrierEvidence(data)?.result.C2.O).toBe(10001);
+    expect(tangStopEvidence(data)?.check.model_within_2_percent).toBe(true);
+    const failed = replay();
+    failed.barrier_result.checks.A = false;
+    expect(barrierEvidence(failed)).toBeUndefined();
+  });
+
+  it('labels every experiment record explicitly', () => {
+    expect(pageSource).toContain("e.id === '010' ? t('Localized Levinson detector'");
+    expect(pageSource).toContain("e.id === '012' ? t('Tang-type short-window moment (stopped)'");
+    expect(CITATIONS.some((citation) => citation.id === 'riemann-levinson2026')).toBe(true);
+  });
+});
+

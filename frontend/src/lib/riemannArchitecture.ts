@@ -3,8 +3,8 @@ import { ARCHITECTURE } from './architecture';
 
 const ROOT = 'https://github.com/fsantibanezleal/CAOS_RESEARCH';
 const PROBLEM = `${ROOT}/tree/main/problems/number-theory/riemann-hypothesis`;
-const SPECTRAL_PROOF = `${ROOT}/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/mathematical-proof.md`;
 const RANK_SIX_PROOF = `${ROOT}/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/mathematical-proof.md`;
+const LEVINSON_PROOF = `${ROOT}/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/mathematical-proof.md`;
 const SHARP_KERNEL_PROOF = `${ROOT}/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/mathematical-proof.md`;
 
 function diagram(kind: 'science' | 'method', lang: Lang) {
@@ -12,16 +12,16 @@ function diagram(kind: 'science' | 'method', lang: Lang) {
   const nodes = kind === 'science' ? [
     [t('Wang: global and short-interval frameworks', 'Wang: marcos global y de intervalos cortos'), 'pair statistic · block packing'],
     [t('Sharp three-point kernel', 'Núcleo óptimo de tres puntos'), 'R(α, β) ≤ √2'],
-    [t('Finite-rank local Selberg curve', 'Curva local de Selberg de rango finito'), 'O / N ≥ (θ − 1/2)/(4eCq)'],
-    [t('Certified global and local bounds', 'Cotas globales y locales certificadas'), 'S / N > 0.6725007995|0.5458837 < θ₆ < 0.5458838'],
+    [t('Localized Levinson detector', 'Detector de Levinson localizado'), 'O / N ≥ κ > 0.7170 ν, ν < θ − 1/2'],
+    [t('Certified global and local bounds', 'Cotas globales y locales certificadas'), 'S / N > 0.6725007995|S / N > 0 for θ ≥ 0.534'],
   ] : [
-    [t('Declare before computation', 'Declarar antes del cálculo'), 'EXP-001 · EXP-002 · EXP-003 · EXP-004 · EXP-005|EXP-006 · EXP-007 · EXP-008 · EXP-009'],
+    [t('Declare before computation', 'Declarar antes del cálculo'), 'EXP-001 · EXP-002 · … · EXP-006|EXP-007 · EXP-008 · … · EXP-012'],
     [t('Replay finite certificates', 'Reproducir certificados finitos'), t('Pair incidence · spans · all offsets', 'Incidencia · extensiones · desplazamientos')],
     [t('Audit parity and pressure', 'Auditar paridad y presión'), t('Exact census · Arb · source binding', 'Censo exacto · Arb · vinculación de fuentes')],
     [t('Review, persist, then replay', 'Revisar, persistir y reproducir'), t('Adversarial tests · verdict · SHA-256', 'Pruebas adversariales · veredicto · SHA-256')],
   ];
   const links = kind === 'science' ? [
-    ['EXP-007', SPECTRAL_PROOF],
+    ['EXP-010', LEVINSON_PROOF],
     ['EXP-009', SHARP_KERNEL_PROOF],
     ['EXP-008', RANK_SIX_PROOF],
   ] : [
@@ -59,16 +59,16 @@ export function riemannArchitecture(lang: Lang): ArchitectureConfig {
       if (tab.id === 'method') return {
         ...tab,
         svg: diagram('method', lang),
-        body_en: `The nine Riemann experiments were declared and committed before computation. EXP-001 through EXP-006 audit the inputs and build the stability, pressure, parity, localization, and Hilbert layers. EXP-007 retains the spectral defect inside the parity product. EXP-008 proves localization for every fixed finite rank and applies the source-certified rank-six constant. EXP-009 proves the sharp three-point ratio and applies it inside Wang's pinned v1 global framework.
+        body_en: `The twelve Riemann experiments were declared and committed before computation. EXP-001 through EXP-006 audit the inputs and build the stability, pressure, parity, localization, and Hilbert layers. EXP-007 retains the spectral defect inside the parity product. EXP-008 proves localization for every fixed finite rank and applies the source-certified rank-six constant. EXP-009 proves the sharp three-point ratio and applies it inside Wang's pinned v1 global framework. EXP-010 localizes Levinson's method and moves the simple-critical onset to 0.534. EXP-011 certifies counterexamples that cap linear refinements of the finite inequality, and EXP-012 records why Tang's reciprocity with standard bounds does not lengthen the mollifier.
 
 The exact runners bind their declarations, source bytes, focused tests, proofs, audits, results, verdicts, and independent interval replays. EXP-007 checks 652,260 spectra and 18,479 multiplicity profiles. EXP-008 certifies 0.5458837 < \u03b86 < 0.5458838 and a positive rank-six bound at \u03b8 = 0.545884, where the rank-three bound remains negative.
 
-EXP-009 proves R(alpha,beta) <= sqrt(2) with exact equality cases and certifies a global simple-critical proportion above 0.6725007995946757558. Replay schema v8 reads committed bytes only and requires the execution receipts plus proof-review hashes. A failed hash, false RH flag, weakened comparison, or stale receipt blocks display. The browser performs no scientific arithmetic. CPU arithmetic sufficed; publication and external mathematical acceptance remain separate gates.`,
-        body_es: `Los nueve experimentos de Riemann se declararon y comprometieron antes del c\u00e1lculo. EXP-001 a EXP-006 auditan las entradas y construyen las capas de estabilidad, presi\u00f3n, paridad, localizaci\u00f3n y Hilbert. EXP-007 conserva el defecto espectral dentro del producto de paridad. EXP-008 prueba la localizaci\u00f3n para todo rango finito fijo y aplica la constante de rango seis certificada por la fuente. EXP-009 prueba el cociente \u00f3ptimo de tres puntos y lo aplica dentro del marco global v1 fijado de Wang.
+EXP-009 proves R(alpha,beta) <= sqrt(2) with exact equality cases and certifies a global simple-critical proportion above 0.6725007995946757558. Replay schema v9 reads committed bytes only and requires the execution receipts plus proof-review hashes. A failed hash, false RH flag, weakened comparison, or stale receipt blocks display. The browser performs no scientific arithmetic. CPU arithmetic sufficed; publication and external mathematical acceptance remain separate gates.`,
+        body_es: `Los doce experimentos de Riemann se declararon y comprometieron antes del c\u00e1lculo. EXP-001 a EXP-006 auditan las entradas y construyen las capas de estabilidad, presi\u00f3n, paridad, localizaci\u00f3n y Hilbert. EXP-007 conserva el defecto espectral dentro del producto de paridad. EXP-008 prueba la localizaci\u00f3n para todo rango finito fijo y aplica la constante de rango seis certificada por la fuente. EXP-009 prueba el cociente \u00f3ptimo de tres puntos y lo aplica dentro del marco global v1 fijado de Wang. EXP-010 localiza el m\u00e9todo de Levinson y mueve el umbral de ceros cr\u00edticos simples a 0.534. EXP-011 certifica contraejemplos que acotan los refinamientos lineales de la desigualdad finita, y EXP-012 registra por qu\u00e9 la reciprocidad de Tang con cotas est\u00e1ndar no alarga el mollificador.
 
 Los programas exactos vinculan sus declaraciones, bytes de fuentes, pruebas focalizadas, demostraciones, auditor\u00edas, resultados, veredictos y reproducciones independientes por intervalos. EXP-007 verifica 652.260 espectros y 18.479 perfiles de multiplicidad. EXP-008 certifica 0.5458837 < \u03b86 < 0.5458838 y una cota positiva de rango seis en \u03b8 = 0.545884, donde la cota de rango tres sigue siendo negativa.
 
-EXP-009 prueba R(alpha,beta) <= sqrt(2) con casos de igualdad exactos y certifica una proporci\u00f3n global de ceros cr\u00edticos simples superior a 0.6725007995946757558. El esquema de reproducci\u00f3n v8 lee solo bytes comprometidos y exige los comprobantes de ejecuci\u00f3n y los hashes de revisi\u00f3n. Un hash fallido, una marca falsa de RH, una comparaci\u00f3n debilitada o un comprobante obsoleto bloquean la visualizaci\u00f3n. El navegador no realiza aritm\u00e9tica cient\u00edfica. Bast\u00f3 la CPU; la publicaci\u00f3n y la aceptaci\u00f3n matem\u00e1tica externa siguen siendo controles separados.`,
+EXP-009 prueba R(alpha,beta) <= sqrt(2) con casos de igualdad exactos y certifica una proporci\u00f3n global de ceros cr\u00edticos simples superior a 0.6725007995946757558. El esquema de reproducci\u00f3n v9 lee solo bytes comprometidos y exige los comprobantes de ejecuci\u00f3n y los hashes de revisi\u00f3n. Un hash fallido, una marca falsa de RH, una comparaci\u00f3n debilitada o un comprobante obsoleto bloquean la visualizaci\u00f3n. El navegador no realiza aritm\u00e9tica cient\u00edfica. Bast\u00f3 la CPU; la publicaci\u00f3n y la aceptaci\u00f3n matem\u00e1tica externa siguen siendo controles separados.`,
       };
       if (tab.id === 'science') return {
         ...tab,
@@ -81,6 +81,8 @@ Using Pearce-Crump's stated C6 interval, the exact certificate proves 0.5458837 
 
 EXP-009 separately proves the exact auxiliary ratio R(alpha,beta) <= sqrt(2), with equality only at (0,1) and (1,0). Substitution into Wang's pinned global v1 framework gives a simple-critical proportion above 0.6725007995946757558 and a distinct-zero proportion above 0.8362503997973378779.
 
+EXP-010 replaces the Selberg detector by Levinson's, with Conrey's operator polynomial of any degree, localized to (T, T + T^\u03b8] for mollifier exponents \u03bd < \u03b8 - 1/2. Certified degree-201 detectors give \u03ba > 0.7170 \u03bd, and the same Hilbert-parity product gives a positive proportion of simple critical zeros for every fixed \u03b8 in [0.534, 1).
+
 The public source prints the C6 interval but not its coefficient matrix, so CAOS attributes that input and does not claim an independent reconstruction. The theorem is asymptotic for each fixed exponent and supplies no effective starting height. Imported 2026 preprints remain attributed and external review is still needed. None of these results proves RH.`,
         body_es: `Sea N el conteo de todas las copias de ceros no triviales en (T, T + T^\u03b8], S el de ceros cr\u00edticos simples, O el de ceros cr\u00edticos distintos de multiplicidad impar, Q la suma de pares del n\u00facleo al cuadrado y D(G) el defecto espectral convexo. EXP-007 prueba la desigualdad finita (Q-S-D(G))(N-O) >= 2(N-S)^2. Omitir D recupera el producto \u00f3ptimo de EXP-006; conservarlo da una ganancia estricta en toda la curva.
 
@@ -89,6 +91,8 @@ Wang da Q/N -> 2-c(\u03b8) para una prueba suave fija. EXP-008 prueba que el det
 Usando el intervalo C6 declarado por Pearce-Crump, el certificado exacto prueba 0.5458837 < \u03b86 < 0.5458838. En \u03b8 = 0.545884, h6 supera 2.5541123454645702e-7 mientras h3 sigue siendo negativa. En \u03b8 = 0.5459, h6 supera 0.0000177645181613023236390595079 y mejora h3 por m\u00e1s de 9.263543061777356e-7.
 
 EXP-009 prueba por separado el cociente auxiliar exacto R(alpha,beta) <= sqrt(2), con igualdad solo en (0,1) y (1,0). Sustituirlo en el marco global v1 fijado de Wang da una proporci\u00f3n de ceros cr\u00edticos simples superior a 0.6725007995946757558 y una proporci\u00f3n de ceros distintos superior a 0.8362503997973378779.
+
+EXP-010 reemplaza el detector de Selberg por el de Levinson, con el polinomio operador de Conrey de cualquier grado, localizado en (T, T + T^\u03b8] para exponentes de mollificador \u03bd < \u03b8 - 1/2. Detectores certificados de grado 201 dan \u03ba > 0.7170 \u03bd, y el mismo producto de Hilbert-paridad da una proporci\u00f3n positiva de ceros cr\u00edticos simples para cada \u03b8 fijo en [0.534, 1).
 
 La fuente p\u00fablica imprime el intervalo C6 pero no su matriz de coeficientes, por lo que CAOS atribuye esa entrada y no afirma una reconstrucci\u00f3n independiente. El teorema es asint\u00f3tico para cada exponente fijo y no aporta una altura inicial efectiva. Los preprints importados de 2026 siguen atribuidos y a\u00fan se necesita revisi\u00f3n externa. Ninguno de estos resultados prueba RH.`,
       };

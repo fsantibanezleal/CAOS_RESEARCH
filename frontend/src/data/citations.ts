@@ -34,6 +34,16 @@ export const CITATIONS: Citation[] = [
     url: 'https://doi.org/10.5281/zenodo.22940291',
   },
   {
+    id: 'riemann-levinson2026', label: 'CAOS EXP-010: short-interval Levinson',
+    citation: 'Santibáñez-Leal F. (2026). Levinson\'s method in short intervals and simple zeros of the zeta function. CAOS Research preprint v0.01. Localized Levinson-Conrey moment for nu < theta - 1/2, a distinct sign-change count, certified degree-201 detectors and the onset theta >= 0.534; the onset uses Wang arXiv:2609.07918v1.',
+    url: 'https://doi.org/10.5281/zenodo.22984155',
+  },
+  {
+    id: 'riemann-tang2026', label: 'Tang 2026',
+    citation: 'Tang Z. S. (2026). Reciprocity for the short twisted second moment of the Riemann zeta function. arXiv:2608.14852v1. Its dual moment is the obstruction recorded in EXP-012.',
+    url: 'https://arxiv.org/abs/2608.14852v1',
+  },
+  {
     id: 'riemann-pearcecrump2026', label: 'Pearce-Crump 2026',
     citation: 'Pearce-Crump A. (2026). Optimising Selberg\'s method for critical zeros. arXiv:2609.15329v1. Source of the positive-semidefinite sign detector, coefficient-uniform approximate functional equation, arbitrary-subinterval mean-value estimate, and certified rank-three profile localized in EXP-005.',
     url: 'https://arxiv.org/abs/2609.15329v1',

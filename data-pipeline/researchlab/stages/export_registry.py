@@ -33,7 +33,12 @@ EXP008_CANONICAL = "46f258cdab9487db829ab96bd5267360bd656d91"
 EXP009_DECLARATION = "123eee0d49969226201e68d6c32746087a91e6fc"
 EXP009_AMENDMENT = "edd689fef41ee5986353f6b62e8c34f81d55ae0f"
 EXP009_CANONICAL = "6b8e009c73f87047a2bc2c237991d241bd3b08c0"
-RIEMANN_EXPERIMENT_MAX = 9
+EXP010_DECLARATION = "2f7aaa6b3542dd9c8306c52813e392988e9c65fc"
+EXP010_CANONICAL = "3dba086fed900d5a828bb78182fc68541b641d8a"
+EXP011_DECLARATION = "9886f07bc05928c635754261fe282034af08904f"
+EXP011_AMENDMENT = "136b40f01d17b0bb4a4d3e5ad8b57fac74af44a8"
+EXP012_DECLARATION = "76c4439830027619f52163a6c344d55d96ed26b4"
+RIEMANN_EXPERIMENT_MAX = 12
 
 
 def _read_portfolio() -> dict:
@@ -231,6 +236,9 @@ def _riemann_payload() -> dict:
     exp_seven = "EXP-007-spectral-defect-parity"
     exp_eight = "EXP-008-rank-six-local-transfer"
     exp_nine = "EXP-009-wang-kernel-sharpening"
+    exp_ten = "EXP-010-levinson-parity-transfer"
+    exp_eleven = "EXP-011-linear-refinement-barrier"
+    exp_twelve = "EXP-012-tang-short-window-moment"
     specifications = [
         ("constant_audit", exp_one, f"experiments/{exp_one}/artifacts/result.json"),
         ("result", exp_two, f"experiments/{exp_two}/artifacts/result.json"),
@@ -321,7 +329,48 @@ def _riemann_payload() -> dict:
             ("wang_kernel_verdict", exp_nine, f"experiments/{exp_nine}/verdict.md"),
             ("wang_kernel_review", exp_nine, f"experiments/{exp_nine}/proof-review.json"),
         ])
-    replay_version = min(max(RIEMANN_EXPERIMENT_MAX - 1, 5), 8)
+    if RIEMANN_EXPERIMENT_MAX >= 10:
+        specifications.extend([
+            ("levinson_source_manifest", "source-review", "context/source-manifest-exp010.json"),
+            ("levinson_result", exp_ten, f"experiments/{exp_ten}/artifacts/canonical/result.json"),
+            ("levinson_receipt", exp_ten,
+             f"experiments/{exp_ten}/artifacts/canonical/execution-receipt.json"),
+            ("levinson_hypothesis", exp_ten, f"experiments/{exp_ten}/hypothesis.md"),
+            ("levinson_frozen", exp_ten, f"experiments/{exp_ten}/frozen-parameters.json"),
+            ("levinson_runner", exp_ten, f"experiments/{exp_ten}/run.py"),
+            ("levinson_auditor", exp_ten, f"experiments/{exp_ten}/audit.py"),
+            ("levinson_audit_output", exp_ten, f"experiments/{exp_ten}/artifacts/audit/audit.json"),
+            ("levinson_controls", exp_ten, f"experiments/{exp_ten}/controls.py"),
+            ("levinson_controls_output", exp_ten,
+             f"experiments/{exp_ten}/artifacts/controls/controls.json"),
+            ("levinson_proof", exp_ten, f"experiments/{exp_ten}/mathematical-proof.md"),
+            ("levinson_audit", exp_ten, f"experiments/{exp_ten}/adversarial-audit.md"),
+            ("levinson_verdict", exp_ten, f"experiments/{exp_ten}/verdict.md"),
+            ("levinson_review", exp_ten, f"experiments/{exp_ten}/proof-review.json"),
+        ])
+    if RIEMANN_EXPERIMENT_MAX >= 11:
+        specifications.extend([
+            ("barrier_result", exp_eleven,
+             f"experiments/{exp_eleven}/artifacts/canonical/result.json"),
+            ("barrier_receipt", exp_eleven,
+             f"experiments/{exp_eleven}/artifacts/canonical/execution-receipt.json"),
+            ("barrier_hypothesis", exp_eleven, f"experiments/{exp_eleven}/hypothesis.md"),
+            ("barrier_frozen", exp_eleven, f"experiments/{exp_eleven}/frozen-parameters.json"),
+            ("barrier_runner", exp_eleven, f"experiments/{exp_eleven}/run.py"),
+            ("barrier_auditor", exp_eleven, f"experiments/{exp_eleven}/audit.py"),
+            ("barrier_audit_output", exp_eleven,
+             f"experiments/{exp_eleven}/artifacts/audit/audit.json"),
+            ("barrier_verdict", exp_eleven, f"experiments/{exp_eleven}/verdict.md"),
+        ])
+    if RIEMANN_EXPERIMENT_MAX >= 12:
+        specifications.extend([
+            ("tang_hypothesis", exp_twelve, f"experiments/{exp_twelve}/hypothesis.md"),
+            ("tang_check", exp_twelve, f"experiments/{exp_twelve}/weight_size.py"),
+            ("tang_check_output", exp_twelve,
+             f"experiments/{exp_twelve}/artifacts/canonical/weight-size.json"),
+            ("tang_verdict", exp_twelve, f"experiments/{exp_twelve}/verdict.md"),
+        ])
+    replay_version = 9 if RIEMANN_EXPERIMENT_MAX >= 10 else min(max(RIEMANN_EXPERIMENT_MAX - 1, 5), 8)
     payload: dict = {"schema": f"riemann-replay-v{replay_version}", "provenance": []}
     source_bytes: dict[str, bytes] = {}
 
@@ -344,9 +393,11 @@ def _riemann_payload() -> dict:
         content = read_source(role, experiment, relative)
         if role in {"constant_audit", "result", "pressure_result", "parity_result",
                     "local_result", "hilbert_result", "spectral_result",
-                    "rank_six_result", "wang_kernel_result"}:
+                    "rank_six_result", "wang_kernel_result", "levinson_result",
+                    "barrier_result", "tang_check_output"}:
             payload[role] = json.loads(content)
-        elif role in {"source_manifest", "wang_kernel_source_manifest"}:
+        elif role in {"source_manifest", "wang_kernel_source_manifest",
+                      "levinson_source_manifest"}:
             payload["reviewed_on"] = max(
                 payload.get("reviewed_on", ""), json.loads(content)["reviewed_on"])
     if payload["constant_audit"]["status"] != "PASS":
@@ -920,6 +971,96 @@ def _riemann_payload() -> dict:
                 != hashlib.sha256(source_bytes[role]).hexdigest()):
             raise ValueError(f"EXP-009 proof review no longer matches: {role}")
     payload["wang_kernel_review"] = wang_kernel_review
+    if RIEMANN_EXPERIMENT_MAX <= 9:
+        return payload
+
+    add_focused_test("levinson_test", exp_ten, "tests/test_riemann_levinson_parity.py")
+    levinson = payload["levinson_result"]
+    expected_levinson_checks = {
+        "anchors", "exp008_ratio", "prediction_c_all", "prediction_c_points",
+        "prediction_d_thresholds", "selberg_comparison",
+    }
+    if (levinson.get("schema") != "exp010-canonical-v1" or levinson.get("accepted") is not True
+            or set(levinson.get("checks", {})) != expected_levinson_checks
+            or not all(levinson["checks"].values())
+            or not all(row["pass"] for row in levinson["onset"]["rows"])
+            or Fraction(levinson["onset"]["rows"][0]["theta"]) != Fraction(534, 1000)):
+        raise ValueError("EXP-010 canonical result fails its declared evidence boundary")
+    levinson_receipt = json.loads(source_bytes["levinson_receipt"])
+    if (levinson_receipt.get("accepted") is not True
+            or levinson_receipt.get("result_sha256")
+            != hashlib.sha256(source_bytes["levinson_result"]).hexdigest()
+            or levinson_receipt.get("git", {}).get("head") != EXP010_CANONICAL
+            or levinson_receipt.get("git", {}).get("tracked_tree_clean") is not True):
+        raise ValueError("EXP-010 execution receipt does not bind the canonical result")
+    if levinson.get("bindings_sha256", {}).get("run.py") != hashlib.sha256(
+            source_bytes["levinson_runner"]).hexdigest():
+        raise ValueError("EXP-010 canonical result is not bound to its runner")
+    if (_revision_bytes(f"{problem}/experiments/{exp_ten}/hypothesis.md", EXP010_DECLARATION)
+            != source_bytes["levinson_hypothesis"]):
+        raise ValueError("EXP-010 hypothesis differs from its declaration revision")
+    for role in ("levinson_audit_output", "levinson_controls_output"):
+        if json.loads(source_bytes[role]).get("accepted") is not True:
+            raise ValueError(f"EXP-010 independent check did not pass: {role}")
+    levinson_review = json.loads(source_bytes["levinson_review"])
+    if (levinson_review.get("schema") != "riemann-exp010-proof-review-v1"
+            or levinson_review.get("canonical_execution_commit") != EXP010_CANONICAL
+            or not EXP010_DECLARATION.startswith(levinson_review.get("declaration_commit", "-"))
+            or levinson_review.get("scientific_verdict")
+            != "confirmed-with-scope-correction-to-prediction-A"):
+        raise ValueError("EXP-010 review does not match the canonical evidence")
+    levinson_review_roles = {
+        "adversarial_audit": "levinson_audit", "audit_output": "levinson_audit_output",
+        "auditor": "levinson_auditor", "controls": "levinson_controls",
+        "controls_output": "levinson_controls_output",
+        "execution_receipt": "levinson_receipt", "focused_test": "levinson_test",
+        "frozen_parameters": "levinson_frozen", "hypothesis": "levinson_hypothesis",
+        "mathematical_proof": "levinson_proof", "result": "levinson_result",
+        "runner": "levinson_runner", "source_manifest": "levinson_source_manifest",
+        "verdict": "levinson_verdict",
+    }
+    if set(levinson_review.get("source_sha256", {})) != set(levinson_review_roles):
+        raise ValueError("EXP-010 proof review omits required scientific evidence")
+    for reviewed_name, role in levinson_review_roles.items():
+        if (levinson_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-010 proof review no longer matches: {role}")
+    payload["levinson_review"] = levinson_review
+    if RIEMANN_EXPERIMENT_MAX <= 10:
+        return payload
+
+    add_focused_test("barrier_test", exp_eleven, "tests/test_riemann_linear_refinement_barrier.py")
+    barrier = payload["barrier_result"]
+    if (barrier.get("schema") != "exp011-canonical-v1" or barrier.get("accepted") is not True
+            or set(barrier.get("checks", {})) != {"A", "B", "C", "D"}
+            or not all(barrier["checks"].values())
+            or barrier["C2"]["O"] != 10001 or barrier["C2"]["N"] != 130013):
+        raise ValueError("EXP-011 canonical result fails its declared evidence boundary")
+    barrier_receipt = json.loads(source_bytes["barrier_receipt"])
+    if (barrier_receipt.get("accepted") is not True
+            or barrier_receipt.get("result_sha256")
+            != hashlib.sha256(source_bytes["barrier_result"]).hexdigest()
+            or barrier_receipt.get("git", {}).get("tracked_tree_clean") is not True):
+        raise ValueError("EXP-011 execution receipt does not bind the canonical result")
+    for role, name in (("barrier_hypothesis", "hypothesis.md"),
+                       ("barrier_frozen", "frozen-parameters.json"), ("barrier_runner", "run.py")):
+        if barrier["bindings_sha256"][name] != hashlib.sha256(source_bytes[role]).hexdigest():
+            raise ValueError(f"EXP-011 canonical result is not bound to {name}")
+    if (_revision_bytes(f"{problem}/experiments/{exp_eleven}/hypothesis.md", EXP011_AMENDMENT)
+            != source_bytes["barrier_hypothesis"]):
+        raise ValueError("EXP-011 hypothesis differs from its amended declaration")
+    if json.loads(source_bytes["barrier_audit_output"]).get("accepted") is not True:
+        raise ValueError("EXP-011 independent audit did not pass")
+    if RIEMANN_EXPERIMENT_MAX <= 11:
+        return payload
+
+    if (_revision_bytes(f"{problem}/experiments/{exp_twelve}/hypothesis.md", EXP012_DECLARATION)
+            != source_bytes["tang_hypothesis"]):
+        raise ValueError("EXP-012 hypothesis differs from its declaration revision")
+    if payload["tang_check_output"].get("model_within_2_percent") is not True:
+        raise ValueError("EXP-012 weight-size check did not pass")
+    if b"**Verdict: inconclusive.**" not in source_bytes["tang_verdict"]:
+        raise ValueError("EXP-012 verdict must remain inconclusive")
     return payload
 
 

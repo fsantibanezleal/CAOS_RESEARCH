@@ -50,7 +50,7 @@ function compareExact(left: { numerator: string; denominator: string }, right: {
 export function localSelbergEvidence(data: RiemannData | null) {
   const result = data?.local_result;
   const review = data?.local_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
       result.schema !== 'riemann-exp005-results-v1' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false || result.boundary_control.accepted !== false ||
@@ -76,7 +76,7 @@ export function localSelbergEvidence(data: RiemannData | null) {
 export function hilbertParityEvidence(data: RiemannData | null) {
   const result = data?.hilbert_result;
   const review = data?.hilbert_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
       result.schema !== 'riemann-exp006-results-v2' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false ||
@@ -106,7 +106,7 @@ export function hilbertParityEvidence(data: RiemannData | null) {
 export function spectralDefectEvidence(data: RiemannData | null) {
   const result = data?.spectral_result;
   const review = data?.spectral_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
       result.schema !== 'riemann-exp007-results-v1' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false || result.claim_boundary.global_record !== false ||
@@ -132,7 +132,7 @@ export function spectralDefectEvidence(data: RiemannData | null) {
 export function rankSixEvidence(data: RiemannData | null) {
   const result = data?.rank_six_result;
   const review = data?.rank_six_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
       result.schema !== 'riemann-exp008-results-v1' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false ||
@@ -162,7 +162,7 @@ export function rankSixEvidence(data: RiemannData | null) {
 export function wangKernelEvidence(data: RiemannData | null) {
   const result = data?.wang_kernel_result;
   const review = data?.wang_kernel_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
       result.schema !== 'riemann-exp009-results-v1' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false || result.claim_boundary.peer_reviewed !== false ||
@@ -188,3 +188,49 @@ export function wangKernelEvidence(data: RiemannData | null) {
   )) return undefined;
   return { result, review };
 }
+
+function provenanceMatches(data: RiemannData, roles: Record<string, string>, hashes: Record<string, string>) {
+  return Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole && source.sha256 === hashes[reviewRole]));
+}
+
+/** EXP-010 localizes Levinson's method and moves the simple-critical onset to 0.534.
+ * Show it only when the canonical result, its review and every reviewed source agree. */
+export function levinsonEvidence(data: RiemannData | null) {
+  const result = data?.levinson_result;
+  const review = data?.levinson_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
+      result.schema !== 'exp010-canonical-v1' || result.accepted !== true ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.onset.rows.some((row) => row.pass !== true) ||
+      review.schema !== 'riemann-exp010-proof-review-v1' ||
+      review.scientific_verdict !== 'confirmed-with-scope-correction-to-prediction-A') return undefined;
+  const roles = {
+    hypothesis: 'levinson_hypothesis', mathematical_proof: 'levinson_proof', runner: 'levinson_runner',
+    result: 'levinson_result', adversarial_audit: 'levinson_audit', verdict: 'levinson_verdict',
+    focused_test: 'levinson_test', execution_receipt: 'levinson_receipt',
+  };
+  if (!provenanceMatches(data, roles, review.source_sha256)) return undefined;
+  const onset = result.onset.rows.find((row) => row.theta === '267/500');
+  const point = result.onset.rows.find((row) => row.theta === '5459/10000');
+  if (!onset || !point) return undefined;
+  return { result, review, onset, point };
+}
+
+/** EXP-011 certifies counterexamples: a barrier, not an improvement. */
+export function barrierEvidence(data: RiemannData | null) {
+  const result = data?.barrier_result;
+  if (!data || !result || data.schema !== 'riemann-replay-v9' || result.schema !== 'exp011-canonical-v1' ||
+      result.accepted !== true || !result.checks.A || !result.checks.B || !result.checks.C || !result.checks.D ||
+      !data.provenance.some((source) => source.role === 'barrier_verdict')) return undefined;
+  return { result };
+}
+
+/** EXP-012 is an inconclusive, stopped route; show it only with its weight-size check. */
+export function tangStopEvidence(data: RiemannData | null) {
+  const check = data?.tang_check_output;
+  if (!data || !check || data.schema !== 'riemann-replay-v9' || check.model_within_2_percent !== true ||
+      !data.provenance.some((source) => source.role === 'tang_verdict')) return undefined;
+  return { check };
+}
+
