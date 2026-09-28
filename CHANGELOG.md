@@ -3,6 +3,34 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.74.000] - 2026-09-28
+
+### Added
+- Riemann replay schema v9 binds EXP-010, EXP-011 and EXP-012 by committed
+  bytes: the EXP-010 canonical result, receipt, declaration revision, audit,
+  controls and all fourteen proof-review hashes; the EXP-011 result, receipt,
+  amended declaration and audit; the EXP-012 declaration, weight-size check
+  and inconclusive verdict.
+- The bilingual workbench shows the EXP-010 short-interval onset (every fixed
+  `theta` in `[0.534,1)`, `h(0.5459)>0.0177638490`, more than 999 times the
+  EXP-008 value) and a new "Where the method stops" section with the EXP-011
+  certified counterexamples (no linear refinement of the Hilbert-parity product
+  with `beta>=2.365` for the Montgomery-Taylor window) and the stopped EXP-012
+  route.
+- Research governance and manuscript map for the Riemann program; literature
+  sweep, primary-source verification and route preflights RH-027 to RH-038.
+
+### Fixed
+- The experiment list labelled every record after EXP-007 as "Rank-six local
+  transfer"; each record now has its own title, and EXP-010 to EXP-012 are
+  listed.
+- Citation title of Wang arXiv:2609.24167v1.
+
+### Boundaries
+- EXP-010's onset uses Wang's recent unreviewed short-interval pair theorem.
+  EXP-011 is a certified counterexample result for one window; EXP-012 is
+  inconclusive. RH remains open.
+
 ## [0.73.000] - 2026-09-24
 
 ### Added

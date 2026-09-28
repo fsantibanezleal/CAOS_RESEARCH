@@ -371,9 +371,9 @@ async function proofControls(page, panel, scenario, tab) {
 }
 async function experimentViews(page, panel, scenario, text) {
   const buttons = panel.locator('.rh-experiments .rs-exp-open');
-  check(scenario, 'all nine experiment launch controls present', await buttons.count() === 9);
-  requireCondition(await buttons.count() === 9, 'Expected all nine experiment records');
-  for (const id of ['001', '002', '003', '004', '005', '006', '007', '008', '009']) {
+  check(scenario, 'all twelve experiment launch controls present', await buttons.count() === 12);
+  requireCondition(await buttons.count() === 12, 'Expected all twelve experiment records');
+  for (const id of ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012']) {
     const launch = buttons.filter({ hasText: new RegExp(`^EXP-${id}:`) });
     await pointerClick(page, launch, scenario, `open EXP-${id}`);
     const dialog = page.locator('.rs-modal[role="dialog"]');
@@ -477,6 +477,8 @@ async function runScenario(viewport, lang, theme) {
     check(scenario, 'explicit EXP-005 threshold is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.5459'));
     check(scenario, 'rank-six EXP-008 threshold is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.5458838'));
     check(scenario, 'sharp-kernel EXP-009 global bound is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.6725007995946757558'));
+    check(scenario, 'Levinson EXP-010 onset bound is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.0177638490'));
+    check(scenario, 'EXP-011 barrier ratio is rendered', norm(await page.locator('.rh-page').innerText()).includes('2.35886369542'));
     const tablist = page.locator('.rh-page > .tabs > .tablist');
     check(scenario, 'six research sections present', await tablist.getByRole('tab').count() === 6);
     for (let index = 0; index < tabIds.length; index += 1) {
