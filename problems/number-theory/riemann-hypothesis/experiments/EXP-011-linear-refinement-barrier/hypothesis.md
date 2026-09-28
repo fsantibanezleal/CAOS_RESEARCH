@@ -43,23 +43,33 @@ B. Arb certifies `(Q(C2)-2N)/O<2.365` (`O=10001`, `N=110011`, `S=0`). Hence no
 inequality `Q>=2N+beta O-gamma S` with `beta>=2.365` (any `gamma`) holds for
 this window.
 
-C. With the EXP-010 detector (`nu=theta-1/2-10^(-4)`, certified `kappa>0.717 nu`
-is not assumed; the onset uses the certified frozen constants of EXP-010 through
-the same monotone relation), a valid refinement with `beta<2.365` gives
-positivity only where `beta kappa>2-c(theta)-2`. Directed interval arithmetic
-certifies that at `theta=0.5320` the needed `beta` exceeds 2.365, using the
-EXP-010 value `kappa(0.0319)` recomputed by the EXP-010 exact routine. So no
-linear refinement of this kind can move the onset below 0.5320.
+C (amended before implementation, see below). For the EXP-010 frozen
+detectors admissible at `theta=0.532` (`nu=0.0199` and `nu=0.0299`, whose
+constants EXP-010 encloses to relative radius `1e-30`), put
+`h_beta(theta)=(2+beta kappa-(2-c(theta)))/4`, the simple-critical bound a valid
+refinement `Q>=2N+beta O-(beta+1)S` would give. Directed interval arithmetic
+certifies `h_beta(0.532)<0` for `beta=2.365` and both detectors. So with the
+EXP-010 detectors, no linear refinement with `beta<2.365` reaches `theta=0.532`.
+The uncertified context value: with the single-piece Euler-Lagrange ceiling
+`kappa=0.7173 nu`, the cap is about `0.5324`.
 
 D (control). The EXP-006 product holds on C1 and C2 with positive certified
 slack, and the translation-invariant formula agrees with the direct double sum
 on C2 truncated to `M=50`.
 
+## Amendment 1 (2026-09-28, before any implementation)
+
+The declared Prediction C used an upper bound on the detector density, which
+EXP-010 does not supply: its constants are lower bounds for the best detector.
+C is restated for the EXP-010 frozen detectors, whose two-sided enclosures do
+support it. No runner, audit or canonical artifact existed when this amendment
+was committed.
+
 ## What PASS and FAIL prove
 
 PASS of A and B is a certified counterexample result for one fixed window. It
-proves that the route "linear refinement of the product" is capped at an onset
-of 0.5320 for this window (C), and it closes RH-034 as a theorem target. It
+proves that, with the EXP-010 detectors, the route "linear refinement of the
+product" cannot reach `theta=0.532` for this window (C), and it closes RH-034 as a theorem target. It
 does not bound other windows, nonlinear refinements, or multi-point inputs
 (RH-034's moment-LP form), and it changes no zero-counting theorem.
 
