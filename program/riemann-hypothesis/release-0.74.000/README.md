@@ -56,4 +56,17 @@ titled "Rank-six local transfer".
 
 ## Deployment
 
-Recorded after promotion in `live-verification.json`.
+Research PR [#346](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/346)
+and promotion PR
+[#347](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/347) are merged.
+Main commit `a464bdb52d88ed22582668d9c94ebbe25262b5b4` passed
+[CI](https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36373913886)
+and the
+[Pages deployment](https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36373914102).
+The [live verification](live-verification.json) byte-matched the root, the
+hashed JS and CSS assets, all KaTeX fonts, and the four replay and registry data
+files against the exact-main build. The live browser matrix could not run
+because the sandbox Chromium did not trust the egress TLS-inspection CA. The
+live payload is byte-identical to the candidate, and the candidate matrix passed.
+Tag `v0.74.000` is still to be created on the main commit: the cloud session's
+git proxy refuses tag pushes.

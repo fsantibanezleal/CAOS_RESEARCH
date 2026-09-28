@@ -1,0 +1,100 @@
+{
+  "schema": "riemann-live-verification-v4",
+  "release": "0.74.000",
+  "verified_utc": "2026-09-28T03:32:46Z",
+  "main_commit": "a464bdb52d88ed22582668d9c94ebbe25262b5b4",
+  "tag": {
+    "name": "v0.74.000",
+    "status": "pending: the cloud session's git proxy refuses tag pushes; create it on the main commit above"
+  },
+  "research_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/346",
+  "promotion_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/347",
+  "develop_ci_run": {
+    "url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36373795265",
+    "status": "success"
+  },
+  "ci_run": {
+    "url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36373913886",
+    "status": "success"
+  },
+  "pages_run": {
+    "url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36373914102",
+    "status": "success"
+  },
+  "base_url": "https://research.fasl-work.com/",
+  "byte_comparison": {
+    "files": 8,
+    "all_match": true,
+    "note": "the exact-main build (tree identical to a464bdb) versus the live Pages bytes; all 61 KaTeX font assets also matched in the same pass",
+    "rows": [
+      {
+        "path": "/",
+        "bytes": 591,
+        "sha256": "075a5b29198409a4fd8fb2f601daa381345513282766d4f4f15c088db0ff463f",
+        "local_path": "frontend/dist/index.html",
+        "local_sha256": "075a5b29198409a4fd8fb2f601daa381345513282766d4f4f15c088db0ff463f",
+        "match": true
+      },
+      {
+        "path": "/assets/ExperimentModal-CTDu7YBL.js",
+        "bytes": 176791,
+        "sha256": "0ca84fac42b3f464ca9d4196e799fdbe98c5e8a7e0da09d64faab788e7c27de3",
+        "local_path": "frontend/dist/assets/ExperimentModal-CTDu7YBL.js",
+        "local_sha256": "0ca84fac42b3f464ca9d4196e799fdbe98c5e8a7e0da09d64faab788e7c27de3",
+        "match": true
+      },
+      {
+        "path": "/assets/index-CftVb1pP.css",
+        "bytes": 64941,
+        "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78",
+        "local_path": "frontend/dist/assets/index-CftVb1pP.css",
+        "local_sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78",
+        "match": true
+      },
+      {
+        "path": "/assets/index-Ck8VHf8v.js",
+        "bytes": 804969,
+        "sha256": "90c0e895ce0845c43beb3a7dea86fcd81dcabdb0f3a44dede8fa909772a7403c",
+        "local_path": "frontend/dist/assets/index-Ck8VHf8v.js",
+        "local_sha256": "90c0e895ce0845c43beb3a7dea86fcd81dcabdb0f3a44dede8fa909772a7403c",
+        "match": true
+      },
+      {
+        "path": "/data/research/riemann.json",
+        "bytes": 44168540,
+        "sha256": "2ab63d2ea76c0db466473e1c63ea81064d2af2bae20e83cc0b53eb5e613b824f",
+        "local_path": "frontend/dist/data/research/riemann.json",
+        "local_sha256": "2ab63d2ea76c0db466473e1c63ea81064d2af2bae20e83cc0b53eb5e613b824f",
+        "match": true
+      },
+      {
+        "path": "/data/research/experiments.json",
+        "bytes": 2211436,
+        "sha256": "447243f8adf5595bd8dd312ee7e55a834113b1ff9815f1630b86ee44c60849f8",
+        "local_path": "frontend/dist/data/research/experiments.json",
+        "local_sha256": "447243f8adf5595bd8dd312ee7e55a834113b1ff9815f1630b86ee44c60849f8",
+        "match": true
+      },
+      {
+        "path": "/data/research/portfolio.json",
+        "bytes": 3782,
+        "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc",
+        "local_path": "frontend/dist/data/research/portfolio.json",
+        "local_sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc",
+        "match": true
+      },
+      {
+        "path": "/data/research/jacobian.json",
+        "bytes": 3831,
+        "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023",
+        "local_path": "frontend/dist/data/research/jacobian.json",
+        "local_sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023",
+        "match": true
+      }
+    ]
+  },
+  "browser": {
+    "exact_candidate_matrix": "passed, see qa.json (8 scenarios, 416 screenshots, 0 failures)",
+    "live_matrix": "not completed: the sandbox Chromium did not trust the egress TLS-inspection CA (ERR_CERT_AUTHORITY_INVALID before any page load); since the live bytes match the verified candidate, the candidate matrix covers the same payload"
+  }
+}

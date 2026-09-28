@@ -425,3 +425,11 @@ Commit 235b261 preserves five byte-identical v0.01 manuscript/publication files
 under versions/v0.01. The old public DOI and PDF are unchanged. Private draft PR
 #633 carries the confirmed pressure mirror and tested version helper. No new
 Zenodo version is reserved or published at this point.
+
+2026-09-28. Release 0.74.000 exports replay v9 (EXP-010, EXP-011, EXP-012 bound
+by committed bytes) and the twelve-experiment bilingual workbench. Research PR
+#346 and promotion PR #347 are merged; main commit a464bdb passed CI and Pages,
+and the live bytes match the exact-main build. Candidate QA: 466 Python and 28
+frontend tests, 8-scenario browser matrix with 416 screenshots and 0 failures.
+Tag v0.74.000 is pending because the session proxy refuses tag pushes. RH-026 is
+done.
