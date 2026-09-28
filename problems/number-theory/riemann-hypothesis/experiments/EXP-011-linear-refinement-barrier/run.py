@@ -70,14 +70,19 @@ def interval(value: arb, digits: int = 25) -> dict[str, str]:
     return {"mid": value.mid().str(digits), "rad": value.rad().str(5), "arb": value.str(digits, radius=True)}
 
 
-def upper(value: arb) -> Fraction:
-    m, e = (value.mid() + value.rad()).man_exp()
+def _exact(value: arb) -> Fraction:
+    m, e = value.man_exp()
     return Fraction(int(m)) * Fraction(2) ** int(e)
+
+
+def upper(value: arb) -> Fraction:
+    """Exact rational upper endpoint of a ball."""
+    return _exact(value.upper())
 
 
 def lower(value: arb) -> Fraction:
-    m, e = (value.mid() - value.rad()).man_exp()
-    return Fraction(int(m)) * Fraction(2) ** int(e)
+    """Exact rational lower endpoint of a ball."""
+    return _exact(value.lower())
 
 
 def q_direct(points: list[acb], mult: list[int], kernel: Kernel) -> arb:
