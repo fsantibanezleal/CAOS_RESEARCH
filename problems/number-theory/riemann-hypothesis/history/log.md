@@ -1,5 +1,19 @@
 # Riemann hypothesis history
 
+## 2026-09-28: EXP-011 confirmed, EXP-012 declared
+
+A structured test refuted the RH-034 candidate: six real triples around one
+near-real conjugate pair violate `Q>=2N+3O-4S` for the Montgomery-Taylor
+window. EXP-011 was declared (`9886f07`, Prediction C amended before
+implementation in `136b40f`) and confirmed with Arb at 128 bits: slack
+`-0.0582180002168...` for that configuration, and `(Q-2N)/O=2.35886369543...`
+for a 10001-cell lattice, so no linear refinement with `beta>=2.365` holds for
+this window, and with the EXP-010 detectors such refinements cannot reach
+`theta=0.532`. The independent audit's first run failed a check because of an
+inaccurate unsubdivided quadrature at large `|xi|` (kept); the corrected run
+passed. EXP-012 was declared with a fixed proof plan for a short-window moment
+with `nu<(2/3)(2theta-1)` through Tang-Khan reciprocity.
+
 ## 2026-09-27: route preflights RH-028 to RH-037
 
 Every route in the post-review plan was worked with exploratory,

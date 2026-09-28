@@ -201,12 +201,12 @@ Retained focus: `RH-F4`, the short-interval simple-critical onset and density
 | done | RH-032 Cohn-Elkies | Closed: no unconditional sign beyond the support |
 | done | RH-035 below 1/2 | Closed: needs an explicit odd density of 8% to 36% |
 | done | RH-036 Zhu replay | Closed: `2.047e-17` inside Zhu's window, no proportion channel |
-| next | RH-027 target A' | Declaration candidate: `nu<(2/3)(2theta-1)`, onset about 0.5307 |
-| next | RH-034 inequality (L) | Declaration candidate: `Q>=2N+3O-4S` for the Montgomery-Taylor window, onset about 0.5296 |
+| done | RH-034 / EXP-011 | Confirmed barrier: (L) false for the Montgomery-Taylor window; `beta<=2.3589`; linear refinements capped near 0.5324 |
+| in flight | RH-027 / EXP-012 | Declared: `nu<(2/3)(2theta-1)` via Tang-Khan reciprocity, onset about 0.5307 (scratch) |
 | then | RH-026 | Serialized release with replay v9 |
 
 Details: [route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md).
-Combined, A' and (L) would give an onset near 0.5262 (scratch).
+EXP-011 removed (L); the remaining lever is the mollifier range (EXP-012).
 
 Every route reproduces a known value before any new number is trusted. Each
 new experiment still needs its own declaration and methodology 12 preflight.

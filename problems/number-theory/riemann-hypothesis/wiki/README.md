@@ -19,6 +19,12 @@ arXiv:2609.07918v1 pair theorem. See the
 [verdict](../experiments/EXP-010-levinson-parity-transfer/verdict.md), and the
 [published preprint](https://doi.org/10.5281/zenodo.22984155). RH remains open.
 
+[MV] EXP-011 shows that this onset cannot be lowered much by sharpening the
+finite inequality: for the Montgomery-Taylor window no linear refinement
+`Q>=2N+beta O-gamma S` of the EXP-006 product with `beta>=2.365` holds
+(certified counterexamples). See the
+[linear-refinement chapter](14-linear-refinement-barrier.md).
+
 [D+MV] EXP-009 proves the sharp auxiliary inequality
 
 $$

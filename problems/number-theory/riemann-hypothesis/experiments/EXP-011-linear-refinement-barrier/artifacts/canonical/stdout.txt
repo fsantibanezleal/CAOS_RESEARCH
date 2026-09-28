@@ -1,0 +1,22 @@
+[    0.02s] stage 1/6: bind sources
+[    0.02s] stage 2/6: Prediction A (C1)
+[    0.02s]   Q(C1) = [57.941781999783195766 +/- 4.71e-19]; slack = [-0.0582180002168042 +/- 3.36e-17]; pass=True
+[    0.02s] stage 3/6: Prediction B (C2 lattice)
+[    2.61s]     cell row 1/11 done
+[    5.10s]     cell row 2/11 done
+[    7.53s]     cell row 3/11 done
+[   10.15s]     cell row 4/11 done
+[   12.74s]     cell row 5/11 done
+[   15.32s]     cell row 6/11 done
+[   17.81s]     cell row 7/11 done
+[   20.16s]     cell row 8/11 done
+[   22.77s]     cell row 9/11 done
+[   25.32s]     cell row 10/11 done
+[   27.90s]     cell row 11/11 done
+[   27.90s]   O = 10001, N = 130013; (Q-2N)/O = [2.35886369542621 +/- 2.54e-15]; pass=True
+[   27.90s] stage 4/6: Prediction C (onset cap with the EXP-010 detectors)
+[   27.90s]   nu=199/10000: h_beta(0.532) = [-0.00560725714774 +/- 1.43e-15]
+[   27.90s]   nu=299/10000: h_beta(0.532) = [-0.00136485517918 +/- 3.45e-17]
+[   27.90s] stage 5/6: Control D
+[   42.41s]   product slack C1 = [11.18494800 +/- 3.04e-9], C2 = [230682564.1 +/- 4.72e-3]; formula vs direct at M=50 overlap=True
+[   42.41s] stage 6/6: write canonical result

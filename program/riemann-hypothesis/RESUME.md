@@ -67,15 +67,16 @@ shifts and `nu<3/8`; `(3theta-1)/4` is inferred. Active focus `RH-F4`.
    information), and the route preflights RH-028, RH-032, RH-033, RH-035,
    RH-036 (all closed with recorded reasons), RH-037 (records hygiene); see
    [route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md).
-2. Declaration candidate RH-027 target A': a short-window moment for
-   `nu<(2/3)(2theta-1)` from Tang-Khan reciprocity with a trivial bound on the
-   dual moments (scratch onset about 0.5307).
-3. Declaration candidate RH-034: the finite inequality `Q>=2N+3O-4S` for the
-   Montgomery-Taylor window, which survives all stress tests and fails for
-   edge-concentrated windows (scratch onset about 0.5296 with the proved range).
+2. EXP-011 is confirmed (2026-09-28): the linear candidate `Q>=2N+3O-4S` is
+   false for the Montgomery-Taylor window and no linear refinement with
+   `beta>=2.365` holds, so this route is closed
+   ([verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/verdict.md)).
+3. EXP-012 is in flight: a short-window moment for `nu<(2/3)(2theta-1)`
+   through Tang-Khan reciprocity, with the proof plan fixed in its
+   [declaration](../../problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/hypothesis.md).
 4. RH-026 replay v9 and release. RH-021 remains an integrity task.
 
-No experiment is declared. EXP-011 needs its own declaration and preflight.
+EXP-012 is the experiment in flight; its first step is the general-twist version of Tang's Theorem 1.
 
 ## 6. Where everything lives
 

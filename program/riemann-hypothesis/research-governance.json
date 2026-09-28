@@ -111,9 +111,10 @@
       ],
       "novelty_status": "2026-09-27 sweep and RH-030 full-text verification found no external onset below 0.534.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "Two declaration candidates after the 2026-09-27 route preflights: RH-027 target A' (short-window moment for nu<(2/3)(2theta-1) via Tang-Khan reciprocity with a trivial dual bound) and RH-034 (the finite inequality Q>=2N+3O-4S for the Montgomery-Taylor window). Each needs a referenced proof plan before its EXP declaration.",
+      "first_bounded_action": "EXP-012 (declared 2026-09-28): short-window moment for nu<(2/3)(2theta-1) via Tang-Khan reciprocity with a trivial dual bound, proof plan fixed in the declaration. EXP-011 closed the linear-refinement route (beta<=2.3589 for the Montgomery-Taylor window).",
       "evidence": [
-        "EXP-010"
+        "EXP-010",
+        "EXP-011"
       ]
     },
     {
@@ -194,6 +195,12 @@
       "manuscripts": [
         "short-interval-levinson"
       ]
+    },
+    {
+      "start": 11,
+      "end": 11,
+      "classification": "research-record",
+      "manuscripts": []
     }
   ]
 }

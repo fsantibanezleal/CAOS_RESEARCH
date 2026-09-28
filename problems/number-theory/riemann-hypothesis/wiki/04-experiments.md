@@ -465,3 +465,19 @@ auditor never forms the exact moment reduction; it integrates the original
 integrand by validated quadrature from the Chebyshev generators. The controls
 check the counting lemma on zeta windows at three heights and on test
 functions with planted double and triple zeros.
+
+## EXP-011: linear-refinement barrier
+
+The [eleventh verdict](../experiments/EXP-011-linear-refinement-barrier/verdict.md)
+is confirmed. For the Montgomery-Taylor window, six real triples around one
+conjugate pair violate `Q>=2N+3O-4S` by `0.0582`, and a 10001-cell lattice has
+`(Q-2N)/O=2.3589`, so no linear refinement of the EXP-006 product with
+`beta>=2.365` holds. Replay:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/run.py --output-dir tmp/riemann-exp011-replay
+```
+
+The audit recomputes the counterexample with a quadrature-evaluated kernel and
+the lattice with an independent float64 sum. Chapter:
+[linear-refinement barrier](14-linear-refinement-barrier.md).
