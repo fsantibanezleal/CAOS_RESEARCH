@@ -1,12 +1,14 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-27. Latest completed public application release:
-**0.73.000**, live-verified from main commit
+Updated: 2026-09-28. Latest public application release: **0.74.000**
+(replay v9, EXP-010 to EXP-012 in the workbench), promoted to main commit
+`a464bdb52d88ed22582668d9c94ebbe25262b5b4`; live bytes match the exact-main build
+([record](release-0.74.000/live-verification.json)). Previous: 0.73.000 from
 `e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-010 is confirmed on its work
 branch after two referee passes, merged to `develop` and promoted to `main`; its
 manuscript `short-interval-levinson` v0.01 is published at
 [10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155). The public
-workbench does not yet show it.
+workbench shows it since release 0.74.000.
 
 The Riemann hypothesis remains open.
 

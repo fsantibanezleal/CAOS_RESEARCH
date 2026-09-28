@@ -11,7 +11,7 @@ fixed `theta` in `[0.534,1)` (previous onset `0.5458838`), and about 1000 times
 the EXP-008 density at `theta=0.5459`. Its manuscript
 `manuscripts/riemann-hypothesis/short-interval-levinson/` v0.01 is published at
 [10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155), byte-verified,
-and EXP-010 is promoted to `develop` and `main`. Release 0.73.000 (EXP-009) is the latest
+and EXP-010 is promoted to `develop` and `main`. Release 0.74.000 (replay v9: EXP-010 to EXP-012) is the latest
 live release. General RH remains open.
 
 ## 2. The objects table
