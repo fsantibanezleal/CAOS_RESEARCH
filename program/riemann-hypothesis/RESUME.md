@@ -71,12 +71,14 @@ shifts and `nu<3/8`; `(3theta-1)/4` is inferred. Active focus `RH-F4`.
    false for the Montgomery-Taylor window and no linear refinement with
    `beta>=2.365` holds, so this route is closed
    ([verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/verdict.md)).
-3. EXP-012 is in flight: a short-window moment for `nu<(2/3)(2theta-1)`
-   through Tang-Khan reciprocity, with the proof plan fixed in its
-   [declaration](../../problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/hypothesis.md).
+3. EXP-012 is inconclusive (2026-09-28): Tang's dual moment is about
+   `sqrt(h)sqrt(T)` per pair, so the planned trivial bound gives only
+   `nu<(2/3)(theta-1/2)` and a large-sieve sketch gives `theta-1/2`
+   ([verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/verdict.md)).
+   Next: RH-038, an asymptotic evaluation of that dual family.
 4. RH-026 replay v9 and release. RH-021 remains an integrity task.
 
-EXP-012 is the experiment in flight; its first step is the general-twist version of Tang's Theorem 1.
+No experiment is in flight. RH-038 is the next research action.
 
 ## 6. Where everything lives
 

@@ -481,3 +481,13 @@ python problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refi
 The audit recomputes the counterexample with a quadrature-evaluated kernel and
 the lattice with an independent float64 sum. Chapter:
 [linear-refinement barrier](14-linear-refinement-barrier.md).
+
+## EXP-012: Tang-type short-window moment (stopped)
+
+The [twelfth verdict](../experiments/EXP-012-tang-short-window-moment/verdict.md)
+is inconclusive. Tang's short-window reciprocity trades the off-diagonal for a
+dual moment of Dirichlet `L`-functions whose weight has size `H/sqrt(T)`; the
+dual moment is about `sqrt(h)sqrt(T)` per twist pair, so trivial and
+large-sieve bounds give at best EXP-010's range `nu<theta-1/2`. A longer
+admissible mollifier needs an asymptotic evaluation of the dual family.
+

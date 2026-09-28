@@ -379,3 +379,15 @@ RH-034 as stated is refuted. It is not declared as an experiment. The
 remaining question is the best constant `beta*` in `Q>=2N+beta* O` for `S=0`;
 any `beta*>2` would still improve the product near the onset. The follow-up
 search is [`rh034_beta_search.py`](2026-09-27-preflights/rh034_beta_search.py).
+
+### Erratum to RH-027 (2026-09-28, EXP-012)
+
+The heuristic "dual moments bounded trivially: per pair about
+`sqrt(h)(T/H)log T`" used the wrong size for Tang's weight. EXP-012 checked
+`|G_{T,H}(1/2+it)|=(H/sqrt T)sqrt(1/2)` on `|t|<<T/H`, so the dual moment is about
+`sqrt(h)sqrt(T)log T` per pair. The trivial bound then gives only
+`nu<(2/3)(theta-1/2)`, and a hybrid large-sieve sketch gives exactly
+`theta-1/2`. Target A' as stated is withdrawn; the value table above remains a
+correct price list for the ranges, but no located tool reaches them. See the
+[EXP-012 verdict](../experiments/EXP-012-tang-short-window-moment/verdict.md).
+

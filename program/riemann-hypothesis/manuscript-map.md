@@ -28,6 +28,7 @@ arXiv full text, so specialist confirmation is still required.
 | Sharp three-point kernel ratio | EXP-009 | ratio theorem internal; global proportion through Wang's framework | Wang arXiv:2609.24167 | `sharp-three-point-kernel` v0.01 |
 | Localized Levinson-Conrey detector, onset 0.534 | EXP-010 | internally proved, certified, two referee passes | Wang's pair theorem | `short-interval-levinson` v0.01 |
 | Linear-refinement barrier (certified counterexamples) | EXP-011 | confirmed, research record | none | no manuscript; recorded in the wiki and verdict |
+| Tang-type short-window moment (stopped) | EXP-012 | inconclusive, obstruction recorded | Tang arXiv:2608.14852 | no manuscript; research record |
 
 ## Published manuscripts
 
@@ -48,7 +49,7 @@ Current focus: **RH-F4**, the short-interval onset toward `theta>1/2`.
 - Focus RH-F5 (unconditional Cohn-Elkies kernels) was closed on 2026-09-27
   with its obstruction in the research record.
 - RH-034 was closed by EXP-011 (research record).
-- A proof of EXP-012 (a longer short-window mollifier) goes to the next version
+- A longer short-window mollifier (RH-038), if proved, goes to the next version
   of `short-interval-levinson`.
 - Closed route preflights (RH-028, RH-032, RH-033, RH-035, RH-036) are
   research records.

@@ -1,5 +1,15 @@
 # Riemann hypothesis history
 
+## 2026-09-28: EXP-012 stopped at step 3
+
+The step-3 value check of EXP-012 showed that Tang's dual weight has size
+`|G(1/2+it)|=(H/sqrt T)sqrt(1/2)` on `|t|<<T/H` (mpmath, three heights), so the
+dual moment is about `sqrt(h)sqrt(T)` per pair. The planned trivial bound then
+gives only `nu<(2/3)(theta-1/2)` and a hybrid large-sieve sketch gives exactly
+EXP-010's `theta-1/2`. The stop rule applied; the verdict is inconclusive and
+the preflight target A' is withdrawn. The remaining lever is an asymptotic
+evaluation of the dual family (RH-038).
+
 ## 2026-09-28: EXP-011 confirmed, EXP-012 declared
 
 A structured test refuted the RH-034 candidate: six real triples around one

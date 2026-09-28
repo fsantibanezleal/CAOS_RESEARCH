@@ -107,14 +107,16 @@
       "stop_conditions": [
         "RH-031 shows that no partial Steuding extension moves the onset.",
         "RH-027 hits a summed dual-moment main term (Tang-type) or an off-diagonal main term not uniform in the shifts (Steuding-type).",
-        "Three consecutive experiments fail to move the onset."
+        "Three consecutive experiments fail to move the onset.",
+        "RH-038 finds that the asymptotic large sieve does not extend to short t-ranges of length T/H with the needed moduli range."
       ],
       "novelty_status": "2026-09-27 sweep and RH-030 full-text verification found no external onset below 0.534.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "EXP-012 (declared 2026-09-28): short-window moment for nu<(2/3)(2theta-1) via Tang-Khan reciprocity with a trivial dual bound, proof plan fixed in the declaration. EXP-011 closed the linear-refinement route (beta<=2.3589 for the Montgomery-Taylor window).",
+      "first_bounded_action": "RH-038: locate or derive an asymptotic evaluation of the dual family sum_h a_h sum_{chi mod h} int G A_chi |L(1/2+it,chi)|^2 (Conrey-Iwaniec-Soundararajan asymptotic large sieve type) with a range beyond theta-1/2. EXP-011 closed linear refinements; EXP-012 showed the Tang route with trivial or large-sieve bounds reproduces only nu<theta-1/2.",
       "evidence": [
         "EXP-010",
-        "EXP-011"
+        "EXP-011",
+        "EXP-012"
       ]
     },
     {
@@ -199,6 +201,12 @@
     {
       "start": 11,
       "end": 11,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 12,
+      "end": 12,
       "classification": "research-record",
       "manuscripts": []
     }

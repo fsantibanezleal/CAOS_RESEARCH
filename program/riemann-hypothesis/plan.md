@@ -202,11 +202,12 @@ Retained focus: `RH-F4`, the short-interval simple-critical onset and density
 | done | RH-035 below 1/2 | Closed: needs an explicit odd density of 8% to 36% |
 | done | RH-036 Zhu replay | Closed: `2.047e-17` inside Zhu's window, no proportion channel |
 | done | RH-034 / EXP-011 | Confirmed barrier: (L) false for the Montgomery-Taylor window; `beta<=2.3589`; linear refinements capped near 0.5324 |
-| in flight | RH-027 / EXP-012 | Declared: `nu<(2/3)(2theta-1)` via Tang-Khan reciprocity, onset about 0.5307 (scratch) |
+| done | RH-027 / EXP-012 | Inconclusive: Tang's dual moment is about `sqrt(h)sqrt(T)`; standard bounds give at best `nu<theta-1/2` |
+| next | RH-038 | Asymptotic evaluation of the dual family (CIS-type), the only located way beyond `theta-1/2` |
 | then | RH-026 | Serialized release with replay v9 |
 
 Details: [route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md).
-EXP-011 removed (L); the remaining lever is the mollifier range (EXP-012).
+EXP-011 removed (L). EXP-012 showed that the mollifier range cannot be extended with trivial or large-sieve bounds on Tang's dual moment; RH-038 is the remaining lever.
 
 Every route reproduces a known value before any new number is trusted. Each
 new experiment still needs its own declaration and methodology 12 preflight.

@@ -67,3 +67,19 @@ def test_canonical_result_is_bound_and_accepted() -> None:
     assert result["C2"]["O"] == 10001 and result["C2"]["N"] == 130013
     audit = json.loads((EXPERIMENT / "artifacts" / "audit" / "audit.json").read_text(encoding="utf-8"))
     assert audit["accepted"] is True
+
+
+def test_exp012_weight_size_model() -> None:
+    mp = pytest.importorskip("mpmath")
+    spec = importlib.util.spec_from_file_location(
+        "riemann_exp012_weight",
+        ROOT / "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/weight_size.py",
+    )
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    mp.mp.dps = 20
+    big_t = mp.mpf(10) ** 8
+    h_value = big_t ** mp.mpf("0.6")
+    g = abs(module.weight(mp.mpf(0), big_t, h_value))
+    assert abs(g / (h_value / mp.sqrt(big_t) * mp.sqrt(mp.mpf(1) / 2)) - 1) < mp.mpf("0.01")
