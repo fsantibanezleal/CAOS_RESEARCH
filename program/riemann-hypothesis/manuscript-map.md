@@ -88,8 +88,9 @@ coherent paper, split or deposit is triggered by this result alone.
 ## Nine-point conditional transfer
 
 EXP-018 is a supporting research-record, with a full conditional proof and
-exact q=3997934614153/4775549550000. Its universal local premise remains
-unclosed: candidate metadata and replay-log binding disagree. A new paper
+exact q=3997934614153/4775549550000. Its formerly unclosed universal local premise is now implied by
+EXP-020's complete stronger same-pressure certificate; the earlier metadata
+discrepancy and suspended original execution remain preserved. A new paper
 or split is not triggered by conditional parameter substitution alone.
 RH-046 / issue #356 must close the local replay obligation before stronger
 claims or a coherent companion manuscript are considered. Existing three
@@ -111,3 +112,36 @@ EXP-024's exact Gaussian/compact-window reduction is classical supporting
 analytic material in RH-F4's research record. Its future manuscript home
 is short-interval-levinson after a coherent new signed moment theorem;
 the reduction alone does not trigger another paper or Zenodo version.
+
+## Completed distinct-zero companion, 2026-10-03
+
+## Completed distinct-zero results, 2026-10-03
+
+EXP-020 completed all 96 shards and every final check: the stronger local
+inequality gives 3997934614153/4775507750000=0.8371747724947154... for
+distinct strip points. EXP-025's reviewed vector-pressure application gives
+30945470743359/36955122080000=0.8373797460706156..., with Lavery's
+external universal local theorem explicitly attributed and not locally
+Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
+mixed-Gram argument remain dependencies.
+
+The focused companion `distinct-zero-gram` v0.01 is published and all three
+files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+[concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
+SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
+Issues #356/#358 close the local input obligation; #364 tracks publication
+and release. PR #363 remains draft and unmerged. No new live application
+release or private main promotion is claimed yet.
+
+EXP-023 remains 95/96 under its owned supervisor through the deadline
+2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is
+unproved and not in the published theorem. EXP-019 remains suspended.
+RH is open; the short-window onset stays 0.534. Worldwide priority and peer
+acceptance are unconfirmed. RH-F4 remains the active analytic focus.
+
+EXP-020 and EXP-025 have companion-manuscript disposition in
+`distinct-zero-gram` v0.01. EXP-022 remains supporting research-record;
+EXP-023 remains incomplete. Internal correctness and primary-source overlap
+review pass with explicit dependencies. Worldwide priority and peer review
+remain unconfirmed. No additional split is warranted.

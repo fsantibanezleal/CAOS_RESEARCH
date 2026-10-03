@@ -223,7 +223,7 @@
     {
       "id": "RH-F10",
       "title": "Packet-bound nine-point local replay",
-      "status": "admitted-bounded",
+      "status": "closed",
       "priority": 10,
       "target": "Prove the universal eight-gap pressure inequality for the exact EXP-018 input packet by a complete independently bound interval cover.",
       "value": "Close the local computational premise needed for the larger distinct-strip consequence; partial or operational completion is insufficient.",
@@ -238,12 +238,13 @@
       "evidence": [
         "EXP-018",
         "EXP-019"
-      ]
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
     },
     {
       "id": "RH-F11",
       "title": "Second-order local certificate improvement",
-      "status": "admitted-bounded",
+      "status": "closed",
       "priority": 11,
       "target": "Prove a stronger nine-point universal local inequality at delta=3051/500000 using a certified Hessian quadratic bound.",
       "value": "Strengthen the local input itself and reduce exhaustive proof cost, rather than only tune block parameters.",
@@ -260,7 +261,8 @@
         "EXP-018",
         "EXP-019",
         "EXP-020"
-      ]
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
     },
     {
       "id": "RH-F12",
@@ -305,7 +307,7 @@
     {
       "id": "RH-F14",
       "title": "Attributed vector-pressure distinct-strip lift",
-      "status": "admitted-bounded",
+      "status": "closed",
       "priority": 14,
       "target": "Prove one distinct-strip consequence from the newly published thirteen-term-window seven-point certificate with unequal gap pressures.",
       "value": "A source-bound improvement exceeding the completed distinct-strip value by 1/10000 could close a relevant global consequence independently of partial nine-point covers.",
@@ -321,7 +323,8 @@
       "first_bounded_action": "EXP-025 hypothesis pushed as 1a8b9f63 before implementation; one fixed m=742 transfer with native window and exact controls.",
       "evidence": [
         "EXP-025"
-      ]
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
     }
   ],
   "manuscripts": [
@@ -351,6 +354,15 @@
       "concept_doi": "10.5281/zenodo.22984154",
       "status": "published",
       "split_action": "none"
+    },
+    {
+      "slug": "distinct-zero-gram",
+      "path": "manuscripts/riemann-hypothesis/distinct-zero-gram",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.23128663",
+      "concept_doi": "10.5281/zenodo.23128662",
+      "status": "published",
+      "split_action": "focused global distinct-zero companion; earlier papers immutable"
     }
   ],
   "experiment_dispositions": [
@@ -429,8 +441,10 @@
     {
       "start": 20,
       "end": 20,
-      "classification": "research-record",
-      "manuscripts": []
+      "classification": "companion-manuscript",
+      "manuscripts": [
+        "distinct-zero-gram"
+      ]
     },
     {
       "start": 21,
@@ -447,8 +461,10 @@
     {
       "start": 25,
       "end": 25,
-      "classification": "research-record",
-      "manuscripts": []
+      "classification": "companion-manuscript",
+      "manuscripts": [
+        "distinct-zero-gram"
+      ]
     }
   ]
 }

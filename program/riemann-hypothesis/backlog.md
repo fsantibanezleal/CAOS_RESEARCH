@@ -93,7 +93,7 @@ value-of-information check.
 
 | RH-045 | Source-conditioned nine-point distinct-strip transfer | done; EXP-018 confirmed conditional; issue #355 | P1 |
 
-| RH-046 | Bind and independently replay the nine-point universal local certificate, then reassess a focused manuscript | open; issue #356; EXP-018 remains conditional | P1 |
+| RH-046 | Bind and independently replay the nine-point universal local certificate, then reassess a focused manuscript | closed by stronger EXP-020; issues #356/#358; EXP-019 execution suspended | P1 |
 
 RH-042 also covers EXP-017/018; live replay v9 still contains twelve experiments.
 
@@ -129,3 +129,7 @@ records the withdrawn January lead and the support-graph/Fourier-concentration
 requirements for two alternative estimates. No direct theorem import is
 admitted. RH-048 still requires the complete 96-shard audit, actual-output
 corruption controls, exact transfer and extracted reproducibility archive.
+
+RH-042 includes completed EXP-020 and derived EXP-025. Publication is complete at
+10.5281/zenodo.23128663; PR #363 integration and serialized workbench release
+remain pending. Issue #364 tracks these delivery obligations.

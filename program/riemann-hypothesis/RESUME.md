@@ -1,5 +1,46 @@
 # Riemann hypothesis handoff
 
+## Current continuation priority, 2026-10-03
+
+This block supersedes historical pending states below. EXP-020 and EXP-025
+are mathematically closed and their companion is published. Read
+`state.md`, `distinct-zero-manuscript-admission.md` and the experiment verdicts.
+
+- EXP-020: all 96 shards; complete cover, 12 actual-output corruption controls,
+  all 61,029-cell native input comparisons and exact-byte extracted replay
+  pass. Exact distinct-strip bound `3997934614153/4775507750000`.
+- EXP-025: internally reviewed general vector-pressure implication and exact
+  stronger fraction `30945470743359/36955122080000`. Its universal local
+  theorem is Lavery's attributed external source; the reported formal check
+  was not locally rebuilt. Both window/arithmetic paths pass.
+- `distinct-zero-gram` v0.01: DOI `10.5281/zenodo.23128663`, concept
+  `10.5281/zenodo.23128662`. PDF and both ZIPs published; public downloads
+  exactly match. Native editor compilation unavailable; exported MiKTeX,
+  voice/reference/layout and all nine rendered-page checks pass.
+- Issues #356/#358 close the local input obligation. Issue #364 tracks
+  publication/release; PR #363 remains draft and unmerged. Finish updated
+  handoff/mirrors, fresh scoped tests/CI, PR integration and the authorized
+  serialized release. No new deployed workbench is claimed yet.
+- EXP-023 still 95/96. Supervisor session 37164, owned root PID 49576,
+  start ticks 639266572920797116, deadline 2026-10-04 02:48:12 UTC.
+  Output `E:/_Datos/caos-research/riemann-hypothesis/exp023-partitioned-local-20261003`.
+  Do not modify frozen runtime, reconfigure this sparse checkout, or infer
+  an ETA from its pending-stack size. The source-bound native input audit
+  passed all 52,240 cells; complete-cover/controls/archive gates still await
+  all 96 reports. Its proposed 0.8373855610599298... is unproved.
+- EXP-019 remains suspended with protected 33-checkpoint backup. EXP-020's
+  stronger same-pressure result implies its weaker mathematical premise;
+  no completion of the original traversal is asserted.
+- Completed EXP-020 runtime ZIP is externally preserved and publicly hosted,
+  SHA256 `91be4798774837bc16007a8236a692078e825ffb1c8dfa476c05d3c733b17879`.
+  Its directory is `E:/_Datos/caos-research/riemann-hypothesis/exp020-quadratic-local-20261003`.
+
+RH remains open, short-window onset stays 0.534, RH-F4 remains the active
+analytic focus. Continue signed moment estimates without mistaking classical
+support for an onset theorem. Earlier publications stay immutable; any
+stronger fully verified EXP-023 consequence would require a new companion
+version, not changing v0.01 bytes.
+
 ## 1. State in one screen
 
 Updated 2026-10-03. Read [state.md](state.md), [backlog.md](backlog.md), and
