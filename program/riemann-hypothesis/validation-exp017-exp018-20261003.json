@@ -1,0 +1,39 @@
+{
+  "artifact_hashes": {
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-017-sharp-energy-envelope/artifacts/audit/report.json": "63107165e85d9d2d5b447a6df52a29a7a110b194c208bf188c4ccf05b7edef33",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-017-sharp-energy-envelope/artifacts/canonical/result.json": "251bdaf44b801ada34bda7c75458a62be5607b59aded5e1c4a2a6721051d3129",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-018-nine-point-distinct-transfer/artifacts/audit/report.json": "059a9178ee387967875820d06f5c92e4592ef1e53af61468e1cd865ee669b445",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-018-nine-point-distinct-transfer/artifacts/canonical/result.json": "1b1dd242ae161a9d1b4cf9e350cd22954eace82fd31fa8f4ea7319642dcea076"
+  },
+  "ci_note": "Trunk CI runs lint, artifacts and guards; it does not run these mathematical pytest files. Local pytest evidence is separate.",
+  "claim_boundary": "EXP-017 scaled prior-art envelope with small seven-point source-based gain; EXP-018 conditional nine-point transfer, no universal local replay performed.",
+  "date": "2026-10-03",
+  "declaration_commits": {
+    "EXP-017": "416bad0d",
+    "EXP-018": "a1bf2178"
+  },
+  "guards": [
+    "research_structure",
+    "research_governance",
+    "content_standards",
+    "template_residue",
+    "ci_budget",
+    "manuscript_voice",
+    "artifact_contract"
+  ],
+  "issues": {
+    "EXP-017": 354,
+    "EXP-018": 355,
+    "local_replay_obligation": 356
+  },
+  "local_tests": {
+    "affected_tests": 66,
+    "after_manifest_LF_normalization_new_tests": 35,
+    "all_riemann_files": "passed",
+    "new_tests": 35
+  },
+  "publication": "No new manuscript or Zenodo version; conditional premise and value gate remain open.",
+  "release": "Research-only task to develop; global UI replay v9/0.74.000 unchanged.",
+  "schema": "riemann-validation-exp017-exp018-v1",
+  "source_cache_files_verified": 15
+}

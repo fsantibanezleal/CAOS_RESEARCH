@@ -471,3 +471,14 @@ uniform sharp proof, independent quadratic minorant, exact candidate and
 50 focused tests pass. Formula prior art was located and explicitly
 attributed before closure. Bound 0.83699292567522... is a small attributed
 distinct-strip improvement; no onset/RH/new-manuscript claim. RH-F8 closes.
+
+## 2026-10-03: EXP-018 conditional nine-point transfer
+
+Declared/pushed a1bf2178 before arithmetic, licensed packet pinned by
+45fca5a2, issue #355. Conditional uniform counting proof, independent
+audit, capacities, exact candidate and 66 affected tests pass. The result
+is 3997934614153/4775549550000=0.83716744477146... under explicit local
+and analytic premises. The upstream stale pending flag and absent packet
+hash in the replay log are retained. RH-F9 closes; RH-046 / issue #356
+owns independent packet-bound replay and manuscript reassessment. No
+unconditional input upgrade, onset/RH claim or public release is made.

@@ -244,3 +244,8 @@ and live replay remain unchanged.
 [Full-energy clipping](18-sharp-energy-envelope.md) records EXP-017 and
 its prior-art attribution. The latest supporting distinct-strip bound is
 0.83699292567522...; the short-window onset remains unchanged.
+
+[Nine-point distinct-strip transfer](19-nine-point-distinct-transfer.md)
+records EXP-018's conditional 0.83716744477146... target and the unclosed
+local replay obligation. It is kept separate from EXP-017's source-based
+bound; issue #356 tracks the certificate and manuscript reassessment.

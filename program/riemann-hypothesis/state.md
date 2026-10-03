@@ -163,3 +163,14 @@ with the tau=1 formula attributed to upstream prior work. The exact
 source-based distinct-strip candidate improves to 0.83699292567522... .
 RH-F8 closes as supporting research-record; no onset/manuscript/release
 change. Issue #354 tracks validation and promotion.
+
+## Nine-point conditional follow-up
+
+EXP-018 gives the independently checked conditional implication
+Nd/N >= 3997934614153/4775549550000 = 0.83716744477146... from the
+explicit pinned nine-point local inequality and source energy premise.
+The local input has a candidate/log provenance discrepancy; it has not
+been independently replayed here. Keep this separate from EXP-017's
+seven-point attributed bound. RH-F9 closes, RH-046 / issue #356 remains
+open for packet-bound replay and a later manuscript decision. No global
+release, onset change, new manuscript or Zenodo version is claimed.

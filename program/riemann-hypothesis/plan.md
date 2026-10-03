@@ -293,3 +293,10 @@ Read the pinned nine-point packet before any larger-input transfer.
 RH-F9 tests one nine-point conditional transfer (EXP-018, issue #355).
 The source candidate/log discrepancy remains an explicit local-premise
 obligation. No full replay or manuscript publication is inferred from it.
+
+RH-F9 is closed by EXP-018. The larger conditional target is 0.83716744477...
+for distinct zeros in the strip. Before a claim upgrade, RH-046 / issue
+#356 requires packet-bound replay with progress/checkpoints and a declared
+cost. Never infer it from the kernel-table hashes or finite samples.
+Manuscript reassessment follows closure of that input obligation. RH-F4
+and the signed composite-twist target RH-038 remain the analytic priority.

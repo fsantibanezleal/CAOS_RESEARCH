@@ -91,4 +91,8 @@ value-of-information check.
 
 | RH-044 | Sharp retained-energy envelope and pressure transfer | done; EXP-017 confirmed; issue #354; RH-F8 closed | P1 |
 
-| RH-045 | Source-conditioned nine-point distinct-strip transfer | declared EXP-018; issue #355 | P1 |
+| RH-045 | Source-conditioned nine-point distinct-strip transfer | done; EXP-018 confirmed conditional; issue #355 | P1 |
+
+| RH-046 | Bind and independently replay the nine-point universal local certificate, then reassess a focused manuscript | open; issue #356; EXP-018 remains conditional | P1 |
+
+RH-042 also covers EXP-017/018; live replay v9 still contains twelve experiments.

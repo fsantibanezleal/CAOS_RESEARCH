@@ -202,7 +202,7 @@
     {
       "id": "RH-F9",
       "title": "Nine-point conditional distinct-strip transfer",
-      "status": "admitted-bounded",
+      "status": "closed",
       "priority": 9,
       "target": "Extend the mixed-Gram counting transfer to a pinned r-gap certificate and check a nine-point candidate with explicit premises.",
       "value": "A larger local certificate can yield a materially larger distinct-strip consequence; exact capacity and provenance checks separate arithmetic from unverified input claims.",
@@ -214,8 +214,10 @@
       ],
       "novelty_status": "Source-based extension; no worldwide priority or accepted unconditional theorem claimed.",
       "manuscript_route": "Research-record while universal local input lacks independent replay binding; a coherent verified improvement with this obligation closed would trigger a focused companion paper.",
-      "first_bounded_action": "EXP-018 declared; fixed candidate only; issue #355.",
-      "evidence": []
+      "first_bounded_action": "Completed conditional counting proof and exact candidate; RH-046/issue #356 retains the universal local input obligation.",
+      "evidence": [
+        "EXP-018"
+      ]
     }
   ],
   "manuscripts": [
@@ -305,6 +307,12 @@
     {
       "start": 17,
       "end": 17,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 18,
+      "end": 18,
       "classification": "research-record",
       "manuscripts": []
     }
