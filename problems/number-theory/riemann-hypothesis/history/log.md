@@ -587,3 +587,13 @@ to K0*n/H0 by checking the exact EXP-024 identity before use. Its double
 functional-equation discussion retains the cancellation of one existing
 Gauss factor, so an additional Kloosterman sum is not presumed to appear.
 No experiment or theorem had used the reversed ratio.
+
+## 2026-10-03: native table pilot retained as inconclusive
+
+The direct-interval native hypergeometric pilot did not establish cell zero
+within its eight-level subdivision limit. Exact-point formulas agree with
+the archived kernel; interval width prevents the comparisons. Both original
+source and receipt are preserved. A second, separately declared midpoint
+Taylor audit uses global Fourier derivative bounds without window positivity.
+Its pilot must pass before any full-table admission. At 22:20 UTC EXP-023
+remains 95/96 and EXP-020 is 94/96. No complete new certificate is claimed.
