@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "accessed": "2026-10-03",
+  "description": "Analytic input recheck for EXP-019/020 distinct-strip transfer; prior manifests immutable",
+  "documents": [
+    {
+      "filename": "bgstb-2306.04799v1.pdf",
+      "source_url": "https://arxiv.org/pdf/2306.04799v1",
+      "sha256": "133071c4d85c875fe9b1a7d4001f22d7174270ab8f1fa8e6cee6178d20276ee9",
+      "bytes": 210602,
+      "version": "2306.04799v1",
+      "retrieved_on": "2026-10-03",
+      "cache_path": "source-cache/2026-10-03/analytic-recheck/bgstb-2306.04799v1.pdf",
+      "tracked_fulltext": false,
+      "license": {
+        "status": "arxiv nonexclusive distribution; not a general redistribution grant",
+        "redistribution_basis": "local research archive only"
+      }
+    },
+    {
+      "filename": "bgstb-2306.04799v1.tar",
+      "source_url": "https://arxiv.org/src/2306.04799v1",
+      "sha256": "6ed758704d6f1735f31953d698b6ed8b00c4e13b1fa0b54015aa1d5ad45c49ef",
+      "bytes": 15848,
+      "version": "2306.04799v1",
+      "retrieved_on": "2026-10-03",
+      "cache_path": "source-cache/2026-10-03/analytic-recheck/bgstb-2306.04799v1.tar",
+      "tracked_fulltext": false,
+      "license": {
+        "status": "arxiv nonexclusive distribution; not a general redistribution grant",
+        "redistribution_basis": "local research archive only"
+      }
+    },
+    {
+      "filename": "bgstb-correction-2501.14545v3.pdf",
+      "source_url": "https://arxiv.org/pdf/2501.14545v3",
+      "sha256": "0a16b0b0f19b06490111e048a6841f4fe68717c546fae4cb7a44555dc0f96cb3",
+      "bytes": 376884,
+      "version": "2501.14545v3",
+      "retrieved_on": "2026-10-03",
+      "cache_path": "source-cache/2026-10-03/analytic-recheck/bgstb-correction-2501.14545v3.pdf",
+      "tracked_fulltext": false,
+      "license": {
+        "status": "arxiv nonexclusive distribution; not a general redistribution grant",
+        "redistribution_basis": "local research archive only"
+      }
+    },
+    {
+      "filename": "bgstb-correction-2501.14545v3.tar",
+      "source_url": "https://arxiv.org/src/2501.14545v3",
+      "sha256": "ee67b4c735434db6867f9753d6ead4d99b0f09b294e0327a37faf5094f412ed7",
+      "bytes": 16995,
+      "version": "2501.14545v3",
+      "retrieved_on": "2026-10-03",
+      "cache_path": "source-cache/2026-10-03/analytic-recheck/bgstb-correction-2501.14545v3.tar",
+      "tracked_fulltext": false,
+      "license": {
+        "status": "arxiv nonexclusive distribution; not a general redistribution grant",
+        "redistribution_basis": "local research archive only"
+      }
+    }
+  ],
+  "repositories": []
+}
