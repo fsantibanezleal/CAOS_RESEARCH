@@ -518,3 +518,27 @@ bound to 0.83699291672944... with the same attributed source inputs.
 Its runner/auditor use --output-dir and --artifact/--output respectively.
 Run `python -m pytest -q tests/test_riemann_trace_clipping.py` for the
 11 equality, missing-premise, corruption and byte-replay controls.
+
+## EXP-017--024: stronger transfers, full covers and signed representation
+
+[EXP-017](../experiments/EXP-017-sharp-energy-envelope/verdict.md) gives
+the attributed distinct-strip bound 0.83699292567522..., with its scaled
+prior-art attribution. [EXP-018](../experiments/EXP-018-nine-point-distinct-transfer/verdict.md)
+is a conditional larger transfer whose local input remains unclosed.
+EXP-019's source-identical cover is suspended with validated snapshots;
+EXP-020's stronger-target cover remains in progress. Partial coverage is
+not a universal local inequality.
+
+[EXP-021](../experiments/EXP-021-composite-character-layer/verdict.md)
+confirms the classical arithmetic layer and its exact controls.
+[EXP-022](../experiments/EXP-022-pressure-duality-audit/verdict.md)
+proves a ceiling for this fixed pressure assembly, not the true zero
+proportion. EXP-023's separately bound changed-pressure full cover is
+still incomplete. Its cost reviews and ownership controls are operational
+evidence; no new zero-bound verdict is inferred.
+
+[EXP-024](../experiments/EXP-024-gaussian-mellin-reduction/verdict.md)
+closes the representation step in the scope described in the
+[dual-moment chapter](15-dual-moment-range.md). Its signed main estimate
+remains open. None of these finite controls proves RH or external peer
+acceptance. The handoff records live bindings and current coverage.

@@ -529,3 +529,18 @@ eight heat-multiplier identities and a full enclosed zeta-moment/residue
 negative control pass. API/lint history and initial source are retained.
 The signed main arithmetic sum is still open, with no new moment range,
 onset, proportion, priority, manuscript or research stopping claim.
+
+## 2026-10-03: EXP-023 revised full cover and automatic budget
+
+The revised pilot stopped incompletely at 20:33:47 UTC after 25m45s;
+its 345-second overrun, validated snapshot and cost review are retained.
+Commit 295ee71c preceded the four-worker full-cover resume at 20:48:12 UTC.
+Its separately bound operational supervisor has a six-hour budget and
+passes real process-ownership, unrelated-sentinel and fast-exit controls.
+Two orchestration setup failures remain in the history. Frozen proof
+sources are unchanged. At 20:50 UTC 94 of 96 shards are complete; there
+is no universal-certificate verdict or new zero proportion yet.
+Scoped collection finds 258 Riemann tests after the previously passing
+full Riemann suite and three passing new supervisor controls. Attempted
+all-problem collection exposed unrelated missing dependencies and is not
+used as validation of this scoped session.

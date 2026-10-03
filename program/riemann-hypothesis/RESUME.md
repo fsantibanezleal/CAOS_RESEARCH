@@ -112,6 +112,25 @@ shard-0 pilot, launched about 20:08:02 UTC with the same twenty-minute
 budget. External state: `exp023-partitioned-local-20261003`; session 98159.
 Keep both earlier pilot backups and all runtime-bound source frozen.
 
+The revised pilot was stopped at 20:33:47 UTC after a validated backup:
+1912832 nodes, depth 56, nine pending boxes, incomplete. Its 345-second
+budget overrun and the subsequent six-hour full-cover cost review are
+persisted. Commit 295ee71c includes an independent operational budget
+supervisor, with three passing controls including a real owned process
+tree and preservation of an unrelated sentinel. Both orchestration setup
+failures are retained. The mathematical verifier source was not changed.
+The full cover resumed at 20:48:12 UTC, four workers, same binding and
+`exp023-partitioned-local-20261003`; supervisor session 37164, root PID 49576.
+The actual six-hour deadline is 2026-10-04 02:48:12 UTC. Its external
+full-cover-budget-receipt.json records ownership, command and source hashes.
+At 20:50 UTC 94/96 shards were complete; coverage remains incomplete.
+The complete mathematical auditor and exact transfer are still required.
+The prior full Riemann suite passed; the three new orchestration controls
+also pass. Scoped collection now finds 258 Riemann tests. A separate attempt
+to collect all problem suites encountered 24 unrelated dependency errors;
+it was abandoned in favor of the explicit Riemann file list, not reported
+as a Riemann test failure or as full-repository validation.
+
 External resumable state is under E:/_Datos/caos-research/riemann-hypothesis/
 exp020-quadratic-local-20261003 (stronger run) and
 exp019-local-replay-20261003 (suspended baseline). The stronger run's full-cover

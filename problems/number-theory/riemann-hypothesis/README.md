@@ -23,6 +23,9 @@ awaiting external mathematical review.
   The immutable v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389).
 - [Sharp-kernel preprint](https://doi.org/10.5281/zenodo.22940291), v0.01, 2026-09-24.
 - [Current state and handoff](../../../program/riemann-hypothesis/RESUME.md).
+- [EXP-022: ceiling for the fixed pressure assembly](experiments/EXP-022-pressure-duality-audit/verdict.md).
+- [EXP-024: shifted Gaussian and compact-window representation](experiments/EXP-024-gaussian-mellin-reduction/verdict.md), with the signed main estimate still open.
+- [EXP-023: changed-pressure certificate](experiments/EXP-023-repressured-local-certificate/full-cover-cost-review.md), currently incomplete; its proposed distinct-strip bound remains conditional.
 
 All zero-counting denominators, imported theorem assumptions, numerical verification limits,
 prior-art exclusions and open questions are recorded explicitly in the wiki and verdicts.
