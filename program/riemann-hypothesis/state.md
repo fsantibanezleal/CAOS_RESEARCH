@@ -1,6 +1,6 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-28. Latest public application release: **0.74.000**
+Updated: 2026-10-03. Latest public application release: **0.74.000**
 (replay v9, EXP-010 to EXP-012 in the workbench), promoted to main commit
 `a464bdb52d88ed22582668d9c94ebbe25262b5b4`; live bytes match the exact-main build
 ([record](release-0.74.000/live-verification.json)). Previous: 0.73.000 from
@@ -12,11 +12,13 @@ workbench shows it since release 0.74.000.
 
 The Riemann hypothesis remains open.
 
-Strategic review 2026-09-27: no external result improves the EXP-010 onset or
-the EXP-009 constant; RH-027 is re-scoped to a new general-`Q` theorem, and the
-active focus is `RH-F4` in [research-governance.json](research-governance.json).
-See the [plan](plan.md) and the
-[sweep dossier](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-literature-and-representation-sweep.md).
+Strategic review 2026-10-03: a new distinct-zero paper improves the
+strip-wide EXP-009 companion, and EXP-013 improves its fixed-input assembly
+slightly. Upstream also lists a higher simple-critical candidate; neither
+changes the short-window onset. The active focus remains RH-F4 after a
+recorded stop/review decision; RH-F6 is closed. See the
+[current dossier](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-update-and-dual-family-preflight.md),
+[plan](plan.md) and [governance](research-governance.json).
 
 ## Current strongest short-interval result
 
@@ -52,7 +54,7 @@ EXP-006 product.
 | EXP-010 independent audit | `b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1` |
 | EXP-010 counting-lemma controls | `6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c` |
 
-## Current strongest global result
+## EXP-009 global simple-critical result
 
 EXP-009 proves the sharp auxiliary theorem
 
@@ -71,7 +73,7 @@ printed bound is `C_0+delta_0=0.6725007703...`, this gives a value about
 ```text
 d_dagger = 0.283165430808537327...
 simple-critical proportion >= 0.6725007995946757558283550562963947865...
-distinct-critical proportion >= 0.8362503997973378779141775281481973932...
+distinct zeros anywhere in strip proportion >= 0.8362503997973378779141775281481973932...
 ```
 
 The gain over the source baseline exceeds `9.5915e-8`. The independently
@@ -118,3 +120,26 @@ also passed. Tag `v0.73.000` points to the verified main commit.
 The result is asymptotic, has no effective starting height, and does not prove
 RH or universal simplicity. Imported 2026 preprints remain attributed. No
 finite census, DOI, passing build, or successful deployment proves RH.
+
+## October source and experiment update
+
+The attributed global distinct-zero bound from arXiv:2609.33043v1 is
+0.83699288145242...; EXP-013's exact parameter improvement gives
+62359683640669/74504434380000 = 0.83699291404068... and proves the
+fixed-input integer cap. This counts distinct zeros anywhere in the strip.
+The upstream trmdy README also lists a 0.673312742272... simple-critical
+candidate, outside this replay; EXP-009 is therefore not presented as
+the current worldwide global record. Those recent claims are attributed.
+
+EXP-014/015 establish the uniform pointwise phase obstruction at
+nu=theta-1/2, including squarefree twists with nonzero basic mollifier
+coefficients. They do not preclude cancellation in the signed sum.
+Canonical hashes: EXP-013 `c250ac76df06e8f66aaed2c720e292bf17e82923137a01ce56d9ced29d4f094b`;
+EXP-014 `fb0f0d4a0d165d524a86285c8bae163297959aa9819a5181e1a89b46e3567c2f`; EXP-015 `871de5a7719bec0a077e1bda88729000d3988e20cee2940f3ef3dd6d55aa3ef8`.
+No new onset or RH result. No new manuscript or Zenodo version.
+
+Tag v0.74.000 and its GitHub release are now verified at the original
+release commit; the [additive reconciliation](release-0.74.000/tag-reconciliation-20261003.json)
+supersedes only the old pending-tag status. Replay v9 and the live workbench
+still contain twelve experiments. EXP-013--015 are repository research
+records and await a later serialized replay/UI release.

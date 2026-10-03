@@ -433,3 +433,21 @@ and the live bytes match the exact-main build. Candidate QA: 466 Python and 28
 frontend tests, 8-scenario browser matrix with 416 screenshots and 0 failures.
 Tag v0.74.000 is pending because the session proxy refuses tag pushes. RH-026 is
 done.
+
+## 2026-10-03: source update, fixed-input cap and supported phase obstruction
+
+Fresh primary-source reading and upstream commit checks update external
+standing. Declaration 8db97480 preceded EXP-013/014; declaration 12fa7d70
+preceded EXP-015. All three confirm their scoped predictions with exact
+arithmetic, separate auditors and 20 focused adversarial/replay tests.
+EXP-013 gives 0.83699291404068... for an attributed strip-wide distinct
+count and a uniform m=1310 cap. EXP-014/015 prove the pointwise phase
+threshold, the latter with nonzero basic Mobius coefficients.
+No new onset, signed-sum barrier, external peer review or RH result.
+
+The methodology-13 review retains RH-F4 with a narrowed signed reduction
+obligation and closes RH-F6. No new manuscript or Zenodo version. Current
+count-label errors are corrected without rewriting prior frozen evidence.
+The old tag-pending receipt is supplemented by verified metadata: tag
+v0.74.000 targets a464bdb5 and the release published 2026-09-30 UTC.
+Live replay remains v9; new records await serialized integration RH-042.

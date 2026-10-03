@@ -1,0 +1,8 @@
+{
+  "cases_checked": 9,
+  "passed": true,
+  "result_sha256": "fb0f0d4a0d165d524a86285c8bae163297959aa9819a5181e1a89b46e3567c2f",
+  "route": "independent Bezout expansion and derivatives of both logarithm bounds",
+  "schema": "exp014-independent-audit-v1",
+  "summed_mollifier_barrier_established": false
+}

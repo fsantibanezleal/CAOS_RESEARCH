@@ -188,6 +188,10 @@ did not locate an identical short-interval theorem; it does not guarantee priori
 10. [Spectral-defect parity coupling and the strict full-curve improvement](10-spectral-defect-parity.md)
 11. [Rank-six local transfer and the earlier onset](11-rank-six-local-transfer.md)
 12. [Sharp three-point kernel and improved global proportions](12-sharp-three-point-kernel.md)
+13. [Localized Levinson and onset 0.534](13-levinson-parity-transfer.md)
+14. [Linear-refinement counterexamples](14-linear-refinement-barrier.md)
+15. [Dual moment ranges and missing cancellation](15-dual-moment-range.md)
+16. [Fixed-input cap and supported phase collisions](16-fixed-input-cap-and-supported-phases.md)
 
 The new certificate uses $p=1/12500$, $\epsilon=443239/10^9$, $k=2256$ and
 frame size $4513$. All 16,797 partition nodes were checked, with 8,351 energy-plus-pressure
@@ -216,6 +220,17 @@ EXP-009. Its source-bound transfer is not external peer review or a proof of RH.
 
 Evidence labels: **[D]** derived with a persisted proof and refutation attempt;
 **[MV]** machine-verified finite assertion; **[C]** conjectural direction. This work
-establishes an explicit positivity threshold below $0.545885$. It does not give
+establishes positivity at every fixed $\theta\in[0.534,1)$. It does not give
 an effective height, global record, universal simplicity theorem, or solution
 of RH.
+
+## October 2026 continuation
+
+The external global comparison above is historical, not a worldwide record.
+The [October dossier](../context/2026-10-03-update-and-dual-family-preflight.md)
+and [fixed-input/support chapter](16-fixed-input-cap-and-supported-phases.md)
+record EXP-013--015. The strongest short-window onset is still 0.534.
+The [dual-moment chapter](15-dual-moment-range.md) describes the open signed
+cancellation route and the CIS applicability gaps. Replay v9 still shows
+the twelve released experiments; these three new research records await
+a serialized application release.

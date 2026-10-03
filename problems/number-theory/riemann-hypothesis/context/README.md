@@ -40,3 +40,14 @@ python problems/number-theory/riemann-hypothesis/code/restore_sources.py --verif
 
 Restoration checks exact size and SHA-256, failing closed if an upstream URL changes.
 Derived mathematical claims belong to the experiment verdicts and their adversarial audits.
+
+## Additive October archive
+
+[Source manifest 20261003](source-manifest-20261003.json) pins five PDF and
+five source bundles: Knausgard 2609.33043v1, CIS 1808.02879v1 and
+1105.1177v1, Tang 2608.14852v1, CLMR 2409.01457v1.
+The [dated review](2026-10-03-update-and-dual-family-preflight.md) records
+the actual reading scope, formalization exclusions and method gaps.
+Its cache_path entries follow the context/source-cache restoration contract;
+the same path after the source-cache prefix identifies the external archive.
+Papers remain externally cached. Earlier manifests stay frozen.

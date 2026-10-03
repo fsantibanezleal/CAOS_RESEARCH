@@ -10,10 +10,11 @@
       "bytes": 384876,
       "sha256": "fa1bfc6e03aa45c9e4e56250705df15d9c40ebf44b3f6784304fbde7363a85c8",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/knausgard-2609.33043v1.pdf",
+      "cache_path": "source-cache/2026-10-03/knausgard-2609.33043v1.pdf",
       "license": {
         "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
       }
     },
     {
@@ -24,10 +25,11 @@
       "bytes": 47933,
       "sha256": "9cd3e2034cb9f9bf165486aecd432793e3493291ad8b5c3abd33e2d67dd0a596",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/knausgard-2609.33043v1-source.tar",
+      "cache_path": "source-cache/2026-10-03/knausgard-2609.33043v1-source.tar",
       "license": {
         "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
       }
     },
     {
@@ -38,10 +40,11 @@
       "bytes": 335675,
       "sha256": "1e11dc4e21de5325d2e7ce62de7799b85aa861f39af66ecda09c1823a0750e5a",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/cis-1808.02879v1.pdf",
+      "cache_path": "source-cache/2026-10-03/cis-1808.02879v1.pdf",
       "license": {
         "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
       }
     },
     {
@@ -52,10 +55,11 @@
       "bytes": 25025,
       "sha256": "4d3faedbf2f53710762398c59814abbb3f4819bc3338bab9b55c29392f78ce6c",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/cis-1808.02879v1-source.tar",
+      "cache_path": "source-cache/2026-10-03/cis-1808.02879v1-source.tar",
       "license": {
         "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
       }
     },
     {
@@ -66,10 +70,11 @@
       "bytes": 377416,
       "sha256": "f260788058cc127c9d1a37fe0d513b1f8d0ce3dce22c6cedf6522babfcc2def1",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/tang-2608.14852v1.pdf",
+      "cache_path": "source-cache/2026-10-03/tang-2608.14852v1.pdf",
       "license": {
         "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
       }
     },
     {
@@ -80,10 +85,11 @@
       "bytes": 17981,
       "sha256": "0574dca4e188be4709bbd81865235bb58c59a0bb21da7634ee5693a84f67230f",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/tang-2608.14852v1-source.tar",
+      "cache_path": "source-cache/2026-10-03/tang-2608.14852v1-source.tar",
       "license": {
         "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
       }
     },
     {
@@ -94,10 +100,11 @@
       "bytes": 263611,
       "sha256": "6366374afd7fd16e12cfac0deec25b6d4faa253d49febff30b7e0763d6d7360b",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/cis-critical-1105.1177v1.pdf",
+      "cache_path": "source-cache/2026-10-03/cis-critical-1105.1177v1.pdf",
       "license": {
         "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
       }
     },
     {
@@ -108,10 +115,11 @@
       "bytes": 19757,
       "sha256": "1a5d0f836163902f22f9e0901d1a5ad4bb79ddf570298eb5169497526254b864",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/cis-critical-1105.1177v1-source.tar",
+      "cache_path": "source-cache/2026-10-03/cis-critical-1105.1177v1-source.tar",
       "license": {
         "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
       }
     },
     {
@@ -122,10 +130,11 @@
       "bytes": 512028,
       "sha256": "9a042b05039261c74ac0cb6bd2cd041fbe6d94092c446f7c7c61ea1c4b2818c0",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/chandee-li-matomaki-radziwill-2409.01457v1.pdf",
+      "cache_path": "source-cache/2026-10-03/chandee-li-matomaki-radziwill-2409.01457v1.pdf",
       "license": {
-        "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "status": "CC BY 4.0",
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
       }
     },
     {
@@ -136,10 +145,11 @@
       "bytes": 41581,
       "sha256": "bafd4e9bdd50f9981648f8fbba84d7fe52bdd61c9eb92f92e49c494a69f19d5b",
       "tracked_fulltext": false,
-      "cache_path": "2026-10-03/chandee-li-matomaki-radziwill-2409.01457v1-source.tar",
+      "cache_path": "source-cache/2026-10-03/chandee-li-matomaki-radziwill-2409.01457v1-source.tar",
       "license": {
-        "status": "arXiv perpetual non-exclusive license",
-        "redistribution_basis": "local research archive; not relicensed; manifest links original"
+        "status": "CC BY 4.0",
+        "redistribution_basis": "local research archive; not relicensed; manifest links original",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
       }
     }
   ],

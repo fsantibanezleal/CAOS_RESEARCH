@@ -12,7 +12,10 @@ and TeX bytes; third-party papers are not relicensed or committed.
 `16260119298029/19426831050000 = 0.83699288145242...`. These are distinct
 nontrivial zeros anywhere in the strip, counted once in the numerator. This
 is not a simple-critical or distinct-critical proportion. It exceeds the
-numerical global companion in EXP-009, with a different stated count.
+global distinct-zero companion in EXP-009, for the same strip-wide count.
+The published EXP-009 manuscript uses that count correctly; the current
+handoff and status had mislabeled it as distinct-critical and are corrected
+in this round. Earlier frozen evidence is retained.
 
 The whole six-page paper, including the formalization exclusions and final
 references, was reviewed. The mixed-multiplicity matrix inequality is an
@@ -135,3 +138,19 @@ Sources: [Knausgard](https://arxiv.org/abs/2609.33043v1),
 [CIS critical zeros](https://arxiv.org/abs/1105.1177v1),
 [Tang](https://arxiv.org/abs/2608.14852v1),
 [CLMR sixth moment](https://arxiv.org/abs/2409.01457v1).
+
+## 6. Completed round and strategic decision
+
+EXP-013 confirms the exact gain and proves m=1310 is the largest admissible
+integer block for these fixed inputs. EXP-014 proves the generic uniform
+phase threshold; EXP-015 strengthens it to squarefree supported twists.
+See their verdicts. The new source was not a global simple-critical record,
+and no source located in this review improves the short-window onset.
+
+After EXP-011, EXP-012 and these non-onset rounds, the methodology-13
+review retains RH-F4 with a narrower positive task: derive a signed,
+shifted, composite-twist reduction before attempting polynomial-height
+asymptotic evaluation. The direct-CIS substitution and pointwise
+integration-by-parts repairs are closed. No further parameter sweeps or
+numerical L-value averages are justified without that analytic target.
+The fixed-input secondary focus RH-F6 closes. No new manuscript is triggered.

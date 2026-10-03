@@ -232,3 +232,28 @@ pointwise phase mechanism; a summed cancellation theorem remains the positive
 route. Secondary bounded focus RH-F6 audits the new mixed-Gram paper with
 EXP-013 and stops once its fixed-input parameter cap is proved. Both are
 research records unless a substantive new analytic result emerges.
+
+## Post-experiment strategic review 2026-10-03
+
+EXP-013 closes RH-F6 with a strict exact gain and a uniform integer cap.
+EXP-014/015 close the pointwise phase repair, including actual squarefree
+mollifier support. The onset remains 0.534. These are useful bounded
+research records, not reasons for another parameter sweep or paper.
+
+The required review after three rounds without an onset improvement retains
+RH-F4 because signed off-diagonal cancellation remains untreated by the
+existing argument. Narrow the next theorem obligation to the complete
+shifted composite-twist reduction, before any family average or computation.
+Keep gamma ratios, parity and k^(-it) factors. Only after this identity is
+proved should a spectral/Kloosterman decomposition or an asymptotic large
+sieve extension be attempted. Existing CIS theorems do not supply the needed
+endpoint and polynomial-height uniformity. Sampling positive L-value squares
+does not decide the signed family.
+
+Ordered next actions: RH-038 reduction; RH-029 rectangle-detour proof audit;
+RH-021 recoverable rank-six matrix. RH-026 is complete, including its tag.
+RH-042 is a separate serialized release task. No release/version/bake is
+performed as a side effect of this problem round, under methodology 08.
+No new manuscript or Zenodo deposit is justified by elementary parameter
+tuning or the supporting phase obstruction. Their home is the research
+record associated with short-interval-Levinson; published PDFs remain frozen.
