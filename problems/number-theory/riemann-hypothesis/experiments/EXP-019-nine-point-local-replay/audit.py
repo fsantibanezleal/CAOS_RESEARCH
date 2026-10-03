@@ -26,7 +26,7 @@ def require(condition, reason):
 
 
 def audit(directory):
-    root = Path(__file__).resolve().parents[4]
+    root = Path(__file__).resolve().parents[5]
     problem = Path(__file__).resolve().parents[2]
     raw = (problem/"experiments/EXP-018-nine-point-distinct-transfer/artifacts/input/nine-point-final.json").read_bytes()
     packet_sha = "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d"

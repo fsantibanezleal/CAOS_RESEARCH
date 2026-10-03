@@ -238,6 +238,28 @@
         "EXP-018",
         "EXP-019"
       ]
+    },
+    {
+      "id": "RH-F11",
+      "title": "Second-order local certificate improvement",
+      "status": "admitted-bounded",
+      "priority": 11,
+      "target": "Prove a stronger nine-point universal local inequality at delta=3051/500000 using a certified Hessian quadratic bound.",
+      "value": "Strengthen the local input itself and reduce exhaustive proof cost, rather than only tune block parameters.",
+      "success_gate": "Uniform second-order lemma, exact independent LDL solve controls, full bound-input coverage and stronger exact distinct-strip transfer.",
+      "stop_conditions": [
+        "An enclosure/solve failure requires correction before further certification.",
+        "A terminal unresolved cell refutes this proposed certificate path.",
+        "An initial hour records incomplete cost and triggers review; no successful bound is inferred."
+      ],
+      "novelty_status": "Quadratic convex lower bounds are classical; candidate local inequality and transferred consequence require complete certification and source overlap review.",
+      "manuscript_route": "Focused distinct-zero companion only after complete stronger-input proof and coherence/novelty review.",
+      "first_bounded_action": "EXP-020: prove the Hessian integration lemma and compare certified LDL completion of squares with an independent exact inverse before gap computations.",
+      "evidence": [
+        "EXP-018",
+        "EXP-019",
+        "EXP-020"
+      ]
     }
   ],
   "manuscripts": [
@@ -339,6 +361,12 @@
     {
       "start": 19,
       "end": 19,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 20,
+      "end": 20,
       "classification": "research-record",
       "manuscripts": []
     }
