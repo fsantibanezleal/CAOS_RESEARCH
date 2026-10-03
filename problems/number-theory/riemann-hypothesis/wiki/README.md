@@ -192,6 +192,7 @@ did not locate an identical short-interval theorem; it does not guarantee priori
 14. [Linear-refinement counterexamples](14-linear-refinement-barrier.md)
 15. [Dual moment ranges and missing cancellation](15-dual-moment-range.md)
 16. [Fixed-input cap and supported phase collisions](16-fixed-input-cap-and-supported-phases.md)
+17. [Trace-aware clipped-block refinement](17-trace-aware-clipping.md)
 
 The new certificate uses $p=1/12500$, $\epsilon=443239/10^9$, $k=2256$ and
 frame size $4513$. All 16,797 partition nodes were checked, with 8,351 energy-plus-pressure
@@ -234,3 +235,8 @@ The [dual-moment chapter](15-dual-moment-range.md) describes the open signed
 cancellation route and the CIS applicability gaps. Replay v9 still shows
 the twelve released experiments; these three new research records await
 a serialized application release.
+
+The subsequent [trace-aware chapter](17-trace-aware-clipping.md) records
+EXP-016's stronger distinct-strip bound 0.83699291672944... and revised
+integer cap. The refinement is a supporting research record; the onset
+and live replay remain unchanged.

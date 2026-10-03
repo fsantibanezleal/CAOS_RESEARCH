@@ -77,3 +77,14 @@ not summed cancellation. RH-021 and RH-029 remain open integrity tasks.
 | RH-040 | Optimize and cap fixed mixed-Gram parameters | done; EXP-013 confirmed, RH-F6 closed | P1 |
 | RH-041 | Prove the phase-resolution obstruction and check nonzero Mobius support | done; EXP-014/015 confirmed | P1 |
 | RH-042 | Integrate EXP-013--015 into a later serialized replay/workbench release | open; research records are not in live replay v9 | P2 |
+
+## Trace-aware follow-up
+
+| ID | Work | Status | Priority |
+|---|---|---|---|
+| RH-043 | Retain trace-zero energy in the clipped-block dichotomy | done; EXP-016 confirmed with a revised cap, RH-F7 closed | P1 |
+
+RH-042 includes EXP-016 as well as EXP-013--015. The sharper block estimate
+does not change RH-038's analytic target or the onset. Larger searches on
+these fixed inputs are not admitted without a new uniform theorem and a
+value-of-information check.

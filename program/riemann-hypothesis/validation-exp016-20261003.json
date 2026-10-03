@@ -1,0 +1,25 @@
+{
+  "schema": "exp016-validation-v1",
+  "date": "2026-10-03",
+  "declaration_commit": "0ea1f332",
+  "focused_tests": {
+    "passed": 31,
+    "new": 11,
+    "previous_round": 20,
+    "exit_code": 0
+  },
+  "independent_audit_passed": true,
+  "guards_passed": ["artifacts", "template_residue", "content_standards", "manuscript_voice", "research_structure", "research_governance", "ci_budget"],
+  "ci_and_scoped_lint_passed": true,
+  "git_diff_check_passed": true,
+  "gpu_used": false,
+  "canonical_sha256": "7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74",
+  "audit_sha256": "abe00bb9d3f7f080d0cea7fcf1f3c5b3e7090fd202d3667a334a7d3d3b964fb0",
+  "scope": "Follow-up code, research-record and docs. Existing 156-test round passed before this addition; 31 affected tests rerun.",
+  "not_performed": [
+    "new live release",
+    "new Zenodo deposit",
+    "full external certificate replay",
+    "Lean extension"
+  ]
+}

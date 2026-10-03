@@ -51,3 +51,9 @@ the actual reading scope, formalization exclusions and method gaps.
 Its cache_path entries follow the context/source-cache restoration contract;
 the same path after the source-cache prefix identifies the external archive.
 Papers remain externally cached. Earlier manifests stay frozen.
+
+[Trace preflight](2026-10-03-trace-clipping-preflight.md) and
+[source-manifest-exp016](source-manifest-exp016.json) add the author-hosted
+Wolkowicz-Styan 1980 paper. Reading scope: printed pages 472-474,
+the trace/variance setup and Theorem 2.1. The 36-page PDF is archived
+externally, not claimed to have been reviewed completely.

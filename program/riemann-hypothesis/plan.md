@@ -257,3 +257,23 @@ performed as a side effect of this problem round, under methodology 08.
 No new manuscript or Zenodo deposit is justified by elementary parameter
 tuning or the supporting phase obstruction. Their home is the research
 record associated with short-interval-Levinson; published PDFs remain frozen.
+
+## Trace-aware follow-up admission 2026-10-03
+
+EXP-016 is admitted before computation: the original fixed-input cap
+remains valid, but a zero-sum Jensen argument changes the clipped-block
+condition. RH-F7 is bounded and stops at its new uniform cap. RH-F4
+remains the sole active substantive focus. The elementary refinement is
+a supporting research record with no standalone manuscript trigger.
+
+## Trace follow-up close and value review
+
+EXP-016 proves the revised block dichotomy and its cap at m=1311.
+The new gain is exact but small, about 2.69e-9 over EXP-013. Close RH-F7.
+The more consequential target remains RH-F4's complete signed reduction
+and cancellation theorem. Other convex spectral estimates might evade
+this revised cap, but no worldwide or all-method optimum is claimed.
+Further fixed-input polishing has low value relative to an independent
+local certificate improvement or a genuine analytic moment theorem.
+No new manuscript is warranted; the supporting record belongs with
+the attributed global Gram-method audit. Live integration remains RH-042.

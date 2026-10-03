@@ -24,6 +24,7 @@ live release. General RH remains open.
 | `d_dagger` | Sharpened global optimization parameter | `0.283165430808537327...` |
 | `C_simple` | Attributed global simple-critical lower proportion | `0.6725007995946757558283550562963947865...` |
 | `C_distinct` | Attributed distinct-strip companion | `0.8362503997973378779141775281481973932...` |
+| EXP-016 `q` | Attributed latest distinct-strip bound | `69341429073721/82845897125000 = 0.83699291672944...`; trace-aware assembly |
 | EXP-013 `q` | Attributed improved distinct-strip bound | `62359683640669/74504434380000 = 0.83699291404068...`; fixed-input optimum |
 | EXP-009 portable result | Exact theorem checks, source replay, global and local transfers | SHA-256 `0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66` |
 | Manuscript v0.01 | Seven-page published preprint | DOI `10.5281/zenodo.22940291` |
@@ -51,16 +52,17 @@ live release. General RH remains open.
 | EXP-013 | confirmed source-based distinct-strip parameter gain and uniform cap |
 | EXP-014 | confirmed generic pointwise phase obstruction |
 | EXP-015 | confirmed obstruction on squarefree twists with nonzero basic mollifier coefficients |
+| EXP-016 | confirmed trace-aware clipped-block refinement and revised integer cap |
 
 ## 4. In flight
 
-No computation is in flight. EXP-013--015 are closed research records.
+No computation is in flight. EXP-013--016 are closed research records.
 The latest deployed replay remains v9 with twelve experiments. The tag
 v0.74.000 is verified; no pending-tag action remains.
 
 ## 5. Next actions
 
-The October strategic review retains RH-F4; fixed-input RH-F6 is closed.
+The October strategic review retains RH-F4; fixed-input RH-F6 and trace-aware RH-F7 are closed.
 The onset remains 0.534. Direct CIS substitution and uniform pointwise
 phase repairs are closed, including nonzero Mobius support. Signed
 off-diagonal cancellation is not excluded.
