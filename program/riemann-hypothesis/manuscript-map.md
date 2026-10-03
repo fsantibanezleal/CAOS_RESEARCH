@@ -53,3 +53,19 @@ Current focus: **RH-F4**, the short-interval onset toward `theta>1/2`.
   of `short-interval-levinson`.
 - Closed route preflights (RH-028, RH-032, RH-033, RH-035, RH-036) are
   research records.
+
+## October update and disposition
+
+The 2026-10-03 full-text review supersedes the historical external-standing
+paragraph above. A distinct-zero paper and higher upstream global candidate
+exist; no located source improves the 0.534 short-window onset.
+
+| block | experiments | result status | attributed inputs | manuscript home |
+|---|---|---|---|---|
+| Fixed mixed-Gram parameter optimum | EXP-013 | exact improvement and cap, research record | Knausgard energy and seven-point certificate | no standalone manuscript |
+| Generic phase resolution | EXP-014 | uniform mechanism obstruction | elementary; EXP-010 mechanism | short-interval-Levinson supporting research record |
+| Squarefree supported collisions | EXP-015 | elementary support-aware obstruction | none for arithmetic proof | short-interval-Levinson supporting research record |
+
+These do not justify splitting or publishing another paper. The positive
+analytic target remains a complete signed reduction and cancellation theorem
+(RH-038), which would justify a coherent manuscript if proved.

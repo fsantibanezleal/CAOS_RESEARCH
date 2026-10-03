@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "result_sha256": "871de5a7719bec0a077e1bda88729000d3988e20cee2940f3ef3dd6d55aa3ef8",
+  "route": "trial square division and independent integer/rational substitution",
+  "schema": "exp015-independent-audit-v1",
+  "squarefree_twists": [
+    500006,
+    500005
+  ],
+  "summed_mollifier_barrier_established": false
+}

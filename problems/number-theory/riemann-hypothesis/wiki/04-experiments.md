@@ -491,3 +491,21 @@ dual moment is about `sqrt(h)sqrt(T)` per twist pair, so trivial and
 large-sieve bounds give at best EXP-010's range `nu<theta-1/2`. A longer
 admissible mollifier needs an asymptotic evaluation of the dual family.
 
+## EXP-013--015: fixed-input cap and supported phase obstruction
+
+The [EXP-013 verdict](../experiments/EXP-013-mixed-gram-parameter-cap/verdict.md)
+confirms the exact source-based distinct-strip parameter improvement and
+uniform cap. [EXP-014](../experiments/EXP-014-short-window-phase-collision/verdict.md)
+proves the generic phase threshold; [EXP-015](../experiments/EXP-015-squarefree-phase-collision/verdict.md)
+extends it to nonzero basic Mobius coefficients. All are research records.
+
+Each runner accepts --output-dir; its auditor accepts --artifact and --output.
+Run the three experiment directories' run.py then audit.py entry points.
+The corruption controls and byte-identical replay checks are:
+
+```text
+python -m pytest -q tests/test_riemann_parameter_and_phase.py
+```
+
+The threshold obstruction concerns uniform pointwise oscillation. It does
+not exclude cancellation of the signed sum or change the onset 0.534.

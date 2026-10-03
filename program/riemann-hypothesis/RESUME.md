@@ -2,7 +2,8 @@
 
 ## 1. State in one screen
 
-Read [state.md](state.md), [backlog.md](backlog.md), and the EXP-010 verdict.
+Updated 2026-10-03. Read [state.md](state.md), [backlog.md](backlog.md), and
+the [October dossier](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-update-and-dual-family-preflight.md).
 EXP-010 is confirmed on branch `work/riemann-hypothesis/levinson-parity-20260926`
 (two referee passes, minor fixes applied):
 the localized Levinson detector with degree-201 operator polynomials gives a
@@ -22,7 +23,8 @@ live release. General RH remains open.
 | `sqrt(2)` | Optimal universal ratio constant | Equality only at `(0,1)` and `(1,0)` |
 | `d_dagger` | Sharpened global optimization parameter | `0.283165430808537327...` |
 | `C_simple` | Attributed global simple-critical lower proportion | `0.6725007995946757558283550562963947865...` |
-| `C_distinct` | Attributed distinct-critical companion | `0.8362503997973378779141775281481973932...` |
+| `C_distinct` | Attributed distinct-strip companion | `0.8362503997973378779141775281481973932...` |
+| EXP-013 `q` | Attributed improved distinct-strip bound | `62359683640669/74504434380000 = 0.83699291404068...`; fixed-input optimum |
 | EXP-009 portable result | Exact theorem checks, source replay, global and local transfers | SHA-256 `0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66` |
 | Manuscript v0.01 | Seven-page published preprint | DOI `10.5281/zenodo.22940291` |
 | `kappa(P,Q,R,nu)` | Localized Levinson distinct sign-change density | `>0.7170 nu` at eight frozen `nu`; EXP-010 |
@@ -44,41 +46,34 @@ live release. General RH remains open.
 | EXP-008 | fixed-rank localization and attributed rank-six onset confirmed |
 | EXP-009 | sharp three-point ratio, attributed global gain, and onset-neutral local companion confirmed |
 | EXP-010 | short-window Levinson moment, distinct sign-change count, certified degree-201 detectors, onset `0.534` confirmed (Prediction A scope corrected to `Q(0)=1`) |
+| EXP-011 | confirmed linear-refinement counterexamples |
+| EXP-012 | inconclusive Tang route; standard bounds do not extend length |
+| EXP-013 | confirmed source-based distinct-strip parameter gain and uniform cap |
+| EXP-014 | confirmed generic pointwise phase obstruction |
+| EXP-015 | confirmed obstruction on squarefree twists with nonzero basic mollifier coefficients |
 
 ## 4. In flight
 
-1. EXP-010 is merged to `develop` (PR #341) and promoted to `main` (PR #342);
-   the manuscript deposit records follow in the deposit PRs.
-2. The manuscript is published and byte-verified at DOI `10.5281/zenodo.22984155`.
-3. The public workbench still shows nine experiments; replay v9 and a
-   versioned release are RH-026.
+No computation is in flight. EXP-013--015 are closed research records.
+The latest deployed replay remains v9 with twelve experiments. The tag
+v0.74.000 is verified; no pending-tag action remains.
 
 ## 5. Next actions
 
-The 2026-09-27 strategic review
-([dossier](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-literature-and-representation-sweep.md),
-[plan](plan.md#strategic-review-after-exp-010-2026-09-27),
-[governance](research-governance.json), [manuscript map](manuscript-map.md))
-found no external result above EXP-009 or EXP-010 and re-scoped RH-027:
-Steuding's short-window moment is proved only for degree-one `Q`, fixed
-shifts and `nu<3/8`; `(3theta-1)/4` is inferred. Active focus `RH-F4`.
+The October strategic review retains RH-F4; fixed-input RH-F6 is closed.
+The onset remains 0.534. Direct CIS substitution and uniform pointwise
+phase repairs are closed, including nonzero Mobius support. Signed
+off-diagonal cancellation is not excluded.
 
-1. Done 2026-09-27: RH-030 (full-text verification), RH-031 (value of
-   information), and the route preflights RH-028, RH-032, RH-033, RH-035,
-   RH-036 (all closed with recorded reasons), RH-037 (records hygiene); see
-   [route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md).
-2. EXP-011 is confirmed (2026-09-28): the linear candidate `Q>=2N+3O-4S` is
-   false for the Montgomery-Taylor window and no linear refinement with
-   `beta>=2.365` holds, so this route is closed
-   ([verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/verdict.md)).
-3. EXP-012 is inconclusive (2026-09-28): Tang's dual moment is about
-   `sqrt(h)sqrt(T)` per pair, so the planned trivial bound gives only
-   `nu<(2/3)(theta-1/2)` and a large-sieve sketch gives `theta-1/2`
-   ([verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/verdict.md)).
-   Next: RH-038, an asymptotic evaluation of that dual family.
-4. RH-026 replay v9 and release. RH-021 remains an integrity task.
+1. RH-038: derive the complete shifted, composite-twist signed reduction,
+   retaining gamma ratios, parity and oscillatory factors; only then seek
+   polynomial-height asymptotic evaluation or a spectral decomposition.
+2. RH-029: independently audit the rectangle-detour defect in EXP-005/008.
+3. RH-021: recover an exact rank-six coefficient matrix or source artifact.
+4. RH-042: later serialized replay/workbench release for the new records.
 
-No experiment is in flight. RH-038 is the next research action.
+No new paper or Zenodo deposit: fixed-input tuning and an elementary
+supporting obstruction do not meet the coherent manuscript gate.
 
 ## 6. Where everything lives
 
@@ -90,8 +85,7 @@ EXP-009 proof, audit, verdict, runner, and immutable outputs are under
 `experiments/EXP-009-wang-kernel-sharpening/`. Replay instructions are in
 [docs/guides/riemann-replay.md](../../docs/guides/riemann-replay.md). The
 manuscript and publication receipt are under
-`manuscripts/riemann-hypothesis/sharp-three-point-kernel/`. Candidate release
-evidence is under `program/riemann-hypothesis/release-0.73.000/`. Private
+`manuscripts/riemann-hypothesis/sharp-three-point-kernel/`. Latest release evidence is under `program/riemann-hypothesis/release-0.74.000/`. Private
 coordination is mirrored under `plans/caos-research/riemann-hypothesis/` in
 CAOS_MANAGE.
 

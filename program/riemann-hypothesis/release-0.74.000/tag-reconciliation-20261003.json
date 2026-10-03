@@ -1,0 +1,13 @@
+{
+  "schema": "additive-tag-reconciliation-v1",
+  "verified_utc_date": "2026-10-03",
+  "tag": "v0.74.000",
+  "object_type": "commit",
+  "target_sha": "a464bdb52d88ed22582668d9c94ebbe25262b5b4",
+  "release_url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/releases/tag/v0.74.000",
+  "release_created_at": "2026-09-28T03:29:20Z",
+  "release_published_at": "2026-09-30T01:36:39Z",
+  "verification": "Fresh GitHub API metadata: git/ref/tags and releases/tags.",
+  "supersedes_only": "pending tag status in the original September 28 receipt; original receipt retained",
+  "new_live_qa_performed": false
+}
