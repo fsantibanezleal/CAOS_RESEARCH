@@ -203,6 +203,15 @@ python -m pytest -q tests/test_riemann_wang_kernel_sharpening.py tests/test_bake
 
 ## 7. Gotchas
 
+EXP-023's complete-output corruption and exact-byte archive gates are
+prepared in its `actual_cover_controls.py`, `reproducibility_archive.py`
+and `reproducibility-review.md`. Both reject the actual incomplete
+95-report output. Execute their completed-input paths after all 96
+reports and the independent cover/transfer audits pass. CI 37155303536
+passed for 098c0476 with repository-contract scope only. The unscoped
+local structure checker cannot validate missing other-problem trees in
+this sparse checkout; do not expand it beneath the frozen workers.
+
 The ratio theorem is an exact CAOS result. The global proportion transfers
 through Wang's attributed arXiv:2609.24167v1 framework; it is not an independent
 proof of that preprint. The short-interval companion still uses attributed pair

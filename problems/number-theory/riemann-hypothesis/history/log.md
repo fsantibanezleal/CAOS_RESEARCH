@@ -557,3 +557,14 @@ residue and distinguishes two different Mellin weights; cancellation remains
 open. EXP-023's stdlib transfer auditor rejects its actual 95/96 cover and
 issues no bound receipt. None of these supporting audits meets the user's
 research stopping condition.
+
+## 2026-10-03: actual-output corruption and transport gates prepared
+
+EXP-023's actual 95-report output is rejected by both the new twelve-case
+corruption control runner and exact-byte reproducibility archive builder.
+The source-bound negative receipt is retained. Their complete-output paths
+must still execute after all 96 shards and the exact transfer pass. Copies
+isolate intentional corruption from live output; extracted archive auditors
+will check the preserved physical runtime bytes. CI 37155303536 passed at
+098c0476, with repository guards/artifact scope only. Neither CI nor these
+prepared gates constitutes the unfinished mathematical result.
