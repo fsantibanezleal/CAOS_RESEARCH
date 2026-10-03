@@ -89,6 +89,18 @@ universal certificate would give 2340938143167/2795532013000 =
 value gate; a separately declared certificate pilot is the next bounded
 step. The six-second exploration does not prove that new lower bound.
 
+EXP-023 is now admitted as bounded RH-F13, with issue #362. Its separately
+bound wrapper, runner and independent auditor are committed in 62dd7923.
+Thirty targeted controls pass. Directed pressure rounding is checked over
+all 417849 possible sums of cell indices; the frozen EXP-020 source is
+unchanged and its corresponding 488161 sums also pass. One actual shard-0
+pilot began at 19:35:50 UTC on 2026-10-03, with a twenty-minute budget after
+preparation, one additional CPU and external state in
+`exp023-repressured-local-v2-20261003`. Read its live checkpoint before any
+cost or completion claim. The preliminary prepare-only directory without
+`v2` is retained but cannot be resumed by this strengthened binding.
+EXP-023 at a different pressure does not imply EXP-018's local premise.
+
 External resumable state is under E:/_Datos/caos-research/riemann-hypothesis/
 exp020-quadratic-local-20261003 (stronger run) and
 exp019-local-replay-20261003 (suspended baseline). The stronger run's full-cover

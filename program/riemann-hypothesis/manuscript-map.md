@@ -94,3 +94,15 @@ or split is not triggered by conditional parameter substitution alone.
 RH-046 / issue #356 must close the local replay obligation before stronger
 claims or a coherent companion manuscript are considered. Existing three
 published manuscripts and DOI bytes are frozen.
+
+## Changed-pressure candidate and family restriction
+
+EXP-021's classical arithmetic and EXP-022's exact pressure-family cap stay
+in the research record. EXP-023's proposed distinct-strip proportion
+0.8373855610599298... is unproved until its complete universal certificate
+and independent audit pass. A complete stronger consequence, attributed
+analytic premises and source-overlap review would justify one focused
+distinct-zero companion combining the local certificate, elementary block
+transfer and fixed-family ceiling. No separate paper is triggered by
+classical Fourier arithmetic or partial pilot coverage. RH-F4 remains
+the sole active analytic focus.

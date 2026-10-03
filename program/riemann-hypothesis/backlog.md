@@ -113,3 +113,5 @@ EXP-022's candidate at p=1/1250 requires a new independently declared
 universal certificate. The pressure cap precludes indefinite tuning of
 the same packet beyond 0.837421287797... and does not constrain other
 window/weight schedules or RH-038's signed analytic route.
+
+| RH-048 | Certify the changed-pressure nine-point target and exact distinct-strip transfer | in progress; EXP-023; issue #362; full independent 96-shard audit required |

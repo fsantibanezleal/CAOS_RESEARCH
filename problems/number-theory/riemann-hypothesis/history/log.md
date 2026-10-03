@@ -507,3 +507,14 @@ are retained. A p=1/1250 candidate would give 0.837385561059... after a
 new complete certificate; the declared value gate passes. RH-F12 closes,
 RH-047 / issue #361 is confirmed supporting material. No new lower zero
 theorem, standalone manuscript or user stopping condition follows.
+
+## 2026-10-03: EXP-023 new-pressure pilot
+
+Declaration f2e1e7ec and RH-F13 admission 0de0e59d preceded implementation.
+Commit 62dd7923 binds separate wrappers, immutable quadratic core and
+baseline table prefixes before traversal. Thirty targeted controls pass,
+including exact transfer, all summed-pressure rounding indices and actual
+interruption/resume smoke. The independent auditor rejects unstarted cover.
+Issue #362 tracks the twenty-minute, one-CPU actual shard-0 pilot launched
+19:35:50 UTC. EXP-020's frozen 24-worker cover continues. Neither partial
+traversal proves a new zero proportion or fulfills the user's stopping gate.

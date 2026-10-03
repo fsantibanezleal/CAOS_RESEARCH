@@ -36,6 +36,20 @@
       "bytes": 116,
       "sha256": "03fed8d8390da7c464dd19093d37d51df2b9ee4d85efe0852b9eab84cc8cffc6",
       "rights": "original author rights retained; research archive"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2408.04247v1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\reciprocity-review\\dutta-2408.04247v1.pdf",
+      "bytes": 240769,
+      "sha256": "04ce6aef92378b66c40a6581b53d2b4090baadd37a27fc9990d4a9d62f3a5d69",
+      "rights": "original authors retain rights; research archive"
+    },
+    {
+      "url": "https://arxiv.org/html/2408.04247v1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\reciprocity-review\\dutta-2408.04247v1.html",
+      "bytes": 494920,
+      "sha256": "7629f9ec413a3223cbf12c4eebf9260d7ef5b7b2ebbd462c0484d0d927b81bad",
+      "rights": "original authors retain rights; research archive"
     }
   ],
   "scope": "primary source archive; download does not validate mathematical claims"
