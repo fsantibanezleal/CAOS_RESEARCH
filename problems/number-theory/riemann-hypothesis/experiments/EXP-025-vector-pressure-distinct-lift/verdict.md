@@ -38,3 +38,14 @@ improved short-window onset or external peer-review claim follows.
 One focused companion may combine the common transfer, EXP-020's completed
 local certificate and this stronger attributed consequence. Classical scalar
 and vector-counting support do not trigger additional manuscripts.
+
+## How could this be wrong?
+
+The universal local theorem relies on the pinned external formal source and
+reported kernel verification, which was not rebuilt locally. Incorrect source
+normalization, an invalid external dependency, or a missed general transfer
+argument could invalidate the consequence despite passing scalar/counting
+checks. Exact functional matching, two independent scalar derivations, full
+proof rederivation and source/log review address these specific risks; finite
+counting examples alone do not prove the theorem. No end-to-end local formal
+or external peer-review guarantee is asserted.

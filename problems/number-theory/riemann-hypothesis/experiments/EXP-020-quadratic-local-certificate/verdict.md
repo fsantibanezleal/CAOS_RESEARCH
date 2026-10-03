@@ -71,3 +71,13 @@ The three published manuscripts stay immutable. Classical support calculations
 do not receive separate papers. EXP-023 remains incomplete and its stronger
 candidate must not be substituted. EXP-025's source-attributed vector-pressure
 consequence may join this companion only after its separate final review.
+
+## How could this be wrong?
+
+A defect in the frozen interval pruning code or shared FLINT/Arb arithmetic
+could invalidate a numerical decision despite correct domain accounting.
+The independent whole-cell input path, rational LDL controls and corruption
+checks reduce identified risks but do not independently execute every prune.
+A defect in the attributed corrected analytic theorem or transfer proof would
+invalidate the global consequence without invalidating the local certificate.
+The full trust base and source dependency distinction remain explicit.
