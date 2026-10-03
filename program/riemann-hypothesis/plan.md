@@ -284,3 +284,6 @@ RH-F4 remains active. RH-F8 is admitted for one uniform sharp energy-loss
 proof and pressure transfer, with EXP-017 declared before computation.
 The fixed-input numerical gain alone is insufficient to justify a new
 manuscript or continued tuning. Track issue #354.
+
+RH-F8 is now closed by EXP-017. Its tiny gain does not admit more tuning.
+Read the pinned nine-point packet before any larger-input transfer.

@@ -53,10 +53,11 @@ live release. General RH remains open.
 | EXP-014 | confirmed generic pointwise phase obstruction |
 | EXP-015 | confirmed obstruction on squarefree twists with nonzero basic mollifier coefficients |
 | EXP-016 | confirmed trace-aware clipped-block refinement and revised integer cap |
+| EXP-017 | confirmed full-energy envelope and pressure transfer; scaled prior art, small exact gain |
 
 ## 4. In flight
 
-No computation is in flight. EXP-013--016 are closed research records.
+No computation is in flight. EXP-013--017 are closed research records.
 The latest deployed replay remains v9 with twelve experiments. The tag
 v0.74.000 is verified; no pending-tag action remains.
 
@@ -74,6 +75,7 @@ off-diagonal cancellation is not excluded.
 3. RH-021: recover an exact rank-six coefficient matrix or source artifact.
 4. RH-042: later serialized replay/workbench release for the new records.
 
+Latest source-based distinct-strip bound: EXP-017, 0.83699292567522... .
 No new paper or Zenodo deposit: fixed-input tuning and an elementary
 supporting obstruction do not meet the coherent manuscript gate.
 

@@ -55,3 +55,14 @@ short-window cancellation required by RH-038. Analytic continuation of the
 existing project still requires the complete shifted composite-twist
 reduction, with oscillatory and gamma factors retained. Further fixed-input
 constant polishing is not admitted after this uniform envelope experiment.
+
+## Post-computation prior-art reconciliation
+
+The pinned upstream refined-deduction.md and the original tawanerguo
+trace_energy_envelope.md were subsequently read in full. They contain the
+same tau=1 formula and pressure transfer. Arbitrary tau follows by scaling,
+so no novel formula is claimed. The independent proof here handles every
+energy and multiple clipped entries uniformly. The exact numerical gain
+is small; this closes the supporting route without a new manuscript.
+The upstream nine-point packet, on the same window, offers a materially
+larger local input and is a separate prospective transfer experiment.

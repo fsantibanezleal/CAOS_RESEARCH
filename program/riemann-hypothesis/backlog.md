@@ -89,4 +89,4 @@ does not change RH-038's analytic target or the onset. Larger searches on
 these fixed inputs are not admitted without a new uniform theorem and a
 value-of-information check.
 
-| RH-044 | Sharp retained-energy envelope and pressure transfer | declared EXP-017; issue #354; bounded secondary focus RH-F8 | P1 |
+| RH-044 | Sharp retained-energy envelope and pressure transfer | done; EXP-017 confirmed; issue #354; RH-F8 closed | P1 |

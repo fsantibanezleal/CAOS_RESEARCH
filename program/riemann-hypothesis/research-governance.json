@@ -182,7 +182,7 @@
     {
       "id": "RH-F8",
       "title": "Sharp retained-energy envelope",
-      "status": "admitted-bounded",
+      "status": "closed",
       "priority": 8,
       "target": "Determine the sharp one-sided clipping sum for every zero-sum spectrum with fixed energy, and transfer an energy-plus-pressure inequality through it.",
       "value": "A reusable uniform energy-loss estimate rather than a parameter grid; test whether the all-or-nothing block condition can be removed.",
@@ -194,8 +194,10 @@
       ],
       "novelty_status": "Classical trace/variance mechanism; no independent worldwide novelty confirmation.",
       "manuscript_route": "Evaluate after proof; standard supporting lemma and tiny source-based consequence remain research-record.",
-      "first_bounded_action": "EXP-017 declared before computation; issue #354.",
-      "evidence": []
+      "first_bounded_action": "Completed uniform proof, scalar minorant, exact feasible gain and prior-art reconciliation; stop tiny tuning.",
+      "evidence": [
+        "EXP-017"
+      ]
     }
   ],
   "manuscripts": [
@@ -279,6 +281,12 @@
     {
       "start": 16,
       "end": 16,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 17,
+      "end": 17,
       "classification": "research-record",
       "manuscripts": []
     }

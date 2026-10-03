@@ -1,0 +1,10 @@
+{
+  "candidate_q": "2414226638567370500000000000000000000000000000000000/2884405070233731673605548076712427442954743117560789",
+  "exact_stress_checks": 11715,
+  "passed": true,
+  "result_sha256": "251bdaf44b801ada34bda7c75458a62be5607b59aded5e1c4a2a6721051d3129",
+  "route": "scalar quadratic minorant on the energy-constrained range",
+  "schema": "exp017-independent-audit-v1",
+  "source_inputs_independently_replayed": false,
+  "uniform_proof": "proof.md; finite stress alone is insufficient"
+}

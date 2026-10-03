@@ -463,3 +463,11 @@ its failure is retained, and the repaired zero-difference check passes.
 Eleven new controls and the previous twenty focused tests pass.
 Canonical SHA-256 `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74`. No new onset, RH, Lean, interval-replay
 or peer-review claim. RH-F7 closes; no new manuscript/Zenodo trigger.
+
+## 2026-10-03: EXP-017 retained-energy envelope
+
+Declared and pushed as 416bad0d before computation; issue #354. The
+uniform sharp proof, independent quadratic minorant, exact candidate and
+50 focused tests pass. Formula prior art was located and explicitly
+attributed before closure. Bound 0.83699292567522... is a small attributed
+distinct-strip improvement; no onset/RH/new-manuscript claim. RH-F8 closes.

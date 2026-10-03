@@ -240,3 +240,7 @@ The subsequent [trace-aware chapter](17-trace-aware-clipping.md) records
 EXP-016's stronger distinct-strip bound 0.83699291672944... and revised
 integer cap. The refinement is a supporting research record; the onset
 and live replay remain unchanged.
+
+[Full-energy clipping](18-sharp-energy-envelope.md) records EXP-017 and
+its prior-art attribution. The latest supporting distinct-strip bound is
+0.83699292567522...; the short-window onset remains unchanged.

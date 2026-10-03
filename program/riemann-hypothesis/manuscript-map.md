@@ -78,3 +78,9 @@ global consequence is strip-wide, with the source's unreplayed analytic
 and local inputs. It has no standalone manuscript home; the supporting
 record belongs to the global Gram-method audit. No new paper, split or
 Zenodo version is triggered. RH-F4 remains the only active focus.
+
+## Full-energy envelope supporting record
+
+EXP-017 belongs to the global Gram-method supporting research record.
+The formula is scaled prior art and the constant gain is small; no new
+coherent paper, split or deposit is triggered by this result alone.

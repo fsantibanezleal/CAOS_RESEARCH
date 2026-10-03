@@ -155,3 +155,11 @@ Canonical SHA-256 `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2
 focused controls pass; the separate symbolic/matrix auditor passes.
 RH-F7 closes. The short-window onset, RH status, manuscript/Zenodo
 state and live replay v9 remain unchanged. RH-042 also covers EXP-016.
+
+## Full-energy envelope follow-up
+
+EXP-017 confirms the sharp retained-energy envelope and pressure transfer,
+with the tau=1 formula attributed to upstream prior work. The exact
+source-based distinct-strip candidate improves to 0.83699292567522... .
+RH-F8 closes as supporting research-record; no onset/manuscript/release
+change. Issue #354 tracks validation and promotion.
