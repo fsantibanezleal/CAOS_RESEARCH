@@ -63,3 +63,23 @@ def test_gradient_interval_bound_contains_all_corner_minima():
 def test_invalid_factorization_rejects():
     with pytest.raises(ValueError):
         quadratic.quadratic_lower(arb(1), [arb(1)], ([[arb(1)]], [arb(-1)]))
+
+
+def test_quadratic_pruner_certifies_cell_that_linear_pruner_cannot(monkeypatch):
+    # Exact toy F(x)=x+2(x-1)^2 has minimum 7/8 at x=3/4.
+    enhanced = importlib.import_module("rh019_vendor.quadratic_general")
+    reference = importlib.import_module("rh019_vendor.checkpoint_general")
+
+    def derivatives(x, kernel, k0_squared):
+        return (x-1)*(x-1), 2*(x-1), arb(2)
+
+    monkeypatch.setattr(enhanced, "squared_kernel_derivatives", derivatives)
+    monkeypatch.setattr(reference, "squared_kernel_derivatives", derivatives)
+    kernel = importlib.import_module("rh019_vendor.kernel").KernelSpec(coeffs=(fmpq(1),), omega_pi_multiples=())
+    spec = enhanced.CertificateSpec(kernel=kernel, q=1, pressure=fmpq(1),
+                                    target=fmpq(437, 500), weights={(0, 1): fmpq(2)}, grid=4)
+    tables = ([0.5625, 0.25, 0.0625, 0., 0., 0.0625, 0.25, 0.5625, 1.], [2.]*9)
+    with pytest.raises(RuntimeError, match="terminal cell"):
+        reference.verify_general(spec, tables=tables)
+    result = enhanced.verify_general(spec, tables=tables)
+    assert result.verified and result.nodes == 1 and result.details["tangent_pruned"] == 1
