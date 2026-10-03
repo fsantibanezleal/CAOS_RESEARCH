@@ -308,3 +308,10 @@ short-window analytic reduction and signed-family estimate. An Estermann
 functional-equation route is being compared with Tang's model; no published
 central-value formula is presumed uniform at polynomial height. EXP-020's
 full stronger interval cover continues with its runtime source frozen.
+
+EXP-022 closes bounded RH-F12 with a uniform fixed-packet pressure cap
+0.837421287797... . A changed-pressure candidate at p=1/1250 exceeds
+EXP-020's proposed transfer by about 0.00021, passing the declared value
+gate. One separately declared certificate pilot is justified before any
+new full run. No further unbounded pressure sweep is justified by this
+family; other windows/weights and RH-038 remain separate research routes.

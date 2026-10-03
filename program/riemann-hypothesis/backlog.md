@@ -106,3 +106,10 @@ shifted short-window Mellin reduction, including residues and all signed
 conductor/gamma contributions. Subsequent summation must preserve the
 squarefree mollifier cutoff and both polynomial weights. No manuscript,
 onset improvement or research stopping condition follows from this milestone.
+
+| RH-047 | Audit the full pressure family of the fixed nine-point packet | done; EXP-022; issue #361; uniform method-output cap 0.837421287797... |
+
+EXP-022's candidate at p=1/1250 requires a new independently declared
+universal certificate. The pressure cap precludes indefinite tuning of
+the same packet beyond 0.837421287797... and does not constrain other
+window/weight schedules or RH-038's signed analytic route.

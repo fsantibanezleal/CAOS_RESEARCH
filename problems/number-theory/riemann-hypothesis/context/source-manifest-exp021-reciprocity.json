@@ -1,0 +1,42 @@
+{
+  "schema": "rh-reciprocity-sources-v1",
+  "date": "2026-10-03",
+  "files": [
+    {
+      "url": "https://arxiv.org/pdf/1607.05595v1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\reciprocity-review\\bettin-1607.05595v1.pdf",
+      "bytes": 1016471,
+      "sha256": "e736ef99ed379212c99f28f29688dc9308d7f04f8b3b69553d9e2477a650b100",
+      "rights": "original author rights retained; research archive"
+    },
+    {
+      "url": "https://arxiv.org/src/1607.05595v1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\reciprocity-review\\bettin-1607.05595v1-source.tar",
+      "bytes": 740576,
+      "sha256": "04810b287f14954d1310d435a8a344242feb1b4f1cb93579b6b4998664167eed",
+      "rights": "original author rights retained; research archive"
+    },
+    {
+      "url": "https://zenodo.org/records/22066689/files/zeros-v3.pdf?download=1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\reciprocity-review\\devine-22066689-zeros-v3.pdf",
+      "bytes": 455218,
+      "sha256": "4abe6b7281697833d1e207d587ac0346a080eade7585691da6897e01283d8cbd",
+      "rights": "original author rights retained; research archive"
+    },
+    {
+      "url": "https://zenodo.org/records/22066689/files/consecutive_triple_simple_zeros_v3_public.tar.zst?download=1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\reciprocity-review\\devine-22066689-public.tar.zst",
+      "bytes": 465530,
+      "sha256": "26de675e8362d2fad02433797dc1f5ba79f9d8d11d9f51410b6257f878889f94",
+      "rights": "original author rights retained; research archive"
+    },
+    {
+      "url": "https://zenodo.org/records/22066689/files/consecutive_triple_simple_zeros_v3_public.tar.zst.sha256?download=1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\reciprocity-review\\devine-22066689-public.tar.zst.sha256",
+      "bytes": 116,
+      "sha256": "03fed8d8390da7c464dd19093d37d51df2b9ee4d85efe0852b9eab84cc8cffc6",
+      "rights": "original author rights retained; research archive"
+    }
+  ],
+  "scope": "primary source archive; download does not validate mathematical claims"
+}

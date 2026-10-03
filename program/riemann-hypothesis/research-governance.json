@@ -265,7 +265,7 @@
     {
       "id": "RH-F12",
       "title": "Uniform pressure duality audit for distinct zeros",
-      "status": "admitted-bounded",
+      "status": "closed",
       "priority": 12,
       "target": "Determine whether the fixed nine-point window and weights can support distinct proportion 0.838 under any pressure, and whether a changed pressure merits a separately declared certificate.",
       "value": "A pressure-family witness barrier can eliminate an entire tuning route; a materially better candidate changes the local input rather than only block parameters.",
@@ -387,6 +387,12 @@
     {
       "start": 20,
       "end": 20,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 21,
+      "end": 22,
       "classification": "research-record",
       "manuscripts": []
     }

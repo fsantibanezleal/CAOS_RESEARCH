@@ -1,0 +1,9 @@
+{
+  "schema": "rh-exp022-control-failure-v1",
+  "date": "2026-10-03",
+  "stage": "initial runtime import before search",
+  "error": "ModuleNotFoundError: No module named scipy",
+  "mathematical_controls_executed": false,
+  "source_sha256": "not sealed before initial runtime import",
+  "disposition": "preserve failure; install missing optimizer in an isolated experiment dependency directory, leaving the shared venv and EXP-020 runtime unchanged"
+}

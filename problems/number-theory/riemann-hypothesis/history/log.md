@@ -494,3 +494,16 @@ incorrect alternatives; Ruff passes. This classical supporting layer
 does not prove uniform analytic reciprocity or signed cancellation and
 does not improve the onset/proportions. No manuscript trigger; the user
 objective remains unmet. The EXP-020 full certificate continues running.
+
+## 2026-10-03: EXP-022 pressure duality and changed-input target
+
+Declaration 4b1af0f5 / admission 5c35f3d3 preceded the six-second search;
+f9aaf9cf preceded the explicit-cap arithmetic. Exact rational gap witnesses
+and native-sinc 256-bit verification prove that this fixed packet counting
+assembly is below 0.837421287797... for all p>=0 and finite admissible m.
+The all-vertex envelope agrees with the independent two-line proof; Ruff
+passes. Both dependency setup failures occurred before mathematics and
+are retained. A p=1/1250 candidate would give 0.837385561059... after a
+new complete certificate; the declared value gate passes. RH-F12 closes,
+RH-047 / issue #361 is confirmed supporting material. No new lower zero
+theorem, standalone manuscript or user stopping condition follows.

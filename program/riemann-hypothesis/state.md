@@ -183,3 +183,9 @@ pass in 4.17 seconds; the proof and source are bound in its receipt.
 RH-038 / issue #360 remains open for the uniform analytic reduction and
 signed-family estimate. No longer mollifier, new onset or manuscript follows.
 EXP-020 is still running; partial coverage does not upgrade EXP-018's premise.
+
+EXP-022 independently confirms a fixed-window/weight pressure-family
+ceiling 0.837421287797... for the counting assembly, not the actual zeros.
+The candidate at p=1/1250 would imply 0.837385561059... after a new complete
+universal local certificate. Issue #361 / RH-047 owns the audit. No new
+lower theorem or manuscript has yet landed; the user objective remains open.

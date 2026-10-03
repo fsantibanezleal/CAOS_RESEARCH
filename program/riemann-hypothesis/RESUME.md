@@ -58,6 +58,7 @@ live release. General RH remains open.
 | EXP-017 | confirmed full-energy envelope and pressure transfer; scaled prior art, small exact gain |
 | EXP-018 | confirmed conditional nine-point transfer 0.83716744477146...; local replay obligation open |
 | EXP-021 | confirmed classical shifted composite arithmetic layer; exact gcd, conductor and unequal-shift controls; analytic reciprocity and cancellation remain open |
+| EXP-022 | confirmed fixed-packet pressure-family cap 0.837421287797... for all p>=0; changed-pressure candidate 0.837385561059... requires a new complete local certificate |
 
 ## 4. In flight
 
@@ -76,6 +77,17 @@ not a universal local inequality or a new distinct-zero proportion. Issue
 #358 tracks the stronger certificate. The independent stdlib cover auditor
 supports both experiments and rejects incomplete coverage. Runtime-bound
 source must remain frozen while workers run.
+
+EXP-022 proves a uniform ceiling for this fixed window/weight schedule,
+not for the true zero proportion: every finite admissible pressure/block
+transfer is below 0.8374212877970697... . Two rational configurations,
+192-bit enclosures and an independent native-sinc 256-bit audit close
+the rising/falling-line proof. Issue #361 tracks this supporting result.
+At p=1/1250, delta=52231/5000000, m=562, tau=1203/500, c=1703/500, a new
+universal certificate would give 2340938143167/2795532013000 =
+0.8373855610599298... . This passes the declared 0.0001 improvement
+value gate; a separately declared certificate pilot is the next bounded
+step. The six-second exploration does not prove that new lower bound.
 
 External resumable state is under E:/_Datos/caos-research/riemann-hypothesis/
 exp020-quadratic-local-20261003 (stronger run) and
