@@ -25,6 +25,26 @@ def require(condition, reason):
         raise ValueError(reason)
 
 
+def nonnegative_integer(value):
+    # bool is an int subclass, but is not a valid traversal count.
+    return type(value) is int and value >= 0
+
+
+def validate_counters(state, report):
+    keys = ["nodes", "pruned", "splits", "initial_boxes", "maximum_depth",
+            "pressure_pruned", "interval_pruned", "tangent_pruned"]
+    require(all(nonnegative_integer(state[k]) for k in keys), "invalid tree counter")
+    require(state["nodes"] == state["splits"]+state["pruned"] and
+            state["pruned"] == sum(state[k] for k in keys[-3:]) and
+            state["pruned"] == state["initial_boxes"]+state["splits"], "tree accounting")
+    for key in keys[:5]:
+        require(nonnegative_integer(report[key]) and report[key] == state[key],
+                "report counter mismatch")
+    for key in keys[-3:]:
+        require(nonnegative_integer(report["details"][key]) and
+                report["details"][key] == state[key], "pruning counter mismatch")
+
+
 def audit(directory, experiment="EXP-019"):
     root = Path(__file__).resolve().parents[5]
     problem = Path(__file__).resolve().parents[2]
@@ -41,6 +61,13 @@ def audit(directory, experiment="EXP-019"):
     pressure, target, grid = Fraction(1, 2500), Fraction(3051, 500000) if stronger else Fraction(15211, 2500000), 4000
     require(binding["target"] == str(target) and binding["pressure"] == str(pressure)
             and binding["grid"] == grid and binding["precision"] == 128, "wrong target/parameters")
+    require(base["packet_sha256"] == packet_sha and
+            base["upstream_commit"] == "1610b97b7895ff34982260f8dcaf04a0f7b82cf7",
+            "baseline identity mismatch")
+    require({name.replace("\\", "/") for name in base["code"]} ==
+            {"local_replay.py", "rh019_vendor/checkpoint_general.py",
+             "rh019_vendor/kernel.py", "rh019_vendor/source-binding.json"},
+            "missing or unexpected baseline source")
     for name, value in base["code"].items():
         require(sha((problem/"code"/name.replace("\\", "/")).read_bytes()) == value, "bound code mismatch")
     require(sha((Path(__file__).parent/"run.py").read_bytes()) == base["runner_sha256"], "baseline runner changed")
@@ -49,12 +76,20 @@ def audit(directory, experiment="EXP-019"):
     for name, value in frozen["files"].items():
         require(sha((problem/"code/rh019_vendor"/name).read_bytes()) == value, "frozen source mismatch")
     if stronger:
+        require({name.replace("\\", "/") for name in binding["code"]} ==
+                {"code/certified_quadratic.py", "code/quadratic_replay.py",
+                 "code/rh019_vendor/quadratic_general.py",
+                 "experiments/EXP-020-quadratic-local-certificate/run.py"},
+                "missing or unexpected quadratic source")
         for name, value in binding["code"].items():
             require(sha((problem/name.replace("\\", "/")).read_bytes()) == value, "quadratic code mismatch")
     units = target*grid/pressure
     cutoff = -(-units.numerator//units.denominator)+1
     require(cutoff == (61021 if stronger else 60845), "cutoff mismatch")
     cells = cutoff+8
+    require(set(binding["tables"]) == {"w.bin", "w-second.bin"}, "missing or unexpected table")
+    if stronger:
+        require(binding["cells"] == cells, "binding cell count")
     tables = {}
     for name, value in binding["tables"].items():
         raw = (directory/"tables"/name).read_bytes()
@@ -122,13 +157,7 @@ def audit(directory, experiment="EXP-019"):
         initial_digest = sha(json.dumps(expected[s], separators=(",", ":")).encode())
         require(state["initial_sha256"] == initial_digest and state["initial_boxes"] == len(expected[s]),
                 "initial cover mismatch")
-        require(state["nodes"] == state["splits"]+state["pruned"] and
-                state["pruned"] == sum(state[k] for k in ["pressure_pruned", "interval_pruned", "tangent_pruned"])
-                and state["pruned"] == state["initial_boxes"]+state["splits"], "tree accounting")
-        for key in ["nodes", "pruned", "splits", "initial_boxes", "maximum_depth"]:
-            require(report[key] == state[key], "report counter mismatch")
-        for key in ["pressure_pruned", "interval_pruned", "tangent_pruned"]:
-            require(report["details"][key] == state[key], "pruning counter mismatch")
+        validate_counters(state, report)
         require(report["details"]["w_table_sha256"] == binding["tables"]["w.bin"] and
                 report["details"]["w_second_table_sha256"] == binding["tables"]["w-second.bin"], "table report mismatch")
         require(report["details"]["cutoff_cells"] == cutoff, "report cutoff mismatch")
