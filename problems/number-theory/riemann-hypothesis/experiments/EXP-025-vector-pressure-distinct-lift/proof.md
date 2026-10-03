@@ -84,6 +84,27 @@ It does not assume C or M is positive semidefinite. The threshold and
 mixed-Gram inequalities, their multiplicity minima and operator construction
 are attributed source machinery, independently reviewed in EXP-019.
 
+For completeness the threshold completion is elementary. Write Q=Q_+-Q_-,
+with Q_+*Q_-=0. Then tr(P-Q_-)*Q_+=tr(P*Q_+)>=0. Completing squares on
+Q_+ gives tr(Q_+^2)>=2c*tr(Q_+)-c^2*rank(Q_+). Minimizing the remaining
+quadratic in Q_- over positive semidefinite matrices gives
+-tr((P-cI)_+^2), proving the stated threshold. For any Hermitian A<=2cI,
+Loewner eigenvalue monotonicity implies
+tr((P-A/2)^2)>=tr((P-cI)_+^2), so
+tr(phi_c(P))>=tr(A*P)-tr(A^2)/4. Substitution of A=2D0+2M,
+tr(D0^2*U)=tr(D0^2) and tr(M*P)-tr(D0*M)=tr(C*(U-I)) proves
+the mixed completion without a commutativity assumption.
+
+The low-multiplicity identity is tr(D0^2)=3*tr(D0)-2*l. The high-point
+and off-line multiplicity mass is at least 3h+2k. Since 2c-3>=0, the
+threshold becomes
+
+    tr(P+Q)^2 >= 3N-2Nd+(6c-7-c^2)*h+(4c-2-c^2)*k
+                              + tr(Psi_tau(U)).
+
+This independently reconstructs both residual coefficients rather than
+assuming a simple-zero proportion can be converted to this stronger count.
+
 ## Analytic energy and limit order
 
 For fixed smooth compact approximations f_epsilon to f, supported strictly
