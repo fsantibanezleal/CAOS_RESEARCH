@@ -9,9 +9,13 @@ moment range or new zero proportion is asserted.
 
 For the Gaussian width H_w, the finite EXP-024 expansion has branches
 K_J(x)=e(x)V_+(x)+e(-x)V_-(x). Insert a fixed smooth cutoff in x/T,
-equal to one around the stationary band x=T/(2*pi); the complementary
-original-kernel contribution has the arbitrary-power nonstationary bound
-proved in proof.md. The plus branch has no positive-x stationary point;
+equal to one on [T/(3*pi),2*T/(3*pi)] and supported in
+[T/(4*pi),T/pi]. For its complement use the integration-by-parts argument
+of proof.md with a u-cutoff supported in (7/8,9/8), equal to one near 1.
+For x<=T/(3*pi) the minus-phase derivative T/u-2*pi*x is at least 2*T/9;
+for x>=2*T/(3*pi) its absolute value is at least 4*T/21. The Gaussian
+complement is exponentially small. This supplies the same arbitrary-power
+nonstationary bound with changed fixed constants. The plus branch has no positive-x stationary point;
 its finite-order Gaussian profiles are exponentially suppressed there.
 Keep it explicitly or bound it before dropping it. The minus profile is
 localized on scale H_w around T/(2*pi), with all finite Hermite terms.
