@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "accessed": "2026-10-03",
+  "upstream_commit": "1610b97b7895ff34982260f8dcaf04a0f7b82cf7",
+  "description": "Pinned nine-point candidate, source verifier and prior-art notes; full interval replay NOT performed here.",
+  "files": [
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/LICENSE",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/LICENSE",
+      "sha256": "d50ded5fb6aca7aab26ac8ce32490323ae75adfc9f0f29e167f89631aebae9da",
+      "bytes": 1089,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/README.md",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/README.md",
+      "sha256": "1de8d0479570e1db59e16a23fbe7c34696847c3c6ca42c1c9bbfa95e0f55c3e8",
+      "bytes": 6372,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/docs/refined-deduction.md",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/docs/refined-deduction.md",
+      "sha256": "a5d1b473bcbbbf1014b58cfc29877347c3ee91eafb758dd21b68a182734045ab",
+      "bytes": 4068,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/docs/nine-point.md",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/docs/nine-point.md",
+      "sha256": "563d9f95a51e82e41d8d70024eeb15ac35220e5567b166cc338f0d2cc3bb88a9",
+      "bytes": 2241,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/docs/verifier.md",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/docs/verifier.md",
+      "sha256": "5a11c7406a93fe386affe00c2b9de75d6f26830ef84e474adbf65406b7ad7d21",
+      "bytes": 4426,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/docs/campaign-2.md",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/docs/campaign-2.md",
+      "sha256": "83f5d69452b86dd8b37dbbe421f4008b15f17189d10c80275bd16799d626f37d",
+      "bytes": 6553,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/data/candidate-nine-point-final.json",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/data/candidate-nine-point-final.json",
+      "sha256": "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d",
+      "bytes": 3835,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/certificates/nine-point-final-grid4000.txt",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/certificates/nine-point-final-grid4000.txt",
+      "sha256": "d6a6f9900a5ac1f7540d9e0c997811f0e2834bb9151c0830013f1676e20ccc24",
+      "bytes": 649,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/src/zeta_ext/nine_point.py",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/src/zeta_ext/nine_point.py",
+      "sha256": "f0ffc0273b6797a04dddada060c4df23c90b4e368c8cad3c120534a1d8b6766a",
+      "bytes": 2251,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/src/zeta_ext/verify_general.py",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/src/zeta_ext/verify_general.py",
+      "sha256": "80af0be5315254ad647e3389e17e9e26be1d3d63748763f118849fac8a6206ff",
+      "bytes": 14696,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/src/zeta_ext/kernel.py",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/src/zeta_ext/kernel.py",
+      "sha256": "c1d9521a87b3c4042e0541f8f16ec24fee2efd48cbb66f8429b633377bca1cfc",
+      "bytes": 10788,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/src/zeta_ext/design.py",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/src/zeta_ext/design.py",
+      "sha256": "fdd444f69a8d720668c70635b29956cb4e75a6acd731e6e55b4fcdabe849ff93",
+      "bytes": 3337,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/src/zeta_ext/h0_cert.py",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/src/zeta_ext/h0_cert.py",
+      "sha256": "c86fb0f9311601ed1fb89bbc4dfe4fdcd613ba220cf4463c146a4108c73f24a5",
+      "bytes": 4100,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/src/zeta_ext/cli.py",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/src/zeta_ext/cli.py",
+      "sha256": "7427a0f9e3f32aa9914258fd4a938e3cba58322fd21ac87e84f61a436aca411b",
+      "bytes": 5411,
+      "license": "MIT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/trmdy/zeta-simple-zeros-673137/1610b97b7895ff34982260f8dcaf04a0f7b82cf7/src/zeta_ext/parallel.py",
+      "cache_path": "source-cache/2026-10-03/trmdy-1610b97-nine/src/zeta_ext/parallel.py",
+      "sha256": "71e01a7c71bd134342077025051f9e3f4e61bd2ea469ad0fec533a4c5b404afc",
+      "bytes": 5399,
+      "license": "MIT"
+    }
+  ],
+  "upstream_replay_claim": "96 disjoint shards; 116272426 nodes; two matching table hashes. This is upstream evidence only."
+}

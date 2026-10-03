@@ -198,6 +198,24 @@
       "evidence": [
         "EXP-017"
       ]
+    },
+    {
+      "id": "RH-F9",
+      "title": "Nine-point conditional distinct-strip transfer",
+      "status": "admitted-bounded",
+      "priority": 9,
+      "target": "Extend the mixed-Gram counting transfer to a pinned r-gap certificate and check a nine-point candidate with explicit premises.",
+      "value": "A larger local certificate can yield a materially larger distinct-strip consequence; exact capacity and provenance checks separate arithmetic from unverified input claims.",
+      "success_gate": "Uniform counting proof, packet capacity validation, independent exact q>0.8370, and an explicit certificate-provenance obligation.",
+      "stop_conditions": [
+        "Any capacity or residual fails.",
+        "The fixed candidate and conditional theorem are complete.",
+        "No full replay binding is available; do not upgrade the premise."
+      ],
+      "novelty_status": "Source-based extension; no worldwide priority or accepted unconditional theorem claimed.",
+      "manuscript_route": "Research-record while universal local input lacks independent replay binding; a coherent verified improvement with this obligation closed would trigger a focused companion paper.",
+      "first_bounded_action": "EXP-018 declared; fixed candidate only; issue #355.",
+      "evidence": []
     }
   ],
   "manuscripts": [

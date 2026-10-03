@@ -287,3 +287,9 @@ manuscript or continued tuning. Track issue #354.
 
 RH-F8 is now closed by EXP-017. Its tiny gain does not admit more tuning.
 Read the pinned nine-point packet before any larger-input transfer.
+
+## Larger-certificate bounded review
+
+RH-F9 tests one nine-point conditional transfer (EXP-018, issue #355).
+The source candidate/log discrepancy remains an explicit local-premise
+obligation. No full replay or manuscript publication is inferred from it.
