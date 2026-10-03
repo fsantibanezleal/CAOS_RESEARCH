@@ -277,3 +277,10 @@ Further fixed-input polishing has low value relative to an independent
 local certificate improvement or a genuine analytic moment theorem.
 No new manuscript is warranted; the supporting record belongs with
 the attributed global Gram-method audit. Live integration remains RH-042.
+
+## Bounded energy-envelope review (2026-10-03)
+
+RH-F4 remains active. RH-F8 is admitted for one uniform sharp energy-loss
+proof and pressure transfer, with EXP-017 declared before computation.
+The fixed-input numerical gain alone is insufficient to justify a new
+manuscript or continued tuning. Track issue #354.
