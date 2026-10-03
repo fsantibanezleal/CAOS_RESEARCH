@@ -57,3 +57,10 @@ Papers remain externally cached. Earlier manifests stay frozen.
 Wolkowicz-Styan 1980 paper. Reading scope: printed pages 472-474,
 the trace/variance setup and Theorem 2.1. The 36-page PDF is archived
 externally, not claimed to have been reviewed completely.
+
+[Late source eligibility review](2026-10-03-late-source-eligibility.md)
+and its [manifest](source-manifest-20261003-late-review.json) preserve the
+Qi--Qiao spectral paper, Das--Pujahari derivative paper and Cicada Lean
+port. The review records an exact discrepancy in a displayed exponent
+minimum, spectral-family applicability gaps and explicit formal analytic
+hypotheses. It does not infer a theorem refutation or new zero bound.

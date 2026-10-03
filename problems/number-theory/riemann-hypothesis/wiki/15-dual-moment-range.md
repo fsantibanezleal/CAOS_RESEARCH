@@ -43,3 +43,11 @@ residue sign. The analytic uniform conclusion comes from the proof.
 No enlarged moment range or short-window onset follows. This is supporting
 research, with classical transforms explicitly acknowledged; a separate
 paper or Zenodo deposit is not justified at this stage.
+
+The [signed-character interface](../experiments/EXP-024-gaussian-mellin-reduction/signed-character-interface.md)
+preserves the substituted second shift, both primitive Euler factors and
+all gcd classes. Its unshifted additive-divisor residue recovers the exact
+gcd(h,k)/(h*k) normalization. It distinguishes the whole Gaussian kernel's
+Mellin factor from the phase-peeled profile; canceling a gamma factor absent
+from the latter would be invalid. Both Mellin frequency signs remain.
+This organizes the open signed estimate and does not evaluate it.

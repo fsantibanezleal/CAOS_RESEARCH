@@ -1,0 +1,9 @@
+{
+  "schema": "exp023-transfer-partial-rejection-v1",
+  "utc": "2026-10-03T21:12:59.326980+00:00",
+  "actual_reports": 95,
+  "observed_error": "ValueError: incomplete coverage",
+  "transfer_receipt_issued": false,
+  "source_sha256": "9884beea5406537f6fa20d1ea0b2cecf58f42bb2a0d06ff28932d9f5295b3586",
+  "scope": "negative control of actual partial cover; no new lower bound"
+}

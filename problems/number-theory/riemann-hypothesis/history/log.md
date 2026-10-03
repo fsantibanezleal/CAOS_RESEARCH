@@ -544,3 +544,16 @@ Scoped collection finds 258 Riemann tests after the previously passing
 full Riemann suite and three passing new supervisor controls. Attempted
 all-problem collection exposed unrelated missing dependencies and is not
 used as validation of this scoped session.
+
+## 2026-10-03: later source eligibility and transfer gates
+
+The late source manifest preserves Qi--Qiao, Das--Pujahari and the Cicada
+Lean port. A visually checked PDF exponent minimum has an exact rational
+inconsistency; the record rejects the displayed derivation's claimed
+range as an imported premise, without refuting the underlying theorem.
+Spectral-family hypotheses and the Lean port's two explicit analytic inputs
+are retained. The EXP-024 signed interface derives the unshifted gcd
+residue and distinguishes two different Mellin weights; cancellation remains
+open. EXP-023's stdlib transfer auditor rejects its actual 95/96 cover and
+issues no bound receipt. None of these supporting audits meets the user's
+research stopping condition.
