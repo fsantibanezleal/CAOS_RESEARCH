@@ -257,3 +257,11 @@ performed as a side effect of this problem round, under methodology 08.
 No new manuscript or Zenodo deposit is justified by elementary parameter
 tuning or the supporting phase obstruction. Their home is the research
 record associated with short-interval-Levinson; published PDFs remain frozen.
+
+## Trace-aware follow-up admission 2026-10-03
+
+EXP-016 is admitted before computation: the original fixed-input cap
+remains valid, but a zero-sum Jensen argument changes the clipped-block
+condition. RH-F7 is bounded and stops at its new uniform cap. RH-F4
+remains the sole active substantive focus. The elementary refinement is
+a supporting research record with no standalone manuscript trigger.
