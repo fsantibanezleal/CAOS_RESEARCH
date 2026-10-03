@@ -19,3 +19,16 @@ required before a full-table run is admitted.
 
 At 22:20 UTC the revised local cover is still 95/96, and EXP-020 is 94/96.
 Neither certificate is complete, and no improved zero-count theorem is claimed.
+
+The separately declared midpoint Taylor pilot then proved both table comparisons
+on every closed cell of its 512-cell range in 0.446 seconds, without bisection.
+Both increased-bound controls rejected their deliberately false test inputs.
+Its linear throughput projection is 45.46 seconds for 52,240 cells, satisfying
+the declared 600-second admission gate. One full-table run on one CPU is
+therefore admitted; its actual receipt, not this projection, determines success.
+
+That full Taylor run stopped inconclusively at cell 32,031 after 94.46 seconds.
+Its receipt certifies only the first 32,031 cells and has all-cells false.
+The global squared-kernel second-derivative bound can dominate a very small
+kernel value near a zero, even after eight bisections. Preserve this source
+and receipt. A kernel-first variant is declared separately before implementation.

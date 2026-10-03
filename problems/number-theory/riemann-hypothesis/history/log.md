@@ -597,3 +597,11 @@ source and receipt are preserved. A second, separately declared midpoint
 Taylor audit uses global Fourier derivative bounds without window positivity.
 Its pilot must pass before any full-table admission. At 22:20 UTC EXP-023
 remains 95/96 and EXP-020 is 94/96. No complete new certificate is claimed.
+
+The native midpoint Taylor pilot passed its 512 cells. Its full run then
+retained 32,031 successfully compared closed cells and stopped inconclusively
+near a kernel zero, without a complete-table flag. A kernel-first Taylor
+variant is separately declared to avoid a global squared-kernel remainder
+dominating small values. It must pass its own pilot and full-range gate.
+The previously timed-out issue #360 update was inspected and then posted
+successfully at issuecomment-5974118103; no duplicate was found.
