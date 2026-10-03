@@ -277,3 +277,26 @@ Further fixed-input polishing has low value relative to an independent
 local certificate improvement or a genuine analytic moment theorem.
 No new manuscript is warranted; the supporting record belongs with
 the attributed global Gram-method audit. Live integration remains RH-042.
+
+## Bounded energy-envelope review (2026-10-03)
+
+RH-F4 remains active. RH-F8 is admitted for one uniform sharp energy-loss
+proof and pressure transfer, with EXP-017 declared before computation.
+The fixed-input numerical gain alone is insufficient to justify a new
+manuscript or continued tuning. Track issue #354.
+
+RH-F8 is now closed by EXP-017. Its tiny gain does not admit more tuning.
+Read the pinned nine-point packet before any larger-input transfer.
+
+## Larger-certificate bounded review
+
+RH-F9 tests one nine-point conditional transfer (EXP-018, issue #355).
+The source candidate/log discrepancy remains an explicit local-premise
+obligation. No full replay or manuscript publication is inferred from it.
+
+RH-F9 is closed by EXP-018. The larger conditional target is 0.83716744477...
+for distinct zeros in the strip. Before a claim upgrade, RH-046 / issue
+#356 requires packet-bound replay with progress/checkpoints and a declared
+cost. Never infer it from the kernel-table hashes or finite samples.
+Manuscript reassessment follows closure of that input obligation. RH-F4
+and the signed composite-twist target RH-038 remain the analytic priority.

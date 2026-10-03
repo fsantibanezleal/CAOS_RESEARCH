@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "stage": "independent symbolic audit",
+  "failure": "Boundary continuity simplification could not infer m>1 from positive m.",
+  "repair": "Parameterize m=nminus+1 with nminus>0; this encodes the stated dimension hypothesis.",
+  "producer_changed": false,
+  "candidate_changed": false
+}

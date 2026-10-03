@@ -178,6 +178,46 @@
       "evidence": [
         "EXP-016"
       ]
+    },
+    {
+      "id": "RH-F8",
+      "title": "Sharp retained-energy envelope",
+      "status": "closed",
+      "priority": 8,
+      "target": "Determine the sharp one-sided clipping sum for every zero-sum spectrum with fixed energy, and transfer an energy-plus-pressure inequality through it.",
+      "value": "A reusable uniform energy-loss estimate rather than a parameter grid; test whether the all-or-nothing block condition can be removed.",
+      "success_gate": "Uniform sharp proof, independent scalar minorant, PSD equality controls and one exact feasible source-based gain.",
+      "stop_conditions": [
+        "The envelope or pressure transfer fails.",
+        "The bounded proof and candidate are complete.",
+        "Only tiny fixed-input tuning remains."
+      ],
+      "novelty_status": "Classical trace/variance mechanism; no independent worldwide novelty confirmation.",
+      "manuscript_route": "Evaluate after proof; standard supporting lemma and tiny source-based consequence remain research-record.",
+      "first_bounded_action": "Completed uniform proof, scalar minorant, exact feasible gain and prior-art reconciliation; stop tiny tuning.",
+      "evidence": [
+        "EXP-017"
+      ]
+    },
+    {
+      "id": "RH-F9",
+      "title": "Nine-point conditional distinct-strip transfer",
+      "status": "closed",
+      "priority": 9,
+      "target": "Extend the mixed-Gram counting transfer to a pinned r-gap certificate and check a nine-point candidate with explicit premises.",
+      "value": "A larger local certificate can yield a materially larger distinct-strip consequence; exact capacity and provenance checks separate arithmetic from unverified input claims.",
+      "success_gate": "Uniform counting proof, packet capacity validation, independent exact q>0.8370, and an explicit certificate-provenance obligation.",
+      "stop_conditions": [
+        "Any capacity or residual fails.",
+        "The fixed candidate and conditional theorem are complete.",
+        "No full replay binding is available; do not upgrade the premise."
+      ],
+      "novelty_status": "Source-based extension; no worldwide priority or accepted unconditional theorem claimed.",
+      "manuscript_route": "Research-record while universal local input lacks independent replay binding; a coherent verified improvement with this obligation closed would trigger a focused companion paper.",
+      "first_bounded_action": "Completed conditional counting proof and exact candidate; RH-046/issue #356 retains the universal local input obligation.",
+      "evidence": [
+        "EXP-018"
+      ]
     }
   ],
   "manuscripts": [
@@ -261,6 +301,18 @@
     {
       "start": 16,
       "end": 16,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 17,
+      "end": 17,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 18,
+      "end": 18,
       "classification": "research-record",
       "manuscripts": []
     }

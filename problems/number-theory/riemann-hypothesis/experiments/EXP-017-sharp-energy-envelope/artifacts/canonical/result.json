@@ -1,0 +1,119 @@
+{
+  "arithmetic": "exact rational decisions; floats locate only",
+  "bindings": {
+    "problems/number-theory/riemann-hypothesis/code/energy_envelope.py": "ecb64597be388e60e180d4c4920cc544c1640065803e89230e479258496a58e0",
+    "problems/number-theory/riemann-hypothesis/code/mixed_gram_parameters.py": "21739d9ed2dd5ea7f8133c2a09e452998bc350fe15f7cd7a27f43d1f14e65d06",
+    "problems/number-theory/riemann-hypothesis/context/source-manifest-20261003.json": "004b2f4aac236d6560890cbe28543cc72a76c2cd639ca9914b277210c66f5498",
+    "problems/number-theory/riemann-hypothesis/context/source-manifest-exp016.json": "00f1a06f52330b9108f90ccdf45aeb33cfbf2b07e280ec98901239775610f974",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-017-sharp-energy-envelope/hypothesis.md": "ad6bd2734cb235cf23dafb2d49d37611c4f6b9f86ad1b3293834cccf37577ee1",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-017-sharp-energy-envelope/proof.md": "92cd2727284b2fa02b72e52c8faaca65605a4ce3ec688c5cef9fdf68ae2adbee",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-017-sharp-energy-envelope/run.py": "74cac74ec134e46e03273eace9900a0a9a411c44f86e4bd077f53f2a1842f892"
+  },
+  "candidate": {
+    "D": "1168101/200000",
+    "a": "6409929766268326394451923287572557045256882439211/1445407500000000000000000000000000000000000000000000",
+    "beta": "23/10536",
+    "c": "1705537/500000",
+    "envelope_lower": "6409929766268326394451923287572557045256882439211/1097500000000000000000000000000000000000000000000",
+    "envelope_upper": "3204964883134163197225961643786278522628705834977/548750000000000000000000000000000000000000000000",
+    "m": 1317,
+    "q": "2414226638567370500000000000000000000000000000000000/2884405070233731673605548076712427442954743117560789",
+    "q_enclosure": {
+      "lower": "0.83699292567522034714975959921347264010509798354380",
+      "upper": "0.83699292567522034714975959921347264010509798354381",
+      "width": "1/100000000000000000000000000000000000000000000000000"
+    },
+    "slacks": {
+      "double_diagonal_threshold": "205537/1000000",
+      "high_multiplicity_residual": "2640157460763770203605548076712427442954743117560789/1445407500000000000000000000000000000000000000000000",
+      "off_line_pair_residual": "572843750938605548076712427442954743117560789/722703750000000000000000000000000000000000000000000",
+      "unit_diagonal_threshold": "0"
+    },
+    "tau": "1205537/500000"
+  },
+  "candidate_count": 51,
+  "experiment": "EXP-017",
+  "gain_over_exp016": "2137693389391688593822684049283385266378353279002820074131/238961125715412133936379313792559372148055454348242906427831625000",
+  "gain_over_source": "2478017527242669837259446913244162126897671444542584615119/56034849979194089234168726828944767369665307341003736007698450000",
+  "not_established": [
+    "worldwide novelty",
+    "source certificate independently replayed",
+    "global parameter optimum",
+    "new short-window onset",
+    "RH"
+  ],
+  "schema": "exp017-sharp-energy-envelope-v1",
+  "scope": "Sharp zero-sum clipping envelope and attributed distinct-strip consequence",
+  "search": {
+    "global_optimality_claimed": false,
+    "m_max": 1350,
+    "m_min": 1300,
+    "tau_denominator": 1000000
+  },
+  "sharp_controls": [
+    {
+      "clipped_energy": "1/8",
+      "displacements": [
+        "1/4",
+        "-1/4"
+      ],
+      "energy": "1/8",
+      "m": 2,
+      "s": "1/4",
+      "tau": "1/2"
+    },
+    {
+      "clipped_energy": "7/6",
+      "displacements": [
+        "1",
+        "-1/6",
+        "-1/6",
+        "-1/6",
+        "-1/6",
+        "-1/6",
+        "-1/6"
+      ],
+      "energy": "7/6",
+      "m": 7,
+      "s": "1",
+      "tau": "1"
+    },
+    {
+      "clipped_energy": "13/2",
+      "displacements": [
+        "3",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      "energy": "21/2",
+      "m": 7,
+      "s": "3",
+      "tau": "1"
+    },
+    {
+      "clipped_energy": "17",
+      "displacements": [
+        "6",
+        "-1",
+        "-1",
+        "-1",
+        "-1",
+        "-1",
+        "-1"
+      ],
+      "energy": "42",
+      "m": 7,
+      "s": "6",
+      "tau": "1"
+    }
+  ],
+  "source_inputs": {
+    "delta": "891/200000",
+    "energy_gain": "3362285207/5000000000",
+    "pressure": "1/2736"
+  }
+}

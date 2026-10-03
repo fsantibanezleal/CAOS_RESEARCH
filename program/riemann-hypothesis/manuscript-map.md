@@ -78,3 +78,19 @@ global consequence is strip-wide, with the source's unreplayed analytic
 and local inputs. It has no standalone manuscript home; the supporting
 record belongs to the global Gram-method audit. No new paper, split or
 Zenodo version is triggered. RH-F4 remains the only active focus.
+
+## Full-energy envelope supporting record
+
+EXP-017 belongs to the global Gram-method supporting research record.
+The formula is scaled prior art and the constant gain is small; no new
+coherent paper, split or deposit is triggered by this result alone.
+
+## Nine-point conditional transfer
+
+EXP-018 is a supporting research-record, with a full conditional proof and
+exact q=3997934614153/4775549550000. Its universal local premise remains
+unclosed: candidate metadata and replay-log binding disagree. A new paper
+or split is not triggered by conditional parameter substitution alone.
+RH-046 / issue #356 must close the local replay obligation before stronger
+claims or a coherent companion manuscript are considered. Existing three
+published manuscripts and DOI bytes are frozen.
