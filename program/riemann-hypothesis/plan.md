@@ -324,3 +324,11 @@ fraction transformation, or establish Fourier concentration for fixed-modulus
 Kloosterman completion. Partitioning arbitrary full supports does not supply
 either requirement. The withdrawn January bound cannot be used. These
 analytic investigations proceed while the frozen interval covers continue.
+
+The 22:37 UTC primary-source refresh locates a newly accepted optimized-window
+seven-point proof with unequal gap pressures. EXP-025 is declared before
+computation to test one vector-pressure distinct-strip transfer, with a
+thirty-second invariant/window/arithmetic preflight and no parameter sweep.
+Its local theorem remains an explicit attributed external dependency; source
+logs are not a local rebuild. It runs alongside the frozen covers and does
+not change the active signed-moment focus or manuscript stopping policy.
