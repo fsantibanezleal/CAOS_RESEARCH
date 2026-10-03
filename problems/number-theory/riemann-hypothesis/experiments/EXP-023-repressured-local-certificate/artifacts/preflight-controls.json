@@ -1,0 +1,23 @@
+{
+  "schema": "exp023-preflight-v1",
+  "passed": true,
+  "control_count": 30,
+  "controls": "three new preflights, sixteen quadratic controls, eleven independent accounting controls",
+  "proof_status": "new universal inequality NOT established",
+  "issue": 362,
+  "cutoff": 52232,
+  "cells": 52240,
+  "distinct_fraction": "2340938143167/2795532013000",
+  "residuals": {
+    "clipping": "4103/2500000",
+    "first_trace": "2563937433/1405000000",
+    "second_trace": "1804723/702500000",
+    "denominator": "2795532013/1405000000"
+  },
+  "control_source_sha256": "6d0276b596532df02f5f513adb14c471e7735fa4cafae26a86bac4322351f499",
+  "existing_exp020_summed_pressure_control": {
+    "indices": 488161,
+    "invalid_indices": [],
+    "runtime_source_unchanged": true
+  }
+}
