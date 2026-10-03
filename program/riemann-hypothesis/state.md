@@ -189,3 +189,23 @@ ceiling 0.837421287797... for the counting assembly, not the actual zeros.
 The candidate at p=1/1250 would imply 0.837385561059... after a new complete
 universal local certificate. Issue #361 / RH-047 owns the audit. No new
 lower theorem or manuscript has yet landed; the user objective remains open.
+
+## Continued verification and signed-interface review
+
+EXP-024 closes the exact shifted Gaussian and fixed smooth compact-window
+representation step, with explicitly controlled remainders. Its main signed
+moment remains open. The signed-character interface retains both frequency
+signs, gcd/conductor factors and the distinction between its two Mellin
+weights. The late source review rejects an incorrect displayed exponent
+minimum as an imported premise and excludes the withdrawn January 2026
+Kloosterman improvement. Short-support and non-abelian approaches now have
+explicit conversion obligations; no new cancellation is asserted.
+
+EXP-023's revised full cover resumed at 20:48:12 UTC on 2026-10-03 with
+four workers and a six-hour operational supervisor. At 21:52 UTC 95/96
+shards are complete, with no complete-certificate verdict. The earlier
+EXP-020 has reached 91/96. Actual complete-output corruption checks and
+an exact-byte archive builder are prepared and refuse partial output.
+Draft PR #363 is pushed and unmerged. Only CI on 098c0476 is currently
+verified successful; later GitHub API requests encountered network errors.
+No new manuscript, DOI, release or deployment is claimed from these gates.

@@ -315,3 +315,12 @@ EXP-020's proposed transfer by about 0.00021, passing the declared value
 gate. One separately declared certificate pilot is justified before any
 new full run. No further unbounded pressure sweep is justified by this
 family; other windows/weights and RH-038 remain separate research routes.
+
+RH-038 now has EXP-024's exact shifted representation. Its next signed
+estimate must retain the phase-profile frequency signs and residue terms.
+The subdyadic/non-abelian source review identifies two concrete conversion
+requirements: preserve a bounded-degree support graph through the inverse
+fraction transformation, or establish Fourier concentration for fixed-modulus
+Kloosterman completion. Partitioning arbitrary full supports does not supply
+either requirement. The withdrawn January bound cannot be used. These
+analytic investigations proceed while the frozen interval covers continue.

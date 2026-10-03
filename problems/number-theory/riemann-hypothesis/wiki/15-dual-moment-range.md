@@ -51,3 +51,11 @@ gcd(h,k)/(h*k) normalization. It distinguishes the whole Gaussian kernel's
 Mellin factor from the phase-peeled profile; canceling a gamma factor absent
 from the latter would be invalid. Both Mellin frequency signs remain.
 This organizes the open signed estimate and does not evaluate it.
+
+The [short-support and non-abelian review](../context/2026-10-03-subdyadic-and-nonabelian-review.md)
+connects support geometry and representation theory to this missing estimate.
+A bounded-degree support graph is needed to keep a subdyadic saving when
+summing interval pieces; unrestricted subdivision loses it. Fourier completion
+connects inverse fractions to Kloosterman sums but requires a new frequency
+concentration argument. The January 2026 improved-fraction lead was withdrawn
+and is excluded. Neither alternative has yielded a signed moment bound yet.

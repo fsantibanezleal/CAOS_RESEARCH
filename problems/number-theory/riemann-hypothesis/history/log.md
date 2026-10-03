@@ -568,3 +568,16 @@ isolate intentional corruption from live output; extracted archive auditors
 will check the preserved physical runtime bytes. CI 37155303536 passed at
 098c0476, with repository guards/artifact scope only. Neither CI nor these
 prepared gates constitutes the unfinished mathematical result.
+
+## 2026-10-03: short-support and non-abelian conversion review
+
+The January Kloosterman search lead is corrected against its primary
+withdrawal notice. Wright's August short-support theorem and Pascadi's
+non-abelian fixed-modulus method are archived with their actual hypotheses.
+A support-graph norm calculation shows why unrestricted partitioning
+consumes the short-support saving; exact Fourier completion shows the
+frequency-localization obligation for the non-abelian route. These are
+classical conversion requirements, not a new signed-moment theorem.
+The publisher's HTTP-success challenge page is excluded as mathematical
+content. A new-head CI dispatch and listing encountered a network timeout
+and HTTP 503; only the earlier 098c0476 CI success is currently verified.

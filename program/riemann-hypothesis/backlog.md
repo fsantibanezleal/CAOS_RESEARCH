@@ -122,3 +122,10 @@ an exact Gaussian reduction with arbitrary fixed-order controlled
 remainders. The main signed arithmetic average is unestimated. Its source
 conductor, gcd, cutoff and polynomial factors remain mandatory. No new
 moment range, short-window onset or manuscript has been established.
+
+RH-038 source follow-up: the
+[subdyadic/non-abelian review](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-subdyadic-and-nonabelian-review.md)
+records the withdrawn January lead and the support-graph/Fourier-concentration
+requirements for two alternative estimates. No direct theorem import is
+admitted. RH-048 still requires the complete 96-shard audit, actual-output
+corruption controls, exact transfer and extracted reproducibility archive.
