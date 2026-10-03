@@ -162,7 +162,7 @@
     {
       "id": "RH-F7",
       "title": "Trace-aware clipped-block refinement",
-      "status": "admitted-bounded",
+      "status": "closed",
       "priority": 7,
       "target": "Retain the trace-zero complementary energy in the source block dichotomy.",
       "value": "Test a strictly weaker block condition using the same attributed analytic and local inputs.",
@@ -174,8 +174,10 @@
       ],
       "novelty_status": "Elementary convexity and classical trace/variance bounds; no new matrix-method or worldwide priority claim.",
       "manuscript_route": "Supporting research-record; a substantive analytic/certificate improvement is required for a standalone paper.",
-      "first_bounded_action": "EXP-016: sum the zero-sum displacements before tuning a block.",
-      "evidence": []
+      "first_bounded_action": "Completed: uniform zero-sum Jensen proof, m=1311 exact gain and revised-assembly cap. Stop this bounded route.",
+      "evidence": [
+        "EXP-016"
+      ]
     }
   ],
   "manuscripts": [
@@ -253,6 +255,12 @@
     {
       "start": 13,
       "end": 15,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 16,
+      "end": 16,
       "classification": "research-record",
       "manuscripts": []
     }

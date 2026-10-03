@@ -352,3 +352,10 @@ and [critical zeros of Dirichlet L-functions, 1105.1177v1](https://arxiv.org/abs
 Chandee, Li, Matomaki and Radziwill: [sixth moment, 2409.01457v1](https://arxiv.org/abs/2409.01457v1).
 Tang: [reciprocity formula, 2608.14852v1](https://arxiv.org/abs/2608.14852v1).
 Versioned bytes and the reading boundaries are in the October manifest/dossier.
+
+Henry Wolkowicz and George P. H. Styan. *Bounds for eigenvalues using traces.*
+Linear Algebra and its Applications 29 (1980), 471-506.
+[DOI](https://doi.org/10.1016/0024-3795(80)90258-X),
+[author-hosted copy](https://www.math.uwaterloo.ca/~hwolkowi/henry/reports/PAPER31.pdf).
+Theorem 2.1 and the printed pages 472-474 provide trace/variance prior art.
+This is background for EXP-016, not an analytic zeta input.

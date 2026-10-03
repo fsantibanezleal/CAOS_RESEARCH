@@ -1,0 +1,78 @@
+{
+  "arithmetic": "exact-rational-and-symbolic",
+  "bindings": {
+    "problems/number-theory/riemann-hypothesis/code/mixed_gram_parameters.py": "21739d9ed2dd5ea7f8133c2a09e452998bc350fe15f7cd7a27f43d1f14e65d06",
+    "problems/number-theory/riemann-hypothesis/code/trace_clipping_parameters.py": "b6f0e5fdde2b81d2a34abfc60636bf611a7cddb890d03a913c6edece9c3cfbec",
+    "problems/number-theory/riemann-hypothesis/context/source-manifest-20261003.json": "004b2f4aac236d6560890cbe28543cc72a76c2cd639ca9914b277210c66f5498",
+    "problems/number-theory/riemann-hypothesis/context/source-manifest-exp016.json": "00f1a06f52330b9108f90ccdf45aeb33cfbf2b07e280ec98901239775610f974",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-016-trace-aware-clipping/hypothesis.md": "fb41cd587ba24b18ac565d0f85cfba249bd5fd6e1d35cd6cad9b3fdb4d5fbe4c",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-016-trace-aware-clipping/proof.md": "3f32ab1e744d3d981a5f47d2fab8d47f2dcb648204ed3240b766afc5fdec7c2f",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-016-trace-aware-clipping/run.py": "c4950cbb09304dccdb9ffbf69b9358e69b1dfbf7fb1a66e4bf7d8047e862afbc"
+  },
+  "block_requirement": "delta(m-6)<=tau^2*m/(m-1)",
+  "candidate": {
+    "c": "3411/1000",
+    "m": 1311,
+    "q": "69341429073721/82845897125000",
+    "q_enclosure": {
+      "lower": "0.83699291672944147624860426665335600951161768229810",
+      "upper": "0.83699291672944147624860426665335600951161768229811",
+      "width": "1/100000000000000000000000000000000000000000000000000"
+    },
+    "slacks": {
+      "block_clipping": "1564727/437000000",
+      "double_diagonal_threshold": "411/2000",
+      "high_multiplicity_residual": "399121799/218500000",
+      "off_line_pair_residual": "91673/437000000",
+      "tau_nonnegative": "2411/1000",
+      "unit_diagonal_threshold": "0"
+    },
+    "tau": "2411/1000"
+  },
+  "cap": {
+    "first_excluded_m": 1312,
+    "maximum_integer_m": 1311,
+    "squared_obstruction": "50135969092801/17213440000000000",
+    "z": "370333599/131200000"
+  },
+  "experiment": "EXP-016",
+  "gain_over_exp013": "174695378807909/64972491642124138500000",
+  "gain_over_source": "2271039924502817/64377329865322229250000",
+  "missing_trace_control": {
+    "displacements": [
+      "12/5",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "energy": "144/25",
+    "violates_stronger_bound": true
+  },
+  "not_established": [
+    "new matrix-method priority",
+    "full external certificate replay",
+    "new short-window onset",
+    "RH"
+  ],
+  "schema": "exp016-trace-aware-clipping-v1",
+  "scope": "Trace-aware block dichotomy with the same attributed analytic/local inputs",
+  "sharp_control": {
+    "bound": "168/25",
+    "displacements": [
+      "12/5",
+      "-2/5",
+      "-2/5",
+      "-2/5",
+      "-2/5",
+      "-2/5",
+      "-2/5"
+    ],
+    "energy": "168/25",
+    "m": 7,
+    "off_diagonal_entry": "2/5",
+    "tau": "12/5"
+  }
+}

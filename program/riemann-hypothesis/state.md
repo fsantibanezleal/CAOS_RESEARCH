@@ -143,3 +143,15 @@ release commit; the [additive reconciliation](release-0.74.000/tag-reconciliatio
 supersedes only the old pending-tag status. Replay v9 and the live workbench
 still contain twelve experiments. EXP-013--015 are repository research
 records and await a later serialized replay/UI release.
+
+## Trace-aware follow-up, same review date
+
+EXP-016 strengthens the block dichotomy using trace zero, and updates the
+latest attributed distinct-strip bound to
+69341429073721/82845897125000 = 0.83699291672944... . Its revised
+scalar assembly has optimal integer block m=1311. The earlier EXP-013
+cap concerns its original condition and remains correct.
+Canonical SHA-256 `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74`. Eleven new tests and the previous twenty
+focused controls pass; the separate symbolic/matrix auditor passes.
+RH-F7 closes. The short-window onset, RH status, manuscript/Zenodo
+state and live replay v9 remain unchanged. RH-042 also covers EXP-016.

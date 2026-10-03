@@ -509,3 +509,12 @@ python -m pytest -q tests/test_riemann_parameter_and_phase.py
 
 The threshold obstruction concerns uniform pointwise oscillation. It does
 not exclude cancellation of the signed sum or change the onset 0.534.
+
+## EXP-016: trace-aware clipping
+
+[Verdict](../experiments/EXP-016-trace-aware-clipping/verdict.md): confirmed.
+The trace-zero Jensen surplus permits m=1311 and improves the distinct-strip
+bound to 0.83699291672944... with the same attributed source inputs.
+Its runner/auditor use --output-dir and --artifact/--output respectively.
+Run `python -m pytest -q tests/test_riemann_trace_clipping.py` for the
+11 equality, missing-premise, corruption and byte-replay controls.

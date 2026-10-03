@@ -69,3 +69,12 @@ exist; no located source improves the 0.534 short-window onset.
 These do not justify splitting or publishing another paper. The positive
 analytic target remains a complete signed reduction and cancellation theorem
 (RH-038), which would justify a coherent manuscript if proved.
+
+## Trace-aware supporting record
+
+EXP-016 is a research-record: a standard zero-sum Jensen/variance
+mechanism strengthens the attributed clipped-block estimate. Its small
+global consequence is strip-wide, with the source's unreplayed analytic
+and local inputs. It has no standalone manuscript home; the supporting
+record belongs to the global Gram-method audit. No new paper, split or
+Zenodo version is triggered. RH-F4 remains the only active focus.

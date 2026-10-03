@@ -451,3 +451,15 @@ count-label errors are corrected without rewriting prior frozen evidence.
 The old tag-pending receipt is supplemented by verified metadata: tag
 v0.74.000 targets a464bdb5 and the release published 2026-09-30 UTC.
 Live replay remains v9; new records await serialized integration RH-042.
+
+## 2026-10-03: trace-aware follow-up EXP-016
+
+Declaration 0ea1f332 preceded implementation. A zero-sum Jensen surplus
+strengthens the clipping dichotomy and gives the exact attributed
+distinct-strip bound 69341429073721/82845897125000. Uniform revised
+cap m=1311; EXP-013's original-assembly cap remains intact.
+The initial auditor failed an algebraic-expression structural equality;
+its failure is retained, and the repaired zero-difference check passes.
+Eleven new controls and the previous twenty focused tests pass.
+Canonical SHA-256 `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74`. No new onset, RH, Lean, interval-replay
+or peer-review claim. RH-F7 closes; no new manuscript/Zenodo trigger.
