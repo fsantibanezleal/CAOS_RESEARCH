@@ -60,9 +60,28 @@ live release. General RH remains open.
 
 ## 4. In flight
 
-EXP-019 is declared and admitted as bounded RH-F10. Its source/rounding audit,
-checkpoint smoke and complete 96-shard local replay are in preparation on
-`work/riemann-hypothesis/nine-replay-20261003`. No replay success is claimed.
+EXP-019 is admitted as bounded RH-F10. The complete rounding audit, source
+binding and independent window audit passed. Its source-identical traversal
+is suspended with validated snapshots (33 checkpoints, nine completed shards
+at backup) to prioritize EXP-020; it has no complete-certificate verdict.
+The backup receipt is under EXP-019/artifacts/baseline-snapshot-receipt.json.
+
+EXP-020 is admitted as bounded RH-F11. Its independently declared stronger
+target is 3051/500000 = 0.006102. Shard 0 passed with 648919 nodes; the full
+96-shard cover is running with 24 workers on
+`work/riemann-hypothesis/nine-replay-20261003`. Sixteen quadratic controls and
+the 230-test Riemann suite passed. These controls and partial coverage are
+not a universal local inequality or a new distinct-zero proportion. Issue
+#358 tracks the stronger certificate. The independent stdlib cover auditor
+supports both experiments and rejects incomplete coverage. Runtime-bound
+source must remain frozen while workers run.
+
+External resumable state is under E:/_Datos/caos-research/riemann-hypothesis/
+exp020-quadratic-local-20261003 (stronger run) and
+exp019-local-replay-20261003 (suspended baseline). The stronger run's full-cover
+planning budget is twelve hours from launch; a budget hit is incomplete and
+does not fulfill the research objective. Resume the baseline if the stronger
+target fails or its mathematical review raises a concern.
 EXP-013--018 are closed research records. EXP-018 is conditional on its
 unreplayed nine-point local input; issue #356 tracks that obligation.
 The latest deployed replay remains v9 with twelve experiments. The tag
@@ -70,14 +89,18 @@ v0.74.000 is verified; no pending-tag action remains.
 
 ## 5. Next actions
 
-The October strategic review retains RH-F4; bounded RH-F6--F9 are closed; RH-F10 is admitted for EXP-019.
+The October strategic review retains RH-F4; bounded RH-F6--F9 are closed;
+RH-F10 and RH-F11 are admitted for EXP-019 and EXP-020.
 The onset remains 0.534. Direct CIS substitution and uniform pointwise
 phase repairs are closed, including nonzero Mobius support. Signed
 off-diagonal cancellation is not excluded.
 
-1. RH-046: bind and independently replay the nine-point packet; issue #356.
-   Its conditional distinct-strip target is 0.83716744477146...; no manuscript
-   until that input obligation and scientific value review are satisfied.
+1. RH-046: complete EXP-020's stronger 96-shard certificate and independent
+   audit; issues #356 and #358. Check every binding, domain component and
+   checkpoint. A complete stronger inequality implies EXP-018's weaker local
+   premise; it does not retroactively complete EXP-019's suspended traversal.
+   Re-evaluate a distinct-strip companion manuscript only after complete
+   certification, exact transfer, analytic review and scientific value review.
 2. RH-038: derive the complete shifted, composite-twist signed reduction,
    retaining gamma ratios, parity and oscillatory factors; only then seek
    polynomial-height asymptotic evaluation or a spectral decomposition.
@@ -86,8 +109,10 @@ off-diagonal cancellation is not excluded.
 5. RH-042: later serialized replay/workbench release for the new records.
 
 Latest source-based distinct-strip bound: EXP-017, 0.83699292567522... .
-No new paper or Zenodo deposit: fixed-input tuning and an elementary
-supporting obstruction do not meet the coherent manuscript gate.
+No new paper or Zenodo deposit yet. EXP-020's manuscript gate review removes
+an unnecessary sharp energy-envelope step: at the proposed transfer parameters
+D < tau^2, the attributed elementary block dichotomy suffices. A stronger local
+certificate and its resulting distinct-strip transfer still require completion.
 
 ## 6. Where everything lives
 
