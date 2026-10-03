@@ -1,0 +1,104 @@
+"""Independent full moment/residue check, with explicit tails on both sides."""
+
+import argparse
+import hashlib
+import json
+import math
+from pathlib import Path
+import time
+
+from flint import acb, arb, ctx, fmpq
+import sympy as sp
+
+from gaussian_mellin_controls import enclosed_kernels
+
+
+def derivative_l1_bound(t, h, order):
+    v = sp.Symbol("v")
+    a = sp.Rational(h*h, 4)
+    polynomial = sp.Integer(1)
+    for j in range(order):
+        polynomial = sp.expand(sp.diff(polynomial, v)+
+                               (-sp.Rational(1, 2)+sp.I*t-j-2*a*v)*polynomial)
+    bound = arb(0)
+    for (power,), coefficient in sp.Poly(polynomial, v).terms():
+        re, im = coefficient.as_real_imag()
+        magnitude = (arb(fmpq(int(re.p), int(re.q)))**2+
+                     arb(fmpq(int(im.p), int(im.q)))**2).sqrt()
+        exponent = arb(fmpq(power+1, 2))
+        bound += magnitude*(arb(fmpq(h*h, 8)))**(-exponent)*exponent.gamma()
+    d = arb(fmpq(1, 2))-order
+    return (d*d/(2*arb(fmpq(h*h, 4)))).exp()*bound
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--receipt", type=Path, required=True)
+    args = parser.parse_args()
+    ctx.prec = 192
+    t, h, radius, count, order = 6, 16, 8, 32, 20
+    pi, ii = arb.pi(), acb(0, 1)
+    started = time.monotonic()
+
+    def original(v, analytic):
+        return (arb(fmpq(1, 2))+ii*v).zeta()*(arb(fmpq(1, 2))-ii*v).zeta()*(-((v-t)/h)**2).exp()
+
+    direct = acb.integral(original, t-radius*h, t+radius*h,
+                          abs_tol=arb(2)**-90, rel_tol=arb(2)**-90,
+                          eval_limit=200000)
+    # Euler's one-periodic-integral formula at Re s=1/2 gives
+    # |zeta(1/2+iv)| <= 3+|v|. Integrate its squared bound on both tails.
+    a = 3+t
+    direct_tail = h*arb(-radius*radius).exp()*(arb(a*a)/radius+2*a*h+
+                                            h*h*(arb(radius)+arb(1)/(2*radius)))
+    direct += acb(arb(0, direct_tail.upper()), arb(0, direct_tail.upper()))
+    print("original Gaussian zeta moment enclosed", flush=True)
+    summed = acb(0)
+    for n in range(1, count+1):
+        kernel, independent = enclosed_kernels(arb(n), t, h, acb(0))
+        divisors = sum(n % d == 0 for d in range(1, n+1))
+        summed += divisors*kernel
+        print(f"dual term={n}/{count} enclosed", flush=True)
+        if time.monotonic()-started > 600:
+            raise RuntimeError("ten-minute control budget reached")
+    # k integrations by parts in the positive-real u representation.
+    # d(n)<=2 sqrt(n), so sum_{n>N}d(n)n^-k <=2 N^(3/2-k)/(k-3/2).
+    norm = derivative_l1_bound(t, h, order)
+    series_tail = (h/pi.sqrt()/(2*pi)**order*norm*2*
+                   arb(count)**(arb(fmpq(3, 2))-order)/(order-arb(fmpq(3, 2))))
+    summed += acb(arb(0, series_tail.upper()), arb(0, series_tail.upper()))
+    residue = -pi*(acb(fmpq(1, 2))-ii*t)**2/h**2
+    # The exact original residue is zeta(0)G(1)=-G(1)/2.
+    # Its subtraction contributes +pi*G(1), with no pi in the exponent.
+    residue = pi*(((acb(fmpq(1, 2))-ii*t)/h)**2).exp()
+    transformed = 2*pi*summed+residue
+    if not direct.is_finite() or not transformed.is_finite() or not direct.overlaps(transformed):
+        raise ValueError("full Gaussian moment or residue normalization discrepancy")
+    wrong_sign = 2*pi*summed-residue
+    if direct.overlaps(wrong_sign):
+        raise ValueError("control cannot distinguish the wrong residue sign")
+    # Exact independent heat multiplier derivative controls.
+    u = sp.Symbol("u")
+    for d in range(1, 9):
+        deficit = 1-sp.exp(-u)*sum(u**j/sp.factorial(j) for j in range(d))
+        assert sp.simplify(sp.diff(deficit, u)-sp.exp(-u)*u**(d-1)/sp.factorial(d-1)) == 0
+    problem = Path(__file__).resolve().parents[1]
+    experiment = problem/"experiments/EXP-024-gaussian-mellin-reduction"
+    paths = [Path(__file__), problem/"code/gaussian_mellin_controls.py",
+             experiment/"proof.md", experiment/"compact-window-extension.md"]
+    result = {"schema": "exp024-full-moment-control-v1", "passed": True,
+              "T": t, "H": h, "alpha": "0", "beta": "0", "h": 1, "k": 1,
+              "precision": ctx.prec, "dual_terms": count, "derivative_tail_order": order,
+              "direct": str(direct), "transformed": str(transformed),
+              "direct_tail": str(direct_tail), "series_tail": str(series_tail),
+              "derivative_l1_bound": str(norm), "wrong_residue_sign_rejected": True,
+              "heat_multiplier_symbolic_orders": 8, "elapsed_seconds": time.monotonic()-started,
+              "source_sha256": {str(p.relative_to(problem)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},
+              "scope": "independent finite full moment/residue/heat normalizations with rigorous tails; uniform analytic proof is separate, no new zero proportion"}
+    args.receipt.parent.mkdir(parents=True, exist_ok=True)
+    args.receipt.write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")
+    print("full enclosed moment and wrong-residue negative control PASS", flush=True)
+
+
+if __name__ == "__main__":
+    main()

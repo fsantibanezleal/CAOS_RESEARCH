@@ -518,3 +518,14 @@ interruption/resume smoke. The independent auditor rejects unstarted cover.
 Issue #362 tracks the twenty-minute, one-CPU actual shard-0 pilot launched
 19:35:50 UTC. EXP-020's frozen 24-worker cover continues. Neither partial
 traversal proves a new zero proportion or fulfills the user's stopping gate.
+
+## 2026-10-03: EXP-024 uniform shifted representation
+
+Declaration 8528b1e6 preceded numerical controls; 440e5d1b persisted the
+exact Gaussian identity and all-order phase error. The finite heat
+construction extends the reduction to fixed smooth compact windows.
+Nine symbolic moments, eight independent integral pairs, 32 phase bounds,
+eight heat-multiplier identities and a full enclosed zeta-moment/residue
+negative control pass. API/lint history and initial source are retained.
+The signed main arithmetic sum is still open, with no new moment range,
+onset, proportion, priority, manuscript or research stopping claim.

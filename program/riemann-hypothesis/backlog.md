@@ -115,3 +115,10 @@ the same packet beyond 0.837421287797... and does not constrain other
 window/weight schedules or RH-038's signed analytic route.
 
 | RH-048 | Certify the changed-pressure nine-point target and exact distinct-strip transfer | in progress; EXP-023; issue #362; full independent 96-shard audit required |
+
+RH-038 update: EXP-024 closes the analytic representation step for fixed
+smooth compact windows, bounded composite twists and small shifts through
+an exact Gaussian reduction with arbitrary fixed-order controlled
+remainders. The main signed arithmetic average is unestimated. Its source
+conductor, gcd, cutoff and polynomial factors remain mandatory. No new
+moment range, short-window onset or manuscript has been established.

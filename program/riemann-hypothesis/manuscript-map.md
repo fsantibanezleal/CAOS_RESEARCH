@@ -106,3 +106,8 @@ distinct-zero companion combining the local certificate, elementary block
 transfer and fixed-family ceiling. No separate paper is triggered by
 classical Fourier arithmetic or partial pilot coverage. RH-F4 remains
 the sole active analytic focus.
+
+EXP-024's exact Gaussian/compact-window reduction is classical supporting
+analytic material in RH-F4's research record. Its future manuscript home
+is short-interval-levinson after a coherent new signed moment theorem;
+the reduction alone does not trigger another paper or Zenodo version.

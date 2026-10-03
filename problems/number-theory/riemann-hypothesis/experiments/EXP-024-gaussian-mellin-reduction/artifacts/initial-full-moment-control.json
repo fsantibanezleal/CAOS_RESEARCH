@@ -1,0 +1,28 @@
+{
+  "schema": "exp024-full-moment-control-v1",
+  "passed": true,
+  "T": 6,
+  "H": 16,
+  "alpha": "0",
+  "beta": "0",
+  "h": 1,
+  "k": 1,
+  "precision": 192,
+  "dual_terms": 32,
+  "derivative_tail_order": 20,
+  "direct": "[40.68207145033642893607250 +/- 8.43e-24] + [+/- 6.12e-24]j",
+  "transformed": "[40.682071 +/- 5.81e-7] + [+/- 1.30e-7]j",
+  "direct_tail": "[6.06144287973952190153782333683754233894521629772502243244e-24 +/- 4.17e-81]",
+  "series_tail": "[2.0689258375212995282289539466491225450112699345497661692e-8 +/- 2.09e-64]",
+  "derivative_l1_bound": "[1365254371432799823152100793144431315.7530491055009067386 +/- 4.07e-20]",
+  "wrong_residue_sign_rejected": true,
+  "heat_multiplier_symbolic_orders": 8,
+  "elapsed_seconds": 35.851132299983874,
+  "source_sha256": {
+    "code\\gaussian_moment_identity_control.py": "a3b532b87f01e7ef1d54a2461312299b2c490224f16781fc892c4a70ab66309a",
+    "code\\gaussian_mellin_controls.py": "0966ddf9e565424da892bf780faedf2efd549f0ed33b8fde2b0e67f55a9cf639",
+    "experiments\\EXP-024-gaussian-mellin-reduction\\proof.md": "207f6322e339eff18cc6a40aecc7a61b4d6262a267ab4b2d178806340a172bea",
+    "experiments\\EXP-024-gaussian-mellin-reduction\\compact-window-extension.md": "ffc478da02052a1feb80fbb33e1b88f7eeb4e7236ae1fe57a77801be9e5aca69"
+  },
+  "scope": "independent finite full moment/residue/heat normalizations with rigorous tails; uniform analytic proof is separate, no new zero proportion"
+}

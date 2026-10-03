@@ -59,6 +59,7 @@ live release. General RH remains open.
 | EXP-018 | confirmed conditional nine-point transfer 0.83716744477146...; local replay obligation open |
 | EXP-021 | confirmed classical shifted composite arithmetic layer; exact gcd, conductor and unequal-shift controls; analytic reciprocity and cancellation remain open |
 | EXP-022 | confirmed fixed-packet pressure-family cap 0.837421287797... for all p>=0; changed-pressure candidate 0.837385561059... requires a new complete local certificate |
+| EXP-024 | confirmed exact shifted Gaussian/Mellin representation and controlled smooth compact-window reduction; signed moment main sum remains open |
 
 ## 4. In flight
 
@@ -101,6 +102,16 @@ cost or completion claim. The preliminary prepare-only directory without
 `v2` is retained but cannot be resumed by this strengthened binding.
 EXP-023 at a different pressure does not imply EXP-018's local premise.
 
+Update: that first pilot hit its budget incompletely and was stopped after
+a validated backup at 19:57:22 UTC. It had one initial Cartesian box, so
+only shard zero had actual work. The measured cost and 92-second budget
+overrun are recorded in EXP-023/pilot-review.md. A separately bound exact
+quarter partition gives 65536 initial boxes over 96 shards, with unchanged
+pruning code and 41 targeted controls. Commit 748bcfb9 precedes its actual
+shard-0 pilot, launched about 20:08:02 UTC with the same twenty-minute
+budget. External state: `exp023-partitioned-local-20261003`; session 98159.
+Keep both earlier pilot backups and all runtime-bound source frozen.
+
 External resumable state is under E:/_Datos/caos-research/riemann-hypothesis/
 exp020-quadratic-local-20261003 (stronger run) and
 exp019-local-replay-20261003 (suspended baseline). The stronger run's full-cover
@@ -134,6 +145,12 @@ off-diagonal cancellation is not excluded.
    factors are retained. The uniform shifted Mellin weight, residues and
    analytic errors remain to be proved before seeking signed cancellation
    or a spectral decomposition. Exact controls passed in 4.17 CPU seconds.
+   EXP-024 subsequently closes the representation step for its stated
+   Gaussian and fixed smooth compact windows, bounded polynomial-length
+   composite twists and O(1/log T) shifts. Its exact residue and all-order
+   phase/heat remainders are proved, with independent enclosed kernel and
+   full-moment normalization controls. The signed main sum and its primitive
+   conductor/gcd/polyweight estimates remain open. No onset upgrade follows.
 3. RH-029: independently audit the rectangle-detour defect in EXP-005/008.
 4. RH-021: recover an exact rank-six coefficient matrix or source artifact.
 5. RH-042: later serialized replay/workbench release for the new records.
