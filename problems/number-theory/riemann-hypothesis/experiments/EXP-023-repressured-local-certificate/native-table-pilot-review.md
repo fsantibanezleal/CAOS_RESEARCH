@@ -32,3 +32,15 @@ Its receipt certifies only the first 32,031 cells and has all-cells false.
 The global squared-kernel second-derivative bound can dominate a very small
 kernel value near a zero, even after eight bisections. Preserve this source
 and receipt. A kernel-first variant is declared separately before implementation.
+
+The kernel-first variant passed all 512 pilot cells and both increased-bound
+controls in 0.455 seconds. Its projected complete-table runtime is 46.38 seconds,
+within the declared 600-second admission bound. One full audit is admitted.
+
+The kernel-first full run passed all 52,240 closed cells in both bound tables
+in 148.04 seconds, with 116,922 subcell enclosures and maximum bisection
+depth three. Its source-bound receipt has all-cells true and no unresolved
+cell. Native midpoint jet controls and increased-bound controls passed.
+This closes this additional input-audit obligation within Python/FLINT/Arb;
+it does not close the separate eight-dimensional cover. The two earlier
+inconclusive variants and their original receipts are retained in full.

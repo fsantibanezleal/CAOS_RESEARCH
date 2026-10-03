@@ -209,3 +209,11 @@ an exact-byte archive builder are prepared and refuse partial output.
 Draft PR #363 is pushed and unmerged. Only CI on 098c0476 is currently
 verified successful; later GitHub API requests encountered network errors.
 No new manuscript, DOI, release or deployment is claimed from these gates.
+
+At 22:31 UTC both EXP-020 and EXP-023 have 95/96 completed shards.
+EXP-023's additional native input audit passed all 52,240 closed cells of
+both tables using hypergeometric midpoint jets and whole-cell Taylor bounds,
+in 148.04 seconds. The earlier inconclusive variants remain archived.
+This verified input audit does not replace the last multidimensional shard,
+actual completed-output controls or exact transfer. The research goal remains
+active; none of these supporting milestones is its stopping condition.

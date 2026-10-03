@@ -605,3 +605,11 @@ variant is separately declared to avoid a global squared-kernel remainder
 dominating small values. It must pass its own pilot and full-range gate.
 The previously timed-out issue #360 update was inspected and then posted
 successfully at issuecomment-5974118103; no duplicate was found.
+
+The kernel-first native audit then passed all 52,240 closed cells in both
+tables in 148.04 seconds, with maximum bisection depth three. Its independent
+formulas and whole-cell remainders strengthen the input audit within the
+shared FLINT/Arb trust base. The archive builder now requires this bound
+receipt and includes all three audit sources, declarations and original
+partial/success receipts. EXP-023 remains 95/96; EXP-020 has reached 95/96.
+No complete improved zero-proportion theorem or publication is inferred.

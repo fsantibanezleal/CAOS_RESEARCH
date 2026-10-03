@@ -212,6 +212,14 @@ passed for 098c0476 with repository-contract scope only. The unscoped
 local structure checker cannot validate missing other-problem trees in
 this sparse checkout; do not expand it beneath the frozen workers.
 
+Both active covers were 95/96 at 22:31 UTC. EXP-023's additional native
+kernel-first input audit passed every closed cell in both 52,240-cell tables;
+see its source-bound native-kernel-taylor-full.json and mathematical
+declaration. Earlier direct-interval and squared-kernel Taylor variants were
+inconclusive and remain preserved. The archive builder now includes and
+requires this successful native audit; its earlier partial-rejection receipt
+binds the earlier builder version. Complete-cover gates remain mandatory.
+
 The ratio theorem is an exact CAOS result. The global proportion transfers
 through Wang's attributed arXiv:2609.24167v1 framework; it is not an independent
 proof of that preprint. The short-interval companion still uses attributed pair

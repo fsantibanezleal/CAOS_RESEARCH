@@ -31,6 +31,16 @@ def package(directory, baseline, archive, scratch_root):
             controls["control_source_sha256"] == digest((HERE/"actual_cover_controls.py").read_bytes()),
             "actual complete-cover controls missing or unbound")
     binding = json.loads((directory/"run-binding.json").read_bytes())
+    native = json.loads((HERE/"artifacts/native-kernel-taylor-full.json").read_bytes())
+    require(native.get("all_cells_passed") is True and
+            native.get("requested_range_passed") is True and
+            native["completed_closed_cells"] == native["requested_cells"] == native["table_cells"] == binding["cells"] and
+            native["unresolved_cell"] is None and native["budget_expired"] is False and
+            native["tables_sha256"] == binding["tables"] and
+            native["packet_sha256"] == binding["packet_sha256"] and
+            native["source_sha256"] == digest((HERE/"native_kernel_taylor_audit.py").read_bytes()) and
+            native["declaration_sha256"] == digest((HERE/"native-kernel-taylor-declaration.md").read_bytes()),
+            "native full-table audit missing or unbound")
     metadata = json.loads((baseline/"tables/tables.json").read_bytes())
     require(metadata["cells"] == binding["prefix_source"]["cells"] and
             metadata["hashes"] == binding["prefix_source"]["hashes"] and
@@ -57,6 +67,18 @@ def package(directory, baseline, archive, scratch_root):
         "experiments/EXP-023-repressured-local-certificate/transfer-review.md",
         "experiments/EXP-023-repressured-local-certificate/actual_cover_controls.py",
         "experiments/EXP-023-repressured-local-certificate/reproducibility_archive.py",
+        "experiments/EXP-023-repressured-local-certificate/native_table_audit.py",
+        "experiments/EXP-023-repressured-local-certificate/native_taylor_audit.py",
+        "experiments/EXP-023-repressured-local-certificate/native_kernel_taylor_audit.py",
+        "experiments/EXP-023-repressured-local-certificate/native-table-audit-declaration.md",
+        "experiments/EXP-023-repressured-local-certificate/native-taylor-audit-declaration.md",
+        "experiments/EXP-023-repressured-local-certificate/native-kernel-taylor-declaration.md",
+        "experiments/EXP-023-repressured-local-certificate/native-table-pilot-review.md",
+        "experiments/EXP-023-repressured-local-certificate/artifacts/native-table-pilot.json",
+        "experiments/EXP-023-repressured-local-certificate/artifacts/native-taylor-pilot.json",
+        "experiments/EXP-023-repressured-local-certificate/artifacts/native-taylor-full.json",
+        "experiments/EXP-023-repressured-local-certificate/artifacts/native-kernel-taylor-pilot.json",
+        "experiments/EXP-023-repressured-local-certificate/artifacts/native-kernel-taylor-full.json",
     ])
     for name in sorted(sources):
         path = PROBLEM/name
@@ -89,6 +111,15 @@ transfer arithmetic. They do not independently rerun every interval operation.
 The execution trust base is Python, python-flint 0.9.0, FLINT/Arb, IEEE-754
 directed enclosures, and the archived verifier and cache-generation source.
 Formal proof checking and external peer review are not claimed.
+
+The bound input tables additionally passed all 52,240 closed-cell comparisons
+through native hypergeometric midpoint jets and global Fourier Taylor bounds.
+Its successful source-bound receipt and both earlier inconclusive variants
+are included. This input audit shares FLINT/Arb, and is not a separate
+arithmetic library or a rerun of the eight-dimensional interval cover.
+It can be repeated with native_kernel_taylor_audit.py --output-dir
+output/exp023 --cells 52240 --seconds 600 --receipt native-repeat.json.
+Use the stated python-flint runtime; preserve the existing receipt files.
 
 Full interval replay requires the stated python-flint runtime and a fresh output
 directory. The source binding includes Windows path separators; full-worker
@@ -138,6 +169,8 @@ and their smoothing/limit order are stated in the archived proof reviews.
             "builder_sha256": digest(Path(__file__).read_bytes()),
             "liminf_fraction": result["liminf_fraction"],
             "extracted_stdlib_cover_audit": True, "extracted_exact_transfer_audit": True,
+            "native_full_table_audit_included_and_bound": True,
+            "native_input_audit_rerun_from_archive": False,
             "full_interval_rerun_from_archive": False,
             "scope": "exact-byte transport, CRC/hash checks, and extracted metadata/transfer audits; interval-execution trust base unchanged"}
 
