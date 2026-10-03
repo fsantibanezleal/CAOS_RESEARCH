@@ -49,7 +49,7 @@ both variables into short intervals alone therefore supplies no gain.
 The A^(1/2) term must also be below the desired error; it receives no
 X^(-2eta/5) saving from this statement.
 
-The Gaussian representation in EXP-024 concentrates H0*n/K0 near
+The Gaussian representation in EXP-024 concentrates K0*n/H0 near
 T/(2*pi), with controlled tails, before the Estermann transformation.
 The compact-window superposition widens the effective band to order H.
 This is weighted concentration rather than exact support. That geometric
@@ -91,6 +91,23 @@ c^(1/4), already larger than the stated generic c^(-1/700) saving.
 Therefore completion alone does not import the non-abelian bound.
 An additional frequency-localization or modulus-average argument is
 required, together with all gcd restrictions and normalization factors.
+
+Applying both Dirichlet functional equations is not itself a way to obtain
+a spare Kloosterman sum. The additive-divisor character coefficient already
+contains tau(bar(chi))*chi(a). For a primitive character modulo q with
+parity epsilon, the two root numbers contribute tau(chi)^2/(i^(2epsilon)*q).
+Since tau(chi)*tau(bar(chi))=chi(-1)*q and i^(2epsilon)=chi(-1), their product
+is exactly tau(chi)*chi(a). The two Gauss factors do not remain independent.
+For the full character family and unit a,n, finite orthogonality gives
+
+    (1/phi(q))*sum_chi tau(chi)*chi(a)*bar(chi(n))
+      = e(n*a^-1/q).
+
+Thus the familiar inverse additive phase reappears. Primitive-only sums,
+nonunit n, imprimitive Euler corrections and unequal shifts require their
+separate terms from EXP-021; this full-family identity does not discard them.
+Root-number accounting is an additional reason that a fixed-modulus
+Kloosterman estimate cannot be inserted without an actual conversion.
 
 The publisher download returned a Client Challenge HTML response, despite
 HTTP success. That byte archive is explicitly ineligible mathematical

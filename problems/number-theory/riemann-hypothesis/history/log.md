@@ -581,3 +581,9 @@ classical conversion requirements, not a new signed-moment theorem.
 The publisher's HTTP-success challenge page is excluded as mathematical
 content. A new-head CI dispatch and listing encountered a network timeout
 and HTTP 503; only the earlier 098c0476 CI success is currently verified.
+
+The support review's Gaussian argument ratio was corrected from H0*n/K0
+to K0*n/H0 by checking the exact EXP-024 identity before use. Its double
+functional-equation discussion retains the cancellation of one existing
+Gauss factor, so an additional Kloosterman sum is not presumed to appear.
+No experiment or theorem had used the reversed ratio.
