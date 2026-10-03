@@ -300,3 +300,11 @@ for distinct zeros in the strip. Before a claim upgrade, RH-046 / issue
 cost. Never infer it from the kernel-table hashes or finite samples.
 Manuscript reassessment follows closure of that input obligation. RH-F4
 and the signed composite-twist target RH-038 remain the analytic priority.
+
+EXP-021 closes only RH-038's classical arithmetic layer: gcd classes,
+shifted local Euler corrections, conductor reduction and squarefree induction
+signs are derived and exactly checked. Issue #360 owns the remaining shifted
+short-window analytic reduction and signed-family estimate. An Estermann
+functional-equation route is being compared with Tang's model; no published
+central-value formula is presumed uniform at polynomial height. EXP-020's
+full stronger interval cover continues with its runtime source frozen.

@@ -174,3 +174,12 @@ been independently replayed here. Keep this separate from EXP-017's
 seven-point attributed bound. RH-F9 closes, RH-046 / issue #356 remains
 open for packet-bound replay and a later manuscript decision. No global
 release, onset change, new manuscript or Zenodo version is claimed.
+
+## Composite arithmetic layer, ongoing certificate run
+
+EXP-021 confirms the classical shifted composite character decomposition
+with complete gcd classes and primitive conductor factors. Exact controls
+pass in 4.17 seconds; the proof and source are bound in its receipt.
+RH-038 / issue #360 remains open for the uniform analytic reduction and
+signed-family estimate. No longer mollifier, new onset or manuscript follows.
+EXP-020 is still running; partial coverage does not upgrade EXP-018's premise.

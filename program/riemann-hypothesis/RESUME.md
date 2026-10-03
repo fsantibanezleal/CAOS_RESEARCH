@@ -57,6 +57,7 @@ live release. General RH remains open.
 | EXP-016 | confirmed trace-aware clipped-block refinement and revised integer cap |
 | EXP-017 | confirmed full-energy envelope and pressure transfer; scaled prior art, small exact gain |
 | EXP-018 | confirmed conditional nine-point transfer 0.83716744477146...; local replay obligation open |
+| EXP-021 | confirmed classical shifted composite arithmetic layer; exact gcd, conductor and unequal-shift controls; analytic reciprocity and cancellation remain open |
 
 ## 4. In flight
 
@@ -102,8 +103,13 @@ off-diagonal cancellation is not excluded.
    Re-evaluate a distinct-strip companion manuscript only after complete
    certification, exact transfer, analytic review and scientific value review.
 2. RH-038: derive the complete shifted, composite-twist signed reduction,
-   retaining gamma ratios, parity and oscillatory factors; only then seek
-   polynomial-height asymptotic evaluation or a spectral decomposition.
+   retaining gamma ratios, parity and oscillatory factors. EXP-021 closes
+   its classical arithmetic layer: the local numerator is
+   `S_b-p^(-alpha-beta)*S_(b-1)*chi(p)*p^(-s)` when `p` does not divide
+   `q=h/d`; it is `S_b` otherwise. All gcd classes and primitive Euler
+   factors are retained. The uniform shifted Mellin weight, residues and
+   analytic errors remain to be proved before seeking signed cancellation
+   or a spectral decomposition. Exact controls passed in 4.17 CPU seconds.
 3. RH-029: independently audit the rectangle-detour defect in EXP-005/008.
 4. RH-021: recover an exact rank-six coefficient matrix or source artifact.
 5. RH-042: later serialized replay/workbench release for the new records.

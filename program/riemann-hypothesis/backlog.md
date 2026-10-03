@@ -96,3 +96,13 @@ value-of-information check.
 | RH-046 | Bind and independently replay the nine-point universal local certificate, then reassess a focused manuscript | open; issue #356; EXP-018 remains conditional | P1 |
 
 RH-042 also covers EXP-017/018; live replay v9 still contains twelve experiments.
+
+## EXP-021 arithmetic milestone
+
+RH-038 remains open. Its shifted composite arithmetic layer is proved and
+exactly checked in EXP-021; issue #360; this is classical supporting material, not a
+new cancellation theorem. The first remaining obligation is the uniform
+shifted short-window Mellin reduction, including residues and all signed
+conductor/gamma contributions. Subsequent summation must preserve the
+squarefree mollifier cutoff and both polynomial weights. No manuscript,
+onset improvement or research stopping condition follows from this milestone.

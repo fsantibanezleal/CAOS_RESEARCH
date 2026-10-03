@@ -482,3 +482,15 @@ and analytic premises. The upstream stale pending flag and absent packet
 hash in the replay log are retained. RH-F9 closes; RH-046 / issue #356
 owns independent packet-bound replay and manuscript reassessment. No
 unconditional input upgrade, onset/RH claim or public release is made.
+
+## 2026-10-03: EXP-021 complete shifted composite arithmetic layer
+
+Declaration 8d45ddfc preceded controls; derivation 6b84615c preceded the
+4.17-second exact run. Gcd classes, local shifted Euler numerators,
+primitive conductor/parity and squarefree induction factors are retained.
+The receipt binds the proof, declaration and source. Exact cyclotomic,
+symbolic and independent rational controls pass and distinguish three
+incorrect alternatives; Ruff passes. This classical supporting layer
+does not prove uniform analytic reciprocity or signed cancellation and
+does not improve the onset/proportions. No manuscript trigger; the user
+objective remains unmet. The EXP-020 full certificate continues running.
