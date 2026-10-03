@@ -1,0 +1,21 @@
+{
+  "schema": "exp023-prepared-tool-partial-rejection-v1",
+  "reports": 95,
+  "controls": [
+    {
+      "tool": "actual_cover_controls",
+      "partial_cover_rejected": true,
+      "reason": "incomplete coverage",
+      "source_sha256": "72d6f6033db68ebc7e9d1942eb4a925aa9ef33f2adf278e5391a4bdcaf18eb93"
+    },
+    {
+      "tool": "reproducibility_archive",
+      "partial_cover_rejected": true,
+      "reason": "incomplete coverage",
+      "source_sha256": "c69c6234c00b9076cf0aa5b3ab0dc66574a42fdffe3aad010f6ffba3b3643382"
+    }
+  ],
+  "complete_cover_controls_executed": false,
+  "reproducibility_archive_created": false,
+  "scope": "Actual partial-output admission rejection only; complete-cover controls and extracted archive audit remain pending"
+}

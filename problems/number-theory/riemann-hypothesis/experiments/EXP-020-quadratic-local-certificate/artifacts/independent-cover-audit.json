@@ -1,0 +1,244 @@
+{
+  "schema": "exp020-independent-cover-audit-v1",
+  "passed": true,
+  "experiment": "EXP-020",
+  "binding": {
+    "baseline_source": {
+      "code": {
+        "local_replay.py": "1f82a4021edb2eb663bb38490338b6e2d6696df22b305c8166677d9a10ae762b",
+        "rh019_vendor\\checkpoint_general.py": "3576f0ee7e93c47c85fe5e919faa7bb661c8841bb50b261255ef33c2e0863c1f",
+        "rh019_vendor\\kernel.py": "c1d9521a87b3c4042e0541f8f16ec24fee2efd48cbb66f8429b633377bca1cfc",
+        "rh019_vendor\\source-binding.json": "ba446c8eb72ce31cea51badf546eb0d0d3506630e23989b0b5d5497102a90786"
+      },
+      "packet_sha256": "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d",
+      "runner_sha256": "e99b397bbdcbdafcc216736791652a56ef39e69b63d69bf001adebd5ca9ac046",
+      "runtime": {
+        "platform": "Windows-11-10.0.26300-SP0",
+        "python": "3.13.14",
+        "python_flint": "0.9.0"
+      },
+      "upstream_commit": "1610b97b7895ff34982260f8dcaf04a0f7b82cf7"
+    },
+    "cells": 61029,
+    "code": {
+      "code\\certified_quadratic.py": "a5dca307e1245bd1f2a1b0438a3e9781434670bf5e3d4c1072336af42cfc18b8",
+      "code\\quadratic_replay.py": "15fc82aa069a6523421f9a2d6fc9a5031e1c6c9e12be661f6e2de510540c6835",
+      "code\\rh019_vendor\\quadratic_general.py": "8f9dc1a190ee245ade98c2674fc45985d5fe4c629bdedcba5f2e3baf739cf3df",
+      "experiments\\EXP-020-quadratic-local-certificate\\run.py": "c5ac1dc07518d8935ffa537dcbb5f67eddf2b26c535566d84301804dacdf6ca5"
+    },
+    "grid": 4000,
+    "packet_sha256": "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d",
+    "precision": 128,
+    "pressure": "1/2500",
+    "shard_count": 96,
+    "tables": {
+      "w-second.bin": "0f45f53c7544f457b86a078c9156900d50ff2f28af8e61b0bb052ac460455e11",
+      "w.bin": "0ae149168cf613bc4303de77fa0d49046e89e227a8448470d35e8530006e5203"
+    },
+    "target": "3051/500000"
+  },
+  "totals": {
+    "nodes": 107752902,
+    "pruned": 53876579,
+    "splits": 53876323,
+    "initial_boxes": 256,
+    "pressure_pruned": 95807,
+    "interval_pruned": 30730268,
+    "tangent_pruned": 23050504
+  },
+  "maximum_depth": 81,
+  "coordinate_components": [
+    [
+      [
+        3541,
+        5593
+      ],
+      [
+        6251,
+        60831
+      ]
+    ],
+    [
+      [
+        3656,
+        5133
+      ],
+      [
+        6784,
+        60772
+      ]
+    ],
+    [
+      [
+        3658,
+        5128
+      ],
+      [
+        6790,
+        60771
+      ]
+    ],
+    [
+      [
+        3665,
+        5110
+      ],
+      [
+        6813,
+        60767
+      ]
+    ],
+    [
+      [
+        3665,
+        5110
+      ],
+      [
+        6813,
+        60767
+      ]
+    ],
+    [
+      [
+        3658,
+        5128
+      ],
+      [
+        6790,
+        60771
+      ]
+    ],
+    [
+      [
+        3656,
+        5133
+      ],
+      [
+        6784,
+        60772
+      ]
+    ],
+    [
+      [
+        3541,
+        5593
+      ],
+      [
+        6251,
+        60831
+      ]
+    ]
+  ],
+  "excluded_cells_per_coordinate": [
+    4387,
+    5554,
+    5568,
+    5620,
+    5620,
+    5568,
+    5554,
+    4387
+  ],
+  "initial_boxes": 256,
+  "reports_sha256": {
+    "shard-000.json": "8db15d8ee9eb947220cb3cd77763cbdd18a77bc2ba3e7ead028b27ebba15c56f",
+    "shard-001.json": "df385ef301638feacc6198f1f5992af1a3d61aa4cd3655d01f713fa8d5048d1e",
+    "shard-002.json": "1e416dce3aa645ac800dafbaa309f5a3dc7d762a93fe35c21ba08f9c4e846b19",
+    "shard-003.json": "8e0490371ebfe52d34d7932a4e47445f6d0928090c4b83c335e20a7000b80364",
+    "shard-004.json": "38b344afe396c28b1d96ea4d1869b15e343f6fc4a62769496bf8c035316dbb86",
+    "shard-005.json": "677b6b8e1b8f0a09a25838ff803e8103846a66184a800c69e3746101f6458ce4",
+    "shard-006.json": "0c079ca2d06f95608b74ee9f94d425d34af0663e2778e1d74e2145be03590fde",
+    "shard-007.json": "39856001c6725482963baf6bcf2262f0e950e549aa8acfddb090396a84fd252b",
+    "shard-008.json": "cad2001a346c9d0df1ab22fc8e9f4373e6aca172b958128028b48666fcca54dc",
+    "shard-009.json": "6d7ab1bf8b2dab4ecd303c962ed2a4e084aad4ce84ee880009924a9275c14fcc",
+    "shard-010.json": "9e3b62fc892838259533470d38dd53b3ebbc087c28aa2bb19eceb52389402f64",
+    "shard-011.json": "aa6fb148fcbb11115eb3f836f23d7f33031bfbe35bd8cee13159c035a5755dc1",
+    "shard-012.json": "eaf9593b2ebeb1eb02b834532e7e12fbc56a0dfdbc2f4eaa1e4700f51153ab23",
+    "shard-013.json": "e497108d59f951d69f169310780897de8fd92723362e7cca5a6a24845bbdf326",
+    "shard-014.json": "c58c0f5d29781980efbc67132fc5fbd8dd72a4d36098c8b99f1c932122824f7f",
+    "shard-015.json": "3761e4736e4e39b7810092259dc4dd31c66ab20304ba782b1115077d76baaef6",
+    "shard-016.json": "50336137426ae2a6fdc0e56d371fe9ad2d5d2ccf320ea48740aa9d6bcbbb136f",
+    "shard-017.json": "ca94df5e0598fb151549e9264f9f30eefe07a03b186e5f2d5693e3a9bed9b844",
+    "shard-018.json": "080a659461736e6302992a4d3e031de33490444b789ceb8ddd030d1869e72c3e",
+    "shard-019.json": "1b0dc663dc112793353b16684436e8a2b2e3eec9ec8f4bfc5b02075c9931e24f",
+    "shard-020.json": "8df2b2ad01e9874e77e207f404e28e9e2ac5b4e3ee09697434eb7a4309cf7edc",
+    "shard-021.json": "a58a663997f1338778dbccd85f6e8dfa92961d3c39fb6ca4f8bb4d962a361992",
+    "shard-022.json": "666c650102e238084415661043d95c3b8705081039327bb5cc2ace41b561d2ea",
+    "shard-023.json": "4abc2b8410afa4bd47f745ff1bf058ac4699fda6475e2fbebc27ed3b98214342",
+    "shard-024.json": "4e2ba64f47350f5359afaf41e59da5ace15ff4e1d29a26562598aea0268257af",
+    "shard-025.json": "f088c5db3c4f64e6936d3419b264188dc05636f6f1598af325c6f006e286d74a",
+    "shard-026.json": "bf0e5406b83c8f437ab258fd7267310e924459b570f3afbb4d698d07d19ffb6c",
+    "shard-027.json": "c3f1f4c016c5ae388bfff9327e6556f32812f19765403ccd756f7c66938489f6",
+    "shard-028.json": "fbeb1485c0e495ed7a8ba4f1ac6052fafc2d82d849e77ca0e190192603056f1f",
+    "shard-029.json": "93db097f051efab045d241149ae5cf1f25766f6838846c18ff7b182337e1e991",
+    "shard-030.json": "3acd75f48bfec74ec7dacf49512559281d8da42dc71b1ea8f9e76fa0690a9070",
+    "shard-031.json": "1e3c320e624a9631c209f70b47915f511e0a4f758b83c3afeca7e70cec6281f3",
+    "shard-032.json": "e545dc12d8376aea104d3731ac0893d6a3563950499b6e76ccc2d9092cd4bf1a",
+    "shard-033.json": "631da4c62d5d0ffc07dc8c4b8561d762f65cf88cb59e15e80a91282f519e6781",
+    "shard-034.json": "7a7c784616675fd51970f043d6fcdb91cf0682197c71d1553590a3af6cca5f17",
+    "shard-035.json": "f63ee5eaf3fbee4de94c9cb8580c75582aa7680e0fc652f22ce510f467d9271b",
+    "shard-036.json": "8faff94dd4ed1f76ef368ebe68db9943779fd7bb44573c5f60a79525dd30bd39",
+    "shard-037.json": "f84c77ee6980fa3fb921214b3a7bf8d3f84fd78d91add84924e1cc2e94e666c7",
+    "shard-038.json": "aeb650de59099bdffebaa3d70bd08b8da76dd6ebd23714a39812d81cc840c53a",
+    "shard-039.json": "cac852010752749bc4f46bd78dc82f53fe61efada87aac653b4064dfee260d3e",
+    "shard-040.json": "e2ce01b564b3692e6a015540f0ec91918b5f6870d59d5889d71bcd43a5397c64",
+    "shard-041.json": "5a0240057b2f8014403c003feec8fc4dc583a4ad8f46c5fd52cbc22347026b35",
+    "shard-042.json": "a8d8d727d1d71b73624fff0cfc0d2f84dd154444bea77b024ac905796961effe",
+    "shard-043.json": "38cdbcb52fb90eaba41557f5fbe8d7e9f205026e61a191709725299ee2633f51",
+    "shard-044.json": "fbbf95290c6ca881e4bf2c9ef7fa2a11016cc01eec0eaa156d45e4c4786bb764",
+    "shard-045.json": "f9c857f50227caf194e756c8a22279f2e77c17a5891a1f397e898c49cc455ced",
+    "shard-046.json": "c875c73c9c79280d2c099fdae9e088a9aa2ca146639e944e7e834105584959c2",
+    "shard-047.json": "d7f8b50b84bba6f5d27dd54e1627e7bff7ee8ed98d000de84d9ca634920172fc",
+    "shard-048.json": "df70b4d5c20a39fdb41ddc0311905583505e66ad25a593562240f7f2fca31009",
+    "shard-049.json": "d229b08c01e075ba8f8e9db838ccfb345bc3daab3771a5f8cddcb8c3ed850aca",
+    "shard-050.json": "435d4e3ca0d6c02b17bd2617b12fe71b1555f00d3e8ce169fc98b79c6af0a53f",
+    "shard-051.json": "c8f381cb3d4859a474f32eef455bd3b504f2bc9a798963c233b4c4388729c673",
+    "shard-052.json": "b25079b3edfdafd6d7647e4d416d8bae1f9af488fa41a5b0c70b42fe36c8a262",
+    "shard-053.json": "8fec025750ed7d78170e6b5873a321c4ae1bb12fc8314504398ebdf1948f73ed",
+    "shard-054.json": "d6aef4a7f9bdcf8b4bac35f8e7ae90c6ddb26de8d7fcb95dca7cfc863e934372",
+    "shard-055.json": "08e445425aa340e6200ed545fc1621c58ba3f9ede8ca0a9660de892fd40ce1ae",
+    "shard-056.json": "a545c304453e20b1cc034fb47da7f7df11afe262eadf857e629642a98dbbc311",
+    "shard-057.json": "d42b70db1b9e7453d69dc4fd7b3a312d6388206571a7fdc0c495b40e61ba64c5",
+    "shard-058.json": "2c65beaf7b70c59c25afe7cdede951aa33d4c47c3ad374bab57ccce8b8e0cbd0",
+    "shard-059.json": "a5be04e7135d1744ad5b0cd192659aa8722f5c136494a1a9b52f0ade35ef0e72",
+    "shard-060.json": "87c2b0880d9b4352add6fdfcb8aede690d8117a0bf2f783b8ebac9be330d5c0c",
+    "shard-061.json": "803680bdbb0db8c99763e615e138943a46fda18155d4081827b3c6e47345ac8b",
+    "shard-062.json": "36eea1efc744660d07a96d4b03537f318fd1a6e5fd9da025b639cca1cb1077bc",
+    "shard-063.json": "e73854af771e0588c77207ebb23ea520afb38e5a85840c258333e44e9686cce8",
+    "shard-064.json": "f3cfaf7e193ddc7eb6dc05378098e44b4a65df275049aeb803169bc0b0680d9c",
+    "shard-065.json": "dab1e65949a519a395a5e289772e97a33eabf926a8405abd67a2e2cfc1c832dd",
+    "shard-066.json": "4487d1b9f26185b3a0cf9f6d5fc6461a99252b3048aec37fb122715c50e849b9",
+    "shard-067.json": "e4955d47d6c34b304f43dac253e12f4d00af751c55d188fb276898b04bb75096",
+    "shard-068.json": "b52172db3d4cf6cc4479e70abcd04d8360d4e86bcb0fd2b4f336a170102c655d",
+    "shard-069.json": "73c7e600915ee79c2ee7821543f99faaa480e3df1792af1e3ffd77c748937194",
+    "shard-070.json": "69d5348d42e2da06c17f4fbe8267e83c8aa0b22f40974c20d8022a2d8c3e9293",
+    "shard-071.json": "deb2a165f2b2ac5df74b5a3631cfa0a1c7b638fa0624a7baf208bcd861a7b53d",
+    "shard-072.json": "3aed3096c3ae54939eaff06473b67fcb411c37ad8faaa2595aa4770cd83ece47",
+    "shard-073.json": "96e518b4b326c87e75761c31685013c8e4d5d8a96d1a1c7ce0ec5087adbd0061",
+    "shard-074.json": "a565134467f0947f37332519c6d59fb358f3917969b3c4ec5e6290ee8ab27914",
+    "shard-075.json": "b385f01116a16647546de9fc743e6147ec195eeb45b14d5d768457bd639ebb90",
+    "shard-076.json": "19f06b60d9e68b56e6559ae86c6e6fc05336bd562d7ebabdf2b32731768b4898",
+    "shard-077.json": "62fcfd82405c7dfdd64353294f9b207d738ab8c61bbf79c0a490a349a28fd3cd",
+    "shard-078.json": "e98fac3ed3758d9c7bd2c95a5e35ba3588142cf01fb29661b18ede2c7fbaa36b",
+    "shard-079.json": "661c2db0c34e87184e66049785d58b880bae202e199d93d5be051888f1b62003",
+    "shard-080.json": "6e657b48091525bec561241d6ddd5825af7d41534a24eba1d779daa779fe1a4c",
+    "shard-081.json": "b886932c5d77d703e3af6f0d4b2b512fd24ce231f552d36b4c38c17afd34a51c",
+    "shard-082.json": "773a0754d10074a19010c055d4f78aa871d703f64c5c18213264687ea36fb4c9",
+    "shard-083.json": "0b6668cc2865553a3971dc0a677d560c2ad256b45a5a60c4f010dd37b61e55f0",
+    "shard-084.json": "c1f7503023eceabb223d809092432fb034715c77a51d544c865e87ddc23090de",
+    "shard-085.json": "5a8a8f95d5ed1e80abd8e62bf73c5759f90853abd22ed55b60e8324506c9a58e",
+    "shard-086.json": "aa01fcc3d21db6bd9fbac53bf13bcedff2ce05d5d15b18e54ba3a6837804b10c",
+    "shard-087.json": "29fc1475a69d34ad76e40c0d779c74389f0d31da3d68be9f16d57593b4a8720e",
+    "shard-088.json": "f0bc9fb4c0d924a5a193b35bc86a525a830f9dddc9049fcb8545aafa5069fbd5",
+    "shard-089.json": "1b2e69ac9372d7c8bf4fc62d19b8cb9457f10819911f0aadb30edbed0d5abef0",
+    "shard-090.json": "00e6fb94315c5c844b59f5bf2e581e3106db7d49b62cdd202396d8ab30ea90f3",
+    "shard-091.json": "fb554a0ea119dcf93595b3ecf414df44635cd9d840d7d63d22b2a0e02fa65ca9",
+    "shard-092.json": "4ece4af11673d650e7d64ebfa6e627f480d1ff74db843ae59b69f2bbdc005d07",
+    "shard-093.json": "8e94848fadebd451a119388e24062e3fb024fa9f70745e9c2fb96194a29033f4",
+    "shard-094.json": "2775ce711151330764874554d339c4b4c0d5eb117eb7f28c238ad91d5dcb8530",
+    "shard-095.json": "0f0b01e70fc4fbaae474cb48a8df1816d244f3ab452d806b0cfd458ee2a5896a"
+  },
+  "auditor_sha256": "f54301443a92ff99cd98bc2af08135d357342c8ea99d4b8602bb749aec6797f9",
+  "repository_relative_auditor": "problems\\number-theory\\riemann-hypothesis\\experiments\\EXP-019-nine-point-local-replay\\audit.py",
+  "scope": "independent binding/initial-domain/coverage/accounting audit; interval execution remains in the stated trust base"
+}

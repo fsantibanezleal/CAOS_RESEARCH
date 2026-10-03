@@ -118,7 +118,8 @@
         "EXP-011",
         "EXP-012",
         "EXP-014",
-        "EXP-015"
+        "EXP-015",
+        "EXP-021"
       ]
     },
     {
@@ -218,6 +219,112 @@
       "evidence": [
         "EXP-018"
       ]
+    },
+    {
+      "id": "RH-F10",
+      "title": "Packet-bound nine-point local replay",
+      "status": "closed",
+      "priority": 10,
+      "target": "Prove the universal eight-gap pressure inequality for the exact EXP-018 input packet by a complete independently bound interval cover.",
+      "value": "Close the local computational premise needed for the larger distinct-strip consequence; partial or operational completion is insufficient.",
+      "success_gate": "All 96 disjoint initial-box shards, audited outward bounds, independently checked bindings and coverage, and a mathematical review of the resulting transfer.",
+      "stop_conditions": [
+        "An invalid enclosure or unresolved terminal cell forces correction before continuing.",
+        "A budget limit retains incomplete checkpoints and triggers an updated cost review; it is not user-goal completion."
+      ],
+      "novelty_status": "Replication of the pinned source local inequality; independent complete packet binding has not been supplied. Novelty of the distinct-strip consequence requires its own review.",
+      "manuscript_route": "EXP-019 research-record; a coherent verified distinct-strip improvement with this obligation closed triggers a focused companion manuscript review.",
+      "first_bounded_action": "EXP-019 declared and pushed at 24c9caab: exact pressure-rounding audit, source/packet validation and interrupted-resume tooling smoke before tables and full cover.",
+      "evidence": [
+        "EXP-018",
+        "EXP-019"
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
+    },
+    {
+      "id": "RH-F11",
+      "title": "Second-order local certificate improvement",
+      "status": "closed",
+      "priority": 11,
+      "target": "Prove a stronger nine-point universal local inequality at delta=3051/500000 using a certified Hessian quadratic bound.",
+      "value": "Strengthen the local input itself and reduce exhaustive proof cost, rather than only tune block parameters.",
+      "success_gate": "Uniform second-order lemma, exact independent LDL solve controls, full bound-input coverage and stronger exact distinct-strip transfer.",
+      "stop_conditions": [
+        "An enclosure/solve failure requires correction before further certification.",
+        "A terminal unresolved cell refutes this proposed certificate path.",
+        "An initial hour records incomplete cost and triggers review; no successful bound is inferred."
+      ],
+      "novelty_status": "Quadratic convex lower bounds are classical; candidate local inequality and transferred consequence require complete certification and source overlap review.",
+      "manuscript_route": "Focused distinct-zero companion only after complete stronger-input proof and coherence/novelty review.",
+      "first_bounded_action": "EXP-020: prove the Hessian integration lemma and compare certified LDL completion of squares with an independent exact inverse before gap computations.",
+      "evidence": [
+        "EXP-018",
+        "EXP-019",
+        "EXP-020"
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
+    },
+    {
+      "id": "RH-F12",
+      "title": "Uniform pressure duality audit for distinct zeros",
+      "status": "closed",
+      "priority": 12,
+      "target": "Determine whether the fixed nine-point window and weights can support distinct proportion 0.838 under any pressure, and whether a changed pressure merits a separately declared certificate.",
+      "value": "A pressure-family witness barrier can eliminate an entire tuning route; a materially better candidate changes the local input rather than only block parameters.",
+      "success_gate": "General affine-witness duality proof, certified rational witness energies and independent exact envelope audit; candidate gains require a separate full certificate.",
+      "stop_conditions": [
+        "Five-minute search budget retains partial outcomes before exact controls.",
+        "Ten-minute total compute budget retains an incomplete result and forbids a proof upgrade."
+      ],
+      "novelty_status": "Convex duality and pressure concavity are classical. No gain, priority or manuscript is inferred from a finite minimum.",
+      "manuscript_route": "Research record unless a stronger uniform certificate and coherent analytic transfer are subsequently proved.",
+      "first_bounded_action": "EXP-022 declared and pushed as 4b1af0f5 before exploration; verify packet objective and gradients, then rationalize configurations and audit the complete pressure envelope.",
+      "evidence": [
+        "EXP-022"
+      ]
+    },
+    {
+      "id": "RH-F13",
+      "title": "Changed-pressure universal certificate",
+      "status": "admitted-bounded",
+      "priority": 13,
+      "target": "Prove the fixed nine-point inequality with pressure 1/1250 and delta 52231/5000000, yielding distinct-strip proportion 2340938143167/2795532013000 under the attributed analytic transfer.",
+      "value": "EXP-022 proposes a gain exceeding the declared 0.0001 gate above EXP-020 and places it near a rigorously bounded endpoint of this pressure family.",
+      "success_gate": "Full 96-shard interval cover, independent input/domain/accounting audit, exact elementary block transfer and source-overlap review.",
+      "stop_conditions": [
+        "Twenty-minute single-shard pilot budget preserves partial state and triggers a cost review, not a proof upgrade.",
+        "Invalid rounding or an unresolved terminal cell requires correction or rejection before a full run.",
+        "At most four new workers while EXP-020 continues; runtime sources freeze at launch."
+      ],
+      "novelty_status": "The certificate method and analytic transfer are attributed. The changed local inequality and consequence remain unproved; external novelty is unconfirmed.",
+      "manuscript_route": "One focused distinct-zero companion only after complete proof and coherence/novelty review, including EXP-022's fixed-family ceiling.",
+      "first_bounded_action": "EXP-023 declared in f2e1e7ec before implementation; audit exact rounding and baseline table prefixes, then one actual shard-0 pilot.",
+      "evidence": [
+        "EXP-022",
+        "EXP-023"
+      ]
+    },
+    {
+      "id": "RH-F14",
+      "title": "Attributed vector-pressure distinct-strip lift",
+      "status": "closed",
+      "priority": 14,
+      "target": "Prove one distinct-strip consequence from the newly published thirteen-term-window seven-point certificate with unequal gap pressures.",
+      "value": "A source-bound improvement exceeding the completed distinct-strip value by 1/10000 could close a relevant global consequence independently of partial nine-point covers.",
+      "success_gate": "Exact source functional/capacity binding, independent window enclosure, full vector-pressure transfer and analytic-limit review, and explicit attribution/novelty assessment.",
+      "stop_conditions": [
+        "Thirty-second invariant/window/arithmetic preflight only; no pressure/window sweep.",
+        "Failed binding or block condition rejects this fixed input.",
+        "Downloaded external verification logs cannot be reported as a local rebuild.",
+        "Frozen EXP-020/023 runtime is protected."
+      ],
+      "novelty_status": "External simple-critical proof published and archived; distinct-strip transfer overlap and worldwide priority unresolved; vector summation is classical.",
+      "manuscript_route": "Same prospective focused Gram-method distinct-zero companion only after coherent complete consequence review; supporting substitution alone is insufficient.",
+      "first_bounded_action": "EXP-025 hypothesis pushed as 1a8b9f63 before implementation; one fixed m=742 transfer with native window and exact controls.",
+      "evidence": [
+        "EXP-025"
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
     }
   ],
   "manuscripts": [
@@ -247,6 +354,15 @@
       "concept_doi": "10.5281/zenodo.22984154",
       "status": "published",
       "split_action": "none"
+    },
+    {
+      "slug": "distinct-zero-gram",
+      "path": "manuscripts/riemann-hypothesis/distinct-zero-gram",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.23128663",
+      "concept_doi": "10.5281/zenodo.23128662",
+      "status": "published",
+      "split_action": "focused global distinct-zero companion; earlier papers immutable"
     }
   ],
   "experiment_dispositions": [
@@ -315,6 +431,40 @@
       "end": 18,
       "classification": "research-record",
       "manuscripts": []
+    },
+    {
+      "start": 19,
+      "end": 19,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 20,
+      "end": 20,
+      "classification": "companion-manuscript",
+      "manuscripts": [
+        "distinct-zero-gram"
+      ]
+    },
+    {
+      "start": 21,
+      "end": 22,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 24,
+      "end": 24,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 25,
+      "end": 25,
+      "classification": "companion-manuscript",
+      "manuscripts": [
+        "distinct-zero-gram"
+      ]
     }
   ]
 }

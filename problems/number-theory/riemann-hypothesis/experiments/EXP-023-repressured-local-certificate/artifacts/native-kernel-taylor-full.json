@@ -1,0 +1,33 @@
+{
+  "schema": "exp023-native-kernel-taylor-audit-v1",
+  "all_cells_passed": true,
+  "requested_range_passed": true,
+  "requested_cells": 52240,
+  "completed_closed_cells": 52240,
+  "table_cells": 52240,
+  "unresolved_cell": null,
+  "budget_expired": false,
+  "budget_seconds": 600.0,
+  "elapsed_seconds": 148.04491119997692,
+  "projected_full_seconds": 148.04491119997692,
+  "precision_bits": 256,
+  "counts": {
+    "subcell_enclosures": 116922,
+    "accepted_subcells": 84581,
+    "maximum_bisection_depth": 3
+  },
+  "increased_bound_controls_rejected": [
+    true,
+    true
+  ],
+  "global_k2_bound": "[10.02431278917267737336271431007357677500756071479604953554975708765609618916 +/- 1.97e-75]",
+  "global_w4_bound": "[1904.836846015635286826672235094107526505707329896774304003953346623612895943 +/- 2.53e-73]",
+  "tables_sha256": {
+    "w-second.bin": "63bab379d8679a2604f20c317a286bc73bf168be82ab841247bdcc1f4c422512",
+    "w.bin": "29990f207d0c66af6fc0b642ceff15bee29ce3175a571fbcd5c3e5c2d325bbbc"
+  },
+  "packet_sha256": "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d",
+  "source_sha256": "edaf8f958a69cdd7a4f834a162fe49d75daac4d0ff32572a32436520b3504af6",
+  "declaration_sha256": "76d445d8dccb4884c668937c4ce749cc36c650e9afa4126dc453c9520ccfeda9",
+  "scope": "native hypergeometric midpoint evaluations with whole-cell kernel/Fourier Taylor bounds; shared FLINT/Arb trust base; not full multidimensional cover"
+}

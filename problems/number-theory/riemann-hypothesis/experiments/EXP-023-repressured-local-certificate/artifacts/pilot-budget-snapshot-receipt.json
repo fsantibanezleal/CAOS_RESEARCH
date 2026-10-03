@@ -1,0 +1,18 @@
+{
+  "schema": "exp023-pilot-budget-snapshot-v1",
+  "utc": "2026-10-03T19:57:22.878375+00:00",
+  "planned_budget_seconds": 1200,
+  "start_utc": "2026-10-03T19:35:50+00:00",
+  "snapshot_sha256": "cb3f95942722ff5838092f5c217f357d39de248281ac7beda149919884b5bfac",
+  "checkpoint_sha256": "56aa241e9ddcf65cc0114a40f1360668b4871e29844b75b69f357b0db2c0d2f1",
+  "state": {
+    "nodes": 2823168,
+    "splits": 1411589,
+    "pruned": 1411579,
+    "maximum_depth": 72,
+    "initial_boxes": 1
+  },
+  "pending_boxes": 11,
+  "complete": false,
+  "scope": "validated snapshot at budget review; partial state is inconclusive"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "exp023-native-table-audit-v1",
+  "all_cells_passed": false,
+  "requested_range_passed": false,
+  "requested_cells": 512,
+  "completed_closed_cells": 0,
+  "table_cells": 52240,
+  "unresolved_cell": 0,
+  "budget_expired": false,
+  "budget_seconds": 30.0,
+  "elapsed_seconds": 0.011349300009896979,
+  "projected_full_seconds": null,
+  "precision_bits": 256,
+  "counts": {
+    "subcell_enclosures": 9,
+    "accepted_subcells": 0,
+    "maximum_bisection_depth": 8
+  },
+  "tables_sha256": {
+    "w-second.bin": "63bab379d8679a2604f20c317a286bc73bf168be82ab841247bdcc1f4c422512",
+    "w.bin": "29990f207d0c66af6fc0b642ceff15bee29ce3175a571fbcd5c3e5c2d325bbbc"
+  },
+  "packet_sha256": "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d",
+  "source_sha256": "4a1e2bd2b5780182125070853742ca653492b06667f7298ac568823e566b66da",
+  "declaration_sha256": "b0a96b905f4dafcbdcd5504d1fce04d5675cfb2d943fa19f8c89e83f8ddaa76e",
+  "scope": "native hypergeometric whole-cell table input audit; shared FLINT/Arb trust base; not complete multidimensional cover"
+}

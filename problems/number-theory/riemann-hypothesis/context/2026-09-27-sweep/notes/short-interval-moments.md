@@ -113,6 +113,12 @@ None has been localized to short intervals in any located source.
 - Feng, "Zeros of the Riemann zeta function on the critical line", J. Number Theory 132 (2012), no. 4, 511-542 (bibliographic data verified in the cached Wang tex). PRZZ is Res. Math. Sci. 7 (2020), Paper No. 2, 74 pp. - local cache `/source-cache/wang-global-refinement-2609.24167v1.tar.gz` and `pearce-crump-2609.15329v1.tar.gz` bibliographies
 - Wu (2018), as summarized by Ray's survey: more than two fifths of the zeros of Dirichlet L-functions are on the critical line, and more than two fifths are simple and critical, using a longer mollifier. Ray reproves Levinson via Young's short proof. - [Ray, arXiv:2511.06109](https://arxiv.org/abs/2511.06109)
 - A January 2026 paper, "Bilinear forms with Kloosterman fractions and applications", gives improved bilinear Kloosterman-fraction bounds. Its snippets reference the long-mollifier / five-twelfths line. Whether it raises theta_F or kappa was not visible. - [arXiv:2601.00292](https://arxiv.org/pdf/2601.00292)
+
+  Correction recorded 2026-10-03: the primary v2 is withdrawn. A missing
+  L^2 factor invalidated the claimed improvement; none of its stronger
+  bounds is eligible as an input. Read the current
+  [subdyadic and non-abelian review](../../2026-10-03-subdyadic-and-nonabelian-review.md)
+  and the [withdrawal notice](https://arxiv.org/abs/2601.00292v2).
 - Short-mollifier regime (directly relevant to kappa/nu): Conrey-Farmer-Kwan-Lin-Turnage-Butterbaugh (arXiv:2508.11108, Aug 2025) use the calculus of variations to construct linear combinations of derivatives of zeta adapted to Levinson's method. These "yield a positive proportion of zeros ... on the critical line, regardless of how short the mollifier is". - [arXiv:2508.11108](https://arxiv.org/abs/2508.11108)
 
 ### Inferences

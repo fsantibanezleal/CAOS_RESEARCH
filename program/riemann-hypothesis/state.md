@@ -1,5 +1,30 @@
 # Riemann hypothesis state
 
+## Completed distinct-zero results, 2026-10-03
+
+EXP-020 completed all 96 shards and every final check: the stronger local
+inequality gives 3997934614153/4775507750000=0.8371747724947154... for
+distinct strip points. EXP-025's reviewed vector-pressure application gives
+30945470743359/36955122080000=0.8373797460706156..., with Lavery's
+external universal local theorem explicitly attributed and not locally
+Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
+mixed-Gram argument remain dependencies.
+
+The focused companion `distinct-zero-gram` v0.01 is published and all three
+files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+[concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
+SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
+Issues #356/#358 close the local input obligation; #364 tracks publication
+and release. PR #363 remains draft and unmerged. No new live application
+release or private main promotion is claimed yet.
+
+EXP-023 remains 95/96 under its owned supervisor through the deadline
+2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is
+unproved and not in the published theorem. EXP-019 remains suspended.
+RH is open; the short-window onset stays 0.534. Worldwide priority and peer
+acceptance are unconfirmed. RH-F4 remains the active analytic focus.
+
 Updated: 2026-10-03. Latest public application release: **0.74.000**
 (replay v9, EXP-010 to EXP-012 in the workbench), promoted to main commit
 `a464bdb52d88ed22582668d9c94ebbe25262b5b4`; live bytes match the exact-main build
@@ -174,3 +199,46 @@ been independently replayed here. Keep this separate from EXP-017's
 seven-point attributed bound. RH-F9 closes, RH-046 / issue #356 remains
 open for packet-bound replay and a later manuscript decision. No global
 release, onset change, new manuscript or Zenodo version is claimed.
+
+## Composite arithmetic layer, ongoing certificate run
+
+EXP-021 confirms the classical shifted composite character decomposition
+with complete gcd classes and primitive conductor factors. Exact controls
+pass in 4.17 seconds; the proof and source are bound in its receipt.
+RH-038 / issue #360 remains open for the uniform analytic reduction and
+signed-family estimate. No longer mollifier, new onset or manuscript follows.
+EXP-020 is still running; partial coverage does not upgrade EXP-018's premise.
+
+EXP-022 independently confirms a fixed-window/weight pressure-family
+ceiling 0.837421287797... for the counting assembly, not the actual zeros.
+The candidate at p=1/1250 would imply 0.837385561059... after a new complete
+universal local certificate. Issue #361 / RH-047 owns the audit. No new
+lower theorem or manuscript has yet landed; the user objective remains open.
+
+## Continued verification and signed-interface review
+
+EXP-024 closes the exact shifted Gaussian and fixed smooth compact-window
+representation step, with explicitly controlled remainders. Its main signed
+moment remains open. The signed-character interface retains both frequency
+signs, gcd/conductor factors and the distinction between its two Mellin
+weights. The late source review rejects an incorrect displayed exponent
+minimum as an imported premise and excludes the withdrawn January 2026
+Kloosterman improvement. Short-support and non-abelian approaches now have
+explicit conversion obligations; no new cancellation is asserted.
+
+EXP-023's revised full cover resumed at 20:48:12 UTC on 2026-10-03 with
+four workers and a six-hour operational supervisor. At 21:52 UTC 95/96
+shards are complete, with no complete-certificate verdict. The earlier
+EXP-020 has reached 91/96. Actual complete-output corruption checks and
+an exact-byte archive builder are prepared and refuse partial output.
+Draft PR #363 is pushed and unmerged. Only CI on 098c0476 is currently
+verified successful; later GitHub API requests encountered network errors.
+No new manuscript, DOI, release or deployment is claimed from these gates.
+
+At 22:31 UTC both EXP-020 and EXP-023 have 95/96 completed shards.
+EXP-023's additional native input audit passed all 52,240 closed cells of
+both tables using hypergeometric midpoint jets and whole-cell Taylor bounds,
+in 148.04 seconds. The earlier inconclusive variants remain archived.
+This verified input audit does not replace the last multidimensional shard,
+actual completed-output controls or exact transfer. The research goal remains
+active; none of these supporting milestones is its stopping condition.

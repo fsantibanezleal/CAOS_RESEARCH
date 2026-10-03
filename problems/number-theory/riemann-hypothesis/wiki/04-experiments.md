@@ -518,3 +518,57 @@ bound to 0.83699291672944... with the same attributed source inputs.
 Its runner/auditor use --output-dir and --artifact/--output respectively.
 Run `python -m pytest -q tests/test_riemann_trace_clipping.py` for the
 11 equality, missing-premise, corruption and byte-replay controls.
+
+## EXP-017--024: stronger transfers, full covers and signed representation
+
+[EXP-017](../experiments/EXP-017-sharp-energy-envelope/verdict.md) gives
+the attributed distinct-strip bound 0.83699292567522..., with its scaled
+prior-art attribution. [EXP-018](../experiments/EXP-018-nine-point-distinct-transfer/verdict.md)
+is a conditional larger transfer whose local input remains unclosed.
+EXP-019's source-identical cover is suspended with validated snapshots;
+EXP-020's stronger-target cover subsequently completed and passed all final checks. Partial coverage is
+not a universal local inequality.
+
+[EXP-021](../experiments/EXP-021-composite-character-layer/verdict.md)
+confirms the classical arithmetic layer and its exact controls.
+[EXP-022](../experiments/EXP-022-pressure-duality-audit/verdict.md)
+proves a ceiling for this fixed pressure assembly, not the true zero
+proportion. EXP-023's separately bound changed-pressure full cover is
+still incomplete. Its cost reviews and ownership controls are operational
+evidence; no new zero-bound verdict is inferred.
+
+[EXP-024](../experiments/EXP-024-gaussian-mellin-reduction/verdict.md)
+closes the representation step in the scope described in the
+[dual-moment chapter](15-dual-moment-range.md). Its signed main estimate
+remains open. None of these finite controls proves RH or external peer
+acceptance. The handoff records live bindings and current coverage.
+
+## EXP-020 and EXP-025 completed consequences
+
+## Completed distinct-zero results, 2026-10-03
+
+EXP-020 completed all 96 shards and every final check: the stronger local
+inequality gives 3997934614153/4775507750000=0.8371747724947154... for
+distinct strip points. EXP-025's reviewed vector-pressure application gives
+30945470743359/36955122080000=0.8373797460706156..., with Lavery's
+external universal local theorem explicitly attributed and not locally
+Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
+mixed-Gram argument remain dependencies.
+
+The focused companion `distinct-zero-gram` v0.01 is published and all three
+files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+[concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
+SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
+Issues #356/#358 close the local input obligation; #364 tracks publication
+and release. PR #363 remains draft and unmerged. No new live application
+release or private main promotion is claimed yet.
+
+EXP-023 remains 95/96 under its owned supervisor through the deadline
+2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is
+unproved and not in the published theorem. EXP-019 remains suspended.
+RH is open; the short-window onset stays 0.534. Worldwide priority and peer
+acceptance are unconfirmed. RH-F4 remains the active analytic focus.
+
+The full derivation, exact inputs and claim boundaries are in
+[the distinct-zero chapter](20-distinct-zero-certificates.md).

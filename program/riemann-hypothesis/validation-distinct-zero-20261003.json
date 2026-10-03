@@ -1,0 +1,14 @@
+{
+  "schema": "riemann-distinct-zero-validation-v1",
+  "date": "2026-10-03",
+  "tested_head": "298b1ed0adfe79ddeb749f73fa28901f88dd83c9",
+  "riemann_tests": {"selected_files": 21, "tests": 258, "exit_code": 0, "completed": true},
+  "ci": {"run_id": 37162231456, "head": "298b1ed0adfe79ddeb749f73fa28901f88dd83c9", "conclusion": "success", "scope": "repository guards, lint and artifact contracts; no mathematical full-cover execution"},
+  "research_governance": "passed after completing manuscript README and scoped index row",
+  "exp020": {"full_shards": 96, "nodes": 107752902, "native_closed_cells": 61029, "actual_corruption_controls": 12, "extracted_archive_checks": "passed", "fraction": "3997934614153/4775507750000"},
+  "exp025": {"independent_rational_window": "passed", "vector_counting_cases": 288, "pair_counting_cases": 183, "internal_general_proof_review": "passed with explicit source dependencies", "external_lean_rebuilt_here": false, "fraction": "30945470743359/36955122080000"},
+  "publication": {"record": 23128663, "version": "0.01", "doi": "10.5281/zenodo.23128663", "public_files_exact_match": 3, "rendered_pages_reviewed": 9, "native_compile": "unavailable: platform standard directories missing", "exported_two_pass_miktex": "passed"},
+  "exp023": {"full_shards_at_snapshot": 95, "complete_cover": false, "candidate_asserted": false, "owned_supervisor_deadline_utc": "2026-10-04T02:48:12Z"},
+  "claim_boundary": "distinct points in the entire critical strip; attributed external local/analytic dependencies; RH open; no effective height, worldwide priority or peer review established",
+  "release": "public PR integration and new application release remain pending; latest deployed app 0.74.000/replay v9"
+}

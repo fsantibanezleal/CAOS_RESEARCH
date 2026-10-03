@@ -300,3 +300,35 @@ for distinct zeros in the strip. Before a claim upgrade, RH-046 / issue
 cost. Never infer it from the kernel-table hashes or finite samples.
 Manuscript reassessment follows closure of that input obligation. RH-F4
 and the signed composite-twist target RH-038 remain the analytic priority.
+
+EXP-021 closes only RH-038's classical arithmetic layer: gcd classes,
+shifted local Euler corrections, conductor reduction and squarefree induction
+signs are derived and exactly checked. Issue #360 owns the remaining shifted
+short-window analytic reduction and signed-family estimate. An Estermann
+functional-equation route is being compared with Tang's model; no published
+central-value formula is presumed uniform at polynomial height. EXP-020's
+full stronger interval cover continues with its runtime source frozen.
+
+EXP-022 closes bounded RH-F12 with a uniform fixed-packet pressure cap
+0.837421287797... . A changed-pressure candidate at p=1/1250 exceeds
+EXP-020's proposed transfer by about 0.00021, passing the declared value
+gate. One separately declared certificate pilot is justified before any
+new full run. No further unbounded pressure sweep is justified by this
+family; other windows/weights and RH-038 remain separate research routes.
+
+RH-038 now has EXP-024's exact shifted representation. Its next signed
+estimate must retain the phase-profile frequency signs and residue terms.
+The subdyadic/non-abelian source review identifies two concrete conversion
+requirements: preserve a bounded-degree support graph through the inverse
+fraction transformation, or establish Fourier concentration for fixed-modulus
+Kloosterman completion. Partitioning arbitrary full supports does not supply
+either requirement. The withdrawn January bound cannot be used. These
+analytic investigations proceed while the frozen interval covers continue.
+
+The 22:37 UTC primary-source refresh locates a newly accepted optimized-window
+seven-point proof with unequal gap pressures. EXP-025 is declared before
+computation to test one vector-pressure distinct-strip transfer, with a
+thirty-second invariant/window/arithmetic preflight and no parameter sweep.
+Its local theorem remains an explicit attributed external dependency; source
+logs are not a local rebuild. It runs alongside the frozen covers and does
+not change the active signed-moment focus or manuscript stopping policy.

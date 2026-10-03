@@ -93,6 +93,43 @@ value-of-information check.
 
 | RH-045 | Source-conditioned nine-point distinct-strip transfer | done; EXP-018 confirmed conditional; issue #355 | P1 |
 
-| RH-046 | Bind and independently replay the nine-point universal local certificate, then reassess a focused manuscript | open; issue #356; EXP-018 remains conditional | P1 |
+| RH-046 | Bind and independently replay the nine-point universal local certificate, then reassess a focused manuscript | closed by stronger EXP-020; issues #356/#358; EXP-019 execution suspended | P1 |
 
 RH-042 also covers EXP-017/018; live replay v9 still contains twelve experiments.
+
+## EXP-021 arithmetic milestone
+
+RH-038 remains open. Its shifted composite arithmetic layer is proved and
+exactly checked in EXP-021; issue #360; this is classical supporting material, not a
+new cancellation theorem. The first remaining obligation is the uniform
+shifted short-window Mellin reduction, including residues and all signed
+conductor/gamma contributions. Subsequent summation must preserve the
+squarefree mollifier cutoff and both polynomial weights. No manuscript,
+onset improvement or research stopping condition follows from this milestone.
+
+| RH-047 | Audit the full pressure family of the fixed nine-point packet | done; EXP-022; issue #361; uniform method-output cap 0.837421287797... |
+
+EXP-022's candidate at p=1/1250 requires a new independently declared
+universal certificate. The pressure cap precludes indefinite tuning of
+the same packet beyond 0.837421287797... and does not constrain other
+window/weight schedules or RH-038's signed analytic route.
+
+| RH-048 | Certify the changed-pressure nine-point target and exact distinct-strip transfer | in progress; EXP-023; issue #362; full independent 96-shard audit required |
+
+RH-038 update: EXP-024 closes the analytic representation step for fixed
+smooth compact windows, bounded composite twists and small shifts through
+an exact Gaussian reduction with arbitrary fixed-order controlled
+remainders. The main signed arithmetic average is unestimated. Its source
+conductor, gcd, cutoff and polynomial factors remain mandatory. No new
+moment range, short-window onset or manuscript has been established.
+
+RH-038 source follow-up: the
+[subdyadic/non-abelian review](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-subdyadic-and-nonabelian-review.md)
+records the withdrawn January lead and the support-graph/Fourier-concentration
+requirements for two alternative estimates. No direct theorem import is
+admitted. RH-048 still requires the complete 96-shard audit, actual-output
+corruption controls, exact transfer and extracted reproducibility archive.
+
+RH-042 includes completed EXP-020 and derived EXP-025. Publication is complete at
+10.5281/zenodo.23128663; PR #363 integration and serialized workbench release
+remain pending. Issue #364 tracks these delivery obligations.

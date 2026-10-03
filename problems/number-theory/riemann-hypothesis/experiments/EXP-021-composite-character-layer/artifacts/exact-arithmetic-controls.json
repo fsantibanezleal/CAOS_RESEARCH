@@ -1,0 +1,37 @@
+{
+  "bindings": {
+    "code/composite_character_audit.py": "2ac5258dd445a8320d963342860b31e325267d401e4cde28256006222abfb8a7",
+    "experiments/EXP-021-composite-character-layer/hypothesis.md": "d9c3abd9a79a9703e7119aca07b22135302aec4327f502b1f6a59c41cc873e71",
+    "experiments/EXP-021-composite-character-layer/proof.md": "7959a3bad134da55c3e8bb2e56187dc2050d2a782504f918967cc646570231e0"
+  },
+  "elapsed_seconds": 4.1694175000011455,
+  "finite_character_controls": {
+    "characters": 80,
+    "induced_euler_coefficients": 2560,
+    "moduli": 16,
+    "primitive_gauss_products": 45,
+    "squarefree_induction_identities": 56,
+    "unit_fourier_identities": 558
+  },
+  "not_established": [
+    "uniform shifted short-window reciprocity",
+    "signed family cancellation",
+    "longer mollifier",
+    "new proportion",
+    "novel priority",
+    "RH"
+  ],
+  "passed": true,
+  "schema": "rh-composite-character-layer-v1",
+  "scope": "exact supporting arithmetic layer; no analytic moment or cancellation gain",
+  "shifted_euler_controls": {
+    "formal_prime_power_identities": 78,
+    "negative_controls": {
+      "incorrect_local_sign_detected": true,
+      "omitted_nonunit_class_detected": true,
+      "primitive_norm_at_induced_modulus_detected": true
+    },
+    "prime_unshifted_anchor": "2*x-x^2",
+    "rational_gcd_shift_controls": 4608
+  }
+}
