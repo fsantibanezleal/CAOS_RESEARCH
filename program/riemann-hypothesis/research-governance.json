@@ -280,6 +280,24 @@
       "evidence": [
         "EXP-022"
       ]
+    },
+    {
+      "id": "RH-F13",
+      "title": "Changed-pressure universal certificate",
+      "status": "admitted-bounded",
+      "priority": 13,
+      "target": "Prove the fixed nine-point inequality with pressure 1/1250 and delta 52231/5000000, yielding distinct-strip proportion 2340938143167/2795532013000 under the attributed analytic transfer.",
+      "value": "EXP-022 proposes a gain exceeding the declared 0.0001 gate above EXP-020 and places it near a rigorously bounded endpoint of this pressure family.",
+      "success_gate": "Full 96-shard interval cover, independent input/domain/accounting audit, exact elementary block transfer and source-overlap review.",
+      "stop_conditions": [
+        "Twenty-minute single-shard pilot budget preserves partial state and triggers a cost review, not a proof upgrade.",
+        "Invalid rounding or an unresolved terminal cell requires correction or rejection before a full run.",
+        "At most four new workers while EXP-020 continues; runtime sources freeze at launch."
+      ],
+      "novelty_status": "The certificate method and analytic transfer are attributed. The changed local inequality and consequence remain unproved; external novelty is unconfirmed.",
+      "manuscript_route": "One focused distinct-zero companion only after complete proof and coherence/novelty review, including EXP-022's fixed-family ceiling.",
+      "first_bounded_action": "EXP-023 declared in f2e1e7ec before implementation; audit exact rounding and baseline table prefixes, then one actual shard-0 pilot.",
+      "evidence": ["EXP-022", "EXP-023"]
     }
   ],
   "manuscripts": [
