@@ -1,0 +1,84 @@
+{
+  "schema": "rh-followup-sources-v1",
+  "date": "2026-10-03",
+  "pins": {
+    "shi": "1aeda8e9f0678166a824c75313a813b09eb478cd",
+    "teal": "a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03"
+  },
+  "files": [
+    {
+      "url": "https://codeload.github.com/yuhangshi888/zeta-simple-zeros-673316977/zip/1aeda8e9f0678166a824c75313a813b09eb478cd",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\shi-supporting-plane.zip",
+      "bytes": 252030,
+      "sha256": "5ad921bbef069c3372406ed85d3276d5775ba93b532bd4ecda01a70a2ca99c0d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/README.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal-README.md",
+      "bytes": 13620,
+      "sha256": "969182dafce681d958feb291a94edf66c96eb6abd75a6436358c2d1689e206b8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/LICENSE",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\LICENSE",
+      "bytes": 1069,
+      "sha256": "fd0274e92564494901ccaf2ff75d99547568261ebe70c3271e559f6892baadee"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/hunts/family_wall/RUNS.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\hunts\\family_wall\\RUNS.md",
+      "bytes": 4277,
+      "sha256": "29ccc949b7c81be7edb747d4275b548a04a01cd27c2e5b4b726e7322f4f4cfa0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/hunts/cycle_moments/README.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\hunts\\cycle_moments\\README.md",
+      "bytes": 10957,
+      "sha256": "75a47b907338f4c3cd1ae2ccf078df833d97a9281f12bca046e48d55ccc8b6a6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/hunts/cycle_moments/FINITE-THEOREM.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\hunts\\cycle_moments\\FINITE-THEOREM.md",
+      "bytes": 11854,
+      "sha256": "784d84bf66e1b811f3cae4cd9ffee55a959f7be6827977316431c582ac6bbd52"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/hunts/cycle_moments/THIRD-MOMENT-OBSTRUCTION.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\hunts\\cycle_moments\\THIRD-MOMENT-OBSTRUCTION.md",
+      "bytes": 5550,
+      "sha256": "b494d07490df5d499331505b8d905adb6cb6d33951613e426409032726cc6f9f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/hunts/cycle_moments/MIXED-MOMENTS.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\hunts\\cycle_moments\\MIXED-MOMENTS.md",
+      "bytes": 10089,
+      "sha256": "0247f8d6ad47df2fac77f83c624b45c47a754d1c218888097e5a19d330e2486d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/hunts/prime_pair_error/ARITHMETIC_CANCELLATION_CANDIDATE.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\hunts\\prime_pair_error\\ARITHMETIC_CANCELLATION_CANDIDATE.md",
+      "bytes": 21376,
+      "sha256": "1eb3ca6b2a37513b7ca423203210505abc0bd1700afdb0f5c3876da392754b35"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/hunts/prime_pair_error/ARITHMETIC_CANCELLATION_REVIEW.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\hunts\\prime_pair_error\\ARITHMETIC_CANCELLATION_REVIEW.md",
+      "bytes": 23238,
+      "sha256": "8ec43791a3d212fe0e7bd298900c95e82fd5aac232187b932218c2ecb5198864"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/a9f0b38b7eb68435b4d2e8dc693f2c5d3d3d0a03/hunts/prime_pair_error/CORRECTED_RH_BRIDGE.md",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\teal\\hunts\\prime_pair_error\\CORRECTED_RH_BRIDGE.md",
+      "bytes": 13735,
+      "sha256": "dcbef5f6cf663cf3c09bd9a71dc38f82be23353e15f884fb41b6ebf9c821119b"
+    },
+    {
+      "url": "https://www.math.tau.ac.il/~rudnick/papers/nlevelDuke.pdf",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\followup-review\\rudnick-sarnak-nlevelDuke.pdf",
+      "bytes": 3560283,
+      "sha256": "83010c4f68efc5f5628a71a589ff3a374220b25902384e9c1a34b3d6cd0834d6",
+      "license": "author-hosted research paper, original rights retained"
+    }
+  ],
+  "scope": "external archive; no imported result independently certified by downloading"
+}
