@@ -25,7 +25,7 @@ def require(condition, reason):
         raise ValueError(reason)
 
 
-def audit(directory):
+def audit(directory, experiment="EXP-019"):
     root = Path(__file__).resolve().parents[5]
     problem = Path(__file__).resolve().parents[2]
     raw = (problem/"experiments/EXP-018-nine-point-distinct-transfer/artifacts/input/nine-point-final.json").read_bytes()
@@ -35,24 +35,39 @@ def audit(directory):
     binding = json.loads((directory/"run-binding.json").read_bytes())
     require(binding["packet_sha256"] == packet_sha and binding["shard_count"] == 96,
             "run input mismatch")
-    for name, value in binding["code"].items():
-        require(sha((problem/"code"/name).read_bytes()) == value, "bound code mismatch")
-    require(sha((Path(__file__).parent/"run.py").read_bytes()) == binding["runner_sha256"], "runner changed")
+    require(experiment in ["EXP-019", "EXP-020"], "unknown target")
+    stronger = experiment == "EXP-020"
+    base = binding["baseline_source"] if stronger else binding
+    pressure, target, grid = Fraction(1, 2500), Fraction(3051, 500000) if stronger else Fraction(15211, 2500000), 4000
+    require(binding["target"] == str(target) and binding["pressure"] == str(pressure)
+            and binding["grid"] == grid and binding["precision"] == 128, "wrong target/parameters")
+    for name, value in base["code"].items():
+        require(sha((problem/"code"/name.replace("\\", "/")).read_bytes()) == value, "bound code mismatch")
+    require(sha((Path(__file__).parent/"run.py").read_bytes()) == base["runner_sha256"], "baseline runner changed")
+    frozen = json.loads((problem/"code/rh019_vendor/source-binding.json").read_bytes())
+    require(frozen["upstream_commit"] == "1610b97b7895ff34982260f8dcaf04a0f7b82cf7", "upstream mismatch")
+    for name, value in frozen["files"].items():
+        require(sha((problem/"code/rh019_vendor"/name).read_bytes()) == value, "frozen source mismatch")
+    if stronger:
+        for name, value in binding["code"].items():
+            require(sha((problem/name.replace("\\", "/")).read_bytes()) == value, "quadratic code mismatch")
+    units = target*grid/pressure
+    cutoff = -(-units.numerator//units.denominator)+1
+    require(cutoff == (61021 if stronger else 60845), "cutoff mismatch")
+    cells = cutoff+8
     tables = {}
     for name, value in binding["tables"].items():
         raw = (directory/"tables"/name).read_bytes()
         require(sha(raw) == value, "table changed")
-        require(len(raw) == 60853*8, "table count")
-        tables[name] = list(struct.unpack(">60853d", raw))
+        require(len(raw) == cells*8, "table count")
+        tables[name] = list(struct.unpack(f">{cells}d", raw))
+        require(all(math.isfinite(x) for x in tables[name]), "nonfinite table")
+    require(min(tables["w.bin"]) >= 0, "negative w table")
     weights = {tuple(pair): Fraction(n, packet["pair_weight_denominator"])
                for pair, n in zip(packet["pair_order"], packet["pair_weight_numerators"])}
     require(min(weights.values()) >= 0 and
             all(sum(w for (i, j), w in weights.items() if j-i == r) == 2 for r in range(1, 9)),
             "capacity mismatch")
-    pressure, target, grid = Fraction(1, 2500), Fraction(15211, 2500000), 4000
-    units = target*grid/pressure
-    cutoff = -(-units.numerator//units.denominator)+1
-    require(cutoff == 60845, "cutoff mismatch")
     p = math.nextafter(float(pressure), -math.inf)
     target_upper = math.nextafter(float(target), math.inf)
     components = []
@@ -90,16 +105,18 @@ def audit(directory):
         s, report = obj["shard"], obj["report"]
         require(type(s) is int and 0 <= s < 96 and s not in seen, "duplicate or invalid shard")
         seen.add(s)
-        require(obj["binding"] == binding and obj["shard_count"] == 96, "report input mismatch")
-        require(report["verified"] is True and report["target"] == "F >= 15211/2500000"
+        require(obj["binding"] == binding and (stronger or obj["shard_count"] == 96), "report input mismatch")
+        require(report["verified"] is True and report["target"] == f"F >= {target}"
                 and report["grid"] == grid, "false result")
         raw = (directory/"checkpoints"/f"shard-{s:03d}.json").read_bytes()
         require(sha(raw) == obj["checkpoint_sha256"], "report/checkpoint mismatch")
         checkpoint = json.loads(raw)
         data = checkpoint["data"]
         require(sha(canonical(data)) == checkpoint["sha256"], "checkpoint corrupt")
-        require(data["binding"] == binding and data["shard"] == s and data["shard_count"] == 96,
+        require(data["binding"] == binding and data["shard"] == s
+                and (stronger or data["shard_count"] == 96),
                 "checkpoint input mismatch")
+        require(data["schema"] == ("exp020-checkpoint-v1" if stronger else "exp019-checkpoint-v1"), "checkpoint schema")
         state = data["state"]
         require(data["complete"] is True and state["stack"] == [], "unfinished branch")
         initial_digest = sha(json.dumps(expected[s], separators=(",", ":")).encode())
@@ -120,7 +137,8 @@ def audit(directory):
         depth = max(depth, state["maximum_depth"])
         report_hashes[path.name] = sha(path.read_bytes())
     require(seen == set(range(96)) and totals["initial_boxes"] == len(initial), "missing cover")
-    return {"schema": "exp019-independent-cover-audit-v1", "passed": True,
+    return {"schema": f"{experiment.lower().replace('-', '')}-independent-cover-audit-v1", "passed": True,
+            "experiment": experiment,
             "binding": binding, "totals": totals, "maximum_depth": depth,
             "coordinate_components": components, "excluded_cells_per_coordinate": excluded,
             "initial_boxes": len(initial), "reports_sha256": report_hashes,
@@ -133,7 +151,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--receipt", type=Path, required=True)
+    parser.add_argument("--experiment", choices=["EXP-019", "EXP-020"], default="EXP-019")
     args = parser.parse_args()
-    result = audit(args.output_dir)
+    result = audit(args.output_dir, args.experiment)
     args.receipt.write_bytes((json.dumps(result, indent=2)+"\n").encode())
     print(json.dumps(result["totals"], indent=2), flush=True)
