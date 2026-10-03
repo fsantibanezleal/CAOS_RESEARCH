@@ -220,3 +220,15 @@ target `nu<2theta-1` for RH-027, the RH-028 benchmark was already met by
 the 2026-09-26 preflight, and Lamzouri's Proposition 2.1 weakens the
 Cohn-Elkies route.
 
+
+
+## Continuation review 2026-10-03
+
+Read the [new source and dual-family preflight](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-update-and-dual-family-preflight.md).
+RH-F4 remains the substantive short-window target. Direct use of the CIS
+theorems is gated by the twist endpoint, growing heights, composite indices
+and signed arithmetic weights. First run EXP-014 to test the generic
+pointwise phase mechanism; a summed cancellation theorem remains the positive
+route. Secondary bounded focus RH-F6 audits the new mixed-Gram paper with
+EXP-013 and stops once its fixed-input parameter cap is proved. Both are
+research records unless a substantive new analytic result emerges.

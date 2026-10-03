@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "riemann-hypothesis",
-  "updated": "2026-09-27",
+  "updated": "2026-10-03",
   "original_problem": {
     "status": "open",
     "statement": "The Riemann hypothesis: every nontrivial zero of the Riemann zeta function has real part 1/2.",
@@ -135,6 +135,24 @@
       "novelty_status": "Closed 2026-09-27: Lamzouri's framework sees the pair sum only as a norm with compactly supported eta, and F has no unconditional sign beyond the support (route preflights, RH-032).",
       "manuscript_route": "sharp-three-point-kernel next version for a global gain; research record for a negative answer",
       "first_bounded_action": "RH-032 invariant reproduction and the Cheer-Goldston discrepancy.",
+      "evidence": []
+    },
+    {
+      "id": "RH-F6",
+      "title": "Mixed-Gram fixed-certificate parameter audit",
+      "status": "active-secondary",
+      "priority": 6,
+      "target": "Improve and cap the block/clipping parameters for the fixed seven-point inputs of arXiv:2609.33043v1.",
+      "value": "An exact comparison with a new external result, a small auditable constant gain, and an explicit ceiling that prevents repeated parameter sweeps.",
+      "success_gate": "Rational reproduction, a strictly stronger parameter choice, and an algebraic cap for all larger integer blocks.",
+      "stop_conditions": [
+        "The imported certificate cannot be bound to its source.",
+        "No compatible rational parameter improves the source choice.",
+        "The fixed-input cap is proved."
+      ],
+      "novelty_status": "Source-based arithmetic optimization; no new matrix method, full certificate replay or external priority claim.",
+      "manuscript_route": "research-record; a new analytic theorem or substantial new certificate is required for a manuscript",
+      "first_bounded_action": "EXP-013, eliminate the off-line-pair residual against the clipping threshold before any numerical sweep.",
       "evidence": []
     }
   ],
