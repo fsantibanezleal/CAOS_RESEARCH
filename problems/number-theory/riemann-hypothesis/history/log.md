@@ -613,3 +613,17 @@ shared FLINT/Arb trust base. The archive builder now requires this bound
 receipt and includes all three audit sources, declarations and original
 partial/success receipts. EXP-023 remains 95/96; EXP-020 has reached 95/96.
 No complete improved zero-proportion theorem or publication is inferred.
+
+## 2026-10-03: newly accepted formal input and declared vector lift
+
+The 22:37 UTC primary-source refresh archives Lavery's newly accepted
+6734302/10000000 critical-line bound, source and reported two-kernel checks.
+The submitted proof is preserved unmodified under its declared Apache-2.0
+license; no local Lean rebuild is asserted. EXP-025 was declared and pushed
+as 1a8b9f63 before its fixed arithmetic/window preflight. It passes source
+functional binding, all capacities, an independent native window enclosure
+and exact m=742 block residuals, proposing a distinct-strip consequence
+30945470743359/36955122080000. The complete vector-pressure proof review
+and separately declared pure-rational scalar/accounting audit remain pending.
+The stale Yang density-one abstract is rejected against the unchanged
+repository retraction. Neither source refresh nor preflight closes the goal.

@@ -297,7 +297,31 @@
       "novelty_status": "The certificate method and analytic transfer are attributed. The changed local inequality and consequence remain unproved; external novelty is unconfirmed.",
       "manuscript_route": "One focused distinct-zero companion only after complete proof and coherence/novelty review, including EXP-022's fixed-family ceiling.",
       "first_bounded_action": "EXP-023 declared in f2e1e7ec before implementation; audit exact rounding and baseline table prefixes, then one actual shard-0 pilot.",
-      "evidence": ["EXP-022", "EXP-023"]
+      "evidence": [
+        "EXP-022",
+        "EXP-023"
+      ]
+    },
+    {
+      "id": "RH-F14",
+      "title": "Attributed vector-pressure distinct-strip lift",
+      "status": "admitted-bounded",
+      "priority": 14,
+      "target": "Prove one distinct-strip consequence from the newly published thirteen-term-window seven-point certificate with unequal gap pressures.",
+      "value": "A source-bound improvement exceeding the completed distinct-strip value by 1/10000 could close a relevant global consequence independently of partial nine-point covers.",
+      "success_gate": "Exact source functional/capacity binding, independent window enclosure, full vector-pressure transfer and analytic-limit review, and explicit attribution/novelty assessment.",
+      "stop_conditions": [
+        "Thirty-second invariant/window/arithmetic preflight only; no pressure/window sweep.",
+        "Failed binding or block condition rejects this fixed input.",
+        "Downloaded external verification logs cannot be reported as a local rebuild.",
+        "Frozen EXP-020/023 runtime is protected."
+      ],
+      "novelty_status": "External simple-critical proof published and archived; distinct-strip transfer overlap and worldwide priority unresolved; vector summation is classical.",
+      "manuscript_route": "Same prospective focused Gram-method distinct-zero companion only after coherent complete consequence review; supporting substitution alone is insufficient.",
+      "first_bounded_action": "EXP-025 hypothesis pushed as 1a8b9f63 before implementation; one fixed m=742 transfer with native window and exact controls.",
+      "evidence": [
+        "EXP-025"
+      ]
     }
   ],
   "manuscripts": [
@@ -417,6 +441,12 @@
     {
       "start": 24,
       "end": 24,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 25,
+      "end": 25,
       "classification": "research-record",
       "manuscripts": []
     }
