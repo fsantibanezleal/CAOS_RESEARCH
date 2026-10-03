@@ -218,6 +218,26 @@
       "evidence": [
         "EXP-018"
       ]
+    },
+    {
+      "id": "RH-F10",
+      "title": "Packet-bound nine-point local replay",
+      "status": "admitted-bounded",
+      "priority": 10,
+      "target": "Prove the universal eight-gap pressure inequality for the exact EXP-018 input packet by a complete independently bound interval cover.",
+      "value": "Close the local computational premise needed for the larger distinct-strip consequence; partial or operational completion is insufficient.",
+      "success_gate": "All 96 disjoint initial-box shards, audited outward bounds, independently checked bindings and coverage, and a mathematical review of the resulting transfer.",
+      "stop_conditions": [
+        "An invalid enclosure or unresolved terminal cell forces correction before continuing.",
+        "A budget limit retains incomplete checkpoints and triggers an updated cost review; it is not user-goal completion."
+      ],
+      "novelty_status": "Replication of the pinned source local inequality; independent complete packet binding has not been supplied. Novelty of the distinct-strip consequence requires its own review.",
+      "manuscript_route": "EXP-019 research-record; a coherent verified distinct-strip improvement with this obligation closed triggers a focused companion manuscript review.",
+      "first_bounded_action": "EXP-019 declared and pushed at 24c9caab: exact pressure-rounding audit, source/packet validation and interrupted-resume tooling smoke before tables and full cover.",
+      "evidence": [
+        "EXP-018",
+        "EXP-019"
+      ]
     }
   ],
   "manuscripts": [
@@ -313,6 +333,12 @@
     {
       "start": 18,
       "end": 18,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 19,
+      "end": 19,
       "classification": "research-record",
       "manuscripts": []
     }

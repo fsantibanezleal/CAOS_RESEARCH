@@ -60,14 +60,17 @@ live release. General RH remains open.
 
 ## 4. In flight
 
-No computation is in flight. EXP-013--018 are closed research records. EXP-018 is conditional on its
+EXP-019 is declared and admitted as bounded RH-F10. Its source/rounding audit,
+checkpoint smoke and complete 96-shard local replay are in preparation on
+`work/riemann-hypothesis/nine-replay-20261003`. No replay success is claimed.
+EXP-013--018 are closed research records. EXP-018 is conditional on its
 unreplayed nine-point local input; issue #356 tracks that obligation.
 The latest deployed replay remains v9 with twelve experiments. The tag
 v0.74.000 is verified; no pending-tag action remains.
 
 ## 5. Next actions
 
-The October strategic review retains RH-F4; bounded RH-F6--F9 are closed.
+The October strategic review retains RH-F4; bounded RH-F6--F9 are closed; RH-F10 is admitted for EXP-019.
 The onset remains 0.534. Direct CIS substitution and uniform pointwise
 phase repairs are closed, including nonzero Mobius support. Signed
 off-diagonal cancellation is not excluded.
