@@ -261,6 +261,25 @@
         "EXP-019",
         "EXP-020"
       ]
+    },
+    {
+      "id": "RH-F12",
+      "title": "Uniform pressure duality audit for distinct zeros",
+      "status": "admitted-bounded",
+      "priority": 12,
+      "target": "Determine whether the fixed nine-point window and weights can support distinct proportion 0.838 under any pressure, and whether a changed pressure merits a separately declared certificate.",
+      "value": "A pressure-family witness barrier can eliminate an entire tuning route; a materially better candidate changes the local input rather than only block parameters.",
+      "success_gate": "General affine-witness duality proof, certified rational witness energies and independent exact envelope audit; candidate gains require a separate full certificate.",
+      "stop_conditions": [
+        "Five-minute search budget retains partial outcomes before exact controls.",
+        "Ten-minute total compute budget retains an incomplete result and forbids a proof upgrade."
+      ],
+      "novelty_status": "Convex duality and pressure concavity are classical. No gain, priority or manuscript is inferred from a finite minimum.",
+      "manuscript_route": "Research record unless a stronger uniform certificate and coherent analytic transfer are subsequently proved.",
+      "first_bounded_action": "EXP-022 declared and pushed as 4b1af0f5 before exploration; verify packet objective and gradients, then rationalize configurations and audit the complete pressure envelope.",
+      "evidence": [
+        "EXP-022"
+      ]
     }
   ],
   "manuscripts": [
