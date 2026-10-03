@@ -1,0 +1,20 @@
+{
+  "schema": "exp019-window-audit-v1",
+  "passed": true,
+  "packet_sha256": "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d",
+  "code_sha256": "1bbe3b9db76ffd56e708445f478cff6a1fb5cbf09d8c4dfa356913249a28f0af",
+  "precision": 256,
+  "subdivisions": 4096,
+  "symmetry_checks": 49,
+  "normalization": "[0.918725369865568437784231525124661751810172479994571608598354 +/- 5.26e-62]",
+  "I2": "[0.849778062782324616761566602914180098476017894234068114908792 +/- 1.10e-61]",
+  "J": "[0.270742941881558623258037335773530194067467771324064317232042 +/- 3.91e-61]",
+  "H": "[0.672457041414544288784245334268593605626157838977580679599868 +/- 3.73e-61]",
+  "H_cert": "3362285207/5000000000",
+  "H_slack": "[1.454428878424533426859360562615783897758e-11 +/- 6.80e-52]",
+  "window_lower_binary64": "0x1.801bf1c2c1f73p-1",
+  "window_upper": "[0.9956328710000000000000000000000000000000 +/- 3e-45]",
+  "derivative_factor_upper_binary64": "-0x1.8c38ef9a094cfp-1",
+  "method": "native Arb sinc; independently symmetrized ODE-derived integral; complete interval cell cover",
+  "analytic_pair_correlation_theorem": "attributed, not established by this scalar certificate"
+}
