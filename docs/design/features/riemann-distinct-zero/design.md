@@ -38,3 +38,14 @@ for the existing public, static baked workbench; no online heavy computation.
 Review verdict: design accepted for implementation. Source-dependent claims are
 visible, fail-closed controls are required, and each requirement names a measurable
 gate. Product scaffolding is unchanged; this is a feature SDD under ADR-0075.
+
+## Direct-entry review, 2026-10-04
+
+R8 is accepted before implementation. After the existing production build, copy
+its root `index.html` to `dist/problems/riemann-hypothesis/index.html`. The build
+already uses root-relative asset/data URLs and React Router accepts a trailing
+slash, so this supplies an actual Pages entry without duplicating application
+logic. The existing fallback shim remains available for other routes. Verify
+the copied HTML bytes and final direct-route HTTP/browser behavior. This is a
+release defect correction within the authorized Riemann scope; no scientific
+input or admitted bound changes.

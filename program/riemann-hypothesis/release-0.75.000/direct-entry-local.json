@@ -1,0 +1,8 @@
+{
+  "schema": "riemann-static-entry-local-check-v1",
+  "root_entry_identical": true,
+  "direct_route_http": 200,
+  "direct_response_exact_match": true,
+  "entry_sha256": "e917c7fa220572bf2ca2f0fa86f51dca51164a380aaa202897c0df4dfc9ca283",
+  "scope": "Build/static-entry check only; actual Pages HTTP/browser checks remain required."
+}
