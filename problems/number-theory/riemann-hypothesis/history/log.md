@@ -678,3 +678,43 @@ with agreeing derivative/native 0F1 enclosures at 256 bits (shared FLINT/Arb).
 No counterexample was found. This finite diagnostic does not certify boxes,
 explain all traversal cost, or complete the missing shard. The worker, runtime
 sources and deadline were preserved. RH remains open; onset remains 0.534.
+
+## 2026-10-04: EXP-026 compact isolation and verified release
+
+EXP-026 retains the exact three-quarter coloured remainder. Six rational
+sign brackets define actual kernel roots isolating one doubled point with
+positive simple energy and pressure below delta. Native Arb and independent
+Fraction audits pass; the latter rejects reversed/overlapping brackets and
+changed source. This closes the count-only/pressure-only gain routes, without
+a new zero bound. The lint-only Interval rename is replayed; both original
+and current audit receipts remain preserved. RH-F4 stays primary.
+
+Release 0.75.000 is live at main 51b8e91b after PRs #365/#367/#366.
+CI/Pages pass; all 76 served files match the artifact and local build.
+Production QA: 8 scenarios, 48 tabs, 656 checked PNGs, zero failures.
+EXP-023 remains 95/96; its candidate is unproved. No coordination files
+were relocated; the repository remains the research authority.
+
+## 2026-10-04: EXP-027/028 complete signed moment and corrected smoothing
+
+EXP-027 derives the complete classical shifted composite transformation.
+EXP-028 internally proves the range nu<min(1/2,(17/33)*(2theta-1)) by
+independent exact-Hankel/Fourier and gamma-Mellin norm routes. Both pole
+terms, coalescence, actual signed coefficients and all variable blocks remain.
+The narrower inverse-heat window is charged explicitly: eta=1/100000
+gives corrected exponents -7/250000 and -937/400000 at theta=0.5339,
+nu=0.0349. Exact controls pass 7,430 configurations and five refutations;
+native and stdlib rational parity give h>0.0003985233159135 using the frozen
+EXP-010 detector. The internal simple-critical onset improves to 0.5339.
+No effective height, worldwide-priority, external peer review or RH claim.
+The next immutable Levinson manuscript and deployment remain required.
+
+EXP-023 reached its owned six-hour deadline; shutdown completed 02:48:18 UTC.
+95/96 shards and stopped checkpoints are preserved in a verified stable
+1,053,509-byte archive SHA256 c4316f289694754df3beb0d8fc795a4e4f30d610ea999be8c24357d77dd508e2.
+Its proposed distinct-strip bound remains unproved. No data or frozen
+publication was removed, relocated or overwritten. RH-F4 remains primary.
+
+## 2026-10-04: immutable Levinson v0.02 published
+
+EXP-028 is published with its full internally reviewed moment proof at DOI 10.5281/zenodo.23132248, concept 10.5281/zenodo.22984154. All fourteen final rendered pages pass visual review. The 80-member source ZIP replays native, rational and 7,430 exact adversarial controls from extraction. PDF and ZIP public bytes match the compact receipts. Earlier root v0.01 remains unchanged. Promotion and a new app release remain open; publication is not external peer review.

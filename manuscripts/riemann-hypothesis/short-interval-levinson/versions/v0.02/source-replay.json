@@ -1,0 +1,135 @@
+{
+  "schema": "levinson-v002-source-replay-v1",
+  "passed": true,
+  "archive_name": "riemann-hypothesis-short-interval-levinson-v0.02-source.zip",
+  "archive_bytes": 263557,
+  "archive_sha256": "944c99623d57fcff3db5a380d08dd5907bfbc40250c5c1f7f8d1fefd188da5c1",
+  "members": 80,
+  "all_members_crc_size_sha256_verified": true,
+  "extracted_archive_auditors": {
+    "independent_control": {
+      "sha256": "6432855151dbd0bdd72c0354f80f18a766913d6cac02e6cde9d8cd595e602739",
+      "passed": true,
+      "report": {
+        "schema": "exp028-independent-conditional-v1",
+        "passed": true,
+        "auditor_sha256": "47a95cc8c2b2d78e67b4a8986eea12daf5809325e3883054d245fd8f0b6cab9e",
+        "declaration_sha256": "a9321d18ba743ec465a42738eb23df48f00202e2224a375b8ea39b7a30661cfc",
+        "audit": {
+          "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+          "interval_toolkit_sha256": "b93e2deeb4c8a4698028da914e6c042d995c2b7606dbdf9a2124e777dd4356ec",
+          "arithmetic": "Python stdlib Fraction outward intervals and integer square roots; no FLINT/Arb",
+          "theta": "5339/10000",
+          "nu": "349/10000",
+          "normalization_exponent": "-6047/20000",
+          "coefficient_norm_exponent": "177/5000",
+          "separation_exponent": "4661/20000",
+          "source_first_exponent": "6771/200000",
+          "source_second_exponent": "2523/80000",
+          "E1": "-9/200000",
+          "E2": "-189/80000",
+          "pair_term": {
+            "lower": "-15662332367829315280444805149170479279/312500000000000000000000000000000000000",
+            "upper": "-501194635770538088974233764773455336927/10000000000000000000000000000000000000000"
+          },
+          "conditional_parity": {
+            "lower": "79704663182705502326143276379351819/200000000000000000000000000000000000000",
+            "upper": "3985233159135275116307163818967590951/10000000000000000000000000000000000000000"
+          },
+          "negative_controls": {
+            "old_length_range_rejects_nu": true,
+            "doubled_separation_exponent_rejected": true,
+            "zero_detector_parity_rejected": true
+          },
+          "analytic_moment_theorem_proved": false,
+          "scope": "Conditional arithmetic only; no established onset improvement.",
+          "cpu_seconds": 0.03125
+        }
+      }
+    },
+    "adversarial_control": {
+      "sha256": "e964e95df13f1c32975f678bc6f4515bede416ecb2a49ebf02fdd02ca1f3f6da",
+      "passed": true,
+      "report": {
+        "schema": "exp028-adversarial-exponents-v1",
+        "passed": true,
+        "auditor_sha256": "8b4b50699f433742f9f08b8834cf7f55dfdd91a745c527a5dfc444dc36d19214",
+        "declaration_sha256": "6fdc9c14cf02fabf21ab2fe45534c00861daa704fe57b5b9021bec037cf7c6a1",
+        "audit": {
+          "arithmetic": "stdlib Fraction only",
+          "theta": "5339/10000",
+          "nu": "349/10000",
+          "eta": "1/100000",
+          "gaussian_theta": "53389/100000",
+          "charged_exponents": [
+            "-7/250000",
+            "-937/400000"
+          ],
+          "exact_dyadic_boxes": 7430,
+          "worst_grid_exponents_and_scales": [
+            [
+              "-7/250000",
+              "0",
+              "349/10000",
+              "349/10000",
+              "101/50000"
+            ],
+            [
+              "-937/400000",
+              "0",
+              "349/10000",
+              "349/10000",
+              "101/50000"
+            ]
+          ],
+          "low_N_slopes": [
+            "3/5",
+            "3/4"
+          ],
+          "high_N_slopes_including_parameter_growth": [
+            "-29/10",
+            "-11/4"
+          ],
+          "negative_controls": {
+            "oversized_window_loss_rejected": true,
+            "zero_margin_rejected": true,
+            "doubled_separation_rejected": true,
+            "uncontrolled_tail_rejected": true,
+            "reversed_parameter_factor_rejected": true
+          },
+          "analytic_moment_theorem_proved": false,
+          "scope": "Exponent accounting only; universal analysis is in mellin-proof.md.",
+          "cpu_seconds": 0.125
+        }
+      }
+    },
+    "run": {
+      "sha256": "839d6a75e28e298fa343baec22f5c19477f3df313751906c0cb4e215797f7572",
+      "passed": true,
+      "report": {
+        "schema": "exp028-conditional-onset-v1",
+        "passed_conditional_controls": true,
+        "analytic_moment_theorem_proved": false,
+        "hypothesis_sha256": "f6f83b1d03af9b840c1ab48a939e91bd8282d4a2c223c79c135d944a6431d6e1",
+        "runner_sha256": "3528ad97149fff5efd46470fdaf6c30fbc8aa2a6f50f5df3240fd9b01b87eb4e",
+        "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+        "theta": "5339/10000",
+        "nu": "349/10000",
+        "existing_onset": "267/500",
+        "old_length_range_rejects_this_nu": true,
+        "proposed_moment_upper_nu": "1921/55000",
+        "E1": "-9/200000",
+        "E2": "-189/80000",
+        "certified_kappa_lower": "62587441630700832326901419310999470251/2500000000000000000000000000000000000000",
+        "pair_term": "[-0.050119463577053808897423376477345533692719188646790589810181075917830697555 +/- 2.91e-76]",
+        "conditional_simple_parity_lower": "[0.000398523315913527511630716381896759095028831820131738895340568992677515111 +/- 4.65e-76]",
+        "arithmetic_trust": "Existing EXP-010 detector certificate is a premise; new scalar parity check uses Arb.",
+        "cpu_seconds": 0.0,
+        "scope": "Conditional compatibility only. No established new onset or moment range."
+      }
+    }
+  },
+  "pdf_sha256": "710e174a8c08c2a20cb0a94b6bbdaaf2bb8feb3f24b56ebc9f753bb4b019a66c",
+  "tex_sha256": "f47c1864479bfa7fcfcd606cbac75106505f56d1737cb1c5315b1e41a974cdd8",
+  "analytic_proof_status": "internally reviewed; finite replay is not an analytic proof"
+}

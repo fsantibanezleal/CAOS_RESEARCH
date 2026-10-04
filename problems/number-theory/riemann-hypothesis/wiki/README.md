@@ -249,3 +249,5 @@ its prior-art attribution. The latest supporting distinct-strip bound is
 records EXP-018's conditional 0.83716744477146... target and the unclosed
 local replay obligation. It is kept separate from EXP-017's source-based
 bound; issue #356 tracks the certificate and manuscript reassessment.
+
+[Longer short-window mollifiers and internally proved onset 0.5339](22-mellin-short-window-moment.md) records EXP-028. Manuscript/publication and the next application release are still pending. EXP-023 is budget-stopped at 95/96, not running or proved. Earlier release and onset statements above are historical.

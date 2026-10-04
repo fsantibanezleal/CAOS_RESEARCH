@@ -1,6 +1,6 @@
 # Levinson's method in short intervals and simple zeros of the zeta function
 
-Version `v0.01`, dated 26 September 2026.
+Latest publication: **v0.02**, 4 October 2026, [10.5281/zenodo.23132248](https://doi.org/10.5281/zenodo.23132248). See [the version directory](versions/v0.02/) for the extended moment range and internally reviewed onset 0.5339, complete proof, PDF and replay archive. The root files preserve v0.01, dated 26 September 2026, whose result is described below.
 
 The manuscript localizes Levinson's method, with Conrey's general operator
 polynomial `Q`, to the intervals `(T,T+T^theta]` for mollifier exponents

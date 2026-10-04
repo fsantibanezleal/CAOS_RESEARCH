@@ -1,0 +1,17 @@
+{
+  "title": "Levinson's method in short intervals and simple zeros of the zeta function",
+  "description_html": "<p>For each fixed 1/2 &lt; theta &lt; 1, a shifted mollified second-moment formula is derived on intervals of length T^theta for fixed mollifier and differential-operator polynomials, with 0 &lt; nu &lt; min(1/2, (17/33)(2 theta - 1)). The argument combines a signed Gaussian representation, the shifted composite Voronoi transformation and Bettin-Chandee's trilinear Kloosterman-fraction estimate. Exact Mellin multipliers provide coefficient separation and a summable dual tail; an exact Hankel-symbol representation gives a second derivation. Both residues, coalescing shifts, unbalanced blocks, gcd sums and compact-window smoothing are retained.</p><p>With a fixed previously certified degree-201 detector and Wang's recent short-interval pair-correlation preprint, the counting and parity transfer gives a positive asymptotic proportion of simple critical-line zeros in (T, T+T^theta] for every fixed theta in [0.5339, 1). At theta = 0.5339 the certified lower density exceeds 0.0003985233159135. The proof and exact arithmetic controls have undergone internal review. The result is asymptotic, depends on attributed external theorems, and supplies no effective height, external peer-review claim, worldwide-priority assertion or proof of the Riemann hypothesis.</p><p>The accompanying source archive contains the standalone manuscript, mathematical derivations, frozen detector certificate, arithmetic auditors, adversarial controls and reproducibility instructions. Computational checks certify arithmetic and bookkeeping rather than the universal analytic theorem.</p>",
+  "version_notes": "Extends the short-window mollifier range from nu < theta - 1/2 to nu < min(1/2, (17/33)(2 theta - 1)); adds full Mellin and exact Hankel derivations with explicitly charged smoothing margin. The internally reviewed onset becomes 0.5339 with a fixed certified detector. Includes a source archive whose extracted auditors pass. The earlier published PDF remains immutable.",
+  "version": "0.02",
+  "keywords": [
+    "Riemann zeta function",
+    "simple zeros",
+    "critical line",
+    "short intervals",
+    "Levinson method",
+    "mollifier",
+    "Kloosterman fractions",
+    "Mellin transform",
+    "interval arithmetic"
+  ]
+}

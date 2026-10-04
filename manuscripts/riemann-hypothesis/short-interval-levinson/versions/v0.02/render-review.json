@@ -1,0 +1,80 @@
+{
+  "schema": "levinson-v002-render-review-v1",
+  "passed": true,
+  "pdf_sha256": "710e174a8c08c2a20cb0a94b6bbdaaf2bb8feb3f24b56ebc9f753bb4b019a66c",
+  "tex_sha256": "f47c1864479bfa7fcfcd606cbac75106505f56d1737cb1c5315b1e41a974cdd8",
+  "pages": 14,
+  "review": "All fourteen final rasterized pages visually inspected; no clipping, overlap or unresolved layout defects.",
+  "images": [
+    {
+      "name": "review-page-01.png",
+      "bytes": 204304,
+      "sha256": "6267f2ffbc1dbf089db579ed896e980c48c98aef618809e15af4a58e1e79af79"
+    },
+    {
+      "name": "review-page-02.png",
+      "bytes": 227385,
+      "sha256": "b53d8dfa60775e5ff0a34347aab4349d47d61155de7fc35c7ae6cbe6903cc779"
+    },
+    {
+      "name": "review-page-03.png",
+      "bytes": 263742,
+      "sha256": "74750c278b91990037225dc6c8e89a45d2c13263654151c745f73db8fb5c122a"
+    },
+    {
+      "name": "review-page-04.png",
+      "bytes": 261362,
+      "sha256": "9bb14eb8b77cc80537a6c8a164a3b92290fc22df6ba4508a590810052eb64514"
+    },
+    {
+      "name": "review-page-05.png",
+      "bytes": 219030,
+      "sha256": "4acc15b729f40c3ad367aec64307a4765ccdd83ac908f825ee5449be20964f16"
+    },
+    {
+      "name": "review-page-06.png",
+      "bytes": 203817,
+      "sha256": "14e46a5f8ef22cf8213c768edf42f89535736594ca646991ae723d10d5dcf59e"
+    },
+    {
+      "name": "review-page-07.png",
+      "bytes": 221990,
+      "sha256": "558b8a30703e7cfa8480a16a08aa94ff630453fdccd9418d0bbd3abd9f366dd2"
+    },
+    {
+      "name": "review-page-08.png",
+      "bytes": 188462,
+      "sha256": "e1be41f54dfa647d2ab122d5d9c5c97a957e7d4231de24d5e6b2fb32bfb01d8d"
+    },
+    {
+      "name": "review-page-09.png",
+      "bytes": 228005,
+      "sha256": "c01e2e3b1a4e468e8f36fce361225fefea793ff936935cf3e4b87ab73afd611c"
+    },
+    {
+      "name": "review-page-10.png",
+      "bytes": 260202,
+      "sha256": "b40a3d1bb3ea59c044fa4a01bf08f83773b2e718a28f4f6bd4006e7028e5760e"
+    },
+    {
+      "name": "review-page-11.png",
+      "bytes": 251851,
+      "sha256": "e428790f1d131e935a16597e7677f3cd5925af80311e14a4443b94ea1aac5e28"
+    },
+    {
+      "name": "review-page-12.png",
+      "bytes": 277691,
+      "sha256": "5e11671f9d73ffcd18b56f74c511b69c69167f7581b839e31852abc98b871bda"
+    },
+    {
+      "name": "review-page-13.png",
+      "bytes": 261171,
+      "sha256": "44dfab6887548ae61a2b9444e775140102e9e9aa8948916026723d430b7ac67d"
+    },
+    {
+      "name": "review-page-14.png",
+      "bytes": 242730,
+      "sha256": "f4c636e36134924997f85851443266c5fdcc1d88f33ed08d26a7c26585232899"
+    }
+  ]
+}
