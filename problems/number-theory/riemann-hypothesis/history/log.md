@@ -730,3 +730,14 @@ RH-F4 is retained for a source-bound Mellin frequency-averaging preflight;
 no new range/onset or manuscript is admitted. EXP-023 stays stopped.
 RH-038 is resolved by the EXP-027/028 alternative transformed route,
 not by proving the previously missing hybrid asymptotic large sieve.
+
+## 2026-10-04 — User-stopped research and publication separation repair
+
+Research is paused. Three manuscript deposits incorrectly contained four ZIPs.
+The full account inventory and after-audit identify all affected records;
+the three existing manuscripts now contain only their original PDFs. Separate
+linked datasets preserve every archive byte. Scientific PDFs and DOIs are
+unchanged. Correction receipts and exact scope are recorded in
+program/riemann-hypothesis/publication-correction-20261004/.
+The repair branch starts at the delivered EXP-028 baseline and does not promote
+the paused EXP-029 research or unfinished app branch. EXP-023 remains incomplete.

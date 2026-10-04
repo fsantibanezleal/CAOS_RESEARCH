@@ -3,6 +3,8 @@ from fractions import Fraction as F
 import hashlib
 import json
 
+from . import riemann_publication
+
 PROBLEM = "problems/number-theory/riemann-hypothesis"
 EXP = f"{PROBLEM}/experiments/EXP-028-chirp-separated-moment"
 PAPER = "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02"
@@ -30,6 +32,8 @@ INPUTS = {
     "moment_archive": f"{PAPER}/source-replay.json",
     "moment_publication": f"{PAPER}/publication-receipt.json",
     "moment_review": f"{EXP}/proof-review.json",
+    "moment_current_publication": f"{PAPER}/current-publication.json",
+    "moment_companion": f"{PAPER}/evidence-companion.json",
 }
 
 
@@ -52,7 +56,9 @@ def validate(raw: dict[str, bytes]) -> dict:
                           hashlib.sha256(source.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")).hexdigest()}
 
     review = record("moment_review", "exp028-complete-proof-review-v1")
-    expected = {k: v for k, v in INPUTS.items() if k != "moment_review"}
+    separate = ("moment_current_publication", "moment_companion")
+    require(all(role in raw for role in separate), "missing publication correction source")
+    expected = {k: v for k, v in INPUTS.items() if k != "moment_review" and k not in separate}
     require(review.get("source_paths") == expected, "complete source path set")
     hashes = review.get("source_sha256", {})
     require(set(hashes) == set(expected), "complete source hash set")
@@ -125,11 +131,15 @@ def validate(raw: dict[str, bytes]) -> dict:
     require(set(archive["extracted_archive_auditors"]) == {"run", "independent_control", "adversarial_control"}
             and all(x.get("passed") is True for x in archive["extracted_archive_auditors"].values()),
             "extracted auditors")
+    # This frozen receipt describes the original deposit, not its current file set.
     files = publication["files"]
     require(len(files) == 2 and all(x.get("live_bytes_verified") is True for x in files), "public download checks")
     require(next(x for x in files if x["name"].endswith('.pdf'))["sha256"] == hashes["moment_paper"]
             and next(x for x in files if x["name"].endswith('.zip'))["sha256"]
             == publication["source_archive_sha256"] == archive["archive_sha256"], "published file bindings")
+    current, companion = riemann_publication.admit(publication, raw["moment_current_publication"],
+                                                  raw["moment_companion"], raw["moment_paper"])
+    current_hashes = {**hashes, **{k: hashlib.sha256(raw[k]).hexdigest() for k in separate}}
     return {"schema": "riemann-short-window-moment-v1", "accepted": True,
             "scientific_verdict": review["scientific_verdict"], "theta": str(theta), "nu": str(nu),
             "eta": str(eta), "gaussian_theta": str(theta-eta), "moment_range": review["moment_range"],
@@ -139,5 +149,5 @@ def validate(raw: dict[str, bytes]) -> dict:
             "analytic_moment_reviewed": True, "arithmetic_alone_proves_theorem": False,
             "external_peer_review": False, "worldwide_priority_confirmed": False,
             "effective_height": False, "rh_solved": False,
-            "publication": publication, "source_sha256": hashes,
+            "publication": current, "evidence_companion": companion, "source_sha256": current_hashes,
             "imported_inputs": review["imported_inputs"], "trust_boundary": review["trust_boundary"]}
