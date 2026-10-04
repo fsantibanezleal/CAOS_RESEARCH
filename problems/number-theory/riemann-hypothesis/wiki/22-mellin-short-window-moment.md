@@ -28,4 +28,9 @@ The finite exponent controls check 7,430 boxes and reject five wrong choices;
 they test normalization and do not replace the universal analytical proof.
 Bettin-Chandee, Young and Wang remain attributed inputs. External peer review,
 worldwide novelty and an effective height are not established. This does not
-prove RH. Manuscript/publication and app release are pending delivery steps.
+prove RH. The manuscript v0.02 is published at
+[10.5281/zenodo.23132248](https://doi.org/10.5281/zenodo.23132248), with
+all fourteen final pages reviewed and both public downloads verified. Its
+80-member extracted source archive replays the three arithmetic auditors.
+Research PR #370 is merged and its develop CI passes. The separate 0.76.000
+app release remains a delivery step until its rendered and production gates pass.
