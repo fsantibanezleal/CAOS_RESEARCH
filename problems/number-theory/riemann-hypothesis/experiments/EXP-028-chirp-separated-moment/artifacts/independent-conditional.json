@@ -1,0 +1,36 @@
+{
+  "schema": "exp028-independent-conditional-v1",
+  "passed": true,
+  "auditor_sha256": "47a95cc8c2b2d78e67b4a8986eea12daf5809325e3883054d245fd8f0b6cab9e",
+  "declaration_sha256": "a9321d18ba743ec465a42738eb23df48f00202e2224a375b8ea39b7a30661cfc",
+  "audit": {
+    "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+    "interval_toolkit_sha256": "b93e2deeb4c8a4698028da914e6c042d995c2b7606dbdf9a2124e777dd4356ec",
+    "arithmetic": "Python stdlib Fraction outward intervals and integer square roots; no FLINT/Arb",
+    "theta": "5339/10000",
+    "nu": "349/10000",
+    "normalization_exponent": "-6047/20000",
+    "coefficient_norm_exponent": "177/5000",
+    "separation_exponent": "4661/20000",
+    "source_first_exponent": "6771/200000",
+    "source_second_exponent": "2523/80000",
+    "E1": "-9/200000",
+    "E2": "-189/80000",
+    "pair_term": {
+      "lower": "-15662332367829315280444805149170479279/312500000000000000000000000000000000000",
+      "upper": "-501194635770538088974233764773455336927/10000000000000000000000000000000000000000"
+    },
+    "conditional_parity": {
+      "lower": "79704663182705502326143276379351819/200000000000000000000000000000000000000",
+      "upper": "3985233159135275116307163818967590951/10000000000000000000000000000000000000000"
+    },
+    "negative_controls": {
+      "old_length_range_rejects_nu": true,
+      "doubled_separation_exponent_rejected": true,
+      "zero_detector_parity_rejected": true
+    },
+    "analytic_moment_theorem_proved": false,
+    "scope": "Conditional arithmetic only; no established onset improvement.",
+    "cpu_seconds": 0.015625
+  }
+}

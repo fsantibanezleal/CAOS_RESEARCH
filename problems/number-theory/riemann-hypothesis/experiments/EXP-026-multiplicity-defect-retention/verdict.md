@@ -29,3 +29,11 @@ zero bound or short-window onset. A joint local-slack/multiplicity inequality
 would require a separate declaration and complete proof. It is not licensed
 by this experiment. No new manuscript, Zenodo version or stopping condition
 is warranted; RH-F4 and the user's substantive improvement target remain open.
+
+## How could this be wrong?
+
+The compact witness concerns actual point Grams, not an asserted zeta-zero
+configuration. It refutes count-only and pressure-only deductions; it does
+not refute a joint slack/remainder inequality or every possible zero theorem.
+The native formula controls share Arb. Independent rational signs and
+enclosures address that trust boundary for the declared witness only.

@@ -25,3 +25,11 @@ Disposition: research-record supporting RH-F4 / issue #360. No new moment
 range, onset, zero proportion, manuscript or Zenodo version follows from
 these normalization controls. A separately declared uniform weight-norm
 and trilinear estimate is required before evaluating an onset gain.
+
+## How could this be wrong?
+
+Finite DFT and interval controls do not prove analytic continuation or a
+uniform signed estimate. The universal transformation is proved separately
+in proof.md using attributed special-function identities. The interval
+formula checks share Arb; no end-to-end formal proof or external referee
+report is supplied. The transformation alone gives no zero bound.
