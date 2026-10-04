@@ -31,3 +31,14 @@ check scientific voice and references, inspect every final rendered page,
 replay the extracted archive and verify the reviewed upload. A reserved DOI
 is not publication. Repository promotion and app deployment remain separate
 requirements; their labels must not upgrade conditional historical receipts.
+
+## Publication gate completed, 2026-10-04
+
+Levinson v0.03 is published at DOI 10.5281/zenodo.23134787 under the existing
+concept DOI 10.5281/zenodo.22984154. The frozen final PDF has 17 reviewed pages;
+the 85-member source package passes CRC, size and byte-hash checks and seven
+extracted auditor replays. Both public downloads match the reviewed bytes.
+The compact publication receipts and EXP-029 publication-review.json bind
+this delivery separately from the immutable analytic proof review and the
+historical conditional arithmetic. Version 0.02 source/PDF remain unchanged.
+Research PR #376 and app delivery are pending; issue #374 remains open.

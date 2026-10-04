@@ -9,8 +9,11 @@ every fixed `theta` in `[0.527,1)`, with endpoint density greater than
 See the [complete proof review](../experiments/EXP-029-mellin-frequency-average/proof-review.md)
 and [verdict](../experiments/EXP-029-mellin-frequency-average/verdict.md).
 External peer review, worldwide priority and effective height remain
-unconfirmed. Published v0.02 and app 0.76.000 retain their original
-claims while the coherent stronger manuscript and release are prepared.
+unconfirmed. [Levinson v0.03](https://doi.org/10.5281/zenodo.23134787)
+is published: all 17 pages were inspected and seven auditors replayed
+from the 85-member source package; both public downloads match the reviewed
+bytes. Published v0.02 remains frozen. App 0.76.000 still displays the earlier
+0.5339 onset; the new app delivery is pending.
 RH remains open. Earlier findings below are historical.
 
 [D+MV] EXP-010 localizes Levinson's method with Conrey's general operator

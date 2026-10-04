@@ -9,8 +9,10 @@ controls pass 432 frequency blocks and 6,426 raw-cost configurations;
 native and rational parity give h>0.0005947542001 at theta=0.527.
 The internal onset is now 0.527. External review, worldwide priority and
 an effective height remain unconfirmed; RH is open. Published v0.02 and
-app 0.76.000 retain their original immutable claims. Issue #374 now tracks
-source replay, coherent Levinson v0.03 publication and release delivery.
+app 0.76.000 retain their original immutable claims. Levinson v0.03 is
+published at DOI 10.5281/zenodo.23134787: all 17 pages, the 85-member source
+archive, seven extracted replays and both exact public downloads pass.
+Issue #374 and draft PR #376 now track promotion and app release delivery.
 Read the EXP-029 verdict and proof-review. EXP-023 stays stopped.
 
 ## Current experiment update, 2026-10-04: EXP-028

@@ -766,3 +766,13 @@ h>0.0005947542001 at theta=0.527 with charged errors -51/12500 and
 effective height, worldwide priority or RH proof is claimed. The older
 trilinear route remains stronger above 12/13. The same focused Levinson
 paper owns the result; new-version publication and app delivery are pending.
+
+## 2026-10-04: Levinson v0.03 published with exact source replay
+
+Version DOI 10.5281/zenodo.23134787, concept 10.5281/zenodo.22984154. All
+17 actual rendered PDF pages pass; the 85-member source ZIP binds every
+member and all 23 analytic sources. Seven extracted EXP-029/028 controls
+pass with historical false theorem flags retained. Public PDF (481,395
+bytes) and ZIP (280,338 bytes) match exactly. Earlier v0.01/v0.02 files
+stay immutable. Promotion and app delivery remain open; no external
+review, effective height, worldwide priority or RH assertion.
