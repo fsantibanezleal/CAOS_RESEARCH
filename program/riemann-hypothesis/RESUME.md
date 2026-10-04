@@ -102,7 +102,7 @@ live release. General RH remains open.
 | EXP-015 | confirmed obstruction on squarefree twists with nonzero basic mollifier coefficients |
 | EXP-016 | confirmed trace-aware clipped-block refinement and revised integer cap |
 | EXP-017 | confirmed full-energy envelope and pressure transfer; scaled prior art, small exact gain |
-| EXP-018 | confirmed conditional nine-point transfer 0.83716744477146...; local replay obligation open |
+| EXP-018 | confirmed older conditional transfer; local premise now implied by stronger EXP-020 |
 | EXP-019 | suspended original traversal; weaker premise implied by EXP-020 |
 | EXP-020 | confirmed universal local certificate, full 96-shard independent replay and published distinct-strip transfer |
 | EXP-023 | incomplete 95/96; native inputs pass, full-cover obligation remains open |
@@ -111,86 +111,38 @@ live release. General RH remains open.
 | EXP-022 | confirmed fixed-packet pressure-family cap 0.837421287797... for all p>=0; changed-pressure candidate 0.837385561059... requires a new complete local certificate |
 | EXP-024 | confirmed exact shifted Gaussian/Mellin representation and controlled smooth compact-window reduction; signed moment main sum remains open |
 
-## 4. Historical pilot sequence (current priority above supersedes pending states)
+## 4. In flight
 
-EXP-019 is admitted as bounded RH-F10. The complete rounding audit, source
-binding and independent window audit passed. Its source-identical traversal
-is suspended with validated snapshots (33 checkpoints, nine completed shards
-at backup) to prioritize EXP-020; it has no complete-certificate verdict.
-The backup receipt is under EXP-019/artifacts/baseline-snapshot-receipt.json.
+EXP-023 / RH-048 / issue #362 is the only active cover. The independently bound
+quarter partition spans 65,536 initial boxes over 96 shards. It resumed at
+2026-10-03 20:48:12 UTC with four workers and an owned six-hour supervisor:
+session 37164, root PID 49576, start ticks 639266572920797116, deadline
+2026-10-04 02:48:12 UTC. External state is
+`E:/_Datos/caos-research/riemann-hypothesis/exp023-partitioned-local-20261003`.
+95/96 reports are complete. Read live state before any progress claim; do not
+infer an ETA from pending stack size. Preserve all runtime-bound source and
+both earlier pilot backups. Pilot setup failures and budget overruns remain
+in the experiment reviews and append-only history.
 
-EXP-020 is admitted as bounded RH-F11. Its independently declared stronger
-target is 3051/500000 = 0.006102. Shard 0 passed with 648919 nodes; the full
-96-shard cover is running with 24 workers on
-`work/riemann-hypothesis/nine-replay-20261003`. Sixteen quadratic controls and
-the 230-test Riemann suite passed. These controls and partial coverage are
-not a universal local inequality or a new distinct-zero proportion. Issue
-#358 tracks the stronger certificate. The independent stdlib cover auditor
-supports both experiments and rejects incomplete coverage. Runtime-bound
-source must remain frozen while workers run.
+The source-bound native kernel-first input audit passes all 52,240 closed cells
+in both tables. Earlier direct-interval and squared-kernel Taylor attempts
+remain inconclusive. The prepared independent cover, actual-output corruption,
+transfer and extracted archive tools reject the incomplete 95-report output.
+Execute their completed-input paths only after all 96 reports exist. The
+21-midpoint diagnostic in `checkpoint-point-review.md` is finite evidence only.
 
-EXP-022 proves a uniform ceiling for this fixed window/weight schedule,
-not for the true zero proportion: every finite admissible pressure/block
-transfer is below 0.8374212877970697... . Two rational configurations,
-192-bit enclosures and an independent native-sinc 256-bit audit close
-the rising/falling-line proof. Issue #361 tracks this supporting result.
-At p=1/1250, delta=52231/5000000, m=562, tau=1203/500, c=1703/500, a new
-universal certificate would give 2340938143167/2795532013000 =
-0.8373855610599298... . This passes the declared 0.0001 improvement
-value gate; a separately declared certificate pilot is the next bounded
-step. The six-second exploration does not prove that new lower bound.
+EXP-019 remains suspended with its protected 33-checkpoint backup. Its weaker
+same-pressure premise is now implied by completed EXP-020; this does not complete
+the original traversal. EXP-020's 96/96 cover, native input audit, corruption
+controls, exact transfer and archive are closed and published, with preserved
+runtime under `exp020-quadratic-local-20261003` in the same external root.
+Do not restart it or alter its archived physical bytes.
 
-EXP-023 is now admitted as bounded RH-F13, with issue #362. Its separately
-bound wrapper, runner and independent auditor are committed in 62dd7923.
-Thirty targeted controls pass. Directed pressure rounding is checked over
-all 417849 possible sums of cell indices; the frozen EXP-020 source is
-unchanged and its corresponding 488161 sums also pass. One actual shard-0
-pilot began at 19:35:50 UTC on 2026-10-03, with a twenty-minute budget after
-preparation, one additional CPU and external state in
-`exp023-repressured-local-v2-20261003`. Read its live checkpoint before any
-cost or completion claim. The preliminary prepare-only directory without
-`v2` is retained but cannot be resumed by this strengthened binding.
-EXP-023 at a different pressure does not imply EXP-018's local premise.
-
-Update: that first pilot hit its budget incompletely and was stopped after
-a validated backup at 19:57:22 UTC. It had one initial Cartesian box, so
-only shard zero had actual work. The measured cost and 92-second budget
-overrun are recorded in EXP-023/pilot-review.md. A separately bound exact
-quarter partition gives 65536 initial boxes over 96 shards, with unchanged
-pruning code and 41 targeted controls. Commit 748bcfb9 precedes its actual
-shard-0 pilot, launched about 20:08:02 UTC with the same twenty-minute
-budget. External state: `exp023-partitioned-local-20261003`; session 98159.
-Keep both earlier pilot backups and all runtime-bound source frozen.
-
-The revised pilot was stopped at 20:33:47 UTC after a validated backup:
-1912832 nodes, depth 56, nine pending boxes, incomplete. Its 345-second
-budget overrun and the subsequent six-hour full-cover cost review are
-persisted. Commit 295ee71c includes an independent operational budget
-supervisor, with three passing controls including a real owned process
-tree and preservation of an unrelated sentinel. Both orchestration setup
-failures are retained. The mathematical verifier source was not changed.
-The full cover resumed at 20:48:12 UTC, four workers, same binding and
-`exp023-partitioned-local-20261003`; supervisor session 37164, root PID 49576.
-The actual six-hour deadline is 2026-10-04 02:48:12 UTC. Its external
-full-cover-budget-receipt.json records ownership, command and source hashes.
-At 20:50 UTC 94/96 shards were complete; coverage remains incomplete.
-The complete mathematical auditor and exact transfer are still required.
-The prior full Riemann suite passed; the three new orchestration controls
-also pass. Scoped collection now finds 258 Riemann tests. A separate attempt
-to collect all problem suites encountered 24 unrelated dependency errors;
-it was abandoned in favor of the explicit Riemann file list, not reported
-as a Riemann test failure or as full-repository validation.
-
-External resumable state is under E:/_Datos/caos-research/riemann-hypothesis/
-exp020-quadratic-local-20261003 (stronger run) and
-exp019-local-replay-20261003 (suspended baseline). The stronger run's full-cover
-planning budget is twelve hours from launch; a budget hit is incomplete and
-does not fulfill the research objective. Resume the baseline if the stronger
-target fails or its mathematical review raises a concern.
-EXP-013--018 are closed research records. EXP-018 is conditional on its
-unreplayed nine-point local input; issue #356 tracks that obligation.
-The latest deployed replay remains v9 with twelve experiments. The tag
-v0.74.000 is verified; no pending-tag action remains.
+The selected research suite passed 258 tests before the workbench changes.
+The export-focused suite passes 68 tests and frontend 31 tests. An earlier
+all-problem collection hit unrelated dependency errors; no full-repository
+unit-test claim is made. Live remains release 0.74.000 with twelve replay
+experiments; the 25-record workbench is draft PR #365.
 
 ## 5. Next actions
 

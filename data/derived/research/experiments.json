@@ -9215,6 +9215,14 @@
      "name": "partitioned-run-binding.json"
     },
     {
+     "bytes": 4515,
+     "name": "pending-point-checkpoint.json"
+    },
+    {
+     "bytes": 23466,
+     "name": "pending-point-diagnostic.json"
+    },
+    {
      "bytes": 612,
      "name": "pilot-budget-snapshot-receipt.json"
     },
