@@ -8910,6 +8910,447 @@
    "verdict_md": "# EXP-012 verdict: inconclusive, route stopped at step 3\n\nDate: 2026-09-28. Declaration `76c4439` fixed the statements and a five-step\nproof plan before any proof was written.\n\n**Verdict: inconclusive.** The declared plan cannot reach Prediction C. The\nstop rule applies at step 3, before steps 1 and 2 were attempted, because the\nvalue check shows that the dual term, bounded as planned, is too large. No\ntheorem is claimed. This is a `research-record` with its obstruction.\n\n## The obstruction\n\nTang's identity (arXiv:2608.14852v1, Theorem 1) writes the short-window twisted\nmoment as a main term of size `H(pq)^(-1/2)log(T/pq)`, a dual moment, and an\nerror `O((T/H)(pqT)^eps((p/q)^(1/2)+(q/p)^(1/2)))`. The dual moment is\n\n$$\n\\sum_{\\chi\\bmod p}\\frac{\\sqrt p}{p-1}\\chi(q)\\int G_{T,H}(\\tfrac12+it)\n\\Bigl(\\frac\\pi q\\Bigr)^{it}(\\Gamma\\hbox{-ratio})\\,|L(\\tfrac12+it,\\chi)|^2\\,dt .\n$$\n\nStep-3 value check ([`weight_size.py`](weight_size.py), mpmath at 30 digits;\n[`artifacts/canonical/weight-size.json`](artifacts/canonical/weight-size.json)):\n\n$$\n|G_{T,H}(\\tfrac12+it)|=\\frac{H}{\\sqrt T}\\sqrt{\\tfrac12}\\,e^{-(tH/2T)^2}(1+o(1)),\n$$\n\nconfirmed within 2% at `T=10^8,10^10,10^12` and `theta=0.6,0.55,0.7`. The dual\nmoment therefore has size about `sqrt(p)sqrt(T)log T` per pair (`phi(p)`\ncharacters, a `t`-range of length `T/H`, the prefactor `sqrt(p)/(p-1)` and the\nweight `H/sqrt(T)`), not `sqrt(p)(T/H)` as the declaration's heuristic assumed.\nIt can exceed the main term even inside Tang's range: for `H=T^0.6` and\n`p,q` near `T^0.15`, dual over main is about `T^0.125`.\n\nSummed with the mollifier weights `a_h=mu(h)h^(-1/2)P[h]` over `h,k<=M=T^nu`:\n\n| Bound on the summed dual moments | Size | Admissible range for the moment |\n|---|---|---|\n| trivial (declared step 3) | `sqrt(T) M^(3/2)` | `nu<(2/3)(theta-1/2)`, worse than EXP-010 |\n| hybrid large sieve and a fourth-moment bound over `q<=M`, `|t|<=T/H` [I, sketch] | `sqrt(T) M` | `nu<theta-1/2`, exactly EXP-010's range |\n\nSo with the planned tools the Tang route reproduces, at best, the range EXP-010\nalready proves. The earlier preflight value `nu<(2/3)(2theta-1)` came from the\nwrong weight size and is withdrawn.\n\n## What would be needed\n\nA range beyond `theta-1/2` needs cancellation in\n`sum_h a_h (sqrt h/phi(h)) sum_{chi mod h} int G(...) A_chi(t)|L(1/2+it,chi)|^2 dt`,\n`A_chi(t)=sum_k a_k chi(k)k^(-it)`, beyond the large sieve: an asymptotic\nevaluation of this dual family, as the Conrey-Iwaniec-Soundararajan asymptotic\nlarge sieve does for critical zeros of Dirichlet `L`-functions. That is\nrecorded as a new route (RH-038), not as part of this experiment.\n\n## Disposition\n\nEXP-012 is closed as `research-record`. The route-preflight section RH-027 is\ncorrected, and the backlog records RH-038.\n"
   },
   {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 522,
+     "name": "audit/audit.json"
+    },
+    {
+     "bytes": 3014,
+     "name": "canonical/result.json"
+    }
+   ],
+   "date": "2026-10-03",
+   "hypothesis_md": "# EXP-013: optimize the fixed mixed-Gram counting assembly\n\nDeclared 2026-10-03. Device: CPU. Exact rational arithmetic. Baseline:\npublic develop `0c0db89df62efb92b20744a9aa1426bca1036eae`.\nThis declaration is committed before any runner, canonical artifact or\nnumerical parameter search exists.\n\n## Question and motivation\n\nFor the fixed local inputs of arXiv:2609.33043v1, can clipping and block\nsize improve the distinct-zero bound, and where does that tuning stop?\nSee [preflight](../../context/2026-10-03-update-and-dual-family-preflight.md),\nsections 1 and 3. The entire six-page source and its trust exclusions were\nread; the source theorem is not counted as a CAOS invention.\n\n## Frozen definitions and predictions\n\n`delta=891/200000`, `p=1/2736`, `H0=3362285207/5000000000`.\nFor integer `m>=7`, `a=delta(m-6)/m`, `beta=6p(m-6)/m` and\n`q(m)=(1+H0-beta)/(2-a)`. Admissibility requires\n`delta(m-6)<=tau^2`, `tau>=0`,\n`c>=max(1+tau,2+tau/2)`, `rh=6c-7-c^2>=a` and\n`rk=4c-2-c^2>=2a`.\n\nA. Reproduce the source's bound exactly at `(m,tau,c)=(1298,12/5,17/5)`:\n`q=16260119298029/19426831050000`.\n\nB. `(1310,2411/1000,3411/1000)` satisfies all constraints and gives\n`q(1310)>q(1298)`.\n\nC. No integer `m>=1311` satisfies the constraints. An exact inequality\nat `m=1311` and monotonicity, not a finite census, must prove this.\n`q(m)` is strictly increasing, so `m=1310` is optimal within exactly\nthis fixed-input, scalar-clipping assembly.\n\n## PASS and FAIL\n\nPASS proves the rational parameter improvement and its cap, conditional\non the source's analytic and local inputs for the zero-count consequence.\nIt does not independently validate that certificate, establish a world\nrecord, prove RH, move the 0.534 onset, or optimize other kernels or proofs.\nFAIL is refuted or inconclusive as appropriate; frozen inputs stay fixed.\n\n## Premises and invariant-first check\n\nThe matrix and counting formulas are imported from arXiv:2609.33043v1\nTheorem 2 and equations (1)-(2); their variational argument will be\nre-derived in the proof note. The local certificate and energy input are\nattributed. EXP-009 supplies the earlier comparison only. EXP-010 is not\na premise for the global distinct count. All count definitions are explicit.\nThe single deciding invariant is compatibility of the clipping lower\nbound with the off-line-pair residual. It permits algebraic elimination\nof the real parameters without a grid search.\n\n## Adversarial validation and budget\n\nUse a second symbolic derivation of the boundary polynomial; independently\nrecompute the constants; test rejection of oversized blocks and weakened\nresidual constraints. Decimal output is display only. Persist exact fractions,\nsource/declaration hashes, and a deterministic audit. CPU budget 30 seconds\nper entry point, no GPU or long-run checkpoint needed. A budget stop is\ninconclusive. Disposition: research-record, parameter tuning of an attributed\ntheorem, no standalone manuscript trigger.\n",
+   "id": "013",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-013-mixed-gram-parameter-cap",
+   "title": "EXP-013: optimize the fixed mixed-Gram counting assembly",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-013 verdict: confirmed fixed-input improvement and cap\n\nDate: 2026-10-03. Declaration commit `8db97480` was pushed before implementation.\n**Confirmed**: predictions A, B and C all pass. Exact fractions are the\nauthority; decimal bounds are directed rational enclosures, not float fits.\n\n## Result and scope\n\nThe source choice `(m,tau,c)=(1298,12/5,17/5)` reproduces exactly\n`16260119298029/19426831050000`. The feasible new choice\n`(1310,2411/1000,3411/1000)` gives\n\n    q = 62359683640669/74504434380000\n      = 0.83699291404068236616012277684242718762050683727370...\n    gain = 524086136423727/16082056213067461100000 > 0\n\nThe decimal display lies in a width-10^(-50) rational enclosure.\nThe block slack is `3601/1000000`; the off-line-pair slack is\n`5497/26200000`. All other residuals are nonnegative.\nThe [proof](proof.md) eliminates c and tau and excludes *every* integer\nm>=1311. Strict monotonicity of q then proves optimality over precisely\nthe fixed-input scalar-clipping assembly, rather than over a tested grid.\n\nThe zero-count consequence imports the energy and seven-point local\ncertificate of [Knausgard, arXiv:2609.33043v1](https://arxiv.org/abs/2609.33043v1).\nIt concerns distinct zeros anywhere in the strip. It is not a new\nsimple-critical proportion, an independent replay of the local certificate,\nor a new zero-counting method. Upstream nine-point candidates are outside\nthis optimization. No worldwide-record or external peer-review claim follows.\n\n## Independent and adversarial checks\n\nThe producer uses Fraction arithmetic; the [auditor](audit.py) independently\nsubstitutes the constraints and uses SymPy to differentiate the bound and\nderive the boundary polynomial. It does not import the producer.\nAt m=1400 a control satisfies the other constraints but violates the\noff-line-pair residual: dropping that condition produces a false extension.\nTests reject corrupted inputs, bound, cap and directed enclosure; replay\nis byte identical and checks the source/declaration/proof/code bindings.\nThese checks do not audit the external 2,168,370-node interval replay or Lean.\n\n## Evidence and disposition\n\nCanonical SHA-256: `c250ac76df06e8f66aaed2c720e292bf17e82923137a01ce56d9ced29d4f094b`.\nIndependent report: [artifacts/audit/audit.json](artifacts/audit/audit.json).\nSource bytes: [additive manifest](../../context/source-manifest-20261003.json).\nResearch-record: a small parameter optimization of an attributed framework.\nNo standalone manuscript or Zenodo version is justified. RH and the onset\n0.534 are unchanged. The fixed-input route RH-F6 closes at its proved cap.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 306,
+     "name": "audit/audit.json"
+    },
+    {
+     "bytes": 13356,
+     "name": "canonical/result.json"
+    }
+   ],
+   "date": "2026-10-03",
+   "hypothesis_md": "# EXP-014: an exact off-diagonal phase-resolution obstruction\n\nDeclared 2026-10-03. Device: CPU. Exact integers and rational log bounds.\nThis declaration is committed before the runner or its outputs exist.\n\n## Question and motivation\n\nCan the uniform large-phase step used in EXP-010 Lemma 2.1 still work\nbeyond `nu<theta-1/2` by increasing the number of integrations by parts?\nSee [preflight](../../context/2026-10-03-update-and-dual-family-preflight.md),\nsections 2 and 4. This concerns that proof mechanism, not the truth of the\nmollified moment asymptotic.\n\n## Frozen family and predictions\n\nFor integers `B>=2`, `a>b>=1`, put\n`T=16 B^(2a)`, `M=B^b`, `r=B^(a-b)`, `h=M`, `k=M-1`,\n`m=kr+1`, `n=hr+1`, and `H=B^d`. Then `H` has exponent\n`theta=d/(2a)` and `M` has exponent `nu=b/(2a)` relative to `T`;\nfixed factors do not change these exponents.\n\nA. `hm-kn=1`, `h,k<=M`, and `mn<T/8` for the frozen cases.\nThus these terms are off diagonal and within the approximate-functional-\nequation product scale, rather than in a rapidly decaying large-product tail.\n\nB. The phase excursion `H log(hm/kn)` is enclosed exactly between\n`H/(kn+1)` and `H/(kn)`. Its scale is `B^(d-a-b)` with multiplicative\nfactor tending to one as `B` tends to infinity.\n\nC. With `(a,b,d)=(50,5,54)` the phase tends to zero\n(`theta=0.54`, `nu=0.05>theta-1/2`). With `(50,4,54)` it tends to one;\nwith `(50,3,54)` it tends to infinity. Verify at `B=2,10,100` and\nprove these limits symbolically for the entire family.\n\n## PASS and FAIL\n\nPASS is an explicit obstruction to a uniform pointwise large-phase\nargument at or beyond the exponent threshold. It does not prove a\nnonzero summed contribution, failure of a Mobius mollifier, failure of\na shorter or differently structured detector, or a barrier to RH.\n`h` is a power and may have zero Mobius weight; this is deliberately a\ncontrol of the generic twisted lemma, not an assertion about the actual\nsigned mollifier sum. FAIL would refute the specified arithmetic family\nor give inconclusive evidence on this mechanism.\n\n## Premises and source-complete check\n\nEXP-010's proof identifies its large-phase step; EXP-012's verdict supplies\nthe reciprocal-family size correction. Young's twist lemma and Tang's\nTheorem 1 were read with their range conditions and final remarks.\nOnly exact arithmetic and `x/(1+x)<=log(1+x)<=x` for `x>=0` are needed\nfor the new certificate. Imported analytic theorems are not conclusions\nof this experiment.\n\n## Invariant, validation and budget\n\nThe invariant is the integer difference `hm-kn`, followed by the exponent\n`d-a-b`. Use independent Bezout expansion and polynomial identity checks,\ntest diagonal controls and swapped twists, and stress `B=2` as well as\nthe scaling limit. CPU budget 30 seconds per entry point; exact integers\nstay small enough, no GPU or checkpoint needed. If stopped, inconclusive.\nDisposition: research-record; no new zero-proportion theorem or manuscript.\n",
+   "id": "014",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-014-short-window-phase-collision",
+   "title": "EXP-014: an exact off-diagonal phase-resolution obstruction",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-014 verdict: confirmed generic phase obstruction\n\nDate: 2026-10-03. Declaration `8db97480` preceded implementation.\n**Confirmed**: predictions A-C hold for the exact frozen cases and the\nuniform family. The [proof](proof.md) supplies the quantifiers; nine examples\nalone would not establish an asymptotic statement.\n\nFor T=16 B^(2a), M=B^b, r=B^(a-b), h=M, k=M-1,\nm=kr+1 and n=hr+1, we have hm-kn=1 and mn<T/8.\nThe exact log enclosure is H/(kn+1)<=H log(hm/kn)<=H/(kn),\nwith scale B^(d-a-b) and multiplicative factor tending to one.\nFor (a,d)=(50,54), b=5,4,3 gives respectively phase tending to\nzero, one, infinity. Thus nu=theta-1/2 is the uniform pointwise\nresolution threshold. The derivative scale H/log T is smaller still.\n\nThe independent auditor expands the Bezout identity and verifies both\nlogarithm inequalities by their derivatives. Swapped twists reverse the\nsigned phase; diagonal and altered-limit controls are rejected by tests.\nCanonical replay and proof/code/declaration bindings are checked.\nCanonical SHA-256: `fb0f0d4a0d165d524a86285c8bae163297959aa9819a5181e1a89b46e3567c2f`.\nReport: [artifacts/audit/audit.json](artifacts/audit/audit.json).\n\nThe power twists may have zero Mobius weights. This result controls the\ngeneric twisted lemma only; EXP-015 addresses that caveat separately.\nNeither experiment proves a nonzero total off-diagonal contribution.\nResearch-record: standard phase-resolution obstruction, no new onset,\nmoment-asymptotic refutation, manuscript or RH conclusion.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 335,
+     "name": "audit/audit.json"
+    },
+    {
+     "bytes": 1789,
+     "name": "canonical/result.json"
+    }
+   ],
+   "date": "2026-10-03",
+   "hypothesis_md": "# EXP-015: phase collisions with nonzero Mobius weights\n\nDeclared 2026-10-03, before the runner and outputs. CPU, exact integers.\n\n## Question and frozen predictions\n\nEXP-014 controls a generic twisted lemma, but its power twists can have\nzero Mobius coefficients. Can the same threshold obstruction be proved\nfor twists actually present in a standard Mobius mollifier?\n\nA. For every integer M>=1000000 there exists h in\nceil(M/2)<=h<=floor(3M/4) with both h and k=h-1 squarefree.\nProve this uniformly by excluding square divisors. Use the rational bound\nS=1/4+1/9+1/25+1/49+1/121+1/22 < 12/25\nfor the sum over primes of 1/p^2. Primes after 7 are odd and at least 11;\ntheir tail is bounded by the first term plus the step-two integral.\nThe union bound loses at most 2 floor(sqrt(M)) endpoint terms.\n\nB. Put T=16(Mr)^2, m=kr+1, n=hr+1 for any integer r>=2.\nThen hm-kn=1 and mn<T/8. Both Mobius coefficients are nonzero.\nFor the basic polynomial P(x)=x, the two mollifier coefficients are\nnonzero since 1<h,k<M. No nonzero total off-diagonal sum is asserted.\n\nC. Let M=B^b, r=B^(a-b), H=B^d, a>b>=1 and a<d<2a.\nThe phase H log(hm/kn) is comparable, with uniform positive constants,\nto B^(d-a-b), for any such squarefree pair h,k. Thus the same\nthreshold nu=theta-1/2 survives on the supported twists: phase tends\nto zero above it, stays bounded away from zero and infinity at it,\nand tends to infinity below it. This is an exponent statement, not a\nspecific limiting constant because h/M can vary.\n\n## Controls, budget and disposition\n\nFind the first admissible pair at M=1000000 using an exact squarefree\nsieve; freeze r=1000000 and H=10^16,10^18,10^20. Audit independently\nby trial division, integer expansion, rational logarithm inequalities\nand the uniform count proof. Reject squareful twists, diagonal changes,\nzero coefficient assertions, and altered tail bounds. Budget 30 seconds\nper entry point; no GPU or stochastic computation.\n\nPASS strengthens only the obstruction to uniform pointwise integration\nby parts. It does not disprove the signed moment formula, eliminate\ncancellation, lower the onset, or prove RH. FAIL is refuted/inconclusive\nas appropriate. Research-record, no standalone manuscript trigger.\nThe proof uses elementary divisibility and EXP-014's log inequalities;\nno imported analytic theorem supplies the new support assertion.\n",
+   "id": "015",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-015-squarefree-phase-collision",
+   "title": "EXP-015: phase collisions with nonzero Mobius weights",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-015 verdict: confirmed support-aware phase obstruction\n\nDate: 2026-10-03. Declaration `12fa7d70` was pushed before implementation.\n**Confirmed**: predictions A-C hold. This follow-up resolves the\nzero-Mobius-weight caveat of EXP-014 without strengthening its claim about\nthe signed sum.\n\n## Uniform statement\n\nFor every M>=1000000, the interval [ceil(M/2),floor(3M/4)] contains\na pair h,k=h-1 that are both squarefree. An elementary union bound for\nprime squares gives a positive count uniformly; it assumes neither\ntwin primes nor an asymptotic sieve theorem. The rational tail bound is\nS=2535919/5336100<12/25. The uniform lower bound used at M=1000000\nis 199999/25>0.\n\nFor any such pair and r>=2, m=kr+1,n=hr+1 give hm-kn=1,\nmn<T/8, T=16(Mr)^2. Both Mobius coefficients and both basic P(x)=x\nmollifier coefficients are nonzero. The phase is between\nH/(2M^2 r) and 5H/(M^2 r). Hence the same exponent threshold\nnu=theta-1/2 holds uniformly on supported twists. See [proof](proof.md).\n\nThe finite sieve selects h=500006,k=500005 at M=1000000.\nAt r=1000000, H=10^16,10^18,10^20 have directed phase enclosures\nnear 0.0399991,3.99991,399.991. These are controls, not the existence proof.\n\n## Validation and scope\n\nThe producer marks square divisors by an exact sieve; the auditor uses\ntrial square division without importing it. Both expand the identities\nand use exact rational bounds. Tests reject squareful changes, diagonal\nchanges, unsupported coefficient assertions, altered prime tails and\nthe overstrong comparison constant 1/3 (the valid bound is 1/5).\nThe 20 focused tests, including all three byte-replay/binding controls,\npass. Canonical SHA-256: `871de5a7719bec0a077e1bda88729000d3988e20cee2940f3ef3dd6d55aa3ef8`.\nReport: [artifacts/audit/audit.json](artifacts/audit/audit.json).\n\nResearch-record: an elementary support-aware strengthening of a proof\nmechanism obstruction. No claim that the signed sum cannot cancel, that\nthe moment formula is false, or that RH or a new onset follows. This\nsupporting lemma is routed with the short-interval-Levinson research\nrecord; no independent paper or Zenodo deposit is justified.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 392,
+     "name": "audit/audit-run1-failed.json"
+    },
+    {
+     "bytes": 358,
+     "name": "audit/audit.json"
+    },
+    {
+     "bytes": 2968,
+     "name": "canonical/result.json"
+    }
+   ],
+   "date": "2026-10-03",
+   "hypothesis_md": "# EXP-016: retain trace-zero energy in the clipping dichotomy\n\nDeclared 2026-10-03 before implementation and computation. Baseline:\ndevelop c0167840 (EXP-013--015). CPU, exact rational and symbolic arithmetic.\n\n## Question and invariant\n\nThe source's block Gram matrix has diagonal one, so sum(lambda_i-1)=0.\nIts clipped function is psi_tau(x)=x^2 for x<=tau and\n2 tau x-tau^2 for x>tau, tau>=0. If one eigenvalue displacement s>=tau,\nJensen on the other m-1 displacements gives a previously discarded\ns^2/(m-1). Can this improve the bound with the same analytic/local inputs?\n\n## Frozen predictions\n\nA. For m>=2, tau>0 and sum x_i=0, if max x_i>=tau then\nsum psi_tau(x_i)>=tau^2 m/(m-1). Prove it uniformly and exhibit equality\nin a positive-semidefinite unit-diagonal matrix for 0<tau<=m-1.\nThe elementary zero-sum variance/Jensen mechanism is not a new matrix\nmethod; classical trace/variance bounds are prior art.\n\nB. The source block dichotomy remains valid under the weaker requirement\ndelta(m-6)<=tau^2 m/(m-1), with delta=891/200000, pressure=1/2736,\nenergy gain=3362285207/5000000000. The counting formula and the\nmixed-multiplicity threshold/residual constraints are unchanged.\nTest the fixed rational choice m=1311,tau=2411/1000,c=3411/1000;\nit should strictly exceed EXP-013's fixed original-assembly optimum.\n\nC. No m>=1312 is admissible in the new scalar-clipping assembly.\nProve exclusion through the necessary condition\ndelta(m-6)(m-1)/m <= (1+sqrt(2-2a(m)))^2,\nthen a signed rational square test at 1312 and monotonicity.\nThis is a uniform cap, not a finite search.\n\n## Controls and scope\n\nIndependent SymPy differentiation/substitution and exact equicorrelation\ncontrols. A control without the trace-zero condition must violate the\nstronger bound. Reject a changed multiplicity factor, oversized block,\nsource constant or reported fraction. Replay must be byte identical with\ndeclaration, proof and code/source bindings. Budget 30 seconds per entry\npoint, no GPU. A budget failure is inconclusive.\n\nThe source's analytic energy and seven-point interval certificate remain\nattributed; no independent full replay, Lean extension, world-record or\nnew short-window onset is asserted. EXP-013 stays correct for its explicitly\noriginal dichotomy; this experiment changes that proof estimate.\nDisposition: supporting research record. No standalone manuscript trigger\nfrom a standard Jensen bound and a small source-based consequence.\n",
+   "id": "016",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-016-trace-aware-clipping",
+   "title": "EXP-016: retain trace-zero energy in the clipping dichotomy",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-016 verdict: confirmed trace-aware refinement\n\nDate: 2026-10-03. Declaration 0ea1f332 was pushed before implementation.\n**Confirmed**: predictions A, B and C pass, with exact arithmetic and a\nuniform proof. The elementary Jensen/variance mechanism is prior art;\nthe consequence is a source-based refinement, not a new matrix method.\n\n## Result\n\nWhen sum x_i=0 and max x_i>=tau>0,\nsum psi_tau(x_i)>=tau^2 m/(m-1). Equality has one displacement tau\nand all others -tau/(m-1), realized by a PSD equicorrelation matrix.\nThis replaces the source's block condition delta(m-6)<=tau^2 by\ndelta(m-6)<=tau^2 m/(m-1), with no change to its other inputs.\n\nThe fixed choice m=1311,tau=2411/1000,c=3411/1000 gives\n\n    q = 69341429073721/82845897125000\n      = 0.83699291672944147624860426665335600951161768229810...\n    gain over EXP-013 = 174695378807909/64972491642124138500000 > 0\n    gain over source = 2271039924502817/64377329865322229250000 > 0\n\nThe directed decimal enclosure has width 10^(-50). The modified block\nslack is 1564727/437000000 and the off-line-pair slack is\n91673/437000000. A positive signed square test at 1312, together with\nmonotonicity, excludes every larger integer block in this revised\nscalar-clipping assembly. Thus m=1311 is optimal for that assembly.\nEXP-013's m=1310 optimum stays valid for its original block condition.\n\n## Independent checks and failed attempt\n\nThe auditor independently derives the scalar derivative and block cap,\nsubstitutes exact fractions, and computes the equality matrix's rational\neigenvalues. A control without trace zero violates the stronger bound;\ntests also reject corrupted bound, cap, trace, condition and enclosure.\nThe 11 new tests plus the previous 20 focused controls pass, with\nbyte-identical replay and all code/proof/declaration/source bindings.\n\nAudit attempt 1 failed a structural SymPy equality between algebraically\nequivalent expressions. [The failed report](artifacts/audit/audit-run1-failed.json)\nis retained. Replacing it by simplify(lhs-rhs)==0 fixes the comparison;\nthe derivative formula and producer certificate did not change.\nThe [independent audit](artifacts/audit/audit.json) now passes.\nCanonical SHA-256: `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74`.\n\n## Attribution and disposition\n\nThe distinct count is strip-wide. Its zeta consequence inherits\nKnausgard 2609.33043v1's analytic energy, smoothing/pinching and\nseven-point interval input. No complete external interval replay or\nLean extension was performed. Classical trace/variance inequalities\nare background, as recorded in the dated preflight; no worldwide\npriority or external expert-review claim follows.\n\nSupporting research-record, no standalone manuscript or Zenodo trigger.\nIt does not lower the 0.534 onset or prove RH. RH-F7 closes at its cap;\nother convex block estimates, certificates and windows are outside the cap.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 310,
+     "name": "audit/first-failure.json"
+    },
+    {
+     "bytes": 498,
+     "name": "audit/report.json"
+    },
+    {
+     "bytes": 4323,
+     "name": "canonical/result.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-017: sharp retained-energy envelope and pressure transfer\n\nDeclared 2026-10-03 before runner implementation and computation, on\ndevelop 5ba579a2. See context/2026-10-03-energy-envelope-preflight.md.\n\n## Predictions and method\n\nA. For m>=2, tau>0, real x_i with sum x_i=0 and E=sum x_i^2,\nsum psi_tau(x_i)>=F_m(E), where psi_tau(x)=x^2 for x<=tau and\n2*tau*x-tau^2 otherwise. F_m(E)=E when E<=tau^2*m/(m-1), otherwise\nE/m+2*tau*sqrt((m-1)*E/m)-tau^2. Prove sharpness at every E via\none positive displacement and m-1 equal negative ones, and PSD unit\ndiagonal realization for E<=m*(m-1). Uniform analytic proof is essential;\na finite stress family cannot establish this prediction on its own.\n\nB. F is increasing, concave, and 1-Lipschitz on E>=0. For p,W,D>=0,\nE+p*W>=D implies sum psi_tau(x_i)+p*W>=F_m(D). Applying the pinned\nsource block and counting inputs replaces a=delta*(m-6)/m by\na_eff=F_m(delta*(m-6))/m, leaving beta=6*p*(1-6/m) unchanged.\nThe unchanged threshold and residual constraints must still be checked.\n\nC. A feasible rational m,tau,c and rational lower certificate for F(D)\ncan improve EXP-016's q=69341429073721/82845897125000. Search at most\n51 integers m=1300..1350, and tau in [2.410,2.413] with denominator\n10^6, c=1+tau. A floating approximation may locate a candidate, but\nall accepted slacks and q use rational square-root brackets. This is\na finite candidate certificate, NOT a global optimality claim.\n\n## Preflight and one-sidedness\n\nDependencies: EXP-016 confirms the zero-sum trace and clipping model;\nEXP-013 binds delta=891/200000, p=1/2736 and\nH0=3362285207/5000000000. The source's analytic energy, smoothing,\npinching and seven-point certificate remain attributed and unreplayed\nhere. The candidate full envelope and pressure transfer are hypotheses.\nInvariant first: zero sum controls both the maximum and total positive\nenergy; extremal equicorrelation realizes equality. No heavy grid needed.\n\nPASS with the proof and independent symbolic derivation confirms the\nuniversal envelope and exact candidate consequence within those inputs.\nFinite samples alone prove neither. FAIL refutes the proposed envelope,\ntransfer or candidate, not RH. A failed analytic source premise invalidates\nthe attributed consequence, not the stand-alone vector inequality.\n\nAdversarial routes: independent completion-of-squares scalar minorant;\nPSD equality cases below, at and above clipping; tau=0/invalid dimensions\nrejected; missing trace control; pressure endpoint cases; rational vectors\nwith multiple clipped entries; certificate corruption and byte replay.\nCPU budget 60 seconds per entry point; deterministic grid/seed; checkpoint\nnot required for a sub-minute run. Budget hit means inconclusive. No GPU.\n\nManuscript decision is made after proof and prior-art comparison. A standard\nvariance bound and a tiny attributed constant gain stay supporting records;\nno RH, simple-critical improvement, new onset, or worldwide record claim.\n",
+   "id": "017",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-017-sharp-energy-envelope",
+   "title": "EXP-017: sharp retained-energy envelope and pressure transfer",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-017 verdict: confirmed within the declared scope\n\n[D] The sharp all-energy clipping envelope and nonnegative-pressure\ntransfer are proved in proof.md, with independent scalar-minorant\nidentities and PSD equality spectra. [MV] The candidate m=1317,\ntau=1205537/500000, c=1705537/500000 gives an exact rational lower bound\nin [0.83699292567522034714975959921347264010509798354380,\n0.83699292567522034714975959921347264010509798354381]. Its gain over\nEXP-016 is positive, approximately 8.9458e-9. It counts distinct zeros\nanywhere in the strip, with the pinned source analytic/local premises.\n\nCanonical SHA-256:\n251bdaf44b801ada34bda7c75458a62be5607b59aded5e1c4a2a6721051d3129.\nThe independent auditor imports no producer logic, checks a quadratic\nminorant, continuity/derivatives, rational square-root brackets, residuals,\nmatrix eigenvalues and 11,715 exact stress inequalities. Missing trace and\nnegative pressure controls fail as required. Initial symbolic continuity\nchecking lacked m>1 in its assumptions; parameterizing m=nminus+1 repairs\nthe audit without altering the producer or result. Failure retained.\nFifty focused tests across EXP-013--017 pass; canonical byte replay and\nseven corruption controls are included. Ruff passes on the new paths.\n\n## Strategy and manuscript decision\n\nThe tau=1 formula and pressure transfer are prior art in the pinned\nupstream refined-deduction.md, attributed there to tawanerguo-cn. The\narbitrary-tau formula is obtained by scaling. A uniform proof and its\nsmall mixed-multiplicity consequence are supporting research records,\nnot a new independent matrix method. No new manuscript, split or Zenodo\nversion is triggered by this alone. RH-F8 closes; RH-F4 remains active.\nNo further tiny fixed-input tuning is admitted. Evaluate the larger\nnine-point local certificate as a separately declared conditional transfer.\n\n## How could this be wrong?\n\nAn error in the attributed energy/local certificate invalidates the zeta\nconsequence but not the stand-alone zero-sum proof. The full local interval\ncertificate is not independently replayed here. Finite stress tests alone\nwould not prove the theorem; the sign-checked analytic proof is essential.\nEquicorrelation sharpness is over all PSD unit-diagonal matrices, not the\nsubset arising from translates of the zeta window. No global parameter\noptimum, worldwide novelty, new simple-critical proportion, onset or RH\nproof follows. The live release and three published papers are unchanged.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 404,
+     "name": "audit/report.json"
+    },
+    {
+     "bytes": 4970,
+     "name": "canonical/result.json"
+    },
+    {
+     "bytes": 1089,
+     "name": "input/LICENSE"
+    },
+    {
+     "bytes": 3835,
+     "name": "input/nine-point-final.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-018: source-conditioned nine-point distinct-strip transfer\n\nDeclared 2026-10-03 after EXP-017 result commit 411c2613, before any\ncandidate arithmetic or implementation. Read the nine-point preflight.\n\n## Prediction\n\nUnder the explicit universal local inequality for the pinned nine-point\npacket, the general r-gap mixed-Gram transfer has D=delta*(m-r),\na<=F_m(D)/m, beta=r*p*(m-r)/m and q=(1+H0-beta)/(2-a), with the\nunchanged c/tau threshold and high-multiplicity/off-line residuals.\nAt r=8, delta=15211/2500000, p=1/2500, H0=3362285207/5000000000,\nm=958,tau=2409/1000,c=3409/1000 the constraints pass and q>837/1000,\nstrictly improving EXP-017's attributed bound. No parameter search.\n\n## Method and dependencies\n\nUniform window/partition counting proof plus exact Fraction capacity\nchecks on all 36 packet weights. Independent SymPy reconstruction of\nthe counting inequality, dimensions, source/packet hash and q arithmetic;\nfinite exact partition enumeration only checks the implementation.\nEXP-017 supplies the envelope and pressure proof; EXP-016 confirms the\nmixed residuals. Source window/energy and the nine-point universal local\ninequality are explicit attributed assumptions. The log/candidate metadata\ndiscrepancy prevents claiming independent local certification.\n\nInvariant first: span capacities at most 2 certify the weighted-to-Gram\nenergy passage; the r(m-r)/m partition incidence gives the pressure tax.\nPASS proves the conditional transfer and exact candidate arithmetic,\nNOT the universal local inequality. FAIL refutes the packet compatibility\nor candidate, not the global conjecture. Finite partition tests alone do\nnot establish the uniform theorem; its counting proof is required.\n\nAdversarial controls: change one weight beyond capacity, change r, p,\ndelta, m, q or provenance hash; reject target/candidate mismatch. Retain\nthe source's stale verification-needed flag and missing packet-to-replay\nbinding. Deterministic CPU entry points, each budget 30 seconds. No GPU,\nno full 116-million-node replay. A budget hit is inconclusive.\n\nPublication decision: a source-conditioned arithmetic transfer with an\nunclosed local provenance obligation stays a research record; a coherent\nverified improvement with that obligation closed would trigger a focused\nmanuscript. No short-window onset, simple-critical record, or RH claim.\n",
+   "id": "018",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-018-nine-point-distinct-transfer",
+   "title": "EXP-018: source-conditioned nine-point distinct-strip transfer",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-018 verdict: confirmed conditional transfer\n\n[D] The general r-gap mixed-multiplicity counting implication is proved in\nproof.md, with explicit universal local and source energy premises. [MV]\nAll 36 rational weights have nonnegative entries, reflection symmetry and\neight span capacities exactly 2. At m=958,tau=2409/1000,c=3409/1000,\nq=3997934614153/4775549550000 lies in\n[0.83716744477146090966640687457635111334987614147988,\n0.83716744477146090966640687457635111334987614147989].\nThis exceeds 837/1000 and EXP-017 by approximately 0.00017451909624.\nIt is a conditional distinct-strip proportion, not an independently\ncertified unconditional zeta theorem, simple-critical bound or onset gain.\n\nCanonical SHA-256:\n1b1dd242ae161a9d1b4cf9e350cd22954eace82fd31fa8f4ea7319642dcea076.\nBefore final artifact freeze, the newly added source manifest was normalized\nto repository LF policy and the certificate/audit regenerated; mathematical\nvalues were unchanged. Source hashes for all 15 archived files were rechecked.\nThe separate auditor uses SymPy and imports no producer logic. It\nreconstructs capacities, the full counting rearrangement and rational\nslacks, and checks 77 exact finite partition cases. Sixteen new tests\nexercise candidate/file corruption, altered capacities, source constants,\nwindow coefficients and prohibited claim upgrades. All 66 affected tests\nthrough EXP-013--018 pass. Ruff passes on the added code and tests.\n\n## Trust boundary and how could this be wrong?\n\nThe universal eight-gap inequality is assumed, not proved by the finite\ncapacity checks. The upstream JSON says verification is needed; the\nseparate log reports a complete 96-shard replay but gives neither the\ncandidate SHA, target nor weights. Both table hashes concern the common\nwindow and do not identify the packet. Archive bytes are pinned; we do not\nrewrite that discrepancy or claim a full independent interval replay.\nAn error or packet mismatch in the source invalidates the zeta consequence\nbut not the conditional counting implication. Analytic energy, pinching\nand smoothing are also inherited from the source framework. No global\nparameter optimum, effective height, external novelty/peer review or RH\nsolution follows. The short-window onset remains 0.534.\n\n## Strategy and manuscript decision\n\nRH-F9 closes as a research-record. A manuscript or split is not warranted\nfor a source-conditioned arithmetic substitution with an unclosed local\ncertificate obligation. Keep the three published papers immutable.\nRH-046 / issue #356 owns packet-bound independent replay and the subsequent\nmanuscript reassessment. The fixed-input tuning route is stopped. RH-F4\nremains active for signed short-window cancellation (RH-038). The larger\nconditional consequence is a useful target for closing the input trust\ngap; it is not silently promoted to the latest validated source-based bound.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 7648,
+     "name": "baseline-snapshot-receipt.json"
+    },
+    {
+     "bytes": 939,
+     "name": "pressure-audit.json"
+    },
+    {
+     "bytes": 1175,
+     "name": "window-audit.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-019: packet-bound independent replay of the nine-point local inequality\n\nDeclared 2026-10-03 before implementation, arithmetic probes or replay.\nUser continuation explicitly rejects the conditional EXP-018 target as a\nstopping point. Public issue #356 tracks the open input obligation.\n\n## Target and predictions\n\nReplay the universal eight-gap inequality for the exact packet SHA-256\n9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d,\nsource revision 1610b97b7895ff34982260f8dcaf04a0f7b82cf7,\ndelta=15211/2500000, pressure=1/2500, grid=4000, precision=128 bits.\nAll 96 disjoint initial-box shards must verify, with source/code/table\nbindings and coverage checked. This closes the missing packet-to-run\nbinding only if every shard completes successfully. The matrix/counting\nconsequence is the separately validated conditional implication EXP-018.\n\nBefore the long replay, audit the source's table and pruning arithmetic,\nparticularly the binary64 pressure term, by exact rational comparison over\nthe complete relevant cell-index range. A source arithmetic failure stops\nuse of that path; retain it and implement a sign-correct enclosure before\nthe replay. Preserve upstream license and exact source hashes. Added\nprogress/checkpoint instrumentation must leave mathematical pruning\ndecisions unchanged, except for an explicitly documented rounding repair.\n\n## Premises and invariant first\n\nEXP-018 confirms capacity, window and transfer compatibility but not the\nlocal inequality. The source manifest supplies version/size/hash/license\nbindings. The raw kernel and complete generalized verifier have now been\nread; Arb, IEEE-754 and interval-derivative trust bases remain explicit.\nInvariant first: reject a packet/source/hash/capacity mismatch before\nbuilding tables. Audit representative singularities and exact pressure\nrounding before the exhaustive cover. Do not infer certification from a\nfinite gap sample or matching table hashes alone.\n\n## Method, budgets and checkpoints\n\n32 logical CPUs and about 47.7 GiB physical memory are available. Use at\nmost 24 worker processes, leaving capacity for concurrent sessions.\nGPU arithmetic is not used for outward-rounded decisions. First run a\ntooling smoke test proving flushed stage/progress output, atomic checkpoint\ncreation and resume equivalence on a small explicit cover; its result is\nnot the nine-point proof. Parallel table chunks are cached with hashes.\nFull search checkpoints preserve each shard's pending subdivision stack,\ncounters, table/spec bindings and completed status. Checkpoint at least\nevery 60 seconds; flush progress at least every 30 seconds.\n\nInitial planning budget: 12 wall-clock hours for all 96 shards after smoke\nand table construction, with a 30-minute table budget and a 10-minute\npreflight/audit budget. This is an estimate, not a success claim. A budget\nhit records incomplete coverage and retained checkpoints; it does not\nconfirm or refute the local inequality. Resume within a newly recorded\nbudget, without treating a bounded run as fulfillment of the user's goal.\n\n## Pass, failure and adversarial checks\n\nPASS: complete disjoint cover, all terminal branches certified, independent\ncoverage/binding aggregation and controls rejecting corruption, plus a\nwritten audit of every mathematical change. This supplies an independent\ncomputational replay with the stated trust base, not external peer review.\nFAIL: unresolved terminal cell or invalid enclosure refutes this proposed\ncertificate implementation; a source/candidate mismatch invalidates the\nimport. Neither outcome settles RH. Test omitted/duplicate shard, corrupt\ncheckpoint, table/packet mismatch and interrupted-resume equivalence.\n\nManuscript reassessment follows complete replay and mathematical review of\nthe distinct-strip consequence. No automatic worldwide novelty, onset\nimprovement, RH solution or early publication is claimed. Continue the\nresearch requirement beyond operational commits or partial coverage.\n",
+   "id": "019",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-019-nine-point-local-replay",
+   "title": "EXP-019: packet-bound independent replay of the nine-point local inequality",
+   "verdict": "",
+   "verdict_md": ""
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 10365,
+     "name": "actual-cover-corruption-controls.json"
+    },
+    {
+     "bytes": 10678,
+     "name": "exact-transfer-audit.json"
+    },
+    {
+     "bytes": 691,
+     "name": "first-control-failure.json"
+    },
+    {
+     "bytes": 2103,
+     "name": "first-shard-cost-receipt.json"
+    },
+    {
+     "bytes": 12127,
+     "name": "independent-cover-audit.json"
+    },
+    {
+     "bytes": 1441,
+     "name": "native-kernel-taylor-full.json"
+    },
+    {
+     "bytes": 1431,
+     "name": "native-kernel-taylor-pilot.json"
+    },
+    {
+     "bytes": 857,
+     "name": "runtime-archive-receipt.json"
+    }
+   ],
+   "date": "2026-10-03",
+   "hypothesis_md": "# EXP-020: second-order certified local lower bound\n\nDeclared 2026-10-03 before implementing or testing the new pruning path.\nEXP-019's source-identical complete replay continues with immutable bindings.\n\n## Uniform mathematical target\n\nIf F is twice continuously differentiable on a convex box B, x0 belongs\nto B, and Hessian(F)(x)>=L for every x in B with L positive definite,\nthen for every x in B,\n\n    F(x)>=F(x0)+grad(F)(x0).(x-x0)+1/2*(x-x0)^T L (x-x0)\n         >=F(x0)-1/2*grad(F)(x0)^T L^(-1) grad(F)(x0).\n\nTest this exact second-order replacement for the source's first-order\ntangent pruner. Preserve every signed interval Hessian coefficient and the\nArb positive-pivot LDL proof. Reuse that LDL factorization for an Arb\ntriangular solve; no float eigenvalue or inverse certifies a decision.\nThe unconstrained minimum is a lower bound even outside the box; no\nassertion about the stationary point belonging to B is needed.\n\n## Candidate and value\n\nUse the exact EXP-018 packet, window, pressure and weights, but declare the\nstronger proposed universal local target delta=3051/500000 (0.006102),\ncompared with EXP-019's 15211/2500000 (0.0060844). The source's numerical\nminimum 0.006102730481... motivates but does not prove this target.\nAt grid 4000, fresh exact cutoff and tables must cover the new target.\nEvery shard must verify. A success strengthens an input mathematically,\nbeyond merely replaying the published local target, and can raise the\ndistinct-strip consequence through the already proved general transfer.\n\n## Invariant first and premises\n\nThe quadratic inequality is standard convex analysis, not claimed as a new\ngeneral optimization theorem. Prove it by integrating the Hessian along\na line segment; independently derive the LDL solve by completing squares.\nValidate on exact positive-definite rational quadratics and deliberately\nindefinite controls before computing any actual gap candidates. Test\nagreement with direct exact inversion, precision perturbation and legacy\ntangent bounds. The window input is independently certified in EXP-019;\nthe analytic energy theorem remains an explicit attributed dependency.\n\n## Budgets, failures and manuscript route\n\nInitially one worker, at most ten CPU minutes for invariant and local\nsmoke, and one CPU hour for the first complete-cover cost assessment.\nProgress and atomic resumable checkpoints remain mandatory. Any failed\npositive pivot rejects this pruning path for that box; other valid pruning\npaths may continue. Any invalid enclosure, binding or terminal cell stops\ncertification and is retained. A budget hit is incomplete, not a refutation.\n\nPASS requires a uniform lemma, independently validated exact solve, full\npacket-bound local coverage and an exact stronger compatible transfer.\nFAIL disproves the implementation or proposed target, not RH. No finite\nminimization result counts as certification. Reassess a focused distinct-zero\ncompanion manuscript only after complete coverage and prior-art review.\nThis is a bounded secondary target; RH-F4 remains the only active focus.\n",
+   "id": "020",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-020-quadratic-local-certificate",
+   "title": "EXP-020: second-order certified local lower bound",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-020: confirmed stronger nine-point inequality and distinct-strip bound\n\nVerdict: **confirmed**.\n\nClosed 2026-10-03. Disposition: companion-manuscript, subject to the focused\nmanuscript's final exposition and publication checks.\n\n## Mathematical result\n\nFor the exact normalized window and 36 nonnegative pair weights in EXP-018's\nnine-point-final.json, and every eight-gap vector g>=0,\n\n    sum_(i<j) a_ij*w(g_i+...+g_(j-1)) + (1/2500)*sum_i g_i >= 3051/500000.\n\nThe stronger target 0.006102 implies the older 0.0060844 premise at the same\npressure. It closes that mathematical input obligation; it does not describe\nEXP-019's suspended source-identical execution as complete.\n\nThe reviewed mixed-Gram argument, using the corrected integrated BGSTB\nanalytic theorem, yields\n\n    liminf_(T->infinity) Nd(T)/N(T) >= 3997934614153/4775507750000\n                                  = 0.8371747724947154...\n\nNd counts distinct points throughout the critical strip; N counts all\nnontrivial zeros with multiplicity. Exact arithmetic in exact-transfer-audit.json\nis authoritative. The parameters are m=958, r=8, tau=2409/1000, c=3409/1000,\nH>=3362285207/5000000000. The elementary block dichotomy suffices since\nD=57969/10000 < tau^2=5803281/1000000. No sharp trace envelope is needed.\nThe quadratic lower bound is classical convex analysis; the stronger uniform\nnumerical inequality and resulting constant are the substantive improvement.\n\n## Completed evidence\n\n- All 96 reports and completed checkpoints pass the independent standard-library\n  domain/source/table/accounting verification: 107,752,902 nodes, 53,876,323\n  splits and 53,876,579 prunes from 256 initial boxes.\n- All 12 actual-output corruption controls are rejected; the original output\n  remains unchanged and passes a fresh audit.\n- Both input tables pass independent native hypergeometric/Taylor enclosure\n  on every one of 61,029 closed cells at 256-bit precision. Increased-bound\n  controls are rejected. This path shares FLINT/Arb with the execution.\n- The existing source-bound window enclosure and all exact transfer residuals\n  pass; all eight pair-span capacities equal two.\n- The 233-member runtime ZIP preserves actual physical source bytes and\n  cache/output bytes, passes CRC and SHA256 checks, and reproduces the identical\n  cover and rational transfer from extracted files. Archive SHA256:\n  91be4798774837bc16007a8236a692078e825ffb1c8dfa476c05d3c733b17879.\n\n## Claim and novelty boundaries\n\nThe completed interval execution trusts the frozen Python verifier, python-flint\n0.9.0, FLINT/Arb and directed enclosures. The standard-library cover checker\nverifies structure, bindings and accounting; it does not recompute each of the\n107 million interval operations. The archive extraction check likewise does\nnot rerun the full interval execution. No end-to-end Lean formalization is\nclaimed. Analytic dependencies and smoothing/limit order are in EXP-019's\nanalytic-transfer-review.md; the second-order lemma is in proof.md.\n\nThe October 3 primary-source check still finds arXiv:2609.33043v1 with\n16260119298029/19426831050000=0.83699288145242... . This result exceeds that\nsource by about 0.000182, but the limited source search is not proof of worldwide\npriority or external peer acceptance. Knausgard's mixed-Gram/threshold/counting\nmachinery, BGSTB's corrected analytic input and the upstream window/weights\nmust receive explicit attribution. No RH, simple-critical-line proportion,\neffective height or improved short-window onset is established.\n\n## Manuscript decision\n\nOne focused distinct-zero companion is warranted by the stronger complete\nlocal certificate, simplified block transfer and quantified consequence.\nThe three published manuscripts stay immutable. Classical support calculations\ndo not receive separate papers. EXP-023 remains incomplete and its stronger\ncandidate must not be substituted. EXP-025's source-attributed vector-pressure\nconsequence may join this companion only after its separate final review.\n\n## How could this be wrong?\n\nA defect in the frozen interval pruning code or shared FLINT/Arb arithmetic\ncould invalidate a numerical decision despite correct domain accounting.\nThe independent whole-cell input path, rational LDL controls and corruption\nchecks reduce identified risks but do not independently execute every prune.\nA defect in the attributed corrected analytic theorem or transfer proof would\ninvalidate the global consequence without invalidating the local certificate.\nThe full trust base and source dependency distinction remain explicit.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 1350,
+     "name": "exact-arithmetic-controls.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-021: exact shifted composite character layer\n\nDeclared 2026-10-03 before implementation or machine controls. This bounded\nlayer belongs to the existing RH-F4/RH-038 reduction target; EXP-020's full\nstronger interval run continues with its runtime source frozen.\n\n## Mathematical target and value\n\nFor coprime positive integers a,h, let e(x)=exp(2*pi*i*x),\nsigma_(alpha,beta)(n)=sum_(uv=n) u^(-alpha)*v^(-beta), and\nD(s,a/h)=sum_n sigma_(alpha,beta)(n)*e(a*n/h)*n^(-s).\nProve an exact all-composite, shifted decomposition into characters modulo\nevery q=h/d, d|h, with all non-unit residue classes and Euler corrections\nretained. The initial domain is absolute convergence,\nRe(s+alpha)>1 and Re(s+beta)>1; any continuation must follow a proved identity.\n\nConvert each induced character to its primitive conductor before applying\nthe functional equation. Retain parity, Gauss sums, gamma ratios and shift\ndependence. In the squarefree outer-mollifier case, check which M\u00f6bius signs\ncancel against induction Gauss factors; do not infer cancellation of the\nremaining signed sum from that algebraic simplification.\n\nThis removes a precise arithmetic premise gap in the short-window route.\nIt is not the full shifted short-window reciprocity theorem, its uniform\nerror, a longer mollifier, a new onset, or a solution of RH. The mechanism is\nclassical character orthogonality and Euler products, with no priority claim.\n\n## Predictions and invariant first\n\nA. The gcd partition n=d*m, gcd(m,h/d)=1 gives the complete character sum.\nIts coefficient is tau_q(bar(chi))*chi(a)/phi(q). Non-unit terms cannot be\ndiscarded.\n\nB. For p^b||d, the shifted local numerator is\nsigma(p^b)-p^(-alpha-beta)*sigma(p^(b-1))*chi(p)*p^(-s)\nwhen p does not divide q; it is sigma(p^b) when p divides q.\nThe two Euler denominators are those of L(s+alpha,chi)*L(s+beta,chi).\nThis formula has no division by sigma(p^b), avoiding zeros at complex shifts.\n\nC. The unshifted prime case agrees with the arithmetic character split in\nTang's Section 3, including the principal and divisible terms. Composite\nand unequal-shift coefficient controls distinguish deliberately omitted gcd\nclasses, wrong local signs and improper use of primitive Gauss normalization.\n\nRead Tang's full pinned source and the established DLMF character/Gauss\nidentities before deriving the layer. Existing EXP-012 is inconclusive, and\nEXP-014/015 concern phase resolution; none proves the needed signed reduction\nor cancellation. The invariant is the exact prime-power recurrence for the\nshifted divisor coefficients, paired with finite character orthogonality.\n\n## Controls, cost and one-sidedness\n\nUse symbolic formal prime-power coefficients and exact cyclotomic finite\ncharacter sums on small composite moduli (including non-cyclic unit groups),\nplus a direct rational coefficient implementation at unequal integer shifts.\nRestore alpha=beta=0 and prime moduli as known-input anchors. Include the\nconductor-one convention explicitly. CPU only, one process, expected under\ntwo minutes, five-minute compute budget. Emit flushed progress between\nmoduli and retain the receipt. If a control exceeds the budget, preserve\npartial checks and mark it incomplete; the written proof must still be audited.\n\nPASS requires a general derivation, exact non-unit and unequal-shift controls,\nprimitive-conductor functional-equation bookkeeping and discriminating\nnegative controls. It proves this supporting arithmetic layer only. FAIL\nrefutes a formula or implementation; it does not disprove the analytic route.\nNo numerical L-value average can establish this target. No separate manuscript\nor Zenodo deposit is warranted unless a substantive uniform moment or\ncancellation theorem is subsequently proved. This round cannot fulfill the\nuser's requested stopping condition by itself.\n",
+   "id": "021",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-021-composite-character-layer",
+   "title": "EXP-021: exact shifted composite character layer",
+   "verdict": "",
+   "verdict_md": "# EXP-021 verdict: supporting arithmetic layer confirmed\n\nDeclared and pushed as 8d45ddfc before machine controls. The general\nderivation was persisted as 6b84615c. The exact arithmetic receipt binds\nboth documents and the implementing source. CPU time was 4.17 seconds,\ninside the declared five-minute budget; no failed control occurred.\n\nThe gcd partition, complete character expansion and shifted local Euler\nnumerators in proof.md are confirmed. All 16 moduli from 1 to 16 include\nnon-cyclic unit groups and conductor one. The controls comprise 558 exact\nunit Fourier identities, 45 primitive Gauss products, 56 squarefree\ninduction identities, 2560 induced Euler coefficient checks, 78 symbolic\nprime-power identities and 4608 independent rational coefficient checks\nat equal and unequal shifts. Computation takes place in exact integer\ncyclotomic quotients and rational arithmetic, without floating trigonometry.\n\nThree deliberately incorrect alternatives are distinguished: discarding\nnon-unit gcd classes, reversing the local numerator sign, and applying\nprimitive Gauss normalization at an induced modulus. Ruff passes for the\nnew source. The primitive functional equation itself is an attributed\nstandard theorem; the tests do not reprove its analytic continuation.\n\nThe mechanism is classical character orthogonality and Euler products.\nThis is not a novel-priority claim or an improved zeta-zero theorem. The\nremaining RH-038 obligation is to attach the exact shifted analytic Mellin\nweight, justify residues and functional-equation terms uniformly in the\nshort window, and estimate the supported signed conductor family. No\nlonger mollifier, onset below 0.534 or new proportion follows.\n\nNo additional manuscript or Zenodo deposit is warranted for this layer.\nThe user-requested research stopping condition is not fulfilled. EXP-020's\nfull stronger interval cover continues independently with frozen runtime\nsource; its partial results remain insufficient for the global theorem.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 538,
+     "name": "dependency-setup-race.json"
+    },
+    {
+     "bytes": 2802,
+     "name": "explicit-pressure-cap.json"
+    },
+    {
+     "bytes": 451,
+     "name": "first-control-failure.json"
+    },
+    {
+     "bytes": 1067,
+     "name": "independent-audit.json"
+    },
+    {
+     "bytes": 171910,
+     "name": "pressure-duality.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-022: pressure duality for the distinct-strip objective\n\nDeclared 2026-10-03 before pressure search or witness arithmetic. This is\na bounded adjunct to RH-F4, with EXP-020 continuing independently and all\nits runtime sources frozen. The new source will only read the pinned\nwindow and pair weights; it must not alter the in-flight certificate.\n\n## Target and reason to investigate\n\nThe nine-point packet optimized a simple-zero objective at pressure\n`p=1/2500`. Its position weights and perturbed cosine window can instead\nbe tested against the distinct-strip objective\n\n    q(p,delta,m) = (1+H0-8*p*t)/(2-delta*t), t=(m-8)/m.\n\nHere delta must be a universal lower bound for E(g)+p*S(g), not an observed\nminimum. For fixed weights, delta_max(p)=inf_g(E(g)+p*S(g)) is concave,\nand every actual gap configuration supplies an affine upper bound. This\nis a convex-duality/ergodic-optimization perspective, with classical\nmathematics and no new-method priority asserted.\n\nTwo decisions are sought. First, can this family support a substantial\ndistinct-strip target `q>=419/500=0.838`? Second, does a changed pressure\noffer a candidate at least 0.0001 above EXP-020's proposed transfer, large\nenough to justify a separately declared full certificate? A finite search\ncan suggest the second decision only; it cannot prove a new proportion.\nAn exact witness envelope may decide the first uniformly for all p>=0\nand every admissible m, without an exhaustive pressure grid.\n\n## Invariant and proof before computation\n\nFor any valid gap vector, write E>=0 and S=sum(g). Necessarily delta<=E+p*S.\nIf a transfer with positive denominator attains q0, then\n\n    q0*delta*t-8*p*t >= 2*q0-1-H0 = C.\n\nFor this target C>0. Since 0<t<1, this implies\n\n    q0*E+p*(q0*S-8) >= C\n\nfor every chosen gap witness. Thus a finite collection with\n`sup_(p>=0) min_i(q0*E_i+p*(q0*S_i-8)) < C` proves impossibility for this\nfixed window/weight pressure family, even before spectral admissibility\nconstraints are imposed. Use rigorous upper enclosures for each E_i and\nan independently certified upper H0; this direction makes the barrier\nconservative. The maximum of the concave piecewise-affine envelope is\ndetermined by zero and nonnegative line intersections, provided a negative\nslope bounds the high-pressure tail. Retain degenerate/equal-slope cases.\n\n## Controls, computation and scope\n\nRead the full pinned packet and its refined-deduction/campaign notes first.\nUse one CPU process with deterministic starts and analytic floating\ngradients for exploration at pressures 1/3000, 1/2500, 1/2000, 1/1600,\n1/1250, 1/1000, 1/800, 1/600 and 1/400. Include the source minimizing\nconfiguration, equal gaps, and reproducible asymmetric starts. Preserve\nall local outcomes; rationalize selected nonnegative gaps at denominator\n10^6, then recompute E with 192-bit Arb from the frozen kernel. No floating\nquantity can close the universal barrier. Expected under two minutes,\nten-minute CPU budget; stop search at five minutes and preserve partial\nprogress before exact witness checks. Emit progress between pressures.\n\nControls: reproduce the packet's floating objective, finite-difference\ncheck analytic gradients, compare rational witness energy to its floating\nevaluation, check capacities and source hashes, and distinguish a reversed\nwitness inequality. Evaluate an independent envelope implementation by\nexact rational intersections. Candidate block arithmetic must check both\nmixed-multiplicity residuals and the attributed clipping/block condition.\n\nPASS for a barrier requires exact witness energies, the written uniform\nargument and independent rational envelope audit. PASS for a new zeta\nbound requires a new universal local certificate and analytic transfer;\nthat computation is outside this exploratory declaration. No pressure\nbarrier refutes other windows, weights, signed analytic approaches or RH.\nNo separate manuscript/Zenodo trigger arises from a classical duality\nobservation or an unproved candidate. This round alone is not the user's\nresearch stopping condition.\n",
+   "id": "022",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-022-pressure-duality-audit",
+   "title": "EXP-022: pressure duality for the distinct-strip objective",
+   "verdict": "",
+   "verdict_md": "# EXP-022 verdict: uniform pressure ceiling confirmed; stronger input proposed\n\nDeclaration 4b1af0f5 and bounded admission 5c35f3d3 preceded exploration.\nThe exact-ceiling declaration f9aaf9cf preceded its arithmetic. The 6.34-\nsecond one-process search completed all nine pressures. Its observed\nminima are exploratory upper observations, never universal lower bounds.\nTwo setup failures before mathematical execution are preserved; the\nisolated SciPy dependency installation left the shared venv and EXP-020\nruntime unchanged. Ruff passes for the new source and both auditors.\n\nTwo rational gap configurations yield the exact pressure-family cap\n\n    36988549868669912117331491083904339887470179336382577399511572430992757248\n    /44169583944984760631542371660594662647325476621424736315194080095849609375\n    = 0.8374212877970697... < 67/80 = 0.8375.\n\nEvery admissible finite-block distinct-strip bound using this fixed\npacket window and pair weights is strictly below that exact cap, for\nevery nonnegative pressure. This bounds the counting assembly's output,\nnot the actual proportion of distinct zeros. The general proof and safe\nenclosure direction are in proof.md and ceiling-declaration.md. The\nindependent auditor recomputes the selected energies with native Arb sinc\nat 256 bits, independently of the verifier's derivative/series code;\nFraction arithmetic checks the rising/falling-line envelope and all signs.\nThe cap is conservative, not a sharp true family optimum or a novelty\nclaim for convex duality. Other windows, weights and analytic estimates\nare outside its scope.\n\nChanging pressure from 1/2500 to 1/1250 offers the proposed input\ndelta=52231/5000000. The exact admissible block m=562, tau=1203/500,\nc=1703/500 would give\n\n    2340938143167/2795532013000 = 0.8373855610599298...\n\nafter a complete new universal certificate and the attributed analytic\ntransfer. This is about 0.00021 above EXP-020's proposed transfer and\npasses this declaration's 0.0001 value gate. A separately declared pilot\nand full certificate are justified. No such new certificate is supplied\nby this search or by EXP-020's partial cover at the old pressure.\n\nRH-F12 closes as a supporting pressure audit. No standalone manuscript\nor Zenodo deposit is triggered; the barrier may support a coherent\ndistinct-zero companion if a stronger lower theorem is subsequently\nproved. The user's stopping condition is still unmet; research continues.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 1440,
+     "name": "native-kernel-taylor-full.json"
+    },
+    {
+     "bytes": 1431,
+     "name": "native-kernel-taylor-pilot.json"
+    },
+    {
+     "bytes": 1071,
+     "name": "native-table-pilot.json"
+    },
+    {
+     "bytes": 1427,
+     "name": "native-taylor-full.json"
+    },
+    {
+     "bytes": 1418,
+     "name": "native-taylor-pilot.json"
+    },
+    {
+     "bytes": 177,
+     "name": "partial-rejection.json"
+    },
+    {
+     "bytes": 605,
+     "name": "partitioned-pilot-budget-snapshot-receipt.json"
+    },
+    {
+     "bytes": 1233,
+     "name": "partitioned-preflight.json"
+    },
+    {
+     "bytes": 1698,
+     "name": "partitioned-pressure-audit.json"
+    },
+    {
+     "bytes": 1917,
+     "name": "partitioned-run-binding.json"
+    },
+    {
+     "bytes": 612,
+     "name": "pilot-budget-snapshot-receipt.json"
+    },
+    {
+     "bytes": 771,
+     "name": "pilot-domain.json"
+    },
+    {
+     "bytes": 770,
+     "name": "preflight-controls.json"
+    },
+    {
+     "bytes": 755,
+     "name": "prepared-tools-partial-rejection.json"
+    },
+    {
+     "bytes": 1512,
+     "name": "pressure-audit.json"
+    },
+    {
+     "bytes": 1731,
+     "name": "run-binding.json"
+    },
+    {
+     "bytes": 716,
+     "name": "simple-assembly-scope-audit.json"
+    },
+    {
+     "bytes": 1192,
+     "name": "supervisor-control-history.md"
+    },
+    {
+     "bytes": 4531,
+     "name": "supervisor-smoke.txt"
+    },
+    {
+     "bytes": 377,
+     "name": "transfer-partial-rejection.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-023: a new-pressure universal certificate and distinct-strip consequence\n\nDeclared 2026-10-03 before implementation, rounding audit or interval pilot.\nEXP-022 justifies this bounded new-input round: it proposed a conditional\ngain about 0.00021 above EXP-020, exceeding the predeclared 0.0001 value\ngate, and proved that further pressure tuning of this fixed packet cannot\nexceed 0.837421287797... . RH-F4 remains the active analytic focus; this is\na bounded adjunct. EXP-020 continues with its runtime source frozen.\n\n## New input and exact target\n\nKeep the pinned nine-point packet SHA-256\n9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d,\nits perturbed window, all 36 pair positions and exact weight capacities.\nOVERRIDE the source pressure and lower target explicitly:\n\n    p=1/1250, delta=52231/5000000, r=8, grid=4000, precision=128.\n\nProve, for every g_i>=0, p*sum g_i+sum a_ij*K(sum_(i<=k<j)g_k)^2>=delta,\nwhere K is the normalized overlap from the pinned packet. No new lower\ninput follows from EXP-022's observed floating minima, or from EXP-020's\npartial run at a different pressure.\n\nAt m=562, tau=1203/500 and c=1703/500 the attributed elementary block\ndichotomy suffices if D=delta*(m-8)<=tau^2. The exact transfer would give\n\n    Nd/N >= (1+3362285207/5000000000-8*p*(m-8)/m)\n             /(2-delta*(m-8)/m)\n          = 2340938143167/2795532013000 = 0.8373855610599298... .\n\nCheck c>=1+tau, c>=2+tau/2, 6c-7-c^2>=a, 4c-2-c^2>=2a and 2-a>0,\na=delta*(m-8)/m. This is a distinct-zero bound in the whole critical\nstrip, not a simple-critical proportion, short-window onset or RH claim.\n\n## Implementation and controls\n\nReuse the already reviewed and tested immutable quadratic verifier,\ncertified LDL helper and source kernel; do not edit any of those files.\nBuild separately bound runner/checkpoint wrappers for the new pressure.\nThe kernel tables depend on window/grid/precision, not pressure or target.\nCheck the baseline tables' complete hashes and source binding before\ncopying their prefix of the exact new cutoff+8 cells. No table generation\nor new numerical enclosure method is needed. Independently audit directed\npressure/target rounding over every cutoff index and exact pair capacities.\nReconstruct all coordinate exclusions, Cartesian initial boxes and the\n96-way partition in a separate stdlib auditor. Require every report,\nempty complete checkpoint, identity/counter invariant and binding. The\nauditor must reject partial coverage. Do not reinterpret the different-\npressure result as proving the original EXP-018 local premise.\n\n## Cost and decision gate\n\nRun one actual shard-0 pilot with one CPU process alongside EXP-020. Pilot\nplanning budget: 20 minutes wall clock after prepared-table launch;\ncheckpoint every 60 seconds and print every 30 seconds at full node\nboundaries. A budget hit preserves incomplete state, not FAIL or theorem.\nIf the first shard finishes, record its actual cost and domain size before\nauthorizing a full cover; one shard alone is not a reliable worst-case ETA.\nAn optional second diversity pilot must be priced before it starts.\n\nA new full cover may use at most four additional workers while EXP-020's\n24 continue, keeping total workers below 32 logical processors. Its own\ncost review must be persisted before launch. Any change of priority or\nstopping of EXP-020 must preserve and validate its snapshots first. CPU\ninterval arithmetic determines every proof decision; no GPU floating\ndecision can certify an enclosure. The new wrappers freeze at launch.\n\nPASS requires the complete universal cover, independent audit and exact\nmixed-multiplicity transfer with attributed analytic premises explicit.\nFAIL requires an actual unresolved terminal cell or invalid bound, whose\nstate is retained. A finite search, partial pilot or runtime success is\ninconclusive for the universal input. A completed stronger distinct-strip\ntheorem plus EXP-022's method-output ceiling triggers a focused companion\nmanuscript coherence/novelty review; no extra unrelated paper is planned.\nThe user research stopping condition remains unmet before those gates.\n",
+   "id": "023",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-023-repressured-local-certificate",
+   "title": "EXP-023: a new-pressure universal certificate and distinct-strip consequence",
+   "verdict": "",
+   "verdict_md": ""
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 825,
+     "name": "control-history.md"
+    },
+    {
+     "bytes": 12331,
+     "name": "enclosed-kernel-controls.json"
+    },
+    {
+     "bytes": 1446,
+     "name": "full-moment-control.json"
+    },
+    {
+     "bytes": 5089,
+     "name": "initial-full-moment-control-source.txt"
+    },
+    {
+     "bytes": 1447,
+     "name": "initial-full-moment-control.json"
+    },
+    {
+     "bytes": 367,
+     "name": "setup-failure.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-024: exact Gaussian reduction with an all-order phase remainder\n\nDeclared 2026-10-03 before numerical controls. This is a bounded step within\nRH-F4 / issue #360, following EXP-021's complete composite arithmetic layer.\nIt is not a new research focus, a new moment asymptotic or a zero proportion.\n\nFor H>0, T real, h,k positive integers and |Re alpha|, |Re beta|<1/4,\nderive an exact absolutely convergent dual series for the whole-real-line\nGaussian-weighted shifted twisted second moment. Retain the residue at\ns=1-alpha, all gamma factors and the full cosine phase. Prove the Mellin\ntransform by Abel regularization and analytic continuation rather than an\nunjustified interchange of an infinite oscillatory integral.\n\nThen expand only the nonlinear part of exp(2y/H) inside the exact Gaussian\nkernel. For every fixed J>=1 obtain a finite Gaussian/Hermite expression\nand an explicit remainder O_J(x^(-Re beta)*(x/H^2)^J), with every constant\nshown. On x comparable to T, H=T^theta, theta>1/2, this decreases to every\nfixed polynomial order as J grows. It does not provide signed cancellation\nafter summing the dual arithmetic series. No global error upgrade follows\nuntil the large/small-x tails and full mollifier average are controlled.\n\nSource preflight: Tang 2608.14852 and Bettin 1607.05595 supply related\nreciprocity mechanisms; the dossier already retains their hypotheses and\nprime/composite limitations. Dutta-Ghoshal-Rajkumar 2408.04247v1 is newly\narchived through its PDF/HTML, with its cosine-Mellin proof and closing\nkernel/RMT discussion read. Its distributional kernel analogy supplies\nno zero-location theorem. Functional equations, Gaussian integration,\nMellin inversion and Taylor remainder mechanisms are classical; no\npriority claim is made for them or this representation.\n\nP5: the key scale is x/H^2 after exact transformation, distinct from the\npointwise original gamma-phase scale H^3/T^2 excluded in EXP-014/015.\nThere is no contradiction: the object and order of integration differ.\nThe premise dependencies are the classical zeta functional equation,\npolynomial vertical-strip growth and exact Gaussian transform. EXP-021\nsupplies the later composite-character decomposition, not a moment estimate.\n\nPASS requires a complete analytic derivation including residues and\nconvergence, independent symbolic Hermite controls, and agreement of\nseparately enclosed Gaussian and Mellin integrals with explicit real-axis\ntails. Finite agreement alone cannot prove the identity or uniform bound.\nFAIL means an actual sign/normalization/remainder discrepancy; retain it\nbefore correction. Ten minutes CPU controls, one worker, progress per\ncase; a budget hit retains incomplete controls. No heavy arithmetic sweep.\n\nThis supporting result stays in the research record and later belongs to\nshort-interval-levinson only if a coherent new signed moment theorem is\nproved. It does not trigger a standalone manuscript or fulfill the user's\nrequested stopping condition. EXP-020 and EXP-023 continue independently.\n",
+   "id": "024",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-024-gaussian-mellin-reduction",
+   "title": "EXP-024: exact Gaussian reduction with an all-order phase remainder",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-024 verdict: confirmed supporting analytic reduction\n\nThe exact shifted Gaussian identity, crossed residue and absolute dual\nconvergence are derived in proof.md. The all-order finite Hermite expansion\nhas an explicit phase remainder. Repeated nonstationary integration by\nparts controls the off-band terms. A finite inverse Gaussian smoothing\nconstruction in compact-window-extension.md extends the reduction to fixed\nsmooth compact windows, with an o(H) representation error for fixed\n1/2<theta<1, 0<nu<1 and shifts O(1/log T). The signed main sum is retained.\n\nThe declaration was pushed as 8528b1e6 before controls. The initial analytic\nproof and kernel controls were pushed as 440e5d1b. Nine independent symbolic\nGaussian moments, eight pairs of independently enclosed Gaussian/Mellin\nintegrals and 32 explicit remainder comparisons pass at 192 bits. A full\noriginal zeta moment also agrees with its separately enclosed 32-term\ndual series and explicit derivative tail; the wrong residue sign is\nrejected. Eight symbolic heat-multiplier derivative checks pass. These\nfinite controls check normalizations; the uniform conclusions come from\nthe analytic proofs, not finite agreement. Ruff passes on the final code.\n\nBoth setup and lint history are retained. The historical full-moment\nreceipt binds its captured initial source; the current receipt binds the\ncleaned code. There is no unresolved mathematical discrepancy in the\nrecorded controls. No external referee or independent novelty confirmation\nhas been obtained.\n\nThis closes the representation step for the stated smooth windows,\nbounded composite twists and shifts. It does not estimate the resulting\nsigned divisor/conductor sum, prove an enlarged mollified-moment range or\nimprove the 0.534 short-window onset. Functional equations, Mellin/Gaussian\ntransforms and Taylor/heat remainders are classical; worldwide priority is\nnot claimed. The original gamma-phase obstruction concerned a different\npointwise approximation and is not contradicted.\n\nDisposition: research record supporting RH-F4 / issue #360. Its prospective\nmanuscript home is short-interval-levinson if the remaining signed moment\ntheorem is proved coherently. No standalone manuscript or Zenodo deposit\nis justified by this classical reduction alone. EXP-020 and EXP-023 remain\nindependent in-flight certificates. The user's stopping condition is unmet.\n"
+  },
+  {
+   "area": "number-theory",
+   "artifacts": [
+    {
+     "bytes": 2674,
+     "name": "independent-rational-audit.json"
+    },
+    {
+     "bytes": 8,
+     "name": "input/.gitattributes"
+    },
+    {
+     "bytes": 11358,
+     "name": "input/LICENSE-2.0.txt"
+    },
+    {
+     "bytes": 1218,
+     "name": "input/README.md"
+    },
+    {
+     "bytes": 1837980,
+     "name": "input/Solution.lean"
+    },
+    {
+     "bytes": 970,
+     "name": "input/attestation.json"
+    },
+    {
+     "bytes": 1768,
+     "name": "input/submission.json"
+    },
+    {
+     "bytes": 20571,
+     "name": "input/verifier.log"
+    },
+    {
+     "bytes": 4568,
+     "name": "preflight.json"
+    }
+   ],
+   "date": "2026-10-03",
+   "hypothesis_md": "# EXP-025: attributed vector-pressure certificate and distinct-strip lift\n\nDeclared 2026-10-03 before arithmetic evaluation or implementation. This is\na bounded adjunct to the existing global distinct-zero question, while RH-F4\nand both frozen interval covers remain active. It does not replace their\nunfinished local premises or change a live verifier.\n\n## Target and value\n\nThe newly archived Samuel Lavery attempt-013 supplies a seven-point local\ncertificate with six unequal nonnegative gap pressures, a thirteen-term\ncosine window and target delta=787380/100000000. Its public Lean source is\npinned by SHA-256 65564079527487fde93b43bb83dd840a768acf9fb8db1f1f015d38c4faf3b7d4\nin josusanmartin/riemann at 2fcb7dba28691632cdb0846d694c9b9902cfce66.\nThe publication reports Lean and nanoda verification; archived logs show\nthe three scored statements use only the permitted standard axioms. This\nsession has not rebuilt that external development.\n\nProve the mixed-Gram distinct-strip transfer for a general nonnegative\ngap-pressure vector b, whose total B replaces r*p in the counting charge.\nIndependently bind every coefficient, weight and pressure to the attributed\nlocal theorem and evaluate the window energy through a different formula\npath. Assess one fixed transfer at r=6, m=742, tau=12043/5000 and\nc=17043/5000, Hcert=67217109258/100000000000 and B=398386/100000000.\nNo pressure/window search is admitted in this experiment.\n\nThe value gate is an exact distinct-strip consequence exceeding the currently\ncompleted EXP-017 lower value by 1/10000. A closed source-attributed theorem\ncould provide relevant progress without treating partial nine-point covers\nas proofs. It must retain its external local-certificate dependency and\ncannot be represented as an independent local rebuild or a simple-zero gain.\n\n## First bounded action and controls\n\nAt most thirty seconds on one CPU: extract and compare the explicitly named\nsource arrays against the certified functional G, check all index-span\ncapacities, pressure sum and source reflection, and evaluate the independent\nnative-sinc integral expressions I1,I2,J at 256 bits. A global coefficient\nbound proves the window positive; antitonicity is unnecessary for the fixed\nsmooth BGSTB transfer. The numerical check must prove H>=Hcert.\nCheck every exact transfer residual, D=delta*(m-r)<=tau^2, denominator and\ngain gate. Increased H and delta controls must reject invalid input values.\nThe exact final fraction is an output, not a guessed numerical claim.\n\nIf a source binding, capacity, energy or block condition fails, preserve the\ncounterexample and reject this fixed transfer. If it passes, review the full\nvector-pressure summation proof, source local theorem and analytic limit\norder before any claim upgrade. A locally compiled source verifier would be\na separate priced action; downloaded logs are external evidence, not a\nlocal execution. No heavy interval run, GPU sweep or record submission is\nauthorized by this declaration.\n\n## Novelty and manuscript route\n\nThe external result proves a simple-critical bound via a different counting\nassembly. The vector-pressure summation is classical; primary-source overlap\nand worldwide priority remain unresolved. Relevant new distinct-strip\nconsequences belong to the same prospective focused Gram-method companion,\nafter independent review and coherence assessment. A substitution or a\nsupporting finite check alone does not trigger a paper, publication or the\nuser's research stopping condition. RH and the 0.534 onset remain open.\n",
+   "id": "025",
+   "problem": "riemann-hypothesis",
+   "slug": "EXP-025-vector-pressure-distinct-lift",
+   "title": "EXP-025: attributed vector-pressure certificate and distinct-strip lift",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-025: vector-pressure distinct-strip consequence\n\nVerdict: **confirmed**.\n\nConfirmed as a derived, source-attributed consequence, 2026-10-03.\nDisposition: companion-manuscript with EXP-020.\n\nFor any nonnegative gap-pressure vector, the full mixed-Gram transfer uses\nits sum B. The general implication is proved in proof.md and reviewed in\nfinal-review.md. Applied to Lavery's pinned universal seven-point theorem,\nwith the independently enclosed thirteen-term window, it gives\n\n    liminf_(T->infinity) Nd(T)/N(T) >= 30945470743359/36955122080000\n                                  = 0.8373797460706156... .\n\nNd counts distinct nontrivial zero points across the whole critical strip;\nN counts zeros with multiplicity. The exact pressure sum is\n199193/50000000, delta=39369/5000000, H>=33608554629/50000000000,\nm=742, r=6, tau=12043/5000, c=17043/5000.\n\nBoth independent scalar/arithmetic paths pass. The second uses only Python's\nstandard library and exact rational outward intervals, independently checking\nthe certified source functional, 288 vector-pressure counting examples and\n183 pair-count examples. These finite examples supplement the general proof.\nFour native and three rational negative controls pass.\n\nThe universal six-gap local lemma is attributed to Samuel Lavery, attempt-013,\nusing typh's optimized window and Ainta's refinement. Source SHA256 is\n65564079527487fde93b43bb83dd840a768acf9fb8db1f1f015d38c4faf3b7d4.\nIts Apache-2.0 source, metadata, external verification log and attestation are\npreserved. The external Lean/nanoda verification was not rebuilt locally.\nBGSTB's corrected integrated theorem and Knausgard's mixed-Gram argument\nremain explicit dependencies. This is not an end-to-end formalization.\n\nThe gain over the located distinct-strip source is about 0.000386865, and\nover the completed EXP-020 bound about 0.000204974. No source search proves\nworldwide priority. No RH, simple-critical-line proportion, effective height,\nimproved short-window onset or external peer-review claim follows.\n\nOne focused companion may combine the common transfer, EXP-020's completed\nlocal certificate and this stronger attributed consequence. Classical scalar\nand vector-counting support do not trigger additional manuscripts.\n\n## How could this be wrong?\n\nThe universal local theorem relies on the pinned external formal source and\nreported kernel verification, which was not rebuilt locally. Incorrect source\nnormalization, an invalid external dependency, or a missed general transfer\nargument could invalidate the consequence despite passing scalar/counting\nchecks. Exact functional matching, two independent scalar derivations, full\nproof rederivation and source/log review address these specific risks; finite\ncounting examples alone do not prove the theorem. No end-to-end local formal\nor external peer-review guarantee is asserted.\n"
+  },
+  {
    "area": "optimization-geometry",
    "artifacts": [
     {
