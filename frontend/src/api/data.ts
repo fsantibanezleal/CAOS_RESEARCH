@@ -313,9 +313,24 @@ export type RiemannDistinctZero = {
   archive: { passed: boolean; members: number; archive_sha256: string };
   incomplete_experiments: string[]; excluded_claims: string[]; trust_boundary: string;
 };
+export type RiemannShortWindowMoment = {
+  schema: 'riemann-short-window-moment-v1'; accepted: boolean;
+  scientific_verdict: string; theta: string; nu: string; eta: string; gaussian_theta: string;
+  moment_range: string; charged_exponents: string[]; kappa_lower: string;
+  simple_density_floor: string; simple_density_decimal: string;
+  previous_onset: string; onset: string; adversarial_boxes: number;
+  analytic_moment_reviewed: boolean; arithmetic_alone_proves_theorem: boolean;
+  external_peer_review: boolean; worldwide_priority_confirmed: boolean;
+  effective_height: boolean; rh_solved: boolean;
+  publication: { passed: boolean; status: string; version: string; version_doi: string;
+    concept_doi: string; record_url: string; external_peer_review: boolean;
+    files: { name: string; bytes: number; sha256: string; live_bytes_verified: boolean; url: string }[] };
+  source_sha256: Record<string, string>; imported_inputs: string[]; trust_boundary: string;
+};
 export type RiemannData = {
   schema: 'riemann-replay-v9';
   distinct_zero?: RiemannDistinctZero;
+  short_window_moment?: RiemannShortWindowMoment;
   reviewed_on: string;
   result: {
     theta: string; radius: string; delta: string;

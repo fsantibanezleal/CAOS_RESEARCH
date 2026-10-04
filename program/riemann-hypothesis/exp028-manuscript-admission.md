@@ -31,3 +31,12 @@ exact public download verification precede admitting publication as complete.
 Zenodo publication is already authorized by the user and methodology 09; it
 does not constitute peer review. Repository promotion and an accurate
 serialized application release remain separate delivery requirements.
+
+## Publication gate completion
+
+The immutable v0.02 is published as DOI 10.5281/zenodo.23132248, concept
+10.5281/zenodo.22984154. Final compilation, scientific voice, all fourteen
+rendered pages, the 80-member extracted source replay and both exact public
+downloads pass. Research PR #370 is merged with passing develop CI.
+The earlier source/PDF bytes are unchanged. App release 0.76.000 still
+requires its rendered matrix and verified production promotion.

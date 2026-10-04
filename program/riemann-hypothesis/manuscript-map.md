@@ -83,7 +83,7 @@ arXiv full text, so specialist confirmation is still required.
 |---|---|---|---|
 | `short-interval-stability` | v0.07 | `10.5281/zenodo.22860012` | `10.5281/zenodo.22727388` |
 | `sharp-three-point-kernel` | v0.01 | `10.5281/zenodo.22940291` | `10.5281/zenodo.22940290` |
-| `short-interval-levinson` | v0.01 | `10.5281/zenodo.23132248` | `10.5281/zenodo.22984154` |
+| `short-interval-levinson` | v0.02 | `10.5281/zenodo.23132248` | `10.5281/zenodo.22984154` |
 
 ## Active focus and routing of future results
 
