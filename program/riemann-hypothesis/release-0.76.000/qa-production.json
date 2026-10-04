@@ -1,0 +1,202 @@
+{
+  "schema": "riemann-release-ui-qa-v1",
+  "release": "0.76.000",
+  "passed": true,
+  "scope": "Complete pointer-driven six-tab and 28-experiment replay; finite UI evidence, not a mathematical proof.",
+  "raw_receipt": {
+    "bytes": 13669488,
+    "sha256": "0627df2483d776e79711ecc3f8d1e738d9129a97d3628ccc3f9925422758563a",
+    "gzip_sha256": "4d24d7aea78bcf2f99dc33bcdf06751681441f63c8ce4caf34524913dc48f0b6"
+  },
+  "script_sha256": "f970da1b8e29b3a5a6999901e0de27090b8470be62a4a2b8e7076a216607c071",
+  "browser_version": "153.0.8010.12",
+  "candidate_commit": "fc4f82685bb5104443236da5a8d5d5c723ae45e0",
+  "build_manifest_sha256": "458652db3ee18ad20a7d0fd754b2ef478504cbd2d33a0d53285a8426e38557ce",
+  "started_utc": "2026-10-04T08:54:05.608Z",
+  "finished_utc": "2026-10-04T09:01:21.272Z",
+  "base_url": "https://research.fasl-work.com/",
+  "scenario_count": 8,
+  "tabs_visited": 48,
+  "screenshots": 704,
+  "failed_checks": 0,
+  "all_screenshot_bytes_verified": true,
+  "visual_review": "Selected screenshots require separate visual inspection; automated success is not a visual-review attestation.",
+  "scenarios": [
+    {
+      "id": "1440x1000-en-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T08:54:06.086Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 985,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 88
+    },
+    {
+      "id": "1440x1000-en-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T08:55:07.914Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 985,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 88
+    },
+    {
+      "id": "1440x1000-es-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T08:56:06.153Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 985,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 88
+    },
+    {
+      "id": "1440x1000-es-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T08:57:04.916Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 985,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 88
+    },
+    {
+      "id": "390x844-en-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T08:58:06.128Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 985,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 88
+    },
+    {
+      "id": "390x844-en-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T08:58:55.058Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 985,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 88
+    },
+    {
+      "id": "390x844-es-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T08:59:44.552Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 985,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 88
+    },
+    {
+      "id": "390x844-es-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T09:00:32.737Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 985,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 88
+    }
+  ]
+}

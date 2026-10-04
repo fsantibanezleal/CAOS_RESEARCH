@@ -99,7 +99,7 @@
     {
       "id": "RH-F4",
       "title": "Short-interval onset toward theta>1/2",
-      "status": "active",
+      "status": "active-success-gate-met",
       "priority": 4,
       "target": "Lower the simple-critical positivity onset below 0.534, ideally to every theta>1/2, or prove a documented barrier for the available methods.",
       "value": "Positivity for every theta>1/2 would close the short-interval question for these methods; a documented barrier prevents wasted rounds.",
@@ -112,7 +112,7 @@
       ],
       "novelty_status": "Primary-source overlap review through 2026-10-04 located no matching onset; internal derivations and independent arithmetic pass. External peer review and worldwide novelty remain unconfirmed.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "EXP-028 internally closes the moment gate; v0.02 is published at 10.5281/zenodo.23132248. Finish scoped promotion and accurate app release before reviewing the next focus.",
+      "first_bounded_action": "EXP-028 and published v0.02 close the original below-0.534 gate; app 0.76.000 is verified live. Retain RH-F4 for the source-complete rational-frequency Mellin preflight in strategy-review-20261004.md; declare a new experiment before controls. No new gain admitted.",
       "evidence": [
         "EXP-010",
         "EXP-011",

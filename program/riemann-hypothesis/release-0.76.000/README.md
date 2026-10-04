@@ -54,6 +54,11 @@ The separate clarification replay passes 20 scenarios and 40 screenshots.
 Selected final images pass [manual review](manual-final-review.json); the
 two earlier stale paragraphs and their resolution remain in the review history.
 
-PR #371 is ready for scoped promotion. Main promotion, tag, actual Pages
-artifact/live byte identity and production replay remain required before
-delivery. Local validation and manuscript publication do not attest deployment.
+App delivery passes: PR #371 merged to develop with CI 37190215722;
+PR #372 merged to main at fc4f82685bb5104443236da5a8d5d5c723ae45e0, with CI
+37190319416 and Pages 37190319392 passing. Tag v0.76.000 records this
+build. All 76 live files match the actual CI artifact and reviewed
+candidate. Production replay passes 8 scenarios, 48 tabs and
+704 verified PNGs; selected production inspection passes.
+See [promotion](promotion.json), [live byte verification](production-byte-verification.json)
+and [production replay](qa-production.json).

@@ -1,0 +1,15 @@
+{
+  "schema": "rh-mellin-frequency-source-v1",
+  "downloaded_utc": "2026-10-04T08:51:51Z",
+  "files": [
+    {
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/08F8E4E4C36F68ED6DDA373CCAF7A221/S0305004122000251a.pdf/div-class-title-correlations-of-almost-primes-div.pdf",
+      "doi": "10.1017/S0305004122000251",
+      "file": "E:/_Datos/caos-research/riemann-hypothesis/mellin-mean-square-preflight/evans-correlations.pdf",
+      "bytes": 474241,
+      "sha256": "d65db84e7908d85cf9579f2ae6e778534f16097e95bd3732c12a4db4fe571261",
+      "rights": "Original CC BY license retained; external research archive",
+      "review_scope": "Section 7.3 mean-value lemmas and attribution; ending proof and bibliography. Not an audit of all 44 pages."
+    }
+  ]
+}
