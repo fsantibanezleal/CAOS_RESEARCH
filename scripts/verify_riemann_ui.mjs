@@ -490,7 +490,7 @@ async function runScenario(viewport, lang, theme) {
       const panelId = await panel.getAttribute('id');
       requireCondition(panelId?.endsWith(`-panel-${id}`), `Wrong panel after ${id}: ${panelId}`);
       check(scenario, `${id}: substantive rendered content`, norm(await panel.innerText()).length >= 150);
-      check(scenario, `${id}: current EXP-028 theorem and publication visible`, (await panel.locator('[data-evidence="EXP-028"]').count()) === 1 && (await panel.locator('[data-evidence="EXP-028"] a[href="https://doi.org/10.5281/zenodo.23132248"]').count()) === 1);
+      check(scenario, `${id}: current EXP-028 theorem and publication visible`, (await panel.locator('[data-evidence="EXP-028"]').count()) === 1 && (await panel.locator('[data-evidence="EXP-028"] .rh-source-links a[href="https://doi.org/10.5281/zenodo.23132248"]').count()) === 1);
       scenario.tabs_visited.push(id);
       await panelScreens(page, panel, scenario, id, ['summary', 'context', 'strategy'].includes(id));
       await proofControls(page, panel, scenario, id);

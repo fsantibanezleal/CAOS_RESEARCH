@@ -224,7 +224,7 @@ describe('Riemann contextual architecture', () => {
     }
     const science = config.tabs.find((tab) => tab.id === 'science')!;
     const method = config.tabs.find((tab) => tab.id === 'method')!;
-    expect(science.svg).toContain('EXP-010-levinson-parity-transfer/mathematical-proof.md');
+    expect(science.svg).toContain('EXP-028-chirp-separated-moment/mellin-proof.md');
     expect(science.svg).toContain('EXP-008-rank-six-local-transfer/mathematical-proof.md');
     expect(science.svg).toContain(lang === 'en' ? 'Certified global and local bounds' : 'Cotas globales y locales certificadas');
     expect(method.svg).toContain('docs/guides/riemann-replay.md');
