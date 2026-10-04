@@ -1,0 +1,336 @@
+{
+  "schema": "zenodo-manuscript-packaging-correction-v1",
+  "passed": true,
+  "record_id": "23132248",
+  "doi": "10.5281/zenodo.23132248",
+  "concept_doi": "10.5281/zenodo.22984154",
+  "version": "0.02",
+  "status": "published",
+  "pdf_only": true,
+  "pdf_bytes_unchanged": true,
+  "pdf_sha256": "710e174a8c08c2a20cb0a94b6bbdaaf2bb8feb3f24b56ebc9f753bb4b019a66c",
+  "pdf_filename": "riemann-hypothesis-short-interval-levinson-v0.02.pdf",
+  "pdf_bytes": 443857,
+  "companion": {
+    "schema": "separate-zenodo-evidence-publication-v1",
+    "status": "published",
+    "passed": true,
+    "record_id": "23135349",
+    "doi": "10.5281/zenodo.23135349",
+    "concept_doi": "10.5281/zenodo.23135348",
+    "version": "0.02",
+    "manuscript_record": "23132248",
+    "resource_type": "dataset",
+    "metadata": {
+      "resource_type": {
+        "id": "dataset",
+        "title": {
+          "de": "Datensatz",
+          "en": "Dataset"
+        }
+      },
+      "creators": [
+        {
+          "person_or_org": {
+            "type": "personal",
+            "name": "Santibañez-Leal, Felipe",
+            "given_name": "Felipe",
+            "family_name": "Santibañez-Leal",
+            "identifiers": [
+              {
+                "identifier": "0000-0002-0150-3246",
+                "scheme": "orcid"
+              }
+            ]
+          },
+          "affiliations": [
+            {
+              "name": "CAOS Research program"
+            }
+          ]
+        }
+      ],
+      "title": "Reproducibility evidence for Levinson's method in short intervals and simple zeros of the zeta function",
+      "publisher": "Zenodo",
+      "publication_date": "2026-10-04",
+      "subjects": [
+        {
+          "subject": "reproducibility"
+        },
+        {
+          "subject": "Riemann zeta function"
+        },
+        {
+          "subject": "supporting research artifacts"
+        }
+      ],
+      "languages": [
+        {
+          "id": "eng",
+          "title": {
+            "en": "English"
+          }
+        }
+      ],
+      "related_identifiers": [
+        {
+          "identifier": "10.5281/zenodo.23132248",
+          "scheme": "doi",
+          "relation_type": {
+            "id": "issupplementto",
+            "title": {
+              "de": "Ergänzt",
+              "en": "Is supplement to"
+            }
+          },
+          "resource_type": {
+            "id": "publication-preprint",
+            "title": {
+              "de": "Preprint",
+              "en": "Preprint"
+            }
+          }
+        }
+      ],
+      "version": "0.02",
+      "rights": [
+        {
+          "id": "cc-by-4.0",
+          "title": {
+            "en": "Creative Commons Attribution 4.0 International"
+          },
+          "description": {
+            "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+          },
+          "icon": "cc-by-icon",
+          "props": {
+            "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "scheme": "spdx"
+          }
+        }
+      ],
+      "description": "<p>Supporting research artifacts for the manuscript version 0.02, DOI 10.5281/zenodo.23132248. This is a separate evidence dataset, not the manuscript publication. It preserves the original archive bytes, including mathematical source notes, certified arithmetic records, verification programs and reproducibility instructions. Finite arithmetic and source checks do not establish a universal analytic theorem, external peer review, worldwide priority, an effective height or the Riemann hypothesis.</p><p>The manuscript PDF is available only through the linked manuscript record. This evidence record contains the supporting ZIP archives; it does not contain a manuscript PDF. Existing licenses and attributed third-party notices inside the archives remain applicable to their respective files.</p>"
+    },
+    "files": [
+      {
+        "name": "riemann-hypothesis-short-interval-levinson-v0.02-source.zip",
+        "bytes": 263557,
+        "sha256": "944c99623d57fcff3db5a380d08dd5907bfbc40250c5c1f7f8d1fefd188da5c1",
+        "md5": "460e4da7dc5a834baf9536290ebdd7d1",
+        "url": "https://zenodo.org/api/records/23135349/files/riemann-hypothesis-short-interval-levinson-v0.02-source.zip/content",
+        "live_bytes_verified": true
+      }
+    ],
+    "manuscript_pdf_included": false,
+    "verified_utc": "2026-10-04T10:29:36.474815+00:00"
+  },
+  "removed_from_manuscript_only": [
+    "riemann-hypothesis-short-interval-levinson-v0.02-source.zip"
+  ],
+  "all_artifacts_preserved_in_companion": true,
+  "before_record_sha256": "4fde3c0aeb9633fd26737525ca92f48257bae437679d3dd931570bdcb980e7a9",
+  "metadata": {
+    "resource_type": {
+      "id": "publication-preprint",
+      "title": {
+        "de": "Preprint",
+        "en": "Preprint"
+      }
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Santibañez-Leal, Felipe",
+          "given_name": "Felipe",
+          "family_name": "Santibañez-Leal",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0150-3246",
+              "scheme": "orcid"
+            }
+          ]
+        },
+        "affiliations": [
+          {
+            "name": "CAOS Research program"
+          }
+        ]
+      }
+    ],
+    "title": "Levinson's method in short intervals and simple zeros of the zeta function",
+    "publisher": "Zenodo",
+    "publication_date": "2026-10-04",
+    "subjects": [
+      {
+        "subject": "Riemann zeta function"
+      },
+      {
+        "subject": "simple zeros"
+      },
+      {
+        "subject": "critical line"
+      },
+      {
+        "subject": "short intervals"
+      },
+      {
+        "subject": "Levinson method"
+      },
+      {
+        "subject": "mollifier"
+      },
+      {
+        "subject": "Kloosterman fractions"
+      },
+      {
+        "subject": "Mellin transform"
+      },
+      {
+        "subject": "interval arithmetic"
+      }
+    ],
+    "languages": [
+      {
+        "id": "eng",
+        "title": {
+          "en": "English"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://arxiv.org/abs/2609.07918v1",
+        "scheme": "url",
+        "relation_type": {
+          "id": "issupplementto",
+          "title": {
+            "de": "Ergänzt",
+            "en": "Is supplement to"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "https://arxiv.org/abs/1002.4403",
+        "scheme": "url",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "publication-article",
+          "title": {
+            "de": "Zeitschriftenartikel",
+            "en": "Journal article"
+          }
+        }
+      },
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "scheme": "url",
+        "relation_type": {
+          "id": "issupplementedby",
+          "title": {
+            "de": "Wird ergänzt durch",
+            "en": "Is supplemented by"
+          }
+        },
+        "resource_type": {
+          "id": "software",
+          "title": {
+            "de": "Software",
+            "en": "Software"
+          }
+        }
+      },
+      {
+        "identifier": "10.5281/zenodo.22860012",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "10.5281/zenodo.23135349",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "issupplementedby",
+          "title": {
+            "de": "Wird ergänzt durch",
+            "en": "Is supplemented by"
+          }
+        },
+        "resource_type": {
+          "id": "dataset",
+          "title": {
+            "de": "Datensatz",
+            "en": "Dataset"
+          }
+        }
+      }
+    ],
+    "version": "0.02",
+    "rights": [
+      {
+        "id": "cc-by-4.0",
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        },
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "props": {
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "scheme": "spdx"
+        }
+      }
+    ],
+    "description": "<p>For each fixed 1/2 &lt; theta &lt; 1, a shifted mollified second-moment formula is derived on intervals of length T^theta for fixed mollifier and differential-operator polynomials, with 0 &lt; nu &lt; min(1/2, (17/33)(2 theta - 1)). The argument combines a signed Gaussian representation, the shifted composite Voronoi transformation and Bettin-Chandee's trilinear Kloosterman-fraction estimate. Exact Mellin multipliers provide coefficient separation and a summable dual tail; an exact Hankel-symbol representation gives a second derivation. Both residues, coalescing shifts, unbalanced blocks, gcd sums and compact-window smoothing are retained.</p><p>With a fixed previously certified degree-201 detector and Wang's recent short-interval pair-correlation preprint, the counting and parity transfer gives a positive asymptotic proportion of simple critical-line zeros in (T, T+T^theta] for every fixed theta in [0.5339, 1). At theta = 0.5339 the certified lower density exceeds 0.0003985233159135. The proof and exact arithmetic controls have undergone internal review. The result is asymptotic, depends on attributed external theorems, and supplies no effective height, external peer-review claim, worldwide-priority assertion or proof of the Riemann hypothesis.</p><p>Supporting certificates, code and research artifacts are published separately at <a href=\"https://doi.org/10.5281/zenodo.23135349\">10.5281/zenodo.23135349</a>. This manuscript record contains only the unchanged manuscript PDF.</p>",
+    "additional_descriptions": [
+      {
+        "description": "<p><strong>Version notes.</strong> Extends the short-window mollifier range from nu &lt; theta - 1/2 to nu &lt; min(1/2, (17/33)(2 theta - 1)); adds full Mellin and exact Hankel derivations with explicitly charged smoothing margin. The internally reviewed onset becomes 0.5339 with a fixed certified detector. Includes a source archive whose extracted auditors pass. The earlier published PDF remains immutable.</p>",
+        "type": {
+          "id": "other",
+          "title": {
+            "de": "Sonstige",
+            "en": "Other"
+          }
+        }
+      },
+      {
+        "description": "<p>Publication packaging correction, 4 October 2026: supporting archives have been relocated to the separate evidence record 10.5281/zenodo.23135349. The manuscript PDF, scientific content, version and DOI are unchanged.</p>",
+        "type": {
+          "id": "other",
+          "title": {
+            "de": "Sonstige",
+            "en": "Other"
+          }
+        }
+      }
+    ]
+  },
+  "verified_utc": "2026-10-04T10:30:34.026598+00:00",
+  "scientific_content_or_tex_changed": false
+}

@@ -1,5 +1,17 @@
 # Riemann hypothesis state
 
+## Research paused by the user, 2026-10-04
+
+Riemann experimentation and the proposed 0.77.000 app release are stopped.
+No owned mathematical experiment is active. The sole current task is validation
+and correction of the session's publication packaging and dependent records.
+Read publication-correction-20261004/README.md for the three corrected manuscript
+records, separate evidence DOIs, account-wide preservation audit and remaining
+repair gates. Unfinished app code is preserved at dcb213bb on the pushed paused
+app branch and is not promotable. PR #376 remains a draft; EXP-023 stays stopped
+and unproved. No new mathematical experiment or research release is authorized.
+
+
 ## In flight, 2026-10-04: EXP-029
 
 EXP-029 is internally proved for nu<min(1/2,2theta-1,(5theta-2)/6),

@@ -1,5 +1,18 @@
 # Levinson short-interval manuscript v0.03
 
+## Publication packaging corrected, 2026-10-04
+
+The [manuscript record](https://zenodo.org/records/23134787) contains only the
+original manuscript PDF. Its version, DOI and PDF bytes are unchanged.
+Supporting archives are published separately as
+[evidence companion 10.5281/zenodo.23135354](https://doi.org/10.5281/zenodo.23135354).
+Current state is in current-publication.json, evidence-companion.json and
+packaging-correction.json. The original publication-receipt.json and source
+archive checks remain historical snapshots of the initial deposit. Statements
+below about archives being supplied with the manuscript record are superseded
+by this correction; research evidence and all archived bytes are preserved.
+
+
 Published 4 October 2026: [10.5281/zenodo.23134787](https://doi.org/10.5281/zenodo.23134787),
 concept [10.5281/zenodo.22984154](https://doi.org/10.5281/zenodo.22984154).
 

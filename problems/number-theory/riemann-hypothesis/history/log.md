@@ -776,3 +776,17 @@ pass with historical false theorem flags retained. Public PDF (481,395
 bytes) and ZIP (280,338 bytes) match exactly. Earlier v0.01/v0.02 files
 stay immutable. Promotion and app delivery remain open; no external
 review, effective height, worldwide priority or RH assertion.
+
+## 2026-10-04: user stop and manuscript packaging correction
+
+The user stopped Riemann research and requested an account-wide validation and
+repair of the session's publication decisions. The three manuscript records
+23134787, 23132248 and 23128663 incorrectly contained four supporting archives.
+All are corrected to manuscript-only contents, preserving the original PDF bytes
+and DOIs. Separate evidence records 23135354, 23135349 and 23135359 preserve all
+four ZIPs and link to the proper manuscript versions. All 245 manuscript records
+are now PDF-only; all 267 unrelated existing publications are unchanged. The
+original mixed-deposit receipts remain historical snapshots. Compact current
+views and the full-account audit are in publication-correction-20261004.
+No mathematical experiment was active. Paused app WIP is pushed at dcb213bb;
+no new theorem promotion, bake, app deployment or tag is part of this correction.

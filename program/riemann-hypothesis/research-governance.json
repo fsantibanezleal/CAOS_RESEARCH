@@ -518,5 +518,7 @@
         "short-interval-levinson"
       ]
     }
-  ]
+  ],
+  "execution_state": "paused-by-user",
+  "current_work": "Publication integrity correction only; no Riemann experimentation or research release."
 }
