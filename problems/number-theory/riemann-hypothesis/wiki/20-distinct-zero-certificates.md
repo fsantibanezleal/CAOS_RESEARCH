@@ -6,9 +6,11 @@ gives Nd/N asymptotic lower bound 3997934614153/4775507750000, approximately
 0.8371747724947154. The source-attributed vector-pressure consequence EXP-025
 gives 30945470743359/36955122080000, approximately 0.8373797460706156.
 
-The proof and computations are published in the focused companion
-[v0.01](https://doi.org/10.5281/zenodo.23128663), with the full certificate ZIP
-and scoped mathematical source. [The concept DOI](https://doi.org/10.5281/zenodo.23128662)
+The manuscript PDF is published as
+[v0.01](https://doi.org/10.5281/zenodo.23128663). The full certificate ZIP
+and scoped mathematical source are in the
+[separate evidence record](https://doi.org/10.5281/zenodo.23135359).
+[The concept DOI](https://doi.org/10.5281/zenodo.23128662)
 resolves to later versions. The three earlier papers remain immutable.
 
 ## General implication and the reusable pressure rule

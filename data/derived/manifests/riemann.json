@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 44192941,
+  "bytes": 44214063,
   "path": "research/riemann.json",
-  "sha256": "12131bee1104ecf39b24448bf0108bf59e867a576b0c74bad4bdb5282f131815"
+  "sha256": "25aa0cd765f0342cb8a1d27ee8506c3298e9ffc7718ca49787fd9cd612bbb7ba"
  },
  "case_id": "riemann",
  "gate": {
@@ -1004,6 +1004,22 @@
    "source_exp": "distinct-zero-companion"
   },
   {
+   "bytes": 7429,
+   "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/current-publication.json",
+   "role": "distinct_current_publication",
+   "sha256": "525a8102cf055b78b197596e79d761f2538e3954dba14ae5a2a41b1ac2bc5a86",
+   "source_commit": "bafbebb622e398ac6223d74bf7858c84fcf389e9",
+   "source_exp": "distinct-zero-publication-correction"
+  },
+  {
+   "bytes": 4147,
+   "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/evidence-companion.json",
+   "role": "distinct_companion",
+   "sha256": "bd22161901ff53e140034b6efddad840d309ac7ee4631746941ec46e7fbef40e",
+   "source_commit": "bafbebb622e398ac6223d74bf7858c84fcf389e9",
+   "source_exp": "distinct-zero-publication-correction"
+  },
+  {
    "bytes": 2839,
    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/hypothesis.md",
    "role": "moment_hypothesis",
@@ -1185,6 +1201,22 @@
    "role": "moment_review",
    "sha256": "5f75e6119956c8938e8276747173cc99c4ddb52b1d971ec57cae82554432f718",
    "source_commit": "5eeec3965c309717e0d09f91cb0f774793563292",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 7972,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/current-publication.json",
+   "role": "moment_current_publication",
+   "sha256": "d25404b86a32ce3b072af50e44b956a2d21203f9b8ac6966a04bb4fd31c6c077",
+   "source_commit": "bafbebb622e398ac6223d74bf7858c84fcf389e9",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 3799,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/evidence-companion.json",
+   "role": "moment_companion",
+   "sha256": "5982c59d68ace36625cffc198758b9399722d0955f027b401133f5b36edf740f",
+   "source_commit": "bafbebb622e398ac6223d74bf7858c84fcf389e9",
    "source_exp": "EXP-028-chirp-separated-moment"
   }
  ]

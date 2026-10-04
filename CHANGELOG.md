@@ -3,6 +3,17 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.76.001] - 2026-10-04
+
+### Fixed
+- Riemann manuscript records contain only their unchanged original PDFs;
+  supporting archives are separately published with reciprocal links.
+- Publication admission rejects mixed manuscript records, broken supplement
+  links, changed archive hashes and stale file locations. The replay links
+  manuscript PDFs and evidence records separately.
+- Existing scientific results and all unrelated registry payloads are preserved.
+  Research and its unfinished app release remain paused by the user.
+
 ## [0.76.000] - 2026-10-04
 
 ### Added

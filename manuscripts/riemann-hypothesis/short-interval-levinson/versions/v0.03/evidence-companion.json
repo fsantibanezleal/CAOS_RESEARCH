@@ -1,0 +1,113 @@
+{
+  "schema": "separate-zenodo-evidence-publication-v1",
+  "status": "published",
+  "passed": true,
+  "record_id": "23135354",
+  "doi": "10.5281/zenodo.23135354",
+  "concept_doi": "10.5281/zenodo.23135348",
+  "version": "0.03",
+  "manuscript_record": "23134787",
+  "resource_type": "dataset",
+  "metadata": {
+    "resource_type": {
+      "id": "dataset",
+      "title": {
+        "de": "Datensatz",
+        "en": "Dataset"
+      }
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Santibañez-Leal, Felipe",
+          "given_name": "Felipe",
+          "family_name": "Santibañez-Leal",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0150-3246",
+              "scheme": "orcid"
+            }
+          ]
+        },
+        "affiliations": [
+          {
+            "name": "CAOS Research program"
+          }
+        ]
+      }
+    ],
+    "title": "Reproducibility evidence for Levinson's method in short intervals and simple zeros of the zeta function",
+    "publisher": "Zenodo",
+    "publication_date": "2026-10-04",
+    "subjects": [
+      {
+        "subject": "reproducibility"
+      },
+      {
+        "subject": "Riemann zeta function"
+      },
+      {
+        "subject": "supporting research artifacts"
+      }
+    ],
+    "languages": [
+      {
+        "id": "eng",
+        "title": {
+          "en": "English"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.23134787",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "issupplementto",
+          "title": {
+            "de": "Ergänzt",
+            "en": "Is supplement to"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      }
+    ],
+    "version": "0.03",
+    "rights": [
+      {
+        "id": "cc-by-4.0",
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        },
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "props": {
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "scheme": "spdx"
+        }
+      }
+    ],
+    "description": "<p>Supporting research artifacts for the manuscript version 0.03, DOI 10.5281/zenodo.23134787. This is a separate evidence dataset, not the manuscript publication. It preserves the original archive bytes, including mathematical source notes, certified arithmetic records, verification programs and reproducibility instructions. Finite arithmetic and source checks do not establish a universal analytic theorem, external peer review, worldwide priority, an effective height or the Riemann hypothesis.</p><p>The manuscript PDF is available only through the linked manuscript record. This evidence record contains the supporting ZIP archives; it does not contain a manuscript PDF. Existing licenses and attributed third-party notices inside the archives remain applicable to their respective files.</p>"
+  },
+  "files": [
+    {
+      "name": "riemann-hypothesis-short-interval-levinson-v0.03-source.zip",
+      "bytes": 280338,
+      "sha256": "f64fe74a4e62083f4487f5b04a4f3786a5cae5658ace0e6f94b505417c00cb6c",
+      "md5": "c08277702c1467c9bab53510f60d240b",
+      "url": "https://zenodo.org/api/records/23135354/files/riemann-hypothesis-short-interval-levinson-v0.03-source.zip/content",
+      "live_bytes_verified": true
+    }
+  ],
+  "manuscript_pdf_included": false,
+  "verified_utc": "2026-10-04T10:29:46.804812+00:00"
+}

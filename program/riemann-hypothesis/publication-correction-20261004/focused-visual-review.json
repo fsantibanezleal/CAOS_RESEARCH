@@ -1,0 +1,217 @@
+{
+  "schema": "riemann-publication-links-visual-review-v1",
+  "passed": true,
+  "release": "0.76.001",
+  "scope": "All 16 focused changed-link screenshots, desktop/phone EN/ES light/dark; not a claim that every full matrix PNG was manually inspected.",
+  "findings": "Manuscript PDF and separate evidence labels are distinct, legible and correctly wrapped in all focused views; scientific scope and old app values are preserved.",
+  "images": [
+    {
+      "file": "1440x1000-en-light-moment.png",
+      "bytes": 119214,
+      "sha256": "2877056cb2d91cee3c0aab38313a0f9bb0ff84cd24ee1b23458c8d512dd1a7d3",
+      "lang": "en",
+      "theme": "light",
+      "kind": "moment",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "1440x1000-en-light-distinct.png",
+      "bytes": 123652,
+      "sha256": "5da64704c7cb7a9f85ea00449222de9f62498f9303f6c0259fc97c2da3038770",
+      "lang": "en",
+      "theme": "light",
+      "kind": "distinct",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "1440x1000-en-dark-moment.png",
+      "bytes": 120201,
+      "sha256": "d6db0df9ffcfea6763b1f7a124956c71c582a5b509f1540301942e4ed8148aa8",
+      "lang": "en",
+      "theme": "dark",
+      "kind": "moment",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "1440x1000-en-dark-distinct.png",
+      "bytes": 124428,
+      "sha256": "61819591c46cdf78e83b1a61420bbe6ccf0fcb16830c2e379d9fd6eba205c295",
+      "lang": "en",
+      "theme": "dark",
+      "kind": "distinct",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "1440x1000-es-light-moment.png",
+      "bytes": 123285,
+      "sha256": "9f524bc91db7891987e71d51d195f8ff1153d2dbb8cd9be8c26d0b516599ea9d",
+      "lang": "es",
+      "theme": "light",
+      "kind": "moment",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "1440x1000-es-light-distinct.png",
+      "bytes": 128533,
+      "sha256": "b2ad4aa7cc8a3ad83081c707f63c0c50016d4a00b75750976841f8ffdc4aec3e",
+      "lang": "es",
+      "theme": "light",
+      "kind": "distinct",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "1440x1000-es-dark-moment.png",
+      "bytes": 124056,
+      "sha256": "36d8e2a5916dc9f623d2c7525c21817ac373f94fdb2d61d3f30a1e9f679d86c8",
+      "lang": "es",
+      "theme": "dark",
+      "kind": "moment",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "1440x1000-es-dark-distinct.png",
+      "bytes": 129599,
+      "sha256": "f0d2027238a296e8e0e6a810b3fbc64eabaac5eed56737985abd983af36eee21",
+      "lang": "es",
+      "theme": "dark",
+      "kind": "distinct",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "390x844-en-light-moment.png",
+      "bytes": 56455,
+      "sha256": "fae0fe8872442cbfb4f8e70e3e6d95e272b096d576075c827e465c97565fdfad",
+      "lang": "en",
+      "theme": "light",
+      "kind": "moment",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "390x844-en-light-distinct.png",
+      "bytes": 57633,
+      "sha256": "2c8018e1923affeaa5ada53654b120a236cb1f9581e22f41d293b5042776a53e",
+      "lang": "en",
+      "theme": "light",
+      "kind": "distinct",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "390x844-en-dark-moment.png",
+      "bytes": 56914,
+      "sha256": "a88c1c0d079a2f6fab2c6bbf5cf5a4eca23ffef779ccfef1651a2bed2efd3c75",
+      "lang": "en",
+      "theme": "dark",
+      "kind": "moment",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "390x844-en-dark-distinct.png",
+      "bytes": 58053,
+      "sha256": "ab97ef7fec742e1abe081c959881b524c538095f38b6247162565bc0106b48a1",
+      "lang": "en",
+      "theme": "dark",
+      "kind": "distinct",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "390x844-es-light-moment.png",
+      "bytes": 56082,
+      "sha256": "b3a0993ba326cfbbbd70b320c979b6c7c17a7a6492847ed3c195074bd63cfe91",
+      "lang": "es",
+      "theme": "light",
+      "kind": "moment",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "390x844-es-light-distinct.png",
+      "bytes": 55423,
+      "sha256": "8449610ac4bbf3f8c87b70187031ee2963a1d982313ef240c08adcda3856fe24",
+      "lang": "es",
+      "theme": "light",
+      "kind": "distinct",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "390x844-es-dark-moment.png",
+      "bytes": 56398,
+      "sha256": "72216d8f419c9dd1473bbc157caa608d01c0a4c62c9030396343574efb5f6327",
+      "lang": "es",
+      "theme": "dark",
+      "kind": "moment",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actually_visually_inspected": true
+    },
+    {
+      "file": "390x844-es-dark-distinct.png",
+      "bytes": 56192,
+      "sha256": "8554a8a1e606acb6a8cacd9b57bbc68d524f18930b7fb7ea44f7963a33cbfd48",
+      "lang": "es",
+      "theme": "dark",
+      "kind": "distinct",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actually_visually_inspected": true
+    }
+  ]
+}

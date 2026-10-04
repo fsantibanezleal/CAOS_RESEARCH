@@ -1,0 +1,226 @@
+{
+  "schema": "caos-manuscript-publication-v2",
+  "passed": true,
+  "status": "published",
+  "record_id": "23128663",
+  "version": "0.01",
+  "version_doi": "10.5281/zenodo.23128663",
+  "concept_doi": "10.5281/zenodo.23128662",
+  "record_url": "https://zenodo.org/records/23128663",
+  "metadata": {
+    "resource_type": {
+      "id": "publication-preprint",
+      "title": {
+        "de": "Preprint",
+        "en": "Preprint"
+      }
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Santibañez-Leal, Felipe",
+          "given_name": "Felipe",
+          "family_name": "Santibañez-Leal",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0150-3246",
+              "scheme": "orcid"
+            }
+          ]
+        },
+        "affiliations": [
+          {
+            "name": "CAOS Research program"
+          }
+        ]
+      }
+    ],
+    "title": "Stronger local overlap certificates and distinct zeros of the Riemann zeta function",
+    "publisher": "Zenodo",
+    "publication_date": "2026-10-03",
+    "subjects": [
+      {
+        "subject": "Riemann zeta function"
+      },
+      {
+        "subject": "distinct zeros"
+      },
+      {
+        "subject": "pair correlation"
+      },
+      {
+        "subject": "mixed multiplicities"
+      },
+      {
+        "subject": "Gram matrix"
+      },
+      {
+        "subject": "interval arithmetic"
+      },
+      {
+        "subject": "local overlap certificate"
+      }
+    ],
+    "languages": [
+      {
+        "id": "eng",
+        "title": {
+          "en": "English"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://arxiv.org/abs/2609.33043v1",
+        "scheme": "url",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "https://arxiv.org/abs/2306.04799v1",
+        "scheme": "url",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "https://arxiv.org/abs/2501.14545v3",
+        "scheme": "url",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "https://www.riemannzeta.fun/submissions/attempt-013",
+        "scheme": "url",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        }
+      },
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "scheme": "url",
+        "relation_type": {
+          "id": "issupplementedby",
+          "title": {
+            "de": "Wird ergänzt durch",
+            "en": "Is supplemented by"
+          }
+        },
+        "resource_type": {
+          "id": "software",
+          "title": {
+            "de": "Software",
+            "en": "Software"
+          }
+        }
+      },
+      {
+        "identifier": "10.5281/zenodo.23135359",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "issupplementedby",
+          "title": {
+            "de": "Wird ergänzt durch",
+            "en": "Is supplemented by"
+          }
+        },
+        "resource_type": {
+          "id": "dataset",
+          "title": {
+            "de": "Datensatz",
+            "en": "Dataset"
+          }
+        }
+      }
+    ],
+    "version": "0.01",
+    "rights": [
+      {
+        "id": "cc-by-4.0",
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        },
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "props": {
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "scheme": "spdx"
+        }
+      }
+    ],
+    "description": "We derive a lower asymptotic proportion 30945470743359/36955122080000 = 0.8373797460706156... of distinct nontrivial zeta zeros, relative to zeros counted with multiplicity, by applying Knausgard's mixed-multiplicity Gram argument to Lavery's seven-point local theorem with unequal gap pressures. The external local theorem is an explicit dependency; its reported Lean and nanoda checks were not rebuilt locally. A separate complete eight-gap interval computation proves a stronger nine-point local inequality at pressure 1/2500 and gives the independently replayed bound 3997934614153/4775507750000 = 0.8371747724947154... . The block transfer uses an elementary spectral dichotomy, without a sharp trace envelope. Independent rational window enclosures, complete closed-cell input comparisons and extracted-source checks support the computations. The analytic input is the corrected integrated unconditional pair-correlation theorem of Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh. The results are asymptotic; they do not prove the Riemann hypothesis or give an effective height. Code and data: https://github.com/fsantibanezleal/CAOS_RESEARCH .<p>Supporting certificates, code and research artifacts are published separately at <a href=\"https://doi.org/10.5281/zenodo.23135359\">10.5281/zenodo.23135359</a>. This manuscript record contains only the unchanged manuscript PDF.</p>",
+    "additional_descriptions": [
+      {
+        "description": "<p>Publication packaging correction, 4 October 2026: supporting archives have been relocated to the separate evidence record 10.5281/zenodo.23135359. The manuscript PDF, scientific content, version and DOI are unchanged.</p>",
+        "type": {
+          "id": "other",
+          "title": {
+            "de": "Sonstige",
+            "en": "Other"
+          }
+        }
+      }
+    ]
+  },
+  "files": [
+    {
+      "name": "riemann-hypothesis-distinct-zero-gram-v0.01.pdf",
+      "filename": "riemann-hypothesis-distinct-zero-gram-v0.01.pdf",
+      "bytes": 376803,
+      "sha256": "2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4",
+      "md5": "431f9d122511783d7fe22bbae97ec836",
+      "live_bytes_verified": true,
+      "live_download_exact_match": true,
+      "url": "https://zenodo.org/api/records/23128663/files/riemann-hypothesis-distinct-zero-gram-v0.01.pdf/content"
+    }
+  ],
+  "pdf_sha256": "2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4",
+  "manuscript_only": true,
+  "external_peer_review": false,
+  "evidence_companion_doi": "10.5281/zenodo.23135359",
+  "evidence_companion_record_id": "23135359",
+  "verified_utc": "2026-10-04T10:31:27.036950+00:00",
+  "scientific_content_changed": false
+}
