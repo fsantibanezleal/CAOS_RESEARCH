@@ -15,9 +15,14 @@ Published: short-interval-levinson **v0.02**, version DOI
 [10.5281/zenodo.23132248](https://doi.org/10.5281/zenodo.23132248), concept
 10.5281/zenodo.22984154. All 14 PDF pages and the 80-member extracted
 source package pass review; both live downloads match their SHA-256 hashes.
-Next: scoped PR promotion and an accurately serialized app release. The live
-0.75.000 app retains its established 25-record snapshot and 0.534 display
-until that release; mathematical validation is not a deployment claim.
+App 0.76.000 is live after PRs #371/#372, with passing CI and Pages run
+37190319392 at main fc4f82685bb5104443236da5a8d5d5c723ae45e0. All 76 live files
+match the reviewed build and actual CI artifact. Production replay passes
+8 scenarios, 48 tabs and 704 hash-checked PNGs; selected actual
+production views pass visual inspection. See release-0.76.000/promotion.json.
+The next analytic preflight retains RH-F4 and tests Mellin frequency
+averaging; it is unproved. Read strategy-review-20261004.md and the
+source preflight before declaring any experiment. EXP-023 stays stopped.
 See exp028-manuscript-admission.md and the EXP-028 verdict/proof-review.
 
 EXP-027 supplies the complete classical transformed representation. EXP-026
@@ -184,3 +189,8 @@ RH-042 includes completed EXP-020 and derived EXP-025. Publication is complete a
 The declared EXP-023 pending-box diagnostic found no counterexample at 21
 exact midpoints; it does not complete the remaining shard or certify any box.
 See its declaration, preserved snapshot and pointwise review.
+
+RH-038 disposition, 2026-10-04: its moment-improvement target is closed
+by EXP-028 via the complete EXP-027/Mellin route. The earlier hybrid
+asymptotic-large-sieve obligation was bypassed, not proved. Further RH-F4
+work is the unproved frequency preflight, not an automatic EXP-023 restart.

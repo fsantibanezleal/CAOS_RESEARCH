@@ -1,0 +1,34 @@
+{
+  "schema": "riemann-production-manual-review-v1",
+  "passed": true,
+  "main_commit": "fc4f82685bb5104443236da5a8d5d5c723ae45e0",
+  "scope": "Five selected actual production views, including EN light desktop and EN/ES dark phones; not all 704 PNGs human-inspected.",
+  "findings": "Current range and density, attributed proof links, incompleteness and peer-review boundaries render correctly. Mobile long mathematics remains in its scrollable container.",
+  "images": [
+    {
+      "file": "screenshots/production-1440x1000-en-light-002-summary-top.png",
+      "sha256": "1fe4d42591dac28041cbf7968d8c4447fb304a3b16c7eeb2103e150bd6a172a1",
+      "actually_inspected": true
+    },
+    {
+      "file": "screenshots/production-1440x1000-en-light-010-approaches-top.png",
+      "sha256": "e3036ce67894b2a065e12cc5cd476a53610e01f334ccd4b330edb1a6d447c3e8",
+      "actually_inspected": true
+    },
+    {
+      "file": "screenshots/production-390x844-en-dark-002-summary-top.png",
+      "sha256": "64f6d9666ea5006279c4a203f91773054f8cfbd853cd2b34e59e4bfb86ec1590",
+      "actually_inspected": true
+    },
+    {
+      "file": "screenshots/production-390x844-es-dark-002-summary-top.png",
+      "sha256": "7396bef33ae8ff9ea5207602d49449937224b50b273170d949d5e137a107876f",
+      "actually_inspected": true
+    },
+    {
+      "file": "screenshots/production-390x844-es-dark-082-open-top.png",
+      "sha256": "81b2b820361df36cf22d1e081e6f7c506a304db12cf74b1d9f91da34f4e1ac9e",
+      "actually_inspected": true
+    }
+  ]
+}
