@@ -47,7 +47,13 @@ records, other scientific payloads and frozen earlier manuscripts unchanged.
 The four unsuccessful QA attempts are retained and excluded in
 [prior attempt dispositions](prior-qa-attempts.json).
 
-The complete rendered matrix is still in progress. PR #371 remains draft;
-main promotion, tag, actual Pages artifact/live byte identity and full
-production replay are required before this release is delivered. Local
-validation and manuscript publication do not attest deployment.
+The complete local rendered matrix passes: 20 scenarios, 120 tabs and 6,354
+full-panel screenshots, followed by the corrected-build regression with 20
+scenarios, 120 tabs and 1,760 screenshots. All actual PNG bytes are hash-checked.
+The separate clarification replay passes 20 scenarios and 40 screenshots.
+Selected final images pass [manual review](manual-final-review.json); the
+two earlier stale paragraphs and their resolution remain in the review history.
+
+PR #371 is ready for scoped promotion. Main promotion, tag, actual Pages
+artifact/live byte identity and production replay remain required before
+delivery. Local validation and manuscript publication do not attest deployment.

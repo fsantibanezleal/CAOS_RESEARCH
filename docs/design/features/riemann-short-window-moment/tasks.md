@@ -4,6 +4,6 @@
 - [x] Requirements and preimplementation design reviewed.
 - [x] Implement committed-source offline validator and actual-receipt corruption checks.
 - [x] Add typed browser admission, bilingual six-tab content and translated experiment records.
-- [ ] Validate focused exports/frontend, repository guards and rendered matrix.
+- [x] Validate focused exports/frontend, repository guards and rendered matrix.
 - [ ] Serialize 0.76.000 bake, verify unrelated scope, promote develop/main, tag and verify production artifact and UI.
 - [ ] Persist final evidence, update problem handoff and close issue #369 accurately.
