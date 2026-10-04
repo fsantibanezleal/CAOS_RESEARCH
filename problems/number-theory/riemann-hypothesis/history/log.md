@@ -714,3 +714,7 @@ EXP-023 reached its owned six-hour deadline; shutdown completed 02:48:18 UTC.
 1,053,509-byte archive SHA256 c4316f289694754df3beb0d8fc795a4e4f30d610ea999be8c24357d77dd508e2.
 Its proposed distinct-strip bound remains unproved. No data or frozen
 publication was removed, relocated or overwritten. RH-F4 remains primary.
+
+## 2026-10-04: immutable Levinson v0.02 published
+
+EXP-028 is published with its full internally reviewed moment proof at DOI 10.5281/zenodo.23132248, concept 10.5281/zenodo.22984154. All fourteen final rendered pages pass visual review. The 80-member source ZIP replays native, rational and 7,430 exact adversarial controls from extraction. PDF and ZIP public bytes match the compact receipts. Earlier root v0.01 remains unchanged. Promotion and a new app release remain open; publication is not external peer review.

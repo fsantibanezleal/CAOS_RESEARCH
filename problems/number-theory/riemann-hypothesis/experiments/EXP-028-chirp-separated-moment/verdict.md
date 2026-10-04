@@ -1,4 +1,4 @@
-# EXP-028 verdict: internally derived longer short-window mollifier
+# EXP-028 verdict: confirmed (internal review)
 
 [D] The two persisted analytic derivations and the refutation review establish
 the shifted mollified second moment, for fixed polynomials P,Q and R, in

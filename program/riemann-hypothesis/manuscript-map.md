@@ -11,8 +11,11 @@ simple-critical density greater than 0.0003985233159135 at theta=0.5339.
 The mathematical onset is now 0.5339 internally; external review, worldwide
 priority and effective height are unconfirmed. RH remains open.
 
-Next: immutable short-interval-levinson v0.02 source/PDF and publication,
-scoped PR promotion and an accurately serialized app release. The live
+Published: short-interval-levinson **v0.02**, version DOI
+[10.5281/zenodo.23132248](https://doi.org/10.5281/zenodo.23132248), concept
+10.5281/zenodo.22984154. All 14 PDF pages and the 80-member extracted
+source package pass review; both live downloads match their SHA-256 hashes.
+Next: scoped PR promotion and an accurately serialized app release. The live
 0.75.000 app retains its established 25-record snapshot and 0.534 display
 until that release; mathematical validation is not a deployment claim.
 See exp028-manuscript-admission.md and the EXP-028 verdict/proof-review.
@@ -80,7 +83,7 @@ arXiv full text, so specialist confirmation is still required.
 |---|---|---|---|
 | `short-interval-stability` | v0.07 | `10.5281/zenodo.22860012` | `10.5281/zenodo.22727388` |
 | `sharp-three-point-kernel` | v0.01 | `10.5281/zenodo.22940291` | `10.5281/zenodo.22940290` |
-| `short-interval-levinson` | v0.01 | `10.5281/zenodo.22984155` | `10.5281/zenodo.22984154` |
+| `short-interval-levinson` | v0.01 | `10.5281/zenodo.23132248` | `10.5281/zenodo.22984154` |
 
 ## Active focus and routing of future results
 

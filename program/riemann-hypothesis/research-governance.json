@@ -112,7 +112,7 @@
       ],
       "novelty_status": "Primary-source overlap review through 2026-10-04 located no matching onset; internal derivations and independent arithmetic pass. External peer review and worldwide novelty remain unconfirmed.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "EXP-028 internally closes the below-0.534 analytic gate via two separation-norm derivations and certified theta=0.5339. Complete immutable manuscript/publication and serialized deployment before closing delivery.",
+      "first_bounded_action": "EXP-028 internally closes the moment gate; v0.02 is published at 10.5281/zenodo.23132248. Finish scoped promotion and accurate app release before reviewing the next focus.",
       "evidence": [
         "EXP-010",
         "EXP-011",
@@ -371,11 +371,11 @@
     },
     {
       "slug": "short-interval-levinson",
-      "path": "manuscripts/riemann-hypothesis/short-interval-levinson",
-      "version": "0.01",
-      "version_doi": "10.5281/zenodo.22984155",
+      "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02",
+      "version": "0.02",
+      "version_doi": "10.5281/zenodo.23132248",
       "concept_doi": "10.5281/zenodo.22984154",
-      "status": "published",
+      "status": "published-internally-reviewed",
       "split_action": "none"
     },
     {
@@ -471,7 +471,7 @@
     },
     {
       "start": 21,
-      "end": 22,
+      "end": 23,
       "classification": "research-record",
       "manuscripts": []
     },
