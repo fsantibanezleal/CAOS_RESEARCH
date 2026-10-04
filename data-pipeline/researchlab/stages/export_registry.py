@@ -18,6 +18,8 @@ from pathlib import Path
 
 import yaml
 
+from . import riemann_distinct
+
 ROOT = Path(__file__).resolve().parents[3]
 DERIVED = ROOT / "data" / "derived"
 MANIFESTS = DERIVED / "manifests"
@@ -38,7 +40,7 @@ EXP010_CANONICAL = "3dba086fed900d5a828bb78182fc68541b641d8a"
 EXP011_DECLARATION = "9886f07bc05928c635754261fe282034af08904f"
 EXP011_AMENDMENT = "136b40f01d17b0bb4a4d3e5ad8b57fac74af44a8"
 EXP012_DECLARATION = "76c4439830027619f52163a6c344d55d96ed26b4"
-RIEMANN_EXPERIMENT_MAX = 12
+RIEMANN_EXPERIMENT_MAX = 25
 
 
 def _read_portfolio() -> dict:
@@ -1061,6 +1063,22 @@ def _riemann_payload() -> dict:
         raise ValueError("EXP-012 weight-size check did not pass")
     if b"**Verdict: inconclusive.**" not in source_bytes["tang_verdict"]:
         raise ValueError("EXP-012 verdict must remain inconclusive")
+    if RIEMANN_EXPERIMENT_MAX >= 25:
+        distinct_raw = {}
+        for role, (experiment, path) in riemann_distinct.INPUTS.items():
+            distinct_raw[role] = read_source(role, experiment, path.removeprefix(problem + "/")) if path.startswith(problem + "/") else _committed_bytes(path)
+            if not path.startswith(problem + "/"):
+                commit = subprocess.run(
+                    ["git", "log", "-1", "--format=%H", "HEAD", "--", path],
+                    cwd=ROOT, check=True, capture_output=True, text=True,
+                ).stdout.strip()
+                payload["provenance"].append({
+                    "role": role, "source_exp": experiment, "path": path,
+                    "source_commit": commit, "bytes": len(distinct_raw[role]),
+                    "sha256": hashlib.sha256(distinct_raw[role]).hexdigest(),
+                })
+        payload["distinct_zero"] = riemann_distinct.validate(distinct_raw)
+        payload["reviewed_on"] = "2026-10-03"
     return payload
 
 

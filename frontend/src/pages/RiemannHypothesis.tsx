@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Callout, Cite, Equation, InlineMath, Refs, Tabs, type TabDef } from '@fasl-work/caos-app-shell';
 import { useT } from '../lib/i18n';
 import { loadExperiments, loadRiemann, type ExperimentRec, type RiemannData } from '../api/data';
+import RiemannDistinct from '../components/RiemannDistinct';
+import { distinctZeroEvidence } from '../lib/riemannDistinct';
 import { decimalCenter as center, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence, wangKernelEvidence, levinsonEvidence, barrierEvidence, tangStopEvidence } from '../lib/riemannReplay';
 
 const ExperimentModal = lazy(() => import('../components/ExperimentModal'));
@@ -184,7 +186,7 @@ export default function RiemannHypothesis() {
     let active = true;
     setError(false); setRecordsError(false);
     loadRiemann().then((value) => { if (active) setData(value); }).catch(() => { if (active) setError(true); });
-    loadExperiments().then((value) => { if (active) setExps(value.filter((e) => e.problem === 'riemann-hypothesis' && ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012'].includes(e.id))); }).catch(() => { if (active) setRecordsError(true); });
+    loadExperiments().then((value) => { if (active) setExps(value.filter((e) => e.problem === 'riemann-hypothesis' && /^\d{3}$/.test(e.id) && Number(e.id) >= 1 && Number(e.id) <= 25)); }).catch(() => { if (active) setRecordsError(true); });
     return () => { active = false; };
   }, [attempt]);
   const result = data?.result;
@@ -202,6 +204,23 @@ export default function RiemannHypothesis() {
   const levinson = levinsonEvidence(data);
   const barrier = barrierEvidence(data);
   const tangStop = tangStopEvidence(data);
+  const distinct = distinctZeroEvidence(data);
+  const newExperimentName = (id: string) => ({
+    '013': t('Mixed-Gram parameter cap', 'Cota de parámetros de Gram mixto'),
+    '014': t('Short-window phase collision', 'Colisión de fases en ventanas cortas'),
+    '015': t('Squarefree phase collision', 'Colisión de fases libre de cuadrados'),
+    '016': t('Trace-aware clipping', 'Truncamiento con control de traza'),
+    '017': t('Sharp energy envelope', 'Envolvente óptima de energía'),
+    '018': t('Nine-point distinct transfer', 'Transferencia de ceros distintos con nueve puntos'),
+    '019': t('Nine-point replay (suspended)', 'Reproducción de nueve puntos (suspendida)'),
+    '020': t('Completed quadratic local certificate', 'Certificado local cuadrático completo'),
+    '021': t('Composite-character arithmetic layer', 'Capa aritmética de caracteres compuestos'),
+    '022': t('Fixed pressure-assembly ceiling', 'Cota de ensamblaje fijo de presiones'),
+    '023': t('Repressured local certificate (incomplete)', 'Certificado local con nueva presión (incompleto)'),
+    '024': t('Gaussian/Mellin moment reduction', 'Reducción de momentos por Gauss/Mellin'),
+    '025': t('Vector-pressure distinct-zero transfer', 'Transferencia vectorial de ceros distintos'),
+  }[id] || `EXP-${id}`);
+  const recordStatus = (e: ExperimentRec) => e.id === '019' ? t('Suspended; no complete certificate', 'Suspendido; sin certificado completo') : e.id === '023' ? t('Incomplete; bound excluded', 'Incompleto; cota excluida') : ['020', '025'].includes(e.id) ? t('Confirmed; published', 'Confirmado; publicado') : ({confirmed: t('Confirmed', 'Confirmado'), refuted: t('Refuted', 'Refutado'), inconclusive: t('Inconclusive', 'No concluyente'), mixed: t('Mixed', 'Mixto'), pass: t('Passed', 'Verificado')}[e.verdict] || t('Read persisted verdict', 'Leer veredicto persistido'));
   const sourceRole = (role: string) => ({
     local_result: t('EXP-005 exact threshold certificate', 'Certificado exacto del umbral de EXP-005'),
     local_receipt: t('EXP-005 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-005'),
@@ -327,6 +346,7 @@ export default function RiemannHypothesis() {
   const tabs: TabDef[] = [
     {
       id: 'summary', label: t('Summary', 'Resumen'), content: <section>
+        <RiemannDistinct evidence={distinct} mode="summary" />
         <h2>{t('Short-interval Levinson result', 'Resultado de Levinson en intervalos cortos')}</h2>
         <p className="rh-lead">{t('EXP-010 localizes Levinson’s method, with Conrey’s operator polynomial of any degree, to every interval (T, T + T^θ] whenever the mollifier exponent satisfies ν < θ − 1/2, and shows that on such windows it counts distinct sign changes of Hardy’s function. Certified degree-201 detectors give κ > 0.7170 ν. Through the EXP-006 Hilbert-parity product, every fixed θ in [0.534, 1) has a positive proportion of simple critical zeros in (T, T + T^θ]; the previous onset was 0.5458838.', 'EXP-010 localiza el método de Levinson, con el polinomio operador de Conrey de cualquier grado, en cada intervalo (T, T + T^θ] siempre que el exponente del mollificador cumpla ν < θ − 1/2, y muestra que en esas ventanas cuenta cambios de signo distintos de la función de Hardy. Detectores certificados de grado 201 dan κ > 0.7170 ν. Mediante el producto de Hilbert-paridad de EXP-006, cada θ fijo en [0.534, 1) tiene una proporción positiva de ceros críticos simples en (T, T + T^θ]; el umbral anterior era 0.5458838.')}</p>
         <Equation tex={String.raw`\liminf_{T\to\infty}\frac{O(T,T^\theta)}{N(T,T^\theta)}\ge\kappa=1-\frac{\log c(P,Q,R,\nu)}{R},\qquad \nu<\theta-\tfrac12`} />
@@ -394,6 +414,7 @@ m fixed})`} />
     },
     {
       id: 'context', label: t('Context & history', 'Contexto e historia'), content: <section>
+        <RiemannDistinct evidence={distinct} mode="context" />
         <h2>{t('What “on the critical line” means', 'Qué significa «en la recta crítica»')}</h2>
         <p>{t('The nontrivial zeros lie in the strip between real parts zero and one. RH asserts that all of them have real part one-half. A positive-proportion theorem addresses a different question: how many zeros can be proved to lie on that line, or to be simple, compared with the total count? A simple zero has multiplicity one. A distinct-zero count counts each location once even when its multiplicity is larger.', 'Los ceros no triviales están en la franja entre partes reales cero y uno. RH afirma que todos tienen parte real un medio. Un teorema de proporción positiva aborda otra pregunta: ¿cuántos ceros pueden demostrarse en esa recta, o simples, respecto del número total? Un cero simple tiene multiplicidad uno. El conteo de ceros distintos cuenta cada ubicación una sola vez aunque su multiplicidad sea mayor.')}</p>
         <Equation tex={String.raw`N_0^s\le N_0\le N,\qquad N^d\le N,\qquad \mathrm{RH}:\ \zeta(\rho)=0,\ 0<\Re\rho<1\Longrightarrow\Re\rho=\tfrac12`}
@@ -416,6 +437,7 @@ m fixed})`} />
     },
     {
       id: 'approaches', label: t('References & approaches', 'Referencias y enfoques'), content: <section>
+        <RiemannDistinct evidence={distinct} mode="approaches" />
         <h2>{t('A map of the evidence', 'Un mapa de la evidencia')}</h2>
         <p>{t('The review follows primary proof documents, pinned source repositories, and their explicit theorem statements. An announcement, a successful library build, a finite interval certificate, and an end-to-end formal theorem answer different questions. Each source below is useful within its own boundary.', 'La revisión sigue documentos primarios de prueba, repositorios fijados por versión y sus enunciados explícitos. Un anuncio, una compilación exitosa de biblioteca, un certificado finito de intervalos y un teorema formal de extremo a extremo responden preguntas distintas. Cada fuente es útil dentro de su propio alcance.')}</p>
         <div className="rs-scroll"><table className="rs-table">
@@ -444,6 +466,7 @@ m fixed})`} />
     },
     {
       id: 'strategy', label: t('Strategy', 'Estrategia'), content: <section>
+        <RiemannDistinct evidence={distinct} mode="strategy" />
         <h2>{t('Keep the information lost at equality', 'Conservar la información perdida en la igualdad')}</h2>
         <p>{t('A normalized even density determines vectors for the zeros and a finite self-adjoint operator A. Its trace is the total multiplicity N; its squared Hilbert–Schmidt norm is Q. The simple real atoms form a positive operator with Gram matrix G. The residual operator includes signed off-line conjugate pairs, so replacing the complex pair sum by a sum of absolute squares would change the mathematics.', 'Una densidad par normalizada determina vectores para los ceros y un operador autoadjunto finito A. Su traza es la multiplicidad total N; el cuadrado de su norma de Hilbert–Schmidt es Q. Los átomos reales simples forman un operador positivo con matriz de Gram G. El operador residual incluye pares conjugados con signo fuera de la recta, de modo que reemplazar la suma compleja por una suma de módulos al cuadrado cambiaría la matemática.')}</p>
         <Equation tex={String.raw`S\ge2N-Q+D(G),\qquad D(G)=\operatorname{tr}\Psi(G),\qquad \Psi(t)=\begin{cases}(t-1)^2&0\le t\le2,\\2t-3&t\ge2.\end{cases}`}
@@ -515,9 +538,11 @@ m fixed})`} />
     },
     {
       id: 'results', label: t('Experiments & results', 'Experimentos y resultados'), content: <section>
+        <RiemannDistinct evidence={distinct} mode="results" />
+        <p>{t('EXP-013–025 extend the program through kernel reconstruction, alternative moment routes, distinct-zero transfers and complete local certificates. EXP-020 and EXP-025 are completed and published. EXP-019 is suspended; EXP-023 remains incomplete. Supporting identities and finite controls do not establish the missing signed asymptotic moment estimate.', 'EXP-013–025 amplían el programa mediante reconstrucción de núcleos, vías alternativas de momentos, transferencias de ceros distintos y certificados locales completos. EXP-020 y EXP-025 están completos y publicados. EXP-019 está suspendido; EXP-023 sigue incompleto. Las identidades auxiliares y los controles finitos no establecen la estimación asintótica con signo que falta.')}</p>
         <h2>{t('Read the experiment records', 'Leer los registros experimentales')}</h2>
         <p>{t('EXP-001 through EXP-006 establish the audited source, stability, pressure, parity, localization and Hilbert layers. EXP-007 retains the spectral defect in the parity product. EXP-008 proves rank-independent localization and applies the attributed rank-six constant to move the onset below 0.5458838. EXP-009 sharpens a kernel constant in Wang’s global refinement. EXP-010 localizes Levinson’s method and moves the onset to 0.534. EXP-011 certifies that linear refinements of the finite inequality cannot help much, and EXP-012 records why Tang’s reciprocity with standard bounds does not lengthen the mollifier. Open a record to read its declaration, verdict, artifacts and source history.', 'EXP-001 a EXP-006 establecen las capas auditadas de fuentes, estabilidad, presión, paridad, localización y Hilbert. EXP-007 conserva el defecto espectral en el producto de paridad. EXP-008 prueba la localización independiente del rango y aplica la constante atribuida de rango seis para mover el umbral bajo 0.5458838. EXP-009 afina una constante de núcleo en el refinamiento global de Wang. EXP-010 localiza el método de Levinson y mueve el umbral a 0.534. EXP-011 certifica que los refinamientos lineales de la desigualdad finita no ayudan mucho, y EXP-012 registra por qué la reciprocidad de Tang con cotas estándar no alarga el mollificador. Abra un registro para leer su declaración, veredicto, artefactos e historia.')}</p>
-        <ul className="rh-experiments">{exps.map((e) => <li key={e.slug}><button className="rs-exp-open" onClick={() => setOpen(e)}>EXP-{e.id}: {e.id === '001' ? t('Source and constant audit', 'Auditoría de fuentes y constantes') : e.id === '002' ? t('Short-interval stability refinement', 'Refinamiento por estabilidad en intervalos cortos') : e.id === '003' ? t('Odd-frame pressure refinement', 'Refinamiento por presión con marcos impares') : e.id === '004' ? t('Parity density transfer', 'Transferencia de densidad por paridad') : e.id === '005' ? t('Local Selberg transfer', 'Transferencia local de Selberg') : e.id === '006' ? t('Hilbert-parity compression', 'Compresión de Hilbert y paridad') : e.id === '007' ? t('Spectral-defect parity', 'Paridad con defecto espectral') : e.id === '008' ? t('Rank-six local transfer', 'Transferencia local de rango seis') : e.id === '009' ? t('Sharp three-point kernel', 'Núcleo óptimo de tres puntos') : e.id === '010' ? t('Localized Levinson detector', 'Detector de Levinson localizado') : e.id === '011' ? t('Linear-refinement barrier', 'Barrera para refinamientos lineales') : e.id === '012' ? t('Tang-type short-window moment (stopped)', 'Momento en ventana corta tipo Tang (detenido)') : `EXP-${e.id}`}</button><span className="rs-badge state">{e.verdict || t('Record available', 'Registro disponible')}</span></li>)}</ul>
+        <ul className="rh-experiments">{exps.map((e) => <li key={e.slug}><button className="rs-exp-open" onClick={() => setOpen(e)}>EXP-{e.id}: {e.id === '001' ? t('Source and constant audit', 'Auditoría de fuentes y constantes') : e.id === '002' ? t('Short-interval stability refinement', 'Refinamiento por estabilidad en intervalos cortos') : e.id === '003' ? t('Odd-frame pressure refinement', 'Refinamiento por presión con marcos impares') : e.id === '004' ? t('Parity density transfer', 'Transferencia de densidad por paridad') : e.id === '005' ? t('Local Selberg transfer', 'Transferencia local de Selberg') : e.id === '006' ? t('Hilbert-parity compression', 'Compresión de Hilbert y paridad') : e.id === '007' ? t('Spectral-defect parity', 'Paridad con defecto espectral') : e.id === '008' ? t('Rank-six local transfer', 'Transferencia local de rango seis') : e.id === '009' ? t('Sharp three-point kernel', 'Núcleo óptimo de tres puntos') : e.id === '010' ? t('Localized Levinson detector', 'Detector de Levinson localizado') : e.id === '011' ? t('Linear-refinement barrier', 'Barrera para refinamientos lineales') : e.id === '012' ? t('Tang-type short-window moment (stopped)', 'Momento en ventana corta tipo Tang (detenido)') : newExperimentName(e.id)}</button><span className="rs-badge state">{recordStatus(e)}</span></li>)}</ul>
         {(recordsError || !exps.length) && <p>{t('Experiment records are currently unavailable in the viewer.', 'Los registros experimentales no están disponibles actualmente en el visor.')} <SourceLink href={`${REPO}/tree/main/${PROBLEM}/experiments`}>{t('Open the source records', 'Abrir los registros originales')}</SourceLink></p>}
         {resultTable}
         <p>{t('The baseline is Wang’s short-interval theorem. EXP-003 derives numerical refinements at θ = 3/4. EXP-004 gives the parity transfer. EXP-005 and EXP-006 supply the rank-three threshold. EXP-007 proves a strict spectral gain without changing that onset. EXP-008 moves the onset using the source-certified rank-six constant.', 'La cota base es el teorema de Wang en intervalos cortos. EXP-003 deriva refinamientos numéricos para θ = 3/4. EXP-004 da la transferencia de paridad. EXP-005 y EXP-006 aportan el umbral de rango tres. EXP-007 prueba una ganancia espectral estricta sin cambiar ese umbral. EXP-008 mueve el umbral usando la constante de rango seis certificada por la fuente.')} <Cite id="riemann-wang2026" /> <Cite id="riemann-pressure2026" /> <Cite id="riemann-local2026" /></p>
@@ -610,6 +635,7 @@ m fixed})`} />
     },
     {
       id: 'open', label: t('Open questions', 'Preguntas abiertas'), content: <section>
+        <RiemannDistinct evidence={distinct} mode="open" />
         <h2>{t('What remains to be established', 'Qué falta establecer')}</h2>
         <p>{t('The Riemann hypothesis remains the overarching open problem. The refinement gives a small strict gain inside a specified asymptotic counting problem. It does not place every zero on the line, prove all zeros simple, or determine a finite height beyond which the proportion holds. Those conclusions need additional mathematics.', 'La hipótesis de Riemann sigue siendo el problema abierto general. El refinamiento da una pequeña ganancia estricta dentro de un problema de conteo asintótico especificado. No sitúa todos los ceros en la recta, no demuestra que todos sean simples ni determina una altura finita a partir de la cual valga la proporción. Esas conclusiones requieren matemática adicional.')}</p>
         <ol className="rh-questions">
@@ -630,8 +656,8 @@ m fixed})`} />
   return <article className="page-body prose rh-page">
     <header className="rh-head">
       <div className="rh-title-row"><Link to="/">{t('Program board', 'Panel del programa')}</Link><span className="badge">{t('RH remains open', 'RH sigue abierta')}</span>{data && <span className="small muted">{t('Source review', 'Revisión de fuentes')}: {data.reviewed_on}</span>}</div>
-      <h1>{t('Riemann zeta: zeros in short intervals', 'Zeta de Riemann: ceros en intervalos cortos')}</h1>
-      <p className="muted">{t('A source review and a certified stability refinement for ', 'Una revisión de fuentes y un refinamiento certificado por estabilidad para ')}<InlineMath tex={String.raw`(T,T+T^\theta]`} />.</p>
+      <h1>{t('Riemann zeta: distinct zeros and short intervals', 'Zeta de Riemann: ceros distintos e intervalos cortos')}</h1>
+      <p className="muted">{t('Global distinct-zero certificates and separate simple-critical refinements in ', 'Certificados globales de ceros distintos y refinamientos separados de ceros críticos simples en ')}<InlineMath tex={String.raw`(T,T+T^\theta]`} />.</p>
       {(error || recordsError) && <button className="btn" onClick={() => setAttempt((value) => value + 1)}>{t('Retry loading the research data', 'Reintentar la carga de datos')}</button>}
     </header>
     <Tabs tabs={tabs} ariaLabel={t('Riemann research sections', 'Secciones de investigación de Riemann')} />
