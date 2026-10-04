@@ -534,7 +534,8 @@ try {
   const playwright = await loadPlaywright();
   const chromium = playwright.chromium || playwright.default?.chromium;
   requireCondition(chromium, 'Resolved module does not expose Playwright chromium');
-  browser = await chromium.launch({ headless: !options.headed });
+  browser = await chromium.launch({ headless: !options.headed,
+    ...(process.env.RIEMANN_CHROMIUM_EXECUTABLE ? { executablePath: process.env.RIEMANN_CHROMIUM_EXECUTABLE } : {}) });
   for (const viewport of options.viewports) {
     for (const lang of ['en', 'es']) {
       for (const theme of ['light', 'dark']) await runScenario(viewport, lang, theme);

@@ -1,5 +1,7 @@
 # EXP-020: confirmed stronger nine-point inequality and distinct-strip bound
 
+Verdict: **confirmed**.
+
 Closed 2026-10-03. Disposition: companion-manuscript, subject to the focused
 manuscript's final exposition and publication checks.
 

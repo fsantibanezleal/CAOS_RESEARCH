@@ -31,7 +31,7 @@ Experiment names/statuses are translated for all new records.
 
 Release owner: this chat, branch
 `work/riemann-hypothesis/distinct-zero-release-20261003`, full checkout
-`E:/_Temp/caos-riemann-release`. Frozen compute checkout remains untouched. Proposed
+the separate `caos-riemann-release` integration checkout. Frozen compute checkout remains untouched. Proposed
 capability version 0.75.000 / package metadata 0.75.0. GitHub Pages remains appropriate
 for the existing public, static baked workbench; no online heavy computation.
 

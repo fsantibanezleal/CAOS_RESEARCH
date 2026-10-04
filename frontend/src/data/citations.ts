@@ -10,7 +10,7 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'riemann-knausgard2026', label: 'Knausgard 2026',
-    citation: 'Knausgard (2026). Pinned arXiv:2609.33043v1 distinct-zero argument: mixed Gram matrices and weighted local overlap, with distinct-strip proportion 0.83699288145242… . Source and theorem scopes are reviewed in the companion.',
+    citation: 'K. M. Knausgård (2026). More than 83.69% of the zeros of the Riemann zeta function are distinct. Pinned arXiv:2609.33043v1: mixed Gram matrices and weighted local overlap, with distinct-strip proportion 0.83699288145242… .',
     url: 'https://arxiv.org/abs/2609.33043v1',
   },
   {
@@ -21,7 +21,7 @@ export const CITATIONS: Citation[] = [
   {
     id: 'riemann-lavery2026', label: 'Lavery / typh / Ainta 2026',
     citation: 'Samuel Lavery, attempt-013 (3 October 2026), using typh’s thirteen-term window and Ainta’s weighted refinement. Pinned source 2fcb7dba28691632cdb0846d694c9b9902cfce66. External Lean/nanoda verification archived; not rebuilt locally. Its critical-line score is distinct from the derived strip-wide count.',
-    url: 'https://github.com/josusanmartin/riemann/tree/2fcb7dba28691632cdb0846d694c9b9902cfce66',
+    url: 'https://github.com/josusanmartin/riemann/tree/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/attempt-013',
   },
   {
     id: 'riemann-anthropic2026', label: 'Anthropic 2026',

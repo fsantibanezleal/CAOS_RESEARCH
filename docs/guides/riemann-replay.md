@@ -1,7 +1,43 @@
-# Reproduce the Riemann short-interval result
+# Reproduce the Riemann distinct-zero and short-interval results
 
 The [research wiki](../../problems/number-theory/riemann-hypothesis/wiki/) explains the theorem.
 This guide describes the evidence flow and public replay. All arithmetic runs offline on CPU.
+
+## Completed distinct-strip certificates
+
+The [published companion](https://doi.org/10.5281/zenodo.23128662) contains
+the general vector-pressure transfer, both complete source-dependent proofs,
+and the immutable PDF and two ZIPs. EXP-020 gives
+`3997934614153/4775507750000`; EXP-025 gives the stronger
+`30945470743359/36955122080000`. These count distinct points in the entire
+critical strip against all zeros with multiplicity, asymptotically in height.
+
+Download `exp020-runtime-reproducibility.zip` and verify SHA-256
+`91be4798774837bc16007a8236a692078e825ffb1c8dfa476c05d3c733b17879`.
+Its included README/manifest and frozen runtime reproduce the exact physical
+source and input bytes, including Windows line endings. The archive contains
+all 96 completed shard reports, both tables, checksums and independent cover
+and transfer auditors. Extract to a fresh directory and follow those bundled
+instructions. Git's normalized text bytes have separately recorded provenance
+and must not be substituted for the runtime's byte-bound files.
+
+The scoped mathematical-source ZIP includes the fully licensed external
+Lavery source, proofs and exact rational audit. EXP-025 uses Lavery's external
+local theorem with typh's window and Ainta's weighted refinement; its external
+Lean/nanoda attestation was archived but not locally rebuilt. EXP-020's native
+input audit shares FLINT/Arb with the interval execution. The exact-byte archive
+audit and public downloads do not rerun every interval operation.
+
+`tests/test_riemann_distinct_export.py` corrupts actual committed receipts and
+rejects incomplete coverage, changed sources, altered transfers and unpublished
+files. The offline exporter reads HEAD, not live checkpoints. Its additive
+`riemann-distinct-zero-v1` object preserves the existing replay-v9 contract.
+The browser validates recorded acceptance and provenance; it performs no search.
+EXP-019 is suspended and EXP-023 remains incomplete. Their candidates are excluded.
+
+The full [evidence guide](../../problems/number-theory/riemann-hypothesis/wiki/20-distinct-zero-certificates.md)
+separates arithmetic, universal proof, analytic input, publication and review.
+RH, effective heights, worldwide priority and external peer acceptance remain open.
 
 ## Restore and verify the sources
 

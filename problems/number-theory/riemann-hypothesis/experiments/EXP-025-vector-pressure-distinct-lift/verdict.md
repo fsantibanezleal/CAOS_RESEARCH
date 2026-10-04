@@ -1,5 +1,7 @@
 # EXP-025: vector-pressure distinct-strip consequence
 
+Verdict: **confirmed**.
+
 Confirmed as a derived, source-attributed consequence, 2026-10-03.
 Disposition: companion-manuscript with EXP-020.
 
