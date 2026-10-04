@@ -1,0 +1,47 @@
+{
+  "schema": "riemann-publication-repair-delivery-v1",
+  "passed": true,
+  "finished_utc": "2026-10-04T12:24:09.711735+00:00",
+  "release": "0.76.001",
+  "release_tag": "v0.76.001",
+  "release_commit": "59f66a1e9c27b80dbb7c11a5735dbe74ff7ac1c2",
+  "repair_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/378",
+  "release_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/379",
+  "main_ci": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/37200349099",
+  "pages_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/37200349141",
+  "production_url": "https://research.fasl-work.com/",
+  "local_scenarios": 20,
+  "local_screenshots": 1760,
+  "production_scenarios": 8,
+  "production_screenshots": 704,
+  "production_tabs": 48,
+  "live_file_count": 76,
+  "all_live_bytes_match_reviewed_candidate": true,
+  "proof_receipts": {
+    "local-ui-verification.json": "5775545b13001168da25953c42cd3eb26578659c28e67f44011ac21d12644315",
+    "production-ui-verification.json": "26211a65e61b21c1e05dcac2ea9aeb0121595c58d7a61b1c78f5a7a26a280071",
+    "production-byte-verification.json": "30bcbd35c226217c9e3676ddb9cb9e93f30f951757e135d06a5f5593c1101ac5",
+    "focused-visual-review.json": "e5239e3ad487506e6e8853da2cb8458c083ebd422b05fad8e67ccbfe9efc81f0",
+    "manifest.json": "3bf3f7b1712492ecb1510fb27452b46d42ec631b17094594b0dddc4afb0458d3",
+    "local-screenshot-manifest.json": "95a2e339242009f88772c7f9ba2b4a28f5d486b11d8744f0f69a2afab376b963",
+    "production-screenshot-manifest.json": "ef40b5c914b079d47f2aa56d75b5034062d2c78ab8293d45e1e3376a25c9880d"
+  },
+  "manuscript_records_pdf_only": [
+    "23132248",
+    "23134787",
+    "23128663"
+  ],
+  "separate_evidence_records": [
+    "23135349",
+    "23135354",
+    "23135359"
+  ],
+  "all_245_manuscript_file_sets_pdf_only": true,
+  "all_267_unrelated_existing_publications_preserved": true,
+  "scope": "Publication packaging, admission and delivery; no scientific claim upgrade or theorem revalidation.",
+  "research_paused": true,
+  "scientific_pdfs_modified": false,
+  "paused_research_pr": 376,
+  "paused_research_promoted": false,
+  "raw_production_byte_receipt_sha256": "14d6907558391447febec1544fb5b4062223b06c36281957779738796c61b87e"
+}

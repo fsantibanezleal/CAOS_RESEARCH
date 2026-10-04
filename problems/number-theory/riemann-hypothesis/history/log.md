@@ -741,3 +741,14 @@ unchanged. Correction receipts and exact scope are recorded in
 program/riemann-hypothesis/publication-correction-20261004/.
 The repair branch starts at the delivered EXP-028 baseline and does not promote
 the paused EXP-029 research or unfinished app branch. EXP-023 remains incomplete.
+
+## 2026-10-04: Publication separation repair delivered
+
+Maintenance release 0.76.001 preserves the delivered scientific payload and
+corrects manuscript/evidence placement, admission and links. PRs #378/#379,
+main CI and Pages pass; all 76 live files match the reviewed build artifact.
+Production replay passes 8 scenarios and 48 tab visits, with
+704 verified screenshots. All 245 manuscript file sets are PDF-only;
+three evidence records retain the four original archives. Original PDFs,
+DOIs and historical receipts remain preserved. The account audit validates
+publication placement, not every theorem. Research and PR #376 stay paused.
