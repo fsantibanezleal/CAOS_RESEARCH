@@ -58,6 +58,23 @@ Gate, run before every build that will be deposited and enforced in CI:
   requests changes as further versions). Record id + DOIs go into the
   metadata.md the same session.
 
+## Manuscript records and supporting evidence (user clarification, 2026-10-04)
+
+A manuscript Zenodo record contains the manuscript PDF itself. Supporting
+artifacts, source archives, certificates, data and additional research content
+belong in a separate evidence record, linked with the appropriate supplement
+relations. They are not uploaded into the manuscript record. Software releases
+remain separately classified software records.
+
+The publication gate verifies record type and the exact file set as well as
+byte hashes: one manuscript PDF in a manuscript record; artifact files in the
+separate companion. A correct checksum does not establish correct packaging.
+Keep historical publication receipts as snapshots and persist a separate
+current-state correction receipt when repairing placement. Never replace the
+scientific PDF or change its DOI as a side effect of moving supporting files.
+The user's authorized 2026-10-04 placement repair uses Zenodo's supported owner
+correction process within its grace period; it changes no scientific content.
+
 ## The update strategy (versions, never edits)
 
 - Published files are FROZEN: every change ships as a Zenodo NEW VERSION

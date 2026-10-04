@@ -1,5 +1,15 @@
 # Riemann hypothesis handoff
 
+## Research paused by the user, 2026-10-04
+
+Riemann experimentation and the proposed research app release are stopped.
+The only active task is publication separation and its dependent records,
+validation and links. See publication-correction-20261004/actions.md.
+No mathematical experiment is active. EXP-023 remains stopped and incomplete.
+Research PR #376 remains a draft. Its research branch and the unfinished app
+branch are preserved without promotion. This repair retains the existing
+app's scientific results and does not admit the paused research result.
+
 ## Current experiment update, 2026-10-04: EXP-028
 
 EXP-028 is internally proved: the uniform shifted moment admits

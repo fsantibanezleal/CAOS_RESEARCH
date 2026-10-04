@@ -4,6 +4,8 @@ from __future__ import annotations
 import hashlib
 import json
 
+from . import riemann_publication
+
 PROBLEM = "problems/number-theory/riemann-hypothesis"
 E20 = "EXP-020-quadratic-local-certificate"
 E25 = "EXP-025-vector-pressure-distinct-lift"
@@ -26,11 +28,15 @@ INPUTS = {
     "distinct_local_verdict": (E20, f"{PROBLEM}/experiments/{E20}/verdict.md"),
     "distinct_publication": ("distinct-zero-companion", f"{PAPER}/publication-receipt.json"),
     "distinct_paper": ("distinct-zero-companion", f"{PAPER}/main.pdf"),
+    "distinct_current_publication": ("distinct-zero-publication-correction", f"{PAPER}/current-publication.json"),
+    "distinct_companion": ("distinct-zero-publication-correction", f"{PAPER}/evidence-companion.json"),
 }
 
 
 def validate(raw: dict[str, bytes]) -> dict:
     """Validate recorded receipts, retaining the external arithmetic trust boundary."""
+    if set(INPUTS) - set(raw):
+        raise ValueError("Distinct-zero evidence rejected: missing source")
     def record(role, schema):
         data = json.loads(raw[role])
         if data.get("schema") != schema:
@@ -110,6 +116,7 @@ def validate(raw: dict[str, bytes]) -> dict:
             and b"pass internal review" in raw["distinct_vector_review"], "completed proof reviews")
     require(publication["id"] == 23128663 and publication["concept_doi"] == "10.5281/zenodo.23128662",
             "publication record")
+    # Preserve the original deposit receipt; admit current packaging separately.
     files = publication["files"]
     require(len(files) == 3 and all(f.get("live_download_exact_match") is True for f in files),
             "published byte checks")
@@ -117,6 +124,8 @@ def validate(raw: dict[str, bytes]) -> dict:
     require(pdf["sha256"] == hashlib.sha256(raw["distinct_paper"]).hexdigest(), "published PDF bytes")
     zipped = next(f for f in files if f["filename"] == archive["archive_filename"])
     require(zipped["sha256"] == archive["archive_sha256"], "published runtime archive")
+    current, companion = riemann_publication.admit(publication, raw["distinct_current_publication"],
+                                                  raw["distinct_companion"], raw["distinct_paper"])
     return {
         "schema": "riemann-distinct-zero-v1", "accepted": True,
         "counted_objects": "distinct zero points in the whole critical strip",
@@ -131,7 +140,7 @@ def validate(raw: dict[str, bytes]) -> dict:
                    "H_lower": vector["window"]["H_cert"], "accepted": True,
                    "source_sha256": source_hash, "external_local_formalization_rebuilt_here": False,
                    "source_author": "Samuel Lavery; window by typh; weighted refinement by Ainta"},
-        "publication": publication, "archive": archive,
+        "publication": current, "evidence_companion": companion, "archive": archive,
         "incomplete_experiments": ["019", "023"],
         "excluded_claims": transfer["excluded_claims"],
         "trust_boundary": "Recorded source-dependent proofs; EXP-020 native checks share FLINT/Arb; EXP-025 external Lean/nanoda verification was archived, not rebuilt locally.",

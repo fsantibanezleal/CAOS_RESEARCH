@@ -509,5 +509,7 @@
         "short-interval-levinson"
       ]
     }
-  ]
+  ],
+  "execution_state": "paused-by-user",
+  "current_work": "publication-separation-repair-only"
 }

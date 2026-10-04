@@ -25,7 +25,13 @@ describe('completed distinct-zero evidence admission', () => {
       (d: RiemannData) => { d.distinct_zero!.vector.external_local_formalization_rebuilt_here = true; },
       (d: RiemannData) => { d.distinct_zero!.vector.source_sha256 = 'changed'; },
       (d: RiemannData) => { d.distinct_zero!.publication.files[0].live_download_exact_match = false; },
+      (d: RiemannData) => { d.distinct_zero!.publication.files.push(d.distinct_zero!.evidence_companion.files[0]); },
+      (d: RiemannData) => { d.distinct_zero!.evidence_companion.files.pop(); },
+      (d: RiemannData) => { d.distinct_zero!.evidence_companion.files[0].sha256 = 'changed'; },
+      (d: RiemannData) => { d.distinct_zero!.evidence_companion.metadata.related_identifiers = []; },
+      (d: RiemannData) => { d.distinct_zero!.evidence_companion.record_id = '23128663'; },
       (d: RiemannData) => { d.provenance = d.provenance.filter((p) => p.role !== 'distinct_native'); },
+      (d: RiemannData) => { d.provenance = d.provenance.filter((p) => p.role !== 'distinct_companion'); },
       (d: RiemannData) => { d.distinct_zero!.vector.fraction = '2340938143167/2795532013000'; },
     ]) {
       const data = replay(); corrupt(data); expect(distinctZeroEvidence(data)).toBeNull();

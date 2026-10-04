@@ -32,5 +32,9 @@ prove RH. The manuscript v0.02 is published at
 [10.5281/zenodo.23132248](https://doi.org/10.5281/zenodo.23132248), with
 all fourteen final pages reviewed and both public downloads verified. Its
 80-member extracted source archive replays the three arithmetic auditors.
+The manuscript record now contains only the unchanged PDF; its source archive
+is in the [separate evidence record](https://doi.org/10.5281/zenodo.23135349).
+The original deposit receipt is historical; the current-publication and
+evidence-companion receipts describe the corrected placement.
 Research PR #370 is merged and its develop CI passes. The separate 0.76.000
 app release remains a delivery step until its rendered and production gates pass.

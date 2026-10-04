@@ -1,0 +1,62 @@
+{
+  "schema": "riemann-publication-separation-manifest-v1",
+  "passed": true,
+  "scope": "Three manuscript records, four supporting ZIP archives; no scientific claim upgrade.",
+  "records": [
+    {
+      "manuscript_record_id": "23134787",
+      "manuscript_path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.03",
+      "sources": [
+        {
+          "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.03/current-publication.json",
+          "sha256": "51d2bfe97fc4afcc8e8e279643db4524f58adc40672f08dd5161ce24200cf5a4"
+        },
+        {
+          "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.03/evidence-companion.json",
+          "sha256": "bd3e10958af81e57b4a57a15cde0f599865eddb32a8b4b5518d43af602dd30a7"
+        },
+        {
+          "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.03/packaging-correction.json",
+          "sha256": "d11ef1632b3625984ba531f3eb1902ba8ffb736c17bde6c82116e8cf6cc8c52a"
+        }
+      ]
+    },
+    {
+      "manuscript_record_id": "23132248",
+      "manuscript_path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02",
+      "sources": [
+        {
+          "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/current-publication.json",
+          "sha256": "d25404b86a32ce3b072af50e44b956a2d21203f9b8ac6966a04bb4fd31c6c077"
+        },
+        {
+          "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/evidence-companion.json",
+          "sha256": "5982c59d68ace36625cffc198758b9399722d0955f027b401133f5b36edf740f"
+        },
+        {
+          "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/packaging-correction.json",
+          "sha256": "ccaec0635711e690c509467b8e79914e21fc93e9b82433f718dc77d383d584cf"
+        }
+      ]
+    },
+    {
+      "manuscript_record_id": "23128663",
+      "manuscript_path": "manuscripts/riemann-hypothesis/distinct-zero-gram",
+      "sources": [
+        {
+          "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/current-publication.json",
+          "sha256": "525a8102cf055b78b197596e79d761f2538e3954dba14ae5a2a41b1ac2bc5a86"
+        },
+        {
+          "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/evidence-companion.json",
+          "sha256": "bd22161901ff53e140034b6efddad840d309ac7ee4631746941ec46e7fbef40e"
+        },
+        {
+          "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/packaging-correction.json",
+          "sha256": "ce51a31e49c3f1cef7de4dbd0e950dcacffdbfbd610f408b3415cbdc81b8b339"
+        }
+      ]
+    }
+  ],
+  "global_account_audit_sha256": "cb613dfd648291fe6a8c8ace7cbe18d60b7bd760d971a6fec2741b86f114b3a9"
+}

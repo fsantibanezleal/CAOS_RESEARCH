@@ -1,0 +1,234 @@
+{
+  "schema": "caos-manuscript-publication-v2",
+  "passed": true,
+  "status": "published",
+  "record_id": "23134787",
+  "version": "0.03",
+  "version_doi": "10.5281/zenodo.23134787",
+  "concept_doi": "10.5281/zenodo.22984154",
+  "record_url": "https://zenodo.org/records/23134787",
+  "metadata": {
+    "resource_type": {
+      "id": "publication-preprint",
+      "title": {
+        "de": "Preprint",
+        "en": "Preprint"
+      }
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Santibañez-Leal, Felipe",
+          "given_name": "Felipe",
+          "family_name": "Santibañez-Leal",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0150-3246",
+              "scheme": "orcid"
+            }
+          ]
+        },
+        "affiliations": [
+          {
+            "name": "CAOS Research program"
+          }
+        ]
+      }
+    ],
+    "title": "Levinson's method in short intervals and simple zeros of the zeta function",
+    "publisher": "Zenodo",
+    "publication_date": "2026-10-04",
+    "subjects": [
+      {
+        "subject": "Riemann zeta function"
+      },
+      {
+        "subject": "simple zeros"
+      },
+      {
+        "subject": "critical line"
+      },
+      {
+        "subject": "short intervals"
+      },
+      {
+        "subject": "Levinson method"
+      },
+      {
+        "subject": "mollifier"
+      },
+      {
+        "subject": "rational frequencies"
+      },
+      {
+        "subject": "mean-square bounds"
+      },
+      {
+        "subject": "Mellin transform"
+      },
+      {
+        "subject": "interval arithmetic"
+      }
+    ],
+    "languages": [
+      {
+        "id": "eng",
+        "title": {
+          "en": "English"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://arxiv.org/abs/2609.07918v1",
+        "scheme": "url",
+        "relation_type": {
+          "id": "issupplementto",
+          "title": {
+            "de": "Ergänzt",
+            "en": "Is supplement to"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "https://arxiv.org/abs/1002.4403",
+        "scheme": "url",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "publication-article",
+          "title": {
+            "de": "Zeitschriftenartikel",
+            "en": "Journal article"
+          }
+        }
+      },
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "scheme": "url",
+        "relation_type": {
+          "id": "issupplementedby",
+          "title": {
+            "de": "Wird ergänzt durch",
+            "en": "Is supplemented by"
+          }
+        },
+        "resource_type": {
+          "id": "software",
+          "title": {
+            "de": "Software",
+            "en": "Software"
+          }
+        }
+      },
+      {
+        "identifier": "10.5281/zenodo.22860012",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "10.5281/zenodo.23135354",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "issupplementedby",
+          "title": {
+            "de": "Wird ergänzt durch",
+            "en": "Is supplemented by"
+          }
+        },
+        "resource_type": {
+          "id": "dataset",
+          "title": {
+            "de": "Datensatz",
+            "en": "Dataset"
+          }
+        }
+      }
+    ],
+    "version": "0.03",
+    "rights": [
+      {
+        "id": "cc-by-4.0",
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        },
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "props": {
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "scheme": "spdx"
+        }
+      }
+    ],
+    "description": "<p>For each fixed 1/2 &lt; theta &lt; 1, a uniformly shifted mollified second-moment formula is derived on windows of length T^theta with 0 &lt; nu &lt; min(1/2, 2theta-1, (5theta-2)/6). An exact shifted composite divisor transformation gives a common Mellin multiplier and the rational frequencies log(pq/n). Grouping repeated frequencies with their full collision multiplicities permits elementary mean-square bounds, independently derived by Gaussian Schur and direct interval-Gram arguments. Weighted Cauchy-Schwarz gives the relative errors TM/H^2 and TM^3/H^(5/2). Both transformed residues, complex shifts, arbitrary fixed operator polynomials, unbalanced blocks, gcd sums, infinite dual tails and narrower compact-window smoothing are retained. The complementary attributed Bettin-Chandee trilinear range nu &lt; min(1/2, (17/33)(2theta-1)) remains available.</p><p>Localized counting, the unchanged certified degree-201 detector and Wang's recent pair-correlation preprint give a positive asymptotic proportion of simple critical-line zeros in (T,T+T^theta] for every fixed theta in [0.527,1). At theta=0.527 the independently certified lower density exceeds 0.0005947542001. The proof has undergone internal review, uses attributed inputs and supplies no effective starting height, external peer-review claim, worldwide-priority assertion or proof of the Riemann hypothesis.</p><p>Supporting certificates, code and research artifacts are published separately at <a href=\"https://doi.org/10.5281/zenodo.23135354\">10.5281/zenodo.23135354</a>. This manuscript record contains only the unchanged manuscript PDF.</p>",
+    "additional_descriptions": [
+      {
+        "description": "<p><strong>Version notes.</strong> Adds the rational-frequency short-window moment with full collision costs and two elementary mean-square proofs, complementing the retained trilinear range. The internally reviewed positivity onset becomes 0.527 with the unchanged frozen detector and certified endpoint density above 0.0005947542001. Includes all seventeen visually reviewed PDF pages and an 85-member source archive with seven successful extracted replays. EXP-029 supplies the new theorem and refutations. Earlier published PDFs and sources remain immutable.</p>",
+        "type": {
+          "id": "other",
+          "title": {
+            "de": "Sonstige",
+            "en": "Other"
+          }
+        }
+      },
+      {
+        "description": "<p>Publication packaging correction, 4 October 2026: supporting archives have been relocated to the separate evidence record 10.5281/zenodo.23135354. The manuscript PDF, scientific content, version and DOI are unchanged.</p>",
+        "type": {
+          "id": "other",
+          "title": {
+            "de": "Sonstige",
+            "en": "Other"
+          }
+        }
+      }
+    ]
+  },
+  "files": [
+    {
+      "name": "riemann-hypothesis-short-interval-levinson-v0.03.pdf",
+      "filename": "riemann-hypothesis-short-interval-levinson-v0.03.pdf",
+      "bytes": 481395,
+      "sha256": "4b940f5890de1cd6aacade86e58ee022e95a64337b50f21e3d90301f8d59158b",
+      "md5": "c4b8cc47ee52aad3a2c3516b295f416a",
+      "live_bytes_verified": true,
+      "live_download_exact_match": true,
+      "url": "https://zenodo.org/api/records/23134787/files/riemann-hypothesis-short-interval-levinson-v0.03.pdf/content"
+    }
+  ],
+  "pdf_sha256": "4b940f5890de1cd6aacade86e58ee022e95a64337b50f21e3d90301f8d59158b",
+  "manuscript_only": true,
+  "external_peer_review": false,
+  "evidence_companion_doi": "10.5281/zenodo.23135354",
+  "evidence_companion_record_id": "23135354",
+  "verified_utc": "2026-10-04T10:31:06.286142+00:00",
+  "scientific_content_changed": false
+}

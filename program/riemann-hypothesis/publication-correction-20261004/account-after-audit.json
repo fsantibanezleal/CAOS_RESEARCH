@@ -1,0 +1,60 @@
+{
+  "schema": "zenodo-account-separation-after-audit-v1",
+  "passed": true,
+  "read_utc": "2026-10-04T10:33:19.742110+00:00",
+  "account_entries": 274,
+  "published_records": 273,
+  "unpublished_entries": 1,
+  "all_versions": true,
+  "pages": [
+    {
+      "page": 1,
+      "records": 100,
+      "sha256": "7a9d1c97bced18c9ebe339741305d4c488fc5a5d5a9aa829937da9c6bced2a63"
+    },
+    {
+      "page": 2,
+      "records": 100,
+      "sha256": "f67ea1d8d12f69891f36ef7ee9687c7f376607862dc57a29640eb5dad1c0e12a"
+    },
+    {
+      "page": 3,
+      "records": 74,
+      "sha256": "056e67496eec2fb7a221a0fb1235fb006edf476ce9429c6d0645a941fbcf11b6"
+    }
+  ],
+  "all_245_manuscript_records_pdf_only": true,
+  "all_245_original_pdf_file_names_sizes_checksums_preserved": true,
+  "unrelated_published_records": 267,
+  "all_267_unrelated_metadata_file_sets_and_dois_unchanged": true,
+  "all_three_corrected_manuscript_dois_authors_titles_versions_and_pdf_bytes_preserved": true,
+  "new_separate_evidence_record_ids": [
+    "23135349",
+    "23135354",
+    "23135359"
+  ],
+  "removed_archive_endpoints": [
+    {
+      "record_id": "23134787",
+      "name": "riemann-hypothesis-short-interval-levinson-v0.03-source.zip",
+      "removed_endpoint_status": 404
+    },
+    {
+      "record_id": "23128663",
+      "name": "exp020-runtime-reproducibility.zip",
+      "removed_endpoint_status": 404
+    },
+    {
+      "record_id": "23128663",
+      "name": "distinct-zero-gram-mathematical-source-v0.01.zip",
+      "removed_endpoint_status": 404
+    },
+    {
+      "record_id": "23132248",
+      "name": "riemann-hypothesis-short-interval-levinson-v0.02-source.zip",
+      "removed_endpoint_status": 404
+    }
+  ],
+  "no_manuscript_deleted": true,
+  "scope_limits": "Full account metadata/file-set audit, not revalidation of every scientific theorem. Fresh byte downloads of all affected PDFs and all four archives are separately bound."
+}

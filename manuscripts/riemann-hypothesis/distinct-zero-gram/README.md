@@ -1,5 +1,18 @@
 # Stronger local overlap certificates and distinct zeros of the Riemann zeta function
 
+## Publication packaging corrected, 2026-10-04
+
+The [manuscript record](https://zenodo.org/records/23128663) contains only the
+original manuscript PDF. Its version, DOI and PDF bytes are unchanged.
+Supporting archives are published separately as
+[evidence companion 10.5281/zenodo.23135359](https://doi.org/10.5281/zenodo.23135359).
+Current state is in current-publication.json, evidence-companion.json and
+packaging-correction.json. The original publication-receipt.json and source
+archive checks remain historical snapshots of the initial deposit. Statements
+below about archives being supplied with the manuscript record are superseded
+by this correction; research evidence and all archived bytes are preserved.
+
+
 Version **v0.01**, dated 3 October 2026, published and live-byte-verified.
 
 - Version DOI: [10.5281/zenodo.23128663](https://doi.org/10.5281/zenodo.23128663).

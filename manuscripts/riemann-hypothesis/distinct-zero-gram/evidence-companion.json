@@ -1,0 +1,121 @@
+{
+  "schema": "separate-zenodo-evidence-publication-v1",
+  "status": "published",
+  "passed": true,
+  "record_id": "23135359",
+  "doi": "10.5281/zenodo.23135359",
+  "concept_doi": "10.5281/zenodo.23135358",
+  "version": "0.01",
+  "manuscript_record": "23128663",
+  "resource_type": "dataset",
+  "metadata": {
+    "resource_type": {
+      "id": "dataset",
+      "title": {
+        "de": "Datensatz",
+        "en": "Dataset"
+      }
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Santibañez-Leal, Felipe",
+          "given_name": "Felipe",
+          "family_name": "Santibañez-Leal",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0150-3246",
+              "scheme": "orcid"
+            }
+          ]
+        },
+        "affiliations": [
+          {
+            "name": "CAOS Research program"
+          }
+        ]
+      }
+    ],
+    "title": "Reproducibility evidence for stronger local overlap certificates and distinct zeros of the Riemann zeta function",
+    "publisher": "Zenodo",
+    "publication_date": "2026-10-04",
+    "subjects": [
+      {
+        "subject": "reproducibility"
+      },
+      {
+        "subject": "Riemann zeta function"
+      },
+      {
+        "subject": "supporting research artifacts"
+      }
+    ],
+    "languages": [
+      {
+        "id": "eng",
+        "title": {
+          "en": "English"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.23128663",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "issupplementto",
+          "title": {
+            "de": "Ergänzt",
+            "en": "Is supplement to"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      }
+    ],
+    "version": "0.01",
+    "rights": [
+      {
+        "id": "cc-by-4.0",
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        },
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "props": {
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "scheme": "spdx"
+        }
+      }
+    ],
+    "description": "<p>Supporting research artifacts for the manuscript version 0.01, DOI 10.5281/zenodo.23128663. This is a separate evidence dataset, not the manuscript publication. It preserves the original archive bytes, including mathematical source notes, certified arithmetic records, verification programs and reproducibility instructions. Finite arithmetic and source checks do not establish a universal analytic theorem, external peer review, worldwide priority, an effective height or the Riemann hypothesis.</p><p>The manuscript PDF is available only through the linked manuscript record. This evidence record contains the supporting ZIP archives; it does not contain a manuscript PDF. Existing licenses and attributed third-party notices inside the archives remain applicable to their respective files.</p>"
+  },
+  "files": [
+    {
+      "name": "exp020-runtime-reproducibility.zip",
+      "bytes": 1854946,
+      "sha256": "91be4798774837bc16007a8236a692078e825ffb1c8dfa476c05d3c733b17879",
+      "md5": "f1c32ed8ae08d13f9e5bd18d9e9d3ddc",
+      "url": "https://zenodo.org/api/records/23135359/files/exp020-runtime-reproducibility.zip/content",
+      "live_bytes_verified": true
+    },
+    {
+      "name": "distinct-zero-gram-mathematical-source-v0.01.zip",
+      "bytes": 709157,
+      "sha256": "0fd01004c2a07f5f2500d4d2138cf87f82485ba5f4d7323ef08e096440249c54",
+      "md5": "5cc6c7041b026d4307c491a86f12f168",
+      "url": "https://zenodo.org/api/records/23135359/files/distinct-zero-gram-mathematical-source-v0.01.zip/content",
+      "live_bytes_verified": true
+    }
+  ],
+  "manuscript_pdf_included": false,
+  "verified_utc": "2026-10-04T10:30:39.246769+00:00"
+}
