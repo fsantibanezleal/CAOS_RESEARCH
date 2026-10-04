@@ -740,3 +740,15 @@ costs. It retains RH-F4 and the same future manuscript home. Issue
 No finite control has run and no new onset is admitted. The new
 viewpoint is harmonic-analysis Gaussian Grams plus integer ratio
 collisions, rather than a larger detector search. EXP-023 stays stopped.
+
+## 2026-10-04: EXP-029 finite and conditional controls
+
+432 exact blocks, 524,400 triples and 180 exponent cases pass. Native and
+independent rational parity controls agree on conditional h>0.0005947542001
+at the declared theta=0.527, with both charged exponents negative. The
+initial spacing mutation is insufficient in isolation; the supplemental
+rational control supplies an actual upper-log-gap refutation of dropping N.
+All earlier code/receipts stay frozen. The analytic proof candidate has two
+mean-square derivations but no recorded admission. Additional raw-cost/tail
+controls are declared before execution. Current onset remains 0.5339; no
+new manuscript or public theorem follows from these finite results.

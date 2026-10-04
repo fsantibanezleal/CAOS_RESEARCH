@@ -1,0 +1,39 @@
+{
+  "schema": "exp029-independent-conditional-parity-v1",
+  "passed_conditional_controls": true,
+  "analytic_moment_theorem_proved": false,
+  "hypothesis_sha256": "a594f5005ba961cf981f76b00a71972612fc9ac9f2a8704b9bc5173fe2929000",
+  "declaration_sha256": "c2c1f0b22b2e4b1026af2b9e1c289e688bf8604c7d9d7c06a81be7bf009735ac",
+  "runner_sha256": "2c1494cf8425a97194b2c6643abac1cc8e248ce2d085a29d5ca4b0843eae3bc1",
+  "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+  "interval_toolkit_sha256": "b93e2deeb4c8a4698028da914e6c042d995c2b7606dbdf9a2124e777dd4356ec",
+  "arithmetic": "stdlib Fraction, Machin pi/trig outward intervals and integer square roots; no FLINT/Arb",
+  "theta": "527/1000",
+  "nu": "499/10000",
+  "eta": "1/100000",
+  "charged_E1": "-51/12500",
+  "charged_E2": "-6711/40000",
+  "pair_term": {
+    "lower": "-723758394637755709171074362114281781943/10000000000000000000000000000000000000000",
+    "upper": "-361879197318877854585537181057140890971/5000000000000000000000000000000000000000"
+  },
+  "conditional_density": {
+    "lower": "2973771000514811197205428153348619659/5000000000000000000000000000000000000000",
+    "upper": "5947542001029622394410856306697239319/10000000000000000000000000000000000000000"
+  },
+  "zero_detector_rejected": true,
+  "spacing_N_omission_witness": {
+    "P": 1,
+    "Q": 1,
+    "N": 32,
+    "ratios": [
+      "1/64",
+      "1/63"
+    ],
+    "log_gap_upper": "1/63",
+    "wrong_delta": "1/16",
+    "proper_delta": "1/512"
+  },
+  "cpu_seconds": 0.015625,
+  "scope": "Conditional fixed arithmetic and one exact spacing refutation only; no new onset admitted."
+}
