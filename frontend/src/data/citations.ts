@@ -59,8 +59,8 @@ export const CITATIONS: Citation[] = [
     url: 'https://doi.org/10.5281/zenodo.22940291',
   },
   {
-    id: 'riemann-levinson2026', label: 'CAOS EXP-010/028: short-interval Levinson',
-    citation: 'Santibáñez-Leal F. (2026). Levinson\'s method in short intervals and simple zeros of the zeta function. CAOS Research preprint v0.02. Internally reviewed moment for nu < min(1/2,(17/33)(2theta-1)), exact Mellin and Hankel derivations, certified detector and onset theta >= 0.5339; uses Bettin-Chandee and Wang arXiv:2609.07918v1. Publication is not external peer review.',
+    id: 'riemann-levinson2026', label: 'CAOS EXP-010/028/029: short-interval Levinson',
+    citation: 'Santibáñez-Leal F. (2026). Levinson\'s method in short intervals and simple zeros of the zeta function. CAOS Research preprint v0.03. Internally reviewed rational-frequency moment for nu < min(1/2,2theta-1,(5theta-2)/6), Gaussian Schur and interval-Gram proofs, unchanged certified detector and onset theta >= 0.527. The older Bettin-Chandee route remains complementary above theta=12/13. The onset uses Wang arXiv:2609.07918v1. Publication is not external peer review.',
     url: 'https://doi.org/10.5281/zenodo.22984154',
   },
   {

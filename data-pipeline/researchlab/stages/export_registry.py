@@ -40,7 +40,7 @@ EXP010_CANONICAL = "3dba086fed900d5a828bb78182fc68541b641d8a"
 EXP011_DECLARATION = "9886f07bc05928c635754261fe282034af08904f"
 EXP011_AMENDMENT = "136b40f01d17b0bb4a4d3e5ad8b57fac74af44a8"
 EXP012_DECLARATION = "76c4439830027619f52163a6c344d55d96ed26b4"
-RIEMANN_EXPERIMENT_MAX = 28
+RIEMANN_EXPERIMENT_MAX = 29
 
 
 def _read_portfolio() -> dict:
@@ -1088,7 +1088,7 @@ def _riemann_payload() -> dict:
                 cwd=ROOT, check=True, capture_output=True, text=True,
             ).stdout.strip()
             payload["provenance"].append({
-                "role": role, "source_exp": "EXP-028-chirp-separated-moment", "path": path,
+                "role": role, "source_exp": next((part for part in path.split("/") if part.startswith("EXP-")), "EXP-029-mellin-frequency-average"), "path": path,
                 "source_commit": commit, "bytes": len(moment_raw[role]),
                 "sha256": hashlib.sha256(moment_raw[role]).hexdigest(),
             })

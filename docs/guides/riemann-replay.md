@@ -1,5 +1,24 @@
 # Reproduce the Riemann distinct-zero and short-interval results
 
+## Current moment admission: EXP-029
+
+Levinson [v0.03](https://doi.org/10.5281/zenodo.23134787) publishes the internally
+reviewed rational-frequency range nu<min(1/2,2theta-1,(5theta-2)/6). The fixed
+detector and Wang pair theorem give positivity for each fixed theta in
+[0.527,1), with h>0.0005947542001 at theta=0.527. The old trilinear range
+remains stronger above theta=12/13. RH remains open; external peer review,
+priority and effective height are unconfirmed.
+
+Replay-v9 now carries moment-v2. Thirty committed source roles bind the
+23-source universal analytic review separately from the 29-source publication
+delivery review. Arithmetic controls retain their historical conditional
+scope: 432 frequency blocks / 524,400 triples, 6,426 raw-cost configurations,
+native and independent rational endpoint intervals. Seven auditors replayed
+from the 85-member source archive; all 17 PDF pages were inspected and public
+downloads match the reviewed bytes. Changed/missing sources block admission.
+EXP-023 remains stopped and unproved. Earlier evidence below is historical.
+
+
 The [research wiki](../../problems/number-theory/riemann-hypothesis/wiki/) explains the theorem.
 This guide describes the evidence flow and public replay. All arithmetic runs offline on CPU.
 

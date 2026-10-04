@@ -4,7 +4,7 @@ import { ARCHITECTURE } from './architecture';
 const ROOT = 'https://github.com/fsantibanezleal/CAOS_RESEARCH';
 const PROBLEM = `${ROOT}/tree/main/problems/number-theory/riemann-hypothesis`;
 const RANK_SIX_PROOF = `${ROOT}/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/mathematical-proof.md`;
-const MOMENT_PROOF = `${ROOT}/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/mellin-proof.md`;
+const MOMENT_PROOF = `${ROOT}/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-029-mellin-frequency-average/proof-review.md`;
 const SHARP_KERNEL_PROOF = `${ROOT}/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/mathematical-proof.md`;
 
 function diagram(kind: 'science' | 'method', lang: Lang) {
@@ -12,16 +12,16 @@ function diagram(kind: 'science' | 'method', lang: Lang) {
   const nodes = kind === 'science' ? [
     [t('Wang: global and short-interval frameworks', 'Wang: marcos global y de intervalos cortos'), 'pair statistic · block packing'],
     [t('Sharp three-point kernel', 'Núcleo óptimo de tres puntos'), 'R(α, β) ≤ √2'],
-    [t('Localized Levinson detector', 'Detector de Levinson localizado'), 'O / N ≥ κ > 0.7170 ν|ν < min(1/2, (17/33)(2θ−1))'],
-    [t('Certified global and local bounds', 'Cotas globales y locales certificadas'), 'S / N > 0.6725007995|S / N > 0 for θ ≥ 0.5339'],
+    [t('Localized Levinson detector', 'Detector de Levinson localizado'), 'O / N ≥ κ > 0.7170 ν|ν < min(1/2, 2θ−1, (5θ−2)/6)'],
+    [t('Certified global and local bounds', 'Cotas globales y locales certificadas'), 'S / N > 0.6725007995|S / N > 0 for θ ≥ 0.527'],
   ] : [
-    [t('Declare before computation', 'Declarar antes del cálculo'), 'EXP-001 · EXP-002 · … · EXP-006|EXP-007 · EXP-008 · … · EXP-028'],
+    [t('Declare before computation', 'Declarar antes del cálculo'), 'EXP-001 · EXP-002 · … · EXP-006|EXP-007 · EXP-008 · … · EXP-029'],
     [t('Replay finite certificates', 'Reproducir certificados finitos'), t('Pair incidence · spans · all offsets', 'Incidencia · extensiones · desplazamientos')],
     [t('Audit parity and pressure', 'Auditar paridad y presión'), t('Exact census · Arb · source binding', 'Censo exacto · Arb · vinculación de fuentes')],
     [t('Review, persist, then replay', 'Revisar, persistir y reproducir'), t('Adversarial tests · verdict · SHA-256', 'Pruebas adversariales · veredicto · SHA-256')],
   ];
   const links = kind === 'science' ? [
-    ['EXP-028', MOMENT_PROOF],
+    ['EXP-029', MOMENT_PROOF],
     ['EXP-009', SHARP_KERNEL_PROOF],
     ['EXP-008', RANK_SIX_PROOF],
   ] : [
@@ -59,7 +59,7 @@ export function riemannArchitecture(lang: Lang): ArchitectureConfig {
       if (tab.id === 'method') return {
         ...tab,
         svg: diagram('method', lang),
-        body_en: `EXP-028 internally extends the signed moment range to nu < min(1/2,(17/33)(2theta-1)) and the simple-critical onset to 0.5339, with explicit smoothing loss, two analytic derivations and published v0.02 DOI 10.5281/zenodo.23132248. External review and worldwide priority remain unconfirmed.
+        body_en: `EXP-029 internally extends the signed moment range to nu < min(1/2,2theta-1,(5theta-2)/6) and the simple-critical onset to 0.527. Gaussian Schur and interval-Gram proofs charge rational-frequency collisions, all dual tails and compact-window loss. Published v0.03 DOI 10.5281/zenodo.23134787 has 17 reviewed pages and seven extracted auditor replays. EXP-028 remains complementary above theta=12/13. External review and worldwide priority remain unconfirmed.
 
 Completed EXP-020 certifies 96/96 shards and gives a distinct-strip proportion at least 0.8371747724947154. EXP-025 derives at least 0.8373797460706156 from Lavery’s externally certified local theorem, using the full pressure sum B. Its Lean/nanoda verification was archived, not rebuilt locally. Native EXP-020 checks share FLINT/Arb. The published companion has concept DOI 10.5281/zenodo.23128662. EXP-019 is suspended and EXP-023 remains incomplete; their candidate bounds are excluded. Global distinct counts and short-window simple-critical counts remain separate.
 
@@ -68,7 +68,7 @@ The first twelve Riemann experiments were declared and committed before computat
 The exact runners bind their declarations, source bytes, focused tests, proofs, audits, results, verdicts, and independent interval replays. EXP-007 checks 652,260 spectra and 18,479 multiplicity profiles. EXP-008 certifies 0.5458837 < \u03b86 < 0.5458838 and a positive rank-six bound at \u03b8 = 0.545884, where the rank-three bound remains negative.
 
 EXP-009 proves R(alpha,beta) <= sqrt(2) with exact equality cases and certifies a global simple-critical proportion above 0.6725007995946757558. Replay schema v9 reads committed bytes only and requires the execution receipts plus proof-review hashes. A failed hash, false RH flag, weakened comparison, or stale receipt blocks display. The browser performs no scientific arithmetic. CPU arithmetic sufficed; publication and external mathematical acceptance remain separate gates.`,
-        body_es: `EXP-028 amplía internamente el rango del momento con signo a nu < min(1/2,(17/33)(2theta-1)) y el umbral de ceros críticos simples a 0.5339, con pérdida explícita de suavizado, dos derivaciones analíticas y v0.02 publicado con DOI 10.5281/zenodo.23132248. La revisión externa y la prioridad mundial siguen sin confirmar.
+        body_es: `EXP-029 amplía internamente el rango del momento con signo a nu < min(1/2,2theta-1,(5theta-2)/6) y el umbral de ceros críticos simples a 0.527. Las pruebas de Schur gaussiano y Gram de intervalos contabilizan las colisiones de frecuencias racionales, todas las colas duales y la pérdida de ventanas compactas. El v0.03 publicado con DOI 10.5281/zenodo.23134787 tiene 17 páginas revisadas y siete reproducciones de auditores extraídos. EXP-028 sigue siendo complementario por encima de theta=12/13. La revisión externa y la prioridad mundial siguen sin confirmar.
 
 EXP-020 completo certifica 96/96 fragmentos y da una proporción de ceros distintos en toda la franja de al menos 0.8371747724947154. EXP-025 deriva al menos 0.8373797460706156 del teorema local certificado externamente por Lavery, usando la suma completa B de presiones. Su verificación Lean/nanoda se archivó y no se reconstruyó aquí. Las verificaciones nativas de EXP-020 comparten FLINT/Arb. El manuscrito tiene DOI de concepto 10.5281/zenodo.23128662. EXP-019 está suspendido y EXP-023 sigue incompleto; sus cotas candidatas se excluyen. Los conteos globales de puntos distintos y los de ceros críticos simples en ventanas cortas se conservan separados.
 
@@ -81,7 +81,7 @@ EXP-009 prueba R(alpha,beta) <= sqrt(2) con casos de igualdad exactos y certific
       if (tab.id === 'science') return {
         ...tab,
         svg: diagram('science', lang),
-        body_en: `EXP-028 internally extends the signed moment range to nu < min(1/2,(17/33)(2theta-1)) and the simple-critical onset to 0.5339, with explicit smoothing loss, two analytic derivations and published v0.02 DOI 10.5281/zenodo.23132248. External review and worldwide priority remain unconfirmed.
+        body_en: `EXP-029 internally extends the signed moment range to nu < min(1/2,2theta-1,(5theta-2)/6) and the simple-critical onset to 0.527. Gaussian Schur and interval-Gram proofs charge rational-frequency collisions, all dual tails and compact-window loss. Published v0.03 DOI 10.5281/zenodo.23134787 has 17 reviewed pages and seven extracted auditor replays. EXP-028 remains complementary above theta=12/13. External review and worldwide priority remain unconfirmed.
 
 Completed EXP-020 certifies 96/96 shards and gives a distinct-strip proportion at least 0.8371747724947154. EXP-025 derives at least 0.8373797460706156 from Lavery’s externally certified local theorem, using the full pressure sum B. Its Lean/nanoda verification was archived, not rebuilt locally. Native EXP-020 checks share FLINT/Arb. The published companion has concept DOI 10.5281/zenodo.23128662. EXP-019 is suspended and EXP-023 remains incomplete; their candidate bounds are excluded. Global distinct counts and short-window simple-critical counts remain separate.
 
@@ -96,7 +96,7 @@ EXP-009 separately proves the exact auxiliary ratio R(alpha,beta) <= sqrt(2), wi
 EXP-010 replaces the Selberg detector by Levinson's, with Conrey's operator polynomial of any degree, localized to (T, T + T^\u03b8] for mollifier exponents \u03bd < \u03b8 - 1/2. Certified degree-201 detectors give \u03ba > 0.7170 \u03bd, and the same Hilbert-parity product gives a positive proportion of simple critical zeros for every fixed \u03b8 in [0.534, 1).
 
 The public source prints the C6 interval but not its coefficient matrix, so CAOS attributes that input and does not claim an independent reconstruction. The theorem is asymptotic for each fixed exponent and supplies no effective starting height. Imported 2026 preprints remain attributed and external review is still needed. None of these results proves RH.`,
-        body_es: `EXP-028 amplía internamente el rango del momento con signo a nu < min(1/2,(17/33)(2theta-1)) y el umbral de ceros críticos simples a 0.5339, con pérdida explícita de suavizado, dos derivaciones analíticas y v0.02 publicado con DOI 10.5281/zenodo.23132248. La revisión externa y la prioridad mundial siguen sin confirmar.
+        body_es: `EXP-029 amplía internamente el rango del momento con signo a nu < min(1/2,2theta-1,(5theta-2)/6) y el umbral de ceros críticos simples a 0.527. Las pruebas de Schur gaussiano y Gram de intervalos contabilizan las colisiones de frecuencias racionales, todas las colas duales y la pérdida de ventanas compactas. El v0.03 publicado con DOI 10.5281/zenodo.23134787 tiene 17 páginas revisadas y siete reproducciones de auditores extraídos. EXP-028 sigue siendo complementario por encima de theta=12/13. La revisión externa y la prioridad mundial siguen sin confirmar.
 
 EXP-020 completo certifica 96/96 fragmentos y da una proporción de ceros distintos en toda la franja de al menos 0.8371747724947154. EXP-025 deriva al menos 0.8373797460706156 del teorema local certificado externamente por Lavery, usando la suma completa B de presiones. Su verificación Lean/nanoda se archivó y no se reconstruyó aquí. Las verificaciones nativas de EXP-020 comparten FLINT/Arb. El manuscrito tiene DOI de concepto 10.5281/zenodo.23128662. EXP-019 está suspendido y EXP-023 sigue incompleto; sus cotas candidatas se excluyen. Los conteos globales de puntos distintos y los de ceros críticos simples en ventanas cortas se conservan separados.
 

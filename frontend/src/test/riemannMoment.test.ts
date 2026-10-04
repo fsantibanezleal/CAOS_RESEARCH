@@ -8,7 +8,7 @@ const replay = (): RiemannData => JSON.parse(readFileSync(join(__dirname, '../..
 describe('short-window analytic evidence admission', () => {
   it('admits the reviewed published moment independently of old conditional flags', () => {
     const m = shortWindowMomentEvidence(replay());
-    expect(m?.onset).toBe('0.5339');
+    expect(m?.onset).toBe('0.527');
     expect(m?.arithmetic_alone_proves_theorem).toBe(false);
     expect(m?.external_peer_review).toBe(false);
   });
@@ -27,6 +27,12 @@ describe('short-window analytic evidence admission', () => {
       (d: RiemannData) => { d.short_window_moment!.source_sha256.moment_mellin = 'changed'; },
       (d: RiemannData) => { d.provenance = d.provenance.filter((p) => p.role !== 'moment_review'); },
       (d: RiemannData) => { d.short_window_moment!.external_peer_review = true; },
+      (d: RiemannData) => { d.short_window_moment!.external_trilinear_theorem_used = true; },
+      (d: RiemannData) => { d.provenance = d.provenance.filter((p) => p.role !== 'moment_delivery'); },
+      (d: RiemannData) => { d.short_window_moment!.external_trilinear_theorem_used = true; },
+      (d: RiemannData) => { d.provenance = d.provenance.filter((p) => p.role !== 'moment_delivery'); },
+      (d: RiemannData) => { d.short_window_moment!.external_trilinear_theorem_used = true; },
+      (d: RiemannData) => { d.provenance = d.provenance.filter((p) => p.role !== 'moment_delivery'); },
     ]) {
       const data = replay(); corrupt(data); expect(shortWindowMomentEvidence(data)).toBeNull();
     }

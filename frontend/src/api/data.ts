@@ -314,11 +314,14 @@ export type RiemannDistinctZero = {
   incomplete_experiments: string[]; excluded_claims: string[]; trust_boundary: string;
 };
 export type RiemannShortWindowMoment = {
-  schema: 'riemann-short-window-moment-v1'; accepted: boolean;
+  schema: 'riemann-short-window-moment-v2'; accepted: boolean;
   scientific_verdict: string; theta: string; nu: string; eta: string; gaussian_theta: string;
   moment_range: string; charged_exponents: string[]; kappa_lower: string;
   simple_density_floor: string; simple_density_decimal: string;
   previous_onset: string; onset: string; adversarial_boxes: number;
+  frequency_blocks: number; frequency_triples: number; external_trilinear_theorem_used: boolean;
+  frequency_blocks: number; frequency_triples: number; external_trilinear_theorem_used: boolean;
+  frequency_blocks: number; frequency_triples: number; external_trilinear_theorem_used: boolean;
   analytic_moment_reviewed: boolean; arithmetic_alone_proves_theorem: boolean;
   external_peer_review: boolean; worldwide_priority_confirmed: boolean;
   effective_height: boolean; rh_solved: boolean;

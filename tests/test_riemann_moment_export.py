@@ -20,8 +20,8 @@ def inputs():
 
 def test_actual_reviewed_moment(inputs):
     data = riemann_moment.validate(inputs)
-    assert data["onset"] == "0.5339" and data["previous_onset"] == "0.534"
-    assert data["charged_exponents"] == ["-7/250000", "-937/400000"]
+    assert data["onset"] == "0.527" and data["previous_onset"] == "0.5339"
+    assert data["charged_exponents"] == ["-51/12500", "-6711/40000"]
     assert data["arithmetic_alone_proves_theorem"] is False
     assert data["external_peer_review"] is False
 
@@ -34,7 +34,7 @@ def test_missing_real_source_rejected(inputs, role):
         riemann_moment.validate(raw)
 
 
-@pytest.mark.parametrize("role", ["moment_mellin", "moment_hankel", "moment_detector", "moment_paper"])
+@pytest.mark.parametrize("role", ["moment_mellin", "moment_review_text", "moment_detector", "moment_paper"])
 def test_changed_real_source_rejected(inputs, role):
     raw = copy.copy(inputs)
     raw[role] += b"changed"
@@ -45,13 +45,17 @@ def test_changed_real_source_rejected(inputs, role):
 @pytest.mark.parametrize("key,value", [
     ("analytic_moment_reviewed", False), ("compact_window_loss_charged", False),
     ("external_peer_review", True), ("theta", "267/500"), ("eta", "0"),
-    ("charged_exponents", ["0", "-937/400000"]), ("simple_density_floor", "1"),
+    ("charged_exponents", ["0", "-6711/40000"]), ("simple_density_floor", "1"),
 ])
 def test_false_analytic_or_arithmetic_review_rejected(inputs, key, value):
     raw = copy.copy(inputs)
     review = json.loads(raw["moment_review"])
     review[key] = value
     raw["moment_review"] = json.dumps(review).encode()
+    import hashlib
+    delivery = json.loads(raw["moment_delivery"])
+    delivery["source_sha256"]["moment_review"] = hashlib.sha256(raw["moment_review"]).hexdigest()
+    raw["moment_delivery"] = json.dumps(delivery).encode()
     with pytest.raises(ValueError):
         riemann_moment.validate(raw)
 
@@ -59,14 +63,34 @@ def test_false_analytic_or_arithmetic_review_rejected(inputs, key, value):
 def test_unpublished_and_incomplete_receipts_rejected_even_when_rebound(inputs):
     import hashlib
     for role, key, value in [("moment_publication", "status", "draft"),
-                             ("moment_archive", "members", 79),
-                             ("moment_independent", "passed", False)]:
+                             ("moment_archive", "members", 84),
+                             ("moment_independent", "passed_conditional_controls", False),
+                             ("moment_frequency", "analytic_moment_theorem_proved", True)]:
         raw = copy.copy(inputs)
         receipt = json.loads(raw[role])
         receipt[key] = value
         raw[role] = json.dumps(receipt).encode()
-        review = json.loads(raw["moment_review"])
-        review["source_sha256"][role] = hashlib.sha256(raw[role]).hexdigest()
-        raw["moment_review"] = json.dumps(review).encode()
+        delivery = json.loads(raw["moment_delivery"])
+        delivery["source_sha256"][role] = hashlib.sha256(raw[role]).hexdigest()
+        raw["moment_delivery"] = json.dumps(delivery).encode()
         with pytest.raises(ValueError):
             riemann_moment.validate(raw)
+
+
+def test_omitted_collision_cost_rejected_even_when_both_reviews_rebound(inputs):
+    import hashlib
+    raw = copy.copy(inputs)
+    receipt = json.loads(raw["moment_adversarial"])
+    receipt["audit"]["negative_controls"]["omitted_collisions"]["true_normalized_mass"] = 6
+    raw["moment_adversarial"] = json.dumps(receipt).encode()
+    digest = hashlib.sha256(raw["moment_adversarial"]).hexdigest()
+    review = json.loads(raw["moment_review"])
+    key = riemann_moment.ANALYTIC_ROLES["moment_adversarial"]
+    review["source_sha256"][key] = review["source_lf_sha256"][key] = digest
+    raw["moment_review"] = json.dumps(review).encode()
+    delivery = json.loads(raw["moment_delivery"])
+    for role in ("moment_review", "moment_adversarial"):
+        delivery["source_sha256"][role] = hashlib.sha256(raw[role]).hexdigest()
+    raw["moment_delivery"] = json.dumps(delivery).encode()
+    with pytest.raises(ValueError, match="adversarial negative controls"):
+        riemann_moment.validate(raw)
