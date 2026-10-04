@@ -371,7 +371,7 @@ async function proofControls(page, panel, scenario, tab) {
 }
 async function experimentViews(page, panel, scenario, text) {
   const buttons = panel.locator('.rh-experiments .rs-exp-open');
-  check(scenario, 'all twenty-five experiment launch controls present', await buttons.count() === 28);
+  check(scenario, 'all twenty-eight experiment launch controls present', await buttons.count() === 28);
   requireCondition(await buttons.count() === 28, 'Expected all twenty-eight experiment records');
   for (const id of Array.from({ length: 28 }, (_, i) => String(i + 1).padStart(3, '0'))) {
     const launch = buttons.filter({ hasText: new RegExp(`^EXP-${id}:`) });
@@ -381,7 +381,7 @@ async function experimentViews(page, panel, scenario, text) {
     check(scenario, `EXP-${id}: correct record opened`, (await dialog.getAttribute('aria-label') || '').startsWith(`EXP-${id}:`));
     const hypothesis = dialog.getByRole('heading', { name: text.hypothesis, exact: true });
     const verdict = dialog.getByRole('heading', { name: text.verdict, exact: true });
-    check(scenario, `EXP-${id}: both persisted sections`, await hypothesis.count() === 1 && (['019', '023'].includes(id) ? await verdict.count() === 0 : await verdict.count() === 1));
+    check(scenario, `EXP-${id}: both persisted sections`, await hypothesis.count() === 1 && (id === '019' ? await verdict.count() === 0 : await verdict.count() === 1));
     await hypothesis.scrollIntoViewIfNeeded();
     await capture(page, scenario, `EXP-${id}-hypothesis`);
     if (await verdict.count()) await verdict.scrollIntoViewIfNeeded();
