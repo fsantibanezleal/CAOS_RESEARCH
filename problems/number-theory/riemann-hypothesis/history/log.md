@@ -659,3 +659,22 @@ Native editor compilation failed because standard platform directories were
 unavailable. Two-pass exported MiKTeX PDF, voice/layout/reference checks and
 all nine rendered pages pass. DOI header is printed; public PDF and both ZIP
 downloads exactly match local bytes. No peer-review claim follows.
+
+
+## 2026-10-04: integrated research, release QA and bounded point diagnostic
+
+PR #363 merged the completed EXP-020/025 research and immutable publication
+receipts into develop (`0fd13678`). The source-bound bilingual workbench and
+25 experiment records are prepared for serialized 0.75.000 in draft PR #365.
+68 export tests and 31 frontend tests pass; latest source CI `37164980042`
+passes. A manual phone review found equation/table readability defects; commit
+`76f3c8ec` fixes them and the restarted full rendered matrix remains in progress.
+No 0.75.000 live deployment is asserted. Private publication backup PR #799
+merged, main/develop `7dbdeab4`; this does not promote unrelated products.
+
+Declared diagnostic `ef0746c4` inspected one immutable EXP-023 checkpoint:
+17,967,104 nodes, 21 pending boxes. All 21 exact midpoints exceeded the target
+with agreeing derivative/native 0F1 enclosures at 256 bits (shared FLINT/Arb).
+No counterexample was found. This finite diagnostic does not certify boxes,
+explain all traversal cost, or complete the missing shard. The worker, runtime
+sources and deadline were preserved. RH remains open; onset remains 0.534.
