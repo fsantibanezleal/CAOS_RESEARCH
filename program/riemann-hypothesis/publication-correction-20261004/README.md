@@ -43,7 +43,14 @@ untouched. The unfinished app changes are preserved on
 work/riemann-hypothesis/paused-app-20261004 at dcb213bb, pushed as WIP, with no
 promotion or deployment claim. Research PR #376 remains a draft.
 
-Remaining repair gates: update publication admission and app links to accept
-manuscript-only records plus separate evidence, run focused corruption and
-rendered checks, mirror corrections privately, and promote only the repair.
-This work does not authorize resuming research or promoting the paused result.
+Publication admission and app links now accept manuscript-only records plus
+separate evidence, with focused corruption checks and a comparison preserving
+the delivered app's scientific payload. Local rendered verification passed all
+20 scenarios, 120 tab visits and 1,760 screenshot byte checks. The 16 focused
+manuscript/evidence link views were also manually inspected; the full screenshot
+matrix was checked automatically. Receipts and screenshot manifests are stored
+alongside this record. The private correction mirror is pushed to develop.
+
+Remaining repair gates: promote only the repair and verify the production
+deployment and its links. This work does not authorize resuming research or
+promoting the paused result.
