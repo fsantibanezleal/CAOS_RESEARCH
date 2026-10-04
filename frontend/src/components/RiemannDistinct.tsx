@@ -30,7 +30,8 @@ export default function RiemannDistinct({ evidence, mode }: {
     <h2>{t('Distinct zeros across the critical strip', 'Ceros distintos en toda la franja crítica')}</h2>
     {mode === 'summary' && <>
       <p className="rh-lead">{t('The source-attributed vector-pressure transfer gives the stronger lower asymptotic proportion below. A separately completed nine-point certificate gives 0.8371747724947154. Both results are published with proofs and reproducibility archives.', 'La transferencia por presión vectorial con entrada atribuida da la proporción asintótica inferior más fuerte indicada abajo. Un certificado independiente completo de nueve puntos da 0.8371747724947154. Ambos resultados están publicados con pruebas y archivos de reproducción.')} <Cite id="riemann-distinct2026" /></p>
-      <Equation tex={String.raw`\liminf_{T\to\infty}\frac{N^d(T)}{N(T)}\ge\frac{30945470743359}{36955122080000}=0.8373797460706156\ldots`} />
+      <Equation tex={String.raw`\liminf_{T\to\infty}\frac{N^d(T)}{N(T)}\ge\frac{30945470743359}{36955122080000}`} />
+      <p className="rh-number">{t('Recorded decimal approximation: ', 'Aproximación decimal registrada: ')}<strong>{d.vector.decimal}…</strong></p>
       <p>{t('Nd counts distinct zero points; N counts zeros with multiplicity up to height T.', 'Nd cuenta puntos distintos de ceros; N cuenta ceros con multiplicidad hasta la altura T.')}</p>
       <Callout variant="honest" title={t('Scope and dependencies', 'Alcance y dependencias')}>{limits} {t('Lavery’s local Lean/nanoda verification is archived and was not rebuilt locally.', 'La verificación local de Lavery mediante Lean/nanoda está archivada y no se reconstruyó aquí.')}</Callout>
     </>}
@@ -59,7 +60,7 @@ export default function RiemannDistinct({ evidence, mode }: {
     </>}
     {mode === 'results' && <>
       <div className="rs-scroll"><table className="rs-table rh-distinct-table"><caption>{t('Completed asymptotic distinct-strip results', 'Resultados asintóticos completos de ceros distintos en la franja')}</caption><thead><tr><th>{t('Experiment', 'Experimento')}</th><th>{t('Exact lower bound', 'Cota inferior exacta')}</th><th>{t('Recorded approximation', 'Aproximación registrada')}</th></tr></thead><tbody>
-        <tr><td>EXP-020</td><td>{d.local.fraction}</td><td>{d.local.decimal}</td></tr><tr><td>EXP-025</td><td>{d.vector.fraction}</td><td>{d.vector.decimal}</td></tr>
+        <tr><td>EXP-020</td><td data-label={t('Exact lower bound', 'Cota inferior exacta')}>{d.local.fraction}</td><td data-label={t('Recorded approximation', 'Aproximación registrada')}>{d.local.decimal}</td></tr><tr><td>EXP-025</td><td data-label={t('Exact lower bound', 'Cota inferior exacta')}>{d.vector.fraction}</td><td data-label={t('Recorded approximation', 'Aproximación registrada')}>{d.vector.decimal}</td></tr>
       </tbody></table></div>
       <details className="rh-details rh-distinct-evidence"><summary>{t('Inspect the completed distinct-zero evidence', 'Examinar la evidencia completa de ceros distintos')}</summary>
         <p>{t('EXP-020: 96/96 completed shards; 107,752,902 audited nodes; 61,029 closed input cells; 12 actual-output corruption controls rejected; 233 exact-byte archive members.', 'EXP-020: 96/96 fragmentos completos; 107.752.902 nodos auditados; 61.029 celdas cerradas de entrada; 12 controles de corrupción rechazados; 233 miembros del archivo con bytes exactos.')}</p>

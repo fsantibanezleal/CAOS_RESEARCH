@@ -496,7 +496,11 @@ async function runScenario(viewport, lang, theme) {
       if (id === 'results') await experimentViews(page, panel, scenario, text);
       const distinct = panel.locator(`[data-testid="distinct-${id}"]`);
       check(scenario, `${id}: completed distinct-zero section`, await distinct.count() === 1);
-      if (id === 'summary') check(scenario, 'new distinct bound and scope', (await distinct.innerText()).includes('0.8373797460706156') && !(await distinct.innerText()).includes('0.837385561'));
+      if (id === 'summary') {
+        check(scenario, 'new distinct bound and scope', (await distinct.innerText()).includes('0.8373797460706156') && !(await distinct.innerText()).includes('0.837385561'));
+        const fits = await distinct.locator('.katex-display').first().evaluate((el) => el.scrollWidth <= el.clientWidth + 1);
+        check(scenario, 'headline bound fits without sideways math scrolling', fits);
+      }
       if (id === 'strategy') {
         const select = distinct.locator('select');
         await select.scrollIntoViewIfNeeded();
@@ -536,6 +540,7 @@ try {
   requireCondition(chromium, 'Resolved module does not expose Playwright chromium');
   browser = await chromium.launch({ headless: !options.headed,
     ...(process.env.RIEMANN_CHROMIUM_EXECUTABLE ? { executablePath: process.env.RIEMANN_CHROMIUM_EXECUTABLE } : {}) });
+  receipt.browser_version = await browser.version();
   for (const viewport of options.viewports) {
     for (const lang of ['en', 'es']) {
       for (const theme of ['light', 'dark']) await runScenario(viewport, lang, theme);
