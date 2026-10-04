@@ -1,0 +1,10 @@
+{
+  "schema": "riemann-direct-entry-browser-smoke-v1",
+  "http_status": 200,
+  "final_url": "http://127.0.0.1:4185/problems/riemann-hypothesis/",
+  "six_tabs_clicked": true,
+  "errors": [],
+  "passed": true,
+  "browser": "154.0.8037.95",
+  "finished_utc": "2026-10-04T01:29:31.066Z"
+}
