@@ -24,8 +24,14 @@ describe('short-window analytic evidence admission', () => {
       (d: RiemannData) => { d.short_window_moment!.eta = '0'; },
       (d: RiemannData) => { d.short_window_moment!.publication.status = 'draft'; },
       (d: RiemannData) => { d.short_window_moment!.publication.files[0].live_bytes_verified = false; },
+      (d: RiemannData) => { d.short_window_moment!.publication.files.push(d.short_window_moment!.evidence_companion.files[0]); },
+      (d: RiemannData) => { d.short_window_moment!.evidence_companion.manuscript_record = '22940291'; },
+      (d: RiemannData) => { d.short_window_moment!.evidence_companion.files[0].sha256 = 'changed'; },
+      (d: RiemannData) => { d.short_window_moment!.evidence_companion.files[0].url = d.short_window_moment!.publication.files[0].url; },
+      (d: RiemannData) => { d.short_window_moment!.publication.metadata.related_identifiers = []; },
       (d: RiemannData) => { d.short_window_moment!.source_sha256.moment_mellin = 'changed'; },
       (d: RiemannData) => { d.provenance = d.provenance.filter((p) => p.role !== 'moment_review'); },
+      (d: RiemannData) => { d.provenance = d.provenance.filter((p) => p.role !== 'moment_companion'); },
       (d: RiemannData) => { d.short_window_moment!.external_peer_review = true; },
     ]) {
       const data = replay(); corrupt(data); expect(shortWindowMomentEvidence(data)).toBeNull();

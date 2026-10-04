@@ -298,6 +298,27 @@ export type RiemannBarrierResult = {
   C2: { N: number; O: number; S: number; ratio_Q_minus_2N_over_O: RiemannArbRecord };
 };
 export type RiemannTangCheck = { model_within_2_percent: boolean; rows: Record<string, string>[] };
+export type RiemannPublicationFile = {
+  name: string; filename: string; bytes: number; sha256: string; md5: string; url: string;
+  live_bytes_verified: boolean; live_download_exact_match?: boolean;
+};
+export type RiemannPublicationMetadata = {
+  resource_type: { id: string }; version: string;
+  related_identifiers: { identifier: string; relation_type: { id: string } }[];
+};
+export type RiemannManuscriptPublication = {
+  schema: string; passed: boolean; status: string; version: string; record_id: string;
+  version_doi: string; concept_doi: string; record_url: string; external_peer_review: boolean;
+  manuscript_only: boolean; scientific_content_changed: boolean; pdf_sha256: string;
+  evidence_companion_doi: string; evidence_companion_record_id: string;
+  metadata: RiemannPublicationMetadata; files: RiemannPublicationFile[];
+};
+export type RiemannEvidenceCompanion = {
+  schema: string; passed: boolean; status: string; version: string; record_id: string;
+  doi: string; concept_doi: string; manuscript_record: string; resource_type: string;
+  manuscript_pdf_included: boolean; metadata: RiemannPublicationMetadata;
+  files: RiemannPublicationFile[];
+};
 export type RiemannDistinctZero = {
   schema: 'riemann-distinct-zero-v1'; accepted: boolean;
   counted_objects: string; denominator: string;
@@ -308,8 +329,8 @@ export type RiemannDistinctZero = {
     parameters: { r: number; m: number; tau: string; c: string; delta: string; pressure_sum: string };
     gap_pressures: string[]; source_sha256: string; source_author: string;
     external_local_formalization_rebuilt_here: boolean };
-  publication: { passed: boolean; concept_doi: string; version_doi: string; record_url: string;
-    files: { filename: string; bytes: number; sha256: string; live_download_exact_match: boolean }[] };
+  publication: RiemannManuscriptPublication;
+  evidence_companion: RiemannEvidenceCompanion;
   archive: { passed: boolean; members: number; archive_sha256: string };
   incomplete_experiments: string[]; excluded_claims: string[]; trust_boundary: string;
 };
@@ -322,9 +343,8 @@ export type RiemannShortWindowMoment = {
   analytic_moment_reviewed: boolean; arithmetic_alone_proves_theorem: boolean;
   external_peer_review: boolean; worldwide_priority_confirmed: boolean;
   effective_height: boolean; rh_solved: boolean;
-  publication: { passed: boolean; status: string; version: string; version_doi: string;
-    concept_doi: string; record_url: string; external_peer_review: boolean;
-    files: { name: string; bytes: number; sha256: string; live_bytes_verified: boolean; url: string }[] };
+  publication: RiemannManuscriptPublication;
+  evidence_companion: RiemannEvidenceCompanion;
   source_sha256: Record<string, string>; imported_inputs: string[]; trust_boundary: string;
 };
 export type RiemannData = {

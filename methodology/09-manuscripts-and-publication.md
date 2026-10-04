@@ -58,8 +58,6 @@ Gate, run before every build that will be deposited and enforced in CI:
   requests changes as further versions). Record id + DOIs go into the
   metadata.md the same session.
 
-## The update strategy (versions, never edits)
-
 ## Manuscript records and supporting evidence (user clarification, 2026-10-04)
 
 A manuscript Zenodo record contains the manuscript PDF itself. Supporting
@@ -76,6 +74,8 @@ current-state correction receipt when repairing placement. Never replace the
 scientific PDF or change its DOI as a side effect of moving supporting files.
 The user's authorized 2026-10-04 placement repair uses Zenodo's supported owner
 correction process within its grace period; it changes no scientific content.
+
+## The update strategy (versions, never edits)
 
 - Published files are FROZEN: every change ships as a Zenodo NEW VERSION
   (actions/newversion via API: replace the PDF, bump metadata version,

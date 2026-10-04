@@ -1,4 +1,5 @@
 import type { RiemannData } from '../api/data';
+import { separatePublicationEvidence } from './riemannPublication';
 
 /** Recorded analytic admission, distinct from the old conditional arithmetic. */
 export function shortWindowMomentEvidence(data: RiemannData | null) {
@@ -17,9 +18,13 @@ export function shortWindowMomentEvidence(data: RiemannData | null) {
       || m.publication?.passed !== true || m.publication.status !== 'published'
       || m.publication.version !== '0.02' || m.publication.version_doi !== '10.5281/zenodo.23132248'
       || m.publication.concept_doi !== '10.5281/zenodo.22984154'
-      || m.publication.external_peer_review !== false || m.publication.files?.length !== 2
-      || !m.publication.files.every((f) => f.live_bytes_verified === true)
-      || Object.keys(m.source_sha256 || {}).length !== 22
+      || !separatePublicationEvidence(m.publication, m.evidence_companion, {
+        manuscript: '23132248', companion: '23135349',
+        pdf: '710e174a8c08c2a20cb0a94b6bbdaaf2bb8feb3f24b56ebc9f753bb4b019a66c',
+        archives: ['944c99623d57fcff3db5a380d08dd5907bfbc40250c5c1f7f8d1fefd188da5c1'],
+      })
+      || Object.keys(m.source_sha256 || {}).length !== 24
+      || !m.source_sha256.moment_current_publication || !m.source_sha256.moment_companion
       || !Object.entries(m.source_sha256).every(([role, sha]) =>
         data.provenance.some((p) => p.role === role && p.sha256 === sha))
       || !data.provenance.some((p) => p.role === 'moment_review')) return null;
