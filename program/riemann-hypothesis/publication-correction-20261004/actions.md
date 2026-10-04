@@ -8,9 +8,9 @@ the publication mistake. This action list owns only that repair.
 | Inventory the entire Zenodo account, including historical versions | Account before/after audit, 245 manuscripts and all unrelated records reconciled | Passed |
 | Preserve original manuscripts and identify misplaced attachments | Original PDF checksums and byte downloads; three records, four ZIPs | Passed |
 | Publish each exact artifact set separately and correct the existing manuscript file set | Nine current publication, companion and correction receipts; reciprocal relations; original DOIs retained | Passed |
-| Correct repository admission and app links | Corruption gates and scientific-scope comparison pass; local replay passes 20 scenarios, 120 tab visits and 1,760 screenshot hashes; 16 focused views were manually inspected | Passed locally; production verification pending |
+| Correct repository admission and app links | Corruption gates and scientific-scope comparison pass; local replay passes 20 scenarios, 120 tab visits and 1,760 screenshot hashes; 16 focused views were manually inspected | Passed locally and in production |
 | Correct private publication ledger and backups | Current PDF-only entries, separate artifact entries and nine exact correction backups; unrelated entries unchanged; publisher file-set gates pass | Pushed to private develop at 2647d02e |
-| Persist and promote only the repair | Scoped commits, pushed repair branch from delivered baseline, issue #377 and draft repair PR #378 independent of paused research | Local rendered gate passed; promotion and production gates pending |
+| Persist and promote only the repair | Scoped commits, pushed repair branch from delivered baseline, issue #377 and draft repair PR #378 independent of paused research | Promoted through PRs #378/#379; production bytes and replay passed |
 
 Do not resume experiments, change manuscript scientific content, promote the
 paused app result, overwrite historical receipts, or alter unrelated records.
