@@ -1,0 +1,35 @@
+{
+  "schema": "levinson-v003-zenodo-publication-v1",
+  "passed": true,
+  "record_id": "23134787",
+  "version": "0.03",
+  "version_doi": "10.5281/zenodo.23134787",
+  "concept_doi": "10.5281/zenodo.22984154",
+  "record_url": "https://zenodo.org/records/23134787",
+  "published_utc": "2026-10-04T09:53:48.478530+00:00",
+  "status": "published",
+  "files": [
+    {
+      "name": "riemann-hypothesis-short-interval-levinson-v0.03.pdf",
+      "bytes": 481395,
+      "sha256": "4b940f5890de1cd6aacade86e58ee022e95a64337b50f21e3d90301f8d59158b",
+      "md5": "c4b8cc47ee52aad3a2c3516b295f416a",
+      "url": "https://zenodo.org/api/records/23134787/files/riemann-hypothesis-short-interval-levinson-v0.03.pdf/content",
+      "live_bytes_verified": true
+    },
+    {
+      "name": "riemann-hypothesis-short-interval-levinson-v0.03-source.zip",
+      "bytes": 280338,
+      "sha256": "f64fe74a4e62083f4487f5b04a4f3786a5cae5658ace0e6f94b505417c00cb6c",
+      "md5": "c08277702c1467c9bab53510f60d240b",
+      "url": "https://zenodo.org/api/records/23134787/files/riemann-hypothesis-short-interval-levinson-v0.03-source.zip/content",
+      "live_bytes_verified": true
+    }
+  ],
+  "pdf_sha256": "4b940f5890de1cd6aacade86e58ee022e95a64337b50f21e3d90301f8d59158b",
+  "tex_sha256": "b84934995bb7d717f79cdd6d5ebd1397e73425ce2719fd12ccf4df0ba2feac10",
+  "source_archive_sha256": "f64fe74a4e62083f4487f5b04a4f3786a5cae5658ace0e6f94b505417c00cb6c",
+  "render_review_sha256": "85fce8ed6f68ad71aaf0945ae91d431d914926e04257df092cff80e606512bd5",
+  "source_replay_sha256": "fe644be3d238454d737a0a61f906949544fe08993aa18b43308ef957d5518c5f",
+  "external_peer_review": false
+}

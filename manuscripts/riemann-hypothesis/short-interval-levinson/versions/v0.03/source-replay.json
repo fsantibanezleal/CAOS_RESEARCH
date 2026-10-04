@@ -1,0 +1,351 @@
+{
+  "schema": "levinson-v003-source-replay-v1",
+  "passed": true,
+  "archive_name": "riemann-hypothesis-short-interval-levinson-v0.03-source.zip",
+  "archive_bytes": 280338,
+  "archive_sha256": "f64fe74a4e62083f4487f5b04a4f3786a5cae5658ace0e6f94b505417c00cb6c",
+  "members": 85,
+  "all_members_crc_size_sha256_verified": true,
+  "all_23_analytic_source_bindings_verified": true,
+  "extracted_archive_auditors": {
+    "exp029-run": {
+      "sha256": "afea3063cdcca7d2c77e126e61d4b4c3ccf5decc1eee9cc879f0f0343266faee",
+      "passed": true,
+      "report": {
+        "schema": "exp029-finite-frequency-controls-v1",
+        "passed": true,
+        "analytic_moment_theorem_proved": false,
+        "hypothesis_sha256": "a594f5005ba961cf981f76b00a71972612fc9ac9f2a8704b9bc5173fe2929000",
+        "runner_sha256": "3b0af75f630142cdf0ae51f1d5834c5703648bdc9039d2dc602b99ad2337ff3d",
+        "arithmetic": "stdlib Fraction and independently reduced integer pairs; no floats",
+        "dyadic_blocks": 432,
+        "triples": 524400,
+        "exponent_boxes": 180,
+        "negative_controls": {
+          "drop_dual_N_spacing_cost": {
+            "P": 1,
+            "Q": 1,
+            "N": 1,
+            "left_ratio": "1/2",
+            "right_ratio": "1"
+          },
+          "drop_collision_N_factor": {
+            "P": 1,
+            "Q": 8,
+            "N": 8,
+            "ratio": "1",
+            "actual_multiplicity": 10,
+            "wrong_no_N_bound": 8
+          }
+        },
+        "theta": "527/1000",
+        "nu": "499/10000",
+        "eta": "1/100000",
+        "charged_E1": "-51/12500",
+        "charged_E2": "-6711/40000",
+        "cpu_seconds": 2.46875,
+        "scope": "Finite frequency/exponent controls only; no analytic theorem or new onset."
+      }
+    },
+    "exp029-conditional_control": {
+      "sha256": "1a456907bf573d993c54308ddb8834894743272cd8eff6d84981e31f6ebf31c7",
+      "passed": true,
+      "report": {
+        "schema": "exp029-conditional-native-parity-v1",
+        "passed_conditional_controls": true,
+        "analytic_moment_theorem_proved": false,
+        "hypothesis_sha256": "a594f5005ba961cf981f76b00a71972612fc9ac9f2a8704b9bc5173fe2929000",
+        "declaration_sha256": "c2c1f0b22b2e4b1026af2b9e1c289e688bf8604c7d9d7c06a81be7bf009735ac",
+        "runner_sha256": "a47dfae10b3789619a6d923cf1c04f4361548b5366fed44e49185e641acd8661",
+        "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+        "theta": "527/1000",
+        "nu": "499/10000",
+        "eta": "1/100000",
+        "charged_E1": "-51/12500",
+        "charged_E2": "-6711/40000",
+        "certified_kappa_lower": "71589990975836346694543352023356087639/2000000000000000000000000000000000000000",
+        "pair_term": "[-0.072375839463775570917107436211428178194261593071566921843810016192047392973 +/- 6.48e-76]",
+        "conditional_density": "[0.0005947542001029622394410856306697239318335843696329327803019932081389197019 +/- 9.27e-77]",
+        "zero_detector_rejected": true,
+        "cpu_seconds": 0.0,
+        "scope": "Conditional fixed arithmetic only; current admitted onset remains 0.5339."
+      }
+    },
+    "exp029-independent_control": {
+      "sha256": "c5a0d292ca89b340890673ce845ca54e44e4a70c8fc6b867943378c8d1ac775a",
+      "passed": true,
+      "report": {
+        "schema": "exp029-independent-conditional-parity-v1",
+        "passed_conditional_controls": true,
+        "analytic_moment_theorem_proved": false,
+        "hypothesis_sha256": "a594f5005ba961cf981f76b00a71972612fc9ac9f2a8704b9bc5173fe2929000",
+        "declaration_sha256": "c2c1f0b22b2e4b1026af2b9e1c289e688bf8604c7d9d7c06a81be7bf009735ac",
+        "runner_sha256": "2c1494cf8425a97194b2c6643abac1cc8e248ce2d085a29d5ca4b0843eae3bc1",
+        "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+        "interval_toolkit_sha256": "b93e2deeb4c8a4698028da914e6c042d995c2b7606dbdf9a2124e777dd4356ec",
+        "arithmetic": "stdlib Fraction, Machin pi/trig outward intervals and integer square roots; no FLINT/Arb",
+        "theta": "527/1000",
+        "nu": "499/10000",
+        "eta": "1/100000",
+        "charged_E1": "-51/12500",
+        "charged_E2": "-6711/40000",
+        "pair_term": {
+          "lower": "-723758394637755709171074362114281781943/10000000000000000000000000000000000000000",
+          "upper": "-361879197318877854585537181057140890971/5000000000000000000000000000000000000000"
+        },
+        "conditional_density": {
+          "lower": "2973771000514811197205428153348619659/5000000000000000000000000000000000000000",
+          "upper": "5947542001029622394410856306697239319/10000000000000000000000000000000000000000"
+        },
+        "zero_detector_rejected": true,
+        "spacing_N_omission_witness": {
+          "P": 1,
+          "Q": 1,
+          "N": 32,
+          "ratios": [
+            "1/64",
+            "1/63"
+          ],
+          "log_gap_upper": "1/63",
+          "wrong_delta": "1/16",
+          "proper_delta": "1/512"
+        },
+        "cpu_seconds": 0.015625,
+        "scope": "Conditional fixed arithmetic and one exact spacing refutation only; no new onset admitted."
+      }
+    },
+    "exp029-adversarial_control": {
+      "sha256": "a29fe1aa3829aba2c17c0a2678f710ab3f70fdf8c021a39ec9f300df65bd163e",
+      "passed": true,
+      "report": {
+        "schema": "exp029-adversarial-raw-cost-v1",
+        "passed": true,
+        "runner_sha256": "449243b7eca882f9b5759bf88e6af08219c4133c35f406987ebf23ee2a83ea7d",
+        "declaration_sha256": "4564c26e81272ae68bfd26e05215065be8f638833e5fa1ac288dc4badd4aebbd",
+        "audit": {
+          "theta": "527/1000",
+          "nu": "499/10000",
+          "eta": "1/100000",
+          "charged_exponents": [
+            "-51/12500",
+            "-6711/40000"
+          ],
+          "raw_cost_boxes": 6426,
+          "worst_grid_exponents_and_scales": [
+            [
+              "-51/12500",
+              "0",
+              "499/10000",
+              "499/10000",
+              "2291/50000",
+              "1/2"
+            ],
+            [
+              "-6711/40000",
+              "0",
+              "499/10000",
+              "499/10000",
+              "2291/50000",
+              "1/2"
+            ]
+          ],
+          "principal_N_slopes": [
+            "1/2",
+            "1"
+          ],
+          "tail_N_slopes_before_epsilon": [
+            "-7/2",
+            "-3"
+          ],
+          "gcd_decay_powers": [
+            "2",
+            "4"
+          ],
+          "negative_controls": {
+            "omitted_collisions": {
+              "triples": [
+                [
+                  4,
+                  5,
+                  20
+                ],
+                [
+                  4,
+                  7,
+                  28
+                ],
+                [
+                  5,
+                  4,
+                  20
+                ],
+                [
+                  5,
+                  6,
+                  30
+                ],
+                [
+                  6,
+                  5,
+                  30
+                ],
+                [
+                  7,
+                  4,
+                  28
+                ]
+              ],
+              "true_normalized_mass": 36,
+              "wrong_diagonal_only_mass": 6
+            },
+            "whole_line_unweighted_L2": {
+              "interval_masses": [
+                2,
+                4,
+                8,
+                16,
+                32,
+                64
+              ],
+              "analytic_divergence": true
+            },
+            "oversized_window_loss_rejected": true,
+            "zero_strict_margin_rejected": true,
+            "uncontrolled_tail_rejected": true
+          },
+          "range_transitions": [
+            "4/7",
+            "12/13"
+          ],
+          "analytic_moment_theorem_proved": false,
+          "scope": "Finite raw-cost accounting; universal proof and admission are separate.",
+          "cpu_seconds": 0.078125
+        }
+      }
+    },
+    "exp028-run": {
+      "sha256": "839d6a75e28e298fa343baec22f5c19477f3df313751906c0cb4e215797f7572",
+      "passed": true,
+      "report": {
+        "schema": "exp028-conditional-onset-v1",
+        "passed_conditional_controls": true,
+        "analytic_moment_theorem_proved": false,
+        "hypothesis_sha256": "f6f83b1d03af9b840c1ab48a939e91bd8282d4a2c223c79c135d944a6431d6e1",
+        "runner_sha256": "3528ad97149fff5efd46470fdaf6c30fbc8aa2a6f50f5df3240fd9b01b87eb4e",
+        "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+        "theta": "5339/10000",
+        "nu": "349/10000",
+        "existing_onset": "267/500",
+        "old_length_range_rejects_this_nu": true,
+        "proposed_moment_upper_nu": "1921/55000",
+        "E1": "-9/200000",
+        "E2": "-189/80000",
+        "certified_kappa_lower": "62587441630700832326901419310999470251/2500000000000000000000000000000000000000",
+        "pair_term": "[-0.050119463577053808897423376477345533692719188646790589810181075917830697555 +/- 2.91e-76]",
+        "conditional_simple_parity_lower": "[0.000398523315913527511630716381896759095028831820131738895340568992677515111 +/- 4.65e-76]",
+        "arithmetic_trust": "Existing EXP-010 detector certificate is a premise; new scalar parity check uses Arb.",
+        "cpu_seconds": 0.0,
+        "scope": "Conditional compatibility only. No established new onset or moment range."
+      }
+    },
+    "exp028-independent_control": {
+      "sha256": "0b4832bdc08acc095ba8c48f9956aea444f6e167c1b174b9319d19fb0a960df5",
+      "passed": true,
+      "report": {
+        "schema": "exp028-independent-conditional-v1",
+        "passed": true,
+        "auditor_sha256": "47a95cc8c2b2d78e67b4a8986eea12daf5809325e3883054d245fd8f0b6cab9e",
+        "declaration_sha256": "a9321d18ba743ec465a42738eb23df48f00202e2224a375b8ea39b7a30661cfc",
+        "audit": {
+          "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+          "interval_toolkit_sha256": "b93e2deeb4c8a4698028da914e6c042d995c2b7606dbdf9a2124e777dd4356ec",
+          "arithmetic": "Python stdlib Fraction outward intervals and integer square roots; no FLINT/Arb",
+          "theta": "5339/10000",
+          "nu": "349/10000",
+          "normalization_exponent": "-6047/20000",
+          "coefficient_norm_exponent": "177/5000",
+          "separation_exponent": "4661/20000",
+          "source_first_exponent": "6771/200000",
+          "source_second_exponent": "2523/80000",
+          "E1": "-9/200000",
+          "E2": "-189/80000",
+          "pair_term": {
+            "lower": "-15662332367829315280444805149170479279/312500000000000000000000000000000000000",
+            "upper": "-501194635770538088974233764773455336927/10000000000000000000000000000000000000000"
+          },
+          "conditional_parity": {
+            "lower": "79704663182705502326143276379351819/200000000000000000000000000000000000000",
+            "upper": "3985233159135275116307163818967590951/10000000000000000000000000000000000000000"
+          },
+          "negative_controls": {
+            "old_length_range_rejects_nu": true,
+            "doubled_separation_exponent_rejected": true,
+            "zero_detector_parity_rejected": true
+          },
+          "analytic_moment_theorem_proved": false,
+          "scope": "Conditional arithmetic only; no established onset improvement.",
+          "cpu_seconds": 0.015625
+        }
+      }
+    },
+    "exp028-adversarial_control": {
+      "sha256": "95b4c9c4b69fd840f7f4290bf690719bfcdf09ef57ae0f9f380095763c3ce5e2",
+      "passed": true,
+      "report": {
+        "schema": "exp028-adversarial-exponents-v1",
+        "passed": true,
+        "auditor_sha256": "8b4b50699f433742f9f08b8834cf7f55dfdd91a745c527a5dfc444dc36d19214",
+        "declaration_sha256": "6fdc9c14cf02fabf21ab2fe45534c00861daa704fe57b5b9021bec037cf7c6a1",
+        "audit": {
+          "arithmetic": "stdlib Fraction only",
+          "theta": "5339/10000",
+          "nu": "349/10000",
+          "eta": "1/100000",
+          "gaussian_theta": "53389/100000",
+          "charged_exponents": [
+            "-7/250000",
+            "-937/400000"
+          ],
+          "exact_dyadic_boxes": 7430,
+          "worst_grid_exponents_and_scales": [
+            [
+              "-7/250000",
+              "0",
+              "349/10000",
+              "349/10000",
+              "101/50000"
+            ],
+            [
+              "-937/400000",
+              "0",
+              "349/10000",
+              "349/10000",
+              "101/50000"
+            ]
+          ],
+          "low_N_slopes": [
+            "3/5",
+            "3/4"
+          ],
+          "high_N_slopes_including_parameter_growth": [
+            "-29/10",
+            "-11/4"
+          ],
+          "negative_controls": {
+            "oversized_window_loss_rejected": true,
+            "zero_margin_rejected": true,
+            "doubled_separation_rejected": true,
+            "uncontrolled_tail_rejected": true,
+            "reversed_parameter_factor_rejected": true
+          },
+          "analytic_moment_theorem_proved": false,
+          "scope": "Exponent accounting only; universal analysis is in mellin-proof.md.",
+          "cpu_seconds": 0.140625
+        }
+      }
+    }
+  },
+  "pdf_sha256": "4b940f5890de1cd6aacade86e58ee022e95a64337b50f21e3d90301f8d59158b",
+  "tex_sha256": "b84934995bb7d717f79cdd6d5ebd1397e73425ce2719fd12ccf4df0ba2feac10",
+  "analytic_proof_status": "internally reviewed; finite replay is not an analytic proof"
+}

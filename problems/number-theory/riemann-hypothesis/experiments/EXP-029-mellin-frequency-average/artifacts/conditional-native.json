@@ -1,0 +1,20 @@
+{
+  "schema": "exp029-conditional-native-parity-v1",
+  "passed_conditional_controls": true,
+  "analytic_moment_theorem_proved": false,
+  "hypothesis_sha256": "a594f5005ba961cf981f76b00a71972612fc9ac9f2a8704b9bc5173fe2929000",
+  "declaration_sha256": "c2c1f0b22b2e4b1026af2b9e1c289e688bf8604c7d9d7c06a81be7bf009735ac",
+  "runner_sha256": "a47dfae10b3789619a6d923cf1c04f4361548b5366fed44e49185e641acd8661",
+  "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+  "theta": "527/1000",
+  "nu": "499/10000",
+  "eta": "1/100000",
+  "charged_E1": "-51/12500",
+  "charged_E2": "-6711/40000",
+  "certified_kappa_lower": "71589990975836346694543352023356087639/2000000000000000000000000000000000000000",
+  "pair_term": "[-0.072375839463775570917107436211428178194261593071566921843810016192047392973 +/- 6.48e-76]",
+  "conditional_density": "[0.0005947542001029622394410856306697239318335843696329327803019932081389197019 +/- 9.27e-77]",
+  "zero_detector_rejected": true,
+  "cpu_seconds": 0.0,
+  "scope": "Conditional fixed arithmetic only; current admitted onset remains 0.5339."
+}

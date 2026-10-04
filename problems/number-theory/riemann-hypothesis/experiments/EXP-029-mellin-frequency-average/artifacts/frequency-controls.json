@@ -1,0 +1,35 @@
+{
+  "schema": "exp029-finite-frequency-controls-v1",
+  "passed": true,
+  "analytic_moment_theorem_proved": false,
+  "hypothesis_sha256": "a594f5005ba961cf981f76b00a71972612fc9ac9f2a8704b9bc5173fe2929000",
+  "runner_sha256": "3b0af75f630142cdf0ae51f1d5834c5703648bdc9039d2dc602b99ad2337ff3d",
+  "arithmetic": "stdlib Fraction and independently reduced integer pairs; no floats",
+  "dyadic_blocks": 432,
+  "triples": 524400,
+  "exponent_boxes": 180,
+  "negative_controls": {
+    "drop_dual_N_spacing_cost": {
+      "P": 1,
+      "Q": 1,
+      "N": 1,
+      "left_ratio": "1/2",
+      "right_ratio": "1"
+    },
+    "drop_collision_N_factor": {
+      "P": 1,
+      "Q": 8,
+      "N": 8,
+      "ratio": "1",
+      "actual_multiplicity": 10,
+      "wrong_no_N_bound": 8
+    }
+  },
+  "theta": "527/1000",
+  "nu": "499/10000",
+  "eta": "1/100000",
+  "charged_E1": "-51/12500",
+  "charged_E2": "-6711/40000",
+  "cpu_seconds": 2.421875,
+  "scope": "Finite frequency/exponent controls only; no analytic theorem or new onset."
+}

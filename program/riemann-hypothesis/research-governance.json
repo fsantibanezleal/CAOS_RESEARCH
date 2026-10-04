@@ -110,9 +110,9 @@
         "Three consecutive experiments fail to move the onset.",
         "RH-038 finds that the asymptotic large sieve does not extend to short t-ranges of length T/H with the needed moduli range."
       ],
-      "novelty_status": "Primary-source overlap review through 2026-10-04 located no matching onset; internal derivations and independent arithmetic pass. External peer review and worldwide novelty remain unconfirmed.",
+      "novelty_status": "New internally reviewed rational-frequency short-window moment and onset 0.527; primary-source overlap review through 2026-10-04 located no matching range. External peer review and worldwide priority remain unconfirmed.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "EXP-028 and published v0.02 close the original below-0.534 gate; app 0.76.000 is verified live. Retain RH-F4 for the source-complete rational-frequency Mellin preflight in strategy-review-20261004.md; declare a new experiment before controls. No new gain admitted.",
+      "first_bounded_action": "EXP-029 complete internal proof admits theta=0.527; Levinson v0.03 published at 10.5281/zenodo.23134787 with all 17 rendered pages, 85-member source archive and seven extracted replays. Complete research PR #376 and accurate app release; issue #374. EXP-023 remains stopped.",
       "evidence": [
         "EXP-010",
         "EXP-011",
@@ -122,7 +122,8 @@
         "EXP-021",
         "EXP-024",
         "EXP-027",
-        "EXP-028"
+        "EXP-028",
+        "EXP-029"
       ]
     },
     {
@@ -371,9 +372,9 @@
     },
     {
       "slug": "short-interval-levinson",
-      "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02",
-      "version": "0.02",
-      "version_doi": "10.5281/zenodo.23132248",
+      "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.03",
+      "version": "0.03",
+      "version_doi": "10.5281/zenodo.23134787",
       "concept_doi": "10.5281/zenodo.22984154",
       "status": "published-internally-reviewed",
       "split_action": "none"
@@ -504,6 +505,14 @@
     {
       "start": 28,
       "end": 28,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "short-interval-levinson"
+      ]
+    },
+    {
+      "start": 29,
+      "end": 29,
       "classification": "primary-manuscript",
       "manuscripts": [
         "short-interval-levinson"

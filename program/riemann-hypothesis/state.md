@@ -1,5 +1,20 @@
 # Riemann hypothesis state
 
+## In flight, 2026-10-04: EXP-029
+
+EXP-029 is internally proved for nu<min(1/2,2theta-1,(5theta-2)/6),
+1/2<theta<1. Two mean-square derivations and the complete analytic review
+retain all collisions, shifts, tails and compact-window losses. Exact
+controls pass 432 frequency blocks and 6,426 raw-cost configurations;
+native and rational parity give h>0.0005947542001 at theta=0.527.
+The internal onset is now 0.527. External review, worldwide priority and
+an effective height remain unconfirmed; RH is open. Published v0.02 and
+app 0.76.000 retain their original immutable claims. Levinson v0.03 is
+published at DOI 10.5281/zenodo.23134787: all 17 pages, the 85-member source
+archive, seven extracted replays and both exact public downloads pass.
+Issue #374 and draft PR #376 now track promotion and app release delivery.
+Read the EXP-029 verdict and proof-review. EXP-023 stays stopped.
+
 ## Current experiment update, 2026-10-04: EXP-028
 
 EXP-028 is internally proved: the uniform shifted moment admits

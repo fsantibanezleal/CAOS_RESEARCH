@@ -730,3 +730,49 @@ RH-F4 is retained for a source-bound Mellin frequency-averaging preflight;
 no new range/onset or manuscript is admitted. EXP-023 stays stopped.
 RH-038 is resolved by the EXP-027/028 alternative transformed route,
 not by proving the previously missing hybrid asymptotic large sieve.
+
+## 2026-10-04: EXP-029 declared before controls
+
+Hypothesis 06bfe46e declares grouped rational-frequency mean-square
+averaging of the exact Mellin formula, with full collision and tail
+costs. It retains RH-F4 and the same future manuscript home. Issue
+#374 tracks the unproved range and fixed theta=0.527 prediction.
+No finite control has run and no new onset is admitted. The new
+viewpoint is harmonic-analysis Gaussian Grams plus integer ratio
+collisions, rather than a larger detector search. EXP-023 stays stopped.
+
+## 2026-10-04: EXP-029 finite and conditional controls
+
+432 exact blocks, 524,400 triples and 180 exponent cases pass. Native and
+independent rational parity controls agree on conditional h>0.0005947542001
+at the declared theta=0.527, with both charged exponents negative. The
+initial spacing mutation is insufficient in isolation; the supplemental
+rational control supplies an actual upper-log-gap refutation of dropping N.
+All earlier code/receipts stay frozen. The analytic proof candidate has two
+mean-square derivations but no recorded admission. Additional raw-cost/tail
+controls are declared before execution. Current onset remains 0.5339; no
+new manuscript or public theorem follows from these finite results.
+
+## 2026-10-04: EXP-029 complete internal analytic admission
+
+The grouped rational-frequency mean-square route proves the larger uniform
+range nu<min(1/2,2theta-1,(5theta-2)/6). Independent Gaussian Schur and
+interval-Gram derivations agree; exact normalization, all profile orders,
+complex shifts, dual/gcd sums, residues and narrower-window conversion are
+reviewed. 6,426 raw-cost controls and explicit failed shortcuts supplement
+432 frequency blocks. The frozen detector independently gives
+h>0.0005947542001 at theta=0.527 with charged errors -51/12500 and
+-6711/40000. The internal onset improves to 0.527; no external review,
+effective height, worldwide priority or RH proof is claimed. The older
+trilinear route remains stronger above 12/13. The same focused Levinson
+paper owns the result; new-version publication and app delivery are pending.
+
+## 2026-10-04: Levinson v0.03 published with exact source replay
+
+Version DOI 10.5281/zenodo.23134787, concept 10.5281/zenodo.22984154. All
+17 actual rendered PDF pages pass; the 85-member source ZIP binds every
+member and all 23 analytic sources. Seven extracted EXP-029/028 controls
+pass with historical false theorem flags retained. Public PDF (481,395
+bytes) and ZIP (280,338 bytes) match exactly. Earlier v0.01/v0.02 files
+stay immutable. Promotion and app delivery remain open; no external
+review, effective height, worldwide priority or RH assertion.

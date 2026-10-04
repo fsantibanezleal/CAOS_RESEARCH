@@ -1,0 +1,18 @@
+{
+  "title": "Levinson's method in short intervals and simple zeros of the zeta function",
+  "description_html": "<p>For each fixed 1/2 &lt; theta &lt; 1, a uniformly shifted mollified second-moment formula is derived on windows of length T^theta with 0 &lt; nu &lt; min(1/2, 2theta-1, (5theta-2)/6). An exact shifted composite divisor transformation gives a common Mellin multiplier and the rational frequencies log(pq/n). Grouping repeated frequencies with their full collision multiplicities permits elementary mean-square bounds, independently derived by Gaussian Schur and direct interval-Gram arguments. Weighted Cauchy-Schwarz gives the relative errors TM/H^2 and TM^3/H^(5/2). Both transformed residues, complex shifts, arbitrary fixed operator polynomials, unbalanced blocks, gcd sums, infinite dual tails and narrower compact-window smoothing are retained. The complementary attributed Bettin-Chandee trilinear range nu &lt; min(1/2, (17/33)(2theta-1)) remains available.</p><p>Localized counting, the unchanged certified degree-201 detector and Wang's recent pair-correlation preprint give a positive asymptotic proportion of simple critical-line zeros in (T,T+T^theta] for every fixed theta in [0.527,1). At theta=0.527 the independently certified lower density exceeds 0.0005947542001. The proof has undergone internal review, uses attributed inputs and supplies no effective starting height, external peer-review claim, worldwide-priority assertion or proof of the Riemann hypothesis.</p><p>The source archive contains the standalone manuscript, full mathematical derivations, frozen detector certificate, arithmetic programs and exact-byte reproducibility instructions. Its 85 members and 23 analytic-source bindings are checked, and seven extracted EXP-029/028 arithmetic programs pass. Finite checks verify arithmetic and bookkeeping rather than the universal analytic theorem. Source and data: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+  "version_notes": "Adds the rational-frequency short-window moment with full collision costs and two elementary mean-square proofs, complementing the retained trilinear range. The internally reviewed positivity onset becomes 0.527 with the unchanged frozen detector and certified endpoint density above 0.0005947542001. Includes all seventeen visually reviewed PDF pages and an 85-member source archive with seven successful extracted replays. EXP-029 supplies the new theorem and refutations. Earlier published PDFs and sources remain immutable.",
+  "version": "0.03",
+  "keywords": [
+    "Riemann zeta function",
+    "simple zeros",
+    "critical line",
+    "short intervals",
+    "Levinson method",
+    "mollifier",
+    "rational frequencies",
+    "mean-square bounds",
+    "Mellin transform",
+    "interval arithmetic"
+  ]
+}
