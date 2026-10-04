@@ -49,7 +49,8 @@ the delivered app's scientific payload. Local rendered verification passed all
 20 scenarios, 120 tab visits and 1,760 screenshot byte checks. The 16 focused
 manuscript/evidence link views were also manually inspected; the full screenshot
 matrix was checked automatically. Receipts and screenshot manifests are stored
-alongside this record. The private correction mirror is pushed to develop.
+alongside this record. The private correction mirror and publisher file-set
+safeguards are validated and persisted through the private publication workflow.
 
 The repair was promoted through PRs #378 and #379 as release 0.76.001.
 All 76 live files match the validated candidate and actual Pages artifact.
