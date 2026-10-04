@@ -51,6 +51,8 @@ manuscript/evidence link views were also manually inspected; the full screenshot
 matrix was checked automatically. Receipts and screenshot manifests are stored
 alongside this record. The private correction mirror is pushed to develop.
 
-Remaining repair gates: promote only the repair and verify the production
-deployment and its links. This work does not authorize resuming research or
-promoting the paused result.
+The repair was promoted through PRs #378 and #379 as release 0.76.001.
+All 76 live files match the validated candidate and actual Pages artifact.
+Production replay passes 8 scenarios, 48 tab visits
+and 704 verified screenshot files. Delivery-verification.json binds
+the release, CI, deployment and validation receipts. Research remains paused.

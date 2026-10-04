@@ -511,5 +511,6 @@
     }
   ],
   "execution_state": "paused-by-user",
-  "current_work": "publication-separation-repair-only"
+  "current_work": "none",
+  "publication_repair_delivery": "program\\riemann-hypothesis\\publication-correction-20261004\\delivery-verification.json"
 }
