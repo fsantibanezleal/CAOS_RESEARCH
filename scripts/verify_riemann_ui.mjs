@@ -490,13 +490,20 @@ async function runScenario(viewport, lang, theme) {
       const panelId = await panel.getAttribute('id');
       requireCondition(panelId?.endsWith(`-panel-${id}`), `Wrong panel after ${id}: ${panelId}`);
       check(scenario, `${id}: substantive rendered content`, norm(await panel.innerText()).length >= 150);
-      check(scenario, `${id}: current EXP-028 theorem and publication visible`, (await panel.locator('[data-evidence="EXP-028"]').count()) === 1 && (await panel.locator('[data-evidence="EXP-028"] .rh-source-links a[href="https://doi.org/10.5281/zenodo.22984154"]').count()) === 1);
+      const moment = panel.locator('[data-evidence="EXP-028"]');
+      check(scenario, `${id}: current EXP-028 theorem and manuscript PDF visible`, (await moment.count()) === 1
+        && (await moment.locator('.rh-source-links a[href="https://zenodo.org/api/records/23132248/files/riemann-hypothesis-short-interval-levinson-v0.02.pdf/content"]').count()) === 1);
+      check(scenario, `${id}: separate moment evidence record linked`, (await moment.locator('.rh-source-links a[href="https://doi.org/10.5281/zenodo.23135349"]').count()) === 1);
       scenario.tabs_visited.push(id);
       await panelScreens(page, panel, scenario, id, ['summary', 'context', 'strategy'].includes(id));
       await proofControls(page, panel, scenario, id);
       if (id === 'results') await experimentViews(page, panel, scenario, text);
       const distinct = panel.locator(`[data-testid="distinct-${id}"]`);
       check(scenario, `${id}: completed distinct-zero section`, await distinct.count() === 1);
+      check(scenario, `${id}: separate distinct-zero evidence record linked`,
+        (await distinct.locator('a[href="https://doi.org/10.5281/zenodo.23135359"]').count()) === 1);
+      check(scenario, `${id}: distinct-zero manuscript PDF linked`,
+        (await distinct.locator('a[href="https://zenodo.org/api/records/23128663/files/riemann-hypothesis-distinct-zero-gram-v0.01.pdf/content"]').count()) >= 1);
       if (id === 'summary') {
         check(scenario, 'new distinct bound and scope', (await distinct.innerText()).includes('0.8373797460706156') && !(await distinct.innerText()).includes('0.837385561'));
         const fits = await distinct.locator('.katex-display').first().evaluate((el) => el.scrollWidth <= el.clientWidth + 1);

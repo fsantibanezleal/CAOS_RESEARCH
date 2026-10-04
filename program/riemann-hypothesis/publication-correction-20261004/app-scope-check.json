@@ -1,0 +1,18 @@
+{
+  "schema": "riemann-publication-only-scope-v1",
+  "passed": true,
+  "baseline_commit": "262e8eef750119450629a6a2243dc5fd0be9720e",
+  "all_scientific_payload_fields_unchanged": true,
+  "all_existing_provenance_unchanged": true,
+  "all_unrelated_registry_payloads_byte_identical": true,
+  "experiment_max": 28,
+  "research_paused": true,
+  "new_publication_roles": [
+    "distinct_companion",
+    "distinct_current_publication",
+    "moment_companion",
+    "moment_current_publication"
+  ],
+  "onset": "0.5339",
+  "artifact_sha256": "25aa0cd765f0342cb8a1d27ee8506c3298e9ffc7718ca49787fd9cd612bbb7ba"
+}

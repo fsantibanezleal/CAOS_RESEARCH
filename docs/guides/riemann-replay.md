@@ -9,8 +9,9 @@ EXP-028's internally reviewed moment range is
 `0<nu<min(1/2,(17/33)(2theta-1))`. With the unchanged certified EXP-010
 detector and Wang's attributed pair theorem, the simple-critical onset is
 0.5339, with endpoint density greater than 0.0003985233159135.
-The complete proof and 80-member source archive are published as
-[Levinson v0.02](https://doi.org/10.5281/zenodo.23132248).
+The manuscript PDF is [Levinson v0.02](https://doi.org/10.5281/zenodo.23132248).
+The 80-member source archive is published in the
+[separate evidence record](https://doi.org/10.5281/zenodo.23135349).
 
 Verify the source ZIP SHA-256
 `944c99623d57fcff3db5a380d08dd5907bfbc40250c5c1f7f8d1fefd188da5c1`
@@ -33,9 +34,10 @@ worldwide priority, an effective height or RH.
 
 ## Completed distinct-strip certificates
 
-The [published companion](https://doi.org/10.5281/zenodo.23128662) contains
-the general vector-pressure transfer, both complete source-dependent proofs,
-and the immutable PDF and two ZIPs. EXP-020 gives
+The [published manuscript](https://doi.org/10.5281/zenodo.23128662) contains
+the general vector-pressure transfer and both complete source-dependent proofs
+in its original PDF. The two ZIPs belong to the
+[separate evidence record](https://doi.org/10.5281/zenodo.23135359). EXP-020 gives
 `3997934614153/4775507750000`; EXP-025 gives the stronger
 `30945470743359/36955122080000`. These count distinct points in the entire
 critical strip against all zeros with multiplicity, asymptotically in height.
@@ -61,6 +63,10 @@ rejects incomplete coverage, changed sources, altered transfers and unpublished
 files. The offline exporter reads HEAD, not live checkpoints. Its additive
 `riemann-distinct-zero-v1` object preserves the existing replay-v9 contract.
 The browser validates recorded acceptance and provenance; it performs no search.
+Current-publication.json admits only a manuscript PDF; evidence-companion.json
+admits the separate dataset with reciprocal links and preserved archive hashes.
+Historical publication receipts retain the original deposit file set and are
+not used as a claim about today's file placement.
 EXP-019 is suspended and EXP-023 remains incomplete. Their candidates are excluded.
 
 The full [evidence guide](../../problems/number-theory/riemann-hypothesis/wiki/20-distinct-zero-certificates.md)
