@@ -332,3 +332,11 @@ thirty-second invariant/window/arithmetic preflight and no parameter sweep.
 Its local theorem remains an explicit attributed external dependency; source
 logs are not a local rebuild. It runs alongside the frozen covers and does
 not change the active signed-moment focus or manuscript stopping policy.
+
+
+## Multiplicity-aware bounded preflight, 2026-10-04
+
+RH-F4 remains the primary focus. RH-F15 / EXP-026 admits one invariant-first
+test of the retained mixed-Gram multiplicity term and a count-only gain.
+An isolated-point obstruction stops that proposed factor before a larger
+certificate. No pressure/geometric estimate or new manuscript is presumed.

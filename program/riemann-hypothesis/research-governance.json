@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "riemann-hypothesis",
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "original_problem": {
     "status": "open",
     "statement": "The Riemann hypothesis: every nontrivial zero of the Riemann zeta function has real part 1/2.",
@@ -325,6 +325,25 @@
         "EXP-025"
       ],
       "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
+    },
+    {
+      "id": "RH-F15",
+      "title": "Multiplicity-aware mixed-Gram preflight",
+      "status": "bounded preflight",
+      "priority": 2,
+      "target": "Retain the discarded multiplicity remainder and test a uniform count-based gain on actual point Grams.",
+      "value": "Determines whether multiplicity information can strengthen the completed distinct-zero transfer without another blind parameter sweep.",
+      "success_gate": "A proved usable proportion gain; the bounded preflight only resolves the retained inequality and isolation obstruction.",
+      "stop_conditions": [
+        "An isolated doubled point refutes a factor depending only on its count.",
+        "The remainder has no pressure/geometric lower bound sufficient to change the zero bound."
+      ],
+      "novelty_status": "Completion algebra is attributed source machinery; no method priority claim. Further geometric gain unproved.",
+      "manuscript_route": "Research record; distinct-zero-gram only after a coherent fully certified stronger consequence.",
+      "first_bounded_action": "EXP-026 declaration before code; one isolated-point family with symbolic and native controls; 30 seconds CPU.",
+      "evidence": [
+        "EXP-026"
+      ]
     }
   ],
   "manuscripts": [
