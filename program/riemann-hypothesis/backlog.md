@@ -76,7 +76,7 @@ not summed cancellation. RH-021 and RH-029 remain open integrity tasks.
 | RH-039 | Archive and audit October primary sources and external standing | done; source-manifest-20261003 and dated dossier | P0 |
 | RH-040 | Optimize and cap fixed mixed-Gram parameters | done; EXP-013 confirmed, RH-F6 closed | P1 |
 | RH-041 | Prove the phase-resolution obstruction and check nonzero Mobius support | done; EXP-014/015 confirmed | P1 |
-| RH-042 | Integrate EXP-013--015 into a later serialized replay/workbench release | open; research records are not in live replay v9 | P2 |
+| RH-042 | Integrate EXP-013--025 into the serialized replay/workbench release | in progress; research PR #363 merged, workbench PR #365 draft; live 0.74.000 unchanged | P1 |
 
 ## Trace-aware follow-up
 
@@ -131,5 +131,9 @@ admitted. RH-048 still requires the complete 96-shard audit, actual-output
 corruption controls, exact transfer and extracted reproducibility archive.
 
 RH-042 includes completed EXP-020 and derived EXP-025. Publication is complete at
-10.5281/zenodo.23128663; PR #363 integration and serialized workbench release
-remain pending. Issue #364 tracks these delivery obligations.
+10.5281/zenodo.23128663; PR #363 is merged. PR #365 and the serialized
+0.75.000 main/Pages release remain pending. Issue #364 tracks these delivery obligations.
+
+The declared EXP-023 pending-box diagnostic found no counterexample at 21
+exact midpoints; it does not complete the remaining shard or certify any box.
+See its declaration, preserved snapshot and pointwise review.

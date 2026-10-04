@@ -4,6 +4,26 @@ import type { Citation } from '@fasl-work/caos-app-shell';
 // Inline <Cite id="..."/> resolves against this list via the CitationsProvider at the app root.
 export const CITATIONS: Citation[] = [
   {
+    id: 'riemann-distinct2026', label: 'CAOS distinct-zero companion 2026',
+    citation: 'Santibanez-Leal F. (2026). Stronger local overlap certificates and distinct zeros of the Riemann zeta function, v0.01. Published proof and reproducibility archives; internal review, not external peer acceptance. Concept DOI links to the current version.',
+    url: 'https://doi.org/10.5281/zenodo.23128662',
+  },
+  {
+    id: 'riemann-knausgard2026', label: 'Knausgard 2026',
+    citation: 'K. M. Knausgård (2026). More than 83.69% of the zeros of the Riemann zeta function are distinct. Pinned arXiv:2609.33043v1: mixed Gram matrices and weighted local overlap, with distinct-strip proportion 0.83699288145242… .',
+    url: 'https://arxiv.org/abs/2609.33043v1',
+  },
+  {
+    id: 'riemann-bgstb2024', label: 'BGSTB and correction',
+    citation: 'Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh. Integrated complex-zero pair correlation, Acta Arithmetica 214 (2024), 357–376, arXiv:2306.04799; correction arXiv:2501.14545v3. The correction and fixed-test limit order are retained.',
+    url: 'https://arxiv.org/abs/2501.14545v3',
+  },
+  {
+    id: 'riemann-lavery2026', label: 'Lavery / typh / Ainta 2026',
+    citation: 'Samuel Lavery, attempt-013 (3 October 2026), using typh’s thirteen-term window and Ainta’s weighted refinement. Pinned source 2fcb7dba28691632cdb0846d694c9b9902cfce66. External Lean/nanoda verification archived; not rebuilt locally. Its critical-line score is distinct from the derived strip-wide count.',
+    url: 'https://github.com/josusanmartin/riemann/tree/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/attempt-013',
+  },
+  {
     id: 'riemann-anthropic2026', label: 'Anthropic 2026',
     citation: 'Anthropic (2026). New results on the Riemann zeta function. Research announcement, original and revised proofs, human verification notes, and formalization links. Reviewed 2026-09-12.',
     url: 'https://www.anthropic.com/research/riemann-zeta',

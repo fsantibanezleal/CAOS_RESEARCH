@@ -229,7 +229,7 @@ describe('Riemann contextual architecture', () => {
     expect(science.svg).toContain(lang === 'en' ? 'Certified global and local bounds' : 'Cotas globales y locales certificadas');
     expect(method.svg).toContain('docs/guides/riemann-replay.md');
     expect(method.svg).toContain('EXP-001 · EXP-002 · … · EXP-006');
-    expect(method.svg).toContain('EXP-007 · EXP-008 · … · EXP-012');
+    expect(method.svg).toContain('EXP-007 · EXP-008 · … · EXP-025');
     expect(method.svg).toContain(lang === 'en' ? 'Audit parity and pressure' : 'Auditar paridad y presión');
     expect(method.body_en).toContain('0.5458837 < θ6 < 0.5458838');
     expect(science.body_en).toContain('None of these results proves RH');
@@ -276,4 +276,3 @@ describe('replay v9 evidence for EXP-010 to EXP-012', () => {
     expect(CITATIONS.some((citation) => citation.id === 'riemann-levinson2026')).toBe(true);
   });
 });
-

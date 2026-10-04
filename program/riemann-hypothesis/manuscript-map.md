@@ -131,8 +131,11 @@ files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128
 SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
 The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
 Issues #356/#358 close the local input obligation; #364 tracks publication
-and release. PR #363 remains draft and unmerged. No new live application
-release or private main promotion is claimed yet.
+and release. PR #363 merged to develop at `0fd13678315b4b7ac20af8b6b66b44982e7acefa`.
+Workbench PR #365 remains draft pending its full rendered matrix and
+serialized main/Pages release. Private publication evidence was backed up
+through CAOS_MANAGE PR #799, main/develop `7dbdeab4`. The live application
+still runs 0.74.000; 0.75.000 is prepared, not deployed.
 
 EXP-023 remains 95/96 under its owned supervisor through the deadline
 2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is

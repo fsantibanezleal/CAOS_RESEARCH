@@ -18,9 +18,11 @@ are mathematically closed and their companion is published. Read
   exactly match. Native editor compilation unavailable; exported MiKTeX,
   voice/reference/layout and all nine rendered-page checks pass.
 - Issues #356/#358 close the local input obligation. Issue #364 tracks
-  publication/release; PR #363 remains draft and unmerged. Finish updated
-  handoff/mirrors, fresh scoped tests/CI, PR integration and the authorized
-  serialized release. No new deployed workbench is claimed yet.
+  publication/release; PR #363 merged at `0fd13678`. Workbench PR #365 is
+  draft pending the full bilingual rendered matrix and main/Pages promotion.
+  The exact fractions, proofs and archive links are implemented for 0.75.000;
+  68 export tests, 31 frontend tests and source CI pass. Live remains 0.74.000.
+  Private publication backup PR #799 is merged, main/develop `7dbdeab4`.
 - EXP-023 still 95/96. Supervisor session 37164, owned root PID 49576,
   start ticks 639266572920797116, deadline 2026-10-04 02:48:12 UTC.
   Output `E:/_Datos/caos-research/riemann-hypothesis/exp023-partitioned-local-20261003`.
@@ -66,13 +68,16 @@ live release. General RH remains open.
 | `C_simple` | Attributed global simple-critical lower proportion | `0.6725007995946757558283550562963947865...` |
 | `C_distinct` | Attributed distinct-strip companion | `0.8362503997973378779141775281481973932...` |
 | EXP-017 `q` | Attributed seven-point distinct-strip lower bound | `0.83699292567522...`; full-energy assembly |
-| EXP-018 conditional `q` | Larger distinct-strip target; nine-point local premise unclosed | `3997934614153/4775549550000 = 0.83716744477146...` |
+| EXP-018 conditional `q` | Older conditional target; premise now implied by stronger EXP-020 | `3997934614153/4775549550000 = 0.83716744477146...` |
 | EXP-016 `q` | Attributed earlier distinct-strip bound | `69341429073721/82845897125000 = 0.83699291672944...`; trace-aware assembly |
 | EXP-013 `q` | Attributed improved distinct-strip bound | `62359683640669/74504434380000 = 0.83699291404068...`; fixed-input optimum |
 | EXP-009 portable result | Exact theorem checks, source replay, global and local transfers | SHA-256 `0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66` |
 | Manuscript v0.01 | Seven-page published preprint | DOI `10.5281/zenodo.22940291` |
 | `kappa(P,Q,R,nu)` | Localized Levinson distinct sign-change density | `>0.7170 nu` at eight frozen `nu`; EXP-010 |
 | `h(theta;kappa)` | Parity transfer of the Levinson density | positive for every `theta` in `[0.534,1)`; `>0.0177638` at `0.5459` |
+| EXP-020 `q` | Completed independent nine-point certificate | `3997934614153/4775507750000 = 0.8371747724947154...` |
+| EXP-025 `q` | Source-attributed vector-pressure consequence | `30945470743359/36955122080000 = 0.8373797460706156...` |
+| Distinct-zero companion | Published nine-page proof and reproducibility archives | DOI `10.5281/zenodo.23128663` |
 | EXP-010 canonical result | Exact admissibility, Arb constants, anchors, onset | SHA-256 `74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464` |
 | `short-interval-levinson` v0.01 | Ten-page manuscript of EXP-010 | DOI `10.5281/zenodo.22984155` (concept `10.5281/zenodo.22984154`), public bytes verified |
 
@@ -97,129 +102,71 @@ live release. General RH remains open.
 | EXP-015 | confirmed obstruction on squarefree twists with nonzero basic mollifier coefficients |
 | EXP-016 | confirmed trace-aware clipped-block refinement and revised integer cap |
 | EXP-017 | confirmed full-energy envelope and pressure transfer; scaled prior art, small exact gain |
-| EXP-018 | confirmed conditional nine-point transfer 0.83716744477146...; local replay obligation open |
+| EXP-018 | confirmed older conditional transfer; local premise now implied by stronger EXP-020 |
+| EXP-019 | suspended original traversal; weaker premise implied by EXP-020 |
+| EXP-020 | confirmed universal local certificate, full 96-shard independent replay and published distinct-strip transfer |
+| EXP-023 | incomplete 95/96; native inputs pass, full-cover obligation remains open |
+| EXP-025 | confirmed general vector-pressure application with attributed external local theorem; published companion |
 | EXP-021 | confirmed classical shifted composite arithmetic layer; exact gcd, conductor and unequal-shift controls; analytic reciprocity and cancellation remain open |
 | EXP-022 | confirmed fixed-packet pressure-family cap 0.837421287797... for all p>=0; changed-pressure candidate 0.837385561059... requires a new complete local certificate |
 | EXP-024 | confirmed exact shifted Gaussian/Mellin representation and controlled smooth compact-window reduction; signed moment main sum remains open |
 
 ## 4. In flight
 
-EXP-019 is admitted as bounded RH-F10. The complete rounding audit, source
-binding and independent window audit passed. Its source-identical traversal
-is suspended with validated snapshots (33 checkpoints, nine completed shards
-at backup) to prioritize EXP-020; it has no complete-certificate verdict.
-The backup receipt is under EXP-019/artifacts/baseline-snapshot-receipt.json.
+EXP-023 / RH-048 / issue #362 is the only active cover. The independently bound
+quarter partition spans 65,536 initial boxes over 96 shards. It resumed at
+2026-10-03 20:48:12 UTC with four workers and an owned six-hour supervisor:
+session 37164, root PID 49576, start ticks 639266572920797116, deadline
+2026-10-04 02:48:12 UTC. External state is
+`E:/_Datos/caos-research/riemann-hypothesis/exp023-partitioned-local-20261003`.
+95/96 reports are complete. Read live state before any progress claim; do not
+infer an ETA from pending stack size. Preserve all runtime-bound source and
+both earlier pilot backups. Pilot setup failures and budget overruns remain
+in the experiment reviews and append-only history.
 
-EXP-020 is admitted as bounded RH-F11. Its independently declared stronger
-target is 3051/500000 = 0.006102. Shard 0 passed with 648919 nodes; the full
-96-shard cover is running with 24 workers on
-`work/riemann-hypothesis/nine-replay-20261003`. Sixteen quadratic controls and
-the 230-test Riemann suite passed. These controls and partial coverage are
-not a universal local inequality or a new distinct-zero proportion. Issue
-#358 tracks the stronger certificate. The independent stdlib cover auditor
-supports both experiments and rejects incomplete coverage. Runtime-bound
-source must remain frozen while workers run.
+The source-bound native kernel-first input audit passes all 52,240 closed cells
+in both tables. Earlier direct-interval and squared-kernel Taylor attempts
+remain inconclusive. The prepared independent cover, actual-output corruption,
+transfer and extracted archive tools reject the incomplete 95-report output.
+Execute their completed-input paths only after all 96 reports exist. The
+21-midpoint diagnostic in `checkpoint-point-review.md` is finite evidence only.
 
-EXP-022 proves a uniform ceiling for this fixed window/weight schedule,
-not for the true zero proportion: every finite admissible pressure/block
-transfer is below 0.8374212877970697... . Two rational configurations,
-192-bit enclosures and an independent native-sinc 256-bit audit close
-the rising/falling-line proof. Issue #361 tracks this supporting result.
-At p=1/1250, delta=52231/5000000, m=562, tau=1203/500, c=1703/500, a new
-universal certificate would give 2340938143167/2795532013000 =
-0.8373855610599298... . This passes the declared 0.0001 improvement
-value gate; a separately declared certificate pilot is the next bounded
-step. The six-second exploration does not prove that new lower bound.
+EXP-019 remains suspended with its protected 33-checkpoint backup. Its weaker
+same-pressure premise is now implied by completed EXP-020; this does not complete
+the original traversal. EXP-020's 96/96 cover, native input audit, corruption
+controls, exact transfer and archive are closed and published, with preserved
+runtime under `exp020-quadratic-local-20261003` in the same external root.
+Do not restart it or alter its archived physical bytes.
 
-EXP-023 is now admitted as bounded RH-F13, with issue #362. Its separately
-bound wrapper, runner and independent auditor are committed in 62dd7923.
-Thirty targeted controls pass. Directed pressure rounding is checked over
-all 417849 possible sums of cell indices; the frozen EXP-020 source is
-unchanged and its corresponding 488161 sums also pass. One actual shard-0
-pilot began at 19:35:50 UTC on 2026-10-03, with a twenty-minute budget after
-preparation, one additional CPU and external state in
-`exp023-repressured-local-v2-20261003`. Read its live checkpoint before any
-cost or completion claim. The preliminary prepare-only directory without
-`v2` is retained but cannot be resumed by this strengthened binding.
-EXP-023 at a different pressure does not imply EXP-018's local premise.
-
-Update: that first pilot hit its budget incompletely and was stopped after
-a validated backup at 19:57:22 UTC. It had one initial Cartesian box, so
-only shard zero had actual work. The measured cost and 92-second budget
-overrun are recorded in EXP-023/pilot-review.md. A separately bound exact
-quarter partition gives 65536 initial boxes over 96 shards, with unchanged
-pruning code and 41 targeted controls. Commit 748bcfb9 precedes its actual
-shard-0 pilot, launched about 20:08:02 UTC with the same twenty-minute
-budget. External state: `exp023-partitioned-local-20261003`; session 98159.
-Keep both earlier pilot backups and all runtime-bound source frozen.
-
-The revised pilot was stopped at 20:33:47 UTC after a validated backup:
-1912832 nodes, depth 56, nine pending boxes, incomplete. Its 345-second
-budget overrun and the subsequent six-hour full-cover cost review are
-persisted. Commit 295ee71c includes an independent operational budget
-supervisor, with three passing controls including a real owned process
-tree and preservation of an unrelated sentinel. Both orchestration setup
-failures are retained. The mathematical verifier source was not changed.
-The full cover resumed at 20:48:12 UTC, four workers, same binding and
-`exp023-partitioned-local-20261003`; supervisor session 37164, root PID 49576.
-The actual six-hour deadline is 2026-10-04 02:48:12 UTC. Its external
-full-cover-budget-receipt.json records ownership, command and source hashes.
-At 20:50 UTC 94/96 shards were complete; coverage remains incomplete.
-The complete mathematical auditor and exact transfer are still required.
-The prior full Riemann suite passed; the three new orchestration controls
-also pass. Scoped collection now finds 258 Riemann tests. A separate attempt
-to collect all problem suites encountered 24 unrelated dependency errors;
-it was abandoned in favor of the explicit Riemann file list, not reported
-as a Riemann test failure or as full-repository validation.
-
-External resumable state is under E:/_Datos/caos-research/riemann-hypothesis/
-exp020-quadratic-local-20261003 (stronger run) and
-exp019-local-replay-20261003 (suspended baseline). The stronger run's full-cover
-planning budget is twelve hours from launch; a budget hit is incomplete and
-does not fulfill the research objective. Resume the baseline if the stronger
-target fails or its mathematical review raises a concern.
-EXP-013--018 are closed research records. EXP-018 is conditional on its
-unreplayed nine-point local input; issue #356 tracks that obligation.
-The latest deployed replay remains v9 with twelve experiments. The tag
-v0.74.000 is verified; no pending-tag action remains.
+The selected research suite passed 258 tests before the workbench changes.
+The export-focused suite passes 68 tests and frontend 31 tests. An earlier
+all-problem collection hit unrelated dependency errors; no full-repository
+unit-test claim is made. Live remains release 0.74.000 with twelve replay
+experiments; the 25-record workbench is draft PR #365.
 
 ## 5. Next actions
 
-The October strategic review retains RH-F4; bounded RH-F6--F9 are closed;
-RH-F10 and RH-F11 are admitted for EXP-019 and EXP-020.
-The onset remains 0.534. Direct CIS substitution and uniform pointwise
-phase repairs are closed, including nonzero Mobius support. Signed
-off-diagonal cancellation is not excluded.
+1. RH-042: finish PR #365 rendered matrix and requirement convergence, merge
+   through develop/main, tag 0.75.000, verify Pages and exact live bytes, then
+   reconcile private mirrors and issue #364. Published v0.01 bytes are frozen.
+2. RH-048: preserve EXP-023's owned supervisor and deadline. All 96 reports,
+   independent cover, actual-output controls, exact transfer and extracted
+   archive are required before any candidate claim. The declared 21-point
+   diagnostic found no counterexample; it is not a box or universal proof.
+3. RH-038 / RH-F4: estimate EXP-024's signed main sum with its primitive
+   conductor, composite gcd, gamma, residue, cutoff and polynomial weights.
+   EXP-021 closes the classical arithmetic layer and EXP-024 closes its stated
+   Gaussian/fixed compact-window representation. Neither supplies the missing
+   signed cancellation or an onset improvement. Keep the support-graph and
+   Fourier-concentration obligations from the subdyadic/non-abelian review.
+4. RH-029: independently audit the rectangle-detour defect in EXP-005/008.
+5. RH-021: recover an exact rank-six coefficient matrix or source artifact.
 
-1. RH-046: complete EXP-020's stronger 96-shard certificate and independent
-   audit; issues #356 and #358. Check every binding, domain component and
-   checkpoint. A complete stronger inequality implies EXP-018's weaker local
-   premise; it does not retroactively complete EXP-019's suspended traversal.
-   Re-evaluate a distinct-strip companion manuscript only after complete
-   certification, exact transfer, analytic review and scientific value review.
-2. RH-038: derive the complete shifted, composite-twist signed reduction,
-   retaining gamma ratios, parity and oscillatory factors. EXP-021 closes
-   its classical arithmetic layer: the local numerator is
-   `S_b-p^(-alpha-beta)*S_(b-1)*chi(p)*p^(-s)` when `p` does not divide
-   `q=h/d`; it is `S_b` otherwise. All gcd classes and primitive Euler
-   factors are retained. The uniform shifted Mellin weight, residues and
-   analytic errors remain to be proved before seeking signed cancellation
-   or a spectral decomposition. Exact controls passed in 4.17 CPU seconds.
-   EXP-024 subsequently closes the representation step for its stated
-   Gaussian and fixed smooth compact windows, bounded polynomial-length
-   composite twists and O(1/log T) shifts. Its exact residue and all-order
-   phase/heat remainders are proved, with independent enclosed kernel and
-   full-moment normalization controls. The signed main sum and its primitive
-   conductor/gcd/polyweight estimates remain open. No onset upgrade follows.
-3. RH-029: independently audit the rectangle-detour defect in EXP-005/008.
-4. RH-021: recover an exact rank-six coefficient matrix or source artifact.
-5. RH-042: later serialized replay/workbench release for the new records.
-
-Latest source-based distinct-strip bound: EXP-017, 0.83699292567522... .
-No new paper or Zenodo deposit yet. EXP-020's manuscript gate review removes
-an unnecessary sharp energy-envelope step: at the proposed transfer parameters
-D < tau^2, the attributed elementary block dichotomy suffices. A stronger local
-certificate and its resulting distinct-strip transfer still require completion.
+The strongest confirmed distinct-strip fraction is EXP-025's
+30945470743359/36955122080000. No new split manuscript is warranted for
+supporting EXP-021/022/024 or the finite point diagnostic. A complete stronger
+EXP-023 consequence would require reviewed companion v0.02; v0.01 remains
+immutable. Worldwide priority and external expert acceptance are unconfirmed.
 
 ## 6. Where everything lives
 
@@ -253,7 +200,8 @@ passed for 098c0476 with repository-contract scope only. The unscoped
 local structure checker cannot validate missing other-problem trees in
 this sparse checkout; do not expand it beneath the frozen workers.
 
-Both active covers were 95/96 at 22:31 UTC. EXP-023's additional native
+Historical snapshot: both covers were 95/96 at 22:31 UTC; EXP-020 has since
+completed and been published. Only EXP-023 remains active. EXP-023's additional native
 kernel-first input audit passed every closed cell in both 52,240-cell tables;
 see its source-bound native-kernel-taylor-full.json and mathematical
 declaration. Earlier direct-interval and squared-kernel Taylor variants were
