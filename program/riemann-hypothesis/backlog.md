@@ -39,7 +39,7 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 | RH-023 | Export replay v8, integrate EXP-009 into the public workbench, and complete release 0.73.000 QA | done; release 0.73.000 live-verified from exact main | P0 |
 | RH-024 | EXP-010: localize Levinson's method with general `Q`, prove the distinct sign-change count, certify degree-201 detectors and move the parity onset | done; canonical certificate, independent audit, controls and two referee passes confirmed; Prediction A scope corrected to `Q(0)=1` | P0 |
 | RH-025 | Deposit the `short-interval-levinson` manuscript v0.01 on Zenodo through the vault tooling and record the receipt | done; DOI 10.5281/zenodo.22984155, public bytes verified | P0 |
-| RH-026 | Export replay v9, integrate EXP-010 into the public workbench, and complete a serialized release with rendered QA | done 2026-09-28: release 0.74.000 promoted (PRs #346, #347), live bytes match the exact-main build; tag v0.74.000 pending (proxy refuses tag pushes) | P1 |
+| RH-026 | Export replay v9, integrate EXP-010 into the public workbench, and complete a serialized release with rendered QA | done 2026-09-28: release 0.74.000 promoted (PRs #346, #347), live bytes match the exact-main build; tag and GitHub release verified 2026-10-03 at a464bdb5 (additive reconciliation receipt) | P1 |
 | RH-027 | Short-window moment beyond `nu<theta-1/2` | EXP-012 inconclusive 2026-09-28: Tang's dual moment is about `sqrt(h)sqrt(T)` per pair; trivial bound gives `nu<(2/3)(theta-1/2)`, hybrid large sieve gives `theta-1/2`; target A' withdrawn. Continues as RH-038 | P1 |
 | RH-028 | Second mollifier piece at short length | closed 2026-09-27: Bui-Conrey-Young piece gains below `1e-9` at `nu=0.068,0.15` ([route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md)); Feng pieces not computed | P2 |
 | RH-029 | Proof hygiene: record in EXP-005/008 that the rectangle-sign detour defect is paid by the discarded Littlewood contribution of on-line detector zeros | open | P2 |
@@ -61,3 +61,79 @@ EXP-011 closed RH-034 and EXP-012 stopped the Tang route with standard bounds
 (2026-09-28). RH-026 released as 0.74.000 on 2026-09-28. Next: RH-038 (asymptotic large sieve
 for the dual family).
 | RH-038 | Asymptotic evaluation of the dual family for moduli `h<=T^nu` and `t`-ranges of length `T/H`, to beat `nu<theta-1/2` | preflight 2026-09-28: CIS arXiv:1808.02879 Theorem 1 covers twists up to `Q^vartheta`, `vartheta<1`, at the central point only; the dual family sits at `vartheta=1` with an extra `t`-average. Needs a hybrid (modulus and `t`) asymptotic large sieve with shifts; none located | open, research-level | P1 |
+
+## Current continuation review 2026-10-03
+
+The historical September sweep above is superseded for external standing
+by the October dossier. RH-038 remains open, but its immediate obligation
+is a complete shifted, composite-twist, signed reduction; direct use of
+CIS 1808.02879 fails at the twist endpoint, while CIS 1105.1177 allows
+only logarithmic heights. EXP-014/015 close uniform pointwise phase repairs,
+not summed cancellation. RH-021 and RH-029 remain open integrity tasks.
+
+| ID | Work | Status | Priority |
+|---|---|---|---|
+| RH-039 | Archive and audit October primary sources and external standing | done; source-manifest-20261003 and dated dossier | P0 |
+| RH-040 | Optimize and cap fixed mixed-Gram parameters | done; EXP-013 confirmed, RH-F6 closed | P1 |
+| RH-041 | Prove the phase-resolution obstruction and check nonzero Mobius support | done; EXP-014/015 confirmed | P1 |
+| RH-042 | Integrate EXP-013--025 into the serialized replay/workbench release | in progress; research PR #363 merged, workbench PR #365 draft; live 0.74.000 unchanged | P1 |
+
+## Trace-aware follow-up
+
+| ID | Work | Status | Priority |
+|---|---|---|---|
+| RH-043 | Retain trace-zero energy in the clipped-block dichotomy | done; EXP-016 confirmed with a revised cap, RH-F7 closed | P1 |
+
+RH-042 includes EXP-016 as well as EXP-013--015. The sharper block estimate
+does not change RH-038's analytic target or the onset. Larger searches on
+these fixed inputs are not admitted without a new uniform theorem and a
+value-of-information check.
+
+| RH-044 | Sharp retained-energy envelope and pressure transfer | done; EXP-017 confirmed; issue #354; RH-F8 closed | P1 |
+
+| RH-045 | Source-conditioned nine-point distinct-strip transfer | done; EXP-018 confirmed conditional; issue #355 | P1 |
+
+| RH-046 | Bind and independently replay the nine-point universal local certificate, then reassess a focused manuscript | closed by stronger EXP-020; issues #356/#358; EXP-019 execution suspended | P1 |
+
+RH-042 also covers EXP-017/018; live replay v9 still contains twelve experiments.
+
+## EXP-021 arithmetic milestone
+
+RH-038 remains open. Its shifted composite arithmetic layer is proved and
+exactly checked in EXP-021; issue #360; this is classical supporting material, not a
+new cancellation theorem. The first remaining obligation is the uniform
+shifted short-window Mellin reduction, including residues and all signed
+conductor/gamma contributions. Subsequent summation must preserve the
+squarefree mollifier cutoff and both polynomial weights. No manuscript,
+onset improvement or research stopping condition follows from this milestone.
+
+| RH-047 | Audit the full pressure family of the fixed nine-point packet | done; EXP-022; issue #361; uniform method-output cap 0.837421287797... |
+
+EXP-022's candidate at p=1/1250 requires a new independently declared
+universal certificate. The pressure cap precludes indefinite tuning of
+the same packet beyond 0.837421287797... and does not constrain other
+window/weight schedules or RH-038's signed analytic route.
+
+| RH-048 | Certify the changed-pressure nine-point target and exact distinct-strip transfer | in progress; EXP-023; issue #362; full independent 96-shard audit required |
+
+RH-038 update: EXP-024 closes the analytic representation step for fixed
+smooth compact windows, bounded composite twists and small shifts through
+an exact Gaussian reduction with arbitrary fixed-order controlled
+remainders. The main signed arithmetic average is unestimated. Its source
+conductor, gcd, cutoff and polynomial factors remain mandatory. No new
+moment range, short-window onset or manuscript has been established.
+
+RH-038 source follow-up: the
+[subdyadic/non-abelian review](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-subdyadic-and-nonabelian-review.md)
+records the withdrawn January lead and the support-graph/Fourier-concentration
+requirements for two alternative estimates. No direct theorem import is
+admitted. RH-048 still requires the complete 96-shard audit, actual-output
+corruption controls, exact transfer and extracted reproducibility archive.
+
+RH-042 includes completed EXP-020 and derived EXP-025. Publication is complete at
+10.5281/zenodo.23128663; PR #363 is merged. PR #365 and the serialized
+0.75.000 main/Pages release remain pending. Issue #364 tracks these delivery obligations.
+
+The declared EXP-023 pending-box diagnostic found no counterexample at 21
+exact midpoints; it does not complete the remaining shard or certify any box.
+See its declaration, preserved snapshot and pointwise review.

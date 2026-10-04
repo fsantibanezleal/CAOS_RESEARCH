@@ -220,3 +220,115 @@ target `nu<2theta-1` for RH-027, the RH-028 benchmark was already met by
 the 2026-09-26 preflight, and Lamzouri's Proposition 2.1 weakens the
 Cohn-Elkies route.
 
+
+
+## Continuation review 2026-10-03
+
+Read the [new source and dual-family preflight](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-update-and-dual-family-preflight.md).
+RH-F4 remains the substantive short-window target. Direct use of the CIS
+theorems is gated by the twist endpoint, growing heights, composite indices
+and signed arithmetic weights. First run EXP-014 to test the generic
+pointwise phase mechanism; a summed cancellation theorem remains the positive
+route. Secondary bounded focus RH-F6 audits the new mixed-Gram paper with
+EXP-013 and stops once its fixed-input parameter cap is proved. Both are
+research records unless a substantive new analytic result emerges.
+
+## Post-experiment strategic review 2026-10-03
+
+EXP-013 closes RH-F6 with a strict exact gain and a uniform integer cap.
+EXP-014/015 close the pointwise phase repair, including actual squarefree
+mollifier support. The onset remains 0.534. These are useful bounded
+research records, not reasons for another parameter sweep or paper.
+
+The required review after three rounds without an onset improvement retains
+RH-F4 because signed off-diagonal cancellation remains untreated by the
+existing argument. Narrow the next theorem obligation to the complete
+shifted composite-twist reduction, before any family average or computation.
+Keep gamma ratios, parity and k^(-it) factors. Only after this identity is
+proved should a spectral/Kloosterman decomposition or an asymptotic large
+sieve extension be attempted. Existing CIS theorems do not supply the needed
+endpoint and polynomial-height uniformity. Sampling positive L-value squares
+does not decide the signed family.
+
+Ordered next actions: RH-038 reduction; RH-029 rectangle-detour proof audit;
+RH-021 recoverable rank-six matrix. RH-026 is complete, including its tag.
+RH-042 is a separate serialized release task. No release/version/bake is
+performed as a side effect of this problem round, under methodology 08.
+No new manuscript or Zenodo deposit is justified by elementary parameter
+tuning or the supporting phase obstruction. Their home is the research
+record associated with short-interval-Levinson; published PDFs remain frozen.
+
+## Trace-aware follow-up admission 2026-10-03
+
+EXP-016 is admitted before computation: the original fixed-input cap
+remains valid, but a zero-sum Jensen argument changes the clipped-block
+condition. RH-F7 is bounded and stops at its new uniform cap. RH-F4
+remains the sole active substantive focus. The elementary refinement is
+a supporting research record with no standalone manuscript trigger.
+
+## Trace follow-up close and value review
+
+EXP-016 proves the revised block dichotomy and its cap at m=1311.
+The new gain is exact but small, about 2.69e-9 over EXP-013. Close RH-F7.
+The more consequential target remains RH-F4's complete signed reduction
+and cancellation theorem. Other convex spectral estimates might evade
+this revised cap, but no worldwide or all-method optimum is claimed.
+Further fixed-input polishing has low value relative to an independent
+local certificate improvement or a genuine analytic moment theorem.
+No new manuscript is warranted; the supporting record belongs with
+the attributed global Gram-method audit. Live integration remains RH-042.
+
+## Bounded energy-envelope review (2026-10-03)
+
+RH-F4 remains active. RH-F8 is admitted for one uniform sharp energy-loss
+proof and pressure transfer, with EXP-017 declared before computation.
+The fixed-input numerical gain alone is insufficient to justify a new
+manuscript or continued tuning. Track issue #354.
+
+RH-F8 is now closed by EXP-017. Its tiny gain does not admit more tuning.
+Read the pinned nine-point packet before any larger-input transfer.
+
+## Larger-certificate bounded review
+
+RH-F9 tests one nine-point conditional transfer (EXP-018, issue #355).
+The source candidate/log discrepancy remains an explicit local-premise
+obligation. No full replay or manuscript publication is inferred from it.
+
+RH-F9 is closed by EXP-018. The larger conditional target is 0.83716744477...
+for distinct zeros in the strip. Before a claim upgrade, RH-046 / issue
+#356 requires packet-bound replay with progress/checkpoints and a declared
+cost. Never infer it from the kernel-table hashes or finite samples.
+Manuscript reassessment follows closure of that input obligation. RH-F4
+and the signed composite-twist target RH-038 remain the analytic priority.
+
+EXP-021 closes only RH-038's classical arithmetic layer: gcd classes,
+shifted local Euler corrections, conductor reduction and squarefree induction
+signs are derived and exactly checked. Issue #360 owns the remaining shifted
+short-window analytic reduction and signed-family estimate. An Estermann
+functional-equation route is being compared with Tang's model; no published
+central-value formula is presumed uniform at polynomial height. EXP-020's
+full stronger interval cover continues with its runtime source frozen.
+
+EXP-022 closes bounded RH-F12 with a uniform fixed-packet pressure cap
+0.837421287797... . A changed-pressure candidate at p=1/1250 exceeds
+EXP-020's proposed transfer by about 0.00021, passing the declared value
+gate. One separately declared certificate pilot is justified before any
+new full run. No further unbounded pressure sweep is justified by this
+family; other windows/weights and RH-038 remain separate research routes.
+
+RH-038 now has EXP-024's exact shifted representation. Its next signed
+estimate must retain the phase-profile frequency signs and residue terms.
+The subdyadic/non-abelian source review identifies two concrete conversion
+requirements: preserve a bounded-degree support graph through the inverse
+fraction transformation, or establish Fourier concentration for fixed-modulus
+Kloosterman completion. Partitioning arbitrary full supports does not supply
+either requirement. The withdrawn January bound cannot be used. These
+analytic investigations proceed while the frozen interval covers continue.
+
+The 22:37 UTC primary-source refresh locates a newly accepted optimized-window
+seven-point proof with unequal gap pressures. EXP-025 is declared before
+computation to test one vector-pressure distinct-strip transfer, with a
+thirty-second invariant/window/arithmetic preflight and no parameter sweep.
+Its local theorem remains an explicit attributed external dependency; source
+logs are not a local rebuild. It runs alongside the frozen covers and does
+not change the active signed-moment focus or manuscript stopping policy.

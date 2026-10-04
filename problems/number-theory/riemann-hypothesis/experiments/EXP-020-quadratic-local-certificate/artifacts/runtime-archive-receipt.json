@@ -1,0 +1,17 @@
+{
+  "schema": "exp020-runtime-archive-receipt-v1",
+  "passed": true,
+  "archive_filename": "exp020-runtime-reproducibility.zip",
+  "archive_bytes": 1854946,
+  "archive_sha256": "91be4798774837bc16007a8236a692078e825ffb1c8dfa476c05d3c733b17879",
+  "members": 233,
+  "manifest_sha256": "0d754e95e958076359168abc4b81a9c17bcf3f3dc5dd9765ab41cf4b2186891b",
+  "builder_sha256": "2ed861554181620bcc9c657aff6f18b491a7e5e58d8c4f7c26a1d4ed7bdb70c9",
+  "liminf_fraction": "3997934614153/4775507750000",
+  "extracted_stdlib_cover_audit": true,
+  "extracted_exact_transfer_audit": true,
+  "native_full_table_audit_included_and_bound": true,
+  "native_input_audit_rerun_from_archive": false,
+  "full_interval_rerun_from_archive": false,
+  "scope": "exact-byte transport, CRC/hash checks, and extracted metadata/transfer audits; interval-execution trust base unchanged"
+}

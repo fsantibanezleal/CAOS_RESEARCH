@@ -190,3 +190,14 @@ body:has(.rh-page) .footer-inner { padding-block: 0.5rem; }
   .rh-proof-map-mobile .dg-box-sub { font-size: 12px; }
   .rh-stage-detail { min-height: 10rem; }
 }
+
+/* Distinct-strip evidence shares the existing replay/table/diagram styles. */
+.rh-distinct-table td { overflow-wrap: anywhere; }
+.rh-distinct select { max-width: 100%; color: var(--color-text); background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: 6px; padding: .45rem; }
+.rh-distinct { min-width: 0; }
+@media (max-width: 640px) {
+  .rh-distinct-table thead { display: none; }
+  .rh-distinct-table tbody tr { display: block; margin-bottom: .75rem; border-bottom: 1px solid var(--color-border); }
+  .rh-distinct-table tbody td { display: block; border: 0; overflow-wrap: normal; }
+  .rh-distinct-table tbody td[data-label]::before { content: attr(data-label); display: block; color: var(--color-text-muted); font-size: .8rem; }
+}

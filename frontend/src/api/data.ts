@@ -298,8 +298,24 @@ export type RiemannBarrierResult = {
   C2: { N: number; O: number; S: number; ratio_Q_minus_2N_over_O: RiemannArbRecord };
 };
 export type RiemannTangCheck = { model_within_2_percent: boolean; rows: Record<string, string>[] };
+export type RiemannDistinctZero = {
+  schema: 'riemann-distinct-zero-v1'; accepted: boolean;
+  counted_objects: string; denominator: string;
+  local: { fraction: string; decimal: string; accepted: boolean; m: number; r: number;
+    tau: string; c: string; delta: string; pressure: string; completed_shards: number;
+    nodes: number; closed_cells: number; corruption_controls: number };
+  vector: { fraction: string; decimal: string; accepted: boolean; H_lower: string;
+    parameters: { r: number; m: number; tau: string; c: string; delta: string; pressure_sum: string };
+    gap_pressures: string[]; source_sha256: string; source_author: string;
+    external_local_formalization_rebuilt_here: boolean };
+  publication: { passed: boolean; concept_doi: string; version_doi: string; record_url: string;
+    files: { filename: string; bytes: number; sha256: string; live_download_exact_match: boolean }[] };
+  archive: { passed: boolean; members: number; archive_sha256: string };
+  incomplete_experiments: string[]; excluded_claims: string[]; trust_boundary: string;
+};
 export type RiemannData = {
   schema: 'riemann-replay-v9';
+  distinct_zero?: RiemannDistinctZero;
   reviewed_on: string;
   result: {
     theta: string; radius: string; delta: string;

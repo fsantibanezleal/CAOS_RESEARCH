@@ -1,0 +1,64 @@
+{
+  "schema": "exp025-independent-rational-audit-v1",
+  "passed": true,
+  "source_sha256": "65564079527487fde93b43bb83dd840a768acf9fb8db1f1f015d38c4faf3b7d4",
+  "preflight_sha256": "a40e7c060a535677ab48b64ba4c10dbc8ff04af1b5a2a1e5ae787c41b674ed41",
+  "audit_source_sha256": "1e4528a7ed3280958126631aa9813bf09e00b354770412ba2784579796477602",
+  "declaration_sha256": "7fa6ee620a17c4c8a623e3ef3165336f28e300c916d35f4689b81e3dc27bd37c",
+  "window": {
+    "arithmetic": "Python standard-library Fraction integer interval arithmetic",
+    "sqrt2": {
+      "lower": "441941738241592202750527726315530649553/312500000000000000000000000000000000000",
+      "upper": "14142135623730950488016887242096980785697/10000000000000000000000000000000000000000"
+    },
+    "pi": {
+      "lower": "31415926535897932384626433832795028841971/10000000000000000000000000000000000000000",
+      "upper": "7853981633974483096156608458198757210493/2500000000000000000000000000000000000000"
+    },
+    "H": {
+      "lower": "6721710926412995494027803172404056748101/10000000000000000000000000000000000000000",
+      "upper": "3360855463206497747013901586202028374051/5000000000000000000000000000000000000000"
+    },
+    "positive_window_lower": {
+      "lower": "278728561630252060501418879449309757847/400000000000000000000000000000000000000",
+      "upper": "108878344386817211133366749784886624159/156250000000000000000000000000000000000"
+    },
+    "arctangent_terms": 40,
+    "sine_cosine_terms": 24,
+    "H_cert": "33608554629/50000000000"
+  },
+  "counting_controls": {
+    "exact_list_block_cases": 288,
+    "block_pair_checks": 183,
+    "unequal_pressure_vector_used": true,
+    "window_occurrence_bound": true,
+    "global_pressure_charge_bound": true,
+    "endpoint_block_identity": true
+  },
+  "negative_controls": {
+    "inflated_H_rejected": true,
+    "minimum_pressure_undercount_rejected": true,
+    "source_change_rejected": true
+  },
+  "pressure_total": "199193/50000000",
+  "span_capacities": [
+    "99999999/50000000",
+    "199999997/100000000",
+    "99999999/50000000",
+    "99999999/50000000",
+    "99999999/50000000",
+    "2"
+  ],
+  "residuals": {
+    "block": "155929/25000000",
+    "threshold1": "0",
+    "threshold2": "2043/10000",
+    "high_multiplicity": "16929063061/9275000000",
+    "off_line": "2094101/9275000000",
+    "denominator": "230969513/115937500"
+  },
+  "liminf_fraction": "30945470743359/36955122080000",
+  "elapsed_seconds": 0.6504102000035346,
+  "external_local_formalization_rebuilt_here": false,
+  "scope": "independent rational scalar and exact vector-pressure accounting/transfer; general proof and external local theorem remain explicit dependencies"
+}

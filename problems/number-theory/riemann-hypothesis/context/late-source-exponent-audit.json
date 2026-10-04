@@ -1,0 +1,17 @@
+{
+  "schema": "rh-source-exponent-eligibility-v1",
+  "utc": "2026-10-03T21:12:59.322222+00:00",
+  "source": "arXiv:2104.10243v3, printed page 11",
+  "source_pdf_sha256": "fa3d3152d8f2d5b57c4a9d161ad4abfad9081c047a9b43ebc7a13434ea911c04",
+  "rendered_page_sha256": "548e515873f90989c3d54206fc893646f5c6ead12bbda1ce51c93d4320ba3ae2",
+  "a": "19/20",
+  "nu": "23/50",
+  "first_threshold": "13/35",
+  "printed_selected_threshold": "33/70",
+  "first_error_exponent": "411/400",
+  "second_error_exponent": "93/100",
+  "first_excess_over_H": "31/400",
+  "passed": true,
+  "scope": "exact inconsistency of the displayed minimum and error derivation; not a refutation of the moment theorem",
+  "general_difference": "first threshold minus second = 2*a-2"
+}

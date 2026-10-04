@@ -1,0 +1,9 @@
+{
+  "schema": "exp020-first-control-failure-v1",
+  "failed_cases": [[1, 128], [2, 256]],
+  "initial_assertion": "bound.contains(fmpq(exact_numerator,exact_denominator))",
+  "diagnostic_case": "637/99 at 128 bits: contains returned False, overlaps returned True; exact lower().fmpq() <= 637/99 <= upper().fmpq() returned True",
+  "interpretation": "The containment API test was unsuitable for this exact rational point check. Replace it with exact rational comparison against both directed endpoints; retain the failure and do not weaken the arithmetic requirement.",
+  "implementation_modified": false,
+  "corrected_check": "bound.lower().fmpq() <= exact_rational <= bound.upper().fmpq()"
+}

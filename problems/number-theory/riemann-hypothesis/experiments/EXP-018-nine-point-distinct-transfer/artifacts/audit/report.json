@@ -1,0 +1,10 @@
+{
+  "claim_status": "conditional",
+  "exact_partition_control_cases": 77,
+  "local_inequality_independently_replayed": false,
+  "passed": true,
+  "q": "3997934614153/4775549550000",
+  "result_sha256": "1b1dd242ae161a9d1b4cf9e350cd22954eace82fd31fa8f4ea7319642dcea076",
+  "route": "independent SymPy counting rearrangement and finite exact incidence controls",
+  "schema": "exp018-independent-audit-v1"
+}

@@ -1,6 +1,34 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-28. Latest public application release: **0.74.000**
+## Completed distinct-zero results, 2026-10-03
+
+EXP-020 completed all 96 shards and every final check: the stronger local
+inequality gives 3997934614153/4775507750000=0.8371747724947154... for
+distinct strip points. EXP-025's reviewed vector-pressure application gives
+30945470743359/36955122080000=0.8373797460706156..., with Lavery's
+external universal local theorem explicitly attributed and not locally
+Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
+mixed-Gram argument remain dependencies.
+
+The focused companion `distinct-zero-gram` v0.01 is published and all three
+files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+[concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
+SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
+Issues #356/#358 close the local input obligation; #364 tracks publication
+and release. PR #363 merged to develop at `0fd13678315b4b7ac20af8b6b66b44982e7acefa`.
+Workbench PR #365 remains draft pending its full rendered matrix and
+serialized main/Pages release. Private publication evidence was backed up
+through CAOS_MANAGE PR #799, main/develop `7dbdeab4`. The live application
+still runs 0.74.000; 0.75.000 is prepared, not deployed.
+
+EXP-023 remains 95/96 under its owned supervisor through the deadline
+2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is
+unproved and not in the published theorem. EXP-019 remains suspended.
+RH is open; the short-window onset stays 0.534. Worldwide priority and peer
+acceptance are unconfirmed. RH-F4 remains the active analytic focus.
+
+Updated: 2026-10-03. Latest public application release: **0.74.000**
 (replay v9, EXP-010 to EXP-012 in the workbench), promoted to main commit
 `a464bdb52d88ed22582668d9c94ebbe25262b5b4`; live bytes match the exact-main build
 ([record](release-0.74.000/live-verification.json)). Previous: 0.73.000 from
@@ -12,11 +40,13 @@ workbench shows it since release 0.74.000.
 
 The Riemann hypothesis remains open.
 
-Strategic review 2026-09-27: no external result improves the EXP-010 onset or
-the EXP-009 constant; RH-027 is re-scoped to a new general-`Q` theorem, and the
-active focus is `RH-F4` in [research-governance.json](research-governance.json).
-See the [plan](plan.md) and the
-[sweep dossier](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-literature-and-representation-sweep.md).
+Strategic review 2026-10-03: a new distinct-zero paper improves the
+strip-wide EXP-009 companion, and EXP-013 improves its fixed-input assembly
+slightly. Upstream also lists a higher simple-critical candidate; neither
+changes the short-window onset. The active focus remains RH-F4 after a
+recorded stop/review decision; RH-F6 is closed. See the
+[current dossier](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-update-and-dual-family-preflight.md),
+[plan](plan.md) and [governance](research-governance.json).
 
 ## Current strongest short-interval result
 
@@ -52,7 +82,7 @@ EXP-006 product.
 | EXP-010 independent audit | `b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1` |
 | EXP-010 counting-lemma controls | `6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c` |
 
-## Current strongest global result
+## EXP-009 global simple-critical result
 
 EXP-009 proves the sharp auxiliary theorem
 
@@ -71,7 +101,7 @@ printed bound is `C_0+delta_0=0.6725007703...`, this gives a value about
 ```text
 d_dagger = 0.283165430808537327...
 simple-critical proportion >= 0.6725007995946757558283550562963947865...
-distinct-critical proportion >= 0.8362503997973378779141775281481973932...
+distinct zeros anywhere in strip proportion >= 0.8362503997973378779141775281481973932...
 ```
 
 The gain over the source baseline exceeds `9.5915e-8`. The independently
@@ -118,3 +148,100 @@ also passed. Tag `v0.73.000` points to the verified main commit.
 The result is asymptotic, has no effective starting height, and does not prove
 RH or universal simplicity. Imported 2026 preprints remain attributed. No
 finite census, DOI, passing build, or successful deployment proves RH.
+
+## October source and experiment update
+
+The attributed global distinct-zero bound from arXiv:2609.33043v1 is
+0.83699288145242...; EXP-013's exact parameter improvement gives
+62359683640669/74504434380000 = 0.83699291404068... and proves the
+fixed-input integer cap. This counts distinct zeros anywhere in the strip.
+The upstream trmdy README also lists a 0.673312742272... simple-critical
+candidate, outside this replay; EXP-009 is therefore not presented as
+the current worldwide global record. Those recent claims are attributed.
+
+EXP-014/015 establish the uniform pointwise phase obstruction at
+nu=theta-1/2, including squarefree twists with nonzero basic mollifier
+coefficients. They do not preclude cancellation in the signed sum.
+Canonical hashes: EXP-013 `c250ac76df06e8f66aaed2c720e292bf17e82923137a01ce56d9ced29d4f094b`;
+EXP-014 `fb0f0d4a0d165d524a86285c8bae163297959aa9819a5181e1a89b46e3567c2f`; EXP-015 `871de5a7719bec0a077e1bda88729000d3988e20cee2940f3ef3dd6d55aa3ef8`.
+No new onset or RH result. No new manuscript or Zenodo version.
+
+Tag v0.74.000 and its GitHub release are now verified at the original
+release commit; the [additive reconciliation](release-0.74.000/tag-reconciliation-20261003.json)
+supersedes only the old pending-tag status. Replay v9 and the live workbench
+still contain twelve experiments. EXP-013--015 are repository research
+records and await a later serialized replay/UI release.
+
+## Trace-aware follow-up, same review date
+
+EXP-016 strengthens the block dichotomy using trace zero, and updates the
+latest attributed distinct-strip bound to
+69341429073721/82845897125000 = 0.83699291672944... . Its revised
+scalar assembly has optimal integer block m=1311. The earlier EXP-013
+cap concerns its original condition and remains correct.
+Canonical SHA-256 `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74`. Eleven new tests and the previous twenty
+focused controls pass; the separate symbolic/matrix auditor passes.
+RH-F7 closes. The short-window onset, RH status, manuscript/Zenodo
+state and live replay v9 remain unchanged. RH-042 also covers EXP-016.
+
+## Full-energy envelope follow-up
+
+EXP-017 confirms the sharp retained-energy envelope and pressure transfer,
+with the tau=1 formula attributed to upstream prior work. The exact
+source-based distinct-strip candidate improves to 0.83699292567522... .
+RH-F8 closes as supporting research-record; no onset/manuscript/release
+change. Issue #354 tracks validation and promotion.
+
+## Nine-point conditional follow-up
+
+EXP-018 gives the independently checked conditional implication
+Nd/N >= 3997934614153/4775549550000 = 0.83716744477146... from the
+explicit pinned nine-point local inequality and source energy premise.
+The local input has a candidate/log provenance discrepancy; it has not
+been independently replayed here. Keep this separate from EXP-017's
+seven-point attributed bound. RH-F9 closes, RH-046 / issue #356 remains
+open for packet-bound replay and a later manuscript decision. No global
+release, onset change, new manuscript or Zenodo version is claimed.
+
+## Composite arithmetic layer, ongoing certificate run
+
+EXP-021 confirms the classical shifted composite character decomposition
+with complete gcd classes and primitive conductor factors. Exact controls
+pass in 4.17 seconds; the proof and source are bound in its receipt.
+RH-038 / issue #360 remains open for the uniform analytic reduction and
+signed-family estimate. No longer mollifier, new onset or manuscript follows.
+EXP-020 is still running; partial coverage does not upgrade EXP-018's premise.
+
+EXP-022 independently confirms a fixed-window/weight pressure-family
+ceiling 0.837421287797... for the counting assembly, not the actual zeros.
+The candidate at p=1/1250 would imply 0.837385561059... after a new complete
+universal local certificate. Issue #361 / RH-047 owns the audit. No new
+lower theorem or manuscript has yet landed; the user objective remains open.
+
+## Continued verification and signed-interface review
+
+EXP-024 closes the exact shifted Gaussian and fixed smooth compact-window
+representation step, with explicitly controlled remainders. Its main signed
+moment remains open. The signed-character interface retains both frequency
+signs, gcd/conductor factors and the distinction between its two Mellin
+weights. The late source review rejects an incorrect displayed exponent
+minimum as an imported premise and excludes the withdrawn January 2026
+Kloosterman improvement. Short-support and non-abelian approaches now have
+explicit conversion obligations; no new cancellation is asserted.
+
+EXP-023's revised full cover resumed at 20:48:12 UTC on 2026-10-03 with
+four workers and a six-hour operational supervisor. At 21:52 UTC 95/96
+shards are complete, with no complete-certificate verdict. The earlier
+EXP-020 has reached 91/96. Actual complete-output corruption checks and
+an exact-byte archive builder are prepared and refuse partial output.
+Draft PR #363 is pushed and unmerged. Only CI on 098c0476 is currently
+verified successful; later GitHub API requests encountered network errors.
+No new manuscript, DOI, release or deployment is claimed from these gates.
+
+At 22:31 UTC both EXP-020 and EXP-023 have 95/96 completed shards.
+EXP-023's additional native input audit passed all 52,240 closed cells of
+both tables using hypergeometric midpoint jets and whole-cell Taylor bounds,
+in 148.04 seconds. The earlier inconclusive variants remain archived.
+This verified input audit does not replace the last multidimensional shard,
+actual completed-output controls or exact transfer. The research goal remains
+active; none of these supporting milestones is its stopping condition.

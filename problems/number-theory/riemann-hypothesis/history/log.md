@@ -433,3 +433,248 @@ and the live bytes match the exact-main build. Candidate QA: 466 Python and 28
 frontend tests, 8-scenario browser matrix with 416 screenshots and 0 failures.
 Tag v0.74.000 is pending because the session proxy refuses tag pushes. RH-026 is
 done.
+
+## 2026-10-03: source update, fixed-input cap and supported phase obstruction
+
+Fresh primary-source reading and upstream commit checks update external
+standing. Declaration 8db97480 preceded EXP-013/014; declaration 12fa7d70
+preceded EXP-015. All three confirm their scoped predictions with exact
+arithmetic, separate auditors and 20 focused adversarial/replay tests.
+EXP-013 gives 0.83699291404068... for an attributed strip-wide distinct
+count and a uniform m=1310 cap. EXP-014/015 prove the pointwise phase
+threshold, the latter with nonzero basic Mobius coefficients.
+No new onset, signed-sum barrier, external peer review or RH result.
+
+The methodology-13 review retains RH-F4 with a narrowed signed reduction
+obligation and closes RH-F6. No new manuscript or Zenodo version. Current
+count-label errors are corrected without rewriting prior frozen evidence.
+The old tag-pending receipt is supplemented by verified metadata: tag
+v0.74.000 targets a464bdb5 and the release published 2026-09-30 UTC.
+Live replay remains v9; new records await serialized integration RH-042.
+
+## 2026-10-03: trace-aware follow-up EXP-016
+
+Declaration 0ea1f332 preceded implementation. A zero-sum Jensen surplus
+strengthens the clipping dichotomy and gives the exact attributed
+distinct-strip bound 69341429073721/82845897125000. Uniform revised
+cap m=1311; EXP-013's original-assembly cap remains intact.
+The initial auditor failed an algebraic-expression structural equality;
+its failure is retained, and the repaired zero-difference check passes.
+Eleven new controls and the previous twenty focused tests pass.
+Canonical SHA-256 `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74`. No new onset, RH, Lean, interval-replay
+or peer-review claim. RH-F7 closes; no new manuscript/Zenodo trigger.
+
+## 2026-10-03: EXP-017 retained-energy envelope
+
+Declared and pushed as 416bad0d before computation; issue #354. The
+uniform sharp proof, independent quadratic minorant, exact candidate and
+50 focused tests pass. Formula prior art was located and explicitly
+attributed before closure. Bound 0.83699292567522... is a small attributed
+distinct-strip improvement; no onset/RH/new-manuscript claim. RH-F8 closes.
+
+## 2026-10-03: EXP-018 conditional nine-point transfer
+
+Declared/pushed a1bf2178 before arithmetic, licensed packet pinned by
+45fca5a2, issue #355. Conditional uniform counting proof, independent
+audit, capacities, exact candidate and 66 affected tests pass. The result
+is 3997934614153/4775549550000=0.83716744477146... under explicit local
+and analytic premises. The upstream stale pending flag and absent packet
+hash in the replay log are retained. RH-F9 closes; RH-046 / issue #356
+owns independent packet-bound replay and manuscript reassessment. No
+unconditional input upgrade, onset/RH claim or public release is made.
+
+## 2026-10-03: EXP-021 complete shifted composite arithmetic layer
+
+Declaration 8d45ddfc preceded controls; derivation 6b84615c preceded the
+4.17-second exact run. Gcd classes, local shifted Euler numerators,
+primitive conductor/parity and squarefree induction factors are retained.
+The receipt binds the proof, declaration and source. Exact cyclotomic,
+symbolic and independent rational controls pass and distinguish three
+incorrect alternatives; Ruff passes. This classical supporting layer
+does not prove uniform analytic reciprocity or signed cancellation and
+does not improve the onset/proportions. No manuscript trigger; the user
+objective remains unmet. The EXP-020 full certificate continues running.
+
+## 2026-10-03: EXP-022 pressure duality and changed-input target
+
+Declaration 4b1af0f5 / admission 5c35f3d3 preceded the six-second search;
+f9aaf9cf preceded the explicit-cap arithmetic. Exact rational gap witnesses
+and native-sinc 256-bit verification prove that this fixed packet counting
+assembly is below 0.837421287797... for all p>=0 and finite admissible m.
+The all-vertex envelope agrees with the independent two-line proof; Ruff
+passes. Both dependency setup failures occurred before mathematics and
+are retained. A p=1/1250 candidate would give 0.837385561059... after a
+new complete certificate; the declared value gate passes. RH-F12 closes,
+RH-047 / issue #361 is confirmed supporting material. No new lower zero
+theorem, standalone manuscript or user stopping condition follows.
+
+## 2026-10-03: EXP-023 new-pressure pilot
+
+Declaration f2e1e7ec and RH-F13 admission 0de0e59d preceded implementation.
+Commit 62dd7923 binds separate wrappers, immutable quadratic core and
+baseline table prefixes before traversal. Thirty targeted controls pass,
+including exact transfer, all summed-pressure rounding indices and actual
+interruption/resume smoke. The independent auditor rejects unstarted cover.
+Issue #362 tracks the twenty-minute, one-CPU actual shard-0 pilot launched
+19:35:50 UTC. EXP-020's frozen 24-worker cover continues. Neither partial
+traversal proves a new zero proportion or fulfills the user's stopping gate.
+
+## 2026-10-03: EXP-024 uniform shifted representation
+
+Declaration 8528b1e6 preceded numerical controls; 440e5d1b persisted the
+exact Gaussian identity and all-order phase error. The finite heat
+construction extends the reduction to fixed smooth compact windows.
+Nine symbolic moments, eight independent integral pairs, 32 phase bounds,
+eight heat-multiplier identities and a full enclosed zeta-moment/residue
+negative control pass. API/lint history and initial source are retained.
+The signed main arithmetic sum is still open, with no new moment range,
+onset, proportion, priority, manuscript or research stopping claim.
+
+## 2026-10-03: EXP-023 revised full cover and automatic budget
+
+The revised pilot stopped incompletely at 20:33:47 UTC after 25m45s;
+its 345-second overrun, validated snapshot and cost review are retained.
+Commit 295ee71c preceded the four-worker full-cover resume at 20:48:12 UTC.
+Its separately bound operational supervisor has a six-hour budget and
+passes real process-ownership, unrelated-sentinel and fast-exit controls.
+Two orchestration setup failures remain in the history. Frozen proof
+sources are unchanged. At 20:50 UTC 94 of 96 shards are complete; there
+is no universal-certificate verdict or new zero proportion yet.
+Scoped collection finds 258 Riemann tests after the previously passing
+full Riemann suite and three passing new supervisor controls. Attempted
+all-problem collection exposed unrelated missing dependencies and is not
+used as validation of this scoped session.
+
+## 2026-10-03: later source eligibility and transfer gates
+
+The late source manifest preserves Qi--Qiao, Das--Pujahari and the Cicada
+Lean port. A visually checked PDF exponent minimum has an exact rational
+inconsistency; the record rejects the displayed derivation's claimed
+range as an imported premise, without refuting the underlying theorem.
+Spectral-family hypotheses and the Lean port's two explicit analytic inputs
+are retained. The EXP-024 signed interface derives the unshifted gcd
+residue and distinguishes two different Mellin weights; cancellation remains
+open. EXP-023's stdlib transfer auditor rejects its actual 95/96 cover and
+issues no bound receipt. None of these supporting audits meets the user's
+research stopping condition.
+
+## 2026-10-03: actual-output corruption and transport gates prepared
+
+EXP-023's actual 95-report output is rejected by both the new twelve-case
+corruption control runner and exact-byte reproducibility archive builder.
+The source-bound negative receipt is retained. Their complete-output paths
+must still execute after all 96 shards and the exact transfer pass. Copies
+isolate intentional corruption from live output; extracted archive auditors
+will check the preserved physical runtime bytes. CI 37155303536 passed at
+098c0476, with repository guards/artifact scope only. Neither CI nor these
+prepared gates constitutes the unfinished mathematical result.
+
+## 2026-10-03: short-support and non-abelian conversion review
+
+The January Kloosterman search lead is corrected against its primary
+withdrawal notice. Wright's August short-support theorem and Pascadi's
+non-abelian fixed-modulus method are archived with their actual hypotheses.
+A support-graph norm calculation shows why unrestricted partitioning
+consumes the short-support saving; exact Fourier completion shows the
+frequency-localization obligation for the non-abelian route. These are
+classical conversion requirements, not a new signed-moment theorem.
+The publisher's HTTP-success challenge page is excluded as mathematical
+content. A new-head CI dispatch and listing encountered a network timeout
+and HTTP 503; only the earlier 098c0476 CI success is currently verified.
+
+The support review's Gaussian argument ratio was corrected from H0*n/K0
+to K0*n/H0 by checking the exact EXP-024 identity before use. Its double
+functional-equation discussion retains the cancellation of one existing
+Gauss factor, so an additional Kloosterman sum is not presumed to appear.
+No experiment or theorem had used the reversed ratio.
+
+## 2026-10-03: native table pilot retained as inconclusive
+
+The direct-interval native hypergeometric pilot did not establish cell zero
+within its eight-level subdivision limit. Exact-point formulas agree with
+the archived kernel; interval width prevents the comparisons. Both original
+source and receipt are preserved. A second, separately declared midpoint
+Taylor audit uses global Fourier derivative bounds without window positivity.
+Its pilot must pass before any full-table admission. At 22:20 UTC EXP-023
+remains 95/96 and EXP-020 is 94/96. No complete new certificate is claimed.
+
+The native midpoint Taylor pilot passed its 512 cells. Its full run then
+retained 32,031 successfully compared closed cells and stopped inconclusively
+near a kernel zero, without a complete-table flag. A kernel-first Taylor
+variant is separately declared to avoid a global squared-kernel remainder
+dominating small values. It must pass its own pilot and full-range gate.
+The previously timed-out issue #360 update was inspected and then posted
+successfully at issuecomment-5974118103; no duplicate was found.
+
+The kernel-first native audit then passed all 52,240 closed cells in both
+tables in 148.04 seconds, with maximum bisection depth three. Its independent
+formulas and whole-cell remainders strengthen the input audit within the
+shared FLINT/Arb trust base. The archive builder now requires this bound
+receipt and includes all three audit sources, declarations and original
+partial/success receipts. EXP-023 remains 95/96; EXP-020 has reached 95/96.
+No complete improved zero-proportion theorem or publication is inferred.
+
+## 2026-10-03: newly accepted formal input and declared vector lift
+
+The 22:37 UTC primary-source refresh archives Lavery's newly accepted
+6734302/10000000 critical-line bound, source and reported two-kernel checks.
+The submitted proof is preserved unmodified under its declared Apache-2.0
+license; no local Lean rebuild is asserted. EXP-025 was declared and pushed
+as 1a8b9f63 before its fixed arithmetic/window preflight. It passes source
+functional binding, all capacities, an independent native window enclosure
+and exact m=742 block residuals, proposing a distinct-strip consequence
+30945470743359/36955122080000. The complete vector-pressure proof review
+and separately declared pure-rational scalar/accounting audit remain pending.
+The stale Yang density-one abstract is rejected against the unchanged
+repository retraction. Neither source refresh nor preflight closes the goal.
+
+## 2026-10-03: completed distinct-zero theorem and publication
+
+## Completed distinct-zero results, 2026-10-03
+
+EXP-020 completed all 96 shards and every final check: the stronger local
+inequality gives 3997934614153/4775507750000=0.8371747724947154... for
+distinct strip points. EXP-025's reviewed vector-pressure application gives
+30945470743359/36955122080000=0.8373797460706156..., with Lavery's
+external universal local theorem explicitly attributed and not locally
+Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
+mixed-Gram argument remain dependencies.
+
+The focused companion `distinct-zero-gram` v0.01 is published and all three
+files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+[concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
+SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
+Issues #356/#358 close the local input obligation; #364 tracks publication
+and release. PR #363 remains draft and unmerged. No new live application
+release or private main promotion is claimed yet.
+
+EXP-023 remains 95/96 under its owned supervisor through the deadline
+2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is
+unproved and not in the published theorem. EXP-019 remains suspended.
+RH is open; the short-window onset stays 0.534. Worldwide priority and peer
+acceptance are unconfirmed. RH-F4 remains the active analytic focus.
+
+Native editor compilation failed because standard platform directories were
+unavailable. Two-pass exported MiKTeX PDF, voice/layout/reference checks and
+all nine rendered pages pass. DOI header is printed; public PDF and both ZIP
+downloads exactly match local bytes. No peer-review claim follows.
+
+
+## 2026-10-04: integrated research, release QA and bounded point diagnostic
+
+PR #363 merged the completed EXP-020/025 research and immutable publication
+receipts into develop (`0fd13678`). The source-bound bilingual workbench and
+25 experiment records are prepared for serialized 0.75.000 in draft PR #365.
+68 export tests and 31 frontend tests pass; latest source CI `37164980042`
+passes. A manual phone review found equation/table readability defects; commit
+`76f3c8ec` fixes them and the restarted full rendered matrix remains in progress.
+No 0.75.000 live deployment is asserted. Private publication backup PR #799
+merged, main/develop `7dbdeab4`; this does not promote unrelated products.
+
+Declared diagnostic `ef0746c4` inspected one immutable EXP-023 checkpoint:
+17,967,104 nodes, 21 pending boxes. All 21 exact midpoints exceeded the target
+with agreeing derivative/native 0F1 enclosures at 256 bits (shared FLINT/Arb).
+No counterexample was found. This finite diagnostic does not certify boxes,
+explain all traversal cost, or complete the missing shard. The worker, runtime
+sources and deadline were preserved. RH remains open; onset remains 0.534.

@@ -341,3 +341,21 @@ zeros of the zeta function.* CAOS Research Preprint, version 0.01, September
 ten-page PDF has SHA-256
 `4fd71686d6dada90c41a2156f5cbecb428d4f1acd372028020896113b1033d67`.
 The publication is not external peer review.
+
+## October continuation sources
+
+Kristian Muri Knausgard. *More than 83.69% of the zeros of the Riemann
+zeta function are distinct.* [arXiv:2609.33043v1](https://arxiv.org/abs/2609.33043v1),
+2026-09-27. Count is strip-wide; recent, not externally reviewed here.
+Conrey, Iwaniec and Soundararajan: [twisted mean square, 1808.02879v1](https://arxiv.org/abs/1808.02879v1)
+and [critical zeros of Dirichlet L-functions, 1105.1177v1](https://arxiv.org/abs/1105.1177v1).
+Chandee, Li, Matomaki and Radziwill: [sixth moment, 2409.01457v1](https://arxiv.org/abs/2409.01457v1).
+Tang: [reciprocity formula, 2608.14852v1](https://arxiv.org/abs/2608.14852v1).
+Versioned bytes and the reading boundaries are in the October manifest/dossier.
+
+Henry Wolkowicz and George P. H. Styan. *Bounds for eigenvalues using traces.*
+Linear Algebra and its Applications 29 (1980), 471-506.
+[DOI](https://doi.org/10.1016/0024-3795(80)90258-X),
+[author-hosted copy](https://www.math.uwaterloo.ca/~hwolkowi/henry/reports/PAPER31.pdf).
+Theorem 2.1 and the printed pages 472-474 provide trace/variance prior art.
+This is background for EXP-016, not an analytic zeta input.

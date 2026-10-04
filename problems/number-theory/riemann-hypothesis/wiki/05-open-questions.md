@@ -189,7 +189,7 @@ this program has independently validated.
 
 ## Priority and review
 
-The live search cutoff is 2026-09-20. Searches included the exact Wang arXiv
+This historical search cutoff is 2026-09-20. Searches included the exact Wang arXiv
 identifier, short intervals with stability, simple zeros with Gram methods,
 the direct Ainta/trmdy/teal-sea successor sources, and the September 14-15
 arXiv updates. No matching short-interval

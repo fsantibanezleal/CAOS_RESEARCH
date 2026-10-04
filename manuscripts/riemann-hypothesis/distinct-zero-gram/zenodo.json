@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "title": "Stronger local overlap certificates and distinct zeros of the Riemann zeta function",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "description": "We derive a lower asymptotic proportion 30945470743359/36955122080000 = 0.8373797460706156... of distinct nontrivial zeta zeros, relative to zeros counted with multiplicity, by applying Knausgard's mixed-multiplicity Gram argument to Lavery's seven-point local theorem with unequal gap pressures. The external local theorem is an explicit dependency; its reported Lean and nanoda checks were not rebuilt locally. A separate complete eight-gap interval computation proves a stronger nine-point local inequality at pressure 1/2500 and gives the independently replayed bound 3997934614153/4775507750000 = 0.8371747724947154... . The block transfer uses an elementary spectral dichotomy, without a sharp trace envelope. Independent rational window enclosures, complete closed-cell input comparisons and extracted-source checks support the computations. The analytic input is the corrected integrated unconditional pair-correlation theorem of Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh. The results are asymptotic; they do not prove the Riemann hypothesis or give an effective height. Code and data: https://github.com/fsantibanezleal/CAOS_RESEARCH . The complete exact-byte EXP-020 runtime archive and scoped mathematical source are supplied with the PDF.",
+    "creators": [
+      {"name": "Santibañez-Leal, Felipe", "orcid": "0000-0002-0150-3246", "affiliation": "CAOS Research program"}
+    ],
+    "keywords": ["Riemann zeta function", "distinct zeros", "pair correlation", "mixed multiplicities", "Gram matrix", "interval arithmetic", "local overlap certificate"],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "publication_date": "2026-10-03",
+    "version": "0.01",
+    "language": "eng",
+    "related_identifiers": [
+      {"identifier": "https://arxiv.org/abs/2609.33043v1", "relation": "references", "resource_type": "publication-preprint"},
+      {"identifier": "https://arxiv.org/abs/2306.04799v1", "relation": "references", "resource_type": "publication-preprint"},
+      {"identifier": "https://arxiv.org/abs/2501.14545v3", "relation": "references", "resource_type": "publication-preprint"},
+      {"identifier": "https://www.riemannzeta.fun/submissions/attempt-013", "relation": "references"},
+      {"identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "relation": "isSupplementedBy", "resource_type": "software"}
+    ]
+  }
+}

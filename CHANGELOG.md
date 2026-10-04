@@ -3,6 +3,26 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.75.000] - 2026-10-03
+
+### Added
+- Completed EXP-020 local certificate: all 96 shards, independent cover and
+  native closed-cell audits, exact distinct-strip bound
+  `3997934614153/4775507750000` and published exact-byte reproducibility archive.
+- EXP-025 vector-pressure transfer with attributed Lavery local theorem,
+  independent rational scalar/counting checks and stronger distinct-strip bound
+  `30945470743359/36955122080000`. External Lean/nanoda verification is archived,
+  not locally rebuilt; native EXP-020 checks share FLINT/Arb.
+- Published companion v0.01, concept DOI `10.5281/zenodo.23128662`, frozen PDF
+  and two reproducibility ZIPs verified against public downloads.
+- Additive `riemann-distinct-zero-v1` evidence object inside replay v9, fail-closed
+  receipt/source/publication gates and bilingual six-tab proof/evidence replay
+  through EXP-025. Incomplete EXP-019/023 candidates remain excluded.
+
+The Riemann hypothesis remains open. These strip-wide distinct counts do not
+improve the short-window onset or establish an effective height, worldwide
+priority, external peer review or an end-to-end formal proof.
+
 ## [0.74.000] - 2026-09-28
 
 ### Added

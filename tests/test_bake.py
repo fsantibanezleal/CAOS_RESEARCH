@@ -48,9 +48,11 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
         "EXP-010-levinson-parity-transfer",
         "EXP-011-linear-refinement-barrier",
         "EXP-012-tang-short-window-moment",
+        "EXP-020-quadratic-local-certificate", "EXP-025-vector-pressure-distinct-lift",
+        "distinct-zero-companion",
     }
     assert riemann["schema"] == "riemann-replay-v9"
-    assert riemann["reviewed_on"] == "2026-09-26"
+    assert riemann["reviewed_on"] == "2026-10-03"
     assert riemann["levinson_result"]["accepted"] is True
     assert riemann["barrier_result"]["accepted"] is True
     assert riemann["tang_check_output"]["model_within_2_percent"] is True

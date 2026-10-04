@@ -1,0 +1,59 @@
+{
+  "schema": "exp023-independent-pilot-domain-v1",
+  "components": [
+    [
+      [
+        3358,
+        52221
+      ]
+    ],
+    [
+      [
+        3501,
+        52218
+      ]
+    ],
+    [
+      [
+        3504,
+        52217
+      ]
+    ],
+    [
+      [
+        3512,
+        52217
+      ]
+    ],
+    [
+      [
+        3512,
+        52217
+      ]
+    ],
+    [
+      [
+        3504,
+        52217
+      ]
+    ],
+    [
+      [
+        3501,
+        52218
+      ]
+    ],
+    [
+      [
+        3358,
+        52221
+      ]
+    ]
+  ],
+  "initial_boxes": 1,
+  "nonempty_shards": 1,
+  "shard_zero_initial_boxes": 1,
+  "method": "separate stdlib directed-pressure and one-body reconstruction",
+  "passed": true,
+  "scope": "domain/partition control, not completed local proof"
+}
