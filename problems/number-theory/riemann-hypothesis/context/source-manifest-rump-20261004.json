@@ -1,0 +1,13 @@
+{
+  "schema": "riemann-primary-source-cache-v1",
+  "checked_utc": "2026-10-04",
+  "author": "S. M. Rump",
+  "title": "Verification of positive definiteness",
+  "published": "BIT Numerical Mathematics 46, 433-452 (2006)",
+  "url": "https://www.tuhh.de/ti3/paper/rump/Ru06c.pdf",
+  "bytes": 248004,
+  "sha256": "68cc0e5fc9ed984f28d6ec8ead8c39dfbe4041f7afae5a80bb8bddcd26764b8e",
+  "pages": 15,
+  "review_scope": "Full paper, including underflow/error bounds, interval extension, algorithms and examples; no numerical theorem imported into EXP-023.",
+  "redistribution": "No explicit redistribution license identified; raw PDF stays in external source cache, with URL and hash persisted in Git."
+}
