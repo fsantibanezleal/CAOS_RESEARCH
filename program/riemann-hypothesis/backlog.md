@@ -1,5 +1,15 @@
 # Riemann hypothesis backlog
 
+## In flight, 2026-10-04: EXP-029
+
+EXP-029 is declared and pushed as 06bfe46e before controls; issue #374
+tracks rational-frequency Mellin averaging within RH-F4. The proposed
+range and theta=0.527 endpoint are unproved. Current admitted onset
+remains 0.5339, published v0.02 and app 0.76.000 stay unchanged.
+Next: bounded exact collision/spacing and exponent controls, then
+native/rational conditional parity and complete analytic review.
+Read the EXP-029 hypothesis and source preflight. EXP-023 stays stopped.
+
 ## Current experiment update, 2026-10-04: EXP-028
 
 EXP-028 is internally proved: the uniform shifted moment admits

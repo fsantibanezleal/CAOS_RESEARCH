@@ -730,3 +730,13 @@ RH-F4 is retained for a source-bound Mellin frequency-averaging preflight;
 no new range/onset or manuscript is admitted. EXP-023 stays stopped.
 RH-038 is resolved by the EXP-027/028 alternative transformed route,
 not by proving the previously missing hybrid asymptotic large sieve.
+
+## 2026-10-04: EXP-029 declared before controls
+
+Hypothesis 06bfe46e declares grouped rational-frequency mean-square
+averaging of the exact Mellin formula, with full collision and tail
+costs. It retains RH-F4 and the same future manuscript home. Issue
+#374 tracks the unproved range and fixed theta=0.527 prediction.
+No finite control has run and no new onset is admitted. The new
+viewpoint is harmonic-analysis Gaussian Grams plus integer ratio
+collisions, rather than a larger detector search. EXP-023 stays stopped.
