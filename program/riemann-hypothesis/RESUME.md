@@ -2,16 +2,16 @@
 
 ## In flight, 2026-10-04: EXP-029
 
-EXP-029 hypothesis was pushed as 06bfe46e before controls; issue #374
-tracks rational-frequency Mellin averaging within RH-F4. Exact controls
-pass 432 blocks and 524,400 triples. Native and independent rational
-conditional parity give h>0.0005947542001 at theta=0.527; both keep their
-analytic-theorem flags false. The initial spacing mutation's limitation
-and a proper logarithmic refutation are explicit in the verdict.
-The proposed uniform range and onset remain unproved. Current onset is
-0.5339; published v0.02 and app 0.76.000 remain unchanged. Next: declared
-raw-norm/tail adversarial controls and complete analytic/source review.
-Read the candidate proof and verdict. EXP-023 stays stopped.
+EXP-029 is internally proved for nu<min(1/2,2theta-1,(5theta-2)/6),
+1/2<theta<1. Two mean-square derivations and the complete analytic review
+retain all collisions, shifts, tails and compact-window losses. Exact
+controls pass 432 frequency blocks and 6,426 raw-cost configurations;
+native and rational parity give h>0.0005947542001 at theta=0.527.
+The internal onset is now 0.527. External review, worldwide priority and
+an effective height remain unconfirmed; RH is open. Published v0.02 and
+app 0.76.000 retain their original immutable claims. Issue #374 now tracks
+source replay, coherent Levinson v0.03 publication and release delivery.
+Read the EXP-029 verdict and proof-review. EXP-023 stays stopped.
 
 ## Current experiment update, 2026-10-04: EXP-028
 

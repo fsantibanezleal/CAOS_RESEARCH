@@ -110,9 +110,9 @@
         "Three consecutive experiments fail to move the onset.",
         "RH-038 finds that the asymptotic large sieve does not extend to short t-ranges of length T/H with the needed moduli range."
       ],
-      "novelty_status": "Primary-source overlap review through 2026-10-04 located no matching onset; internal derivations and independent arithmetic pass. External peer review and worldwide novelty remain unconfirmed.",
+      "novelty_status": "New internally reviewed rational-frequency short-window moment and onset 0.527; primary-source overlap review through 2026-10-04 located no matching range. External peer review and worldwide priority remain unconfirmed.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "EXP-029 frequency controls and native/rational conditional parity pass; proposed moment and theta=0.527 remain unproved. Complete declared raw-norm/tail adversarial controls, then full analytic/source review. Current admitted onset 0.5339 and published v0.02 remain unchanged; issue #374.",
+      "first_bounded_action": "EXP-029 complete internal analytic review and independent arithmetic admit the stronger uniform range and theta=0.527 consequence. Complete coherent Levinson v0.03 source replay/publication, research promotion and app release; issue #374. EXP-023 remains stopped.",
       "evidence": [
         "EXP-010",
         "EXP-011",
@@ -513,8 +513,10 @@
     {
       "start": 29,
       "end": 29,
-      "classification": "research-record",
-      "manuscripts": []
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "short-interval-levinson"
+      ]
     }
   ]
 }

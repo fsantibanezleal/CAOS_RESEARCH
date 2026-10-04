@@ -1,0 +1,105 @@
+{
+  "schema": "exp029-adversarial-raw-cost-v1",
+  "passed": true,
+  "runner_sha256": "449243b7eca882f9b5759bf88e6af08219c4133c35f406987ebf23ee2a83ea7d",
+  "declaration_sha256": "4564c26e81272ae68bfd26e05215065be8f638833e5fa1ac288dc4badd4aebbd",
+  "audit": {
+    "theta": "527/1000",
+    "nu": "499/10000",
+    "eta": "1/100000",
+    "charged_exponents": [
+      "-51/12500",
+      "-6711/40000"
+    ],
+    "raw_cost_boxes": 6426,
+    "worst_grid_exponents_and_scales": [
+      [
+        "-51/12500",
+        "0",
+        "499/10000",
+        "499/10000",
+        "2291/50000",
+        "1/2"
+      ],
+      [
+        "-6711/40000",
+        "0",
+        "499/10000",
+        "499/10000",
+        "2291/50000",
+        "1/2"
+      ]
+    ],
+    "principal_N_slopes": [
+      "1/2",
+      "1"
+    ],
+    "tail_N_slopes_before_epsilon": [
+      "-7/2",
+      "-3"
+    ],
+    "gcd_decay_powers": [
+      "2",
+      "4"
+    ],
+    "negative_controls": {
+      "omitted_collisions": {
+        "triples": [
+          [
+            4,
+            5,
+            20
+          ],
+          [
+            4,
+            7,
+            28
+          ],
+          [
+            5,
+            4,
+            20
+          ],
+          [
+            5,
+            6,
+            30
+          ],
+          [
+            6,
+            5,
+            30
+          ],
+          [
+            7,
+            4,
+            28
+          ]
+        ],
+        "true_normalized_mass": 36,
+        "wrong_diagonal_only_mass": 6
+      },
+      "whole_line_unweighted_L2": {
+        "interval_masses": [
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "analytic_divergence": true
+      },
+      "oversized_window_loss_rejected": true,
+      "zero_strict_margin_rejected": true,
+      "uncontrolled_tail_rejected": true
+    },
+    "range_transitions": [
+      "4/7",
+      "12/13"
+    ],
+    "analytic_moment_theorem_proved": false,
+    "scope": "Finite raw-cost accounting; universal proof and admission are separate.",
+    "cpu_seconds": 0.09375
+  }
+}

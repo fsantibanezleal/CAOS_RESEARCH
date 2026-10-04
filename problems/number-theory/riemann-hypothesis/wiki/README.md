@@ -1,5 +1,18 @@
 # Riemann hypothesis: short-interval zero proportions
 
+[D+MV] EXP-029 internally proves the uniformly shifted moment for
+`nu<min(1/2,2theta-1,(5theta-2)/6)`, with grouped rational-frequency
+mean-square bounds, full collision costs and summable dual tails. The
+unchanged degree-201 detector gives positive simple-critical density for
+every fixed `theta` in `[0.527,1)`, with endpoint density greater than
+`0.0005947542001`. The old trilinear route remains stronger above `12/13`.
+See the [complete proof review](../experiments/EXP-029-mellin-frequency-average/proof-review.md)
+and [verdict](../experiments/EXP-029-mellin-frequency-average/verdict.md).
+External peer review, worldwide priority and effective height remain
+unconfirmed. Published v0.02 and app 0.76.000 retain their original
+claims while the coherent stronger manuscript and release are prepared.
+RH remains open. Earlier findings below are historical.
+
 [D+MV] EXP-010 localizes Levinson's method with Conrey's general operator
 polynomial to $(T,T+T^\theta]$ for mollifier exponents $\nu<\theta-1/2$ and
 proves that it counts distinct sign changes of $Z$:

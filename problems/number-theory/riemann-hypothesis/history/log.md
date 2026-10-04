@@ -752,3 +752,17 @@ All earlier code/receipts stay frozen. The analytic proof candidate has two
 mean-square derivations but no recorded admission. Additional raw-cost/tail
 controls are declared before execution. Current onset remains 0.5339; no
 new manuscript or public theorem follows from these finite results.
+
+## 2026-10-04: EXP-029 complete internal analytic admission
+
+The grouped rational-frequency mean-square route proves the larger uniform
+range nu<min(1/2,2theta-1,(5theta-2)/6). Independent Gaussian Schur and
+interval-Gram derivations agree; exact normalization, all profile orders,
+complex shifts, dual/gcd sums, residues and narrower-window conversion are
+reviewed. 6,426 raw-cost controls and explicit failed shortcuts supplement
+432 frequency blocks. The frozen detector independently gives
+h>0.0005947542001 at theta=0.527 with charged errors -51/12500 and
+-6711/40000. The internal onset improves to 0.527; no external review,
+effective height, worldwide priority or RH proof is claimed. The older
+trilinear route remains stronger above 12/13. The same focused Levinson
+paper owns the result; new-version publication and app delivery are pending.
