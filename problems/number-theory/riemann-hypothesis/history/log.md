@@ -678,3 +678,19 @@ with agreeing derivative/native 0F1 enclosures at 256 bits (shared FLINT/Arb).
 No counterexample was found. This finite diagnostic does not certify boxes,
 explain all traversal cost, or complete the missing shard. The worker, runtime
 sources and deadline were preserved. RH remains open; onset remains 0.534.
+
+## 2026-10-04: EXP-026 compact isolation and verified release
+
+EXP-026 retains the exact three-quarter coloured remainder. Six rational
+sign brackets define actual kernel roots isolating one doubled point with
+positive simple energy and pressure below delta. Native Arb and independent
+Fraction audits pass; the latter rejects reversed/overlapping brackets and
+changed source. This closes the count-only/pressure-only gain routes, without
+a new zero bound. The lint-only Interval rename is replayed; both original
+and current audit receipts remain preserved. RH-F4 stays primary.
+
+Release 0.75.000 is live at main 51b8e91b after PRs #365/#367/#366.
+CI/Pages pass; all 76 served files match the artifact and local build.
+Production QA: 8 scenarios, 48 tabs, 656 checked PNGs, zero failures.
+EXP-023 remains 95/96; its candidate is unproved. No coordination files
+were relocated; the repository remains the research authority.

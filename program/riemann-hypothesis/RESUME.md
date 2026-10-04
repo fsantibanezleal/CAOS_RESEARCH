@@ -1,5 +1,23 @@
 # Riemann hypothesis handoff
 
+## Current experiment and delivery update, 2026-10-04
+
+EXP-026 is closed as a research record: exact retained multiplicity algebra,
+plus an actual point-Gram isolation obstruction even below the local pressure
+budget. Native interval and independent standard-library rational audits pass.
+This does not improve a zero proportion or the 0.534 onset. RH-F4 remains
+primary; the next analytic target is the complete shifted Voronoi reduction
+and its signed average. No new manuscript follows from EXP-026.
+
+The 0.75.000 release is live: PRs #365/#367 and main promotion #366 merged;
+main `51b8e91bea8e2030ebb22d342ffb125d8f992400`, Pages run `37168373757`.
+All 76 published files match the CI artifact and local build byte-for-byte.
+Production rendered QA passes 8 scenarios, 48 tabs and 656 hash-checked PNGs.
+See `release-0.75.000/production-byte-verification.json` and
+`release-0.75.000/qa-production.json`. Historical pending-release notes below
+record their original time; they are superseded by this verified release.
+EXP-023 still needs the missing shard and every completion gate; no upgrade.
+
 ## Current continuation priority, 2026-10-03
 
 This block supersedes historical pending states below. EXP-020 and EXP-025

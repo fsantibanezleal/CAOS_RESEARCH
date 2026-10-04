@@ -329,7 +329,7 @@
     {
       "id": "RH-F15",
       "title": "Multiplicity-aware mixed-Gram preflight",
-      "status": "bounded preflight",
+      "status": "closed",
       "priority": 2,
       "target": "Retain the discarded multiplicity remainder and test a uniform count-based gain on actual point Grams.",
       "value": "Determines whether multiplicity information can strengthen the completed distinct-zero transfer without another blind parameter sweep.",
@@ -343,7 +343,8 @@
       "first_bounded_action": "EXP-026 declaration before code; one isolated-point family with symbolic and native controls; 30 seconds CPU.",
       "evidence": [
         "EXP-026"
-      ]
+      ],
+      "closure": "EXP-026 proves the retained remainder identity and refutes count-only and pressure-only positive gains using independently certified compact kernel-root isolation. No zero-bound improvement."
     }
   ],
   "manuscripts": [
@@ -484,6 +485,12 @@
       "manuscripts": [
         "distinct-zero-gram"
       ]
+    },
+    {
+      "start": 26,
+      "end": 26,
+      "classification": "research-record",
+      "manuscripts": []
     }
   ]
 }

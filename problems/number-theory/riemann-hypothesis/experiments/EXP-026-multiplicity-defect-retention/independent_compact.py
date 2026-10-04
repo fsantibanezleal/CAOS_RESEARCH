@@ -18,7 +18,7 @@ def require(condition, message):
         raise ValueError(message)
 
 
-class I:
+class Interval:
     """Every operation rounds outwards to a rational grid with 65 decimals."""
     def __init__(self, lo, hi=None):
         lo, hi = F(lo), F(lo if hi is None else hi)
@@ -28,16 +28,16 @@ class I:
 
     @staticmethod
     def coerce(x):
-        return x if isinstance(x, I) else I(x)
+        return x if isinstance(x, Interval) else Interval(x)
 
     def __add__(self, other):
         other = self.coerce(other)
-        return I(self.lo+other.lo, self.hi+other.hi)
+        return Interval(self.lo+other.lo, self.hi+other.hi)
 
     __radd__ = __add__
 
     def __neg__(self):
-        return I(-self.hi, -self.lo)
+        return Interval(-self.hi, -self.lo)
 
     def __sub__(self, other):
         return self+-self.coerce(other)
@@ -48,21 +48,21 @@ class I:
     def __mul__(self, other):
         other = self.coerce(other)
         products = [x*y for x in (self.lo, self.hi) for y in (other.lo, other.hi)]
-        return I(min(products), max(products))
+        return Interval(min(products), max(products))
 
     __rmul__ = __mul__
 
     def __truediv__(self, other):
         other = self.coerce(other)
         require(other.lo > 0 or other.hi < 0, "denominator crosses zero")
-        return self*I(1/other.hi, 1/other.lo)
+        return self*Interval(1/other.hi, 1/other.lo)
 
     def __rtruediv__(self, other):
         return self.coerce(other)/self
 
     def square(self):
         lo = 0 if self.lo <= 0 <= self.hi else min(self.lo**2, self.hi**2)
-        return I(lo, max(self.lo**2, self.hi**2))
+        return Interval(lo, max(self.lo**2, self.hi**2))
 
     def abs_upper(self):
         return max(abs(self.lo), abs(self.hi))
@@ -77,14 +77,14 @@ def atan(x):
     x = F(x)
     n = 50
     total = sum(((-1)**k*x**(2*k+1)/F(2*k+1) for k in range(n)), F())
-    return I(total, total+x**(2*n+1)/F(2*n+1))
+    return Interval(total, total+x**(2*n+1)/F(2*n+1))
 
 
 def trig(x):
     require(x.abs_upper() < 2, "reduced trig argument")
     square = x.square()
-    ps, pc = x, I(1)
-    sine, cosine = I(0), I(0)
+    ps, pc = x, Interval(1)
+    sine, cosine = Interval(0), Interval(0)
     n = 32
     for k in range(n):
         sine += ((-1)**k)*ps/factorial(2*k+1)
@@ -94,7 +94,7 @@ def trig(x):
     # Taylor's theorem, using |derivative|<=1 on the real axis.
     se = x.abs_upper()**(2*n)/factorial(2*n)
     ce = x.abs_upper()**(2*n-1)/factorial(2*n-1)
-    return sine+I(-se, se), cosine+I(-ce, ce)
+    return sine+Interval(-se, se), cosine+Interval(-ce, ce)
 
 
 def validate_brackets(brackets):
@@ -118,7 +118,7 @@ def audit(native):
     pressures = [F(int(n), 10**8) for n, _ in matches]
     pi = 16*atan(F(1, 5))-4*atan(F(1, 239))
     root_floor = isqrt(2*SCALE*SCALE)
-    theta = I(F(root_floor, 2*SCALE), F(root_floor+1, 2*SCALE))
+    theta = Interval(F(root_floor, 2*SCALE), F(root_floor+1, 2*SCALE))
     sine_theta, cosine_theta = trig(theta)
     norm = sine_theta/theta
     require(norm.lo > 0, "kernel normalization")
@@ -152,12 +152,12 @@ def audit(native):
     require(all(negative_controls.values()), "negative controls")
     endpoints = []
     for lo, hi in brackets:
-        kl, kh = kernel(I(lo)), kernel(I(hi))
+        kl, kh = kernel(Interval(lo)), kernel(Interval(hi))
         require((kl.lo > 0 and kh.hi < 0) or (kl.hi < 0 and kh.lo > 0), "root signs")
         endpoints.append({"K_lo": kl.receipt(), "K_hi": kh.receipt()})
-    points = [I(0)]+[I(lo, hi) for lo, hi in brackets]
+    points = [Interval(0)]+[Interval(lo, hi) for lo, hi in brackets]
     rows = [F(1) for _ in range(7)]
-    energy = I(0)
+    energy = Interval(0)
     for i in range(1, 7):
         for j in range(i+1, 7):
             value = kernel(points[j]-points[i])
@@ -167,12 +167,12 @@ def audit(native):
     require(all(row < F(17043, 5000) for row in rows) and F(2) < F(17043, 5000), "spectral clipping")
     require(energy.lo > 0, "simple energy")
     gaps = [points[j+1]-points[j] for j in range(6)]
-    charge = sum((p*gap for p, gap in zip(pressures, gaps)), I(0))
+    charge = sum((p*gap for p, gap in zip(pressures, gaps)), Interval(0))
     require(charge.hi < F(39369, 5000000), "local pressure budget")
     return {"source_sha256": SOURCE_SHA, "arithmetic": "Python stdlib Fraction outward-rounded intervals, 65 decimal grid",
             "pi": pi.receipt(), "theta": theta.receipt(), "positive_window_lower": positivity.receipt(),
             "endpoint_sign_certificates": endpoints, "simple_pair_checks": 15,
-            "unit_row_upper_bounds": [I(row).receipt() for row in rows],
+            "unit_row_upper_bounds": [Interval(row).receipt() for row in rows],
             "weighted_doubled_row": "2", "simple_block_energy": energy.receipt(),
             "pressure_charge": charge.receipt(), "exact_root_remainder": "0",
             "scope": "Independent compact point-Gram obstruction; not a zeta-zero improvement.",

@@ -340,3 +340,13 @@ RH-F4 remains the primary focus. RH-F15 / EXP-026 admits one invariant-first
 test of the retained mixed-Gram multiplicity term and a count-only gain.
 An isolated-point obstruction stops that proposed factor before a larger
 certificate. No pressure/geometric estimate or new manuscript is presumed.
+
+## EXP-026 closure and value review
+
+Multiplicity retention is exact, but independently certified compact kernel
+roots defeat a positive count-only remainder bound even below the pressure
+budget. Close RH-F15; no broad mixed-Gram sweep or publication is justified.
+A joint slack estimate is unproved and not admitted automatically. RH-F4 is
+retained because the signed moment estimate remains the substantive analytic
+obligation. Complete the shifted Voronoi normalization before using any
+inverse-phase cancellation estimate. EXP-026 is research-record only.

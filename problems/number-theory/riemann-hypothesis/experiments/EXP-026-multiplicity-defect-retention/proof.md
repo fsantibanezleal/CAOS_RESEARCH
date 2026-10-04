@@ -58,10 +58,55 @@ Gram family, not a sampled zeta-zero configuration. It refutes a proposed
 uniform transfer inequality; it does not assert that actual zeta zeros
 realize that configuration or refute a pressure-constrained refinement.
 
+## Isolation also occurs below the local pressure budget
+
+The separately declared compact check supplies six disjoint rational
+brackets of width at most 2^-40 inside (1/2,8). Each has opposite certified
+kernel signs at its endpoints. Choose a root r_j in each bracket by the
+intermediate value theorem. The kernel is continuous and is the Fourier
+transform of the pinned positive window, so the seven-point matrix for
+0,r_1,...,r_6 is a positive semidefinite unit-diagonal Gram.
+
+Let D=diag(2,1,1,1,1,1,1). Since K(r_j)=0 exactly, U=1 direct-sum V:
+the doubled point is isolated, rather than merely approximately isolated.
+Interval bounds valid for every choice of roots in their brackets give
+lambda_max(U)<1.261 and lambda_max(P)<=2, both below c=3.4086.
+Thus C=X, both spectral clippings are inactive, and
+
+    Gamma_D(C)=0,
+    tr(phi_c(P))-tr(D^2)=tr(Psi_tau(U))=tr(V-I)^2>0.
+
+The independent rational audit bounds this positive energy between
+0.07308382802969 and 0.07308382803629. It also encloses the actual unequal
+vector-pressure charge between 0.003950876179377 and
+0.003950876179385, strictly below delta=0.0078738. All six gaps are positive.
+The doubled count is one, so any strictly positive count-only remainder
+bound, or the declared multiplicative factor 1+1/70, fails even on this
+pressure-constrained family. This is a point-Gram counterexample; these
+locations are not asserted to be actual zeta zeros.
+
+The native check uses analytic sinc integrals at 256 bits. The separate
+standard-library audit parses the source independently and uses the formula
+
+    K(x) = [ (theta*sin(theta)*cos(pi*x)
+               - pi*x*cos(theta)*sin(pi*x))/(theta^2-pi^2*x^2)
+             + sum_(j=1)^12 c_j*(-1)^j*x*sin(pi*x)/(pi*(x^2-j^2)) ] / Z,
+    theta=sqrt(2)/2, Z=sin(theta)/theta.
+
+Its argument-reduced Taylor, Machin-pi and integer-square-root intervals
+use outward rational arithmetic on a 65-decimal grid, without FLINT/Arb.
+No denominator crosses zero on the audited inputs. Both implementations
+prove all twelve endpoint signs, all fifteen simple-pair bounds, clipping,
+energy and pressure. Reversed and overlapping brackets and changed source
+bytes are rejected by the independent audit. Root uniqueness is unnecessary:
+each disjoint bracket supplies a different point, and the bounds cover all
+choices. Positivity of the window is checked independently as well.
+
 ## Next obligation
 
 The remainder records weighted spectral mass at doubled rows, not merely
-their count. A useful counting improvement must lower-bound that mass using
-gap geometry and charge the isolation cost to the available total pressure.
-The local source theorem by itself does not supply this lower bound. No
-larger sweep, new proportion, manuscript or new version follows here.
+their count. Pressure alone cannot supply a strictly positive lower bound:
+the compact witness meets that constraint with remainder zero. A viable
+refinement must control the sum of the baseline local slack and the retained
+term, rather than the term by itself. That joint estimate remains unproved.
+No larger sweep, new proportion, manuscript or new version follows here.
