@@ -1,5 +1,31 @@
 # Riemann hypothesis: zero-proportion research program
 
+## Current experiment update, 2026-10-04: EXP-028
+
+EXP-028 is internally proved: the uniform shifted moment admits
+nu<min(1/2,(17/33)*(2theta-1)). Independent Mellin and exact-Hankel norm
+derivations agree; residue/coalescence, all signed coefficients, unbalanced
+blocks, gcd sums, general fixed Q and narrower compact-window conversion
+are reviewed. Exact/native and independent rational controls give positive
+simple-critical density greater than 0.0003985233159135 at theta=0.5339.
+The mathematical onset is now 0.5339 internally; external review, worldwide
+priority and effective height are unconfirmed. RH remains open.
+
+Next: immutable short-interval-levinson v0.02 source/PDF and publication,
+scoped PR promotion and an accurately serialized app release. The live
+0.75.000 app retains its established 25-record snapshot and 0.534 display
+until that release; mathematical validation is not a deployment claim.
+See exp028-manuscript-admission.md and the EXP-028 verdict/proof-review.
+
+EXP-027 supplies the complete classical transformed representation. EXP-026
+remains a supporting obstruction. EXP-023 stopped at its six-hour budget:
+95/96 shards, 21,772,288 sealed nodes, 19 pending boxes, all stopped data
+archived and verified. Its candidate remains unproved; issue #362 is open.
+No automatic restart or alteration of frozen source is admitted.
+
+This current block supersedes historical running/pending and 0.534 research
+state below; historical evidence and published v0.01 bytes are preserved.
+
 Opened for source-led investigation on 2026-09-12. Scope: `number-theory/riemann-hypothesis`.
 Tracking issue: <https://github.com/fsantibanezleal/CAOS_RESEARCH/issues/262>.
 

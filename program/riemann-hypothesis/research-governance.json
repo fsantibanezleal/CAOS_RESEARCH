@@ -110,16 +110,19 @@
         "Three consecutive experiments fail to move the onset.",
         "RH-038 finds that the asymptotic large sieve does not extend to short t-ranges of length T/H with the needed moduli range."
       ],
-      "novelty_status": "Primary-source review through 2026-10-03 located no external onset below 0.534; negative search is not a priority proof.",
+      "novelty_status": "Primary-source overlap review through 2026-10-04 located no matching onset; internal derivations and independent arithmetic pass. External peer review and worldwide novelty remain unconfirmed.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "RH-038 first obligation: derive the complete shifted composite-twist signed reduction, retaining gamma/parity factors. CIS endpoint/polyheight substitution and uniform pointwise phase repairs are closed by the source audit and EXP-014/015. A cancellation theorem remains an open analytic target.",
+      "first_bounded_action": "EXP-028 internally closes the below-0.534 analytic gate via two separation-norm derivations and certified theta=0.5339. Complete immutable manuscript/publication and serialized deployment before closing delivery.",
       "evidence": [
         "EXP-010",
         "EXP-011",
         "EXP-012",
         "EXP-014",
         "EXP-015",
-        "EXP-021"
+        "EXP-021",
+        "EXP-024",
+        "EXP-027",
+        "EXP-028"
       ]
     },
     {
@@ -491,6 +494,20 @@
       "end": 26,
       "classification": "research-record",
       "manuscripts": []
+    },
+    {
+      "start": 27,
+      "end": 27,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 28,
+      "end": 28,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "short-interval-levinson"
+      ]
     }
   ]
 }

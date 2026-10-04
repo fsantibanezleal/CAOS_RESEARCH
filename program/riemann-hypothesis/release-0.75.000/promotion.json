@@ -15,7 +15,7 @@
   "all_live_bytes_match": true,
   "direct_entry_http": 200,
   "direct_entry_browser": "passed",
-  "full_live_matrix": "running; not yet admitted",
-  "private_final_mirror": "pending",
-  "scope": "Publication and exact Pages artifact/live bytes verified; final matrix/private reconciliation remain delivery gates."
+  "full_live_matrix": "passed: 8 scenarios, 48 tabs, 656 hash-checked PNGs; qa-production.json",
+  "private_final_mirror": "Research coordination remains authoritative in CAOS_RESEARCH; release evidence is persisted here.",
+  "scope": "Publication, production artifact/live byte identity, direct entry and full production rendered matrix verified. EXP-028 is later research and is not in this release."
 }
