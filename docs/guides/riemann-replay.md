@@ -3,6 +3,34 @@
 The [research wiki](../../problems/number-theory/riemann-hypothesis/wiki/) explains the theorem.
 This guide describes the evidence flow and public replay. All arithmetic runs offline on CPU.
 
+## Reviewed longer short-window moment
+
+EXP-028's internally reviewed moment range is
+`0<nu<min(1/2,(17/33)(2theta-1))`. With the unchanged certified EXP-010
+detector and Wang's attributed pair theorem, the simple-critical onset is
+0.5339, with endpoint density greater than 0.0003985233159135.
+The complete proof and 80-member source archive are published as
+[Levinson v0.02](https://doi.org/10.5281/zenodo.23132248).
+
+Verify the source ZIP SHA-256
+`944c99623d57fcff3db5a380d08dd5907bfbc40250c5c1f7f8d1fefd188da5c1`
+and follow its README from a fresh extraction. Its independent rational,
+native and exact adversarial auditors reproduce the finite checks. Historical
+conditional receipts retain false theorem flags: the separate complete
+analytic proof review admits the moment theorem. Finite checks cannot prove
+it. Both derivations explicitly charge the narrower smoothing window and
+retain residues, coalescence, dual tails and unbalanced blocks.
+
+`riemann-short-window-moment-v1` is an additive replay-v9 object. Offline
+admission binds all committed scientific source bytes and rejects missing
+proofs, false review/controls or unpublished files. Frozen Windows receipt
+hashes accept only the exact LF or CRLF serialization of their committed
+source; the published source archive reproduces the original physical bytes.
+The browser validates recorded admission and matching provenance without
+performing mathematical searches. Earlier EXP-010 evidence remains unchanged.
+Internal review and publication do not establish external peer review,
+worldwide priority, an effective height or RH.
+
 ## Completed distinct-strip certificates
 
 The [published companion](https://doi.org/10.5281/zenodo.23128662) contains

@@ -4,6 +4,11 @@ import type { Citation } from '@fasl-work/caos-app-shell';
 // Inline <Cite id="..."/> resolves against this list via the CitationsProvider at the app root.
 export const CITATIONS: Citation[] = [
   {
+    id: 'riemann-bettinchandee2015', label: 'Bettin–Chandee 2015',
+    citation: 'Bettin S., Chandee V. Trilinear forms with Kloosterman fractions. Pinned arXiv:1502.00769v1, Theorem 1. Arbitrary complex coefficients and the full parameter factor are retained in EXP-028; the source theorem is attributed, not reproved here.',
+    url: 'https://arxiv.org/abs/1502.00769v1',
+  },
+  {
     id: 'riemann-distinct2026', label: 'CAOS distinct-zero companion 2026',
     citation: 'Santibanez-Leal F. (2026). Stronger local overlap certificates and distinct zeros of the Riemann zeta function, v0.01. Published proof and reproducibility archives; internal review, not external peer acceptance. Concept DOI links to the current version.',
     url: 'https://doi.org/10.5281/zenodo.23128662',
@@ -54,9 +59,9 @@ export const CITATIONS: Citation[] = [
     url: 'https://doi.org/10.5281/zenodo.22940291',
   },
   {
-    id: 'riemann-levinson2026', label: 'CAOS EXP-010: short-interval Levinson',
-    citation: 'Santibáñez-Leal F. (2026). Levinson\'s method in short intervals and simple zeros of the zeta function. CAOS Research preprint v0.01. Localized Levinson-Conrey moment for nu < theta - 1/2, a distinct sign-change count, certified degree-201 detectors and the onset theta >= 0.534; the onset uses Wang arXiv:2609.07918v1.',
-    url: 'https://doi.org/10.5281/zenodo.22984155',
+    id: 'riemann-levinson2026', label: 'CAOS EXP-010/028: short-interval Levinson',
+    citation: 'Santibáñez-Leal F. (2026). Levinson\'s method in short intervals and simple zeros of the zeta function. CAOS Research preprint v0.02. Internally reviewed moment for nu < min(1/2,(17/33)(2theta-1)), exact Mellin and Hankel derivations, certified detector and onset theta >= 0.5339; uses Bettin-Chandee and Wang arXiv:2609.07918v1. Publication is not external peer review.',
+    url: 'https://doi.org/10.5281/zenodo.23132248',
   },
   {
     id: 'riemann-tang2026', label: 'Tang 2026',

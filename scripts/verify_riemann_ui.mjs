@@ -371,9 +371,9 @@ async function proofControls(page, panel, scenario, tab) {
 }
 async function experimentViews(page, panel, scenario, text) {
   const buttons = panel.locator('.rh-experiments .rs-exp-open');
-  check(scenario, 'all twenty-five experiment launch controls present', await buttons.count() === 25);
-  requireCondition(await buttons.count() === 25, 'Expected all twenty-five experiment records');
-  for (const id of Array.from({ length: 25 }, (_, i) => String(i + 1).padStart(3, '0'))) {
+  check(scenario, 'all twenty-five experiment launch controls present', await buttons.count() === 28);
+  requireCondition(await buttons.count() === 28, 'Expected all twenty-eight experiment records');
+  for (const id of Array.from({ length: 28 }, (_, i) => String(i + 1).padStart(3, '0'))) {
     const launch = buttons.filter({ hasText: new RegExp(`^EXP-${id}:`) });
     await pointerClick(page, launch, scenario, `open EXP-${id}`);
     const dialog = page.locator('.rs-modal[role="dialog"]');
@@ -490,6 +490,7 @@ async function runScenario(viewport, lang, theme) {
       const panelId = await panel.getAttribute('id');
       requireCondition(panelId?.endsWith(`-panel-${id}`), `Wrong panel after ${id}: ${panelId}`);
       check(scenario, `${id}: substantive rendered content`, norm(await panel.innerText()).length >= 150);
+      check(scenario, `${id}: current EXP-028 theorem and publication visible`, (await panel.locator('[data-evidence="EXP-028"]').count()) === 1 && (await panel.locator('[data-evidence="EXP-028"] a[href="https://doi.org/10.5281/zenodo.23132248"]').count()) === 1);
       scenario.tabs_visited.push(id);
       await panelScreens(page, panel, scenario, id, ['summary', 'context', 'strategy'].includes(id));
       await proofControls(page, panel, scenario, id);

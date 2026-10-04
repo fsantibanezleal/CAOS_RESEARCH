@@ -18,7 +18,7 @@ from pathlib import Path
 
 import yaml
 
-from . import riemann_distinct
+from . import riemann_distinct, riemann_moment
 
 ROOT = Path(__file__).resolve().parents[3]
 DERIVED = ROOT / "data" / "derived"
@@ -40,7 +40,7 @@ EXP010_CANONICAL = "3dba086fed900d5a828bb78182fc68541b641d8a"
 EXP011_DECLARATION = "9886f07bc05928c635754261fe282034af08904f"
 EXP011_AMENDMENT = "136b40f01d17b0bb4a4d3e5ad8b57fac74af44a8"
 EXP012_DECLARATION = "76c4439830027619f52163a6c344d55d96ed26b4"
-RIEMANN_EXPERIMENT_MAX = 25
+RIEMANN_EXPERIMENT_MAX = 28
 
 
 def _read_portfolio() -> dict:
@@ -1079,6 +1079,21 @@ def _riemann_payload() -> dict:
                 })
         payload["distinct_zero"] = riemann_distinct.validate(distinct_raw)
         payload["reviewed_on"] = "2026-10-03"
+    if RIEMANN_EXPERIMENT_MAX >= 28:
+        moment_raw = {}
+        for role, path in riemann_moment.INPUTS.items():
+            moment_raw[role] = _committed_bytes(path)
+            commit = subprocess.run(
+                ["git", "log", "-1", "--format=%H", "HEAD", "--", path],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout.strip()
+            payload["provenance"].append({
+                "role": role, "source_exp": "EXP-028-chirp-separated-moment", "path": path,
+                "source_commit": commit, "bytes": len(moment_raw[role]),
+                "sha256": hashlib.sha256(moment_raw[role]).hexdigest(),
+            })
+        payload["short_window_moment"] = riemann_moment.validate(moment_raw)
+        payload["reviewed_on"] = "2026-10-04"
     return payload
 
 
