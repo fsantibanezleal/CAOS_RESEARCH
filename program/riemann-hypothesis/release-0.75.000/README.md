@@ -32,7 +32,8 @@ Ruff and repository guards pass. The prior mathematical milestone passed
 The full-panel visual matrix passes 20 scenarios and 120 tab visits with
 5,894 screenshots and zero failed checks. All current screenshot bytes were
 verified; 28 representative images are committed. The final registry-only
-refresh adds two diagnostic artifacts and receives a separate regression.
+refresh adds two diagnostic artifacts; its separate 20-scenario regression
+passes all 120 tab visits and 1,640 byte-verified screenshots, zero failures.
 `scope-check.json` confirms all 264 unrelated experiment records are unchanged.
 
 Research PR #363 is merged to develop. Workbench PR #365 remains draft;
