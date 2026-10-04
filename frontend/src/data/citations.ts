@@ -61,7 +61,7 @@ export const CITATIONS: Citation[] = [
   {
     id: 'riemann-levinson2026', label: 'CAOS EXP-010/028: short-interval Levinson',
     citation: 'Santibáñez-Leal F. (2026). Levinson\'s method in short intervals and simple zeros of the zeta function. CAOS Research preprint v0.02. Internally reviewed moment for nu < min(1/2,(17/33)(2theta-1)), exact Mellin and Hankel derivations, certified detector and onset theta >= 0.5339; uses Bettin-Chandee and Wang arXiv:2609.07918v1. Publication is not external peer review.',
-    url: 'https://doi.org/10.5281/zenodo.23132248',
+    url: 'https://doi.org/10.5281/zenodo.22984154',
   },
   {
     id: 'riemann-tang2026', label: 'Tang 2026',

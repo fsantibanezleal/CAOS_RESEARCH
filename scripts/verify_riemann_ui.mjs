@@ -490,7 +490,7 @@ async function runScenario(viewport, lang, theme) {
       const panelId = await panel.getAttribute('id');
       requireCondition(panelId?.endsWith(`-panel-${id}`), `Wrong panel after ${id}: ${panelId}`);
       check(scenario, `${id}: substantive rendered content`, norm(await panel.innerText()).length >= 150);
-      check(scenario, `${id}: current EXP-028 theorem and publication visible`, (await panel.locator('[data-evidence="EXP-028"]').count()) === 1 && (await panel.locator('[data-evidence="EXP-028"] .rh-source-links a[href="https://doi.org/10.5281/zenodo.23132248"]').count()) === 1);
+      check(scenario, `${id}: current EXP-028 theorem and publication visible`, (await panel.locator('[data-evidence="EXP-028"]').count()) === 1 && (await panel.locator('[data-evidence="EXP-028"] .rh-source-links a[href="https://doi.org/10.5281/zenodo.22984154"]').count()) === 1);
       scenario.tabs_visited.push(id);
       await panelScreens(page, panel, scenario, id, ['summary', 'context', 'strategy'].includes(id));
       await proofControls(page, panel, scenario, id);
@@ -539,12 +539,19 @@ try {
   const playwright = await loadPlaywright();
   const chromium = playwright.chromium || playwright.default?.chromium;
   requireCondition(chromium, 'Resolved module does not expose Playwright chromium');
-  browser = await chromium.launch({ headless: !options.headed,
-    ...(process.env.RIEMANN_CHROMIUM_EXECUTABLE ? { executablePath: process.env.RIEMANN_CHROMIUM_EXECUTABLE } : {}) });
-  receipt.browser_version = await browser.version();
   for (const viewport of options.viewports) {
     for (const lang of ['en', 'es']) {
-      for (const theme of ['light', 'dark']) await runScenario(viewport, lang, theme);
+      for (const theme of ['light', 'dark']) {
+        // Isolate native browser resources across complete scenario replays.
+        browser = await chromium.launch({ headless: !options.headed,
+          ...(process.env.RIEMANN_CHROMIUM_EXECUTABLE ? { executablePath: process.env.RIEMANN_CHROMIUM_EXECUTABLE } : {}) });
+        const version = await browser.version();
+        if (receipt.browser_version) requireCondition(receipt.browser_version === version, 'Browser version changed');
+        receipt.browser_version = version;
+        await runScenario(viewport, lang, theme);
+        await browser.close();
+        browser = null;
+      }
     }
   }
 } catch (error) {

@@ -3,7 +3,7 @@ import type { RiemannShortWindowMoment } from '../api/data';
 import { useT } from '../lib/i18n';
 
 const EXP = 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/';
-const DOI = 'https://doi.org/10.5281/zenodo.23132248';
+const DOI = 'https://doi.org/10.5281/zenodo.22984154';
 export default function RiemannMoment({ evidence, mode }: {
   evidence: RiemannShortWindowMoment | null;
   mode: 'summary' | 'context' | 'approaches' | 'strategy' | 'results' | 'open';
