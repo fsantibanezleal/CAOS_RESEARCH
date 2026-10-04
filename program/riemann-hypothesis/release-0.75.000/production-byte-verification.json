@@ -1,0 +1,792 @@
+{
+  "schema": "riemann-pages-artifact-live-verification-v1",
+  "release": "0.75.000",
+  "pages_run": "37168373757",
+  "source_commit": "51b8e91bea8e2030ebb22d342ffb125d8f992400",
+  "artifact_sha256": "c1674c7662656272cbcd2af034add323e9cdc22d8c60b804e53a835cb5f85a98",
+  "finished_utc": "2026-10-04T01:35:11.078987+00:00",
+  "files": [
+    {
+      "path": "favicon.svg",
+      "bytes": 264,
+      "sha256": "03c5528c29a66491b6d00005c9c87255e7916dc020fffe7df6cbab8432ec5968",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/favicon.svg",
+      "live_bytes": 264,
+      "live_sha256": "03c5528c29a66491b6d00005c9c87255e7916dc020fffe7df6cbab8432ec5968",
+      "match": true
+    },
+    {
+      "path": "problems/riemann-hypothesis/index.html",
+      "bytes": 656,
+      "sha256": "e917c7fa220572bf2ca2f0fa86f51dca51164a380aaa202897c0df4dfc9ca283",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/problems/riemann-hypothesis/index.html",
+      "live_bytes": 656,
+      "live_sha256": "e917c7fa220572bf2ca2f0fa86f51dca51164a380aaa202897c0df4dfc9ca283",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf",
+      "bytes": 22364,
+      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf",
+      "live_bytes": 22364,
+      "live_sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size4-Regular-BF-4gkZK.woff",
+      "bytes": 5980,
+      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size4-Regular-BF-4gkZK.woff",
+      "live_bytes": 5980,
+      "live_sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size1-Regular-C195tn64.woff",
+      "bytes": 6496,
+      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size1-Regular-C195tn64.woff",
+      "live_bytes": 6496,
+      "live_sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Script-Regular-C5JkGWo-.ttf",
+      "bytes": 16648,
+      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Script-Regular-C5JkGWo-.ttf",
+      "live_bytes": 16648,
+      "live_sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf",
+      "bytes": 12368,
+      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf",
+      "live_bytes": 12368,
+      "live_sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Italic-DN2j7dab.woff",
+      "bytes": 14112,
+      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff",
+      "live_bytes": 14112,
+      "live_sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size2-Regular-B7gKUWhC.ttf",
+      "bytes": 11508,
+      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf",
+      "live_bytes": 11508,
+      "live_sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size1-Regular-Dbsnue_I.ttf",
+      "bytes": 12228,
+      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf",
+      "live_bytes": 12228,
+      "live_sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Fraktur-Regular-CB_wures.ttf",
+      "bytes": 19572,
+      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Fraktur-Regular-CB_wures.ttf",
+      "live_bytes": 19572,
+      "live_sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff",
+      "bytes": 16028,
+      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff",
+      "live_bytes": 16028,
+      "live_sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Italic-NWA7e6Wa.woff2",
+      "bytes": 16988,
+      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2",
+      "live_bytes": 16988,
+      "live_sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Math-Italic-flOr_0UB.ttf",
+      "bytes": 31308,
+      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Math-Italic-flOr_0UB.ttf",
+      "live_bytes": 31308,
+      "live_sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff",
+      "bytes": 13208,
+      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff",
+      "live_bytes": 13208,
+      "live_sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Italic-3WenGoN9.ttf",
+      "bytes": 33580,
+      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Italic-3WenGoN9.ttf",
+      "live_bytes": 33580,
+      "live_sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size3-Regular-DgpXs0kz.ttf",
+      "bytes": 7588,
+      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf",
+      "live_bytes": 7588,
+      "live_sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Script-Regular-D5yQViql.woff",
+      "bytes": 10588,
+      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Script-Regular-D5yQViql.woff",
+      "live_bytes": 10588,
+      "live_sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Math-Italic-DA0__PXp.woff",
+      "bytes": 18748,
+      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Math-Italic-DA0__PXp.woff",
+      "live_bytes": 18748,
+      "live_sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Italic-BMLOBm91.woff",
+      "bytes": 19676,
+      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Italic-BMLOBm91.woff",
+      "live_bytes": 19676,
+      "live_sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2",
+      "bytes": 6908,
+      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2",
+      "live_bytes": 6908,
+      "live_sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2",
+      "bytes": 16400,
+      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2",
+      "live_bytes": 16400,
+      "live_sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff",
+      "bytes": 12316,
+      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff",
+      "live_bytes": 12316,
+      "live_sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+      "match": true
+    },
+    {
+      "path": "assets/index-BhBfb5f8.js",
+      "bytes": 829406,
+      "sha256": "7a59d91679680fdf94a44d066374f89bcc86c953a5dbe5a3b3cf0cf626306c0c",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/index-BhBfb5f8.js",
+      "live_bytes": 829406,
+      "live_sha256": "7a59d91679680fdf94a44d066374f89bcc86c953a5dbe5a3b3cf0cf626306c0c",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff",
+      "bytes": 7656,
+      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff",
+      "live_bytes": 7656,
+      "live_sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2",
+      "bytes": 4928,
+      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2",
+      "live_bytes": 4928,
+      "live_sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_AMS-Regular-BQhdFMY1.woff2",
+      "bytes": 28076,
+      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2",
+      "live_bytes": 28076,
+      "live_sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2",
+      "bytes": 11348,
+      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2",
+      "live_bytes": 11348,
+      "live_sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Regular-ypZvNtVU.ttf",
+      "bytes": 53580,
+      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Regular-ypZvNtVU.ttf",
+      "live_bytes": 53580,
+      "live_sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+      "match": true
+    },
+    {
+      "path": "assets/ExperimentModal-RK9SL6sA.js",
+      "bytes": 176791,
+      "sha256": "09468fa246a8856f3516fbf557f414e158e7e6de21772522a8d2cb523b2ec29f",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/ExperimentModal-RK9SL6sA.js",
+      "live_bytes": 176791,
+      "live_sha256": "09468fa246a8856f3516fbf557f414e158e7e6de21772522a8d2cb523b2ec29f",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Bold-waoOVXN0.ttf",
+      "bytes": 51336,
+      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Bold-waoOVXN0.ttf",
+      "live_bytes": 51336,
+      "live_sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2",
+      "bytes": 11316,
+      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2",
+      "live_bytes": 11316,
+      "live_sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2",
+      "bytes": 16780,
+      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2",
+      "live_bytes": 16780,
+      "live_sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size3-Regular-CTq5MqoE.woff",
+      "bytes": 4420,
+      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size3-Regular-CTq5MqoE.woff",
+      "live_bytes": 4420,
+      "live_sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf",
+      "bytes": 32968,
+      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf",
+      "live_bytes": 32968,
+      "live_sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_AMS-Regular-DRggAlZN.ttf",
+      "bytes": 63632,
+      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_AMS-Regular-DRggAlZN.ttf",
+      "live_bytes": 63632,
+      "live_sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2",
+      "bytes": 12216,
+      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2",
+      "live_bytes": 12216,
+      "live_sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2",
+      "bytes": 13568,
+      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2",
+      "live_bytes": 13568,
+      "live_sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Fraktur-Bold-BsDP51OF.woff",
+      "bytes": 13296,
+      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff",
+      "live_bytes": 13296,
+      "live_sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Regular-B22Nviop.woff2",
+      "bytes": 26272,
+      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+      "live_bytes": 26272,
+      "live_sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_AMS-Regular-DMm9YOAa.woff",
+      "bytes": 33516,
+      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_AMS-Regular-DMm9YOAa.woff",
+      "live_bytes": 33516,
+      "live_sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf",
+      "bytes": 19436,
+      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf",
+      "live_bytes": 19436,
+      "live_sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Bold-Cx986IdX.woff2",
+      "bytes": 25324,
+      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Bold-Cx986IdX.woff2",
+      "live_bytes": 25324,
+      "live_sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff",
+      "bytes": 7716,
+      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff",
+      "live_bytes": 7716,
+      "live_sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2",
+      "bytes": 10344,
+      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2",
+      "live_bytes": 10344,
+      "live_sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size1-Regular-mCD8mA8B.woff2",
+      "bytes": 5468,
+      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2",
+      "live_bytes": 5468,
+      "live_sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff",
+      "bytes": 14408,
+      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff",
+      "live_bytes": 14408,
+      "live_sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size2-Regular-Dy4dx90m.woff2",
+      "bytes": 5208,
+      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2",
+      "live_bytes": 5208,
+      "live_sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf",
+      "bytes": 19584,
+      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf",
+      "live_bytes": 19584,
+      "live_sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Regular-Dr94JaBh.woff",
+      "bytes": 30772,
+      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Regular-Dr94JaBh.woff",
+      "live_bytes": 30772,
+      "live_sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-Bold-Jm3AIy58.woff",
+      "bytes": 29912,
+      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-Bold-Jm3AIy58.woff",
+      "live_bytes": 29912,
+      "live_sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2",
+      "bytes": 6912,
+      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2",
+      "live_bytes": 6912,
+      "live_sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+      "match": true
+    },
+    {
+      "path": "assets/index-VGfrDf-y.css",
+      "bytes": 65548,
+      "sha256": "511ca711cd6776d18b02d23cac3bcf2bec0056538f97cd7eb6b2b91d5a7a29e3",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/index-VGfrDf-y.css",
+      "live_bytes": 65548,
+      "live_sha256": "511ca711cd6776d18b02d23cac3bcf2bec0056538f97cd7eb6b2b91d5a7a29e3",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf",
+      "bytes": 31196,
+      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf",
+      "live_bytes": 31196,
+      "live_sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Math-Italic-t53AETM-.woff2",
+      "bytes": 16440,
+      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+      "live_bytes": 16440,
+      "live_sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Main-BoldItalic-SpSLRI95.woff",
+      "bytes": 19412,
+      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff",
+      "live_bytes": 19412,
+      "live_sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size2-Regular-oD1tc_U0.woff",
+      "bytes": 6188,
+      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size2-Regular-oD1tc_U0.woff",
+      "live_bytes": 6188,
+      "live_sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2",
+      "bytes": 12028,
+      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2",
+      "live_bytes": 12028,
+      "live_sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf",
+      "bytes": 12344,
+      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf",
+      "live_bytes": 12344,
+      "live_sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff",
+      "bytes": 18668,
+      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff",
+      "live_bytes": 18668,
+      "live_sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf",
+      "bytes": 27556,
+      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf",
+      "live_bytes": 27556,
+      "live_sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Size4-Regular-DWFBv043.ttf",
+      "bytes": 10364,
+      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Size4-Regular-DWFBv043.ttf",
+      "live_bytes": 10364,
+      "live_sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_Script-Regular-D3wIWfF6.woff2",
+      "bytes": 9644,
+      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_Script-Regular-D3wIWfF6.woff2",
+      "live_bytes": 9644,
+      "live_sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+      "match": true
+    },
+    {
+      "path": "assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf",
+      "bytes": 24504,
+      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf",
+      "live_bytes": 24504,
+      "live_sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+      "match": true
+    },
+    {
+      "path": "index.html",
+      "bytes": 656,
+      "sha256": "e917c7fa220572bf2ca2f0fa86f51dca51164a380aaa202897c0df4dfc9ca283",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/index.html",
+      "live_bytes": 656,
+      "live_sha256": "e917c7fa220572bf2ca2f0fa86f51dca51164a380aaa202897c0df4dfc9ca283",
+      "match": true
+    },
+    {
+      "path": "data/manifests/riemann.json",
+      "bytes": 46352,
+      "sha256": "e431e13f32ec1b0c21b78c0d6d1657c571614c89d74b06c723f16942e10257fd",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/manifests/riemann.json",
+      "live_bytes": 46352,
+      "live_sha256": "e431e13f32ec1b0c21b78c0d6d1657c571614c89d74b06c723f16942e10257fd",
+      "match": true
+    },
+    {
+      "path": "data/manifests/index.json",
+      "bytes": 385,
+      "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/manifests/index.json",
+      "live_bytes": 385,
+      "live_sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337",
+      "match": true
+    },
+    {
+      "path": "data/manifests/jacobian.json",
+      "bytes": 296,
+      "sha256": "ae21bd1ee67223fc78d4207bdff1b984a2a773a6f237dcf9beb5081c401a42cf",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/manifests/jacobian.json",
+      "live_bytes": 296,
+      "live_sha256": "ae21bd1ee67223fc78d4207bdff1b984a2a773a6f237dcf9beb5081c401a42cf",
+      "match": true
+    },
+    {
+      "path": "data/manifests/experiments.json",
+      "bytes": 305,
+      "sha256": "cd3a78e7cdd6447b4246b499a6fb38d6d2977801fb0ab1636215985977a6e46e",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/manifests/experiments.json",
+      "live_bytes": 305,
+      "live_sha256": "cd3a78e7cdd6447b4246b499a6fb38d6d2977801fb0ab1636215985977a6e46e",
+      "match": true
+    },
+    {
+      "path": "data/manifests/portfolio.json",
+      "bytes": 298,
+      "sha256": "7ca7495bc3abc4bca611c801ef974a23622dc951c2ca8fcfd583a3cfe78a3c13",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/manifests/portfolio.json",
+      "live_bytes": 298,
+      "live_sha256": "7ca7495bc3abc4bca611c801ef974a23622dc951c2ca8fcfd583a3cfe78a3c13",
+      "match": true
+    },
+    {
+      "path": "data/research/riemann.json",
+      "bytes": 44179428,
+      "sha256": "356b373a752d6816ca093d8f36b829faa055d41dc5d341b4c0c902d5620ca2d7",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/research/riemann.json",
+      "live_bytes": 44179428,
+      "live_sha256": "356b373a752d6816ca093d8f36b829faa055d41dc5d341b4c0c902d5620ca2d7",
+      "match": true
+    },
+    {
+      "path": "data/research/jacobian.json",
+      "bytes": 3831,
+      "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/research/jacobian.json",
+      "live_bytes": 3831,
+      "live_sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023",
+      "match": true
+    },
+    {
+      "path": "data/research/experiments.json",
+      "bytes": 2292478,
+      "sha256": "b446cfe1ff95e6de207eb7f8c422ddf98d8d5b7dd1c39a989204cc19e813fd70",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/research/experiments.json",
+      "live_bytes": 2292478,
+      "live_sha256": "b446cfe1ff95e6de207eb7f8c422ddf98d8d5b7dd1c39a989204cc19e813fd70",
+      "match": true
+    },
+    {
+      "path": "data/research/portfolio.json",
+      "bytes": 3782,
+      "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/data/research/portfolio.json",
+      "live_bytes": 3782,
+      "live_sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc",
+      "match": true
+    },
+    {
+      "path": "404.html",
+      "bytes": 360,
+      "sha256": "416ae20ffab5d6b5fe6fa932fa286106b1b5b731bf7b3052dadca6cd8e6792d2",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/404.html",
+      "live_bytes": 360,
+      "live_sha256": "416ae20ffab5d6b5fe6fa932fa286106b1b5b731bf7b3052dadca6cd8e6792d2",
+      "match": true
+    },
+    {
+      "path": ".gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "http_status": 200,
+      "final_url": "https://research.fasl-work.com/.gitkeep",
+      "live_bytes": 0,
+      "live_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    }
+  ],
+  "routes": [
+    {
+      "path": "",
+      "status": 200,
+      "final_url": "https://research.fasl-work.com/",
+      "sha256": "e917c7fa220572bf2ca2f0fa86f51dca51164a380aaa202897c0df4dfc9ca283"
+    },
+    {
+      "path": "problems/riemann-hypothesis",
+      "status": 200,
+      "final_url": "https://research.fasl-work.com/problems/riemann-hypothesis/",
+      "sha256": "e917c7fa220572bf2ca2f0fa86f51dca51164a380aaa202897c0df4dfc9ca283"
+    },
+    {
+      "path": "problems/riemann-hypothesis/",
+      "status": 200,
+      "final_url": "https://research.fasl-work.com/problems/riemann-hypothesis/",
+      "sha256": "e917c7fa220572bf2ca2f0fa86f51dca51164a380aaa202897c0df4dfc9ca283"
+    }
+  ],
+  "entry_root_byte_identical": true,
+  "passed": true
+}

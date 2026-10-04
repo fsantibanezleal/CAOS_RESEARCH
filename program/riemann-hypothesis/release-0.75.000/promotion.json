@@ -1,0 +1,21 @@
+{
+  "schema": "riemann-release-promotion-v1",
+  "release": "0.75.000",
+  "main_commit": "51b8e91bea8e2030ebb22d342ffb125d8f992400",
+  "tag": "v0.75.000",
+  "main_pr": 366,
+  "research_pr": 363,
+  "workbench_pr": 365,
+  "direct_entry_pr": 367,
+  "main_ci": 37168373815,
+  "main_ci_status": "success",
+  "pages_run": 37168373757,
+  "pages_status": "success",
+  "live_artifact_files": 76,
+  "all_live_bytes_match": true,
+  "direct_entry_http": 200,
+  "direct_entry_browser": "passed",
+  "full_live_matrix": "running; not yet admitted",
+  "private_final_mirror": "pending",
+  "scope": "Publication and exact Pages artifact/live bytes verified; final matrix/private reconciliation remain delivery gates."
+}

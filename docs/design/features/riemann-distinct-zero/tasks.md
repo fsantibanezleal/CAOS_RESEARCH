@@ -7,4 +7,4 @@
 - [x] Exercise full-panel pointer QA across languages/themes/viewports; inspect rendered output and fix defects (R3-R6). Final registry-only regression also passes all 20 scenarios.
 - [ ] Persist requirement-by-requirement convergence, version/changelog, scoped commits and release receipts (R7).
 - [ ] Promote develop then main, tag, verify Pages/live hashes, reconcile private records and issues (R7).
-- [ ] Correct and verify the observed direct-entry 404 before release (R8).
+- [x] Correct and verify the observed direct-entry 404 before release (R8): production HTTP and real browser pass.
