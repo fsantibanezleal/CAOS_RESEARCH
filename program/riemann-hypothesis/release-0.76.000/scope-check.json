@@ -1,0 +1,31 @@
+{
+  "schema": "riemann-release-scope-check-v1",
+  "release": "0.76.000",
+  "passed": true,
+  "baseline_commit": "51b8e91bea8e2030ebb22d342ffb125d8f992400",
+  "unrelated_experiment_records": 264,
+  "unrelated_semantically_identical": true,
+  "other_scientific_payloads_byte_identical": true,
+  "riemann_records": 28,
+  "old_published_manuscripts_byte_identical": true,
+  "frozen_files": [
+    {
+      "path": "manuscripts/riemann-hypothesis/short-interval-levinson/main.tex",
+      "sha256": "aab09d466feac5881ea1bdcef79d333ff7a94529324d0e5b0339ebbc227d4137"
+    },
+    {
+      "path": "manuscripts/riemann-hypothesis/short-interval-levinson/main.pdf",
+      "sha256": "4fd71686d6dada90c41a2156f5cbecb428d4f1acd372028020896113b1033d67"
+    },
+    {
+      "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/main.tex",
+      "sha256": "b4fb2ebbd526b367b31b0ad7c034561627389290459300d9030b03db53779de0"
+    },
+    {
+      "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/main.pdf",
+      "sha256": "2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4"
+    }
+  ],
+  "experiments_sha256": "c1cbd6a3af7828e8eaeaa30c96c4f9ef4e212f7fcffb1909d64a341b0d3d0579",
+  "note": "Only the Riemann evidence scope changes; no source record or old publication is deleted or relocated."
+}

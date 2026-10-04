@@ -1,5 +1,52 @@
 # Riemann hypothesis result and manuscript map
 
+## Current experiment update, 2026-10-04: EXP-028
+
+EXP-028 is internally proved: the uniform shifted moment admits
+nu<min(1/2,(17/33)*(2theta-1)). Independent Mellin and exact-Hankel norm
+derivations agree; residue/coalescence, all signed coefficients, unbalanced
+blocks, gcd sums, general fixed Q and narrower compact-window conversion
+are reviewed. Exact/native and independent rational controls give positive
+simple-critical density greater than 0.0003985233159135 at theta=0.5339.
+The mathematical onset is now 0.5339 internally; external review, worldwide
+priority and effective height are unconfirmed. RH remains open.
+
+Published: short-interval-levinson **v0.02**, version DOI
+[10.5281/zenodo.23132248](https://doi.org/10.5281/zenodo.23132248), concept
+10.5281/zenodo.22984154. All 14 PDF pages and the 80-member extracted
+source package pass review; both live downloads match their SHA-256 hashes.
+Next: scoped PR promotion and an accurately serialized app release. The live
+0.75.000 app retains its established 25-record snapshot and 0.534 display
+until that release; mathematical validation is not a deployment claim.
+See exp028-manuscript-admission.md and the EXP-028 verdict/proof-review.
+
+EXP-027 supplies the complete classical transformed representation. EXP-026
+remains a supporting obstruction. EXP-023 stopped at its six-hour budget:
+95/96 shards, 21,772,288 sealed nodes, 19 pending boxes, all stopped data
+archived and verified. Its candidate remains unproved; issue #362 is open.
+No automatic restart or alteration of frozen source is admitted.
+
+This current block supersedes historical running/pending and 0.534 research
+state below; historical evidence and published v0.01 bytes are preserved.
+
+## Current experiment and delivery update, 2026-10-04
+
+EXP-026 is closed as a research record: exact retained multiplicity algebra,
+plus an actual point-Gram isolation obstruction even below the local pressure
+budget. Native interval and independent standard-library rational audits pass.
+This does not improve a zero proportion or the 0.534 onset. RH-F4 remains
+primary; the next analytic target is the complete shifted Voronoi reduction
+and its signed average. No new manuscript follows from EXP-026.
+
+The 0.75.000 release is live: PRs #365/#367 and main promotion #366 merged;
+main `51b8e91bea8e2030ebb22d342ffb125d8f992400`, Pages run `37168373757`.
+All 76 published files match the CI artifact and local build byte-for-byte.
+Production rendered QA passes 8 scenarios, 48 tabs and 656 hash-checked PNGs.
+See `release-0.75.000/production-byte-verification.json` and
+`release-0.75.000/qa-production.json`. Historical pending-release notes below
+record their original time; they are superseded by this verified release.
+EXP-023 still needs the missing shard and every completion gate; no upgrade.
+
 Updated 2026-09-27 (after the route preflights). This map separates mathematical evidence, strategic value,
 manuscript coverage and external novelty. Experiment verdicts remain the
 authority for proofs and refutations; the machine-readable record is
@@ -36,7 +83,7 @@ arXiv full text, so specialist confirmation is still required.
 |---|---|---|---|
 | `short-interval-stability` | v0.07 | `10.5281/zenodo.22860012` | `10.5281/zenodo.22727388` |
 | `sharp-three-point-kernel` | v0.01 | `10.5281/zenodo.22940291` | `10.5281/zenodo.22940290` |
-| `short-interval-levinson` | v0.01 | `10.5281/zenodo.22984155` | `10.5281/zenodo.22984154` |
+| `short-interval-levinson` | v0.02 | `10.5281/zenodo.23132248` | `10.5281/zenodo.22984154` |
 
 ## Active focus and routing of future results
 
@@ -148,3 +195,13 @@ EXP-020 and EXP-025 have companion-manuscript disposition in
 EXP-023 remains incomplete. Internal correctness and primary-source overlap
 review pass with explicit dependencies. Worldwide priority and peer review
 remain unconfirmed. No additional split is warranted.
+
+## EXP-026 closure and value review
+
+Multiplicity retention is exact, but independently certified compact kernel
+roots defeat a positive count-only remainder bound even below the pressure
+budget. Close RH-F15; no broad mixed-Gram sweep or publication is justified.
+A joint slack estimate is unproved and not admitted automatically. RH-F4 is
+retained because the signed moment estimate remains the substantive analytic
+obligation. Complete the shifted Voronoi normalization before using any
+inverse-phase cancellation estimate. EXP-026 is research-record only.

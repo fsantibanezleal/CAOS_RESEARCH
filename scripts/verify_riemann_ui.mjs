@@ -371,9 +371,9 @@ async function proofControls(page, panel, scenario, tab) {
 }
 async function experimentViews(page, panel, scenario, text) {
   const buttons = panel.locator('.rh-experiments .rs-exp-open');
-  check(scenario, 'all twenty-five experiment launch controls present', await buttons.count() === 25);
-  requireCondition(await buttons.count() === 25, 'Expected all twenty-five experiment records');
-  for (const id of Array.from({ length: 25 }, (_, i) => String(i + 1).padStart(3, '0'))) {
+  check(scenario, 'all twenty-eight experiment launch controls present', await buttons.count() === 28);
+  requireCondition(await buttons.count() === 28, 'Expected all twenty-eight experiment records');
+  for (const id of Array.from({ length: 28 }, (_, i) => String(i + 1).padStart(3, '0'))) {
     const launch = buttons.filter({ hasText: new RegExp(`^EXP-${id}:`) });
     await pointerClick(page, launch, scenario, `open EXP-${id}`);
     const dialog = page.locator('.rs-modal[role="dialog"]');
@@ -381,7 +381,7 @@ async function experimentViews(page, panel, scenario, text) {
     check(scenario, `EXP-${id}: correct record opened`, (await dialog.getAttribute('aria-label') || '').startsWith(`EXP-${id}:`));
     const hypothesis = dialog.getByRole('heading', { name: text.hypothesis, exact: true });
     const verdict = dialog.getByRole('heading', { name: text.verdict, exact: true });
-    check(scenario, `EXP-${id}: both persisted sections`, await hypothesis.count() === 1 && (['019', '023'].includes(id) ? await verdict.count() === 0 : await verdict.count() === 1));
+    check(scenario, `EXP-${id}: both persisted sections`, await hypothesis.count() === 1 && (id === '019' ? await verdict.count() === 0 : await verdict.count() === 1));
     await hypothesis.scrollIntoViewIfNeeded();
     await capture(page, scenario, `EXP-${id}-hypothesis`);
     if (await verdict.count()) await verdict.scrollIntoViewIfNeeded();
@@ -490,6 +490,7 @@ async function runScenario(viewport, lang, theme) {
       const panelId = await panel.getAttribute('id');
       requireCondition(panelId?.endsWith(`-panel-${id}`), `Wrong panel after ${id}: ${panelId}`);
       check(scenario, `${id}: substantive rendered content`, norm(await panel.innerText()).length >= 150);
+      check(scenario, `${id}: current EXP-028 theorem and publication visible`, (await panel.locator('[data-evidence="EXP-028"]').count()) === 1 && (await panel.locator('[data-evidence="EXP-028"] .rh-source-links a[href="https://doi.org/10.5281/zenodo.22984154"]').count()) === 1);
       scenario.tabs_visited.push(id);
       await panelScreens(page, panel, scenario, id, ['summary', 'context', 'strategy'].includes(id));
       await proofControls(page, panel, scenario, id);
@@ -538,12 +539,19 @@ try {
   const playwright = await loadPlaywright();
   const chromium = playwright.chromium || playwright.default?.chromium;
   requireCondition(chromium, 'Resolved module does not expose Playwright chromium');
-  browser = await chromium.launch({ headless: !options.headed,
-    ...(process.env.RIEMANN_CHROMIUM_EXECUTABLE ? { executablePath: process.env.RIEMANN_CHROMIUM_EXECUTABLE } : {}) });
-  receipt.browser_version = await browser.version();
   for (const viewport of options.viewports) {
     for (const lang of ['en', 'es']) {
-      for (const theme of ['light', 'dark']) await runScenario(viewport, lang, theme);
+      for (const theme of ['light', 'dark']) {
+        // Isolate native browser resources across complete scenario replays.
+        browser = await chromium.launch({ headless: !options.headed,
+          ...(process.env.RIEMANN_CHROMIUM_EXECUTABLE ? { executablePath: process.env.RIEMANN_CHROMIUM_EXECUTABLE } : {}) });
+        const version = await browser.version();
+        if (receipt.browser_version) requireCondition(receipt.browser_version === version, 'Browser version changed');
+        receipt.browser_version = version;
+        await runScenario(viewport, lang, theme);
+        await browser.close();
+        browser = null;
+      }
     }
   }
 } catch (error) {

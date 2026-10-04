@@ -1,0 +1,466 @@
+{
+  "schema": "riemann-release-ui-qa-v1",
+  "release": "0.76.000",
+  "passed": true,
+  "scope": "Complete pointer-driven six-tab and 28-experiment replay; finite UI evidence, not a mathematical proof.",
+  "raw_receipt": {
+    "bytes": 145758552,
+    "sha256": "2bcc4c474455e3fe0281f072a5b4c09f0cdd3075ca4b6d28e2297720234dd68f",
+    "gzip_sha256": "9061be7ac51e2c809094d8890bda81e7a334e2b45ec0a69e86c87c4022755976"
+  },
+  "script_sha256": "f970da1b8e29b3a5a6999901e0de27090b8470be62a4a2b8e7076a216607c071",
+  "browser_version": "153.0.8010.12",
+  "candidate_commit": "a33202aff82b382885470588afee45c6729357bd",
+  "build_manifest_sha256": "f7dcf5e4a5c518550570b36410084d32e7d2e01b33decd980fcaf15d71b807eb",
+  "started_utc": "2026-10-04T07:15:28.727Z",
+  "finished_utc": "2026-10-04T08:11:42.200Z",
+  "base_url": "http://127.0.0.1:4186/",
+  "scenario_count": 20,
+  "tabs_visited": 120,
+  "screenshots": 6354,
+  "failed_checks": 0,
+  "all_screenshot_bytes_verified": true,
+  "visual_review": "Selected screenshots require separate visual inspection; automated success is not a visual-review attestation.",
+  "scenarios": [
+    {
+      "id": "390x844-en-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T07:15:29.210Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 4424,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 467
+    },
+    {
+      "id": "390x844-en-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T07:18:26.631Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 4424,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 467
+    },
+    {
+      "id": "390x844-es-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T07:21:21.146Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 4523,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 478
+    },
+    {
+      "id": "390x844-es-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T07:24:26.197Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 4523,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 478
+    },
+    {
+      "id": "1280x800-en-light",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T07:27:38.131Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 3200,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 331
+    },
+    {
+      "id": "1280x800-en-dark",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T07:30:25.663Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 3200,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 331
+    },
+    {
+      "id": "1280x800-es-light",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T07:33:09.523Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 3227,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 334
+    },
+    {
+      "id": "1280x800-es-dark",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T07:35:58.726Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 3227,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 334
+    },
+    {
+      "id": "1600x900-en-light",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T07:38:55.642Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2912,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 299
+    },
+    {
+      "id": "1600x900-en-dark",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T07:41:38.514Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2912,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 299
+    },
+    {
+      "id": "1600x900-es-light",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T07:44:04.726Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2921,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 300
+    },
+    {
+      "id": "1600x900-es-dark",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T07:46:44.921Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2921,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 300
+    },
+    {
+      "id": "2560x1440-en-light",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T07:49:28.023Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2093,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 208
+    },
+    {
+      "id": "2560x1440-en-dark",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T07:52:18.827Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2093,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 208
+    },
+    {
+      "id": "2560x1440-es-light",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T07:55:09.325Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2111,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 210
+    },
+    {
+      "id": "2560x1440-es-dark",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T07:57:49.312Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2111,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 210
+    },
+    {
+      "id": "1440x1000-en-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T08:00:50.008Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2687,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 274
+    },
+    {
+      "id": "1440x1000-en-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T08:03:22.648Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2687,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 274
+    },
+    {
+      "id": "1440x1000-es-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T08:06:08.057Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2705,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 276
+    },
+    {
+      "id": "1440x1000-es-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T08:08:41.578Z",
+      "completed": true,
+      "failed_checks": 0,
+      "checks": 2705,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 276
+    }
+  ]
+}

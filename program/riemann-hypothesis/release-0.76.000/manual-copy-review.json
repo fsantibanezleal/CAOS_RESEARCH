@@ -1,0 +1,52 @@
+{
+  "schema": "riemann-clarified-copy-visual-review-v1",
+  "passed": true,
+  "candidate_commit": "701aece70f3a61c45167cf7e2b1fce6837cb9db3",
+  "build_manifest_sha256": "458652db3ee18ad20a7d0fd754b2ef478504cbd2d33a0d53285a8426e38557ce",
+  "automated_scenarios": 20,
+  "actual_byte_verified_images": 40,
+  "manually_inspected_images": [
+    {
+      "file": "screenshots/clarification-390x844-es-dark-approaches.png",
+      "sha256": "ccc7cce3c4f3c01fbef14a6c88798bb28b44a810fc837cbb1c67385f8e918e68",
+      "inspected": true
+    },
+    {
+      "file": "screenshots/clarification-390x844-es-dark-open.png",
+      "sha256": "2f553c0431c0f5ce6d69dc94b8328dfc4b5f75fb26401f689e0a3722b70b9d07",
+      "inspected": true
+    },
+    {
+      "file": "screenshots/clarification-1440x1000-en-light-open.png",
+      "sha256": "070dceaffe10f169476d98190084c946d093eb13805614a09812852b549bb2cd",
+      "inspected": true
+    },
+    {
+      "file": "screenshots/clarification-1280x800-es-light-approaches.png",
+      "sha256": "ff2d2efd599b5099f3b87081f9b26e8362975b4f3a9397c86e049109122f17fa",
+      "inspected": true
+    },
+    {
+      "file": "screenshots/clarification-1280x800-es-light-open.png",
+      "sha256": "e34eba8ba5ba69bdf383d5182b6c51032ee81f90a67b6f36f69ad4c81c116f52",
+      "inspected": true
+    },
+    {
+      "file": "screenshots/clarification-2560x1440-en-dark-approaches.png",
+      "sha256": "a8aad55c6ca473f1fcfe4b5092e2527759b7104aa92c2df3474fa06446f3b91c",
+      "inspected": true
+    },
+    {
+      "file": "screenshots/clarification-2560x1440-en-dark-open.png",
+      "sha256": "b64e96afa8c4a3bd369236dcd023327a9271aa84f3375bcd761be7d2fda3dc24",
+      "inspected": true
+    },
+    {
+      "file": "screenshots/clarification-1600x900-en-dark-open.png",
+      "sha256": "4192c1f76723b6da91fca3e35169084ae510034bdaaa792a4bcdcc66e77ea958",
+      "inspected": true
+    }
+  ],
+  "scope": "Eight representative screenshots actually inspected across all five viewport sizes and all four language/theme combinations. Both changed paragraphs fit without overlap; global distinct-zero scope and the completed EXP-028 theorem are distinguished. EXP-023 is explicitly stopped incomplete. This closes the two findings in manual-full-panel-disposition.json. The remaining full final regression and production gates are separate.",
+  "scientific_files_changed": false
+}

@@ -1,5 +1,52 @@
 # Riemann hypothesis state
 
+## Current experiment update, 2026-10-04: EXP-028
+
+EXP-028 is internally proved: the uniform shifted moment admits
+nu<min(1/2,(17/33)*(2theta-1)). Independent Mellin and exact-Hankel norm
+derivations agree; residue/coalescence, all signed coefficients, unbalanced
+blocks, gcd sums, general fixed Q and narrower compact-window conversion
+are reviewed. Exact/native and independent rational controls give positive
+simple-critical density greater than 0.0003985233159135 at theta=0.5339.
+The mathematical onset is now 0.5339 internally; external review, worldwide
+priority and effective height are unconfirmed. RH remains open.
+
+Published: short-interval-levinson **v0.02**, version DOI
+[10.5281/zenodo.23132248](https://doi.org/10.5281/zenodo.23132248), concept
+10.5281/zenodo.22984154. All 14 PDF pages and the 80-member extracted
+source package pass review; both live downloads match their SHA-256 hashes.
+Next: scoped PR promotion and an accurately serialized app release. The live
+0.75.000 app retains its established 25-record snapshot and 0.534 display
+until that release; mathematical validation is not a deployment claim.
+See exp028-manuscript-admission.md and the EXP-028 verdict/proof-review.
+
+EXP-027 supplies the complete classical transformed representation. EXP-026
+remains a supporting obstruction. EXP-023 stopped at its six-hour budget:
+95/96 shards, 21,772,288 sealed nodes, 19 pending boxes, all stopped data
+archived and verified. Its candidate remains unproved; issue #362 is open.
+No automatic restart or alteration of frozen source is admitted.
+
+This current block supersedes historical running/pending and 0.534 research
+state below; historical evidence and published v0.01 bytes are preserved.
+
+## Current experiment and delivery update, 2026-10-04
+
+EXP-026 is closed as a research record: exact retained multiplicity algebra,
+plus an actual point-Gram isolation obstruction even below the local pressure
+budget. Native interval and independent standard-library rational audits pass.
+This does not improve a zero proportion or the 0.534 onset. RH-F4 remains
+primary; the next analytic target is the complete shifted Voronoi reduction
+and its signed average. No new manuscript follows from EXP-026.
+
+The 0.75.000 release is live: PRs #365/#367 and main promotion #366 merged;
+main `51b8e91bea8e2030ebb22d342ffb125d8f992400`, Pages run `37168373757`.
+All 76 published files match the CI artifact and local build byte-for-byte.
+Production rendered QA passes 8 scenarios, 48 tabs and 656 hash-checked PNGs.
+See `release-0.75.000/production-byte-verification.json` and
+`release-0.75.000/qa-production.json`. Historical pending-release notes below
+record their original time; they are superseded by this verified release.
+EXP-023 still needs the missing shard and every completion gate; no upgrade.
+
 ## Completed distinct-zero results, 2026-10-03
 
 EXP-020 completed all 96 shards and every final check: the stronger local

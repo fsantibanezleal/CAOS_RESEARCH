@@ -3,6 +3,26 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.76.000] - 2026-10-04
+
+### Added
+- EXP-028's internally reviewed shifted moment range
+  `nu < min(1/2,(17/33)(2theta-1))`, with full Mellin and exact Hankel
+  derivations and a charged compact-window smoothing margin. With the fixed
+  certified detector and attributed Wang pair theorem, the simple-critical
+  onset becomes 0.5339 with endpoint density above 0.0003985233159135.
+- Published immutable Levinson v0.02, DOI `10.5281/zenodo.23132248`, fourteen-page
+  rendered review and extracted 80-member source replay. Both public files match
+  reviewed bytes. Root v0.01 and historical conditional theorem flags are preserved.
+- Additive short-window evidence inside replay v9, committed source/publication
+  gates, actual-receipt corruption checks and bilingual content in all six tabs.
+- Supporting EXP-026 isolation obstruction, complete classical EXP-027 shifted
+  transformation, and explicit budget-stopped incomplete EXP-023 archive.
+
+The result is asymptotic and internally reviewed, with attributed external
+theorems and Wang's recent preprint. No RH proof, effective height, worldwide
+priority, external peer acceptance or end-to-end formal verification is claimed.
+
 ## [0.75.000] - 2026-10-03
 
 ### Added

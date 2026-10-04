@@ -1,0 +1,21 @@
+{
+  "schema": "exp028-conditional-onset-v1",
+  "passed_conditional_controls": true,
+  "analytic_moment_theorem_proved": false,
+  "hypothesis_sha256": "f6f83b1d03af9b840c1ab48a939e91bd8282d4a2c223c79c135d944a6431d6e1",
+  "runner_sha256": "3528ad97149fff5efd46470fdaf6c30fbc8aa2a6f50f5df3240fd9b01b87eb4e",
+  "detector_receipt_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+  "theta": "5339/10000",
+  "nu": "349/10000",
+  "existing_onset": "267/500",
+  "old_length_range_rejects_this_nu": true,
+  "proposed_moment_upper_nu": "1921/55000",
+  "E1": "-9/200000",
+  "E2": "-189/80000",
+  "certified_kappa_lower": "62587441630700832326901419310999470251/2500000000000000000000000000000000000000",
+  "pair_term": "[-0.050119463577053808897423376477345533692719188646790589810181075917830697555 +/- 2.91e-76]",
+  "conditional_simple_parity_lower": "[0.000398523315913527511630716381896759095028831820131738895340568992677515111 +/- 4.65e-76]",
+  "arithmetic_trust": "Existing EXP-010 detector certificate is a premise; new scalar parity check uses Arb.",
+  "cpu_seconds": 0.0,
+  "scope": "Conditional compatibility only. No established new onset or moment range."
+}

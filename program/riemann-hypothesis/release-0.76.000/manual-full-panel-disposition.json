@@ -1,0 +1,151 @@
+{
+  "complete": true,
+  "scope": "Twenty-eight representative screenshots actually inspected across all five viewport sizes and EN/ES, light/dark. Automated full-panel checks separately pass; two stale bilingual paragraphs require a final text clarification and rendered regression before delivery.",
+  "images": [
+    {
+      "file": "390x844-es-dark/002-summary-top.png",
+      "sha256": "7396bef33ae8ff9ea5207602d49449937224b50b273170d949d5e137a107876f",
+      "inspected": true
+    },
+    {
+      "file": "390x844-es-light/002-summary-top.png",
+      "sha256": "d7b4ff8c4ce1930535081d2f4c7d71776377bf0bdc17715082af85ac030bb7eb",
+      "inspected": true
+    },
+    {
+      "file": "390x844-es-dark/034-context-top.png",
+      "sha256": "f7ed95c2c0e83ba810513a5b262fff515e76636554a7e8ef82770a66e61771f8",
+      "inspected": true
+    },
+    {
+      "file": "390x844-es-dark/059-strategy-top.png",
+      "sha256": "267ed2d7ae1318ddd7e1498aa32542c279a05fc80522595148f99cb0f8dfabc9",
+      "inspected": true
+    },
+    {
+      "file": "390x844-es-dark/099-results-top.png",
+      "sha256": "a77957662d6f449b68f71fe7d88624ca44ae8b3d37227000e5b7b470df9e1596",
+      "inspected": true
+    },
+    {
+      "file": "390x844-es-dark/465-open-top.png",
+      "sha256": "81b2b820361df36cf22d1e081e6f7c506a304db12cf74b1d9f91da34f4e1ac9e",
+      "inspected": true
+    },
+    {
+      "file": "390x844-es-dark/456-EXP-028-verdict.png",
+      "sha256": "d86a43bf2159a6015e91cdba44eaffabe123745b2d53670d0cb663d6b4a27938",
+      "inspected": true
+    },
+    {
+      "file": "390x844-es-dark/460-EXP-028-complete-record-scroll-03.png",
+      "sha256": "af66d935eab84d8e39670ab036d87c833afc9444949a1ca8fced546b57918811",
+      "inspected": true
+    },
+    {
+      "file": "390x844-es-dark/475-architecture-2.png",
+      "sha256": "aec7e82c2fb183b73685cd65c1e2c2a0669cb7e6f733258a2bfc1e1b6e6f2301",
+      "inspected": true
+    },
+    {
+      "file": "1280x800-en-light/002-summary-top.png",
+      "sha256": "473e70bf539de92bb3b257775bf922795da6450e94843b1223a7ea9e67ccfd47",
+      "inspected": true
+    },
+    {
+      "file": "1280x800-es-light/002-summary-top.png",
+      "sha256": "5b1d782f51db2eb52daa5d5fab429578990b97d34860808f1737f693473e35e0",
+      "inspected": true
+    },
+    {
+      "file": "1280x800-es-light/021-context-top.png",
+      "sha256": "6f646478ebb11e61384f8b0ef2c7e91430b4605e6cca97bb55598fa7939657d0",
+      "inspected": true
+    },
+    {
+      "file": "1280x800-es-light/026-approaches-top.png",
+      "sha256": "ba65526bcd99ccbf8deec0604c60c58caee797714a587d984b09c3e92461a709",
+      "inspected": true
+    },
+    {
+      "file": "1280x800-es-light/032-strategy-top.png",
+      "sha256": "c062bcbaa90332b8e5cef9906f6e2cb48063e931cb5a90429d24c606dbd44ff2",
+      "inspected": true
+    },
+    {
+      "file": "1280x800-es-light/060-results-top.png",
+      "sha256": "7a3d26e8d4bf1e4503f5b6ec2588f7d82e6f91f08b217191688fe1c21a228949",
+      "inspected": true
+    },
+    {
+      "file": "1280x800-es-light/325-open-top.png",
+      "sha256": "f1edac09ad575208eae4ea803edbe09bb2aef232b1f4ee0e7fd9211cce99d088",
+      "inspected": true
+    },
+    {
+      "file": "1280x800-es-light/331-architecture-2.png",
+      "sha256": "2fced90d57540bb16f22358892728767b33bdabd70fd10b7552fcba094da74a7",
+      "inspected": true
+    },
+    {
+      "file": "2560x1440-en-dark/002-summary-top.png",
+      "sha256": "eaae7e31a7ca2b095d44f1a63e75210b9051e3af0cd3b043c5873b0437b0c57a",
+      "inspected": true
+    },
+    {
+      "file": "2560x1440-en-dark/014-approaches-top.png",
+      "sha256": "f0c97751d103084e2d4175c864698911c064c5d637cc7399a72886a9538d22f9",
+      "inspected": true
+    },
+    {
+      "file": "2560x1440-en-dark/205-architecture-2.png",
+      "sha256": "a202bd205e880b4124cbcfd634c51c26dbb75646714239158c47b40709caec82",
+      "inspected": true
+    },
+    {
+      "file": "1600x900-en-light/002-summary-top.png",
+      "sha256": "a5b14940cc0018516de77f9868ad71357d129dc44b7597ca74d9836e59c2889a",
+      "inspected": true
+    },
+    {
+      "file": "1440x1000-en-light/002-summary-top.png",
+      "sha256": "1fe4d42591dac28041cbf7968d8c4447fb304a3b16c7eeb2103e150bd6a172a1",
+      "inspected": true
+    },
+    {
+      "file": "1440x1000-en-light/016-context-top.png",
+      "sha256": "dad97278499d9a25fb622da9912c8fa3569dbcc804dec407708debd1da916b81",
+      "inspected": true
+    },
+    {
+      "file": "1440x1000-en-light/020-approaches-top.png",
+      "sha256": "90108f6b4ae8c985bfd387ad4e3da0e4b9de81a4dd0d3a80be6c31d9e7833ccc",
+      "inspected": true
+    },
+    {
+      "file": "1440x1000-en-light/024-strategy-top.png",
+      "sha256": "37ee0bb91684ca4a3db4f6759ee389a6163f33e83f714d2db8bab1fcfd2e5d15",
+      "inspected": true
+    },
+    {
+      "file": "1440x1000-en-light/047-results-top.png",
+      "sha256": "200779fd2db4e9fdb2bac5ec59a18a09af8ec7b49670ebd5f35d0e24ae0f5285",
+      "inspected": true
+    },
+    {
+      "file": "1440x1000-en-light/267-open-top.png",
+      "sha256": "b3494c333d3dc2b410b5cf2042f8f0e92498645fd010bdbbab6c8770d82b4147",
+      "inspected": true
+    },
+    {
+      "file": "1440x1000-en-light/271-architecture-2.png",
+      "sha256": "5f66b2d1eb1feee41c75eb37573d7004d4d26947eeebc237c555db57af1df904",
+      "inspected": true
+    }
+  ],
+  "disposition": "Two retained distinct-zero paragraphs did not clearly distinguish the original unclosed signed-moment route from the completed EXP-028 alternative theorem. They also described stopped EXP-023 as the next candidate. The prepared clarification is applied after the frozen full-panel run; final rendered validation remains a separate gate.",
+  "schema": "riemann-full-panel-visual-disposition-v1",
+  "passed": false,
+  "candidate_commit": "a33202aff82b382885470588afee45c6729357bd",
+  "theorem_or_publication_bytes_changed": false
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "riemann-prior-ui-qa-disposition-v1",
+  "release": "0.76.000",
+  "scope": "Preserved unsuccessful attempts, all excluded from completion. Only a complete later receipt can attest the release matrix.",
+  "attempts": [
+    {
+      "run": "full-panel-review",
+      "passed": false,
+      "excluded_from_completion": true,
+      "receipt_sha256": "f367eb68f5804fc7f3375b1215c7c1d1f8ff2020fa3949c9a87c1258efc0fef9",
+      "completed_scenarios": 0,
+      "finished_utc": "2026-10-04T06:47:34.177Z",
+      "disposition": "The default installed Playwright package requested a missing browser revision. No scenarios completed."
+    },
+    {
+      "run": "full-panel-existing-browser",
+      "passed": false,
+      "excluded_from_completion": true,
+      "receipt_sha256": "bca0daca343e0c1e9ecb96d32668329f98cd6407e242de0aaee283204574e92d",
+      "completed_scenarios": 1,
+      "finished_utc": "2026-10-04T06:50:15.627Z",
+      "disposition": "The publication-link locator counted both an inline citation and the dedicated source link; the locator was narrowed. The interrupted run is excluded."
+    },
+    {
+      "run": "full-panel-corrected-source-link",
+      "passed": false,
+      "excluded_from_completion": true,
+      "receipt_sha256": "5566bdc037beec80c617beea57974d2b5eea3465f280f80fe0717090aad22340",
+      "completed_scenarios": 3,
+      "finished_utc": "2026-10-04T06:57:22.384Z",
+      "disposition": "The old EXP-023 control expected no verdict, although its budget-stopped inconclusive verdict is now persisted. The control was corrected; this interrupted run is excluded."
+    },
+    {
+      "run": "full-panel-final-controls",
+      "passed": false,
+      "excluded_from_completion": true,
+      "receipt_sha256": "17edc389e07cb3d3eb6d1bd9221bada0a7114173c243d0804742926d70502005",
+      "completed_scenarios": 4,
+      "finished_utc": "2026-10-04T07:07:53.495Z",
+      "disposition": "Four desktop scenarios passed before Chromium closed during the first mobile record. The browser exit cause was not conclusively established. Each scenario now gets a fresh browser, without hidden retries."
+    }
+  ]
+}

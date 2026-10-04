@@ -1,0 +1,209 @@
+{
+  "schema": "riemann-release-manual-final-review-v1",
+  "passed": true,
+  "candidate_commit": "701aece70f3a61c45167cf7e2b1fce6837cb9db3",
+  "build_manifest_sha256": "458652db3ee18ad20a7d0fd754b2ef478504cbd2d33a0d53285a8426e38557ce",
+  "selected_images": 28,
+  "new_images_actually_inspected": 12,
+  "unchanged_inspected_image_bytes": 16,
+  "scope": "Selected final page and architecture images; all 1760 PNG bytes verified separately. No claim that every PNG received human inspection.",
+  "findings": "No material layout or claim-label issues in selected final views. Both earlier stale paragraphs resolved; targeted all-viewports copy replay is separately recorded.",
+  "images": [
+    {
+      "file": "screenshots/1280x800-es-light-002-summary-top.png",
+      "sha256": "5b1d782f51db2eb52daa5d5fab429578990b97d34860808f1737f693473e35e0",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1280x800-es-light/002-summary-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1280x800-es-light-008-context-top.png",
+      "sha256": "6f646478ebb11e61384f8b0ef2c7e91430b4605e6cca97bb55598fa7939657d0",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1280x800-es-light/021-context-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1280x800-es-light-010-approaches-top.png",
+      "sha256": "ba65526bcd99ccbf8deec0604c60c58caee797714a587d984b09c3e92461a709",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1280x800-es-light/026-approaches-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1280x800-es-light-012-strategy-top.png",
+      "sha256": "c062bcbaa90332b8e5cef9906f6e2cb48063e931cb5a90429d24c606dbd44ff2",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1280x800-es-light/032-strategy-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1280x800-es-light-022-results-top.png",
+      "sha256": "7a3d26e8d4bf1e4503f5b6ec2588f7d82e6f91f08b217191688fe1c21a228949",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1280x800-es-light/060-results-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1280x800-es-light-082-open-top.png",
+      "sha256": "e34eba8ba5ba69bdf383d5182b6c51032ee81f90a67b6f36f69ad4c81c116f52",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1280x800-es-light-085-architecture-2.png",
+      "sha256": "df280697378cddbc6b3c7a0cceff617d8aac90cd751c8820516837f706e857c2",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1440x1000-en-light-002-summary-top.png",
+      "sha256": "1fe4d42591dac28041cbf7968d8c4447fb304a3b16c7eeb2103e150bd6a172a1",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1440x1000-en-light/002-summary-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1440x1000-en-light-008-context-top.png",
+      "sha256": "dad97278499d9a25fb622da9912c8fa3569dbcc804dec407708debd1da916b81",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1440x1000-en-light/016-context-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1440x1000-en-light-010-approaches-top.png",
+      "sha256": "e3036ce67894b2a065e12cc5cd476a53610e01f334ccd4b330edb1a6d447c3e8",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1440x1000-en-light-012-strategy-top.png",
+      "sha256": "37ee0bb91684ca4a3db4f6759ee389a6163f33e83f714d2db8bab1fcfd2e5d15",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1440x1000-en-light/024-strategy-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1440x1000-en-light-022-results-top.png",
+      "sha256": "200779fd2db4e9fdb2bac5ec59a18a09af8ec7b49670ebd5f35d0e24ae0f5285",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "1440x1000-en-light/047-results-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1440x1000-en-light-082-open-top.png",
+      "sha256": "070dceaffe10f169476d98190084c946d093eb13805614a09812852b549bb2cd",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/1440x1000-en-light-085-architecture-2.png",
+      "sha256": "b138cc954235311acae0ac7e96623f3bf0ed33b80ef755facd07f58dc5cc3191",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/2560x1440-en-dark-002-summary-top.png",
+      "sha256": "eaae7e31a7ca2b095d44f1a63e75210b9051e3af0cd3b043c5873b0437b0c57a",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "2560x1440-en-dark/002-summary-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/2560x1440-en-dark-008-context-top.png",
+      "sha256": "7a1a1dbcfa28bac247d799bdc34e0bfc1e9e19305a9fe7baca655ac69b5ea01e",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/2560x1440-en-dark-010-approaches-top.png",
+      "sha256": "54f798b8c38c4a9bcc1fcc23fb77d2ba9b2e7d3601a5df71225d1d4f945d4dc7",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/2560x1440-en-dark-012-strategy-top.png",
+      "sha256": "bdeaf6c9fd216913fd142a9be3a606adbfd94952f1d50291806c04257e1c6f0e",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/2560x1440-en-dark-022-results-top.png",
+      "sha256": "4602c54ef1295d80bb52044cfe52b385d9110cefcfcf42dbf7479132c5c89974",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/2560x1440-en-dark-082-open-top.png",
+      "sha256": "b64e96afa8c4a3bd369236dcd023327a9271aa84f3375bcd761be7d2fda3dc24",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/2560x1440-en-dark-085-architecture-2.png",
+      "sha256": "33e46e582dbbb608191abc705e7581c7d476933be39a31486e376f20caf925fb",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/390x844-es-dark-002-summary-top.png",
+      "sha256": "7396bef33ae8ff9ea5207602d49449937224b50b273170d949d5e137a107876f",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "390x844-es-dark/002-summary-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/390x844-es-dark-008-context-top.png",
+      "sha256": "f7ed95c2c0e83ba810513a5b262fff515e76636554a7e8ef82770a66e61771f8",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "390x844-es-dark/034-context-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/390x844-es-dark-010-approaches-top.png",
+      "sha256": "462b6e42c7748fde8f5dbe226b7119f7ea47cb597892f571ade7c4ef1db8bc41",
+      "review": "actual-final-image-inspection",
+      "baseline_file": null,
+      "accepted": true
+    },
+    {
+      "file": "screenshots/390x844-es-dark-012-strategy-top.png",
+      "sha256": "267ed2d7ae1318ddd7e1498aa32542c279a05fc80522595148f99cb0f8dfabc9",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "390x844-es-dark/059-strategy-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/390x844-es-dark-022-results-top.png",
+      "sha256": "a77957662d6f449b68f71fe7d88624ca44ae8b3d37227000e5b7b470df9e1596",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "390x844-es-dark/099-results-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/390x844-es-dark-082-open-top.png",
+      "sha256": "81b2b820361df36cf22d1e081e6f7c506a304db12cf74b1d9f91da34f4e1ac9e",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "390x844-es-dark/465-open-top.png",
+      "accepted": true
+    },
+    {
+      "file": "screenshots/390x844-es-dark-085-architecture-2.png",
+      "sha256": "aec7e82c2fb183b73685cd65c1e2c2a0669cb7e6f733258a2bfc1e1b6e6f2301",
+      "review": "exact-byte-equivalence-to-inspected-baseline",
+      "baseline_file": "390x844-es-dark/475-architecture-2.png",
+      "accepted": true
+    }
+  ]
+}

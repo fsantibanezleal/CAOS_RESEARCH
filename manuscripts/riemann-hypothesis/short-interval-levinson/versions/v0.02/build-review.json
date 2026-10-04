@@ -1,0 +1,12 @@
+{
+  "schema": "levinson-v002-build-v1",
+  "passed": true,
+  "pdf_bytes": 443857,
+  "pdf_sha256": "710e174a8c08c2a20cb0a94b6bbdaaf2bb8feb3f24b56ebc9f753bb4b019a66c",
+  "version_doi": "10.5281/zenodo.23132248",
+  "native_compiler": "unavailable: standard platform directories missing",
+  "export_compiler": "existing MiKTeX pdflatex, three passes; no unresolved references",
+  "rendered_pages_reviewed": true,
+  "published": false,
+  "render_review_sha256": "57ab2238acf68f6bb4f5335b1bcfbee85249ba4042656f48b49a7397b2d1073f"
+}

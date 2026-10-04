@@ -1,6 +1,6 @@
 # Riemann release 0.75.000: completed distinct-zero evidence
 
-The proposed release exposes two completed asymptotic lower bounds for distinct
+The release exposes two completed asymptotic lower bounds for distinct
 points throughout the critical strip, divided by all zeros with multiplicity:
 
 - EXP-020: `3997934614153/4775507750000`, approximately 0.8371747724947154.
@@ -36,6 +36,11 @@ refresh adds two diagnostic artifacts; its separate 20-scenario regression
 passes all 120 tab visits and 1,640 byte-verified screenshots, zero failures.
 `scope-check.json` confirms all 264 unrelated experiment records are unchanged.
 
-Research PR #363 is merged to develop. Workbench PR #365 remains draft;
-main promotion, release tag, Pages and live byte/browser gates are pending.
-This file does not claim the prepared release is already deployed.
+Research #363, workbench #365 and direct-entry #367 are merged; main promotion
+#366 completed at `51b8e91bea8e2030ebb22d342ffb125d8f992400`. Tag
+`v0.75.000`, main CI 37168373815 and Pages run 37168373757 are verified.
+All 76 files from the actual Pages artifact match their served HTTPS bytes.
+Root and both direct-route forms finish with HTTP 200 and identical HTML;
+real direct Chromium navigation renders the six tabs without errors.
+The complete live matrix is running; private final reconciliation remains
+pending. See `promotion.json` and the production byte/direct-entry receipts.
