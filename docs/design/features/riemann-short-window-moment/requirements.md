@@ -10,3 +10,16 @@
 6. Reject actual missing/changed sources, failed review/controls, incomplete publication or incorrect arithmetic before exporting; browser admission fails closed on absent or inconsistent evidence.
 7. Keep unrelated experiment records and derived scientific payloads unchanged. Bake committed source bytes only, after the implementation is committed.
 8. Release as 0.76.000 through scoped develop PR then separate main PR. Verify export/build/tests, complete rendered matrix, actual Pages artifact/live bytes and production navigation before marking delivery complete.
+
+## Publication placement repair, 4 October 2026
+
+The user stopped research and authorized correction of manuscript packaging.
+Maintenance 0.76.001 preserves every existing scientific value and source
+binding. Manuscript admission requires exactly one unchanged PDF. Supporting
+archives require a separate published dataset, preserved archive hashes and
+reciprocal supplement relations. Corruption tests reject mixing, changed bytes,
+wrong links and stale download locations. Each of the six tabs links the
+manuscript PDF and evidence record separately in EN/ES and both themes.
+The scope receipt verifies all existing science and unrelated payloads are
+unchanged; rendered and production gates verify corrected delivery. Paused
+research PR #376 and the unfinished research app branch are excluded.

@@ -9,8 +9,8 @@ the publication mistake. This action list owns only that repair.
 | Preserve original manuscripts and identify misplaced attachments | Original PDF checksums and byte downloads; three records, four ZIPs | Passed |
 | Publish each exact artifact set separately and correct the existing manuscript file set | Nine current publication, companion and correction receipts; reciprocal relations; original DOIs retained | Passed |
 | Correct repository admission and app links | Reject mixed records, wrong links, changed PDFs/archives, missing evidence and stale URLs; retain the existing app's scientific claims | In validation |
-| Correct private publication ledger and backups | Current PDF-only entries, separate artifact entries and nine exact correction backups; unrelated entries unchanged | Validated locally |
-| Persist and promote only the repair | Scoped commits, pushed repair branch, reviewed repair PR independent of paused research, CI and rendered verification | Pending |
+| Correct private publication ledger and backups | Current PDF-only entries, separate artifact entries and nine exact correction backups; unrelated entries unchanged; publisher file-set gates pass | Pushed to private develop at 2647d02e |
+| Persist and promote only the repair | Scoped commits, pushed repair branch from delivered baseline, issue #377 and draft repair PR #378 independent of paused research | Rendered and promotion gates pending |
 
 Do not resume experiments, change manuscript scientific content, promote the
 paused app result, overwrite historical receipts, or alter unrelated records.

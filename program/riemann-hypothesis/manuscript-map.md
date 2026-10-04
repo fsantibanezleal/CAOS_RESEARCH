@@ -187,11 +187,12 @@ external universal local theorem explicitly attributed and not locally
 Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
 mixed-Gram argument remain dependencies.
 
-The focused companion `distinct-zero-gram` v0.01 is published and all three
-files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+The focused manuscript `distinct-zero-gram` v0.01 is published with its
+unchanged PDF: [version DOI](https://doi.org/10.5281/zenodo.23128663),
 [concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
 SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
-The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public in
+the [separate evidence record](https://doi.org/10.5281/zenodo.23135359).
 Issues #356/#358 close the local input obligation; #364 tracks publication
 and release. PR #363 merged to develop at `0fd13678315b4b7ac20af8b6b66b44982e7acefa`.
 Workbench PR #365 remains draft pending its full rendered matrix and
