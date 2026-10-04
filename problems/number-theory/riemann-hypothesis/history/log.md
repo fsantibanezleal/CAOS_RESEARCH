@@ -731,7 +731,7 @@ no new range/onset or manuscript is admitted. EXP-023 stays stopped.
 RH-038 is resolved by the EXP-027/028 alternative transformed route,
 not by proving the previously missing hybrid asymptotic large sieve.
 
-## 2026-10-04 — User-stopped research and publication separation repair
+## 2026-10-04: User-stopped research and publication separation repair
 
 Research is paused. Three manuscript deposits incorrectly contained four ZIPs.
 The full account inventory and after-audit identify all affected records;
