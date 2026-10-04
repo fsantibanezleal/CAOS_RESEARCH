@@ -16,3 +16,13 @@ authorization covers research, publication and release. RH remains open.
 
 No browser optimizer, certificate traversal, live zeta computation or learned model
 is introduced. Publication and machine checks are not mathematical peer acceptance.
+
+## Direct-entry correction, declared before code on 2026-10-04
+
+Production GET of `/problems/riemann-hypothesis` returns 404 and the existing
+shim redirects to the root. The release must make this research URL a real
+static entry while preserving the same compiled app and scientific data.
+
+| ID | EARS requirement | Verification gate |
+|---|---|---|
+| R8 | WHEN a reader opens the Riemann URL directly, THE deployed site SHALL return its static app entry with final HTTP 200 and render the existing workbench. | Built route/root HTML byte identity; direct local/Pages HTTP and browser checks |
