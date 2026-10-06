@@ -22,6 +22,7 @@ while [ -z "$winner" ] && [ ${#PID[@]} -gt 0 ] && [ "$(date +%s)" -lt "$deadline
       wait "${PID[$cfg]}"; c=$?
       unset "PID[$cfg]"
       if [ "$c" -eq 20 ]; then winner=$cfg; code=$c; break; fi
+      if [ "$c" -eq 10 ]; then winner=$cfg; code=$c; break; fi
       echo "config $cfg ended with exit code $c" >&2
     fi
   done
@@ -31,6 +32,11 @@ solve_s=$(( $(date +%s) - t0 ))
 cnf_sha=$(sha256sum "$CNF" | cut -d' ' -f1)
 if [ -z "$winner" ]; then
   printf '{"status": "TIMEOUT", "portfolio": "default,unsat,seed7", "solve_seconds": %d, "cnf_sha256": "%s"}\n' "$solve_s" "$cnf_sha" > "$OUT"
+  exit 0
+fi
+if [ "$code" -eq 10 ]; then
+  printf '{"status": "SAT", "winner": "%s", "portfolio": "default,unsat,seed7", "solve_seconds": %d, "cnf_sha256": "%s", "model_file": "%s"}
+' "$winner" "$solve_s" "$cnf_sha" "$PRE.$winner.out" > "$OUT"
   exit 0
 fi
 P="$PRE.$winner.drat"

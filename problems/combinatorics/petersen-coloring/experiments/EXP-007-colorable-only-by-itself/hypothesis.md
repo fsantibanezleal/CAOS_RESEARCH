@@ -248,3 +248,18 @@ in parallel (default, `--unsat`, `--seed=7`), each writing its own DRAT proof, w
 limit; the first configuration that reports UNSAT is kept, the others are stopped, and its
 proof is checked by drat-trim (limit 36 hours). `portfolio_certify.sh` does this and writes
 `artifacts/result-G52b-k40.json`. Formulas, certificates and verdict rules are unchanged.
+
+## Addendum 7 (2026-10-06), before the runs named here: first bounded action of focus PCC-F5
+
+Strategic review of 2026-10-06 (`program/petersen-coloring/research-governance.json`): the
+52-vertex part is closed; the 68-vertex counterexample `G68` is gated to its most informative
+orders. Target order 52 comes first: a satisfiable answer would mean that `G68` is colored by a
+52-vertex bridgeless cubic graph, which would then be a counterexample on 52 vertices (possibly
+one of `G52`, `G52b`, possibly new). Committed expectation: UNSAT (low confidence, one half: `G68`
+was found by a different process than the 52-vertex graphs, and no structural reason ties them).
+
+The reduced formula (base plus attach clauses, Lemmas A and B) for `G68`, `k = 52` is written by
+`write_formula.py` and solved by `portfolio_certify.sh` (three CaDiCaL configurations, 24-hour solve
+limit, 36-hour check limit). A SAT answer from the portfolio is decoded and checked by the
+independent checker (`check_hcoloring`) and the target is refuted for Petersen colorability with a
+checked proof before anything is claimed. Result `artifacts/result-G68-k52-portfolio.json`.
