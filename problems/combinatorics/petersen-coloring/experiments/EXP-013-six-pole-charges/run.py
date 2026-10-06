@@ -142,8 +142,17 @@ def main() -> None:
     plist, naut = poles_for(g, args.shape)
     jobs = [(args.source, args.shape, name, si, c1, c2, orb) for name, pl, splits in plist for si, (c1, c2) in enumerate(splits) for orb in charges.ORBITS]
     log(f"{args.source} shape {args.shape}: |Aut| = {naut}, {len(plist)} 6-poles, {len(jobs)} formulas; cyclic cut below 5: {cut5}")
-    with Pool(args.workers) as pool:
-        rows = pool.map(job, jobs, chunksize=1)
+    # Every answer is appended as it arrives, so a killed run resumes where it stopped.
+    partial = HEAVY / f"conduct-{args.source}-{args.shape}.partial.jsonl"
+    rows = [json.loads(x) for x in partial.read_text(encoding="utf-8").splitlines() if x.strip()] if partial.exists() else []
+    done = {(r["pole"], r["split"], r["orbit"]) for r in rows}
+    todo = [j for j in jobs if (j[2], j[3], j[6]) not in done]
+    log(f"resuming with {len(rows)} stored answers, {len(todo)} formulas to run")
+    with Pool(args.workers) as pool, partial.open("a", encoding="utf-8", newline="\n") as fh:
+        for r in pool.imap_unordered(job, todo, chunksize=1):
+            rows.append(r)
+            fh.write(json.dumps(r) + "\n")
+            fh.flush()
     table: dict = {}
     for r in rows:
         key = f"{r['pole']}|s{r['split']}"
