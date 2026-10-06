@@ -37,9 +37,9 @@ export default function PetersenColoring() {
 
   // Transcribed from the EXP-007 verdict (decided target orders and the two forms of the statement).
   const h3En =
-    'For the first 52-vertex graph every even target order from 30 to 50, and the orders 2 and 4, are refuted with proofs checked by drat-trim, and no order needed a connectivity or bridge cut. A graph that colors a counterexample is itself a counterexample, and Goedgebeur and coauthors showed that no counterexample has fewer than 40 vertices, so target orders below 40 cannot occur: the first 52-vertex counterexample is colorable only by itself. The list of refuted orders stands on our certificates alone; only the orders below 40 that were not decided rely on that lower bound. For the second 52-vertex graph the orders 44 to 50 are refuted, and for the 68-vertex graph the orders 64 and 66; their remaining orders from 40 up are being certified (for the same order the second graph is 10 to 25 times harder than the first).';
+    'For both 52-vertex counterexamples every even target order from 40 to 50 is refuted with proofs checked by drat-trim, and for the first one also the orders 2, 4 and 24 to 38; no order needed a connectivity or bridge cut. A graph that colors a counterexample is itself a counterexample, and Goedgebeur and coauthors showed that no counterexample has fewer than 40 vertices, so target orders below 40 cannot occur: both 52-vertex counterexamples are colorable only by themselves, which answers the question of their Section 5.4. The list of refuted orders stands on our certificates alone; only the undecided orders below 40 rely on that lower bound. For the 68-vertex counterexample the orders 62, 64 and 66 are refuted and the orders 40 to 60 are open; order 52, at which a 52-vertex counterexample could color it, is being solved.';
   const h3Es =
-    'Para el primer grafo de 52 vertices todo orden par del blanco de 30 a 50, y los ordenes 2 y 4, estan refutados con pruebas verificadas por drat-trim, y ningun orden necesito un corte de conexidad o de puente. Un grafo que colorea a un contraejemplo es el mismo un contraejemplo, y Goedgebeur y coautores mostraron que ningun contraejemplo tiene menos de 40 vertices, asi que los ordenes bajo 40 no pueden ocurrir: el primer contraejemplo de 52 vertices es coloreable solo por si mismo. La lista de ordenes refutados se sostiene solo en nuestros certificados; unicamente los ordenes bajo 40 no decididos dependen de esa cota inferior. Para el segundo grafo de 52 vertices estan refutados los ordenes 44 a 50, y para el grafo de 68 vertices los ordenes 64 y 66; sus ordenes restantes desde 40 se estan certificando (para el mismo orden el segundo grafo es de 10 a 25 veces mas dificil que el primero).';
+    'Para ambos contraejemplos de 52 vertices todo orden par del blanco de 40 a 50 esta refutado con pruebas verificadas por drat-trim, y para el primero tambien los ordenes 2, 4 y 24 a 38; ningun orden necesito un corte de conexidad o de puente. Un grafo que colorea a un contraejemplo es el mismo un contraejemplo, y Goedgebeur y coautores mostraron que ningun contraejemplo tiene menos de 40 vertices, asi que los ordenes bajo 40 no pueden ocurrir: ambos contraejemplos de 52 vertices son coloreables solo por si mismos, lo que responde la pregunta de su Seccion 5.4. La lista de ordenes refutados se sostiene solo en nuestros certificados; unicamente los ordenes bajo 40 no decididos dependen de esa cota inferior. Para el contraejemplo de 68 vertices estan refutados los ordenes 62, 64 y 66 y quedan abiertos los ordenes 40 a 60; el orden 52, en el que un contraejemplo de 52 vertices podria colorearlo, se esta resolviendo.';
 
   const tabs: TabDef[] = [
     {
@@ -298,7 +298,7 @@ export default function PetersenColoring() {
           </Callout>
           <h3>{t('Result (EXP-007)', 'Resultado (EXP-007)')}</h3>
           <p>{t(h3En, h3Es)}</p>
-          <Refs label={t('Key sources', 'Fuentes clave')} ids={['mmsw2025', 'gjmmmu2026', 'kaiser2007', 'hog2023']} />
+          <Refs label={t('Key sources', 'Fuentes clave')} ids={['mmsw2025', 'gjmmmu2026', 'kaiser2007', 'hog2023', 'pccselfonly']} />
         </section>
       ),
     },
@@ -364,11 +364,42 @@ export default function PetersenColoring() {
           </p>
           <Callout variant="note" title={t('What the search found on the known graphs (EXP-010)', 'Lo que la busqueda hallo en los grafos conocidos (EXP-010)')}>
             {t(
-              'Every 4-pole obtained from the two 52-vertex graphs and from the 68-vertex graph by deleting two independent edges is Petersen colorable (482, 482 and 4,947 orbit representatives), with exactly the two boundary patterns the cut space allows: two crossed equal pairs, or the four edges around one edge of the Petersen graph. A 4-pole with a crossed pattern can be chained around a ring with an even number of copies, so those cyclic joins are Petersen colorable. Dot products of the 52-vertex graph with itself are new 102-vertex counterexamples, all with defect 2. The question stays open.',
-              'Todo 4-polo obtenido de los dos grafos de 52 vertices y del de 68 vertices al borrar dos aristas independientes es coloreable por Petersen (482, 482 y 4.947 representantes de orbita), con exactamente los dos patrones de borde que el espacio de cortes permite: dos pares iguales cruzados, o las cuatro aristas alrededor de una arista del grafo de Petersen. Un 4-polo con patron cruzado se puede encadenar alrededor de un anillo con un numero par de copias, asi que esas uniones ciclicas son coloreables por Petersen. Los productos punto del grafo de 52 vertices consigo mismo son contraejemplos nuevos de 102 vertices, todos con defecto 2. La pregunta sigue abierta.',
+              'Every 4-pole obtained from the two 52-vertex graphs and from the 68-vertex graph by deleting two independent edges is Petersen colorable (482, 482 and 4,947 orbit representatives), with exactly the two boundary patterns the cut space allows: two crossed equal pairs, or the four edges around one edge of the Petersen graph. A 4-pole with a crossed pattern can be chained around a ring with an even number of copies, so those cyclic joins are Petersen colorable. Dot products of the 52-vertex graph with itself are new 102-vertex counterexamples, all with defect 2. So no single 4-pole forces bad vertices; two different 4-poles do (next section).',
+              'Todo 4-polo obtenido de los dos grafos de 52 vertices y del de 68 vertices al borrar dos aristas independientes es coloreable por Petersen (482, 482 y 4.947 representantes de orbita), con exactamente los dos patrones de borde que el espacio de cortes permite: dos pares iguales cruzados, o las cuatro aristas alrededor de una arista del grafo de Petersen. Un 4-polo con patron cruzado se puede encadenar alrededor de un anillo con un numero par de copias, asi que esas uniones ciclicas son coloreables por Petersen. Los productos punto del grafo de 52 vertices consigo mismo son contraejemplos nuevos de 102 vertices, todos con defecto 2. Asi, ningun 4-polo solo fuerza vertices malos; dos 4-polos distintos si lo hacen (siguiente seccion).',
             )}
           </Callout>
-          <Refs label={t('Key sources', 'Fuentes clave')} ids={['mmm2021', 'gjmmmu2026', 'pccaudit']} />
+          <h3>{t('Resolution: statement (e) is false (EXP-012)', 'Resolucion: el enunciado (e) es falso (EXP-012)')}</h3>
+          <p>
+            {t(
+              'A 4-pole whose vertices are all good carries the same cut-space class through both of its connectors (the sum of the four dangling labels is a sum of stars), and the class of a pair of labels is their distance in the line graph of the Petersen graph. The 4-pole A, the 52-vertex graph with two independent edges removed, transmits only distance 1; the 4-pole B, the same graph with two adjacent vertices removed, transmits only distance 0. Distance 0 for A and distance 1 for B would restore a Petersen coloring of the 52-vertex graph, and the other distances are refuted with checked proofs. In a ring that alternates t copies of A and t copies of B, two consecutive blocks cannot both be free of bad vertices.',
+              'Un 4-polo cuyos vertices son todos buenos transporta la misma clase del espacio de cortes por sus dos conectores (la suma de las cuatro etiquetas colgantes es una suma de estrellas), y la clase de un par de etiquetas es su distancia en el grafo de lineas del grafo de Petersen. El 4-polo A, el grafo de 52 vertices sin dos aristas independientes, transmite solo distancia 1; el 4-polo B, el mismo grafo sin dos vertices adyacentes, transmite solo distancia 0. Distancia 0 para A y distancia 1 para B restaurarian una coloracion de Petersen del grafo de 52 vertices, y las otras distancias se refutan con pruebas verificadas. En un anillo que alterna t copias de A y t copias de B, dos bloques consecutivos no pueden estar ambos libres de vertices malos.',
+            )}
+          </p>
+          <Equation tex={String.raw`D(A)=\{1\},\quad D(B)=\{0\}\ \Longrightarrow\ \mathrm{ab}(R_t)\ \ge\ \mathrm{pd}(R_t)\ \ge\ t,\qquad |V(R_t)| = 102\,t`} />
+          <div className="rs-scroll">
+            <table className="rs-table">
+              <thead>
+                <tr>
+                  <th>{t('Alternating ring', 'Anillo alternado')}</th>
+                  <th>{t('Order', 'Orden')}</th>
+                  <th>{t('Cyclic edge connectivity', 'Conexidad ciclica por aristas')}</th>
+                  <th>pd</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>R1 (A, B)</td><td className="num">102</td><td className="num">4</td><td className="num">{t('at least 2 (no Petersen coloring, checked proof; parity theorem)', 'al menos 2 (sin coloracion de Petersen, prueba verificada; teorema de paridad)')}</td></tr>
+                <tr><td>R2 (A, B, A, B)</td><td className="num">204</td><td className="num">4</td><td className="num">2</td></tr>
+                <tr><td>R3</td><td className="num">306</td><td className="num">4</td><td className="num">{t('3 (at most 2 refuted with a checked proof; a map with exactly 3 found)', '3 (a lo mas 2 refutado con prueba verificada; se hallo un mapa con exactamente 3)')}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            {t(
+              'Every ring R_t with t at least 2 is cyclically 4-edge-connected (computed for R_1 and R_2 by two independent exhaustive searches; a ring lemma carries R_2 to every t). Hence no sublinear function bounds the number of abnormal edges on cyclically 4-edge-connected cubic graphs: all five statements are false and the conjectured equivalence holds. The fifteen cyclically 4-edge-connected counterexamples examined earlier, in which every adjacent pair is critical, were not representative of the class.',
+              'Todo anillo R_t con t al menos 2 es ciclicamente 4-arista-conexo (calculado para R_1 y R_2 por dos busquedas exhaustivas independientes; un lema de anillos lleva R_2 a todo t). Por lo tanto ninguna funcion sublineal acota el numero de aristas anormales en grafos cubicos ciclicamente 4-arista-conexos: los cinco enunciados son falsos y la equivalencia conjeturada se cumple. Los quince contraejemplos ciclicamente 4-arista-conexos examinados antes, en los que todo par adyacente es critico, no eran representativos de la clase.',
+            )}
+          </p>
+          <Refs label={t('Key sources', 'Fuentes clave')} ids={['mmm2021', 'gjmmmu2026', 'pccunbounded', 'pccaudit']} />
         </section>
       ),
     },
