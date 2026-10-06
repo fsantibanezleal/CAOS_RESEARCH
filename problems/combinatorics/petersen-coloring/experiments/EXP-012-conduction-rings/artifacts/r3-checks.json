@@ -1,0 +1,109 @@
+{
+ "digest": "137c855ecde9ac978f2f8d3ec8fd1f50e2ce979dc0a303e7f2a184cb996ae2fc",
+ "P4_pd_le3": {
+  "status": "TIMEOUT",
+  "seconds": 3600.018
+ },
+ "P5_pairs": {
+  "171-196": {
+   "blocks": [
+    3,
+    3
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 79.052,
+   "proof_sha256": "205279a69af50834baf03b85919cf69e5271b1705a15a4e73518506a4a39368c"
+  },
+  "226-246": {
+   "blocks": [
+    4,
+    4
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 77.393,
+   "proof_sha256": "0df6090e90adccadacb8938090cfb85c34ccfd99724db723d7ce890d9a84e447"
+  },
+  "52-76": {
+   "blocks": [
+    1,
+    1
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 134.833,
+   "proof_sha256": "80c13e594a5a9244d171989cf01368d8cf7abda0bd085c38d39f61243437c9a2"
+  },
+  "119-132": {
+   "blocks": [
+    2,
+    2
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 40.93,
+   "proof_sha256": "66284fcc8107db7900ce9fa5780de001cd8bfb790e36bc570a1c6a321f445404"
+  },
+  "285-300": {
+   "blocks": [
+    5,
+    5
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 203.211,
+   "proof_sha256": "a4ead994a8b399334efdc12cdcc4ddc2649adae2757aed1132f1c667a0347501"
+  },
+  "52-239": {
+   "blocks": [
+    1,
+    4
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 298.943,
+   "proof_sha256": "ee6c353f69f1e802a7180a84ff497a0dfc106b6498e0aec8b61876a877e49bcb"
+  },
+  "232-265": {
+   "blocks": [
+    4,
+    5
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 74.447,
+   "proof_sha256": "c4285ee18f8af506e7c3b1e2926c38b2caac012f14e3b3bd761aaf878386e79b"
+  },
+  "65-123": {
+   "blocks": [
+    1,
+    2
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 206.074,
+   "proof_sha256": "2901fc52a8031b5f9bd1329bed03774ffaa7fe939c3d04f9fd1f24bb5c606af2"
+  },
+  "12-208": {
+   "blocks": [
+    0,
+    4
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 372.266,
+   "proof_sha256": "6210ef05edc83e4636266644e2f5a7fd3fe34bb83bcfa4771368ae71a7e48cd0"
+  },
+  "127-247": {
+   "blocks": [
+    2,
+    4
+   ],
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 196.908,
+   "proof_sha256": "a6144584f2583262c4a69d16af44bba3b1829d201404770b7e92e814d309fa3e"
+  }
+ }
+}

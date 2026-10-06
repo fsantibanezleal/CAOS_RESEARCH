@@ -76,16 +76,18 @@ proof checked by drat-trim.
 
 ## Results
 
-See the EXP-007 verdict; the table below is transcribed from it.
+Transcribed from the EXP-007 verdict (CONFIRMED, 2026-09-19; addendum 7 of 2026-10-06 for `G68`).
+Published as *colorable-only-by-itself* v0.01, DOI
+[`10.5281/zenodo.22859075`](https://doi.org/10.5281/zenodo.22859075).
 
-State on 2026-09-18 (the verdict is written when the last certification ends; the table is then
-replaced by the verdict's):
-
-| graph | target orders refuted with verified proofs | remaining |
+| graph | target orders refuted with verified proofs | undecided |
 |---|---|---|
-| `G52` | 2, 4, and every even order from 30 to 50 | 26, 28: proofs complete, post-hoc check running; 6 to 24: reached or approaching the 6-hour limit |
-| `G52b` | 44, 46, 48, 50 | 42: in-process UNSAT after 14,448 s, external proof being written; 40: long run; below 40 stopped undecided |
-| `G68` | 64, 66 | 40 to 62 running |
+| `G52` (52 vertices) | 2, 4, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50 | 6 to 22 |
+| `G52b` (52 vertices) | 40, 42, 44, 46, 48, 50 | 2 to 38 |
+| `G68` (68 vertices) | 62, 64, 66 | 2 to 60 (order 52: a three-configuration portfolio ran 4 hours without an answer, addendum 7) |
+
+Every refutation is a DRAT proof accepted by drat-trim on the final formula; the largest is 2.4 GB
+(`G52b`, order 40, solved in 4,421 s and checked in 5,196 s).
 
 Two forms of the statement (fixed in addendum 5 of the hypothesis before the mid-range orders
 ended):
@@ -94,12 +96,14 @@ ended):
   graph with a vertex map of kind (O), (E0) or (E1). By the corollary above, the union of these
   statements over all even `k < n` is equivalent to "no connected bridgeless cubic graph of smaller
   order colors the graph".
-- **Conditional on Observation 9 of arXiv:2608.10028v3** (every bridgeless cubic graph on at most
-  38 vertices has a Petersen coloring). A graph that colors a counterexample is a counterexample,
-  and a counterexample with parallel edges yields a smaller one (suppress the digon; the two edges
-  of the 2-edge cut around it carry equal labels). So only target orders from 40 to 50 can occur,
-  and they are all refuted for `G52`: **`G52` is colorable only by itself, that is, it belongs to
-  $\mathcal{H}_3$.** The same conclusion for `G52b` needs its orders 40 and 42.
+- **Conditional on Observation 9 of arXiv:2608.10028v3, Observation 10 of v4** (every bridgeless
+  cubic graph on at most 38 vertices has a Petersen coloring). A graph that colors a counterexample
+  is a counterexample, and a counterexample with parallel edges yields a smaller one (suppress the
+  digon; the two edges of the 2-edge cut around it carry equal labels). So only target orders from
+  40 to 50 can occur, and they are all refuted for both graphs: **`G52` and `G52b` are colorable
+  only by themselves, that is, both belong to $\mathcal{H}_3$.** This answers the question of
+  Section 5.4 (v3 and v4) for both 52-vertex counterexamples. For `G68` the orders 40 to 60 are
+  open.
 
 No decided instance needed a connectivity or bridge cut. For the same target order `G52b` is 10 to
 25 times harder than `G52`.

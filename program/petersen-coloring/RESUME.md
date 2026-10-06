@@ -1,157 +1,118 @@
 # petersen-coloring: RESUME (zero-loss handoff)
 
-Updated 2026-09-18 evening (round 2: EXP-007 to EXP-010; round 1 closed 2026-09-03). First read for
-any fresh session, per methodology 07. Derived view: on conflict, experiment verdicts win.
+Updated 2026-10-06 (round 3: sync, methodology 13, publications, focus PCC-F6; EXP-013 and EXP-014 closed). First read for any
+fresh session, per methodology 07. Derived view: on conflict, experiment verdicts win; the
+strategic record is `research-governance.json` and `manuscript-map.md` in this folder.
 
 ## 1. State in one screen
 
 The problem. `P` is the Petersen graph. A Petersen coloring of a cubic graph `G` is a map
-$\sigma: E(G) \to E(P)$ such that for every vertex $v$ of $G$ there is a vertex $w$ of $P$ with
-$\sigma(\partial_G(v)) = \partial_P(w)$. Jaeger 1988 conjectured every bridgeless cubic graph has
-one; equivalent to a normal 5-edge-coloring (Jaeger 1985). It implied Berge-Fulkerson and the
-5-cycle double cover conjecture.
+$\sigma: E(G) \to E(P)$ sending every vertex star onto a vertex star. Jaeger's conjecture (1988)
+that every bridgeless cubic graph has one is FALSE since August 2026 (Putman; Goedgebeur, Jooken,
+Máčajová, Mattiolo, Mazzuoccolo, Ulyanov, arXiv:2608.10028, latest v4 of 2026-09-30; a 68-vertex
+graph posted on X). CAOS does not claim the disproof (governance record, `prohibited_reframing`).
 
-Status. FALSE since August 2026. Five retrievable counterexamples: `G112`, `H112` (Putman),
-`G52`, `G52b` (Goedgebeur et al.; House of Graphs 57244, 57278), `G68` (House of Graphs 57280).
-arXiv:2608.10028v3 (2026-09-11): smallest counterexample has order in $[40, 52]$; it reports for
-the five graphs Berge-Fulkerson covers, perfect matching index at most 4, 5-cycle double covers,
-strong normal 6-edge-colorings, colorings with two abnormal edges (overlap with round 1, obtained
-independently; round 1 is dated 2026-09-03), and asks whether the 52-vertex graphs are colorable
-only by themselves.
+Published CAOS manuscripts (all Zenodo, CC BY 4.0, not peer reviewed):
 
-CAOS results (every negative a drat-trim-verified DRAT proof, every positive a witness re-verified
-from the graph alone; `[D]` = proved here):
+| manuscript | version | DOI | result |
+|---|---|---|---|
+| consequence-audit | v0.06 (2026-10-06) | 10.5281/zenodo.23195171 | five graphs: covers, index 4, 5-CDC, flows, oddness, resistance, normal 6, parity theorem, defect 2 with all pairs critical, abnormal edges, statements (c), (d) false, Theorem 5.9 |
+| unbounded-defect | v0.02 (2026-10-06) | 10.5281/zenodo.23196817 | statement (e) of the Mattiolo-Mazzuoccolo-Mkrtchyan conjecture false (rings on 102t vertices, defect at least t, `pd(R_3) = 3`); Section 6: transfer semigroups of 6-poles, every ring of claws and Petersen superedges colorable |
+| colorable-only-by-itself | v0.01 (2026-10-06) | 10.5281/zenodo.22859075 | both 52-vertex counterexamples are colorable only by themselves (members of H_3), answering v4 Section 5.4 |
 
-- Round 1 (EXP-001 to EXP-006) on `G112`, `H112`, `G52`: independent certification; perfect
-  matching index 4; 5-CDC; 5-flow, no 4-flow; oddness 4, 4, 2; resistance 3, 3, 2; normal chromatic
-  index 6; parity theorem `[D]` (the number of bad vertices of an edge map into `P` is never 1);
-  Petersen defect exactly 2 with EVERY vertex pair critical; pure-`F` proposition `[D]`.
-- EXP-008 CONFIRMED: `G52b` and `G68` have exactly the invariants of `G52` (index 4, oddness 2,
-  resistance 2, normal chromatic index 6, defect 2, all 1,326 and 2,278 pairs critical). Universal
-  2-criticality now holds on all five graphs (17,362 pair witnesses).
-- `pd <= ab` `[D]` (Petersen defect at most the least number of abnormal edges of a proper
-  5-edge-coloring); with the parity theorem it reproves Proposition 3 of Mattiolo, Mazzuoccolo,
-  Mkrtchyan 2021 (`ab` is never 1). `pd = ab = 2` on all five graphs.
-- Rings and frames `[D]` (`context/2026-09-18-defect-unbounded.md`): `t` counterexamples opened at
-  an edge and joined cyclically, or a cubic frame with vertices replaced by counterexamples minus
-  a vertex, have a bad vertex in every block, so `ab >= pd >= t`. Same constructions as in
-  Mattiolo et al., stronger conclusion. Consequence: no sublinear bound on `ab` for 2-connected
-  or 3-connected cubic graphs; statements (a) to (d) of their Conjecture 3 are false; the
-  conjecture now equals the falsity of (e) (cyclically 4-edge-connected class). Threshold
-  proposition `[D]`: ONE cyclically 4-edge-connected cubic graph with `pd >= 3` refutes (e).
-- EXP-009 CONFIRMED: `pd(R_2) = 2`, `pd(R_3) = 3`, `pd(R_4) = 4`, `pd(K_4[G52]) = 4`, one bad
-  vertex per block; 20 same-block relaxations of `R_2` refuted; `2 <= ab(R_2) <= 4`, other `ab`
-  values undecided.
-- EXP-010 (see section 4 for its state): every 4-pole `G - e1 - e2` of `G52`, `G52b`, `G68` is
-  Petersen colorable (482, 482, 4,947 orbit representatives), boundary patterns only "crossed" or
-  "four edges around an edge"; ten dot products `G52 . G52` (102 vertices) are NEW counterexamples
-  with checked proofs, all with `pd = 2`; distance sets at a deleted edge always contain 1.
-- EXP-007 (H-colorings by an unknown target): Lemma A `[D]` (all fibers of the vertex map have
-  the same parity), Lemma B `[D]` (unused target vertices reduce to at most one, splitting
-  lemma); reduced encoding agrees with the unreduced one on 21 controls. Decided orders: section 4.
+Focus record (strategic review 2026-10-06): F0, F1, F3, F4 closed; F2 dormant; F5 gated (G68 and
+the unconditional H_3 form); **F6 active**: cut-space charges and cyclically 5-edge-connected cubic
+graphs (Problem 11 of v4), first bounded action EXP-013.
 
-Key formulas. Fiber parity: $f^{-1}(xy)$ is a perfect matching of
-$G[\varphi^{-1}(x) \cup \varphi^{-1}(y)]$, so $n_x \equiv n_y \pmod 2$. Transfer principle: a block
-with only good vertices pushes a cut of $P$ onto its boundary labels,
-$\sum_{v \in B} \chi_v = \sum_{e \in \partial B} \mathbf{1}_{\sigma(e)} \in \mathrm{Cut}(P)$.
+The charge formulation (`context/2026-10-06-charges.md`): `q(v)` = class of the three labels at `v`
+modulo the cut space; good iff `q(v) = 0`; the Gauss law says the charge in a region equals the flux
+through its boundary; the 64 classes are the cosets of the [15,9,3] cut code, in six Aut(P)-orbits
+`0, E (15), D3 (15), D2 (30), T1 (1), T2 (2)`; multipoles conduct classes; alternating rings of two
+multipoles with disjoint conducted sets carry charges in at least half of their blocks.
+
+Round-3 results (EXP-013, EXP-014): every 6-pole of `P`, `J5`, `J7` and the dodecahedron conducts the
+core `{0, E, D2}`, so charges never separate them. The exact transfer relation of a 6-pole is block
+diagonal over the 64 classes (six sector matrices of order at most 67), so every ring of a finite
+block family is decided by closing a finite semigroup (certificate re-checkable by products). Every
+ring of claws, of Petersen superedges `P - u - w`, or of both, is Petersen colorable; every Petersen
+coloring of a flower snark puts an antipodal triple (class `T1`, the all-ones class) on each
+junction; the odd identity rings of superedges are cyclically 5-edge-connected snarks of girth 5 on
+`8t` vertices; `G52` split along a 6-edge cut has zero trace although the two sides conduct the same
+classes. `pd(R_3) = 3`. Published in `unbounded-defect` v0.02 (Proposition 5.3, Section 6).
 
 ## 2. The objects table
 
 | Object | Definition | Owner |
 |---|---|---|
 | `G112`, `H112`, `G52`, `G52b`, `G68` | `data/*.edgelist`; digests in wiki 03 | EXP-001, EXP-007 P0 |
-| `F` (= `W` in v3) | Petersen minus two adjacent vertices | `pcclib.compose` |
-| `H`-coloring, fibers, kinds (O), (E0), (E1) | `context/2026-09-18-hcoloring-reduction-lemmas.md` | EXP-007, `pcclib/hcolor.py` |
-| `pd`, `ab`, rings `R_t`, frames `K[G]` | `context/2026-09-18-defect-unbounded.md` | EXP-009, `pcclib/graphs.py` (`ring_join`, `frame_substitution`) |
-| 4-poles `M(G; e1, e2)`, boundary patterns, `Dist(e0, e)` | EXP-010 hypothesis and addenda | EXP-010 `run.py`, `run_dist.py`, `run_dot.py` |
-| classes modulo the cut space | 64 classes, six orbits | `code/probes/classes_mod_cut_space.py` |
+| `R_t` | alternating ring of `A = G52 - {0,3} - {1,9}` and `B = G52 - {2,7}` | EXP-012, `pcclib/rings.py` |
+| charges, orbits, signatures | `pcclib/charges.py` | `context/2026-10-06-charges.md` |
+| conducted sets of 4-poles and 6-poles | `pcclib/poles.py`; EXP-012, EXP-013 runners | |
+| H-colorings with unknown target | `pcclib/hcolor.py` | EXP-007 |
 
 ## 3. Experiment index
 
-| EXP | Question | Verdict | Load-bearing output |
-|---|---|---|---|
-| 001 to 006 | round 1 | see round-1 rows in `wiki/README.md` | certification, audit, parity theorem, defect 2 |
-| 006 add. 4 | normal-5 defect of `G52` | PASS | 42 refuted edges meet all 14 edge orbits; two-abnormal-edge witnesses; lower bound is also MMM Prop. 3 |
-| 007 | is a 52-vertex counterexample colored by a smaller bridgeless cubic graph? | see section 4 | Lemmas A, B; certified refuted orders; `G52` in `H_3` given v3 Observation 9 |
-| 008 | battery on `G52b`, `G68` | CONFIRMED | same invariants as `G52`; all pairs critical |
-| 009 | defect of rings and frames | CONFIRMED (`ab` undecided) | `pd` = number of blocks on four instances |
-| 010 | non-colorable 4-poles, statement (e) | see section 4 | all 4-poles of three graphs colorable; threshold proposition; dot products |
+| EXP | verdict | output |
+|---|---|---|
+| 001 to 006, 008 | CONFIRMED (see verdicts) | consequence audit |
+| 005 | INCONCLUSIVE | pure-F proposition |
+| 007 | CONFIRMED | both 52-vertex graphs in H_3; G68 orders 62 to 66 refuted |
+| 009 | CONFIRMED | rings and frames of defect t |
+| 010 | expectations refuted | all 4-poles of the 52s and G68 colorable; dot products |
+| 011 | CONFIRMED | adjacent pairs of ten 102-vertex counterexamples critical |
+| 012 | CONFIRMED | statement (e) false |
+| 013 | P1, P2 PASS; P3 REFUTED | core `{0, E, D2}` on every 6-pole of the four cyclically 5-edge-connected sources |
+| 014 | CONFIRMED (F4, F5 at their caps) | transfer semigroups; ring theorems for claws and Petersen superedges; G52 zero-trace control |
 
-## 4. In flight (2026-09-18 evening)
+## 4. In flight (2026-10-06)
 
-EXP-007, all with `experiments/EXP-007-colorable-only-by-itself/run_inc.py` (worktree `.venv`,
-python-sat), results `artifacts/result-<graph>-k<k>.json`, formulas and proofs under
-`E:/_Datos/caos-research/petersen-coloring/EXP-007/`:
-
-- `G52`: refuted with verified proofs: 2, 4, 30 to 50. Orders 26 and 28 hit the 6-hour limit
-  during the proof check; their complete proofs are on disk and are being checked post hoc by
-  `certify_existing.py --graph G52 --k 26` (and 28); logs `artifacts/certify-G52-k*.log`. Orders 6
-  to 24 run until their own limits; when a runner dies during certification its WSL solver keeps
-  writing the proof, which `certify_existing.py` can check afterwards.
-- `G52b`: refuted: 44 to 50. Order 42: external solve with proof in progress (in-process UNSAT
-  after 14,448 s); order 40: `--suffix=-long --cap 86400` run in progress
-  (`artifacts/run-G52b-k40-long.log`, result `result-G52b-k40-long.json`). Orders below 40 were
-  stopped undecided (not needed for the conditional form).
-- `G68`: refuted: 64, 66; orders 62 down to 40 running, five at a time
-  (`artifacts/run-G68-k*.log`).
-- Verdict forms fixed in addendum 5: (U) the list of refuted orders; (C) membership in `H_3`
-  given Observation 9 of v3 (no counterexample below 40 vertices), which needs orders 40 to `n - 2`.
-  `G52` is complete under (C). `G52b` needs 40 and 42.
-- Incident (hypothesis, incident note): an orphaned attempt-1 driver ran old code for four hours
-  into shared log files; no result file affected. Always list `xargs.exe` after stopping a fan-out.
-
-EXP-010: H112 4-pole sweep (2,324 representatives, six workers, about 35 s each) was started at
-15:16; the experiment's 6-hour budget ends at 17:43, when it is stopped and the verdict written;
-`G112` (about 14,000 representatives) was not run.
-
-Second manuscript (`manuscripts/petersen-coloring/colorable-only-by-itself/`, parts +
-`assemble.py` + `make_tables.py`): draft complete, waits for `G52b` orders 40 and 42; then
-`make_tables.py`, fill `%%EXTRA_ORDERS%%` in `results-theorem.tex`, `assemble.py`, reserve a DOI
-(`_CAOS_MANAGE/tools/zenodo/reserve_doi.py petersen-coloring colorable-only-by-itself`), build,
-attach, publish, vault metadata.
+- Nothing is running. EXP-007 addendum 7 (`G68` at target order 52) was stopped at 4 hours without
+  an answer; its formula `E:/_Datos/caos-research/petersen-coloring/EXP-007/G68_k52-portfolio.cnf`
+  (82,107 variables, 2,683,782 clauses) is kept; rerun with `portfolio_certify.sh` and, on SAT,
+  `write_formula.py --graph G68 --k 52 --decode <model file>`.
+- Nothing of EXP-013 or EXP-014 is in flight (the `F4`, `F5` antichain closures ended at their
+  one-hour limits, undecided).
 
 ## 5. Next actions, ordered
 
-1. Collect EXP-007 results; run `certify_existing.py` for every order whose proof is complete on
-   disk; write `EXP-007/verdict.md` with both forms; update wiki 06 results table, the web page
-   constants `h3En`, `h3Es`, this file.
-2. Publish the second manuscript when `G52b` orders 40 and 42 are certified (or with `G52` alone
-   if they fail).
-3. PCR-7: a cyclically 4-edge-connected cubic graph with `pd >= 3` (threshold proposition). Ideas
-   on file: superposition with connector label triples (class-only argument is insufficient, see
-   the probe); boundary-pattern calculus PCR-9.
-4. PCR-8: `G68`, then the probe `k = 52` for `G112`, `H112`.
-5. Release step (version bump, bake, tag) belongs to the serialized release owner, not to this
+1. PCC-F6: declare EXP-015 (6-poles cut from the cyclically 5-edge-connected snarks of order at
+   most 28, House of Graphs lists; sector matrices; closures of each block alone and of pairs; a
+   zero-trace element is a candidate for Problem 11 of v4) before it runs; close the focus if it
+   finds none.
+2. PCC-F5: rerun the `G68` order-52 portfolio (formula kept) in a session that can hold its 24-hour limit; the 2026-10-06 run was stopped at 4 hours without an answer (addendum 7 outcome).
+3. Release step (version bump, bake, tag) belongs to the serialized release owner, not to this
    branch.
 
 ## 6. Where everything lives
 
 | what | path |
 |---|---|
-| problem tree | `problems/combinatorics/petersen-coloring/` (data/, code/pcclib, code/probes, experiments/EXP-001..010, wiki/01-07, context/) |
-| programme record | `program/petersen-coloring/` (plan, state, backlog, research lines with the round-2 exploration moment, this file) |
-| heavy artifacts | `E:/_Datos/caos-research/petersen-coloring/` (sources incl. arxiv v3, mmsw, mmm-2104.09241, hog/, misc/; EXP-001..010 formulas and proofs) |
-| manuscripts | `manuscripts/petersen-coloring/consequence-audit/` (v0.04 published, 10.5281/zenodo.22836612, concept 10.5281/zenodo.22285164); `colorable-only-by-itself/` (draft) |
-| web page | `frontend/src/pages/PetersenColoring.tsx` (eight tabs; gate `_CAOS_MANAGE/tools/visual-verify/_pcc-gate.mjs`) |
+| problem tree | `problems/combinatorics/petersen-coloring/` (data, code/pcclib, code/probes, experiments EXP-001..013, wiki 01-07, context) |
+| programme record | `program/petersen-coloring/` (governance, manuscript map, plan, state, backlog, research lines, this file) |
+| heavy artifacts | `E:/_Datos/caos-research/petersen-coloring/` |
+| manuscripts | `manuscripts/petersen-coloring/{consequence-audit,unbounded-defect,colorable-only-by-itself}/` |
+| research worktree | `E:/_worktrees/CAOS_RESEARCH-petersen-coloring` on `work/petersen-coloring/open` (moved from `E:/_Temp` on 2026-10-06) |
+| vault worktree | `E:/_worktrees/CAOS_MANAGE-petersen-coloring` (detached at `origin/develop`, push with `git push origin HEAD:develop`) |
 | management mirror | `_CAOS_MANAGE/plans/caos-research/petersen-coloring/` |
 | vault manuscript metadata | `_CAOS_MANAGE/manuscripts/petersen-coloring/` |
 
 ## 7. Gotchas
 
-- Work in the worktree `E:/_Temp/caos-research-newproblem` on `work/petersen-coloring/open`;
-  the main checkout is another session's.
-- A lazy-constraint search over an unknown structure needs a proof that the structure has no part
-  unconstrained by the data (EXP-007 attempt 1: 2,000 cuts per order, no decision).
-- G52b is 10 to 25 times harder than G52 for the same target order; G68 harder still.
-- The proof check (drat-trim) dominates: a 0.9 GB proof takes more than three hours. The runner's
-  watchdog kills Python at the limit but NOT the WSL solver or checker; use `certify_existing.py`.
-- Stopping a background `xargs` job does not kill the driver on Windows: list `xargs.exe`, kill it
-  first, check instance start times (`Get-CimInstance Win32_Process`).
-- Five experiments on one machine turned many instances into timeouts; schedule heavy runs alone.
-- Search the literature for the CONSTRUCTION, not only the statement: the ring and frame
-  constructions and `ab != 1` were already in Mattiolo-Mazzuoccolo-Mkrtchyan 2021.
-- Shell heredocs mangle backslashes; write LaTeX, TSX and Python containing backslashes with the
-  file tools, and assemble LaTeX from part files (`assemble.py`), never through shell strings.
-- Another session publishes manuscript versions of this problem too (author-name release made
-  v0.03); always `git fetch` and check the vault ledger before choosing a version number.
-- Solver UNSAT without a checked DRAT is not a theorem here.
+- Worktrees live in `E:/_worktrees/<Repo>-<topic>`; remove one only after
+  `git merge-base --is-ancestor HEAD origin/<branch>` succeeds. CAOS_MANAGE is written from an
+  isolated worktree, never from the shared checkout; fast-forward the shared checkout after pushes.
+- Methodology 13 (2026-10): governance record and manuscript map are guarded by
+  `scripts/check_research_governance.py`; every manuscript folder needs a README with version and
+  DOI; strategic review at each boundary; show the user a changed target before treating it as the
+  continuation.
+- Methodology 09 (2026-10-04): a manuscript record holds only the manuscript PDF; supporting files
+  go to a separate evidence record.
+- The runner watchdog cannot interrupt an in-process PySAT solve; external solver calls honour it.
+  WSL solvers orphaned by a killed runner keep writing proofs: check them post hoc with
+  `certify_existing.py`.
+- The WSL virtual machine stopped once (2026-09-18 21:18) and killed every proof check; complete
+  proofs on disk end with the empty clause and can be rechecked.
+- Stopping a background `xargs` job does not kill its driver on Windows; list `xargs.exe` first.
+- Shell heredocs mangle backslashes; write LaTeX and Python with file tools.
+- Another session may publish versions of these records (author-name release made audit v0.03);
+  check the vault ledger before choosing a version number.

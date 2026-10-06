@@ -108,3 +108,32 @@
 - Audit manuscript v0.04 PUBLISHED (10.5281/zenodo.22836612): five graphs, Section 5.3 on
   abnormal edges, unbounded defects and the sublinear approximation consequence. (v0.03 of the
   same record was another session's author-name release of the same day.)
+
+## 2026-09-19 - statement (e) settled
+
+- EXP-012: conduction lemma (a 4-pole whose vertices are all good carries the same cut-space class
+  through both connectors; the class of a pair of labels is their line-graph distance); `A = G52 -
+  {0,3} - {1,9}` conducts only distance 1, `B = G52 - {2,7}` only distance 0; their alternating rings
+  are cyclically 4-edge-connected with defect at least `t`; `R_3` "at most 2 bad vertices" UNSAT
+  with a verified proof. Statement (e) of the Mattiolo-Mazzuoccolo-Mkrtchyan conjecture is false,
+  so their conjectured equivalence holds. unbounded-defect v0.01 published.
+- EXP-007: `G52b` order 40 refuted by a portfolio (2.4 GB proof), orders 24 and 26 of `G52` checked
+  post hoc after the WSL virtual machine stopped; both 52-vertex counterexamples are colorable only
+  by themselves (given v3 Observation 9).
+
+## 2026-10-06 - sync, governance, publications, new focus
+
+- Synced with develop (333 commits, clean merge); the research worktree moved from `E:/_Temp` to
+  `E:/_worktrees/CAOS_RESEARCH-petersen-coloring`; CAOS_MANAGE written from
+  `E:/_worktrees/CAOS_MANAGE-petersen-coloring`.
+- Literature refresh: arXiv:2608.10028v4 (2026-09-30) renumbers its statements (Observation 10,
+  Problems 9 and 11) and still asks whether the 52-vertex counterexamples are colorable only by
+  themselves; no work found on statement (e).
+- Methodology 13 adopted: `research-governance.json`, `manuscript-map.md`, manuscript READMEs.
+- Published: colorable-only-by-itself v0.01 (10.5281/zenodo.22859075); consequence-audit v0.06
+  (10.5281/zenodo.23195171), which corrects v0.05's reading of the fifteen-graph criticality as
+  evidence against the conjectured equivalence.
+- Strategic review: F3, F4 closed; F5 gated; new active focus PCC-F6 (cut-space charges and
+  cyclically 5-edge-connected graphs). Charge formulation written; coset structure of the cut code
+  verified; EXP-013 declared and running.
+

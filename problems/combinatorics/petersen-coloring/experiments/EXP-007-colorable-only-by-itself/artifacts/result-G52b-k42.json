@@ -1,8 +1,19 @@
 {
  "graph": "G52b",
  "k": 42,
- "status": "TIMEOUT",
+ "status": "UNSAT",
+ "verified": true,
+ "proof_bytes": 1094080367,
+ "proof_sha256": "aafd1a0db6908e80dd7b37fc3c315421f86ceedbf0241cc2bf1c687ae7cb333a",
+ "cnf_sha256": "d27ccfdd1f996bb8fe53758b58a6f275ceee0da36cc57fbb773b565e31aa3808",
+ "reduced": true,
+ "post_hoc_check": true,
+ "formula_comment": "c EXP-007 G52b_k42 final formula: base + 41 attach + 0 learned cuts",
+ "variables": 51888,
+ "clauses": 1365160,
+ "certify_solve_seconds": null,
+ "check_seconds": 5002.2,
  "rounds": 1,
  "learned_cuts": 0,
- "seconds": 21600.0
+ "drat_trim_tail": "ause; start verification via backward checking\n\nc 466087 of 1365160 clauses in core                            \n\nc 2902844 of 6996135 lemmas in core using 998836190 resolution steps\n\nc 0 RAT lemmas in core; 8971883 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 4970.856 seconds\n"
 }

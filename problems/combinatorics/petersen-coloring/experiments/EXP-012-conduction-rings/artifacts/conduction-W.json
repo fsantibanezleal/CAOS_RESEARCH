@@ -1,0 +1,122 @@
+{
+ "family": "W",
+ "poles": {
+  "W": {
+   "dangling": [
+    [
+     8,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     6,
+     14
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.119,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.121,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 0.119,
+      "verified": true,
+      "proof_sha256": "cc56171822d33580baa3571343a00dc29b378859e572c815bd2157c5d331baff"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.104,
+      "verified": true,
+      "proof_sha256": "f99b7846b79c48178ffc6ad1bf7954bf00b4ed5186109e99df1a9d66c0dfea50"
+     },
+     "D": [
+      0,
+      1
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.121,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.116,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.107,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.134,
+      "verified": true,
+      "proof_sha256": "8e1ed64db8f9a690815287bc5b923dbbea3c59dbf9a53fbc62af0a8dee82f75f"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.106,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.109,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.112,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.112,
+      "verified": true,
+      "proof_sha256": "6c2e3eceaf3f8b44a37538b10ab7aead10d1706c825f7ee6074abb3737d02083"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  }
+ }
+}

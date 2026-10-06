@@ -415,8 +415,8 @@ export const CITATIONS: Citation[] = [
     id: 'gjmmmu2026',
     label: 'Goedgebeur, Jooken, Macajova, Mattiolo, Mazzuoccolo & Ulyanov 2026',
     citation:
-      'Goedgebeur J., Jooken J., Macajova E., Mattiolo D., Mazzuoccolo G., Ulyanov S. (2026). Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite family of counterexamples. arXiv:2608.10028v3, 2026-09-11. Two 52-vertex counterexamples with a theoretical proof, counterexamples of every even order at least 60, the bounds 40 to 52 for a smallest counterexample, and the question whether the 52-vertex graphs are colorable only by themselves.',
-    url: 'https://arxiv.org/abs/2608.10028v3',
+      'Goedgebeur J., Jooken J., Macajova E., Mattiolo D., Mazzuoccolo G., Ulyanov S. (2026). Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite family of counterexamples. arXiv:2608.10028v4, 2026-09-30 (v3 2026-09-11). Two 52-vertex counterexamples with a theoretical proof, counterexamples of every even order at least 60, the bounds 40 to 52 for a smallest counterexample, and the question whether the 52-vertex graphs are colorable only by themselves.',
+    url: 'https://arxiv.org/abs/2608.10028v4',
   },
   {
     id: 'mmsw2025',
@@ -448,9 +448,37 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'pccaudit',
-    label: 'Audit record 2026',
+    label: 'Santibáñez-Leal 2026a',
     citation:
-      'Santibañez-Leal F. (2026). Berge-Fulkerson covers, cycle double covers, flows and exact normality defects of the first counterexamples to the Petersen coloring conjecture. Preprint, CC BY 4.0.',
+      'Santibáñez-Leal F. (2026). Berge-Fulkerson covers, cycle double covers, flows and exact normality defects of the first counterexamples to the Petersen coloring conjecture. Preprint, CC BY 4.0 (concept DOI; latest version v0.06).',
     doi: '10.5281/zenodo.22285164',
+  },
+  {
+    id: 'pccunbounded',
+    label: 'Santibáñez-Leal 2026b',
+    citation:
+      'Santibáñez-Leal F. (2026). Cyclically 4-edge-connected cubic graphs of unbounded Petersen defect. Preprint v0.02, CC BY 4.0. Statement (e) of the sublinear approximation conjecture of Mattiolo, Mazzuoccolo and Mkrtchyan is false, so their conjectured equivalence holds; pd(R_3) = 3; transfer semigroups of 6-poles, and every ring of claws and Petersen superedges is Petersen colorable.',
+    doi: '10.5281/zenodo.23196817',
+  },
+  {
+    id: 'hs2014',
+    label: 'Hägglund & Steffen 2014',
+    citation:
+      'Hägglund J., Steffen E. (2014). Petersen-colorings and some families of snarks. Ars Mathematica Contemporanea 7(1), 161-173. Flower snarks have Petersen colorings but no strong Petersen colorings; Blanuša and Goldberg snarks.',
+    url: 'https://ris.uni-paderborn.de/record/10169',
+  },
+  {
+    id: 'ss2023',
+    label: 'Sedlar & Škrekovski 2023',
+    citation:
+      'Sedlar J., Škrekovski R. (2023). Normal 5-edge-coloring of some snarks superpositioned by the Petersen graph. arXiv:2305.05981. The superedge obtained from the Petersen graph by removing two non-adjacent vertices.',
+    url: 'https://arxiv.org/abs/2305.05981',
+  },
+  {
+    id: 'pccselfonly',
+    label: 'Santibáñez-Leal 2026c',
+    citation:
+      'Santibáñez-Leal F. (2026). Which counterexamples to the Petersen coloring conjecture are colorable only by themselves? Preprint v0.01, CC BY 4.0. Both 52-vertex counterexamples belong to H_3.',
+    doi: '10.5281/zenodo.22859075',
   },
 ];

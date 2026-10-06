@@ -17,7 +17,9 @@ def fmt(n) -> str:
 
 def rows(graph: str) -> list[str]:
     out = []
-    files = sorted(ART.glob(f"result-{graph}-k*.json"), key=lambda p: -int(p.stem.split("-k")[1]))
+    files = [p for p in ART.glob(f"result-{graph}-k*.json") if p.stem.split("-k")[1].isdigit()]
+    files.sort(key=lambda p: -int(p.stem.split("-k")[1]))
+    portfolio = ART / f"result-{graph}-k40-portfolio.json"
     for p in files:
         d = json.loads(p.read_text(encoding="utf-8"))
         if d.get("status") != "UNSAT" or not d.get("verified"):
@@ -47,9 +49,14 @@ def main() -> None:
               BS + "end{table}"]
     io.open(HERE / "results-table.tex", "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
     for g in ("G52", "G52b", "G68"):
-        ks = sorted(int(p.stem.split("-k")[1]) for p in ART.glob(f"result-{g}-k*.json")
-                    if json.loads(p.read_text(encoding="utf-8")).get("verified") and json.loads(p.read_text(encoding="utf-8")).get("status") == "UNSAT")
-        print(g, ks)
+        ks = []
+        for p in ART.glob(f"result-{g}-k*.json"):
+            if not p.stem.split("-k")[1].isdigit():
+                continue
+            d = json.loads(p.read_text(encoding="utf-8"), strict=False)
+            if d.get("verified") and d.get("status") == "UNSAT":
+                ks.append(int(p.stem.split("-k")[1]))
+        print(g, sorted(ks))
 
 
 if __name__ == "__main__":

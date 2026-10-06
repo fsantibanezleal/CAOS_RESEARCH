@@ -1,0 +1,37 @@
+{
+ "R2_witness": {
+  "status": "SAT",
+  "seconds": 190.235,
+  "bad_vertices": [
+   87,
+   158
+  ],
+  "bad_blocks": [
+   1,
+   3
+  ],
+  "local_indices": [
+   4,
+   35
+  ]
+ },
+ "R3_tries": [
+  {
+   "local_index": 4,
+   "relaxed": [
+    56,
+    158,
+    260
+   ],
+   "status": "SAT",
+   "seconds": 168.564,
+   "checker_defect": 3,
+   "bad_vertices": [
+    56,
+    158,
+    260
+   ]
+  }
+ ],
+ "pd_R3": 3
+}

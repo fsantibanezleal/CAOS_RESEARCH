@@ -1,0 +1,1846 @@
+{
+ "sector_sizes": {
+  "0": 60,
+  "E": 67,
+  "D3": 48,
+  "D2": 48,
+  "T1": 30,
+  "T2": 60
+ },
+ "blocks": [
+  {
+   "block": "Y",
+   "vertices": 4,
+   "seconds": 0.19,
+   "ones": {
+    "0": 120,
+    "E": 72,
+    "D3": 72,
+    "D2": 48,
+    "T1": 120,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "S",
+   "vertices": 8,
+   "seconds": 1.09,
+   "ones": {
+    "0": 120,
+    "E": 296,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "Pb:e0-e3-e6|s0",
+   "vertices": 10,
+   "seconds": 1.46,
+   "ones": {
+    "0": 960,
+    "E": 114,
+    "D3": 32,
+    "D2": 80,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s1",
+   "vertices": 10,
+   "seconds": 0.82,
+   "ones": {
+    "0": 960,
+    "E": 114,
+    "D3": 32,
+    "D2": 80,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s2",
+   "vertices": 10,
+   "seconds": 1.36,
+   "ones": {
+    "0": 960,
+    "E": 114,
+    "D3": 32,
+    "D2": 80,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s3",
+   "vertices": 10,
+   "seconds": 0.31,
+   "ones": {
+    "0": 960,
+    "E": 114,
+    "D3": 32,
+    "D2": 80,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s4",
+   "vertices": 10,
+   "seconds": 0.83,
+   "ones": {
+    "0": 960,
+    "E": 114,
+    "D3": 32,
+    "D2": 80,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s5",
+   "vertices": 10,
+   "seconds": 0.65,
+   "ones": {
+    "0": 1020,
+    "E": 132,
+    "D3": 24,
+    "D2": 60,
+    "T1": 390,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": [
+    "T1"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s6",
+   "vertices": 10,
+   "seconds": 0.93,
+   "ones": {
+    "0": 1020,
+    "E": 132,
+    "D3": 24,
+    "D2": 60,
+    "T1": 390,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": [
+    "T1"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s7",
+   "vertices": 10,
+   "seconds": 0.83,
+   "ones": {
+    "0": 1020,
+    "E": 132,
+    "D3": 24,
+    "D2": 60,
+    "T1": 390,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": [
+    "T1"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s8",
+   "vertices": 10,
+   "seconds": 0.96,
+   "ones": {
+    "0": 1020,
+    "E": 132,
+    "D3": 24,
+    "D2": 60,
+    "T1": 390,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": [
+    "T1"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e6|s9",
+   "vertices": 10,
+   "seconds": 0.61,
+   "ones": {
+    "0": 960,
+    "E": 114,
+    "D3": 32,
+    "D2": 80,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s0",
+   "vertices": 10,
+   "seconds": 0.69,
+   "ones": {
+    "0": 780,
+    "E": 184,
+    "D3": 16,
+    "D2": 60,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s1",
+   "vertices": 10,
+   "seconds": 0.36,
+   "ones": {
+    "0": 300,
+    "E": 232,
+    "D3": 32,
+    "D2": 48,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s2",
+   "vertices": 10,
+   "seconds": 0.4,
+   "ones": {
+    "0": 120,
+    "E": 260,
+    "D3": 32,
+    "D2": 40,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s3",
+   "vertices": 10,
+   "seconds": 0.41,
+   "ones": {
+    "0": 120,
+    "E": 260,
+    "D3": 32,
+    "D2": 40,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s4",
+   "vertices": 10,
+   "seconds": 0.32,
+   "ones": {
+    "0": 300,
+    "E": 232,
+    "D3": 32,
+    "D2": 48,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s5",
+   "vertices": 10,
+   "seconds": 0.31,
+   "ones": {
+    "0": 420,
+    "E": 248,
+    "D3": 24,
+    "D2": 36,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "D3"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s6",
+   "vertices": 10,
+   "seconds": 0.3,
+   "ones": {
+    "0": 420,
+    "E": 248,
+    "D3": 24,
+    "D2": 36,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "D3"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s7",
+   "vertices": 10,
+   "seconds": 0.28,
+   "ones": {
+    "0": 480,
+    "E": 220,
+    "D3": 32,
+    "D2": 48,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "D3"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s8",
+   "vertices": 10,
+   "seconds": 0.59,
+   "ones": {
+    "0": 120,
+    "E": 228,
+    "D3": 24,
+    "D2": 48,
+    "T1": 120,
+    "T2": 120
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "D3"
+   ]
+  },
+  {
+   "block": "Pb:e0-e3-e7|s9",
+   "vertices": 10,
+   "seconds": 0.46,
+   "ones": {
+    "0": 780,
+    "E": 184,
+    "D3": 16,
+    "D2": 60,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s0",
+   "vertices": 10,
+   "seconds": 0.26,
+   "ones": {
+    "0": 120,
+    "E": 276,
+    "D3": 40,
+    "D2": 40,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s1",
+   "vertices": 10,
+   "seconds": 0.26,
+   "ones": {
+    "0": 120,
+    "E": 276,
+    "D3": 40,
+    "D2": 40,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s2",
+   "vertices": 10,
+   "seconds": 0.47,
+   "ones": {
+    "0": 660,
+    "E": 184,
+    "D3": 32,
+    "D2": 68,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s3",
+   "vertices": 10,
+   "seconds": 0.31,
+   "ones": {
+    "0": 420,
+    "E": 272,
+    "D3": 8,
+    "D2": 44,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s4",
+   "vertices": 10,
+   "seconds": 0.47,
+   "ones": {
+    "0": 660,
+    "E": 184,
+    "D3": 32,
+    "D2": 68,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s5",
+   "vertices": 10,
+   "seconds": 0.32,
+   "ones": {
+    "0": 300,
+    "E": 240,
+    "D3": 40,
+    "D2": 52,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s6",
+   "vertices": 10,
+   "seconds": 0.37,
+   "ones": {
+    "0": 960,
+    "E": 268,
+    "D3": 0,
+    "D2": 36,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s7",
+   "vertices": 10,
+   "seconds": 0.34,
+   "ones": {
+    "0": 300,
+    "E": 240,
+    "D3": 40,
+    "D2": 52,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s8",
+   "vertices": 10,
+   "seconds": 0.24,
+   "ones": {
+    "0": 120,
+    "E": 276,
+    "D3": 16,
+    "D2": 52,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e8|s9",
+   "vertices": 10,
+   "seconds": 0.31,
+   "ones": {
+    "0": 420,
+    "E": 272,
+    "D3": 8,
+    "D2": 44,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s0",
+   "vertices": 10,
+   "seconds": 0.45,
+   "ones": {
+    "0": 120,
+    "E": 264,
+    "D3": 56,
+    "D2": 56,
+    "T1": 30,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s1",
+   "vertices": 10,
+   "seconds": 0.34,
+   "ones": {
+    "0": 420,
+    "E": 334,
+    "D3": 0,
+    "D2": 40,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s2",
+   "vertices": 10,
+   "seconds": 0.44,
+   "ones": {
+    "0": 120,
+    "E": 264,
+    "D3": 56,
+    "D2": 56,
+    "T1": 30,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s3",
+   "vertices": 10,
+   "seconds": 0.32,
+   "ones": {
+    "0": 420,
+    "E": 334,
+    "D3": 0,
+    "D2": 40,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s4",
+   "vertices": 10,
+   "seconds": 0.43,
+   "ones": {
+    "0": 120,
+    "E": 264,
+    "D3": 56,
+    "D2": 56,
+    "T1": 30,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s5",
+   "vertices": 10,
+   "seconds": 0.19,
+   "ones": {
+    "0": 60,
+    "E": 390,
+    "D3": 24,
+    "D2": 12,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "T2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s6",
+   "vertices": 10,
+   "seconds": 0.2,
+   "ones": {
+    "0": 60,
+    "E": 390,
+    "D3": 24,
+    "D2": 12,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "T2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s7",
+   "vertices": 10,
+   "seconds": 0.7,
+   "ones": {
+    "0": 120,
+    "E": 240,
+    "D3": 72,
+    "D2": 48,
+    "T1": 30,
+    "T2": 240
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "T2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s8",
+   "vertices": 10,
+   "seconds": 0.19,
+   "ones": {
+    "0": 60,
+    "E": 390,
+    "D3": 24,
+    "D2": 12,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "T2"
+   ]
+  },
+  {
+   "block": "Pb:e0-e4-e13|s9",
+   "vertices": 10,
+   "seconds": 0.3,
+   "ones": {
+    "0": 420,
+    "E": 334,
+    "D3": 0,
+    "D2": 40,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja5:v0-v4",
+   "vertices": 18,
+   "seconds": 11.76,
+   "ones": {
+    "0": 420,
+    "E": 536,
+    "D3": 40,
+    "D2": 32,
+    "T1": 30,
+    "T2": 300
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ]
+  },
+  {
+   "block": "Ja5:v0-v5",
+   "vertices": 18,
+   "seconds": 10.16,
+   "ones": {
+    "0": 480,
+    "E": 528,
+    "D3": 16,
+    "D2": 48,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "Ja5:v0-v6",
+   "vertices": 18,
+   "seconds": 11.78,
+   "ones": {
+    "0": 480,
+    "E": 448,
+    "D3": 0,
+    "D2": 32,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja5:v0-v8",
+   "vertices": 18,
+   "seconds": 8.91,
+   "ones": {
+    "0": 1260,
+    "E": 752,
+    "D3": 0,
+    "D2": 24,
+    "T1": 240,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Ja5:v0-v9",
+   "vertices": 18,
+   "seconds": 8.84,
+   "ones": {
+    "0": 1440,
+    "E": 724,
+    "D3": 16,
+    "D2": 48,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Ja5:v0-v10",
+   "vertices": 18,
+   "seconds": 9.34,
+   "ones": {
+    "0": 1560,
+    "E": 668,
+    "D3": 0,
+    "D2": 32,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja5:v1-v2",
+   "vertices": 18,
+   "seconds": 14.37,
+   "ones": {
+    "0": 120,
+    "E": 552,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "Ja5:v1-v6",
+   "vertices": 18,
+   "seconds": 12.89,
+   "ones": {
+    "0": 480,
+    "E": 665,
+    "D3": 0,
+    "D2": 4,
+    "T1": 0,
+    "T2": 120
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja5:v1-v9",
+   "vertices": 18,
+   "seconds": 10.18,
+   "ones": {
+    "0": 840,
+    "E": 376,
+    "D3": 32,
+    "D2": 88,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Ja5:v1-v10",
+   "vertices": 18,
+   "seconds": 10.99,
+   "ones": {
+    "0": 1680,
+    "E": 744,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja5:v2-v3",
+   "vertices": 18,
+   "seconds": 16.27,
+   "ones": {
+    "0": 120,
+    "E": 488,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "Ja5:v2-v7",
+   "vertices": 18,
+   "seconds": 13.27,
+   "ones": {
+    "0": 480,
+    "E": 649,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 240
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja5:v2-v10",
+   "vertices": 18,
+   "seconds": 9.2,
+   "ones": {
+    "0": 900,
+    "E": 412,
+    "D3": 0,
+    "D2": 60,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja5:v2-v11",
+   "vertices": 18,
+   "seconds": 10.05,
+   "ones": {
+    "0": 1680,
+    "E": 656,
+    "D3": 0,
+    "D2": 32,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v0-v4",
+   "vertices": 26,
+   "seconds": 117.18,
+   "ones": {
+    "0": 420,
+    "E": 568,
+    "D3": 48,
+    "D2": 32,
+    "T1": 30,
+    "T2": 420
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ]
+  },
+  {
+   "block": "Ja7:v0-v5",
+   "vertices": 26,
+   "seconds": 99.73,
+   "ones": {
+    "0": 480,
+    "E": 528,
+    "D3": 16,
+    "D2": 48,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "Ja7:v0-v6",
+   "vertices": 26,
+   "seconds": 106.37,
+   "ones": {
+    "0": 480,
+    "E": 448,
+    "D3": 0,
+    "D2": 32,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v0-v8",
+   "vertices": 26,
+   "seconds": 62.1,
+   "ones": {
+    "0": 1500,
+    "E": 768,
+    "D3": 0,
+    "D2": 40,
+    "T1": 240,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": [
+    "0"
+   ]
+  },
+  {
+   "block": "Ja7:v0-v9",
+   "vertices": 26,
+   "seconds": 63.44,
+   "ones": {
+    "0": 1680,
+    "E": 876,
+    "D3": 16,
+    "D2": 48,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Ja7:v0-v10",
+   "vertices": 26,
+   "seconds": 66.49,
+   "ones": {
+    "0": 1680,
+    "E": 828,
+    "D3": 0,
+    "D2": 40,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v0-v12",
+   "vertices": 26,
+   "seconds": 66.09,
+   "ones": {
+    "0": 3480,
+    "E": 1256,
+    "D3": 40,
+    "D2": 48,
+    "T1": 450,
+    "T2": 720
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ]
+  },
+  {
+   "block": "Ja7:v0-v13",
+   "vertices": 26,
+   "seconds": 62.57,
+   "ones": {
+    "0": 3600,
+    "E": 1124,
+    "D3": 16,
+    "D2": 72,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v0-v14",
+   "vertices": 26,
+   "seconds": 65.53,
+   "ones": {
+    "0": 3600,
+    "E": 1020,
+    "D3": 0,
+    "D2": 56,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Ja7:v1-v2",
+   "vertices": 26,
+   "seconds": 202.28,
+   "ones": {
+    "0": 120,
+    "E": 552,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "Ja7:v1-v6",
+   "vertices": 26,
+   "seconds": 98.12,
+   "ones": {
+    "0": 480,
+    "E": 689,
+    "D3": 0,
+    "D2": 4,
+    "T1": 0,
+    "T2": 240
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v1-v9",
+   "vertices": 26,
+   "seconds": 63.69,
+   "ones": {
+    "0": 960,
+    "E": 512,
+    "D3": 32,
+    "D2": 96,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D2"
+   ]
+  },
+  {
+   "block": "Ja7:v1-v10",
+   "vertices": 26,
+   "seconds": 63.43,
+   "ones": {
+    "0": 1920,
+    "E": 904,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v1-v13",
+   "vertices": 26,
+   "seconds": 62.66,
+   "ones": {
+    "0": 3120,
+    "E": 792,
+    "D3": 32,
+    "D2": 136,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v1-v14",
+   "vertices": 26,
+   "seconds": 58.72,
+   "ones": {
+    "0": 3360,
+    "E": 896,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 180
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v2-v3",
+   "vertices": 26,
+   "seconds": 183.29,
+   "ones": {
+    "0": 120,
+    "E": 488,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "Ja7:v2-v7",
+   "vertices": 26,
+   "seconds": 85.4,
+   "ones": {
+    "0": 480,
+    "E": 689,
+    "D3": 0,
+    "D2": 8,
+    "T1": 0,
+    "T2": 240
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v2-v10",
+   "vertices": 26,
+   "seconds": 61.0,
+   "ones": {
+    "0": 960,
+    "E": 480,
+    "D3": 0,
+    "D2": 64,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v2-v11",
+   "vertices": 26,
+   "seconds": 61.46,
+   "ones": {
+    "0": 1920,
+    "E": 920,
+    "D3": 0,
+    "D2": 32,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v2-v14",
+   "vertices": 26,
+   "seconds": 50.95,
+   "ones": {
+    "0": 3120,
+    "E": 752,
+    "D3": 0,
+    "D2": 64,
+    "T1": 0,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Ja7:v2-v15",
+   "vertices": 26,
+   "seconds": 49.72,
+   "ones": {
+    "0": 3360,
+    "E": 896,
+    "D3": 0,
+    "D2": 60,
+    "T1": 0,
+    "T2": 300
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E"
+   ]
+  },
+  {
+   "block": "Da:v0-v2",
+   "vertices": 18,
+   "seconds": 5.78,
+   "ones": {
+    "0": 360,
+    "E": 384,
+    "D3": 104,
+    "D2": 116,
+    "T1": 0,
+    "T2": 180
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": []
+  },
+  {
+   "block": "Da:v0-v3",
+   "vertices": 18,
+   "seconds": 4.18,
+   "ones": {
+    "0": 360,
+    "E": 643,
+    "D3": 112,
+    "D2": 124,
+    "T1": 0,
+    "T2": 60
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ]
+  },
+  {
+   "block": "Da:v0-v4",
+   "vertices": 18,
+   "seconds": 3.58,
+   "ones": {
+    "0": 420,
+    "E": 404,
+    "D3": 64,
+    "D2": 124,
+    "T1": 120,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": [
+    "E"
+   ]
+  },
+  {
+   "block": "Da:v0-v5",
+   "vertices": 18,
+   "seconds": 3.52,
+   "ones": {
+    "0": 360,
+    "E": 535,
+    "D3": 144,
+    "D2": 156,
+    "T1": 60,
+    "T2": 0
+   },
+   "conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "self_ring_sectors": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ]
+  }
+ ]
+}

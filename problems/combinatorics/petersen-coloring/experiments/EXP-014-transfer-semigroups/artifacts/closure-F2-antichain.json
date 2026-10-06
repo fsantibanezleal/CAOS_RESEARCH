@@ -1,0 +1,22 @@
+{
+ "family": "F2",
+ "mode": "antichain",
+ "generators": 6,
+ "closure_reached": true,
+ "cap": 200000,
+ "stored": 276,
+ "active": 276,
+ "retired": 0,
+ "longest_word": 5,
+ "zero_trace_elements": 0,
+ "zero_trace_words": [],
+ "active_with_sector_diagonal": {
+  "0": 52,
+  "E": 276,
+  "D3": 0,
+  "D2": 1,
+  "T1": 0,
+  "T2": 0
+ },
+ "seconds": 5.0
+}

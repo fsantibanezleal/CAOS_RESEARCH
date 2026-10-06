@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "problem": "petersen-coloring",
+  "updated": "2026-10-06",
+  "original_problem": {
+    "status": "disproved externally",
+    "statement": "Jaeger's Petersen coloring conjecture (1988), that every bridgeless cubic graph admits a Petersen coloring, is false.",
+    "priority": "Putman (two 112-vertex counterexamples, August 2026) and Goedgebeur, Jooken, Macajova, Mattiolo, Mazzuoccolo, Ulyanov (two 52-vertex counterexamples with a theoretical proof, infinite families, lower bound 40) hold priority; a 68-vertex counterexample was posted on X in July 2026; Jooken gave the first human-checkable proof.",
+    "prohibited_reframing": "No CAOS result may be described as disproving or re-disproving the Petersen coloring conjecture. CAOS results are certifications of public counterexamples, consequence audits, and theorems about the structure the disproof opened (H_3 membership, defect and abnormal-edge growth)."
+  },
+  "mission": "Determine, with checked certificates and proved theorems, what the refutation of the Petersen coloring conjecture implies: which consequences survive, how far counterexamples are from colorable, which counterexamples are minimal under H-coloring, and whether counterexamples or large defects exist under higher cyclic connectivity.",
+  "current_focus": "PCC-F6",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "PCC-F0",
+      "title": "Independent certification of the public counterexamples",
+      "status": "closed",
+      "priority": 0,
+      "target": "Refute Petersen colorings and normal 5-edge-colorings of the retrievable counterexamples with encodings independent of the public ones.",
+      "value": "A trusted baseline; no discovery priority is claimed.",
+      "success_gate": "Verified DRAT refutations with two encodings and colorable controls for every retrievable counterexample.",
+      "stop_conditions": [
+        "A public certificate fails to reproduce.",
+        "The work duplicates the upstream verification without an independent encoding."
+      ],
+      "novelty_status": "Replication, not novelty.",
+      "manuscript_route": "consequence-audit, Section 2",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001",
+        "EXP-007 part P0"
+      ]
+    },
+    {
+      "id": "PCC-F1",
+      "title": "Consequence audit of the counterexamples",
+      "status": "closed",
+      "priority": 1,
+      "target": "Decide, on every retrievable counterexample, the conjectures the Petersen coloring conjecture implied (Berge-Fulkerson, Berge, Fan-Raspaud, 5-cycle double cover, flows) and exact parameters (perfect matching index, oddness, resistance, normal chromatic index, Petersen defect).",
+      "value": "The first exact picture of what survives after the disproof.",
+      "success_gate": "Every invariant decided from both sides on all five graphs.",
+      "stop_conditions": [
+        "The literature publishes the same table first (partly happened with arXiv:2608.10028v3; overlap stated)."
+      ],
+      "novelty_status": "Partly overlapping with arXiv:2608.10028v3/v4 (Berge-Fulkerson, index at most 4, 5-CDC, normal 6, two abnormal edges), stated in the manuscript; oddness, resistance, flows, the parity theorem and pair criticality not found elsewhere.",
+      "manuscript_route": "consequence-audit",
+      "first_bounded_action": "EXP-002",
+      "evidence": [
+        "EXP-002",
+        "EXP-003",
+        "EXP-004",
+        "EXP-006",
+        "EXP-008"
+      ]
+    },
+    {
+      "id": "PCC-F2",
+      "title": "Compositions of the Petersen 4-pole below 52 vertices",
+      "status": "dormant",
+      "priority": 4,
+      "target": "Decide whether some composition of copies of the 4-pole F with few free vertices below 52 vertices is a counterexample.",
+      "value": "Would lower the upper bound of the smallest-counterexample window.",
+      "success_gate": "Exhaustion of the classes C(k, m) below 52 vertices or a new counterexample.",
+      "stop_conditions": [
+        "The counterexample-guided search does not converge at 26 semi-edges (observed, EXP-005).",
+        "Problem 9 of arXiv:2608.10028v4 is settled externally."
+      ],
+      "novelty_status": "Pure-F proposition recorded in consequence-audit; the search itself is a research record.",
+      "manuscript_route": "consequence-audit, Section 6; no new manuscript without exhaustion",
+      "first_bounded_action": "PCR-4b symmetry-broken enumeration (not started)",
+      "evidence": [
+        "EXP-005"
+      ]
+    },
+    {
+      "id": "PCC-F3",
+      "title": "H_3 membership of the smallest counterexamples",
+      "status": "closed",
+      "priority": 2,
+      "target": "Are the 52-vertex counterexamples colorable only by themselves (question of arXiv:2608.10028v3/v4, Section 5.4)?",
+      "value": "Membership in H_3 is necessary for being a smallest counterexample; a negative answer would give a smaller counterexample.",
+      "success_gate": "Every even target order from 40 to 50 refuted with checked proofs for both graphs (met 2026-09-19).",
+      "stop_conditions": [
+        "A satisfiable order (would instead give a new counterexample).",
+        "Orders below 40 needed for the unconditional form exceed 24 hours each."
+      ],
+      "novelty_status": "Primary-source overlap checked against v3, v4 and Ma-Mattiolo-Steffen-Wolf (2026-10-06): v4 still poses the question. External novelty not independently confirmed.",
+      "manuscript_route": "colorable-only-by-itself",
+      "first_bounded_action": "EXP-007",
+      "evidence": [
+        "EXP-007"
+      ]
+    },
+    {
+      "id": "PCC-F4",
+      "title": "Abnormal edges and the sublinear approximation conjecture",
+      "status": "closed",
+      "priority": 1,
+      "target": "Decide Conjecture 3 of Mattiolo, Mazzuoccolo, Mkrtchyan (equivalence of the Petersen coloring conjecture with sublinear abnormal-edge bounds on four classes).",
+      "value": "Settles a published conjecture about the quantitative failure of the Petersen coloring conjecture.",
+      "success_gate": "Each of the five statements decided (met 2026-09-19: all false, so the equivalence holds).",
+      "stop_conditions": [
+        "Statement (e) reduced to a question no construction reaches after three bounded attempts."
+      ],
+      "novelty_status": "MMM 2021 and arXiv:2608.10028v4 read; no later work found (2026-10-06). The ring and frame constructions are MMM's; the cut-space conclusion, the conduction lemma and the alternating rings are CAOS. External novelty not independently confirmed.",
+      "manuscript_route": "unbounded-defect (statement (e)); consequence-audit (statements (c), (d), Theorem 5.9)",
+      "first_bounded_action": "EXP-009",
+      "evidence": [
+        "EXP-009",
+        "EXP-010",
+        "EXP-011",
+        "EXP-012"
+      ]
+    },
+    {
+      "id": "PCC-F5",
+      "title": "Unconditional and extended H_3 membership",
+      "status": "gated",
+      "priority": 3,
+      "target": "Remove the dependence on Observation 10 of arXiv:2608.10028v4 (orders below 40 for the 52-vertex graphs) and decide H_3 membership of the 68-vertex counterexample (orders 40 to 60).",
+      "value": "For the 68-vertex graph, a satisfiable order would give a new counterexample on 40 to 60 vertices, possibly below 52; membership alone is a minor addition.",
+      "success_gate": "All orders 40 to 66 of G68 decided with checked proofs, or a checker-accepted coloring by a smaller graph.",
+      "stop_conditions": [
+        "Orders 54 to 60 of G68 exceed 24 hours with a three-configuration portfolio.",
+        "The value review finds no satisfiable order after half of the range."
+      ],
+      "novelty_status": "Not published elsewhere as of 2026-10-06.",
+      "manuscript_route": "colorable-only-by-itself (new version) if decided; otherwise research record",
+      "first_bounded_action": "Portfolio runs of G68 at target order 52 (the order at which a 52-vertex counterexample could color it), then 40 to 50.",
+      "evidence": [
+        "EXP-007"
+      ]
+    },
+    {
+      "id": "PCC-F6",
+      "title": "Cut-space charges and cyclically 5-edge-connected cubic graphs",
+      "status": "active",
+      "priority": 1,
+      "target": "Is there a cyclically 5-edge-connected cubic graph without a Petersen coloring (Problem 11 of arXiv:2608.10028v4), and is the Petersen defect bounded on cyclically 5-edge-connected cubic graphs?",
+      "value": "Problem 11 is the main structural question left by the disproof: all known counterexamples are built on 4-edge cuts around the Petersen 4-pole. A charge formulation (a bad vertex is a nonzero class of F_2^E(P) modulo the cut space; the total charge is zero; multipoles conduct classes between connectors) turned 4-pole data into unbounded defect in the cyclically 4-edge-connected class, and its 6-pole analogue is a concrete route to the 5-connected class.",
+      "success_gate": "Either a cyclically 5-edge-connected cubic graph without a Petersen coloring (two 6-poles with disjoint conducted class sets whose alternating rings are cyclically 5-edge-connected, certified), or a theorem that rules out this route for a stated class of 6-poles.",
+      "stop_conditions": [
+        "Every 6-pole cut from the examined cyclically 5-edge-connected snarks and counterexamples conducts every nonzero class orbit (no disjoint pair possible), after the first two experiments.",
+        "Problem 11 is settled externally.",
+        "Three consecutive experiments fail to restrict any conducted set."
+      ],
+      "novelty_status": "Problem 11 open in arXiv:2608.10028v4 (2026-09-30). The charge formulation, the core {0, E, D2} of 6-poles, the block diagonal transfer relation and the ring theorems for claws and Petersen superedges are CAOS (context/2026-10-06-charges.md, EXP-013, EXP-014); Petersen colorability of flower snarks is Hagglund and Steffen 2014; the junction description of their colorings and the superedge-ring family were not found in the literature searched; not independently confirmed.",
+      "manuscript_route": "New manuscript only on a success gate; a negative structural theorem would go to unbounded-defect as a new version.",
+      "first_bounded_action": "Done: EXP-013 (conducted charge orbits of 6-poles: every 6-pole of P, J5, J7 and the dodecahedron conducts the core {0, E, D2}) and EXP-014 (exact transfer semigroups: every ring of claws, of Petersen superedges or of both is Petersen colorable, with re-checked certificates). Next bounded action: EXP-015, a search for 6-poles without small internal cuts whose transfer semigroup contains a zero-trace element, over 6-poles cut from the cyclically 5-edge-connected snarks of order at most 28 (House of Graphs lists), declared before it runs.",
+      "evidence": [
+        "EXP-013",
+        "EXP-014"
+      ],
+      "review_2026_10_06": "Success gate met in its negative branch: theorems rule out the ring-of-6-poles route for the claws, the Petersen superedge and their mixtures (EXP-014 F1 to F3). Stop condition 1 met in substance: no two measured 6-poles of colorable cyclically 5-edge-connected sources have disjoint conducted sets. Focus stays active for one more bounded action (EXP-015) because the transfer semigroup, unlike charges, is exact and detects the non-colorability of G52 split along a 6-edge cut; if EXP-015 finds no zero-trace block, the focus closes."
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "consequence-audit",
+      "path": "manuscripts/petersen-coloring/consequence-audit",
+      "version": "0.06",
+      "version_doi": "10.5281/zenodo.23195171",
+      "concept_doi": "10.5281/zenodo.22285164",
+      "status": "published",
+      "split_action": "Already split: the H_3 result and the statement (e) result have their own manuscripts. Keep this one as the consequence audit (five graphs, parity theorem, statements (c), (d), Theorem 5.9). No further split unless the audit grows a new central question."
+    },
+    {
+      "slug": "unbounded-defect",
+      "path": "manuscripts/petersen-coloring/unbounded-defect",
+      "version": "0.02",
+      "version_doi": "10.5281/zenodo.23196817",
+      "concept_doi": "10.5281/zenodo.22847192",
+      "status": "published",
+      "split_action": "Focused paper on statement (e), conduction, and its limits for 6-poles (Section 6, v0.02). A new version only for a correction, a ring of 6-poles without a Petersen coloring, or the exact abnormal-edge numbers of the rings; a cyclically 5-edge-connected counterexample would be a separate manuscript."
+    },
+    {
+      "slug": "colorable-only-by-itself",
+      "path": "manuscripts/petersen-coloring/colorable-only-by-itself",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.22859075",
+      "concept_doi": "10.5281/zenodo.22859074",
+      "status": "published",
+      "split_action": "Focused paper on H_3 membership; a new version only if PCC-F5 decides the 68-vertex graph or the unconditional form."
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 4,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "consequence-audit"
+      ]
+    },
+    {
+      "start": 5,
+      "end": 5,
+      "classification": "research-record",
+      "manuscripts": [
+        "consequence-audit"
+      ]
+    },
+    {
+      "start": 6,
+      "end": 6,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "consequence-audit"
+      ]
+    },
+    {
+      "start": 7,
+      "end": 7,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "colorable-only-by-itself"
+      ]
+    },
+    {
+      "start": 8,
+      "end": 9,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "consequence-audit"
+      ]
+    },
+    {
+      "start": 10,
+      "end": 12,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "unbounded-defect",
+        "consequence-audit"
+      ]
+    },
+    {
+      "start": 13,
+      "end": 14,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "unbounded-defect"
+      ]
+    }
+  ]
+}
