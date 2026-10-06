@@ -101,3 +101,14 @@ PCC-F6 is reviewed against its stop conditions before any third experiment.
 
 Each prediction PASS, REFUTED or UNDECIDED; the closure sizes, the sector-matrix densities and the
 certificates are the output either way.
+
+## Addendum 1 (2026-10-06 16:26, before the control runs): a control for the zero-trace direction
+
+The random words of Q4 all gave colorable rings, so Q4 exercised only the positive direction.
+Control Q5: split `G52` along a cycle-separating 6-edge cut `delta(X)` with both sides of at least
+20 vertices into the 6-poles `G52[X]` and `G52[V - X]`, the six cut edges split into two triples
+`c1`, `c2`; the ring of length 2 (`G52[X]` with `L = c1`, `R = c2`, then `G52[V - X]` with `L = c2`,
+`R = c1`, junctions matching each cut edge to itself) is `G52` again. Prediction (certain if the
+algebra is right): the product has a zero diagonal in all six sectors; the two sides alone are
+colorable (nonzero sector matrices). One cut, found by a greedy search from a cyclic 4-edge cut,
+all ten splits.
