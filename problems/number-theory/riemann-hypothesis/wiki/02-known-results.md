@@ -152,6 +152,14 @@ assuming a moment formula does not prove that formula. The detailed objections
 and [Palomar candidate](https://github.com/teal-sea/zeta-lab/blob/main/lean/PALOMAR.md)
 scope questions are preserved in the
 [successor review](../context/2026-09-12-original-and-successor-review.md).
+On 2026-09-03 the same group retracted its "density one" preprint (Zenodo
+22065921; repository `JoshuaHKU/zeta-density-one-reproduction`, commit
+`ac85152`), citing a reviewer's argument that finite unconditional bounds on
+higher even trace moments of the compressed Weil matrix would force
+power-law zero-free regions. The 79.62 percent repository, last changed on
+2026-08-17, rests on the same kind of sixth-moment input and has not been
+retracted; the quarantine stands and is strengthened
+([2026-09-27 sweep](../context/2026-09-27-literature-and-representation-sweep.md)).
 
 Finally, EXP-001 checks a concrete normalization issue in the revised source:
 
@@ -162,6 +170,44 @@ The additive discrepancy is of order $T$, rather than $\log T$. It remains
 $o(N)$ and therefore does not alone refute the asymptotic theorem. The
 [exact reproduction verdict](../experiments/EXP-001-source-and-constant-audit/verdict.md)
 records this limited conclusion.
+
+## Optimized Selberg detector and explicit localization
+
+Pearce-Crump's 2026 preprint gives a coefficient-uniform sign-preserving
+Selberg detector with a certified rank-three diagonal constant and an
+off-diagonal lemma formulated for arbitrary subintervals of a dyadic block.
+The global source theorem exceeds seven percent on the critical line. EXP-005
+uses the arbitrary-subinterval quantifier to retain the true averaging length
+$H=T^\theta$, producing a normalized error
+$O(T^{1/2+2u-\theta}\log T)$.
+
+The resulting [local theorem](08-local-selberg-transfer.md) gives explicit
+distinct odd-critical density throughout $\theta>1/2$ and, after the EXP-004
+parity transfer, a simple-critical positivity threshold in $(0.5459,0.546)$.
+The source's global percentage, detector construction and certified profile
+remain attributed prior work; the localized theorem and its parity combination
+are the scoped derived contribution.
+
+## Hilbert dimension and parity compression
+
+EXP-006 returns to the arbitrary-parameter coefficient inequality that was
+correctly classified above as prior work. Instead of relabeling that premise,
+it combines its optimized form
+
+$$Q\ge S+\frac{(N-S)^2}{r+k}$$
+
+with the new parity count $2(r+k)\le N-O$. The result is the sharp product
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+After Wang's pair limit and the EXP-005 odd-support curve, this product becomes
+a quadratic lower bound for the simple-critical proportion. The exact root is
+bracketed by $0.545884<\theta_{\rm HP}<0.545885$, and the bound is already
+positive at $\theta=0.5459$. The arbitrary-parameter premise is attributed;
+the parity-compressed product and short-interval consequence are the scoped
+deduction. See the [complete proof](09-hilbert-parity-compression.md).
 
 [Previous: statement](01-statement.md) | [Next: full proof](03-mechanism.md)
 
@@ -193,3 +239,36 @@ range qualitatively; a separate inequality also extends distinct density above
 one half. It does not improve the already much shorter classical range for
 merely positive distinct density. The finite spectral inequalities and imported
 classical theorems retain their original attribution.
+
+## Spectral defect retained through parity
+
+EXP-007 keeps the same simple-real Gram defect used by the stability program
+through the EXP-006 product. Its finite theorem is
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+Together with the analytic pressure estimate, this strictly improves every
+positive point of the EXP-006 `h3(theta)` curve. The positivity onset remains
+unchanged because the construction needs `h3>0`. The arbitrary-parameter
+rank-trace theorem and spectral profile are attributed; the defect-parity
+coupling is the scoped deduction. See the
+[complete proof](10-spectral-defect-parity.md).
+
+## Rank-independent local transfer and the source-certified rank-six onset
+
+EXP-008 proves that the EXP-005 short-rectangle localization works for every
+fixed finite detector rank $q$. It gives
+
+$$
+\liminf\frac ON\ge k_q(\theta)=\frac{\theta-1/2}{4eC_q}.
+$$
+
+Pearce-Crump's public paper states a certified $C_6$ interval below $C_3$.
+Using that attributed input in the EXP-006 quadratic transfer yields
+$0.5458837<\theta_6<0.5458838$, strictly earlier than the independently
+certified rank-three bracket $0.5458846<\theta_3<0.5458847$. The public paper
+does not print the rank-six coefficient matrix, so this is not an independent
+reconstruction of $C_6$. The [rank-six chapter](11-rank-six-local-transfer.md)
+states the exact theorem, arithmetic, and source boundary.

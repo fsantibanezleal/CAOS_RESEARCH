@@ -1,0 +1,52 @@
+{
+  "schema": "exp028-adversarial-exponents-v1",
+  "passed": true,
+  "auditor_sha256": "8b4b50699f433742f9f08b8834cf7f55dfdd91a745c527a5dfc444dc36d19214",
+  "declaration_sha256": "6fdc9c14cf02fabf21ab2fe45534c00861daa704fe57b5b9021bec037cf7c6a1",
+  "audit": {
+    "arithmetic": "stdlib Fraction only",
+    "theta": "5339/10000",
+    "nu": "349/10000",
+    "eta": "1/100000",
+    "gaussian_theta": "53389/100000",
+    "charged_exponents": [
+      "-7/250000",
+      "-937/400000"
+    ],
+    "exact_dyadic_boxes": 7430,
+    "worst_grid_exponents_and_scales": [
+      [
+        "-7/250000",
+        "0",
+        "349/10000",
+        "349/10000",
+        "101/50000"
+      ],
+      [
+        "-937/400000",
+        "0",
+        "349/10000",
+        "349/10000",
+        "101/50000"
+      ]
+    ],
+    "low_N_slopes": [
+      "3/5",
+      "3/4"
+    ],
+    "high_N_slopes_including_parameter_growth": [
+      "-29/10",
+      "-11/4"
+    ],
+    "negative_controls": {
+      "oversized_window_loss_rejected": true,
+      "zero_margin_rejected": true,
+      "doubled_separation_rejected": true,
+      "uncontrolled_tail_rejected": true,
+      "reversed_parameter_factor_rejected": true
+    },
+    "analytic_moment_theorem_proved": false,
+    "scope": "Exponent accounting only; universal analysis is in mellin-proof.md.",
+    "cpu_seconds": 0.15625
+  }
+}

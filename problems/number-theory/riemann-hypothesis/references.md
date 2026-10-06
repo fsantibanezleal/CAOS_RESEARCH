@@ -144,7 +144,8 @@ certificate of this unit's entire short-interval theorem.
     is part of the analytic lineage cited by the recent theorem.
 
 13. **Daniel A. Goldston and Ade Irma Suriajaya.**
-    [arXiv:2511.20059](https://arxiv.org/abs/2511.20059) and
+    [arXiv:2511.20059](https://arxiv.org/abs/2511.20059) (published in
+    Analysis Mathematica, 2026, DOI 10.1007/s10476-026-00186-w) and
     [arXiv:2603.28104](https://arxiv.org/abs/2603.28104).
     The double-sum criterion and narrow-box consequences explain earlier
     ways of relating complex zero geometry to simple-critical counts.
@@ -230,6 +231,75 @@ apparently new short-interval consequence from inherited global methods.
 
 ## Local derived record and publication status
 
+23. **Andrew Pearce-Crump.** *Optimising Selberg's method for critical
+    zeros.* [arXiv:2609.15329v1](https://arxiv.org/abs/2609.15329v1).
+    Submitted September 14, 2026. The sign-preserving positive-semidefinite
+    detector, coefficient-uniform approximate functional equation,
+    arbitrary-subinterval rational-frequency estimate, and certified
+    rank-three profile are imported by EXP-005. The source states a global
+    critical-line proportion above seven percent; the short-interval
+    localization is the separate derived result recorded here.
+
+24. **AxiomMath.** *ZetaZerosV2*, pull request
+    [#1](https://github.com/AxiomMath/ZetaZerosV2/pull/1), inspected at head
+    `02dfc0b1c63d12e6d39649a0bbe08dfc7ef6cf75`.
+    The inspected CI run passed and the new unconditional exports report only
+    standard Lean axioms. The pull request formalizes global inputs and four
+    headline bounds; it does not formalize Wang's short-interval theorem,
+    EXP-004, or the EXP-005 localization.
+
+25. **Eric Dubon.** *Zero-Density Concentration for Dirichlet Polynomials.*
+    [arXiv:2609.17875v1](https://arxiv.org/abs/2609.17875v1), submitted
+    September 15, 2026. The Jessen-potential, Bohr-lift, and
+    anti-concentration results concern zeros of finite Dirichlet truncations.
+    They do not by themselves transfer to nontrivial zeros of zeta.
+
+26. **Joseph Najnudel and Ashkan Nikeghbali.** *Cauchy laws associated with
+    the zeros of the Riemann zeta function.*
+    [arXiv:2609.15862v1](https://arxiv.org/abs/2609.15862v1), submitted
+    September 14, 2026. The projected-ordinate Cauchy limit is unconditional.
+    Its stronger log-derivative comparison requires a separate small-total-
+    horizontal-displacement condition, so it is recorded as a possible
+    interface rather than evidence for RH.
+
+27. **teal-sea.** *zeta-lab*, inspected at
+    [`f402358c6c3f3c838605e71dd97cb6401a6963f0`](https://github.com/teal-sea/zeta-lab/tree/f402358c6c3f3c838605e71dd97cb6401a6963f0).
+    The stable bridge identifies Ainta's `Psi` with the `c=2` eigenbasis form
+    of Anthropic's `gc`. EXP-007 treats that parameterized spectral content as
+    prior art and claims only the defect-parity coupling and its transfer.
+
+28. **Biao Wang.** *Proportions of the non-trivial zeros of the Riemann
+    zeta function.* (Title corrected 2026-09-27 against the cached v1 source;
+    an earlier entry carried a descriptive title.)
+    [arXiv:2609.24167v1](https://arxiv.org/abs/2609.24167v1), submitted
+    September 21, 2026. EXP-009 imports the finite spectral framework, block
+    lemma, analytic pair statistic, smoothing argument and triple packing. It
+    independently proves the sharp replacement for the auxiliary three-point
+    ratio. The source is a recent unreviewed v1.
+
+29. **Matthew P. Young.** *A short proof of Levinson's theorem.* Arch. Math.
+    95 (2010), 539-548; [arXiv:1002.4403v1](https://arxiv.org/abs/1002.4403v1).
+    EXP-010 reruns its Lemmas 4-7 with a weight on `(T,T+T^theta]`; the
+    rendered numbering and the `(1+x/t)^(-A)` reading of its (4.3) are
+    recorded in the EXP-010 audit. Pinned in
+    [`source-manifest-exp010.json`](context/source-manifest-exp010.json).
+
+30. **J. Brian Conrey.** *More than two fifths of the zeros of the Riemann
+    zeta function are on the critical line.* J. Reine Angew. Math. 399 (1989),
+    1-26. Theorem 2 supplies the constant `c(P,Q,R,theta)`; eqs. (32) and
+    (40)-(43) the counting conventions. The scan is retained locally only; its
+    SHA-256 is in the EXP-010 preflight dossier.
+
+31. **Conrey, Farmer, Kwan, Lin and Turnage-Butterbaugh.** *Short mollifiers
+    of the Riemann zeta-function.* [arXiv:2508.11108v1](https://arxiv.org/abs/2508.11108v1).
+    Motivation for high-degree `Q` at short mollifiers; no theorem of it is an
+    EXP-010 premise. Two table and sign errata are noted in the preflight.
+
+32. **H. M. Bui, J. B. Conrey and M. P. Young.** *More than 41% of the zeros
+    of the zeta function are on the critical line.*
+    [arXiv:1002.4127v1](https://arxiv.org/abs/1002.4127v1). Cross-check of the
+    constant and of the degree-one restriction for simple zeros.
+
 The [EXP-001 verdict](experiments/EXP-001-source-and-constant-audit/verdict.md)
 is the authority for exact formula reproduction, source-integrity checks,
 and the normalization correction. The
@@ -239,17 +309,53 @@ and [verdict](experiments/EXP-002-short-interval-stability/verdict.md)
 are the authority for the candidate strict short-interval refinement and
 certified numerical example. The [wiki](wiki/README.md) transcribes them.
 
-**Felipe Santibañez-Leal.** *A stability refinement for simple critical zeros
-in short intervals.* CAOS Research Preprint, version 0.01, September 12, 2026.
-[Public record](https://zenodo.org/records/22727389), version DOI
-[10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389), and concept DOI
-[10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
+**Felipe Santibanez-Leal.** *Simple critical zeros in short intervals: stability,
+parity, localization, Hilbert compression, and spectral defect.* CAOS Research
+Preprint, version 0.07, September 20, 2026.
+[Public record](https://zenodo.org/records/22860012), version DOI
+[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012),
+and concept DOI [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 The [publication receipt](../../../manuscripts/riemann-hypothesis/short-interval-stability/publication-receipt.json)
-records verification of fresh public metadata and the downloaded v0.02 PDF:
-498,500 bytes, SHA-256
-`56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c`, version DOI
-[10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744). The immutable
-v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389)
+records verification of fresh public metadata and the downloaded v0.07 PDF:
+575,351 bytes, SHA-256
+`c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
+The immutable v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389)
 and its archived 10-page PDF is unchanged. This self-published preprint is not peer
 reviewed. The dated novelty search does not guarantee priority against undiscovered
 concurrent work.
+
+**Felipe Santibanez-Leal.** *A sharp three-point kernel bound and improved
+proportions of zeta zeros.* CAOS Research Preprint, version 0.01, September 24,
+2026. [Public record](https://zenodo.org/records/22940291), version DOI
+[10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291), concept DOI
+[10.5281/zenodo.22940290](https://doi.org/10.5281/zenodo.22940290). The reviewed
+seven-page PDF has SHA-256
+`a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82`.
+The publication is not external peer review.
+
+**Felipe Santibanez-Leal.** *Levinson's method in short intervals and simple
+zeros of the zeta function.* CAOS Research Preprint, version 0.01, September
+26, 2026. [Public record](https://zenodo.org/records/22984155), version DOI
+[10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155), concept DOI
+[10.5281/zenodo.22984154](https://doi.org/10.5281/zenodo.22984154). The
+ten-page PDF has SHA-256
+`4fd71686d6dada90c41a2156f5cbecb428d4f1acd372028020896113b1033d67`.
+The publication is not external peer review.
+
+## October continuation sources
+
+Kristian Muri Knausgard. *More than 83.69% of the zeros of the Riemann
+zeta function are distinct.* [arXiv:2609.33043v1](https://arxiv.org/abs/2609.33043v1),
+2026-09-27. Count is strip-wide; recent, not externally reviewed here.
+Conrey, Iwaniec and Soundararajan: [twisted mean square, 1808.02879v1](https://arxiv.org/abs/1808.02879v1)
+and [critical zeros of Dirichlet L-functions, 1105.1177v1](https://arxiv.org/abs/1105.1177v1).
+Chandee, Li, Matomaki and Radziwill: [sixth moment, 2409.01457v1](https://arxiv.org/abs/2409.01457v1).
+Tang: [reciprocity formula, 2608.14852v1](https://arxiv.org/abs/2608.14852v1).
+Versioned bytes and the reading boundaries are in the October manifest/dossier.
+
+Henry Wolkowicz and George P. H. Styan. *Bounds for eigenvalues using traces.*
+Linear Algebra and its Applications 29 (1980), 471-506.
+[DOI](https://doi.org/10.1016/0024-3795(80)90258-X),
+[author-hosted copy](https://www.math.uwaterloo.ca/~hwolkowi/henry/reports/PAPER31.pdf).
+Theorem 2.1 and the printed pages 472-474 provide trace/variance prior art.
+This is background for EXP-016, not an analytic zeta input.

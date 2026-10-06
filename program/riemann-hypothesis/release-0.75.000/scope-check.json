@@ -1,0 +1,9 @@
+{
+  "schema": "riemann-release-scope-check-v1",
+  "baseline_commit": "0fd13678315b4b7ac20af8b6b66b44982e7acefa",
+  "unrelated_experiment_records": 264,
+  "unrelated_semantically_identical": true,
+  "riemann_records": 25,
+  "experiments_sha256": "b446cfe1ff95e6de207eb7f8c422ddf98d8d5b7dd1c39a989204cc19e813fd70",
+  "note": "Decoded unrelated rows compared in full; only the Riemann scope changed."
+}

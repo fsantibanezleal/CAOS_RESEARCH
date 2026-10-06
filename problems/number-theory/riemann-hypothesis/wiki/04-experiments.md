@@ -1,9 +1,10 @@
 # 4. Experiments, certificates, and reproduction
 
-The mathematical evidence consists of four declared experiments. EXP-001/002
+The mathematical evidence consists of five declared experiments. EXP-001/002
 hypotheses were committed as `266486f`; EXP-003 was declared in `8ed806d`,
 with its complete pressure-method source preflight before computation. EXP-004
-was declared in e03413b before its implementation and exact census.
+was declared in e03413b before its implementation and exact census. EXP-005
+was declared in 6fd59fec before implementation and canonical execution.
 The [first verdict](../experiments/EXP-001-source-and-constant-audit/verdict.md)
 is a reproduction and algebraic audit. The
 [second verdict](../experiments/EXP-002-short-interval-stability/verdict.md)
@@ -286,3 +287,289 @@ pytest tests/test_riemann_parity.py
 The elementary primal/dual result proves optimality only in its declared scalar
 relaxation, not among all Gram methods or zeta arguments. Checkpoint prefixes
 record interrupted work; the complete census is rechecked on fresh replay.
+
+## EXP-005: explicit local Selberg transfer
+
+The [fifth verdict](../experiments/EXP-005-local-selberg-transfer/verdict.md) is
+confirmed. The paper proof localizes Pearce-Crump's optimized sign detector by
+retaining the source's arbitrary-subinterval off-diagonal estimate. It gives
+an explicit odd-critical density for every fixed exponent above one half and,
+through EXP-004, brackets the new simple-critical positivity threshold in
+$(0.5459,0.546)$.
+
+The canonical certificate passed fourteen exact and interval controls. At
+$\theta=0.546$, the fixed legal exponent $u=0.02299$ has strict localization
+margin $1/50000$ and proves a simple-critical proportion above
+$0.0000976239413345396825264438351212564$. The result JSON has SHA-256
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+
+Two earlier artifacts are retained: one failed at Python's integer-to-string
+serialization cap, and one passed mathematically but used nonportable JSON
+number tokens. The final exact rationals use decimal strings and parse under
+both Python and PowerShell. Five focused tests and Ruff passed.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/run.py --output-dir tmp/riemann-exp005-replay --budget-seconds 60
+pytest tests/test_riemann_local_selberg.py
+```
+
+The [proof review](../experiments/EXP-005-local-selberg-transfer/proof-review.json)
+binds the hypothesis, proof, audit, result and verdict. The computation cannot
+replace the analytic localization proof, and neither constitutes external peer
+review or an effective-height theorem.
+
+## EXP-006: Hilbert dimension and parity compression
+
+The [sixth verdict](../experiments/EXP-006-hilbert-parity-compression/verdict.md)
+is confirmed. The original declared product passed, then the consistency audit
+restored the simple-real term already present in the attributed Hilbert bound.
+The final sharp theorem is
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+The earlier broad-bracket and weaker-transfer runs remain under the artifact
+directory. The strengthened canonical run started from clean commit
+`0d736fa22ce7e833200381a32e8cc89f77c660e8`, checked 18,479 multiplicity
+profiles, directed rational transcendental bounds, a scalar barrier witness,
+and containment of a separate 100-digit interval replay. Its result SHA-256 is
+`82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf`.
+
+At $\theta=0.5459$, EXP-006 proves the simple-critical lower proportion exceeds
+$0.0000168381638551244569880374399$. It brackets the unique positivity root in
+$(0.545884,0.545885)$.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/run.py --output-dir tmp/riemann-exp006-replay --budget-seconds 120
+pytest tests/test_riemann_hilbert_parity.py tests/test_riemann_local_selberg.py tests/test_riemann_parity.py
+```
+
+The [proof review](../experiments/EXP-006-hilbert-parity-compression/proof-review.json)
+binds the amended hypothesis, runner, focused tests, proof, audit, canonical
+result and verdict. The finite census is diagnostic; the written argument proves
+universality and the asymptotic transfer.
+
+## EXP-007: spectral-defect parity coupling
+
+The [seventh verdict](../experiments/EXP-007-spectral-defect-parity/verdict.md)
+is confirmed. The finite theorem retains the simple-real spectral defect:
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+The pressure transfer then proves `H(theta)>h3(theta)` for every fixed exponent
+where `h3` is positive. At `theta=0.5459`, the correlated exact gain exceeds
+`1.3732525985593292701164661575215e-70`. This is a strict full-curve
+improvement, not a lower onset exponent or a new printed headline decimal.
+
+The portable canonical run checked 652,260 rational spectra and 18,479
+multiplicity profiles. Its result SHA-256 is
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`.
+Every shared exact interval overlaps an independent 100-digit replay. The
+historical theta=3/4 control makes the coupled root worse while leaving the
+pressure-only theorem stronger, and the result records that boundary.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
+python -m pytest -q tests/test_riemann_spectral_defect_parity.py
+```
+
+The [proof review](../experiments/EXP-007-spectral-defect-parity/proof-review.json)
+binds the declaration, runner, focused tests, proof, audit, canonical result,
+and verdict. The two failed attempts remain preserved as audit evidence.
+
+## EXP-008: rank-six local transfer
+
+The [eighth verdict](../experiments/EXP-008-rank-six-local-transfer/verdict.md)
+is confirmed relative to Pearce-Crump's stated source-certified rank-six
+constant. The written proof first removes the rank-three restriction from the
+EXP-005 localization argument. For every fixed finite rank $q$,
+
+$$
+\liminf\frac ON\ge\frac{\theta-1/2}{4eC_q}.
+$$
+
+Combining the $q=6$ curve with EXP-006 gives the onset brackets
+
+$$
+0.5458837<\theta_6<0.5458838
+<0.5458846<\theta_3<0.5458847.
+$$
+
+At $\theta=0.545884$ the rank-six term is positive and the rank-three term is
+negative. At $\theta=0.5459$, the rank-six lower bound exceeds
+`0.0000177645181613023236390595079` and its improvement over rank three
+exceeds `9.263543061777356e-7`. The optimized EXP-007 companion at
+`rho=11/5` has a strict gain floor above `1.7766622541125682e-68`.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py --output-dir tmp/riemann-exp008-replay --budget-seconds 120
+python -m pytest -q tests/test_riemann_rank_six_local.py
+```
+
+The portable canonical result SHA-256 is
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+The source prints the $C_6$ interval but not its coefficient matrix, so the
+certificate validates the transfer and downstream arithmetic without claiming
+an independent reconstruction. The [proof review](../experiments/EXP-008-rank-six-local-transfer/proof-review.json)
+binds this limitation to the displayed result.
+
+## EXP-009: sharp Wang kernel ratio
+
+The [ninth verdict](../experiments/EXP-009-wang-kernel-sharpening/verdict.md)
+confirms the exact bound `R(alpha,beta) <= sqrt(2)` with equality exactly at
+`(0,1)` and `(1,0)`. The hyperbolic substitution reduces the two-variable
+problem to monotonicity in one compact coordinate and the residual square
+`(X^2-2)^2`.
+
+Substitution into Wang's pinned v1 global framework certifies a simple-critical
+proportion above `0.672500799594675755828355056296...`, a distinct-zero
+companion above `0.836250399797337877914177528148...`, and a gain above the
+baseline greater than `9.5915264110093975e-8`. The global transfer remains
+relative to Wang arXiv:2609.24167v1.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/run.py --output-dir tmp/riemann-exp009-replay --budget-seconds 600
+python -m pytest -q tests/test_riemann_wang_kernel_sharpening.py
+```
+
+The canonical result SHA-256 is
+`0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66`.
+The proof review binds the declaration, strengthened amendment, runner,
+focused tests, result, execution receipt, proof and audit. A separate
+seven-page preprint is published at DOI `10.5281/zenodo.22940291`.
+
+## EXP-010: localized Levinson detector
+
+The [tenth verdict](../experiments/EXP-010-levinson-parity-transfer/verdict.md)
+records three results. Young's short proof of the mollified second moment runs
+on the window `(T,T+T^theta]` for mollifier exponents `nu<theta-1/2`; the
+localized Levinson method with any `Q` satisfying `Q(x)+Q(1-x)` constant
+counts distinct sign changes of `Z` with density `kappa=1-log(c)/R`; and
+degree-201 detectors certify `kappa>0.7170 nu`. The EXP-006 product then gives
+a positive proportion of simple critical zeros for every fixed `theta` in
+`[0.534,1)`, with `h>0.0177638` at `theta=0.5459`.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/run.py --output-dir tmp/riemann-exp010-replay
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/audit.py --canonical tmp/riemann-exp010-replay/result.json --output-dir tmp/riemann-exp010-audit
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/controls.py --output-dir tmp/riemann-exp010-controls
+python -m pytest -q tests/test_riemann_levinson_parity.py
+```
+
+The canonical result SHA-256 is
+`74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464`. The
+auditor never forms the exact moment reduction; it integrates the original
+integrand by validated quadrature from the Chebyshev generators. The controls
+check the counting lemma on zeta windows at three heights and on test
+functions with planted double and triple zeros.
+
+## EXP-011: linear-refinement barrier
+
+The [eleventh verdict](../experiments/EXP-011-linear-refinement-barrier/verdict.md)
+is confirmed. For the Montgomery-Taylor window, six real triples around one
+conjugate pair violate `Q>=2N+3O-4S` by `0.0582`, and a 10001-cell lattice has
+`(Q-2N)/O=2.3589`, so no linear refinement of the EXP-006 product with
+`beta>=2.365` holds. Replay:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/run.py --output-dir tmp/riemann-exp011-replay
+```
+
+The audit recomputes the counterexample with a quadrature-evaluated kernel and
+the lattice with an independent float64 sum. Chapter:
+[linear-refinement barrier](14-linear-refinement-barrier.md).
+
+## EXP-012: Tang-type short-window moment (stopped)
+
+The [twelfth verdict](../experiments/EXP-012-tang-short-window-moment/verdict.md)
+is inconclusive. Tang's short-window reciprocity trades the off-diagonal for a
+dual moment of Dirichlet `L`-functions whose weight has size `H/sqrt(T)`; the
+dual moment is about `sqrt(h)sqrt(T)` per twist pair, so trivial and
+large-sieve bounds give at best EXP-010's range `nu<theta-1/2`. A longer
+admissible mollifier needs an asymptotic evaluation of the dual family.
+
+## EXP-013--015: fixed-input cap and supported phase obstruction
+
+The [EXP-013 verdict](../experiments/EXP-013-mixed-gram-parameter-cap/verdict.md)
+confirms the exact source-based distinct-strip parameter improvement and
+uniform cap. [EXP-014](../experiments/EXP-014-short-window-phase-collision/verdict.md)
+proves the generic phase threshold; [EXP-015](../experiments/EXP-015-squarefree-phase-collision/verdict.md)
+extends it to nonzero basic Mobius coefficients. All are research records.
+
+Each runner accepts --output-dir; its auditor accepts --artifact and --output.
+Run the three experiment directories' run.py then audit.py entry points.
+The corruption controls and byte-identical replay checks are:
+
+```text
+python -m pytest -q tests/test_riemann_parameter_and_phase.py
+```
+
+The threshold obstruction concerns uniform pointwise oscillation. It does
+not exclude cancellation of the signed sum or change the onset 0.534.
+
+## EXP-016: trace-aware clipping
+
+[Verdict](../experiments/EXP-016-trace-aware-clipping/verdict.md): confirmed.
+The trace-zero Jensen surplus permits m=1311 and improves the distinct-strip
+bound to 0.83699291672944... with the same attributed source inputs.
+Its runner/auditor use --output-dir and --artifact/--output respectively.
+Run `python -m pytest -q tests/test_riemann_trace_clipping.py` for the
+11 equality, missing-premise, corruption and byte-replay controls.
+
+## EXP-017--024: stronger transfers, full covers and signed representation
+
+[EXP-017](../experiments/EXP-017-sharp-energy-envelope/verdict.md) gives
+the attributed distinct-strip bound 0.83699292567522..., with its scaled
+prior-art attribution. [EXP-018](../experiments/EXP-018-nine-point-distinct-transfer/verdict.md)
+is a conditional larger transfer whose local input remains unclosed.
+EXP-019's source-identical cover is suspended with validated snapshots;
+EXP-020's stronger-target cover subsequently completed and passed all final checks. Partial coverage is
+not a universal local inequality.
+
+[EXP-021](../experiments/EXP-021-composite-character-layer/verdict.md)
+confirms the classical arithmetic layer and its exact controls.
+[EXP-022](../experiments/EXP-022-pressure-duality-audit/verdict.md)
+proves a ceiling for this fixed pressure assembly, not the true zero
+proportion. EXP-023's separately bound changed-pressure full cover is
+still incomplete. Its cost reviews and ownership controls are operational
+evidence; no new zero-bound verdict is inferred.
+
+[EXP-024](../experiments/EXP-024-gaussian-mellin-reduction/verdict.md)
+closes the representation step in the scope described in the
+[dual-moment chapter](15-dual-moment-range.md). Its signed main estimate
+remains open. None of these finite controls proves RH or external peer
+acceptance. The handoff records live bindings and current coverage.
+
+## EXP-020 and EXP-025 completed consequences
+
+## Completed distinct-zero results, 2026-10-03
+
+EXP-020 completed all 96 shards and every final check: the stronger local
+inequality gives 3997934614153/4775507750000=0.8371747724947154... for
+distinct strip points. EXP-025's reviewed vector-pressure application gives
+30945470743359/36955122080000=0.8373797460706156..., with Lavery's
+external universal local theorem explicitly attributed and not locally
+Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
+mixed-Gram argument remain dependencies.
+
+The focused manuscript `distinct-zero-gram` v0.01 is published with its
+unchanged PDF: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+[concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
+SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public in
+the [separate evidence record](https://doi.org/10.5281/zenodo.23135359).
+Issues #356/#358 close the local input obligation; #364 tracks publication
+and release. PR #363 remains draft and unmerged. No new live application
+release or private main promotion is claimed yet.
+
+EXP-023 remains 95/96 under its owned supervisor through the deadline
+2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is
+unproved and not in the published theorem. EXP-019 remains suspended.
+RH is open; the short-window onset stays 0.534. Worldwide priority and peer
+acceptance are unconfirmed. RH-F4 remains the active analytic focus.
+
+The full derivation, exact inputs and claim boundaries are in
+[the distinct-zero chapter](20-distinct-zero-certificates.md).

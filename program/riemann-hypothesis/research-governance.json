@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "problem": "riemann-hypothesis",
+  "updated": "2026-10-04",
+  "original_problem": {
+    "status": "open",
+    "statement": "The Riemann hypothesis: every nontrivial zero of the Riemann zeta function has real part 1/2.",
+    "priority": "The 2026 unconditional simple-critical proportion is due to Alpoge-Furman (argument found by Claude, arXiv:2608.13637), with Lamzouri's direct proof (arXiv:2609.02882) and Wang's short-interval and global extensions (arXiv:2609.07918, arXiv:2609.24167).",
+    "prohibited_reframing": "No proportion theorem, finite certificate, DOI or release may be described as progress toward proving or disproving RH itself."
+  },
+  "mission": "Prove independently checkable improvements of zero-proportion theorems, chiefly positive proportions of simple critical zeros in short intervals (T,T+T^theta], with exact or certified arithmetic, attributed inputs kept explicit, and one manuscript home per validated theorem.",
+  "current_focus": "RH-F4",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "RH-F0",
+      "title": "Source audit and baseline reproduction",
+      "status": "closed",
+      "priority": 0,
+      "target": "Reproduce the 2026 baseline constants and normalizations and audit the proof and formalization scope.",
+      "value": "A trusted baseline without claiming priority.",
+      "success_gate": "Exact reproduction of the published constants and an algebraic audit.",
+      "stop_conditions": [
+        "A published constant fails exact reproduction."
+      ],
+      "novelty_status": "Replication, not novelty.",
+      "manuscript_route": "short-interval-stability as provenance only",
+      "first_bounded_action": "Completed by EXP-001.",
+      "evidence": [
+        "EXP-001"
+      ]
+    },
+    {
+      "id": "RH-F1",
+      "title": "Short-interval stability, parity and localization",
+      "status": "closed",
+      "priority": 1,
+      "target": "Strengthen the short-interval simple-critical curve and move its positivity onset through finite Hilbert, parity, Selberg and spectral-defect transfers.",
+      "value": "Every-interval statements are stronger than global averages and were not covered by the external sources.",
+      "success_gate": "A proved onset below Wang's cosine threshold with certified constants.",
+      "stop_conditions": [
+        "The onset stops moving under second-order refinements.",
+        "A located prior source proves the same transfer."
+      ],
+      "novelty_status": "No exact overlap found in the recorded primary-source searches; external expert confirmation pending. The rank-six constant is an attributed input.",
+      "manuscript_route": "short-interval-stability v0.07",
+      "first_bounded_action": "Completed by EXP-002 through EXP-008.",
+      "evidence": [
+        "EXP-002",
+        "EXP-003",
+        "EXP-004",
+        "EXP-005",
+        "EXP-006",
+        "EXP-007",
+        "EXP-008"
+      ]
+    },
+    {
+      "id": "RH-F2",
+      "title": "Global three-point kernel sharpening",
+      "status": "closed",
+      "priority": 2,
+      "target": "Replace the non-sharp auxiliary ratio in Wang's global framework by its sharp value.",
+      "value": "A sharp theorem and a global proportion above Wang's printed bound.",
+      "success_gate": "Proof of R(alpha,beta)<=sqrt(2) with equality cases and the certified global transfer.",
+      "stop_conditions": [
+        "The ratio is already sharp in the source."
+      ],
+      "novelty_status": "The ratio theorem is internal; the global proportion is attributed to Wang's framework and sits about 2.9e-8 above his printed C_0+delta_0.",
+      "manuscript_route": "sharp-three-point-kernel v0.01",
+      "first_bounded_action": "Completed by EXP-009.",
+      "evidence": [
+        "EXP-009"
+      ]
+    },
+    {
+      "id": "RH-F3",
+      "title": "Localized Levinson-Conrey detector",
+      "status": "closed",
+      "priority": 3,
+      "target": "Localize Levinson's method with general Q to (T,T+T^theta] and transfer the distinct sign-change density through the parity product.",
+      "value": "Moved the onset from 0.5458838 to 0.534 with about 1000 times the density at theta=0.5459.",
+      "success_gate": "Proved localized moment for nu<theta-1/2, counting lemma, certified detectors, onset below 0.5458838.",
+      "stop_conditions": [
+        "The localized moment fails for general Q."
+      ],
+      "novelty_status": "No short-interval Levinson paper with general Q located through 2026-09-27; external review pending. The onset uses Wang's pair theorem.",
+      "manuscript_route": "short-interval-levinson v0.01",
+      "first_bounded_action": "Completed by EXP-010.",
+      "evidence": [
+        "EXP-010"
+      ]
+    },
+    {
+      "id": "RH-F4",
+      "title": "Short-interval onset toward theta>1/2",
+      "status": "active-success-gate-met",
+      "priority": 4,
+      "target": "Lower the simple-critical positivity onset below 0.534, ideally to every theta>1/2, or prove a documented barrier for the available methods.",
+      "value": "Positivity for every theta>1/2 would close the short-interval question for these methods; a documented barrier prevents wasted rounds.",
+      "success_gate": "A proved onset below 0.534 with certified constants, or a written obstruction for the general-Q short-window moment (RH-027) plus closure notes RH-034 and RH-035.",
+      "stop_conditions": [
+        "RH-031 shows that no partial Steuding extension moves the onset.",
+        "RH-027 hits a summed dual-moment main term (Tang-type) or an off-diagonal main term not uniform in the shifts (Steuding-type).",
+        "Three consecutive experiments fail to move the onset.",
+        "RH-038 finds that the asymptotic large sieve does not extend to short t-ranges of length T/H with the needed moduli range."
+      ],
+      "novelty_status": "Primary-source overlap review through 2026-10-04 located no matching onset; internal derivations and independent arithmetic pass. External peer review and worldwide novelty remain unconfirmed.",
+      "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
+      "first_bounded_action": "EXP-028 and published v0.02 close the original below-0.534 gate; app 0.76.000 is verified live. Retain RH-F4 for the source-complete rational-frequency Mellin preflight in strategy-review-20261004.md; declare a new experiment before controls. No new gain admitted.",
+      "evidence": [
+        "EXP-010",
+        "EXP-011",
+        "EXP-012",
+        "EXP-014",
+        "EXP-015",
+        "EXP-021",
+        "EXP-024",
+        "EXP-027",
+        "EXP-028"
+      ]
+    },
+    {
+      "id": "RH-F5",
+      "title": "Unconditional Cohn-Elkies kernels",
+      "status": "closed",
+      "priority": 5,
+      "target": "Decide whether the Lamzouri/Weil-form framework admits kernels with r-hat<=0 beyond the support without RH.",
+      "value": "A yes would raise the global simple-critical constant by about 0.0067; a no explains why the 2026 unconditional constants equal the RH bandlimited constants.",
+      "success_gate": "A lemma controlling the sign-constrained tail with certified constants, or a proof that the term is uncontrolled.",
+      "stop_conditions": [
+        "The invariant reproduction of 0.67250, 0.6727, 0.6792 and 0.55019 fails.",
+        "The tail term needs localization hypotheses.",
+        "No Gram representation exists for a kernel without compactly supported eta, as Lamzouri's Proposition 2.1 requires."
+      ],
+      "novelty_status": "Closed 2026-09-27: Lamzouri's framework sees the pair sum only as a norm with compactly supported eta, and F has no unconditional sign beyond the support (route preflights, RH-032).",
+      "manuscript_route": "sharp-three-point-kernel next version for a global gain; research record for a negative answer",
+      "first_bounded_action": "RH-032 invariant reproduction and the Cheer-Goldston discrepancy.",
+      "evidence": []
+    },
+    {
+      "id": "RH-F6",
+      "title": "Mixed-Gram fixed-certificate parameter audit",
+      "status": "closed",
+      "priority": 6,
+      "target": "Improve and cap the block/clipping parameters for the fixed seven-point inputs of arXiv:2609.33043v1.",
+      "value": "An exact comparison with a new external result, a small auditable constant gain, and an explicit ceiling that prevents repeated parameter sweeps.",
+      "success_gate": "Rational reproduction, a strictly stronger parameter choice, and an algebraic cap for all larger integer blocks.",
+      "stop_conditions": [
+        "The imported certificate cannot be bound to its source.",
+        "No compatible rational parameter improves the source choice.",
+        "The fixed-input cap is proved."
+      ],
+      "novelty_status": "Source-based arithmetic optimization; no new matrix method, full certificate replay or external priority claim.",
+      "manuscript_route": "research-record; a new analytic theorem or substantial new certificate is required for a manuscript",
+      "first_bounded_action": "Completed: exact improved parameter choice and uniform integer cap; no further fixed-input search.",
+      "evidence": [
+        "EXP-013"
+      ]
+    },
+    {
+      "id": "RH-F7",
+      "title": "Trace-aware clipped-block refinement",
+      "status": "closed",
+      "priority": 7,
+      "target": "Retain the trace-zero complementary energy in the source block dichotomy.",
+      "value": "Test a strictly weaker block condition using the same attributed analytic and local inputs.",
+      "success_gate": "Uniform Jensen/trace proof, feasible exact gain at m=1311, and cap for every larger integer.",
+      "stop_conditions": [
+        "The trace bound fails.",
+        "The new block condition is incompatible with the counting residuals.",
+        "The modified fixed-input cap is proved."
+      ],
+      "novelty_status": "Elementary convexity and classical trace/variance bounds; no new matrix-method or worldwide priority claim.",
+      "manuscript_route": "Supporting research-record; a substantive analytic/certificate improvement is required for a standalone paper.",
+      "first_bounded_action": "Completed: uniform zero-sum Jensen proof, m=1311 exact gain and revised-assembly cap. Stop this bounded route.",
+      "evidence": [
+        "EXP-016"
+      ]
+    },
+    {
+      "id": "RH-F8",
+      "title": "Sharp retained-energy envelope",
+      "status": "closed",
+      "priority": 8,
+      "target": "Determine the sharp one-sided clipping sum for every zero-sum spectrum with fixed energy, and transfer an energy-plus-pressure inequality through it.",
+      "value": "A reusable uniform energy-loss estimate rather than a parameter grid; test whether the all-or-nothing block condition can be removed.",
+      "success_gate": "Uniform sharp proof, independent scalar minorant, PSD equality controls and one exact feasible source-based gain.",
+      "stop_conditions": [
+        "The envelope or pressure transfer fails.",
+        "The bounded proof and candidate are complete.",
+        "Only tiny fixed-input tuning remains."
+      ],
+      "novelty_status": "Classical trace/variance mechanism; no independent worldwide novelty confirmation.",
+      "manuscript_route": "Evaluate after proof; standard supporting lemma and tiny source-based consequence remain research-record.",
+      "first_bounded_action": "Completed uniform proof, scalar minorant, exact feasible gain and prior-art reconciliation; stop tiny tuning.",
+      "evidence": [
+        "EXP-017"
+      ]
+    },
+    {
+      "id": "RH-F9",
+      "title": "Nine-point conditional distinct-strip transfer",
+      "status": "closed",
+      "priority": 9,
+      "target": "Extend the mixed-Gram counting transfer to a pinned r-gap certificate and check a nine-point candidate with explicit premises.",
+      "value": "A larger local certificate can yield a materially larger distinct-strip consequence; exact capacity and provenance checks separate arithmetic from unverified input claims.",
+      "success_gate": "Uniform counting proof, packet capacity validation, independent exact q>0.8370, and an explicit certificate-provenance obligation.",
+      "stop_conditions": [
+        "Any capacity or residual fails.",
+        "The fixed candidate and conditional theorem are complete.",
+        "No full replay binding is available; do not upgrade the premise."
+      ],
+      "novelty_status": "Source-based extension; no worldwide priority or accepted unconditional theorem claimed.",
+      "manuscript_route": "Research-record while universal local input lacks independent replay binding; a coherent verified improvement with this obligation closed would trigger a focused companion paper.",
+      "first_bounded_action": "Completed conditional counting proof and exact candidate; RH-046/issue #356 retains the universal local input obligation.",
+      "evidence": [
+        "EXP-018"
+      ]
+    },
+    {
+      "id": "RH-F10",
+      "title": "Packet-bound nine-point local replay",
+      "status": "closed",
+      "priority": 10,
+      "target": "Prove the universal eight-gap pressure inequality for the exact EXP-018 input packet by a complete independently bound interval cover.",
+      "value": "Close the local computational premise needed for the larger distinct-strip consequence; partial or operational completion is insufficient.",
+      "success_gate": "All 96 disjoint initial-box shards, audited outward bounds, independently checked bindings and coverage, and a mathematical review of the resulting transfer.",
+      "stop_conditions": [
+        "An invalid enclosure or unresolved terminal cell forces correction before continuing.",
+        "A budget limit retains incomplete checkpoints and triggers an updated cost review; it is not user-goal completion."
+      ],
+      "novelty_status": "Replication of the pinned source local inequality; independent complete packet binding has not been supplied. Novelty of the distinct-strip consequence requires its own review.",
+      "manuscript_route": "EXP-019 research-record; a coherent verified distinct-strip improvement with this obligation closed triggers a focused companion manuscript review.",
+      "first_bounded_action": "EXP-019 declared and pushed at 24c9caab: exact pressure-rounding audit, source/packet validation and interrupted-resume tooling smoke before tables and full cover.",
+      "evidence": [
+        "EXP-018",
+        "EXP-019"
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
+    },
+    {
+      "id": "RH-F11",
+      "title": "Second-order local certificate improvement",
+      "status": "closed",
+      "priority": 11,
+      "target": "Prove a stronger nine-point universal local inequality at delta=3051/500000 using a certified Hessian quadratic bound.",
+      "value": "Strengthen the local input itself and reduce exhaustive proof cost, rather than only tune block parameters.",
+      "success_gate": "Uniform second-order lemma, exact independent LDL solve controls, full bound-input coverage and stronger exact distinct-strip transfer.",
+      "stop_conditions": [
+        "An enclosure/solve failure requires correction before further certification.",
+        "A terminal unresolved cell refutes this proposed certificate path.",
+        "An initial hour records incomplete cost and triggers review; no successful bound is inferred."
+      ],
+      "novelty_status": "Quadratic convex lower bounds are classical; candidate local inequality and transferred consequence require complete certification and source overlap review.",
+      "manuscript_route": "Focused distinct-zero companion only after complete stronger-input proof and coherence/novelty review.",
+      "first_bounded_action": "EXP-020: prove the Hessian integration lemma and compare certified LDL completion of squares with an independent exact inverse before gap computations.",
+      "evidence": [
+        "EXP-018",
+        "EXP-019",
+        "EXP-020"
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
+    },
+    {
+      "id": "RH-F12",
+      "title": "Uniform pressure duality audit for distinct zeros",
+      "status": "closed",
+      "priority": 12,
+      "target": "Determine whether the fixed nine-point window and weights can support distinct proportion 0.838 under any pressure, and whether a changed pressure merits a separately declared certificate.",
+      "value": "A pressure-family witness barrier can eliminate an entire tuning route; a materially better candidate changes the local input rather than only block parameters.",
+      "success_gate": "General affine-witness duality proof, certified rational witness energies and independent exact envelope audit; candidate gains require a separate full certificate.",
+      "stop_conditions": [
+        "Five-minute search budget retains partial outcomes before exact controls.",
+        "Ten-minute total compute budget retains an incomplete result and forbids a proof upgrade."
+      ],
+      "novelty_status": "Convex duality and pressure concavity are classical. No gain, priority or manuscript is inferred from a finite minimum.",
+      "manuscript_route": "Research record unless a stronger uniform certificate and coherent analytic transfer are subsequently proved.",
+      "first_bounded_action": "EXP-022 declared and pushed as 4b1af0f5 before exploration; verify packet objective and gradients, then rationalize configurations and audit the complete pressure envelope.",
+      "evidence": [
+        "EXP-022"
+      ]
+    },
+    {
+      "id": "RH-F13",
+      "title": "Changed-pressure universal certificate",
+      "status": "admitted-bounded",
+      "priority": 13,
+      "target": "Prove the fixed nine-point inequality with pressure 1/1250 and delta 52231/5000000, yielding distinct-strip proportion 2340938143167/2795532013000 under the attributed analytic transfer.",
+      "value": "EXP-022 proposes a gain exceeding the declared 0.0001 gate above EXP-020 and places it near a rigorously bounded endpoint of this pressure family.",
+      "success_gate": "Full 96-shard interval cover, independent input/domain/accounting audit, exact elementary block transfer and source-overlap review.",
+      "stop_conditions": [
+        "Twenty-minute single-shard pilot budget preserves partial state and triggers a cost review, not a proof upgrade.",
+        "Invalid rounding or an unresolved terminal cell requires correction or rejection before a full run.",
+        "At most four new workers while EXP-020 continues; runtime sources freeze at launch."
+      ],
+      "novelty_status": "The certificate method and analytic transfer are attributed. The changed local inequality and consequence remain unproved; external novelty is unconfirmed.",
+      "manuscript_route": "One focused distinct-zero companion only after complete proof and coherence/novelty review, including EXP-022's fixed-family ceiling.",
+      "first_bounded_action": "EXP-023 declared in f2e1e7ec before implementation; audit exact rounding and baseline table prefixes, then one actual shard-0 pilot.",
+      "evidence": [
+        "EXP-022",
+        "EXP-023"
+      ]
+    },
+    {
+      "id": "RH-F14",
+      "title": "Attributed vector-pressure distinct-strip lift",
+      "status": "closed",
+      "priority": 14,
+      "target": "Prove one distinct-strip consequence from the newly published thirteen-term-window seven-point certificate with unequal gap pressures.",
+      "value": "A source-bound improvement exceeding the completed distinct-strip value by 1/10000 could close a relevant global consequence independently of partial nine-point covers.",
+      "success_gate": "Exact source functional/capacity binding, independent window enclosure, full vector-pressure transfer and analytic-limit review, and explicit attribution/novelty assessment.",
+      "stop_conditions": [
+        "Thirty-second invariant/window/arithmetic preflight only; no pressure/window sweep.",
+        "Failed binding or block condition rejects this fixed input.",
+        "Downloaded external verification logs cannot be reported as a local rebuild.",
+        "Frozen EXP-020/023 runtime is protected."
+      ],
+      "novelty_status": "External simple-critical proof published and archived; distinct-strip transfer overlap and worldwide priority unresolved; vector summation is classical.",
+      "manuscript_route": "Same prospective focused Gram-method distinct-zero companion only after coherent complete consequence review; supporting substitution alone is insufficient.",
+      "first_bounded_action": "EXP-025 hypothesis pushed as 1a8b9f63 before implementation; one fixed m=742 transfer with native window and exact controls.",
+      "evidence": [
+        "EXP-025"
+      ],
+      "closure": "EXP-020 completes the stronger original-pressure certificate; EXP-025 completes the attributed vector-pressure implication. Published companion v0.01, DOI 10.5281/zenodo.23128663. EXP-019 traversal remains suspended, not completed."
+    },
+    {
+      "id": "RH-F15",
+      "title": "Multiplicity-aware mixed-Gram preflight",
+      "status": "closed",
+      "priority": 2,
+      "target": "Retain the discarded multiplicity remainder and test a uniform count-based gain on actual point Grams.",
+      "value": "Determines whether multiplicity information can strengthen the completed distinct-zero transfer without another blind parameter sweep.",
+      "success_gate": "A proved usable proportion gain; the bounded preflight only resolves the retained inequality and isolation obstruction.",
+      "stop_conditions": [
+        "An isolated doubled point refutes a factor depending only on its count.",
+        "The remainder has no pressure/geometric lower bound sufficient to change the zero bound."
+      ],
+      "novelty_status": "Completion algebra is attributed source machinery; no method priority claim. Further geometric gain unproved.",
+      "manuscript_route": "Research record; distinct-zero-gram only after a coherent fully certified stronger consequence.",
+      "first_bounded_action": "EXP-026 declaration before code; one isolated-point family with symbolic and native controls; 30 seconds CPU.",
+      "evidence": [
+        "EXP-026"
+      ],
+      "closure": "EXP-026 proves the retained remainder identity and refutes count-only and pressure-only positive gains using independently certified compact kernel-root isolation. No zero-bound improvement."
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "short-interval-stability",
+      "path": "manuscripts/riemann-hypothesis/short-interval-stability",
+      "version": "0.07",
+      "version_doi": "10.5281/zenodo.22860012",
+      "concept_doi": "10.5281/zenodo.22727388",
+      "status": "published",
+      "split_action": "none; immutable versions retained"
+    },
+    {
+      "slug": "sharp-three-point-kernel",
+      "path": "manuscripts/riemann-hypothesis/sharp-three-point-kernel",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.22940291",
+      "concept_doi": "10.5281/zenodo.22940290",
+      "status": "published",
+      "split_action": "none"
+    },
+    {
+      "slug": "short-interval-levinson",
+      "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02",
+      "version": "0.02",
+      "version_doi": "10.5281/zenodo.23132248",
+      "concept_doi": "10.5281/zenodo.22984154",
+      "status": "published-internally-reviewed",
+      "split_action": "none"
+    },
+    {
+      "slug": "distinct-zero-gram",
+      "path": "manuscripts/riemann-hypothesis/distinct-zero-gram",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.23128663",
+      "concept_doi": "10.5281/zenodo.23128662",
+      "status": "published",
+      "split_action": "focused global distinct-zero companion; earlier papers immutable"
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 1,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 2,
+      "end": 8,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "short-interval-stability"
+      ]
+    },
+    {
+      "start": 9,
+      "end": 9,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "sharp-three-point-kernel"
+      ]
+    },
+    {
+      "start": 10,
+      "end": 10,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "short-interval-levinson"
+      ]
+    },
+    {
+      "start": 11,
+      "end": 11,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 12,
+      "end": 12,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 13,
+      "end": 15,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 16,
+      "end": 16,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 17,
+      "end": 17,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 18,
+      "end": 18,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 19,
+      "end": 19,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 20,
+      "end": 20,
+      "classification": "companion-manuscript",
+      "manuscripts": [
+        "distinct-zero-gram"
+      ]
+    },
+    {
+      "start": 21,
+      "end": 23,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 24,
+      "end": 24,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 25,
+      "end": 25,
+      "classification": "companion-manuscript",
+      "manuscripts": [
+        "distinct-zero-gram"
+      ]
+    },
+    {
+      "start": 26,
+      "end": 26,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 27,
+      "end": 27,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 28,
+      "end": 28,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "short-interval-levinson"
+      ]
+    }
+  ],
+  "execution_state": "paused-by-user",
+  "current_work": "none",
+  "publication_repair_delivery": "program\\riemann-hypothesis\\publication-correction-20261004\\delivery-verification.json"
+}

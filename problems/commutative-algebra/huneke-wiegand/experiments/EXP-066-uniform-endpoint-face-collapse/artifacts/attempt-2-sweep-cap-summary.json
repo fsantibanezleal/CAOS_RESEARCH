@@ -1,0 +1,9 @@
+{
+  "attempt": 2,
+  "status": "INCONCLUSIVE_RESOURCE",
+  "last_completed_p": 250,
+  "completed_parameter_count": 243,
+  "completed_endpoint_checks": 486,
+  "reason": "The initial face classifier exceeded the declared 120-second sweep cap because it recomputed complete exterior counts for every face.",
+  "preservation": "The exact formula was unchanged. The optimized attempt uses one count vector and a constant-time deletion update."
+}

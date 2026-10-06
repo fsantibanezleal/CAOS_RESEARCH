@@ -12,15 +12,35 @@ import hashlib
 import json
 import re
 import subprocess
+from decimal import Decimal
 from fractions import Fraction
 from pathlib import Path
 
 import yaml
 
+from . import riemann_distinct, riemann_moment
+
 ROOT = Path(__file__).resolve().parents[3]
 DERIVED = ROOT / "data" / "derived"
 MANIFESTS = DERIVED / "manifests"
 EXP004_DECLARATION = "e03413b2301bf45ca68ff6e945f25add9a1c3a89"
+EXP005_DECLARATION = "6fd59fec51dda399de40e0327107dba42deb5b45"
+EXP005_CANONICAL = "864fe6b7bee69c6bdac72e72fbfb88b49ac0fef2"
+EXP006_DECLARATION = "b1febcf8a6d5830218e1df386af1e8a92c3037be"
+EXP006_CANONICAL = "0d736fa22ce7e833200381a32e8cc89f77c660e8"
+EXP007_DECLARATION = "a2abdcc8360399b3fa42aaea9245e4b83352c30f"
+EXP007_CANONICAL = "5d7e7a6a73e433a7ff9f6628815d54243425afa9"
+EXP008_DECLARATION = "2297d2fc5cb6a65b2a3aa48b019934d002ef242b"
+EXP008_CANONICAL = "46f258cdab9487db829ab96bd5267360bd656d91"
+EXP009_DECLARATION = "123eee0d49969226201e68d6c32746087a91e6fc"
+EXP009_AMENDMENT = "edd689fef41ee5986353f6b62e8c34f81d55ae0f"
+EXP009_CANONICAL = "6b8e009c73f87047a2bc2c237991d241bd3b08c0"
+EXP010_DECLARATION = "2f7aaa6b3542dd9c8306c52813e392988e9c65fc"
+EXP010_CANONICAL = "3dba086fed900d5a828bb78182fc68541b641d8a"
+EXP011_DECLARATION = "9886f07bc05928c635754261fe282034af08904f"
+EXP011_AMENDMENT = "136b40f01d17b0bb4a4d3e5ad8b57fac74af44a8"
+EXP012_DECLARATION = "76c4439830027619f52163a6c344d55d96ed26b4"
+RIEMANN_EXPERIMENT_MAX = 28
 
 
 def _read_portfolio() -> dict:
@@ -131,7 +151,7 @@ def _read_experiments() -> list[dict]:
                 rec["artifacts"] = sorted(
                     [{"name": p[len(art_prefix):], "bytes": len(_committed_bytes(p))}
                      for p in source_paths
-                     if p.startswith(art_prefix) and "/" not in p[len(art_prefix):]],
+                     if p.startswith(art_prefix)],
                     key=lambda r: r["name"])
             elif arts.is_dir():
                 rec["artifacts"] = sorted(
@@ -213,6 +233,14 @@ def _riemann_payload() -> dict:
     exp_two = "EXP-002-short-interval-stability"
     exp_three = "EXP-003-odd-frame-pressure"
     exp_four = "EXP-004-parity-density-transfer"
+    exp_five = "EXP-005-local-selberg-transfer"
+    exp_six = "EXP-006-hilbert-parity-compression"
+    exp_seven = "EXP-007-spectral-defect-parity"
+    exp_eight = "EXP-008-rank-six-local-transfer"
+    exp_nine = "EXP-009-wang-kernel-sharpening"
+    exp_ten = "EXP-010-levinson-parity-transfer"
+    exp_eleven = "EXP-011-linear-refinement-barrier"
+    exp_twelve = "EXP-012-tang-short-window-moment"
     specifications = [
         ("constant_audit", exp_one, f"experiments/{exp_one}/artifacts/result.json"),
         ("result", exp_two, f"experiments/{exp_two}/artifacts/result.json"),
@@ -238,8 +266,114 @@ def _riemann_payload() -> dict:
         ("parity_audit", exp_four, f"experiments/{exp_four}/adversarial-audit.md"),
         ("parity_verdict", exp_four, f"experiments/{exp_four}/verdict.md"),
         ("parity_review", exp_four, f"experiments/{exp_four}/proof-review.json"),
+        ("local_result", exp_five, f"experiments/{exp_five}/artifacts/canonical/result.json"),
+        ("local_receipt", exp_five,
+         f"experiments/{exp_five}/artifacts/canonical/execution-receipt.json"),
+        ("local_hypothesis", exp_five, f"experiments/{exp_five}/hypothesis.md"),
+        ("local_runner", exp_five, f"experiments/{exp_five}/run.py"),
+        ("local_proof", exp_five, f"experiments/{exp_five}/mathematical-proof.md"),
+        ("local_audit", exp_five, f"experiments/{exp_five}/adversarial-audit.md"),
+        ("local_verdict", exp_five, f"experiments/{exp_five}/verdict.md"),
+        ("local_review", exp_five, f"experiments/{exp_five}/proof-review.json"),
+        ("hilbert_result", exp_six, f"experiments/{exp_six}/artifacts/canonical/result.json"),
+        ("hilbert_receipt", exp_six,
+         f"experiments/{exp_six}/artifacts/canonical/execution-receipt.json"),
+        ("hilbert_hypothesis", exp_six, f"experiments/{exp_six}/hypothesis.md"),
+        ("hilbert_runner", exp_six, f"experiments/{exp_six}/run.py"),
+        ("hilbert_proof", exp_six, f"experiments/{exp_six}/mathematical-proof.md"),
+        ("hilbert_audit", exp_six, f"experiments/{exp_six}/adversarial-audit.md"),
+        ("hilbert_verdict", exp_six, f"experiments/{exp_six}/verdict.md"),
+        ("hilbert_review", exp_six, f"experiments/{exp_six}/proof-review.json"),
     ]
-    payload: dict = {"schema": "riemann-replay-v3", "provenance": []}
+    if RIEMANN_EXPERIMENT_MAX >= 7:
+        specifications.extend([
+            ("spectral_result", exp_seven,
+             f"experiments/{exp_seven}/artifacts/canonical/result.json"),
+            ("spectral_receipt", exp_seven,
+             f"experiments/{exp_seven}/artifacts/canonical/execution-receipt.json"),
+            ("spectral_hypothesis", exp_seven, f"experiments/{exp_seven}/hypothesis.md"),
+            ("spectral_runner", exp_seven, f"experiments/{exp_seven}/run.py"),
+            ("spectral_proof", exp_seven,
+             f"experiments/{exp_seven}/mathematical-proof.md"),
+            ("spectral_audit", exp_seven, f"experiments/{exp_seven}/adversarial-audit.md"),
+            ("spectral_verdict", exp_seven, f"experiments/{exp_seven}/verdict.md"),
+            ("spectral_review", exp_seven, f"experiments/{exp_seven}/proof-review.json"),
+        ])
+    if RIEMANN_EXPERIMENT_MAX >= 8:
+        specifications.extend([
+            ("rank_six_result", exp_eight,
+             f"experiments/{exp_eight}/artifacts/canonical/result.json"),
+            ("rank_six_receipt", exp_eight,
+             f"experiments/{exp_eight}/artifacts/canonical/execution-receipt.json"),
+            ("rank_six_hypothesis", exp_eight, f"experiments/{exp_eight}/hypothesis.md"),
+            ("rank_six_runner", exp_eight, f"experiments/{exp_eight}/run.py"),
+            ("rank_six_proof", exp_eight,
+             f"experiments/{exp_eight}/mathematical-proof.md"),
+            ("rank_six_audit", exp_eight, f"experiments/{exp_eight}/adversarial-audit.md"),
+            ("rank_six_verdict", exp_eight, f"experiments/{exp_eight}/verdict.md"),
+            ("rank_six_review", exp_eight, f"experiments/{exp_eight}/proof-review.json"),
+        ])
+    if RIEMANN_EXPERIMENT_MAX >= 9:
+        specifications.extend([
+            ("wang_kernel_source_manifest", "source-review",
+             "context/source-manifest-exp009.json"),
+            ("wang_kernel_result", exp_nine,
+             f"experiments/{exp_nine}/artifacts/canonical/result.json"),
+            ("wang_kernel_receipt", exp_nine,
+             f"experiments/{exp_nine}/artifacts/canonical/execution-receipt.json"),
+            ("wang_kernel_hypothesis", exp_nine, f"experiments/{exp_nine}/hypothesis.md"),
+            ("wang_kernel_amendment", exp_nine,
+             f"experiments/{exp_nine}/amendment-001-optimal-ratio.md"),
+            ("wang_kernel_runner", exp_nine, f"experiments/{exp_nine}/run.py"),
+            ("wang_kernel_proof", exp_nine,
+             f"experiments/{exp_nine}/mathematical-proof.md"),
+            ("wang_kernel_audit", exp_nine, f"experiments/{exp_nine}/adversarial-audit.md"),
+            ("wang_kernel_verdict", exp_nine, f"experiments/{exp_nine}/verdict.md"),
+            ("wang_kernel_review", exp_nine, f"experiments/{exp_nine}/proof-review.json"),
+        ])
+    if RIEMANN_EXPERIMENT_MAX >= 10:
+        specifications.extend([
+            ("levinson_source_manifest", "source-review", "context/source-manifest-exp010.json"),
+            ("levinson_result", exp_ten, f"experiments/{exp_ten}/artifacts/canonical/result.json"),
+            ("levinson_receipt", exp_ten,
+             f"experiments/{exp_ten}/artifacts/canonical/execution-receipt.json"),
+            ("levinson_hypothesis", exp_ten, f"experiments/{exp_ten}/hypothesis.md"),
+            ("levinson_frozen", exp_ten, f"experiments/{exp_ten}/frozen-parameters.json"),
+            ("levinson_runner", exp_ten, f"experiments/{exp_ten}/run.py"),
+            ("levinson_auditor", exp_ten, f"experiments/{exp_ten}/audit.py"),
+            ("levinson_audit_output", exp_ten, f"experiments/{exp_ten}/artifacts/audit/audit.json"),
+            ("levinson_controls", exp_ten, f"experiments/{exp_ten}/controls.py"),
+            ("levinson_controls_output", exp_ten,
+             f"experiments/{exp_ten}/artifacts/controls/controls.json"),
+            ("levinson_proof", exp_ten, f"experiments/{exp_ten}/mathematical-proof.md"),
+            ("levinson_audit", exp_ten, f"experiments/{exp_ten}/adversarial-audit.md"),
+            ("levinson_verdict", exp_ten, f"experiments/{exp_ten}/verdict.md"),
+            ("levinson_review", exp_ten, f"experiments/{exp_ten}/proof-review.json"),
+        ])
+    if RIEMANN_EXPERIMENT_MAX >= 11:
+        specifications.extend([
+            ("barrier_result", exp_eleven,
+             f"experiments/{exp_eleven}/artifacts/canonical/result.json"),
+            ("barrier_receipt", exp_eleven,
+             f"experiments/{exp_eleven}/artifacts/canonical/execution-receipt.json"),
+            ("barrier_hypothesis", exp_eleven, f"experiments/{exp_eleven}/hypothesis.md"),
+            ("barrier_frozen", exp_eleven, f"experiments/{exp_eleven}/frozen-parameters.json"),
+            ("barrier_runner", exp_eleven, f"experiments/{exp_eleven}/run.py"),
+            ("barrier_auditor", exp_eleven, f"experiments/{exp_eleven}/audit.py"),
+            ("barrier_audit_output", exp_eleven,
+             f"experiments/{exp_eleven}/artifacts/audit/audit.json"),
+            ("barrier_verdict", exp_eleven, f"experiments/{exp_eleven}/verdict.md"),
+        ])
+    if RIEMANN_EXPERIMENT_MAX >= 12:
+        specifications.extend([
+            ("tang_hypothesis", exp_twelve, f"experiments/{exp_twelve}/hypothesis.md"),
+            ("tang_check", exp_twelve, f"experiments/{exp_twelve}/weight_size.py"),
+            ("tang_check_output", exp_twelve,
+             f"experiments/{exp_twelve}/artifacts/canonical/weight-size.json"),
+            ("tang_verdict", exp_twelve, f"experiments/{exp_twelve}/verdict.md"),
+        ])
+    replay_version = 9 if RIEMANN_EXPERIMENT_MAX >= 10 else min(max(RIEMANN_EXPERIMENT_MAX - 1, 5), 8)
+    payload: dict = {"schema": f"riemann-replay-v{replay_version}", "provenance": []}
     source_bytes: dict[str, bytes] = {}
 
     def read_source(role: str, experiment: str, relative: str) -> bytes:
@@ -259,10 +393,15 @@ def _riemann_payload() -> dict:
 
     for role, experiment, relative in specifications:
         content = read_source(role, experiment, relative)
-        if role in {"constant_audit", "result", "pressure_result", "parity_result"}:
+        if role in {"constant_audit", "result", "pressure_result", "parity_result",
+                    "local_result", "hilbert_result", "spectral_result",
+                    "rank_six_result", "wang_kernel_result", "levinson_result",
+                    "barrier_result", "tang_check_output"}:
             payload[role] = json.loads(content)
-        elif role == "source_manifest":
-            payload["reviewed_on"] = json.loads(content)["reviewed_on"]
+        elif role in {"source_manifest", "wang_kernel_source_manifest",
+                      "levinson_source_manifest"}:
+            payload["reviewed_on"] = max(
+                payload.get("reviewed_on", ""), json.loads(content)["reviewed_on"])
     if payload["constant_audit"]["status"] != "PASS":
         raise ValueError("Riemann source and constant audit has not passed")
     audit = payload["result"]["audit"]
@@ -425,6 +564,536 @@ def _riemann_payload() -> dict:
         if review["source_sha256"][role] != hashlib.sha256(source_bytes[role]).hexdigest():
             raise ValueError(f"EXP-004 proof review no longer matches: {role}")
     payload["parity_review"] = review
+
+    local = payload["local_result"]
+    if (local.get("schema") != "riemann-exp005-results-v1"
+            or local.get("status") != "pass" or local.get("passed") is not True):
+        raise ValueError("EXP-005 requires its passing canonical result")
+    expected_checks = {
+        "baseline_negative", "boundary_rejected", "c3_interval_ordered",
+        "curve_simple_positive", "e_interval", "fixed_u_simple_positive",
+        "interval_contains_c", "interval_contains_curve", "interval_contains_fixed",
+        "mollifier_below_quarter", "negative_theta_control", "source_hashes",
+        "sqrt2_interval", "strict_localization_margin",
+    }
+    if set(local.get("checks", {})) != expected_checks or not all(local["checks"].values()):
+        raise ValueError("EXP-005 canonical result omits a declared exact control")
+    if (local["claim_boundary"].get("rh_solved") is not False
+            or local["boundary_control"].get("accepted") is not False
+            or local["boundary_control"]["margin"]["numerator"] != "0"):
+        raise ValueError("EXP-005 claim or mollifier-boundary control differs from the verdict")
+    parameters = local["parameters"]
+    if (parameters["theta"]["numerator"] != "273"
+            or parameters["theta"]["denominator"] != "500"
+            or parameters["negative_control_theta"]["numerator"] != "5459"
+            or parameters["negative_control_theta"]["denominator"] != "10000"
+            or parameters["mollifier_exponent_u"]["numerator"] != "2299"
+            or parameters["mollifier_exponent_u"]["denominator"] != "100000"):
+        raise ValueError("EXP-005 threshold or fixed mollifier parameters changed")
+
+    def certified_decimal(record: dict) -> Decimal:
+        # EXP-005 keeps very large exact numerator/denominator strings. Their
+        # independently checked decimal fields avoid Python's defensive
+        # integer-string limit during a public-data bake.
+        return Decimal(record["decimal"])
+
+    positive = local["positive_point"]
+    if (certified_decimal(positive["fixed_u_simple_lower"])
+            <= certified_decimal(parameters["simple_gate"])
+            or certified_decimal(positive["simple_curve_lower"]) <= 0
+            or certified_decimal(positive["localization_exponent_margin"]) <= 0
+            or certified_decimal(local["negative_control"]["simple_curve_upper"]) >= 0):
+        raise ValueError("EXP-005 exact positive, negative, or strict-margin gate failed")
+    identity = local["execution_identity"]
+    if (identity.get("head") != EXP005_CANONICAL
+            or identity.get("tracked_clean_at_start") is not True
+            or identity.get("hypothesis_sha256")
+            != hashlib.sha256(source_bytes["local_hypothesis"]).hexdigest()
+            or identity.get("run_py_sha256")
+            != hashlib.sha256(source_bytes["local_runner"]).hexdigest()):
+        raise ValueError("EXP-005 execution identity differs from committed evidence")
+    local_hypothesis_path = f"{problem}/experiments/{exp_five}/hypothesis.md"
+    if _revision_bytes(local_hypothesis_path, EXP005_DECLARATION) != source_bytes["local_hypothesis"]:
+        raise ValueError("EXP-005 hypothesis differs from its declaration revision")
+    result_sha256 = hashlib.sha256(source_bytes["local_result"]).hexdigest()
+    receipt = json.loads(source_bytes["local_receipt"])
+    if (receipt.get("schema") != "riemann-exp005-execution-receipt-v1"
+            or receipt.get("status") != "pass"
+            or receipt.get("result_sha256") != result_sha256
+            or receipt.get("git", {}).get("head") != EXP005_CANONICAL
+            or receipt.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-005 execution receipt does not bind the canonical result")
+    local_review = json.loads(source_bytes["local_review"])
+    if (local_review.get("schema") != "riemann-exp005-proof-review-v1"
+            or local_review.get("declaration_commit") != EXP005_DECLARATION
+            or local_review.get("canonical_commit") != EXP005_CANONICAL
+            or local_review.get("scientific_verdict") != "confirmed"
+            or local_review.get("analytic_localization_reviewed") is not True
+            or local_review.get("exact_certificate_reviewed") is not True):
+        raise ValueError("EXP-005 requires separate analytic and exact-certificate review")
+    local_review_roles = {
+        "hypothesis": "local_hypothesis",
+        "mathematical_proof": "local_proof",
+        "adversarial_audit": "local_audit",
+        "result": "local_result",
+        "verdict": "local_verdict",
+    }
+    if set(local_review.get("source_sha256", {})) != set(local_review_roles):
+        raise ValueError("EXP-005 proof review omits required scientific evidence")
+    for reviewed_name, role in local_review_roles.items():
+        if (local_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-005 proof review no longer matches: {role}")
+    payload["local_review"] = local_review
+
+    # EXP-006 keeps the analytic theorem separate from the finite exact
+    # certificate. The exporter checks identities and byte bindings only; it
+    # does not rerun or promote the mathematical proof.
+    hilbert_test_path = "tests/test_riemann_hilbert_parity.py"
+    hilbert_test = _committed_bytes(hilbert_test_path)
+    hilbert_test_commit = subprocess.run(
+        ["git", "log", "-1", "--format=%H", "HEAD", "--", hilbert_test_path],
+        cwd=ROOT, check=True, capture_output=True, text=True,
+    ).stdout.strip()
+    payload["provenance"].append({
+        "role": "hilbert_test", "source_exp": exp_six, "path": hilbert_test_path,
+        "source_commit": hilbert_test_commit, "bytes": len(hilbert_test),
+        "sha256": hashlib.sha256(hilbert_test).hexdigest(),
+    })
+    source_bytes["hilbert_test"] = hilbert_test
+
+    hilbert = payload["hilbert_result"]
+    if (hilbert.get("schema") != "riemann-exp006-results-v2"
+            or hilbert.get("status") != "pass" or hilbert.get("passed") is not True):
+        raise ValueError("EXP-006 requires its passing strengthened canonical result")
+    expected_hilbert_checks = {
+        "c3_interval_ordered", "c6_interval_ordered", "e_interval",
+        "finite_census", "finite_census_has_all_regimes",
+        "independent_interval_contained", "old_linear_negative",
+        "rank_six_sensitivity_stronger", "root_lower_negative",
+        "root_monotone_conditions", "root_upper_positive",
+        "scalar_headlines_allow_zero", "source_hashes", "sqrt2_interval",
+        "strong_bound_improves_weak", "strong_bound_positive",
+        "target_below_wang_root", "weak_bound_positive",
+    }
+    if (set(hilbert.get("checks", {})) != expected_hilbert_checks
+            or not all(hilbert["checks"].values())):
+        raise ValueError("EXP-006 canonical result omits a declared exact control")
+    if hilbert["claim_boundary"].get("rh_solved") is not False:
+        raise ValueError("EXP-006 claim boundary changed")
+    if hilbert["finite_census"] != {
+            **hilbert["finite_census"], "cases": 18479, "equality_cases": 135,
+            "strict_cases": 18340, "empty_dimension_cases": 4}:
+        raise ValueError("EXP-006 finite census differs from the declared scope")
+    hilbert_parameters = hilbert["parameters"]
+    expected_parameters = {
+        "theta": ("5459", "10000"),
+        "root_lower_theta": ("136471", "250000"),
+        "root_upper_theta": ("109177", "200000"),
+    }
+    for name, (numerator, denominator) in expected_parameters.items():
+        if (hilbert_parameters[name]["numerator"] != numerator
+                or hilbert_parameters[name]["denominator"] != denominator):
+            raise ValueError(f"EXP-006 parameter changed: {name}")
+    target = hilbert["target"]
+    if (certified_decimal(target["c_upper"]) >= 0
+            or certified_decimal(target["old_linear_upper"]) >= 0
+            or certified_decimal(target["strong_simple_lower"])
+            <= certified_decimal(hilbert_parameters["simple_gate"])
+            or certified_decimal(target["strong_simple_lower"])
+            <= certified_decimal(target["weak_simple_upper"])
+            or certified_decimal(hilbert["root_bracket"]["lower"]["root_function_upper"]) >= 0
+            or certified_decimal(hilbert["root_bracket"]["upper"]["root_function_lower"]) <= 0):
+        raise ValueError("EXP-006 target, improvement, or root-bracket gate failed")
+    if (hilbert["scalar_headline_barrier"].get("passed") is not True
+            or not all(hilbert["scalar_headline_barrier"]["checks"].values())):
+        raise ValueError("EXP-006 scalar barrier witness is incomplete")
+    hilbert_identity = hilbert["execution_identity"]
+    if (hilbert_identity.get("head") != EXP006_CANONICAL
+            or hilbert_identity.get("tracked_clean_at_start") is not True
+            or hilbert_identity.get("hypothesis_sha256")
+            != hashlib.sha256(source_bytes["hilbert_hypothesis"]).hexdigest()
+            or hilbert_identity.get("run_py_sha256")
+            != hashlib.sha256(source_bytes["hilbert_runner"]).hexdigest()):
+        raise ValueError("EXP-006 execution identity differs from committed evidence")
+    hilbert_result_sha256 = hashlib.sha256(source_bytes["hilbert_result"]).hexdigest()
+    hilbert_receipt = json.loads(source_bytes["hilbert_receipt"])
+    if (hilbert_receipt.get("schema") != "riemann-exp006-execution-receipt-v1"
+            or hilbert_receipt.get("status") != "pass"
+            or hilbert_receipt.get("result_sha256") != hilbert_result_sha256
+            or hilbert_receipt.get("git", {}).get("head") != EXP006_CANONICAL
+            or hilbert_receipt.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-006 execution receipt does not bind the canonical result")
+    original_hypothesis = _revision_bytes(
+        f"{problem}/experiments/{exp_six}/hypothesis.md", EXP006_DECLARATION,
+    )
+    if b"Q(N-O)" not in original_hypothesis or b"0.5458<" not in original_hypothesis:
+        raise ValueError("EXP-006 original declaration does not contain the frozen target")
+    hilbert_review = json.loads(source_bytes["hilbert_review"])
+    if (hilbert_review.get("schema") != "riemann-exp006-proof-review-v1"
+            or hilbert_review.get("declaration_commit") != EXP006_DECLARATION
+            or hilbert_review.get("canonical_commit") != EXP006_CANONICAL
+            or hilbert_review.get("scientific_verdict") != "confirmed"
+            or hilbert_review.get("analytic_transfer_reviewed") is not True
+            or hilbert_review.get("exact_certificate_reviewed") is not True):
+        raise ValueError("EXP-006 requires separate theorem and certificate review")
+    hilbert_review_roles = {
+        "hypothesis": "hilbert_hypothesis",
+        "mathematical_proof": "hilbert_proof",
+        "adversarial_audit": "hilbert_audit",
+        "result": "hilbert_result",
+        "verdict": "hilbert_verdict",
+        "runner": "hilbert_runner",
+        "focused_test": "hilbert_test",
+    }
+    if set(hilbert_review.get("source_sha256", {})) != set(hilbert_review_roles):
+        raise ValueError("EXP-006 proof review omits required scientific evidence")
+    for reviewed_name, role in hilbert_review_roles.items():
+        if (hilbert_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-006 proof review no longer matches: {role}")
+    payload["hilbert_review"] = hilbert_review
+    if RIEMANN_EXPERIMENT_MAX <= 6:
+        return payload
+
+    def add_focused_test(role: str, experiment: str, path: str) -> bytes:
+        content = _committed_bytes(path)
+        commit = subprocess.run(
+            ["git", "log", "-1", "--format=%H", "HEAD", "--", path],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout.strip()
+        payload["provenance"].append({
+            "role": role, "source_exp": experiment, "path": path,
+            "source_commit": commit, "bytes": len(content),
+            "sha256": hashlib.sha256(content).hexdigest(),
+        })
+        source_bytes[role] = content
+        return content
+
+    add_focused_test("spectral_test", exp_seven,
+                     "tests/test_riemann_spectral_defect_parity.py")
+    spectral = payload["spectral_result"]
+    expected_spectral_checks = {
+        "frozen_exact_gain", "independent_replay_overlaps", "multiplicity_census",
+        "sensitivity_comparison_classified", "sensitivity_headline_boundary",
+        "source_hashes", "spectral_census",
+    }
+    if (spectral.get("schema") != "riemann-exp007-results-v1"
+            or spectral.get("status") != "pass" or spectral.get("passed") is not True
+            or set(spectral.get("checks", {})) != expected_spectral_checks
+            or not all(spectral["checks"].values())
+            or spectral.get("claim_boundary", {}).get("rh_solved") is not False
+            or spectral.get("claim_boundary", {}).get("onset_exponent_improved") is not False
+            or Decimal(spectral["target"]["certified_gain_floor"]["lower"]["decimal"]) <= 0):
+        raise ValueError("EXP-007 canonical result fails its declared evidence boundary")
+    spectral_identity = spectral.get("execution_identity", {})
+    if (spectral_identity.get("declaration_commit") != EXP007_DECLARATION
+            or spectral_identity.get("head") != EXP007_CANONICAL
+            or spectral_identity.get("tracked_clean_at_start") is not True
+            or spectral_identity.get("hypothesis_sha256")
+            != hashlib.sha256(source_bytes["spectral_hypothesis"]).hexdigest()
+            or spectral_identity.get("run_py_sha256")
+            != hashlib.sha256(source_bytes["spectral_runner"]).hexdigest()):
+        raise ValueError("EXP-007 execution identity differs from committed evidence")
+    spectral_result_sha256 = hashlib.sha256(source_bytes["spectral_result"]).hexdigest()
+    spectral_receipt = json.loads(source_bytes["spectral_receipt"])
+    if (spectral_receipt.get("schema") != "riemann-exp007-execution-receipt-v1"
+            or spectral_receipt.get("status") != "pass"
+            or spectral_receipt.get("result_sha256") != spectral_result_sha256
+            or spectral_receipt.get("git", {}).get("head") != EXP007_CANONICAL
+            or spectral_receipt.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-007 execution receipt does not bind the canonical result")
+    if (_revision_bytes(
+            f"{problem}/experiments/{exp_seven}/hypothesis.md", EXP007_DECLARATION,
+            ) != source_bytes["spectral_hypothesis"]):
+        raise ValueError("EXP-007 hypothesis differs from its declaration revision")
+    spectral_review = json.loads(source_bytes["spectral_review"])
+    if (spectral_review.get("schema") != "riemann-exp007-proof-review-v1"
+            or spectral_review.get("declaration_commit") != EXP007_DECLARATION
+            or spectral_review.get("canonical_commit") != EXP007_CANONICAL
+            or spectral_review.get("scientific_verdict") != "confirmed"
+            or spectral_review.get("analytic_transfer_reviewed") is not True
+            or spectral_review.get("exact_certificate_reviewed") is not True):
+        raise ValueError("EXP-007 requires separate theorem and certificate review")
+    spectral_review_roles = {
+        "hypothesis": "spectral_hypothesis", "mathematical_proof": "spectral_proof",
+        "adversarial_audit": "spectral_audit", "result": "spectral_result",
+        "verdict": "spectral_verdict", "runner": "spectral_runner",
+        "focused_test": "spectral_test",
+    }
+    if set(spectral_review.get("source_sha256", {})) != set(spectral_review_roles):
+        raise ValueError("EXP-007 proof review omits required scientific evidence")
+    for reviewed_name, role in spectral_review_roles.items():
+        if (spectral_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-007 proof review no longer matches: {role}")
+    payload["spectral_review"] = spectral_review
+    if RIEMANN_EXPERIMENT_MAX <= 7:
+        return payload
+
+    add_focused_test("rank_six_test", exp_eight,
+                     "tests/test_riemann_rank_six_local.py")
+    rank_six = payload["rank_six_result"]
+    expected_rank_six_checks = {
+        "c6_interval_below_c3", "edge_rank_six_above_2_5e_7",
+        "edge_rank_three_negative", "independent_interval_overlap",
+        "point_h6_above_1_776e_5", "point_improvement_above_9_26e_7",
+        "rank_six_coarse_lower_negative", "rank_six_coarse_upper_positive",
+        "rank_six_fine_lower_negative", "rank_six_fine_upper_positive",
+        "rank_three_fine_lower_negative", "rank_three_fine_upper_positive",
+        "source_hashes", "spectral_gain_above_9e_69", "spectral_rho_above_two",
+        "strictly_earlier_onset",
+    }
+    if (rank_six.get("schema") != "riemann-exp008-results-v1"
+            or rank_six.get("status") != "pass" or rank_six.get("passed") is not True
+            or set(rank_six.get("checks", {})) != expected_rank_six_checks
+            or not all(rank_six["checks"].values())
+            or rank_six.get("claim_boundary", {}).get("rh_solved") is not False
+            or rank_six.get("claim_boundary", {}).get("effective_starting_height") is not False
+            or Decimal(rank_six["point_theta"]["h6_minus_h3"]["lower"]["decimal"]) <= 0
+            or Decimal(rank_six["edge_theta"]["rank_six"]["strong_simple"]["lower"]["decimal"]) <= 0
+            or Decimal(rank_six["edge_theta"]["rank_three"]["strong_simple"]["upper"]["decimal"]) >= 0
+            or Decimal(rank_six["spectral_optimized"]["gain_floor"]["lower"]["decimal"]) <= 0
+            or Decimal(rank_six["source_constants"]["C6"]["upper"]["decimal"])
+            >= Decimal(rank_six["source_constants"]["C3"]["lower"]["decimal"])):
+        raise ValueError("EXP-008 canonical result fails its declared evidence boundary")
+    rank_six_execution = rank_six.get("execution", {})
+    rank_six_git = rank_six_execution.get("git", {})
+    if (rank_six_execution.get("declaration_commit") != EXP008_DECLARATION[:8]
+            or rank_six_git.get("head") != EXP008_CANONICAL
+            or rank_six_git.get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-008 execution identity differs from committed evidence")
+    rank_six_result_sha256 = hashlib.sha256(source_bytes["rank_six_result"]).hexdigest()
+    rank_six_receipt = json.loads(source_bytes["rank_six_receipt"])
+    if (rank_six_receipt.get("schema") != "riemann-exp008-execution-receipt-v1"
+            or rank_six_receipt.get("status") != "pass"
+            or rank_six_receipt.get("result_sha256") != rank_six_result_sha256
+            or rank_six_receipt.get("runner_sha256")
+            != hashlib.sha256(source_bytes["rank_six_runner"]).hexdigest()
+            or rank_six_receipt.get("git", {}).get("head") != EXP008_CANONICAL
+            or rank_six_receipt.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-008 execution receipt does not bind the canonical result")
+    if (_revision_bytes(
+            f"{problem}/experiments/{exp_eight}/hypothesis.md", EXP008_DECLARATION,
+            ) != source_bytes["rank_six_hypothesis"]):
+        raise ValueError("EXP-008 hypothesis differs from its declaration revision")
+    rank_six_review = json.loads(source_bytes["rank_six_review"])
+    if (rank_six_review.get("schema") != "riemann-exp008-proof-review-v1"
+            or rank_six_review.get("declaration_commit") != EXP008_DECLARATION[:8]
+            or rank_six_review.get("canonical_commit") != EXP008_CANONICAL
+            or rank_six_review.get("scientific_verdict")
+            != "confirmed-relative-to-attributed-rank-six-input"):
+        raise ValueError("EXP-008 review does not retain the attributed-source boundary")
+    rank_six_review_roles = {
+        "hypothesis": "rank_six_hypothesis", "mathematical_proof": "rank_six_proof",
+        "runner": "rank_six_runner", "focused_test": "rank_six_test",
+        "result": "rank_six_result", "adversarial_audit": "rank_six_audit",
+        "verdict": "rank_six_verdict",
+    }
+    if set(rank_six_review.get("source_sha256", {})) != set(rank_six_review_roles):
+        raise ValueError("EXP-008 proof review omits required scientific evidence")
+    for reviewed_name, role in rank_six_review_roles.items():
+        if (rank_six_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-008 proof review no longer matches: {role}")
+    payload["rank_six_review"] = rank_six_review
+    if RIEMANN_EXPERIMENT_MAX <= 8:
+        return payload
+
+    add_focused_test("wang_kernel_test", exp_nine,
+                     "tests/test_riemann_wang_kernel_sharpening.py")
+    wang_kernel = payload["wang_kernel_result"]
+    expected_wang_kernel_checks = {
+        "d_dagger_above_three_halves_constant", "global_gain_above_9_5915e_8",
+        "global_gain_strictly_above_wang", "independent_interval_overlap",
+        "ratio_derivative_factor_positive_for_X_gt_1",
+        "ratio_endpoint_equality_R_0_1_is_sqrt2",
+        "ratio_final_square_is_X2_minus_2_squared", "short_cell_condition",
+        "short_gain_above_exp008", "short_gain_positive", "short_reserve_positive",
+        "source_hashes", "three_halves_constant_above_wang",
+        "wang_delta_above_printed_6_66624e_8", "wang_delta_below_6_66625e_8",
+    }
+    if (wang_kernel.get("schema") != "riemann-exp009-results-v1"
+            or wang_kernel.get("status") != "pass" or wang_kernel.get("passed") is not True
+            or set(wang_kernel.get("checks", {})) != expected_wang_kernel_checks
+            or not all(wang_kernel["checks"].values())
+            or wang_kernel.get("claim_boundary", {}).get("rh_solved") is not False
+            or wang_kernel.get("claim_boundary", {}).get("peer_reviewed") is not False
+            or wang_kernel.get("claim_boundary", {}).get("onset_exponent_improved") is not False
+            or Decimal(wang_kernel["global"]["gain"]["lower"]["decimal"])
+            <= Decimal("9.5915e-8")
+            or Decimal(wang_kernel["global"]["simple_proportion"]["lower"]["decimal"])
+            <= Decimal(wang_kernel["wang_reproduction"]["simple_proportion"]["upper"]["decimal"])
+            or Decimal(wang_kernel["short_interval"]["certified_gain"]["lower"]["decimal"]) <= 0):
+        raise ValueError("EXP-009 canonical result fails its declared evidence boundary")
+    wang_kernel_execution = wang_kernel.get("execution", {})
+    if (wang_kernel_execution.get("declaration_commit") != EXP009_DECLARATION
+            or wang_kernel_execution.get("amendment_commit") != EXP009_AMENDMENT
+            or wang_kernel_execution.get("git", {}).get("head") != EXP009_CANONICAL
+            or wang_kernel_execution.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-009 execution identity differs from committed evidence")
+    wang_kernel_result_sha256 = hashlib.sha256(source_bytes["wang_kernel_result"]).hexdigest()
+    wang_kernel_receipt = json.loads(source_bytes["wang_kernel_receipt"])
+    if (wang_kernel_receipt.get("schema") != "riemann-exp009-execution-receipt-v1"
+            or wang_kernel_receipt.get("status") != "pass"
+            or wang_kernel_receipt.get("result_sha256") != wang_kernel_result_sha256
+            or wang_kernel_receipt.get("runner_sha256")
+            != hashlib.sha256(source_bytes["wang_kernel_runner"]).hexdigest()
+            or wang_kernel_receipt.get("git", {}).get("head") != EXP009_CANONICAL
+            or wang_kernel_receipt.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-009 execution receipt does not bind the canonical result")
+    if (_revision_bytes(
+            f"{problem}/experiments/{exp_nine}/hypothesis.md", EXP009_DECLARATION,
+            ) != source_bytes["wang_kernel_hypothesis"]):
+        raise ValueError("EXP-009 hypothesis differs from its declaration revision")
+    if (_revision_bytes(
+            f"{problem}/experiments/{exp_nine}/amendment-001-optimal-ratio.md",
+            EXP009_AMENDMENT,
+            ) != source_bytes["wang_kernel_amendment"]):
+        raise ValueError("EXP-009 amendment differs from its declared revision")
+    wang_kernel_review = json.loads(source_bytes["wang_kernel_review"])
+    if (wang_kernel_review.get("schema") != "riemann-exp009-proof-review-v1"
+            or wang_kernel_review.get("declaration_commit") != EXP009_DECLARATION
+            or wang_kernel_review.get("amendment_commit") != EXP009_AMENDMENT
+            or wang_kernel_review.get("canonical_execution_commit") != EXP009_CANONICAL
+            or wang_kernel_review.get("scientific_verdict")
+            != "confirmed-relative-to-wang-v1-framework"):
+        raise ValueError("EXP-009 review does not retain Wang's source boundary")
+    wang_kernel_review_roles = {
+        "hypothesis": "wang_kernel_hypothesis", "amendment": "wang_kernel_amendment",
+        "mathematical_proof": "wang_kernel_proof", "runner": "wang_kernel_runner",
+        "focused_test": "wang_kernel_test", "result": "wang_kernel_result",
+        "execution_receipt": "wang_kernel_receipt",
+        "adversarial_audit": "wang_kernel_audit",
+    }
+    if set(wang_kernel_review.get("source_sha256", {})) != set(wang_kernel_review_roles):
+        raise ValueError("EXP-009 proof review omits required scientific evidence")
+    for reviewed_name, role in wang_kernel_review_roles.items():
+        if (wang_kernel_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-009 proof review no longer matches: {role}")
+    payload["wang_kernel_review"] = wang_kernel_review
+    if RIEMANN_EXPERIMENT_MAX <= 9:
+        return payload
+
+    add_focused_test("levinson_test", exp_ten, "tests/test_riemann_levinson_parity.py")
+    levinson = payload["levinson_result"]
+    expected_levinson_checks = {
+        "anchors", "exp008_ratio", "prediction_c_all", "prediction_c_points",
+        "prediction_d_thresholds", "selberg_comparison",
+    }
+    if (levinson.get("schema") != "exp010-canonical-v1" or levinson.get("accepted") is not True
+            or set(levinson.get("checks", {})) != expected_levinson_checks
+            or not all(levinson["checks"].values())
+            or not all(row["pass"] for row in levinson["onset"]["rows"])
+            or Fraction(levinson["onset"]["rows"][0]["theta"]) != Fraction(534, 1000)):
+        raise ValueError("EXP-010 canonical result fails its declared evidence boundary")
+    levinson_receipt = json.loads(source_bytes["levinson_receipt"])
+    if (levinson_receipt.get("accepted") is not True
+            or levinson_receipt.get("result_sha256")
+            != hashlib.sha256(source_bytes["levinson_result"]).hexdigest()
+            or levinson_receipt.get("git", {}).get("head") != EXP010_CANONICAL
+            or levinson_receipt.get("git", {}).get("tracked_tree_clean") is not True):
+        raise ValueError("EXP-010 execution receipt does not bind the canonical result")
+    if levinson.get("bindings_sha256", {}).get("run.py") != hashlib.sha256(
+            source_bytes["levinson_runner"]).hexdigest():
+        raise ValueError("EXP-010 canonical result is not bound to its runner")
+    if (_revision_bytes(f"{problem}/experiments/{exp_ten}/hypothesis.md", EXP010_DECLARATION)
+            != source_bytes["levinson_hypothesis"]):
+        raise ValueError("EXP-010 hypothesis differs from its declaration revision")
+    for role in ("levinson_audit_output", "levinson_controls_output"):
+        if json.loads(source_bytes[role]).get("accepted") is not True:
+            raise ValueError(f"EXP-010 independent check did not pass: {role}")
+    levinson_review = json.loads(source_bytes["levinson_review"])
+    if (levinson_review.get("schema") != "riemann-exp010-proof-review-v1"
+            or levinson_review.get("canonical_execution_commit") != EXP010_CANONICAL
+            or not EXP010_DECLARATION.startswith(levinson_review.get("declaration_commit", "-"))
+            or levinson_review.get("scientific_verdict")
+            != "confirmed-with-scope-correction-to-prediction-A"):
+        raise ValueError("EXP-010 review does not match the canonical evidence")
+    levinson_review_roles = {
+        "adversarial_audit": "levinson_audit", "audit_output": "levinson_audit_output",
+        "auditor": "levinson_auditor", "controls": "levinson_controls",
+        "controls_output": "levinson_controls_output",
+        "execution_receipt": "levinson_receipt", "focused_test": "levinson_test",
+        "frozen_parameters": "levinson_frozen", "hypothesis": "levinson_hypothesis",
+        "mathematical_proof": "levinson_proof", "result": "levinson_result",
+        "runner": "levinson_runner", "source_manifest": "levinson_source_manifest",
+        "verdict": "levinson_verdict",
+    }
+    if set(levinson_review.get("source_sha256", {})) != set(levinson_review_roles):
+        raise ValueError("EXP-010 proof review omits required scientific evidence")
+    for reviewed_name, role in levinson_review_roles.items():
+        if (levinson_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-010 proof review no longer matches: {role}")
+    payload["levinson_review"] = levinson_review
+    if RIEMANN_EXPERIMENT_MAX <= 10:
+        return payload
+
+    add_focused_test("barrier_test", exp_eleven, "tests/test_riemann_linear_refinement_barrier.py")
+    barrier = payload["barrier_result"]
+    if (barrier.get("schema") != "exp011-canonical-v1" or barrier.get("accepted") is not True
+            or set(barrier.get("checks", {})) != {"A", "B", "C", "D"}
+            or not all(barrier["checks"].values())
+            or barrier["C2"]["O"] != 10001 or barrier["C2"]["N"] != 130013):
+        raise ValueError("EXP-011 canonical result fails its declared evidence boundary")
+    barrier_receipt = json.loads(source_bytes["barrier_receipt"])
+    if (barrier_receipt.get("accepted") is not True
+            or barrier_receipt.get("result_sha256")
+            != hashlib.sha256(source_bytes["barrier_result"]).hexdigest()
+            or barrier_receipt.get("git", {}).get("tracked_tree_clean") is not True):
+        raise ValueError("EXP-011 execution receipt does not bind the canonical result")
+    for role, name in (("barrier_hypothesis", "hypothesis.md"),
+                       ("barrier_frozen", "frozen-parameters.json"), ("barrier_runner", "run.py")):
+        if barrier["bindings_sha256"][name] != hashlib.sha256(source_bytes[role]).hexdigest():
+            raise ValueError(f"EXP-011 canonical result is not bound to {name}")
+    if (_revision_bytes(f"{problem}/experiments/{exp_eleven}/hypothesis.md", EXP011_AMENDMENT)
+            != source_bytes["barrier_hypothesis"]):
+        raise ValueError("EXP-011 hypothesis differs from its amended declaration")
+    if json.loads(source_bytes["barrier_audit_output"]).get("accepted") is not True:
+        raise ValueError("EXP-011 independent audit did not pass")
+    if RIEMANN_EXPERIMENT_MAX <= 11:
+        return payload
+
+    if (_revision_bytes(f"{problem}/experiments/{exp_twelve}/hypothesis.md", EXP012_DECLARATION)
+            != source_bytes["tang_hypothesis"]):
+        raise ValueError("EXP-012 hypothesis differs from its declaration revision")
+    if payload["tang_check_output"].get("model_within_2_percent") is not True:
+        raise ValueError("EXP-012 weight-size check did not pass")
+    if b"**Verdict: inconclusive.**" not in source_bytes["tang_verdict"]:
+        raise ValueError("EXP-012 verdict must remain inconclusive")
+    if RIEMANN_EXPERIMENT_MAX >= 25:
+        distinct_raw = {}
+        for role, (experiment, path) in riemann_distinct.INPUTS.items():
+            distinct_raw[role] = read_source(role, experiment, path.removeprefix(problem + "/")) if path.startswith(problem + "/") else _committed_bytes(path)
+            if not path.startswith(problem + "/"):
+                commit = subprocess.run(
+                    ["git", "log", "-1", "--format=%H", "HEAD", "--", path],
+                    cwd=ROOT, check=True, capture_output=True, text=True,
+                ).stdout.strip()
+                payload["provenance"].append({
+                    "role": role, "source_exp": experiment, "path": path,
+                    "source_commit": commit, "bytes": len(distinct_raw[role]),
+                    "sha256": hashlib.sha256(distinct_raw[role]).hexdigest(),
+                })
+        payload["distinct_zero"] = riemann_distinct.validate(distinct_raw)
+        payload["reviewed_on"] = "2026-10-03"
+    if RIEMANN_EXPERIMENT_MAX >= 28:
+        moment_raw = {}
+        for role, path in riemann_moment.INPUTS.items():
+            moment_raw[role] = _committed_bytes(path)
+            commit = subprocess.run(
+                ["git", "log", "-1", "--format=%H", "HEAD", "--", path],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout.strip()
+            payload["provenance"].append({
+                "role": role, "source_exp": "EXP-028-chirp-separated-moment", "path": path,
+                "source_commit": commit, "bytes": len(moment_raw[role]),
+                "sha256": hashlib.sha256(moment_raw[role]).hexdigest(),
+            })
+        payload["short_window_moment"] = riemann_moment.validate(moment_raw)
+        payload["reviewed_on"] = "2026-10-04"
     return payload
 
 

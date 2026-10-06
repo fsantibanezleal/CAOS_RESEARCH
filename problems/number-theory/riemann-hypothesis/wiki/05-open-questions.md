@@ -1,9 +1,35 @@
 # 5. Open questions, rejected routes, and falsification targets
 
-The current confirmed results are the explicit pressure improvement in
-[EXP-003](../experiments/EXP-003-odd-frame-pressure/verdict.md) and the qualitative
-interval-range improvement in [EXP-004](../experiments/EXP-004-parity-density-transfer/verdict.md).
+The current confirmed results include the explicit pressure improvement in
+[EXP-003](../experiments/EXP-003-odd-frame-pressure/verdict.md), the parity and
+localized Selberg transfers in EXP-004/005, the Hilbert-parity compression in
+[EXP-006](../experiments/EXP-006-hilbert-parity-compression/verdict.md), and the
+spectral-defect coupling in
+[EXP-007](../experiments/EXP-007-spectral-defect-parity/verdict.md), and the
+rank-six local transfer in
+[EXP-008](../experiments/EXP-008-rank-six-local-transfer/verdict.md), and the
+localized Levinson detector in
+[EXP-010](../experiments/EXP-010-levinson-parity-transfer/verdict.md).
 The Riemann hypothesis remains open. The questions below go beyond those proved results.
+
+## Push the Levinson detector below the 0.534 onset
+
+[C] EXP-010's onset is limited by the mollifier range `nu<theta-1/2`, which
+comes only from the off-diagonal of the short-window twisted moment. Steuding
+proved a short-window moment with error `O(T^(1/3+eps)M^(4/3))` for
+`zeta+zeta'/L`, which allows `nu<(3theta-1)/4`, but only for `Q(x)=1-x` and fixed
+shifts. A uniform two-shift version for general `Q` would, with the same
+certified slope `0.7173`, make the positivity condition
+`kappa>1-2/(2-c(theta))` hold at every `theta>1/2` (the exploratory root of the
+condition is near `0.494`). By contrast, any range `nu<a(theta-1/2)` that
+vanishes at `theta=1/2` leaves the onset above one half: about `0.5293` for
+`a=3/2` and `0.5257` for `a=2`. The falsification target is a failure of
+uniformity in the shifts, which the `Q`-derivatives need at radius `1/L`.
+
+[C] At small `nu` the single-piece mollifier appears to saturate at
+`kappa/nu` near `0.7173`. A two-piece mollifier of Feng type, localized to the
+window, could raise the slope; its short-window diagonal terms have not been
+derived.
 
 ## Further improve the explicit short-interval example
 
@@ -59,18 +85,22 @@ coefficient one is unjustified. EXP-002's factor $1/3$ comes from three actual
 partitions; it cannot be changed to $1/2$ merely because each gap belongs to
 two consecutive triples.
 
-## Quantify the new positivity range
+## Push the explicit threshold closer to one half
 
-[D] EXP-004 answers the qualitative range question by supplying the missing
-odd-zero input and retaining multiplicity excess. Its [complete proof](07-parity-density-transfer.md)
-gives a fixed $\theta_1<\theta_0$, with no numerical value assigned to the
-classical density $\kappa$. Pressure amplification by itself still requires a
-positive baseline and does not prove this extension.
+[D] EXP-005 supplied the quantitative odd-support seed, EXP-006 retained the
+Hilbert dimension before scalar compression, EXP-007 retained the full
+simple-real spectral defect, and EXP-008 proved rank-independent localization.
+Using Pearce-Crump's source-certified $C_6$ moves the root to
+$(0.5458837,0.5458838)$. The source prints the certified interval but not the
+coefficient matrix, so the value is attributed rather than independently
+reconstructed.
 
-[C] A certified decimal exponent would require a quantitative classical seed
-and explicit control of its conversion to $O/N$. Assigning a convenient small
-number to an unspecified positive constant is invalid. The scalar parity
-relaxation is already sharp; a stronger transfer needs additional information.
+[C] The first reproducibility target is to reconstruct the rank-six matrix or
+obtain an equivalent source artifact and reproduce $C_6$ independently. A
+further threshold gain then requires a stronger finite-rank profile, a new
+analytic input coupled to multiplicity geometry, or information beyond the
+first Hilbert dimension. Any growing-rank proposal must control its constants
+uniformly before the height limit; fixed-rank localization alone does not do so.
 
 ## Cross-area routes and their unresolved interfaces
 
@@ -145,7 +175,7 @@ and verification command were checked.
 |---|---|
 | Reoptimize the single cosine density | The Montgomery-Taylor extremal problem and broader bandlimited optimum are already solved. |
 | Certify more digits of $C_0,C_1,C_2$ | Arithmetic reproduction does not improve the theorem. |
-| Introduce a free coefficient in the multiplicity block inequality | Anthropic's pinned `RankTraceMult.lean` already proves the arbitrary-parameter result, with abstract sharpness in `TightMult.lean`. |
+| Claim the free coefficient in the multiplicity block inequality | Anthropic's pinned `RankTraceMult.lean` already proves the arbitrary-parameter result, with abstract sharpness in `TightMult.lean`; EXP-006 and EXP-007 attribute it and claim only their parity couplings and transfers. |
 | Claim the additive-root obstruction itself | It occurs in the inspected Ainta line of work. |
 | Transfer a higher conditional pair-correlation constant unconditionally | The missing analytic hypothesis does not follow from finite optimization. |
 | Infer the distinct bound from a naive simple-zero count inequality | Higher multiplicities invalidate that heuristic; the valid companion uses the stronger signed-operator inequality. |
@@ -159,9 +189,10 @@ this program has independently validated.
 
 ## Priority and review
 
-The live search cutoff is 2026-09-12. Searches included the exact Wang arXiv
+This historical search cutoff is 2026-09-20. Searches included the exact Wang arXiv
 identifier, short intervals with stability, simple zeros with Gram methods,
-and the direct Ainta/trmdy successor sources. No matching short-interval
+the direct Ainta/trmdy/teal-sea successor sources, and the September 14-15
+arXiv updates. No matching short-interval
 strict-improvement theorem was located. This is positive evidence for a
 candidate contribution, not proof that no earlier or concurrent result exists.
 
@@ -172,7 +203,7 @@ those steps would affect the theorem. Improving the conservative numerical
 constant would affect the example without invalidating the analytic proof
 of a positive gain.
 
-The [published preprint](https://zenodo.org/records/22727389) provides versioned
+The [published preprint](https://zenodo.org/records/22860012) provides versioned
 dissemination. It does not replace independent mathematical acceptance. Any
 later correction should preserve the original experiment artifacts and state
 whether it changes the theorem, numerical example, attribution, or release

@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "title": "Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "publication_date": "2026-09-20",
+    "version": "0.06",
+    "language": "eng",
+    "creators": [
+      {
+        "name": "Santibáñez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>For a conjugation-invariant finite multiset, let N count copies, S simple real support, O distinct odd-multiplicity real support, and Q the squared-kernel pair sum. The paper proves the sharp inequality (Q-S)(N-O) &gt;= 2(N-S)^2 by retaining Lamzouri's first Hilbert-subspace dimension and coupling it to odd support.</p><p>Combined with Wang's short-interval pair theorem and the localized rank-three Selberg detector, it gives liminf S/N &gt;= max{0,c(theta),(c(theta)+2k3(theta))/3,h3(theta)}. Exact directed rational arithmetic places the unique positivity root of h3 in (0.545884,0.545885). At theta=0.5459, where the previous linear term remains negative, the new lower bound exceeds 0.0000168381638551244569880374399.</p><p>The coefficient two is sharp, and a scalar zero-simple witness explains why retaining the Hilbert dimension matters. The result is asymptotic and depends on recent attributed preprints. No effective starting height, global zero-density record, external peer review, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "keywords": [
+      "Riemann zeta function",
+      "short intervals",
+      "simple critical zeros",
+      "odd multiplicity",
+      "Selberg method",
+      "mollifiers",
+      "pair correlation",
+      "Gram matrix stability",
+      "interval arithmetic",
+      "Hilbert space",
+      "parity compression"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "relation": "isSupplementTo",
+        "resource_type": "software"
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.07918",
+        "relation": "cites",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.02882",
+        "relation": "cites",
+        "resource_type": "publication-preprint"
+      }
+    ],
+    "version_notes": "Adds the sharp Hilbert-parity product (Q-S)(N-O) >= 2(N-S)^2, its quadratic short-interval transfer, the exact positivity bracket 0.545884 < theta_HP < 0.545885, the positive bound at theta = 0.5459, the scalar barrier witness, and EXP-006 reproducibility evidence. The Riemann hypothesis remains open."
+  }
+}

@@ -34,9 +34,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.03}
-\newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22835126}
+\newcommand{\docversion}{v0.04}
+\newcommand{\docdate}{20 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22859408}
 \newcommand{\conceptdoi}{10.5281/zenodo.22342975}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
@@ -91,6 +91,9 @@ potential basis of rank $\binom{p-1}{2}$ with at most seven-row images.
 Independent finite computations check the signed identities and complete-sector
 parity certificates, preserving all tested sources in lossless archives.
 A failed local search yields an exact locality obstruction.
+For a semantic row projection retaining four of the six recurring row types,
+we give support-one integral sources that kill two endpoint triangle rows for
+every $p\geq8$; the proof is a direct face classification before contraction.
 The uniform theorem follows from signed reconstruction, exhaustive source
 classification, and an elementary counting recurrence, not finite rank
 extrapolation. The full cokernel, an upper bound, and identification with
@@ -134,6 +137,9 @@ alone says \emph{order dividing two}. The additional nonvanishing proof in
 Section~\ref{sec:parity} upgrades the tracked class to order exactly two.
 Section~\ref{sec:family} constructs all triangle classes, proves their exact
 relation lattice and count, and derives the direct-summand corollary.
+Section~\ref{sec:projection} gives a separate constructive comparison with a
+four-type semantic row projection and identifies two uniformly vanishing
+endpoint rows.
 These are lower-bound and partial-decomposition results, not the whole quotient.
 
 \paragraph{Deductive proofs and finite certificates.}
@@ -1034,6 +1040,84 @@ This proves a quotient equality with an explicit source for its difference,
 not equality of the original target vectors $\eta_p$ and $x_{02}$.
 \end{proof}
 
+\section{A uniform semantic projection identity}\label{sec:projection}
+
+The following projection is defined on the full original target, before any
+unit contraction or component selection. For an exterior set $E$, write
+\[
+ \nu(E)=(|E\cap L_0|-p,|E\cap L_1|-p,
+          |E\cap H_0|,\ldots,|E\cap H_7|).
+\]
+The six recurring row types used here are
+\begin{center}\small
+\begin{tabular}{cll}
+\toprule
+Type & Target family & $\nu(E)$\\
+\midrule
+$R_0$ & $D[E;\mathsf A_d]$ & $(-2,-3,1,0,1,0,0,0,0,0)$\\
+$R_1$ & $D[E;\mathsf A_d]$ & $(-3,-2,2,0,0,0,0,0,0,0)$\\
+$R_2$ & $D[E;\mathsf B_d]$ & $(-1,-4,1,0,1,0,0,0,0,0)$\\
+$R_3$ & $D[E;\mathsf B_d]$ & $(-2,-3,2,0,0,0,0,0,0,0)$\\
+$R_4$ & $K[E;b]$, $b\in\mathrm C_0$ & $(-2,-2,1,0,0,0,0,0,0,0)$\\
+$R_5$ & $K[E;b]$, $b\in\mathrm C_2$ & $(-1,-3,1,0,0,0,0,0,0,0)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Let $\Pi_{58}$ be the coordinate projection that retains all rows of types
+$R_1,R_3,R_4,R_5$ and discards every other target row. The numeral is only a
+stable name for this four-type mask; it is not a modulus.
+
+\begin{theorem}[{[D]} Support-one endpoint sources]\label{thm:mask58-endpoints}
+For $r\in\{1,2\}$, put
+\begin{align*}
+ E_{p,r}&=(L\setminus\{p-r,3p,3p+r\})\cup\{6p,10p\},\\
+ s_{p,r}&=S[E_{p,r};p-2].
+\end{align*}
+Then, for every $p\geq8$,
+\begin{equation}\label{eq:mask58-endpoints}
+ \Pi_{58}M_ps_{p,r}=-x_{(0,r,p-2-r)}.
+\end{equation}
+Thus the two endpoint triangle rows vanish integrally in
+$\coker(\Pi_{58}M_p)$, each with a one-column source of coefficient height one.
+\end{theorem}
+\begin{proof}
+The exterior $E_{p,r}$ contains $p-1$ first-low generators, $p-3$
+second-low generators, and the two displayed high generators, hence has
+size $2p-2$ as required.
+
+Write $a=p-2$. If $v\in L_0$, then $\mu(v,a)$ is nonzero exactly when
+$v+a>p$, or $v\geq3$. Deleting such a present generator gives normalized
+counts $(-2,-3,1,0,1,0,0,0,0,0)$, hence an $R_0$ row. There are $p-3$
+of them because $p-r$ is omitted. If $v\in L_1$, then $\mu(v,a)$ is
+nonzero exactly when $v+a\geq4p-1$, or $v\geq3p+1$. The source already
+omits $3p$ and $3p+r$, so all its $p-3$ remaining second-low deletions
+give $R_2$ rows, with normalized counts
+$(-1,-4,1,0,1,0,0,0,0,0)$.
+
+Deleting $6p$ would give coefficient $7p-2$, which belongs to the
+degree-one interval $H_0$ and not to the degree-two target basis, so that
+face contributes nothing. Deleting $10p$ gives coefficient $11p-2\in
+\mathrm C_2$ and normalized counts
+$(-1,-3,1,0,0,0,0,0,0,0)$, hence type $R_5$. The generator $10p$ is
+last in a $2p-2$ element exterior set, at zero-based position $2p-3$,
+so its sign is $-1$. Its face is precisely the row
+$x_{(0,r,p-2-r)}$ by the triangle-row definition.
+
+The complete nonzero boundary therefore consists of $p-3$ rows of type
+$R_0$, $p-3$ rows of type $R_2$, and the single negative $R_5$ row in
+\eqref{eq:mask58-endpoints}. The projection discards the first two types
+and retains the last one.
+\end{proof}
+
+The identity is stronger than a finite rank observation because it is proved
+in the full original presentation before contraction. It is also narrower
+than an identification of presentations: no uniform isomorphism between this
+semantic projection and a persistent isolated component is asserted. At the
+locked parameter $p=11$, the frozen component contains unique matching source
+columns 210 and 308, whose retained entries are respectively $-1$ in rows
+12559 and 12560 [MV]. This exact finite agreement does not extend the scope of
+Theorem~\ref{thm:mask58-endpoints} to a uniform component reconstruction.
+
 In particular there are at least $3,4,5,7$ independent integral
 two-torsion classes at $p=8,9,10,11$, respectively, and their number
 is quadratically unbounded. If two is invertible in a coefficient ring,
@@ -1214,6 +1298,16 @@ with at most 1~GiB of memory. No dense full ambient matrix, integral
 HNF/SNF or old labelled $p=11$ HNF source is used. Finite certification
 and the uniform proof remain separate layers of evidence.
 
+\subsection{Uniform endpoint projection certificate}
+
+Computation EXP-066 evaluates the two identities of
+Theorem~\ref{thm:mask58-endpoints} for every $p=8,\ldots,300$, giving 586
+exact endpoint checks, and rejects 2,930 altered sources, target rows and
+projection masks [MV]. An independent implementation reconstructs the interval
+types and normalized counts in reverse parameter order and recovers the same
+two locked $p=11$ component columns. The all-parameter conclusion comes from
+the preceding interval inequalities and face count, not from this finite sweep.
+
 \section{Remaining obligations}
 
 The uniform twice-source, nonvanishing and independent-family obligations
@@ -1226,6 +1320,10 @@ are not determined. The functionals are not asserted to exhaust the full
 dual space. In particular, the theorem does not identify the full
 presentation with an earlier isolated component or relative-completion
 quotient, and it does not prove a lower-strand recurrence.
+Theorem~\ref{thm:mask58-endpoints} gives explicit sources for two endpoint
+rows after one semantic projection. It does not prove independence or an upper
+bound for the other projected triangle rows, nor that this projection agrees
+uniformly with the earlier persistent isolated component.
 
 The mathematical premise imported from the earlier family is the integral
 coefficient presentation itself. Independent encodings test for implementation,
@@ -1269,7 +1367,10 @@ Complete relative parity proof and Theorem~\ref{thm:exact-order} &
 \Exp{EXP-061-uniform-parity-functional}{EXP-061}\\[3pt]
 Theorem~\ref{thm:quadratic}, Corollary~\ref{cor:splitting},
 Proposition~\ref{prop:eta-edge} and complete triangle certificates &
-\Exp{EXP-062-triangle-torsion-family}{EXP-062}\\
+\Exp{EXP-062-triangle-torsion-family}{EXP-062}\\[3pt]
+Theorem~\ref{thm:mask58-endpoints}, locked holdout and reverse-order audit &
+\Exp{EXP-065-dual-guided-endpoint-decoder}{EXP-065},
+\Exp{EXP-066-uniform-endpoint-face-collapse}{EXP-066}\\
 \bottomrule
 \end{tabular}
 \end{center}

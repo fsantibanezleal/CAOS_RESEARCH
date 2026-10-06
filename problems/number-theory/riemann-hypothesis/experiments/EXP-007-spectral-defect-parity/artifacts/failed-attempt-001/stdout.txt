@@ -1,0 +1,6 @@
+[0.000000s] stage 1/6: validate clean committed execution and pinned inputs
+[0.110000s] stage 2/6: enumerate exact spectral profiles
+[36.547000s] stage 3/6: enumerate multiplicity and defect profiles
+[36.891000s] stage 4/6: build directed rational target certificate
+[89.938000s] stage 5/6: replay at 100-digit independent interval precision
+[92.641000s] FAIL: AssertionError: replay containment failed: c, a, q

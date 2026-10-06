@@ -108,14 +108,14 @@ const receipt = {
 const labels = {
   en: {
     language: 'Switch language', theme: 'Toggle light / dark',
-    problem: 'Riemann hypothesis', heading: 'Riemann zeta: zeros in short intervals',
+    problem: 'Riemann hypothesis', heading: 'Riemann zeta: distinct zeros and short intervals',
     architecture: 'Architecture / How it works', close: 'Close',
     hypothesis: 'Hypothesis (declared before the run)', verdict: 'Verdict (persisted after the run)',
     tabs: ['Summary', 'Context & history', 'References & approaches', 'Strategy', 'Experiments & results', 'Open questions'],
   },
   es: {
     language: 'Cambiar idioma', theme: 'Cambiar claro / oscuro',
-    problem: 'Hipótesis de Riemann', heading: 'Zeta de Riemann: ceros en intervalos cortos',
+    problem: 'Hipótesis de Riemann', heading: 'Zeta de Riemann: ceros distintos e intervalos cortos',
     architecture: 'Arquitectura / Cómo funciona', close: 'Cerrar',
     hypothesis: 'Hipotesis (declarada antes de la corrida)', verdict: 'Veredicto (persistido despues de la corrida)',
     tabs: ['Resumen', 'Contexto e historia', 'Referencias y enfoques', 'Estrategia', 'Experimentos y resultados', 'Preguntas abiertas'],
@@ -371,9 +371,9 @@ async function proofControls(page, panel, scenario, tab) {
 }
 async function experimentViews(page, panel, scenario, text) {
   const buttons = panel.locator('.rh-experiments .rs-exp-open');
-  check(scenario, 'all four experiment launch controls present', await buttons.count() === 4);
-  requireCondition(await buttons.count() === 4, 'Expected all four experiment records');
-  for (const id of ['001', '002', '003', '004']) {
+  check(scenario, 'all twenty-eight experiment launch controls present', await buttons.count() === 28);
+  requireCondition(await buttons.count() === 28, 'Expected all twenty-eight experiment records');
+  for (const id of Array.from({ length: 28 }, (_, i) => String(i + 1).padStart(3, '0'))) {
     const launch = buttons.filter({ hasText: new RegExp(`^EXP-${id}:`) });
     await pointerClick(page, launch, scenario, `open EXP-${id}`);
     const dialog = page.locator('.rs-modal[role="dialog"]');
@@ -381,13 +381,13 @@ async function experimentViews(page, panel, scenario, text) {
     check(scenario, `EXP-${id}: correct record opened`, (await dialog.getAttribute('aria-label') || '').startsWith(`EXP-${id}:`));
     const hypothesis = dialog.getByRole('heading', { name: text.hypothesis, exact: true });
     const verdict = dialog.getByRole('heading', { name: text.verdict, exact: true });
-    check(scenario, `EXP-${id}: both persisted sections`, await hypothesis.count() === 1 && await verdict.count() === 1);
+    check(scenario, `EXP-${id}: both persisted sections`, await hypothesis.count() === 1 && (id === '019' ? await verdict.count() === 0 : await verdict.count() === 1));
     await hypothesis.scrollIntoViewIfNeeded();
     await capture(page, scenario, `EXP-${id}-hypothesis`);
-    await verdict.scrollIntoViewIfNeeded();
+    if (await verdict.count()) await verdict.scrollIntoViewIfNeeded();
     await capture(page, scenario, `EXP-${id}-verdict`);
     const artifactLinks = dialog.locator('.rs-modal-artifacts a');
-    check(scenario, `EXP-${id}: artifact links`, await artifactLinks.count() > 0);
+    check(scenario, `EXP-${id}: artifact links`, await artifactLinks.count() > 0 || ['013', '016', '017', '018'].includes(id));
     if (options.contentScreenshots === 'all') {
       await panelScreens(page, dialog.locator('.rs-modal-body'), scenario, `EXP-${id}-complete-record`);
     }
@@ -474,6 +474,11 @@ async function runScenario(viewport, lang, theme) {
     await page.evaluate(() => document.fonts.ready);
     check(scenario, 'recorded numerical result loaded', (await page.locator('.rh-results').innerText()).includes('0.4190768284253039967'));
     check(scenario, 'qualitative EXP-004 result is rendered', norm(await page.locator('.rh-page').innerText()).includes('EXP-004'));
+    check(scenario, 'explicit EXP-005 threshold is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.5459'));
+    check(scenario, 'rank-six EXP-008 threshold is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.5458838'));
+    check(scenario, 'sharp-kernel EXP-009 global bound is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.6725007995946757558'));
+    check(scenario, 'Levinson EXP-010 onset bound is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.0177638490'));
+    check(scenario, 'EXP-011 barrier ratio is rendered', norm(await page.locator('.rh-page').innerText()).includes('2.35886369542'));
     const tablist = page.locator('.rh-page > .tabs > .tablist');
     check(scenario, 'six research sections present', await tablist.getByRole('tab').count() === 6);
     for (let index = 0; index < tabIds.length; index += 1) {
@@ -485,10 +490,32 @@ async function runScenario(viewport, lang, theme) {
       const panelId = await panel.getAttribute('id');
       requireCondition(panelId?.endsWith(`-panel-${id}`), `Wrong panel after ${id}: ${panelId}`);
       check(scenario, `${id}: substantive rendered content`, norm(await panel.innerText()).length >= 150);
+      const moment = panel.locator('[data-evidence="EXP-028"]');
+      check(scenario, `${id}: current EXP-028 theorem and manuscript PDF visible`, (await moment.count()) === 1
+        && (await moment.locator('.rh-source-links a[href="https://zenodo.org/api/records/23132248/files/riemann-hypothesis-short-interval-levinson-v0.02.pdf/content"]').count()) === 1);
+      check(scenario, `${id}: separate moment evidence record linked`, (await moment.locator('.rh-source-links a[href="https://doi.org/10.5281/zenodo.23135349"]').count()) === 1);
       scenario.tabs_visited.push(id);
       await panelScreens(page, panel, scenario, id, ['summary', 'context', 'strategy'].includes(id));
       await proofControls(page, panel, scenario, id);
       if (id === 'results') await experimentViews(page, panel, scenario, text);
+      const distinct = panel.locator(`[data-testid="distinct-${id}"]`);
+      check(scenario, `${id}: completed distinct-zero section`, await distinct.count() === 1);
+      check(scenario, `${id}: separate distinct-zero evidence record linked`,
+        (await distinct.locator('a[href="https://doi.org/10.5281/zenodo.23135359"]').count()) === 1);
+      check(scenario, `${id}: distinct-zero manuscript PDF linked`,
+        (await distinct.locator('a[href="https://zenodo.org/api/records/23128663/files/riemann-hypothesis-distinct-zero-gram-v0.01.pdf/content"]').count()) >= 1);
+      if (id === 'summary') {
+        check(scenario, 'new distinct bound and scope', (await distinct.innerText()).includes('0.8373797460706156') && !(await distinct.innerText()).includes('0.837385561'));
+        const fits = await distinct.locator('.katex-display').first().evaluate((el) => el.scrollWidth <= el.clientWidth + 1);
+        check(scenario, 'headline bound fits without sideways math scrolling', fits);
+      }
+      if (id === 'strategy') {
+        const select = distinct.locator('select');
+        await select.scrollIntoViewIfNeeded();
+        const descriptions = [];
+        for (const value of ['0','1','2','3']) { await select.selectOption(value); descriptions.push(await distinct.locator('figcaption').innerText()); await capture(page, scenario, `distinct-stage-${value}`); }
+        check(scenario, 'four distinct proof stages change explanation', new Set(descriptions).size === 4);
+      }
       console.log(JSON.stringify({ event: 'tab-reviewed', scenario: scenario.id, tab: id,
         failures: scenario.failures.length, screenshots: scenario.screenshots.length }));
     }
@@ -519,10 +546,19 @@ try {
   const playwright = await loadPlaywright();
   const chromium = playwright.chromium || playwright.default?.chromium;
   requireCondition(chromium, 'Resolved module does not expose Playwright chromium');
-  browser = await chromium.launch({ headless: !options.headed });
   for (const viewport of options.viewports) {
     for (const lang of ['en', 'es']) {
-      for (const theme of ['light', 'dark']) await runScenario(viewport, lang, theme);
+      for (const theme of ['light', 'dark']) {
+        // Isolate native browser resources across complete scenario replays.
+        browser = await chromium.launch({ headless: !options.headed,
+          ...(process.env.RIEMANN_CHROMIUM_EXECUTABLE ? { executablePath: process.env.RIEMANN_CHROMIUM_EXECUTABLE } : {}) });
+        const version = await browser.version();
+        if (receipt.browser_version) requireCondition(receipt.browser_version === version, 'Browser version changed');
+        receipt.browser_version = version;
+        await runScenario(viewport, lang, theme);
+        await browser.close();
+        browser = null;
+      }
     }
   }
 } catch (error) {

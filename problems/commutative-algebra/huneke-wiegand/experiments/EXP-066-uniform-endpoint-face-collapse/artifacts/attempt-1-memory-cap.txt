@@ -1,0 +1,23 @@
+EXP-066 producer attempt 1
+Date: 2026-09-20
+
+Command: `.venv/Scripts/python.exe .../EXP-066-uniform-endpoint-face-collapse/run.py`
+
+The initial holdout route called the legacy complete labelled-component
+reconstruction with the frozen 120 second / 2 GiB cap.  It stopped during
+`D-row enumeration` after scanning 800,000 of 1,749,529 source labels:
+
+`BudgetStop: memory budget exceeded after D-row enumeration: 2200416256 bytes`
+
+No holdout classification was returned.  The formula, target rows and budget
+were not changed.  The replacement route reads the already frozen p=11 signed
+component and its frozen semantic atom tables, then recovers the exact candidate
+source from the endpoint face.  This avoids materializing millions of unrelated
+global rows while testing the same frozen prediction.
+
+The replacement sparse holdout passed.  Its first complete regression sweep was
+then stopped after `p=250` because the initial face classifier had exceeded the
+separate 120-second sweep cap.  The partial checkpoint is preserved as
+`attempt-2-sweep-cap-checkpoint.json`.  The cause was quadratic recomputation of
+the same generator-interval counts for every face; the next attempt uses one
+source count vector and a constant-time deletion update.

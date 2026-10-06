@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderToString } from 'katex';
 import type { RiemannData } from '../api/data';
-import { decimalCenter, parityEvidence, pressureWinner } from '../lib/riemannReplay';
+import { barrierEvidence, decimalCenter, hilbertParityEvidence, levinsonEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence, tangStopEvidence, wangKernelEvidence } from '../lib/riemannReplay';
 import { riemannArchitecture } from '../lib/riemannArchitecture';
 import { ARCHITECTURE } from '../lib/architecture';
 import { CITATIONS } from '../data/citations';
@@ -16,7 +16,7 @@ function parityFixture(): RiemannData {
   const data = replay();
   const roles = ['parity_result', 'parity_hypothesis', 'parity_proof', 'parity_audit', 'parity_verdict'] as const;
   const sourceSha256 = Object.fromEntries(roles.map((role) => [role, `${role}-hash`])) as Record<typeof roles[number], string>;
-  data.schema = 'riemann-replay-v3';
+  data.schema = 'riemann-replay-v9';
   data.parity_result = {
     schema: 'riemann-exp004-results-v1', experiment: 'EXP-004-parity-density-transfer',
     arithmetic_status: 'verified',
@@ -80,6 +80,103 @@ describe('Riemann pressure replay presentation', () => {
     expect(parityEvidence(clean)).toBeUndefined();
   });
 
+  it('surfaces EXP-005 only with its exact controls and separate analytic review', () => {
+    const data = replay();
+    const evidence = localSelbergEvidence(data);
+    expect(evidence?.result.parameters.theta.decimal).toBe('0.546');
+    expect(evidence?.result.positive_point.fixed_u_simple_lower.decimal)
+      .toContain('0.0000976239413345396825264438351212564');
+    expect(evidence?.review.scientific_verdict).toBe('confirmed');
+  });
+
+  it('rejects a failed EXP-005 control or a mismatched reviewed source', () => {
+    const failed = replay();
+    failed.local_result.checks.strict_localization_margin = false;
+    expect(localSelbergEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'local_result')!.sha256 = '0'.repeat(64);
+    expect(localSelbergEvidence(mismatched)).toBeUndefined();
+  });
+
+  it('surfaces EXP-006 only with the strengthened bound and complete source bindings', () => {
+    const data = replay();
+    const evidence = hilbertParityEvidence(data);
+    expect(evidence?.result.parameters.root_lower_theta.decimal).toBe('0.545884');
+    expect(evidence?.result.parameters.root_upper_theta.decimal).toBe('0.545885');
+    expect(evidence?.result.target.strong_simple_lower.decimal)
+      .toContain('0.0000168381638551244569880374399');
+    expect(evidence?.review.scientific_verdict).toBe('confirmed');
+  });
+
+  it('rejects weakened or source-mismatched EXP-006 evidence', () => {
+    const failed = replay();
+    failed.hilbert_result.checks.strong_bound_improves_weak = false;
+    expect(hilbertParityEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'hilbert_result')!.sha256 = '0'.repeat(64);
+    expect(hilbertParityEvidence(mismatched)).toBeUndefined();
+  });
+
+  it('surfaces EXP-007 only with its strict gain and complete source bindings', () => {
+    const evidence = spectralDefectEvidence(replay());
+    expect(evidence?.result.target.certified_gain_floor.lower.decimal)
+      .toMatch(/^1\.3732525985593292701164661575.*e-70$/);
+    expect(evidence?.result.spectral_census.spectra).toBe(652260);
+    expect(evidence?.review.scientific_verdict).toBe('confirmed');
+  });
+
+  it('rejects a failed or source-mismatched EXP-007 certificate', () => {
+    const failed = replay();
+    failed.spectral_result.checks.spectral_census = false;
+    expect(spectralDefectEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'spectral_result')!.sha256 = '0'.repeat(64);
+    expect(spectralDefectEvidence(mismatched)).toBeUndefined();
+  });
+
+  it('surfaces EXP-008 with the earlier rank-six onset and attributed-input boundary', () => {
+    const evidence = rankSixEvidence(replay());
+    expect(evidence?.result.root_brackets.rank_six_fine.lower.theta.decimal).toBe('0.5458837');
+    expect(evidence?.result.root_brackets.rank_six_fine.upper.theta.decimal).toBe('0.5458838');
+    expect(evidence?.result.point_theta.rank_six.strong_simple.lower.decimal)
+      .toContain('0.0000177645181613023236390595079');
+    expect(evidence?.review.scientific_verdict)
+      .toBe('confirmed-relative-to-attributed-rank-six-input');
+  });
+
+  it('rejects a failed or source-mismatched EXP-008 certificate', () => {
+    const failed = replay();
+    failed.rank_six_result.checks.strictly_earlier_onset = false;
+    expect(rankSixEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'rank_six_result')!.sha256 = '0'.repeat(64);
+    expect(rankSixEvidence(mismatched)).toBeUndefined();
+  });
+
+  it('surfaces EXP-009 with its sharp global gain and Wang-v1 boundary', () => {
+    const evidence = wangKernelEvidence(replay());
+    expect(evidence?.result.global.simple_proportion.lower.decimal)
+      .toContain('0.672500799594675755828355056296');
+    expect(evidence?.result.global.distinct_proportion.lower.decimal)
+      .toContain('0.836250399797337877914177528148');
+    expect(evidence?.result.short_interval.certified_gain.lower.decimal)
+      .toMatch(/^3\.0867809983334187.*e-31$/);
+    expect(evidence?.review.scientific_verdict)
+      .toBe('confirmed-relative-to-wang-v1-framework');
+  });
+
+  it('rejects failed, overclaimed, or source-mismatched EXP-009 evidence', () => {
+    const failed = replay();
+    failed.wang_kernel_result.checks.ratio_final_square_is_X2_minus_2_squared = false;
+    expect(wangKernelEvidence(failed)).toBeUndefined();
+    const overclaimed = replay();
+    overclaimed.wang_kernel_result.claim_boundary.rh_solved = true as never;
+    expect(wangKernelEvidence(overclaimed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'wang_kernel_result')!.sha256 = '0'.repeat(64);
+    expect(wangKernelEvidence(mismatched)).toBeUndefined();
+  });
+
   it.each(['unverified', 'missing-second-evaluator', 'wrong-certificate'] as const)(
     'does not surface a pressure winner with %s evidence',
     (failure) => {
@@ -112,8 +209,8 @@ describe('Riemann pressure replay presentation', () => {
     const ids = [...pageSource.matchAll(/<Cite id="([^"]+)"/g)].map((m) => m[1]);
     for (const id of ids) expect(CITATIONS.some((citation) => citation.id === id)).toBe(true);
     expect(CITATIONS.find((citation) => citation.id === 'riemann-refinement2026')?.doi)
-      .toBe('10.5281/zenodo.22727389');
-    expect(pageSource).toContain('10.5281/zenodo.22835172');
+      .toBe('10.5281/zenodo.22860012');
+    expect(pageSource).toContain('10.5281/zenodo.22860012');
   });
 });
 
@@ -127,12 +224,55 @@ describe('Riemann contextual architecture', () => {
     }
     const science = config.tabs.find((tab) => tab.id === 'science')!;
     const method = config.tabs.find((tab) => tab.id === 'method')!;
-    expect(science.svg).toContain('EXP-004-parity-density-transfer/mathematical-proof.md');
-    expect(science.svg).toContain(lang === 'en' ? 'Classical odd-zero seed' : 'Densidad clásica de ceros impares');
+    expect(science.svg).toContain('EXP-028-chirp-separated-moment/mellin-proof.md');
+    expect(science.svg).toContain('EXP-008-rank-six-local-transfer/mathematical-proof.md');
+    expect(science.svg).toContain(lang === 'en' ? 'Certified global and local bounds' : 'Cotas globales y locales certificadas');
     expect(method.svg).toContain('docs/guides/riemann-replay.md');
-    expect(method.svg).toContain('EXP-001 · EXP-002 · EXP-003 · EXP-004');
+    expect(method.svg).toContain('EXP-001 · EXP-002 · … · EXP-006');
+    expect(method.svg).toContain('EXP-007 · EXP-008 · … · EXP-028');
     expect(method.svg).toContain(lang === 'en' ? 'Audit parity and pressure' : 'Auditar paridad y presión');
-    expect(science.body_en).toContain('not overlapping triples');
-    expect(science.body_es).toContain('no entre ternas superpuestas');
+    expect(method.body_en).toContain('0.5458837 < θ6 < 0.5458838');
+    expect(science.body_en).toContain('None of these results proves RH');
+    expect(method.body_es).toContain('0.5458837 < θ6 < 0.5458838');
+    expect(science.svg).toContain('EXP-009-wang-kernel-sharpening/mathematical-proof.md');
+    expect(science.body_en).toContain('0.6725007995946757558');
+    expect(science.body_es).toContain('0.6725007995946757558');
+    expect(science.body_es).toContain('Ninguno de estos resultados prueba RH');
+  });
+});
+
+describe('replay v9 evidence for EXP-010 to EXP-012', () => {
+  it('surfaces the EXP-010 onset only with its bound review', () => {
+    const data = replay();
+    expect(data.schema).toBe('riemann-replay-v9');
+    const evidence = levinsonEvidence(data);
+    expect(evidence?.onset.theta).toBe('267/500');
+    expect(Number(evidence?.onset.h_L.lower)).toBeGreaterThan(1e-5);
+    expect(Number(evidence?.point.h_L.lower)).toBeGreaterThan(0.0177);
+  });
+
+  it('rejects EXP-010 evidence with a failed check or a mismatched source', () => {
+    const failed = replay();
+    failed.levinson_result.checks.prediction_d_thresholds = false;
+    expect(levinsonEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance = mismatched.provenance.map((source) =>
+      source.role === 'levinson_proof' ? { ...source, sha256: 'tampered' } : source);
+    expect(levinsonEvidence(mismatched)).toBeUndefined();
+  });
+
+  it('shows the EXP-011 barrier and the stopped EXP-012 route only when accepted', () => {
+    const data = replay();
+    expect(barrierEvidence(data)?.result.C2.O).toBe(10001);
+    expect(tangStopEvidence(data)?.check.model_within_2_percent).toBe(true);
+    const failed = replay();
+    failed.barrier_result.checks.A = false;
+    expect(barrierEvidence(failed)).toBeUndefined();
+  });
+
+  it('labels every experiment record explicitly', () => {
+    expect(pageSource).toContain("e.id === '010' ? t('Localized Levinson detector'");
+    expect(pageSource).toContain("e.id === '012' ? t('Tang-type short-window moment (stopped)'");
+    expect(CITATIONS.some((citation) => citation.id === 'riemann-levinson2026')).toBe(true);
   });
 });

@@ -1,0 +1,6 @@
+{
+  "elapsed_seconds": 95.375,
+  "error": "failed checks: sensitivity_product_gain",
+  "error_type": "AssertionError",
+  "schema": "riemann-exp007-failure-v1"
+}

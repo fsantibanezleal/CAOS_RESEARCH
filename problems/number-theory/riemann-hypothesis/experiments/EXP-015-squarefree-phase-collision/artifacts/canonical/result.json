@@ -1,0 +1,42 @@
+{
+  "M": 1000000,
+  "T": "16000000000000000000000000",
+  "bindings": {
+    "problems/number-theory/riemann-hypothesis/code/squarefree_phase.py": "cdcd5f2afedaa59e73b18f6e1ca16a198a42c096e750e3393de6c33f42d0af9f",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-015-squarefree-phase-collision/hypothesis.md": "e87b52fc69ace9340228d8270140b919cb4e9d6a7f11fe0d514e00133802ae29",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-015-squarefree-phase-collision/proof.md": "81b039ccd26840aebbf58009a3af3dac4d5291374bff2e9dbdf580814fd580cd",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-015-squarefree-phase-collision/run.py": "13cc4e39059b82fa774135c0be4e040b3acf1f51105c0e1869824e53f58299bb"
+  },
+  "experiment": "EXP-015",
+  "h": 500006,
+  "hm_minus_kn": 1,
+  "k": 500005,
+  "m": 500005000001,
+  "n": 500006000001,
+  "nonzero_basic_polynomial_coefficients": true,
+  "nonzero_mobius_weights": true,
+  "phase_cases": [
+    {
+      "H": "10000000000000000",
+      "lower": "5000000000000000/125002750015250003",
+      "upper": "2000000000000000/50001100006100001"
+    },
+    {
+      "H": "1000000000000000000",
+      "lower": "500000000000000000/125002750015250003",
+      "upper": "200000000000000000/50001100006100001"
+    },
+    {
+      "H": "100000000000000000000",
+      "lower": "50000000000000000000/125002750015250003",
+      "upper": "20000000000000000000/50001100006100001"
+    }
+  ],
+  "prime_square_sum_upper": "2535919/5336100",
+  "r": 1000000,
+  "schema": "exp015-squarefree-phase-v1",
+  "summed_mollifier_barrier_established": false,
+  "threshold": "nu=theta-1/2; nonzero Mobius support does not remove slow phases",
+  "uniform_comparison": "(1/5) M^2 r <= kn < M^2 r for M>=1000000,r>=2",
+  "uniform_count_lower_at_M": "199999/25"
+}

@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { Callout, Cite, Equation, InlineMath, Refs, Tabs, type TabDef } from '@fasl-work/caos-app-shell';
 import { useT } from '../lib/i18n';
 import { loadExperiments, loadRiemann, type ExperimentRec, type RiemannData } from '../api/data';
-import { decimalCenter as center, parityEvidence, pressureWinner } from '../lib/riemannReplay';
+import RiemannDistinct from '../components/RiemannDistinct';
+import RiemannMoment from '../components/RiemannMoment';
+import { shortWindowMomentEvidence } from '../lib/riemannMoment';
+import { distinctZeroEvidence } from '../lib/riemannDistinct';
+import { decimalCenter as center, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence, wangKernelEvidence, levinsonEvidence, barrierEvidence, tangStopEvidence } from '../lib/riemannReplay';
 
 const ExperimentModal = lazy(() => import('../components/ExperimentModal'));
 const REPO = 'https://github.com/fsantibanezleal/CAOS_RESEARCH';
@@ -14,10 +18,28 @@ const PRESSURE_EXP = `${PROBLEM}/experiments/EXP-003-odd-frame-pressure`;
 const PRESSURE_PROOF = `${REPO}/blob/main/${PRESSURE_EXP}/mathematical-proof.md`;
 const PARITY_EXP = `${PROBLEM}/experiments/EXP-004-parity-density-transfer`;
 const PARITY_PROOF = `${REPO}/blob/main/${PARITY_EXP}/mathematical-proof.md`;
+const LOCAL_EXP = `${PROBLEM}/experiments/EXP-005-local-selberg-transfer`;
+const LOCAL_PROOF = `${REPO}/blob/main/${LOCAL_EXP}/mathematical-proof.md`;
+const HILBERT_EXP = `${PROBLEM}/experiments/EXP-006-hilbert-parity-compression`;
+const HILBERT_PROOF = `${REPO}/blob/main/${HILBERT_EXP}/mathematical-proof.md`;
+const SPECTRAL_EXP = `${PROBLEM}/experiments/EXP-007-spectral-defect-parity`;
+const SPECTRAL_PROOF = `${REPO}/blob/main/${SPECTRAL_EXP}/mathematical-proof.md`;
+const RANK_SIX_EXP = `${PROBLEM}/experiments/EXP-008-rank-six-local-transfer`;
+const RANK_SIX_PROOF = `${REPO}/blob/main/${RANK_SIX_EXP}/mathematical-proof.md`;
+const WANG_KERNEL_EXP = `${PROBLEM}/experiments/EXP-009-wang-kernel-sharpening`;
+const WANG_KERNEL_PROOF = `${REPO}/blob/main/${WANG_KERNEL_EXP}/mathematical-proof.md`;
 const REPLAY_GUIDE = `${REPO}/blob/main/docs/guides/riemann-replay.md`;
 const PAPER = `${REPO}/blob/main/manuscripts/riemann-hypothesis/short-interval-stability/main.pdf`;
-const DOI = 'https://doi.org/10.5281/zenodo.22835172';
+const DOI = 'https://doi.org/10.5281/zenodo.22860012';
 const CONCEPT_DOI = 'https://doi.org/10.5281/zenodo.22727388';
+const WANG_KERNEL_PAPER = `${REPO}/blob/main/manuscripts/riemann-hypothesis/sharp-three-point-kernel/main.pdf`;
+const WANG_KERNEL_DOI = 'https://doi.org/10.5281/zenodo.22940291';
+const LEVINSON_EXP = `${PROBLEM}/experiments/EXP-010-levinson-parity-transfer`;
+const LEVINSON_PROOF = `${REPO}/blob/main/${LEVINSON_EXP}/mathematical-proof.md`;
+const LEVINSON_PAPER = `${REPO}/blob/main/manuscripts/riemann-hypothesis/short-interval-levinson/main.pdf`;
+const LEVINSON_DOI = 'https://doi.org/10.5281/zenodo.22984155';
+const BARRIER_EXP = `${PROBLEM}/experiments/EXP-011-linear-refinement-barrier`;
+const TANG_EXP = `${PROBLEM}/experiments/EXP-012-tang-short-window-moment`;
 
 function SourceLink({ href, children }: { href: string; children: ReactNode }) {
   return <a href={href} target="_blank" rel="noreferrer">{children}</a>;
@@ -166,17 +188,143 @@ export default function RiemannHypothesis() {
     let active = true;
     setError(false); setRecordsError(false);
     loadRiemann().then((value) => { if (active) setData(value); }).catch(() => { if (active) setError(true); });
-    loadExperiments().then((value) => { if (active) setExps(value.filter((e) => e.problem === 'riemann-hypothesis' && ['001', '002', '003', '004'].includes(e.id))); }).catch(() => { if (active) setRecordsError(true); });
+    loadExperiments().then((value) => { if (active) setExps(value.filter((e) => e.problem === 'riemann-hypothesis' && /^\d{3}$/.test(e.id) && Number(e.id) >= 1 && Number(e.id) <= 28)); }).catch(() => { if (active) setRecordsError(true); });
     return () => { active = false; };
   }, [attempt]);
   const result = data?.result;
   // Keep a readable fallback while an older baked replay is being replaced by
-  // the v3 export. The page must not throw when the optional new branch is
+  // the current export. The page must not throw when an optional new branch is
   // absent during a deployment roll-forward.
   const stageA = data?.pressure_result?.stage_a;
   const winner = pressureWinner(data);
   const parity = parityEvidence(data);
+  const local = localSelbergEvidence(data);
+  const hilbert = hilbertParityEvidence(data);
+  const spectral = spectralDefectEvidence(data);
+  const rankSix = rankSixEvidence(data);
+  const wangKernel = wangKernelEvidence(data);
+  const levinson = levinsonEvidence(data);
+  const barrier = barrierEvidence(data);
+  const tangStop = tangStopEvidence(data);
+  const distinct = distinctZeroEvidence(data);
+  const moment = shortWindowMomentEvidence(data);
+  const newExperimentName = (id: string) => ({
+    '013': t('Mixed-Gram parameter cap', 'Cota de parámetros de Gram mixto'),
+    '014': t('Short-window phase collision', 'Colisión de fases en ventanas cortas'),
+    '015': t('Squarefree phase collision', 'Colisión de fases libre de cuadrados'),
+    '016': t('Trace-aware clipping', 'Truncamiento con control de traza'),
+    '017': t('Sharp energy envelope', 'Envolvente óptima de energía'),
+    '018': t('Nine-point distinct transfer', 'Transferencia de ceros distintos con nueve puntos'),
+    '019': t('Nine-point replay (suspended)', 'Reproducción de nueve puntos (suspendida)'),
+    '020': t('Completed quadratic local certificate', 'Certificado local cuadrático completo'),
+    '021': t('Composite-character arithmetic layer', 'Capa aritmética de caracteres compuestos'),
+    '022': t('Fixed pressure-assembly ceiling', 'Cota de ensamblaje fijo de presiones'),
+    '023': t('Repressured local certificate (incomplete)', 'Certificado local con nueva presión (incompleto)'),
+    '024': t('Gaussian/Mellin moment reduction', 'Reducción de momentos por Gauss/Mellin'),
+    '025': t('Vector-pressure distinct-zero transfer', 'Transferencia vectorial de ceros distintos'),
+    '026': t('Multiplicity-defect isolation obstruction', 'Obstrucción de aislamiento del defecto de multiplicidad'),
+    '027': t('Complete shifted Voronoi transformation', 'Transformación completa de Voronoi desplazada'),
+    '028': t('Longer signed short-window moment', 'Momento con signo más largo en ventanas cortas'),
+  }[id] || `EXP-${id}`);
+  const recordStatus = (e: ExperimentRec) => e.id === '019' ? t('Suspended; no complete certificate', 'Suspendido; sin certificado completo') : e.id === '023' ? t('Stopped incomplete; bound excluded', 'Detenido incompleto; cota excluida') : ['020', '025', '028'].includes(e.id) ? t('Confirmed; published', 'Confirmado; publicado') : ({confirmed: t('Confirmed', 'Confirmado'), refuted: t('Refuted', 'Refutado'), inconclusive: t('Inconclusive', 'No concluyente'), mixed: t('Mixed', 'Mixto'), pass: t('Passed', 'Verificado')}[e.verdict] || t('Read persisted verdict', 'Leer veredicto persistido'));
   const sourceRole = (role: string) => ({
+    local_result: t('EXP-005 exact threshold certificate', 'Certificado exacto del umbral de EXP-005'),
+    local_receipt: t('EXP-005 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-005'),
+    local_hypothesis: t('EXP-005 declaration before computation', 'Declaración de EXP-005 antes del cálculo'),
+    local_runner: t('EXP-005 exact runner', 'Programa exacto de EXP-005'),
+    local_proof: t('EXP-005 complete localization proof', 'Prueba completa de localización de EXP-005'),
+    local_audit: t('EXP-005 adversarial review', 'Revisión adversarial de EXP-005'),
+    local_verdict: t('EXP-005 confirmed verdict', 'Veredicto confirmado de EXP-005'),
+    local_review: t('EXP-005 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-005'),
+    hilbert_result: t('EXP-006 exact Hilbert-parity certificate', 'Certificado exacto de Hilbert-paridad de EXP-006'),
+    hilbert_receipt: t('EXP-006 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-006'),
+    hilbert_hypothesis: t('EXP-006 declaration and strengthening', 'Declaración y fortalecimiento de EXP-006'),
+    hilbert_runner: t('EXP-006 exact runner', 'Programa exacto de EXP-006'),
+    hilbert_proof: t('EXP-006 complete proof', 'Prueba completa de EXP-006'),
+    hilbert_audit: t('EXP-006 adversarial review', 'Revisión adversarial de EXP-006'),
+    hilbert_verdict: t('EXP-006 confirmed verdict', 'Veredicto confirmado de EXP-006'),
+    hilbert_review: t('EXP-006 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-006'),
+    hilbert_test: t('EXP-006 focused regression tests', 'Pruebas de regresión focalizadas de EXP-006'),
+    spectral_result: t('EXP-007 spectral-defect certificate', 'Certificado de defecto espectral de EXP-007'),
+    spectral_receipt: t('EXP-007 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-007'),
+    spectral_hypothesis: t('EXP-007 declaration before computation', 'Declaración de EXP-007 antes del cálculo'),
+    spectral_runner: t('EXP-007 exact runner', 'Programa exacto de EXP-007'),
+    spectral_proof: t('EXP-007 complete proof', 'Prueba completa de EXP-007'),
+    spectral_audit: t('EXP-007 adversarial review', 'Revisión adversarial de EXP-007'),
+    spectral_verdict: t('EXP-007 confirmed verdict', 'Veredicto confirmado de EXP-007'),
+    spectral_review: t('EXP-007 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-007'),
+    spectral_test: t('EXP-007 focused regression tests', 'Pruebas de regresión focalizadas de EXP-007'),
+    rank_six_result: t('EXP-008 rank-six transfer certificate', 'Certificado de transferencia de rango seis de EXP-008'),
+    rank_six_receipt: t('EXP-008 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-008'),
+    rank_six_hypothesis: t('EXP-008 declaration before computation', 'Declaración de EXP-008 antes del cálculo'),
+    rank_six_runner: t('EXP-008 exact runner', 'Programa exacto de EXP-008'),
+    rank_six_proof: t('EXP-008 complete proof', 'Prueba completa de EXP-008'),
+    rank_six_audit: t('EXP-008 adversarial review', 'Revisión adversarial de EXP-008'),
+    rank_six_verdict: t('EXP-008 attributed-input verdict', 'Veredicto con entrada atribuida de EXP-008'),
+    rank_six_review: t('EXP-008 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-008'),
+    rank_six_test: t('EXP-008 focused regression tests', 'Pruebas de regresión focalizadas de EXP-008'),
+    wang_kernel_result: t('EXP-009 sharp-kernel certificate', 'Certificado del núcleo óptimo de EXP-009'),
+    wang_kernel_receipt: t('EXP-009 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-009'),
+    wang_kernel_hypothesis: t('EXP-009 declaration before computation', 'Declaración de EXP-009 antes del cálculo'),
+    wang_kernel_amendment: t('EXP-009 strengthened target', 'Meta fortalecida de EXP-009'),
+    wang_kernel_runner: t('EXP-009 exact runner', 'Programa exacto de EXP-009'),
+    wang_kernel_proof: t('EXP-009 complete proof', 'Prueba completa de EXP-009'),
+    wang_kernel_audit: t('EXP-009 adversarial review', 'Revisión adversarial de EXP-009'),
+    wang_kernel_verdict: t('EXP-009 source-bounded verdict', 'Veredicto con límites de fuente de EXP-009'),
+    wang_kernel_review: t('EXP-009 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-009'),
+    wang_kernel_test: t('EXP-009 focused regression tests', 'Pruebas de regresión focalizadas de EXP-009'),
+    wang_kernel_source_manifest: t('EXP-009 pinned source manifest', 'Manifiesto de fuentes fijadas de EXP-009'),
+    moment_hypothesis: t('EXP-028 declaration', 'Declaración de EXP-028'),
+    moment_mellin: t('Complete Mellin proof', 'Prueba completa de Mellin'),
+    moment_hankel: t('Exact Hankel cross-check', 'Verificación exacta de Hankel'),
+    moment_review_text: t('Adversarial analytic review', 'Revisión analítica adversarial'),
+    moment_verdict: t('EXP-028 internal verdict', 'Veredicto interno de EXP-028'),
+    moment_native: t('Native endpoint arithmetic', 'Aritmética nativa del extremo'),
+    moment_independent: t('Independent rational intervals', 'Intervalos racionales independientes'),
+    moment_adversarial: t('Exact dyadic and smoothing controls', 'Controles exactos diádicos y de suavizado'),
+    moment_runner: t('Native arithmetic auditor', 'Auditor aritmético nativo'),
+    moment_independent_runner: t('Independent rational auditor', 'Auditor racional independiente'),
+    moment_adversarial_runner: t('Exact exponent auditor', 'Auditor exacto de exponentes'),
+    moment_independent_declaration: t('Independent audit declaration', 'Declaración de auditoría independiente'),
+    moment_adversarial_declaration: t('Adversarial audit declaration', 'Declaración de auditoría adversarial'),
+    moment_detector: t('Frozen EXP-010 detector', 'Detector fijo de EXP-010'),
+    moment_interval_toolkit: t('Rational interval arithmetic source', 'Fuente de aritmética racional de intervalos'),
+    moment_transform: t('Complete shifted dual transformation', 'Transformación dual desplazada completa'),
+    moment_gaussian: t('Signed Gaussian representation', 'Representación gaussiana con signo'),
+    moment_paper: t('Published v0.02 PDF', 'PDF publicado v0.02'),
+    moment_tex: t('Published manuscript source', 'Fuente del manuscrito publicado'),
+    moment_render: t('Fourteen-page visual review', 'Revisión visual de catorce páginas'),
+    moment_archive: t('Extracted source archive replay', 'Reproducción del archivo de fuentes extraído'),
+    moment_publication: t('Exact-byte publication verification', 'Verificación de publicación con bytes exactos'),
+    moment_review: t('Complete internal theorem admission', 'Admisión interna completa del teorema'),
+    levinson_source_manifest: t('EXP-010 pinned source manifest', 'Manifiesto de fuentes fijadas de EXP-010'),
+    levinson_result: t('EXP-010 certified detector and onset result', 'Resultado certificado de detectores y umbral de EXP-010'),
+    levinson_receipt: t('EXP-010 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-010'),
+    levinson_hypothesis: t('EXP-010 declaration before computation', 'Declaración de EXP-010 antes del cálculo'),
+    levinson_frozen: t('EXP-010 frozen detector parameters', 'Parámetros fijados de los detectores de EXP-010'),
+    levinson_runner: t('EXP-010 exact runner', 'Programa exacto de EXP-010'),
+    levinson_auditor: t('EXP-010 independent quadrature auditor', 'Auditor independiente por cuadratura de EXP-010'),
+    levinson_audit_output: t('EXP-010 independent audit result', 'Resultado de la auditoría independiente de EXP-010'),
+    levinson_controls: t('EXP-010 counting-lemma controls', 'Controles del lema de conteo de EXP-010'),
+    levinson_controls_output: t('EXP-010 control results', 'Resultados de los controles de EXP-010'),
+    levinson_proof: t('EXP-010 complete proof', 'Prueba completa de EXP-010'),
+    levinson_audit: t('EXP-010 adversarial review', 'Revisión adversarial de EXP-010'),
+    levinson_verdict: t('EXP-010 confirmed verdict', 'Veredicto confirmado de EXP-010'),
+    levinson_review: t('EXP-010 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-010'),
+    levinson_test: t('EXP-010 focused regression tests', 'Pruebas de regresión focalizadas de EXP-010'),
+    barrier_result: t('EXP-011 certified counterexamples', 'Contraejemplos certificados de EXP-011'),
+    barrier_receipt: t('EXP-011 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-011'),
+    barrier_hypothesis: t('EXP-011 declaration and amendment', 'Declaración y enmienda de EXP-011'),
+    barrier_frozen: t('EXP-011 frozen configurations', 'Configuraciones fijadas de EXP-011'),
+    barrier_runner: t('EXP-011 Arb runner', 'Programa Arb de EXP-011'),
+    barrier_auditor: t('EXP-011 independent auditor', 'Auditor independiente de EXP-011'),
+    barrier_audit_output: t('EXP-011 audit result', 'Resultado de la auditoría de EXP-011'),
+    barrier_verdict: t('EXP-011 confirmed verdict', 'Veredicto confirmado de EXP-011'),
+    barrier_test: t('EXP-011 focused regression tests', 'Pruebas de regresión focalizadas de EXP-011'),
+    tang_hypothesis: t('EXP-012 declaration and proof plan', 'Declaración y plan de prueba de EXP-012'),
+    tang_check: t('EXP-012 weight-size check', 'Verificación del tamaño del peso de EXP-012'),
+    tang_check_output: t('EXP-012 weight-size result', 'Resultado del tamaño del peso de EXP-012'),
+    tang_verdict: t('EXP-012 inconclusive verdict', 'Veredicto no concluyente de EXP-012'),
     constant_audit: t('constant audit', 'auditoría de constantes'),
     result: t('arithmetic result', 'resultado aritmético'),
     certificate: t('finite certificate', 'certificado finito'),
@@ -227,6 +375,54 @@ export default function RiemannHypothesis() {
   const tabs: TabDef[] = [
     {
       id: 'summary', label: t('Summary', 'Resumen'), content: <section>
+        <RiemannMoment evidence={moment} mode="summary" />
+        <RiemannDistinct evidence={distinct} mode="summary" />
+        <h2>{t('Earlier EXP-010 Levinson result', 'Resultado anterior de Levinson en EXP-010')}</h2>
+        <p className="rh-lead">{t('EXP-010 localizes Levinson’s method, with Conrey’s operator polynomial of any degree, to every interval (T, T + T^θ] whenever the mollifier exponent satisfies ν < θ − 1/2, and shows that on such windows it counts distinct sign changes of Hardy’s function. Certified degree-201 detectors give κ > 0.7170 ν. Through the EXP-006 Hilbert-parity product, every fixed θ in [0.534, 1) has a positive proportion of simple critical zeros in (T, T + T^θ]; the previous onset was 0.5458838.', 'EXP-010 localiza el método de Levinson, con el polinomio operador de Conrey de cualquier grado, en cada intervalo (T, T + T^θ] siempre que el exponente del mollificador cumpla ν < θ − 1/2, y muestra que en esas ventanas cuenta cambios de signo distintos de la función de Hardy. Detectores certificados de grado 201 dan κ > 0.7170 ν. Mediante el producto de Hilbert-paridad de EXP-006, cada θ fijo en [0.534, 1) tiene una proporción positiva de ceros críticos simples en (T, T + T^θ]; el umbral anterior era 0.5458838.')}</p>
+        <Equation tex={String.raw`\liminf_{T\to\infty}\frac{O(T,T^\theta)}{N(T,T^\theta)}\ge\kappa=1-\frac{\log c(P,Q,R,\nu)}{R},\qquad \nu<\theta-\tfrac12`} />
+        {levinson ? <>
+          <p className="rh-number">{t('Simple-critical lower bound at θ = 0.534: ', 'Cota inferior de ceros críticos simples en θ = 0.534: ')}<strong>{levinson.onset.h_L.lower}</strong></p>
+          <p className="rh-number">{t('Simple-critical lower bound at θ = 0.5459: ', 'Cota inferior de ceros críticos simples en θ = 0.5459: ')}<strong>{levinson.point.h_L.lower}</strong></p>
+          <p className="rh-number">{t('Ratio over the EXP-008 value at θ = 0.5459: more than ', 'Razón sobre el valor de EXP-008 en θ = 0.5459: más de ')}<strong>{levinson.result.onset.exp008_comparison.ratio_h_L_over_h6_lower}</strong></p>
+          <p className="small">{t('Scientific verdict: confirmed after two internal review passes, with a scope correction to the declared moment (every detector used has Q(0) = 1). The onset uses Wang’s recent unreviewed short-interval pair theorem. This is not a proof of RH.', 'Veredicto científico: confirmado tras dos revisiones internas, con una corrección de alcance del momento declarado (todo detector usado tiene Q(0) = 1). El umbral usa el reciente teorema de pares en intervalos cortos de Wang, no revisado. Esto no es una prueba de RH.')} <Cite id="riemann-levinson2026" /></p>
+        </> : <p role="status">{t('Loading the source-bound EXP-010 evidence.', 'Cargando la evidencia de EXP-010 vinculada a sus fuentes.')}</p>}
+        <div className="rh-source-links"><SourceLink href={LEVINSON_PROOF}>{t('Full EXP-010 proof', 'Prueba completa de EXP-010')}</SourceLink><SourceLink href={`${REPO}/blob/main/${LEVINSON_EXP}/verdict.md`}>{t('EXP-010 verdict and limitations', 'Veredicto y limitaciones de EXP-010')}</SourceLink><SourceLink href={LEVINSON_PAPER}>{t('Levinson manuscript PDF', 'PDF del manuscrito de Levinson')}</SourceLink><SourceLink href={LEVINSON_DOI}>{t('Published Zenodo record', 'Registro publicado en Zenodo')}</SourceLink></div>
+        <h2>{t('Where the method stops', 'Dónde se detiene el método')}</h2>
+        <p>{t('Two further experiments test the obvious ways to lower the onset. EXP-011 shows that the finite inequality cannot be sharpened linearly: for the Montgomery-Taylor window, six real triples around one conjugate pair violate Q ≥ 2N + 3O − 4S, and a 10001-cell lattice gives (Q − 2N)/O below 2.365, so no linear refinement with β ≥ 2.365 exists. EXP-012 shows that Tang’s short-window reciprocity, with trivial or large-sieve bounds on its dual moment, gives at best the mollifier range ν < θ − 1/2 already used. EXP-028 subsequently extends the range by a different exact Voronoi and Mellin route.', 'Dos experimentos más prueban las formas evidentes de bajar el umbral. EXP-011 muestra que la desigualdad finita no puede mejorarse linealmente: para la ventana de Montgomery-Taylor, seis triples reales alrededor de un par conjugado violan Q ≥ 2N + 3O − 4S, y una red de 10001 celdas da (Q − 2N)/O menor que 2.365, de modo que no existe refinamiento lineal con β ≥ 2.365. EXP-012 muestra que la reciprocidad de Tang en ventanas cortas, con cotas triviales o de gran criba para su momento dual, da como máximo el rango de mollificador ν < θ − 1/2 ya usado. EXP-028 amplía después el rango por una vía distinta y exacta de Voronoi y Mellin.')} <Cite id="riemann-tang2026" /></p>
+        {barrier && <p className="rh-number">{t('EXP-011 certified slack of the linear candidate: ', 'Holgura certificada del candidato lineal en EXP-011: ')}<strong>{center(barrier.result.C1.slack_L.arb)}</strong> · {t('lattice ratio (Q − 2N)/O: ', 'razón de red (Q − 2N)/O: ')}<strong>{center(barrier.result.C2.ratio_Q_minus_2N_over_O.arb)}</strong></p>}
+        {tangStop && <p className="small">{t('EXP-012 verdict: inconclusive; the route stopped under its declared stop rule. The weight-size check matched the model within 2% at three heights.', 'Veredicto de EXP-012: no concluyente; la vía se detuvo según su regla de parada declarada. La verificación del tamaño del peso coincidió con el modelo dentro de 2% en tres alturas.')}</p>}
+        <div className="rh-source-links"><SourceLink href={`${REPO}/blob/main/${BARRIER_EXP}/verdict.md`}>{t('EXP-011 verdict', 'Veredicto de EXP-011')}</SourceLink><SourceLink href={`${REPO}/blob/main/${TANG_EXP}/verdict.md`}>{t('EXP-012 verdict', 'Veredicto de EXP-012')}</SourceLink></div>
+        <h2>{t('Global sharp-kernel result', 'Resultado global del núcleo óptimo')}</h2>
+        <p className="rh-lead">{t('EXP-009 proves the sharp constant √2 in a three-point kernel ratio left non-optimal in Wang’s new global refinement. Substituting the exact constant into Wang’s pinned v1 framework raises the certified global lower proportion of simple critical zeros to more than 0.6725007995946757558 and the distinct-zero companion to more than 0.8362503997973378779.', 'EXP-009 prueba la constante óptima √2 en un cociente de núcleo de tres puntos que no estaba optimizado en el nuevo refinamiento global de Wang. Sustituir la constante exacta en el marco v1 fijado de Wang eleva la proporción global inferior certificada de ceros críticos simples a más de 0.6725007995946757558 y la cota complementaria de ceros distintos a más de 0.8362503997973378779.')}</p>
+        <Equation tex={String.raw`\begin{aligned}R(\alpha,\beta)&\le\sqrt2,\\[3pt]d_\dagger&=\frac{\sqrt{2+8\sqrt2}-(2+\sqrt2)}{2(\sqrt2-1)}\end{aligned}`} />
+        {wangKernel ? <>
+          <p className="rh-number">{t('Global simple-critical proportion: ', 'Proporción global de ceros críticos simples: ')}<strong>{wangKernel.result.global.simple_proportion.lower.decimal}</strong></p>
+          <p className="rh-number">{t('Certified gain over the baseline: ', 'Ganancia certificada sobre la cota base: ')}<strong>{wangKernel.result.global.gain.lower.decimal}</strong></p>
+          <p className="rh-number">{t('Distinct-zero companion: ', 'Cota complementaria de ceros distintos: ')}<strong>{wangKernel.result.global.distinct_proportion.lower.decimal}</strong></p>
+          <p className="small">{t('Scientific verdict: the auxiliary inequality and arithmetic are confirmed. The global transfer is conditional on the correctness of Wang’s recent unreviewed arXiv v1 framework. This is not a proof of RH.', 'Veredicto científico: la desigualdad auxiliar y la aritmética están confirmadas. La transferencia global depende de la corrección del reciente marco v1 no revisado de Wang en arXiv. Esto no es una prueba de RH.')}</p>
+        </> : <p role="status">{t('Loading the source-bound EXP-009 evidence.', 'Cargando la evidencia de EXP-009 vinculada a sus fuentes.')}</p>}
+        <div className="rh-source-links"><SourceLink href={WANG_KERNEL_PROOF}>{t('Full EXP-009 proof', 'Prueba completa de EXP-009')}</SourceLink><SourceLink href={`${REPO}/blob/main/${WANG_KERNEL_EXP}/verdict.md`}>{t('EXP-009 verdict and limitations', 'Veredicto y limitaciones de EXP-009')}</SourceLink><SourceLink href={WANG_KERNEL_PAPER}>{t('Sharp-kernel manuscript PDF', 'PDF del manuscrito del núcleo óptimo')}</SourceLink><SourceLink href={WANG_KERNEL_DOI}>{t('Published Zenodo record', 'Registro publicado en Zenodo')}</SourceLink></div>
+        <h2>{t('Short-interval rank-six result', 'Resultado de rango seis en intervalos cortos')}</h2>
+        <p className="rh-lead">{t('EXP-008 proves that the localized Selberg transfer works at every fixed finite rank and inserts Pearce-Crump’s published rank-six constant. The source-certified input moves the simple-critical positivity threshold to (0.5458837, 0.5458838). At θ = 0.5459 the rank-six bound is over 5% larger than the rank-three value.', 'EXP-008 prueba que la transferencia local de Selberg funciona para todo rango finito fijo e inserta la constante publicada de rango seis de Pearce-Crump. La entrada certificada por la fuente mueve el umbral de positividad de ceros críticos simples a (0.5458837, 0.5458838). En θ = 0.5459 la cota de rango seis es más de 5% mayor que el valor de rango tres.')}</p>
+        <Equation tex={String.raw`k_q(\theta)=\frac{\theta-1/2}{4eC_q},\qquad h_q(\theta)=\frac{3+k_q(\theta)-\sqrt{(1-k_q(\theta))(9-k_q(\theta)-8c(\theta))}}4`} />
+        {rankSix ? <>
+          <p className="rh-parameters">θ<sub>6</sub> ∈ (<b>{rankSix.result.root_brackets.rank_six_fine.lower.theta.decimal}</b>, <b>{rankSix.result.root_brackets.rank_six_fine.upper.theta.decimal}</b>)<br />C<sub>6</sub> &lt; C<sub>3</sub></p>
+          <p className="rh-number">{t('Rank-six lower bound at θ = 0.5459: ', 'Cota inferior de rango seis en θ = 0.5459: ')}<strong>{rankSix.result.point_theta.rank_six.strong_simple.lower.decimal}</strong></p>
+          <p className="rh-number">{t('Certified gain over rank three: ', 'Ganancia certificada sobre rango tres: ')}<strong>{rankSix.result.point_theta.h6_minus_h3.lower.decimal}</strong></p>
+          <p className="small">{t('Scientific verdict: confirmed relative to the attributed source-certified C6 input. The public source does not print the rank-six coefficient matrix, so CAOS has not independently reconstructed C6.', 'Veredicto científico: confirmado respecto de la entrada C6 atribuida y certificada por la fuente. La fuente pública no imprime la matriz de coeficientes de rango seis, por lo que CAOS no ha reconstruido C6 de manera independiente.')}</p>
+        </> : <p role="status">{t('Loading the source-bound EXP-008 evidence.', 'Cargando la evidencia de EXP-008 vinculada a sus fuentes.')}</p>}
+        {spectral && <p className="small">{t('EXP-007 also proves the finite spectral-defect parity product and a strict full-curve gain. At θ = 0.5459 its conservative certified gain floor is ', 'EXP-007 también prueba el producto finito de paridad con defecto espectral y una ganancia estricta en toda la curva. En θ = 0.5459 su cota inferior certificada conservadora es ')}<span className="rh-number">{spectral.result.target.certified_gain_floor.lower.decimal}</span>.</p>}
+        <div className="rh-source-links"><SourceLink href={RANK_SIX_PROOF}>{t('Full EXP-008 proof', 'Prueba completa de EXP-008')}</SourceLink><SourceLink href={SPECTRAL_PROOF}>{t('Full EXP-007 proof', 'Prueba completa de EXP-007')}</SourceLink><SourceLink href={`${REPO}/blob/main/${RANK_SIX_EXP}/verdict.md`}>{t('EXP-008 verdict and source boundary', 'Veredicto y límite de fuente de EXP-008')}</SourceLink></div>
+        <h2>{t('Rank-independent localized odd-support input', 'Entrada local de soporte impar independiente del rango')}</h2>
+        <Equation tex={String.raw`\liminf_{T\to\infty}\frac{O(T,T^\theta)}{N(T,T^\theta)}\ge k_q(\theta)=\frac{\theta-1/2}{4eC_q}\qquad(q\ {
+m fixed})`} />
+        {local ? <>
+          <p className="rh-parameters">C<sub>3</sub> = <b>{local.result.source_constant.center.decimal}</b><br />θ = <b>{local.result.parameters.theta.decimal}</b> · u = <b>{local.result.parameters.mollifier_exponent_u.decimal}</b></p>
+          <p className="rh-number">{t('Certified fixed-witness simple-critical lower bound: ', 'Cota inferior certificada con testigo fijo: ')}<strong>{local.result.positive_point.fixed_u_simple_lower.decimal}</strong></p>
+          <p className="small">{t('Scientific verdict: confirmed after separate analytic-localization and exact-certificate review.', 'Veredicto científico: confirmado tras revisiones separadas de la localización analítica y del certificado exacto.')} <Cite id="riemann-local2026" /></p>
+        </> : <p role="status">{t('Loading the source-bound EXP-005 evidence.', 'Cargando la evidencia de EXP-005 vinculada a sus fuentes.')}</p>}
+        <div className="rh-source-links"><SourceLink href={LOCAL_PROOF}>{t('Full EXP-005 localization proof', 'Prueba completa de localización de EXP-005')}</SourceLink><SourceLink href={`${REPO}/blob/main/${LOCAL_EXP}/verdict.md`}>{t('Confirmed EXP-005 verdict', 'Veredicto confirmado de EXP-005')}</SourceLink></div>
+        <h2>{t('Earlier qualitative parity route', 'Vía cualitativa de paridad anterior')}</h2>
         <p className="rh-lead">{t('EXP-004 connects classical odd-zero density with the finite Hilbert-space method and Wang’s short-interval arithmetic. Its confirmed deduction extends positive simple-critical density to a fixed exponent strictly below the zero of Wang’s cosine bound. The improvement in interval range is qualitative: the new exponent and density constant have not been numerically determined. EXP-003 supplies a separate certified numerical improvement at θ = 3/4.', 'EXP-004 conecta la densidad clásica de ceros impares con el método de espacios de Hilbert finitos y la aritmética de Wang en intervalos cortos. Su deducción confirmada extiende la densidad positiva de ceros críticos simples a un exponente fijo estrictamente menor que la raíz de la cota coseno de Wang. La mejora del rango de intervalos es cualitativa: el nuevo exponente y la constante de densidad no se han determinado numéricamente. EXP-003 aporta una mejora numérica certificada separada en θ = 3/4.')}</p>
         <Equation tex={String.raw`\exists\,\kappa>0,\quad \frac{51}{100}<\theta_1<\theta_0:\qquad \forall\,\theta\in[\theta_1,1)\ {\rm fixed},\quad \liminf_{T\to\infty}\frac{S(T,T^\theta)}{N(T,T^\theta)}\ge\frac\kappa3>0`}
           caption={t('N counts all nontrivial zero copies with multiplicity in (T, T + T^θ]; S = N₀ˢ counts simple critical zeros. θ₀ is the unique zero of c(θ) = 2 − θ/2 − cot(θ/√2)/√2. One fixed κ serves every fixed exponent; eventual heights can depend on that exponent.', 'N cuenta todas las copias de ceros no triviales con multiplicidad en (T, T + T^θ]; S = N₀ˢ cuenta los ceros críticos simples. θ₀ es la raíz única de c(θ) = 2 − θ/2 − cot(θ/√2)/√2. Un mismo κ fijo sirve para cada exponente fijo; las alturas eventuales pueden depender de ese exponente.')} />
@@ -240,14 +436,16 @@ export default function RiemannHypothesis() {
         {resultTable}
         <p>{t('These are decimal approximations to limiting lower-bound constants; exact rational enclosures are available in Results. Stage B exceeded the declared target of 5/4 times Stage A’s gain above Wang. The comparison concerns the small gain, not a 25% increase in the full zero proportion.', 'Son aproximaciones decimales a constantes de cotas inferiores límite; los intervalos racionales exactos están en Resultados. La etapa B superó la meta declarada de 5/4 de la ganancia de la etapa A sobre Wang. La comparación corresponde a la pequeña ganancia, no a un aumento del 25% en la proporción total de ceros.')}</p>
         <Callout variant="honest" title={t('What the result establishes', 'Qué establece el resultado')}>
-          {t('The confirmed repository deduction is a qualitative extension below the cosine positivity threshold plus a separate numerical pressure refinement. RH remains open. No numerical new exponent, effective starting height, global record or universal simplicity follows. The manuscript series awaits external review; automated audits, finite certificates and publication do not constitute peer acceptance or an end-to-end formal proof.', 'La deducción confirmada en el repositorio es una extensión cualitativa bajo el umbral de positividad coseno junto con un refinamiento numérico separado por presión. RH sigue abierta. No se obtiene un nuevo exponente numérico, una altura inicial efectiva, un récord global ni simplicidad universal. La serie de manuscritos espera revisión externa; las auditorías automatizadas, los certificados finitos y la publicación no constituyen aceptación por pares ni una prueba formal de extremo a extremo.')}
+          {t('The confirmed deductions give a positive proportion of simple critical zeros in every interval (T, T + T^θ] for every fixed θ in [0.5339, 1) (EXP-028, relative to Wang’s pair theorem), the earlier threshold (0.5458837, 0.5458838) relative to Pearce-Crump’s rank-six constant, and the pressure and spectral refinements. RH remains open. No effective starting height, global record or universal simplicity follows. Automated audits, exact certificates and publication do not constitute peer acceptance or an end-to-end formal proof.', 'Las deducciones confirmadas dan una proporción positiva de ceros críticos simples en cada intervalo (T, T + T^θ] para cada θ fijo en [0.5339, 1) (EXP-028, respecto del teorema de pares de Wang), el umbral anterior (0.5458837, 0.5458838) respecto de la constante de rango seis de Pearce-Crump, y los refinamientos de presión y espectrales. RH sigue abierta. No se obtiene una altura inicial efectiva, un récord global ni simplicidad universal. Las auditorías automatizadas, los certificados exactos y la publicación no constituyen aceptación por pares ni una prueba formal de extremo a extremo.')}
         </Callout>
-        <div className="rh-source-links"><SourceLink href={PARITY_PROOF}>{t('Full EXP-004 parity proof', 'Prueba completa de paridad de EXP-004')}</SourceLink><SourceLink href={PRESSURE_PROOF}>{t('Full EXP-003 pressure proof', 'Prueba completa de presión de EXP-003')}</SourceLink><SourceLink href={PAPER}>{t('Read the manuscript PDF', 'Leer el manuscrito PDF')}</SourceLink><SourceLink href={DOI}>{t('Current Zenodo version (0.04)', 'Versión actual en Zenodo (0.04)')}</SourceLink><SourceLink href={CONCEPT_DOI}>{t('Zenodo record and versions', 'Registro y versiones de Zenodo')}</SourceLink><SourceLink href="https://doi.org/10.5281/zenodo.22727389">{t('First published version (0.01)', 'Primera versión publicada (0.01)')}</SourceLink></div>
-        <Refs label={refsLabel} ids={['riemann-karatsuba1985', 'riemann-wang2026', 'riemann-ainta2026', 'riemann-lamzouri2026', 'riemann-refinement2026', 'riemann-pressure2026', 'riemann-parity2026']} />
+        <div className="rh-source-links"><SourceLink href={RANK_SIX_PROOF}>{t('Full EXP-008 proof', 'Prueba completa de EXP-008')}</SourceLink><SourceLink href={SPECTRAL_PROOF}>{t('Full EXP-007 proof', 'Prueba completa de EXP-007')}</SourceLink><SourceLink href={HILBERT_PROOF}>{t('Full EXP-006 proof', 'Prueba completa de EXP-006')}</SourceLink><SourceLink href={LOCAL_PROOF}>{t('Full EXP-005 localization proof', 'Prueba completa de localización de EXP-005')}</SourceLink><SourceLink href={PARITY_PROOF}>{t('Full EXP-004 parity proof', 'Prueba completa de paridad de EXP-004')}</SourceLink><SourceLink href={PRESSURE_PROOF}>{t('Full EXP-003 pressure proof', 'Prueba completa de presión de EXP-003')}</SourceLink><SourceLink href={PAPER}>{t('Read the manuscript PDF', 'Leer el manuscrito PDF')}</SourceLink><SourceLink href={DOI}>{t('Current published Zenodo version', 'Versión publicada actual en Zenodo')}</SourceLink><SourceLink href={CONCEPT_DOI}>{t('Zenodo record and versions', 'Registro y versiones de Zenodo')}</SourceLink><SourceLink href="https://doi.org/10.5281/zenodo.22727389">{t('First published version (0.01)', 'Primera versión publicada (0.01)')}</SourceLink></div>
+        <Refs label={refsLabel} ids={['riemann-levinson2026', 'riemann-tang2026', 'riemann-pearcecrump2026', 'riemann-local2026', 'riemann-karatsuba1985', 'riemann-wang2026', 'riemann-ainta2026', 'riemann-lamzouri2026', 'riemann-refinement2026', 'riemann-pressure2026', 'riemann-parity2026']} />
       </section>,
     },
     {
       id: 'context', label: t('Context & history', 'Contexto e historia'), content: <section>
+        <RiemannMoment evidence={moment} mode="context" />
+        <RiemannDistinct evidence={distinct} mode="context" />
         <h2>{t('What “on the critical line” means', 'Qué significa «en la recta crítica»')}</h2>
         <p>{t('The nontrivial zeros lie in the strip between real parts zero and one. RH asserts that all of them have real part one-half. A positive-proportion theorem addresses a different question: how many zeros can be proved to lie on that line, or to be simple, compared with the total count? A simple zero has multiplicity one. A distinct-zero count counts each location once even when its multiplicity is larger.', 'Los ceros no triviales están en la franja entre partes reales cero y uno. RH afirma que todos tienen parte real un medio. Un teorema de proporción positiva aborda otra pregunta: ¿cuántos ceros pueden demostrarse en esa recta, o simples, respecto del número total? Un cero simple tiene multiplicidad uno. El conteo de ceros distintos cuenta cada ubicación una sola vez aunque su multiplicidad sea mayor.')}</p>
         <Equation tex={String.raw`N_0^s\le N_0\le N,\qquad N^d\le N,\qquad \mathrm{RH}:\ \zeta(\rho)=0,\ 0<\Re\rho<1\Longrightarrow\Re\rho=\tfrac12`}
@@ -270,6 +468,8 @@ export default function RiemannHypothesis() {
     },
     {
       id: 'approaches', label: t('References & approaches', 'Referencias y enfoques'), content: <section>
+        <RiemannMoment evidence={moment} mode="approaches" />
+        <RiemannDistinct evidence={distinct} mode="approaches" />
         <h2>{t('A map of the evidence', 'Un mapa de la evidencia')}</h2>
         <p>{t('The review follows primary proof documents, pinned source repositories, and their explicit theorem statements. An announcement, a successful library build, a finite interval certificate, and an end-to-end formal theorem answer different questions. Each source below is useful within its own boundary.', 'La revisión sigue documentos primarios de prueba, repositorios fijados por versión y sus enunciados explícitos. Un anuncio, una compilación exitosa de biblioteca, un certificado finito de intervalos y un teorema formal de extremo a extremo responden preguntas distintas. Cada fuente es útil dentro de su propio alcance.')}</p>
         <div className="rs-scroll"><table className="rs-table">
@@ -287,7 +487,7 @@ export default function RiemannHypothesis() {
         <p>{t('AxiomMath’s second development gives explicit Riemann–von Mangoldt and pair-correlation assumptions to its headline zeta theorems. Its finite inequalities and numerical corollaries are formal source, while those two analytic inputs remain assumptions in that project. The pinned upstream CI confirms a default-library build; it does not itself show the separate challenge comparator running.', 'El segundo desarrollo de AxiomMath incluye supuestos explícitos de Riemann–von Mangoldt y correlación por pares en sus teoremas principales sobre zeta. Sus desigualdades finitas y corolarios numéricos son fuente formal, mientras que esas dos entradas analíticas siguen siendo supuestos en ese proyecto. El CI de la versión fijada confirma una compilación de la biblioteca predeterminada; no demuestra por sí solo la ejecución del comparador separado de desafíos.')} <Cite id="riemann-axiom2026" /></p>
         <p>{t('Anthropic’s current formal-math development contains proofs of the analytic inputs and headline statements without those external hypotheses. Our source inspection distinguishes this stronger intended scope from the verification receipts available for particular commits. We did not locally rebuild the full upstream Lean developments, and we do not present upstream author reports as our own independent kernel verification.', 'El desarrollo actual formal-math de Anthropic contiene pruebas de las entradas analíticas y enunciados principales sin esas hipótesis externas. Nuestra inspección distingue este alcance más fuerte de los comprobantes de verificación disponibles para ciertos commits. No recompilamos localmente los desarrollos Lean completos y no presentamos los informes de los autores como verificación independiente del núcleo realizada por nosotros.')} <Cite id="riemann-formalmath2026" /></p>
         <Callout variant="honest" title={t('Novelty is narrower than a larger decimal', 'La novedad exige más que un decimal mayor')}>
-          {t('The finite stability inequalities, odd-zero seed and global pressure frameworks are attributed prior work. The confirmed repository deductions are their stronger short-interval consequences: a quantitative pressure refinement and a qualitative extension below the cosine positivity root. The source search found no matching parity combination, but cannot guarantee priority. Higher-moment or short-mollifier headlines are not substituted for a proved simple-zero input.', 'Las desigualdades finitas de estabilidad, la densidad inicial de ceros impares y los marcos globales de presión se atribuyen a trabajos previos. Las deducciones confirmadas en el repositorio son sus consecuencias más fuertes en intervalos cortos: un refinamiento cuantitativo por presión y una extensión cualitativa bajo la raíz de positividad coseno. La búsqueda no encontró una combinación de paridad equivalente, pero no garantiza prioridad. Los anuncios sobre momentos superiores o mollificadores cortos no sustituyen una entrada demostrada sobre ceros simples.')}
+          {t('The finite stability inequalities, Selberg detector, and global pressure frameworks are attributed prior work. The confirmed repository deductions are their stronger short-interval consequences: an explicit localized odd-zero curve and threshold, a quantitative pressure refinement, and the parity transfer. The bounded source search found no matching localization and parity combination, but cannot guarantee priority.', 'Las desigualdades finitas de estabilidad, el detector de Selberg y los marcos globales de presión se atribuyen a trabajos previos. Las deducciones confirmadas en el repositorio son sus consecuencias más fuertes en intervalos cortos: una curva explícita localizada de ceros impares y su umbral, un refinamiento cuantitativo por presión y la transferencia de paridad. La búsqueda acotada no encontró una combinación equivalente de localización y paridad, pero no puede garantizar prioridad.')}
         </Callout>
         <h2>{t('Alternative reformulations: source preflight', 'Reformulaciones alternativas: revisión previa de fuentes')}</h2>
         <p>{t('The review also compares approximation in Hilbert spaces, Li–Weil positivity, spectral realizations and heat flow. These dossiers state exact equivalences, finite diagnostics and known barriers. Finite positive tests cannot establish an infinite positivity criterion; a proposed self-adjoint operator also needs a proved bridge to the zeta function. None of these source reviews is reported here as a confirmed new experiment.', 'La revisión también compara aproximación en espacios de Hilbert, positividad de Li–Weil, realizaciones espectrales y flujo de calor. Los informes establecen equivalencias exactas, diagnósticos finitos y barreras conocidas. Pruebas positivas finitas no establecen un criterio de positividad infinito; un operador autoadjunto propuesto también necesita un vínculo demostrado con zeta. Ninguna de estas revisiones de fuentes se presenta aquí como un nuevo experimento confirmado.')}</p>
@@ -298,6 +498,8 @@ export default function RiemannHypothesis() {
     },
     {
       id: 'strategy', label: t('Strategy', 'Estrategia'), content: <section>
+        <RiemannMoment evidence={moment} mode="strategy" />
+        <RiemannDistinct evidence={distinct} mode="strategy" />
         <h2>{t('Keep the information lost at equality', 'Conservar la información perdida en la igualdad')}</h2>
         <p>{t('A normalized even density determines vectors for the zeros and a finite self-adjoint operator A. Its trace is the total multiplicity N; its squared Hilbert–Schmidt norm is Q. The simple real atoms form a positive operator with Gram matrix G. The residual operator includes signed off-line conjugate pairs, so replacing the complex pair sum by a sum of absolute squares would change the mathematics.', 'Una densidad par normalizada determina vectores para los ceros y un operador autoadjunto finito A. Su traza es la multiplicidad total N; el cuadrado de su norma de Hilbert–Schmidt es Q. Los átomos reales simples forman un operador positivo con matriz de Gram G. El operador residual incluye pares conjugados con signo fuera de la recta, de modo que reemplazar la suma compleja por una suma de módulos al cuadrado cambiaría la matemática.')}</p>
         <Equation tex={String.raw`S\ge2N-Q+D(G),\qquad D(G)=\operatorname{tr}\Psi(G),\qquad \Psi(t)=\begin{cases}(t-1)^2&0\le t\le2,\\2t-3&t\ge2.\end{cases}`}
@@ -369,12 +571,39 @@ export default function RiemannHypothesis() {
     },
     {
       id: 'results', label: t('Experiments & results', 'Experimentos y resultados'), content: <section>
+        <RiemannMoment evidence={moment} mode="results" />
+        <RiemannDistinct evidence={distinct} mode="results" />
+        <p>{t('EXP-013–028 extend the program through kernel reconstruction, alternative moment routes, distinct-zero transfers and complete local certificates. EXP-020, EXP-025 and EXP-028 are completed and published. EXP-019 is suspended; EXP-023 remains incomplete. EXP-028 supplies an internally reviewed signed moment theorem; finite controls alone do not establish it.', 'EXP-013–028 amplían el programa mediante reconstrucción de núcleos, vías alternativas de momentos, transferencias de ceros distintos y certificados locales completos. EXP-020, EXP-025 y EXP-028 están completos y publicados. EXP-019 está suspendido; EXP-023 sigue incompleto. EXP-028 aporta un teorema del momento con signo revisado internamente; los controles finitos por sí solos no lo establecen.')}</p>
         <h2>{t('Read the experiment records', 'Leer los registros experimentales')}</h2>
-        <p>{t('EXP-001 audits source constants and normalization. EXP-002 proves the first short-interval refinement and certifies its compact three-point example. EXP-003 proves the odd-frame pressure theorem: Stage A reuses that certificate, and Stage B certifies a stronger all-gap inequality. EXP-004 combines the finite multiplicity accounting with a classical odd-zero seed and Wang’s fixed-test transfer to extend positive simple-critical density below the cosine root. Open a record to read its original declaration, verbatim verdict, artifacts and source history. The records retain their original language.', 'EXP-001 audita constantes y normalización. EXP-002 prueba el primer refinamiento en intervalos cortos y certifica su ejemplo compacto de tres puntos. EXP-003 prueba el teorema de presión con marcos impares: la etapa A reutiliza ese certificado y la etapa B certifica una desigualdad más fuerte para toda separación. EXP-004 combina la contabilidad finita de multiplicidades con una densidad clásica de ceros impares y la transferencia con prueba fija de Wang para extender la densidad positiva de ceros críticos simples bajo la raíz coseno. Abra un registro para leer su declaración original, veredicto literal, artefactos e historia. Los registros conservan su idioma original.')}</p>
-        <ul className="rh-experiments">{exps.map((e) => <li key={e.slug}><button className="rs-exp-open" onClick={() => setOpen(e)}>EXP-{e.id}: {e.id === '001' ? t('Source and constant audit', 'Auditoría de fuentes y constantes') : e.id === '002' ? t('Short-interval stability refinement', 'Refinamiento por estabilidad en intervalos cortos') : e.id === '003' ? t('Odd-frame pressure refinement', 'Refinamiento por presión con marcos impares') : t('Parity density transfer', 'Transferencia de densidad por paridad')}</button><span className="rs-badge state">{e.verdict || t('Record available', 'Registro disponible')}</span></li>)}</ul>
+        <p>{t('EXP-001 through EXP-006 establish the audited source, stability, pressure, parity, localization and Hilbert layers. EXP-007 retains the spectral defect in the parity product. EXP-008 proves rank-independent localization and applies the attributed rank-six constant to move the onset below 0.5458838. EXP-009 sharpens a kernel constant in Wang’s global refinement. EXP-010 localizes Levinson’s method and moves the onset to 0.534. EXP-011 certifies that linear refinements of the finite inequality cannot help much, and EXP-012 records why Tang’s reciprocity with standard bounds does not lengthen the mollifier. Open a record to read its declaration, verdict, artifacts and source history.', 'EXP-001 a EXP-006 establecen las capas auditadas de fuentes, estabilidad, presión, paridad, localización y Hilbert. EXP-007 conserva el defecto espectral en el producto de paridad. EXP-008 prueba la localización independiente del rango y aplica la constante atribuida de rango seis para mover el umbral bajo 0.5458838. EXP-009 afina una constante de núcleo en el refinamiento global de Wang. EXP-010 localiza el método de Levinson y mueve el umbral a 0.534. EXP-011 certifica que los refinamientos lineales de la desigualdad finita no ayudan mucho, y EXP-012 registra por qué la reciprocidad de Tang con cotas estándar no alarga el mollificador. Abra un registro para leer su declaración, veredicto, artefactos e historia.')}</p>
+        <ul className="rh-experiments">{exps.map((e) => <li key={e.slug}><button className="rs-exp-open" onClick={() => setOpen(e)}>EXP-{e.id}: {e.id === '001' ? t('Source and constant audit', 'Auditoría de fuentes y constantes') : e.id === '002' ? t('Short-interval stability refinement', 'Refinamiento por estabilidad en intervalos cortos') : e.id === '003' ? t('Odd-frame pressure refinement', 'Refinamiento por presión con marcos impares') : e.id === '004' ? t('Parity density transfer', 'Transferencia de densidad por paridad') : e.id === '005' ? t('Local Selberg transfer', 'Transferencia local de Selberg') : e.id === '006' ? t('Hilbert-parity compression', 'Compresión de Hilbert y paridad') : e.id === '007' ? t('Spectral-defect parity', 'Paridad con defecto espectral') : e.id === '008' ? t('Rank-six local transfer', 'Transferencia local de rango seis') : e.id === '009' ? t('Sharp three-point kernel', 'Núcleo óptimo de tres puntos') : e.id === '010' ? t('Localized Levinson detector', 'Detector de Levinson localizado') : e.id === '011' ? t('Linear-refinement barrier', 'Barrera para refinamientos lineales') : e.id === '012' ? t('Tang-type short-window moment (stopped)', 'Momento en ventana corta tipo Tang (detenido)') : newExperimentName(e.id)}</button><span className="rs-badge state">{recordStatus(e)}</span></li>)}</ul>
         {(recordsError || !exps.length) && <p>{t('Experiment records are currently unavailable in the viewer.', 'Los registros experimentales no están disponibles actualmente en el visor.')} <SourceLink href={`${REPO}/tree/main/${PROBLEM}/experiments`}>{t('Open the source records', 'Abrir los registros originales')}</SourceLink></p>}
         {resultTable}
-        <p>{t('The baseline is Wang’s short-interval theorem. EXP-003 derives numerical simple-critical and distinct-zero refinements at θ = 3/4. EXP-004 derives a qualitative fixed-exponent interval-range extension; its κ and new exponent remain symbolic.', 'La cota base es el teorema de Wang en intervalos cortos. EXP-003 deriva refinamientos numéricos de ceros críticos simples y de ceros distintos para θ = 3/4. EXP-004 deriva una extensión cualitativa del rango para exponentes fijos; κ y el nuevo exponente permanecen simbólicos.')} <Cite id="riemann-wang2026" /> <Cite id="riemann-pressure2026" /> <Cite id="riemann-parity2026" /></p>
+        <p>{t('The baseline is Wang’s short-interval theorem. EXP-003 derives numerical refinements at θ = 3/4. EXP-004 gives the parity transfer. EXP-005 and EXP-006 supply the rank-three threshold. EXP-007 proves a strict spectral gain without changing that onset. EXP-008 moves the onset using the source-certified rank-six constant.', 'La cota base es el teorema de Wang en intervalos cortos. EXP-003 deriva refinamientos numéricos para θ = 3/4. EXP-004 da la transferencia de paridad. EXP-005 y EXP-006 aportan el umbral de rango tres. EXP-007 prueba una ganancia espectral estricta sin cambiar ese umbral. EXP-008 mueve el umbral usando la constante de rango seis certificada por la fuente.')} <Cite id="riemann-wang2026" /> <Cite id="riemann-pressure2026" /> <Cite id="riemann-local2026" /></p>
+        {rankSix && <details className="rh-details"><summary>{t('Inspect the EXP-008 rank-six evidence', 'Examinar la evidencia de rango seis de EXP-008')}</summary>
+          <p>{t('Rank-six onset: ', 'Umbral de rango seis: ')}({rankSix.result.root_brackets.rank_six_fine.lower.theta.decimal}, {rankSix.result.root_brackets.rank_six_fine.upper.theta.decimal})</p>
+          <p>{t('Rank-three onset: ', 'Umbral de rango tres: ')}({rankSix.result.root_brackets.rank_three_fine.lower.theta.decimal}, {rankSix.result.root_brackets.rank_three_fine.upper.theta.decimal})</p>
+          <p>{t('Rank-six lower bound at θ = 0.545884: ', 'Cota inferior de rango seis en θ = 0.545884: ')}<span className="rh-number">{rankSix.result.edge_theta.rank_six.strong_simple.lower.decimal}</span></p>
+          <p>{t('Pointwise gain at θ = 0.5459: ', 'Ganancia puntual en θ = 0.5459: ')}<span className="rh-number">{rankSix.result.point_theta.h6_minus_h3.lower.decimal}</span></p>
+          <p>{rankSix.review.critical_limitation}</p>
+        </details>}
+        {spectral && <details className="rh-details"><summary>{t('Inspect the EXP-007 spectral-defect evidence', 'Examinar la evidencia de defecto espectral de EXP-007')}</summary>
+          <p>{t('Strict certified gain floor at θ = 0.5459: ', 'Cota inferior de ganancia estricta en θ = 0.5459: ')}<span className="rh-number">{spectral.result.target.certified_gain_floor.lower.decimal}</span></p>
+          <p>{t('Spectra checked: ', 'Espectros verificados: ')}{spectral.result.spectral_census.spectra.toLocaleString(t('en-US', 'es-CL'))}</p>
+          <p>{t('Multiplicity profiles checked: ', 'Perfiles de multiplicidad verificados: ')}{spectral.result.multiplicity_census.profiles.toLocaleString(t('en-US', 'es-CL'))}</p>
+        </details>}
+        {hilbert && <details className="rh-details"><summary>{t('Inspect the EXP-006 exact Hilbert-parity evidence', 'Examinar la evidencia exacta de Hilbert-paridad de EXP-006')}</summary>
+          <p>{t('Certified root bracket: ', 'Intervalo certificado de la raíz: ')}({hilbert.result.parameters.root_lower_theta.decimal}, {hilbert.result.parameters.root_upper_theta.decimal})</p>
+          <p>{t('Old linear term at θ = 0.5459: ', 'Término lineal anterior en θ = 0.5459: ')}<span className="rh-number">{hilbert.result.target.old_linear_upper.decimal}</span></p>
+          <p>{t('Strengthened lower bound: ', 'Cota inferior fortalecida: ')}<span className="rh-number">{hilbert.result.target.strong_simple_lower.decimal}</span></p>
+          <p>{t('Finite profiles checked: ', 'Perfiles finitos verificados: ')}{hilbert.result.finite_census.cases.toLocaleString(t('en-US', 'es-CL'))}</p>
+        </details>}
+        {local && <details className="rh-details"><summary>{t('Inspect the EXP-005 exact threshold evidence', 'Examinar la evidencia exacta del umbral de EXP-005')}</summary>
+          <p>{t('Negative control at θ = ', 'Control negativo en θ = ')}{local.result.parameters.negative_control_theta.decimal}: <span className="rh-number">{local.result.negative_control.simple_curve_upper.decimal}</span></p>
+          <p>{t('Positive fixed witness at θ = ', 'Testigo fijo positivo en θ = ')}{local.result.parameters.theta.decimal}: <span className="rh-number">{local.result.positive_point.fixed_u_simple_lower.decimal}</span></p>
+          <p>{t('Optimized displayed curve: ', 'Curva optimizada mostrada: ')}<span className="rh-number">{local.result.positive_point.simple_curve_lower.decimal}</span></p>
+          <p>{t('Strict localization exponent margin: ', 'Margen estricto del exponente de localización: ')}<span className="rh-number">{local.result.positive_point.localization_exponent_margin.decimal}</span></p>
+        </details>}
         <Equation tex={String.raw`\liminf_{T\to\infty}\frac{N^d(T,T^\theta)}{N(T,T^\theta)}\ge\frac{1+c_*(\theta)}2`}
           caption={t('Nᵈ counts each distinct nontrivial zero once, regardless of multiplicity or position in the strip. This companion bound has the same fixed-exponent and asymptotic scope.', 'Nᵈ cuenta cada cero no trivial distinto una sola vez, sin importar su multiplicidad o ubicación en la franja. Esta cota complementaria tiene el mismo alcance asintótico y de exponente fijo.')} />
         {winner && <p className="rh-number">{t('Stage B distinct-zero companion: ', 'Cota complementaria de ceros distintos de la etapa B: ')}<strong>{center(winner.distinct.display)}</strong></p>}
@@ -440,11 +669,13 @@ export default function RiemannHypothesis() {
     },
     {
       id: 'open', label: t('Open questions', 'Preguntas abiertas'), content: <section>
+        <RiemannMoment evidence={moment} mode="open" />
+        <RiemannDistinct evidence={distinct} mode="open" />
         <h2>{t('What remains to be established', 'Qué falta establecer')}</h2>
         <p>{t('The Riemann hypothesis remains the overarching open problem. The refinement gives a small strict gain inside a specified asymptotic counting problem. It does not place every zero on the line, prove all zeros simple, or determine a finite height beyond which the proportion holds. Those conclusions need additional mathematics.', 'La hipótesis de Riemann sigue siendo el problema abierto general. El refinamiento da una pequeña ganancia estricta dentro de un problema de conteo asintótico especificado. No sitúa todos los ceros en la recta, no demuestra que todos sean simples ni determina una altura finita a partir de la cual valga la proporción. Esas conclusiones requieren matemática adicional.')}</p>
         <ol className="rh-questions">
           <li><h3>{t('External proof and priority review', 'Revisión externa de la prueba y la prioridad')}</h3><p>{t('Can an independent specialist validate the transfer, the signed finite operator, and the nested limits? The reviewed sources contain the stability lemma and global geometric refinements; the candidate novelty is the short-interval consequence. Earlier or concurrent work could narrow that claim.', '¿Puede un especialista independiente validar la transferencia, el operador finito con signo y los límites anidados? Las fuentes revisadas contienen el lema de estabilidad y refinamientos geométricos globales; la novedad candidata es la consecuencia en intervalos cortos. Trabajos anteriores o simultáneos podrían reducir ese alcance.')}</p></li>
-          <li><h3>{t('A useful improvement near the threshold', 'Una mejora útil cerca del umbral')}</h3><p>{t('The analytic gain stays positive for each fixed admissible exponent but may become extremely small near the threshold. Improving the positivity exponent itself requires a mechanism beyond the present baseline-plus-defect argument.', 'La ganancia analítica permanece positiva para cada exponente fijo admisible, pero puede ser extremadamente pequeña cerca del umbral. Mejorar el propio exponente de positividad requiere un mecanismo adicional al argumento actual de cota base más defecto.')}</p></li>
+          <li><h3>{t('Reconstruct and improve the rank-six profile', 'Reconstruir y mejorar el perfil de rango seis')}</h3><p>{t('EXP-008 lowers the explicit threshold to (0.5458837, 0.5458838), but its C6 value is attributed to Pearce-Crump because the public paper does not print the coefficient matrix. Reconstructing that matrix independently is the first reproducibility target. Optimizing a broader finite-rank profile family, or coupling it to new multiplicity geometry, could then move the unique zero closer to 1/2.', 'EXP-008 reduce el umbral explícito a (0.5458837, 0.5458838), pero su valor C6 se atribuye a Pearce-Crump porque el artículo público no imprime la matriz de coeficientes. Reconstruir esa matriz de forma independiente es el primer objetivo de reproducibilidad. Optimizar después una familia más amplia de perfiles de rango finito, o vincularla con una geometría nueva de multiplicidades, podría acercar la raíz única a 1/2.')}</p></li>
           <li><h3>{t('Beyond the confirmed pressure family', 'Más allá de la familia de presión confirmada')}</h3><p>{t('EXP-003 now answers the odd-frame question and improves the recorded example. It does not optimize every finite configuration or every spectral envelope. A further declared experiment must identify an additional theorem or mechanism, and compare it against the known nonuniform-capacity and mixed-frame methods. The two unrun Stage B candidates carry no verdict.', 'EXP-003 responde ahora la pregunta de los marcos impares y mejora el ejemplo registrado. No optimiza todas las configuraciones finitas ni todas las cotas espectrales. Un nuevo experimento declarado debe identificar un teorema o mecanismo adicional y compararlo con los métodos conocidos de capacidad no uniforme y marcos mixtos. Los dos candidatos no ejecutados de la etapa B no tienen veredicto.')}</p></li>
           <li><h3>{t('A bridge to a different RH criterion', 'Un vínculo con otro criterio de RH')}</h3><p>{t('Can an approximation or positivity route yield a new uniform estimate rather than another finite pass? The source-preflight dossiers isolate a Nyman–Beurling approximation-and-tail objective, finite Weil witnesses, and the missing limits in spectral and heat-flow approaches. These are proposed questions with explicit failure conditions, not established advances toward RH.', '¿Puede una vía de aproximación o positividad dar una nueva estimación uniforme en vez de otra verificación finita? Los informes previos aíslan un objetivo de aproximación y control de colas de Nyman–Beurling, testigos finitos de Weil y los límites faltantes en los enfoques espectrales y de flujo de calor. Son preguntas propuestas con condiciones explícitas de fallo, no avances establecidos hacia RH.')}</p></li>
           <li><h3>{t('Effective heights and formalization', 'Alturas efectivas y formalización')}</h3><p>{t('Can the arithmetic and smoothing errors be made explicit enough to give a usable starting height? Can the complete analytic transfer and certificate checker be formalized, with all imported theorem scopes visible? Current exact arithmetic validates the finite energy claim and remains only one layer of that larger task.', '¿Pueden explicitarse los errores aritméticos y de suavizado lo suficiente para dar una altura inicial utilizable? ¿Pueden formalizarse la transferencia analítica completa y el verificador del certificado, mostrando el alcance de todos los teoremas importados? La aritmética exacta actual valida la afirmación finita de energía y sigue siendo solo una capa de esa tarea mayor.')}</p></li>
@@ -460,8 +691,8 @@ export default function RiemannHypothesis() {
   return <article className="page-body prose rh-page">
     <header className="rh-head">
       <div className="rh-title-row"><Link to="/">{t('Program board', 'Panel del programa')}</Link><span className="badge">{t('RH remains open', 'RH sigue abierta')}</span>{data && <span className="small muted">{t('Source review', 'Revisión de fuentes')}: {data.reviewed_on}</span>}</div>
-      <h1>{t('Riemann zeta: zeros in short intervals', 'Zeta de Riemann: ceros en intervalos cortos')}</h1>
-      <p className="muted">{t('A source review and a certified stability refinement for ', 'Una revisión de fuentes y un refinamiento certificado por estabilidad para ')}<InlineMath tex={String.raw`(T,T+T^\theta]`} />.</p>
+      <h1>{t('Riemann zeta: distinct zeros and short intervals', 'Zeta de Riemann: ceros distintos e intervalos cortos')}</h1>
+      <p className="muted">{t('Global distinct-zero certificates and separate simple-critical refinements in ', 'Certificados globales de ceros distintos y refinamientos separados de ceros críticos simples en ')}<InlineMath tex={String.raw`(T,T+T^\theta]`} />.</p>
       {(error || recordsError) && <button className="btn" onClick={() => setAttempt((value) => value + 1)}>{t('Retry loading the research data', 'Reintentar la carga de datos')}</button>}
     </header>
     <Tabs tabs={tabs} ariaLabel={t('Riemann research sections', 'Secciones de investigación de Riemann')} />

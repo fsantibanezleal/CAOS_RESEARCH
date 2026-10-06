@@ -1,0 +1,633 @@
+{
+  "schema": "riemann-release-ui-qa-v1",
+  "release": "0.75.000",
+  "scope": "Full-panel matrix on corrected UI; final registry-only refresh adds two EXP-023 diagnostic artifact entries and receives a separate final-bake matrix.",
+  "passed": true,
+  "raw_receipt": {
+    "bytes": 139566509,
+    "sha256": "5aad73dde1e00eb53bb6a7928dc0bf0d0ff8f543925bea58c50c247793ff1f31",
+    "gzip_sha256": "44ee79064aeda972b289f05309ac0343d36441929dbf0077827fdcad0755d7a4"
+  },
+  "script_sha256": "9c9ae109c95c5a88b3d52adade66cf8590d40364e433dbd04ac163e04545a0d0",
+  "browser_version": "154.0.8037.95",
+  "started_utc": "2026-10-04T00:26:45.140Z",
+  "finished_utc": "2026-10-04T01:01:45.556Z",
+  "scenario_count": 20,
+  "tabs_visited": 120,
+  "screenshots": 5894,
+  "failed_checks": 0,
+  "all_screenshot_bytes_verified": true,
+  "scenarios": [
+    {
+      "id": "390x844-en-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:26:45.872Z",
+      "finished_utc": "2026-10-04T00:28:43.880Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 4079,
+      "pointer_actions": 75,
+      "screenshots": 431
+    },
+    {
+      "id": "390x844-en-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:28:44.128Z",
+      "finished_utc": "2026-10-04T00:30:49.558Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 4079,
+      "pointer_actions": 76,
+      "screenshots": 431
+    },
+    {
+      "id": "390x844-es-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:30:49.970Z",
+      "finished_utc": "2026-10-04T00:32:55.697Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 4178,
+      "pointer_actions": 76,
+      "screenshots": 442
+    },
+    {
+      "id": "390x844-es-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:32:56.243Z",
+      "finished_utc": "2026-10-04T00:34:59.961Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 4178,
+      "pointer_actions": 77,
+      "screenshots": 442
+    },
+    {
+      "id": "1440x1000-en-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:35:00.775Z",
+      "finished_utc": "2026-10-04T00:36:33.786Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2486,
+      "pointer_actions": 75,
+      "screenshots": 254
+    },
+    {
+      "id": "1440x1000-en-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:36:34.650Z",
+      "finished_utc": "2026-10-04T00:38:13.118Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2486,
+      "pointer_actions": 76,
+      "screenshots": 254
+    },
+    {
+      "id": "1440x1000-es-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:38:14.056Z",
+      "finished_utc": "2026-10-04T00:39:40.851Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2495,
+      "pointer_actions": 76,
+      "screenshots": 255
+    },
+    {
+      "id": "1440x1000-es-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:39:41.680Z",
+      "finished_utc": "2026-10-04T00:41:12.628Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2495,
+      "pointer_actions": 77,
+      "screenshots": 255
+    },
+    {
+      "id": "1280x800-en-light",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:41:13.755Z",
+      "finished_utc": "2026-10-04T00:43:01.590Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2981,
+      "pointer_actions": 75,
+      "screenshots": 309
+    },
+    {
+      "id": "1280x800-en-dark",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:43:03.102Z",
+      "finished_utc": "2026-10-04T00:44:56.546Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2981,
+      "pointer_actions": 76,
+      "screenshots": 309
+    },
+    {
+      "id": "1280x800-es-light",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:44:57.720Z",
+      "finished_utc": "2026-10-04T00:46:48.689Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2999,
+      "pointer_actions": 76,
+      "screenshots": 311
+    },
+    {
+      "id": "1280x800-es-dark",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:46:50.244Z",
+      "finished_utc": "2026-10-04T00:48:37.972Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2999,
+      "pointer_actions": 77,
+      "screenshots": 311
+    },
+    {
+      "id": "1600x900-en-light",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:48:39.453Z",
+      "finished_utc": "2026-10-04T00:50:28.866Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2693,
+      "pointer_actions": 75,
+      "screenshots": 277
+    },
+    {
+      "id": "1600x900-en-dark",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:50:30.871Z",
+      "finished_utc": "2026-10-04T00:52:24.668Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2693,
+      "pointer_actions": 76,
+      "screenshots": 277
+    },
+    {
+      "id": "1600x900-es-light",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:52:26.595Z",
+      "finished_utc": "2026-10-04T00:54:12.811Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2702,
+      "pointer_actions": 76,
+      "screenshots": 278
+    },
+    {
+      "id": "1600x900-es-dark",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:54:14.775Z",
+      "finished_utc": "2026-10-04T00:55:54.547Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 2702,
+      "pointer_actions": 77,
+      "screenshots": 278
+    },
+    {
+      "id": "2560x1440-en-light",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "en",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:55:56.572Z",
+      "finished_utc": "2026-10-04T00:57:21.575Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 1946,
+      "pointer_actions": 75,
+      "screenshots": 194
+    },
+    {
+      "id": "2560x1440-en-dark",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "en",
+      "theme": "dark",
+      "started_utc": "2026-10-04T00:57:23.567Z",
+      "finished_utc": "2026-10-04T00:58:48.181Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 1946,
+      "pointer_actions": 76,
+      "screenshots": 194
+    },
+    {
+      "id": "2560x1440-es-light",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "es",
+      "theme": "light",
+      "started_utc": "2026-10-04T00:58:50.277Z",
+      "finished_utc": "2026-10-04T01:00:16.422Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 1964,
+      "pointer_actions": 76,
+      "screenshots": 196
+    },
+    {
+      "id": "2560x1440-es-dark",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "es",
+      "theme": "dark",
+      "started_utc": "2026-10-04T01:00:18.724Z",
+      "finished_utc": "2026-10-04T01:01:42.842Z",
+      "completed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failures": [],
+      "console_errors": [],
+      "console_warnings": [],
+      "page_errors": [],
+      "request_failures": [],
+      "http_errors": [],
+      "error": null,
+      "checks": 1964,
+      "pointer_actions": 77,
+      "screenshots": 196
+    }
+  ],
+  "selected_screenshots": 28,
+  "checks": {
+    "python_export_tests": 68,
+    "python_export_status": "passed",
+    "frontend_tests": 31,
+    "frontend_status": "passed",
+    "typescript_and_build": "passed",
+    "ruff": "passed",
+    "artifact_template_content_voice_structure_governance_ci_budget_guards": "passed"
+  },
+  "math_scope": "Earlier selected 258-test Riemann milestone passed; this is not a full-repository unit-test claim. No certificate or external Lean replay occurs in the browser."
+}

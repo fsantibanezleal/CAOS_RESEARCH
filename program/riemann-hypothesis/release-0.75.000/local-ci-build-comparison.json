@@ -1,0 +1,8 @@
+{
+  "schema": "riemann-local-ci-build-comparison-v1",
+  "pages_run": 37168373757,
+  "local_source": "aecf7fc5d4a977bb2a1e6d47d1c5155e46639232",
+  "ci_source": "51b8e91bea8e2030ebb22d342ffb125d8f992400",
+  "differences": [],
+  "scope": "Physical Windows candidate compared with normalized Linux CI artifact. CI artifact/live identity is the production acceptance gate."
+}

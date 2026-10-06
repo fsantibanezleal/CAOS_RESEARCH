@@ -1,13 +1,13 @@
 {
   "name": "caos-research-frontend",
   "private": true,
-  "version": "0.69.2",
+  "version": "0.76.1",
   "type": "module",
   "scripts": {
     "predev": "node copy-data.mjs",
     "dev": "vite",
     "prebuild": "node copy-data.mjs",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build && node copy-riemann-entry.mjs",
     "preview": "vite preview",
     "test": "vitest run"
   },

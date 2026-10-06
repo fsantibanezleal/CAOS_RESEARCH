@@ -3,6 +3,182 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.76.001] - 2026-10-04
+
+### Fixed
+- Riemann manuscript records contain only their unchanged original PDFs;
+  supporting archives are separately published with reciprocal links.
+- Publication admission rejects mixed manuscript records, broken supplement
+  links, changed archive hashes and stale file locations. The replay links
+  manuscript PDFs and evidence records separately.
+- Existing scientific results and all unrelated registry payloads are preserved.
+  Research and its unfinished app release remain paused by the user.
+
+## [0.76.000] - 2026-10-04
+
+### Added
+- EXP-028's internally reviewed shifted moment range
+  `nu < min(1/2,(17/33)(2theta-1))`, with full Mellin and exact Hankel
+  derivations and a charged compact-window smoothing margin. With the fixed
+  certified detector and attributed Wang pair theorem, the simple-critical
+  onset becomes 0.5339 with endpoint density above 0.0003985233159135.
+- Published immutable Levinson v0.02, DOI `10.5281/zenodo.23132248`, fourteen-page
+  rendered review and extracted 80-member source replay. Both public files match
+  reviewed bytes. Root v0.01 and historical conditional theorem flags are preserved.
+- Additive short-window evidence inside replay v9, committed source/publication
+  gates, actual-receipt corruption checks and bilingual content in all six tabs.
+- Supporting EXP-026 isolation obstruction, complete classical EXP-027 shifted
+  transformation, and explicit budget-stopped incomplete EXP-023 archive.
+
+The result is asymptotic and internally reviewed, with attributed external
+theorems and Wang's recent preprint. No RH proof, effective height, worldwide
+priority, external peer acceptance or end-to-end formal verification is claimed.
+
+## [0.75.000] - 2026-10-03
+
+### Added
+- Completed EXP-020 local certificate: all 96 shards, independent cover and
+  native closed-cell audits, exact distinct-strip bound
+  `3997934614153/4775507750000` and published exact-byte reproducibility archive.
+- EXP-025 vector-pressure transfer with attributed Lavery local theorem,
+  independent rational scalar/counting checks and stronger distinct-strip bound
+  `30945470743359/36955122080000`. External Lean/nanoda verification is archived,
+  not locally rebuilt; native EXP-020 checks share FLINT/Arb.
+- Published companion v0.01, concept DOI `10.5281/zenodo.23128662`, frozen PDF
+  and two reproducibility ZIPs verified against public downloads.
+- Additive `riemann-distinct-zero-v1` evidence object inside replay v9, fail-closed
+  receipt/source/publication gates and bilingual six-tab proof/evidence replay
+  through EXP-025. Incomplete EXP-019/023 candidates remain excluded.
+
+The Riemann hypothesis remains open. These strip-wide distinct counts do not
+improve the short-window onset or establish an effective height, worldwide
+priority, external peer review or an end-to-end formal proof.
+
+## [0.74.000] - 2026-09-28
+
+### Added
+- Riemann replay schema v9 binds EXP-010, EXP-011 and EXP-012 by committed
+  bytes: the EXP-010 canonical result, receipt, declaration revision, audit,
+  controls and all fourteen proof-review hashes; the EXP-011 result, receipt,
+  amended declaration and audit; the EXP-012 declaration, weight-size check
+  and inconclusive verdict.
+- The bilingual workbench shows the EXP-010 short-interval onset (every fixed
+  `theta` in `[0.534,1)`, `h(0.5459)>0.0177638490`, more than 999 times the
+  EXP-008 value) and a new "Where the method stops" section with the EXP-011
+  certified counterexamples (no linear refinement of the Hilbert-parity product
+  with `beta>=2.365` for the Montgomery-Taylor window) and the stopped EXP-012
+  route.
+- Research governance and manuscript map for the Riemann program; literature
+  sweep, primary-source verification and route preflights RH-027 to RH-038.
+
+### Fixed
+- The experiment list labelled every record after EXP-007 as "Rank-six local
+  transfer"; each record now has its own title, and EXP-010 to EXP-012 are
+  listed.
+- Citation title of Wang arXiv:2609.24167v1.
+
+### Boundaries
+- EXP-010's onset uses Wang's recent unreviewed short-interval pair theorem.
+  EXP-011 is a certified counterexample result for one window; EXP-012 is
+  inconclusive. RH remains open.
+
+## [0.73.000] - 2026-09-24
+
+### Added
+- Riemann EXP-009 proves that Wang's auxiliary three-point kernel ratio has
+  sharp supremum `sqrt(2)`, attained exactly at `(0,1)` and `(1,0)`.
+- Substitution into Wang's pinned arXiv:2609.24167v1 framework gives the
+  certified global lower proportions `0.6725007995946757558...` for simple
+  critical zeros and `0.8362503997973378779...` for distinct zeros.
+- Replay schema v8 binds the declaration, strengthened target, exact result,
+  execution receipt, focused tests, proof, adversarial audit and proof review.
+- The separate seven-page preprint is published at DOI
+  `10.5281/zenodo.22940291`; its reviewed PDF and fresh public download have
+  SHA-256 `a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82`.
+
+### Boundaries
+- The elementary sharp ratio theorem is proved in the repository. Its global
+  zeta transfer depends on Wang's recent unreviewed v1 framework. The result is
+  asymptotic, gives no effective height, and does not prove RH or universal
+  simplicity.
+
+## [0.72.000] - 2026-09-20
+
+### Added
+- Riemann EXP-007 proves the finite spectral-defect refinement
+  `(Q-S-D(G))(N-O) >= 2(N-S)^2`. It strictly improves every positive point of
+  the scalar Hilbert-parity curve, while its optimized certified gain at
+  `theta = 0.5459` is numerically tiny.
+- Riemann EXP-008 proves that the local Selberg detector transfer works at
+  every fixed finite rank. Applying Pearce-Crump's stated rank-six interval
+  moves the positivity onset from `(0.5458846,0.5458847)` to
+  `(0.5458837,0.5458838)`. At `theta = 0.545884` the rank-six lower term is
+  already greater than `2.5541123454645702e-7` while the rank-three term is
+  negative.
+- Replay schema v7 binds both declarations, portable exact results, execution
+  receipts, focused tests, proofs, adversarial audits, verdicts, proof reviews,
+  and independent interval checks before the browser exposes eight experiment
+  records.
+- Manuscript v0.07 is published at DOI `10.5281/zenodo.22860012`. Its reviewed
+  30-page PDF matches a fresh public download at SHA-256
+  `c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
+
+### Boundaries
+- The source prints the certified rank-six constant interval but not its
+  coefficient matrix, so the numerical application is attributed rather than
+  independently reconstructed. The theorem is asymptotic for each fixed
+  exponent, has no effective starting height, and does not prove the Riemann
+  Hypothesis or universal simplicity.
+
+## [0.71.000] - 2026-09-20
+
+### Added
+- Riemann EXP-006 proves the sharp finite Hilbert-parity product
+  `(Q-S)(N-O) >= 2(N-S)^2`. The attributed arbitrary-parameter Hilbert
+  inequality is separated from the new parity compression, and multiplicities
+  two and three certify sharpness of the coefficient two.
+- Combining that product with Wang's fixed-test pair theorem and EXP-005 gives
+  the quadratic term `h3(theta)`. Exact directed rational arithmetic proves its
+  unique positivity threshold lies in `(0.545884,0.545885)` and gives
+  `S/N > 0.0000168381638551244569880374399` at `theta = 0.5459`, where the
+  earlier linear parity term remains negative.
+- Replay schema v5 binds EXP-006's amended hypothesis, clean execution receipt,
+  canonical result, focused tests, complete proof, adversarial audit, verdict,
+  proof review, scalar barrier witness, and independent 100-digit interval
+  replay before the browser displays the result.
+- Manuscript v0.06 is published at DOI `10.5281/zenodo.22852479`. The reviewed
+  26-page PDF matches a fresh public download at SHA-256
+  `dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082`.
+
+### Boundaries
+- The theorem is asymptotic for each fixed exponent, supplies no effective
+  starting height, and imports recent attributed preprints. It does not improve
+  a global simple-zero percentage, establish external peer review or absolute
+  priority, or prove the Riemann Hypothesis.
+
+## [0.70.000] - 2026-09-20
+
+### Added
+- Riemann EXP-005 localizes Pearce-Crump's optimized Selberg detector to every fixed
+  interval exponent `1/2 < theta < 1`. It proves an odd-critical lower density
+  `(theta-1/2)/(4 e C3)` and, with the exact EXP-004 parity identity and Wang's
+  short-interval calculation, the simple-critical bound
+  `max(0, c(theta), (c(theta)+(theta-1/2)/(2 e C3))/3)`.
+- Exact rational and directed-interval certificates place the unique new positivity
+  threshold in `(0.5459,0.546)`. At `theta = 0.546`, a fixed admissible mollifier gives
+  `S/N > 0.0000976239413345396825`; the optimized curve gives
+  `S/N > 0.0000994910410327771597`.
+- The `riemann-replay-v4` export binds the EXP-005 declaration, execution identity,
+  exact result, source hashes, proof review, strict localization margin, positive and
+  negative controls, and rejected boundary before presenting the result.
+- The primary arXiv v1 PDF and TeX archive are persisted with exact hashes. Manuscript
+  v0.05 is published at DOI `10.5281/zenodo.22851518`.
+
+### Boundaries
+- The result has no effective starting height, does not reach `theta = 1/2`, and does
+  not prove that all zeta zeros are simple or prove the Riemann Hypothesis. Automated
+  replay and publication remain separate from external peer review and formalization.
+
 ## [0.69.002] - 2026-09-18
 
 ### Added

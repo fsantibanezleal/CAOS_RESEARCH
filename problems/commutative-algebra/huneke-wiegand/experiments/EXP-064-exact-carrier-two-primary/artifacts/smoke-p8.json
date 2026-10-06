@@ -1,0 +1,682 @@
+{
+  "experiment": "EXP-064",
+  "status": "COMPLETE",
+  "scope": {
+    "p_min": 8,
+    "p_max": 8
+  },
+  "premise_hashes": {
+    "EXP-064-exact-carrier-two-primary\\hypothesis.md": "cd246184ae3075fb0bc6fad12d26959728bcac23d350888f02c5c507c0a6cf97",
+    "EXP-043-hadamard-rank-certificate\\run.py": "1f4c5c25e5238322dc458e0232c0a80f72ee1b62544bbcbda8a773af24403418",
+    "EXP-045-row-atom-carrier-lattice\\run.py": "2ae864d472e470869673eb1cd2ffd25ef6d0e2da6530cd6c675d335f860e2109",
+    "EXP-045-row-atom-carrier-lattice\\artifacts\\results.json": "569220667e9d82f0806ea96cb8f60c49e94cb6317817170c39f2e574e619bcb8",
+    "EXP-062-triangle-torsion-family\\artifacts\\results.json": "09aef05e577e58b11c4ccc363ed47ccf1ed1598deb1b156a33bb3b6e49ae638d",
+    "EXP-063-triangle-isolated-comparison\\run.py": "97a9e7511ff9d004b091f244df653f02182e1d9304c9042fefe47ce241a89461",
+    "EXP-063-triangle-isolated-comparison\\artifacts\\results.json": "c219ce4c4549d970063a787227793bb5f7141e8f4d6e14c614f62085ecc8059a",
+    "EXP-063-triangle-isolated-comparison\\artifacts\\audit-results.json": "e3560323a54ace1c7ef8aa31919535e0856098216784a004ce11f7413a83c675"
+  },
+  "resource_caps": {
+    "budget_seconds": 300.0,
+    "memory_gib": 8.0,
+    "prime_pool": 160,
+    "processes": 1
+  },
+  "claims": {
+    "P1": true,
+    "P2": true,
+    "P3": true
+  },
+  "rows": [
+    {
+      "p": 8,
+      "source_matrix_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "certificates": [
+        {
+          "mask": 56,
+          "rows": 1769,
+          "columns": 1094,
+          "nonzero_columns": 1082,
+          "nonzeros": 4733,
+          "projection_hash": "9b36b5f0a74944c4a29c684b5e4a8a82405ac110ed0046e161aa8aabe34e639c",
+          "target_rational_rank": 963,
+          "rank_mod_two": 963,
+          "first_bockstein_rank": 0,
+          "rank_gap": 0,
+          "maximum_squared_column_norm": 8,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 963
+            }
+          ],
+          "prime_count": 24,
+          "prime_product_hex": "0xfffffffffffe3d300000000176d8727fffff3c4c72559c0047f660611702ec2f15c177a19d12caeff25aab02ce14ba6a621fbb9ccb2374d0295453cd0dc0df05b67f70b944a50fc47bd1ec5fd6f364b4763964c92d221c0290b809737065e181cae869b9a54928ab8efd9f89799cd3fc1e5f8ad9372cb719f1600eea8bfb9812816dd9dea4fa0fe0a959ebe0c6c636fc43f0cad46b25b4064160744924e256127d84aa4f7da0e123ebc04ff17561fa5f66a0411342a4ab",
+          "prime_product_bits": 1464,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^0"
+        },
+        {
+          "mask": 58,
+          "rows": 2596,
+          "columns": 1094,
+          "nonzero_columns": 1082,
+          "nonzeros": 6586,
+          "projection_hash": "d1468cc0f616affc85ac7805e013451388d3c4c05b78c5135d3c0db141169203",
+          "target_rational_rank": 980,
+          "rank_mod_two": 979,
+          "first_bockstein_rank": 1,
+          "rank_gap": 1,
+          "maximum_squared_column_norm": 13,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 980
+            }
+          ],
+          "prime_count": 30,
+          "prime_product_hex": "0x3fffffffffff514000000000e4069ecfffff42b7bd3ef400703fe2d3cb39315e820faa0707598c0b367b897977f6d06de0ecd91e4f6be6f07b7687564ccf1ee9012d1df71035b750978cecc39a16150d6a92d8c2c862494995dead59206f1e0e7572219cb2a00d69a2bba9fc1abb33f741caca74051f3398d4a51a6a63750dd0bf5f9f6fd8c59a6e498f4c4387d877e34508ec1847af730668735b8db2d798e86ccad532e52f9af4d5b9255d9614024c3983474911dd18b14435827e6bc39f3b6e8a73ef6e651dc9564444adc6007ae3b3668505b6e2e17ccbaed32a54fd4edeab1a159643",
+          "prime_product_bits": 1830,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^1"
+        },
+        {
+          "mask": 59,
+          "rows": 2624,
+          "columns": 1094,
+          "nonzero_columns": 1085,
+          "nonzeros": 6642,
+          "projection_hash": "a40ec869e4a6390fc713e578a9d5d3107b47b8ca3a582fa90ba3646ea1b1659b",
+          "target_rational_rank": 993,
+          "rank_mod_two": 990,
+          "first_bockstein_rank": 3,
+          "rank_gap": 3,
+          "maximum_squared_column_norm": 13,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 993
+            }
+          ],
+          "prime_count": 31,
+          "prime_product_hex": "0x7ffffffffffe8b3c000000020793e99ffffe328ad2626b01254eda6be3def9eecaba35fd9430acee9b37e4d6f274cd5d792ffa1075b2dc4cdd3f79ed6ffa71f03bc76ca2153edaa3b8653932ad386e032a53d651e9bd620529d10bba0619ec11a8000cdf0062f941781f4d48e69631362b1a5f705caa54d6e11167b81f385cd439d4f217f435824ae038ffc9ba3d3828e2688b9e6e49d7c44293238c2deead786a1d77924a5937dd2f517a4a8de363a6d4e139337da45bba3f5104ee67bd4d9b2954d2d20fb7b0b377c34f49e9dcf4db35959e40e1195c9222a24288cfe22ff2189097a730842decd4871044d",
+          "prime_product_bits": 1891,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^3"
+        },
+        {
+          "mask": 62,
+          "rows": 2647,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 6691,
+          "projection_hash": "b57a766b4ff8e4496d14ae98d1b3cf7ef558a85368034ea68c78a013ae48a3c8",
+          "target_rational_rank": 1002,
+          "rank_mod_two": 999,
+          "first_bockstein_rank": 3,
+          "rank_gap": 3,
+          "maximum_squared_column_norm": 13,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 1002
+            }
+          ],
+          "prime_count": 31,
+          "prime_product_hex": "0x7ffffffffffe8b3c000000020793e99ffffe328ad2626b01254eda6be3def9eecaba35fd9430acee9b37e4d6f274cd5d792ffa1075b2dc4cdd3f79ed6ffa71f03bc76ca2153edaa3b8653932ad386e032a53d651e9bd620529d10bba0619ec11a8000cdf0062f941781f4d48e69631362b1a5f705caa54d6e11167b81f385cd439d4f217f435824ae038ffc9ba3d3828e2688b9e6e49d7c44293238c2deead786a1d77924a5937dd2f517a4a8de363a6d4e139337da45bba3f5104ee67bd4d9b2954d2d20fb7b0b377c34f49e9dcf4db35959e40e1195c9222a24288cfe22ff2189097a730842decd4871044d",
+          "prime_product_bits": 1891,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^3"
+        }
+      ],
+      "triangle_consequences": [
+        {
+          "mask": 56,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "complete_two_primary_generators": [],
+          "generator_count": 0
+        },
+        {
+          "mask": 58,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              2,
+              4
+            ]
+          ],
+          "complete_two_primary_generators": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "generator_count": 1
+        },
+        {
+          "mask": 59,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "generator_count": 3
+        },
+        {
+          "mask": 62,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "generator_count": 3
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 4.058049599989317,
+  "artifact_hash": "a1e1289ae0082f14b24f15004e75a87b80352f7430f7314304e6d91fea220ddd"
+}

@@ -1,0 +1,621 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{orcidlink}
+\usepackage{microtype}
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.01}
+\newcommand{\docdate}{3 October 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.23128663}
+\newcommand{\conceptdoi}{10.5281/zenodo.23128662}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Nd}{N_{\mathrm d}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\headerblock}{\begin{center}\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype}\quad$\cdot$\quad\docversion, \docdate\quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme\quad$\cdot$\quad Riemann zeta function\\[2pt]
+Version DOI: \href{https://doi.org/\versiondoi}{\versiondoi}\\
+Concept DOI (always latest): \href{https://doi.org/\conceptdoi}{\conceptdoi}\\[2pt]
+Not peer reviewed. Source code, data and computational results:
+\href{https://\docrepo}{\texttt{\docrepo}}
+}}\end{center}\vspace{4pt}}
+\title{Stronger local overlap certificates and distinct zeros of the Riemann zeta function}
+\author{Felipe Santibanez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program}
+\date{}
+\begin{document}
+\maketitle\headerblock
+\begin{abstract}
+We derive a lower asymptotic proportion
+$\frac{30945470743359}{36955122080000}=0.8373797460706156\ldots$ of distinct nontrivial
+zeta zeros, relative to zeros counted with multiplicity, by applying
+Knausg\aa rd's mixed-multiplicity Gram argument to Lavery's seven-point
+local theorem with unequal gap pressures. The external local theorem is an
+explicit dependency; its reported Lean and nanoda checks were not rebuilt
+locally. A separate complete eight-gap interval computation proves a stronger
+nine-point local inequality at pressure $1/2500$ and gives the independently
+replayed bound $\frac{3997934614153}{4775507750000}=0.8371747724947154\ldots$.
+The block transfer uses an elementary spectral dichotomy, without a sharp
+trace envelope. Independent rational window enclosures, complete closed-cell
+input comparisons and extracted-source checks support the computations.
+The analytic input is the corrected integrated unconditional pair-correlation
+theorem of Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh.
+The results are asymptotic; they do not prove the Riemann hypothesis or give
+an effective height.
+\end{abstract}
+
+\section{Counts, context and results}
+Let $N(T)$ count nontrivial zeros $\rho$ of $\zeta(s)$ with
+$0<\operatorname{Im}\rho\le T$, including multiplicity, and let $\Nd(T)$
+count the distinct points in the same region. Distinctness refers to the whole
+critical strip. A multiple zero contributes one to $\Nd$; two zeros symmetric
+about the critical line contribute two. A bound for $\Nd/N$ therefore differs
+from a bound for simple zeros on the critical line.
+
+The unconditional pair-correlation method supplied the recent simple-zero
+advances of Alp\"oge and Furman and Lamzouri \cite{af,lamzouri}.
+Knausg\aa rd \cite{knausgard} retained the Gram defect for critical-line zeros
+of multiplicity one or two and obtained
+\begin{equation}\label{eq:prior}
+ \liminf_{T\to\infty}\frac{\Nd(T)}{N(T)}
+ \ge \frac{16260119298029}{19426831050000}
+ =0.83699288145242\ldots .
+\end{equation}
+His matrix inequality, threshold lemma, elementary block dichotomy and
+counting assembly are the underlying method here. We give the transfer proof
+with a vector of gap pressures and apply two stronger local inputs.
+
+\begin{theorem}[Derived consequence, D]\label{thm:main}
+Using Lavery's universal seven-point local theorem \cite{lavery} and the
+corrected integrated BGSTB pair-correlation theorem \cite{bgstb,correction},
+\begin{equation}\label{eq:main}
+ \liminf_{T\to\infty}\frac{\Nd(T)}{N(T)}
+ \ge q_7:=\frac{30945470743359}{36955122080000}
+ =0.8373797460706156\ldots .
+\end{equation}
+A separate machine-verified local certificate, with the same analytic and
+mixed-Gram inputs, gives
+\begin{equation}\label{eq:nine}
+ \liminf_{T\to\infty}\frac{\Nd(T)}{N(T)}
+ \ge q_9:=\frac{3997934614153}{4775507750000}
+ =0.8371747724947154\ldots .
+\end{equation}
+\end{theorem}
+
+The gain in \eqref{eq:main} over \eqref{eq:prior} is approximately
+$0.000386865$, or $0.0386865$ percentage points. The nine-point gain is
+approximately $0.000181891$. These are numerical improvements within an
+attributed method. Quadratic convex lower bounds, pressure summation and the
+scalar window identity below are classical. The source comparison is limited
+to the primary material available on 3 October 2026 and does not establish
+worldwide priority. The nine-point weights and window come from the source
+candidate of tawanerguo-cn \cite{tawan}; the stronger target is proved by the
+complete computation described in Section~\ref{sec:certificate}.
+
+\section{A transfer for nonnegative vector pressures}
+Let $f$ be bounded, even, nonnegative and supported on $[-1/2,1/2]$, with
+$\int f=1$. Write
+\begin{gather*}
+ K(x)=\int_{-1/2}^{1/2} f(t)e^{2\pi ixt}\,dt,\qquad w(x)=K(x)^2
+ \quad(x\in\R),\\
+ H_f=2-\left(\int f^2+\iint |s-t|f(s)f(t)\,ds\,dt\right).
+\end{gather*}
+The kernels used below have positive smooth profiles inside this interval.
+Assume nonnegative rational weights $a_{ij}$, $0\le i<j\le r$, satisfy
+\begin{equation}\label{eq:capacity}
+ \sum_{i=0}^{r-s}a_{i,i+s}\le2\qquad(1\le s\le r).
+\end{equation}
+Suppose nonnegative pressures $b_0,\ldots,b_{r-1}$ and $\delta>0$ give
+the universal local inequality
+\begin{equation}\label{eq:local}
+ \sum_{i<j}a_{ij}w(g_i+\cdots+g_{j-1})+
+ \sum_{i=0}^{r-1}b_i g_i\ge\delta
+ \qquad(g_0,\ldots,g_{r-1}\ge0).
+\end{equation}
+Set $B=\sum b_i$. Equal pressures are not required.
+
+\begin{theorem}[Mixed-Gram transfer, D]\label{thm:transfer}
+Let \eqref{eq:capacity}--\eqref{eq:local} hold, and let $m>r$ be an integer.
+Choose $\tau>0$ and $c$ such that
+\begin{align}\label{eq:conditions}
+ D:=\delta(m-r)&\le\tau^2,&
+ c&\ge\max(1+\tau,2+\tau/2),\\
+ a:=D/m&<2,&
+ 6c-7-c^2-a&\ge0,&4c-2-c^2-2a&\ge0.\nonumber
+\end{align}
+Under the corrected integrated BGSTB input, with
+$\beta=B(m-r)/m$, one has
+\begin{equation}\label{eq:transfer}
+ \liminf_{T\to\infty}\frac{\Nd(T)}{N(T)}
+ \ge\frac{1+H_f-\beta}{2-a}.
+\end{equation}
+\end{theorem}
+
+\subsection{Block defect and pressure counting}
+For $\lambda\ge0$ put
+\[
+ \Psi_\tau(\lambda)=(\lambda-1)^2-(\lambda-1-\tau)_+^2.
+\]
+It is nonnegative and convex, and $\Psi_\tau(1)=0$. A Gram matrix $U$
+for $m$ ordered points has unit diagonal. Summing \eqref{eq:local} over its
+$m-r$ consecutive windows and using \eqref{eq:capacity} gives
+\begin{equation}\label{eq:blockenergy}
+ \tr(U-I)^2+P_{\mathrm{block}}\ge D,
+\end{equation}
+where $P_{\mathrm{block}}$ is the sum of the window pressure charges.
+If all eigenvalues of $U$ are at most $1+\tau$, then its clipped defect
+$\tr\Psi_\tau(U)$ equals $\tr(U-I)^2$. Otherwise one eigenvalue contributes
+more than $\tau^2$, while all other terms and pressures are nonnegative.
+Thus $D\le\tau^2$ implies
+\begin{equation}\label{eq:dichotomy}
+ \tr\Psi_\tau(U)+P_{\mathrm{block}}\ge D.
+\end{equation}
+This is Knausg\aa rd's elementary dichotomy \cite{knausgard}. A sharp
+trace-zero envelope is unnecessary at the parameter choices below.
+
+Order $l$ points $y_0<\cdots<y_{l-1}$ and partition them into complete
+consecutive $m$-point blocks for each of the $m$ offsets, leaving shorter
+endpoint blocks. Convex trace pinching bounds the full Gram defect from
+below by the sum of the complete-block defects. Omitted points may be
+pinched into singletons, each contributing zero.
+
+Each possible block start occurs once over all offsets, so the total number
+of complete blocks is exactly $\max(l-m+1,0)$. A fixed $r$-gap window lies
+in at most $m-r$ complete blocks. A fixed gap appears in local windows with
+total pressure at most $\sum_i b_i=B$: each pressure position occurs at
+most once. Therefore, with span defined as zero for $l\le1$, averaging
+\eqref{eq:dichotomy} yields
+\begin{equation}\label{eq:globaldefect}
+ \tr\Psi_\tau(U_{\mathrm{full}})
+ \ge a l-\beta(y_{l-1}-y_0)-D.
+\end{equation}
+For $l<m$, the right side is nonpositive, so the same assertion follows
+from nonnegativity. This argument proves the pressure coefficient for all
+nonnegative vectors. Replacing $B$ by $r\min b_i$ would undercount unequal
+charges and is not justified.
+
+\subsection{The matrix inequalities and multiplicities}
+For $c>0$ define $\phi_c(x)=x^2-(x-c)_+^2$. We recall and prove the
+two attributed matrix inequalities needed for the count \cite{knausgard}.
+
+\begin{lemma}[Threshold inequality]\label{lem:threshold}
+If $P\succeq0$, $Q$ is Hermitian and has at most $b$ positive eigenvalues,
+and $\tr(P+Q)=N$, then
+\[
+ \tr(P+Q)^2\ge2cN-2c\tr P+\tr\phi_c(P)-c^2b.
+\]
+\end{lemma}
+\begin{proof}
+Write $Q=Q_+-Q_-$ with $Q_+Q_-=0$. The cross term
+$\tr((P-Q_-)Q_+)=\tr(PQ_+)\ge0$. Completing squares on $Q_+$ gives
+$\tr Q_+^2\ge2c\tr Q_+-c^2b$. Substituting
+$\tr Q_+=N-\tr P+\tr Q_-$ leaves
+\[
+ 2cN-2c\tr P+\tr P^2+
+ \tr Q_-^2-2\tr((P-cI)Q_-)-c^2b.
+\]
+The last quadratic, minimized over positive semidefinite $Q_-$, is
+$-\tr((P-cI)_+^2)$. This proves the assertion.
+\end{proof}
+
+\begin{lemma}[Mixed-multiplicity Gram inequality]\label{lem:mixed}
+Let $U$ be a Hermitian Gram matrix with unit diagonal, and
+$D_0=\operatorname{diag}(d_i)$, $1\le d_i\le2$. If
+$c\ge\max(1+\tau,2+\tau/2)$, then
+\[
+ \tr\phi_c(D_0^{1/2}UD_0^{1/2})-\tr D_0^2
+ \ge\tr\Psi_\tau(U).
+\]
+\end{lemma}
+\begin{proof}
+For any Hermitian $G,A$ with $A\preceq2cI$, diagonalizing $G$ gives
+\[
+ \tr(AG)-\tfrac14\tr A^2
+ \le\sum_i(A_{ii}\lambda_i-A_{ii}^2/4)
+ \le\sum_i\phi_c(\lambda_i)=\tr\phi_c(G).
+\]
+The scalar inequality follows by completing a square with $A_{ii}\le2c$.
+Set $X=U-I$, $C=\min(X,\tau I)$ by spectral calculus,
+$M=D_0^{-1/2}CD_0^{-1/2}$ and $A=2D_0+2M$.
+Since $C\preceq\tau I$,
+$A\preceq2(D_0+\tau D_0^{-1})\preceq2cI$; the convex function
+$d+\tau/d$ on $[1,2]$ is bounded by its endpoint maximum.
+Substitution with $G=D_0^{1/2}UD_0^{1/2}$ and its unit diagonal yields
+\[
+ \tr\phi_c(G)-\tr D_0^2
+ \ge2\tr(CX)-\tr M^2
+ \ge2\tr(CX)-\tr C^2=\tr\Psi_\tau(U).
+\]
+The middle inequality is entrywise:
+$\tr M^2=\sum_{ij}|C_{ij}|^2/(d_i d_j)\le\tr C^2$.
+Neither $C$ nor $M$ needs to be positive semidefinite.
+\end{proof}
+
+Let $h$ count critical-line points with multiplicity at least three and $k$
+count functional-equation pairs off the line. The remaining
+$l=\Nd-h-2k$ points have multiplicity one or two. For the smoothed
+complex-zero operator constructed below, their contribution $P$ is positive
+semidefinite and the remainder $Q$ has at most $h+k$ positive eigenvalues.
+The nonzero spectrum of $P$ is that of $D_0^{1/2}UD_0^{1/2}$.
+If $n_1,n_2$ count the low points of multiplicity one and two, then
+$\tr D_0^2=n_1+4n_2=3\tr P-2l$.
+
+Combining Lemmas~\ref{lem:threshold} and \ref{lem:mixed}, the remaining
+mass is at least $3h+2k$. Because $c\ge2$, increasing its multiplicities
+only strengthens the lower estimate. One obtains
+\begin{equation}\label{eq:counts}
+ \tr(P+Q)^2\ge3N-2\Nd+(6c-7-c^2)h+
+ (4c-2-c^2)k+\tr\Psi_\tau(U).
+\end{equation}
+For example a high point of multiplicity $j\ge3$ contributes
+$(2c-3)j+2-c^2\ge6c-7-c^2$; an off-line pair of multiplicity
+$j\ge1$ contributes $(4c-6)j+4-c^2\ge4c-2-c^2$.
+
+\subsection{The analytic input and order of limits}
+Choose even smooth positive cutoff profiles $f_\epsilon=\eta_\epsilon^2$
+supported strictly inside $(-1/2,1/2)$, normalized to integral one, and
+converging to $f$ in $L^1$ and $L^2$, with uniformly bounded profiles.
+Put $L=\log T$ and
+$z_\rho=i(\rho-1/2)L/(2\pi)$ for zeros with $0<\operatorname{Im}\rho\le T$.
+Let $F_z(u)=\eta_\epsilon(u)e^{2\pi izu}$, using the inner product linear
+in its second slot. The operator
+\[
+ \mathcal A_\epsilon=
+ \sum_z\nu_z F_z\langle F_{\bar z},\,\cdot\,\rangle
+\]
+is Hermitian by the functional equation. Its trace is $N$, and
+\[
+ E_\epsilon:=\tr\mathcal A_\epsilon^2
+ =\sum_{\rho,\rho'}\nu_\rho\nu_{\rho'}
+ K_\epsilon(z_\rho-z_{\rho'})^2.
+\]
+All operators act on a finite-dimensional span. An off-line pair contributes
+$\nu(vw^*+wv^*)=\nu((v+w)(v+w)^*-(v-w)(v-w)^*)/2$, which has at most one
+positive eigenvalue. Together with the high critical-line points this
+justifies the positive-rank bound used in \eqref{eq:counts}.
+
+BGSTB's integrated Lemma~5 \cite{bgstb} sums over complex zeros with weight
+$\omega(\rho-\rho')=4/(4-(\rho-\rho')^2)$. Its preservation under the
+corrected pointwise error estimate is explicit in Section~3 of
+\cite{correction}. Write $R_\epsilon=f_\epsilon*f_\epsilon$. The Fourier
+identity
+\[
+ \widehat{R_\epsilon-R_\epsilon''/(4L^2)}(z)
+ =(1+\pi^2z^2/L^2)K_\epsilon(z)^2
+\]
+cancels that weight at $z=z_\rho-z_{\rho'}$.
+Both $R_\epsilon$ and $R_\epsilon''$ are fixed real even integrable
+functions, supported strictly inside $[-1,1]$ and Lipschitz at zero.
+Applying the lemma separately to them, then multiplying the latter
+asymptotic by $1/(4L^2)$, avoids an error estimate for a varying test function.
+The result is
+\begin{equation}\label{eq:analytic}
+ E_\epsilon=(C(f_\epsilon)+o_\epsilon(1))N,
+ \qquad C(f_\epsilon)\longrightarrow 2-H_f.
+\end{equation}
+This analytic theorem is an attributed dependency, not a conclusion of
+the finite interval computations.
+
+To use \eqref{eq:globaldefect} for the smoothed matrix, write
+$d_\epsilon=\|f_\epsilon-f\|_1$. Every real kernel entry changes by at
+most $d_\epsilon$, uniformly in its argument. An $m$-point block changes
+by at most $m d_\epsilon$ in operator norm. Since $\Psi_\tau$ is
+$2\max(1,\tau)$-Lipschitz on the nonnegative spectrum, its trace changes
+by at most $2\max(1,\tau)m^2d_\epsilon$. Summing fixed-size blocks costs
+$O_{m,\tau}(d_\epsilon)N$.
+
+Riemann--von Mangoldt bounds the real low-point span by
+$TL/(2\pi)=N+o(N)$. Substituting \eqref{eq:globaldefect} into
+\eqref{eq:counts} and comparing with \eqref{eq:analytic} gives
+\begin{align*}
+ (2-a)\Nd\ge{}&(1+H_f-\beta-O_{m,\tau}(d_\epsilon))N\\
+ &+(6c-7-c^2-a)h+(4c-2-c^2-2a)k-o_\epsilon(N)-O_m(1).
+\end{align*}
+Fix the profile, $m,\tau,c$ first, let $T\to\infty$ next, and only then
+let $\epsilon\to0$. The nonnegative residuals in \eqref{eq:conditions}
+prove Theorem~\ref{thm:transfer}. No growing-block limit or effective height
+is used.
+
+\section{Windows and exact parameter choices}\label{sec:windows}
+Both profiles have the form
+\begin{equation}\label{eq:profile}
+ v(s)=\cos(\sqrt2 s)+\sum_{j=1}^J c_j\cos(2\pi js),\qquad
+ f(s)=v(s)/I_1,\quad I_1=\sqrt2\sin(1/\sqrt2),
+\end{equation}
+on $[-1/2,1/2]$, and zero outside. The numerators of $c_j$, all over
+$10^9$, are listed in Table~\ref{tab:coeffs}. The nine-point profile is
+from \cite{tawan}; the thirteen-term profile is typh's optimized window
+used by Lavery \cite{lavery}. Positivity follows from
+$v(s)\ge\cos(1/\sqrt2)-\sum |c_j|>0$.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{r rr}\toprule
+$j$ & nine-point coefficient numerator & thirteen-term numerator\\\midrule
+1 & 3322500 & 12497829\\
+2 & -7609135 & -14424455\\
+3 & 1190194 & 2621498\\
+4 & -731476 & 7207519\\
+5 & -1680572 & -2561956\\
+6 & 1141360 & 6199418\\
+7 & 0 & -7197280\\
+8 & 0 & 4324511\\
+9 & 0 & -5325091\\
+10 & 0 & -309374\\
+11 & 0 & 443802\\
+12 & 0 & -310460\\\bottomrule
+\end{tabular}
+\caption{Cosine coefficients in \eqref{eq:profile}; each entry is divided by
+$10^9$. The leading $\cos(\sqrt2 s)$ coefficient is one.}\label{tab:coeffs}
+\end{table}
+
+\begin{proposition}[Scalar identity, D]\label{prop:scalar}
+With $\theta=1/\sqrt2$ and \eqref{eq:profile},
+\begin{equation}\label{eq:hformula}
+ H_f=\frac32-\frac{\cos\theta}{\sqrt2\sin\theta}
+ -\frac{\sum_{j=1}^Jc_j^2(1/2-1/(4\pi^2j^2))}{2\sin^2\theta}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Let $\mathcal J$ be the integral operator with kernel $|s-t|$ on
+$[-1/2,1/2]$. Solving $(\mathcal J\cos(\omega s))''=2\cos(\omega s)$
+with its endpoint conditions gives
+\[
+ \mathcal J\cos(\omega s)=\frac{\sin(\omega/2)}{\omega}
+ +\frac{2\cos(\omega/2)}{\omega^2}
+ -\frac{2\cos(\omega s)}{\omega^2}.
+\]
+Consequently $(I+\mathcal J)\cos(\sqrt2 s)$ is constant. Each
+$\cos(2\pi js)$ has zero integral, so the cross terms against the
+ground profile vanish. Orthogonality removes the other cross terms and gives
+$\langle e_j,(I+\mathcal J)e_j\rangle=1/2-1/(4\pi^2j^2)$.
+Thus
+\[
+ \langle v,(I+\mathcal J)v\rangle
+ =\sin^2\theta+\sqrt2\sin\theta\cos\theta+
+ \sum c_j^2(1/2-1/(4\pi^2j^2)).
+\]
+Divide by $I_1^2=2\sin^2\theta$ and subtract from two.
+\end{proof}
+
+For the thirteen-term profile an exact rational outward enclosure gives
+\begin{gather*}
+ 0.6721710926412995494027803172404056748101\le H_f,\\
+ H_f\le0.6721710926412995494027803172404056748102.
+\end{gather*}
+The calculation brackets $\sqrt2$ with integer square-root inequalities,
+$\pi$ with Machin's formula and forty alternating-series terms, and sine
+and cosine with twenty-four Taylor terms and explicit remainders. It uses
+only rational endpoints. A separate Arb calculation evaluates the scalar
+integrals using an ODE-derived formula and native sinc, checking all 169
+symmetry comparisons. For the nine-point profile a source-bound Arb
+calculation with a full 4096-cell profile comparison gives
+$H_f\ge3362285207/5000000000$.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{lcc}\toprule
+ & seven-point attributed input & nine-point completed computation\\\midrule
+$r$ & 6 & 8\\
+$\delta$ & $39369/5000000$ & $3051/500000$\\
+$B$ & $199193/50000000$ & $8/2500$\\
+$H$ used & $33608554629/50000000000$ & $3362285207/5000000000$\\
+$m$ & 742 & 958\\
+$\tau$ & $12043/5000$ & $2409/1000$\\
+$c$ & $17043/5000$ & $3409/1000$\\\bottomrule
+\end{tabular}
+\caption{Exact inputs for Theorem~\ref{thm:transfer}.}\label{tab:parameters}
+\end{table}
+
+For the seven-point input, the six pressure numerators over $10^8$ are
+\[
+(41468,70344,87381,87381,70344,41468).
+\]
+Lavery's named theorem
+\texttt{cert\_AM} proves \eqref{eq:local} on the full nonnegative orthant;
+\texttt{Fw\_W7} identifies its functional with the certified expression.
+The source completes its half-space certificate by reflection. Its metadata
+attributes the optimized window and evaluator to typh and the weighted-point
+refinement to Ainta. The reported external Lean/nanoda checks are preserved,
+but were not rebuilt locally.
+
+For the seven-point choice,
+\[
+ a=\frac{905487}{115937500},\quad
+ \beta=\frac{4581439}{1159375000},\quad
+ \tau^2-D=\frac{155929}{25000000},
+\]
+and the two multiplicity residuals are
+$16929063061/9275000000$ and $2094101/9275000000$, respectively.
+The threshold residuals are $0$ and $2043/10000$.
+For the nine-point choice $D=57969/10000<5803281/1000000=\tau^2$;
+all remaining rational residuals are likewise nonnegative. Direct fraction
+arithmetic in \eqref{eq:transfer} proves both constants in
+Theorem~\ref{thm:main}.
+
+\section{The complete nine-point local certificate}\label{sec:certificate}
+\begin{proposition}[Machine-verified local inequality, MV]\label{prop:nine}
+For the nine-point window in Table~\ref{tab:coeffs} and the exact pair
+weights in Appendix~\ref{app:weights}, \eqref{eq:local} holds for every
+eight-gap vector $g\ge0$, with $b_i=1/2500$ and $\delta=3051/500000$.
+\end{proposition}
+
+The computation uses a grid of spacing $1/4000$ and 128-bit Arb
+enclosures. Beyond the exact pressure cutoff, the nonnegative pressure
+alone proves the inequality. One-body lower bounds remove whole closed
+coordinate cells whose pressure plus adjacent overlap already exceeds the
+target. The remaining Cartesian domain has 256 initial boxes, distributed
+deterministically across 96 shards. Each node either proves a valid lower
+bound or splits an integer cell range into disjoint children whose closed
+real boxes cover the parent. No unresolved terminal cell is accepted.
+
+Three bounds certify a node: the nonnegative pressure bound, a sum of
+closed-cell kernel lower bounds, or a convex lower bound with a positive
+Hessian certificate. For the last bound, each pair term contributes a
+signed lower coefficient times a rank-one positive matrix. Their sum $L$
+satisfies $\nabla^2F(x)\succeq L$ throughout the box. A floating-point
+factorization selects candidate boxes only; positive definiteness is proved
+by an Arb LDL factorization of the exact dyadic coefficients.
+
+For a midpoint $x_0$ and gradient $g=\nabla F(x_0)$, integrating the
+Hessian on each segment gives
+\[
+ F(x)\ge F(x_0)+g^T(x-x_0)+\tfrac12(x-x_0)^TL(x-x_0)
+ \ge F(x_0)-\tfrac12g^TL^{-1}g.
+\]
+If $L=\mathcal L\mathcal D\mathcal L^T$, solve $\mathcal Lz=g$ and
+compute $g^TL^{-1}g=\sum z_i^2/\mathcal D_{ii}$ by enclosed arithmetic.
+The unconstrained minimum is a lower bound even if it lies outside the box.
+The algorithm also retains the first-order box bound and accepts either
+certified bound. Singular or uncertain pivots reject this path.
+
+All 96 shards complete, with 107,752,902 nodes, 53,876,323 splits and
+53,876,579 prunes. The initial-box identity
+$107752902=2(53876323)+256$ agrees with the binary-tree accounting.
+The prune types are 95,807 pressure, 30,730,268 interval and 23,050,504
+convex-bound decisions. The independent standard-library checker reconstructs
+the domain, shard allocation, source/table bindings and completed tree counts.
+Twelve corrupted copies of actual output are rejected, followed by a fresh
+check of unchanged originals. Dense rational quadratic controls separately
+compare the LDL solve with exact inversion and reject indefinite, singular
+and uncertain-pivot inputs.
+
+\subsection{Independent whole-cell table comparison}
+Both stored tables, for $w$ and $w''$, have 61,029 cells. Their lower
+coefficients are independently checked on every closed cell at 256-bit
+precision through native hypergeometric midpoint jets and Fourier Taylor
+remainders. This evaluates a different kernel representation but shares
+FLINT/Arb; it is not an independent interval-arithmetic library.
+
+The identity $\operatorname{sinc}(z)={}_0F_1(3/2;-z^2/4)$ supplies the
+midpoint jets. Write the unnormalized transform as a finite combination of
+shifted sinc functions. If $B_0$ is the sum of the absolute profile
+coefficients including the leading one, then
+$|K_{\rm raw}''|\le\pi^2B_0$. Enclose the raw kernel on a radius-$R$
+subcell by its midpoint value, first derivative and this quadratic remainder,
+then divide by its positive normalization before squaring. For
+$A_0=B_0/I_1$, the global bound
+$|w^{(4)}|\le(2\pi)^4A_0^2$ follows by differentiating the Fourier
+representation of $K^2$ supported on $[-1,1]$.
+Thus a lower enclosure for $w''$ is
+\[
+ w''(x_0)-|w'''(x_0)|R-\tfrac12(2\pi)^4A_0^2R^2.
+\]
+Adaptive bisection proves the comparison on all closed subcells, including
+endpoints. The full comparison completes in 225.276 seconds, using
+158,883 subcell enclosures and maximum bisection depth three. Deliberately
+increased table coefficients are rejected.
+
+\section{Reproducibility and limits}
+The exact-byte archive for computation EXP-020 contains the completed
+tables, reports, checkpoints, source bindings, actual physical source bytes,
+the baseline cache and both standard-library checkers. The 233-member ZIP
+has 1,854,946 bytes and SHA256
+\begin{center}\small\texttt{91be4798774837bc16007a8236a692078e8}\\
+\texttt{25ffb1c8dfa476c05d3c733b17879}.\end{center}
+CRC, member and byte comparisons pass. After extraction, both the complete
+cover checker and exact transfer checker reproduce the same result.
+These transport checks do not rerun all interval operations.
+
+The interval execution trusts the frozen Python verifier, python-flint
+0.9.0, FLINT/Arb and directed binary64 enclosures. The complete whole-cell
+comparison strengthens the input-table evidence; the metadata checker proves
+coverage and binding consistency, not each numerical pruning operation.
+There is no tangent-free full replay or end-to-end Lean proof for the
+nine-point computation. Windows full-worker replay is documented; other
+platforms are not claimed to reproduce its path bindings unchanged.
+
+The seven-point consequence in \eqref{eq:main} trusts Lavery's external
+local theorem. Its source SHA256 is
+\begin{center}\small\texttt{65564079527487fde93b43bb83dd840a}\\
+\texttt{768acf9fb8db1f1f015d38c4faf3b7d4}.\end{center}
+The Apache-2.0 source and its external verification log and attestation are
+preserved. An independent pure-rational implementation rechecks the window,
+source functional and exact transfer. It also checks 288 list/block examples
+and 183 pair-count examples with the actual unequal pressures; these finite
+examples supplement the general proof rather than establishing universality.
+
+The computation identifiers refer to reproducible source and outputs under
+\path{problems/number-theory/riemann-hypothesis/experiments/} in
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH}{the source repository}.
+EXP-020 supplies the locally replayed certificate; EXP-025 supplies the
+vector-pressure implication and independent rational window calculation.
+Supporting EXP-022 bounds the output of the fixed nine-point
+window/weight transfer family below $0.8374212877970697\ldots$.
+That ceiling restricts the method with those fixed inputs, not the true zero
+proportion, and does not restrict other windows or weights.
+
+The counting conclusions are asymptotic and give no effective finite height.
+They do not prove RH, universal simplicity, a simple-critical-line proportion,
+or an improved short-interval onset. Reported external formal checks and
+internal recomputation do not establish peer review. Improvements from
+incomplete local covers are not used.
+
+\appendix
+\section{Exact pair weights}\label{app:weights}
+The upper-triangular entries below are numerators; unspecified diagonal and
+lower-triangular entries are zero. Each index span has total weight at most
+two. For the nine-point table each span mass equals exactly two.
+
+\begin{center}\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{rrrrrrrrrr}\toprule
+$i\backslash j$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\\midrule
+0 & -- & 1802576 & 4832031 & 5411933 & 10000000 & 10000000 & 10000000 & 10000000 & 20000000\\
+1 & -- & -- & 2694869 & 2295599 & 1780844 & 0 & 0 & 0 & 10000000\\
+2 & -- & -- & -- & 2714860 & 0 & 2807223 & 0 & 0 & 10000000\\
+3 & -- & -- & -- & -- & 2787695 & 5744740 & 2807223 & 0 & 10000000\\
+4 & -- & -- & -- & -- & -- & 2787695 & 0 & 1780844 & 10000000\\
+5 & -- & -- & -- & -- & -- & -- & 2714860 & 2295599 & 5411933\\
+6 & -- & -- & -- & -- & -- & -- & -- & 2694869 & 4832031\\
+7 & -- & -- & -- & -- & -- & -- & -- & -- & 1802576\\
+\bottomrule\end{tabular}\\[4pt]
+9-point weights: divide each numerator by $10000000$.
+\end{center}
+
+\begin{center}\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{rrrrrrrr}\toprule
+$i\backslash j$ & 0 & 1 & 2 & 3 & 4 & 5 & 6\\\midrule
+0 & -- & 21269442 & 890898 & 28398464 & 75539688 & 99999999 & 200000000\\
+1 & -- & -- & 35896622 & 65972058 & 71601535 & 48920622 & 99999999\\
+2 & -- & -- & -- & 42833935 & 66274085 & 71601535 & 75539688\\
+3 & -- & -- & -- & -- & 42833935 & 65972058 & 28398464\\
+4 & -- & -- & -- & -- & -- & 35896622 & 890898\\
+5 & -- & -- & -- & -- & -- & -- & 21269442\\
+\bottomrule\end{tabular}\\[4pt]
+7-point weights: divide each numerator by $100000000$.
+\end{center}
+
+\begin{thebibliography}{9}
+\bibitem{bgstb} S. A. C. Baluyot, D. A. Goldston, A. I. Suriajaya and
+C. L. Turnage-Butterbaugh, \emph{An unconditional Montgomery theorem for pair
+correlation of zeros of the Riemann zeta-function}, Acta Arith. 214 (2024),
+357--376, \href{https://arxiv.org/abs/2306.04799v1}{arXiv:2306.04799v1},
+especially Lemma~5.
+\bibitem{correction} The same authors, \emph{Pair Correlation of Zeros of the
+Riemann Zeta Function I: Proportions of Simple Zeros and Critical Zeros},
+\href{https://arxiv.org/abs/2501.14545v3}{arXiv:2501.14545v3}, Section~3.
+\bibitem{knausgard} K. M. Knausg\aa rd, \emph{More than 83.69\% of the zeros
+of the Riemann zeta function are distinct},
+\href{https://arxiv.org/abs/2609.33043v1}{arXiv:2609.33043v1} (2026).
+\bibitem{lavery} S. Lavery, \emph{Attempt-013: weighted seven-point refinement
+on the optimized AM-form window}, source submission, 3 October 2026,
+\href{https://www.riemannzeta.fun/submissions/attempt-013}{riemannzeta.fun/attempt-013}.
+Pinned repository revision
+\href{https://github.com/josusanmartin/riemann/tree/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/attempt-013}{2fcb7dba2869}.
+\bibitem{tawan} tawanerguo-cn, \emph{A certified unconditional lower bound for
+simple zeros of the Riemann zeta function}, source repository,
+\href{https://github.com/tawanerguo-cn/zeta-simple-zeros/tree/45149f6d403059a71be73c5e3f884cee7cd62b20}{revision 45149f6d4030} (2026).
+\bibitem{af} L. Alp\"oge and R. Furman, \emph{More than two thirds of the zeta
+zeros are simple and on the critical line},
+\href{https://arxiv.org/abs/2608.13637}{arXiv:2608.13637} (2026).
+\bibitem{lamzouri} Y. Lamzouri, \emph{A new proof that more than 2/3 of the
+zeros of the Riemann zeta function are simple and on the critical line},
+\href{https://arxiv.org/abs/2609.02882}{arXiv:2609.02882} (2026).
+\end{thebibliography}
+\end{document}

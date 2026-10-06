@@ -1,6 +1,30 @@
 # Parity-normal-form research lines
 
-## Current route after the quadratic direct summand, 2026-09-05
+## Current disposition after EXP-066, 2026-09-20
+
+This research line is **gated** under focus `HW-F5`. EXP-066 supplies uniform
+support-one sources for the two endpoint rows in the semantic projection, so
+another endpoint search or bounded carrier table has no adequate success gate.
+
+The line may reopen only for one of three theorem-sized objectives:
+
+1. a canonical all-parameter comparison with the persistent isolated or
+   relative presentation;
+2. a complete projected kernel or complete 2-primary quotient;
+3. a reusable finite-state integral Morse or matching theorem that applies
+   beyond this family.
+
+Failure to reach one of these targets in the next bounded theorem attempt is a
+stop condition, not a reason for a wider sweep. The program first moved to
+Kunz preflight `HW-F6`; that route corrected its varying-multiplicity premise
+and redirected to active `HW-F7`, simple-gluing transfer of rigidity.
+See `research-governance.json` and `manuscript-map.md`.
+
+The integral companion v0.04 already includes EXP-063--066 at DOI
+`10.5281/zenodo.22859408`. No further manuscript version is triggered by this
+route unless its structural gate is met.
+
+## Superseded route after the exact finite carrier comparison, 2026-09-20
 
 EXP-062 closes the all-triangle lower-bound route uniformly for the full
 explicit integral presentation: `(Z/2)^q` is a direct summand, with
@@ -11,12 +35,19 @@ source `C=P(F_1)-2B-2D` proves `[eta]=[x_02]`. This closes the full-map
 second-class question much more strongly, but does not identify the earlier
 isolated sector or prove either stable relative quotient uniformly.
 
+EXP-063 identifies all 19 tested triangle rows literally inside the persistent
+component. EXP-064 proves the exact elementary 2-primary types of masks
+56/58/59/62 at `p=8,...,11`. In mask 58 the two endpoint triangles
+`(0,1,p-3)` and `(0,2,p-4)` vanish integrally, and every other triangle forms
+the complete 2-primary subgroup. All triangles generate the complete
+2-primary groups of masks 59/62. This is an exact finite integral bridge, not
+an all-parameter constructive comparison.
+
 Rank the remaining paths as follows:
 
-1. Construct explicit integral source/target comparison maps between the full
-   triangle presentation and the isolated/relative objects. Track class images
-   and any discarded rows or unit fillers. Equal finite Smith types, disjoint
-   displayed supports, and the counts `3,4,5,7` do not supply those maps.
+1. Construct uniform sources for the two mask-58 endpoint vanishings and
+   transformed duals for every remaining triangle. EXP-064 proves the finite
+   result through exponent certificates but does not supply source formulas.
 2. Bound the complementary quotient by a proved integral reduction, compatible
    matching, or explicit complement. The abstract direct summand is real, but
    its proof does not compute every D-row retraction value or all cokernel factors.
@@ -27,15 +58,15 @@ Rank the remaining paths as follows:
 The broad Huneke-Wiegand conjecture is already false; the remaining target is
 this family's full homological description. A quadratically unbounded torsion
 family is proved, while the full-quotient problem remains open with a specific
-comparison-map bottleneck. No EXP-063 or new numerical campaign is declared.
+constructive-comparison bottleneck. No next numerical campaign is declared.
 Keep complete original faces, use declaration-first bounded exact experiments,
 and do not return to unrestricted HNF or undirected coefficient searches.
 
-EXP-062's independent audit and all 39 dedicated tests pass. The new 18-page
-companion has completed manuscript QA and the repository has 213 passing tests.
-DOI `10.5281/zenodo.22342976` is published and its 503,686-byte PDF passed
-fresh unauthenticated public/latest/download verification at 2026-09-05
-13:36:50 UTC; source/PDF commit is `422e942`. Research PRs #253/#257 merged
+EXP-062--064's independent audits pass. At this superseded checkpoint, the
+18-page companion had completed manuscript QA as v0.03 at DOI
+`10.5281/zenodo.22835126`, and the repository had 421 passing tests. EXP-066
+later triggered v0.04, as recorded in the current disposition above. Research
+PRs #253/#257 merged
 with green guards/tests, including pipeline smoke, and work/develop/main
 synchronized at `4aed2b0`. Management PR #616 merged at `7ff09f8`, with
 develop/main synchronized and 32 dirty Rajo paths untouched. The core round

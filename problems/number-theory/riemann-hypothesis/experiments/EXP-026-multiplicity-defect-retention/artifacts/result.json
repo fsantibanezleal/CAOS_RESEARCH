@@ -1,0 +1,44 @@
+{
+  "schema": "exp026-multiplicity-retention-v1",
+  "passed": true,
+  "hypothesis_sha256": "73ce478882fdc7b75727b6037a6eeeeb1ed92751cf9d07abe2b99c243feb7d73",
+  "runner_sha256": "f845fbe7ea00d03e812694cd479e5e80b7c65b7b4290f46b569d15f34413f6ca",
+  "exact_controls": {
+    "exact_colouring_cases": 512,
+    "generic_orthogonal_witness_slack": "-3/125",
+    "inflated_remainder_coefficient_rejected": true,
+    "count_only_factor_rejected": true
+  },
+  "actual_window_witness": {
+    "source_sha256": "65564079527487fde93b43bb83dd840a768acf9fb8db1f1f015d38c4faf3b7d4",
+    "precision_bits": 256,
+    "points": [
+      -1000,
+      "0",
+      "1/2"
+    ],
+    "multiplicities": [
+      2,
+      1,
+      1
+    ],
+    "K_half": "[0.664115773666100546969152520638708080408772919483628687315917871611064088884 +/- 2.45e-76]",
+    "K_integer": "[-5.06605943876645794132142777744086870584476921870920583258600757012162e-8 +/- 5.58e-77]",
+    "K_half_integer": "[0.0002640347593621466537131381071616241010742269359626096758385311547156017181 +/- 5.89e-77]",
+    "closed_formula_checks": 2,
+    "weighted_gram_row_upper_bounds": [
+      "[2.000373473182527525246094248395164961785179210442330103256520349115498436954 +/- 4.41e-76]",
+      "[1.664115845311000207886703169220615867437514800749772027299901920251254093823 +/- 1.44e-76]",
+      "[1.664489175203728411297696120451965255165210248659815450588454172086372520899 +/- 1.03e-76]"
+    ],
+    "clipping_inactive_certified": true,
+    "psi": "[0.882099661092960013316973439404367134534282074706968703770268790097674060660 +/- 8.95e-76]",
+    "omega": "[0.88209980052167344916200086786802966040309851489628493851516113936759468447 +/- 9.95e-76]",
+    "ratio": "[1.00000015806458111897102504691052994928410053810542291943926925516797302784 +/- 6.47e-75]",
+    "proposed_factor": "31/30",
+    "strict_counterexample": true,
+    "arithmetic_trust": "Both scalar paths share FLINT/Arb; limiting-family proof is analytic."
+  },
+  "elapsed_seconds": 0.20041869999840856,
+  "scope": "Retained algebra and an isolation obstruction; no new zero bound or effective height."
+}

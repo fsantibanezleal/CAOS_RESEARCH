@@ -1,0 +1,18 @@
+{
+  "schema": "exp023-partitioned-pilot-snapshot-v1",
+  "utc": "2026-10-03T20:33:47.939026+00:00",
+  "start_utc": "2026-10-03T20:08:02+00:00",
+  "planned_budget_seconds": 1200,
+  "snapshot_sha256": "26908cc343e2f42bdb0a83f1467b765dc12e1c16e77b6e66e807cb20885ed60c",
+  "checkpoint_sha256": "d3012a9c84799ca58c66645d53113681b7941fd35b66048228f90818d6343fc8",
+  "state": {
+    "nodes": 1912832,
+    "splits": 956079,
+    "pruned": 956753,
+    "maximum_depth": 56,
+    "initial_boxes": 683
+  },
+  "pending_boxes": 9,
+  "complete": false,
+  "scope": "partial pilot and validated snapshot; no proof inferred"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "rh-exp022-control-failure-v1",
+  "date": "2026-10-03",
+  "stage": "optimizer import before isolated pip process exited",
+  "error": "ModuleNotFoundError: No module named scipy.__config__",
+  "mathematical_controls_executed": false,
+  "cause": "execution started after pip printed installation success but before target-file copying and process completion",
+  "repair": "waited for pip exit code 0 and verified scipy/__config__.py exists before rerun",
+  "shared_venv_modified": false,
+  "EXP_020_runtime_modified": false
+}

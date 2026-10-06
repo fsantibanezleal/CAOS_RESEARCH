@@ -1,0 +1,55 @@
+{
+  "schema": "research-round-validation-v1",
+  "date": "2026-10-03",
+  "declaration_commits": [
+    "8db97480",
+    "12fa7d70"
+  ],
+  "riemann_suite": {
+    "collected": 156,
+    "exit_code": 0,
+    "command": "python -m pytest -q tests/test_riemann*.py",
+    "scope": "All existing Riemann tests plus the new parameter/phase tests; no frontend changed."
+  },
+  "final_focused_suite": {
+    "passed": 20,
+    "exit_code": 0,
+    "command": "python -m pytest -o addopts= -q tests/test_riemann_parameter_and_phase.py"
+  },
+  "audits": "Three separate deterministic auditors passed; producer imports not used by auditors.",
+  "source_files_verified": 10,
+  "gpu_used": false,
+  "lint": [
+    "ruff check data-pipeline tests",
+    "ruff check new scoped code and experiment entry points"
+  ],
+  "guards_passed": [
+    "artifacts",
+    "template_residue",
+    "content_standards",
+    "manuscript_voice",
+    "research_structure",
+    "research_governance",
+    "ci_budget"
+  ],
+  "diff_check_passed": true,
+  "artifact_sha256": {
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-013-mixed-gram-parameter-cap/artifacts/canonical/result.json": "c250ac76df06e8f66aaed2c720e292bf17e82923137a01ce56d9ced29d4f094b",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-013-mixed-gram-parameter-cap/artifacts/audit/audit.json": "8a92474e4e2269a85f22b8198b842eef673f7d57f0477e452ae0f5f945d93570",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-013-mixed-gram-parameter-cap/audit.py": "ae0f229a8ed14ae2d6b2eee4a70cc24bc28c9f6848ef8618be36f0297ca386cc",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-014-short-window-phase-collision/artifacts/canonical/result.json": "fb0f0d4a0d165d524a86285c8bae163297959aa9819a5181e1a89b46e3567c2f",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-014-short-window-phase-collision/artifacts/audit/audit.json": "db16bd5d6a23171803133aeef844a0a2aaf7a4c2370f6910695ea3e0459379ea",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-014-short-window-phase-collision/audit.py": "fdd9c5803cba921086cd6bac14d0124a917d979ae4aa21dd3f5cc8d3c357b41d",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-015-squarefree-phase-collision/artifacts/canonical/result.json": "871de5a7719bec0a077e1bda88729000d3988e20cee2940f3ef3dd6d55aa3ef8",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-015-squarefree-phase-collision/artifacts/audit/audit.json": "622b14234187ace5328f8fd3b6e197b018d5c3c5ff2a348a8a3a877ddd6745ed",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-015-squarefree-phase-collision/audit.py": "92a7c5a781f30fe47f843d8d33a946db4d23deed9e21431f6dd6ef6cf7567fd2"
+  },
+  "not_performed": [
+    "full external seven-point certificate replay",
+    "Lean rebuild",
+    "external expert review",
+    "new live UI release",
+    "new Zenodo deposit"
+  ],
+  "disposition": "Closed research records to develop, separate serialized release task RH-042."
+}

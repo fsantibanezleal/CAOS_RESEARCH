@@ -1,0 +1,12 @@
+{
+ "accepted": true,
+ "elapsed_seconds": 42.41,
+ "experiment": "EXP-011",
+ "git": {
+  "head": "96b6e8442f55253d5a4dc76ed0fcdd689ca611f7",
+  "tracked_tree_clean": true
+ },
+ "python": "3.11.15",
+ "python_flint": "0.9.0",
+ "result_sha256": "d53992d7b2bc7e8fade30315a5e3b69a0ef0929265f5d451a1f1d4c567822c01"
+}

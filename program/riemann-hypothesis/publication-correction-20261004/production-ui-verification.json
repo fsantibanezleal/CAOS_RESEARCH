@@ -1,0 +1,141 @@
+{
+  "schema": "riemann-publication-repair-ui-v1",
+  "passed": true,
+  "release": "0.76.001",
+  "mode": "production",
+  "base_url": "https://research.fasl-work.com/",
+  "started_utc": "2026-10-04T12:10:34.057Z",
+  "finished_utc": "2026-10-04T12:18:56.332Z",
+  "script_sha256": "947cce7e2f9391c1c574e5c2a5d3f2cd158e058ea339a91e3d18dd5a8145094c",
+  "raw_receipt_sha256": "55537f536ac1fda2c6b357447a050603f4d5d97905098374116bab71daaca7fe",
+  "candidate_build_manifest_sha256": "ade72985b9ad7695ace8c2ce8c3d7e1773c3939d13f44111214164c3839e1f87",
+  "scenario_count": 8,
+  "tabs_visited": 48,
+  "screenshots": 704,
+  "all_png_bytes_verified": true,
+  "failed_checks": 0,
+  "browser_version": "153.0.8010.12",
+  "scope": "Pointer-driven replay and manuscript/evidence links in all six tabs; no mathematical experiment.",
+  "scenarios": [
+    {
+      "id": "1440x1000-en-light",
+      "completed": true,
+      "checks": 1003,
+      "screenshots": 88,
+      "tabs": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failed_checks": 0
+    },
+    {
+      "id": "1440x1000-en-dark",
+      "completed": true,
+      "checks": 1003,
+      "screenshots": 88,
+      "tabs": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failed_checks": 0
+    },
+    {
+      "id": "1440x1000-es-light",
+      "completed": true,
+      "checks": 1003,
+      "screenshots": 88,
+      "tabs": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failed_checks": 0
+    },
+    {
+      "id": "1440x1000-es-dark",
+      "completed": true,
+      "checks": 1003,
+      "screenshots": 88,
+      "tabs": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failed_checks": 0
+    },
+    {
+      "id": "390x844-en-light",
+      "completed": true,
+      "checks": 1003,
+      "screenshots": 88,
+      "tabs": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failed_checks": 0
+    },
+    {
+      "id": "390x844-en-dark",
+      "completed": true,
+      "checks": 1003,
+      "screenshots": 88,
+      "tabs": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failed_checks": 0
+    },
+    {
+      "id": "390x844-es-light",
+      "completed": true,
+      "checks": 1003,
+      "screenshots": 88,
+      "tabs": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failed_checks": 0
+    },
+    {
+      "id": "390x844-es-dark",
+      "completed": true,
+      "checks": 1003,
+      "screenshots": 88,
+      "tabs": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "failed_checks": 0
+    }
+  ]
+}

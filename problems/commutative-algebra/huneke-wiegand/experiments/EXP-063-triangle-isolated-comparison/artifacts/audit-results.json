@@ -1,0 +1,194 @@
+{
+  "experiment": "EXP-063-audit",
+  "status": "COMPLETE",
+  "pins": {
+    "EXP-063-triangle-isolated-comparison\\hypothesis.md": "d3a35db2d20ccf2ac7e54e223e929919faa9295ddf324c9d938c9cba336af0ba",
+    "EXP-063-triangle-isolated-comparison\\run.py": "97a9e7511ff9d004b091f244df653f02182e1d9304c9042fefe47ce241a89461",
+    "EXP-063-triangle-isolated-comparison\\artifacts\\results.json": "c219ce4c4549d970063a787227793bb5f7141e8f4d6e14c614f62085ecc8059a",
+    "EXP-048-semantic-relative-bockstein\\run.py": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a",
+    "EXP-062-triangle-torsion-family\\artifacts\\results.json": "09aef05e577e58b11c4ccc363ed47ccf1ed1598deb1b156a33bb3b6e49ae638d"
+  },
+  "producer_artifact_hash": "f07930e091462f725a35b2ea99efb6cd11bdbbced36d47ea9eb24c2ff81f5a83",
+  "checks": {
+    "parameters": 4,
+    "triangle_labels": 19,
+    "mask_relation_spaces": 16,
+    "mutation_controls": 12
+  },
+  "rows": [
+    {
+      "p": 8,
+      "triangles": 3,
+      "source_boundary_labels_agree": true,
+      "labelled_reconstruction_agrees": true,
+      "masks": [
+        {
+          "mask": 56,
+          "triangle_span_rank": 0,
+          "relation_dimension": 3,
+          "relation_subspace_hash": "33a1c10fd7cb2b79058ab93874877d6234886e4a8a123d9f2a2c9277f6f2efc5",
+          "agrees": true
+        },
+        {
+          "mask": 58,
+          "triangle_span_rank": 1,
+          "relation_dimension": 2,
+          "relation_subspace_hash": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+          "agrees": true
+        },
+        {
+          "mask": 59,
+          "triangle_span_rank": 3,
+          "relation_dimension": 0,
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "agrees": true
+        },
+        {
+          "mask": 62,
+          "triangle_span_rank": 3,
+          "relation_dimension": 0,
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "agrees": true
+        }
+      ],
+      "controls": {
+        "duplicate_triangle_rejected": true,
+        "duplicate_rank": 2,
+        "nontriangle_R5_rejected": true,
+        "nontriangle_row": 2614,
+        "signed_entry_mutation_rejected": true
+      }
+    },
+    {
+      "p": 9,
+      "triangles": 4,
+      "source_boundary_labels_agree": true,
+      "labelled_reconstruction_agrees": true,
+      "masks": [
+        {
+          "mask": 56,
+          "triangle_span_rank": 0,
+          "relation_dimension": 4,
+          "relation_subspace_hash": "aa3d1fb2099f8908157676d9995c3e3e07a29cefb15e10622c9471e03bb00097",
+          "agrees": true
+        },
+        {
+          "mask": 58,
+          "triangle_span_rank": 2,
+          "relation_dimension": 2,
+          "relation_subspace_hash": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+          "agrees": true
+        },
+        {
+          "mask": 59,
+          "triangle_span_rank": 4,
+          "relation_dimension": 0,
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "agrees": true
+        },
+        {
+          "mask": 62,
+          "triangle_span_rank": 4,
+          "relation_dimension": 0,
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "agrees": true
+        }
+      ],
+      "controls": {
+        "duplicate_triangle_rejected": true,
+        "duplicate_rank": 3,
+        "nontriangle_R5_rejected": true,
+        "nontriangle_row": 4672,
+        "signed_entry_mutation_rejected": true
+      }
+    },
+    {
+      "p": 10,
+      "triangles": 5,
+      "source_boundary_labels_agree": true,
+      "labelled_reconstruction_agrees": true,
+      "masks": [
+        {
+          "mask": 56,
+          "triangle_span_rank": 0,
+          "relation_dimension": 5,
+          "relation_subspace_hash": "6d7549918c6dd9c59709c468dc36e7f6407b65b759afcfeaa01fa4db0f2082b3",
+          "agrees": true
+        },
+        {
+          "mask": 58,
+          "triangle_span_rank": 3,
+          "relation_dimension": 2,
+          "relation_subspace_hash": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+          "agrees": true
+        },
+        {
+          "mask": 59,
+          "triangle_span_rank": 5,
+          "relation_dimension": 0,
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "agrees": true
+        },
+        {
+          "mask": 62,
+          "triangle_span_rank": 5,
+          "relation_dimension": 0,
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "agrees": true
+        }
+      ],
+      "controls": {
+        "duplicate_triangle_rejected": true,
+        "duplicate_rank": 4,
+        "nontriangle_R5_rejected": true,
+        "nontriangle_row": 7858,
+        "signed_entry_mutation_rejected": true
+      }
+    },
+    {
+      "p": 11,
+      "triangles": 7,
+      "source_boundary_labels_agree": true,
+      "labelled_reconstruction_agrees": true,
+      "masks": [
+        {
+          "mask": 56,
+          "triangle_span_rank": 1,
+          "relation_dimension": 6,
+          "relation_subspace_hash": "8d47d3c8cbbf7a320892d859438f5e308d1895aeb1382a6c0c337364dd27d1b5",
+          "agrees": true
+        },
+        {
+          "mask": 58,
+          "triangle_span_rank": 5,
+          "relation_dimension": 2,
+          "relation_subspace_hash": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+          "agrees": true
+        },
+        {
+          "mask": 59,
+          "triangle_span_rank": 7,
+          "relation_dimension": 0,
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "agrees": true
+        },
+        {
+          "mask": 62,
+          "triangle_span_rank": 7,
+          "relation_dimension": 0,
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "agrees": true
+        }
+      ],
+      "controls": {
+        "duplicate_triangle_rejected": true,
+        "duplicate_rank": 6,
+        "nontriangle_R5_rejected": true,
+        "nontriangle_row": 12561,
+        "signed_entry_mutation_rejected": true
+      }
+    }
+  ],
+  "elapsed_seconds": 284.7014474000316,
+  "artifact_hash": "fa88ae87a7ff3b614174330d6bc44d2fc80fcfeff73109f217fc97e2f3682732"
+}

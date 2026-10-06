@@ -1,7 +1,77 @@
-# Reproduce the Riemann short-interval result
+# Reproduce the Riemann distinct-zero and short-interval results
 
 The [research wiki](../../problems/number-theory/riemann-hypothesis/wiki/) explains the theorem.
 This guide describes the evidence flow and public replay. All arithmetic runs offline on CPU.
+
+## Reviewed longer short-window moment
+
+EXP-028's internally reviewed moment range is
+`0<nu<min(1/2,(17/33)(2theta-1))`. With the unchanged certified EXP-010
+detector and Wang's attributed pair theorem, the simple-critical onset is
+0.5339, with endpoint density greater than 0.0003985233159135.
+The manuscript PDF is [Levinson v0.02](https://doi.org/10.5281/zenodo.23132248).
+The 80-member source archive is published in the
+[separate evidence record](https://doi.org/10.5281/zenodo.23135349).
+
+Verify the source ZIP SHA-256
+`944c99623d57fcff3db5a380d08dd5907bfbc40250c5c1f7f8d1fefd188da5c1`
+and follow its README from a fresh extraction. Its independent rational,
+native and exact adversarial auditors reproduce the finite checks. Historical
+conditional receipts retain false theorem flags: the separate complete
+analytic proof review admits the moment theorem. Finite checks cannot prove
+it. Both derivations explicitly charge the narrower smoothing window and
+retain residues, coalescence, dual tails and unbalanced blocks.
+
+`riemann-short-window-moment-v1` is an additive replay-v9 object. Offline
+admission binds all committed scientific source bytes and rejects missing
+proofs, false review/controls or unpublished files. Frozen Windows receipt
+hashes accept only the exact LF or CRLF serialization of their committed
+source; the published source archive reproduces the original physical bytes.
+The browser validates recorded admission and matching provenance without
+performing mathematical searches. Earlier EXP-010 evidence remains unchanged.
+Internal review and publication do not establish external peer review,
+worldwide priority, an effective height or RH.
+
+## Completed distinct-strip certificates
+
+The [published manuscript](https://doi.org/10.5281/zenodo.23128662) contains
+the general vector-pressure transfer and both complete source-dependent proofs
+in its original PDF. The two ZIPs belong to the
+[separate evidence record](https://doi.org/10.5281/zenodo.23135359). EXP-020 gives
+`3997934614153/4775507750000`; EXP-025 gives the stronger
+`30945470743359/36955122080000`. These count distinct points in the entire
+critical strip against all zeros with multiplicity, asymptotically in height.
+
+Download `exp020-runtime-reproducibility.zip` and verify SHA-256
+`91be4798774837bc16007a8236a692078e825ffb1c8dfa476c05d3c733b17879`.
+Its included README/manifest and frozen runtime reproduce the exact physical
+source and input bytes, including Windows line endings. The archive contains
+all 96 completed shard reports, both tables, checksums and independent cover
+and transfer auditors. Extract to a fresh directory and follow those bundled
+instructions. Git's normalized text bytes have separately recorded provenance
+and must not be substituted for the runtime's byte-bound files.
+
+The scoped mathematical-source ZIP includes the fully licensed external
+Lavery source, proofs and exact rational audit. EXP-025 uses Lavery's external
+local theorem with typh's window and Ainta's weighted refinement; its external
+Lean/nanoda attestation was archived but not locally rebuilt. EXP-020's native
+input audit shares FLINT/Arb with the interval execution. The exact-byte archive
+audit and public downloads do not rerun every interval operation.
+
+`tests/test_riemann_distinct_export.py` corrupts actual committed receipts and
+rejects incomplete coverage, changed sources, altered transfers and unpublished
+files. The offline exporter reads HEAD, not live checkpoints. Its additive
+`riemann-distinct-zero-v1` object preserves the existing replay-v9 contract.
+The browser validates recorded acceptance and provenance; it performs no search.
+Current-publication.json admits only a manuscript PDF; evidence-companion.json
+admits the separate dataset with reciprocal links and preserved archive hashes.
+Historical publication receipts retain the original deposit file set and are
+not used as a claim about today's file placement.
+EXP-019 is suspended and EXP-023 remains incomplete. Their candidates are excluded.
+
+The full [evidence guide](../../problems/number-theory/riemann-hypothesis/wiki/20-distinct-zero-certificates.md)
+separates arithmetic, universal proof, analytic input, publication and review.
+RH, effective heights, worldwide priority and external peer acceptance remain open.
 
 ## Restore and verify the sources
 
@@ -86,6 +156,146 @@ are retained. Fresh replay rechecks all arithmetic; a saved prefix is not truste
 as a mathematical certificate. Exact CPU arithmetic completed the declared run
 in 8.0353704 seconds; GPU acceleration was unnecessary.
 
+## Reproduce the explicit local Selberg transfer
+
+EXP-005 localizes Pearce-Crump's optimized Selberg sign detector and combines
+its explicit odd-zero curve with the EXP-004 parity inequality. Run the exact
+certificate and focused adversarial tests in fresh paths:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/run.py --output-dir tmp/riemann-exp005-replay --budget-seconds 60
+pytest tests/test_riemann_local_selberg.py tests/test_riemann_parity.py
+```
+
+The run checks all 14 declared controls, the source hashes, the rank-three
+constant enclosure, the negative point at theta=0.5459, the positive point at
+theta=0.546, the fixed legal mollifier exponent u=0.02299, and rejection of the
+zero-margin boundary u=0.023. Its independent interval replay uses a separate
+high-precision implementation. The canonical result SHA-256 is
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+
+The finite certificate does not establish the all-height theorem by itself.
+The exporter also requires the separate analytic localization proof review and
+binds its hypothesis to declaration commit `6fd59fec`. CPU arithmetic completed
+the canonical run in 0.313 seconds; no GPU workload was justified.
+
+## Reproduce Hilbert-parity compression
+
+EXP-006 combines the first Hilbert-subspace dimension with distinct odd support.
+Its canonical theorem is `(Q-S)(N-O)>=2(N-S)^2`; the exact certificate checks
+the frozen threshold point and root bracket without promoting the finite census
+to a universal proof.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/run.py --output-dir tmp/riemann-exp006-replay --budget-seconds 120
+pytest tests/test_riemann_hilbert_parity.py tests/test_riemann_local_selberg.py tests/test_riemann_parity.py
+```
+
+The run checks 18,479 atom profiles, equality and empty-dimension branches,
+directed rational enclosures for the threshold, the scalar zero-simple witness,
+and a separate 100-digit interval replay. At theta=0.5459 the strengthened lower
+bound exceeds `0.0000168381638551244569880374399`, and the unique root lies in
+`(0.545884,0.545885)`. The canonical result SHA-256 is
+`82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf`.
+
+The exporter requires the execution receipt and proof-review bindings for the
+hypothesis, runner, focused tests, proof, audit, result and verdict. The original
+declared inequality and both superseded runs remain preserved.
+
+## Reproduce spectral-defect parity coupling
+
+EXP-007 retains `D(G)=tr Psi(G)` in the EXP-006 product and couples it to the
+pressure-frame lower bound. Its canonical theorem is
+`(Q-S-D(G))(N-O)>=2(N-S)^2`. Run the exact certificate and focused tests in
+fresh paths:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
+python -m pytest -q tests/test_riemann_spectral_defect_parity.py
+```
+
+The run checks 652,260 rational spectral profiles, 18,479 multiplicity
+profiles, a directed-rational correlated gain, source hashes, and overlap with
+an independent 100-digit interval implementation. At theta=0.5459 it proves
+`H-h3>1.3732525985593292701164661575215e-70`. The strict gain does not lower
+the onset exponent or justify another printed decimal for the baseline bound.
+The portable canonical result SHA-256 is
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`.
+The originally published Windows byte stream is preserved under
+`artifacts/windows-canonical-v1/` with its historical hash.
+
+The artifact directory preserves two failed attempts. One rejected an
+incorrect containment relation between independently rounded enclosures. The
+other rejected a positive-sign assumption for the historical theta=3/4
+sensitivity control. Fresh replay must target an empty directory and start
+from a tracked-clean commit.
+
+## Reproduce the rank-six local transfer
+
+EXP-008 proves that the local Selberg detector argument works for every fixed
+finite rank and then applies Pearce-Crump's stated source-certified rank-six
+constant. Run the exact certificate and focused tests in fresh paths:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py --output-dir tmp/riemann-exp008-replay --budget-seconds 120
+python -m pytest -q tests/test_riemann_rank_six_local.py
+```
+
+The run proves the rank-six onset bracket
+`0.5458837<theta6<0.5458838`, the disjoint rank-three bracket
+`0.5458846<theta3<0.5458847`, a positive rank-six lower bound at
+`theta=0.545884`, and a pointwise improvement above
+`9.263543061777356e-7` at `theta=0.5459`. It also checks the optimized
+spectral companion at `rho=11/5` with an independent 100-digit interval
+implementation. The portable canonical result SHA-256 is
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+The originally published Windows byte stream is preserved separately.
+
+The public source prints the C6 interval but not the coefficient matrix.
+Reproduction therefore validates the CAOS transfer and all downstream
+arithmetic while retaining C6 as an attributed theorem input. It does not
+independently reconstruct the source profile.
+
+## Reproduce the sharp three-point kernel result
+
+EXP-009 proves the exact `sqrt(2)` supremum, evaluates the new Wang parameter,
+and certifies both the global proportion and its short-interval companion:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/run.py --output-dir tmp/riemann-exp009-replay --budget-seconds 600
+python -m pytest -q tests/test_riemann_wang_kernel_sharpening.py
+```
+
+The portable result has SHA-256
+`0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66`.
+It uses exact fractions, directed Taylor bounds, and an independent 120-digit
+interval overlap. The ratio theorem is proved in the repository. The global
+zeta conclusion retains Wang arXiv:2609.24167v1 as an attributed analytic
+input and supplies neither an effective height nor a proof of RH.
+
+## Reproduce the localized Levinson detector
+
+EXP-010 certifies the degree-201 Levinson-Conrey detector constants, the
+published Young and Conrey anchors, and the parity onset. The auditor replays
+every constant by validated quadrature from the Chebyshev generators, and the
+controls check the counting lemma on zeta windows and on test functions with
+planted double and triple zeros:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/run.py --output-dir tmp/riemann-exp010-replay
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/audit.py --canonical tmp/riemann-exp010-replay/result.json --output-dir tmp/riemann-exp010-audit
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/controls.py --output-dir tmp/riemann-exp010-controls
+python -m pytest -q tests/test_riemann_levinson_parity.py
+```
+
+The producer needs a clean tracked tree and runs in about two seconds; the
+audit takes about fifteen seconds and the controls about ten minutes on four
+CPU cores. The canonical result has SHA-256
+`74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464`. The
+short-window moment and the sign-change count are proved in the repository;
+the onset additionally uses Wang arXiv:2609.07918v1 through the EXP-006
+product.
+
 ## Bake and inspect the public replay
 
 After committing the source artifacts, run `python -m researchlab.pipeline all`. The Riemann
@@ -122,8 +332,8 @@ node scripts/verify_riemann_ui.mjs --base-url http://127.0.0.1:4182/ --output-di
 ```
 
 The harness drives real pointer navigation from Program, language/theme controls, all six
-research sections, proof stages, all released experiment records and the architecture modal.
+research sections, proof stages, all nine released experiment records and the architecture modal.
 It records viewport containment, single-row navigation, browser errors, equation rendering,
 source links and screenshot hashes. It captures successive content viewports, including long
 experiment records. Automated success and visual inspection are recorded separately.
-The published QA record is under `program/riemann-hypothesis/release-0.64.000/`.
+Published QA records are versioned under `program/riemann-hypothesis/release-*/`.

@@ -1,0 +1,99 @@
+{
+  "schema": "riemann-release-qa-v6",
+  "release": "0.73.000",
+  "recorded_utc": "2026-09-26T20:02:27.6648535Z",
+  "base_develop_commit": "f31d5ac37ee08fd2ea98bbd16001be4ebde97b11",
+  "candidate_prepare_commit": "360c872c59bcf6ca1f98d3e0ea51088af9892052",
+  "tests": {
+    "riemann_and_replay": "64 passed",
+    "frontend": "24 passed",
+    "content_guard": "PASS",
+    "governance_guard": "PASS",
+    "structure_guard": "PASS",
+    "template_guard": "PASS",
+    "manuscript_voice": "PASS",
+    "artifact_contract": "PASS",
+    "typescript_build": "PASS"
+  },
+  "browser": {
+    "harness": "scripts/verify_riemann_ui.mjs",
+    "scenarios": 8,
+    "research_tab_visits": 48,
+    "screenshots": 1586,
+    "failures": 0,
+    "console_errors": 0,
+    "console_warnings": 0,
+    "page_errors": 0,
+    "request_failures": 0,
+    "http_errors": 0,
+    "matrix": ["1440x1000", "390x844"],
+    "languages": ["en", "es"],
+    "themes": ["light", "dark"],
+    "content": "all successive content viewports, proof stages, nine experiment records, disclosures and architecture panels",
+    "raw_receipt": {
+      "path": "tmp/riemann-ui-v073-reviewed/receipt.json",
+      "bytes": 49633297,
+      "sha256": "b28854ab320b119723af36f2d5db196a775831c8bcd36533f32904ddc68df6b9"
+    }
+  },
+  "build_files": [
+    {"path": "frontend/dist/index.html", "bytes": 591, "sha256": "2b4b63232e91473109aef1dd644e494e387824a2491a586ccd922aafd491c70e"},
+    {"path": "frontend/dist/assets/ExperimentModal-B6jtldXf.js", "bytes": 176791, "sha256": "080fbb9253f177d2af2e9351bb7bade1d72ada49ed1f0dea57f84ae29c82c639"},
+    {"path": "frontend/dist/assets/index-9Q9zc22D.js", "bytes": 791616, "sha256": "e0a07bac785a65f42b314e61e5a7eac7fd03ceed92dcdb022574b5b10e100e9a"},
+    {"path": "frontend/dist/assets/index-CftVb1pP.css", "bytes": 64941, "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78"}
+  ],
+  "data_files": [
+    {"path": "data/derived/research/experiments.json", "bytes": 2174214, "sha256": "c411458673e631a91cc210da1212c1e19f58c16a378d6e5e5fbcdabb3c3edb29"},
+    {"path": "data/derived/research/jacobian.json", "bytes": 3831, "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023"},
+    {"path": "data/derived/research/portfolio.json", "bytes": 3782, "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc"},
+    {"path": "data/derived/research/riemann.json", "bytes": 44060070, "sha256": "28787e940fccf8f2613546bcd08354c839a62acd782efaea658a1ecb57773ad1"},
+    {"path": "data/derived/manifests/index.json", "bytes": 385, "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337"},
+    {"path": "data/derived/manifests/experiments.json", "bytes": 305, "sha256": "56057c80b6afb18f7ff970243b62f9ae27b3022aad686fc977b5b4a1b1b14b70"},
+    {"path": "data/derived/manifests/riemann.json", "bytes": 29370, "sha256": "8b00393a17ce420bf5f88207d4bf1ca255b2a47899821c3f5937df90853f610c"}
+  ],
+  "manuscript": {
+    "path": "manuscripts/riemann-hypothesis/sharp-three-point-kernel/main.pdf",
+    "bytes": 323565,
+    "sha256": "a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82",
+    "doi": "10.5281/zenodo.22940291",
+    "pages": 7
+  },
+  "canonical_result": {
+    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/artifacts/canonical/result.json",
+    "bytes": 4114968,
+    "sha256": "0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66",
+    "schema": "riemann-exp009-results-v1",
+    "execution_receipt_sha256": "86e6c02c7469d7635400057cc9fed484ecef60365dd2b7d3a07d2d5b36e66136"
+  },
+  "representative_screenshots": [
+    {"path": "program/riemann-hypothesis/release-0.73.000/screenshots/desktop-en-dark-exp009-verdict.png", "bytes": 245557, "sha256": "d838404b6be3064934c14a616fcd6b0384b81107dfcfd92c0618b69a4addab63"},
+    {"path": "program/riemann-hypothesis/release-0.73.000/screenshots/desktop-en-light-architecture.png", "bytes": 123526, "sha256": "209c09ae34b87a16060a1de4b8d2638c46a690b9ec385ade7a52cff576072104"},
+    {"path": "program/riemann-hypothesis/release-0.73.000/screenshots/desktop-en-light-summary.png", "bytes": 122990, "sha256": "60de305ce264e6028b40dca6cc0500f92cc54a097176876e2d6beefd57b2fa86"},
+    {"path": "program/riemann-hypothesis/release-0.73.000/screenshots/phone-es-dark-architecture.png", "bytes": 62209, "sha256": "c75db10e2622f3b15d7df75a50d3b45ae87e740ff4b17e273c6bb5c26c96e2d8"},
+    {"path": "program/riemann-hypothesis/release-0.73.000/screenshots/phone-es-dark-exp009-verdict.png", "bytes": 57086, "sha256": "1b83cf1ce0c646715f39d4c7923f920fb10e52832fd2a13debf3636f2fe04f2e"},
+    {"path": "program/riemann-hypothesis/release-0.73.000/screenshots/phone-es-dark-summary.png", "bytes": 56934, "sha256": "2d544dbe1a4ae37ae53a418e073de3493228a2c7b0797324d9dff85d5b6af3ff"}
+  ],
+  "deployment": {
+    "status": "live-verified",
+    "tag": "v0.73.000",
+    "release": "https://github.com/fsantibanezleal/CAOS_RESEARCH/releases/tag/v0.73.000",
+    "research_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/337",
+    "promotion_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/338",
+    "develop_commit": "22b5d795f584494f4ba99efdf51ca8d4dc61876b",
+    "main_commit": "e6f905f8509adbb9be7e9470b88b5071a4a08d9e",
+    "develop_ci_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268572713",
+    "ci_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268684854",
+    "pages_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268684851",
+    "live_receipt": {
+      "path": "program/riemann-hypothesis/release-0.73.000/live-verification.json",
+      "bytes": 9119,
+      "sha256": "576bb579f76545ec5b14d59c0ec38b2f0a845cd9f6a59a70bf11584c0837ddf9",
+      "browser_receipt_sha256": "bcb355292ae426c98512ed4b3d332a05041f54a1a4a9d69437153d45d724de1a",
+      "byte_matched_files": 11,
+      "scenarios": 8,
+      "tabs_visited": 48,
+      "screenshots": 368,
+      "failures": 0
+    }
+  }
+}

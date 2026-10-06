@@ -1,0 +1,16 @@
+{
+  "schema": "exp023-simple-assembly-scope-audit-v1",
+  "exact_checks_passed": true,
+  "local_premise_closed": false,
+  "new_simple_zero_theorem": false,
+  "assembly_output_ceiling": "3330285207/4947769000",
+  "H": "3362285207/5000000000",
+  "delta": "52231/5000000",
+  "r": 8,
+  "pressure": "1/1250",
+  "x_derivative_numerator_uniform_upper": "-1617483793/5000000000",
+  "u_derivative_numerator": "15615518646817/25000000000000000",
+  "review_sha256": "40c3f0cce6d563d534b3d48f301cd4461aaddd3720e1e3758aa5e25380b5ec83",
+  "scope": "Relaxed ceiling for a specified simple-atom threshold assembly only; not an upper bound on actual simple zeros",
+  "replacement_denominator_uniform_lower": "1617483793/5000000000"
+}

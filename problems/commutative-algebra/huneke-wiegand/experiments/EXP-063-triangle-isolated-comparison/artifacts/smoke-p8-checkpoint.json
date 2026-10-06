@@ -1,0 +1,221 @@
+{
+  "experiment": "EXP-063",
+  "status": "PARTIAL",
+  "p_min": 8,
+  "p_max": 8,
+  "completed": [
+    8
+  ],
+  "rows": [
+    {
+      "p": 8,
+      "triangle_count": 3,
+      "triangles": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "triangle_rows": [
+        2612,
+        2613,
+        2615
+      ],
+      "triangle_labels": [
+        [
+          "K",
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            26,
+            27,
+            28,
+            29,
+            30,
+            48
+          ],
+          86
+        ],
+        [
+          "K",
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            25,
+            27,
+            28,
+            29,
+            30,
+            48
+          ],
+          86
+        ],
+        [
+          "K",
+          [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            24,
+            27,
+            28,
+            29,
+            30,
+            48
+          ],
+          86
+        ]
+      ],
+      "all_rows_survive": true,
+      "all_atoms_R5": true,
+      "literal_surviving_coordinates": true,
+      "component_rows": 2675,
+      "component_columns": 1094,
+      "contraction_replay": {
+        "reconstruction_source_sha256": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a",
+        "support_hash": "226fe0db14b3ace29537ba3c7a3d4ceccf78b19d3591badc69ed5e5c6eb02f5b",
+        "signed_hash": "7b1b2c8c93fd9919c5415d42688ccbf6ea852c3bd1514a891a9122b76950757f",
+        "signed_columns_hash": "2bec02c6e911df661239ddb2f187770037cbc2693fb6ea1b5d45a539ffdb051b",
+        "surviving_row_labels_hash": "357a686dd77eb1dbafc54f12ab0b217f328b173cb47379330ba7620681e7bab4",
+        "triangle_rows": [
+          2612,
+          2613,
+          2615
+        ]
+      },
+      "contraction_replay_hash": "bfb89c0ae0a955dc25c52d4fd52317c0cc15f945ad86167199812e8b1e45defb",
+      "masks": [
+        {
+          "mask": 56,
+          "rows": 1769,
+          "relation_columns": 1094,
+          "rank_mod_two": 963,
+          "triangle_span_rank": 0,
+          "frozen_carrier_bockstein_rank": 0,
+          "expected_rank": 0,
+          "pivot_orders_agree": true,
+          "relation_dimension": 3,
+          "relations": [
+            {
+              "bits_hex": "0x1",
+              "triangles": [
+                [
+                  0,
+                  1,
+                  5
+                ]
+              ]
+            },
+            {
+              "bits_hex": "0x2",
+              "triangles": [
+                [
+                  0,
+                  2,
+                  4
+                ]
+              ]
+            },
+            {
+              "bits_hex": "0x4",
+              "triangles": [
+                [
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            }
+          ],
+          "relation_subspace_hash": "33a1c10fd7cb2b79058ab93874877d6234886e4a8a123d9f2a2c9277f6f2efc5"
+        },
+        {
+          "mask": 58,
+          "rows": 2596,
+          "relation_columns": 1094,
+          "rank_mod_two": 979,
+          "triangle_span_rank": 1,
+          "frozen_carrier_bockstein_rank": 1,
+          "expected_rank": 1,
+          "pivot_orders_agree": true,
+          "relation_dimension": 2,
+          "relations": [
+            {
+              "bits_hex": "0x1",
+              "triangles": [
+                [
+                  0,
+                  1,
+                  5
+                ]
+              ]
+            },
+            {
+              "bits_hex": "0x2",
+              "triangles": [
+                [
+                  0,
+                  2,
+                  4
+                ]
+              ]
+            }
+          ],
+          "relation_subspace_hash": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684"
+        },
+        {
+          "mask": 59,
+          "rows": 2624,
+          "relation_columns": 1094,
+          "rank_mod_two": 990,
+          "triangle_span_rank": 3,
+          "frozen_carrier_bockstein_rank": 3,
+          "expected_rank": 3,
+          "pivot_orders_agree": true,
+          "relation_dimension": 0,
+          "relations": [],
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "mask": 62,
+          "rows": 2647,
+          "relation_columns": 1094,
+          "rank_mod_two": 999,
+          "triangle_span_rank": 3,
+          "frozen_carrier_bockstein_rank": 3,
+          "expected_rank": 3,
+          "pivot_orders_agree": true,
+          "relation_dimension": 0,
+          "relations": [],
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 9.54636889998801
+}

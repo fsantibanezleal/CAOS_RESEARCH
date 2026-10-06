@@ -1,0 +1,87 @@
+{
+  "schema": "riemann-primary-source-manifest-v1",
+  "retrieved_date": "2026-10-03",
+  "archive_group": "source-cache/2026-10-03/subdyadic-review",
+  "entries": [
+    {
+      "file": "withdrawal-2601.00292v2.html",
+      "url": "https://arxiv.org/abs/2601.00292v2",
+      "bytes": 41364,
+      "sha256": "15680b1b6bcd8124150df664e50ac5d3b7a34a469d6d8302044ee769b090ff6c",
+      "content_type": "text/html; charset=utf-8",
+      "archived": true,
+      "eligible_source_content": true
+    },
+    {
+      "file": "wright-2608.27732v1.pdf",
+      "url": "https://arxiv.org/pdf/2608.27732v1",
+      "bytes": 316873,
+      "sha256": "b3e36691ec1119a74e9def05dd02913a2fc56e9f0c8f25b4dfa98ec19a333545",
+      "content_type": "application/pdf",
+      "archived": true,
+      "eligible_source_content": true
+    },
+    {
+      "file": "wright-2608.27732v1.html",
+      "url": "https://arxiv.org/html/2608.27732v1",
+      "bytes": 291513,
+      "sha256": "c4a7a7cdf816e7a1b788a7c053c18d114fb6bcd5c910c0395e930ab9dfdb5450",
+      "content_type": "text/html; charset=utf-8",
+      "archived": true,
+      "eligible_source_content": true
+    },
+    {
+      "file": "pascadi-2026-publisher.html",
+      "url": "https://link.springer.com/article/10.1007/s00039-026-00746-0",
+      "bytes": 3038,
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "content_type": "text/html; charset=utf-8",
+      "archived": true,
+      "eligible_source_content": false,
+      "limitation": "HTTP response is a Client Challenge page; publisher mathematics read through the web tool, archived mathematics from arXiv v2 instead"
+    },
+    {
+      "file": "pascadi-2511.08445v2.pdf",
+      "url": "https://arxiv.org/pdf/2511.08445v2",
+      "bytes": 992320,
+      "sha256": "88f94994462840e2b03bd9cea38776fa3b65d1023dc6dfe00475bb1fceb47e8e",
+      "content_type": "application/pdf",
+      "archived": true,
+      "eligible_source_content": true
+    },
+    {
+      "file": "pascadi-2511.08445v2.html",
+      "url": "https://arxiv.org/html/2511.08445v2",
+      "bytes": 2021401,
+      "sha256": "b0616715dbbadd8882fb112355043efad3ede0e895a888de863c6b91fdb7eada",
+      "content_type": "text/html; charset=utf-8",
+      "archived": true,
+      "eligible_source_content": true
+    },
+    {
+      "file": "bettin-chandee-1502.00769v1.pdf",
+      "url": "https://arxiv.org/pdf/1502.00769v1",
+      "bytes": 310909,
+      "sha256": "439665281e775e8369e222c959f2cad0221aa57dc7d1338efdae1c99029d7f20",
+      "content_type": "application/pdf",
+      "archived": true,
+      "eligible_source_content": true
+    },
+    {
+      "file": "bettin-chandee-1502.00769v1.html",
+      "url": "https://arxiv.org/html/1502.00769v1",
+      "bytes": 961974,
+      "sha256": "6182dee8ced4ef2b64e932c0b481e515b3cfbe3d926cc7eb61a289dc7eb7442f",
+      "content_type": "text/html; charset=utf-8",
+      "archived": true,
+      "eligible_source_content": true
+    }
+  ],
+  "scope": "Primary-source bytes and eligibility, not complete proof verification",
+  "status_corrections": {
+    "2601.00292": "v2 withdrawn 2026-01-05; missing L^2 factor destroys claimed gain",
+    "2608.27732": "v1 current on retrieval; unrefereed source theorem, not imported into a zeta proof",
+    "2511.08445": "v2 2026-06-21, publisher version 2026-08-21 exists; fixed-modulus sums differ from variable-modulus fractions",
+    "1502.00769": "v1 current on retrieval; primary comparison for trilinear fraction bounds"
+  }
+}

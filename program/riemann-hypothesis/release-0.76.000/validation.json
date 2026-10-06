@@ -1,0 +1,39 @@
+{
+  "schema": "riemann-release-focused-validation-v1",
+  "release": "0.76.000",
+  "candidate_commit": "a33202aff82b382885470588afee45c6729357bd",
+  "selected_python": {
+    "passed": 55,
+    "files": [
+      "tests/test_riemann_moment_export.py",
+      "tests/test_riemann_distinct_export.py",
+      "tests/test_riemann_levinson_parity.py"
+    ],
+    "scope": "Actual-receipt source/publication corruption controls and the fixed earlier detector; not all repository tests."
+  },
+  "frontend": {
+    "passed": 34,
+    "files": [
+      "frontend/src/test/data.test.ts",
+      "frontend/src/test/riemann.test.ts",
+      "frontend/src/test/riemannDistinct.test.ts",
+      "frontend/src/test/riemannMoment.test.ts"
+    ],
+    "typescript": "passed",
+    "production_build": "passed",
+    "static_files": 76
+  },
+  "guards": {
+    "ruff_data_pipeline_and_tests": "passed",
+    "research_structure": "passed",
+    "research_governance": "passed",
+    "content_standards": "passed",
+    "manuscript_voice": "passed",
+    "artifact_contract": "passed",
+    "template_residue": "passed",
+    "ci_budget": "passed"
+  },
+  "scope_comparison": "scope-check.json",
+  "rendered_matrix": "Separate completed QA receipt required; this record does not attest rendered or production success.",
+  "scientific_boundary": "Analytic proof review is separate from these finite implementation checks. RH, effective height, external peer review and worldwide priority are not established."
+}

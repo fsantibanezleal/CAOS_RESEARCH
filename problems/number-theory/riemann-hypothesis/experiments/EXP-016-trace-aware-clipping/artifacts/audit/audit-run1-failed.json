@@ -1,0 +1,8 @@
+{
+  "schema": "exp016-audit-attempt-v1",
+  "passed": false,
+  "process_exit_code": 1,
+  "result_sha256": "7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74",
+  "failure": "Structural SymPy equality in the derivative identity for D(m) failed despite algebraic equivalence.",
+  "repair": "Use simplify(lhs-rhs)==0. The derivative formula and canonical producer are unchanged."
+}

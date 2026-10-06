@@ -1,28 +1,40 @@
-# Simple critical zeros in short intervals: stability, pressure, and parity
+# Simple critical zeros in short intervals: stability, parity, localization, Hilbert compression, and spectral defect
 
-Published version 0.02, 2026-09-12. Sole author: Felipe Santibanez-Leal,
-ORCID [0000-0002-0150-3246](https://orcid.org/0000-0002-0150-3246).
+Version `v0.07`, dated 20 September 2026.
 
-This preprint combines the attributed finite stability inequality with an odd-multiplicity
-parity transfer and a pressure certificate. EXP-004 proves a qualitative extension of the
-simple-critical positivity range below Wang's cosine root, with an unspecified fixed
-classical density constant. EXP-003 gives a certified theta=3/4 simple-critical lower
-proportion of 0.4190878881701117279 and distinct companion 0.7095439440850558640.
-It does not prove RH or claim a global record. Automated adversarial review is distinguished
-from external peer review and end-to-end formalization.
+This version contains two new linked results. First, the local Selberg argument
+is proved for every fixed finite-rank admissible vector profile. Applying it to
+Pearce-Crump's source-certified six-square constant and then to the sharp
+Hilbert-parity product gives
 
-- [Paper PDF](main.pdf) and [LaTeX source](main.tex).
-- [EXP-004 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/).
-- [EXP-003 pressure proof and certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/).
-- [Publication gate](publication-gate.json) records final content, PDF, rendered-page hashes and checks.
-- Version DOI: [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744).
-- Latest-version concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
+`0.5458837 < theta_6 < 0.5458838`.
 
-[The publication receipt](publication-receipt.json) records a fresh unauthenticated download
-matching all 498,500 published PDF bytes and verifies metadata, author, ORCID, license and both DOIs.
-Version 0.01 remains byte-identical in [the archive](versions/v0.01/); future corrections require
-a new version and receipt. The manuscript is CC BY 4.0 and research code is MIT.
+At `theta=0.545884`, where the fully reproducible rank-three term is still
+negative, the rank-six term is greater than
+`2.5541123454645702e-7`. At `theta=0.5459`, it is greater than
+`0.0000177645181613023236390595079`, improving the rank-three value by more
+than `9.2635430617773560e-7`.
 
-Build from this directory using two passes of `pdflatex -interaction=nonstopmode
--halt-on-error main.tex`, then render every page with `pdftoppm -png` and inspect it.
-The publication gate is tied to the reviewed PDF bytes, not merely a successful compilation.
+Second, the manuscript retains the simple-real Gram spectral defect in the
+sharp finite product
+
+`(Q-S-D(G))(N-O) >= 2(N-S)^2`.
+
+Using the radius ratio `11/5` gives a strict spectral correction at every
+positive point of the rank-six curve. At `theta=0.5459`, the correlated exact
+gain is greater than `1.7766622541125682e-68`.
+
+The six-square profile and constant are attributed to Pearce-Crump. The public
+source prints the certified constant interval but not the profile matrix, so
+the localization and scalar consequences are independently checked while the
+constant itself is not independently reconstructed. The result is asymptotic,
+internally reviewed, and not peer reviewed. It does not solve the Riemann
+hypothesis.
+
+Evidence:
+
+- [EXP-008 rank-six local transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/).
+- [EXP-007 spectral-defect parity](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/).
+- [EXP-006 Hilbert-parity compression](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/).
+- Concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
+- Version DOI: [10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012).

@@ -1,0 +1,22 @@
+{
+  "schema": "riemann-source-manifest-extension-v1",
+  "reviewed_on": "2026-10-03",
+  "documents": [
+    {
+      "filename": "wolkowicz-styan-1980.pdf",
+      "source_url": "https://www.math.uwaterloo.ca/~hwolkowi/henry/reports/PAPER31.pdf",
+      "version": "Published 1980 author-hosted copy, LAA 29:471-506",
+      "retrieved_on": "2026-10-03",
+      "bytes": 1740536,
+      "sha256": "ee66fa16f827ab0a40d5da98e4b8efbec20c347b51a55100dd5316591f7b81ed",
+      "tracked_fulltext": false,
+      "cache_path": "source-cache/2026-10-03/wolkowicz-styan-1980.pdf",
+      "license": {
+        "status": "1980 Elsevier copyright; author-hosted copy; no redistribution grant identified",
+        "redistribution_basis": "Local reading archive, public metadata only"
+      },
+      "review_scope": "PDF pages 2-4, printed pages 472-474; mean/variance relation and Theorem 2.1."
+    }
+  ],
+  "repositories": []
+}

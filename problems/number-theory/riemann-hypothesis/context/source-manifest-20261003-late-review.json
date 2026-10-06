@@ -1,0 +1,55 @@
+{
+  "schema": "rh-late-review-sources-v1",
+  "date": "2026-10-03",
+  "files": [
+    {
+      "url": "https://arxiv.org/pdf/2608.29558v1",
+      "resolved_url": "https://arxiv.org/pdf/2608.29558v1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\late-review\\qi-qiao-2608.29558v1.pdf",
+      "bytes": 379580,
+      "sha256": "0bae1dfd45ec9dca8232c7fe41e7ce045d37940783163381710f49652f9b0cc9",
+      "rights": "original source rights retained; research archive"
+    },
+    {
+      "url": "https://arxiv.org/html/2608.29558v1",
+      "resolved_url": "https://arxiv.org/html/2608.29558v1",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\late-review\\qi-qiao-2608.29558v1.html",
+      "bytes": 500528,
+      "sha256": "d1e0692a9ac170761ef196a4b1fcb826f9a1614cca5eb8418c9afaece155b191",
+      "rights": "original source rights retained; research archive"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2104.10243v3",
+      "resolved_url": "https://arxiv.org/pdf/2104.10243v3",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\late-review\\das-pujahari-2104.10243v3.pdf",
+      "bytes": 662071,
+      "sha256": "fa3d3152d8f2d5b57c4a9d161ad4abfad9081c047a9b43ebc7a13434ea911c04",
+      "rights": "original source rights retained; research archive"
+    },
+    {
+      "url": "https://arxiv.org/html/2104.10243v3",
+      "resolved_url": "https://arxiv.org/html/2104.10243v3",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\late-review\\das-pujahari-2104.10243v3.html",
+      "bytes": 523703,
+      "sha256": "35e11fb2ed8fec3a822a9b41317ed755d29e764973851df2e0eb5ee2725afb75",
+      "rights": "original source rights retained; research archive"
+    },
+    {
+      "url": "https://zeta-zeros.cicada71.net/",
+      "resolved_url": "https://zeta-zeros.cicada71.net/",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\late-review\\cicada-index.html",
+      "bytes": 35367,
+      "sha256": "9d76399aa868877dd6b05951356d6f278bb1d8d907569e490c477240dc63ed2c",
+      "rights": "original source rights retained; research archive"
+    },
+    {
+      "url": "https://zeta-zeros.cicada71.net/dist/zetazeros-repo.zip",
+      "resolved_url": "https://zeta-zeros.cicada71.net/dist/zetazeros-repo.zip",
+      "file": "E:\\_Datos\\caos-research\\riemann-hypothesis\\source-cache\\2026-10-03\\late-review\\cicada-zetazeros-repo.zip",
+      "bytes": 368160,
+      "sha256": "ab40ca8b63308f189ce351b644adc4cea53a132ba78c3eb114931d194232bf85",
+      "rights": "original source rights retained; research archive"
+    }
+  ],
+  "scope": "source preservation only; claims and build status require separate review"
+}

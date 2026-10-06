@@ -1,0 +1,9 @@
+{
+  "analytic_inputs_independently_replayed": false,
+  "first_excluded_m": 1312,
+  "passed": true,
+  "q": "69341429073721/82845897125000",
+  "result_sha256": "7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74",
+  "route": "independent Jensen scalar derivative, matrix eigenvalues and rational cap",
+  "schema": "exp016-independent-audit-v1"
+}

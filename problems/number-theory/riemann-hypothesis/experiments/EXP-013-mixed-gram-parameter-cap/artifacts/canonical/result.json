@@ -1,0 +1,73 @@
+{
+  "arithmetic": "exact-rational",
+  "bindings": {
+    "problems/number-theory/riemann-hypothesis/code/mixed_gram_parameters.py": "21739d9ed2dd5ea7f8133c2a09e452998bc350fe15f7cd7a27f43d1f14e65d06",
+    "problems/number-theory/riemann-hypothesis/context/source-manifest-20261003.json": "004b2f4aac236d6560890cbe28543cc72a76c2cd639ca9914b277210c66f5498",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-013-mixed-gram-parameter-cap/hypothesis.md": "89f39e014212d6d6e820e29db67320bc6baf7663877cfadc14d8693f398c8539",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-013-mixed-gram-parameter-cap/proof.md": "8ecec0fc0074fdd3f522f0d7896a436ecb96e68018ba99bafc070d30b5caec7f",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-013-mixed-gram-parameter-cap/run.py": "464959ed16e2b5a84b577d2416d4ac18ff27c219d04f133130250e729becc8e0"
+  },
+  "candidate": {
+    "c": "3411/1000",
+    "m": 1310,
+    "q": "62359683640669/74504434380000",
+    "q_enclosure": {
+      "lower": "0.83699291404068236616012277684242718762050683727370",
+      "upper": "0.83699291404068236616012277684242718762050683727371",
+      "width": "1/100000000000000000000000000000000000000000000000000"
+    },
+    "slacks": {
+      "block_clipping": "3601/1000000",
+      "double_diagonal_threshold": "411/2000",
+      "high_multiplicity_residual": "239290417/131000000",
+      "off_line_pair_residual": "5497/26200000",
+      "tau_nonnegative": "2411/1000",
+      "unit_diagonal_threshold": "0"
+    },
+    "tau": "2411/1000"
+  },
+  "cap": {
+    "first_excluded_m": 1311,
+    "maximum_integer_m": 1310,
+    "q_monotonicity_numerator": "174695378807909/57000000000000000",
+    "squared_obstruction": "854713592041/305550400000000",
+    "uniform_proof": "D(m) increases, 2-2a(m) decreases; exclusion at 1311 excludes every larger m",
+    "z": "49339821/17480000"
+  },
+  "experiment": "EXP-013",
+  "gain": {
+    "enclosure": {
+      "lower": "0.00000003258825423069229515088487298322544673816402",
+      "upper": "0.00000003258825423069229515088487298322544673816403",
+      "width": "1/100000000000000000000000000000000000000000000000000"
+    },
+    "exact": "524086136423727/16082056213067461100000"
+  },
+  "inputs": {
+    "delta": "891/200000",
+    "energy_gain": "3362285207/5000000000",
+    "pressure": "1/2736"
+  },
+  "not_established": [
+    "independent local-certificate replay",
+    "worldwide priority",
+    "new short-window onset",
+    "RH"
+  ],
+  "schema": "exp013-mixed-gram-parameter-cap-v1",
+  "scope": "Fixed seven-point inputs and scalar clipping assembly only; global distinct-zero consequence attributed",
+  "source": {
+    "c": "17/5",
+    "m": 1298,
+    "q": "16260119298029/19426831050000",
+    "slacks": {
+      "block_clipping": "207/50000",
+      "double_diagonal_threshold": "1/5",
+      "high_multiplicity_residual": "10829837/5900000",
+      "off_line_pair_residual": "91837/2950000",
+      "tau_nonnegative": "12/5",
+      "unit_diagonal_threshold": "0"
+    },
+    "tau": "12/5"
+  }
+}

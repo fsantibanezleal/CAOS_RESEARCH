@@ -61,8 +61,11 @@ certified arithmetic; floats are exploration-only). See `methodology/02-experime
 
 For the Riemann source archive, short-interval proof and interval certificate, use the
 [reproduction guide](docs/guides/riemann-replay.md). The general hypothesis remains open;
-the result concerns lower asymptotic proportions in fixed short intervals.
-The [rendered QA record](program/riemann-hypothesis/release-0.64.000/) includes the
+the results concern global and fixed-short-interval lower asymptotic proportions.
+EXP-009 proves a sharp auxiliary kernel bound and, within Wang's pinned v1
+framework, improves the global simple-critical proportion to
+`0.6725007995946757558...`; RH remains open. The
+[rendered QA record](program/riemann-hypothesis/release-0.73.000/) includes the
 browser matrix, visual reviews and representative desktop/phone screenshots.
 
 ## Versioning

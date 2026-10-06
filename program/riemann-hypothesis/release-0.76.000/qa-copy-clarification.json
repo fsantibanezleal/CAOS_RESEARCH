@@ -1,0 +1,798 @@
+{
+  "schema": "riemann-clarified-copy-ui-v1",
+  "release": "0.76.000",
+  "scope": "Actual pointer-driven rendering of the two clarified paragraphs. Supplements the full six-tab and 28-record replay; no scientific proof claim.",
+  "candidate_commit": "701aece70f3a61c45167cf7e2b1fce6837cb9db3",
+  "build_manifest_sha256": "458652db3ee18ad20a7d0fd754b2ef478504cbd2d33a0d53285a8426e38557ce",
+  "script_sha256": "1d70277523edd0f649fa926f719d98f66a56b66905a2bda942ed6c0748baa86b",
+  "base_url": "http://127.0.0.1:4186",
+  "started_utc": "2026-10-04T08:15:09.530Z",
+  "finished_utc": "2026-10-04T08:16:08.468Z",
+  "passed": true,
+  "scenarios": [
+    {
+      "id": "390x844-en-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "en",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "390x844-en-light-approaches.png",
+          "bytes": 54942,
+          "sha256": "ee3a210ae5537f499c2555a71b43e0384761ed9ef567f57cb9e76d4a570ec0fe",
+          "paragraph_box": {
+            "x": 13.59375,
+            "y": 356.09375,
+            "width": 350.015625,
+            "height": 258.75
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "390x844-en-light-open.png",
+          "bytes": 55577,
+          "sha256": "91483fa5550dfd719fc9191c589f885f81eae2cc17ed4a218434b0ad234cb121",
+          "paragraph_box": {
+            "x": 13.59375,
+            "y": 355.8125,
+            "width": 350.015625,
+            "height": 258.75
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "390x844-en-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "en",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "390x844-en-dark-approaches.png",
+          "bytes": 54940,
+          "sha256": "a88d7abbada431f1ff3f39e5c990881cfbbb3636e68dd2705585ffbf7ad97b9f",
+          "paragraph_box": {
+            "x": 13.59375,
+            "y": 356.09375,
+            "width": 350.015625,
+            "height": 258.75
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "390x844-en-dark-open.png",
+          "bytes": 55559,
+          "sha256": "303c823008ab175c22b0248b8f53d14b2aaf8c8901b02b1e32f761dacf647714",
+          "paragraph_box": {
+            "x": 13.59375,
+            "y": 355.8125,
+            "width": 350.015625,
+            "height": 258.75
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "390x844-es-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "es",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "390x844-es-light-approaches.png",
+          "bytes": 56301,
+          "sha256": "30f6b4eb47ff1ba6c66893bd73ec8e67415db8e51a53f4ddfd635f42922b183e",
+          "paragraph_box": {
+            "x": 13.59375,
+            "y": 343,
+            "width": 350.015625,
+            "height": 284.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "390x844-es-light-open.png",
+          "bytes": 55663,
+          "sha256": "02d43bf5e610279b96053204895eae939797e2c34e142b860675a76d900215ad",
+          "paragraph_box": {
+            "x": 13.59375,
+            "y": 342.71875,
+            "width": 350.015625,
+            "height": 284.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "390x844-es-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lang": "es",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "390x844-es-dark-approaches.png",
+          "bytes": 55656,
+          "sha256": "ccc7cce3c4f3c01fbef14a6c88798bb28b44a810fc837cbb1c67385f8e918e68",
+          "paragraph_box": {
+            "x": 13.59375,
+            "y": 343,
+            "width": 350.015625,
+            "height": 284.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "390x844-es-dark-open.png",
+          "bytes": 55609,
+          "sha256": "2f553c0431c0f5ce6d69dc94b8328dfc4b5f75fb26401f689e0a3722b70b9d07",
+          "paragraph_box": {
+            "x": 13.59375,
+            "y": 342.71875,
+            "width": 350.015625,
+            "height": 284.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1280x800-en-light",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "en",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1280x800-en-light-approaches.png",
+          "bytes": 100804,
+          "sha256": "f1f599feeb08798a4aded18798ad4ec47d9026558ee587709f6dcad215510fa2",
+          "paragraph_box": {
+            "x": 65.59375,
+            "y": 594.78125,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1280x800-en-light-open.png",
+          "bytes": 102322,
+          "sha256": "030aafef5426509836d037a900ba0668b6d41ff4037607b98ec7dae4865d986b",
+          "paragraph_box": {
+            "x": 65.59375,
+            "y": 530.5,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1280x800-en-dark",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "en",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1280x800-en-dark-approaches.png",
+          "bytes": 101605,
+          "sha256": "82fa78df8596d3c8b8909df24c9144ffa8bc4c68282ef63dbc384682feda1507",
+          "paragraph_box": {
+            "x": 65.59375,
+            "y": 594.78125,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1280x800-en-dark-open.png",
+          "bytes": 103123,
+          "sha256": "fed82fa6aa2827be073846fa00aacc655d8b5b0177081ffe8f1581eba7bff1d4",
+          "paragraph_box": {
+            "x": 65.59375,
+            "y": 530.5,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1280x800-es-light",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "es",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1280x800-es-light-approaches.png",
+          "bytes": 104899,
+          "sha256": "ff2d2efd599b5099f3b87081f9b26e8362975b4f3a9397c86e049109122f17fa",
+          "paragraph_box": {
+            "x": 65.59375,
+            "y": 568.5625,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1280x800-es-light-open.png",
+          "bytes": 105620,
+          "sha256": "e34eba8ba5ba69bdf383d5182b6c51032ee81f90a67b6f36f69ad4c81c116f52",
+          "paragraph_box": {
+            "x": 65.59375,
+            "y": 556.15625,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1280x800-es-dark",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "lang": "es",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1280x800-es-dark-approaches.png",
+          "bytes": 105578,
+          "sha256": "be4c78db339d0bf0435af59ede87aec856ce30b8c6a78c450efe4a1f01678fb9",
+          "paragraph_box": {
+            "x": 65.59375,
+            "y": 568.5625,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1280x800-es-dark-open.png",
+          "bytes": 106210,
+          "sha256": "78508ac0e62d1c84a916d1a4f46c744ab67bb60db52fefa093e68dc51d0cf567",
+          "paragraph_box": {
+            "x": 65.59375,
+            "y": 556.15625,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1600x900-en-light",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "en",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1600x900-en-light-approaches.png",
+          "bytes": 109706,
+          "sha256": "e62d87fbaab4123a8b398565a78f7f013373b4f1bde2adcf1961d628eeef0ec8",
+          "paragraph_box": {
+            "x": 225.59375,
+            "y": 639.953125,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1600x900-en-light-open.png",
+          "bytes": 113999,
+          "sha256": "15d2f8887210f7485ffb725b9fab0d2f345ed9ac80072a73d831d73fb10fbc55",
+          "paragraph_box": {
+            "x": 225.59375,
+            "y": 531.671875,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1600x900-en-dark",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "en",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1600x900-en-dark-approaches.png",
+          "bytes": 110663,
+          "sha256": "40aadc4744dc4df0496c7ec4a548547f9e8214ef930c92c863f26ea67a022392",
+          "paragraph_box": {
+            "x": 225.59375,
+            "y": 639.953125,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1600x900-en-dark-open.png",
+          "bytes": 114965,
+          "sha256": "4192c1f76723b6da91fca3e35169084ae510034bdaaa792a4bcdcc66e77ea958",
+          "paragraph_box": {
+            "x": 225.59375,
+            "y": 531.671875,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1600x900-es-light",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "es",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1600x900-es-light-approaches.png",
+          "bytes": 111446,
+          "sha256": "05bc483b8e32a6ffafbe576a66386cd4f6330564ded1d9b63221fbdc6666f548",
+          "paragraph_box": {
+            "x": 225.59375,
+            "y": 639.734375,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1600x900-es-light-open.png",
+          "bytes": 119387,
+          "sha256": "5ecd1010f28fa20f2d1db167525b57aa75a4a1ef6919eec1df9e695deb8563ea",
+          "paragraph_box": {
+            "x": 225.59375,
+            "y": 557.328125,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1600x900-es-dark",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "lang": "es",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1600x900-es-dark-approaches.png",
+          "bytes": 112162,
+          "sha256": "a7b741cf29833fb7c47ecdc900a80c671ba15aae69cc585b2c0c047424b2c293",
+          "paragraph_box": {
+            "x": 225.59375,
+            "y": 639.734375,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1600x900-es-dark-open.png",
+          "bytes": 120071,
+          "sha256": "6238bf08b577410fa8967cc6da7dd8de161fab7dea06847b0a64c0540b83ce02",
+          "paragraph_box": {
+            "x": 225.59375,
+            "y": 557.328125,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "2560x1440-en-light",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "en",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "2560x1440-en-light-approaches.png",
+          "bytes": 183042,
+          "sha256": "926b91112366a6b88444b46d51cf203ed551693ff2274adc3cd3a72003759695",
+          "paragraph_box": {
+            "x": 705.59375,
+            "y": 639.953125,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "2560x1440-en-light-open.png",
+          "bytes": 190083,
+          "sha256": "9af79072a2464fab92abed4390dcdbb2b6b898729b48d526104554f8852236b1",
+          "paragraph_box": {
+            "x": 705.59375,
+            "y": 531.671875,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "2560x1440-en-dark",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "en",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "2560x1440-en-dark-approaches.png",
+          "bytes": 185100,
+          "sha256": "a8aad55c6ca473f1fcfe4b5092e2527759b7104aa92c2df3474fa06446f3b91c",
+          "paragraph_box": {
+            "x": 705.59375,
+            "y": 639.953125,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "2560x1440-en-dark-open.png",
+          "bytes": 192522,
+          "sha256": "b64e96afa8c4a3bd369236dcd023327a9271aa84f3375bcd761be7d2fda3dc24",
+          "paragraph_box": {
+            "x": 705.59375,
+            "y": 531.671875,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "2560x1440-es-light",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "es",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "2560x1440-es-light-approaches.png",
+          "bytes": 191403,
+          "sha256": "bff892b1531f48cf8d55ad30a611dc718ff38bef0011d2cdaf663eaa06629350",
+          "paragraph_box": {
+            "x": 705.59375,
+            "y": 639.734375,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "2560x1440-es-light-open.png",
+          "bytes": 193870,
+          "sha256": "a5756b2f51bc940584c0882d56b82826c0f536f1afc7da395bc69a6cdfc1ba17",
+          "paragraph_box": {
+            "x": 705.59375,
+            "y": 557.328125,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "2560x1440-es-dark",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "lang": "es",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "2560x1440-es-dark-approaches.png",
+          "bytes": 193153,
+          "sha256": "fa55fd302d6a233defa0bd83e33bf68468b2033f6c6fe87c43fc6b8b8eb7c1eb",
+          "paragraph_box": {
+            "x": 705.59375,
+            "y": 639.734375,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "2560x1440-es-dark-open.png",
+          "bytes": 195682,
+          "sha256": "e0b36d268797998bf16e03e498749d3d1a6f61fd600816469251609520cda554",
+          "paragraph_box": {
+            "x": 705.59375,
+            "y": 557.328125,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1440x1000-en-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "en",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1440x1000-en-light-approaches.png",
+          "bytes": 120052,
+          "sha256": "56eae6e389364741d4305ab8e50f0cb5240a1b44d920c2e6117a73eb4d512027",
+          "paragraph_box": {
+            "x": 145.59375,
+            "y": 639.953125,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1440x1000-en-light-open.png",
+          "bytes": 126892,
+          "sha256": "070dceaffe10f169476d98190084c946d093eb13805614a09812852b549bb2cd",
+          "paragraph_box": {
+            "x": 145.59375,
+            "y": 531.671875,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1440x1000-en-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "en",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1440x1000-en-dark-approaches.png",
+          "bytes": 121151,
+          "sha256": "9d49e0399de76673b13306b0ecc65039411734852f1e189de6364f083dd35b22",
+          "paragraph_box": {
+            "x": 145.59375,
+            "y": 639.953125,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1440x1000-en-dark-open.png",
+          "bytes": 127947,
+          "sha256": "92663626f862caa1b49796afcd0cca5a6808ac46f48a44c4946f953ccad43a3c",
+          "paragraph_box": {
+            "x": 145.59375,
+            "y": 531.671875,
+            "width": 1121.015625,
+            "height": 77.625
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1440x1000-es-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "es",
+      "theme": "light",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1440x1000-es-light-approaches.png",
+          "bytes": 126990,
+          "sha256": "226c7ec18416eac2f6f807e5928a91553cdaca9099cf38f06196393f2890db1f",
+          "paragraph_box": {
+            "x": 145.59375,
+            "y": 639.734375,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1440x1000-es-light-open.png",
+          "bytes": 133766,
+          "sha256": "d504a5ee45cc1004367ea1ae05edf4b5ccbe85c95ed7bf9836e76e088b5f3e24",
+          "paragraph_box": {
+            "x": 145.59375,
+            "y": 557.328125,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1440x1000-es-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lang": "es",
+      "theme": "dark",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": [],
+      "images": [
+        {
+          "file": "1440x1000-es-dark-approaches.png",
+          "bytes": 127813,
+          "sha256": "f901631289d14fa8016221260294223aacc09242256a22e8dc986eeafcefd72c",
+          "paragraph_box": {
+            "x": 145.59375,
+            "y": 639.734375,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        },
+        {
+          "file": "1440x1000-es-dark-open.png",
+          "bytes": 134574,
+          "sha256": "0f746bd58e1df48a694d424aa802746e9ed6807c6dcd839645930c1263e774db",
+          "paragraph_box": {
+            "x": 145.59375,
+            "y": 557.328125,
+            "width": 1121.015625,
+            "height": 103.5
+          },
+          "exact_copy_verified": true
+        }
+      ]
+    }
+  ],
+  "error": null,
+  "browser_version": "153.0.8010.12",
+  "raw_receipt_sha256": "1873c5af145dc961697ae99cb9856be344f3f79c191266e1b067fb0cdd7eba31",
+  "all_screenshot_bytes_verified": true
+}

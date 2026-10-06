@@ -1,0 +1,418 @@
+{
+  "experiment": "EXP-065 independent audit",
+  "route": "original differential rebuilt from semantic source formulas",
+  "premises": {
+    "EXP-065-dual-guided-endpoint-decoder\\run.py": "2a6d297c57715e92ca0330d912317b787028de295d0557424625b7f5d59e56b2",
+    "EXP-065-dual-guided-endpoint-decoder\\artifacts\\results.json": "2536e749ac7406f88577068107fd2ac6f79ab20876b8d3293e9c78c4cd695ee1",
+    "EXP-036-factor-two-torsion-anatomy\\run.py": "1c6923c7c6456673402b5bdd3dada137970f6d01985690f29c960af65a981d03",
+    "EXP-037-connecting-quasipolynomial\\run.py": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
+    "EXP-042-bockstein-normal-form\\run.py": "3a57fc52a6a1e10ba42d97c6ebe27062324b8c90b76df7a288db41dffabd69bf",
+    "EXP-048-semantic-relative-bockstein\\run.py": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a"
+  },
+  "status": "INDEPENDENT_AUDIT_PASS",
+  "parameters": [
+    8,
+    9,
+    10
+  ],
+  "targets": 6,
+  "single_column_witnesses": 6,
+  "mutations_rejected": 12,
+  "formula": "S_(p,r)=[S,(L_p\\{p-r,3p,3p+r})U{6p,10p};p-2], pi_58 d(S_(p,r))=-x_(0,r,p-2-r), r=1,2",
+  "rows": [
+    {
+      "p": 8,
+      "component_rows": 2675,
+      "selected_rows": 2596,
+      "targets": [
+        {
+          "r": 1,
+          "triangle": [
+            0,
+            1,
+            5
+          ],
+          "source_formula": [
+            "S",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8,
+              26,
+              27,
+              28,
+              29,
+              30,
+              48,
+              80
+            ],
+            6
+          ],
+          "target_formula": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8,
+              26,
+              27,
+              28,
+              29,
+              30,
+              48
+            ],
+            86
+          ],
+          "component_column": 82,
+          "complete_surviving_boundary": [
+            [
+              2533,
+              -1
+            ]
+          ],
+          "single_negative_face": true,
+          "source_mutation_rejected": true,
+          "target_mutation_rejected": true,
+          "boundary_hash": "c078135fbdef94cd435e17450c3640e7c832c883abb1f48d286503b17cb7d7f4"
+        },
+        {
+          "r": 2,
+          "triangle": [
+            0,
+            2,
+            4
+          ],
+          "source_formula": [
+            "S",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              25,
+              27,
+              28,
+              29,
+              30,
+              48,
+              80
+            ],
+            6
+          ],
+          "target_formula": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              25,
+              27,
+              28,
+              29,
+              30,
+              48
+            ],
+            86
+          ],
+          "component_column": 122,
+          "complete_surviving_boundary": [
+            [
+              2534,
+              -1
+            ]
+          ],
+          "single_negative_face": true,
+          "source_mutation_rejected": true,
+          "target_mutation_rejected": true,
+          "boundary_hash": "1a8e577e800a5241b771c8108a4aedb72838d00bc4aa2a604faf73695405fb39"
+        }
+      ]
+    },
+    {
+      "p": 9,
+      "component_rows": 4757,
+      "selected_rows": 4653,
+      "targets": [
+        {
+          "r": 1,
+          "triangle": [
+            0,
+            1,
+            6
+          ],
+          "source_formula": [
+            "S",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              54,
+              90
+            ],
+            7
+          ],
+          "target_formula": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              54
+            ],
+            97
+          ],
+          "component_column": 116,
+          "complete_surviving_boundary": [
+            [
+              4566,
+              -1
+            ]
+          ],
+          "single_negative_face": true,
+          "source_mutation_rejected": true,
+          "target_mutation_rejected": true,
+          "boundary_hash": "e85532a59f053f7f6e0a7e5edc4604fe5f8a131c55d85aef78586a93a8b711da"
+        },
+        {
+          "r": 2,
+          "triangle": [
+            0,
+            2,
+            5
+          ],
+          "source_formula": [
+            "S",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8,
+              9,
+              28,
+              30,
+              31,
+              32,
+              33,
+              34,
+              54,
+              90
+            ],
+            7
+          ],
+          "target_formula": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8,
+              9,
+              28,
+              30,
+              31,
+              32,
+              33,
+              34,
+              54
+            ],
+            97
+          ],
+          "component_column": 171,
+          "complete_surviving_boundary": [
+            [
+              4567,
+              -1
+            ]
+          ],
+          "single_negative_face": true,
+          "source_mutation_rejected": true,
+          "target_mutation_rejected": true,
+          "boundary_hash": "ab3a278a7ea0364a9f30c465ce0e102cfe0e25ea227bd2d99ac54a0a49deb82f"
+        }
+      ]
+    },
+    {
+      "p": 10,
+      "component_rows": 7973,
+      "selected_rows": 7841,
+      "targets": [
+        {
+          "r": 1,
+          "triangle": [
+            0,
+            1,
+            7
+          ],
+          "source_formula": [
+            "S",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              60,
+              100
+            ],
+            8
+          ],
+          "target_formula": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              60
+            ],
+            108
+          ],
+          "component_column": 158,
+          "complete_surviving_boundary": [
+            [
+              7724,
+              -1
+            ]
+          ],
+          "single_negative_face": true,
+          "source_mutation_rejected": true,
+          "target_mutation_rejected": true,
+          "boundary_hash": "7f2f52634073d63905e6ef2ec5f34405c099f54cd5fdeb07cde89a2e82919988"
+        },
+        {
+          "r": 2,
+          "triangle": [
+            0,
+            2,
+            6
+          ],
+          "source_formula": [
+            "S",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              31,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              60,
+              100
+            ],
+            8
+          ],
+          "target_formula": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              31,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              60
+            ],
+            108
+          ],
+          "component_column": 232,
+          "complete_surviving_boundary": [
+            [
+              7725,
+              -1
+            ]
+          ],
+          "single_negative_face": true,
+          "source_mutation_rejected": true,
+          "target_mutation_rejected": true,
+          "boundary_hash": "feba5e33d0702751d4fabc156026d2c6ccfcb1ab8796596459d919a2437d529e"
+        }
+      ]
+    }
+  ],
+  "artifact_hash": "b5ce59bae588e12cb89abcf13b4b80ecd04018f84784317d66b9380171a45440"
+}

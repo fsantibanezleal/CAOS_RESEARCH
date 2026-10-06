@@ -1,0 +1,83 @@
+import { useState } from 'react';
+import { Callout, Cite, Equation, Refs } from '@fasl-work/caos-app-shell';
+import type { RiemannDistinctZero } from '../api/data';
+import { useT } from '../lib/i18n';
+
+const ROOT = 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/';
+const PROBLEM = `${ROOT}problems/number-theory/riemann-hypothesis/`;
+const PAPER = 'https://doi.org/10.5281/zenodo.23128662';
+const REFS = ['riemann-distinct2026', 'riemann-knausgard2026', 'riemann-bgstb2024', 'riemann-lavery2026'];
+
+export default function RiemannDistinct({ evidence, mode }: {
+  evidence: RiemannDistinctZero | null; mode: 'summary' | 'context' | 'approaches' | 'strategy' | 'results' | 'open';
+}) {
+  const t = useT();
+  const [step, setStep] = useState(0);
+  if (!evidence) return <p role="status" className="rh-distinct-unavailable">{t('The completed distinct-zero evidence is not available in this replay. Its published proof remains accessible.', 'La evidencia completa de ceros distintos no está disponible en esta reproducción. Su prueba publicada sigue accesible.')} <a href={PAPER} target="_blank" rel="noreferrer">{t('Companion manuscript', 'Manuscrito complementario')}</a></p>;
+  const d = evidence;
+  const stages = [
+    { title: t('Local inequality', 'Desigualdad local'), formula: 'E + b·g ≥ δ',
+      text: t('Nonnegative pair weights charge each index span at most twice. EXP-020 certifies every nonnegative eight-gap vector. EXP-025 uses Lavery’s externally certified six-gap inequality, with typh’s window and Ainta’s refinement. Each pressure component remains distinct.', 'Los pesos no negativos de pares cargan cada extensión de índices a lo más dos veces. EXP-020 certifica todo vector no negativo de ocho separaciones. EXP-025 usa la desigualdad de seis separaciones certificada externamente por Lavery, con la ventana de typh y el refinamiento de Ainta. Cada componente de presión se conserva por separado.') },
+    { title: t('Block defect', 'Defecto del bloque'), formula: 'D = δ(m − r) ≤ τ²',
+      text: t('A block without a large Gram eigenvalue has clipped defect equal to raw energy. If an eigenvalue exceeds 1 + τ, that eigenvalue alone pays at least τ². This dichotomy proves the block implication; it does not require adding defects of overlapping windows.', 'Un bloque sin un autovalor grande de Gram tiene defecto truncado igual a la energía directa. Si un autovalor supera 1 + τ, ese autovalor aporta al menos τ². Esta dicotomía prueba la implicación del bloque; no requiere sumar defectos de ventanas superpuestas.') },
+    { title: t('Average offsets', 'Promediar desplazamientos'), formula: 'B = Σbᵢ · β = B(m − r)/m',
+      text: t('Across all block offsets the exact complete-block count is max(ℓ − m + 1, 0). Each global gap is charged at most (m − r)B. Using r times the minimum pressure would undercount the unequal vector. The fixed endpoint cost disappears only after division by N(T).', 'Entre todos los desplazamientos el conteo exacto de bloques completos es max(ℓ − m + 1, 0). Cada separación global recibe a lo más (m − r)B. Usar r veces la presión mínima subestima el vector desigual. El costo fijo de extremos desaparece solo después de dividir por N(T).') },
+    { title: t('Analytic transfer', 'Transferencia analítica'), formula: 'Nd/N ≥ (1 + H − β)/(2 − a)',
+      text: t('Knausgard’s mixed-Gram argument retains multiplicities and off-line conjugate pairs. Apply corrected BGSTB to fixed smooth tests R and R″ separately, with the 1/(4 log² T) coefficient. Fix the block parameters, take T to infinity, then remove the smooth cutoff. This yields an asymptotic strip-wide count, with no effective starting height.', 'El argumento de Gram mixto de Knausgard conserva multiplicidades y pares conjugados fuera de la recta. Se aplica BGSTB corregido a pruebas suaves fijas R y R″ por separado, con el coeficiente 1/(4 log² T). Se fijan los parámetros del bloque, se toma T hacia infinito y después se elimina el corte suave. Así se obtiene un conteo asintótico en toda la franja, sin altura inicial efectiva.') },
+  ];
+  const limits = t('These are distinct points throughout the critical strip, divided by all zero copies. They do not assert a simple-critical-line proportion, RH, a shorter interval onset, an effective height, external peer review or worldwide priority. EXP-019 remains suspended; EXP-023’s stronger candidate is incomplete and excluded.', 'Son puntos distintos en toda la franja crítica, divididos por todas las copias de ceros. No afirman una proporción de ceros críticos simples, RH, un umbral de intervalos menor, una altura efectiva, revisión externa ni prioridad mundial. EXP-019 sigue suspendido; el candidato más fuerte de EXP-023 está incompleto y excluido.');
+  return <div className={`rh-distinct rh-distinct-${mode}`} data-testid={`distinct-${mode}`}>
+    <h2>{t('Distinct zeros across the critical strip', 'Ceros distintos en toda la franja crítica')}</h2>
+    {mode === 'summary' && <>
+      <p className="rh-lead">{t('The source-attributed vector-pressure transfer gives the stronger lower asymptotic proportion below. A separately completed nine-point certificate gives 0.8371747724947154. Both results are published with proofs and reproducibility archives.', 'La transferencia por presión vectorial con entrada atribuida da la proporción asintótica inferior más fuerte indicada abajo. Un certificado independiente completo de nueve puntos da 0.8371747724947154. Ambos resultados están publicados con pruebas y archivos de reproducción.')} <Cite id="riemann-distinct2026" /></p>
+      <Equation tex={String.raw`\liminf_{T\to\infty}\frac{N^d(T)}{N(T)}\ge\frac{30945470743359}{36955122080000}`} />
+      <p className="rh-number">{t('Recorded decimal approximation: ', 'Aproximación decimal registrada: ')}<strong>{d.vector.decimal}…</strong></p>
+      <p>{t('Nd counts distinct zero points; N counts zeros with multiplicity up to height T.', 'Nd cuenta puntos distintos de ceros; N cuenta ceros con multiplicidad hasta la altura T.')}</p>
+      <Callout variant="honest" title={t('Scope and dependencies', 'Alcance y dependencias')}>{limits} {t('Lavery’s local Lean/nanoda verification is archived and was not rebuilt locally.', 'La verificación local de Lavery mediante Lean/nanoda está archivada y no se reconstruyó aquí.')}</Callout>
+    </>}
+    {mode === 'context' && <p>{t('Knausgard’s pinned arXiv:2609.33043v1 gives 0.83699288145242… for distinct strip-wide zeros. EXP-020 completes a stronger universal local inequality; EXP-025 then applies the mixed-Gram transfer to Lavery’s October 3 local theorem. The general vector summation and scalar identities are classical. The new numerical application is documented, but the limited source comparison cannot establish worldwide priority.', 'La versión fijada arXiv:2609.33043v1 de Knausgard da 0.83699288145242… para ceros distintos en toda la franja. EXP-020 completa una desigualdad local universal más fuerte; EXP-025 aplica después la transferencia de Gram mixto al teorema local de Lavery del 3 de octubre. La suma vectorial general y las identidades escalares son clásicas. La nueva aplicación numérica está documentada, pero la comparación limitada de fuentes no establece prioridad mundial.')} <Cite id="riemann-knausgard2026" /> <Cite id="riemann-lavery2026" /></p>}
+    {mode === 'approaches' && <>
+      <p>{t('The method combines positive Gram matrices, convex spectral clipping, weighted interval covers, exact multiplicity accounting and integrated complex-zero pair correlation. This gives two complementary evidence paths: a locally completed interval certificate, and a new application of an externally certified local theorem. These global distinct-zero arguments are separate from the short-window moment proved internally in EXP-028.', 'El método combina matrices de Gram positivas, truncamiento espectral convexo, cubiertas ponderadas por intervalos, contabilidad exacta de multiplicidades y correlación integrada de pares de ceros complejos. Da dos vías complementarias de evidencia: un certificado local completo por intervalos y una nueva aplicación de un teorema local certificado externamente. Estos argumentos globales de ceros distintos son independientes del momento en ventanas cortas probado internamente en EXP-028.')} <Cite id="riemann-bgstb2024" /></p>
+      <p>{t('The earlier BGSTB error correction is retained. The frozen Lavery source, complete Apache license, external verifier logs, exact pressure vector and scalar audit are linked through the replay provenance.', 'Se conserva la corrección anterior del error de BGSTB. La fuente fijada de Lavery, la licencia Apache completa, los registros externos, el vector exacto de presiones y la auditoría escalar se vinculan mediante la procedencia de esta reproducción.')}</p>
+    </>}
+    {mode === 'strategy' && <>
+      <p>{t('For a bounded even nonnegative probability profile f, define K as its Fourier transform and w = K² on real arguments. Set a = δ(m − r)/m and B = Σbᵢ. With the local energy inequality and the threshold/trace residuals in the proof, the recorded transfer is:', 'Para un perfil de probabilidad f acotado, par y no negativo, se define K como su transformada de Fourier y w = K² en argumentos reales. Se fijan a = δ(m − r)/m y B = Σbᵢ. Con la desigualdad local de energía y los residuos de umbral y traza de la prueba, la transferencia registrada es:')}</p>
+      <Equation tex={String.raw`\sum_{i<j}a_{ij}w(g_i+\cdots+g_{j-1})+\sum_i b_i g_i\ge\delta,\quad \liminf\frac{N^d}{N}\ge\frac{1+H_f-B(m-r)/m}{2-\delta(m-r)/m}`} />
+      <Equation tex={String.raw`H_f=2-\int f^2-\iint |s-t|f(s)f(t)\,ds\,dt`} />
+      <figure className="rh-figure">
+        <svg viewBox="0 0 350 370" role="img" aria-label={t('Four proof dependencies; schematic, not sampled zeros', 'Cuatro dependencias de la prueba; esquema, no ceros muestreados')} style={{ maxWidth: 440, marginInline: 'auto' }}>
+          {stages.map((s, i) => <g key={s.title}>
+            {i > 0 && <path d={`M175 ${i * 91 - 6} v12 m-4 -4 l4 4 l4 -4`} className="dg-edge" />}
+            <rect x="5" y={i * 91 + 5} width="340" height="70" rx="8" className={`dg-box${step === i ? ' accent' : ''}`} />
+            <text x="175" y={i * 91 + 32} textAnchor="middle" className="dg-box-title">{s.title}</text>
+            <text x="175" y={i * 91 + 58} textAnchor="middle" className="dg-box-sub">{s.formula}</text>
+          </g>)}
+        </svg>
+        <label>{t('Inspect a proof stage', 'Examinar una etapa de la prueba')} <select aria-label={t('Distinct-zero proof stage', 'Etapa de prueba de ceros distintos')} value={step} onChange={(e) => setStep(Number(e.target.value))}>{stages.map((s, i) => <option key={s.title} value={i}>{s.title}</option>)}</select></label>
+        <figcaption aria-live="polite"><p>{stages[step].text}</p></figcaption>
+      </figure>
+      <Callout variant="note" title={t('Assumptions and limit order', 'Supuestos y orden de límites')}>{t('m > r; nonnegative pair weights and pressures; each index-span mass ≤ 2; δ(m − r) ≤ τ²; c ≥ max(1 + τ, 2 + τ/2); a < 2; 6c − 7 − c² − a ≥ 0 and 4c − 2 − c² − 2a ≥ 0. The general proof controls noncommuting matrices and all multiplicities. Fixed parameters precede the height limit and cutoff removal.', 'm > r; pesos y presiones no negativos; masa de cada extensión de índices ≤ 2; δ(m − r) ≤ τ²; c ≥ max(1 + τ, 2 + τ/2); a < 2; 6c − 7 − c² − a ≥ 0 y 4c − 2 − c² − 2a ≥ 0. La prueba general controla matrices no conmutativas y todas las multiplicidades. Los parámetros fijos preceden al límite en altura y a la eliminación del corte.')}</Callout>
+    </>}
+    {mode === 'results' && <>
+      <div className="rs-scroll"><table className="rs-table rh-distinct-table"><caption>{t('Completed asymptotic distinct-strip results', 'Resultados asintóticos completos de ceros distintos en la franja')}</caption><thead><tr><th>{t('Experiment', 'Experimento')}</th><th>{t('Exact lower bound', 'Cota inferior exacta')}</th><th>{t('Recorded approximation', 'Aproximación registrada')}</th></tr></thead><tbody>
+        <tr><td>EXP-020</td><td data-label={t('Exact lower bound', 'Cota inferior exacta')}>{d.local.fraction}</td><td data-label={t('Recorded approximation', 'Aproximación registrada')}>{d.local.decimal}</td></tr><tr><td>EXP-025</td><td data-label={t('Exact lower bound', 'Cota inferior exacta')}>{d.vector.fraction}</td><td data-label={t('Recorded approximation', 'Aproximación registrada')}>{d.vector.decimal}</td></tr>
+      </tbody></table></div>
+      <details className="rh-details rh-distinct-evidence"><summary>{t('Inspect the completed distinct-zero evidence', 'Examinar la evidencia completa de ceros distintos')}</summary>
+        <p>{t('EXP-020: 96/96 completed shards; 107,752,902 audited nodes; 61,029 closed input cells; 12 actual-output corruption controls rejected; 233 exact-byte archive members.', 'EXP-020: 96/96 fragmentos completos; 107.752.902 nodos auditados; 61.029 celdas cerradas de entrada; 12 controles de corrupción rechazados; 233 miembros del archivo con bytes exactos.')}</p>
+        <p>EXP-020: m = {d.local.m}, r = {d.local.r}, δ = {d.local.delta}, p = {d.local.pressure}, τ = {d.local.tau}, c = {d.local.c}.</p>
+        <p>EXP-025: m = {d.vector.parameters.m}, r = {d.vector.parameters.r}, δ = {d.vector.parameters.delta}, B = {d.vector.parameters.pressure_sum}, τ = {d.vector.parameters.tau}, c = {d.vector.parameters.c}, H ≥ {d.vector.H_lower}.</p>
+        <p>{t('Pressure numerators over 10⁸: 41468, 70344, 87381, 87381, 70344, 41468. Independent Fraction/Taylor/Machin scalar enclosures, 288 list/block controls and 183 pair-count controls pass.', 'Numeradores de presión sobre 10⁸: 41468, 70344, 87381, 87381, 70344, 41468. Pasan cotas escalares independientes por Fraction/Taylor/Machin, 288 controles de listas y bloques y 183 controles de conteo de pares.')}</p>
+        <p>{t('Native EXP-020 checks share FLINT/Arb. EXP-025 uses external Lean/nanoda verification archived without a local rebuild. These are recorded checks, not an end-to-end formal proof.', 'Las verificaciones nativas de EXP-020 comparten FLINT/Arb. EXP-025 usa verificación externa Lean/nanoda archivada sin reconstrucción local. Son verificaciones registradas, no una prueba formal de principio a fin.')}</p>
+        <p className="rh-hash">{t('Pinned external source SHA-256', 'SHA-256 de fuente externa fijada')}: {d.vector.source_sha256}</p>
+        <p>{t('Manuscript PDF', 'PDF del manuscrito')}</p>
+        <ul>{d.publication.files.map((f) => <li key={f.name}><a href={f.url} target="_blank" rel="noreferrer">{f.name}</a><p className="rh-hash">SHA-256 {f.sha256}</p></li>)}</ul>
+        <p>{t('Separate evidence companion', 'Evidencia complementaria separada')}</p>
+        <ul>{d.evidence_companion.files.map((f) => <li key={f.name}><a href={f.url} target="_blank" rel="noreferrer">{f.name}</a><p className="rh-hash">SHA-256 {f.sha256}</p></li>)}</ul>
+      </details>
+      <p>{limits}</p>
+    </>}
+    {mode === 'open' && <p>{t('EXP-023 is budget-stopped and incomplete. It must finish its entire cover and pass independent input, cover, transfer and corruption checks before its proposed bound is admitted. Broader pressure/window families may improve this global bound. A further short-window improvement requires extending the internally reviewed analytic range of EXP-028. External specialist review and end-to-end formalization remain separate research tasks.', 'EXP-023 se detuvo por presupuesto y sigue incompleto. Debe completar toda su cubierta y pasar verificaciones independientes de entradas, cubierta, transferencia y corrupción antes de admitir su cota propuesta. Familias más amplias de presiones y ventanas podrían mejorar esta cota global. Una mejora adicional en ventanas cortas requiere ampliar el rango analítico de EXP-028 revisado internamente. La revisión externa por especialistas y la formalización completa siguen siendo tareas de investigación separadas.')}</p>}
+    <p><a href={d.publication.files[0].url} target="_blank" rel="noreferrer">{t('Published manuscript (PDF)', 'Manuscrito publicado (PDF)')}</a>{' · '}<a href={`https://doi.org/${d.evidence_companion.doi}`} target="_blank" rel="noreferrer">{t('Separate evidence companion', 'Evidencia complementaria separada')}</a>{' · '}<a href={`${PROBLEM}wiki/20-distinct-zero-certificates.md`} target="_blank" rel="noreferrer">{t('Full proof and evidence guide', 'Guía completa de pruebas y evidencia')}</a></p>
+    <Refs label={t('Sources for this result', 'Fuentes de este resultado')} ids={REFS} />
+  </div>;
+}

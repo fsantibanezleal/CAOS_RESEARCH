@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 41149,
+  "bytes": 44214063,
   "path": "research/riemann.json",
-  "sha256": "d8815db7876f455e68951ced726bda8222f9ec61cf65dda2d9bdf18d182b6006"
+  "sha256": "25aa0cd765f0342cb8a1d27ee8506c3298e9ffc7718ca49787fd9cd612bbb7ba"
  },
  "case_id": "riemann",
  "gate": {
@@ -52,11 +52,11 @@
    "source_exp": "EXP-002-short-interval-stability"
   },
   {
-   "bytes": 72384,
+   "bytes": 75762,
    "path": "problems/number-theory/riemann-hypothesis/context/source-manifest.json",
    "role": "source_manifest",
-   "sha256": "89e6eaad9ce95a2c89fc5f89c5631d3a820bfd8574ff93ca029305808e9270c9",
-   "source_commit": "1e7840368169db8cdee3670e71cee144b6d881f4",
+   "sha256": "5e436bc857e24fc868aa2e3f334a6fdd658756f6ae3de459b55b417f82d8aa18",
+   "source_commit": "d077c97faaff5269d993183e2cab0bf7e43039c5",
    "source_exp": "source-review"
   },
   {
@@ -204,6 +204,550 @@
    "source_exp": "EXP-004-parity-density-transfer"
   },
   {
+   "bytes": 136217,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/artifacts/canonical/result.json",
+   "role": "local_result",
+   "sha256": "3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5",
+   "source_commit": "eed4a00337d91c2c71ddc6f8fcb216b3e329c41b",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 335,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/artifacts/canonical/execution-receipt.json",
+   "role": "local_receipt",
+   "sha256": "ab3c6da2cc236de054d74b532a8c496187471918ac9ab75728cc128162526a58",
+   "source_commit": "d566536332cd28dac9f0dea34f77829d0ba879a5",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 8319,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/hypothesis.md",
+   "role": "local_hypothesis",
+   "sha256": "57895f0ba34970379c84ffe96ed2d9b1edf316167998b31885549a39398acc2f",
+   "source_commit": "6fd59fec51dda399de40e0327107dba42deb5b45",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 20243,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/run.py",
+   "role": "local_runner",
+   "sha256": "799be6f05ba87a4fba3d59b3fa8a5ad09a6ab87615bdb56ff932e8b4edbf84e1",
+   "source_commit": "864fe6b7bee69c6bdac72e72fbfb88b49ac0fef2",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 7255,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/mathematical-proof.md",
+   "role": "local_proof",
+   "sha256": "45d96b904efdf74e49df53a069540047bcd75799118a03a129850e3ab8ab5511",
+   "source_commit": "5132beedddca56b0f57cdd7cf32688fb7b5a5ca7",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 7796,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/adversarial-audit.md",
+   "role": "local_audit",
+   "sha256": "71d467d2744bdb1e7d68a079810d5b3d93041686187547107cfaae1c3c07e177",
+   "source_commit": "5132beedddca56b0f57cdd7cf32688fb7b5a5ca7",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 5342,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/verdict.md",
+   "role": "local_verdict",
+   "sha256": "ed7c23551146c48d38d7c1a07b8b576ad36e5e4ec056f311533769e12f98c568",
+   "source_commit": "5132beedddca56b0f57cdd7cf32688fb7b5a5ca7",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 1894,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/proof-review.json",
+   "role": "local_review",
+   "sha256": "33f7c863c6b8a73f204dc7e4d34898935ba5036e178ed949abe0cdbd3e5734e5",
+   "source_commit": "5132beedddca56b0f57cdd7cf32688fb7b5a5ca7",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 681484,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/artifacts/canonical/result.json",
+   "role": "hilbert_result",
+   "sha256": "82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf",
+   "source_commit": "04cc1c0650a6c89db58d0a6e04b401c975e393f2",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 336,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/artifacts/canonical/execution-receipt.json",
+   "role": "hilbert_receipt",
+   "sha256": "da70a4cd349e9acb75ce1a4f3d2019d0b8518d4d364eb21341223e87e043ba7b",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 7711,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/hypothesis.md",
+   "role": "hilbert_hypothesis",
+   "sha256": "673ccbe47618c43ec3519369e711e86068cdf59bce5137f5c97cc63273a77687",
+   "source_commit": "0d736fa22ce7e833200381a32e8cc89f77c660e8",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 28577,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/run.py",
+   "role": "hilbert_runner",
+   "sha256": "5e935429aabda9585d317c20fdd6cde25739b2c8729aa5f373057b6dfb34a6bf",
+   "source_commit": "0d736fa22ce7e833200381a32e8cc89f77c660e8",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 9660,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/mathematical-proof.md",
+   "role": "hilbert_proof",
+   "sha256": "0bf7030413b85e4541876884451aca0b010145de71f3c61fb8b45067e1c6b99b",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 8328,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/adversarial-audit.md",
+   "role": "hilbert_audit",
+   "sha256": "14d3f6e2e7aefdc890e4392926ba5c75e25a92ec6bc4564fbacd61151cfe4dd0",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 4988,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/verdict.md",
+   "role": "hilbert_verdict",
+   "sha256": "456d342ce08b8f1e9ed0091cd7a85e90e161dd52572790c0de2871dec09239b9",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 2641,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/proof-review.json",
+   "role": "hilbert_review",
+   "sha256": "c8ab93be3307e66a9c6b46da7fad43c001a0db4c4a190d088ef6cf1216c4e8ff",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 17854057,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/artifacts/canonical/result.json",
+   "role": "spectral_result",
+   "sha256": "98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 335,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/artifacts/canonical/execution-receipt.json",
+   "role": "spectral_receipt",
+   "sha256": "9a7ec6da2d78ddf0bc18594d385c24c22fc1cf821efee8fcac3576453108dbbf",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 5149,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/hypothesis.md",
+   "role": "spectral_hypothesis",
+   "sha256": "1041a7ecb357b47a448f3c75a3aa1f3328dad982fe223be7ee7a789698c2e27b",
+   "source_commit": "a2abdcc8360399b3fa42aaea9245e4b83352c30f",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 28674,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py",
+   "role": "spectral_runner",
+   "sha256": "1304e98f540aac2e11efc453bbc42feb0f9e1478618e86b4848ebfacf04ba90c",
+   "source_commit": "5d7e7a6a73e433a7ff9f6628815d54243425afa9",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 8134,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/mathematical-proof.md",
+   "role": "spectral_proof",
+   "sha256": "1d987d1e736cfdde07d86c39bbf8a1dc3ebcaec31abf02324091d24d7e719685",
+   "source_commit": "7d7d7729f88f5e7371b721cb5036d2cbb8030957",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 8059,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/adversarial-audit.md",
+   "role": "spectral_audit",
+   "sha256": "6bad136f83257514efc874e59297c1ac13dd80cb4bc39b08ac3f6c3c1f30656f",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 4816,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/verdict.md",
+   "role": "spectral_verdict",
+   "sha256": "38c10761e73b5c1740056632f656dd59bd41eaa7f62a2c105462ce81aded6477",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 2821,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/proof-review.json",
+   "role": "spectral_review",
+   "sha256": "b4deaedfafe2190a8dd5878263bcc00ec4367122db9f72e85874433da9b34832",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 21218322,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/artifacts/canonical/result.json",
+   "role": "rank_six_result",
+   "sha256": "1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 422,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/artifacts/canonical/execution-receipt.json",
+   "role": "rank_six_receipt",
+   "sha256": "8ea74decaa7d56610c61fc6277ba03d018eab98d71614fafcafdea2bab523491",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 5461,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/hypothesis.md",
+   "role": "rank_six_hypothesis",
+   "sha256": "70960ea00af0f8086034cf0ed388e520822306af3d3248f99cd6d7914927a40d",
+   "source_commit": "2297d2fc5cb6a65b2a3aa48b019934d002ef242b",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 19817,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py",
+   "role": "rank_six_runner",
+   "sha256": "cc8acd61729f93fe0f59241b1746875bdadff15801940c856095941e569edd0e",
+   "source_commit": "a26ba0d403d14d6d08f042503ce52b774c38bdfd",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 5676,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/mathematical-proof.md",
+   "role": "rank_six_proof",
+   "sha256": "cb263549a8134dc22a48ed4f662c25410070e667f46b70a0d58a339c11d2bef4",
+   "source_commit": "5f4885c70188a7126f0b47ea954e589a7583b358",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 7036,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/adversarial-audit.md",
+   "role": "rank_six_audit",
+   "sha256": "17de19c8c38f09552ca502d75e817590313e42e2a80b6d87e955397d4af496e2",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 4253,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/verdict.md",
+   "role": "rank_six_verdict",
+   "sha256": "f667c08c61b102d1594719c76a7af404a53918616d938a4d97d30a365060981f",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 2409,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/proof-review.json",
+   "role": "rank_six_review",
+   "sha256": "970d89ea4fb9713586ae5812081a90f1608bb2c5866dfe3ef2c64659cec703cb",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 1229,
+   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest-exp009.json",
+   "role": "wang_kernel_source_manifest",
+   "sha256": "36d9c99db37c22adff41533a569275bd534751707d5c4a6bc48aa926e48793b9",
+   "source_commit": "123eee0d49969226201e68d6c32746087a91e6fc",
+   "source_exp": "source-review"
+  },
+  {
+   "bytes": 4114968,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/artifacts/canonical/result.json",
+   "role": "wang_kernel_result",
+   "sha256": "0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66",
+   "source_commit": "61bfc39ebe5944f177041b738240443c4ecfae98",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 422,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/artifacts/canonical/execution-receipt.json",
+   "role": "wang_kernel_receipt",
+   "sha256": "86e6c02c7469d7635400057cc9fed484ecef60365dd2b7d3a07d2d5b36e66136",
+   "source_commit": "61bfc39ebe5944f177041b738240443c4ecfae98",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 5102,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/hypothesis.md",
+   "role": "wang_kernel_hypothesis",
+   "sha256": "02141969ff11605d8cdf747521aa1655f7924f6182b1a5f7a85bec1a7636392b",
+   "source_commit": "123eee0d49969226201e68d6c32746087a91e6fc",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 2156,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/amendment-001-optimal-ratio.md",
+   "role": "wang_kernel_amendment",
+   "sha256": "6640871e942e55cc9fe04959d2fb8560c89131f42f1f51cfe79cffda78cd4845",
+   "source_commit": "edd689fef41ee5986353f6b62e8c34f81d55ae0f",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 22118,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/run.py",
+   "role": "wang_kernel_runner",
+   "sha256": "3cd4b2e7f0f805f5549cd2a2e90c0b329603a3041995f867429c4c880947ddd3",
+   "source_commit": "6b8e009c73f87047a2bc2c237991d241bd3b08c0",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 8143,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/mathematical-proof.md",
+   "role": "wang_kernel_proof",
+   "sha256": "2b3223fb6f9830831510bc212df558b9245f82e5a14e0a47813587c2f7c35767",
+   "source_commit": "6b8e009c73f87047a2bc2c237991d241bd3b08c0",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 5033,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/adversarial-audit.md",
+   "role": "wang_kernel_audit",
+   "sha256": "08c06d7839c2aff01978c43ba76f7bd146f07c57afbb638c4e110a9822b74eb0",
+   "source_commit": "6b8e009c73f87047a2bc2c237991d241bd3b08c0",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 3694,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/verdict.md",
+   "role": "wang_kernel_verdict",
+   "sha256": "54b8240eb102983c22943b9a1e169c0631ead9d717ef0d7b2a9e8482f8cdf355",
+   "source_commit": "c922076b610faddccaaa421263acb754ced6e2e2",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 2816,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/proof-review.json",
+   "role": "wang_kernel_review",
+   "sha256": "dc6c3c88ef04e8d658c6363554b2f6a671a8ca43cd690f8c2e6dc2b3b1a1acdb",
+   "source_commit": "c922076b610faddccaaa421263acb754ced6e2e2",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 2520,
+   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest-exp010.json",
+   "role": "levinson_source_manifest",
+   "sha256": "c55194b34987210fc1cd780257590c031dd4372ae99ce4a61c82bd221e5131fe",
+   "source_commit": "2f7aaa6b3542dd9c8306c52813e392988e9c65fc",
+   "source_exp": "source-review"
+  },
+  {
+   "bytes": 88540,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/canonical/result.json",
+   "role": "levinson_result",
+   "sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 331,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/canonical/execution-receipt.json",
+   "role": "levinson_receipt",
+   "sha256": "e0270d54d2003636648b0bd2981a5985fc941f3a36dc2b6ab10f2f26a632666e",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 11370,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/hypothesis.md",
+   "role": "levinson_hypothesis",
+   "sha256": "4d4a6051f155c99d296cfa43fed972c844c01cede93bef25b61fcfe6147514de",
+   "source_commit": "2f7aaa6b3542dd9c8306c52813e392988e9c65fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 70113,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/frozen-parameters.json",
+   "role": "levinson_frozen",
+   "sha256": "602ab84cb40c4ebc786d33fba1c0976e5fa8f9b4c072e20a65d09a2a24fa2e4d",
+   "source_commit": "2f7aaa6b3542dd9c8306c52813e392988e9c65fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 18848,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/run.py",
+   "role": "levinson_runner",
+   "sha256": "b6ee96ce409150f56f9c34757354e1addb417d2fc1be7c7e281a2c97ee1a27df",
+   "source_commit": "f05dbb646d9f76101e1992e53a97ce6d5c156b3d",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 12487,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/audit.py",
+   "role": "levinson_auditor",
+   "sha256": "e6c73074f29e45c417fb0185584969ae0ef74c1c83c33c8c18c79f3e3b990f06",
+   "source_commit": "3dba086fed900d5a828bb78182fc68541b641d8a",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 10630,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/audit/audit.json",
+   "role": "levinson_audit_output",
+   "sha256": "b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 17160,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/controls.py",
+   "role": "levinson_controls",
+   "sha256": "e2448c4b29aeade6faac6728382e560d36692ea3c935f72f63afea017e3a44b2",
+   "source_commit": "770003367350b04be70e672d076ba0e5d3d99ecf",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 41819,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/controls/controls.json",
+   "role": "levinson_controls_output",
+   "sha256": "6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 23159,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/mathematical-proof.md",
+   "role": "levinson_proof",
+   "sha256": "d7fed000d944c4a57d83c9505e229ee3453829bb4632e6d1c01df2339502323e",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 10474,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/adversarial-audit.md",
+   "role": "levinson_audit",
+   "sha256": "60e18e4aed52de051322c43f2594202ad42d2b02b1b2fc34b422274e1c0e6ef8",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 8162,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/verdict.md",
+   "role": "levinson_verdict",
+   "sha256": "2b46382257b80e135cac287421e58995060815a112153d669750dff14ee03562",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 4366,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/proof-review.json",
+   "role": "levinson_review",
+   "sha256": "54e3f450996bb00a239171ea85db5d3c27a23b2929b8c6ed3542e6849b50cc37",
+   "source_commit": "5f90a5c0347db310a446be54030cfc91240e77fc",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 2939,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/artifacts/canonical/result.json",
+   "role": "barrier_result",
+   "sha256": "d53992d7b2bc7e8fade30315a5e3b69a0ef0929265f5d451a1f1d4c567822c01",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 306,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/artifacts/canonical/execution-receipt.json",
+   "role": "barrier_receipt",
+   "sha256": "af065e4e3a38b751a25550ee61d8d84c790d9fb7739e913131093c22d0df7045",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 4652,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/hypothesis.md",
+   "role": "barrier_hypothesis",
+   "sha256": "ab1ceac01d4263e699917e84827ecd8e7057ff638daffd56b8ef2f42e41a0810",
+   "source_commit": "136b40f01d17b0bb4a4d3e5ad8b57fac74af44a8",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 1010,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/frozen-parameters.json",
+   "role": "barrier_frozen",
+   "sha256": "b8180bb6cf057ba44b1e337969580429dc26907b0857ede2d5be8a8019b82330",
+   "source_commit": "9886f07bc05928c635754261fe282034af08904f",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 10259,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/run.py",
+   "role": "barrier_runner",
+   "sha256": "5258c93b0d4e098dd7217c640d8e1f06f598d3673ce98759de338585b4f8e518",
+   "source_commit": "96b6e8442f55253d5a4dc76ed0fcdd689ca611f7",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 5059,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/audit.py",
+   "role": "barrier_auditor",
+   "sha256": "51120ded7c3408a96bf97aedb755a711eca6cd0e0177517b5bbb7afc944531e8",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 420,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/artifacts/audit/audit.json",
+   "role": "barrier_audit_output",
+   "sha256": "29de599a055cc0892b771b74fc054c9db5ad16620f9cd32cf2f54321f707de15",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 3344,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-011-linear-refinement-barrier/verdict.md",
+   "role": "barrier_verdict",
+   "sha256": "1074cffabfc215e188a4346668705b99097c46fa4c8f6b33a16c948078625639",
+   "source_commit": "1e96dafdbe68cdc94f4ec21a8f911ef069c725dc",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 4100,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/hypothesis.md",
+   "role": "tang_hypothesis",
+   "sha256": "22554e5aa38dd76626476f775fa5b09653f1be678bb2756cf3cea5262554aeb8",
+   "source_commit": "76c4439830027619f52163a6c344d55d96ed26b4",
+   "source_exp": "EXP-012-tang-short-window-moment"
+  },
+  {
+   "bytes": 1918,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/weight_size.py",
+   "role": "tang_check",
+   "sha256": "49c77c10de7c5b8b6fb00d9959e8340ab3bd67dea880e82e9f74de4867b5842c",
+   "source_commit": "96c90a7e761fef5c247659fbb53e7adece2fc861",
+   "source_exp": "EXP-012-tang-short-window-moment"
+  },
+  {
+   "bytes": 1510,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/artifacts/canonical/weight-size.json",
+   "role": "tang_check_output",
+   "sha256": "658430a8290fc9ec846032a858eacbd92270fc1f750f593e4ab6ab76e845765c",
+   "source_commit": "1a8a4cc05da8b99ce2a421a4b523b06fabecc42a",
+   "source_exp": "EXP-012-tang-short-window-moment"
+  },
+  {
+   "bytes": 2761,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-012-tang-short-window-moment/verdict.md",
+   "role": "tang_verdict",
+   "sha256": "2113dc1610c892f35aac59d69f40be780406fbf3cefb9624a75e72bfb30ed0a7",
+   "source_commit": "1a8a4cc05da8b99ce2a421a4b523b06fabecc42a",
+   "source_exp": "EXP-012-tang-short-window-moment"
+  },
+  {
    "bytes": 17333,
    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/stage-b/candidate-1/pressure-certificate.json",
    "role": "pressure_certificate_1",
@@ -274,6 +818,406 @@
    "sha256": "2b19910ae6685716972bd66facc9cfafeee2c882be3f9138df10f76ac7c4c26b",
    "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
    "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 3181,
+   "path": "tests/test_riemann_hilbert_parity.py",
+   "role": "hilbert_test",
+   "sha256": "7cac00920201cb937a850996c8f5f542100c9449fc2d60452679c62e0b82f911",
+   "source_commit": "0d736fa22ce7e833200381a32e8cc89f77c660e8",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 2775,
+   "path": "tests/test_riemann_spectral_defect_parity.py",
+   "role": "spectral_test",
+   "sha256": "b0a723fe75a174f096d5465d00c21222d38acb979db63e3632c5a17213f6cb70",
+   "source_commit": "d63111ffa8a348c51eb4fd06f5a1e70a51211576",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 2869,
+   "path": "tests/test_riemann_rank_six_local.py",
+   "role": "rank_six_test",
+   "sha256": "969b093ea9359a62b00b205c27956d0a08eaa66f0ce5f601f5e7893e2f587cf9",
+   "source_commit": "4f201e0e77a76f98027511e4e78a7bc751f7f489",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 3830,
+   "path": "tests/test_riemann_wang_kernel_sharpening.py",
+   "role": "wang_kernel_test",
+   "sha256": "e491639de533bd4a83f459745ac8feb1683a25e4bd4a9933d9a7d87d53877f3d",
+   "source_commit": "61bfc39ebe5944f177041b738240443c4ecfae98",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 5111,
+   "path": "tests/test_riemann_levinson_parity.py",
+   "role": "levinson_test",
+   "sha256": "6286030676c31bd876a25faac1a83ae59ce1efd4cce38baf4a5888015f82110a",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-010-levinson-parity-transfer"
+  },
+  {
+   "bytes": 3083,
+   "path": "tests/test_riemann_linear_refinement_barrier.py",
+   "role": "barrier_test",
+   "sha256": "ffcec01feb37f42c963f7ed1c9ebeabb2d4d84657011808da61d9a37c0a9851a",
+   "source_commit": "1a8a4cc05da8b99ce2a421a4b523b06fabecc42a",
+   "source_exp": "EXP-011-linear-refinement-barrier"
+  },
+  {
+   "bytes": 12127,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-020-quadratic-local-certificate/artifacts/independent-cover-audit.json",
+   "role": "distinct_cover",
+   "sha256": "f43ed1409bc39a7336fcdf67e8807492a78ca57d58863d1c28732d2e1f4c400b",
+   "source_commit": "9d36664209bf901dee4f1cfe68c6b45bae29b720",
+   "source_exp": "EXP-020-quadratic-local-certificate"
+  },
+  {
+   "bytes": 10678,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-020-quadratic-local-certificate/artifacts/exact-transfer-audit.json",
+   "role": "distinct_transfer",
+   "sha256": "4516c03d7328b1efef2e371742c73813ec3cd34d3e71e52e609c8e407f8c8ff4",
+   "source_commit": "9d36664209bf901dee4f1cfe68c6b45bae29b720",
+   "source_exp": "EXP-020-quadratic-local-certificate"
+  },
+  {
+   "bytes": 1441,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-020-quadratic-local-certificate/artifacts/native-kernel-taylor-full.json",
+   "role": "distinct_native",
+   "sha256": "02f1ea0794c3c9fbb75d6c8980123fa16fe49ac743a8929cf511a82f6b501d66",
+   "source_commit": "9d36664209bf901dee4f1cfe68c6b45bae29b720",
+   "source_exp": "EXP-020-quadratic-local-certificate"
+  },
+  {
+   "bytes": 10365,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-020-quadratic-local-certificate/artifacts/actual-cover-corruption-controls.json",
+   "role": "distinct_controls",
+   "sha256": "c7f123933e8fd5f4456dbb3aae4ee16f3f56ae855bcc43030ec6c8a435a3936c",
+   "source_commit": "9d36664209bf901dee4f1cfe68c6b45bae29b720",
+   "source_exp": "EXP-020-quadratic-local-certificate"
+  },
+  {
+   "bytes": 857,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-020-quadratic-local-certificate/artifacts/runtime-archive-receipt.json",
+   "role": "distinct_archive",
+   "sha256": "e73ee985c7790402ffffcca33fe339b1dc8f0e4b15aacda6f7254f755c28a17f",
+   "source_commit": "9d36664209bf901dee4f1cfe68c6b45bae29b720",
+   "source_exp": "EXP-020-quadratic-local-certificate"
+  },
+  {
+   "bytes": 2674,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-025-vector-pressure-distinct-lift/artifacts/independent-rational-audit.json",
+   "role": "distinct_vector",
+   "sha256": "a7b68bb34475466ec53bfefe192c993e4dc4dc320277ea419ebca243cc858c2e",
+   "source_commit": "ab912adf2dbaf5eaef752f7a48ba83d8fb8ffc6f",
+   "source_exp": "EXP-025-vector-pressure-distinct-lift"
+  },
+  {
+   "bytes": 4568,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-025-vector-pressure-distinct-lift/artifacts/preflight.json",
+   "role": "distinct_vector_preflight",
+   "sha256": "a4ee71b36d94d3fd0ad0bb4dfe89b40fceb0f0fd8770c2ce69318f7d2e3e9fb1",
+   "source_commit": "ac5ce3d610ef427220d8d697ea7164e11ade3815",
+   "source_exp": "EXP-025-vector-pressure-distinct-lift"
+  },
+  {
+   "bytes": 970,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-025-vector-pressure-distinct-lift/artifacts/input/attestation.json",
+   "role": "distinct_attestation",
+   "sha256": "01bdd11c5415cd99b822ff6b9963aae32b7c947a50b6ad803f55ac47e2a1d982",
+   "source_commit": "ac5ce3d610ef427220d8d697ea7164e11ade3815",
+   "source_exp": "EXP-025-vector-pressure-distinct-lift"
+  },
+  {
+   "bytes": 1837980,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-025-vector-pressure-distinct-lift/artifacts/input/Solution.lean",
+   "role": "distinct_external_source",
+   "sha256": "65564079527487fde93b43bb83dd840a768acf9fb8db1f1f015d38c4faf3b7d4",
+   "source_commit": "ac5ce3d610ef427220d8d697ea7164e11ade3815",
+   "source_exp": "EXP-025-vector-pressure-distinct-lift"
+  },
+  {
+   "bytes": 11358,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-025-vector-pressure-distinct-lift/artifacts/input/LICENSE-2.0.txt",
+   "role": "distinct_license",
+   "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+   "source_commit": "ac5ce3d610ef427220d8d697ea7164e11ade3815",
+   "source_exp": "EXP-025-vector-pressure-distinct-lift"
+  },
+  {
+   "bytes": 7442,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-025-vector-pressure-distinct-lift/proof.md",
+   "role": "distinct_vector_proof",
+   "sha256": "887b201f14acc949e940dd504d5b36a1a918a043ae21c6665eb1c10c296e9405",
+   "source_commit": "ab912adf2dbaf5eaef752f7a48ba83d8fb8ffc6f",
+   "source_exp": "EXP-025-vector-pressure-distinct-lift"
+  },
+  {
+   "bytes": 4961,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-025-vector-pressure-distinct-lift/final-review.md",
+   "role": "distinct_vector_review",
+   "sha256": "5c8ff758611fe29efdb84a2e85b8eea0373229ccfe697193a34baaf1b925d633",
+   "source_commit": "9fe6a8587e49fca2e9942edc0317b5681867724b",
+   "source_exp": "EXP-025-vector-pressure-distinct-lift"
+  },
+  {
+   "bytes": 2861,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-025-vector-pressure-distinct-lift/verdict.md",
+   "role": "distinct_vector_verdict",
+   "sha256": "e14acae1ba2c0979f490c173ff4935d4164f05849aea2e8024226b6168829a24",
+   "source_commit": "808ed613720c272a0982387d69385662b757703d",
+   "source_exp": "EXP-025-vector-pressure-distinct-lift"
+  },
+  {
+   "bytes": 1574,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-020-quadratic-local-certificate/proof.md",
+   "role": "distinct_local_proof",
+   "sha256": "c472a3f4739ce27af9b59efc5ecd336b154ca8c8cb9df3f83204c5ca33e657c0",
+   "source_commit": "27df676bd2827c3408d9ebffe20b4e77a42a5745",
+   "source_exp": "EXP-020-quadratic-local-certificate"
+  },
+  {
+   "bytes": 4566,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-020-quadratic-local-certificate/verdict.md",
+   "role": "distinct_local_verdict",
+   "sha256": "3d64a9b4c7df3c1694197ea87a519d0ed153661cafb6ca1df12290d579d683b7",
+   "source_commit": "808ed613720c272a0982387d69385662b757703d",
+   "source_exp": "EXP-020-quadratic-local-certificate"
+  },
+  {
+   "bytes": 1176,
+   "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/publication-receipt.json",
+   "role": "distinct_publication",
+   "sha256": "d9872a63ef59e5d2b330515a38f573dd62313f6850d03ae6cdf3b2a493329fa6",
+   "source_commit": "298b1ed0adfe79ddeb749f73fa28901f88dd83c9",
+   "source_exp": "distinct-zero-companion"
+  },
+  {
+   "bytes": 376803,
+   "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/main.pdf",
+   "role": "distinct_paper",
+   "sha256": "2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4",
+   "source_commit": "298b1ed0adfe79ddeb749f73fa28901f88dd83c9",
+   "source_exp": "distinct-zero-companion"
+  },
+  {
+   "bytes": 7429,
+   "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/current-publication.json",
+   "role": "distinct_current_publication",
+   "sha256": "525a8102cf055b78b197596e79d761f2538e3954dba14ae5a2a41b1ac2bc5a86",
+   "source_commit": "bafbebb622e398ac6223d74bf7858c84fcf389e9",
+   "source_exp": "distinct-zero-publication-correction"
+  },
+  {
+   "bytes": 4147,
+   "path": "manuscripts/riemann-hypothesis/distinct-zero-gram/evidence-companion.json",
+   "role": "distinct_companion",
+   "sha256": "bd22161901ff53e140034b6efddad840d309ac7ee4631746941ec46e7fbef40e",
+   "source_commit": "bafbebb622e398ac6223d74bf7858c84fcf389e9",
+   "source_exp": "distinct-zero-publication-correction"
+  },
+  {
+   "bytes": 2839,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/hypothesis.md",
+   "role": "moment_hypothesis",
+   "sha256": "f6f83b1d03af9b840c1ab48a939e91bd8282d4a2c223c79c135d944a6431d6e1",
+   "source_commit": "a18fe456c73d5a4775d265661621d987c5304574",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 12358,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/mellin-proof.md",
+   "role": "moment_mellin",
+   "sha256": "ccb200d12a47963af0c0aa2704f5bc2e4b84196d102095815a71b80a44e4d10e",
+   "source_commit": "5f2768c2f6351e050036e2d8cf6093bd1bd65908",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 4985,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/hankel-symbol-proof.md",
+   "role": "moment_hankel",
+   "sha256": "03169c46ec8e3e7cccbc1cf06b050ac896abf034b46f44587b4e6ff2756acb5a",
+   "source_commit": "93d6baf5b4cf99f5d0601a8d70fd48868e962261",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 5944,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/proof-review.md",
+   "role": "moment_review_text",
+   "sha256": "8b5e1f3375b6ffb62b7f3647cb6dd11b26368531f60bc5a1f4e75a3948a3fd9e",
+   "source_commit": "41b340c154067df8f373335d0f251b1961635478",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 2968,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/verdict.md",
+   "role": "moment_verdict",
+   "sha256": "af9ccda888413a791126eab9cca94e4a21aeace76071986525ad35b75c8bc467",
+   "source_commit": "5eeec3965c309717e0d09f91cb0f774793563292",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 1187,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/artifacts/conditional-onset.json",
+   "role": "moment_native",
+   "sha256": "cd3b9f8e2e07e56ed94a945e303e335ebc996340579ef4ab7a14585235250783",
+   "source_commit": "41b340c154067df8f373335d0f251b1961635478",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 1658,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/artifacts/independent-conditional.json",
+   "role": "moment_independent",
+   "sha256": "a3a2f619834c75c57ad14a338551d73b3cdd73536285ba66a6030be8d0d4d507",
+   "source_commit": "41b340c154067df8f373335d0f251b1961635478",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 1346,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/artifacts/adversarial-exponents.json",
+   "role": "moment_adversarial",
+   "sha256": "1f70660da0355e66b1166a69fde569f55217b073811647daee5f682c740a69de",
+   "source_commit": "41b340c154067df8f373335d0f251b1961635478",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 2793,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/run.py",
+   "role": "moment_runner",
+   "sha256": "3528ad97149fff5efd46470fdaf6c30fbc8aa2a6f50f5df3240fd9b01b87eb4e",
+   "source_commit": "567475fba07c9c510c393852d61a340b3fec37f1",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 4669,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/independent_control.py",
+   "role": "moment_independent_runner",
+   "sha256": "47a95cc8c2b2d78e67b4a8986eea12daf5809325e3883054d245fd8f0b6cab9e",
+   "source_commit": "bcf6ebf2cfaf5cd83addbd57400411f73e5f55e8",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 4949,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/adversarial_control.py",
+   "role": "moment_adversarial_runner",
+   "sha256": "8b4b50699f433742f9f08b8834cf7f55dfdd91a745c527a5dfc444dc36d19214",
+   "source_commit": "0eca32c8d009c18012df328152bafdde472e7b75",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 787,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/independent-control-declaration.md",
+   "role": "moment_independent_declaration",
+   "sha256": "a9321d18ba743ec465a42738eb23df48f00202e2224a375b8ea39b7a30661cfc",
+   "source_commit": "69e5260256da718f0325f908820ac47ccd80046e",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 1370,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/adversarial-declaration.md",
+   "role": "moment_adversarial_declaration",
+   "sha256": "6fdc9c14cf02fabf21ab2fe45534c00861daa704fe57b5b9021bec037cf7c6a1",
+   "source_commit": "5f2768c2f6351e050036e2d8cf6093bd1bd65908",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 88540,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/artifacts/canonical/result.json",
+   "role": "moment_detector",
+   "sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+   "source_commit": "1912bb31a149aed601080c8b63e20db61f728326",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 8700,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-026-multiplicity-defect-retention/independent_compact.py",
+   "role": "moment_interval_toolkit",
+   "sha256": "4b8ac853cebb76148739c5adc1f8b6118c2eaedbfa76238823790523847c139f",
+   "source_commit": "b75237d26135bfdfdbcd4e27dea6ae7a842fd227",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 7513,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-027-shifted-voronoi-dual/proof.md",
+   "role": "moment_transform",
+   "sha256": "8392b9a7881d866d05f2f02338aa1cdfbc5256faa3f34269c16e84eb5f82e175",
+   "source_commit": "a18fe456c73d5a4775d265661621d987c5304574",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 10202,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-024-gaussian-mellin-reduction/proof.md",
+   "role": "moment_gaussian",
+   "sha256": "207f6322e339eff18cc6a40aecc7a61b4d6262a267ab4b2d178806340a172bea",
+   "source_commit": "440e5d1bfb9aa249771da16eba887dc0de7008c3",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 443857,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/main.pdf",
+   "role": "moment_paper",
+   "sha256": "710e174a8c08c2a20cb0a94b6bbdaaf2bb8feb3f24b56ebc9f753bb4b019a66c",
+   "source_commit": "af6bf825aa3abf3af5bf177bda2cf348babca23c",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 49440,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/main.tex",
+   "role": "moment_tex",
+   "sha256": "f47c1864479bfa7fcfcd606cbac75106505f56d1737cb1c5315b1e41a974cdd8",
+   "source_commit": "af6bf825aa3abf3af5bf177bda2cf348babca23c",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 2560,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/render-review.json",
+   "role": "moment_render",
+   "sha256": "57ab2238acf68f6bb4f5335b1bcfbee85249ba4042656f48b49a7397b2d1073f",
+   "source_commit": "af6bf825aa3abf3af5bf177bda2cf348babca23c",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 5906,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/source-replay.json",
+   "role": "moment_archive",
+   "sha256": "8ea07d66e201a86bf935b6a31124b9731a5f692e26e9f9de2109fb5d5ed7a6c5",
+   "source_commit": "af6bf825aa3abf3af5bf177bda2cf348babca23c",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 1650,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/publication-receipt.json",
+   "role": "moment_publication",
+   "sha256": "73fc193a85751b2c4c77f668132c4d28740e9701a01994beaaf6b9d8972f95ad",
+   "source_commit": "5eeec3965c309717e0d09f91cb0f774793563292",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 5990,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-028-chirp-separated-moment/proof-review.json",
+   "role": "moment_review",
+   "sha256": "5f75e6119956c8938e8276747173cc99c4ddb52b1d971ec57cae82554432f718",
+   "source_commit": "5eeec3965c309717e0d09f91cb0f774793563292",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 7972,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/current-publication.json",
+   "role": "moment_current_publication",
+   "sha256": "d25404b86a32ce3b072af50e44b956a2d21203f9b8ac6966a04bb4fd31c6c077",
+   "source_commit": "bafbebb622e398ac6223d74bf7858c84fcf389e9",
+   "source_exp": "EXP-028-chirp-separated-moment"
+  },
+  {
+   "bytes": 3799,
+   "path": "manuscripts/riemann-hypothesis/short-interval-levinson/versions/v0.02/evidence-companion.json",
+   "role": "moment_companion",
+   "sha256": "5982c59d68ace36625cffc198758b9399722d0955f027b401133f5b36edf740f",
+   "source_commit": "bafbebb622e398ac6223d74bf7858c84fcf389e9",
+   "source_exp": "EXP-028-chirp-separated-moment"
   }
  ]
 }

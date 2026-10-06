@@ -1,20 +1,29 @@
 # Frobenius-minimality preprint
 
-Current publication/dependency review: [2026-09-04 scope audit](scope-audit-2026-09-04.md).
-Both public PDFs were freshly downloaded and matched; no new version was published.
-Latest trigger decision: [EXP-058/059 scope audit](scope-audit-2026-09-05.md). The uniform
-potential-basis theorem is preserved in the research record; cross-sector consequences remain
-the next companion-publication gate.
+Current public version: v0.25, published 2026-09-18 at
+[10.5281/zenodo.22835108](https://doi.org/10.5281/zenodo.22835108), under
+concept DOI [10.5281/zenodo.21763582](https://doi.org/10.5281/zenodo.21763582).
+The 828,614-byte committed PDF has SHA-256
+`b3adf61416725b03de009d735e4502c15af70535e68e607e2580f9b0d23ad535`.
+Versions 0.24 and 0.25 are editorial identity and scientific-voice revisions;
+their Zenodo metadata states that the mathematics is unchanged from v0.23.
 
-`main.tex` is version 0.23 of the CAOS Research preprint; version
-0.22 and all earlier versions remain frozen. Version 0.23 adds the EXP-036 repeated
+The 53-page paper is the immutable consolidated source record. The current
+[manuscript map](../../../program/huneke-wiegand/manuscript-map.md) freezes it
+and routes future journal preparation into focused counterexample-family,
+conductor-algebra, and homological-syzygy submissions. This is a coherence
+split, not a retraction or a new mathematical claim. The
+[submission split audit](submission-split-audit-2026-09-20.md) assigns result
+ownership, imported dependencies, overlap controls, and readiness gates.
+
+Version 0.23 adds the EXP-036 repeated
 characteristic-dependent target campaign, separates kernel-incidence defects from dependence
 created by the connecting quotient, localizes the compact factor-two residual, preserves two
 refuted finite-data formulas, and proves all-parameter absence of the shifted cubic source at the
 declared targets. The exact characteristic-dependent values are finite through `(p,t)=(9,2)`;
 no infinite multiplicity formula or complete lower strand is claimed. It passed the complete
 claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
-and is published at DOI `10.5281/zenodo.22181972`.
+and is frozen at DOI `10.5281/zenodo.22181972`.
 Version 0.22 adds the EXP-035 primitive zero-row
 classification, consecutive kernel family, explicit connecting-cycle refutation, and the first
 characteristic-dependent lower multigraded Betti cell. It passed the complete

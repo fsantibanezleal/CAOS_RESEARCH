@@ -1,5 +1,110 @@
 # Riemann hypothesis: short-interval zero proportions
 
+[D+MV] EXP-010 localizes Levinson's method with Conrey's general operator
+polynomial to $(T,T+T^\theta]$ for mollifier exponents $\nu<\theta-1/2$ and
+proves that it counts distinct sign changes of $Z$:
+
+$$
+\liminf\frac{O(T,T^\theta)}{N(T,T^\theta)}\ge\kappa=1-\frac1R\log c(P,Q,R,\nu).
+$$
+
+Certified degree-201 detectors give $\kappa>0.7170\,\nu$, five times the
+Selberg slope. Through the EXP-006 product, every fixed
+$\theta\in[0.534,1)$ has a positive proportion of simple critical zeros in
+$(T,T+T^\theta]$; the previous onset was $0.5458838$. At $\theta=0.5459$ the
+lower bound exceeds $0.0177638$, about 1000 times the EXP-008 value. The moment
+and counting theorems are internal; the onset also uses Wang's
+arXiv:2609.07918v1 pair theorem. See the
+[Levinson chapter](13-levinson-parity-transfer.md) and the
+[verdict](../experiments/EXP-010-levinson-parity-transfer/verdict.md), and the
+[published preprint](https://doi.org/10.5281/zenodo.22984155). RH remains open.
+
+[MV] EXP-011 shows that this onset cannot be lowered much by sharpening the
+finite inequality: for the Montgomery-Taylor window no linear refinement
+`Q>=2N+beta O-gamma S` of the EXP-006 product with `beta>=2.365` holds
+(certified counterexamples). See the
+[linear-refinement chapter](14-linear-refinement-barrier.md).
+
+[D+MV] EXP-009 proves the sharp auxiliary inequality
+
+$$
+\sup_{\alpha,\beta\ge0}R(\alpha,\beta)=\sqrt2,
+$$
+
+with equality exactly at $(0,1)$ and $(1,0)$. Substitution into Wang's pinned
+arXiv:2609.24167v1 framework gives global lower proportions
+$0.6725007995946757558\ldots$ for simple critical zeros and
+$0.8362503997973378779\ldots$ for distinct zeros. The exact gain above the
+baseline exceeds $9.5915\times10^{-8}$. The elementary ratio theorem is
+internal; the global transfer depends on Wang's recent unreviewed v1 proof.
+See the [sharp-kernel chapter](12-sharp-three-point-kernel.md),
+[verdict](../experiments/EXP-009-wang-kernel-sharpening/verdict.md), and
+[published preprint](https://doi.org/10.5281/zenodo.22940291). RH remains open.
+
+[D+MV] EXP-008 proves that the optimized Selberg detector localizes at every
+fixed finite rank. Inserting Pearce-Crump's stated source-certified rank-six
+constant into the EXP-006 Hilbert-parity product gives
+
+$$
+\liminf\frac ON\ge k_6(\theta)=\frac{\theta-1/2}{4eC_6},\qquad
+h_6(\theta)=\frac{3+k_6(\theta)-
+\sqrt{(1-k_6(\theta))(9-k_6(\theta)-8c(\theta))}}4.
+$$
+
+Its unique positivity threshold satisfies
+$0.5458837<\theta_6<0.5458838$. At $\theta=0.545884$, the rank-six term is
+positive while the rank-three term is negative. At $\theta=0.5459$, the
+rank-six lower bound exceeds
+$0.0000177645181613023236390595079$ and improves the rank-three value by
+more than $9.263543061777356\times10^{-7}$.
+
+The public source prints the $C_6$ interval but not the rank-six coefficient
+matrix. The result is therefore confirmed relative to that attributed input,
+not as an independent reconstruction. The [rank-six chapter](11-rank-six-local-transfer.md)
+and [confirmed verdict](../experiments/EXP-008-rank-six-local-transfer/verdict.md)
+state the source and claim boundaries. General RH remains open.
+
+[D+MV] EXP-006 strengthens the finite transfer by keeping Lamzouri's Hilbert
+dimension before scalar compression. For every conjugation-invariant finite
+multiset in the kernel setting,
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+Together with EXP-005, this gives the explicit short-interval term
+
+$$
+h_3(\theta)=\frac{3+k_3(\theta)-
+\sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
+$$
+
+Its unique positivity threshold satisfies
+$0.545884<\theta_{\rm HP}<0.545885$. At the previously excluded exponent
+$\theta=0.5459$, the exact certificate proves
+$\liminf S/N>0.0000168381638551244569880374399$, while the EXP-005 linear
+term remains negative. The [complete proof](09-hilbert-parity-compression.md)
+and [confirmed verdict](../experiments/EXP-006-hilbert-parity-compression/verdict.md)
+state the attribution and limits. General RH remains open.
+
+[D+MV] EXP-005 supplies the first explicit interval-range improvement in this
+record. For every fixed $1/2<\theta<1$, it proves
+
+$$
+\liminf\frac{O(T,T^\theta)}{N(T,T^\theta)}
+\ge\frac{\theta-1/2}{4eC_3},
+$$
+
+where $O$ counts distinct odd-multiplicity critical zeros and $C_3$ is
+Pearce-Crump's certified rank-three constant. Combining this with EXP-004
+places the simple-critical positivity threshold in $(0.5459,0.546)$, below
+Wang's reported cosine threshold $0.550193964744154\ldots$. At
+$\theta=0.546$, a fixed legal mollifier proves
+$\liminf S/N>9.7623941\times10^{-5}$. The
+[complete local proof](08-local-selberg-transfer.md) and
+[confirmed verdict](../experiments/EXP-005-local-selberg-transfer/verdict.md)
+state the assumptions and limits. General RH remains open.
+
 [D+MV] EXP-004 proves a qualitative extension of the interval range for a
 positive proportion of simple critical zeros. Let
 
@@ -78,6 +183,16 @@ did not locate an identical short-interval theorem; it does not guarantee priori
 5. [Open questions and rejected approaches](05-open-questions.md)
 6. [Complete odd-frame pressure theorem](06-odd-frame-pressure.md)
 7. [Complete parity density transfer and interval-range theorem](07-parity-density-transfer.md)
+8. [Explicit local Selberg transfer and numerical positivity threshold](08-local-selberg-transfer.md)
+9. [Hilbert dimension, parity compression, and the improved threshold](09-hilbert-parity-compression.md)
+10. [Spectral-defect parity coupling and the strict full-curve improvement](10-spectral-defect-parity.md)
+11. [Rank-six local transfer and the earlier onset](11-rank-six-local-transfer.md)
+12. [Sharp three-point kernel and improved global proportions](12-sharp-three-point-kernel.md)
+13. [Localized Levinson and onset 0.534](13-levinson-parity-transfer.md)
+14. [Linear-refinement counterexamples](14-linear-refinement-barrier.md)
+15. [Dual moment ranges and missing cancellation](15-dual-moment-range.md)
+16. [Fixed-input cap and supported phase collisions](16-fixed-input-cap-and-supported-phases.md)
+17. [Trace-aware clipped-block refinement](17-trace-aware-clipping.md)
 
 The new certificate uses $p=1/12500$, $\epsilon=443239/10^9$, $k=2256$ and
 frame size $4513$. All 16,797 partition nodes were checked, with 8,351 energy-plus-pressure
@@ -86,20 +201,53 @@ leaves, 48 pressure-only leaves and no unresolved cells. Construction used Arb a
 Both paths share Arb, partition geometry and a Lipschitz estimate. They are not an
 independent complete verifier or an end-to-end Lean proof.
 
-The [source manifest](../context/source-manifest.json) records 62 source documents/pages and six
+The [source manifest](../context/source-manifest.json) records 64 source documents/pages and seven
 licensed repository snapshots with versions, sizes, hashes and licenses. Original
 documents remain in the local repository cache where redistribution rights were
 not identified. Licensed snapshots retain their notices. The [bibliography](../references.md)
 distinguishes source theorems, un-replayed candidate claims and formal hypotheses.
 
-The manuscript series is [A stability refinement for simple critical zeros in short intervals](https://doi.org/10.5281/zenodo.22727388).
+The short-interval manuscript series is [Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression](https://doi.org/10.5281/zenodo.22727388).
 The first published version is [v0.01](https://doi.org/10.5281/zenodo.22727389);
-The confirmed pressure and parity results form the published v0.02 expansion,
-with version DOI [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744). The [manuscript directory](../../../../manuscripts/riemann-hypothesis/short-interval-stability/)
+The spectral-defect and rank-six theorems form the published v0.07 expansion,
+with version DOI [10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012).
+The [manuscript directory](../../../../manuscripts/riemann-hypothesis/short-interval-stability/)
 and publication receipts record the actual publication state. A preprint is not
 peer review or mathematical community acceptance.
 
+The separate global note [A sharp three-point kernel bound and improved
+proportions of zeta zeros](https://doi.org/10.5281/zenodo.22940291) records
+EXP-009. Its source-bound transfer is not external peer review or a proof of RH.
+
 Evidence labels: **[D]** derived with a persisted proof and refutation attempt;
 **[MV]** machine-verified finite assertion; **[C]** conjectural direction. This work
-establishes a qualitative positivity-range extension. It does not give a new
-decimal exponent, effective height, global record, or solution of RH.
+establishes positivity at every fixed $\theta\in[0.534,1)$. It does not give
+an effective height, global record, universal simplicity theorem, or solution
+of RH.
+
+## October 2026 continuation
+
+The external global comparison above is historical, not a worldwide record.
+The [October dossier](../context/2026-10-03-update-and-dual-family-preflight.md)
+and [fixed-input/support chapter](16-fixed-input-cap-and-supported-phases.md)
+record EXP-013--015. The strongest short-window onset is still 0.534.
+The [dual-moment chapter](15-dual-moment-range.md) describes the open signed
+cancellation route and the CIS applicability gaps. Replay v9 still shows
+the twelve released experiments; these three new research records await
+a serialized application release.
+
+The subsequent [trace-aware chapter](17-trace-aware-clipping.md) records
+EXP-016's stronger distinct-strip bound 0.83699291672944... and revised
+integer cap. The refinement is a supporting research record; the onset
+and live replay remain unchanged.
+
+[Full-energy clipping](18-sharp-energy-envelope.md) records EXP-017 and
+its prior-art attribution. The latest supporting distinct-strip bound is
+0.83699292567522...; the short-window onset remains unchanged.
+
+[Nine-point distinct-strip transfer](19-nine-point-distinct-transfer.md)
+records EXP-018's conditional 0.83716744477146... target and the unclosed
+local replay obligation. It is kept separate from EXP-017's source-based
+bound; issue #356 tracks the certificate and manuscript reassessment.
+
+[Longer short-window mollifiers and internally proved onset 0.5339](22-mellin-short-window-moment.md) records EXP-028. Manuscript/publication and the next application release are still pending. EXP-023 is budget-stopped at 95/96, not running or proved. Earlier release and onset statements above are historical.

@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "title": "Levinson's method in short intervals and simple zeros of the zeta function",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "description": "Fix theta between 1/2 and 1. We localize Levinson's method, with Conrey's general operator polynomial Q, to the intervals (T, T+T^theta], for mollifiers of length T^nu with nu less than theta-1/2, by running Young's short proof of the mollified second moment with a weight supported on the window. On such windows the method counts distinct sign changes of Hardy's function, with lower density kappa = 1 - log(c)/R, for every Q with Q(x)+Q(1-x) constant. For operator polynomials of degree 201 we certify kappa above 0.7170 nu for nu between 0.0199 and 0.0999. Used as the odd-support input of the Hilbert-parity inequality (Q-S)(N-O) at least 2(N-S)^2, together with Wang's short-interval pair-correlation theorem, this gives a positive proportion of simple critical zeros in (T, T+T^theta] for every fixed theta in [0.534, 1), compared with the previous exponents 0.552, 0.55019 and 0.5458838. At theta = 0.5459 the lower density exceeds 0.017763, about one thousand times the previous bound. Exact rational and ball arithmetic certify all constants, with an independent validated-quadrature replay. The results are asymptotic, use Wang's recent preprint for the pair term, and do not prove the Riemann hypothesis.",
+    "creators": [
+      {
+        "name": "Santiba\u00f1ez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS Research program"
+      }
+    ],
+    "keywords": [
+      "Riemann zeta function",
+      "simple zeros",
+      "critical line",
+      "short intervals",
+      "Levinson method",
+      "mollifier",
+      "interval arithmetic"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "publication_date": "2026-09-26",
+    "version": "0.01",
+    "language": "eng",
+    "related_identifiers": [
+      {
+        "identifier": "https://arxiv.org/abs/2609.07918v1",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "https://arxiv.org/abs/1002.4403",
+        "relation": "references",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      },
+      {
+        "identifier": "https://doi.org/10.5281/zenodo.22860012",
+        "relation": "references",
+        "resource_type": "publication-preprint"
+      }
+    ]
+  }
+}

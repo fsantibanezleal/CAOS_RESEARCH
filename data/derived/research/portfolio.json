@@ -110,8 +110,9 @@
    "area": "analysis-pde",
    "feasibility": "B",
    "gpu": true,
+   "opened": "2026-09-11",
    "slug": "navier-stokes",
-   "state": "proposed"
+   "state": "exploring"
   },
   {
    "area": "mathematical-physics",
@@ -187,5 +188,5 @@
    "state": "proposed"
   }
  ],
- "updated": "2026-09-12"
+ "updated": "2026-09-13"
 }

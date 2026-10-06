@@ -1,0 +1,249 @@
+{
+  "bindings": {
+    "problems/number-theory/riemann-hypothesis/code/energy_envelope.py": "ecb64597be388e60e180d4c4920cc544c1640065803e89230e479258496a58e0",
+    "problems/number-theory/riemann-hypothesis/code/mixed_gram_parameters.py": "21739d9ed2dd5ea7f8133c2a09e452998bc350fe15f7cd7a27f43d1f14e65d06",
+    "problems/number-theory/riemann-hypothesis/code/nine_point_distinct.py": "145a47efc271a86855eba84f8fdcdae0f600f2cac1d998c8826824cec007e939",
+    "problems/number-theory/riemann-hypothesis/context/source-manifest-exp018.json": "3b80b3823591b1e1e614393c7db9a413eb2ff986278ebedc5ecab4e9d7d1a4c1",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-018-nine-point-distinct-transfer/artifacts/input/LICENSE": "d50ded5fb6aca7aab26ac8ce32490323ae75adfc9f0f29e167f89631aebae9da",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-018-nine-point-distinct-transfer/artifacts/input/nine-point-final.json": "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-018-nine-point-distinct-transfer/hypothesis.md": "a1eb74bc0f12ba6f225e1f74fe49acdc2ac4da1671e311024c2bb768fd18a0f0",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-018-nine-point-distinct-transfer/proof.md": "096acb635e1c4b77aede34e997c861caae2f63bf8f45c23a2590422cb9ca26a5",
+    "problems/number-theory/riemann-hypothesis/experiments/EXP-018-nine-point-distinct-transfer/run.py": "f55b5b986c05b56cb20a64bf898991a0cba34158d356d2e30da93104878e2307"
+  },
+  "candidate": {
+    "D": "289009/50000",
+    "a": "289009/47900000",
+    "beta": "38/11975",
+    "c": "3409/1000",
+    "m": 958,
+    "q": "3997934614153/4775549550000",
+    "q_enclosure": {
+      "lower": "0.83716744477146090966640687457635111334987614147988",
+      "upper": "0.83716744477146090966640687457635111334987614147989",
+      "width": "1/100000000000000000000000000000000000000000000000000"
+    },
+    "slacks": {
+      "double_diagonal_threshold": "409/2000",
+      "high_multiplicity_residual": "874982311/479000000",
+      "off_line_pair_residual": "1270221/479000000",
+      "raw_energy_cutoff": "422893/14500000",
+      "unit_diagonal_threshold": "0"
+    },
+    "tau": "2409/1000"
+  },
+  "capacities": [
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2"
+  ],
+  "claim_status": "conditional on the explicit universal local inequality and source energy input",
+  "experiment": "EXP-018",
+  "gain_over_exp017": "2403934117432068083256784391389853889279343946625289237246717/13774619335172415688707721995247398354610174165433023006594950000",
+  "inputs": {
+    "delta": "15211/2500000",
+    "energy_gain": "3362285207/5000000000",
+    "pressure": "1/2500",
+    "r": 8
+  },
+  "not_established": [
+    "unconditional independent certificate",
+    "global parameter optimum",
+    "new onset",
+    "RH"
+  ],
+  "packet_sha256": "9f113eb52fba9c3a1fd7d5f2714e925ef19d3104b8fdaa982661fa96794d0c0d",
+  "provenance": {
+    "full_interval_replay_performed_here": false,
+    "log_binds_candidate_hash": false,
+    "source_candidate_verification_needed": true,
+    "source_log_reports_verified": true
+  },
+  "schema": "exp018-nine-point-distinct-transfer-v1",
+  "weights": [
+    [
+      0,
+      1,
+      "112661/625000"
+    ],
+    [
+      0,
+      2,
+      "4832031/10000000"
+    ],
+    [
+      0,
+      3,
+      "5411933/10000000"
+    ],
+    [
+      0,
+      4,
+      "1"
+    ],
+    [
+      0,
+      5,
+      "1"
+    ],
+    [
+      0,
+      6,
+      "1"
+    ],
+    [
+      0,
+      7,
+      "1"
+    ],
+    [
+      0,
+      8,
+      "2"
+    ],
+    [
+      1,
+      2,
+      "2694869/10000000"
+    ],
+    [
+      1,
+      3,
+      "2295599/10000000"
+    ],
+    [
+      1,
+      4,
+      "445211/2500000"
+    ],
+    [
+      1,
+      5,
+      "0"
+    ],
+    [
+      1,
+      6,
+      "0"
+    ],
+    [
+      1,
+      7,
+      "0"
+    ],
+    [
+      1,
+      8,
+      "1"
+    ],
+    [
+      2,
+      3,
+      "135743/500000"
+    ],
+    [
+      2,
+      4,
+      "0"
+    ],
+    [
+      2,
+      5,
+      "2807223/10000000"
+    ],
+    [
+      2,
+      6,
+      "0"
+    ],
+    [
+      2,
+      7,
+      "0"
+    ],
+    [
+      2,
+      8,
+      "1"
+    ],
+    [
+      3,
+      4,
+      "557539/2000000"
+    ],
+    [
+      3,
+      5,
+      "287237/500000"
+    ],
+    [
+      3,
+      6,
+      "2807223/10000000"
+    ],
+    [
+      3,
+      7,
+      "0"
+    ],
+    [
+      3,
+      8,
+      "1"
+    ],
+    [
+      4,
+      5,
+      "557539/2000000"
+    ],
+    [
+      4,
+      6,
+      "0"
+    ],
+    [
+      4,
+      7,
+      "445211/2500000"
+    ],
+    [
+      4,
+      8,
+      "1"
+    ],
+    [
+      5,
+      6,
+      "135743/500000"
+    ],
+    [
+      5,
+      7,
+      "2295599/10000000"
+    ],
+    [
+      5,
+      8,
+      "5411933/10000000"
+    ],
+    [
+      6,
+      7,
+      "2694869/10000000"
+    ],
+    [
+      6,
+      8,
+      "4832031/10000000"
+    ],
+    [
+      7,
+      8,
+      "112661/625000"
+    ]
+  ]
+}

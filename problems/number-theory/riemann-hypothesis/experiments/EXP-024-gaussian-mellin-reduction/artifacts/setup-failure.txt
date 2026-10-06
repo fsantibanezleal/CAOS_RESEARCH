@@ -1,0 +1,5 @@
+First controls launch: nine symbolic moments passed. The first numerical
+case reached the tail calculation and failed because python-flint arb has
+no .inv() method. AttributeError at gaussian_mellin_controls.py line 70.
+Use exact directed interval division 1/x.sqrt() instead. This is an API
+error; no kernel agreement or phase remainder claim came from that launch.

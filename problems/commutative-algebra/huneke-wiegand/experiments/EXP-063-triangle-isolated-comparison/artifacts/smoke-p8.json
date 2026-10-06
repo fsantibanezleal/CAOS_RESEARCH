@@ -1,0 +1,242 @@
+{
+  "experiment": "EXP-063",
+  "status": "COMPLETE",
+  "scope": {
+    "p_min": 8,
+    "p_max": 8
+  },
+  "premise_hashes": {
+    "EXP-063-triangle-isolated-comparison\\hypothesis.md": "d3a35db2d20ccf2ac7e54e223e929919faa9295ddf324c9d938c9cba336af0ba",
+    "EXP-036-factor-two-torsion-anatomy\\run.py": "1c6923c7c6456673402b5bdd3dada137970f6d01985690f29c960af65a981d03",
+    "EXP-037-connecting-quasipolynomial\\run.py": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
+    "EXP-042-bockstein-normal-form\\run.py": "3a57fc52a6a1e10ba42d97c6ebe27062324b8c90b76df7a288db41dffabd69bf",
+    "EXP-043-hadamard-rank-certificate\\artifacts\\results.json": "612d481eff7e00f5c5128d450a5eb05f79aacccb27bcd88c106dc0d5bf7426e6",
+    "EXP-045-row-atom-carrier-lattice\\artifacts\\results.json": "569220667e9d82f0806ea96cb8f60c49e94cb6317817170c39f2e574e619bcb8",
+    "EXP-048-semantic-relative-bockstein\\run.py": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a",
+    "EXP-062-triangle-torsion-family\\run.py": "019c34a9d1180b5cce3fc0d5bfb29db7ffd91c0b66d56eab9e042da7623f0d07",
+    "EXP-062-triangle-torsion-family\\hypothesis.md": "56663e362e4e26d16d8db30f6000a1761f8e3e5b1e380fc67d9a441c6c8cbeeb"
+  },
+  "resource_caps": {
+    "budget_seconds": 180.0,
+    "memory_gib": 4.0,
+    "processes": 1
+  },
+  "claims": {
+    "P1": true,
+    "P2": true,
+    "P3": true
+  },
+  "rows": [
+    {
+      "p": 8,
+      "triangle_count": 3,
+      "triangles": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "triangle_rows": [
+        2612,
+        2613,
+        2615
+      ],
+      "triangle_labels": [
+        [
+          "K",
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            26,
+            27,
+            28,
+            29,
+            30,
+            48
+          ],
+          86
+        ],
+        [
+          "K",
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            25,
+            27,
+            28,
+            29,
+            30,
+            48
+          ],
+          86
+        ],
+        [
+          "K",
+          [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            24,
+            27,
+            28,
+            29,
+            30,
+            48
+          ],
+          86
+        ]
+      ],
+      "all_rows_survive": true,
+      "all_atoms_R5": true,
+      "literal_surviving_coordinates": true,
+      "component_rows": 2675,
+      "component_columns": 1094,
+      "contraction_replay": {
+        "reconstruction_source_sha256": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a",
+        "support_hash": "226fe0db14b3ace29537ba3c7a3d4ceccf78b19d3591badc69ed5e5c6eb02f5b",
+        "signed_hash": "7b1b2c8c93fd9919c5415d42688ccbf6ea852c3bd1514a891a9122b76950757f",
+        "signed_columns_hash": "2bec02c6e911df661239ddb2f187770037cbc2693fb6ea1b5d45a539ffdb051b",
+        "surviving_row_labels_hash": "357a686dd77eb1dbafc54f12ab0b217f328b173cb47379330ba7620681e7bab4",
+        "triangle_rows": [
+          2612,
+          2613,
+          2615
+        ]
+      },
+      "contraction_replay_hash": "bfb89c0ae0a955dc25c52d4fd52317c0cc15f945ad86167199812e8b1e45defb",
+      "masks": [
+        {
+          "mask": 56,
+          "rows": 1769,
+          "relation_columns": 1094,
+          "rank_mod_two": 963,
+          "triangle_span_rank": 0,
+          "frozen_carrier_bockstein_rank": 0,
+          "expected_rank": 0,
+          "pivot_orders_agree": true,
+          "relation_dimension": 3,
+          "relations": [
+            {
+              "bits_hex": "0x1",
+              "triangles": [
+                [
+                  0,
+                  1,
+                  5
+                ]
+              ]
+            },
+            {
+              "bits_hex": "0x2",
+              "triangles": [
+                [
+                  0,
+                  2,
+                  4
+                ]
+              ]
+            },
+            {
+              "bits_hex": "0x4",
+              "triangles": [
+                [
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            }
+          ],
+          "relation_subspace_hash": "33a1c10fd7cb2b79058ab93874877d6234886e4a8a123d9f2a2c9277f6f2efc5"
+        },
+        {
+          "mask": 58,
+          "rows": 2596,
+          "relation_columns": 1094,
+          "rank_mod_two": 979,
+          "triangle_span_rank": 1,
+          "frozen_carrier_bockstein_rank": 1,
+          "expected_rank": 1,
+          "pivot_orders_agree": true,
+          "relation_dimension": 2,
+          "relations": [
+            {
+              "bits_hex": "0x1",
+              "triangles": [
+                [
+                  0,
+                  1,
+                  5
+                ]
+              ]
+            },
+            {
+              "bits_hex": "0x2",
+              "triangles": [
+                [
+                  0,
+                  2,
+                  4
+                ]
+              ]
+            }
+          ],
+          "relation_subspace_hash": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684"
+        },
+        {
+          "mask": 59,
+          "rows": 2624,
+          "relation_columns": 1094,
+          "rank_mod_two": 990,
+          "triangle_span_rank": 3,
+          "frozen_carrier_bockstein_rank": 3,
+          "expected_rank": 3,
+          "pivot_orders_agree": true,
+          "relation_dimension": 0,
+          "relations": [],
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "mask": 62,
+          "rows": 2647,
+          "relation_columns": 1094,
+          "rank_mod_two": 999,
+          "triangle_span_rank": 3,
+          "frozen_carrier_bockstein_rank": 3,
+          "expected_rank": 3,
+          "pivot_orders_agree": true,
+          "relation_dimension": 0,
+          "relations": [],
+          "relation_subspace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 9.548289600003045,
+  "artifact_hash": "a96816897a4a53d6f02b62d756cfd76e61284981cc7047780521fd1256e374dd"
+}

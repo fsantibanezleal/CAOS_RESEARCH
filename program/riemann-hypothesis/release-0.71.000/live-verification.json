@@ -1,0 +1,172 @@
+{
+  "schema": "riemann-live-verification-v2",
+  "release": "0.71.000",
+  "verified_utc": "2026-09-20T05:13:43.918106Z",
+  "main_commit": "8302be35cb96280692ad1333d690a63cb220f8b2",
+  "tag": "v0.71.000",
+  "release_url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/releases/tag/v0.71.000",
+  "research_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/316",
+  "release_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/317",
+  "promotion_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/318",
+  "ci_run": {
+    "url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35490773875",
+    "status": "success",
+    "tests": 428
+  },
+  "pages_run": {
+    "url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35490773870",
+    "status": "success"
+  },
+  "base_url": "https://research.fasl-work.com/",
+  "route": {
+    "in_app_path": "/problems/riemann-hypothesis",
+    "status": 404,
+    "bytes": 360,
+    "sha256": "416ae20ffab5d6b5fe6fa932fa286106b1b5b731bf7b3052dadca6cd8e6792d2",
+    "behavior": "GitHub Pages SPA deep-link shim restores the client route after root load"
+  },
+  "root": {
+    "path": "/",
+    "status": 200,
+    "bytes": 591,
+    "sha256": "05ac56cf7dfe9519aacd6106783d03c2ebdc7f8c12fe2e6332f384ecb8462fea",
+    "local_path": "frontend/dist/index.html",
+    "local_sha256": "05ac56cf7dfe9519aacd6106783d03c2ebdc7f8c12fe2e6332f384ecb8462fea",
+    "matches_local": true
+  },
+  "assets": [
+    {
+      "path": "/assets/index-CftVb1pP.css",
+      "status": 200,
+      "bytes": 64941,
+      "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78",
+      "local_path": "frontend/dist/assets/index-CftVb1pP.css",
+      "local_sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78",
+      "matches_local": true
+    },
+    {
+      "path": "/assets/index-CcxjCEZM.js",
+      "status": 200,
+      "bytes": 777234,
+      "sha256": "5dc0ce397f48b36084932a17b41061e9251c9b4dc8b11ee1572570c90cdce7d3",
+      "local_path": "frontend/dist/assets/index-CcxjCEZM.js",
+      "local_sha256": "5dc0ce397f48b36084932a17b41061e9251c9b4dc8b11ee1572570c90cdce7d3",
+      "matches_local": true
+    },
+    {
+      "path": "/assets/ExperimentModal-CGr_8vRY.js",
+      "status": 200,
+      "bytes": 176791,
+      "sha256": "25deacef175ebd46e3bdff02a5346efcec29dfb9279af88b6a2c6fddbecdcedf",
+      "local_path": "frontend/dist/assets/ExperimentModal-CGr_8vRY.js",
+      "local_sha256": "25deacef175ebd46e3bdff02a5346efcec29dfb9279af88b6a2c6fddbecdcedf",
+      "matches_local": true
+    }
+  ],
+  "data": [
+    {
+      "path": "/data/research/experiments.json",
+      "status": 200,
+      "bytes": 2111463,
+      "sha256": "5d7c97cd06ebd0300c3c3429a0fbcb07c24b8b7b91f09449d9e9de2bcd588b1e",
+      "local_path": "data/derived/research/experiments.json",
+      "local_sha256": "5d7c97cd06ebd0300c3c3429a0fbcb07c24b8b7b91f09449d9e9de2bcd588b1e",
+      "matches_local": true
+    },
+    {
+      "path": "/data/research/jacobian.json",
+      "status": 200,
+      "bytes": 3831,
+      "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023",
+      "local_path": "data/derived/research/jacobian.json",
+      "local_sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023",
+      "matches_local": true
+    },
+    {
+      "path": "/data/research/portfolio.json",
+      "status": 200,
+      "bytes": 3782,
+      "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc",
+      "local_path": "data/derived/research/portfolio.json",
+      "local_sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc",
+      "matches_local": true
+    },
+    {
+      "path": "/data/research/riemann.json",
+      "status": 200,
+      "bytes": 866860,
+      "sha256": "7afb078f8ac7d33adb192556f50b06bedf6ae22fa2a527f6310f2783de93b9bf",
+      "local_path": "data/derived/research/riemann.json",
+      "local_sha256": "7afb078f8ac7d33adb192556f50b06bedf6ae22fa2a527f6310f2783de93b9bf",
+      "matches_local": true
+    },
+    {
+      "path": "/data/manifests/index.json",
+      "status": 200,
+      "bytes": 385,
+      "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337",
+      "local_path": "data/derived/manifests/index.json",
+      "local_sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337",
+      "matches_local": true
+    },
+    {
+      "path": "/data/manifests/riemann.json",
+      "status": 200,
+      "bytes": 18727,
+      "sha256": "0fc79aeee375e0d34c3622c459c0ca66366175c8606d06d2701c7f74e0b94082",
+      "local_path": "data/derived/manifests/riemann.json",
+      "local_sha256": "0fc79aeee375e0d34c3622c459c0ca66366175c8606d06d2701c7f74e0b94082",
+      "matches_local": true
+    }
+  ],
+  "riemann_payload": {
+    "schema": "riemann-replay-v5",
+    "local_result_schema": "riemann-exp006-results-v2",
+    "local_result_status": "pass",
+    "canonical_result_sha256": "82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf",
+    "threshold_bracket": [
+      "0.545884",
+      "0.545885"
+    ],
+    "theta": "0.5459",
+    "old_linear_upper": "-0.000010736717493643355204019536930395535221329543453541",
+    "strong_simple_lower": "0.000016838163855124456988037439977087817273685280645524",
+    "finite_profiles": 18479
+  },
+  "browser_receipt": {
+    "local_only_path": "tmp/riemann-live-v071/receipt.json",
+    "sha256": "c6d98bc52c98529dcd70df46146115c8478f04fc9b273c2534a690dac4bac38c",
+    "bytes": 6536604,
+    "scenarios": 8,
+    "tabs_visited": 48,
+    "screenshots": 320,
+    "failed_checks": 0,
+    "console_errors": 0,
+    "console_warnings": 0,
+    "page_errors": 0,
+    "request_failures": 0,
+    "http_errors": 0,
+    "fatal_error": null,
+    "languages": [
+      "en",
+      "es"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ]
+  },
+  "manuscript": {
+    "doi": "10.5281/zenodo.22852479",
+    "sha256": "dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082"
+  },
+  "limitations": [
+    "The direct static deep link returns the Pages 404 shim; the passing browser run confirms client restoration and a 200 root.",
+    "The compact receipt retains hashes and counts; the full screenshot and DOM receipt remains local because it is large.",
+    "Deployment verification is not peer review and does not prove the Riemann hypothesis."
+  ]
+}

@@ -4,6 +4,31 @@ import type { Citation } from '@fasl-work/caos-app-shell';
 // Inline <Cite id="..."/> resolves against this list via the CitationsProvider at the app root.
 export const CITATIONS: Citation[] = [
   {
+    id: 'riemann-bettinchandee2015', label: 'Bettin–Chandee 2015',
+    citation: 'Bettin S., Chandee V. Trilinear forms with Kloosterman fractions. Pinned arXiv:1502.00769v1, Theorem 1. Arbitrary complex coefficients and the full parameter factor are retained in EXP-028; the source theorem is attributed, not reproved here.',
+    url: 'https://arxiv.org/abs/1502.00769v1',
+  },
+  {
+    id: 'riemann-distinct2026', label: 'CAOS distinct-zero companion 2026',
+    citation: 'Santibanez-Leal F. (2026). Stronger local overlap certificates and distinct zeros of the Riemann zeta function, v0.01. Published proof and reproducibility archives; internal review, not external peer acceptance. Concept DOI links to the current version.',
+    url: 'https://doi.org/10.5281/zenodo.23128662',
+  },
+  {
+    id: 'riemann-knausgard2026', label: 'Knausgard 2026',
+    citation: 'K. M. Knausgård (2026). More than 83.69% of the zeros of the Riemann zeta function are distinct. Pinned arXiv:2609.33043v1: mixed Gram matrices and weighted local overlap, with distinct-strip proportion 0.83699288145242… .',
+    url: 'https://arxiv.org/abs/2609.33043v1',
+  },
+  {
+    id: 'riemann-bgstb2024', label: 'BGSTB and correction',
+    citation: 'Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh. Integrated complex-zero pair correlation, Acta Arithmetica 214 (2024), 357–376, arXiv:2306.04799; correction arXiv:2501.14545v3. The correction and fixed-test limit order are retained.',
+    url: 'https://arxiv.org/abs/2501.14545v3',
+  },
+  {
+    id: 'riemann-lavery2026', label: 'Lavery / typh / Ainta 2026',
+    citation: 'Samuel Lavery, attempt-013 (3 October 2026), using typh’s thirteen-term window and Ainta’s weighted refinement. Pinned source 2fcb7dba28691632cdb0846d694c9b9902cfce66. External Lean/nanoda verification archived; not rebuilt locally. Its critical-line score is distinct from the derived strip-wide count.',
+    url: 'https://github.com/josusanmartin/riemann/tree/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/attempt-013',
+  },
+  {
     id: 'riemann-anthropic2026', label: 'Anthropic 2026',
     citation: 'Anthropic (2026). New results on the Riemann zeta function. Research announcement, original and revised proofs, human verification notes, and formalization links. Reviewed 2026-09-12.',
     url: 'https://www.anthropic.com/research/riemann-zeta',
@@ -22,6 +47,31 @@ export const CITATIONS: Citation[] = [
     id: 'riemann-wang2026', label: 'Wang 2026',
     citation: 'Wang B. (2026). Simple critical zeros and distinct zeros of the Riemann zeta-function in short intervals. arXiv:2609.07918v1, submitted September 7; manuscript dated September 9. The arithmetic input and cosine baseline used in the refinement.',
     url: 'https://arxiv.org/abs/2609.07918v1',
+  },
+  {
+    id: 'riemann-wangglobal2026', label: 'Wang global refinement 2026',
+    citation: 'Wang B. (2026). Proportions of the non-trivial zeros of the Riemann zeta function. arXiv:2609.24167v1, submitted September 21. EXP-009 imports its global framework and replaces one non-sharp auxiliary estimate.',
+    url: 'https://arxiv.org/abs/2609.24167v1',
+  },
+  {
+    id: 'riemann-sharpkernel2026', label: 'CAOS EXP-009: sharp kernel',
+    citation: 'Santibáñez-Leal F. (2026). A sharp three-point kernel bound and improved proportions of zeta zeros. CAOS Research preprint v0.01. The elementary sharp ratio theorem is proved directly; the zeta transfer is relative to Wang arXiv:2609.24167v1.',
+    url: 'https://doi.org/10.5281/zenodo.22940291',
+  },
+  {
+    id: 'riemann-levinson2026', label: 'CAOS EXP-010/028: short-interval Levinson',
+    citation: 'Santibáñez-Leal F. (2026). Levinson\'s method in short intervals and simple zeros of the zeta function. CAOS Research preprint v0.02. Internally reviewed moment for nu < min(1/2,(17/33)(2theta-1)), exact Mellin and Hankel derivations, certified detector and onset theta >= 0.5339; uses Bettin-Chandee and Wang arXiv:2609.07918v1. Publication is not external peer review.',
+    url: 'https://doi.org/10.5281/zenodo.22984154',
+  },
+  {
+    id: 'riemann-tang2026', label: 'Tang 2026',
+    citation: 'Tang Z. S. (2026). Reciprocity for the short twisted second moment of the Riemann zeta function. arXiv:2608.14852v1. Its dual moment is the obstruction recorded in EXP-012.',
+    url: 'https://arxiv.org/abs/2608.14852v1',
+  },
+  {
+    id: 'riemann-pearcecrump2026', label: 'Pearce-Crump 2026',
+    citation: 'Pearce-Crump A. (2026). Optimising Selberg\'s method for critical zeros. arXiv:2609.15329v1. Source of the positive-semidefinite sign detector, coefficient-uniform approximate functional equation, arbitrary-subinterval mean-value estimate, and certified rank-three profile localized in EXP-005.',
+    url: 'https://arxiv.org/abs/2609.15329v1',
   },
   {
     id: 'riemann-karatsuba1985', label: 'Karatsuba 1985',
@@ -60,8 +110,13 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'riemann-refinement2026', label: 'CAOS short-interval refinement',
-    citation: 'Santibáñez-Leal F. (2026). A stability refinement for simple critical zeros in short intervals, version 0.01. First published EXP-002 proof and compact certificate; a separate sinc-Taylor evaluator shares Arb and geometry with the certifier.',
-    doi: '10.5281/zenodo.22727389',
+    citation: 'Santibáñez-Leal F. (2026). Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression, version 0.07. The rank-independent local transfer, source-certified rank-six threshold, spectral-defect parity product, earlier stability results, and analytic boundaries are included.',
+    doi: '10.5281/zenodo.22860012',
+  },
+  {
+    id: 'riemann-local2026', label: 'CAOS EXP-005: local Selberg transfer',
+    citation: 'Santibáñez-Leal F. (2026). Local optimized Selberg transfer. CAOS Research EXP-005: complete analytic localization, exact threshold bracket, fixed mollifier witness, independent interval replay, adversarial review, and source-bound proof review. RH remains open.',
+    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/mathematical-proof.md',
   },
   {
     id: 'riemann-pressure2026', label: 'CAOS EXP-003: odd-frame pressure',

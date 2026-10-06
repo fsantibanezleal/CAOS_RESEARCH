@@ -1,53 +1,311 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-12. Release: **0.65.000**, released and live-verified from release commit `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`).
-Current research round: **EXP-003 and EXP-004 confirmed; v0.02 published on Zenodo and replay integrated**.
+## Research paused by the user, 2026-10-04
 
-EXP-004 has a separate confirmed verdict and proof-review record. It proves a
-qualitative extension of the simple-critical positivity range below Wang's
-cosine root: for one fixed classical density constant $\kappa>0$, a fixed
-$\theta_1<\theta_0$ has $\liminf S/N\ge\kappa/3$ for every fixed
-$\theta\in[\theta_1,1)$. A distinct-count inequality gives an analogous
-above-one-half consequence below the root. No numerical $\kappa$, $\theta_1$,
-effective height, or new decimal exponent is claimed.
+Riemann experimentation and the proposed research app release are stopped.
+The publication separation repair, admission checks and public links are
+validated and delivered as maintenance release 0.76.001. See
+publication-correction-20261004/delivery-verification.json.
+Research remains paused; no new experiment is authorized.
+No mathematical experiment is active. EXP-023 remains stopped and incomplete.
+Research PR #376 remains a draft. Its research branch and the unfinished app
+branch are preserved without promotion. This repair retains the existing
+app's scientific results and does not admit the paused research result.
 
-[D+MV] [EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md) confirms a stronger odd-frame theorem throughout
-the complete positive short-interval cosine curve and a new pressure certificate.
-At theta=3/4, its bound is 0.419087888170111727959091183775, with distinct companion
-0.709543944085055863979545591887. The Wang baseline is 0.419075012975424333734553610698;
-the first published EXP-002 example is 0.419076828425303996736665787527.
+## Current experiment update, 2026-10-04: EXP-028
 
-The new certificate has 16,797 nodes, 8,351 energy-plus-pressure leaves, 48 pressure
-leaves and zero unresolved cells. Construction at 160 bits and complete sinc-Taylor
-replay at 256 bits passed. Stage A also replayed all 48,761 earlier nodes and checked
-328 incidence/boundary cases. The full repository suite passed **288 tests** after
-the new committed-source export gates. Shared Arb/geometry and external analytic
-premises remain explicit; this is not end-to-end Lean verification or peer review.
+EXP-028 is internally proved: the uniform shifted moment admits
+nu<min(1/2,(17/33)*(2theta-1)). Independent Mellin and exact-Hankel norm
+derivations agree; residue/coalescence, all signed coefficients, unbalanced
+blocks, gcd sums, general fixed Q and narrower compact-window conversion
+are reviewed. Exact/native and independent rational controls give positive
+simple-critical density greater than 0.0003985233159135 at theta=0.5339.
+The mathematical onset is now 0.5339 internally; external review, worldwide
+priority and effective height are unconfirmed. RH remains open.
 
-The theorem, separate-stage verdict, source audit, scientific code, candidates and
-canonical results are committed and pushed in the pressure work branch. Research
-[PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) merged to develop
-at `65980d33f40c291c86a384420afa888b53abbea0`; release PR [#267](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/267), develop synchronization [#268](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/268), live receipt [#269](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/269), and main promotion [#270](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/270) are merged.
-the expanded preprint is published at [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744)
-the public replay release is live-verified in
-[release-0.65.000](release-0.65.000/README.md). The v0.01 record remains immutable
-at DOI 10.5281/zenodo.22727389.
+Published: short-interval-levinson **v0.02**, version DOI
+[10.5281/zenodo.23132248](https://doi.org/10.5281/zenodo.23132248), concept
+10.5281/zenodo.22984154. All 14 PDF pages and the 80-member extracted
+source package pass review; both live downloads match their SHA-256 hashes.
+App 0.76.000 is live after PRs #371/#372, with passing CI and Pages run
+37190319392 at main fc4f82685bb5104443236da5a8d5d5c723ae45e0. All 76 live files
+match the reviewed build and actual CI artifact. Production replay passes
+8 scenarios, 48 tabs and 704 hash-checked PNGs; selected actual
+production views pass visual inspection. See release-0.76.000/promotion.json.
+The next analytic preflight retains RH-F4 and tests Mellin frequency
+averaging; it is unproved. Read strategy-review-20261004.md and the
+source preflight before declaring any experiment. EXP-023 stays stopped.
+See exp028-manuscript-admission.md and the EXP-028 verdict/proof-review.
 
-The user's latest direction broadened the investigation beyond constant tuning.
-Three primary-source dossiers now cover classical odd/critical zero counts and
-multiplicity, spectral negative-mass/optimization witnesses, and alternative RH
-reformulations. Commit be5aac4 preserves the cross-area review and verified archive.
-EXP-004 was declared and pushed in e03413b before implementation or computation.
-Its finite parity certificates, source conventions, seed packing and legal support
-limits, complete proof, exact runner, final proof review and verdict are confirmed.
-No further computational family is declared.
+EXP-027 supplies the complete classical transformed representation. EXP-026
+remains a supporting obstruction. EXP-023 stopped at its six-hour budget:
+95/96 shards, 21,772,288 sealed nodes, 19 pending boxes, all stopped data
+archived and verified. Its candidate remains unproved; issue #362 is open.
+No automatic restart or alteration of frozen source is admitted.
 
-EXP-003 does not lower the positivity exponent or solve RH. EXP-004 confirms a
-qualitative extension below the zero of Wang's cosine curve. Its imported classical
-density is positive but unspecified; no new decimal exponent is claimed. General
-RH remains open.
+This current block supersedes historical running/pending and 0.534 research
+state below; historical evidence and published v0.01 bytes are preserved.
 
-The first release closure is recorded in [its live receipt](release-0.64.000/live-verification.json):
-public PRs #263/#264 merged, main 08660dc, tag v0.64.000, successful Pages run
-34706614866, 13 exact live-file comparisons and eight passing live UI scenarios.
-The expanded release closure is recorded in [the v0.65 live receipt](release-0.65.000/live-verification.json): CI and Pages runs 34718338752, 34718338730, 34719132932, and 34719132914 passed; deployed assets and data hashes matched; eight EN/ES light/dark desktop/phone scenarios visited all six research tabs, with 48 tab visits, 288 screenshots, and zero failures. Private coordination PRs #631/#632/#635/#636 are merged; private main/develop now contain the synchronized v0.65 records. Unrelated original worktrees remain preserved.
+## Current experiment and delivery update, 2026-10-04
+
+EXP-026 is closed as a research record: exact retained multiplicity algebra,
+plus an actual point-Gram isolation obstruction even below the local pressure
+budget. Native interval and independent standard-library rational audits pass.
+This does not improve a zero proportion or the 0.534 onset. RH-F4 remains
+primary; the next analytic target is the complete shifted Voronoi reduction
+and its signed average. No new manuscript follows from EXP-026.
+
+The 0.75.000 release is live: PRs #365/#367 and main promotion #366 merged;
+main `51b8e91bea8e2030ebb22d342ffb125d8f992400`, Pages run `37168373757`.
+All 76 published files match the CI artifact and local build byte-for-byte.
+Production rendered QA passes 8 scenarios, 48 tabs and 656 hash-checked PNGs.
+See `release-0.75.000/production-byte-verification.json` and
+`release-0.75.000/qa-production.json`. Historical pending-release notes below
+record their original time; they are superseded by this verified release.
+EXP-023 still needs the missing shard and every completion gate; no upgrade.
+
+## Completed distinct-zero results, 2026-10-03
+
+EXP-020 completed all 96 shards and every final check: the stronger local
+inequality gives 3997934614153/4775507750000=0.8371747724947154... for
+distinct strip points. EXP-025's reviewed vector-pressure application gives
+30945470743359/36955122080000=0.8373797460706156..., with Lavery's
+external universal local theorem explicitly attributed and not locally
+Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
+mixed-Gram argument remain dependencies.
+
+The focused companion `distinct-zero-gram` v0.01 is published and all three
+files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+[concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
+SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
+Issues #356/#358 close the local input obligation; #364 tracks publication
+and release. PR #363 merged to develop at `0fd13678315b4b7ac20af8b6b66b44982e7acefa`.
+Workbench PR #365 remains draft pending its full rendered matrix and
+serialized main/Pages release. Private publication evidence was backed up
+through CAOS_MANAGE PR #799, main/develop `7dbdeab4`. The live application
+still runs 0.74.000; 0.75.000 is prepared, not deployed.
+
+EXP-023 remains 95/96 under its owned supervisor through the deadline
+2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is
+unproved and not in the published theorem. EXP-019 remains suspended.
+RH is open; the short-window onset stays 0.534. Worldwide priority and peer
+acceptance are unconfirmed. RH-F4 remains the active analytic focus.
+
+Updated: 2026-10-03. Latest public application release: **0.74.000**
+(replay v9, EXP-010 to EXP-012 in the workbench), promoted to main commit
+`a464bdb52d88ed22582668d9c94ebbe25262b5b4`; live bytes match the exact-main build
+([record](release-0.74.000/live-verification.json)). Previous: 0.73.000 from
+`e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-010 is confirmed on its work
+branch after two referee passes, merged to `develop` and promoted to `main`; its
+manuscript `short-interval-levinson` v0.01 is published at
+[10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155). The public
+workbench shows it since release 0.74.000.
+
+The Riemann hypothesis remains open.
+
+Strategic review 2026-10-03: a new distinct-zero paper improves the
+strip-wide EXP-009 companion, and EXP-013 improves its fixed-input assembly
+slightly. Upstream also lists a higher simple-critical candidate; neither
+changes the short-window onset. The active focus remains RH-F4 after a
+recorded stop/review decision; RH-F6 is closed. See the
+[current dossier](../../problems/number-theory/riemann-hypothesis/context/2026-10-03-update-and-dual-family-preflight.md),
+[plan](plan.md) and [governance](research-governance.json).
+
+## Current strongest short-interval result
+
+EXP-010 localizes Levinson's method with Conrey's general operator polynomial
+`Q` to `(T,T+T^theta]`. For mollifier exponents `nu<theta-1/2` the mollified
+second moment is `c(P,Q,R,nu) w-hat(0)+O(H/L)` (Young's short proof with a
+window weight), and for every `Q` with `Q(x)+Q(1-x)` constant the method
+counts distinct sign changes of `Z`:
+
+```text
+liminf O(T,T^theta)/N(T,T^theta) >= kappa = 1 - log(c(P,Q,R,nu))/R
+```
+
+Degree-201 detectors certify `kappa>0.7170 nu`, against the rank-six Selberg
+slope `0.140`. Through the EXP-006 product:
+
+```text
+every fixed theta in [0.534,1): positive proportion of simple critical zeros
+theta=0.534   h > 1.4806994e-5     theta=0.5459  h > 0.0177638490
+theta=0.535   h > 0.0015246940     theta=0.55    h > 0.0237708528
+theta=0.54    h > 0.0090231376
+```
+
+The previous onset was `0.5458838` (EXP-008). At `theta=0.5459` the new bound
+is about 1000 times the EXP-008 value. Above about `theta=0.567` Wang's
+`c(theta)` remains the largest term. The moment and counting theorems are
+internal; the onset uses Wang's arXiv:2609.07918v1 pair theorem through the
+EXP-006 product.
+
+| Evidence | SHA-256 |
+|---|---|
+| EXP-010 canonical result | `74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464` |
+| EXP-010 independent audit | `b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1` |
+| EXP-010 counting-lemma controls | `6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c` |
+
+## EXP-009 global simple-critical result
+
+EXP-009 proves the sharp auxiliary theorem
+
+$$
+R(\alpha,\beta)\le \sqrt 2\qquad (\alpha,\beta\ge0),
+$$
+
+with equality exactly at $(0,1)$ and $(1,0)$. With
+$\alpha=\sinh u$, $\beta=\sinh v$, the proof reduces to a one-variable
+endpoint and then to $(X^2-2)^2\ge0$.
+
+Under the global framework attributed to Wang, arXiv:2609.24167v1, whose own
+printed bound is `C_0+delta_0=0.6725007703...`, this gives a value about
+`2.9e-8` higher:
+
+```text
+d_dagger = 0.283165430808537327...
+simple-critical proportion >= 0.6725007995946757558283550562963947865...
+distinct zeros anywhere in strip proportion >= 0.8362503997973378779141775281481973932...
+```
+
+The gain over the source baseline exceeds `9.5915e-8`. The independently
+reproduced Wang correction lies between `6.66624e-8` and `6.66625e-8`.
+The global transfer is attributed to a recent unreviewed preprint; it is not an
+independent reproof of that framework.
+
+## Short-interval companion
+
+The same sharp kernel transfers through the existing Hilbert-parity product.
+At `theta=0.5459`, its positive gain over EXP-008 is certified between
+`3.0867809983334187e-31` and `6.1735619966669657e-31`. It does not move the
+rank-six positivity onset. The pair-correlation and rank-six inputs remain
+attributed.
+
+## Portable evidence
+
+| Evidence | Current portable SHA-256 |
+|---|---|
+| EXP-009 canonical result | `0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66` |
+| EXP-009 execution receipt | `86e6c02c7469d7635400057cc9fed484ecef60365dd2b7d3a07d2d5b36e66136` |
+| Sharp-kernel manuscript PDF | `a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82` |
+
+Replay v8 reads committed bytes, binds both source reviews, validates source,
+execution, proof-review, and publication hashes, and fails closed on weakened
+claims. The exact certificate used CPU rational and interval arithmetic; a GPU
+was not useful for this low-dimensional proof.
+
+## Publication and release
+
+The sharp-kernel preprint is published at
+[10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291). The reviewed
+seven-page repository PDF matches a fresh unauthenticated public download byte
+for byte. Publication is not peer acceptance.
+
+Release 0.73.000 exposes all nine experiments in the bilingual
+workbench. The scoped Python suite passed 64 tests and the frontend passed 24
+tests plus TypeScript and production build. The exact-candidate browser matrix
+passed eight desktop/phone EN/ES light/dark scenarios, 48 research-tab visits,
+and 1,586 screenshots with no failures. PRs #337 and #338 are merged; exact-main
+CI, Pages, eleven public byte comparisons, and eight live browser scenarios
+also passed. Tag `v0.73.000` points to the verified main commit.
+
+The result is asymptotic, has no effective starting height, and does not prove
+RH or universal simplicity. Imported 2026 preprints remain attributed. No
+finite census, DOI, passing build, or successful deployment proves RH.
+
+## October source and experiment update
+
+The attributed global distinct-zero bound from arXiv:2609.33043v1 is
+0.83699288145242...; EXP-013's exact parameter improvement gives
+62359683640669/74504434380000 = 0.83699291404068... and proves the
+fixed-input integer cap. This counts distinct zeros anywhere in the strip.
+The upstream trmdy README also lists a 0.673312742272... simple-critical
+candidate, outside this replay; EXP-009 is therefore not presented as
+the current worldwide global record. Those recent claims are attributed.
+
+EXP-014/015 establish the uniform pointwise phase obstruction at
+nu=theta-1/2, including squarefree twists with nonzero basic mollifier
+coefficients. They do not preclude cancellation in the signed sum.
+Canonical hashes: EXP-013 `c250ac76df06e8f66aaed2c720e292bf17e82923137a01ce56d9ced29d4f094b`;
+EXP-014 `fb0f0d4a0d165d524a86285c8bae163297959aa9819a5181e1a89b46e3567c2f`; EXP-015 `871de5a7719bec0a077e1bda88729000d3988e20cee2940f3ef3dd6d55aa3ef8`.
+No new onset or RH result. No new manuscript or Zenodo version.
+
+Tag v0.74.000 and its GitHub release are now verified at the original
+release commit; the [additive reconciliation](release-0.74.000/tag-reconciliation-20261003.json)
+supersedes only the old pending-tag status. Replay v9 and the live workbench
+still contain twelve experiments. EXP-013--015 are repository research
+records and await a later serialized replay/UI release.
+
+## Trace-aware follow-up, same review date
+
+EXP-016 strengthens the block dichotomy using trace zero, and updates the
+latest attributed distinct-strip bound to
+69341429073721/82845897125000 = 0.83699291672944... . Its revised
+scalar assembly has optimal integer block m=1311. The earlier EXP-013
+cap concerns its original condition and remains correct.
+Canonical SHA-256 `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74`. Eleven new tests and the previous twenty
+focused controls pass; the separate symbolic/matrix auditor passes.
+RH-F7 closes. The short-window onset, RH status, manuscript/Zenodo
+state and live replay v9 remain unchanged. RH-042 also covers EXP-016.
+
+## Full-energy envelope follow-up
+
+EXP-017 confirms the sharp retained-energy envelope and pressure transfer,
+with the tau=1 formula attributed to upstream prior work. The exact
+source-based distinct-strip candidate improves to 0.83699292567522... .
+RH-F8 closes as supporting research-record; no onset/manuscript/release
+change. Issue #354 tracks validation and promotion.
+
+## Nine-point conditional follow-up
+
+EXP-018 gives the independently checked conditional implication
+Nd/N >= 3997934614153/4775549550000 = 0.83716744477146... from the
+explicit pinned nine-point local inequality and source energy premise.
+The local input has a candidate/log provenance discrepancy; it has not
+been independently replayed here. Keep this separate from EXP-017's
+seven-point attributed bound. RH-F9 closes, RH-046 / issue #356 remains
+open for packet-bound replay and a later manuscript decision. No global
+release, onset change, new manuscript or Zenodo version is claimed.
+
+## Composite arithmetic layer, ongoing certificate run
+
+EXP-021 confirms the classical shifted composite character decomposition
+with complete gcd classes and primitive conductor factors. Exact controls
+pass in 4.17 seconds; the proof and source are bound in its receipt.
+RH-038 / issue #360 remains open for the uniform analytic reduction and
+signed-family estimate. No longer mollifier, new onset or manuscript follows.
+EXP-020 is still running; partial coverage does not upgrade EXP-018's premise.
+
+EXP-022 independently confirms a fixed-window/weight pressure-family
+ceiling 0.837421287797... for the counting assembly, not the actual zeros.
+The candidate at p=1/1250 would imply 0.837385561059... after a new complete
+universal local certificate. Issue #361 / RH-047 owns the audit. No new
+lower theorem or manuscript has yet landed; the user objective remains open.
+
+## Continued verification and signed-interface review
+
+EXP-024 closes the exact shifted Gaussian and fixed smooth compact-window
+representation step, with explicitly controlled remainders. Its main signed
+moment remains open. The signed-character interface retains both frequency
+signs, gcd/conductor factors and the distinction between its two Mellin
+weights. The late source review rejects an incorrect displayed exponent
+minimum as an imported premise and excludes the withdrawn January 2026
+Kloosterman improvement. Short-support and non-abelian approaches now have
+explicit conversion obligations; no new cancellation is asserted.
+
+EXP-023's revised full cover resumed at 20:48:12 UTC on 2026-10-03 with
+four workers and a six-hour operational supervisor. At 21:52 UTC 95/96
+shards are complete, with no complete-certificate verdict. The earlier
+EXP-020 has reached 91/96. Actual complete-output corruption checks and
+an exact-byte archive builder are prepared and refuse partial output.
+Draft PR #363 is pushed and unmerged. Only CI on 098c0476 is currently
+verified successful; later GitHub API requests encountered network errors.
+No new manuscript, DOI, release or deployment is claimed from these gates.
+
+At 22:31 UTC both EXP-020 and EXP-023 have 95/96 completed shards.
+EXP-023's additional native input audit passed all 52,240 closed cells of
+both tables using hypergeometric midpoint jets and whole-cell Taylor bounds,
+in 148.04 seconds. The earlier inconclusive variants remain archived.
+This verified input audit does not replace the last multidimensional shard,
+actual completed-output controls or exact transfer. The research goal remains
+active; none of these supporting milestones is its stopping condition.

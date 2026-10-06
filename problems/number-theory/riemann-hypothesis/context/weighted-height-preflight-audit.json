@@ -1,0 +1,37 @@
+{
+  "bindings": {
+    "code/weighted_height_audit.py": "f435784eaaf91125582286663709e1246ddb909b16f9c60e1792478c748942fe",
+    "context/2026-10-03-weighted-cycle-bridge-preflight.md": "60fc8de8f54c249641d7e371f1e447fd828b30ac63d2121010635b49af579af7"
+  },
+  "controls": {
+    "equal_weights_residual": "0",
+    "incorrect_pair_normalization_rejected": true,
+    "independent_fraction_diagonal_expansion": true
+  },
+  "general_squared_weight_residual": "2*(w1-w2)^2",
+  "naive_first_weight_residual": "3/2",
+  "naive_squared_weight_residual": "1/2",
+  "norm_difference_each": "1",
+  "not_established": [
+    "novelty",
+    "zeta asymptotic gain",
+    "RH",
+    "weighted analytic transfer"
+  ],
+  "operator_diagonal": [
+    "3/2",
+    "3/2"
+  ],
+  "pair_orthogonality": true,
+  "passed": true,
+  "schema": "rh-weighted-height-preflight-v1",
+  "scope": "finite signed-vector obstruction; no zeta-zero construction or proportion",
+  "simple_vectors": 0,
+  "squared_weight_mass": "5/2",
+  "trace_square": "9/2",
+  "weighted_trace": "3",
+  "weights": [
+    "1",
+    "1/2"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "elapsed_seconds": 92.64100000000326,
+  "error": "replay containment failed: c, a, q",
+  "error_type": "AssertionError",
+  "schema": "riemann-exp007-failure-v1"
+}

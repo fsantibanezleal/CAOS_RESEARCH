@@ -1,0 +1,129 @@
+{
+  "repository_pin": "2fcb7dba28691632cdb0846d694c9b9902cfce66",
+  "sources": [
+    {
+      "filename": "leaderboard.html",
+      "url": "https://www.riemannzeta.fun/",
+      "http_status": 200,
+      "bytes": 180245,
+      "sha256": "f38991bfa2c3e3a35b9333af7240826499e7f76e1bd021ff36d9a5c047981920",
+      "retrieved_utc": "2026-10-03T22:37:10Z"
+    },
+    {
+      "filename": "attempt-013-page.html",
+      "url": "https://www.riemannzeta.fun/submissions/attempt-013",
+      "http_status": 200,
+      "bytes": 42908,
+      "sha256": "011ae2a44b81ec8f0d5a5083abfc1070411f175a9cfa2f2b1a9c30729b93dda4",
+      "retrieved_utc": "2026-10-03T22:37:10Z"
+    },
+    {
+      "filename": "methodology.html",
+      "url": "https://www.riemannzeta.fun/methodology",
+      "http_status": 200,
+      "bytes": 57126,
+      "sha256": "1149ff0c48ece01e90413294cb290e4e6f9c4f7e09288dab8052d2e33d334bf2",
+      "retrieved_utc": "2026-10-03T22:37:11Z"
+    },
+    {
+      "filename": "attempt-013-proof-Solution.lean",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/attempt-013/proof/Solution.lean",
+      "http_status": 200,
+      "bytes": 1837980,
+      "sha256": "65564079527487fde93b43bb83dd840a768acf9fb8db1f1f015d38c4faf3b7d4",
+      "retrieved_utc": "2026-10-03T22:37:11Z"
+    },
+    {
+      "filename": "attempt-013-submission.json",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/attempt-013/submission.json",
+      "http_status": 200,
+      "bytes": 1768,
+      "sha256": "605e2da75cfa2c59ceac6da8f5563f905e6fae4f5a33ffeb4cefc81b4c70ef39",
+      "retrieved_utc": "2026-10-03T22:37:11Z"
+    },
+    {
+      "filename": "attempt-013-verification-attestation.json",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/attempt-013/verification/attestation.json",
+      "http_status": 200,
+      "bytes": 970,
+      "sha256": "01bdd11c5415cd99b822ff6b9963aae32b7c947a50b6ad803f55ac47e2a1d982",
+      "retrieved_utc": "2026-10-03T22:37:12Z"
+    },
+    {
+      "filename": "attempt-013-verification-verifier.log",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/attempt-013/verification/verifier.log",
+      "http_status": 200,
+      "bytes": 20571,
+      "sha256": "1f475ce20c1f9a3d8a59b4463f99994c49a860bc7ae8762e9c2b67c14fae7aef",
+      "retrieved_utc": "2026-10-03T22:37:12Z"
+    },
+    {
+      "filename": "seven-point-optimised-window-proof-Solution.lean",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/seven-point-optimised-window/proof/Solution.lean",
+      "http_status": 200,
+      "bytes": 1954024,
+      "sha256": "51fe841723d67fd456efa7e3c916e05066739e4b2f0f0fec91c66c8d6a22b25f",
+      "retrieved_utc": "2026-10-03T22:37:13Z"
+    },
+    {
+      "filename": "seven-point-optimised-window-submission.json",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/seven-point-optimised-window/submission.json",
+      "http_status": 200,
+      "bytes": 1489,
+      "sha256": "53ea76f1365e2aaba2a73bf48260d001fc107c14a3acb816280ad2826cf674f4",
+      "retrieved_utc": "2026-10-03T22:37:13Z"
+    },
+    {
+      "filename": "seven-point-optimised-window-verification-attestation.json",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/seven-point-optimised-window/verification/attestation.json",
+      "http_status": 200,
+      "bytes": 988,
+      "sha256": "804abdc8365d3783567680d8bd1b803c723710439d28bc99ed2267dbc742e8ae",
+      "retrieved_utc": "2026-10-03T22:37:13Z"
+    },
+    {
+      "filename": "seven-point-optimised-window-verification-verifier.log",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/submissions/seven-point-optimised-window/verification/verifier.log",
+      "http_status": 200,
+      "bytes": 20588,
+      "sha256": "56a1e5461ca6d1a0e9511a7afe1a30dfff7c99dbe75c09b0cdb8469e4c024459",
+      "retrieved_utc": "2026-10-03T22:37:13Z"
+    },
+    {
+      "filename": "challenge-templates-Challenge.Candidate.lean",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/challenge/templates/Challenge.Candidate.lean",
+      "http_status": 200,
+      "bytes": 812,
+      "sha256": "e77513b7751460054be21697d06b5ffff142d109b65b131e392aa568ccf22378",
+      "retrieved_utc": "2026-10-03T22:37:14Z"
+    },
+    {
+      "filename": "challenge-templates-CandidateSpec.lean.tmpl",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/challenge/templates/CandidateSpec.lean.tmpl",
+      "http_status": 200,
+      "bytes": 343,
+      "sha256": "0e85c8c6b123eec25597fb1e838c632214d3aeb0f2ed8e40ab2890df3ece807c",
+      "retrieved_utc": "2026-10-03T22:37:14Z"
+    },
+    {
+      "filename": "LICENSE",
+      "url": "https://raw.githubusercontent.com/josusanmartin/riemann/2fcb7dba28691632cdb0846d694c9b9902cfce66/LICENSE",
+      "http_status": 200,
+      "bytes": 1082,
+      "sha256": "9a97f1854719821ce6cd9be8034e27128f41c062f34a2b46233ad190b3ddca82",
+      "retrieved_utc": "2026-10-03T22:37:14Z"
+    },
+    {
+      "filename": "yang-retraction.md",
+      "url": "https://raw.githubusercontent.com/JoshuaHKU/zeta-density-one-reproduction/ac851520f1d135a56d2911ff512011feab2a32dd/RETRACTION.md",
+      "http_status": 200,
+      "bytes": 2921,
+      "sha256": "6e9f70178bf0ff29ed69043e1c3e3594c3c229132c85ae4b65f21911fc43eb19",
+      "retrieved_utc": "2026-10-03T22:41:00Z",
+      "scope": "Author retraction, reconfirmed; unchanged repository pin"
+    }
+  ],
+  "archive_base": "E:/_Datos/caos-research/riemann-hypothesis/source-cache/2026-10-03/record-refresh",
+  "local_external_lean_rebuild": false,
+  "source_log_acceptance": "Reported external evidence; not locally re-executed"
+}

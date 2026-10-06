@@ -1,0 +1,11 @@
+{
+  "analytic_inputs_independently_replayed": false,
+  "boundary_polynomial": "(793881*m**4 - 1075551048*m**3 + 45696048952*m**2 + 4353012576*m + 114318864)/(40000000000*m**2)",
+  "first_excluded_m": 1311,
+  "gain": "524086136423727/16082056213067461100000",
+  "passed": true,
+  "q": "62359683640669/74504434380000",
+  "result_sha256": "c250ac76df06e8f66aaed2c720e292bf17e82923137a01ce56d9ced29d4f094b",
+  "route": "SymPy differentiation and independent rational substitution",
+  "schema": "exp013-independent-audit-v1"
+}

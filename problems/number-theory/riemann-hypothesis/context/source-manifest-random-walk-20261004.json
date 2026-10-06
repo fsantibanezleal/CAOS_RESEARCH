@@ -1,0 +1,16 @@
+{
+  "schema": "riemann-primary-source-manifest-v1",
+  "retrieved_utc": "2026-10-04",
+  "source": {
+    "author": "Ali Mohammadi",
+    "title": "Bilinear Kloosterman sums over small boxes and uniformity of a random walk",
+    "arxiv": "2608.01203v1",
+    "url": "https://arxiv.org/pdf/2608.01203v1",
+    "license": "CC BY 4.0",
+    "bytes": 400214,
+    "sha256": "7b310fb95d7c0ab2f2e36bb3faeac475e95eef20f6ec76fad27d005be0f59b1b",
+    "pages": 16,
+    "storage": "External source cache; version/hash and eligibility review persisted here."
+  },
+  "review_scope": "Theorem eligibility and Fourier/mixing proof; no full independent validation or direct RH-F4 import."
+}

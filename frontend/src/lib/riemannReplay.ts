@@ -39,3 +39,198 @@ export function parityEvidence(data: RiemannData | null) {
   )) return undefined;
   return { result, review };
 }
+
+function compareExact(left: { numerator: string; denominator: string }, right: { numerator: string; denominator: string }) {
+  return BigInt(left.numerator) * BigInt(right.denominator) -
+    BigInt(right.numerator) * BigInt(left.denominator);
+}
+
+/** EXP-005 has a finite exact certificate and a separate analytic proof review.
+ * Require both records and their exported byte bindings before showing the threshold. */
+export function localSelbergEvidence(data: RiemannData | null) {
+  const result = data?.local_result;
+  const review = data?.local_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
+      result.schema !== 'riemann-exp005-results-v1' || result.status !== 'pass' || !result.passed ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.claim_boundary.rh_solved !== false || result.boundary_control.accepted !== false ||
+      review.schema !== 'riemann-exp005-proof-review-v1' || review.scientific_verdict !== 'confirmed' ||
+      !review.analytic_localization_reviewed || !review.exact_certificate_reviewed ||
+      result.execution_identity.head !== review.canonical_commit) return undefined;
+  if (compareExact(result.positive_point.fixed_u_simple_lower, result.parameters.simple_gate) <= 0n ||
+      BigInt(result.positive_point.localization_exponent_margin.numerator) <= 0n ||
+      BigInt(result.negative_control.simple_curve_upper.numerator) >= 0n) return undefined;
+  const roles = {
+    hypothesis: 'local_hypothesis', mathematical_proof: 'local_proof',
+    adversarial_audit: 'local_audit', result: 'local_result', verdict: 'local_verdict',
+  } as const;
+  if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole &&
+      source.sha256 === review.source_sha256[reviewRole as keyof typeof roles]),
+  )) return undefined;
+  return { result, review };
+}
+
+/** EXP-006 combines a universal proof with exact finite and interval checks.
+ * Display it only when every reviewed source hash is present in the replay. */
+export function hilbertParityEvidence(data: RiemannData | null) {
+  const result = data?.hilbert_result;
+  const review = data?.hilbert_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
+      result.schema !== 'riemann-exp006-results-v2' || result.status !== 'pass' || !result.passed ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.claim_boundary.rh_solved !== false ||
+      review.schema !== 'riemann-exp006-proof-review-v1' || review.scientific_verdict !== 'confirmed' ||
+      !review.analytic_transfer_reviewed || !review.exact_certificate_reviewed ||
+      result.execution_identity.head !== review.canonical_commit) return undefined;
+  if (compareExact(result.target.strong_simple_lower, result.parameters.simple_gate) <= 0n ||
+      compareExact(result.target.strong_simple_lower, result.target.weak_simple_upper) <= 0n ||
+      BigInt(result.target.old_linear_upper.numerator) >= 0n ||
+      BigInt(result.root_bracket.lower.root_function_upper.numerator) >= 0n ||
+      BigInt(result.root_bracket.upper.root_function_lower.numerator) <= 0n ||
+      !result.scalar_headline_barrier.passed) return undefined;
+  const roles = {
+    hypothesis: 'hilbert_hypothesis', mathematical_proof: 'hilbert_proof',
+    adversarial_audit: 'hilbert_audit', result: 'hilbert_result', verdict: 'hilbert_verdict',
+    runner: 'hilbert_runner', focused_test: 'hilbert_test',
+  } as const;
+  if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole &&
+      source.sha256 === review.source_sha256[reviewRole as keyof typeof roles]),
+  )) return undefined;
+  return { result, review };
+}
+
+/** EXP-007 retains the spectral defect inside the parity product. The tiny
+ * strict gain is shown only when the result and every reviewed source agree. */
+export function spectralDefectEvidence(data: RiemannData | null) {
+  const result = data?.spectral_result;
+  const review = data?.spectral_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
+      result.schema !== 'riemann-exp007-results-v1' || result.status !== 'pass' || !result.passed ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.claim_boundary.rh_solved !== false || result.claim_boundary.global_record !== false ||
+      result.claim_boundary.onset_exponent_improved !== false ||
+      review.schema !== 'riemann-exp007-proof-review-v1' || review.scientific_verdict !== 'confirmed' ||
+      !review.analytic_transfer_reviewed || !review.exact_certificate_reviewed ||
+      result.execution_identity.head !== review.canonical_commit ||
+      BigInt(result.target.certified_gain_floor.lower.numerator) <= 0n) return undefined;
+  const roles = {
+    hypothesis: 'spectral_hypothesis', mathematical_proof: 'spectral_proof',
+    adversarial_audit: 'spectral_audit', result: 'spectral_result', verdict: 'spectral_verdict',
+    runner: 'spectral_runner', focused_test: 'spectral_test',
+  } as const;
+  if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole &&
+      source.sha256 === review.source_sha256[reviewRole as keyof typeof roles]),
+  )) return undefined;
+  return { result, review };
+}
+
+/** EXP-008 uses the source-certified C6 value under an explicit attribution
+ * boundary: the source does not publish the coefficient matrix. */
+export function rankSixEvidence(data: RiemannData | null) {
+  const result = data?.rank_six_result;
+  const review = data?.rank_six_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
+      result.schema !== 'riemann-exp008-results-v1' || result.status !== 'pass' || !result.passed ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.claim_boundary.rh_solved !== false ||
+      result.claim_boundary.effective_starting_height !== false ||
+      review.schema !== 'riemann-exp008-proof-review-v1' ||
+      review.scientific_verdict !== 'confirmed-relative-to-attributed-rank-six-input' ||
+      result.execution.git.head !== review.canonical_commit ||
+      compareExact(result.source_constants.C6.upper, result.source_constants.C3.lower) >= 0n ||
+      BigInt(result.edge_theta.rank_six.strong_simple.lower.numerator) <= 0n ||
+      BigInt(result.edge_theta.rank_three.strong_simple.upper.numerator) >= 0n ||
+      BigInt(result.point_theta.h6_minus_h3.lower.numerator) <= 0n ||
+      BigInt(result.spectral_optimized.gain_floor.lower.numerator) <= 0n) return undefined;
+  const roles = {
+    hypothesis: 'rank_six_hypothesis', mathematical_proof: 'rank_six_proof',
+    adversarial_audit: 'rank_six_audit', result: 'rank_six_result', verdict: 'rank_six_verdict',
+    runner: 'rank_six_runner', focused_test: 'rank_six_test',
+  } as const;
+  if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole &&
+      source.sha256 === review.source_sha256[reviewRole as keyof typeof roles]),
+  )) return undefined;
+  return { result, review };
+}
+
+/** EXP-009 proves the sharp auxiliary ratio internally, then applies it inside
+ * Wang's pinned v1 global framework. The helper preserves that source boundary. */
+export function wangKernelEvidence(data: RiemannData | null) {
+  const result = data?.wang_kernel_result;
+  const review = data?.wang_kernel_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
+      result.schema !== 'riemann-exp009-results-v1' || result.status !== 'pass' || !result.passed ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.claim_boundary.rh_solved !== false || result.claim_boundary.peer_reviewed !== false ||
+      result.claim_boundary.onset_exponent_improved !== false ||
+      review.schema !== 'riemann-exp009-proof-review-v1' ||
+      review.scientific_verdict !== 'confirmed-relative-to-wang-v1-framework' ||
+      result.execution.git.head !== review.canonical_execution_commit ||
+      result.execution.declaration_commit !== review.declaration_commit ||
+      result.execution.amendment_commit !== review.amendment_commit ||
+      compareExact(result.global.simple_proportion.lower,
+        result.wang_reproduction.simple_proportion.upper) <= 0n ||
+      BigInt(result.global.gain.lower.numerator) <= 0n ||
+      BigInt(result.short_interval.certified_gain.lower.numerator) <= 0n) return undefined;
+  const roles = {
+    hypothesis: 'wang_kernel_hypothesis', amendment: 'wang_kernel_amendment',
+    mathematical_proof: 'wang_kernel_proof', runner: 'wang_kernel_runner',
+    focused_test: 'wang_kernel_test', result: 'wang_kernel_result',
+    execution_receipt: 'wang_kernel_receipt', adversarial_audit: 'wang_kernel_audit',
+  } as const;
+  if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole &&
+      source.sha256 === review.source_sha256[reviewRole as keyof typeof roles]),
+  )) return undefined;
+  return { result, review };
+}
+
+function provenanceMatches(data: RiemannData, roles: Record<string, string>, hashes: Record<string, string>) {
+  return Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole && source.sha256 === hashes[reviewRole]));
+}
+
+/** EXP-010 localizes Levinson's method and moves the simple-critical onset to 0.534.
+ * Show it only when the canonical result, its review and every reviewed source agree. */
+export function levinsonEvidence(data: RiemannData | null) {
+  const result = data?.levinson_result;
+  const review = data?.levinson_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v9' ||
+      result.schema !== 'exp010-canonical-v1' || result.accepted !== true ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.onset.rows.some((row) => row.pass !== true) ||
+      review.schema !== 'riemann-exp010-proof-review-v1' ||
+      review.scientific_verdict !== 'confirmed-with-scope-correction-to-prediction-A') return undefined;
+  const roles = {
+    hypothesis: 'levinson_hypothesis', mathematical_proof: 'levinson_proof', runner: 'levinson_runner',
+    result: 'levinson_result', adversarial_audit: 'levinson_audit', verdict: 'levinson_verdict',
+    focused_test: 'levinson_test', execution_receipt: 'levinson_receipt',
+  };
+  if (!provenanceMatches(data, roles, review.source_sha256)) return undefined;
+  const onset = result.onset.rows.find((row) => row.theta === '267/500');
+  const point = result.onset.rows.find((row) => row.theta === '5459/10000');
+  if (!onset || !point) return undefined;
+  return { result, review, onset, point };
+}
+
+/** EXP-011 certifies counterexamples: a barrier, not an improvement. */
+export function barrierEvidence(data: RiemannData | null) {
+  const result = data?.barrier_result;
+  if (!data || !result || data.schema !== 'riemann-replay-v9' || result.schema !== 'exp011-canonical-v1' ||
+      result.accepted !== true || !result.checks.A || !result.checks.B || !result.checks.C || !result.checks.D ||
+      !data.provenance.some((source) => source.role === 'barrier_verdict')) return undefined;
+  return { result };
+}
+
+/** EXP-012 is an inconclusive, stopped route; show it only with its weight-size check. */
+export function tangStopEvidence(data: RiemannData | null) {
+  const check = data?.tang_check_output;
+  if (!data || !check || data.schema !== 'riemann-replay-v9' || check.model_within_2_percent !== true ||
+      !data.provenance.some((source) => source.role === 'tang_verdict')) return undefined;
+  return { check };
+}
+

@@ -1,0 +1,20 @@
+{
+  "schema": "exp023-poststop-preservation-v1",
+  "archive": "E:\\_Datos\\caos-research\\riemann-hypothesis\\exp023-partitioned-local-20261003\\full-cover-poststop-preservation.zip",
+  "archive_bytes": 1053509,
+  "archive_sha256": "c4316f289694754df3beb0d8fc795a4e4f30d610ea999be8c24357d77dd508e2",
+  "all_zip_members_crc_and_bytes_verified": true,
+  "stable_source_bytes_before_and_after_verified": true,
+  "report_count": 95,
+  "required_report_count": 96,
+  "mathematical_status": "incomplete; no universal certificate or new proportion",
+  "shard0_checkpoint_fields": [
+    "data",
+    "sha256"
+  ],
+  "frozen_source_archive_sha256": "a27e46d1c23921f2e33a173b4b128379a6bba3b27d434a9e99d61e7159755035",
+  "member_count": 199,
+  "completed_shards": 95,
+  "total_shards": 96,
+  "universal_certificate_complete": false
+}

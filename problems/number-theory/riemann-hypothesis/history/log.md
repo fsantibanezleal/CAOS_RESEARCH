@@ -1,5 +1,285 @@
 # Riemann hypothesis history
 
+## 2026-09-28: EXP-012 stopped at step 3
+
+The step-3 value check of EXP-012 showed that Tang's dual weight has size
+`|G(1/2+it)|=(H/sqrt T)sqrt(1/2)` on `|t|<<T/H` (mpmath, three heights), so the
+dual moment is about `sqrt(h)sqrt(T)` per pair. The planned trivial bound then
+gives only `nu<(2/3)(theta-1/2)` and a hybrid large-sieve sketch gives exactly
+EXP-010's `theta-1/2`. The stop rule applied; the verdict is inconclusive and
+the preflight target A' is withdrawn. The remaining lever is an asymptotic
+evaluation of the dual family (RH-038).
+
+## 2026-09-28: EXP-011 confirmed, EXP-012 declared
+
+A structured test refuted the RH-034 candidate: six real triples around one
+near-real conjugate pair violate `Q>=2N+3O-4S` for the Montgomery-Taylor
+window. EXP-011 was declared (`9886f07`, Prediction C amended before
+implementation in `136b40f`) and confirmed with Arb at 128 bits: slack
+`-0.0582180002168...` for that configuration, and `(Q-2N)/O=2.35886369543...`
+for a 10001-cell lattice, so no linear refinement with `beta>=2.365` holds for
+this window, and with the EXP-010 detectors such refinements cannot reach
+`theta=0.532`. The independent audit's first run failed a check because of an
+inaccurate unsubdivided quadrature at large `|xi|` (kept); the corrected run
+passed. EXP-012 was declared with a fixed proof plan for a short-window moment
+with `nu<(2/3)(2theta-1)` through Tang-Khan reciprocity.
+
+## 2026-09-27: route preflights RH-028 to RH-037
+
+Every route in the post-review plan was worked with exploratory,
+floating-point preflights (scripts in `context/2026-09-27-preflights/`).
+RH-031 reproduced the EXP-010 onset and Steuding's 0.590 and 0.552, and
+priced the RH-027 targets: a Tang-type range would move the onset to about
+0.5257; a Steuding-type range would give positivity for every `theta>1/2`.
+Closed with recorded reasons: RH-033 (Wang's `Delta_K` vanishes at the onset),
+RH-028 (a Bui-Conrey-Young second piece gains below `1e-9` at short length;
+the published 0.4105 implies a second-piece contribution twice ours, recorded),
+RH-032 (no unconditional sign for Cohn-Elkies tails), RH-035 (below `1/2` needs
+an explicit odd density of 8% to 36%), RH-036 (Zhu's window infimum replayed at
+`2.047e-17`, no proportion channel). RH-037 fixed the records. Two declaration
+candidates remain: RH-027 target A' (`nu<(2/3)(2theta-1)`, onset about 0.5307)
+and RH-034, the finite inequality `Q>=2N+3O-4S`, which is false for
+edge-concentrated windows but survives every stress test for the
+Montgomery-Taylor window and would move the onset to about 0.5296. No
+experiment was declared and no verdict changed.
+[Route preflights](../context/2026-09-27-route-preflights.md).
+
+## 2026-09-27: RH-030 primary-source verification
+
+After network access was restored, the pinned archive was re-verified (68
+documents) and six new sources were pinned. Full-text reading confirmed
+Wang's short-interval theorem and pair formula as used, and sharpened the
+Steuding correction: Theorem 2.1 fixes `P(x)=x` and `F=zeta+zeta'/L`, and the
+`theta<3/8` cap comes from the constraint `G<=T^(5/6)` in the error balance.
+Tang's short-window reciprocity constrains only `max{p,q}`, which suggests a
+Tang-type target `nu<2theta-1` for RH-027. The RH-028 benchmark was already
+met on 2026-09-26. Lamzouri's Proposition 2.1 requires compactly supported
+`eta`, weakening RH-032. Two pinned documents (Anthropic page, Karatsuba URL)
+no longer reproduce from their URLs. No verdict changed.
+[Dossier section 6](../context/2026-09-27-literature-and-representation-sweep.md).
+
+## 2026-09-27: literature sweep, RH-027 correction and strategic review
+
+A sweep of 2026 zero-proportion results, short-interval moment technology,
+Fourier optimization, families and function fields, and cross-field
+reformulations found no external result above the EXP-009 constant or the
+EXP-010 onset. Wang's printed global gain is `delta_0=6.66624e-8`, read from
+the cached v1 source; EXP-009 is about `2.9e-8` above `C_0+delta_0`. The
+Yang group retracted its density-one preprint on 2026-09-03. The review
+corrected the RH-027 premise: Steuding's short-window error is proved for
+degree-one `Q`, fixed shifts and `nu<3/8`, and `(3theta-1)/4` is an inference.
+It also corrected the title of reference 28. arXiv, Zenodo and Springer full
+text were unreachable, so snippet-level statements are gated behind RH-030.
+The program adopted methodology 13 records (`research-governance.json`,
+`manuscript-map.md`) with active focus `RH-F4` and added RH-030 to RH-037. No
+experiment was declared and no verdict changed.
+[Dossier](../context/2026-09-27-literature-and-representation-sweep.md).
+
+## 2026-09-26: Levinson manuscript v0.01 published and EXP-010 promoted
+
+EXP-010 merged to `develop` through PR #341 and was promoted to `main` through
+PR #342. The ten-page manuscript *Levinson's method in short intervals and
+simple zeros of the zeta function* is published at
+[10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155) (concept
+[10.5281/zenodo.22984154](https://doi.org/10.5281/zenodo.22984154)). The DOI was
+reserved first and printed in the header; the deposit build differs from the
+reviewed build only in those two lines. A fresh unauthenticated download
+matches all 387,975 bytes, SHA-256
+`4fd71686d6dada90c41a2156f5cbecb428d4f1acd372028020896113b1033d67`.
+Publication is not external peer review.
+
+## 2026-09-26: EXP-010 moved the simple-critical onset to 0.534
+
+Declaration `2f7aaa6b` froze the question, eight degree-201 detector
+parameter sets and all thresholds before any runner existed. EXP-010 proves
+that Levinson's method with Conrey's general operator polynomial localizes to
+`(T,T+T^theta]` for mollifier exponents `nu<theta-1/2` (Young's short proof
+with a window weight), and that on such windows it counts distinct sign
+changes of `Z` with density `kappa=1-log(c)/R` for every `Q` with
+`Q(x)+Q(1-x)` constant. Certified constants give `kappa>0.7170 nu`, five times
+the Selberg slope. Through the EXP-006 product this gives a positive
+proportion of simple critical zeros for every fixed `theta` in `[0.534,1)`,
+against `0.5458838` for EXP-008; at `theta=0.5459` the bound exceeds
+`0.0177638`, about 1000 times the EXP-008 value. The canonical run
+(`3dba086f`), the independent quadrature audit and the counting-lemma controls
+(`77000336`) all passed. Writing the proof exposed and fixed two gaps of the
+first draft (the off-diagonal tail and the reflected factor) and wrong lemma
+numbers for Young's paper. Two independent referee passes found no fatal or
+major error; their minor fixes are applied, and Prediction A's extension to
+arbitrary `Q` was corrected (the constant term is `Q(0)^2`).
+
+## 2026-09-24: EXP-009 confirmed and release 0.73.000 live-verified
+
+EXP-009 proved the sharp three-point ratio `R(alpha,beta)<=sqrt(2)` and, under
+Wang's arXiv:2609.24167v1 framework, the global simple-critical proportion
+`0.6725007995946757558...`. The seven-page preprint is public at
+[10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291). Release
+0.73.000 is live-verified from main; the details are in
+[state.md](../../../../program/riemann-hypothesis/state.md).
+
+## 2026-09-24: release 0.72.000 live-verified
+
+Release PR #330 and promotion PR #331 merged. Tag `v0.72.000` points exactly to
+main commit `45c34c81`. Main CI and Pages passed on that commit. Eleven public
+files byte-match the exact-main build, and eight live desktop/phone EN/ES
+light/dark scenarios visited all six research tabs and captured 352 screenshots
+with zero failures. The compact live receipt preserves replay v7, both portable
+canonical result hashes, the onset brackets, and the explicit source boundary.
+
+## 2026-09-23: release 0.72.000 candidate passed rendered QA
+
+The versioned candidate passed 66 scoped Riemann/export tests, 22 frontend
+tests, the production build, and all repository guards. Its final pointer-driven
+browser matrix passed 20 scenarios, 120 tab visits, and 3,072 screenshots in
+both languages, both themes, and five viewport sizes with zero failures. Visual
+inspection found and corrected an overflowing eight-experiment workflow label
+before the final receipt was recorded. Promotion and live verification remain.
+
+## 2026-09-20: replay v7 merged and release 0.72.000 prepared
+
+Research PR #325 merged the source-bound EXP-007/008 replay, the eight-record
+bilingual workbench, and updated program documentation into `develop` after
+the complete Linux repository gate passed. Release candidate 0.72.000 records
+the fixed-finite-rank transfer, the attributed rank-six onset, the strict
+spectral companion, and manuscript v0.07. Rendered and live deployment gates
+remain required before the release can be called complete.
+
+## 2026-09-20: EXP-008 confirmed an earlier source-certified rank-six onset
+
+Declaration `2297d2fc` preceded implementation and computation. EXP-008 proves
+that the local Selberg detector transfer works for every fixed finite rank and
+then applies Pearce-Crump's stated $C_6$ interval. The public source does not
+print the rank-six coefficient matrix, so the input remains attributed.
+
+The exact certificate proves
+`0.5458837<theta6<0.5458838`, compared with
+`0.5458846<theta3<0.5458847`. At theta=0.545884, the rank-six term exceeds
+`2.5541123454645702e-7` while the rank-three term is negative. At theta=0.5459,
+the pointwise gain exceeds `9.263543061777356e-7`. The optimized EXP-007
+companion is also strictly positive. The portable canonical result SHA-256 is
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+
+## 2026-09-20: manuscript v0.07 published and verified
+
+The 30-page manuscript integrates the spectral-defect parity theorem,
+rank-independent localization, and the source-certified rank-six onset. Three
+DOI-bearing compilation passes had zero warnings, undefined references, and
+box errors. All pages were rendered and visually inspected after the final
+author-metadata correction. Zenodo published v0.07 at
+[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012). A fresh
+unauthenticated download matches all 575,351 local bytes, SHA-256
+`c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
+Publication is not external peer review and does not change the open status of
+RH.
+
+## 2026-09-20: canonical JSON made byte-portable
+
+The EXP-007 and EXP-008 runners now write explicit UTF-8/LF bytes, so canonical
+hashes survive Git checkout normalization on Windows and Unix. Fresh clean-run
+receipts bind EXP-007 to
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`
+and EXP-008 to
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+The exact Windows byte streams cited by the already published v0.07 manuscript
+remain archived under each experiment's `artifacts/windows-canonical-v1/`
+directory.
+
+## 2026-09-20: EXP-007 confirmed a spectral-defect parity coupling
+
+Declaration `a2abdcc8360399b3fa42aaea9245e4b83352c30f` preceded implementation
+and computation. The proof retains the full simple-real Gram defect through
+the EXP-006 parity product:
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+The parameterized rank-trace theorem and spectral profile are attributed prior
+work. The new candidate contribution is their coupling to odd support and the
+resulting strict improvement of every positive point of the EXP-006 curve.
+At theta=0.5459 the correlated directed-rational certificate proves
+`H-h3>1.3732525985593292701164661575215e-70`. The onset bracket remains
+`(0.545884,0.545885)`.
+
+The canonical CPU run started from clean commit
+`d63111ffa8a348c51eb4fd06f5a1e70a51211576`, checked 652,260 rational spectra
+and 18,479 multiplicity profiles, and overlapped every shared quantity with an
+independent 100-digit interval replay. Its result hash is
+`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
+Two failed attempts remain preserved: one corrected the relation between two
+independent interval enclosures, and one removed an unjustified positive-sign
+expectation from a diagnostic sensitivity control. The result does not solve
+RH, lower the onset exponent, or establish external priority.
+
+## 2026-09-20: EXP-006 manuscript v0.06 published and verified
+
+The 26-page manuscript includes the sharp finite product, its complete proof,
+the quadratic short-interval transfer, the root bracket, the scalar barrier,
+and the EXP-006 verification appendix. Three DOI-bearing compilation passes
+had zero warnings, undefined references, and box errors. All 26 pages were
+inspected in seven uncropped contact sheets. Zenodo published v0.06 at
+[10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479). A fresh
+unauthenticated download matches all 545,773 local bytes, SHA-256
+`dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082`.
+The v0.05 source, PDF, metadata and receipts are archived unchanged. Publication
+is not external peer review and does not change the open status of RH.
+
+## 2026-09-20: EXP-006 confirmed a sharper threshold below 0.545885
+
+Declaration `b1febcf8a6d5830218e1df386af1e8a92c3037be` preceded all
+implementation and computation. The first exact run confirmed the declared
+product inequality. A consistency audit then retained the simple-real term in
+the attributed arbitrary-parameter Hilbert bound, strengthening the theorem to
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+The amended runner was committed before the canonical run at
+`0d736fa22ce7e833200381a32e8cc89f77c660e8`. Its 18,479-profile census,
+directed rational threshold calculation, scalar barrier witness and independent
+100-digit interval replay all passed. The canonical result hash is
+`82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf`.
+
+The short-interval consequence has a unique positivity root in
+$(0.545884,0.545885)$. At $\theta=0.5459$, where the EXP-005 linear term remains
+negative, it proves a simple-critical lower proportion above
+$0.0000168381638551244569880374399$. The result is asymptotic, recent-preprint
+dependent, and internally reviewed. It does not solve RH or establish external
+priority or peer acceptance.
+
+## 2026-09-20: EXP-005 manuscript v0.05 published and verified
+
+The 24-page manuscript integrates the explicit local Selberg theorem, its proof,
+the threshold bracket $(0.5459,0.546)$, and the fixed $\theta=0.546$ witness. It
+passed the scientific-voice gate, a three-pass build with zero warnings or box
+errors, and a full final-page render review. Zenodo published v0.05 at
+[10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518). A fresh
+unauthenticated download matches all 526,178 local bytes, SHA-256
+`bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc`.
+The v0.04 source, PDF and metadata are archived unchanged. Publication does not
+constitute external peer review, an effective-height result, or a proof of RH.
+
+## 2026-09-19: EXP-005 confirmed an explicit threshold below 0.546
+
+Declaration `6fd59fec51dda399de40e0327107dba42deb5b45` preceded implementation
+and all canonical execution. Pearce-Crump's coefficient-uniform Selberg
+detector was localized by retaining the arbitrary-subinterval form of its
+rational-frequency estimate. For every fixed $1/2<\theta<1$, the resulting
+distinct odd-critical lower proportion is $(\theta-1/2)/(4eC_3)$. Combining it
+with EXP-004 gives an explicit simple-critical positivity threshold in
+$(0.5459,0.546)$, improving Wang's reported cosine threshold.
+
+At $\theta=0.546$, a fixed legal mollifier exponent proves odd-critical
+proportion above $0.00643869330937194$ and simple-critical proportion above
+$0.0000976239413345397$. The exact certificate passed all fourteen controls;
+its result hash is
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+The analytic audit checked every shortened-interval error term, normalization,
+count convention and limit order. Two serialization attempts are retained as
+failed/superseded evidence. The result is asymptotic, recent-preprint dependent,
+and not a solution of RH.
+
 ## 2026-09-12: EXP-004 confirmed and v0.02 published
 
 Declaration `e03413b2301bf45ca68ff6e945f25add9a1c3a89` preceded implementation and
@@ -145,3 +425,330 @@ Commit 235b261 preserves five byte-identical v0.01 manuscript/publication files
 under versions/v0.01. The old public DOI and PDF are unchanged. Private draft PR
 #633 carries the confirmed pressure mirror and tested version helper. No new
 Zenodo version is reserved or published at this point.
+
+2026-09-28. Release 0.74.000 exports replay v9 (EXP-010, EXP-011, EXP-012 bound
+by committed bytes) and the twelve-experiment bilingual workbench. Research PR
+#346 and promotion PR #347 are merged; main commit a464bdb passed CI and Pages,
+and the live bytes match the exact-main build. Candidate QA: 466 Python and 28
+frontend tests, 8-scenario browser matrix with 416 screenshots and 0 failures.
+Tag v0.74.000 is pending because the session proxy refuses tag pushes. RH-026 is
+done.
+
+## 2026-10-03: source update, fixed-input cap and supported phase obstruction
+
+Fresh primary-source reading and upstream commit checks update external
+standing. Declaration 8db97480 preceded EXP-013/014; declaration 12fa7d70
+preceded EXP-015. All three confirm their scoped predictions with exact
+arithmetic, separate auditors and 20 focused adversarial/replay tests.
+EXP-013 gives 0.83699291404068... for an attributed strip-wide distinct
+count and a uniform m=1310 cap. EXP-014/015 prove the pointwise phase
+threshold, the latter with nonzero basic Mobius coefficients.
+No new onset, signed-sum barrier, external peer review or RH result.
+
+The methodology-13 review retains RH-F4 with a narrowed signed reduction
+obligation and closes RH-F6. No new manuscript or Zenodo version. Current
+count-label errors are corrected without rewriting prior frozen evidence.
+The old tag-pending receipt is supplemented by verified metadata: tag
+v0.74.000 targets a464bdb5 and the release published 2026-09-30 UTC.
+Live replay remains v9; new records await serialized integration RH-042.
+
+## 2026-10-03: trace-aware follow-up EXP-016
+
+Declaration 0ea1f332 preceded implementation. A zero-sum Jensen surplus
+strengthens the clipping dichotomy and gives the exact attributed
+distinct-strip bound 69341429073721/82845897125000. Uniform revised
+cap m=1311; EXP-013's original-assembly cap remains intact.
+The initial auditor failed an algebraic-expression structural equality;
+its failure is retained, and the repaired zero-difference check passes.
+Eleven new controls and the previous twenty focused tests pass.
+Canonical SHA-256 `7b0346f7e5122efc2a5d48dc6ceb6c28f0e8341cc8a5cf57be6863a16d1c2d74`. No new onset, RH, Lean, interval-replay
+or peer-review claim. RH-F7 closes; no new manuscript/Zenodo trigger.
+
+## 2026-10-03: EXP-017 retained-energy envelope
+
+Declared and pushed as 416bad0d before computation; issue #354. The
+uniform sharp proof, independent quadratic minorant, exact candidate and
+50 focused tests pass. Formula prior art was located and explicitly
+attributed before closure. Bound 0.83699292567522... is a small attributed
+distinct-strip improvement; no onset/RH/new-manuscript claim. RH-F8 closes.
+
+## 2026-10-03: EXP-018 conditional nine-point transfer
+
+Declared/pushed a1bf2178 before arithmetic, licensed packet pinned by
+45fca5a2, issue #355. Conditional uniform counting proof, independent
+audit, capacities, exact candidate and 66 affected tests pass. The result
+is 3997934614153/4775549550000=0.83716744477146... under explicit local
+and analytic premises. The upstream stale pending flag and absent packet
+hash in the replay log are retained. RH-F9 closes; RH-046 / issue #356
+owns independent packet-bound replay and manuscript reassessment. No
+unconditional input upgrade, onset/RH claim or public release is made.
+
+## 2026-10-03: EXP-021 complete shifted composite arithmetic layer
+
+Declaration 8d45ddfc preceded controls; derivation 6b84615c preceded the
+4.17-second exact run. Gcd classes, local shifted Euler numerators,
+primitive conductor/parity and squarefree induction factors are retained.
+The receipt binds the proof, declaration and source. Exact cyclotomic,
+symbolic and independent rational controls pass and distinguish three
+incorrect alternatives; Ruff passes. This classical supporting layer
+does not prove uniform analytic reciprocity or signed cancellation and
+does not improve the onset/proportions. No manuscript trigger; the user
+objective remains unmet. The EXP-020 full certificate continues running.
+
+## 2026-10-03: EXP-022 pressure duality and changed-input target
+
+Declaration 4b1af0f5 / admission 5c35f3d3 preceded the six-second search;
+f9aaf9cf preceded the explicit-cap arithmetic. Exact rational gap witnesses
+and native-sinc 256-bit verification prove that this fixed packet counting
+assembly is below 0.837421287797... for all p>=0 and finite admissible m.
+The all-vertex envelope agrees with the independent two-line proof; Ruff
+passes. Both dependency setup failures occurred before mathematics and
+are retained. A p=1/1250 candidate would give 0.837385561059... after a
+new complete certificate; the declared value gate passes. RH-F12 closes,
+RH-047 / issue #361 is confirmed supporting material. No new lower zero
+theorem, standalone manuscript or user stopping condition follows.
+
+## 2026-10-03: EXP-023 new-pressure pilot
+
+Declaration f2e1e7ec and RH-F13 admission 0de0e59d preceded implementation.
+Commit 62dd7923 binds separate wrappers, immutable quadratic core and
+baseline table prefixes before traversal. Thirty targeted controls pass,
+including exact transfer, all summed-pressure rounding indices and actual
+interruption/resume smoke. The independent auditor rejects unstarted cover.
+Issue #362 tracks the twenty-minute, one-CPU actual shard-0 pilot launched
+19:35:50 UTC. EXP-020's frozen 24-worker cover continues. Neither partial
+traversal proves a new zero proportion or fulfills the user's stopping gate.
+
+## 2026-10-03: EXP-024 uniform shifted representation
+
+Declaration 8528b1e6 preceded numerical controls; 440e5d1b persisted the
+exact Gaussian identity and all-order phase error. The finite heat
+construction extends the reduction to fixed smooth compact windows.
+Nine symbolic moments, eight independent integral pairs, 32 phase bounds,
+eight heat-multiplier identities and a full enclosed zeta-moment/residue
+negative control pass. API/lint history and initial source are retained.
+The signed main arithmetic sum is still open, with no new moment range,
+onset, proportion, priority, manuscript or research stopping claim.
+
+## 2026-10-03: EXP-023 revised full cover and automatic budget
+
+The revised pilot stopped incompletely at 20:33:47 UTC after 25m45s;
+its 345-second overrun, validated snapshot and cost review are retained.
+Commit 295ee71c preceded the four-worker full-cover resume at 20:48:12 UTC.
+Its separately bound operational supervisor has a six-hour budget and
+passes real process-ownership, unrelated-sentinel and fast-exit controls.
+Two orchestration setup failures remain in the history. Frozen proof
+sources are unchanged. At 20:50 UTC 94 of 96 shards are complete; there
+is no universal-certificate verdict or new zero proportion yet.
+Scoped collection finds 258 Riemann tests after the previously passing
+full Riemann suite and three passing new supervisor controls. Attempted
+all-problem collection exposed unrelated missing dependencies and is not
+used as validation of this scoped session.
+
+## 2026-10-03: later source eligibility and transfer gates
+
+The late source manifest preserves Qi--Qiao, Das--Pujahari and the Cicada
+Lean port. A visually checked PDF exponent minimum has an exact rational
+inconsistency; the record rejects the displayed derivation's claimed
+range as an imported premise, without refuting the underlying theorem.
+Spectral-family hypotheses and the Lean port's two explicit analytic inputs
+are retained. The EXP-024 signed interface derives the unshifted gcd
+residue and distinguishes two different Mellin weights; cancellation remains
+open. EXP-023's stdlib transfer auditor rejects its actual 95/96 cover and
+issues no bound receipt. None of these supporting audits meets the user's
+research stopping condition.
+
+## 2026-10-03: actual-output corruption and transport gates prepared
+
+EXP-023's actual 95-report output is rejected by both the new twelve-case
+corruption control runner and exact-byte reproducibility archive builder.
+The source-bound negative receipt is retained. Their complete-output paths
+must still execute after all 96 shards and the exact transfer pass. Copies
+isolate intentional corruption from live output; extracted archive auditors
+will check the preserved physical runtime bytes. CI 37155303536 passed at
+098c0476, with repository guards/artifact scope only. Neither CI nor these
+prepared gates constitutes the unfinished mathematical result.
+
+## 2026-10-03: short-support and non-abelian conversion review
+
+The January Kloosterman search lead is corrected against its primary
+withdrawal notice. Wright's August short-support theorem and Pascadi's
+non-abelian fixed-modulus method are archived with their actual hypotheses.
+A support-graph norm calculation shows why unrestricted partitioning
+consumes the short-support saving; exact Fourier completion shows the
+frequency-localization obligation for the non-abelian route. These are
+classical conversion requirements, not a new signed-moment theorem.
+The publisher's HTTP-success challenge page is excluded as mathematical
+content. A new-head CI dispatch and listing encountered a network timeout
+and HTTP 503; only the earlier 098c0476 CI success is currently verified.
+
+The support review's Gaussian argument ratio was corrected from H0*n/K0
+to K0*n/H0 by checking the exact EXP-024 identity before use. Its double
+functional-equation discussion retains the cancellation of one existing
+Gauss factor, so an additional Kloosterman sum is not presumed to appear.
+No experiment or theorem had used the reversed ratio.
+
+## 2026-10-03: native table pilot retained as inconclusive
+
+The direct-interval native hypergeometric pilot did not establish cell zero
+within its eight-level subdivision limit. Exact-point formulas agree with
+the archived kernel; interval width prevents the comparisons. Both original
+source and receipt are preserved. A second, separately declared midpoint
+Taylor audit uses global Fourier derivative bounds without window positivity.
+Its pilot must pass before any full-table admission. At 22:20 UTC EXP-023
+remains 95/96 and EXP-020 is 94/96. No complete new certificate is claimed.
+
+The native midpoint Taylor pilot passed its 512 cells. Its full run then
+retained 32,031 successfully compared closed cells and stopped inconclusively
+near a kernel zero, without a complete-table flag. A kernel-first Taylor
+variant is separately declared to avoid a global squared-kernel remainder
+dominating small values. It must pass its own pilot and full-range gate.
+The previously timed-out issue #360 update was inspected and then posted
+successfully at issuecomment-5974118103; no duplicate was found.
+
+The kernel-first native audit then passed all 52,240 closed cells in both
+tables in 148.04 seconds, with maximum bisection depth three. Its independent
+formulas and whole-cell remainders strengthen the input audit within the
+shared FLINT/Arb trust base. The archive builder now requires this bound
+receipt and includes all three audit sources, declarations and original
+partial/success receipts. EXP-023 remains 95/96; EXP-020 has reached 95/96.
+No complete improved zero-proportion theorem or publication is inferred.
+
+## 2026-10-03: newly accepted formal input and declared vector lift
+
+The 22:37 UTC primary-source refresh archives Lavery's newly accepted
+6734302/10000000 critical-line bound, source and reported two-kernel checks.
+The submitted proof is preserved unmodified under its declared Apache-2.0
+license; no local Lean rebuild is asserted. EXP-025 was declared and pushed
+as 1a8b9f63 before its fixed arithmetic/window preflight. It passes source
+functional binding, all capacities, an independent native window enclosure
+and exact m=742 block residuals, proposing a distinct-strip consequence
+30945470743359/36955122080000. The complete vector-pressure proof review
+and separately declared pure-rational scalar/accounting audit remain pending.
+The stale Yang density-one abstract is rejected against the unchanged
+repository retraction. Neither source refresh nor preflight closes the goal.
+
+## 2026-10-03: completed distinct-zero theorem and publication
+
+## Completed distinct-zero results, 2026-10-03
+
+EXP-020 completed all 96 shards and every final check: the stronger local
+inequality gives 3997934614153/4775507750000=0.8371747724947154... for
+distinct strip points. EXP-025's reviewed vector-pressure application gives
+30945470743359/36955122080000=0.8373797460706156..., with Lavery's
+external universal local theorem explicitly attributed and not locally
+Lean-rebuilt. The corrected BGSTB integrated theorem and Knausgard's
+mixed-Gram argument remain dependencies.
+
+The focused companion `distinct-zero-gram` v0.01 is published and all three
+files are live-byte-verified: [version DOI](https://doi.org/10.5281/zenodo.23128663),
+[concept DOI](https://doi.org/10.5281/zenodo.23128662). Its PDF is 376,803 bytes,
+SHA256 2d524ee456b330598a78bf56ab532e93ca027c500c846065b103dcfcd1cba0c4.
+The exact-byte EXP-020 runtime and scoped mathematical source ZIPs are public.
+Issues #356/#358 close the local input obligation; #364 tracks publication
+and release. PR #363 remains draft and unmerged. No new live application
+release or private main promotion is claimed yet.
+
+EXP-023 remains 95/96 under its owned supervisor through the deadline
+2026-10-04 02:48:12 UTC. Its larger 0.8373855610599298... candidate is
+unproved and not in the published theorem. EXP-019 remains suspended.
+RH is open; the short-window onset stays 0.534. Worldwide priority and peer
+acceptance are unconfirmed. RH-F4 remains the active analytic focus.
+
+Native editor compilation failed because standard platform directories were
+unavailable. Two-pass exported MiKTeX PDF, voice/layout/reference checks and
+all nine rendered pages pass. DOI header is printed; public PDF and both ZIP
+downloads exactly match local bytes. No peer-review claim follows.
+
+
+## 2026-10-04: integrated research, release QA and bounded point diagnostic
+
+PR #363 merged the completed EXP-020/025 research and immutable publication
+receipts into develop (`0fd13678`). The source-bound bilingual workbench and
+25 experiment records are prepared for serialized 0.75.000 in draft PR #365.
+68 export tests and 31 frontend tests pass; latest source CI `37164980042`
+passes. A manual phone review found equation/table readability defects; commit
+`76f3c8ec` fixes them and the restarted full rendered matrix remains in progress.
+No 0.75.000 live deployment is asserted. Private publication backup PR #799
+merged, main/develop `7dbdeab4`; this does not promote unrelated products.
+
+Declared diagnostic `ef0746c4` inspected one immutable EXP-023 checkpoint:
+17,967,104 nodes, 21 pending boxes. All 21 exact midpoints exceeded the target
+with agreeing derivative/native 0F1 enclosures at 256 bits (shared FLINT/Arb).
+No counterexample was found. This finite diagnostic does not certify boxes,
+explain all traversal cost, or complete the missing shard. The worker, runtime
+sources and deadline were preserved. RH remains open; onset remains 0.534.
+
+## 2026-10-04: EXP-026 compact isolation and verified release
+
+EXP-026 retains the exact three-quarter coloured remainder. Six rational
+sign brackets define actual kernel roots isolating one doubled point with
+positive simple energy and pressure below delta. Native Arb and independent
+Fraction audits pass; the latter rejects reversed/overlapping brackets and
+changed source. This closes the count-only/pressure-only gain routes, without
+a new zero bound. The lint-only Interval rename is replayed; both original
+and current audit receipts remain preserved. RH-F4 stays primary.
+
+Release 0.75.000 is live at main 51b8e91b after PRs #365/#367/#366.
+CI/Pages pass; all 76 served files match the artifact and local build.
+Production QA: 8 scenarios, 48 tabs, 656 checked PNGs, zero failures.
+EXP-023 remains 95/96; its candidate is unproved. No coordination files
+were relocated; the repository remains the research authority.
+
+## 2026-10-04: EXP-027/028 complete signed moment and corrected smoothing
+
+EXP-027 derives the complete classical shifted composite transformation.
+EXP-028 internally proves the range nu<min(1/2,(17/33)*(2theta-1)) by
+independent exact-Hankel/Fourier and gamma-Mellin norm routes. Both pole
+terms, coalescence, actual signed coefficients and all variable blocks remain.
+The narrower inverse-heat window is charged explicitly: eta=1/100000
+gives corrected exponents -7/250000 and -937/400000 at theta=0.5339,
+nu=0.0349. Exact controls pass 7,430 configurations and five refutations;
+native and stdlib rational parity give h>0.0003985233159135 using the frozen
+EXP-010 detector. The internal simple-critical onset improves to 0.5339.
+No effective height, worldwide-priority, external peer review or RH claim.
+The next immutable Levinson manuscript and deployment remain required.
+
+EXP-023 reached its owned six-hour deadline; shutdown completed 02:48:18 UTC.
+95/96 shards and stopped checkpoints are preserved in a verified stable
+1,053,509-byte archive SHA256 c4316f289694754df3beb0d8fc795a4e4f30d610ea999be8c24357d77dd508e2.
+Its proposed distinct-strip bound remains unproved. No data or frozen
+publication was removed, relocated or overwritten. RH-F4 remains primary.
+
+## 2026-10-04: immutable Levinson v0.02 published
+
+EXP-028 is published with its full internally reviewed moment proof at DOI 10.5281/zenodo.23132248, concept 10.5281/zenodo.22984154. All fourteen final rendered pages pass visual review. The 80-member source ZIP replays native, rational and 7,430 exact adversarial controls from extraction. PDF and ZIP public bytes match the compact receipts. Earlier root v0.01 remains unchanged. Promotion and a new app release remain open; publication is not external peer review.
+
+## 2026-10-04: EXP-028 app delivery and retained RH-F4 strategy
+
+App 0.76.000 is live at main fc4f82685bb5104443236da5a8d5d5c723ae45e0; PRs #371/#372
+and develop/main CI plus Pages pass. All 76 live files match the actual
+CI artifact and reviewed build. Production replay passes 8 scenarios,
+48 tabs and 704 verified PNGs; selected actual views pass inspection.
+Levinson v0.02 remains immutable at DOI 10.5281/zenodo.23132248.
+RH-F4 is retained for a source-bound Mellin frequency-averaging preflight;
+no new range/onset or manuscript is admitted. EXP-023 stays stopped.
+RH-038 is resolved by the EXP-027/028 alternative transformed route,
+not by proving the previously missing hybrid asymptotic large sieve.
+
+## 2026-10-04: User-stopped research and publication separation repair
+
+Research is paused. Three manuscript deposits incorrectly contained four ZIPs.
+The full account inventory and after-audit identify all affected records;
+the three existing manuscripts now contain only their original PDFs. Separate
+linked datasets preserve every archive byte. Scientific PDFs and DOIs are
+unchanged. Correction receipts and exact scope are recorded in
+program/riemann-hypothesis/publication-correction-20261004/.
+The repair branch starts at the delivered EXP-028 baseline and does not promote
+the paused EXP-029 research or unfinished app branch. EXP-023 remains incomplete.
+
+## 2026-10-04: Publication separation repair delivered
+
+Maintenance release 0.76.001 preserves the delivered scientific payload and
+corrects manuscript/evidence placement, admission and links. PRs #378/#379,
+main CI and Pages pass; all 76 live files match the reviewed build artifact.
+Production replay passes 8 scenarios and 48 tab visits, with
+704 verified screenshots. All 245 manuscript file sets are PDF-only;
+three evidence records retain the four original archives. Original PDFs,
+DOIs and historical receipts remain preserved. The account audit validates
+publication placement, not every theorem. Research and PR #376 stay paused.
