@@ -91,8 +91,9 @@ classes. `pd(R_3) = 3`. Published in `unbounded-defect` v0.02 (Proposition 5.3, 
 | programme record | `program/petersen-coloring/` (governance, manuscript map, plan, state, backlog, research lines, this file) |
 | heavy artifacts | `E:/_Datos/caos-research/petersen-coloring/` |
 | manuscripts | `manuscripts/petersen-coloring/{consequence-audit,unbounded-defect,colorable-only-by-itself}/` |
-| research worktree | `E:/_worktrees/CAOS_RESEARCH-petersen-coloring` on `work/petersen-coloring/open` (moved from `E:/_Temp` on 2026-10-06) |
-| vault worktree | `E:/_worktrees/CAOS_MANAGE-petersen-coloring` (detached at `origin/develop`, push with `git push origin HEAD:develop`) |
+| research worktree | removed at the end of round 3 (2026-10-06) after every commit was verified on `origin/work/petersen-coloring/open`; recreate with `git -C D:/_Repos/Research_Caos/CAOS_RESEARCH worktree add E:/_worktrees/CAOS_RESEARCH-petersen-coloring work/petersen-coloring/open`, then a `.venv` from `requirements.txt` plus `python-sat` and `networkx` |
+| ignored records of the old worktree (scouting PDFs and extracts, every experiment's run logs, build logs) | `E:/_Datos/caos-research/petersen-coloring/worktree-ignored-2026-10-06/` (482 files, paths preserved) |
+| vault worktree | removed at the end of round 3; recreate `E:/_worktrees/CAOS_MANAGE-petersen-coloring` detached at `origin/develop` and push with `git push origin HEAD:develop` |
 | management mirror | `_CAOS_MANAGE/plans/caos-research/petersen-coloring/` |
 | vault manuscript metadata | `_CAOS_MANAGE/manuscripts/petersen-coloring/` |
 
