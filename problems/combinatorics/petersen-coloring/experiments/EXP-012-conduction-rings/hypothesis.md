@@ -136,3 +136,13 @@ added before its result: with exactly one bad vertex per bad block the bad block
 `B`-blocks, since an `A`-block with one bad vertex between two good `B`-blocks would have both
 connectors at distance 0, forcing the class of its bad vertex to be zero, which a bad vertex never
 has.
+
+## Addendum 4 (2026-10-06), before the runs named here
+
+Open obligation of `unbounded-defect` v0.01: the upper bound `pd(R_3) <= 3` (P4 timed out with the
+cardinality encoding). Witness search by designated relaxation, as for `R_4` in EXP-009: relax the
+star condition at exactly one vertex in each of the three `B`-blocks of `R_3`, at the local index of
+the bad vertex of the `B`-block witness of `R_2` (and, if that fails, the next three `B`-block
+vertices in order of local index). A SAT answer whose checker defect is 3 gives `pd(R_3) = 3`;
+UNSAT answers decide nothing about `pd(R_3)`. Budget 30 minutes per combination, at most four
+combinations. Runner `run_r3_upper.py`, result `artifacts/r3-upper.json`.

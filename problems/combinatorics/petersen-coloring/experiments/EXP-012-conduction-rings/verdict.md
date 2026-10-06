@@ -85,3 +85,12 @@ yes.
 - The step from `R_2` to all `R_t` is the ring lemma, proved by hand; its base case is the
   computed absence of small cycle-separating cuts in `R_2`.
 - The upper bound `pd(R_3) = 3` is not established; nothing depends on it.
+
+## Addendum 4 outcome (2026-10-06): `pd(R_3) = 3`
+
+`run_r3_upper.py` regenerated a map of `R_2` with exactly two bad vertices (local indices 4 and 35
+of the two `B`-blocks), then relaxed the star condition at local vertex 4 of each of the three
+`B`-blocks of `R_3`: SAT in 168.6 s, and the independent checker counts exactly three bad vertices.
+With the verified UNSAT of "at most 2" (P3), `pd(R_3) = 3`. The ring bound `pd(R_t) >= t` is attained
+at `t = 2` and `t = 3`, with the bad vertices in the `B`-blocks. P4 of addendum 2 is now PASS.
+Artifacts: `artifacts/r3-upper.json`, `artifacts/run-r3-upper.log`.
