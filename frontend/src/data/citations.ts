@@ -457,8 +457,22 @@ export const CITATIONS: Citation[] = [
     id: 'pccunbounded',
     label: 'Santibáñez-Leal 2026b',
     citation:
-      'Santibáñez-Leal F. (2026). Cyclically 4-edge-connected cubic graphs of unbounded Petersen defect. Preprint v0.01, CC BY 4.0. Statement (e) of the sublinear approximation conjecture of Mattiolo, Mazzuoccolo and Mkrtchyan is false, so their conjectured equivalence holds.',
-    doi: '10.5281/zenodo.22847193',
+      'Santibáñez-Leal F. (2026). Cyclically 4-edge-connected cubic graphs of unbounded Petersen defect. Preprint v0.02, CC BY 4.0. Statement (e) of the sublinear approximation conjecture of Mattiolo, Mazzuoccolo and Mkrtchyan is false, so their conjectured equivalence holds; pd(R_3) = 3; transfer semigroups of 6-poles, and every ring of claws and Petersen superedges is Petersen colorable.',
+    doi: '10.5281/zenodo.23196817',
+  },
+  {
+    id: 'hs2014',
+    label: 'Hägglund & Steffen 2014',
+    citation:
+      'Hägglund J., Steffen E. (2014). Petersen-colorings and some families of snarks. Ars Mathematica Contemporanea 7(1), 161-173. Flower snarks have Petersen colorings but no strong Petersen colorings; Blanuša and Goldberg snarks.',
+    url: 'https://ris.uni-paderborn.de/record/10169',
+  },
+  {
+    id: 'ss2023',
+    label: 'Sedlar & Škrekovski 2023',
+    citation:
+      'Sedlar J., Škrekovski R. (2023). Normal 5-edge-coloring of some snarks superpositioned by the Petersen graph. arXiv:2305.05981. The superedge obtained from the Petersen graph by removing two non-adjacent vertices.',
+    url: 'https://arxiv.org/abs/2305.05981',
   },
   {
     id: 'pccselfonly',

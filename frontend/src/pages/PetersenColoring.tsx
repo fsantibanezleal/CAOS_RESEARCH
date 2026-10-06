@@ -400,6 +400,44 @@ export default function PetersenColoring() {
             )}
           </p>
           <Refs label={t('Key sources', 'Fuentes clave')} ids={['mmm2021', 'gjmmmu2026', 'pccunbounded', 'pccaudit']} />
+          <h3>{t('Beyond 4-edge cuts: 6-poles and transfer semigroups (EXP-013, EXP-014)', 'Mas alla de los cortes de 4 aristas: 6-polos y semigrupos de transferencia (EXP-013, EXP-014)')}</h3>
+          <p>
+            {t(
+              'The rings above have 4-edge cuts, like every known counterexample. Rings of 6-poles joined by three edges can be cyclically 5-edge-connected, the class of Problem 11 of Goedgebeur and coauthors. Modulo the cut space, the class of a multiset of labels is one of 64 cosets of the cut code of the Petersen graph, in six orbits under its automorphism group (0, E, D3, D2, T1, T2; T1 is the class of all fifteen edges, whose smallest representatives are the five triples of pairwise antipodal edges). Every one of 1,890 splits of 6-poles cut from the Petersen graph, the flower snarks J5 and J7 and the dodecahedron conducts the three orbits 0, E and D2, so classes never separate two of them.',
+              'Los anillos de arriba tienen cortes de 4 aristas, como todo contraejemplo conocido. Los anillos de 6-polos unidos por tres aristas pueden ser ciclicamente 5-arista-conexos, la clase del Problema 11 de Goedgebeur y coautores. Modulo el espacio de cortes, la clase de un multiconjunto de etiquetas es una de 64 coclases del codigo de cortes del grafo de Petersen, en seis orbitas bajo su grupo de automorfismos (0, E, D3, D2, T1, T2; T1 es la clase de las quince aristas, cuyos representantes mas pequenos son las cinco ternas de aristas antipodales dos a dos). Cada una de 1.890 particiones de 6-polos cortados del grafo de Petersen, de los snarks flor J5 y J7 y del dodecaedro conduce las tres orbitas 0, E y D2, asi que las clases nunca separan a dos de ellos.',
+            )}
+          </p>
+          <p>
+            {t(
+              'The exact obstruction is the transfer relation: the pairs of label triples a block can carry on its two connectors. It is block diagonal over the 64 classes and reduces to six sector matrices of order at most 67, so a ring is colorable exactly when some sector of the product of its blocks has a nonzero diagonal, and closing the finite semigroup of a block family decides every ring of that family at once, with a certificate checked by matrix products.',
+              'La obstruccion exacta es la relacion de transferencia: los pares de ternas de etiquetas que un bloque puede llevar en sus dos conectores. Es diagonal por bloques sobre las 64 clases y se reduce a seis matrices de sector de orden a lo mas 67, asi que un anillo es coloreable exactamente cuando algun sector del producto de sus bloques tiene diagonal no nula, y cerrar el semigrupo finito de una familia de bloques decide de una vez todos sus anillos, con un certificado verificable por productos de matrices.',
+            )}
+          </p>
+          <Equation tex={String.raw`R \text{ colorable} \iff \exists\, o \in \{0,E,D_3,D_2,T_1,T_2\}:\ \operatorname{diag}\big(T^{(o)}_{1}\Pi_1 \cdots T^{(o)}_{t}\Pi_t\big) \ne 0`} />
+          <div className="rs-scroll">
+            <table className="rs-table">
+              <thead>
+                <tr>
+                  <th>{t('Block family', 'Familia de bloques')}</th>
+                  <th>{t('Semigroup', 'Semigrupo')}</th>
+                  <th>{t('Certificate', 'Certificado')}</th>
+                  <th>{t('Every ring colorable', 'Todo anillo coloreable')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>{t('Claw (the flower-snark block)', 'Garra (el bloque de los snarks flor)')}</td><td className="num">30</td><td className="num">12</td><td>{t('yes', 'si')}</td></tr>
+                <tr><td>{t('Petersen superedge P - u - w', 'Superarista de Petersen P - u - w')}</td><td className="num">19,005</td><td className="num">276</td><td>{t('yes', 'si')}</td></tr>
+                <tr><td>{t('Claw and superedge, mixed', 'Garra y superarista, mezcladas')}</td><td className="num">116,463</td><td className="num">2,454</td><td>{t('yes', 'si')}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            {t(
+              'Consequences. In every Petersen coloring of a flower snark J_k with k odd, the three edges joining two consecutive claws receive three pairwise antipodal edges of the Petersen graph. The odd rings of Petersen superedges with the identity junction are cyclically 5-edge-connected snarks of girth 5 on 8t vertices for every odd t at least 5, and all of them are Petersen colorable. In the other direction, the 52-vertex counterexample cut along a 6-edge cut gives two colorable 6-poles that conduct the same classes, yet the product of their sector matrices has a zero diagonal in all six sectors: the transfer relation sees the non-colorability that classes miss. The Petersen defect of the 306-vertex ring R_3 is exactly 3.',
+              'Consecuencias. En toda coloracion de Petersen de un snark flor J_k con k impar, las tres aristas que unen dos garras consecutivas reciben tres aristas antipodales dos a dos del grafo de Petersen. Los anillos impares de superaristas de Petersen con la union identidad son snarks ciclicamente 5-arista-conexos de cintura 5 con 8t vertices para todo t impar al menos 5, y todos son coloreables por Petersen. En la otra direccion, el contraejemplo de 52 vertices cortado por un corte de 6 aristas da dos 6-polos coloreables que conducen las mismas clases, y sin embargo el producto de sus matrices de sector tiene diagonal nula en los seis sectores: la relacion de transferencia ve la no colorabilidad que las clases no ven. El defecto de Petersen del anillo R_3 de 306 vertices es exactamente 3.',
+            )}
+          </p>
+          <Refs label={t('Key sources', 'Fuentes clave')} ids={['pccunbounded', 'gjmmmu2026', 'hs2014', 'ss2023']} />
         </section>
       ),
     },
@@ -458,8 +496,8 @@ export default function PetersenColoring() {
             </li>
             <li>
               {t(
-                'Is there a cyclically 4-edge-connected cubic graph with Petersen defect at least 3? One such graph would show that no sublinear function bounds the number of abnormal edges on that class and would complete the equivalence conjectured by Mattiolo, Mazzuoccolo and Mkrtchyan. All five known counterexamples have defect 2, with every vertex pair critical; whether every pair of every counterexample is critical is open as well.',
-                'Existe un grafo cubico ciclicamente 4-arista-conexo con defecto de Petersen al menos 3? Un grafo asi mostraria que ninguna funcion sublineal acota el numero de aristas anormales en esa clase y completaria la equivalencia conjeturada por Mattiolo, Mazzuoccolo y Mkrtchyan. Los cinco contraejemplos conocidos tienen defecto 2, con todos los pares de vertices criticos; tambien esta abierto si todo par de todo contraejemplo es critico.',
+                'Settled: cyclically 4-edge-connected cubic graphs of Petersen defect at least t exist for every t (EXP-012), so the equivalence conjectured by Mattiolo, Mazzuoccolo and Mkrtchyan holds. Open: the exact numbers of abnormal edges of these rings (only ab at least pd is known), and the largest constant c with cyclically 4-edge-connected graphs of defect at least c times the order (the rings give 1/102).',
+                'Resuelto: existen grafos cubicos ciclicamente 4-arista-conexos de defecto de Petersen al menos t para todo t (EXP-012), asi que la equivalencia conjeturada por Mattiolo, Mazzuoccolo y Mkrtchyan se cumple. Abierto: los numeros exactos de aristas anormales de estos anillos (solo se sabe ab al menos pd), y la mayor constante c con grafos ciclicamente 4-arista-conexos de defecto al menos c veces el orden (los anillos dan 1/102).',
               )}
             </li>
             <li>
@@ -470,8 +508,8 @@ export default function PetersenColoring() {
             </li>
             <li>
               {t(
-                'Cyclically 5-edge-connected counterexamples (Problem 5 of Goedgebeur and coauthors): open.',
-                'Contraejemplos ciclicamente 5-arista-conexos (Problema 5 de Goedgebeur y coautores): abierto.',
+                'Cyclically 5-edge-connected counterexamples (Problem 11 of Goedgebeur and coauthors, v4): open. Every ring of claws or Petersen superedges is colorable (EXP-014); a ring of 6-poles without a Petersen coloring needs blocks whose transfer semigroup contains an element with a zero diagonal in every sector. Which 6-poles without small internal cuts have one?',
+                'Contraejemplos ciclicamente 5-arista-conexos (Problema 11 de Goedgebeur y coautores, v4): abierto. Todo anillo de garras o de superaristas de Petersen es coloreable (EXP-014); un anillo de 6-polos sin coloracion de Petersen necesita bloques cuyo semigrupo de transferencia contenga un elemento con diagonal nula en todos los sectores. Que 6-polos sin cortes internos pequenos tienen uno?',
               )}
             </li>
             <li>
