@@ -39,7 +39,7 @@ an active element is dropped):
 | `F4` | 336 | not reached: the one-hour limit ended the run inside the products of two generators | | none found | 3,600 s |
 | `F5` | 684 | not reached, as for `F4` | | none found | 3,600 s |
 
-**Checks** (`check_certificate.py`, `artifacts/certificate-check-antichain.json`, `run-check.log`):
+**Checks** (`check_certificate.py`, `artifacts/certificate-check-antichain.json`, `artifacts/block-recheck.json`):
 
 - certificates of `F1`, `F2`, `F3`: generators rebuilt from the stored block matrices and equal to the
   certificate's; every product of two generators contains a certificate element; every certificate

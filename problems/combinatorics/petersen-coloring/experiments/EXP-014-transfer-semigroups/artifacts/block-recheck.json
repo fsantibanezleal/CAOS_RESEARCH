@@ -1,0 +1,183 @@
+{
+ "source": "run-check.log of check_certificate.py --blocks (2026-10-06 16:32, stopped by its 90-minute limit at 18:02)",
+ "blocks": {
+  "Y": {
+   "brute_force_enumeration_equal": true,
+   "vertex_encoding_minisat_equal": true
+  },
+  "S": {
+   "brute_force_enumeration_equal": true,
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s3": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s6": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s0": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s4": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s1": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s2": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s5": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s8": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s2": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s5": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s4": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s1": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s6": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s3": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s7": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e6|s9": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s0": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s0": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s3": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s9": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s1": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s5": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e3-e7|s8": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s6": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s2": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s4": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s7": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s9": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e8|s8": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s1": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s5": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s6": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s3": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s8": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s2": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s4": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s9": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Pb:e0-e4-e13|s7": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Ja5:v2-v10": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Ja5:v1-v6": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Ja5:v2-v11": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Da:v0-v4": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Da:v0-v5": {
+   "vertex_encoding_minisat_equal": true
+  },
+  "Da:v0-v2": {
+   "vertex_encoding_minisat_equal": true
+  }
+ },
+ "not_reached": [
+  "Pb:e0-e3-e6|s7",
+  "Pb:e0-e4-e13|s0",
+  "Ja5:v0-v4",
+  "Ja5:v0-v5",
+  "Ja5:v0-v6",
+  "Ja5:v0-v8",
+  "Ja5:v0-v9",
+  "Ja5:v0-v10",
+  "Ja5:v1-v2",
+  "Ja5:v1-v9",
+  "Ja5:v1-v10",
+  "Ja5:v2-v3",
+  "Ja5:v2-v7",
+  "Ja7:v0-v4",
+  "Ja7:v0-v5",
+  "Ja7:v0-v6",
+  "Ja7:v0-v8",
+  "Ja7:v0-v9",
+  "Ja7:v0-v10",
+  "Ja7:v0-v12",
+  "Ja7:v0-v13",
+  "Ja7:v0-v14",
+  "Ja7:v1-v2",
+  "Ja7:v1-v6",
+  "Ja7:v1-v9",
+  "Ja7:v1-v10",
+  "Ja7:v1-v13",
+  "Ja7:v1-v14",
+  "Ja7:v2-v3",
+  "Ja7:v2-v7",
+  "Ja7:v2-v10",
+  "Ja7:v2-v11",
+  "Ja7:v2-v14",
+  "Ja7:v2-v15",
+  "Da:v0-v3"
+ ],
+ "different": []
+}
