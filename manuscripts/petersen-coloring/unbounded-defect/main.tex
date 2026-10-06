@@ -1,0 +1,467 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+\hypersetup{
+  pdftitle={Cyclically 4-edge-connected cubic graphs of unbounded Petersen defect},
+  pdfauthor={Felipe Santibáñez-Leal},
+  pdfkeywords={Petersen coloring conjecture, normal edge-coloring, abnormal edges, sublinear approximation, cyclically 4-edge-connected cubic graphs, snarks, SAT, DRAT}
+}
+\usepackage{orcidlink}
+\usepackage{fancyhdr}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\PG}{P}
+\newcommand{\pd}{\mathrm{pd}}
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\Gfty}{G_{52}}
+\newcommand{\Cut}{\mathrm{Cut}}
+
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.01}
+\newcommand{\docdate}{19 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22847193}
+\newcommand{\conceptdoi}{10.5281/zenodo.22847192}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{petersen-coloring}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
+
+\title{Cyclically 4-Edge-Connected Cubic Graphs\\
+of Unbounded Petersen Defect}
+\author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{\docdate}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Unbounded Petersen Defect \textperiodcentered\ \docversion}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\begin{document}
+\maketitle
+\headerblock
+
+\begin{abstract}
+The Petersen defect of a cubic graph is the least number of vertices at which an edge map into
+the Petersen graph fails to send the vertex star onto a vertex star; it is zero exactly for the
+graphs with a Petersen coloring, and it bounds from below the least number of abnormal edges of a
+proper 5-edge-coloring. Mattiolo, Mazzuoccolo and Mkrtchyan conjectured that five statements are
+equivalent: the Petersen coloring conjecture, and the existence of a sublinear bound on the number
+of abnormal edges for all bridgeless, all 2-connected, all 3-connected, and all cyclically
+4-edge-connected cubic graphs. After the refutation of the Petersen coloring conjecture in 2026,
+the first two statements are false, ring and frame constructions show that the third and fourth
+are false too, and the conjecture reduces to the last one. We show that it is false as well: for every $t \ge 2$ there is a cyclically 4-edge-connected cubic
+graph of girth 5 on $102t$ vertices whose Petersen defect is at least $t$, so every proper
+5-edge-coloring of it has at least $t$ abnormal edges. Hence all five statements are false and the
+conjectured equivalence holds. The graphs are rings that alternate two 4-poles cut from a
+52-vertex counterexample of Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo, Mazzuoccolo and
+Ulyanov. The argument rests on a conservation law: modulo the cut space of the Petersen graph, a
+4-pole whose vertices are all correctly mapped transmits the same class through both of its
+connectors, and the class of a pair of labels is their distance in the line graph of the Petersen
+graph. One 4-pole transmits only distance 1, the other only distance 0, so no two consecutive
+blocks of a ring can both be free of bad vertices. The two transmitted sets and the non-colorability
+of the smallest ring are certified by SAT refutations with DRAT proofs checked by
+\texttt{drat-trim}, and the cyclic 4-edge-connectivity of all rings follows from that of the
+four-block ring, verified by two independent exhaustive searches.
+\end{abstract}
+
+\section{Introduction}
+
+Let $\PG$ be the Petersen graph. A \emph{Petersen coloring} of a cubic graph $G$ is a map
+$\sigma : E(G) \to E(\PG)$ such that for every vertex $v$ of $G$ the three edges at $v$ are sent
+bijectively onto the three edges at some vertex of $\PG$. Jaeger conjectured that every bridgeless
+cubic graph has one~\cite{Jaeger1988}, and showed that a cubic graph has a Petersen coloring if and
+only if it has a \emph{normal} proper 5-edge-coloring, one in which every edge is poor (its two
+end stars together see three colors) or rich (they see five)~\cite{Jaeger1985}. The conjecture was
+refuted in August 2026 by Putman~\cite{Putman2026}, with a human-checkable proof by
+Jooken~\cite{Jooken2026}; Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo, Mazzuoccolo and
+Ulyanov~\cite{GJMMMU2026} found two counterexamples on 52 vertices and cyclically
+4-edge-connected counterexamples of every even order at least 60.
+
+An edge of a proper 5-edge-coloring that is neither poor nor rich is \emph{abnormal}; write
+$\ab(G)$ for the least number of abnormal edges over all proper 5-edge-colorings of $G$. Mattiolo,
+Mazzuoccolo and Mkrtchyan~\cite{MMM2021} proved that no proper 5-edge-coloring has exactly one
+abnormal edge and made the following conjecture.
+
+\begin{conjecture}[\cite{MMM2021}, Conjecture~3]\label{conj:mmm}
+The following statements are equivalent: (a) the Petersen coloring conjecture holds; there is a
+sublinear function $f$ with $\ab(G) \le f(|V(G)|)$ for (b) all bridgeless, (c) all 2-connected,
+(d) all 3-connected, respectively (e) all cyclically 4-edge-connected cubic graphs $G$.
+\end{conjecture}
+
+They proved that (a) and (b) are equivalent, and that on each of the last three classes a
+sublinear bound exists if and only if $\ab$ is bounded by 5, 7 and 9
+respectively~\cite[Theorems~1--4]{MMM2021}. After the disproof, (a) and (b) are false. Rings of
+counterexamples joined through 2-edge cuts, and cubic frames whose vertices are replaced by
+counterexamples minus a vertex, have one bad vertex in every block, so (c) and (d) are false as
+well~\cite{Audit2026}. The same work shows that, given a proposition of~\cite{MMM2021} on
+cyclic joins, (e) is equivalent to every cyclically 4-edge-connected cubic graph admitting a map
+into $E(\PG)$ with at most two bad vertices, and it records that in fifteen cyclically
+4-edge-connected counterexamples every pair of adjacent vertices is critical. The conjecture
+therefore turned on statement (e). We settle it; the proof does not use that proposition.
+
+\begin{theorem}\label{thm:main}
+For every $t \ge 2$ there is a cyclically 4-edge-connected cubic graph $R_t$ of girth~5 on $102t$
+vertices such that every map $E(R_t) \to E(\PG)$ has at least $t$ vertices at which the star
+condition fails. Consequently every proper 5-edge-coloring of $R_t$ has at least $t$ abnormal
+edges.
+\end{theorem}
+
+\begin{corollary}\label{cor:e}
+No sublinear function bounds the number of abnormal edges on cyclically 4-edge-connected cubic
+graphs. Hence all five statements of Conjecture~\ref{conj:mmm} are false, and the conjecture
+holds.
+\end{corollary}
+
+The graphs $R_t$ are rings of $2t$ blocks that alternate two 4-poles, $A$ and $B$, both cut from
+the first 52-vertex counterexample $\Gfty$ of~\cite{GJMMMU2026}: $A$ is $\Gfty$ with two
+independent edges removed, and $B$ is $\Gfty$ with two adjacent vertices removed. The proof uses a
+conservation law. Modulo the cut space of $\PG$, a 4-pole whose vertices all satisfy the star
+condition transmits the same class through its two connectors (Lemma~\ref{lem:conduction}), and
+the class carried by a pair of edges is the distance of their labels in the line graph of $\PG$
+(Lemma~\ref{lem:distance}). The 4-pole $A$ transmits only distance~1 and $B$ only distance~0
+(Proposition~\ref{prop:sets}), so two consecutive blocks of a ring cannot both be free of bad
+vertices (Theorem~\ref{thm:ring}). Two small restoration arguments (Lemma~\ref{lem:restore}) show
+that each of the two computed restrictions is enough on its own. The rings are cyclically
+4-edge-connected because the four-block ring is (Lemma~\ref{lem:c4ec}).
+
+\section{Preliminaries}\label{sec:prelim}
+
+Graphs are finite. For a vertex $v$, $\partial(v)$ is the set of edges at $v$; for a vertex set
+$S$, $\delta(S)$ is the set of edges with exactly one end in $S$. A cubic graph is
+\emph{cyclically 4-edge-connected} if every edge cut whose two sides both contain a cycle has at
+least four edges.
+
+\paragraph{Maps into the Petersen graph.} For a cubic graph $G$ and a map $\sigma : E(G) \to
+E(\PG)$, a vertex $v$ is \emph{good} if $\sigma$ maps $\partial(v)$ bijectively onto the star of a
+vertex of $\PG$, and \emph{bad} otherwise. The \emph{Petersen defect} $\pd(G)$ is the least number of
+bad vertices over all maps; $\pd(G) = 0$ exactly when $G$ has a Petersen coloring. For $v$ let
+$\chi_v \in \mathbb{F}_2^{E(\PG)}$ be the sum of the indicator vectors of the three labels at $v$,
+and let $\Cut(\PG)$ be the cut space of $\PG$. The star of a vertex is a cut, so $\chi_v \in
+\Cut(\PG)$ when $v$ is good; for every map the sum of $\chi_v$ over all vertices is zero, because
+every edge is counted at both ends. The parity theorem of~\cite{Audit2026} follows: the number of
+bad vertices is never exactly one, so every graph without a Petersen coloring has $\pd \ge 2$.
+
+\paragraph{Abnormal edges.} We use the Kneser model of $\PG$: its vertices are the 2-subsets of
+$\{1, \dots, 5\}$, two of them adjacent when disjoint, and the edge $\{X, Y\}$ has the color that
+lies outside $X \cup Y$, so the three edges at $X$ carry the three colors outside $X$.
+
+\begin{lemma}[\cite{Audit2026}]\label{lem:pdab}
+$\pd(G) \le \ab(G)$ for every cubic graph $G$.
+\end{lemma}
+
+\begin{proof}
+Given a proper 5-edge-coloring $c$, let $X_v$ be the pair of colors missing at $v$, and let the
+\emph{view} of an edge $e = uv$ from $u$ be the edge of $\PG$ at $X_u$ of color $c(e)$. If $e$ is
+poor then $X_u = X_v$; if it is rich then $X_u \cap X_v = \emptyset$ and both avoid $c(e)$; in both
+cases the two views coincide. Map every normal edge to its common view and every abnormal edge to
+its view from one chosen end. A vertex all of whose edges carry its own views is good, so the bad
+vertices are among the ends not chosen of the abnormal edges.
+\end{proof}
+
+\paragraph{Multipoles.} A \emph{4-pole} is obtained from a cubic graph by removing some vertices
+and edges so that exactly four \emph{dangling ends} remain: an edge removed with one end kept, or
+kept at one end only, becomes a dangling end at the kept vertex. The dangling ends are grouped into
+two \emph{connectors} of two ends each. A map of a 4-pole assigns a label to every edge and to
+every dangling end; the star condition is required at the vertices of the 4-pole.
+
+\section{Classes of pairs of labels}\label{sec:classes}
+
+The line graph of $\PG$ has diameter 3: from a fixed edge, four edges are at distance 1, eight at
+distance 2 and two at distance 3. We write $d(x, y)$ for this distance.
+
+\begin{lemma}\label{lem:smallcuts}
+The cuts of $\PG$ with at most four edges are the empty cut, the ten stars, and the fifteen sets of
+four edges adjacent to one edge.
+\end{lemma}
+
+\begin{proof}
+$\PG$ is 3-edge-connected, cyclically 5-edge-connected and of girth~5. If one side $S$ of a cut
+induces a forest with $k$ components, the cut has $3|S| - 2(|S| - k) = |S| + 2k$ edges, which is 3
+only for a single vertex and 4 only for two adjacent vertices; if both sides contain a cycle, the
+cut has at least five edges.
+\end{proof}
+
+\begin{lemma}\label{lem:distance}
+Let $x, y, x', y'$ be edges of $\PG$. If $\mathbf{1}_x + \mathbf{1}_y$ and $\mathbf{1}_{x'} +
+\mathbf{1}_{y'}$ lie in the same class modulo $\Cut(\PG)$, then $d(x, y) = d(x', y')$.
+\end{lemma}
+
+\begin{proof}
+The class of $\mathbf{1}_x + \mathbf{1}_y$ is zero exactly when $x = y$, since a vector of weight 2
+is not a cut. If $x \ne y$, $x' \ne y'$ and the two sums have the same class, the symmetric
+difference of $\{x, y\}$ and $\{x', y'\}$ is a cut of even weight at most 4. By
+Lemma~\ref{lem:smallcuts} it is empty, so that the pairs coincide, or it consists of the four
+edges adjacent to an edge $st$ of $\PG$. Then either each pair consists of two edges at the same
+end of $st$, and both pairs are at distance 1, or each pair has one edge at $s$ and one at $t$,
+and both pairs are at distance 2 because $\PG$ has no triangle.
+\end{proof}
+
+\begin{lemma}[conduction]\label{lem:conduction}
+Let $M$ be a 4-pole with connectors $\{p, q\}$ and $\{r, s\}$, and let $\sigma$ be a map of $M$ in
+which every vertex of $M$ is good. Then $d(\sigma(p), \sigma(q)) = d(\sigma(r), \sigma(s))$.
+\end{lemma}
+
+\begin{proof}
+The sum of $\chi_v$ over the vertices of $M$ is a sum of stars, hence a cut. An edge of $M$ is
+counted at both of its ends, so the sum equals $\mathbf{1}_{\sigma(p)} + \mathbf{1}_{\sigma(q)} +
+\mathbf{1}_{\sigma(r)} + \mathbf{1}_{\sigma(s)}$. The two connectors therefore carry the same class,
+and Lemma~\ref{lem:distance} gives the claim.
+\end{proof}
+
+For a 4-pole $M$ with its connectors, the \emph{transmitted set} $D(M) \subseteq \{0, 1, 2, 3\}$ is
+the set of distances $d(\sigma(p), \sigma(q))$ over all maps $\sigma$ of $M$ with every vertex
+good. By Lemma~\ref{lem:conduction} it does not depend on which connector is read. Because the
+automorphism group of $\PG$ is transitive on ordered pairs of edges at a given distance, $d \in
+D(M)$ can be decided by one formula in which the labels of $p$ and $q$ are fixed to one such pair.
+
+\section{Rings of 4-poles}\label{sec:rings}
+
+Let $A$ and $B$ be 4-poles, each with a first and a second connector. The ring $R_t(A, B)$ consists
+of $t$ copies of $A$ and $t$ copies of $B$ placed alternately around a cycle, the second connector
+of each block joined by two edges to the first connector of the next block. It is cubic. The two
+edges that join consecutive blocks form a connector of both blocks.
+
+\begin{theorem}\label{thm:ring}
+If $D(A) \cap D(B) = \emptyset$, then every map of $R_t(A, B)$ has bad vertices in at least $t$ of
+its $2t$ blocks. In particular $\ab(R_t(A, B)) \ge \pd(R_t(A, B)) \ge t$.
+\end{theorem}
+
+\begin{proof}
+If two consecutive blocks had only good vertices, Lemma~\ref{lem:conduction} applied to each of
+them would place the distance of their common connector in $D(A) \cap D(B)$. So the blocks without
+bad vertices are pairwise non-consecutive, and at most $t$ of the $2t$ blocks are among them. The
+last inequality is Lemma~\ref{lem:pdab}.
+\end{proof}
+
+\begin{lemma}[restoration]\label{lem:restore}
+Let $G$ be a cubic graph without a Petersen coloring.
+\begin{enumerate}
+\item[\textup{(a)}] If $ab$ and $cd$ are independent edges and $M = G - ab - cd$ has connectors
+$\{a, b\}$, $\{c, d\}$ (the dangling ends at these vertices), then $0 \notin D(M)$.
+\item[\textup{(b)}] If $uv$ is an edge, $u_1, u_2$ are the other neighbors of $u$ and $v_1, v_2$ those of
+$v$, and $M = G - \{u, v\}$ has connectors $\{u_1, u_2\}$, $\{v_1, v_2\}$, then $1 \notin D(M)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Distance 0 means equal labels on $a$ and $b$, and then by Lemma~\ref{lem:conduction} equal labels
+on $c$ and $d$; putting these labels on $ab$ and $cd$ gives a Petersen coloring of $G$. (b) If
+the labels at $u_1, u_2$ are at distance 1, they share a vertex of $\PG$ whose third edge $z$
+satisfies $\mathbf{1}_{\sigma(uu_1)} + \mathbf{1}_{\sigma(uu_2)} \equiv \mathbf{1}_z$ modulo
+$\Cut(\PG)$; likewise the labels at $v_1, v_2$ give an edge $z'$. By Lemma~\ref{lem:conduction} the
+two classes agree, so $\mathbf{1}_z + \mathbf{1}_{z'}$ is a cut and $z = z'$. Labelling $uv$ by $z$
+makes $u$ and $v$ good, which gives a Petersen coloring of $G$.
+\end{proof}
+
+So for $A = G - ab - cd$ and $B = G' - \{u, v\}$ with $G$, $G'$ without Petersen colorings, the sets
+$D(A)$ and $D(B)$ are disjoint as soon as $D(A) \subseteq \{1\}$ or $D(B) \subseteq \{0\}$.
+
+\begin{lemma}\label{lem:c4ec}
+Let $G$ be a cyclically 4-edge-connected cubic graph, $A = G - ab - cd$ and $B = G - \{u, v\}$ as in
+Lemma~\ref{lem:restore}, with $A$ joined through its connector $\{c, d\}$ to the connector $\{u_1,
+u_2\}$ of the next $B$, and $B$ through $\{v_1, v_2\}$ to the connector $\{a, b\}$ of the next $A$.
+If $R_2(A, B)$ has no cycle-separating edge cut with at most three edges, then every $R_t(A, B)$
+with $t \ge 2$ is cyclically 4-edge-connected.
+\end{lemma}
+
+\begin{proof}
+$G$ is 3-edge-connected, so $A$ is connected; $G$ is 3-connected, so $B$ is connected. Add to a
+block a vertex $s^*$ joined to the two ends of its first connector and a vertex $t^*$ joined to
+the two ends of its second connector. For $B$ this gives $G - uv$ with $u, v$ renamed $s^*, t^*$,
+which has two edge-disjoint $s^*$-$t^*$ paths because $G$ is 3-edge-connected. For $A$, an edge
+separating $s^*$ from $t^*$ would either separate $\{a, b\}$ from $\{c, d\}$ in $G$ by itself,
+contradicting 3-edge-connectivity, or be an edge $s^*a$ (or $s^*b$, $t^*c$, $t^*d$) whose removal
+leaves $b$ (respectively $a$, $d$, $c$) without a path to the other connector, contradicting the
+connectivity of $A$. Consequently a ring carries four edge-disjoint paths between any two of its
+blocks, two along each arc.
+
+Let $K$ be a cycle-separating cut of $R_t$ with at most three edges and sides $S$, $S'$. By the
+four paths, no block lies entirely in $S$ while another lies entirely in $S'$; say that every block
+not split by $K$ lies in $S$. Every split block contains an edge of $K$, being connected, so at
+most three blocks are split and $S'$ lies within them. A cycle in $S'$ lies in a maximal run $Y$ of
+consecutive split blocks; $Y$ has at most three blocks and is bounded on both sides by blocks in
+$S$. The edges leaving $S' \cap V(Y)$ belong to $K$ and form a cycle-separating cut whose size
+depends only on $Y$ and $S' \cap V(Y)$. The ring $R_2 = ABAB$ contains every alternating run of at
+most three blocks with at least one further block around it, so it contains the same cut,
+contradicting the hypothesis.
+\end{proof}
+
+\section{The construction}\label{sec:construction}
+
+Let $\Gfty$ be the 52-vertex counterexample of~\cite{GJMMMU2026} (House of Graphs entry 57244), with
+its vertices numbered $0, \dots, 51$ as in the edge list of the repository (SHA-256 of the sorted
+edge list \texttt{27db5d3b\ldots}); it is cyclically 4-edge-connected with girth~5 and has no
+Petersen coloring~\cite{GJMMMU2026, Audit2026}. Let
+\[
+A = \Gfty - \{0,3\} - \{1,9\}, \qquad B = \Gfty - \{2, 7\},
+\]
+where $\{0, 3\}$, $\{1, 9\}$ are independent edges and $\{2, 7\}$ is an edge, with connectors as in
+Lemma~\ref{lem:restore}: $\{0, 3\}$ and $\{1, 9\}$ for $A$, the two other neighbors of $2$ and the
+two other neighbors of $7$ for $B$. Let $R_t = R_t(A, B)$, joined as in Lemma~\ref{lem:c4ec}; it has
+$52t + 50t = 102t$ vertices.
+
+\begin{proposition}[machine-verified]\label{prop:sets}
+$D(A) = \{1\}$ and $D(B) = \{0\}$.
+\end{proposition}
+
+\begin{proof}
+For each distance $d$ one propositional formula states that the 4-pole has a map with every vertex
+good and the first connector labelled by a fixed pair at distance $d$. The satisfiable formulas
+give maps that an independent checker accepts; the others are refuted with DRAT proofs accepted by
+\texttt{drat-trim} (Table~\ref{tab:sets}). Distance 0 for $A$ and distance 1 for $B$ are also
+excluded by Lemma~\ref{lem:restore}.
+\end{proof}
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lcccc}
+\toprule
+4-pole & $d = 0$ & $d = 1$ & $d = 2$ & $d = 3$ \\
+\midrule
+$A = \Gfty - \{0,3\} - \{1,9\}$ & refuted (7.7 s) & map (0.5 s) & refuted (2.7 s) & refuted (2.1 s) \\
+$B = \Gfty - \{2,7\}$ & map (0.2 s) & refuted (2.8 s) & refuted (2.2 s) & refuted (2.1 s) \\
+\bottomrule
+\end{tabular}
+\caption{Transmitted distances of the two 4-poles. ``Map'': a map with every vertex good and the
+first connector at distance $d$, accepted by the checker (the second connector is then at the same
+distance). ``Refuted'': unsatisfiable, with a DRAT proof accepted by \texttt{drat-trim}. Times are
+solver times.}\label{tab:sets}
+\end{table}
+
+\begin{proposition}[machine-verified]\label{prop:rings}
+The graphs $R_1$ and $R_2$ are simple cubic graphs of girth~5 without cycle-separating edge cuts of
+at most three edges, and the four edges joining one block to the rest form a cycle-separating
+cut, so their cyclic edge connectivity is exactly~4. $R_1$ has no Petersen coloring, and
+$\pd(R_2) = 2$.
+\end{proposition}
+
+\begin{proof}
+The cut searches are exhaustive: for every pair of edges, the bridges of the graph without that
+pair are computed, and every edge set of size at most three found in this way is tested for
+leaving two sides that contain cycles; the same routine applied to $\Gfty$, to a ring of two copies
+of $\Gfty$ opened at one edge, and to the cubic graph $K_4$ with its vertices replaced by copies of
+$\Gfty$ minus a vertex returns no cut, 2-edge cuts, and 3-edge cuts respectively, in agreement with
+an enumeration of all edge sets of size at most three. That enumeration, run on $R_1$ and $R_2$
+themselves, finds no cycle-separating cut either. The Petersen coloring formula of
+$R_1$ is refuted with a DRAT proof accepted by \texttt{drat-trim}. For $R_2$, a map with exactly two
+bad vertices, both in the two copies of $B$, is accepted by the checker; two is the least possible
+by the parity theorem.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+By Proposition~\ref{prop:sets}, $D(A) \cap D(B) = \emptyset$, so Theorem~\ref{thm:ring} gives
+$\ab(R_t) \ge \pd(R_t) \ge t$. By Proposition~\ref{prop:rings} and Lemma~\ref{lem:c4ec}, $R_t$ is
+cyclically 4-edge-connected for every $t \ge 2$. A cycle of length at most four would lie within
+two consecutive blocks and their joining edges, so it would occur in $R_2$, which has girth 5.
+\end{proof}
+
+\begin{remark}
+The conclusion was also tested directly on $R_3$, which has 306 vertices. The formula stating that
+some map has at most two bad vertices is unsatisfiable, with a DRAT proof accepted by
+\texttt{drat-trim} ($5{,}802$ seconds of solving and $2{,}265$ seconds of checking), and ten
+designated pairs of vertices, five inside one block and five in two different blocks, each give an
+unsatisfiable relaxation with a verified proof. Whether $\pd(R_3) = 3$ is left open: the
+cardinality instance at bound 3 reached a one-hour limit.
+\end{remark}
+
+\begin{proof}[Proof of Corollary~\ref{cor:e}]
+The graphs $R_t$ have $n = 102t$ vertices and $\ab(R_t) \ge n/102$, so no sublinear function bounds
+$\ab$ on cyclically 4-edge-connected cubic graphs, and (e) is false; for $t \ge 10$ they also
+violate the bound 9 of~\cite[Theorem~4]{MMM2021}. Statements (a) to (d) are false, as recalled in
+the introduction, so the five statements are equivalent.
+\end{proof}
+
+\section{Remarks and questions}\label{sec:remarks}
+
+\emph{Other 4-poles.} The computation behind Proposition~\ref{prop:sets} was carried out for a
+wider set of 4-poles (computation EXP-012). The Petersen graph minus two adjacent vertices, and
+the Petersen graph minus two edges at distance 2 or 3, transmit distance 1 under every pairing of
+their dangling ends. For $\Gfty$ minus two adjacent vertices, with the pairing of
+Lemma~\ref{lem:restore}(b), the transmitted set is $\{0\}$ for eleven of the fourteen edge orbits
+of the automorphism group of $\Gfty$, $\{0, 3\}$ for two and $\{0, 2\}$ for one; it never contains
+1, as Lemma~\ref{lem:restore}(b) requires. Under the two other pairings every such 4-pole
+transmits distance 1. Among the 4-poles $\Gfty - ab - cd$ with the connectors of
+Lemma~\ref{lem:restore}(a), 282 of the 546 edge pairs examined have $D = \{1\}$ (computation
+EXP-010). Many rings with the property of Theorem~\ref{thm:ring} can therefore be built from
+$\Gfty$ alone.
+
+\emph{Criticality.} A pair of vertices of a graph without a Petersen coloring is \emph{critical}
+if some map has exactly these two vertices bad. In every one of fifteen cyclically
+4-edge-connected counterexamples examined in~\cite{Audit2026} every pair of adjacent vertices is
+critical. By Theorem~\ref{thm:ring} the two bad vertices of a map of $R_2$ lie in two
+non-consecutive blocks, so two adjacent vertices of one block of $R_2$ form a non-critical pair,
+and in $R_t$ with $t \ge 3$ no pair is critical. Universal 2-criticality is therefore not a
+property of the cyclically 4-edge-connected class.
+
+\emph{Questions.} The rings have 4-edge cuts, and no cyclically 5-edge-connected counterexample to
+the Petersen coloring conjecture is known~\cite[Problem~10]{GJMMMU2026}. Is the Petersen defect
+bounded on cyclically 5-edge-connected cubic graphs? What is the largest constant $c$ such that
+cubic graphs with $\pd \ge c\,n$ exist in the cyclically 4-edge-connected class? The rings give
+$c \ge 1/102$.
+
+\section*{Data availability}
+
+{\raggedright
+The edge list of $\Gfty$, the encoders, the checkers, the ring construction, the cut searches and
+all results, with the SHA-256 digests of every formula and proof, are in the repository
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH}, under
+\path{problems/combinatorics/petersen-coloring/}. The computations of this paper are archived in the
+folder \path{experiments/EXP-012-conduction-rings} of that directory (runners \path{run.py} and
+\path{run_ring.py}; library modules \path{code/pcclib/poles.py} and \path{code/pcclib/rings.py}),
+with the distance sets of~\cite{Audit2026} in \path{experiments/EXP-010-sublinear-approximation}.
+Proofs were produced by CaDiCaL~\cite{CaDiCaL} and checked with \texttt{drat-trim}~\cite{DRATtrim}.
+\par}
+
+\begin{thebibliography}{99}
+\bibitem{Jaeger1988} F.~Jaeger, Nowhere-zero flow problems, in: L.~W. Beineke, R.~J. Wilson
+(eds.), Selected Topics in Graph Theory 3, Academic Press, London, 1988, 71--95.
+\bibitem{Jaeger1985} F.~Jaeger, On five-edge-colorings of cubic graphs and nowhere-zero flow
+problems, Ars Combinatoria 20-B (1985), 229--244.
+\bibitem{Putman2026} B.~Putman, A 112-vertex counterexample to the Petersen Coloring Conjecture,
+Zenodo v1.1.0 (2026), \href{https://doi.org/10.5281/zenodo.21845291}{doi:10.5281/zenodo.21845291};
+arXiv:2608.10012.
+\bibitem{Jooken2026} J.~Jooken, A human-checkable proof of the 112-vertex counterexample to the
+Petersen coloring conjecture, arXiv:2608.10028v2 (2026).
+\bibitem{GJMMMU2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
+S.~Ulyanov, Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite
+family of counterexamples, arXiv:2608.10028v3 (2026).
+\bibitem{MMM2021} D.~Mattiolo, G.~Mazzuoccolo, V.~Mkrtchyan, On sublinear approximations for the
+Petersen coloring conjecture, Bull. Inst. Combin. Appl. 92 (2021), 78--90; arXiv:2104.09241.
+\bibitem{Audit2026} F.~Santib\'a\~nez-Leal, Berge--Fulkerson covers, cycle double covers, flows and
+exact normality defects of the first counterexamples to the Petersen coloring conjecture,
+preprint v0.05 (2026), \href{https://doi.org/10.5281/zenodo.22846757}{doi:10.5281/zenodo.22846757}.
+\bibitem{CaDiCaL} A.~Biere, T.~Faller, K.~Fazekas, M.~Fleury, N.~Froleyks, F.~Pollitt, CaDiCaL 2.0,
+in: Computer Aided Verification (CAV 2024), Lecture Notes in Comput. Sci. 14681, Springer, 2024,
+133--152.
+\bibitem{DRATtrim} N.~Wetzler, M.~J.~H. Heule, W.~A. Hunt Jr., DRAT-trim: efficient checking and
+trimming using expressive clausal proofs, in: Theory and Applications of Satisfiability Testing
+(SAT 2014), Lecture Notes in Comput. Sci. 8561, Springer, 2014, 422--429.
+\end{thebibliography}
+
+\end{document}

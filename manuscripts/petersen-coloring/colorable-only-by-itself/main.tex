@@ -317,7 +317,8 @@ checked proofs for both graphs, and so is the formula for normal 5-edge-coloring
 \begin{theorem}[machine-verified]\label{thm:orders}
 For every even $k$ listed in Table~\ref{tab:orders}, no loopless cubic graph on $k$ vertices colors
 the corresponding graph with a vertex map of kind \textup{(O)}, \textup{(E0)} or \textup{(E1)}.
-The list contains every even $k$ with $40 \le k \le 50$ for both $\Ga$ and $\Gb$%%EXTRA_ORDERS%%.
+The list contains every even $k$ with $40 \le k \le 50$ for both $\Ga$ and $\Gb$; for $\Ga$ it
+also contains 2, 4, 24, 26, 28, 30, 32, 34, 36 and 38, and for $\Gsix$ it contains 62, 64 and 66.
 \end{theorem}
 
 Goedgebeur et al.\ established by an exhaustive computation that every bridgeless cubic graph on
@@ -376,6 +377,9 @@ $\Ga$ & 36 & 41{,}619 & 1{,}012{,}822 & 1{,}831 & 189{,}001{,}378 & 1{,}246 \\
 $\Ga$ & 34 & 38{,}412 & 907{,}040 & 2{,}570 & 315{,}072{,}154 & 1{,}302 \\
 $\Ga$ & 32 & 35{,}313 & 807{,}090 & 3{,}007 & 359{,}772{,}266 & 1{,}595 \\
 $\Ga$ & 30 & 32{,}322 & 712{,}972 & 2{,}597 & 451{,}748{,}771 & 4{,}210 \\
+$\Ga$ & 28 & 29{,}439 & 624{,}686 & n/a & 865{,}403{,}665 & 15{,}096 \\
+$\Ga$ & 26 & 26{,}664 & 542{,}231 & n/a & 1{,}260{,}353{,}655 & 2{,}201 \\
+$\Ga$ & 24 & 23{,}997 & 465{,}609 & n/a & 1{,}746{,}345{,}370 & 3{,}929 \\
 $\Ga$ & 4 & 3{,}111 & 20{,}045 & 1{,}843 & 434{,}204{,}743 & 6{,}979 \\
 $\Ga$ & 2 & 1{,}724 & 7{,}615 & 3 & 1{,}247{,}206 & 5 \\
 \midrule
@@ -383,9 +387,12 @@ $\Gb$ & 50 & 67{,}092 & 1{,}916{,}592 & 73 & 17{,}037{,}541 & 129 \\
 $\Gb$ & 48 & 63{,}129 & 1{,}769{,}986 & 460 & 42{,}390{,}272 & 687 \\
 $\Gb$ & 46 & 59{,}274 & 1{,}629{,}212 & 1{,}991 & 120{,}499{,}030 & 599 \\
 $\Gb$ & 44 & 55{,}527 & 1{,}494{,}270 & 3{,}476 & 363{,}213{,}799 & 8{,}930 \\
+$\Gb$ & 42 & 51{,}888 & 1{,}365{,}160 & n/a & 1{,}094{,}080{,}367 & 5{,}002 \\
+$\Gb$ & 40 & 48{,}357 & 1{,}241{,}882 & 4{,}421 & 2{,}371{,}439{,}853 & 5{,}196 \\
 \midrule
 $\Gsix$ & 66 & 116{,}540 & 4{,}279{,}152 & 218 & 59{,}635{,}574 & 349 \\
 $\Gsix$ & 64 & 111{,}297 & 4{,}028{,}562 & 878 & 80{,}324{,}045 & 1{,}893 \\
+$\Gsix$ & 62 & 106{,}162 & 3{,}785{,}532 & 6{,}203 & 220{,}929{,}628 & 10{,}655 \\
 \bottomrule
 \end{tabular}
 \caption{Target orders $k$ refuted with DRAT proofs accepted by \texttt{drat-trim}. The formula of order $k$ is unsatisfiable: no loopless cubic graph on $k$ vertices colors the graph with a vertex map of kind (O), (E0) or (E1). Times were measured while other computations shared the machine.}\label{tab:orders}
