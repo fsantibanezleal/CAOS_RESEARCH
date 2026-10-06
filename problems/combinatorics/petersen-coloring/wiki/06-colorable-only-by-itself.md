@@ -84,7 +84,7 @@ Published as *colorable-only-by-itself* v0.01, DOI
 |---|---|---|
 | `G52` (52 vertices) | 2, 4, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50 | 6 to 22 |
 | `G52b` (52 vertices) | 40, 42, 44, 46, 48, 50 | 2 to 38 |
-| `G68` (68 vertices) | 62, 64, 66 | 2 to 60 (order 52 running in a three-configuration portfolio, addendum 7) |
+| `G68` (68 vertices) | 62, 64, 66 | 2 to 60 (order 52: a three-configuration portfolio ran 4 hours without an answer, addendum 7) |
 
 Every refutation is a DRAT proof accepted by drat-trim on the final formula; the largest is 2.4 GB
 (`G52b`, order 40, solved in 4,421 s and checked in 5,196 s).

@@ -263,3 +263,11 @@ The reduced formula (base plus attach clauses, Lemmas A and B) for `G68`, `k = 5
 limit, 36-hour check limit). A SAT answer from the portfolio is decoded and checked by the
 independent checker (`check_hcoloring`) and the target is refuted for Petersen colorability with a
 checked proof before anything is claimed. Result `artifacts/result-G68-k52-portfolio.json`.
+
+### Addendum 7 outcome (2026-10-06 19:53)
+
+The portfolio ran from 15:40 to 19:53 (4 hours 13 minutes of its 24-hour limit; three CaDiCaL
+configurations at full CPU, proofs of 7.1, 7.9 and 4.4 GB) without an answer, and was stopped at the
+end of the working session, as no job outlives its session. The partial proofs were deleted (an
+unfinished run certifies nothing); the formula `G68_k52-portfolio.cnf` is kept for a rerun. Target
+order 52 of `G68` remains undecided; a rerun needs a session that can hold the full 24-hour limit.

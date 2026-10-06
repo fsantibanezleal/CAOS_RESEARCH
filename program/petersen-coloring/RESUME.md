@@ -66,10 +66,10 @@ classes. `pd(R_3) = 3`. Published in `unbounded-defect` v0.02 (Proposition 5.3, 
 
 ## 4. In flight (2026-10-06)
 
-- EXP-007 addendum 7: portfolio for `G68` at target order 52 (formula
-  `E:/_Datos/caos-research/petersen-coloring/EXP-007/G68_k52-portfolio.cnf`, 82,107 variables,
-  2,683,782 clauses; result `artifacts/result-G68-k52-portfolio.json`; on SAT run
-  `write_formula.py --graph G68 --k 52 --decode <model file>`).
+- Nothing is running. EXP-007 addendum 7 (`G68` at target order 52) was stopped at 4 hours without
+  an answer; its formula `E:/_Datos/caos-research/petersen-coloring/EXP-007/G68_k52-portfolio.cnf`
+  (82,107 variables, 2,683,782 clauses) is kept; rerun with `portfolio_certify.sh` and, on SAT,
+  `write_formula.py --graph G68 --k 52 --decode <model file>`.
 - Nothing of EXP-013 or EXP-014 is in flight (the `F4`, `F5` antichain closures ended at their
   one-hour limits, undecided).
 
@@ -79,7 +79,7 @@ classes. `pd(R_3) = 3`. Published in `unbounded-defect` v0.02 (Proposition 5.3, 
    most 28, House of Graphs lists; sector matrices; closures of each block alone and of pairs; a
    zero-trace element is a candidate for Problem 11 of v4) before it runs; close the focus if it
    finds none.
-2. PCC-F5: act on the `G68` order-52 answer (SAT: decode, check, refute the target; UNSAT: record).
+2. PCC-F5: rerun the `G68` order-52 portfolio (formula kept) in a session that can hold its 24-hour limit; the 2026-10-06 run was stopped at 4 hours without an answer (addendum 7 outcome).
 3. Release step (version bump, bake, tag) belongs to the serialized release owner, not to this
    branch.
 
