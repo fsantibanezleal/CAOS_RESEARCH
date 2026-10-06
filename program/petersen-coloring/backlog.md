@@ -32,4 +32,7 @@
 | PCB-028 | Theorem 6 ((e) equivalent to defect at most 2 on cyclically 4-edge-connected graphs) into the audit manuscript (next version) and the page | done | P1 | audit v0.05 published 2026-09-19 (10.5281/zenodo.22846757) |
 | PCB-029 | EXP-012: conduction and alternating rings | done | P1 | CONFIRMED; open: exact pd(R_3) (addendum 4 running) |
 | PCB-030 | Methodology 13 adoption (governance record, manuscript map, READMEs) | done | P1 | guard passes, 3 governed programs |
-| PCB-031 | EXP-013: conducted charge orbits of 6-poles (focus PCC-F6) | doing | P1 | route to Problem 11 of arXiv:2608.10028v4 |
+| PCB-031 | EXP-013: conducted charge orbits of 6-poles (focus PCC-F6) | done | P1 | every 6-pole of P, J5, J7, dodecahedron conducts the core {0, E, D2}; P3 refuted |
+| PCB-032 | EXP-014: transfer semigroups of 6-poles over the six charge sectors | done (F4, F5 at their caps) | P1 | every ring of claws, Petersen superedges or both is Petersen colorable (certificates re-checked); flower-snark junctions are antipodal triples; odd superedge rings are cyclically 5-edge-connected snarks of girth 5; G52 control: zero trace where charges agree |
+| PCB-033 | `unbounded-defect` v0.02: pd(R_3) = 3 and Section 6 (6-poles, transfer semigroups) | done | P1 | published 2026-10-06, 10.5281/zenodo.23196817 (12 pages) |
+| PCB-034 | EXP-015: 6-poles without small internal cuts whose transfer semigroup has a zero-trace element (cyclically 5-edge-connected snarks up to order 28) | todo | P1 | next bounded action of PCC-F6; declare before running |

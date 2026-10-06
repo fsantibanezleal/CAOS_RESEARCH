@@ -1,4 +1,4 @@
-# EXP-013 verdict - every 6-pole of the Petersen graph, the flower snarks J5 and J7 and the dodecahedron conducts the core {0, E, D2}: the charge obstruction never separates them
+# EXP-013 verdict - every 6-pole of the Petersen graph, the flower snarks J5 and J7 and the dodecahedron conducts the core {0, E, D2}: the charge obstruction never separates them (P1, P2 PASS; P3 REFUTED)
 
 Date: 2026-10-06. Hypothesis committed at `cb6a0929` before any run. Runner `run.py` (one formula per
 6-pole, split and orbit; from 2026-10-06 16:10 every answer is also appended to
@@ -28,14 +28,28 @@ checker and every UNSAT answer has a verified proof. **Every one of the 1,890 me
 splits conducts `0`, `E` and `D2`.** The minimal conducted set that occurs is exactly the core
 `{0, E, D2}`, attained by `P - u - w`.
 
-PENDING: `G52` shape (a), 212 6-poles, 1,272 formulas (P2).
+`G52` (shape a, 212 6-poles up to its 6 automorphisms, 1,272 formulas, run 16:15 to 17:59, slowest
+formula 106.6 s): all decided, every witness accepted, every refutation with a verified proof.
+
+| conducted set | 6-poles `G52 - u - w` |
+|---|---|
+| `{E, D3, D2}` | 105 |
+| `{E, D3, D2, T2}` | 47 |
+| `{E, D2}` | 32 |
+| `{E}` | 22 |
+| `{E, D3}` | 5 |
+| `{E, D2, T2}` | 1 |
+
+`0` is conducted by none (212 refutations, as the restoration lemma requires), `E` by all, `T1` by
+none. So every critical pair of `G52` can carry an `E` charge, 22 of the 212 pair orbits carry only
+`E` charges, and no pair carries the all-ones class `T1`.
 
 ## Predictions
 
 | prediction | outcome |
 |---|---|
-| P1 (controls: `0` conducted by every shape-(a) 6-pole of a colorable source; never by `G52 - u - w`) | PASS for the colorable sources (40 shape-(a) 6-poles); `G52`: PENDING |
-| P2 (`G52`: `E` conducted by every `G52 - u - w`, `T1` by none) | PENDING |
+| P1 (controls: `0` conducted by every shape-(a) 6-pole of a colorable source; never by `G52 - u - w`) | PASS: all 40 shape-(a) 6-poles of the colorable sources conduct `0`; none of the 212 `G52 - u - w` does |
+| P2 (`G52`: `E` conducted by every `G52 - u - w`, `T1` by none) | PASS on all 212 orbits of non-adjacent pairs |
 | P3 (some shape-(b) 6-pole of a cyclically 5-edge-connected source fails to conduct `0`) | REFUTED: all 1,850 shape-(b) splits conduct `0` (and `E` and `D2`) |
 | P4 (two 6-poles with disjoint conducted sets) | not reached (P3 refuted); impossible among these sources, since all conducted sets contain the core |
 

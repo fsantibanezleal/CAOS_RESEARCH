@@ -28,9 +28,30 @@ entries in each row: a star at `u` extends in exactly two ways, the two automorp
 | `F3 = {Y, S}` | 12 | 116,463 | 13 | 0 | `0`: 64,854, `E`: 116,451, `D3`: 7, `D2`: 529, `T1`: 13 |
 | `F4` (40 `Pb` blocks) | 336 | stopped at the cap of 200,000 at word length 3 | | 0 among those | |
 
-PENDING: antichain closures of F1, F2, F3, F4, F5 and the certificate checks.
+**The closures kept as antichains under containment** (the declared method; a product containing
+an active element is dropped):
 
-Theorems (computer-assisted, certificates re-verified by `check_certificate.py`):
+| family | generators | certificate elements | longest new word | zero-trace elements | time |
+|---|---|---|---|---|---|
+| `F1` | 6 | 12 | 3 | 0 | under 1 s |
+| `F2` | 6 | 276 | 5 | 0 | 5 s |
+| `F3` | 12 | 2,454 | 6 | 0 | 349 s |
+| `F4` | 336 | not reached: the one-hour limit ended the run inside the products of two generators | | none found | 3,600 s |
+| `F5` | 684 | not reached, as for `F4` | | none found | 3,600 s |
+
+**Checks** (`check_certificate.py`, `artifacts/certificate-check-antichain.json`, `run-check.log`):
+
+- certificates of `F1`, `F2`, `F3`: generators rebuilt from the stored block matrices and equal to the
+  certificate's; every product of two generators contains a certificate element; every certificate
+  element times every generator contains one; every certificate element has a nonzero diagonal. All
+  three PASS, with integer matrix products (the runner uses float32 products).
+- block matrices: `Y` and `S` recomputed by brute-force enumeration of maps, equal; 46 of the 81
+  blocks (`Y`, `S`, 38 of the 40 `Pb`, 3 of the 4 `Da`, 3 of the 14 `Ja5`) recomputed with a second
+  encoding (one variable per vertex image and bijection) and a second solver (MiniSat 2.2), all
+  equal; the remaining 35 (2 `Pb`, 1 `Da`, 11 `Ja5`, all 21 `Ja7`) were not reached within the
+  90-minute limit of that run. No block differed.
+
+Theorems (computer-assisted; the certificates of `F1` to `F3` re-verified by `check_certificate.py`):
 
 1. Every ring of at least two claws, with any junction permutations, is Petersen colorable. This
    contains every flower snark, `J_k = (Y id)^(k-1) (Y tau)`.
@@ -74,6 +95,25 @@ trace and CaDiCaL on the explicit graph agree in all 203 cases (all colorable).
 |---|---|
 | Q1 (claws, every flower snark) | PASS |
 | Q2 (superedges) | PASS |
-| Q3 (a zero-trace word over `F5`) | PENDING |
+| Q3 (a zero-trace word over `F5`) | UNDECIDED as a closure (the `F5` and `F4` closures did not finish within their limits); no zero-trace element among the products computed, among the 116,463 elements of `F3`, or in the 200 random rings; the committed expectation (0.9 that none exists) is not contradicted |
 | Q4 (random rings agree with the solver) | PASS, 203 of 203; only colorable rings occurred, so Q4 tested one direction |
 | Q5 (addendum 1, `G52` split along a 6-edge cut has zero trace) | PASS, all ten splits |
+
+## Consequence for PCC-F6
+
+The success gate of the focus is met in its negative branch: Theorems 1 to 3 rule out the
+ring-of-6-poles route for the claws, the Petersen superedge and their mixtures, and the route is
+reduced to a precise, decidable question (a block family whose semigroup has a zero-trace element).
+The control on `G52` shows that this question is not vacuous: the exact relation detects a
+non-colorable gluing that charges cannot. Routed to `unbounded-defect` v0.02 (Section 6), published
+2026-10-06, DOI `10.5281/zenodo.23196817`. Next bounded action: EXP-015 (6-poles cut from the
+cyclically 5-edge-connected snarks of small order), declared before it runs.
+
+## Limitations
+
+- The theorems rest on computed sector matrices whose entries are checked maps; a missing entry
+  could only make a diagonal smaller, so the positive statements are sound, but only `Y` and `S`
+  were recomputed by three methods.
+- The large families `F4` and `F5` are undecided as closures.
+- The descriptive probes (superedge rings: snarks, girth, cyclic connectivity) were not declared
+  predictions; they are measurements with exhaustive searches.

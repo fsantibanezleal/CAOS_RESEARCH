@@ -12,6 +12,7 @@ round that produces their content.
 | [05-open-questions.md](05-open-questions.md) | minimality in [38,52], cyclic 5-connectivity, normal 6 conjecture, our nulls and budget stops | written (round 1 close) |
 | [06-colorable-only-by-itself.md](06-colorable-only-by-itself.md) | H-colorings with an unknown target, the fiber parity and unused-vertex lemmas, the encoding, the certified target orders | written (EXP-007; results table follows the verdict) |
 | [07-defects-and-sublinear-approximations.md](07-defects-and-sublinear-approximations.md) | `pd <= ab`, rings and frames of unbounded defect, the sublinear approximation conjecture, the threshold proposition, exact values | written (EXP-008, EXP-009, EXP-010) |
+| [08-six-poles-and-transfer-semigroups.md](08-six-poles-and-transfer-semigroups.md) | the 64 classes and their orbits, the core of 6-poles, transfer semigroups, rings of claws and Petersen superedges, flower-snark junctions, cyclically 5-edge-connected superedge rings, the G52 control | written (EXP-013, EXP-014) |
 
 | record | status | result |
 |---|---|---|
@@ -35,4 +36,4 @@ round that produces their content.
 | preprint colorable-only-by-itself v0.01 | published 2026-10-06 | both 52-vertex counterexamples in `H_3`; DOI [`10.5281/zenodo.22859075`](https://doi.org/10.5281/zenodo.22859075) (concept [`10.5281/zenodo.22859074`](https://doi.org/10.5281/zenodo.22859074)) |
 | consequence audit v0.06 | published 2026-10-06 | corrected abstract, statement (e) resolved by citation; DOI [`10.5281/zenodo.23195171`](https://doi.org/10.5281/zenodo.23195171) (concept [`10.5281/zenodo.22285164`](https://doi.org/10.5281/zenodo.22285164)) |
 | EXP-013 | see verdict | charge orbits conducted by 6-poles: every 6-pole of `P`, `J5`, `J7`, the dodecahedron conducts the core `{0, E, D2}` |
-| EXP-014 | running | transfer semigroups of 6-poles over the six charge sectors: every ring of a block family decided at once |
+| EXP-014 | CONFIRMED | every ring of claws, of Petersen superedges or of both is Petersen colorable (certificates re-checked); flower-snark junctions are antipodal triples; odd superedge rings are cyclically 5-edge-connected snarks of girth 5; `G52` split along a 6-edge cut has zero trace where charges agree |

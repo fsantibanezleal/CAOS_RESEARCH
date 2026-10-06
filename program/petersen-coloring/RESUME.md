@@ -1,6 +1,6 @@
 # petersen-coloring: RESUME (zero-loss handoff)
 
-Updated 2026-10-06 (round 3: sync, methodology 13, publications, focus PCC-F6). First read for any
+Updated 2026-10-06 (round 3: sync, methodology 13, publications, focus PCC-F6; EXP-013 and EXP-014 closed). First read for any
 fresh session, per methodology 07. Derived view: on conflict, experiment verdicts win; the
 strategic record is `research-governance.json` and `manuscript-map.md` in this folder.
 
@@ -17,7 +17,7 @@ Published CAOS manuscripts (all Zenodo, CC BY 4.0, not peer reviewed):
 | manuscript | version | DOI | result |
 |---|---|---|---|
 | consequence-audit | v0.06 (2026-10-06) | 10.5281/zenodo.23195171 | five graphs: covers, index 4, 5-CDC, flows, oddness, resistance, normal 6, parity theorem, defect 2 with all pairs critical, abnormal edges, statements (c), (d) false, Theorem 5.9 |
-| unbounded-defect | v0.01 (2026-09-19) | 10.5281/zenodo.22847193 | statement (e) of the Mattiolo-Mazzuoccolo-Mkrtchyan conjecture false: cyclically 4-edge-connected graphs on 102t vertices with defect at least t; their Conjecture 3 holds |
+| unbounded-defect | v0.02 (2026-10-06) | 10.5281/zenodo.23196817 | statement (e) of the Mattiolo-Mazzuoccolo-Mkrtchyan conjecture false (rings on 102t vertices, defect at least t, `pd(R_3) = 3`); Section 6: transfer semigroups of 6-poles, every ring of claws and Petersen superedges colorable |
 | colorable-only-by-itself | v0.01 (2026-10-06) | 10.5281/zenodo.22859075 | both 52-vertex counterexamples are colorable only by themselves (members of H_3), answering v4 Section 5.4 |
 
 Focus record (strategic review 2026-10-06): F0, F1, F3, F4 closed; F2 dormant; F5 gated (G68 and
@@ -29,6 +29,16 @@ modulo the cut space; good iff `q(v) = 0`; the Gauss law says the charge in a re
 through its boundary; the 64 classes are the cosets of the [15,9,3] cut code, in six Aut(P)-orbits
 `0, E (15), D3 (15), D2 (30), T1 (1), T2 (2)`; multipoles conduct classes; alternating rings of two
 multipoles with disjoint conducted sets carry charges in at least half of their blocks.
+
+Round-3 results (EXP-013, EXP-014): every 6-pole of `P`, `J5`, `J7` and the dodecahedron conducts the
+core `{0, E, D2}`, so charges never separate them. The exact transfer relation of a 6-pole is block
+diagonal over the 64 classes (six sector matrices of order at most 67), so every ring of a finite
+block family is decided by closing a finite semigroup (certificate re-checkable by products). Every
+ring of claws, of Petersen superedges `P - u - w`, or of both, is Petersen colorable; every Petersen
+coloring of a flower snark puts an antipodal triple (class `T1`, the all-ones class) on each
+junction; the odd identity rings of superedges are cyclically 5-edge-connected snarks of girth 5 on
+`8t` vertices; `G52` split along a 6-edge cut has zero trace although the two sides conduct the same
+classes. `pd(R_3) = 3`. Published in `unbounded-defect` v0.02 (Proposition 5.3, Section 6).
 
 ## 2. The objects table
 
@@ -51,7 +61,8 @@ multipoles with disjoint conducted sets carry charges in at least half of their 
 | 010 | expectations refuted | all 4-poles of the 52s and G68 colorable; dot products |
 | 011 | CONFIRMED | adjacent pairs of ten 102-vertex counterexamples critical |
 | 012 | CONFIRMED | statement (e) false |
-| 013 | running | conducted charge orbits of 6-poles |
+| 013 | P1, P2 PASS; P3 REFUTED | core `{0, E, D2}` on every 6-pole of the four cyclically 5-edge-connected sources |
+| 014 | CONFIRMED (F4, F5 at their caps) | transfer semigroups; ring theorems for claws and Petersen superedges; G52 zero-trace control |
 
 ## 4. In flight (2026-10-06)
 
@@ -59,22 +70,17 @@ multipoles with disjoint conducted sets carry charges in at least half of their 
   `E:/_Datos/caos-research/petersen-coloring/EXP-007/G68_k52-portfolio.cnf`, 82,107 variables,
   2,683,782 clauses; result `artifacts/result-G68-k52-portfolio.json`; on SAT run
   `write_formula.py --graph G68 --k 52 --decode <model file>`).
-- EXP-012 addendum 4: `run_r3_upper.py` (designated relaxations for `pd(R_3) <= 3`; result
-  `artifacts/r3-upper.json`).
-- EXP-013: `run.py --source <P|Dodeca|J5|J7|G52> --shape <a|b>`; results
-  `artifacts/conduct-<source>-<shape>.json`. First result: `P - u - w` conducts `{0, E, D2}`.
+- Nothing of EXP-013 or EXP-014 is in flight (the `F4`, `F5` antichain closures ended at their
+  one-hour limits, undecided).
 
 ## 5. Next actions, ordered
 
-1. Read the EXP-013 tables; look for two cyclically 5-edge-connected 6-poles with disjoint conducted
-   sets (for example `P - u - w`, `{0, E, D2}`, against a shape-(b) 6-pole avoiding those orbits).
-   If found: build `R_2`, run the cyclic 5-edge-connectivity search (edge sets of size at most 4)
-   and the Petersen refutation, and declare EXP-014 before any of it.
-2. Write the EXP-013 verdict; review PCC-F6 against its stop conditions.
-3. Close EXP-012 addendum 4 and record `pd(R_3)` in a new version of `unbounded-defect` only if it
-   comes with another change (no version for that alone).
-4. PCC-F5: act on the `G68` order-52 answer (SAT: decode, check, refute the target; UNSAT: record).
-5. Release step (version bump, bake, tag) belongs to the serialized release owner, not to this
+1. PCC-F6: declare EXP-015 (6-poles cut from the cyclically 5-edge-connected snarks of order at
+   most 28, House of Graphs lists; sector matrices; closures of each block alone and of pairs; a
+   zero-trace element is a candidate for Problem 11 of v4) before it runs; close the focus if it
+   finds none.
+2. PCC-F5: act on the `G68` order-52 answer (SAT: decode, check, refute the target; UNSAT: record).
+3. Release step (version bump, bake, tag) belongs to the serialized release owner, not to this
    branch.
 
 ## 6. Where everything lives

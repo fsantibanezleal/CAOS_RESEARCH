@@ -176,9 +176,10 @@ def main() -> None:
     ap.add_argument("--blocks", action="store_true", help="recheck every block with the second encoding")
     ap.add_argument("--workers", type=int, default=10)
     ap.add_argument("--antichain", action="append", default=[])
+    ap.add_argument("--out", default="certificate-check.json")
     args = ap.parse_args()
     blocks, mats = exp014.load_blocks()
-    out_path = HERE / "artifacts" / "certificate-check.json"
+    out_path = HERE / "artifacts" / args.out
     report = json.loads(out_path.read_text(encoding="utf-8")) if out_path.exists() else {}
     report.setdefault("blocks", {})
     report.setdefault("families", {})
@@ -217,7 +218,7 @@ def main() -> None:
     for fam in args.antichain:
         report["families"][fam + "-antichain"] = check_antichain(fam, blocks, mats)
         print(fam, "antichain", report["families"][fam + "-antichain"], flush=True)
-    (HERE / "artifacts" / "certificate-check.json").write_text(json.dumps(report, indent=1) + "\n", encoding="utf-8", newline="\n")
+    out_path.write_text(json.dumps(report, indent=1) + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
