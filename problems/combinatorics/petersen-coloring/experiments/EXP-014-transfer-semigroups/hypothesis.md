@@ -112,3 +112,11 @@ Control Q5: split `G52` along a cycle-separating 6-edge cut `delta(X)` with both
 algebra is right): the product has a zero diagonal in all six sectors; the two sides alone are
 colorable (nonzero sector matrices). One cut, found by a greedy search from a cyclic 4-edge cut,
 all ten splits.
+
+## Addendum 2 (2026-10-06 16:40, before the control runs): side sizes of the control cut
+
+A randomized growth search (20,000 runs) found no 6-edge cut of `G52` with both sides of at least
+20 vertices: the smallest cuts found for one side of 20 to 32 vertices have 7 or 8 edges, while
+sides of 18 and 34 vertices admit 6-edge cuts. The control uses a 6-edge cut with sides between
+18 and 34 vertices (both sides then contain cycles, since a side of `s >= 18` vertices spans
+`(3s - 6)/2 >= s` edges). The prediction is unchanged.
