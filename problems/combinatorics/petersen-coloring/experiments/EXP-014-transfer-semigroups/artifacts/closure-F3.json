@@ -1,0 +1,128 @@
+{
+ "family": "F3",
+ "generators": [
+  {
+   "block": "Y",
+   "orient": "f",
+   "pi": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "block": "Y",
+   "orient": "f",
+   "pi": [
+    0,
+    2,
+    1
+   ]
+  },
+  {
+   "block": "Y",
+   "orient": "f",
+   "pi": [
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "block": "Y",
+   "orient": "f",
+   "pi": [
+    1,
+    2,
+    0
+   ]
+  },
+  {
+   "block": "Y",
+   "orient": "f",
+   "pi": [
+    2,
+    0,
+    1
+   ]
+  },
+  {
+   "block": "Y",
+   "orient": "f",
+   "pi": [
+    2,
+    1,
+    0
+   ]
+  },
+  {
+   "block": "S",
+   "orient": "f",
+   "pi": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "block": "S",
+   "orient": "f",
+   "pi": [
+    0,
+    2,
+    1
+   ]
+  },
+  {
+   "block": "S",
+   "orient": "f",
+   "pi": [
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "block": "S",
+   "orient": "f",
+   "pi": [
+    1,
+    2,
+    0
+   ]
+  },
+  {
+   "block": "S",
+   "orient": "f",
+   "pi": [
+    2,
+    0,
+    1
+   ]
+  },
+  {
+   "block": "S",
+   "orient": "f",
+   "pi": [
+    2,
+    1,
+    0
+   ]
+  }
+ ],
+ "closure_reached": true,
+ "cap": 200000,
+ "elements": 116463,
+ "longest_word": 13,
+ "zero_trace_elements": 0,
+ "zero_trace_words": [],
+ "elements_with_sector_diagonal": {
+  "0": 64854,
+  "E": 116451,
+  "D3": 7,
+  "D2": 529,
+  "T1": 13,
+  "T2": 0
+ },
+ "seconds": 344.6
+}

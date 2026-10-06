@@ -1,0 +1,1954 @@
+{
+ "source": "P",
+ "shape": "b",
+ "n": 10,
+ "aut_order": 120,
+ "cyclic_cut_below_5": null,
+ "cyclic_cut_below_4": null,
+ "poles": {
+  "e0-e3-e6|s0": {
+   "pole": "e0-e3-e6",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.265,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.254,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.22,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.199,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.224,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.214,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s1": {
+   "pole": "e0-e3-e6",
+   "split": 1,
+   "c1": [
+    0,
+    1,
+    3
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.185,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.203,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.218,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.211,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.222,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.216,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s2": {
+   "pole": "e0-e3-e6",
+   "split": 2,
+   "c1": [
+    0,
+    1,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.177,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.326,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.202,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.192,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.278,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.29,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s3": {
+   "pole": "e0-e3-e6",
+   "split": 3,
+   "c1": [
+    0,
+    1,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.193,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.194,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.261,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.189,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.199,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.193,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s4": {
+   "pole": "e0-e3-e6",
+   "split": 4,
+   "c1": [
+    0,
+    2,
+    3
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.184,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.24,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.298,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.235,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.194,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.262,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s5": {
+   "pole": "e0-e3-e6",
+   "split": 5,
+   "c1": [
+    0,
+    2,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.208,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.171,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.188,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.215,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.2,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.177,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s6": {
+   "pole": "e0-e3-e6",
+   "split": 6,
+   "c1": [
+    0,
+    2,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.263,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.2,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.243,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.158,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.178,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.226,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s7": {
+   "pole": "e0-e3-e6",
+   "split": 7,
+   "c1": [
+    0,
+    3,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.194,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.196,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.207,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.189,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.203,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.172,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s8": {
+   "pole": "e0-e3-e6",
+   "split": 8,
+   "c1": [
+    0,
+    3,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.224,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.215,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.186,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.227,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.167,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.261,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e6|s9": {
+   "pole": "e0-e3-e6",
+   "split": 9,
+   "c1": [
+    0,
+    4,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.216,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.207,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.221,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.282,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.264,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.164,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s0": {
+   "pole": "e0-e3-e7",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.234,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.297,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.267,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.259,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.204,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.282,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s1": {
+   "pole": "e0-e3-e7",
+   "split": 1,
+   "c1": [
+    0,
+    1,
+    3
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.203,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.163,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.227,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.241,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.201,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.236,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s2": {
+   "pole": "e0-e3-e7",
+   "split": 2,
+   "c1": [
+    0,
+    1,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.179,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.211,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.226,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.194,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.235,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.215,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s3": {
+   "pole": "e0-e3-e7",
+   "split": 3,
+   "c1": [
+    0,
+    1,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.216,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.21,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.183,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.249,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.252,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.229,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s4": {
+   "pole": "e0-e3-e7",
+   "split": 4,
+   "c1": [
+    0,
+    2,
+    3
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.269,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.262,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.261,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.209,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.176,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.209,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s5": {
+   "pole": "e0-e3-e7",
+   "split": 5,
+   "c1": [
+    0,
+    2,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.253,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.215,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.277,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.197,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.268,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.215,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s6": {
+   "pole": "e0-e3-e7",
+   "split": 6,
+   "c1": [
+    0,
+    2,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.204,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.221,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.232,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.23,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.218,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.222,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s7": {
+   "pole": "e0-e3-e7",
+   "split": 7,
+   "c1": [
+    0,
+    3,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.242,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.242,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.217,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.222,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.232,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.303,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s8": {
+   "pole": "e0-e3-e7",
+   "split": 8,
+   "c1": [
+    0,
+    3,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.274,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.196,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.296,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.374,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.35,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.215,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e3-e7|s9": {
+   "pole": "e0-e3-e7",
+   "split": 9,
+   "c1": [
+    0,
+    4,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.235,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.326,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.226,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.298,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.244,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.254,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s0": {
+   "pole": "e0-e4-e8",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.246,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.27,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.232,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.351,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.361,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.285,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s1": {
+   "pole": "e0-e4-e8",
+   "split": 1,
+   "c1": [
+    0,
+    1,
+    3
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.235,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.347,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.265,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.253,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.314,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.277,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s2": {
+   "pole": "e0-e4-e8",
+   "split": 2,
+   "c1": [
+    0,
+    1,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.298,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.3,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.24,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.195,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.247,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.341,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s3": {
+   "pole": "e0-e4-e8",
+   "split": 3,
+   "c1": [
+    0,
+    1,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.337,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.278,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.211,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.22,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.309,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.322,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s4": {
+   "pole": "e0-e4-e8",
+   "split": 4,
+   "c1": [
+    0,
+    2,
+    3
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.339,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.32,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.264,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.297,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.261,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.266,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s5": {
+   "pole": "e0-e4-e8",
+   "split": 5,
+   "c1": [
+    0,
+    2,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.279,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.264,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.213,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.307,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.279,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.418,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s6": {
+   "pole": "e0-e4-e8",
+   "split": 6,
+   "c1": [
+    0,
+    2,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.287,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.246,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "UNSAT",
+     "seconds": 0.286,
+     "verified": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.261,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.315,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.257,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s7": {
+   "pole": "e0-e4-e8",
+   "split": 7,
+   "c1": [
+    0,
+    3,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.237,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.253,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.252,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.24,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.228,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.263,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s8": {
+   "pole": "e0-e4-e8",
+   "split": 8,
+   "c1": [
+    0,
+    3,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.318,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.301,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.3,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.238,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.237,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.222,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e8|s9": {
+   "pole": "e0-e4-e8",
+   "split": 9,
+   "c1": [
+    0,
+    4,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.237,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.239,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.303,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.218,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.223,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.212,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s0": {
+   "pole": "e0-e4-e13",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.399,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.31,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.358,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.226,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.417,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.193,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s1": {
+   "pole": "e0-e4-e13",
+   "split": 1,
+   "c1": [
+    0,
+    1,
+    3
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.618,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.264,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "UNSAT",
+     "seconds": 0.247,
+     "verified": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.184,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.277,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.277,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s2": {
+   "pole": "e0-e4-e13",
+   "split": 2,
+   "c1": [
+    0,
+    1,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.298,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.315,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.39,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.355,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.213,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.335,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s3": {
+   "pole": "e0-e4-e13",
+   "split": 3,
+   "c1": [
+    0,
+    1,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.267,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.419,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "UNSAT",
+     "seconds": 0.259,
+     "verified": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.27,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.293,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.236,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s4": {
+   "pole": "e0-e4-e13",
+   "split": 4,
+   "c1": [
+    0,
+    2,
+    3
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.335,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.314,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.218,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.26,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.269,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.288,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s5": {
+   "pole": "e0-e4-e13",
+   "split": 5,
+   "c1": [
+    0,
+    2,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.409,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.309,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.291,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.253,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.291,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.294,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s6": {
+   "pole": "e0-e4-e13",
+   "split": 6,
+   "c1": [
+    0,
+    2,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.28,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.289,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.258,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.27,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.261,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.403,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s7": {
+   "pole": "e0-e4-e13",
+   "split": 7,
+   "c1": [
+    0,
+    3,
+    4
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.342,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.237,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.377,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.256,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.31,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.386,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s8": {
+   "pole": "e0-e4-e13",
+   "split": 8,
+   "c1": [
+    0,
+    3,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.372,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.259,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.358,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.389,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.366,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.368,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "e0-e4-e13|s9": {
+   "pole": "e0-e4-e13",
+   "split": 9,
+   "c1": [
+    0,
+    4,
+    5
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.186,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.268,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "UNSAT",
+     "seconds": 0.199,
+     "verified": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.207,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.216,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.16,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  }
+ }
+}

@@ -1,0 +1,206 @@
+{
+ "source": "Dodeca",
+ "shape": "a",
+ "n": 20,
+ "aut_order": 120,
+ "cyclic_cut_below_5": null,
+ "cyclic_cut_below_4": null,
+ "poles": {
+  "v0-v2|s0": {
+   "pole": "v0-v2",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.387,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.344,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.319,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.35,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.469,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.337,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "v0-v3|s0": {
+   "pole": "v0-v3",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.342,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.338,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.335,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.286,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.29,
+     "verified": true
+    },
+    "T2": {
+     "status": "SAT",
+     "seconds": 0.325,
+     "checker_ok": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "undecided": []
+  },
+  "v0-v4|s0": {
+   "pole": "v0-v4",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.353,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.276,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.339,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.333,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.227,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.533,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "undecided": []
+  },
+  "v0-v5|s0": {
+   "pole": "v0-v5",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.261,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.227,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "SAT",
+     "seconds": 0.303,
+     "checker_ok": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.325,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "SAT",
+     "seconds": 0.142,
+     "checker_ok": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.436,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1"
+   ],
+   "undecided": []
+  }
+ }
+}

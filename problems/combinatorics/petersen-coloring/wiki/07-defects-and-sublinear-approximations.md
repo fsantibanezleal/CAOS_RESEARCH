@@ -169,14 +169,22 @@ criticality, is what separates the two behaviours.
 Every witness has exactly one bad vertex per block. Rings and the $K_4$ frame of the
 Petersen-colorable snark $J_5$ are Petersen colorable (controls).
 
+The conduction rings of EXP-012 (cyclically 4-edge-connected, girth 5, $102t$ vertices):
+
+| graph | order | pd | how |
+|---|---|---|---|
+| $R_1$ | 102 | at least 2 | no Petersen coloring (verified proof), parity theorem |
+| $R_2$ | 204 | 2 | ring theorem (at least 2) and a witness with the bad vertices in the two $B$-blocks |
+| $R_3$ | 306 | 3 | ring theorem (at least 3) and a designated relaxation with three bad vertices, solved in 168.6 s (EXP-012 addendum 4, 2026-10-06) |
+
 ## Open
 
-- Statement (e): a cyclically 4-edge-connected cubic graph with $\mathrm{ab} \ge 10$, or a proof
-  that $\mathrm{ab} \le 9$ on that class.
-- By Proposition 5, a cyclically 4-edge-connected cubic graph with Petersen defect at least 3
-  would be enough. Ten dot products of $G_{52}$ with itself (102 vertices, new counterexamples with
-  checked proofs) all have defect 2.
-- Is $\mathrm{pd}$ bounded on cyclically 4-edge-connected cubic graphs? A superposition approach
-  (superedges $G - \{u, v\}$ with $u, v$ far apart carry a nonzero class of
-  $\mathbb{F}_2^{E(P)}$ modulo the cut space from one connector to the other) is recorded as
-  research line PCR-7.
+- Exact abnormal-edge numbers of the $R_t$: only $\mathrm{ab}(R_t) \ge \mathrm{pd}(R_t) \ge t$ is
+  known.
+- Problem 11 of arXiv:2608.10028v4: is there a cyclically 5-edge-connected cubic graph without a
+  Petersen coloring? The ring theorem with 3-edge junctions would give one, and with it unbounded
+  defect in that class, from two 6-poles with disjoint conducted sets. EXP-013 measured the charge
+  classes conducted by every 6-pole of $P$, $J_5$, $J_7$ and the dodecahedron: all conduct the
+  core $\{0, E, D_2\}$ (`context/2026-10-06-charges.md`, section 6), so that route needs finer
+  structure than charges. The exact structure is the transfer semigroup of
+  `context/2026-10-06-charges.md`, section 7 (EXP-014).

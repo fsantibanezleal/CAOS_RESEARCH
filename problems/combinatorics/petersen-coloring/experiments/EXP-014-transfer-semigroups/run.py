@@ -214,10 +214,95 @@ class Closure:
             i = p
 
 
+class AntichainClosure(Closure):
+    """The closure kept as an antichain under inclusion (hypothesis.md, "Soundness and certificate").
+
+    A product containing an active element is dropped; a new element retires every active element
+    that contains it (retired elements are not expanded: their products contain the new element's).
+    At the end every product of at least two generators contains an active element, and every
+    active element times every generator does too."""
+
+    WORDS = 269  # 17,197 bits padded to 269 64-bit words
+
+    def __init__(self, gens, cap: int):
+        super().__init__(gens)
+        self.cap = cap
+        self.bits = np.zeros((cap + 1, self.WORDS), dtype=np.uint64)
+        self.active = np.zeros(cap + 1, dtype=bool)
+        self.retired = 0
+
+    @classmethod
+    def words(cls, packed: np.ndarray) -> np.ndarray:
+        pad = np.zeros((packed.shape[0], cls.WORDS * 8), dtype=np.uint8)
+        pad[:, :packed.shape[1]] = packed
+        return pad.view(np.uint64)
+
+    def offer(self, packed: np.ndarray, diag: np.ndarray, parents: list[tuple[int, int]], length: int) -> list[int]:
+        packed, idx = np.unique(packed, axis=0, return_index=True)
+        diag = diag[idx]
+        parents = [parents[i] for i in idx]
+        w = self.words(packed)
+        n = len(self.rows)
+        act = np.flatnonzero(self.active[:n])
+        keep = np.ones(w.shape[0], dtype=bool)
+        if act.size:
+            abits = self.bits[act]
+            step = max(1, int(1e7 // (act.size * self.WORDS)))
+            for s in range(0, w.shape[0], step):
+                x = w[s:s + step]
+                keep[s:s + step] = ~np.any(np.all((abits[None, :, :] & ~x[:, None, :]) == 0, axis=2), axis=1)
+        cand = np.flatnonzero(keep)
+        pc = np.unpackbits(packed[cand], axis=1).sum(axis=1)
+        cand = cand[np.argsort(pc, kind="stable")]
+        new = []
+        for k in cand:
+            x = w[k]
+            if new and np.any(np.all((self.bits[new] & ~x) == 0, axis=1)):
+                continue
+            raw = packed[k].tobytes()
+            if raw in self.ids:
+                continue
+            if act.size:
+                sup = act[np.all((x & ~self.bits[act]) == 0, axis=1)]
+                if sup.size:
+                    self.active[sup] = False
+                    self.retired += int(sup.size)
+                    act = np.setdiff1d(act, sup, assume_unique=True)
+            i = self.add(raw, parents[k], length, bool(diag[k]))
+            self.bits[i] = x
+            self.active[i] = True
+            new.append(i)
+        return new
+
+    def run(self, cap: int) -> bool:
+        queue = []
+        for gi, g in enumerate(self.gens):
+            packed, diag = self.right_products(g["mats"])
+            queue += self.offer(packed, diag, [(-1 - gi, hj) for hj in range(len(self.gens))], 2)
+            if len(self.rows) >= cap - len(self.gens):
+                return False
+        head = 0
+        while head < len(queue):
+            x = queue[head]
+            head += 1
+            if not self.active[x]:
+                continue
+            packed, diag = self.right_products(transfer.unpack(self.rows[x]))
+            queue += self.offer(packed, diag, [(x, hj) for hj in range(len(self.gens))], self.length[x] + 1)
+            if len(self.rows) >= cap - len(self.gens):
+                return False
+            if head % 200 == 0:
+                log(f"  expanded {head}, stored {len(self.rows)}, active {int(self.active[:len(self.rows)].sum())}, "
+                    f"queue {len(queue) - head}, longest word {max(self.length)}")
+        return True
+
+
 def cmd_closure(args) -> None:
     blocks, mats = load_blocks()
     gens = generators(blocks, mats, args.family)
     log(f"family {args.family}: {len(gens)} distinct generators")
+    if args.antichain:
+        return cmd_antichain(args, gens)
     t0 = time.time()
     cl = Closure(gens)
     reached = cl.run(args.cap)
@@ -242,6 +327,33 @@ def cmd_closure(args) -> None:
            "elements_with_sector_diagonal": sector_counts, "seconds": round(sec, 1)}
     ARTIFACTS.mkdir(exist_ok=True)
     (ARTIFACTS / f"closure-{args.family}.json").write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8", newline="\n")
+
+
+def cmd_antichain(args, gens) -> None:
+    t0 = time.time()
+    cl = AntichainClosure(gens, args.cap)
+    reached = cl.run(args.cap)
+    sec = time.time() - t0
+    n = len(cl.rows)
+    active = np.flatnonzero(cl.active[:n])
+    log(f"family {args.family} (antichain): closure {'reached' if reached else 'STOPPED AT CAP'}; stored {n}, active {active.size}, "
+        f"retired {cl.retired}, longest word {max(cl.length)}, zero-trace elements {len(cl.zero)}, {sec:.0f} s")
+    zero_words = []
+    for i in cl.zero[:50]:
+        zero_words.append([{"block": gens[g]["block"], "orient": gens[g]["orient"], "pi": list(gens[g]["pi"])} for g in cl.word(i)])
+    sector_counts = {o: 0 for o in SECTORS}
+    for i in active:
+        for o in transfer.colorable_sectors(transfer.unpack(cl.rows[i])):
+            sector_counts[o] += 1
+    HEAVY.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(HEAVY / f"certificate-{args.family}-antichain.npz",
+                        generators=np.array([np.frombuffer(transfer.pack(g["mats"]), dtype=np.uint8) for g in gens]),
+                        elements=np.array([np.frombuffer(cl.rows[i], dtype=np.uint8) for i in active]))
+    out = {"family": args.family, "mode": "antichain", "generators": len(gens), "closure_reached": reached, "cap": args.cap,
+           "stored": n, "active": int(active.size), "retired": cl.retired, "longest_word": max(cl.length),
+           "zero_trace_elements": len(cl.zero), "zero_trace_words": zero_words,
+           "active_with_sector_diagonal": sector_counts, "seconds": round(sec, 1)}
+    (ARTIFACTS / f"closure-{args.family}-antichain.json").write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8", newline="\n")
 
 
 def ring_cnf_status(g: graphs.Graph, stem: str) -> dict:
@@ -307,6 +419,7 @@ def main() -> None:
     c = sub.add_parser("closure")
     c.add_argument("--family", required=True, choices=sorted(FAMILIES))
     c.add_argument("--cap", type=int, default=200000)
+    c.add_argument("--antichain", action="store_true")
     x = sub.add_parser("crosscheck")
     x.add_argument("--words", type=int, default=200)
     args = ap.parse_args()

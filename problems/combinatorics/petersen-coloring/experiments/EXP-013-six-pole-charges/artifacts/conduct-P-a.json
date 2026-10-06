@@ -1,0 +1,57 @@
+{
+ "source": "P",
+ "shape": "a",
+ "n": 10,
+ "aut_order": 120,
+ "cyclic_cut_below_5": null,
+ "cyclic_cut_below_4": null,
+ "poles": {
+  "v0-v1|s0": {
+   "pole": "v0-v1",
+   "split": 0,
+   "c1": [
+    0,
+    1,
+    2
+   ],
+   "orbits": {
+    "0": {
+     "status": "SAT",
+     "seconds": 0.177,
+     "checker_ok": true
+    },
+    "E": {
+     "status": "SAT",
+     "seconds": 0.167,
+     "checker_ok": true
+    },
+    "D3": {
+     "status": "UNSAT",
+     "seconds": 0.197,
+     "verified": true
+    },
+    "D2": {
+     "status": "SAT",
+     "seconds": 0.192,
+     "checker_ok": true
+    },
+    "T1": {
+     "status": "UNSAT",
+     "seconds": 0.21,
+     "verified": true
+    },
+    "T2": {
+     "status": "UNSAT",
+     "seconds": 0.185,
+     "verified": true
+    }
+   },
+   "D": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "undecided": []
+  }
+ }
+}
