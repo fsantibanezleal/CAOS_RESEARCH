@@ -132,7 +132,7 @@
     {
       "id": "HW-F8",
       "title": "Tensor factorization of extension ideals under gluing",
-      "status": "active",
+      "status": "active-publication-pending",
       "priority": 1,
       "target": "For a gluing Gamma = a1*Gamma1 + a2*Gamma2 and relative ideals A_i, decide whether I_A (x)_R I_(A*) factors as T1 (x)_(k[y]) T2 and characterize when the extension A = a1*A1 + a2*A2 is Huneke-Wiegand.",
       "value": "Settles the case left open by García-Sánchez and Leamer Proposition 9 (both factors non-principal and not Huneke-Wiegand), answers their ring-level question for monomial ideals, gives a torsion-length law, and produces counterexample ideals with 2^r minimal generators.",
@@ -140,7 +140,7 @@
       "stop_conditions": ["A case violates the torsion-length law or the characterization.", "A located primary source already states the factorization or the characterization.", "The isomorphism I_A = I_(A1) (x)_(k[y]) I_(A2) fails for relative ideals."],
       "novelty_status": "Searched 2026-10-30: García-Sánchez and Leamer arXiv:1211.4554, Goto-Takahashi-Taniguchi-Le Truong arXiv:1305.4238, Leamer arXiv:1211.2896, Roy arXiv:1808.06600; none states the factorization, the torsion-length law or the open case of Proposition 9. Not a novelty proof; specialist review required.",
       "manuscript_route": "New focused companion manuscript gluing-extensions, v0.01: main theorem EXP-068, corollaries Proposition 9 and 10 of García-Sánchez and Leamer (re-proved), EXP-067 and the four-generated counterexamples.",
-      "first_bounded_action": "EXP-068: proof plus the seeded two-route verification, frozen hypothesis before the run.",
+      "first_bounded_action": "EXP-068 CONFIRMED 2026-10-30; gluing-extensions v0.01 DOI reserved and frozen; publish awaits Felipe's permission.",
       "evidence": ["EXP-067", "EXP-068"]
     }
   ],
@@ -171,6 +171,15 @@
       "concept_doi": "10.5281/zenodo.22342975",
       "status": "published-focused-gated",
       "split_action": "Keep intact. Publish another version only for a canonical comparison, complete quotient, or reusable general theorem."
+    },
+    {
+      "slug": "gluing-extensions",
+      "path": "manuscripts/huneke-wiegand/gluing-extensions",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.23821498",
+      "concept_doi": "10.5281/zenodo.23821497",
+      "status": "reserved-frozen-publication-pending",
+      "split_action": "Focused companion owning EXP-068 (main theorem) and EXP-067 (credited corollary of García-Sánchez and Leamer 2012). DOI reserved and PDF frozen 2026-10-30; the Zenodo publish step awaits Felipe's permission."
     }
   ],
   "experiment_dispositions": [
@@ -194,9 +203,9 @@
     },
     {
       "start": 67,
-      "end": 67,
+      "end": 68,
       "classification": "companion-manuscript",
-      "manuscripts": []
+      "manuscripts": ["gluing-extensions"]
     }
   ]
 }

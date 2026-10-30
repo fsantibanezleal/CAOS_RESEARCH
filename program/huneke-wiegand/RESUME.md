@@ -2,7 +2,28 @@
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 7; close HW-F7 as a corollary disposition with credit to García-Sánchez and Leamer (HWB-094, HWB-097), then the mandatory strategic review.
 
-## Current checkpoint: EXP-067 confirmed and reviewed, 2026-09-24
+## Current checkpoint: EXP-068 confirmed, 2026-10-30
+
+**EXP-068 is CONFIRMED** ([verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-068-gluing-tensor-factorization/verdict.md),
+[proof](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-068-gluing-tensor-factorization/proof.md)).
+For a gluing `Gamma = a1*Gamma1 + a2*Gamma2` and the extension `A = a1*A1 + a2*A2`:
+`I_A (x) I_(A*) = T1 (x)_(k[y]) T2`, `l(tau) = a1*l(tau1) + a2*l(tau2) + sum_j b1(j)*b2(j)`,
+`mu(A) = mu(A1)*mu(A2)`, and `A` is Huneke-Wiegand iff a factor is a non-principal Huneke-Wiegand
+ideal. Four-generated counterexamples: `56*Gamma_P + 57*Gamma_P` with `(0,14)` twice (Frobenius 23645,
+generators `0, 784, 798, 1582`) and `96*Gamma_P + 89*C_4` (Frobenius 53599).
+
+EXP-067 is a credited corollary of García-Sánchez and Leamer (2012); HW-F7 is closed. Focus HW-F8.
+
+Manuscript `manuscripts/huneke-wiegand/gluing-extensions` v0.01: built, voice-clean, DOI
+`10.5281/zenodo.23821498` reserved and PDF frozen (release record in CAOS_MANAGE
+`manuscripts/huneke-wiegand/gluing-extensions/pending-v0.01.json`, state `frozen`). **Next action:
+HWB-100**, run `release.py publish <record> --approval manuscripts/huneke-wiegand/gluing-extensions/publication-gate.json --apply`
+from a CAOS_MANAGE tree once Felipe permits it; then update the manuscript index rows from
+"publication pending" to published. After that: strategic review, candidate HWB-101.
+
+Code: `code/hwcert/gluing.py`; tests: `tests/test_huneke_wiegand_exp068.py`.
+
+## Superseded checkpoint: EXP-067 confirmed and reviewed, 2026-09-24
 
 **EXP-067 is CONFIRMED.** For a numerical semigroup `Gamma` of multiplicity
 `m` and `gcd(q,m)=1`, the simple gluing `Delta=m*N+q*Gamma` satisfies
