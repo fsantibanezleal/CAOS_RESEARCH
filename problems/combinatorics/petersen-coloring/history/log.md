@@ -137,3 +137,9 @@
   cyclically 5-edge-connected graphs). Charge formulation written; coset structure of the cut code
   verified; EXP-013 declared and running.
 
+## 2026-10-30 - portfolio review: external status
+
+External status: disproved (Putman arXiv:2608.10012; Goedgebeur, Jooken, Máčajová, Mattiolo, Mazzuoccolo, Ulyanov arXiv:2608.10028, v4 2026-09-30) [V]. Nothing new on the conjecture since the last pass of 2026-10-06; adjacent only, Mkrtchyan arXiv:2610.35794 (2026-10-26) [V]. No new overlap with CAOS claims; OpenAI Math: none.
+Plan change (assessment): unchanged; rank 1; PCC-F6 stays active. First bounded action: EXP-015 as ordered in `RESUME.md` section 5 (6-poles from the cyclically 5-edge-connected snarks of order at most 28, sector matrices, closures); close PCC-F6 if no zero-trace element exists.
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).

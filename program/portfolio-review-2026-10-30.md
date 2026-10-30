@@ -98,7 +98,9 @@ rank 7, close HW-F7 as a corollary disposition with credit.
 positive masses is now claimed by Tomar (arXiv:2610.13100, v1 2026-10-09, v2 2026-10-15, Lean 4
 formalization and certificates at Zenodo 10.5281/zenodo.23202861) [V, re-checked], by Chen and Tong
 (arXiv:2610.16107, v1 2026-10-12, v4 2026-10-29, exact, interval and ball arithmetic, no Lean)
-[V, re-checked] and by Liu and Liu (arXiv:2610.28168, 2026-10-20) [V]; none refereed. Tomar also
+[V, re-checked] and by Liu and Liu (arXiv:2610.28168, 2026-10-20) [V]; none refereed. An earlier
+Zenodo record by Nagy (record 19203285, 2026-03-24) claims finiteness for every N; only its title and
+dates were read, and it is unvetted [V for title and dates]. Tomar also
 claims uniqueness of the strictly convex four-body configuration (arXiv:2609.35632, v2 2026-10-29)
 [V]. No n = 6 result located [U]. Overlap: the value of our n = 5 tropical replication and of the
 round-54 certified atlas of the doubly symmetric five-body cross is superseded if these claims hold.
@@ -159,7 +161,7 @@ is open (section 3).
 | `huneke-wiegand` | Amend the EXP-067 novelty statement: the ideal transfer is García-Sánchez and Leamer (2012) Proposition 10 and Theorem 13; record HWB-094 as a corollary disposition | Problem round |
 | `riemann-hypothesis` | Correction review: `sharp-three-point-kernel` v0.01 transfers a global proportion through Wang's arXiv:2609.24167v1 framework, withdrawn on 2026-10-06; re-read the Wang arXiv:2609.07918v2 pair theorem used by the EXP-010 onset | Felipe's pause: a publication correction, not an experiment; needs his go |
 | `jacobian-conjecture` | Record Helali, Guo, Long, de Bondt, Kanel-Belov and Fedorov; mark the 48-variable witnesses as superseded in dimension | Problem round |
-| `central-configurations` | Record the four five-body claims and the convex four-body claim; strategic review | Problem round |
+| `central-configurations` | Record the three arXiv five-body claims, the unvetted Nagy Zenodo record and the convex four-body claim; strategic review | Problem round |
 | `navier-stokes` | Cite and scope against arXiv:2610.08144 in v0.09 | Problem round |
 | `unsplittable-flow-cost` | Refresh the literature dossier; check the Conjecture 1.4 numbering | Problem round |
 | program | Status board and `portfolio.yaml` reconciled with the problem records (Riemann published, Bougard-Joret consolidating, Petersen exploring since 2026-10-06) | Done in this branch |

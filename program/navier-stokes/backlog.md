@@ -24,6 +24,8 @@ and a kill criterion per methodology 12.
 | NS-018 | EXP-007: does localization break the dissipative reduction? | validation | done 2026-09-17 (CONFIRMED: cost is 3.6 alpha/(ell lambda), negligible at their separations) | P1 | S | GPU seconds, no time stepping | n/a |
 | NS-019 | Transcribe the Euler paper's force budget the same way (Section 12: J = 2k + 8, N^(-7/8), Q_i = q_0 + i, k <= Q/c_Q) and settle whether its growth scale is the square root of the background gradient | research | done 2026-09-18: pendulum class confirmed from (3.4); force exponents of (12.15) transcribed (`ab_euler_budget.py`); ceiling 3.8e-03 ours; manuscript v0.07 Theorem 4.2 | P2 | L | CPU only, 112-page reading unit | n/a |
 | NS-010 | Re-read the Alpoge-Buckmaster hypo-dissipative paper the day it appears and compare its exponent with ours; record whoever is first | research | blocked | P2 | S | none | unblocks when they post |
+| NS-020 | v0.09 citation and scope revision: cite and scope the manuscript against Bastounis, Circelli, Hansen arXiv:2610.08144 (2026-10-06), whose Lean audit finds the Lean proof does not correspond to the natural-language blowup proof [V, re-checked] (2026-10-30 portfolio review) | documentation | todo | P0 | - | - | - |
+| NS-021 | Bounded comparison of the hypodissipative threshold (22-8*sqrt(7))/9 of arXiv:2407.06776 [V2] with our class ceiling (no source states the ceiling [U]); then the problem goes dormant (2026-10-30 portfolio review) | research | todo | P1 | - | - | - |
 
 ## Standing obligations
 

@@ -8,6 +8,8 @@ Manuscript v0.08 (10.5281/zenodo.22835133, 2026-09-18) is v0.07 with the author 
 Santibáñez-Leal (the manuscripts campaign; the publish tool now refuses any other spelling on page 1).
 Its content equals v0.07, so the next content revision is v0.09.
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): dormant after one citation and scope revision (v0.09) against arXiv:2610.08144 (NS-020) and the comparison of (22-8*sqrt(7))/9 with the class ceiling (NS-021).
+
 ## 1. State in one screen
 
 The problem row. `navier-stokes`, area `analysis-pde`, portfolio feasibility B, opened 2026-09-11.

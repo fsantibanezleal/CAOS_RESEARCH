@@ -6,6 +6,8 @@ and transverse `d=0` quotient are the active routes. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 5 with a redirect; strategic review (JCB-098), then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 (JCB-099); the transverse Fitting atlas is parked.
+
 ## 1. State in one screen
 
 - The Jacobian conjecture is false in every dimension at least three. The program's exact

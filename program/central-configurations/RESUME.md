@@ -2,6 +2,8 @@
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): hold; strategic review (CCB-039), candidate redirect to an independent replay of the Tomar certificates and Lean proof (CCB-040), or gate the problem.
+
 ## 1. State in one screen
 
 - **The problem (Smale 6):** for fixed positive masses $m_1, \dots, m_n$, is the number

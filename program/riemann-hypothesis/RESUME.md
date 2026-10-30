@@ -1,5 +1,7 @@
 # Riemann hypothesis handoff
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): no research restart; one correction review is open (`sharp-three-point-kernel` v0.01, RH-049), gated on Felipe's go.
+
 ## Research paused by the user, 2026-10-04
 
 Riemann experimentation and the proposed research app release are stopped.

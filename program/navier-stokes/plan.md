@@ -131,3 +131,15 @@ a blocker.
   meaningless as posed and the plan is rewritten around the PDE instead.
 - Phase 3 finds no stable transition: record the negative result and close the round. A null result
   here is a legitimate outcome and will be published as one in the problem's history.
+
+## External status review, 2026-10-30
+
+Last pass 2026-09-18. External: the Clay problem is open; the OpenAI forced blowup (2026-09-08) is unrefereed [V2]. New: Bastounis, Circelli, Hansen, arXiv:2610.08144 (2026-10-06): the Lean proof does not correspond to the natural-language blowup proof [V, re-checked]; Alpoge, Buckmaster, Coiculescu arXiv:2609.16470 (forced IPM blowup with smooth force) [V]; Cao-Chi-Nie arXiv:2609.10262 (density of blowup forces) [V]; Petrillo-Glimm arXiv:2609.23868 [V]; Cheskidov-Dai-Palasek arXiv:2609.26790 [V]. Overlap: our Lean audit checked the statements, which remains consistent with a proof-correspondence gap; the manuscript must cite and scope against arXiv:2610.08144. No source states our class ceiling [U]; the nearest quantitative value is the hypodissipative threshold (22-8*sqrt(7))/9 of arXiv:2407.06776 [V2].
+
+Plan change (assessment). Not ranked in section 1 of the review. Hold or redirect (assessment): dormant after one citation revision.
+
+Review plan: one citation and scope revision (v0.09), the bounded comparison of that threshold with the class ceiling, then dormant.
+
+Record action (review section 3). Cite and scope against arXiv:2610.08144 in v0.09. Gate: Problem round.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).
