@@ -27,6 +27,9 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | Hoa maximal non-Hamiltonian conjecture: least counterexample order | combinatorics | proposed | A | no | scouting dossier under the petersen-coloring context, `scouting-2026-09/` |
 | Boij-Soderberg realizability (Erman-Sam Questions 6.1/6.2) | commutative-algebra | proposed | A | no | same scouting dossier set |
 
+The latest portfolio-wide review of external status and priorities is
+[`portfolio-review-2026-10-30.md`](portfolio-review-2026-10-30.md).
+
 Portfolio selection is also informed by the finite-certificate and validation-loop criteria in
 [`counterexample-radar.md`](counterexample-radar.md). Prestige is not a substitute for a tractable
 falsification surface.
