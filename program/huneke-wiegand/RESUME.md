@@ -1,5 +1,7 @@
 # Huneke-Wiegand extensions - session handoff
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 7; close HW-F7 as a corollary disposition with credit to García-Sánchez and Leamer (HWB-094, HWB-097), then the mandatory strategic review.
+
 ## Current checkpoint: EXP-067 confirmed and reviewed, 2026-09-24
 
 **EXP-067 is CONFIRMED.** For a numerical semigroup `Gamma` of multiplicity

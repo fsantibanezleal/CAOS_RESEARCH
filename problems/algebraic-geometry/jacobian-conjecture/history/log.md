@@ -1743,3 +1743,11 @@
 - Manuscripts published with the restated statements and the author name printed as
   Santibáñez-Leal: cascade v0.06 (10.5281/zenodo.22834179), foundational v0.13
   (10.5281/zenodo.22834207), planar v0.34 (10.5281/zenodo.22834215, author name only).
+
+## 2026-10-30 - portfolio review: external status
+
+External status: false for n >= 3 (Alpoge's map, announced 2026-07-19/20 on X; no arXiv paper by Alpoge [U]); JC(2) open [V2]. New: de Bondt arXiv:2610.24889 (2026-10-17) [V]; Kanel-Belov and Fedorov arXiv:2610.33919 (2026-10-24) [V]; van den Essen arXiv:2609.17795 [V]; Long arXiv:2608.23777 [V]. The (72,108) planar frontier is publicly claimed excluded by Helali (Zenodo 10.5281/zenodo.21479814, 2026-07-21, conditional on the GGHV reduction, review requested) [V] and by Guo (GitHub preprint, 2026-08-10, conditional) [V].
+Overlap: our 48-variable witnesses (EXP-041, restated in EXP-136) are superseded in dimension by de Bondt's VC(28) and HVC(30); the Mathieu SU(N) threshold N >= 24 may be lowered through HJC(15) (to check, not claimed).
+Plan change (assessment): rank 5 with a redirect; strategic review, then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 by a different elimination route; park the transverse Fitting atlas. New rows JCB-098 to JCB-102.
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).

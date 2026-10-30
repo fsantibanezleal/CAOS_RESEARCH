@@ -4,6 +4,8 @@ Updated 2026-10-06 (round 3: sync, methodology 13, publications, focus PCC-F6; E
 fresh session, per methodology 07. Derived view: on conflict, experiment verdicts win; the
 strategic record is `research-governance.json` and `manuscript-map.md` in this folder.
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 1, plan unchanged; first action EXP-015 (6-poles from the cyclically 5-edge-connected snarks of order at most 28), PCC-F6 stays active.
+
 ## 1. State in one screen
 
 The problem. `P` is the Petersen graph. A Petersen coloring of a cubic graph `G` is a map

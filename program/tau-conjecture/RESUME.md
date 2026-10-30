@@ -8,6 +8,8 @@ roots in [-32,32]; audit of all 256 partitions against the frontier manifest). T
 threshold is 10 unless the |c| >= 396 residual holds a seven-rooter (TCB-039). Census paper v0.05
 states it. The scheduled task tau_keepalive is disabled.
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 2; first action TCB-039 (close the |c| >= 396 residual; a closed residual gives z_max(9) = 6).
+
 ## 1. State in one screen
 
 The problem: for $f \in \mathbb{Z}[x]$ computed by a constant-free SLP

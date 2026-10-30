@@ -2132,3 +2132,11 @@
 - Governance: EXP-067 is dispositioned as `companion-manuscript` with no
   manuscript yet, and `HW-F5` no longer names EXP-067 as its next experiment.
   Validation hardening (`HWB-095`) and guard tightening (`HWB-096`) are queued.
+
+## 2026-10-30 - portfolio review: external status
+
+External status: disproved by Christensen, Gerko, Iyengar (arXiv:2608.21666, 2026-08-21) and by Son Pham (arXiv:2609.07615, 2026-09-07) [V]; nothing new after 2026-09-24 [U].
+Decisive for HW-F7: García-Sánchez and Leamer arXiv:1211.4554v1 (2012-11-19), Proposition 10 and Theorem 13, give the gluing transfer of EXP-067 [V, re-checked]. EXP-067 still adds the explicit family and the exponent-set transfer.
+Plan change (assessment): rank 7; close HW-F7 as a corollary disposition with credit (HWB-094 note extended; new rows HWB-097 to HWB-099), then the mandatory strategic review; candidate next focus: gluing for ideals with more than two generators.
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).

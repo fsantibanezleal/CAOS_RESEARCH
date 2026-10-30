@@ -752,3 +752,10 @@ Production replay passes 8 scenarios and 48 tab visits, with
 three evidence records retain the four original archives. Original PDFs,
 DOIs and historical receipts remain preserved. The account audit validates
 publication placement, not every theorem. Research and PR #376 stay paused.
+
+## 2026-10-30 - portfolio review: external status
+
+External status: open. Wang arXiv:2609.24167 was withdrawn on 2026-10-06 [V, re-checked]; Wang arXiv:2609.07918 has a v2 of 2026-10-06 with onset 0.5501 [V]. No overlap below our internal onset 0.5339 [V]. Research paused by Felipe on 2026-10-04.
+Plan change (assessment): no research restart. One correction review is open (review section 3): `sharp-three-point-kernel` v0.01 transfers a global proportion through Wang's arXiv:2609.24167v1 framework, withdrawn on 2026-10-06; re-read the Wang arXiv:2609.07918v2 pair theorem used by the EXP-010 onset. Gate: Felipe's pause; a publication correction, not an experiment; needs his go. New rows RH-049 and RH-050.
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).

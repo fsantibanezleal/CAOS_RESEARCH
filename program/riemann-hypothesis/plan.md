@@ -396,3 +396,15 @@ A joint slack estimate is unproved and not admitted automatically. RH-F4 is
 retained because the signed moment estimate remains the substantive analytic
 obligation. Complete the shifted Voronoi normalization before using any
 inverse-phase cancellation estimate. EXP-026 is research-record only.
+
+## External status review, 2026-10-30
+
+Last pass 2026-10-08; research paused by Felipe on 2026-10-04. External: open. New: Wang arXiv:2609.24167 was withdrawn on 2026-10-06 ("New method is need to obtain good improvement") [V, re-checked]; Wang arXiv:2609.07918 has a v2 of 2026-10-06 with onset 0.5501 [V]; arXiv:2609.33043 v2 (2026-10-07, distinct zeros, global) [V]; Liu arXiv:2610.26835 (zero-free half-plane Re s > 0.874886647 for Hecke L-functions) [V]; Ye arXiv:2610.15989 (short strips, uses the quasi-Riemann results) [V]; expert reception of the OpenAI quasi-Riemann claim reported by Quanta on 2026-10-19 [V2]. Overlap: none below our internal onset 0.5339 [V]; our records already position the onset against Wang's short-interval theorem.
+
+Plan change (assessment). Not ranked in section 1 of the review. Hold or redirect (assessment): paused by Felipe; one publication-correction item is open, see section 3.
+
+Review plan: no research restart; one correction review is open (section 3).
+
+Record action (review section 3). Correction review: `sharp-three-point-kernel` v0.01 transfers a global proportion through Wang's arXiv:2609.24167v1 framework, withdrawn on 2026-10-06; re-read the Wang arXiv:2609.07918v2 pair theorem used by the EXP-010 onset. Gate: Felipe's pause: a publication correction, not an experiment; needs his go.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).

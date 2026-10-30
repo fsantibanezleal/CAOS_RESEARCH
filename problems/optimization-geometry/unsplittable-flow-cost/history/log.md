@@ -191,3 +191,9 @@ New backlog rows: UFB-036 (choose the split fractions by LP instead of sampling
 them), UFB-037 (conflict structures not realisable on a linear spine). Commits
 9a8cf40, e869055. No version bump.
 
+## 2026-10-30 - portfolio review: external status
+
+External status: Goemans' cost conjecture is false on Rybin's instance (announced 2026-07-22) [V2]; formalized in Isabelle/HOL as an AFP entry [V]. New: Afrasyab arXiv:2609.17568 [V]; Bérczi, Liu, Reis, Tarnawski arXiv:2608.13983 (2026-08-14) [V]; arXiv:2610.16079 [V2, unread]. 16/15 and the separation LP optimum 2/7 are not stated in these sources [V].
+Plan change (assessment): hold; refresh the dossier before EXP-005 (the field moved); check that our statement that Morell-Skutella Conjecture 1.4 falls matches the numbering in the 2022 paper and the Bérczi et al. result. New rows UFB-061 and UFB-062.
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).

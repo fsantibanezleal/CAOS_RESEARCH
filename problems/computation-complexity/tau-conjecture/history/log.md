@@ -310,3 +310,10 @@
 - The scheduled task `tau_keepalive` was still firing every 15 minutes with nothing to launch; it
   was disabled (not deleted).
 - Census paper v0.05 states the windowed theorem and prints the author name as Santibáñez-Leal.
+
+## 2026-10-30 - portfolio review: external status
+
+External status: open; the newest tau-conjecture item on arXiv is arXiv:1905.00091 (2019) [V]; no overlap found [U]. OpenAI Math family 108 (an Omega(n^3) border determinantal bound for the permanent) is adjacent, not overlapping [V].
+Plan change (assessment): rank 2; first bounded action TCB-039 (close the |c| >= 396 residual, 0.002% of the space, by a dedicated confinement argument or an exact sweep; a closed residual settles the seven-root threshold at 10 and gives z_max(9) = 6).
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).

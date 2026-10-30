@@ -2,6 +2,8 @@
 
 Updated: 2026-09-05.
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 4; first action BJB-014, then exact small-triple data in the second regime n > k*alpha (BJB-016).
+
 ## 1. State in one screen
 
 [D] EXP-003 proves $T(d,d+1)=d^2+d+2$ for every integer $d\ge7$, where $T$ is the maximum triangle-free edge count under degree and matching bounds. The fixed-order bound at $2d+3$ is also sharp. The new contribution is the uniform upper bound; the attaining BET construction and finite values through $d=12$ are prior work. In particular, $T(13,14)=184$, closing BET's 184-to-185 interval. The full AEY conjecture remains open.
