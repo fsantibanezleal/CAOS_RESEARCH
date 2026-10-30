@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "huneke-wiegand",
-  "updated": "2026-09-24",
+  "updated": "2026-10-30",
   "original_problem": {
     "status": "disproved externally",
     "statement": "The broad Huneke-Wiegand conjecture is false.",
@@ -9,7 +9,7 @@
     "prohibited_reframing": "No CAOS extension, replication, or presentation theorem may be described as solving or redisproving the original conjecture."
   },
   "mission": "Classify and explain counterexample mechanisms, prove family-level structural theorems, and publish only results that pass exact validation, a current primary-source overlap check, and a theorem-sized value gate.",
-  "current_focus": "HW-F7",
+  "current_focus": "HW-F8",
   "stop_policy": {
     "review_after_consecutive_low_value_rounds": 3,
     "requires_user_visible_redirect": true,
@@ -118,16 +118,30 @@
     {
       "id": "HW-F7",
       "title": "Simple-gluing transfer of two-generated rigidity",
-      "status": "active-novelty-assessment",
+      "status": "closed",
       "priority": 1,
       "target": "Prove that m*N+q*Gamma transfers symmetry and the D=E+E rigidity identity at shift q*s whenever gcd(q,m)=1.",
       "value": "Would amplify any symmetric numerical-semigroup counterexample into infinitely many gluing descendants and turn the CAOS family into a genuine two-parameter family.",
       "success_gate": "A general symbolic transfer lemma, independent exact validation, adverse controls, and the explicit all-parameter CAOS corollary.",
       "stop_conditions": ["The representation-alignment lemma fails.", "A coprime exact case violates either exponent-set formula.", "Primary literature already contains the same rigidity-transfer theorem."],
-      "novelty_status": "Simple gluing is standard. No reviewed primary source states the rigidity-transfer lemma; this is not proof of novelty and specialist review remains required. The 2026-09-24 pre-merge review of EXP-067 found an unassessed route: k[Delta] is free of rank q over a copy of k[Gamma], so faithfully flat base change may already give the rigidity transfer.",
-      "manuscript_route": "EXP-067 passed its symbolic and exact gates. A focused gluing-transfer manuscript follows only after the flat-base-change novelty assessment; otherwise the family becomes a corollary in an existing paper.",
-      "first_bounded_action": "Write the flat-base-change novelty assessment for EXP-067 and decide between a focused gluing-transfer manuscript and a corollary in an existing paper.",
+      "novelty_status": "Simple gluing is standard. No reviewed primary source states the rigidity-transfer lemma; this is not proof of novelty and specialist review remains required. The 2026-09-24 pre-merge review of EXP-067 found an unassessed route: k[Delta] is free of rank q over a copy of k[Gamma], so faithfully flat base change may already give the rigidity transfer. Resolved 2026-10-30: García-Sánchez and Leamer, arXiv:1211.4554v1 (2012), Lemma 8(8), Proposition 10 and Theorem 13 already give the exponent-set and rigidity transfer for gluings a1*Gamma1 + a2*Gamma2, which contains m*N + q*Gamma; EXP-067 is a corollary of that paper. What EXP-067 adds is the explicit two-parameter CAOS family.",
+      "manuscript_route": "Corollary credited to García-Sánchez and Leamer inside the focused companion gluing-extensions owned by HW-F8; no standalone gluing-transfer manuscript.",
+      "first_bounded_action": "Completed 2026-10-30 by the novelty assessment (HWB-094); redirected to HW-F8.",
       "evidence": ["EXP-067"]
+    },
+    {
+      "id": "HW-F8",
+      "title": "Tensor factorization of extension ideals under gluing",
+      "status": "active",
+      "priority": 1,
+      "target": "For a gluing Gamma = a1*Gamma1 + a2*Gamma2 and relative ideals A_i, decide whether I_A (x)_R I_(A*) factors as T1 (x)_(k[y]) T2 and characterize when the extension A = a1*A1 + a2*A2 is Huneke-Wiegand.",
+      "value": "Settles the case left open by García-Sánchez and Leamer Proposition 9 (both factors non-principal and not Huneke-Wiegand), answers their ring-level question for monomial ideals, gives a torsion-length law, and produces counterexample ideals with 2^r minimal generators.",
+      "success_gate": "A written proof of the factorization and the characterization, confirmed by two independent computational routes (direct tensor torsion and the partition criterion) on a seeded family, explicit four-generated counterexamples, and adverse controls.",
+      "stop_conditions": ["A case violates the torsion-length law or the characterization.", "A located primary source already states the factorization or the characterization.", "The isomorphism I_A = I_(A1) (x)_(k[y]) I_(A2) fails for relative ideals."],
+      "novelty_status": "Searched 2026-10-30: García-Sánchez and Leamer arXiv:1211.4554, Goto-Takahashi-Taniguchi-Le Truong arXiv:1305.4238, Leamer arXiv:1211.2896, Roy arXiv:1808.06600; none states the factorization, the torsion-length law or the open case of Proposition 9. Not a novelty proof; specialist review required.",
+      "manuscript_route": "New focused companion manuscript gluing-extensions, v0.01: main theorem EXP-068, corollaries Proposition 9 and 10 of García-Sánchez and Leamer (re-proved), EXP-067 and the four-generated counterexamples.",
+      "first_bounded_action": "EXP-068: proof plus the seeded two-route verification, frozen hypothesis before the run.",
+      "evidence": ["EXP-067", "EXP-068"]
     }
   ],
   "manuscripts": [

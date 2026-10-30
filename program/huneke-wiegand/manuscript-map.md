@@ -87,7 +87,14 @@ is `24p`, its members lie in different Kunz cones. Small exact cases lie on
 one-dimensional faces, but the stronger invariant is the simple gluing
 `m*N+q*Gamma`. Focus `HW-F6` is therefore redirected, not silently abandoned.
 
-The active focus is `HW-F7`, the general transfer of the two-generated rigidity
+Update 2026-10-30: `HW-F7` is closed. García-Sánchez and Leamer, arXiv:1211.4554v1 (2012), Lemma 8(8),
+Proposition 10 and Theorem 13 already give the exponent-set and rigidity transfer for every gluing
+`a1*Gamma1 + a2*Gamma2`, so EXP-067 is a corollary of that paper; what it adds is the explicit
+two-parameter CAOS family. The active focus is `HW-F8`, the tensor factorization of extension ideals
+under gluing (EXP-068), routed to a new focused companion `gluing-extensions` that also carries
+EXP-067 as a credited corollary. The paragraph below is the superseded 2026-09-24 state.
+
+The previously active focus was `HW-F7`, the general transfer of the two-generated rigidity
 identity through that simple gluing. EXP-067 is CONFIRMED, with the rigidity
 transfer proved for symmetric `Gamma`, and its disposition is
 `companion-manuscript` with no manuscript yet. Its pre-merge review found that
