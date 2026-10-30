@@ -2140,3 +2140,22 @@ Decisive for HW-F7: García-Sánchez and Leamer arXiv:1211.4554v1 (2012-11-19), 
 Plan change (assessment): rank 7; close HW-F7 as a corollary disposition with credit (HWB-094 note extended; new rows HWB-097 to HWB-099), then the mandatory strategic review; candidate next focus: gluing for ideals with more than two generators.
 
 Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## 2026-10-30 - EXP-068 confirmed: tensor factorization of extension ideals under gluing
+
+- HW-F7 closed on prior art: García-Sánchez and Leamer arXiv:1211.4554v1 Lemma 8(8), Proposition 10
+  and Theorem 13 already give the EXP-067 transfer; EXP-067 verdict amended (credited corollary).
+  The "change of rings" lead is Goto-Takahashi-Taniguchi-Le Truong arXiv:1305.4238 (overrings between
+  `R` and `I:I`, no gluing). Leamer arXiv:1211.2896 and Roy arXiv:1808.06600 contain no factorization.
+- HW-F8 admitted and closed by EXP-068 (hypothesis frozen at `ae0eacc7`): for a gluing,
+  `I_A (x) I_(A*) = T1 (x)_(k[y]) T2`, the torsion-length law, `mu(A) = mu(A1)*mu(A2)`, and the
+  characterization of the Huneke-Wiegand property for extensions. The case left open by their
+  Proposition 9 gives counterexamples; four-generated ones over symmetric semigroups with Frobenius
+  23645 and 53599.
+- Evidence: 200 seeded gluings by two routes (33 with torsion in both factors), controls, auditor with
+  no shared code; 4 unit tests.
+- Manuscript `gluing-extensions` v0.01 written, built (6 pages, no warnings), voice-clean; DOI
+  `10.5281/zenodo.23821498` (concept `10.5281/zenodo.23821497`) reserved and the PDF frozen. The Zenodo
+  publish call was refused by the session's permission policy and waits for Felipe (HWB-100).
+- E: (data root) was not mounted; the 2012 source was re-fetched to the temp root and matched its pinned
+  SHA-256; its archive copy waits for the data root.

@@ -10,6 +10,7 @@ paper theorem.
 | [Frobenius minimality](frobenius-minimality/) | v0.25, [10.5281/zenodo.22835108](https://doi.org/10.5281/zenodo.22835108) | Immutable consolidated source for minimality, family, conductor, and homological results | Freeze; prepare three focused submission papers after dependency and overlap audits |
 | [Curvilinear fiber cones](curvilinear-fiber-cones/) | v0.04, [10.5281/zenodo.22835118](https://doi.org/10.5281/zenodo.22835118) | Focused geometry and Groebner companion | Coherent; no split |
 | [Integral connecting annihilators](integral-connecting-annihilators/) | v0.04, [10.5281/zenodo.22859408](https://doi.org/10.5281/zenodo.22859408) | Focused integral torsion and semantic endpoint-source companion | Gated; no revision without a canonical comparison, complete quotient, or reusable general theorem |
+| [Gluing extensions](gluing-extensions/) | v0.01, [10.5281/zenodo.23821498](https://doi.org/10.5281/zenodo.23821498) (reserved, publication pending) | Focused gluing companion: tensor factorization, torsion-length law, four-generated counterexamples, EXP-067 as a credited corollary | Coherent; no split |
 
 The complete theorem, experiment, and split routing is maintained in
 [`program/huneke-wiegand/manuscript-map.md`](../../program/huneke-wiegand/manuscript-map.md).

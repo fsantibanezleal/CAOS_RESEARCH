@@ -1,0 +1,12 @@
+17:17:04 case 0: torsion direct=24 predicted=24 hw=True elapsed=0s
+17:17:17 case 40: torsion direct=42 predicted=42 hw=True elapsed=14s
+17:17:35 case 80: torsion direct=0 predicted=0 hw=None elapsed=32s
+17:17:45 case 120: torsion direct=30 predicted=30 hw=True elapsed=41s
+17:17:52 case 160: torsion direct=0 predicted=0 hw=None elapsed=48s
+17:18:02 P1 True, P2 True, Hilbert identity True; cases with torsion on both factors: 33
+17:18:02 factors: Pham (0,14) HW=False; Pham (0,1) HW=True; EXP-009 p=4 multiplicity 96, F=311, (0,24) HW=False
+17:18:02 Pham x Pham: F=23645 (formula 23645) symmetric=True mu=4 gens=(0, 784, 798, 1582) HW=False
+17:18:05 Pham x EXP-009(p=4): F=53599 (formula 53599) symmetric=True mu=4 gens=(0, 1344, 2136, 3480) HW=False
+17:18:05 control: Pham (0,14) x Pham (0,1): F=23645 (formula 23645) symmetric=True mu=4 gens=(0, 57, 784, 841) HW=True
+17:18:06 extension test: true ideal True, perturbed False; perturbed mu=4 HW=True
+17:18:09 non-gluing control: Hilbert identity broken on 30 of 30 pairs with a1 not in Gamma2
