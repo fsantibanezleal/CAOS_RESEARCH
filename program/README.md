@@ -11,7 +11,7 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | Unsplittable-flow cost | optimization-geometry | exploring | A | partial | [unsplittable-flow-cost/plan.md](unsplittable-flow-cost/plan.md) |
 | Log-energy points on S^2 (Smale 7) | optimization-geometry | scoped | A | yes | (wave 2) |
 | Shub-Smale tau conjecture | computation-complexity | exploring | A | yes | [tau-conjecture/plan.md](tau-conjecture/plan.md) |
-| Riemann hypothesis | number-theory | opened | A | yes | [riemann-hypothesis/plan.md](riemann-hypothesis/plan.md) |
+| Riemann hypothesis | number-theory | published | A | yes | [riemann-hypothesis/plan.md](riemann-hypothesis/plan.md) |
 | Diophantine 2-variable decidability | computation-complexity | proposed | B+ | partial | |
 | Hilbert 16th, part 2 | dynamical-systems | proposed | A- | yes | |
 | Strongly polynomial LP | computation-complexity | proposed | B+ | partial | |
@@ -22,9 +22,9 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | Centralizer density (Smale 12) | dynamical-systems | proposed | C+ | no | |
 | Hodge conjecture | algebraic-geometry | proposed | C+ | no | |
 | Huneke-Wiegand counterexample extensions | commutative-algebra | published | A | no | [huneke-wiegand/plan.md](huneke-wiegand/plan.md) |
-| Petersen coloring counterexamples (consequence audit) | combinatorics | consolidating | A | no | [petersen-coloring/plan.md](petersen-coloring/plan.md) |
-| Bougard-Joret corrected first regime (k-connected graphs, independence number) | combinatorics | proposed | A | no | scouting dossier under the petersen-coloring context, `scouting-2026-09/` |
-| Hoa maximal non-Hamiltonian conjecture: least counterexample order | combinatorics | proposed | A | no | same scouting dossier set |
+| Petersen coloring counterexamples (consequence audit) | combinatorics | exploring | A | no | [petersen-coloring/plan.md](petersen-coloring/plan.md) |
+| Bougard-Joret corrected first regime (k-connected graphs, independence number) | combinatorics | consolidating | A | no | [bougard-joret/plan.md](bougard-joret/plan.md) |
+| Hoa maximal non-Hamiltonian conjecture: least counterexample order | combinatorics | proposed | A | no | scouting dossier under the petersen-coloring context, `scouting-2026-09/` |
 | Boij-Soderberg realizability (Erman-Sam Questions 6.1/6.2) | commutative-algebra | proposed | A | no | same scouting dossier set |
 
 Portfolio selection is also informed by the finite-certificate and validation-loop criteria in
