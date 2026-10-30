@@ -1,0 +1,9435 @@
+{
+ "summary": {
+  "seed": 20261030,
+  "cases": 200,
+  "P1_torsion_length_law": true,
+  "P2_characterization": true,
+  "invariant_hilbert_identity": true,
+  "cases_with_torsion_on_both_factors": 33,
+  "P3_four_generated_counterexamples": true,
+  "P4_controls": true,
+  "p3_instances": [
+   {
+    "label": "Pham x Pham",
+    "a1": 56,
+    "a2": 57,
+    "frobenius_formula": 23645,
+    "frobenius_measured": 23645,
+    "symmetric": true,
+    "ideal_generators": [
+     0,
+     784,
+     798,
+     1582
+    ],
+    "mu": 4,
+    "huneke_wiegand": false,
+    "seconds": 0.4
+   },
+   {
+    "label": "Pham x EXP-009(p=4)",
+    "a1": 96,
+    "a2": 89,
+    "frobenius_formula": 53599,
+    "frobenius_measured": 53599,
+    "symmetric": true,
+    "ideal_generators": [
+     0,
+     1344,
+     2136,
+     3480
+    ],
+    "mu": 4,
+    "huneke_wiegand": false,
+    "seconds": 2.2
+   }
+  ],
+  "p4": {
+   "control_extension_with_hw_factor": {
+    "label": "control: Pham (0,14) x Pham (0,1)",
+    "a1": 56,
+    "a2": 57,
+    "frobenius_formula": 23645,
+    "frobenius_measured": 23645,
+    "symmetric": true,
+    "ideal_generators": [
+     0,
+     57,
+     784,
+     841
+    ],
+    "mu": 4,
+    "huneke_wiegand": true,
+    "seconds": 0.4
+   },
+   "pham_0_1_is_hw": true,
+   "non_gluing_pairs": 30,
+   "non_gluing_hilbert_breaks": 30,
+   "extension_test_true_ideal": true,
+   "extension_test_perturbed": false,
+   "perturbed_mu": 4,
+   "perturbed_hw": true
+  },
+  "factor_checks": {
+   "pham_0_14_hw": false,
+   "exp009_p4_0_24_hw": false,
+   "exp009_p4_frobenius": 311,
+   "exp009_p4_multiplicity": 96
+  },
+  "seconds": 66.1
+ },
+ "cases": [
+  {
+   "index": 0,
+   "gens1": [
+    4,
+    7,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    5,
+    13
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0,
+    6
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    24
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 6,
+   "jordan1": {
+    "1": 6
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 24,
+   "torsion_predicted": 24,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 1,
+   "gens1": [
+    3,
+    5,
+    12
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 2,
+   "gens1": [
+    4,
+    6,
+    7
+   ],
+   "gens2": [
+    5,
+    6,
+    8,
+    13
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 3,
+   "gens1": [
+    3,
+    5,
+    8
+   ],
+   "gens2": [
+    4,
+    7,
+    12,
+    13
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1,
+    3
+   ],
+   "ideal": [
+    0,
+    3,
+    9
+   ],
+   "mu": [
+    1,
+    3,
+    3
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 11,
+   "jordan2": {
+    "1": 8,
+    "2": 3
+   },
+   "torsion_direct": 33,
+   "torsion_predicted": 33,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 4,
+   "gens1": [
+    3,
+    5
+   ],
+   "gens2": [
+    4,
+    7,
+    10,
+    13
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 5,
+   "gens1": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "gens2": [
+    3,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    30
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 6,
+   "gens1": [
+    4,
+    6,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    8,
+    10,
+    13
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 7,
+   "gens1": [
+    3,
+    5,
+    10,
+    11
+   ],
+   "gens2": [
+    4,
+    7,
+    8,
+    9
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    6
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 5,
+   "jordan2": {
+    "1": 5
+   },
+   "torsion_direct": 30,
+   "torsion_predicted": 30,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 8,
+   "gens1": [
+    5,
+    7,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    13
+   ],
+   "a1": 7,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 9,
+   "gens1": [
+    3,
+    7,
+    8,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    8,
+    13
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 10,
+   "gens1": [
+    3,
+    4
+   ],
+   "gens2": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 11,
+   "gens1": [
+    3,
+    5,
+    7
+   ],
+   "gens2": [
+    3,
+    5,
+    7
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 12,
+   "gens1": [
+    4,
+    5,
+    8,
+    11
+   ],
+   "gens2": [
+    4,
+    5,
+    6,
+    8
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0,
+    3
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    12
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 5
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 20,
+   "torsion_predicted": 20,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 13,
+   "gens1": [
+    5,
+    6,
+    7
+   ],
+   "gens2": [
+    3,
+    8,
+    10
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    3,
+    6
+   ],
+   "mu": [
+    3,
+    1,
+    3
+   ],
+   "torsion1": 6,
+   "jordan1": {
+    "1": 6
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 14,
+   "gens1": [
+    3,
+    4,
+    5,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    5
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    14
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 21,
+   "torsion_predicted": 21,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 15,
+   "gens1": [
+    4,
+    9,
+    10,
+    11
+   ],
+   "gens2": [
+    3,
+    5
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    4
+   ],
+   "ideal": [
+    0,
+    16
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 16,
+   "torsion_predicted": 16,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 16,
+   "gens1": [
+    3,
+    4,
+    9,
+    10
+   ],
+   "gens2": [
+    4,
+    6,
+    7
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 17,
+   "gens1": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "gens2": [
+    3,
+    4,
+    9,
+    12
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 18,
+   "gens1": [
+    3,
+    4,
+    5,
+    12
+   ],
+   "gens2": [
+    3,
+    8,
+    10,
+    11
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    4,
+    5
+   ],
+   "ideal": [
+    0,
+    28,
+    35
+   ],
+   "mu": [
+    1,
+    3,
+    3
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 9,
+   "jordan2": {
+    "1": 9
+   },
+   "torsion_direct": 63,
+   "torsion_predicted": 63,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 19,
+   "gens1": [
+    3,
+    5,
+    9,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    7
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    10
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 2,
+    "2": 2
+   },
+   "torsion_direct": 20,
+   "torsion_predicted": 20,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 20,
+   "gens1": [
+    3,
+    4,
+    9,
+    13
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    10
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 21,
+   "gens1": [
+    3,
+    4,
+    7,
+    10
+   ],
+   "gens2": [
+    4,
+    10,
+    11,
+    13
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 22,
+   "gens1": [
+    3,
+    4,
+    5,
+    8
+   ],
+   "gens2": [
+    3,
+    7,
+    11,
+    12
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 23,
+   "gens1": [
+    3,
+    8,
+    10,
+    12
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    11
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 24,
+   "gens1": [
+    3,
+    5,
+    11,
+    12
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    8
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 25,
+   "gens1": [
+    3,
+    5,
+    6,
+    7
+   ],
+   "gens2": [
+    3,
+    5,
+    8,
+    9
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 26,
+   "gens1": [
+    3,
+    5,
+    10,
+    12
+   ],
+   "gens2": [
+    4,
+    7,
+    9,
+    11
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    7
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 27,
+   "gens1": [
+    4,
+    5,
+    9,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    10,
+    12
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 28,
+   "gens1": [
+    4,
+    5,
+    8,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    5,
+    10
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    10
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 8,
+   "jordan1": {
+    "1": 4,
+    "2": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 40,
+   "torsion_predicted": 40,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 29,
+   "gens1": [
+    5,
+    6,
+    8,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    8,
+    11
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0,
+    4
+   ],
+   "ideal2": [
+    0,
+    3
+   ],
+   "ideal": [
+    0,
+    15,
+    16,
+    31
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 6,
+   "jordan1": {
+    "1": 3,
+    "2": 3
+   },
+   "torsion2": 5,
+   "jordan2": {
+    "1": 3,
+    "2": 2
+   },
+   "torsion_direct": 64,
+   "torsion_predicted": 64,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 30,
+   "gens1": [
+    4,
+    5,
+    7,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    10
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0,
+    6
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    18,
+    35,
+    53
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 29,
+   "torsion_predicted": 29,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 31,
+   "gens1": [
+    4,
+    7,
+    10,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    12
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 32,
+   "gens1": [
+    3,
+    5,
+    11
+   ],
+   "gens2": [
+    3,
+    6,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    6,
+    14,
+    20
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 6,
+   "jordan2": {
+    "1": 6
+   },
+   "torsion_direct": 44,
+   "torsion_predicted": 44,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 33,
+   "gens1": [
+    4,
+    5,
+    6,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    10
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    4
+   ],
+   "ideal": [
+    0,
+    16
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 16,
+   "torsion_predicted": 16,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 34,
+   "gens1": [
+    3,
+    5,
+    12
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 35,
+   "gens1": [
+    3,
+    5,
+    6
+   ],
+   "gens2": [
+    3,
+    4,
+    10,
+    13
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    12,
+    49,
+    61
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 46,
+   "torsion_predicted": 46,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 36,
+   "gens1": [
+    3,
+    8,
+    9,
+    10
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    8
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 37,
+   "gens1": [
+    4,
+    7,
+    9
+   ],
+   "gens2": [
+    3,
+    5,
+    13
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 38,
+   "gens1": [
+    3,
+    10,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    5
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 39,
+   "gens1": [
+    4,
+    6,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    9
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    14
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 40,
+   "gens1": [
+    3,
+    5,
+    6,
+    10
+   ],
+   "gens2": [
+    3,
+    7,
+    8,
+    11
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    10,
+    21,
+    31
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 6,
+   "jordan2": {
+    "1": 3,
+    "2": 3
+   },
+   "torsion_direct": 42,
+   "torsion_predicted": 42,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 41,
+   "gens1": [
+    3,
+    4,
+    6,
+    10
+   ],
+   "gens2": [
+    5,
+    6,
+    8,
+    11
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    5,
+    7,
+    12
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 46,
+   "torsion_predicted": 46,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 42,
+   "gens1": [
+    3,
+    4,
+    6,
+    11
+   ],
+   "gens2": [
+    3,
+    5
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 43,
+   "gens1": [
+    3,
+    5,
+    10
+   ],
+   "gens2": [
+    4,
+    5,
+    10,
+    11
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 44,
+   "gens1": [
+    3,
+    7,
+    9,
+    11
+   ],
+   "gens2": [
+    4,
+    5,
+    9,
+    11
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1,
+    7
+   ],
+   "ideal": [
+    0,
+    7,
+    49
+   ],
+   "mu": [
+    1,
+    3,
+    3
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 6,
+   "jordan2": {
+    "1": 6
+   },
+   "torsion_direct": 42,
+   "torsion_predicted": 42,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 45,
+   "gens1": [
+    3,
+    4,
+    6,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    13
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    7
+   ],
+   "ideal": [
+    0,
+    28
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 8,
+   "torsion_predicted": 8,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 46,
+   "gens1": [
+    3,
+    8,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    6
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    6,
+    14,
+    20
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 3,
+    "2": 2
+   },
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 59,
+   "torsion_predicted": 59,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 47,
+   "gens1": [
+    3,
+    4,
+    9
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    8
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 48,
+   "gens1": [
+    3,
+    7,
+    11,
+    12
+   ],
+   "gens2": [
+    3,
+    4,
+    10
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0,
+    5
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    7,
+    20,
+    27
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 5
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 44,
+   "torsion_predicted": 44,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 49,
+   "gens1": [
+    4,
+    5,
+    7,
+    10
+   ],
+   "gens2": [
+    3,
+    5,
+    13
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 50,
+   "gens1": [
+    3,
+    4,
+    9,
+    10
+   ],
+   "gens2": [
+    3,
+    7,
+    8
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    14
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 6,
+   "jordan2": {
+    "1": 6
+   },
+   "torsion_direct": 42,
+   "torsion_predicted": 42,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 51,
+   "gens1": [
+    3,
+    4,
+    12,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    13
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    14
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 52,
+   "gens1": [
+    4,
+    7,
+    9
+   ],
+   "gens2": [
+    3,
+    7,
+    8,
+    10
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0,
+    10
+   ],
+   "ideal2": [
+    0,
+    2,
+    4
+   ],
+   "ideal": [
+    0,
+    8,
+    16,
+    70,
+    78,
+    86
+   ],
+   "mu": [
+    2,
+    3,
+    6
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 9,
+   "jordan2": {
+    "1": 9
+   },
+   "torsion_direct": 84,
+   "torsion_predicted": 84,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 53,
+   "gens1": [
+    4,
+    5,
+    7,
+    11
+   ],
+   "gens2": [
+    3,
+    9,
+    11,
+    13
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    6
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 54,
+   "gens1": [
+    5,
+    6,
+    8
+   ],
+   "gens2": [
+    4,
+    7,
+    9,
+    12
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 55,
+   "gens1": [
+    3,
+    4
+   ],
+   "gens2": [
+    3,
+    8,
+    10
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 56,
+   "gens1": [
+    4,
+    6,
+    7
+   ],
+   "gens2": [
+    3,
+    5,
+    11
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0,
+    5
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    12,
+    25,
+    37
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 5
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 47,
+   "torsion_predicted": 47,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 57,
+   "gens1": [
+    3,
+    4,
+    8
+   ],
+   "gens2": [
+    3,
+    5,
+    7
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 58,
+   "gens1": [
+    5,
+    7,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    8,
+    9
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0,
+    3
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    14,
+    18,
+    32
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 7,
+   "jordan1": {
+    "1": 7
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 70,
+   "torsion_predicted": 70,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 59,
+   "gens1": [
+    3,
+    7,
+    8,
+    9
+   ],
+   "gens2": [
+    4,
+    7,
+    10,
+    13
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    3
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 6,
+   "jordan2": {
+    "1": 4,
+    "2": 2
+   },
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 60,
+   "gens1": [
+    3,
+    4,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    7,
+    12
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 61,
+   "gens1": [
+    3,
+    7,
+    8,
+    9
+   ],
+   "gens2": [
+    4,
+    7,
+    9,
+    11
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 62,
+   "gens1": [
+    3,
+    5,
+    10
+   ],
+   "gens2": [
+    4,
+    7,
+    9,
+    13
+   ],
+   "a1": 7,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    10
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 7,
+   "jordan2": {
+    "1": 7
+   },
+   "torsion_direct": 35,
+   "torsion_predicted": 35,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 63,
+   "gens1": [
+    5,
+    6,
+    7,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    6,
+    11
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    4,
+    7,
+    11
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 32,
+   "torsion_predicted": 32,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 64,
+   "gens1": [
+    4,
+    5,
+    6
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    10
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0,
+    3
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    21
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 3,
+    "2": 1
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 65,
+   "gens1": [
+    3,
+    4,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    11
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    3
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 6,
+   "torsion_predicted": 6,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 66,
+   "gens1": [
+    3,
+    11,
+    13
+   ],
+   "gens2": [
+    5,
+    6,
+    8
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0,
+    8
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    12,
+    40,
+    52
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 6,
+   "jordan2": {
+    "1": 3,
+    "2": 3
+   },
+   "torsion_direct": 60,
+   "torsion_predicted": 60,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 67,
+   "gens1": [
+    3,
+    5
+   ],
+   "gens2": [
+    3,
+    4,
+    8,
+    10
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    6,
+    10,
+    16
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 60,
+   "torsion_predicted": 60,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 68,
+   "gens1": [
+    3,
+    7,
+    8,
+    10
+   ],
+   "gens2": [
+    3,
+    5,
+    10,
+    13
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 69,
+   "gens1": [
+    3,
+    4,
+    7,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    8
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    6
+   ],
+   "ideal": [
+    0,
+    5,
+    42,
+    47
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 37,
+   "torsion_predicted": 37,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 70,
+   "gens1": [
+    4,
+    6,
+    7
+   ],
+   "gens2": [
+    3,
+    6,
+    8,
+    10
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    12
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 2,
+    "2": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 24,
+   "torsion_predicted": 24,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 71,
+   "gens1": [
+    3,
+    5
+   ],
+   "gens2": [
+    4,
+    7,
+    13
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 72,
+   "gens1": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "gens2": [
+    4,
+    6,
+    7
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    7
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 73,
+   "gens1": [
+    3,
+    8,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    10,
+    12
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 74,
+   "gens1": [
+    4,
+    5,
+    7,
+    8
+   ],
+   "gens2": [
+    4,
+    5,
+    7
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0,
+    6
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    24
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 12,
+   "torsion_predicted": 12,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 75,
+   "gens1": [
+    3,
+    5,
+    9
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    11
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 76,
+   "gens1": [
+    3,
+    10,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    9,
+    13
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 77,
+   "gens1": [
+    4,
+    6,
+    7,
+    8
+   ],
+   "gens2": [
+    3,
+    5,
+    12
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 78,
+   "gens1": [
+    3,
+    5,
+    7,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    9,
+    13
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0,
+    4
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    12
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 9,
+   "torsion_predicted": 9,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 79,
+   "gens1": [
+    3,
+    4,
+    5,
+    7
+   ],
+   "gens2": [
+    4,
+    5,
+    7
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 80,
+   "gens1": [
+    3,
+    4
+   ],
+   "gens2": [
+    4,
+    6,
+    9,
+    11
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 81,
+   "gens1": [
+    3,
+    7,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    9
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0,
+    4
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    15,
+    16,
+    31
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 24,
+   "torsion_predicted": 24,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 82,
+   "gens1": [
+    4,
+    5,
+    7,
+    9
+   ],
+   "gens2": [
+    3,
+    6,
+    10,
+    11
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    4,
+    5
+   ],
+   "ideal": [
+    0,
+    6,
+    20,
+    25,
+    26,
+    31
+   ],
+   "mu": [
+    2,
+    3,
+    6
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 12,
+   "jordan2": {
+    "1": 12
+   },
+   "torsion_direct": 114,
+   "torsion_predicted": 114,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 83,
+   "gens1": [
+    4,
+    5,
+    7
+   ],
+   "gens2": [
+    4,
+    5,
+    10,
+    11
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 84,
+   "gens1": [
+    4,
+    5,
+    6
+   ],
+   "gens2": [
+    3,
+    4,
+    6
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    14
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 85,
+   "gens1": [
+    3,
+    7,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    8,
+    10
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 86,
+   "gens1": [
+    4,
+    7,
+    9,
+    10
+   ],
+   "gens2": [
+    4,
+    5,
+    11,
+    12
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    5
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 7,
+   "jordan1": {
+    "1": 7
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 35,
+   "torsion_predicted": 35,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 87,
+   "gens1": [
+    3,
+    4,
+    5,
+    7
+   ],
+   "gens2": [
+    5,
+    6,
+    7,
+    11
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 88,
+   "gens1": [
+    5,
+    6,
+    8,
+    10
+   ],
+   "gens2": [
+    3,
+    7,
+    11
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0,
+    4
+   ],
+   "ideal": [
+    0,
+    24,
+    49,
+    73
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 48,
+   "torsion_predicted": 48,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 89,
+   "gens1": [
+    3,
+    4,
+    7,
+    11
+   ],
+   "gens2": [
+    3,
+    10,
+    11,
+    12
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 90,
+   "gens1": [
+    3,
+    5,
+    10,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    9,
+    10
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    4,
+    5,
+    9
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 34,
+   "torsion_predicted": 34,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 91,
+   "gens1": [
+    3,
+    4,
+    6,
+    9
+   ],
+   "gens2": [
+    4,
+    5,
+    11,
+    12
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    6
+   ],
+   "ideal": [
+    0,
+    18
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 9,
+   "torsion_predicted": 9,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 92,
+   "gens1": [
+    5,
+    6,
+    7,
+    11
+   ],
+   "gens2": [
+    3,
+    4
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 93,
+   "gens1": [
+    4,
+    5,
+    7,
+    8
+   ],
+   "gens2": [
+    4,
+    5,
+    11
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 94,
+   "gens1": [
+    5,
+    6,
+    7
+   ],
+   "gens2": [
+    4,
+    7,
+    8,
+    13
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 95,
+   "gens1": [
+    3,
+    5,
+    7,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    12
+   ],
+   "a1": 7,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 96,
+   "gens1": [
+    3,
+    4,
+    6,
+    9
+   ],
+   "gens2": [
+    3,
+    8,
+    10
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0,
+    5
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    15,
+    35,
+    50
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 33,
+   "torsion_predicted": 33,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 97,
+   "gens1": [
+    3,
+    5,
+    10,
+    12
+   ],
+   "gens2": [
+    5,
+    6,
+    8,
+    12
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 98,
+   "gens1": [
+    4,
+    6,
+    7,
+    9
+   ],
+   "gens2": [
+    3,
+    5,
+    10,
+    12
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    7
+   ],
+   "ideal": [
+    0,
+    49
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 14,
+   "torsion_predicted": 14,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 99,
+   "gens1": [
+    3,
+    4,
+    8,
+    12
+   ],
+   "gens2": [
+    3,
+    4
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 100,
+   "gens1": [
+    3,
+    4,
+    8,
+    11
+   ],
+   "gens2": [
+    4,
+    5,
+    11
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 101,
+   "gens1": [
+    3,
+    8,
+    10
+   ],
+   "gens2": [
+    3,
+    4,
+    8
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    6,
+    49,
+    55
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 39,
+   "torsion_predicted": 39,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 102,
+   "gens1": [
+    3,
+    7,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    10
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    12,
+    14,
+    26
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 7,
+   "jordan1": {
+    "1": 5,
+    "2": 2
+   },
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 93,
+   "torsion_predicted": 93,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 103,
+   "gens1": [
+    3,
+    5,
+    8,
+    9
+   ],
+   "gens2": [
+    3,
+    5,
+    9
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0,
+    4
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    12
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 12,
+   "torsion_predicted": 12,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 104,
+   "gens1": [
+    4,
+    6,
+    7,
+    8
+   ],
+   "gens2": [
+    6,
+    7,
+    8,
+    11
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    10
+   ],
+   "ideal": [
+    0,
+    70
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 105,
+   "gens1": [
+    4,
+    5,
+    7,
+    10
+   ],
+   "gens2": [
+    3,
+    4,
+    9
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 106,
+   "gens1": [
+    3,
+    11,
+    13
+   ],
+   "gens2": [
+    4,
+    7,
+    9,
+    12
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0,
+    4
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    28
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 9,
+   "jordan1": {
+    "1": 3,
+    "2": 3,
+    "3": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 63,
+   "torsion_predicted": 63,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 107,
+   "gens1": [
+    4,
+    5,
+    6,
+    10
+   ],
+   "gens2": [
+    3,
+    5,
+    11,
+    13
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 108,
+   "gens1": [
+    4,
+    10,
+    11,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0,
+    1,
+    7
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    7,
+    49
+   ],
+   "mu": [
+    3,
+    1,
+    3
+   ],
+   "torsion1": 14,
+   "jordan1": {
+    "1": 8,
+    "2": 4,
+    "3": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 98,
+   "torsion_predicted": 98,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 109,
+   "gens1": [
+    3,
+    5,
+    7,
+    11
+   ],
+   "gens2": [
+    5,
+    6,
+    8,
+    9
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    7
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 110,
+   "gens1": [
+    4,
+    7,
+    10,
+    13
+   ],
+   "gens2": [
+    3,
+    7,
+    8,
+    9
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 111,
+   "gens1": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "gens2": [
+    3,
+    5,
+    6,
+    13
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    3
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 12,
+   "torsion_predicted": 12,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 112,
+   "gens1": [
+    4,
+    5,
+    9,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    9
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 113,
+   "gens1": [
+    3,
+    4,
+    5,
+    12
+   ],
+   "gens2": [
+    3,
+    4,
+    13
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 114,
+   "gens1": [
+    3,
+    8,
+    10,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    8,
+    13
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    35
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 15,
+   "torsion_predicted": 15,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 115,
+   "gens1": [
+    3,
+    5
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    8
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    3,
+    28,
+    31
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 116,
+   "gens1": [
+    3,
+    5
+   ],
+   "gens2": [
+    4,
+    7,
+    9
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    15
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 9,
+   "torsion_predicted": 9,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 117,
+   "gens1": [
+    3,
+    4,
+    8,
+    9
+   ],
+   "gens2": [
+    3,
+    5,
+    10
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 118,
+   "gens1": [
+    3,
+    7,
+    9,
+    11
+   ],
+   "gens2": [
+    4,
+    5,
+    11
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    8
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 7,
+   "jordan1": {
+    "1": 7
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 119,
+   "gens1": [
+    3,
+    4,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    8
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    10
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 20,
+   "torsion_predicted": 20,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 120,
+   "gens1": [
+    4,
+    7,
+    8,
+    9
+   ],
+   "gens2": [
+    3,
+    5,
+    12,
+    13
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    6
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 5
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 30,
+   "torsion_predicted": 30,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 121,
+   "gens1": [
+    3,
+    8,
+    9,
+    10
+   ],
+   "gens2": [
+    3,
+    5,
+    7
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0,
+    1,
+    5
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    5,
+    25
+   ],
+   "mu": [
+    3,
+    1,
+    3
+   ],
+   "torsion1": 11,
+   "jordan1": {
+    "1": 6,
+    "2": 3,
+    "3": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 55,
+   "torsion_predicted": 55,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 122,
+   "gens1": [
+    3,
+    5,
+    8,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    11,
+    13
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 123,
+   "gens1": [
+    4,
+    5,
+    6,
+    8
+   ],
+   "gens2": [
+    3,
+    4,
+    13
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 124,
+   "gens1": [
+    4,
+    5,
+    6,
+    10
+   ],
+   "gens2": [
+    3,
+    4,
+    9,
+    10
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 125,
+   "gens1": [
+    4,
+    7,
+    9,
+    12
+   ],
+   "gens2": [
+    3,
+    9,
+    10,
+    11
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    4
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 9,
+   "jordan2": {
+    "1": 3,
+    "2": 3,
+    "3": 3
+   },
+   "torsion_direct": 36,
+   "torsion_predicted": 36,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 126,
+   "gens1": [
+    3,
+    8,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    7,
+    8
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    10
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 5
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 25,
+   "torsion_predicted": 25,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 127,
+   "gens1": [
+    3,
+    7,
+    8,
+    11
+   ],
+   "gens2": [
+    3,
+    5
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    6
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 6,
+   "torsion_predicted": 6,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 128,
+   "gens1": [
+    3,
+    4,
+    9
+   ],
+   "gens2": [
+    3,
+    5,
+    6
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    4
+   ],
+   "ideal": [
+    0,
+    28
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 129,
+   "gens1": [
+    4,
+    7,
+    12,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    11
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0,
+    6
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    30
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 6,
+   "jordan1": {
+    "1": 3,
+    "2": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 30,
+   "torsion_predicted": 30,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 130,
+   "gens1": [
+    3,
+    8,
+    13
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0,
+    3
+   ],
+   "ideal": [
+    0,
+    9,
+    14,
+    23
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 3,
+    "2": 2
+   },
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 59,
+   "torsion_predicted": 59,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 131,
+   "gens1": [
+    4,
+    5,
+    6,
+    9
+   ],
+   "gens2": [
+    4,
+    7,
+    13
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 132,
+   "gens1": [
+    3,
+    5,
+    8,
+    10
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    9
+   ],
+   "a1": 7,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 133,
+   "gens1": [
+    4,
+    5,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    13
+   ],
+   "a1": 7,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    5
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 10,
+   "torsion_predicted": 10,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 134,
+   "gens1": [
+    3,
+    4,
+    12
+   ],
+   "gens2": [
+    3,
+    4,
+    5,
+    7
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 135,
+   "gens1": [
+    5,
+    6,
+    7,
+    9
+   ],
+   "gens2": [
+    3,
+    10,
+    11,
+    13
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    7
+   ],
+   "ideal": [
+    0,
+    35
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 15,
+   "torsion_predicted": 15,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 136,
+   "gens1": [
+    5,
+    6,
+    8
+   ],
+   "gens2": [
+    4,
+    7,
+    12,
+    13
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    3
+   ],
+   "ideal": [
+    0,
+    7,
+    18,
+    25
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 58,
+   "torsion_predicted": 58,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 137,
+   "gens1": [
+    4,
+    7,
+    12,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    7,
+    13
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    8
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 16,
+   "torsion_predicted": 16,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 138,
+   "gens1": [
+    3,
+    5,
+    7,
+    8
+   ],
+   "gens2": [
+    3,
+    4,
+    13
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 139,
+   "gens1": [
+    3,
+    5,
+    9,
+    11
+   ],
+   "gens2": [
+    5,
+    6,
+    7,
+    10
+   ],
+   "a1": 7,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 140,
+   "gens1": [
+    3,
+    4,
+    6
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    7
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    20
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 8,
+   "torsion_predicted": 8,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 141,
+   "gens1": [
+    4,
+    7,
+    9,
+    12
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    7
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    4
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 8,
+   "torsion_predicted": 8,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 142,
+   "gens1": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    8
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    9
+   ],
+   "ideal": [
+    0,
+    45
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 15,
+   "torsion_predicted": 15,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 143,
+   "gens1": [
+    3,
+    5,
+    9,
+    11
+   ],
+   "gens2": [
+    6,
+    7,
+    9,
+    11
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    6
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 24,
+   "torsion_predicted": 24,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 144,
+   "gens1": [
+    4,
+    6,
+    7
+   ],
+   "gens2": [
+    4,
+    7,
+    9,
+    10
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0,
+    5
+   ],
+   "ideal2": [
+    0,
+    3
+   ],
+   "ideal": [
+    0,
+    20,
+    21,
+    41
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 5
+   },
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 68,
+   "torsion_predicted": 68,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 145,
+   "gens1": [
+    4,
+    5,
+    11,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    7,
+    13
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    3
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 9,
+   "torsion_predicted": 9,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 146,
+   "gens1": [
+    3,
+    5,
+    6,
+    9
+   ],
+   "gens2": [
+    4,
+    5,
+    7
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 147,
+   "gens1": [
+    3,
+    5,
+    12,
+    13
+   ],
+   "gens2": [
+    4,
+    7,
+    13
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    25
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 6,
+   "jordan2": {
+    "1": 3,
+    "2": 3
+   },
+   "torsion_direct": 30,
+   "torsion_predicted": 30,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 148,
+   "gens1": [
+    5,
+    7,
+    11,
+    13
+   ],
+   "gens2": [
+    4,
+    9,
+    10,
+    11
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    25
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 20,
+   "torsion_predicted": 20,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 149,
+   "gens1": [
+    4,
+    5,
+    7,
+    10
+   ],
+   "gens2": [
+    3,
+    10,
+    11
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0,
+    3
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    9
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 9,
+   "torsion_predicted": 9,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 150,
+   "gens1": [
+    3,
+    8,
+    12,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    7,
+    10
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 151,
+   "gens1": [
+    3,
+    8,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    5
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    5
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 7,
+   "jordan1": {
+    "1": 5,
+    "2": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 35,
+   "torsion_predicted": 35,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 152,
+   "gens1": [
+    3,
+    10,
+    11,
+    12
+   ],
+   "gens2": [
+    4,
+    5,
+    6,
+    13
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    6
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 12,
+   "torsion_predicted": 12,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 153,
+   "gens1": [
+    3,
+    4,
+    9
+   ],
+   "gens2": [
+    3,
+    4,
+    5,
+    12
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    7
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 21,
+   "torsion_predicted": 21,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 154,
+   "gens1": [
+    4,
+    7,
+    8,
+    9
+   ],
+   "gens2": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0,
+    5
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    7,
+    15,
+    22
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 39,
+   "torsion_predicted": 39,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 155,
+   "gens1": [
+    4,
+    5,
+    7,
+    10
+   ],
+   "gens2": [
+    3,
+    6,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    4
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 6,
+   "jordan2": {
+    "1": 6
+   },
+   "torsion_direct": 24,
+   "torsion_predicted": 24,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 156,
+   "gens1": [
+    3,
+    4,
+    5
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    8
+   ],
+   "a1": 4,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    4
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 12,
+   "torsion_predicted": 12,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 157,
+   "gens1": [
+    3,
+    8,
+    9,
+    10
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    9
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0,
+    4
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    16
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 6,
+   "jordan1": {
+    "1": 3,
+    "2": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 24,
+   "torsion_predicted": 24,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 158,
+   "gens1": [
+    3,
+    5,
+    11,
+    12
+   ],
+   "gens2": [
+    3,
+    5,
+    9,
+    10
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    7
+   ],
+   "ideal": [
+    0,
+    42
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 12,
+   "torsion_predicted": 12,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 159,
+   "gens1": [
+    3,
+    4,
+    12
+   ],
+   "gens2": [
+    3,
+    4,
+    10
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    4
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 8,
+   "torsion_predicted": 8,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 160,
+   "gens1": [
+    3,
+    4
+   ],
+   "gens2": [
+    3,
+    4,
+    5
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 161,
+   "gens1": [
+    4,
+    7,
+    9
+   ],
+   "gens2": [
+    3,
+    7,
+    8,
+    10
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    4
+   ],
+   "ideal": [
+    0,
+    3,
+    16,
+    19
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 5,
+   "jordan1": {
+    "1": 3,
+    "2": 2
+   },
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 36,
+   "torsion_predicted": 36,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 162,
+   "gens1": [
+    3,
+    4
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 163,
+   "gens1": [
+    3,
+    5,
+    11,
+    13
+   ],
+   "gens2": [
+    5,
+    6,
+    8
+   ],
+   "a1": 5,
+   "a2": 6,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    35
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 10,
+   "torsion_predicted": 10,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 164,
+   "gens1": [
+    5,
+    6,
+    7,
+    13
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    13
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    4
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 12,
+   "torsion_predicted": 12,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 165,
+   "gens1": [
+    3,
+    6,
+    10,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    7,
+    11
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 166,
+   "gens1": [
+    4,
+    5,
+    7,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    11,
+    13
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 167,
+   "gens1": [
+    3,
+    8,
+    9,
+    13
+   ],
+   "gens2": [
+    4,
+    7,
+    10,
+    13
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    30
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 6,
+   "jordan2": {
+    "1": 6
+   },
+   "torsion_direct": 36,
+   "torsion_predicted": 36,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 168,
+   "gens1": [
+    3,
+    5,
+    9,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    7,
+    12
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 169,
+   "gens1": [
+    4,
+    5,
+    11,
+    12
+   ],
+   "gens2": [
+    3,
+    4
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    10
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 20,
+   "torsion_predicted": 20,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 170,
+   "gens1": [
+    5,
+    6,
+    8,
+    12
+   ],
+   "gens2": [
+    3,
+    5,
+    7
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 171,
+   "gens1": [
+    4,
+    5,
+    7,
+    12
+   ],
+   "gens2": [
+    3,
+    5,
+    8,
+    9
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    10
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 10,
+   "torsion_predicted": 10,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 172,
+   "gens1": [
+    3,
+    7,
+    10,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    13
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    7
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 173,
+   "gens1": [
+    3,
+    8,
+    10
+   ],
+   "gens2": [
+    4,
+    5,
+    11
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    35
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 15,
+   "torsion_predicted": 15,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 174,
+   "gens1": [
+    3,
+    4,
+    7,
+    9
+   ],
+   "gens2": [
+    5,
+    6,
+    8,
+    10
+   ],
+   "a1": 5,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 175,
+   "gens1": [
+    4,
+    5,
+    10,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    7,
+    13
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 176,
+   "gens1": [
+    3,
+    4,
+    10
+   ],
+   "gens2": [
+    3,
+    4,
+    5,
+    10
+   ],
+   "a1": 4,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 177,
+   "gens1": [
+    4,
+    5,
+    6,
+    8
+   ],
+   "gens2": [
+    3,
+    7,
+    11,
+    13
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    7
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    6,
+    49,
+    55
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 5,
+   "jordan2": {
+    "1": 5
+   },
+   "torsion_direct": 66,
+   "torsion_predicted": 66,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 178,
+   "gens1": [
+    6,
+    7,
+    8,
+    11
+   ],
+   "gens2": [
+    4,
+    7,
+    10,
+    13
+   ],
+   "a1": 7,
+   "a2": 6,
+   "ideal1": [
+    0,
+    4
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    28
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 6,
+   "jordan1": {
+    "1": 4,
+    "2": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 42,
+   "torsion_predicted": 42,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 179,
+   "gens1": [
+    4,
+    6,
+    7,
+    12
+   ],
+   "gens2": [
+    3,
+    4,
+    8,
+    11
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    6,
+    35,
+    41
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 46,
+   "torsion_predicted": 46,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 180,
+   "gens1": [
+    4,
+    5,
+    7,
+    13
+   ],
+   "gens2": [
+    3,
+    5,
+    8,
+    10
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0,
+    6
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    36
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 181,
+   "gens1": [
+    3,
+    8,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    11
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 182,
+   "gens1": [
+    3,
+    4,
+    10,
+    11
+   ],
+   "gens2": [
+    3,
+    5
+   ],
+   "a1": 3,
+   "a2": 4,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0,
+    7
+   ],
+   "ideal": [
+    0,
+    3,
+    28,
+    31
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 2,
+   "jordan1": {
+    "1": 2
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 183,
+   "gens1": [
+    3,
+    5,
+    7,
+    11
+   ],
+   "gens2": [
+    5,
+    6,
+    8,
+    10
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 184,
+   "gens1": [
+    5,
+    6,
+    8
+   ],
+   "gens2": [
+    3,
+    5,
+    6,
+    11
+   ],
+   "a1": 3,
+   "a2": 5,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    6
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 6,
+   "jordan1": {
+    "1": 3,
+    "2": 3
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 185,
+   "gens1": [
+    5,
+    6,
+    7,
+    10
+   ],
+   "gens2": [
+    3,
+    5,
+    6,
+    8
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 186,
+   "gens1": [
+    4,
+    6,
+    7,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    5,
+    12
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 187,
+   "gens1": [
+    4,
+    5,
+    10,
+    11
+   ],
+   "gens2": [
+    4,
+    10,
+    11,
+    13
+   ],
+   "a1": 4,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1,
+    7
+   ],
+   "ideal": [
+    0,
+    5,
+    35
+   ],
+   "mu": [
+    1,
+    3,
+    3
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 14,
+   "jordan2": {
+    "1": 8,
+    "2": 4,
+    "3": 2
+   },
+   "torsion_direct": 70,
+   "torsion_predicted": 70,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 188,
+   "gens1": [
+    3,
+    4,
+    11
+   ],
+   "gens2": [
+    3,
+    7,
+    8
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    3
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 6,
+   "jordan2": {
+    "1": 6
+   },
+   "torsion_direct": 18,
+   "torsion_predicted": 18,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 189,
+   "gens1": [
+    3,
+    4,
+    6,
+    7
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    10
+   ],
+   "a1": 3,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    1
+   ],
+   "ideal": [
+    0,
+    7
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 14,
+   "torsion_predicted": 14,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 190,
+   "gens1": [
+    3,
+    8,
+    10,
+    11
+   ],
+   "gens2": [
+    5,
+    6,
+    7,
+    12
+   ],
+   "a1": 5,
+   "a2": 3,
+   "ideal1": [
+    0,
+    5
+   ],
+   "ideal2": [
+    0,
+    9
+   ],
+   "ideal": [
+    0,
+    25,
+    27,
+    52
+   ],
+   "mu": [
+    2,
+    2,
+    4
+   ],
+   "torsion1": 3,
+   "jordan1": {
+    "1": 3
+   },
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 33,
+   "torsion_predicted": 33,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 191,
+   "gens1": [
+    3,
+    5,
+    10,
+    13
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    7
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0,
+    1,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    7,
+    14
+   ],
+   "mu": [
+    3,
+    1,
+    3
+   ],
+   "torsion1": 8,
+   "jordan1": {
+    "1": 6,
+    "2": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 56,
+   "torsion_predicted": 56,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 192,
+   "gens1": [
+    5,
+    6,
+    8,
+    13
+   ],
+   "gens2": [
+    4,
+    6,
+    7,
+    11
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 193,
+   "gens1": [
+    4,
+    5,
+    10,
+    11
+   ],
+   "gens2": [
+    3,
+    5,
+    10,
+    13
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0
+   ],
+   "mu": [
+    1,
+    1,
+    1
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 0,
+   "torsion_predicted": 0,
+   "hw": null,
+   "hw1": null,
+   "hw2": null,
+   "hw_predicted": null,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 194,
+   "gens1": [
+    4,
+    5,
+    11,
+    12
+   ],
+   "gens2": [
+    3,
+    4,
+    7,
+    10
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0,
+    1,
+    3
+   ],
+   "ideal2": [
+    0,
+    5
+   ],
+   "ideal": [
+    0,
+    6,
+    18,
+    25,
+    31,
+    43
+   ],
+   "mu": [
+    3,
+    2,
+    6
+   ],
+   "torsion1": 9,
+   "jordan1": {
+    "1": 9
+   },
+   "torsion2": 2,
+   "jordan2": {
+    "1": 2
+   },
+   "torsion_direct": 82,
+   "torsion_predicted": 82,
+   "hw": true,
+   "hw1": true,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 195,
+   "gens1": [
+    3,
+    5,
+    7
+   ],
+   "gens2": [
+    4,
+    5,
+    6
+   ],
+   "a1": 6,
+   "a2": 7,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    3
+   ],
+   "ideal": [
+    0,
+    21
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 4,
+   "jordan2": {
+    "1": 4
+   },
+   "torsion_direct": 28,
+   "torsion_predicted": 28,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 196,
+   "gens1": [
+    4,
+    5,
+    11
+   ],
+   "gens2": [
+    6,
+    7,
+    8,
+    11
+   ],
+   "a1": 7,
+   "a2": 5,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    2
+   ],
+   "ideal": [
+    0,
+    10
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 5,
+   "jordan2": {
+    "1": 5
+   },
+   "torsion_direct": 25,
+   "torsion_predicted": 25,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 197,
+   "gens1": [
+    3,
+    7,
+    9,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    6,
+    11
+   ],
+   "a1": 7,
+   "a2": 3,
+   "ideal1": [
+    0,
+    2
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    14
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 7,
+   "jordan1": {
+    "1": 3,
+    "2": 2,
+    "3": 2
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 49,
+   "torsion_predicted": 49,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 198,
+   "gens1": [
+    3,
+    4,
+    13
+   ],
+   "gens2": [
+    4,
+    5,
+    7,
+    11
+   ],
+   "a1": 5,
+   "a2": 4,
+   "ideal1": [
+    0
+   ],
+   "ideal2": [
+    0,
+    6
+   ],
+   "ideal": [
+    0,
+    24
+   ],
+   "mu": [
+    1,
+    2,
+    2
+   ],
+   "torsion1": 0,
+   "jordan1": {},
+   "torsion2": 3,
+   "jordan2": {
+    "1": 3
+   },
+   "torsion_direct": 12,
+   "torsion_predicted": 12,
+   "hw": true,
+   "hw1": null,
+   "hw2": true,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  },
+  {
+   "index": 199,
+   "gens1": [
+    3,
+    5,
+    11
+   ],
+   "gens2": [
+    3,
+    4,
+    7
+   ],
+   "a1": 6,
+   "a2": 5,
+   "ideal1": [
+    0,
+    1
+   ],
+   "ideal2": [
+    0
+   ],
+   "ideal": [
+    0,
+    6
+   ],
+   "mu": [
+    2,
+    1,
+    2
+   ],
+   "torsion1": 4,
+   "jordan1": {
+    "1": 4
+   },
+   "torsion2": 0,
+   "jordan2": {},
+   "torsion_direct": 24,
+   "torsion_predicted": 24,
+   "hw": true,
+   "hw1": true,
+   "hw2": null,
+   "hw_predicted": true,
+   "hilbert_identity": true,
+   "p1": true,
+   "p2": true
+  }
+ ]
+}

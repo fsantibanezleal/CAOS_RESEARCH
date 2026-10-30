@@ -111,3 +111,16 @@ CONFIRMED.
 Before the focused gluing-transfer manuscript is created, the flat-base-change
 route needs a written assessment and a decision on whether the family belongs
 in a focused paper or as a corollary in an existing one.
+
+## Novelty amendment (2026-10-30)
+
+The flat-base-change assessment (HWB-094) located prior art. García-Sánchez and Leamer,
+arXiv:1211.4554v1 (2012), Section 2, prove for every gluing `Gamma = a1*Gamma1 + a2*Gamma2`:
+Lemma 8(8), `(a1*A + a2*C) - (a1*B + a2*D) = a1*(A - B) + a2*(C - D)`, which contains the exponent-set
+transfer of P2 (take `Gamma1 = Gamma`, `Gamma2 = N`, `a1 = q`, `a2 = m`); Proposition 10,
+`a1*A1 + a2*Gamma2` is Huneke-Wiegand iff `A1` is, which contains the rigidity transfer; and Theorem 13
+for gluings of a symmetric semigroup with `N`. The symmetry and Apéry statements of P1 are standard
+gluing facts. EXP-067 is therefore a corollary of that paper, and its results remain correct. What it
+adds is the explicit two-parameter CAOS family (multiplicity `24p`, embedding dimension `11p`, every
+`p >= 4` and `q` coprime to `24p`). The general statement and the case Proposition 9 leaves open are
+EXP-068.
