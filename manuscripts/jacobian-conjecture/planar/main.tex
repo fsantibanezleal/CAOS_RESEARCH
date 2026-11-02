@@ -27,9 +27,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.34}
-\newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22834215}
+\newcommand{\docversion}{v0.35}
+\newcommand{\docdate}{1 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.23874520}
 \newcommand{\conceptdoi}{10.5281/zenodo.21503367}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
@@ -179,7 +179,12 @@ sections and the transverse \(d=0\) quotient remain open, so the complete
 five-coefficient restriction and every larger target remain open.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
-transport. All computations are exact and reproducible; every claim is labeled machine-verified
+transport. Helali has claimed, with exact certificates, that both coefficient systems of GGHV
+Proposition~4.3 for $(72,108)$ are empty. We verify this independently in part: our own derivation
+reproduces his equations and his degree-35 eliminant, our own computation proves the second
+configuration empty, all of his identities for the first configuration hold in our exact arithmetic,
+and the first configuration reduces to the unit ideal at five primes (Section~\ref{sec:helali}).
+All computations are exact and reproducible; every claim is labeled machine-verified
 [MV], derived [D], or conjectural [C].
 \end{abstract}
 
@@ -1452,6 +1457,46 @@ branch; without such a condition, Newton resolution does not exclude the pair. T
 properness reformulation ($JC(2)$ holds iff every planar Keller map has empty Jelonek set;
 exact certificates in EXP-014) provides an independent cross-check.
 
+\section{The $(72,108)$ frontier: an external exclusion claim and its independent verification}\label{sec:helali}
+
+Helali \cite{Helali2026} states that the two coefficient systems of \cite[Proposition~4.3]{GGHV2022},
+$[P,Q]=x^2$ in $K[x,x^{-1},y]$ with
+\begin{align*}
+N(P)&=\operatorname{conv}\{(0,0),(1,0),(8,14),(8,16),(0,8)\},\\
+N(Q)&=\operatorname{conv}\{(0,0),(2,1),(12,21),(12,24),(0,12)\}
+\end{align*}
+(Case~1) and the same polygons without $(0,8)$ and $(0,12)$ (Case~2), have no solution, by exact unit-ideal and membership identities over
+number fields, and concludes, conditionally on the exhaustiveness of that proposition and on the
+transcription, that a plane counterexample has maximal degree at least $125$. We checked the claim with
+code written from the definitions, reading his serialized data only as data (EXP-137).
+
+\emph{Equations} [MV]. With $t=xy^2$, $z=y^{-1}$ one has $[t,z]=-1$ and $x^2=t^2z^4$. Our band
+equations agree with his displayed equations for Case~2 and, for Case~1, in the three top bands; in the
+two lowest upper bands of Case~1 they differ only by the cross terms of the negative bands, which his
+reduction treats in later steps. Case~1 has $302$ coefficient equations.
+
+\emph{First elimination} [MV]. With $A=t+a_2t^2+\cdots+a_7t^7+t^8$, the top band determines
+$D=d_2t^2+\cdots+d_{12}t^{12}$ and leaves six compatibility equations whose ideal is zero-dimensional of
+degree $35$; its eliminant $H(a_7)$ equals his, is irreducible over $\Q$, and is $G(a_7^7)$ for an
+irreducible quintic $G$ whose field is isomorphic to his $\Q[w]/(w^5-w^4+3w^3+3w^2+26)$.
+
+\emph{Case 2} [MV]. Our layered solve over $\Q[a_7]/(H)$ leaves $25$ equations in three parameters whose
+standard basis is $\{1\}$, so Case~2 has no solution; his four residual generators are among our
+equations.
+
+\emph{Case 1} [MV for the identities, evidence for emptiness]. Our $13$ compatibility equations span the
+same space as his, and the first is $\kappa(s^2-\gamma)^2$, so his split $s=\pm c$ is exhaustive. All of
+his identities for this case hold in our exact arithmetic over the degree-$35$ field. We did not reproduce
+his reduction from these $13$ equations to the systems his identities concern, and our Gr\"obner
+computation over the field did not finish within the time allowed. Independently of his data, at the
+primes $1021,1031,1033,1049,1061$, where $H$ has a simple root, both branches of our $13$ equations reduce
+to the unit ideal over $\mathbb{F}_p$, while the subsystem of the upper layers does not. This is strong
+evidence, not a proof, that Case~1 is empty.
+
+Conditionally on \cite[Proposition~4.3]{GGHV2022} being exhaustive, the exclusion of $(72,108)$ therefore
+has an independent proof of its second half and independent verification and evidence for its first
+half. Priority for the exclusion is Helali's.
+
 \section*{Data and code availability}
 
 {\raggedright
@@ -1491,6 +1536,8 @@ algorithms related to the Jacobian Conjecture, arXiv:1708.07936.
 \bibitem{GGHV2022} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui, Increasing
 the degree of a possible counterexample to the Jacobian Conjecture from 100 to 108,
 arXiv:2204.14178.
+\bibitem{Helali2026} B. Helali, Exact computer-assisted exclusion of the $(72,108)$ frontier in the
+two-dimensional Jacobian problem, version 1.0.1, 2026, doi:10.5281/zenodo.21479814.
 \bibitem{GGHVApproxRoots} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui,
 Approximate roots and intersection numbers, arXiv:1708.09367v2.
 \bibitem{LeeLi2024} K. Lee, L. Li, On the two-dimensional Jacobian conjecture:

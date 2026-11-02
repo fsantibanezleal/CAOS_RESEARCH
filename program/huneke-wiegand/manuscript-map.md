@@ -72,7 +72,7 @@ fiber-cone literature comparison, and candidate C remains significance-gated.
 
 - Version: v0.01, version DOI `10.5281/zenodo.23821498`, concept DOI `10.5281/zenodo.23821497`
   (reserved 2026-10-30; PDF frozen, sha256 `730e7ae0651b95ee9def05ed98556f67611e1fe9be476ac96464b175e7087fa1`;
-  the Zenodo publish step awaits Felipe's permission).
+  published 2026-11-01; a fresh public download equals the frozen file).
 - Coverage: EXP-068 (main theorem: tensor factorization, torsion-length law, characterization of
   extensions, four-generated counterexamples) and EXP-067 as a corollary credited to García-Sánchez and
   Leamer (2012).

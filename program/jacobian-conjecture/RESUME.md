@@ -8,6 +8,19 @@ remain the evidence.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 5 with a redirect; strategic review (JCB-098), then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 (JCB-099); the transverse Fitting atlas is parked.
 
+## Current checkpoint, 2026-11-02
+
+- EXP-137: Helali's claimed exclusion of (72,108) is verified in part by independent code. Our derivation
+  reproduces his band equations and his eliminant H(a7) (ratio 1); our own Singular run proves Case 2 empty;
+  all four of his identities hold in our exact arithmetic; our 13 Case 1 equations span his; addendum A finds
+  both Case 1 branches unit modulo five primes (control non-unit). Planar v0.35 published
+  (10.5281/zenodo.23874520).
+- EXP-138: Mathieu false for SU(N), N >= 15 (de Bondt's homogeneous degree-7 witness on C^15, verified
+  exactly). Cascade v0.07 published (10.5281/zenodo.23873236).
+- JCB-098 strategic review: the transverse Fitting atlas (EXP-129 onward) is parked; the focus is JCB-103,
+  an independent unit-ideal certificate for Case 1 over K by multi-modular reconstruction. The sections
+  below describe the parked atlas state.
+
 ## 1. State in one screen
 
 - The Jacobian conjecture is false in every dimension at least three. The program's exact
