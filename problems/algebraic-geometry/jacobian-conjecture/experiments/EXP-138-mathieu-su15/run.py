@@ -123,7 +123,6 @@ def main() -> int:
     collision = pts[0] != pts[1] and imgs[0] == imgs[1]
     log(f"P2: points {pts[0]} and {pts[1]}; equal images: {imgs[0] == imgs[1]}; distinct: {pts[0] != pts[1]}")
 
-    s = sp.Symbol("s")
     JH = sp.Matrix(H).jacobian(x)
     t0 = time.time()
     # Nilpotency of JH: in characteristic zero, tr((JH)^k) = 0 for k = 1..N is equivalent to nilpotency.
