@@ -8,7 +8,7 @@
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink,fancyhdr}
 \hypersetup{
-  pdftitle={A sharp three-point kernel bound and improved proportions of zeta zeros},
+  pdftitle={A sharp three-point kernel bound and conditional proportions of zeta zeros},
   pdfauthor={Felipe Santibanez-Leal},
   pdfsubject={A sharp auxiliary ratio in Wang's three-point kernel argument and its consequences for simple critical and distinct zeta zeros},
   pdfkeywords={Riemann zeta function, simple zeros, distinct zeros, critical line, three-point kernel, spectral defect, interval arithmetic}
@@ -28,9 +28,9 @@
 \newcommand{\adag}{a_{\dagger}}
 \newcommand{\udag}{u_{\dagger}}
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.01}
-\newcommand{\docdate}{24 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22940291}
+\newcommand{\docversion}{v0.02}
+\newcommand{\docdate}{2 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.23895875}
 \newcommand{\conceptdoi}{10.5281/zenodo.22940290}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -52,7 +52,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
 
-\title{A sharp three-point kernel bound and\\improved proportions of zeta zeros}
+\title{A sharp three-point kernel bound and\\conditional proportions of zeta zeros}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
@@ -86,8 +86,13 @@ $0.8362503997973378779141775281481973\ldots$.  The new correction above the
 Montgomery--Taylor constant is about $43.88\%$ larger than Wang's correction.
 We also give a short-interval corollary for the source-certified rank-six
 parity curve.  All numerical comparisons use directed rational enclosures and
-an independent 120-decimal interval replay.  The global transfer depends on
-Wang's recent unreviewed preprint.  No effective height, density-one result,
+an independent 120-decimal interval replay.  The global transfer and the
+short-interval corollary assume the framework of Wang's preprint
+arXiv:2609.24167v1.  On 6 October 2026 its author replaced that preprint by a
+notice stating that a new method is needed to obtain a good improvement.  The
+two proportions above are therefore conditional on an argument that its author
+no longer offers, and are not claimed here; only the sharp ratio theorem is
+claimed unconditionally.  No effective height, density-one result,
 universal simplicity statement, or proof of the Riemann hypothesis is claimed.
 \end{abstract}
 
@@ -141,7 +146,13 @@ The dependency phrase in Theorem~\ref{thm:global} is deliberate.  The sharp
 ratio theorem below is self-contained, while the passage to zeta zeros uses a
 September 2026 v1 preprint that has not been peer reviewed.  We inspect the
 substitution point and reproduce the numerical constants, but do not relabel
-the imported framework as independently established literature.
+the imported framework as independently established literature.  On 6 October
+2026 the author of that preprint replaced it on arXiv by a notice stating that
+a new method is needed to obtain a good improvement.  We have not located the
+point that prompted the notice; whatever it is, Theorem~\ref{thm:global} and
+the corollary of Section~\ref{sec:short} now rest on an argument its author no
+longer offers, and we do not claim either.  Theorem~\ref{thm:ratio} does not
+depend on that argument.
 
 \section{The sharp auxiliary ratio}
 
@@ -354,7 +365,7 @@ Wang's distinct-zero inequality, with the same replacement, is
 \]
 Inserting~\eqref{eq:Hstar} proves~\eqref{eq:global-distinct}.
 
-\section{A short-interval corollary}
+\section{A short-interval corollary}\label{sec:short}
 
 The same cell packing can be placed inside the fixed-power intervals used in
 the companion CAOS manuscript~\cite{CAOSShort}.  Let $h_6(\theta)$ be its
@@ -419,6 +430,18 @@ corollary additionally imports a rank-six constant whose source does not print
 its coefficient vector.  The statements are asymptotic and supply no
 effective starting height.  They neither show that every zero lies on the
 critical line nor that every zero is simple.
+
+Since 6 October 2026 the cited preprint is replaced on arXiv by its author's
+notice that a new method is needed to obtain a good improvement.  The pinned
+v1 files still define exactly which argument the conditional statements
+assume, and the certificate still verifies the algebra downstream of the
+substitution point, but neither supports the proportions without that
+argument.  Of the results above, only Theorem~\ref{thm:ratio} and the
+kernel-level inequality of the section on the improved three-point bound are
+claimed.  The short-interval positivity onset of the companion
+manuscript~\cite{CAOSShort} uses a different source, Wang's short-interval
+pair-correlation theorem (arXiv:2609.07918), whose statement is unchanged in
+its revised version.
 
 \section*{Computational assistance disclosure}
 
