@@ -16,8 +16,8 @@ EXP-067 is a credited corollary of García-Sánchez and Leamer (2012); HW-F7 is 
 
 Manuscript `manuscripts/huneke-wiegand/gluing-extensions` v0.01: built, voice-clean, DOI
 `10.5281/zenodo.23821498` reserved and PDF frozen (release record in CAOS_MANAGE
-`manuscripts/huneke-wiegand/gluing-extensions/pending-v0.01.json`, state `frozen`). **Next action:
-HWB-100**, run `release.py publish <record> --approval manuscripts/huneke-wiegand/gluing-extensions/publication-gate.json --apply`
+`manuscripts/huneke-wiegand/gluing-extensions/pending-v0.01.json`, state `frozen`). Published 2026-11-01 (36 publication gates passed, public download equals the frozen file). **Former next action,
+HWB-100 (done)**, run `release.py publish <record> --approval manuscripts/huneke-wiegand/gluing-extensions/publication-gate.json --apply`
 from a CAOS_MANAGE tree once Felipe permits it; then update the manuscript index rows from
 "publication pending" to published. After that: strategic review, candidate HWB-101.
 

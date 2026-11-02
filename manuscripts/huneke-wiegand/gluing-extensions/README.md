@@ -12,5 +12,5 @@ Focused companion of the Huneke-Wiegand programme (focus `HW-F8`).
 - Build: two-pass `pdflatex main.tex`; voice gate `scripts/check_manuscript_voice.py`.
 - v0.01: version DOI [10.5281/zenodo.23821498](https://doi.org/10.5281/zenodo.23821498), concept DOI
   [10.5281/zenodo.23821497](https://doi.org/10.5281/zenodo.23821497). Reserved 2026-10-30 and the PDF frozen
-  (sha256 `730e7ae0651b95ee9def05ed98556f67611e1fe9be476ac96464b175e7087fa1`); publication pending.
+  (sha256 `730e7ae0651b95ee9def05ed98556f67611e1fe9be476ac96464b175e7087fa1`); published 2026-11-01, public download verified against the frozen file.
 - Approval record: [`publication-gate.json`](publication-gate.json).

@@ -1751,3 +1751,17 @@ Overlap: our 48-variable witnesses (EXP-041, restated in EXP-136) are superseded
 Plan change (assessment): rank 5 with a redirect; strategic review, then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 by a different elimination route; park the transverse Fitting atlas. New rows JCB-098 to JCB-102.
 
 Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## 2026-11-01 - EXP-138 confirmed; cascade v0.07 published; EXP-137 opened
+
+- EXP-138 CONFIRMED: an independent sympy re-implementation of de Bondt's homogenization (arXiv:2610.24889)
+  gives a Keller map x + H on C^15, H homogeneous of degree 7, (JH)^14 = 0, with an explicit integer
+  collision. Through Zwart's Theorems 4.23 and 4.16 the Mathieu conjecture is false for SU(N), N >= 15
+  (EXP-136 had N >= 24). JCB-101 done; JCB-100 done (de Bondt's VC(28), HVC(30) cited, not re-verified).
+- Cascade v0.07 published (10.5281/zenodo.23873236; 39 publication gates; public download equals the
+  frozen file).
+- EXP-137 (independent verification of Helali's claimed (72,108) exclusion) frozen at d9197405 and
+  running. Helali's two Newton configurations equal our verbatim transcription of GGHV Proposition 4.3.
+  Partial results so far: the J4 compatibility ideal is zero-dimensional of multiplicity 35, with an a7
+  eliminant of degree 35 in powers of a7^7 only; a Singular standard basis of a 25-generator Case 2 input
+  returns the unit ideal (provenance of that input still to be stated in the results).
