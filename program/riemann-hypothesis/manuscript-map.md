@@ -89,7 +89,7 @@ arXiv full text, so specialist confirmation is still required.
 |---|---|---|---|---|
 | Baseline reproduction and audit | EXP-001 | reproduced, not novel | all | research record; provenance in `short-interval-stability` |
 | Short-interval stability, parity, localization, Hilbert compression, spectral defect | EXP-002--008 | internally proved, certified | Wang's pair theorem; Pearce-Crump's rank-six constant (EXP-008) | `short-interval-stability` v0.07 |
-| Sharp three-point kernel ratio | EXP-009 | ratio theorem internal; global proportion through Wang's framework | Wang arXiv:2609.24167 | `sharp-three-point-kernel` v0.01 |
+| Sharp three-point kernel ratio | EXP-009 | ratio theorem internal; global proportion conditional on Wang's replaced framework, not claimed | Wang arXiv:2609.24167v1 (replaced by a notice 2026-10-06) | `sharp-three-point-kernel` v0.02 |
 | Localized Levinson-Conrey detector, onset 0.534 | EXP-010 | internally proved, certified, two referee passes | Wang's pair theorem | `short-interval-levinson` v0.01 |
 | Linear-refinement barrier (certified counterexamples) | EXP-011 | confirmed, research record | none | no manuscript; recorded in the wiki and verdict |
 | Tang-type short-window moment (stopped) | EXP-012 | inconclusive, obstruction recorded | Tang arXiv:2608.14852 | no manuscript; research record |
@@ -99,7 +99,7 @@ arXiv full text, so specialist confirmation is still required.
 | slug | version | version DOI | concept DOI |
 |---|---|---|---|
 | `short-interval-stability` | v0.07 | `10.5281/zenodo.22860012` | `10.5281/zenodo.22727388` |
-| `sharp-three-point-kernel` | v0.01 | `10.5281/zenodo.22940291` | `10.5281/zenodo.22940290` |
+| `sharp-three-point-kernel` | v0.02 | `10.5281/zenodo.23895875` | `10.5281/zenodo.22940290` |
 | `short-interval-levinson` | v0.02 | `10.5281/zenodo.23132248` | `10.5281/zenodo.22984154` |
 
 ## Active focus and routing of future results

@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "A sharp three-point kernel bound and improved proportions of zeta zeros",
+    "title": "A sharp three-point kernel bound and conditional proportions of zeta zeros",
     "upload_type": "publication",
     "publication_type": "preprint",
-    "description": "We prove that the auxiliary ratio in Wang's three-point kernel argument has sharp maximum sqrt(2), attained exactly at (0,1) and (1,0). Substitution into the source-pinned framework of arXiv:2609.24167v1 gives a lower proportion 0.6725007995946757558... of nontrivial zeta zeros that are simple and on the critical line, with a distinct-zero companion 0.8362503997973378779.... Directed rational intervals and an independent 120-decimal interval replay certify the numerical comparisons. The global transfer depends on a recent unreviewed preprint. The result is asymptotic and does not prove the Riemann hypothesis.",
+    "description": "<p>Correction: the global proportions and the short-interval corollary assume the framework of Wang's preprint arXiv:2609.24167v1. On 6 October 2026 its author replaced that preprint on arXiv by a notice that a new method is needed to obtain a good improvement, so those proportions are conditional on an argument its author no longer offers and are not claimed. The sharp ratio theorem, R(alpha,beta) &lt;= sqrt 2 with equality only at (0,1) and (1,0), and the kernel-level inequality are unaffected and remain claimed.</p>We prove that the auxiliary ratio in Wang's three-point kernel argument has sharp maximum sqrt(2), attained exactly at (0,1) and (1,0). Substitution into the source-pinned framework of arXiv:2609.24167v1 gives a lower proportion 0.6725007995946757558... of nontrivial zeta zeros that are simple and on the critical line, with a distinct-zero companion 0.8362503997973378779.... Directed rational intervals and an independent 120-decimal interval replay certify the numerical comparisons. The global transfer depends on a recent unreviewed preprint. The result is asymptotic and does not prove the Riemann hypothesis.",
     "creators": [
       {
-        "name": "Santiba\u00f1ez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
         "affiliation": "CAOS Research program"
       }
@@ -22,8 +22,8 @@
     ],
     "license": "cc-by-4.0",
     "access_right": "open",
-    "publication_date": "2026-09-24",
-    "version": "0.01",
+    "publication_date": "2026-11-02",
+    "version": "0.02",
     "language": "eng",
     "related_identifiers": [
       {
@@ -37,10 +37,11 @@
         "resource_type": "software"
       },
       {
-        "identifier": "https://doi.org/10.5281/zenodo.22860012",
+        "identifier": "10.5281/zenodo.22860012",
         "relation": "references",
         "resource_type": "publication-preprint"
       }
-    ]
+    ],
+    "version_notes": "Correction: the source framework arXiv:2609.24167v1 has been replaced by its author with a notice; the global and short-interval proportions are now stated as conditional and not claimed; the sharp ratio theorem is unaffected. Title changed accordingly."
   }
 }
