@@ -1,0 +1,23 @@
+{
+  "release_ready": true,
+  "record_id": 23887585,
+  "version": "0.11",
+  "version_doi": "10.5281/zenodo.23887585",
+  "concept_doi": "10.5281/zenodo.21542483",
+  "scope": "Exact replication and screening of tropical finiteness certificates for central configurations, with a section on the 2026 five-body claims and an audit of the Lean formalization (faithful statement, no kernel bypass).",
+  "bytes": 300425,
+  "md5": "628a43b05aa7620349cb53cde83da38e",
+  "sha256": "c3622a8ea6b593f5f92b64d201a96824916746caa3f27f20f51f33f8ff141882",
+  "tex_sha256": "b7fdd71a3a7272c8f601ea02d8472116ea5b04801bb22b9aa0152d1e09fed87e",
+  "metadata_sha256": "392f4547ce70a817d4617ed33462f03738ae537a7c9849967f63d2c7dc7f06c9",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 11,
+  "rendered_pages_reviewed": 11,
+  "qa_date": "2026-11-01",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246",
+  "exp024": "CONFIRMED"
+}
