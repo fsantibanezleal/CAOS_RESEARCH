@@ -1,5 +1,14 @@
 # Riemann hypothesis state
 
+## Correction, 2026-11-02
+
+`sharp-three-point-kernel` v0.02, version DOI 10.5281/zenodo.23895875, concept
+10.5281/zenodo.22940290. The sharp ratio theorem is claimed; the global and
+short-interval proportions assume Wang's arXiv:2609.24167v1 framework, which
+its author replaced by a notice on 2026-10-06, and are not claimed. The
+Wang arXiv:2609.07918v2 local pair theorem is unchanged, so the EXP-010 onset
+input stands. Research stays paused.
+
 ## Research paused by the user, 2026-10-04
 
 Riemann experimentation and the proposed research app release are stopped.
