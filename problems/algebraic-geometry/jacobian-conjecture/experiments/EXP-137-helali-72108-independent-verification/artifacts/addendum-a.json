@@ -1,0 +1,146 @@
+{
+ "addendum": "A",
+ "status": "PASS",
+ "primes": [
+  1021,
+  1031,
+  1033,
+  1049,
+  1061
+ ],
+ "branch_tests": [
+  {
+   "kind": "branch",
+   "p": 1021,
+   "root": 732,
+   "branch": "s=+c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1021,
+   "root": 732,
+   "branch": "s=-c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1031,
+   "root": 63,
+   "branch": "s=+c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1031,
+   "root": 63,
+   "branch": "s=-c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1033,
+   "root": 120,
+   "branch": "s=+c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1033,
+   "root": 120,
+   "branch": "s=-c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1049,
+   "root": 470,
+   "branch": "s=+c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1049,
+   "root": 470,
+   "branch": "s=-c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1061,
+   "root": 272,
+   "branch": "s=+c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  },
+  {
+   "kind": "branch",
+   "p": 1061,
+   "root": 272,
+   "branch": "s=-c",
+   "equations": 9,
+   "unit": true,
+   "singular": [
+    "UNIT",
+    "SECONDS=0"
+   ]
+  }
+ ],
+ "control": {
+  "kind": "control",
+  "p": 1021,
+  "equations": 4,
+  "unit": false,
+  "singular": [
+   "DIM=4",
+   "SECONDS=0"
+  ]
+ },
+ "what_pass_shows": "strong evidence, not a proof, that Case 1 has no solution over the algebraic closure",
+ "external_data_used": false,
+ "seconds": 60.7
+}

@@ -1,0 +1,62 @@
+{
+ "status": "PASS",
+ "layers": [
+  {
+   "layer": 3,
+   "unknowns": 19,
+   "rows": 18,
+   "rank": 17,
+   "new_params": 2,
+   "compat": 0
+  },
+  {
+   "layer": 2,
+   "unknowns": 19,
+   "rows": 19,
+   "rank": 18,
+   "new_params": 1,
+   "compat": 0
+  },
+  {
+   "layer": 1,
+   "unknowns": 12,
+   "rows": 19,
+   "rank": 12,
+   "new_params": 0,
+   "compat": 7
+  },
+  {
+   "layer": 0,
+   "unknowns": 0,
+   "rows": 19,
+   "rank": 0,
+   "new_params": 0,
+   "compat": 18
+  }
+ ],
+ "parameters": 3,
+ "residual_equations": 25,
+ "residual_equations_by_layer": {
+  "1": 7,
+  "0": 18
+ },
+ "singular_wall_seconds": 22.4,
+ "singular_unit_ideal": true,
+ "singular_std_size": 1,
+ "singular_output_file": "artifacts/case2_unit_singular.out",
+ "helali_generator_indices": [
+  0,
+  1,
+  7,
+  9
+ ],
+ "helali_generators_equal_ours_up_to_constant_and_param_permutation": true,
+ "matching_parameter_permutations": [
+  [
+   0,
+   1,
+   2
+  ]
+ ],
+ "_wall_seconds": 29.0
+}

@@ -1,0 +1,608 @@
+{
+ "P1": {
+  "status": "PASS",
+  "claim": "our derivation of the band equations from the polygons agrees with Helali J4..J0",
+  "evidence": {
+   "chain_rule": {
+    "[t,z]_{x,y}": -1,
+    "x2_minus_t2z4": 0,
+    "bracket_xy_equals_minus_bracket_tz": true
+   },
+   "case1": {
+    "P_points": 61,
+    "Q_points": 125,
+    "P_bands": [
+     2,
+     1,
+     0,
+     -1,
+     -2,
+     -3,
+     -4,
+     -5,
+     -6,
+     -7,
+     -8
+    ],
+    "Q_bands": [
+     3,
+     2,
+     1,
+     0,
+     -1,
+     -2,
+     -3,
+     -4,
+     -5,
+     -6,
+     -7,
+     -8,
+     -9,
+     -10,
+     -11,
+     -12
+    ],
+    "equations_per_band": {
+     "4": 17,
+     "3": 18,
+     "2": 19,
+     "1": 19,
+     "0": 20,
+     "-1": 19,
+     "-2": 19,
+     "-3": 18,
+     "-4": 17,
+     "-5": 16,
+     "-6": 15,
+     "-7": 14,
+     "-8": 13,
+     "-9": 12,
+     "-10": 11,
+     "-11": 10,
+     "-12": 9,
+     "-13": 8,
+     "-14": 7,
+     "-15": 6,
+     "-16": 5,
+     "-17": 4,
+     "-18": 3,
+     "-19": 2,
+     "-20": 1
+    },
+    "equations_total": 302,
+    "equations_upper_J4_to_J0": 93,
+    "equations_negative_bands": 209,
+    "negative_bands_with_equations": [
+     -20,
+     -19,
+     -18,
+     -17,
+     -16,
+     -15,
+     -14,
+     -13,
+     -12,
+     -11,
+     -10,
+     -9,
+     -8,
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1
+    ],
+    "compare_with_helali_J": {
+     "J4_equal": true,
+     "J4_equal_up_to_negative_band_cross_terms": true,
+     "J4_cross_term_count": 0,
+     "J3_equal": true,
+     "J3_equal_up_to_negative_band_cross_terms": true,
+     "J3_cross_term_count": 0,
+     "J2_equal": true,
+     "J2_equal_up_to_negative_band_cross_terms": true,
+     "J2_cross_term_count": 0,
+     "J1_equal": false,
+     "J1_equal_up_to_negative_band_cross_terms": true,
+     "J1_cross_term_count": 18,
+     "J0_equal": false,
+     "J0_equal_up_to_negative_band_cross_terms": true,
+     "J0_cross_term_count": 19,
+     "J4_degrees": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "J4_residual_constant": 1,
+     "rhs_band": 4,
+     "rhs_t_degree": 2
+    }
+   },
+   "case2": {
+    "P_points": 25,
+    "Q_points": 47,
+    "P_bands": [
+     2,
+     1,
+     0
+    ],
+    "Q_bands": [
+     3,
+     2,
+     1,
+     0
+    ],
+    "equations_per_band": {
+     "4": 17,
+     "3": 18,
+     "2": 19,
+     "1": 19,
+     "0": 19
+    },
+    "equations_total": 92,
+    "equations_upper_J4_to_J0": 92,
+    "equations_negative_bands": 0,
+    "negative_bands_with_equations": [],
+    "compare_with_helali_J": {
+     "J4_equal": true,
+     "J3_equal": true,
+     "J2_equal": true,
+     "J1_equal": true,
+     "J0_equal": true,
+     "J4_degrees": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "J4_residual_constant": 1,
+     "rhs_band": 4,
+     "rhs_t_degree": 2
+    }
+   },
+   "adverse_polygon_control": {
+    "p_points_base": 25,
+    "p_points_adverse": 61,
+    "band_system_changed": true,
+    "extra_bands": [
+     -9,
+     -8,
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1
+    ],
+    "changed_existing_bands": [
+     0,
+     1
+    ],
+    "equation_count_base": 92,
+    "equation_count_adverse": 235
+   },
+   "_wall_seconds": 6.4
+  },
+  "case1_negative_band_note": "Case 1 has 209 raw coefficient equations in negative bands (-1..-20) and 93 in bands 4..0; J1 and J0 of Case 1 contain extra cross terms with negative bands (18 and 19 coefficient equations), equal to the bracket restricted to pairs with a negative band. Helali's J4..J0 are the upper-band-only formulas and are exact for Case 2 and for J4..J2 of Case 1."
+ },
+ "P2": {
+  "status": "PASS",
+  "evidence": {
+   "d_solved": 11,
+   "compat_equations": 6,
+   "compat_degrees": [
+    9,
+    9,
+    9,
+    9,
+    9,
+    9
+   ],
+   "singular_output_file": "artifacts/p2_singular.out",
+   "dp_size": 56,
+   "dim": 0,
+   "mult": 35,
+   "lex_size": 6,
+   "dp_time_seconds": 138,
+   "lex_relations": 6,
+   "eliminant_degree": 35,
+   "eliminant_in_a7_only": true,
+   "eliminant_irreducible_over_Q": true,
+   "eliminant_factor_degrees": [
+    [
+     35,
+     1
+    ]
+   ],
+   "eliminant_exponents": [
+    0,
+    7,
+    14,
+    21,
+    28,
+    35
+   ],
+   "eliminant_monic_hash": "bcbd066c7a623446335d62befacf8422e55a526a480a83fb2839ae553675e9b9",
+   "lex_shape_linear_in_a2_to_a6": true,
+   "helali_H_file": "bundle/exact_replay/firstblock_Q_exact.out (L[1])",
+   "helali_H_equal_up_to_constant": true,
+   "helali_H_constant_ratio_ours_over_theirs": "1/1",
+   "status": "PASS",
+   "_wall_seconds": 14.5
+  },
+  "relation_to_helali_field": {
+   "H_is_polynomial_in_a7^7": true,
+   "G_degree": 5,
+   "G_irreducible_over_Q": true,
+   "H_factorization_over_Q": {
+    "content": "1/1",
+    "factors": [
+     [
+      35,
+      1
+     ]
+    ]
+   },
+   "H_irreducible_over_Q": true,
+   "G_monic_coefficients_low_to_high": [
+    "-472010836902934881599035667581952428867584/2343594361433",
+    "11279413270271808313324551549335678976/180276489341",
+    "147853711990125992821207785996960/2343594361433",
+    "265472843532245531128968765/9374377445732",
+    "42022389595776/6311981",
+    "1/1"
+   ],
+   "helali_L_minpoly": "w^5 - w^4 + 3w^3 + 3w^2 + 26",
+   "helali_L_minpoly_irreducible_over_Q": true,
+   "G_factor_degrees_over_helali_L": [
+    1,
+    4
+   ],
+   "G_has_root_in_helali_L": true,
+   "relation": "Q[v]/(G) is isomorphic to Helali's L",
+   "k_field": "K = Q[a7]/(H), degree 35 = 5 * 7 over Q(v) with v = a7^7; L has degree 5",
+   "singular_output_file": "artifacts/p2b_relation_singular.out",
+   "_wall_seconds": 0.2
+  }
+ },
+ "P3": {
+  "status": "UNVERIFIED",
+  "why": "the four identities pass and Case 2 is independently excluded, but the link of the Case 1 certificate generators (h=0 systems and the hard-identity system E_i) to the P1 equations is only partial",
+  "identity_checks_all_pass": true,
+  "certificates": {
+   "case2_unit_identity": {
+    "certificate": {
+     "file": "case2_exact_certificate.pkl",
+     "sha256": "cfbc3c39d7a28013671144f43ef76f0498542eaf6d562dd624bba3311194e4aa",
+     "pickle_global_opcodes": []
+    },
+    "status": "PASS",
+    "field_degree": 35,
+    "field_minpoly_irreducible_over_Q": true,
+    "field_minpoly_monic_sha256": "bcbd066c7a623446335d62befacf8422e55a526a480a83fb2839ae553675e9b9",
+    "field_equals_our_P2_field": true,
+    "generators": 4,
+    "generator_terms": [
+     8,
+     8,
+     14,
+     14
+    ],
+    "multiplier_terms": [
+     23,
+     20,
+     14,
+     11
+    ],
+    "identity_residual_nonzero_terms": 0,
+    "identity_holds_sum_gT_equals_1": true,
+    "eval_seconds": 7.63,
+    "p4_corrupt_multiplier_coefficient_identity_fails": true,
+    "p4_corrupt_generator_coefficient_identity_fails": true,
+    "p4_residual_terms_after_corruption": [
+     8,
+     14
+    ]
+   },
+   "case1_h0_branch_s_eq_c": {
+    "certificate": {
+     "file": "h0_branch1_exact_certificate.pkl",
+     "sha256": "664de005e99bc6a0e61ba479ba64ed57ddbfa9c5399b955cbb12237ac70f8186",
+     "pickle_global_opcodes": []
+    },
+    "status": "PASS",
+    "branch_label": "s=c",
+    "field_degree": 35,
+    "field_minpoly_irreducible_over_Q": true,
+    "field_minpoly_monic_sha256": "bcbd066c7a623446335d62befacf8422e55a526a480a83fb2839ae553675e9b9",
+    "field_equals_our_P2_field": true,
+    "generators": 7,
+    "generator_terms": [
+     5,
+     9,
+     9,
+     11,
+     11,
+     11,
+     10
+    ],
+    "multiplier_terms": [
+     11,
+     6,
+     6,
+     6,
+     6,
+     6,
+     0
+    ],
+    "identity_residual_nonzero_terms": 0,
+    "identity_holds_sum_gT_equals_1": true,
+    "eval_seconds": 2.18,
+    "p4_corrupt_multiplier_coefficient_identity_fails": true,
+    "p4_corrupt_generator_coefficient_identity_fails": true,
+    "p4_residual_terms_after_corruption": [
+     5,
+     6
+    ]
+   },
+   "case1_h0_branch_s_eq_minus_c": {
+    "certificate": {
+     "file": "h0_exact_certificate.pkl",
+     "sha256": "d7844c2f8edea62be4e3a7fe8a160dc4b7b70efd1262993ec6d2ed7e78722a1a",
+     "pickle_global_opcodes": []
+    },
+    "status": "PASS",
+    "branch_label": "s=-c",
+    "field_degree": 35,
+    "field_minpoly_irreducible_over_Q": true,
+    "field_minpoly_monic_sha256": "bcbd066c7a623446335d62befacf8422e55a526a480a83fb2839ae553675e9b9",
+    "field_equals_our_P2_field": true,
+    "generators": 7,
+    "generator_terms": [
+     5,
+     9,
+     9,
+     11,
+     11,
+     11,
+     10
+    ],
+    "multiplier_terms": [
+     11,
+     6,
+     6,
+     6,
+     6,
+     6,
+     0
+    ],
+    "identity_residual_nonzero_terms": 0,
+    "identity_holds_sum_gT_equals_1": true,
+    "eval_seconds": 2.06,
+    "p4_corrupt_multiplier_coefficient_identity_fails": true,
+    "p4_corrupt_generator_coefficient_identity_fails": true,
+    "p4_residual_terms_after_corruption": [
+     5,
+     6
+    ]
+   },
+   "case1_hard_identity_s_eq_c": {
+    "status": "PASS",
+    "system_pickle": {
+     "file": "hne0_polred.pkl",
+     "sha256": "5a6e423d74ef09fc9c7a7282c500bda566018d7e56a93124665796bbe417cedf",
+     "pickle_global_opcodes": []
+    },
+    "certificate_file": {
+     "file": "hard/h_certificate_exact.txt",
+     "bytes": 89105967
+    },
+    "certificate_sha256": "0e48ffab32469ef8405a6945b16cf1521ddeb3c592ae4e5051968110a4dc656a",
+    "header": [
+     "JC2_H_CERTIFICATE_V1",
+     "minpoly=w^5-w^4+3*w^3+3*w^2+26",
+     "identity=h-T1*E1-T2*E2-T3*E3-T4*E4=0",
+     "coefficients=385"
+    ],
+    "field_minpoly": "w^5-w^4+3*w^3+3*w^2+26",
+    "field_minpoly_irreducible_over_Q": true,
+    "multiplier_coefficients": 385,
+    "distinct_supports": 385,
+    "max_bits_numerator": 85342,
+    "system_equations": 6,
+    "system_terms": [
+     30,
+     30,
+     40,
+     40,
+     40,
+     30
+    ],
+    "equations_used": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "distinct_monomials_in_identity": 402,
+    "identity_residual_nonzero_terms": 0,
+    "identity_holds_h_equals_sum_TE": true,
+    "eval_seconds": 246.9,
+    "p4_corrupt_certificate_coefficient_residual_terms": 30,
+    "p4_corrupt_generator_coefficient_residual_terms": 100,
+    "p4_corrupt_certificate_coefficient_identity_fails": true,
+    "p4_corrupt_generator_coefficient_identity_fails": true
+   },
+   "_wall_seconds": 765.3
+  },
+  "case2": {
+   "status": "PASS",
+   "provenance_of_singular_input": "derived by our own code: lattice points from the polygons (exp137_lib.lattice_points), bracket weights (p*c - a*q), our own D from J4 in K = Q[a7]/(H) with H from our own Singular modStd, then our layered linear solve over K (cascade.py layers 3..0). No Helali data other than the comparison are used; the 25 equations are written to Singular by singular_unit_script",
+   "independent_exclusion_of_case2": true,
+   "our_certificate": "Singular std over (0,u) returns the standard basis {1} for our 25 equations (artifacts/case2_unit_singular.out)",
+   "helali_generators_equal_ours": true,
+   "evidence": {
+    "status": "PASS",
+    "layers": [
+     {
+      "layer": 3,
+      "unknowns": 19,
+      "rows": 18,
+      "rank": 17,
+      "new_params": 2,
+      "compat": 0
+     },
+     {
+      "layer": 2,
+      "unknowns": 19,
+      "rows": 19,
+      "rank": 18,
+      "new_params": 1,
+      "compat": 0
+     },
+     {
+      "layer": 1,
+      "unknowns": 12,
+      "rows": 19,
+      "rank": 12,
+      "new_params": 0,
+      "compat": 7
+     },
+     {
+      "layer": 0,
+      "unknowns": 0,
+      "rows": 19,
+      "rank": 0,
+      "new_params": 0,
+      "compat": 18
+     }
+    ],
+    "parameters": 3,
+    "residual_equations": 25,
+    "residual_equations_by_layer": {
+     "1": 7,
+     "0": 18
+    },
+    "singular_wall_seconds": 22.4,
+    "singular_unit_ideal": true,
+    "singular_std_size": 1,
+    "singular_output_file": "artifacts/case2_unit_singular.out",
+    "helali_generator_indices": [
+     0,
+     1,
+     7,
+     9
+    ],
+    "helali_generators_equal_ours_up_to_constant_and_param_permutation": true,
+    "matching_parameter_permutations": [
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "_wall_seconds": 29.0
+   }
+  },
+  "case1": {
+   "link_compat_13": true,
+   "split": {
+    "first_compat_is_polynomial_in_s_only": true,
+    "first_compat_s_degrees": [
+     0,
+     2,
+     4
+    ],
+    "first_compat_equals_kappa_times_(s^2-gamma)^2": true,
+    "helali_c_squared_equals_gamma": true,
+    "c_nonzero": true,
+    "second_compat_vanishes_mod_s2_minus_gamma": true,
+    "status": "PASS"
+   },
+   "hard_and_h0_generator_link": {
+    "status": "UNVERIFIED",
+    "reason": "the systems E_i (hne0_polred.pkl) and the h=0 systems are produced from the 13 compatibility equations by the branch split, the elimination of r, an affine shift in h, a weighted rescaling and a descent from degree 35 to degree 5; we verified the first two links (13 equations equal up to layer-wise span; s^2 = gamma split exhaustive) but did not reproduce the remaining steps or decide the branch systems by our own Groebner run"
+   },
+   "own_groebner_attempt": {
+    "status": "UNVERIFIED",
+    "what_was_attempted": "Our 13 compatibility equations (6 parameters, over K) were passed to Singular nfmodStd and std, and the 9 equations left after s=c were passed to nfmodStd and std. nfmodStd forks about 25 processes: after about 10 minutes of wall time (about 4 CPU-hours across processes) none returned and they were killed to respect the 6 CPU-hour budget; the single-core std runs had also not returned after about 10 minutes. No result was obtained; this is a budget stop, not a finding.",
+    "consequence": "Case 1 emptiness is not independently decided by our own Groebner run; the Case 1 link rests on the span equality of the 13 compatibility equations and the split check below."
+   }
+  }
+ },
+ "P4": {
+  "status": "PASS",
+  "evidence": {
+   "case2_corrupt_multiplier_fails": true,
+   "case2_corrupt_generator_fails": true,
+   "h0_s_eq_c_corrupt_multiplier_fails": true,
+   "h0_s_eq_c_corrupt_generator_fails": true,
+   "h0_s_eq_minus_c_corrupt_multiplier_fails": true,
+   "h0_s_eq_minus_c_corrupt_generator_fails": true,
+   "hard_corrupt_certificate_coefficient_fails": true,
+   "hard_corrupt_generator_coefficient_fails": true,
+   "adverse_polygon_changes_band_system": true,
+   "adverse_polygon_detail": {
+    "p_points_base": 25,
+    "p_points_adverse": 61,
+    "band_system_changed": true,
+    "extra_bands": [
+     -9,
+     -8,
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1
+    ],
+    "changed_existing_bands": [
+     0,
+     1
+    ],
+    "equation_count_base": 92,
+    "equation_count_adverse": 235
+   }
+  }
+ },
+ "_meta": {
+  "experiment": "EXP-137",
+  "date": "2026-11-01",
+  "external_scripts_executed_or_imported": false,
+  "standard_unpickler_used": false,
+  "pickles_read_via": "exp137_lib.restricted_loads (builtins containers/scalars and fractions.Fraction only)",
+  "archive_pickles_scanned_for_globals": "all loaded pickles contain no GLOBAL/STACK_GLOBAL/REDUCE opcodes (pickle_global_opcodes in certs)",
+  "no_floating_point_in_any_decision": true
+ }
+}
