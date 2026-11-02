@@ -24,9 +24,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.08}
-\newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22835133}
+\newcommand{\docversion}{v0.09}
+\newcommand{\docdate}{2 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.23890775}
 \newcommand{\conceptdoi}{10.5281/zenodo.22820520}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/analysis-pde/navier-stokes}
@@ -521,6 +521,14 @@ conjectures, so the definitions that determine whether the formalized statement 
 predate the claim. None of this speaks to the mathematics outside the formalization, and kernel replay
 detects environment manipulation rather than serving as an external verifier.
 
+These checks concern the formal statements and the integrity of the formal proof. They do not establish
+that the formal proof follows the written argument. Bastounis, Circelli and Hansen~\cite{bch} report
+that the Lean proof of the Navier-Stokes announcement does not correspond to its natural-language proof,
+exhibiting places where the text states a stronger bound than the cited Lean declaration proves; they do
+not claim the written argument is false. Their finding is consistent with ours: a formal proof of a
+faithful statement establishes that statement, while the correctness of the written argument, and of
+any result that cites it rather than the formal development, remains a separate question.
+
 \section{Scope}
 
 The bound of Section~\ref{sec:class} is a necessary condition for growth in the layer mechanism,
@@ -548,6 +556,9 @@ Theorems~\ref{thm:class}, \ref{thm:design} and~\ref{thm:euler} are public at \hr
 \begin{thebibliography}{9}
 \bibitem{fefferman} C. L. Fefferman, \emph{Existence and smoothness of the Navier-Stokes equation},
 Clay Mathematics Institute Millennium Prize problem description.
+\bibitem{bch} A. Bastounis, F. Circelli and A. C. Hansen, \emph{Navier-Stokes lost in translation: why
+Lean verification of AI autoformalisation does not guarantee correct natural language proofs},
+\href{https://arxiv.org/abs/2610.08144}{arXiv:2610.08144}, 2026.
 \bibitem{cmz} D. C\'ordoba, L. Mart\'inez-Zoroa and F. Zheng, \emph{Finite time blow-up for the
 hypodissipative Navier Stokes equations with a force in $L^{1}_{t}C^{1,\epsilon}_{x}$ and
 $L^{\infty}_{t}L^{2}_{x}$}, Arch. Ration. Mech. Anal. \textbf{250} (2026), article 38;

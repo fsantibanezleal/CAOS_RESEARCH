@@ -28,3 +28,10 @@ External status: the Clay problem is open; the OpenAI forced blowup (2026-09-08)
 Plan change (assessment): one citation and scope revision (v0.09), the bounded comparison of that threshold with the class ceiling, then dormant. New rows NS-020 and NS-021.
 
 Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## 2026-11-02 - v0.09 published; dormant
+
+- Status section scoped against arXiv:2610.08144 (Lean proof does not follow the written proof; the written
+  argument is not claimed false). Published as v0.09, 10.5281/zenodo.23890775.
+- NS-021 closed by reference to Section 5 (exponent budget behind the published threshold).
+- Held dormant: no open backlog item; reopening conditions in state.md.
