@@ -886,3 +886,14 @@ Overlap: the value of our n = 5 tropical replication and of the round-54 certifi
 Plan change (assessment): hold; strategic review; candidate redirect to an independent replay of the Tomar certificates and Lean proof, or gate the problem. New rows CCB-038 to CCB-040.
 
 Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## Round 55 (2026-11-02): the five-body case settled elsewhere; the Lean statement audited
+
+- Planar five-body finiteness for every positive mass vector is claimed by Tomar (arXiv:2610.13100, Lean 4),
+  Chen and Tong (arXiv:2610.16107) and Liu and Liu (arXiv:2610.28168).
+- EXP-024 CONFIRMED: Tomar's `MainTheorem` states exactly the classical claim; no stored source of the
+  formalization (2,751 files) and none of the 85,756 generated modules (archives checked against their
+  SHA-256) contains `sorry`, `admit`, an axiom, `native_decide`, `implemented_by`, `extern`,
+  `ofReduceBool`, `unsafe` or `skipKernelTC`. The 863 CPU-hour rebuild was not done.
+- Strategic review: the n = 5 atlas and the tropical n = 5 work are retired as routes to the theorem; the
+  open case is n = 6 (CCB-041). Tropical-replication v0.11 published, 10.5281/zenodo.23887585.
