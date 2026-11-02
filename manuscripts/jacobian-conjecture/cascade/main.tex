@@ -15,9 +15,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.06}
-\newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22834179}
+\newcommand{\docversion}{v0.07}
+\newcommand{\docdate}{1 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.23873236}
 \newcommand{\conceptdoi}{10.5281/zenodo.21503371}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
@@ -65,7 +65,9 @@ symmetric/gradient and vanishing corollaries are made explicit: a non-invertible
 Keller map $\mathrm{id} + \nabla f$ on $\C^{48}$, with $f$ a homogeneous Hessian-nilpotent
 quartic (382 monomials over $\Q(i)$) and an exact two-point collision, built from Thompson's
 dimension-24 cubic-homogeneous form by the de Bondt--van den Essen construction and verified
-end to end in exact arithmetic.
+end to end in exact arithmetic. A homogeneous form of the counterexample in dimension $15$, built by de
+Bondt and verified here exactly, shows that the Mathieu conjecture fails for $SU(N)$ for every
+$N \ge 15$.
 \end{abstract}
 
 \section{The counterexample and its verification}
@@ -98,10 +100,12 @@ Mathieu proved that his conjecture, taken for all compact connected Lie groups, 
 Jacobian conjecture \cite{Mathieu1997}; Duistermaat and van der Kallen proved the abelian case
 \cite{DvdK1998}. At a fixed $N$ the argument shows that the conjecture for $SU(N)$ makes every
 Keller map $x - h$ of $\C^N$ with $h$ homogeneous invertible
-\cite[Theorems~4.16 and~4.23]{Zwart2025}. The cubic-homogeneous form of the counterexample on
-$\C^{24}$ (Section~\ref{sec:witness}) is such a map and is not injective, so the Mathieu
-conjecture is \textbf{false for $SU(N)$, $N \ge 24$}. For $SU(2)$ an explicit counterexample is
-given in \cite{LongSU2}. For $3 \le N \le 23$ the argument does not reach $F$: its components
+\cite[Theorems~4.16 and~4.23]{Zwart2025}. De Bondt's homogenization of the counterexample
+\cite{deBondt2026} gives such a map on $\C^{15}$, of degree $7$, which is not injective
+(Section~\ref{sec:fifteen}; the cubic-homogeneous form on $\C^{24}$ of Section~\ref{sec:witness}
+is another), so the Mathieu conjecture is \textbf{false for $SU(N)$, $N \ge 15$}, after adjoining
+identity coordinates for $N > 15$. For $SU(2)$ an explicit counterexample is given in
+\cite{LongSU2}. For $3 \le N \le 14$ the argument does not reach $F$: its components
 have total degrees $7, 6, 4$ and its second partial derivatives have no common zero, so $F$ is
 not affinely equivalent to a map $x - h$ with $h$ homogeneous (EXP-136), and the reduction of
 $F$ to that form adds variables \cite{BCW1982}.
@@ -148,8 +152,23 @@ The Image conjecture implies the vanishing conjecture \cite{vdE2010}; hence it i
 JC reduces to cubic homogeneous maps with symmetric Jacobian \cite{dBvdE2005}; with the Zhao
 equivalence this yields a dimension in which a \textbf{gradient Keller map is
 non-invertible}. \emph{An explicit such map, in dimension 48, is given in
-Section~\ref{sec:witness}.}
+Section~\ref{sec:witness}.} Smaller failing dimensions for the vanishing conjecture, $28$ for a
+non-homogeneous and $30$ for a homogeneous potential over the Gaussian integers, are reported
+in \cite{deBondt2026}; they are not re-verified here.
 \end{corollary}
+
+\section{A homogeneous witness in dimension 15 (EXP-138)}\label{sec:fifteen}
+
+De Bondt \cite{deBondt2026} starts from the volume-normalized form
+$F = (x_1 - 3x_1^2x_2 - x_1^3x_3,\ 3v^2x_1x_3 + (9v^2-6v-2)x_2,\ v^3x_3 + (6v^2+2v)x_2^2)$,
+$v = 1 + 2x_1x_2$, of the counterexample, with $\det JF = 1$ and $F(0,1,-8) = F(-1,1,4)$, and
+reduces the degrees of its components with new variables until every component of the
+homogenized map has the form $x_i + H_i$ with $H_i$ homogeneous of degree $7$. We re-implemented
+this construction independently and verified the output exactly: $G = x + H$ on $\C^{15}$,
+$(JH)^{14} = 0$, so $\det JG = 1$, and the distinct integer points
+$(0,1,-8,0,\dots,0,1)$ and $(-1,1,4,-4,-1,48,12,-36,-12,32,8,-40,-12,12,1)$ have the same image.
+With $h = -H$ this is a non-invertible Keller map $x - h$ with $h$ homogeneous, which is what the
+Mathieu corollary needs.
 
 \section{The explicit witness in dimension 48 (EXP-041)}\label{sec:witness}
 
@@ -188,11 +207,12 @@ between those bounds and 48.
 \section{What remains open}
 
 The two-variable Jacobian conjecture; Dixmier and Poisson at ranks 1 and 2 (a proof of
-Dixmier's rank 1 is claimed in \cite{Zheglov2024}); Mathieu for $SU(N)$ with $3 \le N \le 23$
+Dixmier's rank 1 is claimed in \cite{Zheglov2024}); Mathieu for $SU(N)$ with $3 \le N \le 14$
 and for the other non-abelian compact groups; the moments statement in dimension $2$ (a proof is
 claimed in \cite{Wilson2026}); the minimal failing
 dimensions of the vanishing and Image statements (for the symmetric/vanishing pair the
-witness of Section~\ref{sec:witness} pins the failing dimension at $\le 48$, with the known
+witness of Section~\ref{sec:witness} pins the failing dimension at $\le 48$ by an independently
+verified example and \cite{deBondt2026} reports $\le 28$, with the known
 positive results leaving the minimum open above $5$); and explicit witnesses for the remaining
 non-constructive rows. Not included in this list: the Markus--Yamabe conjecture (refuted
 independently in 1997, not a corollary of the counterexample) and statements whose implication
@@ -210,7 +230,9 @@ record states its question, method and result. The records used here are EXP-001
 validation, full fiber), EXP-016 and EXP-018 (each implication located in its primary source and
 its direction confirmed), EXP-041 (the dimension-48 witness, with its input data, script and
 outputs) and EXP-136 (the dimension index of each implication; the homogeneous-type test of $F$;
-exact checks of the explicit counterexamples of \cite{Long2026, LongSU2} for the first powers).\par}
+exact checks of the explicit counterexamples of \cite{Long2026, LongSU2} for the first powers), and
+EXP-138 (the independent re-implementation and exact verification of the dimension-15 homogeneous
+witness).\par}
 
 \begin{thebibliography}{99}\raggedright
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
@@ -247,6 +269,8 @@ arXiv:math/0409534; \emph{Trans. Amer. Math. Soc.} 359 (2007).
 \bibitem{Zhao2007} W. Zhao, A vanishing conjecture on differential operators with constant
 coefficients, arXiv:0704.1691.
 \bibitem{vdE2010} A. van den Essen, The amazing Image conjecture, arXiv:1006.5801.
+\bibitem{deBondt2026} M. de Bondt, Alp\"oge's counterexample to the JC, economic stabilization,
+and Zhao's vanishing conjecture, arXiv:2610.24889, 2026.
 \bibitem{dBvdE2005} M. de Bondt, A. van den Essen, A reduction of the Jacobian conjecture to
 the symmetric case, \emph{Proc. Amer. Math. Soc.} 133 (2005), 2201--2205.
 \bibitem{Thompson2026} W. Thompson, Explicit cubic-homogeneous Jacobian counterexample
