@@ -83,3 +83,21 @@ unverified with what was attempted.
 A PASS or a located FAIL updates the planar manuscript (`manuscripts/jacobian-conjecture/planar`) with a
 section on the external exclusion claim and its independent verification status, and opens a strategic
 review of the planar focus (JCB-098).
+
+## Addendum A (declared 2026-11-01, after the main run and before any addendum computation)
+
+The main run left the Case 1 link UNVERIFIED: our 13 compatibility equations equal Helali's up to span and
+the split `s^2 = gamma` is exhaustive, but our own Groebner run over the degree-35 field did not finish.
+If Case 1 is empty, the branch ideal `I` of the equations after `s = c` (and likewise `s = -c`) is the unit
+ideal over `K = Q[a7]/(H)`.
+
+- PA1: for at least five primes `p` at which `H` has a simple root `r` modulo `p` and every denominator of
+  our equations is a unit, the ideal obtained by specializing `a7 = r` over `F_p` is the unit ideal (Singular
+  `std` over `F_p`), for both branches.
+- What PASS shows: strong independent evidence that Case 1 has no solution over the algebraic closure of
+  `Q`, since a solution would reduce to a solution modulo every degree-one prime of good reduction; it is
+  not a proof (bad reduction is not excluded by a finite check). What FAIL shows: a non-unit reduction at a
+  good prime is a lead to a possible solution and is reported, not assumed.
+- Control: the same test applied to a deliberately truncated system (one equation dropped) must be allowed
+  to return a non-unit ideal; a test that returns unit for everything would be uninformative.
+- Budget: 1 CPU-hour; kill each `std` after 10 minutes.
