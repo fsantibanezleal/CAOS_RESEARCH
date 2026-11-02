@@ -1,0 +1,6 @@
+21:24:05 P1: det J(F) = 1; F(P1) = [0, 1, 0]; F(P2) = [0, 1, 0]; pass=True
+21:24:05 P2: dimension 15, degree 7, H homogeneous of degree [7]: True
+21:24:06 P2: points [0, 1, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] and [-1, 1, 4, -4, -1, 48, 12, -36, -12, 32, 8, -40, -12, 12, 1]; equal images: True; distinct: True
+21:24:12 P2: (JH)^14 = 0 exactly
+21:24:12 P2: JH nilpotent (traces of powers vanish): True in 6s
+21:24:12 P4: perturbed F (+x2^2 in F2): det constant=False, collision=True; control fires=True
