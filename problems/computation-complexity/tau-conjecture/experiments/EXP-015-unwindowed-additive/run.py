@@ -10,7 +10,6 @@ Usage: python run.py <assets dir> [--nproc N] [--k 7] [--parts a b ...]
 import argparse
 import hashlib
 import json
-import pickle
 import re
 import sys
 import time
@@ -40,10 +39,8 @@ _G = {}
 
 
 def _init(assets, k):
-    from engine import Engine, load_tables
-    with open(Path(assets) / "polys.pkl", "rb") as fh:
-        polys = pickle.load(fh)["polys"]
-    _G["engine"] = Engine(polys, load_tables(Path(assets)), k)
+    from engine import Engine, PolyStore, load_tables
+    _G["engine"] = Engine(PolyStore(Path(assets)), load_tables(Path(assets)), k)
     _G["assets"] = Path(assets)
     _G["manifest"] = manifest()
 

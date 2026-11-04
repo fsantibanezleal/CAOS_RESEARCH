@@ -148,3 +148,30 @@ class Engine:
 
 def load_tables(assets):
     return tuple(np.load(assets / f"res_{n}.npy", mmap_mode="r") for n in ("val2", "val3", "deg", "tz"))
+
+
+class PolyStore:
+    """Read-only polynomial list backed by a memory-mapped blob (written by residues.py --pack).
+
+    Each polynomial is stored as pickle bytes of its coefficient tuple; workers share
+    the pages through the OS cache instead of each holding 2.16M Python tuples."""
+
+    def __init__(self, assets):
+        import mmap
+        import pickle
+        self._loads = pickle.loads
+        self._off = np.load(assets / "polys_off.npy")
+        self._fh = open(assets / "polys_blob.bin", "rb")
+        self._mm = mmap.mmap(self._fh.fileno(), 0, access=mmap.ACCESS_READ)
+        self._cache = {}
+
+    def __len__(self):
+        return len(self._off) - 1
+
+    def __getitem__(self, i):
+        got = self._cache.get(i)
+        if got is None:
+            got = self._loads(self._mm[int(self._off[i]):int(self._off[i + 1])])
+            if len(self._cache) < 200_000:
+                self._cache[i] = got
+        return got

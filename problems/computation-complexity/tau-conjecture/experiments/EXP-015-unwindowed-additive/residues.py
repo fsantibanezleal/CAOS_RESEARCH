@@ -7,7 +7,8 @@ reduces after every step, all products below 2^64). A random subset is re-checke
 against tclib.padic.Layer.values, which evaluates with exact Python integers.
 
 Usage: python residues.py <assets dir> [check count]
-Writes <assets>/res_val2.npy, res_val3.npy, res_deg.npy, res_tz.npy.
+Writes <assets>/res_val2.npy, res_val3.npy, res_deg.npy, res_tz.npy, and the packed
+polynomial store polys_blob.bin + polys_off.npy (round-trip checked on every polynomial).
 """
 import pickle
 import sys
@@ -72,6 +73,16 @@ for i in rng.choice(N, size=min(CHECK, N), replace=False):
         bad += 1
 print(f"exact re-check of {min(CHECK, N)} random polys: {bad} mismatches", flush=True)
 if bad:
+    sys.exit(1)
+blob, off = bytearray(), [0]
+for p in polys:
+    blob += pickle.dumps(tuple(int(c) for c in p), protocol=5)
+    off.append(len(blob))
+(ASSETS / "polys_blob.bin").write_bytes(bytes(blob))
+np.save(ASSETS / "polys_off.npy", np.array(off, dtype=np.int64))
+roundtrip = all(pickle.loads(bytes(blob[off[i]:off[i + 1]])) == tuple(polys[i]) for i in range(N))
+print(f"packed {N:,} polys into {len(blob):,} bytes; full round-trip equal: {roundtrip}", flush=True)
+if not roundtrip:
     sys.exit(1)
 np.save(ASSETS / "res_val2.npy", val2)
 np.save(ASSETS / "res_val3.npy", val3)

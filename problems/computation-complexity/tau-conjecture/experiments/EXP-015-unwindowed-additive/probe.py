@@ -20,7 +20,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent.parent / "code"))
 sys.path.insert(0, str(HERE))
 from tclib.enum import integer_roots, padd, pmul, psub  # noqa: E402
-from engine import KIND, LEFT, RIGHT, WIDTH, Engine, load_tables  # noqa: E402
+from engine import KIND, LEFT, RIGHT, WIDTH, Engine, PolyStore, load_tables  # noqa: E402
 
 ASSETS = Path(sys.argv[1])
 PART = int(sys.argv[2])
@@ -34,7 +34,7 @@ with open(ASSETS / "polys.pkl", "rb") as fh:
 arr = np.fromfile(ASSETS / "frontier7" / f"uniq{PART:03d}.bin", dtype=np.int32).reshape(-1, WIDTH)
 rows = arr[np.random.default_rng(SEED).choice(arr.shape[0], size=NSTATES, replace=False)]
 
-eng = Engine(polys, load_tables(ASSETS), K)
+eng = Engine(PolyStore(ASSETS), load_tables(ASSETS), K)  # production store; brute force uses polys.pkl
 t0 = time.time()
 hits = 0
 for s in range(0, NSTATES, 48):
