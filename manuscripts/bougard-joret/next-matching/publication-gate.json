@@ -1,0 +1,22 @@
+{
+  "release_ready": true,
+  "record_id": 23965193,
+  "version": "0.04",
+  "version_doi": "10.5281/zenodo.23965193",
+  "concept_doi": "10.5281/zenodo.22343021",
+  "scope": "New theorem: f(2d+3,2,d+2) = d^2+4d+2 for every d >= 7 (EXP-004, independent audit PASS), closing the one-edge bracket; the next-matching theorem is unchanged.",
+  "bytes": 387285,
+  "md5": "36b74f1f0a0597676e0153bdff6bbb1a",
+  "sha256": "dff08d59f3c010df2516eb26e963927a2c44525f2aa237415f1aade31b1be9cf",
+  "tex_sha256": "d2140d99363e7013b80017dc09df624ea34c41e0e65e441811213fd2f25c3366",
+  "metadata_sha256": "8cd5795f3a300735258f1aa74509af4857aae8f5f0a00ffe540c08aaa0e18e6a",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 9,
+  "rendered_pages_reviewed": 9,
+  "qa_date": "2026-11-04",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246"
+}

@@ -6,6 +6,8 @@
 | 2026-09-04 | opened | exploring | Deterministic exact checker and full controls run |
 | 2026-09-04 | exploring | consolidating | EXP-001 uniform theorem and equality characterization survived adversarial audit; manuscript v0.01 prepared |
 
+2026-11-04: EXP-004 CONFIRMED; $f(2d+3,2,d+2)=d^2+4d+2$ for $d\ge7$; next-matching v0.04 published (10.5281/zenodo.23965193). State unchanged (consolidating).
+
 The broader extremal problem is open. The September 4 process closure below describes that completed round; current work is recorded in the September 5 section.
 
 ## 2026-09-04 publication
