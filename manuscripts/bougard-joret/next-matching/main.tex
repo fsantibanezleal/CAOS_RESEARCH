@@ -17,9 +17,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.03}
-\newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22835084}
+\newcommand{\docversion}{v0.04}
+\newcommand{\docdate}{4 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.23965193}
 \newcommand{\conceptdoi}{10.5281/zenodo.22343021}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -40,7 +40,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \fancyhead[R]{\small Next matching level\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
-\title{The next matching level for triangle-free\\graphs with bounded degree}
+\title{The next matching level for triangle-free\\graphs with bounded degree and an exact\\Bougard--Joret value}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
@@ -53,7 +53,7 @@ Let $T(d,m)$ be the maximum number of edges in a triangle-free graph with maximu
 $T(d,d+1)=d^2+d+2$ for every integer $d\ge7$.
 A shortest-odd-cycle deficit bound, followed by a five-type equality obstruction, first gives the same maximum on $2d+3$ vertices. The Tutte--Berge formula extends this bound to arbitrary order.
 The attaining construction is due to Banak, Ekim and Ta\c{s}k\i n; the contribution is the uniform upper bound. This settles the next-matching slice of the Ahanjideh--Ekim--Y\i ld\i z conjecture and, in particular, resolves the published bounds $184\le T(13,14)\le185$ in favor of 184.
-As a consequence, we obtain a one-edge bracket for the Bougard--Joret extremal function at $(n,\alpha,k)=(2d+3,2,d+2)$, giving an unbounded strict-interior discrepancy from the degree-sum prediction. The full AEY conjecture and the exact endpoint of that bracket remain unresolved. Exact finite certificates and independent implementation checks support, but do not replace, the proof.
+As a consequence, the Bougard--Joret extremal function satisfies $f(2d+3,2,d+2)=d^2+4d+2$ for every $d\ge7$, an unbounded strict-interior discrepancy from the degree-sum prediction. The lower value is excluded by a structural theorem: every triangle-free graph on $2d+3$ vertices with maximum degree at most $d$ and $d^2+d+2$ edges has two vertices with the same $d$ neighbours, so its complement is not $(d+2)$-connected. The full AEY conjecture remains open. Exact finite certificates and independent implementation checks support, but do not replace, the proof.
 \end{abstract}
 
 \section{Problem and relation to prior work}
@@ -222,7 +222,7 @@ One may instead discard isolated vertices and select an edge-extremizer with the
 
 \section{A Bougard--Joret consequence}\label{sec:bj}
 
-Let $f(n,a,k)$ be the minimum number of edges in a $k$-connected graph of order $n$ and independence number exactly $a$, in the notation of Bougard and Joret~\cite{BJ}. Das and Gupta disprove the original conjectured formula on the boundary $n=a+k$~\cite{DG}. The following consequence concerns strict-interior parameters and retains an explicit one-edge uncertainty.
+Let $f(n,a,k)$ be the minimum number of edges in a $k$-connected graph of order $n$ and independence number exactly $a$, in the notation of Bougard and Joret~\cite{BJ}. Das and Gupta disprove the original conjectured formula on the boundary $n=a+k$~\cite{DG}. The following consequence concerns strict-interior parameters. Corollary~\ref{cor:bj} first brackets the value within one edge; Theorem~\ref{thm:bjexact} then excludes the lower endpoint.
 
 \begin{corollary}[One-edge bracket, D]\label{cor:bj}
 For every integer $d\ge7$,
@@ -252,7 +252,64 @@ These parameters satisfy $2d+3>2+(d+2)$ and $2d+3<2(d+2)$, placing them strictly
 (d^2+4d+1)-\left\lceil\frac{(2d+3)(d+2)}2\right\rceil
 =\left\lfloor\frac d2\right\rfloor-2.
 \]
-This is positive for $d\ge7$ and unbounded. For example, $97\le f(19,2,10)\le98$, whereas the degree-sum prediction is 95. We do not determine which endpoint in~\eqref{eq:bracket} is attained.
+This is positive for $d\ge7$ and unbounded. The next subsection shows that the upper endpoint in~\eqref{eq:bracket} is the value, so the excess is $\lfloor d/2\rfloor-1$; for example $f(19,2,10)=98$, whereas the degree-sum prediction is 95.
+
+
+\subsection{The exact value}\label{sec:exact}
+
+\begin{theorem}[Exact value, D]\label{thm:bjexact}
+For every integer $d\ge7$,
+\[
+f(2d+3,2,d+2)=d^2+4d+2 .
+\]
+\end{theorem}
+
+By Corollary~\ref{cor:bj} and complementation, it suffices to prove the following structural statement. A complement $\overline F$ on $2d+3$ vertices fails to be $(d+2)$-connected exactly when $F$ contains a complete bipartite subgraph $K_{U,W}$, with $U,W$ nonempty and every $U$--$W$ pair an edge, on at least $d+2$ vertices: deleting the other at most $d+1$ vertices leaves $U$ and $W$ with no edge of $\overline F$ between them.
+
+\begin{theorem}[Shared neighbourhood, D]\label{thm:k2d}
+Let $d\ge7$ and let $F$ be triangle-free on $n=2d+3$ vertices with $\Delta(F)\le d$ and $\e(F)=d^2+d+2$. Then two vertices of $F$ have the same $d$ neighbours; in particular $F\supseteq K_{2,d}$.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:bjexact} from Theorem~\ref{thm:k2d}]
+A graph $G$ of order $2d+3$ with independence number two, connectivity at least $d+2$ and $d^2+4d+1$ edges would have a triangle-free complement $F$ with $\Delta(F)\le d$ and $\e(F)=d^2+d+2$. Theorem~\ref{thm:k2d} gives a $K_{2,d}$ in $F$, on $d+2$ vertices, hence a vertex cut of $G$ of size $d+1$. Fewer edges are excluded by Corollary~\ref{cor:bj}, whose construction $G_d$ attains $d^2+4d+2$.
+\end{proof}
+
+\paragraph{Structure.} Let $F$ be as in Theorem~\ref{thm:k2d}. Its deficit is $D(F)=nd-2\e(F)=d-4$. It is not bipartite, since a bipartite $F$ has at most $d(d+1)$ edges. A shortest odd cycle has length five: length at least seven would give $D(F)\ge7d-2n=3d-6>d-4$ by~\eqref{eq:deficit}. Write it $c_0\cdots c_4$, indices modulo five. For an outside vertex $x$ let $\sigma(x)=2-|N(x)\cap C|\ge0$, and put $a=\sum_{x\notin C}\sigma(x)$ and $b=\sum_{x\notin C}(d-\deg x)$. Since the cycle is chordless, $\sum_{v\in C}\deg v=10+2(n-5)-a$, and therefore
+\begin{equation}\label{eq:ab}
+\sum_{v\in C}(d-\deg v)=d-6+a,\qquad D(F)=d-6+a+b,\qquad a+b=2 .
+\end{equation}
+As in the proof of Theorem~\ref{thm:order}, outside vertices with two cycle neighbours fall into types: $V_i$ consists of $c_i$ and the outside vertices adjacent to $c_{i-1},c_{i+1}$; put $n_i=|V_i|$. Each $V_i$ is independent and there is no edge between $V_i$ and $V_{i\pm2}$. The remaining outside vertices form the set $X$ of \emph{defective} vertices, those with at most one cycle neighbour; each contributes at least one to $a$, so $r:=|X|\le2$ and $\sum_in_i=2d+3-r$. Put $W_i=V_{i-1}\cup V_{i+1}$, $b_i=|W_i|$ and $\varepsilon_i=|N(c_i)\cap X|$. The vertex $c_i$ is adjacent to all of $W_i$ and to no other typed vertex, so
+\begin{equation}\label{eq:ci}
+\deg c_i=b_i+\varepsilon_i\le d .
+\end{equation}
+A defective vertex adjacent to $c_j$ has no neighbour in $V_{j\pm1}$, by triangle-freeness.
+
+\begin{lemma}[Helpers, D]\label{lem:helper}
+Let $v\in V_i$ be an outside vertex of degree $d$. If every neighbour of $v$ in $X$ is adjacent to $c_i$, then $N(v)\subseteq N(c_i)$, and $\{c_i,v\}$ together with $N(v)$ span a $K_{2,d}$.
+\end{lemma}
+\begin{proof}
+The typed neighbours of $v$ lie in consecutive types, so $N(v)\subseteq W_i\cup X$; both parts lie in $N(c_i)$, the second by hypothesis, and $c_i\notin N(v)$ because $V_i$ is independent.
+\end{proof}
+
+Call $x\in X$ a \emph{helper} of an outside $v\in V_i$ if $x\sim v$ and $x\not\sim c_i$. Assume, for contradiction, that no two vertices of $F$ share $d$ neighbours. Then every outside typed vertex of degree $d$ has a helper. There are $2d-2-r$ outside typed vertices.
+
+\paragraph{At most one defective vertex.} If $r=0$, then $a=0$ and $b=2$, so at most two of the $2d-2\ge12$ outside typed vertices lack degree $d$, and none has a helper. If $X=\{x\}$ and $x$ has no cycle neighbour, then $b=0$ and $x$ must be adjacent to all $2d-3>d$ outside typed vertices. If $x$ has one cycle neighbour, then $a=b=1$ and $x$ is adjacent to at least $2d-4$ outside typed vertices besides its cycle neighbour, so $\deg x\ge2d-3>d$.
+
+\paragraph{Two defective vertices.} Now $a=2$, $b=0$: every outside vertex has degree exactly $d$, $X=\{x_1,x_2\}$ with $x_1\sim c_p$ and $x_2\sim c_q$ as their only cycle neighbours, $\sum_in_i=2d+1$ and $\sum_i\varepsilon_i=2$. The vertex $x_1$ helps only vertices of $V_{p+2}\cup V_{p+3}$, and $x_2$ only vertices of $V_{q+2}\cup V_{q+3}$; a type with no possible helper is a singleton. For an outside $v\in V_i$ let $\xi(v)=|N(v)\cap X|$; then
+\begin{equation}\label{eq:xi}
+|N(v)\cap W_i|=d-\xi(v).
+\end{equation}
+\emph{Rule (T):} if some $x\in X$ is adjacent to $u\in V_i$ and $w\in V_{i+1}$, then $u\not\sim w$. Up to rotation and reflection, $q-p\in\{0,1,2\}$.
+
+\emph{Case $q=p$.} Only $V_{p+2},V_{p+3}$ can be helped, so $n_{p-1}=n_p=n_{p+1}=1$, and~\eqref{eq:ci} at $c_{p\pm1}$ gives $n_{p+2}=n_{p+3}=d-1$. Let $A^\circ,B^\circ$ be the outside vertices of $V_{p+2},V_{p+3}$ ($d-2$ each). By~\eqref{eq:xi} an outside vertex of $V_{p+2}$ misses exactly $\xi\le2$ vertices of $V_{p+3}$, and symmetrically. If $x_k$ had neighbours on both sides, Rule (T) would bound its typed outside neighbours by four, while $\deg x_k=d$ forces at least $d-2\ge5$. So $x_1$ covers $A^\circ$ and $x_2$ covers $B^\circ$, say, and $d=\deg x_1\le1+(d-2)+[x_1\sim x_2]$ forces $x_1\sim x_2$, a triangle with $c_p$.
+
+\emph{Case $q=p+1$.} Here $n_p=n_{p+1}=1$ and $\varepsilon_p=\varepsilon_{p+1}=1$, so $n_{p+2}+n_{p+3}+n_{p+4}=2d-1$. Inequality~\eqref{eq:ci} at $c_p,c_{p+1},c_{p+2},c_{p+3}$ gives $n_{p+4}\le d-2$, $n_{p+2}\le d-2$, $n_{p+3}\le d-1$ and $n_{p+2}+n_{p+4}\le d$; with the sum this forces $n_{p+3}=d-1$, $n_{p+2}+n_{p+4}=d$, and both $n_{p+2},n_{p+4}\ge2$. An outside vertex of $V_{p+2}$ has $x_1$ as its only possible neighbour in $X$, so $\xi=1$ and by~\eqref{eq:xi} it misses exactly one vertex of $V_{p+3}$. As all outside vertices of $V_{p+2}$ are adjacent to $x_1$, Rule (T) lets $x_1$ have at most one neighbour among the $d-2\ge5$ outside vertices of $V_{p+3}$; likewise $x_2$. Those vertices cannot all be helped.
+
+\emph{Case $q=p+2$.} Now $n_{p+1}=1$ and $\varepsilon_p=\varepsilon_{p+2}=1$. Write $\alpha,\beta,\gamma,\delta$ for $n_p,n_{p+2},n_{p+3},n_{p+4}$, so $\alpha+\beta+\gamma+\delta=2d$, and~\eqref{eq:ci} gives $\delta\le d-2$, $\alpha+\beta\le d$, $\gamma\le d-2$, $\beta+\delta\le d$, $\gamma+\alpha\le d$; hence $\gamma,\delta\ge2$. Outside vertices of $V_{p+3}$ (respectively $V_{p+4}$) have $x_1$ (respectively $x_2$) as their only neighbour in $X$, so each has $d-1$ neighbours in $V_{p+2}\cup V_{p+4}$ (respectively $V_{p+3}\cup V_p$). If $\beta=1$ this forces $\delta=d-2$ and then $\alpha+\gamma=d+1$, a contradiction. If $\beta\ge2$, Rule (T) at $x_1$ separates the outside vertices of $V_{p+2}$ and $V_{p+3}$, so $\delta=d-2$. If moreover $\alpha=1$, then $\gamma=d-2$ and $\beta=3$, contradicting $\beta+\delta\le d$. If $\alpha\ge2$, Rule (T) at $x_2$ gives $\gamma=d-2$, hence $\alpha=\beta=2$, and the single outside vertex of $V_{p+2}$ has degree at most $|\{c_{p+1},c_{p+3}\}|+|X|=4<d$.
+
+Every case is contradictory, which proves Theorem~\ref{thm:k2d}. \qed
+
+An independent reading re-derived every case, including the reduction of the $25$ ordered pairs $(p,q)$ to the three cases above, and found no gap. A satisfiability search at $d=7$, archived as EXP-004~\cite{Record4}, corroborates the statement; the universal claim rests on the proof.
 
 \subsection*{The rejected complement shortcut}
 Although $Q_d$ attains the triangle-free maximum, its complement fails the connectivity required above. Indeed,
@@ -265,7 +322,7 @@ In fact equality holds. A cut of size at most $d$ would leave a complete biparti
 \[
 \kappa(\overline{Q_d})=d+1.
 \]
-The shortcut fails because extremality under a degree bound does not supply the needed complement connectivity.
+The shortcut fails because extremality under a degree bound does not supply the needed complement connectivity. Theorem~\ref{thm:k2d} shows that the failure is forced: every fixed-order maximizer has two vertices with a common $d$-neighbourhood, as $A_0,A_1$ do in $Q_d$.
 
 \section{Exact checks, scope and remaining questions}
 
@@ -276,10 +333,10 @@ A separate implementation reconstructs all saved graphs in NetworkX 3.4.1 withou
 
 A separate reading of the full proof checked the odd-degree cases, the complete singleton case split, the matching-budget reduction and both connectivity arguments. The proof has not been formalized in a proof assistant. Finite checks cannot rule out a gap in an all-parameter argument, and bounded literature searching cannot guarantee priority.
 
-Theorem~\ref{thm:main} settles the next-matching slice for every $d\ge7$. It does not settle the remaining intermediate matching levels or classify all extremizers. Corollary~\ref{cor:bj} leaves one edge of uncertainty. Determining whether a fixed-order maximizer can meet the required complement connectivity, or proving that none can, is the immediate remaining question. The general revised Bougard--Joret regimes remain open. The earlier first interior shell result~\cite{Shell} is a separate theorem.
+Theorem~\ref{thm:main} settles the next-matching slice for every $d\ge7$, and Theorem~\ref{thm:bjexact} the Bougard--Joret value at $(2d+3,2,d+2)$. Neither settles the remaining intermediate matching levels or classifies all extremizers; Theorem~\ref{thm:k2d} gives only the shared-neighbourhood property. The general revised Bougard--Joret regimes, including the second regime $n>k\alpha$, remain open. The earlier first interior shell result~\cite{Shell} is a separate theorem.
 
 \paragraph{Data availability.}
-The proof, the review of the cited sources, the certificate generators, the independent re-implementation and the full edge lists are publicly archived in the repository~\cite{Record}. The identifier EXP-003 denotes the archived computation in the folder \path{problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching/}.
+The proof, the review of the cited sources, the certificate generators, the independent re-implementation and the full edge lists are publicly archived in the repository~\cite{Record}. The identifier EXP-003 denotes the archived computation in the folder \path{problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching/}. The sibling folder \path{EXP-004-bracket-endpoint/} holds EXP-004, the proof and satisfiability record for Theorem~\ref{thm:k2d}.
 
 \paragraph{Declaration of generative AI use.} Generative AI tools were used for literature triage, derivation exploration, code drafting and internal review of the proofs and the text. The author reviewed and verified all content and takes full responsibility for the work.
 
@@ -322,5 +379,9 @@ CAOS Research preprint, 2026.
 \emph{CAOS Research, Bougard--Joret EXP-003: triangle-free next matching level}.
 Proof, source review, exact certificates and independent re-implementation, 2026.
 \href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching}{Public experiment record}.
+\bibitem{Record4} F. Santib\'a\~nez-Leal.
+\emph{CAOS Research, Bougard--Joret EXP-004: the endpoint of the bracket}.
+Proof and satisfiability record, 2026.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/combinatorics/bougard-joret/experiments/EXP-004-bracket-endpoint}{Public experiment record}.
 \end{thebibliography}
 \end{document}
