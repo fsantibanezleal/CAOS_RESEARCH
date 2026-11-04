@@ -1,0 +1,41 @@
+[
+  {
+    "d": 7,
+    "config": "",
+    "mode": "free",
+    "order": 17,
+    "edges": 58,
+    "triangles": 0,
+    "max_degree": 7,
+    "k2d_pairs": 18,
+    "complement_connectivity": 6,
+    "valid_extremal": true,
+    "theorem_holds": true
+  },
+  {
+    "d": 7,
+    "config": "0,2",
+    "mode": "free",
+    "order": 17,
+    "edges": 58,
+    "triangles": 0,
+    "max_degree": 7,
+    "k2d_pairs": 2,
+    "complement_connectivity": 8,
+    "valid_extremal": true,
+    "theorem_holds": true
+  },
+  {
+    "d": 8,
+    "config": "0,2",
+    "mode": "free",
+    "order": 19,
+    "edges": 74,
+    "triangles": 0,
+    "max_degree": 8,
+    "k2d_pairs": 2,
+    "complement_connectivity": 9,
+    "valid_extremal": true,
+    "theorem_holds": true
+  }
+]

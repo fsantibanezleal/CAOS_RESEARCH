@@ -1,7 +1,9 @@
 # Proof: the upper endpoint of the Bougard bracket
 
 Date: 2026-11-04. Status: [D], complete derivation submitted for independent audit before the
-finite corroboration is run. The experiment verdict owns the validation status.
+finite corroboration is run. The experiment verdict owns the validation status. Post-audit
+(2026-11-04) wording edits only: the helper lemma renamed Lemma H, the equality step of 4.2 stated
+explicitly, and the use of $d\ge5$ in 4.3 listed in Section 5.
 
 ## 1. Statement
 
@@ -64,7 +66,7 @@ $$
 A vertex $x\in X$ adjacent to $c_j$ has no neighbour in $V_{j\pm1}$ (all of which are adjacent to
 $c_j$).
 
-**Lemma 3 (helpers).** Let $v\in V_i$ be an outside vertex with $\deg v=d$. If no vertex of
+**Lemma H (helpers).** Let $v\in V_i$ be an outside vertex with $\deg v=d$. If no vertex of
 $N(v)\cap X$ lies outside $N(c_i)$, then $F\supseteq K_{2,d}$ with sides $\{c_i,v\}$ and $N(v)$.
 
 *Proof.* $N(v)\subseteq W_i\cup X$ because $v$'s typed neighbours lie in consecutive types. By
@@ -132,7 +134,8 @@ Here $x_1$ helps only $V_{p+2}\cup V_{p+3}$ and $x_2$ only $V_{p+3}\cup V_{p+4}$
 adjacent to $V_{p+4}$ and $x_2$ is not adjacent to $V_{p+2}$. So $n_p=n_{p+1}=1$,
 $\varepsilon_p=\varepsilon_{p+1}=1$, and $n_{p+2}+n_{p+3}+n_{p+4}=2d-1$. By (2):
 $n_{p+4}+1\le d-1$ (at $c_p$), $1+n_{p+2}\le d-1$ (at $c_{p+1}$), $1+n_{p+3}\le d$ (at $c_{p+2}$),
-$n_{p+2}+n_{p+4}\le d$ (at $c_{p+3}$). The last two sum to at least $2d-1$, so
+$n_{p+2}+n_{p+4}\le d$ (at $c_{p+3}$). Since $n_{p+3}+(n_{p+2}+n_{p+4})=2d-1$ while the last two give $n_{p+3}\le d-1$ and
+$n_{p+2}+n_{p+4}\le d$, both hold with equality:
 $n_{p+3}=d-1$, $n_{p+2}+n_{p+4}=d$, and $n_{p+2},n_{p+4}\le d-2$; hence both are at least two.
 
 An outside $v\in V_{p+2}$ can only be adjacent to $x_1$ in $X$, and needs it, so $\xi(v)=1$; with
@@ -184,4 +187,5 @@ All cases are excluded, which proves Theorem 2 and hence Theorem 1. $\square$
 - Not claimed: the full Bougard-Joret problem, the second regime $n>k\alpha$ (BJB-016), or other
   matching levels of the AEY conjecture (BJB-015).
 - The degree hypothesis $d\ge7$ is used in Section 3 ($2d-2\ge12$, $2d-3>d$), in 4.1 ($d-2\ge5$)
-  and in 4.2 ($d-2\ge5$). Smaller $d$ are not treated.
+  in 4.2 ($d-2\ge5$) and in 4.3 (the final degree bound $4<d$ needs $d\ge5$). Smaller $d$ are
+  not treated.
