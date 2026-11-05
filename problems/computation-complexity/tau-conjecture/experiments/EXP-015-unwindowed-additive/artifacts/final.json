@@ -1,0 +1,17 @@
+{
+  "k": 7,
+  "partitions": 256,
+  "errors": [],
+  "totals": {
+    "states": 1048460912,
+    "candidates": 4193843648000,
+    "deg_drop": 4026692708694,
+    "pass2": 3840174256,
+    "pass3": 2937472943,
+    "zero_suspect": 498669099,
+    "zero_exact": 92943826,
+    "exact": 2345860018,
+    "hits": 0
+  },
+  "hits": []
+}

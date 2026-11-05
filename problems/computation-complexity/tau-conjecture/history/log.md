@@ -317,3 +317,18 @@ External status: open; the newest tau-conjecture item on arXiv is arXiv:1905.000
 Plan change (assessment): rank 2; first bounded action TCB-039 (close the |c| >= 396 residual, 0.002% of the space, by a dedicated confinement argument or an exact sweep; a closed residual settles the seven-root threshold at 10 and gives z_max(9) = 6).
 
 Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## 2026-11-05 - EXP-015 confirmed: the seven-root threshold is exactly 10
+
+- TCB-039 closed without a window. A p-adic block criterion (code/tclib/padic.py, Lemma 8.6 of the census): for
+  a polynomial with k distinct integer roots, the p-adic valuations of its values on a block of p^a consecutive
+  integers, corrected for a proven power of x, sum to at least a number that depends only on the zero mask of
+  the block. Applied with p = 2 (16 points, mod 2^64) and p = 3 (9 points, mod 3^20) after a degree bound.
+- Hypothesis frozen before production (d25ae268). Production over all 256 partitions, 21.4 h on 20 processes:
+  4,193,843,648,000 candidates; 2,345,860,018 built exactly; 0 seven-rooters. Audit 6/6 PASS (manifest hashes
+  and state counts, counters, hits). Known-answer gates at k = 4, 5, 6 equal exhaustive exact counts.
+- With EXP-011 and EXP-012: z_max(9) = 6; the seven-root threshold is exactly 10; ladder 1,2,3,3,4,5,5,6,6.
+- Census v0.06 published, version DOI 10.5281/zenodo.23980033 (concept 10.5281/zenodo.21753438), 18 pages, title "... of Length at
+  Most Nine".
+- The depth-7 frontier lived only on the failing data drive M:; it was copied to the training root and every
+  file hashed against the EXP-011 manifest before its scan.

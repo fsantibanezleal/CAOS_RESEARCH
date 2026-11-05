@@ -11,6 +11,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
@@ -29,9 +30,9 @@
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.05}
-\newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22836450}
+\newcommand{\docversion}{v0.06}
+\newcommand{\docdate}{5 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.23980033}
 \newcommand{\conceptdoi}{10.5281/zenodo.21753438}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -48,7 +49,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 
 \title{The Bottom of the Shub--Smale Tau Conjecture:\\
 an Exact Census of Integer Roots for Constant-Free\\
-Straight-Line Programs of Length at Most Eight}
+Straight-Line Programs of Length at Most Nine}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -76,19 +77,19 @@ We report the first exact census of the conjecture's growth function at the bott
 its ladder: writing $\zmax(\tau)$ for the maximum of $z(f)$ over all nonzero $f$ with
 $\tau(f) \le \tau$, we prove by exhaustive, exactly verified computation that
 \[
-\zmax(1),\dots,\zmax(8) \;=\; 1,\, 2,\, 3,\, 3,\, 4,\, 5,\, 5,\, 6 .
+\zmax(1),\dots,\zmax(9) \;=\; 1,\, 2,\, 3,\, 3,\, 4,\, 5,\, 5,\, 6,\, 6 .
 \]
 In particular the minimum cost of $4$ distinct integer roots is $5$ gates, of $5$
 roots is $6$ gates, and of $6$ roots is exactly $8$ gates, by an
 explicit verified witness: $q(q-2)(q-6)$ for $q = x^2 - x$, computable in $8$ gates by
-chained subtraction sharing; the growth function has plateaus at $\tau = 4$ and
-$\tau = 7$, so an extra gate does not always buy an extra root, and
-$z_{\max}(8) = 6$ exactly: no $8$-gate program of any shape has $7$
-distinct integer roots, so the seven-root threshold lies in $\{9, 10\}$. At the
-ninth gate, no program whose final gate is a multiplication reaches $7$ roots, and
-no program whose final gate is an addition or a subtraction reaches $7$ roots inside
-the window $[-32,32]$; a nine-gate seven-rooter would need a root outside that window
-and a trailing coefficient of absolute value at least $396$.
+chained subtraction sharing; the growth function has plateaus at $\tau = 4$,
+$\tau = 7$ and $\tau = 9$, so an extra gate does not always buy an extra root. No
+program with at most nine gates computes a polynomial with $7$ distinct integer
+roots, and ten gates suffice, so the seven-root threshold is exactly $10$. At the
+ninth gate a multiplicative final gate is decided through unions of known root sets,
+and an additive one by an exhaustive scan of all $4.19\times10^{12}$ candidates with
+a $2$-adic and $3$-adic divisibility filter that is valid for roots anywhere in
+$\Z$, so no evaluation window is involved.
 The censuses are decision-complete: depth $6$ required the exact construction of
 all $25{,}844{,}905$ reachable computation states; depth $7$ a complete scan of
 $2{,}013{,}706$ new polynomials, using a ``last-gate'' lemma that decides one depth
@@ -186,9 +187,9 @@ hardware \cite{Markstrom2014}. No published computation addresses the
 \[
 \zmax(\tau) \;=\; \max\{\, z(f) \;:\; f \in \Z[x] \setminus \{0\},\ \tau(f) \le \tau \,\}
 \]
-and determine it exactly for $\tau \le 8$, together with the full record galleries
+and determine it exactly for $\tau \le 9$, together with the full record galleries
 through $\tau = 7$, explicit optimal witnesses, and the exact cost thresholds for
-$3, 4, 5$ and $6$ distinct integer roots (and, within one gate, for $7$). We also
+$3, 4, 5, 6$ and $7$ distinct integer roots. We also
 prove two elementary theorems that
 explain the observed record mechanisms and close entire construction classes
 (Section~\ref{sec:stall}), and we measure the quadratic tower family exhaustively
@@ -196,14 +197,15 @@ explain the observed record mechanisms and close entire construction classes
 
 Our contributions:
 \begin{enumerate}
-\item \textbf{The census} (Section~\ref{sec:census}): $\zmax(1..8) = 1,2,3,3,4,5,5,6$,
-decision-complete, with per-depth state and polynomial counts, record galleries and
-replayed witness programs. Plateaus occur at $\tau = 4$ and $\tau = 7$.
+\item \textbf{The census} (Section~\ref{sec:census}): for $\tau = 1,\dots,9$, the
+values of $\zmax(\tau)$ are $1$, $2$, $3$, $3$, $4$, $5$, $5$, $6$, $6$,
+decision-complete, with per-depth state and polynomial counts, record galleries
+and replayed witness programs; plateaus occur at $\tau = 4$, $7$ and $9$.
 \item \textbf{Exact thresholds}: the minimum $\tau$ admitting $3$ distinct integer
 roots is $3$ ($x^3 - x$); for $4$ roots it is $5$; for $5$ roots it is $6$; for $6$
-roots it is exactly $8$ (Section~\ref{sec:window}); for $7$ roots it is $9$ or $10$
-(Section~\ref{sec:depth8}: the complete depth-$8$ census excludes $8$; a $10$-gate
-witness exists).
+roots it is exactly $8$ (Section~\ref{sec:window}); for $7$ roots it is exactly $10$
+(Section~\ref{sec:seven}: the complete depth-$8$ census excludes $8$, the two halves of
+the ninth gate exclude $9$, and two $10$-gate witnesses exist).
 \item \textbf{A method lemma} (Lemma~\ref{lem:lastgate}): every polynomial of cost
 $d + 1$ is one gate over a normalized depth-$d$ state, so $\zmax(d+1)$ is computable
 from an exhausted depth-$d$ frontier without storing the depth-$(d+1)$ frontier. This
@@ -225,16 +227,16 @@ $\{-2,\dots,4\}$) and one squaring ($x^2(x^2-1)(x^2-4)(x^2-16)$, root set the
 tower $\{0,\pm1,\pm2,\pm4\}$); the squaring shape generalizes to a family giving
 $2m+3$ roots in $3m+4$ gates. On the lower side, no $9$-gate program whose final
 gate is a \emph{multiplication} reaches $7$ roots, over all $1{,}048{,}460{,}912$
-depth-$7$ states (maximum union size exactly $6$). We also prove a confinement
-lemma turning the additive case's evaluation window into a decidable criterion:
-if $f$ has $7$ distinct integer roots and trailing coefficient $c$ with
-$|c| \le 395$, or with $|c| \le 1187$ when $0$ is not a root, every root lies in
-$[-32,32]$; the constant $395$ is sharp. An exhaustive scan of the additive case
-over the same states finds no program whose final gate is an addition or a
-subtraction with $7$ distinct integer roots in $[-32,32]$. A nine-gate seven-rooter
-would therefore need a root outside the window and $|c| \ge 396$, a class measured at
-about $0.002\%$ of the additive candidates, so the threshold is $10$ unless that
-residual holds a seven-rooter.
+depth-$7$ states (maximum union size exactly $6$). For an \emph{additive} final
+gate we prove a window-free divisibility criterion: if $f$ has $k$ distinct integer
+roots, then on any block of $p^a$ consecutive integers the $p$-adic valuations of
+the values of $f$, corrected for a proven power of $x$, must sum to at least a
+number that depends only on which values vanish modulo $p^e$. Applied with $p = 2$
+and $p = 3$ to every one of the $4.19\times10^{12}$ additive candidates over the
+same states, with every survivor built and root-counted exactly, it finds no
+seven-rooter. Hence $\zmax(9) = 6$ and the threshold is exactly $10$. An earlier
+scan on the window $[-32,32]$, with a sharp confinement lemma pricing what the
+window misses, is kept as an independent partial check.
 \item \textbf{The three worlds} (Section~\ref{sec:fp}): on the same enumerated
 programs, $\zpmax(\tau) = 2^{\tau-1}$ exactly for every $\tau$ [D], while
 $\zrmax(1..6) = 1,2,3,4,6,8$ [MV] and the integer census stays linear. What limits
@@ -342,12 +344,14 @@ replaced by direct evaluation over a window proved correct in advance
 \begin{theorem}[the census; MV]\label{thm:census}
 In the model of Definition~\ref{def:model},
 \[
-\begin{array}{c|cccccccc}
-\tau & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\\hline
-\zmax(\tau) & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6
+\begin{array}{c|ccccccccc}
+\tau & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\\hline
+\zmax(\tau) & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6 & 6
 \end{array}
 \]
-and the censuses behind each value are decision-complete.
+and the censuses behind each value are decision-complete. The value at $\tau = 9$
+is Corollary~\ref{cor:nine} of Section~\ref{sec:seven}; it rests on scans of the
+ninth gate, not on a constructed depth-$8$ frontier.
 \end{theorem}
 
 The supporting exhaustive counts are:
@@ -365,19 +369,19 @@ $\zmax$ & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
 \end{center}
 
 Depth $7$ was decided by Lemma~\ref{lem:lastgate} over the exhausted depth-$6$
-frontier; among its $2{,}013{,}706$ new polynomials the distinct-integer-root
-histogram is $742{,}635$ rootless, $904{,}421$ with one, $299{,}488$ with two,
+frontier; among its $2{,}013{,}706$ new polynomials, the histogram of distinct
+integer roots is $742{,}635$ rootless, $904{,}421$ with one, $299{,}488$ with two,
 $63{,}903$ with three, $3{,}196$ with four, $63$ with five, and none with six or
 more.
 
 \begin{theorem}[cost thresholds; MV]\label{thm:thresholds}
 The minimum $\tau$ admitting $k$ distinct integer roots is: $k=1{:}\,1$;
-$k=2{:}\,2$; $k=3{:}\,3$; $k=4{:}\,5$; $k=5{:}\,6$; $k=6{:}\,8$; and for
-$k = 7$ it lies in $\{9, 10\}$.
+$k=2{:}\,2$; $k=3{:}\,3$; $k=4{:}\,5$; $k=5{:}\,6$; $k=6{:}\,8$; $k=7{:}\,10$.
 \end{theorem}
 
 The $k = 6$ lower bound is Theorem~\ref{thm:census} ($\zmax(7) = 5$); the upper
-bound is the explicit $8$-gate witness of Section~\ref{sec:window}. Representative
+bound is the explicit $8$-gate witness of Section~\ref{sec:window}; the $k = 7$
+value is Corollary~\ref{cor:nine}. Representative
 optimal witnesses, replayed gate by gate in exact arithmetic from the released
 artifacts:
 
@@ -395,7 +399,8 @@ $\tau$ & record & witness program\\
 \end{tabular}
 \end{center}
 
-\textbf{Plateaus.} $\zmax$ pauses at $\tau = 4$ and $\tau = 7$. The record galleries
+\textbf{Plateaus.} $\zmax$ pauses at $\tau = 4$ and $\tau = 7$, and again at $\tau = 9$
+(Corollary~\ref{cor:nine}). The record galleries
 explain the asymmetry: the step $5 \to 6$ succeeds because multiplying by the input
 $x$ costs one gate and adjoins the root $0$ to a record avoiding it; the steps
 $3 \to 4$ and $6 \to 7$ fail because every candidate next root beyond the ``free''
@@ -597,8 +602,9 @@ $c \le 200$; C beyond].
 
 Theorem~\ref{thm:depth8} left the threshold for $7$ distinct integer roots at
 $9$ or $10$. This section closes the upper side constructively, decides the
-multiplicative half of the ninth gate exhaustively, and decides the additive half on
-an evaluation window, which leaves a narrow and measured residual.
+multiplicative half of the ninth gate exhaustively, decides the additive half first
+on an evaluation window and then without one, and concludes that the threshold is
+exactly $10$.
 
 \subsection{Two ten-gate witnesses}\label{sec:seven:upper}
 
@@ -793,8 +799,97 @@ distinct integer roots, if one exists, has an additive final gate and a root
 outside $[-32,32]$, hence a trailing coefficient with $|c| \ge 396$, and
 $|c| \ge 1188$ when $0$ is not a root. The seven-root threshold is therefore $10$
 unless this residual class contains a seven-rooter; strictly, it remains in
-$\{9, 10\}$. An exhaustive pass over the residual, with each survivor root-counted
-exactly over the divisors of its trailing coefficient, would decide it.
+$\{9, 10\}$ on the strength of this scan alone. The next subsection decides it.
+
+\subsection{The additive half without a window}\label{sec:seven:free}
+
+The confinement lemma bounds where a missed witness could be; the following
+criterion removes the window altogether. It uses the same divisibility, read
+$p$-adically on a block of consecutive integers rather than archimedeanly at $0$.
+
+\begin{lemma}[$p$-adic block criterion; D]\label{lem:padic}
+Let $f \in \Z[x]$ be nonzero with distinct integer roots $r_1,\dots,r_k$, let
+$x^m$ be the exact power of $x$ dividing $f$, and let $0 \le m' \le m$. For every
+prime $p$ and every integer $n$ with $f(n) \ne 0$,
+\[
+v_p\bigl(f(n)\bigr) - \max(m'-1,0)\,v_p(n) \;\ge\; \sum_{i=1}^{k} v_p(n - r_i).
+\]
+Let $B$ be a block of $p^a$ consecutive integers and $e \ge 1$, and let $Z$ be the
+set of $n \in B$ with $f(n) \equiv 0 \bmod p^e$. Put $w(t) = v_p(t)$ if $p^a \nmid t$
+and $w(t) = a$ otherwise, and
+\[
+C(z) = \sum_{n \in B\setminus Z} v_p(n - z)\ (z \in Z),\qquad
+M = \min_{\rho \bmod p^a}\ \sum_{n \in B\setminus Z} w(n-\rho).
+\]
+If $L_k(Z)$ is the sum of the $k$ smallest numbers in the multiset
+$\{C(z) : z \in Z\} \cup \{M,\dots,M\}$ ($k$ copies of $M$), then
+\begin{equation}\label{eq:block}
+S(f) := \sum_{n \in B\setminus Z}\Bigl(v_p\bigl(f(n)\bigr) - \max(m'-1,0)\,v_p(n)\Bigr) \;\ge\; L_k(Z).
+\end{equation}
+\end{lemma}
+\begin{proof}
+As in Lemma~\ref{lem:confine}, $f = g\prod_i(x - r_i)$ with $g \in \Z[x]$. If
+$m \ge 1$ then $0$ is one of the $r_i$ and the remaining factor $x^{m-1}$ divides
+$g$, which gives the first inequality; for $m' = 0$ nothing is subtracted. On
+$B \setminus Z$ the value $f(n)$ is nonzero, so the inequality holds there; sum it.
+A root cannot lie in $B \setminus Z$. A root $z \in Z$ contributes exactly
+$C(z)$. A root $r \notin B$ contributes at least $\sum_{n}w(n - \rho)$ with
+$\rho = r \bmod p^a$, because $v_p(n - r) = w(n-\rho)$ when $p^a \nmid n-r$ and
+$v_p(n-r) \ge a$ otherwise; distinct roots outside $B$ may share a residue, so each
+contributes at least $M$. The least total over all placements of $k$ distinct roots
+is $L_k(Z)$.
+\end{proof}
+
+The criterion is cheap because residues are exact: $f(n) \bmod p^e$ is computed
+from the residues of the operands, and $L_k(Z)$ depends only on the zero mask of
+the block, so it is tabulated once ($2^{16}$ masks for $p = 2$, $B = \{-8,\dots,7\}$,
+$e = 64$, where unsigned $64$-bit arithmetic is exactly arithmetic mod $2^{64}$;
+$2^9$ masks for $p = 3$, $B = \{-4,\dots,4\}$, $e = 20$). The power of $x$ is
+bounded below by the operands' trailing indices (their sum for a product, their
+minimum otherwise). Without that correction, candidates of the form $x^j h$ or
+$2^j h$ pass the $2$-adic block easily; the $3$-adic block is blind to powers of
+$2$.
+
+\begin{theorem}[MV, no window]\label{thm:nine-add-free}
+No $9$-gate constant-free program whose final gate is an addition or a subtraction
+computes a polynomial with $7$ distinct integer roots.
+\end{theorem}
+
+The scan covers the same space as Theorem~\ref{thm:nine-add}: all
+$1{,}048{,}460{,}912$ depth-$7$ states, all $200$ eighth gates on their $10$
+operands, all $10$ operands $b$ and both signs. Every candidate $f = t \pm b$ is
+dropped only by a proof or decided exactly:
+\[
+\begin{array}{lr}
+\text{candidates} & 4{,}193{,}843{,}648{,}000\\
+\text{dropped: } \deg f \le \max(\deg t, \deg b) < 7 & 4{,}026{,}692{,}708{,}694\\
+\text{pass the $2$-adic block} & 3{,}840{,}174{,}256\\
+\text{pass the $3$-adic block} & 2{,}937{,}472{,}943\\
+\text{identically zero ($t = \mp b$, built exactly)} & 92{,}943{,}826\\
+\text{built exactly and root-counted} & 2{,}345{,}860{,}018\\
+\text{with $7$ distinct integer roots} & 0
+\end{array}
+\]
+Before production, the engine at thresholds $k = 4, 5, 6$ was compared with
+building \emph{every} candidate exactly, with no filter, on samples of $150$ to
+$3{,}000$ states from five partitions: the counts agree in every case ($1535$,
+$864$, $6$, $15$ and $0$). Planted polynomials with $4$ to $7$ distinct roots of
+absolute value up to $5000$, with powers of $x$ and of $2$ and $3$ in their
+content, pass both blocks for every admissible $m'$. Each partition's frontier
+file was hashed against the frontier's SHA-256 manifest before its scan, and the
+$256$ partition records total the manifest's state count.
+
+\begin{corollary}[MV]\label{cor:nine}
+$\zmax(9) = 6$, and the minimum number of gates of a constant-free program
+computing a polynomial with $7$ distinct integer roots is exactly $10$.
+\end{corollary}
+\begin{proof}
+By the last-gate lemma a $9$-gate program is one gate over a depth-$8$ state, and
+since $\zmax(8) = 6$ a seven-rooter's final gate uses the eighth value; it is
+multiplicative or additive, excluded by Theorems~\ref{thm:nine-mult}
+and~\ref{thm:nine-add-free}. Hence $\zmax(9) \le 6$, and $\zmax(9) \ge \zmax(8) = 6$.
+Proposition~\ref{prop:ten} gives the upper side of the threshold.
+\end{proof}
 
 \section{The three worlds, measured}\label{sec:fp}
 
@@ -1003,15 +1098,16 @@ Nothing above bears on the conjecture asymptotically: censuses to depth $8$ cann
 distinguish polynomial from superpolynomial growth, and our theorems close
 construction classes rather than open the bounding problem. In the measured
 landscape, every mechanism observed or excluded so far pays $\Theta(1)$
-gates per root, the growth function's first structure (plateaus at $4$ and $7$) is
+gates per root, the growth function's first structure (plateaus at $4$, $7$ and $9$) is
 the visible cost of constant-building, and the geometric-progression family remains
 the best known factory, linear-rate, exactly as when Rojas noted that the conjecture
 fails for $\kappa < 1$ \cite{Rojas2003}.
 
 The census makes the following open items precise:
-(i) the seven-root threshold, now reduced to the residual class of nine-gate
-candidates with an additive final gate and $|c| \ge 396$
-(Section~\ref{sec:seven:add}), and $\zmax(9)$ beyond the evaluation window;
+(i) $\zmax(10)$ and the eight-root threshold, which lies in $\{10,\dots,13\}$ by
+the square-tower family ($m = 3$ gives $9$ roots in $13$ gates) and the census;
+the block criterion of Lemma~\ref{lem:padic} applies unchanged at the tenth gate,
+but the depth-$8$ frontier it would need has not been built;
 (ii) extend the integer frontier past Markstr\"om's length $11$ \cite{Markstrom2014},
 including his monotonicity question for $\tau(n!)$;
 (iii) measure the growth of the valuation-spectrum bound
@@ -1028,7 +1124,7 @@ All code, run artifacts, experiment records and the problem wiki are available a
 \url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
 \path{problems/computation-complexity/tau-conjecture/}, together with the package
 \texttt{tclib} and its test suite. The computations are archived there as the
-experiment records \texttt{EXP-001}--\texttt{EXP-014} (folder \path{experiments/});
+experiment records \texttt{EXP-001}--\texttt{EXP-015} (folder \path{experiments/});
 each record holds the code, the artifacts and the result.\par}
 
 Every root count reported here is exact. The census enumerator and all integer
@@ -1037,7 +1133,8 @@ Two later instruments add libraries without giving up exactness. The depth-$8$
 and nine-gate scans use NumPy for a modular pre-filter over a fixed evaluation
 window, whose surviving candidates are reconstructed and root-counted exactly by
 the standard-library engine, so the filter can over-admit but never discard a
-witness. The real and rational ladders use SymPy for square-free decomposition
+witness; the window-free scan uses NumPy for the $2$-adic and $3$-adic residues
+of Lemma~\ref{lem:padic} in the same way. The real and rational ladders use SymPy for square-free decomposition
 with Sturm sequences and for the rational root theorem, both in exact rational
 arithmetic with no floating point at any stage.
 
@@ -1045,7 +1142,8 @@ Compute is dominated by the two largest scans, on one desktop machine with
 $32$ cores. The depth-$8$ pipeline took $2$h$50$m to build the frontier and
 $6$h$48$m to scan it with $20$ processes; the multiplicative nine-gate scan took
 $13.1$h, and the additive nine-gate scan about $74$h of wall-clock time with $8$ to
-$20$ processes, interruptions included; the earlier experiments together add roughly $17$h, of which $6.7$h went
+$20$ processes, interruptions included, and the window-free additive scan $21.4$h
+of wall-clock time with $20$ processes ($381$ process-hours); the earlier experiments together add roughly $17$h, of which $6.7$h went
 to the inconclusive solver runs. The co-occurrence scan that decides the six-root
 threshold took $2$h$23$m on one core, and the depth-$6$ real ladder $180$\,s.
 Peak RAM was $\sim$12 GB.

@@ -1,0 +1,1 @@
+{"part": 97, "sha256": "e8353e1a28c4f13ff63a36c40ad9b9d0967c9b1cbb1c32a4927364bb533f10d1", "states_file": 4094360, "stats": {"states": 4094360, "candidates": 16377440000, "deg_drop": 15725154982, "pass2": 15000533, "pass3": 11472471, "zero_suspect": 1946700, "zero_exact": 363952, "exact": 9161819, "hits": 0}, "hits": [], "seconds": 4850.8}
