@@ -1,0 +1,7 @@
+{"n": 7, "alpha": 3, "k": 4, "E": 14, "status": "UNSAT", "cuts": 3, "seconds": 0.0}
+{"n": 7, "alpha": 3, "k": 4, "E": 15, "status": "SAT", "edges": [[0, 3], [0, 4], [0, 5], [0, 6], [1, 3], [1, 4], [1, 5], [1, 6], [2, 3], [2, 4], [2, 5], [2, 6], [3, 4], [3, 5], [3, 6]], "check": {"order": 7, "edges": 15, "alpha": 3, "connectivity": 4}, "cuts": 0, "seconds": 0.0}
+{"n": 12, "alpha": 3, "k": 3, "E": 22, "status": "UNKNOWN", "cuts": 6909, "seconds": 1800.0}
+{"n": 12, "alpha": 3, "k": 3, "E": 23, "status": "SAT", "edges": [[0, 6], [0, 7], [0, 8], [0, 11], [1, 4], [1, 5], [1, 9], [1, 10], [2, 3], [2, 5], [2, 11], [3, 5], [3, 10], [3, 11], [4, 6], [4, 9], [4, 10], [5, 11], [6, 7], [6, 8], [7, 8], [8, 9], [9, 10]], "check": {"order": 12, "edges": 23, "alpha": 3, "connectivity": 3}, "cuts": 139, "seconds": 0.6}
+{"n": 10, "alpha": 3, "k": 3, "E": 17, "eager": 3, "status": "SAT", "edges": [[0, 6], [0, 7], [0, 8], [0, 9], [1, 4], [1, 5], [1, 6], [2, 3], [2, 4], [2, 5], [3, 5], [3, 9], [4, 6], [4, 8], [7, 8], [7, 9], [8, 9]], "check": {"order": 10, "edges": 17, "alpha": 3, "connectivity": 3}, "cuts": 0, "seconds": 0.0}
+{"n": 12, "alpha": 3, "k": 3, "E": 22, "eager": 3, "status": "UNKNOWN", "cuts": 0, "seconds": 1800.1}
+{"n": 10, "alpha": 3, "k": 3, "E": 16, "eager": 3, "status": "UNKNOWN", "cuts": 0, "seconds": 3600.0}
