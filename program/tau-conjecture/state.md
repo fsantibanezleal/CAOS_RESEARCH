@@ -1,5 +1,7 @@
 # Shub-Smale tau conjecture: state (heartbeat)
 
+- **2026-11-05:** EXP-015 CONFIRMED: z_max(9) = 6, seven-root threshold exactly 10 (window-free additive scan, audit PASS); census v0.06 10.5281/zenodo.23980033. Next open item: z_max(10) and the eight-root threshold in {10..13}; it needs the depth-8 frontier.
+
 - **State:** exploring (opened 2026-08-01; scoped 2026-07-20).
 - **Done (2026-08-01, rounds 1-3):** problem opened with full primary-
   source pass; EXP-001 (census anchored to Markstroem 14/14;
