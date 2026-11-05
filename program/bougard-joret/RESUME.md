@@ -2,6 +2,8 @@
 
 Updated: 2026-09-05.
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 4; first action BJB-014, then exact small-triple data in the second regime n > k*alpha (BJB-016).
+
 ## 1. State in one screen
 
 [D] EXP-003 proves $T(d,d+1)=d^2+d+2$ for every integer $d\ge7$, where $T$ is the maximum triangle-free edge count under degree and matching bounds. The fixed-order bound at $2d+3$ is also sharp. The new contribution is the uniform upper bound; the attaining BET construction and finite values through $d=12$ are prior work. In particular, $T(13,14)=184$, closing BET's 184-to-185 interval. The full AEY conjecture remains open.
@@ -42,8 +44,11 @@ Updated: 2026-09-05.
 | EXP-001-tree-strip | Adjacent diagonal value and all extremals | CONFIRMED | Uniform proof plus independently checked finite constructions |
 | EXP-002-next-shell | Full first-shell value; all alpha-two extremals | CONFIRMED | Complete proof audited; independent exact certificates pass |
 | EXP-003-triangle-free-next-matching | Exact next matching level for every $d\ge7$ | Proof and independent audits PASS; published | Uniform upper bound; known BET construction; v0.01 DOI 10.5281/zenodo.22343022; scoped integration complete |
+| EXP-004-bracket-endpoint | Endpoint of $d^2+4d+1\le f(2d+3,2,d+2)\le d^2+4d+2$ | CONFIRMED; independent audit PASS | $f(2d+3,2,d+2)=d^2+4d+2$, $d\ge7$; shared-neighbourhood theorem; configuration SAT d=7 (8/8 UNSAT), d=8 (7/8, eighth excluded by $a+b=2$); next-matching v0.04 10.5281/zenodo.23965193 |
 
 ## 4. In flight
+
+2026-11-04: EXP-004 CONFIRMED (BJB-014 closed): $f(2d+3,2,d+2)=d^2+4d+2$ for every $d\ge7$. Every triangle-free graph on $2d+3$ vertices with $\Delta\le d$ and $d^2+d+2$ edges has two vertices with the same $d$ neighbours, so its complement is not $(d+2)$-connected. Hypothesis and proof frozen at 29a8840c before computation; independent Opus audit PASS (CAOS_MANAGE `wip/caos-research/bj-exp004-proof-audit-2026-11-04.md`). Next-matching v0.04 published at 10.5281/zenodo.23965193 (39 release gates). Next: BJB-016 (exact small-triple data in the second regime $n>k\alpha$).
 
 Current round: EXP-003's committed preflight is `f3fdda6`. Its proof and independent audits pass. The separate next-matching manuscript v0.01 is PUBLISHED at [version DOI 10.5281/zenodo.22343022](https://doi.org/10.5281/zenodo.22343022), [concept DOI 10.5281/zenodo.22343021](https://doi.org/10.5281/zenodo.22343021). The [receipt](../../manuscripts/bougard-joret/next-matching/publication-verification.json) confirms latest-version status and all 352,871 bytes against a fresh unauthenticated download. SHA-256: `2dbce0d07fcd8b7afab8864cc2cf03d37a753356d395036725b8428ca56b6680`. All seven pages passed visual QA, no final LaTeX warnings remain, and 101 tests passed. Research PR #255 passed both CI jobs on head b8eb3f6 and merged at 03dc4694beb42184900b238d036dbf5ada84816e. Private mirror PR #613 merged at 74e36ce08fc31d3cb13e983688ed14596cd55b0f. Research, publication and scoped develop integration are complete. The global main release remains separately serialized. Read the [next-matching source review](../../problems/combinatorics/bougard-joret/context/2026-09-05-next-matching-review.md) and [current plan](plan-2026-09-05-triangle-free.md).
 

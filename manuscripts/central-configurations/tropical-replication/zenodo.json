@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Exact replication and screening of tropical finiteness certificates for central configurations",
+    "creators": [
+      {
+        "name": "Santibáñez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>We report an exact, fully reproducible replication and screening study around Smale's 6th problem (finiteness of planar central configurations), with the following contributions: (i) an exact calibration of the Albouy–Chenciner mutual-distance equations in open tooling, including a machine rediscovery of their dimension-blindness (the regular tetrahedron coexists with the square in the equal-mass rhombus stratum of the 4-body distance system until the Cayley–Menger equation is adjoined, after which the square, with side a satisfying a^3 = (4 + √2)/8, the larger of the two positive roots of 32a^6 - 32a^3 + 7 = 0, is the unique positive point of the stratum); (ii) a machine measurement of the enrichment law: adjoining the asymmetric (Roberts) equations and the energy–inertia relation renders the n = 3 distance ideal zero-dimensional directly, eliminating the coordinate-line components of the bare symmetric system; (iii) an independent, exact reproduction of the Jensen–Leykin tropical prevariety certificate of generic-mass finiteness for n = 5 (arXiv:2301.02305v2): both published f-vectors match digit for digit and the pointedness of the recession cone is verified by an independent exact parser; and (iv) a screening study over mass-valuation families and equation-system variants at n = 4, 5 which finds two new working valuation families beyond the two published, replicates generic-mass finiteness for n = 4 purely polyhedrally in seconds, and shows that removing the ten dependent symmetric Albouy–Chenciner equations destroys the certificate at every tested valuation: the \"redundant\" equations carry essential tropical information.</p><p>Every comet of every screened cell is then decided exactly by a rational-arithmetic feasibility certificate, which upgrades the negative half of the screening from absence of a certificate to proof; adding further valid equations is measured separately, showing Dziobek's equations to be tropically active but not decisive at the hard case and the energy–inertia relation to be tropically inert; and two censuses that defeated our own engine are closed by an independent solver with exact cross-verification.</p><p>All computations are exact (rational or integer arithmetic, or certified polyhedral computation); every stated number is reproducible from the released code and recorded hashes. The finiteness theorems replicated are due to Hampton–Moeckel, Albouy–Kaloshin, and Jensen–Leykin; the measurements in (i), (ii) and (iv) are, to our knowledge, new at this level of explicitness.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/dynamical-systems/central-configurations).</p><p>v0.11 adds a section on the October 2026 claims that the planar five-body problem has finitely many central configurations for every positive mass vector (Tomar, with a Lean formalization; Chen and Tong; Liu and Liu), and an audit of the Lean formalization: its main theorem states exactly the classical claim, and none of its 2,751 stored and 85,756 generated modules contains a construct that bypasses the kernel. Priority for the five-body theorem belongs to those authors; the open case here is n = 6.</p>",
+    "keywords": [
+      "central configurations",
+      "relative equilibria",
+      "n-body problem",
+      "Smale's 6th problem",
+      "tropical geometry",
+      "tropical prevariety",
+      "exact arithmetic",
+      "computer-assisted proof",
+      "celestial mechanics"
+    ],
+    "subjects": [
+      {
+        "term": "n-body problems",
+        "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=70F10",
+        "scheme": "url"
+      }
+    ],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2301.02305",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s00222-005-0461-0",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.4007/annals.2012.176.1.10",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2610.13100",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2610.16107",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2610.28168",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.23202861",
+        "resource_type": "dataset"
+      }
+    ],
+    "version": "0.11",
+    "language": "eng",
+    "publication_date": "2026-11-02",
+    "version_notes": "New section on the October 2026 claims of five-body finiteness for all positive masses and an audit of the Lean formalization (EXP-024): faithful statement, no kernel bypass in 2,751 stored and 85,756 generated modules."
+  }
+}

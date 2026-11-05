@@ -123,3 +123,15 @@ a proof effort against it would be planning to be wrong.
   by policy every shortlisted candidate is then re-decided exactly.
 - **Feasibility class A**: the entire problem is finite, decidable, and exactly checkable
   per instance, which is the strongest experimental surface in the portfolio.
+
+## External status review, 2026-10-30
+
+Last pass 2026-07-25, the oldest. External: Goemans' cost conjecture is false on Rybin's instance (announced 2026-07-22) [V2]; formalized in Isabelle/HOL as an AFP entry [V]. New: Afrasyab arXiv:2609.17568 (realizations of independence systems by zero-cost choices, odd-cycle thresholds, C5 value 79/120) [V]; Bérczi, Liu, Reis, Tarnawski arXiv:2608.13983 (2026-08-14) disprove a Morell-Skutella conjecture on weighted equitability (their numbering) [V]; arXiv:2610.16079 on cost-preserving rounding [V2, unread]. Overlap: 16/15 and the separation LP optimum 2/7 are not stated in these sources [V]; the threshold method of arXiv:2609.17568 overlaps partly in style. Our statement that Morell-Skutella Conjecture 1.4 falls must be checked against the numbering in the 2022 paper and the Bérczi et al. result.
+
+Plan change (assessment). Not ranked in section 1 of the review. Hold or redirect (assessment): refresh the dossier before EXP-005; the field moved.
+
+Review plan: hold; refresh the dossier before EXP-005.
+
+Record action (review section 3). Refresh the literature dossier; check the Conjecture 1.4 numbering. Gate: Problem round.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).

@@ -1,23 +1,44 @@
 # Huneke-Wiegand extensions - research wiki
 
-## Current strategic routing, 2026-09-24
+## Current strategic routing, 2026-10-30
 
-The broad conjecture was already disproved externally and is not an open CAOS
-target. The latest endpoint theorem below is closed, and its carrier route is
-now gated as `HW-F5`: it may resume only for a canonical comparison plus a
-complete kernel, quotient, upper bound, or reusable general matching theorem.
+The broad conjecture was already disproved externally (Christensen, Gerko and Iyengar,
+arXiv:2608.21666; Pham, arXiv:2609.07615) and is not an open CAOS target. `HW-F7` is closed:
+García-Sánchez and Leamer, arXiv:1211.4554 (2012), Lemma 8(8), Proposition 10 and Theorem 13 already
+give the simple-gluing transfer of EXP-067, which is therefore a credited corollary. The active focus
+is `HW-F8`, the tensor factorization of extension ideals under gluing, closed by EXP-068 below and
+carried by the focused companion `gluing-extensions`. The carrier route stays gated as `HW-F5`. Read
+the [research governance record](../../../../program/huneke-wiegand/research-governance.json) and the
+[manuscript map](../../../../program/huneke-wiegand/manuscript-map.md) before selecting new work.
 
-The Kunz preflight redirected `HW-F6`: varying multiplicities prevent one face
-from containing the family. The active focus is `HW-F7`, simple-gluing transfer
-of two-generated rigidity. EXP-067 is confirmed, and the focus now assesses its
-novelty before any manuscript is created. Read
-the [Kunz/gluing preflight](../context/2026-09-20-kunz-gluing-preflight.md), the
-[strategy reconciliation](../context/2026-09-20-strategy-manuscript-reconciliation.md),
-the [research governance record](../../../../program/huneke-wiegand/research-governance.json),
-and the [manuscript map](../../../../program/huneke-wiegand/manuscript-map.md)
-before selecting new work.
+## Current closed result: tensor factorization of extension ideals under gluing, 2026-10-30
 
-## Current closed result: simple-gluing rigidity transfer, 2026-09-20
+[EXP-068](../experiments/EXP-068-gluing-tensor-factorization/verdict.md) proves, for every gluing
+`Gamma = a1*Gamma1 + a2*Gamma2` and relative ideals `A_i` of `Gamma_i`, with `A = a1*A1 + a2*A2`,
+`T_i = I_(A_i) (x) I_(A_i*)` and `y` acting as `t^a2` on `k[Gamma1]` and `t^a1` on `k[Gamma2]`:
+
+```text
+I_A (x) I_(A*) = T1 (x)_(k[y]) T2
+l(tau(I_A (x) I_(A*))) = a1*l(tau(T1)) + a2*l(tau(T2)) + sum_(j>=1) b1(j)*b2(j)
+mu(A) = mu(A1)*mu(A2)
+```
+
+where `b_i(j)` counts the Jordan blocks of size at least `j` of `y` on `tau(T_i)`. Hence `A` has the
+Huneke-Wiegand property iff `A1` or `A2` is a non-principal ideal with it. Propositions 9 and 10 of
+García-Sánchez and Leamer are special cases; the case they leave open, both factors non-principal
+counterexamples, gives counterexamples with `mu(A1)*mu(A2)` generators. Explicit four-generated
+counterexamples over symmetric semigroups:
+
+| gluing | Frobenius | minimal generators of the extension |
+|---|---|---|
+| `56*Gamma_P + 57*Gamma_P`, both ideals `(0,14)` (Pham) | 23645 | `0, 784, 798, 1582` |
+| `96*Gamma_P + 89*C_4`, ideals `(0,14)` and `(0,24)` | 53599 | `0, 1344, 2136, 3480` |
+
+The direct tensor computation and the partition criterion agree with the law on 200 seeded gluings
+(33 with torsion in both factors), the controls fire, and an auditor with no shared code agrees.
+Ideals of a gluing that are not extensions are not covered.
+
+## Prior closed result: simple-gluing rigidity transfer, 2026-09-20 (credited corollary since 2026-10-30)
 
 [EXP-067](../experiments/EXP-067-simple-gluing-rigidity-transfer/verdict.md)
 proves that for a numerical semigroup `Gamma` of multiplicity `m` and
@@ -39,8 +60,9 @@ The producer and an independent auditor accept all 72 cases for `p=4,...,12`,
 and the `<4,5>` control stays nonrigid. The 2026-09-24 pre-merge review
 restricted the rigidity statement to symmetric `Gamma`, disclosed a P2
 amendment committed with the results, and recorded that faithfully flat base
-change may already give the rigidity transfer. Novelty is unassessed, and no
-manuscript contains the result yet.
+change may already give the rigidity transfer. Assessed 2026-10-30: the transfer is Lemma 8(8),
+Proposition 10 and Theorem 13 of García-Sánchez and Leamer (2012); the explicit family is the CAOS
+addition, carried as a corollary in `gluing-extensions`.
 
 ## Prior closed result: uniform support-one endpoint sources, 2026-09-20
 

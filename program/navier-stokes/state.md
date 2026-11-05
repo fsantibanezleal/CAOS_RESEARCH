@@ -262,3 +262,12 @@ negligible, so localization cannot set a hypodissipative threshold. This answers
 term, one of the three objects NS-016 listed as missing from our model.
 
 **NS-010 checked 2026-09-17:** the Alpoge-Buckmaster hypodissipative paper is still not posted.
+
+## 2026-11-02: v0.09 and dormant
+
+Manuscript v0.09 (10.5281/zenodo.23890775) cites and scopes against Bastounis, Circelli and Hansen
+(arXiv:2610.08144): the statement and integrity checks recorded here do not establish that the formal proof
+follows the written argument. NS-021 was already answered in Section 5 since v0.07. The backlog has no open
+item; per the 2026-10-30 portfolio review the problem is held dormant. It reopens if a corrected
+formalization, a refutation of the forced blowup, or a dissipative construction above the class ceiling
+appears.

@@ -150,3 +150,53 @@ Script `code/probes/classes_mod_cut_space.py` (reads `EXP-006/artifacts/pairs-G5
   classes (every superedge `G - {u, v}` passes a nonzero class, every supervertex needs three
   classes summing to zero) does NOT yield a contradiction by itself: PCR-7 needs the actual
   label triples realized at the connectors, not only their classes.
+
+## Theorem 6 (statement (e) is a two-defect statement), added 2026-09-19 `[D]`
+
+Assume Proposition 2 of Mattiolo, Mazzuoccolo, Mkrtchyan (cyclic joins of copies of `G - e1 - e2`,
+for `G` cyclically 4-edge-connected and `e1`, `e2` independent, are cyclically 4-edge-connected;
+stated there without proof, "a case by case analysis"). Then the following are equivalent:
+
+1. statement (e): some sublinear `f` bounds `ab(G) <= f(|V(G)|)` for every cyclically
+   4-edge-connected cubic graph `G`;
+2. `ab(G) <= 18` for every cyclically 4-edge-connected cubic graph;
+3. `pd(G) <= 2` for every cyclically 4-edge-connected cubic graph;
+4. for every cyclically 4-edge-connected cubic graph `G` and every path `a b c d` in it, the 4-pole
+   `G - ab - cd` has a Petersen coloring.
+
+Proof. (3) implies (2): let `s` be a map with bad set inside `{u, v}` and let `c` send each edge to
+the color of its image in the Kneser model of `P`. At a good vertex the three colors are distinct,
+and an edge with two good ends is poor or rich (the two views coincide, Lemma 1). Recolor the three
+edges at `u`: each has at most two colors forbidden at its other end, so distinct admissible colors
+exist (3, then at least 2, then at least 1 choices); then do the same at `v` (at least 2 and 1
+choices remain when `uv` is an edge). The coloring is proper, and only edges with an end in `u` or
+in a neighbor of `u`, or the same for `v`, changed the color sets at their ends: at most 9 + 9
+edges can be abnormal. (2) implies (1) trivially. (1) implies (3): Proposition 5 turns one graph
+with `pd >= 3` into cyclically 4-edge-connected graphs `H_t` of order `t |V(G*)|` with
+`ab(H_t) >= pd(H_t) >= t`, which no sublinear `f` bounds. (3) implies (4): if some `G - ab - cd`
+had no Petersen coloring, the cyclic joins of its copies would have a bad vertex in every copy,
+so `pd >= 3` for three copies. (4) implies (3): given a coloring of `G - ab - cd`, label `ab` by
+the pendant label at `a` and `cd` by the pendant label at `c`; only `b` and `d` can be bad. QED
+
+Consequence. The Petersen coloring conjecture is false, statement (b) is false by their Theorem 1,
+and (c), (d) are false by Corollary 4. So Conjecture 3 of Mattiolo et al. (the five statements are
+equivalent) holds if and only if (e) is false, that is, if and only if some cyclically
+4-edge-connected cubic graph has Petersen defect at least 3, equivalently some such graph has a
+4-pole `G - ab - cd` (path `a b c d`) without a Petersen coloring. If instead every cyclically
+4-edge-connected cubic graph can be mapped into `E(P)` with at most two bad vertices, then (e)
+holds with the constant bound 18 (and with 9 by their Theorem 4), and Conjecture 3 is false.
+
+Evidence on file `[MV]`: for `G52`, `G52b`, `G68` every 4-pole `G - e1 - e2` is Petersen colorable
+(EXP-010, all orbit representatives of independent edge pairs, not only paths of length three);
+for all fifteen known cyclically 4-edge-connected counterexamples examined (the five public ones
+and the ten dot products `G52 . G52` of EXP-010, which have cyclic edge connectivity exactly 4,
+girth 5 and 102 vertices) every pair of adjacent vertices is critical (EXP-006, EXP-008,
+EXP-011), so every 4-pole `G - {u, v}` is colorable. The evidence therefore points to (e) being
+true, against Conjecture 3; it decides nothing.
+
+Remark (critical pairs). A cyclically 4-edge-connected counterexample with a non-critical adjacent
+pair `{u, v}` gives a non-colorable 4-pole `G - {u, v}` whose vertex subsets containing a cycle all
+have at least four boundary edges (either the complement contains a cycle, or it is a forest with
+at least the two vertices `u`, `v`, and then the boundary has at least four edges). With a join
+lemma for such 4-poles analogous to Proposition 2, it would make (e) false. Universal
+2-criticality, observed on every known counterexample, is exactly what prevents this.

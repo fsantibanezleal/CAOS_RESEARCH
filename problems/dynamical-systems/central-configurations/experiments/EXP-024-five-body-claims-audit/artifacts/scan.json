@@ -1,0 +1,60 @@
+{
+ "files_scanned": 2751,
+ "hits": [
+  {
+   "file": "tools/kernel2/kexport3/KExport/Basic.lean",
+   "line": 41,
+   "pattern": "unsafe",
+   "text": "| \u00abunsafe\u00bb => \"unsafe\""
+  },
+  {
+   "file": "tools/kernel2/kexport3/KExport/Basic.lean",
+   "line": 95,
+   "pattern": "unsafe",
+   "text": "exportUnsafe  := cliOptions.any (\u00b7 == \"--export-unsafe\")"
+  },
+  {
+   "file": "tools/kernel2/kexport3/Main.lean",
+   "line": 158,
+   "pattern": "unsafe",
+   "text": "unsafe def main (args : List String) : IO UInt32 := do"
+  }
+ ],
+ "hit_count": 3,
+ "by_pattern": {
+  "sorry": 0,
+  "admit": 0,
+  "axiom_declaration": 0,
+  "native_decide": 0,
+  "implemented_by": 0,
+  "extern": 0,
+  "ofReduceBool": 0,
+  "unsafe": 3,
+  "debug_skipKernelTC": 0
+ },
+ "main_imports": [
+  "CC5Full.Core.Compose.Assembly",
+  "CC5Full.Core.Compose.MainAssembly",
+  "CC5Full.Core.E3.Run.Final"
+ ],
+ "main_imports_missing_from_stored_sources": [],
+ "generated_families_present_in_stored_sources": {
+  "CC5Full/Core/E3/Run": true,
+  "CC5Full/Core/Strata/Big/F1_2_3_4_5": false,
+  "CC5Full/Core/ResidualCert/All": false,
+  "CC5Full/Core/D14a/B": false
+ },
+ "generated_families_scan": {
+  "archives_sha256_verified": [
+   "cc50-rung2-lean_full-D14a-B-modules.tar.xz",
+   "cc50-rung2-lean_full-ResidualCert-All-modules.tar.xz",
+   "cc50-rung2-lean_full-E3-Run-modules.tar.xz",
+   "cc50-rung2-lean_full-strata-F1_2_3_4_5-modules.tar.xz"
+  ],
+  "lean_files": 85756,
+  "unpacked_bytes_approx": "3.0G",
+  "method": "raw grep -rlE over all .lean files (comments included) for: sorry, admit, axiom declarations, native_decide, implemented_by, @[extern, ofReduceBool, unsafe, skipKernelTC",
+  "files_with_hits": 0
+ },
+ "stored_sources_hits_outside_CC5Full_only": true
+}

@@ -23,9 +23,9 @@
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.10}
-\newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22835093}
+\newcommand{\docversion}{v0.11}
+\newcommand{\docdate}{2 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.23887585}
 \newcommand{\conceptdoi}{10.5281/zenodo.21542483}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -93,6 +93,9 @@ certified polyhedral computation); every stated number is reproducible from
 the released code and recorded hashes. The finiteness theorems replicated are due
 to Hampton--Moeckel, Albouy--Kaloshin, and Jensen--Leykin; the measurements in
 (i), (ii) and (iv) are, to our knowledge, new at this level of explicitness.
+Finiteness for five bodies and all positive masses has since been claimed by three groups, one with a
+Lean formalization; we audit that formalization: its main theorem states exactly the classical claim, and
+none of its 2,751 stored and 85,756 generated modules contains a construct that bypasses the kernel.
 \end{abstract}
 
 \section{Introduction}
@@ -519,6 +522,32 @@ with checkpointing), so the $n=6$ case remains open here. A completed run would
 either extend generic-mass finiteness to $n=6$ or localize the obstruction to
 specific comets, data that has not been published for any failed attempt.
 
+\section{The five-body case for all positive masses: claims and a formal audit (EXP-024)}\label{sec:five}
+
+In October 2026 three groups claimed that the planar five-body problem has finitely many central
+configurations up to similarity for every positive mass vector: Tomar \cite{Tomar26}, with a Lean~4
+formalization and a supplement of certificates; Chen and Tong \cite{ChenTong26}; and Liu and Liu
+\cite{LiuLiu26}. All three complete the Albouy--Kaloshin classification of singular sequences
+\cite{AK12} on the exceptional mass set that \cite{AK12} leaves open. The question of the
+previous sections for $n=5$ is therefore settled, if these claims hold, and the priority is theirs.
+
+We audited the formalization of \cite{Tomar26} without rebuilding it. Its main theorem,
+$\forall m,\ (\forall i,\ 0<m_i)\to\mathrm{FinitelyManyCC}\ m$, is built from a planar configuration
+$q:\{1,\dots,5\}\to\mathbb{C}$ with distinct points, the equation
+$\lambda m_i(q_i-c)=\sum_{j\ne i}m_im_j(q_i-q_j)/|q_i-q_j|^3$ with $\lambda\in\mathbb{R}$ and
+$c\in\mathbb{C}$, and similarity by every map $z\mapsto az+b$ or $z\mapsto a\bar z+b$, $a\ne0$; finitely
+many central configurations means finitely many similarity classes. This is the classical statement: the
+sign of the force is absorbed by $\lambda$, the value $\lambda=0$ admits no configuration for positive
+masses, and counting up to reflections changes counts, not finiteness. A comment-aware search of the
+$2{,}751$ stored source files and a search of the $85{,}756$ generated modules (each archive checked
+against its published SHA-256) for \texttt{sorry}, \texttt{admit}, axiom declarations,
+\texttt{native\_decide}, \texttt{implemented\_by}, \texttt{extern}, \texttt{ofReduceBool},
+\texttt{unsafe} and \texttt{skipKernelTC} finds no occurrence in the formalization; the only hits are
+in the exporter used to feed independent kernels. The audit does not replace the kernel check, which
+the author reports for the full build and for two independent kernels; it shows that the theorem checked
+is the right one and that no source exempts itself from the check. The open case for this programme is
+$n=6$.
+
 \section{Scope and data availability}
 
 The study is replication-first. The finiteness theorems replicated are due
@@ -538,13 +567,19 @@ source.
 Code, artifacts and experiment records are available at
 \url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
 \path{problems/dynamical-systems/central-configurations/}. The identifiers
-EXP-001 to EXP-018 in the section titles and the text denote the experiment
+EXP-001 to EXP-024 in the section titles and the text denote the experiment
 records in its \path{experiments/} folder; each record holds the code, the
 artifacts and the result. Tool
 versions and binary hashes (\texttt{gfan}, \texttt{msolve}, Singular) are
 recorded with the experiments that use them.\par}
 
 \begin{thebibliography}{99}
+\bibitem{Tomar26} T.~S.~Tomar, \emph{Smale's sixth problem for five bodies in the plane, with a proof
+formalized in Lean}, arXiv:2610.13100, 2026; supplement doi:10.5281/zenodo.23202861.
+\bibitem{ChenTong26} Z.~Chen, Z.~Tong, \emph{Finiteness of planar central configurations of five bodies
+for all positive masses: on Smale's sixth problem}, arXiv:2610.16107, 2026.
+\bibitem{LiuLiu26} K.~Liu, Y.~Liu, \emph{Finiteness of planar central configurations of five bodies
+with positive masses}, arXiv:2610.28168, 2026.
 \bibitem{Smale98} S.~Smale, \emph{Mathematical problems for the next century},
 Math. Intelligencer \textbf{20} (1998), no.~2, 7--15.
 \bibitem{Chazy18} J.~Chazy, \emph{Sur certaines trajectoires du probl\`eme des

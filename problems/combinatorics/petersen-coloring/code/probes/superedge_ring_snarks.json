@@ -1,0 +1,1076 @@
+[
+ {
+  "block": "S",
+  "t": 2,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": false
+ },
+ {
+  "block": "S",
+  "t": 2,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 2,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": false
+ },
+ {
+  "block": "S",
+  "t": 2,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 3,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 2,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 3,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 2,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 3,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 3,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "S",
+  "t": 3,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 3,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 3,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "S",
+  "t": 3,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 3,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 3,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 4,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 4,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 4,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 4,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 4,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 4,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 5,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 40,
+  "girth": 5,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "S",
+  "t": 5,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 40,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 5,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 40,
+  "girth": 5,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "S",
+  "t": 5,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 40,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 5,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 40,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 5,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 40,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 6,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 48,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 6,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 48,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 6,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 48,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 6,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 48,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 6,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 48,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 6,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 48,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 7,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 56,
+  "girth": 5,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "S",
+  "t": 7,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 56,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 7,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 56,
+  "girth": 5,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "S",
+  "t": 7,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 56,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 7,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 56,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 7,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 56,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 8,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 64,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 8,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 64,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 8,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 64,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 8,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 64,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 8,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 64,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "S",
+  "t": 8,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 64,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 2,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": false
+ },
+ {
+  "block": "Y",
+  "t": 2,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": false
+ },
+ {
+  "block": "Y",
+  "t": 2,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": false
+ },
+ {
+  "block": "Y",
+  "t": 2,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 8,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 2,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 8,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 2,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": false
+ },
+ {
+  "block": "Y",
+  "t": 3,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 12,
+  "girth": 3,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 3,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 12,
+  "girth": 3,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 3,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 12,
+  "girth": 3,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 3,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 12,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 3,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 12,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 3,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 12,
+  "girth": 3,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 4,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 4,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 4,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 4,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 4,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 4,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 16,
+  "girth": 4,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 5,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 20,
+  "girth": 5,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 5,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 20,
+  "girth": 5,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 5,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 20,
+  "girth": 5,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 5,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 20,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 5,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 20,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 5,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 20,
+  "girth": 5,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 6,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 6,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 6,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 6,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 6,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 6,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 24,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 7,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 28,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 7,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 28,
+  "girth": 6,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 7,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 28,
+  "girth": 6,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 7,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 28,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 7,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 28,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 7,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 28,
+  "girth": 6,
+  "three_edge_colorable": false
+ },
+ {
+  "block": "Y",
+  "t": 8,
+  "pi": [
+   0,
+   1,
+   2
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 8,
+  "pi": [
+   0,
+   2,
+   1
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 8,
+  "pi": [
+   1,
+   0,
+   2
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 8,
+  "pi": [
+   1,
+   2,
+   0
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 8,
+  "pi": [
+   2,
+   0,
+   1
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 6,
+  "three_edge_colorable": true
+ },
+ {
+  "block": "Y",
+  "t": 8,
+  "pi": [
+   2,
+   1,
+   0
+  ],
+  "simple": true,
+  "order": 32,
+  "girth": 6,
+  "three_edge_colorable": true
+ }
+]

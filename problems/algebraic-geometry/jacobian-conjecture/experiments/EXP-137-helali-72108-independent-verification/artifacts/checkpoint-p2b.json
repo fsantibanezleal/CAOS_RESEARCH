@@ -1,0 +1,34 @@
+{
+ "H_is_polynomial_in_a7^7": true,
+ "G_degree": 5,
+ "G_irreducible_over_Q": true,
+ "H_factorization_over_Q": {
+  "content": "1/1",
+  "factors": [
+   [
+    35,
+    1
+   ]
+  ]
+ },
+ "H_irreducible_over_Q": true,
+ "G_monic_coefficients_low_to_high": [
+  "-472010836902934881599035667581952428867584/2343594361433",
+  "11279413270271808313324551549335678976/180276489341",
+  "147853711990125992821207785996960/2343594361433",
+  "265472843532245531128968765/9374377445732",
+  "42022389595776/6311981",
+  "1/1"
+ ],
+ "helali_L_minpoly": "w^5 - w^4 + 3w^3 + 3w^2 + 26",
+ "helali_L_minpoly_irreducible_over_Q": true,
+ "G_factor_degrees_over_helali_L": [
+  1,
+  4
+ ],
+ "G_has_root_in_helali_L": true,
+ "relation": "Q[v]/(G) is isomorphic to Helali's L",
+ "k_field": "K = Q[a7]/(H), degree 35 = 5 * 7 over Q(v) with v = a7^7; L has degree 5",
+ "singular_output_file": "artifacts/p2b_relation_singular.out",
+ "_wall_seconds": 0.2
+}

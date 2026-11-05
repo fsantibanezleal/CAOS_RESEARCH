@@ -44,3 +44,15 @@ where the mathematics says no.
 - **UNVERIFIED discipline**: the [U] items in context/references.md (Smale verbatim text,
   Roberts masses, HM06 internals, Chang-Chen tables, RCD23 uniqueness) must be upgraded
   by direct reads before any conclusion depends on them.
+
+## External status review, 2026-10-30
+
+Last pass 2026-08-24. External: planar five-body finiteness for all positive masses is now claimed by Tomar (arXiv:2610.13100, v1 2026-10-09, v2 2026-10-15, Lean 4 formalization and certificates at Zenodo 10.5281/zenodo.23202861) [V, re-checked], by Chen and Tong (arXiv:2610.16107, v1 2026-10-12, v4 2026-10-29, exact, interval and ball arithmetic, no Lean) [V, re-checked] and by Liu and Liu (arXiv:2610.28168, 2026-10-20) [V]; none refereed. Tomar also claims uniqueness of the strictly convex four-body configuration (arXiv:2609.35632, v2 2026-10-29) [V]. No n = 6 result located [U]. Overlap: the value of our n = 5 tropical replication and of the round-54 certified atlas of the doubly symmetric five-body cross is superseded if these claims hold. OpenAI Math: none.
+
+Plan change (assessment). Not ranked in section 1 of the review. Hold or redirect (assessment): n = 5 finiteness now claimed by several groups; redirect to an independent replay of the Lean-certified claim or gate.
+
+Review plan: hold; strategic review; candidate redirect to an independent replay of the Tomar certificates and Lean proof, or gate the problem.
+
+Record action (review section 3). Record the four five-body claims and the convex four-body claim; strategic review. Gate: Problem round.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).

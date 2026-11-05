@@ -1,0 +1,312 @@
+{
+ "graph": "G52",
+ "X": [
+  22,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "cut_edges": [
+  8,
+  26,
+  39,
+  40,
+  48,
+  59
+ ],
+ "splits": [
+  {
+   "split": 0,
+   "c1": [
+    8,
+    26,
+    39
+   ],
+   "c2": [
+    40,
+    48,
+    59
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 35.8
+  },
+  {
+   "split": 1,
+   "c1": [
+    8,
+    26,
+    40
+   ],
+   "c2": [
+    39,
+    48,
+    59
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 39.5
+  },
+  {
+   "split": 2,
+   "c1": [
+    8,
+    26,
+    48
+   ],
+   "c2": [
+    39,
+    40,
+    59
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 26.8
+  },
+  {
+   "split": 3,
+   "c1": [
+    8,
+    26,
+    59
+   ],
+   "c2": [
+    39,
+    40,
+    48
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 30.9
+  },
+  {
+   "split": 4,
+   "c1": [
+    8,
+    39,
+    40
+   ],
+   "c2": [
+    26,
+    48,
+    59
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 35.2
+  },
+  {
+   "split": 5,
+   "c1": [
+    8,
+    39,
+    48
+   ],
+   "c2": [
+    26,
+    40,
+    59
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 37.4
+  },
+  {
+   "split": 6,
+   "c1": [
+    8,
+    39,
+    59
+   ],
+   "c2": [
+    26,
+    40,
+    48
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 37.0
+  },
+  {
+   "split": 7,
+   "c1": [
+    8,
+    40,
+    48
+   ],
+   "c2": [
+    26,
+    39,
+    59
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T1",
+    "T2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 37.0
+  },
+  {
+   "split": 8,
+   "c1": [
+    8,
+    40,
+    59
+   ],
+   "c2": [
+    26,
+    39,
+    48
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 33.7
+  },
+  {
+   "split": 9,
+   "c1": [
+    8,
+    48,
+    59
+   ],
+   "c2": [
+    26,
+    39,
+    40
+   ],
+   "X_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2"
+   ],
+   "Y_conducted": [
+    "0",
+    "E",
+    "D3",
+    "D2",
+    "T2"
+   ],
+   "ring_diagonal_sectors": [],
+   "seconds": 21.7
+  }
+ ],
+ "all_zero": true,
+ "sides_colorable": true
+}

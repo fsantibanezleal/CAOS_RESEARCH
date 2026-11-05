@@ -88,3 +88,15 @@ grammar; solver output without a checked proof object is never a theorem.
 No separate web deployment is created for this problem in this round; the problem page joins
 the shared static site at the next serialized release (methodology 06). The manuscript is
 deployed to Zenodo (source-only class for the research record itself).
+
+## External status review, 2026-10-30
+
+Last pass 2026-10-06. External: disproved (Putman arXiv:2608.10012; Goedgebeur, Jooken, Máčajová, Mattiolo, Mazzuoccolo, Ulyanov arXiv:2608.10028, v4 2026-09-30) [V]. New since the last pass: none on the conjecture; adjacent only, Mkrtchyan arXiv:2610.35794 (2026-10-26, a complexity statement for H-coloring) [V]. Overlap with CAOS claims: none new; the audit-row overlap with v3 and v4 is already recorded. OpenAI Math: none.
+
+Plan change (assessment). Rank 1 (`petersen-coloring`). Why now: Problem 11 of arXiv:2608.10028v4 (a cyclically 5-edge-connected counterexample) and a bounded Petersen defect on that class are high value and still unclaimed: nothing public after v4 (2026-09-30). The charge calculus and SAT/DRAT toolchain are built. The 52-vertex group is fast, so the window is time-limited. First bounded action: EXP-015 as already ordered in `petersen-coloring/RESUME.md` section 5: 6-poles cut from the cyclically 5-edge-connected snarks of order at most 28, sector matrices, closures; close PCC-F6 if no zero-trace element exists.
+
+Review plan: unchanged, PCC-F6 stays active (rank 1).
+
+Record action (review section 3): none names this problem.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).

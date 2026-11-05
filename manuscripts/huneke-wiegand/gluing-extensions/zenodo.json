@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Tensor Factorization of Extension Ideals under Gluing and Huneke–Wiegand Counterexamples with Many Generators",
+    "creators": [
+      {
+        "name": "Santibáñez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>Let Γ = a1·Γ1 + a2·Γ2 be a gluing of numerical semigroups, k a field, and A = a1·A1 + a2·A2 the extension of relative ideals A_i of Γ_i. With y acting on k[Γ1] as t^a2 and on k[Γ2] as t^a1, we prove that I_A ⊗_{k[Γ]} I_{A*} ≅ T1 ⊗_{k[y]} T2, where T_i = I_{A_i} ⊗ I_{A_i*}. Consequently the torsion lengths satisfy ℓ(τ(I_A ⊗ I_{A*})) = a1·ℓ(τ(T1)) + a2·ℓ(τ(T2)) + Σ_{j≥1} b1(j)·b2(j), where b_i(j) counts the Jordan blocks of size at least j of y on τ(T_i), and the numbers of minimal generators multiply. Hence A has the Huneke-Wiegand property if and only if A1 or A2 is a non-principal ideal with that property.</p><p>This re-proves the two gluing propositions of García-Sánchez and Leamer and settles the case they leave open: when both factors are non-principal and the tensor product of each with its dual is torsion-free, so is the tensor product for the extension. Since the Huneke-Wiegand conjecture is now known to be false, this produces counterexample ideals with 2^r minimal generators over symmetric numerical semigroup rings. We give two explicit four-generated examples, over symmetric semigroups with Frobenius numbers 23645 and 53599, built from Pham's counterexample and from an infinite family of counterexamples. Exact computations by two independent routes, the definition of the tensor product and Leamer's partition criterion, confirm the length law on 200 seeded gluings.</p><p>The results concern monomial (relative) ideals; ideals of a gluing that are not extensions are not covered.</p><p>Source code, compact artifacts and proofs: https://github.com/fsantibanezleal/CAOS_RESEARCH .</p>",
+    "keywords": [
+      "Huneke-Wiegand conjecture",
+      "numerical semigroups",
+      "gluing of numerical semigroups",
+      "semigroup rings",
+      "torsion in tensor products",
+      "relative ideals",
+      "Apery sets",
+      "commutative algebra",
+      "experimental mathematics"
+    ],
+    "subjects": [
+      {
+        "term": "Homological functors on modules (Tor, Ext, etc.) in commutative rings",
+        "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=13D07",
+        "scheme": "url"
+      },
+      {
+        "term": "Commutative semigroups",
+        "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=20M14",
+        "scheme": "url"
+      }
+    ],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "references",
+        "identifier": "10.5281/zenodo.21763582",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/1211.4554",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/1211.2896",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/1305.4238",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/1808.06600",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2608.21666",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2609.07615",
+        "resource_type": "publication-preprint"
+      }
+    ],
+    "version": "0.01",
+    "language": "eng",
+    "publication_date": "2026-10-30"
+  }
+}

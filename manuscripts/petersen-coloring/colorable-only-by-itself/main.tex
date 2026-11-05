@@ -34,9 +34,9 @@
 
 \newcommand{\doctype}{Preprint}
 \newcommand{\docversion}{v0.01}
-\newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.00000000}
-\newcommand{\conceptdoi}{10.5281/zenodo.00000000}
+\newcommand{\docdate}{6 October 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22859075}
+\newcommand{\conceptdoi}{10.5281/zenodo.22859074}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
 \begin{center}
@@ -317,11 +317,12 @@ checked proofs for both graphs, and so is the formula for normal 5-edge-coloring
 \begin{theorem}[machine-verified]\label{thm:orders}
 For every even $k$ listed in Table~\ref{tab:orders}, no loopless cubic graph on $k$ vertices colors
 the corresponding graph with a vertex map of kind \textup{(O)}, \textup{(E0)} or \textup{(E1)}.
-The list contains every even $k$ with $40 \le k \le 50$ for both $\Ga$ and $\Gb$%%EXTRA_ORDERS%%.
+The list contains every even $k$ with $40 \le k \le 50$ for both $\Ga$ and $\Gb$; for $\Ga$ it
+also contains 2, 4, 24, 26, 28, 30, 32, 34, 36 and 38, and for $\Gsix$ it contains 62, 64 and 66.
 \end{theorem}
 
 Goedgebeur et al.\ established by an exhaustive computation that every bridgeless cubic graph on
-at most 38 vertices has a Petersen coloring~\cite[Observation~9]{GJMMMU2026}. The statement
+at most 38 vertices has a Petersen coloring~\cite[Observation~10]{GJMMMU2026}. The statement
 extends to graphs with parallel edges.
 
 \begin{lemma}\label{lem:digon}
@@ -350,7 +351,7 @@ less than 52 colors $G$. By Corollary~\ref{cor:modes} there is one, say $H$, of 
 $k < 52$ with a vertex map of kind (O), (E0) or (E1). Since $H$ colors a graph without a Petersen
 coloring, $H$ has no Petersen coloring. By Lemma~\ref{lem:digon}, applied repeatedly, there is a
 simple connected bridgeless cubic graph of order at most $k$ without a Petersen coloring, so
-$k \ge 40$ by~\cite[Observation~9]{GJMMMU2026}. This contradicts Theorem~\ref{thm:orders}.
+$k \ge 40$ by~\cite[Observation~10]{GJMMMU2026}. This contradicts Theorem~\ref{thm:orders}.
 Theorem~\ref{thm:mmsw} gives the conclusion.
 \end{proof}
 
@@ -376,6 +377,9 @@ $\Ga$ & 36 & 41{,}619 & 1{,}012{,}822 & 1{,}831 & 189{,}001{,}378 & 1{,}246 \\
 $\Ga$ & 34 & 38{,}412 & 907{,}040 & 2{,}570 & 315{,}072{,}154 & 1{,}302 \\
 $\Ga$ & 32 & 35{,}313 & 807{,}090 & 3{,}007 & 359{,}772{,}266 & 1{,}595 \\
 $\Ga$ & 30 & 32{,}322 & 712{,}972 & 2{,}597 & 451{,}748{,}771 & 4{,}210 \\
+$\Ga$ & 28 & 29{,}439 & 624{,}686 & n/a & 865{,}403{,}665 & 15{,}096 \\
+$\Ga$ & 26 & 26{,}664 & 542{,}231 & n/a & 1{,}260{,}353{,}655 & 2{,}201 \\
+$\Ga$ & 24 & 23{,}997 & 465{,}609 & n/a & 1{,}746{,}345{,}370 & 3{,}929 \\
 $\Ga$ & 4 & 3{,}111 & 20{,}045 & 1{,}843 & 434{,}204{,}743 & 6{,}979 \\
 $\Ga$ & 2 & 1{,}724 & 7{,}615 & 3 & 1{,}247{,}206 & 5 \\
 \midrule
@@ -383,9 +387,12 @@ $\Gb$ & 50 & 67{,}092 & 1{,}916{,}592 & 73 & 17{,}037{,}541 & 129 \\
 $\Gb$ & 48 & 63{,}129 & 1{,}769{,}986 & 460 & 42{,}390{,}272 & 687 \\
 $\Gb$ & 46 & 59{,}274 & 1{,}629{,}212 & 1{,}991 & 120{,}499{,}030 & 599 \\
 $\Gb$ & 44 & 55{,}527 & 1{,}494{,}270 & 3{,}476 & 363{,}213{,}799 & 8{,}930 \\
+$\Gb$ & 42 & 51{,}888 & 1{,}365{,}160 & n/a & 1{,}094{,}080{,}367 & 5{,}002 \\
+$\Gb$ & 40 & 48{,}357 & 1{,}241{,}882 & 4{,}421 & 2{,}371{,}439{,}853 & 5{,}196 \\
 \midrule
 $\Gsix$ & 66 & 116{,}540 & 4{,}279{,}152 & 218 & 59{,}635{,}574 & 349 \\
 $\Gsix$ & 64 & 111{,}297 & 4{,}028{,}562 & 878 & 80{,}324{,}045 & 1{,}893 \\
+$\Gsix$ & 62 & 106{,}162 & 3{,}785{,}532 & 6{,}203 & 220{,}929{,}628 & 10{,}655 \\
 \bottomrule
 \end{tabular}
 \caption{Target orders $k$ refuted with DRAT proofs accepted by \texttt{drat-trim}. The formula of order $k$ is unsatisfiable: no loopless cubic graph on $k$ vertices colors the graph with a vertex map of kind (O), (E0) or (E1). Times were measured while other computations shared the machine.}\label{tab:orders}
@@ -406,9 +413,11 @@ and $\Gb$ in $\Hthree$ is necessary for them to be smallest counterexamples; it 
 since $\Hthree$ may contain graphs of different orders that do not color one another.
 
 \emph{The other known counterexamples.} The same question is open for the counterexample on 68
-vertices and for the two on 112 vertices. An affirmative answer to ``is it colored by a smaller
-bridgeless cubic graph'' would exhibit a smaller counterexample, possibly one of $\Ga$, $\Gb$. The
-formulas of Section~\ref{sec:encoding} apply without change; the largest has target order 110.
+vertices, for which the target orders 62, 64 and 66 are refuted (Table~\ref{tab:orders}) and the
+orders 40 to 60 remain, and for the two on 112 vertices. An affirmative answer to ``is it colored
+by a smaller bridgeless cubic graph'' would exhibit a smaller counterexample, possibly one of
+$\Ga$, $\Gb$. The formulas of Section~\ref{sec:encoding} apply without change; the largest has
+target order 110.
 
 \emph{Why the fiber lemmas matter.} Without Lemmas~\ref{lem:parity} and~\ref{lem:unused} the
 unknown target has vertices and edges that no edge of $G$ constrains. For $\Ga$ the loop of
@@ -442,7 +451,7 @@ Zenodo v1.1.0 (2026), \href{https://doi.org/10.5281/zenodo.21845291}{doi:10.5281
 arXiv:2608.10012.
 \bibitem{GJMMMU2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
 S.~Ulyanov, Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite
-family of counterexamples, arXiv:2608.10028v3 (2026).
+family of counterexamples, arXiv:2608.10028v4 (2026).
 \bibitem{MMSW2025} Y.~Ma, D.~Mattiolo, E.~Steffen, I.~H. Wolf, Sets of $r$-graphs that color all
 $r$-graphs, Combinatorica 45 (2025), Article 16,
 \href{https://doi.org/10.1007/s00493-025-00144-4}{doi:10.1007/s00493-025-00144-4}; arXiv:2305.08619.

@@ -61,3 +61,7 @@
   mixed volume 25380.
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.
+
+- **2026-11-02:** n = 5 settled externally (Tomar with Lean; Chen and Tong; Liu and Liu). EXP-024 audited the
+  Lean statement (faithful) and its sources (no kernel bypass). Manuscript v0.11 published
+  (10.5281/zenodo.23887585). Next: CCB-041, n = 6, with a new hypothesis and budget.

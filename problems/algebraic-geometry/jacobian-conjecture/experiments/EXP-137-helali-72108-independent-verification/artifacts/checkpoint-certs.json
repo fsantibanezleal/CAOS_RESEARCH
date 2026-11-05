@@ -1,0 +1,166 @@
+{
+ "case2_unit_identity": {
+  "certificate": {
+   "file": "case2_exact_certificate.pkl",
+   "sha256": "cfbc3c39d7a28013671144f43ef76f0498542eaf6d562dd624bba3311194e4aa",
+   "pickle_global_opcodes": []
+  },
+  "status": "PASS",
+  "field_degree": 35,
+  "field_minpoly_irreducible_over_Q": true,
+  "field_minpoly_monic_sha256": "bcbd066c7a623446335d62befacf8422e55a526a480a83fb2839ae553675e9b9",
+  "field_equals_our_P2_field": true,
+  "generators": 4,
+  "generator_terms": [
+   8,
+   8,
+   14,
+   14
+  ],
+  "multiplier_terms": [
+   23,
+   20,
+   14,
+   11
+  ],
+  "identity_residual_nonzero_terms": 0,
+  "identity_holds_sum_gT_equals_1": true,
+  "eval_seconds": 7.63,
+  "p4_corrupt_multiplier_coefficient_identity_fails": true,
+  "p4_corrupt_generator_coefficient_identity_fails": true,
+  "p4_residual_terms_after_corruption": [
+   8,
+   14
+  ]
+ },
+ "case1_h0_branch_s_eq_c": {
+  "certificate": {
+   "file": "h0_branch1_exact_certificate.pkl",
+   "sha256": "664de005e99bc6a0e61ba479ba64ed57ddbfa9c5399b955cbb12237ac70f8186",
+   "pickle_global_opcodes": []
+  },
+  "status": "PASS",
+  "branch_label": "s=c",
+  "field_degree": 35,
+  "field_minpoly_irreducible_over_Q": true,
+  "field_minpoly_monic_sha256": "bcbd066c7a623446335d62befacf8422e55a526a480a83fb2839ae553675e9b9",
+  "field_equals_our_P2_field": true,
+  "generators": 7,
+  "generator_terms": [
+   5,
+   9,
+   9,
+   11,
+   11,
+   11,
+   10
+  ],
+  "multiplier_terms": [
+   11,
+   6,
+   6,
+   6,
+   6,
+   6,
+   0
+  ],
+  "identity_residual_nonzero_terms": 0,
+  "identity_holds_sum_gT_equals_1": true,
+  "eval_seconds": 2.18,
+  "p4_corrupt_multiplier_coefficient_identity_fails": true,
+  "p4_corrupt_generator_coefficient_identity_fails": true,
+  "p4_residual_terms_after_corruption": [
+   5,
+   6
+  ]
+ },
+ "case1_h0_branch_s_eq_minus_c": {
+  "certificate": {
+   "file": "h0_exact_certificate.pkl",
+   "sha256": "d7844c2f8edea62be4e3a7fe8a160dc4b7b70efd1262993ec6d2ed7e78722a1a",
+   "pickle_global_opcodes": []
+  },
+  "status": "PASS",
+  "branch_label": "s=-c",
+  "field_degree": 35,
+  "field_minpoly_irreducible_over_Q": true,
+  "field_minpoly_monic_sha256": "bcbd066c7a623446335d62befacf8422e55a526a480a83fb2839ae553675e9b9",
+  "field_equals_our_P2_field": true,
+  "generators": 7,
+  "generator_terms": [
+   5,
+   9,
+   9,
+   11,
+   11,
+   11,
+   10
+  ],
+  "multiplier_terms": [
+   11,
+   6,
+   6,
+   6,
+   6,
+   6,
+   0
+  ],
+  "identity_residual_nonzero_terms": 0,
+  "identity_holds_sum_gT_equals_1": true,
+  "eval_seconds": 2.06,
+  "p4_corrupt_multiplier_coefficient_identity_fails": true,
+  "p4_corrupt_generator_coefficient_identity_fails": true,
+  "p4_residual_terms_after_corruption": [
+   5,
+   6
+  ]
+ },
+ "case1_hard_identity_s_eq_c": {
+  "status": "PASS",
+  "system_pickle": {
+   "file": "hne0_polred.pkl",
+   "sha256": "5a6e423d74ef09fc9c7a7282c500bda566018d7e56a93124665796bbe417cedf",
+   "pickle_global_opcodes": []
+  },
+  "certificate_file": {
+   "file": "hard/h_certificate_exact.txt",
+   "bytes": 89105967
+  },
+  "certificate_sha256": "0e48ffab32469ef8405a6945b16cf1521ddeb3c592ae4e5051968110a4dc656a",
+  "header": [
+   "JC2_H_CERTIFICATE_V1",
+   "minpoly=w^5-w^4+3*w^3+3*w^2+26",
+   "identity=h-T1*E1-T2*E2-T3*E3-T4*E4=0",
+   "coefficients=385"
+  ],
+  "field_minpoly": "w^5-w^4+3*w^3+3*w^2+26",
+  "field_minpoly_irreducible_over_Q": true,
+  "multiplier_coefficients": 385,
+  "distinct_supports": 385,
+  "max_bits_numerator": 85342,
+  "system_equations": 6,
+  "system_terms": [
+   30,
+   30,
+   40,
+   40,
+   40,
+   30
+  ],
+  "equations_used": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "distinct_monomials_in_identity": 402,
+  "identity_residual_nonzero_terms": 0,
+  "identity_holds_h_equals_sum_TE": true,
+  "eval_seconds": 246.9,
+  "p4_corrupt_certificate_coefficient_residual_terms": 30,
+  "p4_corrupt_generator_coefficient_residual_terms": 100,
+  "p4_corrupt_certificate_coefficient_identity_fails": true,
+  "p4_corrupt_generator_coefficient_identity_fails": true
+ },
+ "_wall_seconds": 765.3
+}

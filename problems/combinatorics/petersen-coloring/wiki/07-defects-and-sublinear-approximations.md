@@ -85,6 +85,78 @@ around a ring with an even number of copies, because any two edges of $P$ can be
 automorphism (checked on the 120 automorphisms), so those cyclic joins are Petersen colorable. The 4-poles $G - \{u, v\}$ for an edge $uv$ are colorable as well: this is the
 universal 2-criticality of page 04 read at adjacent pairs.
 
+## Statement (e) is a two-defect statement (Theorem 6, 2026-09-19)
+
+**Theorem 6 [D]** (assuming Proposition 2 of Mattiolo et al., stated there without proof: cyclic
+joins of copies of $G - e_1 - e_2$ are cyclically 4-edge-connected). The following are equivalent:
+
+1. statement (e): a sublinear function bounds $\mathrm{ab}$ on cyclically 4-edge-connected cubic
+   graphs;
+2. $\mathrm{ab}(G) \le 18$ for every cyclically 4-edge-connected cubic graph $G$;
+3. $\mathrm{pd}(G) \le 2$ for every cyclically 4-edge-connected cubic graph $G$;
+4. for every such $G$ and every path $abcd$, the 4-pole $G - ab - cd$ is Petersen colorable.
+
+*Proof idea.* (3) gives (2): color each edge by the Kneser color of its image; the coloring is
+proper and every edge with two good ends is poor or rich; recoloring the three edges at each of
+the at most two bad vertices keeps the coloring proper and can make abnormal only the 9 edges
+within distance one of each. (2) gives (1) trivially. (1) gives (3) by Proposition 5. (4) gives
+(3) by the relabeling in the proof of Proposition 5, and (3) gives (4) because a non-colorable
+$G - ab - cd$ would give joins of defect at least 3.
+
+**Consequence.** Given the disproof, Conjecture 3 of Mattiolo et al. holds if and only if some
+cyclically 4-edge-connected cubic graph has Petersen defect at least 3. If every such graph can be
+mapped into $E(P)$ with at most two bad vertices, (e) holds with a constant bound and the
+conjecture is false.
+
+**Evidence (EXP-010, EXP-011).** In all fifteen cyclically 4-edge-connected counterexamples
+examined (the five public ones and the ten dot products $G_{52} \cdot G_{52}$, which have cyclic
+edge connectivity exactly 4) every adjacent vertex pair is critical, and every 4-pole
+$G - e_1 - e_2$ of $G_{52}$, $G'_{52}$, $G_{68}$ is colorable. This points to (e) being true, against
+the conjecture; it decides nothing. A single cyclically 4-edge-connected counterexample with a
+non-critical adjacent pair would reverse the picture.
+
+## Resolution: statement (e) is false (EXP-012, 2026-09-19)
+
+Sources: `context/2026-09-19-conduction.md`; EXP-012 hypothesis, addenda and verdict.
+
+**Conduction.** For edges $x, y$ of $P$, the class of $\mathbf 1_x + \mathbf 1_y$ modulo the cut
+space determines the distance $d(x, y) \in \{0,1,2,3\}$ in the line graph of $P$ (the symmetric
+difference of two pairs with equal classes is a cut of weight at most 4: empty, or the four edges
+around an edge). In a 4-pole whose vertices are all good, the sum of the four dangling labels is a
+sum of stars, so its two connectors carry the same class and hence the same distance. The set
+$D(M)$ of distances a 4-pole can transmit is a signature of the 4-pole with its pairing.
+
+**Restoration.** For a graph $G$ without a Petersen coloring: $G - ab - cd$ (connectors $\{a,b\}$,
+$\{c,d\}$) never transmits distance 0, and $G - \{u, v\}$ (connectors: the ends at $u$, the ends at
+$v$) never transmits distance 1; in both cases the transmitted labels would restore a Petersen
+coloring of $G$.
+
+**Rings.** If $D(A) \cap D(B) = \emptyset$, the ring alternating $t$ copies of $A$ and $t$ copies of
+$B$ has, under every map, bad vertices in at least $t$ of its $2t$ blocks: two consecutive good
+blocks would share a connector with a distance in both sets.
+
+**The instance.** $A = G_{52} - \{0,3\} - \{1,9\}$ has $D(A) = \{1\}$ and $B = G_{52} - \{2,7\}$
+has $D(B) = \{0\}$ (every excluded distance refuted with a verified proof; each exclusion alone
+suffices, together with the restoration lemma for the other block). The rings $R_1$, $R_2$ have no
+cycle-separating cut with at most three edges (bridge search, cross-checked), $R_1$ has no Petersen
+coloring and $\mathrm{pd}(R_2) = 2$ with the bad vertices in the two $B$-blocks. A short argument
+(the ring carries four edge-disjoint paths between any two blocks; a small cycle-separating cut
+would be confined to at most three consecutive blocks, a configuration already present in $R_2$)
+gives cyclic 4-edge-connectivity of every $R_t$, $t \ge 2$.
+
+**Theorem.** For every $t \ge 2$, $R_t$ is a cyclically 4-edge-connected cubic graph of girth 5 on
+$102t$ vertices with $\mathrm{ab}(R_t) \ge \mathrm{pd}(R_t) \ge t$. So no sublinear function
+bounds $\mathrm{ab}$ on cyclically 4-edge-connected cubic graphs: statement (e) is false, all five
+statements of Conjecture 3 of Mattiolo, Mazzuoccolo and Mkrtchyan are false, and the conjectured
+equivalence holds.
+
+**What the earlier evidence missed.** The fifteen cyclically 4-edge-connected counterexamples of
+EXP-006, EXP-008 and EXP-011 all had every adjacent pair critical, and the record called this
+"consistent with (e)". $R_2$ is cyclically 4-edge-connected and has non-critical adjacent pairs
+(two bad vertices must sit in non-consecutive blocks), and $R_3$ has no critical pair at all. The
+inference from the known counterexamples to the class was wrong; the conduction signature, not
+criticality, is what separates the two behaviours.
+
 ## Exact values on small instances (EXP-009)
 
 | graph | order | connectivity | pd | ab |
@@ -97,14 +169,22 @@ universal 2-criticality of page 04 read at adjacent pairs.
 Every witness has exactly one bad vertex per block. Rings and the $K_4$ frame of the
 Petersen-colorable snark $J_5$ are Petersen colorable (controls).
 
+The conduction rings of EXP-012 (cyclically 4-edge-connected, girth 5, $102t$ vertices):
+
+| graph | order | pd | how |
+|---|---|---|---|
+| $R_1$ | 102 | at least 2 | no Petersen coloring (verified proof), parity theorem |
+| $R_2$ | 204 | 2 | ring theorem (at least 2) and a witness with the bad vertices in the two $B$-blocks |
+| $R_3$ | 306 | 3 | ring theorem (at least 3) and a designated relaxation with three bad vertices, solved in 168.6 s (EXP-012 addendum 4, 2026-10-06) |
+
 ## Open
 
-- Statement (e): a cyclically 4-edge-connected cubic graph with $\mathrm{ab} \ge 10$, or a proof
-  that $\mathrm{ab} \le 9$ on that class.
-- By Proposition 5, a cyclically 4-edge-connected cubic graph with Petersen defect at least 3
-  would be enough. Ten dot products of $G_{52}$ with itself (102 vertices, new counterexamples with
-  checked proofs) all have defect 2.
-- Is $\mathrm{pd}$ bounded on cyclically 4-edge-connected cubic graphs? A superposition approach
-  (superedges $G - \{u, v\}$ with $u, v$ far apart carry a nonzero class of
-  $\mathbb{F}_2^{E(P)}$ modulo the cut space from one connector to the other) is recorded as
-  research line PCR-7.
+- Exact abnormal-edge numbers of the $R_t$: only $\mathrm{ab}(R_t) \ge \mathrm{pd}(R_t) \ge t$ is
+  known.
+- Problem 11 of arXiv:2608.10028v4: is there a cyclically 5-edge-connected cubic graph without a
+  Petersen coloring? The ring theorem with 3-edge junctions would give one, and with it unbounded
+  defect in that class, from two 6-poles with disjoint conducted sets. EXP-013 measured the charge
+  classes conducted by every 6-pole of $P$, $J_5$, $J_7$ and the dodecahedron: all conduct the
+  core $\{0, E, D_2\}$ (`context/2026-10-06-charges.md`, section 6), so that route needs finer
+  structure than charges. The exact structure is the transfer semigroup of
+  `context/2026-10-06-charges.md`, section 7 (EXP-014).

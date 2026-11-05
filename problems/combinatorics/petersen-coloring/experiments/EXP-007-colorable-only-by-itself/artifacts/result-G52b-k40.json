@@ -1,0 +1,19 @@
+{
+ "graph": "G52b",
+ "k": 40,
+ "status": "UNSAT",
+ "verified": true,
+ "proof_bytes": 2371439853,
+ "proof_sha256": "7abe12eb57336e4e4eadb594da989c64072e5325b7af8e63590d04472df2ad2b",
+ "cnf_sha256": "dfe81aa700c9cb190a3e7d62bc7dc6c5d4c0ed73fcb6d4e0bb65d5dbb4fec62e",
+ "reduced": true,
+ "portfolio": "default,unsat,seed7",
+ "winner": "default",
+ "variables": 48357,
+ "clauses": 1241882,
+ "certify_solve_seconds": 4421,
+ "check_seconds": 5196,
+ "rounds": 1,
+ "learned_cuts": 0,
+ "note": "solved by the portfolio of addendum 6; the portfolio record with the drat-trim tail is result-G52b-k40-portfolio.json"
+}

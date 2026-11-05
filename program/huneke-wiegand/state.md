@@ -479,3 +479,11 @@ other surviving-variant questions remain open. Manuscript v0.04 publishes that t
 `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825` exactly. PR #150 passed
 both required CI jobs and promoted the complete theorem, experiment, manuscript, and publication
 record to `develop` at merge commit `273ce4d2ca73f75762824168b41e8e3494612c05`.
+
+## 2026-10-30 heartbeat: EXP-068 and the gluing-extensions companion
+
+State stays `published`. HW-F7 is closed (EXP-067 is a credited corollary of García-Sánchez and Leamer
+2012). HW-F8 is closed in substance by EXP-068 (CONFIRMED); its manuscript `gluing-extensions` v0.01 has
+a reserved DOI `10.5281/zenodo.23821498` and a frozen PDF, and publication waits for Felipe's permission
+for the Zenodo publish step (HWB-100). Next candidate focus after publication: HWB-101 (non-extension
+ideals of gluings), with a strategic review first.

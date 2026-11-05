@@ -206,3 +206,12 @@ RH-038 disposition, 2026-10-04: its moment-improvement target is closed
 by EXP-028 via the complete EXP-027/Mellin route. The earlier hybrid
 asymptotic-large-sieve obligation was bypassed, not proved. Further RH-F4
 work is the unproved frequency preflight, not an automatic EXP-023 restart.
+
+## Portfolio review 2026-10-30
+
+Research stays paused (Felipe, 2026-10-04). The two rows below are a publication correction, not an experiment, and need his go. Source: [portfolio review](../portfolio-review-2026-10-30.md).
+
+| ID | Work | Status | Priority |
+|---|---|---|---|
+| RH-049 | Correction review of `sharp-three-point-kernel` v0.01: it transfers a global proportion through Wang's arXiv:2609.24167v1 framework, withdrawn on 2026-10-06 (reason given: "New method is need to obtain good improvement") | done 2026-11-02: v0.02 published (10.5281/zenodo.23895875); ratio theorem claimed, proportions stated as conditional and not claimed | P0 |
+| RH-050 | Re-read the Wang arXiv:2609.07918v2 pair theorem (v2 of 2026-10-06, onset 0.5501) used by the EXP-010 onset | done 2026-11-02: the local pair theorem is unchanged in v2 (theorem-by-theorem comparison of v1 and v2); the EXP-010 onset input stands | P1 |

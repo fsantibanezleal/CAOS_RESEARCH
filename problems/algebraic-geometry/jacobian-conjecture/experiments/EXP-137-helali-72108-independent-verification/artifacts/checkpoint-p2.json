@@ -1,0 +1,43 @@
+{
+ "d_solved": 11,
+ "compat_equations": 6,
+ "compat_degrees": [
+  9,
+  9,
+  9,
+  9,
+  9,
+  9
+ ],
+ "singular_output_file": "artifacts/p2_singular.out",
+ "dp_size": 56,
+ "dim": 0,
+ "mult": 35,
+ "lex_size": 6,
+ "dp_time_seconds": 138,
+ "lex_relations": 6,
+ "eliminant_degree": 35,
+ "eliminant_in_a7_only": true,
+ "eliminant_irreducible_over_Q": true,
+ "eliminant_factor_degrees": [
+  [
+   35,
+   1
+  ]
+ ],
+ "eliminant_exponents": [
+  0,
+  7,
+  14,
+  21,
+  28,
+  35
+ ],
+ "eliminant_monic_hash": "bcbd066c7a623446335d62befacf8422e55a526a480a83fb2839ae553675e9b9",
+ "lex_shape_linear_in_a2_to_a6": true,
+ "helali_H_file": "bundle/exact_replay/firstblock_Q_exact.out (L[1])",
+ "helali_H_equal_up_to_constant": true,
+ "helali_H_constant_ratio_ours_over_theirs": "1/1",
+ "status": "PASS",
+ "_wall_seconds": 14.5
+}

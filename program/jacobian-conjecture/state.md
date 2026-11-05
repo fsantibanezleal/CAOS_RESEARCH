@@ -448,3 +448,9 @@
   status of the 24-parameter core, `(72,108)`, the degree floor, or JC(2).
   Accepted artifact SHA-256:
   `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
+
+## 2026-11-01 heartbeat
+
+State stays `exploring`. Planar focus redirected by the 2026-10-30 review: the long transverse Fitting atlas
+is parked while EXP-137 independently verifies Helali's claimed exclusion of (72,108). EXP-138 lowered the
+Mathieu threshold to N >= 15; cascade v0.07 is published (10.5281/zenodo.23873236).

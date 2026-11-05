@@ -878,3 +878,22 @@
   face-touching, the same vanishing-floor situation as the merge face, so
   that stratum still has its two faces open and its blow-up sub-chart
   unbuilt.
+
+## 2026-10-30 - portfolio review: external status
+
+External status: planar five-body finiteness for all positive masses is now claimed by Tomar (arXiv:2610.13100, Zenodo 10.5281/zenodo.23202861) [V, re-checked], by Chen and Tong (arXiv:2610.16107, v4 2026-10-29) [V, re-checked] and by Liu and Liu (arXiv:2610.28168, 2026-10-20) [V]; none refereed. Tomar also claims uniqueness of the strictly convex four-body configuration (arXiv:2609.35632, v2 2026-10-29) [V]. No n = 6 result located [U].
+Overlap: the value of our n = 5 tropical replication and of the round-54 certified atlas of the doubly symmetric five-body cross is superseded if these claims hold.
+Plan change (assessment): hold; strategic review; candidate redirect to an independent replay of the Tomar certificates and Lean proof, or gate the problem. New rows CCB-038 to CCB-040.
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## Round 55 (2026-11-02): the five-body case settled elsewhere; the Lean statement audited
+
+- Planar five-body finiteness for every positive mass vector is claimed by Tomar (arXiv:2610.13100, Lean 4),
+  Chen and Tong (arXiv:2610.16107) and Liu and Liu (arXiv:2610.28168).
+- EXP-024 CONFIRMED: Tomar's `MainTheorem` states exactly the classical claim; no stored source of the
+  formalization (2,751 files) and none of the 85,756 generated modules (archives checked against their
+  SHA-256) contains `sorry`, `admit`, an axiom, `native_decide`, `implemented_by`, `extern`,
+  `ofReduceBool`, `unsafe` or `skipKernelTC`. The 863 CPU-hour rebuild was not done.
+- Strategic review: the n = 5 atlas and the tropical n = 5 work are retired as routes to the theorem; the
+  open case is n = 6 (CCB-041). Tropical-replication v0.11 published, 10.5281/zenodo.23887585.

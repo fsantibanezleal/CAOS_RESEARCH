@@ -1,0 +1,1640 @@
+{
+ "family": "G52uv",
+ "poles": {
+  "G52-v0-v3": {
+   "dangling": [
+    [
+     4,
+     1
+    ],
+    [
+     12,
+     2
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.228,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 4.691,
+      "verified": true,
+      "proof_sha256": "5998201f319197372ea2d6df4ee14d8a5f6619d0426dc7c4c1316f1ccb30c7e0"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 3.824,
+      "verified": true,
+      "proof_sha256": "b961f73edaebbaba6a7c4412216631187feb8b7dfeeebd64a7602687b1495e30"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 3.721,
+      "verified": true,
+      "proof_sha256": "9a3a4b5c4c837e75f500f0cb5531d8ef93877259b632ba399290f8babefb9bd5"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.264,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.342,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.781,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 3.732,
+      "verified": true,
+      "proof_sha256": "d438d945f86edd1c62cfeac219a8f705c8b24184545d102818460fee34716c32"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.121,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.188,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.808,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.132,
+      "verified": true,
+      "proof_sha256": "18a37820d5a21d0c29200fdd2400ba9cebd7fe5c32a5c92901b81ae6353d05c0"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v0-v4": {
+   "dangling": [
+    [
+     3,
+     0
+    ],
+    [
+     12,
+     2
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     11
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.715,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 5.538,
+      "verified": true,
+      "proof_sha256": "6aba01abf0b13a1b77353801c966548b114061a0111cc63ae517565b105c15a1"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 5.013,
+      "verified": true,
+      "proof_sha256": "4c82536485b653df7b5e1f1094d41cdf4e0412ab7698bd763969e4c532ecee66"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 5.385,
+      "verified": true,
+      "proof_sha256": "9600a85ffd36e9a539f25ab40e2b451a5651140311e83e1b7ff970549124339c"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.574,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 2.028,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 1.793,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 3.738,
+      "verified": true,
+      "proof_sha256": "e43b222d98a26d58cbadbb78e3601fbcba8e734c02bafd89b8ff12fba184e6a9"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.143,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.874,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.202,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.149,
+      "verified": true,
+      "proof_sha256": "9e373fc630c0129509adb6da909f928296bdc8c2a27a0a566850b607dc77794b"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v0-v12": {
+   "dangling": [
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     14,
+     22
+    ],
+    [
+     15,
+     23
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.188,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 2.131,
+      "verified": true,
+      "proof_sha256": "3b3fee996a251491f558e33d871f8a2d0e89f5f3d6283cff0a29d8303eceb070"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 1.063,
+      "verified": true,
+      "proof_sha256": "b28d2a3b62eb36c2cde9584b1bf1aafe3e1c21854c0f69a8946626e7140a99cc"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.192,
+      "verified": true,
+      "proof_sha256": "a091382a07e528f6e7426f3ffe4374bf7de5ce28b6323649e53efbb404846070"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.261,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.133,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.141,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.125,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.184,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.119,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.229,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.261,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v1-v6": {
+   "dangling": [
+    [
+     9,
+     4
+    ],
+    [
+     51,
+     5
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     8,
+     15
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.151,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 1.69,
+      "verified": true,
+      "proof_sha256": "caed1328eefd0808f3861d23e7143b237bd9c43745fc371880e490099f7f1a53"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 1.785,
+      "verified": true,
+      "proof_sha256": "b860247a12b8f04d309b85a75aa1ad0f79da65e69536a92d11d64f331eb2b407"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.875,
+      "verified": true,
+      "proof_sha256": "df6d604a25d58dd8e72f45d84621baa3634dcde245abc406269e45a183edfbf9"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.27,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.179,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.717,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.934,
+      "verified": true,
+      "proof_sha256": "dccbabc014b8cbd2b84de92e3a33d1a12b1509fea2c725e4009b0e59ac4f7e87"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 1.011,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.701,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.172,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.716,
+      "verified": true,
+      "proof_sha256": "e498eb88486708091810979e80e09d995f384bd869e1c7f8aa846bff1ed13c0a"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v1-v51": {
+   "dangling": [
+    [
+     6,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     18,
+     33
+    ],
+    [
+     35,
+     59
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.14,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 1.869,
+      "verified": true,
+      "proof_sha256": "851fe5e67332ac9ec66fffe17e087458e8a13e0503f010c5b6fbb8b044b86515"
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.236,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.709,
+      "verified": true,
+      "proof_sha256": "6e7341b20a32a67b2d9ead9e261000901c387d7fced5b9ad14760257eabb5ce1"
+     },
+     "D": [
+      0,
+      2
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.149,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.191,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.668,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.28,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.228,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.175,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.265,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.254,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v2-v3": {
+   "dangling": [
+    [
+     0,
+     0
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     45,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.292,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.178,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.204,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.722,
+      "verified": true,
+      "proof_sha256": "45c9b74ed161865314d25926e11560489c1649ebb7795613dbca1f33addf1e07"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.229,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.203,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.552,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.98,
+      "verified": true,
+      "proof_sha256": "2d43386f28d3f385ca2f1d5413d675664c8192306e7a3bf30067251737fc151e"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.167,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 4.597,
+      "verified": true,
+      "proof_sha256": "623ebbe2d5facb5e06bf2417f5598f1489acc6602c3a1763729679ed18a68e7b"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 2.049,
+      "verified": true,
+      "proof_sha256": "64797ad7f6c29d299004fe67ebd9600436822ea29f055a8059194c4a86f98bd6"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.352,
+      "verified": true,
+      "proof_sha256": "e93f37ba437b90289cdab8f2b7349b8006bfa5593c04d813c5cfb4b752aea606"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v2-v7": {
+   "dangling": [
+    [
+     3,
+     6
+    ],
+    [
+     45,
+     8
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     5,
+     12
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.147,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 2.738,
+      "verified": true,
+      "proof_sha256": "7ee693092a66b4b2a4c600fe51c11038909d7f9dc4a447d8160da472dab4c1e4"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 2.15,
+      "verified": true,
+      "proof_sha256": "b3cf3716c799e210f1453fa02cca2c75a09e507b3c376d33e1f3cc587263a6c7"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 2.127,
+      "verified": true,
+      "proof_sha256": "4ab279ac426dec5393a49d980c9279e1b30e5b175918e22a627750f27171e61b"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.196,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.671,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.189,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.123,
+      "verified": true,
+      "proof_sha256": "838212e220f354c4ae991b736087564b8018eb2cf9b29603de7f0289906389b1"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.217,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.167,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.217,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.438,
+      "verified": true,
+      "proof_sha256": "2cf6852cfcd72df2213f10aaf367653069af31917f8f810aa5dead121e620a07"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v2-v45": {
+   "dangling": [
+    [
+     3,
+     6
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     44,
+     70
+    ],
+    [
+     50,
+     72
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.126,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 1.814,
+      "verified": true,
+      "proof_sha256": "41691801e5afefa126e3ec57a93586001736a9fb4eb8eaf2ff63ed5a837bac4c"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 0.298,
+      "verified": true,
+      "proof_sha256": "4a92f03cc49133d361e0a32ea9cc12a32bfa77eceba25badbe927d85ae6c83c8"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.137,
+      "verified": true,
+      "proof_sha256": "2e621c2090833bb1e6cc12c80a56c82004336d5a2fabee89585b2209c2ce87a0"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.129,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.161,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.226,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.188,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.127,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.144,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.161,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.152,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v3-v8": {
+   "dangling": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     5,
+     13
+    ],
+    [
+     6,
+     15
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.156,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 4.554,
+      "verified": true,
+      "proof_sha256": "3673cb7ef175a67f264e19b523b2d619a5295f5fe3f5a85f7cb396bb2c037201"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 4.752,
+      "verified": true,
+      "proof_sha256": "bf59fc790d3634735b34c4308ed4283bfa90a2a950485e0937b90abc7186008a"
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.294,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      3
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.211,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.227,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 1.073,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 2.662,
+      "verified": true,
+      "proof_sha256": "79dd79ecf6c77f8a3e06b1d7a7213357ee6ee7a21d0d0a8e305d018ae3ad7dd2"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.291,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.708,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.655,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.246,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v4-v6": {
+   "dangling": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     15
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.272,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.708,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.195,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 2.746,
+      "verified": true,
+      "proof_sha256": "a2116a366e51900811f1fc32ef693e195703973f5e6a5b0cdb62cf59339c5427"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.174,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 8.297,
+      "verified": true,
+      "proof_sha256": "fc39b9b615a622e44694b099977c68d12bb3886c3f0e7f6b10c3f3eba3f4b093"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 4.337,
+      "verified": true,
+      "proof_sha256": "645a5109af9f8dd1e6e76f227c284d07018c4405a95e3b7c1565fd7c01f3b4ed"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 2.417,
+      "verified": true,
+      "proof_sha256": "00f65995206a08aeda4c5f1b8bf408387c662ca81aef2175d362447944da8d20"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.547,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 1.388,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.876,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 3.791,
+      "verified": true,
+      "proof_sha256": "3be0136e4b5742bf777be651d336149a79e90aca7ad988ab6214965e7c73e59d"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v4-v7": {
+   "dangling": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     5,
+     12
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.184,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.217,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.665,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.171,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.156,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 5.813,
+      "verified": true,
+      "proof_sha256": "08b9b08fdbbcfae2a77f1f48c82b0fc15428394adb323e5becde93b0c0e59639"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 5.449,
+      "verified": true,
+      "proof_sha256": "e5b52588df122a47fd041f0d87feb38b8cbe84de18a4274d6f44924f74eb15ac"
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.179,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      3
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.151,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.237,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.649,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 2.961,
+      "verified": true,
+      "proof_sha256": "53dd02fa55920243c5b39f9c06cadbd4b45d408f15c401dacd75bc1fe23b5568"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v5-v7": {
+   "dangling": [
+    [
+     2,
+     7
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     30,
+     14
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.167,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 3.162,
+      "verified": true,
+      "proof_sha256": "05c2c8e713f1b1a208490838dab2e706014c21cf23f761fba7b7e257aa8e6f0c"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 1.84,
+      "verified": true,
+      "proof_sha256": "eded7828ef29a9d4a117a51705af8fed71be72615596c037e2c6d96652cd4174"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.257,
+      "verified": true,
+      "proof_sha256": "71bd4a29a2901f1dfe9ac703b72dd774c7113842f4795067f16490255c5fe92b"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.178,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.71,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.986,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.504,
+      "verified": true,
+      "proof_sha256": "1effb4355dc78243f466c9809d7741e1e68cf63684fd500766f0a4e3b7b5c756"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.319,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.285,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.743,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 2.244,
+      "verified": true,
+      "proof_sha256": "8b1d30ec11e68933ed488ea73d251cc0528c17d957cf553b40ac2bfad7699ac0"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v5-v8": {
+   "dangling": [
+    [
+     3,
+     9
+    ],
+    [
+     7,
+     12
+    ],
+    [
+     30,
+     14
+    ],
+    [
+     6,
+     15
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.133,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.673,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.743,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.188,
+      "verified": true,
+      "proof_sha256": "99fcc2f390a20fcf72d0c94c2be1b8221e858e51067935679bc6e0b7340785a7"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.308,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.231,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.347,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 4.054,
+      "verified": true,
+      "proof_sha256": "1aa13628690241ce05791a9f0081e736af44c28861fe2401af74b09190510130"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.13,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 4.08,
+      "verified": true,
+      "proof_sha256": "e707667706c7a1d0374cdcacaa1c381ee012ac03c1d913f06a163371a47fe851"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 1.98,
+      "verified": true,
+      "proof_sha256": "41be8fa7eadbc9e270472fa72cc334d62be6080583b0a30216c14447ae3198a5"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 1.467,
+      "verified": true,
+      "proof_sha256": "2feedf8bf423845c4530c1b7e5d2451a9152fce36413deddb962352158002594"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    }
+   }
+  },
+  "G52-v6-v8": {
+   "dangling": [
+    [
+     1,
+     3
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     13
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.267,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.314,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.351,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 4.148,
+      "verified": true,
+      "proof_sha256": "ca8ab54f9664138d2e5c455f29577e6aa8ba7c9bd6e79b40387ddec9b0309f2e"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.194,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "UNSAT",
+      "seconds": 5.702,
+      "verified": true,
+      "proof_sha256": "dc0720c2d58aafb5f05768989b1c096211db4ff9ca82d473a83f1db7e7501684"
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 4.126,
+      "verified": true,
+      "proof_sha256": "894cddaf8428b9fafe43835cb05ae59847647b5b68c72df2ef7602bad52aeb62"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 3.13,
+      "verified": true,
+      "proof_sha256": "5f40ea2064367ea2f7c05cf708f2b59cd43f56fcbc349f992fb18513567420ec"
+     },
+     "D": [
+      0
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.209,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.761,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.735,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 3.669,
+      "verified": true,
+      "proof_sha256": "c2640ae3092018f44a2b136748d685d2ca3e58928c510827aa1747180a2ca589"
+     },
+     "D": [
+      0,
+      1,
+      2
+     ],
+     "undecided": []
+    }
+   }
+  }
+ }
+}

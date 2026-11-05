@@ -1,0 +1,29 @@
+{
+ "blocks": {},
+ "families": {
+  "F1-antichain": {
+   "mode": "antichain",
+   "generators_equal": true,
+   "elements": 12,
+   "products_of_two_contain_C": true,
+   "C_times_generators_contain_C": true,
+   "every_element_nonzero_diagonal": true
+  },
+  "F2-antichain": {
+   "mode": "antichain",
+   "generators_equal": true,
+   "elements": 276,
+   "products_of_two_contain_C": true,
+   "C_times_generators_contain_C": true,
+   "every_element_nonzero_diagonal": true
+  },
+  "F3-antichain": {
+   "mode": "antichain",
+   "generators_equal": true,
+   "elements": 2454,
+   "products_of_two_contain_C": true,
+   "C_times_generators_contain_C": true,
+   "every_element_nonzero_diagonal": true
+  }
+ }
+}

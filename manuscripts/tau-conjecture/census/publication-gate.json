@@ -1,0 +1,22 @@
+{
+  "release_ready": true,
+  "record_id": 23980033,
+  "version": "0.06",
+  "version_doi": "10.5281/zenodo.23980033",
+  "concept_doi": "10.5281/zenodo.21753438",
+  "scope": "New: z_max(9) = 6 and the seven-root threshold is exactly 10 (EXP-015, window-free p-adic block criterion over all 4.19e12 additive nine-gate candidates, audit PASS).",
+  "bytes": 390462,
+  "md5": "5944d6f493187c920229246437a88fda",
+  "sha256": "1ad01f481ee50feda81cf0d6496be422352b326d5ea6a321e76657efabda8500",
+  "tex_sha256": "651e2fbd47e83a38f7d8f30eb5a2f5ca263d2ca681b74670dbe61c3e62e9c8ea",
+  "metadata_sha256": "5aa6837092de3768f6c514415ce56edf4229ce8eb07b45b292b5c19a90460ca6",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 18,
+  "rendered_pages_reviewed": 18,
+  "qa_date": "2026-11-05",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246"
+}

@@ -5,6 +5,8 @@ The single first-read for a fresh session on this problem (methodology/07). Upda
 Labels: [MV] machine-verified in this repo, [D] derived by us on paper, [C] conjectural,
 [VERIFIED]/[CLAIMED]/[UNVERIFIED] as in the dossiers.
 
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): hold; refresh the dossier before EXP-005 (UFB-061) and check the Conjecture 1.4 numbering (UFB-062).
+
 ## 1. State in one screen
 
 The object. An SSUF instance is $(G=(V,A), s, T, d, x)$: digraph, source, terminals with

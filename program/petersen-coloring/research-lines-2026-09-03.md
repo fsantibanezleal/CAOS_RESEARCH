@@ -105,3 +105,14 @@ cyclically 4-edge-connected graph of defect 3. Conversely ONE counterexample wit
 pair of adjacent vertices gives a non-colorable 4-pole `G - {u, v}`. EXP-011 tests the adjacent
 pairs of the ten 102-vertex dot products; the members of order 60 to 66 of the v3 family are the
 next candidates.
+
+PCR-7 restated (2026-09-19, Theorem 6 in `context/2026-09-18-defect-unbounded.md`): statement (e)
+of Mattiolo, Mazzuoccolo, Mkrtchyan is equivalent to "every cyclically 4-edge-connected cubic graph
+has Petersen defect at most 2" (given their Proposition 2). Their Conjecture 3 is therefore
+equivalent to the existence of ONE cyclically 4-edge-connected cubic graph of defect at least 3.
+The evidence of EXP-010 and EXP-011 (universal adjacent-pair criticality on fifteen cyclically
+4-edge-connected counterexamples) leans towards (e) being true. Two ways forward: (i) a proof that
+cyclically 4-edge-connected cubic graphs have defect at most 2, or some weaker constant, would
+refute the conjecture; (ii) a counterexample with a non-critical adjacent pair, or a
+non-colorable 4-pole `G - ab - cd`, would prove it. Candidate sources for (ii): graphs whose
+4-edge cuts separate W-rich pieces with few realizable boundary patterns (EXP-010 orbit tables).

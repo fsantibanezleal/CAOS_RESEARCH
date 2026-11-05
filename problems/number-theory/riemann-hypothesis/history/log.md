@@ -752,3 +752,15 @@ Production replay passes 8 scenarios and 48 tab visits, with
 three evidence records retain the four original archives. Original PDFs,
 DOIs and historical receipts remain preserved. The account audit validates
 publication placement, not every theorem. Research and PR #376 stay paused.
+
+## 2026-10-30 - portfolio review: external status
+
+External status: open. Wang arXiv:2609.24167 was withdrawn on 2026-10-06 [V, re-checked]; Wang arXiv:2609.07918 has a v2 of 2026-10-06 with onset 0.5501 [V]. No overlap below our internal onset 0.5339 [V]. Research paused by Felipe on 2026-10-04.
+Plan change (assessment): no research restart. One correction review is open (review section 3): `sharp-three-point-kernel` v0.01 transfers a global proportion through Wang's arXiv:2609.24167v1 framework, withdrawn on 2026-10-06; re-read the Wang arXiv:2609.07918v2 pair theorem used by the EXP-010 onset. Gate: Felipe's pause; a publication correction, not an experiment; needs his go. New rows RH-049 and RH-050.
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## 2026-11-02 - correction: sharp-three-point-kernel v0.02
+
+External status: open. Wang arXiv:2609.24167 v2 is a notice that replaces the paper ("New method is need to obtain good improvement") [V]. Wang arXiv:2609.07918 v2: the local pair theorem used by EXP-009 and EXP-010 is unchanged against v1 (theorem-by-theorem comparison of the two sources) [V].
+Action: RH-049 done. `sharp-three-point-kernel` v0.02 published, version DOI 10.5281/zenodo.23895875 (concept 10.5281/zenodo.22940290). Title changed to "A sharp three-point kernel bound and conditional proportions of zeta zeros". The sharp ratio theorem R(alpha,beta) <= sqrt 2 and the kernel inequality are claimed; the global proportion and the short-interval corollary are stated as conditional on the replaced framework and are not claimed. RH-050 done: the EXP-010 onset input stands. The earlier version stays immutable on Zenodo. Research stays paused; no experiment was run.

@@ -1,57 +1,22 @@
 {
   "release_ready": true,
-  "date": "2026-09-18",
-  "pages": 10,
-  "rendered_pages_reviewed": 10,
-  "errors": 0,
+  "record_id": 23890775,
+  "version": "0.09",
+  "version_doi": "10.5281/zenodo.23890775",
+  "concept_doi": "10.5281/zenodo.22820520",
+  "scope": "Dissipation limits of multiscale layer cascades, with the status of the announced results scoped against the reported Lean proof-correspondence gap (arXiv:2610.08144).",
+  "bytes": 427395,
+  "md5": "a1ba3b1924ad6d9a2148af493aa22a3d",
+  "sha256": "82db988e98cc08d5a20cdeea673ef7dfdda5112b6d5b4453ce272ed3bc6a7772",
+  "tex_sha256": "8345f5460d1ec209283ab43351edaacc221fabbe62d67b00d678dfe680103ef5",
+  "metadata_sha256": "c7cfc29e055f08692b4e88c1a24ce185c23818bae9bac35bee98e7413a9fed42",
+  "warnings": 0,
   "overfull": 0,
   "underfull": 0,
-  "bytes": 425503,
-  "sha256": "47a79d3cadedbeead8e31d68e447e77dfca0ff751838c237cb18e7e2dcba9a3a",
-  "md5": "e7722f0642aff8f69ab919660d33cb61",
-  "tex_sha256": "d5381f4a3a35f59f93418c7f155b9ace2a21dd6ea701e0c6661f18e640e64b5a",
-  "metadata_sha256": "2fd25dc072c9b90fd9d2152fa7e94f1907c5098c70b3171ad3d52da9b1e22cea",
-  "render_review": "trial build rendered and read, pages 1-7 including the new Section 4.2, Theorem 4.2 and its proof; publish tool verified the PDF prints its DOI and version, no em-dash, voice gate clean",
-  "proof_review": "Theorem 4.1 and Theorem 4.2 are exponent arithmetic on estimates transcribed from the primary sources (Boussinesq pp. 39-69; Euler pp. 2-27 and 95-104), each with a transcription check (the published constants pass the published targets); every quoted number is gated in CI against nslib/ab_force_budget.py and nslib/ab_euler_budget.py",
-  "sources": "EXP-001 to EXP-008 verdicts and the context dossiers, including 2026-09-17-force-estimates-exponent-content.md and 2026-09-18-euler-force-budget.md",
-  "version_doi": "10.5281/zenodo.22830171",
-  "concept_doi": "10.5281/zenodo.22820520",
-  "record_url": "https://zenodo.org/records/22830171",
-  "published_utc": "2026-09-18T12:04:50Z",
-  "note": "the published PDF prints its own version and concept DOIs; the DOI was reserved before the build",
-  "version": "0.07",
-  "previous_versions": [
-    {
-      "version": "0.01",
-      "doi": "10.5281/zenodo.22820521",
-      "note": "audit without a conclusion; superseded"
-    },
-    {
-      "version": "0.02",
-      "doi": "10.5281/zenodo.22821237",
-      "note": "conclusion added, but its PDF printed the v0.01 DOI; superseded within the hour"
-    },
-    {
-      "version": "0.03",
-      "doi": "10.5281/zenodo.22821242",
-      "note": "stated Theorem 4.1 but mixed process narration into the paper; superseded by the full rewrite"
-    },
-    {
-      "version": "0.04",
-      "doi": "10.5281/zenodo.22821790",
-      "note": "design bound 1.08e-03 derived from a misread inequality; replaced by the full force budget in v0.05"
-    },
-    {
-      "version": "0.05",
-      "doi": "10.5281/zenodo.22822133",
-      "note": "Boussinesq design bound only"
-    },
-    {
-      "version": "0.06",
-      "doi": "10.5281/zenodo.22823734",
-      "note": "scientific-voice revision"
-    }
-  ],
-  "headline_result": "Theorem 3.1: layer cascades cannot exceed alpha = 1/2 (sqrt(A) growth) or alpha = 1 (A growth) in the |grad|^alpha convention, both below classical 2; Theorems 4.1 and 4.2: both smooth-forcing designs (Boussinesq, Euler) are pendulum-class and their force estimates certify at most 5.3e-04 and 6e-08 as published, 9.0e-03 and 7.5e-03 under any retuning, at least 10 times below the proved rough-force threshold",
-  "review": "rewritten to address the problem only: no workflow narration, no self-referential version commentary beyond one withdrawn claim stated scientifically; the strictness step of Theorem 3.1 corrected so the final bounds are strict because p > 1/delta"
+  "pages": 10,
+  "rendered_pages_reviewed": 10,
+  "qa_date": "2026-11-01",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246"
 }

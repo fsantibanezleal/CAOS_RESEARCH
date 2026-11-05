@@ -1,5 +1,17 @@
 # Triangle-free next-matching preprint
 
+## Current version: v0.04 (2026-11-04)
+
+Title: The next matching level for triangle-free graphs with bounded degree and an exact Bougard-Joret value.
+Version DOI [10.5281/zenodo.23965193](https://doi.org/10.5281/zenodo.23965193); concept DOI
+[10.5281/zenodo.22343021](https://doi.org/10.5281/zenodo.22343021). Nine pages, 387,285 bytes, MD5
+36b74f1f0a0597676e0153bdff6bbb1a, SHA-256 dff08d59f3c010df2516eb26e963927a2c44525f2aa237415f1aade31b1be9cf;
+release tool: 39 gates passed, including a fresh unauthenticated download equal to the frozen file. New in
+v0.04: Theorem 8 (f(2d+3,2,d+2) = d^2+4d+2 for every d >= 7) and Theorem 9 (shared neighbourhood), from
+EXP-004. The approval record is `publication-gate.json`.
+
+## History (v0.01 record below)
+
 Title: The next matching level for triangle-free graphs with bounded degree.
 
 Author: Felipe Santibanez-Leal, ORCID 0000-0002-0150-3246. Version 0.01, 2026-09-05. License CC BY 4.0. Preprint, not peer reviewed.

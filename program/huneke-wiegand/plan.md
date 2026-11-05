@@ -1686,3 +1686,15 @@ HWB-078 redirects away from generic HNF coordinates. Solve one direct telescopin
 union completion `58->63`, using the already-frozen `58->59` and `58->62` formulas as its two
 boundary restrictions. This unifies the first-class construction; it does not remove the need for
 the second class, generic duals, or the upper bound.
+
+## External status review, 2026-10-30
+
+Last pass 2026-09-24. External: disproved by Christensen, Gerko, Iyengar (arXiv:2608.21666, 2026-08-21, a field-extension construction found with Codex) and by Son Pham (arXiv:2609.07615, 2026-09-07, numerical semigroup of multiplicity 56; Huneke recomputed the data) [V]; Pham's paper mentions the CAOS minimality and family results and does not rely on them [V]. New: none after 2026-09-24 [U]. Overlap, decisive for HW-F7: García-Sánchez and Leamer, arXiv:1211.4554v1 (2012-11-19), Proposition 10: for a gluing Gamma = a1 Gamma1 + a2 Gamma2 and a relative ideal A1 of Gamma1, "A := a1A1 + a2Gamma2 is Huneke-Wiegand if and only if A1 is Huneke-Wiegand", and Theorem 13 for gluings of a symmetric Gamma1 with N [V, re-checked]. With a1 = q, a2 = m and Gamma2 = N this is the ideal (t^(qm), t^(q(m+s))) transfer of EXP-067, by a combinatorial proof. What EXP-067 adds: the explicit family (multiplicity 24p, embedding dimension 11p, Frobenius number q(102p-1)-24p), the transfer of every consecutive-shift exponent set, and the flat-base-change route. A ResearchGate title "Huneke-Wiegand conjecture and change of rings" remains unread [V2]. OpenAI Math: none.
+
+Plan change (assessment). Rank 7 (`huneke-wiegand` (close out HW-F7)). Why now: HW-F7 is answered by this review: the gluing transfer of EXP-067 is Proposition 10 and Theorem 13 of García-Sánchez and Leamer (2012). What remains new is the explicit family and the exponent-set transfer. First bounded action: Record HWB-094 as a corollary disposition with credit, then the mandatory strategic review; candidate next focus: their open question on gluing for ideals with more than two generators.
+
+Review plan: rank 7, close HW-F7 as a corollary disposition with credit.
+
+Record action (review section 3). Amend the EXP-067 novelty statement: the ideal transfer is García-Sánchez and Leamer (2012) Proposition 10 and Theorem 13; record HWB-094 as a corollary disposition. Gate: Problem round.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).

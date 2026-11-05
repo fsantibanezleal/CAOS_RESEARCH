@@ -28,3 +28,15 @@ The runtime has no callable update_plan tool; this file is the durable plan requ
 - Adversarial: star degeneration, disconnected residual graphs, and exceptional small surviving vertex sets.
 
 CPU only, exact integers and combinatorial certificates. Each computational stage has a five-minute cap and deterministic checkpoints; reaching a cap gives finite partial evidence only. No GPU or new web product is needed. Deployment class: source-only manuscript.
+
+## External status review, 2026-10-30
+
+Last pass 2026-09-05. External: disproved at n = alpha+k by Das and Gupta, arXiv:2608.18828v1 (2026-08-19), smallest counterexample (7,3,4), second regime n > k*alpha open [V]. New: none; arXiv:2609.15637 cites the large-order case for 2-connected graphs [V2]. Overlap: none for f(alpha+k+1, alpha, k), T(d,d+1) or the f(2d+3,2,d+2) bracket [U].
+
+Plan change (assessment). Rank 4 (`bougard-joret`). Why now: Das-Gupta (arXiv:2608.18828) is still v1 and says nothing about n = alpha+k+1 or the triangle-free slice [V]; no follow-up [V]. Theorem-shaped targets with exact certificates. First bounded action: BJB-014 (the endpoint of d^2+4d+1 <= f(2d+3,2,d+2) <= d^2+4d+2), then exact small-triple data toward a corrected conjecture in the second regime n > k*alpha, which Das-Gupta leave open [V].
+
+Review plan: rank 4.
+
+Record action (review section 3): none names this problem.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).

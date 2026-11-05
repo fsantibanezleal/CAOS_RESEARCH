@@ -1,5 +1,9 @@
 # Riemann hypothesis handoff
 
+2026-11-02: correction published: `sharp-three-point-kernel` v0.02 (10.5281/zenodo.23895875) keeps the sharp ratio theorem and states the global and short-interval proportions as conditional on Wang's arXiv:2609.24167v1, which its author replaced by a notice; RH-049 and RH-050 done (the arXiv:2609.07918v2 pair theorem is unchanged). Research stays paused.
+
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): no research restart; one correction review is open (`sharp-three-point-kernel` v0.01, RH-049), gated on Felipe's go.
+
 ## Research paused by the user, 2026-10-04
 
 Riemann experimentation and the proposed research app release are stopped.

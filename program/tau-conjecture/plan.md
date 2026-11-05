@@ -116,3 +116,15 @@ Per methodology 11: every round records an exploration moment (fresh
 literature sweep on the tau-conjecture tag + arXiv, analogy scan to the
 Jacobian census machinery and the addition-chain literature, invariant-first
 probes) in the RESUME lenses ledger.
+
+## External status review, 2026-10-30
+
+Last pass 2026-08-25. External: open; newest tau-conjecture item on arXiv is arXiv:1905.00091 (2019) [V]. Overlap: none found [U]. OpenAI Math: family 108 (an Omega(n^3) border determinantal bound for the permanent) is adjacent, not overlapping [V].
+
+Plan change (assessment). Rank 2 (`tau-conjecture`). Why now: No tau-conjecture paper since 2019 [V]; no public census of integer roots of short straight-line programs [U]. EXP-014 showed the [-32,32] window decides 99.998% of the additive nine-gate space, so z_max(9) is one residual away. First bounded action: TCB-039: close the |c| >= 396 residual (0.002% of the space) with a dedicated confinement argument or exact sweep; a closed residual settles the seven-root threshold at 10 and gives z_max(9) = 6.
+
+Review plan: rank 2, TCB-039 first.
+
+Record action (review section 3): none names this problem.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).

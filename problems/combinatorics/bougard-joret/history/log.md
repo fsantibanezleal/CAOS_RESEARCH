@@ -49,3 +49,18 @@ The seven-page separate preprint v0.01 is public at DOI 10.5281/zenodo.22343022,
 ## 2026-09-05: next-matching integration close
 
 Research PR #255 passed both CI jobs on head b8eb3f6 and merged at 03dc4694beb42184900b238d036dbf5ada84816e. Private mirror PR #613 merged at 74e36ce08fc31d3cb13e983688ed14596cd55b0f. Research, publication and scoped develop integration are complete. The global main release remains separately serialized. All 101 tests passed; the published seven-page PDF and its verified bytes remain frozen. No mathematical process remains active.
+
+## 2026-10-30: portfolio review, external status
+
+External status: disproved at n = alpha+k by Das and Gupta, arXiv:2608.18828v1 (2026-08-19), smallest counterexample (7,3,4); the second regime n > k*alpha is open [V]. Nothing new; arXiv:2609.15637 cites the large-order case for 2-connected graphs [V2]. No overlap for f(alpha+k+1, alpha, k), T(d,d+1) or the f(2d+3,2,d+2) bracket [U].
+Plan change (assessment): rank 4; BJB-014 first, then exact small-triple data toward a corrected conjecture in the second regime (new row BJB-016).
+
+Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## 2026-11-04 - EXP-004 confirmed: the endpoint of the bracket
+
+External status: unchanged since the 2026-10-30 review (disproved at n = alpha+k by Das and Gupta; second regime open) [V].
+- BJB-014 closed. Hypothesis and complete proof frozen before computation (29a8840c). Theorem: every triangle-free graph on 2d+3 vertices with maximum degree at most d and d^2+d+2 edges has two vertices with the same d neighbours; hence f(2d+3,2,d+2) = d^2+4d+2 for every d >= 7, and f(19,2,10) = 98.
+- Independent adversarial audit (Opus, separate context): PROVED, 0 blockers; three wording fixes applied to proof.md.
+- Configuration-split SAT (run_cfg.py): d=7 all 8 defect configurations UNSAT without a K_(2,d); d=8 7 of 8, the eighth (two defective vertices with no cycle neighbour) timed out and is excluded by a+b=2. Free controls SAT and checked with networkx. The global lazy-cut search planned in the hypothesis did not finish within its cap (recorded as a deviation).
+- Next-matching v0.04 published, version DOI 10.5281/zenodo.23965193 (concept 10.5281/zenodo.22343021), 9 pages, title changed to include the exact Bougard-Joret value.

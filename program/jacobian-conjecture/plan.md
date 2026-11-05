@@ -135,3 +135,15 @@ The systematic exclusion spine remains active with three complementary lenses:
 
 Every round records which assumption was tested, what would falsify the route, and whether the
 result can prove exclusion, can only filter candidates, or is exploratory.
+
+## External status review, 2026-10-30
+
+Last pass 2026-09-18. External: false for n >= 3 (Alpoge's map, announced 2026-07-19/20 on X; no arXiv paper by Alpoge [U]); JC(2) open [V2]; reproductions and formalizations include an Isabelle AFP entry [V2] and van den Essen arXiv:2609.17795 [V]. New since the last pass: de Bondt arXiv:2610.24889 (2026-10-17): counterexamples to HJC(15), VC(28), HVC(30) and, with the degree-3 reduction, JC(12,3), HJC(18,3), VC(34,4), HVC(36,4), and a cubic-linear counterexample in dimension 90, over the Gaussian integers [V]; Kanel-Belov and Fedorov arXiv:2610.33919 (2026-10-24): JC(2) implies a generalized Dixmier statement DC_1', no DC_2 counterexample announced [V]. Overlaps: our explicit 48-variable witnesses for the vanishing and symmetric conjectures (EXP-041, restated in EXP-136) are superseded in dimension by de Bondt's VC(28) and HVC(30); our Mathieu SU(N) threshold N >= 24 may be lowered through HJC(15) (to check, not claimed). Not previously recorded: Helali's and Guo's conditional (72,108) exclusion claims (above), Long arXiv:2608.23777 (Poisson for two canonical pairs) [V], Kanel-Belov and Fedorov, de Bondt. The Wilson preprint in our records is arXiv:2607.23887, a claimed proof of the two-variable Gaussian moments conjecture, correctly cited in EXP-136 [V]. OpenAI Math: none.
+
+Plan change (assessment). Rank 5 (`jacobian-conjecture` (redirect)). Why now: The (72,108) planar frontier, our long-running target, is publicly claimed excluded by Helali (Zenodo 10.5281/zenodo.21479814, 2026-07-21, conditional on the GGHV reduction, review requested) [V] and by Guo (GitHub preprint, 2026-08-10, conditional) [V]. An independent exact check of that claim is decisive either way and is citable as verification. First bounded action: Strategic review (methodology 13, boundary 1 and 4), then one experiment: an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 with a different elimination route. Park the transverse Fitting atlas.
+
+Review plan: rank 5 with a redirect.
+
+Record action (review section 3). Record Helali, Guo, Long, de Bondt, Kanel-Belov and Fedorov; mark the 48-variable witnesses as superseded in dimension. Gate: Problem round.
+
+Source: [portfolio review](../portfolio-review-2026-10-30.md).

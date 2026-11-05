@@ -1,0 +1,53 @@
+{
+ "boundary_pairs": 72,
+ "rings": {
+  "012": {
+   "colorable_for_t": [
+    false,
+    true
+   ],
+   "preperiod": 1,
+   "period": 2
+  },
+  "021": {
+   "colorable_for_t": [
+    true,
+    true
+   ],
+   "preperiod": 2,
+   "period": 1
+  },
+  "102": {
+   "colorable_for_t": [
+    false,
+    true
+   ],
+   "preperiod": 1,
+   "period": 2
+  },
+  "120": {
+   "colorable_for_t": [
+    true,
+    true
+   ],
+   "preperiod": 2,
+   "period": 1
+  },
+  "201": {
+   "colorable_for_t": [
+    true,
+    true
+   ],
+   "preperiod": 2,
+   "period": 1
+  },
+  "210": {
+   "colorable_for_t": [
+    true,
+    true
+   ],
+   "preperiod": 2,
+   "period": 1
+  }
+ }
+}

@@ -1,0 +1,45 @@
+[2026-11-01 23:03:29] EXP-137 run start
+[2026-11-01 23:03:29] stage p1: start
+[2026-11-01 23:03:36] stage p1: done in 6.4 s
+[2026-11-01 23:03:36] stage p2: start
+[2026-11-01 23:03:37] P2: solved 11 coefficients of D, 6 compatibility equations in a2..a7
+[2026-11-01 23:03:37] P2: running Singular (kill after 7200 s)
+[2026-11-01 23:03:49] P2: Singular finished in 12.4 s
+[2026-11-01 23:03:50] stage p2: done in 14.5 s
+[2026-11-01 23:03:50] stage p2b: start
+[2026-11-01 23:03:50] stage p2b: done in 0.2 s
+[2026-11-01 23:03:50] stage certs: start
+[2026-11-01 23:06:24] hard: certificate hashed in 4.8 s
+[2026-11-01 23:16:36] stage certs: done in 765.3 s
+[2026-11-01 23:16:36] field: degree 35, minimal polynomial irreducible over Q (checked by flint factor)
+[2026-11-01 23:16:36] stage link_case2: start
+[2026-11-01 23:17:05] stage link_case2: done in 29.0 s
+[2026-11-01 23:17:05] stage link_case1: start
+[2026-11-01 23:17:05] case1 layer 3: {'layer': 3, 'unknowns': 19, 'rows': 18, 'rank': 17, 'new_params': 2, 'compat': 0} (0.7 s)
+[2026-11-01 23:17:06] case1 layer 2: {'layer': 2, 'unknowns': 19, 'rows': 19, 'rank': 18, 'new_params': 1, 'compat': 0} (0.7 s)
+[2026-11-01 23:17:09] case1 layer 1: {'layer': 1, 'unknowns': 20, 'rows': 19, 'rank': 18, 'new_params': 2, 'compat': 0} (1.6 s)
+[2026-11-01 23:17:11] case1 layer 0: {'layer': 0, 'unknowns': 19, 'rows': 20, 'rank': 18, 'new_params': 1, 'compat': 2} (2.6 s)
+[2026-11-01 23:17:16] case1 layer -1: {'layer': -1, 'unknowns': 17, 'rows': 19, 'rank': 17, 'new_params': 0, 'compat': 2} (4.6 s)
+[2026-11-01 23:17:27] case1 layer -2: {'layer': -2, 'unknowns': 15, 'rows': 19, 'rank': 15, 'new_params': 0, 'compat': 4} (10.5 s)
+[2026-11-01 23:17:49] case1 layer -3: {'layer': -3, 'unknowns': 13, 'rows': 18, 'rank': 13, 'new_params': 0, 'compat': 5} (21.2 s)
+[2026-11-01 23:18:04] stage link_case1: done in 59.7 s
+--- second invocation (fix of a bookkeeping bug in run.py; all stages from checkpoints) ---
+[2026-11-01 23:18:17] EXP-137 run start
+[2026-11-01 23:18:17] stage p1: using checkpoint checkpoint-p1.json
+[2026-11-01 23:18:17] stage p2: using checkpoint checkpoint-p2.json
+[2026-11-01 23:18:17] stage p2b: using checkpoint checkpoint-p2b.json
+[2026-11-01 23:18:17] stage certs: using checkpoint checkpoint-certs.json
+[2026-11-01 23:18:18] field: degree 35, minimal polynomial irreducible over Q (checked by flint factor)
+[2026-11-01 23:18:18] stage link_case2: using checkpoint checkpoint-link_case2.json
+[2026-11-01 23:18:18] stage link_case1: using checkpoint checkpoint-link_case1.json
+[2026-11-01 23:18:18] results.json written: P1=PASS, P2=PASS, P3=UNVERIFIED, P4=PASS
+--- new invocation ---
+[2026-11-01 23:22:57] EXP-137 run start
+[2026-11-01 23:22:57] stage p1: using checkpoint checkpoint-p1.json
+[2026-11-01 23:22:57] stage p2: using checkpoint checkpoint-p2.json
+[2026-11-01 23:22:57] stage p2b: using checkpoint checkpoint-p2b.json
+[2026-11-01 23:22:57] stage certs: using checkpoint checkpoint-certs.json
+[2026-11-01 23:22:57] field: degree 35, minimal polynomial irreducible over Q (checked by flint factor)
+[2026-11-01 23:22:57] stage link_case2: using checkpoint checkpoint-link_case2.json
+[2026-11-01 23:22:57] stage link_case1: using checkpoint checkpoint-link_case1.json
+[2026-11-01 23:22:57] results.json written: P1=PASS, P2=PASS, P3=UNVERIFIED, P4=PASS

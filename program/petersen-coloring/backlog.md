@@ -18,14 +18,21 @@
 | PCB-013 | Cyclically 5-edge-connected counterexamples (GJMMM Problem 5) | todo | P3 | only after PCB-009 |
 | PCB-015 | Full 6,216-pair sweeps of G112 and H112 (EXP-006 addendum 3, P9) | done | P2 | 2026-09-03: every pair critical in both |
 | PCB-016 | Explain universal 2-criticality (PCR-3): is every pair critical in every counterexample? structure of the two bad stars in pair witnesses | todo | P1 | after PCB-015: the pair set is complete, so the object is the witnesses |
-| PCB-017 | EXP-007: is `G52` colored by a smaller bridgeless cubic graph? | doing | P1 | `G52`: orders 2, 4, 30 to 50 refuted (complete under the conditional form); `G52b`: 44 to 50 refuted, 40 and 42 certifying; verdict pending |
+| PCB-017 | EXP-007: is `G52` colored by a smaller bridgeless cubic graph? | done | P1 | CONFIRMED for both 52-vertex graphs (orders 40 to 50 refuted); colorable-only-by-itself v0.01 |
 | PCB-018 | Cite arXiv:2608.10028v3 and state the concurrency in the next manuscript version | done | P1 | audit v0.04 (10.5281/zenodo.22836612) |
 | PCB-019 | Close the normal-5 defect of G52 at exactly 2 | done | P2 | EXP-006 addendum 4: orbit argument over 42 refuted edges (6 automorphisms, 14 edge orbits) plus explicit two-abnormal-edge witnesses |
 | PCB-020 | EXP-008: the full invariant battery on `G52b` (HoG 57278) and `G68` (HoG 57280) | done | P1 | CONFIRMED: same invariants as `G52`; all pairs critical |
-| PCB-021 | EXP-007 scope extension: `G52b`, `G68`, then `G112` and `H112` (probe `k = 52` first) | doing | P1 | `G68` orders 64, 66 refuted, 40 to 62 running; 112-vertex probes not started |
-| PCB-022 | Manuscripts: audit new version (done, v0.04); second manuscript on colorability only by itself | doing | P1 | second manuscript drafted, waits for `G52b` orders 40 and 42 |
+| PCB-021 | EXP-007 scope extension: `G68` (orders 40 to 60), unconditional form | gated (PCC-F5) | P3 | first action: G68 at target order 52 (portfolio, addendum 7) |
+| PCB-022 | Manuscripts: audit versions and the two focused papers | done | P1 | audit v0.06, unbounded-defect v0.01, colorable-only-by-itself v0.01 |
 | PCB-023 | EXP-009: unbounded Petersen defect and abnormal-edge number (rings, frames); exact values on small instances | done | P1 | CONFIRMED; `ab` values beyond `ab >= pd` undecided |
-| PCB-024 | EXP-010: Conjecture 3 of Mattiolo-Mazzuoccolo-Mkrtchyan: non-colorable 4-poles, cyclic joins, statement (e) | doing | P1 | 4-poles of `G52`, `G52b`, `G68` all colorable; threshold proposition (`pd >= 3` suffices); H112 sweep until the budget ends |
-| PCB-025 | PCR-7: find a cyclically 4-edge-connected cubic graph with Petersen defect at least 3, or prove `pd <= 2` on that class | todo | P1 | would settle Conjecture 3 of Mattiolo et al.; see research lines PCR-7, PCR-9 |
+| PCB-024 | EXP-010: non-colorable 4-poles and statement (e) | done | P1 | verdict written; statement (e) settled by EXP-012 |
+| PCB-025 | A cyclically 4-edge-connected cubic graph with Petersen defect at least 3 | done | P1 | EXP-012 rings |
 | PCB-026 | Exact `ab` of the rings `R_t` (is `ab(R_t) = t`?) on a free machine | todo | P3 | EXP-009 P4 undecided |
-| PCB-027 | EXP-011: criticality of the adjacent pairs of the ten 102-vertex dot products (a non-critical adjacent pair gives a non-colorable 4-pole) | doing | P1 | links PCR-10 to PCR-7 |
+| PCB-027 | EXP-011: criticality of the adjacent pairs of the ten 102-vertex dot products | done | P1 | CONFIRMED: 1,530 of 1,530 critical; the dot products have cyclic edge connectivity exactly 4 |
+| PCB-028 | Theorem 6 ((e) equivalent to defect at most 2 on cyclically 4-edge-connected graphs) into the audit manuscript (next version) and the page | done | P1 | audit v0.05 published 2026-09-19 (10.5281/zenodo.22846757) |
+| PCB-029 | EXP-012: conduction and alternating rings | done | P1 | CONFIRMED; open: exact pd(R_3) (addendum 4 running) |
+| PCB-030 | Methodology 13 adoption (governance record, manuscript map, READMEs) | done | P1 | guard passes, 3 governed programs |
+| PCB-031 | EXP-013: conducted charge orbits of 6-poles (focus PCC-F6) | done | P1 | every 6-pole of P, J5, J7, dodecahedron conducts the core {0, E, D2}; P3 refuted |
+| PCB-032 | EXP-014: transfer semigroups of 6-poles over the six charge sectors | done (F4, F5 at their caps) | P1 | every ring of claws, Petersen superedges or both is Petersen colorable (certificates re-checked); flower-snark junctions are antipodal triples; odd superedge rings are cyclically 5-edge-connected snarks of girth 5; G52 control: zero trace where charges agree |
+| PCB-033 | `unbounded-defect` v0.02: pd(R_3) = 3 and Section 6 (6-poles, transfer semigroups) | done | P1 | published 2026-10-06, 10.5281/zenodo.23196817 (12 pages) |
+| PCB-034 | EXP-015: 6-poles without small internal cuts whose transfer semigroup has a zero-trace element (cyclically 5-edge-connected snarks up to order 28) | todo | P1 | next bounded action of PCC-F6; declare before running |

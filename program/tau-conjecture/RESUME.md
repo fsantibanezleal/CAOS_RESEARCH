@@ -8,6 +8,10 @@ roots in [-32,32]; audit of all 256 partitions against the frontier manifest). T
 threshold is 10 unless the |c| >= 396 residual holds a seven-rooter (TCB-039). Census paper v0.05
 states it. The scheduled task tau_keepalive is disabled.
 
+2026-11-05: EXP-015 CONFIRMED (TCB-039 closed, no window): no additive nine-gate seven-rooter anywhere in Z, over all 4,193,843,648,000 candidates of the 1,048,460,912 depth-7 states (2-adic and 3-adic block criterion, code/tclib/padic.py; every survivor built exactly; audit 6/6 PASS). With EXP-011 and EXP-012: z_max(9) = 6 and the seven-root threshold is exactly 10. Census v0.06 published (10.5281/zenodo.23980033). The frontier copy used is in the training root (tau-tcb039) and moves back to the data root.
+
+2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 2; first action TCB-039 (close the |c| >= 396 residual; a closed residual gives z_max(9) = 6).
+
 ## 1. State in one screen
 
 The problem: for $f \in \mathbb{Z}[x]$ computed by a constant-free SLP
