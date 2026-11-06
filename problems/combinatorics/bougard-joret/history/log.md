@@ -64,3 +64,15 @@ External status: unchanged since the 2026-10-30 review (disproved at n = alpha+k
 - Independent adversarial audit (Opus, separate context): PROVED, 0 blockers; three wording fixes applied to proof.md.
 - Configuration-split SAT (run_cfg.py): d=7 all 8 defect configurations UNSAT without a K_(2,d); d=8 7 of 8, the eighth (two defective vertices with no cycle neighbour) timed out and is excluded by a+b=2. Free controls SAT and checked with networkx. The global lazy-cut search planned in the hypothesis did not finish within its cap (recorded as a deviation).
 - Next-matching v0.04 published, version DOI 10.5281/zenodo.23965193 (concept 10.5281/zenodo.22343021), 9 pages, title changed to include the exact Bougard-Joret value.
+
+## 2026-11-06 - EXP-005 confirmed: the second regime at its smallest open triples
+
+- BJB-016. Bougard-Joret prove the second line of Conjecture 1 only when floor(n/alpha) >= ceil(k*alpha/2) -
+  alpha + 2 (alpha >= 3; read from the rendered page 11 of the author PDF, archived with SHA-256). The seven
+  smallest open triples were computed exactly: (10,3,3) = 17, (11,3,3) = 20, (13,4,3) = 21, (14,4,3) = 24,
+  (15,4,3) = 27, (13,3,4) = 28, (14,3,4) = 32, each equal to t(n,alpha) + ceil(k*alpha/2).
+- Method: nauty geng (all graphs with minimum degree >= k and each edge count) piped into an exact filter
+  (independence number, connectivity); about 6.2 x 10^9 candidate graphs below the conjectured values. Gates:
+  Das-Gupta's f(7,3,4) = 15, f(6,2,3) = 9, f(6,2,4) = 12, the proved f(12,3,3) = 23; filter equal to networkx on
+  all 12,346 graphs on 8 vertices.
+- Deviation: the frozen SAT method could not finish its lower side; complete enumeration replaced it.

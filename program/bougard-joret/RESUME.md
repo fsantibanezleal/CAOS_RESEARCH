@@ -44,9 +44,12 @@ Updated: 2026-09-05.
 | EXP-001-tree-strip | Adjacent diagonal value and all extremals | CONFIRMED | Uniform proof plus independently checked finite constructions |
 | EXP-002-next-shell | Full first-shell value; all alpha-two extremals | CONFIRMED | Complete proof audited; independent exact certificates pass |
 | EXP-003-triangle-free-next-matching | Exact next matching level for every $d\ge7$ | Proof and independent audits PASS; published | Uniform upper bound; known BET construction; v0.01 DOI 10.5281/zenodo.22343022; scoped integration complete |
+| EXP-005-second-regime-small | Exact $f$ at the smallest open second-regime triples | CONFIRMED [MV] | Second line of Conjecture 1 holds at all seven: (10,3,3)=17, (11,3,3)=20, (13,4,3)=21, (14,4,3)=24, (15,4,3)=27, (13,3,4)=28, (14,3,4)=32; complete geng enumeration with an exact filter |
 | EXP-004-bracket-endpoint | Endpoint of $d^2+4d+1\le f(2d+3,2,d+2)\le d^2+4d+2$ | CONFIRMED; independent audit PASS | $f(2d+3,2,d+2)=d^2+4d+2$, $d\ge7$; shared-neighbourhood theorem; configuration SAT d=7 (8/8 UNSAT), d=8 (7/8, eighth excluded by $a+b=2$); next-matching v0.04 10.5281/zenodo.23965193 |
 
 ## 4. In flight
+
+2026-11-06: EXP-005 CONFIRMED (BJB-016): Bougard-Joret's second-regime value holds at the seven smallest triples outside their proved range, by complete enumeration of all candidate graphs. The proved range is floor(n/alpha) >= ceil(k*alpha/2) - alpha + 2 (their Proposition 8). Next open triples need n >= 16.
 
 2026-11-04: EXP-004 CONFIRMED (BJB-014 closed): $f(2d+3,2,d+2)=d^2+4d+2$ for every $d\ge7$. Every triangle-free graph on $2d+3$ vertices with $\Delta\le d$ and $d^2+d+2$ edges has two vertices with the same $d$ neighbours, so its complement is not $(d+2)$-connected. Hypothesis and proof frozen at 29a8840c before computation; independent Opus audit PASS (CAOS_MANAGE `wip/caos-research/bj-exp004-proof-audit-2026-11-04.md`). Next-matching v0.04 published at 10.5281/zenodo.23965193 (39 release gates). Next: BJB-016 (exact small-triple data in the second regime $n>k\alpha$).
 
