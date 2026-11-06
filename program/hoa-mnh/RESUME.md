@@ -10,8 +10,9 @@ conjecture (1994): for every MNH graph G and every longest cycle C, G - V(C) is 
 asks Questions 2-4; nobody has followed up [V, 2026-11-06]. The least counterexample order lies in [8, 56] (our
 atlas check covers n <= 7). Hoa proved the conjecture for toughness < 1 and for delta >= n/3 [V via Zhan].
 
-First round: EXP-001, the exact classification of MNH graphs to order 11 (12 if the cost allows) with every
-longest cycle, deciding Hoa's conjecture and Zhan's Questions 2-4 below those orders and extending OEIS A185306.
+EXP-001 (2026-11-06): every MNH graph of order <= 11 classified with every longest cycle. Hoa's conjecture holds
+through order 11, so the least counterexample order is in [12, 56]; A185306(11) = 67 (new term); no witness for
+Zhan's Questions 2-3 and f(n) = 1 for 4 <= n <= 11.
 
 ## 2. The objects table
 
@@ -22,24 +23,25 @@ longest cycle, deciding Hoa's conjecture and Zhan's Questions 2-4 below those or
 | Hoa's conjecture | every residual of every MNH graph is complete; false for n >= 56 (Zhan) |
 | Zhan's Q2, Q3, Q4 | every residual component complete?; a connected non-complete residual?; f(n) = max number of residual components |
 | degree-sum tightness | in an MNH graph every nonadjacent pair has d(u) + d(v) <= n - 1 (Bondy-Chvatal closure) |
-| A185306 | number of MNH graphs on n vertices: 0, 1, 1, 1, 3, 3, 7, 9, 18, 31 (n = 1..10) |
+| A185306 | number of MNH graphs on n vertices: 0, 1, 1, 1, 3, 3, 7, 9, 18, 31 (n = 1..10); 67 at n = 11 (EXP-001) |
 | dossier | [2026-09-02 dossier](../../problems/combinatorics/petersen-coloring/context/scouting-2026-09/2026-09-02-dossier-hoa-mnh.md) |
 
 ## 3. Experiment index
 
 | Experiment | Question | Verdict | Load-bearing result |
 |---|---|---|---|
-| EXP-001-mnh-census | MNH graphs and every longest-cycle residual to order 11-12 | in preparation | - |
+| EXP-001-mnh-census | MNH graphs and every longest-cycle residual to order 11-12 | CONFIRMED to order 11 | Hoa holds for n <= 11 (n_0 in [12, 56]); A185306(11) = 67; no Q2/Q3 witness; f(n) = 1 for 4 <= n <= 11 |
 
 ## 4. In flight
 
-Opened 2026-11-06 on branch `work/hoa-mnh/open`. EXP-001 hypothesis to be frozen before any run.
+EXP-001 complete 2026-11-06 (verdict CONFIRMED to order 11). Order 12 not run (about 29 hours by plain generation, over the stop condition); next: HMB-005 (faster order-12 route) and HMB-002 (gadget search).
 
 ## 5. Next actions
 
-1. Freeze EXP-001's hypothesis; build the exact filter; gate against A185306 for n <= 10.
-2. Run n = 11, then n = 12; enumerate every longest cycle of every MNH graph.
-3. Gadget search (lens 2) on the classified MNH graphs for counterexamples below 56.
+1. HMB-005: order 12 by the universal-vertex split (K_1 join a maximal nontraceable graph on 11 vertices) plus
+   maximum degree <= n - 4 for the rest; each part must reproduce the plain counts at orders 10 and 11 first.
+2. HMB-002: gadget search (lens 2) on the classified MNH graphs for counterexamples below 56.
+3. HMB-003: read Problem 266 and Hoa 2005 before any write-up.
 
 ## 6. Where everything lives
 

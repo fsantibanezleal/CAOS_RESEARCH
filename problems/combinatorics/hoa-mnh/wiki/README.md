@@ -9,3 +9,5 @@ and how many components a residual can have (Question 4).
 Status of this program: opened 2026-11-06. Records: [RESUME](../../../../program/hoa-mnh/RESUME.md),
 [plan](../../../../program/hoa-mnh/plan.md), [sources](../context/references.md). The first experiment is an exact
 census of MNH graphs by order, with every longest cycle.
+
+EXP-001 (2026-11-06): every MNH graph of order at most 11 is classified. Hoa's conjecture holds through order 11, so the least counterexample lies between 12 and 56 vertices. There are 67 MNH graphs on 11 vertices (a new term of OEIS A185306). Every longest cycle of every one of them leaves a single complete graph, so Zhan's Questions 2 and 3 have no small witness and his f(n) equals 1 up to n = 11. [Verdict](../experiments/EXP-001-mnh-census/verdict.md).
