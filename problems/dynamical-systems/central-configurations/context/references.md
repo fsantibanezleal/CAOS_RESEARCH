@@ -8,7 +8,8 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
 
 - [Sm98] S. Smale, Mathematical problems for the next century, Mathematical
   Intelligencer 20 (1998), no. 2, 7-15. Problem 6 = finiteness of relative equilibria.
-  [Vs: citation via MZ19 refs + Chang-Chen; verbatim problem text U]
+  [Vs: citation via MZ19 refs + Chang-Chen; verbatim problem text V 2026-11-07 in the author's Second Version
+  of 1998-08-07 (context/2026-11-07-roberts-smale-read.md); the Intelligencer printing unread]
 - [Ch18] J. Chazy, Sur certaines trajectoires du probleme des n corps, Bull. Astron. 35
   (1918) 321-389. [Vs: Moeckel notes refs]
 - [W41] A. Wintner, The Analytical Foundations of Celestial Mechanics, Princeton
@@ -32,8 +33,8 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
   [V: author PDF read 2026-07-23 (users-math.au.dk/jensen/papers/)]
 - [R99] G. E. Roberts, A continuum of relative equilibria in the five-body problem,
   Physica D 127 (1999) 141-145. One negative mass; continuum; positivity necessary.
-  [Vs: ADS/scispace abstract + citations in HJ11 and Moeckel notes; PDF U; exact
-  negative mass value U]
+  [V 2026-11-07: author preprint mp_arc 98-554 read; masses (1,1,1,1,-1/4), Theorem 3.1, Corollary 3.2
+  (context/2026-11-07-roberts-smale-read.md); the Physica D printing unread]
 - [CC23] K.-M. Chang, K.-C. Chen, Toward finiteness of central configurations for the
   planar six-body problem by symbolic computations, arXiv:2303.02853 (117-page
   programme preprint, PDF archived on E: with SHA-256 a4cd360f..., pages 1-6 read
