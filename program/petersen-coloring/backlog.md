@@ -9,7 +9,7 @@
 | PCB-005 | EXP-004: normal 6 and strong normal 6 on all three (GJMMM did strong normal 6 on one 112 only) | done | P1 | 2026-09-03 CONFIRMED: normal chromatic index exactly 6 on all three |
 | PCB-006 | Exact P-defect and normal-5 defect | P-defect done; normal-5 running | P1 | EXP-006: parity theorem (never 1); P-defect exactly 2 on all three; G52 edge-relaxation sweep for the normal-5 defect running |
 | PCB-007 | Manuscript v0.01 on Zenodo (preprint) transcribed from EXP-001..006 verdicts | done | P1 | 2026-09-03 published: DOI 10.5281/zenodo.22285165 (concept 10.5281/zenodo.22285164), 7 pages, 351,989 bytes |
-| PCB-014 | Read Goedgebeur-Macajova-Skoviera 2019 in full before comparing oddness 4 with their order-44 theorem in the manuscript | todo | P1 | the comparison is `[U]` until then |
+| PCB-014 | Read Goedgebeur-Macajova-Skoviera 2019 in full before comparing oddness 4 with their order-44 theorem in the manuscript | done | P1 | 2026-11-07: Theorem 1 read in arXiv:1712.07867v2 [V]; the manuscript's sentence matches it as worded; [note](../../problems/combinatorics/petersen-coloring/context/2026-11-07-gms2019-order-44.md) |
 | PCB-008 | Reproduce `P-Col(F)`, `P-Col(C)`, `P-Col(L)` exactly and the GJMMM composition lemmas | todo | P2 | anatomy lens |
 | PCB-009 | Composition classes C(k,m) below 52 vertices | inconclusive; verdict written | P2 | EXP-005: (5,0), (6,0) exhausted (pure-F proposition); (5,2), (6,2) budget-stopped; next PCR-4b symmetry-broken enumeration |
 | PCB-010 | Retrieve the 68-vertex X-posted graph if it becomes public; add to the audit | blocked | P3 | X is paywalled for fetch |
