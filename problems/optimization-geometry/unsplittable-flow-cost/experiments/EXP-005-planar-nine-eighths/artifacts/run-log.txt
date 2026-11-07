@@ -1,0 +1,34 @@
+EXP-005: the planar 9/8 family (hypothesis frozen at 50e402e9)
+
+P1 and P3: M(3/4, 1/4, 1/2 + eps, 1/4, 1)
+ eps=1/10: fractional cost 19/10, least alpha over cost-good routings 21/20, target 21/20
+  [PASS] P1 eps=1/10: fractional cost 2 - eps  (19/10)
+  [PASS] P1 eps=1/10: least alpha equals 9/8 - 3eps/4  (21/20 vs 21/20)
+  [PASS] P2 eps=1/10: acyclic
+  [PASS] P2 eps=1/10: K4 subdivision  (('s', 'u', 'v', 'w'))
+  [PASS] P2 eps=1/10: planar (degree-based Kuratowski check)  (True)
+   frontier value alpha_max = 21/20, witness cost ('3/10', '2/5', '0', '3/10', '0', '0', '0', '0', '0'), ceiling 9/20
+  [PASS] P3 eps=1/10: alpha_max >= 9/8 - 3eps/4  (21/20)
+ eps=1/100: fractional cost 199/100, least alpha over cost-good routings 447/400, target 447/400
+  [PASS] P1 eps=1/100: fractional cost 2 - eps  (199/100)
+  [PASS] P1 eps=1/100: least alpha equals 9/8 - 3eps/4  (447/400 vs 447/400)
+  [PASS] P2 eps=1/100: acyclic
+  [PASS] P2 eps=1/100: K4 subdivision  (('s', 'u', 'v', 'w'))
+  [PASS] P2 eps=1/100: planar (degree-based Kuratowski check)  (True)
+   frontier value alpha_max = 447/400, witness cost ('3/10', '2/5', '0', '3/10', '0', '0', '0', '0', '0'), ceiling 153/400
+  [PASS] P3 eps=1/100: alpha_max >= 9/8 - 3eps/4  (447/400)
+ eps=1/1000: fractional cost 1999/1000, least alpha over cost-good routings 4497/4000, target 4497/4000
+  [PASS] P1 eps=1/1000: fractional cost 2 - eps  (1999/1000)
+  [PASS] P1 eps=1/1000: least alpha equals 9/8 - 3eps/4  (4497/4000 vs 4497/4000)
+  [PASS] P2 eps=1/1000: acyclic
+  [PASS] P2 eps=1/1000: K4 subdivision  (('s', 'u', 'v', 'w'))
+  [PASS] P2 eps=1/1000: planar (degree-based Kuratowski check)  (True)
+   frontier value alpha_max = 4497/4000, witness cost ('3/10', '2/5', '0', '3/10', '0', '0', '0', '0', '0'), ceiling 1503/4000
+  [PASS] P3 eps=1/1000: alpha_max >= 9/8 - 3eps/4  (4497/4000)
+
+P4: grid d1 = 1, b in k/8, d3 in k/4, r1, q, r3 in k/16
+ 108000 points, 4 processes, budget 7200 s
+ points evaluated: 108000; largest alpha_max: 69/64 1.078125 b=3/4 d3=1 r1=1/4 q=9/16 r3=1/4 cost=('3/10', '2/5', '0', '3/10', '0', '0', '0', '0', '0')
+ grid points with alpha_max > 9/8 among the top 50: 0
+
+wall time 380.5 s

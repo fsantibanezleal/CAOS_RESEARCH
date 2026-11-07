@@ -9,6 +9,7 @@ verdict. Verdicts are reported verbatim, never upgraded in language (methodology
 | [EXP-002](../experiments/EXP-002-adjudicate-2026-claim/) | Is the 2026 claimed counterexample valid, and what exactly does it force? | CONFIRMED (2026-07-24) | Goemans' Conjecture 1.2 is FALSE: $c^T x = 58$, all 8 routings enumerated, the 4 congestion-good ones cost 90, 60, 60, 60; and $\alpha_{\mathrm{inst}} = 16/15$, so the refutation is by exactly one unit |
 | [EXP-003](../experiments/EXP-003-separation-lp/) | Can we decide, without searching over cost vectors, whether an instance admits ANY counterexample cost vector? | CONFIRMED (2026-07-24) | The exact rational separation LP; its optimum on the 2026 instance is $2/7$, attained by the published cost vector normalised, so that vector is an OPTIMAL separator for that graph and flow; plus the $k = 1$ theorem and the corrected $k = 2$ statement |
 | [EXP-004](../experiments/EXP-004-frontier-value/) | How much violation can an instance force, maximised over all cost vectors, and can any relative of the 2026 instance force more? | CONFIRMED instruments, F4 REFUTED as a null result (2026-07-25) | The frontier value $\alpha_{\max}$; it equals $16/15$ for the 2026 instance, and over 3456 parameter points of the family containing it the ONLY counterexample is that instance at exactly its published parameters |
+| [EXP-005](../experiments/EXP-005-planar-nine-eighths/) | Does Muffatti's planar family force $9/8$, and does optimal pricing give more? | CONFIRMED (2026-11-07) | $\alpha^\* \ge 9/8$, planar too; his pricing is optimal on the family; grid maximum $69/64$; EXP-004's family reading withdrawn |
 
 ## What EXP-002 established beyond the announcement
 
@@ -56,7 +57,9 @@ verdict. Verdicts are reported verbatim, never upgraded in language (methodology
   at $k = 4$), the only counterexample is the published instance at exactly its published
   parameters: one point in 2448 at three terminals, none at all at four. The instance is
   isolated and extremal in its own family, so a larger forced violation needs a different
-  conflict structure, not parameter tuning. [MV]
+  conflict structure, not parameter tuning. [MV for the box only. As a statement about the family this reading
+  is WITHDRAWN (2026-11-07): EXP-005 reaches 9/8 in the same topology, with demands and fractions the box did not
+  contain.]
 - **A tooling failure and its fix.** sympy's rational simplex cycled on a degenerate family
   member, exactly the single-point-of-failure risk EXP-003 had flagged. We wrote an exact
   Bland-rule simplex; the two implementations now agree on all six decidable cases.
@@ -68,3 +71,13 @@ which is the only route left inside this programme to a larger forced violation;
 choice of the split fractions instead of sampling them (UFB-036); and the canonical form
 (UFB-011) paired with constraint generation (UFB-034), which together open the minimality
 exhaustion (UFB-012).
+
+## What EXP-005 added (2026-11-07)
+
+- **$\alpha^\* \ge 9/8$, also on planar instances.** Muffatti's family (GitHub note, 2026-08-31): Rybin's topology
+  with demands $(1, 3/4, 1)$, free-path fractions $(1/4, 1/2 + \varepsilon, 1/4)$ and unit-cost paid paths forces
+  exactly $9/8 - (3/4)\varepsilon$; checked with our exact instrument at three values of $\varepsilon$. The frontier
+  value is the same, so his pricing is optimal on the family. With TVZ24, $9/8 \le \alpha^\*_{\text{planar}} \le 2$. [MV]
+- **EXP-004's family reading was wrong.** Its box did not contain these parameters, and the bound needs
+  $q > 1/2$ strictly, which no finite grid reaches; the family's ceiling looks like $9/8$ (Muffatti's symmetric
+  analysis, our 108,000-point grid with optimal pricing tops at $69/64$). [MV on the grid; the ceiling is [D]]
