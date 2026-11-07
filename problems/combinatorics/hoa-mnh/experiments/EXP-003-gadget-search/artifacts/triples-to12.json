@@ -1,0 +1,18 @@
+{
+ "gadgets": 2796,
+ "dp_backtracking_disagreements": 0,
+ "traceable_ok": 1111,
+ "middle_candidates": 0,
+ "d_histogram": {
+  "1": 2392,
+  "2": 242,
+  "3": 72,
+  "4": 35,
+  "5": 25,
+  "6": 14,
+  "7": 9,
+  "8": 5,
+  "9": 2
+ },
+ "best_triple": null
+}

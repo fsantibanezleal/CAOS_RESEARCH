@@ -6,4 +6,4 @@
 | 2026-11-06 | proposed | opened | Source pass refreshed (Zhan still v3, no follow-up), sources archived with SHA-256, scoping sheet, plan, RESUME, problem tree |
 | 2026-11-06 | opened | exploring | EXP-001 hypothesis (6252044e), deterministic entry point, artifacts and verdict (CONFIRMED to order 11) |
 
-Hoa's conjecture holds for n <= 11 (EXP-001) and fails for n >= 56 (Zhan); the least counterexample order is open in [12, 56].
+Hoa's conjecture holds for n <= 12 (EXP-001, EXP-002) and fails for n >= 56 (Zhan); the least counterexample order is open in [13, 56].
