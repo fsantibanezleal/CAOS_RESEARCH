@@ -1,0 +1,198 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.05in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink,fancyhdr}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\e}{\mathrm{e}}
+\input{numbers.tex}
+
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.01}
+\newcommand{\docdate}{7 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.24044538}
+\newcommand{\conceptdoi}{10.5281/zenodo.24044537}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{bougard-joret}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Second regime\textperiodcentered\ \docversion}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\title{Exact values of the Bougard--Joret function\\in its open second regime up to order 22}
+\author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program\\
+\small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{\docdate}
+\begin{document}
+\maketitle
+\headerblock
+\begin{abstract}
+Let $f(n,\alpha,k)$ be the minimum number of edges of a $k$-connected graph of order $n$ with independence number
+$\alpha$. Bougard and Joret conjectured $f(n,\alpha,k)=t(n,\alpha)+\lceil k\alpha/2\rceil$ when $n>k\alpha$,
+where $t(n,\alpha)$ is the size of the balanced union of $\alpha$ cliques. Das and Gupta disproved the other line
+of the conjecture and left this second regime open. Bougard and Joret proved the second line only when
+$\lfloor n/\alpha\rfloor\ge\lceil k\alpha/2\rceil-\alpha+2$ (for $\alpha\ge3$). We compute $f$ exactly at every
+triple outside that range with $\alpha\ge3$, $k\ge3$ and $n\le22$: \ntriples\ triples. At every one of them the
+value equals the conjectured one, by complete enumeration of every candidate graph below it
+(\ngraphs\ candidate graphs in all). The enumeration uses nauty with two pruning rules that are proved sound, and an exact filter checked
+against an independent implementation. The data support the second line of the conjecture in its smallest open
+cases; they do not prove it in general.
+\end{abstract}
+
+\section{Problem and prior work}
+
+All graphs are finite and simple. Write $\e(G)$ for the number of edges, $\alpha(G)$ for the independence number
+and $\kappa(G)$ for the vertex connectivity. For $n\ge2\alpha$, $n\ge\alpha+k$, $\alpha\ge2$ and $k\ge3$, Bougard
+and Joret conjectured \cite[Conjecture 1]{BJ}
+\[
+f(n,\alpha,k)=\begin{cases}\lceil nk/2\rceil,&n\le k\alpha,\\ t(n,\alpha)+\lceil k\alpha/2\rceil,&n>k\alpha.\end{cases}
+\]
+The upper bound in the second regime holds by their construction: the balanced union of $\alpha$ cliques
+$T(n,\alpha)$ becomes $k$-connected after adding $\lceil k\alpha/2\rceil$ edges without raising the independence
+number \cite[Section 6]{BJ}. Das and Gupta determined the boundary $n=\alpha+k$, which disproves the first line
+(the smallest counterexample is $f(7,3,4)=15$), and left the second regime open \cite{DG}. The first interior shell
+$n=\alpha+k+1$ \cite{Shell} and the value $f(2d+3,2,d+2)=d^2+4d+2$ \cite{Next} lie in the first regime.
+
+\paragraph{What is proved in the second regime.} Bougard and Joret's Proposition 8 states that a 2-connected graph
+with $n\ge3\alpha\ge9$ and at most $t(n,\alpha)+\lfloor n/\alpha\rfloor+\alpha-3$ edges has a vertex partition into
+$\alpha$ cliques \cite{BJ}. A $k$-connected graph with such a partition has at least
+$t(n,\alpha)+\lceil k\alpha/2\rceil$ edges (each clique sends at least $k$ edges out of it). Hence the second line
+holds whenever $\lceil k\alpha/2\rceil-1\le\lfloor n/\alpha\rfloor+\alpha-3$, that is
+\begin{equation}\label{eq:proved}
+\lfloor n/\alpha\rfloor\ \ge\ \lceil k\alpha/2\rceil-\alpha+2\qquad(\alpha\ge3),
+\end{equation}
+and also for $\alpha=2$, $n\ge2k$ \cite{BJ}. The \emph{open window} is the set of second-regime triples with
+$\alpha\ge3$ violating \eqref{eq:proved}. Its smallest members are $(10,3,3)$ and $(11,3,3)$.
+
+\section{Method}
+
+For a triple $(n,\alpha,k)$ with conjectured value $c=t(n,\alpha)+\lceil k\alpha/2\rceil$ we decide, for every
+edge count $E<c$ that can occur, whether some graph on $n$ vertices with $E$ edges has independence number
+exactly $\alpha$ and connectivity at least $k$. If none does, $f(n,\alpha,k)\ge c$, and with the construction,
+$f(n,\alpha,k)=c$. Two classical facts bound the edge counts: minimum degree at least $k$ gives
+$E\ge\lceil nk/2\rceil$, and Tur\'an's theorem applied to the complement gives $E\ge t(n,\alpha)$ for independence
+number at most $\alpha$ \cite{Turan}. So only $\lceil k\alpha/2\rceil$ edge counts per triple need to be searched.
+
+Every graph with $n$ vertices, $E$ edges and minimum degree at least $k$ is generated up to isomorphism by
+\texttt{geng} from nauty~2.8.9 \cite{nauty}, split into disjoint parts. Each graph is tested by an exact filter:
+the independence number by branch and bound on bit sets, and connectivity at least $k$ by deleting every vertex set
+of size less than $k$. Two refinements were added during the work; each is proved sound and was gated before use.
+
+\begin{lemma}[early stop]\label{lem:early}
+Rejecting a graph as soon as the search finds an independent set of size $\alpha+1$ leaves the decision
+``$\alpha(G)=\alpha$'' unchanged.
+\end{lemma}
+\begin{proof}
+Such a graph has $\alpha(G)\ge\alpha+1$ and is rejected by the full computation as well; otherwise the search
+runs to the end and computes $\alpha(G)$ exactly.
+\end{proof}
+
+\begin{lemma}[independence prune]\label{lem:prune}
+During generation, a partial graph that already contains an independent set of size $\alpha+1$ can be discarded
+with all its extensions.
+\end{lemma}
+\begin{proof}
+\texttt{geng} extends a graph by adding vertices only, so the partial graph is an induced subgraph of each of its
+completions. The independence number of an induced subgraph never exceeds that of the graph, so every completion
+has independence number at least $\alpha+1$ and is rejected.
+\end{proof}
+
+With Lemma~\ref{lem:prune}, the $(17,5,3)$ search at $E=27$ dropped from $1{,}040$ seconds
+($35{,}329{,}226$ candidates) to under a second ($482$ candidates), with the same answer.
+
+\section{Validation}
+
+\begin{itemize}
+\item The filter agrees with an independent implementation (networkx) on all $12{,}346$ graphs on 8 vertices, for
+  every $\alpha\le6$ and $k\le5$, before and after Lemma~\ref{lem:early}.
+\item Known values are reproduced: $f(7,3,4)=15$ \cite{DG}, $f(6,2,3)=9$, $f(6,2,4)=12$, and the second-regime
+  value $f(12,3,3)=23$ inside the proved range \eqref{eq:proved}.
+\item The generator with Lemma~\ref{lem:prune} reproduces the numbers of qualifying graphs found without it at
+  twelve known cases, from $(7,3,4)$ to $(17,5,3)$.
+\item Connected-graph counts of \texttt{geng} agree with OEIS A001349 where checked, and the 4,207 graphs at
+  $(16,5,3)$, $E=24$ are the cubic graphs on 16 vertices (OEIS A005638).
+\end{itemize}
+
+\section{Results}
+
+\begin{theorem}[MV]
+At each of the \ntriples\ triples of the open window with $n\le22$ (Table~\ref{tab:values}), no graph with fewer
+edges than the conjectured value has independence number $\alpha$ and connectivity at least $k$; hence
+$f(n,\alpha,k)=t(n,\alpha)+\lceil k\alpha/2\rceil$ at every one of them.
+\end{theorem}
+
+\begin{table}[ht]
+\centering\small
+\input{table.tex}
+\caption{The open window up to order 22. Column $f$: the exact value (the conjectured value when the search below it
+is complete). ``Edges searched'': the edge counts below the conjectured value that can occur. ``Graphs below'': the
+candidate graphs generated at those edge counts (with the generator in use; the counts after
+Lemma~\ref{lem:prune} are smaller). ``Extremal graphs'': the qualifying graphs at the conjectured value when that edge
+count was also enumerated; otherwise the attaining construction \cite{BJ}.}
+\label{tab:values}
+\end{table}
+
+\section{Scope}
+
+The open window is infinite; these computations cover its members of order at most 22 and nothing beyond. The
+results are exact finite statements, verified by machine; the general second line of the conjecture remains open.
+The extremal graphs found at the conjectured values are listed in the computational record \cite{Record}.
+
+\paragraph{Data availability.}
+Code, records and the lists of extremal graphs are in the repository \cite{Record}, experiments EXP-005, EXP-006 and
+EXP-007 under \path{problems/combinatorics/bougard-joret/experiments/}.
+
+\paragraph{Declaration of generative AI use.} Generative AI tools were used for literature triage, derivation
+exploration, code drafting and internal review of the text. The author reviewed and verified all content and takes
+full responsibility for the work.
+
+\begin{thebibliography}{9}
+\bibitem{BJ} N. Bougard and G. Joret.
+\emph{Tur\'an's theorem and $k$-connected graphs}.
+Journal of Graph Theory 58 (2008), 1--13.
+\href{https://doi.org/10.1002/jgt.20289}{doi:10.1002/jgt.20289}.
+\bibitem{DG} J. Das and S. Gupta.
+\emph{Counterexample to the Bougard--Joret Conjecture}.
+\href{https://arxiv.org/abs/2608.18828}{arXiv:2608.18828v1}, 2026.
+\bibitem{Shell} F. Santib\'a\~nez-Leal.
+\emph{The first interior shell of the Bougard--Joret extremal problem}.
+CAOS Research preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.22315251}{doi:10.5281/zenodo.22315251}.
+\bibitem{Next} F. Santib\'a\~nez-Leal.
+\emph{The next matching level for triangle-free graphs with bounded degree and an exact Bougard--Joret value}.
+CAOS Research preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.22343021}{doi:10.5281/zenodo.22343021}.
+\bibitem{Turan} P. Tur\'an.
+\emph{Eine Extremalaufgabe aus der Graphentheorie}.
+Matematikai \'es Fizikai Lapok 48 (1941), 436--452.
+\bibitem{nauty} B. D. McKay and A. Piperno.
+\emph{Practical graph isomorphism, II}.
+Journal of Symbolic Computation 60 (2014), 94--112.
+\href{https://doi.org/10.1016/j.jsc.2013.09.003}{doi:10.1016/j.jsc.2013.09.003}.
+\bibitem{Record} F. Santib\'a\~nez-Leal.
+\emph{CAOS Research, Bougard--Joret EXP-005 to EXP-007: the open second regime}.
+Code, enumeration records and extremal graphs, 2026.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/combinatorics/bougard-joret/experiments}{Public experiment records}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,8 @@
+filter2.c gates, 2026-11-07 (before any production use of filter2)
+- networkx cross-check: all 12,346 graphs on 8 vertices, every (alpha, k) with alpha <= 6, k <= 5: 0 mismatches
+- known values: f(7,3,4) = 15 (E = 14: 0 kept of 2; E = 15: 2 kept of 6)
+- agreement with EXP-005 filter.c (kept counts identical):
+  (13,4,3) E=21: read 90446 kept 1 | (11,3,3) E=20: read 302901 kept 6
+  (16,5,3) E=24: read 4207 kept 0  | (12,3,3) E=23: read 26837832 kept 2
+- reason: filter.c's exact independence-number search was the bottleneck on sparse graphs of order 17
+  ((17,5,3) E=27: 35,329,226 graphs took 1,040 s); filter2 stops it once a set of size alpha+1 is found.

@@ -83,3 +83,21 @@ External status: Das and Gupta arXiv:2608.18828 is still v1 and the only Bougard
 k-connected graphs with given independence number and minimum size, and for triangle-free graphs with bounded
 degree and matching number, return nothing after the AEY and BET papers already cited [V]. No overlap with
 f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [U as to exhaustive priority].
+
+## 2026-11-07 - EXP-006 and EXP-007 confirmed: the open second regime up to order 22
+
+- EXP-006 (hypothesis c04a8a8f): (16,5,3) = 26, (17,5,3) = 29, (17,4,4) = 36, (16,3,5) = 43. During the run two gated
+  speed-ups: an early-stopping filter (stop once an independent set of size alpha+1 is found) and a geng PRUNE hook
+  discarding partial graphs with such a set (sound: the partial graph is an induced subgraph of every completion).
+  (17,5,3) at E = 27 went from 1,040 s to 0.4 s with the same answer.
+- EXP-007 (hypothesis f85ce6b9): every remaining open triple with n <= 22 (28 triples), each equal to the formula;
+  no 2-hour cap reached; about 5.5 hours on 28 processes.
+- In all, the second line of Conjecture 1 holds at all 39 open-window triples of order at most 22.
+
+## 2026-11-07 - Note `second-regime` v0.01 published
+
+- "Exact values of the Bougard-Joret function in its open second regime up to order 22", version DOI
+  10.5281/zenodo.24044538, concept DOI 10.5281/zenodo.24044537; 4 pages, 270,994 bytes, SHA-256
+  fdfa979f8bf1ce225ab8f0354e4beefb0d8f309fcaa979e9bff4c0d4fb17bdad; 36 release gates passed, including a fresh
+  unauthenticated download equal to the frozen file. Table and counts generated from the EXP-005/006/007 records by
+  `manuscripts/bougard-joret/second-regime/make_table.py` (39 triples, 6,217,198,475 candidate graphs).
