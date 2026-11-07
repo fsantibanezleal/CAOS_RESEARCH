@@ -35,3 +35,19 @@ affect the conclusion, since no gadget at all can serve as the middle.
 The conclusion concerns this one mechanism (three-gadget gluing through a 2-cut, then a universal vertex). It
 says nothing about counterexamples of other shapes; EXP-001 and EXP-002 cover all shapes up to their orders.
 When the order-12 census (EXP-002) is complete, its gadgets are the next input.
+
+## Addendum, 2026-11-07: gadgets of order 12
+
+With the order-12 census (EXP-002) as input, `gadgets.py <census> 12 -to12` covers 2,796 gadgets (1,638 new, all
+from order-12 MNH graphs), with the two methods in agreement on all (`artifacts/gadgets-to12.json`,
+`artifacts/triples-to12.json`). **Again no gadget has a longest middle path omitting a non-clique set.**
+
+Consequence for the mechanism [D from these exhaustive data]: in a Zhan-type counterexample K_1 join M,
+- the middle gadget needs a non-clique omitted set, so d >= 2 and, by the census, |G_middle| >= 12;
+- each end gadget needs d >= d_middle >= 2; among all gadgets with |G| <= 11 (every one comes from an MNH graph
+  of order <= 12, all enumerated), the smallest with d >= 2 has |G| = 6 and a universal vertex in G[N], and the
+  smallest with d >= 2 and no universal vertex in G[N] has |G| = 11;
+- condition (iii) allows at most one gadget whose G[N] has a universal vertex.
+
+Hence such a counterexample has order at least 3 + 12 + 6 + 11 = **32**. This lower bound concerns only this
+three-gadget mechanism; counterexamples of other shapes are bounded below only by the census (order >= 13).

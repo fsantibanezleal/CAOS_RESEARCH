@@ -10,7 +10,7 @@ the middle's, all traceable, at least two homogeneously traceable, at most one w
 and every gadget traceable from every universal vertex of its G[N]. Writes artifacts/gadgets.json and
 artifacts/triples.json.
 
-Usage: python gadgets.py <census artifacts dir> <max order>
+Usage: python gadgets.py <census artifacts dir> <max order> [suffix]   (outputs gadgets<suffix>.json, triples<suffix>.json)
 """
 import json
 import sys
@@ -134,6 +134,7 @@ def bt_invariants(m, adj, N):
 
 def main():
     art, maxn = Path(sys.argv[1]), int(sys.argv[2])
+    suffix = sys.argv[3] if len(sys.argv) > 3 else ""
     gadgets, disagreements = [], 0
     for n in range(4, maxn + 1):
         for line in (art / f"mnh-n{n}.txt").read_text(encoding="utf-8").split("\n"):
@@ -159,7 +160,7 @@ def main():
                                 "univ": univ, "trace_from_univ": all((starts >> u) & 1 for u in univ),
                                 "d": d, "nonclique_omit": nonclique})
     (HERE / "artifacts").mkdir(exist_ok=True)
-    (HERE / "artifacts" / "gadgets.json").write_text(json.dumps(gadgets, indent=1) + "\n", encoding="utf-8")
+    (HERE / "artifacts" / f"gadgets{suffix}.json").write_text(json.dumps(gadgets, indent=1) + "\n", encoding="utf-8")
     ok = [g for g in gadgets if g["traceable"] and g["trace_from_univ"]]
     mids = [g for g in ok if g["nonclique_omit"]]
     best = None
@@ -178,7 +179,7 @@ def main():
                "traceable_ok": len(ok), "middle_candidates": len(mids),
                "d_histogram": {str(k): sum(g["d"] == k for g in gadgets) for k in sorted({g["d"] for g in gadgets})},
                "best_triple": None if best is None else {"order": best[0], "gadgets": best[1]}}
-    (HERE / "artifacts" / "triples.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
+    (HERE / "artifacts" / f"triples{suffix}.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
     print(json.dumps({k: v for k, v in summary.items() if k != "best_triple"}),
           "best order:", None if best is None else best[0])
 
