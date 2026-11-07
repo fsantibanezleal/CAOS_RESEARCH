@@ -9,18 +9,24 @@ per-claim verification tags and the source hashes. Nothing here is recalled from
 |---|---|---|---|
 | DGG theorem (1999) | $\le x(a) + d_{\max}$ | no | no |
 | Goemans Conj 1.2 | $\le x(a) + d_{\max}$ | $c^T f^{\mathcal{P}} \le c^T x$ | no (WLOG yes) |
-| Morell-Skutella Conj 1.3 | $x(a) - d_{\max} \le \cdot \le x(a) + d_{\max}$ | no | yes |
-| Morell-Skutella Conj 1.4 | $x(a) - d_{\max} \le \cdot \le x(a) + d_{\max}$ | $c^T f^{\mathcal{P}} \le c^T x$ | yes |
+| Conj 1.3 (Morell-Skutella 2022 Conj 1); FALSE, Bérczi et al. 2026 Thm 17 | $x(a) - d_{\max} \le \cdot \le x(a) + d_{\max}$ | no | yes |
+| Conj 1.4 (Morell-Skutella 2022 Conj 2); FALSE | $x(a) - d_{\max} \le \cdot \le x(a) + d_{\max}$ | $c^T f^{\mathcal{P}} \le c^T x$ | yes |
 | Conj 1.5 | $x(a) - 2d_{\max} \le \cdot \le x(a) + 2d_{\max}$ | $c^T f^{\mathcal{P}} \le c^T x$ | yes |
 
 Labels follow arXiv:2510.21287, so that our record and the literature can be compared line
-by line. [VERIFIED]
+by line. [VERIFIED] Morell and Skutella's own paper (Math. Program. 192 (2022)) numbers the
+two-sided conjectures 1 (no cost) and 2 (with cost); 1.3 and 1.4 are STVZ25's labels, tagged
+"[MS22]" there. [VERIFIED 2026-11-07]
 
 Implications, all elementary and re-derived by us: Conj 1.4 implies Conj 1.3 (drop the
 cost clause) and Conj 1.4 implies Conj 1.2 (drop the lower bounds; Goemans is acyclic
 without loss of generality, by cancelling flow on cycles and deleting zero-flow arcs).
 STVZ25 Theorem 1.6 adds the non-trivial implication: Conj 1.3 implies Conj 1.5. [VERIFIED
-for Thm 1.6; [D] for the elementary ones]
+for Thm 1.6; [D] for the elementary ones] Since 2026-08-14 Conj 1.3 is known to be false
+(Bérczi, Liu, Reis, Tarnawski, arXiv:2608.13983, Theorem 17: for every k >= 4 a single-source
+DAG with max demand 8k where every unsplittable flow deviates by at least 9k - 3 =
+(9/8 - 3/(8k)) d_max on some arc), so Theorem 1.6 no longer gives a route to Conj 1.5, which
+stays open. [VERIFIED 2026-11-07]
 
 ## What is proved
 
@@ -61,6 +67,7 @@ The class picture that results is unusually sharp:
 2. What is the exact frontier constant $\alpha^\*$, in general and for planar graphs?
    Known: $\alpha^\* \ge 16/15$ [MV, EXP-002], $\alpha^\*_{\text{planar}} \le 2$ [VERIFIED,
    TVZ24].
-3. Morell-Skutella Conj 1.3, the cost-free two-sided statement, which survives and by
-   Theorem 1.6 now carries the weight of implying a $2 d_{\max}$ cost result.
+3. Conj 1.3 (Morell-Skutella 2022 Conjecture 1), the cost-free two-sided statement: settled
+   false by Bérczi et al. 2026 (Theorem 17). The open questions it leaves are the right
+   two-sided constant (Bérczi et al. ask for 2 d_max) and Conj 1.5 by another route.
 4. How small can a counterexample be? Nothing is published on minimality.
