@@ -332,3 +332,10 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   Most Nine".
 - The depth-7 frontier lived only on the failing data drive M:; it was copied to the training root and every
   file hashed against the EXP-011 manifest before its scan.
+
+## 2026-11-07 - literature check after EXP-015
+
+External status: open. arXiv searches (newest first) for "tau conjecture", "Shub-Smale" with roots, and
+straight-line programs with integer roots return nothing after 2019 bearing on z_max or the seven-root threshold
+(arXiv:2610.41660, elliptic Fekete points, is unrelated) [V]. No overlap with EXP-015 or census v0.06 found [U as
+to exhaustive priority].
