@@ -1,0 +1,39 @@
+EXP-141 gates, 2026-11-07 (cert.py; Singular and crt_recon in WSL Ubuntu-24.04, FLINT 3.0.1)
+
+Field (cert.py build):
+P irreducible over Q: True; h(A(y)) = 0 mod P: True; deg h = 5
+13 equations, terms [3, 3, 32, 10, 54, 54, 39, 10, 84, 84, 84, 77, 44],
+max digits [105, 35, 202, 112, 384, 381, 222, 117, 552, 550, 545, 394, 228]
+
+Gate 1 (cert.py gate1): specialised E'' at a root of P
+gate p=1021 root=18: UNIT PASS
+control p=1021 root=18: NONUNIT DIM=4 PASS
+gate p=1031 root=279: UNIT PASS
+control p=1031 root=279: NONUNIT DIM=4 PASS
+gate p=1033 root=694: UNIT PASS
+control p=1033 root=694: NONUNIT DIM=4 PASS
+gate p=1049 root=880: UNIT PASS
+control p=1049 root=880: NONUNIT DIM=4 PASS
+gate p=1061 root=933: UNIT PASS
+control p=1061 root=933: NONUNIT DIM=4 PASS
+GATE 1 PASS
+
+Gate 3 (cert.py gate3): interpolation on 50 random keys mod 2147480941: PASS
+
+Gate 2 (cert.py planted): three polynomials over L in q0..q2 with 1 in their ideal by construction.
+First attempt FAILED: half of the coordinates reconstructed but disagreed with the held-out primes. Diagnosis: every
+residue of all 401 kept primes equalled the exact lift computed directly over Q(y) (Singular, minpoly P), so the
+fault was in crt_recon: it asked fmpz_multi_CRT_ui for the symmetric representative (sign 1), while
+fmpq_reconstruct_fmpz needs 0 <= a < m. Fixed (sign 0); the same residues then reconstruct from 8 primes.
+Rerun from a fresh work directory:
+reference prime 2147480941: 7 cofactor terms, 35 coordinates
+RECON k=6 M=35 ok=34 fail_recon=1 fail_check=0 maxbits=100
+RECON k=14 M=35 ok=35 fail_recon=0 fail_check=0 maxbits=118
+CHECKPOINT PASSED with 14 primes
+IDENTITY sum g_e E''_e = 1 in L[q]: True (python-flint)
+IDENTITY 1 (Singular, minpoly P)
+GATE 2 PASS
+
+Negative control: one certificate coordinate perturbed by 1/10^9:
+IDENTITY sum g_e E''_e = 1 in L[q]: False (python-flint)
+IDENTITY 0 (Singular)
