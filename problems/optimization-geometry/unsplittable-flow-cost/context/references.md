@@ -22,6 +22,7 @@ conclusion in this programme may depend on it until it is upgraded.
 | BLRT26 | K. Bérczi, S. Liu, V. Reis, J. Tarnawski, "Weighted Equitability and Matroid-Constrained Discrepancy" | arXiv:2608.13983v1 | [VERIFIED] (Conjecture 4 = MS22 Conj 1, Theorem 17 disproves it) |
 | Afr26 | K. Afrasyab, "Independence-System Realisations in Single-Source Unsplittable Flow" | arXiv:2609.17568v1 | [VERIFIED] (Theorems 5, 7, 8; C5 certificate 79/120) |
 | CKMS26 | M. Cherniavskii, A. Kupavskii, S. Moiseev, A. Shekhovtsov, "Approximation algorithms via discrepancy with hard constraints" | arXiv:2610.16079v1 | [VERIFIED] (Theorem 7: cost-preserving, load + O(rho_max sqrt(D)) on D-hop paths) |
+| Muf26 | A. Muffatti, "Consequences of Rybin's counterexample: convex-decomposition failure and a planar 9/8 lower bound", research note (AI-assisted, not peer reviewed), GitHub terrorproforma/maths, folder planar-cost-lower-bound | commit dbf9d2372773b219a5d5088862643431170c2c9f (2026-08-31) | [VERIFIED] 2026-11-07 (LaTeX source read in full; Proposition 1 and Theorem 2 re-derived and checked exactly by EXP-005) |
 | AFP26 | A. Freitas Ramos, D. Barros Hulak, R. J. G. B. de Queiroz, "A Formal Counterexample to the Cost-Preserving Single-Source Unsplittable Flow Conjecture", Archive of Formal Proofs | isa-afp.org/entries/Dinitz_Garg_Goemans_Counterexample.html | [VERIFIED] (document of 2026-10-26: 58 versus 60 at load x + 15) |
 
 ## Cited by the core, not yet read (upgrade targets)

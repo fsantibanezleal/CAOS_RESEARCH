@@ -17,7 +17,7 @@ either outcome.
 | UF-P0 Foundation | The exact instance checker `ufclib`: feasibility, our own path enumeration, all routings, exact congestion and cost decisions, per-arc violations, $\alpha_{\mathrm{inst}}$. Validated on hand-built instances with known answers. | DONE (EXP-001) |
 | UF-P1 Adjudication | Decide the 2026 claim independently; run the full C1-C9 consistency battery against every proved theorem; derive the corollary cascade with its hypotheses checked. | DONE (EXP-002) |
 | UF-P2 Minimality | How small can an obstruction be? Exhaustive search over small instances up to isomorphism, each decided by an exact rational separation LP so the cost vector leaves the search space. | next |
-| UF-P3 The frontier | $\alpha^\* = \inf\{\alpha:$ a cost-good routing always exists within $x + \alpha d_{\max}\}$. Known: $\ge 16/15$ (ours), $\le 2$ for planar (TVZ24), no finite bound in general. Lower bounds from odd-cycle and clique conflict families; the trade-off curve against the cost budget. | planned |
+| UF-P3 The frontier | $\alpha^\* = \inf\{\alpha:$ a cost-good routing always exists within $x + \alpha d_{\max}\}$. Known: $\ge 9/8$, planar too (Muffatti 2026, checked exactly by our EXP-005; the 2026 instance itself gives $16/15$), $\le 2$ for planar (TVZ24), no finite bound in general. Lower bounds from odd-cycle and clique conflict families; the trade-off curve against the cost budget. | planned |
 | UF-P4 The survivors | Morell-Skutella Conj 1.3 (cost-free, two-sided) survives and, by STVZ25 Theorem 1.6, implies a $2 d_{\max}$ cost statement. The same exhaustive engine retargets to it. | planned |
 | UF-P5 Publish | Wiki as verdicts land; manuscript per methodology/09; web page gated by methodology/06. | rolling |
 

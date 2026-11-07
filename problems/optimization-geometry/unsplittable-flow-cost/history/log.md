@@ -211,3 +211,11 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
 - Open before EXP-005: Muffatti's claimed planar 9/8 lower bound (UFB-063), the SSRN paper (UFB-064), and the
   re-scoping of UFB-037 (UFB-065). Details: `context/2026-11-07-literature-refresh.md`.
 
+## 2026-11-07 - EXP-005 CONFIRMED: alpha* >= 9/8, planar too
+
+- Muffatti's note (GitHub, 2026-08-31) read in full: Rybin's topology with demands (1, 3/4, 1), free-path fractions
+  (1/4, 1/2 + eps, 1/4) and unit-cost paid paths forces 9/8 - (3/4) eps. EXP-005 (hypothesis 50e402e9) checks it
+  exactly at three values of eps, with the same frontier value (his pricing is optimal), on planar acyclic
+  instances; a 108,000-point grid with optimal pricing tops at 69/64.
+- So alpha* >= 9/8 and alpha*_planar in [9/8, 2]; our 16/15 is the 2026 instance's own value, no longer the best
+  bound. EXP-004's family reading is withdrawn in an addendum. Preprint follow-up: UFB-066.

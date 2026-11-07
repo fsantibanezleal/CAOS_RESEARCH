@@ -128,3 +128,11 @@ implementations rather than one, and the primary one is anti-cycling by construc
   structures not realisable on a linear spine, which is the only route left to a larger
   forced violation inside this programme).
 - The evidenced next step for UF-P3 is no longer parameter tuning; it is a new structure.
+
+## Addendum 2026-11-07 (EXP-005): the family reading is withdrawn
+
+The sentence "pushing alpha* meaningfully above 1 will not come from tuning this family's parameters" was an
+interpretation [D] of the sweep, and it is false. EXP-005 checks exactly that Rybin's topology with demands
+(1, 3/4, 1) and free-path fractions (1/4, 1/2 + eps, 1/4) forces 9/8 - (3/4) eps (Muffatti, 2026-08-31), so
+alpha* >= 9/8. The sweep above stands as computed: its box contained neither these demand ratios with these splits
+nor fractions approaching 1/2 from above.
