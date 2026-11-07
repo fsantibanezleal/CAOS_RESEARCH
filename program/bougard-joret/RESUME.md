@@ -51,7 +51,7 @@ Updated: 2026-09-05.
 
 ## 4. In flight
 
-2026-11-07: EXP-006 and EXP-007 CONFIRMED (BJB-017): the second line of Bougard-Joret Conjecture 1 holds at all 39 triples of the open window with n <= 22. Nothing running. Next: n = 23 and beyond (BJB-018), and the general second line.
+2026-11-07: EXP-006 and EXP-007 CONFIRMED (BJB-017): the second line of Bougard-Joret Conjecture 1 holds at all 39 triples of the open window with n <= 22. Nothing running. Next: n = 23 and beyond (BJB-018), and the general second line. Note `second-regime` v0.01 published at 10.5281/zenodo.24044538.
 
 2026-11-06: EXP-005 CONFIRMED (BJB-016): Bougard-Joret's second-regime value holds at the seven smallest triples outside their proved range, by complete enumeration of all candidate graphs. The proved range is floor(n/alpha) >= ceil(k*alpha/2) - alpha + 2 (their Proposition 8). Next open triples need n >= 16.
 
@@ -83,6 +83,7 @@ Manuscript v0.01 remains frozen at version DOI `10.5281/zenodo.22315252`. At its
 - Narrative: `problems/combinatorics/bougard-joret/wiki/`.
 - Preserved published manuscript: `manuscripts/bougard-joret/tree-strip/`, v0.02.
 - New published manuscript: `manuscripts/bougard-joret/next-matching/`, v0.01, DOI 10.5281/zenodo.22343022; scoped integration complete.
+- Published note: `manuscripts/bougard-joret/second-regime/`, v0.01 (2026-11-07), DOI 10.5281/zenodo.24044538, concept 10.5281/zenodo.24044537: EXP-005 to EXP-007, all 39 open second-regime triples with n <= 22.
 - Private mirror: `plans/caos-research/bougard-joret/` in the management repository.
 
 ## 7. Gotchas

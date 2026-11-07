@@ -93,3 +93,11 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
 - EXP-007 (hypothesis f85ce6b9): every remaining open triple with n <= 22 (28 triples), each equal to the formula;
   no 2-hour cap reached; about 5.5 hours on 28 processes.
 - In all, the second line of Conjecture 1 holds at all 39 open-window triples of order at most 22.
+
+## 2026-11-07 - Note `second-regime` v0.01 published
+
+- "Exact values of the Bougard-Joret function in its open second regime up to order 22", version DOI
+  10.5281/zenodo.24044538, concept DOI 10.5281/zenodo.24044537; 4 pages, 270,994 bytes, SHA-256
+  fdfa979f8bf1ce225ab8f0354e4beefb0d8f309fcaa979e9bff4c0d4fb17bdad; 36 release gates passed, including a fresh
+  unauthenticated download equal to the frozen file. Table and counts generated from the EXP-005/006/007 records by
+  `manuscripts/bougard-joret/second-regime/make_table.py` (39 triples, 6,217,198,475 candidate graphs).

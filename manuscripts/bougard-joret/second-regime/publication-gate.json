@@ -1,0 +1,22 @@
+{
+  "release_ready": true,
+  "record_id": 24044538,
+  "version": "0.01",
+  "version_doi": "10.5281/zenodo.24044538",
+  "concept_doi": "10.5281/zenodo.24044537",
+  "scope": "Exact values of the Bougard-Joret function at all 39 open second-regime triples with n <= 22 (EXP-005 to EXP-007).",
+  "bytes": 270994,
+  "md5": "fe6dfb50d5462796bce82c879555342b",
+  "sha256": "fdfa979f8bf1ce225ab8f0354e4beefb0d8f309fcaa979e9bff4c0d4fb17bdad",
+  "tex_sha256": "0852d6e10352df6b7bac5989947b8084a3a4e1c51782f04c8d3029033fdd5bd4",
+  "metadata_sha256": "4c024013132e3726a3fc0bf5dfb2c0f62933732b72a76791a776194807b175ac",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 4,
+  "rendered_pages_reviewed": 4,
+  "qa_date": "2026-11-07",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246"
+}
