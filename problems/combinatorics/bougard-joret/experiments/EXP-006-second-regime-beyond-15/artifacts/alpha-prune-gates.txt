@@ -1,0 +1,12 @@
+(7,3,4) E=14 pruned-geng read 2 kept 0 expected kept 0 OK seconds=.029207137
+(7,3,4) E=15 pruned-geng read 6 kept 2 expected kept 2 OK seconds=.030263707
+(11,3,3) E=20 pruned-geng read 352 kept 6 expected kept 6 OK seconds=.026785264
+(12,3,3) E=22 pruned-geng read 84 kept 0 expected kept 0 OK seconds=.027275431
+(12,3,3) E=23 pruned-geng read 383 kept 2 expected kept 2 OK seconds=.028751348
+(13,4,3) E=21 pruned-geng read 394 kept 1 expected kept 1 OK seconds=.032189331
+(13,3,4) E=27 pruned-geng read 14 kept 0 expected kept 0 OK seconds=.028950839
+(13,3,4) E=28 pruned-geng read 161 kept 1 expected kept 1 OK seconds=.029413156
+(14,4,3) E=24 pruned-geng read 3248 kept 1 expected kept 1 OK seconds=.075698224
+(15,4,3) E=26 pruned-geng read 876 kept 0 expected kept 0 OK seconds=.057793820
+(16,5,3) E=25 pruned-geng read 531 kept 0 expected kept 0 OK seconds=.318483176
+(17,5,3) E=27 pruned-geng read 482 kept 0 expected kept 0 OK seconds=.328691181

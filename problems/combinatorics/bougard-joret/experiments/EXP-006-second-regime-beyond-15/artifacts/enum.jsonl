@@ -1,0 +1,19 @@
+{"n": 16, "alpha": 5, "k": 3, "E": 24, "generated": 4207, "kept": 0, "examples": [], "mod": 448, "seconds": 0.7}
+{"n": 16, "alpha": 5, "k": 3, "E": 24, "generated": 4207, "kept": 0, "examples": [], "mod": 896, "seconds": 1.5}
+{"n": 16, "alpha": 5, "k": 3, "E": 25, "generated": 927968, "kept": 0, "examples": [], "mod": 896, "seconds": 33.0}
+{"n": 17, "alpha": 5, "k": 3, "E": 26, "generated": 287045, "kept": 0, "examples": [], "mod": 1792, "seconds": 95.6}
+{"n": 17, "alpha": 5, "k": 3, "E": 27, "generated": 35329226, "kept": 0, "examples": [], "mod": 1792, "seconds": 1040.2}
+{"n": 16, "alpha": 5, "k": 3, "E": 24, "generated": 13, "kept": 0, "examples": [], "mod": 56, "seconds": 0.1}
+{"n": 16, "alpha": 5, "k": 3, "E": 25, "generated": 531, "kept": 0, "examples": [], "mod": 56, "seconds": 0.4}
+{"n": 16, "alpha": 5, "k": 3, "E": 26, "generated": 18979, "kept": 18, "examples": ["O?AA@AOE?pHA`_HOKO?bO", "O?AA@AOE?pHA`_HOKO@aA", "O?AA@?OaASKGJ?CgQa@BG", "O?AA@AOEA`P_AcHOKO?bO", "O?AA@AOEA`P_AcHOKODAG"], "mod": 56, "seconds": 1.3}
+{"n": 17, "alpha": 5, "k": 3, "E": 26, "generated": 16, "kept": 0, "examples": [], "mod": 56, "seconds": 0.1}
+{"n": 17, "alpha": 5, "k": 3, "E": 27, "generated": 482, "kept": 0, "examples": [], "mod": 56, "seconds": 0.4}
+{"n": 17, "alpha": 5, "k": 3, "E": 28, "generated": 11282, "kept": 0, "examples": [], "mod": 56, "seconds": 1.4}
+{"n": 17, "alpha": 5, "k": 3, "E": 29, "generated": 218377, "kept": 34, "examples": ["P?AA@?Oa?WKOSGKOPQCIOEG_", "P?AA@?O`AOPOIOKGQaADOHO_", "P?AA@?OAEGSGW_EG@aGd_KP?", "P?AA@?OAEGSGW_DG@Q?pAKT?", "P?AA@?OAEGSGW_DG@Q?pAESG"], "mod": 56, "seconds": 7.3}
+{"n": 17, "alpha": 4, "k": 4, "E": 34, "generated": 3, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 17, "alpha": 4, "k": 4, "E": 35, "generated": 96, "kept": 0, "examples": [], "mod": 56, "seconds": 1.0}
+{"n": 17, "alpha": 4, "k": 4, "E": 36, "generated": 3000, "kept": 2, "examples": ["P?`@?aGXBCAgTCgaBGcT?CXG", "P?`@?aGpBCAgXCKaBGcT?CXG"], "mod": 56, "seconds": 3.7}
+{"n": 16, "alpha": 3, "k": 5, "E": 40, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 0.1}
+{"n": 16, "alpha": 3, "k": 5, "E": 41, "generated": 10, "kept": 0, "examples": [], "mod": 56, "seconds": 0.1}
+{"n": 16, "alpha": 3, "k": 5, "E": 42, "generated": 122, "kept": 0, "examples": [], "mod": 56, "seconds": 0.3}
+{"n": 16, "alpha": 3, "k": 5, "E": 43, "generated": 1344, "kept": 3, "examples": ["OCOcaOcseQEckcRQDccfc", "OCOcaQcsaqCskcRQDccec", "OCOcaQcsaqCskcRQDceQQ"], "mod": 56, "seconds": 0.8}
