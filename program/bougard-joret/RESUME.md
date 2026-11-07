@@ -45,9 +45,13 @@ Updated: 2026-09-05.
 | EXP-002-next-shell | Full first-shell value; all alpha-two extremals | CONFIRMED | Complete proof audited; independent exact certificates pass |
 | EXP-003-triangle-free-next-matching | Exact next matching level for every $d\ge7$ | Proof and independent audits PASS; published | Uniform upper bound; known BET construction; v0.01 DOI 10.5281/zenodo.22343022; scoped integration complete |
 | EXP-005-second-regime-small | Exact $f$ at the smallest open second-regime triples | CONFIRMED [MV] | Second line of Conjecture 1 holds at all seven: (10,3,3)=17, (11,3,3)=20, (13,4,3)=21, (14,4,3)=24, (15,4,3)=27, (13,3,4)=28, (14,3,4)=32; complete geng enumeration with an exact filter |
+| EXP-006-second-regime-beyond-15 | (16,5,3), (17,5,3), (17,4,4), (16,3,5) | CONFIRMED [MV] | 26, 29, 36, 43; independence-pruned generator and early-stopping filter, both gated |
+| EXP-007-open-window-to-22 | Every open second-regime triple with n <= 22 | CONFIRMED [MV] | all 28 remaining triples equal the formula; with EXP-005/006, all 39 |
 | EXP-004-bracket-endpoint | Endpoint of $d^2+4d+1\le f(2d+3,2,d+2)\le d^2+4d+2$ | CONFIRMED; independent audit PASS | $f(2d+3,2,d+2)=d^2+4d+2$, $d\ge7$; shared-neighbourhood theorem; configuration SAT d=7 (8/8 UNSAT), d=8 (7/8, eighth excluded by $a+b=2$); next-matching v0.04 10.5281/zenodo.23965193 |
 
 ## 4. In flight
+
+2026-11-07: EXP-006 and EXP-007 CONFIRMED (BJB-017): the second line of Bougard-Joret Conjecture 1 holds at all 39 triples of the open window with n <= 22. Nothing running. Next: n = 23 and beyond (BJB-018), and the general second line.
 
 2026-11-06: EXP-005 CONFIRMED (BJB-016): Bougard-Joret's second-regime value holds at the seven smallest triples outside their proved range, by complete enumeration of all candidate graphs. The proved range is floor(n/alpha) >= ceil(k*alpha/2) - alpha + 2 (their Proposition 8). Next open triples need n >= 16.
 

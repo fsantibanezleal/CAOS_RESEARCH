@@ -1,0 +1,182 @@
+{"n": 17, "alpha": 3, "k": 5, "E": 43, "generated": 0, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 17, "alpha": 3, "k": 5, "E": 44, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 0.3}
+{"n": 17, "alpha": 3, "k": 5, "E": 45, "generated": 32, "kept": 0, "examples": [], "mod": 56, "seconds": 0.5}
+{"n": 17, "alpha": 3, "k": 5, "E": 46, "generated": 254, "kept": 0, "examples": [], "mod": 56, "seconds": 0.9}
+{"n": 17, "alpha": 3, "k": 5, "E": 47, "generated": 1832, "kept": 0, "examples": [], "mod": 56, "seconds": 2.3}
+{"n": 17, "alpha": 3, "k": 5, "E": 48, "generated": 12267, "kept": 3, "examples": ["PCOcaOcceQKcYQdcQUHxGQq_", "PCOcaOcceQKcYQLHRQ@LIRU_", "PCOcaOcseQEcecYQCs`JHdc_"], "mod": 56, "seconds": 4.4}
+{"n": 18, "alpha": 3, "k": 5, "E": 45, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 18, "alpha": 3, "k": 5, "E": 46, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 18, "alpha": 3, "k": 5, "E": 47, "generated": 4, "kept": 0, "examples": [], "mod": 56, "seconds": 0.3}
+{"n": 18, "alpha": 3, "k": 5, "E": 48, "generated": 14, "kept": 0, "examples": [], "mod": 56, "seconds": 0.4}
+{"n": 18, "alpha": 3, "k": 5, "E": 49, "generated": 56, "kept": 0, "examples": [], "mod": 56, "seconds": 0.4}
+{"n": 18, "alpha": 3, "k": 5, "E": 50, "generated": 231, "kept": 0, "examples": [], "mod": 56, "seconds": 0.9}
+{"n": 18, "alpha": 3, "k": 5, "E": 51, "generated": 1089, "kept": 0, "examples": [], "mod": 56, "seconds": 1.9}
+{"n": 18, "alpha": 3, "k": 5, "E": 52, "generated": 5172, "kept": 0, "examples": [], "mod": 56, "seconds": 4.7}
+{"n": 18, "alpha": 3, "k": 5, "E": 53, "generated": 25882, "kept": 2, "examples": ["QCOcaOccaQScscUQDcdccRQOfc_", "QCOcaOcceQKcYQLHRQAYSckGed?"], "mod": 56, "seconds": 10.7}
+{"n": 18, "alpha": 4, "k": 4, "E": 36, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 18, "alpha": 4, "k": 4, "E": 37, "generated": 18, "kept": 0, "examples": [], "mod": 56, "seconds": 0.6}
+{"n": 18, "alpha": 4, "k": 4, "E": 38, "generated": 263, "kept": 0, "examples": [], "mod": 56, "seconds": 2.0}
+{"n": 18, "alpha": 4, "k": 4, "E": 39, "generated": 3803, "kept": 0, "examples": [], "mod": 56, "seconds": 6.0}
+{"n": 18, "alpha": 4, "k": 4, "E": 40, "generated": 50279, "kept": 4, "examples": ["Q?`@?aGPDCEGKaSPPcAW_Gi`DOO", "Q?`@?aGPDCEGKaSPPSAW_PSEK__", "Q?`@?aGPDCEGKaSPPKAK_bGHKOO", "Q?`@?aGPDCEGKaEPXCAK_PKCTD?"], "mod": 56, "seconds": 30.1}
+{"n": 18, "alpha": 5, "k": 3, "E": 27, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 18, "alpha": 5, "k": 3, "E": 28, "generated": 20, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 18, "alpha": 5, "k": 3, "E": 29, "generated": 306, "kept": 0, "examples": [], "mod": 56, "seconds": 0.5}
+{"n": 18, "alpha": 5, "k": 3, "E": 30, "generated": 4683, "kept": 0, "examples": [], "mod": 56, "seconds": 1.3}
+{"n": 18, "alpha": 5, "k": 3, "E": 31, "generated": 66011, "kept": 0, "examples": [], "mod": 56, "seconds": 7.6}
+{"n": 18, "alpha": 5, "k": 3, "E": 32, "generated": 876548, "kept": 35, "examples": ["Q?AA@?OACGKOSGKO@QCO``Q?[a?", "Q?AA@?O`AOKOIOEAASDAC`K@EC?", "Q?AA@?O`AOKOIOEAASDAC`K?S__", "Q?AA@?OAEGSGW_DG@Q@aGAKIKG?", "Q?AA@?OAEGSGW_DG@Q@aGAKHIA?"], "mod": 56, "seconds": 15.4}
+{"n": 19, "alpha": 3, "k": 5, "E": 51, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.7}
+{"n": 19, "alpha": 3, "k": 5, "E": 52, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 0.7}
+{"n": 19, "alpha": 3, "k": 5, "E": 53, "generated": 9, "kept": 0, "examples": [], "mod": 56, "seconds": 0.7}
+{"n": 19, "alpha": 3, "k": 5, "E": 54, "generated": 34, "kept": 0, "examples": [], "mod": 56, "seconds": 0.7}
+{"n": 19, "alpha": 3, "k": 5, "E": 55, "generated": 150, "kept": 0, "examples": [], "mod": 56, "seconds": 1.0}
+{"n": 19, "alpha": 3, "k": 5, "E": 56, "generated": 646, "kept": 0, "examples": [], "mod": 56, "seconds": 2.5}
+{"n": 19, "alpha": 3, "k": 5, "E": 57, "generated": 2997, "kept": 0, "examples": [], "mod": 56, "seconds": 5.0}
+{"n": 19, "alpha": 3, "k": 5, "E": 58, "generated": 14081, "kept": 0, "examples": [], "mod": 56, "seconds": 15.0}
+{"n": 19, "alpha": 3, "k": 5, "E": 59, "generated": 68442, "kept": 4, "examples": ["RCOcaOccaQCcscqQEcdccRQOkccfc_", "RCOcaOccaQScscUQCsdccJHHLHCec_", "RCOcaOccaQScscUQCsdccJHHLHEQQG", "RCOcaOccaQScscUQCsdccJHHLHARQG"], "mod": 56, "seconds": 27.3}
+{"n": 19, "alpha": 4, "k": 4, "E": 38, "generated": 0, "kept": 0, "examples": [], "mod": 56, "seconds": 0.1}
+{"n": 19, "alpha": 4, "k": 4, "E": 39, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 19, "alpha": 4, "k": 4, "E": 40, "generated": 25, "kept": 0, "examples": [], "mod": 56, "seconds": 0.4}
+{"n": 19, "alpha": 4, "k": 4, "E": 41, "generated": 242, "kept": 0, "examples": [], "mod": 56, "seconds": 1.0}
+{"n": 19, "alpha": 4, "k": 4, "E": 42, "generated": 2353, "kept": 0, "examples": [], "mod": 56, "seconds": 4.4}
+{"n": 19, "alpha": 4, "k": 4, "E": 43, "generated": 22051, "kept": 0, "examples": [], "mod": 56, "seconds": 12.9}
+{"n": 19, "alpha": 4, "k": 4, "E": 44, "generated": 201009, "kept": 2, "examples": ["R?`@?aGP@CQGqGRCAg`cOKPGagQKa?", "R?`@?aGP@CQGqGRCAK`cOKPGeGQKa?"], "mod": 56, "seconds": 33.7}
+{"n": 19, "alpha": 5, "k": 3, "E": 29, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 19, "alpha": 5, "k": 3, "E": 30, "generated": 12, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 19, "alpha": 5, "k": 3, "E": 31, "generated": 110, "kept": 0, "examples": [], "mod": 56, "seconds": 0.3}
+{"n": 19, "alpha": 5, "k": 3, "E": 32, "generated": 1151, "kept": 0, "examples": [], "mod": 56, "seconds": 0.5}
+{"n": 19, "alpha": 5, "k": 3, "E": 33, "generated": 12420, "kept": 0, "examples": [], "mod": 56, "seconds": 1.5}
+{"n": 19, "alpha": 5, "k": 3, "E": 34, "generated": 135903, "kept": 0, "examples": [], "mod": 56, "seconds": 5.9}
+{"n": 19, "alpha": 5, "k": 3, "E": 35, "generated": 1478543, "kept": 18, "examples": ["R?AA@?OACGGOgOKGBABACbA@EC?da?", "R?AA@?OACGGOgOKGBABACbA@EC?Ta?", "R?AA@?OACGGOgOKGBABACbA@AS?lA?", "R?AA@?OACGGOgOKGBABAC`I@IC?[`?", "R?AA@?OACGGOgOKGBABAC`I?IOa[G?"], "mod": 56, "seconds": 27.5}
+{"n": 19, "alpha": 3, "k": 6, "E": 57, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 19, "alpha": 3, "k": 6, "E": 58, "generated": 7, "kept": 0, "examples": [], "mod": 56, "seconds": 2.5}
+{"n": 19, "alpha": 3, "k": 6, "E": 59, "generated": 75, "kept": 0, "examples": [], "mod": 56, "seconds": 6.6}
+{"n": 19, "alpha": 3, "k": 6, "E": 60, "generated": 880, "kept": 1, "examples": ["RCOcaOcceQKcYQLHRQAYSHhQRO`HiO"], "mod": 56, "seconds": 23.2}
+{"n": 19, "alpha": 6, "k": 3, "E": 29, "generated": 295, "kept": 0, "examples": [], "mod": 56, "seconds": 2.1}
+{"n": 19, "alpha": 6, "k": 3, "E": 30, "generated": 24882, "kept": 2, "examples": ["R??CA?_CCO@_QA`_C_aB?KG?QOAA__", "R??CA?_CCO@_QAg_GK@H?D@?QOAA`?"], "mod": 56, "seconds": 32.6}
+{"n": 20, "alpha": 3, "k": 5, "E": 57, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 1.1}
+{"n": 20, "alpha": 3, "k": 5, "E": 58, "generated": 3, "kept": 0, "examples": [], "mod": 56, "seconds": 0.9}
+{"n": 20, "alpha": 3, "k": 5, "E": 59, "generated": 11, "kept": 0, "examples": [], "mod": 56, "seconds": 0.9}
+{"n": 20, "alpha": 3, "k": 5, "E": 60, "generated": 43, "kept": 0, "examples": [], "mod": 56, "seconds": 1.1}
+{"n": 20, "alpha": 3, "k": 5, "E": 61, "generated": 184, "kept": 0, "examples": [], "mod": 56, "seconds": 2.2}
+{"n": 20, "alpha": 3, "k": 5, "E": 62, "generated": 792, "kept": 0, "examples": [], "mod": 56, "seconds": 4.5}
+{"n": 20, "alpha": 3, "k": 5, "E": 63, "generated": 3597, "kept": 0, "examples": [], "mod": 56, "seconds": 11.6}
+{"n": 20, "alpha": 3, "k": 5, "E": 64, "generated": 16741, "kept": 0, "examples": [], "mod": 56, "seconds": 29.6}
+{"n": 20, "alpha": 3, "k": 5, "E": 65, "generated": 80288, "kept": 4, "examples": ["SCOcaOccaQCcccqQKcbQQdcaQqHxHAUQ_", "SCOcaOccaQCcccqQKcbQQLHIYQ@LHQYq_", "SCOcaOccaQCcscqQEccscYQOec`JHKkc_", "SCOcaOccaQCcscqQEccscYQOec`HhIYQO"], "mod": 56, "seconds": 47.7}
+{"n": 20, "alpha": 4, "k": 4, "E": 40, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 20, "alpha": 4, "k": 4, "E": 41, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 20, "alpha": 4, "k": 4, "E": 42, "generated": 5, "kept": 0, "examples": [], "mod": 56, "seconds": 0.4}
+{"n": 20, "alpha": 4, "k": 4, "E": 43, "generated": 22, "kept": 0, "examples": [], "mod": 56, "seconds": 0.8}
+{"n": 20, "alpha": 4, "k": 4, "E": 44, "generated": 121, "kept": 0, "examples": [], "mod": 56, "seconds": 1.0}
+{"n": 20, "alpha": 4, "k": 4, "E": 45, "generated": 735, "kept": 0, "examples": [], "mod": 56, "seconds": 1.5}
+{"n": 20, "alpha": 4, "k": 4, "E": 46, "generated": 5020, "kept": 0, "examples": [], "mod": 56, "seconds": 3.6}
+{"n": 20, "alpha": 4, "k": 4, "E": 47, "generated": 35903, "kept": 0, "examples": [], "mod": 56, "seconds": 14.8}
+{"n": 20, "alpha": 4, "k": 4, "E": 48, "generated": 266577, "kept": 2, "examples": ["S?`@?aGP@CPCSOXCCp?eCpCOiGcpG?bC_", "S?`@?aGP@CAGqGpCDP?iGiG`SP@EP?eG_"], "mod": 56, "seconds": 53.2}
+{"n": 20, "alpha": 5, "k": 3, "E": 30, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.1}
+{"n": 20, "alpha": 5, "k": 3, "E": 31, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 20, "alpha": 5, "k": 3, "E": 32, "generated": 5, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 20, "alpha": 5, "k": 3, "E": 33, "generated": 27, "kept": 0, "examples": [], "mod": 56, "seconds": 0.6}
+{"n": 20, "alpha": 5, "k": 3, "E": 34, "generated": 188, "kept": 0, "examples": [], "mod": 56, "seconds": 0.9}
+{"n": 20, "alpha": 5, "k": 3, "E": 35, "generated": 1429, "kept": 0, "examples": [], "mod": 56, "seconds": 1.1}
+{"n": 20, "alpha": 5, "k": 3, "E": 36, "generated": 12641, "kept": 0, "examples": [], "mod": 56, "seconds": 2.5}
+{"n": 20, "alpha": 5, "k": 3, "E": 37, "generated": 118362, "kept": 0, "examples": [], "mod": 56, "seconds": 12.8}
+{"n": 20, "alpha": 5, "k": 3, "E": 38, "generated": 1147270, "kept": 5, "examples": ["S?AA@?OACGGOgOKGBABACEGQCWAKG?S`?", "S?AA@?OACGGOgOKGBABACDGPAK?S`CWO?", "S?AA@?OACGGOGOcGBAA`AhA@EC@QC?U`?", "S?AA@?OACGGOGOcGBAA`AhA?hAAEG?[`?", "S?AA@?OACGGOGOcGBAA`AbA@aC@IC?U`?"], "mod": 56, "seconds": 41.2}
+{"n": 20, "alpha": 3, "k": 6, "E": 60, "generated": 0, "kept": 0, "examples": [], "mod": 56, "seconds": 0.3}
+{"n": 20, "alpha": 3, "k": 6, "E": 61, "generated": 0, "kept": 0, "examples": [], "mod": 56, "seconds": 1.6}
+{"n": 20, "alpha": 3, "k": 6, "E": 62, "generated": 3, "kept": 0, "examples": [], "mod": 56, "seconds": 4.3}
+{"n": 20, "alpha": 3, "k": 6, "E": 63, "generated": 52, "kept": 0, "examples": [], "mod": 56, "seconds": 8.5}
+{"n": 20, "alpha": 3, "k": 6, "E": 64, "generated": 443, "kept": 0, "examples": [], "mod": 56, "seconds": 24.6}
+{"n": 20, "alpha": 3, "k": 6, "E": 65, "generated": 3548, "kept": 0, "examples": [], "mod": 56, "seconds": 64.2}
+{"n": 20, "alpha": 3, "k": 6, "E": 66, "generated": 26008, "kept": 1, "examples": ["SCOcaOccaQScscUQCsdccJHHLHARQKec_"], "mod": 56, "seconds": 209.0}
+{"n": 20, "alpha": 6, "k": 3, "E": 30, "generated": 13, "kept": 0, "examples": [], "mod": 56, "seconds": 0.2}
+{"n": 20, "alpha": 6, "k": 3, "E": 31, "generated": 556, "kept": 0, "examples": [], "mod": 56, "seconds": 4.3}
+{"n": 20, "alpha": 6, "k": 3, "E": 32, "generated": 22747, "kept": 0, "examples": [], "mod": 56, "seconds": 24.4}
+{"n": 20, "alpha": 6, "k": 3, "E": 33, "generated": 720208, "kept": 5, "examples": ["S??CA?_C?OO_o_POC_``?Cc?HG?POGo_O", "S??CA?_C?OO_o_POC_``?Cc?GgAQA?_oO", "S??CA?_C?OO_o_POC_``?Cc?Gg?OoIQA?", "S??CA?_C?OO_o_WOCc?gGCS?IG@P@?_oO", "S??CA?_C?OO_o_WOCc?gGCS?IG?POGo_O"], "mod": 56, "seconds": 164.8}
+{"n": 21, "alpha": 4, "k": 4, "E": 45, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 1.6}
+{"n": 21, "alpha": 4, "k": 4, "E": 46, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 4.6}
+{"n": 21, "alpha": 4, "k": 4, "E": 47, "generated": 12, "kept": 0, "examples": [], "mod": 56, "seconds": 2.4}
+{"n": 21, "alpha": 4, "k": 4, "E": 48, "generated": 64, "kept": 0, "examples": [], "mod": 56, "seconds": 2.3}
+{"n": 21, "alpha": 4, "k": 4, "E": 49, "generated": 396, "kept": 0, "examples": [], "mod": 56, "seconds": 3.5}
+{"n": 21, "alpha": 4, "k": 4, "E": 50, "generated": 2542, "kept": 0, "examples": [], "mod": 56, "seconds": 7.0}
+{"n": 21, "alpha": 4, "k": 4, "E": 51, "generated": 17349, "kept": 0, "examples": [], "mod": 56, "seconds": 19.8}
+{"n": 21, "alpha": 4, "k": 4, "E": 52, "generated": 121484, "kept": 0, "examples": [], "mod": 56, "seconds": 71.4}
+{"n": 21, "alpha": 4, "k": 4, "E": 53, "generated": 872388, "kept": 2, "examples": ["T?`@?aGP@CAGaGpCKP?iGXCOqG_qGcTC?PcQ", "T?`@?aGP@CAGaGXCKP?iGTCQaG_qGcTC?PcQ"], "mod": 56, "seconds": 247.2}
+{"n": 21, "alpha": 5, "k": 3, "E": 34, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.6}
+{"n": 21, "alpha": 5, "k": 3, "E": 35, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 1.3}
+{"n": 21, "alpha": 5, "k": 3, "E": 36, "generated": 13, "kept": 0, "examples": [], "mod": 56, "seconds": 1.7}
+{"n": 21, "alpha": 5, "k": 3, "E": 37, "generated": 83, "kept": 0, "examples": [], "mod": 56, "seconds": 1.9}
+{"n": 21, "alpha": 5, "k": 3, "E": 38, "generated": 631, "kept": 0, "examples": [], "mod": 56, "seconds": 1.6}
+{"n": 21, "alpha": 5, "k": 3, "E": 39, "generated": 5151, "kept": 0, "examples": [], "mod": 56, "seconds": 3.1}
+{"n": 21, "alpha": 5, "k": 3, "E": 40, "generated": 45680, "kept": 0, "examples": [], "mod": 56, "seconds": 8.1}
+{"n": 21, "alpha": 5, "k": 3, "E": 41, "generated": 420350, "kept": 0, "examples": [], "mod": 56, "seconds": 86.7}
+{"n": 21, "alpha": 5, "k": 3, "E": 42, "generated": 3958285, "kept": 17, "examples": ["T?AA@?OACGGOGOcGBA?pAQCIcGAKG@EC?P`O", "T?AA@?OACGGOGOcGBA?pAQCIcGAKG@EC?pA@", "T?AA@?OACGGOGOcGBA?pAQCIcGAKG@BC@BCA", "T?AA@?OACGGOGOcGBA?pAQCIcGAKG@Ac@BCA", "T?AA@?OACGGOGOCGPAEGOW`?pA?hA?Q`@IcG"], "mod": 56, "seconds": 221.6}
+{"n": 21, "alpha": 3, "k": 6, "E": 63, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.4}
+{"n": 21, "alpha": 3, "k": 6, "E": 64, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 1.3}
+{"n": 21, "alpha": 3, "k": 6, "E": 65, "generated": 4, "kept": 0, "examples": [], "mod": 56, "seconds": 2.5}
+{"n": 21, "alpha": 3, "k": 6, "E": 66, "generated": 14, "kept": 0, "examples": [], "mod": 56, "seconds": 3.5}
+{"n": 21, "alpha": 3, "k": 6, "E": 67, "generated": 56, "kept": 0, "examples": [], "mod": 56, "seconds": 7.0}
+{"n": 21, "alpha": 3, "k": 6, "E": 68, "generated": 225, "kept": 0, "examples": [], "mod": 56, "seconds": 12.1}
+{"n": 21, "alpha": 3, "k": 6, "E": 69, "generated": 1019, "kept": 0, "examples": [], "mod": 56, "seconds": 26.1}
+{"n": 21, "alpha": 3, "k": 6, "E": 70, "generated": 4726, "kept": 0, "examples": [], "mod": 56, "seconds": 75.2}
+{"n": 21, "alpha": 3, "k": 6, "E": 71, "generated": 23045, "kept": 0, "examples": [], "mod": 56, "seconds": 213.4}
+{"n": 21, "alpha": 3, "k": 6, "E": 72, "generated": 116011, "kept": 1, "examples": ["TCOcaOccaQCcscqQEccscYQOecckcaRQOdcc"], "mod": 56, "seconds": 465.3}
+{"n": 21, "alpha": 6, "k": 3, "E": 32, "generated": 16, "kept": 0, "examples": [], "mod": 56, "seconds": 0.3}
+{"n": 21, "alpha": 6, "k": 3, "E": 33, "generated": 494, "kept": 0, "examples": [], "mod": 56, "seconds": 2.5}
+{"n": 21, "alpha": 6, "k": 3, "E": 34, "generated": 12663, "kept": 0, "examples": [], "mod": 56, "seconds": 13.7}
+{"n": 21, "alpha": 6, "k": 3, "E": 35, "generated": 290442, "kept": 0, "examples": [], "mod": 56, "seconds": 76.2}
+{"n": 21, "alpha": 6, "k": 3, "E": 36, "generated": 5968993, "kept": 5, "examples": ["T??CA?_C?O?_o_gGKG?c_EA?DC?g__POOKCC", "T??CA?_C?O?_o_gGKG?c_EA?CS@PA?IGGKGG", "T??CA?_C?O?_o_gGEAAa?Aa?KC@HAAAG_GWG", "T??CA?_C?O?_o_gGEAAa?Aa?CS@PA?GWHD?O", "T??CA?_C?OOOP?WOEC?g_B?_GgEAACCg?IGC"], "mod": 56, "seconds": 526.0}
+{"n": 21, "alpha": 4, "k": 5, "E": 53, "generated": 10, "kept": 0, "examples": [], "mod": 56, "seconds": 20.9}
+{"n": 21, "alpha": 4, "k": 5, "E": 54, "generated": 410, "kept": 0, "examples": [], "mod": 56, "seconds": 211.3}
+{"n": 21, "alpha": 4, "k": 5, "E": 55, "generated": 12504, "kept": 1, "examples": ["T?`@?aGP@CQGqGRCEG`DOeG_TCaKa@EO`CXA"], "mod": 56, "seconds": 2642.7}
+{"n": 21, "alpha": 5, "k": 4, "E": 42, "generated": 24, "kept": 0, "examples": [], "mod": 56, "seconds": 4.0}
+{"n": 21, "alpha": 5, "k": 4, "E": 43, "generated": 1274, "kept": 0, "examples": [], "mod": 56, "seconds": 200.4}
+{"n": 21, "alpha": 5, "k": 4, "E": 44, "generated": 56482, "kept": 7, "examples": ["T?AA@?OACGKOWOCgBAASGCKQGO`ICCHO?`IA", "T?AA@?OACGKOWOCgBAASGCKQGO`ICCHOADG@", "T?AA@?OACGKOWOCgBAADGEGQ`A?W`CIO?GWa", "T?AA@?OACGWOWOKG@QAcGIO_Op?W`CIO?OhC", "T?AA@?OACGWOWOKG@QAcGGW_W`?W`CIO?GWa"], "mod": 56, "seconds": 1186.3}
+{"n": 22, "alpha": 4, "k": 4, "E": 50, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 4.1}
+{"n": 22, "alpha": 4, "k": 4, "E": 51, "generated": 4, "kept": 0, "examples": [], "mod": 56, "seconds": 4.8}
+{"n": 22, "alpha": 4, "k": 4, "E": 52, "generated": 19, "kept": 0, "examples": [], "mod": 56, "seconds": 5.0}
+{"n": 22, "alpha": 4, "k": 4, "E": 53, "generated": 103, "kept": 0, "examples": [], "mod": 56, "seconds": 5.5}
+{"n": 22, "alpha": 4, "k": 4, "E": 54, "generated": 638, "kept": 0, "examples": [], "mod": 56, "seconds": 10.7}
+{"n": 22, "alpha": 4, "k": 4, "E": 55, "generated": 4077, "kept": 0, "examples": [], "mod": 56, "seconds": 15.2}
+{"n": 22, "alpha": 4, "k": 4, "E": 56, "generated": 27454, "kept": 0, "examples": [], "mod": 56, "seconds": 55.7}
+{"n": 22, "alpha": 4, "k": 4, "E": 57, "generated": 190083, "kept": 0, "examples": [], "mod": 56, "seconds": 201.8}
+{"n": 22, "alpha": 4, "k": 4, "E": 58, "generated": 1347536, "kept": 4, "examples": ["U?`@?aGP@CAGaGPCSP@aGKaHPCSXCAWa?aggPSOO", "U?`@?aGP@CAGaGPCSP@aGKaHPCSRCAKaAKaARCOO", "U?`@?aGP@CAGaGPCSP@aGKaGXCUPCAKa@Cp@DPD?", "U?`@?aGP@CAGaGPCSP@aGKaIIaAaGaWa@DP@bG`?"], "mod": 56, "seconds": 1430.5}
+{"n": 22, "alpha": 5, "k": 3, "E": 38, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 5.3}
+{"n": 22, "alpha": 5, "k": 3, "E": 39, "generated": 4, "kept": 0, "examples": [], "mod": 56, "seconds": 5.1}
+{"n": 22, "alpha": 5, "k": 3, "E": 40, "generated": 22, "kept": 0, "examples": [], "mod": 56, "seconds": 4.5}
+{"n": 22, "alpha": 5, "k": 3, "E": 41, "generated": 149, "kept": 0, "examples": [], "mod": 56, "seconds": 4.5}
+{"n": 22, "alpha": 5, "k": 3, "E": 42, "generated": 1163, "kept": 0, "examples": [], "mod": 56, "seconds": 8.2}
+{"n": 22, "alpha": 5, "k": 3, "E": 43, "generated": 9641, "kept": 0, "examples": [], "mod": 56, "seconds": 12.8}
+{"n": 22, "alpha": 5, "k": 3, "E": 44, "generated": 85229, "kept": 0, "examples": [], "mod": 56, "seconds": 41.5}
+{"n": 22, "alpha": 5, "k": 3, "E": 45, "generated": 778285, "kept": 0, "examples": [], "mod": 56, "seconds": 208.4}
+{"n": 22, "alpha": 5, "k": 3, "E": 46, "generated": 7249716, "kept": 31, "examples": ["U?AA@?OACGGOGOCG@AEGOgO`aC?hA?o`?hAGOl@?", "U?AA@?OACGGOGOCG@AEGOgO`aC?hA?o`?hAGCkO_", "U?AA@?OACGGOGOCG@AEGOgO`aC?hA?o`?hAGAkGO", "U?AA@?OACGGOGOCG@AEGOgO`aC?hA?o`?IO`IWa?", "U?AA@?OACGGOGOCG@AEGOgO`aC?hA?o`?IO`EWO_"], "mod": 56, "seconds": 569.7}
+{"n": 22, "alpha": 3, "k": 6, "E": 70, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 4.8}
+{"n": 22, "alpha": 3, "k": 6, "E": 71, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 7.1}
+{"n": 22, "alpha": 3, "k": 6, "E": 72, "generated": 9, "kept": 0, "examples": [], "mod": 56, "seconds": 4.7}
+{"n": 22, "alpha": 3, "k": 6, "E": 73, "generated": 34, "kept": 0, "examples": [], "mod": 56, "seconds": 4.9}
+{"n": 22, "alpha": 3, "k": 6, "E": 74, "generated": 150, "kept": 0, "examples": [], "mod": 56, "seconds": 8.5}
+{"n": 22, "alpha": 3, "k": 6, "E": 75, "generated": 639, "kept": 0, "examples": [], "mod": 56, "seconds": 20.3}
+{"n": 22, "alpha": 3, "k": 6, "E": 76, "generated": 2935, "kept": 0, "examples": [], "mod": 56, "seconds": 43.2}
+{"n": 22, "alpha": 3, "k": 6, "E": 77, "generated": 13706, "kept": 0, "examples": [], "mod": 56, "seconds": 111.8}
+{"n": 22, "alpha": 3, "k": 6, "E": 78, "generated": 66455, "kept": 0, "examples": [], "mod": 56, "seconds": 427.8}
+{"n": 22, "alpha": 3, "k": 6, "E": 79, "generated": 330190, "kept": 1, "examples": ["UCOcaOccaQCcccqQKcbQQLHIYQAYQ`LHQRQCHLIO"], "mod": 56, "seconds": 1300.9}
+{"n": 22, "alpha": 6, "k": 3, "E": 33, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 0.1}
+{"n": 22, "alpha": 6, "k": 3, "E": 34, "generated": 20, "kept": 0, "examples": [], "mod": 56, "seconds": 0.1}
+{"n": 22, "alpha": 6, "k": 3, "E": 35, "generated": 312, "kept": 0, "examples": [], "mod": 56, "seconds": 0.6}
+{"n": 22, "alpha": 6, "k": 3, "E": 36, "generated": 5067, "kept": 0, "examples": [], "mod": 56, "seconds": 3.3}
+{"n": 22, "alpha": 6, "k": 3, "E": 37, "generated": 80711, "kept": 0, "examples": [], "mod": 56, "seconds": 19.6}
+{"n": 22, "alpha": 6, "k": 3, "E": 38, "generated": 1279867, "kept": 0, "examples": [], "mod": 56, "seconds": 89.5}
+{"n": 22, "alpha": 6, "k": 3, "E": 39, "generated": 19848521, "kept": 5, "examples": ["U??CA?_C?O?___WOIA@`?AQ?KCCOOSDC?ECCDCG?", "U??CA?_C?O?___WOIA@`?aA?DC?o`?WOQAE?GgC?", "U??CA?_C?O?___oOKC@__EA?CcAQA?WOQAQ?@`@?", "U??CA?_C?O?___oOKC@__EA?CcAQA?GWIEA?CcC?", "U??CA?_C?O?___oOKC@__EA?CcAIA?WGIAI?CcC?"], "mod": 56, "seconds": 832.1}
+{"n": 22, "alpha": 4, "k": 5, "E": 55, "generated": 2, "kept": 0, "examples": [], "mod": 56, "seconds": 0.3}
+{"n": 22, "alpha": 4, "k": 5, "E": 56, "generated": 13, "kept": 0, "examples": [], "mod": 56, "seconds": 16.9}
+{"n": 22, "alpha": 4, "k": 5, "E": 57, "generated": 189, "kept": 0, "examples": [], "mod": 56, "seconds": 81.3}
+{"n": 22, "alpha": 4, "k": 5, "E": 58, "generated": 2891, "kept": 0, "examples": [], "mod": 56, "seconds": 349.7}
+{"n": 22, "alpha": 4, "k": 5, "E": 59, "generated": 44850, "kept": 0, "examples": [], "mod": 56, "seconds": 1930.8}
+{"n": 22, "alpha": 5, "k": 4, "E": 44, "generated": 3, "kept": 0, "examples": [], "mod": 56, "seconds": 0.4}
+{"n": 22, "alpha": 5, "k": 4, "E": 45, "generated": 101, "kept": 0, "examples": [], "mod": 56, "seconds": 31.4}
+{"n": 22, "alpha": 5, "k": 4, "E": 46, "generated": 3621, "kept": 0, "examples": [], "mod": 56, "seconds": 262.6}
+{"n": 22, "alpha": 5, "k": 4, "E": 47, "generated": 98054, "kept": 0, "examples": [], "mod": 56, "seconds": 1766.8}
+{"n": 22, "alpha": 3, "k": 7, "E": 77, "generated": 1, "kept": 0, "examples": [], "mod": 56, "seconds": 2.3}
+{"n": 22, "alpha": 3, "k": 7, "E": 78, "generated": 6, "kept": 0, "examples": [], "mod": 56, "seconds": 64.0}
+{"n": 22, "alpha": 3, "k": 7, "E": 79, "generated": 66, "kept": 0, "examples": [], "mod": 56, "seconds": 318.8}
+{"n": 22, "alpha": 3, "k": 7, "E": 80, "generated": 709, "kept": 0, "examples": [], "mod": 56, "seconds": 1331.4}
+{"n": 22, "alpha": 7, "k": 3, "E": 33, "generated": 132, "kept": 0, "examples": [], "mod": 56, "seconds": 0.6}
+{"n": 22, "alpha": 7, "k": 3, "E": 34, "generated": 19980, "kept": 0, "examples": [], "mod": 56, "seconds": 799.0}

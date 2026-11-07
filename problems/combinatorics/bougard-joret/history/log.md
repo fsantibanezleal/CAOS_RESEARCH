@@ -83,3 +83,13 @@ External status: Das and Gupta arXiv:2608.18828 is still v1 and the only Bougard
 k-connected graphs with given independence number and minimum size, and for triangle-free graphs with bounded
 degree and matching number, return nothing after the AEY and BET papers already cited [V]. No overlap with
 f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [U as to exhaustive priority].
+
+## 2026-11-07 - EXP-006 and EXP-007 confirmed: the open second regime up to order 22
+
+- EXP-006 (hypothesis c04a8a8f): (16,5,3) = 26, (17,5,3) = 29, (17,4,4) = 36, (16,3,5) = 43. During the run two gated
+  speed-ups: an early-stopping filter (stop once an independent set of size alpha+1 is found) and a geng PRUNE hook
+  discarding partial graphs with such a set (sound: the partial graph is an induced subgraph of every completion).
+  (17,5,3) at E = 27 went from 1,040 s to 0.4 s with the same answer.
+- EXP-007 (hypothesis f85ce6b9): every remaining open triple with n <= 22 (28 triples), each equal to the formula;
+  no 2-hour cap reached; about 5.5 hours on 28 processes.
+- In all, the second line of Conjecture 1 holds at all 39 open-window triples of order at most 22.
