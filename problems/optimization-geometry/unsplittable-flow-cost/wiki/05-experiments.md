@@ -13,11 +13,13 @@ verdict. Verdicts are reported verbatim, never upgraded in language (methodology
 ## What EXP-002 established beyond the announcement
 
 - $\alpha_{\mathrm{inst}} = 16/15$ exactly (the announcement stated only 58 versus 60).
-- The instance is acyclic, so Morell-Skutella Conjecture 1.4 and the convex-combination
-  form fall as corollaries, with the hypothesis machine-checked rather than assumed.
+- The instance is acyclic, so Conjecture 1.4 (STVZ25 label; Morell-Skutella 2022
+  Conjecture 2) and the convex-combination form fall as corollaries, with the hypothesis
+  machine-checked rather than assumed.
 - Conjecture 1.3, Conjecture 1.5, the DGG theorem, Skutella's multiples case, the
   series-parallel theorem and the planar theorem were each tested against the instance and
-  verified to survive.
+  verified to survive. (On this instance. Conjecture 1.3 is false in general:
+  Bérczi et al. 2026, Theorem 17; see `context/2026-11-07-literature-refresh.md`.)
 - A $K_4$ subdivision on $\{s, u, v, w\}$ places the instance exactly one structure outside
   the class where the conjecture is proved; planarity pins the planar constant strictly
   between 1 and 2.

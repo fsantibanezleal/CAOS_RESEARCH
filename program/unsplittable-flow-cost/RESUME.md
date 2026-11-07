@@ -19,9 +19,9 @@ Proved (DGG 1999): there is always $\mathcal{P}$ with
 $$f^{\mathcal{P}}(a) \le x(a) + d_{\max} \quad \forall a. \qquad \text{[VERIFIED as a statement]}$$
 
 Goemans' conjecture (STVZ25 Conjecture 1.2): additionally $c^T f^{\mathcal{P}} \le c^T x$
-for a given $c \ge 0$. Neighbours: MS Conj 1.3 (two-sided
-$x - d_{\max} \le f \le x + d_{\max}$, no cost, acyclic), MS Conj 1.4 (two-sided plus
-cost), Conj 1.5 (two-sided at $2d_{\max}$ plus cost). Lattice: 1.4 implies 1.3 and 1.2
+for a given $c \ge 0$. Neighbours (labels of STVZ25): Conj 1.3 (Morell-Skutella 2022
+Conjecture 1; two-sided $x - d_{\max} \le f \le x + d_{\max}$, no cost, acyclic), Conj 1.4
+(Morell-Skutella 2022 Conjecture 2; two-sided plus cost), Conj 1.5 (two-sided at $2d_{\max}$ plus cost). Lattice: 1.4 implies 1.3 and 1.2
 (Goemans is WLOG acyclic); STVZ25 Theorem 1.6: 1.3 implies 1.5.
 
 Record entering 2026 [VERIFIED from primary sources]: Conj 1.2 open in general; proved for
@@ -57,12 +57,17 @@ ONE unit, and the $O(d_{\max})$ question (the literature's named breakthrough ta
 untouched.
 
 **Corollaries [D, hypothesis machine-checked]:** the digraph is acyclic, so Morell-Skutella
-Conjecture 1.4 and the convex-combination form are false as well. **Survivors, each tested
+Conjecture 1.4 (STVZ25 label; Morell-Skutella 2022 Conjecture 2) and the convex-combination
+form are false as well. **Survivors, each tested
 directly on the instance [MV]:** the DGG theorem (4 congestion-good routings exist), Conj
 1.3 (4 witnesses), Conj 1.5 and TVZ24 (the instance is planar and admits a cost-good
 routing well within $2 d_{\max}$), Sku02 (demands 15 and 10 are not multiples of one
 another), MSW25 (a $K_4$ subdivision on $\{s, u, v, w\}$ places the instance outside
-series-parallel), and the two-layer case (longest path has 4 arcs).
+series-parallel), and the two-layer case (longest path has 4 arcs). **2026-11-07:** Conj 1.3 survives this
+instance only: Bérczi, Liu, Reis, Tarnawski (arXiv:2608.13983, Theorem 17) disprove it in
+general, cost-free, for every k >= 4 with forced deviation (9/8 - 3/(8k)) d_max; STVZ25
+Theorem 1.6 now has a false hypothesis and Conj 1.5 stays open
+([refresh](../../problems/optimization-geometry/unsplittable-flow-cost/context/2026-11-07-literature-refresh.md)).
 
 **Two structural statements [MV ingredients, D readings]:** the class boundary is tight
 (the conjecture holds on the series-parallel side of the $K_4$ boundary and fails at the
@@ -202,7 +207,8 @@ Mid-derivation notes not yet in any verdict, to carry into the next hypothesis:
 - **No floats anywhere in this problem.** The constructor refuses them; a token scan keeps
   literals out.
 - **A refutation of Goemans does not refute Conj 1.3 or Conj 1.5**, and does not touch the
-  $O(d_{\max})$ question. Public coverage blurs this; our writing must not.
+  $O(d_{\max})$ question. (Conj 1.3 is false for a different, cost-free reason: Bérczi et al.
+  2026, Theorem 17. Conj 1.5 and the $O(d_{\max})$ question stay open.) Public coverage blurs this; our writing must not.
 - **Statement-level claims and all external actions are gated on Felipe**, including any
   public statement about whether the celebrated counterexample stands. Nothing has left this
   repository.

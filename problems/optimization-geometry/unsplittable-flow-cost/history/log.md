@@ -197,3 +197,17 @@ External status: Goemans' cost conjecture is false on Rybin's instance (announce
 Plan change (assessment): hold; refresh the dossier before EXP-005 (the field moved); check that our statement that Morell-Skutella Conjecture 1.4 falls matches the numbering in the 2022 paper and the Bérczi et al. result. New rows UFB-061 and UFB-062.
 
 Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## 2026-11-07 - Literature refresh before EXP-005 (UFB-061, UFB-062)
+
+- Conjecture 1.3 (Morell-Skutella 2022 Conjecture 1; cost-free, two-sided) is false in general: Bérczi, Liu, Reis,
+  Tarnawski, arXiv:2608.13983, Theorem 17 (for every k >= 4, forced deviation (9/8 - 3/(8k)) d_max). Our survivor
+  statement held on Rybin's instance only; STVZ25 Theorem 1.6 has lost its hypothesis; Conjecture 1.5 stays open.
+- Numbering: Morell and Skutella number their conjectures 1 and 2; 1.3 and 1.4 are STVZ25's labels. Records
+  corrected (RESUME, wiki 02 and 05, references; MS22's first author is Sarah Morell).
+- Afrasyab arXiv:2609.17568 realises any odd cycle in an acyclic single-source instance, with thresholds below 1
+  (79/120 for C5); arXiv:2610.16079 gives cost-preserving rounding with O(sqrt(D)) violation on D-hop instances;
+  the AFP entry formalises 58 versus 60 but not 16/15 or 2/7.
+- Open before EXP-005: Muffatti's claimed planar 9/8 lower bound (UFB-063), the SSRN paper (UFB-064), and the
+  re-scoping of UFB-037 (UFB-065). Details: `context/2026-11-07-literature-refresh.md`.
+

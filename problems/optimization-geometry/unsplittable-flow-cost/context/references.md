@@ -15,12 +15,21 @@ conclusion in this programme may depend on it until it is upgraded.
 | STVZ25 | C. Swamy, V. Traub, L. Vargas Koch, R. Zenklusen, "Unsplittable Cost Flows from Unweighted Error-Bounded Variants" | arXiv:2510.21287v1 | [VERIFIED] (pp. 1-6: all conjecture statements, Thm 1.6, Thm 1.7, related work) |
 | SV15 | F. B. Shepherd, A. Vetta, "The Inapproximability of Maximum Single-Sink Unsplittable, Priority and Confluent Flow Problems" | arXiv:1504.00627 | [PARTIAL] (abstract) |
 
+## Read in the 2026-11-07 refresh (`2026-11-07-literature-refresh.md`)
+
+| Key | Reference | DOI / arXiv | Tag |
+|---|---|---|---|
+| BLRT26 | K. Bérczi, S. Liu, V. Reis, J. Tarnawski, "Weighted Equitability and Matroid-Constrained Discrepancy" | arXiv:2608.13983v1 | [VERIFIED] (Conjecture 4 = MS22 Conj 1, Theorem 17 disproves it) |
+| Afr26 | K. Afrasyab, "Independence-System Realisations in Single-Source Unsplittable Flow" | arXiv:2609.17568v1 | [VERIFIED] (Theorems 5, 7, 8; C5 certificate 79/120) |
+| CKMS26 | M. Cherniavskii, A. Kupavskii, S. Moiseev, A. Shekhovtsov, "Approximation algorithms via discrepancy with hard constraints" | arXiv:2610.16079v1 | [VERIFIED] (Theorem 7: cost-preserving, load + O(rho_max sqrt(D)) on D-hop paths) |
+| AFP26 | A. Freitas Ramos, D. Barros Hulak, R. J. G. B. de Queiroz, "A Formal Counterexample to the Cost-Preserving Single-Source Unsplittable Flow Conjecture", Archive of Formal Proofs | isa-afp.org/entries/Dinitz_Garg_Goemans_Counterexample.html | [VERIFIED] (document of 2026-10-26: 58 versus 60 at load x + 15) |
+
 ## Cited by the core, not yet read (upgrade targets)
 
 | Key | Reference | Where it is used | Tag |
 |---|---|---|---|
 | Sku02 | M. Skutella, "Approximating the single source unsplittable min-cost flow problem", Math. Prog. 91 (2002) | Goemans' conjecture for demands that are multiples of one another | [UNVERIFIED] |
-| MS22 | A. Morell, M. Skutella, "Single source unsplittable flows with arc-wise lower and upper bounds" | Conjectures 1.3 and 1.4; the lower-bound theorem | [UNVERIFIED] |
+| MS22 | S. Morell, M. Skutella, "Single source unsplittable flows with arc-wise lower and upper bounds", Math. Program. 192 (2022) 477-496, 10.1007/s10107-021-01704-4 | their Conjectures 1 and 2 = STVZ25 labels 1.3 and 1.4; the lower-bound theorem | [VERIFIED] 2026-11-07 (open-access PDF read; numbering checked) |
 | MSS07 | Martens, Salazar, Skutella, "Convex combinations of single source unsplittable flows", ESA 2007, 10.1007/978-3-540-75520-3_36 | the equivalence of the cost form and the convex-combination form | [UNVERIFIED], and load-bearing: UFB-003 |
 | LS18 | Linhares, Swamy, chain-constrained spanning trees | the technique STVZ25 generalises | [UNVERIFIED] |
 | KS02 | Kolliopoulos, Stein, "Approximation algorithms for single-source unsplittable flow" | the flow-augmentation method behind Sku02 | [UNVERIFIED] |
@@ -43,6 +52,11 @@ SVG, model transcript). No primary mathematical venue, no arXiv preprint found a
 - `2510.21287.pdf` `ac1e6aab37fe999a32e46c3b2fefbb012b0c2d20ef75f335c1e375d8a71feb38`
 - `2412.05182.pdf` `cb989d7544dc2f50ed03dcc65f0f1e31c3565dbcb5c44ec2e5e07917524c776a`
 - `1504.00627.pdf` `216984831dd4eecd3516c260259ff25e8df057ede4db06aaed63f5f60c93b7c1`
+- `ufb061/2608.13983v1.pdf` `1afa2f37c571d31b2936e157208e2a5b4891207d5ff26cbe7f0dfc61391ace75`
+- `ufb061/2609.17568v1.pdf` `be2dca177be4939cbd257ed5fa5ab449a3cbc8962d03e1a4f98c64c5dcbcfb41`
+- `ufb061/2610.16079v1.pdf` `371c883306f8a8e54c3cb809220e999da0ee9067a6a9cb185c2a227977d8c228`
+- `ufb061/afp-dgg-counterexample-document.pdf` `e62d6b78131e07cabd8d06d79bdf8d0fcf11fb2826afe5dfb9c3bb2663b548b8`
+- `ufb061/morell-skutella-2022.pdf` `fbdd4a8771ece36118f284b1112645514c6d468a74b23f64d6333a89e6b80d93`
 - arXiv:2308.02651 source tree at `E:\_Temp\ufc-sources\2308.02651\` (from the bundle
   tarball, hash in the counterexample dossier)
 
