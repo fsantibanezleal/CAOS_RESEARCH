@@ -26,8 +26,9 @@ residual G - V(C) is a single complete graph.
 - **Split gate:** the same split reproduces EXP-001 at orders 10 (27 + 4 = 31) and 11 (57 + 10 = 67).
 - **Case A completeness:** the graphs read equal A000088(11) exactly.
 - **Case B integrity:** the run was interrupted by a WSL restart and resumed by parts (a part is recorded only
-  after its generator and filter finish); 16 randomly chosen parts were re-run from scratch and their counts
-  compared with the stored records (`artifacts/recheck-caseB.txt`).
+  after its generator and filter finish); 16 randomly chosen parts were re-run from scratch and all 16 counts are
+  identical to the stored records (`artifacts/recheck-caseB.txt`); every part's record is in
+  `artifacts/parts-summary.txt`.
 - **Independent re-check:** EXP-001's `verify.py` (plain backtracking, no shared code) confirms all 151 graphs:
   non-Hamiltonian, every nonadjacent pair joined by a Hamilton path, circumference, longest-cycle sets and residual
   flags (0 disagreements).
