@@ -76,3 +76,10 @@ External status: unchanged since the 2026-10-30 review (disproved at n = alpha+k
   Das-Gupta's f(7,3,4) = 15, f(6,2,3) = 9, f(6,2,4) = 12, the proved f(12,3,3) = 23; filter equal to networkx on
   all 12,346 graphs on 8 vertices.
 - Deviation: the frozen SAT method could not finish its lower side; complete enumeration replaced it.
+
+## 2026-11-07 - literature check after EXP-004 and EXP-005
+
+External status: Das and Gupta arXiv:2608.18828 is still v1 and the only Bougard-Joret item on arXiv; searches for
+k-connected graphs with given independence number and minimum size, and for triangle-free graphs with bounded
+degree and matching number, return nothing after the AEY and BET papers already cited [V]. No overlap with
+f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [U as to exhaustive priority].
