@@ -1,0 +1,21 @@
+EXP-142 gates, 2026-11-07
+
+Gate 1 (branches.py --src <EXP-141 work>/eqs.json --out D:/_Temp/jcb142):
+E2 = a2 (q1^2 - c^2)^2 in L[q1]: True; a2 != 0 and c != 0: True
+branch q1 = +1c: equations kept [3, 5, 6, 7, 9, 10, 11, 12, 13] (vanishing: [1, 2, 4, 8]); terms [22, 35, 35, 23, 52, 52, 52, 45, 23]; max digits [126, 300, 300, 139, 477, 479, 477, 315, 138]
+branch q1 = -1c: same shape
+
+Gate 2 (gates.py):
+branch plus p=1021 root=18: UNIT PASS
+branch plus p=1031 root=279: UNIT PASS
+branch plus p=1033 root=694: UNIT PASS
+branch plus p=1049 root=880: UNIT PASS
+branch plus p=1061 root=933: UNIT PASS
+branch minus p=1021 root=18: UNIT PASS
+branch minus p=1031 root=279: UNIT PASS
+branch minus p=1033 root=694: UNIT PASS
+branch minus p=1049 root=880: UNIT PASS
+branch minus p=1061 root=933: UNIT PASS
+GATE 2 PASS
+
+Gate 3: the pipeline gates of EXP-141 apply unchanged (same cert.py and crt_recon).
