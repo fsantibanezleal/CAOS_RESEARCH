@@ -1,6 +1,6 @@
-"""Build table.tex for the second-regime note from the EXP-005, EXP-006 and EXP-007 enumeration records.
+"""Build table.tex for the second-regime note from the EXP-005 to EXP-008 enumeration records.
 
-For every open second-regime triple with n <= 22 (the EXP-005/006/007 lists), the conjectured value, the edge
+For every open second-regime triple with n <= NMAX (the EXP-005 to EXP-008 lists), the conjectured value, the edge
 counts searched below it, the number of candidate graphs searched there, and the number of qualifying graphs found
 at the conjectured value (or the attaining construction when that count was not enumerated).
 """
@@ -10,7 +10,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 EXP = HERE.parents[2] / "problems" / "combinatorics" / "bougard-joret" / "experiments"
-SOURCES = ["EXP-005-second-regime-small", "EXP-006-second-regime-beyond-15", "EXP-007-open-window-to-22"]
+SOURCES = ["EXP-005-second-regime-small", "EXP-006-second-regime-beyond-15", "EXP-007-open-window-to-22",
+           "EXP-008-order-23"]
+NMAX = 23
 
 
 def t(n, a):
@@ -28,7 +30,7 @@ for s in SOURCES:
 triples = []
 for a in range(3, 12):
     for k in range(3, 12):
-        for n in range(k * a + 1, 23):
+        for n in range(k * a + 1, NMAX + 1):
             if n >= 2 * a and n >= a + k and n // a <= ceil(k * a / 2) - a + 1:
                 triples.append((n, a, k))
 triples.sort(key=lambda x: (x[0], x[1], x[2]))

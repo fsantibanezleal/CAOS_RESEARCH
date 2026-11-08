@@ -84,7 +84,7 @@ Manuscript v0.01 remains frozen at version DOI `10.5281/zenodo.22315252`. At its
 - Narrative: `problems/combinatorics/bougard-joret/wiki/`.
 - Preserved published manuscript: `manuscripts/bougard-joret/tree-strip/`, v0.02.
 - New published manuscript: `manuscripts/bougard-joret/next-matching/`, v0.01, DOI 10.5281/zenodo.22343022; scoped integration complete.
-- Published note: `manuscripts/bougard-joret/second-regime/`, v0.01 (2026-11-07), DOI 10.5281/zenodo.24044538, concept 10.5281/zenodo.24044537: EXP-005 to EXP-007, all 39 open second-regime triples with n <= 22.
+- Published note: `manuscripts/bougard-joret/second-regime/`, v0.02 (2026-11-08), DOI 10.5281/zenodo.24059677 (all 47 open triples with n <= 23); v0.01 (2026-11-07), DOI 10.5281/zenodo.24044538, concept 10.5281/zenodo.24044537: EXP-005 to EXP-007, all 39 open second-regime triples with n <= 22.
 - Private mirror: `plans/caos-research/bougard-joret/` in the management repository.
 
 ## 7. Gotchas

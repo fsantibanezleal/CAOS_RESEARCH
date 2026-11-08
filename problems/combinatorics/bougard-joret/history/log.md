@@ -109,3 +109,10 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   enumeration below the conjectured value (7,304,488 graphs, 9.7 hours on 28 processes, no cap reached).
 - The second line of Conjecture 1 now holds at all 47 open-window triples of order at most 23.
 
+## 2026-11-08 - Note `second-regime` v0.02 published
+
+- "Exact values of the Bougard-Joret function in its open second regime up to order 23", version DOI
+  10.5281/zenodo.24059677 (concept 10.5281/zenodo.24044537); 4 pages, 308,831 bytes, SHA-256
+  1a4d85529a6d1f1e834ef876dc0860e497ec65108b1473c15589ba476f8cadbb; 39 release gates passed, including a fresh
+  unauthenticated download equal to the frozen file. Adds EXP-008: 47 triples, 6,224,502,963 candidate graphs.
+
