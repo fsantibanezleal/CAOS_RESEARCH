@@ -32,6 +32,11 @@ output). Facts marked "mod p" come from Singular over F_p at a root of P and are
 8. Exact `std` over Q(y) with minpoly P on the branch q1 = +c, with S added, did not finish in one hour
    (`exact_branch.py`); EXP-139 and EXP-140 did not finish in six hours on the unsplit system.
 
+9. **Units cannot shorten the inputs** (2026-11-08, `probes/unit_probe.py` on the branch q1 = +c): L has one real
+   embedding and two complex pairs; for every one of the 339 coefficients, log10 of the largest embedding exceeds
+   log10 of the norm over 5 by at most 2.4 (median 1.3). The coefficients are balanced across the embeddings, so
+   their heights reflect their norms and no scaling by units of L can shrink them materially.
+
 ## Reading
 
 The system has a layered shape (a quadric S in three variables, then equations linear in q5 and q3) that a
