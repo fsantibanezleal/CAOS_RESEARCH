@@ -1,0 +1,102 @@
+reference prime 2147480941: 6054 cofactor terms, 30270 coordinates
+[0.02 h] batch 32 kept 32; total kept 33; RECON k=30 M=30270 ok=0 fail_recon=11906 fail_check=18364 maxbits=0
+[0.03 h] batch 32 kept 32; total kept 65; RECON k=62 M=30270 ok=0 fail_recon=11747 fail_check=18523 maxbits=0
+[0.05 h] batch 32 kept 32; total kept 97; RECON k=94 M=30270 ok=0 fail_recon=11885 fail_check=18385 maxbits=0
+[0.08 h] batch 32 kept 32; total kept 129; RECON k=126 M=30270 ok=0 fail_recon=11823 fail_check=18447 maxbits=0
+[0.11 h] batch 32 kept 32; total kept 161; RECON k=158 M=30270 ok=0 fail_recon=11810 fail_check=18460 maxbits=0
+[0.14 h] batch 32 kept 32; total kept 193; RECON k=190 M=30270 ok=0 fail_recon=11747 fail_check=18523 maxbits=0
+[0.15 h] batch 32 kept 32; total kept 225; RECON k=222 M=30270 ok=0 fail_recon=11895 fail_check=18375 maxbits=0
+[0.17 h] batch 32 kept 32; total kept 257; RECON k=254 M=30270 ok=0 fail_recon=11886 fail_check=18384 maxbits=0
+[0.19 h] batch 32 kept 32; total kept 289; RECON k=286 M=30270 ok=0 fail_recon=11765 fail_check=18505 maxbits=0
+[0.22 h] batch 32 kept 32; total kept 321; RECON k=318 M=30270 ok=0 fail_recon=11905 fail_check=18365 maxbits=0
+[0.26 h] batch 32 kept 32; total kept 353; RECON k=350 M=30270 ok=0 fail_recon=11871 fail_check=18399 maxbits=0
+[0.29 h] batch 32 kept 32; total kept 385; RECON k=382 M=30270 ok=0 fail_recon=11945 fail_check=18325 maxbits=0
+[0.31 h] batch 32 kept 32; total kept 417; RECON k=414 M=30270 ok=0 fail_recon=11797 fail_check=18473 maxbits=0
+[0.33 h] batch 32 kept 32; total kept 449; RECON k=446 M=30270 ok=0 fail_recon=11945 fail_check=18325 maxbits=0
+[0.35 h] batch 32 kept 32; total kept 481; RECON k=478 M=30270 ok=0 fail_recon=11809 fail_check=18461 maxbits=0
+[0.39 h] batch 32 kept 32; total kept 513; RECON k=510 M=30270 ok=0 fail_recon=12021 fail_check=18249 maxbits=0
+[0.43 h] batch 32 kept 32; total kept 545; RECON k=542 M=30270 ok=0 fail_recon=11998 fail_check=18272 maxbits=0
+[0.45 h] batch 32 kept 32; total kept 577; RECON k=574 M=30270 ok=0 fail_recon=11727 fail_check=18543 maxbits=0
+[0.47 h] batch 32 kept 32; total kept 609; RECON k=606 M=30270 ok=0 fail_recon=11898 fail_check=18372 maxbits=0
+[0.50 h] batch 32 kept 32; total kept 641; RECON k=638 M=30270 ok=0 fail_recon=11689 fail_check=18581 maxbits=0
+[0.53 h] batch 32 kept 32; total kept 673; RECON k=670 M=30270 ok=0 fail_recon=11878 fail_check=18392 maxbits=0
+[0.57 h] batch 32 kept 32; total kept 705; RECON k=702 M=30270 ok=0 fail_recon=11844 fail_check=18426 maxbits=0
+[0.61 h] batch 32 kept 32; total kept 737; RECON k=734 M=30270 ok=0 fail_recon=11784 fail_check=18486 maxbits=0
+[0.64 h] batch 32 kept 32; total kept 769; RECON k=766 M=30270 ok=0 fail_recon=11826 fail_check=18444 maxbits=0
+[0.69 h] batch 32 kept 32; total kept 801; RECON k=798 M=30270 ok=0 fail_recon=11854 fail_check=18416 maxbits=0
+[0.81 h] batch 32 kept 32; total kept 833; RECON k=830 M=30270 ok=0 fail_recon=11862 fail_check=18408 maxbits=0
+[0.85 h] batch 32 kept 32; total kept 865; RECON k=862 M=30270 ok=0 fail_recon=12070 fail_check=18200 maxbits=0
+[0.88 h] batch 32 kept 32; total kept 897; RECON k=894 M=30270 ok=0 fail_recon=11995 fail_check=18275 maxbits=0 denlift=0 Dbits=1
+[0.92 h] batch 32 kept 32; total kept 929; RECON k=926 M=30270 ok=0 fail_recon=11984 fail_check=18286 maxbits=0 denlift=0 Dbits=1
+[0.97 h] batch 32 kept 32; total kept 961; RECON k=958 M=30270 ok=0 fail_recon=11875 fail_check=18395 maxbits=0 denlift=0 Dbits=1
+[1.00 h] batch 32 kept 32; total kept 993; RECON k=990 M=30270 ok=0 fail_recon=11863 fail_check=18407 maxbits=0 denlift=0 Dbits=1
+[1.07 h] batch 32 kept 32; total kept 1025; RECON k=1022 M=30270 ok=0 fail_recon=11792 fail_check=18478 maxbits=0 denlift=0 Dbits=1
+[1.11 h] batch 32 kept 32; total kept 1057; RECON k=1054 M=30270 ok=0 fail_recon=11916 fail_check=18354 maxbits=0 denlift=0 Dbits=1
+[1.18 h] batch 32 kept 32; total kept 1089; RECON k=1086 M=30270 ok=0 fail_recon=11876 fail_check=18394 maxbits=0 denlift=0 Dbits=1
+[1.26 h] batch 32 kept 32; total kept 1121; RECON k=1118 M=30270 ok=0 fail_recon=11854 fail_check=18416 maxbits=0 denlift=0 Dbits=1
+[1.29 h] batch 32 kept 32; total kept 1153; RECON k=1150 M=30270 ok=0 fail_recon=11806 fail_check=18464 maxbits=0 denlift=0 Dbits=1
+[1.33 h] batch 32 kept 32; total kept 1185; RECON k=1182 M=30270 ok=0 fail_recon=11822 fail_check=18448 maxbits=0 denlift=0 Dbits=1
+[1.41 h] batch 32 kept 32; total kept 1217; RECON k=1214 M=30270 ok=0 fail_recon=11904 fail_check=18366 maxbits=0 denlift=0 Dbits=1
+[1.45 h] batch 32 kept 32; total kept 1249; RECON k=1246 M=30270 ok=0 fail_recon=11864 fail_check=18406 maxbits=0 denlift=0 Dbits=1
+[1.51 h] batch 32 kept 32; total kept 1281; RECON k=1278 M=30270 ok=0 fail_recon=11787 fail_check=18483 maxbits=0 denlift=0 Dbits=1
+[1.58 h] batch 32 kept 32; total kept 1313; RECON k=1310 M=30270 ok=0 fail_recon=11847 fail_check=18423 maxbits=0 denlift=0 Dbits=1
+[1.64 h] batch 32 kept 32; total kept 1345; RECON k=1342 M=30270 ok=0 fail_recon=11937 fail_check=18333 maxbits=0 denlift=0 Dbits=1
+[1.69 h] batch 32 kept 32; total kept 1377; RECON k=1374 M=30270 ok=0 fail_recon=11902 fail_check=18368 maxbits=0 denlift=0 Dbits=1
+[1.78 h] batch 32 kept 32; total kept 1409; RECON k=1406 M=30270 ok=0 fail_recon=11758 fail_check=18512 maxbits=0 denlift=0 Dbits=1
+[1.83 h] batch 32 kept 32; total kept 1441; RECON k=1438 M=30270 ok=0 fail_recon=12054 fail_check=18216 maxbits=0 denlift=0 Dbits=1
+[1.86 h] batch 32 kept 32; total kept 1473; RECON k=1470 M=30270 ok=0 fail_recon=12027 fail_check=18243 maxbits=0 denlift=0 Dbits=1
+[1.91 h] batch 32 kept 32; total kept 1505; RECON k=1502 M=30270 ok=0 fail_recon=11915 fail_check=18355 maxbits=0 denlift=0 Dbits=1
+[1.99 h] batch 32 kept 32; total kept 1537; RECON k=1534 M=30270 ok=0 fail_recon=11952 fail_check=18318 maxbits=0 denlift=0 Dbits=1
+[2.02 h] batch 32 kept 32; total kept 1569; RECON k=1566 M=30270 ok=0 fail_recon=11964 fail_check=18306 maxbits=0 denlift=0 Dbits=1
+[2.06 h] batch 32 kept 32; total kept 1601; RECON k=1598 M=30270 ok=0 fail_recon=11808 fail_check=18462 maxbits=0 denlift=0 Dbits=1
+[2.12 h] batch 32 kept 32; total kept 1633; RECON k=1630 M=30270 ok=0 fail_recon=11962 fail_check=18308 maxbits=0 denlift=0 Dbits=1
+[2.17 h] batch 32 kept 32; total kept 1665; RECON k=1662 M=30270 ok=0 fail_recon=11830 fail_check=18440 maxbits=0 denlift=0 Dbits=1
+[2.21 h] batch 32 kept 32; total kept 1697; RECON k=1694 M=30270 ok=0 fail_recon=11836 fail_check=18434 maxbits=0 denlift=0 Dbits=1
+[2.25 h] batch 32 kept 32; total kept 1729; RECON k=1726 M=30270 ok=0 fail_recon=11868 fail_check=18402 maxbits=0 denlift=0 Dbits=1
+[2.34 h] batch 32 kept 32; total kept 1761; RECON k=1758 M=30270 ok=0 fail_recon=11829 fail_check=18441 maxbits=0 denlift=0 Dbits=1
+[2.38 h] batch 32 kept 32; total kept 1793; RECON k=1790 M=30270 ok=0 fail_recon=11837 fail_check=18433 maxbits=0 denlift=0 Dbits=1
+[2.41 h] batch 32 kept 32; total kept 1825; RECON k=1822 M=30270 ok=0 fail_recon=11882 fail_check=18388 maxbits=0 denlift=0 Dbits=1
+[2.47 h] batch 32 kept 32; total kept 1857; RECON k=1854 M=30270 ok=0 fail_recon=11992 fail_check=18278 maxbits=0 denlift=0 Dbits=1
+[2.51 h] batch 32 kept 32; total kept 1889; RECON k=1886 M=30270 ok=0 fail_recon=11966 fail_check=18304 maxbits=0 denlift=0 Dbits=1
+[2.54 h] batch 32 kept 32; total kept 1921; RECON k=1918 M=30270 ok=0 fail_recon=11719 fail_check=18551 maxbits=0 denlift=0 Dbits=1
+[2.60 h] batch 32 kept 32; total kept 1953; RECON k=1950 M=30270 ok=0 fail_recon=11983 fail_check=18287 maxbits=0 denlift=0 Dbits=1
+[2.64 h] batch 32 kept 32; total kept 1985; RECON k=1982 M=30270 ok=0 fail_recon=11950 fail_check=18320 maxbits=0 denlift=0 Dbits=1
+[2.68 h] batch 32 kept 32; total kept 2017; RECON k=2014 M=30270 ok=0 fail_recon=11806 fail_check=18464 maxbits=0 denlift=0 Dbits=1
+[2.75 h] batch 32 kept 32; total kept 2049; RECON k=2046 M=30270 ok=0 fail_recon=11865 fail_check=18405 maxbits=0 denlift=0 Dbits=1
+[2.79 h] batch 32 kept 32; total kept 2081; RECON k=2078 M=30270 ok=0 fail_recon=11838 fail_check=18432 maxbits=0 denlift=0 Dbits=1
+[2.83 h] batch 32 kept 32; total kept 2113; RECON k=2110 M=30270 ok=0 fail_recon=12032 fail_check=18238 maxbits=0 denlift=0 Dbits=1
+[2.90 h] batch 32 kept 32; total kept 2145; RECON k=2142 M=30270 ok=0 fail_recon=11879 fail_check=18391 maxbits=0 denlift=0 Dbits=1
+[2.95 h] batch 32 kept 32; total kept 2177; RECON k=2174 M=30270 ok=0 fail_recon=11800 fail_check=18470 maxbits=0 denlift=0 Dbits=1
+[2.99 h] batch 32 kept 32; total kept 2209; RECON k=2206 M=30270 ok=0 fail_recon=11892 fail_check=18378 maxbits=0 denlift=0 Dbits=1
+[3.08 h] batch 32 kept 32; total kept 2241; RECON k=2238 M=30270 ok=0 fail_recon=11829 fail_check=18441 maxbits=0 denlift=0 Dbits=1
+[3.14 h] batch 32 kept 32; total kept 2273; RECON k=2270 M=30270 ok=0 fail_recon=11854 fail_check=18416 maxbits=0 denlift=0 Dbits=1
+[3.18 h] batch 32 kept 32; total kept 2305; RECON k=2302 M=30270 ok=0 fail_recon=11908 fail_check=18362 maxbits=0 denlift=0 Dbits=1
+[3.26 h] batch 32 kept 32; total kept 2337; RECON k=2334 M=30270 ok=0 fail_recon=11984 fail_check=18286 maxbits=0 denlift=0 Dbits=1
+[3.32 h] batch 32 kept 32; total kept 2369; RECON k=2366 M=30270 ok=0 fail_recon=11845 fail_check=18425 maxbits=0 denlift=0 Dbits=1
+[3.38 h] batch 32 kept 32; total kept 2401; RECON k=2398 M=30270 ok=0 fail_recon=11961 fail_check=18309 maxbits=0 denlift=0 Dbits=1
+[3.49 h] batch 32 kept 32; total kept 2433; RECON k=2430 M=30270 ok=0 fail_recon=11903 fail_check=18367 maxbits=0 denlift=0 Dbits=1
+--- resumed 00:21:55 with --batch 160 (checkpoint overhead) ---
+[0.13 h] batch 160 kept 160; total kept 2611; /bin/bash: line 1: C:/Program Files/Git/root/jcb141/crt_recon: No such file or directory
+--- resumed 00:35:18 with --batch 160; the previous resume's checkpoints failed (Git Bash converted JCB_CRT_BIN to a Windows path); no residue affected ---
+[0.24 h] batch 160 kept 160; total kept 2885; RECON k=2882 M=30270 ok=0 fail_recon=11911 fail_check=18359 maxbits=0 denlift=0 Dbits=1
+[0.34 h] batch 160 kept 160; total kept 3045; RECON k=3042 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[0.49 h] batch 160 kept 160; total kept 3205; RECON k=3202 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[0.69 h] batch 160 kept 160; total kept 3365; RECON k=3362 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[0.86 h] batch 160 kept 160; total kept 3525; RECON k=3522 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[1.04 h] batch 160 kept 160; total kept 3685; RECON k=3682 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[1.23 h] batch 160 kept 160; total kept 3845; RECON k=3842 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[1.40 h] batch 160 kept 160; total kept 4005; RECON k=4002 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[1.59 h] batch 160 kept 160; total kept 4165; RECON k=4162 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[1.80 h] batch 160 kept 160; total kept 4325; RECON k=4322 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[1.97 h] batch 160 kept 160; total kept 4485; RECON k=4482 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[2.12 h] batch 160 kept 160; total kept 4645; RECON k=4642 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[2.26 h] batch 160 kept 160; total kept 4805; RECON k=4802 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[2.41 h] batch 160 kept 160; total kept 4965; RECON k=4962 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[2.55 h] batch 160 kept 160; total kept 5125; RECON k=5122 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[2.67 h] batch 160 kept 160; total kept 5285; RECON k=5282 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[2.78 h] batch 160 kept 160; total kept 5445; RECON k=5442 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[2.88 h] batch 160 kept 160; total kept 5605; RECON k=5602 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[2.98 h] batch 160 kept 160; total kept 5765; RECON k=5762 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[3.09 h] batch 160 kept 160; total kept 5925; RECON k=5922 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+[3.20 h] batch 160 kept 160; total kept 6085; RECON k=6082 M=30270 sample=497 sample_ok=0 sample_fail=497 Dbits=1 (full pass skipped)
+BUDGET EXHAUSTED

@@ -24,7 +24,7 @@ Date: 2026-11-08. Hypothesis frozen at 77584b41.
 The runs were restarted twice without changing the method or any stored residue: once to checkpoint every 160
 primes instead of 32, since each checkpoint re-ran the full reconstruction over all primes; and once because Git
 Bash rewrote the crt_recon path given in the environment into a Windows path, so the checkpoints of that interval
-failed (`run.log`). crt_recon gained a common-denominator pass and a sampled pre-pass (every 61st coordinate first;
+failed (`artifacts/run-plus.txt`, `artifacts/run-minus.txt`). crt_recon gained a common-denominator pass and a sampled pre-pass (every 61st coordinate first;
 the full pass only when all samples reconstruct), both checked on the planted gate with an identical certificate.
 
 ## Follow-up

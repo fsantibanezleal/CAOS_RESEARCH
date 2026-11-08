@@ -1,0 +1,65 @@
+reference prime 2147480941: 11721 cofactor terms, 58605 coordinates
+[0.13 h] batch 96 kept 96; total kept 97; RECON k=94 M=58605 ok=0 fail_recon=23005 fail_check=35600 maxbits=0
+[0.24 h] batch 96 kept 96; total kept 193; RECON k=190 M=58605 ok=0 fail_recon=22997 fail_check=35608 maxbits=0
+[0.37 h] batch 96 kept 96; total kept 289; RECON k=286 M=58605 ok=0 fail_recon=23165 fail_check=35440 maxbits=0
+[0.48 h] batch 96 kept 96; total kept 385; RECON k=382 M=58605 ok=0 fail_recon=22925 fail_check=35680 maxbits=0
+[0.55 h] batch 96 kept 96; total kept 481; RECON k=478 M=58605 ok=0 fail_recon=23138 fail_check=35467 maxbits=0
+[0.63 h] batch 96 kept 96; total kept 577; RECON k=574 M=58605 ok=0 fail_recon=23220 fail_check=35385 maxbits=0
+[0.72 h] batch 96 kept 96; total kept 673; RECON k=670 M=58605 ok=0 fail_recon=22933 fail_check=35672 maxbits=0
+[0.83 h] batch 96 kept 96; total kept 769; RECON k=766 M=58605 ok=0 fail_recon=22943 fail_check=35662 maxbits=0
+[0.99 h] batch 96 kept 96; total kept 865; RECON k=862 M=58605 ok=0 fail_recon=22995 fail_check=35610 maxbits=0
+[1.15 h] batch 96 kept 96; total kept 961; RECON k=958 M=58605 ok=0 fail_recon=22892 fail_check=35713 maxbits=0
+[1.30 h] batch 96 kept 96; total kept 1057; RECON k=1054 M=58605 ok=0 fail_recon=23199 fail_check=35406 maxbits=0
+[1.47 h] batch 96 kept 96; total kept 1153; RECON k=1150 M=58605 ok=0 fail_recon=22962 fail_check=35643 maxbits=0
+[1.61 h] batch 96 kept 96; total kept 1249; RECON k=1246 M=58605 ok=0 fail_recon=23004 fail_check=35601 maxbits=0
+[1.78 h] batch 96 kept 96; total kept 1345; RECON k=1342 M=58605 ok=0 fail_recon=22675 fail_check=35930 maxbits=0
+[1.92 h] batch 96 kept 96; total kept 1441; RECON k=1438 M=58605 ok=0 fail_recon=22936 fail_check=35669 maxbits=0
+[2.08 h] batch 96 kept 96; total kept 1537; RECON k=1534 M=58605 ok=0 fail_recon=22806 fail_check=35799 maxbits=0
+[2.31 h] batch 96 kept 96; total kept 1633; RECON k=1630 M=58605 ok=0 fail_recon=23107 fail_check=35498 maxbits=0
+[2.45 h] batch 96 kept 96; total kept 1729; RECON k=1726 M=58605 ok=0 fail_recon=23158 fail_check=35447 maxbits=0 denlift=0 Dbits=1
+[2.59 h] batch 96 kept 96; total kept 1825; RECON k=1822 M=58605 ok=0 fail_recon=22761 fail_check=35844 maxbits=0 denlift=0 Dbits=1
+[2.74 h] batch 96 kept 96; total kept 1921; RECON k=1918 M=58605 ok=0 fail_recon=22906 fail_check=35699 maxbits=0 denlift=0 Dbits=1
+[2.91 h] batch 96 kept 96; total kept 2017; RECON k=2014 M=58605 ok=0 fail_recon=23216 fail_check=35389 maxbits=0 denlift=0 Dbits=1
+[3.13 h] batch 96 kept 96; total kept 2113; RECON k=2110 M=58605 ok=0 fail_recon=23027 fail_check=35578 maxbits=0 denlift=0 Dbits=1
+[3.32 h] batch 96 kept 96; total kept 2209; RECON k=2206 M=58605 ok=0 fail_recon=22775 fail_check=35830 maxbits=0 denlift=0 Dbits=1
+[3.50 h] batch 96 kept 96; total kept 2305; RECON k=2302 M=58605 ok=0 fail_recon=22987 fail_check=35618 maxbits=0 denlift=0 Dbits=1
+[3.67 h] batch 96 kept 96; total kept 2401; RECON k=2398 M=58605 ok=0 fail_recon=22883 fail_check=35722 maxbits=0 denlift=0 Dbits=1
+[3.85 h] batch 96 kept 96; total kept 2497; RECON k=2494 M=58605 ok=0 fail_recon=23037 fail_check=35568 maxbits=0 denlift=0 Dbits=1
+[3.98 h] batch 96 kept 96; total kept 2593; RECON k=2590 M=58605 ok=0 fail_recon=22958 fail_check=35647 maxbits=0 denlift=0 Dbits=1
+[4.12 h] batch 96 kept 96; total kept 2689; RECON k=2686 M=58605 ok=0 fail_recon=22967 fail_check=35638 maxbits=0 denlift=0 Dbits=1
+[4.28 h] batch 96 kept 96; total kept 2785; RECON k=2782 M=58605 ok=0 fail_recon=23044 fail_check=35561 maxbits=0 denlift=0 Dbits=1
+[4.44 h] batch 96 kept 96; total kept 2881; RECON k=2878 M=58605 ok=0 fail_recon=23039 fail_check=35566 maxbits=0 denlift=0 Dbits=1
+[4.63 h] batch 96 kept 96; total kept 2977; RECON k=2974 M=58605 ok=0 fail_recon=22946 fail_check=35659 maxbits=0 denlift=0 Dbits=1
+[4.82 h] batch 96 kept 96; total kept 3073; RECON k=3070 M=58605 ok=0 fail_recon=22971 fail_check=35634 maxbits=0 denlift=0 Dbits=1
+[5.23 h] batch 96 kept 96; total kept 3169; RECON k=3166 M=58605 ok=0 fail_recon=22933 fail_check=35672 maxbits=0 denlift=0 Dbits=1
+[5.58 h] batch 96 kept 96; total kept 3265; RECON k=3262 M=58605 ok=0 fail_recon=23009 fail_check=35596 maxbits=0 denlift=0 Dbits=1
+[5.78 h] batch 96 kept 96; total kept 3361; RECON k=3358 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[5.95 h] batch 96 kept 96; total kept 3457; RECON k=3454 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[6.11 h] batch 96 kept 96; total kept 3553; RECON k=3550 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[6.29 h] batch 96 kept 96; total kept 3649; RECON k=3646 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[6.48 h] batch 96 kept 96; total kept 3745; RECON k=3742 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[6.66 h] batch 96 kept 96; total kept 3841; RECON k=3838 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[6.84 h] batch 96 kept 96; total kept 3937; RECON k=3934 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[7.04 h] batch 96 kept 96; total kept 4033; RECON k=4030 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[7.19 h] batch 96 kept 96; total kept 4129; RECON k=4126 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[7.33 h] batch 96 kept 96; total kept 4225; RECON k=4222 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[7.46 h] batch 96 kept 96; total kept 4321; RECON k=4318 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[7.59 h] batch 96 kept 96; total kept 4417; RECON k=4414 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[7.73 h] batch 96 kept 96; total kept 4513; RECON k=4510 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[7.84 h] batch 96 kept 96; total kept 4609; RECON k=4606 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[7.95 h] batch 96 kept 96; total kept 4705; RECON k=4702 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.05 h] batch 96 kept 96; total kept 4801; RECON k=4798 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.15 h] batch 96 kept 96; total kept 4897; RECON k=4894 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.25 h] batch 96 kept 96; total kept 4993; RECON k=4990 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.36 h] batch 96 kept 96; total kept 5089; RECON k=5086 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.45 h] batch 96 kept 96; total kept 5185; RECON k=5182 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.57 h] batch 96 kept 96; total kept 5281; RECON k=5278 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.68 h] batch 96 kept 96; total kept 5377; RECON k=5374 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.80 h] batch 96 kept 96; total kept 5473; RECON k=5470 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[8.90 h] batch 96 kept 96; total kept 5569; RECON k=5566 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[9.03 h] batch 96 kept 96; total kept 5665; RECON k=5662 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[9.14 h] batch 96 kept 96; total kept 5761; RECON k=5758 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[9.23 h] batch 96 kept 96; total kept 5857; RECON k=5854 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[9.35 h] batch 96 kept 96; total kept 5953; RECON k=5950 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+[9.44 h] batch 96 kept 96; total kept 6049; RECON k=6046 M=58605 sample=961 sample_ok=0 sample_fail=961 Dbits=1 (full pass skipped)
+BUDGET EXHAUSTED
