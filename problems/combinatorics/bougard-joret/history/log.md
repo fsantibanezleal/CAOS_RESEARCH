@@ -101,3 +101,11 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   fdfa979f8bf1ce225ab8f0354e4beefb0d8f309fcaa979e9bff4c0d4fb17bdad; 36 release gates passed, including a fresh
   unauthenticated download equal to the frozen file. Table and counts generated from the EXP-005/006/007 records by
   `manuscripts/bougard-joret/second-regime/make_table.py` (39 triples, 6,217,198,475 candidate graphs).
+
+## 2026-11-08 - EXP-008 confirmed: the open second regime at order 23
+
+- Hypothesis 19125234. The 8 open triples of order 23, (23,7,3), (23,5,3), (23,4,4), (23,6,3), (23,3,6), (23,4,5),
+  (23,5,4), (23,3,7), each equal t(n,alpha) + ceil(k*alpha/2) = 38, 50, 63, 42, 86, 65, 52, 88, by complete
+  enumeration below the conjectured value (7,304,488 graphs, 9.7 hours on 28 processes, no cap reached).
+- The second line of Conjecture 1 now holds at all 47 open-window triples of order at most 23.
+
