@@ -3,10 +3,17 @@
  * Usage: crt_recon <work_dir> <k> <out_file|->
  *   <work_dir>/primes.txt   kept primes, one per line, in the order they were kept
  *   <work_dir>/res/<p>.bin  M little-endian uint32 residues (coordinate order fixed by keys.json)
- * Uses the first k primes for CRT (FLINT fmpz_comb, non-negative representative) and fmpq_reconstruct_fmpz on every coordinate, then
- * checks each reconstructed value modulo the next three kept primes (held out). Prints a summary line:
- *   RECON k=<k> M=<M> ok=<n reconstructed and agreeing> fail_recon=<n> fail_check=<n> maxbits=<num+den bits>
- * When every coordinate passes and out_file is not "-", writes "num/den" per coordinate, one per line.
+ * Uses the first k primes for CRT (FLINT fmpz_comb, non-negative representative) and fmpq_reconstruct_fmpz on every
+ * coordinate, then checks each reconstructed value modulo the next three kept primes (held out). A coordinate whose
+ * plain reconstruction fails is retried as n / D, with D the lcm of the denominators validated so far and
+ * n = D a mod m in the symmetric range, accepted only with 64 bits of margin below m and the held-out agreement.
+ *
+ * Sampled pre-pass: when M > 4 * STRIDE, every STRIDE-th coordinate is processed first; if any sampled coordinate
+ * fails, the program prints
+ *   RECON k=<k> M=<M> sample=<n> sample_ok=<n> sample_fail=<n> Dbits=<bits> (full pass skipped)
+ * and exits 1. Otherwise (or for small M) the full pass prints
+ *   RECON k=<k> M=<M> ok=<n> fail_recon=<n> fail_check=<n> maxbits=<num+den bits> denlift=<n> Dbits=<bits>
+ * and, when every coordinate passes and out_file is not "-", writes "num/den" per coordinate, one per line.
  * Exit status 0 when every coordinate passes, 1 otherwise, 2 on usage or input errors.
  */
 #include <stdio.h>
@@ -16,6 +23,8 @@
 #include <flint/fmpz.h>
 #include <flint/fmpq.h>
 #include <flint/ulong_extras.h>
+
+#define STRIDE 61
 
 static long file_words(const char *path) {
     FILE *f = fopen(path, "rb");
@@ -45,6 +54,53 @@ static int read_u32(const char *path, unsigned int *buf, long m) {
     long got = (long) fread(buf, 4, (size_t) m, f);
     fclose(f);
     return got == m;
+}
+
+typedef struct { long ok, frec, fchk, lifted, n; flint_bitcnt_t maxbits, dbits; } stats_t;
+
+/* One pass over the coordinates c = 0, stride, 2 stride, ...: plain reconstruction, then the n / D retry. */
+static stats_t pass(long stride, long M, long k, long kk, const ulong *res, const ulong *primes,
+                    const fmpz_comb_t comb, fmpz_comb_temp_t temp, const fmpz_t m, char **vals) {
+    stats_t s = {0, 0, 0, 0, 0, 0, 0};
+    fmpz_t a, D, bnum, half;
+    fmpq_t q;
+    fmpz_init(a); fmpz_init(D); fmpz_init(bnum); fmpz_init(half); fmpq_init(q);
+    fmpz_one(D);
+    fmpz_fdiv_q_2exp(half, m, 1);
+    char *done = calloc((size_t) M, 1);
+    for (long c = 0; c < M; c += stride) {
+        s.n++;
+        fmpz_multi_CRT_ui(a, res + c * kk, comb, temp, 0);   /* 0 <= a < m, as reconstruction requires */
+        if (!fmpq_reconstruct_fmpz(q, a, m)) { s.frec++; continue; }
+        if (!held_out_agrees(q, res + c * kk, primes, k, kk)) { s.fchk++; continue; }
+        s.ok++;
+        done[c] = 1;
+        fmpz_lcm(D, D, fmpq_denref(q));
+        flint_bitcnt_t b = fmpz_bits(fmpq_numref(q)) + fmpz_bits(fmpq_denref(q));
+        if (b > s.maxbits) s.maxbits = b;
+        if (vals) vals[c] = fmpq_get_str(NULL, 10, q);
+    }
+    if (s.ok > 0 && s.ok < s.n) {
+        for (long c = 0; c < M; c += stride) {
+            if (done[c]) continue;
+            fmpz_multi_CRT_ui(a, res + c * kk, comb, temp, 0);
+            fmpz_mul(bnum, a, D);
+            fmpz_mod(bnum, bnum, m);
+            if (fmpz_cmp(bnum, half) > 0) fmpz_sub(bnum, bnum, m);
+            if (fmpz_bits(bnum) + fmpz_bits(D) + 64 > fmpz_bits(m)) continue;
+            fmpq_set_fmpz_frac(q, bnum, D);
+            if (!held_out_agrees(q, res + c * kk, primes, k, kk)) continue;
+            s.lifted++;
+            done[c] = 1;
+            flint_bitcnt_t b = fmpz_bits(fmpq_numref(q)) + fmpz_bits(fmpq_denref(q));
+            if (b > s.maxbits) s.maxbits = b;
+            if (vals) vals[c] = fmpq_get_str(NULL, 10, q);
+        }
+    }
+    s.dbits = fmpz_bits(D);
+    free(done);
+    fmpz_clear(a); fmpz_clear(D); fmpz_clear(bnum); fmpz_clear(half); fmpq_clear(q);
+    return s;
 }
 
 int main(int argc, char **argv) {
@@ -84,72 +140,41 @@ int main(int argc, char **argv) {
     fmpz_comb_temp_t temp;
     fmpz_comb_init(comb, primes, k);
     fmpz_comb_temp_init(temp, comb);
-    fmpz_t a, m;
-    fmpq_t q;
-    fmpz_init(a); fmpz_init(m); fmpq_init(q);
+    fmpz_t m;
+    fmpz_init(m);
     fmpz_one(m);
     for (long j = 0; j < k; j++) fmpz_mul_ui(m, m, primes[j]);
 
-    FILE *out = NULL;
-    char **vals = NULL;
-    if (strcmp(argv[3], "-") != 0) vals = calloc((size_t) M, sizeof(char *));
-    long ok = 0, frec = 0, fchk = 0;
-    flint_bitcnt_t maxbits = 0;
-    char *done = calloc((size_t) M, 1);
-    fmpz_t D;                       /* lcm of the denominators of the coordinates validated in the first pass */
-    fmpz_init(D);
-    fmpz_one(D);
-    for (long c = 0; c < M; c++) {
-        fmpz_multi_CRT_ui(a, res + c * kk, comb, temp, 0);   /* 0 <= a < m, as reconstruction requires */
-        if (!fmpq_reconstruct_fmpz(q, a, m)) { frec++; continue; }
-        if (!held_out_agrees(q, res + c * kk, primes, k, kk)) { fchk++; continue; }
-        ok++;
-        done[c] = 1;
-        fmpz_lcm(D, D, fmpq_denref(q));
-        flint_bitcnt_t b = fmpz_bits(fmpq_numref(q)) + fmpz_bits(fmpq_denref(q));
-        if (b > maxbits) maxbits = b;
-        if (vals) vals[c] = fmpq_get_str(NULL, 10, q);
-    }
-    /* Second pass (common denominator): for a coordinate whose rational reconstruction failed, try n / D with
-     * n = D a mod m in the symmetric range, accepted only when n is far below m (at least 64 bits of margin)
-     * and the value agrees modulo the held-out primes. The exact identity check stays the proof. */
-    long lifted = 0;
-    if (ok > 0 && ok < M) {
-        fmpz_t bnum, half;
-        fmpz_init(bnum); fmpz_init(half);
-        fmpz_fdiv_q_2exp(half, m, 1);
-        for (long c = 0; c < M; c++) {
-            if (done[c]) continue;
-            fmpz_multi_CRT_ui(a, res + c * kk, comb, temp, 0);
-            fmpz_mul(bnum, a, D);
-            fmpz_mod(bnum, bnum, m);
-            if (fmpz_cmp(bnum, half) > 0) fmpz_sub(bnum, bnum, m);
-            if (fmpz_bits(bnum) + fmpz_bits(D) + 64 > fmpz_bits(m)) continue;
-            fmpq_set_fmpz_frac(q, bnum, D);
-            if (!held_out_agrees(q, res + c * kk, primes, k, kk)) continue;
-            lifted++;
-            done[c] = 1;
-            flint_bitcnt_t b = fmpz_bits(fmpq_numref(q)) + fmpz_bits(fmpq_denref(q));
-            if (b > maxbits) maxbits = b;
-            if (vals) vals[c] = fmpq_get_str(NULL, 10, q);
+    int rc;
+    if (M > 4 * STRIDE) {
+        stats_t s = pass(STRIDE, M, k, kk, res, primes, comb, temp, m, NULL);
+        if (s.ok + s.lifted < s.n) {
+            printf("RECON k=%ld M=%ld sample=%ld sample_ok=%ld sample_fail=%ld Dbits=%lu (full pass skipped)\n", k, M,
+                   s.n, s.ok + s.lifted, s.n - s.ok - s.lifted, (unsigned long) s.dbits);
+            rc = 1;
+            goto done;
         }
-        fmpz_clear(bnum); fmpz_clear(half);
     }
-    printf("RECON k=%ld M=%ld ok=%ld fail_recon=%ld fail_check=%ld maxbits=%lu denlift=%ld Dbits=%lu\n", k, M,
-           ok + lifted, frec, fchk, (unsigned long) maxbits, lifted, (unsigned long) fmpz_bits(D));
-    int all = (ok + lifted == M);
-    free(done);
-    fmpz_clear(D);
-    if (vals && all) {
-        out = fopen(argv[3], "w");
-        if (!out) { fprintf(stderr, "cannot write %s\n", argv[3]); return 2; }
-        for (long c = 0; c < M; c++) { fputs(vals[c], out); fputc('\n', out); }
-        fclose(out);
+    {
+        char **vals = NULL;
+        if (strcmp(argv[3], "-") != 0) vals = calloc((size_t) M, sizeof(char *));
+        stats_t s = pass(1, M, k, kk, res, primes, comb, temp, m, vals);
+        printf("RECON k=%ld M=%ld ok=%ld fail_recon=%ld fail_check=%ld maxbits=%lu denlift=%ld Dbits=%lu\n", k, M,
+               s.ok + s.lifted, s.frec, s.fchk, (unsigned long) s.maxbits, s.lifted, (unsigned long) s.dbits);
+        int all = (s.ok + s.lifted == M);
+        if (vals && all) {
+            FILE *out = fopen(argv[3], "w");
+            if (!out) { fprintf(stderr, "cannot write %s\n", argv[3]); return 2; }
+            for (long c = 0; c < M; c++) { fputs(vals[c], out); fputc('\n', out); }
+            fclose(out);
+        }
+        if (vals) { for (long c = 0; c < M; c++) if (vals[c]) flint_free(vals[c]); free(vals); }
+        rc = all ? 0 : 1;
     }
-    if (vals) { for (long c = 0; c < M; c++) if (vals[c]) flint_free(vals[c]); free(vals); }
-    fmpz_clear(a); fmpz_clear(m); fmpq_clear(q);
+done:
+    fmpz_clear(m);
     fmpz_comb_temp_clear(temp);
     fmpz_comb_clear(comb);
     free(res); free(primes);
-    return all ? 0 : 1;
+    return rc;
 }
