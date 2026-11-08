@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Exact values of the Bougard-Joret function in its open second regime up to order 22",
+    "title": "Exact values of the Bougard-Joret function in its open second regime up to order 23",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Let f(n, α, k) be the minimum number of edges of a k-connected graph of order n with independence number α. Bougard and Joret conjectured f(n, α, k) = t(n, α) + ⌈kα/2⌉ when n &gt; kα, where t(n, α) is the size of the balanced union of α cliques. Das and Gupta disproved the other line of the conjecture and left this second regime open. Bougard and Joret proved the second line only when ⌊n/α⌋ ≥ ⌈kα/2⌉ − α + 2 (for α ≥ 3).</p><p>We compute f exactly at every triple outside that range with α ≥ 3, k ≥ 3 and n ≤ 22: 39 triples. At every one of them the value equals the conjectured one, by complete enumeration of every candidate graph below it (6,217,198,475 candidate graphs in all). The enumeration uses nauty with two pruning rules that are proved sound, and an exact filter checked against an independent implementation. The data support the second line of the conjecture in its smallest open cases; they do not prove it in general.</p><p>Source code, enumeration records and the extremal graphs: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/bougard-joret, experiments EXP-005 to EXP-007).</p>",
+    "description": "<p>Let f(n, α, k) be the minimum number of edges of a k-connected graph of order n with independence number α. Bougard and Joret conjectured f(n, α, k) = t(n, α) + ⌈kα/2⌉ when n &gt; kα, where t(n, α) is the size of the balanced union of α cliques. Das and Gupta disproved the other line of the conjecture and left this second regime open. Bougard and Joret proved the second line only when ⌊n/α⌋ ≥ ⌈kα/2⌉ − α + 2 (for α ≥ 3).</p><p>We compute f exactly at every triple outside that range with α ≥ 3, k ≥ 3 and n ≤ 23: 47 triples. At every one of them the value equals the conjectured one, by complete enumeration of every candidate graph below it (6,224,502,963 candidate graphs in all). The enumeration uses nauty with two pruning rules that are proved sound, and an exact filter checked against an independent implementation. The data support the second line of the conjecture in its smallest open cases; they do not prove it in general.</p><p>Version 0.02 adds the eight open triples of order 23 (7,304,488 candidate graphs).</p><p>Source code, enumeration records and the extremal graphs: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/bougard-joret, experiments EXP-005 to EXP-008).</p>",
     "keywords": [
       "extremal graph theory",
       "vertex connectivity",
@@ -52,8 +52,8 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.01",
+    "version": "0.02",
     "language": "eng",
-    "publication_date": "2026-11-07"
+    "publication_date": "2026-11-08"
   }
 }

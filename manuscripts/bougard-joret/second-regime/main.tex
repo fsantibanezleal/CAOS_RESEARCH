@@ -16,9 +16,9 @@
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.01}
-\newcommand{\docdate}{7 November 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.24044538}
+\newcommand{\docversion}{v0.02}
+\newcommand{\docdate}{8 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.24059677}
 \newcommand{\conceptdoi}{10.5281/zenodo.24044537}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -39,7 +39,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \fancyhead[R]{\small Second regime\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
-\title{Exact values of the Bougard--Joret function\\in its open second regime up to order 22}
+\title{Exact values of the Bougard--Joret function\\in its open second regime up to order 23}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
@@ -53,7 +53,7 @@ $\alpha$. Bougard and Joret conjectured $f(n,\alpha,k)=t(n,\alpha)+\lceil k\alph
 where $t(n,\alpha)$ is the size of the balanced union of $\alpha$ cliques. Das and Gupta disproved the other line
 of the conjecture and left this second regime open. Bougard and Joret proved the second line only when
 $\lfloor n/\alpha\rfloor\ge\lceil k\alpha/2\rceil-\alpha+2$ (for $\alpha\ge3$). We compute $f$ exactly at every
-triple outside that range with $\alpha\ge3$, $k\ge3$ and $n\le22$: \ntriples\ triples. At every one of them the
+triple outside that range with $\alpha\ge3$, $k\ge3$ and $n\le23$: \ntriples\ triples. At every one of them the
 value equals the conjectured one, by complete enumeration of every candidate graph below it
 (\ngraphs\ candidate graphs in all). The enumeration uses nauty with two pruning rules that are proved sound, and an exact filter checked
 against an independent implementation. The data support the second line of the conjecture in its smallest open
@@ -137,15 +137,15 @@ With Lemma~\ref{lem:prune}, the $(17,5,3)$ search at $E=27$ dropped from $1{,}04
 \section{Results}
 
 \begin{theorem}[MV]
-At each of the \ntriples\ triples of the open window with $n\le22$ (Table~\ref{tab:values}), no graph with fewer
+At each of the \ntriples\ triples of the open window with $n\le23$ (Table~\ref{tab:values}), no graph with fewer
 edges than the conjectured value has independence number $\alpha$ and connectivity at least $k$; hence
 $f(n,\alpha,k)=t(n,\alpha)+\lceil k\alpha/2\rceil$ at every one of them.
 \end{theorem}
 
-\begin{table}[ht]
-\centering\small
+\begin{table}[p]
+\centering\footnotesize
 \input{table.tex}
-\caption{The open window up to order 22. Column $f$: the exact value (the conjectured value when the search below it
+\caption{The open window up to order 23. Column $f$: the exact value (the conjectured value when the search below it
 is complete). ``Edges searched'': the edge counts below the conjectured value that can occur. ``Graphs below'': the
 candidate graphs generated at those edge counts (with the generator in use; the counts after
 Lemma~\ref{lem:prune} are smaller). ``Extremal graphs'': the qualifying graphs at the conjectured value when that edge
@@ -155,18 +155,19 @@ count was also enumerated; otherwise the attaining construction \cite{BJ}.}
 
 \section{Scope}
 
-The open window is infinite; these computations cover its members of order at most 22 and nothing beyond. The
+The open window is infinite; these computations cover its members of order at most 23 and nothing beyond. The
 results are exact finite statements, verified by machine; the general second line of the conjecture remains open.
 The extremal graphs found at the conjectured values are listed in the computational record \cite{Record}.
 
 \paragraph{Data availability.}
-Code, records and the lists of extremal graphs are in the repository \cite{Record}, experiments EXP-005, EXP-006 and
-EXP-007 under \path{problems/combinatorics/bougard-joret/experiments/}.
+Code, records and the lists of extremal graphs are in the repository \cite{Record}, experiments EXP-005 to EXP-008
+under \path{problems/combinatorics/bougard-joret/experiments/}.
 
 \paragraph{Declaration of generative AI use.} Generative AI tools were used for literature triage, derivation
 exploration, code drafting and internal review of the text. The author reviewed and verified all content and takes
 full responsibility for the work.
 
+{\small
 \begin{thebibliography}{9}
 \bibitem{BJ} N. Bougard and G. Joret.
 \emph{Tur\'an's theorem and $k$-connected graphs}.
@@ -191,8 +192,9 @@ Matematikai \'es Fizikai Lapok 48 (1941), 436--452.
 Journal of Symbolic Computation 60 (2014), 94--112.
 \href{https://doi.org/10.1016/j.jsc.2013.09.003}{doi:10.1016/j.jsc.2013.09.003}.
 \bibitem{Record} F. Santib\'a\~nez-Leal.
-\emph{CAOS Research, Bougard--Joret EXP-005 to EXP-007: the open second regime}.
+\emph{CAOS Research, Bougard--Joret EXP-005 to EXP-008: the open second regime}.
 Code, enumeration records and extremal graphs, 2026.
 \href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/combinatorics/bougard-joret/experiments}{Public experiment records}.
 \end{thebibliography}
+}
 \end{document}
