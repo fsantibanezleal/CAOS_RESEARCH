@@ -8,6 +8,19 @@ remain the evidence.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 5 with a redirect; strategic review (JCB-098), then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 (JCB-099); the transverse Fitting atlas is parked.
 
+## Current checkpoint, 2026-11-08
+
+- JCB-103 (an independent certificate that Case 1 is empty) is open, with a measured lower bound on its cost.
+  EXP-139 (degree-35 field) and EXP-140 (the quintic subfield L, after an exact weight-vector reduction) did not
+  finish exact standard bases in 6 hours each. EXP-141 (multi-modular cofactor certificate over L, with L rewritten
+  by PARI polredabs as Q[y]/(y^5 - y^4 + 3y^3 + 3y^2 + 26)): UNKNOWN at 6,049 primes, heights above about 28,000
+  digits. EXP-142: E2 = a2 (q1^2 - c^2)^2 exactly with c in L, so Case 1 splits into the branches q1 = +c and -c;
+  UNKNOWN at about 6,080 primes per branch. EXP-143: the branches continued to about 20,200 primes each, UNKNOWN,
+  heights above about 94,000 digits. Every prime of every run was lucky and every gate passed. Structure found on
+  the way is in `EXP-142/structure.md`; none of it gives a shorter certificate. Next: shrink the input heights (an
+  L-valued change of variables) or find a smaller exact object before spending more primes.
+- JCB-102 done: three 2026 papers read; JC(2) open in all three.
+
 ## Current checkpoint, 2026-11-02
 
 - EXP-137: Helali's claimed exclusion of (72,108) is verified in part by independent code. Our derivation
