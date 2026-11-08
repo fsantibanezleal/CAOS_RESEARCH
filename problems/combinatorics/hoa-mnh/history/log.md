@@ -43,3 +43,12 @@ least counterexample order is open in [8, 56]; Zhan's Questions 2-4 are open; no
   universal vertex, all of circumference 12, all satisfying Hoa's conjecture; re-checked by EXP-001's verify.py.
 - The MNH filter dominates the cost (about 70 CPU-hours for all of case A); the remaining parts are resumable.
 
+## 2026-11-08 - EXP-005 stopped: case B through the platypus generator
+
+- GNZ Lemma 2: an MNH graph with maximum degree below n - 1 is a platypus, so case B is the MNH graphs among the
+  platypuses. GenHypohamiltonian 1.2.1 (option platypus) reproduces GNZ's 48 and 814 platypuses at orders 10 and 11,
+  and the MNH filter recovers EXP-002's case-B counts 4 and 10.
+- At order 12 one eighth of the generation took more than 5.5 CPU-hours before its last three degree stages (the two
+  running parts were then lost by an operator error, see the verdict), so order 13 projects to thousands of
+  CPU-hours; the experiment stopped as its hypothesis prescribes.
+

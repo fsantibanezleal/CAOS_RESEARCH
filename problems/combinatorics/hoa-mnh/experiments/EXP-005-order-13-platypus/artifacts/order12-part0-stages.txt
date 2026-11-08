@@ -1,0 +1,30 @@
+32 bit mode
+Info: only generating platypus graphs
+Warning: splitting doesn't work very well with this program (a lot of isomorphic copies). Only works well with large mod.
+/root/caos-nauty/genhypo/gen_hypohamiltonian-1.2.1/gen_hypohamiltonian 12 platypus mod 0 8 
+Splitlevel is 3 (num edges added)
+Generating graphs with max deg = 2
+Num of noniso graphs generated: 33
+CPU time: 0.0 seconds.
+---
+Generating graphs with max deg = 3
+Num of noniso graphs generated: 5497
+CPU time: 0.0 seconds.
+---
+Generating graphs with max deg = 4
+Num of noniso graphs generated: 150865
+CPU time: 85.0 seconds.
+---
+Generating graphs with max deg = 5
+Num of noniso graphs generated: 2987554
+CPU time: 2475.0 seconds.
+---
+Generating graphs with max deg = 6
+Num of noniso graphs generated: 16600966
+CPU time: 10590.0 seconds.
+---
+Generating graphs with max deg = 7
+Num of noniso graphs generated: 26340647
+CPU time: 19632.0 seconds.
+---
+Generating graphs with max deg = 8

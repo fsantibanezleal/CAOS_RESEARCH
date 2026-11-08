@@ -1,0 +1,3 @@
+EXP-005 gates (2026-11-08, GenHypohamiltonian 1.2.1 platypus, mc2g6, EXP-001 mnh)
+order 10: platypuses 48 (GNZ Table 1: 48); mnh filter: read 48 pruned 4 mnh 4 (EXP-002 case B: 4); 4.0 s
+order 11: platypuses 814 (GNZ: 814); mnh filter: read 814 pruned 93 mnh 10 (EXP-002 case B: 10); 375 s
