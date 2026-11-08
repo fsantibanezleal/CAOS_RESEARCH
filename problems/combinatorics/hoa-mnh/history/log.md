@@ -33,3 +33,13 @@ least counterexample order is open in [8, 56]; Zhan's Questions 2-4 are open; no
   clique omitted sets on its longest middle paths, so no Zhan-type counterexample comes from them; any
   Zhan-type counterexample has order >= 32. Gate: the code recognises Zhan's own gadget (A_18, d = 2, omitted
   {16, 17}).
+
+## 2026-11-08 - EXP-004 PARTIAL: order 13 with a universal vertex
+
+- Hypothesis 61b93faf. Case A at order 13 (K_1 join H, H on 12 vertices) through a sharper degree-sum generator
+  (deg_H(u) + deg_H(v) <= 10 for nonadjacent pairs, sound by Bondy-Chvatal); the generator reproduces 27, 57 and 114
+  at orders 10 to 12.
+- Within the 6-hour cap, 353 of 2,000 parts (160 million graphs): 43 maximal non-Hamiltonian graphs of order 13 with a
+  universal vertex, all of circumference 12, all satisfying Hoa's conjecture; re-checked by EXP-001's verify.py.
+- The MNH filter dominates the cost (about 70 CPU-hours for all of case A); the remaining parts are resumable.
+
