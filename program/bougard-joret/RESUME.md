@@ -47,6 +47,7 @@ Updated: 2026-09-05.
 | EXP-005-second-regime-small | Exact $f$ at the smallest open second-regime triples | CONFIRMED [MV] | Second line of Conjecture 1 holds at all seven: (10,3,3)=17, (11,3,3)=20, (13,4,3)=21, (14,4,3)=24, (15,4,3)=27, (13,3,4)=28, (14,3,4)=32; complete geng enumeration with an exact filter |
 | EXP-006-second-regime-beyond-15 | (16,5,3), (17,5,3), (17,4,4), (16,3,5) | CONFIRMED [MV] | 26, 29, 36, 43; independence-pruned generator and early-stopping filter, both gated |
 | EXP-007-open-window-to-22 | Every open second-regime triple with n <= 22 | CONFIRMED [MV] | all 28 remaining triples equal the formula; with EXP-005/006, all 39 |
+| EXP-008-order-23 | Every open second-regime triple of order 23 | CONFIRMED [MV] | all 8 equal the formula; with EXP-005 to EXP-007, all 47 open triples with n <= 23 |
 | EXP-004-bracket-endpoint | Endpoint of $d^2+4d+1\le f(2d+3,2,d+2)\le d^2+4d+2$ | CONFIRMED; independent audit PASS | $f(2d+3,2,d+2)=d^2+4d+2$, $d\ge7$; shared-neighbourhood theorem; configuration SAT d=7 (8/8 UNSAT), d=8 (7/8, eighth excluded by $a+b=2$); next-matching v0.04 10.5281/zenodo.23965193 |
 
 ## 4. In flight
