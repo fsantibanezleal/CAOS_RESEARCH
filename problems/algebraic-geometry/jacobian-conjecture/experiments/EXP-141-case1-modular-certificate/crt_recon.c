@@ -26,6 +26,19 @@ static long file_words(const char *path) {
     return n;
 }
 
+/* 1 when the rational q equals the stored residue modulo each held-out prime primes[k..kk-1]. */
+static int held_out_agrees(const fmpq_t q, const ulong *r, const ulong *primes, long k, long kk) {
+    for (long j = k; j < kk; j++) {
+        ulong p = primes[j];
+        ulong num = fmpz_fdiv_ui(fmpq_numref(q), p);
+        ulong den = fmpz_fdiv_ui(fmpq_denref(q), p);
+        if (den == 0) return 0;
+        ulong val = n_mulmod2_preinv(num, n_invmod(den, p), p, n_preinvert_limb(p));
+        if (val != r[j]) return 0;
+    }
+    return 1;
+}
+
 static int read_u32(const char *path, unsigned int *buf, long m) {
     FILE *f = fopen(path, "rb");
     if (!f) return 0;
@@ -82,27 +95,51 @@ int main(int argc, char **argv) {
     if (strcmp(argv[3], "-") != 0) vals = calloc((size_t) M, sizeof(char *));
     long ok = 0, frec = 0, fchk = 0;
     flint_bitcnt_t maxbits = 0;
+    char *done = calloc((size_t) M, 1);
+    fmpz_t D;                       /* lcm of the denominators of the coordinates validated in the first pass */
+    fmpz_init(D);
+    fmpz_one(D);
     for (long c = 0; c < M; c++) {
         fmpz_multi_CRT_ui(a, res + c * kk, comb, temp, 0);   /* 0 <= a < m, as reconstruction requires */
         if (!fmpq_reconstruct_fmpz(q, a, m)) { frec++; continue; }
-        int good = 1;
-        for (long j = k; j < kk; j++) {
-            ulong p = primes[j];
-            ulong num = fmpz_fdiv_ui(fmpq_numref(q), p);
-            ulong den = fmpz_fdiv_ui(fmpq_denref(q), p);
-            if (den == 0) { good = 0; break; }
-            ulong val = n_mulmod2_preinv(num, n_invmod(den, p), p, n_preinvert_limb(p));
-            if (val != res[c * kk + j]) { good = 0; break; }
-        }
-        if (!good) { fchk++; continue; }
+        if (!held_out_agrees(q, res + c * kk, primes, k, kk)) { fchk++; continue; }
         ok++;
+        done[c] = 1;
+        fmpz_lcm(D, D, fmpq_denref(q));
         flint_bitcnt_t b = fmpz_bits(fmpq_numref(q)) + fmpz_bits(fmpq_denref(q));
         if (b > maxbits) maxbits = b;
         if (vals) vals[c] = fmpq_get_str(NULL, 10, q);
     }
-    printf("RECON k=%ld M=%ld ok=%ld fail_recon=%ld fail_check=%ld maxbits=%lu\n", k, M, ok, frec, fchk,
-           (unsigned long) maxbits);
-    int all = (ok == M);
+    /* Second pass (common denominator): for a coordinate whose rational reconstruction failed, try n / D with
+     * n = D a mod m in the symmetric range, accepted only when n is far below m (at least 64 bits of margin)
+     * and the value agrees modulo the held-out primes. The exact identity check stays the proof. */
+    long lifted = 0;
+    if (ok > 0 && ok < M) {
+        fmpz_t bnum, half;
+        fmpz_init(bnum); fmpz_init(half);
+        fmpz_fdiv_q_2exp(half, m, 1);
+        for (long c = 0; c < M; c++) {
+            if (done[c]) continue;
+            fmpz_multi_CRT_ui(a, res + c * kk, comb, temp, 0);
+            fmpz_mul(bnum, a, D);
+            fmpz_mod(bnum, bnum, m);
+            if (fmpz_cmp(bnum, half) > 0) fmpz_sub(bnum, bnum, m);
+            if (fmpz_bits(bnum) + fmpz_bits(D) + 64 > fmpz_bits(m)) continue;
+            fmpq_set_fmpz_frac(q, bnum, D);
+            if (!held_out_agrees(q, res + c * kk, primes, k, kk)) continue;
+            lifted++;
+            done[c] = 1;
+            flint_bitcnt_t b = fmpz_bits(fmpq_numref(q)) + fmpz_bits(fmpq_denref(q));
+            if (b > maxbits) maxbits = b;
+            if (vals) vals[c] = fmpq_get_str(NULL, 10, q);
+        }
+        fmpz_clear(bnum); fmpz_clear(half);
+    }
+    printf("RECON k=%ld M=%ld ok=%ld fail_recon=%ld fail_check=%ld maxbits=%lu denlift=%ld Dbits=%lu\n", k, M,
+           ok + lifted, frec, fchk, (unsigned long) maxbits, lifted, (unsigned long) fmpz_bits(D));
+    int all = (ok + lifted == M);
+    free(done);
+    fmpz_clear(D);
     if (vals && all) {
         out = fopen(argv[3], "w");
         if (!out) { fprintf(stderr, "cannot write %s\n", argv[3]); return 2; }
