@@ -1765,3 +1765,16 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   Partial results so far: the J4 compatibility ideal is zero-dimensional of multiplicity 35, with an a7
   eliminant of degree 35 in powers of a7^7 only; a Singular standard basis of a 25-generator Case 2 input
   returns the unit ideal (provenance of that input still to be stated in the results).
+
+## 2026-11-06 to 2026-11-08 - JCB-103: exact and multi-modular attempts on Case 1
+
+- EXP-139 (exact std over the degree-35 field) and EXP-140 (over the quintic subfield Q(u^7)): UNKNOWN at 6 hours.
+- EXP-141: L rewritten as Q[y]/(y^5 - y^4 + 3y^3 + 3y^2 + 26); cofactor certificate by lifts at the five roots of
+  the defining polynomial modulo primes near 2^31, CRT and rational reconstruction; gates pass (a planted
+  certificate recovered and verified twice); UNKNOWN at 6,049 primes, heights above about 28,000 digits.
+- EXP-142: E1 is proportional to E2 and E2 = a2 (q1^2 - c^2)^2 over L, so Case 1 splits into two branches of nine
+  equations in five variables; UNKNOWN at about 6,080 primes per branch.
+- EXP-143: the branches continued to about 20,200 primes each: UNKNOWN, heights above about 94,000 digits.
+- Structure recorded in EXP-142/structure.md (a small quadric in q0, q2, q4; every branch equation linear in q5;
+  rank 8; 100 to 138 points for near-minimal subsets); none shortens the certificate.
+
