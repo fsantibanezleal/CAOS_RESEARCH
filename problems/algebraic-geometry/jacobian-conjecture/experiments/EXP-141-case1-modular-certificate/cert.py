@@ -39,8 +39,11 @@ P_ASC = [26, 0, 3, 3, -1, 1]                       # P(y) = y^5 - y^4 + 3y^3 + 3
 A_ASC = [Fraction(-9725570295901, 12623962), Fraction(-1170753213563, 971074), Fraction(-387111042229, 12623962),
          Fraction(1578225240619, 12623962), Fraction(-469713794365, 6311981)]
 GATE_PRIMES = (1021, 1031, 1033, 1049, 1061)
-DISTRO = "Ubuntu-24.04"
-CRT_BIN = "/root/jcb141/crt_recon"
+import os  # noqa: E402
+# The WSL distribution and the compiled crt_recon (gcc -O2 crt_recon.c -lflint -lgmp inside WSL) are device
+# settings, given by the environment: JCB_WSL_DISTRO and JCB_CRT_BIN (a path inside WSL).
+DISTRO = os.environ.get("JCB_WSL_DISTRO", "")
+CRT_BIN = os.environ.get("JCB_CRT_BIN", "")
 
 
 def wsl_path(p):
@@ -49,6 +52,8 @@ def wsl_path(p):
 
 
 def wsl(args, timeout):
+    if not DISTRO:
+        raise SystemExit("set JCB_WSL_DISTRO (the WSL distribution with Singular and FLINT)")
     r = subprocess.run(["wsl.exe", "-d", DISTRO, "--"] + args, capture_output=True, text=True, timeout=timeout)
     return r.returncode, r.stdout, r.stderr
 
@@ -337,6 +342,8 @@ class Runner:
         k = len(self.kept()) - 3
         if k < 1:
             return False, ""
+        if not CRT_BIN:
+            raise SystemExit("set JCB_CRT_BIN (path of the compiled crt_recon inside WSL)")
         code, out, err = wsl([CRT_BIN, wsl_path(self.W), str(k), wsl_path(final_out)], timeout=7200)
         line = (out.strip() or err.strip()).splitlines()[-1] if (out.strip() or err.strip()) else ""
         return code == 0, line
