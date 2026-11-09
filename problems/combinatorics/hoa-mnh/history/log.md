@@ -59,3 +59,10 @@ least counterexample order is open in [8, 56]; Zhan's Questions 2-4 are open; no
   conjecture, verified independently; circumferences from 7 to 12.
 - 347 parts remain (resumable). A185306(13) is not yet determined: case A is incomplete and case B is open.
 
+## 2026-11-09 - EXP-007: order-13 case A complete, exactly 286 graphs
+
+- Hypothesis 85e0e1f6. The last 347 parts ran in 3,846 seconds and held no MNH graph. With EXP-004 and EXP-006, all
+  2,000 parts are complete (1.10 x 10^9 graphs H): exactly 286 maximal non-Hamiltonian graphs of order 13 have a
+  universal vertex, and every one satisfies Hoa's conjecture (verified independently).
+- Case-A counts at orders 10 to 13: 27, 57, 114, 286. Order 13 is settled for Hoa's conjecture except case B.
+
