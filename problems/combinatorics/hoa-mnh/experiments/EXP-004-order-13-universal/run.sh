@@ -4,7 +4,7 @@
 # Run in WSL: bash run.sh <out_dir>
 set -u
 OUT=${1:?out dir}
-GA=/mnt/d/_Temp/hoa13/geng_mnhA
+GA=${GA:?set GA to the geng binary built with prune_degsumA.c (see EXP-006/run.sh)}
 M=~/caos-nauty/mnh
 J=~/caos-nauty/join6
 mkdir -p "$OUT/parts"
