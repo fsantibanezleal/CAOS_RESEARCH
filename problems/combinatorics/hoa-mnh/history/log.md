@@ -52,3 +52,10 @@ least counterexample order is open in [8, 56]; Zhan's Questions 2-4 are open; no
   running parts were then lost by an operator error, see the verdict), so order 13 projects to thousands of
   CPU-hours; the experiment stopped as its hypothesis prescribes.
 
+## 2026-11-08 - EXP-006 PARTIAL: 82.7% of order-13 case A
+
+- Hypothesis 8c8bffaf. EXP-004's pipeline continued from its parts on 28 processes for 6 hours: 1,653 of 2,000 parts
+  (941 million graphs). 286 maximal non-Hamiltonian graphs of order 13 with a universal vertex, all satisfying Hoa's
+  conjecture, verified independently; circumferences from 7 to 12.
+- 347 parts remain (resumable). A185306(13) is not yet determined: case A is incomplete and case B is open.
+
