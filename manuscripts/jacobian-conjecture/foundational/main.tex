@@ -84,9 +84,9 @@ $27A^2C^2 - 18ABC + 16A + B^3C - B^2 = 0$; over $\mathbb{R}$ this wall separates
 from a one-sheet region, and $F$ restricts to a surjective, non-injective real Keller map. The
 counterexamples reduce at suitable primes to non-injective Keller maps over $\mathbb{F}_\ell$
 of degree below the characteristic. Fifth, we prove that the mechanism cannot reach the
-still-open two-variable case: for opposite-sign or one-zero weights, every
-$\Gm$-equivariant Keller map of $\C^2$ is linear (a classification with a positive-factor kill
-at the top degree), so a planar counterexample, if any, must be non-equivariant.
+still-open two-variable case: for opposite-sign weights every $\Gm$-equivariant Keller map of
+$\C^2$ is linear (a classification with a positive-factor kill at the top degree), and with one zero
+weight it is affine, $(f_0 x,\, g_0 y + c)$, so a planar counterexample, if any, must be non-equivariant.
 Shaska's contemporaneous independent all-signature classification is reconciled explicitly:
 same-sign actions may give nonlinear triangular automorphisms, while equivariant planar Keller
 maps remain automorphisms in every signature \cite{Shaska2026}. All computations are exact (over
@@ -120,8 +120,8 @@ of the $\min\deg \le 2$ columns with one closed inverse, the unconditional Newto
 exclusion theorems and the annihilation lemma, the diagonal-corner reduction and the
 staircase transport, and a recalibration of the $\gcd$ and degree-floor landscape against
 the primary sources. The cascade paper \cite{SLcascade} derives the consequences of the
-counterexample for related conjectures, each implication checked against its primary
-source, and gives an explicit dimension-48 symmetric witness.
+counterexample for related conjectures, each implication located in its primary source except
+Mathieu's 1997 paper, which was not located (that link rests on Zwart's review), and gives an explicit dimension-48 symmetric witness.
 
 On 2026-07-20, Alp\"oge announced the map, with $u = 1 + xy$,
 \begin{equation}\label{eq:F}
@@ -313,7 +313,7 @@ dimension $2$.
 Additionally \textbf{[MV]}: no coordinate slice of \eqref{eq:F} (each variable frozen at rational
 test values, any output pair) is a 2D Keller map.
 
-\begin{theorem}[2D equivariant rigidity, {[D]}, every mechanical step {[MV]} on sweeps]
+\begin{theorem}[2D equivariant rigidity, {[D]}; for $w_2 \ge 1$ every mechanical step {[MV]} on sweeps]
 \label{thm:rigidity}
 For any $\Gm$-action on $\C^2$ with weights $(w_1, -w_2)$, $w_1 \ge 1$, $w_2 \ge 1$, every
 equivariant polynomial Keller map is linear: $(f_0 x,\, g_0 y)$ or $(f_0 y,\, g_0 x)$. For weights
@@ -340,7 +340,9 @@ Keller solution (their bracket is divisible by $v$; empty solves). The surviving
 to $fg + v(w_1 f g' + w_2 f' g) = c$ (or its swap), whose coefficient at the top bidegree
 $N = d_f + d_g$ is $(1 + w_1 d_g + w_2 d_f)\, f_{d_f}\, g_{d_g}$ with a strictly positive
 factor: the leading coefficients die and by descent $f, g$ are constant (certified: empty
-constrained solves for all exact bidegrees $\le 5$ over eight weight pairs).
+constrained solves for all exact bidegrees $\le 5$ over eight weight pairs; the pair $(1, 0)$ among them
+misses the translation $c$ through EXP-010's shape normalization, which is why the case $w_2 = 0$ is
+proved separately above).
 \end{proof}
 
 The independent enumeration EXP-006 (216 polynomial Keller instances over a bounded window, all
@@ -432,7 +434,7 @@ identifier EXP-$nnn$ denotes one archived record in the experiment folders of th
 question, method and result, with the script and output of any computation. The results of
 this paper rest on EXP-001 through EXP-012, each of which also records an independent
 verification route; the Discussion also cites EXP-016 (the cited implications checked against
-their primary sources) and EXP-041 (the dimension-48 witness).
+their primary sources, except Mathieu's 1997 paper, which was not located) and EXP-041 (the dimension-48 witness).
 
 \begin{thebibliography}{99}
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
@@ -454,7 +456,7 @@ machine-certified Newton-polygon exclusions, the staircase transport, and the re
 frontier, preprint, 2026.
 \href{https://doi.org/10.5281/zenodo.21503367}{doi:10.5281/zenodo.21503367}.
 \bibitem{SLcascade} F. Santib\'a\~nez-Leal, The collateral impact of the three-dimensional
-Jacobian counterexample: a source-verified cascade, preprint, 2026.
+Jacobian counterexample: the cascade of implications, preprint, 2026.
 \href{https://doi.org/10.5281/zenodo.21503371}{doi:10.5281/zenodo.21503371}.
 \bibitem{Smale1998} S. Smale, Mathematical problems for the next century, \emph{Math.
 Intelligencer} \textbf{20} (1998), 7--15.
