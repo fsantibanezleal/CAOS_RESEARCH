@@ -17,7 +17,9 @@ inequality chain of Didin's Theorem 10 (case p >= 2: m >= t(n+s,alpha) - s + cei
 m >= t(n+s,alpha) - s) allows at m = c. Writes artifacts/didin.jsonl and artifacts/didin-summary.md; exits 1 when a
 graph violates the inequality or has an s outside the allowed set.
 
-Usage: python didin.py
+Usage: python didin.py [--selftest]
+  --selftest  compare core_p with a brute force over all set partitions on 400 random graphs of orders 4 to 9
+              (fixed seed) and exit 1 on any difference
 """
 import json
 import sys
@@ -93,7 +95,53 @@ def core_p(G, alpha):
     raise AssertionError("q = 1 is always feasible")
 
 
+def brute_p(G, alpha):
+    nodes = list(G.nodes)
+    best = 0
+
+    cache = {}
+
+    def a_of(part):
+        key = frozenset(part)
+        if key not in cache:
+            cache[key] = nx.max_weight_clique(nx.complement(G.subgraph(part)), weight=None)[1]
+        return cache[key]
+
+    def rec(i, parts):
+        nonlocal best
+        if i == len(nodes):
+            if sum(a_of(p) for p in parts) <= alpha:
+                best = max(best, len(parts))
+            return
+        for p in parts:
+            p.append(nodes[i])
+            rec(i + 1, parts)
+            p.pop()
+        parts.append([nodes[i]])
+        rec(i + 1, parts)
+        parts.pop()
+
+    rec(0, [])
+    return best
+
+
+def selftest():
+    import random
+    rng = random.Random(20261111)
+    diff = 0
+    for _ in range(400):
+        n = rng.randint(4, 9)
+        G = nx.gnp_random_graph(n, rng.choice([0.3, 0.5, 0.7]), seed=rng.randrange(1 << 30))
+        a = nx.max_weight_clique(nx.complement(G), weight=None)[1]
+        x, y = core_p(G, a), brute_p(G, a)
+        diff += x != y
+    print(f"selftest: 400 graphs, {diff} differences between core_p and the brute force")
+    return 1 if diff else 0
+
+
 def main():
+    if "--selftest" in sys.argv:
+        return selftest()
     recs = [json.loads(l) for l in (HERE / "artifacts" / "structure.jsonl").read_text(encoding="utf-8").splitlines()]
     out, bad = [], 0
     per = defaultdict(Counter)
