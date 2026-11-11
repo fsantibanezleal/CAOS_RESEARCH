@@ -61,3 +61,33 @@ Predictions for phase 2, frozen now (the 13 remaining triples, same pipeline, pl
 
 Phase 2 scheduling: the seven triples whose earlier enumeration at c took at most 600 seconds on 28 processes, and
 (15,4,3), run now on 4 processes beside EXP-010; the five others after EXP-010 ends.
+
+## Second addendum (2026-11-11), written before any structure analysis of phase 2
+
+A literature refresh found Didin, "A Generalization of Turan's Theorem for Graphs with a Given Independence Number",
+Zenodo 10.5281/zenodo.22831382 (2026-09-18), a preprint under review. It states (read on the primary PDF, proofs not
+audited):
+- Theorem 3: m >= t(n + s, alpha) - s, with s = alpha - p, where p is the largest number of components of an
+  alpha-core (a spanning alpha-critical subgraph with the same independence number);
+- Theorem 9: the lower bound of the second line for every n > k alpha, k >= 3.
+
+Its proof of Theorem 10 (case p >= 2) uses m >= t(n + s, alpha) - s + ceil(k p / 2). Its Lemma 19 gives
+t(n + s, alpha) - t(n, alpha) >= k s for n > k alpha.
+
+s = 0 holds exactly when V(G) splits into alpha cliques. At m = c these inequalities allow s >= 1 only at:
+- (10,3,3) with s in {1,2};
+- (11,3,3) with s in {1,2};
+- (13,3,4) with s = 2;
+- (13,4,3) with s = 3;
+- (16,3,5) with s = 2;
+- (16,5,3) with s in {1,4};
+- (17,5,3), (18,5,3) and (19,5,3) with s = 1;
+- (22,7,3), (23,7,3) and (24,7,3) with s = 1;
+- at no other triple with n <= 24 (computed by `didin.py`, function `allowed_s`).
+
+Predictions (a refutation of either would contradict Didin's Theorem 3 or Lemma 19, or show an error in this
+derivation):
+- Every extremal graph of phases 1 and 2 satisfies m >= t(n + s, alpha) - s, with s computed exactly (`didin.py`)
+  (HIGH).
+- Every extremal graph's s lies in the allowed set above; in particular every extremal graph of the 13 phase 2
+  triples has a partition into alpha cliques (HIGH).
