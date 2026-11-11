@@ -41,3 +41,23 @@ Triples (from the earlier records, with the recorded number of extremal graphs):
 
 Phase 1 (the triples whose earlier enumeration at c took at most 60 seconds on 28 processes) on 4 processes while
 EXP-010 runs; phase 2 (the rest) on 28 processes after EXP-010 ends. At most 24 hours in all.
+
+## Addendum before phase 2 (2026-11-11), written after the phase 1 results and before any phase 2 run
+
+Phase 1 (22 triples, 165 extremal graphs, every count equal to the recorded one) refuted the structural prediction:
+40 extremal graphs have no partition into alpha cliques (clique cover number alpha + 1, confirmed by a second,
+independent method, `verify.py`, a cover by maximal cliques). All of them lie at k = 3 with alpha odd: (10,3,3) 12 of
+15, (11,3,3) 3 of 6, (16,5,3) 5 of 18, (17,5,3) 9 of 34, (18,5,3) 8 of 35, (19,5,3) 3 of 18; (20,5,3) has none of 5.
+Every graph that has a partition into alpha cliques has the full Bougard-Joret structure (125 of 125).
+
+Predictions for phase 2, frozen now (the 13 remaining triples, same pipeline, plus `verify.py`):
+
+- Gate: the regenerated counts equal the recorded ones (HIGH).
+- Every extremal graph with a partition into alpha cliques has the full Bougard-Joret structure (HIGH).
+- Extremal graphs without a partition into alpha cliques occur only at triples with k = 3 and alpha odd; among the
+  phase 2 triples that is (21,5,3) and (22,5,3), and none occurs at (15,4,3), (20,3,6), (20,6,3), (21,3,6), (21,4,4),
+  (21,4,5), (21,5,4), (21,6,3), (22,3,6), (22,4,4), (22,6,3) (MODERATE).
+- Every extremal graph without a partition into alpha cliques has clique cover number exactly alpha + 1 (MODERATE).
+
+Phase 2 scheduling: the seven triples whose earlier enumeration at c took at most 600 seconds on 28 processes, and
+(15,4,3), run now on 4 processes beside EXP-010; the five others after EXP-010 ends.
