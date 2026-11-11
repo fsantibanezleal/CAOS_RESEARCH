@@ -48,6 +48,7 @@ Updated: 2026-09-05.
 | EXP-006-second-regime-beyond-15 | (16,5,3), (17,5,3), (17,4,4), (16,3,5) | CONFIRMED [MV] | 26, 29, 36, 43; independence-pruned generator and early-stopping filter, both gated |
 | EXP-007-open-window-to-22 | Every open second-regime triple with n <= 22 | CONFIRMED [MV] | all 28 remaining triples equal the formula; with EXP-005/006, all 39 |
 | EXP-008-order-23 | Every open second-regime triple of order 23 | CONFIRMED [MV] | all 8 equal the formula; with EXP-005 to EXP-007, all 47 open triples with n <= 23 |
+| EXP-009-order-24 | Every open second-regime triple of order 24 | 4 CONFIRMED, 2 OPEN [MV] | (24,5,3)=54, (24,6,3)=45, (24,5,4)=56, (24,4,5)=70; (24,7,3) >= 40, (24,3,7) >= 94 at the cap |
 | EXP-004-bracket-endpoint | Endpoint of $d^2+4d+1\le f(2d+3,2,d+2)\le d^2+4d+2$ | CONFIRMED; independent audit PASS | $f(2d+3,2,d+2)=d^2+4d+2$, $d\ge7$; shared-neighbourhood theorem; configuration SAT d=7 (8/8 UNSAT), d=8 (7/8, eighth excluded by $a+b=2$); next-matching v0.04 10.5281/zenodo.23965193 |
 
 ## 4. In flight

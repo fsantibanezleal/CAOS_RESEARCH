@@ -116,3 +116,9 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   1a4d85529a6d1f1e834ef876dc0860e497ec65108b1473c15589ba476f8cadbb; 39 release gates passed, including a fresh
   unauthenticated download equal to the frozen file. Adds EXP-008: 47 triples, 6,224,502,963 candidate graphs.
 
+## 2026-11-10 - EXP-009: order 24, 4 of 6 confirmed, 2 open by one edge count
+
+- Hypothesis 153f1166. (24,5,3) = 54, (24,6,3) = 45, (24,5,4) = 56, (24,4,5) = 70 by complete enumeration below the
+  conjectured value (11,371,164 graphs in the completed edge counts). (24,7,3) and (24,3,7) hit the 4-hour per-edge
+  cap at their last edge count: f(24,7,3) >= 40 (conjectured 41), f(24,3,7) >= 94 (conjectured 95). BJB-021 opened.
+
