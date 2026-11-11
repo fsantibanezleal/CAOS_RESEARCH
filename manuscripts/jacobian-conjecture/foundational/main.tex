@@ -26,8 +26,8 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.13}
-\newcommand{\docdate}{18 September 2026}
+\newcommand{\docversion}{v0.14}
+\newcommand{\docdate}{11 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.22834207}
 \newcommand{\conceptdoi}{10.5281/zenodo.21503365}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -315,11 +315,18 @@ test values, any output pair) is a 2D Keller map.
 
 \begin{theorem}[2D equivariant rigidity, {[D]}, every mechanical step {[MV]} on sweeps]
 \label{thm:rigidity}
-For any $\Gm$-action on $\C^2$ with weights $(w_1, -w_2)$, $w_1 \ge 1$, $w_2 \ge 0$, every
-equivariant polynomial Keller map is linear: $(f_0 x,\, g_0 y)$ or $(f_0 y,\, g_0 x)$.
+For any $\Gm$-action on $\C^2$ with weights $(w_1, -w_2)$, $w_1 \ge 1$, $w_2 \ge 1$, every
+equivariant polynomial Keller map is linear: $(f_0 x,\, g_0 y)$ or $(f_0 y,\, g_0 x)$. For weights
+$(w_1, 0)$, $w_1 \ge 1$, every equivariant polynomial Keller map is affine,
+$(f_0 x,\, g_0 y + c)$ with $f_0 g_0 \ne 0$, and it is linear exactly when $c = 0$.
 \end{theorem}
 
 \begin{proof}[Proof shape]
+Weights $(w_1, 0)$ \textbf{[D]}: a monomial $x^i y^j$ has weight $i w_1$, so the component of
+weight $w_1$ is $P = x f(y)$ and the component of weight $0$ is $Q = g(y)$. Then
+$\detJ = f(y)\, g'(y)$, which is a nonzero constant exactly when $f = f_0 \ne 0$ is constant and
+$g = g_0 y + c$ with $g_0 \ne 0$; the map $(x, y + 1)$ shows that the translation occurs. The
+rest of the proof concerns $w_2 \ge 1$.
 Equivariant components are $P = x^{i_1} y^{j_1} f(v)$, $Q = x^{i_2} y^{j_2} g(v)$ with
 $v = x^{w_2} y^{w_1}$, and the determinant factors as
 \[
@@ -344,7 +351,8 @@ entire three-dimensional family is completely closed in dimension 2.
 
 \paragraph{Scope and independent classification.}
 The word ``linear'' in Theorem~\ref{thm:rigidity} is restricted to the displayed
-opposite-sign/one-zero scope. Same-sign actions admit nonlinear triangular equivariant
+opposite-sign scope; with one zero weight the maps are affine (the second statement of the
+theorem), in agreement with the classification below. Same-sign actions admit nonlinear triangular equivariant
 automorphisms. Shaska \cite{Shaska2026}, in work submitted on 2026-07-22, independently
 proves the full classification: triangular for same-sign weights, affine when one weight is
 zero, and linear for opposite-sign weights. We make no priority or novelty claim for the
@@ -377,12 +385,13 @@ such an escape is the question that the three-dimensional mechanism leaves open 
 potential identity, satisfiable for free at any fiber degree $\ge 3$; nothing in the
 determinant sees properness. \textbf{What is essential.} Two independent weight-0 invariants;
 the potential form; valuation conditions at the origin. \textbf{Consequence cascade
-(verified from primary sources, with the dimension index of each implication checked, EXP-016,
-EXP-018 and EXP-136).} The Mathieu conjecture is false for $SU(N)$, $N \ge 24$ (at fixed $N$,
+(each implication located in its source, with its dimension index checked, EXP-016, EXP-018 and
+EXP-136; Mathieu's 1997 paper was not located, and that link rests on Zwart's review).} The
+Mathieu conjecture is false for $SU(N)$, $N \ge 15$ (at fixed $N$,
 Mathieu's argument makes every Keller map $x - h$ of $\C^N$ with $h$ homogeneous invertible
-under the conjecture for $SU(N)$, and the 24-variable cubic-homogeneous form of the
-counterexample is not injective) and for $SU(2)$ (an explicit example of Long, 2026); for
-$3 \le N \le 23$ it is not decided, since $F$ is not affinely of that form; abelian case
+under the conjecture for $SU(N)$, and de Bondt's homogenization of the counterexample on
+$\C^{15}$, of degree $7$ and verified exactly in EXP-138, is not injective) and for $SU(2)$ (an explicit example of Long, 2026); for
+$3 \le N \le 14$ it is not decided, since $F$ is not affinely of that form; abelian case
 Duistermaat--van der Kallen 1998. The Gaussian moments conjecture is false in every dimension
 $n \ge 3$ (GMC implies JC, Derksen--van den Essen--Zhao 2017; an explicit three-variable
 counterexample, Long 2026); Zhao's

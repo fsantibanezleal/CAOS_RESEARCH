@@ -15,8 +15,8 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.07}
-\newcommand{\docdate}{1 November 2026}
+\newcommand{\docversion}{v0.08}
+\newcommand{\docdate}{11 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.23873236}
 \newcommand{\conceptdoi}{10.5281/zenodo.21503371}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -33,7 +33,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \end{center}
 \vspace{4pt}}
 
-\title{The Collateral Impact of the\\ Three-Dimensional Jacobian Counterexample:\\ a Source-Verified Cascade}
+\title{The Collateral Impact of the\\ Three-Dimensional Jacobian Counterexample:\\ the Cascade of Implications}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -54,8 +54,9 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 On 2026-07-20, Levent Alp\"oge announced an explicit counterexample to the Jacobian conjecture
 in dimension 3, found working with the language model Claude Fable 5 (Anthropic). The credit for % voice-ok: external attribution, as the announcement states it
 every consequence documented here belongs to that single map. This paper documents what else
-that map decides: through implication chains published over five decades, each re-verified
-against its primary source (EXP-001, EXP-016, EXP-018, \mbox{EXP-136}), the counterexample resolves or
+that map decides: through implication chains published over five decades, each located in its
+source (EXP-016, EXP-018, \mbox{EXP-136}; Mathieu's 1997 paper was not located, and that link rests
+on Zwart's review of it), the counterexample resolves or
 partially resolves the Mathieu conjecture, the Dixmier conjecture, the Poisson conjecture, the
 Gaussian moments conjecture, Zhao's vanishing conjecture, the Image conjecture, and the
 symmetric (gradient) form of the Jacobian conjecture. We state each corollary with its chain
@@ -97,7 +98,8 @@ The Jacobian conjecture is false for every $N \ge 3$; the two-variable case rema
 
 \begin{corollary}[Mathieu conjecture, 1997]
 Mathieu proved that his conjecture, taken for all compact connected Lie groups, implies the
-Jacobian conjecture \cite{Mathieu1997}; Duistermaat and van der Kallen proved the abelian case
+Jacobian conjecture \cite{Mathieu1997} (the original paper was not located for this audit; the
+implication is checked in Zwart's review, \cite[Theorems~4.16 and~4.23]{Zwart2025}); Duistermaat and van der Kallen proved the abelian case
 \cite{DvdK1998}. At a fixed $N$ the argument shows that the conjecture for $SU(N)$ makes every
 Keller map $x - h$ of $\C^N$ with $h$ homogeneous invertible
 \cite[Theorems~4.16 and~4.23]{Zwart2025}. De Bondt's homogenization of the counterexample
@@ -124,8 +126,13 @@ $JC(4)$ to $\mathrm{Dixmier}(2)$. A proof of rank $1$ is claimed in \cite{Zheglo
 For each $n$, $JC(2n) \Rightarrow \mathrm{Poisson}(n) \Rightarrow \mathrm{Dixmier}(n)
 \Rightarrow JC(n)$ in any characteristic, where $\mathrm{Poisson}(n)$ concerns the canonical
 Poisson algebra in $2n$ variables \cite[Theorem~7]{AvdE2007}. Hence $\mathrm{Poisson}(n)$ is
-false for every $n \ge 3$: the \textbf{full Poisson conjecture is false}. Indices $1$ and $2$
-remain open, for the same reason as the Dixmier ranks.
+false for every $n \ge 3$: the \textbf{full Poisson conjecture is false}. Index $2$ is settled
+separately: Long gives explicit $R, T, D, S \in \Q[x,q,p,z]$ with $\{D,R\} = \{S,T\} = 1$ and
+the other brackets zero, where $R = x(2-3xq)$ is reducible, so $(x,q,p,z) \mapsto (R,T,D,S)$ is a
+Poisson endomorphism of the canonical Poisson algebra in four variables that is not an automorphism
+\cite{LongPoisson2026}. Hence $\mathrm{Poisson}(n)$ is false for every $n \ge 2$. Index $1$
+remains open; a false $\mathrm{Poisson}(2)$ gives no information on $\mathrm{Dixmier}(2)$, since
+the implication runs from $\mathrm{Poisson}(2)$ to $\mathrm{Dixmier}(2)$.
 \end{corollary}
 
 \begin{corollary}[Gaussian moments conjecture]
@@ -206,8 +213,8 @@ between those bounds and 48.
 
 \section{What remains open}
 
-The two-variable Jacobian conjecture; Dixmier and Poisson at ranks 1 and 2 (a proof of
-Dixmier's rank 1 is claimed in \cite{Zheglov2024}); Mathieu for $SU(N)$ with $3 \le N \le 14$
+The two-variable Jacobian conjecture; Dixmier at ranks 1 and 2 (a proof of rank 1 is claimed in
+\cite{Zheglov2024}) and Poisson at index 1; Mathieu for $SU(N)$ with $3 \le N \le 14$
 and for the other non-abelian compact groups; the moments statement in dimension $2$ (a proof is
 claimed in \cite{Wilson2026}); the minimal failing
 dimensions of the vanishing and Image statements (for the symmetric/vanishing pair the
@@ -260,6 +267,8 @@ Dixmier and Poisson conjectures in any characteristic, arXiv:math/0608009; \emph
 Vietnam.} 32 (2007), 209--218.
 \bibitem{DEZ2017} H. Derksen, A. van den Essen, W. Zhao, The Gaussian moments conjecture and
 the Jacobian conjecture, \emph{Israel J. Math.} 219 (2017), 917--928; arXiv:1506.05192.
+\bibitem{LongPoisson2026} C. D. Long, An explicit counterexample to the rank-two Poisson conjecture,
+arXiv:2608.23777v1, 22 July 2026.
 \bibitem{Long2026} C. D. Long, Small counterexamples to the Gaussian moments conjecture,
 arXiv:2607.18186, 2026.
 \bibitem{Wilson2026} M. Wilson, A face-isolation proof of the two-variable Gaussian moments

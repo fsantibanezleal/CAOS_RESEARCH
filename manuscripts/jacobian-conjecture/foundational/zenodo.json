@@ -40,9 +40,9 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.13",
+    "version": "0.14",
     "language": "eng",
     "publication_date": "2026-09-18",
-    "version_notes": "The consequence-cascade paragraph of the Discussion states the Mathieu range that the published proof supports (false for SU(N), N ≥ 24, and for SU(2); not decided for 3 ≤ N ≤ 23, EXP-136) and that the Gaussian moments conjecture fails in every dimension n ≥ 3 (explicit example of Long, 2026). The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246)."
+    "version_notes": "Correction. The two-dimensional equivariant rigidity theorem stated linearity for weights (w1, -w2) with w2 >= 0; for one zero weight the equivariant Keller maps are affine, (f0 x, g0 y + c), and (x, y + 1) is such a map. The theorem now states linearity for w2 >= 1 and the affine form, with its proof, for w2 = 0. The Mathieu range is updated to SU(N), N >= 15 (EXP-138)."
   }
 }
