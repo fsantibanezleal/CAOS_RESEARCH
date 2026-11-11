@@ -41,4 +41,4 @@ replacing the previous open-ended "closed form of the chain".
 
 ## Erratum (2026-11-11)
 
-Theorem 5 in its all-degree form holds on the shapes where a base certificate exists (the EXP-042 grid points with a primitive top) and where the top form is not a proper power (EXP-046 erratum). It is not established for every primitive (u, v) or for d >= u + v. Corrected in planar v0.36.
+Theorem 5 in its all-degree form holds on the shapes where a base certificate exists (the EXP-042 grid points with a primitive top) and where the top form is not a proper power (EXP-046 erratum). It is not established for every primitive (u, v), nor for d >= u + v in general. Corrected in planar v0.36.
