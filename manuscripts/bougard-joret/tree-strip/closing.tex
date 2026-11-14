@@ -1,0 +1,86 @@
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{Why the degree sum is attained on the shell.}
+The obstruction at the boundary is the residual graph.
+On $n=\alpha+k$ every vertex of the independent set sees all of $H$, so the $k$ residual vertices must carry the connectivity of the graph by themselves; at $\alpha=k-1$ this forces a connected graph on $k$ vertices and costs $k-1$ edges against a degree-sum allowance of $\lceil k/2\rceil$ \cite{DG}.
+On $n=\alpha+k+1$ the independent set has one missing neighbor per vertex, and the residual graph has $k+1$ vertices.
+The two facts combine through Lemma~\ref{lem:lift}: a residual graph of degrees $g$ and $g+1$ and connectivity $g=k-a$, together with distinct missing neighbors placed at the vertices of degree $g+1$, gives total degree exactly $k$ at all but at most one vertex.
+The connectivity argument is then local.
+Two surviving independent vertices have a common surviving residual neighbor because each misses at most one residual vertex, and a residual vertex that is cut off from the independent set must be the common missing neighbor of all survivors, which contradicts its total degree.
+The case of two surviving residual vertices needs $a\ge3$: three independent vertices with distinct missing neighbors give one that sees both survivors.
+For $a=2$ the same case is handled by the cycle-complement argument of Theorem~\ref{thm:cycles}, which does not use a lift at all.
+
+\paragraph{The role of each ingredient.}
+Three ingredients carry the generic case.
+The cycle power $C_m^r$ is $2r$-regular and $2r$-connected, with independence number at most $\lfloor m/(r+1)\rfloor$ by \eqref{eq:cycle-alpha}; this bound is what keeps $\alpha(H)\le a$ and thus $\alpha(G)=a$, and the estimate $m<(a+1)(r+1)$ is where the hypothesis $r(a-1)\ge2$ enters.
+The antipodal matching (and its almost-antipodal variant for odd $m$) raises connectivity by one at the price of one extra degree, which is why $g$ odd needs a separate argument in the cyclic-gap lemma, with the extra case $m=2q+1$ producing the single vertex of degree $2r+2$.
+The complement matching, whose existence is Lemma~\ref{lem:matching} applied to the complement of the starting graph, raises exactly $a+\varepsilon$ degrees by one and so places the degree-$(g+1)$ vertices where the missing neighbors go.
+The recorded instance of Figure~\ref{fig:lift} shows all three at $k=7$, $a=4$.
+
+\paragraph{Why the argument stops at the shell.}
+The lift lemma relies on two properties that hold only on the shell.
+A vertex of the independent set misses at most one residual vertex because the residual graph has $k+1$ vertices, and the misses are chosen distinct, which bounds mixed independent sets by two and supplies the vertex adjacent to both survivors.
+At order $\alpha+k+j$ the residual graph has $k+j$ vertices, each independent vertex may miss up to $j$ of them, and distinctness of the misses no longer bounds a mixed independent set; the independence control and the two-survivor argument both need new ideas [D].
+The positions of Table~\ref{tab:positions} show that the target changes as well: at order $2k-1$ with $\alpha=2$ the minimum exceeds the degree-sum bound by $\lfloor d/2\rfloor-1$, so any formula for the first regime beyond the shell has to produce positive excesses at some positions and zero at others \cite{Next}.
+The excess is therefore not monotone in the distance from the boundary.
+
+\paragraph{The extremizers.}
+Only two equality classifications are given, for $a=2$ and $a=k-1$.
+The tree classification is relative to a marked maximum independent set; the remark after Theorem~\ref{thm:main} states that it does not give a bijection between nonstar trees and unmarked isomorphism classes.
+The census of the six-vertex graphs, in which every maximum independent set of each of the 60 extremal graphs leaves a nonstar tree, is consistent with the classification and shows that all 60 graphs are complements of six-cycles; it does not decide uniqueness of the tree representation at larger $k$.
+For the generic parameters other extremizers may exist, for example graphs whose independent vertices do not have injective missing neighbors, and the lift lemma does not exclude them.
+
+\section{Limitations and open questions}\label{sec:limitations}
+
+The universal statements Theorems~\ref{thm:shell}, \ref{thm:cycles} and~\ref{thm:main} rest on the written proofs.
+The proofs have been read in full after they were written, with attention to the odd-order cyclic rotations, the matching parity, the cycle-power independence bound and the two-survivor case, and no gap was found; they have not been formalized in a proof assistant and have not been peer reviewed.
+The finite computations bear on the proofs only as tests: they cover $3\le k\le12$ for the shell, orders up to nine for trees, $k\le5$ for the labeled residual enumeration and order six for the census, and finite evidence cannot establish a quantifier over all $k$.
+
+Several limits concern the computations themselves.
+The two order-six censuses share the checking routines, so agreement between them tests the count and not the routines; the independent recomputation with NetworkX removes this dependence only for the 75 graphs, the controls and the residual connectivities, and it reads the edge lists produced by the construction code, so an error in the construction would appear as a failed check and not as a second construction.
+The certificates store no wall-clock times and do not record the Python interpreter that produced them; the repository requires Python 3.11 or later, and Section~\ref{sec:repro} states the time limits in the code.
+The runners are deterministic, so a rerun reproduces the certificates exactly, which the regression tests check by comparing the parsed files.
+
+Several scientific limits remain.
+\begin{enumerate}
+\item The order $n\ge\alpha+k+2$ with $n\le k\alpha$ is not determined.
+The excess over the degree-sum bound is positive at some positions of the first regime (Table~\ref{tab:positions}), so an extension of the shell formula is not a matter of repeating the construction.
+\item The extremal graphs are classified only for $\alpha=2$ and $\alpha=k-1$; the uniqueness of unmarked tree representations on the strip is separate, and the existence of extremizers without injective missing neighbors is open.
+\item The second regime $n>k\alpha$ is not treated.
+A proof of its lower bound has been announced \cite{Didin,DidinMalyshev} and checked by exhaustive computation to order 24 \cite{Second}; neither bears on the shell, and the correctness of the announced proof is not confirmed here.
+\item Bibliographic priority is not asserted.
+Targeted searches found no formula for the entire shell, but absence from search results is not proof of absence from the literature.
+The original article of Harary \cite{Harary} could not be read in full, and the proofs here therefore re-derive every connectivity property they need.
+The articles on connectivity algorithms \cite{EvenTarjan,EsfahanianHakimi} are cited from the literature of the companion computation and were not reopened.
+\end{enumerate}
+
+\section{Reproducibility}\label{sec:repro}
+
+The identifiers EXP-001 and EXP-002 denote the archived computations in the folders \path{EXP-001-tree-strip/} and \path{EXP-002-next-shell/} of \path{problems/combinatorics/bougard-joret/experiments/} in the repository.
+Each contains the proof (\texttt{proof.md}), the runner (\texttt{run.py}) and the exact certificate (\texttt{artifacts/certificate.json}); the second also contains the independent recomputation \texttt{audit.py}, its pinned requirement \texttt{requirements-audit.txt} and its output \path{artifacts/independent-audit.json}.
+From the repository root the commands are as follows, and each writes to the path it names.
+{\rightskip=0pt plus 4em\relax
+\begin{quote}\footnotesize\ttfamily\raggedright
+\path{python} \path{problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip/run.py}\par
+\path{python} \path{problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/run.py}\par
+\path{python} \path{-m} \path{pip} \path{install} \path{-r} \path{problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/requirements-audit.txt}\par
+\path{python} \path{problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/audit.py}\par
+\path{python} \path{-m} \path{pytest} \path{tests/test_bougard_joret_tree_strip.py} \path{tests/test_bougard_joret_next_shell.py}\par
+\path{python} \path{manuscripts/bougard-joret/tree-strip/make_tables.py}\par
+\end{quote}
+\par}
+Both runners accept \texttt{--output} to write the certificate elsewhere and \texttt{--smoke} for a reduced grid.
+The two regression tests replay the full certificates into a temporary directory and compare them with the saved ones, under timeouts of 60 and 300 seconds.
+The last command regenerates every table, figure fragment and quoted number of this paper, and fails if a consistency condition or a digest does not hold.
+The main checkers use only the Python standard library, the repository requires Python 3.11 or later, and the independent recomputation pins NetworkX \NXVersion.
+The interpreter used for the saved runs is not recorded.
+Run times are not stored in the certificates; the code limits each tree and enumeration stage of EXP-001 to 300 seconds and the whole grid of EXP-002 to 300 seconds, and both runs completed within these limits.
+
+\section{Conclusions}\label{sec:conclusions}
+
+On the first interior shell $n=\alpha+k+1$ the minimum size of a $k$-connected graph with independence number $\alpha$ is the degree-sum bound $\lceil k(\alpha+k+1)/2\rceil$ for every $k\ge3$ and every $2\le\alpha\le k+1$, so the first line of the Bougard--Joret formula holds on the whole shell, one order after the boundary where it fails.
+The proof builds the extremal graphs from a Harary-type residual graph and an independent set joined through distinct missing neighbors, and a short cyclic-gap argument gives connectivity in every parity case.
+For $\alpha=2$ the extremizers are the complements of unions of cycles of length at least five, and for $\alpha=k-1$ they are the graphs on nonstar trees with prescribed fibers, with $f(2k,k-1,k)=k^2$.
+Exact computations on \NGraphs\ constructions, \NDamaged\ damaged-edge controls, \NCycleControls\ complement-cycle controls, \NTrees\ trees, the labeled residual graphs for $k\le5$ and all 32,768 graphs on six vertices agree with the proofs.
+The values of $f$ between the shell and the second regime, and the extremizers at the generic parameters, remain open.
+The result also locates the connectivity cost: the excess over the degree-sum bound is $\lfloor k/2\rfloor-1$ on the boundary at $\alpha=k-1$, zero on the whole shell, and positive again at order $2k-1$ with $\alpha=2$ for $k\ge9$.

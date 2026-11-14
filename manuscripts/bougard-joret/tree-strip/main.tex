@@ -1,25 +1,32 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1.05in,headheight=14pt]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,tikz}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,longtable,array}
 \usepackage{xcolor}
 \definecolor{linknavy}{RGB}{25,55,125}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
-\usepackage{orcidlink,fancyhdr}
+\usepackage{orcidlink,fancyhdr,placeins}
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newcommand{\dd}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
+\SetKwComment{Comment}{$\triangleright$\ }{}
+\input{numbers.tex}
 
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.04}
-\newcommand{\docdate}{18 September 2026}
+\newcommand{\docversion}{v0.05}
+\newcommand{\docdate}{14 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.22835072}
 \newcommand{\conceptdoi}{10.5281/zenodo.22315251}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -41,7 +48,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \fancyhead[R]{\small First interior shell\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
-\title{The first interior shell of the\\Bougard--Joret extremal problem}
+\title{Exact minimum size on the first interior shell\\of the Bougard--Joret problem, with the extremal graphs\\at independence numbers two and $k-1$}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
@@ -51,261 +58,122 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \headerblock
 \begin{abstract}
 Let $f(n,\alpha,k)$ be the minimum size of a $k$-connected graph of order $n$ and independence number $\alpha$.
-Das and Gupta recently determined the boundary $n=\alpha+k$ and disproved the proposed Bougard--Joret formula there.
-We determine the entire admissible first interior shell:
-$f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$ for every $k\ge3$ and $2\le\alpha\le k+1$.
-The construction augments classical Harary graphs with complement matchings and attaches an independent set through distinct missing-neighbor pairs.
-An elementary cyclic-gap proof controls connectivity, including all parity cases.
-We characterize all extremizers when $\alpha=2$ as complements of unions of cycles of lengths at least five, and give the complete nonstar-tree characterization when $\alpha=k-1$.
-The full-shell result is supported by 75 exact finite constructions, an independent re-implementation of the checks, and negative controls.
-The universal statement follows from the proof, not from finite computation. The general revised first regime and second regime remain unresolved.
+Bougard and Joret conjectured a two-line formula for $f$, and Das and Gupta determined the boundary $n=\alpha+k$ and disproved the first line there.
+We determine $f$ on the entire first interior shell $n=\alpha+k+1$:
+$f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$ for every $k\ge3$ and $2\le\alpha\le k+1$, the degree-sum bound.
+The extremal graphs combine a Harary-type residual graph of order $k+1$, a cycle power with a complement matching, with an independent set joined through distinct missing-neighbor pairs; an elementary cyclic-gap argument gives connectivity in every parity case.
+For $\alpha=2$ the extremizers are exactly the complements of disjoint unions of cycles of length at least five.
+For $\alpha=k-1$ they are exactly the graphs built on a nonstar tree with prescribed fibers, so $f(2k,k-1,k)=k^2$, one more than the boundary value $k^2-1$.
+Exact computations test the proofs: the 75 constructions with $3\le k\le12$ are rebuilt by a second implementation, 75 damaged-edge and 8 complement-cycle controls behave as predicted, and labeled enumerations for $k\le5$ and a census of all 32,768 graphs on six vertices agree with the theorems.
+The universal statements rest on the proofs, not on the finite computations.
+The values of $f$ beyond the shell are not determined here.
 \end{abstract}
 
-\section{Problem, prior work and scope}
+\section{Introduction}\label{sec:intro}
 
-All graphs are finite, simple and undirected. Write $\e(G)$ for the number of edges, $\alpha(G)$ for the maximum size of an independent set, and $\kappa(G)$ for vertex connectivity.
+All graphs are finite, simple and undirected.
+Write $\e(G)$ for the number of edges, $\alpha(G)$ for the independence number and $\kappa(G)$ for the vertex connectivity of a graph $G$.
 A graph is $k$-connected if it has more than $k$ vertices and deletion of fewer than $k$ vertices leaves it connected.
+For integers $n,\alpha,k$, let $f(n,\alpha,k)$ be the least number of edges of a $k$-connected graph of order $n$ and independence number exactly $\alpha$.
+Without the connectivity requirement, the least size is the edge count $t(n,\alpha)$ of a union of $\alpha$ balanced cliques (Tur\'an's theorem in its complementary form \cite{Turan}); that graph is disconnected, and requiring $k$-connectivity is what makes the problem hard.
 
-Bougard and Joret conjectured, under $n\ge2\alpha$, $n\ge\alpha+k$, $\alpha\ge2$, $k\ge3$, that
-\[
+Bougard and Joret \cite{BJ} settled $k\le2$ and conjectured, for $n\ge2\alpha$, $n\ge\alpha+k$, $\alpha\ge2$ and $k\ge3$, that
+\begin{equation}\label{eq:conj}
 f(n,\alpha,k)=
 \begin{cases}
 \lceil nk/2\rceil,&n\le k\alpha,\\
-t(n,\alpha)+\lceil k\alpha/2\rceil,&n>k\alpha,
+t(n,\alpha)+\lceil k\alpha/2\rceil,&n>k\alpha.
 \end{cases}
-\]
-where $t(n,\alpha)$ denotes the edge count of the balanced union of $\alpha$ cliques \cite{BJ}.
-Das and Gupta determine the whole boundary $n=\alpha+k$; in particular, for $k\ge4$ they prove
+\end{equation}
+The first line is the degree-sum bound: every vertex of a $k$-connected graph has degree at least $k$.
+The conjecture predicts that, up to order $k\alpha$, no connectivity cost is paid beyond the degree sum.
+Das and Gupta \cite{DG} determined $f$ on the whole boundary $n=\alpha+k$ and showed that the first line fails there for $\alpha=k-1$, $k\ge4$:
 \begin{equation}\label{eq:old}
 f(2k-1,k-1,k)=k^2-1,
 \end{equation}
-with extremals exactly the joins of an independent $(k-1)$-set and a tree on $k$ vertices \cite{DG}.
-The original disproof and this preceding-boundary characterization are their results.
+with extremal graphs exactly the joins of an independent set of size $k-1$ and a tree on $k$ vertices.
+The smallest failure is $f(7,3,4)=15$, against a predicted $14$.
+The disproof and this boundary characterization are their results; they are used here only as the point of comparison.
 
-We prove the adjacent diagonal $(n,\alpha,k)=(2k,k-1,k)$ and characterize its extremizers (Theorem~\ref{thm:main}).
-We extend the numerical result to every admissible parameter on $n=\alpha+k+1$ (Theorem~\ref{thm:shell}), and add a complete equality classification for $\alpha=2$ (Theorem~\ref{thm:cycles}).
-The full-shell formula includes classical overlaps: $\alpha=k+1$ is covered by $n=2\alpha$ in \cite{BJ}, and $(n,\alpha,k)=(6,2,3)$ is covered by $n=k\alpha$.
-Targeted searches and the final sections of both primary problem papers revealed no formula for the entire next shell, but this is not an assertion of exhaustive bibliographic priority.
-Harary's connectivity constructions \cite{Harary} are classical ingredients, not new claims of this work.
+The question taken up here is the next order: does the degree-sum bound hold on the shell $n=\alpha+k+1$, and for which graphs?
+The answer is that it holds for every admissible parameter, and the proofs show how the connectivity cost disappears.
+The results are as follows.
+\begin{enumerate}
+\item Theorem~\ref{thm:shell} (Section~\ref{sec:shell}): $f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$ for every $k\ge3$ and $2\le\alpha\le k+1$.
+The construction joins an independent set to a residual graph of order $k+1$ through distinct missing-neighbor pairs (Lemma~\ref{lem:lift}); the residual graph is a Harary-type cycle power with a complement matching (Lemma~\ref{lem:harary}), or a short explicit graph at $\alpha\in\{k-1,k,k+1\}$ and a complement of a cycle at $\alpha=2$.
+\item Theorem~\ref{thm:cycles}: for $\alpha=2$ the extremizers are exactly the complements of disjoint unions of cycles of length at least five.
+\item Theorem~\ref{thm:main} (Section~\ref{sec:strip}): for $\alpha=k-1$, so that $n=2k$, the extremizers are exactly the graphs $G(T,(S_t))$ on a nonstar tree $T$ with $k+1$ vertices, and $f(2k,k-1,k)=k^2$.
+This is one more than the boundary value $k^2-1$ of \eqref{eq:old}, and the excess over the degree-sum prediction drops from $\lfloor k/2\rfloor-1$ to zero.
+\item A set of exact computations (Sections~\ref{sec:computations} and~\ref{sec:results}): the 75 shell constructions with $3\le k\le12$, an independent recomputation with NetworkX, damaged-edge and complement-cycle controls, labeled enumerations of all residual graphs for $k\le5$, and a census of all 32,768 labeled graphs on six vertices.
+\end{enumerate}
+Universal deductions are labeled [D], exact finite computations [MV], statements read on a primary source [V], and statements not confirmed on a primary source [U].
+The proofs and computations are archived as EXP-001 and EXP-002 \cite{Record,ShellRecord}.
 
-Our universal deductions are labeled [D], exact finite computations [MV], and suggested extensions [C].
-The proofs and verification are recorded in EXP-001 and EXP-002 \cite{Record,ShellRecord}.
+Section~\ref{sec:formulation} fixes the notation and the residual-graph viewpoint, and Section~\ref{sec:related} places the results among the proved cases of Bougard and Joret, the boundary theorem, the computations on the second line of \eqref{eq:conj}, and the next-matching value at order $2k-1$.
+Sections~\ref{sec:shell} and~\ref{sec:strip} contain the proofs, Section~\ref{sec:computations} the algorithms behind the computations, and Section~\ref{sec:results} their results.
+Sections~\ref{sec:discussion} to~\ref{sec:conclusions} discuss the findings and their limits, give the commands that reproduce every number, and conclude.
 
-\input{shell.tex}
+\section{Problem formulation and notation}\label{sec:formulation}
 
-\section{The tree construction and the extremal theorem}
+Fix integers $k\ge3$ and $\alpha\ge2$.
+The parameters $(n,\alpha,k)$ are admissible when $n\ge2\alpha$ and $n\ge\alpha+k$, the range of the conjecture \eqref{eq:conj} \cite{BJ}.
+On the boundary $n=\alpha+k$ deleting a maximum independent set leaves exactly $k$ vertices; the shell is the next order $n=\alpha+k+1$, where it leaves $k+1$.
+The upper limit $\alpha\le k+1$ of Theorem~\ref{thm:shell} is exactly the condition $n\ge2\alpha$ on the shell.
+On the shell $n\le k\alpha$ as well, because $\alpha(k-1)\ge k+1$ for $\alpha\ge2$ and $k\ge3$; hence the first line of \eqref{eq:conj} applies throughout the shell.
 
-For a tree $T$ on $k+1$ vertices, let $S$ be a disjoint independent set of size $k-1$.
-Partition $S$ into fibers $(S_t:t\in V(T))$ satisfying
-\begin{equation}\label{eq:fiber}
-|S_t|=\dd_T(t)-1.
-\end{equation}
-Keep all edges of $T$, and for each $s\in S_t$ add edges from $s$ to every tree vertex except $t$.
-Call the resulting graph $G(T,(S_t))$.
-The required partition exists because
-\begin{equation}\label{eq:sum}
-\sum_{t\in V(T)}(\dd_T(t)-1)=2k-(k+1)=k-1.
-\end{equation}
+Two elementary facts frame everything below.
+First, $f(n,\alpha,k)\ge\lceil nk/2\rceil$ for every admissible triple [D]: a $k$-connected graph has minimum degree at least $k$, so its degree sum is at least $nk$ and its size at least $\lceil nk/2\rceil$.
+A $k$-connected graph attains this bound exactly when all degrees equal $k$, with one vertex of degree $k+1$ when $nk$ is odd.
+Put $\varepsilon=nk\bmod2$; the attaining graphs are the $k$-regular graphs ($\varepsilon=0$) and the graphs with exactly one vertex of degree $k+1$ ($\varepsilon=1$).
+On the shell $\varepsilon=1$ exactly when $n$ and $k$ are both odd, which for $3\le k\le12$ gives the 15 cases listed in Table~\ref{tab:shell75}.
+Second, let $G$ be $k$-connected of order $n=\alpha+k+1$ with a maximum independent set $S$ of size $\alpha$, and let $H=G-S$ be the residual graph on $k+1$ vertices [D].
+Since $S$ is independent, every neighbor of $s\in S$ lies in $H$, and $s$ has at least $k$ neighbors there, so $s$ is adjacent to all of $H$ except at most one vertex.
+On the boundary the corresponding statement is that every vertex of $S$ is adjacent to all of $H$, which is why $H$ must itself carry the connectivity of the graph at the price of extra edges \cite{DG}.
+On the shell each $s$ has a \emph{missing neighbor} in $H$, and the choice of the missing neighbors is the design freedom the constructions use.
+Writing $S_t\subseteq S$ for the vertices of $S$ that miss $t\in V(H)$, the degree of $t$ in a $k$-regular graph of this form is $\dd_G(t)=\dd_H(t)+\alpha-|S_t|=k$, so the fiber sizes are determined by the residual degrees; for $\alpha=k-1$ this is the identity $|S_t|=\dd_H(t)-1$, and the classification of Section~\ref{sec:strip} follows from it.
 
-\begin{theorem}[Adjacent exceptional strip, D]\label{thm:main}
-For every integer $k\ge3$,
-\[
-f(2k,k-1,k)=k^2.
-\]
-A graph is extremal for these parameters if and only if it is isomorphic to $G(T,(S_t))$ for a nonstar tree $T$ on $k+1$ vertices and fibers satisfying \eqref{eq:fiber}.
-Every extremal graph has this representation relative to each of its maximum independent sets.
-\end{theorem}
-
-\begin{figure}[ht]
-\centering
-\begin{tikzpicture}[scale=1.05,vertex/.style={circle,draw=linknavy,fill=white,inner sep=2.5pt}]
-\foreach \i in {0,...,4}{\node[vertex,label=above:{$t_{\i}$}] (t\i) at (1.4*\i,1.5) {};}
-\foreach \i in {0,...,3}{\pgfmathtruncatemacro{\j}{\i+1}\draw[thick,linknavy] (t\i)--(t\j);}
-\foreach \i in {1,...,3}{\node[vertex,label=below:{$s_{\i}$}] (s\i) at (1.4*\i,0) {};
-\draw[dashed,red!65!black,thick] (s\i)--(t\i);}
-\end{tikzpicture}
-\caption{The $k=4$ path construction. The solid path is $T=P_5$; the three dashed pairs are \emph{nonedges}. Add every other pair between the two rows, and no pair within the lower row. This yields an eight-vertex, 16-edge extremal graph.}
-\label{fig:path}
-\end{figure}
-
-\subsection{Regularity and independence}
-
-Every vertex of $S$ has degree $k$. At a tree vertex $t$,
-\[
-\dd_G(t)=\dd_T(t)+(k-1)-|S_t|=k.
-\]
-Thus the graph is $k$-regular, has order $2k$, and has $k^2$ edges.
-
-A nonstar tree of order $k+1$ cannot contain an independent $k$-set: all its edges would then meet the remaining vertex, and connectedness would force a star.
-Consequently $\alpha(T)\le k-1$, and also $\dd_T(t)\le k-1$ for every $t$.
-An independent set contained in either $S$ or $T$ therefore has size at most $k-1$.
-An independent set meeting both parts contains only one tree vertex $t$, because each member of $S$ has only one nonneighbor in $T$.
-Its other vertices lie in $S_t$, so its size is at most
-\[
-1+|S_t|=\dd_T(t)\le k-1.
-\]
-Since $S$ is itself independent, $\alpha(G)=k-1$.
-
-\subsection{Connectivity}
-
-Let $X\subseteq V(G)$ satisfy $|X|<k$, and set
-\[
-A=S\setminus X,\qquad B=V(T)\setminus X.
-\]
-There are at least two vertices in $B$.
-If $A$ is empty, deletion of all $k-1$ vertices of $S$ uses the available deletion budget. Hence $G-X=T$ is connected.
-
-Assume $A\ne\varnothing$ and $|B|\ge3$.
-Any two vertices of $A$ share a neighbor in $B$, since each misses at most one member of $B$.
-All of $A$, and all tree vertices adjacent to at least one member of $A$, therefore lie in a common component $C$.
-At most one tree vertex $t$ can remain outside $C$: such a vertex must be the unique missed vertex of every member of $A$, so $A\subseteq S_t$.
-If $t$ is disconnected from $C$, all its tree neighbors must have been deleted.
-All vertices of $S\setminus A$ were also deleted, and these sets are disjoint. Therefore
-\begin{align*}
-|X|&\ge k-1-|A|+\dd_T(t)\\
-&\ge k-1-|S_t|+\dd_T(t)=k,
-\end{align*}
-a contradiction.
-
-The case $|B|=2$ requires a different argument.
-Write $B=\{u,v\}$. Exactly $k-1$ tree vertices have been deleted, so every member of $S$ survives.
-If a vertex of $S$ misses a tree vertex other than $u,v$, it is adjacent to both $u$ and $v$.
-Every other member of $S$ is adjacent to at least one of them, proving connectedness.
-Otherwise the only nonempty fibers are $S_u,S_v$.
-By \eqref{eq:fiber}, every other tree vertex is a leaf.
-Since $T$ is nonstar, $u,v$ are exactly its two nonleaf vertices, and they must be adjacent: an internal vertex on their path would be a third nonleaf vertex.
-The surviving edge $uv$ reconnects the graph.
-Thus $G$ is $k$-connected in every case.
-
-\subsection{Optimality and all equality cases}
-
-Any $k$-connected graph on $2k$ vertices has minimum degree at least $k$ and hence at least $k^2$ edges.
-The constructed graphs attain this lower bound, proving the numerical statement.
-
-Conversely, let $G$ be extremal, and let $S$ be any maximum independent set, of order $k-1$.
-Equality in the degree-sum lower bound forces $k$-regularity.
-The residual graph $H=G-S$ has $k+1$ vertices and is connected, since fewer than $k$ vertices were deleted.
-Each vertex of $S$ misses exactly one vertex of $H$.
-There are $k(k-1)$ edges between $S$ and $H$, leaving
-\[
-\e(H)=k^2-k(k-1)=k.
-\]
-Thus $H$ is a tree.
-Writing $S_t$ for the vertices that miss $t$, regularity gives
-\[
-k=\dd_H(t)+(k-1)-|S_t|,
-\]
-so \eqref{eq:fiber} holds.
-If $H$ were a star, its $k$ leaves would form an independent set in $G$, contrary to $\alpha(G)=k-1$.
-This completes the proof of Theorem~\ref{thm:main}.\hfill$\square$
-
-\begin{remark}
-The theorem characterizes graphs relative to a marked maximum independent set.
-It does not assert a bijection between nonstar trees and unmarked graph isomorphism classes.
-Different maximum independent sets in the same graph need not give a uniquely determined representation without a further argument.
-\end{remark}
-
-\section{Boundary transition and a residual-graph viewpoint}
-
-Combining Theorem~\ref{thm:main} with \eqref{eq:old} gives the following precise transition.
-\begin{corollary}[D, using the preceding-boundary theorem of \cite{DG}]
-For every $k\ge4$,
-\[
-f(2k,k-1,k)-f(2k-1,k-1,k)=1.
-\]
-The excess over the degree-sum prediction drops from $\lfloor k/2\rfloor-1$ to zero.
-\end{corollary}
-\begin{proof}
-The values are $k^2$ and $k^2-1$.
-At order $2k-1$, the prediction is $\lceil k(2k-1)/2\rceil=k^2-\lfloor k/2\rfloor$; at order $2k$ it is $k^2$.
-\end{proof}
-
-The mechanism differs from simply adding a vertex to a preceding-boundary extremal graph.
-On the original boundary every independent-set vertex is adjacent to every residual vertex.
-On the new diagonal it misses exactly one. The sizes of these missing-neighbor fibers compensate for the residual tree degrees, making every total degree equal to $k$.
-Connectivity must still be proved separately; the double-star case shows why a common-neighbor argument alone is insufficient.
-
-\section{Exact validation and negative controls}
-
-The computations \cite{Record,ShellRecord} are finite.
-They support the proof by testing constructions and implementation failure modes; they are not the source of the universal quantifier.
-All arithmetic is integer and all choices are deterministic.
-
-\subsection{Full-shell controls, EXP-002}
-
-The full grid contains every $k=3,\ldots,12$ and every $a=2,\ldots,k+1$, totaling 75 graphs.
-All pass exact degree and edge counts, recursive independence, and vertex-split max-flow connectivity.
-For the 45 graphs of order at most 16, direct subset enumeration and exhaustive vertex deletion agree with those checks.
-The 36 Harary cases also pass both connectivity checks on their starting and augmented residual graphs.
-The 15 odd-degree-sum cases each have exactly one degree-$(k+1)$ vertex.
-Deleting an edge incident to a degree-$k$ vertex is rejected in every one of the 75 constructions.
-Eight complement-cycle controls test triangles, $4$-cycles, and unions of longer cycles.
-A regenerated census of all 32,768 labeled order-six graphs finds 60 extremizers, exactly the complements of six-cycles.
-This census shares the checker library of EXP-001; it is an independent regeneration, not a wholly independent implementation.
-
-A separate implementation using NetworkX 3.4.1 reconstructs the saved raw edge lists without importing either CAOS graph checker.
-Exact node connectivity and maximal cliques of the complement independently verify connectivity and independence for all 75 graphs.
-It also verifies the 36 residual constructions, all damaged-edge controls, and the cycle controls.
-Its output file records the SHA-256 digests of the proof, the certificate and the verifier sources.
-
-A separate reading of the complete proof, directed at the odd-order cyclic rotations, the matching parity, the cycle-power independence bound and the two-survivor case, found no gap.
-The proof has not been formalized in a proof assistant.
-
-\subsection{Tree-strip controls, EXP-001}
-
-Leaf augmentation generates every tree: deleting a leaf reduces any tree to a smaller tree.
-Canonical encodings obtained by minimizing rooted parenthesis encodings over all roots deduplicate isomorphic trees.
-All 92 trees of orders four through nine were generated; six stars failed the independence target, while all 86 nonstars passed.
-For every valid construction, exhaustive deletion of fewer than $k$ vertices agreed with a separately implemented vertex-split max-flow test.
-Independence was verified both by include/exclude recursion and by direct subset enumeration.
-Deleting an edge from a valid construction was rejected by the connectivity checker.
-
-An independent enumeration starts with \emph{all labeled residual graphs} on $k+1$ vertices with $k$ edges and no isolates, rather than assuming a tree.
-Every allowed missing-neighbor assignment is enumerated from the degree sequence.
-The assignments for a fixed residual graph differ by explicit permutations of $S$, so expensive invariants are checked once per residual graph.
-Table~\ref{tab:residual} records the results; the accepted graphs are exactly the connected nonstars.
+For the Bougard--Joret function, $t(n,\alpha)=r\binom{q+1}{2}+(\alpha-r)\binom q2$ with $n=q\alpha+r$ and $0\le r<\alpha$.
+The symbols used in the proofs are collected in Table~\ref{tab:notation}.
+In Section~\ref{sec:shell} the letter $a$ denotes the prescribed value of $\alpha(G)$ and $\alpha(\cdot)$ always denotes the function, so that expressions such as $\alpha(H)\le a$ are unambiguous; the shell parameter $g=k-a$ is named to avoid the letter $d$ used for degrees and, in the cited next-matching work, for a maximum degree.
 
 \begin{table}[ht]
 \centering\small
-\begin{tabular}{rrrrrr}
+\begin{tabular}{lp{0.74\textwidth}}
 \toprule
-$k$ & Residuals & Assignments & Nonstar trees & Stars & Disconnected\\
+Symbol & Meaning\\
 \midrule
-3 & 16 & 28 & 12 & 4 & 0\\
-4 & 135 & 605 & 120 & 5 & 10\\
-5 & 1581 & 22986 & 1290 & 6 & 285\\
+$\e(G),\ \alpha(G),\ \kappa(G)$ & size, independence number and vertex connectivity of $G$\\
+$\dd_G(v)$ & degree of the vertex $v$ in $G$\\
+$f(n,\alpha,k)$ & least size of a $k$-connected graph of order $n$ with independence number $\alpha$\\
+$t(n,\alpha)$ & size of a union of $\alpha$ balanced cliques on $n$ vertices\\
+$\varepsilon$ & $nk\bmod2$, the number of vertices of degree $k+1$ in a size-minimal graph\\
+$a,\ g=k-a$ & prescribed independence number on the shell, and the residual connectivity requirement\\
+$S,\ H$ & a maximum independent set, and the residual graph $G-S$ on $k+1$ vertices\\
+$M\subseteq V(H)$ & the vertices of $H$ that are the missing neighbors of the vertices of $S$\\
+$m,\ r$ & order $m=k+1$ of the residual graph, and the cycle-power radius $r=\lfloor g/2\rfloor$\\
+$C_m^r$ & the $r$th power of the cycle on $m$ vertices (pairs at cyclic distance at most $r$)\\
+$T,\ (S_t)$ & a tree on $k+1$ vertices and the fibers $S_t$ of vertices of $S$ missing the tree vertex $t$\\
 \bottomrule
 \end{tabular}
-\caption{Exact labeled residual enumeration [MV]. Assignment totals include rejected residuals; they are not counts of unmarked extremal graphs.}
-\label{tab:residual}
+\caption{Notation used in the statements and proofs. The first two rows are defined for every graph and every admissible parameter triple; the remaining rows are local to the shell constructions of Section~\ref{sec:shell} and the tree construction of Section~\ref{sec:strip}.}
+\label{tab:notation}
 \end{table}
 
-A separate exhaustive census visits all $2^{15}=32768$ labeled graphs on six vertices.
-It finds 60 extremal graphs for $(6,2,3)$ and verifies the tree characterization relative to every maximum independent set in each.
-The result is consistent with the triangular-prism base case.
-The experiment emits deterministic JSON checkpoints and a source hash; its regression test reruns the certificate into a temporary directory and compares the complete result.
+\input{related.tex}
 
-\section{Remaining questions and reproducibility}
+\input{shell.tex}
 
-Theorem~\ref{thm:shell} settles the entire admissible shell $n=\alpha+k+1$.
-We do not classify all remaining shell extremizers here.
-The residual construction supplies extremizers, but does not assert that every extremizer has injective misses.
-The uniqueness of unmarked tree representations is also separate.
-Extending the edge formula to $n\ge\alpha+k+2$ is a further research direction [C]; neither the revised general first regime nor the second regime is established here.
+\input{strip.tex}
 
-{\rightskip=0pt plus 4em\relax
-The identifiers EXP-001 and EXP-002 denote the archived computations in the folders \path{EXP-001-tree-strip/} and \path{EXP-002-next-shell/} of \path{problems/combinatorics/bougard-joret/experiments/} in the repository.
-Each contains the proof (\texttt{proof.md}), the runner (\texttt{run.py}) and the exact certificate (\texttt{artifacts/certificate.json}).
-From the repository root, run:
-\begin{quote}\footnotesize
-\verb|python problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/run.py|
-\end{quote}
-The main checkers use only the Python standard library.
-The separate implementation of EXP-002 (\texttt{audit.py}) requires NetworkX; its version is recorded in its output file \path{artifacts/independent-audit.json}.
-\par}
+\input{computations.tex}
+
+\input{results.tex}
+
+\input{closing.tex}
 
 \clearpage
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
+\small
 \bibitem{BJ} N. Bougard and G. Joret.
 Turan's theorem and $k$-connected graphs.
 \emph{Journal of Graph Theory} 58 (2008), 1--13.
@@ -317,14 +185,106 @@ Counterexample to the Bougard--Joret conjecture.
 arXiv:2608.18828v1, 19 August 2026.
 \url{https://arxiv.org/abs/2608.18828v1}.
 
-\bibitem{Record} F. Santib\'a\~nez-Leal.
-CAOS Research, Bougard--Joret EXP-001: tree-strip proof and exact certificate, 4 September 2026.
-\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip}{Public experiment record}.
-
 \bibitem{Harary} F. Harary.
 The maximum connectivity of a graph.
 \emph{Proceedings of the National Academy of Sciences} 48 (1962), 1142--1146.
 \href{https://doi.org/10.1073/pnas.48.7.1142}{doi:10.1073/pnas.48.7.1142}.
+
+\bibitem{Ore} O. Ore.
+\emph{Theory of Graphs}.
+American Mathematical Society Colloquium Publications, vol.~38, American Mathematical Society, Providence, RI, 1962.
+
+\bibitem{Brouwer} A. E. Brouwer.
+Some lotto numbers from an extension of Tur\'an's theorem.
+Afdeling Zuivere Wiskunde, vol.~152, Mathematisch Centrum, Amsterdam, 1981.
+
+\bibitem{HansonToft} D. Hanson and B. Toft.
+$k$-saturated graphs of chromatic number at least $k$.
+\emph{Ars Combinatoria} 31 (1991), 159--164.
+
+\bibitem{Brooks} R. L. Brooks.
+On colouring the nodes of a network.
+\emph{Proceedings of the Cambridge Philosophical Society} 37 (1941), 194--197.
+
+\bibitem{Wessel} W. Wessel.
+Kanten-kritische Graphen mit der Zusammenhangszahl 2.
+\emph{Manuscripta Mathematica} 2 (1970), 309--334.
+\href{https://doi.org/10.1007/BF01719589}{doi:10.1007/BF01719589}.
+
+\bibitem{Turan} P. Tur\'an.
+Eine Extremalaufgabe aus der Graphentheorie.
+\emph{Matematikai \'es Fizikai Lapok} 48 (1941), 436--452.
+
+\bibitem{Graphedron} J. Christophe, S. Dewez, J.-P. Doignon, S. Elloumi, G. Fasbender, P. Gr\'egoire, D. Huygens, M. Labb\'e, H. M\'elot and H. Yaman.
+Linear inequalities among graph invariants: using GraPHedron to uncover optimal relationships.
+\emph{Networks} 52 (2008), 287--298.
+\href{https://doi.org/10.1002/net.20250}{doi:10.1002/net.20250}.
+
+\bibitem{GitlerValencia} I. Gitler and C. E. Valencia.
+On bounds for some graph invariants.
+\emph{Boletin de la Sociedad Matematica Mexicana} (3) 16 (2010), 73--94.
+Preprint: \href{https://arxiv.org/abs/math/0510387}{arXiv:math/0510387}.
+
+\bibitem{Didin} M. Didin.
+A generalization of Tur\'an's theorem for graphs with a given independence number.
+Preprint, under review, 18 September 2026.
+\href{https://doi.org/10.5281/zenodo.22831382}{doi:10.5281/zenodo.22831382}.
+
+\bibitem{DidinMalyshev} M. A. Didin and D. S. Malyshev.
+Generalization of Tur\'an's theorem and some of its corollaries.
+\emph{Uspekhi Matematicheskikh Nauk} 81(5) (2026), 181--182.
+\href{https://doi.org/10.4213/rm10305}{doi:10.4213/rm10305}.
+
+\bibitem{Next} F. Santib\'a\~nez-Leal.
+The next matching level for triangle-free graphs with bounded degree and an exact Bougard--Joret value.
+CAOS Research preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.22343021}{doi:10.5281/zenodo.22343021}.
+
+\bibitem{Second} F. Santib\'a\~nez-Leal.
+The second Bougard--Joret line to order 24: an exhaustive check, the extremal graphs at 35 triples, and a construction without a clique partition for every odd $\alpha$.
+CAOS Research preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.24044537}{doi:10.5281/zenodo.24044537}.
+
+\bibitem{LiuNing} L. Liu and B. Ning.
+A spectral analogue of Ore's problem on Tur\'an theorem.
+\emph{Linear Algebra and its Applications} 735 (2026), 112--122.
+\href{https://doi.org/10.1016/j.laa.2026.01.012}{doi:10.1016/j.laa.2026.01.012}.
+
+\bibitem{WangWu} T. Wang and B. Wu.
+The size of graphs with given feedback vertex number.
+\emph{Discrete Applied Mathematics} 314 (2022), 213--222.
+\href{https://doi.org/10.1016/j.dam.2022.02.013}{doi:10.1016/j.dam.2022.02.013}.
+
+\bibitem{Wang} S. Wang.
+Independent sets and balanced cycle-linkings in 2-connected graphs.
+\href{https://arxiv.org/abs/2609.15637}{arXiv:2609.15637}, 2026.
+
+\bibitem{Yuan} L.-T. Yuan.
+A note on Tur\'an's theorem.
+\emph{Applied Mathematics and Computation} 361 (2019), 13--14.
+\href{https://doi.org/10.1016/j.amc.2019.05.020}{doi:10.1016/j.amc.2019.05.020}.
+
+\bibitem{EvenTarjan} S. Even and R. E. Tarjan.
+Network flow and testing graph connectivity.
+\emph{SIAM Journal on Computing} 4 (1975), 507--518.
+\href{https://doi.org/10.1137/0204043}{doi:10.1137/0204043}.
+
+\bibitem{EsfahanianHakimi} A. H. Esfahanian and S. L. Hakimi.
+On computing the connectivities of graphs and digraphs.
+\emph{Networks} 14 (1984), 355--366.
+\href{https://doi.org/10.1002/net.3230140211}{doi:10.1002/net.3230140211}.
+
+\bibitem{NetworkX} A. A. Hagberg, D. A. Schult and P. J. Swart.
+Exploring network structure, dynamics, and function using NetworkX.
+\emph{Proceedings of the 7th Python in Science Conference} (2008), 11--15.
+
+\bibitem{OEISTrees} OEIS Foundation.
+The On-Line Encyclopedia of Integer Sequences, sequences A000055 (trees with $n$ unlabeled nodes) and A000272 (trees on $n$ labeled nodes).
+\url{https://oeis.org/A000055}, \url{https://oeis.org/A000272}.
+
+\bibitem{Record} F. Santib\'a\~nez-Leal.
+CAOS Research, Bougard--Joret EXP-001: tree-strip proof and exact certificate, 4 September 2026.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip}{Public experiment record}.
 
 \bibitem{ShellRecord} F. Santib\'a\~nez-Leal.
 CAOS Research, Bougard--Joret EXP-002: first interior shell, proof and exact certificates, 5 September 2026.

@@ -1,0 +1,173 @@
+\section{Algorithms and computational methods}\label{sec:computations}
+
+The proofs of Sections~\ref{sec:shell} and~\ref{sec:strip} do not depend on any computation.
+The computations test them in two ways: they rebuild the constructions at every parameter pair with $3\le k\le12$ and check the claimed degree, size, independence and connectivity properties, and they enumerate objects the proofs classify (all trees up to order nine, all residual graphs for $k\le5$, all graphs on six vertices) to look for a counterexample to the classification.
+All arithmetic is integer, all choices are deterministic, and no random number is drawn.
+The code is plain Python; the checkers of EXP-001 and EXP-002 use only the standard library, and the independent recomputation of EXP-002 uses NetworkX \cite{NetworkX}.
+
+\subsection{Representation and shared routines}\label{sec:comp-repr}
+
+A graph on $n$ vertices is stored as $n$ integers whose bit $w$ in entry $v$ is set when $vw$ is an edge.
+Connectivity of an induced subgraph on a vertex mask $R$ is a breadth-first search in which a frontier mask is expanded one vertex at a time, ORing the adjacency entry of the vertex with $R$ and removing the vertices already reached; it costs $O(n)$ word operations.
+Degrees are population counts, and the edge list is read from the upper triangle.
+Python integers have no fixed width, so the representation covers every order that occurs, up to $n=26$, without change.
+The edge list of a graph is always read in lexicographic order of the pairs, which makes the saved edge lists canonical for a given vertex labeling.
+Certificates are written as JSON with sorted keys, and the shell runner writes line feeds explicitly, so that a rerun on another platform reproduces the same file.
+The routines described next are the ones the certificates depend on: tree generation, connectivity by flows and by deletion, independence number by recursion and by enumeration, the exhaustive residual enumeration, and the shell constructions.
+
+\subsection{Trees by leaf augmentation}\label{sec:comp-trees}
+
+Every tree on $p+1\ge2$ vertices is obtained from a tree on $p$ vertices by attaching a leaf, since deleting any leaf of the larger tree leaves a tree [D].
+Isomorphic trees must be identified, and Algorithm~\ref{alg:trees} does so with a canonical key.
+For a root $v$ the rooted encoding is the string $(\,c_1c_2\cdots c_j\,)$ in which $c_1\le\cdots\le c_j$ are the sorted encodings of the children subtrees, the standard encoding of rooted trees by nested parentheses; two rooted trees are isomorphic exactly when their encodings are equal [D].
+The key of an unrooted tree is the least encoding over all its roots, which is invariant under isomorphism and determines the tree up to isomorphism.
+
+\begin{algorithm}[t]
+\caption{Trees of order $4,\ldots,9$ by leaf augmentation with canonical keys (EXP-001, \texttt{grow\_trees}, \texttt{tree\_key})}\label{alg:trees}
+\KwIn{maximum order $p_{\max}=9$}
+$\mathcal T\leftarrow\{\text{the one-vertex tree}\}$\;
+\For{$p=2$ \KwTo $p_{\max}$}{
+$\mathcal T'\leftarrow\emptyset$ (a map from keys to trees)\;
+\ForEach{$T\in\mathcal T$ and each vertex $v$ of $T$}{
+$T^+\leftarrow T$ with a new leaf attached to $v$\;
+$\mathrm{key}(T^+)\leftarrow\min_{u\in V(T^+)}\mathrm{enc}(u,\bot)$\;
+store $T^+$ in $\mathcal T'$ under this key\;
+}
+$\mathcal T\leftarrow\mathcal T'$\;
+\lIf{$p\ge4$}{check that $|\mathcal T|$ equals the known number of unlabeled trees of order $p$ \cite{OEISTrees}}
+}
+\end{algorithm}
+
+The code asserts after each order that the number of keys is $2,3,6,11,23,47$ for orders $4,\ldots,9$, the values of the sequence of unlabeled trees [V, OEIS A000055].
+Each candidate costs $O(p)$ roots times one rooted encoding, which builds strings of total length $2p$ and sorts the children at every vertex, so $O(p^3)$ character operations in the worst case; for $p\le9$ the cost is immaterial.
+For every tree $T$ the construction $G(T,(S_t))$ of Section~\ref{sec:strip} is built with the fibers $|S_t|=\dd_T(t)-1$, and the checks of Section~\ref{sec:results} are run on it; a star is kept as a negative control and must fail the independence target $k-1$.
+
+\subsection{Connectivity tests}\label{sec:comp-conn}
+
+Two tests of $\kappa(G)\ge k$ are implemented, so that each checks the other.
+The first is direct: for every vertex set of size $0,1,\ldots,k-1$ the remaining graph is tested for connectivity.
+The number of sets is $\sum_{s<k}\binom ns$, at most $2^n$, so the test is run only for $n\le16$; this includes the 45 constructions of order at most 16 (Section~\ref{sec:results}) and the tree constructions of order $2k\le16$.
+By the definition of $k$-connectivity it is exactly correct for graphs with $n>k$ vertices.
+
+The second is the vertex-split maximum-flow test of Algorithm~\ref{alg:flow}.
+By Menger's theorem in its vertex form, for nonadjacent vertices $s,t$ the largest number of internally vertex-disjoint $s$--$t$ paths equals the smallest size of a set of vertices separating them, and a graph with more than $k$ vertices is $k$-connected exactly when every nonadjacent pair has at least $k$ such paths [D].
+The flow network splits each vertex $v$ into an arc $v_{\mathrm{in}}\to v_{\mathrm{out}}$ of capacity one (capacity $n$ for the two terminals), and each edge $uv$ into the arcs $u_{\mathrm{out}}\to v_{\mathrm{in}}$ and $v_{\mathrm{out}}\to u_{\mathrm{in}}$ of capacity $n$, so that a unit flow is a family of internally disjoint paths.
+Faster algorithms exist \cite{EvenTarjan,EsfahanianHakimi} [U, the articles were not reopened here]; the dense implementation used here is chosen for transparency.
+
+\begin{algorithm}[t]
+\caption{Vertex-split flow test of $\kappa(G)\ge k$ (EXP-001, \texttt{flow\_connectivity})}\label{alg:flow}
+\KwIn{adjacency masks of $G$ on $n>k$ vertices, and $k$}
+\ForEach{pair $s<t$ with $st\notin E(G)$}{
+build the capacity matrix $c$ of the split network on $2n$ nodes\;
+$\mathrm{flow}\leftarrow0$\;
+\While{$\mathrm{flow}<k$}{
+breadth-first search from $s_{\mathrm{out}}$ to $t_{\mathrm{in}}$ in the residual network\;
+\lIf{$t_{\mathrm{in}}$ is not reached}{\Return false}
+augment one unit along the path found; $\mathrm{flow}\leftarrow\mathrm{flow}+1$\;
+}
+}
+\Return true\;
+\end{algorithm}
+
+Building the matrix costs $O(n^2)$, and each of the at most $k$ augmentations is a search that scans a row of length $2n$ for each of at most $2n$ dequeued nodes, $O(n^2)$.
+There are at most $\binom n2$ nonadjacent pairs, so the test costs $O(kn^4)$ operations as implemented [D].
+For the largest graph checked, $n=26$ and $k=12$, this is of the order of $5\times10^6$ elementary steps ($12\cdot26^4$).
+The test returns false at the first pair with fewer than $k$ paths, which is the behavior the damaged-edge controls rely on.
+
+\subsection{Independence number}\label{sec:comp-alpha}
+
+Two implementations compute $\alpha(G)$.
+The first is the include/exclude recursion of Algorithm~\ref{alg:alpha}: for a vertex mask $R$, $\alpha(R)=\max\bigl(\alpha(R\setminus v),\,1+\alpha(R\setminus N[v])\bigr)$ for the lowest vertex $v$ of $R$, with $\alpha(\emptyset)=0$ and results memoized by mask.
+The recursion is exact, since an independent set either omits $v$ or contains $v$ and then omits its neighbors; the number of memoized masks is at most $2^n$.
+The second enumerates subsets in decreasing size and returns the first independent one, costing $O(2^nn)$ and used only for $n\le16$.
+The two agree on every graph where both run.
+In EXP-001 the recursion is also the test that separates stars from nonstar trees: the lift of a tree has independence number $k$ exactly when the tree is a star, and $k-1$ otherwise, and the code asserts this for all 92 trees.
+In EXP-002 the recursion computes $\alpha$ for all 75 constructions, and the subset enumeration confirms it for the 45 graphs of order at most 16.
+
+\begin{algorithm}[t]
+\caption{Independence number by include/exclude recursion with memoization (EXP-001, \texttt{independent\_number})}\label{alg:alpha}
+\KwIn{adjacency masks of $G$; a vertex mask $R$; a memo table}
+\lIf{$R=\emptyset$}{\Return $0$}
+\lIf{$R$ is in the memo table}{\Return its stored value}
+$v\leftarrow$ lowest vertex of $R$; $R'\leftarrow R\setminus\{v\}$\;
+value $\leftarrow\max\bigl(\textsc{Alpha}(R'),\ 1+\textsc{Alpha}(R'\setminus N(v))\bigr)$\;
+store value in the memo table under $R$; \Return value\;
+\end{algorithm}
+
+\subsection{Exhaustive residual enumeration with permutation reuse}\label{sec:comp-residual}
+
+The residual enumeration does not assume that the residual graph is a tree.
+For $k\in\{3,4,5\}$ and $n=k+1$ labeled vertices it visits every set of $k$ pairs, that is $\binom{\binom{k+1}2}{k}$ edge sets, and discards those with an isolated vertex, because a vertex of residual degree zero would need a fiber of size $-1$ (Section~\ref{sec:strip}).
+For a surviving residual graph $R$ with degrees $\delta_v$ the fibers must have sizes $\delta_v-1$, which sum to $k-1$ because $\e(R)=k$ and there are no isolated vertices.
+An assignment of the $k-1$ labeled vertices of $S$ to missing neighbors with these multiplicities is a permutation of the multiset in which the vertex $v$ occurs $\delta_v-1$ times; Algorithm~\ref{alg:residual} enumerates all distinct permutations and records their number, $(k-1)!/\prod_v(\delta_v-1)!$.
+Relabeling the vertices of $S$ maps any assignment to any other with the same multiplicities and preserves both $\kappa$ and $\alpha$, so the expensive tests are run once on a canonical assignment per residual graph.
+This reuse is explicit in the code: for every assignment the multiplicity and sortedness assertions certify that it is a relabeling of the canonical one.
+
+\begin{algorithm}[t]
+\caption{Exhaustive labeled residual enumeration for fixed $k$ (EXP-001, residual loop of \texttt{main})}\label{alg:residual}
+\KwIn{$k\in\{3,4,5\}$; $n=k+1$}
+\ForEach{set $E$ of $k$ pairs of $\{0,\ldots,n-1\}$}{
+$R\leftarrow([n],E)$; \lIf{$R$ has an isolated vertex}{\textbf{continue}}
+$\delta_v\leftarrow\dd_R(v)$; canonical multiset $\leftarrow$ vertex $v$ repeated $\delta_v-1$ times\;
+\ForEach{distinct permutation $\pi$ of the canonical multiset}{
+assert that $\pi$ has multiplicities $\delta_v-1$ and sorts to the canonical multiset\;
+}
+add the number of permutations to the assignment total\;
+$G\leftarrow$ the lift of $R$ by the canonical assignment\;
+$\mathrm{valid}\leftarrow(\kappa(G)\ge k\text{ by deletion})\ \wedge\ (\alpha(G)=k-1\text{ by enumeration})$\;
+assert $\mathrm{valid}\iff(R\text{ connected}\wedge R\text{ not a star})$\;
+count $R$ as a nonstar tree, a star or a disconnected graph\;
+}
+\end{algorithm}
+
+The loops cost $\binom{\binom{k+1}2}k$ iterations (20, 210 and 3,003 for $k=3,4,5$ [D]), each with one $O(n\sum_{s<k}\binom ns)$ deletion test and one subset enumeration on $2k\le10$ vertices.
+The order-six census visits all $2^{15}=32{,}768$ labeled graphs on six vertices; EXP-001 skips those with more than nine edges or minimum degree below three, and EXP-002 skips those that are not cubic and tests the rest with the recursion and the flow test.
+
+\subsection{The shell constructions}\label{sec:comp-shell}
+
+Algorithm~\ref{alg:shell} is the construction of Section~\ref{sec:shell} as implemented in EXP-002; the code names the shell parameter $g$ of the text \texttt{d}.
+For $a=2$ the graph is the complement of $C_n$; for $a=k+1$ it is the lift of the edgeless residual graph on $k+1$ vertices by the identity assignment, which is the crown graph; for $a=k$ the residual graph is the matching $\{2i,2i+1\}$ for $0\le i<\lfloor(k+1)/2\rfloor$ and the missing neighbors are the first $k$ matched vertices; for $a=k-1$ the residual graph is the path $0,1,\ldots,k$ and the missing neighbors are its internal vertices.
+In the generic case the starting graph is the cycle power $C_m^r$ with $r=\lfloor g/2\rfloor$, plus, when $g$ is odd, the antipodal pairs $\{i,i+\lfloor m/2\rfloor\}$ for $0\le i<m/2$ ($m$ even) or $0\le i\le\lfloor m/2\rfloor$ ($m$ odd, in which case vertex $q=\lfloor m/2\rfloor$ is the exceptional vertex of degree $g+1$).
+A complement matching of the required size, $(a+\varepsilon-[\text{exceptional vertex}])/2$ pairs, is added by a greedy scan of the pairs in lexicographic order that takes a pair when both endpoints are unused, nonadjacent in the starting graph and different from the exceptional vertex; the code asserts that the required number of pairs is found.
+The missing neighbors are the first $a$ vertices of degree $g+1$ in the augmented residual graph.
+
+\begin{algorithm}[t]
+\caption{The shell graph for $(k,a)$ (EXP-002, function \texttt{construct})}\label{alg:shell}
+\KwIn{$k\ge3$, $2\le a\le k+1$; $m=k+1$, $n=a+m$, $\varepsilon=nk\bmod2$, $g=k-a$}
+\lIf{$a=2$}{\Return $\overline{C_n}$}
+\lIf{$a=k+1$}{\Return lift(edgeless graph on $m$ vertices; misses $0,\ldots,m-1$)}
+\lIf{$a=k$}{$R\leftarrow$ matching on $\lfloor(k+1)/2\rfloor$ pairs; $M\leftarrow$ first $k$ matched vertices}
+\lElseIf{$a=k-1$}{$R\leftarrow P_m$; $M\leftarrow$ internal vertices of $P_m$}
+\Else{
+$B\leftarrow C_m^{\lfloor g/2\rfloor}$, plus the antipodal pairs when $g$ is odd (exceptional vertex $q$ when $m$ is odd)\;
+$c\leftarrow\bigl(a+\varepsilon-[q\text{ exists}]\bigr)/2$; $R\leftarrow B$ plus $c$ complement-matching pairs avoiding $q$\;
+$M\leftarrow$ first $a$ vertices of $R$ of degree $g+1$\;
+}
+\Return lift($R$; one new vertex per element of $M$, adjacent to all of $R$ except that element)\;
+\end{algorithm}
+
+The construction runs in time linear in the number of edges of the output, up to the cost of the greedy scan, which is $O(m^2)$.
+After each construction the script asserts the sorted degree sequence ($k$ everywhere, $k+1$ at $\varepsilon$ vertices), the edge count $\lceil kn/2\rceil$, $\alpha(G)=a$ by the recursion, $\kappa\ge k$ by the flow test, and, for $n\le16$, both enumeration tests; for the 36 generic cases it also tests the starting and augmented residual graphs for $g$-connectivity by both tests.
+Then it deletes the first edge at the first vertex of degree $k$ and asserts that the flow test, and for $n\le16$ the deletion test, rejects the damaged graph.
+
+\subsection{Independent recomputation}\label{sec:comp-audit}
+
+The recomputation script rebuilds each of the 75 graphs from the saved edge lists with NetworkX \cite{NetworkX} (version \NXVersion), without importing either checker of the experiments.
+It computes $\kappa(G)$ with the library's exact node connectivity, and $\alpha(G)$ as the largest maximal clique of the complement.
+It re-derives the same quantities for the damaged graphs, the 36 starting and augmented residual graphs and the eight complement-cycle controls, and compares them with the recorded values.
+Before it starts it checks that the sources named in the certificate have the recorded SHA-256 digests, and it stores the digests of the proof, the certificate and its own source in its output (Table~\ref{tab:digests}).
+It also asserts that each edge list is a simple graph on the stated vertex set, that the grid has exactly the 75 pairs $(k,a)$ with $3\le k\le12$ and $2\le a\le k+1$, that the 36 generic rows have starting connectivity $g$ and augmented connectivity at least $g$, and that the damaged edge is an edge of the graph.
+The complement-cycle graphs are rebuilt from cycles by the library and complemented, and the independence and connectivity outcomes must match the recorded ones and the characterization of Theorem~\ref{thm:cycles}.
+The output states its own scope: a finite verification of 75 cases, not a formal proof, a peer review or a certification of novelty.
+
+\subsection{Experimental design and acceptance criteria}\label{sec:comp-design}
+
+The theorems make predictions that the computations can contradict, and each computation is built around one of them.
+For the shell, the prediction is that every pair $(k,a)$ with $3\le k\le12$ and $2\le a\le k+1$ yields a graph with the degree pattern of Section~\ref{sec:formulation}, size $\lceil kn/2\rceil$, independence number $a$ and connectivity $k$; the cases are the 75 pairs of the grid and nothing is sampled.
+For the strip, the prediction is that the valid constructions are exactly those on nonstar trees, tested on all 92 trees of orders four to nine, on all labeled residual graphs for $k\le5$, and on all labeled graphs on six vertices.
+For the cycle classification, the prediction is that independence number two with connectivity $n-3$ holds exactly when all cycle lengths are at least five, tested on eight partitions.
+Every property is computed by two methods wherever two exist (recursion and subset enumeration for $\alpha$, deletion and flow for $\kappa$, and the NetworkX recomputation for both), and these pairs play the role that baselines play for a numerical method.
+The acceptance criterion is exact: each prediction is an assertion, a failed assertion aborts the run, and a certificate with the recorded status contains no failed check.
+There are no random choices, seeds, repetitions or confidence intervals, because every quantity is an integer determined by the input.
+Each stage has a time limit in the code (Section~\ref{sec:repro}), and a stage that reached it would write a partial status instead of a passed one.
+Negative controls complete the design: a deleted edge, a star residual, a disconnected residual and the triangle and $4$-cycle unions are predicted to fail, and the results of Section~\ref{sec:res-controls} show that they do.

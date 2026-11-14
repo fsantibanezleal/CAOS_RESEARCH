@@ -1,0 +1,144 @@
+\section{The tree construction and the extremal theorem}\label{sec:strip}
+
+The case $a=k-1$ of the shell has order $n=2k$, and Theorem~\ref{thm:shell} already gives its value through the path residual graph $P_{k+1}$ (Section~\ref{sec:shell}).
+The residual graph is then a tree, and the same viewpoint classifies every extremal graph: the extremizers are exactly the graphs below, built on the nonstar trees with $k+1$ vertices.
+The proof does not use the shell lemmas and is independent of the boundary theorem \cite{DG}.
+
+
+For a tree $T$ on $k+1$ vertices, let $S$ be a disjoint independent set of size $k-1$.
+Partition $S$ into fibers $(S_t:t\in V(T))$ satisfying
+\begin{equation}\label{eq:fiber}
+|S_t|=\dd_T(t)-1.
+\end{equation}
+Keep all edges of $T$, and for each $s\in S_t$ add edges from $s$ to every tree vertex except $t$.
+Call the resulting graph $G(T,(S_t))$.
+The required partition exists because
+\begin{equation}\label{eq:sum}
+\sum_{t\in V(T)}(\dd_T(t)-1)=2k-(k+1)=k-1.
+\end{equation}
+
+\begin{theorem}[Adjacent exceptional strip, D]\label{thm:main}
+For every integer $k\ge3$,
+\[
+f(2k,k-1,k)=k^2.
+\]
+A graph is extremal for these parameters if and only if it is isomorphic to $G(T,(S_t))$ for a nonstar tree $T$ on $k+1$ vertices and fibers satisfying \eqref{eq:fiber}.
+Every extremal graph has this representation relative to each of its maximum independent sets.
+\end{theorem}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=1.05,vertex/.style={circle,draw=linknavy,fill=white,inner sep=2.5pt}]
+\foreach \i in {0,...,4}{\node[vertex,label=above:{$t_{\i}$}] (t\i) at (1.4*\i,1.5) {};}
+\foreach \i in {0,...,3}{\pgfmathtruncatemacro{\j}{\i+1}\draw[thick,linknavy] (t\i)--(t\j);}
+\foreach \i in {1,...,3}{\node[vertex,label=below:{$s_{\i}$}] (s\i) at (1.4*\i,0) {};
+\draw[dashed,red!65!black,thick] (s\i)--(t\i);}
+\end{tikzpicture}
+\caption{The $k=4$ path construction. The solid path is $T=P_5$; the three dashed pairs are \emph{nonedges}. Add every other pair between the two rows, and no pair within the lower row. This yields an eight-vertex, 16-edge extremal graph.}
+\label{fig:path}
+\end{figure}
+
+\subsection{Regularity and independence}
+
+Every vertex of $S$ has degree $k$. At a tree vertex $t$,
+\[
+\dd_G(t)=\dd_T(t)+(k-1)-|S_t|=k.
+\]
+Thus the graph is $k$-regular, has order $2k$, and has $k^2$ edges.
+
+A nonstar tree of order $k+1$ cannot contain an independent $k$-set: all its edges would then meet the remaining vertex, and connectedness would force a star.
+Consequently $\alpha(T)\le k-1$, and also $\dd_T(t)\le k-1$ for every $t$.
+An independent set contained in either $S$ or $T$ therefore has size at most $k-1$.
+An independent set meeting both parts contains only one tree vertex $t$, because each member of $S$ has only one nonneighbor in $T$.
+Its other vertices lie in $S_t$, so its size is at most
+\[
+1+|S_t|=\dd_T(t)\le k-1.
+\]
+Since $S$ is itself independent, $\alpha(G)=k-1$.
+
+For $k=4$ and $T=P_5$ with vertices $t_0,\ldots,t_4$ the degrees are $1,2,2,2,1$, so the fibers have sizes $0,1,1,1,0$ and the independent set is $\{s_1,s_2,s_3\}$ with $s_i$ missing $t_i$ (Figure~\ref{fig:path}).
+At $t_1$ the degree is $\dd_T(t_1)+(k-1)-|S_{t_1}|=2+3-1=4=k$, at $t_0$ it is $1+3-0=4$, and each $s_i$ is adjacent to the other four tree vertices; the graph has eight vertices and 16 edges.
+The star $K_{1,4}$ is excluded by the independence number, since its center would need a fiber of size $k-1$ and every leaf a fiber of size zero, and then the $k$ leaves form an independent set of size $k$.
+
+\subsection{Connectivity}
+
+Let $X\subseteq V(G)$ satisfy $|X|<k$, and set
+\[
+A=S\setminus X,\qquad B=V(T)\setminus X.
+\]
+There are at least two vertices in $B$.
+If $A$ is empty, deletion of all $k-1$ vertices of $S$ uses the available deletion budget. Hence $G-X=T$ is connected.
+
+Assume $A\ne\varnothing$ and $|B|\ge3$.
+Any two vertices of $A$ share a neighbor in $B$, since each misses at most one member of $B$.
+All of $A$, and all tree vertices adjacent to at least one member of $A$, therefore lie in a common component $C$.
+At most one tree vertex $t$ can remain outside $C$: such a vertex must be the unique missed vertex of every member of $A$, so $A\subseteq S_t$.
+If $t$ is disconnected from $C$, all its tree neighbors must have been deleted.
+All vertices of $S\setminus A$ were also deleted, and these sets are disjoint. Therefore
+\begin{align*}
+|X|&\ge k-1-|A|+\dd_T(t)\\
+&\ge k-1-|S_t|+\dd_T(t)=k,
+\end{align*}
+a contradiction.
+
+The case $|B|=2$ requires a different argument.
+Write $B=\{u,v\}$. Exactly $k-1$ tree vertices have been deleted, so every member of $S$ survives.
+If a vertex of $S$ misses a tree vertex other than $u,v$, it is adjacent to both $u$ and $v$.
+Every other member of $S$ is adjacent to at least one of them, proving connectedness.
+Otherwise the only nonempty fibers are $S_u,S_v$.
+By \eqref{eq:fiber}, every other tree vertex is a leaf.
+Since $T$ is nonstar, $u,v$ are exactly its two nonleaf vertices, and they must be adjacent: an internal vertex on their path would be a third nonleaf vertex.
+The surviving edge $uv$ reconnects the graph.
+Thus $G$ is $k$-connected in every case.
+
+\subsection{Optimality and all equality cases}
+
+Any $k$-connected graph on $2k$ vertices has minimum degree at least $k$ and hence at least $k^2$ edges.
+The constructed graphs attain this lower bound, proving the numerical statement.
+
+Conversely, let $G$ be extremal, and let $S$ be any maximum independent set, of order $k-1$.
+Equality in the degree-sum lower bound forces $k$-regularity.
+The residual graph $H=G-S$ has $k+1$ vertices and is connected, since fewer than $k$ vertices were deleted.
+Each vertex of $S$ misses exactly one vertex of $H$.
+There are $k(k-1)$ edges between $S$ and $H$, leaving
+\[
+\e(H)=k^2-k(k-1)=k.
+\]
+Thus $H$ is a tree.
+Writing $S_t$ for the vertices that miss $t$, regularity gives
+\[
+k=\dd_H(t)+(k-1)-|S_t|,
+\]
+so \eqref{eq:fiber} holds.
+If $H$ were a star, its $k$ leaves would form an independent set in $G$, contrary to $\alpha(G)=k-1$.
+This completes the proof of Theorem~\ref{thm:main}.\hfill$\square$
+
+\begin{remark}
+The theorem characterizes graphs relative to a marked maximum independent set.
+It does not assert a bijection between nonstar trees and unmarked graph isomorphism classes.
+Different maximum independent sets in the same graph need not give a uniquely determined representation without a further argument.
+\end{remark}
+
+\subsection{Boundary transition and a residual-graph viewpoint}
+
+Combining Theorem~\ref{thm:main} with \eqref{eq:old} gives the following precise transition.
+\begin{corollary}[D, using the preceding-boundary theorem of \cite{DG}]\label{cor:transition}
+For every $k\ge4$,
+\[
+f(2k,k-1,k)-f(2k-1,k-1,k)=1.
+\]
+The excess over the degree-sum prediction drops from $\lfloor k/2\rfloor-1$ to zero.
+\end{corollary}
+\begin{proof}
+The values are $k^2$ and $k^2-1$.
+At order $2k-1$, the prediction is $\lceil k(2k-1)/2\rceil=k^2-\lfloor k/2\rfloor$; at order $2k$ it is $k^2$.
+\end{proof}
+
+The mechanism differs from simply adding a vertex to a preceding-boundary extremal graph.
+On the original boundary every independent-set vertex is adjacent to every residual vertex.
+On the new diagonal it misses exactly one. The sizes of these missing-neighbor fibers compensate for the residual tree degrees, making every total degree equal to $k$.
+Connectivity must still be proved separately; the double-star case shows why a common-neighbor argument alone is insufficient.
+Table~\ref{tab:positions} lists the two values $k^2-1$ and $k^2$ for $4\le k\le12$ together with their degree-sum bounds.
+For $k=4$ the boundary value is $f(7,3,4)=15$ against a degree-sum bound of $\lceil 7\cdot4/2\rceil=14$, and the strip value is $f(8,3,4)=16=\lceil8\cdot4/2\rceil$: the order grows by one, the size by one, and the excess of one edge disappears.
+For $k=12$ the boundary excess is $5$ and the strip excess is zero.
+

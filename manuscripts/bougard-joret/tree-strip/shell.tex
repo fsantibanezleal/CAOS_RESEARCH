@@ -1,6 +1,11 @@
-\section{The entire first interior shell}
+\section{The entire first interior shell}\label{sec:shell}
 
-Write $a$ for the prescribed independence number. Our main result is the following.
+Write $a$ for the prescribed independence number, so that $\alpha(G)=a$ for the graphs constructed, and $g=k-a$ for the residual connectivity requirement.
+The proof has four parts.
+The degree-sum bound gives the lower bound for free.
+For the upper bound, a lifting lemma (Lemma~\ref{lem:lift}) turns a residual graph of order $k+1$ with prescribed degrees and connectivity into a graph on the shell that is $k$-connected with the right independence number.
+The generic case $a\ge3$ and $g\ge2$ supplies the residual graph from a cycle power (Lemma~\ref{lem:harary}) and a complement matching; the cases $a=k-1$, $a=k$ and $a=k+1$ and $a=2$ are handled by direct residual graphs.
+Our main result is the following.
 
 \begin{theorem}[First interior shell, D]\label{thm:shell}
 For every integer $k\ge3$ and every integer $2\le a\le k+1$,
@@ -73,13 +78,13 @@ A singleton also satisfies the bound.
 \subsection{An injective missing-neighbor lemma}
 
 \begin{lemma}[Residual lift]\label{lem:lift}
-Let $k\ge a\ge3$, $d=k-a$, and let $H$ have order $k+1$.
+Let $k\ge a\ge3$, $g=k-a$, and let $H$ have order $k+1$.
 Choose $M\subseteq V(H)$ with $|M|=a$. Suppose that $\alpha(H)\le a$, that
 \[
 \dd_H(t)\ge
-\begin{cases}d+1,&t\in M,\\d,&t\notin M,\end{cases}
+\begin{cases}g+1,&t\in M,\\g,&t\notin M,\end{cases}
 \]
-and, when $d\ge1$, that $H$ is $d$-connected.
+and, when $g\ge1$, that $H$ is $g$-connected.
 Add an independent set $S$ of size $a$, put it in bijection with $M$, and join each $s\in S$ to every vertex of $H$ except its assigned vertex.
 Then the resulting graph $G$ has $\alpha(G)=a$ and $\kappa(G)=k$.
 \end{lemma}
@@ -96,7 +101,7 @@ Its size is therefore at most two. The set $S$ witnesses equality $\alpha(G)=a$.
 
 Delete $X$ with $|X|<k$, and write $A=S\setminus X$, $B=V(H)\setminus X$.
 Always $|B|\ge2$.
-If $A$ is empty, $d=0$ is impossible and fewer than $d=k-a$ residual vertices were deleted, so $d$-connectivity of $H$ suffices.
+If $A$ is empty, $g=0$ is impossible and fewer than $g=k-a$ residual vertices were deleted, so $g$-connectivity of $H$ suffices.
 
 Suppose $A\ne\varnothing$ and $|B|\ge3$.
 Any two vertices of $A$ share a neighbor in $B$, so all of $A$ and every member of $B$ adjacent to it lie in a common component $C$.
@@ -115,35 +120,45 @@ Thus $\kappa(G)\ge k$, while the degree-$k$ vertices in $S$ give equality.
 
 \subsection{The generic residual construction}
 
-Set $m=k+1=a+d+1$, $n=a+m$, $\varepsilon=kn\bmod2$, and $r=\lfloor d/2\rfloor\ge1$.
-We construct a $d$-connected residual graph $H$ with degree $d+1$ at exactly $a+\varepsilon$ distinct vertices and degree $d$ elsewhere.
-Every case contains $C_m^r$.
+The degree profile of the residual graph is forced by the target size.
+For $G$ to attain the degree-sum bound, $\e(G)=(kn+\varepsilon)/2$ with $n=a+k+1$, and $S$ contributes $ak$ edges, so the residual graph has
+\[
+\e(H)=\frac{k(a+k+1)+\varepsilon}2-ak=\frac{k(k+1-a)+\varepsilon}2=\frac{k(g+1)+\varepsilon}2 .
+\]
+Its degree sum is $k(g+1)+\varepsilon=(k+1)g+a+\varepsilon$, which is exactly the sum of $k+1$ degrees equal to $g$ plus one more at $a+\varepsilon$ vertices.
+This is the profile of Lemma~\ref{lem:lift}: degree $g+1$ at the $a$ vertices of $M$ and, when $\varepsilon=1$, at one further vertex, and degree $g$ elsewhere.
+So the existence of a residual graph with this degree profile that is $g$-connected and has independence number at most $a$ is not only sufficient but is what any extremal graph with injective misses must contain.
 
-If $d=2r$, start with $C_m^r$.
-Its complement is $a$-regular, and $\varepsilon$ is the parity of $a$ because $n=2a+d+1$ is odd.
+Set $m=k+1=a+g+1$, $n=a+m$, $\varepsilon=kn\bmod2$, and $r=\lfloor g/2\rfloor\ge1$.
+We construct a $g$-connected residual graph $H$ with degree $g+1$ at exactly $a+\varepsilon$ distinct vertices and degree $g$ elsewhere.
+Every case contains $C_m^r$.
+Lemma~\ref{lem:harary} applies because $m=a+g+1\ge3+2r+1=2r+4$, using $a\ge3$ and $g\ge2r$.
+
+If $g=2r$, start with $C_m^r$.
+Its complement is $a$-regular, and $\varepsilon$ is the parity of $a$ because $n=2a+g+1$ is odd.
 Lemma~\ref{lem:matching} supplies a complement matching of size $(a+\varepsilon)/2$.
 Adding it raises exactly $a+\varepsilon$ degrees by one.
 
-If $d=2r+1$ and $m$ is even, start with the antipodal augmentation in Lemma~\ref{lem:harary}.
-It is $d$-regular, its complement is $a$-regular, $a$ is even, and $\varepsilon=0$.
+If $g=2r+1$ and $m$ is even, start with the antipodal augmentation in Lemma~\ref{lem:harary}.
+It is $g$-regular, its complement is $a$-regular, $a$ is even, and $\varepsilon=0$.
 Add a complement matching of size $a/2$.
 
-If $d=2r+1$ and $m=2q+1$ is odd, start with the odd-order augmentation.
+If $g=2r+1$ and $m=2q+1$ is odd, start with the odd-order augmentation.
 Its unique higher-degree vertex is $w=q$.
 Here $a$ is odd and $\varepsilon=0$.
 Every other vertex has degree $a$ in the complement; after deleting $w$, that complement has minimum degree at least $a-1$.
 Add a matching of size $(a-1)/2$ in it.
-Its endpoints avoid $w$, so precisely $a$ vertices now have degree $d+1$.
-All three constructions preserve the starting graph's $d$-connectivity.
+Its endpoints avoid $w$, so precisely $a$ vertices now have degree $g+1$.
+All three constructions preserve the starting graph's $g$-connectivity.
 
-By \eqref{eq:cycle-alpha} and $d\le2r+1$,
+By \eqref{eq:cycle-alpha} and $g\le2r+1$,
 \[
-m=a+d+1\le a+2r+2<(a+1)(r+1),\qquad \alpha(H)\le a.
+m=a+g+1\le a+2r+2<(a+1)(r+1),\qquad \alpha(H)\le a.
 \]
 The strict inequality follows from $r(a-1)-1\ge1$.
 Choose any $a$ higher-degree vertices for $M$ and apply Lemma~\ref{lem:lift}.
 Every vertex in $S$ and every selected residual vertex has degree $k$.
-The residual vertices of degree $d$ also have total degree $k$.
+The residual vertices of degree $g$ also have total degree $k$.
 When $\varepsilon=1$, the sole unselected higher-degree vertex has total degree $k+1$.
 Consequently
 \[
@@ -151,11 +166,26 @@ Consequently
 \]
 proving Theorem~\ref{thm:shell} in this range.
 
+\paragraph{A recorded instance.}
+Take $k=7$ and $a=4$, so $g=3$, $m=8$, $n=12$, $r=1$ and $\varepsilon=0$.
+The residual graph starts as $C_8$ with the antipodal matching $\{i,i+4\}$ for $0\le i<4$, a cubic graph with 12 edges that is $3$-connected by Lemma~\ref{lem:harary}.
+The complement of this graph is $4$-regular, and a complement matching of size $a/2=2$ is added; the saved construction uses the pairs $\{0,2\}$ and $\{1,3\}$.
+The vertices $0,1,2,3$ then have degree $g+1=4$ and form $M$, the other four vertices keep degree $3$, and $H$ has 14 edges.
+Four vertices $s_0,\ldots,s_3$ are joined to every residual vertex except their assigned one, which adds $4\cdot7=28$ edges, and the total $14+28=42=12\cdot7/2$ is the degree-sum bound.
+Figure~\ref{fig:lift} draws this instance from the saved edge lists, and Table~\ref{tab:shell75} lists it with the other 74 constructions.
+
+\begin{figure}[ht]
+\centering
+\input{fig-lift.tex}
+\caption{The residual lift on the recorded case $k=7$, $a=4$, $n=12$. The residual graph $H$ has eight vertices: gray edges form $C_8$ with the antipodal matching, orange edges are the two complement-matching edges, and the thick vertices $0,1,2,3$ form $M$. Each vertex $s_i$ of the independent set is adjacent to every vertex of $H$ except the one joined to it by a dashed line, which is not drawn as a pair of edges; all other pairs between $S$ and $H$ are edges and are omitted from the drawing.}
+\label{fig:lift}
+\end{figure}
+
 \subsection{The remaining parameters}
 
 For $a=k$, take a residual matching of $\lceil k/2\rceil$ edges on $k+1$ vertices and choose $k$ distinct endpoints for $M$.
 Its independence number is $k+1-\lceil k/2\rceil\le k$.
-Lemma~\ref{lem:lift} applies with $d=0$, without requiring residual connectivity.
+Lemma~\ref{lem:lift} applies with $g=0$, without requiring residual connectivity.
 For even $k$, all degrees in $G$ are $k$; for odd $k$, the single unselected matching endpoint has total degree $k+1$ and every other degree is $k$.
 Thus the required edge bound is attained.
 
@@ -164,7 +194,7 @@ The path is connected, its selected degrees are two, its remaining degrees are o
 \[
 \alpha(P_{k+1})=\left\lceil\frac{k+1}{2}\right\rceil\le k-1.
 \]
-Lemma~\ref{lem:lift} with $d=1$ gives a $k$-regular extremal graph.
+Lemma~\ref{lem:lift} with $g=1$ gives a $k$-regular extremal graph.
 The stronger complete tree characterization is Theorem~\ref{thm:main} below.
 Its $k=3$ case is covered by $a=2$.
 
