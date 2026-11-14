@@ -27,4 +27,4 @@ Neither the tree strip, the full first shell nor the EXP-003 bracket resolves th
 | BJB-021 | done | EXP-010 (2026-11-11): (24,7,3) at E = 40 (23,556,793 graphs, 11.9 h on 14 processes) and (24,3,7) at E = 94 (569,264 graphs, 10.8 h) hold no qualifying graph: f(24,7,3) = 41, f(24,3,7) = 95; all 53 open-window triples with n <= 24 hold |
 | BJB-022 | doing | EXP-011: every extremal graph at the conjectured value at 35 triples; 40 of them have no partition into alpha cliques (k = 3, alpha odd); Didin's core parameter explains where (second addendum) |
 | BJB-023 | doing | EXP-012: validation of the pipeline at the production parameters (provenance, filter, hook, split, generator counts) |
-| BJB-024 | todo | Note  v0.03: full rewrite (order 24, Didin's claimed proof, methods, validation, extremal graphs), independent review, release |
+| BJB-024 | todo | Note second-regime v0.03: full rewrite (order 24, Didin's claimed proof, methods, validation, extremal graphs), independent review, release |
