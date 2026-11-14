@@ -29,6 +29,6 @@ Evidence:
 
 - [EXP-009 canonical experiment](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/).
 - [Wang arXiv:2609.24167v1](https://arxiv.org/abs/2609.24167v1) (replaced by a notice in v2).
-- Version DOI: [10.5281/zenodo.23895875](https://doi.org/10.5281/zenodo.23895875).
-- Previous version DOI: [10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291).
+- Version DOI: [10.5281/zenodo.24227401](https://doi.org/10.5281/zenodo.24227401).
+- Previous version DOIs: v0.02 [10.5281/zenodo.23895875](https://doi.org/10.5281/zenodo.23895875), v0.01 [10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291).
 - Concept DOI: [10.5281/zenodo.22940290](https://doi.org/10.5281/zenodo.22940290).
