@@ -24,6 +24,35 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
+% Numbers quoted in the text that are read from stored records by gen_tables.py.
+% BEGIN GENERATED macros
+\newcommand{\numAtlasTrapMax}{20}
+\newcommand{\numAtlasTrapRun}{bicorner-opp}
+\newcommand{\numAtlasCertMin}{67}
+\newcommand{\numAtlasCertMinRun}{fa2b-residue}
+\newcommand{\numAtlasCertMax}{97}
+\newcommand{\numAtlasCertMaxRun}{core}
+\newcommand{\numCertNzMin}{6}
+\newcommand{\numCertNzMax}{11}
+\newcommand{\numRatioMin}{0.3}
+\newcommand{\numRatioMax}{2.1}
+\newcommand{\numSingMin}{0.4}
+\newcommand{\numSingMax}{0.6}
+\newcommand{\numChamberTotal}{125{,}097{,}984}
+\newcommand{\numChamberUnit}{2{,}843{,}136}
+\newcommand{\numGenSoneMin}{49}
+\newcommand{\numGenSoneMax}{95}
+\newcommand{\numGenStwoMin}{241}
+\newcommand{\numGenStwoMax}{2224}
+\newcommand{\numAtlasRuns}{9}
+\newcommand{\numAtlasLeaves}{1{,}397{,}962}
+\newcommand{\numAtlasBall}{10}
+\newcommand{\numAtlasCertShare}{86}
+\newcommand{\numPolyFiveOne}{35}
+\newcommand{\numPolyFiveTwo}{25}
+\newcommand{\numPolyFourOne}{19}
+% END GENERATED macros
+
 % Avoid single lines stranded at the top or bottom of a page.
 \widowpenalty=10000
 \clubpenalty=10000
@@ -58,8 +87,8 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \end{center}
 \vspace{4pt}}
 
-\title{Exact replication and screening of tropical finiteness certificates
-for central configurations}
+\title{Replication and screening of tropical finiteness certificates for central
+configurations, with exact comet decisions and the status of a six-body symmetric stratum}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -144,17 +173,22 @@ cited relative to \path{problems/dynamical-systems/central-configurations/}, abb
 
 \paragraph{The ladder.}
 For $n=4$ the number is finite for all positive masses (Hampton--Moeckel \cite{HM06}:
-computer-assisted BKK certificate, count in $[32,8472]$\Vm). For $n=5$ it is finite except possibly on an explicit
+computer-assisted BKK certificate, count in $[32,8472]$\Vm; for the Dziobek configurations of the four-body problem
+Dias \cite{Dias26} later gives a B\'ezout-type bound of 8192 for homogeneous potentials, from the abstract\Vm). For $n=5$ it
+is finite except possibly on an explicit
 codimension-two subvariety of mass space (Albouy--Kaloshin \cite{AK12}\Vm, from the abstract and
-pp.~535--540). Finiteness for $n=5$ and \emph{all} positive masses was claimed in October 2026
+pp.~535--540); Moczurad and Zgliczy\'nski \cite{MZ26} give a computer-assisted exact count of the classes
+for several mass sets that are exceptional for that result (from the abstract\Vm). Finiteness for $n=5$ and \emph{all} positive masses was claimed in October 2026
 by three groups, one with a Lean formalization (Section~\ref{sec:five})\Vm; none of the claims
 is refereed. The spatial 5-body Dziobek case is handled generically by Moeckel \cite{Moeckel01}
-and explicitly by Hampton--Jensen \cite{HJ11}\Vm. The case $n=6$ is open, reduced by
+and explicitly by Hampton--Jensen \cite{HJ11}\Vm; Dias \cite{Dias17} extends generic finiteness of Dziobek
+configurations to semi-integer exponents\Um. The case $n=6$ is open, reduced by
 Chang--Chen \cite{ChangChen23} to twenty-four unsolved zw-diagram cases (their programme
 preprint states the count verbatim, read on pages 1 to 6\Vm); for \emph{generic} masses the
 purely polyhedral certificate of Jensen--Leykin \cite{JL25}\Vm, complete through $n=5$, is the
 live frontier, and a six-body symmetric stratum is treated in Section~\ref{sec:stratum}.
-Rigorous equal-mass censuses for $n\le 7$ are due to Moczurad--Zgliczy\'nski \cite{MZ19}\Vm;
+Rigorous equal-mass censuses for $n\le 7$ are due to Moczurad--Zgliczy\'nski \cite{MZ19}\Vm, who also list
+the equal-mass spatial configurations for $n=5,6$ \cite{MZ20}\Vm;
 with one negative mass a continuum exists (Roberts \cite{Roberts99}\Vm, masses
 $(1,1,1,1,-1/4)$), so positivity is essential.
 
@@ -213,14 +247,65 @@ repeated & \texttt{56abb113b0b70798} & \texttt{602d223ad321a5e7} \\
 $n=5$ cells of system S1, read from the stored hash file.}\label{tab:hashes}
 \end{table}
 
+\subsection{What a pointed prevariety certifies}\label{sec:certifies}
+
+Let $K=\mathbb{C}\{\{t\}\}$ be the field of Puiseux series, with the valuation of $t$ equal to one, and let
+$F\subset K[r_{12},\dots,r_{n-1,n}]$ be the polynomial system obtained from the central configuration
+equations by giving the mass $m_i$ the value $t^{v_i}$. The tropical variety of $V(F)$ lies in the tropical
+\emph{prevariety}, the intersection of the tropical hypersurfaces of the single polynomials,
+\begin{equation}\label{eq:prevar}
+\operatorname{trop}V(F)\;\subseteq\;P(F):=\bigcap_{f\in F}\operatorname{trop}V(f),
+\end{equation}
+and tropicalization preserves dimension (the theorem of Bieri and Groves \cite{BG84}; the textbook account is
+\cite{MS15}),
+\begin{equation}\label{eq:bg}
+\dim\operatorname{trop}V(F)=\dim V(F).
+\end{equation}
+Both facts are used as stated in the argument of Jensen and Leykin \cite{JL25}\Vm\ (record:
+\path{CC/context/2026-07-24-jensen-leykin-direct-read-dossier.md}, section on the method); % voice-ok
+the two works \cite{BG84,MS15} are known to us through that reference list and were not read. The rest of the argument is theirs
+as well. A tropical variety of positive dimension contains a balanced tropical curve, and the recession cone of
+a component of $P(F)$ that contains such a curve is not pointed (their Proposition~1)\Vm. If the recession cone
+of every connected component of $P(F)$ is pointed, then $\dim V(F)=0$ over $K$. The fibres of tropicalization are
+Zariski dense (Payne \cite{Payne09}, as cited in \cite{JL25}), so a conclusion reached at one valuation point
+passes to all masses off a hypersurface of mass space\Vm. This is the whole use of the prevariety: it needs no
+Gr\"obner elimination and no derived polynomials beyond the original equations, only a polyhedral computation of
+$P(F)$ and a test of pointedness on each connected component, which Section~\ref{sec:exact} decides in exact
+arithmetic. The implication runs one way. A pointed component certifies, an unpointed component certifies
+nothing, because $P(F)$ contains $\operatorname{trop}V(F)$ and may be larger. The computation of $P(F)$ itself is
+the dynamic decomposition of tropical prevarieties of Jensen \cite{Jensen24}, which \texttt{gfan}~0.7 implements
+according to \cite{JL25}\Vm; that paper was not read.
+
 \subsection{The prevariety pipeline}
 
 Algorithm~\ref{alg:gfan} is the exact pipeline of the runs in Sections~\ref{sec:jl} and
 \ref{sec:screening}. The system generator is \texttt{gfan}'s own \texttt{\_nbody} command; the
 flag \texttt{-{}-alsosymmetric} adds the symmetric Albouy--Chenciner equations to the asymmetric ones
-and \texttt{-{}-cayleymenger2} adds the planar Cayley--Menger polynomials. For $n=5$ system S1 has
-35 polynomials in $\mathbb{Q}[m_1,\dots,m_5,r_{12},\dots,r_{45}]$ (20 asymmetric, 10 symmetric, 5
-planar Cayley--Menger)\MV. System S2 omits \texttt{-{}-alsosymmetric}.
+and \texttt{-{}-cayleymenger2} adds the planar Cayley--Menger polynomials. With $S_{ij}=r_{ij}^{-3}-1$ and
+$S_{ii}=0$, the asymmetric equations are
+\begin{equation}\label{eq:asym}
+g_{ij}=\sum_{k=1}^{n} m_k\,S_{ik}\,\bigl(r_{jk}^2-r_{ik}^2-r_{ij}^2\bigr),\qquad i\ne j,
+\end{equation}
+and the symmetric equations are $f_{ij}=g_{ij}+g_{ji}$, the sum displayed in Section~\ref{sec:calib}. The
+forms are those of \cite{HJ11}, as implemented in \path{CC/code/cclib/__init__.py}\MV. Planarity of four bodies
+$a<b<c<d$ is the vanishing of the bordered Cayley--Menger determinant of their squared distances,
+\begin{equation}\label{eq:cm}
+\det\begin{pmatrix}
+0&1&1&1&1\\
+1&0&r_{ab}^2&r_{ac}^2&r_{ad}^2\\
+1&r_{ab}^2&0&r_{bc}^2&r_{bd}^2\\
+1&r_{ac}^2&r_{bc}^2&0&r_{cd}^2\\
+1&r_{ad}^2&r_{bd}^2&r_{cd}^2&0
+\end{pmatrix}=0,
+\end{equation}
+one polynomial for each of the $\binom n4$ quadruples. System S1 has therefore
+\begin{equation}\label{eq:sizes}
+|\mathrm{S1}|=n(n-1)+\frac{n(n-1)}{2}+\binom n4
+\end{equation}
+polynomials, the three terms being the asymmetric, the symmetric and the Cayley--Menger ones. The stored system
+files hold \numPolyFourOne\ polynomials at $n=4$ and \numPolyFiveOne\ at $n=5$ (20 asymmetric, 10 symmetric, 5
+Cayley--Menger), in $\mathbb{Q}[m_1,\dots,m_5,r_{12},\dots,r_{45}]$ at $n=5$\MV. System S2 omits
+\texttt{-{}-alsosymmetric} and has \numPolyFiveTwo\ polynomials at $n=5$\MV.
 
 \begin{algorithm}[t]
 \caption{Tropical prevariety of the $n$-body system for a valuation vector $v=(v_1,\dots,v_n)$.}\label{alg:gfan}
@@ -245,7 +330,11 @@ the extra polynomials appended. In that mode the \texttt{gfan} 0.7 parser reject
 mixes $t^0$ with positive powers of $t$; because every polynomial of the system is homogeneous in
 the masses (the Albouy--Chenciner equations are linear in them, the energy--inertia relation is
 quadratic, the Cayley--Menger and Dziobek polynomials carry none), shifting all valuations by a
-constant multiplies each polynomial by a unit power of $t$ and leaves the prevariety unchanged.
+constant $c$ multiplies each polynomial $p$ by a unit power of $t$,
+\begin{equation}\label{eq:shift}
+p\bigl(t^{v_1+c},\dots,t^{v_n+c},r\bigr)=t^{\,c\,d_p}\;p\bigl(t^{v_1},\dots,t^{v_n},r\bigr),
+\end{equation}
+where $d_p$ is the degree of $p$ in the masses (one, two or zero as listed), and leaves the prevariety unchanged\Dm.
 The shifted arithmetic baseline reproduces the unshifted $f$-vector exactly\MV.
 
 \subsection{Comet extraction}
@@ -283,7 +372,10 @@ nonnegative solution of $\sum_i\lambda_i g_i=0$ is $\lambda=0$. This is the sing
 \end{equation}
 where $G$ has the generators as columns. A feasible point is a certificate that the cone is not
 pointed; infeasibility yields, by Farkas' lemma and the phase-I dual, a vector $c$ with
-$c\cdot g_i<0$ for every generator, a certificate that it is pointed.
+$c\cdot g_i<0$ for every generator, a certificate that it is pointed\Dm,
+\begin{equation}\label{eq:dual}
+\text{$C$ pointed}\iff\exists\,c\in\mathbb{R}^d:\quad c\cdot g_i<0\quad(i=1,\dots,k).
+\end{equation}
 
 \begin{algorithm}[t]
 \caption{Exact pointedness of a comet (phase-I simplex over \texttt{Fraction}, Bland's rule).}\label{alg:lp}
@@ -391,9 +483,9 @@ f_{ij}=\sum_{k=1}^{n} m_k\left[S_{ik}\,(r_{jk}^2-r_{ik}^2-r_{ij}^2)
 The normalization corresponds to the force constant $\lambda$ equal to the total mass $M$ (for four
 unit masses, $\lambda=4$)\Dm.
 Our exact implementation (sympy over $\mathbb{Q}$) reproduces, for four
-exact mass vectors, the classical $n=3$ landscape: the Lagrange point
+exact mass vectors, the classical $n=3$ landscape: the Lagrange point \cite{Lagrange72}
 $r_{12}=r_{13}=r_{23}=1$ identically in symbolic masses, and exactly one
-positive collinear solution per ordering (Euler--Moulton \cite{Moulton10}; for equal masses the
+positive collinear solution per ordering (Euler \cite{Euler67} and Moulton \cite{Moulton10}; for equal masses the
 2-middle chart value is $r_{12}=r_{23}=\sqrt[3]{90}/6$), with the degree-54
 symbolic Euler eliminant persisted\MV. For $n=4$ each cleared AC polynomial has
 exactly 14 monomials, matching the count stated in \cite{HM06}\MV.
@@ -408,11 +500,21 @@ The distance equations are dimension-blind, exactly as stated in \cite{HM06};
 planarity is restored only by adjoining the Cayley--Menger equation, after
 which the square is the unique positive point of the stratum\MV.
 
-The word \emph{unique} needs its normalization. The sextic $32a^6-32a^3+7$ has two positive real
+The word \emph{unique} needs its normalization. The roots of the sextic satisfy\Dm
+\begin{equation}\label{eq:rhombus}
+32a^6-32a^3+7=0\iff a^3=\frac{4\pm\sqrt2}{8},
+\end{equation}
+so it has two positive real
 roots, $a\approx0.68628$ and $a\approx0.87797$, and a square of four equal masses is central at every
 size, since scaling only rescales $\lambda$; the two roots give $\lambda\approx8.3753$ and
 exactly $4$. The root singled out is the larger one, the only one with the force constant of the
 normalization $\lambda=M=4$\MV\ (\texttt{CC/context/2026-08-25-adversarial-audit.md}, section~2). % voice-ok
+With $M=\sum_i m_i$, the potential $U$ and the moment of inertia $I$ about the center of mass,
+\begin{equation}\label{eq:eiu}
+U=\sum_{i<j}\frac{m_im_j}{r_{ij}},\qquad I=\frac1M\sum_{i<j}m_im_jr_{ij}^2,\qquad e_{IU}:=U-MI=0,
+\end{equation}
+the last relation being a consequence of the symmetric equations under the normalization $S_{ij}=r_{ij}^{-3}-1$
+(\path{CC/code/cclib/__init__.py}, function \texttt{e\_iu}; equation~(7) of \cite{HJ11}). % voice-ok
 We record the scale-free invariant $J=UI^{1/2}/M^{5/2}$ at both anchors:
 \begin{equation}\label{eq:J}
 J_{\square}=\tfrac1{16}+\tfrac{\sqrt2}{8},\qquad J_{\mathrm{tet}}=\tfrac{3\sqrt6}{32}
@@ -435,8 +537,8 @@ root isolation, and exact residual acceptance (Section~\ref{sec:methods}).
 The bare symmetric system is never zero-dimensional: the line
 $r_{13}=r_{23}=0$ lies in its variety for all masses (machine-verified
 symbolically)\MV, and saturation is expensive. Adjoining the $n(n-1)$ asymmetric
-equations $g_{ij}=\sum_k m_k S_{ik}(r_{jk}^2-r_{ik}^2-r_{ij}^2)$ (observed by
-G.~Roberts; see \cite{HJ11,JL25}) and the energy--inertia relation $U=MI$
+equations \eqref{eq:asym} (observed by
+G.~Roberts; see \cite{HJ11,JL25}) and the energy--inertia relation \eqref{eq:eiu}
 changes the picture completely: for all four sample mass vectors the enriched
 ideal is zero-dimensional \emph{directly} (Gr\"obner basis of size 24 in under
 a second each), and the full positive censuses, where decided, are exactly
@@ -674,9 +776,82 @@ failure of arithmetic valuations reported in \cite{JL25}, and localise it to a
 single component out of 181\MV.
 
 The logical direction matters: pointedness of every comet is a
-\emph{sufficient} condition for dimension zero, so an unpointed comet proves only
-that this certificate route does not close, never that finiteness fails. The
+\emph{sufficient} condition for dimension zero, so an unpointed comet proves
+only that this certificate route does not close, never that finiteness fails. The
 prevariety over-approximates the tropical variety\Dm.
+
+Figure~\ref{fig:gens} gives the size of the nine unpointed comets, counted as the number of recession
+generators in the stored certificates. The three S1 comets have \numGenSoneMin\ to \numGenSoneMax\ generators and the six S2 comets
+\numGenStwoMin\ to \numGenStwoMax; the S2 cell at repeated valuations, the one whose $f$-vector has nine
+entries (Table~\ref{tab:f5}), carries by far the largest comet, 2224 generators against 401 for the next. The figure shows only the size of the
+failing component and not why it fails; the reason is the exact combination of generators stored in each
+certificate, whose combination has between \numCertNzMin\ and \numCertNzMax\ nonzero coefficients: a small subset of the
+generators already has a vanishing nonnegative combination, even in the comet of 2224 generators\MV.
+
+\begin{figure}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, ymode=log, width=0.94\linewidth, height=5.6cm, ylabel={recession generators},
+symbolic x coords={%
+% BEGIN GENERATED fig-gens-names
+S1 equal n4,S1 arithmetic,S1 repeated,S2 powers of 3,S2 squares,S2 powers of 2,S2 primes,S2 arithmetic,S2 repeated
+% END GENERATED fig-gens-names
+}, xtick={%
+% BEGIN GENERATED fig-gens-names
+S1 equal n4,S1 arithmetic,S1 repeated,S2 powers of 3,S2 squares,S2 powers of 2,S2 primes,S2 arithmetic,S2 repeated
+% END GENERATED fig-gens-names
+}, x tick label style={rotate=35, anchor=east, font=\scriptsize},
+tick label style={font=\scriptsize}, label style={font=\scriptsize}, bar width=11pt,
+legend style={font=\scriptsize, at={(0.02,0.97)}, anchor=north west},
+enlarge x limits=0.08, ymin=10, ymax=6000, point meta=explicit, nodes near coords, nodes near coords style={font=\tiny}]
+\addplot[fill=gray!35, bar shift=0pt] coordinates {
+% BEGIN GENERATED fig-gens-s1
+(S1 equal n4,49) [49] (S1 arithmetic,71) [71] (S1 repeated,95) [95]
+% END GENERATED fig-gens-s1
+};
+\addplot[fill=black!70, bar shift=0pt] coordinates {
+% BEGIN GENERATED fig-gens-s2
+(S2 powers of 3,241) [241] (S2 squares,289) [289] (S2 powers of 2,289) [289] (S2 primes,289) [289] (S2 arithmetic,401) [401] (S2 repeated,2224) [2224]
+% END GENERATED fig-gens-s2
+};
+\legend{S1, S2}
+\end{axis}
+\end{tikzpicture}
+\caption{Recession generators of the single unpointed comet in each of the nine failing cells, on a
+logarithmic scale: the equal-valuation cell at $n=4$ and two $n=5$ cells of system S1, and the six $n=5$ cells of
+system S2. Counts are read from the stored exact certificates of the pointedness decision.}\label{fig:gens}
+\end{figure}
+
+The exact decision costs little next to the polyhedral computation. Figure~\ref{fig:times} plots, for the twelve $n=5$ cells, the
+decider time against the \texttt{gfan} wall time of the same cell: the decider takes between \numRatioMin\ and
+\numRatioMax\ percent of the \texttt{gfan} time. The comparison is of wall-clock seconds only; the \texttt{gfan} runs
+used 30 threads (Algorithm~\ref{alg:gfan}) and the thread count of the decider is not recorded in its summary file. The figure does not show how the
+decider scales with the number of generators beyond the largest comet of the grid, 2224 generators, which took 15.8 seconds.
+
+\begin{figure}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[xmode=log, ymode=log, width=0.66\linewidth, height=5.4cm,
+xlabel={\texttt{gfan} wall time (s)}, ylabel={exact decider time (s)},
+legend style={font=\scriptsize, at={(1.03,0.5)}, anchor=west},
+tick label style={font=\scriptsize}, label style={font=\scriptsize}, xmin=50, xmax=2000, ymin=0.3, ymax=40]
+\addplot[only marks, mark=*] coordinates {
+% BEGIN GENERATED fig-times-s1
+(225,0.9) (362,2.2) (216,0.7) (223,0.8) (379,1.4) (174,1.0)
+% END GENERATED fig-times-s1
+};
+\addplot[only marks, mark=square*] coordinates {
+% BEGIN GENERATED fig-times-s2
+(87,1.5) (115,2.2) (98,1.7) (75,1.4) (107,2.2) (1253,15.8)
+% END GENERATED fig-times-s2
+};
+\addplot[dashed, no marks, domain=50:2000] {0.01*x};
+\legend{S1, S2, 1 percent of the \texttt{gfan} time}
+\end{axis}
+\end{tikzpicture}
+\caption{Exact decider time against \texttt{gfan} wall time for the twelve $n=5$ cells of Table~\ref{tab:n5}, both
+on logarithmic axes; circles are system S1 and squares system S2, the dashed line marks one percent of the
+\texttt{gfan} time. Times are read from the stored screening table and decision summary.}\label{fig:times}
+\end{figure}
+
 
 \subsection{Adding equations: what helps and what does not (EXP-008)}
 
@@ -805,7 +980,9 @@ unexplained boxes\MV. Two implementations that share no code agree on every deci
 instance.
 
 The same computation shows that the enriched planar $n=4$ system does not admit an
-isolated census to compare with the published equal-mass class count: msolve reports
+isolated census to compare with the published equal-mass class count (a numerical census of Sim\'o \cite{Simo78}\Um,
+the symmetric configurations of four equal masses of Albouy \cite{Albouy96}\Um\ and the rigorous counts of
+\cite{MZ19}): msolve reports
 the affine system to have dimension one, so there is no
 isolated census to compare\MV. Diagnostics exclude the vanishing-distance loci as the
 cause, which leaves the reading the literature already acts on: the census belongs in
@@ -830,7 +1007,7 @@ rather than solutions, and finiteness towards dimension computations, as follows
 
 \medskip
 \noindent\textbf{Dimension of the $n=4$ Dziobek variety (EXP-010).}
-The object is the Dziobek variety of $n=4$: the vanishing of the cleared Dziobek
+The object is the Dziobek variety of $n=4$ (Dziobek \cite{Dziobek00}; bibliographic data only): the vanishing of the cleared Dziobek
 differences
 \begin{equation}\label{eq:dziobek}
 S_{12}S_{34}=S_{13}S_{24}=S_{14}S_{23}
@@ -896,7 +1073,7 @@ EXP-014).} Three further computations settle the engine question and reduce the
 $n=5$ question to a single open decision. First, the wall is an engine effect:
 Singular over $\mathbb{Q}$ (release and binary hash in Table~\ref{tab:tools}) completes twelve of
 the identical fifteen subideal jobs at 0.4--1 seconds each, against one completion
-near 100 seconds under sympy\MV. An exact-reproduction control also shows that
+near 100 seconds under sympy\MV\ (Figure~\ref{fig:singular}). An exact-reproduction control also shows that
 sympy's Gr\"obner output uses lexicographic ordering whatever order is requested,
 so the leading terms harvested in the EXP-011 run were lex leads of grevlex
 elements; that harvest gave only a vacuous bound, and no result depends on it.
@@ -915,6 +1092,43 @@ are therefore: products variety of dimension exactly 5, cut of dimension at
 most 5, expected value 4 undecided. The remaining decision (does Cayley--Menger
 vanish identically on a top component?) calls for certified witness sets, and
 the cost law, measured twice, guides the work on the symmetric strata below.
+
+\begin{figure}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[ymode=log, width=0.94\linewidth, height=5.2cm,
+xlabel={job number in the record (0 to 14: archived subideals; 15 to 30: lighter menu)},
+ylabel={Singular wall time (s)}, ymin=0.2, ymax=400, xmin=-1, xmax=31,
+legend style={font=\scriptsize, at={(0.5,-0.3)}, anchor=north, legend columns=4},
+tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+\addplot[only marks, mark=*] coordinates {
+% BEGIN GENERATED fig-singular-done
+(0,0.6) (2,0.5) (3,0.4) (5,0.5) (6,0.4) (8,0.5) (9,0.5) (10,0.4) (11,0.4) (12,0.5) (13,0.4) (14,0.5)
+% END GENERATED fig-singular-done
+};
+\addplot[only marks, mark=triangle*, mark size=3pt] coordinates {
+% BEGIN GENERATED fig-singular-capped
+(1,130.7) (4,130.7) (7,130.8)
+% END GENERATED fig-singular-capped
+};
+\addplot[only marks, mark=square*] coordinates {
+% BEGIN GENERATED fig-singular-menu
+(15,0.4) (16,0.4) (17,0.4) (18,0.4) (19,0.4) (20,0.4) (21,0.4) (22,0.4) (23,0.4) (24,0.5) (25,0.6) (26,0.5) (27,0.6) (28,0.5) (29,0.4) (30,0.4)
+% END GENERATED fig-singular-menu
+};
+\addplot[dashed, no marks, domain=-1:31] {120};
+\legend{archived, archived at the cap, lighter menu, 120 s cap}
+\end{axis}
+\end{tikzpicture}
+\caption{Wall time of the 31 Singular jobs of the partial Gr\"obner spike on a logarithmic scale: the 15 archived
+subideals of the spatial Dziobek cut (twelve complete, three reach the 120 s cap) and the 16 jobs of the lighter
+menu, all complete. Times are read from the stored timing file; the capped readings exceed 120 s by the
+overhead of the time limit.}\label{fig:singular}
+\end{figure}
+
+The figure shows the sharp separation behind that reading: all 28 completed jobs take between \numSingMin\ and \numSingMax\
+seconds, and the three archived subideals that do not complete (jobs 1, 4 and 7, which share the body pair $\{1,2\}$
+in their pairing structure) hit the cap. No job takes an intermediate time, so the cost is a threshold effect of the
+subideal and not a smooth function of its size; the figure cannot say what the threshold is, and the records leave it unexplained.
 
 \section{The two-pair symmetric stratum of six bodies (EXP-015 to EXP-023)}\label{sec:stratum}
 
@@ -958,7 +1172,12 @@ By the reflection $(34)(56)$, which preserves all distances and reverses orienta
 vanish and the other twelve equations pair up with signs, leaving six independent equations
 $\{L_{13},L_{15},L_{23},L_{25},L_{35},L_{36}\}$, each linear in $(m_1,m_2,m_A,m_B)$\Dm; the pairing is
 confirmed at a witness geometry, where the six partner equations are exact negatives of the block
-equations\MV. The block is a $6\times4$ matrix $J(u,v,p,q)$ whose kernel gives the admissible masses.
+equations\MV. The block is a $6\times4$ matrix $J(u,v,p,q)$ whose kernel gives the admissible masses,
+\begin{equation}\label{eq:kernel}
+J(u,v,p,q)\begin{pmatrix}m_1\\ m_2\\ m_A\\ m_B\end{pmatrix}=0,\qquad
+J=\bigl(J[L][c]\bigr)_{\,L\in\{L_{13},L_{15},L_{23},L_{25},L_{35},L_{36}\},\ c\in\{m_1,m_2,m_A,m_B\}},
+\end{equation}
+where $J[L][c]$ is the coefficient of the mass $c$ in the equation $L$\Dm\ (\path{CC/context/2026-08-20-stratum-theorem-assembly.md}, section~1). % voice-ok
 The gauged shape variety $X$ has dimension 4 (five ungauged), by two engines in one second each\MV.
 Its closure $X^{+}$ of the image of the irreducible parameter space $(a_1,a_2,u,v,p,q)$ is
 irreducible of dimension 4\Dm. The matrix has rank 4 at the two exact witnesses
@@ -1078,6 +1297,40 @@ the computational ones of Table~\ref{tab:stratum}: the single-minor Gr\"obner cu
 (EXP-020) and the certified covering (EXP-021, EXP-022). The covering does not prove the case by itself, because its
 statement is not assembled (below).
 
+The sign-chamber relaxation asks whether the eight conditions can hold together at rank at most two when only
+their sign pattern is kept. Six of the conditions have three terms and two have five. The count runs over the 24 feasible orientation
+chambers. Within each, the 22 ordering atoms of the inverse-cube differences $s(a,b)$ and up to four bracket atoms are left free
+except for the forced sums, a sound superset of the real sign patterns, and an exact GF(2) inclusion--exclusion count (256
+affine-system ranks per chamber) gives the number of surviving assignments. An empty residual in every chamber would have been a sound
+emptiness conclusion. Figure~\ref{fig:chambers} shows the outcome: no chamber is empty, and the total is \numChamberTotal\ assignments.
+Every count is one, two or four times \numChamberUnit, with twelve, eight and four chambers at those levels, so the
+distribution is quantized and not concentrated in a few chambers; the four largest chambers hold 16 of the 44 units, 36 percent.
+The figure counts a superset and says nothing about which assignments are geometric. The reason the relaxation fails
+is the freedom it grants: an ordering atom is a function of the coordinates. The first coupling in closed form is
+\begin{equation}\label{eq:coupling}
+\operatorname{sign}s(d_{1A},w_A)=\operatorname{sign}\bigl(4u^2-d_{1A}^2\bigr)=\operatorname{sign}\bigl(3u^2-h_1^2\bigr),\qquad h_1=a_1-v,
+\end{equation}
+because $w_A=2u$, $s(a,b)>0$ exactly when $a<b$ and $d_{1A}^2=u^2+h_1^2$\Dm\ (\path{CC/experiments/EXP-020-chamber-enumeration/verdict.md}). % voice-ok
+So this ordering atom is decided by comparing the height $|h_1|$ with $\sqrt3\,u$, an atom the free-atom count cannot see, and
+the same holds for the other ordering atoms\Dm.
+
+\begin{figure}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, width=0.94\linewidth, height=5cm, ylabel={residual assignments (millions)},
+xlabel={orientation chamber, sorted by residual count}, xtick={1,4,8,12,16,20,24}, ymin=0, bar width=5pt,
+tick label style={font=\scriptsize}, label style={font=\scriptsize}, enlarge x limits=0.03]
+\addplot[fill=gray!55] coordinates {
+% BEGIN GENERATED fig-chambers
+(1,2.843136) (2,2.843136) (3,2.843136) (4,2.843136) (5,2.843136) (6,2.843136) (7,2.843136) (8,2.843136) (9,2.843136) (10,2.843136) (11,2.843136) (12,2.843136) (13,5.686272) (14,5.686272) (15,5.686272) (16,5.686272) (17,5.686272) (18,5.686272) (19,5.686272) (20,5.686272) (21,11.372544) (22,11.372544) (23,11.372544) (24,11.372544)
+% END GENERATED fig-chambers
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Residual sign assignments of the free-atom relaxation in each of the 24 feasible orientation chambers,
+sorted by count, in millions. The counts take the three values 1, 2 and 4 times 2.843136 million and total 125.097984 million;
+no chamber has an empty residual. Data are the stored per-chamber counts of the experiment.}\label{fig:chambers}
+\end{figure}
+
 \subsection{The certified interval atlas}
 
 A box of the coordinates $(u,v,p,q)$ is discharged by one of three certificates, all in exact rational interval
@@ -1089,18 +1342,81 @@ is singular (collisions, pair collapses, infinity) the matrix is first put in an
 singular factor cancelled algebraically, and each chart is gated by a five-point crosscheck against the original matrix.
 Symmetry gives a Klein four-group of exact matrix identities (the swap $(u,v,p,q)\mapsto(p,q,u,v)$ and the mirror
 $(v,q)\mapsto(-v,-q)$) under which every certificate is invariant\MV.
+The statement certified differs from the one that certified numerical methods address. Smale's $\alpha$-theory in exact
+rational arithmetic certifies an approximate solution of a polynomial system (Hauenstein and Sottile
+\cite{HS12}\Um), and interval certification does the same with interval arithmetic (Breiding, Rose and Timme
+\cite{BRT23}\Um); the atlas certifies a rank condition on every box of a region, which is a statement about a
+family of matrices and not about a zero, with the same ingredient of rigorous enclosures.
 
 Residual failures of the charts have three origins. A box that contains an excluded face (a collision locus or a
 blow-up face) cannot be certified, because the matrix genuinely drops rank there. The face principle resolves it
 in two halves: every dyadic shell at positive distance from the face certifies (measured over six halvings), and closed
 forms make the rank floor uniform over the shells. Piece 10 treats the corner face (a pair on an axis body), piece 11 the
-pair-collapse face (both pairs onto the axis, with explicit leading coefficient
-$4ab\,[\varphi(1-v)\varphi(-1-q)-\varphi(-1-v)\varphi(1-q)]$, $\varphi(x)=x(1/8-1/|x|^3)$) and piece 12 the two merge
-faces\MV. Limited resolution is the second origin: for every chart with failures, the failures share exactly one box
+pair-collapse face and piece 12 the two merge faces\MV. At the pair-collapse face both pairs approach the axis,
+$u=\varepsilon a$ and $p=\varepsilon b$ with $a,b>0$ fixed and $\varepsilon\to0$, at fixed heights $v\ne q$. After the
+mass columns $m_1$ and $m_2$ are divided by $\varepsilon$ (a positive factor, which does not change the rank) the
+$4\times4$ minor on the rows $\{L_{13},L_{15},L_{23},L_{25}\}$ has the closed form
+\begin{equation}\label{eq:collapse}
+C_2=4ab\,\bigl[\varphi(1-v)\,\varphi(-1-q)-\varphi(-1-v)\,\varphi(1-q)\bigr],\qquad
+\varphi(x)=x\Bigl(\frac18-\frac1{|x|^3}\Bigr),
+\end{equation}
+verified to eight significant digits at $\varepsilon=10^{-7}$ on three rational geometries\MV\
+(\path{CC/context/2026-08-02-rank-floor-lemma-dossier.md}, piece~11, lines 782--830). % voice-ok
+It vanishes only on a curve of the height plane that does not depend on $a$ and $b$, and on six points of that curve a
+$3\times3$ minor with a nonzero limit carries the rank floor\MV. Limited resolution is the second origin: for every chart with failures, the failures share exactly one box
 width, the width reached at the shared depth cap, and a deeper cap discharges them\MV. The third origin is mathematics,
 once: the cross point below. The face table of the atlas is complete: every chart's matrix evaluated on its own face is
 either full rank or closed by pieces 10 to 12\MV.
 Table~\ref{tab:atlas} gives the residue accounting.
+
+Figure~\ref{fig:atlas} shows which certificate closes the boxes in the \numAtlasRuns\ covering runs whose stored summary
+ends with zero failed boxes and that the accounting lists as certified: the core covering of the shape variety, the four collision-tube
+charts, the low-$u$ chart, the far chart, the opposite bi-corner chart and the depth-76 re-run of the fa2b residue. A run is a
+binary bisection forest, and a box is counted once, as a leaf, by the certificate that closed it. Pooled over the
+runs, \numAtlasLeaves\ leaf boxes are closed, \numAtlasCertShare\ percent of them by a plain rank certificate; the plain share
+runs from \numAtlasCertMin\ percent (\numAtlasCertMinRun) to \numAtlasCertMax\ percent (\numAtlasCertMaxRun). The trap
+carries up to \numAtlasTrapMax\ percent of the leaves (\numAtlasTrapRun), which is where $R_2$ is only confined and not excluded. Discarded boxes are those a chart sets aside by a declared region test, as the deep chart leaves the quadruple corner to another chart. In the core run,
+\numAtlasBall\ boxes are closed by the ball certificate around the exact rank-2 points and are not drawn. The figure does not
+show the failed boxes of the runs that did not close, and it does not test the charts themselves, which rest on the
+five-point crosscheck against the original matrix.
+
+\begin{figure}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[ybar stacked, width=0.94\linewidth, height=6cm, ylabel={share of leaf boxes (percent)},
+symbolic x coords={%
+% BEGIN GENERATED fig-atlas-names
+core,tube-L,tube-R,tubeext-L,tubeext-R,ulow,fa1,bicorner-opp,fa2b-residue
+% END GENERATED fig-atlas-names
+}, xtick=data, x tick label style={rotate=35, anchor=east, font=\scriptsize},
+tick label style={font=\scriptsize}, label style={font=\scriptsize}, bar width=14pt, ymin=0, ymax=100,
+enlarge x limits=0.07, legend style={font=\tiny, at={(0.5,1.02)}, anchor=south, legend columns=4}]
+\addplot[fill=gray!25] coordinates {
+% BEGIN GENERATED fig-atlas-cert
+(core,96.679) (tube-L,82.194) (tube-R,82.557) (tubeext-L,96.363) (tubeext-R,96.351) (ulow,85.771) (fa1,74.783) (bicorner-opp,75.330) (fa2b-residue,66.972)
+% END GENERATED fig-atlas-cert
+};
+\addplot[fill=gray!60] coordinates {
+% BEGIN GENERATED fig-atlas-mv
+(core,1.137) (tube-L,4.494) (tube-R,4.189) (tubeext-L,0.000) (tubeext-R,0.000) (ulow,6.693) (fa1,9.684) (bicorner-opp,4.524) (fa2b-residue,11.009)
+% END GENERATED fig-atlas-mv
+};
+\addplot[fill=black!75] coordinates {
+% BEGIN GENERATED fig-atlas-trap
+(core,0.000) (tube-L,13.312) (tube-R,13.254) (tubeext-L,3.637) (tubeext-R,3.649) (ulow,5.923) (fa1,15.189) (bicorner-opp,20.146) (fa2b-residue,0.000)
+% END GENERATED fig-atlas-trap
+};
+\addplot[fill=white, draw=black] coordinates {
+% BEGIN GENERATED fig-atlas-disc
+(core,2.181) (tube-L,0.000) (tube-R,0.000) (tubeext-L,0.000) (tubeext-R,0.000) (ulow,1.613) (fa1,0.345) (bicorner-opp,0.000) (fa2b-residue,22.018)
+% END GENERATED fig-atlas-disc
+};
+\legend{rank certificate, mean-value form, trap, discarded}
+\end{axis}
+\end{tikzpicture}
+\caption{Share of the leaf boxes closed by each certificate in the nine covering runs that end with zero failed
+boxes: plain rank certificate, mean-value form, trap, and discarded boxes (set aside by the declared region test of the chart). Shares are
+read from the stored run summaries; the ball-certified boxes of the core run are too few to show.}\label{fig:atlas}
+\end{figure}
 
 \begin{table}[t]\centering\footnotesize
 \begin{tabular}{@{}L{3.4cm}L{2.2cm}L{6.9cm}@{}}
@@ -1145,7 +1461,11 @@ half-powers $C=(u^2+1)^{-3/2}$ and $D=(p^2+1)^{-3/2}$ by resultants leaves two i
 936 terms, both vanishing at the point to relative $3.6\times10^{-60}$ and $2.6\times10^{-65}$\MV. The polynomial $g_1$ is the
 square of an irreducible polynomial of total degree 40, $g_2$ is irreducible of total degree 56, and $\gcd(g_1,g_2)$ has total
 degree 0\MV. The common zero set is therefore zero-dimensional: the degenerate configurations of the doubly symmetric cross family
-are finite, at most $40\times56=2240$ over $\mathbb{C}$ with multiplicity (the resultants may carry extraneous factors, which
+are finite. With $g_1=h^2$, $h$ irreducible,
+\begin{equation}\label{eq:bezout}
+\deg h=40,\quad\deg g_2=56,\quad\gcd(h,g_2)=1\ \Longrightarrow\ \#\{h=g_2=0\}\le40\cdot56=2240,
+\end{equation}
+counted over $\mathbb{C}$ with multiplicity (the resultants may carry extraneous factors, which
 places the true set inside their common zero set, the direction finiteness needs)\MV\Dm. The written argument is in
 \path{CC/context/2026-08-02-rank-floor-lemma-dossier.md}, lines 1227--1272, % voice-ok
 and \path{CC/history/log.md}, lines 822--880 (Round 54), with
@@ -1251,7 +1571,8 @@ formalization and a supplement of certificates; Chen and Tong \cite{ChenTong26};
 \cite{LiuLiu26}\Vm. All three complete the Albouy--Kaloshin classification of singular sequences
 \cite{AK12} on the exceptional mass set that \cite{AK12} leaves open. The question of the
 previous sections for $n=5$ is therefore settled, if these claims hold, and the priority is theirs. None
-of the three is refereed.
+of the three is refereed. The computer-assisted counts of \cite{MZ26} are an
+earlier, separate line: exact class counts for several exceptional mass sets\Vm.
 
 We audited the formalization of \cite{Tomar26} without rebuilding it. Its main theorem,
 $\forall m,\ (\forall i,\ 0<m_i)\to\mathrm{FinitelyManyCC}\ m$, is built from a planar configuration
@@ -1294,6 +1615,12 @@ quadruple-corner chart region is open, the pair-equality statement is untested b
 questions on the degenerate points are open.
 \item The five-body claims are unrefereed and were not rebuilt; the audit of the Lean statement is a text scan with the limits stated.
 \item The enrichment cells at powers of two are read from stored outputs; their wall times were not stored.
+\item The stored summary files of several covering runs hold failure counts that differ from the residue accounting of
+Table~\ref{tab:atlas} (for example, twenty failed boxes are stored for the collapse chart against zero in the accounting). The
+records do not say why, so the accounting follows the assembly record, and Figure~\ref{fig:atlas} uses only the runs whose
+stored summary has zero failed boxes and that the accounting lists as certified. Two further runs, of a chart that
+reparametrizes the quadruple corner, are stored with zero failed boxes at a depth cap of 48; no record states their coverage of the
+corner, so the corner is reported as open and the runs are not used.
 \end{enumerate}
 
 \section{Scope and data availability}
@@ -1310,9 +1637,9 @@ the sympy layer retained as exact verification, while the $n=4$ torus censuses
 and the Dziobek census probes remain capped as reported above. Statements that rest on
 a literature source not read in its primary form carry the mark \Um.
 
-The tables and figure data of Section~\ref{sec:screening} are generated from the stored
+The tables, the figure data and the numbers quoted from the records in the figures' discussion are generated from the stored
 artifacts by \path{gen_tables.py} next to the source, which
-stops when a recomputed cell differs from a stored value.
+stops when a recomputed cell differs from a stored value or a stored record is missing.
 
 {\raggedright
 Code, artifacts and experiment records are available at
@@ -1370,6 +1697,43 @@ preprint mp\_arc 98-554).
 et les distances mutuelles}, Invent. Math. \textbf{131} (1998), 151--184.
 \bibitem{Moulton10} F.~R.~Moulton, \emph{The straight line solutions of the
 problem of $n$ bodies}, Ann. of Math. \textbf{12} (1910), 1--17.
+\bibitem{Euler67} L.~Euler, \emph{De motu rectilineo trium corporum se mutuo attrahentium}, 1767; cited
+through the secondary literature, the primary printing was not read.
+\bibitem{Lagrange72} J.-L.~Lagrange, \emph{Essai sur le probl\`eme des trois corps}, 1772; cited through the
+secondary literature, the primary printing was not read.
+\bibitem{Dziobek00} O.~Dziobek, \emph{\"Uber einen merkw\"urdigen Fall des Vielk\"orperproblems}, Astron. Nachr.
+\textbf{152} (1900), 33--46, doi:10.1002/asna.19001520302 (bibliographic data confirmed on Crossref; the
+paper was not read).
+\bibitem{Dias17} T.~Dias, \emph{New equations for central configurations and generic finiteness}, Proc. Amer. Math. Soc.
+\textbf{145} (2017), 3069--3084, doi:10.1090/proc/13427.
+\bibitem{Dias26} T.~Dias, \emph{The Veronese geometry of Dziobek configurations and generic finiteness for homogeneous
+potentials}, arXiv:2601.07962, 2026 (abstract read).
+\bibitem{MZ20} M.~Moczurad and P.~Zgliczy\'nski, \emph{Central configurations in the spatial $n$-body problem for
+$n=5,6$ with equal masses}, Celest. Mech. Dyn. Astron. \textbf{132} (2020), no.~11--12,
+doi:10.1007/s10569-020-09993-1; arXiv:2006.06768 (abstract read).
+\bibitem{MZ26} M.~Moczurad and P.~Zgliczy\'nski, \emph{Central configurations with unequal masses: finiteness in several
+exceptional cases of five bodies}, arXiv:2601.01165, 2026 (abstract read).
+\bibitem{Jensen24} A.~N.~Jensen, \emph{Dynamic decomposition of tropical prevarieties for celestial mechanics}, in
+Mathematical Software, ICMS 2024, Lecture Notes in Comput. Sci., Springer, 2024, 313--321,
+doi:10.1007/978-3-031-64529-7\_34 (cited through \cite{JL25}; not read).
+\bibitem{BG84} R.~Bieri and J.~R.~J.~Groves, \emph{The geometry of the set of characters induced by valuations},
+J. reine angew. Math. \textbf{347} (1984), 168--195, doi:10.1515/crll.1984.347.168 (cited through \cite{JL25}; not read).
+\bibitem{Payne09} S.~Payne, \emph{Fibers of tropicalization}, Math. Z. \textbf{262} (2009), 301--311,
+doi:10.1007/s00209-008-0374-x (cited through \cite{JL25}; not read; an erratum, Math. Z. \textbf{272} (2012),
+1403--1406, doi:10.1007/s00209-012-1080-2, exists and was not read).
+\bibitem{MS15} D.~Maclagan and B.~Sturmfels, \emph{Introduction to Tropical Geometry}, Graduate Studies in
+Mathematics \textbf{161}, American Mathematical Society, 2015, doi:10.1090/gsm/161 (cited through \cite{JL25}; not read).
+\bibitem{HS12} J.~D.~Hauenstein and F.~Sottile, \emph{Algorithm 921: alphaCertified: certifying solutions to
+polynomial systems}, ACM Trans. Math. Software \textbf{38} (2012), no.~4, doi:10.1145/2331130.2331136;
+arXiv:1011.1091 (abstract level only).
+\bibitem{BRT23} P.~Breiding, K.~Rose and S.~Timme, \emph{Certifying zeros of polynomial systems using interval
+arithmetic}, ACM Trans. Math. Software \textbf{49} (2023), no.~1, doi:10.1145/3580277; arXiv:2011.05000
+(abstract level only).
+\bibitem{Simo78} C.~Sim\'o, \emph{Relative equilibrium solutions in the four body problem}, Celest. Mech.
+\textbf{18} (1978), 165--184, doi:10.1007/BF01228714 (cited through \cite{MZ19}; not read).
+\bibitem{Albouy96} A.~Albouy, \emph{The symmetric central configurations of four equal masses}, in Hamiltonian
+Dynamics and Celestial Mechanics, Contemp. Math. \textbf{198}, Amer. Math. Soc., 1996, 131--135,
+doi:10.1090/conm/198/02494 (cited through \cite{MZ19}; not read).
 \end{thebibliography}
 
 \end{document}

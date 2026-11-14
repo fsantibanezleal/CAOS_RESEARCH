@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Exact replication and screening of tropical finiteness certificates for central configurations",
+    "title": "Replication and screening of tropical finiteness certificates for central configurations, with exact comet decisions and the status of a six-body symmetric stratum",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -70,11 +70,76 @@
         "relation": "cites",
         "identifier": "10.5281/zenodo.23202861",
         "resource_type": "dataset"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1002/asna.19001520302",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/proc/13427",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2601.07962",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2601.01165",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s10569-020-09993-1",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/978-3-031-64529-7_34",
+        "resource_type": "publication-conferencepaper"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1515/crll.1984.347.168",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s00209-008-0374-x",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/gsm/161",
+        "resource_type": "publication-book"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1145/2331130.2331136",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1145/3580277",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/BF01228714",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/conm/198/02494",
+        "resource_type": "publication-section"
       }
     ],
     "version": "0.12",
     "language": "eng",
     "publication_date": "2026-11-14",
-    "version_notes": "Corrections and additions: the six-body two-pair stratum section is rewritten to the state of the records (cases k = 0, 1, 2, 4 proved with pointers, k = 3 reduced to four bilinear conditions, the certified atlas, the cross point and the finiteness of its family, the dropped draft statement and three open questions, EXP-019 to EXP-023); statements are marked [MV], [D], [V] or [U] and called proved only with a written proof; a methods section with five algorithm blocks, tool releases and hashes; complete result tables (S1 and S2 at n = 5, n = 4, the twelve-cell enrichment grid) and two figures generated from the stored artifacts; bit-width provenance (the prevariety runs use the fast path, the overflow-checked rerun is an open item) replacing the claim of certified polyhedral computation; the 25 percent reduction replaced by the entries; the normalization behind the larger root of the square; the n = 6 pause and parking facts; the EXP-024 statements restated as a scan of nine patterns."
+    "version_notes": "Corrections and additions: the six-body two-pair stratum section is rewritten to the state of the records (cases k = 0, 1, 2, 4 proved with pointers, k = 3 reduced to four bilinear conditions, the certified atlas, the cross point and the finiteness of its family, the dropped draft statement and three open questions, EXP-019 to EXP-023); statements are marked [MV], [D], [V] or [U] and called proved only with a written proof; a methods section with five algorithm blocks, tool releases and hashes; complete result tables (S1 and S2 at n = 5, n = 4, the twelve-cell enrichment grid) and two figures generated from the stored artifacts; bit-width provenance (the prevariety runs use the fast path, the overflow-checked rerun is an open item) replacing the claim of certified polyhedral computation; the 25 percent reduction replaced by the entries; the normalization behind the larger root of the square; the n = 6 pause and parking facts; the EXP-024 statements restated as a scan of nine patterns. Second pass of the same version: the title no longer says \"Exact\" and now names the exact comet decisions and the six-body stratum status; 13 display equations added (the asymmetric and energy-inertia equations, the Cayley-Menger determinant, the system size, the tropical prevariety and dimension statements, the valuation shift, the Farkas alternative, the rhombus roots, the mass-kernel condition, the sign coupling of the chamber relaxation, the pair-collapse coefficient and the degree bound of the cross family); five figures generated from the stored records (sizes of the unpointed comets, decider time against gfan time, Singular job times, residual assignments per orientation chamber, certificates of the covering runs); 15 references added, each cited where the text uses it; a subsection on what a pointed prevariety certifies."
   }
 }
