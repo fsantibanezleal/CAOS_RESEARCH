@@ -1,0 +1,148 @@
+\section{Results for the rings of 6-poles}\label{sec:results6}
+
+\subsection{Conducted sets of the 6-poles}\label{sec:conducted}
+
+\begin{proposition}[\claim{MV}]\label{prop:core}
+Let $H$ be the Petersen graph, the flower snark $J_5$ or $J_7$, or the dodecahedron. Every 6-pole
+$H - u - w$ ($u$, $w$ non-adjacent, connectors at $u$ and at $w$), and, for $H \ne J_7$, every
+6-pole $H - e_1 - e_2 - e_3$ ($e_1, e_2, e_3$ pairwise disjoint, any split of the six ends) conducts
+$\Oz$, $\OEc$ and $\ODtwo$; the set $\{\Oz, \OEc, \ODtwo\}$
+itself is conducted by $\PG - u - w$.
+\end{proposition}
+
+\begin{proof}
+One formula for each 6-pole up to automorphisms of $H$, each split and each orbit, with the class of
+the first connector fixed to a representative of the orbit (\nSplits{} splits, \nFormulasSix{} formulas; Table~\ref{tab:splits}). The
+satisfiable ones give maps accepted by the checker, the others are refuted with DRAT proofs
+accepted by \texttt{drat-trim}; none of the four graphs has a cycle-separating cut of at most four
+edges.
+\end{proof}
+
+\input{table-splits.tex}
+
+Table~\ref{tab:splits} and Figure~\ref{fig:conducted} show how the conducted sets are distributed. Every one of the
+\nSplits{} measured splits conducts $\Oz$, $\OEc$ and $\ODtwo$, and the three orbits $\ODthree$, $\OTone$, $\OTtwo$ are conducted by
+subsets of them: seven distinct sets occur, from the core $\{\Oz,\OEc,\ODtwo\}$ (26 splits, among them $\PG - u - w$) to the set of all six orbits
+(174 splits). The prediction that some 6-pole of a cyclically 5-edge-connected source fails to conduct $\Oz$ is refuted: the \nSplitsB{}
+shape-(b) splits all conduct it. Consequently no two of these 6-poles have disjoint conducted sets, and the ring theorem of
+Section~\ref{sec:rings} cannot show that a ring of them has no Petersen coloring.
+
+\begin{figure}[t]\centering
+\input{fig-conducted.tex}
+\caption{Share of the splits of each source and shape that conduct each of the six orbits (computation EXP-013, \texttt{conduct-*.json}): the orbits
+$\mathsf{0}$, $\mathsf{E}$ and $\mathsf{D}_2$ are conducted by every split (100\,\%), the others by a varying share.}\label{fig:conducted}
+\end{figure}
+
+\input{table-g52.tex}
+
+The charge spectrum of the 52-vertex counterexample differs in kind (Table~\ref{tab:g52}). Of its 212 orbits of 6-poles $\Gfty - u - w$ none
+conducts $\Oz$, which is the restoration argument of Section~\ref{sec:theory6} confirmed by 212 refutations, every pair conducts $\OEc$, and none conducts
+$\OTone$. So every critical pair of $\Gfty$ can carry a charge of the class of a single edge, 22 of the 212 pair orbits carry only such charges, and no
+pair carries the all-ones class.
+
+\subsection{Sector matrices of the 81 blocks}\label{sec:blocks}
+
+\input{table-blocks.tex}
+
+The sector matrices of all 81 blocks were computed by Algorithm~\ref{alg:sector} (Table~\ref{tab:blocks}). The nonempty sectors of every block
+equal the conducted orbits that computation EXP-013 measured independently for the same 6-pole and split, for example for all 14 shape-(a) blocks of $J_5$. The claw $Y$
+conducts $\{\Oz, \OEc, \ODthree, \ODtwo, \OTone\}$ and the superedge $S = \PG - u - w$ conducts $\{\Oz, \OEc, \ODtwo\}$, with \nSuperedgeZero, \nSuperedgeE{} and
+\nSuperedgeDtwo{} entries in those sectors. The sector-$\Oz$ matrix of the superedge has exactly two entries in each row: a star at $u$ extends in exactly two ways,
+the two automorphisms of $\PG$ that fix $u$ and its three neighbors. The re-check against the second encoding reached 46 of the 81 blocks
+and found no difference; the 35 not reached are named by family in Table~\ref{tab:blocks}.
+
+\subsection{Closures and the ring theorems}\label{sec:closures}
+
+\input{table-closures.tex}
+
+\begin{figure}[t]\centering
+\input{fig-closures.tex}
+\caption{Sizes of the exact closure and of the antichain certificate of the four families that were attempted (computation EXP-014, \texttt{closure-F*.json}, logarithmic scale);
+the bar of $F_4$ is the number of elements stored when the closure stopped at the cap of 200{,}000, not a closure size.}\label{fig:closures}
+\end{figure}
+
+\input{table-sectors.tex}
+
+Table~\ref{tab:closures} and Figure~\ref{fig:closures} give the closures. For $F_1$, $F_2$ and $F_3$ the closure is complete, has no zero-trace element, and
+the antichain certificate is much smaller: \nCertFtwo{} elements for the \nElemFtwo{} of $F_2$ and \nCertFthree{} for the \nElemFthree{} of $F_3$, with the longest new word shortening
+from 12 to 5 and from 13 to 6. The family $F_4$ is undecided: its exact closure of products of at least two of the 336 generators stopped at the cap with \nElemFfour{} elements at word length 3,
+and the antichain closures of $F_4$ and of $F_5$ reached the one-hour limit inside the products of two generators; no zero-trace element was found among the products computed.
+Table~\ref{tab:sectors} shows in which sectors the closure elements are colorable.
+
+\begin{theorem}[\claim{MV}]\label{thm:ringsY}
+Every ring of at least two blocks, each a claw or a Petersen superedge in either orientation, joined
+through arbitrary bijections, has a Petersen coloring. A ring of Petersen superedges always has one
+whose joining edges carry classes of the orbit $\OEc$.
+\end{theorem}
+
+\begin{proof}
+The sector matrices of $Y$ and $S$ were computed by Algorithm~\ref{alg:sector}, each model accepted by the checker, and recomputed by exhaustive
+enumeration of maps and by a second encoding with a second solver, with identical results. The set
+of all products of at least two generators was closed exhaustively for $\{Y\}$, $\{S\}$ and
+$\{Y, S\}$: it has $\nElemFone$, $\nElemFtwo$ and $\nElemFthree$ elements, all with a nonzero diagonal; for
+$\{S\}$ every element has a nonzero diagonal in the sector $\OEc$. Certificates in the sense of
+Corollary~\ref{cor:semigroup}, kept minimal under containment (Algorithm~\ref{alg:closure}), have $\nCertFone$, $\nCertFtwo$ and $\nCertFthree$
+elements and were re-verified by Algorithm~\ref{alg:check}, a separate program with a different matrix product. The ring statements follow from Corollary~\ref{cor:semigroup}.
+\end{proof}
+
+\begin{corollary}[flower snarks, \claim{MV}, \claim{D}]\label{cor:flower}
+For every odd $k \ge 5$, every Petersen coloring of $J_k$ maps the three edges joining two
+consecutive claws onto an antipodal triple of $\PG$.
+\end{corollary}
+
+\begin{proof}
+The products $(Y\,\mathrm{id})^{k-1}(Y\,\tau)$ are periodic in $k$ from $k = 5$ with period 2,
+and for odd $k$ only the sector $\OTone$ has a nonzero diagonal (for even $k$ only
+$\OEc$). By conduction all junctions of a coloring carry one class, which is therefore
+$\OTone$, and the 30 ordered triples of class $\OTone$ are the orderings of the five
+antipodal triples. The vanishing of the other diagonals rests on the completeness of the matrix of $Y$
+(Lemma~\ref{lem:soundness}), which was recomputed by exhaustive enumeration and by a second encoding. For $k = 5, 7, 9$ the sector traces of the
+explicit rings, rebuilt from claw words and isomorphic to the flower snarks, are $\{\OTone\}$ in all three cases (Section~\ref{sec:crosscheck}).
+\end{proof}
+
+\begin{remark}[the case $k=3$, \claim{C}]\label{rem:kthree}
+The ring $(Y\,\mathrm{id})^{2}(Y\,\tau)$ is a product of three generators, hence an element of the closure of $F_1$, and by Theorem~\ref{thm:ringsY} its diagonal is nonzero in some
+sector. The periodicity argument of Corollary~\ref{cor:flower} starts at $k = 5$, and the stored artifacts do not record the sector of the product for
+$k = 3$ or $k = 4$ (the sector matrices themselves are kept outside the repository). Whether the three edges between consecutive claws of $J_3$ are forced onto an
+antipodal triple is therefore not claimed.
+\end{remark}
+
+H\"agglund and Steffen showed that flower snarks have Petersen colorings~\cite{HS2014};
+Corollary~\ref{cor:flower} describes all of them at the junctions.
+
+\begin{proposition}[\claim{MV}, \claim{D}]\label{prop:superedgerings}
+Let $S^t$ be the ring of $t$ Petersen superedges with the identity at every junction.
+\begin{enumerate}
+\item[\textup{(a)}] For $t \ge 3$, $S^t$ is a simple cubic graph, and it is 3-edge-colorable if and
+only if $t$ is even.
+\item[\textup{(b)}] For $t \ge 5$, $S^t$ has girth 5 and is cyclically 5-edge-connected.
+\end{enumerate}
+So for every odd $t \ge 5$, $S^t$ is a cyclically 5-edge-connected snark of girth 5 on $8t$ vertices,
+and by Theorem~\ref{thm:ringsY} it has a Petersen coloring.
+\end{proposition}
+
+\begin{proof}
+(a) The same reduction applies to 3-edge-colorings, with the 27 color triples of a connector as
+states: the boundary relation of $S$, enumerated exhaustively, has powers of period 2, and the odd
+powers have a zero diagonal. (b) An exhaustive search finds no cycle-separating cut with at most
+four edges in $S^5$, whose girth is 5. $\PG - u - w$ is connected, and restoring $u$ and $w$ gives
+$\PG$, which is 3-edge-connected, so a ring carries six edge-disjoint paths between any two blocks.
+The argument of Lemma~\ref{lem:c4ec}, with cuts of at most four edges, at most four split blocks
+and runs of at most four consecutive blocks (all of which occur in $S^5$), shows that $S^t$ has no
+cycle-separating cut with at most four edges for $t \ge 5$, and a cycle of length at most four would
+lie in such a run.
+\end{proof}
+
+The probes on superedge rings with the same junction permutation at every junction (3 to 8 superedges, descriptive measurements with exhaustive searches) add that the ring is a snark
+exactly for odd $t$ with the identity or one transposition ($t = 3, 5, 7$ checked, girth 3 at $t = 3$), that every other uniform ring with $t$ from 2 to 8 is 3-edge-colorable,
+and that the rings of three and four superedges with a non-identity junction are cyclically 5-edge-connected of girth 5 as well, though 3-edge-colorable.
+
+\subsection{Cross-check against the explicit graphs}\label{sec:crosscheck}
+
+\input{table-cross.tex}
+
+The sector traces were compared with CaDiCaL on the explicit cubic graph for \nCrossRings{} rings: the flower snarks $J_5$, $J_7$, $J_9$ rebuilt from claw words, and \nCrossRandom{} random words of
+length 2 to 6 over all 81 blocks, with orders \nCrossOrderMin{} to \nCrossOrderMax{} (Table~\ref{tab:cross}). The two answers agree in all
+\nCrossRings{} cases, and all \nCrossRings{} rings are Petersen colorable. This comparison therefore tests one direction only, which Section~\ref{sec:ablation} analyses. The random words have lengths from 2 to 6 (\nCrossLenTwo{} of length 2
+and \nCrossLenSix{} of length 6), and \nCrossTraceE{} of the 200 rings have a nonzero diagonal exactly in the sectors $\{\Oz,\OEc\}$; the sector $\OEc$ carries a coloring of every random ring but one, and no random ring has a
+zero trace.

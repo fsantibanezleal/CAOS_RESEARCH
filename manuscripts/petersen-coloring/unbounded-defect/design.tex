@@ -1,0 +1,63 @@
+\section{Experimental design}\label{sec:design}
+
+The computations of Sections~\ref{sec:construction} and~\ref{sec:results6} are decision problems, not samples: every
+satisfiability question has a definite answer that is checked, so the quantities that vary between runs are only the solver times.
+Each computation was designed around predictions that were recorded before the runs they govern, with a stated way for each
+to fail; Table~\ref{tab:preds} lists them with their outcomes, including the predictions that were refuted or left undecided.
+
+\begin{table}[t]\centering\footnotesize
+\begin{tabular}{p{1.9cm}>{\raggedright\arraybackslash}p{6.2cm}>{\raggedright\arraybackslash}p{5.5cm}}
+\toprule
+computation & prediction & outcome \\
+\midrule
+EXP-012 & the 4-poles $\Gfty - e_0 - e$ cut from the first pairs of EXP-010 transmit $\{1\}$ & holds on all five pairs computed, including $A$ \\
+EXP-012 & some candidate 4-pole avoids distance 1 under a pairing & holds: every $\Gfty - \{u,v\}$, $u|v$ pairing, 14 edge orbits \\
+EXP-012 & $R_1$ has no Petersen coloring; $R_3$ has no cycle-separating cut of size $\le 3$; defect $\le 2$ is unsatisfiable on $R_3$ & holds, with verified proofs \\
+EXP-012 & some map of $R_3$ has exactly three bad vertices & undecided at the first bound (one-hour limit), then holds by a designated relaxation \\
+EXP-012 & ten sampled pair relaxations of $R_3$ are unsatisfiable & holds, 10 of 10 \\
+EXP-012 & the exhaustive cut routine agrees with the bridge search on $R_1$, $R_2$ & holds \\
+\midrule
+EXP-013 & colorable sources: $\Oz$ conducted by every 6-pole $H - u - w$; never by $\Gfty - u - w$ & holds: 40 of 40 and 0 of 212 \\
+EXP-013 & $\OEc$ conducted by every $\Gfty - u - w$, $\OTone$ by none & holds on all 212 orbits \\
+EXP-013 & some shape-(b) 6-pole of a cyclically 5-edge-connected source fails to conduct $\Oz$ & refuted: all 1,850 shape-(b) splits conduct $\Oz$ \\
+EXP-013 & two 6-poles with disjoint conducted sets & not reached: all sets contain $\{\Oz,\OEc,\ODtwo\}$ \\
+\midrule
+EXP-014 & every ring of claws, in particular every flower snark, is colorable & holds \\
+EXP-014 & every ring of Petersen superedges is colorable & holds \\
+EXP-014 & a ring of blocks of $F_5$ with a zero trace exists & undecided: the closures of $F_4$ and $F_5$ did not finish \\
+EXP-014 & random rings: the sector trace and the solver agree & holds, 203 of 203; every ring was colorable \\
+EXP-014 & $\Gfty$ split along a 6-edge cut has a zero trace in all six sectors & holds for all ten splits \\
+\bottomrule
+\end{tabular}
+\caption{Predictions of the three computations and their outcomes (computations EXP-012, EXP-013 and EXP-014): the prediction, recorded before the run, and
+whether it held, was refuted or remained undecided.}\label{tab:preds}
+\end{table}
+
+\paragraph{Sources of 6-poles.} The 6-poles are cut from the Petersen graph $\PG$, the flower snarks $J_5$ and $J_7$ and the
+dodecahedron, each cyclically 5-edge-connected (exhaustive searches find no cycle-separating cut with at most four edges), and from
+$\Gfty$, which is not and serves as a control and for the charge spectrum of its critical pairs. Shape~(a) removes two
+non-adjacent vertices up to automorphisms of the source; shape~(b) removes three pairwise disjoint edges and is run for $\PG$, $J_5$
+and the dodecahedron with every split of the six ends into two triples. For each 6-pole, split and orbit one formula fixes the class of the first connector
+to the orbit representative, which gives \nFormulasSix{} formulas for the \nSplits{} splits of the four colorable sources and
+$6 \cdot 212 = 1{,}272$ for $\Gfty$; no formula reached the cap of 120 seconds.
+
+\paragraph{Blocks and families.} A block is a 6-pole with an ordered pair of connectors. The 81 blocks are the claw $Y$,
+the Petersen superedge $S$, the 40 shape-(b) 6-poles of $\PG$ with their ordered splits ($\mathrm{Pb}$), the 14 shape-(a) 6-poles of $J_5$ ($\mathrm{Ja5}$) and the 21
+of $J_7$ ($\mathrm{Ja7}$), and the 4 of the dodecahedron ($\mathrm{Da}$). The five families are $F_1 = \{Y\}$, $F_2 = \{S\}$,
+$F_3 = \{Y, S\}$, $F_4$, the 40 blocks $\mathrm{Pb}$ with \nGenFfour{} distinct generators, and $F_5$, all 81 blocks with \nGenFfive{} distinct generators.
+The claw and the superedge are the blocks whose rings contain the flower snarks and the odd rings of Petersen superedges, and the larger
+families ask whether any block of the sources measured above has a ring without Petersen coloring.
+
+\paragraph{Baselines and independent checks.} The product runs the following checks on its own results, each independent of the
+computation it tests. A satisfiable answer is accepted only by a program that tests the star condition from the definition and reads only the graph and the
+labels. An unsatisfiable answer is accepted only with a DRAT proof checked by \texttt{drat-trim}. The sector matrices of the claw and the superedge are recomputed by
+exhaustive enumeration and by a second encoding with a second solver, and 46 of the 81 blocks by the second encoding. The nonempty sectors of the 6-poles of $\PG$, $J_5$,
+$J_7$ and the dodecahedron that appear in both computations coincide with the conducted orbits that EXP-013 measured by a
+different method, formulas that constrain the class instead of enumerating models. The certificates are checked by Algorithm~\ref{alg:check}. The cut searches are compared with an
+exhaustive enumeration on three graphs of known behaviour (Table~\ref{tab:rings}).
+
+\paragraph{Randomness and statistics.} The only random choices are the ten sampled pairs of $R_3$ (five inside one block, five across two; a fixed seed),
+the 200 random words of the cross-check (a fixed seed), and the randomized growth that finds the 6-edge cut of $\Gfty$ (a fixed seed). Solver times are reported as
+minimum to maximum, and as mean and sample standard deviation where a set of runs is summarized; they size the work and carry no claim about the speed of the
+methods, and the parallel runs shared one machine among several solvers. No statistical test is used, because no claim rests on a sample: the 203 random rings are a
+check, and their agreement is reported as a count with the one direction it tests (Section~\ref{sec:ablation}).
