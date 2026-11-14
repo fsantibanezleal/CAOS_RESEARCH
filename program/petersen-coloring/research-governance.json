@@ -182,8 +182,8 @@
     {
       "slug": "colorable-only-by-itself",
       "path": "manuscripts/petersen-coloring/colorable-only-by-itself",
-      "version": "0.01",
-      "version_doi": "10.5281/zenodo.22859075",
+      "version": "0.02",
+      "version_doi": "10.5281/zenodo.24230853",
       "concept_doi": "10.5281/zenodo.22859074",
       "status": "published",
       "split_action": "Focused paper on H_3 membership; a new version only if PCC-F5 decides the 68-vertex graph or the unconditional form."

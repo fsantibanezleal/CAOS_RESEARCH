@@ -143,3 +143,18 @@ External status: disproved (Putman arXiv:2608.10012; Goedgebeur, Jooken, Máčaj
 Plan change (assessment): unchanged; rank 1; PCC-F6 stays active. First bounded action: EXP-015 as ordered in `RESUME.md` section 5 (6-poles from the cyclically 5-edge-connected snarks of order at most 28, sector matrices, closures); close PCC-F6 if no zero-trace element exists.
 
 Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
+
+## 2026-11-14 - colorable-only-by-itself v0.02 published (10.5281/zenodo.24230853)
+
+- Revision from the independent audit (CAOS_MANAGE wip/caos-research/msaudit-pc-2026-11-10.md, D1): the membership of
+  both 52-vertex counterexamples in H_3 is stated as conditional on Observation 10 of arXiv:2608.10028v4, in the title
+  as well ("The Two 52-Vertex Counterexamples to the Petersen Coloring Conjecture Are Colorable Only by Themselves If No Counterexample Has at Most 38 Vertices"); the formula and the certification pipeline as algorithms with proofs (symmetry breaking,
+  implied attach clauses); tables of the refuted and undecided orders, the 21 controls, the ablation and the SHA-256
+  values; 11,238 words, 15 equations, 7 figures, 9 tables, 25 references, 2 algorithms.
+- Independent review (CAOS_MANAGE wip/caos-research/pc-cobi-v02-review-2026-11-14.md): CHANGES REQUIRED (title blocker,
+  incomplete bibliography, Algorithm 2 placement, 14 minors), all fixed; re-check closed the rest. The planted SAT
+  control at scale (audit plan item 6) is not done and is stated in the Limitations.
+- Release: 39 gates passed; 33 pages, 700,579 bytes, SHA-256
+  f7393db50890501728c04ba1fb57177a05f667b5dfd367bb23e43df3473f9c39; a fresh unauthenticated download equals the frozen
+  file.
+

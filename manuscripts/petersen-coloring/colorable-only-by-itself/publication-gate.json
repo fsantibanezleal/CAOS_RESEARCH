@@ -1,0 +1,23 @@
+{
+  "release_ready": true,
+  "record_id": 24230853,
+  "version": "0.02",
+  "version_doi": "10.5281/zenodo.24230853",
+  "concept_doi": "10.5281/zenodo.22859074",
+  "scope": "Revision of colorable-only-by-itself: the conditional membership of the two 52-vertex counterexamples in H3 (Observation 10 of arXiv:2608.10028v4), the formula, its symmetry breaking and the certification pipeline as algorithms, the undecided orders, the 21 controls, the ablation and the SHA-256 table (EXP-007).",
+  "bytes": 700579,
+  "md5": "1f55271adcfc090e721542dd6847e172",
+  "sha256": "f7393db50890501728c04ba1fb57177a05f667b5dfd367bb23e43df3473f9c39",
+  "tex_sha256": "6136ab1e57001da4ddaf10596f37eeb033debaa461cb489b359f70c40990c06c",
+  "metadata_sha256": "8dfd3223c520391eabbe7727c9b7608a47b465edf32ad54c9eff6d1a1d3bd52b",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 33,
+  "rendered_pages_reviewed": 33,
+  "qa_date": "2026-11-14",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246",
+  "independent_review": "wip/caos-research/pc-cobi-v02-review-2026-11-14.md (CAOS_MANAGE), CHANGES REQUIRED then all findings fixed at be1cf56b and 25ca7097; N1 (stale committed PDF) closed by this rebuild"
+}

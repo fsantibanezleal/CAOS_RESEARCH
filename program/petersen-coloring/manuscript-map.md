@@ -37,7 +37,7 @@ did not find the results below elsewhere; specialist confirmation is still requi
 |---|---|---|---|---|
 | `consequence-audit` | v0.06 | [10.5281/zenodo.23195171](https://doi.org/10.5281/zenodo.23195171) | [10.5281/zenodo.22285164](https://doi.org/10.5281/zenodo.22285164) | what survives on the counterexamples, and how far they are from colorable |
 | `unbounded-defect` | v0.02 | [10.5281/zenodo.23196817](https://doi.org/10.5281/zenodo.23196817) | [10.5281/zenodo.22847192](https://doi.org/10.5281/zenodo.22847192) | is the defect bounded on cyclically 4-edge-connected cubic graphs (statement (e)), and how far conduction reaches for 6-poles |
-| `colorable-only-by-itself` | v0.01 | [10.5281/zenodo.22859075](https://doi.org/10.5281/zenodo.22859075) | [10.5281/zenodo.22859074](https://doi.org/10.5281/zenodo.22859074) | are the 52-vertex counterexamples colorable only by themselves |
+| `colorable-only-by-itself` | v0.02 | [10.5281/zenodo.24230853](https://doi.org/10.5281/zenodo.24230853) | [10.5281/zenodo.22859074](https://doi.org/10.5281/zenodo.22859074) | are the 52-vertex counterexamples colorable only by themselves |
 
 Split decision (2026-10-06 review): the three papers have different central questions and proof
 toolkits (certified invariants; cut-space conduction; H-coloring fibers and target search), so they
