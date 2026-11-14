@@ -30,9 +30,14 @@
   within 2 percent) committed in the runner docstring before the run; three corrupted models had to fail.
 - Verdict CONFIRMED (`experiments/EXP-002-reduction-control/verdict.md`): peak rate 1.999828 against 2 at
   phi = pi/2 and 1.414271 against 1.414214 at phi = pi/4 (rates 4e-05 relative at the peak in the verdict
-  text; the result files give 8.6e-05 and 4.1e-05); band structure present (unstable band amplified 3.32,
-  stable band ends at 0.57); peak rate spread 2.7e-04 across lambda = 20 to 160; damping term within 2.6e-04
-  absolute across six (alpha, nu) cases.
+  text; the result files give 8.6e-05 and 4.1e-05); band structure present (stable band ends at 0.57 of its
+  amplitude, bound 2; unstable band amplified 3.32, where the committed text also asks for growth by orders of
+  magnitude over the 0.6 time-unit run); peak rate spread 2.7e-04 across lambda = 20 to 160; damping term within
+  2.6e-04 absolute across six (alpha, nu) cases.
+- Read strictly, two sub-criteria were missed and the verdict does not say so: the maximum relative error over the
+  window where the background is flat to ten per cent is 1.9e-02 at phi = pi/2 and 2.47e-02 at phi = pi/4
+  (`rate-phi-pi4.json`), against the committed 2 percent, since the runner does not say which statistic is gated;
+  and the unstable-band growth clause above. The paper reports both as not met.
 - The first corrupted-model control ran at phi = pi/2, where zeta_1 = 1, and could not discriminate; it was
   rerun at phi = pi/4 and all three failed as required. Validity boundary stated: scale separation at least
   20, small amplitudes, one layer, short horizon.
@@ -82,8 +87,9 @@
   favourable modes gain about 72 e-folds; recorded as gate B5, raw output preserved.
 - Gate D: pattern reproduced with the control discriminating, correlation 0.808 at best (lambda_2 = 360)
   against 0.392, but D1 (above 0.9) NOT met. A separation of 17 (lambda_2 = 512, N = 2048, 22 minutes) added
-  on 2026-09-17 gave 0.509 and settled the attribution to the measurement, since window and separation both
-  have an interior optimum.
+  on 2026-09-17 gave 0.509; since window and separation both have an interior optimum, this supports the
+  attribution of the shortfall to the measurement, which is supported by the sweep and not proved. D2 (control
+  worse by more than 0.3) failed in 2 of the 5 runs (window 4.5 and separation 17).
 
 ## 2026-09-16, EXP-006: the Lean kernel replay of the certificate (CONFIRMED)
 
@@ -116,8 +122,10 @@
   stretching case `gamma = 1` had not.
 - Verdict CONFIRMED (`experiments/EXP-008-growth-law-ceiling/verdict.md`): relative error 1.11e-07 for the
   pendulum law and 1.84e-09 for the stretching law at p = 1.5, 2, 3, 5, against the horizon-corrected
-  prediction; the ratio of the two laws at equal p is exactly 2. The experiment measures the cascade
-  bookkeeping and not the partial differential equations.
+  prediction. The ratio of the two laws computed from the closed forms is 2 by construction, so that gate cannot
+  fail and is a consistency check of the code; the measured ratio of the critical exponents is 1.812 at every p,
+  below 2 because the finite-horizon term is the same additive amount for both laws. The experiment measures the
+  cascade bookkeeping and not the partial differential equations.
 
 ## 2026-10-30 - portfolio review: external status
 
