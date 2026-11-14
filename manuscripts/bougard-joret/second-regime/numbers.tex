@@ -1,3 +1,52 @@
-\newcommand{\ntriples}{47}
-\newcommand{\nconfirmed}{47}
-\newcommand{\ngraphs}{6{,}224{,}502{,}963}
+\newcommand{\papertitle}{The second Bougard--Joret line up to order 24:\\ an exhaustive check and the extremal graphs}
+\newcommand{\abstractvalues}{At every one of the 53 triples with $\alpha\ge3$, $k\ge3$ and $n\le24$ outside the range that Bougard and Joret's Proposition~8 settles, $f$ equals the conjectured value}
+\newcommand{\valuestheorem}{For every open-window triple $(n,\alpha,k)$ with $n\le24$, $f(n,\alpha,k)=t(n,\alpha)+\ceil{k\alpha/2}$.}
+\newcommand{\independentphrase}{$f$ equals the bound of Didin's Theorem~9}
+\newcommand{\ntriples}{53}
+\newcommand{\nconfirmed}{53}
+\newcommand{\nopen}{0}
+\newcommand{\ngraphs}{6{,}223{,}452{,}780}
+\newcommand{\ngraphsplain}{6{,}176{,}473{,}370}
+\newcommand{\ngraphspruned}{46{,}979{,}410}
+\newcommand{\nhours}{42.4}
+\newcommand{\nrecords}{338}
+\newcommand{\nwindowthirty}{120}
+\newcommand{\nextremal}{228}
+\newcommand{\nexttriples}{30}
+\newcommand{\nnopart}{40}
+\newcommand{\ntenthreeb}{8}
+\newcommand{\nphasetwotriples}{13}
+\newcommand{\nsone}{32}
+\newcommand{\fullpairs}{$(3,3)$, $(4,3)$, $(5,3)$, $(3,4)$, $(4,4)$, $(3,5)$, $(3,6)$}
+\newcommand{\nfullpairs}{7}
+\newcommand{\nturancond}{44}
+\newcommand{\nconstructed}{30}
+\newcommand{\gateAgraphs}{3{,}519}
+\newcommand{\gateAdecisions}{26{,}005}
+\newcommand{\gateAgroups}{105}
+\newcommand{\gateAkept}{5{,}703}
+\newcommand{\gateBgraphs}{21{,}196}
+\newcommand{\gateBslices}{33}
+\newcommand{\gateCgraphs}{3{,}876}
+\newcommand{\gateCdecisions}{27{,}132}
+\newcommand{\gateDsummary}{For $(17,5,3)$ at $E=29$ (218{,}377 graphs), $(19,3,6)$ at $E=60$ (880 graphs), $(20,4,4)$ at $E=48$ (266{,}577 graphs), the sorted output of the pruned generator in one part equals the union of its 56 parts, byte for byte (equal SHA-256); 0 differences.}
+\newcommand{\gateEsummary}{\texttt{geng} reproduces all 10 values checked against the OEIS \cite{OEIS}: connected graphs of orders 9 and 10 (A001349), connected cubic graphs of orders 16 to 22 (A002851) and connected quartic graphs of orders 12 to 15 (A006820), the largest count being $11{,}716{,}571$; 0 differences.}
+\newcommand{\shafilter}{ebbfd34da19290f5\ldots}
+\newcommand{\shageng}{6dda2361ade7714f\ldots}
+\newcommand{\growthlow}{6.8}
+\newcommand{\growthhigh}{11.9}
+\newcommand{\secorderxxi}{1{,}088}
+\newcommand{\secorderxxii}{8{,}296}
+\newcommand{\secorderxxiii}{35{,}045}
+\newcommand{\ratioxxii}{7.6}
+\newcommand{\ratioxxiii}{4.2}
+\newcommand{\growthplotsgraphs}{\addplot+[mark=*] table[x=E,y=graphs]{growth-17-5-3.dat};\addlegendentry{$(17,5,3)$}
+\addplot+[mark=square*] table[x=E,y=graphs]{growth-22-5-3.dat};\addlegendentry{$(22,5,3)$}
+\addplot+[mark=triangle*] table[x=E,y=graphs]{growth-23-3-7.dat};\addlegendentry{$(23,3,7)$}
+\addplot+[mark=diamond*] table[x=E,y=graphs]{growth-24-5-4.dat};\addlegendentry{$(24,5,4)$}
+\addplot+[mark=o] table[x=E,y=graphs]{growth-24-4-5.dat};\addlegendentry{$(24,4,5)$}}
+\newcommand{\growthplotsseconds}{\addplot+[mark=*] table[x=E,y=seconds]{growth-17-5-3.dat};
+\addplot+[mark=square*] table[x=E,y=seconds]{growth-22-5-3.dat};
+\addplot+[mark=triangle*] table[x=E,y=seconds]{growth-23-3-7.dat};
+\addplot+[mark=diamond*] table[x=E,y=seconds]{growth-24-5-4.dat};
+\addplot+[mark=o] table[x=E,y=seconds]{growth-24-4-5.dat};}
