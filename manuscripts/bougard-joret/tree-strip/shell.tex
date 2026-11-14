@@ -9,9 +9,9 @@ Our main result is the following.
 
 \begin{theorem}[First interior shell, D]\label{thm:shell}
 For every integer $k\ge3$ and every integer $2\le a\le k+1$,
-\[
+\begin{equation}
 f(a+k+1,a,k)=\left\lceil\frac{k(a+k+1)}2\right\rceil.
-\]
+\end{equation}
 \end{theorem}
 
 The restriction $a\le k+1$ is exactly $n\ge2a$ on this shell.
@@ -53,13 +53,13 @@ Its degree gives the matching upper bound on connectivity.
 For either odd-degree augmentation, only exactly $2r$ deletions require attention.
 If the cycle power disconnects, these deletions must form exactly two blocks of length $r$, leaving two nonempty surviving arcs.
 Let the shorter arc have length $p$. Rotate coordinates for the geometric argument so that
-\[
+\begin{equation}
 A=\{0,\ldots,p-1\},\qquad B=\{p+r,\ldots,m-r-1\}.
-\]
+\end{equation}
 For $m=2q$, we have $p\le q-r$, and for every $x\in A$,
-\[
+\begin{equation}
 p+r\le q\le x+q\le q+p-1\le2q-r-1.
-\]
+\end{equation}
 Its antipode therefore lies in $B$, yielding a surviving added edge.
 For $m=2q+1$, again $p\le q-r$; both $x+q$ and $x+q+1$ lie in $B$, since their indices range from $q$ to $q+p\le2q-r$.
 Every vertex in the odd-order construction has an added neighbor at one of these two almost-antipodal positions.
@@ -80,10 +80,10 @@ A singleton also satisfies the bound.
 \begin{lemma}[Residual lift]\label{lem:lift}
 Let $k\ge a\ge3$, $g=k-a$, and let $H$ have order $k+1$.
 Choose $M\subseteq V(H)$ with $|M|=a$. Suppose that $\alpha(H)\le a$, that
-\[
+\begin{equation}
 \dd_H(t)\ge
 \begin{cases}g+1,&t\in M,\\g,&t\notin M,\end{cases}
-\]
+\end{equation}
 and, when $g\ge1$, that $H$ is $g$-connected.
 Add an independent set $S$ of size $a$, put it in bijection with $M$, and join each $s\in S$ to every vertex of $H$ except its assigned vertex.
 Then the resulting graph $G$ has $\alpha(G)=a$ and $\kappa(G)=k$.
@@ -91,9 +91,9 @@ Then the resulting graph $G$ has $\alpha(G)=a$ and $\kappa(G)=k$.
 \begin{proof}
 Each vertex of $S$ has degree $k$.
 With $r_t=1$ for $t\in M$ and $r_t=0$ otherwise,
-\[
+\begin{equation}
 \dd_G(t)=\dd_H(t)+a-r_t\ge k.
-\]
+\end{equation}
 An independent set within either part has size at most $a$.
 A mixed independent set contains at most one residual vertex, since a vertex of $S$ misses only one vertex of $H$.
 It contains at most one vertex of $S$, since the misses are distinct.
@@ -107,9 +107,9 @@ Suppose $A\ne\varnothing$ and $|B|\ge3$.
 Any two vertices of $A$ share a neighbor in $B$, so all of $A$ and every member of $B$ adjacent to it lie in a common component $C$.
 At most one residual vertex $t$ can lie outside $C$; it is missed by all of $A$, so $|A|\le r_t$.
 If it is disconnected, all its $H$-neighbors have been deleted. Hence
-\[
+\begin{equation}
 |X|\ge a-|A|+\dd_H(t)\ge a-r_t+\dd_H(t)=\dd_G(t)\ge k,
-\]
+\end{equation}
 a contradiction.
 
 If $|B|=2$, precisely $k-1$ residual vertices were deleted, and all of $S$ survives.
@@ -122,12 +122,12 @@ Thus $\kappa(G)\ge k$, while the degree-$k$ vertices in $S$ give equality.
 
 The degree profile of the residual graph is forced by the target size.
 For $G$ to attain the degree-sum bound, $\e(G)=(kn+\varepsilon)/2$ with $n=a+k+1$, and $S$ contributes $ak$ edges, so the residual graph has
-\[
+\begin{equation}
 \e(H)=\frac{k(a+k+1)+\varepsilon}2-ak=\frac{k(k+1-a)+\varepsilon}2=\frac{k(g+1)+\varepsilon}2 .
-\]
+\end{equation}
 Its degree sum is $k(g+1)+\varepsilon=(k+1)g+a+\varepsilon$, which is exactly the sum of $k+1$ degrees equal to $g$ plus one more at $a+\varepsilon$ vertices.
 This is the profile of Lemma~\ref{lem:lift}: degree $g+1$ at the $a$ vertices of $M$ and, when $\varepsilon=1$, at one further vertex, and degree $g$ elsewhere.
-So the existence of a residual graph with this degree profile that is $g$-connected and has independence number at most $a$ is not only sufficient but is what any extremal graph with injective misses must contain.
+So the existence of a residual graph with this degree profile that is $g$-connected and has independence number at most $a$ is not only sufficient but is what any extremal graph with injective misses must contain, up to the place of the single vertex of degree $k+1$ when $\varepsilon=1$, which may lie in $M$.
 
 Set $m=k+1=a+g+1$, $n=a+m$, $\varepsilon=kn\bmod2$, and $r=\lfloor g/2\rfloor\ge1$.
 We construct a $g$-connected residual graph $H$ with degree $g+1$ at exactly $a+\varepsilon$ distinct vertices and degree $g$ elsewhere.
@@ -152,18 +152,18 @@ Its endpoints avoid $w$, so precisely $a$ vertices now have degree $g+1$.
 All three constructions preserve the starting graph's $g$-connectivity.
 
 By \eqref{eq:cycle-alpha} and $g\le2r+1$,
-\[
+\begin{equation}
 m=a+g+1\le a+2r+2<(a+1)(r+1),\qquad \alpha(H)\le a.
-\]
+\end{equation}
 The strict inequality follows from $r(a-1)-1\ge1$.
 Choose any $a$ higher-degree vertices for $M$ and apply Lemma~\ref{lem:lift}.
 Every vertex in $S$ and every selected residual vertex has degree $k$.
 The residual vertices of degree $g$ also have total degree $k$.
 When $\varepsilon=1$, the sole unselected higher-degree vertex has total degree $k+1$.
 Consequently
-\[
+\begin{equation}
 \e(G)=\frac{kn+\varepsilon}{2}=\left\lceil\frac{kn}{2}\right\rceil,
-\]
+\end{equation}
 proving Theorem~\ref{thm:shell} in this range.
 
 \paragraph{A recorded instance.}
@@ -191,9 +191,9 @@ Thus the required edge bound is attained.
 
 For $a=k-1$ and $k\ge4$, use $H=P_{k+1}$ and let $M$ be its $k-1$ internal vertices.
 The path is connected, its selected degrees are two, its remaining degrees are one, and
-\[
+\begin{equation}
 \alpha(P_{k+1})=\left\lceil\frac{k+1}{2}\right\rceil\le k-1.
-\]
+\end{equation}
 Lemma~\ref{lem:lift} with $g=1$ gives a $k$-regular extremal graph.
 The stronger complete tree characterization is Theorem~\ref{thm:main} below.
 Its $k=3$ case is covered by $a=2$.

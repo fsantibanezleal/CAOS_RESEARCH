@@ -19,9 +19,9 @@ The required partition exists because
 
 \begin{theorem}[Adjacent exceptional strip, D]\label{thm:main}
 For every integer $k\ge3$,
-\[
+\begin{equation}
 f(2k,k-1,k)=k^2.
-\]
+\end{equation}
 A graph is extremal for these parameters if and only if it is isomorphic to $G(T,(S_t))$ for a nonstar tree $T$ on $k+1$ vertices and fibers satisfying \eqref{eq:fiber}.
 Every extremal graph has this representation relative to each of its maximum independent sets.
 \end{theorem}
@@ -41,9 +41,9 @@ Every extremal graph has this representation relative to each of its maximum ind
 \subsection{Regularity and independence}
 
 Every vertex of $S$ has degree $k$. At a tree vertex $t$,
-\[
+\begin{equation}
 \dd_G(t)=\dd_T(t)+(k-1)-|S_t|=k.
-\]
+\end{equation}
 Thus the graph is $k$-regular, has order $2k$, and has $k^2$ edges.
 
 A nonstar tree of order $k+1$ cannot contain an independent $k$-set: all its edges would then meet the remaining vertex, and connectedness would force a star.
@@ -51,9 +51,9 @@ Consequently $\alpha(T)\le k-1$, and also $\dd_T(t)\le k-1$ for every $t$.
 An independent set contained in either $S$ or $T$ therefore has size at most $k-1$.
 An independent set meeting both parts contains only one tree vertex $t$, because each member of $S$ has only one nonneighbor in $T$.
 Its other vertices lie in $S_t$, so its size is at most
-\[
+\begin{equation}
 1+|S_t|=\dd_T(t)\le k-1.
-\]
+\end{equation}
 Since $S$ is itself independent, $\alpha(G)=k-1$.
 
 For $k=4$ and $T=P_5$ with vertices $t_0,\ldots,t_4$ the degrees are $1,2,2,2,1$, so the fibers have sizes $0,1,1,1,0$ and the independent set is $\{s_1,s_2,s_3\}$ with $s_i$ missing $t_i$ (Figure~\ref{fig:path}).
@@ -63,9 +63,9 @@ The star $K_{1,4}$ is excluded by the independence number, since its center woul
 \subsection{Connectivity}
 
 Let $X\subseteq V(G)$ satisfy $|X|<k$, and set
-\[
+\begin{equation}
 A=S\setminus X,\qquad B=V(T)\setminus X.
-\]
+\end{equation}
 There are at least two vertices in $B$.
 If $A$ is empty, deletion of all $k-1$ vertices of $S$ uses the available deletion budget. Hence $G-X=T$ is connected.
 
@@ -101,14 +101,14 @@ Equality in the degree-sum lower bound forces $k$-regularity.
 The residual graph $H=G-S$ has $k+1$ vertices and is connected, since fewer than $k$ vertices were deleted.
 Each vertex of $S$ misses exactly one vertex of $H$.
 There are $k(k-1)$ edges between $S$ and $H$, leaving
-\[
+\begin{equation}
 \e(H)=k^2-k(k-1)=k.
-\]
+\end{equation}
 Thus $H$ is a tree.
 Writing $S_t$ for the vertices that miss $t$, regularity gives
-\[
+\begin{equation}
 k=\dd_H(t)+(k-1)-|S_t|,
-\]
+\end{equation}
 so \eqref{eq:fiber} holds.
 If $H$ were a star, its $k$ leaves would form an independent set in $G$, contrary to $\alpha(G)=k-1$.
 This completes the proof of Theorem~\ref{thm:main}.\hfill$\square$
@@ -124,9 +124,9 @@ Different maximum independent sets in the same graph need not give a uniquely de
 Combining Theorem~\ref{thm:main} with \eqref{eq:old} gives the following precise transition.
 \begin{corollary}[D, using the preceding-boundary theorem of \cite{DG}]\label{cor:transition}
 For every $k\ge4$,
-\[
+\begin{equation}
 f(2k,k-1,k)-f(2k-1,k-1,k)=1.
-\]
+\end{equation}
 The excess over the degree-sum prediction drops from $\lfloor k/2\rfloor-1$ to zero.
 \end{corollary}
 \begin{proof}

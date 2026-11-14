@@ -21,7 +21,7 @@ The recorded instance of Figure~\ref{fig:lift} shows all three at $k=7$, $a=4$.
 The lift lemma relies on two properties that hold only on the shell.
 A vertex of the independent set misses at most one residual vertex because the residual graph has $k+1$ vertices, and the misses are chosen distinct, which bounds mixed independent sets by two and supplies the vertex adjacent to both survivors.
 At order $\alpha+k+j$ the residual graph has $k+j$ vertices, each independent vertex may miss up to $j$ of them, and distinctness of the misses no longer bounds a mixed independent set; the independence control and the two-survivor argument both need new ideas [D].
-The positions of Table~\ref{tab:positions} show that the target changes as well: at order $2k-1$ with $\alpha=2$ the minimum exceeds the degree-sum bound by $\lfloor d/2\rfloor-1$, so any formula for the first regime beyond the shell has to produce positive excesses at some positions and zero at others \cite{Next}.
+The positions of Table~\ref{tab:positions} show that the target changes as well: at order $2k-1$ with $\alpha=2$ the minimum exceeds the degree-sum bound by $\lfloor(k-2)/2\rfloor-1$, so any formula for the first regime beyond the shell has to produce positive excesses at some positions and zero at others \cite{Next}.
 The excess is therefore not monotone in the distance from the boundary.
 
 \paragraph{The extremizers.}
@@ -38,7 +38,7 @@ The finite computations bear on the proofs only as tests: they cover $3\le k\le1
 
 Several limits concern the computations themselves.
 The two order-six censuses share the checking routines, so agreement between them tests the count and not the routines; the independent recomputation with NetworkX removes this dependence only for the 75 graphs, the controls and the residual connectivities, and it reads the edge lists produced by the construction code, so an error in the construction would appear as a failed check and not as a second construction.
-The certificates store no wall-clock times and do not record the Python interpreter that produced them; the repository requires Python 3.11 or later, and Section~\ref{sec:repro} states the time limits in the code.
+The certificates store no wall-clock times and do not record the Python interpreter that produced them; the times and versions of Section~\ref{sec:repro} come from one reproduction run on one machine, and times on other hardware will differ.
 The runners are deterministic, so a rerun reproduces the certificates exactly, which the regression tests check by comparing the parsed files.
 
 Several scientific limits remain.
@@ -69,12 +69,17 @@ From the repository root the commands are as follows, and each writes to the pat
 \path{python} \path{manuscripts/bougard-joret/tree-strip/make_tables.py}\par
 \end{quote}
 \par}
-Both runners accept \texttt{--output} to write the certificate elsewhere and \texttt{--smoke} for a reduced grid.
+Both runners accept \texttt{-{}-output} to write the certificate elsewhere and \texttt{-{}-smoke} for a reduced grid.
 The two regression tests replay the full certificates into a temporary directory and compare them with the saved ones, under timeouts of 60 and 300 seconds.
 The last command regenerates every table, figure fragment and quoted number of this paper, and fails if a consistency condition or a digest does not hold.
 The main checkers use only the Python standard library, the repository requires Python 3.11 or later, and the independent recomputation pins NetworkX \NXVersion.
-The interpreter used for the saved runs is not recorded.
-Run times are not stored in the certificates; the code limits each tree and enumeration stage of EXP-001 to 300 seconds and the whole grid of EXP-002 to 300 seconds, and both runs completed within these limits.
+The interpreter that produced the saved certificates is not recorded, and neither are run times; the code limits each tree and enumeration stage of EXP-001 to 300 seconds and the whole grid of EXP-002 to 300 seconds.
+
+A reproduction run on 14 November 2026 executed the commands above with Python 3.12.10 and NetworkX 3.4.1, on Windows 11 with an Intel 32-thread processor, with every output written to a temporary directory.
+The wall-clock times of one run each were 15.4 seconds for the EXP-001 runner, 6.7 seconds for the EXP-002 runner, 1.7 seconds for the independent recomputation, and 22.9 seconds for the two regression tests together (19.9 seconds measured by the test runner).
+Both certificates and the output of the independent recomputation regenerated identically to the saved files by SHA-256, after normalising the line endings of the EXP-001 certificate, which its runner writes with the platform's line ending.
+The commands, times and digests of this run are recorded in the file \path{artifacts/rerun-2026-11-14.txt} of each experiment folder.
+The times are single measurements, not a distribution, and carry no uncertainty estimate.
 
 \section{Conclusions}\label{sec:conclusions}
 

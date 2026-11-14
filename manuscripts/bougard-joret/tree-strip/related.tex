@@ -2,21 +2,22 @@
 
 \subsection{The proved cases of Bougard and Joret}\label{sec:rel-bj}
 
-Bougard and Joret \cite{BJ} study $f(n,\alpha,k)$ for $n\ge\alpha+k$; the case $k=1$ is an old question of Ore \cite{Ore} [V, as stated in \cite{BJ} and \cite{DG}].
+Bougard and Joret \cite{BJ} study $f(n,\alpha,k)$ for $n\ge\alpha+k$; the case $k=1$ is an old question of Ore \cite{Ore} [V, as stated in \cite{BJ} and \cite{DG}; the original was not read, U].
 For $k=1$ the value $f(n,\alpha,1)=t(n,\alpha)+\alpha-1$ was obtained independently by Christophe et al.\ \cite{Graphedron} and by Gitler and Valencia \cite{GitlerValencia}; Bougard and Joret give a short proof together with a description of the extremal graphs as tree-linkings of a twisted Tur\'an graph [V].
 For $k=2$ and $n\ge2\alpha+1$ they prove $f(n,\alpha,2)=t(n,\alpha)+\alpha-1$ when $\alpha=1$ or $n-2\alpha=1$, and $t(n,\alpha)+\alpha$ otherwise, and they describe all extremal graphs (cycle-linkings of a twisted Tur\'an graph, odd subdivisions of $K_4$, and one exceptional graph obtained by pasting two copies of $K_4$) [V].
-Both propositions improve a theorem of Brouwer \cite{Brouwer}, which states that for $n>2\alpha$ a graph of independence number $\alpha$ with at most $t(n,\alpha)+\lfloor n/\alpha\rfloor-2$ edges has such a clique partition and which also follows from a result of Hanson and Toft \cite{HansonToft}; their proofs use Brooks' theorem \cite{Brooks} and, for $2$-connected edge-critical graphs, Wessel's description by pasting \cite{Wessel} [V, as stated in \cite{BJ}; the original articles were not reopened here, U].
 Their Proposition~7 states that a connected graph with $n\ge3\alpha$ and at most $t(n,\alpha)+\lfloor n/\alpha\rfloor+\alpha-4$ edges has a partition of its vertex set into $\alpha$ cliques, and Proposition~8 gives the same conclusion for $2$-connected graphs with $n\ge3\alpha\ge9$ and at most $t(n,\alpha)+\lfloor n/\alpha\rfloor+\alpha-3$ edges [V].
+These two propositions improve a theorem of Brouwer \cite{Brouwer}, which states that for $n>2\alpha$ a graph of independence number $\alpha$ with at most $t(n,\alpha)+\lfloor n/\alpha\rfloor-2$ edges has a partition of its vertex set into $\alpha$ cliques; Brouwer's theorem implies Propositions~5 and~6 for $n\ge\alpha(\alpha+1)$ and $n\ge\alpha(\alpha+2)$ respectively, and also follows from a result of Hanson and Toft \cite{HansonToft}.
+Their proofs use Brooks' theorem \cite{Brooks} and, for $2$-connected edge-critical graphs, Wessel's description by pasting \cite{Wessel} [V, as stated in \cite{BJ}; the original articles were not reopened here, U].
 
 For $k\ge3$ the cases they prove, read on the author version of their Section~6 [V], are the following.
 \begin{enumerate}
 \item $n\le2\alpha$: a $k$-connected graph is extremal exactly when it is bipartite with $k\alpha$ edges, so $f=k\alpha$.
 \item $n=k\alpha$: the two lines of \eqref{eq:conj} coincide, $t(n,\alpha)+\lceil k\alpha/2\rceil=\lceil nk/2\rceil$, and the value follows from the degree-sum lower bound and the construction below.
 \item The construction: for $n\ge k\alpha$ the graph $T(n,\alpha)$ becomes $k$-connected after the addition of $\lceil k\alpha/2\rceil$ edges without lowering the independence number, so $f(n,\alpha,k)\le t(n,\alpha)+\lceil k\alpha/2\rceil$.
-\item Large order: with $\alpha\ge3$ the second line holds when $\lfloor n/\alpha\rfloor\ge\lceil k\alpha/2\rceil-\alpha+2$. Their argument is Proposition~8: a graph with at most $t(n,\alpha)+\lceil k\alpha/2\rceil-1$ edges has such a clique partition, and $k$-connectivity then forces $\lceil k\alpha/2\rceil$ edges between the cliques. The threshold is derived here from the inequality chain of their argument [D].
+\item Large order: with $\alpha\ge3$ the second line holds when $\lfloor n/\alpha\rfloor\ge\lceil k\alpha/2\rceil-\alpha+2$. Their argument is Proposition~8: a graph with at most $t(n,\alpha)+\lceil k\alpha/2\rceil-1$ edges has such a clique partition, and $k$-connectivity then forces $\lceil k\alpha/2\rceil$ edges between the cliques. Bougard and Joret state the threshold as $n\ge\alpha(\lceil(k-2)\alpha/2\rceil+2)$ [V], which is the same condition because $\lceil k\alpha/2\rceil-\alpha=\lceil(k-2)\alpha/2\rceil$.
 \item $\alpha=2$ and $n\ge2k$: $n=2k$ is the case $n=k\alpha$; $n\ge2k+2$ follows from Proposition~7; $n=2k+1$ is a direct argument with Brooks' theorem.
 \end{enumerate}
-None of these touches the interior of the first regime $k+2\le n<k\alpha$ except at isolated points.
+Inside the first regime $\alpha+k\le n\le k\alpha$ these cases cover only the line $n=2\alpha$ and the points $n=k\alpha$.
 For $\alpha\ge3$ the shell order $n=\alpha+k+1$ lies below the large-order threshold, because $\alpha(\lceil(k-2)\alpha/2\rceil+2)-(\alpha+k+1)\ge\alpha\cdot\frac{(k-2)\alpha}2+\alpha-k-1\ge4.5(k-2)+3-k-1=3.5k-7>0$ for $k\ge3$ and $\alpha\ge3$ [D].
 For $\alpha=2$ the shell order $k+3$ is below $2k$ for every $k\ge4$.
 The overlaps of the shell with the proved cases are therefore only these: $\alpha=k+1$ has $n=2\alpha$ and gives the bipartite value $k(k+1)$, and the triple $(6,2,3)$ has $n=k\alpha$.
