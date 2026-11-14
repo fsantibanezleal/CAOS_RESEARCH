@@ -23,8 +23,8 @@ Status: [D], with the finite facts F1 to F6 about two fixed graphs machine-verif
 
 Let alpha >= 3 be odd and 3 alpha < n <= 4 alpha - 1. Write n = 3 alpha + r with 1 <= r <= alpha - 1.
 - T(n, alpha) has r cliques of order 4 and alpha - r of order 3.
-- If alpha - r >= 2, replace two cliques of order 3 by X6. Otherwise (r = alpha - 1), replace the clique of order 3
-  and one of order 4 by X7.
+- Replace two cliques of order 3 by X6 (possible when alpha - r >= 2), or a clique of order 3 and one of order 4 by
+  X7 (possible because r >= 1). The proof below covers both choices, and the enumerated graphs use both.
 - This leaves alpha - 1 parts: alpha - 2 cliques P_1, ..., P_{alpha-2} and X.
 - Let Q be a loopless cubic multigraph on these alpha - 1 parts that is 3-edge-connected. Such a Q exists because
   alpha - 1 is even:

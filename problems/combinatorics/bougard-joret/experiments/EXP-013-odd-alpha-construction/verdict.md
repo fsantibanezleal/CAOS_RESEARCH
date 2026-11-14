@@ -12,10 +12,14 @@ Date: 2026-11-14. Hypothesis frozen at 15a64e33 before the construction ran.
   - clique cover number alpha + 1, confirmed by both partition methods.
 
   Each was found on the first or second candidate; `artifacts/construct.jsonl` has every graph in graph6, and
-  `artifacts/run-output.txt` the run. The graph6 strings of every graph are in that file.
+  `artifacts/run-output.txt` the run.
 - At n = 4 alpha (5 orders) the shape does not exist: no clique of order 3 is left to merge, as predicted.
-- At the second candidate (alpha = 5), the first quotient tried, a circular ladder on four parts, is not
-  3-edge-connected (it has a 2-edge cut), and the candidate failed.
+- At alpha = 5 the first quotient tried, a circular ladder on four parts, is not 3-edge-connected (it has a 2-edge
+  cut); its graphs keep independence number 5 but are only 2-connected (checked on 20 random attachments per
+  order), and the second candidate, K4, passed.
+- Every one of the 32 enumerated extremal graphs with s = 1 (EXP-011) is an instance of the construction:
+  alpha - 2 cliques and X6 or X7 on a cubic quotient, which must be 3-edge-connected because the graph is
+  3-connected.
 - [D] `proof.md` proves the same for every odd alpha >= 3 and every n with 3 alpha < n <= 4 alpha - 1, given any
   3-edge-connected loopless cubic multigraph as quotient. The proof rests on six finite facts F1 to F6 about X6 and
   X7, verified exactly by `check_lemmas.py` (`artifacts/check-lemmas.txt`, 0 failures), and on Haxell's
