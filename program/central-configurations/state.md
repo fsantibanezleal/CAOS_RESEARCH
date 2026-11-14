@@ -65,3 +65,12 @@
 - **2026-11-02:** n = 5 settled externally (Tomar with Lean; Chen and Tong; Liu and Liu). EXP-024 audited the
   Lean statement (faithful) and its sources (no kernel bypass). Manuscript v0.11 published
   (10.5281/zenodo.23887585). Next: CCB-041, n = 6, with a new hypothesis and budget.
+
+## 2026-11-14: manuscript v0.12 published (10.5281/zenodo.24232033); CCB-042 verdict
+
+v0.12 revises the paper from the independent audit: the six-body stratum section at the state of the records with the
+claim rule, the atlas claimed only as the stored summaries support it, methods, generated tables, required sections and
+evidence marks. The same day the CCB-042 verdict (independent reviewer, rerun of m2w) found the quadruple corner not
+closed and showed that several charts the summaries list with a few failed boxes are runs stopped at their time budget
+with most of their seed unprocessed. CCB-044 corrects the atlas description in v0.13.
+
