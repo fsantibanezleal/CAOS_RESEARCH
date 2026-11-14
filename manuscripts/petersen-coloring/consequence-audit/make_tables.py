@@ -27,9 +27,10 @@ PC = ROOT / "problems/combinatorics/petersen-coloring"
 EXPS = PC / "experiments"
 sys.path.insert(0, str(PC / "code"))
 
-from pcclib import charges, encoders, graphs, relaxed  # noqa: E402
+from pcclib import charges, encoders, graphs, invariants, relaxed  # noqa: E402
 
 OUT = HERE / "tables"
+BSL = chr(92)
 G5 = ["G112", "H112", "G52", "G52b", "G68"]
 FILES = {
     "G112": "putman-112-main.edgelist",
@@ -359,13 +360,29 @@ def invariants_table():
 
     rows = []
     rows.append("order $n$ / edges & " + " & ".join(f"{GR[g].n} / {len(GR[g].edges)}" for g in G5) + " & EXP-001, EXP-007, EXP-008\\\\")
-    rows.append("automorphism group order & 1 & 6 & 6 & 6 & 1 & EXP-001, EXP-008\\\\")
-    rows.append("cycle-separating 4-cut (edge indices) & \\multicolumn{2}{c}{$\\{2,6,9,12\\}$} & $\\{2,3,8,14\\}$ & $\\{0,11,70,71\\}$ & $\\{2,11,90,97\\}$ & EXP-001, EXP-008\\\\")
+    sym = A("EXP-006", "normal-defect.json")["symmetry"]
+    aut = {"G112": len(sym["G112"]["automorphisms"]), "H112": len(sym["H112"]["automorphisms"]), "G52": len(sym["G52"]["automorphisms"]),
+           "G52b": len(A("EXP-008", "edges-G52b.json")["automorphisms"]), "G68": len(A("EXP-008", "edges-G68.json")["automorphisms"])}
+    assert aut == {"G112": 1, "H112": 6, "G52": 6, "G52b": 6, "G68": 1}, aut
+    rows.append("automorphism group order & " + " & ".join(str(aut[g]) for g in G5) + " & EXP-006, EXP-008\\\\")
+    st1 = A("EXP-001", "manifest.json")["structure"]
+    cuts = {g: st1[g]["cycle_separating_4_cut"] for g in ("G112", "H112", "G52")}
+    cuts.update({"G52b": [0, 11, 70, 71], "G68": [2, 11, 90, 97]})
+    assert cuts["G112"] == cuts["H112"]
+    for g in ("G52b", "G68"):
+        assert invariants.is_cycle_separating(GR[g], tuple(cuts[g]))
+        assert A("EXP-007", f"p0-{g}.json")["cyclic_cut_below_4"] is None
+    cs = lambda c: "$" + BSL + "{" + ",".join(map(str, c)) + BSL + "}$"  # noqa: E731
+    rows.append("cycle-separating 4-cut (edge indices) & " + BSL + "multicolumn{2}{c}{" + cs(cuts["G112"]) + "} & " + cs(cuts["G52"]) + " & " + cs(cuts["G52b"]) + " & " + cs(cuts["G68"]) + " & EXP-001, EXP-007, EXP-008 (re-checked here)\\\\")
     rows.append("Petersen coloring / normal 5 & " + " & ".join(["no (U) / no (U)"] * 5) + " & EXP-001, EXP-007\\\\")
     rows.append("Berge--Fulkerson cover & " + " & ".join(yn(st(g, 2, "bf")) for g in G5) + " & EXP-002, EXP-008\\\\")
     rows.append("cover by 5 / by 4 perfect matchings & " + " & ".join(f"{yn(st(g,2,'berge5'))[:3]} / {yn(st(g,2,'berge4'))[:3]} (S)" for g in G5) + " & EXP-002, EXP-008\\\\")
-    rows.append("cover by 3 perfect matchings & no (U)$^{a}$ & no$^{a}$ & no$^{a}$ & no (U) & no (U) & EXP-001, EXP-008\\\\")
-    rows.append("perfect matching index & 4 & 4 & 4 & 4 & 4 & EXP-002, EXP-008\\\\")
+    for g in ("G52b", "G68"):
+        assert st(g, 2, "berge3") == "UNSAT"
+    rows.append("cover by 3 perfect matchings & not computed$^{a}$ & not computed$^{a}$ & not computed$^{a}$ & " + yn(st("G52b", 2, "berge3")) + " & " + yn(st("G68", 2, "berge3")) + " & EXP-008\\\\")
+    for g in G5:
+        assert st(g, 2, "berge4") == "SAT" and st(g, 2, "berge5") == "SAT"
+    rows.append("perfect matching index & " + " & ".join("4" for g in G5) + " & EXP-002, EXP-008\\\\")
     rows.append("Fan--Raspaud triple & " + " & ".join(yn(st(g, 2, "fr")) for g in G5) + " & EXP-002, EXP-008\\\\")
     rows.append("5-cycle double cover & " + " & ".join(yn(st(g, 3, "cdc5") if g in ("G112", "H112", "G52") else st(g, 3, "cdc5")) for g in G5) + " & EXP-003, EXP-008\\\\")
     rows.append("nowhere-zero $\\mathbb Z_5$-flow & " + " & ".join(yn(st(g, 3, "flow5")) for g in G5) + " & EXP-003, EXP-008\\\\")
@@ -388,8 +405,19 @@ def invariants_table():
     for g, kk in (("G52b", "G52b"), ("G68", "G68")):
         assert b[g][f"{kk}_normal6"]["status"] == "SAT" and b[g][f"{kk}_normal6_strong"]["status"] == "SAT"
     rows.append("normal 6 / strong normal 6 & " + " & ".join(["yes / yes (S)"] * 5) + " & EXP-004, EXP-008\\\\")
-    rows.append("normal chromatic index & 6 & 6 & 6 & 6 & 6 & EXP-001, EXP-004, EXP-008\\\\")
-    rows.append("Petersen defect pd & 2 & 2 & 2 & 2 & 2 & EXP-006, EXP-008\\\\")
+    m1t = A("EXP-001", "manifest.json")["targets"]
+    for g in ("G112", "H112", "G52"):
+        assert m1t[f"{g}_normal5"]["status"] == "UNSAT"
+    for g in ("G52b", "G68"):
+        assert A("EXP-007", f"p0-{g}.json")["normal5"]["status"] == "UNSAT"
+    rows.append("normal chromatic index & " + " & ".join("6" for g in G5) + " & EXP-001, EXP-004, EXP-007, EXP-008\\\\")
+    for g in ("G112", "H112", "G52"):
+        d0 = A("EXP-006", f"pairs-{g}.json")["pairs"]
+        assert all(v["status"] == "SAT" and v["defect"] == 2 for v in d0.values())
+    for g in ("G52b", "G68"):
+        d0 = A("EXP-008", f"pairs-{g}.json")
+        assert d0["summary"]["critical_with_exactly_two_bad"] == d0["summary"]["pairs"]
+    rows.append("Petersen defect pd & " + " & ".join("2" for g in G5) + " & EXP-006, EXP-008\\\\")
     nd = A("EXP-006", "normal-defect.json")["upper_bound"]
     t52b = b["G52b"]["G52b_normal5_defect_le2"]["seconds"] if "G52b_normal5_defect_le2" in b["G52b"] else None
     t68 = b["G68"]["G68_normal5_defect_le2"]["seconds"]

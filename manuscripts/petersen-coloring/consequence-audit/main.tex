@@ -5,6 +5,7 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{longtable}
 \emergencystretch=2em
 \usepackage{xcolor}
 \usepackage{tikz}
@@ -16,7 +17,7 @@
 \definecolor{linknavy}{RGB}{25, 55, 125}
 \usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
 \hypersetup{
-  pdftitle={Exact invariants of the known counterexamples to the Petersen coloring conjecture: covers, flows, defect two and unbounded abnormal edges},
+  pdftitle={Exact invariants of five counterexamples to the Petersen coloring conjecture: covers, flows, defect two and unbounded abnormal edges},
   pdfauthor={Felipe Santibáñez-Leal},
   pdfkeywords={Petersen coloring conjecture, normal edge-coloring, Berge-Fulkerson conjecture, cycle double cover, perfect matching index, oddness, resistance, snarks, SAT, DRAT}
 }
@@ -73,7 +74,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \end{center}
 \vspace{4pt}}
 
-\title{Exact Invariants of the Known Counterexamples\\
+\title{Exact Invariants of Five Counterexamples\\
 to the Petersen Coloring Conjecture:\\
 Covers, Flows, Defect Two and Unbounded Abnormal Edges}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
@@ -107,8 +108,9 @@ vertex pair critical (17{,}362 witnesses). The defect is at most the least numbe
 edges, and both equal 2. Rings and frames assembled from counterexamples need one bad vertex per
 block, so no sublinear function bounds the abnormal edges of 2-connected or 3-connected cubic
 graphs, and two statements of a conjecture of Mattiolo, Mazzuoccolo and Mkrtchyan are false. A
-fifth statement is equivalent to a defect bound of 2. Every computation is propositional; the
-formulas, encodings, counts and commands are given, and each proof is reproduced by re-running its
+fifth statement is equivalent to a defect bound of 2, conditionally on a proposition of that paper
+stated without proof. Every computation is propositional; encodings,
+counts and commands are given, and each proof is reproduced by re-running its
 command.
 \end{abstract}
 
@@ -142,7 +144,7 @@ Berge conjecture (perfect matching index at most~5) and the Fan--Raspaud conject
 perfect matchings with empty intersection) follow from Berge--Fulkerson. Every 3-edge-colorable
 cubic graph is trivially Petersen colorable, so the whole ladder concerns snarks. Exhaustive
 generation had verified the conjecture for every snark on at most 36 vertices~\cite{BGHM2013};
-the case of the weak snarks on 36 vertices was completed in~\cite{GMS2019}, as reported
+the case of the weak snarks of girth 4 on 36 vertices was completed in~\cite{GMS2019}, as reported
 in~\cite{GJMMM2026}. A smallest counterexample has between 40 and 52 vertices (Observation~10
 of~\cite{GJMMMU2026}).
 
@@ -159,7 +161,8 @@ graph of $\PG$. Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo and Mazzuoccolo~\
 then gave a cyclically 4-edge-connected girth-5 counterexample $\Gfty$ on 52 vertices and infinite
 cyclically 4-edge-connected families. The extended account by the same authors and
 Ulyanov~\cite{GJMMMU2026} gives a second counterexample $\Gftyb$ on 52 vertices, a purely
-theoretical proof for both, counterexamples of every even order at least 60, and the bounds
+theoretical proof for both, cyclically 4-edge-connected counterexamples of girth 5 of every even
+order at least 60 (Theorem~8 there), and the bounds
 $40 \le n_{\min} \le 52$ for the order of a smallest counterexample. It leaves open whether every
 bridgeless cubic graph has a normal 6-edge-coloring (Conjecture~12 there, attributed to
 \v{S}\'amal) and whether cyclically 5-edge-connected counterexamples exist (Problem~11). A further
@@ -182,7 +185,8 @@ finite computations, three theorems are proved: the number of bad vertices of an
 Petersen graph is never exactly one (Theorem~\ref{thm:parity}); rings and frames assembled from
 counterexamples force one bad vertex in every block (Theorems~\ref{thm:rings}
 and~\ref{thm:frames}); and statement~(e) of the conjecture of Mattiolo, Mazzuoccolo and
-Mkrtchyan is a statement about two bad vertices (Theorem~\ref{thm:twodefect}).
+Mkrtchyan is, conditionally on a proposition of that paper stated without proof, a statement about two bad
+vertices (Theorem~\ref{thm:twodefect}).
 
 Section~\ref{sec:related} places each cited result. Section~\ref{sec:encodings} gives the
 encodings, their sizes, the solver settings and the checkers. Section~\ref{sec:certify} reports
@@ -216,7 +220,7 @@ snarks of oddness at least 4 below 44 vertices. The claim that the weak snarks o
 completed there is taken from~\cite{GJMMM2026}, not from~\cite{GMS2019}. H\"agglund and
 Steffen~\cite{HS2014} show that several families of snarks are Petersen colorable, Ferrarini,
 Mazzuoccolo and Mkrtchyan~\cite{FMM2019} that a family of Loupekhine snarks has normal
-5-edge-colorings, and Sedlar and \v{S}krekovi\v{c}~\cite{SS2024} the same for snarks superpositioned by
+5-edge-colorings, and Sedlar and \v{S}krekovski~\cite{SS2024} the same for snarks superpositioned by
 flower snarks; normal 5-edge-colorings and Petersen colorings are equivalent~\cite{Jaeger1985}. These
 families are cited through the reference list of~\cite{Putman2026} and their statements are not
 re-derived here.
@@ -243,7 +247,8 @@ Mkrtchyan~\cite{MMM2021} prove that no proper 5-edge-coloring has exactly one ab
 that the sublinear approximation of the Petersen coloring conjecture is equivalent to it for
 bridgeless graphs and to boundedness of the abnormal edges by 5, 7 and 9 on three smaller classes,
 and conjecture that five statements (a) to (e) are equivalent. Their Proposition~2 (the cyclic
-joins used below are cyclically 4-edge-connected) is stated without proof.
+joins used below are cyclically 4-edge-connected) is stated without proof, and their proof of the
+statement for the last class (cyclically 4-edge-connected graphs, bound 9) uses it.
 
 \paragraph{Companion results.} The preprint on unbounded defect~\cite{UD2026} constructs cyclically
 4-edge-connected cubic graphs of Petersen defect at least $t$ on $102t$ vertices and shows that
@@ -270,9 +275,31 @@ $0 < k < N$ the counter adds
 \end{equation}
 and for $k=0$ it adds $N$ unit clauses. The encodings use edge variables only, and the Petersen
 encoding shares no variable scheme with the vertex-witness encodings of~\cite{Putman2026}, so that
-an error in one scheme is not repeated in the other. Every instance is a propositional formula in
+an error in one scheme is not repeated in the other. Table~\ref{tab:notation} lists the notation. Every instance is a propositional formula in
 conjunctive normal form; its status is satisfiable, with a model that is decoded and checked, or
 unsatisfiable, with a DRAT proof that is checked, or undecided at the cap of its computation.
+
+\begin{table}[htbp]\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{10.3cm}}
+\toprule
+symbol & meaning\\
+\midrule
+$G$, $n$, $m$ & a simple cubic graph, its order and its size $m = 3n/2$\\
+$\PG$ & the Petersen graph, the Kneser graph $K(5,2)$ with 15 edges\\
+$\partial(v)$, $\partial(S)$ & the three edges at a vertex $v$; the edges leaving a vertex set $S$\\
+$\sigma$, $\chi_v$ & an edge map $E(G) \to E(\PG)$; the indicator in $\mathbb F_2^{E(\PG)}$ of the labels at $v$\\
+$\pd(G)$, $\ab(G)$ & Petersen defect; least number of abnormal edges of a proper 5-edge-coloring\\
+$\mathrm{odd}(G)$, $\mathrm{res}(G)$ & oddness; resistance\\
+$\chi'_N(G)$ & normal chromatic index\\
+$F$, $\mathcal C(k,m)$ & the Petersen 4-pole (two adjacent vertices removed); compositions of $k$ copies and $m$ free vertices\\
+$C_t$, $K[G]$ & ring of $t$ copies of $G$ opened at an edge; frame of $G$ minus a vertex over a graph $K$\\
+$\Gmain$, $\Gsym$, $\Gfty$, $\Gftyb$, $\Gsix$ & the five counterexamples of orders 112, 112, 52, 52, 68\\
+$V$, $C$ & numbers of variables and clauses of a formula\\
+S, U & satisfiable with a verified witness; unsatisfiable with a checked DRAT proof\\
+\bottomrule
+\end{tabular}
+\caption{Notation used throughout the paper, with the meaning of the status marks S and U used in the tables of results.}\label{tab:notation}
+\end{table}
 
 \subsection{The encodings}
 
@@ -320,7 +347,7 @@ the indicators (Algorithm~\ref{alg:defect}).
 \begin{algorithmic}[1]
 \State matchings: variables $m_{e,i}$ for $i \le k$, exactly one edge of $m_{\cdot,i}$ at every vertex
 \State Berge--Fulkerson ($k=6$): every edge in at least two and at most two matchings; units $m_{0,0}$, $m_{0,1}$
-\State Berge cover by $k$ matchings: every edge in at least one; unit $m_{0,0}$; Fan--Raspaud ($k=3$): no edge in all three
+\State Berge cover by $k$ matchings: every edge in at least one; unit $m_{0,0}$; Fan--Raspaud ($k=3$): no edge in all three, with the unit $m_{0,0}$ (included in the encoder and in the counts; it only restricts the satisfiable instances, since a triple need not contain the first edge, so a satisfiable answer is unaffected)
 \State cycle double cover: variables $z_{e,i}$, $i \le 5$; at every vertex forbid degrees 1 and 3 in each $z_{\cdot,i}$; every edge in exactly two; units $z_{0,0}$, $z_{0,1}$
 \State flow over $\mathbb Z_k$: variables $w_{e,a}$, $a \in \{1,\dots,k-1\}$, edges oriented from the smaller end; exactly one value per edge; at every vertex forbid each value triple with signed sum not $0 \bmod k$
 \end{algorithmic}
@@ -376,21 +403,21 @@ leaves a 3-edge-colorable graph.
 
 With $m = 3n/2$, the numbers of variables and clauses are given by the following counts. The
 Petersen encoding has
-\[
+\begin{equation}\label{eq:size-pet}
 V_{\mathrm{Pet}} = 15m = 22.5\,n, \qquad C_{\mathrm{Pet}} = 106\,m + 495\,n + 2 = 654\,n + 2,
-\]
+\end{equation}
 because each edge contributes one 15-literal clause and 105 binary clauses, each vertex three pairs
 of edges and each pair $15 \cdot 11 = 165$ forbidden image pairs, plus the two symmetry units. The
 normal 5-edge-coloring encoding has
-\[
+\begin{equation}\label{eq:size-n5}
 V_{\mathrm{N5}} = 16\,m = 24\,n, \qquad C_{\mathrm{N5}} = 56\,m + 15\,n = 99\,n,
-\]
+\end{equation}
 and a cardinality bound $d \ge 1$ on the Petersen defect adds $n + nd$ variables and
 $d + (n-1)(2d+1)$ clauses. A designated relaxation at one vertex has $654n - 493$ clauses and at a
 pair $654n - 988$. The cover encodings have
-\[
+\begin{equation}\label{eq:size-cover}
 (V,C)_{\mathrm{BF}} = (9n,\; 63n + 2), \qquad (V,C)_{\mathrm{Berge}(k)} = (1.5kn,\; 4kn + 1.5n + 1),
-\]
+\end{equation}
 and the cycle double cover and flow encodings $(7.5n,\; 42.5n + 2)$ and
 $(1.5(k-1)n,\; (1 + \tbinom{k-1}{2})1.5n + \kappa_k n)$ with $\kappa_4 = 21$ and $\kappa_5 = 52$
 violating value triples per vertex. Table~\ref{tab:encformulas} lists all counts and
@@ -431,6 +458,47 @@ count its abnormal edges; that a map into $E(\PG)$ is counted at the vertices wh
 star; that a 2-factor has the stated number of odd cycles; and that the non-deleted edges are
 properly 3-edge-colored. No floating-point arithmetic is used.
 
+\subsection{Experimental design: hypotheses and predictions}
+
+The hypothesis and the falsifiable predictions of every computation were recorded in the repository
+before its instances ran (the commit is given in Table~\ref{tab:hypotheses}); where a prediction
+carries an expectation of its author, the expectation was recorded with its confidence, so that a
+refuted expectation is a result and not a revision; the confidence levels are quoted as they were
+recorded, either as a word (low, moderate) or as a fraction. Table~\ref{tab:hypotheses} transcribes, for each
+computation used here, its question, the predictions with the recorded expectations, and the outcome.
+A prediction that was refuted stays in the table as a result: the oddness and resistance of the
+112-vertex graphs, the defect of $\Gfty$ and the existence of a critical single vertex are the
+cases in which the recorded expectation was wrong, and the sections of results report the measured
+values. Predictions about controls and about corrupted witnesses are the validation of
+Section~\ref{sec:validation}; the others are the results of Sections~\ref{sec:certify} to~\ref{sec:poles}.
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{6.2cm}>{\raggedright\arraybackslash}p{6.0cm}}
+\caption{Hypotheses, predictions and outcomes of the computations used in this paper, transcribed
+from the records of the computations (commit in which the hypothesis was recorded, before the run).
+P$n$ is the $n$-th prediction of the computation.}\label{tab:hypotheses}\\
+\toprule
+computation & hypothesis and predictions (recorded expectations in italics) & outcome\\
+\midrule
+\endfirsthead
+\toprule
+computation & hypothesis and predictions & outcome\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+EXP-001 (\texttt{fa6910e}) & Do encoders that share no code with the public ones certify, with checked DRAT proofs, that $\Gmain$, $\Gsym$, $\Gfty$ have neither a Petersen coloring nor a normal 5-edge-coloring, while accepting colorable controls and rejecting corrupted input? P1 structure and digests; P2 controls satisfiable; P3 six refutations verified; P4 Putman's four proofs accepted; P5 corrupted witness rejected, symmetry units removable; P6 cyclic cuts. & P1 to P6 held (Section~\ref{sec:certify}, Section~\ref{sec:validation}).\\
+EXP-002 (\texttt{4ea64f5}) & Do the three graphs have a Berge--Fulkerson cover, a Berge cover by five matchings, Fan--Raspaud, and a cover by four? P1 controls (Petersen index 5); P2 to P4 covers and index exactly 4 or 5, \emph{expectation 4}; P5 corrupted witness. & P1 to P5 held; index 4 on all three.\\
+EXP-003 (\texttt{e1e7a3b}) & Do the graphs have a 5-cycle double cover, a 5-flow, no 4-flow, and what are their oddness and resistance? P2, P3 covers and flows; P4 oddness, \emph{expectation 2}; P5 resistance, \emph{expectation 2}; P6 corrupted witnesses. & P2, P3, P6 held; P4 and P5 refuted for $\Gmain$, $\Gsym$ (oddness 4, resistance 3), held for $\Gfty$.\\
+EXP-004 (\texttt{e1e7a3b}) & Normal 6 and strong normal 6; normal-5 defect, \emph{expectation 1}; Petersen defect, \emph{expectation 1}. P1 controls; P2, P3 normal 6; P4, P5 defects; P6 corrupted witness. & P1 to P3, P6 held; P4 undecided (bound 1 reached the cap); P5 decided for $\Gfty$ only and refuted (defect 2).\\
+EXP-005 (\texttt{817afdb}) & Does a graph in a class $\mathcal C(k,m)$ with $38 \le 8k+m \le 50$ lack a Petersen coloring? P1 controls exhaust; P2 six disjoint copies of $F$ in $\Gfty$; P3 \emph{low confidence: none, each class exhausting in budget}; P4 learned clauses re-verify. & P1 partial ($(2,0)$ exhausted, $(3,2)$ at the budget); P2 first half held; P3 undecided; P4 held.\\
+EXP-006 (\texttt{cd4df4a}, \texttt{4dc402d}, \texttt{fd6eb2d}) & Designated relaxation instead of a cardinality counter. P1 a critical vertex of $\Gfty$, \emph{defect 1}; P2 critical vertices in the free vertices of the 112-vertex graphs; P3 a non-critical vertex; P4 a critical edge; P5 corrupted witness; P6 some pair of $\Gfty$ critical; P7 the 120 free-vertex pairs of $\Gmain$; P8 normal-5 defect by edges; P9 every pair of $\Gmain$, $\Gsym$; P10 edge orbits; P11 two-abnormal-edge colorings. & P1, P2 refuted (all singles unsatisfiable); P3, P5, P6, P7, P9, P10, P11 held, P6 and P9 in the stronger form (every pair); P4, P8 closed by P10 and P11.\\
+EXP-008 (\texttt{dd82817d}) & Do $\Gftyb$ and $\Gsix$ have the same invariants as $\Gfty$? P1 covers; P2 cycles and flows; P3 oddness and resistance 2 (\emph{moderate, low for $\Gsix$}); P4 normal 6; P5 defect 2 with every pair critical (\emph{moderate}); P6 two abnormal edges. & P1 to P5 held, including the low-confidence expectation for $\Gsix$; P6 held (lower bound by theorem).\\
+EXP-009 (\texttt{efed046b}) & Are the ring and frame defect bounds attained on the smallest instances? P1 controls from $J_5$ colorable; P2 structure; P3 $\pd(C_t) = t$, $\pd(K_4[\Gfty]) = 4$ (\emph{moderate}); P4 $\ab = t$ (\emph{low}); P5 twenty same-copy relaxations of $C_2$ unsatisfiable. & P1, P2, P3, P5 held; P4 undecided ($2 \le \ab(C_2) \le 4$).\\
+EXP-010 (\texttt{5bbe3661}) & Is some 4-pole $G - e_1 - e_2$ of the counterexamples not colorable (statement (e))? P1 control; P2 patterns; P3 \emph{about one half: some pair gives a non-colorable 4-pole}; P6 \emph{one third} for adjacent-vertex 4-poles; P7 dot products; P8 \emph{one quarter} and P9 \emph{one fifth} for two disjoint distance sets. & P1, P2 held; P3 refuted for $\Gfty$, $\Gftyb$, $\Gsix$; P6 refuted; P7 all ten dot products counterexamples of defect 2; P8, P9 refuted on all 546 decided sets.\\
+EXP-011 (recorded 2026-09-18) & Is every adjacent pair of the ten dot products critical? P1 control $\Gfty$; P2 \emph{three quarters: every pair critical}; P3 each witness has exactly the two relaxed vertices bad. & P1 to P3 held (1{,}530 of 1{,}530).\\
+\end{longtable}}
+
 \section{Results: independent certification}\label{sec:certify}
 
 \subsection{The graphs}
@@ -438,7 +506,7 @@ properly 3-edge-colored. No floating-point arithmetic is used.
 We use Putman's normalized digest: the SHA-256 of the compact JSON serialization of the sorted
 edge list with $u < v$. The five graphs are
 $\Gmain$ (digest \texttt{dc16cc18\ldots{}e8b}), $\Gsym$ (digest \texttt{0f2d8858\ldots{}35c7}),
-both transcribed from Putman's CC0 archive; $\Gfty$, transcribed from the appendix
+both transcribed from Putman's archive (licence CC BY 4.0); $\Gfty$, transcribed from the appendix
 of~\cite{GJMMM2026} with vertices renumbered from $1..52$ to $0..51$ (digest
 \texttt{27db5d3b\ldots}); and $\Gftyb$ (digest \texttt{d30a423a\ldots{}1477}) and $\Gsix$ (digest
 \texttt{19c7c22a\ldots{}5ab2}), taken from entries 57278 and 57280 of the House of
@@ -479,10 +547,10 @@ machine. Sizes, times and proof bytes are read from the archived manifests.}\lab
 \input{tables/fig-certify-times.tex}
 \caption{Solve time (seconds, log scale) of the Petersen and normal-5 refutations of the five
 graphs. The normal-5 formulas have about one seventh as many clauses as the Petersen formulas and
-are 19 to 190 times slower to refute (Table~\ref{tab:certify}).}\label{fig:certify}
+are 18.5 to 190 times slower to refute (Table~\ref{tab:certify}).}\label{fig:certify}
 \end{figure}
 
-Figure~\ref{fig:certify} compares the two encodings on the five graphs. The Petersen encoding with its symmetry units is the cheaper route by a factor of 19 to 190 in solve
+Figure~\ref{fig:certify} compares the two encodings on the five graphs. The Petersen encoding with its symmetry units is the cheaper route by a factor of 18.5 to 190 in solve
 time and its proofs are 4 to 98 MB, while the normal-5 proofs reach \MaxProofGB{} GB. Removing the
 symmetry units multiplies the solve time on the 112-vertex graphs by 4.4 and 10.8 and on $\Gfty$ by
 15, and does not change any status. Table~\ref{tab:digests} gives the digests of the ten formulas and proofs, so that a
@@ -780,7 +848,7 @@ For $\Gfty$ the lower bound $\ab \ge 2$ was also confirmed directly: the 42 sing
 relaxations refuted with checked proofs meet all 14 edge orbits of its automorphism group of
 order~6 (the six automorphisms are re-checked from the edge list).
 
-\begin{table}[p]\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{table}[p]\centering\scriptsize\setlength{\tabcolsep}{3pt}
 \input{tables/tab-invariants.tex}
 \caption{Invariants of the five counterexamples with the computation that produces each row. S:
 satisfiable, witness re-verified from the graph alone; U: unsatisfiable, DRAT proof checked by
@@ -879,7 +947,10 @@ then it is 3-connected. Indeed, let $S$ be a minimum vertex cut with $|S| \le 2$
 component of $H - S$ and $B$ the union of the others. Every $s \in S$ has a neighbour in $A$ and one
 in $B$ by minimality, so $s$ has at most one neighbour on one of the two sides; putting $s$ on the
 side where it has two neighbours, the edge cut between the two enlarged sides has exactly one edge
-per vertex of $S$ and at most two edges, which is impossible. So it remains to show that $F$ is
+per vertex of $S$ and at most two edges, which is impossible. (If $S = \{s,s'\}$ and $s,s'$ are
+adjacent, each of them has one neighbour in $A$, one in $B$ and one in $S$, and no side gives it two
+neighbours; then put both on the side of $A$, which leaves the edges from $s$ and $s'$ to $B$, at most
+two edges again.) So it remains to show that $F$ is
 3-edge-connected. $F$ is simple, because $K$ is simple and each $G_x$ is.
 
 Write $B_x = V(G_x) \setminus \{v_x\}$, $H_x = G_x - v_x$ and $A_x = \{a^x_1,a^x_2,a^x_3\}$ for the
@@ -916,7 +987,8 @@ coloring conjecture, and the existence of a sublinear function $f$ such that
 $\ab(G) \le f(|V(G)|)$ for (b) all bridgeless, (c) all 2-connected, (d) all 3-connected,
 respectively (e) all cyclically 4-edge-connected cubic graphs $G$. It is proved there that the second statement is equivalent to the first, and
 that on the last three classes a sublinear bound exists if and only if $\ab$ is bounded by 5, 7
-and 9 respectively. The rings of Theorem~\ref{thm:rings} built from $\Gfty$ are 2-connected with
+and 9 respectively (the proof for the last class uses Proposition~2 of~\cite{MMM2021}, which is stated
+there without proof). The rings of Theorem~\ref{thm:rings} built from $\Gfty$ are 2-connected with
 $\ab \ge |V|/52$, and the graphs of Theorem~\ref{thm:frames} built from $\Gfty$ over 3-connected
 cubic graphs $K$ are 3-connected with $\ab \ge |V|/51$, because the orders are
 \begin{equation}\label{eq:orders}
@@ -932,7 +1004,8 @@ either class such a function exists if and only if every graph of the class has 
 
 \begin{proof}
 If every graph of the class has a normal 5-edge-coloring, the zero function is a bound. Otherwise
-let $G$ be a graph of the class without one. The rings of $t$ copies of $G$ are 2-connected, and
+let $G$ be a graph of the class without one. The rings of $t$ copies of $G$ are bridgeless by
+Theorem~\ref{thm:rings}, hence 2-connected (a cut vertex of a cubic graph is incident with a bridge), and
 the graphs of Theorem~\ref{thm:frames} over the prisms with $t$ vertices, $t \ge 6$ even, with
 every $G_x = G$, are 3-connected when $G$ is (Lemma~\ref{lem:frame3}); both have $\ab \ge t$ and at
 most $t\,|V(G)|$ vertices, so $\ab$ is at least linear in the order along these sequences. The graph
@@ -940,12 +1013,14 @@ $\Gfty$ is 3-connected without a normal 5-edge-coloring (Theorem~\ref{thm:certif
 \end{proof}
 
 Thus statements (c) and (d) of~\cite{MMM2021} are false, and their conjectured equivalence now
-amounts to the falsity of (e): by their Theorem~4, to the existence of a
-cyclically 4-edge-connected cubic graph with $\ab \ge 10$. All five known counterexamples are
+amounts to the falsity of (e): by their Theorem~4, whose proof uses their Proposition~2 (stated without
+proof), to the existence of a cyclically 4-edge-connected cubic graph with $\ab \ge 10$. All five known counterexamples are
 cyclically 4-edge-connected with $\ab = 2$. A much smaller defect would suffice.
 
-\begin{proposition}[\dd]\label{prop:threshold}
-If some cyclically 4-edge-connected cubic graph $G^*$ has $\pd(G^*) \ge 3$, then $\pd$ and $\ab$
+\begin{proposition}[\dd; conditional on Proposition~2 of~\cite{MMM2021}]\label{prop:threshold}
+Assume that the cyclic joins of copies of a cyclically 4-edge-connected cubic graph minus two edges are
+cyclically 4-edge-connected (Proposition~2 of~\cite{MMM2021}, stated there without proof). If some
+cyclically 4-edge-connected cubic graph $G^*$ has $\pd(G^*) \ge 3$, then $\pd$ and $\ab$
 are unbounded on the class of cyclically 4-edge-connected cubic graphs. Hence on that class either
 $\pd \le 2$ everywhere, or no sublinear function bounds $\ab$.
 \end{proposition}
@@ -1044,7 +1119,11 @@ $\Gsix$, every 4-pole obtained by deleting two independent edges has a Petersen 
 representative per orbit of edge pairs: 482, 482 and 4{,}947 4-poles, computation EXP-010,
 Table~\ref{tab:poles}), and the boundary labels of the colorings found are of two kinds only, as
 the cut space predicts: the \emph{crossed} pattern, with two distinct labels among the four, or the
-\emph{four-distinct} pattern, the four edges adjacent to one edge of $\PG$. The \emph{restorable}
+\emph{four-distinct} pattern, the four edges adjacent to one edge of $\PG$. The latter identification
+is forced by the cut space: the sum of the four pendant labels is a cut of $\PG$ of weight 4; since $\PG$
+is cyclically 5-edge-connected one side $S$ of that cut induces a forest with $c$ components, so
+$4 = |S| + 2c$ with $|S| \ge 1$ gives $|S| = 2$ and $c = 1$, an edge, and the cut consists of the four edges
+adjacent to it. The \emph{restorable}
 pattern, in which the two pendant labels at the ends of each deleted edge are equal, never occurs,
 and no other pattern occurs. A 4-pole with a crossed pattern can be chained around
 a ring with an even number of copies, because any two edges of $\PG$ are exchanged by an
@@ -1061,8 +1140,7 @@ has 28 representatives.}\label{tab:poles}
 In all 73 4-poles of $\Gfty$ that contain the fixed deleted edge $e_0 = 0$, the two labels at the ends
 of that edge can be chosen adjacent in $\PG$. More generally the distance sets
 $\mathrm{Dist}(e_0, e)$ of the label pairs realizable at the ends of $e_0$ and $e$ were decided
-for 546 of the 949 relevant edge pairs of $\Gfty$ (seven edge orbits complete, five partial, one not
-started); every decided set contains the distance~1, so the 4-poles built on a decided pair are
+for 546 of the 949 relevant edge pairs of $\Gfty$ (six edge orbits complete and six partial); every decided set contains the distance~1, so the 4-poles built on a decided pair are
 colorable (Table~\ref{tab:distance}).
 
 \begin{table}[htbp]\centering\footnotesize\setlength{\tabcolsep}{6pt}
@@ -1128,7 +1206,7 @@ solely of copies of $F$.
 
 \begin{proof}
 $F$ admits a Petersen coloring in which its four semi-edges carry the same edge $x$ of $\PG$
-(the distance-zero case of Jooken's Lemma~2.1~\cite{GJMMMU2026}; an explicit such coloring is
+(the distance-zero case of Lemma~2.1 of the Jooken note, revision v2 of~\cite{GJMMMU2026}; an explicit such coloring is
 recorded in the repository). Color every copy by it, with the same $x$. Every join edge then
 carries $x$ at both ends, and every vertex star is a star of a copy of $F$, hence a star of
 $\PG$.
@@ -1139,7 +1217,8 @@ check; Petersen-colorability of each candidate; sound blocking clauses learned f
 coloring found, each recorded with its witness) exhausted $\mathcal C(5,0)$ and $\mathcal C(6,0)$
 (40 and 48 vertices) in 3.2 and 5.5 seconds by exactly such a universal coloring, but did not converge
 on classes with free vertices: the 26-vertex control $\mathcal C(3,2)$ stopped at a 15-minute time limit
-after $1{,}059$ iterations and $29{,}052$ learned clauses, and $\mathcal C(5,2)$ (42 vertices) stopped
+after $1{,}059$ iterations and $29{,}052$ learned clauses (reported in the archived summary of the
+computation, not in its manifest), and $\mathcal C(5,2)$ (42 vertices) stopped
 at a two-hour time limit after $1{,}992$ iterations and $80{,}832$ learned clauses, as did $\mathcal C(6,2)$
 (50 vertices) after $1{,}498$ iterations and $75{,}286$ learned clauses, all without finding a
 counterexample and without exhausting. We do not claim anything about classes the search did not
@@ -1180,7 +1259,7 @@ could not produce these rejections.
 \subsection{Ablation of the symmetry units and of the defect encoding}
 
 \paragraph{Removing the symmetry units.} The three Petersen refutations without the two symmetry
-units (Table~\ref{tab:certify}) have 2 fewer clauses, are 4 to 16 times slower and have proofs
+units (Table~\ref{tab:certify}) have 2 fewer clauses, are 4 to 15 times slower and have proofs
 about 5 to 21 times larger, and remain unsatisfiable with checked proofs, so the units change the cost
 and not the answer. The comparison is the ablation of the only non-structural clauses of the encoding:
 the 15 images of the first edge are interchangeable under the automorphisms of $\PG$, and fixing one of
@@ -1236,7 +1315,8 @@ it explains that the single-vertex sweeps cannot succeed. It does not explain th
 every one of the 17{,}362 pairs is critical. The distribution of the cut-space classes
 (Table~\ref{tab:classes}) shows that the pair witnesses put a charge of the class of a single edge of the
 Petersen graph on the two bad vertices in 96.5 percent of the cases of $\Gfty$ and in between 90.6
-percent ($\Gsix$) and 96.5 percent on the five graphs, with the rarer classes $D_2$, $D_3$ and $T_2$ filling the rest; the
+percent ($\Gsix$) and 96.5 percent on the five graphs, with the rarer classes $D_2$, $D_3$ and $T_2$,
+and one witness of class $T_1$ on $\Gftyb$, filling the rest; the
 pattern is measured, not derived.
 
 The third observation concerns sampling. Fifteen cyclically 4-edge-connected counterexamples, the five
@@ -1249,7 +1329,7 @@ reason this paper separates its finite results from its theorems.
 
 On method, the cost is dominated by the normal-5 refutations, whose proofs reach \MaxProofGB{} GB and
 whose checks reach 4{,}492.7 s (Table~\ref{tab:certify}), while the Petersen encoding with two symmetry
-units refutes the same graphs 19 to 190 times faster and is the practical route for any further search
+units refutes the same graphs 18.5 to 190 times faster and is the practical route for any further search
 for counterexamples. The designated relaxation turns a defect question that the cardinality encoding
 could not decide on the 112-vertex graphs into thousands of instances of a few seconds each.
 
@@ -1269,7 +1349,7 @@ abnormal-edge numbers of the rings and the frame are bounded below only; the 4-p
 is 23 percent complete and that of $\Gmain$ was not run; 403 of the 949 distance sets of $\Gfty$ are
 undecided; and the counterexample-guided search of Section~\ref{sec:compositions} did not converge on
 the classes with free vertices. The edge-orbit sweeps planned for $\Gftyb$ and $\Gsix$ were not
-completed (four instances reached their 900 s limit), so for these graphs, as for the 112-vertex
+completed (five instances reached their 900 s limit), so for these graphs, as for the 112-vertex
 graphs, the lower bound $\ab \ge 2$ rests on the parity theorem and Lemma~\ref{lem:pdab} and not on a
 sweep. Every time quoted is the wall-clock time of a single run, several of which shared the machine with
 other computations; the spread over instances is shown in Table~\ref{tab:pairs}, and no instance was
@@ -1412,25 +1492,29 @@ arXiv:2608.10012.
 A smaller counterexample and infinite family of counterexamples to the Petersen Coloring
 Conjecture, Zenodo (2026), \href{https://doi.org/10.5281/zenodo.21933785}{doi:10.5281/zenodo.21933785}.
 \bibitem{GJMMMU2026} J.~Jooken (v2 note), J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a,
-D.~Mattiolo, G.~Mazzuoccolo, S.~Ulyanov (v3 and v4), Disproving the Petersen Coloring Conjecture:
+D.~Mattiolo, G.~Mazzuoccolo, N.~Ulyanov (v3 and v4), Disproving the Petersen Coloring Conjecture:
 theoretical analysis and an infinite family of counterexamples, arXiv:2608.10028, revisions v2 (a
 human-checkable proof of the 112-vertex counterexample), v3 and v4 (30 September 2026; the statement
 numbers used here are those of v4).
 \bibitem{MMM2021} D.~Mattiolo, G.~Mazzuoccolo, V.~Mkrtchyan, On sublinear approximations for the
 Petersen coloring conjecture, Bull. Inst. Combin. Appl. 92 (2021), 78--90; arXiv:2104.09241.
 \bibitem{UD2026} F.~Santib\'a\~nez-Leal, Cyclically 4-edge-connected cubic graphs of unbounded
-Petersen defect, preprint v0.03 (2026), concept
-\href{https://doi.org/10.5281/zenodo.22847192}{doi:10.5281/zenodo.22847192}.
-\bibitem{COBI2026} F.~Santib\'a\~nez-Leal, Which counterexamples to the Petersen coloring conjecture
-are colorable only by themselves?, preprint v0.02 (2026),
-\href{https://doi.org/10.5281/zenodo.24230853}{doi:10.5281/zenodo.24230853}.
+Petersen defect, preprint (2026), concept DOI
+\href{https://doi.org/10.5281/zenodo.22847192}{10.5281/zenodo.22847192}, which resolves to the latest version.
+\bibitem{COBI2026} F.~Santib\'a\~nez-Leal, The two 52-vertex counterexamples to the Petersen coloring
+conjecture are colorable only by themselves if no counterexample has at most 38 vertices, preprint
+(2026), concept DOI
+\href{https://doi.org/10.5281/zenodo.22859074}{10.5281/zenodo.22859074} (resolves to the latest
+version).
 \bibitem{HoG} K.~Coolsaet, S.~D'hondt, J.~Goedgebeur, House of Graphs 2.0: a database of
-interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107;
+interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107,
+\href{https://doi.org/10.1016/j.dam.2022.10.013}{doi:10.1016/j.dam.2022.10.013};
 \url{https://houseofgraphs.org}.
 \bibitem{MazzMkrt2020} G.~Mazzuoccolo, V.~V. Mkrtchyan, Normal edge-colorings of cubic graphs,
 J. Graph Theory 94 (2020), 75--91, \href{https://doi.org/10.1002/jgt.22507}{doi:10.1002/jgt.22507}.
 \bibitem{MM2020b} G.~Mazzuoccolo, V.~V. Mkrtchyan, Normal 6-edge-colorings of some bridgeless cubic
-graphs, Discrete Appl. Math. 277 (2020), 252--262.
+graphs, Discrete Appl. Math. 277 (2020), 252--262,
+\href{https://doi.org/10.1016/j.dam.2019.09.019}{doi:10.1016/j.dam.2019.09.019}.
 \bibitem{BGHM2013} G.~Brinkmann, J.~Goedgebeur, J.~H\"agglund, K.~Markstr\"om, Generation and
 properties of snarks, J. Combin. Theory Ser. B 103 (2013), 468--488,
 \href{https://doi.org/10.1016/j.jctb.2013.05.001}{doi:10.1016/j.jctb.2013.05.001}.
@@ -1445,16 +1529,18 @@ Contemp. 7 (2014), 161--173, \href{https://doi.org/10.26493/1855-3974.288.11a}{d
 \bibitem{FLSS2025} I.~Fabrici, B.~Lu\v{z}ar, R.~Sot\'ak, D.~\v{S}vecov\'a, Normal 6-edge-colorings of
 cubic graphs with oddness 2, arXiv:2508.20565 (2025).
 \bibitem{FMM2019} L.~Ferrarini, G.~Mazzuoccolo, V.~Mkrtchyan, Normal 5-edge-colorings of a family
-of Loupekhine snarks, arXiv:1904.02661 (2019), \href{https://doi.org/10.1016/j.akcej.2019.12.014}{doi:10.1016/j.akcej.2019.12.014}.
+of Loupekhine snarks, AKCE Int. J. Graphs Comb. 17 (2020), 720--724; arXiv:1904.02661;
+\href{https://doi.org/10.1016/j.akcej.2019.12.014}{doi:10.1016/j.akcej.2019.12.014}.
 \bibitem{SS2024} J.~Sedlar, R.~\v{S}krekovski, Normal 5-edge-coloring of some snarks superpositioned
 by Flower snarks, European J. Combin. 122 (2024), 104038; arXiv:2306.13340.
 \bibitem{Beaudin2010} L.~Beaudin, J.~Ellis-Monaghan, G.~Pangborn, R.~Shrock, A little statistical
-mechanics for the graph theorist, Discrete Math. 310 (2010), 2037--2053; arXiv:0804.2468.
-\bibitem{Inoue2026} Inoue, Kawarabayashi, Matsuo, Miyashita, Mohar, Sonobe, et al., Three-edge-coloring
-apex cubic graphs, arXiv:2608.22870 (2026).
+mechanics for the graph theorist, Discrete Math. 310 (2010), 2037--2053,
+\href{https://doi.org/10.1016/j.disc.2010.03.011}{doi:10.1016/j.disc.2010.03.011}; arXiv:0804.2468.
+\bibitem{Inoue2026} Y.~Inoue, K.~Kawarabayashi, R.~Matsuo, A.~Miyashita, B.~Mohar, T.~Sonobe,
+Three-edge-coloring apex cubic graphs, arXiv:2608.22870 (2026).
 \bibitem{FM2026} L.~Ferrarini, V.~Mkrtchyan, Some new results on Sylvester colorings of cubic graphs,
 arXiv:2607.06396 (2026).
-\bibitem{MSWZ2026} Y.~Ma, E.~Steffen, I.~H. Wolf, Zhang, Some conjectures on $r$-graphs and
+\bibitem{MSWZ2026} Y.~Ma, E.~Steffen, I.~H. Wolf, J.~Zhang, Some conjectures on $r$-graphs and
 equivalences, arXiv:2411.01753 (2026).
 \bibitem{CaDiCaL2024} A.~Biere et al., CaDiCaL 2.0, in: Computer Aided Verification (CAV 2024),
 \href{https://doi.org/10.1007/978-3-031-65627-9_7}{doi:10.1007/978-3-031-65627-9\_7}.
