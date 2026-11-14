@@ -1446,7 +1446,7 @@ From $\dim\mathcal I\le 4=\dim\mathbb{R}^4$ the projection $\pi$ has finite gene
 case generic masses admit no configuration of the stratum at all; this is the fibre-dimension argument of
 the Dias--Pan pattern \cite{DP18} (the record's section~2 of
 \path{CC/context/2026-08-20-stratum-theorem-assembly.md}, lines 26--62). % voice-ok
-The lemmas below are proved on $\mathcal S$, so the count needs nothing on the boundary $X^{+}\setminus\mathcal S$, where pairs collide or collapse; the certified atlas and its face
+The lemmas below are proved on $\mathcal S$, so the count needs nothing on the boundary $X^{+}\setminus\mathcal S$, where pairs collide or collapse; the interval atlas and its face
 analysis (Section~\ref{sec:atlas-status}) concern rank conditions near that boundary, a different statement. The four hypotheses are the \emph{ladder}. Following the case numbering of the records, case $k$ is the statement
 $\dim R_{k-1}\le k-1$ (for $k=1,2,3$) and $R_3\ne\mathcal S$ (for $k=4$). The centred pentagon below shows that
 $\dim R_2=2$ is attained, so the bound for $k=3$ is sharp.
@@ -1609,7 +1609,7 @@ either full rank or treated by pieces 10 to 12\MV, with the limit on piece 11 ju
 Table~\ref{tab:atlas} sets the accounting of the assembly record against the stored summaries and checkpoints, chart by chart, with the status class of each chart. The record lists fifteen
 charts at zero failed boxes and reads the stored counter named \texttt{failed} as the number of boxes that failed at the depth cap. For five charts that counter is something else: when a run stops at its
 time budget the program adds the whole unprocessed stack to it, so the 20 of collapse, 19 of bicorner-same, 20 of fartube, 21 of m1 and 10 of uplow are unprocessed stack boxes, and the checkpoints
-of these runs hold no genuine failure. The runs stopped with most of their seeds unexamined: 98.0\% of bicorner-same, 98.4\% of fartube, 99.96\% of m1 and 89.3\% of uplow (69.5\% after the symmetry group),
+of these runs hold no genuine failure. The runs stopped with most of their seeds unexamined: 98.0\% of bicorner-same, 98.4\% of fartube (before any symmetry reduction), 99.96\% of m1 and 89.3\% of uplow (69.5\% after the symmetry group),
 against 39.6\% of collapse, which is 0\% after the mirror, so that collapse is complete modulo the mirror, conditionally on its last 412 boxes. The charts deep-L and deep-R stopped at their budget with 6,086
 and 134,008 genuine failures and 37.3\% and 46.7\% of the seed unprocessed after the mirror; fa2b and the m2 charts are incomplete likewise, and m1vert-S never ran. Of the fifteen charts, \numAtlasComplete\
 are complete with zero failures (bicorner-opp, fa1, tube-L, tube-R, tubeext-L, tubeext-R and ulow) and \numAtlasStopped\ are runs stopped at their budget. Of the charts that finished, band has its 44
@@ -1674,31 +1674,31 @@ read from the stored run summaries; the ball-certified boxes of the core run are
 \toprule
 Chart & record & summary failed & status class & checkpoint failed & stack boxes & unprocessed share of the seed \\
 \midrule
-bicorner-opp & 0 & 0 & complete & 0 & 5 & -- \\
+bicorner-opp & 0 & 0 & complete & 0 & -- & -- \\
 bicorner-same & 0 & 19 & incomplete: budget stop & 0 & 17 & 98.0\% \\
 collapse & 0 & 20 & complete modulo the mirror, conditional & 0 & 18 & 39.6\% (0\% after the mirror) \\
 deep-L & 0 & 6{,}102 & incomplete: budget stop, genuine failures & 6{,}086 & 16 & 68.7\% (37.3\% after the mirror) \\
 deep-R & 0 & 137{,}063 & incomplete: budget stop, genuine failures & 134{,}008 & 23 & 73.4\% (46.7\% after the mirror) \\
-fa1 & 0 & 0 & complete & 0 & 4 & -- \\
-fartube & 0 & 20 & incomplete: budget stop & 0 & 20 & 98.4\% \\
+fa1 & 0 & 0 & complete & 0 & -- & -- \\
+fartube & 0 & 20 & incomplete: budget stop & 0 & 20 & 98.4\% (before any symmetry reduction) \\
 m1 & 0 & 21 & incomplete: budget stop & 0 & 20 & 99.96\% \\
 m1vert-S & 0 & -- & never ran & -- & -- & 100\% (never ran) \\
-tube-L & 0 & 0 & complete & 0 & 9 & -- \\
-tube-R & 0 & 0 & complete & 0 & 6 & -- \\
-tubeext-L & 0 & 0 & complete & 0 & 10 & -- \\
-tubeext-R & 0 & 0 & complete & 0 & 11 & -- \\
-ulow & 0 & 0 & complete & 0 & 5 & -- \\
+tube-L & 0 & 0 & complete & 0 & -- & -- \\
+tube-R & 0 & 0 & complete & 0 & -- & -- \\
+tubeext-L & 0 & 0 & complete & 0 & -- & -- \\
+tubeext-R & 0 & 0 & complete & 0 & -- & -- \\
+ulow & 0 & 0 & complete & 0 & -- & -- \\
 uplow & 0 & 10 & incomplete: budget stop & 0 & 9 & 89.3\% (69.5\% after the symmetry group) \\
 \midrule
-cb1 & 5 & 26 & finished, failures not dispositioned & 26 & 3 & -- \\
-cb1f & 2 & 2 & finished, failures not dispositioned & 2 & 3 & -- \\
-band & 44 & 44 & finished, failures dispositioned & 44 & 4 & -- \\
+cb1 & 5 & 26 & finished, failures not dispositioned & 26 & -- & -- \\
+cb1f & 2 & 2 & finished, failures not dispositioned & 2 & -- & -- \\
+band & 44 & 44 & finished, failures dispositioned & 44 & -- & -- \\
 fa2b & 200 & 686 & incomplete: budget stop, genuine failures & 670 & 17 & 88.3\% \\
-m2-L & 5{,}824 & 99{,}589 & incomplete: budget stop, genuine failures (corner half $t_t<1/2$ never reached) & 99{,}513 & 34 & $t_t<1/2$ half: 100\% \\
-m2-R & 5{,}683 & 28{,}727 & incomplete: budget stop, genuine failures (corner half $t_t<1/2$ never reached) & 28{,}609 & 32 & $t_t<1/2$ half: 100\% \\
+m2-L & 5{,}824 & 99{,}589 & incomplete: budget stop, genuine failures (half $t_t<1/2$ unprocessed; its part with $c_s<1/32$ is in no chart) & 99{,}513 & 34 & $t_t<1/2$ half: 100\% \\
+m2-R & 5{,}683 & 28{,}727 & incomplete: budget stop, genuine failures (half $t_t<1/2$ unprocessed; its part with $c_s<1/32$ is in no chart) & 28{,}609 & 32 & $t_t<1/2$ half: 100\% \\
 \midrule
-fa2 & 280{,}140 & -- & retired & 280{,}140 & 25 & -- \\
-m1vert-N & 7{,}144 & 4{,}574 & retired & 7{,}144 & 26 & -- \\
+fa2 & 280{,}140 & -- & retired & 280{,}140 & -- & -- \\
+m1vert-N & 7{,}144 & 4{,}574 & retired & 7{,}144 & -- & -- \\
 \midrule
 m2w-P & -- & 0 & complete (own domain only) & -- & -- & -- \\
 m2w-N & -- & 0 & complete (own domain only) & -- & -- & -- \\
@@ -1706,7 +1706,8 @@ m2w-N & -- & 0 & complete (own domain only) & -- & -- & -- \\
 \end{tabular}
 % END GENERATED table-atlas
 \caption{Status of each chart of the interval atlas: failed boxes in the assembly record, the stored summary counter, the status class computed from the stored summary and checkpoint (budget stop, genuine failures,
-disposition), the checkpoint counters, and the unprocessed share of the seed transcribed from the review of the records; a dash marks a value that does not exist, as for m1vert-S, which never ran.}\label{tab:atlas}
+disposition), the checkpoint counters, and the unprocessed share of the seed transcribed from the review of the records; the column of stack boxes counts the unprocessed boxes in the last checkpoint of a run that stopped at its budget
+and is a dash for the runs that finished, and a dash elsewhere marks a value that does not exist, as for m1vert-S, which never ran. Here $t_t=\tan(\theta/2)$ is the polar-angle coordinate of the m2 charts and $c_s=r_{35}$.}\label{tab:atlas}
 \end{table}
 
 The assembly record leaves one mathematical residue, the cross point (next subsection), and one open chart region, the
@@ -1717,8 +1718,9 @@ $u_h,p_h\ge0$, which is not axis aligned. These are measurements at two scales a
 established\Um. The repair is specified in the record: reparametrize the corner by $(u_h,p_h)$ and divide the two axis-mass columns by their common factor. A chart that
 implements it, m2w, is sound and reproduces: a rerun of both sign charts on a CPU gives the stored counters exactly (1,201 boxes processed, 492 certified, 109 discarded and none failed for one sign;
 1,213, 494, 113 and none for the other), every certificate is a plain interval minor, the leaves tile its seed, and an independent crosscheck of its rescaled matrix at 408 points finds no mismatch\MV.
-It does not close the corner, for three reasons. First, below its lower bound $t_t<1/2$ no chart holds a certificate: m2w delegates that half to m2, and every stored m2 checkpoint leaves it unprocessed; the point
-$u=p=1/50$, $v=0$, $q=-1/50$, an interior point of the open stratum, is an exact witness. Second, the band of width $7/32$ around the axis bodies that m2w discards contains a thin sliver that no chart covers:
+It does not close the corner, for three reasons. First, m2w starts at $t_t=1/2$, where $t_t=\tan(\theta/2)$ and $\theta=\operatorname{atan2}(\rho,2w)$ is the polar angle of the m2 charts in the plane of $\rho=R_c s_t$ and $w$, and delegates the part below to m2; every
+checkpoint of the current m2 chart leaves that half unprocessed. The part of it with $c_s=r_{35}<1/32$ lies in no chart's covered domain (the rest, $c_s\ge1/32$, lies in the domain of the collapse chart), and the point
+$u=p=1/50$, $v=0$, $q=-1/50$, an interior point of the open stratum with $c_s=1/50$, is an exact witness. Second, the band of width $7/32$ around the axis bodies that m2w discards contains a thin sliver that no chart covers:
 an exact witness point and its symmetry images are all discarded and lie outside the domain of bicorner-same. Third, the rest of that band is delegated to bicorner-same and m1, which left 98.0\% and 99.96\%
 of their regions unprocessed. A first check of the corner compared the box coordinates of two charts that do not share a parametrization and reported a hole that was not there; the
 corrected comparison, through the exact map $c_s=R_c\,s_t$, finds that of the 26878 and 19962 residual boxes of m2-L and m2-R, 6208 of each are covered by the collapse chart and
@@ -1937,7 +1939,7 @@ its existence is not certified, piece 11 checks its rank floor at six points of 
 \item The interval atlas is not established. Of the fifteen charts that the assembly record lists as complete, seven are complete with zero failures, seven are runs stopped at their time budget with part of the seed
 unprocessed (collapse only modulo the mirror, conditionally) and one never ran; deep-L, deep-R, fa2b and the m2 charts are incomplete with genuine failures, and cb1 and cb1f have failures with no stored disposition
 (Table~\ref{tab:atlas}). The stored \texttt{failed} counters of the stopped runs include their unprocessed stack, and the per-box certificate files that would show the widths and places of the failures are not on the
-review device, so the failure widths of the record could not be re-checked. The quadruple corner is not closed: below the lower bound of m2w no chart holds a certificate, the band that m2w discards contains an uncovered sliver, and the
+review device, so the failure widths of the record could not be re-checked. The quadruple corner is not closed: the part of the region below the lower bound $t_t=1/2$ of m2w with $c_s<1/32$ lies in no chart's covered domain, the band that m2w discards contains an uncovered sliver, and the
 charts to which the rest is delegated are unprocessed; m2w itself is sound and reproduces. The figure of the atlas uses only runs that are complete with zero failures.
 \item The number of comets decided pointed without a separating vector is not recorded in the run summary of the $n=5$ cells, and the raw $n=5$ outputs are outside the repository; the decision is exact either way
 (Section~\ref{sec:decider}), and the count is zero in the twelve stored $n=4$ cells.
