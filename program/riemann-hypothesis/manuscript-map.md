@@ -99,7 +99,7 @@ arXiv full text, so specialist confirmation is still required.
 | slug | version | version DOI | concept DOI |
 |---|---|---|---|
 | `short-interval-stability` | v0.07 | `10.5281/zenodo.22860012` | `10.5281/zenodo.22727388` |
-| `sharp-three-point-kernel` | v0.02 | `10.5281/zenodo.23895875` | `10.5281/zenodo.22940290` |
+| `sharp-three-point-kernel` | v0.03 | `10.5281/zenodo.24227401` | `10.5281/zenodo.22940290` |
 | `short-interval-levinson` | v0.02 | `10.5281/zenodo.23132248` | `10.5281/zenodo.22984154` |
 
 ## Active focus and routing of future results
