@@ -1694,8 +1694,8 @@ cb1 & 5 & 26 & finished, failures not dispositioned & 26 & -- & -- \\
 cb1f & 2 & 2 & finished, failures not dispositioned & 2 & -- & -- \\
 band & 44 & 44 & finished, failures dispositioned & 44 & -- & -- \\
 fa2b & 200 & 686 & incomplete: budget stop, genuine failures & 670 & 17 & 88.3\% \\
-m2-L & 5{,}824 & 99{,}589 & incomplete: budget stop, genuine failures (half $t_t<1/2$ unprocessed; its part with $c_s<1/32$ is in no chart) & 99{,}513 & 34 & $t_t<1/2$ half: 100\% \\
-m2-R & 5{,}683 & 28{,}727 & incomplete: budget stop, genuine failures (half $t_t<1/2$ unprocessed; its part with $c_s<1/32$ is in no chart) & 28{,}609 & 32 & $t_t<1/2$ half: 100\% \\
+m2-L & 5{,}824 & 99{,}589 & incomplete: budget stop, genuine failures (half $t_t<1/2$ unprocessed; its part with $c_s<1/32$ is in no other chart's domain) & 99{,}513 & 34 & $t_t<1/2$ half: 100\% \\
+m2-R & 5{,}683 & 28{,}727 & incomplete: budget stop, genuine failures (half $t_t<1/2$ unprocessed; its part with $c_s<1/32$ is in no other chart's domain) & 28{,}609 & 32 & $t_t<1/2$ half: 100\% \\
 \midrule
 fa2 & 280{,}140 & -- & retired & 280{,}140 & -- & -- \\
 m1vert-N & 7{,}144 & 4{,}574 & retired & 7{,}144 & -- & -- \\
@@ -1707,7 +1707,7 @@ m2w-N & -- & 0 & complete (own domain only) & -- & -- & -- \\
 % END GENERATED table-atlas
 \caption{Status of each chart of the interval atlas: failed boxes in the assembly record, the stored summary counter, the status class computed from the stored summary and checkpoint (budget stop, genuine failures,
 disposition), the checkpoint counters, and the unprocessed share of the seed transcribed from the review of the records; the column of stack boxes counts the unprocessed boxes in the last checkpoint of a run that stopped at its budget
-and is a dash for the runs that finished, and a dash elsewhere marks a value that does not exist, as for m1vert-S, which never ran. Here $t_t=\tan(\theta/2)$ is the polar-angle coordinate of the m2 charts and $c_s=r_{35}$.}\label{tab:atlas}
+and is a dash for the runs that finished, and a dash elsewhere marks a value that does not exist, as for m1vert-S, which never ran. Here $c_s=r_{35}$ and $t_t=\tan(\theta/2)$, where $\theta\in[0,\pi/2]$ with $\tan\theta=c_s/(u+p)$ is the polar angle of the m2 charts, so that $t_t<1/2$ is $c_s<\tfrac43(u+p)$.}\label{tab:atlas}
 \end{table}
 
 The assembly record leaves one mathematical residue, the cross point (next subsection), and one open chart region, the
@@ -1718,8 +1718,8 @@ $u_h,p_h\ge0$, which is not axis aligned. These are measurements at two scales a
 established\Um. The repair is specified in the record: reparametrize the corner by $(u_h,p_h)$ and divide the two axis-mass columns by their common factor. A chart that
 implements it, m2w, is sound and reproduces: a rerun of both sign charts on a CPU gives the stored counters exactly (1,201 boxes processed, 492 certified, 109 discarded and none failed for one sign;
 1,213, 494, 113 and none for the other), every certificate is a plain interval minor, the leaves tile its seed, and an independent crosscheck of its rescaled matrix at 408 points finds no mismatch\MV.
-It does not close the corner, for three reasons. First, m2w starts at $t_t=1/2$, where $t_t=\tan(\theta/2)$ and $\theta=\operatorname{atan2}(\rho,2w)$ is the polar angle of the m2 charts in the plane of $\rho=R_c s_t$ and $w$, and delegates the part below to m2; every
-checkpoint of the current m2 chart leaves that half unprocessed. The part of it with $c_s=r_{35}<1/32$ lies in no chart's covered domain (the rest, $c_s\ge1/32$, lies in the domain of the collapse chart), and the point
+It does not close the corner, for three reasons. First, m2w starts at $t_t=1/2$ and delegates the part below to m2. Here $t_t=\tan(\theta/2)$, and $\theta\in[0,\pi/2]$ is the polar angle of the m2 charts, defined by $u+p=R_c\cos\theta$ and $c_s=R_c\sin\theta$ with $R_c=\sqrt{(u+p)^2+c_s^2}$; we write $s_t=\sin\theta=c_s/R_c$, and $t_t<1/2$ is the condition $c_s<\tfrac43(u+p)$. Every
+checkpoint of the current m2 chart leaves the half $t_t<1/2$ unprocessed. The part of it with $c_s=r_{35}<1/32$ lies in no chart's covered domain (the rest, $c_s\ge1/32$, lies in the domain of the collapse chart), and the point
 $u=p=1/50$, $v=0$, $q=-1/50$, an interior point of the open stratum with $c_s=1/50$, is an exact witness. Second, the band of width $7/32$ around the axis bodies that m2w discards contains a thin sliver that no chart covers:
 an exact witness point and its symmetry images are all discarded and lie outside the domain of bicorner-same. Third, the rest of that band is delegated to bicorner-same and m1, which left 98.0\% and 99.96\%
 of their regions unprocessed. A first check of the corner compared the box coordinates of two charts that do not share a parametrization and reported a hole that was not there; the

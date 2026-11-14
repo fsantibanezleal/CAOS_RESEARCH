@@ -307,7 +307,7 @@ ATLAS_RETIRED = {"fa2", "m1vert-N"}
 ATLAS_NEVER_RAN = {"m1vert-S"}
 # Status transcribed from the verdict where the stored files do not decide it: collapse is complete only modulo the mirror.
 ATLAS_VERDICT_CLASS = {"collapse": "complete modulo the mirror, conditional"}
-ATLAS_NOTE = {"m2-L": "half tt < 1/2 unprocessed; its part with c_s < 1/32 is in no chart", "m2-R": "half tt < 1/2 unprocessed; its part with c_s < 1/32 is in no chart",
+ATLAS_NOTE = {"m2-L": "half tt < 1/2 unprocessed; its part with c_s < 1/32 is in no other chart's domain", "m2-R": "half tt < 1/2 unprocessed; its part with c_s < 1/32 is in no other chart's domain",
               "m2w-P": "own domain only", "m2w-N": "own domain only"}
 
 
