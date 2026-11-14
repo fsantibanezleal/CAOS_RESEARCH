@@ -10,7 +10,7 @@
 \pgfplotsset{compat=1.18}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
-\usepackage{orcidlink,fancyhdr}
+\usepackage{orcidlink,fancyhdr,placeins}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -207,8 +207,8 @@ Bougard and Joret to compare balanced cycle-linkings with other $2$-connected gr
 sets \cite{Wang}. The tree strip $n=2k$, $\alpha=k-1$, and the first interior shell $n=\alpha+k+1$ \cite{Shell}, and the bracket $f(2d+3,2,d+2)=d^2+4d+2$ \cite{Next} lie in the first regime. The extremal problem without
 connectivity is Tur\'an's theorem \cite{Turan}; Brouwer showed that a graph with independence number
 $\alpha$ and at most $t(n,\alpha)+\floor{n/\alpha}-2$ edges has a partition of its vertex set into $\alpha$ cliques,
-for $n$ large compared with $\alpha$ \cite{Brouwer}; the exact condition is restated in \cite[Section~5]{BJ}, which also
-notes that the result follows from a theorem of Hanson and Toft \cite{HansonToft}. Bougard and Joret improve this
+when $n>2\alpha$ \cite{Brouwer}; Bougard and Joret restate the theorem in \cite[Section~5]{BJ} and note
+that the result follows from a theorem of Hanson and Toft \cite{HansonToft}. Bougard and Joret improve this
 bound for connected and $2$-connected graphs (their Propositions~7 and~8), and their proofs use Brooks' theorem
 \cite{Brooks}, Wessel's structure of edge-critical graphs with connectivity two \cite{Wessel} and bounds of
 Erd\H{o}s and Gallai \cite{ErdosGallai}.
@@ -696,7 +696,7 @@ orders from $1$ to $1{,}296$, depending on how symmetric the arrangement of the 
 cliques is. The graphs with $s(G)=1$ have automorphism groups of order $1$ or $2$, and those with $s(G)=2$ of order at
 most $4$; their clique numbers are $3$ or $4$, against $4$ to $8$ for the Bougard--Joret graphs.
 
-\begin{table}[t]
+\begin{table}[p]
 \centering\small
 \caption{The extremal graphs at the conjectured value. Graphs: all extremal graphs (each rechecked independently).
 Partition: those with a partition into $\alpha$ cliques, all of Bougard--Joret structure. $s$: the distribution of
@@ -859,16 +859,18 @@ The second line of the Bougard--Joret conjecture holds on every open-window trip
 triples, decided by complete enumeration of \ngraphs\ candidate graphs and an exact filter, with no triple left
 undecided and no edge count left capped. For seven pairs $(\alpha,k)$ the open window ends by order 24, so the
 conjectured value holds there for every order, independently of Didin's argument. The search is a finite decision
-procedure whose three components are proved correct (the prune, the independence test and the connectivity test) or
-tested against independent implementations and known counts (the generator and its split), and the binaries that ran
-are reproduced byte for byte from the committed sources.
+procedure with five components. Three of them, the prune, the independence test and the connectivity test, are proved
+correct and also tested against an independent implementation. The other two, the generator and its split into parts,
+are tested and not proved: the generator against known counts up to order 22, and the split at three triples of orders
+17 to 20. The binaries that ran are reproduced byte for byte from the committed sources.
 
 The values carry no statistical uncertainty. Every number in Theorem~\ref{thm:values} and in
 Tables~\ref{tab:values} and~\ref{tab:structure} is an exact count from a complete enumeration or an exact test, and
 the run-to-run variation of the wall-clock times does not enter any value. The residual risk is of a different kind: a
-defect in \texttt{geng} or in its split into parts would lose graphs silently. Gates~D and~E test both at the
-production orders and parameters where known values exist, and Section~\ref{sec:discussion} lists what they do not
-cover.
+defect in \texttt{geng} or in its split into parts would lose graphs silently. Gate~E tests the generator on the
+classes with published counts, up to order 22, and Gate~D tests the split at orders 17 to 20 with the hook active;
+neither reaches orders 23 and 24 on the restricted classes the search enumerates, and Section~\ref{sec:discussion}
+lists what the gates do not cover.
 
 At the conjectured value the extremal graphs are not all of Bougard and Joret's form. At \nexttriples\ triples, \nnopart\
 of the \nextremal\ extremal graphs have no partition into $\alpha$ cliques; all of them have $k=3$ and $\alpha$ odd.
@@ -1033,12 +1035,19 @@ cliques and computational experiments}. Theoretical Computer Science 363 (2006),
 of Mathematics 54 (1932), 150--168. \href{https://doi.org/10.2307/2371086}{doi:10.2307/2371086}.
 \end{thebibliography}
 
+\FloatBarrier
 \appendix
 \section{Every enumeration record}\label{app:records}
 Table~\ref{tab:percount} lists every record of EXP-005 to EXP-010, one row per triple, edge count and run, with the
 generator, the number of parts, the graphs generated and kept, and the wall-clock seconds. A triple appears more than
 once when an edge count was run with both generators or rerun after a cap. The totals of Section~\ref{sec:values} are
-sums over these rows.
+sums over these rows. The rows are ordered by triple and edge count, and each one is a line of the file
+\texttt{artifacts/enum.jsonl} of the experiment named in its record column, written by that experiment's
+\texttt{run\_enum.py} when the edge count finished. A row below the conjectured value with no kept graph is the
+evidence for one step of Algorithm~\ref{alg:decide}. A row at $E=c$, where an experiment ran that count, gives the
+number of extremal graphs, and the regeneration of Section~\ref{sec:extremal} reproduces it (the column ``recorded''
+of Table~\ref{tab:structure}). Seconds are wall-clock times of the whole edge count over all its parts, so rows run on
+different numbers of processes are not comparable as CPU time.
 {\scriptsize\setlength{\tabcolsep}{4pt}
 \input{percount.tex}}
 
