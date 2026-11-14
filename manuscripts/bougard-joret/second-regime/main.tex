@@ -64,7 +64,7 @@ $\alpha$. Bougard and Joret conjectured $f(n,\alpha,k)=t(n,\alpha)+\lceil k\alph
 $t(n,\alpha)$ counts the edges of $\alpha$ disjoint balanced cliques; Didin has announced a proof of the lower bound.
 We give an independent exhaustive check. \abstractvalues, by enumerating \ngraphs\ candidate graphs with nauty's
 generator, an independence prune proved sound and an exact filter; for seven pairs $(\alpha,k)$ this settles the
-conjectured value for every $n$. A validation suite tests every component against an independent implementation,
+conjectured value for every $n>k\alpha$. A validation suite tests every component against an independent implementation,
 known counts and byte-identical rebuilds. We list all \nextremal\ extremal graphs at \nexttriples\ triples: those that
 split into $\alpha$ cliques have Bougard and Joret's structure, and the other \nnopart, all with $k=3$ and $\alpha$
 odd, do not. Two blocks recovered from them give, for every odd $\alpha$ and $3\alpha<n\le4\alpha-1$, a
@@ -539,9 +539,11 @@ set partitions.
 
 \section{Experimental design}\label{sec:design}
 
-Every computation of this paper ran as a numbered experiment whose question, method and predictions were written down
+Every computation of this paper ran as a numbered experiment whose question and predictions were written down
 and committed before the computation started (Table~\ref{tab:exps}); the closing note of each experiment then records
-which predictions held. The protocol keeps refutations visible: a prediction that failed stays in the record with its
+which predictions held. Where the method changed during a run, the closing note records the deviation: EXP-005
+replaced its planned satisfiability search by enumeration, and EXP-006 added the prune and the faster independence
+filter while it ran. The protocol keeps refutations visible: a prediction that failed stays in the record with its
 experiment, and a later experiment that builds on it says so.
 
 \paragraph{The values.} EXP-005 to EXP-010 share one prediction, stated with moderate confidence: the second line
@@ -552,8 +554,8 @@ generator where both could run (Section~\ref{sec:ablation}). EXP-007 and EXP-008
 stopped the last edge count of $(24,7,3)$ and of $(24,3,7)$; EXP-010 reran those two counts under a cap of twenty
 hours. A capped count yields a bound, never a value, and the tables mark it as such; none remains.
 
-\paragraph{The structure.} EXP-011 fixed three predictions, in its hypothesis and two addenda: that the regenerated
-extremal graphs reproduce the counts recorded at $E=c$, which held; that every extremal graph splits into $\alpha$
+\paragraph{The structure.} EXP-011 fixed eight predictions in its hypothesis and two addenda; three of them carry
+the argument here: that the regenerated extremal graphs reproduce the counts recorded at $E=c$, which held; that every extremal graph splits into $\alpha$
 cliques, which its first phase refuted with graphs at $k=3$ and odd $\alpha$; and, written after that refutation and
 before the next phase was analysed, the location of the graphs without a partition that Didin's theorem implies
 (Proposition~\ref{prop:where}), which held at every triple analysed afterwards. EXP-013 predicted that the two blocks
@@ -730,8 +732,10 @@ redundant. Both change the cost only, and the records measure by how much.
 
 \paragraph{The prune.} At \nablation\ edge counts both generators ran, the plain one and the pruned one
 (Table~\ref{tab:ablation}). The kept counts agree at all of them, as Lemma~\ref{lem:prune} requires. The number of
-candidates falls by factors from \abgenlow\ to \abgenhigh\ and the wall-clock time by factors from \abseclow\ to
-\absechigh, the times being recorded to a tenth of a second. The reduction grows with the edge count and with the
+candidates falls by factors from \abgenlow\ to \abgenhigh, a comparison of the generators alone. The wall-clock time
+falls by factors from \abseclow\ to \absechigh, recorded to a tenth of a second; these factors also contain the
+differences in the number of parts and in the filter build between the plain and the pruned runs, so they bound the
+effect of the prune only loosely. Where an edge count has two plain runs, the table uses the faster one. The reduction grows with the edge count and with the
 order: more edges allow more partial graphs that already hold an independent set of size $\alpha+1$, which the plain
 generator expands to the full order and the hook cuts at the level where the set appears. Without the prune, the plain
 generator's \ngraphsplain\ candidates came almost entirely from $(14,3,4)$ and $(15,4,3)$ in the first experiment;

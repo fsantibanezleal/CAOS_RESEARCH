@@ -33,9 +33,8 @@ Date: 2026-11-14. Hypothesis frozen in ed56cfa7 before any computation.
   are known. proof.md has the right order (Step 3 before Step 4) and its theorem is stated as conditional.
 - With prop:where(b) and the complete enumeration of its six triples (EXP-011), BJB-026 is settled conditional on
   Didin's Theorem 3: for alpha >= 3, the extremal graphs without a partition into alpha cliques are exactly the
-  construction graphs and the 8 graphs at (10,3,3). The restriction alpha >= 3 is needed: the independent review
-  (CAOS_MANAGE wip/caos-research/bj-exp014-proof-review-2026-11-14.md, verdict CORRECT WITH FIXES) found at (7,2,3) an
-  extremal 3-connected graph `FL~Cg` with independence number 2 and no partition into 2 cliques.
+  construction graphs and the 8 graphs at (10,3,3). The restriction alpha >= 3 is needed: the independent review (verdict CORRECT WITH FIXES) found, and check_alpha2.py records
+  (artifacts/alpha2.json), at (7,2,3) an extremal 3-connected graph `FL~Cg` with independence number 2 and no partition into 2 cliques.
 - Review notes applied to proof.md: the edge count stated as ceil(3 alpha/2) before alpha is shown odd; kappa(G) >= 3
   rather than = 3; the reason both sides of a quotient cut are nonempty. The parenthesis of hypothesis.md on partitions
   that use cross edges does not follow from the charging argument as written; it is not load-bearing, because condition

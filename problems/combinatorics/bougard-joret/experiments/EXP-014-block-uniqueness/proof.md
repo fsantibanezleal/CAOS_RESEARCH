@@ -82,6 +82,5 @@ cliques and has at least c edges by the count of Lemma lem:window; with s(G) >= 
 prop:where(a) gives at least t(n, alpha) + k alpha/2 + 1/2 >= c; with p(G) = 1 Theorem 3 gives at least
 t(n + alpha - 1, alpha) - (alpha - 1), which exceeds c except at the six triples of prop:where(b), all with n <= 16,
 where the enumeration gives f = c. The enumeration gives f = c for n <= 24 without condition. The restriction alpha >= 3 is needed: at (7,2,3), f = 12 = c and the extremal graph
-`FL~Cg` is 3-connected with independence number 2 and no partition into 2 cliques (independent review,
-CAOS_MANAGE wip/caos-research/bj-exp014-proof-review-2026-11-14.md); Proposition prop:where assumes alpha >= 3. Those with a partition are the Bougard-Joret graphs
+`FL~Cg` is 3-connected with independence number 2 and no partition into 2 cliques (check_alpha2.py, artifacts/alpha2.json); Proposition prop:where assumes alpha >= 3. Those with a partition are the Bougard-Joret graphs
 (Lemma lem:partition-structure, unconditional).

@@ -247,7 +247,7 @@ def main():
     abl = []
     for key, rs in sorted(recs.items()):
         if len({r["generator"] for r in rs}) == 2:
-            pl = [r for r in rs if r["generator"] == "plain"][-1]
+            pl = min((r for r in rs if r["generator"] == "plain"), key=lambda r: r["seconds"])
             pr = [r for r in rs if r["generator"] == "pruned"][-1]
             abl.append((key, pl, pr))
     if not abl:
