@@ -22,6 +22,8 @@ from .decide import (
     alpha_for_routing,
 )
 from .graphs import is_acyclic, has_k4_subdivision, kuratowski_planarity_by_degrees
+from .cutting_plane import CPResult, cheapest_routing_below, frontier_value_cp
+from .odd_cycle import afrasyab_uniform, odd_cycle_instance
 
 __all__ = [
     "Arc",
@@ -38,4 +40,9 @@ __all__ = [
     "is_acyclic",
     "has_k4_subdivision",
     "kuratowski_planarity_by_degrees",
+    "CPResult",
+    "cheapest_routing_below",
+    "frontier_value_cp",
+    "afrasyab_uniform",
+    "odd_cycle_instance",
 ]
