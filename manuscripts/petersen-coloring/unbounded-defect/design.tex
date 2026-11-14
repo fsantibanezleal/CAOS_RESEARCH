@@ -49,11 +49,11 @@ The claw and the superedge are the blocks whose rings contain the flower snarks 
 families ask whether any block of the sources measured above has a ring without Petersen coloring.
 
 \paragraph{Baselines and independent checks.} The product runs the following checks on its own results, each independent of the
-computation it tests. A satisfiable answer is accepted only by a program that tests the star condition from the definition and reads only the graph and the
-labels. An unsatisfiable answer is accepted only with a DRAT proof checked by \texttt{drat-trim}. The sector matrices of the claw and the superedge are recomputed by
+computation it tests. A satisfiable answer of a multipole formula is accepted only by a program that tests the star condition from the definition and reads only the graph and the
+labels; the satisfiable answers of the 203 cross-check rings are not model-checked, and their agreement with the sector traces rests on the nonzero trace, which is sound by Lemma~\ref{lem:soundness}. An unsatisfiable answer is accepted only with a DRAT proof checked by \texttt{drat-trim}. The sector matrices of the claw and the superedge are recomputed by
 exhaustive enumeration and by a second encoding with a second solver, and 46 of the 81 blocks by the second encoding. The nonempty sectors of the 6-poles of $\PG$, $J_5$,
 $J_7$ and the dodecahedron that appear in both computations coincide with the conducted orbits that EXP-013 measured by a
-different method, formulas that constrain the class instead of enumerating models. The certificates are checked by Algorithm~\ref{alg:check}. The cut searches are compared with an
+different method, formulas that constrain the class instead of enumerating models. The certificates are checked by Algorithm~\ref{alg:check}, which shares the generator construction with the runner. The cut searches are compared with an
 exhaustive enumeration on three graphs of known behaviour (Table~\ref{tab:rings}).
 
 \paragraph{Randomness and statistics.} The only random choices are the ten sampled pairs of $R_3$ (five inside one block, five across two; a fixed seed),

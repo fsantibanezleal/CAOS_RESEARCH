@@ -47,8 +47,8 @@ pair carries the all-ones class.
 The sector matrices of all 81 blocks were computed by Algorithm~\ref{alg:sector} (Table~\ref{tab:blocks}). The nonempty sectors of every block
 equal the conducted orbits that computation EXP-013 measured independently for the same 6-pole and split, for example for all 14 shape-(a) blocks of $J_5$. The claw $Y$
 conducts $\{\Oz, \OEc, \ODthree, \ODtwo, \OTone\}$ and the superedge $S = \PG - u - w$ conducts $\{\Oz, \OEc, \ODtwo\}$, with \nSuperedgeZero, \nSuperedgeE{} and
-\nSuperedgeDtwo{} entries in those sectors. The sector-$\Oz$ matrix of the superedge has exactly two entries in each row: a star at $u$ extends in exactly two ways,
-the two automorphisms of $\PG$ that fix $u$ and its three neighbors. The re-check against the second encoding reached 46 of the 81 blocks
+\nSuperedgeDtwo{} entries in those sectors. The sector-$\Oz$ matrix of the superedge has \nSuperedgeZero{} entries; the record of computation EXP-014 states that there are two in each row (the artifact holds the total only), that is, a star at $u$ extends in two ways,
+which the record attributes to the two automorphisms of $\PG$ that fix $u$ and its three neighbors \claim{U}. The re-check against the second encoding reached 46 of the 81 blocks
 and found no difference; the 35 not reached are named by family in Table~\ref{tab:blocks}.
 
 \subsection{Closures and the ring theorems}\label{sec:closures}
@@ -82,25 +82,26 @@ of all products of at least two generators was closed exhaustively for $\{Y\}$, 
 $\{Y, S\}$: it has $\nElemFone$, $\nElemFtwo$ and $\nElemFthree$ elements, all with a nonzero diagonal; for
 $\{S\}$ every element has a nonzero diagonal in the sector $\OEc$. Certificates in the sense of
 Corollary~\ref{cor:semigroup}, kept minimal under containment (Algorithm~\ref{alg:closure}), have $\nCertFone$, $\nCertFtwo$ and $\nCertFthree$
-elements and were re-verified by Algorithm~\ref{alg:check}, a separate program with a different matrix product. The ring statements follow from Corollary~\ref{cor:semigroup}.
+elements and were re-verified by Algorithm~\ref{alg:check}, which shares the generator construction with the runner and uses a different matrix product. The ring statements follow from Corollary~\ref{cor:semigroup}.
 \end{proof}
 
-\begin{corollary}[flower snarks, \claim{MV}, \claim{D}]\label{cor:flower}
-For every odd $k \ge 5$, every Petersen coloring of $J_k$ maps the three edges joining two
-consecutive claws onto an antipodal triple of $\PG$.
+\begin{corollary}[flower snarks, \claim{MV}, \claim{D} for $k = 5, 7, 9$; \claim{C} for larger odd $k$]\label{cor:flower}
+For $k = 5, 7, 9$, every Petersen coloring of $J_k$ maps the three edges joining two
+consecutive claws onto an antipodal triple of $\PG$. The same holds for every odd $k \ge 11$ if the products $(Y\,\mathrm{id})^{k-1}(Y\,\tau)$ are periodic in $k$ from $k = 5$ with period 2,
+as the record of computation EXP-014 states.
 \end{corollary}
 
 \begin{proof}
-The products $(Y\,\mathrm{id})^{k-1}(Y\,\tau)$ are periodic in $k$ from $k = 5$ with period 2,
-and for odd $k$ only the sector $\OTone$ has a nonzero diagonal (for even $k$ only
-$\OEc$). By conduction all junctions of a coloring carry one class, which is therefore
+For $k = 5, 7, 9$ the sector traces of the explicit rings, rebuilt from claw words and isomorphic to the flower snarks, are $\{\OTone\}$ in all three cases
+(Section~\ref{sec:crosscheck}): only the sector $\OTone$ has a nonzero diagonal. By conduction all junctions of a coloring carry one class, which is therefore
 $\OTone$, and the 30 ordered triples of class $\OTone$ are the orderings of the five
 antipodal triples. The vanishing of the other diagonals rests on the completeness of the matrix of $Y$
-(Lemma~\ref{lem:soundness}), which was recomputed by exhaustive enumeration and by a second encoding. For $k = 5, 7, 9$ the sector traces of the
-explicit rings, rebuilt from claw words and isomorphic to the flower snarks, are $\{\OTone\}$ in all three cases (Section~\ref{sec:crosscheck}).
+(Lemma~\ref{lem:soundness}), which was recomputed by exhaustive enumeration and by a second encoding. The record of computation EXP-014 states that the
+products are periodic in $k$ from $k = 5$ with period 2, with the sector $\OTone$ for odd $k$ and $\OEc$ for even $k$; no runner, probe or stored artifact computes the
+periodicity, and the matrices that would allow it are kept outside the repository, so the statement for $k \ge 11$ and for even $k$ is conjectural \claim{C}.
 \end{proof}
 
-\begin{remark}[the case $k=3$, \claim{C}]\label{rem:kthree}
+\begin{remark}[the case $k=3$]\label{rem:kthree}
 The ring $(Y\,\mathrm{id})^{2}(Y\,\tau)$ is a product of three generators, hence an element of the closure of $F_1$, and by Theorem~\ref{thm:ringsY} its diagonal is nonzero in some
 sector. The periodicity argument of Corollary~\ref{cor:flower} starts at $k = 5$, and the stored artifacts do not record the sector of the product for
 $k = 3$ or $k = 4$ (the sector matrices themselves are kept outside the repository). Whether the three edges between consecutive claws of $J_3$ are forced onto an
@@ -108,7 +109,7 @@ antipodal triple is therefore not claimed.
 \end{remark}
 
 H\"agglund and Steffen showed that flower snarks have Petersen colorings~\cite{HS2014};
-Corollary~\ref{cor:flower} describes all of them at the junctions.
+Corollary~\ref{cor:flower} describes the junctions of $J_5$, $J_7$ and $J_9$.
 
 \begin{proposition}[\claim{MV}, \claim{D}]\label{prop:superedgerings}
 Let $S^t$ be the ring of $t$ Petersen superedges with the identity at every junction.

@@ -47,6 +47,7 @@ HERE = Path(__file__).resolve().parent
 DEFAULT_PROBLEM = HERE.parents[2] / "problems" / "combinatorics" / "petersen-coloring"
 ORB = ["0", "E", "D3", "D2", "T1", "T2"]
 ORB_TEX = {"0": r"\Oz", "E": r"\OEc", "D3": r"\ODthree", "D2": r"\ODtwo", "T1": r"\OTone", "T2": r"\OTtwo"}
+DW = ["Zero", "One", "Two", "Three"]
 THOUSANDS = "{,}"
 
 
@@ -144,9 +145,34 @@ def petersen_formula_size(n, m, bound=None):
     return v + n + cv, c + cc
 
 
+def verify_cnf(problem):
+    """Build the formulas with the library (pcclib) and check the closed-form sizes of Table `tab:sizes`. No solver runs."""
+    sys.path.insert(0, str(problem / "code"))
+    from pcclib import encoders, graphs, poles, rings
+    g = graphs.load_edgelist(problem / "data" / "gjmmm-52.edgelist")
+    A = poles.pole(g, removed_edges=(0, 4))
+    B = poles.pole(g, removed_vertices=(2, 7))
+    for name, pl in (("A", A), ("B", B)):
+        f, _ = poles.pole_formula(pl, fixed={0: 0, 1: 1})
+        q = len(pl.internal) + len(pl.dangling)
+        check((f.nvars, len(f.clauses)) == pole_formula_size(len(pl.kept), len(pl.internal), len(pl.dangling)) == (15 * q, 106 * q + 495 * len(pl.kept) + 2),
+              f"formula size of {name}")
+    uside = tuple(j for j, (w, ei) in enumerate(B.dangling) if 2 in g.edges[ei])
+    vside = tuple(j for j, (w, ei) in enumerate(B.dangling) if 7 in g.edges[ei])
+    for t in (1, 2, 3):
+        R, _ = rings.ring_of_poles([(A, ((0, 1), (2, 3))), (B, (uside, vside))] * t)
+        f1 = encoders.petersen_coloring(R)
+        f2 = encoders.petersen_coloring(R, defect_bound=2)
+        check((f1.nvars, len(f1.clauses)) == petersen_formula_size(R.n, len(R.edges)), f"R_{t} Petersen formula size")
+        check((f2.nvars, len(f2.clauses)) == petersen_formula_size(R.n, len(R.edges), 2), f"R_{t} defect formula size")
+    print("make_tables.py: --verify-cnf: the closed-form sizes equal the sizes of the formulas built by pcclib")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--problem", default=str(DEFAULT_PROBLEM))
+    ap.add_argument("--verify-cnf", action="store_true",
+                    help="build the CNFs of A, B and the rings with pcclib (no solver) and compare their sizes with the closed forms")
     args = ap.parse_args()
     P = Path(args.problem)
     e10 = P / "experiments" / "EXP-010-sublinear-approximation" / "artifacts"
@@ -309,6 +335,15 @@ def main():
     check(same_block == 5, "five pairs inside one block")
     pmin, pmax = min(pair_times.values()), max(pair_times.values())
     smin, smax = min(seq_times.values()), max(seq_times.values())
+    tA = [a_row[d]["seconds"] for d in "0123"]
+    tB = [b_row[d]["seconds"] for d in "0123"]
+    for d in range(4):
+        M.add(f"nAt{DW[d]}", sec(tA[d], 1))
+        M.add(f"nBt{DW[d]}", sec(tB[d], 1))
+    M.add("nSumAref", sec(tA[0] + tA[2] + tA[3], 1))
+    M.add("nSumBref", sec(tB[1] + tB[2] + tB[3], 1))
+    M.add("nPairA", sec(tA[2] + tA[3], 1))
+    M.add("nPairB", sec(tB[2] + tB[3], 1))
     M.add("nPairSolveMin", sec(pmin, 0))
     M.add("nPairSolveMax", sec(pmax, 0))
     M.add("nPairSeqMin", sec(smin, 0))
@@ -356,7 +391,7 @@ def main():
          r"solver time (s) & " + sec(R["R1"]["petersen"]["seconds"]) + " & " + sec(R["R2"]["pd_le2"]["seconds"]) + " & " + sec(R["R3"]["pd_le2"]["seconds"]) + r" \\",
          r"proof check time (s) & " + sec(R["R1"]["petersen"]["drat_trim_seconds"]) + r" & n/a & " + sec(R["R3"]["pd_le2"]["drat_trim_seconds"]) + r" \\",
          r"\midrule",
-         r"\multicolumn{4}{p{10.6cm}}{calibration of the two cut routines: exhaustive count against bridge-search count (agree on existence in all three)} \\",
+         r"\multicolumn{4}{p{10.6cm}}{calibration of the two cut routines: the bridge-search count of cuts; the exhaustive routine finds a cut exactly when that count is positive (the two agree on existence in all three graphs)} \\",
          r"\multicolumn{4}{p{10.6cm}}{\quad $\Gfty$: " + f"{cal['G52']['fast_count']} cuts; ring of two copies of $\\Gfty$ opened at one edge: {cal['ring_join_G52_2']['fast_count']} (bridge search); "
          f"$K_4$ with vertices replaced by $\\Gfty$ minus a vertex: {cal['K4_frame_G52']['fast_count']}" + r"} \\",
          r"\midrule",
@@ -450,7 +485,7 @@ def main():
     # figure: share of splits conducting each orbit
     t = [r"\begin{tikzpicture}",
          r"\begin{axis}[ybar,width=\textwidth,height=6.2cm,bar width=3.2pt,ymin=0,ymax=105,ylabel={splits conducting the orbit (\%)},"
-         r"symbolic x coords={" + ",".join(f"{s}{sh}" for s, sh in order) + r"},xtick=data,x tick label style={font=\scriptsize,rotate=20,anchor=east},"
+         r"symbolic x coords={" + ",".join(f"{s}{sh}" for s, sh in order) + r"},xtick=data,xticklabels={$P$ (a),$P$ (b),dodecahedron (a),dodecahedron (b),$J_5$ (a),$J_5$ (b),$J_7$ (a)},x tick label style={font=\scriptsize,rotate=35,anchor=east},"
          r"tick label style={font=\scriptsize},label style={font=\small},legend style={font=\scriptsize,at={(0.5,1.02)},anchor=south,legend columns=6},"
          r"enlarge x limits=0.08]"]
     for o in ORB:
@@ -561,7 +596,7 @@ def main():
 
     # figure: block times
     t = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.9\textwidth,height=5.6cm,ymode=log,only marks,mark size=1.4pt,"
-         r"symbolic x coords={Y,S,Pb,Da,Ja5,Ja7},xtick=data,ylabel={seconds},xlabel={block family},tick label style={font=\scriptsize},"
+         r"symbolic x coords={Y,S,Pb,Da,Ja5,Ja7},xtick={Y,S,Pb,Da,Ja5,Ja7},xticklabels={claw $Y$,superedge $S$,$P$ (b),dodecahedron (a),$J_5$ (a),$J_7$ (a)},x tick label style={font=\scriptsize},ylabel={seconds},xlabel={block family},tick label style={font=\scriptsize},"
          r"label style={font=\small},enlarge x limits=0.12,ymajorgrids=true,grid style={dotted}]"]
     for k in ("Y", "S", "Pb", "Da", "Ja5", "Ja7"):
         pts = " ".join(f"({k},{b['seconds']})" for b in fam_blocks[k])
@@ -593,6 +628,10 @@ def main():
         M.add(f"nWordCert{fn}", str(ac[f]["longest_word"]))
         M.add(f"nTimeExact{fn}", sec(cl[f]["seconds"], 1))
         M.add(f"nTimeCert{fn}", sec(ac[f]["seconds"], 1))
+    M.add("nRatioFtwo", str(round(cl["F2"]["elements"] / ac["F2"]["active"])))
+    M.add("nRatioFthree", str(round(cl["F3"]["elements"] / ac["F3"]["active"])))
+    M.add("nFfourPairs", num(gens["F4"] ** 2))
+    M.add("nFfourLenThree", num(cl["F4"]["elements"] - gens["F4"] ** 2))
     M.add("nGenFfour", str(gens["F4"]))
     M.add("nGenFfive", str(F5_GENERATORS))
     M.add("nElemFfour", num(cl["F4"]["elements"]))
@@ -642,10 +681,10 @@ def main():
     write("table-sectors.tex", "\n".join(t) + "\n")
     check(cl["F1"]["elements_with_sector_diagonal"]["T2"] == 0 and cl["F2"]["elements_with_sector_diagonal"]["T2"] == 0, "T2 diagonals in F1 and F2")
 
-    t = [r"\begin{tikzpicture}", r"\begin{axis}[ybar,width=0.9\textwidth,height=5.8cm,ymode=log,bar width=9pt,ymin=5,ymax=600000,"
+    t = [r"\begin{tikzpicture}", r"\begin{axis}[ybar,width=0.9\textwidth,height=5.8cm,ymode=log,bar width=9pt,ymin=5,ymax=6000000,"
          r"symbolic x coords={F1,F2,F3,F4},xtick=data,ylabel={elements},tick label style={font=\scriptsize},label style={font=\small},"
-         r"legend style={font=\scriptsize,at={(0.02,0.98)},anchor=north west},enlarge x limits=0.18,ymajorgrids=true,grid style={dotted},"
-         r"nodes near coords,nodes near coords style={font=\tiny,rotate=90,anchor=west},point meta=y]"]
+         r"legend style={font=\scriptsize,at={(0.5,-0.14)},anchor=north,legend columns=2},enlarge x limits=0.18,ymajorgrids=true,grid style={dotted},"
+         r"nodes near coords,nodes near coords style={font=\tiny,rotate=90,anchor=west,/pgf/number format/.cd,fixed,precision=0,1000 sep={\,}},point meta=rawy]"]
     t.append("\\addplot coordinates {" + " ".join(f"({f},{cl[f]['elements']})" for f in ("F1", "F2", "F3", "F4")) + "};")
     t.append("\\addplot coordinates {" + " ".join(f"({f},{ac[f]['active']})" for f in ("F1", "F2", "F3")) + "};")
     t.append(r"\legend{exact closure (F4: stopped at the cap),antichain certificate}")
@@ -709,7 +748,7 @@ def main():
     check(sum(osz) == 64, "orbit sizes add to 64")
     ords = [sizes[o] for o in ORB]
     t = [r"\begin{tikzpicture}",
-         r"\begin{axis}[ybar,width=\textwidth,height=5.8cm,bar width=11pt,ymin=0,ymax=80,symbolic x coords={0,E,D3,D2,T1,T2},xtick=data,"
+         r"\begin{axis}[ybar,width=\textwidth,height=5.8cm,bar width=11pt,ymin=0,ymax=90,symbolic x coords={0,E,D3,D2,T1,T2},xtick=data,"
          r"xticklabels={$\mathsf{0}$,$\mathsf{E}$,$\mathsf{D}_3$,$\mathsf{D}_2$,$\mathsf{T}_1$,$\mathsf{T}_2$},ylabel={count},"
          r"tick label style={font=\scriptsize},label style={font=\small},legend style={font=\scriptsize,at={(0.98,0.98)},anchor=north east},"
          r"enlarge x limits=0.12,nodes near coords,nodes near coords style={font=\tiny},point meta=y,ymajorgrids=true,grid style={dotted}]"]
@@ -772,6 +811,8 @@ def main():
     t.append(r"\end{tikzpicture}")
     write("fig-ring.tex", "\n".join(t) + "\n")
 
+    if args.verify_cnf:
+        verify_cnf(P)
     write("numbers.tex", M.dump())
     print("make_tables.py: all tables, figures and numbers written; every consistency condition holds")
 

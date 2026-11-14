@@ -2,7 +2,7 @@
 
 This section gives the three algorithms behind Section~\ref{sec:results6}: the computation of the six sector matrices
 of a block (Algorithm~\ref{alg:sector}), the closure of a family of blocks kept as an antichain under containment
-(Algorithm~\ref{alg:closure}), and the independent check of the resulting certificate (Algorithm~\ref{alg:check}).
+(Algorithm~\ref{alg:closure}), and the check of the resulting certificate with different arithmetic (Algorithm~\ref{alg:check}).
 Their parameters are those of the computations EXP-013 and EXP-014 (library module \texttt{code/pcclib/transfer.py},
 runner \texttt{run.py}, checker \texttt{check\_certificate.py}).
 
@@ -96,7 +96,7 @@ and needs no further expansion (Corollary~\ref{cor:semigroup}).
 $\mathcal{C} \leftarrow \emptyset$; queue $Q \leftarrow \emptyset$\;
 \For{$i, j \in \{1, \dots, k\}$}{ \textsf{offer}$(g_i g_j)$ }
 \While{$Q \ne \emptyset$}{
-  \lIf{more than $N$ elements are stored, or the time exceeds $\tau$}{\Return{\textsf{undecided}}}
+  \lIf{at least $N - k$ elements are stored, or the time exceeds $\tau$}{\Return{\textsf{undecided}}}
   remove $x$ from $Q$; \lIf{$x$ was retired}{continue}
   \For{$j \in \{1, \dots, k\}$}{ \textsf{offer}$(x\, g_j)$ }
 }
@@ -125,7 +125,7 @@ therefore costs about $|\Sigma|\cdot k \cdot \sum_o n_o^3$ operations,
 for the family $F_3 = \{Y, S\}$, and $19{,}005\cdot 6\cdot 980{,}947 \approx 1.1\times 10^{11}$ for $F_2 = \{S\}$. The antichain
 closure expands only the elements that stay minimal and adds a containment test of each candidate against the kept elements,
 which are stored as $17{,}197$ bits, padded to 269 machine words of 64 bits (2{,}152 bytes), so that one test costs at most $269$ word
-operations per kept element. The array of kept elements has $N + 1 = 200{,}001$ rows, about 430 megabytes. The cap $N = 200{,}000$ and the time limits are
+operations per kept element. The array of kept elements has $N + 1 = 200{,}001$ rows, about 430 megabytes. The runner stops when the number of stored elements reaches $N - k$, a test made after each expansion, and the one-hour limit was imposed on the process from outside the runner. The cap $N = 200{,}000$ and the time limits are
 parameters, not properties of the method: an exact closure that reaches the cap, or an antichain closure that is stopped at its one-hour
 limit, is reported as undecided and proves nothing about the family.
 
@@ -135,18 +135,20 @@ limit, is reported as undecided and proves nothing about the family.
 \caption{Certificate check with integer products.}\label{alg:check}
 \DontPrintSemicolon
 \KwIn{the stored block matrices; the stored generators and certificate $\mathcal{C}$ of a family; its blocks and junction permutations}
-\KwOut{\textsf{accept} or \textsf{reject}}
-rebuild the generators $g_1, \dots, g_k$ from the stored block matrices; \lIf{they differ from the stored generators}{\Return{\textsf{reject}}}\;
-\For{$i, j \in \{1, \dots, k\}$}{ compute $p = g_i g_j$ with 32-bit integer matrix products and threshold at $0$\; \lIf{no $c \in \mathcal{C}$ is contained in $p$ entrywise}{\Return{\textsf{reject}}} }
-\For{$c \in \mathcal{C}$ and $j \in \{1, \dots, k\}$}{ compute $p = c\, g_j$ by integer products\; \lIf{no $c' \in \mathcal{C}$ is contained in $p$ entrywise}{\Return{\textsf{reject}}} }
-\lIf{some $c \in \mathcal{C}$ has a zero diagonal in all six sectors}{\Return{\textsf{reject}}}
-\Return{\textsf{accept}}
+\KwOut{four recorded conditions, each true or false}
+rebuild the generators $g_1, \dots, g_k$ from the stored block matrices with the runner's generator construction; record whether they equal the stored generators\;
+\For{$i, j \in \{1, \dots, k\}$}{ compute $p = g_i g_j$ with 32-bit integer matrix products and threshold at $0$\; record whether some $c \in \mathcal{C}$ is contained in $p$ entrywise }
+\For{$c \in \mathcal{C}$ and $j \in \{1, \dots, k\}$}{ compute $p = c\, g_j$ by integer products\; record whether some $c' \in \mathcal{C}$ is contained in $p$ entrywise }
+record whether every $c \in \mathcal{C}$ has a nonzero diagonal in some sector\;
+\Return{the four recorded conditions}
 \end{algorithm}
 
-Algorithm~\ref{alg:check} shares no code with the closure runner except the storage format. It recomputes the boolean
-products by integer matrix multiplication followed by a threshold, where the runner uses single-precision floating point,
-and it tests containment of every product in the certificate instead of trusting the runner's bookkeeping. It performs $k^2 + |\mathcal{C}|\,k$ products;
-for $F_3$ this is $12^2 + 2{,}454 \cdot 12 = \nCheckProductsFthree$ products. By Corollary~\ref{cor:semigroup}, acceptance proves that every ring
+Algorithm~\ref{alg:check} rebuilds the generators with the runner's own generator construction (the function that builds the generators
+of a family and the junction product of the library, which uses the runner's single-precision products), and it records whether they equal the stored
+generators instead of rejecting when they differ; they do for $F_1$, $F_2$ and $F_3$. It recomputes every product of the certificate conditions
+with 32-bit integer arithmetic followed by a threshold, where the runner uses single-precision floating point, and it tests containment of every product in the
+certificate instead of trusting the runner's bookkeeping. The generators are therefore not checked independently of the runner; the products and the containment tests are. It performs $k^2 + |\mathcal{C}|\,k$ products;
+for $F_3$ this is $12^2 + 2{,}454 \cdot 12 = \nCheckProductsFthree$ products. By Corollary~\ref{cor:semigroup}, four true conditions prove that every ring
 of at least two blocks of the family has a Petersen coloring, provided the generators are sound
 (Lemma~\ref{lem:soundness}).
 
