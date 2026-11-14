@@ -238,8 +238,9 @@ $\Q(a,b)$; the first validation record names sympy 1.14 (EXP-001). The long cert
 incremental elimination in place of repeated rank calls (EXP-064), number-theoretic transforms at
 the moduli $998244353$ and $1004535809$ for interpolation of determinants (EXP-103, EXP-104),
 and exact integer determinants where an endpoint of a support must be proved over characteristic
-zero (EXP-104, EXP-105, EXP-108). Singular supplies standard bases and the unit-ideal tests of
-EXP-120, EXP-121, EXP-130, EXP-137, EXP-139 and EXP-140; its version number is not recorded in
+zero (EXP-104, EXP-105, EXP-108). Singular supplies the standard bases and unit-ideal tests of
+EXP-137, EXP-139 and EXP-140 and the exact check of EXP-141; the Gr\"obner calculations of the atlas (for example
+EXP-120) run in sympy. The Singular version number is not recorded in
 the archived outputs of those experiments [U]. The Case 1 certificate attempts use PARI/GP
 (\texttt{polredabs}, \texttt{nffactor}), python-flint over FLINT 3.0.1, Singular, and a C
 program for Chinese-remainder and rational reconstruction, run in WSL Ubuntu-24.04 (EXP-141,
@@ -708,7 +709,7 @@ the ratios from $N=7$ on being odd primes $2N-3$ up to the normalization.
 
 \begin{figure}[t]
 \centering
-\begin{tikzpicture}[x=1.1cm,y=0.9cm,font=\scriptsize]
+\begin{tikzpicture}[x=1.7cm,y=1.3cm,font=\scriptsize]
   \draw[->] (-0.3,0)--(4.2,0) node[right]{$i$};
   \draw[->] (0,-0.3)--(0,3.2) node[above]{$j$};
   \draw[thick,blue!60!black,fill=blue!8] (0,0)--(2,0)--(3,2)--cycle;
@@ -717,8 +718,7 @@ the ratios from $N=7$ on being odd primes $2N-3$ up to the normalization.
   \fill[blue!60!black] (2,0) circle (0.06) node[below]{$x^2$};
   \fill[blue!60!black] (2,1) circle (0.06) node[above left]{$x^2y$};
   \fill[blue!60!black] (3,2) circle (0.06) node[right]{$x^3y^2$};
-  \node[red!70!black,anchor=west] at (0.1,2.2) {$x$-anchored edge $x\,\varphi(xy)$};
-  \draw[->,gray] (0.2,1.0) -- (0.9,0.3);
+  \node[red!70!black,anchor=west] at (0.1,2.6) {dashed: $x$-anchored edge $x\,\varphi(xy)$};
 \end{tikzpicture}
 \caption{Support of $P=x+a\,x^2y+b\,x^2+c\,x^3y^2$ and its Newton polygon (with the origin), vertices $(0,0)$, $(2,0)$, $(3,2)$. The linear vertex $x=(1,0)$ lies on an edge of the polygon, so it is swallowed; the dashed segment is the $x$-anchored edge through $x^2y$ and $x^3y^2$. The shape is one of the multi-edge staircases excluded at all partner degrees with pairing $-4620\,c^4$ (EXP-049).}\label{fig:staircase}
 \end{figure}
