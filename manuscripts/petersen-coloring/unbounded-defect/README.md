@@ -13,3 +13,5 @@ Versions: v0.01 [10.5281/zenodo.22847193](https://doi.org/10.5281/zenodo.2284719
 
 Build: three-pass `pdflatex main.tex` in this folder. Version history and publication receipts:
 `_CAOS_MANAGE/manuscripts/petersen-coloring/unbounded-defect/metadata.md` (private vault).
+
+Source of v0.03 (not yet released): `make_tables.py` regenerates `numbers.tex`, `table-*.tex` and `fig-*.tex` from the experiment artifacts (`python make_tables.py`); `main.tex` inputs them together with `related.tex`, `theory6.tex`, `methods.tex`, `design.tex`, `results6.tex`, `ablation.tex` and `closing.tex`. `zenodo.json` holds the v0.03 deposit metadata. The PDF in this folder is still v0.02; the release builds the new one.
