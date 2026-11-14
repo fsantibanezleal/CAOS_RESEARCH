@@ -171,3 +171,30 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   17167eb8af5ab3d89d942587e9aab7c51072d2b62298ee143c836e9f3c2da17a; a fresh unauthenticated download equals the frozen
   file.
 
+## 2026-11-14 - next-matching v0.05 published (10.5281/zenodo.24232146)
+
+- Revision from the independent audit (CAOS_MANAGE wip/caos-research/msaudit-bj-2026-11-10.md, D1): Z(d) defined, with
+  AEY's proved ranges and BET's computed values Z(7) = 9, Z(9) = 12, Z(11) = 15, Z(13) = 17; Corollary 8 claimed as a
+  computation-free proof of Z(d) >= d + 2 for every d >= 7; the lineage of the degree and matching-number problem
+  (Chvatal-Hanson, Balachandran-Khare, Dibek-Ekim-Heggernes and others, marked as read); the computations of EXP-003 and
+  EXP-004 as four algorithms with commands, versions and hashes; tables and figures generated from the artifacts; the
+  lazy-cut deviation; ablation, discussion and limitations. Proofs unchanged in substance.
+- Independent review (CAOS_MANAGE wip/caos-research/bj-next-matching-v05-review-2026-11-14.md): CHANGES REQUIRED (the
+  Z(d) novelty claim, the abstract's counts, a degree claim, the two lines of the conjecture), then APPROVE.
+- Release: 39 gates passed after one retry (a bare '<' in the Zenodo description was escaped by Zenodo, so the
+  round-trip check failed until it was written as &lt;); 28 pages, 774,952 bytes, SHA-256
+  9216fc30312a6cd9055481212c8e5cf78e9379e20c31e4238ba6f78b000137db.
+
+## 2026-11-14 - tree-strip (first interior shell) v0.05 published (10.5281/zenodo.24232301)
+
+- Revision from the independent audit (CAOS_MANAGE wip/caos-research/msaudit-bj-2026-11-10.md, D3): related work with
+  the proved cases of Bougard-Joret and Das-Gupta; the EXP-001 and EXP-002 computations as five algorithms with commands
+  and versions; run times from a reproduction run of 2026-11-14 (artifacts/rerun-2026-11-14.txt in both experiments:
+  the EXP-002 certificate and audit byte-identical, the EXP-001 certificate identical after line-ending normalisation);
+  tables and figures generated from the certificates; ablation and limitations; title re-derived. Proofs unchanged in
+  substance.
+- Independent review (CAOS_MANAGE wip/caos-research/bj-tree-strip-v05-review-2026-11-14.md): CHANGES REQUIRED (a false
+  ablation row, missing run times), then APPROVE; figure minors applied.
+- Release: 39 gates passed; 30 pages, 699,507 bytes, SHA-256
+  b20e124c0fef963a5f8d1820958b9cea5486c31e616c1012ffc41fe33b7ecd78.
+
