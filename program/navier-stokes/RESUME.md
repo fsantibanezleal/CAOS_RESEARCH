@@ -10,6 +10,8 @@ Its content equals v0.07, so the next content revision is v0.09.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): dormant after one citation and scope revision (v0.09) against arXiv:2610.08144 (NS-020) and the comparison of (22-8*sqrt(7))/9 with the class ceiling (NS-021).
 
+2026-11-14: v0.10 published (10.5281/zenodo.24231927): revision from the independent audit, every criterion reported with its outcome (seven not met), methods, ablation, limitations; EXP-008 factor corrected.
+
 2026-11-02: v0.09 published (10.5281/zenodo.23890775), scoped against arXiv:2610.08144; NS-020 and
 NS-021 done; the problem is held dormant (reopening conditions in state.md).
 

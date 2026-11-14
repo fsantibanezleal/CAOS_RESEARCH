@@ -6,7 +6,9 @@ it gives 10 operands. The eighth gate t is any of the 200 operations on them
 f = t - b for one of the 10 operands b. This is the candidate space of EXP-013.
 
 Stages (all sound; a candidate is dropped only when it provably has fewer than k
-distinct integer roots, or is identically zero):
+distinct integer roots, when it is identically zero, or when its eighth gate t is
+the zero polynomial, so that f = +-b and z(b) <= z_max(7) = 5 < k = 7 because b is a
+value of a program of at most 7 gates):
 
 1. degree: f has degree at most max(deg t, deg b) (deg t is exact for products
    and at most the max for sums and differences); below k it cannot have k
@@ -15,10 +17,20 @@ distinct integer roots, or is identically zero):
    proven lower bound m' on the power of x dividing f (the minimum of the
    operands' trailing indices; their sum for a product).
 3. 3-adic layer (p = 3, 9 points, residues mod 3^20) on the survivors.
-4. A survivor whose residues vanish at every point of both layers is tested for
-   f == 0 EXACTLY (built from the exact operands), cached by operand ids.
-5. Every other survivor is built exactly and its distinct integer roots are
-   counted (rational root theorem, tclib.enum.integer_roots).
+4. A survivor whose residues vanish at every point of both layers is a "suspect"
+   (counter zero_suspect) and is tested for f == 0 EXACTLY (built from the exact
+   operands), cached by operand ids. A suspect whose exact build is the empty
+   polynomial is dropped; one with a nonzero build would also be counted in "exact".
+5. Every other survivor is built exactly. _build returns the empty tuple both when
+   f == 0 and when the eighth gate t == 0 (it stops at t and does not form f = +-b).
+   A non-suspect with an empty build is therefore a candidate whose EIGHTH GATE IS
+   THE ZERO POLYNOMIAL (for example 1 + (-1)), counted in zero_exact; it is not
+   an identically zero f, and the drop is sound by the z(b) <= 5 argument above.
+   Every other survivor has its distinct integer roots counted (rational root
+   theorem, tclib.enum.integer_roots) and is counted in "exact".
+
+Counters: pass3 = zero_suspect + zero_exact + exact holds when every suspect is
+exactly zero (a nonzero suspect would be counted in both zero_suspect and exact).
 
 Residues, degrees and trailing indices of the operands come from the tables
 written by residues.py (re-checked there against exact evaluation).
