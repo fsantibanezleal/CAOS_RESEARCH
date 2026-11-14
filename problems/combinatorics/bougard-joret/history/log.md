@@ -131,3 +131,19 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   the second line for all n > k alpha; the enumeration is an independent exhaustive check on these 53 triples
   (context/references.md).
 
+## 2026-11-14 - second-regime v0.03 published (10.5281/zenodo.24229265)
+
+- Full rewrite of the note: order 24 complete (53 of 53 open-window triples equal the conjectured value; seven pairs
+  (alpha, k) settled for every n), the search as a finite decision procedure with soundness proofs, the EXP-012
+  validation suite, the 246 extremal graphs at 35 triples (EXP-011; 40 without a partition into alpha cliques, all at
+  k = 3 with alpha odd), the proposition conditional on Didin's main theorem that locates them, and the EXP-013
+  construction for every odd alpha. Didin's preprint (10.5281/zenodo.22831382) is cited and the enumeration is
+  positioned as an independent check.
+- Independent review (CAOS_MANAGE wip/caos-research/bj-second-regime-v03-review-2026-11-14.md): CHANGES REQUIRED with
+  8 majors at bd16b7f8, all fixed in b9433627, APPROVE at the re-check; the re-check nits are in 57069b43.
+- Records added for the review: EXP-013 probe_ladder.py (80 circular-ladder graphs, all 2-connected), EXP-011
+  didin-selftest.txt, EXP-012 verdict corrected (19 of 33 Gate B slices empty).
+- Release: reserved, frozen and published with CAOS_MANAGE tools/zenodo/release.py, 39 gates passed; 31 pages,
+  737,159 bytes, SHA-256 92786eaca13116da6a875fcd8e2ff3ba60624be1f31f5a35ef8144e7ab24e8c0; a fresh unauthenticated
+  download equals the frozen file.
+

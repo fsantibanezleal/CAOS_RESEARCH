@@ -29,4 +29,4 @@ Neither the tree strip, the full first shell nor the EXP-003 bracket resolves th
 | BJB-023 | done | EXP-012 (2026-11-14): pipeline exact at the production parameters (Gates A to F, 0 disagreements) |
 | BJB-025 | done | EXP-013 (2026-11-14): X6/X7 construction of extremal graphs without a clique partition for every odd alpha, 3 alpha < n <= 4 alpha - 1; proof with finite checks; extremal at (22..24,7,3) |
 | BJB-026 | todo | Are X6 and X7 the only blocks for every odd alpha (shown for n <= 22)? Is case (b) (p(G) = 1) realised beyond (10,3,3)? |
-| BJB-024 | todo | Note second-regime v0.03: full rewrite (order 24, Didin's claimed proof, methods, validation, extremal graphs), independent review, release |
+| BJB-024 | done | Note second-regime v0.03 published 2026-11-14, 10.5281/zenodo.24229265: full rewrite (order 24, Didin's claimed proof, methods, validation, extremal graphs, odd-alpha construction), independent review APPROVE |

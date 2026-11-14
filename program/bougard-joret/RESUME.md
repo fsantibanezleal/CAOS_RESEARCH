@@ -15,7 +15,7 @@ Updated: 2026-11-14.
   3-edge-connected cubic quotient give a 3-connected graph with the conjectured size, independence number alpha
   and clique cover number alpha + 1; extremal at (22..24,7,3), and everywhere if Didin's Theorem 9 holds.
 - [MV] EXP-012: the search pipeline validated at the production parameters (Gates A to F).
-- In flight: EXP-011 phase 2b; second-regime v0.03 (full rewrite) under independent review before release.
+- Done 2026-11-14: second-regime v0.03 published (10.5281/zenodo.24229265): order 24, validation, the extremal graphs at 35 triples and the odd-alpha construction. Next: BJB-026 (are X6 and X7 the only blocks; is case (b) realised beyond (10,3,3)).
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 4; first action BJB-014, then exact small-triple data in the second regime n > k*alpha (BJB-016).
 
@@ -104,7 +104,7 @@ Manuscript v0.01 remains frozen at version DOI `10.5281/zenodo.22315252`. At its
 - Narrative: `problems/combinatorics/bougard-joret/wiki/`.
 - Preserved published manuscript: `manuscripts/bougard-joret/tree-strip/`, v0.02.
 - New published manuscript: `manuscripts/bougard-joret/next-matching/`, v0.01, DOI 10.5281/zenodo.22343022; scoped integration complete.
-- Published note: `manuscripts/bougard-joret/second-regime/`, v0.02 (2026-11-08), DOI 10.5281/zenodo.24059677 (all 47 open triples with n <= 23); v0.01 (2026-11-07), DOI 10.5281/zenodo.24044538, concept 10.5281/zenodo.24044537: EXP-005 to EXP-007, all 39 open second-regime triples with n <= 22.
+- Published note: `manuscripts/bougard-joret/second-regime/`, v0.03 (2026-11-14), DOI 10.5281/zenodo.24229265 (order 24, validation, extremal graphs, odd-alpha construction); v0.02 (2026-11-08), DOI 10.5281/zenodo.24059677 (all 47 open triples with n <= 23); v0.01 (2026-11-07), DOI 10.5281/zenodo.24044538, concept 10.5281/zenodo.24044537: EXP-005 to EXP-007, all 39 open second-regime triples with n <= 22.
 - Private mirror: `plans/caos-research/bougard-joret/` in the management repository.
 
 ## 7. Gotchas
