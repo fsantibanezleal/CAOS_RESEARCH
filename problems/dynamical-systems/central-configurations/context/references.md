@@ -67,7 +67,10 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
   theorem, and the Lemma 7.5 partial-Groebner upper-bound device (union of leading
   terms of tractable subideals). NOTE: Theorems 1.1/7.11 misprint "open" where the
   proof constructs a closed exceptional set. Journal status: searched 2026-08-01,
-  no journal version surfaced (not proof of non-publication); cite arXiv.
+  no journal version surfaced (not proof of non-publication); cite arXiv. UPDATE 2026-11-14: Crossref lists a
+  journal version with the same title and authors, J. Dynam. Differential Equations 32 (2020), doi
+  10.1007/s10884-019-09765-y, published after the preprint [V2: Crossref record only; whether the journal text
+  differs from the arXiv version is not checked].
   [V: author PDF read IN FULL 2026-08-01; SHA-256 in the dossier; SageMath/Singular
   notebooks at github.com/thiagodiasoliveira/CC6BP NOT fetched or rerun]
 - [D17] T. Dias, New equations for central configurations and generic finiteness,

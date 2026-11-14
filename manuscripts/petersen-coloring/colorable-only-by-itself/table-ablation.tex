@@ -1,0 +1,30 @@
+\begin{table}[tbp]\centering\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.8cm}}
+\toprule
+formula & orders run & lazy cuts per order & orders decided & wall clock\\
+\midrule
+without the fiber constraints & 10 ($32 \le k \le 50$) & 1,800 to 2,400, over 95 percent bridge cuts & 0 & stopped after about 35 min \\
+with the fiber constraints & 10 ($32 \le k \le 50$) & 0 & 10 & 137 to 5{,}882 s per order \\
+\bottomrule
+\end{tabular}
+\caption{Effect of the fiber constraints on the first graph at the ten target orders from 32 to 50. The figures for the formula without the constraints are those recorded when that attempt was stopped; the figures for the formula with them are the wall-clock seconds of the ten decided runs (solve and proof check included).}\label{tab:ablation-orders}
+\end{table}
+
+\begin{table}[tbp]\centering\small
+\begin{tabular}{lrrrrrr}
+\toprule
+ & & \multicolumn{2}{c}{with fiber constraints} & \multicolumn{3}{c}{without} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-7}
+graph & instances & cuts & s & instances with a cut & cuts & s\\
+\midrule
+$K_4$ & 1 & 0 & 3 & 0 & 0 & 2 \\
+prism & 2 & 0 & 5 & 0 & 0 & 5 \\
+Petersen & 4 & 0 & 19 & 2 & 219 & 21 \\
+$J_3$ & 5 & 0 & 22 & 3 & 484 & 32 \\
+$J_5$ & 9 & 0 & 179 & 7 & 3{,}091 & 758 \\
+\midrule
+all & 21 & 0 & 228 & 12 & 3{,}794 & 819 \\
+\bottomrule
+\end{tabular}
+\caption{Effect of the fiber constraints on the 21 control instances of Table~\ref{tab:controls}, summed by graph: lazily learned cuts and wall-clock seconds with and without the constraints, and the number of instances in which the formula without them needed at least one cut.}\label{tab:ablation-controls}
+\end{table}

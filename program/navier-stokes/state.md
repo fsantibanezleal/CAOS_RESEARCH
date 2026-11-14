@@ -271,3 +271,12 @@ follows the written argument. NS-021 was already answered in Section 5 since v0.
 item; per the 2026-10-30 portfolio review the problem is held dormant. It reopens if a corrected
 formalization, a refutation of the forced blowup, or a dissipative construction above the class ceiling
 appears.
+
+## 2026-11-14: manuscript v0.10 published (10.5281/zenodo.24231927)
+
+Revision from the independent audit (CAOS_MANAGE wip/caos-research/msaudit-misc-2026-11-10.md, D2): every validation
+criterion reported with its outcome (seven not met, one inconclusive), the transcribed Alpoge-Buckmaster design bounds
+checkable against the archived sources, the numerical methods as algorithms, related work, ablation, limitations and
+reproducibility sections, evidence marks on every statement. The EXP-008 verdict's finite-horizon factor is corrected to
+1 + log(1/nu)/(gamma g (Q - 1)), and its agreement attributed to the survival constraint, not the bisection.
+

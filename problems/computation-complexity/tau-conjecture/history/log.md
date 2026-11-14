@@ -339,3 +339,19 @@ External status: open. arXiv searches (newest first) for "tau conjecture", "Shub
 straight-line programs with integer roots return nothing after 2019 bearing on z_max or the seven-root threshold
 (arXiv:2610.41660, elliptic Fekete points, is unrelated) [V]. No overlap with EXP-015 or census v0.06 found [U as
 to exhaustive priority].
+
+## 2026-11-14 - census v0.07 published (10.5281/zenodo.24231299)
+
+- Revision from the independent audit (CAOS_MANAGE wip/caos-research/msaudit-misc-2026-11-10.md, D3): the stage table
+  of the window-free additive scan corrected from final.json (pass3 = zero_suspect + zero_exact + exact), with an
+  erratum in the EXP-015 verdict; evidence marks on every literature claim; the data section by stage; seven algorithm
+  blocks with costs; the proof of the reached-set lemma; the rational tau = 6 program replayed
+  (scripts/replay_rational_tau6.py, context/2026-11-14-rational-tau6-program.md); figures generated from the records;
+  related work, problem formulation, experimental design, ablation, discussion, limitations and conclusions sections;
+  DOIs corrected (Cheng 2004, Lipton 1994; Moreira and Lempel-Seroussi-Ziv in context/references.md). No result changes.
+- Independent review (CAOS_MANAGE wip/caos-research/tau-census-v07-review-2026-11-14.md): CHANGES REQUIRED (a
+  758-word abstract and missing sections, wrong DOIs), all fixed, APPROVE at the re-check; three minors applied.
+- Release: 39 gates passed; 35 pages, 600,037 bytes, SHA-256
+  b85692fbe63bd9f6384bf6e32f09ccd3a2e767cec8d5c0087e0dde3add655e3d; a fresh unauthenticated download equals the frozen
+  file.
+

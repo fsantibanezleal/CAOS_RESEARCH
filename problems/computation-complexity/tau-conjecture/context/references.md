@@ -31,14 +31,14 @@ TO FETCH = named, not yet read. Unread sources cannot support conclusions.
 | Y. Alekseev, D. Grigoriev, E. Hirsch, I. Tzameret. Semi-algebraic proofs, IPS lower bounds and the tau-conjecture. ECCC TR19-142 (STOC 2020) | TO FETCH | Proof-complexity bridge. |
 | S. Bhattacharjee, M. Blaeser, P. Dutta, S. Mukherjee. Exponential lower bound via exponential sums. arXiv:2601.00387 (2026-01); ICALP 2024 predecessor: DOI 10.4230/LIPIcs.ICALP.2024.24 | ABS | Tau conjecture => explicit exponential lower bound for an exponential sum. |
 | P. Buergisser. Intractability of Hilbert's Nullstellensatz implies algebraic hardness of permanent. arXiv:2606.25121 (2026-06-23) | ABS | Nonuniform P_C != NP_C => uniform constant-free Valiant separation. |
-| Q. Cheng. On the ultimate complexity of factorials. Theoret. Comput. Sci. 326(1-3):419-429, 2004. DOI: 10.1016/j.tcs.2004.07.032 | READ (2026-11-07, author copy; context/2026-11-07-factorial-upper-bounds.md) | Conditional upper bound exp(c sqrt(log n loglog n)) on tau'(n!). |
+| Q. Cheng. On the ultimate complexity of factorials. Theoret. Comput. Sci. 326(1-3):419-429, 2004. DOI: 10.1016/j.tcs.2004.06.020 | READ (2026-11-07, author copy; context/2026-11-07-factorial-upper-bounds.md) | Conditional upper bound exp(c sqrt(log n loglog n)) on tau'(n!). |
 | Q. Cheng. Straight-line programs and torsion points on elliptic curves. Comput. Complexity 12(3-4):150-161, 2003. DOI: 10.1007/s00037-003-0180-0 | NO OPEN COPY (2026-11-07) | Subject per its record: Buergisser's L-conjecture and torsion bounds on elliptic curves; the earlier note 'upper bound for multiples of n!' is unverified. |
 | V. Strassen. Einige Resultate ueber Berechnungskomplexitaet. Jber. Deutsch. Math.-Verein. 78(1):1-8, 1976/77 | NO OPEN COPY (2026-11-07) | O(sqrt(n) log^2 n) ring operations for n! itself, as stated by Cheng 2004 (with BCS97); Markstroem quotes it for multiples of n!. |
-| C. G. Moreira. On asymptotic estimates for arithmetic cost functions. Proc. AMS 125(2):347-353, 1997. DOI: 10.1090/S0002-9939-97-03583-X | TO FETCH | tau(n) >= log n / loglog n almost all n. |
+| C. G. Moreira. On asymptotic estimates for arithmetic cost functions. Proc. AMS 125(2):347-353, 1997. DOI: 10.1090/S0002-9939-97-03583-1 (corrected 2026-11-14: the earlier suffix -X did not resolve on Crossref) | TO FETCH | tau(n) >= log n / loglog n almost all n. |
 | W. de Melo, B. F. Svaiter. The cost of computing integers. Proc. AMS 124(5):1377-1378, 1996. DOI: 10.1090/S0002-9939-96-03173-5 | TO FETCH | Almost-all lower bound; the {1,2} base convention. |
 | A. Shamir. Factoring numbers in O(log n) arithmetic steps. Inform. Process. Lett. 8(1):28-31, 1979. DOI: 10.1016/0020-0190(79)90087-5 | TO FETCH | With integer division, n! is easy; why {+,-,x} only is essential. |
-| R. Lipton. Straight-line complexity and integer factorization. ANTS 1994, LNCS 877. DOI: 10.1007/3-540-58691-1_50 | TO FETCH | Average-case factoring => weak tau statements; many rational roots. |
-| A. Lempel, G. Seroussi, J. Ziv. On the power of straight-line computations in finite fields. IEEE Trans. Inform. Theory 28(6):875-880, 1982. DOI: 10.1109/TIT.1982.1056579 | TO FETCH | Finite-field analogue bounds. |
+| R. Lipton. Straight-line complexity and integer factorization. ANTS 1994, LNCS 877. DOI: 10.1007/3-540-58691-1_45 | TO FETCH | Average-case factoring => weak tau statements; many rational roots. |
+| A. Lempel, G. Seroussi, J. Ziv. On the power of straight-line computations in finite fields. IEEE Trans. Inform. Theory 28(6):875-880, 1982. DOI: 10.1109/TIT.1982.1056592 (corrected 2026-11-14: 1056579 resolves to a different paper; Crossref) | TO FETCH | Finite-field analogue bounds. |
 
 ## Adjacent computational surfaces
 
@@ -47,7 +47,7 @@ TO FETCH = named, not yet read. Unread sources cannot support conclusions.
 | E. Allender, P. Buergisser, J. Kjeldgaard-Pedersen, P. B. Miltersen. On the complexity of numerical analysis. SIAM J. Comput. 38(5):1987-2006, 2009. DOI: 10.1137/070697926 | TO FETCH | PosSLP; the decision cousin of tau. |
 | On the hardness of PosSLP. arXiv:2307.08008 | TO FETCH | Recent PosSLP hardness. |
 | PosSLP and sum of squares. arXiv:2403.00115 | TO FETCH | Recent PosSLP work. |
-| OEIS A005245 (integer complexity, +,x from 1s) | TO FETCH | The classical adjacent census; different model (no subtraction, counts 1s not ops). |
+| OEIS A005245 (integer complexity, +,x from 1s) | READ 2026-11-14 (entry text via oeis.org search, format text) | The classical adjacent census; different model (no subtraction, counts 1s not ops). |
 | G. Malajovich. Ultimate polynomial time. arXiv:math/9904130 (1999); Proc. LMS | ABS | The class UP over C; tau conjecture implies UP does not contain constant-free NP_C. Adjacent formulation. |
 | K. Phillipson, J. M. Rojas. Fewnomial systems with many roots, and an adelic tau conjecture. arXiv:1011.4128 (2010, rev. 2012) | ABS | Adelic/local-field tau variant; explicit fewnomial systems near upper bounds via tropical intersections. Natural home for a p-adic census extension (RL-2). |
 | C. Fuhs, P. Schneider-Kamp. Synthesizing shortest linear straight-line programs over GF(2) using SAT. SAT 2010, LNCS 6175. DOI: 10.1007/978-3-642-14186-7_8 | ABS | SAT reduction for optimal-length SLP decisions (linear case; MaxSNP-complete optimization). Template for the RL-7 integer encoding. |

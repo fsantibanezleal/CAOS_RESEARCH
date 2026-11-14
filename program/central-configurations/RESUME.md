@@ -7,7 +7,7 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
 2026-11-02: n = 5 finiteness for all positive masses is settled externally (Tomar, with Lean; Chen and Tong;
 Liu and Liu). EXP-024 audited the Lean statement (faithful) and every stored and generated source (no kernel
 bypass). The n = 5 work below is retired as a route to the theorem; the open case is n = 6 (CCB-041).
-Manuscript v0.11: 10.5281/zenodo.23887585.
+Manuscript v0.12: 10.5281/zenodo.24232033 (2026-11-14; v0.11: 10.5281/zenodo.23887585). The CCB-042 verdict (2026-11-14) finds the quadruple corner not closed and several atlas charts stopped at their time budget; a v0.13 correction of the atlas description follows.
 
 ## 1. State in one screen
 
