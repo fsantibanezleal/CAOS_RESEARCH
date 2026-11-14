@@ -2,23 +2,28 @@
 \usepackage[margin=1.05in,headheight=14pt]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,tikz}
+\usetikzlibrary{calc}
 \usepackage{xcolor}
 \definecolor{linknavy}{RGB}{25,55,125}
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
-\usepackage{orcidlink,fancyhdr}
+\usepackage{orcidlink,fancyhdr,graphicx,algpseudocode,array}
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[fileext=loa,name=Algorithm]{algorithm}
+\input{numbers.tex}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
 \newcommand{\e}{\mathrm{e}}
 
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.04}
-\newcommand{\docdate}{4 November 2026}
+\newcommand{\docversion}{v0.05}
+\newcommand{\docdate}{14 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.23965193}
 \newcommand{\conceptdoi}{10.5281/zenodo.22343021}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -49,43 +54,118 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \maketitle
 \headerblock
 \begin{abstract}
-Let $T(d,m)$ be the maximum number of edges in a triangle-free graph with maximum degree at most $d$ and matching number at most $m$, with no restriction on its order. We prove
-$T(d,d+1)=d^2+d+2$ for every integer $d\ge7$.
-A shortest-odd-cycle deficit bound, followed by a five-type equality obstruction, first gives the same maximum on $2d+3$ vertices. The Tutte--Berge formula extends this bound to arbitrary order.
-The attaining construction is due to Banak, Ekim and Ta\c{s}k\i n; the contribution is the uniform upper bound. This settles the next-matching slice of the Ahanjideh--Ekim--Y\i ld\i z conjecture and, in particular, resolves the published bounds $184\le T(13,14)\le185$ in favor of 184.
-As a consequence, the Bougard--Joret extremal function satisfies $f(2d+3,2,d+2)=d^2+4d+2$ for every $d\ge7$, an unbounded strict-interior discrepancy from the degree-sum prediction. The lower value is excluded by a structural theorem: every triangle-free graph on $2d+3$ vertices with maximum degree at most $d$ and $d^2+d+2$ edges has two vertices with the same $d$ neighbours, so its complement is not $(d+2)$-connected. The full AEY conjecture remains open. Exact finite certificates and independent implementation checks support, but do not replace, the proof.
+Let $T(d,m)$ be the maximum number of edges in a triangle-free graph with maximum degree at most $d$ and matching number at most $m$, with no restriction on its order. We prove $T(d,d+1)=d^2+d+2$ for every integer $d\ge7$. A shortest-odd-cycle deficit bound, followed by a five-type equality obstruction, first gives the same maximum on $2d+3$ vertices; the Tutte--Berge formula extends it to arbitrary order. The attaining construction is due to Banak, Ekim and Ta\c{s}k\i n; the contribution is the uniform upper bound. It resolves the published bounds $184\le T(13,14)\le185$ in favor of 184, and it places the level $m=d+1$ inside the range $d<m<Z(d)$ of the Ahanjideh--Ekim--Y\i ld\i z conjecture for every $d\ge7$, including the odd degrees 7, 9 and 11 where their proved bounds on $Z(d)$ do not. As a consequence the Bougard--Joret function satisfies $f(2d+3,2,d+2)=d^2+4d+2$ for every $d\ge7$, an unbounded strict-interior discrepancy from the degree-sum prediction; the lower value is excluded because every extremal triangle-free graph on $2d+3$ vertices has two vertices with the same $d$ neighbours. Exact computations support the proofs without replacing them: \nGraphs\ saved graphs and \nCandidates\ five-type tuples pass two implementations, and a configuration-split satisfiability search finds no counterexample at $d=7$ (all 8 configurations) and $d=8$ (7 of 8; the eighth stopped at its time limit and is excluded by an identity). The full conjecture remains open.
 \end{abstract}
 
-\section{Problem and relation to prior work}
+\section{Introduction}\label{sec:intro}
 
-All graphs are finite, simple and undirected. Write $\e(F)$, $\Delta(F)$ and $\nu(F)$ for the number of edges, maximum degree and maximum matching size of $F$. Define
+\subsection{The problem and the results}
+
+All graphs are finite, simple and undirected. Write $\e(F)$, $\Delta(F)$, $\delta(F)$, $\nu(F)$ and $\kappa(F)$ for the number of edges, the maximum degree, the minimum degree, the maximum matching size and the vertex connectivity of $F$. For integers $d,m\ge1$ define
 \[
 T(d,m)=\max\{\e(F): F\text{ triangle-free},\ \Delta(F)\le d,\ \nu(F)\le m\}.
 \]
-Isolated vertices are allowed and have no effect on the maximum. We use $T$ to distinguish this function from the Bougard--Joret minimum-edge function in Section~\ref{sec:bj}.
-
-Ahanjideh, Ekim and Y\i ld\i z (AEY) study this degree/matching problem and conjecture, in their intermediate range $d<i<Z(d)$, that $T(d,i)=di+i-d+1$~\cite[Conjecture 6.1]{AEY}. Here $Z(d)$ is their threshold for a triangle-free factor-critical graph with their extremal degree sequence. Our result concerns the complete next level $i=d+1$ for $d\ge7$.
-
-Banak, Ekim and Ta\c{s}k\i n (BET) provide the attaining family in Proposition~4.1 and computationally resolve a substantial finite range~\cite{BET}. Their Table~3 already determines $T(d,d+1)$ for $d=7,\ldots,12$. At $(d,m)=(13,14)$ it reports lower bound 184 and upper bound 185. Those finite results and the construction are prior work. The new conclusion here is the uniform upper bound, including
-\[
-T(13,14)=184.
-\]
-The source comparison used AEY's final published text and BET's complete author manuscript; BET's final publisher PDF was not obtained. Additional searches located no explicit prior uniform solution of this slice, without establishing exhaustive bibliographic priority.
-
-Regular triangle-free extremal results, including Caro--Tuza~\cite[Theorem 2(iii)]{CT} and the later regular Tur\'an literature~\cite{CDK}, already imply strong regular-degree obstructions. They are not asserted as new here. Our fixed-order theorem permits nonregular graphs with maximum degree at most $d$; its attaining graph has one vertex of degree four and all other vertices of degree $d$.
+There is no restriction on the order of $F$; isolated vertices are allowed and do not change the maximum. Ahanjideh, Ekim and Y\i ld\i z (AEY) write $f_\triangle(d,m)$ for this quantity~\cite{AEY}; we write $T$ to keep it apart from the Bougard--Joret minimum-edge function $f(n,\alpha,k)$ of Section~\ref{sec:bj}. Two statements are proved here.
 
 \begin{theorem}[Next matching level, D]\label{thm:main}
-For every integer $d\ge7$,
-\[
-T(d,d+1)=d^2+d+2.
-\]
+For every integer $d\ge7$, $T(d,d+1)=d^2+d+2$.
 \end{theorem}
 
-Our universal deductions are labeled [D] and exact finite checks [MV]. The proof and certificates are archived as computation EXP-003~\cite{Record}. The first interior shell of the Bougard--Joret problem is the subject of the companion paper~\cite{Shell}.
+\begin{theorem}[Exact Bougard--Joret value, D]\label{thm:bjexact}
+For every integer $d\ge7$, $f(2d+3,2,d+2)=d^2+4d+2$.
+\end{theorem}
 
-\section{The fixed-order upper bound}
+The contributions are the following.
+\begin{enumerate}
+\item A uniform upper bound for $T(d,d+1)$ valid for every $d\ge7$ (Theorem~\ref{thm:main}). It rests on a shortest-odd-cycle deficit bound, a five-type equality obstruction on $2d+3$ vertices (Theorem~\ref{thm:order}) and the Tutte--Berge formula (Section~\ref{sec:tb}). The attaining graph is the construction of Banak, Ekim and Ta\c{s}k\i n~\cite{BET}, which Section~\ref{sec:attain} re-verifies for every $d\ge7$.
+\item The value $T(13,14)=184$, which closes the interval $184\le T(13,14)\le185$ left by the integer-programming computations of~\cite{BET}.
+\item A proof that $d+1<Z(d)$ for every $d\ge7$ (Corollary~\ref{cor:Z}), where $Z(d)$ is the threshold of AEY defined exactly in Section~\ref{sec:Z}. Their proved bounds on $Z(d)$ give this only for even $d$ and for odd $d\ge13$; the corollary adds $d=7,9,11$. Hence the slice $m=d+1$ lies inside the range $d<m<Z(d)$ of their Conjecture~6.1 for every $d\ge7$.
+\item The exact value of the Bougard--Joret function at the strict-interior parameters $(2d+3,2,d+2)$ (Theorem~\ref{thm:bjexact}), through the structural Theorem~\ref{thm:k2d}: every extremal triangle-free graph on $2d+3$ vertices has two vertices with the same $d$ neighbours.
+\item A documented set of exact computations (Section~\ref{sec:comp}): a certificate generator, an independent NetworkX audit, a five-type enumeration and a configuration-split satisfiability search, each given as an algorithm with its commands, versions where recorded, run times and hashes, and their results in Tables~\ref{tab:graphs}--\ref{tab:models}.
+\end{enumerate}
+The attaining construction and the finite values through $d=12$ are prior work. The proofs of Theorems~\ref{thm:main} and~\ref{thm:bjexact} are for all $d\ge7$ and do not depend on the computations; the computations are checks, and Section~\ref{sec:valid} states what each one covers. Statements carry a mark: [D] derived here, [MV] machine-verified by a finite computation, [V] read on a primary source, [U] not verified. Table~\ref{tab:notation} collects the notation.
 
-\begin{lemma}[Shortest odd cycle]\label{lem:cycle}
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lp{0.68\textwidth}}
+\toprule
+symbol & meaning \\
+\midrule
+$T(d,m)$ & maximum size of a triangle-free graph with $\Delta\le d$, $\nu\le m$ (AEY: $f_\triangle(d,m)$) \\
+$f(n,\alpha,k)$ & least size of a $k$-connected graph of order $n$ and independence number $\alpha$ \\
+$D(F)=nd-2\e(F)$ & total degree deficit of $F$ with respect to the bound $d$ \\
+$V_0,\ldots,V_4$, $n_i=|V_i|$ & the five types around a shortest odd cycle $c_0\cdots c_4$ \\
+$b_i=n_{i-1}+n_{i+1}$ & number of typed neighbours of $c_i$ \\
+$s$, $u$ & cycle slack $\sum\sigma(x)$ and outside deficit $\sum(d-\deg x)$; $s+u=2$ for the graphs of Theorem~\ref{thm:k2d} \\
+$X$, $r=|X|$ & defective vertices (at most one cycle neighbour) and their number \\
+$Z(d)$ & AEY threshold: least matching number of an (almost) $d$-regular triangle-free factor-critical graph \\
+$Q_d$, $P_d$ & the shared-neighbourhood maximizer and the subdivided crown of Sections~\ref{sec:attain} and~\ref{sec:bj} \\
+\bottomrule
+\end{tabular}
+\caption{Notation used in the proofs. The symbols $s$ and $u$ are defined in Section~\ref{sec:exact}; the deficit identity they satisfy there is $s+u=2$, and $Z(d)$ is defined in Definition~\ref{def:Z}.}
+\label{tab:notation}
+\end{table}
+
+\paragraph{Scope of the novelty claim.}
+
+Searches located no explicit prior uniform solution of the slice $m=d+1$, without establishing exhaustive bibliographic priority; the sources compared are listed in Section~\ref{sec:related}. Regular triangle-free extremal results, including Caro--Tuza~\cite[Theorem 2(iii)]{CT} and the later regular Tur\'an literature~\cite{CDK}, give strong regular-degree obstructions and are not claimed as new. Our fixed-order theorem permits nonregular graphs of maximum degree at most $d$; its attaining graph has one vertex of degree four and all others of degree $d$.
+
+\section{Related work}\label{sec:related}
+
+\subsection{The degree and matching extremal problem}
+
+The problem of maximizing the number of edges of a graph under a maximum-degree bound and a matching-number bound was first posed by Erd\H{o}s and Rado in a more general setting~\cite{ER}; Chv\'atal and Hanson first answered it for general graphs, using Berge's matching formula~\cite{CH}, and Balachandran and Khare later gave a constructive proof~\cite{BK}. [V, as reported by~\cite{BET}; the three originals were not read here.] In the form stated by AEY, Theorem~2.1 of~\cite{AEY} gives, for general graphs, $f_{\mathrm{GEN}}(d,m)=dm+\lfloor d/2\rfloor\lfloor m/\lceil d/2\rceil\rfloor$ [V]. At $m=d+1$ and $d\ge3$ the last factor equals two, so the general maximum is $d(d+1)+2\lfloor d/2\rfloor$ [D]. Forbidding triangles lowers it to $d^2+d+2$ (Theorem~\ref{thm:main}), a loss of $2\lfloor d/2\rfloor-2$ edges, which is $4$ at $d=7$ and $6$ at $d=8$ [D]. Vizing's theorem gives the weaker general bound $(\Delta+1)\nu$ edges~\cite{Vizing}, here $(d+1)^2=d^2+2d+1$ [V, as used in~\cite{AEY}].
+
+The extremal graphs of the general problem contain stars, cliques and almost complete graphs, so the same question for graph classes that exclude one of these components is natural. Claw-free graphs~\cite{Dibek}, chordal graphs~\cite{Blair} and several further classes~\cite{Maland} were treated before AEY [V, as reported by~\cite{AEY}; not read here]. AEY treat triangle-free graphs. They prove structural lemmas that hold for every class closed under vertex deletion and disjoint union with stars, and they solve the triangle-free problem for $d\ge m$, for $d\le6$ and for $Z(d)\le m<2d$ (Theorems~3.3, 3.4, 4.7, 4.9 and~4.10 of~\cite{AEY}) [V]. Two of these theorems matter below.
+\begin{itemize}
+\item Theorem~3.4: $f_\triangle(d,d)=d^2+1$ for $d\ge2$. The extremal graph is a blow-up of $C_5$ on $2d+1$ vertices.
+\item Corollary~3.5: if $G$ is an edge-extremal graph with the largest possible number of $d$-star components, every other component $H$ is factor-critical with $|V(H)|=2\nu(H)+1$ and $\nu(H)\ge d$.
+\end{itemize}
+Gallai's lemma~\cite{Gallai} supplies the factor-criticality [V, as used in~\cite{AEY}]. The cases left open by AEY are $7\le d<m$ with $m<Z(d)$ or $m\ge2d$.
+
+\subsection{The threshold \texorpdfstring{$Z(d)$}{Z(d)} and the proved range}\label{sec:Z}
+
+\begin{definition}[$Z(d)$, \cite{AEY} Definition~4.2]\label{def:Z}
+A graph is \emph{almost $d$-regular} if one vertex has degree $d-1$ and every other vertex has degree $d$. For $d\ge2$, $Z(d)$ is the smallest natural number $n$ such that there is a $d$-regular (for $d$ even) or almost $d$-regular (for $d$ odd) triangle-free factor-critical graph $\Gamma$ with $\nu(\Gamma)=n$. [V]
+\end{definition}
+
+Such a graph has $2Z(d)+1$ vertices, and a degree count gives
+\begin{equation}\label{eq:Zedges}
+\e(\Gamma)=\Big\lfloor\frac{(2Z(d)+1)d}{2}\Big\rfloor=dZ(d)+\Big\lfloor\frac d2\Big\rfloor,
+\end{equation}
+as in the proof of Lemma~4.5 of~\cite{AEY} [V]. Their Lemma~4.5 gives $Z(d)\ge d+1$ for every $d\ge4$, and their Lemma~4.6 gives $Z(d)=\lfloor5d/4\rfloor$ for even $d$ and $\lfloor5(d-1)/4\rfloor\le Z(d)\le\lfloor5(d+1)/4\rfloor$ for odd $d$ [V]. The lower bound comes from the Andr\'asfai--Erd\H{o}s--S\'os theorem~\cite{AES}: a triangle-free graph of order $n$ with minimum degree above $2n/5$ is bipartite, and factor-critical graphs are not. AEY's Conjecture~6.1 states
+\begin{equation}\label{eq:AEYconj}
+T(d,i)=di+i-d+1\qquad\text{for }7\le d<i<Z(d),
+\end{equation}
+and their Conjecture~6.5 states $Z(d)=\lfloor5(d+1)/4\rfloor$ for odd $d\ge21$ [V]. At $i=d+1$ the right side of~\eqref{eq:AEYconj} is $d^2+d+2$, the value of Theorem~\ref{thm:main}. Whether $i=d+1$ is inside the range depends on whether $Z(d)\ge d+2$. Table~\ref{tab:z} evaluates the intervals of Lemmas~4.5 and~4.6 for $d=7,\ldots,14$: for even $d\ge8$ the exact value $\lfloor5d/4\rfloor=d+\lfloor d/4\rfloor\ge d+2$ settles it, for odd $d\ge13$ the bound $\lfloor5(d-1)/4\rfloor=d-1+\lfloor(d-1)/4\rfloor\ge d+2$ does, and for $d=7,9,11$ the proved interval still contains $d+1$ [D, from the cited lemmas]. Corollary~\ref{cor:Z} closes these three cases.
+
+\begin{table}[ht]
+\centering\small
+\input{tables/tab-z.tex}
+\caption{Bounds on the threshold $Z(d)$ proved by Ahanjideh, Ekim and Y\i ld\i z (Lemmas 4.5 and 4.6 of their article) for $d=7,\ldots,14$, and whether those bounds alone give $d+1<Z(d)$. The odd degrees $7$, $9$ and $11$ remain undecided by them; Corollary~\ref{cor:Z} decides them.}
+\label{tab:z}
+\end{table}
+
+\subsection{Integer-programming computations and the attaining family}
+
+Banak, Ekim and Ta\c{s}k\i n (BET) built an integer-programming formulation for the extremal components between matching numbers $d$ and $Z(d)$, with orbital branching and an iterative restriction of the feasible region, and solved the knapsack model over components with CPLEX~\cite{BET}. They obtained all extremal triangle-free graphs for $d=7,8,9,10$ and every $m$, and some for $d=11,12,13$ [V, AEY's closing note and the abstract of~\cite{BET}]. Their Proposition~4.1 gives a graph $B_{d,d+t}$ with $di+i-d+1$ edges, maximum degree $d$ and matching number $i=d+t$, for $d<i<Z(d)$; the case $t=1$ is the graph $Q_d$ of Section~\ref{sec:attain}, written there in crown notation [V]. Table~\ref{tab:bet} reproduces the rows $m=d+1$ of their Table~3 (in the full text, ``Iterative Formulation performance summary'') and sets the value of Theorem~\ref{thm:main} beside them.
+
+\begin{table}[ht]
+\centering\footnotesize
+\input{tables/tab-bet.tex}
+\caption{Rows $m=d+1$ of the computations of Banak, Ekim and Ta\c{s}k\i n (their Table 3, values typed from the full text, times as printed with 1800 on unsolved rows) beside the value $d^2+d+2$ of Theorem~\ref{thm:main}. The two methods close $d=7,\ldots,11$; at $d=12$ only the combined method closes the gap, and at $d=13$ the interval $[184,185]$ remains.}
+\label{tab:bet}
+\end{table}
+
+Table~\ref{tab:bet} shows that the solved rows ($d=7,\ldots,11$ by either method, $d=12$ by the combined method) all equal $d^2+d+2$, and that the unresolved row is $d=13$, where the lower bound $184=d^2+d+2$ and the upper bound $185$ differ by one edge. The final publisher text of~\cite{BET} was not obtained; the values come from the full author text [V]. Section~\ref{sec:attain} verifies the attaining graph directly for every $d\ge7$, so the lower bound does not use the range hypothesis $d<i<Z(d)$ under which~\cite{BET} states Proposition~4.1.
+
+\subsection{The Bougard--Joret function}
+
+Bougard and Joret~\cite{BJ} study $f(n,\alpha,k)$ and conjecture, for $n>k\alpha$, the formula $t(n,\alpha)+\lceil k\alpha/2\rceil$, where $t(n,\alpha)$ is the number of edges of $\alpha$ disjoint balanced cliques [V, as restated in~\cite{SR}]. Every $k$-connected graph has minimum degree at least $k$, so $f(n,\alpha,k)\ge\lceil nk/2\rceil$ for all parameters [D]; the excess over this degree-sum prediction measures how far the extremal graphs are from being regular. Das and Gupta disprove the conjectured formula on the boundary $n=\alpha+k$: their Theorem~3.1 determines that boundary and their Corollary~3.3 gives $f(2k-1,k-1,k)=k^2-1$ for $k\ge4$~\cite{DG} [V]. Their final section leaves the second regime open. The companion first-shell paper~\cite{Shell} determines the first strict-interior shell $f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$ for $k\ge3$ and $2\le\alpha\le k+1$ [as stated in~\cite{Shell}]. The parameters $(2d+3,2,d+2)$ are not in that shell, because $\alpha+k+1=d+5<2d+3$ for $d\ge3$ [D]. The second-regime paper~\cite{SR} checks the conjectured value exhaustively for the open triples with $n\le24$ in the regime $n>k\alpha$; a proof of the lower bound in that regime has been announced by Didin~\cite{Didin} [U as to correctness; the statement is taken from~\cite{SR}]. The parameters $(2d+3,2,d+2)$ of Theorem~\ref{thm:bjexact} satisfy $n<k\alpha$ and $n>\alpha+k$, so they lie in the first regime, away from both of these results.
+
+\section{Proof method for the fixed order}\label{sec:fixed}
+
+\begin{lemma}[Shortest odd cycle, D]\label{lem:cycle}
 Let $F$ be triangle-free on $n$ vertices and let $C$ be a shortest odd cycle, of length $\ell$. Then $\ell\ge5$, $C$ is chordless, every vertex outside $C$ has at most two neighbors on $C$, and
 \[
 \sum_{x\in V(C)}\deg_F(x)\le2n.
@@ -98,9 +178,9 @@ The cycle contributes $2\ell$ to its degree sum and the $n-\ell$ outside vertice
 \end{proof}
 
 If $\Delta(F)\le d$, its total degree deficit is
-\[
+\begin{equation}\label{eq:deficitdef}
 D(F)=\sum_{x\in V(F)}(d-\deg_F(x))=nd-2\e(F).
-\]
+\end{equation}
 Every summand is nonnegative. For nonbipartite $F$, Lemma~\ref{lem:cycle} yields
 \begin{equation}\label{eq:deficit}
 D(F)\ge\sum_{x\in V(C)}(d-\deg_F(x))
@@ -144,6 +224,8 @@ Otherwise there are three consecutive singleton types; after relabeling, $n_0=n_
 Equality in~\eqref{eq:oneedge} is impossible. Integrality improves the upper bound to $d^2+d+2$. No parity assumption was used. Attainment is proved in Section~\ref{sec:attain}.
 \end{proof}
 
+Figure~\ref{fig:types} summarises the five types and the three constraints. The enumeration of Section~\ref{sec:types} checks by machine, for $d=7,\ldots,30$, that no tuple $(n_0,\ldots,n_4)$ with $n_0=1$ satisfies~\eqref{eq:types}--\eqref{eq:large}, which is the finite content of the case split above [MV]. The all-large case is excluded symbolically.
+
 \begin{figure}[ht]
 \centering
 \begin{tikzpicture}[scale=1.0,every node/.style={font=\small}]
@@ -157,30 +239,30 @@ $b_i=n_{i-1}+n_{i+1}\le d$\\[5pt]
 $n_i\ge2\ \Longrightarrow\ b_i=d$\\[5pt]
 These necessary equality constraints\newline are incompatible when $d>6$.};
 \end{tikzpicture}
-\caption{The five-type obstruction. Lines show allowed adjacencies, not an assumption of complete bipartite adjacency.}
+\caption{The five-type obstruction: the five independent type classes around a shortest odd cycle, with lines for the allowed adjacencies (not an assumption of complete bipartite adjacency), and the three constraints that the proof shows are incompatible for $d>6$.}
 \label{fig:types}
 \end{figure}
 
-\section{The known attaining construction}\label{sec:attain}
+\subsection{The attaining construction}\label{sec:attain}
 
 Put $p=d+1$. Start with the crown graph on classes $A=\{A_0,\ldots,A_{p-1}\}$ and $B=\{B_0,\ldots,B_{p-1}\}$: it contains $A_iB_j$ exactly when $i\ne j$. Delete $A_0B_1$ and $A_1B_0$, then add a vertex $v$ adjacent to $A_0,A_1,B_0,B_1$. Denote this graph by $Q_d$.
 
-This is the $t=1$ case of BET's construction~\cite[Proposition 4.1]{BET}, written in crown notation. It is prior work. The four neighbors of $v$ are independent, and $Q_d-v$ is bipartite, so $Q_d$ is triangle-free. Every old vertex has degree $d$ and $v$ has degree four. Consequently, for $d\ge7$,
+This is the $t=1$ case of BET's construction~\cite[Proposition 4.1]{BET}, written in crown notation: their graph deletes one perfect matching inside $d-1$ vertices of each side and all edges between the remaining two vertices of each side, which are the same edges [D]. It is prior work. The four neighbors of $v$ are independent, and $Q_d-v$ is bipartite, so $Q_d$ is triangle-free. Every old vertex has degree $d$ and $v$ has degree four. Consequently, for $d\ge7$,
 \begin{equation}\label{eq:attain}
 |V(Q_d)|=2d+3,\qquad \Delta(Q_d)=d,\qquad
 \e(Q_d)=d(d+1)-2+4=d^2+d+2.
 \end{equation}
 The edges $A_iB_{i+2\bmod p}$ form a perfect matching on the old vertices. Since $p\ge8$, they avoid the deleted diagonal and both further deleted edges. Thus $\nu(Q_d)\ge d+1$, and its order gives $\nu(Q_d)\le d+1$.
-This proves attainment in Theorem~\ref{thm:order} and the lower bound in Theorem~\ref{thm:main}.
+This proves attainment in Theorem~\ref{thm:order} and the lower bound in Theorem~\ref{thm:main}. The degrees, edge counts and matching witnesses are also checked by machine for $d=7,\ldots,30$ [MV] (Table~\ref{tab:graphs}).
 
 \begin{remark}[The degree-six boundary]
-The balanced blowup of $C_5$ with five parts of size three has order 15, degree six and 45 edges, exceeding $6^2+6+2=44$. Its matching number is at most seven by order. Thus neither theorem extends unchanged to $d=6$.
+The balanced blowup of $C_5$ with five parts of size three has order 15, degree six and $\boundaryEdges$ edges, exceeding $6^2+6+2=44$. Its matching number is at most seven by order. Thus neither theorem extends unchanged to $d=6$ [MV for the edge count].
 \end{remark}
 
-\section{Arbitrary order through Tutte--Berge}
+\section{Theory: arbitrary order through Tutte--Berge}\label{sec:tb}
 
-We first need the adjacent odd-order bound, also consistent with AEY's Theorem~3.4.
-\begin{lemma}\label{lem:smaller}
+We first need the adjacent odd-order bound, which agrees with Theorem~3.4 of~\cite{AEY}.
+\begin{lemma}[D]\label{lem:smaller}
 If $J$ is triangle-free on $2d+1$ vertices with $\Delta(J)\le d$, then $\e(J)\le d^2+1$.
 \end{lemma}
 \begin{proof}
@@ -188,7 +270,7 @@ If $J$ is bipartite, a smaller part has at most $d$ vertices, so $\e(J)\le d^2$.
 $2\e(J)\le(2d+1)d-(d-2)=2d^2+2$.
 \end{proof}
 
-The classical Tutte--Berge formula~\cite{Berge,Goemans} states
+The Tutte--Berge formula~\cite{Berge,Goemans} states
 \begin{equation}\label{eq:TB}
 \nu(F)=\min_{S\subseteq V(F)}\frac{|V(F)|+|S|-o(F-S)}2,
 \end{equation}
@@ -209,12 +291,21 @@ dt_C+1,&t_C=d,\\
 dt_C+2,&t_C=d+1.
 \end{cases}
 \]
-The first line is Mantel's classical triangle-free bound; the second is Lemma~\ref{lem:smaller}; the third is Theorem~\ref{thm:order}. Formula~\eqref{eq:budget} ensures that $t_C\le d+1$ for every component and that at most one component has $t_C\ge d$, since $2d>d+1$. The total surplus over $d\sum_Ct_C$ is therefore at most two. Hence
+The first line is the triangle case of Tur\'an's theorem (a triangle-free graph of order $2t_C+1$ has at most $t_C(t_C+1)$ edges)~\cite{Turan}; the second is Lemma~\ref{lem:smaller}; the third is Theorem~\ref{thm:order}. Formula~\eqref{eq:budget} ensures that $t_C\le d+1$ for every component and that at most one component has $t_C\ge d$, since $2d>d+1$. The total surplus over $d\sum_Ct_C$ is therefore at most two. Hence
 \[
 \e(F)\le d|S|+d\sum_Ct_C+2=d\nu(F)+2\le d(d+1)+2.
 \]
-The known graph $Q_d$ attains this value by~\eqref{eq:attain}.
+The graph $Q_d$ attains this value by~\eqref{eq:attain}.
 \end{proof}
+
+\begin{corollary}[The slice lies inside the conjectured range, D]\label{cor:Z}
+For every $d\ge7$, $Z(d)\ge d+2$. In particular $d<d+1<Z(d)$.
+\end{corollary}
+\begin{proof}
+By Lemma~4.5 of~\cite{AEY}, $Z(d)\ge d+1$. Suppose $Z(d)=d+1$. By Definition~\ref{def:Z} there is a triangle-free (almost) $d$-regular factor-critical graph $\Gamma$ with $\nu(\Gamma)=d+1$, hence $2d+3$ vertices and maximum degree at most $d$. By~\eqref{eq:Zedges} it has $d(d+1)+\lfloor d/2\rfloor\ge d^2+d+3$ edges for $d\ge7$. This contradicts Theorem~\ref{thm:order}, which bounds such a graph by $d^2+d+2$.
+\end{proof}
+
+Corollary~\ref{cor:Z} uses only the existence statement in Definition~\ref{def:Z}, not any construction of~\cite{AEY}. It decides the three degrees $d=7,9,11$ of Table~\ref{tab:z}, so Theorem~\ref{thm:main} is a statement about the range $d<m<Z(d)$ of~\eqref{eq:AEYconj} for every $d\ge7$: it proves the single level $i=d+1$ of that conjecture and no other. At $d=7$ the corollary gives $Z(7)\ge9$; AEY's Proposition~6.2 shows that Conjecture~6.1 would force $Z(7)\in\{8,9\}$ [V], so the conjecture would give $Z(7)=9$ [D, conditional on the conjecture].
 
 \begin{remark}[A second reduction]
 One may instead discard isolated vertices and select an edge-extremizer with the largest number of $d$-star components. AEY Corollary~3.5 makes every other component factor-critical, with matching size $t\ge d$ and order $2t+1$. At budget $d+1$ there is at most one such component. If its matching size is $d$, Lemma~\ref{lem:smaller} plus at most one additional star gives at most $d^2+d+1$ edges; if it is $d+1$, Theorem~\ref{thm:order} gives $d^2+d+2$. With only stars the bound is $d(d+1)$. This corroborates the upper bound. The direct Tutte--Berge proof does not rely on this extremal structural reduction.
@@ -222,7 +313,7 @@ One may instead discard isolated vertices and select an edge-extremizer with the
 
 \section{A Bougard--Joret consequence}\label{sec:bj}
 
-Let $f(n,a,k)$ be the minimum number of edges in a $k$-connected graph of order $n$ and independence number exactly $a$, in the notation of Bougard and Joret~\cite{BJ}. Das and Gupta disprove the original conjectured formula on the boundary $n=a+k$~\cite{DG}. The following consequence concerns strict-interior parameters. Corollary~\ref{cor:bj} first brackets the value within one edge; Theorem~\ref{thm:bjexact} then excludes the lower endpoint.
+Let $f(n,\alpha,k)$ be the minimum number of edges in a $k$-connected graph of order $n$ and independence number exactly $\alpha$, in the notation of Bougard and Joret~\cite{BJ}. The following consequence concerns strict-interior parameters. Corollary~\ref{cor:bj} first brackets the value within one edge; Theorem~\ref{thm:bjexact} then excludes the lower endpoint.
 
 \begin{corollary}[One-edge bracket, D]\label{cor:bj}
 For every integer $d\ge7$,
@@ -252,19 +343,20 @@ These parameters satisfy $2d+3>2+(d+2)$ and $2d+3<2(d+2)$, placing them strictly
 (d^2+4d+1)-\left\lceil\frac{(2d+3)(d+2)}2\right\rceil
 =\left\lfloor\frac d2\right\rfloor-2.
 \]
-This is positive for $d\ge7$ and unbounded. The next subsection shows that the upper endpoint in~\eqref{eq:bracket} is the value, so the excess is $\lfloor d/2\rfloor-1$; for example $f(19,2,10)=98$, whereas the degree-sum prediction is 95.
+This is positive for $d\ge7$ and unbounded. Theorem~\ref{thm:bjexact} shows that the upper endpoint in~\eqref{eq:bracket} is the value, so the excess is $\lfloor d/2\rfloor-1$; for example $f(19,2,10)=98$, whereas the degree-sum prediction is $95$, a difference of $\excessAtNineteen$. Figure~\ref{fig:excess} plots both excesses for $d=7,\ldots,30$ from the certificate data: the lower endpoint would lie $\lfloor d/2\rfloor-2$ above the prediction, the exact value lies one edge higher, and both grow without bound.
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fig-excess.pdf}
+\caption{Number of edges of the Bougard--Joret value above the degree-sum prediction $\lceil nk/2\rceil$ at the parameters $(2d+3,2,d+2)$, for $d=7,\ldots,30$: the excluded lower endpoint $d^2+4d+1$ (squares, dashed) and the exact value $d^2+4d+2$ (circles). Data: the certificate records for the $24$ degrees.}
+\label{fig:excess}
+\end{figure}
+
+\paragraph{A worked example at $d=7$.} Take $n=17$, $\alpha=2$ and $k=9$. The complement of $Q_7$ has $\binom{17}{2}-58=78$ edges and minimum degree $16-7=9$, which is the lower endpoint $d^2+4d+1=78$ of~\eqref{eq:bracket}; but its connectivity is $8=d+1$ (Table~\ref{tab:graphs}), because $A_0$ and $A_1$ have the same seven neighbours in $Q_7$ so deleting the other eight vertices leaves them separated from the common neighbourhood in the complement. The complement of $P_7$ has $136-57=79$ edges, independence number two and connectivity $9=d+2$, so it is a valid graph and $f(17,2,9)\le79$. Theorem~\ref{thm:bjexact} states that no graph with $78$ edges is valid, and the degree-sum prediction $\lceil17\cdot9/2\rceil=77$ lies two edges below the value; the excluded endpoint $78$ would have been one edge above it. The same computation for $d=8$ gives $f(19,2,10)=98$, with the prediction $95$.
 
 \subsection{The exact value}\label{sec:exact}
 
-\begin{theorem}[Exact value, D]\label{thm:bjexact}
-For every integer $d\ge7$,
-\[
-f(2d+3,2,d+2)=d^2+4d+2 .
-\]
-\end{theorem}
-
-By Corollary~\ref{cor:bj} and complementation, it suffices to prove the following structural statement. A complement $\overline F$ on $2d+3$ vertices fails to be $(d+2)$-connected exactly when $F$ contains a complete bipartite subgraph $K_{U,W}$, with $U,W$ nonempty and every $U$--$W$ pair an edge, on at least $d+2$ vertices: deleting the other at most $d+1$ vertices leaves $U$ and $W$ with no edge of $\overline F$ between them.
+By Corollary~\ref{cor:bj} and complementation, Theorem~\ref{thm:bjexact} reduces to a structural statement. A complement $\overline F$ on $2d+3$ vertices fails to be $(d+2)$-connected exactly when $F$ contains a complete bipartite subgraph $K_{U,W}$, with $U,W$ nonempty and every $U$--$W$ pair an edge, on at least $d+2$ vertices: deleting the other at most $d+1$ vertices leaves $U$ and $W$ with no edge of $\overline F$ between them.
 
 \begin{theorem}[Shared neighbourhood, D]\label{thm:k2d}
 Let $d\ge7$ and let $F$ be triangle-free on $n=2d+3$ vertices with $\Delta(F)\le d$ and $\e(F)=d^2+d+2$. Then two vertices of $F$ have the same $d$ neighbours; in particular $F\supseteq K_{2,d}$.
@@ -274,11 +366,11 @@ Let $d\ge7$ and let $F$ be triangle-free on $n=2d+3$ vertices with $\Delta(F)\le
 A graph $G$ of order $2d+3$ with independence number two, connectivity at least $d+2$ and $d^2+4d+1$ edges would have a triangle-free complement $F$ with $\Delta(F)\le d$ and $\e(F)=d^2+d+2$. Theorem~\ref{thm:k2d} gives a $K_{2,d}$ in $F$, on $d+2$ vertices, hence a vertex cut of $G$ of size $d+1$. Fewer edges are excluded by Corollary~\ref{cor:bj}, whose construction $G_d$ attains $d^2+4d+2$.
 \end{proof}
 
-\paragraph{Structure.} Let $F$ be as in Theorem~\ref{thm:k2d}. Its deficit is $D(F)=nd-2\e(F)=d-4$. It is not bipartite, since a bipartite $F$ has at most $d(d+1)$ edges. A shortest odd cycle has length five: length at least seven would give $D(F)\ge7d-2n=3d-6>d-4$ by~\eqref{eq:deficit}. Write it $c_0\cdots c_4$, indices modulo five. For an outside vertex $x$ let $\sigma(x)=2-|N(x)\cap C|\ge0$, and put $a=\sum_{x\notin C}\sigma(x)$ and $b=\sum_{x\notin C}(d-\deg x)$. Since the cycle is chordless, $\sum_{v\in C}\deg v=10+2(n-5)-a$, and therefore
+\paragraph{Structure.} Let $F$ be as in Theorem~\ref{thm:k2d}. Its deficit is $D(F)=nd-2\e(F)=d-4$. It is not bipartite, since a bipartite $F$ has at most $d(d+1)$ edges. A shortest odd cycle has length five: length at least seven would give $D(F)\ge7d-2n=3d-6>d-4$ by~\eqref{eq:deficit}. Write it $c_0\cdots c_4$, indices modulo five. For an outside vertex $x$ let $\sigma(x)=2-|N(x)\cap C|\ge0$, and put $s=\sum_{x\notin C}\sigma(x)$ and $u=\sum_{x\notin C}(d-\deg x)$. Since the cycle is chordless, $\sum_{v\in C}\deg v=10+2(n-5)-s$, and therefore
 \begin{equation}\label{eq:ab}
-\sum_{v\in C}(d-\deg v)=d-6+a,\qquad D(F)=d-6+a+b,\qquad a+b=2 .
+\sum_{v\in C}(d-\deg v)=d-6+s,\qquad D(F)=d-6+s+u,\qquad s+u=2 .
 \end{equation}
-As in the proof of Theorem~\ref{thm:order}, outside vertices with two cycle neighbours fall into types: $V_i$ consists of $c_i$ and the outside vertices adjacent to $c_{i-1},c_{i+1}$; put $n_i=|V_i|$. Each $V_i$ is independent and there is no edge between $V_i$ and $V_{i\pm2}$. The remaining outside vertices form the set $X$ of \emph{defective} vertices, those with at most one cycle neighbour; each contributes at least one to $a$, so $r:=|X|\le2$ and $\sum_in_i=2d+3-r$. Put $W_i=V_{i-1}\cup V_{i+1}$, $b_i=|W_i|$ and $\varepsilon_i=|N(c_i)\cap X|$. The vertex $c_i$ is adjacent to all of $W_i$ and to no other typed vertex, so
+As in the proof of Theorem~\ref{thm:order}, outside vertices with two cycle neighbours fall into types: $V_i$ consists of $c_i$ and the outside vertices adjacent to $c_{i-1},c_{i+1}$; put $n_i=|V_i|$. Each $V_i$ is independent and there is no edge between $V_i$ and $V_{i\pm2}$. The remaining outside vertices form the set $X$ of \emph{defective} vertices, those with at most one cycle neighbour; each contributes at least one to $s$, so $r:=|X|\le2$ and $\sum_in_i=2d+3-r$. Put $W_i=V_{i-1}\cup V_{i+1}$, $b_i=|W_i|$ and $\varepsilon_i=|N(c_i)\cap X|$. The vertex $c_i$ is adjacent to all of $W_i$ and to no other typed vertex, so
 \begin{equation}\label{eq:ci}
 \deg c_i=b_i+\varepsilon_i\le d .
 \end{equation}
@@ -293,25 +385,27 @@ The typed neighbours of $v$ lie in consecutive types, so $N(v)\subseteq W_i\cup 
 
 Call $x\in X$ a \emph{helper} of an outside $v\in V_i$ if $x\sim v$ and $x\not\sim c_i$. Assume, for contradiction, that no two vertices of $F$ share $d$ neighbours. Then every outside typed vertex of degree $d$ has a helper. There are $2d-2-r$ outside typed vertices.
 
-\paragraph{At most one defective vertex.} If $r=0$, then $a=0$ and $b=2$, so at most two of the $2d-2\ge12$ outside typed vertices lack degree $d$, and none has a helper. If $X=\{x\}$ and $x$ has no cycle neighbour, then $b=0$ and $x$ must be adjacent to all $2d-3>d$ outside typed vertices. If $x$ has one cycle neighbour, then $a=b=1$ and $x$ is adjacent to at least $2d-4$ outside typed vertices besides its cycle neighbour, so $\deg x\ge2d-3>d$.
+\paragraph{At most one defective vertex.} If $r=0$, then $s=0$ and $u=2$, so at most two of the $2d-2\ge12$ outside typed vertices lack degree $d$, and none has a helper. If $X=\{x\}$ and $x$ has no cycle neighbour, then $u=0$ and $x$ must be adjacent to all $2d-3>d$ outside typed vertices. If $x$ has one cycle neighbour, then $s=u=1$ and $x$ is adjacent to at least $2d-4$ outside typed vertices besides its cycle neighbour, so $\deg x\ge2d-3>d$.
 
-\paragraph{Two defective vertices.} Now $a=2$, $b=0$: every outside vertex has degree exactly $d$, $X=\{x_1,x_2\}$ with $x_1\sim c_p$ and $x_2\sim c_q$ as their only cycle neighbours, $\sum_in_i=2d+1$ and $\sum_i\varepsilon_i=2$. The vertex $x_1$ helps only vertices of $V_{p+2}\cup V_{p+3}$, and $x_2$ only vertices of $V_{q+2}\cup V_{q+3}$; a type with no possible helper is a singleton. For an outside $v\in V_i$ let $\xi(v)=|N(v)\cap X|$; then
+\paragraph{Two defective vertices.} Now $s=2$, $u=0$: every outside vertex has degree exactly $d$, $X=\{x_1,x_2\}$ with $x_1\sim c_p$ and $x_2\sim c_q$ as their only cycle neighbours, $\sum_in_i=2d+1$ and $\sum_i\varepsilon_i=2$. The vertex $x_1$ helps only vertices of $V_{p+2}\cup V_{p+3}$, and $x_2$ only vertices of $V_{q+2}\cup V_{q+3}$; a type with no possible helper is a singleton. For an outside $v\in V_i$ let $\xi(v)=|N(v)\cap X|$; then
 \begin{equation}\label{eq:xi}
 |N(v)\cap W_i|=d-\xi(v).
 \end{equation}
-\emph{Rule (T):} if some $x\in X$ is adjacent to $u\in V_i$ and $w\in V_{i+1}$, then $u\not\sim w$. Up to rotation and reflection, $q-p\in\{0,1,2\}$.
+\emph{Rule (T):} if some $x\in X$ is adjacent to $u'\in V_i$ and $w\in V_{i+1}$, then $u'\not\sim w$. Up to rotation and reflection, $q-p\in\{0,1,2\}$: the $25$ ordered pairs $(p,q)\in\mathbb Z_5^2$ fall into five classes under rotation, indexed by $q-p\in\mathbb Z_5$, and a reflection of the cycle sends $q-p$ to $p-q$, which identifies the classes $1,4$ and $2,3$ and leaves the three classes $0,1,2$ [D].
 
-\emph{Case $q=p$.} Only $V_{p+2},V_{p+3}$ can be helped, so $n_{p-1}=n_p=n_{p+1}=1$, and~\eqref{eq:ci} at $c_{p\pm1}$ gives $n_{p+2}=n_{p+3}=d-1$. Let $A^\circ,B^\circ$ be the outside vertices of $V_{p+2},V_{p+3}$ ($d-2$ each). By~\eqref{eq:xi} an outside vertex of $V_{p+2}$ misses exactly $\xi\le2$ vertices of $V_{p+3}$, and symmetrically. If $x_k$ had neighbours on both sides, Rule (T) would bound its typed outside neighbours by four, while $\deg x_k=d$ forces at least $d-2\ge5$. So $x_1$ covers $A^\circ$ and $x_2$ covers $B^\circ$, say, and $d=\deg x_1\le1+(d-2)+[x_1\sim x_2]$ forces $x_1\sim x_2$, a triangle with $c_p$.
+\emph{Case $q=p$.} Only $V_{p+2},V_{p+3}$ can be helped, so $n_{p-1}=n_p=n_{p+1}=1$ and $n_{p+2}+n_{p+3}=2d+1-3=2d-2$. Since $x_1,x_2$ are adjacent only to $c_p$, $\varepsilon_{p\pm1}=0$, and~\eqref{eq:ci} at $c_{p+1}$ and $c_{p-1}$ gives $1+n_{p+2}\le d$ and $1+n_{p+3}\le d$. Two upper bounds of $d-1$ on two numbers that sum to $2d-2$ force $n_{p+2}=n_{p+3}=d-1$. Let $A^\circ,B^\circ$ be the outside vertices of $V_{p+2},V_{p+3}$ ($d-2$ each). By~\eqref{eq:xi} an outside vertex of $V_{p+2}$ misses exactly $\xi\le2$ vertices of $V_{p+3}$, and symmetrically. If $x_k$ had neighbours on both sides, Rule (T) would bound its typed outside neighbours by four, while $\deg x_k=d$ forces at least $d-2\ge5$. So $x_1$ covers $A^\circ$ and $x_2$ covers $B^\circ$, say, and $d=\deg x_1\le1+(d-2)+[x_1\sim x_2]$ forces $x_1\sim x_2$, a triangle with $c_p$.
 
 \emph{Case $q=p+1$.} Here $n_p=n_{p+1}=1$ and $\varepsilon_p=\varepsilon_{p+1}=1$, so $n_{p+2}+n_{p+3}+n_{p+4}=2d-1$. Inequality~\eqref{eq:ci} at $c_p,c_{p+1},c_{p+2},c_{p+3}$ gives $n_{p+4}\le d-2$, $n_{p+2}\le d-2$, $n_{p+3}\le d-1$ and $n_{p+2}+n_{p+4}\le d$; with the sum this forces $n_{p+3}=d-1$, $n_{p+2}+n_{p+4}=d$, and both $n_{p+2},n_{p+4}\ge2$. An outside vertex of $V_{p+2}$ has $x_1$ as its only possible neighbour in $X$, so $\xi=1$ and by~\eqref{eq:xi} it misses exactly one vertex of $V_{p+3}$. As all outside vertices of $V_{p+2}$ are adjacent to $x_1$, Rule (T) lets $x_1$ have at most one neighbour among the $d-2\ge5$ outside vertices of $V_{p+3}$; likewise $x_2$. Those vertices cannot all be helped.
 
-\emph{Case $q=p+2$.} Now $n_{p+1}=1$ and $\varepsilon_p=\varepsilon_{p+2}=1$. Write $\alpha,\beta,\gamma,\delta$ for $n_p,n_{p+2},n_{p+3},n_{p+4}$, so $\alpha+\beta+\gamma+\delta=2d$, and~\eqref{eq:ci} gives $\delta\le d-2$, $\alpha+\beta\le d$, $\gamma\le d-2$, $\beta+\delta\le d$, $\gamma+\alpha\le d$; hence $\gamma,\delta\ge2$. Outside vertices of $V_{p+3}$ (respectively $V_{p+4}$) have $x_1$ (respectively $x_2$) as their only neighbour in $X$, so each has $d-1$ neighbours in $V_{p+2}\cup V_{p+4}$ (respectively $V_{p+3}\cup V_p$). If $\beta=1$ this forces $\delta=d-2$ and then $\alpha+\gamma=d+1$, a contradiction. If $\beta\ge2$, Rule (T) at $x_1$ separates the outside vertices of $V_{p+2}$ and $V_{p+3}$, so $\delta=d-2$. If moreover $\alpha=1$, then $\gamma=d-2$ and $\beta=3$, contradicting $\beta+\delta\le d$. If $\alpha\ge2$, Rule (T) at $x_2$ gives $\gamma=d-2$, hence $\alpha=\beta=2$, and the single outside vertex of $V_{p+2}$ has degree at most $|\{c_{p+1},c_{p+3}\}|+|X|=4<d$.
+\emph{Case $q=p+2$.} Now $n_{p+1}=1$ and $\varepsilon_p=\varepsilon_{p+2}=1$. Write $\lambda_0,\lambda_2,\lambda_3,\lambda_4$ for $n_p,n_{p+2},n_{p+3},n_{p+4}$, so $\lambda_0+\lambda_2+\lambda_3+\lambda_4=2d$, and~\eqref{eq:ci} gives $\lambda_4\le d-2$, $\lambda_0+\lambda_2\le d$, $\lambda_3\le d-2$, $\lambda_2+\lambda_4\le d$, $\lambda_3+\lambda_0\le d$; hence $\lambda_3,\lambda_4\ge2$. Outside vertices of $V_{p+3}$ (respectively $V_{p+4}$) have $x_1$ (respectively $x_2$) as their only neighbour in $X$, so each has $d-1$ neighbours in $V_{p+2}\cup V_{p+4}$ (respectively $V_{p+3}\cup V_p$). If $\lambda_2=1$ this forces $\lambda_4=d-2$ and then $\lambda_0+\lambda_3=d+1$, a contradiction. If $\lambda_2\ge2$, Rule (T) at $x_1$ separates the outside vertices of $V_{p+2}$ and $V_{p+3}$, so $\lambda_4=d-2$. If moreover $\lambda_0=1$, then $\lambda_3=d-2$ and $\lambda_2=3$, contradicting $\lambda_2+\lambda_4\le d$. If $\lambda_0\ge2$, Rule (T) at $x_2$ gives $\lambda_3=d-2$, hence $\lambda_0=\lambda_2=2$, and the single outside vertex of $V_{p+2}$ has degree at most $|\{c_{p+1},c_{p+3}\}|+|X|=4<d$.
 
 Every case is contradictory, which proves Theorem~\ref{thm:k2d}. \qed
 
-An independent reading re-derived every case, including the reduction of the $25$ ordered pairs $(p,q)$ to the three cases above, and found no gap. A satisfiability search at $d=7$, archived as EXP-004~\cite{Record4}, corroborates the statement; the universal claim rests on the proof.
+\paragraph{Where the hypothesis $d\ge7$ is used.} The identity $s+u=2$ of~\eqref{eq:ab} holds for every $d$, so the hypothesis is not needed there; it enters later [D]. In the case $r=0$, the proof needs more than two outside typed vertices, and there are $2d-2\ge12$. In the case $q=p$, the number $d-2\ge5$ of typed neighbours that $x_k$ must have exceeds the bound four given by Rule (T) exactly when $d\ge7$; this is the sharpest use of the hypothesis, because at $d=6$ the two quantities are equal. In the cases $q=p+1$ and $q=p+2$, the inequalities $d-2\ge5>1$ and $4<d$ are used, and the latter needs only $d\ge5$. The proof of Theorem~\ref{thm:k2d} therefore does not extend to $d=6$ as written, and whether the statement itself holds at $d=6$ is not decided here. The fixed-order Theorem~\ref{thm:order} is false at $d=6$, by the balanced $C_5$ blow-up of Section~\ref{sec:attain}.
 
-\subsection*{The rejected complement shortcut}
+Section~\ref{sec:valid} states how this proof was reviewed and which finite computations corroborate it (Table~\ref{tab:sat}); the universal claim rests on the proof.
+
+\subsection{The rejected complement shortcut}
 Although $Q_d$ attains the triangle-free maximum, its complement fails the connectivity required above. Indeed,
 \[
 N_{Q_d}(A_0)=N_{Q_d}(A_1)=\{v,B_2,\ldots,B_d\}.
@@ -322,59 +416,362 @@ In fact equality holds. A cut of size at most $d$ would leave a complete biparti
 \[
 \kappa(\overline{Q_d})=d+1.
 \]
-The shortcut fails because extremality under a degree bound does not supply the needed complement connectivity. Theorem~\ref{thm:k2d} shows that the failure is forced: every fixed-order maximizer has two vertices with a common $d$-neighbourhood, as $A_0,A_1$ do in $Q_d$.
+The shortcut fails because extremality under a degree bound does not supply the needed complement connectivity. Theorem~\ref{thm:k2d} shows that the failure is forced: every fixed-order maximizer has two vertices with a common $d$-neighbourhood, as $A_0,A_1$ do in $Q_d$. The values $\kappa(\overline{Q_d})=d+1$ and $\kappa(\overline{P_d})=d+2$ are confirmed by machine for $d=7,\ldots,30$ [MV] (Table~\ref{tab:graphs}).
 
-\section{Exact checks, scope and remaining questions}
+\section{Experimental design: algorithms and computations}\label{sec:comp}
 
-The universal assertions follow from the proofs above. EXP-003~\cite{Record} additionally contains deterministic exact verification for $d=7,\ldots,30$.
-For each degree, it saves both full edge lists, explicit matching witnesses, degrees, complement data and the rejected cut. A standard-library implementation checks all 48 graphs and performs direct flow checks on 24 graphs with $d\le18$. It also checks 287,564 positive five-type tuples with a designated singleton; no equality candidate survives.
+The proofs above are finite-case arguments over type sizes and defective-vertex placements. This section describes the four computations that check them or their consequences, as algorithms, with their inputs, outputs, cost, commands, versions and hashes. No computation here replaces a proof: Section~\ref{sec:valid} states the coverage of each. All four read and write plain files, run on a single processor core of one machine (hardware not recorded [U]) and are archived with the experiment records~\cite{Record,Record4}.
 
-A separate implementation reconstructs all saved graphs in NetworkX 3.4.1 without importing the CAOS graph routines. It independently checks maximum matching, clique number, all 48 complement connectivities and all 24 negative cuts. It enumerates all 17,040 positive five-part compositions for $d=7,\ldots,10$, with no singleton-containing equality survivor. The all-large case is already excluded symbolically. Both implementations detect a deliberately inserted triangle and verify the degree-six boundary control. Source and certificate hashes are persisted with the results. A regression test reproduces the main certificate.
+\subsection{Provenance, versions and hashes}\label{sec:prov}
 
-A separate reading of the full proof checked the odd-degree cases, the complete singleton case split, the matching-budget reduction and both connectivity arguments. The proof has not been formalized in a proof assistant. Finite checks cannot rule out a gap in an all-parameter argument, and bounded literature searching cannot guarantee priority.
+The records are the folders EXP-003 and EXP-004 of the repository~\cite{Record,Record4}. EXP-003 holds the certificate generator \texttt{run.py} (Python standard library only, Python 3.11 or later; the exact interpreter patch version is not recorded [U]) and the independent audit \texttt{audit.py} (NetworkX \nxVersion, asserted at run time by the script). EXP-004 holds the search script \texttt{run\_cfg.py}, which imports the z3 solver, and the model checker \texttt{check\_models.py}, which imports NetworkX. The versions of z3, of Python and of NetworkX used for EXP-004 are not recorded in the artifacts [U]; the repository states a NetworkX pin only for the audit of EXP-003. The commands, as given in the records, are
+\begin{verbatim}
+python EXP-003-triangle-free-next-matching/run.py
+python -m pip install -r EXP-002-next-shell/requirements-audit.txt
+python EXP-003-triangle-free-next-matching/audit.py
+python -m pytest -q tests/test_bougard_joret_next_matching.py
+python EXP-004-bracket-endpoint/run_cfg.py --k2d --timeout 3600 -- 7 "0,0"
+python EXP-004-bracket-endpoint/run_cfg.py --free --timeout 3600 -- 7 ""
+python EXP-004-bracket-endpoint/check_models.py
+\end{verbatim}
+(the last two search commands are examples: each is repeated for every configuration label and degree of Table~\ref{tab:sat}). The main certificate takes about two seconds and the audit about six seconds in the record; the pytest regression reproduces the main certificate in a temporary directory. The solver times of EXP-004 are in the artifacts and in Table~\ref{tab:sat}: $\satSevenTotal$ s of solver time over the eleven runs at $d=7$ and $\satEightTotal$ s over the ten runs at $d=8$. Table~\ref{tab:records} lists the SHA-256 hashes: those of the EXP-003 scripts, proof and certificate are the ones recorded by the audit with line endings normalised to LF, and the three EXP-004 hashes were computed from the archived artifacts when the tables of this paper were generated (the records hold none for EXP-004). The full 64-digit values of the EXP-003 hashes are \texttt{\hashRun} for \texttt{run.py} and \texttt{\hashAudit} for \texttt{audit.py}.
 
-Theorem~\ref{thm:main} settles the next-matching slice for every $d\ge7$, and Theorem~\ref{thm:bjexact} the Bougard--Joret value at $(2d+3,2,d+2)$. Neither settles the remaining intermediate matching levels or classifies all extremizers; Theorem~\ref{thm:k2d} gives only the shared-neighbourhood property. The general revised Bougard--Joret regimes, including the second regime $n>k\alpha$, remain open. The earlier first interior shell result~\cite{Shell} is a separate theorem.
+\begin{table}[ht]
+\centering\footnotesize
+\input{tables/tab-records.tex}
+\caption{SHA-256 fingerprints (first 16 hexadecimal digits) of the scripts and artifacts that carry the exact computations; origin ``audit and ``certificate are the EXP-003 values recorded by the independent audit and by the certificate, and ``computed here marks the EXP-004 values, computed from the archived artifact files when the tables are generated.}
+\label{tab:records}
+\end{table}
+
+\subsection{The five-type equality enumeration}\label{sec:types}
+
+Algorithm~\ref{alg:types} is the finite content of the case split in the proof of Theorem~\ref{thm:order}. An equality graph determines a composition $(n_0,\ldots,n_4)$ of $2d+3$ into five positive parts satisfying~\eqref{eq:b} and~\eqref{eq:large}. Since the all-large case is excluded symbolically, one part equals one and, rotating indices, $n_0=1$. The remaining four parts are a composition of $2d+2$ into four positive parts, which a choice of three cut points among $2d+1$ positions encodes, so there are $\binom{2d+1}{3}$ tuples per degree.
+
+\begin{algorithm}[ht]
+\caption{Five-type equality enumeration with a designated singleton.}\label{alg:types}
+\begin{algorithmic}[1]
+\Require degree bound $d$
+\Ensure the set of surviving tuples (expected empty)
+\State $\mathcal S\gets\emptyset$
+\For{each triple of cut points $1\le a<b<c\le 2d+1$}
+  \State $(n_0,\ldots,n_4)\gets(1,\;a,\;b-a,\;c-b,\;2d+2-c)$
+  \For{$i=0,\ldots,4$} $b_i\gets n_{i-1}+n_{i+1}$ (indices modulo five) \EndFor
+  \If{$b_i\le d$ for all $i$ \textbf{and} ($n_i=1$ \textbf{or} $b_i=d$) for all $i$}
+     \State add $(n_0,\ldots,n_4)$ to $\mathcal S$
+  \EndIf
+\EndFor
+\State \Return $\mathcal S$
+\end{algorithmic}
+\end{algorithm}
+
+The loop of Algorithm~\ref{alg:types} runs $\binom{2d+1}{3}$ times with constant work per iteration, so it takes $\Theta(d^3)$ time per degree. Over $d=7,\ldots,30$ it examines $\sum_d\binom{2d+1}{3}=\nCandidates$ tuples and the artifact records no survivor at any degree [MV]. The independent audit repeats the test without designating a singleton: for $d=7,\ldots,10$ it enumerates all $\binom{2d+2}{4}$ positive compositions, builds the quotient $C_5$ with NetworkX, computes the quotient degrees $b_i$, and applies the same two conditions to the compositions containing a part equal to one; in total $\nAllComp$ compositions, again with no survivor [MV].
+
+\subsection{The certificate checks}\label{sec:cert}
+
+Algorithm~\ref{alg:cert} checks, for one degree $d$, the two explicit graphs of the paper: $Q_d$ (a maximizer with a shared neighbourhood) and $P_d$ (the subdivided crown whose complement attains the Bougard--Joret value). Graphs are stored as bit-mask adjacency rows. The triangle test uses that an edge $uv$ lies in a triangle exactly when the rows of $u$ and $v$ intersect.
+
+\begin{algorithm}[ht]
+\caption{Certificate checks for one degree (standard library only).}\label{alg:cert}
+\begin{algorithmic}[1]
+\Require $d$; $n\gets2d+3$, $p\gets d+1$, $k\gets d+2$
+\For{$\mathrm{kind}\in\{Q_d,P_d\}$}
+  \State build the crown on $A,B$ and apply the edits of the kind; add the extra vertex $v$
+  \State assert the edge count $d^2+d+2$ (for $Q_d$) or $d^2+d+1$ (for $P_d$)
+  \State assert no edge $uv$ has a common neighbour (triangle-free)
+  \State assert the degree sequence $[d,\ldots,d,4]$ for $Q_d$ or $[d,\ldots,d,2]$ for $P_d$
+  \State assert that $\{A_iB_{(i+2)\bmod p}\}$ is a matching of size $p$ among the edges
+  \State $H\gets\overline{F}$; \textbf{if} $d\le18$: assert $\alpha(H)=2$ by memoised branching on bit-masks
+  \State \textbf{if} $d\le18$: assert (all non-adjacent pairs of $H$ have $k$ internally disjoint paths) $=$ ($\mathrm{kind}=P_d$), by a vertex-split unit-capacity maximum flow stopped at $k$
+  \If{$\mathrm{kind}=Q_d$}
+     \State $N\gets N(A_0)\cap N(A_1)$; assert $|N|=d$; let $R\gets N\cup\{A_0,A_1\}$
+     \State assert $H[R]$ is disconnected; record the cut $V\setminus R$ of size $d+1$
+  \EndIf
+\EndFor
+\State enumerate the five-type tuples with Algorithm~\ref{alg:types}; assert none survives
+\end{algorithmic}
+\end{algorithm}
+
+By Menger's theorem the flow test certifies $\kappa(H)\ge k$ exactly when every non-adjacent pair has $k$ internally disjoint paths. There are at most $\e(F)=O(d^2)$ such pairs, each needing at most $k=d+2$ breadth-first augmentations over a $2n\times2n$ capacity matrix of $O(d^2)$ entries, which bounds the work by $O(d^5)$ elementary steps per graph up to constants [D]. The cost of the memoised independence-number routine is not analysed here; it finished within the five-minute stage budget of the script. The flow and independence checks are limited to $d\le18$ because of this cost, which gives $\nFlow$ graphs with direct flow checks; the degree, edge, triangle, matching and cut checks cover all $\nGraphs$ graphs. The script also checks two controls: the balanced $C_5$ blow-up at $d=6$ (it satisfies the equality constraints and has $\boundaryEdges>44$ edges) and a copy of $Q_7$ with the edge $A_0A_1$ added, which must contain a triangle.
+
+\subsection{The independent audit}\label{sec:audit}
+
+Algorithm~\ref{alg:audit} reconstructs every saved graph from its edge list in NetworkX without importing any routine of the certificate generator, and recomputes each property with the library's own algorithms. The two implementations share no code: the generator tests triangles with bit-mask intersections, bounds the matching number by a witness plus the order, and certifies connectivity with its own vertex-split flow; the audit counts triangles with the library, computes a maximum-cardinality matching with a blossom algorithm, obtains the independence number of the complement from maximal cliques, and takes the node connectivity from the library. Agreement therefore tests the saved edge lists and the generator's checks against a second reading of the same definitions, which is stronger than a rerun of the generator. The cost is dominated by the library's node-connectivity routine on the $48$ complements, which have up to $2\cdot30+3=63$ vertices; the record gives about six seconds for the whole audit. Before any graph is read, the audit asserts that each source hash recorded in the certificate equals the hash of the file on disk, so a changed generator or base module would be detected, and it finishes by writing the LF-normalised hashes of the files it examined (Table~\ref{tab:records}).
+
+\begin{algorithm}[ht]
+\caption{Independent NetworkX audit of the saved certificate.}\label{alg:audit}
+\begin{algorithmic}[1]
+\Require the saved certificate; assert NetworkX $=\nxVersion$ and that each recorded source hash equals the hash of the file
+\For{each degree $d=7,\ldots,30$ and each saved graph $F$}
+  \State rebuild $F$; assert zero triangles, the degree sequence, the edge count and the stored degrees
+  \State assert $\nu(F)=d+1$ by a maximum-cardinality blossom matching
+  \State $H\gets\overline F$; assert $\alpha(H)=2$ as the largest maximal clique of $\overline H=F$
+  \State $\kappa\gets$ node connectivity of $H$; assert $\kappa=d+2$ for $P_d$ and $\kappa<d+2$ for $Q_d$
+  \State for $Q_d$, assert the stored cut has $d+1$ distinct vertices and disconnects $H$
+\EndFor
+\State rebuild the $d=6$ control and the corrupted $Q_7$; assert both behave as in Algorithm~\ref{alg:cert}
+\State enumerate all positive compositions for $d=7,\ldots,10$ as in Section~\ref{sec:types}
+\State write the report with the LF-normalised hashes of the audited files
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{The configuration-split satisfiability search}\label{sec:satenc}
+
+The proof of Theorem~\ref{thm:k2d} fixes an induced five-cycle $c_0\cdots c_4$, types the outside vertices and allows at most two defective vertices. The search of EXP-004 uses exactly this structure and asks the solver for an extremal graph in which no two vertices share $d$ neighbours. A \emph{configuration} fixes the cycle neighbours of the defective vertices up to rotation and reflection of the cycle: \texttt{none} (no defective vertex), \texttt{-} (one defective vertex without cycle neighbour), \texttt{0} (one at $c_0$), \texttt{0,0}, \texttt{0,1}, \texttt{0,2} (two, adjacent to $c_0$ and $c_q$ with $q\in\{0,1,2\}$, since $q$ and $-q$ are exchanged by reflection) and \texttt{-,0}, \texttt{-,-} (two, one or both without cycle neighbour). Figure~\ref{fig:config} sketches the three placements of two defective vertices on the cycle.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.8,every node/.style={font=\scriptsize}]
+\foreach \cx/\cy/\q/\lab in {0/0/0/{q=p}, 4.6/0/1/{q=p+1}, 9.2/0/2/{q=p+2}}{
+  \foreach \i in {0,...,4}{
+    \node[draw=linknavy,circle,inner sep=1.5pt,fill=blue!6] (c\i\q) at ($(\cx,\cy)+({90+72*\i}:1.15)$) {$c_\i$};
+  }
+  \foreach \i/\j in {0/1,1/2,2/3,3/4,4/0}{\draw[linknavy] (c\i\q)--(c\j\q);}
+  \node[draw=black!70,fill=black!10,rectangle,inner sep=2pt] (x1\q) at ($(\cx,\cy)+(-1.5,2.5)$) {$x_1$};
+  \node[draw=black!70,fill=black!10,rectangle,inner sep=2pt] (x2\q) at ($(\cx,\cy)+(1.5,2.5)$) {$x_2$};
+  \node at ($(\cx,\cy)+(0,-1.8)$) {\lab};
+}
+\draw[dashed] (x10)--(c00); \draw[dashed] (x20)--(c00);
+\draw[dashed] (x11)--(c01); \draw[dashed] (x21)--(c11);
+\draw[dashed] (x12)--(c02); \draw[dashed] (x22)--(c22);
+\end{tikzpicture}
+\caption{The three placements of two defective vertices $x_1,x_2$ (squares), each adjacent to a single cycle vertex (dashed lines), for $q-p=0,1,2$ with $p=0$; rotations and reflections of the cycle reduce all $25$ ordered pairs $(p,q)$ to these three, which are the configurations \texttt{0,0}, \texttt{0,1} and \texttt{0,2} of Table~\ref{tab:sat}.}
+\label{fig:config}
+\end{figure}
+
+\begin{algorithm}[ht]
+\caption{Configuration-split satisfiability search at fixed $d$.}\label{alg:sat}
+\begin{algorithmic}[1]
+\Require $d$, a configuration with $r\le2$ defective vertices, a mode (\textsc{k2d} or \textsc{free}), a time limit
+\State $n\gets2d+3$; Boolean variable $e_{ij}$ for each of the $\binom n2$ pairs
+\State fix $e_{ij}$ on vertices $0,\ldots,4$ to the induced five-cycle; vertices $5,\ldots,4+r$ are defective with the cycle neighbourhood of the configuration
+\For{each remaining (typed) vertex $v$}
+  \State one-hot Boolean $t_{v,0..4}$; if $t_{v,t}$ then $e_{vj}$ holds exactly for $j\in\{c_{t-1},c_{t+1}\}$
+\EndFor
+\State types are non-decreasing along the typed vertices (symmetry breaking)
+\State for each triple $i<j<k$: $\neg(e_{ij}\wedge e_{jk}\wedge e_{ik})$
+\State for each vertex $v$: $\sum_ue_{vu}\le d$;\quad $\sum_{i<j}e_{ij}=d^2+d+2$
+\If{mode $=$ \textsc{k2d}}
+  \State for each pair $u<v$: $\sum_{w}(e_{uw}\wedge e_{vw})\le d-1$
+\EndIf
+\State run the solver under the limit; \Return \textsc{sat} (with the model), \textsc{unsat} or \textsc{unknown}, and the elapsed time
+\end{algorithmic}
+\end{algorithm}
+
+At $d=7$ ($n=17$) the encoding has $\binom{17}2=136$ edge variables, $\binom{17}3=680$ triangle clauses and, in \textsc{k2d} mode, $136$ pair constraints over $15$ terms each; at $d=8$ ($n=19$) it has $171$, $969$ and $171$ constraints over $17$ terms [D, from the formulas]. In \textsc{k2d} mode, \textsc{unsat} for a configuration means that no extremal graph of that configuration avoids two vertices with $d$ common neighbours, which is the statement of Theorem~\ref{thm:k2d} restricted to the configuration. In \textsc{free} mode, \textsc{sat} shows that the encoding admits extremal graphs, and every model is re-checked by \texttt{check\_models.py} with NetworkX, independently of the solver: order $2d+3$, no triangle, maximum degree at most $d$, exactly $d^2+d+2$ edges, a pair with $d$ common neighbours, and a complement connectivity at most $d+1$.
+
+The identity~\eqref{eq:ab} excludes two of the eight configurations without any search. A defective vertex with no cycle neighbour has $\sigma=2$, a vertex adjacent to one cycle vertex has $\sigma=1$, and $s+u=2$. Hence \texttt{-,-} would give $s\ge4$ and \texttt{-,0} would give $s\ge3$, both impossible [D]. The search nevertheless runs them, because their \textsc{unsat} answers test the encoding.
+
+\section{Results of the computations}\label{sec:results}
+
+\subsection{The saved certificate graphs}
+
+Table~\ref{tab:graphs} lists, for each of the $\nDegrees$ degrees, the two graphs of Algorithm~\ref{alg:cert}. Every row is read from the independent audit [MV]: $Q_d$ has $d^2+d+2$ edges, matching number $d+1$ and a complement of connectivity $d+1$ (one short of the requirement $d+2$), while $P_d$ has $d^2+d+1$ edges, the same matching number and a complement of connectivity exactly $d+2$. The table shows that the two graphs differ by exactly one edge at every degree, that both stay at matching number $d+1$, and that the connectivity gap separating them is the same for all $24$ degrees. It does not show that the maximum on $2d+3$ vertices is $d^2+d+2$ (that is the proof of Theorem~\ref{thm:order}), nor that no other graph beats $P_d$'s complement, which is Theorem~\ref{thm:bjexact}. The $\nFlow$ flow checks cover $d\le18$ and the audit's own connectivity computation covers all $\nGraphs$ graphs, with $\nCuts$ rejected cuts verified.
+
+\begin{table}[ht]
+\centering\footnotesize
+\input{tables/tab-graphs.tex}
+\caption{The $48$ saved graphs for $d=7,\ldots,30$: edges, matching number $\nu$ and connectivity $\kappa$ of the complement for the shared-neighbourhood maximizer $Q_d$ and the subdivided crown $P_d$, as recomputed by the independent NetworkX audit; the column ``flow'' marks the degrees at which the main run also performed a direct flow-connectivity check.}
+\label{tab:graphs}
+\end{table}
+
+\subsection{The five-type controls}
+
+Table~\ref{tab:types} gives the sizes of the two enumerations of Section~\ref{sec:types}, and Figure~\ref{fig:ntypes} plots them against $d$. The designated-singleton enumeration grows as $\binom{2d+1}{3}$, from $455$ tuples at $d=7$ to $35{,}990$ at $d=30$, and totals $\nCandidates$; the audit's full enumeration grows as $\binom{2d+2}{4}$ and reaches $7{,}315$ at $d=10$, of which about two thirds contain a singleton ($4{,}935$). No tuple survives either test. The reading is limited to the finite constraint system: the table shows that the case split of the proof leaves nothing for the tested degrees, not that it leaves nothing for all $d$. For all $d\ge7$ the argument is the symbolic one of Theorem~\ref{thm:order}, in which the sums $n_1+n_4$, $n_2+n_4$ and $n_3+n_4$ are linear in $d$.
+
+\begin{table}[ht]
+\centering\footnotesize
+\input{tables/tab-types.tex}
+\caption{Counts of five-type compositions of $2d+3$: all positive compositions and those containing a part equal to one in the independent audit ($d=7,\ldots,10$), and the tuples with the first part fixed to one in the main run (selected degrees); no composition satisfies~\eqref{eq:b} and~\eqref{eq:large}.}
+\label{tab:types}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig-types.pdf}
+\caption{Number of five-type tuples examined against the degree bound $d$ on a logarithmic scale: the main run with a designated singleton (circles, $d=7,\ldots,30$) and the independent audit with all positive compositions (squares) and those with a singleton (triangles), $d=7,\ldots,10$; the horizontal line marks one tuple, and no tuple survives at any degree.}
+\label{fig:ntypes}
+\end{figure}
+
+\subsection{The configuration-split search}
+
+Table~\ref{tab:sat} gives every run of EXP-004 and Figure~\ref{fig:sat} plots the times. At $d=7$ all $\satSevenUnsat$ configurations are \textsc{unsat} in \textsc{k2d} mode, between $\satSevenMin$ and $\satSevenMax$ seconds. At $d=8$, $\satEightUnsat$ of the eight are \textsc{unsat}, between $\satEightMin$ and $\satEightMax$ seconds, and the configuration \texttt{-,-} returned \textsc{unknown} at $\satUnknownSec$ seconds, at its limit of $\satUnknownLimit$ s. That configuration is excluded by the identity~\eqref{eq:ab}, as shown in Section~\ref{sec:satenc} ($s\ge4$ against $s+u=2$), and its \textsc{unsat} answer at $d=7$ (363.4 s) shows that the encoding itself rejects it when the solver finishes; the $d=8$ gap is therefore a solver limit, not an open case of the theorem [D]. The free controls are informative in both directions: the encoding admits extremal graphs in the configurations \texttt{none} and \texttt{0,2} at $d=7$ and \texttt{0,2} at $d=8$ ($\nFreeSat$ \textsc{sat} answers), and it reports \textsc{unsat} for \texttt{0,1} at $d=7$ and for \texttt{none} at $d=8$, so not every configuration is realised by an extremal graph.
+
+\begin{table}[ht]
+\centering\footnotesize
+\input{tables/tab-sat.tex}
+\caption{All $\nCfgRuns$ runs of the configuration-split search for $d=7$ and $d=8$: result and solver seconds in \textsc{k2d} mode (no two vertices with $d$ common neighbours), the time limit used, and the free control where it was run; configurations as defined in Section~\ref{sec:satenc}. The run \texttt{-,-} at $d=8$ ended \textsc{unknown} at its limit.}
+\label{tab:sat}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/fig-sat.pdf}
+\caption{Solver time per defect configuration on a logarithmic axis for $d=7$ (left) and $d=8$ (right): bars are the \textsc{k2d}-mode runs (hatched with a red outline when the run ended \textsc{unknown}); diamonds and crosses are the free controls (open diamond: \textsc{sat}; cross: \textsc{unsat}).}
+\label{fig:sat}
+\end{figure}
+
+Table~\ref{tab:models} lists the three models returned by the free controls and checked with NetworkX. All have order $2d+3$, no triangle, maximum degree $d$ and $d^2+d+2$ edges, and all have pairs with $d$ common neighbours ($18$ pairs in the \texttt{none} model at $d=7$, two in the others), with complement connectivities $6$, $8$ and $9$ against the bound $d+1=8,8,9$ [MV]. In the two \texttt{0,2} models the connectivity equals $d+1$, so the structural bound of Theorem~\ref{thm:k2d} is attained there.
+
+\begin{table}[ht]
+\centering\footnotesize
+\input{tables/tab-models.tex}
+\caption{The $\nModels$ satisfying assignments returned by the free controls, re-checked independently with NetworkX: configuration, order, edges, maximum degree, number of vertex pairs with $d$ common neighbours and connectivity of the complement against the bound $d+1$ predicted by Theorem~\ref{thm:k2d}.}
+\label{tab:models}
+\end{table}
+
+Figure~\ref{fig:growth} compares each configuration's time at $d=8$ with its time at $d=7$. Among the five configurations that needed at least a second at $d=7$ and finished at $d=8$, the time grew by factors between $\ratioLow$ and $\ratioHigh$, and the unfinished \texttt{-,-} configuration grew by more than $\ratioUnknownLow$. A search at $d=9$ with the same encoding would therefore be expected to exceed the limits used here; this is an extrapolation from two degrees [D], not a measurement.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.62\textwidth]{figures/fig-growth.pdf}
+\caption{Solver time at $d=8$ against solver time at $d=7$ for each defect configuration in \textsc{k2d} mode, on logarithmic axes with the line $y=x$; the triangle is the configuration that reached its limit at $d=8$, so its true time is larger than the plotted value.}
+\label{fig:growth}
+\end{figure}
+
+\section{Ablation: what each ingredient contributes}\label{sec:ablation}
+
+The proofs combine four ingredients, and removing any one weakens the conclusion by a computable amount. Table~\ref{tab:ablation} states the bound that remains in each case. The deficit bound alone is the shortest-odd-cycle inequality~\eqref{eq:deficit}; it gives $\e(F)\le d^2+d+3$ on $2d+3$ vertices, one more than the truth, and the same Tutte--Berge reduction would then give $T(d,d+1)\le d^2+d+3$ and, by complementation, $f(2d+3,2,d+2)\ge d^2+4d$ [D]. The five-type obstruction removes the last edge and is therefore the whole difference between the bound $d^2+d+3$ and the value $d^2+d+2$. The Tutte--Berge reduction is what lifts the fixed-order statement to every order: without it the theorem concerns only graphs of order $2d+3$. The shared-neighbourhood Theorem~\ref{thm:k2d} is what moves the Bougard--Joret lower bound from $d^2+4d+1$ to $d^2+4d+2$; without it the value is known only to within one edge.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.33\textwidth}>{\raggedright\arraybackslash}p{0.28\textwidth}}
+\toprule
+ingredient removed & bound that remains & statement lost \\
+\midrule
+five-type obstruction (Theorem~\ref{thm:order}) & $\e\le d^2+d+3$ at order $2d+3$; $T(d,d+1)\le d^2+d+3$ & $T(d,d+1)=d^2+d+2$, $T(13,14)=184$ \\
+Tutte--Berge reduction (Section~\ref{sec:tb}) & the fixed-order value $d^2+d+2$ only & every order, the slice of the conjecture \\
+shared neighbourhood (Theorem~\ref{thm:k2d}) & $d^2+4d+1\le f\le d^2+4d+2$ & the exact Bougard--Joret value \\
+$K_{2,d}$-free clauses in the search & free models exist at $d=7$ (\texttt{none}, \texttt{0,2}) and $d=8$ (\texttt{0,2}) & the \textsc{unsat} corroboration \\
+\bottomrule
+\end{tabular}
+\caption{Ablation of the proof ingredients and of the satisfiability search: the bound that survives when each ingredient is removed, and the statement that is lost; the last row is read from Table~\ref{tab:sat}, where the free controls without the $K_{2,d}$-free clauses return \textsc{sat}.}
+\label{tab:ablation}
+\end{table}
+
+The last row of Table~\ref{tab:ablation} is the computational counterpart. Without the clauses forbidding two vertices with $d$ common neighbours, the search is satisfiable in three configurations, and each model has the shared neighbourhood and the complement connectivity at most $d+1$ that the theorem predicts (Table~\ref{tab:models}); with the clauses, every finished run is \textsc{unsat}. The clauses are therefore what separates extremal graphs from the absence of extremal graphs in the encoding, which is the behaviour the theorem requires. No ablation of the symmetry-breaking clause was recorded [U], and no ablation of the type-ordering constraint either [U]. The deficit bound is the only ingredient used by every proof, so it is the one whose failure would propagate everywhere. The ablation is exact rather than statistical: each row of Table~\ref{tab:ablation} is a deterministic bound or a single archived run, so no confidence interval applies, and repetitions of the search with different solver seeds were not recorded [U]. The free model with the largest number of shared-neighbourhood pairs ($18$ pairs at $d=7$, configuration \texttt{none}) and the models with two pairs show that the encoding admits both a highly symmetric extremal graph and graphs with a minimal shared neighbourhood, so the unsatisfiability under the clauses is not an artefact of a degenerate model space.
+
+\section{Validation, scope and deviations}\label{sec:valid}
+
+\subsection{What each check covers}
+
+The universal statements are Theorems~\ref{thm:main}, \ref{thm:bjexact} and~\ref{thm:k2d}, with Corollary~\ref{cor:Z}; they rest on the proofs of Sections~\ref{sec:fixed} to~\ref{sec:bj}. The computations cover finite parts.
+\begin{itemize}
+\item Algorithms~\ref{alg:types} and~\ref{alg:cert} and the audit of Algorithm~\ref{alg:audit} cover degrees $7$ to $30$ (and $7$ to $10$ for the full composition enumeration). They verify properties of explicit graphs and a finite constraint system, not an optimum over all graphs.
+\item Algorithm~\ref{alg:sat} covers $d=7$ and $d=8$ and assumes the structure facts of Section~\ref{sec:exact} (an induced five-cycle, the types, at most two defective vertices). Those facts are parts of the proof, so the search corroborates the final case analysis and the contradiction, not the structure itself.
+\item The proofs were read in full by an internal reader other than the author, who re-derived every case of Theorem~\ref{thm:order}, of the Tutte--Berge reduction and of Theorem~\ref{thm:k2d}, including the reduction of the $25$ ordered pairs $(p,q)$ to three cases, and found no gap; three wording points were corrected. This is an internal review, not peer review and not a formal proof. The reader also ran its own type-size enumeration for $d=7,\ldots,12$, a separate z3 encoding at $d=7$ and checks of the attaining graphs for $d=7,\ldots,10$. Those scripts were not archived, so their outputs are not used as evidence here and are mentioned only to state the scope of that review.
+\end{itemize}
+
+\subsection{Deviation: the global lazy-cut search}
+
+The first search planned for Theorem~\ref{thm:k2d} was a global one: for $d=7$ and $d=8$, ask the solver for a triangle-free graph of maximum degree at most $d$ with at least $d^2+d+2$ edges and a fixed five-cycle whose complement is $(d+2)$-connected, and add a cut constraint lazily for each model whose complement had a small vertex cut. That search did not finish. At $d=7$ the known-answer gate (target $d^2+d+1$, where such graphs exist) and the search itself, with and without the clauses forbidding $K_{2,d}$, produced no output within their caps (50 minutes without the clauses, two hours with them; the process was stopped by its time limit, exit status 124). The configuration split of Section~\ref{sec:satenc} replaced it, and its results (Table~\ref{tab:sat}) are the only satisfiability evidence reported here. It is a different encoding with the same target, which exploits the structure facts that the proof establishes, and it affects only the finite corroboration: no result of this paper depends on the global search.
+
+\paragraph{Residual risks.}
+
+A missed case in the symbolic case split, or a misapplied matching reduction, would invalidate Theorem~\ref{thm:main} even though all finite checks pass; the finite checks cannot rule out a gap in an all-parameter argument. The proofs are not formalised in a proof assistant. The bibliographic search cannot guarantee priority. The solver, Python and NetworkX versions for EXP-004 are not recorded [U], and the search timings depend on hardware that is not recorded [U]; the timings are therefore comparative within the archived runs only.
+
+\section{Discussion and limitations}\label{sec:disc}
+
+Theorem~\ref{thm:main} settles one level of the matching-number range of Conjecture~6.1 of~\cite{AEY}: $m=d+1$ for every $d\ge7$. Corollary~\ref{cor:Z} places that level inside the range $d<m<Z(d)$ for every $d\ge7$, including the three odd degrees that the proved bounds on $Z(d)$ leave open. It does not settle the intermediate levels $d+2\le m<Z(d)$ (the integer-programming values of~\cite{BET} for $d\le10$ remain the only evidence there), the levels $m\ge2d$, or the exact value of $Z(d)$ for odd $d$. It does not classify the extremal graphs: Theorem~\ref{thm:k2d} gives only the shared-neighbourhood property.
+
+For the Bougard--Joret function, Theorem~\ref{thm:bjexact} determines $f(2d+3,2,d+2)$ for every $d\ge7$, a family of parameters with $\alpha=2$ strictly inside the first regime. The excess over the degree-sum prediction is $\lfloor d/2\rfloor-1$ and unbounded (Figure~\ref{fig:excess}). The general revised first regime is not determined by it. The second regime $n>k\alpha$ is a different range of parameters: the paper~\cite{SR} checks the conjectured value exhaustively there for the open triples with $n\le24$, and a proof of the lower bound has been announced~\cite{Didin} [U]; neither bears on the parameters of Theorem~\ref{thm:bjexact}.
+
+The numbers show two further features. First, the level $m=d+1$ is where the triangle-free value separates from the general one by $2\lfloor d/2\rfloor-2$ edges, so forbidding triangles costs more as $d$ grows; the extremal graph $Q_d$ is a crown with one extra vertex of degree four and has total degree deficit $d-4$ [D]. Second, the Bougard--Joret excess $\lfloor d/2\rfloor-1$ over the degree-sum prediction grows linearly in $d$, so at the parameters $(2d+3,2,d+2)$ the discrepancy from that prediction is unbounded and no fixed additive correction removes it [D]. For the threshold of AEY, Corollary~\ref{cor:Z} gives a lower bound only; the upper bounds $\lfloor5(d+1)/4\rfloor$ for odd $d$ are untouched, so the exact value of $Z(d)$ for odd $d\le19$ remains undetermined by the published results and by this paper, and Conjecture~6.5 of~\cite{AEY} is neither supported nor contradicted here.
+
+Three limitations bound the claims, and a reader who wants to rely on a single numerical value should use $T(13,14)=184$ only through the proof of Theorem~\ref{thm:main}, with Table~\ref{tab:bet} as a consistency check.
+
+The limitations are as follows. First, the computations are finite and the proofs are not formalised. Second, the attaining graph and the values through $d=12$ are prior work; the new content is the uniform upper bound, the deduction about $Z(d)$ and the exact Bougard--Joret value. Third, the searches for prior solutions of the slice are bounded and may have missed a source.
+
+\section{Conclusions}\label{sec:concl}
+
+For every $d\ge7$, a triangle-free graph with maximum degree at most $d$ and matching number at most $d+1$ has at most $d^2+d+2$ edges, and $Q_d$ attains it; hence $T(13,14)=184$. The proof combines a deficit bound along a shortest odd cycle, a five-type obstruction on $2d+3$ vertices and the Tutte--Berge formula. The bound forces $Z(d)\ge d+2$, so the level lies inside the conjectured range for all $d\ge7$. Complementation gives $f(2d+3,2,d+2)=d^2+4d+2$, and the lower value is excluded because every extremal graph has two vertices with the same $d$ neighbours. The ablation of Table~\ref{tab:ablation} shows that each ingredient carries one statement. The exact computations back these statements for $d$ up to $30$ (explicit graphs and a finite constraint system) and for $d=7,8$ (the configuration-split search). Taken together, the proofs, the exact verification and the documented limits give a complete account of the level $m=d+1$ and of one family of Bougard--Joret parameters. The next steps are the levels $d+2\le m<Z(d)$, the classification of the extremal graphs, an archived solver version and hardware record for the search, a satisfiability check at $d=9$ with a stronger encoding, and a formal proof of Theorems~\ref{thm:main} and~\ref{thm:k2d}.
+
+\section{Reproducibility}\label{sec:repro}
+
+The commands of Section~\ref{sec:prov} regenerate the certificate, the audit and the search results from the repository~\cite{Record,Record4}. The script \texttt{make\_tables\_figures.py} next to the source of this paper reads the four artifacts (\texttt{certificate.json}, \texttt{independent-audit.json}, \texttt{cfg-d7.jsonl}, \texttt{cfg-d8.jsonl}, \texttt{models-check.json}), regenerates every table, every data figure and the number macros used in the text, and runs no search. The two blocks of published values typed from primary sources (the bounds on $Z(d)$ follow from the lemmas of~\cite{AEY}; the rows of Table~\ref{tab:bet} are typed from~\cite{BET}) are the only values not read from an artifact.
 
 \paragraph{Data availability.}
 The proof, the review of the cited sources, the certificate generators, the independent re-implementation and the full edge lists are publicly archived in the repository~\cite{Record}. The identifier EXP-003 denotes the archived computation in the folder \path{problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching/}. The sibling folder \path{EXP-004-bracket-endpoint/} holds EXP-004, the proof and satisfiability record for Theorem~\ref{thm:k2d}.
 
 \paragraph{Declaration of generative AI use.} Generative AI tools were used for literature triage, derivation exploration, code drafting and internal review of the proofs and the text. The author reviewed and verified all content and takes full responsibility for the work.
 
-\begin{thebibliography}{10}
+\begin{thebibliography}{99}
 \bibitem{AEY} M. Ahanjideh, T. Ekim and M. A. Y\i ld\i z.
 \emph{Maximum size of a triangle-free graph with bounded maximum degree and matching number}.
 Journal of Combinatorial Optimization 47 (2024), article 57.
-\href{https://doi.org/10.1007/s10878-024-01123-z}{doi:10.1007/s10878-024-01123-z}.
+\href{https://doi.org/10.1007/s10878-024-01123-z}{doi:10.1007/s10878-024-01123-z}. [V, final published text]
 \bibitem{BET} A. E. Banak, T. Ekim and Z. C. Ta\c{s}k\i n.
 \emph{Constructing extremal triangle-free graphs using integer programming}.
 Discrete Optimization 50 (2023), 100802.
 \href{https://doi.org/10.1016/j.disopt.2023.100802}{doi:10.1016/j.disopt.2023.100802}.
-Full author text: \href{https://arxiv.org/html/2304.01729}{arXiv:2304.01729}.
+Full author text: \href{https://arxiv.org/abs/2304.01729}{arXiv:2304.01729}. [V, author text; the publisher PDF was not obtained]
+\bibitem{CH} V. Chv\'atal and D. Hanson.
+\emph{Degrees and matchings}.
+Journal of Combinatorial Theory, Series B 20 (1976), 128--138.
+\href{https://doi.org/10.1016/0095-8956(76)90004-6}{doi:10.1016/0095-8956(76)90004-6}. [V as to existence and bibliographic data (Crossref); the content as reported by~\cite{AEY,BET}, not read]
+\bibitem{BK} N. Balachandran and N. Khare.
+\emph{Graphs with restricted valency and matching number}.
+Discrete Mathematics 309 (2009), 4176--4180.
+\href{https://doi.org/10.1016/j.disc.2008.10.007}{doi:10.1016/j.disc.2008.10.007}. [V as to bibliographic data (Crossref); Theorem~2.1 as stated in~\cite{AEY}]
+\bibitem{ER} P. Erd\H{o}s and R. Rado.
+\emph{Intersection theorems for systems of sets}.
+Journal of the London Mathematical Society 35 (1960), 85--90. [V as listed and described in~\cite{BET}; not read]
+\bibitem{Dibek} C. Dibek, T. Ekim and P. Heggernes.
+\emph{Maximum number of edges in claw-free graphs whose maximum degree and matching number are bounded}.
+Discrete Mathematics 340 (2017), 927--934.
+\href{https://doi.org/10.1016/j.disc.2017.01.010}{doi:10.1016/j.disc.2017.01.010}. [V as to bibliographic data (Crossref); content as reported by~\cite{AEY}]
+\bibitem{Blair} J. R. S. Blair, P. Heggernes, P. T. Lima and D. Lokshtanov.
+\emph{On the maximum number of edges in chordal graphs of bounded degree and matching number}.
+Latin American Symposium on Theoretical Informatics (2020), 600--612.
+\href{https://doi.org/10.1007/978-3-030-61792-9_47}{doi:10.1007/978-3-030-61792-9\_47}. [V as to bibliographic data (Crossref); content as reported by~\cite{AEY}]
+\bibitem{Maland} E. M\aa land.
+\emph{Maximum number of edges in graph classes under degree and matching constraints}.
+Master's thesis, University of Bergen, 2015. [V as listed in~\cite{AEY}; not read]
+\bibitem{Vizing} V. G. Vizing.
+\emph{On an estimate of the chromatic class of a $p$-graph} (in Russian).
+Diskret. Analiz 3 (1964), 25--30. [V as used in~\cite{AEY}; not read]
+\bibitem{AES} B. Andr\'asfai, P. Erd\H{o}s and V. T. S\'os.
+\emph{On the connection between chromatic number, maximal clique and minimal degree of a graph}.
+Discrete Mathematics 8 (1974), 205--218.
+\href{https://doi.org/10.1016/0012-365X(74)90133-2}{doi:10.1016/0012-365X(74)90133-2}. [V as to bibliographic data (Crossref); statement as used in~\cite{AEY}]
+\bibitem{Gallai} T. Gallai.
+\emph{Neuer Beweis eines Tutte'schen Satzes}.
+Magyar Tud. Akad. Mat. Kutat\'o Int. K\"ozl. 8 (1963), 135--139. [V as used in~\cite{AEY}; not read]
+\bibitem{Turan} P. Tur\'an.
+\emph{On an extremal problem in graph theory} (in Hungarian).
+Mat. Fiz. Lapok 48 (1941), 436--452. [V as listed in~\cite{AEY}; not read]
 \bibitem{CT} Y. Caro and Z. Tuza.
 \emph{Regular Tur\'an numbers}.
 Australasian Journal of Combinatorics 78(1) (2020), 133--144.
-\href{https://ajc.maths.uq.edu.au/pdf/78/ajc_v78_p133.pdf}{Primary article}.
+\href{https://ajc.maths.uq.edu.au/pdf/78/ajc_v78_p133.pdf}{Primary article}. [V]
 \bibitem{CDK} S. Cambie, R. de Joannis de Verclos and R. J. Kang.
 \emph{Regular Tur\'an numbers and some Gan--Loh--Sudakov-type problems}.
-Journal of Graph Theory (2023).
-\href{https://doi.org/10.1002/jgt.22857}{doi:10.1002/jgt.22857}.
+Journal of Graph Theory 102 (2023), 67--85.
+\href{https://doi.org/10.1002/jgt.22857}{doi:10.1002/jgt.22857}. [V, Theorem 8]
 \bibitem{Berge} C. Berge.
 \emph{Sur le couplage maximum d'un graphe}.
-Comptes Rendus de l'Acad\'emie des Sciences 247 (1958), 258--259.
+Comptes Rendus de l'Acad\'emie des Sciences 247 (1958), 258--259. [V as cited in~\cite{Goemans}]
 \bibitem{Goemans} M. X. Goemans.
 \emph{Lecture notes on non-bipartite matching}, MIT 18.433, 2011, Theorem 2.1.
-\href{https://math.mit.edu/~goemans/18433S11/matching-nonbip-notes.pdf}{Author-hosted notes}.
+\href{https://math.mit.edu/~goemans/18433S11/matching-nonbip-notes.pdf}{Author-hosted notes}. [V]
 \bibitem{BJ} N. Bougard and G. Joret.
 \emph{Tur\'an's theorem and $k$-connected graphs}.
 Journal of Graph Theory 58 (2008), 1--13.
-\href{https://doi.org/10.1002/jgt.20289}{doi:10.1002/jgt.20289}.
+\href{https://doi.org/10.1002/jgt.20289}{doi:10.1002/jgt.20289}. [V]
 \bibitem{DG} J. Das and S. Gupta.
 \emph{Counterexample to the Bougard--Joret Conjecture}.
-\href{https://arxiv.org/abs/2608.18828}{arXiv:2608.18828v1}, 2026.
+\href{https://arxiv.org/abs/2608.18828}{arXiv:2608.18828v1}, 2026. [V, relevant sections]
+\bibitem{Didin} M. Didin.
+\emph{A generalization of Tur\'an's theorem for graphs with a given independence number}.
+Preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.22831382}{doi:10.5281/zenodo.22831382}. [U as to correctness; statements as recorded in~\cite{SR}]
 \bibitem{Shell} F. Santib\'a\~nez-Leal.
 \emph{The first interior shell of the Bougard--Joret extremal problem}.
 CAOS Research preprint, 2026.
 \href{https://doi.org/10.5281/zenodo.22315251}{doi:10.5281/zenodo.22315251}.
+\bibitem{SR} F. Santib\'a\~nez-Leal.
+\emph{The second Bougard--Joret line to order 24: an exhaustive check, the extremal graphs at 35 triples, and a construction without a clique partition for every odd alpha}.
+CAOS Research preprint, version 0.03, 2026.
+\href{https://doi.org/10.5281/zenodo.24229265}{doi:10.5281/zenodo.24229265} (all versions: \href{https://doi.org/10.5281/zenodo.24044537}{doi:10.5281/zenodo.24044537}).
 \bibitem{Record} F. Santib\'a\~nez-Leal.
 \emph{CAOS Research, Bougard--Joret EXP-003: triangle-free next matching level}.
 Proof, source review, exact certificates and independent re-implementation, 2026.
