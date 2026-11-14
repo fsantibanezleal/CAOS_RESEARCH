@@ -39,7 +39,7 @@ between the two at equal `p` is exactly two, which is the whole content of the d
 classes.
 
 The measured thresholds sit above `gamma/(2p)` by the finite-horizon factor
-`1 + 2 log(1/nu) / (g (Q - 1) gamma)`, as established for the pendulum case in EXP-003; the comparison
+`1 + log(1/nu) / (gamma g (Q - 1))` (corrected on 2026-11-14 from `1 + 2 log(1/nu) / (g (Q - 1) gamma)`, which is off by a factor 2: the factor is the one `cascade.py:131` computes and `run_exp008.py:56` uses, giving 1.231416 for gamma = 1/2 and 1.115708 for gamma = 1 in the result file; for gamma = 1/2 it is the EXP-003 form `1 + 2 log(1/nu) / (g (Q - 1))`), as established for the pendulum case in EXP-003; the comparison
 is against that corrected value, and the agreement to between `1e-7` and `2e-9` is the bisection's own
 resolution.
 
