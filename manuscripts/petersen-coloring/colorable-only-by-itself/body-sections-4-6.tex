@@ -290,7 +290,7 @@ decided formula was unsatisfiable before any cut was learned.
 \end{algorithm}
 
 Algorithm~\ref{alg:certify} states the pipeline. A satisfiable answer is checked from the definition by a separate program that reads only $G$ and the decoded pair $(H,f)$: $H$ is cubic, loopless,
-connected and bridgeless, and $f$ maps every star of $G$ onto a star of $H$; then Petersen colorability of $H$ is refuted by the edge-map encoding, since a smaller bridgeless cubic graph that colors a
+connected and bridgeless, and $f$ maps every star of $G$ onto a star of $H$; then Petersen colorability of $H$ is decided by the edge-map encoding, since a smaller bridgeless cubic graph that colors a
 counterexample is itself a counterexample. An unsatisfiable answer is certified on the final formula (the base formula with its attach clauses and every added cut): it is refuted by
 CaDiCaL~\cite{CaDiCaL} with a DRAT proof and the proof is checked by \texttt{drat-trim}~\cite{DRATtrim}, so the in-process solver that drives the loop is not trusted. The steps of Algorithm~\ref{alg:certify} apply as follows:
 \begin{itemize}

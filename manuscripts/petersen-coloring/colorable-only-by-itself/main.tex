@@ -91,14 +91,14 @@ case where $H$ is the Petersen graph. The graphs that no bridgeless cubic graph 
 colors form the set $\mathcal{H}_3$ of Ma et al., infinite since the
 conjecture was refuted in 2026. Goedgebeur et al.\ asked whether their 52-vertex
 counterexamples are colorable only by themselves. We prove that the fibers of the vertex map of an
-$H$-coloring have the same parity and that unused target vertices reduce to at most one; three kinds
-remain, and the question becomes one propositional formula per target order, with the
-target graph unknown. We state the formula, prove its symmetry breaking sound, and certify every
+$H$-coloring have the same parity and that unused target vertices reduce to at most one; three kinds of
+coloring remain, and the question becomes one propositional formula per target order, with the
+target graph unknown. We prove the formula's symmetry breaking sound and certify each
 refutation with a DRAT proof checked by \texttt{drat-trim}. For both counterexamples every even
 target order from 40 to 50 is refuted; for the first one so are 2, 4 and 24 to 38. Assuming the
 computation of the same authors, that no bridgeless cubic graph on at most 38 vertices
 lacks a Petersen coloring, both graphs belong to $\mathcal{H}_3$. Without the two lemmas ten orders
-of the first graph went undecided in 35 minutes; with them each took 137 to 5,882 seconds. Orders 6
+of the first graph stayed undecided after 35 minutes; with them each took 137 to 5,882 seconds. Orders 6
 to 22 of the first graph and 6 to 38 of the second remain undecided; 2 and 4 follow from 3-edge-colorability.
 \end{abstract}
 
@@ -665,7 +665,7 @@ decided formula was unsatisfiable before any cut was learned.
 \end{algorithm}
 
 Algorithm~\ref{alg:certify} states the pipeline. A satisfiable answer is checked from the definition by a separate program that reads only $G$ and the decoded pair $(H,f)$: $H$ is cubic, loopless,
-connected and bridgeless, and $f$ maps every star of $G$ onto a star of $H$; then Petersen colorability of $H$ is refuted by the edge-map encoding, since a smaller bridgeless cubic graph that colors a
+connected and bridgeless, and $f$ maps every star of $G$ onto a star of $H$; then Petersen colorability of $H$ is decided by the edge-map encoding, since a smaller bridgeless cubic graph that colors a
 counterexample is itself a counterexample. An unsatisfiable answer is certified on the final formula (the base formula with its attach clauses and every added cut): it is refuted by
 CaDiCaL~\cite{CaDiCaL} with a DRAT proof and the proof is checked by \texttt{drat-trim}~\cite{DRATtrim}, so the in-process solver that drives the loop is not trusted. The steps of Algorithm~\ref{alg:certify} apply as follows:
 \begin{itemize}
