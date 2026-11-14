@@ -1,6 +1,21 @@
 # Bougard-Joret: session handoff
 
-Updated: 2026-09-05.
+Updated: 2026-11-14.
+
+2026-11-14 state, second line (n > k alpha):
+- [MV] All 53 open-window triples with n <= 24 equal t(n,alpha) + ceil(k alpha/2) (EXP-005 to EXP-010). For seven
+  pairs (alpha,k) = (3,3), (4,3), (5,3), (3,4), (4,4), (3,5), (3,6) the window ends by order 24, so the second line
+  holds for every n there (Bougard-Joret Proposition 8 above the window).
+- [V] statements: Didin (Zenodo 10.5281/zenodo.22831382, under review) claims the lower bound of the second line for
+  every n > k alpha; not audited here (`context/references.md`).
+- [MV] EXP-011: every extremal graph at 35 triples; 40 of them have no partition into alpha cliques, all at k = 3
+  with alpha odd; conditional on Didin's Theorem 3 they can occur only there with n <= 4 alpha - 1, or at six small
+  triples.
+- [D] EXP-013: for every odd alpha and 3 alpha < n <= 4 alpha - 1, alpha - 2 cliques plus a block X6 or X7 on a
+  3-edge-connected cubic quotient give a 3-connected graph with the conjectured size, independence number alpha
+  and clique cover number alpha + 1; extremal at (22..24,7,3), and everywhere if Didin's Theorem 9 holds.
+- [MV] EXP-012: the search pipeline validated at the production parameters (Gates A to F).
+- In flight: EXP-011 phase 2b; second-regime v0.03 (full rewrite) under independent review before release.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 4; first action BJB-014, then exact small-triple data in the second regime n > k*alpha (BJB-016).
 
@@ -49,6 +64,10 @@ Updated: 2026-09-05.
 | EXP-007-open-window-to-22 | Every open second-regime triple with n <= 22 | CONFIRMED [MV] | all 28 remaining triples equal the formula; with EXP-005/006, all 39 |
 | EXP-008-order-23 | Every open second-regime triple of order 23 | CONFIRMED [MV] | all 8 equal the formula; with EXP-005 to EXP-007, all 47 open triples with n <= 23 |
 | EXP-009-order-24 | Every open second-regime triple of order 24 | 4 CONFIRMED, 2 OPEN [MV] | (24,5,3)=54, (24,6,3)=45, (24,5,4)=56, (24,4,5)=70; (24,7,3) >= 40, (24,3,7) >= 94 at the cap |
+| EXP-010-order-24-close | The two order-24 edge counts left at the cap | CONFIRMED [MV] | f(24,7,3) = 41, f(24,3,7) = 95; all 53 open triples with n <= 24 hold |
+| EXP-011-extremal-structure | Structure of every extremal graph at c (35 triples) | prediction REFUTED (clique partition), Didin-derived predictions hold [MV] | 40 graphs with theta = alpha + 1 at k = 3, alpha odd; s(G) computed exactly |
+| EXP-012-pipeline-validation | Pipeline at the production parameters | CONFIRMED [MV] | binaries byte-identical; 0 disagreements in Gates A to E |
+| EXP-013-odd-alpha-construction | Extremal graphs without a clique partition for odd alpha | CONFIRMED [MV], proved [D] | X6/X7 construction for every odd alpha |
 | EXP-004-bracket-endpoint | Endpoint of $d^2+4d+1\le f(2d+3,2,d+2)\le d^2+4d+2$ | CONFIRMED; independent audit PASS | $f(2d+3,2,d+2)=d^2+4d+2$, $d\ge7$; shared-neighbourhood theorem; configuration SAT d=7 (8/8 UNSAT), d=8 (7/8, eighth excluded by $a+b=2$); next-matching v0.04 10.5281/zenodo.23965193 |
 
 ## 4. In flight
