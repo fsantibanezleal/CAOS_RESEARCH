@@ -12,9 +12,9 @@ never from memory, per methodology 09.
 
 | | |
 |---|---|
-| source version | 0.10 (2026-11-14), built and not yet released |
+| source version | 0.10 (2026-11-14), built and not yet released; content-bar pass applied (10,653 words, 8 figures, 28 references, 5 algorithms by `tools/zenodo/check_manuscript_depth.py`) |
 | published version | 0.09 (2026-11-02), version DOI [10.5281/zenodo.23890775](https://doi.org/10.5281/zenodo.23890775), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
-| pages | 23 |
+| pages | 35 |
 | build | `pdflatex main.tex` twice, MiKTeX; zero errors, zero warnings, zero overfull or underfull boxes |
 | labels | `[V]` read on a primary source (equation or page cited), `[D]` derived, `[MV]` machine-verified (kernel replay, exact symbolic computation, or a recorded run pinned by a test), `[U]` unverified, `[C]` conjecture; used in the text after each statement |
 
@@ -30,7 +30,10 @@ never from memory, per methodology 09.
 | numerical methods and reproducibility | `nslib/boussinesq.py`, `corotating.py`, `steering.py`, the `args` blocks of the result files, `code/reproduce_all.py` |
 | verification of the dissipative extension, every criterion met or not met | EXP-002, EXP-003, EXP-004, EXP-005, EXP-007 and EXP-008 verdicts and result files |
 | machine verification, build and kernel replay | EXP-001 and EXP-006 verdicts |
-| figures | `figures/make_figures.py`, which reads the result files |
+| related work: the hypotheses and conclusion of each construction and announced result examined (Section 1.1) | the abstracts, main theorems and pages of the archived PDFs in `references/`, read depth in `context/references.md`; Crossref for the journal items |
+| experimental design: the question, the committed prediction and the pass criterion of every run (Section 7.1) | the `hypothesis.md` files and the runner docstrings of EXP-001 to EXP-008 |
+| algorithms: the integrating-factor step, the local-rate estimator, the localization test, the bisection and the design search (Section 6) | `nslib/boussinesq.py`, `code/run_exp004.py`, `code/run_exp007.py`, `code/run_exp008.py`, `nslib/cascade.py`, `nslib/ab_force_budget.py` |
+| figures (eight) | `figures/make_figures.py`, which reads the result files and `nslib` |
 
 Every number quoted in the paper is also gated in continuous integration against the result files it
 came from (`tests/test_navier_stokes_quoted_numbers.py`), and every experiment reproduces from its own
