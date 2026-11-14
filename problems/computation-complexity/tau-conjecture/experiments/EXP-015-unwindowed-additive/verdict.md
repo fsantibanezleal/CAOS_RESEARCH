@@ -70,3 +70,35 @@ Pre-registered: no additive nine-gate seven-rooter. CONFIRMED.
   affects those thresholds, not necessarily one specific to k = 7. The k = 7 table is built by the same code.
 - The exact zero test is cached by operand ids; an id collision in the store would be an error of the store,
   whose round trip is checked.
+
+## Erratum, 2026-11-14: corrected stage labels
+
+The stage table above (section "Stage counts") labels two rows wrongly, found by the independent audit of census v0.06
+(`wip/caos-research/msaudit-misc-2026-11-10.md`, D3 finding 1). The counts are right, the labels are not, and the table
+as printed does not add up: 2,937,472,943 - 92,943,826 = 2,844,529,117, not 2,345,860,018. The full counter set of
+`artifacts/final.json` (totals) and what `engine.py` counts under each name:
+
+| counter | value | what it counts (engine.py) |
+|---|---:|---|
+| candidates | 4,193,843,648,000 | 4000 x 1,048,460,912 states |
+| deg_drop | 4,026,692,708,694 | dropped by the degree test |
+| pass2 | 3,840,174,256 | pass the 2-adic layer |
+| pass3 | 2,937,472,943 | pass the 3-adic layer |
+| zero_suspect | 498,669,099 | full-residue-zero candidates tested for f == 0 exactly (`Engine._decide`, the `is_full` branch); each was dropped by the exact test |
+| zero_exact | 92,943,826 | non-suspects whose exact build is empty (`Engine._decide`, the other branch): the eighth gate t is the zero polynomial, f = +-b, and `_build` returns t without forming f (`Engine._build`); NOT identically zero f |
+| exact | 2,345,860,018 | built exactly and root-counted |
+| hits | 0 | seven-rooters |
+
+The row "identically zero (t = -b or t = b), built exactly | 92,943,826" should read "eighth gate t is the zero polynomial
+(f = +-b), dropped without a root count", and the row "full-zero suspects tested for f == 0 exactly | 498,669,099" is
+the set of genuinely full-residue-zero candidates, all dropped by the exact zero test.
+
+Identity: pass3 = zero_suspect + zero_exact + exact, that is 498,669,099 + 92,943,826 + 2,345,860,018 =
+2,937,472,943 (checked from `final.json`). Because the engine counts a suspect in `zero_suspect` and, when its exact
+build is nonzero, again in `exact` (`Engine._decide`), the identity holds only if no suspect was nonzero; every one of
+the 498,669,099 suspects was therefore dropped by the exact test. The exact test drops a candidate when the build is
+the empty polynomial, which covers both f == 0 and t == 0.
+
+Soundness of the t == 0 drop: f = 0 +- b = +-b, where b is one of the ten operands, a value of a program of at most
+7 gates, so z(b) <= z_max(7) = 5 < 7 (EXP-004). The result of the verdict is unchanged; the `engine.py` module
+docstring was corrected on the same date to state this argument.
