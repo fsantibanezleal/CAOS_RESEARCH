@@ -1,6 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,array,longtable,graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \microtypesetup{expansion=false}
 \usepackage[margin=1.05in,headheight=14pt]{geometry}
 \usepackage{xcolor}
@@ -105,7 +107,7 @@ excluded at every positive dissipation.
 The machine-checked status of the two announced results is reported at the level a kernel replay
 establishes: the statements and the integrity of the formal proof, not that the formal proof follows
 the written argument, which Bastounis, Circelli and Hansen report it does not. The mechanism is due to
-C\'ordoba and Mart\'inez-Zoroa, extended to smooth forcing by Alpog\'e and Buckmaster; nothing here
+C\'ordoba and Mart\'inez-Zoroa, extended to smooth forcing by Alp\"oge and Buckmaster; nothing here
 establishes blowup for any equation or improves any published threshold.
 \end{abstract}
 
@@ -123,6 +125,127 @@ background gradient alone. Frequency therefore buys gradient but not growth, and
 much dissipation a cascade tolerates becomes a question about the exponents relating amplitude,
 frequency and gradient. This paper answers it at two levels: for the mechanism classes
 (Section~\ref{sec:class}) and for two published designs (Section~\ref{sec:design}).
+
+\subsection{Related work: the claims examined, their hypotheses and conclusions}\label{sec:related}
+
+The paper sits between a body of blowup constructions and the formal and numerical checks that can be
+run on them without refereeing them. This subsection states, for each work the paper depends on, the
+hypotheses and the conclusion as its abstract or main theorem gives them; the page or theorem is cited,
+and a work known only through another source is marked \ev{U}.
+
+\paragraph{The problem and the classical results.} The question is the Millennium problem in the form of
+Fefferman~\cite{fefferman}. The OpenAI announcement states that its Theorem~1.1 establishes alternative~(C),
+a forced solution on $\mathbb R^{3}$ that starts from rest, keeps its kinetic energy bounded and has
+unbounded velocity at a finite time, and that compact support of the force gives alternative~(D) on
+$\mathbb T^{3}$ through its Corollary~10.6~\cite{openai-ns} \ev{V} (page~1). The classical results around the
+question, quoted from the introduction of that paper (page~2), are the global finite-energy weak solutions of
+Leray~\cite{leray}, the zero one-dimensional parabolic Hausdorff measure of the singular set of a suitable weak
+solution of Caffarelli, Kohn and Nirenberg~\cite{ckn}, and the regularity under a bounded scale-invariant
+$L^{\infty}_{t}L^{3}_{x}$ norm of Escauriaza, Seregin and \v{S}ver\'ak~\cite{ess} \ev{U}. For the
+hyperdissipative equation, Lions~\cite{lions} proved global regularity at order $5/2$ and above in the
+$|\nabla|^{\alpha}$ convention, as Section~1 of~\cite{cmz} states \ev{U}; with classical viscosity at $2$,
+the constructions reach $0.0927$ and regularity is proved from $5/2$, and the exponents in between are open.
+
+\paragraph{Averaged and dyadic models.} Tao~\cite{tao} replaces the nonlinearity of the Navier-Stokes
+equation by an averaged bilinear operator, built from rotations, dilations and Fourier multipliers of order
+zero, that keeps the cancellation $\langle\widetilde B(u,u),u\rangle=0$ and therefore the energy identity, and
+constructs a smooth solution of the averaged equation that blows up in finite time \ev{V} (abstract, page~1).
+The conclusion drawn there is that any proof of global regularity has to use finer structure of the
+nonlinearity than harmonic analysis estimates and the energy identity provide, and the paper proposes a
+program for adapting the construction to the true equations. Blowup in dyadic models was shown earlier for
+the Euler case by Katz and Pavlovi\'c~\cite{kp} and for the Navier-Stokes case by Cheskidov~\cite{cheskidov},
+both listed in Section~1 of~\cite{cmz} \ev{U}. None of these is a statement about the equation itself, which
+is why they bound the methods that can succeed and do not bound the answer.
+
+\paragraph{Non-uniqueness.} Buckmaster and Vicol~\cite{bv} used convex integration to prove non-uniqueness
+among finite-energy weak solutions \ev{U} (introduction of~\cite{openai-ns}, page~2). Albritton, Bru\'e and
+Colombo~\cite{abc} work with the forced equations in three dimensions, zero initial velocity and a body force
+in $L^{1}_{t}L^{2}_{x}$; they exhibit two distinct Leray solutions with that datum and force, built from a
+background solution that is unstable in similarity variables, whose profile is a vortex ring modified from
+Vishik's two-dimensional unstable vortex, and a second solution on its unstable manifold \ev{V} (abstract,
+page~1); the force is singular at the initial time \ev{V} (introduction of~\cite{openai-ns}, page~2).
+Hou, Wang and Yang~\cite{hwy} prove, with a computer-assisted proof, that the unforced equation has
+infinitely many suitable Leray-Hopf solutions from one compactly supported initial velocity that is smooth
+away from the origin and in $L^{q}$ for every $q<3$ \ev{V} (Theorem~1, page~1). These results concern the
+uniqueness of weak solutions; none produces a smooth solution that loses smoothness, and they are context
+for the claims examined here, not part of them.
+
+\paragraph{Euler and Boussinesq blowup from regular data.} The local theory of the Euler equations
+with H\"older continuous gradient is classical, and Elgindi~\cite{elgindi} shows that these solutions can
+develop singularities in finite time, for $C^{1,\alpha}$ velocities and not for smooth data \ev{V}
+(abstract, page~1). Smooth solutions continue past a time $T$ whenever
+$\int_{0}^{T}\|\mathrm{curl}\,u\|_{L^{\infty}}\,dt$ is finite, by the criterion of Beale, Kato and
+Majda~\cite{bkm}, as the OpenAI Euler paper recalls on its page~1 \ev{V}; breakdown therefore requires that
+integral to diverge, and the Alp\"oge-Buckmaster Euler theorem states that it does. Chen and Hou~\cite{chenhou}
+prove stable, nearly self-similar finite-time blowup of the two-dimensional Boussinesq and the
+three-dimensional axisymmetric Euler equations from smooth data of finite energy on a domain with boundary,
+with weighted $L^{\infty}$ and $C^{1/2}$ estimates and a finite-rank decomposition of the linearized
+operator \ev{V} (abstract, page~1). Wang and co-authors~\cite{dm} compute new unstable self-similar
+solutions of the porous media equation and of the three-dimensional Euler equations with boundary, with
+machine-learning architectures and a high-precision Gauss-Newton optimizer, and report an empirical
+asymptotic formula relating the blowup rate to the order of instability; their stated motivation is that
+stable singularities are not expected in the boundary-free Euler and Navier-Stokes problems, where unstable
+ones are hypothesized to matter \ev{V} (abstract, page~1). These works follow regular or self-similar blowup; the layer-cascade line below is a different route, and
+the two do not share a mechanism.
+
+\paragraph{The layer-cascade program.} C\'ordoba and Mart\'inez-Zoroa~\cite{cmzi} prove that, for the
+two-dimensional porous media equation, a compactly supported smooth source in $L^{\infty}_{t}C^{\infty}_{x}$
+and smooth compactly supported data give a classical solution on $[0,1)$ whose $C^{1}$ norm diverges at $t=1$
+\ev{V} (Theorem and Remark~1, page~1); Remark~1 states that the time regularity was chosen for simplicity,
+that $C^{1}_{t}C^{\infty}_{x}$ follows with extra work and that $C^{\infty}_{t}C^{\infty}_{x}$ should be
+reachable. For the two-dimensional Boussinesq system, C\'ordoba, La\'in-Sanclemente and
+Mart\'inez-Zoroa~\cite{clsmz} obtain blowup with a force that is uniformly
+$C^{1,\sqrt{4/3}-1-\epsilon}$ and $L^{2}$, through an accumulated hysteresis effect of an infinite chain of
+degenerate pendula \ev{V} (abstract). For the hypodissipative Navier-Stokes equations, C\'ordoba,
+Mart\'inez-Zoroa and Zheng~\cite{cmz} prove that for every dissipation order below
+$\alpha_{0}=(22-8\sqrt7)/9$ in the $|\nabla|^{\alpha}$ convention there are classical finite-energy solutions
+on $\mathbb R^{3}\times[0,T]$, with a force in $L^{1}_{t}C^{1,\epsilon}_{x}\cap L^{\infty}_{t}L^{2}_{x}$,
+that blow up \ev{V} (abstract and Theorem~1). C\'ordoba, Dom\'inguez, Lucas-Manch\'on and
+Mart\'inez-Zoroa~\cite{cdlm} extend the mechanism to the forced generalized surface quasigeostrophic equation
+in the singular velocity regime: a smooth compactly supported datum and a force in $L^{1}([0,1];H^{s})$ for an
+interval of exponents $s$ give a classical finite-energy solution on $[0,1)$ that loses Sobolev regularity at
+$t=1$ \ev{V} (abstract, page~1). The hypotheses of all four are a regularity class for the force, and the
+conclusion in each is a loss of regularity at a finite time with the force still in its class; the
+dissipation order is the only parameter among them that this paper varies.
+
+\paragraph{The claims of September 2026.} Alp\"oge and Buckmaster~\cite{ab-boussinesq} construct blowup for
+the inviscid Boussinesq system on $\mathbb R^{2}$ with forces in $C^{\infty}(\mathbb R^{2}\times[0,T])$ in both
+equations and supported in one fixed spatial ball, from a smooth compactly supported temperature and zero
+velocity; the temperature stays bounded while its gradient norm tends to infinity and the vorticity norm has
+infinite limit superior, both in $L^{\infty}$ \ev{V} (abstract, page~1). Their Euler paper~\cite{ab-euler}
+treats three dimensions with an axisymmetric force and initial velocity supported in one fixed solid torus
+and smooth in space and time through the blowup time: the circulation and the meridional velocity stay
+bounded, the $L^{\infty}$ norms of the circulation gradient and of the vorticity tend to infinity, the time
+integral of the vorticity norm diverges, and on every closed interval before blowup the solution is smooth
+and unique in a finite-energy, locally Lipschitz class \ev{V} (abstract, page~1). Alp\"oge, Buckmaster and
+Coiculescu~\cite{ab-ipm} (arXiv:2609.16470) prove the corresponding statement for the porous media equation
+on $\mathbb T^{2}$: a smooth odd density, a smooth odd force $F\in C^{\infty}([0,1]\times\mathbb T^{2})$ and a
+classical solution on $[0,1)$ whose density and velocity gradients diverge in $L^{\infty}$ while the density
+converges in $C^{\eta}$ for every $\eta<1$ \ev{V} (abstract, page~1; the arXiv listing states 57 pages and a
+Lean formalized proof). The OpenAI Navier-Stokes manuscript~\cite{openai-ns} states, for every $\nu>0$, a
+smooth force of compact support in space and time and smooth fields supported in a compact set $K$, with the
+velocity starting from rest, bounded in $L^{2}$ and unbounded in $L^{\infty}$ as $t\uparrow1$ \ev{V} (Theorem~1.1,
+page~1). Its mechanism is a self-similar vortex whose radial width shrinks faster than its axial length, with
+oscillatory pulses whose nonlinear momentum fluxes cancel the singular part of the momentum residual
+\ev{V} (Section~2, pages~3--4), and the introduction states that its amplified disturbances play a different
+role from those of the cascade line (pages~2--3). The OpenAI Euler manuscript~\cite{openai-euler} is for the
+unforced equation: smooth compactly supported divergence-free data, $0<T<\infty$, and both
+$\limsup\|u\|_{L^{\infty}}=\infty$ and $\int_{0}^{T}\|\mathrm{curl}\,u\|_{L^{\infty}}dt=\infty$
+\ev{V} (Theorem~1.1, page~1). Buckmaster's public statement~\cite{abstat} records that the three
+Alp\"oge-Buckmaster results were released together, that the program is due to C\'ordoba and
+Mart\'inez-Zoroa, that large language models were used, and that a hypodissipative Navier-Stokes result was
+believed but not released while its Lean verification was unfinished \ev{V} (pages~1--2). The independent
+analysis of the Lean development by Bastounis, Circelli and Hansen~\cite{bch} is summarized in
+Section~\ref{sec:status}.
+
+\paragraph{Where this paper stands.} Every construction above is either a forced blowup, with the force in a
+stated regularity class, or an unforced blowup or non-uniqueness result whose proof is not a layer cascade.
+No source states a ceiling on the dissipation a layer cascade can carry \ev{U}; the nearest quantitative
+value is the threshold of~\cite{cmz}, and the paper's contribution is the bounds of Sections~\ref{sec:class}
+and~\ref{sec:design}, the reconstruction of that threshold in Section~\ref{sec:budget}, and the record of how
+the dissipative extension behaves in the equations in Section~\ref{sec:validation}.
+
+\subsection{Conventions and evidence marks}
 
 \paragraph{Conventions.} Two conventions for the dissipation exponent occur. Ours writes the
 dissipation as $-\nu(-\Delta)^{\alpha}$, so classical viscosity is $\alpha=1$. The sources of the
@@ -309,7 +432,7 @@ page~4).
 
 \section{Bounds for the smooth-forcing designs}\label{sec:design}
 
-Every input of this section is transcribed from the two papers of Alpog\'e and
+Every input of this section is transcribed from the two papers of Alp\"oge and
 Buckmaster~\cite{ab-boussinesq,ab-euler}, archived in the repository with the hashes recorded in
 Appendix~\ref{app:force}; the equation and page of each estimate are given there, and the
 inequalities that are used are displayed here. A statement marked \ev{V} in this section was read in
@@ -453,6 +576,27 @@ $Q\ge9d+42$, and what caps the margin is the correction hierarchy itself: two le
 each gaining $\lambda^{-(1-m)}$, drive the remainder bound on $m$ down to $1/2$ as $d$ grows, and at the
 published target the leading phase means, which are quadratic in the amplitude and gain nothing from
 the hierarchy, hold it near $1/4$ \ev{D}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.62\textwidth]{figures/fig-design.pdf}
+\caption{Largest dissipation exponent $\alpha$ (our convention) that the force estimates of the Boussinesq
+design certify, against the number $d$ of controlled derivatives of the force, for the three readings of
+Theorem~\ref{thm:design}; the dotted line is the proved rough-force threshold $0.04633$. Computed by
+\fp{nslib/ab_force_budget.py}, as for Table~\ref{tab:boussinesq}, with the integer ratio $Q$ chosen at each
+$d$ to maximize $m/(4Q)$.}
+\label{fig:design}
+\end{figure}
+
+Figure~\ref{fig:design} reads Table~\ref{tab:boussinesq} over the whole range $d\le20$ and adds the third
+reading. At $d=0$ the three curves start at $2.65\times10^{-4}$ (published choices), $2.22\times10^{-3}$
+(free choices released) and $4.48\times10^{-3}$ (coefficient scale at the previous wavelength), and at $d=20$
+they have fallen to $2.1\times10^{-5}$, $5.1\times10^{-4}$ and $6.3\times10^{-4}$; every curve decreases
+with $d$, which is the statement that controlling more derivatives of the force costs dissipation through the
+range $Q\ge9d+42$. The two released readings converge as $d$ grows because the remainder row then binds in both,
+and the published curve stays below them because its ratio floor $120d$ and $\tau=3/2$ are the binding
+choices. The figure does not show the proved threshold being approached by any reading: the dotted line is
+more than ten times above the highest point of every curve \ev{MV}.
 
 \subsection{The Euler design}\label{sec:euler}
 
@@ -685,7 +829,7 @@ states of the unforced system with vertical gravity.
 \paragraph{Local growth rate.} The local growth rate of a layer is read by demodulation: the spectrum is
 shifted so that the layer's wavevector lies at the origin, low-passed at a cutoff radius, and the
 modulus of the result is the slowly varying amplitude. At every point the logarithm of the modulus is
-fitted by least squares in time over $30$ samples, after a settling interval that is evolved and
+fitted by least squares in time over about $30$ samples (the stride is $\lfloor n/30\rfloor$ steps, which stores $34$ in the frozen run of Algorithm~\ref{alg:rate}), after a settling interval that is evolved and
 discarded so that the transient of a wave injected off its growing eigenmode does not inflate the
 rate. The fitted rate field is compared with $\sigma(x)=\sqrt{\max(0,-\zeta_{1}\,J\zeta\cdot G)}$
 evaluated on the low-pass filtered gradient (the total two-scale gradient) and, as the control, on the
@@ -730,6 +874,125 @@ files in \fp{experiments/EXP-00N-*/}. Times are the wall times stored in the res
 is stored the table says so.}\label{tab:runs}
 \end{table}
 
+\paragraph{The procedures as algorithms.} Five procedures carry every number of Sections~\ref{sec:design}
+and~\ref{sec:validation}. Each is written below from the code that runs it, with its parameters as they
+appear in Table~\ref{tab:runs} and its cost counted from the code \ev{D}.
+
+\begin{algorithm}[t]
+\caption{One integrating-factor Runge-Kutta step of the Boussinesq system (\fp{Boussinesq2D.step}).}\label{alg:ifrk4}
+\begin{algorithmic}[1]
+\Require Fourier coefficients $\hat\theta,\hat\omega$ on an $N\times N$ grid, step $\Delta t$, $\nu$, $\alpha$
+\State $M\gets\mathbf 1[\,|k_{1}|\le N/3,\ |k_{2}|\le N/3\,]$;\ \ $D\gets\nu|k|^{2\alpha}$;\ \ $E_{1}\gets e^{-D\Delta t/2}$, $E_{2}\gets E_{1}^{2}$
+\Function{Nonlinear}{$\hat\theta,\hat\omega$}
+  \State $\hat\psi\gets-\hat\omega/|k|^{2}$ (mean mode set to $0$);\ \ $u\gets\mathcal F^{-1}[\,(-ik_{2}\hat\psi,\ ik_{1}\hat\psi)\,]$
+  \State $\hat a\gets-M\,\mathcal F[\,u\cdot\mathcal F^{-1}(ik\hat\theta)\,]$;\ \ $\hat b\gets-M\,\mathcal F[\,u\cdot\mathcal F^{-1}(ik\hat\omega)\,]+ik_{1}\hat\theta$
+  \State \Return $(\hat a,\hat b)$
+\EndFunction
+\State $(a_{1},b_{1})\gets$ \Call{Nonlinear}{$\hat\theta,\hat\omega$}
+\State $(a_{2},b_{2})\gets$ \Call{Nonlinear}{$E_{1}(\hat\theta+\tfrac{\Delta t}{2}a_{1}),\ E_{1}(\hat\omega+\tfrac{\Delta t}{2}b_{1})$}
+\State $(a_{3},b_{3})\gets$ \Call{Nonlinear}{$E_{1}\hat\theta+\tfrac{\Delta t}{2}a_{2},\ E_{1}\hat\omega+\tfrac{\Delta t}{2}b_{2}$}
+\State $(a_{4},b_{4})\gets$ \Call{Nonlinear}{$E_{2}\hat\theta+\Delta t\,E_{1}a_{3},\ E_{2}\hat\omega+\Delta t\,E_{1}b_{3}$}
+\State $\hat\theta'\gets M\bigl[E_{2}\hat\theta+\tfrac{\Delta t}{6}(E_{2}a_{1}+2E_{1}(a_{2}+a_{3})+a_{4})\bigr]$;\ \ $\hat\omega'$ likewise from $b_{i}$
+\Ensure $(\hat\theta',\hat\omega')$
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:ifrk4} is the solver of every simulation of Section~\ref{sec:validation}. The linear
+dissipative part never enters a Runge-Kutta stage; it is applied through the exact factors $E_{1}$ and
+$E_{2}$, so the step is stable for any $\nu|k|^{2\alpha}\Delta t$, and the two-thirds mask $M$ is applied to
+every product and to the result. One evaluation of \textsc{Nonlinear} costs eight two-dimensional fast
+Fourier transforms (two for the velocity and three for each of the two advected fields), so a step costs
+$32$ transforms of $N^{2}$ points, $O(N^{2}\log N)$ per step and $O(N^{2})$ memory; the
+$N=2048$ run of EXP-005 part D, with $\Delta t=2\times10^{-3}$, took $1304.6$~s, that is $22$ minutes
+(Table~\ref{tab:runs}). The step is fourth order in $\Delta t$ for the nonlinear terms, and the
+step-halving test of EXP-005 shifts the steering gain by $8.7\times10^{-4}$ on the flattened background, the
+number gated at $10^{-3}$ \ev{MV}.
+
+\begin{algorithm}[t]
+\caption{Local growth-rate field of a wave and its comparison with the two predictions (EXP-004, EXP-005).}\label{alg:rate}
+\begin{algorithmic}[1]
+\Require state $(\hat\theta,\hat\omega)$, wavevector $k$ of the layer, step $\Delta t$, settling steps $s$, measuring steps $n$, samples $S=30$, demodulation radius $r$, gradient cutoff $\rho$, mask fraction $f$
+\For{$j=1,\dots,s$} \State advance one step (Algorithm~\ref{alg:ifrk4}) \EndFor \Comment{discarded: the settling interval}
+\For{$i=0,\dots,n$}
+  \If{$i\bmod\lceil n/S\rceil=0$} \State store $t_{m}\gets i\Delta t$ and $y_{m}(x)\gets\log\bigl|\mathcal F^{-1}[\,\mathrm{roll}(\hat\theta,-k)\cdot\mathbf 1(|\kappa|\le r)\,]\bigr|$ \EndIf
+  \State advance one step
+\EndFor
+\State $\sigma_{\mathrm{meas}}(x)\gets\sum_{m}(t_{m}-\bar t)\bigl(y_{m}(x)-\bar y(x)\bigr)\big/\sum_{m}(t_{m}-\bar t)^{2}$
+\State $G\gets\nabla(\theta\text{ low-passed at radius }\rho)$;\ \ $\sigma_{\mathrm{pred}}(x)\gets\sqrt{\max(0,\,-\zeta_{1}\,J\zeta\cdot G)}$; $\sigma_{\mathrm{base}}$ likewise with the base stratification
+\State mask $\gets\{x:\sigma_{\mathrm{pred}},\sigma_{\mathrm{base}}>f\max\}$
+\State \Return correlation, regression slope $\mathrm{cov}(\sigma_{\mathrm{meas}},\sigma_{\mathrm{pred}})/\mathrm{var}(\sigma_{\mathrm{pred}})$ and RMS difference of $\sigma_{\mathrm{meas}}$ against each prediction on the mask
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:rate} is the measurement behind Figure~\ref{fig:handoff}. In the frozen run of EXP-004
+the settling interval is $400$ steps, the measuring interval $200$ steps at $\Delta t=4\times10^{-4}$, the
+demodulation radius $r=1.5\lambda_{1b}$, the gradient cutoff $\rho=55.4$ and the mask fraction $0.35$, which keeps $302{,}080$ points
+(\fp{result-frozen.json}); the cost is the $600$ steps of Algorithm~\ref{alg:ifrk4} plus one transform per stored sample, so the time
+stepping dominates. The stride is $\lfloor n/S\rfloor=6$ steps, which stores $34$ samples and not $30$. The slope here is the regression of the measured on the
+predicted rate, which is why a prediction that is correct in pattern and biased in scale gives correlation
+near one and slope away from one, as the frozen run does. Both predictions use the same mask, so the control
+is compared with the prediction on identical points \ev{D}.
+
+\begin{algorithm}[t]
+\caption{Test of the plane-wave damping law on a localized wave (EXP-007).}\label{alg:loc}
+\begin{algorithmic}[1]
+\Require grid $N=4096$, wavevector $k=(0,\lambda)$, envelope radius $\ell$, exponent $\alpha$, mask level $0.5$
+\State $\mathrm{env}(x)\gets\exp\bigl(1-1/(1-u)\bigr)$ with $u=\min(1,|x-x_{c}|^{2}/\ell^{2})$, and $0$ for $u=1$;\ \ $\mathrm{field}\gets\mathrm{env}\,\sin(k\cdot x)$
+\If{$\lambda+3/\ell>N/3$} \State \Return refuse: past the two-thirds limit \EndIf
+\State $\mathrm{exact}\gets\mathcal F^{-1}[\,|\kappa|^{2\alpha}\mathcal F(\mathrm{field})\,]$;\ \ $\mathrm{plane}\gets|k|^{2\alpha}\,\mathrm{field}$
+\State core $\gets\{x:\mathrm{env}>0.5\max\mathrm{env}\}$
+\State \Return $\max_{\mathrm{core}}|\mathrm{exact}-\mathrm{plane}|\ /\ \max_{\mathrm{core}}|\mathrm{plane}|$ and $\ell\lambda$
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:loc} needs two transforms per configuration and no time stepping. The scan runs twelve
+configurations ($\lambda=64,128,256,512$ with $\ell=0.4,0.8,1.6$), five exponents at $\lambda=256$ and
+$\ell=0.8$, and one control, and the slope of $\log$ error against $\log(\ell\lambda)$ is fitted by least squares
+over the twelve. The core restriction is what keeps the error from being a ratio of two numbers that are both
+zero in the tails, and the refusal in line~2 is the guard against a wave whose envelope reaches the dealiasing
+limit \ev{D}.
+
+\begin{algorithm}[t]
+\caption{Critical exponent of the cascade model by bisection (EXP-008; EXP-003 evaluates the same constraints on a GPU batch).}\label{alg:bisect}
+\begin{algorithmic}[1]
+\Require growth law $\gamma$, frequency exponent $p$, $\nu$, $g$, stages $Q$, tolerance, $60$ iterations
+\State $\mathrm{closes}(\alpha)$: in logarithms, $\log A_{q}=gq$, $\log\lambda_{q}=p\log A_{q}$, $\log\Theta_{q}=\log A_{q+1}-\log\lambda_{q}$; true iff (C1) $p>1$, (C2) $\gamma\log A_{q}>\log\nu+2\alpha\log\lambda_{q}$ for every $q<Q$, at $\phi=\pi/2$, (C3) the total stage time is finite, and (C4) $\log(\nu\lambda_{q}^{2\alpha}R_{q})\le6.9$ at $25$ equally spaced stages
+\State $\mathrm{lo}\gets10^{-8}$, $\mathrm{hi}\gets2$; \If{not closes(lo)} \Return \textsc{nan} \EndIf
+\For{$60$ iterations} \State $\mathrm{mid}\gets(\mathrm{lo}+\mathrm{hi})/2$;\ \ \textbf{if} closes(mid) \textbf{then} lo $\gets$ mid \textbf{else} hi $\gets$ mid \EndFor
+\State \Return lo, to be compared with $\bigl[\gamma/2+\log(1/\nu)/(2g(Q-1))\bigr]/p$
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:bisect} is evaluated in log space because $A_{q}$ and $\lambda_{q}$ overflow in a few dozen
+stages. One evaluation of $\mathrm{closes}$ costs $O(Q)$ operations for the first three constraints and
+$O(Q)$ for each of the $25$ survival checks, so the bisection is $60\times O(25\,Q)$, about $3\times10^{5}$
+elementary operations at $Q=200$ with the standard library alone, which is why EXP-008 records no wall time.
+The reference value in the last line is the finite-horizon correction: a run of $Q$ stages cannot see a
+schedule that stalls after stage $Q-1$ \ev{D}.
+
+\begin{algorithm}[t]
+\caption{Largest certified exponent of the Boussinesq design by exhaustive search (\fp{nslib/ab_force_budget.py}).}\label{alg:design}
+\begin{algorithmic}[1]
+\Require architecture $(\tau,c_{\Pi},e)$, derivative orders $d=0,\dots,d_{\max}$, search span $4000$
+\For{$d=0,\dots,d_{\max}$}
+  \State $Q_{\min}\gets9d+42$ (and $\max(201,120d)$ at the published choices)
+  \For{$Q=Q_{\min},\dots,Q_{\min}+3999$}
+    \State $\pi\gets c_{\Pi}/Q$;\ \ $m(Q)\gets\min$ of the five bounds of~\eqref{eq:rowsA}, \eqref{eq:rowsB} and the level gain $1-e\pi$
+    \State $\alpha(Q)\gets\max(0,m(Q))/(4Q)$
+  \EndFor
+  \State record $\arg\max_{Q}\alpha(Q)$, the binding row and $\alpha$
+\EndFor
+\State \Return the table of $(d,Q,m,\text{binding row},\alpha)$ and its maximum over $d$
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:design} is the computation behind Table~\ref{tab:boussinesq}, Figure~\ref{fig:design} and
+case (i) to (iii) of Theorem~\ref{thm:design}. Each bound is linear in $m$, so the minimum is exact and no
+optimizer is needed; the search is $(d_{\max}+1)\times4000$ evaluations of five closed-form expressions, $84{,}000$ at
+$d_{\max}=20$, and its only freedom is the integer $Q$ that the construction takes integral. The same
+structure, with the thirteen quotients of Table~\ref{tab:euler-quot} added to the constraints, computes the
+Euler bounds of Theorem~\ref{thm:euler} \ev{D}.
+
 \paragraph{Commands.} Run from \fp{problems/analysis-pde/navier-stokes/code}. The rerun harness
 \fp{reproduce_all.py} rebuilds each command line from the \fp{args} block of the stored result
 and compares every numeric leaf of the rerun with the record; the command
@@ -766,6 +1029,97 @@ two-dimensional Boussinesq system (Section~\ref{sec:method}). Table~\ref{tab:gat
 criterion of every run, the ones met and the ones not met, with the numbers and what follows from each;
 the paragraphs after it give the details that do not fit in a row. All numbers are read from the
 result files (\ev{MV}).
+
+\subsection{Experimental design: the question, the prediction and the criterion of each run}\label{sec:expdesign}
+
+Every experiment fixes its hypothesis and its pass criteria before the run, in the \fp{hypothesis.md} of its
+folder or in the docstring of its runner, and the criteria below are quoted from those texts \ev{V}. The runs
+are single deterministic evaluations of the equations or of the model, so no confidence interval is attached
+to a measured value, and the uncertainty a number carries is the resolution stated with it (a relative error
+against a prediction, a step-halving shift, a spread across frequencies) \ev{D}. The rerun harness reproduced
+every numeric leaf of the stored results of EXP-002, EXP-003 and EXP-004 on 2026-09-17, after the refactors of
+the library \ev{V}. The one sampled ensemble, the $10^{6}$ schedules of EXP-003, draws its parameters from a
+generator seeded with $20260912$ in the runner, so the draw is repeatable.
+
+\paragraph{EXP-002, one layer on a stratified background.} The question is whether the amplitude
+system~\eqref{eq:mod}, with the damping term of~\eqref{eq:diss}, predicts the nonlinear equations for a single
+layer. The background is $\theta=-(A/\lambda_{0})\sin\lambda_{0}x_{2}$ with zero vorticity, an exact steady
+state of the unforced system, so any motion is the wave. Three predictions are committed. The local rate is
+$\sqrt{A\cos\lambda_{0}x_{2}}\,\sin\varphi-\nu|k|^{2\alpha}$, checked where $\cos\lambda_{0}x_{2}\ge0.9$, with a
+pass criterion of $2\%$ relative error; where the cosine is negative the wave must oscillate, and the criterion
+is that the stable-band envelope never exceeds twice its initial value (the committed text adds that the
+unstable band grows by orders of magnitude, whereas the horizon of $0.6$ time units gives the factor $3.32$ of
+Table~\ref{tab:gates}, which meets the criterion on its stable-band bound); and the peak rate must not depend on $\lambda$, with a spread of at most $2\%$. Three corrupted
+models, dropping $\zeta_{1}$, dropping the inverse norm and flipping the sign, must fail the rate criterion, and
+a failure of the rate or band prediction would void every statement built on the reduction. The outcomes are in
+Table~\ref{tab:gates}; the first attempt of the corrupted-model control was run at $\varphi=\pi/2$, where
+$\zeta_{1}=1$ and the control cannot discriminate, and was rerun at $\varphi=\pi/4$.
+
+\paragraph{EXP-003, the cascade model against the published threshold.} The question is whether the
+bookkeeping of Section~\ref{sec:method} predicts $\alpha_{c}=1/(4p)$ and the published threshold. Three
+predictions. First, the batched evaluation reproduces $\alpha_{c}(p)$ over $p\in[1.5,12]$ once the finite-horizon
+bias is applied, to within $1\%$, and the measured value decreases toward $1/(4p)$ as $Q$ doubles. Second, growth
+positivity (C2) and survival under the damping of the holds (C4) give the same exponent: the stage at which
+C4 first binds is not earlier than the stage at which C2 does, which would have lowered the threshold had it
+failed, since the first-pass estimate omitted both the time budget and the hold damping and was expected to
+be pushed down by them. Third, inverting the relation at the published threshold gives $p=11/4+\sqrt7$
+exactly, a consistency statement and not a derivation. The ensemble draws $p\in[1.5,12]$, $\alpha\in[0.002,0.302]$,
+$g\in[0.5,2]$ and $\nu\in[10^{-14},10^{-4}]$.
+
+\paragraph{EXP-004, the handoff on a frozen background.} The premise of the cascade is that the growth rate of
+a layer is set by the total low-frequency gradient, including what earlier layers deposited, and not by the
+base stratification. Prediction H1: the local rate of the new layer, measured by demodulation, follows
+$\sigma(x)$ computed from the low-passed total gradient. Control H2: the same prediction from the base
+stratification alone must fit worse; if it fits equally well the experiment says nothing about the handoff.
+The criterion is correlation above $0.9$ with a regression slope within $15\%$ of one, and the control doing
+measurably worse on both, so the slope is part of the committed criterion and its failure is reported as a
+failure. Two runs were designed: a dynamical one, in which the first layer is grown and the second is
+injected while the first is still deforming, and a frozen one, in which the first layer is replaced by a
+vertical sinusoid of amplitude $A_{1}/\lambda_{1b}$ that keeps the background an exact steady state.
+
+\paragraph{EXP-005, steering, holding and the two-layer handoff.} The control that returns a grown layer to
+rest is transcribed from Lemmas~3.7 and~3.8 of~\cite{ab-boussinesq} and run against the equations in the
+co-rotating frame. Gate A: every assertion of Lemma~3.7 holds on a fine grid and on a $200$-point grid of
+pulse amplitudes at $c_{p}=3$, $\Lambda=12$; a failure means the transcription is wrong and nothing
+downstream runs. Gate B, inviscid cycle: the landing $|\Omega(t_{b})|/\max|\Omega|<2\times10^{-2}$ and the
+steering gain within $2\%$ of the reduced model; the endpoint map within $0.02$ at three pulse amplitudes
+including a deliberately mis-set one; the hold drifting by less than $1\%$ in amplitude and below $3\times10^{-2}$
+in vorticity; step halving moving the gain by less than $10^{-3}$; and two controls, the cycle without the pulse
+and without steering, that must fail the landing. Gate C, dissipation: the inviscid pulse still lands, the hold
+decays at the predicted rate $d=\nu\lambda^{2\alpha}$ within $2\%$, and $e^{dt}$ times the viscous run matches
+the inviscid run within $2\%$. Gate D, two layers: the first layer must land below $5\times10^{-2}$ at a deposit
+comparable to the background, and the rate of the second layer must have correlation above $0.9$ with the total
+gradient (D1) while the base-only control is lower by more than $0.3$ with a larger RMS difference (D2); the
+slope is reported and not gated, since EXP-004 had already shown a systematic in it. A further gate, B5, added after
+the first run, rejects a run whose neighbouring modes take over: at the landing time the largest horizontal
+neighbour must stay below $10^{-2}$ of the wave, and at the end the field maximum below $1.05$ of the
+background maximum.
+
+\paragraph{EXP-001 and EXP-006, the formal certificate.} EXP-001 asks whether the repository of the two
+announcements builds and whether the two comparator challenges accept the solution modules against the
+reference statements; its hypothesis states the asymmetry that a green build is weak positive evidence and a red build is first of all evidence about
+the machine used. EXP-006 asks the stronger question whether the kernel, and not only the elaborator, accepts
+the development. Its gates: E1, every module replays with exit status zero; E2, the number of modules replayed
+equals the number of object files, because a checker run on nothing also exits zero; E3, a negative control in
+which a damaged object file must make the checker fail, stating that this does not show the
+checker would detect an unsound proof; E4, the four headline theorems are inside the replayed set. The first
+attempt, a sweep of all $2{,}659$ modules, was stopped after $80$ minutes with $144$ seconds of processor time and
+$11.6$~GB resident and no module finished, because each module task loads its own import closure and the work is
+input-bound; it was replaced by replays of the two root modules from an empty environment, which are processor
+bound and make the count question moot \ev{V}.
+
+\paragraph{EXP-007 and EXP-008, localization and the growth law.} EXP-007 asks whether the damping law
+survives the spatial localization the constructions use. H1: the error is first order in the bandwidth ratio,
+a slope of $-1$ within $0.1$ in $\log(\ell\lambda)$. H2: the coefficient stays of order one over
+$\alpha\in[0.05,1]$ (the gate accepts values between $0.01$ and $10$). H3, the control: with an envelope as wide
+as the wave the error must be of order one, here above $0.1$, since a small error there would mean the
+measurement does not feel localization at all. H4: at the construction's own separations the error is
+$\lambda_{q-1}^{3-Q_{q}}$. EXP-008 asks whether the critical exponent follows $\gamma/(2p)$ for both growth
+laws. The prediction of Theorem~\ref{thm:class} was committed before the run, and the
+gates are agreement within a tolerance of $10^{-5}$ for the pendulum law, the same for the stretching law, and an
+exact ratio of two between them at equal $p$.
+
+\subsection{Outcomes against the criteria}
 
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -828,6 +1182,30 @@ $\lambda$ holds to $2.7\times10^{-4}$ across an eightfold range; and the damping
 tracks the measured rate to $2.6\times10^{-4}$ absolute across $\alpha\in\{1/4,1/2,1\}$ and
 $\nu\in\{10^{-5},10^{-4}\}$ \ev{MV}.
 
+\paragraph{The cascade model and its finite horizon.} The cascade model reports a critical exponent found by
+bisection on a run of $Q$ stages, and a supercritical schedule does not stall at once: its growth rate stays
+positive until stage $q^{*}=\log(1/\nu)/\bigl(g(2\alpha p-\tfrac12)\bigr)$, so a run of $Q$ stages reports a
+threshold too high by the factor $1+2\log(1/\nu)/\bigl(g(Q-1)\bigr)$ \ev{D}. Figure~\ref{fig:horizon} shows
+the consequence in the results of EXP-003: the largest gap between the measured critical exponent and the closed
+form $1/(4p)$, over $p\in[1.5,12]$, is $0.009618$, $0.004803$ and $0.002400$ at $400$, $800$ and $1600$ stages,
+a halving at each doubling (ratios $2.00$ and $2.00$), which is the $1/Q$ law and the evidence that the excess
+is a horizon artefact and not a different exponent. Against the horizon-corrected prediction the largest
+relative error is $2.59\times10^{-6}$, and the million-schedule ensemble shows no violation of the bound, the
+tightest closing schedule lying $2.7\times10^{-6}$ below it. The bound was first written with $Q$ in place of
+$Q-1$, which left $47$ apparent violations and a residual of $2.56\times10^{-4}$; the correction, which is the
+last stage inspected, removed them. The figure does not show that the model's exponent is the exponent of the
+partial differential equations: it measures the bookkeeping and nothing else \ev{MV}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.58\textwidth]{figures/fig-horizon.pdf}
+\caption{Largest gap between the critical exponent measured by bisection on the cascade model and the closed
+form $1/(4p)$, over $p\in[1.5,12]$, against the number of stages $Q$ inspected by each run (circles), with a
+line proportional to $1/Q$ through the first point. The gap halves at each doubling. Source:
+\fp{EXP-003-threshold-sweep/result.json}.}
+\label{fig:horizon}
+\end{figure}
+
 \paragraph{The cascade premise.} On a two-scale background that is an exact steady state, with drift
 $1.45\times10^{-15}$, the local growth rate of a fine wave follows the total gradient at correlation
 $0.99945$ and the base stratification alone at $0.212$: a layer responds to the accumulated
@@ -854,6 +1232,80 @@ steering, a layer grown, steered to rest and then used as the background of the 
 correlation $0.808$ with the total gradient at best, against the $0.9$ the criterion required, and
 $0.509$ at the largest separation tried; it is not met, and the control discriminates in three of the
 five runs \ev{MV}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/fig-cycle.pdf}
+\caption{Landing of the vorticity amplitude, error of the steering gain against the reduced model, and drift of
+the amplitude over the holding interval, on the flattened and the sine background at the repaired schedule and
+on the sine background at the parameters committed in the hypothesis (log scale; bars beyond the dotted
+acceptance threshold fail the gate). Source: the \fp{result-B-*.json} files of \fp{EXP-005-steered-cycle/}:
+flattened, sine and the committed-parameter run marked refuted.}
+\label{fig:cycle}
+\end{figure}
+
+Figure~\ref{fig:cycle} reads the steered cycle of EXP-005 part B in three quantities against the thresholds
+fixed before the run ($2\times10^{-2}$ for the landing, $2\times10^{-2}$ for the gain, $10^{-2}$ for the hold
+drift). On the flattened background at the repaired schedule the three values are $3.67\times10^{-4}$,
+$3.06\times10^{-6}$ and $3.59\times10^{-3}$, all below their thresholds, and the other four gates pass as well
+(endpoint gap $4.7\times10^{-4}$, step-halving shift $8.7\times10^{-4}$). On the sine background at the same
+schedule the landing $1.57\times10^{-2}$ and the gain $1.80\times10^{-2}$ pass and the hold drift $0.147$ does
+not, together with the endpoint gap $0.196$ and the step-halving shift $1.0\times10^{-3}$, which is $4$ of $7$
+gates. At the parameters committed in the hypothesis the landing is $0.140$, the gain error $12.4$ and the hold
+drift $726$ \ev{MV}. The figure separates two sources of failure that look alike in a table: the curvature of
+the background over the support of the layer, which multiplies the landing, the gain error and the drift by
+about $43$, $5900$ and $41$ on the sine background and is absent on the flattened one, and the instability of the
+background itself, which multiplies them by a further $9$, $690$ and $4900$ and is the subject of
+Figure~\ref{fig:rt}. It does not separate the steering law from the solver: the agreement with the reduced
+model at the repaired schedule, to $3.06\times10^{-6}$ in the gain, is the evidence that both are right
+together.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/fig-rt.pdf}
+\caption{The refuted run at the committed parameters, $k=(4,31)$ on a $256^{2}$ diagnostic grid. Left: amplitude
+of the steered layer and of the largest horizontal neighbour mode against time (log scale), with the
+exponential at the predicted neighbour rate $0.587$ drawn from the end of steering; dotted vertical lines mark the
+end of growth and the end of steering. Right: maximum of $|\theta|$ against time, with the background value $4.0$.
+Source: \fp{EXP-005-steered-cycle/result-diagnosis-hold.json}.}
+\label{fig:rt}
+\end{figure}
+
+Figure~\ref{fig:rt} is the diagnostic that attributes the refutation of the run at the first chosen parameters
+to the physics and not to the instrument. The layer grows at $\sqrt A\sin s=0.256$ ($A=4$, $\sin s=0.128$), so
+its amplitude rises by about four e-foldings by the middle of the steering interval, from $1.0\times10^{-5}$ to
+$5.8\times10^{-4}$ at $t=22$; the neighbouring horizontal modes, where
+the layer puts nothing, are recorded as zero until the steering interval and then reach $0.086$ at their peak
+and $0.033$ at the end, with a predicted rate $0.587$ for the worst of them, $2.3$ times the layer's own rate.
+The field maximum leaves its background value $4.0$ at the end of steering, peaks at $13.6$ and ends at $10.0$.
+The dashed exponential is the predicted neighbour rate and is an upper bound, not a fit: the neighbours
+saturate near $0.03$ to $0.09$ because the unstable background has then become nonlinear. The figure
+does not show a growth rate of $\sqrt A=2.0$ for the most favourable modes, which sit at other wavevectors than
+the ones recorded; that rate is the argument of Section~\ref{sec:mechanism} and is not measured here \ev{MV}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig-handoff.pdf}
+\caption{Correlation of the measured local rate of the new layer with the prediction from the total
+low-frequency gradient (circles) and from the base stratification alone (squares), left, and regression slope of
+the measured on the predicted rate, right, for the frozen and the dynamical run of EXP-004 and the five steered
+runs of EXP-005 part D. Dotted line: the correlation criterion $0.9$; grey band: the slope criterion $1\pm0.15$.
+Source: the \fp{result-*.json} files of \fp{EXP-004-multilayer-handoff/} and \fp{EXP-005-steered-cycle/}.}
+\label{fig:handoff}
+\end{figure}
+
+Figure~\ref{fig:handoff} puts the seven handoff measurements on one scale. The frozen background of EXP-004
+gives correlation $0.99945$ against $0.212$ for the base alone, and the dynamical run without steering gives
+$0.274$ against $0.222$, where the control does not discriminate. The five steered runs of EXP-005 give $0.676$,
+$0.755$ and $0.327$ at $\lambda_{2}=192$ for demodulation windows of $1.5$, $3$ and $4.5$ times $\lambda_{1}$,
+$0.808$ at $\lambda_{2}=360$ and $0.509$ at $\lambda_{2}=512$; the base-only control is $0.360$, $0.335$,
+$0.667$, $0.392$ and $0.314$. No steered run reaches the criterion $0.9$. The slope panel shows the systematic
+of the estimator: the slopes are $1.358$ in the frozen run, $1.659$ in the dynamical run and between $1.20$ and $1.31$ in four steered runs, all
+above the band, and $0.268$ in the run at window $4.5$, where the demodulation has lost the structure it is
+measuring. The correlation panel shows an interior optimum in the window, at $3\lambda_{1}$, and in the
+separation, at $\lambda_{2}=360$, which is the evidence for attributing the shortfall to the measurement; it
+does not show the handoff succeeding at the correlation the criterion asked for, and the base-only control
+beats the total-gradient prediction in the window-$4.5$ run \ev{MV}.
 
 \paragraph{Localization.} Since the constructions localize each layer, \eqref{eq:diss} is applied to
 a band rather than to a single frequency. For an envelope of radius $\ell$ on a wave of frequency
@@ -925,11 +1377,11 @@ memory \ev{MV}. A mistyped target and a missing project environment fail as they
 
 \begin{sloppy}
 The reference statement is adapted from an entry of an independently maintained collection of
-formalized conjectures (Google DeepMind), \fp{FormalConjectures/Millenium/NavierStokes.lean}, so the
+formalized conjectures (Google DeepMind)~\cite{formalconj}, \fp{FormalConjectures/Millenium/NavierStokes.lean}, so the
 definitions that determine whether the formalized statement is the intended one predate the claim
 \ev{V}. None of this speaks to the mathematics outside the formalization, and kernel replay
 detects environment manipulation rather than serving as an external verifier: the checker's own
-documentation says so. The external re-checkers named by the certificate (\fp{Comparator} with
+documentation says so. The external re-checkers named by the certificate (\fp{Comparator}~\cite{comparator} with
 \fp{lean4export} and \fp{nanoda_bin}) was not exercised \ev{U}.
 \end{sloppy}
 
@@ -940,7 +1392,7 @@ exhibiting places where the text states a stronger bound than the cited Lean dec
 not claim the written argument is false \ev{V}. Their finding is consistent with ours: a formal proof of a
 faithful statement establishes that statement, while the correctness of the written argument, and of
 any result that cites it rather than the formal development, remains a separate question. The
-Alpog\'e-Buckmaster formalization (\fp{tristanbuckmaster/fluid_lean}) was not examined \ev{U}.
+Alp\"oge-Buckmaster formalization (\fp{tristanbuckmaster/fluid_lean}) was not examined \ev{U}.
 
 \section{Scope}\label{sec:scope}
 
@@ -950,7 +1402,7 @@ term~\eqref{eq:diss}, under hypotheses (A0) to (A5). The bounds of Section~\ref{
 can certify: they track each design's corrections through the exponents of its published estimates,
 but not constants or logarithmic factors, and they assume the most favourable insertion angle. Neither
 bound affects the published inviscid results, which carry no dissipation. The mechanism is due to C\'ordoba
-and Mart\'inez-Zoroa~\cite{clsmz,cmz}, extended to smooth forcing by Alpog\'e and
+and Mart\'inez-Zoroa~\cite{clsmz,cmz}, extended to smooth forcing by Alp\"oge and
 Buckmaster~\cite{ab-boussinesq,ab-euler,ab-ipm}; nothing in this paper
 establishes blowup for any equation or improves any published threshold.
 
@@ -1095,6 +1547,7 @@ $(A-B\mathsf d)v-n\beta\le0$, and the rows with $n=0$ force $\mathsf d\ge2$. \ev
 
 \sloppy
 \emergencystretch=8em
+\raggedright
 \begin{thebibliography}{9}
 \bibitem{fefferman} C. L. Fefferman, \emph{Existence and smoothness of the Navier-Stokes equation},
 Clay Mathematics Institute Millennium Prize problem description,
@@ -1105,28 +1558,74 @@ Lean verification of AI autoformalisation does not guarantee correct natural lan
 \bibitem{cmz} D. C\'ordoba, L. Mart\'inez-Zoroa and F. Zheng, \emph{Finite time blow-up for the
 hypodissipative Navier Stokes equations with a force in $L^{1}_{t}C^{1,\epsilon}_{x}$ and
 $L^{\infty}_{t}L^{2}_{x}$}, Arch. Ration. Mech. Anal. \textbf{250} (2026), article 38,
-\href{https://doi.org/10.1007/s00205-026-02198-0}{doi:10.1007/s00205-026-02198-0};
+\href{https://doi.org/10.1007/s00205-026-02198-0}{\fp{doi:10.1007/s00205-026-02198-0}};
 \href{https://arxiv.org/abs/2407.06776}{arXiv:2407.06776}.
 \bibitem{clsmz} D. C\'ordoba, A. La\'in-Sanclemente and L. Mart\'inez-Zoroa, \emph{Finite-time
 singularity via multi-layer degenerate pendula for the 2D Boussinesq equation with uniform
-$C^{1,\sqrt{4/3}-1-\epsilon}$ and $L^{2}$ force}, Adv. Math. \textbf{480}, Part A (2025), article 110480,
-\href{https://doi.org/10.1016/j.aim.2025.110480}{doi:10.1016/j.aim.2025.110480};
+$C^{1,\sqrt{4/3}-1-\epsilon}$ and $L^{2}$ force}, Adv. Math. \textbf{480} (2025), article 110480,
+\href{https://doi.org/10.1016/j.aim.2025.110480}{\fp{doi:10.1016/j.aim.2025.110480}};
 \href{https://arxiv.org/abs/2505.20988}{arXiv:2505.20988}.
-\bibitem{ab-boussinesq} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the Boussinesq equations with
+\bibitem{ab-boussinesq} L. Alp\"oge and T. Buckmaster, \emph{Blowup for the Boussinesq equations with
 smooth forcing}, preprint dated 2026-09-07, no arXiv identifier or DOI,
 \url{https://cims.nyu.edu/~tristanb/boussinesq.pdf}.
-\bibitem{ab-euler} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the Euler equations with
+\bibitem{ab-euler} L. Alp\"oge and T. Buckmaster, \emph{Blowup for the Euler equations with
 smooth forcing}, preprint dated 2026-09-07, no arXiv identifier or DOI,
 \url{https://cims.nyu.edu/~tristanb/euler.pdf}.
-\bibitem{ab-ipm} L. Alpog\'e, T. Buckmaster and M. P. Coiculescu, \emph{Extending the
-C\'ordoba-Mart\'inez-Zoroa IPM blow-up to uniformly space-time smooth forcing}, preprint dated 2026-09-07,
-no arXiv identifier or DOI in the archived copy,
-\url{https://cims.nyu.edu/~tristanb/ipm.pdf}.
+\bibitem{ab-ipm} L. Alp\"oge, T. Buckmaster and M. P. Coiculescu, \emph{Extending the
+C\'ordoba-Mart\'inez-Zoroa IPM blow-up to uniformly space-time smooth forcing},
+\href{https://arxiv.org/abs/2609.16470}{arXiv:2609.16470v1} (listing dated 2026-09-15; the archived author copy,
+\url{https://cims.nyu.edu/~tristanb/ipm.pdf}, is dated 2026-09-07 and has the same title, authors and
+$57$ pages but a different file hash).
 \bibitem{openai-ns} OpenAI, \emph{Finite time blowup for Navier-Stokes}, manuscript dated 2026-09-08; Lean certificates
 \url{https://github.com/openai/NavierStokesAndEuler}; manuscript PDF
 \url{https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf}.
 \bibitem{openai-euler} OpenAI, \emph{Finite time blowup for the Euler equation}, manuscript dated 2026-09-08,
 \url{https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf}.
+\bibitem{cmzi} D. C\'ordoba and L. Mart\'inez-Zoroa, \emph{Finite time singularities of smooth solutions for the
+2D incompressible porous media (IPM) equation with a smooth source},
+\href{https://arxiv.org/abs/2410.22920}{arXiv:2410.22920v3}, 2025.
+\bibitem{cdlm} D. C\'ordoba, \'O. Dom\'inguez, J. Lucas-Manch\'on and L. Mart\'inez-Zoroa, \emph{Blow-up at finite
+time for the generalized SQG equations in the Sobolev well-posedness regime},
+\href{https://arxiv.org/abs/2608.17192}{arXiv:2608.17192v1}, 2026.
+\bibitem{abstat} T. Buckmaster, public statement on the release of three smooth-forcing blowup results, priority
+and credit, 2026-09-07, \url{https://cims.nyu.edu/~tristanb/statement.pdf}.
+\bibitem{tao} T. Tao, \emph{Finite time blowup for an averaged three-dimensional Navier-Stokes equation},
+\href{https://arxiv.org/abs/1402.0290}{arXiv:1402.0290v3}, 2015.
+\bibitem{abc} D. Albritton, E. Bru\'e and M. Colombo, \emph{Non-uniqueness of Leray solutions of the forced
+Navier-Stokes equations}, \href{https://arxiv.org/abs/2112.03116}{arXiv:2112.03116}, 2021.
+\bibitem{hwy} T. Y. Hou, Y. Wang and C. Yang, \emph{Nonuniqueness of Leray-Hopf solutions to the unforced
+incompressible 3D Navier-Stokes equation}, \href{https://arxiv.org/abs/2509.25116}{arXiv:2509.25116v2}, 2026.
+\bibitem{elgindi} T. M. Elgindi, \emph{Finite-time singularity formation for $C^{1,\alpha}$ solutions to the
+incompressible Euler equations on $\mathbb R^{3}$}, \href{https://arxiv.org/abs/1904.04795}{arXiv:1904.04795v2}, 2020.
+\bibitem{chenhou} J. Chen and T. Y. Hou, \emph{Stable nearly self-similar blowup of the 2D Boussinesq and 3D Euler
+equations with smooth data I: Analysis}, \href{https://arxiv.org/abs/2210.07191}{arXiv:2210.07191v4}, 2026.
+\bibitem{dm} Y. Wang, M. Bennani, J. Martens et al., \emph{Discovery of unstable singularities},
+\href{https://arxiv.org/abs/2509.14185}{arXiv:2509.14185v1}, 2025.
+\bibitem{leray} J. Leray, \emph{Sur le mouvement d'un liquide visqueux emplissant l'espace}, Acta Math.
+\textbf{63} (1934), 193--248, \href{https://doi.org/10.1007/BF02547354}{\fp{doi:10.1007/BF02547354}}.
+\bibitem{ckn} L. Caffarelli, R. Kohn and L. Nirenberg, \emph{Partial regularity of suitable weak solutions of the
+Navier-Stokes equations}, Comm. Pure Appl. Math. \textbf{35} (1982), 771--831,
+\href{https://doi.org/10.1002/cpa.3160350604}{\fp{doi:10.1002/cpa.3160350604}}.
+\bibitem{bv} T. Buckmaster and V. Vicol, \emph{Nonuniqueness of weak solutions to the Navier-Stokes equation},
+Ann. of Math. \textbf{189} (2019), 101--144,
+\href{https://doi.org/10.4007/annals.2019.189.1.3}{\fp{doi:10.4007/annals.2019.189.1.3}}.
+\bibitem{ess} L. Escauriaza, G. A. Seregin and V. \v{S}ver\'ak, \emph{$L_{3,\infty}$-solutions of the Navier-Stokes
+equations and backward uniqueness}, Russian Math. Surveys \textbf{58} (2003), 211--250,
+\href{https://doi.org/10.1070/RM2003v058n02ABEH000609}{\fp{doi:10.1070/RM2003v058n02ABEH000609}}.
+\bibitem{lions} J.-L. Lions, \emph{Quelques m\'ethodes de r\'esolution des probl\`emes aux limites non
+lin\'eaires}, Dunod, Gauthier-Villars, Paris, 1969.
+\bibitem{kp} N. H. Katz and N. Pavlovi\'c, \emph{Finite time blow-up for a dyadic model of the Euler equations},
+Trans. Amer. Math. Soc. \textbf{357} (2005), 695--708,
+\href{https://doi.org/10.1090/s0002-9947-04-03532-9}{\fp{doi:10.1090/s0002-9947-04-03532-9}}.
+\bibitem{cheskidov} A. Cheskidov, \emph{Blow-up in finite time for the dyadic model of the Navier-Stokes equations},
+Trans. Amer. Math. Soc. \textbf{360} (2008), 5101--5120,
+\href{https://doi.org/10.1090/s0002-9947-08-04494-2}{\fp{doi:10.1090/s0002-9947-08-04494-2}}.
+\bibitem{bkm} J. T. Beale, T. Kato and A. Majda, \emph{Remarks on the breakdown of smooth solutions for the 3-D
+Euler equations}, Comm. Math. Phys. \textbf{94} (1984), 61--66,
+\href{https://doi.org/10.1007/BF01212349}{\fp{doi:10.1007/BF01212349}}.
+\bibitem{formalconj} Google DeepMind, Formal Conjectures, entry \fp{FormalConjectures/Millenium/NavierStokes.lean},
+\url{https://github.com/google-deepmind/formal-conjectures}.
+\bibitem{comparator} Lean FRO, Comparator, \url{https://github.com/leanprover/comparator}.
 \end{thebibliography}
 
 \end{document}
