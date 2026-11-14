@@ -16,7 +16,9 @@ Date: 2026-11-14. Hypothesis frozen at 15a64e33 before the construction ran.
 - At n = 4 alpha (5 orders) the shape does not exist: no clique of order 3 is left to merge, as predicted.
 - At alpha = 5 the first quotient tried, a circular ladder on four parts, is not 3-edge-connected (it has a 2-edge
   cut); its graphs keep independence number 5 but are only 2-connected (checked on 20 random attachments per
-  order), and the second candidate, K4, passed.
+  order; recorded on 2026-11-14 by `probe_ladder.py` in `artifacts/ladder.jsonl` and `artifacts/ladder-output.txt`:
+  80 graphs, all with c edges and independence number 5, all with connectivity 2), and the second candidate, K4,
+  passed.
 - Every one of the 32 enumerated extremal graphs with s = 1 (EXP-011) is an instance of the construction:
   alpha - 2 cliques and X6 or X7 on a cubic quotient, which must be 3-edge-connected because the graph is
   3-connected.

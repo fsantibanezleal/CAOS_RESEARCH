@@ -17,14 +17,18 @@ Date: 2026-11-14. Hypothesis frozen at 78cc42fb before any computation.
 
 - Gate F, the filter2 build line: the hypothesis said `gcc -O3`, but the recorded build line (EXP-006 verdict) is
   `gcc -O2`, and `build.sh` uses the recorded one. The `geng_a<A>` binaries match only with nauty's makefile CFLAGS
-  (`-O4 -mpopcnt -march=native`). The line in `prune_alpha.c`'s header omits `-march=native` and gives other bytes.
+  (`-O4 -mpopcnt -march=native`). The line in `prune_alpha.c`'s header uses `-O3` without `-mpopcnt` and `-march=native`, and gives other
+  bytes.
   Both rebuilds are recorded.
 - Gate B, the slice sizing: the first sizing by graph count made one slice the whole run of an expensive edge count,
-  and the run was stopped. The resumed run sized slices by recorded CPU time. 12 of the 33 slices came out empty,
-  because a slice is a fixed part of the generation tree. The nonempty slices cover:
-  - k = 6 at orders 19 to 22;
-  - k = 7 at (22,3,7), E = 82;
-  - alpha = 7 at (22,7,3) and (23,7,3).
+  and the run was stopped. The resumed run sized slices by recorded CPU time. 19 of the 33 slices came out empty
+  (corrected on 2026-11-14 from "12", after the independent review), because a slice is a fixed part of the generation
+  tree. The 14 nonempty slices cover:
+  - k = 6 at (19,3,6) E = 59, 60, 61; (20,3,6) E = 65, 66; (21,3,6) E = 71; (22,3,6) E = 78, 79, 80;
+  - k = 7 only at (22,3,7), E = 82 = c + 1, which is not a production edge count;
+  - alpha = 7 at (22,7,3) E = 34, 35 and (23,7,3) E = 37, 39.
+  No slice at order 24 and no production edge count with k = 7 is covered; there the filter rests on its proofs and
+  on Gate A (constructed graphs up to order 24, k' <= 9).
 - Gate D, first run: parallel parts written into one pipe interleaved lines, giving different hashes for equal
   counts. That run is kept as `artifacts/gate-d-first-run-harness-defect.json`. With one file per part the outputs
   agree byte for byte. A separate probe confirmed this on (17,5,3).

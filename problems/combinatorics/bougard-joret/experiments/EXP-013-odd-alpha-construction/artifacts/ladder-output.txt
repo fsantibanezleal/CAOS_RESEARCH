@@ -1,0 +1,6 @@
+quotient: circular ladder on 4 parts, edge connectivity 2
+n=16 trials=20 edges=c 20 independence=5 20 kappa {2: 20}
+n=17 trials=20 edges=c 20 independence=5 20 kappa {2: 20}
+n=18 trials=20 edges=c 20 independence=5 20 kappa {2: 20}
+n=19 trials=20 edges=c 20 independence=5 20 kappa {2: 20}
+total 80 graphs, kappa >= 3 in 0
