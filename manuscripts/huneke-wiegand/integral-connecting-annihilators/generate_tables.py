@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate the artifact-derived tables of main.tex from the stored computation artifacts.
+"""Regenerate the artifact-derived tables and plots of main.tex from the stored computation artifacts.
 
 Every number in the generated tables is read from a JSON artifact (or the SHA-256 and the size of
 a stored file) under problems/commutative-algebra/huneke-wiegand/experiments/. Nothing is typed.
@@ -246,12 +246,105 @@ rank of the span of the triangle classes modulo two out of the number of triangl
 \end{{table}}"""
 
 
+def plot_figure(axis_opts: str, body: str, caption: str, label: str) -> str:
+    tpl = (
+        "\\begin{figure}[t]\n\\centering\n\\begin{tikzpicture}\n\\begin{axis}[width=0.86\\textwidth, height=5.4cm, grid=major, "
+        "tick label style={font=\\small}, label style={font=\\small}, legend style={font=\\scriptsize}, @@OPTS@@]\n@@BODY@@"
+        "\\end{axis}\n\\end{tikzpicture}\n\\caption{@@CAP@@}\n\\label{@@LABEL@@}\n\\end{figure}"
+    )
+    return tpl.replace("@@OPTS@@", axis_opts).replace("@@BODY@@", body).replace("@@CAP@@", caption).replace("@@LABEL@@", label)
+
+
+def coords(points) -> str:
+    return " ".join(f"({x},{y})" for x, y in points)
+
+
+def fig_supportlaw() -> str:
+    rows = load(E060, "results.json")["rows"]
+    pts = [(row["p"], row["source_support"]) for row in rows]
+    assert all(y == 32 * x - 146 for x, y in pts)
+    body = ("\\addplot[only marks, mark=*, mark size=1.8pt] coordinates {" + coords(pts) + "};\n"
+            "\\addplot[domain=8:100, thick, no marks] {32*x-146};\n\\legend{stored support, $32p-146$}\n")
+    cap = ("Number of terms of the stored source $V_p$ at the 18 checked parameters of the annihilator computation, with the line $32p-146$ "
+           "that passes through every stored point.")
+    return plot_figure("xlabel={$p$}, ylabel={terms of $V_p$}, legend pos=north west", body, cap, "fig:supportlaw")
+
+
+def fig_sectorsize() -> str:
+    audit = load(E061, "audit-results.json")
+    src, drows = [], []
+    for row in audit["rows"]:
+        src.append((row["p"], sum(s["source_count"] for s in row["sectors"])))
+        drows.append((row["p"], sum(s["D_row_count"] for s in row["sectors"])))
+    body = ("\\addplot[only marks, mark=*, mark size=1.8pt] coordinates {" + coords(src) + "};\n"
+            "\\addplot[only marks, mark=square*, mark size=1.8pt] coordinates {" + coords(drows) + "};\n"
+            "\\legend{original S sources, original D rows}\n")
+    cap = ("Number of original S sources and of original D rows summed over the reachable high sectors of the twelve-row functional at "
+           "$p=8,\\ldots,12$, read from the independent full-sector recomputation, on a logarithmic vertical scale.")
+    return plot_figure("xlabel={$p$}, ylabel={count}, ymode=log, legend pos=south east, xtick={8,9,10,11,12}", body, cap, "fig:sectorsize")
+
+
+def fig_trianglecount() -> str:
+    checks = load(E062, "results.json")["count_checks"]
+    assert all(c["formula_matches"] for c in checks) and len(checks) == 93
+    pts = [(c["p"], c["count"]) for c in checks]
+    assert all(c["count"] == ((c["p"] - 2) ** 2 + 3) // 12 for c in checks)
+    body = ("\\addplot[only marks, mark=*, mark size=1.4pt] coordinates {" + coords(pts) + "};\n"
+            "\\addplot[domain=8:100, samples=93, thick, no marks] {floor(((x-2)^2+3)/12)};\n"
+            "\\legend{enumerated triangles, $\\lfloor((p-2)^2+3)/12\\rfloor$}\n")
+    cap = ("Number of strictly increasing nonnegative triples of sum $p-2$ enumerated at the 93 parameters $p=8,\\ldots,100$ of the "
+           "count identities, with the closed form of the quadratic count drawn through them.")
+    return plot_figure("xlabel={$p$}, ylabel={number of triangles}, legend pos=north west", body, cap, "fig:trianglecount")
+
+
+def fig_bockstein() -> str:
+    r064 = load(E064, "results.json")["rows"]
+    r063 = load(E063, "results.json")["rows"]
+    series = {}
+    for row in r064:
+        for c in row["certificates"]:
+            series.setdefault(c["mask"], []).append((row["p"], c["first_bockstein_rank"]))
+    tri = [(row["p"], row["triangle_count"]) for row in r063]
+    marks = {56: "triangle*", 58: "square*", 59: "diamond*", 62: "o"}
+    body = "\\addplot[thick, dashed, no marks] coordinates {" + coords(tri) + "};\n"
+    for mask in sorted(series):
+        body += f"\\addplot[only marks, mark={marks[mask]}, mark size=2.4pt] coordinates {{" + coords(series[mask]) + "};\n"
+    body += "\\legend{triangles, mask 56, mask 58, mask 59, mask 62}\n"
+    cap = ("First integral Bockstein rank of the four carrier masks at $p=8,\\ldots,11$, with the number of triangle rows as a dashed line; "
+           "the rank of mask $62$ coincides with that of mask $59$ and with the triangle count.")
+    return plot_figure("xlabel={$p$}, ylabel={rank}, legend pos=north west, xtick={8,9,10,11}", body, cap, "fig:bockstein")
+
+
+def fig_facecount() -> str:
+    sweep = load(E066, "results.json")["sweep"]
+    pts0, pts5 = [], []
+    for row in sweep:
+        for e in row["endpoints"]:
+            c = e["counts"]
+            assert c["R0"] == c["R2"] == row["p"] - 3 and c["R5"] == 1
+        c = row["endpoints"][0]["counts"]
+        pts0.append((row["p"], c["R0"]))
+        pts5.append((row["p"], c["R5"]))
+    assert len(sweep) == 293
+    body = ("\\addplot[only marks, mark=*, mark size=0.9pt] coordinates {" + coords(pts0) + "};\n"
+            "\\addplot[only marks, mark=square*, mark size=0.9pt] coordinates {" + coords(pts5) + "};\n"
+            "\\legend{rows of type $R_0$ and of type $R_2$, rows of type $R_5$}\n")
+    cap = ("Classified faces of the endpoint source $s_{p,1}$ at the 293 parameters $p=8,\\ldots,300$ of the sweep: rows of types $R_0$ "
+           "and $R_2$ (equal in number, $p-3$) and the single row of type $R_5$.")
+    return plot_figure("xlabel={$p$}, ylabel={faces}, legend pos=north west", body, cap, "fig:facecount")
+
+
 TABLES = {
     "tab:sectors": tab_sectors,
     "tab:runs": tab_runs,
     "tab:cost": tab_cost,
     "tab:hashes": tab_hashes,
     "tab:carrier": tab_carrier,
+    "fig:supportlaw": fig_supportlaw,
+    "fig:sectorsize": fig_sectorsize,
+    "fig:trianglecount": fig_trianglecount,
+    "fig:bockstein": fig_bockstein,
+    "fig:facecount": fig_facecount,
 }
 
 

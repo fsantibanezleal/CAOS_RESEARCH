@@ -8,6 +8,8 @@
 \usepackage{algpseudocode}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
 \usepackage{microtype}
 \microtypesetup{expansion=false}
 \usepackage{xcolor}
@@ -351,7 +353,7 @@ matrices $M_p$, namely cancelling unit entries until a torsion core remains and
 reading its structure uniformly in $p$. Each gives something, and none settles
 the matching.
 
-\paragraph{Algebraic Morse theory.} Skoldberg \cite{Skoldberg} and Chen, Liu and
+\paragraph{Algebraic Morse theory.} Sk\"oldberg \cite{Skoldberg} and Chen, Liu and
 Zhou \cite{ChenLiuZhou} justify unit cancellation and perturbative reconstruction
 of chain maps. The finite carrier comparison of Section~\ref{sec:carrier} relies on
 exactly this elementary step: a unit pivot gives an integral equivalence
@@ -1721,6 +1723,23 @@ recomputation.}
 \end{table}
 % END GENERATED tab:sectors
 
+Figure~\ref{fig:sectorsize} shows the growth of the number of sources and of $D$ rows with $p$, on a logarithmic scale; the sources rise from 1,690 at $p=8$ to 8,848 at $p=12$ and the $D$ rows from 5,663 to 45,270, which is why the certificates use bitset rows and never a dense matrix.
+
+% BEGIN GENERATED fig:sectorsize
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={count}, ymode=log, legend pos=south east, xtick={8,9,10,11,12}]
+\addplot[only marks, mark=*, mark size=1.8pt] coordinates {(8,1690) (9,2738) (10,4210) (11,6209) (12,8848)};
+\addplot[only marks, mark=square*, mark size=1.8pt] coordinates {(8,5663) (9,10404) (10,17861) (11,29063) (12,45270)};
+\legend{original S sources, original D rows}
+\end{axis}
+\end{tikzpicture}
+\caption{Number of original S sources and of original D rows summed over the reachable high sectors of the twelve-row functional at $p=8,\ldots,12$, read from the independent full-sector recomputation, on a logarithmic vertical scale.}
+\label{fig:sectorsize}
+\end{figure}
+% END GENERATED fig:sectorsize
+
 \subsection{Neighbourhood expansion}
 
 The local obstruction of Section~\ref{sec:validation} uses the inverse
@@ -1943,6 +1962,23 @@ computation. No old labelled HNF source, including the one at $p=11$, is
 an input, and the check of the new formula at $p=11$ is not an untouched
 held-out test.
 
+Figure~\ref{fig:supportlaw} plots the stored support of $V_p$ against $p$: the 18 points lie on the line $32p-146$, which the generating program asserts at every stored parameter. The line is read from the data and carries no proof.
+
+% BEGIN GENERATED fig:supportlaw
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={terms of $V_p$}, legend pos=north west]
+\addplot[only marks, mark=*, mark size=1.8pt] coordinates {(8,110) (9,142) (10,174) (11,206) (12,238) (13,270) (14,302) (15,334) (16,366) (17,398) (18,430) (19,462) (20,494) (25,654) (32,878) (50,1454) (64,1902) (100,3054)};
+\addplot[domain=8:100, thick, no marks] {32*x-146};
+\legend{stored support, $32p-146$}
+\end{axis}
+\end{tikzpicture}
+\caption{Number of terms of the stored source $V_p$ at the 18 checked parameters of the annihilator computation, with the line $32p-146$ that passes through every stored point.}
+\label{fig:supportlaw}
+\end{figure}
+% END GENERATED fig:supportlaw
+
 \subsection{Ablation of the corrections in \texorpdfstring{$V_p$}{V\_p}}
 
 The source $V_p$ of Theorem~\ref{thm:main} has three ingredients beyond the
@@ -2062,6 +2098,23 @@ with at most 1~GiB of memory. No dense full ambient matrix, integral
 HNF/SNF or old labelled $p=11$ HNF source is used. Finite certification
 and the uniform proof remain separate layers of evidence.
 
+Figure~\ref{fig:trianglecount} compares the triangle counts of the 93 count identities, $p=8,\ldots,100$, with the closed form $\lfloor((p-2)^2+3)/12\rfloor$ of Theorem~\ref{thm:quadratic}; the stored comparison flag is true at every parameter.
+
+% BEGIN GENERATED fig:trianglecount
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={number of triangles}, legend pos=north west]
+\addplot[only marks, mark=*, mark size=1.4pt] coordinates {(8,3) (9,4) (10,5) (11,7) (12,8) (13,10) (14,12) (15,14) (16,16) (17,19) (18,21) (19,24) (20,27) (21,30) (22,33) (23,37) (24,40) (25,44) (26,48) (27,52) (28,56) (29,61) (30,65) (31,70) (32,75) (33,80) (34,85) (35,91) (36,96) (37,102) (38,108) (39,114) (40,120) (41,127) (42,133) (43,140) (44,147) (45,154) (46,161) (47,169) (48,176) (49,184) (50,192) (51,200) (52,208) (53,217) (54,225) (55,234) (56,243) (57,252) (58,261) (59,271) (60,280) (61,290) (62,300) (63,310) (64,320) (65,331) (66,341) (67,352) (68,363) (69,374) (70,385) (71,397) (72,408) (73,420) (74,432) (75,444) (76,456) (77,469) (78,481) (79,494) (80,507) (81,520) (82,533) (83,547) (84,560) (85,574) (86,588) (87,602) (88,616) (89,631) (90,645) (91,660) (92,675) (93,690) (94,705) (95,721) (96,736) (97,752) (98,768) (99,784) (100,800)};
+\addplot[domain=8:100, samples=93, thick, no marks] {floor(((x-2)^2+3)/12)};
+\legend{enumerated triangles, $\lfloor((p-2)^2+3)/12\rfloor$}
+\end{axis}
+\end{tikzpicture}
+\caption{Number of strictly increasing nonnegative triples of sum $p-2$ enumerated at the 93 parameters $p=8,\ldots,100$ of the count identities, with the closed form of the quadratic count drawn through them.}
+\label{fig:trianglecount}
+\end{figure}
+% END GENERATED fig:trianglecount
+
 \subsection{Finite carrier comparison at \texorpdfstring{$p=8,\ldots,11$}{p = 8 to 11}}\label{sec:carrier}
 
 The presentation $M_p$ was compared with the earlier persistent finite carrier
@@ -2143,6 +2196,26 @@ rank of the span of the triangle classes modulo two out of the number of triangl
 \end{table}
 % END GENERATED tab:carrier
 
+Figure~\ref{fig:bockstein} plots the first Bockstein rank of each carrier against $p$ together with the number of triangles: masks $59$ and $62$ follow the triangle count exactly, mask $58$ stays two below it, and mask $56$ is zero until $p=11$.
+
+% BEGIN GENERATED fig:bockstein
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={rank}, legend pos=north west, xtick={8,9,10,11}]
+\addplot[thick, dashed, no marks] coordinates {(8,3) (9,4) (10,5) (11,7)};
+\addplot[only marks, mark=triangle*, mark size=2.4pt] coordinates {(8,0) (9,0) (10,0) (11,1)};
+\addplot[only marks, mark=square*, mark size=2.4pt] coordinates {(8,1) (9,2) (10,3) (11,5)};
+\addplot[only marks, mark=diamond*, mark size=2.4pt] coordinates {(8,3) (9,4) (10,5) (11,7)};
+\addplot[only marks, mark=o, mark size=2.4pt] coordinates {(8,3) (9,4) (10,5) (11,7)};
+\legend{triangles, mask 56, mask 58, mask 59, mask 62}
+\end{axis}
+\end{tikzpicture}
+\caption{First integral Bockstein rank of the four carrier masks at $p=8,\ldots,11$, with the number of triangle rows as a dashed line; the rank of mask $62$ coincides with that of mask $59$ and with the triangle count.}
+\label{fig:bockstein}
+\end{figure}
+% END GENERATED fig:bockstein
+
 \subsection{Uniform endpoint projection certificate}
 
 Computation \Exp{EXP-066-uniform-endpoint-face-collapse}{EXP-066} evaluates the two identities of
@@ -2161,6 +2234,23 @@ types and normalized counts in reverse parameter order and recovers the same
 two locked $p=11$ component columns, $210$ and $308$, whose retained entries lie in the
 unsigned rows $12559$ and $12560$. The all-parameter conclusion comes from
 the preceding interval inequalities and face count, not from this finite sweep.
+
+Figure~\ref{fig:facecount} shows the classified faces of the endpoint source $s_{p,1}$ for $p=8,\ldots,300$: the numbers of rows of types $R_0$ and $R_2$ equal $p-3$ at every parameter and the single $R_5$ row is present throughout, as the face count of Theorem~\ref{thm:mask58-endpoints} predicts.
+
+% BEGIN GENERATED fig:facecount
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={faces}, legend pos=north west]
+\addplot[only marks, mark=*, mark size=0.9pt] coordinates {(8,5) (9,6) (10,7) (11,8) (12,9) (13,10) (14,11) (15,12) (16,13) (17,14) (18,15) (19,16) (20,17) (21,18) (22,19) (23,20) (24,21) (25,22) (26,23) (27,24) (28,25) (29,26) (30,27) (31,28) (32,29) (33,30) (34,31) (35,32) (36,33) (37,34) (38,35) (39,36) (40,37) (41,38) (42,39) (43,40) (44,41) (45,42) (46,43) (47,44) (48,45) (49,46) (50,47) (51,48) (52,49) (53,50) (54,51) (55,52) (56,53) (57,54) (58,55) (59,56) (60,57) (61,58) (62,59) (63,60) (64,61) (65,62) (66,63) (67,64) (68,65) (69,66) (70,67) (71,68) (72,69) (73,70) (74,71) (75,72) (76,73) (77,74) (78,75) (79,76) (80,77) (81,78) (82,79) (83,80) (84,81) (85,82) (86,83) (87,84) (88,85) (89,86) (90,87) (91,88) (92,89) (93,90) (94,91) (95,92) (96,93) (97,94) (98,95) (99,96) (100,97) (101,98) (102,99) (103,100) (104,101) (105,102) (106,103) (107,104) (108,105) (109,106) (110,107) (111,108) (112,109) (113,110) (114,111) (115,112) (116,113) (117,114) (118,115) (119,116) (120,117) (121,118) (122,119) (123,120) (124,121) (125,122) (126,123) (127,124) (128,125) (129,126) (130,127) (131,128) (132,129) (133,130) (134,131) (135,132) (136,133) (137,134) (138,135) (139,136) (140,137) (141,138) (142,139) (143,140) (144,141) (145,142) (146,143) (147,144) (148,145) (149,146) (150,147) (151,148) (152,149) (153,150) (154,151) (155,152) (156,153) (157,154) (158,155) (159,156) (160,157) (161,158) (162,159) (163,160) (164,161) (165,162) (166,163) (167,164) (168,165) (169,166) (170,167) (171,168) (172,169) (173,170) (174,171) (175,172) (176,173) (177,174) (178,175) (179,176) (180,177) (181,178) (182,179) (183,180) (184,181) (185,182) (186,183) (187,184) (188,185) (189,186) (190,187) (191,188) (192,189) (193,190) (194,191) (195,192) (196,193) (197,194) (198,195) (199,196) (200,197) (201,198) (202,199) (203,200) (204,201) (205,202) (206,203) (207,204) (208,205) (209,206) (210,207) (211,208) (212,209) (213,210) (214,211) (215,212) (216,213) (217,214) (218,215) (219,216) (220,217) (221,218) (222,219) (223,220) (224,221) (225,222) (226,223) (227,224) (228,225) (229,226) (230,227) (231,228) (232,229) (233,230) (234,231) (235,232) (236,233) (237,234) (238,235) (239,236) (240,237) (241,238) (242,239) (243,240) (244,241) (245,242) (246,243) (247,244) (248,245) (249,246) (250,247) (251,248) (252,249) (253,250) (254,251) (255,252) (256,253) (257,254) (258,255) (259,256) (260,257) (261,258) (262,259) (263,260) (264,261) (265,262) (266,263) (267,264) (268,265) (269,266) (270,267) (271,268) (272,269) (273,270) (274,271) (275,272) (276,273) (277,274) (278,275) (279,276) (280,277) (281,278) (282,279) (283,280) (284,281) (285,282) (286,283) (287,284) (288,285) (289,286) (290,287) (291,288) (292,289) (293,290) (294,291) (295,292) (296,293) (297,294) (298,295) (299,296) (300,297)};
+\addplot[only marks, mark=square*, mark size=0.9pt] coordinates {(8,1) (9,1) (10,1) (11,1) (12,1) (13,1) (14,1) (15,1) (16,1) (17,1) (18,1) (19,1) (20,1) (21,1) (22,1) (23,1) (24,1) (25,1) (26,1) (27,1) (28,1) (29,1) (30,1) (31,1) (32,1) (33,1) (34,1) (35,1) (36,1) (37,1) (38,1) (39,1) (40,1) (41,1) (42,1) (43,1) (44,1) (45,1) (46,1) (47,1) (48,1) (49,1) (50,1) (51,1) (52,1) (53,1) (54,1) (55,1) (56,1) (57,1) (58,1) (59,1) (60,1) (61,1) (62,1) (63,1) (64,1) (65,1) (66,1) (67,1) (68,1) (69,1) (70,1) (71,1) (72,1) (73,1) (74,1) (75,1) (76,1) (77,1) (78,1) (79,1) (80,1) (81,1) (82,1) (83,1) (84,1) (85,1) (86,1) (87,1) (88,1) (89,1) (90,1) (91,1) (92,1) (93,1) (94,1) (95,1) (96,1) (97,1) (98,1) (99,1) (100,1) (101,1) (102,1) (103,1) (104,1) (105,1) (106,1) (107,1) (108,1) (109,1) (110,1) (111,1) (112,1) (113,1) (114,1) (115,1) (116,1) (117,1) (118,1) (119,1) (120,1) (121,1) (122,1) (123,1) (124,1) (125,1) (126,1) (127,1) (128,1) (129,1) (130,1) (131,1) (132,1) (133,1) (134,1) (135,1) (136,1) (137,1) (138,1) (139,1) (140,1) (141,1) (142,1) (143,1) (144,1) (145,1) (146,1) (147,1) (148,1) (149,1) (150,1) (151,1) (152,1) (153,1) (154,1) (155,1) (156,1) (157,1) (158,1) (159,1) (160,1) (161,1) (162,1) (163,1) (164,1) (165,1) (166,1) (167,1) (168,1) (169,1) (170,1) (171,1) (172,1) (173,1) (174,1) (175,1) (176,1) (177,1) (178,1) (179,1) (180,1) (181,1) (182,1) (183,1) (184,1) (185,1) (186,1) (187,1) (188,1) (189,1) (190,1) (191,1) (192,1) (193,1) (194,1) (195,1) (196,1) (197,1) (198,1) (199,1) (200,1) (201,1) (202,1) (203,1) (204,1) (205,1) (206,1) (207,1) (208,1) (209,1) (210,1) (211,1) (212,1) (213,1) (214,1) (215,1) (216,1) (217,1) (218,1) (219,1) (220,1) (221,1) (222,1) (223,1) (224,1) (225,1) (226,1) (227,1) (228,1) (229,1) (230,1) (231,1) (232,1) (233,1) (234,1) (235,1) (236,1) (237,1) (238,1) (239,1) (240,1) (241,1) (242,1) (243,1) (244,1) (245,1) (246,1) (247,1) (248,1) (249,1) (250,1) (251,1) (252,1) (253,1) (254,1) (255,1) (256,1) (257,1) (258,1) (259,1) (260,1) (261,1) (262,1) (263,1) (264,1) (265,1) (266,1) (267,1) (268,1) (269,1) (270,1) (271,1) (272,1) (273,1) (274,1) (275,1) (276,1) (277,1) (278,1) (279,1) (280,1) (281,1) (282,1) (283,1) (284,1) (285,1) (286,1) (287,1) (288,1) (289,1) (290,1) (291,1) (292,1) (293,1) (294,1) (295,1) (296,1) (297,1) (298,1) (299,1) (300,1)};
+\legend{rows of type $R_0$ and of type $R_2$, rows of type $R_5$}
+\end{axis}
+\end{tikzpicture}
+\caption{Classified faces of the endpoint source $s_{p,1}$ at the 293 parameters $p=8,\ldots,300$ of the sweep: rows of types $R_0$ and $R_2$ (equal in number, $p-3$) and the single row of type $R_5$.}
+\label{fig:facecount}
+\end{figure}
+% END GENERATED fig:facecount
 
 \section{Discussion, limitations and remaining obligations}\label{sec:discussion}
 
@@ -2326,7 +2416,7 @@ Commun.\ Algebra \textbf{52} (2024), 5196--5206.
 arXiv:2404.12519.
 
 \bibitem{Goto}
-Goto, Takahashi, Taniguchi, and Le Truong,
+S.~Goto, R.~Takahashi, N.~Taniguchi, and H.~Le Truong,
 \emph{Huneke--Wiegand conjecture and change of rings},
 \href{https://arxiv.org/abs/1305.4238}{arXiv:1305.4238}.
 
@@ -2416,31 +2506,33 @@ in \emph{Multigraded Algebra and Applications}, Springer Proc.\ Math.\ Stat.\ \t
 \href{https://arxiv.org/abs/1801.00153}{arXiv:1801.00153v2}.
 
 \bibitem{Skoldberg}
-Skoldberg,
+E.~Sk\"oldberg,
 \emph{Algebraic Morse theory and homological perturbation theory},
 \href{https://arxiv.org/abs/1311.5803}{arXiv:1311.5803}.
 
 \bibitem{ChenLiuZhou}
-Chen, Liu, and Zhou,
+J.~Chen, Y.~Liu, and G.~Zhou,
+\emph{Algebraic Morse theory via Homological Perturbation Lemma},
 \href{https://arxiv.org/abs/2404.10165}{arXiv:2404.10165}.
 
 \bibitem{FinkMoci}
-Fink and Moci,
+A.~Fink and L.~Moci,
 \emph{Matroids over a ring},
 \href{https://arxiv.org/abs/1209.6571}{arXiv:1209.6571}.
 
 \bibitem{ChurchEllenberg}
-Church and Ellenberg,
+T.~Church and J.~S. Ellenberg,
 \emph{Homology of FI-modules},
 \href{https://arxiv.org/abs/1506.01022}{arXiv:1506.01022}.
 
 \bibitem{Alfaro}
-Alfaro et al.,
+C.~A. Alfaro, J.~U. Medrano, J.~P. Serrano, I.~T\'ellez T\'ellez, and R.~R. Villagr\'an,
 \emph{The Smith normal form of Laplacian matrices of simplicial annuli and high dimensional trees},
 \href{https://arxiv.org/abs/2607.23506}{arXiv:2607.23506}.
 
 \bibitem{LuRuan}
-Lu, Ruan, Wang, and Xiao,
+D.~Lu, Y.~Ruan, D.~Wang, and F.~Xiao,
+\emph{Matrix equivalence to Smith normal form: new theoretical results for multivariate polynomial matrices},
 \href{https://arxiv.org/abs/2605.09286}{arXiv:2605.09286}.
 \end{thebibliography}
 \end{document}
