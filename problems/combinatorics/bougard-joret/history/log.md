@@ -147,3 +147,12 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   737,159 bytes, SHA-256 92786eaca13116da6a875fcd8e2ff3ba60624be1f31f5a35ef8144e7ab24e8c0; a fresh unauthenticated
   download equals the frozen file.
 
+## 2026-11-14 - EXP-014 confirmed: the blocks X6 and X7 are the only ones (conditional on Didin's Theorem 3)
+
+- Hypothesis ed56cfa7. Equality in prop:where(a), Didin's Theorem 3 applied to the block, and 3-connectivity reduce
+  case (a) to five necessary conditions on a block X with 5 to 7 vertices and its attaching triple. Over all graphs on
+  5 to 7 vertices (graph atlas, counts equal to OEIS A000088), exactly X6 at one orbit and X7 at three orbits pass,
+  the four observed in EXP-011. proof.md: every case (a) extremal graph is a construction graph, and conversely.
+- With prop:where(b) and EXP-011, the extremal graphs without a clique partition are characterised (conditional on
+  Didin's Theorem 3). BJB-026 done; BJB-027 opened (note v0.04).
+

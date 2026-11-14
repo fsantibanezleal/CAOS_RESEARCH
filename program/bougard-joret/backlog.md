@@ -28,5 +28,6 @@ Neither the tree strip, the full first shell nor the EXP-003 bracket resolves th
 | BJB-022 | done | EXP-011 (2026-11-14): 246 extremal graphs at 35 triples, counts equal the records; 206 Bougard-Joret graphs, 40 with clique cover number alpha + 1 (k = 3, alpha odd); every Didin-derived prediction confirmed |
 | BJB-023 | done | EXP-012 (2026-11-14): pipeline exact at the production parameters (Gates A to F, 0 disagreements) |
 | BJB-025 | done | EXP-013 (2026-11-14): X6/X7 construction of extremal graphs without a clique partition for every odd alpha, 3 alpha < n <= 4 alpha - 1; proof with finite checks; extremal at (22..24,7,3) |
-| BJB-026 | todo | Are X6 and X7 the only blocks for every odd alpha (shown for n <= 22)? Is case (b) (p(G) = 1) realised beyond (10,3,3)? |
+| BJB-026 | done | EXP-014 (2026-11-14), conditional on Didin's Theorem 3: the case (a) extremal graphs are exactly the X6/X7 construction graphs (finite check over all graphs on 5 to 7 vertices; proof.md); case (b) is realised only at (10,3,3) by prop:where(b) and EXP-011 |
+| BJB-027 | todo | Second-regime note v0.04: the characterisation theorem of EXP-014 with its proof, after an independent review of proof.md |
 | BJB-024 | done | Note second-regime v0.03 published 2026-11-14, 10.5281/zenodo.24229265: full rewrite (order 24, Didin's claimed proof, methods, validation, extremal graphs, odd-alpha construction), independent review APPROVE |
