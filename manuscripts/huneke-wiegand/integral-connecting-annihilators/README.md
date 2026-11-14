@@ -1,6 +1,8 @@
 # A quadratic family of integral two-torsion classes
 
-Homological companion, current version 0.04, published 2026-09-20 at
+Homological companion, current version 0.05, published 2026-11-14 at
+[10.5281/zenodo.24228302](https://doi.org/10.5281/zenodo.24228302), a correction of the sign in Theorem 9.1
+((-1)^(p+1) on the signed row); version 0.04 was published 2026-09-20 at
 [10.5281/zenodo.22859408](https://doi.org/10.5281/zenodo.22859408), under
 concept DOI [10.5281/zenodo.22342975](https://doi.org/10.5281/zenodo.22342975).
 Fresh unauthenticated metadata and download verification on 2026-09-20 match

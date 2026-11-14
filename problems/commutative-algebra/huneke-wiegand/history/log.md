@@ -2159,3 +2159,10 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   publish call was refused by the session's permission policy and waits for Felipe (HWB-100).
 - E: (data root) was not mounted; the 2012 source was re-fetched to the temp root and matched its pinned
   SHA-256; its archive copy waits for the data root.
+
+## 2026-11-14 - correction: integral-connecting-annihilators v0.05
+
+An independent audit (2026-11-11) found that Theorem 9.1 displayed Pi_58 M_p s_(p,r) = -x_(0,r,p-2-r), which holds for
+even p only: by the signed-row definition, x_(0r) = (-1)^p times the unsigned K row, and the face is minus the unsigned
+row. v0.05 (10.5281/zenodo.24228302) states (-1)^(p+1) x_(0,r,p-2-r); the vanishing of the two endpoint rows and every
+other result are unchanged; EXP-066 checks the unsigned-row form. Re-checked by the auditor before release.
