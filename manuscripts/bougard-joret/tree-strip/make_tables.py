@@ -347,7 +347,7 @@ def main():
     def coords(pairs):
         return " ".join(f"({x},{y})" for x, y in pairs)
 
-    lines = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.8\textwidth,height=5.6cm,ymode=log,ybar,bar width=7pt,"
+    lines = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.8\textwidth,height=5.6cm,ymode=log,log origin=infty,ybar,bar width=7pt,"
              r"xlabel={order $k+1$ of the tree},ylabel={number of trees},xtick={4,5,6,7,8,9},ymin=0.4,ymax=200,"
              r"legend style={at={(0.02,0.98)},anchor=north west,font=\scriptsize},enlarge x limits=0.12,tick label style={font=\scriptsize},"
              r"label style={font=\small}]",
@@ -357,14 +357,14 @@ def main():
              r"\legend{all trees,nonstar trees,star (rejected)}", r"\end{axis}", r"\end{tikzpicture}"]
     write("fig-trees.tex", "\n".join(lines) + "\n")
 
-    lines = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.8\textwidth,height=5.8cm,ymode=log,ybar,bar width=5.5pt,"
+    lines = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.8\textwidth,height=5.8cm,ymode=log,log origin=infty,ybar,bar width=5.5pt,"
              r"xlabel={$k$},ylabel={count},xtick={3,4,5},ymin=0.4,ymax=60000,"
              r"legend style={at={(0.02,0.98)},anchor=north west,font=\scriptsize},enlarge x limits=0.25,tick label style={font=\scriptsize},"
              r"label style={font=\small}]",
              r"\addplot[fill=gray!30,draw=black] coordinates {" + coords([(r[0], r[2]) for r in res_rows]) + "};",
              r"\addplot[fill=linknavy!55,draw=linknavy] coordinates {" + coords([(r[0], r[3]) for r in res_rows]) + "};",
              r"\addplot[fill=orange!60,draw=orange!80!black] coordinates {" + coords([(r[0], r[4]) for r in res_rows]) + "};",
-             r"\addplot[fill=red!45,draw=red!70!black] coordinates {" + coords([(r[0], max(r[6], 0.9)) for r in res_rows]) + "};",
+             r"\addplot[fill=red!45,draw=red!70!black] coordinates {" + coords([(r[0], max(r[6], 0.4)) for r in res_rows]) + "};",
              r"\legend{residual graphs,assignments,nonstar trees,disconnected}", r"\end{axis}", r"\end{tikzpicture}"]
     write("fig-residual.tex", "\n".join(lines) + "\n")
 
