@@ -6,13 +6,21 @@
 \usepackage{booktabs}
 \usepackage{xcolor}
 \definecolor{linknavy}{RGB}{25, 55, 125}
-\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+\usepackage[hypertexnames=false, colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
 \hypersetup{
-  pdftitle={Which counterexamples to the Petersen coloring conjecture are colorable only by themselves?},
+  pdftitle={The two 52-vertex counterexamples to the Petersen coloring conjecture are colorable only by themselves},
   pdfauthor={Felipe Santibanez-Leal},
   pdfkeywords={Petersen coloring conjecture, H-coloring, cubic graphs, snarks, splitting lemma, SAT, DRAT}
 }
 \usepackage{orcidlink}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.17}
 \usepackage{fancyhdr}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -31,10 +39,16 @@
 \newcommand{\Gsix}{G_{68}}
 \newcommand{\Gmain}{G_{112}}
 \newcommand{\Gsym}{H_{112}}
+\newcommand{\evD}{\textnormal{[D]}}
+\newcommand{\evMV}{\textnormal{[MV]}}
+\newcommand{\evV}{\textnormal{[V]}}
+\newcommand{\evU}{\textnormal{[U]}}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
 
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.01}
-\newcommand{\docdate}{6 October 2026}
+\newcommand{\docversion}{v0.02}
+\newcommand{\docdate}{14 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.22859075}
 \newcommand{\conceptdoi}{10.5281/zenodo.22859074}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -50,8 +64,8 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \end{center}
 \vspace{4pt}}
 
-\title{Which Counterexamples to the Petersen Coloring Conjecture\\
-Are Colorable Only by Themselves?}
+\title{The Two 52-Vertex Counterexamples to the Petersen\\
+Coloring Conjecture Are Colorable Only by Themselves}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -59,7 +73,7 @@ Are Colorable Only by Themselves?}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research \doctype}
-\fancyhead[R]{\small Colorable Only by Itself \textperiodcentered\ \docversion}
+\fancyhead[R]{\small Colorable Only by Themselves \textperiodcentered\ \docversion}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}

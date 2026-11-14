@@ -1,0 +1,27 @@
+\begin{table}[tbp]\centering\small
+\begin{tabular}{ll>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{5.6cm}}
+\toprule
+graph & $k$ & outcome & record\\
+\midrule
+$\Ga$ & 6 & no answer at the 6 h cap & 25 lazy cuts learned \\
+$\Ga$ & 8 & stopped by hand, past the 6 h cap & solver still running \\
+$\Ga$ & 10 & stopped by hand, past the 6 h cap & solver still running \\
+$\Ga$ & 12 & stopped by hand, past the 6 h cap & solver still running \\
+$\Ga$ & 14 & no answer at the 6 h cap & solver still running \\
+$\Ga$ & 16 & stopped by hand, past the 6 h cap & solver still running \\
+$\Ga$ & 18 & stopped by hand, past the 6 h cap & solver still running \\
+$\Ga$ & 20 & no answer at the 6 h cap & solver still running \\
+$\Ga$ & 22 & no answer at the 6 h cap & solver still running \\
+\midrule
+$\Gb$ & 2 to 38 & not attempted & no run exists for an order below 40 \\
+\midrule
+$\Gsix$ & 54 & no answer at the 6 h cap & formula built, solver still running \\
+$\Gsix$ & 56 & no answer at the 6 h cap & formula built, solver still running \\
+$\Gsix$ & 58 & no answer at the 6 h cap & formula built, solver still running \\
+$\Gsix$ & 60 & no answer at the 6 h cap & formula built, solver still running \\
+$\Gsix$ & 52 & stopped at 4 h 13 min of a 24 h limit & formula of 82{,}107 variables and 2{,}683{,}782 clauses \\
+$\Gsix$ & 2 to 50 & not attempted & orders 40 to 50 remain open \\
+\bottomrule
+\end{tabular}
+\caption{Target orders for which no refutation or coloring exists, by graph. The runner stops an instance at 21,600 s; in five instances of \(\Ga\) the in-process solver call held the interpreter lock past that limit and was stopped by hand. The formula of order 52 for \(\Gsix\) is kept for a rerun; the partial proofs of the interrupted run were deleted.}\label{tab:undecided}
+\end{table}

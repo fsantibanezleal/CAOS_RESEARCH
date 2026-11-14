@@ -1,0 +1,25 @@
+\begin{figure}[tbp]\centering
+\begin{tikzpicture}
+\pgfplotsset{every axis/.append style={tick label style={font=\scriptsize}, label style={font=\small}, legend style={font=\scriptsize}, grid=major, grid style={gray!25}}}
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=1.8cm}, width=0.46\textwidth, height=5.6cm, xlabel={target order $k$}, ymode=log]
+\nextgroupplot[ylabel={solve time (s)}, legend pos=south west]
+\addplot[mark=*, mark options={solid}, mark size=1.6pt, thin, black, solid] coordinates {(2,2.991) (4,1843.25)};
+\addlegendentry{$\Ga$}
+\addplot[mark=*, mark options={solid}, mark size=1.6pt, thin, black, solid, forget plot] coordinates {(30,2596.93) (32,3006.86) (34,2570.38) (36,1830.63) (38,1140.52) (40,757.765) (42,347.346) (44,293.321) (46,208.287) (48,64.429) (50,45.654)};
+\addplot[mark=triangle*, mark options={solid}, mark size=1.6pt, thin, blue!60!black, dashed] coordinates {(40,4421)};
+\addlegendentry{$\Gb$}
+\addplot[mark=triangle*, mark options={solid}, mark size=1.6pt, thin, blue!60!black, dashed, forget plot] coordinates {(44,3476.29) (46,1991.15) (48,459.835) (50,72.538)};
+\addplot[mark=square*, mark options={solid}, mark size=1.6pt, thin, red!70!black, dotted] coordinates {(62,6203.39) (64,878.069) (66,217.617)};
+\addlegendentry{$\Gsix$}
+\nextgroupplot[ylabel={proof check time (s)}, legend pos=south west]
+\addplot[mark=*, mark options={solid}, mark size=1.6pt, thin, black, solid] coordinates {(2,4.787) (4,6979.24)};
+\addlegendentry{$\Ga$}
+\addplot[mark=*, mark options={solid}, mark size=1.6pt, thin, black, solid, forget plot] coordinates {(24,3929.3) (26,2200.9) (28,15095.5) (30,4210.22) (32,1595.14) (34,1302.24) (36,1245.61) (38,1684.96) (40,665.239) (42,615.323) (44,270.227) (46,250.022) (48,126.511) (50,63.961)};
+\addplot[mark=triangle*, mark options={solid}, mark size=1.6pt, thin, blue!60!black, dashed] coordinates {(40,5196) (42,5002.2) (44,8929.68) (46,599.345) (48,687.347) (50,129.067)};
+\addlegendentry{$\Gb$}
+\addplot[mark=square*, mark options={solid}, mark size=1.6pt, thin, red!70!black, dotted] coordinates {(62,10654.6) (64,1892.85) (66,348.688)};
+\addlegendentry{$\Gsix$}
+\end{groupplot}
+\end{tikzpicture}
+\caption{Wall-clock time of the external solver (left) and of the proof check (right) against the target order $k$, one run per instance, on a logarithmic scale. Instances whose solve time was not recorded are absent from the left panel.}\label{fig:times}
+\end{figure}

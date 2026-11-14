@@ -1,0 +1,26 @@
+\begin{figure}[tbp]\centering
+\begin{tikzpicture}
+\pgfplotsset{every axis/.append style={tick label style={font=\scriptsize}, label style={font=\small}, legend style={font=\scriptsize}, grid=major, grid style={gray!25}}}
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=1.9cm}, width=0.5\textwidth, height=5.4cm, xlabel={target order $k$}]
+\nextgroupplot[ylabel={variables}, legend pos=north west]
+\addplot[only marks, mark=*, mark options={solid}, mark size=1.6pt, black] coordinates {(2,1724) (4,3111) (24,23997) (26,26664) (28,29439) (30,32322) (32,35313) (34,38412) (36,41619) (38,44934) (40,48357) (42,51888) (44,55527) (46,59274) (48,63129) (50,67092)};
+\addlegendentry{$G_{52}$ and $G'_{52}$}
+\addplot[only marks, mark=square*, mark options={solid}, mark size=1.6pt, red!70!black] coordinates {(62,106162) (64,111297) (66,116540)};
+\addlegendentry{$G_{68}$}
+\addplot[domain=2:50, samples=40, thin, black, dashed] {13*52*x + 8*52 + (27*x^2 - 35*x)/2 + 1};
+\addlegendentry{formula, $n=52$}
+\addplot[domain=2:66, samples=40, thin, red!70!black, dashed] {13*68*x + 8*68 + (27*x^2 - 35*x)/2 + 1};
+\addlegendentry{formula, $n=68$}
+\nextgroupplot[ylabel={clauses}, legend pos=north west]
+\addplot[only marks, mark=*, mark options={solid}, mark size=1.6pt, black] coordinates {(2,7615) (4,20045) (24,465609) (26,542231) (28,624686) (30,712972) (32,807090) (34,907040) (36,1.01282e+06) (38,1.12444e+06) (40,1.24188e+06) (42,1.36516e+06) (44,1.49427e+06) (46,1.62921e+06) (48,1.76999e+06) (50,1.91659e+06)};
+\addlegendentry{$G_{52}$ and $G'_{52}$}
+\addplot[only marks, mark=square*, mark options={solid}, mark size=1.6pt, red!70!black] coordinates {(62,3.78553e+06) (64,4.02856e+06) (66,4.27915e+06)};
+\addlegendentry{$G_{68}$}
+\addplot[domain=2:50, samples=40, thin, black, dashed] {(27*52*x^2 + 73*52*x)/2 + 20*52 + 27*x^2 - 37*x + 1};
+\addlegendentry{formula, $n=52$}
+\addplot[domain=2:66, samples=40, thin, red!70!black, dashed] {(27*68*x^2 + 73*68*x)/2 + 20*68 + 27*x^2 - 37*x + 1};
+\addlegendentry{formula, $n=68$}
+\end{groupplot}
+\end{tikzpicture}
+\caption{Size of the certified formula against the target order $k$, read from the result files (markers) and from the closed forms of Table~\ref{tab:counts} (dashed lines). Left: variables. Right: clauses. The two 52-vertex graphs have the same formula size, so one series stands for both.}\label{fig:size}
+\end{figure}

@@ -1,0 +1,38 @@
+\begin{table}[tbp]\centering\small
+\begin{tabular}{llrr}
+\toprule
+family & count (as a function of $n$, $k$) & $n=52$, $k=50$ & $n=68$, $k=66$\\
+\midrule
+\multicolumn{4}{l}{\textit{variables}} \\
+$x_{v,i}$ & $nk$ & 2{,}600 & 4{,}488 \\
+$z_{v,r,s}$ & $9n$ & 468 & 612 \\
+$p_{a,b}$ & $9k(k-1)/2$ & 11{,}025 & 19{,}305 \\
+ladder variables, vertex map & $n(k-1)$ & 2{,}548 & 4{,}420 \\
+ladder variables, matching & $3k(3k-4)$ & 21{,}900 & 38{,}412 \\
+$w_{v,r,i,s}$ & $9nk$ & 23{,}400 & 40{,}392 \\
+$u_{v,i}$ & $nk$ & 2{,}600 & 4{,}488 \\
+$q$ & $1$ & 1 & 1 \\
+parity chain $t_{i,v}$ & $k(n-1)$ & 2{,}550 & 4{,}422 \\
+\midrule
+total & Eq.~\eqref{eq:size-v} & 67{,}092 & 116{,}540 \\
+\midrule
+\multicolumn{4}{l}{\textit{clauses}} \\
+map: one class per vertex & $n(3k-3)$ & 7{,}644 & 13{,}260 \\
+slot bijection & $24n$ & 1{,}248 & 1{,}632 \\
+matching: one partner per slot & $3k(9k-12)$ & 65{,}700 & 115{,}236 \\
+definition of $w$ & $27nk$ & 70{,}200 & 121{,}176 \\
+consistency along edges & $9nk(3k-1)/2$ & 1{,}743{,}300 & 3{,}978{,}612 \\
+definition of $u$ & $3nk-k$ & 7{,}750 & 13{,}398 \\
+anchor $x_{0,0}$ & $1$ & 1 & 1 \\
+class numbering & $n(k-1)$ & 2{,}548 & 4{,}420 \\
+founder slot order & $3nk$ & 7{,}800 & 13{,}464 \\
+parity chains and link to $q$ & $k(4n-1)$ & 10{,}350 & 17{,}886 \\
+class $k-2$ used & $1$ & 1 & 1 \\
+$q$ forced when $2(k-1)>n$ & $[2(k-1)>n]$ & 1 & 1 \\
+attach clauses & $k-1$ & 49 & 65 \\
+\midrule
+total & Eq.~\eqref{eq:size-c} & 1{,}916{,}592 & 4{,}279{,}152 \\
+\bottomrule
+\end{tabular}
+\caption{Variables and clauses of the certified formula, by family, for $k \ge 5$ (for $k \le 4$ an exactly-one constraint over at most four literals is written pairwise, without auxiliary variables). The last two columns evaluate the families for the largest orders of Table~\ref{tab:orders} and agree with the recorded totals (67{,}092 variables and 1{,}916{,}592 clauses; 116{,}540 and 4{,}279{,}152).}\label{tab:counts}
+\end{table}

@@ -1,0 +1,15 @@
+\begin{figure}[tbp]\centering
+\begin{tikzpicture}
+\pgfplotsset{every axis/.append style={tick label style={font=\scriptsize}, label style={font=\small}, legend style={font=\scriptsize}, grid=major, grid style={gray!25}}}
+\begin{axis}[width=0.62\textwidth, height=5.6cm, xlabel={target order $k$}, ylabel={proof size (bytes)}, ymode=log, legend pos=south west]
+\addplot[mark=*, mark options={solid}, mark size=1.6pt, thin, black, solid] coordinates {(2,1.24721e+06) (4,4.34205e+08)};
+\addlegendentry{$\Ga$}
+\addplot[mark=*, mark options={solid}, mark size=1.6pt, thin, black, solid, forget plot] coordinates {(24,1.74635e+09) (26,1.26035e+09) (28,8.65404e+08) (30,4.51749e+08) (32,3.59772e+08) (34,3.15072e+08) (36,1.89001e+08) (38,1.22739e+08) (40,8.8201e+07) (42,6.06246e+07) (44,4.92065e+07) (46,4.43313e+07) (48,2.89532e+07) (50,1.79993e+07)};
+\addplot[mark=triangle*, mark options={solid}, mark size=1.6pt, thin, blue!60!black, dashed] coordinates {(40,2.37144e+09) (42,1.09408e+09) (44,3.63214e+08) (46,1.20499e+08) (48,4.23903e+07) (50,1.70375e+07)};
+\addlegendentry{$\Gb$}
+\addplot[mark=square*, mark options={solid}, mark size=1.6pt, thin, red!70!black, dotted] coordinates {(62,2.2093e+08) (64,8.0324e+07) (66,5.96356e+07)};
+\addlegendentry{$\Gsix$}
+\end{axis}
+\end{tikzpicture}
+\caption{Size of the DRAT proof of the final formula against the target order $k$, for every refuted order of Table~\ref{tab:orders}. The proofs reach 2.4 GB for the second 52-vertex graph at $k=40$.}\label{fig:proof}
+\end{figure}

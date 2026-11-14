@@ -1,0 +1,36 @@
+\begin{table}[tbp]\centering\footnotesize
+\begin{tabular}{llllrrrrrr}
+\toprule
+ & & & & \multicolumn{3}{c}{with fiber constraints} & \multicolumn{3}{c}{without} \\
+\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+graph (order) & $k$ & answer & certificate & rounds & cuts & s & rounds & cuts & s\\
+\midrule
+$K_4$ (4) & 2 & colored & checker accepted & 1 & 0 & 2.7 & 1 & 0 & 2.4 \\
+\midrule
+prism (6) & 2 & colored & checker accepted & 1 & 0 & 2.4 & 1 & 0 & 2.4 \\
+prism (6) & 4 & colored & checker accepted & 1 & 0 & 2.4 & 1 & 0 & 2.7 \\
+\midrule
+Petersen (10) & 2 & not colored & DRAT verified & 1 & 0 & 4.9 & 1 & 0 & 4.8 \\
+Petersen (10) & 4 & not colored & DRAT verified & 1 & 0 & 5.0 & 1 & 0 & 4.9 \\
+Petersen (10) & 6 & not colored & DRAT verified & 1 & 0 & 4.9 & 82 & 81 & 5.6 \\
+Petersen (10) & 8 & not colored & DRAT verified & 1 & 0 & 4.6 & 139 & 138 & 6.0 \\
+\midrule
+$J_3$ (12) & 2 & not colored & DRAT verified & 1 & 0 & 4.8 & 1 & 0 & 5.0 \\
+$J_3$ (12) & 4 & not colored & DRAT verified & 1 & 0 & 4.5 & 1 & 0 & 5.1 \\
+$J_3$ (12) & 6 & not colored & DRAT verified & 1 & 0 & 4.9 & 82 & 81 & 7.7 \\
+$J_3$ (12) & 8 & not colored & DRAT verified & 1 & 0 & 5.1 & 184 & 183 & 10.4 \\
+$J_3$ (12) & 10 & colored & checker accepted & 1 & 0 & 2.3 & 221 & 220 & 4.2 \\
+\midrule
+$J_5$ (20) & 2 & not colored & DRAT verified & 1 & 0 & 7.1 & 1 & 0 & 6.6 \\
+$J_5$ (20) & 4 & not colored & DRAT verified & 1 & 0 & 44.6 & 1 & 0 & 54.4 \\
+$J_5$ (20) & 6 & not colored & DRAT verified & 1 & 0 & 47.4 & 82 & 81 & 77.2 \\
+$J_5$ (20) & 8 & not colored & DRAT verified & 1 & 0 & 42.4 & 209 & 208 & 109.6 \\
+$J_5$ (20) & 10 & colored & checker accepted & 1 & 0 & 4.7 & 69 & 68 & 3.7 \\
+$J_5$ (20) & 12 & colored & checker accepted & 1 & 0 & 2.0 & 36 & 35 & 5.9 \\
+$J_5$ (20) & 14 & not colored & DRAT verified & 1 & 0 & 13.6 & 721 & 720 & 153.5 \\
+$J_5$ (20) & 16 & not colored & DRAT verified & 1 & 0 & 9.2 & 899 & 898 & 170.6 \\
+$J_5$ (20) & 18 & not colored & DRAT verified & 1 & 0 & 8.4 & 1082 & 1081 & 176.6 \\
+\bottomrule
+\end{tabular}
+\caption{The 21 control instances: every even target order $k$ below the order of the graph, for the complete graph on four vertices, the prism, the Petersen graph and the flower snarks $J_3$ and $J_5$. Both encodings give the same answer in every instance. A coloring is accepted by the checker that reads only the graph and the decoded pair and its target is itself Petersen colorable; a refusal carries a DRAT proof accepted by \texttt{drat-trim}. Rounds are solver calls, cuts are lazily learned connectivity and bridge clauses, s is wall-clock seconds.}\label{tab:controls}
+\end{table}
