@@ -196,6 +196,7 @@ def main():
           "\\bottomrule\n\\end{tabular}\n")
 
     # ---- Table F: AEY bounds on Z(d) and whether they already give d + 1 < Z(d) -------------------------------
+    # BET Section 5 (arXiv:2304.01729v1): computed Z(7)=9, Z(9)=12, Z(11)=15, Z(13)=17.
     # AEY Lemma 4.5 (Z(d) >= d + 1 for d >= 4), Lemma 4.6 (d even: Z = floor(5d/4); d odd:
     # floor(5(d-1)/4) <= Z <= floor(5(d+1)/4)), read on the final published text.
     rows = []
@@ -206,9 +207,10 @@ def main():
             lo, hi = max(d + 1, (5 * (d - 1)) // 4), (5 * (d + 1)) // 4
         rng = f"{lo}" if lo == hi else f"{lo}--{hi}"
         status = "yes" if lo >= d + 2 else "no"
-        rows.append(f"{d} & {d+1} & {rng} & {status} \\\\")
+        bet = {7: 9, 9: 12, 11: 15, 13: 17}.get(d)
+        rows.append(f"{d} & {d+1} & {rng} & {status} & {bet if bet else '--'} \\\\")
     write(TAB / "tab-z.tex",
-          "\\begin{tabular}{rrcc}\n\\toprule\n$d$ & $d+1$ & range of $Z(d)$ proved by AEY & gives $d+1<Z(d)$? \\\\\n\\midrule\n"
+          "\\begin{tabular}{rrccc}\n\\toprule\n$d$ & $d+1$ & range of $Z(d)$ proved by AEY & gives $d+1<Z(d)$? & value computed by BET \\\\\n\\midrule\n"
           + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n")
 
     # ---- Table G: BET Table 3, m = d + 1 -------------------------------------------------------------------
@@ -285,7 +287,7 @@ def main():
         for i, c in enumerate(CFG_ORDER):
             r = by[(c, "k2d")]
             unk = r["result"] == "unknown"
-            ax.barh(i, r["seconds"], color="white" if unk else NAVY, edgecolor=RED if unk else NAVY,
+            ax.barh(i, r["seconds"], color="white" if unk else NAVY, edgecolor=RED if unk else NAVY, linewidth=0.6 if unk else 0,
                     hatch="///" if unk else None, height=0.6)
             ax.text(r["seconds"] * 1.15, i, ("UNKNOWN" if unk else "UNSAT"), va="center", fontsize=6.5)
             f = by.get((c, "free"))
