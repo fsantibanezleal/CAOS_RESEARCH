@@ -70,19 +70,19 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \headerblock
 
 \begin{abstract}
-Multiscale layer constructions give finite-time blowup for the porous media, Boussinesq and Euler equations with
-smooth forcing and, with fractional dissipation $|\nabla|^{\alpha}$ of order $\alpha<(22-8\sqrt7)/9$, for the
+Multiscale layer constructions are announced to give finite-time blowup for the porous media, Boussinesq and Euler
+equations with smooth forcing and, with fractional dissipation $|\nabla|^{\alpha}$ of order $\alpha<(22-8\sqrt7)/9$, for the
 forced Navier-Stokes equations. Exponents here are in the $|\nabla|^{\alpha}$ convention, where classical
 viscosity is $\alpha=2$. We give two upper bounds on the exponent. The first holds for every design constant:
 layers growing at rate $\sqrt A$ on a background gradient $A$ cannot carry more than $\alpha=1/2$, and layers growing
 at rate $A$ no more than $\alpha=1$. The second transcribes, with equation and page, the force estimates of the
 smooth-forcing Boussinesq and Euler designs: they certify only $5.3\times10^{-4}$ and $6\times10^{-8}$ at the
 published choices, and at most $9.0\times10^{-3}$ and $7.5\times10^{-3}$ when every constant is retuned, over ten
-times below the exponent reached with a rough force. Both rest on the amplitude system and one derived ingredient,
-the damping of a single layer, tested against nonlinear simulation. Seven criteria are not met and one run is
+times below the exponent reached with a rough force. Both use the amplitude system and the damping of one layer,
+tested against nonlinear simulation. Seven criteria are not met and one run is
 inconclusive: the window error of the single-layer rate at one angle and the growth of its unstable band; the
-two-scale slope; the steered cycle at its first parameters and on a curved background; and the two-layer handoff
-(correlation $0.808$ against $0.9$). We also reconstruct the exponent budget behind the published threshold.
+two-scale slope; the steered cycle at its first parameters and on a curved background; and the two-layer handoff and its
+control (correlation $0.808$ against $0.9$). We also reconstruct the exponent budget behind the published threshold.
 Nothing here establishes blowup for any equation or improves any published threshold.
 \end{abstract}
 
@@ -1372,7 +1372,7 @@ coefficient scale $\Pi\le\lambda^{5/Q}$ and $\delta=\Pi^{5}Y$ (Boussinesq, $d=0$
 published constants and unbounded $Q_{i}$ (Euler) & exponent at the first stage, then at every stage & $2.98\times10^{-8}$, none & $3.64\times10^{-3}$ ($k=0$, $Q=51$) \\
 rows of~(12.7) that involve $a$ (Euler) & certified exponent $\alpha$ & $3.64\times10^{-3}$ & $3.77\times10^{-3}$ \\
 outer-velocity constraint \textbf{O} (threshold budget, $|\nabla|^{\alpha}$ convention) & exponent at which the force margin vanishes & $0.09267$ & $0.10102$ \\
-hold damping and time budget, constraints C3 and C4 (cascade model) & schedules where C4 binds while C2 holds & $0$ of $2304$ & not applicable \\
+hold damping and time budget, constraints C3 and C4 charged (cascade model) & relative difference of the critical exponent from the C2-only prediction & $2.6\times10^{-6}$ & $0$ by definition \\
 localization of the layer, $\ell\lambda=102.4$ against $1.4$ & relative error of the damping law & $1.7\times10^{-2}$ & $1.90$ \\
 flat background across the layer, flattened against sine (steered cycle) & landing of the vorticity amplitude & $3.67\times10^{-4}$ & $1.57\times10^{-2}$ \\
 steering pulse, $\mu=\mu^{*}$ against $\mu=0$ (steered cycle, flattened) & landing of the vorticity amplitude & $3.67\times10^{-4}$ & $0.99985$ \\
@@ -1394,8 +1394,9 @@ $2.98\times10^{-8}$ at the first stage and nothing at every stage until the free
 are not what binds. The fifth row isolates the constraint that fixes the published threshold: with the outer velocity
 acting on the inner layer the margin vanishes at $0.09267$, and a budget that omits it reaches $0.10102$, which is why
 constraint \textbf{O} and not the dissipation constraint is the active one (Section~\ref{sec:budget}). The sixth row is the
-ablation of the two repairs of the cascade model: charging dissipation during the holds and requiring a finite total time do
-not move the critical exponent, since the survival constraint never binds ahead of growth positivity. The remaining rows
+ablation of the two repairs of the cascade model: charging dissipation during the holds and requiring a finite total time move the critical exponent
+by $2.6\times10^{-6}$ in relative terms, the resolution of the bisection, since the survival constraint binds ahead of
+growth positivity in $0$ of $2304$ schedules. The remaining rows
 are ablations of the checks. Localization costs the damping law $3.6\,\alpha/(\ell\lambda)$, negligible at the separations
 of the constructions and of order one when the envelope is as wide as the wave; the curvature of the background across the
 layer, and not the steering law, accounts for the difference between the two columns of the steered cycle; the pulse is
@@ -1558,12 +1559,12 @@ Section~\ref{sec:method}.
 
 What checks the quoted numbers, and what does not. The test file \fp{tests/test_navier_stokes_quoted_numbers.py}
 compares strings of this text with the code for the design bounds of Section~\ref{sec:design}: the rows of
-Table~\ref{tab:boussinesq}, the factors $175$, $21$ and $10$, the factors by which the published designs sit below their
-class ceilings, and the Euler exponents and ceilings of Theorem~\ref{thm:euler}. For the experiments of
+Table~\ref{tab:boussinesq}, the factors $175$, $21$ and $10$, the factor $945$ by which the Boussinesq design sits below its class
+ceiling (the factor $10.8$ of the hypodissipative threshold is not pinned), and the Euler exponents and ceilings of Theorem~\ref{thm:euler}. For the experiments of
 Section~\ref{sec:validation} the same file compares the stored result files and the written outcomes with each other
 (among them the correlation $0.808$ of the handoff and the report that its criterion is not met); it does not read
-those numbers from this text, so the figures quoted in Table~\ref{tab:gates} are checked against the result files by
-the generation of the table and by the review of the draft, not by the test. The test is run locally with pytest; the
+those numbers from this text, so the figures quoted in Table~\ref{tab:gates} are typed by hand from the result files and
+checked against them in the writing and in the review of the draft, not by a script and not by the test. The test is run locally with pytest; the
 continuous integration workflow of the repository does not run it, so no check of these numbers runs on a push.
 The exact-arithmetic tests of the threshold budget are run in the same way.
 
