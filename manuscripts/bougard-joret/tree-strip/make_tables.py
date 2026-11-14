@@ -348,7 +348,7 @@ def main():
         return " ".join(f"({x},{y})" for x, y in pairs)
 
     lines = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.8\textwidth,height=5.6cm,ymode=log,ybar,bar width=7pt,"
-             r"xlabel={order $k+1$ of the tree},ylabel={number of trees},xtick={4,5,6,7,8,9},ymin=0.8,ymax=200,"
+             r"xlabel={order $k+1$ of the tree},ylabel={number of trees},xtick={4,5,6,7,8,9},ymin=0.4,ymax=200,"
              r"legend style={at={(0.02,0.98)},anchor=north west,font=\scriptsize},enlarge x limits=0.12,tick label style={font=\scriptsize},"
              r"label style={font=\small}]",
              r"\addplot[fill=linknavy!55,draw=linknavy] coordinates {" + coords([(o, tot) for o, tot, _s, _n in tree_rows]) + "};",
@@ -358,7 +358,7 @@ def main():
     write("fig-trees.tex", "\n".join(lines) + "\n")
 
     lines = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.8\textwidth,height=5.8cm,ymode=log,ybar,bar width=5.5pt,"
-             r"xlabel={$k$},ylabel={count},xtick={3,4,5},ymin=0.8,ymax=60000,"
+             r"xlabel={$k$},ylabel={count},xtick={3,4,5},ymin=0.4,ymax=60000,"
              r"legend style={at={(0.02,0.98)},anchor=north west,font=\scriptsize},enlarge x limits=0.25,tick label style={font=\scriptsize},"
              r"label style={font=\small}]",
              r"\addplot[fill=gray!30,draw=black] coordinates {" + coords([(r[0], r[2]) for r in res_rows]) + "};",
@@ -377,15 +377,14 @@ def main():
             check(s >= 0 and (s == 0) == ((k, a) == (3, 2)), f"({k},{a}): shortfall {s}")
             pts.append((a, s))
         short[k] = pts
-    lines = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.72\textwidth,height=6.6cm,xlabel={prescribed independence number $a$},"
-             r"ylabel={$\lceil kn/2\rceil-t(n,a)-\lceil ka/2\rceil$},legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,legend columns=1},"
-             r"tick label style={font=\scriptsize},label style={font=\small},xtick={2,4,6,8,10,12},cycle list name=linestyles*,every axis plot/.append style={line width=0.8pt}]"]
+    lines = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.8\textwidth,height=6.6cm,xlabel={prescribed independence number $a$},"
+             r"ylabel={$\lceil kn/2\rceil-t(n,a)-\lceil ka/2\rceil$},"
+             r"tick label style={font=\scriptsize},label style={font=\small},xtick={2,4,6,8,10,12},cycle list={{solid,mark=*},{dashed,mark=square*},{dotted,mark=triangle*},{dashdotted,mark=diamond*},{densely dashed,mark=x},{loosely dotted,mark=+},{solid,mark=o},{dashed,mark=square},{dotted,mark=triangle},{dashdotted,mark=diamond}},every axis plot/.append style={line width=0.8pt}]"]
     for k, pts in short.items():
-        lines.append(r"\addplot+[mark size=1.6pt] coordinates {" + coords(pts) + "};")
-    lines.append(r"\legend{" + ",".join(f"$k={k}$" for k in short) + "}")
+        lines.append(r"\addplot+[mark size=1.6pt] coordinates {" + coords(pts) + r"} node[pos=1,anchor=west,font=\tiny] {$k=" + str(k) + "$};")
     lines += [r"\end{axis}", r"\end{tikzpicture}"]
     write("fig-shortfall.tex", "\n".join(lines) + "\n")
-    print("make_tables.py: wrote numbers, 5 tables, 6 figure fragments; "
+    print("make_tables.py: wrote numbers, 6 tables, 6 figure fragments; "
           f"{len(digests)} digests verified; shell cases {dict(by_case)}; odd-degree-sum {dict(eps_by_case)}")
 
 
