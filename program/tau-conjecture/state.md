@@ -1,5 +1,6 @@
 # Shub-Smale tau conjecture: state (heartbeat)
 
+- **2026-11-14:** census v0.07 published, 10.5281/zenodo.24231299: the funnel table of the window-free scan corrected, evidence marks on every literature claim, algorithms, figures from the records, related work, ablation and limitations, after an independent review (APPROVE). No result changes.
 - **2026-11-05:** EXP-015 CONFIRMED: z_max(9) = 6, seven-root threshold exactly 10 (window-free additive scan, audit PASS); census v0.06 10.5281/zenodo.23980033. Next open item: z_max(10) and the eight-root threshold in {10..13}; it needs the depth-8 frontier.
 
 - **State:** exploring (opened 2026-08-01; scoped 2026-07-20).
