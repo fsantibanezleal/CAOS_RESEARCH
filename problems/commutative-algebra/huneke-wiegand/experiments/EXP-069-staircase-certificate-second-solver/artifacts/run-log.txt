@@ -1,0 +1,21 @@
+19:29:27 cubic-completeness: native_z3=unsat digest_match=True cvc5=unsat (1.27s) z3_roundtrip=unsat (1.21s)
+19:29:43 cubic-soundness: native_z3=unsat digest_match=True cvc5=unsat (1.40s) z3_roundtrip=unsat (8.01s)
+19:31:12 quartic-completeness: native_z3=unsat digest_match=True cvc5=unsat (10.95s) z3_roundtrip=unsat (21.04s)
+19:31:19 quartic-soundness: native_z3=unsat digest_match=True cvc5=unsat (0.13s) z3_roundtrip=unsat (3.63s)
+19:31:19 tail-c1-first: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.00s)
+19:31:19 tail-c1-interior: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.00s)
+19:31:19 tail-c1-last: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.00s)
+19:31:20 tail-c2-main: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.01s)
+19:31:20 tail-c2-last: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.00s)
+19:31:20 tail-c3-main: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.01s)
+19:31:21 tail-c3-last: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.00s)
+19:31:21 tail-c4: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.00s)
+19:31:21 tail-c5-first-two: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.00s)
+19:31:22 tail-c5-rest: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.00s)
+19:31:22 tail-c6-isolated: native_z3=unsat digest_match=True cvc5=unsat (0.01s) z3_roundtrip=unsat (0.00s)
+19:31:22 tail-quartic: native_z3=unsat digest_match=True cvc5=unsat (0.02s) z3_roundtrip=unsat (0.01s)
+19:31:25 C1 (cubic-completeness): cvc5=sat z3=sat evaluator={'model_on_unperturbed_obligation': False, 'seconds': 0.006439799995860085, 'verdict': True} model={'cubic_a': 4, 'cubic_b': 4, 'cubic_c': 4, 'p': 4}
+19:31:26 C2 (cubic-soundness): cvc5=sat z3=sat evaluator={'model_on_unperturbed_obligation': False, 'seconds': 0.013801599998259917, 'verdict': True} model={'cubic_a': 0, 'cubic_b': 0, 'cubic_c': 0, 'p': 8}
+19:31:27 C3 (tail-c1-first): cvc5=sat z3=sat evaluator={'model_on_unperturbed_obligation': False, 'seconds': 0.0009707999997772276, 'verdict': True} model={'p': 4, 'tail_index': 1}
+19:31:27 C4 (tail-quartic): cvc5=sat z3=sat evaluator={'model_on_unperturbed_obligation': False, 'seconds': 0.0010000999973271973, 'verdict': True} model={'p': 4, 'tail_index': 1}
+19:31:27 P1=True P2=True P3=True P4=True in 123.3s
