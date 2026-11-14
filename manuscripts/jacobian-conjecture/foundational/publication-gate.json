@@ -1,0 +1,23 @@
+{
+  "release_ready": true,
+  "record_id": 24226224,
+  "version": "0.14",
+  "version_doi": "10.5281/zenodo.24226224",
+  "concept_doi": "10.5281/zenodo.21503365",
+  "scope": "Correction version: two-dimensional equivariant rigidity is linear for weights (w1,-w2) with w2 >= 1 and affine, (f0 x, g0 y + c), for one zero weight, with proof; Mathieu false for SU(N), N >= 15 (EXP-138).",
+  "bytes": 315257,
+  "md5": "1f74ac95b760e540502cf76ca762d9d2",
+  "sha256": "b866ccce1b183a4647289ee16005baa1cfacf4cec7d57684e8c6efe9d3542149",
+  "tex_sha256": "df9d781a2706803e0e888ef48d87d3e2153af4925a4c82f870f61594c1c6dfb7",
+  "metadata_sha256": "3d8e6034cec42302f65144f3ae29b03e1e84a040b6fdf79a61acc11e0d0facb7",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 8,
+  "rendered_pages_reviewed": 8,
+  "qa_date": "2026-11-14",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246",
+  "independent_review": "jac-corrections-review-2026-11-11: APPROVE after the re-check of f6fcf22d"
+}

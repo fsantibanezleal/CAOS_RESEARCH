@@ -1778,3 +1778,18 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
 - Structure recorded in EXP-142/structure.md (a small quadric in q0, q2, q4; every branch equation linear in q5;
   rank 8; 100 to 138 points for near-minimal subsets); none shortens the certificate.
 
+## 2026-11-14 - Correction versions of the three manuscripts published
+
+An independent audit of the three Jacobian manuscripts (2026-11-11) found four blocking errors; a second independent
+review approved the corrections before release.
+- Cascade v0.08 (10.5281/zenodo.24226220): Poisson(2) is false (explicit counterexample of Long, arXiv:2608.23777,
+  read 2026-11-07), so Poisson(n) fails for every n >= 2 and only index 1 is open; implication sources are stated as
+  located except Mathieu's 1997 paper (the link rests on Zwart's review); new title "the Cascade of Implications".
+- Foundational v0.14 (10.5281/zenodo.24226224): 2D equivariant rigidity is linear for weights (w1, -w2) with
+  w2 >= 1 and affine, (f0 x, g0 y + c), for one zero weight, with a short proof; (x, y + 1) is an equivariant affine
+  Keller map for weights (1, 0). Mathieu is false for SU(N), N >= 15 (EXP-138).
+- Planar v0.36 (10.5281/zenodo.24226225): the all-degree fifth exclusion is stated on the six EXP-042 grid shapes
+  with a primitive top; the tower lemma holds for tops that are not proper powers; the covector exclusions through
+  degree 3 are modular (infeasible modulo two primes), so d0 >= 4 in that sense; the pinned ladder does not
+  terminate (EXP-064).
+- Errata appended to the EXP-010, EXP-044 and EXP-046 verdicts.
