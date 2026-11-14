@@ -10,7 +10,7 @@
 \hypersetup{
   pdftitle={A sharp auxiliary ratio for a three-point kernel argument and its conditional consequences for zeta zeros},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={A sharp auxiliary ratio in Wang's three-point kernel argument and its consequences for simple critical and distinct zeta zeros},
+  pdfsubject={A sharp auxiliary ratio in Wang's three-point kernel argument and its conditional consequences for simple critical and distinct zeta zeros},
   pdfkeywords={Riemann zeta function, simple zeros, distinct zeros, critical line, three-point kernel, spectral defect, interval arithmetic}
 }
 \newtheorem{theorem}{Theorem}[section]
@@ -83,8 +83,8 @@ it would give the simple-critical proportion
  0.6725007995946757558283550562963947\ldots
 \]
 and the distinct-zero proportion
-$0.8362503997973378779141775281481973\ldots$.  The new correction above the
-Montgomery--Taylor constant is about $43.88\%$ larger than Wang's correction.
+$0.8362503997973378779141775281481973\ldots$; that correction above the
+Montgomery--Taylor constant would be about $43.88\%$ larger than Wang's.
 We also give a short-interval corollary for the source-certified rank-six
 parity curve.  All numerical comparisons use directed rational enclosures and
 an independent 120-decimal interval replay.  The global transfer and the
@@ -126,7 +126,7 @@ ratio and bounds it above by $2$.  Theorem~\ref{thm:ratio} shows that its exact
 maximum is $\sqrt2$.  Granted the rest of Wang's argument, this raises the
 kernel energy, and the subsequent steps go through with the new constant.
 
-Our main consequence is the following.
+Under Wang's framework, the ratio theorem would have the following consequence.
 
 \begin{theorem}\label{thm:global}
 Assuming the analytic and finite-dimensional framework of
@@ -251,7 +251,8 @@ For $u,v\ge0$, Wang sets
  d=\max\{|\cF(u)|,|\cF(v)|,|\cF(u+v)|\},
  \qquad \alpha=au,\quad\beta=av.
 \]
-His vector triangle estimates and trigonometric addition identity yield
+His vector triangle estimates and trigonometric addition identity are stated to
+yield
 \begin{equation}\label{eq:wang-ratio-step}
  (1-d)^2\le d(1+d)R(\alpha,\beta)
 \end{equation}
@@ -269,7 +270,8 @@ The positive equality root is
  \frac{\sqrt{2+8\sqrt2}-(2+\sqrt2)}{2(\sqrt2-1)}
  =0.2831654308085373270052981480781329\ldots .
 \end{equation}
-Thus $d\ge\dsharp$.  Exact directed enclosures also prove
+Thus, granted~\eqref{eq:wang-ratio-step}, $d\ge\dsharp$.  Exact directed enclosures
+prove
 \[
  \dsharp>\frac{\sqrt{57}-7}{2}>\sqrt5-2,
 \]
@@ -327,7 +329,7 @@ the defect.
 Partition the scaled ordinate interval into cells of length at most $H$ and
 form disjoint triples in each cell.  At most two simple points per cell are
 unused.  Corollary~\ref{cor:kernel} and the Riemann--von Mangoldt asymptotic
-\cite[Chapter~9]{Titchmarsh} then give, after the same smoothing and ordered limits as in
+\cite{Titchmarsh} then give, after the same smoothing and ordered limits as in
 \cite{WangGlobal},
 \begin{equation}\label{eq:globalformula}
  \liminf_{T\to\infty}\frac{N_0^s(T)}{N(T)}
@@ -351,7 +353,7 @@ Directed arithmetic gives
  \udag(H_*)
  &=0.6725007995946757558283550562963947865\ldots .
 \end{align*}
-This proves~\eqref{eq:global-simple}.
+This gives~\eqref{eq:global-simple} under the assumption of Theorem~\ref{thm:global}.
 
 For comparison, using Wang's $\sqrt5-2$ and his exact
 $H_0=372018941724/10^{11}$ in the same certificate gives
@@ -361,8 +363,8 @@ $H_0=372018941724/10^{11}$ in the same certificate gives
 \]
 strictly between $6.66624\times10^{-8}$ and
 $6.66625\times10^{-8}$.  The lower endpoint of the new gain interval exceeds
-the upper endpoint of this reproduced value.  Their ratio shows that the new
-correction is about $43.88\%$ larger.  We make no claim that the convenient
+the upper endpoint of this reproduced value.  Their ratio shows that the
+conditional correction would be about $43.88\%$ larger.  We make no claim that the convenient
 rational $H_*$ is the exact optimizer.
 
 Wang's distinct-zero inequality, with the same replacement, is
@@ -370,7 +372,7 @@ Wang's distinct-zero inequality, with the same replacement, is
  \liminf_{T\to\infty}\frac{N_d(T)}{N(T)}
  \ge\frac{1+\udag(H)}2.
 \]
-Inserting~\eqref{eq:Hstar} proves~\eqref{eq:global-distinct}.
+Inserting~\eqref{eq:Hstar} gives~\eqref{eq:global-distinct} under the same assumption.
 
 \section{A short-interval corollary}\label{sec:short}
 
@@ -425,13 +427,15 @@ seconds.  The commit and the SHA-256 of the result file are
 6b8e009c73f87047a2bc2c237991d241bd3b08c0\\
 0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66
 \end{quote}
-and the certificate is reproduced from the repository root by
+and the certificate is reproduced from the repository root by running the script
+\texttt{run.py} of the experiment folder
+\url{problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening}
+with the arguments
 \begin{quote}\small\ttfamily
-python problems/number-theory/riemann-hypothesis/experiments/\\
-\quad EXP-009-wang-kernel-sharpening/run.py -{}-output-dir <dir> -{}-budget-seconds 600
+-{}-output-dir <dir> -{}-budget-seconds 600
 \end{quote}
-The record does not state the Python, python-flint and \texttt{mpmath}
-versions.
+The record pins \texttt{mpmath} 1.3.0 for the interval replay; it does not state the
+Python version.
 
 The certificate verifies
 \begin{itemize}
