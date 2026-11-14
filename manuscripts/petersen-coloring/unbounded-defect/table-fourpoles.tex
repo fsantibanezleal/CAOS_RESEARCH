@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\small
+\begin{tabular}{p{5.4cm}ccc}
+\toprule
+4-pole & pairing 1 & pairing 2 & pairing 3 \\
+\midrule
+$\PG - \{u,v\}$ ($u v$ an edge) & $\{0,1\}$ & $\{0,1,2\}$ & $\{0,1,2\}$ \\
+$\PG - e_1 - e_2$, distance 2 & $\{0,1\}$ & $\{0,1,2\}$ & $\{0,1,2\}$ \\
+$\PG - e_1 - e_2$, distance 3 & $\{0,1\}$ & $\{0,1,2,3\}$ & $\{0,1,2,3\}$ \\
+\midrule
+$\Gfty - \{u,v\}$, 14 edge orbits, $u|v$ pairing & \multicolumn{3}{p{7.4cm}}{$\{0\}$: 11, $\{0,3\}$: 2, $\{0,2\}$: 1 orbits; never contains 1} \\
+$\Gfty - \{u,v\}$, the two other pairings (28 cases) & \multicolumn{3}{p{7.4cm}}{$\{0,1,2\}$: 20, $\{0,1,2,3\}$: 8} \\
+$\Gfty - e_0 - e$, $A$ and four further pairs, first pairing & \multicolumn{3}{p{7.4cm}}{$\{1\}$ in all five} \\
+$\Gfty - e_0 - e$, all decided pairs of EXP-010 & \multicolumn{3}{p{7.4cm}}{$\{1\}$: 282, $\{1,2\}$: 232, $\{1,2,3\}$: 27, $\{1,3\}$: 5} \\
+\bottomrule
+\end{tabular}
+\caption{Transmitted sets of other 4-poles under the three pairings of their four dangling ends (computation EXP-012, \texttt{conduction-*.json}). The last row counts the 546 distance sets decided by computation EXP-010 (\texttt{dist-G52-e*.json}) out of 949 edge pairs of $\Gfty$ examined; the 403 others reached the time limit and have no entry. Every decided set contains 1.}\label{tab:fourpoles}
+\end{table}
