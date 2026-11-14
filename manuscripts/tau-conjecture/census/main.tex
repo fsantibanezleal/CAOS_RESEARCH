@@ -175,9 +175,13 @@ statement]. The conjecture is open even for $\kappa = 1$.
 
 Its significance is structural. Shub and Smale proved that it implies
 $\mathrm{P}_{\C} \ne \mathrm{NP}_{\C}$ in the Blum--Shub--Smale model
-\cite{ShubSmale1995, BCSS1998} [V2, through \cite[\S4.6]{Burgisser2024}; the original paper
-was not accessed, and its statement is taken from the survey's equation (4.5) and from
-\cite{Rojas2003}]. In the form that Cheng reads from it, the implication is that if $n!$ is
+\cite{BSS1989, ShubSmale1995, BCSS1998} [V2 for the implication, through
+\cite[\S4.6]{Burgisser2024}; the original paper was not accessed, and its statement is taken
+from the survey's equation (4.5) and from \cite{Rojas2003}; of the model paper \cite{BSS1989} only
+the bibliographic record was checked, on Crossref, [U]]. Malajovich introduced the class
+$\mathrm{UP}$ of ``ultimate polynomial time'' problems over $\C$ and showed that the conjecture
+implies that $\mathrm{UP}$ does not contain the class of nondeterministic polynomial-time problems
+definable without constants over $\C$ \cite{Malajovich1999} [U, abstract level]. In the form that Cheng reads from it, the implication is that if $n!$ is
 ultimately hard, that is, no nonzero multiple of $n!$ has straight-line complexity
 $(\log n)^c$, then the algebraic version of $\mathrm{P} \ne \mathrm{NP}$ holds
 \cite[\S1]{Cheng2004} [V]. B\"urgisser \cite{Burgisser2009}, building on Koiran
@@ -194,8 +198,9 @@ content.
 
 The upper-bound side for $n!$ itself is known unconditionally to be
 $O(\sqrt{n}\,\log^2 n)$ ring operations over $\Z$, a bound that Cheng attributes to Strassen
-and to the textbook of B\"urgisser, Clausen and Shokrollahi \cite[\S1]{Cheng2004} [V as
-stated by Cheng; Strassen's paper was not read, [U]]. Cheng proves, conditionally on a
+and to the textbook of B\"urgisser, Clausen and Shokrollahi \cite{BCS1997}
+\cite[\S1]{Cheng2004} [V as stated by Cheng; Strassen's paper was not read, and of the textbook
+only the Crossref record was checked, [U]]. Cheng proves, conditionally on a
 smooth-numbers-in-short-intervals conjecture, that a nonzero multiple of $n!$ is computed by a
 program of length at most $\exp\bigl(c\sqrt{\log n\,\log\log n}\,\bigr)$ for an absolute
 constant $c$ \cite[Thm.~1]{Cheng2004} [V]; this does not decide the polylogarithmic
@@ -203,9 +208,15 @@ question that the conjecture asks about. The real-zeros analogue of the conjectu
 iterating the logistic map produces $2^j$ real roots at cost $O(j)$ \cite[Example~1]{Rojas2003}
 [V], which motivated Koiran's real tau conjecture for structured expressions (Conjecture~4.1
 of \cite{Burgisser2024} [V2]; the supporting papers
-\cite{Koiran2011, KPTT2015, Hrubes2013, BriquelBurgisser2020} were read at abstract level
-[U], and \cite{Dutta2021} was not read [U]). On the lower-bound side, no nontrivial lower
-bound on $\tau(n!)$ was known when Koiran wrote \cite{Koiran2004} [V]. On the reduction side,
+\cite{Koiran2011, KPTT2015, KPT2015, Hrubes2013, BriquelBurgisser2020} were read at abstract level
+[U], and \cite{Dutta2021} was not read [U]; the Wronskian paper \cite{KPT2015} bounds the number
+of real roots of sums of products of sparse polynomials). On the lower-bound side, no nontrivial lower
+bound on $\tau(n!)$ was known when Koiran wrote \cite{Koiran2004} [V]. For single integers the
+almost-all picture is older: for almost every $n$ the straight-line cost of $n$ is at least of
+order $\log n/\log\log n$, by the lower bounds of de Melo and Svaiter \cite{deMeloSvaiter1996} and
+of Moreira \cite{Moreira1997} [V2, as reported by \cite{Koiran2004}; the exact form of each bound
+is the one in our reference notes and was not checked against the papers, whose Crossref records
+were checked, [U]]. On the reduction side,
 Rojas proved that his $p$-adic Digit Conjecture implies the full statement (Theorem~1 of
 \cite{Rojas2003}) and bounded the valuation spectrum by $s \le N_p(s) \le s(s+1)/2$,
 independently of $p$ (Theorem~2) [V]; the exact statement of the digit conjecture is not
@@ -220,7 +231,11 @@ separations \cite{Burgisser2026} [U, both at abstract level]; the current survey
 The literature contains, to our knowledge, exactly one exhaustive computation in this
 model: Markstr\"om's census of \emph{integer targets} (the straight-line complexity
 of small factorials and primorials), complete to program length $11$ on 2013-era
-hardware \cite{Markstrom2014}. We found no published computation of the
+hardware \cite{Markstrom2014}. A neighbouring integer count is the Mahler--Popken complexity, the least
+number of $1$s that build $n$ with $+$ and $\times$ only, tabulated as sequence A005245 of the
+On-Line Encyclopedia of Integer Sequences \cite{OEISA005245} [V, the entry was read]; it has no subtraction and
+counts the $1$s instead of the gates, so it is a different model and its values are not comparable
+with the ones here. We found no published computation of the
 \emph{polynomial} side, i.e.\ the actual growth function of the conjecture: searches of
 arXiv for the tau conjecture, for Shub--Smale with integer roots and for straight-line
 programs with integer roots return nothing of this kind after 2019 [V]; priority itself
@@ -750,6 +765,10 @@ roots, and we measure two such classes: the odd roots and the roots $\equiv 1 \p
 The exact statement of the digit conjecture is not transcribed in our records, so that this
 reading, and in particular the claim that bounding the roots $\equiv 1 \pmod p$ for one fixed
 prime suffices, is [U]; the measured ladders below stand on their own as exact counts.
+Phillipson and Rojas state variants of the conjecture over local fields, an ``adelic'' tau
+conjecture, together with explicit fewnomial systems that have many roots over a local field
+\cite{PhillipsonRojas2013} [U, abstract level]; the restricted census here is a measurement over
+$\Z$ and tests none of their statements.
 We measured the restricted growth functions exactly through
 $\tau = 7$: the maximum number of odd roots is
 $1, 2, 2, 2, 2, 3, 4$, and for roots $\equiv 1 \pmod 3$:
@@ -869,6 +888,15 @@ literature; the standard treatment is that of Narkiewicz \cite{Narkiewicz1995}, 
 was not accessible to us [U as to the exact attribution], and the proof is included to keep
 the paper self-contained.
 \end{proof}
+
+The arithmetic-dynamics literature goes further than cycles. Doyle and Poonen prove that, for
+the maps $z^d + c$, the curves that parametrize preperiodic points are geometrically irreducible
+with gonality tending to infinity; this gives the function-field analogue of strong uniform
+boundedness of preperiodic points, and over number fields strong uniform boundedness for
+bounded eventual period \cite{DoylePoonen2020} [U, abstract level]. We read that statement as
+context and not as a premise: over number fields it is conditional on the period bound, so
+it does not supply a uniform constant over $\Z$ for the towers of this section, and the stall
+theorems above use only an elementary escape bound and the finiteness of the preimage core.
 
 Yield per gate across the family is maximized at $c = 2$ and decreases in $c$ (the
 yield is bounded by $5$ while building $c$ costs $\tau(c) \sim \log c$ gates,
@@ -1394,7 +1422,9 @@ It is folklore that the conjecture's analogue fails over finite fields, and
 that $x^{p-1}-1$ is the reason; this is why the statement is always made in
 characteristic zero. We record here that the finite-field question has an
 exact answer, obtained on the \emph{same} enumerated programs as the integer
-census, so that the two ladders are comparable term by term.
+census, so that the two ladders are comparable term by term. Lempel, Seroussi and Ziv studied the
+power of straight-line computations in finite fields \cite{LSZ1982}; of that paper only the title and
+the Crossref record were checked, so we state no result of it [U].
 
 For a prime $p$ write $z_p(f)$ for the number of distinct roots of $f$ in
 $\mathbb{F}_p$, defined only when $f \not\equiv 0 \pmod p$, and set
@@ -1866,6 +1896,47 @@ shortest linear straight-line programs over GF(2) using SAT}, SAT 2010, LNCS 617
 
 \bibitem{Narkiewicz1995} W.~Narkiewicz, \emph{Polynomial Mappings}, Lecture Notes in
 Mathematics 1600, Springer, 1995.
+
+\bibitem{BSS1989} L.~Blum, M.~Shub, S.~Smale, \emph{On a theory of computation and complexity
+over the real numbers: NP-completeness, recursive functions and universal machines}, Bull.\
+Amer.\ Math.\ Soc.\ 21(1):1--46, 1989.
+\href{https://doi.org/10.1090/S0273-0979-1989-15750-9}{doi:10.1090/S0273-0979-1989-15750-9}.
+
+\bibitem{Malajovich1999} G.~Malajovich, \emph{Ultimate polynomial time}, arXiv:math/9904130,
+1999.
+
+\bibitem{BCS1997} P.~B\"urgisser, M.~Clausen, M.~A.~Shokrollahi, \emph{Algebraic Complexity
+Theory}, Grundlehren der mathematischen Wissenschaften, Springer, 1997.
+\href{https://doi.org/10.1007/978-3-662-03338-8}{doi:10.1007/978-3-662-03338-8}.
+
+\bibitem{KPT2015} P.~Koiran, N.~Portier, S.~Tavenas, \emph{A Wronskian approach to the real
+$\tau$-conjecture}, J.\ Symbolic Comput.\ 68:195--214, 2015. arXiv:1205.1015.
+\href{https://doi.org/10.1016/j.jsc.2014.09.036}{doi:10.1016/j.jsc.2014.09.036}.
+
+\bibitem{deMeloSvaiter1996} W.~de~Melo, B.~F.~Svaiter, \emph{The cost of computing integers},
+Proc.\ Amer.\ Math.\ Soc.\ 124(5):1377--1378, 1996.
+\href{https://doi.org/10.1090/S0002-9939-96-03173-5}{doi:10.1090/S0002-9939-96-03173-5}.
+
+\bibitem{Moreira1997} C.~G.~Moreira, \emph{On asymptotic estimates for arithmetic cost functions},
+Proc.\ Amer.\ Math.\ Soc.\ 125(2):347--353, 1997.
+\href{https://doi.org/10.1090/S0002-9939-97-03583-1}{doi:10.1090/S0002-9939-97-03583-1}.
+
+\bibitem{OEISA005245} The On-Line Encyclopedia of Integer Sequences, sequence A005245 (the
+Mahler--Popken complexity of $n$), \url{https://oeis.org/A005245}, read 14 November 2026.
+
+\bibitem{LSZ1982} A.~Lempel, G.~Seroussi, J.~Ziv, \emph{On the power of straight-line
+computations in finite fields}, IEEE Trans.\ Inform.\ Theory 28(6):875--880, 1982.
+\href{https://doi.org/10.1109/TIT.1982.1056592}{doi:10.1109/TIT.1982.1056592}.
+
+\bibitem{PhillipsonRojas2013} K.~Phillipson, J.~M.~Rojas, \emph{Fewnomial systems with many roots,
+and an adelic tau conjecture}, in \emph{Tropical and Non-Archimedean Geometry}, Contemp.\ Math.\
+605:45--71, 2013. arXiv:1011.4128.
+\href{https://doi.org/10.1090/conm/605/12111}{doi:10.1090/conm/605/12111}.
+
+\bibitem{DoylePoonen2020} J.~R.~Doyle, B.~Poonen, \emph{Gonality of dynatomic curves and strong
+uniform boundedness of preperiodic points}, Compos.\ Math.\ 156(4):733--743, 2020.
+arXiv:1711.04233.
+\href{https://doi.org/10.1112/S0010437X20007022}{doi:10.1112/S0010437X20007022}.
 
 \end{thebibliography}
 

@@ -66,11 +66,56 @@
         "relation": "cites",
         "identifier": "10.1016/j.tcs.2004.07.032",
         "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/S0273-0979-1989-15750-9",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.math/9904130",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/978-3-662-03338-8",
+        "resource_type": "publication-book"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1016/j.jsc.2014.09.036",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/S0002-9939-96-03173-5",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/S0002-9939-97-03583-1",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1109/TIT.1982.1056592",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/conm/605/12111",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1112/S0010437X20007022",
+        "resource_type": "publication-article"
       }
     ],
     "version": "0.07",
     "language": "eng",
     "publication_date": "2026-11-14",
-    "version_notes": "Corrections. (1) The stage table of the window-free additive scan (the seven-root threshold section) is corrected: the 92,943,826 candidates labeled identically zero are candidates whose eighth gate is the zero polynomial (f = +-b, dropped soundly because z(b) <= z_max(7) = 5 < 7); the 498,669,099 full-residue-zero suspects, omitted before, are all dropped by an exact zero test; the table now carries the full counter set and the identity 2,937,472,943 = 498,669,099 + 92,943,826 + 2,345,860,018. (2) Every literature statement now carries an evidence mark (read on the primary source, stated by a secondary source read, or unverified); the Shub-Smale, Blum-Cucker-Shub-Smale and Shamir statements are attributed to the survey and to Koiran, which were read; the unsupported attribution of the factoring consequence to a 2003 Cheng paper is removed, and the 2004 Cheng paper (read) is cited for the upper bounds on n!. (3) The data section distinguishes the exact scans (depth 8 and the multiplicative ninth gate, no window) from the windowed additive scan and the window-free p-adic scan, and records the commits of the code, the unrecorded library versions, the SHA-256 of the catalog and the location of the 27.3 GiB frontier. (4) Added: algorithm blocks with costs and memory for the census search, the out-of-core frontier build, the last-gate scan, the union scan and the p-adic block filter; a proof of the reached-set sufficiency lemma; the complete gate-by-gate programs of the 4-gate integer record and the 6-gate rational record; a figure of the four ladders (integers, rationals, reals, finite fields); captions and labels on all tables. (5) Both cross-check counts of the computer-algebra comparison (284 and 228 polynomials) are quoted; the statement of Rojas's digit conjecture is marked unverified; a claim of a subquadratic valuation bound is replaced by the quadratic bound read in the source. No result changes."
+    "version_notes": "Corrections. (1) The stage table of the window-free additive scan (the seven-root threshold section) is corrected: the 92,943,826 candidates labeled identically zero are candidates whose eighth gate is the zero polynomial (f = +-b, dropped soundly because z(b) <= z_max(7) = 5 < 7); the 498,669,099 full-residue-zero suspects, omitted before, are all dropped by an exact zero test; the table now carries the full counter set and the identity 2,937,472,943 = 498,669,099 + 92,943,826 + 2,345,860,018. (2) Every literature statement now carries an evidence mark (read on the primary source, stated by a secondary source read, or unverified); the Shub-Smale, Blum-Cucker-Shub-Smale and Shamir statements are attributed to the survey and to Koiran, which were read; the unsupported attribution of the factoring consequence to a 2003 Cheng paper is removed, and the 2004 Cheng paper (read) is cited for the upper bounds on n!. (3) The data section distinguishes the exact scans (depth 8 and the multiplicative ninth gate, no window) from the windowed additive scan and the window-free p-adic scan, and records the commits of the code, the unrecorded library versions, the SHA-256 of the catalog and the location of the 27.3 GiB frontier. (4) Added: algorithm blocks with costs and memory for the census search, the out-of-core frontier build, the last-gate scan, the union scan and the p-adic block filter; a proof of the reached-set sufficiency lemma; the complete gate-by-gate programs of the 4-gate integer record and the 6-gate rational record; a figure of the four ladders (integers, rationals, reals, finite fields); captions and labels on all tables. (5) Both cross-check counts of the computer-algebra comparison (284 and 228 polynomials) are quoted; the statement of Rojas's digit conjecture is marked unverified; a claim of a subquadratic valuation bound is replaced by the quadratic bound read in the source. (6) Content-bar pass: six data figures generated by a committed script from the experiment records (the size of the exhaustive census by depth, the root-count distributions at tau = 6, 7 and 8, the stage counters of the window-free scan, the load balance and run time over the 256 partitions, the quadratic family against the cost of its constant, and the two real doubling constructions), each read in the text; ten references added where the text discusses them (Blum-Shub-Smale 1989, Malajovich, Burgisser-Clausen-Shokrollahi, Koiran-Portier-Tavenas on the Wronskian, de Melo-Svaiter, Moreira, the Mahler-Popken integer complexity entry of the OEIS, Lempel-Seroussi-Ziv, Phillipson-Rojas, Doyle-Poonen), each with its evidence mark; the six-gate program of the tau = 6 rational record is replayed in exact arithmetic by a committed script and recorded. No result changes."
   }
 }
