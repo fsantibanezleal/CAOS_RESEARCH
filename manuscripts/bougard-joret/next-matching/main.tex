@@ -123,6 +123,18 @@ The extremal graphs of the general problem contain stars, cliques and almost com
 \end{itemize}
 Gallai's lemma~\cite{Gallai} supplies the factor-criticality [V, as used in~\cite{AEY}]. The cases left open by AEY are $7\le d<m$ with $m<Z(d)$ or $m\ge2d$.
 
+\subsection{Lineage of the extremal problem and its bearing on \texorpdfstring{$Z(d)$}{Z(d)} and the bracket}\label{sec:lineage}
+
+Each work below is described as it was read: [V] on the final text of~\cite{AEY} or the full text of~\cite{BET}, which report it, with the original not read here.
+
+\emph{Erd\H{o}s and Rado~\cite{ER}} posed a more general problem of which the degree and matching problem is a special case; no hypothesis or conclusion of theirs is used here. \emph{Chv\'atal and Hanson~\cite{CH}} solved it for general graphs: for all $d$ and $m$ they determined the maximum number of edges of a graph with $\Delta\le d$ and $\nu\le m$, by optimisation arguments and Berge's matching formula~\cite{BET,AEY}. The same formula, in the form~\eqref{eq:TB}, is the engine of Section~\ref{sec:tb}, so both arguments rest on Berge's formula. \emph{Balachandran and Khare~\cite{BK}} gave a constructive proof. Their formula, printed as Theorem~2.1 of~\cite{AEY}, is $f_{\mathrm{GEN}}(d,m)=dm+\lfloor d/2\rfloor\lfloor m/\lceil d/2\rceil\rfloor$ for all $d,m$, attained by disjoint unions of $d$-stars, complete graphs and, for some parameters, an almost complete graph that contains $C_4$ [V]. The clique components are what triangle-freeness forbids: $Z(d)$ of Definition~\ref{def:Z} is the matching number of the triangle-free replacement of such a component, an (almost) $d$-regular factor-critical graph on $2Z(d)+1$ vertices, so the threshold at which AEY's conjecture~\eqref{eq:AEYconj} stops applying is the point at which one such component fits in the matching budget. \emph{Belmonte, Heggernes, van 't Hof and Saei~\cite{Belmonte}} showed, as reported in~\cite{AEY}, that the general problem is equivalent to computing Ramsey numbers of line graphs; no such equivalence is claimed for the triangle-free problem here.
+
+The restrictions of the problem to graph classes follow the structure of the extremal graphs of~\cite{BK}. Dibek, Ekim and Heggernes~\cite{Dibek} settled the claw-free case, with some parameters at which the general maximum is attained and others at which it is strictly smaller. Blair et al.~\cite{Blair} showed that chordal graphs attain the general bound, by replacing the almost complete components with chordal graphs of the same size, and M\aa land~\cite{Maland} treated bipartite, split, unions of split and unit interval graphs [V, as reported in~\cite{AEY}]. For triangle-free graphs AEY show that the general maximum is strictly lowered in most cases; at $m=d+1$ the loss is $2\lfloor d/2\rfloor-2$ edges (Section~\ref{sec:attain} and the comparison above), so the slice of Theorem~\ref{thm:main} is a case in which the class restriction is costly and the exact value is not the general one.
+
+AEY also restate the problem as a degree-bounded Tur\'an problem: for $d\le i\le Z(d)$, $f_\triangle(d,i)=\mathrm{ex}(2i+1,\{K_3,K_{1,d}\})$, the largest size of a graph on $2i+1$ vertices without a triangle and without the star printed as $K_{1,d}$ (a bound $\Delta\le d$ excludes $K_{1,d+1}$, so the printed index is read here as a notational slip [U]), and they contrast the asymptotic theorem of Erd\H{o}s and Stone~\cite{ErdosStone}, described as fundamental in~\cite{Bollobas}, with the exact values sought here [V, as stated in~\cite{AEY}]. In this language Theorem~\ref{thm:order} computes the extremal number of triangle-free graphs on $2d+3$ vertices with maximum degree at most $d$, and equals $d^2+d+2$ for $d\ge7$ [D]. The bracket of Section~\ref{sec:bj} is the same extremal number seen through complementation: a graph with independence number two on $2d+3$ vertices and minimum degree at least $d+2$ has a triangle-free complement of maximum degree at most $d$, so $f(2d+3,2,d+2)\ge\binom{2d+3}{2}-(d^2+d+2)=d^2+4d+1$ and equality would require the complement of a maximizer to be $(d+2)$-connected, which Theorem~\ref{thm:k2d} excludes [D].
+
+Finally, H\"aggkvist~\cite{Haggkvist} is cited in~\cite{AEY} for the statement that a triangle-free graph with $\delta>3|V|/8$ is a subgraph of a blow-up of $C_5$ [V, as stated in~\cite{AEY}]; AEY use it to support their Conjecture~6.5, since the graphs realising $Z(d)$ for large odd $d$ have minimum degree at least $d-2$ and order $2Z(d)+1$, above that threshold. The five types of Section~\ref{sec:fixed} are the classes of the same quotient to $C_5$, obtained here from the shortest odd cycle and the deficit bound and not from a minimum-degree hypothesis; the graphs of Theorem~\ref{thm:order} have a vertex of degree four, so the minimum-degree threshold does not apply to them [D].
+
 \subsection{The threshold \texorpdfstring{$Z(d)$}{Z(d)} and the proved range}\label{sec:Z}
 
 \begin{definition}[$Z(d)$, \cite{AEY} Definition~4.2]\label{def:Z}
@@ -736,6 +748,22 @@ Discrete Mathematics 8 (1974), 205--218.
 \bibitem{Gallai} T. Gallai.
 \emph{Neuer Beweis eines Tutte'schen Satzes}.
 Magyar Tud. Akad. Mat. Kutat\'o Int. K\"ozl. 8 (1963), 135--139. [V as used in~\cite{AEY}; not read]
+\bibitem{Belmonte} R. Belmonte, P. Heggernes, P. van 't Hof and R. Saei.
+\emph{Ramsey numbers for line graphs and perfect graphs}.
+Computing and Combinatorics (COCOON 2012), Lecture Notes in Computer Science, 204--215.
+\href{https://doi.org/10.1007/978-3-642-32241-9_18}{doi:10.1007/978-3-642-32241-9\_18}. [V as to bibliographic data (Crossref); content as reported by~\cite{AEY}]
+\bibitem{ErdosStone} P. Erd\H{o}s and A. H. Stone.
+\emph{On the structure of linear graphs}.
+Bulletin of the American Mathematical Society 52 (1946), 1087--1091.
+\href{https://doi.org/10.1090/S0002-9904-1946-08715-7}{doi:10.1090/S0002-9904-1946-08715-7}. [V as to bibliographic data (Crossref); use as described in~\cite{AEY}]
+\bibitem{Bollobas} B. Bollob\'as.
+\emph{Modern Graph Theory}.
+Graduate Texts in Mathematics 184, Springer, 1998.
+\href{https://doi.org/10.1007/978-1-4612-0619-4}{doi:10.1007/978-1-4612-0619-4}. [V as to bibliographic data (Crossref); cited by~\cite{AEY}, not read]
+\bibitem{Haggkvist} R. H\"aggkvist.
+\emph{Odd cycles of specified length in non-bipartite graphs}.
+Graph Theory (Cambridge, 1981), North-Holland Mathematics Studies 62 (1982), 89--99.
+\href{https://doi.org/10.1016/S0304-0208(08)73552-7}{doi:10.1016/S0304-0208(08)73552-7}. [V as to bibliographic data (Crossref); statement as quoted in~\cite{AEY}]
 \bibitem{Turan} P. Tur\'an.
 \emph{On an extremal problem in graph theory} (in Hungarian).
 Mat. Fiz. Lapok 48 (1941), 436--452. [V as listed in~\cite{AEY}; not read]

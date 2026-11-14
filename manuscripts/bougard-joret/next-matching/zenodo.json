@@ -90,6 +90,26 @@
         "scheme": "doi"
       },
       {
+        "identifier": "10.1007/978-3-642-32241-9_18",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.1090/S0002-9904-1946-08715-7",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.1007/978-1-4612-0619-4",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.1016/S0304-0208(08)73552-7",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
         "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
         "relation": "isSupplementTo",
         "scheme": "url"
