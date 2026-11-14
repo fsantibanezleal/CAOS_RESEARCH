@@ -170,11 +170,13 @@ B_TRIPLES = [(19, 3, 6), (20, 3, 6), (21, 3, 6), (22, 3, 6), (22, 3, 7), (23, 3,
 
 
 def recorded_counts():
+    """(n, alpha, k, E) -> (graphs generated, CPU seconds) of the pruned-generator records (56 parts, 28 processes)."""
     rec = {}
     for f in EXPS.glob("EXP-0*/artifacts/enum.jsonl"):
         for l in f.read_text(encoding="utf-8").splitlines():
             r = json.loads(l)
-            rec[(r["n"], r["alpha"], r["k"], r["E"])] = r["generated"]
+            if r.get("mod") == 56:
+                rec[(r["n"], r["alpha"], r["k"], r["E"])] = (r["generated"], r["seconds"] * 28)
     return rec
 
 
@@ -189,14 +191,27 @@ def b_truth(args):
 
 
 def gate_b(a):
+    """Slices are sized from the records: about 1,500 graphs and about 120 CPU seconds of generation each, extrapolated
+    by a factor of 10 per edge above the last recorded count. Finished slices in artifacts/gate-b.json are kept."""
     rec = recorded_counts()
-    rows, bad, total = [], 0, 0
+    old = json.loads((ART / "gate-b.json").read_text(encoding="utf-8")) if (ART / "gate-b.json").exists() else None
+    rows = old["slices"] if old else []
+    done = {(r["n"], r["alpha"], r["k"], r["E"]) for r in rows}
+    bad = sum(r["disagreements"] + r["alpha_above_bound"] for r in rows)
+    total = sum(r["graphs"] for r in rows)
     for n, al, k in B_TRIPLES:
         c = t(n, al) + ceil(k * al / 2)
         for E in (c - 1, c, c + 1):
-            known = [(e, g) for (n2, a2, k2, e), g in rec.items() if (n2, a2, k2) == (n, al, k) and e <= E and g > 0]
-            est = max(g for _, g in known) * 3 ** max(0, E - max(e for e, _ in known)) if known else 10 ** 6
-            mod = max(1, round(est / 1500))
+            if (n, al, k, E) in done:
+                continue
+            known = sorted((e, g, cpu) for (n2, a2, k2, e), (g, cpu) in rec.items() if (n2, a2, k2) == (n, al, k)
+                           and e <= E and g > 0)
+            if known:
+                e0, g0, cpu0 = known[-1]
+                f = 10 ** max(0, E - e0)
+                mod = max(1, ceil(g0 * f / 1500), ceil(cpu0 * f / 120))
+            else:
+                mod = 100000
             t0 = time.time()
             r = wsl(f"timeout 3600 {a.nauty}/geng_a{al} -q -d{k} {n} {E}:{E} 0/{mod} | head -n 3000", timeout=3700)
             lines = r.stdout.split()

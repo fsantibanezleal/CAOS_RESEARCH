@@ -122,3 +122,12 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   conjectured value (11,371,164 graphs in the completed edge counts). (24,7,3) and (24,3,7) hit the 4-hour per-edge
   cap at their last edge count: f(24,7,3) >= 40 (conjectured 41), f(24,3,7) >= 94 (conjectured 95). BJB-021 opened.
 
+## 2026-11-14 - EXP-010 confirmed: order 24 complete
+
+- Hypothesis 084e0874. (24,7,3) at E = 40: 23,556,793 graphs, none qualifying (42,834 s on 14 processes); (24,3,7)
+  at E = 94: 569,264 graphs, none qualifying (38,875 s). Hence f(24,7,3) = 41 and f(24,3,7) = 95, the conjectured
+  values. The second line of Conjecture 1 holds at all 53 open-window triples with n <= 24.
+- Literature (2026-11-11): Didin, Zenodo 10.5281/zenodo.22831382 (preprint under review), claims the lower bound of
+  the second line for all n > k alpha; the enumeration is an independent exhaustive check on these 53 triples
+  (context/references.md).
+
