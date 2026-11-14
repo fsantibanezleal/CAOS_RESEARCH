@@ -25,6 +25,8 @@ Neither the tree strip, the full first shell nor the EXP-003 bracket resolves th
 | BJB-019 | done | EXP-009 (2026-11-10): order 24, 4 of 6 confirmed ((24,5,3)=54, (24,6,3)=45, (24,5,4)=56, (24,4,5)=70); (24,7,3) >= 40 and (24,3,7) >= 94 open at the 4-hour per-edge cap; 51 of 53 open triples with n <= 24 hold |
 | BJB-020 | done | Note `second-regime` v0.02 with order 23 (47 triples): published 2026-11-08, 10.5281/zenodo.24059677 |
 | BJB-021 | done | EXP-010 (2026-11-11): (24,7,3) at E = 40 (23,556,793 graphs, 11.9 h on 14 processes) and (24,3,7) at E = 94 (569,264 graphs, 10.8 h) hold no qualifying graph: f(24,7,3) = 41, f(24,3,7) = 95; all 53 open-window triples with n <= 24 hold |
-| BJB-022 | doing | EXP-011: every extremal graph at the conjectured value at 35 triples; 40 of them have no partition into alpha cliques (k = 3, alpha odd); Didin's core parameter explains where (second addendum) |
-| BJB-023 | doing | EXP-012: validation of the pipeline at the production parameters (provenance, filter, hook, split, generator counts) |
+| BJB-022 | done | EXP-011 (2026-11-14): 246 extremal graphs at 35 triples, counts equal the records; 206 Bougard-Joret graphs, 40 with clique cover number alpha + 1 (k = 3, alpha odd); every Didin-derived prediction confirmed |
+| BJB-023 | done | EXP-012 (2026-11-14): pipeline exact at the production parameters (Gates A to F, 0 disagreements) |
+| BJB-025 | done | EXP-013 (2026-11-14): X6/X7 construction of extremal graphs without a clique partition for every odd alpha, 3 alpha < n <= 4 alpha - 1; proof with finite checks; extremal at (22..24,7,3) |
+| BJB-026 | todo | Are X6 and X7 the only blocks for every odd alpha (shown for n <= 22)? Is case (b) (p(G) = 1) realised beyond (10,3,3)? |
 | BJB-024 | todo | Note second-regime v0.03: full rewrite (order 24, Didin's claimed proof, methods, validation, extremal graphs), independent review, release |
