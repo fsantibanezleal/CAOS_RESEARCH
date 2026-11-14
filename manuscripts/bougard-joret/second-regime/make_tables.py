@@ -190,6 +190,8 @@ def main():
     # ------------------------------------------------------------- extremal structure (EXP-011)
     e11 = exp / "EXP-011-extremal-structure" / "artifacts"
     st, ve, di, co = jl(e11 / "structure.jsonl"), jl(e11 / "verify.jsonl"), jl(e11 / "didin.jsonl"), jl(e11 / "collect.jsonl")
+    if not st:
+        raise SystemExit(f"missing or empty EXP-011 record: {e11 / 'structure.jsonl'}")
     per = defaultdict(lambda: Counter())
     for r in st:
         d = per[(r["n"], r["alpha"], r["k"])]
@@ -199,6 +201,15 @@ def main():
         d["bj"] += bool(r.get("bj_structure"))
     for r in di:
         per[(r["n"], r["alpha"], r["k"])][f"s{r['s']}"] += 1
+    missing = [x for x in PHASE2 if x not in per]
+    if missing:
+        raise SystemExit(f"EXP-011 structure records lack the frozen phase-2 triples {missing}")
+    rec_count = {(r["n"], r["alpha"], r["k"]): r["kept"] for r in co}
+    count_diff = sum(1 for key, d in per.items() if rec_count.get(key) != d["graphs"])
+    selftest = (e11 / "didin-selftest.txt").read_text(encoding="utf-8") if (e11 / "didin-selftest.txt").exists() else ""
+    m_self = re.search(r"selftest: (\d+) graphs, (\d+) differences", selftest)
+    if not m_self:
+        raise SystemExit(f"missing EXP-011 record: {e11 / 'didin-selftest.txt'}")
     agree_v = sum(1 for r in ve if r["agrees"])
     srows = []
     for key in sorted(per):
@@ -230,6 +241,21 @@ def main():
     gates = {x: json.loads((e12 / f"gate-{x}.json").read_text(encoding="utf-8")) if (e12 / f"gate-{x}.json").exists()
              else None for x in "abcde"}
     ga, gb, gc, gd, ge = (gates[x] for x in "abcde")
+    if not gb:
+        raise SystemExit(f"missing EXP-012 record: {e12 / 'gate-b.json'}")
+    nonempty = defaultdict(list)
+    for sl in gb["slices"]:
+        if sl["graphs"] > 0:
+            nonempty[(sl["n"], sl["alpha"], sl["k"])].append(sl["E"])
+    gb_empty = sum(1 for sl in gb["slices"] if sl["graphs"] == 0)
+    gb_nonempty = "; ".join(f"$({n},{a},{k})$ at $E={','.join(str(E) for E in sorted(Es))}$"
+                            for (n, a, k), Es in sorted(nonempty.items()))
+    if any(n == 24 for n, _, _ in nonempty) or any(k == 7 and E <= cval(n, a, k) for (n, a, k), Es in nonempty.items()
+                                                   for E in Es):
+        raise SystemExit("Gate B coverage changed: revise the text on orders 24 and k = 7")
+    ladder = jl(exp / "EXP-013-odd-alpha-construction" / "artifacts" / "ladder.jsonl")
+    if not ladder or any(r["kappa"] != 2 for r in ladder):
+        raise SystemExit("EXP-013 ladder record missing or changed")
     gd_sum = ("pending" if not gd else
               "For " + ", ".join(f"$({c['n']},{c['alpha']},{c['k']})$ at $E={c['E']}$ ({fmt(c['mod1_graphs'])} graphs)"
                                  for c in gd["cases"]) +
@@ -260,12 +286,13 @@ def main():
         ("E: generator counts", "EXP-012", "A001349, A002851, A006820",
          str(len(ge["cases"])) if ge else "pending", f"{ge['disagreements']} differences" if ge else "pending"),
         ("Extremal recount", "EXP-011", f"{len(per)} triples at $E=c$", fmt(n_ext),
-         "counts equal the records"),
+         f"{count_diff} differences from collect"),
         ("Extremal recheck", "EXP-011", "edges, $\\alpha$, $\\kappa$ by NetworkX", fmt(n_ext),
          f"{sum(1 for r in st if not r['recheck'])} failures"),
         ("Two partition methods", "EXP-011", "colouring vs.\\ maximal cliques", fmt(len(ve)),
          f"{len(ve) - agree_v} disagreements"),
-        ("Core search", "EXP-011", "vs.\\ all set partitions, $n\\le9$", "400", "0 differences"),
+        ("Core search", "EXP-011", "vs.\\ all set partitions, $n\\le9$", m_self.group(1),
+         f"{m_self.group(2)} differences"),
     ]
     write("validation.tex", "\\begin{tabular}{lllrl}\n\\toprule\ncheck & record & scope & items & outcome \\\\\n"
           "\\midrule\n" + "\n".join(" & ".join(r) + " \\\\" for r in vrows) + "\n\\bottomrule\n\\end{tabular}\n")
@@ -273,7 +300,8 @@ def main():
     # ------------------------------------------------------------- numbers and phrases
     complete = opn == 0
     if complete:
-        title = "The second Bougard--Joret line up to order 24:\\\\ an exhaustive check and the extremal graphs"
+        title = ("The second Bougard--Joret line to order 24:\\\\ an exhaustive check, the extremal graphs at "
+                 f"{len(per)} triples,\\\\ and a construction without a clique partition for every odd $\\alpha$")
         absval = (f"At every one of the {len(triples)} triples with $\\alpha\\ge3$, $k\\ge3$ and $n\\le24$ outside the "
                   "range that Bougard and Joret's Proposition~8 settles, $f$ equals the conjectured value")
         theorem = ("For every open-window triple $(n,\\alpha,k)$ with $n\\le24$, "
@@ -304,6 +332,8 @@ def main():
         "gateAgraphs": fmt(ga["graphs"]) if ga else "pending", "gateAdecisions": fmt(ga["decisions"]) if ga else "pending",
         "gateAgroups": ga and len(ga["groups"]) or "pending", "gateAkept": fmt(ga["kept"]) if ga else "pending",
         "gateBgraphs": fmt(gb["graphs"]) if gb else "pending", "gateBslices": len(gb["slices"]) if gb else "pending",
+        "gateBempty": gb_empty, "gateBnonempty": gb_nonempty,
+        "nladder": len(ladder),
         "gateCgraphs": fmt(gc["graphs"]) if gc else "pending", "gateCdecisions": fmt(gc["decisions"]) if gc else "pending",
         "gateDsummary": gd_sum, "gateEsummary": ge_sum,
         "shafilter": sha_f.group(2)[:16] + "\\ldots" if sha_f else "pending",
@@ -336,15 +366,15 @@ def drawings(di, st):
         q = len(parts)
         for i, part in enumerate(parts):
             ang = 90 + 360 * i / q
-            cx, cy = 1.9 * math.cos(math.radians(ang)), 1.9 * math.sin(math.radians(ang))
+            cx, cy = 2.6 * math.cos(math.radians(ang)), 2.6 * math.sin(math.radians(ang))
             centers.append((cx, cy, len(part)))
             for j, v in enumerate(sorted(part)):
                 b = ang + 180 + 360 * j / len(part)
-                rr = 0.55 if len(part) > 1 else 0
+                rr = 0.45 + 0.1 * len(part) if len(part) > 1 else 0
                 pos[v] = (cx + rr * math.cos(math.radians(b)), cy + rr * math.sin(math.radians(b)))
-        lines = [f"\\begin{{tikzpicture}}[scale=0.95,every node/.style={{circle,fill=black,inner sep=1.4pt}}]"]
+        lines = [f"\\begin{{tikzpicture}}[scale=0.8,every node/.style={{circle,fill=black,inner sep=1.4pt}}]"]
         for cx, cy, size in centers:
-            lines.append(f"\\fill[gray!18] ({cx:.3f},{cy:.3f}) circle ({0.55 + 0.32 if size > 1 else 0.3:.2f});")
+            lines.append(f"\\fill[gray!18] ({cx:.3f},{cy:.3f}) circle ({0.75 + 0.1 * size if size > 1 else 0.3:.2f});")
         for v, (x, y) in sorted(pos.items()):
             lines.append(f"\\node (v{v}) at ({x:.3f},{y:.3f}) {{}};")
         where = {v: i for i, p in enumerate(parts) for v in p}
@@ -414,20 +444,21 @@ def partition_chart(per):
 
 def window_map(by_n, decision):
     """pgfplots scatter of the open window up to order 30: decided triples filled, others open."""
-    pairs = sorted({(a, k) for trip in by_n.values() for _, a, k in trip})
-    ycoords = ",".join(f"{a}-{k}" for a, k in pairs)
+    pairs = sorted({(a, k) for trip in by_n.values() for _, a, k in trip}, key=lambda x: (x[0] * x[1], x[0]))
+    row = {pk: i for i, pk in enumerate(pairs)}
+    yticks = ",".join(str(i) for i in range(len(pairs)))
     ylabels = ",".join(f"{{({a},{k})}}" for a, k in pairs)
     dec, opn = [], []
     for n, trip in by_n.items():
         for _, a, k in trip:
             lo = max(ceil(n * k / 2), t(n, a))
             done = n <= NMAX and all((n, a, k, E) in decision for E in range(lo, cval(n, a, k)))
-            (dec if done else opn).append(f"({n},{a}-{k})")
-    return ("\\begin{tikzpicture}\n\\begin{axis}[width=0.9\\textwidth,height=6.4cm,xlabel={order $n$},"
+            (dec if done else opn).append(f"({n},{row[(a, k)]})")
+    return ("\\begin{tikzpicture}\n\\begin{axis}[width=0.9\\textwidth,height=10cm,xlabel={order $n$},"
             "ylabel={$(\\alpha,k)$},"
-            f"symbolic y coords={{{ycoords}}},ytick=data,yticklabels={{{ylabels}}},"
+            f"ytick={{{yticks}}},yticklabels={{{ylabels}}},ymin=-0.7,ymax={len(pairs) - 0.3},"
             "y tick label style={font=\\tiny},xmin=9,xmax=31,grid=major,grid style={gray!20},"
-            "legend style={font=\\scriptsize,at={(0.02,0.97)},anchor=north west}]\n"
+            "legend style={font=\\scriptsize,at={(0.5,1.02)},anchor=south,legend columns=2}]\n"
             f"\\addplot[only marks,mark=*,mark size=1.8pt,linknavy] coordinates {{{' '.join(dec)}}};"
             "\\addlegendentry{decided here}\n"
             f"\\addplot[only marks,mark=o,mark size=1.8pt,gray] coordinates {{{' '.join(opn)}}};"

@@ -28,9 +28,9 @@ edges, and none of their spanning subgraphs with the same independence number sp
 \centering
 \input{blocks.tex}
 \caption{The two building blocks, $X_6$ (left) and $X_7$ (right), each the complement of a maximal triangle-free graph,
-with independence number $2$ and clique cover number $3$. Filled vertices: an attaching triple (for $X_7$, one of
-three up to automorphism, the others being $\{1,2,3\}$ and $\{1,2,6\}$). Open vertices $3,4$ of $X_6$ and $3,4$ of $X_7$:
-an independent pair with no neighbour outside the block.}
+with independence number $2$ and clique cover number $3$. Navy vertices with a stub: an attaching triple (for
+$X_7$, one of three up to automorphism, the others being $\{1,2,3\}$ and $\{1,2,6\}$). Open vertices $3,4$ of $X_6$ and
+$3,4$ of $X_7$: an independent pair with no neighbour outside the block. Grey vertices: the remaining vertices.}
 \label{fig:blocks}
 \end{figure}
 
@@ -80,7 +80,8 @@ every edge of $Q$ between them destroyed. But $Q$ has at least three such edges,
 its own cross edge. If $X-S$ is disconnected, then $S\subseteq V(X)$ by F6, so every other part and every cross edge
 not at $X$ survives. Moreover $Q-X$ is connected: a cut vertex $v$ of a $3$-edge-connected cubic multigraph would leave
 a side joined to the rest by at most one of the three edges at $v$. So the parts other than $X$ lie in one component.
-By F5 each component of $X-S$ contains a vertex of $A\setminus S$, whose cross edge leads into that component.
+By F5 each component of $X-S$ contains a vertex of $A\setminus S$, whose cross edge leads to a part other than
+$X$, and so into the single component that holds those parts.
 
 \emph{Clique cover number.} The $\alpha-2$ cliques and three cliques covering $X$ (F1) give $\theta(G)\le\alpha+1$. A
 clique of $G$ that meets two parts is a single cross edge, since a third vertex would need a second cross edge at one
@@ -99,13 +100,17 @@ Lemma~\ref{lem:p}, and $p(G)\ne\alpha$ because $\theta(G)>\alpha$.
 \end{proof}
 
 \begin{corollary}\label{cor:construction}
-At $(22,7,3)$, $(23,7,3)$ and $(24,7,3)$ the graph $G$ is extremal, by Theorem~\ref{thm:values}, and has no partition
-into seven cliques. If Didin's Theorem~9 holds, $G$ is extremal for every odd $\alpha\ge3$ and $3\alpha<n\le4\alpha-1$;
+At each of the nine triples with $n\le24$ that it covers, $(10,3,3)$, $(11,3,3)$, $(16,5,3)$ to $(19,5,3)$ and
+$(22,7,3)$ to $(24,7,3)$, the graph $G$ is extremal by Theorem~\ref{thm:values}, without any condition, and has no
+partition into $\alpha$ cliques. If Didin's Theorem~9 holds, $G$ is extremal for every odd $\alpha\ge3$ and $3\alpha<n\le4\alpha-1$;
 then case (a) of Proposition~\ref{prop:where} occurs at every triple where it is allowed, and the bound $n\le4\alpha-1$
 there is sharp.
 \end{corollary}
 
-A program that builds $G$ with a prism or Möbius-ladder quotient and checks every property of
+A program that builds $G$ with the triple edge ($\alpha=3$), $K_4$ ($\alpha=5$) or the prism $C_h\square K_2$
+($\alpha\ge7$) as quotient and checks every property of
 Theorem~\ref{thm:construction} exactly confirms it for every odd $\alpha\le11$ and every admissible order
 (EXP-013, \nconstructed\ graphs). It also confirms that a quotient which is not $3$-edge-connected can fail: the
-circular ladder on four parts has a cut of two edges, and its graphs are only $2$-connected.
+circular ladder on four parts, two double edges joined by two single edges, has a cut of two edges, and all
+\nladder\ graphs built on it at $\alpha=5$, twenty random attachments at each order from $16$ to $19$, have the
+conjectured number of edges and independence number $5$ but connectivity $2$ (EXP-013, \texttt{probe\_ladder.py}).
