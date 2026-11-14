@@ -74,3 +74,21 @@ so this cost model can be checked.
 ## Budget
 
 Three hours of wall time, at most 10 worker processes (another job uses 14 of the 32 logical processors), no WSL.
+
+## Premise dependencies
+
+- EXP-068 (CONFIRMED, `verdict.md`, `proof.md`): the theorem under test and the producer and auditor routines.
+- Pham's ideal `(0,14)` is a counterexample (Pham, arXiv:2609.07615; EXP-068 run log); `C_4` with `(0,24)` is a
+  counterexample (EXP-009, CONFIRMED). Both statuses are recomputed in this run by the partition criterion and by the
+  factor torsion length, and the run stops if either differs.
+
+## Kill criterion
+
+Three hours of wall time. A case whose producer computation exceeds 1,800 s is recorded as not completed; B4 is skipped
+if B1 to B3 are not done after two hours. A verdict covers only the completed cases.
+
+## Invariant-first note
+
+Two cheap invariants were considered: the Hilbert-series identity decides that `A` has the extension structure but not
+its torsion, and the partition criterion decides the Huneke-Wiegand predicate but not the torsion length. Neither tests
+the length law, so the direct torsion computation is required.

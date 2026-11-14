@@ -55,3 +55,21 @@ a second solver. This experiment is that cross-check; it changes no claim of EXP
 
 At most 16 x 600 s for P2 plus the controls; the Z3 times of EXP-026 were 62.5 s in all (51.0 s for
 `quartic-completeness`). One process at a time; no WSL.
+
+## Premise dependencies
+
+- EXP-026 (CONFIRMED, `verdict.md`): the 16 obligations, their construction in `symbolic_certificate.py` and the stored
+  digests in `artifacts/symbolic-certificate.json`.
+- The cvc5 decision procedure for quantified linear integer arithmetic is used as a black box; its soundness is a
+  premise, as Z3's is for EXP-026.
+
+## Kill criterion
+
+600 s per leaf and three hours in all. A leaf that hits its limit is reported as not cross-checked, and the verdict
+covers only the leaves decided.
+
+## Invariant-first note
+
+The finite sweep of EXP-026 (every `p` up to 300) is the cheap decider already on record; it decides each `p`
+separately and cannot cover all `p >= 4`. A hand proof by case analysis over the eleven blocks (audit plan item 2a)
+would remove the solver from the trusted base; it is not attempted here.
