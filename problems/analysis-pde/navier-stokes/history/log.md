@@ -140,3 +140,19 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   argument is not claimed false). Published as v0.09, 10.5281/zenodo.23890775.
 - NS-021 closed by reference to Section 5 (exponent budget behind the published threshold).
 - Held dormant: no open backlog item; reopening conditions in state.md.
+
+## 2026-11-14 - blowup-claims-audit v0.10 published (10.5281/zenodo.24231927)
+
+- Revision from the independent audit (CAOS_MANAGE wip/caos-research/msaudit-misc-2026-11-10.md, D2), in three passes:
+  the failed criteria reported (EXP-004 slope sub-gate, EXP-005 Part D gate D1, the Rayleigh-Taylor run, EXP-002's
+  2.47% window error, and the others: seven not met, one inconclusive); the force estimates transcribed with pages and
+  equations from the archived PDFs (case (iii) values 4.48e-3 and 3.77e-3 recomputed); numerical methods as five
+  algorithms; related work, ablation, discussion, limitations, reproducibility and conclusions sections; evidence marks.
+- Records corrected: EXP-008 verdict (finite-horizon factor off by a factor 2; the agreement is a survival-constraint
+  shift, not the bisection's resolution); history-log entries for EXP-002 to EXP-008 added.
+- Independent review (CAOS_MANAGE wip/caos-research/ns-claims-audit-v010-review-2026-11-14.md): CHANGES REQUIRED twice,
+  then APPROVE; minors N7 and N8 applied.
+- Release: 39 gates passed; 40 pages, 1,052,878 bytes, SHA-256
+  af2c256f4c079e52a125748b7dd0bb657328000e85ad378bff21ef0fe852500b; a fresh unauthenticated download equals the frozen
+  file.
+
