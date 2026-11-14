@@ -165,7 +165,7 @@ def table_undecided() -> list[str]:
     below40 = [k for k in results("G52b") if k < 40]
     assert not below40, below40
     rows.append(BS + "midrule")
-    rows.append(f"${NAMES['G52b']}$ & 2 to 38 & not attempted & no run exists for an order below 40 " + BS + BS)
+    rows.append(f"${NAMES['G52b']}$ & 6 to 38 & not attempted & no run exists for an order below 40 " + BS + BS)
     rows.append(BS + "midrule")
     g68 = results("G68")
     for k in (54, 56, 58, 60):
@@ -174,14 +174,14 @@ def table_undecided() -> list[str]:
     f = jload(ART / "formula-G68-k52.json")
     rows.append(f"${NAMES['G68']}$ & 52 & stopped at 4 h 13 min of a 24 h limit & formula of {num(f['variables'])} variables and "
                 f"{num(f['clauses'])} clauses " + BS + BS)
-    rows.append(f"${NAMES['G68']}$ & 2 to 50 & not attempted & orders 40 to 50 remain open " + BS + BS)
+    rows.append(f"${NAMES['G68']}$ & 6 to 50 & not attempted & orders 40 to 50 remain open " + BS + BS)
     return [BS + "begin{table}[tbp]" + BS + "centering" + BS + "small",
             BS + "begin{tabular}{ll>{" + BS + "raggedright" + BS + "arraybackslash}p{5.2cm}>{" + BS + "raggedright" + BS + "arraybackslash}p{5.6cm}}", BS + "toprule",
             "graph & $k$ & outcome & record" + BS + BS, BS + "midrule", *rows, BS + "bottomrule", BS + "end{tabular}",
             BS + "caption{Target orders for which no refutation or coloring exists, by graph. The runner stops an instance at "
             "21,600 s; in five instances of " + BS + "(" + BS + "Ga" + BS + ")" + " the in-process solver call held the interpreter lock "
             "past that limit and was stopped by hand. The formula of order 52 for " + BS + "(" + BS + "Gsix" + BS + ")" + " is kept "
-            "for a rerun; the partial proofs of the interrupted run were deleted.}" + BS + "label{tab:undecided}",
+            "for a rerun; the partial proofs of the interrupted run were deleted. The orders 2 and 4 are settled for all three graphs by Proposition~" + BS + "ref{prop:small} and are not listed.}" + BS + "label{tab:undecided}",
             BS + "end{table}"]
 
 

@@ -97,9 +97,8 @@ Putman's two 112-vertex counterexamples carry computer-checked certificates~\cit
 \evV{}. Jooken's note~\cite{Jooken2026} \evV{} isolates the mechanism by which a small subgraph forces four
 pairwise adjacent edges of the Petersen graph. The group of Goedgebeur, Jooken, M\'a\v{c}ajov\'a,
 Mattiolo, Mazzuoccolo and Ulyanov first gave the two 52-vertex graphs~\cite{GJMMM2026zenodo} \evV{}, and in the
-final paper~\cite{GJMMMU2026} \evV{} added the infinite family of Theorem~7 there, the bounds
-$40 \le n_{\min} \le 52$, the House of Graphs entries 57244 and 57278 for the 52-vertex graphs, 57280 for the
-68-vertex graph, and Section~5.4, the question this paper answers conditionally. The searches of 6 October 2026
+final paper~\cite{GJMMMU2026} \evV{} added the infinite family of Theorem~8 there, the bounds
+$40 \le n_{\min} \le 52$, the House of Graphs entries 57244 and 57278 for the 52-vertex graphs, and Section~5.4, the question this paper answers conditionally. The searches of 6 October 2026
 found no later work on the conjecture or its counterexamples \evU{}, and that final paper still poses the question.
 
 \paragraph{Colorings by a cubic graph and universal families.} Ma, Mattiolo, Steffen and
@@ -112,7 +111,7 @@ conclude that one counterexample yields infinitely many. Ma, Steffen, Wolf and Z
 the membership of a graph in $\mathcal{H}_r$. The question of this paper is thus a question about membership in
 $\mathcal{H}_3$ for a specific graph, which no published result decides.
 
-\paragraph{Colorings by specific targets.} The Petersen graph is the best-studied target. Kardos,
+\paragraph{Colorings by specific targets.} The Petersen graph is the best-studied target. Kardo\v{s},
 M\'a\v{c}ajov\'a and Zerafa~\cite{KardosMZ} showed, as reported in~\cite[Section~5.4]{GJMMMU2026}, that the Petersen graph is
 colored only by itself or by graphs with a bridge \evU{}; the formula of this paper uses the statement as a control.
 H\"agglund and Steffen study Petersen colorings of families of snarks~\cite{HagglundSteffen2014} \evU{}. Sylvester
@@ -120,7 +119,7 @@ colorings, that is, colorings by the graphs $S_{10}$ and $S_{12}$, are studied b
 Mkrtchyan~\cite{FerrariniMkrtchyan2026} \evU{}, and a counterexample to the conjectures on them is announced
 in~\cite{S10S12counter} \evU{}. The revision arXiv:2608.10028v4~\cite{GJMMMU2026} presents a Petersen
 coloring as a cycle-continuous map to the Petersen graph (DeVos, Ne\v{s}et\v{r}il and Raspaud~\cite{DeVosNR}) and links the problem to
-matroids, to zero-temperature states of spin models and to homomorphisms \evV{}; it cites
+matroids and to zero-temperature states of spin models \evV{}; it cites
 Inoue et al.~\cite{InoueEtAl2026} \evU{} on 3-edge-colorings of apex cubic graphs. None of these works tests, for
 a given graph, every cubic target of a given order at once; the target is fixed in each of them.
 
@@ -132,8 +131,8 @@ from an exhaustive check of the weak snarks on 38 vertices, a list of 7,142,217,
 (Brinkmann and Van Overberghe's list~\cite{BrinkmannVO}, as cited there) \evV{}; that computation is not reproduced here.
 
 \paragraph{Satisfiability and proof certification.} The refutations of the 52-vertex graphs by Petersen colorings
-and by normal 5-edge-colorings are reproduced independently in Section~\ref{sec:results} with the edge-map and normal-coloring
-encodings of~\cite{Putman2026}. The solver is CaDiCaL~\cite{CaDiCaL} and the proof checker is
+and by normal 5-edge-colorings are reproduced independently in Section~\ref{sec:results} with the programme's own edge-map and normal-coloring
+encodings, independent of those of~\cite{Putman2026}. The solver is CaDiCaL~\cite{CaDiCaL} and the proof checker is
 \texttt{drat-trim}~\cite{DRATtrim}; the splitting lemma behind Lemma~\ref{lem:unused} is Fleischner's~\cite{Fleischner1992} \evU{} in the
 bridgeless form of Kaiser, Ku\v{z}el, Li and Wang~\cite{KaiserKLW2007} \evV{}. Open Problem Garden~\cite{OPG} \evV{} lists the conjecture and its
 consequences.
@@ -160,6 +159,8 @@ For a connected bridgeless cubic graph $G$ the following are equivalent: $G \in 
 connected bridgeless cubic graph that colors $G$ is $G$ itself; no bridgeless cubic graph of
 smaller order colors $G$.
 \end{theorem}
+
+The implication from the third statement to the second is Theorem~3.4 there and holds for graphs of class 2, which $\Ga$, $\Gb$ and $\Gsix$ are (none is 3-edge-colorable). A disconnected bridgeless graph that colors the connected graph $G$ has a component that colors it, so asking for a connected colorer loses nothing.
 
 \paragraph{The decision problem.} For a graph $G$ of order $n$, the question of~\cite[Section~5.4]{GJMMMU2026} is
 whether some connected bridgeless cubic graph of order less than $n$ colors $G$. By Theorem~\ref{thm:mmsw} the answer is no

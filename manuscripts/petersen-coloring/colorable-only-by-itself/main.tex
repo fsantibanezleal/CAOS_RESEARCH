@@ -8,12 +8,13 @@
 \definecolor{linknavy}{RGB}{25, 55, 125}
 \usepackage[hypertexnames=false, colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
 \hypersetup{
-  pdftitle={The two 52-vertex counterexamples to the Petersen coloring conjecture are colorable only by themselves},
+  pdftitle={The two 52-vertex counterexamples to the Petersen coloring conjecture are colorable only by themselves if no counterexample has at most 38 vertices},
   pdfauthor={Felipe Santibanez-Leal},
   pdfkeywords={Petersen coloring conjecture, H-coloring, cubic graphs, snarks, splitting lemma, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{array}
+\usepackage{placeins}
 \usepackage{longtable}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -65,7 +66,8 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \vspace{4pt}}
 
 \title{The Two 52-Vertex Counterexamples to the Petersen\\
-Coloring Conjecture Are Colorable Only by Themselves}
+Coloring Conjecture Are Colorable Only by Themselves\\
+If No Counterexample Has at Most 38 Vertices}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -73,7 +75,7 @@ Coloring Conjecture Are Colorable Only by Themselves}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research \doctype}
-\fancyhead[R]{\small Colorable Only by Themselves \textperiodcentered\ \docversion}
+\fancyhead[R]{\small Colorable Only by Themselves, Conditionally \textperiodcentered\ \docversion}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -86,18 +88,18 @@ Coloring Conjecture Are Colorable Only by Themselves}
 For cubic graphs $G$ and $H$, an $H$-coloring of $G$ maps the edges of $G$ to the edges of $H$ so
 that every vertex star of $G$ goes bijectively onto a vertex star of $H$; a Petersen coloring is the
 case where $H$ is the Petersen graph. The graphs that no bridgeless cubic graph of smaller order
-colors form the set $\mathcal{H}_3$ of Ma, Mattiolo, Steffen and Wolf, infinite since the
+colors form the set $\mathcal{H}_3$ of Ma et al., infinite since the
 conjecture was refuted in 2026. Goedgebeur et al.\ asked whether their 52-vertex
 counterexamples are colorable only by themselves. We prove that the fibers of the vertex map of an
 $H$-coloring have the same parity and that unused target vertices reduce to at most one; three kinds
-of colorings remain, and the question becomes one propositional formula per target order, with the
+remain, and the question becomes one propositional formula per target order, with the
 target graph unknown. We state the formula, prove its symmetry breaking sound, and certify every
 refutation with a DRAT proof checked by \texttt{drat-trim}. For both counterexamples every even
 target order from 40 to 50 is refuted; for the first one so are 2, 4 and 24 to 38. Assuming the
 computation of the same authors, that no bridgeless cubic graph on at most 38 vertices
 lacks a Petersen coloring, both graphs belong to $\mathcal{H}_3$. Without the two lemmas ten orders
-of the first graph were not decided in 35 minutes; with them each took 137 to 5,882 seconds. Orders 6
-to 22 of the first graph and the orders below 40 of the second remain undecided.
+of the first graph went undecided in 35 minutes; with them each took 137 to 5,882 seconds. Orders 6
+to 22 of the first graph and 6 to 38 of the second remain undecided; 2 and 4 follow from 3-edge-colorability.
 \end{abstract}
 
 
@@ -200,9 +202,8 @@ Putman's two 112-vertex counterexamples carry computer-checked certificates~\cit
 \evV{}. Jooken's note~\cite{Jooken2026} \evV{} isolates the mechanism by which a small subgraph forces four
 pairwise adjacent edges of the Petersen graph. The group of Goedgebeur, Jooken, M\'a\v{c}ajov\'a,
 Mattiolo, Mazzuoccolo and Ulyanov first gave the two 52-vertex graphs~\cite{GJMMM2026zenodo} \evV{}, and in the
-final paper~\cite{GJMMMU2026} \evV{} added the infinite family of Theorem~7 there, the bounds
-$40 \le n_{\min} \le 52$, the House of Graphs entries 57244 and 57278 for the 52-vertex graphs, 57280 for the
-68-vertex graph, and Section~5.4, the question this paper answers conditionally. The searches of 6 October 2026
+final paper~\cite{GJMMMU2026} \evV{} added the infinite family of Theorem~8 there, the bounds
+$40 \le n_{\min} \le 52$, the House of Graphs entries 57244 and 57278 for the 52-vertex graphs, and Section~5.4, the question this paper answers conditionally. The searches of 6 October 2026
 found no later work on the conjecture or its counterexamples \evU{}, and that final paper still poses the question.
 
 \paragraph{Colorings by a cubic graph and universal families.} Ma, Mattiolo, Steffen and
@@ -215,7 +216,7 @@ conclude that one counterexample yields infinitely many. Ma, Steffen, Wolf and Z
 the membership of a graph in $\mathcal{H}_r$. The question of this paper is thus a question about membership in
 $\mathcal{H}_3$ for a specific graph, which no published result decides.
 
-\paragraph{Colorings by specific targets.} The Petersen graph is the best-studied target. Kardos,
+\paragraph{Colorings by specific targets.} The Petersen graph is the best-studied target. Kardo\v{s},
 M\'a\v{c}ajov\'a and Zerafa~\cite{KardosMZ} showed, as reported in~\cite[Section~5.4]{GJMMMU2026}, that the Petersen graph is
 colored only by itself or by graphs with a bridge \evU{}; the formula of this paper uses the statement as a control.
 H\"agglund and Steffen study Petersen colorings of families of snarks~\cite{HagglundSteffen2014} \evU{}. Sylvester
@@ -223,7 +224,7 @@ colorings, that is, colorings by the graphs $S_{10}$ and $S_{12}$, are studied b
 Mkrtchyan~\cite{FerrariniMkrtchyan2026} \evU{}, and a counterexample to the conjectures on them is announced
 in~\cite{S10S12counter} \evU{}. The revision arXiv:2608.10028v4~\cite{GJMMMU2026} presents a Petersen
 coloring as a cycle-continuous map to the Petersen graph (DeVos, Ne\v{s}et\v{r}il and Raspaud~\cite{DeVosNR}) and links the problem to
-matroids, to zero-temperature states of spin models and to homomorphisms \evV{}; it cites
+matroids and to zero-temperature states of spin models \evV{}; it cites
 Inoue et al.~\cite{InoueEtAl2026} \evU{} on 3-edge-colorings of apex cubic graphs. None of these works tests, for
 a given graph, every cubic target of a given order at once; the target is fixed in each of them.
 
@@ -235,8 +236,8 @@ from an exhaustive check of the weak snarks on 38 vertices, a list of 7,142,217,
 (Brinkmann and Van Overberghe's list~\cite{BrinkmannVO}, as cited there) \evV{}; that computation is not reproduced here.
 
 \paragraph{Satisfiability and proof certification.} The refutations of the 52-vertex graphs by Petersen colorings
-and by normal 5-edge-colorings are reproduced independently in Section~\ref{sec:results} with the edge-map and normal-coloring
-encodings of~\cite{Putman2026}. The solver is CaDiCaL~\cite{CaDiCaL} and the proof checker is
+and by normal 5-edge-colorings are reproduced independently in Section~\ref{sec:results} with the programme's own edge-map and normal-coloring
+encodings, independent of those of~\cite{Putman2026}. The solver is CaDiCaL~\cite{CaDiCaL} and the proof checker is
 \texttt{drat-trim}~\cite{DRATtrim}; the splitting lemma behind Lemma~\ref{lem:unused} is Fleischner's~\cite{Fleischner1992} \evU{} in the
 bridgeless form of Kaiser, Ku\v{z}el, Li and Wang~\cite{KaiserKLW2007} \evV{}. Open Problem Garden~\cite{OPG} \evV{} lists the conjecture and its
 consequences.
@@ -263,6 +264,8 @@ For a connected bridgeless cubic graph $G$ the following are equivalent: $G \in 
 connected bridgeless cubic graph that colors $G$ is $G$ itself; no bridgeless cubic graph of
 smaller order colors $G$.
 \end{theorem}
+
+The implication from the third statement to the second is Theorem~3.4 there and holds for graphs of class 2, which $\Ga$, $\Gb$ and $\Gsix$ are (none is 3-edge-colorable). A disconnected bridgeless graph that colors the connected graph $G$ has a component that colors it, so asking for a connected colorer loses nothing.
 
 \paragraph{The decision problem.} For a graph $G$ of order $n$, the question of~\cite[Section~5.4]{GJMMMU2026} is
 whether some connected bridgeless cubic graph of order less than $n$ colors $G$. By Theorem~\ref{thm:mmsw} the answer is no
@@ -627,7 +630,7 @@ to its complement; if $H$ has a bridge, a clause is added that requires some slo
 connectivity and bridgelessness (Proposition~\ref{prop:cuts}); the formula is then solved again. None of the target runs of Section~\ref{sec:results} ever entered this loop, because every
 decided formula was unsatisfiable before any cut was learned.
 
-\begin{algorithm}[t]
+\begin{algorithm}[!htbp]
 \caption{Certification pipeline for one instance $(G,k)$ with time cap $T = 21{,}600$ s and floor $\tau = 600$ s. External runs use CaDiCaL with DRAT output followed by \texttt{drat-trim}; the in-process solver is the CaDiCaL 1.9.5 build of PySAT and is not part of the trusted base.}\label{alg:certify}
 \begin{algorithmic}[1]
 \Require cubic graph $G$, even target order $k$, cap $T$, floor $\tau$
@@ -647,7 +650,7 @@ decided formula was unsatisfiable before any cut was learned.
   \If{the check fails} \Return CHECKER-REJECT\EndIf
   \If{$H$ is disconnected} add the cut for a component without target 0 to $C$ and to the solver
   \ElsIf{$H$ has a bridge} add the cut for one side of the bridge, excluding the bridge, to $C$ and to the solver
-  \Else\ refute Petersen colorability of $H$ with a checked proof and \Return SAT with $(H,f)$
+  \Else\ decide Petersen colorability of $H$ (a refutation carries a checked proof) and \Return SAT with $(H,f)$
   \EndIf
 \EndLoop
 \State \Return \textsc{Certify}$(F \cup C,\ T - \text{elapsed})$
@@ -655,7 +658,7 @@ decided formula was unsatisfiable before any cut was learned.
   \State let the orphaned solver finish; run \texttt{drat-trim} with limit 80{,}000 s on the formula file and the proof it left; record the result flagged post hoc, without a solve time
 \EndProcedure
 \Procedure{Portfolio}{formula, solve limit, check limit}
-  \State run CaDiCaL in three configurations in parallel (default, \texttt{--unsat}, \texttt{--seed=7}), each with its own DRAT file
+  \State run CaDiCaL in three configurations in parallel (default, \texttt{-{}-unsat}, \texttt{-{}-seed=7}), each with its own DRAT file
   \State the first configuration to exit with code 20 wins and the others are killed; run \texttt{drat-trim} on the winner's proof within the check limit
 \EndProcedure
 \end{algorithmic}
@@ -682,6 +685,7 @@ and 25 GB of memory visible to the solvers (recorded when the tooling was set up
 The decoder reads a model into the vertex map, the matching of slots and the image of every edge of $G$. The checker recomputes everything from the definition and shares no variable with the encoder: it tests that the matched slots form a loopless cubic multigraph, that the images of the three edges at every vertex are distinct and form the star of a vertex of $H$, that $H$ is connected, and that deleting any one edge of $H$ keeps it connected, one edge at a time.
 Petersen colorability of a decoded target is decided by a separate encoding, so a satisfiable answer is judged by code that does not belong to the formula it came from.
 
+\FloatBarrier
 \section{Theory of the encoding: correctness and size}\label{sec:theory}
 
 The statements of this section are proved in the text and marked \evD; the closed forms of Proposition~\ref{prop:size} are in addition checked against the recorded counts of all
@@ -714,7 +718,7 @@ permutation of the three slots of each target vertex, into a model of $S_{G,k}$.
 
 \begin{proof}
 A renaming $\pi$ of the targets together with permutations $\sigma_i$ of the slots of each target carries a model of $B_{G,k}$ to another one: the matching $p$, the images of $\varphi$ and the bijections $z$ are
-transported along the same bijection of slots, and every clause of $B_{G,k}$ is invariant under it. Given a model, let $\pi$ number the used targets $0, 1, \dots$ in the order of their first users among
+transported along the same bijection of slots, and every constraint of $B_{G,k}$ is invariant under it, the auxiliary variables of the ladders being recomputed from their definitions. Given a model, let $\pi$ number the used targets $0, 1, \dots$ in the order of their first users among
 $0, 1, \dots, n-1$, and the unused targets afterwards. Then vertex $0$ goes to target $0$, and if $v$ is mapped to $i \ge 1$, the first user of $i-1$ precedes the first user of $i$, which is $v$ or earlier;
 so $u_{v-1,i-1}$ holds and Equation~\eqref{eq:numbering} is satisfied. For each used target $i$ with founder $v$, the matrix $z_{v,\cdot,\cdot}$ is a permutation matrix, so a unique permutation
 $\sigma_i$ of slots turns it into the identity, and Equation~\eqref{eq:founder} holds. For the second statement, Equation~\eqref{eq:numbering} makes the first users of the targets increase with the target
@@ -832,7 +836,7 @@ They are chosen so that both outcomes occur: $K_4$, the prism, $J_3$ and $J_5$ a
 the answers are compared; a disagreement would refute a lemma or expose an encoding error and block the target runs.
 
 \paragraph{Metrics and acceptance.} For each instance the record holds the status, the numbers of variables and clauses of the certified formula, the wall-clock seconds of the solve and of the proof check, the size of the proof, and the SHA-256 of the
-formula and of the proof. An unsatisfiable answer is accepted only when \texttt{drat-trim} prints \texttt{s VERIFIED}; a satisfiable one only when the checker accepts the decoded pair and Petersen colorability of the target is refuted or confirmed with a checked proof.
+formula and of the proof. An unsatisfiable answer is accepted only when \texttt{drat-trim} prints \texttt{s VERIFIED}; a satisfiable one only when the checker accepts the decoded pair and Petersen colorability of the target is decided (a refutation carries a checked DRAT proof).
 Each target order has a cap of 21{,}600 s (six hours), the whole experiment a budget of 24 hours, and at most twelve instances run at a time on one machine.
 
 \paragraph{Run protocol.} Every instance is one run: no repetitions and no random seeds other than the fixed configurations of the portfolio, so the timings of Table~\ref{tab:orders} are single measurements. The sweep was planned for the first graph over every even order from 2 to 50; its scope was extended, before the runs concerned, to every even order below 52 for the second graph, and for the 68-vertex graph to the orders from 66 down to 40, largest first, since smaller orders are excluded by the cited observation.
@@ -877,7 +881,7 @@ old graph.
 \end{proof}
 
 \begin{theorem}[conditional on Observation~10 of~\cite{GJMMMU2026}; \evMV{} and \evV]\label{thm:h3}
-Assume that every bridgeless cubic graph with at most 38 vertices has a Petersen coloring, as stated in Observation~10 of~\cite{GJMMMU2026}.
+Assume that every bridgeless cubic graph with at most 38 vertices has a Petersen coloring, which follows from Observation~10 of~\cite{GJMMMU2026} (a smallest counterexample has at least 40 vertices) and Lemma~\ref{lem:digon}.
 Then $\Ga$ and $\Gb$ are colorable only by themselves: both belong to $\Hthree$.
 \end{theorem}
 
@@ -888,13 +892,13 @@ $k < 52$ with a vertex map of kind (O), (E0) or (E1). Since $H$ colors a graph w
 coloring, $H$ has no Petersen coloring. By Lemma~\ref{lem:digon}, applied repeatedly, there is a
 simple connected bridgeless cubic graph of order at most $k$ without a Petersen coloring, so
 $k \ge 40$ by the assumed observation. This contradicts Theorem~\ref{thm:orders}, which refutes every even
-$k$ with $40 \le k \le 50$. Theorem~\ref{thm:mmsw} gives the conclusion.
+$k$ with $40 \le k \le 50$. Theorem~\ref{thm:mmsw}, which applies because both graphs are of class 2, gives the conclusion.
 \end{proof}
 
 Theorem~\ref{thm:orders} does not depend on the computation of~\cite{GJMMMU2026}; only the orders
 below 40 in Theorem~\ref{thm:h3} do. The orders 2 and 4 follow from Proposition~\ref{prop:small}. The orders below 40 that are listed in
 Table~\ref{tab:orders} were refuted directly; the remaining ones were not decided within six
-hours each for $\Ga$ (orders 6 to 22), and were not attempted for $\Gb$ (orders below 40); Table~\ref{tab:undecided} lists them.
+hours each for $\Ga$ (orders 6 to 22), and were not attempted for $\Gb$ (orders 6 to 38); Table~\ref{tab:undecided} lists them.
 
 
 \paragraph{Size and cost of the refutations.} The 25 rows of Table~\ref{tab:orders} give, for each refuted order, the size of the certified formula, the solve and check times and the size of the proof. The sizes are those of Equations~\eqref{eq:size-v} and~\eqref{eq:size-c} (Figure~\ref{fig:size}): from 23{,}997 variables and 465{,}609
@@ -938,7 +942,7 @@ $\Gsix$ & 62 & 106{,}162 & 3{,}785{,}532 & 6{,}203 & 220{,}929{,}628 & 10{,}655 
 \end{table}
 
 
-The cost grows as the order falls (Figure~\ref{fig:times}). For $\Ga$ the solve takes 46 s at $k = 50$, 758 s at $k = 40$ and 3{,}007 s at $k = 32$, and the proof grows from 18.0 MB at $k = 50$ to 451.7 MB at $k = 30$ and 1.75 GB at $k = 24$ (Figure~\ref{fig:proof}); the check can cost more than the solve, as at $k = 28$ (15{,}096 s) and at $k = 4$
+The cost grows as the order falls (Figure~\ref{fig:times}). For $\Ga$ the solve takes 46 s at $k = 50$, 758 s at $k = 40$ and 3{,}007 s at $k = 32$, and the proof grows from 18.0 MB at $k = 50$ to 451.7 MB at $k = 30$ and 1.75 GB at $k = 24$ (Figure~\ref{fig:proof}); the check can cost more than the solve, as for $\Gb$ at $k = 44$ (8{,}930 s against 3{,}476 s) and for $\Ga$ at $k = 4$
 (6{,}979 s against 1{,}843 s). The second 52-vertex graph is harder at equal order: at $k = 44$ the solve takes 3{,}476 s against 293 s, about twelve times as long, and at $k = 40$ the proof is 2.37 GB against 88.2 MB, about 27 times as large; why the two formulas of equal size differ in this way is not explained by anything recorded. The
 rows $k = 2$ and $k = 4$ of $\Ga$ re-prove Proposition~\ref{prop:small} by machine. No instance required a connectivity or bridge clause: every certified formula was unsatisfiable without them, so the statement holds for colorings of kinds (O), (E0), (E1) by arbitrary loopless cubic graphs, connected or not.
 
@@ -1016,7 +1020,7 @@ rows $k = 2$ and $k = 4$ of $\Ga$ re-prove Proposition~\ref{prop:small} by machi
 
 \paragraph{The controls.} Table~\ref{tab:controls} and Figure~\ref{fig:controls} give the 21 control instances. The formulas with and without the fiber constraints agree in every instance. The Petersen graph is colored by no bridgeless cubic graph of smaller order; $J_5$ is colored by graphs of orders 10 and 12 and of no other order
 below 20; $J_3$ is colored by one of order 10 and by none of order 2, 4, 6 or 8; $K_4$ is colored at $k = 2$ and the prism at $k = 2$ and 4, both being 3-edge-colorable. All six satisfiable controls were accepted by the checker and the pipeline's test of their decoded targets found each of them Petersen colorable; all 15 unsatisfiable ones carry a verified proof. All six satisfiable controls returned a vertex map of kind (O): fibers of sizes 1 and 3 for $K_4$ at $k = 2$, 1 and 5 for the prism at $k = 2$,
-one fiber of size three and nine singletons for $J_3$ at $k = 10$; no control returned an even kind, so the even kinds are exercised only through the agreement of the two encodings on the unsatisfiable instances.
+one fiber of size three and nine singletons for $J_3$ at $k = 10$; no reduced run of a control returned an even kind (the unreduced run of the prism at $k = 2$ returned fibers of sizes 2 and 4), so the even kinds of the formula with the constraints are exercised only through the agreement of the two encodings on the unsatisfiable instances.
 
 \begin{table}[tbp]\centering\footnotesize
 \begin{tabular}{llllrrrrrr}
@@ -1121,17 +1125,17 @@ $\Ga$ & 18 & stopped by hand, past the 6 h cap & solver still running \\
 $\Ga$ & 20 & no answer at the 6 h cap & solver still running \\
 $\Ga$ & 22 & no answer at the 6 h cap & solver still running \\
 \midrule
-$\Gb$ & 2 to 38 & not attempted & no run exists for an order below 40 \\
+$\Gb$ & 6 to 38 & not attempted & no run exists for an order below 40 \\
 \midrule
 $\Gsix$ & 54 & no answer at the 6 h cap & formula built, solver still running \\
 $\Gsix$ & 56 & no answer at the 6 h cap & formula built, solver still running \\
 $\Gsix$ & 58 & no answer at the 6 h cap & formula built, solver still running \\
 $\Gsix$ & 60 & no answer at the 6 h cap & formula built, solver still running \\
 $\Gsix$ & 52 & stopped at 4 h 13 min of a 24 h limit & formula of 82{,}107 variables and 2{,}683{,}782 clauses \\
-$\Gsix$ & 2 to 50 & not attempted & orders 40 to 50 remain open \\
+$\Gsix$ & 6 to 50 & not attempted & orders 40 to 50 remain open \\
 \bottomrule
 \end{tabular}
-\caption{Target orders for which no refutation or coloring exists, by graph. The runner stops an instance at 21,600 s; in five instances of \(\Ga\) the in-process solver call held the interpreter lock past that limit and was stopped by hand. The formula of order 52 for \(\Gsix\) is kept for a rerun; the partial proofs of the interrupted run were deleted.}\label{tab:undecided}
+\caption{Target orders for which no refutation or coloring exists, by graph. The runner stops an instance at 21,600 s; in five instances of \(\Ga\) the in-process solver call held the interpreter lock past that limit and was stopped by hand. The formula of order 52 for \(\Gsix\) is kept for a rerun; the partial proofs of the interrupted run were deleted. The orders 2 and 4 are settled for all three graphs by Proposition~\ref{prop:small} and are not listed.}\label{tab:undecided}
 \end{table}
 
 
@@ -1350,7 +1354,7 @@ the target is the image of an edge of $G$, and every order was decided without a
 
 \paragraph{Scope of the small orders.} Proposition~\ref{prop:small} shows that the target orders 2 and 4 carry no information for a graph that is not 3-edge-colorable, and that the rows $k=2,4$ of the first graph are a consistency check of the encoder. The orders that remain open for the unconditional statement are 6 to 22 for $\Ga$ and 6 to 38 for $\Gb$; the nearest decided orders of $\Ga$, $k = 24$ to 30, took between 2{,}597 s (at $k = 30$) and more than the six-hour cap (at $k = 24$ to 28, times not recorded), with proofs between 0.45 and 1.75 GB, and the undecided orders lie below them.
 
-\paragraph{A question.} Is there a counterexample to the Petersen coloring conjecture that is colored by a smaller counterexample? By Lemma~\ref{lem:parity} the fibers of such a coloring are all odd or all even, and by Proposition~\ref{prop:nminus2} a coloring with every target vertex used needs target order at most $n - 4$ when the graph has no triangles. A satisfiable $F_{G,k}$ for a counterexample $G$ whose decoded target is connected and bridgeless would answer the question affirmatively, since a graph that colors a counterexample is a counterexample.
+\paragraph{A question.} Is there a counterexample to the Petersen coloring conjecture that is colored by a smaller counterexample? By Lemma~\ref{lem:parity} the fibers of such a coloring are all odd or all even, and by Proposition~\ref{prop:nminus2} a coloring with every target vertex used needs target order at most $n - 4$ when the graph is simple and has no triangles. A satisfiable $F_{G,k}$ for a counterexample $G$ whose decoded target is connected and bridgeless would answer the question affirmatively, since a graph that colors a counterexample is a counterexample.
 
 \section{Limitations}\label{sec:limitations}
 
@@ -1358,7 +1362,7 @@ the target is the image of an edge of $G$, and every order was decided without a
 
 \paragraph{The encoder is trusted code.} The symmetry breaking and the fiber constraints are proved sound on paper (Propositions~\ref{prop:symmetry} and~\ref{prop:fibers}), and the sizes and hashes of all formulas are reproduced by the generator, but the encoder has not been shown to be correct on a satisfiable instance at the scale of the claim. Every positive control has at most 20 vertices and a target of order at most 12, and the only
 computations at the scale of the claim (52 or 68 vertices, target orders 40 to 66) end in unsatisfiable answers. A defect of the encoder that over-constrains large instances, for example in the symmetry breaking, would show up only as more unsatisfiable answers. A test with a planted satisfiable case, a graph known to be colored by a graph of 40 to 52 vertices, such as a double cover of $\Ga$ at $k = 52$, together with a corrupted-target
-negative control, would close the gap; it is not part of this paper, and no claim here depends on its outcome. The satisfiable controls return only vertex maps of kind (O), so the even kinds are tested only by agreement on unsatisfiable instances.
+negative control, would close the gap; it is not part of this paper, and no claim here depends on its outcome. The satisfiable reduced controls return only vertex maps of kind (O), so the even kinds are tested only by agreement on unsatisfiable instances.
 
 \paragraph{Certificates and tool versions.} The proofs, up to 2.4 GB each, are kept outside the repository; the repository holds the hashes of the formulas and of the proofs (Appendix~\ref{app:hashes}), the result files, and the generator that rebuilds every formula and its hash. A third party can rebuild each formula and compare its hash, but must run the solver and the checker again, for hours, to obtain a proof. The version of the external
 CaDiCaL (1.7.3, from the manifests of the earlier certification runs on the same machine), of \texttt{drat-trim}, of PySAT and the processor model were not recorded with the experiment, so these are not stated with certainty here; the proofs would be identical only under the same solver build and options.
@@ -1368,7 +1372,7 @@ CaDiCaL (1.7.3, from the manifests of the earlier certification runs on the same
 \paragraph{Incidents of the runs.} Several runs ended outside the design. The watchdog of the runner is a timer thread that cannot fire while the in-process solver holds the interpreter lock, so five runs of $\Ga$ (orders 8, 10, 12, 16, 18) and one of $\Gb$ ran past the cap and were stopped by hand. A driver script of the stopped first attempt kept starting instances with the unreduced code and shared logs with the reduced runs of orders
 12 to 30 for four hours before it was found and killed; no result file came from it, because every result carries the reduced flag and its own certificate, and the logs of orders 12 to 30 are not used as evidence. A stop of the virtual machine killed three proof checks, which were redone on complete proofs. These incidents change which orders are undecided and the recorded times; they do not affect the verified proofs.
 
-\paragraph{Scope.} The sweep covers three graphs and even target orders; the two 112-vertex graphs, the cyclically 5-edge-connected counterexamples of~\cite{GJMMMU2026} and the 68-vertex graph below order 62 are not covered. The title states what the proofs sustain, a statement about the two 52-vertex graphs whose derivation uses Observation~10; the abstract and Theorem~\ref{thm:h3} state the dependence.
+\paragraph{Scope.} The sweep covers three graphs and even target orders; the two 112-vertex graphs, the cyclically 5-edge-connected counterexamples of~\cite{GJMMMU2026} and the 68-vertex graph below order 62 are not covered. The title carries the condition on which membership in $\Hthree$ rests, Observation~10; the abstract and Theorem~\ref{thm:h3} state the same dependence.
 
 \section{Reproducibility and data availability}\label{sec:reproducibility}
 
@@ -1385,8 +1389,8 @@ python MS/make_tables.py
 python MS/make_tables.py --check-hashes
 python MS/assemble.py
 \end{verbatim}
-The first command solves one instance with the in-process solver and the external solver and checker; the flag \texttt{--unreduced} selects the baseline formula without the fiber constraints and \texttt{--suffix} names the result file. The second checks a formula and proof pair left on disk after the runner's cap. The third, run inside WSL, is the portfolio on a formula file, and
-the fourth writes the formula of an instance (and with \texttt{--decode} decodes a model). The fifth runs the 21 controls. The sixth writes the tables and figures of this paper from the result files and checks the variable and clause counts of Table~\ref{tab:counts} against them. The seventh rebuilds the 25 certified formulas and the kept formula of $\Gsix$ at $k = 52$ with the encoder and compares the SHA-256
+The first command solves one instance with the in-process solver and the external solver and checker; the flag \texttt{-{}-unreduced} selects the baseline formula without the fiber constraints and \texttt{-{}-suffix} names the result file. The second checks a formula and proof pair left on disk after the runner's cap. The third, run inside WSL, is the portfolio on a formula file, and
+the fourth writes the formula of an instance (and with \texttt{-{}-decode} decodes a model). The fifth runs the 21 controls. The sixth writes the tables and figures of this paper from the result files and checks the variable and clause counts of Table~\ref{tab:counts} against them. The seventh rebuilds the 25 certified formulas and the kept formula of $\Gsix$ at $k = 52$ with the encoder and compares the SHA-256
 of each DIMACS file with the value of Appendix~\ref{app:hashes} (Table~\ref{tab:hashes}); the eighth assembles the source, which is built by three passes of \texttt{pdflatex}. The formulas and proofs are written to the data root of the experiment, outside the repository; the 2.4 GB proof for $\Gb$ at $k = 40$ is the largest.
 
 \section{Conclusions}\label{sec:conclusions}
@@ -1400,7 +1404,7 @@ the smallest counterexample question for them is unchanged. The next steps are t
 \section{SHA-256 hashes of the formulas and proofs}\label{app:hashes}
 
 Table~\ref{tab:hashes} gives, for every refuted order, the SHA-256 of the DIMACS file of the certified formula and of its DRAT proof, and the hash of the kept formula of order 52 of $\Gsix$. The formula file is written by the runner with one comment line before the header line, of the form \texttt{c EXP-007 <tag> final formula: base + <a> attach + 0 learned cuts}, where the tag
-is the graph and order (for $\Gb$ at $k = 40$ the tag of the portfolio run, \texttt{G52b\_k40-long}) and $a = k - 1$; the comment line is part of the hashed bytes, which is why the hash depends on the tag. Rebuilding the formula with the encoder and writing the same comment reproduces every first value of the table, which is what \texttt{make\_tables.py --check-hashes} checks. The second
+is the graph and order (for $\Gb$ at $k = 40$ the tag of the portfolio run, \texttt{G52b\_k40-long}) and $a = k - 1$; the comment line is part of the hashed bytes, which is why the hash depends on the tag. Rebuilding the formula with the encoder and writing the same comment reproduces every first value of the table, which is what \texttt{make\_tables.py -{}-check-hashes} checks. The second
 value of each pair is the hash of the proof file produced by the solver; it can be compared only with a proof file kept from the original run.
 
 \begin{longtable}{@{}rrll@{}}
@@ -1495,23 +1499,26 @@ $r$-graphs, Combinatorica 45 (2025), Article 16,
 J. Graph Theory 94 (2020), 75--91, \href{https://doi.org/10.1002/jgt.22507}{doi:10.1002/jgt.22507};
 arXiv:1804.09449.
 \bibitem{MazzuoccoloMkrtchyan2020b} G.~Mazzuoccolo, V.~V. Mkrtchyan, Normal 6-edge-colorings of some
-bridgeless cubic graphs, Discrete Appl. Math. 277 (2020), 252--262.
-\bibitem{MaSWZ2024} Ma, Steffen, Wolf, Zhang, Some conjectures on $r$-graphs and equivalences,
-arXiv:2411.01753v2 (2026); authors' initials as in the arXiv listing, not recorded here.
-\bibitem{KardosMZ} F.~Kardos, E.~M\'a\v{c}ajov\'a, J.~Zerafa, on Petersen colorings of the Petersen graph, as
-cited in~\cite[Section~5.4]{GJMMMU2026}; bibliographic details not recorded here.
-\bibitem{DeVosNR} DeVos, Ne\v{s}et\v{r}il, Raspaud, on cycle-continuous maps and Petersen colorings, as cited in~\cite{GJMMMU2026};
-bibliographic details not recorded here.
-\bibitem{BrinkmannVO} Brinkmann, Van Overberghe, list of the 7,142,217,899 weak snarks on 38 vertices, as cited in~\cite{GJMMMU2026};
-bibliographic details not recorded here.
+bridgeless cubic graphs, Discrete Appl. Math. 277 (2020), 252--262,
+\href{https://doi.org/10.1016/j.dam.2019.09.019}{doi:10.1016/j.dam.2019.09.019}.
+\bibitem{MaSWZ2024} Y.~Ma, E.~Steffen, I.~H. Wolf, J.~Zhang, Some conjectures on $r$-graphs and equivalences,
+arXiv:2411.01753v2 (2026).
+\bibitem{KardosMZ} F.~Kardo\v{s}, E.~M\'a\v{c}ajov\'a, J.~P. Zerafa, Disjoint odd circuits in a bridgeless cubic graph can
+be quelled by a single perfect matching, J. Combin. Theory Ser. B 160 (2023), 1--14,
+\href{https://doi.org/10.1016/j.jctb.2022.12.003}{doi:10.1016/j.jctb.2022.12.003}.
+\bibitem{DeVosNR} M.~DeVos, J.~Ne\v{s}et\v{r}il, A.~Raspaud, On edge-maps whose inverse preserves flows or tensions,
+in: Graph Theory in Paris, Trends in Mathematics, Birkh\"auser, Basel, 2006, 109--138,
+\href{https://doi.org/10.1007/978-3-7643-7400-6_10}{doi:10.1007/978-3-7643-7400-6\_10}.
+\bibitem{BrinkmannVO} G.~Brinkmann, S.~Van Overberghe, Algorithms for the generation of snarks, Ann. Comb. (2026),
+published online 23 September 2026, \href{https://doi.org/10.1007/s00026-026-00858-2}{doi:10.1007/s00026-026-00858-2}.
 \bibitem{HagglundSteffen2014} J.~H\"agglund, E.~Steffen, Petersen-colorings and some families of snarks,
 Ars Math. Contemp. 7 (2014), 161--173,
 \href{https://doi.org/10.26493/1855-3974.288.11a}{doi:10.26493/1855-3974.288.11a}.
-\bibitem{FerrariniMkrtchyan2026} Ferrarini, Mkrtchyan, Some new results on Sylvester colorings of cubic graphs,
+\bibitem{FerrariniMkrtchyan2026} L.~Ferrarini, V.~Mkrtchyan, Some new results on Sylvester colorings of cubic graphs,
 arXiv:2607.06396 (2026).
-\bibitem{S10S12counter} A counterexample to the conjectures on $S_{10}$- and $S_{12}$-colorings,
-arXiv:2509.14184 (2025); authors and title as listed by the arXiv search, not recorded here.
-\bibitem{InoueEtAl2026} Inoue, Kawarabayashi, Matsuo, Miyashita, Mohar, Sonobe, Three-edge-coloring apex
+\bibitem{S10S12counter} I.~H. Wolf, A counterexample to the $S_{10}$- and the $S_{12}$-Conjecture,
+arXiv:2509.14184 (2025).
+\bibitem{InoueEtAl2026} Y.~Inoue, K.~Kawarabayashi, R.~Matsuo, A.~Miyashita, B.~Mohar, T.~Sonobe, Three-edge-coloring apex
 cubic graphs, arXiv:2608.22870 (2026).
 \bibitem{Brinkmann2013} G.~Brinkmann, J.~Goedgebeur, J.~H\"agglund, K.~Markstr\"om, Generation and
 properties of snarks, J. Combin. Theory Ser. B 103 (2013), 468--488,
@@ -1520,11 +1527,14 @@ properties of snarks, J. Combin. Theory Ser. B 103 (2013), 468--488,
 cyclic connectivity 4 have order 44, Ars Math. Contemp. 16 (2019), 277--298,
 \href{https://doi.org/10.26493/1855-3974.1601.e75}{doi:10.26493/1855-3974.1601.e75}; arXiv:1712.07867.
 \bibitem{Fleischner1992} H.~Fleischner, Spanning eulerian subgraphs, the splitting lemma, and
-Petersen's theorem, Discrete Math. 101 (1992), 33--37.
+Petersen's theorem, Discrete Math. 101 (1992), 33--37,
+\href{https://doi.org/10.1016/0012-365X(92)90587-6}{doi:10.1016/0012-365X(92)90587-6}.
 \bibitem{KaiserKLW2007} T.~Kaiser, R.~Ku\v{z}el, H.~Li, G.~Wang, A note on $k$-walks in bridgeless
-graphs, Graphs Combin. 23 (2007), 303--308.
+graphs, Graphs Combin. 23 (2007), 303--308,
+\href{https://doi.org/10.1007/s00373-007-0733-0}{doi:10.1007/s00373-007-0733-0}.
 \bibitem{HoG} K.~Coolsaet, S.~D'hondt, J.~Goedgebeur, House of Graphs 2.0: a database of
-interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107;
+interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107,
+\href{https://doi.org/10.1016/j.dam.2022.10.013}{doi:10.1016/j.dam.2022.10.013};
 \url{https://houseofgraphs.org}.
 \bibitem{OPG} Open Problem Garden, Petersen coloring conjecture,
 \url{https://www.openproblemgarden.org/op/petersen_coloring_conjecture}.

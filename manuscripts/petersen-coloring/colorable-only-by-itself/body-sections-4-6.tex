@@ -255,7 +255,7 @@ to its complement; if $H$ has a bridge, a clause is added that requires some slo
 connectivity and bridgelessness (Proposition~\ref{prop:cuts}); the formula is then solved again. None of the target runs of Section~\ref{sec:results} ever entered this loop, because every
 decided formula was unsatisfiable before any cut was learned.
 
-\begin{algorithm}[t]
+\begin{algorithm}[!htbp]
 \caption{Certification pipeline for one instance $(G,k)$ with time cap $T = 21{,}600$ s and floor $\tau = 600$ s. External runs use CaDiCaL with DRAT output followed by \texttt{drat-trim}; the in-process solver is the CaDiCaL 1.9.5 build of PySAT and is not part of the trusted base.}\label{alg:certify}
 \begin{algorithmic}[1]
 \Require cubic graph $G$, even target order $k$, cap $T$, floor $\tau$
@@ -275,7 +275,7 @@ decided formula was unsatisfiable before any cut was learned.
   \If{the check fails} \Return CHECKER-REJECT\EndIf
   \If{$H$ is disconnected} add the cut for a component without target 0 to $C$ and to the solver
   \ElsIf{$H$ has a bridge} add the cut for one side of the bridge, excluding the bridge, to $C$ and to the solver
-  \Else\ refute Petersen colorability of $H$ with a checked proof and \Return SAT with $(H,f)$
+  \Else\ decide Petersen colorability of $H$ (a refutation carries a checked proof) and \Return SAT with $(H,f)$
   \EndIf
 \EndLoop
 \State \Return \textsc{Certify}$(F \cup C,\ T - \text{elapsed})$
@@ -283,7 +283,7 @@ decided formula was unsatisfiable before any cut was learned.
   \State let the orphaned solver finish; run \texttt{drat-trim} with limit 80{,}000 s on the formula file and the proof it left; record the result flagged post hoc, without a solve time
 \EndProcedure
 \Procedure{Portfolio}{formula, solve limit, check limit}
-  \State run CaDiCaL in three configurations in parallel (default, \texttt{--unsat}, \texttt{--seed=7}), each with its own DRAT file
+  \State run CaDiCaL in three configurations in parallel (default, \texttt{-{}-unsat}, \texttt{-{}-seed=7}), each with its own DRAT file
   \State the first configuration to exit with code 20 wins and the others are killed; run \texttt{drat-trim} on the winner's proof within the check limit
 \EndProcedure
 \end{algorithmic}
@@ -310,6 +310,7 @@ and 25 GB of memory visible to the solvers (recorded when the tooling was set up
 The decoder reads a model into the vertex map, the matching of slots and the image of every edge of $G$. The checker recomputes everything from the definition and shares no variable with the encoder: it tests that the matched slots form a loopless cubic multigraph, that the images of the three edges at every vertex are distinct and form the star of a vertex of $H$, that $H$ is connected, and that deleting any one edge of $H$ keeps it connected, one edge at a time.
 Petersen colorability of a decoded target is decided by a separate encoding, so a satisfiable answer is judged by code that does not belong to the formula it came from.
 
+\FloatBarrier
 \section{Theory of the encoding: correctness and size}\label{sec:theory}
 
 The statements of this section are proved in the text and marked \evD; the closed forms of Proposition~\ref{prop:size} are in addition checked against the recorded counts of all
@@ -342,7 +343,7 @@ permutation of the three slots of each target vertex, into a model of $S_{G,k}$.
 
 \begin{proof}
 A renaming $\pi$ of the targets together with permutations $\sigma_i$ of the slots of each target carries a model of $B_{G,k}$ to another one: the matching $p$, the images of $\varphi$ and the bijections $z$ are
-transported along the same bijection of slots, and every clause of $B_{G,k}$ is invariant under it. Given a model, let $\pi$ number the used targets $0, 1, \dots$ in the order of their first users among
+transported along the same bijection of slots, and every constraint of $B_{G,k}$ is invariant under it, the auxiliary variables of the ladders being recomputed from their definitions. Given a model, let $\pi$ number the used targets $0, 1, \dots$ in the order of their first users among
 $0, 1, \dots, n-1$, and the unused targets afterwards. Then vertex $0$ goes to target $0$, and if $v$ is mapped to $i \ge 1$, the first user of $i-1$ precedes the first user of $i$, which is $v$ or earlier;
 so $u_{v-1,i-1}$ holds and Equation~\eqref{eq:numbering} is satisfied. For each used target $i$ with founder $v$, the matrix $z_{v,\cdot,\cdot}$ is a permutation matrix, so a unique permutation
 $\sigma_i$ of slots turns it into the identity, and Equation~\eqref{eq:founder} holds. For the second statement, Equation~\eqref{eq:numbering} makes the first users of the targets increase with the target

@@ -1,4 +1,4 @@
-# The Two 52-Vertex Counterexamples to the Petersen Coloring Conjecture Are Colorable Only by Themselves
+# The Two 52-Vertex Counterexamples to the Petersen Coloring Conjecture Are Colorable Only by Themselves If No Counterexample Has at Most 38 Vertices
 
 Public version on record: v0.01, published 2026-10-06 at
 [10.5281/zenodo.22859075](https://doi.org/10.5281/zenodo.22859075), under concept DOI
