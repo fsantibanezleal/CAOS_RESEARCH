@@ -1,0 +1,22 @@
+\tikzset{ca/.style={circle,draw,fill=black,inner sep=1.7pt}, cb/.style={circle,draw,fill=white,line width=0.8pt,inner sep=1.7pt},
+  cu/.style={circle,draw,dashed,fill=white,inner sep=1.7pt},
+  m1/.style={line width=1.1pt}, m2/.style={dashed,line width=0.8pt}, m3/.style={dotted,line width=1.3pt}}
+\newcommand{\kfour}[4]{%
+\begin{tikzpicture}[solid,scale=0.85]
+\node[#1] (a) at (0,1.2) {}; \node[#2] (b) at (1.2,1.2) {}; \node[#3] (c) at (1.2,0) {}; \node[#4] (d) at (0,0) {};
+\draw[m1] (a)--(b); \draw[m1] (c)--(d);
+\draw[m2] (b)--(c); \draw[m2] (d)--(a);
+\draw[m3] (a)--(c); \draw[m3] (b)--(d);
+\end{tikzpicture}}
+\newcommand{\tgt}[2]{%
+\begin{tikzpicture}[solid,scale=0.85]
+\node[#1] (x) at (0,0) {}; \node[#2] (y) at (1.6,0) {};
+\draw[m1] (x) to[bend left=35] (y); \draw[m2] (x) -- (y); \draw[m3] (x) to[bend right=35] (y);
+\end{tikzpicture}}
+\begin{figure}[t]
+\centering
+\begin{minipage}[t]{0.31\textwidth}\centering \kfour{ca}{cb}{cb}{cb}\\[4pt] \tgt{ca}{cb}\\[2pt] {\small (O) fibers $1, 3$}\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}\centering \kfour{ca}{ca}{cb}{cb}\\[4pt] \tgt{ca}{cb}\\[2pt] {\small (E0) fibers $2, 2$}\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}\centering \kfour{ca}{ca}{ca}{ca}\\[4pt] \tgt{ca}{cu}\\[2pt] {\small (E1) fibers $4, 0$}\end{minipage}
+\caption{The three kinds of vertex maps on one example. The graph $K_4$ (top; the three perfect matchings are drawn solid, dashed and dotted) is colored by the graph with two vertices and three parallel edges (bottom) by sending each matching to one edge. Both target vertices have the same star, so every map from the four vertices to the two targets is a vertex map: fibers of sizes 1 and 3 are kind (O), sizes 2 and 2 kind (E0), and sizes 4 and 0 kind (E1), with an unused target drawn dashed.}\label{fig:fibers}
+\end{figure}
