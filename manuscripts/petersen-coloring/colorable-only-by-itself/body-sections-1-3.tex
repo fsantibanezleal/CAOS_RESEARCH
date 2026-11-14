@@ -1,43 +1,39 @@
-\section{Introduction}
+\section{Introduction}\label{sec:introduction}
 
 \subsection{Colorings by a cubic graph}
 
 Graphs are finite; they may have parallel edges but no loops. For a vertex $v$ of a graph $G$,
 $\partial_G(v)$ is the set of edges at $v$. Let $G$ and $H$ be cubic graphs. An
 \emph{$H$-coloring} of $G$ is a map $f : E(G) \to E(H)$ such that for every vertex $v$ of $G$
-there is a vertex $u$ of $H$ with $f(\partial_G(v)) = \partial_H(u)$; since both stars have three
-edges, $f$ is injective on every star. If such a map exists we say that $H$ \emph{colors} $G$. The
-relation is transitive. A \emph{Petersen coloring} is a $\PG$-coloring, where $\PG$ is the
-Petersen graph, and a cubic graph is 3-edge-colorable if and only if it is colored by the graph on
-two vertices with three parallel edges.
+there is a vertex $u$ of $H$ with
+\begin{equation}\label{eq:hcoloring}
+f(\partial_G(v)) = \partial_H(u);
+\end{equation}
+since both stars have three edges, $f$ is injective on every star. If such a map exists we say that
+$H$ \emph{colors} $G$. The relation is transitive. A \emph{Petersen coloring} is a $\PG$-coloring,
+where $\PG$ is the Petersen graph, and a cubic graph is 3-edge-colorable if and only if it is colored
+by the graph on two vertices with three parallel edges.
 
 Jaeger~\cite{Jaeger1988} conjectured that every bridgeless cubic graph has a Petersen coloring.
 The conjecture implies the Berge--Fulkerson conjecture and the 5-cycle double cover conjecture.
 It was refuted in August 2026: Putman~\cite{Putman2026} gave two counterexamples $\Gmain$ and
-$\Gsym$ on 112 vertices with computer-checked certificates, Jooken gave a proof that can be
-checked by hand, and Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo, Mazzuoccolo and
+$\Gsym$ on 112 vertices with computer-checked certificates, Jooken~\cite{Jooken2026} gave a proof that
+can be checked by hand, and Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo, Mazzuoccolo and
 Ulyanov~\cite{GJMMMU2026} gave two counterexamples $\Ga$ and $\Gb$ on 52 vertices with a purely
 theoretical proof, cyclically 4-edge-connected counterexamples of every even order at least 60,
 and the bounds $40 \le n_{\min} \le 52$ for the order $n_{\min}$ of a smallest counterexample. A
 counterexample $\Gsix$ on 68 vertices is also available from the House of
 Graphs~\cite{HoG}.
 
-\subsection{The set \texorpdfstring{$\Hthree$}{H3}}
+\subsection{The set \texorpdfstring{$\Hthree$}{H3} and the question}
 
 Ma, Mattiolo, Steffen and Wolf~\cite{MMSW2025} proved that there is a unique inclusion-wise
 minimal set $\Hthree$ of connected bridgeless cubic graphs such that every connected bridgeless
-cubic graph is colored by a member of $\Hthree$, and they characterized its members.
-
-\begin{theorem}[\cite{MMSW2025}, Theorem~3.7, case $r = 3$]\label{thm:mmsw}
-For a connected bridgeless cubic graph $G$ the following are equivalent: $G \in \Hthree$; the only
-connected bridgeless cubic graph that colors $G$ is $G$ itself; no bridgeless cubic graph of
-smaller order colors $G$.
-\end{theorem}
-
-The Petersen coloring conjecture was the statement $\Hthree = \{\PG\}$. By~\cite{MMSW2025},
-$\Hthree$ is either $\{\PG\}$ or infinite, so it is now known to be infinite, and its members other
-than $\PG$ are all counterexamples: if $H$ colors a counterexample $G$ then $H$ is a
-counterexample, because a Petersen coloring of $H$ composed with the $H$-coloring of $G$ would be
+cubic graph is colored by a member of $\Hthree$, and they characterized its members
+(Theorem~\ref{thm:mmsw}). The Petersen coloring conjecture was the statement $\Hthree = \{\PG\}$.
+By~\cite{MMSW2025}, $\Hthree$ is either $\{\PG\}$ or infinite, so it is now known to be infinite, and
+its members other than $\PG$ are all counterexamples: if $H$ colors a counterexample $G$ then $H$ is
+a counterexample, because a Petersen coloring of $H$ composed with the $H$-coloring of $G$ would be
 a Petersen coloring of $G$. In particular a smallest counterexample belongs to $\Hthree$.
 Goedgebeur et al.\ ask~\cite[Section~5.4]{GJMMMU2026} whether their counterexamples of order 52
 are colorable only by themselves, and observe that the question is tied to whether these graphs
@@ -45,171 +41,168 @@ are smallest counterexamples.
 
 The question has two informative answers. A bridgeless cubic graph of order less than 52 that
 colors $\Ga$ or $\Gb$ would be a counterexample below the known upper bound. If no such graph
-exists, the 52-vertex graph is a member of $\Hthree$.
+exists, the 52-vertex graph is a member of $\Hthree$. Deciding it is a search over every cubic graph
+of every even order below 52, with the target graph unknown, so no fixed instance of a satisfiability
+problem states it. The difficulty is that a naive encoding leaves part of the unknown target
+unconstrained by $G$, and a solver then enumerates completions of that free part without converging in the time available
+(Section~\ref{sec:ablation}).
 
-\subsection{Results}
+\subsection{Contributions and main result}
 
-We first prove two lemmas on the fibers of the vertex map of an $H$-coloring
-(Section~\ref{sec:fibers}). All fibers have the same parity (Lemma~\ref{lem:parity}), and target
-vertices that are not used by the coloring can be reduced to at most one by the splitting lemma
-(Lemma~\ref{lem:unused}). Together they reduce the question ``is $G$ colored by some bridgeless
-cubic graph of smaller order'' to finitely many propositional formulas, one per target order,
-whose unknown target graph has no part left unconstrained by $G$
-(Corollary~\ref{cor:modes}). Section~\ref{sec:encoding} describes the formulas and how each answer
-is certified. Section~\ref{sec:results} reports the computations.
-
-\section{Fibers of an \texorpdfstring{$H$}{H}-coloring}\label{sec:fibers}
-
-Throughout this section $G$ is a connected cubic graph of order $n$, $H$ is a connected cubic
-graph, $f$ is an $H$-coloring of $G$, and $\varphi : V(G) \to V(H)$ is a \emph{vertex map} of $f$:
-a map with $f(\partial_G(v)) = \partial_H(\varphi(v))$ for every $v$. A vertex map exists by
-definition, and it is unique unless $H$ is the graph with two vertices and three parallel edges.
-For $x \in V(H)$ the \emph{fiber} of $x$ is $\varphi^{-1}(x)$ and $n_x = |\varphi^{-1}(x)|$; the
-vertex $x$ is \emph{used} if $n_x > 0$. We write $U$ for the set of used vertices and
-$W = V(H) \setminus U$.
-
-\begin{lemma}[fiber parity]\label{lem:parity}
-For every edge $e = xy$ of $H$, the set $f^{-1}(e)$ is a perfect matching of the subgraph of $G$
-induced on $\varphi^{-1}(x) \cup \varphi^{-1}(y)$. Consequently $n_x + n_y$ is even for every edge
-$xy$ of $H$, and all the numbers $n_x$, $x \in V(H)$, have the same parity.
-\end{lemma}
-
-\begin{proof}
-A vertex $v$ of $G$ is incident with an edge of $f^{-1}(e)$ if and only if
-$e \in f(\partial_G(v)) = \partial_H(\varphi(v))$, that is, if and only if
-$\varphi(v) \in \{x, y\}$. In that case it is incident with exactly one such edge, because $f$ is
-injective on $\partial_G(v)$. Hence $f^{-1}(e)$ is a matching that covers exactly
-$\varphi^{-1}(x) \cup \varphi^{-1}(y)$, a set of $n_x + n_y$ vertices. The last statement follows
-because $H$ is connected.
-\end{proof}
-
-So an $H$-coloring is of one of two kinds. If the fibers are odd, every vertex of $H$ is used and
-$|V(H)| \le n$. If the fibers are even, at most $n/2$ vertices of $H$ are used. Both kinds occur:
-an isomorphism has fibers of size~1, and a 3-edge-coloring of a graph of order $n \equiv 0
-\pmod 4$ has a vertex map with two fibers of size $n/2$.
-
-The second lemma concerns the vertices of $H$ that are not used. We use the splitting lemma of
-Fleischner~\cite{Fleischner1992} in the following form. Let $v$ be a vertex of a graph $K$ and
-$e_1 = vv_1$, $e_2 = vv_2$ two edges at $v$. \emph{Splitting $e_1$ and $e_2$ off $v$} means adding
-a new vertex $v^*$ and replacing $e_1, e_2$ by edges $v^*v_1$, $v^*v_2$.
-
-\begin{lemma}[\cite{KaiserKLW2007}, Lemma~1, a consequence of~\cite{Fleischner1992}]\label{lem:split}
-Let $v$ be a vertex of degree at least~4 in a bridgeless graph $K$. There exist edges $e_1, e_2$
-incident with $v$ such that the graph obtained by splitting $e_1$ and $e_2$ off $v$ is bridgeless.
-\end{lemma}
-
-\begin{lemma}[unused vertices]\label{lem:unused}
-Let $H$ be bridgeless and suppose $W \ne \emptyset$. Let $m$ be the number of edges between $U$
-and $W$. Then there is a connected bridgeless cubic graph $H'$ with vertex set $U \cup W'$, where
-$W' = \emptyset$ if $m$ is even and $|W'| = 1$ if $m$ is odd, and an $H'$-coloring of $G$ with
-the same vertex map $\varphi$. In particular $|V(H')| \le |V(H)|$.
-\end{lemma}
-
-\begin{proof}
-Every edge of $H$ with an end in $U$ lies in the image of $f$, since the star of a used vertex is
-the image of a star of $G$; no edge with both ends in $W$ does. Identify $W$ to a single vertex
-$w^*$ and delete the loops that arise. Every edge cut of the resulting graph $H_1$ is an edge cut
-of $H$, so $H_1$ is bridgeless; $w^*$ has degree $m$, and $m \ge 2$ because $H$ is connected and
-bridgeless. Every other vertex of $H_1$ is a used vertex, of degree~3, with its star unchanged.
-
-While $w^*$ has degree at least~4, apply Lemma~\ref{lem:split} to split two edges $aw^*$, $bw^*$
-off $w^*$ so that the graph stays bridgeless. Then $a \ne b$: otherwise the new vertex would be
-joined to the cubic vertex $a$ by two parallel edges, and the third edge at $a$ would be a bridge.
-Suppress the new vertex, that is, replace its two edges by a single edge $ab$. This keeps the graph
-loopless and bridgeless and lowers the degree of $w^*$ by~2. When the degree of $w^*$ has dropped
-to~3, stop. When it has dropped to~2, suppress $w^*$ in the same way; its two neighbours are
-distinct by the same argument. Let $H'$ be the final graph. It is cubic, loopless and bridgeless.
-
-Let $\mu$ map every edge of $H$ that has an end in $U$ to the edge of $H'$ that contains it. Two
-edges merged in one step have their ends other than $w^*$ at distinct vertices, so $\mu$ is
-injective on $\partial_H(u)$ and $\partial_{H'}(u) = \mu(\partial_H(u))$ for every $u \in U$. Hence
-$\mu \circ f$ is an $H'$-coloring of $G$ with vertex map $\varphi$.
-
-Finally $H'$ is connected. If $uv$ is an edge of $G$ with $\varphi(u) \ne \varphi(v)$, then
-$f(uv)$ joins $\varphi(u)$ to $\varphi(v)$; it has both ends in $U$ and is therefore an edge of
-$H'$. As $G$ is connected, $U$ induces a connected subgraph of $H'$, and the vertex $w^*$, if it
-remains, is joined to $U$.
-\end{proof}
-
-\begin{corollary}\label{cor:modes}
-A connected cubic graph $G$ of order $n$ is colored by a connected bridgeless cubic graph of order
-less than $n$ if and only if, for some even $k < n$, it has an $H$-coloring by a connected
-bridgeless cubic graph $H$ of order $k$ with a vertex map of one of the following kinds:
+The contributions are the following; the marks \evD, \evMV, \evV{} and \evU{} that qualify the
+statements are defined in Section~\ref{sec:problem}.
 \begin{enumerate}
-\item[\textup{(O)}] every vertex of $H$ is used and every fiber is odd;
-\item[\textup{(E0)}] every vertex of $H$ is used and every fiber is even, so that $k \le n/2$;
-\item[\textup{(E1)}] exactly one vertex of $H$ is not used and every other fiber is even and
-nonempty, so that $k - 1 \le n/2$.
+\item Two lemmas on the vertex map of an $H$-coloring (Section~\ref{sec:fibers}). All fibers have the same
+parity (Lemma~\ref{lem:parity}), and unused target vertices can be reduced to at most one by the splitting
+lemma (Lemma~\ref{lem:unused}). They leave three kinds of colorings (Corollary~\ref{cor:modes}) and turn
+the question into finitely many propositional formulas, one per target order, whose unknown target has
+no part left free. Two small consequences are proved as well: the extreme order $n-2$ and the orders 2
+and 4 (Propositions~\ref{prop:nminus2} and~\ref{prop:small}).
+\item The formula itself, stated in full (Section~\ref{sec:method}): every variable and clause family with its
+count as a function of the order $n$ of $G$ and the target order $k$, a symmetry breaking with a soundness
+proof, and a family of static clauses that is shown to be implied by the others
+(Section~\ref{sec:theory}).
+\item A certification pipeline (Algorithm~\ref{alg:certify}) with its parameters, tools and commands: every
+unsatisfiable answer is a DRAT proof of the formula that is written to disk, hashed and checked by
+\texttt{drat-trim}; every satisfiable answer is checked from the definition by a separate program.
+\item Refutations for the three graphs. For both 52-vertex counterexamples every even target order from 40
+to 50 is refuted; for the first one so are 2, 4 and 24 to 38 (Theorem~\ref{thm:orders},
+Table~\ref{tab:orders}); for the 68-vertex graph the orders 62, 64 and 66 are refuted.
+\item A conditional membership result: assuming Observation~10 of~\cite{GJMMMU2026}, both 52-vertex
+graphs are colorable only by themselves (Theorem~\ref{thm:h3}).
+\item The validation: 21 control instances on which the formulas with and without the fiber constraints
+agree, and a measured ablation of the constraints (Sections~\ref{sec:results} and~\ref{sec:ablation}).
+\item A complete record of the orders that remain undecided and why (Table~\ref{tab:undecided}).
 \end{enumerate}
-\end{corollary}
 
-\begin{proof}
-Let $H$ of order less than $n$ color $G$. If every vertex of $H$ is used, Lemma~\ref{lem:parity}
-gives (O) or (E0). Otherwise the fibers are even by Lemma~\ref{lem:parity}, since an unused vertex
-has an empty fiber, and Lemma~\ref{lem:unused} gives a graph $H'$ of order at most $|V(H)|$ with
-the same vertex map and at most one unused vertex, which is (E0) or (E1).
-\end{proof}
+The main result is Theorem~\ref{thm:h3}: assuming the exhaustive computation of
+Goedgebeur et al.\ that no bridgeless cubic graph on at most 38 vertices lacks a Petersen coloring,
+$\Ga$ and $\Gb$ belong to $\Hthree$. The part of the proof that is new, Theorem~\ref{thm:orders}, does not
+depend on that computation. The paper is organized as follows. Section~\ref{sec:related} places the work
+among the published results. Section~\ref{sec:problem} fixes the definitions, the notation and the evidence
+marks. Section~\ref{sec:fibers} proves the reduction lemmas, Section~\ref{sec:method} describes the formula
+and the pipeline, and Section~\ref{sec:theory} proves them correct. Sections~\ref{sec:design} to~\ref{sec:ablation}
+describe the experiments, the results and the ablation; Sections~\ref{sec:discussion} to~\ref{sec:conclusions} discuss
+them, state their limits and conclude.
 
-The kinds (O), (E0), (E1) leave no part of $H$ unconstrained by $G$: every edge of $H$ is the image
-of an edge of $G$. For target orders close to $n$ only kind (O) is possible, and the fibers are then
-almost all singletons. The extreme case of kind (O) can be settled by hand.
+\section{Related work}\label{sec:related}
 
-\begin{proposition}\label{prop:nminus2}
-Let $G$ be a connected cubic graph of order $n \ge 8$ without triangles. Then $G$ has no
-$H$-coloring by a connected cubic graph $H$ of order $n - 2$ in which every vertex of $H$ is used.
-\end{proposition}
+\paragraph{The conjecture and its refutation.} Jaeger stated the conjecture in 1988~\cite{Jaeger1988}
+\evU{}; the 1988 chapter was not read here and is cited as every recent source cites it. Jaeger also showed
+that a cubic graph has a Petersen coloring exactly when it has a normal 5-edge-coloring~\cite{Jaeger1985}
+\evU{}, a form proved bijectively in~\cite[Proposition~2.1]{Putman2026} \evV{}; Mazzuoccolo and
+Mkrtchyan study normal edge-colorings~\cite{MazzuoccoloMkrtchyan2020} \evV{} (abstract) and normal
+6-edge-colorings~\cite{MazzuoccoloMkrtchyan2020b} \evU{}. The refutation is the work of three groups.
+Putman's two 112-vertex counterexamples carry computer-checked certificates~\cite{Putman2026}
+\evV{}. Jooken's note~\cite{Jooken2026} \evV{} isolates the mechanism by which a small subgraph forces four
+pairwise adjacent edges of the Petersen graph. The group of Goedgebeur, Jooken, M\'a\v{c}ajov\'a,
+Mattiolo, Mazzuoccolo and Ulyanov first gave the two 52-vertex graphs~\cite{GJMMM2026zenodo} \evV{}, and in the
+final paper~\cite{GJMMMU2026} \evV{} added the infinite family of Theorem~7 there, the bounds
+$40 \le n_{\min} \le 52$, the House of Graphs entries 57244 and 57278 for the 52-vertex graphs, 57280 for the
+68-vertex graph, and Section~5.4, the question this paper answers conditionally. The searches of 6 October 2026
+found no later work on the conjecture or its counterexamples \evU{}, and that final paper still poses the question.
 
-\begin{proof}
-Since $n - 2 > n/2$ and every vertex of $H$ is used, the fibers are odd by
-Lemma~\ref{lem:parity}; hence one fiber $\{u_1, u_2, u_3\} = \varphi^{-1}(x)$ has size~3 and all
-others have size~1. For each of the three edges $e = xy$ at $x$, the set $f^{-1}(e)$ is a perfect matching on
-$\{u_1, u_2, u_3\}$ together with the single vertex of the fiber of $y$
-(Lemma~\ref{lem:parity}), so it contains an edge of $G$ joining two of $u_1, u_2, u_3$. The three
-sets $f^{-1}(e)$ are pairwise disjoint and $G$ is simple, so $u_1u_2u_3$ is a triangle of $G$.
-\end{proof}
+\paragraph{Colorings by a cubic graph and universal families.} Ma, Mattiolo, Steffen and
+Wolf~\cite{MMSW2025} \evV{} define $H$-colorings between $r$-graphs, prove that the minimal universal set
+$\mathcal{H}_r$ is unique (Corollary~3.8 there) and characterize its members (Theorem~3.7); Theorem~3.4 shows
+that a class 2 $r$-graph not colored by any smaller $r$-graph is colored only by itself, and Observation~3.1 that an
+$H$-coloring pulls back disjoint perfect matchings. Putman~\cite{Putman2026} \evV{} used their results to
+conclude that one counterexample yields infinitely many. Ma, Steffen, Wolf and Zhang~\cite{MaSWZ2024}
+\evU{} treat perfect-matching conjectures for $r$-graphs; the literature search found in it no statement on
+the membership of a graph in $\mathcal{H}_r$. The question of this paper is thus a question about membership in
+$\mathcal{H}_3$ for a specific graph, which no published result decides.
 
-\section{Propositional encoding and certification}\label{sec:encoding}
+\paragraph{Colorings by specific targets.} The Petersen graph is the best-studied target. Kardos,
+M\'a\v{c}ajov\'a and Zerafa~\cite{KardosMZ} showed, as reported in~\cite[Section~5.4]{GJMMMU2026}, that the Petersen graph is
+colored only by itself or by graphs with a bridge \evU{}; the formula of this paper uses the statement as a control.
+H\"agglund and Steffen study Petersen colorings of families of snarks~\cite{HagglundSteffen2014} \evU{}. Sylvester
+colorings, that is, colorings by the graphs $S_{10}$ and $S_{12}$, are studied by Ferrarini and
+Mkrtchyan~\cite{FerrariniMkrtchyan2026} \evU{}, and a counterexample to the conjectures on them is announced
+in~\cite{S10S12counter} \evU{}. The revision arXiv:2608.10028v4~\cite{GJMMMU2026} presents a Petersen
+coloring as a cycle-continuous map to the Petersen graph (DeVos, Ne\v{s}et\v{r}il and Raspaud~\cite{DeVosNR}) and links the problem to
+matroids, to zero-temperature states of spin models and to homomorphisms \evV{}; it cites
+Inoue et al.~\cite{InoueEtAl2026} \evU{} on 3-edge-colorings of apex cubic graphs. None of these works tests, for
+a given graph, every cubic target of a given order at once; the target is fixed in each of them.
 
-For a fixed graph $G$ and a fixed even $k$ we build one formula in conjunctive normal form that is
-satisfiable if and only if $G$ has an $H$-coloring of kind (O), (E0) or (E1) by some loopless
-cubic graph $H$ on $k$ vertices; connectedness and bridgelessness of $H$ are handled separately
-below. The target graph is part of the unknown.
+\paragraph{Verification frontier for small counterexamples.} Brinkmann, Goedgebeur, H\"agglund and
+Markstr\"om generated all snarks on at most 36 vertices and observed that the conjecture holds for them~\cite{Brinkmann2013}
+\evV{} (abstract). Goedgebeur, M\'a\v{c}ajov\'a and \v{S}koviera completed the order-36 case for weak snarks of girth 4
+\cite{GMS2019}, as reported in~\cite{GJMMMU2026} \evU{}, so that no counterexample has at most 36 vertices. The lower bound 40 of~\cite{GJMMMU2026} comes
+from an exhaustive check of the weak snarks on 38 vertices, a list of 7,142,217,899 graphs that took about 12 CPU-years
+(Brinkmann and Van Overberghe's list~\cite{BrinkmannVO}, as cited there) \evV{}; that computation is not reproduced here.
 
-\begin{itemize}
-\item \emph{Target.} Every target vertex $i < k$ carries three slots $(i, 0), (i, 1), (i, 2)$. A
-perfect matching on the $3k$ slots that never pairs two slots of the same vertex is the edge set of
-a loopless cubic graph on $k$ vertices, and every such graph arises. One variable per admissible
-slot pair.
-\item \emph{Map.} Variables $x_{v,i}$ state $\varphi(v) = i$, exactly one $i$ per vertex $v$. At
-every $v$ a bijection between the three edges at $v$ and the three slots of $\varphi(v)$ records
-$f$ on the star of $v$.
-\item \emph{Consistency.} For every edge $uv$ of $G$, the slot assigned to $uv$ at $u$ and the slot
-assigned to it at $v$ are either the same slot or a matched pair: both describe the edge $f(uv)$.
-\item \emph{Symmetry breaking.} Target vertices are numbered in the order in which the vertices
-$0, 1, \dots, n-1$ of $G$ first use them, and the first vertex of each fiber fixes the order of the
-three slots.
-\item \emph{Fibers.} One variable $q$ states that the fibers are odd; for every target vertex an
-exclusive-or chain forces the parity of its fiber to equal $q$ (Lemma~\ref{lem:parity}). The last
-target vertex but one is used (Lemma~\ref{lem:unused}), and $q$ is set to true when
-$2(k - 1) > n$.
-\end{itemize}
+\paragraph{Satisfiability and proof certification.} The refutations of the 52-vertex graphs by Petersen colorings
+and by normal 5-edge-colorings are reproduced independently in Section~\ref{sec:results} with the edge-map and normal-coloring
+encodings of~\cite{Putman2026}. The solver is CaDiCaL~\cite{CaDiCaL} and the proof checker is
+\texttt{drat-trim}~\cite{DRATtrim}; the splitting lemma behind Lemma~\ref{lem:unused} is Fleischner's~\cite{Fleischner1992} \evU{} in the
+bridgeless form of Kaiser, Ku\v{z}el, Li and Wang~\cite{KaiserKLW2007} \evV{}. Open Problem Garden~\cite{OPG} \evV{} lists the conjecture and its
+consequences.
 
-A model is decoded into a pair $(H, f)$. If $H$ is disconnected or has a bridge, a clause is added
-that requires a further matched slot pair across the offending vertex partition, which every
-connected bridgeless target satisfies, and the formula is solved again. The loop ends with a model
-whose target is connected and bridgeless, or with an unsatisfiable formula.
+\paragraph{Where this work stands.} Computational work on the conjecture decides whether one given graph has a
+Petersen coloring, with the target fixed. The present work decides whether any cubic graph of a given order colors a given
+graph, with the target as part of the unknown, and it does so with certificates for every refutation. Its two mathematical
+ingredients, the parity of the fibers and the reduction of unused vertices, are what make the unknown target finite
+and constrained everywhere; its limits are the external computation on which membership in $\Hthree$ rests and the orders
+that no solver decided (Section~\ref{sec:limitations}).
 
-\emph{Certification.} A satisfiable answer is checked from the definition by a separate program
-that reads only $G$ and the decoded pair $(H, f)$: $H$ is cubic, loopless, connected and
-bridgeless, and $f$ maps every star of $G$ onto a star of $H$. An unsatisfiable answer is
-certified on the final formula (the base formula together with every added clause): it is refuted
-by CaDiCaL~\cite{CaDiCaL} with a DRAT proof, and the proof is checked by
-\texttt{drat-trim}~\cite{DRATtrim}. The incremental solver that drives the loop is not part of the
-trusted base.
+\section{Problem formulation}\label{sec:problem}
 
-\emph{Controls.} The formulas with and without the fiber constraints were compared on every even
-order below the order of the graph for $K_4$, the prism, the Petersen graph and the flower snarks
-$J_3$ and $J_5$ (21 instances). The answers agree in every instance. In particular the Petersen
-graph is colored by no bridgeless cubic graph of smaller order, $J_5$ is colored by bridgeless
-cubic graphs of orders 10 and 12 and of no other order below 20, and $J_3$ is colored by one of
-order 10 and by none of order 2, 4, 6 or 8.
+\paragraph{Definitions.} Let $G$ be a connected cubic graph of order $n$ and $H$ a connected cubic graph.
+An $H$-coloring $f$ of $G$ (Equation~\eqref{eq:hcoloring}) has a \emph{vertex map} $\varphi : V(G) \to V(H)$,
+a map with $f(\partial_G(v)) = \partial_H(\varphi(v))$ for every $v$. A vertex map exists by definition, and it is
+unique unless $H$ is the graph with two vertices and three parallel edges. The \emph{fiber} of $x \in V(H)$
+is $\varphi^{-1}(x)$, of size $n_x$; the vertex $x$ is \emph{used} if $n_x > 0$, and $U$ and $W = V(H) \setminus U$
+are the sets of used and unused vertices. A graph is \emph{bridgeless} if deleting any one edge leaves the number of its components unchanged;
+Theorem~\ref{thm:mmsw} is stated for connected bridgeless cubic graphs.
+
+\begin{theorem}[\cite{MMSW2025}, Theorem~3.7, case $r = 3$; \evV]\label{thm:mmsw}
+For a connected bridgeless cubic graph $G$ the following are equivalent: $G \in \Hthree$; the only
+connected bridgeless cubic graph that colors $G$ is $G$ itself; no bridgeless cubic graph of
+smaller order colors $G$.
+\end{theorem}
+
+\paragraph{The decision problem.} For a graph $G$ of order $n$, the question of~\cite[Section~5.4]{GJMMMU2026} is
+whether some connected bridgeless cubic graph of order less than $n$ colors $G$. By Theorem~\ref{thm:mmsw} the answer is no
+if and only if $G \in \Hthree$. The computational problem solved in this paper is a relaxation of it that
+can be decided one target order at a time: given $G$ and an even $k < n$, does there exist a loopless cubic graph $H$
+on $k$ vertices, connected or not and bridgeless or not, with an $H$-coloring of $G$ whose vertex map is of one of the
+three kinds of Corollary~\ref{cor:modes}? Section~\ref{sec:fibers} shows that the union of these problems over all even
+$k < n$ answers the question of Goedgebeur et al.; a refutation for a given $k$ is unconditional on connectedness
+because the relaxed problem has more solutions.
+
+\paragraph{Assumptions and their sources.} Graphs are finite and may have parallel edges but no loops, as in~\cite{MMSW2025};
+the graphs $\Ga$, $\Gb$ and $\Gsix$ are simple, cubic, of girth 5, with edge connectivity 3 and cyclically 4-edge-connected
+\evMV{}, and their edge lists are the House of Graphs entries 57244, 57278 and 57280 ($\Ga$ was checked isomorphic to the graph
+printed in the first public version of~\cite{GJMMM2026zenodo}). The only external result used is Observation~10
+of~\cite{GJMMMU2026} \evV{}, whose statement we use in the form: every bridgeless cubic graph with at most 38 vertices
+has a Petersen coloring (equivalently, a smallest counterexample has at least 40 vertices, since cubic graphs have even order).
+
+\paragraph{Evidence marks.} Every statement carries one of four marks. \evD{} marks a statement derived here with a proof in
+the text. \evMV{} marks a statement machine-verified: a satisfiable answer accepted by the independent checker, or an unsatisfiable
+answer whose DRAT proof \texttt{drat-trim} verified. \evV{} marks a statement read in the primary source cited. \evU{} marks a
+statement known only through another source or not checked. A mark in a theorem header qualifies the whole statement; a theorem
+that depends on an external statement carries both marks, and states the dependence in its hypothesis.
+
+\begin{table}[t]\centering\small
+\begin{tabular}{lp{0.74\textwidth}}
+\toprule
+symbol & meaning \\
+\midrule
+$G$, $n$ & connected cubic graph to be colored and its order; $\Ga$, $\Gb$, $\Gsix$ are the 52-, 52- and 68-vertex counterexamples \\
+$H$, $k$ & target graph (loopless, cubic) and its order, an even number below $n$ \\
+$f$, $\varphi$ & the $H$-coloring $E(G) \to E(H)$ and its vertex map $V(G) \to V(H)$ \\
+$n_x$, $U$, $W$ & size of the fiber of $x$, the used and the unused target vertices \\
+$\partial_G(v)$ & the three edges at $v$, in a fixed order $r = 0, 1, 2$ (the incidence order) \\
+$(i,s)$ & slot $s \in \{0,1,2\}$ of target vertex $i < k$: one end of an edge of $H$ \\
+$x_{v,i}$, $z_{v,r,s}$, $p_{a,b}$ & vertex $v$ goes to target $i$; the $r$-th edge at $v$ goes to slot $s$; slots $a$, $b$ are matched \\
+$w_{v,r,i,s}$, $u_{v,i}$, $q$ & $x_{v,i} \wedge z_{v,r,s}$; target $i$ is used by a vertex $\le v$; all fibers are odd \\
+$\mathcal{H}_3$ & the unique minimal set of connected bridgeless cubic graphs coloring every one \\
+\bottomrule
+\end{tabular}
+\caption{Notation of Sections~\ref{sec:fibers} to~\ref{sec:theory}: graph symbols, the variables of the formula and their meaning, and the
+mathematical objects they stand for. Slots are the three ends of the edges at a target vertex; the matching on them is the unknown target graph.}\label{tab:notation}
+\end{table}
+
+Table~\ref{tab:notation} collects the symbols. Slots and the matching $p$ carry the target graph in the formula: a perfect matching on the $3k$ slots that
+never pairs two slots of the same vertex is the edge set of a loopless cubic graph on $k$ vertices, and every such graph arises from some matching,
+so the unknown graph $H$ is encoded by $\binom{3k}{2} - 3k$ Boolean variables.

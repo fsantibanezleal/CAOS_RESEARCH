@@ -1,15 +1,20 @@
-\begin{theorem}[machine-verified]\label{thm:orders}
+\begin{theorem}[machine-verified; \evMV]\label{thm:orders}
 For every even $k$ listed in Table~\ref{tab:orders}, no loopless cubic graph on $k$ vertices colors
 the corresponding graph with a vertex map of kind \textup{(O)}, \textup{(E0)} or \textup{(E1)}.
 The list contains every even $k$ with $40 \le k \le 50$ for both $\Ga$ and $\Gb$; for $\Ga$ it
 also contains 2, 4, 24, 26, 28, 30, 32, 34, 36 and 38, and for $\Gsix$ it contains 62, 64 and 66.
 \end{theorem}
 
+The theorem is the content of the 25 rows of Table~\ref{tab:orders} through Proposition~\ref{prop:certified}: each row is a formula that was
+refuted with a DRAT proof accepted by \texttt{drat-trim}, and the formula is the one of Algorithm~\ref{alg:formula} (its hash is reproduced by the generator,
+Appendix~\ref{app:hashes}). It does not depend on connectedness of the target, on the symmetry of the target, or on any external statement; it depends on the two lemmas of
+Section~\ref{sec:fibers} only to say that the three kinds are the only ones.
+
 Goedgebeur et al.\ established by an exhaustive computation that every bridgeless cubic graph on
-at most 38 vertices has a Petersen coloring~\cite[Observation~10]{GJMMMU2026}. The statement
+at most 38 vertices has a Petersen coloring~\cite[Observation~10]{GJMMMU2026} \evV{}. The statement
 extends to graphs with parallel edges.
 
-\begin{lemma}\label{lem:digon}
+\begin{lemma}[\evD]\label{lem:digon}
 If a connected bridgeless cubic graph with parallel edges has no Petersen coloring, then a
 connected bridgeless cubic graph of smaller order has none either.
 \end{lemma}
@@ -25,8 +30,9 @@ parallel edges by the two other edges at one end of $m$ would give a Petersen co
 old graph.
 \end{proof}
 
-\begin{theorem}\label{thm:h3}
-The graphs $\Ga$ and $\Gb$ are colorable only by themselves: both belong to $\Hthree$.
+\begin{theorem}[conditional on Observation~10 of~\cite{GJMMMU2026}; \evMV{} and \evV]\label{thm:h3}
+Assume that every bridgeless cubic graph with at most 38 vertices has a Petersen coloring, as stated in Observation~10 of~\cite{GJMMMU2026}.
+Then $\Ga$ and $\Gb$ are colorable only by themselves: both belong to $\Hthree$.
 \end{theorem}
 
 \begin{proof}
@@ -35,11 +41,11 @@ less than 52 colors $G$. By Corollary~\ref{cor:modes} there is one, say $H$, of 
 $k < 52$ with a vertex map of kind (O), (E0) or (E1). Since $H$ colors a graph without a Petersen
 coloring, $H$ has no Petersen coloring. By Lemma~\ref{lem:digon}, applied repeatedly, there is a
 simple connected bridgeless cubic graph of order at most $k$ without a Petersen coloring, so
-$k \ge 40$ by~\cite[Observation~10]{GJMMMU2026}. This contradicts Theorem~\ref{thm:orders}.
-Theorem~\ref{thm:mmsw} gives the conclusion.
+$k \ge 40$ by the assumed observation. This contradicts Theorem~\ref{thm:orders}, which refutes every even
+$k$ with $40 \le k \le 50$. Theorem~\ref{thm:mmsw} gives the conclusion.
 \end{proof}
 
 Theorem~\ref{thm:orders} does not depend on the computation of~\cite{GJMMMU2026}; only the orders
-below 40 in Theorem~\ref{thm:h3} do. The orders below 40 that are listed in
-Table~\ref{tab:orders} were refuted directly, and the remaining ones were not decided within six
-hours each.
+below 40 in Theorem~\ref{thm:h3} do. The orders 2 and 4 follow from Proposition~\ref{prop:small}. The orders below 40 that are listed in
+Table~\ref{tab:orders} were refuted directly; the remaining ones were not decided within six
+hours each for $\Ga$ (orders 6 to 22), and were not attempted for $\Gb$ (orders below 40); Table~\ref{tab:undecided} lists them.

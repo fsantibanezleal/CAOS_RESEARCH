@@ -1,81 +1,427 @@
-\section{Results}\label{sec:results}
+\section{Fibers of an \texorpdfstring{$H$}{H}-coloring: the reduction}\label{sec:fibers}
 
-The graphs are $\Ga$ and $\Gb$ (House of Graphs entries 57244 and 57278), both cubic of girth~5
-and cyclically 4-edge-connected. Their non-colorability by the Petersen graph was confirmed
-independently of the published proofs: the edge-map formula with target $\PG$ is refuted with
-checked proofs for both graphs, and so is the formula for normal 5-edge-colorings.
+Throughout this section $G$ is a connected cubic graph of order $n$, $H$ is a connected cubic graph, $f$ is an
+$H$-coloring of $G$, and $\varphi : V(G) \to V(H)$ is a vertex map of $f$, with the notation of
+Section~\ref{sec:problem}. The two lemmas below are the mathematical core of the method: they show that the
+vertices of the unknown target are of three kinds only, and that none of them is free.
 
-%%RESULTS_THEOREM%%
+\begin{lemma}[fiber parity; \evD]\label{lem:parity}
+For every edge $e = xy$ of $H$, the set $f^{-1}(e)$ is a perfect matching of the subgraph of $G$
+induced on $\varphi^{-1}(x) \cup \varphi^{-1}(y)$. Consequently
+\begin{equation}\label{eq:parity}
+|f^{-1}(e)| = \tfrac12\,(n_x + n_y),
+\end{equation}
+$n_x + n_y$ is even for every edge $xy$ of $H$, and all the numbers $n_x$, $x \in V(H)$, have the same parity.
+\end{lemma}
 
-%%RESULTS_TABLE%%
+\begin{proof}
+A vertex $v$ of $G$ is incident with an edge of $f^{-1}(e)$ if and only if
+$e \in f(\partial_G(v)) = \partial_H(\varphi(v))$, that is, if and only if
+$\varphi(v) \in \{x, y\}$. In that case it is incident with exactly one such edge, because $f$ is
+injective on $\partial_G(v)$. Hence $f^{-1}(e)$ is a matching that covers exactly
+$\varphi^{-1}(x) \cup \varphi^{-1}(y)$, a set of $n_x + n_y$ vertices. The last statement follows
+because $H$ is connected.
+\end{proof}
 
-In kind (O) with $k$ close to 52 almost all fibers are singletons and the refutation is short; the
-instances become harder as $k$ decreases and the fibers grow, and the certification of the final
-formula dominates the running time. No instance required a connectivity or bridge clause: every
-formula was already unsatisfiable without them, so the statement holds for colorings of kinds (O),
-(E0), (E1) by arbitrary loopless cubic graphs, connected or not.
+So an $H$-coloring is of one of two kinds. If the fibers are odd, every vertex of $H$ is used and
+$|V(H)| \le n$. If the fibers are even, at most $n/2$ vertices of $H$ are used. Both kinds occur:
+an isomorphism has fibers of size~1, and a 3-edge-coloring of a graph of order $n \equiv 0
+\pmod 4$ has a vertex map with two fibers of size $n/2$. Figure~\ref{fig:fibers} shows all three kinds that
+appear below on one example, the complete graph on four vertices colored by the graph with two vertices and three
+parallel edges.
 
-\section{Remarks and questions}\label{sec:remarks}
+%%PART:fig-fibers.tex%%
 
-\emph{Smallest counterexamples.} A smallest counterexample to the Petersen coloring conjecture
-belongs to $\Hthree$, and its order lies between 40 and 52~\cite{GJMMMU2026}. Membership of $\Ga$
-and $\Gb$ in $\Hthree$ is necessary for them to be smallest counterexamples; it is not sufficient,
-since $\Hthree$ may contain graphs of different orders that do not color one another.
+The second lemma concerns the vertices of $H$ that are not used. We use the splitting lemma of
+Fleischner~\cite{Fleischner1992} in the following form. Let $v$ be a vertex of a graph $K$ and
+$e_1 = vv_1$, $e_2 = vv_2$ two edges at $v$. \emph{Splitting $e_1$ and $e_2$ off $v$} means adding
+a new vertex $v^*$ and replacing $e_1, e_2$ by edges $v^*v_1$, $v^*v_2$.
 
-\emph{The other known counterexamples.} The same question is open for the counterexample on 68
-vertices, for which the target orders 62, 64 and 66 are refuted (Table~\ref{tab:orders}) and the
-orders 40 to 60 remain, and for the two on 112 vertices. An affirmative answer to ``is it colored
-by a smaller bridgeless cubic graph'' would exhibit a smaller counterexample, possibly one of
-$\Ga$, $\Gb$. The formulas of Section~\ref{sec:encoding} apply without change; the largest has
-target order 110.
+\begin{lemma}[\cite{KaiserKLW2007}, Lemma~1, a consequence of~\cite{Fleischner1992}; \evV]\label{lem:split}
+Let $v$ be a vertex of degree at least~4 in a bridgeless graph $K$. There exist edges $e_1, e_2$
+incident with $v$ such that the graph obtained by splitting $e_1$ and $e_2$ off $v$ is bridgeless.
+\end{lemma}
 
-\emph{Why the fiber lemmas matter.} Without Lemmas~\ref{lem:parity} and~\ref{lem:unused} the
-unknown target has vertices and edges that no edge of $G$ constrains. For $\Ga$ the loop of
-Section~\ref{sec:encoding} then produced, for each of the ten target orders from 32 to 50, about
-two thousand targets with a bridge in half an hour, each excluded by one clause, without deciding
-any order. With the lemmas every edge of the target is the image of an edge of $G$, and every
-order was decided without a single such clause.
+\begin{lemma}[unused vertices; \evD]\label{lem:unused}
+Let $H$ be bridgeless and suppose $W \ne \emptyset$. Let $m$ be the number of edges between $U$
+and $W$. Then there is a connected bridgeless cubic graph $H'$ with vertex set $U \cup W'$, where
+$W' = \emptyset$ if $m$ is even and $|W'| = 1$ if $m$ is odd, and an $H'$-coloring of $G$ with
+the same vertex map $\varphi$. In particular $|V(H')| \le |V(H)|$.
+\end{lemma}
 
-\emph{A question.} Is there a counterexample to the Petersen coloring conjecture that is colored
-by a smaller counterexample? By Lemma~\ref{lem:parity} the fibers of such a coloring are all odd
-or all even, and by Proposition~\ref{prop:nminus2} a coloring with every target vertex used needs
-target order at most $n - 4$ when the graph has no triangles.
+\begin{proof}
+Every edge of $H$ with an end in $U$ lies in the image of $f$, since the star of a used vertex is
+the image of a star of $G$; no edge with both ends in $W$ does. Identify $W$ to a single vertex
+$w^*$ and delete the loops that arise. Every edge cut of the resulting graph $H_1$ is an edge cut
+of $H$, so $H_1$ is bridgeless; $w^*$ has degree $m$, and $m \ge 2$ because $H$ is connected and
+bridgeless. Every other vertex of $H_1$ is a used vertex, of degree~3, with its star unchanged.
 
-\section*{Data availability}
+While $w^*$ has degree at least~4, apply Lemma~\ref{lem:split} to split two edges $aw^*$, $bw^*$
+off $w^*$ so that the graph stays bridgeless. Then $a \ne b$: otherwise the new vertex would be
+joined to the cubic vertex $a$ by two parallel edges, and the third edge at $a$ would be a bridge.
+Suppress the new vertex, that is, replace its two edges by a single edge $ab$. This keeps the graph
+loopless and bridgeless and lowers the degree of $w^*$ by~2. When the degree of $w^*$ has dropped
+to~3, stop. When it has dropped to~2, suppress $w^*$ in the same way; its two neighbours are
+distinct by the same argument. Let $H'$ be the final graph. It is cubic, loopless and bridgeless.
 
-{\raggedright
-The edge lists, encoders, checkers, runners, results and the hashes of all formulas and proofs
-are in the repository \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}, under
-\path{problems/combinatorics/petersen-coloring/}. The computations of this paper are archived in
-the folder \path{experiments/EXP-007-colorable-only-by-itself} of that directory (runner
-\path{run_inc.py}, encoder \path{code/pcclib/hcolor.py}); the controls of
-Section~\ref{sec:encoding} are in its \path{artifacts/agreement} folder. The solvers are CaDiCaL
-1.7.3 and the CaDiCaL 1.9.5 build of PySAT; proofs were checked with \texttt{drat-trim}.
-\par}
+Let $\mu$ map every edge of $H$ that has an end in $U$ to the edge of $H'$ that contains it. Two
+edges merged in one step have their ends other than $w^*$ at distinct vertices, so $\mu$ is
+injective on $\partial_H(u)$ and $\partial_{H'}(u) = \mu(\partial_H(u))$ for every $u \in U$. Hence
+$\mu \circ f$ is an $H'$-coloring of $G$ with vertex map $\varphi$.
 
-\begin{thebibliography}{99}
-\bibitem{Jaeger1988} F.~Jaeger, Nowhere-zero flow problems, in: L.~W. Beineke, R.~J. Wilson
-(eds.), Selected Topics in Graph Theory 3, Academic Press, London, 1988, 71--95.
-\bibitem{Putman2026} B.~Putman, A 112-vertex counterexample to the Petersen Coloring Conjecture,
-Zenodo v1.1.0 (2026), \href{https://doi.org/10.5281/zenodo.21845291}{doi:10.5281/zenodo.21845291};
-arXiv:2608.10012.
-\bibitem{GJMMMU2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
-S.~Ulyanov, Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite
-family of counterexamples, arXiv:2608.10028v4 (2026).
-\bibitem{MMSW2025} Y.~Ma, D.~Mattiolo, E.~Steffen, I.~H. Wolf, Sets of $r$-graphs that color all
-$r$-graphs, Combinatorica 45 (2025), Article 16,
-\href{https://doi.org/10.1007/s00493-025-00144-4}{doi:10.1007/s00493-025-00144-4}; arXiv:2305.08619.
-\bibitem{Fleischner1992} H.~Fleischner, Spanning eulerian subgraphs, the splitting lemma, and
-Petersen's theorem, Discrete Math. 101 (1992), 33--37.
-\bibitem{KaiserKLW2007} T.~Kaiser, R.~Ku\v{z}el, H.~Li, G.~Wang, A note on $k$-walks in bridgeless
-graphs, Graphs Combin. 23 (2007), 303--308.
-\bibitem{HoG} K.~Coolsaet, S.~D'hondt, J.~Goedgebeur, House of Graphs 2.0: a database of
-interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107;
-\url{https://houseofgraphs.org}.
-\bibitem{CaDiCaL} A.~Biere, T.~Faller, K.~Fazekas, M.~Fleury, N.~Froleyks, F.~Pollitt, CaDiCaL 2.0,
-in: Computer Aided Verification (CAV 2024), Lecture Notes in Comput. Sci. 14681, Springer, 2024,
-133--152.
-\bibitem{DRATtrim} N.~Wetzler, M.~J.~H. Heule, W.~A. Hunt Jr., DRAT-trim: efficient checking and
-trimming using expressive clausal proofs, in: Theory and Applications of Satisfiability Testing
-(SAT 2014), Lecture Notes in Comput. Sci. 8561, Springer, 2014, 422--429.
-\end{thebibliography}
+Finally $H'$ is connected. If $uv$ is an edge of $G$ with $\varphi(u) \ne \varphi(v)$, then
+$f(uv)$ joins $\varphi(u)$ to $\varphi(v)$; it has both ends in $U$ and is therefore an edge of
+$H'$. As $G$ is connected, $U$ induces a connected subgraph of $H'$, and the vertex $w^*$, if it
+remains, is joined to $U$.
+\end{proof}
+
+Lemma~\ref{lem:unused} is the step that removes the free part of the target. A vertex of $H$ that no vertex of $G$
+uses is joined to the rest of $H$ by edges that no edge of $G$ is mapped to, so a solver that searches for $H$ may place
+there any bridgeless completion, and each completion is a different model. The lemma shows that nothing is lost by
+asking for at most one such vertex, and the parity statement of Lemma~\ref{lem:parity} decides, from the order alone, whether
+that vertex can exist.
+
+\begin{corollary}[\evD]\label{cor:modes}
+A connected cubic graph $G$ of order $n$ is colored by a connected bridgeless cubic graph of order
+less than $n$ if and only if, for some even $k < n$, it has an $H$-coloring by a connected
+bridgeless cubic graph $H$ of order $k$ with a vertex map of one of the following kinds:
+\begin{enumerate}
+\item[\textup{(O)}] every vertex of $H$ is used and every fiber is odd;
+\item[\textup{(E0)}] every vertex of $H$ is used and every fiber is even, so that $k \le n/2$;
+\item[\textup{(E1)}] exactly one vertex of $H$ is not used and every other fiber is even and
+nonempty, so that $k - 1 \le n/2$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Let $H$ of order less than $n$ color $G$. If every vertex of $H$ is used, Lemma~\ref{lem:parity}
+gives (O) or (E0). Otherwise the fibers are even by Lemma~\ref{lem:parity}, since an unused vertex
+has an empty fiber, and Lemma~\ref{lem:unused} gives a graph $H'$ of order at most $|V(H)|$ with
+the same vertex map and at most one unused vertex, which is (E0) or (E1).
+\end{proof}
+
+The kinds (O), (E0), (E1) leave no part of $H$ unconstrained by $G$: every edge of $H$ is the image
+of an edge of $G$. For $n = 52$ the kind (O) is possible for every even order $k \le 50$, while (E0) and
+(E1) require $k \le n/2 = 26$ and $k - 1 \le 26$, so they occur only for $k \le 26$; in the kind (O) with $k = 50$
+the fibers are forty-nine singletons and one fiber of size three. For target orders close to $n$ only kind (O) is possible, and the fibers are then
+almost all singletons. The extreme case of kind (O) can be settled by hand.
+
+\begin{proposition}[\evD]\label{prop:nminus2}
+Let $G$ be a connected simple cubic graph of order $n \ge 8$ without triangles. Then $G$ has no
+$H$-coloring by a connected cubic graph $H$ of order $n - 2$ in which every vertex of $H$ is used.
+\end{proposition}
+
+\begin{proof}
+Since $n - 2 > n/2$ and every vertex of $H$ is used, the fibers are odd by
+Lemma~\ref{lem:parity}; hence one fiber $\{u_1, u_2, u_3\} = \varphi^{-1}(x)$ has size~3 and all
+others have size~1. For each of the three edges $e = xy$ at $x$, the set $f^{-1}(e)$ is a perfect matching on
+$\{u_1, u_2, u_3\}$ together with the single vertex of the fiber of $y$
+(Lemma~\ref{lem:parity}), so it contains an edge of $G$ joining two of $u_1, u_2, u_3$. The three
+sets $f^{-1}(e)$ are pairwise disjoint and $G$ is simple, so $u_1u_2u_3$ is a triangle of $G$.
+\end{proof}
+
+The hypothesis \emph{simple} is used in the last step: with parallel edges, two of the three disjoint sets could join the
+same pair of vertices of the fiber. The flower snark $J_3$, which has triangles, is colored by a graph of order $n - 2 = 10$ with
+one fiber of size three and nine singletons (Table~\ref{tab:controls}), so the triangle hypothesis cannot be dropped.
+
+The smallest target orders follow from the 3-edge-colorability of the targets alone.
+
+\begin{proposition}[\evD]\label{prop:small}
+Let $G$ be a connected cubic graph that is not 3-edge-colorable. No loopless cubic graph on 2 or on 4 vertices colors $G$.
+\end{proposition}
+
+\begin{proof}
+Let $H$ be a loopless cubic graph on $k \in \{2, 4\}$ vertices. If some two vertices are joined by three edges they form a
+component, and the other vertices, if any, form a second one of the same kind. Otherwise suppose two vertices $a$, $b$ are joined by two edges.
+Their third edges end at distinct vertices $c$ and $d$: if both ended at $c$, the vertex $d$ would have degree at most one. Then $c$ and $d$ are
+joined by two edges. Without a multiple edge $H$ is the complete graph $K_4$. So $H$ is a triple edge, two triple edges, $K_4$, or the
+graph of two digons joined by two edges, and each is 3-edge-colorable (the perfect matchings of $K_4$ give the three colors; in the last graph
+color both digons with colors 1 and 2 and the two joining edges with color 3). If $f$ is an $H$-coloring of $G$ and $c$ a proper 3-edge-coloring of
+$H$, then $c \circ f$ is a proper 3-edge-coloring of $G$, because $f$ maps the three edges at a vertex onto the three edges at a vertex of $H$.
+\end{proof}
+
+The graphs of this paper are not 3-edge-colorable: a 3-edge-colorable cubic graph is colored by the graph with two vertices and three parallel
+edges, which the Petersen graph colors, so by transitivity it has a Petersen coloring, and $\Ga$, $\Gb$ and $\Gsix$ have none (Section~\ref{sec:results}).
+Proposition~\ref{prop:small} therefore settles the orders 2 and 4 for all three graphs without any computation; the corresponding rows of
+Table~\ref{tab:orders} confirm it by machine, at a cost that carries no information about larger orders.
+
+\section{Method: the propositional formula and its certification}\label{sec:method}
+
+For a fixed connected cubic graph $G$ with vertices $0, 1, \dots, n-1$ and a fixed even $k$, Algorithm~\ref{alg:formula} builds a formula $F_{G,k}$ in
+conjunctive normal form. It is satisfiable if and only if $G$ has an $H$-coloring of kind (O), (E0) or (E1) by some loopless cubic graph $H$ on $k$
+vertices (Theorem~\ref{thm:encoding}); connectedness and bridgelessness of $H$ are not part of it and are handled separately, as lazily learned clauses
+that the certified formulas never needed. This section describes every variable and clause family and the pipeline that certifies the answers; the next
+one proves them correct.
+
+\subsection{Variables and clauses}\label{sec:formula}
+
+The target graph is encoded by slots. Every target vertex $i < k$ carries three slots $(i,0)$, $(i,1)$, $(i,2)$, the three ends of the edges at $i$. A Boolean
+variable $p_{a,b}$ is created for every unordered pair of slots $a$, $b$ of different vertices, and the constraint \emph{each slot is in exactly one true pair}
+makes the true variables a perfect matching on the $3k$ slots that never pairs two slots of the same vertex: the edge set of a loopless cubic graph on $k$ vertices,
+possibly with parallel edges. Every such graph arises from some matching, so the formula ranges over all of them. There are $9k(k-1)/2$ such variables, and
+each slot has $3k-3$ possible partners.
+
+The map from $G$ to $H$ is encoded by $x_{v,i}$ (vertex $v$ of $G$ goes to target vertex $i$, exactly one $i$ per $v$) and by $z_{v,r,s}$ (the $r$-th edge at
+$v$ in the incidence order goes to slot $s$ of $\varphi(v)$), where for every $v$ the matrix $(z_{v,r,s})_{r,s}$ is a permutation matrix: a bijection between the three edges at $v$ and
+the three slots of its image. A product variable $w_{v,r,i,s}$ is defined by
+\begin{equation}\label{eq:w}
+w_{v,r,i,s} \leftrightarrow x_{v,i} \wedge z_{v,r,s},
+\end{equation}
+three clauses each, so that the consistency clauses below have two or three literals instead of four.
+
+The consistency along an edge $e = uv$ of $G$ states that the slot assigned to $e$ at $u$ and the slot assigned to it at $v$ are two ends of one edge of $H$. If the
+edge sits at position $r_u$ at $u$ and $r_v$ at $v$, then for every ordered pair of distinct slots $(i,s) \ne (j,t)$ the formula contains
+\begin{equation}\label{eq:consistency}
+\begin{cases}
+\neg w_{u,r_u,i,s} \vee \neg w_{v,r_v,j,t} & \text{if } i = j,\\
+\neg w_{u,r_u,i,s} \vee \neg w_{v,r_v,j,t} \vee p_{(i,s),(j,t)} & \text{if } i \ne j.
+\end{cases}
+\end{equation}
+For $i = j$ the two ends of $e$ lie in one fiber and the image $f(e)$ has a single end at $i$ (there are no loops), so the slots must coincide, which the clause
+enforces by forbidding every other pair; for $i \ne j$ the image joins $i$ to $j$ and the slots are matched. A pair of identical slots needs no clause.
+Equation~\eqref{eq:consistency} contributes $\tfrac32 n \cdot 3k(3k-1)$ clauses, about 91 percent of the formula at $(n,k) = (52,50)$.
+
+\begin{algorithm}[t]
+\caption{Construction of the formula $F_{G,k}$ for a cubic graph $G$ with vertices $0, \dots, n-1$ and an even target order $k \ge 2$. Exactly-one constraints over $m > 4$ literals use the sequential ladder ($m-1$ auxiliary variables, $3m-3$ clauses) and the pairwise form otherwise; $u_{-1,i}$ is the constant false.}\label{alg:formula}
+\begin{algorithmic}[1]
+\Require cubic graph $G$ with an incidence order at each vertex; even $k \ge 2$
+\Ensure CNF $F_{G,k}$ (the base formula with the fiber constraints, and the attach clauses)
+\State slots $S \gets \{(i,s) : i < k,\ s < 3\}$; create $x_{v,i}$, $z_{v,r,s}$, and $p_{a,b}$ for $a < b$ in $S$ with different vertices
+\For{each vertex $v$}
+  \State exactly one of $x_{v,0}, \dots, x_{v,k-1}$; for each $r$ exactly one $z_{v,r,s}$ over $s$; for each $s$ exactly one $z_{v,r,s}$ over $r$
+\EndFor
+\For{each slot $a \in S$}
+  \State exactly one of $\{p_{a,b} : b \text{ a slot of another vertex}\}$
+\EndFor
+\State define $w_{v,r,i,s}$ by Equation~\eqref{eq:w} for all $v, r, i, s$
+\For{each edge $e = uv$ of $G$, at positions $r_u, r_v$, and each ordered pair of distinct slots}
+  \State add the clause of Equation~\eqref{eq:consistency}
+\EndFor
+\State define $u_{v,i}$: $u_{v,i} \leftrightarrow u_{v-1,i} \vee x_{v,i}$ \Comment{target $i$ is used by a vertex $\le v$}
+\State symmetry breaking: $x_{0,0}$; $\neg x_{0,i}$ for $i \ge 1$; $x_{v,i} \to u_{v-1,i-1}$ for $v \ge 1$, $i \ge 1$
+\State founders: $x_{v,i} \to u_{v-1,i} \vee z_{v,r,r}$ for all $v, i$ and $r < 3$
+\State fibers: variable $q$; for each $i$ a chain $t_{i,v} \leftrightarrow t_{i,v-1} \oplus x_{v,i}$ with $t_{i,0} = x_{0,i}$, and $t_{i,n-1} \leftrightarrow q$ and $q \to u_{n-1,i}$
+\State $u_{n-1,k-2}$; if $2(k-1) > n$ add $q$
+\For{$i = 1, \dots, k-1$} \Comment{attach clauses}
+  \State add $u_{n-1,i} \vee \neg u_{n-1,i-1} \vee \bigvee \{p_{a,b} : \text{exactly one of } a, b \text{ lies on a vertex} < i\}$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+The exactly-one constraints use a sequential (ladder) encoding when they range over more than four literals: $m-1$ auxiliary variables and $3m-3$ clauses
+for $m$ literals, and the pairwise form with $\binom m2 + 1$ clauses and no auxiliary variable otherwise. The variable and clause counts of every family are
+collected in Table~\ref{tab:counts}; Equations~\eqref{eq:size-v} and~\eqref{eq:size-c} give the totals, and Table~\ref{tab:orders} shows that they equal the
+numbers recorded for every certified formula. The formula has $\Theta(nk + k^2)$ variables and $\Theta(nk^2)$ clauses.
+
+%%PART:table-counts.tex%%
+
+\subsection{Symmetry breaking, fiber constraints and attach clauses}\label{sec:symmetry}
+
+A model of the clauses above does not determine $H$ uniquely: renaming the target vertices, or permuting the three slots of a target vertex, gives another model of the same
+coloring. The symmetry group has order $k!\,6^k$, and a solver that proves unsatisfiability must in effect refute every image of every partial assignment. Two families of
+clauses fix a representative. The first numbers the target vertices in the order in which the vertices $0, 1, \dots, n-1$ of $G$ first use them: with
+$u_{v,i}$ true when some vertex $v' \le v$ is mapped to $i$, the clauses
+\begin{equation}\label{eq:numbering}
+x_{0,0}, \qquad x_{v,i} \to u_{v-1,i-1} \quad (v \ge 1,\ i \ge 1), \qquad \neg x_{0,i} \quad (i \ge 1)
+\end{equation}
+say that target $i$ can be used by $v$ only if target $i-1$ was used before $v$. The second fixes the slot order of each target vertex by its first user, the
+\emph{founder}: if $v$ is mapped to $i$ and no earlier vertex is, then
+\begin{equation}\label{eq:founder}
+x_{v,i} \wedge \neg u_{v-1,i} \;\to\; z_{v,0,0} \wedge z_{v,1,1} \wedge z_{v,2,2},
+\end{equation}
+so that the founder sends its $r$-th edge to slot $r$. Proposition~\ref{prop:symmetry} proves that the clauses delete no solution up to renaming, and that they select
+exactly one representative of the used part of each orbit.
+
+The fiber constraints encode Lemmas~\ref{lem:parity} and~\ref{lem:unused}. One variable $q$ states that the fibers are odd, and for every target vertex $i$ an exclusive-or
+chain over the variables $x_{v,i}$, $v = 0, \dots, n-1$, forces the parity of the fiber of $i$ to equal $q$:
+\begin{equation}\label{eq:xor}
+t_{i,0} = x_{0,i},\qquad t_{i,v} \leftrightarrow t_{i,v-1} \oplus x_{v,i}\ (v \ge 1),\qquad t_{i,n-1} \leftrightarrow q.
+\end{equation}
+If $q$ holds, every target is used. The unit clause $u_{n-1,k-2}$ says that target $k-2$ is used, so that, the used targets being a prefix by Equation~\eqref{eq:numbering},
+at most the target $k-1$ is unused. When $2(k-1) > n$ even fibers are impossible, since $k-1$ used targets with even fibers need $2(k-1)$ vertices, and the unit clause $q$ is added.
+
+The attach clauses are a static family that was written into every certified formula: for $i = 1, \dots, k-1$,
+\begin{equation}\label{eq:attach}
+u_{n-1,i} \;\vee\; \neg u_{n-1,i-1} \;\vee\; \bigvee\,\{\,p_{a,b} : \text{exactly one of } a, b \text{ lies on a target vertex} < i\,\}.
+\end{equation}
+Read as a necessary condition for a connected target, they say that if target $i$ is the first unused one, some edge of $H$ joins a target below $i$ to one from $i$ on. Their addition is a
+design choice of the runner, not of the encoding of Section~\ref{sec:theory}; Proposition~\ref{prop:attach} shows that in the reduced formula every attach clause is
+implied by the other clauses, so the certified formula has the same models as the formula without them, and the $k-1$ extra clauses are part of the hashed file.
+
+\subsection{Lazy cuts and the certification pipeline}\label{sec:pipeline}
+
+A model of $F_{G,k}$ is decoded into a pair $(H,f)$. If $H$ is disconnected, a clause is added that requires some slot pair to join a connected component not containing target 0
+to its complement; if $H$ has a bridge, a clause is added that requires some slot pair other than the bridge to cross the same vertex partition. Both clauses are consequences of
+connectivity and bridgelessness (Proposition~\ref{prop:cuts}); the formula is then solved again. None of the target runs of Section~\ref{sec:results} ever entered this loop, because every
+decided formula was unsatisfiable before any cut was learned.
+
+\begin{algorithm}[t]
+\caption{Certification pipeline for one instance $(G,k)$ with time cap $T = 21{,}600$ s and floor $\tau = 600$ s. External runs use CaDiCaL with DRAT output followed by \texttt{drat-trim}; the in-process solver is the CaDiCaL 1.9.5 build of PySAT and is not part of the trusted base.}\label{alg:certify}
+\begin{algorithmic}[1]
+\Require cubic graph $G$, even target order $k$, cap $T$, floor $\tau$
+\Ensure a record: status (refuted with a verified proof, colored with a checked pair, no answer), the hashes of the formula and the proof, sizes and times
+\Procedure{Certify}{$F$, limit}\Comment{external solve and proof check}
+  \State write $F$ to a DIMACS file with a header comment, hash it; run external CaDiCaL on it with DRAT output within $\max(\tau, \text{limit})$ s
+  \If{UNSAT} run \texttt{drat-trim} on the formula and the proof; \Return UNSAT, verified only if it prints \texttt{s VERIFIED}, with both hashes and sizes
+  \EndIf
+  \State \Return TIMEOUT or the solver answer
+\EndProcedure
+\State $F \gets$ Algorithm~\ref{alg:formula}$(G,k)$; start a watchdog that records TIMEOUT when $T$ elapses
+\State \textbf{direct step:} $r \gets \textsc{Certify}(F, T - \text{elapsed})$; \textbf{if} $r$ is UNSAT and verified \textbf{then return} $r$
+\State \textbf{incremental loop:} load $F$ in the in-process solver, $C \gets \emptyset$
+\Loop
+  \If{the in-process solver reports UNSAT} \textbf{break}\EndIf
+  \State decode the model into $(H,\varphi,f)$; check from the definition ($H$ cubic and loopless, $f$ maps every star of $G$ onto a star of $H$)
+  \If{the check fails} \Return CHECKER-REJECT\EndIf
+  \If{$H$ is disconnected} add the cut for a component without target 0 to $C$ and to the solver
+  \ElsIf{$H$ has a bridge} add the cut for one side of the bridge, excluding the bridge, to $C$ and to the solver
+  \Else\ refute Petersen colorability of $H$ with a checked proof and \Return SAT with $(H,f)$
+  \EndIf
+\EndLoop
+\State \Return \textsc{Certify}$(F \cup C,\ T - \text{elapsed})$
+\Procedure{PostHoc}{graph, $k$}\Comment{the runner's cap expired during the external solve}
+  \State let the orphaned solver finish; run \texttt{drat-trim} with limit 80{,}000 s on the formula file and the proof it left; record the result flagged post hoc, without a solve time
+\EndProcedure
+\Procedure{Portfolio}{formula, solve limit, check limit}
+  \State run CaDiCaL in three configurations in parallel (default, \texttt{--unsat}, \texttt{--seed=7}), each with its own DRAT file
+  \State the first configuration to exit with code 20 wins and the others are killed; run \texttt{drat-trim} on the winner's proof within the check limit
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:certify} states the pipeline. A satisfiable answer is checked from the definition by a separate program that reads only $G$ and the decoded pair $(H,f)$: $H$ is cubic, loopless,
+connected and bridgeless, and $f$ maps every star of $G$ onto a star of $H$; then Petersen colorability of $H$ is refuted by the edge-map encoding, since a smaller bridgeless cubic graph that colors a
+counterexample is itself a counterexample. An unsatisfiable answer is certified on the final formula (the base formula with its attach clauses and every added cut): it is refuted by
+CaDiCaL~\cite{CaDiCaL} with a DRAT proof and the proof is checked by \texttt{drat-trim}~\cite{DRATtrim}, so the in-process solver that drives the loop is not trusted. The steps of Algorithm~\ref{alg:certify} apply as follows:
+\begin{itemize}
+\item the \emph{direct step} (an external solve of the formula without any cut) was added once it was seen that every decided instance needed no cut, because the in-process solve then spent about a third of
+the time on a solve that added nothing;
+\item the \emph{incremental loop} is entered when the direct step does not end with a verified refutation, and by the instances that were started before the direct step existed;
+\item \emph{post hoc checking} applies to four instances (orders 24, 26 and 28 of $\Ga$ and order 42 of $\Gb$): the runner's six-hour cap expired while the external solver was still writing the proof, the solver finished on its own, and
+the proof was checked afterwards; for three of them (24, 26 and 42) an earlier check had been killed by a stop of the virtual machine, and the complete proofs were checked again, unchanged;
+\item the \emph{portfolio} solved order 40 of $\Gb$, after a single direct solve had not decided it in 6.4 hours.
+\end{itemize}
+The parameters are the six-hour cap ($T = 21{,}600$ s), the floor of 600 s on the external solve limit, at most twelve instances in parallel (fourteen for the controls), and for the portfolio a 24-hour
+solve limit and a 36-hour check limit. The tools are CaDiCaL 1.7.3 for the external solves (the version recorded by the same wrapper in the earlier certification runs on the same machine; the experiment records
+themselves do not store it), the CaDiCaL 1.9.5 build of PySAT for the in-process loop, and a shared \texttt{drat-trim} binary built from the sources of~\cite{DRATtrim}, whose version string is not recorded. The reference cited for CaDiCaL~\cite{CaDiCaL} describes its 2.0 release; the versions used here are 1.7.3 and 1.9.5, for which the records hold no separate reference. The machine is a workstation running Ubuntu 24.04 under WSL with 30 logical CPUs
+and 25 GB of memory visible to the solvers (recorded when the tooling was set up; the processor model was not). The commands are listed in Section~\ref{sec:reproducibility}.
+
+\paragraph{Implementation.} The encoder is a Python class that takes a cubic graph, the target order and a flag that switches the fiber constraints on or off, and keeps its clauses in a small CNF builder that refuses a clause with a repeated or a complementary literal and writes the formula as ASCII DIMACS with a comment header. The three edges at every vertex are ordered by the order of the edge list, which fixes the positions $r$ of Equation~\eqref{eq:consistency}.
+The decoder reads a model into the vertex map, the matching of slots and the image of every edge of $G$. The checker recomputes everything from the definition and shares no variable with the encoder: it tests that the matched slots form a loopless cubic multigraph, that the images of the three edges at every vertex are distinct and form the star of a vertex of $H$, that $H$ is connected, and that deleting any one edge of $H$ keeps it connected, one edge at a time.
+Petersen colorability of a decoded target is decided by a separate encoding, so a satisfiable answer is judged by code that does not belong to the formula it came from.
+
+\section{Theory of the encoding: correctness and size}\label{sec:theory}
+
+The statements of this section are proved in the text and marked \evD; the closed forms of Proposition~\ref{prop:size} are in addition checked against the recorded counts of all
+certified formulas. The first three propositions show that $F_{G,k}$ has exactly the intended models; the fourth and fifth concern the clauses that are redundant or lazy; the sixth
+counts.
+
+\begin{proposition}[the base formula; \evD]\label{prop:base}
+Let $B_{G,k}$ be the clauses of Algorithm~\ref{alg:formula} without the symmetry breaking, the fiber constraints and the attach clauses. Then $B_{G,k}$ is satisfiable if and only if some loopless cubic graph $H$ on $k$
+vertices colors $G$. Models correspond to quadruples $(H, f, \varphi, \lambda)$, where $\lambda$ labels the three edge ends at every vertex of $H$ by $0, 1, 2$.
+\end{proposition}
+
+\begin{proof}
+Let a model be given. The variables $p$ form a perfect matching on the $3k$ slots with no pair inside one vertex, so the true $p$ variables are the edges of a loopless graph $H$ in which every vertex has degree three
+(its three slots are in three distinct pairs); parallel edges correspond to different slot pairs between the same two vertices. Let $\varphi(v)$ be the unique $i$ with $x_{v,i}$ true, and let $s_v(e)$ be the slot
+with $z_{v,r,s}$ true for the edge $e$ at position $r$ of $v$; the permutation-matrix constraints make $e \mapsto (\varphi(v), s_v(e))$ a bijection from $\partial_G(v)$ onto the three slots of $\varphi(v)$. For an edge
+$e = uv$ let $f(e)$ be the edge of $H$ containing the slot $(\varphi(u), s_u(e))$. By Equation~\eqref{eq:consistency}, either $\varphi(u) = \varphi(v)$ and $s_u(e) = s_v(e)$, or $\varphi(u) \ne \varphi(v)$ and the two
+slots are matched; in both cases the slot $(\varphi(v), s_v(e))$ lies on the same edge, so $f(e)$ is determined from either end. The three slots of $\varphi(v)$ lie on three distinct edges, so
+$f(\partial_G(v)) = \partial_H(\varphi(v))$ and $f$ is an $H$-coloring with vertex map $\varphi$.
+
+Conversely, let $H$ be a loopless cubic graph on $k$ vertices, $f$ an $H$-coloring of $G$ with vertex map $\varphi$, and $\lambda$ a labelling of the edge ends at each vertex by $0,1,2$ (the slots).
+Set $x_{v,i}$ true iff $\varphi(v) = i$; $p_{a,b}$ true iff the edge ends $a$, $b$ belong to one edge of $H$; $z_{v,r,s}$ true iff $f$ sends the $r$-th edge at $v$ to the edge of $H$ whose end at $\varphi(v)$ is labelled $s$;
+and the auxiliary variables by their definitions. All clauses hold: the edges at $v$ are sent to three distinct edges of the star of $\varphi(v)$, which have three distinct ends there (no loops); an edge $e = uv$ with
+$\varphi(u) = \varphi(v)$ is sent to an edge with a single end at that vertex, so both ends of $e$ use the same slot, and with $\varphi(u) \ne \varphi(v)$ the image has its two ends at the two targets, matched.
+\end{proof}
+
+\begin{proposition}[symmetry breaking is sound and canonical; \evD]\label{prop:symmetry}
+Let $S_{G,k}$ be $B_{G,k}$ with the clauses of Equations~\eqref{eq:numbering} and~\eqref{eq:founder} and the definition of $u$. Every model of $B_{G,k}$ can be transformed, by a renaming of the target vertices and a
+permutation of the three slots of each target vertex, into a model of $S_{G,k}$. On the targets that are used, two models of $S_{G,k}$ in the same orbit coincide.
+\end{proposition}
+
+\begin{proof}
+A renaming $\pi$ of the targets together with permutations $\sigma_i$ of the slots of each target carries a model of $B_{G,k}$ to another one: the matching $p$, the images of $\varphi$ and the bijections $z$ are
+transported along the same bijection of slots, and every clause of $B_{G,k}$ is invariant under it. Given a model, let $\pi$ number the used targets $0, 1, \dots$ in the order of their first users among
+$0, 1, \dots, n-1$, and the unused targets afterwards. Then vertex $0$ goes to target $0$, and if $v$ is mapped to $i \ge 1$, the first user of $i-1$ precedes the first user of $i$, which is $v$ or earlier;
+so $u_{v-1,i-1}$ holds and Equation~\eqref{eq:numbering} is satisfied. For each used target $i$ with founder $v$, the matrix $z_{v,\cdot,\cdot}$ is a permutation matrix, so a unique permutation
+$\sigma_i$ of slots turns it into the identity, and Equation~\eqref{eq:founder} holds. For the second statement, Equation~\eqref{eq:numbering} makes the first users of the targets increase with the target
+number, so the numbering of the used targets is the order of first use of the partition of $V(G)$ into fibers, the same in two models of one orbit, which differ then at most by slot permutations;
+the founder clauses fix those for every used target.
+\end{proof}
+
+The symmetry breaking does not touch the unused target vertex, whose three slots may still be permuted; by the fiber constraints there is at most one.
+
+\begin{proposition}[fiber constraints; \evD]\label{prop:fibers}
+Let $R_{G,k}$ be $S_{G,k}$ with the fiber constraints (Equation~\eqref{eq:xor}, the clauses $q \to u_{n-1,i}$, the unit clause $u_{n-1,k-2}$, and $q$ when $2(k-1) > n$). A model of $R_{G,k}$ corresponds to
+an $H$-coloring whose vertex map is of kind (O), (E0) or (E1), and every such coloring has a model. The clauses $q \to u_{n-1,i}$ are implied by the parity chain.
+\end{proposition}
+
+\begin{proof}
+If $q$ is true, every chain forces an odd number of $x_{v,i}$ true, so every fiber is odd and every target is used: kind (O). If $q$ is false every fiber is even; Equation~\eqref{eq:numbering} makes the used targets a
+prefix $0, \dots, \ell - 1$, and $u_{n-1,k-2}$ gives $\ell \ge k-1$, so at most the last target is unused and every used fiber is even and nonempty: kind (E0) or (E1). Conversely, take a
+coloring of one of the three kinds and the renaming of Proposition~\ref{prop:symmetry}: the unused target, if any, is last, so $u_{n-1,k-2}$ holds; $q$ is set to the parity of the fibers. For $2(k-1) > n$ every even
+kind would need $2(k-1)$ vertices at least, so the coloring is of kind (O) and $q$ is true, as the unit clause demands. A true $q$ forces an odd fiber, hence a user, hence $u_{n-1,i}$.
+\end{proof}
+
+\begin{theorem}[correctness of the encoding; \evD]\label{thm:encoding}
+$F_{G,k}$ without the attach clauses is satisfiable if and only if $G$ has an $H$-coloring of kind (O), (E0) or (E1) by some loopless cubic graph $H$ on $k$ vertices, connected or not and bridgeless or not.
+\end{theorem}
+
+\begin{proof}
+Propositions~\ref{prop:base}, \ref{prop:symmetry} and~\ref{prop:fibers}, in that order: a model gives a coloring; a coloring of one of the kinds is carried by renaming and slot permutation to a model.
+\end{proof}
+
+\begin{proposition}[the attach clauses are implied; \evD]\label{prop:attach}
+Every model of $R_{G,k}$ satisfies every attach clause of Equation~\eqref{eq:attach}. Hence $R_{G,k}$ and $R_{G,k}$ with the attach clauses have the same models.
+\end{proposition}
+
+\begin{proof}
+Let $1 \le i \le k-1$ and take a model. By Equation~\eqref{eq:numbering}, if target $i$ is used then so is $i-1$, so the used targets are a prefix, and $u_{n-1,k-2}$ makes every target below $k-1$ used. If
+$i \le k-2$, then $u_{n-1,i}$ is true and the clause holds. If $i = k-1$ and target $k-1$ is used, $u_{n-1,i}$ holds again. It remains the case that target $k-1$ is unused (and $k-2$ is used). The slots of
+$k-1$ lie in perfect-matching pairs with slots of other targets, all below $k-1$; such a pair $p_{a,b}$ has exactly one end on a target below $k-1$, so it is a literal of the clause of $i = k-1$, and it is true.
+\end{proof}
+
+In the formula without the fiber constraints, which the controls use for comparison, the attach clauses are not implied: there they are the necessary condition for a connected target that they
+were written as. The lazy clauses of the loop are likewise consequences of connectivity.
+
+\begin{proposition}[the lazy cuts are sound; \evD]\label{prop:cuts}
+Let $(H,f)$ be decoded from a model. (a) If $H$ is disconnected and $C$ is a component not containing target 0, the clause that some slot pair joins $C$ to its complement is satisfied by every
+model whose graph is connected. (b) If $H$ is connected with a bridge $b$ and $C$ is the vertex set of one side, the clause that some slot pair other than $b$ joins $C$ to its complement is satisfied by every model whose graph is connected and bridgeless.
+\end{proposition}
+
+\begin{proof}
+(a) A connected graph on $k$ vertices has an edge between any nonempty proper vertex subset and its complement. (b) A connected bridgeless graph has at least two edges across any such cut, so one of them differs from $b$.
+\end{proof}
+
+\begin{proposition}[size of the formula; \evD, checked \evMV]\label{prop:size}
+For $k \ge 5$ the formula $F_{G,k}$ of Algorithm~\ref{alg:formula}, with the attach clauses, has
+\begin{align}
+V(n,k) &= 13nk + 8n + \tfrac12\,(27k^2 - 35k) + 1 \label{eq:size-v}\\
+\intertext{variables and}
+C(n,k) &= \tfrac12\,(27nk^2 + 73nk) + 20n + 27k^2 - 37k + 1 + [\,2(k-1) > n\,] \label{eq:size-c}
+\end{align}
+clauses, where $[\cdot]$ is 1 if the condition holds and 0 otherwise.
+\end{proposition}
+
+\begin{proof}
+Sum the rows of Table~\ref{tab:counts}: the variables $x$, $z$, $p$, the ladder variables of the vertex map ($n$ constraints over $k > 4$ literals, $n(k-1)$ variables) and of the matching ($3k$ constraints over $3k-3$ literals,
+$3k(3k-4)$ variables), $w$, $u$, $q$ and the parity chains $k(n-1)$ add to Equation~\eqref{eq:size-v}; the clause counts of the families add to Equation~\eqref{eq:size-c}. The dominant family is the consistency clauses, $\tfrac92 nk(3k-1)$, so the
+clauses are $\Theta(nk^2)$.
+\end{proof}
+
+The closed forms are tested against data in two ways. The family sums of Table~\ref{tab:counts}, with the pairwise rule for $k \le 4$, reproduce the number of variables and clauses recorded in the result file of every one of the 25 certified
+formulas, and for the kept formula of order 52 of $\Gsix$ (82{,}107 variables and 2{,}683{,}782 clauses). For example $V(52,50) = 67{,}092$ and $C(52,50) = 1{,}916{,}592$, the first row of Table~\ref{tab:orders}; Figure~\ref{fig:size} shows the agreement over all orders.
+Moreover, rebuilding every one of the 26 formulas with the encoder and hashing the DIMACS file reproduces the recorded SHA-256 (Section~\ref{sec:reproducibility}).
+
+\begin{proposition}[what a refutation certifies; \evD]\label{prop:certified}
+Let $F$ be the DIMACS file of $F_{G,k}$ with SHA-256 $h$, and suppose that \texttt{drat-trim} verifies a DRAT proof of $F$. Then $F$ is unsatisfiable, and by Theorem~\ref{thm:encoding} and Proposition~\ref{prop:attach} no
+loopless cubic graph on $k$ vertices colors $G$ with a vertex map of kind (O), (E0) or (E1). The statement for the graph $G$ and the order $k$ holds if the file with hash $h$ is the output of Algorithm~\ref{alg:formula} for them.
+\end{proposition}
+
+\begin{proof}
+A verified DRAT proof is a refutation of the formula it was checked against. The remaining implications are the cited results. The identity of the file is established by regenerating it and comparing the hash.
+\end{proof}
+
+The trusted base of an unsatisfiable answer is therefore the checker \texttt{drat-trim}, the generator of Algorithm~\ref{alg:formula} (correct by the propositions above, with the symmetry breaking proved sound but not tested
+by a satisfiable instance at the scale of the claim; see Section~\ref{sec:limitations}), and the two lemmas of Section~\ref{sec:fibers}. The solver is not trusted.
