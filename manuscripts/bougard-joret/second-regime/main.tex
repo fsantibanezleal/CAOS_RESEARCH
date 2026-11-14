@@ -27,9 +27,9 @@
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.03}
+\newcommand{\docversion}{v0.04}
 \newcommand{\docdate}{14 November 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.24229265}
+\newcommand{\versiondoi}{10.5281/zenodo.0000000}
 \newcommand{\conceptdoi}{10.5281/zenodo.24044537}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -73,7 +73,8 @@ structure; the other \nnopart\ do not, and all have $k=3$ and $\alpha$ odd. Cond
 prove that such graphs occur only at $k=3$ with $\alpha$ odd and $n\le4\alpha-1$, or at six small triples, as the
 data show. Two blocks recovered from the data give, for every odd $\alpha$ and $3\alpha<n\le4\alpha-1$, an explicit
 $3$-connected graph with the conjectured number of edges, independence number $\alpha$ and no partition into
-$\alpha$ cliques; it is extremal at order 24 and below, and everywhere if Didin's theorem holds.
+$\alpha$ cliques, extremal at order 24 and below. Given Didin's theorem, these graphs and eight graphs at $(10,3,3)$
+are all the extremal graphs without such a partition.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -140,7 +141,10 @@ $\alpha-2$ cliques and one of two small blocks of independence number $2$. Gluin
 $3$-edge-connected cubic quotient gives, for every odd $\alpha\ge3$ and $3\alpha<n\le4\alpha-1$, a $3$-connected
 graph with $t(n,\alpha)+\ceil{3\alpha/2}$ edges, independence number $\alpha$ and clique cover number $\alpha+1$
 (Theorem~\ref{thm:construction}). It is extremal, without condition, at the nine such triples with $n\le24$, and at
-all of them if Didin's Theorem~9 holds.
+all of them if Didin's Theorem~9 holds. Conversely, given Didin's main theorem, every extremal graph without a
+partition into $\alpha$ cliques is one of these or one of the \ntenthreeb\ graphs at $(10,3,3)$
+(Theorem~\ref{thm:characterise} and Corollary~\ref{cor:characterise}, from a reduction to blocks on at most seven
+vertices and an exhaustive check of those).
 \end{enumerate}
 
 \paragraph{Organisation.} Section~\ref{sec:prior} states the prior results we use. Section~\ref{sec:window} derives
@@ -791,6 +795,7 @@ $(16,3,5)$ or $(16,5,3)$. Section~\ref{sec:construction} shows that case (a) is 
 is allowed.
 
 \input{construction.tex}
+\input{characterisation.tex}
 
 \section{Discussion}\label{sec:discussion}
 
@@ -819,20 +824,23 @@ graphs with $(b,\alpha,n)=(3,3,10)$ have a $2$-vertex cut and so are not $3$-con
 inequality, but not those attaining Theorem~9. In the range enumerated here, the extremal graphs are of three kinds:
 the Bougard--Joret graphs; the graphs of Theorem~\ref{thm:construction}, which account for every extremal graph with
 $s(G)=1$ (a $2$-edge cut of the quotient would contradict $3$-connectivity); and \ntenthreeb\ graphs at $(10,3,3)$
-with a connected $\alpha$-core. Whether this list is complete for every order is a natural conjecture. Given Didin's theorem, Lemma~\ref{lem:partition-structure}
-and Proposition~\ref{prop:where} prove part of it outside case (b). An extremal graph without a partition into
+with a connected $\alpha$-core. Given Didin's main theorem the list is complete at every order: Lemma~\ref{lem:partition-structure} describes
+the first kind, Theorem~\ref{thm:characterise} the second and Corollary~\ref{cor:characterise} the third.
+Proposition~\ref{prop:where} alone already proves part of it. An extremal graph without a partition into
 $\alpha$ cliques has $k=3$, $\alpha$ odd, $s(G)=1$ and $n\le4\alpha-1$, and equality throughout the proof of
 Proposition~\ref{prop:where}(a) forces three more facts: the $\alpha$-core $H$ attains~\eqref{eq:didin}, so it is
 tight in Didin's sense; exactly $(3\alpha-3)/2$ edges join its $\alpha-1$ components; and every component sends exactly
-three of them. The proof does not show that the components with independence number $1$ are cliques of orders $3$ and
-$4$, that the edges between components form a matching, that the component with independence number $2$ is $X_6$ or
-$X_7$, or that it attaches only at the observed triples. These four claims hold for every enumerated graph and are
-open in general.
+three of them. The rest, that the components with independence number $1$ are cliques of orders $3$ and $4$, that the edges
+between components form a matching, that the component with independence number $2$ is $X_6$ or $X_7$ and that it
+attaches only at the observed triples, is Lemma~\ref{lem:block-reduction} and Proposition~\ref{prop:blockcheck}; all
+four claims use Didin's theorem, the last two through his inequality applied to the block itself.
 
 \paragraph{Open questions.} Theorem~\ref{thm:construction} realises case (a) of Proposition~\ref{prop:where}
-everywhere. Two questions remain. First, whether the four structural claims above hold for every odd $\alpha$, in particular whether $X_6$ and
-$X_7$ are the only blocks, which the enumeration shows for $n\le22$ only. Second, whether case (b) is realised beyond $(10,3,3)$, which the enumeration
-rules out at the other five triples it allows. The value of $f$ beyond order 24 is decided by Didin's theorem if it is correct. For the
+everywhere, and Theorem~\ref{thm:characterise} shows, given Didin's theorem, that nothing else does; case (b) is
+realised only at $(10,3,3)$, because Proposition~\ref{prop:where} confines it to six triples that the enumeration
+covers. What remains open is unconditional: every structural statement of Section~\ref{sec:characterisation} beyond
+order 24 rests on Didin's Theorem~3, and a proof that avoids it, for example of the bound $\e(X)\ge t(|X|+1,2)-1$ for
+the blocks, would make the description of the extremal graphs independent of his preprint. The value of $f$ beyond order 24 is decided by Didin's theorem if it is correct. For the
 enumeration, the factors of Section~\ref{sec:values} between consecutive orders, if they persisted, would put
 order 25 at several days of the machine used here; this is an extrapolation, not a measurement.
 
@@ -878,13 +886,15 @@ Didin's inequality, if correct, confines such graphs to $n\le4\alpha-1$ or six s
 that prediction, which was frozen before the last \nphasetwotriples\ triples were analysed. The two blocks $X_6$ and
 $X_7$ found in the data give a construction for every odd $\alpha$ and every $3\alpha<n\le4\alpha-1$, proved with six
 finite facts checked exactly. A proof of the second line through a partition into $\alpha$ cliques therefore cannot
-reach the conjectured size itself, and the structure of the extremal graphs beyond the enumerated range rests on the
-four open claims of Section~\ref{sec:discussion} and on Didin's theorem.
+reach the conjectured size itself. Given Didin's main theorem, the extremal graphs without such a partition are
+exactly these constructions and \ntenthreeb\ graphs at $(10,3,3)$: a reduction to blocks on at most seven vertices
+and an exhaustive check of all graphs of those orders leave only $X_6$ and $X_7$, at the attaching triples the data
+show.
 
 \section{Data, code and reproducibility}\label{sec:repro}
 
 All code and records are in the repository \texttt{\docrepo}, under \texttt{problems/combinatorics/bougard-joret/
-experiments/}, experiments EXP-005 to EXP-013. Each experiment holds its question and predictions, fixed in a
+experiments/}, experiments EXP-005 to EXP-014. Each experiment holds its question and predictions, fixed in a
 commit before its computation, its scripts, the raw records (\texttt{artifacts/enum.jsonl}: order, $\alpha$, $k$,
 edge count, graphs generated, graphs kept, up to five kept examples, number of parts, seconds) and a written
 statement of its result. The extremal graphs are in
@@ -913,6 +923,7 @@ EXP-010 & \texttt{084e0874} & the two remaining order-24 edge counts \\
 EXP-011 & \texttt{47c86e8f}, \texttt{a480c533}, \texttt{e552f1c6} & every extremal graph at $35$ triples; structure; $p(G)$ \\
 EXP-012 & \texttt{78cc42fb} & validation at the production parameters \\
 EXP-013 & \texttt{15a64e33} & the construction for odd $\alpha$ \\
+EXP-014 & \texttt{ed56cfa7} & the blocks on at most seven vertices \\
 \bottomrule
 \end{tabular}
 \end{table}

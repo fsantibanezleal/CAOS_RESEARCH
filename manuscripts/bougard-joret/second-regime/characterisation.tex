@@ -1,0 +1,113 @@
+\subsection{The construction is the only shape}\label{sec:characterisation}
+
+Section~\ref{sec:extremal} found the shape of Theorem~\ref{thm:construction} in every enumerated extremal graph with
+$s(G)=1$. We now show that, given Didin's main theorem, no other shape exists at any order. The argument has two
+parts: equality in the proof of Proposition~\ref{prop:where}(a), together with Didin's inequality applied to the
+block, reduces the block to a graph on at most seven vertices with prescribed size; and an exhaustive check over all
+graphs on five to seven vertices leaves exactly $X_6$ and $X_7$, at exactly the attaching triples observed.
+
+\begin{lemma}[conditional on {\cite[Theorem~3]{Didin}}]\label{lem:block-reduction}
+Let $(n,\alpha,3)$ be in the second regime with $\alpha\ge3$, and let $G$ be $3$-connected with $n$ vertices,
+independence number $\alpha$, $t(n,\alpha)+\ceil{3\alpha/2}$ edges, $p(G)\ge2$ and no partition into $\alpha$
+cliques. Let $H$ be an $\alpha$-core of $G$ with the largest number of components. Then:
+\begin{enumerate}
+\item[(i)] $H$ has $\alpha-1$ components; exactly one of them, $X$, has $\alpha(X)=2$, the others are cliques; every
+component induces in $G$ the same graph as in $H$; and every component sends exactly three edges to the others;
+\item[(ii)] the clique components have orders $3$ and $4$, and $X$ has $m\in\{5,6,7\}$ vertices and exactly
+$t(m+1,2)-1\in\{5,8,11\}$ edges;
+\item[(iii)] every component has exactly three vertices with a neighbour in another component, each with exactly one
+such neighbour, so the edges between components form a matching, and the quotient $Q$ on the components is a loopless
+cubic multigraph that is $3$-edge-connected;
+\item[(iv)] with $A$ the three attaching vertices of $X$: every vertex of $X-A$ has degree at least $3$ in $X$, every
+vertex of $A$ degree at least $2$, every component of $X-T$ meets $A\setminus T$ for every set $T$ of at most two
+vertices of $X$, and $\theta(X)\ge3$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) By Proposition~\ref{prop:where}, $\alpha$ is odd, $s(G)=1$ and $\floor{n/\alpha}=3$, so $H$ has $p=\alpha-1$
+components $V_1,\dots,V_{\alpha-1}$. Let $q$ be the number of edges of $G$ between components. The proof of
+Proposition~\ref{prop:where}(a) gives the chain
+\[
+\e(G)\ \ge\ \e(H)+q\ \ge\ t(n+1,\alpha)-1+\tfrac{3\alpha-3}{2}\ =\ t(n,\alpha)+2+\tfrac{3\alpha-3}{2}\ =\ \e(G),
+\]
+using \eqref{eq:didin} for $H$, $|\partial V_i|\ge\lambda(G)\ge\kappa(G)=3$ with $\sum_i|\partial V_i|=2q$, and
+Lemma~\ref{lem:tshift}. Every inequality is therefore an equality: $\e(H)=t(n+1,\alpha)-1$, every component sends
+exactly three edges, and $G$ has no edge inside a component outside $H$. The independence numbers of the
+$\alpha-1$ components sum to $\alpha(H)=\alpha$ and are at least one each, so exactly one is two; a connected graph
+with independence number one is complete.
+
+(ii) $X$ is $\alpha$-critical, because deleting an edge of $X$ that keeps $\alpha(X)$ would keep $\alpha(H)$; so the
+only spanning subgraph of $X$ with independence number two is $X$ itself, and $p(X)=1$, $s(X)=1$. Didin's Theorem~3
+for $X$, whose hypothesis $m\ge\max(\alpha(X)+1,p(X))=3$ holds, gives $\e(X)\ge t(m+1,2)-1$. With
+$a_1,\dots,a_{\alpha-2}$ the clique orders,
+\[
+t(n+1,\alpha)-1\ =\ \e(H)\ \ge\ \sum_i\binom{a_i}{2}+t(m+1,2)-1\ \ge\ t(n+1,\alpha)-1,
+\]
+because the sum counts the edges of $\alpha$ cliques on $n+1$ vertices. Equality forces $\e(X)=t(m+1,2)-1$ and all
+$\alpha$ clique orders $a_1,\dots,a_{\alpha-2},\floor{(m+1)/2},\ceil{(m+1)/2}$ to be balanced over $n+1$ vertices,
+hence in $\{3,4\}$ since $3\alpha+2\le n+1\le4\alpha$; so $m+1\in\{6,7,8\}$.
+
+(iii) Every component has at least three vertices by (ii). Let $A_P$ be the vertices of a component $P$ with a
+neighbour outside $P$. If $|A_P|\le2$, then $A_P$ separates $P-A_P\neq\emptyset$ from the other components, a vertex
+cut of size at most two. So $|A_P|=3$, and by (i) each vertex of $A_P$ carries exactly one of the three edges. A cut of
+at most two edges of $Q$ yields, by taking one end of each cut edge, a vertex cut of $G$ of size at most two with both
+sides nonempty, so $Q$ is $3$-edge-connected.
+
+(iv) A vertex of $X-A$ has all its neighbours in $X$, and $\delta(G)\ge3$; a vertex of $A$ has exactly one neighbour
+outside. If a component of $X-T$ misses $A\setminus T$, then $T$ separates it from the other components. If
+$\theta(X)\le2$, the clique components and two cliques covering $X$ partition $V(G)$ into $\alpha$ cliques.
+\end{proof}
+
+The conditions of Lemma~\ref{lem:block-reduction} on $(X,A)$ are finite. We tested them on every graph with five, six
+or seven vertices and every set $A$ of three of its vertices (EXP-014, \texttt{check\_blocks.py}, NetworkX's graph
+atlas, whose \nblockatlas\ graphs on these orders agree with the counts of OEIS A000088 \cite{OEIS}). Independence
+and clique cover numbers were computed by two methods each, with no disagreement. Table~\ref{tab:blockcheck} gives
+the number of survivors after each condition.
+
+\begin{table}[t]
+\centering\small
+\caption{The finite check behind Proposition~\ref{prop:blockcheck}: graphs on five to seven vertices and attaching
+triples that survive each necessary condition of Lemma~\ref{lem:block-reduction}, and the isomorphism classes of the
+marked blocks that survive all of them, with the observed triple each class equals.}
+\label{tab:blockcheck}
+\input{blockcheck.tex}
+\end{table}
+
+\begin{proposition}[machine-verified]\label{prop:blockcheck}
+A pair $(X,A)$, with $X$ a graph on $m\in\{5,6,7\}$ vertices and $t(m+1,2)-1$ edges that is connected, has independence number $2$ and only critical edges, and $A$ a set of three of its vertices, satisfies the conditions of Lemma~\ref{lem:block-reduction}(iv) if and only if $X\cong X_6$
+with $A$ in the automorphism orbit of $\{0,1,5\}$, or $X\cong X_7$ with $A$ in one of the orbits of $\{0,1,2\}$,
+$\{1,2,3\}$ and $\{1,2,6\}$, in the labelling of Figure~\ref{fig:blocks}.
+\end{proposition}
+
+\begin{theorem}[conditional on {\cite[Theorem~3]{Didin}}]\label{thm:characterise}
+Let $(n,\alpha,3)$ be in the second regime with $\alpha\ge3$. A $3$-connected graph with $n$ vertices, independence
+number $\alpha$, $t(n,\alpha)+\ceil{3\alpha/2}$ edges and $p(G)\ge2$ has no partition into $\alpha$ cliques if and only
+if it is a graph of Theorem~\ref{thm:construction}: $\alpha$ is odd, $3\alpha<n\le4\alpha-1$, $V(G)$ splits into the
+cliques of $T(n,\alpha)$ with two cliques replaced by $X_6$ (two of order $3$) or $X_7$ (one of order $3$ and one of
+order $4$), $X$ attaches at a triple of Proposition~\ref{prop:blockcheck}, and the edges between parts form a matching
+along a $3$-edge-connected loopless cubic quotient.
+\end{theorem}
+
+\begin{proof}
+The graphs of Theorem~\ref{thm:construction} have the stated properties, unconditionally. Conversely, by
+Lemma~\ref{lem:block-reduction} and Proposition~\ref{prop:blockcheck}, $X$ is $X_6$ or $X_7$ at an observed triple and
+the clique orders lie in $\{3,4\}$ and sum to $n-|X|$. With $n=3\alpha+r$, $X_6$ leaves $r$ cliques of order $4$ and
+$\alpha-2-r$ of order $3$, which are the cliques of $T(n,\alpha)$ without two of order $3$; $X_7$ leaves $r-1$ and
+$\alpha-1-r$, the cliques of $T(n,\alpha)$ without one of order $3$ and one of order $4$. Part (ii) of the lemma gives
+the matching and the quotient, and Proposition~\ref{prop:where} gives $n\le4\alpha-1$.
+\end{proof}
+
+\begin{corollary}[conditional on {\cite[Theorem~3]{Didin}}]\label{cor:characterise}
+The extremal graphs of the second regime without a partition into $\alpha$ cliques are exactly the graphs of
+Theorem~\ref{thm:construction}, at the triples where they are extremal ($n\le24$ by Theorem~\ref{thm:values}, and every
+admissible $n$ if Didin's Theorem~9 holds), and the \ntenthreeb\ graphs at $(10,3,3)$.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:where}, such a graph is in case (a), covered by Theorem~\ref{thm:characterise}, or in case
+(b) at one of six triples, all with $n\le16$, where the enumeration of Section~\ref{sec:extremal} lists every extremal
+graph and finds case (b) only at $(10,3,3)$.
+\end{proof}
+
+All four structural claims that the data suggested rest on Didin's Theorem~3: the matching and the cubic, $3$-edge-connected quotient through the equalities of Proposition~\ref{prop:where}(a), and the clique orders and the two blocks through his theorem applied once more, to the block.

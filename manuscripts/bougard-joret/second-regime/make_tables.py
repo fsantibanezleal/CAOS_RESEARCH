@@ -229,6 +229,13 @@ def main():
     # ------------------------------------------------------------- drawings of two extremal graphs
     write("graphs.tex", drawings(di, st))
     write("blocks.tex", blocks())
+    e14 = exp / "EXP-014-block-uniqueness" / "artifacts" / "check-blocks.json"
+    if not e14.exists():
+        raise SystemExit(f"missing EXP-014 record: {e14}")
+    bc = json.loads(e14.read_text(encoding="utf-8"))
+    if not (bc["atlas_matches_A000088"] and bc["P1"] and bc["P2_P3"] and bc["method_disagreements"] == 0):
+        raise SystemExit("EXP-014 record does not support Proposition prop:blockcheck")
+    write("blockcheck.tex", blockcheck(bc))
     write("partition-chart.tex", partition_chart(per))
     write("window-map.tex", window_map(by_n, decision))
     e13 = jl(exp / "EXP-013-odd-alpha-construction" / "artifacts" / "construct.jsonl")
@@ -329,6 +336,7 @@ def main():
         "nfullpairs": len(full_pairs(decision)),
         "nturancond": sum(1 for n, al, k in triples if t(n, al - 1) >= cval(n, al, k)),
         "nconstructed": sum(1 for r in e13 if r.get("found")),
+        "nblockatlas": fmt(sum(bc["atlas_counts"].values())),
         "gateAgraphs": fmt(ga["graphs"]) if ga else "pending", "gateAdecisions": fmt(ga["decisions"]) if ga else "pending",
         "gateAgroups": ga and len(ga["groups"]) or "pending", "gateAkept": fmt(ga["kept"]) if ga else "pending",
         "gateBgraphs": fmt(gb["graphs"]) if gb else "pending", "gateBslices": len(gb["slices"]) if gb else "pending",
@@ -424,6 +432,23 @@ def blocks():
         lines.append("\\end{tikzpicture}")
         out.append("\n".join(lines))
     return out[0] + "\\qquad\\qquad\n" + out[1] + "\n"
+
+
+def blockcheck(bc):
+    """Table of the EXP-014 finite check: survivors per condition, then the surviving marked classes."""
+    st = bc["stages"]
+    rows = [("graphs on $5$ to $7$ vertices", st["graphs"]), ("C1: order and size", st["C1"]),
+            ("C2: connected, $\\alpha=2$, every edge critical", st["C2"]), ("C3: $\\theta\\ge3$", st["C3"]),
+            ("C4: degrees, pairs $(X,A)$", st["C4 pairs"]), ("C5: components of $X-T$, pairs $(X,A)$", st["C5 pairs"])]
+    lines = ["\\begin{tabular}{lr}", "\\toprule", "condition & survivors \\\\", "\\midrule"]
+    lines += [f"{a} & {b} \\\\" for a, b in rows]
+    lines += ["\\midrule", "surviving class (order, members) & equals \\\\", "\\midrule"]
+    for c in bc["classes"]:
+        name = ", ".join(m.replace("X6", "$X_6$").replace("X7", "$X_7$").replace("[", "$\\{").replace("]", "\\}$")
+                         for m in c["matches_observed"])
+        lines.append(f"$m={c['m']}$, {c['members']} triples & {name} \\\\")
+    lines += ["\\bottomrule", "\\end{tabular}"]
+    return "\n".join(lines) + "\n"
 
 
 def partition_chart(per):

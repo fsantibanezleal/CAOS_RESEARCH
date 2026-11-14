@@ -22,10 +22,15 @@ Date: 2026-11-14. Hypothesis frozen in ed56cfa7 before any computation.
 
 ## Reading
 
-- The reduction needs Didin's Theorem 3 twice: once in prop:where, and once on the block X, where equality forces
-  e(X) = t(|X| + 1, 2) - 1 and all clique orders into {3, 4}. Without it, the four structural claims the v0.03 note
-  lists as open (clique orders, matching, block, attaching triples) are proved here as follows: the matching and the
-  3-edge-connected quotient follow from 3-connectivity alone; the clique orders and the block need Didin's theorem.
+- The reduction needs Didin's Theorem 3 twice: once in prop:where, whose equalities give the three edges per part and
+  G[V_i] = H[V_i], and once on the block X, where equality forces e(X) = t(|X| + 1, 2) - 1 and all clique orders into
+  {3, 4}. All four structural claims the v0.03 note lists as open (clique orders, matching, block, attaching triples)
+  therefore rest on it: given those equalities and the clique orders, the matching and the 3-edge-connected quotient
+  follow from 3-connectivity.
+- Correction (2026-11-14, while writing the note's section): the frozen hypothesis says that "three-connectivity
+  adds, without Didin" the attachment facts. That overstates it: the three edges per part come from the equalities of
+  prop:where(a), which use Didin's Theorem 3, and a part could be a single vertex until the clique orders (Didin again)
+  are known. proof.md has the right order (Step 3 before Step 4) and its theorem is stated as conditional.
 - With prop:where(b) and the complete enumeration of its six triples (EXP-011), BJB-026 is settled conditional on
   Didin's Theorem 3: the extremal graphs without a partition into alpha cliques are exactly the construction graphs and
   the 8 graphs at (10,3,3).
