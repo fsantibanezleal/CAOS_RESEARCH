@@ -1,14 +1,15 @@
-# A sharp three-point kernel bound and conditional proportions of zeta zeros
+# A sharp auxiliary ratio for a three-point kernel argument and its conditional consequences for zeta zeros
 
-Version `v0.02`, dated 2 November 2026 (correction of `v0.01`, 24 September 2026).
+Version `v0.03`, dated 14 November 2026 (correction of `v0.02`, 2 November 2026, and `v0.01`, 24 September 2026).
 
 The manuscript proves the sharp auxiliary ratio bound `R(alpha,beta)<=sqrt(2)`
 in Wang's three-point kernel argument, with equality exactly at `(0,1)` and
-`(1,0)`. This theorem and the kernel-level inequality are claimed
-unconditionally.
+`(1,0)`. This theorem is claimed unconditionally. The kernel-level inequality
+uses two steps of Wang's replaced preprint (his Fourier identity and his ratio
+step) and is conditional on them.
 
-Substitution into Wang's global framework (arXiv:2609.24167v1) gives the
-simple-critical proportion
+Substituted into Wang's global framework (arXiv:2609.24167v1), it would give
+the simple-critical proportion
 
 `0.6725007995946757558283550562963947...`
 

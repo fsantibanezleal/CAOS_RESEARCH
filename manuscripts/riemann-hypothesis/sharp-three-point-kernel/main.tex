@@ -8,7 +8,7 @@
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink,fancyhdr}
 \hypersetup{
-  pdftitle={A sharp three-point kernel bound and conditional proportions of zeta zeros},
+  pdftitle={A sharp auxiliary ratio for a three-point kernel argument and its conditional consequences for zeta zeros},
   pdfauthor={Felipe Santibanez-Leal},
   pdfsubject={A sharp auxiliary ratio in Wang's three-point kernel argument and its consequences for simple critical and distinct zeta zeros},
   pdfkeywords={Riemann zeta function, simple zeros, distinct zeros, critical line, three-point kernel, spectral defect, interval arithmetic}
@@ -28,8 +28,8 @@
 \newcommand{\adag}{a_{\dagger}}
 \newcommand{\udag}{u_{\dagger}}
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.02}
-\newcommand{\docdate}{2 November 2026}
+\newcommand{\docversion}{v0.03}
+\newcommand{\docdate}{14 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.23895875}
 \newcommand{\conceptdoi}{10.5281/zenodo.22940290}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -47,12 +47,12 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research \doctype}
-\fancyhead[R]{\small Sharp three-point kernel\textperiodcentered\ \docversion}
+\fancyhead[R]{\small Sharp auxiliary ratio\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
 
-\title{A sharp three-point kernel bound and\\conditional proportions of zeta zeros}
+\title{A sharp auxiliary ratio for a three-point kernel argument\\and its conditional consequences for zeta zeros}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
@@ -64,10 +64,11 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \headerblock
 
 \begin{abstract}
-Wang recently refined Lamzouri's Hilbert-space method by retaining a convex
-spectral defect and proved that at least
+Wang proposed a refinement of Lamzouri's Hilbert-space method that retains a
+convex spectral defect, and stated that at least
 $0.6725007703418699\ldots$ of the nontrivial zeros of the Riemann zeta
-function are simple and on the critical line.  The quantitative input is a
+function are simple and on the critical line; he has since replaced that
+preprint by a notice.  The quantitative input of his argument is a
 three-point lower bound for a limiting Fourier kernel.  We determine the sharp
 constant in the elementary ratio that controls this bound.  For all
 $\alpha,\beta\ge0$,
@@ -76,8 +77,8 @@ $\alpha,\beta\ge0$,
  +\alpha\sqrt{1+\alpha^2}+\beta\sqrt{1+\beta^2}}
  {1+\alpha^2+\alpha\beta+\beta^2}\le\sqrt2,
 \]
-with equality only at $(0,1)$ and $(1,0)$.  Substitution into Wang's argument
-gives the simple-critical proportion
+with equality only at $(0,1)$ and $(1,0)$.  Substituted into Wang's argument,
+it would give the simple-critical proportion
 \[
  0.6725007995946757558283550562963947\ldots
 \]
@@ -91,8 +92,9 @@ short-interval corollary assume the framework of Wang's preprint
 arXiv:2609.24167v1.  On 6 October 2026 its author replaced that preprint by a
 notice stating that a new method is needed to obtain a good improvement.  The
 two proportions above are therefore conditional on an argument that its author
-no longer offers, and are not claimed here; only the sharp ratio theorem is
-claimed unconditionally.  No effective height, density-one result,
+no longer offers, and are not claimed here.  The kernel-level inequality that
+the ratio feeds uses two further steps of the replaced preprint and is
+conditional as well; only the sharp ratio theorem is claimed.  No effective height, density-one result,
 universal simplicity statement, or proof of the Riemann hypothesis is claimed.
 \end{abstract}
 
@@ -112,7 +114,7 @@ found computationally, established that the lower density of simple critical
 zeros is at least $C_0$.  Lamzouri~\cite{Lamzouri} gave a direct Hilbert-space
 proof.  Wang~\cite{WangGlobal} retained a nonnegative spectral defect in
 Lamzouri's finite inequality and combined it with disjoint three-point blocks.
-His result is
+His stated result is
 \[
  \liminf_{T\to\infty}\frac{N_0^s(T)}{N(T)}
  \ge C_0+6.66624\ldots\times10^{-8}.
@@ -121,8 +123,8 @@ His result is
 The only change made here to Wang's analytic framework is an exact
 optimization inside his three-point kernel lemma.  Wang obtains an auxiliary
 ratio and bounds it above by $2$.  Theorem~\ref{thm:ratio} shows that its exact
-maximum is $\sqrt2$.  This raises the kernel energy, and all subsequent steps
-of the global proof remain valid with the new constant.
+maximum is $\sqrt2$.  Granted the rest of Wang's argument, this raises the
+kernel energy, and the subsequent steps go through with the new constant.
 
 Our main consequence is the following.
 
@@ -239,7 +241,7 @@ argument.  Let $f_0$ be the limiting compactly supported cosine profile in
  a=\sqrt2\pi\cot(1/\sqrt2),
  \qquad \cF(x)=ax\sin(\pi x)-\cos(\pi x).
 \]
-The Fourier transform has the identity
+Wang states the Fourier identity
 \begin{equation}\label{eq:FK}
  \cF(x)=(2\pi^2x^2-1)K_0(x).
 \end{equation}
@@ -253,7 +255,10 @@ His vector triangle estimates and trigonometric addition identity yield
 \begin{equation}\label{eq:wang-ratio-step}
  (1-d)^2\le d(1+d)R(\alpha,\beta)
 \end{equation}
-when $d<1$; the desired lower bound is automatic when $d\ge1$.
+when $d<1$; the desired lower bound is automatic when $d\ge1$.  We take
+\eqref{eq:FK} and \eqref{eq:wang-ratio-step} from \cite{WangGlobal} without
+proof; both belong to the preprint that its author has replaced by a notice,
+and neither is derived here or in the computational record.
 Wang then uses $R\le2$.  Theorem~\ref{thm:ratio} instead gives
 \[
  (1-d)^2\le\sqrt2\,d(1+d).
@@ -268,12 +273,14 @@ Thus $d\ge\dsharp$.  Exact directed enclosures also prove
 \[
  \dsharp>\frac{\sqrt{57}-7}{2}>\sqrt5-2,
 \]
-so the result strictly improves both our initially declared fallback and
-Wang's constant.
+so the root $\dsharp$ strictly exceeds the root $(\sqrt{57}-7)/2$ of
+$(1-d)^2=\tfrac32\,d(1+d)$, which the cruder bound $R\le\tfrac32$ would give,
+and Wang's root $\sqrt5-2$ of $(1-d)^2=2d(1+d)$.
 
-Combining~\eqref{eq:FK} with $u+v\le H$ gives the sharpened kernel lemma.
+Combining~\eqref{eq:FK} with $u+v\le H$ gives the sharpened kernel lemma, under
+the two imported steps.
 
-\begin{corollary}\label{cor:kernel}
+\begin{corollary}[conditional on \eqref{eq:FK} and \eqref{eq:wang-ratio-step}]\label{cor:kernel}
 For every $H>0$ and $u,v\ge0$ with $u+v\le H$,
 \begin{equation}\label{eq:energy}
  K_0(u)^2+K_0(v)^2+K_0(u+v)^2
@@ -320,7 +327,7 @@ the defect.
 Partition the scaled ordinate interval into cells of length at most $H$ and
 form disjoint triples in each cell.  At most two simple points per cell are
 unused.  Corollary~\ref{cor:kernel} and the Riemann--von Mangoldt asymptotic
-then give, after the same smoothing and ordered limits as in
+\cite[Chapter~9]{Titchmarsh} then give, after the same smoothing and ordered limits as in
 \cite{WangGlobal},
 \begin{equation}\label{eq:globalformula}
  \liminf_{T\to\infty}\frac{N_0^s(T)}{N(T)}
@@ -411,7 +418,20 @@ rank-six certificate, the runner, and the canonical output.  The principal
 calculation uses exact fractions, integer square-root enclosures, and directed
 Taylor bounds for elementary functions.  A separate implementation using
 120-decimal \texttt{mpmath.iv} intervals overlaps every headline interval.
-The canonical CPU run completed in 37.157 seconds from a clean Git commit.
+The canonical run started from a clean commit on a CPU, with a budget of 600
+seconds; the computation took 37.157 seconds and the whole process 37.235
+seconds.  The commit and the SHA-256 of the result file are
+\begin{quote}\small\ttfamily
+6b8e009c73f87047a2bc2c237991d241bd3b08c0\\
+0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66
+\end{quote}
+and the certificate is reproduced from the repository root by
+\begin{quote}\small\ttfamily
+python problems/number-theory/riemann-hypothesis/experiments/\\
+\quad EXP-009-wang-kernel-sharpening/run.py -{}-output-dir <dir> -{}-budget-seconds 600
+\end{quote}
+The record does not state the Python, python-flint and \texttt{mpmath}
+versions.
 
 The certificate verifies
 \begin{itemize}
@@ -423,8 +443,9 @@ The certificate verifies
 \item all pinned source and execution hashes.
 \end{itemize}
 
-Theorem~\ref{thm:ratio} is unconditional.  The global transfer is conditional
-on the correctness of the cited Wang v1 argument, although the exact
+Theorem~\ref{thm:ratio} is unconditional.  Corollary~\ref{cor:kernel} is
+conditional on the two steps \eqref{eq:FK} and \eqref{eq:wang-ratio-step} of the
+cited Wang v1 argument, and the global transfer on that whole argument, although the exact
 substitution point and downstream algebra were rechecked.  The short-interval
 corollary additionally imports a rank-six constant whose source does not print
 its coefficient vector.  The statements are asymptotic and supply no
@@ -436,12 +457,12 @@ notice that a new method is needed to obtain a good improvement.  The pinned
 v1 files still define exactly which argument the conditional statements
 assume, and the certificate still verifies the algebra downstream of the
 substitution point, but neither supports the proportions without that
-argument.  Of the results above, only Theorem~\ref{thm:ratio} and the
-kernel-level inequality of the section on the improved three-point bound are
-claimed.  The short-interval positivity onset of the companion
+argument.  Of the results above, only Theorem~\ref{thm:ratio} is claimed; the
+kernel-level inequality of Corollary~\ref{cor:kernel} is conditional on the two
+imported steps.  The short-interval positivity onset of the companion
 manuscript~\cite{CAOSShort} uses a different source, Wang's short-interval
-pair-correlation theorem (arXiv:2609.07918), whose statement is unchanged in
-its revised version.
+pair-correlation theorem~\cite{WangShort}, whose statement is unchanged in its
+revised version.
 
 \section*{Computational assistance disclosure}
 
@@ -496,8 +517,8 @@ arXiv:2609.24167v1 (2026),
 B. Wang,
 \emph{Simple critical zeros and distinct zeros of the Riemann zeta-function
 in short intervals},
-arXiv:2609.07918v1 (2026),
-\url{https://arxiv.org/abs/2609.07918v1}.
+arXiv:2609.07918v2 (2026; the pair theorem used here is unchanged from v1),
+\url{https://arxiv.org/abs/2609.07918v2}.
 
 \end{thebibliography}
 \end{document}
