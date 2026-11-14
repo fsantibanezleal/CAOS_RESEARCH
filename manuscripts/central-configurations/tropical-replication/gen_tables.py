@@ -277,25 +277,6 @@ def table_rays(scr):
     return "\n".join(out)
 
 
-# Failed boxes per chart and disposition, transcribed from the assembly record
-# (CC/context/2026-08-20-stratum-theorem-assembly.md, section 6b table, lines 218-244, and sections 6c, 8, 9).
-ATLAS_ASSEMBLY = [
-    ("bicorner-opp", "0", "complete"), ("bicorner-same", "0", "complete"), ("collapse", "0", "complete"),
-    ("deep-L", "0", "complete"), ("deep-R", "0", "complete"), ("fa1", "0", "complete"),
-    ("fartube", "0", "complete"), ("m1", "0", "complete"), ("m1vert-S", "0", "complete"),
-    ("tube-L", "0", "complete"), ("tube-R", "0", "complete"), ("tubeext-L", "0", "complete"),
-    ("tubeext-R", "0", "complete"), ("ulow", "0", "complete"), ("uplow", "0", "complete"),
-    ("cb1", "5", "all face-touching, closed by piece 10"),
-    ("cb1f", "2", "all face-touching, closed by piece 10"),
-    ("band", "44", "the cross point; 44 and 48 boxes trapped"),
-    ("fa2b", "200", "discharged by the depth-76 re-run (1544 boxes, zero failures)"),
-    ("m2-L", "5824", "open: the quadruple corner"),
-    ("m2-R", "5683", "open: the quadruple corner"),
-    ("fa2", "280140", "retired, superseded by fa2b"),
-    ("m1vert-N", "7144", "retired, superseded by per-entry guards"),
-]
-
-
 # Time budgets of the covering runs, transcribed from the chart scripts (the value used by the resumed run where there is one);
 # each value is checked against the `budget=` text of the script, so a changed script stops the generator.
 ATLAS_BUDGET = {
@@ -310,7 +291,7 @@ ATLAS_BUDGET = {
 # of the chart scripts, computed in the review; transcribed, not recomputed here.
 ATLAS_UNPROCESSED = {
     "collapse": "39.6% (0% after the mirror)", "deep-L": "68.7% (37.3% after the mirror)",
-    "deep-R": "73.4% (46.7% after the mirror)", "bicorner-same": "98.0%", "fartube": "98.4%", "m1": "99.96%",
+    "deep-R": "73.4% (46.7% after the mirror)", "bicorner-same": "98.0%", "fartube": "98.4% (before any symmetry reduction)", "m1": "99.96%",
     "uplow": "89.3% (69.5% after the symmetry group)", "fa2b": "88.3%", "m2-L": "tt < 1/2 half: 100%",
     "m2-R": "tt < 1/2 half: 100%", "m1vert-S": "100% (never ran)",
 }
@@ -326,7 +307,7 @@ ATLAS_RETIRED = {"fa2", "m1vert-N"}
 ATLAS_NEVER_RAN = {"m1vert-S"}
 # Status transcribed from the verdict where the stored files do not decide it: collapse is complete only modulo the mirror.
 ATLAS_VERDICT_CLASS = {"collapse": "complete modulo the mirror, conditional"}
-ATLAS_NOTE = {"m2-L": "corner half tt < 1/2 never reached", "m2-R": "corner half tt < 1/2 never reached",
+ATLAS_NOTE = {"m2-L": "half tt < 1/2 unprocessed; its part with c_s < 1/32 is in no chart", "m2-R": "half tt < 1/2 unprocessed; its part with c_s < 1/32 is in no chart",
               "m2w-P": "own domain only", "m2w-N": "own domain only"}
 
 
@@ -348,7 +329,7 @@ def atlas_status():
         ck = json.loads(cf.read_text()) if cf.exists() else None
         sfail = str(summ["counters"]["failed"]) if summ else "--"
         cfail = str(ck["counters"]["failed"]) if ck else "--"
-        cstack = str(len(ck["stack"])) if ck else "--"
+        cstack = "--"  # set below, for the runs that stopped at their budget only
         if chart in ATLAS_NEVER_RAN:
             assert summ is None and ck is None, chart
             cls = "never ran"
@@ -375,6 +356,8 @@ def atlas_status():
                     else:
                         done = False
                     cls = "finished, failures dispositioned" if done else "finished, failures not dispositioned"
+        if ck is not None and (cls.startswith("incomplete") or cls.startswith("complete modulo")):
+            cstack = str(len(ck["stack"]))
         rows.append((chart, rec, sfail, cls, cfail, cstack, ATLAS_UNPROCESSED.get(chart, "--"), ATLAS_NOTE.get(chart, "")))
     return rows
 
@@ -387,7 +370,7 @@ def table_atlas():
         def num(x):
             return x if x == "--" else fmt_int(int(x))
         extra = f" ({note})" if note else ""
-        extra = extra.replace("tt < 1/2", "$t_t<1/2$")
+        extra = extra.replace("tt < 1/2", "$t_t<1/2$").replace("c_s < 1/32", "$c_s<1/32$")
         un = un.replace("%", r"\%").replace("tt < 1/2", "$t_t<1/2$")
         out.append(f"{chart} & {num(rec)} & {num(sf)} & {cls}{extra} & {num(cf)} & {cs} & {un} \\\\")
         if chart in ("uplow", "m2-R", "m1vert-N"):
