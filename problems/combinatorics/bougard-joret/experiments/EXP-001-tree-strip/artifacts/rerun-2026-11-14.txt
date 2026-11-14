@@ -1,0 +1,38 @@
+Timed reproduction run of 2026-11-14 (Python 3.12.10, NetworkX 3.4.1, pytest 9.1.1)
+
+Machine: Windows 11 Pro 10.0.26300 (platform string Windows-11-10.0.26300-SP0), Intel64 Family 6 Model 183 Stepping 1 (GenuineIntel), 32 logical CPUs.
+Interpreter: Python 3.12.10 from an existing environment of the machine, with NetworkX 3.4.1 installed from
+problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/requirements-audit.txt into a temporary directory placed first on PYTHONPATH. Wall-clock times are
+time.perf_counter around one subprocess each, one run, nothing else timed; each step had a timeout (600, 900, 600, 1200 s).
+Repository state: branch work/bougard-joret/tree-strip-revision-20261114 at 5a622861 (the experiment folders are those of origin/develop a2ca5247).
+Working directory for every command: the repository root.
+
+Differences from the commands printed in the paper (so that no committed artifact is overwritten):
+- every run and audit command received --output <path under the temporary folder>;
+- pytest received -p no:cacheprovider and --basetemp <temporary folder>; the tests themselves write only to their tmp_path.
+- audit.py always reads the committed certificate (artifacts/certificate.json); only its output was redirected.
+
+Commands and wall-clock times (one run each):
+1. python problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip/run.py --output <tmp>/exp001-certificate.json : exit 0, 15.37 s
+2. python problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/run.py --output <tmp>/exp002-certificate.json : exit 0, 6.7 s
+3. python problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/audit.py --output <tmp>/independent-audit.json : exit 0, 1.67 s
+4. python -m pytest tests/test_bougard_joret_tree_strip.py tests/test_bougard_joret_next_shell.py -p no:cacheprovider --basetemp <tmp>/pytest : exit 0, 22.89 s (pytest reports 2 passed in 19.91 s)
+
+Comparison with the committed files (SHA-256):
+- EXP-001 certificate: committed problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip/artifacts/certificate.json
+    regenerated SHA-256 d6561a886a04478fc0601ef2e9dda0d8bd6469e335868fe2f3b25c353fe66a78
+    committed   SHA-256 c2cb5c7322c31d4faafed2fdab221c4113c8b3d6bc53ee5f733eff33b6d5b046
+    byte-identical: no; identical after normalising CRLF to LF: yes (LF-normalised SHA-256 c2cb5c7322c31d4faafed2fdab221c4113c8b3d6bc53ee5f733eff33b6d5b046)
+- EXP-002 certificate: committed problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/artifacts/certificate.json
+    regenerated SHA-256 471e311c25f636ce85a5e0961127de739b33c1414179fb549d81959749b8044d
+    committed   SHA-256 471e311c25f636ce85a5e0961127de739b33c1414179fb549d81959749b8044d
+    byte-identical: yes; identical after normalising CRLF to LF: yes (LF-normalised SHA-256 471e311c25f636ce85a5e0961127de739b33c1414179fb549d81959749b8044d)
+- EXP-002 independent recomputation output: committed problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/artifacts/independent-audit.json
+    regenerated SHA-256 93a7c59522bb394b89ab6310df7de660502ce76facc435627784949a4755ed26
+    committed   SHA-256 93a7c59522bb394b89ab6310df7de660502ce76facc435627784949a4755ed26
+    byte-identical: yes; identical after normalising CRLF to LF: yes (LF-normalised SHA-256 93a7c59522bb394b89ab6310df7de660502ce76facc435627784949a4755ed26)
+
+The files carry no timestamp. The EXP-001 certificate differs from the committed file only in line endings: its runner writes with Path.write_text, which
+produces CRLF on Windows (60,138 bytes with 3,324 CRLF pairs), while the committed file has LF (56,814 bytes); after CRLF is
+normalised to LF the two are byte for byte identical.
+Result: all three regenerated files equal the committed ones.
