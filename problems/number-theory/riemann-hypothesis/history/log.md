@@ -764,3 +764,14 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
 
 External status: open. Wang arXiv:2609.24167 v2 is a notice that replaces the paper ("New method is need to obtain good improvement") [V]. Wang arXiv:2609.07918 v2: the local pair theorem used by EXP-009 and EXP-010 is unchanged against v1 (theorem-by-theorem comparison of the two sources) [V].
 Action: RH-049 done. `sharp-three-point-kernel` v0.02 published, version DOI 10.5281/zenodo.23895875 (concept 10.5281/zenodo.22940290). Title changed to "A sharp three-point kernel bound and conditional proportions of zeta zeros". The sharp ratio theorem R(alpha,beta) <= sqrt 2 and the kernel inequality are claimed; the global proportion and the short-interval corollary are stated as conditional on the replaced framework and are not claimed. RH-050 done: the EXP-010 onset input stands. The earlier version stays immutable on Zenodo. Research stays paused; no experiment was run.
+
+## 2026-11-14 - correction: sharp-three-point-kernel v0.03
+
+An independent audit of the four Riemann manuscripts (2026-11-10/11) found that v0.02 claimed the kernel-level
+inequality unconditionally, although its proof uses two steps taken from Wang's replaced arXiv:2609.24167v1 (the Fourier
+identity and the ratio step), and that several sentences still presented Wang's withdrawn result as established.
+Action: RH-051 done. v0.03 published, version DOI 10.5281/zenodo.24227401 (concept 10.5281/zenodo.22940290), after an
+independent review of the correction. Only the sharp ratio theorem R(alpha,beta) <= sqrt 2 is claimed; the kernel
+inequality, the global proportions and the short-interval corollary are conditional. Title: "A sharp auxiliary ratio
+for a three-point kernel argument and its conditional consequences for zeta zeros". Research stays paused; no
+experiment was run.

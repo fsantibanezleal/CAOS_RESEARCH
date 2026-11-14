@@ -1,5 +1,11 @@
 # Riemann hypothesis state
 
+## Correction, 2026-11-14
+
+`sharp-three-point-kernel` v0.03, version DOI 10.5281/zenodo.24227401, concept
+10.5281/zenodo.22940290. Only the sharp ratio theorem is claimed; the kernel-level inequality uses Wang's
+Fourier identity and ratio step from the replaced arXiv:2609.24167v1 and is conditional. Research stays paused.
+
 ## Correction, 2026-11-02
 
 `sharp-three-point-kernel` v0.02, version DOI 10.5281/zenodo.23895875, concept
