@@ -3,7 +3,7 @@
 Marks: [V] read in the primary text; [V2] reported by a secondary source we read; [U] unverified.
 
 Source read: Q. Cheng, "On the ultimate complexity of factorials", Theoret. Comput. Sci. 326 (2004) 419-429,
-DOI 10.1016/j.tcs.2004.07.032; author copy https://qcheng2023.github.io/paper/factorial.pdf (preliminary version in
+DOI 10.1016/j.tcs.2004.06.020; author copy https://qcheng2023.github.io/paper/factorial.pdf (preliminary version in
 STACS 2003, LNCS 2607), archived in the data root under `caos-research/tau-conjecture/sources/tcb004/`
 (SHA-256 07042ff35d3fad4ddb5c749295ae4020aa188ed698530ae3e0cde6b2209116a1). Formulas checked on the rendered pages.
 

@@ -1,0 +1,11 @@
+{"oeis": "A001349", "index": 9, "geng": "geng -u -c 9", "count": 261080, "oeis_value": 261080, "equal": true, "seconds": 0.1}
+{"oeis": "A001349", "index": 10, "geng": "geng -u -c 10", "count": 11716571, "oeis_value": 11716571, "equal": true, "seconds": 0.9}
+{"oeis": "A002851", "index": 8, "geng": "geng -u -c -d3 -D3 16", "count": 4060, "oeis_value": 4060, "equal": true, "seconds": 0.4}
+{"oeis": "A002851", "index": 9, "geng": "geng -u -c -d3 -D3 18", "count": 41301, "oeis_value": 41301, "equal": true, "seconds": 3.6}
+{"oeis": "A002851", "index": 10, "geng": "geng -u -c -d3 -D3 20", "count": 510489, "oeis_value": 510489, "equal": true, "sec{"oeis": "A0028{"oeis": "A002851", "index": 11, "geng": "geng -u -c -d3 -D3 22", "count": 7319447, "oeis_value": 7319447, "equal": true, "seconds": 1669.5}
+{"oeis": "A006820", "index": 12, "geng": "geng -u -c -d4 -D4 12", "count": 1544, "oeis_value": 1544, "equal": true, "seconds": 0.2}
+{"oeis": "A006820", "index": 13, "geng": "geng -u -c -d4 -D4 13", "count": 10778, "oeis_value": 10778, "equal": true, "seconds": 0.4}
+{"oeis": "A006820", "index": 14, "geng": "geng -u -c -d4 -D4 14", "count": 88168, "oeis_value": 88168, "equal": true, "seconds": 2.4}
+{"oeis": "A006820", "index": 15, "geng": "geng -u -c -d4 -D4 15", "count": 805491, "oeis_value": 805491, "equal": true, "seconds": 24.3}
+Gate E: 10 counts, 0 disagreements
+exit=0

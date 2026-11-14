@@ -1,0 +1,23 @@
+{
+  "n": 7,
+  "alpha": 2,
+  "k": 3,
+  "atlas_graphs": 1044,
+  "qualifying": 59,
+  "least_edges": 12,
+  "conjectured": 12,
+  "graphs_at_least": [
+    {
+      "g6": "FL~Cg",
+      "edges": 12,
+      "kappa": 3,
+      "partition_into_2_cliques": false
+    },
+    {
+      "g6": "F`urg",
+      "edges": 12,
+      "kappa": 3,
+      "partition_into_2_cliques": true
+    }
+  ]
+}

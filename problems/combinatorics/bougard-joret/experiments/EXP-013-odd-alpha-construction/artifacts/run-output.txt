@@ -1,0 +1,35 @@
+{"n": 10, "alpha": 3, "k": 3, "c": 17, "shape": "X6", "found": true, "tried": 1, "parts": [4, 6], "kappa": 3, "colouring_partition": false, "theta": 4, "seconds": 0.0}
+{"n": 11, "alpha": 3, "k": 3, "c": 20, "shape": "X7", "found": true, "tried": 1, "parts": [7, 4], "kappa": 3, "colouring_partition": false, "theta": 4, "seconds": 0.0}
+{"n": 12, "alpha": 3, "k": 3, "c": 23, "shape": null, "found": false, "tried": 0, "seconds": 0.0}
+{"n": 16, "alpha": 5, "k": 3, "c": 26, "shape": "X6", "found": true, "tried": 2, "parts": [4, 6, 3, 3], "kappa": 3, "colouring_partition": false, "theta": 6, "seconds": 0.0}
+{"n": 17, "alpha": 5, "k": 3, "c": 29, "shape": "X6", "found": true, "tried": 2, "parts": [4, 6, 4, 3], "kappa": 3, "colouring_partition": false, "theta": 6, "seconds": 0.0}
+{"n": 18, "alpha": 5, "k": 3, "c": 32, "shape": "X6", "found": true, "tried": 2, "parts": [4, 4, 4, 6], "kappa": 3, "colouring_partition": false, "theta": 6, "seconds": 0.0}
+{"n": 19, "alpha": 5, "k": 3, "c": 35, "shape": "X7", "found": true, "tried": 2, "parts": [4, 4, 4, 7], "kappa": 3, "colouring_partition": false, "theta": 6, "seconds": 0.0}
+{"n": 20, "alpha": 5, "k": 3, "c": 38, "shape": null, "found": false, "tried": 0, "seconds": 0.0}
+{"n": 22, "alpha": 7, "k": 3, "c": 35, "shape": "X6", "found": true, "tried": 1, "parts": [3, 6, 4, 3, 3, 3], "kappa": 3, "colouring_partition": false, "theta": 8, "seconds": 0.0}
+{"n": 23, "alpha": 7, "k": 3, "c": 38, "shape": "X6", "found": true, "tried": 1, "parts": [4, 4, 3, 3, 3, 6], "kappa": 3, "colouring_partition": false, "theta": 8, "seconds": 0.0}
+{"n": 24, "alpha": 7, "k": 3, "c": 41, "shape": "X6", "found": true, "tried": 1, "parts": [4, 3, 3, 4, 6, 4], "kappa": 3, "colouring_partition": false, "theta": 8, "seconds": 0.0}
+{"n": 25, "alpha": 7, "k": 3, "c": 44, "shape": "X6", "found": true, "tried": 1, "parts": [4, 4, 4, 4, 3, 6], "kappa": 3, "colouring_partition": false, "theta": 8, "seconds": 0.0}
+{"n": 26, "alpha": 7, "k": 3, "c": 47, "shape": "X6", "found": true, "tried": 1, "parts": [6, 4, 4, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 8, "seconds": 0.0}
+{"n": 27, "alpha": 7, "k": 3, "c": 50, "shape": "X7", "found": true, "tried": 1, "parts": [4, 7, 4, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 8, "seconds": 0.0}
+{"n": 28, "alpha": 7, "k": 3, "c": 53, "shape": null, "found": false, "tried": 0, "seconds": 0.0}
+{"n": 28, "alpha": 9, "k": 3, "c": 44, "shape": "X6", "found": true, "tried": 1, "parts": [3, 4, 3, 3, 3, 6, 3, 3], "kappa": 3, "colouring_partition": false, "theta": 10, "seconds": 0.8}
+{"n": 29, "alpha": 9, "k": 3, "c": 47, "shape": "X6", "found": true, "tried": 1, "parts": [3, 6, 3, 3, 4, 4, 3, 3], "kappa": 3, "colouring_partition": false, "theta": 10, "seconds": 0.8}
+{"n": 30, "alpha": 9, "k": 3, "c": 50, "shape": "X6", "found": true, "tried": 1, "parts": [3, 4, 3, 6, 4, 4, 3, 3], "kappa": 3, "colouring_partition": false, "theta": 10, "seconds": 1.0}
+{"n": 31, "alpha": 9, "k": 3, "c": 53, "shape": "X6", "found": true, "tried": 1, "parts": [4, 4, 3, 4, 3, 3, 4, 6], "kappa": 3, "colouring_partition": false, "theta": 10, "seconds": 1.4}
+{"n": 32, "alpha": 9, "k": 3, "c": 56, "shape": "X6", "found": true, "tried": 1, "parts": [3, 4, 4, 4, 4, 4, 6, 3], "kappa": 3, "colouring_partition": false, "theta": 10, "seconds": 1.3}
+{"n": 33, "alpha": 9, "k": 3, "c": 59, "shape": "X6", "found": true, "tried": 1, "parts": [4, 4, 4, 3, 6, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 10, "seconds": 1.3}
+{"n": 34, "alpha": 9, "k": 3, "c": 62, "shape": "X6", "found": true, "tried": 1, "parts": [4, 4, 6, 4, 4, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 10, "seconds": 1.3}
+{"n": 35, "alpha": 9, "k": 3, "c": 65, "shape": "X7", "found": true, "tried": 1, "parts": [4, 4, 4, 4, 7, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 10, "seconds": 1.4}
+{"n": 36, "alpha": 9, "k": 3, "c": 68, "shape": null, "found": false, "tried": 0, "seconds": 0.0}
+{"n": 34, "alpha": 11, "k": 3, "c": 53, "shape": "X6", "found": true, "tried": 1, "parts": [3, 3, 3, 3, 6, 3, 3, 3, 3, 4], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 43.2}
+{"n": 35, "alpha": 11, "k": 3, "c": 56, "shape": "X6", "found": true, "tried": 1, "parts": [3, 4, 3, 6, 3, 3, 4, 3, 3, 3], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 43.2}
+{"n": 36, "alpha": 11, "k": 3, "c": 59, "shape": "X6", "found": true, "tried": 1, "parts": [3, 3, 4, 4, 3, 4, 6, 3, 3, 3], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 45.5}
+{"n": 37, "alpha": 11, "k": 3, "c": 62, "shape": "X6", "found": true, "tried": 1, "parts": [3, 3, 3, 3, 3, 4, 4, 4, 6, 4], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 54.5}
+{"n": 38, "alpha": 11, "k": 3, "c": 65, "shape": "X6", "found": true, "tried": 1, "parts": [3, 4, 4, 4, 4, 3, 3, 3, 6, 4], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 55.0}
+{"n": 39, "alpha": 11, "k": 3, "c": 68, "shape": "X6", "found": true, "tried": 1, "parts": [3, 4, 3, 4, 3, 4, 6, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 52.3}
+{"n": 40, "alpha": 11, "k": 3, "c": 71, "shape": "X6", "found": true, "tried": 1, "parts": [4, 4, 3, 6, 4, 3, 4, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 49.5}
+{"n": 41, "alpha": 11, "k": 3, "c": 74, "shape": "X6", "found": true, "tried": 1, "parts": [4, 6, 4, 4, 4, 4, 3, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 56.0}
+{"n": 42, "alpha": 11, "k": 3, "c": 77, "shape": "X6", "found": true, "tried": 1, "parts": [4, 4, 4, 4, 4, 6, 4, 4, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 59.7}
+{"n": 43, "alpha": 11, "k": 3, "c": 80, "shape": "X7", "found": true, "tried": 1, "parts": [4, 4, 4, 4, 4, 4, 4, 7, 4, 4], "kappa": 3, "colouring_partition": false, "theta": 12, "seconds": 51.8}
+{"n": 44, "alpha": 11, "k": 3, "c": 83, "shape": null, "found": false, "tried": 0, "seconds": 0.0}

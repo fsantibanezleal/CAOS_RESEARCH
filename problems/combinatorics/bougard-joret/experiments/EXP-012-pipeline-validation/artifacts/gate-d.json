@@ -1,0 +1,38 @@
+{
+ "cases": [
+  {
+   "n": 17,
+   "alpha": 5,
+   "k": 3,
+   "E": 29,
+   "mod1_graphs": 218377,
+   "mod56_graphs": 218377,
+   "mod1_sha256": "6e2bbe7b4a233f45ae60e26babea20fefefe8811bd7fd3dee707d154b7b17ee8",
+   "mod56_sha256": "6e2bbe7b4a233f45ae60e26babea20fefefe8811bd7fd3dee707d154b7b17ee8",
+   "equal": true
+  },
+  {
+   "n": 19,
+   "alpha": 3,
+   "k": 6,
+   "E": 60,
+   "mod1_graphs": 880,
+   "mod56_graphs": 880,
+   "mod1_sha256": "174299db92f7a40ce534bd3f7bf166c97b98dbf0607a43045418617eaf1ae975",
+   "mod56_sha256": "174299db92f7a40ce534bd3f7bf166c97b98dbf0607a43045418617eaf1ae975",
+   "equal": true
+  },
+  {
+   "n": 20,
+   "alpha": 4,
+   "k": 4,
+   "E": 48,
+   "mod1_graphs": 266577,
+   "mod56_graphs": 266577,
+   "mod1_sha256": "49aeb5501cb08041e734e3c44ad40070019148a6423c92efd0d28ebb547d6da0",
+   "mod56_sha256": "49aeb5501cb08041e734e3c44ad40070019148a6423c92efd0d28ebb547d6da0",
+   "equal": true
+  }
+ ],
+ "disagreements": 0
+}

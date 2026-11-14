@@ -7,6 +7,15 @@
 \usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.17}
+\usepackage{caption}
+\usepackage{array}
+\captionsetup{font=small, labelfont=bf}
+\input{figures/partition-stats.tex}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -30,9 +39,9 @@
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.06}
-\newcommand{\docdate}{5 November 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.23980033}
+\newcommand{\docversion}{v0.07}
+\newcommand{\docdate}{14 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.24231299}
 \newcommand{\conceptdoi}{10.5281/zenodo.21753438}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -67,85 +76,42 @@ Straight-Line Programs of Length at Most Nine}
 \headerblock
 
 \begin{abstract}
-For a univariate integer polynomial $f$, let $\tau(f)$ be the minimum number of
-$+,-,\times$ gates needed to compute $f$ from $x$ and the constants $-1,0,1$, and let
-$z(f)$ be its number of distinct integer roots. The Shub--Smale tau conjecture
-(Smale's fourth problem) asserts $z(f) \le (1+\tau(f))^{\kappa}$ for a universal
-$\kappa$; it implies $\mathrm{P}_{\C} \ne \mathrm{NP}_{\C}$ in the Blum--Shub--Smale
-model and $\mathrm{VP}^0 \ne \mathrm{VNP}^0$, and it is open even for $\kappa = 1$.
-We report the first exact census of the conjecture's growth function at the bottom of
-its ladder: writing $\zmax(\tau)$ for the maximum of $z(f)$ over all nonzero $f$ with
-$\tau(f) \le \tau$, we prove by exhaustive, exactly verified computation that
-\[
-\zmax(1),\dots,\zmax(9) \;=\; 1,\, 2,\, 3,\, 3,\, 4,\, 5,\, 5,\, 6,\, 6 .
-\]
-In particular the minimum cost of $4$ distinct integer roots is $5$ gates, of $5$
-roots is $6$ gates, and of $6$ roots is exactly $8$ gates, by an
-explicit verified witness: $q(q-2)(q-6)$ for $q = x^2 - x$, computable in $8$ gates by
-chained subtraction sharing; the growth function has plateaus at $\tau = 4$,
-$\tau = 7$ and $\tau = 9$, so an extra gate does not always buy an extra root. No
-program with at most nine gates computes a polynomial with $7$ distinct integer
-roots, and ten gates suffice, so the seven-root threshold is exactly $10$. At the
-ninth gate a multiplicative final gate is decided through unions of known root sets,
-and an additive one by an exhaustive scan of all $4.19\times10^{12}$ candidates with
-a $2$-adic and $3$-adic divisibility filter that is valid for roots anywhere in
-$\Z$, so no evaluation window is involved.
-The censuses are decision-complete: depth $6$ required the exact construction of
-all $25{,}844{,}905$ reachable computation states; depth $7$ a complete scan of
-$2{,}013{,}706$ new polynomials, using a ``last-gate'' lemma that decides one depth
-beyond any exhausted frontier without storing the next frontier; and depth $8$
-the first complete construction of the depth-$7$ frontier
-itself: $1{,}048{,}460{,}912$ states, built out-of-core by hash-partitioned
-external deduplication and scanned exhaustively ($\sim\!2 \times 10^{11}$
-last-gate applications) by a validated multiprocess engine. The enumerator is
-anchored on Markstr\"om's published exhaustive census of integer targets (all
-fourteen anchor values reproduced exactly) and cross-checked against an independent
-computer-algebra root counter on $284$ polynomials. The six-root threshold is
-decided by a case split: the last gate of an $8$-gate $6$-rooter must involve the
-seventh value, and if it is a multiplication its root count is a union of two known
-root sets, so that case reduces to a co-occurrence query over the depth-$6$ frontier;
-the scan found $408$ witnesses. We further prove two elementary
-stall theorems explaining the observed record mechanisms: for any monic
-$h \in \Z[x]$ of degree at least $2$, towers built by iterating $h$ alone have
-depth-independent integer root counts (for $h = x^2 - 2$, the iterates $h^{\circ k}(x) - x$
-keep exactly $2$ integer roots against $2^k$ real roots), and across the quadratic
-family $h_c = x^2 - c$ with $c \le 200$ the maximum tower yield is $5$, attained only
-at $c = 2$; a second yield series at $c = m^2 + m + 1$, produced by genuine integer
-$2$-cycles, is identified and closed by the classical fact that integer polynomial
-cycles have length at most $2$. All computations are exact integer arithmetic,
-reproducible from the released code. We also report
-the exact ladders of the digit-restricted census (the form of the conjecture
-Rojas proved sufficient): the maximum number of \emph{odd} roots grows as
-$1,2,2,2,2,3,4$ through $\tau = 7$, with its own extremal family
-$(x^2-1)(x^2-9)$, distinct from the unrestricted records.
-Finally we place the census against its two neighbouring worlds, measured on the
-same enumerated programs. Over $\mathbb{F}_p$ the analogous maximum is
-\emph{exactly} $2^{\tau-1}$ for every $\tau$ (proved here; the extremal program is
-$k$ squarings and one subtraction, and the Fermat primes that the small cases
-suggest are not required, only a prime $p \equiv 1 \bmod 2^k$). Over $\mathbb{R}$ it
-is $1,2,3,4,6,8$ through $\tau = 6$, exhaustively, by exact Sturm counting with no
-floating point; its $\tau = 4$ and $\tau = 6$ records are linked by a step
-$g \mapsto g\cdot(g-x^2)$ that costs two gates and doubles the real root count,
-beating a Chebyshev tower's three gates per doubling, and that step itself stalls
-after three iterations. The three ladders agree at $\tau \le 2$ and separate at $\tau = 3$
-and $\tau = 4$ respectively; over $\mathbb{F}_p$ the degree ceiling $2^{\tau-1}$ is
-saturated at every $\tau$, over $\mathbb{R}$ it is not, and over $\mathbb{Z}$ the
-census stays linear. A five-gate program with six distinct \emph{real} roots and
-only two integer ones exhibits the difference concretely.
-The work is experimental mathematics in the tradition of Markstr\"om's census; it
-decides nothing about the conjecture asymptotically.
+For a univariate integer polynomial $f$, let $\tau(f)$ be the least number of $+,-,\times$ gates
+that compute $f$ from $x$ and the free constants $-1,0,1$, and let $z(f)$ be its number of
+distinct integer roots. The Shub--Smale tau conjecture (Smale's fourth problem) asserts
+$z(f) \le (1+\tau(f))^{\kappa}$ for a universal $\kappa$; it implies $\mathrm{P}_{\C} \ne \mathrm{NP}_{\C}$
+in the Blum--Shub--Smale model. We compute, to our knowledge for the first time, the growth function
+$\zmax(\tau) = \max\{z(f) : \tau(f) \le \tau\}$ exactly:
+$\zmax(1),\dots,\zmax(9) = 1,2,3,3,4,5,5,6,6$, by decision-complete exhaustive enumeration in
+exact integer arithmetic. The least number of gates for $3$, $4$, $5$, $6$ and $7$ distinct
+integer roots is $3$, $5$, $6$, $8$ and $10$. The search constructs $1{,}048{,}460{,}912$ reached
+states at depth $7$, decides one depth further by a last-gate lemma, and excludes seven roots at
+nine gates with a window-free $2$-adic and $3$-adic divisibility criterion applied to
+$4.19 \times 10^{12}$ additive candidates. Two elementary stall theorems bound each iterated map, and an exhaustive measurement
+bounds the quadratic family for $c \le 200$. Measured on the same programs, the maximum over
+$\mathbb{F}_p$ is exactly $2^{\tau-1}$ (proved), over $\mathbb{R}$ it is $1,2,3,4,6,8$
+through $\tau = 6$, and over $\mathbb{Q}$ it equals $\zmax$ through $\tau = 6$. The census values are
+exact counts and carry no statistical uncertainty. The work decides nothing about the conjecture
+asymptotically.
 \end{abstract}
 
 \section{Introduction}
 
-\subsection{The conjecture}
+\subsection{The conjecture}\label{sec:conjecture}
 
-A \emph{constant-free straight-line program} (SLP) over $\Z[x]$ is a sequence
-$(1, x, f_2, \dots, f_N)$ in which every $f_i$ ($i \ge 2$) is a sum, difference, or
-product of two earlier entries; following \cite{ShubSmale1995, Rojas2003} we write
-$\tau(f)$ for the least $N - 1$ over all such programs with $f_N = f$. Equivalently
-\cite{Burgisser2024}, $\tau(f)$ is the minimal number of operation gates of an
-arithmetic circuit over the inputs $x$ and the free constants $-1, 0, 1$. Let $z(f)$
+A \emph{constant-free straight-line program} (SLP) over $\Z[x]$ starts from the input $x$ and a
+set of free constants; every further value is a sum, difference or product of two earlier ones, and
+the length of the program is the number of these gates. Two conventions for the free constants
+are in use, and they are not the same quantity. Rojas \cite{Rojas2003} (Definition~1) starts from
+$(1, x, f_2, \dots, f_N)$, so that only the constant $1$ is free, and writes $\tau_1(f)$ for the
+least $N - 1$. B\"urgisser \cite{Burgisser2024} takes $-1$, $0$ and $1$ as the free constants, and
+so does this paper: $\tau(f)$ below is the least number of gates over the inputs $x, -1, 0, 1$
+(Definition~\ref{def:model}). The two differ on small cases ($\tau_1(-1) = 2$ against $\tau(-1) = 0$, and
+$\tau_1(-x-1) = 3$ against $\tau(-x-1) = 1$), but $\tau(f) \le \tau_1(f) \le \tau(f) + 2$, because
+$0 = 1 - 1$ and $-1 = 0 - 1$ cost two gates and every program with the three free constants
+becomes a program with the constant $1$ alone after those two gates [D]. A conjecture that
+asks for a polynomial bound is therefore the same under both conventions, while the ladder $\zmax$
+and every threshold of this paper are stated for the $\{-1, 0, 1\}$ convention. Let $z(f)$
 denote the number of distinct roots of $f$ in $\Z$.
 
 \begin{conjecture}[Shub--Smale \cite{ShubSmale1995}; Smale's fourth problem \cite{Smale1998}]
@@ -153,37 +119,21 @@ There is a universal constant $\kappa \ge 1$ such that every nonzero
 $f \in \Z[x]$ satisfies $z(f) \le (1 + \tau(f))^{\kappa}$.
 \end{conjecture}
 
-The conjecture fails for $\kappa < 1$: the geometric-progression products
-$(x - 2)(x - 4)\cdots(x - 2^{2^j})$ acquire one root per $O(1)$ gates
-\cite{Rojas2003}. It is open even for $\kappa = 1$. Its significance is structural:
-Shub and Smale proved that it implies
-$\mathrm{P}_{\C} \ne \mathrm{NP}_{\C}$ in the Blum--Shub--Smale model
-\cite{ShubSmale1995, BCSS1998}, the proof reducing to the hardness of computing all
-sequences $(m_n \cdot n!)$; B\"urgisser \cite{Burgisser2009}, building on Koiran
-\cite{Koiran2004}, proved that it implies $\mathrm{VP}^0 \ne \mathrm{VNP}^0$, and
-that the single sequence $(n!)$ being hard to compute already yields that separation.
-Easy factorials would give nonuniform polynomial-time integer factoring
-\cite{BCSS1998, Cheng2003}; with integer division allowed, $n!$ \emph{is} easy
-\cite{Shamir1979}, so the restriction to $+,-,\times$ carries the entire content. The
-real-zeros analogue of the conjecture is false: iterating the logistic map produces
-$2^j$ real roots at cost $O(j)$ \cite{Rojas2003}, which motivated Koiran's real tau
-conjecture for structured expressions \cite{Koiran2011, KPTT2015, Hrubes2013,
-BriquelBurgisser2020, Dutta2021}. On the lower-bound side, no nontrivial lower bound
-on $\tau(n!)$ is known \cite{Koiran2004}; on the reduction side, Rojas proved that a
-$p$-adic digit version of the conjecture, for any fixed prime, already implies the
-full statement, via a $p$-independent subquadratic bound on the valuation spectrum of
-roots \cite{Rojas2003}. Recent work applies the conjecture to explicit exponential
-lower bounds \cite{BBDM2026} and tightens the bridge from BSS separations to
-constant-free Valiant separations \cite{Burgisser2026}; the current survey reference
-is \cite[\S4.6]{Burgisser2024}.
+Evidence marks follow the statements below: \textbf{[V]} read on the primary source,
+\textbf{[V2]} stated by a secondary source that was read, \textbf{[U]} unverified (the source
+was read at abstract level only, or not read). The conjecture fails for $\kappa < 1$ by an
+elementary count \emph{[D]}: the product $\prod_{i=1}^{N}(x - 2^i)$ has $N$ distinct integer
+roots and costs at most $3N + 1$ gates (double the previous power of two, subtract it from
+$x$, multiply into the running product), so $z(f) \ge (\tau(f) - 1)/3$ for a family of
+programs of every length. Rojas states the same product and the failure for $\kappa < 1$
+\cite{Rojas2003} [V]. The conjecture is open even for $\kappa = 1$. Section~\ref{sec:related}
+places it in the literature.
 
 \subsection{What this paper does}
 
-The literature contains, to our knowledge, exactly one exhaustive computation in this
-model: Markstr\"om's census of \emph{integer targets} (the straight-line complexity
-of small factorials and primorials), complete to program length $11$ on 2013-era
-hardware \cite{Markstrom2014}. No published computation addresses the
-\emph{polynomial} side, i.e.\ the actual growth function of the conjecture. We define
+Section~\ref{sec:related} describes the prior exhaustive work, which concerns integer targets
+rather than polynomials; this paper computes the polynomial side, the actual growth function of
+the conjecture. We define
 \[
 \zmax(\tau) \;=\; \max\{\, z(f) \;:\; f \in \Z[x] \setminus \{0\},\ \tau(f) \le \tau \,\}
 \]
@@ -212,8 +162,9 @@ from an exhausted depth-$d$ frontier without storing the depth-$(d+1)$ frontier.
 bought depth $7$ (a $\sim$$10^9$-state frontier avoided).
 \item \textbf{Stall theorems} (Section~\ref{sec:stall}): iterating any fixed monic
 map of degree $\ge 2$ yields depth-independent integer root counts; for the
-Chebyshev-conjugate map $x^2 - 2$, whose difference-of-squares splittings generate
-all census records at depths $5$--$7$, the exact stable core is $\{0, \pm 1, \pm 2\}$.
+Chebyshev-conjugate map $x^2 - 2$, whose difference-of-squares splitting gives the
+symmetric records ($\{\pm1,\pm2\}$ at $\tau = 5$ and $\{0,\pm1,\pm2\}$ at $\tau = 6$; the other
+records are intervals or two-centre products), the exact stable core is $\{0, \pm 1, \pm 2\}$.
 \item \textbf{The family measurement} (Section~\ref{sec:family}): across
 $h_c = x^2 - c$, $c \le 200$, and all tower shapes to four iterations, the maximum
 integer-root yield is $5$, attained only at $c = 2$; two yield-$4$ series exist,
@@ -244,28 +195,159 @@ $\mathbb{Z}$ is not degree and not splitting, both of which cheap programs reach
 at exponential scale, but \emph{distinctness}: five gates already give a
 completely split polynomial of degree $16$ over $\mathbb{Z}$ with two distinct
 roots.
-\item \textbf{Anchoring and cross-checks} (Section~\ref{sec:anchor}): the enumerator
+\item \textbf{Anchoring and cross-checks} (Section~\ref{sec:design}): the enumerator
 reproduces all fourteen of Markstr\"om's published anchor values; an independent
-computer-algebra cross-check agrees on $284$ polynomials; and two general-purpose
+computer-algebra cross-check agrees on $284$ polynomials and on a second pool of $228$; and two general-purpose
 solver engines, validated on known witnesses, do not complete the smallest
 free-structure search within their time limits (Section~\ref{sec:depth8}).
 \end{enumerate}
 
-Every claim in this paper is labeled: \textbf{[MV]} machine-verified in exact
-arithmetic from the released code, \textbf{[D]} proved here (elementary, self-contained),
-or \textbf{[C]} conjectural/observational. Nothing here decides the conjecture in
+Every theorem-level result and every literature statement in this paper carries a mark:
+\textbf{[MV]} machine-verified in exact arithmetic from the released code, \textbf{[D]}
+proved here (elementary, self-contained), \textbf{[C]} conjectural or observational, and,
+for statements about other authors' work, \textbf{[V]}, \textbf{[V2]} and \textbf{[U]} as
+defined in Section~\ref{sec:conjecture}. Nothing here decides the conjecture in
 either direction, and no asymptotic consequence is claimed: the census maps where the
 conjecture lives at the bottom of its ladder, in the same genre as
 \cite{Markstrom2014}.
 
-\section{Model, normalization, and the census method}\label{sec:model}
+\section{Related work}\label{sec:related}
+
+The literature around the conjecture falls into five groups: what the conjecture implies, what is
+known about the cost of single integers and of $n!$, the real and structured variants, the reductions
+to restricted statements, and the exhaustive computations in this model. Each statement carries the
+evidence mark defined in Section~\ref{sec:conjecture}.
+
+\textbf{What the conjecture implies.} Shub and Smale proved that it implies
+$\mathrm{P}_{\C} \ne \mathrm{NP}_{\C}$ in the Blum--Shub--Smale model
+\cite{BSS1989, ShubSmale1995, BCSS1998} [V2 for the implication, through
+\cite[\S4.6]{Burgisser2024}; the original paper was not accessed, and its statement is taken
+from the survey's equation (4.5) and from \cite{Rojas2003}; of the model paper \cite{BSS1989} only
+the bibliographic record was checked, on Crossref, [U]]. Malajovich introduced the class
+$\mathrm{UP}$ of ``ultimate polynomial time'' problems over $\C$ and showed that the conjecture
+implies that $\mathrm{UP}$ does not contain the class of nondeterministic polynomial-time problems
+definable without constants over $\C$ \cite{Malajovich1999} [U, abstract level]. In the form that
+Cheng reads from it, the implication is that if $n!$ is
+ultimately hard, that is, no nonzero multiple of $n!$ has straight-line complexity
+$(\log n)^c$, then the algebraic version of $\mathrm{P} \ne \mathrm{NP}$ holds
+\cite[\S1]{Cheng2004} [V]. B\"urgisser \cite{Burgisser2009}, building on Koiran
+\cite{Koiran2004}, proved that the conjecture implies $\mathrm{VP}^0 \ne \mathrm{VNP}^0$, and
+that hardness of the single sequence $(n!)$ already yields that separation [V2, as
+Theorem 4.17 of \cite{Burgisser2024}; the primary paper was read at abstract level]. The
+consequence for integer factoring is recorded in the survey literature: easy factorials would
+give nonuniform polynomial-time integer factoring (the remark on p.~126 of
+\cite{BCSS1998}, cited through \cite{Koiran2004}) [V2], and Lipton relates straight-line
+complexity and factorization \cite{Lipton1994} [V2, through \cite[\S4.6]{Burgisser2024}; not
+read directly]. With integer division allowed, $n!$ \emph{is} easy \cite{Shamir1979} [V2, as
+presented in \cite{Koiran2004}], so the restriction to $+,-,\times$ carries the entire
+content.
+
+\textbf{The cost of integers and of $n!$.} The upper-bound side for $n!$ itself is known
+unconditionally to be
+$O(\sqrt{n}\,\log^2 n)$ ring operations over $\Z$, a bound that Cheng attributes to Strassen
+and to the textbook of B\"urgisser, Clausen and Shokrollahi \cite{BCS1997}
+\cite[\S1]{Cheng2004} [V as stated by Cheng; Strassen's paper was not read, and of the textbook
+only the Crossref record was checked, [U]]. Cheng proves, conditionally on a
+smooth-numbers-in-short-intervals conjecture, that a nonzero multiple of $n!$ is computed by a
+program of length at most $\exp\bigl(c\sqrt{\log n\,\log\log n}\,\bigr)$ for an absolute
+constant $c$ \cite[Thm.~1]{Cheng2004} [V]; this does not decide the polylogarithmic
+question that the conjecture asks about. On the lower-bound side, no nontrivial lower
+bound on $\tau(n!)$ was known when Koiran wrote \cite{Koiran2004} [V]. For single integers the
+almost-all picture is older: for almost every $n$ the straight-line cost of $n$ is at least of
+order $\log n/\log\log n$, by the lower bounds of de Melo and Svaiter \cite{deMeloSvaiter1996} and
+of Moreira \cite{Moreira1997} [V2, as reported by \cite{Koiran2004}; the exact form of each bound
+is the one in our reference notes and was not checked against the papers, whose Crossref records
+were checked, [U]].
+
+\textbf{The real and structured variants.} The real-zeros analogue of the conjecture is false:
+iterating the logistic map produces $2^j$ real roots at cost $O(j)$ \cite[Example~1]{Rojas2003}
+[V], which motivated Koiran's real tau conjecture for structured expressions (Conjecture~4.1
+of \cite{Burgisser2024} [V2]; the supporting papers
+\cite{Koiran2011, KPTT2015, KPT2015, Hrubes2013, BriquelBurgisser2020} were read at abstract level
+[U], and \cite{Dutta2021} was not read [U]; the Wronskian paper \cite{KPT2015} bounds the number
+of real roots of sums of products of sparse polynomials). Section~\ref{sec:real} measures the
+real ladder on the same programs as the integer one.
+
+\textbf{Reductions to restricted statements.} Rojas proved that his $p$-adic Digit Conjecture
+implies the full statement (Theorem~1 of \cite{Rojas2003}) and bounded the valuation spectrum by
+$s \le N_p(s) \le s(s+1)/2$, independently of $p$ (Theorem~2) [V]. The Digit Conjecture says
+that, for a fixed prime $p$, the number of distinct integer roots $x \equiv 1 \pmod p$ of $f$ is at
+most $(\tau(f)+1)^{c_p}$ for a constant $c_p$ [V, in the $\tau_1$ convention of
+\cite{Rojas2003}]; Section~\ref{sec:digit} measures exactly this restricted class for $p = 2$ and
+$p = 3$. Recent work applies the conjecture to an explicit exponential lower bound
+\cite{BBDM2026} and tightens the bridge from BSS separations to constant-free Valiant
+separations \cite{Burgisser2026} [U, both at abstract level]; the current survey reference is
+\cite[\S4.6]{Burgisser2024} [V].
+
+\textbf{Exhaustive computation in this model.} The literature contains, to our knowledge, exactly
+one exhaustive computation in this model: Markstr\"om's census of \emph{integer targets} (the
+straight-line complexity of small factorials and primorials), an exhaustive census to program
+length $9$ and a targeted search to length $11$ on 2013-era hardware \cite{Markstrom2014}
+[V, as in our reading notes of the paper]. A neighbouring integer count is the Mahler--Popken
+complexity, the least number of $1$s that build $n$ with $+$ and $\times$ only, tabulated as
+sequence A005245 of the On-Line Encyclopedia of Integer Sequences \cite{OEISA005245} [V, the
+entry was read]; it has no subtraction and counts the $1$s instead of the gates, so it is a
+different model and its values are not comparable with the ones here. We found no published
+computation of the \emph{polynomial} side, i.e.\ the actual growth function of the conjecture:
+searches of arXiv for the tau conjecture, for Shub--Smale with integer roots and for
+straight-line programs with integer roots return nothing of this kind after 2019 [V]; priority
+itself remains [U]. The present paper sits next to \cite{Markstrom2014}: it enumerates the same
+kind of reached sets, over polynomials instead of integers, and it uses the integer enumeration as an
+anchor (Section~\ref{sec:design}).
+
+\section{Problem formulation: model, normalization and the census method}\label{sec:model}
+
+The problem has one input, a depth $\tau$, and one output, the number
+$\zmax(\tau) = \max\{z(f) : f \in \Z[x]\setminus\{0\},\ \tau(f) \le \tau\}$ of distinct integer roots
+that a nonzero polynomial computed with at most $\tau$ gates can have; its companion is the
+\emph{threshold} $T(k)$, the least $\tau$ with $\zmax(\tau) \ge k$. Both are defined over all
+programs, an infinite family once the values are unbounded, so the formulation has to turn a
+statement about every program into a finite computation. Sections~\ref{sec:model} and
+\ref{sec:design} do this in three steps: a normal form that removes redundant gates
+(Lemmas~\ref{lem:zero} and~\ref{lem:norm}), a representation of the reachable computations as sets
+of values with set-level deduplication (Lemma~\ref{lem:state}), and a last-gate lemma that decides
+one depth beyond the largest frontier that is stored (Lemma~\ref{lem:lastgate}). The assumption
+that carries everything is the model below: the integer root count of a polynomial is computed
+exactly, never by floating-point evaluation, so that every reported value is a theorem about
+the model and not an estimate.
 
 \begin{definition}\label{def:model}
-Programs operate on values in $\Z[x]$. The inputs are $-1$, $1$ and $x$; each gate
+Programs operate on values in $\Z[x]$. The inputs are $-1$, $1$ and $x$ (the free constant $0$ is
+redundant, Lemma~\ref{lem:zero}); each gate
 applies $+$, $-$ or $\times$ to two (not necessarily distinct) earlier values; the
-length of a program is its number of gates; $\tau(f)$ is the minimal length of a
+length of a program is its number of gates, so an input has length $0$; $\tau(f)$ is the minimal length of a
 program computing $f$ at some gate.
 \end{definition}
+
+Table~\ref{tab:notation} lists the symbols of the paper and the section that defines each.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Notation of the paper: every symbol with its meaning and where it is defined. All
+polynomials have integer coefficients and all root counts are of distinct roots.}
+\label{tab:notation}
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{9.3cm}l@{}}
+\toprule
+symbol & meaning & defined\\
+\midrule
+$\tau(f)$ & least number of gates computing $f$ from $x, -1, 0, 1$ & Section~\ref{sec:conjecture}\\
+$\tau_1(f)$ & the same with the constant $1$ alone free (Rojas's convention) & Section~\ref{sec:conjecture}\\
+$z(f)$ & number of distinct roots of $f$ in $\Z$ & Section~\ref{sec:conjecture}\\
+$\zmax(\tau)$ & maximum of $z(f)$ over nonzero $f$ with $\tau(f) \le \tau$ & Section~\ref{sec:conjecture}\\
+$T(k)$ & least $\tau$ with $\zmax(\tau) \ge k$ (cost threshold) & Section~\ref{sec:model}\\
+$I$ & the set of free inputs $\{-1, 1, x\}$ & Definition~\ref{def:model}\\
+$S$, $\mathcal{F}_d$ & a reached-set state, and the set of normalized states of depth $d$ & Lemma~\ref{lem:state}\\
+$C(S)$ & the values one gate can compute from $I \cup S$ & Lemma~\ref{lem:state}\\
+$R_v$ & the set of integer roots of the value $v$ & Section~\ref{sec:window}\\
+$\zpmax, \zrmax, \zqmax$ & the analogous maxima over $\mathbb{F}_p$, $\mathbb{R}$, $\mathbb{Q}$ & Section~\ref{sec:fp}\\
+$h_c$ & the map $x^2 - c$ of the quadratic family & Section~\ref{sec:family}\\
+$m$, $m'$ & exact power of $x$ dividing $f$, and a proven lower bound for it from the program & Lemma~\ref{lem:padic}\\
+$B$, $Z$, $w$, $M$ & block of $p^a$ integers, its zero set modulo $p^e$, truncated valuation, minimal outside contribution & Lemma~\ref{lem:padic}\\
+$L_k(Z)$ & tabulated lower bound on the valuation sum for $k$ roots given the zero mask $Z$ & Lemma~\ref{lem:padic}\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{lemma}[free $0$ is redundant]\label{lem:zero}
 Adding $0$ as a fourth free input does not change $\tau$. \emph{[D]}
@@ -293,13 +375,98 @@ computed. Consequently a breadth-first search over reached sets (``states''), wi
 set-level deduplication, visits every normalized reachable state of each depth
 exactly once. \emph{[D]}
 \end{lemma}
+\begin{proof}
+Write $I = \{-1, 1, x\}$ for the inputs. A normalized program of length $d$ has $d$
+distinct non-input, nonzero gate values; its \emph{state} is the set $S$ of those values.
+The gate-$(d{+}1)$ values that keep a program normalized are
+\[
+  C(S) \;=\; \bigl\{\, a \circ b \;:\; a, b \in I \cup S,\ \circ \in \{+,-,\times\} \,\bigr\}
+  \setminus \bigl( \{0\} \cup I \cup S \bigr),
+\]
+and $C(S)$ is a function of the set $S$ alone: a gate reads two earlier entries only through
+their values, so neither the order of the gates nor the identity of the program that
+computed $S$ enters. We show by induction on $d$ that the states of depth $d{+}1$ are exactly
+the sets $S \cup \{v\}$ with $S \in \mathcal{F}_d$ and $v \in C(S)$, where $\mathcal{F}_d$
+is the family of states of depth $d$ ($\mathcal{F}_0 = \{\emptyset\}$). If $P$ is a
+normalized program of length $d{+}1$, its first $d$ gates are a normalized program (a
+gate that repeats an input, repeats an earlier value or computes $0$ would already
+violate normalization), whose state $S$ lies in $\mathcal{F}_d$, and its last gate value
+lies in $C(S)$. Conversely, for $S \in \mathcal{F}_d$ and $v \in C(S)$, any program of
+state $S$ followed by the gate that produces $v$ is a normalized program of length
+$d{+}1$ with state $S \cup \{v\}$. Hence a breadth-first search that starts from
+$\{\emptyset\}$, expands each state by $C(S)$ and deduplicates the resulting sets reaches
+every element of $\mathcal{F}_{d+1}$, and each exactly once after deduplication. Finally,
+if $\tau(f) = d$, an optimal program is normalized (Lemma~\ref{lem:norm}), so $f$ belongs to
+some state of $\mathcal{F}_d$, and to none of $\mathcal{F}_{d'}$ with $d' < d$ because
+that would give a program of length $d' < \tau(f)$ computing $f$.
+\end{proof}
 
 This is the polynomial analogue of the range-isomorphism reduction of
 \cite{Markstrom2014}. The census algorithm is exactly this BFS, in exact integer
 arithmetic on dense coefficient tuples, with each new polynomial's first appearance
 depth recorded (that depth is $\tau(f)$, by Lemmas~\ref{lem:norm} and
 \ref{lem:state}). Integer roots are counted exactly: strip the power of $x$, then
-test the divisors of the trailing coefficient (both signs).
+test the divisors of the trailing coefficient (both signs). Algorithm~\ref{alg:bfs} gives
+the procedure and Algorithm~\ref{alg:roots} the root count.
+
+\begin{algorithm}[t]
+\caption{Reached-set census by breadth-first search, with exact first-appearance depths.}
+\label{alg:bfs}
+\begin{algorithmic}[1]
+\Require maximum depth $D$
+\Ensure for each depth $d \le D$: $|\mathcal{F}_d|$ and the polynomials first seen at depth $d$
+\State $\mathcal{F}_0 \gets \{\emptyset\}$; \ $\mathrm{first} \gets \{\}$ (a map from polynomial to depth)
+\For{$d = 1, \dots, D$}
+  \State $\mathcal{F}_d \gets \emptyset$
+  \For{each state $S \in \mathcal{F}_{d-1}$}
+    \State $O \gets I \cup S$ \Comment{$n = d + 2$ operands}
+    \State $K \gets \{\, a + b,\ a \times b \;:\; \{a, b\} \subseteq O \text{ unordered, } a = b \text{ allowed} \,\} \,\cup\, \{\, a - b \;:\; (a, b) \in O^2,\ a \ne b \,\}$
+    \For{each $v \in K$ with $v \ne 0$ and $v \notin O$}
+      \State add the sorted tuple of $S \cup \{v\}$ to $\mathcal{F}_d$ \Comment{set-level deduplication}
+      \If{$v \notin \mathrm{first}$} $\mathrm{first}[v] \gets d$ \EndIf
+    \EndFor
+  \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[t]
+\caption{Exact count of distinct integer roots of a nonzero $f \in \Z[x]$.}
+\label{alg:roots}
+\begin{algorithmic}[1]
+\Require coefficients $f_0, f_1, \dots, f_N$ with $f \ne 0$
+\State $m \gets$ least index with $f_m \ne 0$; \ $R \gets \{0\}$ if $m > 0$, else $\emptyset$
+\State $g \gets f / x^m$
+\If{$\deg g \ge 1$}
+  \For{each divisor $d$ of $|g_0|$ and each $r \in \{d, -d\}$}
+    \If{$g(r) = 0$ (Horner, exact integers)} add $r$ to $R$ \EndIf
+  \EndFor
+\EndIf
+\State \Return $R$
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Cost and memory of Algorithm~\ref{alg:bfs}.} A state of depth $d{-}1$ has
+$n = d + 2$ operands (the three inputs and $d - 1$ values), and $K$ holds
+$n(n{+}1)/2$ sums, $n(n{+}1)/2$ products and $n(n{-}1)$ differences, that is $2n^2$ gate
+applications. Expanding the whole depth-$(d{-}1)$ frontier therefore costs
+$2 n^2 \, |\mathcal{F}_{d-1}|$ polynomial operations, each quadratic in the degrees of its
+operands for products and linear for sums [D]. For the expansion of the depth-$6$ frontier
+into depth $7$ this is $2 \cdot 9^2 \cdot 25{,}844{,}905 = 4{,}186{,}874{,}610$
+applications, of which $2{,}434{,}020{,}495$ yield a distinct nonzero new value
+(the number of successor rows of the out-of-core build below). Memory is dominated by the
+resident frontier $\mathcal{F}_d$ and by the interned polynomials: the in-memory
+implementation reaches depth $6$ with $25{,}844{,}905$ states and a depth-$7$ census by
+the last-gate lemma; the depth-$7$ frontier of $1{,}048{,}460{,}912$ states at $28$ bytes
+each is $29.4$ GB as integer ids alone and is built out-of-core (Algorithm~\ref{alg:ooc}).
+Measured run times of the in-memory stages on one core: depth $5$, $64$\,s; depth $6$
+scan, $295$\,s (the witness reconstruction to $1005$\,s in total); the construction of the
+depth-$6$ frontier and the scan that decides depth $7$, $86.5$ minutes ($17$ minutes for the
+frontier, $69$ for the scan). The cost of Algorithm~\ref{alg:roots} is dominated by
+factoring the trailing coefficient by trial division, $O(\sqrt{|g_0|})$ steps, followed by
+$2\,\sigma_0(|g_0|)$ Horner evaluations, where $\sigma_0$ counts divisors; this is why the
+tower shapes of Section~\ref{sec:family}, whose trailing coefficients reach $c^{2^k}$, use a
+proved window instead.
 
 \begin{lemma}[last gate]\label{lem:lastgate}
 Let $\mathcal{F}_d$ be the set of normalized reached states of depth $d$. Every $f$
@@ -316,7 +483,53 @@ already normalized). Its first $d$ gates form a normalized reached state of dept
 $d$, and its last gate is one op over that state's available values.
 \end{proof}
 
-\section{Anchoring and cross-checks}\label{sec:anchor}
+\section{Experimental design and cross-checks}\label{sec:design}
+
+\textbf{Design.} The quantities to be determined are $\zmax(\tau)$ and the thresholds $T(k)$ of
+Section~\ref{sec:model}. Each is a maximum over a finite set once the normal form is fixed, so
+the experiments are exhaustive enumerations and not samples: there are no repetitions, seeds or
+confidence intervals, and a reported value is either decided or not. The two exceptions are labelled
+where they occur, the classification of $6{,}400{,}000$ additive candidates by what decides
+them (Table~\ref{tab:window}) and the known-answer gates of the window-free filter in
+Section~\ref{sec:seven:free}, both samples whose shares are estimates. The work is organized as fifteen experiment
+records, \texttt{EXP-001} to \texttt{EXP-015}; each holds a hypothesis file, the run code, the artifacts and a
+closing note with a prediction scorecard, except \texttt{EXP-014}, whose folder holds only its closing note and whose
+code is \texttt{exp014.py} in the folder of \texttt{EXP-013}. The scorecards record refutations as well as confirmations:
+the prediction that the five-rooters of $\tau \le 7$ all share the root set $\{0,\pm1,\pm2\}$
+was refuted by the census (seven root-set patterns, Section~\ref{sec:window}), the prediction of
+zero tower yield off the series $c = m(m+1)$ was refuted by the second series of
+Section~\ref{sec:family}, and the pre-registered growth rhythm $\zmax(9) = 7$ was refuted in the windowed sense by
+\texttt{EXP-013} and outright by the window-free scan.
+
+\textbf{Instruments, by stage.} Every root count reported here is exact, and the results that
+rest on an evaluation window are identified:
+\begin{itemize}
+\item The census to depth $7$, the depth-$8$ last-gate scan (Algorithm~\ref{alg:scan}) and
+the multiplicative nine-gate union scan (Algorithm~\ref{alg:union}) count roots exactly
+for every candidate; none of them has a window, and none uses a modular pre-filter. NumPy
+serves only to store and read the frontier files as integer arrays.
+\item The additive nine-gate scan of Theorem~\ref{thm:nine-add} is the only windowed
+instrument: it evaluates operands on $[-32,32]$ modulo a $31$-bit prime as a necessary
+condition, and promotes the survivors to exact root counting. Its result is stated for roots
+inside the window.
+\item The window-free additive scan of Theorem~\ref{thm:nine-add-free} uses NumPy for the
+$2$-adic and $3$-adic residues of Lemma~\ref{lem:padic} and for the table lookups, and
+builds and root-counts exactly every candidate that survives; the filter can over-admit but
+never discards a candidate that has seven distinct integer roots (Lemma~\ref{lem:padic}).
+\item The real and rational ladders and the computer-algebra cross-check use SymPy for
+square-free decomposition with Sturm sequences, for the rational root theorem and for
+factorization, in exact rational arithmetic with no floating point at any stage.
+\end{itemize}
+
+\textbf{Acceptance of an exhaustive claim.} A scan over a partitioned frontier decides its question only if every
+partition was scanned once. For the depth-$8$ scan and the multiplicative nine-gate scan the audit found
+$256$ of $256$ partition files, with no gap and no duplicate, states summing to exactly
+$1{,}048{,}460{,}912$, the summary equal to the sum of the parts and no witness (the hits sum to $0$); for the window-free additive scan the audit has six checks (the $256$ records, no error
+record, each partition's SHA-256 and state count equal to the frontier manifest, the state total, the
+per-partition identity $\mathrm{candidates} = 4000 \times \mathrm{states}$ with monotone stage
+counters, and hits re-verified exactly), and all pass. A correct digest certifies the bytes and not the prose
+beside it: one manifest line recorded $2{,}161{,}169$ catalog entries where the file holds
+$2{,}161{,}049$, found by the adversarial re-validation of the record and corrected.
 
 \textbf{Markstr\"om anchor [MV].} Restricted to the integer model (start value $1$,
 positive normalized values), our enumerator reproduces Figure~1 of
@@ -326,8 +539,11 @@ $2, 4, 6, 12, 40, 112, 310$ for lengths $1$ through $7$: fourteen of fourteen an
 values.
 
 \textbf{Independent cross-check [MV].} An independent root counter (SymPy's exact
-factorization) agrees with ours on all $284$ polynomials checked: every polynomial of
-$\tau \le 3$ and every record polynomial of the censuses.
+factorization) agrees with ours on all $284$ polynomials of the first pool: the $220$
+polynomials of $\tau \le 3$ and the $64$ record polynomials of the depth-$5$ census. A second
+pool of $228$ polynomials, assembled separately from the first (it is not the same
+$284$-element list), gives zero disagreements as well. The two counts are two checks on two
+pools and are quoted separately; the overlap between the pools is not recorded [U].
 
 \textbf{Engine re-derivation [MV].} The depth-$7$ computation uses a reimplemented,
 memoized engine, which re-derives every prior census value (state counts
@@ -339,7 +555,7 @@ against tower constant terms of size $c^{2^k}$; for the family measurement only,
 replaced by direct evaluation over a window proved correct in advance
 (Section~\ref{sec:family}), cross-checked against the divisor method where both run.
 
-\section{The census}\label{sec:census}
+\section{Results: the census of the maximum root count through depth 8}\label{sec:census}
 
 \begin{theorem}[the census; MV]\label{thm:census}
 In the model of Definition~\ref{def:model},
@@ -354,9 +570,14 @@ is Corollary~\ref{cor:nine} of Section~\ref{sec:seven}; it rests on scans of the
 ninth gate, not on a constructed depth-$8$ frontier.
 \end{theorem}
 
-The supporting exhaustive counts are:
+The supporting exhaustive counts are in Table~\ref{tab:counts}.
 
-\begin{center}
+\begin{table}[t]
+\centering
+\caption{Exhaustive counts per depth $\tau$: reached-set states, polynomials first seen at
+depth $\tau$, and the census maximum $\zmax(\tau)$. The depth-$8$ column is decided by the
+last-gate scan of the depth-$7$ frontier, which does not store the depth-$8$ states.}
+\label{tab:counts}
 \begin{tabular}{lrrrrrrrr}
 \toprule
 $\tau$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
@@ -366,7 +587,39 @@ new polynomials & 9 & 34 & 177 & 1{,}249 & 11{,}377 & 134{,}494 & 2{,}013{,}706 
 $\zmax$ & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
 \bottomrule
 \end{tabular}
-\end{center}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=6.4cm, ymode=log,
+  xlabel={gates $\tau$ (depth)}, ylabel={count},
+  xmin=0.7, xmax=7.3, ymin=3, ymax=4e9, xtick={1,...,7},
+  ytick={1e1,1e2,1e3,1e4,1e5,1e6,1e7,1e8,1e9},
+  grid=both, minor grid style={draw=none}, legend pos=north west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[color=blue!70!black, mark=*, thick] table[x=depth, y=states]{figures/fig-counts.dat};
+\addlegendentry{reached-set states at depth $\tau$}
+\addplot[color=red!70!black, mark=square*, thick] table[x=depth, y=newpolys]{figures/fig-counts.dat};
+\addlegendentry{polynomials first seen at depth $\tau$}
+\end{axis}
+\end{tikzpicture}
+\caption{Size of the exhaustive census by depth on a logarithmic axis: the number of reached-set
+states (blue) and the number of polynomials first computed at that depth (red), from the census
+artifacts of \texttt{EXP-002}, \texttt{EXP-003} and \texttt{EXP-004} and the depth-$7$ frontier build of \texttt{EXP-011}. Values:
+Table~\ref{tab:counts}.}
+\label{fig:counts}
+\end{figure}
+
+Figure~\ref{fig:counts} shows the cost of the exhaustive method: on the logarithmic axis the
+curves bend upward instead of settling on straight lines. The ratio of the state counts between
+consecutive depths grows with the depth ($10.9, 14.9, 20.2, 26.4, 33.2, 40.6$ for
+$\tau = 1 \to 2$ up to $6 \to 7$), and so does the ratio of the new polynomials ($3.8, 5.2, 7.1,
+9.1, 11.8, 15.0$) [D from Table~\ref{tab:counts}]. Six ratios do not support an extrapolation, and
+none is made; the reading is only that the growth of the frontier is faster than exponential
+over this range, which is why depth $8$ is decided by the last-gate scan and the depth-$8$
+frontier is never stored. The figure also shows that the new polynomials are a small and
+shrinking share of the states ($0.35$ at depth $2$, $0.0019$ at depth $7$).
 
 Depth $7$ was decided by Lemma~\ref{lem:lastgate} over the exhausted depth-$6$
 frontier; among its $2{,}013{,}706$ new polynomials, the histogram of distinct
@@ -375,29 +628,32 @@ $63{,}903$ with three, $3{,}196$ with four, $63$ with five, and none with six or
 more.
 
 \begin{theorem}[cost thresholds; MV]\label{thm:thresholds}
-The minimum $\tau$ admitting $k$ distinct integer roots is: $k=1{:}\,1$;
-$k=2{:}\,2$; $k=3{:}\,3$; $k=4{:}\,5$; $k=5{:}\,6$; $k=6{:}\,8$; $k=7{:}\,10$.
+The minimum $\tau$ admitting $k$ distinct integer roots is: $k=1{:}\,0$ (the input $x$ itself, with root $0$); $k=2{:}\,2$; $k=3{:}\,3$; $k=4{:}\,5$; $k=5{:}\,6$; $k=6{:}\,8$; $k=7{:}\,10$.
 \end{theorem}
 
 The $k = 6$ lower bound is Theorem~\ref{thm:census} ($\zmax(7) = 5$); the upper
 bound is the explicit $8$-gate witness of Section~\ref{sec:window}; the $k = 7$
 value is Corollary~\ref{cor:nine}. Representative
 optimal witnesses, replayed gate by gate in exact arithmetic from the released
-artifacts:
+artifacts (Table~\ref{tab:witnesses}):
 
-\begin{center}
+\begin{table}[t]
+\centering
 \small
-\begin{tabular}{lll}
+\caption{Record witnesses of the census with their gate-by-gate programs. Each program
+lists the value of every gate in order; the free inputs are $-1$, $1$ and $x$.}
+\label{tab:witnesses}
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{9.2cm}@{}}
 \toprule
 $\tau$ & record & witness program\\
 \midrule
 3 & $x^3 - x$, roots $\{0,\pm1\}$ & $x{\cdot}x;\ x^2{-}1;\ x{\cdot}(x^2{-}1)$\\
-4 & $-x(x{+}1)(x{+}2)$, roots $\{0,-1,-2\}$ & $-1{-}x;\ 1{-}({-}1{-}x);\ x({-}1{-}x);\ (x^2{+}x)\dots$\\
+4 & $-x(x{+}1)(x{+}2)$, roots $\{0,-1,-2\}$ & $g_1 = {-}1{-}x$;\ $g_2 = 1 - g_1 = x{+}2$;\ $g_3 = x\cdot g_1 = {-}x^2{-}x$;\ $g_4 = g_3 \cdot g_2 = -x(x{+}1)(x{+}2)$\\
 5 & $x^2 - (x^2{-}2)^2 = -(x^2{-}1)(x^2{-}4)$ & $-2;\ x^2;\ x^2{-}2;\ (x^2{-}2)^2;\ x^2 - (x^2{-}2)^2$\\
 6 & $\mp x(x^2{-}1)(x^2{-}4)$, roots $\{0,\pm1,\pm2\}$ & the $\tau{=}5$ record, then $\times\, x$\\
 \bottomrule
 \end{tabular}
-\end{center}
+\end{table}
 
 \textbf{Plateaus.} $\zmax$ pauses at $\tau = 4$ and $\tau = 7$, and again at $\tau = 9$
 (Corollary~\ref{cor:nine}). The record galleries
@@ -405,9 +661,14 @@ explain the asymmetry: the step $5 \to 6$ succeeds because multiplying by the in
 $x$ costs one gate and adjoins the root $0$ to a record avoiding it; the steps
 $3 \to 4$ and $6 \to 7$ fail because every candidate next root beyond the ``free''
 set $\{0, \pm 1, \pm 2\}$ requires a built constant, and constants cost gates. The
-$\tau = 5$ records (ten polynomials) and $\tau = 6$ records (four) are all
-difference-of-squares splittings over the map $x^2 - 2$ (Section~\ref{sec:stall});
-at $\tau = 7$ the sixty-three five-rooters appear, but no six-rooter.
+$\tau = 5$ records (ten polynomials) are of two kinds, read from the records: two have the
+symmetric root set $\{\pm1,\pm2\}$ and are the difference-of-squares splitting over the map
+$x^2 - 2$ (Section~\ref{sec:stall}), and the other eight have interval root sets
+($\{0,\dots,3\}$, $\{-3,\dots,0\}$, $\{-1,\dots,2\}$ and $\{-2,\dots,1\}$, two polynomials each),
+such as $q(q-2)$ with $q = x^2 - x$. The four $\tau = 6$ records are the symmetric $\tau = 5$
+record, up to sign, times $x$ or times $x^2$ (the square is already a value of its program), all with root set
+$\{0,\pm1,\pm2\}$. At $\tau = 7$ the sixty-three five-rooters
+appear, but no six-rooter.
 
 \subsection{Closing the six-root window}\label{sec:window}
 
@@ -435,7 +696,9 @@ program schemas, which builds the constants $\{2, 6\}$ independently, reaches th
 witness family only at $9$ gates; the scan's witness builds $\{2, 4\}$ and reuses the
 subtraction chain $q \mapsto q-2 \mapsto q-6$, saving one gate. The five-rooters with
 $\tau \le 7$ do not share one root set: the $67$ five-rooters realize seven root-set
-patterns, including the
+patterns ($39$ of them with the symmetric set $\{-2,\dots,2\}$, $8$ each with the shifted blocks
+$\{-1,\dots,3\}$ and $\{-3,\dots,1\}$, $4$ each with $\{0,\dots,4\}$ and $\{-4,\dots,0\}$, and $2$ each
+with the punctured sets), including the
 non-consecutive $\{-1,0,1,2,4\}$ and $\{-4,-2,-1,0,1\}$, and it is precisely such
 shifted and punctured sets that leave room for a co-occurring factor to complete six
 roots.
@@ -463,27 +726,140 @@ results with $7$ or more distinct integer roots. Every pipeline stage was first
 validated on a known answer: the identical machinery one level down reproduces the
 depth-$6$ frontier and the $\zmax(7) = 5$ census exactly. For completeness of the
 methods: two general-purpose solver engines (nonlinear
-integer arithmetic and pure bit-vector SAT over a gate-evaluation encoding)
+integer arithmetic and pure bit-vector SAT over a gate-evaluation encoding; the SAT lane
+follows the template of the encodings of shortest linear straight-line programs over
+$\mathrm{GF}(2)$ \cite{FuhsSchneiderKamp2010}, known to us at abstract level only [U])
 were validated semantically on pinned witnesses, yet neither completed even
 the smallest free-structure known-answer search (six gates, five roots) within
 time limits of $30$ minutes and one hour respectively; at this problem's scale,
 exhaustive construction beat solver search.
 
+Algorithms~\ref{alg:ooc} and~\ref{alg:scan} state the two stages. Both operate on states
+stored as rows of seven polynomial identifiers (sorted, $4$ bytes each, so a state is
+$28$ bytes), where identifiers index one interned table of $2{,}161{,}049$ distinct
+polynomials; equal sets of polynomials therefore give equal sorted rows, which is what lets
+a row hash decide set equality.
+
+\begin{algorithm}[t]
+\caption{Out-of-core construction of the depth-$7$ frontier by hash-partitioned deduplication.}
+\label{alg:ooc}
+\begin{algorithmic}[1]
+\Require the depth-$6$ frontier $\mathcal{F}_6$, rebuilt in memory by Algorithm~\ref{alg:bfs} and checked against $25{,}844{,}905$ states; $256$ partition files; fixed multipliers $m_1, \dots, m_7$ drawn once from a seeded generator
+\Ensure $256$ files of distinct sorted rows whose union is $\mathcal{F}_7$
+\ForAll{$S \in \mathcal{F}_6$} \Comment{expansion}
+  \State $K \gets$ the distinct nonzero values $v \notin I \cup S$ of the $162$ gate applications over $I \cup S$
+  \For{each $v \in K$}
+    \State $\mathrm{row} \gets$ sorted identifiers of $S \cup \{v\}$; \ $h \gets \bigl(\sum_i \mathrm{row}_i\, m_i\bigr) \bmod 256$
+    \State append $\mathrm{row}$ to buffer $h$; \ flush the buffer to file $h$ when it holds $200{,}000$ rows
+  \EndFor
+\EndFor
+\For{$h = 0, \dots, 255$} \Comment{deduplication, one partition at a time}
+  \State read file $h$ as a matrix of $28$-byte rows; sort and keep the distinct rows; write them; delete the raw file
+\EndFor
+\State \Return the per-partition distinct counts and their sum
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[t]
+\caption{Exhaustive last-gate scan of a stored frontier (one worker, one partition).}
+\label{alg:scan}
+\begin{algorithmic}[1]
+\Require partition file $h$ of $\mathcal{F}_7$; threshold $k = 7$; the interned table
+\Ensure the histogram of $z(t)$ over all gate applications, and the witnesses with $z \ge k$
+\ForAll{rows $S$ of the partition}
+  \State $O \gets I \cup S$ ($10$ operands)
+  \For{each of the $200$ gate applications $t = a \circ b$ over $O$}
+    \State $t \gets$ the cached value for the key $(\circ, a, b)$, computed exactly on a miss
+    \If{$t \ne 0$} $z \gets |\mathrm{IntegerRoots}(t)|$ (memoized); increment $\mathrm{hist}[z]$; record a witness if $z \ge k$ \EndIf
+  \EndFor
+\EndFor
+\State write the record of the partition atomically (temporary file, then rename)
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Costs and memory.} The expansion applies $2 \cdot 9^2 = 162$ gates to each of the
+$25{,}844{,}905$ depth-$6$ states and writes $2{,}434{,}020{,}495$ rows, that is
+$68.2$ GB ($63.5$ GiB) before deduplication against $29.36$ GB ($27.3$ GiB) after
+it, which is why the rows are partitioned on disk rather than held in a hash set [D from the
+row counts]. A partition holds on average $2{,}434{,}020{,}495/256 \approx 9.5$ million raw
+rows, about $266$ MB, so the deduplication step needs memory for one partition at a time; the
+raw size of the largest partition is not recorded [U], while the distinct states per partition are
+(Figure~\ref{fig:partitions}). The build ran in $10{,}179$\,s ($2$h$50$m), and the same
+code path run one level down (depth $5$ to depth $6$, $55{,}358{,}618$ raw rows) reproduces
+$25{,}844{,}905$ states and $134{,}494$ new polynomials in $185$\,s. The scan applies
+$200$ gates to every one of the $1{,}048{,}460{,}912$ states, at most $209{,}692{,}182{,}400$
+applications, of which $208{,}411{,}120{,}719$ give a nonzero value that enters the stored
+histogram; the value $z = 6$ occurs $328$ times and no value reaches $7$. Each of the $256$
+partitions is independent, so the scan parallelizes over processes without communication;
+it took $6$h$48$m with $20$ processes. Each worker holds the interned table, an operation
+cache of at most $4$ million entries and a root-count memo of at most $2$ million entries;
+the peak resident memory of the run is not recorded [U].
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=7.0cm, ymode=log,
+  xlabel={number of distinct integer roots $z$}, ylabel={share of the histogram (\%)},
+  xmin=-0.3, xmax=6.3, ymin=1e-8, ymax=200, xtick={0,...,6},
+  ytick={1e-8,1e-6,1e-4,1e-2,1,100},
+  grid=both, minor grid style={draw=none}, legend pos=south west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[color=blue!70!black, mark=*, thick] table[x=z, y=p6]{figures/fig-zhist.dat};
+\addlegendentry{$\tau = 6$: $134{,}494$ new polynomials}
+\addplot[color=red!70!black, mark=square*, thick, dashed, mark options={solid}] table[x=z, y=p7]{figures/fig-zhist.dat};
+\addlegendentry{$\tau = 7$: $2{,}013{,}706$ new polynomials}
+\addplot[color=green!45!black, mark=triangle*, thick] table[x=z, y=p8]{figures/fig-zhist.dat};
+\addlegendentry{$\tau = 8$: $2.08 \times 10^{11}$ last-gate applications}
+\end{axis}
+\end{tikzpicture}
+\caption{Distribution of the number of distinct integer roots as a percentage of each histogram
+total, on a logarithmic axis. The first two curves count distinct new polynomials at $\tau = 6$
+and $\tau = 7$ (\texttt{EXP-003}, \texttt{EXP-004}); the third counts nonzero last-gate
+applications over the depth-$7$ frontier (\texttt{EXP-011}), which may repeat a polynomial.
+A missing point is an empty bucket: no polynomial at $\tau = 6$ or $7$ has six roots.}
+\label{fig:zhist}
+\end{figure}
+
+Figure~\ref{fig:zhist} reads the three exhaustive histograms side by side. The distributions at
+$\tau = 6$ and $\tau = 7$ are nearly the same, about $37\%$ rootless, $44$ to $45\%$ with one root,
+$15\%$ with two and $3.2\%$ with three ($4$ roots: $0.14\%$ and $0.16\%$; $5$ roots:
+$0.0030\%$ and $0.0031\%$). Each further root costs a larger factor than the one before: from
+one root to two, two to three, three to four and four to five the counts fall by $3.0, 4.7, 22$
+and $49$ at $\tau = 6$, and by $3.0, 4.7, 20$ and $51$ at $\tau = 7$. The depth-$8$ curve of
+last-gate applications falls faster in the tail: the factors are $3.0, 7.0, 27, 168$ and then
+$2{,}835$ for the step from five roots ($929{,}780$ applications) to six ($328$
+applications, $1.6 \times 10^{-7}\%$ of the histogram) [D from the three histograms]. The
+figure does not say that a seven-root polynomial is rarer still; that is
+the content of Theorem~\ref{thm:depth8}, an exhaustive absence and not an extrapolation of
+the tail.
+
 \subsection{The digit-restricted census}\label{sec:digit}
 
-Rojas' reduction makes a digit-restricted bound \emph{sufficient} for the full
-conjecture: bounding only roots $\equiv 1 \pmod p$ for one fixed prime
-suffices. We measured that restricted growth function exactly through
+Rojas' $p$-adic Digit Conjecture implies the full conjecture (Theorem~1 of
+\cite{Rojas2003}) [V]. The conjecture bounds a digit-restricted class of integer roots: for a
+fixed prime $p$, the number of distinct integer roots of $f$ with $x \equiv 1 \pmod p$ is at most
+$(\tau_1(f)+1)^{c_p}$ for a constant $c_p$, and one fixed prime suffices for the full conjecture
+[V; the statement was checked on the arXiv text of \cite{Rojas2003} in the independent review of this
+draft]. We measure two such classes, the odd roots ($p = 2$) and the roots $\equiv 1 \pmod 3$,
+which are exactly the classes of that statement for $p = 2$ and $p = 3$; the ladders below are
+exact counts of the model of this paper, in the $\tau$ convention of
+Section~\ref{sec:conjecture}.
+Phillipson and Rojas state variants of the conjecture over local fields, an ``adelic'' tau
+conjecture, together with explicit fewnomial systems that have many roots over a local field
+\cite{PhillipsonRojas2013} [U, abstract level]; the restricted census here is a measurement over
+$\Z$ and tests none of their statements.
+We measured the restricted growth functions exactly through
 $\tau = 7$: the maximum number of odd roots is
 $1, 2, 2, 2, 2, 3, 4$, and for roots $\equiv 1 \pmod 3$:
 $1, 1, 1, 2, 2, 3, 3$. The digit-restricted world has its \emph{own} extremal family, e.g.
 $(x^2 - 1)(x^2 - 9)$ at exactly $7$ gates with all four roots odd: symmetric
 products over odd squares, distinct from the unrestricted records (which crowd
-$\{0, \pm 1, \pm 2\}$ and are digit-poor). The sufficient form of the
-conjecture is thus measurably harder to grow \emph{and} mechanically independent at
+$\{0, \pm 1, \pm 2\}$ and are digit-poor). The restricted form, which Rojas relates to the
+full conjecture, is thus measurably harder to grow \emph{and} mechanically independent at
 the bottom of the ladder.
 
-\section{Record mechanisms}\label{sec:mech}
+\section{Theory: record mechanisms and stall theorems}\label{sec:stall}\label{sec:mech}
+
 
 The census records decompose into a small move inventory [MV for the instances;
 observational as a classification]: linear factors $x - a$ for available constants
@@ -494,10 +870,24 @@ $x^2 - (x^2 - 2)^2 = -(x{-}1)(x{+}1)(x{-}2)(x{+}2)$ is the fundamental instance:
 inner map $C(x) = x^2 - 2$ is the Chebyshev-conjugate doubling map
 ($h(z) = z + 1/z$ satisfies $h(z)^2 - 2 = h(z^2)$), i.e.\ the record is the integer
 shadow of exactly the iteration that makes the \emph{real} analogue of the conjecture
-false. Over $\Z$, that factory is sterile beyond one splitting, which the next
-section proves.
+false. Over $\Z$, that factory is sterile beyond one splitting, which the stall theorems
+below prove.
 
-\section{Stall theorems}\label{sec:stall}
+Two further mechanisms are read from the records, and they matter because the splitting over
+$x^2 - 2$ accounts for only some of the record polynomials. The interval root sets, which are
+eight of the ten $\tau = 5$ records, come from translation chains: with $q = x^2 - x$ the
+polynomial $q(q-2)$ has roots $\{-1,0,1,2\}$, and the eight-gate six-rooter
+$q(q-2)(q-6)$ of Theorem~\ref{thm:window} extends the same chain by one subtraction, since
+$q - 6 = (q-2) - 4$. The punctured sets come from products of two split quadratics with different
+centres: of the $67$ five-rooters with $\tau \le 7$, which realize seven root-set patterns, the two
+punctured patterns $\{-1,0,1,2,4\}$ and its reflection are the products
+$\pm x^2(x^2-1)(x-2)(x-4)$, a quadratic split about $0$ times one split about $3$ (since
+$(x-2)(x-4) = (x-3)^2 - 1$), and the hole at $3$ is the centre of the second quadratic
+[D from the factored witnesses of the record]. The inventory is therefore a classification of
+observed records and not a proof that no other mechanism exists at higher depth; what the stall
+theorems below establish is narrower and exact: what iteration of a single map can and cannot
+reach over $\Z$.
+
 
 \begin{lemma}[escape]\label{lem:escape}
 Let $h = x^d + \sum_{i<d} a_i x^i \in \Z[x]$, $d \ge 2$, and
@@ -588,15 +978,56 @@ $|d_i|$ equal one value $d > 0$, and the cycle is a closed walk on the arithmeti
 line $a_0 + d\,\Z$ with steps $\pm d$. If two consecutive steps have opposite signs
 then $a_{i+2} = a_i$, which forces $r = 2$; if all steps have the same sign the walk
 never closes. Hence $r \le 2$. The fact is classical in the polynomial-cycles
-literature (see Narkiewicz \cite{Narkiewicz1995}); the proof is included to keep the
-paper self-contained.
+literature; the standard treatment is that of Narkiewicz \cite{Narkiewicz1995}, which
+was not accessible to us [U as to the exact attribution], and the proof is included to keep
+the paper self-contained.
 \end{proof}
 
-Yield per gate across the family is maximized at $c = 2$ and decreases in $c$ (the
+The arithmetic-dynamics literature goes further than cycles. Doyle and Poonen prove that, for
+the maps $z^d + c$, the curves that parametrize preperiodic points are geometrically irreducible
+with gonality tending to infinity; this gives the function-field analogue of strong uniform
+boundedness of preperiodic points, and over number fields strong uniform boundedness for
+bounded eventual period \cite{DoylePoonen2020} [U, abstract level]. We read that statement as
+context and not as a premise: over number fields it is conditional on the period bound, so
+it does not supply a uniform constant over $\Z$ for the towers of this section, and the stall
+theorems above use only an elementary escape bound and the finiteness of the preimage core.
+
+Yield per gate across the family is maximized at $c = 2$ and tends to decrease in $c$ (the
 yield is bounded by $5$ while building $c$ costs $\tau(c) \sim \log c$ gates,
 measured exactly against our anchored integer census): within this family, the
 ``parameterized loophole'' left open by Theorem~\ref{thm:stall} is empty [MV for
 $c \le 200$; C beyond].
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.9\textwidth, height=6.4cm, xmode=log,
+  xlabel={constant $c$ of the map $h_c = x^2 - c$}, ylabel={integer roots, or gates},
+  xmin=0.8, xmax=260, ymin=-0.4, ymax=8.2, ytick={0,...,7},
+  xtick={1,2,5,10,20,50,100,200}, xticklabels={1,2,5,10,20,50,100,200},
+  grid=both, minor grid style={draw=none}, legend pos=north west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[only marks, mark=*, mark size=2pt, color=blue!70!black] table[x=c, y=yield]{figures/fig-family.dat};
+\addlegendentry{best tower yield $\max_{\mathrm{shapes}} z$}
+\addplot[only marks, mark=square*, mark size=2pt, color=red!70!black] table[x=c, y=tauc]{figures/fig-family.dat};
+\addlegendentry{gates $\tau(c)$ to build the constant $c$}
+\end{axis}
+\end{tikzpicture}
+\caption{The quadratic family $h_c = x^2 - c$ for the $27$ values of $c \le 200$ whose towers have
+at least one integer root: the best number of distinct integer roots over all tower shapes (blue
+circles) and the exact number of gates $\tau(c)$ needed to compute the integer $c$ (red squares),
+from the \texttt{EXP-005} family artifact. All other $c \le 200$ have zero yield.}
+\label{fig:family}
+\end{figure}
+
+Figure~\ref{fig:family} puts Theorem~\ref{thm:family} next to the price of the parameter. The
+yield is flat: it is $4$ at every point of the two series ($c = m(m+1)$ and $c = m^2+m+1$),
+$3$ at $c = 1$ and $5$ only at $c = 2$, while the cost of the constant rises from $1$ gate at
+$c = 2$ to $4$ at $c = 7$ and $c = 12$ and to $7$ gates at $c = 133$, $157$ and $183$. Only $27$ of
+the $200$ constants have any yield. The gap between the two kinds of marker is the price of
+the parameter, and it widens with $c$ while the blue markers do not move; that is the measured
+content of the statement that the yield per gate tends to decrease in $c$: the cost $\tau(c)$ is not monotone in $c$ ($\tau(13) = 5$ and $\tau(20) = 4$), but it rises from $1$ to $7$ over the range [MV for $c \le 200$]. The
+figure says nothing about $c > 200$ or about tower shapes beyond four iterations.
 
 \section{The seven-root threshold}\label{sec:seven}
 
@@ -642,9 +1073,8 @@ Let $t_1 = 2$ and $t_{i+1} = t_i^2$, and set
 \[
   p_m(x) \;=\; x^2\,(x^2-1)\prod_{i=2}^{m+1}\bigl(x^2 - t_i\bigr).
 \]
-Then $p_m$ has $z = 2m+3$ distinct integer roots and is computed by
-$\tau = 3m+4$ gates for $m \ge 1$ ($3$ gates when $m = 0$): three gates per two
-roots.
+Then $p_m$ has $z = 2m+3$ distinct integer roots and is computed by a program of $3m+4$ gates for $m \ge 1$ (and of $3$ gates when $m = 0$), so
+$\tau(p_m) \le 3m+4$: three gates per two roots.
 \end{proposition}
 
 The family is a useful calibration precisely because it is \emph{not} uniformly
@@ -701,7 +1131,39 @@ size is exactly $6$.
 The scan was validated before the full run: the same machinery run at threshold $6$
 returns $793$ unions on a single partition, so it detects unions when they
 exist. This half is unconditional; root-set unions require no evaluation
-window.
+window, and the root sets are computed exactly by Algorithm~\ref{alg:roots}.
+
+\begin{algorithm}[t]
+\caption{Union scan for a multiplicative ninth gate (one worker, one partition).}
+\label{alg:union}
+\begin{algorithmic}[1]
+\Require partition file of $\mathcal{F}_7$; threshold $k = 7$; the interned table
+\Ensure the maximum union size $\max_u$ and the list of hits with $u \ge k$
+\ForAll{rows $S$ of the partition}
+  \State $O \gets I \cup S$; \ $R_b \gets \mathrm{IntegerRoots}(b)$ for every $b \in O$ (memoized by identifier); \ $z^\ast \gets \max_b |R_b|$
+  \If{$z^\ast = 0$} \textbf{continue} \Comment{a union of size $k$ would need $z(t) \ge k > \zmax(8)$}
+  \EndIf
+  \For{each of the $200$ gate applications $t = a \circ b'$ over $O$ with $t \ne 0$}
+    \State $R_t \gets \mathrm{IntegerRoots}(t)$ (memoized)
+    \If{$|R_t| + z^\ast < k$} \textbf{continue} \Comment{no operand can complete the union}
+    \EndIf
+    \For{each $b \in O$}
+      \State $u \gets |R_t \cup R_b|$; \ $\max_u \gets \max(\max_u, u)$; \ record a hit if $u \ge k$
+    \EndFor
+  \EndFor
+\EndFor
+\State write the record of the partition atomically
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:union} is correct because for a multiplicative ninth gate
+$f = t \cdot b$ the distinct integer roots of $f$ are exactly $R_t \cup R_b$; the two
+prunes use only $|R_t \cup R_b| \le |R_t| + |R_b|$ and $\zmax(8) = 6$. Its cost per state is
+the $200$ gate applications plus at most $200 \times 10$ set unions of sets of at most
+six integers, with no polynomial arithmetic in the innermost loop. The scan took $13.1$\,h
+on the same machine and the same $256$-way partitioning as Algorithm~\ref{alg:scan}; its
+per-worker memory is the same interned table and caches (an operation cache of at most
+$4$ million entries and a root-set memo of at most $3$ million).
 
 \subsection{The additive half, and what ``windowed'' costs}\label{sec:seven:add}
 
@@ -759,16 +1221,26 @@ Lemma~\ref{lem:confine} does not make the windowed instrument unconditional. It
 prices the gap, and we measured the price. Constructing every candidate
 $f = t \pm b$ exactly on a sample of $6{,}400{,}000$ candidates drawn from four
 hash-partitioned frontier files, and reading each one's true trailing
-coefficient [MV]:
-\[
-\begin{array}{lrr}
-\text{identically zero (excluded)} & 93{,}898 & 1.467\%\\
-\text{confined by Lemma~\ref{lem:confine}} & 6{,}301{,}361 & 99.9248\%\\
-\text{excluded by } \deg f < 7 & 4{,}619 & 0.0732\%\\
-\text{window-limited}, \deg f \ge 7 & 122 & 0.0019\%
-\end{array}
-\]
-the last three percentages being of the $6{,}306{,}102$ nonzero candidates. The
+coefficient [MV] (Table~\ref{tab:window}); the last three percentages are of the
+$6{,}306{,}102$ nonzero candidates.
+
+\begin{table}[t]
+\centering
+\caption{Classification of $6{,}400{,}000$ exactly constructed additive candidates from four
+of the $256$ frontier partitions, by what decides them.}
+\label{tab:window}
+\begin{tabular}{lrr}
+\toprule
+class & candidates & share\\\midrule
+identically zero (excluded) & 93{,}898 & 1.467\%\\
+confined by Lemma~\ref{lem:confine} & 6{,}301{,}361 & 99.9248\%\\
+excluded by $\deg f < 7$ & 4{,}619 & 0.0732\%\\
+window-limited, $\deg f \ge 7$ & 122 & 0.0019\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The
 degree row is arithmetic rather than a lemma: seven distinct roots require
 degree at least seven, so those candidates are excluded with no reference to the
 window at all. Together, $99.998\%$ of nonzero candidates are decided
@@ -829,8 +1301,10 @@ S(f) := \sum_{n \in B\setminus Z}\Bigl(v_p\bigl(f(n)\bigr) - \max(m'-1,0)\,v_p(n
 \end{lemma}
 \begin{proof}
 As in Lemma~\ref{lem:confine}, $f = g\prod_i(x - r_i)$ with $g \in \Z[x]$. If
-$m \ge 1$ then $0$ is one of the $r_i$ and the remaining factor $x^{m-1}$ divides
-$g$, which gives the first inequality; for $m' = 0$ nothing is subtracted. On
+$m \ge 1$ and $0$ is one of the $r_i$, the remaining factor $x^{m-1}$ divides $g$; if $0$ is not
+one of the $r_i$ (they need not be all the roots), $x^m$ divides $g$, which is stronger because
+$m \ge m' \ge \max(m'-1,0)$. Either way $v_p(g(n)) \ge \max(m'-1,0)\,v_p(n)$, which gives the first
+inequality; for $m' = 0$ nothing is subtracted. On
 $B \setminus Z$ the value $f(n)$ is nonzero, so the inequality holds there; sum it.
 A root cannot lie in $B \setminus Z$. A root $z \in Z$ contributes exactly
 $C(z)$. A root $r \notin B$ contributes at least $\sum_{n}w(n - \rho)$ with
@@ -850,6 +1324,50 @@ minimum otherwise). Without that correction, candidates of the form $x^j h$ or
 $2^j h$ pass the $2$-adic block easily; the $3$-adic block is blind to powers of
 $2$.
 
+\begin{algorithm}[t]
+\caption{Construction of the bound table $L_k$ for one prime $p$, block $B$ of $p^a$ points and exponent $e$.}
+\label{alg:table}
+\begin{algorithmic}[1]
+\Require $p$, $a$, $e$, $k$; the points $n_0 < \dots < n_{L-1}$ of $B$ with $L = p^a$
+\State $V[i][j] \gets v_p(n_j - n_i)$ for $i \ne j$ \Comment{valuation of the root--point differences inside $B$}
+\State $W[\rho][j] \gets a$ if $L \mid (n_j - \rho)$ else $v_p(n_j - \rho)$, for $\rho = 0, \dots, L-1$
+\ForAll{masks $Z \subseteq \{0, \dots, L-1\}$ (bit $i$ set when the value at $n_i$ vanishes modulo $p^e$)}
+  \State $C_i \gets \sum_{j \notin Z} V[i][j]$ for $i \in Z$
+  \State $M \gets \min_\rho \sum_{j \notin Z} W[\rho][j]$
+  \State $L_k[Z] \gets$ the sum of the $k$ smallest numbers of $\{C_i : i \in Z\} \cup \{M, \dots, M\}$ ($k$ copies of $M$)
+\EndFor
+\State \Return the table $L_k$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[t]
+\caption{The block filter for every candidate $f = t \pm b$ of one batch of frontier states.}
+\label{alg:filter}
+\begin{algorithmic}[1]
+\Require a batch of states; residue tables of the interned polynomials at the $16$ points of the $2$-adic block (mod $2^{64}$) and at the $9$ points of the $3$-adic block (mod $3^{20}$); degree and trailing-index tables; $k = 7$
+\ForAll{states $S$, eighth gates $t = a \circ c$ over $O = I \cup S$ ($200$ of them), operands $b \in O$}
+  \State $\deg t$ exactly for a product, at most the larger operand degree otherwise; $m' \gets$ sum (product) or minimum (otherwise) of the operands' trailing indices, then minimum with the trailing index of $b$
+  \If{$\max(\deg t, \deg b) < k$} count as dropped by degree; \textbf{continue} \EndIf
+  \ForAll{signs $\sigma \in \{+, -\}$}
+    \State $F_2 \gets$ residues of $t \pm b$ at the $2$-adic points (word operations on the stored residues)
+    \If{the $2$-adic bound fails: $S_2(F_2, m') < L_k^{(2)}[\mathrm{mask}(F_2)]$} \textbf{continue} \EndIf
+    \State $F_3 \gets$ residues of $t \pm b$ at the $3$-adic points
+    \If{the $3$-adic bound fails} \textbf{continue} \EndIf
+    \If{$F_2 = 0$ and $F_3 = 0$ at every point} \Comment{suspect}
+      \State build $f$ exactly; drop the candidate if the exact build is the empty polynomial
+    \Else
+      \State build $f$ exactly; \ \textbf{if} the build is the empty polynomial \textbf{then} count it as a zero eighth gate and drop it
+    \EndIf
+    \State $R \gets \mathrm{IntegerRoots}(f)$; \ report a hit if $|R| \ge k$
+  \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+In Algorithm~\ref{alg:filter}, $S_p(F, m') = \sum_{n \notin Z} \bigl( v_p(F(n)) - \max(m'-1,0)\,v_p(n) \bigr)$ is the left-hand side of Equation~\eqref{eq:block} read from the residues, and the exact build returns the empty polynomial in exactly two situations: the eighth gate $t$ is the zero polynomial (the build then stops at $t$, so $f = \pm b$ is not formed), or $f$ is identically zero.
+
+\textbf{Costs and memory.} Algorithm~\ref{alg:table} runs once per prime: $2^{16}$ masks over $16$ points for $p = 2$ and $2^{9}$ masks over $9$ points for $p = 3$, with $O(2^L L^2)$ operations for the sums and a sort of $L + k$ numbers per mask; the tables hold $2^{16}$ and $2^{9}$ small integers ($256$ KiB and $2$ KiB). In Algorithm~\ref{alg:filter} the work per candidate that survives the degree test is $O(L)$ word operations with $L = 16$ for the $2$-adic layer, and $O(Le)$ with $L = 9$ points for the $3$-adic layer, whose valuations are read by up to $e = 20$ divisions by $3$ per point in \texttt{padic.py}, plus a table lookup; the degree test alone removes $96.0\%$ of the candidates. The residue tables of the $2{,}161{,}049$ interned polynomials occupy $2{,}161{,}049 \times 16 \times 8 = 276{,}614{,}272$ bytes ($2$-adic) and $2{,}161{,}049 \times 9 \times 8 = 155{,}595{,}528$ bytes ($3$-adic) [D from the table shapes], are memory-mapped and shared by the worker processes, and so is the packed polynomial store; states are processed in batches of $256$. The whole scan evaluated $4{,}193{,}843{,}648{,}000$ candidates in $21.4$\,h of wall-clock time on $20$ processes ($381$ process-hours), an aggregate $5.4 \times 10^{7}$ candidates per second and $3.1 \times 10^{6}$ per process-second [D from those two figures]. The expensive step is the exact build: $2{,}937{,}472{,}943$ candidates pass both layers, and $2{,}345{,}860{,}018$ of them are root-counted by Algorithm~\ref{alg:roots}.
+
 \begin{theorem}[MV, no window]\label{thm:nine-add-free}
 No $9$-gate constant-free program whose final gate is an addition or a subtraction
 computes a polynomial with $7$ distinct integer roots.
@@ -858,21 +1376,123 @@ computes a polynomial with $7$ distinct integer roots.
 The scan covers the same space as Theorem~\ref{thm:nine-add}: all
 $1{,}048{,}460{,}912$ depth-$7$ states, all $200$ eighth gates on their $10$
 operands, all $10$ operands $b$ and both signs. Every candidate $f = t \pm b$ is
-dropped only by a proof or decided exactly:
+dropped only by a proof or decided exactly; Table~\ref{tab:funnel} gives the counters of the
+engine, summed over the $256$ partitions.
+
+\begin{table}[t]
+\centering
+\caption{Stage counters of the window-free additive scan of the ninth gate, summed over the
+$256$ partitions of the depth-$7$ frontier. The three rows below ``pass the $3$-adic block''
+partition it: every candidate that passes both layers is either a full-residue-zero suspect,
+a candidate whose eighth gate $t$ is the zero polynomial, or a candidate built exactly and
+root-counted.}
+\label{tab:funnel}
+\begin{tabular}{lr}
+\toprule
+stage & candidates\\
+\midrule
+all candidates ($4000 \times 1{,}048{,}460{,}912$ states) & 4{,}193{,}843{,}648{,}000\\
+dropped by degree: $\deg f \le \max(\deg t, \deg b) < 7$ & 4{,}026{,}692{,}708{,}694\\
+pass the $2$-adic block & 3{,}840{,}174{,}256\\
+pass the $3$-adic block & 2{,}937{,}472{,}943\\
+\quad suspects: residues zero at all $25$ points, tested exactly, all dropped & 498{,}669{,}099\\
+\quad eighth gate $t \equiv 0$, so $f = \pm b$ (dropped, $z(b) \le 5$) & 92{,}943{,}826\\
+\quad built exactly and root-counted & 2{,}345{,}860{,}018\\
+with $7$ distinct integer roots & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The three indented rows add up to the row above them,
 \[
-\begin{array}{lr}
-\text{candidates} & 4{,}193{,}843{,}648{,}000\\
-\text{dropped: } \deg f \le \max(\deg t, \deg b) < 7 & 4{,}026{,}692{,}708{,}694\\
-\text{pass the $2$-adic block} & 3{,}840{,}174{,}256\\
-\text{pass the $3$-adic block} & 2{,}937{,}472{,}943\\
-\text{identically zero ($t = \mp b$, built exactly)} & 92{,}943{,}826\\
-\text{built exactly and root-counted} & 2{,}345{,}860{,}018\\
-\text{with $7$ distinct integer roots} & 0
-\end{array}
+  498{,}669{,}099 + 92{,}943{,}826 + 2{,}345{,}860{,}018 \;=\; 2{,}937{,}472{,}943 ,
 \]
+so the stage counters are consistent. The engine
+counts a suspect in the first row and, if the exact build is nonzero, would count it again among
+the exactly built ones; the identity therefore holds only if no suspect was nonzero, and
+the recorded counters show that every one of the $498{,}669{,}099$ suspects was dropped by the
+exact test [D from the counters and the engine's control flow]. The exact test builds $f$
+and drops the candidate when the build is the empty polynomial; this covers $f \equiv 0$, and
+also the case $t \equiv 0$, in which the build stops at $t$. The latter is the source of the
+$92{,}943{,}826$ candidates of the second indented row: the eighth gate is the zero polynomial
+(for example $t = 1 + (-1)$), so that $f = \pm b$ with $b$ a nonzero operand. These candidates
+are dropped without a root count and the drop is sound: $b$ is a value of a program of at
+most $7$ gates, so $z(b) \le \zmax(7) = 5 < 7$ by Theorem~\ref{thm:census}.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.5\textwidth, scale only axis, height=6.2cm, xbar, xmode=log,
+  xmin=1e7, xmax=1e14, y dir=reverse, ytick={0,...,6},
+  yticklabels={all candidates, degree survivors, pass the $2$-adic block, pass the $3$-adic block,
+  built exactly and root-counted, eighth gate $t \equiv 0$, suspects tested exactly},
+  yticklabel style={font=\small, align=right}, bar width=9pt,
+  xlabel={candidates (logarithmic axis)}, grid=major, enlarge y limits=0.1,
+  nodes near coords, point meta=rawx,
+  nodes near coords style={font=\scriptsize, anchor=west, fill=white, inner sep=1pt,
+    /pgf/number format/.cd, fixed, precision=0, 1000 sep={\,}}]
+\addplot[fill=blue!35!white, draw=blue!70!black] table[x=count, y=idx]{figures/fig-funnel.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Stage counters of the window-free additive scan of the ninth gate on a logarithmic axis,
+summed over the $256$ partitions (\texttt{EXP-015}, \texttt{final.json}). The last three bars
+partition the survivors of the $3$-adic block; the scan found no polynomial with seven distinct
+integer roots, a count of zero that a logarithmic axis cannot show.}
+\label{fig:funnel}
+\end{figure}
+
+Figure~\ref{fig:funnel} shows where the work goes. The degree test alone removes $96.0\%$
+of the $4.19 \times 10^{12}$ candidates, leaving $1.67 \times 10^{11}$; the $2$-adic block keeps
+$2.3\%$ of these and the $3$-adic block keeps $76.5\%$ of what remains, so that after both layers
+$2.94 \times 10^{9}$ candidates survive, $0.070\%$ of the candidates [D from the counters]. Of those, $79.9\%$
+are built exactly and root-counted, $17.0\%$ are the suspects whose residues vanish at all
+$25$ points and $3.2\%$ have $t \equiv 0$. The two filters therefore decide most of the
+space cheaply, while the exact build stays the dominant cost, and the figure shows that the
+number of exact builds is $2.3 \times 10^{9}$ against $4.2 \times 10^{12}$ candidates, a ratio of
+$5.6 \times 10^{-4}$. What the figure does not show is soundness: the filters drop a candidate
+only by the proven criterion of Lemma~\ref{lem:padic}, and the soundness argument is the one given
+above, not the bar lengths.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=1 by 2, vertical sep=1.7cm},
+  width=0.9\textwidth, height=4.6cm, xmin=-5, xmax=260, xlabel={partition index $h$},
+  grid=major, scaled y ticks=false,
+  yticklabel style={/pgf/number format/.cd, fixed, precision=0, 1000 sep={\,}}]
+\nextgroupplot[ylabel={distinct states}, ymin=4088000, ymax=4104000,
+  ytick={4090000,4095000,4100000}, title={\small depth-$7$ frontier, states per partition (\texttt{EXP-011})}]
+\addplot[only marks, mark=*, mark size=1.1pt, color=blue!70!black] table[x=part, y=states]{figures/fig-partitions.dat};
+\nextgroupplot[ylabel={wall-clock seconds}, ymode=log, ymin=500, ymax=40000,
+  title={\small window-free scan, run time per partition (\texttt{EXP-015})}]
+\addplot[only marks, mark=*, mark size=1.1pt, color=red!70!black] table[x=part, y=seconds]{figures/fig-partitions.dat};
+\end{groupplot}
+\end{tikzpicture}
+\caption{Load balance over the $256$ hash partitions of the depth-$7$ frontier. Top: the number of
+distinct states in each partition file. Bottom: the wall-clock time each partition took in the
+window-free scan of the ninth gate, on a logarithmic axis. Both panels come from the per-partition
+records of the experiments, whose totals are $1{,}048{,}460{,}912$ states and $4.19 \times 10^{12}$ candidates.}
+\label{fig:partitions}
+\end{figure}
+
+Figure~\ref{fig:partitions} separates two properties of the partitioning. The hash spreads the
+states almost evenly: the partitions hold between $\PartStatesMin$ and $\PartStatesMax$ states,
+a spread of $\PartStatesSpread\%$ of the mean, so no partition is a memory outlier [D from the
+partition records]. The run times are not even: the same partitions took between $\PartSecMin$ and
+$\PartSecMax$ seconds (median $\PartSecMedian$), $\PartSecOver$ of them more than $10{,}000$
+seconds, and their sum is about $\PartSecHours$ process-hours, the figure quoted above. The work
+that the run times could reflect is nearly constant: the number of candidates built exactly per
+partition lies between $\PartExactMin$ and $\PartExactMax$ ($\PartExactSpread\%$ of its mean), and
+its correlation with the elapsed time over the $256$ partitions is $\PartCorr$ [D from the
+partition records]. The spread of the times therefore does not come from the mathematics of the
+partitions; that it comes from the scheduling of the processes on a shared machine is a likely
+reading that the records, which keep only the elapsed times, cannot confirm [U]. The wall-clock
+time of the scan is a property of the run and not of the algorithm, and the per-candidate cost
+of Algorithm~\ref{alg:filter} is the quantity to compare across implementations.
+
 Before production, the engine at thresholds $k = 4, 5, 6$ was compared with
-building \emph{every} candidate exactly, with no filter, on samples of $150$ to
-$3{,}000$ states from five partitions: the counts agree in every case ($1535$,
+building \emph{every} candidate exactly, with no filter, on samples of $500$ to
+$3{,}000$ states from five partitions (the gate output records $500$, $500$, $1500$, $1500$ and $3000$ states): the counts agree in every case ($1535$,
 $864$, $6$, $15$ and $0$). Planted polynomials with $4$ to $7$ distinct roots of
 absolute value up to $5000$, with powers of $x$ and of $2$ and $3$ in their
 content, pass both blocks for every admissible $m'$. Each partition's frontier
@@ -960,15 +1580,54 @@ square-free part $f/\gcd(f,f')$ and count real roots by Sturm's theorem in
 exact rational arithmetic, with no floating point at any stage. The method
 was first validated on seven known answers, among them $x^2+1$ (none), $x^2$ (a
 double root counted once), $T_4$ (four), and $(x^2-1)(x^2-4)(x^2-16)$ (six).
-Writing $\zrmax(\tau)$ for the maximum over $\tau$-gate polynomials:
-\[
-\begin{array}{l|ccccc|ccc}
-\tau            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\\hline
-\zmax(\tau)     & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
-\zrmax(\tau)    & 1 & 2 & 3 & 4 & 6 & 8 & \text{--} & \text{--}\\
-\zpmax(\tau)    & 1 & 2 & 4 & 8 & 16 & 32 & 64 & 128
-\end{array}
-\]
+Writing $\zrmax(\tau)$ for the maximum over $\tau$-gate polynomials, Table~\ref{tab:ladders}
+and Figure~\ref{fig:ladders} give the three ladders on the same programs, with the rational
+ladder of Section~\ref{sec:rational} as the fourth.
+
+\begin{table}[t]
+\centering
+\caption{The ladders $\zmax$ (integer roots), $\zrmax$ (distinct real roots, exact Sturm
+counting) and $\zpmax$ (roots over $\mathbb{F}_p$, $=2^{\tau-1}$) by number of gates; a dash
+marks a depth not computed. The rational ladder $\zqmax$ equals $\zmax$ at every depth
+computed, $\tau \le 6$.}
+\label{tab:ladders}
+\begin{tabular}{l|cccccccc}
+\toprule
+$\tau$            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\\midrule
+$\zmax(\tau)$     & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
+$\zrmax(\tau)$    & 1 & 2 & 3 & 4 & 6 & 8 & -- & --\\
+$\zpmax(\tau)$    & 1 & 2 & 4 & 8 & 16 & 32 & 64 & 128\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=7.2cm, ymode=log, log basis y=2,
+  xlabel={gates $\tau$}, ylabel={maximum number of roots},
+  xmin=0.7, xmax=9.3, ymin=0.8, ymax=300, xtick={1,...,9},
+  ytick={1,2,4,8,16,32,64,128,256}, yticklabels={1,2,4,8,16,32,64,128,256},
+  grid=both, minor grid style={draw=none}, legend pos=north west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[color=blue!70!black, mark=*, thick] coordinates {(1,1)(2,2)(3,4)(4,8)(5,16)(6,32)(7,64)(8,128)(9,256)};
+\addlegendentry{$\mathbb{F}_p$: $2^{\tau-1}$ (proved)}
+\addplot[color=red!70!black, mark=square*, thick] coordinates {(1,1)(2,2)(3,3)(4,4)(5,6)(6,8)};
+\addlegendentry{$\mathbb{R}$ (exhaustive, $\tau \le 6$)}
+\addplot[color=black, mark=o, thick, dashed, mark options={solid}] coordinates {(1,1)(2,2)(3,3)(4,3)(5,4)(6,5)};
+\addlegendentry{$\mathbb{Q}$ (exhaustive, $\tau \le 6$)}
+\addplot[color=green!45!black, mark=triangle*, thick] coordinates {(1,1)(2,2)(3,3)(4,3)(5,4)(6,5)(7,5)(8,6)(9,6)};
+\addlegendentry{$\mathbb{Z}$ (census, $\tau \le 9$)}
+\end{axis}
+\end{tikzpicture}
+\caption{The four ladders of maximum root counts against the number of gates, on a base-$2$
+logarithmic scale. The rational ladder (dashed) coincides with the integer ladder at every
+depth computed; the real ladder separates from them at $\tau = 4$ and the $\mathbb{F}_p$
+ladder at $\tau = 3$. Values: Table~\ref{tab:ladders}, Theorem~\ref{thm:census} and
+Section~\ref{sec:rational}.}
+\label{fig:ladders}
+\end{figure}
+
 (The real row is exhaustive through $\tau = 6$. That row was obtained without a
 depth-$6$ census: the last-gate lemma applied to the $778{,}087$-state depth-$5$
 frontier enumerates all $134{,}494$ new $\tau = 6$ polynomials, and the same run is
@@ -982,7 +1641,7 @@ then $6$ against $16$); $\mathbb{Z}$ trails both.
 
 The real record at $\tau = 5$ is worth writing out, because it is produced by
 the same difference-of-squares mechanism that Section~\ref{sec:mech} identifies
-as the integer record-maker:
+as one of the integer record-makers:
 \[
   a = x\cdot x,\quad b = a - 1,\quad c = b \cdot b,\quad d = c - a,\quad
   e = b \cdot d,
@@ -1014,17 +1673,56 @@ $\tau = 6$.
 
 It also stalls, in the same manner as the integer-side towers of
 Section~\ref{sec:stall}. Iterating the step gives distinct real roots against
-degree
-\[
-\begin{array}{l|ccccc}
-\text{gates} & 4 & 6 & 8 & 10 & 12\\\hline
-\deg         & 4 & 8 & 16 & 32 & 64\\
-\text{real}  & 4 & 8 & 16 & 28 & 48
-\end{array}
-\]
-[MV]: three clean doublings, reaching $16$ distinct real roots at $8$ gates,
-after which the iterate ceases to be totally real and the successive ratios fall
+degree (Table~\ref{tab:doubling}) [MV]: two clean doublings, from $4$ to $8$ to $16$ distinct real roots at $8$ gates,
+after which the third iterate is no longer totally real ($28$ real roots against degree $32$) and the successive ratios fall
 to $1.75$ and $1.71$.
+
+\begin{table}[t]
+\centering
+\caption{The doubling step $g \mapsto g\cdot(g - x^2)$ iterated from the $\tau = 4$ real
+record: degree and number of distinct real roots at each gate count.}
+\label{tab:doubling}
+\begin{tabular}{l|ccccc}
+\toprule
+gates & 4 & 6 & 8 & 10 & 12\\\midrule
+$\deg$ & 4 & 8 & 16 & 32 & 64\\
+real roots & 4 & 8 & 16 & 28 & 48\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=6.8cm, ymode=log, log basis y=2,
+  xlabel={gates}, ylabel={distinct real roots, or degree},
+  xmin=2.5, xmax=12.5, ymin=1.5, ymax=100, xtick={3,4,...,12},
+  ytick={2,4,8,16,32,64}, yticklabels={2,4,8,16,32,64},
+  grid=both, minor grid style={draw=none}, legend pos=north west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[color=black, mark=o, thick, dashed, mark options={solid}] table[x=gates, y=degree]{figures/fig-doubling.dat};
+\addlegendentry{degree of the doubling iterate}
+\addplot[color=red!70!black, mark=square*, thick] table[x=gates, y=real]{figures/fig-doubling.dat};
+\addlegendentry{real roots, $g \mapsto g\,(g - x^2)$}
+\addplot[color=blue!70!black, mark=triangle*, thick] table[x=gates, y=real]{figures/fig-chebyshev.dat};
+\addlegendentry{real roots, Chebyshev tower $T_{2^k}$}
+\end{axis}
+\end{tikzpicture}
+\caption{Real roots against gates for the two doubling constructions, on a base-$2$ logarithmic
+axis: the iterate of $g \mapsto g\,(g - x^2)$ from the $\tau = 4$ real record (red squares,
+with its degree dashed) and the Chebyshev tower $T_{2^k}$, which costs three gates per doubling
+(blue triangles). Distinct real roots counted exactly by Sturm sequences.}
+\label{fig:doubling}
+\end{figure}
+
+Figure~\ref{fig:doubling} shows both effects of the paragraph above. The doubling step
+runs at two gates per doubling for two doublings: its real-root curve lies on the degree
+curve at $4, 8, 16$ real roots for $4, 6, 8$ gates, against $2, 4, 8, 16$ for the Chebyshev
+tower at $3, 6, 9, 12$ gates; at $8$ gates the step has $16$ real roots and the tower $4$ (it has
+$8$ at $9$ gates). The red curve then leaves the degree curve ($28$ against $32$ at $10$ gates,
+$48$ against $64$ at $12$), and at $12$ gates it holds $48$ real roots against the tower's $16$.
+The figure is a statement about these two constructions and these gate counts; the real ladder
+$\zrmax$ is exhaustive only through $\tau = 6$ (Table~\ref{tab:ladders}).
 
 We claim no rate for $\zrmax$: six points cannot distinguish
 $\Theta(2^{\tau/2})$ from anything nearby, the family's own rate decays past
@@ -1050,15 +1748,24 @@ exactly two integer roots, $\pm 1$, for every $k$.
 The conjecture counts \emph{integer} roots. Its natural algebraic relaxation
 counts rational ones, and it is not obvious which of the two constraints is
 doing the work. Writing $\zqmax(\tau)$ for the maximum number of distinct
-rational roots, computed exactly by the rational root theorem over $\mathbb{Z}$:
-\[
-\begin{array}{l|cccccc}
-\tau           & 1 & 2 & 3 & 4 & 5 & 6\\\hline
-\zmax(\tau)    & 1 & 2 & 3 & 3 & 4 & 5\\
-\zqmax(\tau)   & 1 & 2 & 3 & 3 & 4 & 5
-\end{array}
-\]
-exhaustively through $\tau = 6$ [MV], the $\tau = 6$ row again obtained by the
+rational roots, computed exactly by the rational root theorem over $\mathbb{Z}$
+(Table~\ref{tab:rational}):
+
+\begin{table}[t]
+\centering
+\caption{The maximum number of distinct integer roots $\zmax(\tau)$ and of distinct rational roots
+$\zqmax(\tau)$ over all polynomials with at most $\tau$ gates, exhaustive through $\tau = 6$; the two rows coincide.}
+\label{tab:rational}
+\begin{tabular}{l|cccccc}
+\toprule
+$\tau$           & 1 & 2 & 3 & 4 & 5 & 6\\\midrule
+$\zmax(\tau)$    & 1 & 2 & 3 & 3 & 4 & 5\\
+$\zqmax(\tau)$   & 1 & 2 & 3 & 3 & 4 & 5\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ladders are exhaustive through $\tau = 6$ [MV], the $\tau = 6$ row again obtained by the
 last-gate lemma over the depth-$5$ frontier and validated by requiring the integer
 maximum on the same set to reproduce $\zmax(6) = 5$.
 
@@ -1070,8 +1777,22 @@ objects are in fact different. The $\tau = 6$ rational record is
 \]
 with five distinct rational roots $\{0, \pm\tfrac12, \pm 1\}$ but only
 \emph{three} integer ones, while the $\tau = 6$ integer record attains five
-integer roots outright. Half-integer roots are cheap here, since the constants
-$2$ and $4$ are cheap, and they still do not raise the ceiling.
+integer roots outright. A six-gate program for it, with the value of each gate, is
+\[
+\begin{gathered}
+  g_1 = x\cdot x,\quad g_2 = g_1 + g_1 = 2x^2,\quad g_3 = g_2 - 1 = 2x^2 - 1,\\
+  g_4 = g_3\cdot g_3,\quad g_5 = g_4 - g_1 = 4x^4 - 5x^2 + 1,\quad
+  g_6 = g_2\cdot g_5 ,
+\end{gathered}
+\]
+and $g_6 = 2x^2(4x^4 - 5x^2 + 1) = 2x^2(4x^2-1)(x^2-1)$ is the record [MV: the six gates are replayed in exact integer arithmetic by
+\path{scripts/replay_rational_tau6.py}, and the command and its output are stored in
+\path{context/2026-11-14-rational-tau6-program.md}, both in the problem folder of the repository]. The replay shows that
+the program computes the record, so $\tau \le 6$ for it; that $\tau$ is not smaller, and that no
+polynomial of at most six gates has more than five rational roots, is the classification of the
+rational census, not of the replay. Half-integer
+roots are cheap here, since the doubled square $2x^2$ is a single gate, and they still do not
+raise the ceiling.
 
 So integrality is not where the difficulty lives, at least at the bottom of the
 ladder: the same growth function appears over $\mathbb{Q}$. Whatever separates
@@ -1092,30 +1813,146 @@ that the comparison is exact on one side, so the gap being conjectured is
 a gap between a proved exponential and a measured linear rate rather than
 between two informal impressions.
 
-\section{Limits, and what would count as progress}\label{sec:limits}
+\section{Ablation: what each lemma and filter contributes}\label{sec:ablation}
 
-Nothing above bears on the conjecture asymptotically: censuses to depth $8$ cannot
-distinguish polynomial from superpolynomial growth, and our theorems close
-construction classes rather than open the bounding problem. In the measured
-landscape, every mechanism observed or excluded so far pays $\Theta(1)$
-gates per root, the growth function's first structure (plateaus at $4$, $7$ and $9$) is
-the visible cost of constant-building, and the geometric-progression family remains
-the best known factory, linear-rate, exactly as when Rojas noted that the conjecture
-fails for $\kappa < 1$ \cite{Rojas2003}.
+The method has five separable components: the normal form (Lemmas~\ref{lem:zero} and~\ref{lem:norm}),
+set-level deduplication (Lemma~\ref{lem:state}), the last-gate lemma (Lemma~\ref{lem:lastgate}), and, for
+the additive ninth gate, the degree test and the $2$-adic and $3$-adic blocks of Lemma~\ref{lem:padic}.
+The records separate the last three kinds of contribution only partly, and the section says which.
 
-The census makes the following open items precise:
-(i) $\zmax(10)$ and the eight-root threshold, which lies in $\{10,\dots,13\}$ by
-the square-tower family ($m = 3$ gives $9$ roots in $13$ gates) and the census;
-the block criterion of Lemma~\ref{lem:padic} applies unchanged at the tenth gate,
-but the depth-$8$ frontier it would need has not been built;
-(ii) extend the integer frontier past Markstr\"om's length $11$ \cite{Markstrom2014},
-including his monotonicity question for $\tau(n!)$;
-(iii) measure the growth of the valuation-spectrum bound
-$s \le N_p(s) \le s(s+1)/2$ of \cite{Rojas2003}, where the true rate is stated as
-open;
-(iv) the census's $2$-adic instrumentation records that all depth-$5$--$7$ record
-polynomials concentrate their roots on the valuations $\{0, 1\}$ [MV], consistent
-with the pressure sitting on the digit-conjecture side of Rojas' reduction [C].
+\textbf{The filter cascade.} Table~\ref{tab:ablation} gives, for the window-free additive scan, the number
+of candidates left after each stage and the share that the stage removed from what reached it.
+
+\begin{table}[t]
+\centering
+\caption{Candidates left after each stage of the window-free additive scan of the ninth gate (from the
+counters of \texttt{EXP-015}) and the share of its input that each stage removed; the last row is the
+windowed scan of the same $4000 \times 1{,}048{,}460{,}912$ candidates (\texttt{EXP-013}), which
+promotes far fewer candidates to exact counting but is sound only for roots in $[-32,32]$.}
+\label{tab:ablation}
+\input{figures/tab-ablation.tex}
+\end{table}
+
+The stages are applied in sequence by one engine, so Table~\ref{tab:ablation} is a cascade and not a
+leave-one-out ablation: a run without one layer was not made, and the contribution of a layer is its
+removal share given the layers before it. Read that way, the degree test removes $96.01\%$ of the
+candidates, the $2$-adic block removes $97.70\%$ of the survivors, and the
+$3$-adic block removes a further $23.51\%$. The $3$-adic layer is the weakest of the three, but it still
+removes $902{,}701{,}313$ candidates that would otherwise have reached the stage containing the exact
+build, $38\%$ of the number of candidates that are built exactly [D from the counters]. The exact build is
+the expensive step, so each layer pays for itself in proportion to what it removes before that step;
+how much wall-clock time each layer saved is not recorded [U].
+
+\textbf{Windowed against window-free.} The windowed scan promoted $1{,}272{,}725$ candidates to exact
+counting, and the window-free filter lets through $2{,}937{,}472{,}943$, a factor of about $2{,}300$ more
+(and a factor of about $1{,}800$ more exact builds) [D from the two totals]. That factor is the price
+of removing the window: the windowed scan is sound only for seven-rooters with all roots in
+$[-32,32]$, and Lemma~\ref{lem:confine} with Table~\ref{tab:window} shows what the window can miss, while
+the window-free filter is sound for roots anywhere in $\Z$. The two instruments are therefore not
+interchangeable, and the headline claim $\zmax(9) = 6$ rests on the second.
+
+\textbf{The last-gate lemma and the solver lane.} The last-gate lemma lets the depth-$8$ question
+be decided by scanning the stored depth-$7$ frontier, about $2 \times 10^{11}$ gate applications, instead of
+constructing a depth-$8$ frontier; the size of that frontier was never built or recorded, so the saving
+is not quantified [U]. The alternative that was tried, general-purpose solvers on the smallest
+free-structure search, did not finish within $30$ minutes and one hour (Section~\ref{sec:depth8}), whereas
+the exhaustive machinery one level down built the complete depth-$6$ frontier, and so decided
+every six-gate program, in $185.2$ seconds in the validation run of the pipeline (\texttt{EXP-011},
+\texttt{pipeline.json}). On this problem the exhaustive construction therefore beats the solvers by
+orders of magnitude in the one comparison that was run, which is a single comparison on one
+instance and not a benchmark.
+
+\section{Discussion}\label{sec:discussion}
+
+The census answers a narrow question exactly: at the bottom of the ladder, with $-1$, $0$ and $1$ free,
+the maximum number of distinct integer roots grows as $1,2,3,3,4,5,5,6,6$, and seven roots need ten
+gates. Three readings follow from the records, and each has a limit stated with it.
+
+\textbf{The growth is slow and stepped.} The three plateaus, at $\tau = 4$, $7$ and $9$, are the visible
+cost of constants: the free set $\{0,\pm1,\pm2\}$ is cheap, and every root beyond it needs a built
+constant (Section~\ref{sec:census}). The first plateau shows a pattern that
+the later ones repeat. Eight of the ten records at $\tau = 5$ are intervals and two are the symmetric
+splitting over $x^2 - 2$, so the record at a given depth is not produced by one mechanism; the six-rooter at eight gates
+is a translation chain, not a squaring tower. The limit of this reading is that nine points
+cannot distinguish a linear rate from a slow superlinear one.
+
+\textbf{What limits $\Z$ is distinctness.} Over $\mathbb{F}_p$ the maximum is exactly $2^{\tau-1}$,
+the degree ceiling; over $\mathbb{R}$ the doubling step reaches $16$ real roots at eight gates
+(Figure~\ref{fig:doubling}); over $\Z$ five gates already give a completely split polynomial of degree
+$16$ with two distinct roots (Section~\ref{sec:fp}). The mechanism proposed
+in Section~\ref{sec:rational}, the $2^k$-torsion of the cyclic group $\mathbb{F}_p^{\times}$ against
+$\{\pm1\}$ in $\Z^{\times}$, explains why the finite-field ladder is exponential; it is an
+explanation of the measured gap and not a proof that the integer ladder stays polynomial.
+The rational ladder equals the integer one through $\tau = 6$ although the extremal polynomials differ,
+so denominators buy nothing in the maximum over that range [MV].
+
+\textbf{Where the methods fail.} The enumeration is exact but its state space grows faster than
+exponentially (Figure~\ref{fig:counts}), so the frontier method stops at depth $7$, and the last-gate lemma
+buys one depth. The window-free criterion removes the window but admits more candidates (Table~\ref{tab:ablation}),
+and at the tenth gate it cannot be applied without a depth-$8$ frontier that has not been built. The
+stall theorems close the constructions that iterate one map, not constructions that combine several, and the
+family measurement covers $c \le 200$ and four iterations.
+
+What would count as progress is a short list. (i) $\zmax(10)$ and the eight-root threshold: it is at least
+$10$ because $\zmax(9) = 6$, and at most $11$ by an explicit program, namely the eight-gate
+six-rooter chain $q(q-2)(q-6)$ extended by $6 = 4 + 2$, $q - 12 = (q-6) - 6$ and one product, whose roots are
+$\{-3,\dots,4\}$ [D; replayed in exact arithmetic by the independent review of this draft], so the threshold lies
+in $\{10, 11\}$; the block criterion of Lemma~\ref{lem:padic} applies unchanged at the tenth gate, but the depth-$8$ frontier
+it would need has not been built. (ii) Extending the integer frontier past Markstr\"om's length $11$
+\cite{Markstrom2014}, including his monotonicity question for $\tau(n!)$. (iii) Measuring the growth of
+the valuation-spectrum bound $s \le N_p(s) \le s(s+1)/2$ of \cite{Rojas2003} [V for the bound; that the
+true rate is open is [U]]. (iv) The $2$-adic instrumentation records that the depth-$5$ and depth-$6$ record
+polynomials concentrate their nonzero roots on the valuations $\{0, 1\}$ [MV], consistent with the pressure
+sitting on the digit-conjecture side of Rojas' reduction [C].
+
+\section{Limitations}\label{sec:limitations}
+
+\textbf{Scope.} Nothing above bears on the conjecture asymptotically: censuses to depth $8$ cannot
+distinguish polynomial from superpolynomial growth, and our theorems close construction classes rather
+than open the bounding problem. In the measured landscape, every mechanism observed or excluded so far pays
+$\Theta(1)$ gates per root, and the geometric-progression family remains the best known factory, linear-rate,
+which is what makes the conjecture fail for $\kappa < 1$ (Section~\ref{sec:conjecture}; the observation is
+Rojas' [V]). The values are stated for the convention with $-1$, $0$ and $1$ free; under the convention of
+Rojas with $1$ alone free the costs differ by at most two gates (Section~\ref{sec:conjecture}), and the
+ladder would have to be recomputed to state it there.
+
+\textbf{Internal validity.} The exhaustive claims rest on one implementation of the enumerator, checked by the
+fourteen Markstr\"om anchor values, by an independent SymPy root counter on two pools of $284$ and $228$
+polynomials, by identical-machinery reproductions one depth down, and by completeness audits of every
+partitioned scan. The records contain no second implementation of the depth-$8$ last-gate scan [U], and a defect
+common to the enumerator and the SymPy comparison pools would not be caught by those checks. The
+window-free filter is proved and unit-tested, and its known-answer gates at $k = 4, 5, 6$ would have exposed a
+table error affecting those thresholds, not necessarily one specific to $k = 7$; the $k = 7$ table is built by the
+same code.
+
+\textbf{Construct and external validity.} The measured quantity is the maximum over a bounded gate count,
+so it is blind to what happens at larger counts. The model counts gates, not bit operations, and its
+integer coefficients are unbounded. The real and rational ladders are exhaustive only through $\tau = 6$ and rest on
+scripts and context notes rather than on a stored experiment artifact, and the digit-restricted ladders reach
+$\tau = 7$.
+
+\textbf{Records and provenance.} The versions of Python for the later runs and of NumPy and SymPy for every run
+are not recorded, the $27.3$ GiB frontier is held in the author's data store without a public deposit, and that a
+regeneration reproduces the files byte for byte has not been checked (Data and code availability). The
+spread of the per-partition run times of the window-free scan (Figure~\ref{fig:partitions}) is unexplained by
+the records. The two estimates of Table~\ref{tab:window} and the known-answer gate come from samples and carry
+no interval. Literature statements marked [U] were read at abstract level or not read, and the priority
+statement of Section~\ref{sec:related} is unverified.
+
+\section{Conclusions}\label{sec:conclusions}
+
+The growth function of the Shub--Smale conjecture, with $-1$, $0$ and $1$ free, is $\zmax(\tau) = 1,2,3,3,4,5,5,6,6$ for
+$\tau = 1,\dots,9$, and the least number of gates for $3$, $4$, $5$, $6$ and $7$ distinct integer roots is
+$3$, $5$, $6$, $8$ and $10$. These are exact, decision-complete counts of a finite search and carry no
+statistical uncertainty; the only quantities in the paper that are estimates from samples are the class shares of
+Table~\ref{tab:window} and the known-answer gates, and they are reported without intervals. Over $\mathbb{F}_p$ the maximum is
+exactly $2^{\tau-1}$, over $\mathbb{R}$ it reaches $8$ at six gates, and over $\mathbb{Q}$ it equals the integer ladder
+through $\tau = 6$. The stall theorems show that iterating one map cannot beat a bounded yield over $\Z$, and
+the exhaustive measurement of Section~\ref{sec:family} shows the same for the quadratic family with a built constant
+$c \le 200$; beyond that range the family is not decided here. Over the range computed the integer ladder is consistent with a linear rate, which is a statement about
+nine points and not a bound. The next steps are the
+eight-root threshold in $\{10,11\}$, a depth-$8$ frontier that would decide the tenth gate, and an
+independent re-implementation of the last-gate scan; none changes a value reported here.
 
 \section*{Data and code availability}
 
@@ -1125,28 +1962,32 @@ All code, run artifacts, experiment records and the problem wiki are available a
 \path{problems/computation-complexity/tau-conjecture/}, together with the package
 \texttt{tclib} and its test suite. The computations are archived there as the
 experiment records \texttt{EXP-001}--\texttt{EXP-015} (folder \path{experiments/});
-each record holds the code, the artifacts and the result.\par}
+each record holds the code, the artifacts and the result, except \texttt{EXP-014}, which holds its result and
+whose code is \texttt{exp014.py} in the folder of \texttt{EXP-013}.\par}
 
-Every root count reported here is exact. The census enumerator and all integer
-root counting are exact integer arithmetic in the Python 3.13 standard library.
-Two later instruments add libraries without giving up exactness. The depth-$8$
-and nine-gate scans use NumPy for a modular pre-filter over a fixed evaluation
-window, whose surviving candidates are reconstructed and root-counted exactly by
-the standard-library engine, so the filter can over-admit but never discard a
-witness; the window-free scan uses NumPy for the $2$-adic and $3$-adic residues
-of Lemma~\ref{lem:padic} in the same way. The real and rational ladders use SymPy for square-free decomposition
-with Sturm sequences and for the rational root theorem, both in exact rational
-arithmetic with no floating point at any stage.
+The census enumerator and all integer root counting (Algorithm~\ref{alg:roots}) are exact integer
+arithmetic in the Python standard library; Section~\ref{sec:design} states which instrument is
+exact, windowed or $p$-adic at each stage.
+The interpreter of the census, depth-$5$, depth-$6$ and depth-$7$ runs was Python $3.13.0$.
+The versions of Python for the later runs and of NumPy and SymPy for every run are not
+recorded in the experiment records [U]; the window-free engine calls
+\texttt{numpy.bitwise\_count}, so it needs a NumPy release that provides it, and its
+residue arithmetic relies on unsigned $64$-bit wrap-around being exact modulo $2^{64}$. The
+code that produced each result is pinned by repository commit: the enumeration core
+\texttt{tclib/enum.py} at \texttt{0b1cb207}, the out-of-core pipeline at \texttt{46469d43},
+the depth-$8$ scan at \texttt{b038bc2f}, the multiplicative nine-gate scan at
+\texttt{9a5c726c}, the window-free additive scan with its filter library
+\texttt{tclib/padic.py} at \texttt{d25ae268}, and its production engine at
+\texttt{78b2bfa8} (all in the repository of the first paragraph).
 
-Compute is dominated by the two largest scans, on one desktop machine with
-$32$ cores. The depth-$8$ pipeline took $2$h$50$m to build the frontier and
-$6$h$48$m to scan it with $20$ processes; the multiplicative nine-gate scan took
-$13.1$h, and the additive nine-gate scan about $74$h of wall-clock time with $8$ to
-$20$ processes, interruptions included, and the window-free additive scan $21.4$h
-of wall-clock time with $20$ processes ($381$ process-hours); the earlier experiments together add roughly $17$h, of which $6.7$h went
-to the inconclusive solver runs. The co-occurrence scan that decides the six-root
-threshold took $2$h$23$m on one core, and the depth-$6$ real ladder $180$\,s.
-Peak RAM was $\sim$12 GB.
+Compute is dominated by the largest scans, on one desktop machine with $32$ cores. The depth-$8$ pipeline
+took $2$h$50$m to build the frontier and $6$h$48$m to scan it with $20$ processes; the multiplicative
+nine-gate scan took $13.1$h, and the window-free additive scan $21.4$h of wall-clock time with $20$
+processes ($381$ process-hours, the sum of the per-partition times of Figure~\ref{fig:partitions}). The
+co-occurrence scan that decides the six-root threshold took $2$h$23$m on one core, the depth-$6$ real
+ladder $180$\,s, and the solver runs of the depth-$8$ attempt spent $6.7$h in one of their launches. The
+wall-clock time of the windowed additive scan, the total compute of the earlier experiments and the peak
+memory of the runs are not in any record [U].
 
 The constructed depth-$7$ frontier ($1{,}048{,}460{,}912$ states,
 $29{,}356{,}905{,}536$ bytes, that is $27.3$ GiB) and the polynomial catalog
@@ -1156,7 +1997,20 @@ for each of its 256 files together with an aggregate fingerprint
 (\texttt{7a3b4484...6baaf174}, the SHA-256 of the concatenated per-file digests
 in name order), and the state count in that manifest is derived from the file
 sizes rather than restated, so the asset and the census figure check against
-each other.
+each other. The manifest of the frontier is
+\path{experiments/EXP-011-depth8-pipeline/artifacts/frontier7.manifest.md}, and the
+catalog's SHA-256 (recorded in
+\path{experiments/EXP-011-depth8-pipeline/artifacts/polys.manifest.md}) is
+\begin{center}\small\texttt{563c2717a84e17d4449bd6bfa774821ce04e95b0259d858b58f715d96dbec640}.\end{center}
+\noindent{\raggedright Both
+assets are files of the author's data store, under the directory
+\path{caos-research/tau-conjecture/} (the subdirectory \path{frontier7/} holds the $256$
+frontier files \texttt{uniq000.bin} to \texttt{uniq255.bin}, and \path{polys.pkl} is the
+catalog), and not files
+of the repository; no public deposit with a DOI is recorded for them [U]. The frontier is
+regenerated by the out-of-core build of Algorithm~\ref{alg:ooc}, about $2$h$50$m, whose
+partition hash uses fixed multipliers from a seeded generator; that a regeneration reproduces
+the files byte for byte has not been checked [U].\par}
 
 \begin{thebibliography}{99}\small
 
@@ -1189,13 +2043,9 @@ factorials and primorials}, INTEGERS 14, \#A67, 2014. arXiv:1306.3091.
 \bibitem{Rojas2003} J.~M.~Rojas, \emph{A direct ultrametric approach to additive
 complexity and the Shub--Smale tau conjecture}, arXiv:math/0304100, 2003.
 
-\bibitem{Cheng2003} Q.~Cheng, \emph{Straight-line programs and torsion points on
-elliptic curves}, Comput.\ Complexity 12(3--4):150--161, 2003.
-\href{https://doi.org/10.1007/s00037-003-0180-0}{doi:10.1007/s00037-003-0180-0}.
-
 \bibitem{Cheng2004} Q.~Cheng, \emph{On the ultimate complexity of factorials},
 Theoret.\ Comput.\ Sci.\ 326(1--3):419--429, 2004.
-\href{https://doi.org/10.1016/j.tcs.2004.07.032}{doi:10.1016/j.tcs.2004.07.032}.
+\href{https://doi.org/10.1016/j.tcs.2004.06.020}{doi:10.1016/j.tcs.2004.06.020}.
 
 \bibitem{Shamir1979} A.~Shamir, \emph{Factoring numbers in $O(\log n)$ arithmetic
 steps}, Inform.\ Process.\ Lett.\ 8(1):28--31, 1979.
@@ -1203,7 +2053,7 @@ steps}, Inform.\ Process.\ Lett.\ 8(1):28--31, 1979.
 
 \bibitem{Lipton1994} R.~J.~Lipton, \emph{Straight-line complexity and integer
 factorization}, ANTS-I, LNCS 877, 1994.
-\href{https://doi.org/10.1007/3-540-58691-1_50}{doi:10.1007/3-540-58691-1\_50}.
+\href{https://doi.org/10.1007/3-540-58691-1_45}{doi:10.1007/3-540-58691-1\_45}.
 
 \bibitem{Koiran2011} P.~Koiran, \emph{Shallow circuits with high-powered inputs},
 Innovations in Computer Science, 2011. arXiv:1004.4960.
@@ -1225,7 +2075,7 @@ unified approach to lower bound and derandomization}, CSR 2021.
 \href{https://doi.org/10.1007/978-3-030-79416-3_5}{doi:10.1007/978-3-030-79416-3\_5}.
 
 \bibitem{BBDM2026} S.~Bhattacharjee, M.~Bl\"aser, P.~Dutta, S.~Mukherjee,
-\emph{Exponential lower bounds via exponential sums}, ICALP 2024; extended version
+\emph{Exponential lower bound via exponential sums}, ICALP 2024; extended version
 arXiv:2601.00387, 2026.
 
 \bibitem{Burgisser2026} P.~B\"urgisser, \emph{Intractability of Hilbert's
@@ -1237,6 +2087,43 @@ shortest linear straight-line programs over GF(2) using SAT}, SAT 2010, LNCS 617
 
 \bibitem{Narkiewicz1995} W.~Narkiewicz, \emph{Polynomial Mappings}, Lecture Notes in
 Mathematics 1600, Springer, 1995.
+
+\bibitem{BSS1989} L.~Blum, M.~Shub, S.~Smale, \emph{On a theory of computation and complexity
+over the real numbers: NP-completeness, recursive functions and universal machines}, Bull.\
+Amer.\ Math.\ Soc.\ 21(1):1--46, 1989.
+\href{https://doi.org/10.1090/S0273-0979-1989-15750-9}{doi:10.1090/S0273-0979-1989-15750-9}.
+
+\bibitem{Malajovich1999} G.~Malajovich, \emph{Ultimate polynomial time}, arXiv:math/9904130,
+1999.
+
+\bibitem{BCS1997} P.~B\"urgisser, M.~Clausen, M.~A.~Shokrollahi, \emph{Algebraic Complexity
+Theory}, Grundlehren der mathematischen Wissenschaften, Springer, 1997.
+\href{https://doi.org/10.1007/978-3-662-03338-8}{doi:10.1007/978-3-662-03338-8}.
+
+\bibitem{KPT2015} P.~Koiran, N.~Portier, S.~Tavenas, \emph{A Wronskian approach to the real
+$\tau$-conjecture}, J.\ Symbolic Comput.\ 68:195--214, 2015. arXiv:1205.1015.
+\href{https://doi.org/10.1016/j.jsc.2014.09.036}{doi:10.1016/j.jsc.2014.09.036}.
+
+\bibitem{deMeloSvaiter1996} W.~de~Melo, B.~F.~Svaiter, \emph{The cost of computing integers},
+Proc.\ Amer.\ Math.\ Soc.\ 124(5):1377--1378, 1996.
+\href{https://doi.org/10.1090/S0002-9939-96-03173-5}{doi:10.1090/S0002-9939-96-03173-5}.
+
+\bibitem{Moreira1997} C.~G.~Moreira, \emph{On asymptotic estimates for arithmetic cost functions},
+Proc.\ Amer.\ Math.\ Soc.\ 125(2):347--353, 1997.
+\href{https://doi.org/10.1090/S0002-9939-97-03583-1}{doi:10.1090/S0002-9939-97-03583-1}.
+
+\bibitem{OEISA005245} The On-Line Encyclopedia of Integer Sequences, sequence A005245 (the
+Mahler--Popken complexity of $n$), \url{https://oeis.org/A005245}, read 14 November 2026.
+
+\bibitem{PhillipsonRojas2013} K.~Phillipson, J.~M.~Rojas, \emph{Fewnomial systems with many roots,
+and an adelic tau conjecture}, in \emph{Tropical and Non-Archimedean Geometry}, Contemp.\ Math.\
+605:45--71, 2013. arXiv:1011.4128.
+\href{https://doi.org/10.1090/conm/605/12111}{doi:10.1090/conm/605/12111}.
+
+\bibitem{DoylePoonen2020} J.~R.~Doyle, B.~Poonen, \emph{Gonality of dynatomic curves and strong
+uniform boundedness of preperiodic points}, Compos.\ Math.\ 156(4):733--743, 2020.
+arXiv:1711.04233.
+\href{https://doi.org/10.1112/S0010437X20007022}{doi:10.1112/S0010437X20007022}.
 
 \end{thebibliography}
 

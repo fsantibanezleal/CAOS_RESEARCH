@@ -122,3 +122,52 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   conjectured value (11,371,164 graphs in the completed edge counts). (24,7,3) and (24,3,7) hit the 4-hour per-edge
   cap at their last edge count: f(24,7,3) >= 40 (conjectured 41), f(24,3,7) >= 94 (conjectured 95). BJB-021 opened.
 
+## 2026-11-14 - EXP-010 confirmed: order 24 complete
+
+- Hypothesis 084e0874. (24,7,3) at E = 40: 23,556,793 graphs, none qualifying (42,834 s on 14 processes); (24,3,7)
+  at E = 94: 569,264 graphs, none qualifying (38,875 s). Hence f(24,7,3) = 41 and f(24,3,7) = 95, the conjectured
+  values. The second line of Conjecture 1 holds at all 53 open-window triples with n <= 24.
+- Literature (2026-11-11): Didin, Zenodo 10.5281/zenodo.22831382 (preprint under review), claims the lower bound of
+  the second line for all n > k alpha; the enumeration is an independent exhaustive check on these 53 triples
+  (context/references.md).
+
+## 2026-11-14 - second-regime v0.03 published (10.5281/zenodo.24229265)
+
+- Full rewrite of the note: order 24 complete (53 of 53 open-window triples equal the conjectured value; seven pairs
+  (alpha, k) settled for every n), the search as a finite decision procedure with soundness proofs, the EXP-012
+  validation suite, the 246 extremal graphs at 35 triples (EXP-011; 40 without a partition into alpha cliques, all at
+  k = 3 with alpha odd), the proposition conditional on Didin's main theorem that locates them, and the EXP-013
+  construction for every odd alpha. Didin's preprint (10.5281/zenodo.22831382) is cited and the enumeration is
+  positioned as an independent check.
+- Independent review (CAOS_MANAGE wip/caos-research/bj-second-regime-v03-review-2026-11-14.md): CHANGES REQUIRED with
+  8 majors at bd16b7f8, all fixed in b9433627, APPROVE at the re-check; the re-check nits are in 57069b43.
+- Records added for the review: EXP-013 probe_ladder.py (80 circular-ladder graphs, all 2-connected), EXP-011
+  didin-selftest.txt, EXP-012 verdict corrected (19 of 33 Gate B slices empty).
+- Release: reserved, frozen and published with CAOS_MANAGE tools/zenodo/release.py, 39 gates passed; 31 pages,
+  737,159 bytes, SHA-256 92786eaca13116da6a875fcd8e2ff3ba60624be1f31f5a35ef8144e7ab24e8c0; a fresh unauthenticated
+  download equals the frozen file.
+
+## 2026-11-14 - EXP-014 confirmed: the blocks X6 and X7 are the only ones (conditional on Didin's Theorem 3)
+
+- Hypothesis ed56cfa7. Equality in prop:where(a), Didin's Theorem 3 applied to the block, and 3-connectivity reduce
+  case (a) to five necessary conditions on a block X with 5 to 7 vertices and its attaching triple. Over all graphs on
+  5 to 7 vertices (graph atlas, counts equal to OEIS A000088), exactly X6 at one orbit and X7 at three orbits pass,
+  the four observed in EXP-011. proof.md: every case (a) extremal graph is a construction graph, and conversely.
+- With prop:where(b) and EXP-011, the extremal graphs without a clique partition are characterised (conditional on
+  Didin's Theorem 3). BJB-026 done; BJB-027 opened (note v0.04).
+
+## 2026-11-14 - second-regime v0.04 published (10.5281/zenodo.24231735)
+
+- Adds the EXP-014 characterisation (Lemma lem:block-reduction, Proposition prop:blockcheck, Theorem thm:characterise,
+  Corollary cor:characterise): for alpha >= 3 and conditional on Didin's Theorem 3, the extremal graphs without a
+  partition into alpha cliques are exactly the X6/X7 construction graphs and the 8 graphs at (10,3,3); Lemma lem:fc
+  derives f = c from Didin's Theorem 3 alone; the alpha = 2 remark is backed by EXP-014 check_alpha2.py. Also the
+  experimental design, ablation (the prune: candidates down by factors 324 to 73,297 at the four edge counts both
+  generators ran) and limitations sections, and the growth factor with its standard deviation; the printed abstract
+  is 226 words (v0.03 printed about 270, which the depth checker undercounted).
+- Independent review (CAOS_MANAGE wip/caos-research/bj-exp014-proof-review-2026-11-14.md): proof CORRECT WITH FIXES
+  (alpha >= 3 needed); manuscript CHANGES REQUIRED (R1 to R9), then N1 to N6 at the re-check, all applied.
+- Release: 39 gates passed; 37 pages, 809,752 bytes, SHA-256
+  17167eb8af5ab3d89d942587e9aab7c51072d2b62298ee143c836e9f3c2da17a; a fresh unauthenticated download equals the frozen
+  file.
+

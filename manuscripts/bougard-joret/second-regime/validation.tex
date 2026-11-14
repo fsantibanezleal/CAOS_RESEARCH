@@ -1,0 +1,23 @@
+\begin{tabular}{lllrl}
+\toprule
+check & record & scope & items & outcome \\
+\midrule
+Generator counts & EXP-005 & connected graphs, $n=5,7,8$ & 3 & A001349: 21, 853, 11{,}117 \\
+Cubic graphs & EXP-005 & $(16,5,3)$, $E=24$ & 4{,}207 & A005638$(8)$ \\
+Known values & EXP-005, 006 & $f(7,3,4)=15$, $f(12,3,3)=23$ & 2 & reproduced \\
+Filter vs.\ NetworkX & EXP-006 & all graphs, $n=8$, $\alpha\le6$, $k\le5$ & 12{,}346 & 0 mismatches \\
+Two filters & EXP-006 & 4 edge counts, $n\le16$ & 27{,}235{,}386 & kept counts equal \\
+Prune end to end & EXP-006 & 12 edge counts, $n\le17$ & 12 & kept counts equal \\
+Plain vs.\ pruned & EXP-006 & $(16,5,3)$, $(17,5,3)$ & 4 & kept counts equal \\
+F: provenance & EXP-012 & filter2, geng\_a3 to geng\_a7 & 6 binaries & byte-identical \\
+A: filter, known answers & EXP-012 & $n\le24$, $k'\le9$, $\alpha\le12$ & 26{,}005 & 0 mismatches \\
+B: filter, production & EXP-012 & $k\ge6$ or $\alpha=7$, $E=c-1,c,c+1$ & 21{,}196 & 0 mismatches \\
+C: prune hook & EXP-012 & bounds $2$ to $8$, $n\le24$ & 27{,}132 & 0 mismatches \\
+D: split under the hook & EXP-012 & 3 triples, mod 1 vs.\ 56 & 3 & 0 differences \\
+E: generator counts & EXP-012 & A001349, A002851, A006820 & 10 & 0 differences \\
+Extremal recount & EXP-011 & 35 triples at $E=c$ & 246 & 0 differences from collect \\
+Extremal recheck & EXP-011 & edges, $\alpha$, $\kappa$ by NetworkX & 246 & 0 failures \\
+Two partition methods & EXP-011 & colouring vs.\ maximal cliques & 246 & 0 disagreements \\
+Core search & EXP-011 & vs.\ all set partitions, $n\le9$ & 400 & 0 differences \\
+\bottomrule
+\end{tabular}

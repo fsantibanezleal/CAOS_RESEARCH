@@ -1,0 +1,21 @@
+gcc: gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+prune_alpha.c in the nauty dir equal to the committed source: yes
+geng.c sha256: 6dda2361ade7714fe92ae94295f3376a50fe4c2f772840a075c54df65fba2287
+filter2 rebuilt ebbfd34da19290f5f08b0c1b5e2441eab89a7a3d36894933be2f2e490269b02f production ebbfd34da19290f5f08b0c1b5e2441eab89a7a3d36894933be2f2e490269b02f
+nauty makefile CFLAGS: -O4  -mpopcnt -march=native
+geng_a3 production 43259cfa498b57af9bacea605cd7b7517361d908b4650d6f55631b3b0c4b53c9
+  rebuilt with the makefile CFLAGS 43259cfa498b57af9bacea605cd7b7517361d908b4650d6f55631b3b0c4b53c9
+  rebuilt with the header line -O3 4806114e281719706d7d083a317b2f4983948abc33b1d9523cd7a1af568c7eb6
+geng_a4 production 124d5588886dcbfd4fa837573bc02e65a2a7ccbb3497fdface3855e233aea9fa
+  rebuilt with the makefile CFLAGS 124d5588886dcbfd4fa837573bc02e65a2a7ccbb3497fdface3855e233aea9fa
+  rebuilt with the header line -O3 fe5537b69f86a436736763bbc319ca590002ef1638ba09c2e7aa096da700840e
+geng_a5 production d3bf334991bf37ffb5428a5bc43b6ad2191e70f4c87e52a136b8787e77e61419
+  rebuilt with the makefile CFLAGS d3bf334991bf37ffb5428a5bc43b6ad2191e70f4c87e52a136b8787e77e61419
+  rebuilt with the header line -O3 a2419b079d1323f7e8d03aa9a048b9d4edb43c2a19dd35dcb74f84eef959b1f0
+geng_a6 production 69e35a9660ce409ab2fbbe043aaca82196580e284dda13aa64d3dd64846b290c
+  rebuilt with the makefile CFLAGS 69e35a9660ce409ab2fbbe043aaca82196580e284dda13aa64d3dd64846b290c
+  rebuilt with the header line -O3 0b9c20281f2ed49de53453b4f91d10f03e96856778a602c0fe0869542155eb54
+geng_a7 production b98aac98b1645dadf0bfb6fe68aab2b467f83a264ed8751316a3bde84a9413f9
+  rebuilt with the makefile CFLAGS b98aac98b1645dadf0bfb6fe68aab2b467f83a264ed8751316a3bde84a9413f9
+  rebuilt with the header line -O3 6400ec983846539c7c6a70dda8ab2bd217801ee645c465ecfde7ee14926630ea
+harness built for ALPHA_BOUND 2..8
