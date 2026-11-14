@@ -74,3 +74,11 @@ evidence marks. The same day the CCB-042 verdict (independent reviewer, rerun of
 closed and showed that several charts the summaries list with a few failed boxes are runs stopped at their time budget
 with most of their seed unprocessed. CCB-044 corrects the atlas description in v0.13.
 
+## 2026-11-14: manuscript v0.13 published (10.5281/zenodo.24232708); CCB-044 done
+
+v0.13 corrects the interval-atlas description of the six-body symmetric stratum from the CCB-042 verdict. Each chart's
+status (complete; complete modulo the mirror; finished with dispositioned failures; incomplete: budget stop, with the
+unprocessed share of its seed) is generated from the stored summaries and checkpoints; the runs stopped at their time
+budget are no longer read as charts with a few failed boxes; the quadruple corner is stated as not closed, with the part
+of the half t_t < 1/2 (c_s < (4/3)(u+p)) with c_s < 1/32 in no chart's covered domain. Open: CCB-041 (n = 6) and CCB-043.
+
