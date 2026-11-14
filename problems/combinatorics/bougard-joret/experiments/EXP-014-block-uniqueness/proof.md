@@ -76,9 +76,12 @@ Step 4 and Step 6, G is the graph of the construction with this X, its attaching
 Together with Proposition prop:where(b) and the complete enumeration at its six triples (EXP-011: case (b) is realised
 only at (10,3,3), by 8 graphs), the extremal graphs of the second regime with alpha >= 3 and k >= 3 without a
 partition into alpha cliques are, conditional on Didin's Theorem 3, exactly the construction graphs (k = 3, alpha odd,
-3 alpha < n <= 4 alpha - 1) and the 8 graphs at (10,3,3). Here extremal means f(n, alpha, k) = c edges: Didin's
-Theorem 9, which he derives from his Theorem 3, gives f = c for every n > k alpha, and the enumeration gives it for
-n <= 24 without condition. The restriction alpha >= 3 is needed: at (7,2,3), f = 12 = c and the extremal graph
+3 alpha < n <= 4 alpha - 1) and the 8 graphs at (10,3,3). Here extremal means f(n, alpha, k) = c edges, which follows
+from Didin's Theorem 3 alone (Lemma lem:fc of the note v0.04): a k-connected graph with s(G) = 0 splits into alpha
+cliques and has at least c edges by the count of Lemma lem:window; with s(G) >= 1 and p(G) >= 2 the chain of
+prop:where(a) gives at least t(n, alpha) + k alpha/2 + 1/2 >= c; with p(G) = 1 Theorem 3 gives at least
+t(n + alpha - 1, alpha) - (alpha - 1), which exceeds c except at the six triples of prop:where(b), all with n <= 16,
+where the enumeration gives f = c. The enumeration gives f = c for n <= 24 without condition. The restriction alpha >= 3 is needed: at (7,2,3), f = 12 = c and the extremal graph
 `FL~Cg` is 3-connected with independence number 2 and no partition into 2 cliques (independent review,
 CAOS_MANAGE wip/caos-research/bj-exp014-proof-review-2026-11-14.md); Proposition prop:where assumes alpha >= 3. Those with a partition are the Bougard-Joret graphs
 (Lemma lem:partition-structure, unconditional).

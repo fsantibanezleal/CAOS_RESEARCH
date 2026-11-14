@@ -61,20 +61,16 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \begin{abstract}
 Let $f(n,\alpha,k)$ be the least number of edges of a $k$-connected graph with $n$ vertices and independence number
 $\alpha$. Bougard and Joret conjectured $f(n,\alpha,k)=t(n,\alpha)+\lceil k\alpha/2\rceil$ for $n>k\alpha$, where
-$t(n,\alpha)$ counts the edges of $\alpha$ disjoint balanced cliques, and Didin has announced a proof of the lower
-bound. We give an independent exhaustive check. \abstractvalues, by enumerating \ngraphs\ candidate
-graphs with nauty's generator, an independence prune proved sound, and an exact filter. For seven pairs
-$(\alpha,k)$, including $(5,3)$, $(4,4)$ and $(3,6)$, this settles the conjectured value for every $n>k\alpha$. A
-validation suite checks every component: rebuilt binaries are byte-identical to the production ones,
-\gateAdecisions\ filter decisions on graphs up to order 24 and \gateCdecisions\ prune decisions agree with an
-independent implementation, and the generator's splitting and counts agree with known values. We list all
-\nextremal\ extremal graphs at \nexttriples\ triples. Those that split into $\alpha$ cliques have Bougard and Joret's
-structure; the other \nnopart\ do not, and all have $k=3$ and $\alpha$ odd. Conditional on Didin's main theorem, we
-prove that such graphs occur only at $k=3$ with $\alpha$ odd and $n\le4\alpha-1$, or at six small triples, as the
-data show. Two blocks recovered from the data give, for every odd $\alpha$ and $3\alpha<n\le4\alpha-1$, a
-$3$-connected graph with the conjectured number of edges, independence number $\alpha$ and no partition into
-$\alpha$ cliques, extremal at order 24 and below. Given Didin's theorem, for $\alpha\ge3$ these graphs and eight graphs at
-$(10,3,3)$ are all the extremal graphs without such a partition.
+$t(n,\alpha)$ counts the edges of $\alpha$ disjoint balanced cliques; Didin has announced a proof of the lower bound.
+We give an independent exhaustive check. \abstractvalues, by enumerating \ngraphs\ candidate graphs with nauty's
+generator, an independence prune proved sound and an exact filter; for seven pairs $(\alpha,k)$ this settles the
+conjectured value for every $n$. A validation suite tests every component against an independent implementation,
+known counts and byte-identical rebuilds. We list all \nextremal\ extremal graphs at \nexttriples\ triples: those that
+split into $\alpha$ cliques have Bougard and Joret's structure, and the other \nnopart, all with $k=3$ and $\alpha$
+odd, do not. Two blocks recovered from them give, for every odd $\alpha$ and $3\alpha<n\le4\alpha-1$, a
+$3$-connected graph of the conjectured size with independence number $\alpha$ and no partition into $\alpha$ cliques.
+Conditional on Didin's main theorem and for $\alpha\ge3$, these graphs and eight graphs at $(10,3,3)$ are all the
+extremal graphs without such a partition, by a reduction to blocks on at most seven vertices and an exhaustive check.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -132,8 +128,8 @@ to order 24 (Section~\ref{sec:validation}).
 extremal graph that splits into $\alpha$ cliques has exactly Bougard and Joret's structure
 (Lemma~\ref{lem:partition-structure}); \nnopart\ of the \nextremal\ extremal graphs do not split, and have
 $\theta(G)=\alpha+1$.
-\item \emph{Where the other extremal graphs live.} Conditional on Didin's main theorem, an extremal graph without a
-partition into $\alpha$ cliques exists only for $k=3$, $\alpha$ odd and $n\le4\alpha-1$, or at six triples with
+\item \emph{Where the other extremal graphs live.} Conditional on Didin's main theorem, for $\alpha\ge3$ an
+extremal graph without a partition into $\alpha$ cliques exists only for $k=3$, $\alpha$ odd and $n\le4\alpha-1$, or at six triples with
 $n=k\alpha+1$ or $n=k\alpha+2$ (Proposition~\ref{prop:where}). Every observed one lies in that set, and the
 prediction was frozen before the last \nphasetwotriples\ triples were analysed.
 \item \emph{A construction for every odd $\alpha$.} The enumerated graphs without a partition consist of
@@ -141,20 +137,22 @@ $\alpha-2$ cliques and one of two small blocks of independence number $2$. Gluin
 $3$-edge-connected cubic quotient gives, for every odd $\alpha\ge3$ and $3\alpha<n\le4\alpha-1$, a $3$-connected
 graph with $t(n,\alpha)+\ceil{3\alpha/2}$ edges, independence number $\alpha$ and clique cover number $\alpha+1$
 (Theorem~\ref{thm:construction}). It is extremal, without condition, at the nine such triples with $n\le24$, and at
-all of them if Didin's Theorem~9 holds. Conversely, given Didin's main theorem, every extremal graph without a
-partition into $\alpha$ cliques is one of these or one of the \ntenthreeb\ graphs at $(10,3,3)$
+all of them if Didin's Theorem~9 holds. Conversely, given Didin's main theorem, for $\alpha\ge3$ every extremal graph
+without a partition into $\alpha$ cliques is one of these or one of the \ntenthreeb\ graphs at $(10,3,3)$
 (Theorem~\ref{thm:characterise} and Corollary~\ref{cor:characterise}, from a reduction to blocks on at most seven
 vertices and an exhaustive check of those).
 \end{enumerate}
 
-\paragraph{Organisation.} Section~\ref{sec:prior} states the prior results we use. Section~\ref{sec:window} derives
-the open window. Section~\ref{sec:method} describes the search and proves it sound and complete.
-Section~\ref{sec:validation} reports the validation. Section~\ref{sec:values} gives the values and the cost.
-Section~\ref{sec:extremal} studies the extremal graphs, and Section~\ref{sec:construction} builds them for every odd
-$\alpha$. Section~\ref{sec:discussion} discusses limitations and open questions, Section~\ref{sec:conclusions} concludes,
-and Section~\ref{sec:repro} gives the data and the commands.
+\paragraph{Organisation.} Section~\ref{sec:prior} states the prior results we use and the related work.
+Section~\ref{sec:window} formulates the problem on the open window. Section~\ref{sec:method} describes the search and
+proves it sound and complete, Section~\ref{sec:design} gives the experimental design and Section~\ref{sec:validation}
+the validation. Section~\ref{sec:values} gives the values and the cost, and Section~\ref{sec:ablation} measures what the
+prune contributes. Section~\ref{sec:extremal} studies the extremal graphs, Section~\ref{sec:construction} builds them
+for every odd $\alpha$ and Section~\ref{sec:characterisation} shows, given Didin's theorem, that there are no others.
+Section~\ref{sec:discussion} discusses the results and open questions, Section~\ref{sec:limitations} states the
+limitations, Section~\ref{sec:conclusions} concludes, and Section~\ref{sec:repro} gives the data and the commands.
 
-\section{Prior results}\label{sec:prior}
+\section{Prior results and related work}\label{sec:prior}
 
 \paragraph{Bougard and Joret.} A \emph{tree-linking} of a family of graphs adds edges between them along a tree;
 a \emph{cycle-linking} adds them along a cycle. For $k\in\{1,2\}$ Bougard and Joret determined $f$ and all extremal
@@ -222,7 +220,7 @@ Exhaustive generation has settled other small extremal values, for instance the 
 independent sets in cubic graphs \cite{CGJcubic} follow the same pattern: a complete generator, a pruning rule proved
 sound, and an exact test. The search here is an instance of that pattern, built on nauty's general generator.
 
-\section{The open window}\label{sec:window}
+\section{Problem formulation: the open window}\label{sec:window}
 
 \begin{lemma}\label{lem:window}
 Let $\alpha\ge3$, $k\ge3$ and $n>k\alpha$. If $\floor{n/\alpha}\ge\ceil{k\alpha/2}-\alpha+2$, then
@@ -539,6 +537,63 @@ each part's independence number exactly (memoised on masks) and cuts a branch as
 decides each $q$ from $\alpha$ down. On 400 random graphs with $4$ to $9$ vertices it agrees with a brute force over all
 set partitions.
 
+\section{Experimental design}\label{sec:design}
+
+Every computation of this paper ran as a numbered experiment whose question, method and predictions were written down
+and committed before the computation started (Table~\ref{tab:exps}); the closing note of each experiment then records
+which predictions held. The protocol keeps refutations visible: a prediction that failed stays in the record with its
+experiment, and a later experiment that builds on it says so.
+
+\paragraph{The values.} EXP-005 to EXP-010 share one prediction, stated with moderate confidence: the second line
+holds at every triple computed. They were ordered by cost. EXP-005 took the seven smallest open triples with the plain
+generator. EXP-006 introduced the independence prune and the early-stopping filter and compared them with the plain
+generator where both could run (Section~\ref{sec:ablation}). EXP-007 and EXP-008 covered every open triple up to orders
+22 and 23. EXP-009 covered order 24 under a cap of four hours per edge count and twenty-four hours in total, which
+stopped the last edge count of $(24,7,3)$ and of $(24,3,7)$; EXP-010 reran those two counts under a cap of twenty
+hours. A capped count yields a bound, never a value, and the tables mark it as such; none remains.
+
+\paragraph{The structure.} EXP-011 fixed three predictions, in its hypothesis and two addenda: that the regenerated
+extremal graphs reproduce the counts recorded at $E=c$, which held; that every extremal graph splits into $\alpha$
+cliques, which its first phase refuted with graphs at $k=3$ and odd $\alpha$; and, written after that refutation and
+before the next phase was analysed, the location of the graphs without a partition that Didin's theorem implies
+(Proposition~\ref{prop:where}), which held at every triple analysed afterwards. EXP-013 predicted that the two blocks
+found in EXP-011 give graphs of the conjectured size without a clique partition for every odd $\alpha$ in $\{7,9\}$
+and every admissible order; its program confirmed this up to $\alpha=11$, and Theorem~\ref{thm:construction} extends
+it to every odd $\alpha$. EXP-014 predicted that the necessary conditions of Lemma~\ref{lem:block-reduction} leave only
+$X_6$ and $X_7$ at the observed attaching triples, which held.
+
+\paragraph{The validation.} EXP-012 predicted byte-identical rebuilds of every binary and no disagreement at any gate;
+both held, after two defects of the test harness, not of the search, were found and fixed
+(Section~\ref{sec:validation}).
+
+\paragraph{Three kinds of evidence.} Values come from complete enumeration with an exact decision at every edge count.
+The soundness of that enumeration comes from proofs (Section~\ref{sec:method}) and from gates that test each component
+on its own (Section~\ref{sec:validation}). Statements about the extremal graphs beyond the enumerated range come from
+proofs, conditional where they use Didin's theorem, and every enumerated graph is checked against them.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{The experiments behind this paper, with the commit that froze each hypothesis before any computation (the
+hypothesis of EXP-011 carries two addenda, each frozen before the analysis it predicts).}
+\label{tab:exps}
+\begin{tabular}{lll}
+\toprule
+experiment & frozen at & content \\
+\midrule
+EXP-005 & \texttt{ad34cd90} & the seven smallest open triples, plain generator \\
+EXP-006 & \texttt{c04a8a8f} & the hook and the early-stopping filter; four triples \\
+EXP-007 & \texttt{f85ce6b9} & every open triple up to order 22 \\
+EXP-008 & \texttt{19125234} & order 23 \\
+EXP-009 & \texttt{153f1166} & order 24, four of six triples \\
+EXP-010 & \texttt{084e0874} & the two remaining order-24 edge counts \\
+EXP-011 & \texttt{47c86e8f}, \texttt{a480c533}, \texttt{e552f1c6} & every extremal graph at $35$ triples; structure; $p(G)$ \\
+EXP-012 & \texttt{78cc42fb} & validation at the production parameters \\
+EXP-013 & \texttt{15a64e33} & the construction for odd $\alpha$ \\
+EXP-014 & \texttt{ed56cfa7} & the blocks on at most seven vertices \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Validation}\label{sec:validation}
 
 Table~\ref{tab:validation} lists every check, its scope and its outcome. We summarise the ones that bear on the
@@ -595,7 +650,7 @@ items checked and the outcome. Independent implementation: NetworkX 3.4.1. Every
 \input{validation.tex}
 \end{table}
 
-\section{Values and cost}\label{sec:values}
+\section{Results: values and cost}\label{sec:values}
 
 \begin{theorem}\label{thm:values}
 \valuestheorem
@@ -634,7 +689,7 @@ Intel Core i9-14900HX under Ubuntu~24.04 in WSL2, with 28 processes per edge cou
 which ran at the same time on 14 processes each. Figure~\ref{fig:growth} shows how the number of
 candidates and the time grow with the edge count for five triples. Within a triple, once the counts exceed a
 thousand, each added edge multiplies the number of candidates by a factor between \growthlow\ and \growthhigh\ on
-the plotted triples, and the factor itself rises slowly with $E$; the time follows the count, above a floor of a
+the plotted triples (mean \growthmean, standard deviation \growthsd, over \growthn\ consecutive pairs), and the factor itself rises slowly with $E$; the time follows the count, above a floor of a
 few seconds set by process start-up. Summed over the decided triples of one order, the time below $c$ was
 \secorderxxi\ seconds at order 21, \secorderxxii\ at order 22 and \secorderxxiii\ at order 23, factors of
 \ratioxxii\ and \ratioxxiii; at order 24 two edge counts needed more than four hours each. The pruned generator's
@@ -667,7 +722,44 @@ five triples, with the pruned generator. Each curve ends at $c-1$.}
 \label{fig:growth}
 \end{figure}
 
-\section{The extremal graphs}\label{sec:extremal}
+\section{Ablation: what the prune and the independence test contribute}\label{sec:ablation}
+
+Two components of the search can be removed without changing any value: the independence prune inside the generator
+(Lemma~\ref{lem:prune}), and the independence test of the filter at the triples where Tur\'an's theorem makes it
+redundant. Both change the cost only, and the records measure by how much.
+
+\paragraph{The prune.} At \nablation\ edge counts both generators ran, the plain one and the pruned one
+(Table~\ref{tab:ablation}). The kept counts agree at all of them, as Lemma~\ref{lem:prune} requires. The number of
+candidates falls by factors from \abgenlow\ to \abgenhigh\ and the wall-clock time by factors from \abseclow\ to
+\absechigh, the times being recorded to a tenth of a second. The reduction grows with the edge count and with the
+order: more edges allow more partial graphs that already hold an independent set of size $\alpha+1$, which the plain
+generator expands to the full order and the hook cuts at the level where the set appears. Without the prune, the plain
+generator's \ngraphsplain\ candidates came almost entirely from $(14,3,4)$ and $(15,4,3)$ in the first experiment;
+with it, no edge count of the later experiments produced more than a few tens of millions of candidates, which is what
+made orders 23 and 24 feasible on one machine.
+
+\begin{table}[t]
+\centering\small
+\caption{Ablation of the independence prune: the edge counts that both generators enumerated, with the candidates
+generated, the wall-clock seconds and the graphs kept by the filter, and the factors by which the prune reduces the
+candidates and the time.}
+\label{tab:ablation}
+\input{ablation.tex}
+\end{table}
+
+\paragraph{The independence test.} By~\eqref{eq:allalpha}, at \nturancond\ of the \ntriples\ triples every candidate
+below $c$ has independence number exactly $\alpha$, so Algorithm~\ref{alg:mis} never rejects there and could be
+removed without changing a decision. At the other triples, those with $\alpha=7$ among them, it is needed in
+principle; Gate~B observed $N_\alpha=N$ on every sampled slice, including slices with $\alpha=7$, so on the sampled
+streams it rejected nothing either. The filter keeps the test everywhere because it is cheap: it stops at the first
+independent set of size $\alpha+1$, and for $k\ge4$ the connectivity test that follows it dominates the cost of the
+filter (equation~\eqref{eq:cost}).
+
+\paragraph{What was not ablated.} The early stop of Algorithm~\ref{alg:mis} and the split into $M$ parts change no
+decision (Lemma~\ref{lem:mis} and Gate~D), and no record runs the search without them, so their savings are not
+measured here.
+
+\section{The extremal graphs: structure and theory}\label{sec:extremal}
 
 At the \nexttriples\ triples where the enumeration covered $E=c$, we regenerated every extremal graph. In every case
 the count matches the earlier enumeration, and every graph passes the independent recheck (edges, independence number,
@@ -780,7 +872,7 @@ $n=13$ for $(3,4)$ and $n=16$ for $(3,5)$.
 \end{proof}
 
 \begin{corollary}[conditional on {\cite[Theorem~3]{Didin}}]\label{cor:where}
-For $k\ge4$ every extremal graph of the second regime splits into $\alpha$ cliques, and so is a Bougard--Joret graph,
+Let $\alpha\ge3$. For $k\ge4$ every extremal graph of the second regime splits into $\alpha$ cliques, and so is a Bougard--Joret graph,
 except possibly at $(13,3,4)$ and $(16,3,5)$, where $p(G)=1$. For $k=3$ the same holds when $\alpha$ is even, except
 possibly at $(13,4,3)$, and when $\alpha$ is odd and $n\ge4\alpha$, without exception.
 \end{corollary}
@@ -824,7 +916,7 @@ graphs with $(b,\alpha,n)=(3,3,10)$ have a $2$-vertex cut and so are not $3$-con
 inequality, but not those attaining Theorem~9. In the range enumerated here, the extremal graphs are of three kinds:
 the Bougard--Joret graphs; the graphs of Theorem~\ref{thm:construction}, which account for every extremal graph with
 $s(G)=1$ (a $2$-edge cut of the quotient would contradict $3$-connectivity); and \ntenthreeb\ graphs at $(10,3,3)$
-with a connected $\alpha$-core. Given Didin's main theorem the list is complete at every order: Lemma~\ref{lem:partition-structure} describes
+with a connected $\alpha$-core. Given Didin's main theorem the list is complete at every order for $\alpha\ge3$: Lemma~\ref{lem:partition-structure} describes
 the first kind, Theorem~\ref{thm:characterise} the second and Corollary~\ref{cor:characterise} the third.
 Proposition~\ref{prop:where} alone already proves part of it. An extremal graph without a partition into
 $\alpha$ cliques has $k=3$, $\alpha$ odd, $s(G)=1$ and $n\le4\alpha-1$, and equality throughout the proof of
@@ -832,18 +924,22 @@ Proposition~\ref{prop:where}(a) forces three more facts: the $\alpha$-core $H$ a
 tight in Didin's sense; exactly $(3\alpha-3)/2$ edges join its $\alpha-1$ components; and every component sends exactly
 three of them. The rest, that the components with independence number $1$ are cliques of orders $3$ and $4$, that the edges
 between components form a matching, that the component with independence number $2$ is $X_6$ or $X_7$ and that it
-attaches only at the observed triples, is Lemma~\ref{lem:block-reduction} and Proposition~\ref{prop:blockcheck}; all
-four claims use Didin's theorem, the last two through his inequality applied to the block itself.
+attaches only at the observed triples, is Lemma~\ref{lem:block-reduction} and Proposition~\ref{prop:blockcheck}. All
+four claims use Didin's theorem: the three edges per component come from the equalities of
+Proposition~\ref{prop:where}(a), and the clique orders, and through them the matching, the $3$-edge-connectivity of
+the quotient, the blocks and the attaching triples, from his inequality applied once more, to the block.
 
 \paragraph{Open questions.} Theorem~\ref{thm:construction} realises case (a) of Proposition~\ref{prop:where}
 everywhere, and Theorem~\ref{thm:characterise} shows, given Didin's theorem, that nothing else does; case (b) is
-realised only at $(10,3,3)$, because Proposition~\ref{prop:where} confines it to six triples that the enumeration
-covers. What remains open is unconditional: every structural statement of Section~\ref{sec:characterisation} beyond
+realised only at $(10,3,3)$, because Proposition~\ref{prop:where}, given the same theorem, confines it to six triples that the enumeration
+covers. What remains open is an unconditional proof: every structural statement of Section~\ref{sec:characterisation} beyond
 order 24 rests on Didin's Theorem~3, and a proof that avoids it, for example of the bound $\e(X)\ge t(|X|+1,2)-1$ for
 the blocks, would make the description of the extremal graphs independent of his preprint. The value of $f$ beyond order 24 is decided by Didin's theorem if it is correct. For the
 enumeration, the factors of Section~\ref{sec:values} between consecutive orders, if they persisted, would put
 order 25 at several days of the machine used here; this is an extrapolation, not a measurement.
 
+
+\section{Limitations}\label{sec:limitations}
 
 \paragraph{What the validation does not cover.} The gates sample the production streams; they do not re-run them.
 Gate~B covers \gateBgraphs\ graphs in slices, not the billions of the full search, and \gateBempty\ of its
@@ -855,11 +951,23 @@ classes the search enumerates (minimum degree $k$, independence number at most $
 the completeness of those streams rests on the generator's correctness and on the soundness of the hook
 (Lemma~\ref{lem:prune}), which Gate~C tests directly.
 
-\paragraph{Limitations.} The values rest on the correctness of \texttt{geng} and of the split into parts, which we test
+\paragraph{What the values rest on.} The values rest on the correctness of \texttt{geng} and of the split into parts, which we test
 but do not prove (Gates D and E); on the filter, which we prove (Lemmas~\ref{lem:mis} and~\ref{lem:kconn}) and test
 (Gates A and B); and on the hook, which we prove (Lemma~\ref{lem:prune}) and test (Gate C). The binaries are built for
 the processor they ran on (\texttt{-march=native}); a rebuild elsewhere gives other bytes with the same source.
 Didin's results are used as stated, without an audit of their proofs.
+
+\paragraph{Scope of the results.} The values cover the open window up to order 24 and nothing beyond it; the
+extremal graphs are listed at \nexttriples\ of the \ntriples\ decided triples, all with $n\le22$, because the
+enumeration at $E=c$ was not run at orders 23 and 24, where it would cost more than the decision itself. Every
+structural statement about orders beyond the enumeration (Proposition~\ref{prop:where}, Lemmas~\ref{lem:block-reduction}
+and~\ref{lem:fc}, Theorem~\ref{thm:characterise} and the corollaries) rests on Didin's Theorem~3, a preprint under
+review whose proof we have not audited; if it fails, those statements fail with it, while the values, the extremal
+lists and the construction of Theorem~\ref{thm:construction} stand. The characterisation assumes $\alpha\ge3$, and the
+remark after Corollary~\ref{cor:characterise} shows that it does not extend to $\alpha=2$ as stated. The wall-clock
+times are single runs on one shared machine, without repetitions, so they describe the cost of this search on that
+machine and are not a benchmark; the growth factors of Section~\ref{sec:values} are the only quantities reported with a
+spread.
 
 \section{Conclusions}\label{sec:conclusions}
 
@@ -877,7 +985,7 @@ Tables~\ref{tab:values} and~\ref{tab:structure} is an exact count from a complet
 the run-to-run variation of the wall-clock times does not enter any value. The residual risk is of a different kind: a
 defect in \texttt{geng} or in its split into parts would lose graphs silently. Gate~E tests the generator on the
 classes with published counts, up to order 22, and Gate~D tests the split at orders 17 to 20 with the hook active;
-neither reaches orders 23 and 24 on the restricted classes the search enumerates, and Section~\ref{sec:discussion}
+neither reaches orders 23 and 24 on the restricted classes the search enumerates, and Section~\ref{sec:limitations}
 lists what the gates do not cover.
 
 At the conjectured value the extremal graphs are not all of Bougard and Joret's form. At \nexttriples\ triples, \nnopart\
@@ -886,8 +994,8 @@ Didin's inequality, if correct, confines such graphs to $n\le4\alpha-1$ or six s
 that prediction, which was frozen before the last \nphasetwotriples\ triples were analysed. The two blocks $X_6$ and
 $X_7$ found in the data give a construction for every odd $\alpha$ and every $3\alpha<n\le4\alpha-1$, proved with six
 finite facts checked exactly. A proof of the second line through a partition into $\alpha$ cliques therefore cannot
-reach the conjectured size itself. Given Didin's main theorem, the extremal graphs without such a partition are
-exactly these constructions and \ntenthreeb\ graphs at $(10,3,3)$: a reduction to blocks on at most seven vertices
+reach the conjectured size itself. Given Didin's main theorem and $\alpha\ge3$, the extremal graphs without such a partition
+are exactly these constructions and \ntenthreeb\ graphs at $(10,3,3)$: a reduction to blocks on at most seven vertices
 and an exhaustive check of all graphs of those orders leave only $X_6$ and $X_7$, at the attaching triples the data
 show.
 
@@ -902,31 +1010,10 @@ statement of its result. The extremal graphs are in
 analysis in \texttt{structure.jsonl}, \texttt{verify.jsonl} and \texttt{didin.jsonl}.
 
 
-\paragraph{Experiments.} Table~\ref{tab:exps} lists, for each experiment, the commit that fixed its question and
-predictions before the computation.
+\paragraph{Experiments.} Table~\ref{tab:exps} in Section~\ref{sec:design} lists, for each experiment, the commit
+that fixed its question and predictions before the computation.
 
-\begin{table}[t]
-\centering\footnotesize
-\caption{The experiments behind this paper, with the commit that froze each hypothesis before any computation (the
-hypothesis of EXP-011 carries two addenda, each frozen before the analysis it predicts).}
-\label{tab:exps}
-\begin{tabular}{lll}
-\toprule
-experiment & frozen at & content \\
-\midrule
-EXP-005 & \texttt{ad34cd90} & the seven smallest open triples, plain generator \\
-EXP-006 & \texttt{c04a8a8f} & the hook and the early-stopping filter; four triples \\
-EXP-007 & \texttt{f85ce6b9} & every open triple up to order 22 \\
-EXP-008 & \texttt{19125234} & order 23 \\
-EXP-009 & \texttt{153f1166} & order 24, four of six triples \\
-EXP-010 & \texttt{084e0874} & the two remaining order-24 edge counts \\
-EXP-011 & \texttt{47c86e8f}, \texttt{a480c533}, \texttt{e552f1c6} & every extremal graph at $35$ triples; structure; $p(G)$ \\
-EXP-012 & \texttt{78cc42fb} & validation at the production parameters \\
-EXP-013 & \texttt{15a64e33} & the construction for odd $\alpha$ \\
-EXP-014 & \texttt{ed56cfa7} & the blocks on at most seven vertices \\
-\bottomrule
-\end{tabular}
-\end{table}
+
 
 A failed or partial outcome stays in the record with its experiment: the first-pass caps of EXP-009, the harness
 defects of the first Gate~D and Gate~E runs in EXP-012, and the refuted structural prediction of EXP-011 (that every
@@ -968,9 +1055,11 @@ The extremal graphs and their analysis: \texttt{collect.py}, then \texttt{analyz
 \texttt{didin.py} in EXP-011; the validation: \texttt{build.sh} and \texttt{validate.py} in EXP-012. The tables and
 figures of this paper are generated from the records by \texttt{make\_tables.py} in the manuscript folder.
 
-\paragraph{Evidence marks.} Values and counts are machine-verified exhaustive computations; the lemmas, propositions
-and theorems are proved here; Proposition~\ref{prop:where} and Corollary~\ref{cor:where} are conditional on Didin's
-Theorem~3; Didin's statements were read on the primary source and not audited.
+\paragraph{Evidence marks.} Values and counts are machine-verified exhaustive computations, and so is
+Proposition~\ref{prop:blockcheck}, an exhaustive check over all graphs on five to seven vertices; the other lemmas,
+propositions and theorems are proved here. Proposition~\ref{prop:where}, Corollary~\ref{cor:where},
+Lemmas~\ref{lem:block-reduction} and~\ref{lem:fc}, Theorem~\ref{thm:characterise} and Corollary~\ref{cor:characterise}
+are conditional on Didin's Theorem~3; Didin's statements were read on the primary source and not audited.
 
 \begin{thebibliography}{99}\small
 \bibitem{BGMcubic} G. Brinkmann, J. Goedgebeur and B. D. McKay. \emph{Generation of cubic graphs}. Discrete
