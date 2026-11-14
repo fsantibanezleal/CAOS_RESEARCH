@@ -44,3 +44,7 @@ hypothesis is class-support disjointness; queued as the lemma's last case).
   machine-checked at tested degrees, classical in general.
 - The extension argument needs SOME certificate at the base window; EXP-042 supplies
   cleared, all-parameter ones for the whole grid.
+
+## Erratum (2026-11-11)
+
+The hypothesis "T = P - x or T = b x^d" is too broad. The kernel of J(T, .) on forms is spanned by powers of T only when T is not a proper power; for a pure power T = b x^d it contains every x^M, and for T = P - x a proper power (for example P = x + (x+y)^2) the reduction fails as well. The lemma holds when T is not a proper power, which covers the grid points with a primitive top used here. Corrected in planar v0.36, after an independent review of the correction (2026-11-11).

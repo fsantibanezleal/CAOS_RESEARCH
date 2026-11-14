@@ -27,9 +27,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.35}
-\newcommand{\docdate}{1 November 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.23874520}
+\newcommand{\docversion}{v0.36}
+\newcommand{\docdate}{11 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.24226225}
 \newcommand{\conceptdoi}{10.5281/zenodo.21503367}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
@@ -79,10 +79,10 @@ $P = x + f(y)$ exactly (the vertex dichotomy). The residual open core is the tra
 Keller constant along the staircase of Newton vertices swallowing $x$: we show the completion
 window is block-triangular under the edge grading, exhibit the classwise transport chain as an
 executable elimination whose obstruction always localizes at the constant's class, and prove the corresponding
-fifth exclusion: for primitive tops the certificate-tower induction closes it
-\emph{unconditionally} at all partner degrees (cleared base certificates with monomial pairings
+fifth exclusion: on the certified grid shapes with a primitive top the certificate-tower
+induction closes it at all partner degrees (cleared base certificates with monomial pairings
 such as $-13860\,a^7$, plus a resonance-reduction lemma showing window growth can never
-repair the constant's row). A recalibration against the primary sources shows that our
+repair the constant's row when the top form is not a proper power). A recalibration against the primary sources shows that our
 composite-gcd certificates replicate literature-covered territory (the verified
 floor is $\gcd \le 8$, primes, $2p$, then Heitmann's $B \ge 16$ and the
 Guccione--Guccione--Valqui dichotomy $B = 16$ or $B > 20$), and that the open frontier is the
@@ -208,9 +208,10 @@ reconstruction and explicit degree and height bounds where a statement over $\Q$
 from modular computations; no floating-point value enters a certificate.
 
 Two structural inputs from the companion are used freely. First, every $\Gm$-equivariant
-Keller map of $\C^2$ is an automorphism; on the opposite-sign/one-zero scope relevant to the
-three-dimensional mechanism it is linear (EXP-010; independently classified for all signatures
-by Shaska \cite{Shaska2026}). Second, at every weight ray the leading pair of a planar
+Keller map of $\C^2$ is an automorphism; on the opposite-sign scope relevant to the
+three-dimensional mechanism it is linear, and with one zero weight it is affine (the corrected
+statement of the companion; independently classified for all signatures by Shaska
+\cite{Shaska2026}). Second, at every weight ray the leading pair of a planar
 Keller map is Jacobian-dependent (the tropical bridge, EXP-013), which is the entry point of
 all edge analyses below.
 
@@ -354,9 +355,10 @@ A three-parameter tail certificate ($-27720\,a^7 c_3^4$) extends the family.
 Let $P = x + R$ ($R$ without constant or linear part), $M_N$ the completion-window
 matrix at window $N \ge \deg P - 1$, and $T$ the total-degree top form of $P$. Suppose
 every form in $\ker J(T, \cdot)$ at each degree is a scalar multiple of a power that
-reduces, modulo $\C[P]$, to degree $\le N$ (this holds whenever $T$ is a primitive
-monomial, and whenever $T = P - x$ or $T$ is the pure power $b x^d$, by expanding
-$T^k = \lambda P^k + \text{lower}$). Then any left-null certificate of $M_N$ with
+reduces, modulo $\C[P]$, to degree $\le N$ (this holds whenever $T$ is not a proper power, in
+particular when $T$ is a primitive monomial, or $T = P - x$ with $P - x$ not a proper power, by
+expanding $T^k = \lambda P^k + \text{lower}$; it fails for proper powers, for example a pure power
+$T = b x^d$, whose kernel contains every $x^M$). Then any left-null certificate of $M_N$ with
 nonzero pairing extends to $M_{N+1}$ with the same (scaled) pairing: window
 inconsistency propagates to every larger window. Proof ingredients, each
 machine-verified: old columns vanish on new rows (degree bookkeeping); the new block is
@@ -370,13 +372,16 @@ $2N - 3$ ratios) is this tower seen through the clearing normalization.
 
 \begin{theorem}[{[MV/D]}; all-degree fifth exclusion (EXP-042/044/046)]
 \label{thm:t5all}
-For $u \ge 2$, $v \ge 1$ with $x^u y^v$ primitive ($\gcd(u, v) = 1$) or $d \ge u + v$,
-and any $a \ne 0$, $b$: $P = x + a\,x^u y^v + b\,x^d$ is not a Keller component at \emph{any}
-partner degree. (Base: the cleared certificates of Theorem~\ref{thm:t5}; induction:
-Lemma~\ref{lem:tower}.) For proper-power tops (e.g. $u = v = 2$) the odd resonances do
-not reduce mod $\C[P]$; the certificates kill them anyway in every tested instance
-(e.g. $(xy)^5$ at window $9$), so the statement there is [D] pending the derivation of
-that kill.
+For $(u, v)$ one of $(2,1)$, $(3,1)$, $(3,2)$ and $d$ one of $2$, $3$ (the grid points of
+Theorem~\ref{thm:t5} with $x^u y^v$ primitive), and any $a \ne 0$, $b$:
+$P = x + a\,x^u y^v + b\,x^d$ is not a Keller component at \emph{any} partner degree.
+(Base: the cleared certificates of Theorem~\ref{thm:t5}; induction: Lemma~\ref{lem:tower},
+whose hypothesis holds because the top form is the primitive monomial $a\,x^u y^v$ or, at
+$(u, v, d) = (2, 1, 3)$, equals $P - x = x^2(a y + b x)$, which is not a proper power.) Outside the grid no base certificate is available:
+Theorem~\ref{thm:t6} turns one certificate per shape into an all-degree exclusion but does not
+supply it. For the grid points with a proper-power top, $(u, v) = (2, 2)$, the theorem makes no
+claim: the odd resonances do not reduce mod $\C[P]$, and the certificates kill them in every
+tested instance (e.g. $(xy)^5$ at window $9$) without a derivation of that kill.
 \end{theorem}
 
 \begin{theorem}[{[MV/D]}; the universal tower (EXP-049)]\label{thm:t6}
@@ -489,11 +494,10 @@ rigidly universal: 51 lower combinations enter (EXP-054). This leads to the pert
 construction $\Lambda(\varepsilon)$; its base is sound (the right-hand side is the constant
 $x^2$ vector; $\Lambda_0$ globally left-null, symbolic $t$) and \emph{first-order
 universality} is proved: all 26 entering lower monomials admit correctors with the $576$
-pairing pinned and localized supports. Order-1 termination fails (measured), so the corrector
-ladder continues at order 2; each rung is a batched linear solve, and termination at any
-finite order yields the explicit universal covector, closing the reduced stratum for all
-parameters. Closing the reduction's other forcing branches as well would then raise the
-floor from $108$ to $125$.
+pairing pinned and localized supports. Order-1 termination fails (measured), and this pinned
+ladder does not terminate at any order: its descending chain stabilizes at a nonzero space of
+dimension $39$ (EXP-064), so this route yields no universal covector; a different gauge of the
+pinning may terminate.
 
 \subsection*{The three reduced branches of the $(72, 108)$ case}
 
@@ -534,15 +538,18 @@ of the ladder hold at every order, and the only obstruction to a finite covector
 is the top-order \emph{vanishing} condition. This is the dual form of the
 annihilation lemma $J(m, P^k) = -k\,L(P^{k-1} m)$ of Section~\ref{sec:staircase}.
 
-\emph{The tower, decided through degree two.} A polynomial covector of
+\emph{The tower, decided through degree three.} A polynomial covector of
 $\varepsilon$-degree $d$ exists iff a finite linear system over the interior
 coefficients is feasible. We find [MV]: \textbf{no covector of degree $1$}
 (EXP-067; eight ``diagonal'' operators obstruct, the full system infeasible modulo
-two independent primes, hence over $\mathbb{Q}$); and \textbf{no covector of
+two independent primes; over $\mathbb{Q}$ this excludes every covector whose denominators are prime
+to both, and no good-prime argument is given for the rest); and \textbf{no covector of
 degree $2$} (EXP-072; the support $\{(0,1),(1,0),(3,5)\}$ obstructs, again
 conclusive modulo two primes). At degree $3$ no obstruction is found through the
-pair and all triple supports (EXP-071, EXP-073); the quadruple tier and a
-constructive solve remain open, subject to the one-sidedness noted below. The
+pair and all triple supports (EXP-071, EXP-073), but the quadruple support
+$\{(0,3),(1,0),(3,4),(4,7)\}$ makes the degree-three necessary subsystem infeasible modulo both
+primes, the conclusive direction of a support test with the same modular caveat: \textbf{no
+covector of degree $3$} (EXP-075, [MV] modulo two primes). The
 obstruction \emph{persists} rather than migrating: the degree-two obstructing
 support $\{(0,1),(1,0),(3,5)\}$ contains two of the eight operators that already
 obstruct at degree one, and what grows is the support size needed to expose it
@@ -565,10 +572,10 @@ to be a finite decision procedure.
 What does hold is weaker but exact. The set of degrees at which a covector exists
 is \emph{upward closed} (a degree-$d$ covector is a degree-$(d+1)$ covector with
 vanishing top coefficients), so either none exists at any degree, or there is a
-minimal $d_0$; with degrees $1$ and $2$ closed, $d_0 \ge 3$. And the
+minimal $d_0$; with degrees $1$, $2$ and $3$ closed, $d_0 \ge 4$. And the
 support-restricted sweeps are \emph{one-sided}: they test necessary conditions, so
 an infeasible support decides a degree negatively, while all supports passing does
-\emph{not} establish existence. Settling degree three positively therefore
+\emph{not} establish existence. Settling a degree $d \ge 4$ positively therefore
 requires constructing a covector, not sweeping. Both outcomes remain open: a
 covector would be an exclusion proof, and a proof that none exists at any degree
 would be the first step of a counterexample.
@@ -1433,8 +1440,8 @@ A search of the literature (the sources of Section~\ref{sec:frontier}) found no 
 statement of Theorems~\ref{thm:t1} or \ref{thm:t2}. For the equivariant rigidity theorem of
 the companion paper \cite{SLfoundational}, Shaska \cite{Shaska2026}, in work submitted on
 2026-07-22, independently proves the full all-signature classification.
-Same-sign actions may give nonlinear triangular automorphisms; opposite-sign actions give
-the linear case of EXP-010. No priority or novelty claim is made for that classification.
+Same-sign actions may give nonlinear triangular automorphisms, one zero weight gives affine
+maps, and opposite-sign actions give the linear case of EXP-010. No priority or novelty claim is made for that classification.
 Theorem~\ref{thm:t3} was not found as stated, but its
 operator identity is within the standard bracket calculus \cite{Joseph1975, GGV2017}: the
 statement appears new, the method is classical. Theorem~\ref{thm:t4}'s counterexample half
@@ -1457,7 +1464,7 @@ branch; without such a condition, Newton resolution does not exclude the pair. T
 properness reformulation ($JC(2)$ holds iff every planar Keller map has empty Jelonek set;
 exact certificates in EXP-014) provides an independent cross-check.
 
-\section{The $(72,108)$ frontier: an external exclusion claim and its independent verification}\label{sec:helali}
+\section{The \texorpdfstring{$(72,108)$}{(72,108)} frontier: an external exclusion claim and its independent verification}\label{sec:helali}
 
 Helali \cite{Helali2026} states that the two coefficient systems of \cite[Proposition~4.3]{GGHV2022},
 $[P,Q]=x^2$ in $K[x,x^{-1},y]$ with

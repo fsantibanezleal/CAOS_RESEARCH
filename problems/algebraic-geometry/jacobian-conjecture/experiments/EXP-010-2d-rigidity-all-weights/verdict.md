@@ -53,3 +53,7 @@ Proof structure, with what was machine-certified:
   non-reductive/degenerate structures; JCB-012 pool).
 - Upgrades wiki 04 and the manuscript conjecture to a theorem; EXP-006 stands as the empirical
   companion.
+
+## Erratum (2026-11-11)
+
+The theorem above is correct for $w_2 \ge 1$ only. For weights $(w_1, 0)$ the equivariant components are $P = x f(y)$ and $Q = g(y)$, $\det JF = f g'$, and the Keller maps are exactly $(f_0 x, g_0 y + c)$, $f_0 g_0 \ne 0$: affine, linear only when $c = 0$; $(x, y + 1)$ is an example. The shape normalization used in this experiment drops the translation. Found by an independent audit of the Jacobian manuscripts (2026-11-11); corrected in foundational v0.14.

@@ -38,3 +38,7 @@ replacing the previous open-ended "closed form of the chain".
   value rests on the cleared certificates (EXP-042) plus the tower at tested windows.
 - The tower is verified at steps 6->7, 7->8, 8->9 and mirrored by the clearing ratios to
   N = 11; the all-N tower lemma is the remaining [D -> unconditional] step.
+
+## Erratum (2026-11-11)
+
+Theorem 5 in its all-degree form holds on the shapes where a base certificate exists (the EXP-042 grid points with a primitive top) and where the top form is not a proper power (EXP-046 erratum). It is not established for every primitive (u, v), nor for d >= u + v in general. Corrected in planar v0.36.
