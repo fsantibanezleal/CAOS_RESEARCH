@@ -1,0 +1,7 @@
+X6: F1 alpha=2 theta=3 ok; F4 edges=8 vs 6+2 ok; F6 connectivity=2 ok
+  triple (0, 1, 5): F2 unattached independent pair (3, 4) ok; F3 min theta(X-S)+|S|/2 = 2.5 ok; F5 ok
+X7: F1 alpha=2 theta=3 ok; F4 edges=11 vs 9+2 ok; F6 connectivity=2 ok
+  triple (0, 1, 2): F2 unattached independent pair (3, 4) ok; F3 min theta(X-S)+|S|/2 = 2.5 ok; F5 ok
+  triple (1, 2, 3): F2 unattached independent pair (0, 6) ok; F3 min theta(X-S)+|S|/2 = 3.0 ok; F5 ok
+  triple (1, 2, 6): F2 unattached independent pair (0, 3) ok; F3 min theta(X-S)+|S|/2 = 2.5 ok; F5 ok
+failures: 0
