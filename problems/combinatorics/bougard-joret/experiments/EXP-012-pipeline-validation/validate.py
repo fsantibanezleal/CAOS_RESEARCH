@@ -31,7 +31,8 @@ import networkx as nx
 HERE = Path(__file__).resolve().parent
 ART = HERE / "artifacts"
 EXPS = HERE.parent
-WSL = ["wsl.exe", "-d", "Ubuntu-24.04", "--"]
+# --exec: the command string reaches bash unchanged (without it wsl.exe re-parses it and expands $1 and the like)
+WSL = ["wsl.exe", "-d", "Ubuntu-24.04", "--exec"]
 
 
 def wpath(p):
@@ -275,9 +276,12 @@ def gate_d(a):
     rows, bad = [], 0
     for n, al, k, E in D_CASES:
         geng = f"{a.nauty}/geng_a{al}"
+        # each part writes its own file: parallel writers into one pipe can interleave lines (first run, 2026-11-14)
+        tmp = f"/tmp/exp012-gate-d-{n}-{al}-{k}-{E}"
         one = wsl(f"{geng} -q -d{k} {n} {E}:{E} 0/1 | sort | tee >(wc -l >&2) | sha256sum", timeout=7200)
-        parts = wsl(f"seq 0 55 | xargs -P {a.jobs} -I R {geng} -q -d{k} {n} {E}:{E} R/56 | sort | tee >(wc -l >&2) "
-                    f"| sha256sum", timeout=7200)
+        parts = wsl(f"rm -rf {tmp} && mkdir -p {tmp} && seq 0 55 | xargs -P {a.jobs} -I R sh -c "
+                    f"'{geng} -q -d{k} {n} {E}:{E} R/56 > {tmp}/part-R.txt' && cat {tmp}/part-*.txt | sort "
+                    f"| tee >(wc -l >&2) | sha256sum; rm -rf {tmp}", timeout=7200)
         h1, h2 = one.stdout.split()[0], parts.stdout.split()[0]
         c1, c2 = int(one.stderr.split()[-1]), int(parts.stderr.split()[-1])
         ok = h1 == h2 and c1 == c2
