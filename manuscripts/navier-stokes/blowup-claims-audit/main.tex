@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,array,longtable,graphicx}
 \microtypesetup{expansion=false}
 \usepackage[margin=1.05in,headheight=14pt]{geometry}
 \usepackage{xcolor}
@@ -20,12 +20,15 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newcommand{\Q}{\mathbb Q}
+% Evidence marks, defined in Section 1: [V] read on a primary source, [D] derived here,
+% [MV] machine-verified, [U] unverified, [C] conjecture.
+\newcommand{\ev}[1]{\hspace{0.2em}{\small\textsf{[#1]}}}
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.09}
-\newcommand{\docdate}{2 November 2026}
+\newcommand{\docversion}{v0.10}
+\newcommand{\docdate}{14 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.23890775}
 \newcommand{\conceptdoi}{10.5281/zenodo.22820520}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -48,6 +51,10 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
+\emergencystretch=2.5em
+\urlstyle{tt}
+\newcommand{\fp}[1]{\nolinkurl{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \title{How much dissipation can a multiscale layer cascade carry?}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
@@ -65,16 +72,17 @@ Multiscale layer constructions produce finite-time blowup for several fluid equa
 incompressible porous media equation, for the two-dimensional Boussinesq system, for
 three-dimensional Euler, and, with fractional dissipation $|\nabla|^{\alpha}$ of order
 $\alpha<(22-8\sqrt7)/9$, for the forced Navier-Stokes equations. The exponent in the last of these is
-small, and it is natural to ask what limits it.
+small, and it is natural to ask what limits it. Exponents in this abstract are in the $|\nabla|^{\alpha}$
+convention, in which classical viscosity is $\alpha=2$.
 
 We give two upper bounds on the dissipation exponent such constructions can carry. The first is
 independent of every design constant: a cascade whose layers grow at rate $\sqrt A$ on a background
 gradient $A$ cannot exceed $\alpha=1/2$, and one whose layers grow at rate $A$ cannot exceed
-$\alpha=1$, both in the $|\nabla|^{\alpha}$ convention in which classical viscosity is $\alpha=2$.
-Neither mechanism reaches classical viscosity, by factors of four and two respectively. The second
+$\alpha=1$. Neither mechanism reaches classical viscosity, by factors of four and two respectively. The second
 bound applies to the smooth-forcing designs used for the inviscid Boussinesq and Euler results:
-both are of the pendulum class, and transcribing the exponent content of their force estimates we
-show that they certify dissipation only up to $\alpha\le5.3\times10^{-4}$ (Boussinesq) and
+both are of the pendulum class, and transcribing the exponent content of their force estimates, with
+the equation and page of every estimate, we show that they certify dissipation only up to
+$\alpha\le5.3\times10^{-4}$ (Boussinesq) and
 $\alpha\le6\times10^{-8}$ (Euler) at the published choices, and only up to
 $\alpha\le9.0\times10^{-3}$ and $\alpha\le7.5\times10^{-3}$ when every constant of the design is
 retuned in its favour, at least ten times below the exponent already achieved with a force of
@@ -82,15 +90,26 @@ finite regularity. In every reading the ceiling is highest when the
 fewest derivatives of the force are controlled.
 
 Both bounds follow from the amplitude system of the construction together with one additional
-ingredient, the effect of fractional dissipation on a single layer, which we derive and then verify
+ingredient, the effect of fractional dissipation on a single layer, which we derive and then test
 against direct simulation of the nonlinear equations, including the effect of the spatial
-localization the constructions use. We also reconstruct the exponent budget behind the published
-hypodissipative threshold, identify the constraint that determines it, and show that the admissible
-frequency ratios form an interval that closes exactly at that threshold, so that cascades with
-geometrically growing frequencies are excluded at every positive dissipation.
+localization the constructions use. The simulations meet most of their criteria and miss three, which
+are reported with their numbers: the local growth rate in a two-scale background has a slope $1.36$
+times the prediction; the handoff from a steered layer to the next reaches a correlation of $0.808$
+against a criterion of $0.9$, and $0.509$ at the largest scale separation; and the run at the first
+chosen parameters grows $726$-fold and is refuted by the instability of its own background. We also
+reconstruct the exponent budget behind the published hypodissipative threshold, identify the
+constraint that determines it, and show that the admissible frequency ratios form an interval that
+closes exactly at that threshold, so that cascades with geometrically growing frequencies are
+excluded at every positive dissipation.
+
+The machine-checked status of the two announced results is reported at the level a kernel replay
+establishes: the statements and the integrity of the formal proof, not that the formal proof follows
+the written argument, which Bastounis, Circelli and Hansen report it does not. The mechanism is due to
+C\'ordoba and Mart\'inez-Zoroa, extended to smooth forcing by Alpog\'e and Buckmaster; nothing here
+establishes blowup for any equation or improves any published threshold.
 \end{abstract}
 
-\section{The question}
+\section{The question}\label{sec:question}
 
 Let $\theta$ and $u$ solve the forced two-dimensional Boussinesq system, or let $u$ solve the forced
 three-dimensional Navier-Stokes equations with fractional dissipation. Multiscale constructions in the
@@ -105,11 +124,27 @@ much dissipation a cascade tolerates becomes a question about the exponents rela
 frequency and gradient. This paper answers it at two levels: for the mechanism classes
 (Section~\ref{sec:class}) and for two published designs (Section~\ref{sec:design}).
 
-\paragraph{Conventions.} We write dissipation as $-\nu(-\Delta)^{\alpha}$, so classical viscosity is
-$\alpha=1$; results quoted from the literature in the $|\nabla|^{\alpha}$ convention have twice our
-exponent, and we state which convention is in use whenever a number appears. The
-hypodissipative threshold $(22-8\sqrt7)/9=0.09267$ of~\cite{cmz}, stated in the $|\nabla|^{\alpha}$
-convention, is $0.04633$ in ours.
+\paragraph{Conventions.} Two conventions for the dissipation exponent occur. Ours writes the
+dissipation as $-\nu(-\Delta)^{\alpha}$, so classical viscosity is $\alpha=1$. The sources of the
+hypodissipative constructions write it as $\nu|\nabla|^{\alpha}$, so classical viscosity is
+$\alpha=2$, and every exponent is twice ours: $\alpha_{|\nabla|^{\alpha}}=2\,\alpha_{\mathrm{ours}}$.
+The hypodissipative threshold $(22-8\sqrt7)/9=0.09267$ of~\cite{cmz} is stated in the
+$|\nabla|^{\alpha}$ convention; in ours it is $0.04633$, half of it. Every exponent in this paper
+carries its convention. Sections~\ref{sec:mechanism} to~\ref{sec:design} and~\ref{sec:method}
+to~\ref{sec:status} use ours unless a number is tagged ``($|\nabla|^{\alpha}$)''; Section~\ref{sec:budget}
+transcribes the budget of the source and uses $|\nabla|^{\alpha}$ throughout; the abstract uses
+$|\nabla|^{\alpha}$.
+
+\paragraph{Evidence marks.} Each claim carries one of five marks. \ev{V}: read on a primary source, with
+the equation or page cited; the read depth of each source is recorded in the repository index of
+references, and a source read only in part is not marked \ev{V} for the parts not read. \ev{D}: derived here
+from stated hypotheses, with the derivation given or a calculation that can be repeated by hand.
+\ev{MV}: checked by machine, meaning a kernel replay of a formal development, an exact symbolic
+computation, or a numerical run whose recorded values are pinned by a repository test; a numerical run
+supports a statement and does not prove it, and the text says which kind of check is meant.
+\ev{U}: unverified, stated but not checked on a primary source or by machine. \ev{C}: conjecture, an
+interpretation or an expectation that the paper does not establish. Marks follow the statement they
+qualify; a theorem is marked by the kind of argument that proves it.
 
 \section{The layer mechanism and its dissipative extension}\label{sec:mechanism}
 
@@ -122,49 +157,70 @@ $\psi=\Omega P(s)/(\lambda^{2}|\zeta|^{2})$, satisfy a closed system of amplitud
 \dot\Theta=-\frac{J\zeta\cdot G}{\lambda|\zeta|^{2}}\,\Omega,\qquad
 \dot\Omega=\lambda\,\zeta_{1}\,\Theta ,
 \end{equation}
-where $J(x_{1},x_{2})=(-x_{2},x_{1})$. The wave velocity is perpendicular to $\zeta$ while both wave
-gradients are parallel to it, so the wave does not advect itself and the ansatz is exact where the
-envelope is one and the profile is linear. In the frozen configuration $D=0$, $G=-Ae_{2}$,
-$\zeta=re(\varphi)$, the growth rate is $\sqrt A\sin\varphi$: it carries no $\lambda$, because the
-frequency in $\dot\Omega$ cancels the reciprocal frequency in $\dot\Theta$. The gradient the layer
-deposits is governed by the amplification identity
+where $J(x_{1},x_{2})=(-x_{2},x_{1})$ \ev{V}: Lemma~3.1 and equation~(3.2) of~\cite{ab-boussinesq},
+page~8, for a general odd periodic profile $F$ and its even mean-zero primitive $P$, with the wave
+written as a sine and a cosine in Subsection~1.2, pages~3--4. The wave velocity is perpendicular to
+$\zeta$ while both wave gradients are parallel to it, so the wave does not advect itself and the ansatz
+is exact where the envelope is one and the profile is linear. In the frozen configuration $D=0$,
+$G=-Ae_{2}$, $\zeta=re(\varphi)$, the growth rate is $\sqrt A\sin\varphi$: it carries no $\lambda$,
+because the frequency in $\dot\Omega$ cancels the reciprocal frequency in $\dot\Theta$ \ev{V}
+(page~4). The gradient the layer deposits is governed by the amplification identity
 \begin{equation}\label{eq:amp}
 \nabla\vartheta(0,t)=\lambda\Theta\zeta ,
 \end{equation}
 which is why a short wave can carry a small amplitude and a large gradient, and is what makes the
-cascade possible.
+cascade possible \ev{V} (page~4, with $F(s)=s$ near the origin, equation~(4.1), page~37).
 
 \paragraph{Dissipation.} Adding $-\nu(-\Delta)^{\alpha}$ to both equations leaves the two geometric
-cancellations untouched and is diagonal on the phase, since
-$(-\Delta)^{\alpha}F(\lambda\zeta\cdot x)=(\lambda|\zeta|)^{2\alpha}F(\lambda\zeta\cdot x)$. The
-amplitude system therefore acquires one damping term per amplitude,
+cancellations untouched, because the operator commutes with them. On a single Fourier mode it is
+diagonal on the phase, exactly,
+\begin{equation}\label{eq:mode}
+(-\Delta)^{\alpha}e^{is}=(\lambda|\zeta|)^{2\alpha}e^{is},\qquad s=\lambda\zeta\cdot x ,
+\end{equation}
+\ev{D}. For a general periodic profile $F=\sum_{n}\hat F_{n}e^{ins}$ the identity holds for the
+fundamental, $n=\pm1$, and the $n$-th harmonic is damped at the larger rate
+$\nu\,n^{2\alpha}(\lambda|\zeta|)^{2\alpha}$ \ev{D}. We therefore apply the dissipation to the
+fundamental harmonic of the profile, for which the amplitude system acquires one damping term per
+amplitude,
 \begin{equation}\label{eq:diss}
 \dot\Theta=-\frac{J\zeta\cdot G}{\lambda|\zeta|^{2}}\,\Omega-\nu(\lambda|\zeta|)^{2\alpha}\Theta,
 \qquad
 \dot\Omega=\lambda\zeta_{1}\Theta-\nu(\lambda|\zeta|)^{2\alpha}\Omega ,
 \end{equation}
-with eigenvalues $-\nu(\lambda r)^{2\alpha}\pm\sqrt A\sin\varphi$ in the frozen configuration. Growth
-at frequency $\lambda$ on background gradient $A$ therefore requires
+\ev{D}, with eigenvalues $-\nu(\lambda r)^{2\alpha}\pm\sqrt A\sin\varphi$ in the frozen configuration.
+Equation~\eqref{eq:diss} is exact for a single mode and is the equation tested in
+Section~\ref{sec:validation}, where the wave is a single mode. Growth at frequency $\lambda$ on
+background gradient $A$ therefore requires
 \begin{equation}\label{eq:growth}
 \nu(\lambda r)^{2\alpha}<\sqrt A\,\sin\varphi .
 \end{equation}
-Equation~\eqref{eq:diss} is the one ingredient of this paper that does not appear in the
-constructions themselves; Section~\ref{sec:validation} reports its verification against direct
-simulation of the nonlinear equations.
+For a profile with several harmonics we use~\eqref{eq:growth} as a necessary condition: the
+harmonics sit at higher frequency and are damped more, which can only make growth harder. That the
+fundamental carries the growth of a multi-harmonic layer, whose nonlinear self-interaction the
+amplitude system does not control, is not proved here \ev{C}. Equation~\eqref{eq:diss} is the one
+ingredient of this paper that does not appear in the constructions themselves;
+Section~\ref{sec:validation} reports its test against direct simulation of the nonlinear equations
+\ev{MV}.
 
 \paragraph{Two growth laws.} The Boussinesq layers above grow at $\sqrt A$, a pendulum law: the
-amplitude pair obeys a second-order equation whose coefficient is the background gradient. The
-vortex layers of the hypodissipative Navier-Stokes construction instead grow at rate $A_{n-1}$, the
-background gradient itself, which is why its dissipation constraint reads $a=\alpha R$ in the
-exponent notation of Section~\ref{sec:budget} rather than carrying a square root. The swirl layers
-of the axisymmetric Euler construction obey the pendulum law, with the circulation gradient in
-place of the temperature gradient (Section~\ref{sec:euler}). Both laws are treated below.
+amplitude pair obeys a second-order equation whose coefficient is the background gradient \ev{V}
+(the growth scale of the next layer satisfies $\sigma_{q+1}^{2}=|G_{<q+1}(t^{b}_{q})|$, item~(iv) of the
+stage protocol, page~10). The vortex layers of the hypodissipative Navier-Stokes construction instead grow at rate
+$A_{n-1}$, the background gradient itself, which is why its dissipation constraint reads $a=\alpha R$
+in the exponent notation of Section~\ref{sec:budget} rather than carrying a square root \ev{V}
+(Subsections~1.2.3 and~1.2.4 of~\cite{cmz}, page~5: the stretching of layer $n$ by the outer layers
+is of magnitude $A_{n-1}$, equation~(9), and must beat the dissipation of the layer; saturated, this is
+constraint \textbf{D}). The swirl layers of the axisymmetric
+Euler construction obey the pendulum law, with the circulation gradient in place of the temperature
+gradient (Section~\ref{sec:euler}) \ev{V}. Both laws are treated below.
 
 \section{A bound independent of design constants}\label{sec:class}
 
-\begin{theorem}\label{thm:class}
+\begin{theorem}[\ev{D}; numerical support \ev{MV} from the cascade model of Section~\ref{sec:validation}]\label{thm:class}
 Consider a layer cascade with the following structure:
 \begin{enumerate}
+\item[(A0)] the background gradients are unbounded, $A_{q}\to\infty$, as the divergence of the
+gradient at blowup requires;
 \item[(A1)] each layer stops at amplitude $\lambda_{q}^{-1+\delta}$ with $\delta<1$;
 \item[(A2)] it deposits a background gradient $A_{q+1}=\lambda_{q}^{\delta}$, by~\eqref{eq:amp};
 \item[(A3)] frequencies and background gradients are related by $\lambda_{q}=A_{q}^{p}$ for a fixed $p$;
@@ -180,20 +236,50 @@ convention these ceilings are $1/2$ and $1$, against a classical viscosity of $2
 \end{theorem}
 
 \begin{proof}
-By (A2) and (A3), $A_{q+1}=\lambda_{q}^{\delta}=A_{q}^{p\delta}$. The gradients must grow without bound
-for the cascade to produce blowup, so $p\delta>1$; with $\delta<1$ from (A1), which is required because
-the field itself stays bounded while its gradient diverges, this gives $p>1/\delta>1$.
+By (A2) and (A3), $A_{q+1}=\lambda_{q}^{\delta}=A_{q}^{p\delta}$. If $p\delta\le1$ then
+$A_{q+1}\le A_{q}$ whenever $A_{q}>1$, and the gradients would stay bounded, against (A0); hence
+$p\delta>1$. With $\delta<1$ from (A1), which is required because the field itself stays bounded
+while its gradient diverges, this gives $p>1/\delta>1$.
 
 By (A5) and (A4), stage $q$ grows only while $\nu\lambda_{q}^{2\alpha}<c\,A_{q}^{\gamma}$ for a
 constant $c$ independent of $q$. Taking logarithms and using (A3),
 \[
 \log\nu+2\alpha p\log A_{q}<\log c+\gamma\log A_{q},
 \]
-and since $A_{q}\to\infty$ the inequality can hold for all large $q$ only if $2\alpha p\le\gamma$,
-that is $\alpha\le\gamma/(2p)$. At equality the condition reduces to $\nu<c$, which a small viscosity
-satisfies, so this step is not strict; strictness of the final bounds comes from $p>1/\delta$, which
-gives $\alpha\le\gamma/(2p)<\gamma\delta/2<\gamma/2$.
+and since $A_{q}\to\infty$ by (A0) the inequality can hold for all large $q$ only if
+$2\alpha p\le\gamma$, that is $\alpha\le\gamma/(2p)$. At equality the condition reduces to $\nu<c$,
+which a small viscosity satisfies, so this step is not strict; strictness of the final bounds comes
+from $p>1/\delta$, which gives $\alpha\le\gamma/(2p)<\gamma\delta/2<\gamma/2$.
 \end{proof}
+
+Hypothesis (A0) is the divergence of the gradient that the blowup statements assert, in the
+unbounded-gradient form of~\cite{ab-boussinesq}, Theorem~1.1, equation~(1.5), page~3 \ev{V}.
+Hypothesis (A3) takes $p$ and the constant $c$ of the proof independent of the stage, as in the
+simplified model of Section~\ref{sec:validation}; a stage-dependent exponent is treated next.
+
+\begin{remark}[stage-dependent frequency exponent, \ev{D}]\label{rem:pq}
+Let $\lambda_{q}=A_{q}^{p_{q}}$ with $p_{q}$ depending on the stage and the other hypotheses
+unchanged. Growth at stage $q$ requires $(2\alpha p_{q}-\gamma)\log A_{q}<\log(c/\nu)$. If
+$\limsup_{q}p_{q}>\gamma/(2\alpha)$, then $2\alpha p_{q}-\gamma$ is bounded below by a positive
+constant along a subsequence while $\log A_{q}\to\infty$, and the inequality fails. Hence the
+conclusion becomes $\alpha\le\gamma/(2\limsup_{q}p_{q})$, and when $p_{q}\to\infty$ no positive
+exponent is admissible at every stage. This is the situation of the axisymmetric Euler design, whose
+frequency ratios $Q_{i}$ are unbounded; Theorem~\ref{thm:euler}(i) states it in the variables of that
+design.
+\end{remark}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.62\textwidth]{figures/fig-ceiling.pdf}
+\caption{Critical dissipation exponent $\alpha_c$ of the layer-cascade model against the frequency
+exponent $p$, for the pendulum growth law ($\gamma=1/2$) and the stretching law ($\gamma=1$), our
+convention. Markers: bisection on the model, $60$ iterations, $200$ stages, $\nu=10^{-10}$. Dashed
+curves: the asymptotic ceiling $\gamma/(2p)$ of Theorem~\ref{thm:class}. The markers lie above the
+curves by the finite-horizon factor $1+2\log(1/\nu)/\bigl(g(Q-1)\gamma\bigr)$ and match the
+horizon-corrected prediction to $1.1\times10^{-7}$ (pendulum) and $1.8\times10^{-9}$ (stretching);
+the ratio of the two laws at equal $p$ is exactly $2$. Source: \fp{EXP-008-growth-law-ceiling/result.json}.}
+\label{fig:ceiling}
+\end{figure}
 
 In the variables of Section~\ref{sec:design}, where frequencies satisfy
 $\lambda_{q}=\lambda_{q-1}^{Q}$, the exponents are related by $Q=p\delta$, and the bound
@@ -204,37 +290,48 @@ $\delta$ denotes the per-level parameter of the correction hierarchy.
 \begin{corollary}\label{cor:classical}
 No cascade of either type reaches classical viscosity. The pendulum mechanism falls short by a factor
 of four and the vortex-stretching mechanism by a factor of two, uniformly in every constant of the
-design.
+design \ev{D}.
 \end{corollary}
 
 The two ceilings differ by exactly the growth law: a layer that grows at the background gradient,
 rather than at its square root, gains a factor of two and nothing else in the argument changes. The
 published constructions sit well below their own class ceilings, the hypodissipative vortex-layer
 threshold by a factor $10.8$ and the Boussinesq design of Section~\ref{sec:boussinesq}, at its
-published choices, by a factor $945$.
+published choices, by a factor $945$ \ev{MV}. To our knowledge no source states this class ceiling
+\ev{U}; the nearest quantitative value in the literature is the threshold of~\cite{cmz}.
 
 \begin{remark}
 Corollary~\ref{cor:classical} is consistent with a choice visible in the literature: the construction
-aimed at the viscous case does not use a layer cascade, but a self-similar core in which the
-scale-local Reynolds number stays of order one.
+aimed at the viscous case does not use a layer cascade, but a self-similar core whose radial Reynolds
+number stays of order one while the angular one grows without bound \ev{V} (Section~2 of~\cite{openai-ns},
+page~4).
 \end{remark}
 
 \section{Bounds for the smooth-forcing designs}\label{sec:design}
+
+Every input of this section is transcribed from the two papers of Alpog\'e and
+Buckmaster~\cite{ab-boussinesq,ab-euler}, archived in the repository with the hashes recorded in
+Appendix~\ref{app:force}; the equation and page of each estimate are given there, and the
+inequalities that are used are displayed here. A statement marked \ev{V} in this section was read in
+the archived PDF; the page numbers are the printed page numbers, which coincide with the PDF pages.
 
 \subsection{The Boussinesq design}\label{sec:boussinesq}
 
 The smooth-forcing Boussinesq construction~\cite{ab-boussinesq} controls the force of each layer in
 $C^{k}_{x,t}$ for $k\le d=k_{q}$ through a finite hierarchy of corrections, and its estimates are
-powers of the layer frequency $\lambda=\lambda_{q}$. The inputs, all displayed in that paper, are:
-the amplitude $Y\le C\lambda^{-(1-m)}$, with margin $m=1/8$; the frequency ratio
-$\lambda_{q}=\lambda_{q-1}^{Q}$ and the coefficient scale $\Pi\le\lambda^{5/Q}$; the per-level small
-parameter $\delta=\Pi^{5}Y$; $J=2d+8$ correction levels, so that the uncancelled remainder begins at
-grade $J+1$; a cost of $\lambda\Pi^{2}$ per physical derivative of an oscillatory profile and of
-$\Pi^{2}$ per derivative of a phase-independent one; and coefficient derivatives through order
-$9d+41$, which are available uniformly only through order $Q-1$ because the sums over future stages
-converge only in that range. The force of one layer at order $k\le d$ then consists of the following
-contributions.
-\begin{center}
+powers of the layer frequency $\lambda=\lambda_{q}$. The inputs are: the amplitude $Y\le C\lambda^{-(1-m)}$, with margin $m=1/8$
+(Definition~7.1(iii), equation~(7.6), page~58); the frequency ratio
+$\lambda_{q}=\lambda_{q-1}^{Q}$ and the coefficient scale $\Pi\le\lambda^{5/Q}$ (equations~(3.7), page~9,
+and~(7.4), page~58); the per-level small parameter $\delta=\Pi^{5}Y$ (Subsection~7.1.1, page~59, and
+page~69); $J=2d+8$ correction levels, so that the uncancelled remainder begins at grade $J+1$
+((3.8), page~9, and page~57); a cost of $\lambda\Pi^{2}$ per physical derivative of an oscillatory
+profile and of $\Pi^{2}$ per derivative of a phase-independent one ((7.19), page~62); and coefficient
+derivatives through order $9d+41$, which are available uniformly only through order $Q-1$ because the
+sums over future stages converge only in that range ((7.15), page~61, Theorem~5.5, page~49, and
+Lemma~5.4, page~48) \ev{V}. The force of one layer at order $k\le d$ then consists of the following
+contributions (page~64).
+\begin{table}[t]
+\centering
 \begin{tabular}{ll}
 \toprule
 contribution & size \\
@@ -245,13 +342,17 @@ higher phase means & $\lambda Y\Pi^{2k-2}\delta^{4}$ and $Y\Pi^{2k-2}\delta^{3}$
 remainders & $(\lambda\Pi^{2})^{k}\,\lambda Y\,\delta^{2d+9}$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{The eight contributions to the force of one layer at order $k\le d$ in the
+Boussinesq design, as sizes in $\lambda$, $\Pi$, $Y$ and $\delta$; the activation, leading-mean and
+higher-mean rows each stand for a scalar and a vorticity contribution. Page~64 of~\cite{ab-boussinesq}
+\ev{V}.}\label{tab:contrib}
+\end{table}
 Each must be at most $\lambda^{-\tau}$ for some $\tau>0$ for the force series to converge. The
-construction takes $\tau=3/2$, which absorbs its constants into a logarithm, together with the
-sufficient rules $Q\ge201$ and $120d\le Q$.
+construction takes $\tau=3/2$, which absorbs its constants into a logarithm ((7.26), page~65),
+together with the sufficient rules $Q\ge201$ and $120d\le Q$ ((7.4), page~58) \ev{V}.
 
-\begin{theorem}\label{thm:design}
-Write $\pi=5/Q$. The estimates behind the table hold uniformly only if $Q\ge9d+42$, and its bounds
+\begin{theorem}[\ev{D} from transcribed estimates \ev{V}; arithmetic \ev{MV}]\label{thm:design}
+Write $\pi=5/Q$. The estimates behind Table~\ref{tab:contrib} hold uniformly only if $Q\ge9d+42$, and its bounds
 are at most $\lambda^{-\tau}$ for all large $\lambda$ only if
 \[
 m\le\frac{d+9-2d\pi-5\pi(2d+9)-\tau}{2d+10},\qquad
@@ -267,7 +368,7 @@ $\alpha\le2.65\times10^{-4}$, attained at $d=0$, $Q=201$, where the leading phas
 $\alpha\le2.22\times10^{-3}$, attained at $d=0$, $Q=45$;
 \item[(iii)] even with the coefficient scale reduced to the previous wavelength, $\Pi\le\lambda^{1/Q}$,
 and the per-level parameter to $\Pi^{3}Y$, the least the correction estimates tolerate, it satisfies
-$\alpha\le4.48\times10^{-3}$.
+$\alpha\le4.48\times10^{-3}$, attained at $d=0$, $Q=42$.
 \end{enumerate}
 In each case the exponent is largest when the fewest derivatives are controlled, and it is at least
 ten times below the threshold $0.04633$ already reached with a force of finite regularity.
@@ -285,10 +386,49 @@ order one, the most favourable case, which is Theorem~\ref{thm:class} with $p=Q/
 The three consequences follow by maximizing $m/(4Q)$ over $d\ge0$ and integer $Q$ above each floor.
 As a check on the transcription, the published margin $m=1/8$ satisfies all three displayed
 inequalities at the published choices for every $d$, and at $\tau=3/2$ the second inequality is the
-construction's own condition $\Pi^{2d+3}\le\lambda^{1/4}$.
+construction's own condition $\Pi^{2d+3}\le\lambda^{1/4}$ ((7.25), page~64). The inequalities of
+case (iii) are displayed below and their arithmetic is reproduced.
 \end{proof}
 
-\begin{center}
+\paragraph{The three readings, in full.} Write the exponent of the coefficient scale as
+$\pi=c_{\Pi}/Q$, that is $\Pi=\lambda^{\pi}$, and the power of $\Pi$ in the per-level parameter as
+$e$, that is $\delta=\Pi^{e}Y$ with $Y=\lambda^{-(1-m)}$; the published design has
+$(c_{\Pi},e)=(5,5)$. Requiring each row of Table~\ref{tab:contrib} at $k=d$ to have $\lambda$-exponent
+at most $-\tau$ gives, for the remainder, the leading means, and the vorticity and scalar higher means,
+\begin{align}
+m&\le\frac{d+9-2d\pi-e\pi(2d+9)-\tau}{2d+10}, &
+m&\le1-\frac{(2d+3)\pi+\tau}{2},\label{eq:rowsA}\\
+m&\le\frac{4-\tau-(2d-2)\pi-4e\pi}{5}, &
+m&\le\frac{4-\tau-(2d-2)\pi-3e\pi}{4},\label{eq:rowsB}
+\end{align}
+together with the level gain $m<1-e\pi$ and the range $Q\ge9d+42$. The first display of
+Theorem~\ref{thm:design} is~\eqref{eq:rowsA} (left) at $e=5$, $c_{\Pi}=5$. At the published choices of
+case (i), $d=0$, $Q=201$, $\pi=5/201$, $\tau=3/2$, the leading means give
+$m\le1-(3\pi+3/2)/2=0.2127$ and $\alpha\le0.2127/(4\cdot201)=2.65\times10^{-4}$; at case (ii),
+$d=0$, $Q=45$, $\pi=1/9$, $\tau=0$, the remainder gives $m\le(9-5)/10=0.400$ and
+$\alpha\le0.400/180=2.22\times10^{-3}$. Case (iii) takes $c_{\Pi}=1$, $e=3$, $\tau=0$ and
+$Q\ge9d+42$. The choice $c_{\Pi}=1$ is $\Pi=\lambda_{q-1}$, the previous wavelength, in place of the
+$\Pi_{q}=\lambda_{q-1}^{4}(\log\lambda_{q})^{10}$ and $\ell_{q}^{-1}=\lambda_{q-1}^{3}$ of~(3.7), page~9,
+since~(7.4) requires only $\ell^{-1}\le\Pi$; the choice $e=3$ is the least power for
+which rows $b_{1}$ and $b_{2}$ of the scale table~(7.14), page~60, stay at most one when
+$\ell^{-1}=\Pi$, since $b_{1}\le1$ asks $\delta\ge\Pi^{5}/\lambda$ and $b_{2}\le C_{Y}$ asks
+$\delta\ge Y\Pi^{3}$ \ev{V}. That nothing smaller than the previous wavelength can be nested, which is
+what Lemma~4.3, page~38, supplies, was not re-derived here \ev{U}; the reading is a bound on what
+retuning the constants could reach and is not a design that anyone has proposed. At $d=0$, $Q=42$, so
+$\pi=1/42$ and $e\pi=3/42$, the four inequalities give
+\begin{align*}
+m&\le\frac{9-27/42}{10}=0.836, & m&\le1-\frac{3/42}{2}=0.964,\\
+m&\le\frac{4+2/42-12/42}{5}=0.7524, & m&\le\frac{4+2/42-9/42}{4}=0.958,
+\end{align*}
+and the level gain gives $m<1-3/42=0.929$. The vorticity higher means bind, $m\le0.7524$, and
+$\alpha\le0.7524/(4\cdot42)=4.48\times10^{-3}$ \ev{MV}: the displayed inequalities with these
+parameters were evaluated by a separate script written from the displayed formulas and agree with the
+repository code, over $d\le60$ and integer $Q\ge9d+42$, where the maximum is attained at $d=0$,
+$Q=42$. The rows for $d=0,1,2,5,10$ of Table~\ref{tab:boussinesq}, in the published and free
+columns, were reproduced the same way.
+
+\begin{table}[t]
+\centering
 \begin{tabular}{rrrrrrr}
 \toprule
  & \multicolumn{3}{c}{published choices} & \multicolumn{3}{c}{free choices released} \\
@@ -301,62 +441,73 @@ $5$ & $600$ & $0.196$ & $8.16\times10^{-5}$ & $87$ & $0.398$ & $1.14\times10^{-3
 $10$ & $1200$ & $0.202$ & $4.21\times10^{-5}$ & $132$ & $0.425$ & $8.05\times10^{-4}$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Largest margin $m$ and exponent $\alpha$ (our convention) of the Boussinesq design at $d$
+controlled derivatives of the force, at the published choices and with every free choice released.
+\ev{MV}}\label{tab:boussinesq}
+\end{table}
 
 In the $|\nabla|^{\alpha}$ convention the three ceilings are $5.29\times10^{-4}$,
-$4.44\times10^{-3}$ and $8.96\times10^{-3}$, against a proved threshold of $0.0927$: factors of $175$,
+$4.44\times10^{-3}$ and $8.96\times10^{-3}$, against a proved threshold of $0.0927$ ($|\nabla|^{\alpha}$): factors of $175$,
 $21$ and $10$. What ties the regularity of the force to the frequency ratio is the derivative range
 $Q\ge9d+42$, and what caps the margin is the correction hierarchy itself: two levels per derivative,
 each gaining $\lambda^{-(1-m)}$, drive the remainder bound on $m$ down to $1/2$ as $d$ grows, and at the
 published target the leading phase means, which are quadratic in the amplitude and gain nothing from
-the hierarchy, hold it near $1/4$.
+the hierarchy, hold it near $1/4$ \ev{D}.
 
 \subsection{The Euler design}\label{sec:euler}
 
 In the axisymmetric Euler construction~\cite{ab-euler}, written in the volume coordinates
 $y=(z,r^{2}/2)$, the circulation $\Gamma=ru^{\varphi}$ takes the place of the temperature. The
 principal amplitudes of a layer of frequency $N$ obey
-\[
+\begin{equation}\label{eq:euler-amp}
 \partial_{t}\begin{pmatrix}T\\ \widehat\Omega\end{pmatrix}
 =\begin{pmatrix}0&-d/(\sigma\kappa)\\ \sigma c\,\zeta_{1}&0\end{pmatrix}
 \begin{pmatrix}T\\ \widehat\Omega\end{pmatrix},
 \qquad d=(J\zeta)\cdot\nabla_{y}\Gamma_{<},\qquad c=2W\Gamma_{<},
-\]
-with $c$ bounded above and below on the support of the layer. The growth rate is the square root of
-the product of the off-diagonal entries and scales as $|\nabla\Gamma|^{1/2}$: the Euler layers belong
-to the pendulum class of Theorem~\ref{thm:class}, with $\gamma=1/2$ in the variable $\nabla\Gamma$
-whose norm diverges. On the constructed sequence the growth scale is $\sigma_{i}\asymp N_{i}^{\beta/2}$
-against a deposited circulation gradient of order $N_{i}^{\beta}$, in agreement with this law.
+\end{equation}
+equation~(3.4) of~\cite{ab-euler}, page~7, with $c$ bounded above and below on the support of the layer
+by~(2.12), page~5 \ev{V}. The growth rate is the square root of the product of the off-diagonal
+entries and scales as $|\nabla\Gamma|^{1/2}$: the Euler layers belong to the pendulum class of
+Theorem~\ref{thm:class}, with $\gamma=1/2$ in the variable $\nabla\Gamma$ whose norm diverges, which
+is the blowup variable of equation~(1.3), page~2 \ev{D}. On the constructed sequence the growth scale is
+$\sigma_{i}\asymp N_{i}^{\beta/2}$ against a deposited circulation gradient of order $N_{i}^{\beta}$,
+in agreement with this law (page~97, where these are prescribed scalar intervals) \ev{V}.
 
-The force estimates of this construction are stated with explicit exponents. Write $\beta$ for the
-amplitude margin (amplitude $N^{-(1-\beta)}$), $h=1-\beta$, $N_{i}=N_{i-1}^{Q}$, $\Pi\le N^{v}$ with
-$v=p/Q$ for the coefficient scale, $\delta=\Pi^{\mathsf d}N^{-h}$ for the per-level parameter,
-$h_{*}=h-\mathsf dv$, $J=2k+8$ correction levels and $u\ge kv$. The activation, remainder and mean
-contributions to the force of one layer at order $k$ then carry the exponents
-\[
+The force estimates of this construction are stated with explicit exponents in Section~12. Write
+$\beta$ for the amplitude margin (amplitude $N^{-(1-\beta)}$), $h=1-\beta$, $N_{i}=N_{i-1}^{Q}$,
+$\Pi\le N^{v}$ with $v=p/Q$ for the coefficient scale, $\delta=\Pi^{\mathsf d}N^{-h}$ for the
+per-level parameter, $h_{*}=h-\mathsf dv$, $J=2k+8$ correction levels and $u\ge kv$ (equations~(12.1)
+to~(12.3), page~95, and page~104). The activation, remainder and mean contributions to the force of
+one layer at order $k$ then carry the exponents
+\begin{equation}\label{eq:euler-exp}
 1-e+2u+v,\qquad -(2h_{*}-1)k+\beta-9h_{*}+2u+v,\qquad -2h+3u+6v
-\]
-of $N$, where $e$ is the exponent of the seed. The estimates further require thirteen coefficient
-quotients of the form $\Pi^{A-B\mathsf d}N^{-n\beta}$ to be at most one, the localization exponent
-$a$ of $\ell=N_{i-1}^{-a}$ to satisfy $a>5\beta/2$ with $p\ge a$, the centre condition
-$2h_{*}>\beta/2$, and coefficient derivatives through the orders the correction recursion consumes,
-which are available uniformly only when $9k+51\le Q$. The construction chooses $\beta=1/8$,
-$\mathsf d=16$, $p=8$, $a=4$ and $Q_{i}=q_{0}+i$ with $q_{0}\ge2^{20}$; with these choices the three
-exponents are $-7.00$, $-10.75$ and $-1.75$, within its targets $-6$, $-6$ and $-3/2$, and every side
-condition holds.
+\end{equation}
+of $N$, where $e$ is the exponent of the seed (equation~(12.15), page~104) \ev{V}. The estimates
+further require the following (Appendix~\ref{app:force}, Table~\ref{tab:euler-quot}):
+thirteen coefficient quotients of the form $\Pi^{A-B\mathsf d}N^{-n\beta}$ to be at most one,
+equation~(12.13), page~102; the localization exponent $a$ of $\ell=N_{i-1}^{-a}$ to satisfy
+$a>5\beta/2$, the second row of~(12.7), page~98, where the positive number $c=a+h-1-3\beta/2=a-5\beta/2$
+is defined on page~95, with $p\ge a$ because $\Pi$ dominates $\ell^{-1}$; the centre condition
+$2h_{*}>\beta/2$ and the row $2h_{*}>v$ of~(12.7); and coefficient derivatives through the orders the
+correction recursion consumes, which are available uniformly only when $9k+51\le Q$ (page~101) \ev{V}.
+The construction chooses $\beta=1/8$, $\mathsf d=16$, $p=8$, $a=4$ and $Q_{i}=q_{0}+i$ with
+$q_{0}\ge2^{20}$ (equations~(12.1) and~(12.2), page~95); with these choices the three exponents are
+$-7.00$, $-10.75$ and $-1.75$, within its targets $-6$, $-6$ and $-3/2$ (page~104), and every side
+condition holds \ev{MV}.
 
-\begin{theorem}\label{thm:euler}
+\begin{theorem}[\ev{D} from transcribed estimates \ev{V}; arithmetic \ev{MV}]\label{thm:euler}
 Under the Euler design, carrying dissipation $-\nu(-\Delta)^{\alpha}$ at an insertion angle of order
 one requires $\alpha\le\beta/(4Q)$. Consequently, in our convention:
 \begin{enumerate}
 \item[(i)] at the published choices $\alpha\le2.98\times10^{-8}$ at the first stage, and no positive
 exponent is admissible at every stage, since $Q_{i}$ is unbounded;
 \item[(ii)] with every free choice released, that is, force exponents only required to be negative,
-$\mathsf d$ at the least value the coefficient quotients permit and $Q\ge9k+51$, the exponent
+$\mathsf d$ at the least value the coefficient quotients permit, the localization exponent $a$ at the
+larger of $1$ and the limit $5\beta/2$ of its row, and $Q\ge9k+51$, the exponent
 satisfies $\alpha\le3.64\times10^{-3}$, attained at $k=0$, $Q=51$, $\beta=0.742$, where the centre
 condition binds;
-\item[(iii)] with the localization at the previous wavelength, $a=1$, it satisfies
-$\alpha\le3.77\times10^{-3}$.
+\item[(iii)] with the localization at the previous wavelength, $a=1$, and the rows of~(12.7) that
+involve $a$ not imposed, it satisfies $\alpha\le3.77\times10^{-3}$, attained at $k=0$, $Q=51$.
 \end{enumerate}
 \end{theorem}
 
@@ -364,22 +515,40 @@ $\alpha\le3.77\times10^{-3}$.
 Growth at frequency $N_{i}$ on the circulation gradient deposited by the previous layer requires
 $\nu N_{i}^{2\alpha}<\sigma_{i-1}\sin s_{i}$ with $\sigma_{i-1}\asymp N_{i-1}^{\beta/2}$ and
 $N_{i}=N_{i-1}^{Q}$, which is $\alpha<\beta/(4Q)$; this is Theorem~\ref{thm:class} with $p=Q/\beta$
-and $\gamma=1/2$. The first consequence is this bound at $Q=2^{20}+1$ and $\beta=1/8$. For the
+and $\gamma=1/2$, and, with Remark~\ref{rem:pq}, no positive exponent survives $Q_{i}\to\infty$. The first
+consequence is the bound at $Q=2^{20}+1$ and $\beta=1/8$. For the
 others, each listed condition is an inequality in $\beta$ at fixed $k$ and $Q$; $\mathsf d$ is taken
 as the least value for which every coefficient quotient is at most one, which is $\mathsf d=2$ in the
 maximizing range because the quotients carrying no power of $N$ are $\Pi^{2-\mathsf d}$; and
 $\beta/(4Q)$ is maximized over $k\ge0$ and integer $Q\ge9k+51$.
 \end{proof}
 
+\paragraph{The inequalities of cases (ii) and (iii).} With $a$, $p=a$, $v=p/Q$, $u=kv$ and $\mathsf d$
+as above, $h=1-\beta$ and $h_{*}=h-\mathsf dv$, the conditions imposed are
+\begin{gather}
+-(2h_{*}-1)k+\beta-9h_{*}+2u+v<0,\qquad -2h+3u+6v<0,\qquad h_{*}>0,\label{eq:eu1}\\
+2h_{*}>\beta/2,\qquad 2h_{*}>v,\qquad (A-B\mathsf d)v-n\beta\le0\ \text{for the thirteen rows},\qquad 9k+51\le Q,\label{eq:eu2}
+\end{gather}
+and, in (ii) only, the rows of~(12.7) that involve $a$, namely $a-2\beta$, $a-5\beta/2$, $a-3\beta/2$ and
+$a-\beta/2$, positive, with $a=\max(1,5\beta/2)$. At the optimum of (ii), $k=0$, $Q=51$, $\beta=0.742$,
+$a=1.855$, $v=0.0364$, $\mathsf d=2$ and $h_{*}=0.1855$, so that $2h_{*}-\beta/2=0$ to the precision
+of the search and the row $a-5\beta/2$ is zero by the choice of $a$; every other row of~(12.7) is
+positive. At the optimum of (iii), $\beta=0.7685$ and $a=1$, the rows $a-2\beta$, $a-5\beta/2$ and
+$a-3\beta/2$ are negative and are not imposed, which is what makes (iii) a bound on retuning and not a
+design; $2h_{*}-\beta/2=3\times10^{-4}$ binds. The values $3.64\times10^{-3}$ and $3.77\times10^{-3}$,
+and $3.12\times10^{-3}$ at $k=1$ below, were reproduced from~\eqref{eq:eu1} and~\eqref{eq:eu2} with
+the thirteen rows of Table~\ref{tab:euler-quot}, independently of the repository code \ev{MV}.
+
 In the $|\nabla|^{\alpha}$ convention the ceilings of (ii) and (iii) are $7.27\times10^{-3}$ and
-$7.53\times10^{-3}$, below the proved threshold $0.0927$ by factors of $12.7$ and $12.3$; with one
-controlled derivative of the force, (ii) gives $3.12\times10^{-3}$. The two smooth-forcing designs
+$7.53\times10^{-3}$, below the proved threshold $0.0927$ ($|\nabla|^{\alpha}$)
+by factors of $12.7$ and $12.3$; with one controlled derivative of the force, $k=1$, (ii) gives
+$3.12\times10^{-3}$ in our convention, $6.25\times10^{-3}$ in the $|\nabla|^{\alpha}$ convention. The two smooth-forcing designs
 therefore behave alike: both are of the pendulum class, both tie the frequency ratio to the
 regularity of the force through the range of their coefficient bounds, $Q\ge9d+42$ and $Q\ge9k+51$,
 and both certify at most a few thousandths, more than ten times below the rough-force threshold. For
 a Navier-Stokes version of the Euler design the damping of a localized swirl layer is taken at its
-leading symbol $\nu(N|\zeta|)^{2\alpha}$; the verification of Section~\ref{sec:validation} concerns
-the Boussinesq system.
+leading symbol $\nu(N|\zeta|)^{2\alpha}$; the test of Section~\ref{sec:validation} concerns
+the Boussinesq system, and the lower-order geometric terms of the swirl case were not measured \ev{U}.
 
 \begin{remark}\label{rem:levers}
 A dissipative version of either design must therefore change one of three things: the range of
@@ -388,30 +557,37 @@ nonoscillatory phase means, which no number of correction levels reduces; or the
 the factor four in $\alpha\le m/(4Q)$ comes from the rate $\sqrt A$ and becomes a factor two for
 vortex stretching. The bounds concern what the estimates of each design can certify, not the
 existence of any solution: a different correction scheme is not covered, and Theorem~\ref{thm:class}
-is the only statement here independent of the designs.
+is the only statement here independent of the designs \ev{D}.
 \end{remark}
 
 \section{The exponent budget behind the published threshold}\label{sec:budget}
 
-The hypodissipative Navier-Stokes construction~\cite{cmz} writes every quantity as a power of one base: the
+In this section $\alpha$ is in the convention of the source, $|\nabla|^{\alpha}$, in which classical
+viscosity is $\alpha=2$ and the threshold is $0.09267$; every value of $\alpha$ below is twice the
+corresponding exponent in our convention, and $a$, $b$, $R$ and $s$ are the exponents of the source. The hypodissipative Navier-Stokes construction~\cite{cmz} writes every quantity as a power of one base: the
 frequency of layer $n$ is $M_{n}=N^{R^{n}}$, the amplitude $A_{n}=N^{aR^{n}}$, the localization scale
 $L_{n}=N^{bR^{n}}$, and $s>0$ is the H\"older margin of the force. Its force estimates give four
-constraints:
+constraints, read in Subsections~4.3.2 to~4.3.5 (pages~28 to~30) and Subsection~1.2.4 (page~5) of the
+source \ev{V}:
 
-\begin{center}
+\begin{table}[t]
+\centering
 \begin{tabular}{llc}
 \toprule
- & origin & constraint \\
+ & origin (\cite{cmz}) & constraint \\
 \midrule
-\textbf{D} & dissipation & $a=\alpha R$ \\
-\textbf{S} & self-interaction & $2a-a/R+b+s-1\le0$ \\
-\textbf{L} & localization & $b\ge a+1/R+s$ \\
-\textbf{O} & outer velocity on the inner layer & $a+2/R+s+1-3b\le0$ \\
+\textbf{D} & dissipation, 4.3.5 & $a=\alpha R$ \\
+\textbf{S} & self-interaction, 4.3.2 & $2a-a/R+b+s-1\le0$ \\
+\textbf{L} & localization, 4.3.3 & $b\ge a+1/R+s$ \\
+\textbf{O} & outer velocity on the inner layer, 4.3.4 & $a+2/R+s+1-3b\le0$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{The four exponent constraints on the force margin $s$, $|\nabla|^{\alpha}$ convention.
+Each is the exponent of a displayed estimate of the cited subsection, with logarithmic factors
+dropped. \ev{V}}\label{tab:constraints}
+\end{table}
 
-\begin{proposition}\label{prop:threshold}
+\begin{proposition}[\ev{D}; discriminant identity \ev{MV}]\label{prop:threshold}
 With \textbf{D} and \textbf{S} saturated, \textbf{O} reduces to $4s<2+3\alpha-7\alpha R-2/R$, whose
 maximum over the frequency ratio is at $\alpha R^{2}=2/7$. At that optimum
 $s(\alpha)=\bigl(2+3\alpha-2\sqrt{14\alpha}\bigr)/4$, and $s>0$ is equivalent to
@@ -420,12 +596,13 @@ $9\alpha^{2}-44\alpha+4>0$, whose smaller root is $(22-8\sqrt7)/9$.
 
 The optimizing ratio $R=\sqrt{2/(7\alpha)}$ is the one the construction uses, and no coefficient in
 the chain is fitted. At the threshold the localization constraint is inactive, with margin
-$\tfrac12(\sqrt{2\alpha/7}-\alpha)=0.0350$; a budget that saturates \textbf{L} instead and omits
-\textbf{O} yields $\alpha R^{2}=1/3$ and the weaker bound $5-2\sqrt6=0.10102$, the value given by an
-order-of-magnitude estimate in the source. The difference between the two is precisely which
+$\tfrac12(\sqrt{2\alpha/7}-\alpha)=0.0350$ ($|\nabla|^{\alpha}$ convention, $\alpha=0.09267$);
+a budget that saturates \textbf{L} instead and omits
+\textbf{O} yields $\alpha R^{2}=1/3$ and the weaker bound $5-2\sqrt6=0.10102$ ($|\nabla|^{\alpha}$), the value given by an
+order-of-magnitude estimate in the source (Subsection~1.2.4). The difference between the two is precisely which
 constraint is active.
 
-\begin{proposition}\label{prop:ratios}
+\begin{proposition}[\ev{D}; discriminant identity and the case $R=1$ \ev{MV}]\label{prop:ratios}
 A positive force margin requires $7\alpha R^{2}-(2+3\alpha)R+2<0$, so the admissible ratios form the
 interval with endpoints
 $R_{\pm}=\bigl[(2+3\alpha)\pm\sqrt{9\alpha^{2}-44\alpha+4}\bigr]/(14\alpha)$. The discriminant is the
@@ -434,7 +611,8 @@ threshold, and that point is $\sqrt{2/(7\alpha)}$. Moreover $R_{-}>1$ for every 
 $R=1$ the margin equals $-\alpha$.
 \end{proposition}
 
-\begin{center}
+\begin{table}[t]
+\centering
 \begin{tabular}{lrr}
 \toprule
 $\alpha$ ($|\nabla|^{\alpha}$) & admissible $R$ & optimizing $R$ \\
@@ -446,46 +624,236 @@ $0.09267$ & $\{1.7559\}$ & $1.7559$ \\
 $0.10$ & empty & none \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Admissible frequency ratios $R$ and the optimizing ratio at five values of the dissipation
+exponent in the $|\nabla|^{\alpha}$ convention, from Proposition~\ref{prop:ratios}. \ev{MV}}\label{tab:ratios}
+\end{table}
 
-\begin{corollary}
+\begin{corollary}[\ev{D}]
 Cascades with geometrically growing frequencies, the case $R=1$, are inadmissible at every positive
 dissipation: localization requires $b\ge a+1+s$ while self-interaction permits only $b\le1-a-s$,
 forcing $\alpha+s\le0$. Super-geometric frequency growth is therefore necessary, and more of it is
 necessary as the dissipation rises, until at the threshold a single ratio remains.
 \end{corollary}
 
-Propositions~\ref{prop:threshold} and~\ref{prop:ratios} are verified in exact arithmetic by computer
-algebra in the accompanying repository.
+Subsection~1.2.2 of~\cite{cmz} (page~5) states in words that the exponential separation of
+frequencies used for the inviscid construction produces no meaningful growth in the presence of
+diffusion of any order \ev{V}; we read this as the case $R=1$ of the corollary \ev{C}. Propositions~\ref{prop:threshold}
+and~\ref{prop:ratios} are verified in exact arithmetic by computer
+algebra in the accompanying repository (\fp{tests/test_navier_stokes_threshold.py}), and
+numerically in \fp{nslib/cmz_budget.py} with its tests, in continuous integration \ev{MV}.
+
+\section{Numerical methods and reproducibility}\label{sec:method}
+
+Every simulation in Section~\ref{sec:validation} and every number it quotes was produced by the code in
+\fp{problems/analysis-pde/navier-stokes/code/} of the repository, from the settings stored in the
+\fp{args} block of each result file.
+
+\paragraph{Equations and discretization.} The nonlinear control is the two-dimensional Boussinesq system
+on the periodic box $[0,2\pi)^{2}$,
+\[
+\partial_{t}\theta+u\cdot\nabla\theta=-\nu(-\Delta)^{\alpha}\theta,\qquad
+\partial_{t}\omega+u\cdot\nabla\omega=\partial_{1}\theta-\nu(-\Delta)^{\alpha}\omega,\qquad
+u=\nabla^{\perp}\psi,\ \Delta\psi=\omega ,
+\]
+with $\nabla^{\perp}=J\nabla$, in our convention (module \fp{nslib/boussinesq.py}). Space is
+discretized by a Fourier pseudospectral method on $N\times N$ points with the two-thirds dealiasing
+rule applied to every product and after every step, so that a wave above $N/3$ is annihilated;
+the runners refuse such configurations, and for the two-layer runs they also refuse a configuration in
+which the demodulation window, and not only the wave, reaches past $N/3$.
+
+\paragraph{Time integration and precision.} Time is advanced by fourth-order Runge-Kutta in the
+integrating-factor form: the linear dissipative part $-\nu|k|^{2\alpha}$ is solved exactly in Fourier
+space and the Runge-Kutta stages act on the nonlinear terms only, so the scheme is stable when
+$\nu|k|^{2\alpha}$ is large at the grid scale. The step $\Delta t$ is fixed per run
+(Table~\ref{tab:runs}). Arithmetic is IEEE double precision (\fp{float64}) on an
+NVIDIA RTX~4070 Laptop GPU with 8~GB of memory, through PyTorch; the PyTorch version is not recorded in
+the result files \ev{U}.
+
+\paragraph{Steering.} The control that returns a grown layer to rest is applied in the co-rotating frame
+(module \fp{nslib/corotating.py}): in two dimensions the common rotation of the background is
+equivalent, on the torus, to a rotating gravity direction $g(t)$, because the Coriolis and
+centrifugal accelerations are gradients absorbed by the pressure and the Euler acceleration shifts only
+the uniform mean vorticity. The prescribed stratification is held by a low-frequency force that cancels
+its buoyancy torque. The control law is the transcription of Subsections~3.2, 3.3 and~3.6.2
+of~\cite{ab-boussinesq} (module \fp{nslib/steering.py}), integrated in the reduced model by
+fourth-order Runge-Kutta at $\Delta t=2\times10^{-4}$. The background of the repaired runs is
+$\theta=-(A/\lambda_{0})\bigl(\sin\lambda_{0}x_{2}-\tfrac18\sin2\lambda_{0}x_{2}\bigr)$, whose gradient is
+constant to fourth order at the origin, at three quarters of $A$; the other background is
+$\theta=-(A/\lambda_{0})\sin\lambda_{0}x_{2}$. Both are functions of $x_{2}$ alone and hence exact steady
+states of the unforced system with vertical gravity.
+
+\paragraph{Local growth rate.} The local growth rate of a layer is read by demodulation: the spectrum is
+shifted so that the layer's wavevector lies at the origin, low-passed at a cutoff radius, and the
+modulus of the result is the slowly varying amplitude. At every point the logarithm of the modulus is
+fitted by least squares in time over $30$ samples, after a settling interval that is evolved and
+discarded so that the transient of a wave injected off its growing eigenmode does not inflate the
+rate. The fitted rate field is compared with $\sigma(x)=\sqrt{\max(0,-\zeta_{1}\,J\zeta\cdot G)}$
+evaluated on the low-pass filtered gradient (the total two-scale gradient) and, as the control, on the
+base stratification alone; the comparison is restricted to the points where both predictions exceed a
+fraction (the mask fraction) of their maximum, and reports the correlation, the regression slope of
+the measured on the predicted rate, and the root-mean-square difference.
+
+\paragraph{Cascade model.} The cascade bookkeeping of Theorem~\ref{thm:class} is evaluated in
+logarithmic variables, because the quantities are exponentially large or small
+(module \fp{nslib/cascade.py}): the stage gradients are $A_{q}=A_{0}e^{gq}$, the frequencies
+$\lambda_{q}=c_{\lambda}A_{q}^{p}$ and the amplitudes $\Theta_{q}=A_{q+1}/\lambda_{q}$, with four
+constraints (summable amplitudes, positive growth, finite total time, survival of the deposited gradient
+under the damping of the holds). The critical exponent is found by bisection on $\alpha$.
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{1.55cm}L{6.1cm}L{2.7cm}L{4.4cm}@{}}
+\toprule
+run & settings from the \fp{args} block & wall time & result file \\
+\midrule
+EXP-002 & $N=768$, $\Delta t=5\times10^{-4}$, $t_{\mathrm{end}}=0.6$, $A=4$, $\lambda_{0}=1$,
+$\lambda=40$ ($20$ to $160$ in the sweep), $\Theta_{0}=10^{-6}$, $\varphi=\pi/2$ and $\pi/4$ &
+$355.0$, $25.7$, $76.4$~s & \fp{result.json}, \fp{rate-phi-pi4.json}, \fp{controls-phi-pi4.json} \\
+EXP-003 & $10^{6}$ schedules, $400$ stages, $\nu=10^{-10}$, GPU & $1.9$~s & \fp{result.json} \\
+EXP-004 frozen & $N=1024$, $\Delta t=4\times10^{-4}$, $A_{0}=A_{1}=4$, $\lambda_{0}=1$, $\lambda_{1b}=16$,
+$\lambda_{2}=192$, $\Theta_{2}=10^{-7}$, mask $0.35$ & $33.5$~s & \fp{result-frozen.json} \\
+EXP-004 dynamical & $N=1024$, $\Delta t=5\times10^{-4}$, $\lambda_{1}=32$, $\lambda_{2}=256$ & $301.4$~s & \fp{result-dynamical.json} \\
+EXP-005 B, committed & $N=512$, $\Delta t=2\times10^{-3}$, $k=(4,31)$, $\Lambda=2.5$ & $1772.9$~s &
+\texttt{result-B-committed-}\allowbreak\texttt{parameters-REFUTED.json} \\
+EXP-005 B, repaired & $N=512$, $k=(15,26)$, $\Lambda=1$, $c_{p}=3$, hold $3/\Gamma$, sine and flattened backgrounds &
+$235.2$, $269.5$~s & \fp{result-B-sine.json}, \fp{result-B-flattened.json} \\
+EXP-005 C & as repaired B, flattened, $\alpha=1/2$, damping $0.2\Gamma$ & $92.8$~s & \fp{result-C-dissipative.json} \\
+EXP-005 D & flattened; $\lambda_{2}=360$ at $N=1536$ ($781.9$~s); $\lambda_{2}=192$ at $N=1024$, window $1.5$, $3$, $4.5$ ($283$~s each);
+$\lambda_{2}=512$ at $N=2048$ ($1304.6$~s) & as listed & \fp{result-D-*.json} \\
+EXP-007 & $N=4096$, $\alpha=1/2$, mask level $0.5$, no time stepping & not recorded & \fp{result.json} \\
+EXP-008 & $\nu=10^{-10}$, $g=1$, $200$ stages, bisection to tolerance $10^{-5}$; standard library only & not recorded & \fp{result.json} \\
+\bottomrule
+\end{tabular}
+\caption{Settings and run times of the experiments of Section~\ref{sec:validation}, read from the result
+files in \fp{experiments/EXP-00N-*/}. Times are the wall times stored in the result files; where none
+is stored the table says so.}\label{tab:runs}
+\end{table}
+
+\paragraph{Commands.} Run from \fp{problems/analysis-pde/navier-stokes/code}. The rerun harness
+\fp{reproduce_all.py} rebuilds each command line from the \fp{args} block of the stored result
+and compares every numeric leaf of the rerun with the record; the command
+\texttt{python reproduce\_all.py --only exp004} reruns one experiment. The recorded commands are
+{\footnotesize
+\begin{verbatim}
+python run_exp002.py --A0 4.0 --Theta0 1e-06 --dt 0.0005 --lam 40 --lam0 1 \
+    --mode all --n 768 --phi 1.5707963267948966 --t-end 0.6
+python run_exp003.py --batch 1000000 --nu 1e-10 --stages 400
+python run_exp004.py --A0 4.0 --A1 4.0 --Theta1 0.002 --Theta2 1e-07 \
+    --alpha 1.0 --dt 0.0004 --grow1 2.4 --lam0 1 --lam1 12 --lam1b 16 \
+    --lam2 192 --mask-frac 0.35 --measure2 0.08 --mode frozen --n 1024 \
+    --nu 0.0 --phi1 1.5707963267948966 --phi2 1.5707963267948966 --settle 2.0
+python run_exp007.py --alpha 0.5 --mask-level 0.5 --n 4096
+python run_exp008.py --g 1.0 --nu 1e-10 --stages 200 --tolerance 1e-05
+\end{verbatim}
+}
+The runs of experiment~5 are reconstructed from their \fp{args} blocks and are not part of
+\fp{reproduce_all.py}; the two-layer run of the best correlation is
+{\footnotesize
+\begin{verbatim}
+python run_exp005.py --part D --n 1536 --k1 15 --k2 26 --Lambda 1.0 \
+    --background flattened --lam2 360 --rate-window 3.0
+\end{verbatim}
+}
+The unit tests of the library are in \fp{code/tests/}, and the repository tests that guard the
+numbers of this paper are described in the data section.
 
 \section{Verification of the dissipative extension}\label{sec:validation}
 
 Theorems~\ref{thm:class}, \ref{thm:design} and~\ref{thm:euler} rest on~\eqref{eq:diss}, which is derived rather than
 taken from the constructions. It was tested against direct pseudospectral simulation of the nonlinear
-two-dimensional Boussinesq system in double precision with two-thirds dealiasing.
+two-dimensional Boussinesq system (Section~\ref{sec:method}). Table~\ref{tab:gates} lists every
+criterion of every run, the ones met and the ones not met, with the numbers and what follows from each;
+the paragraphs after it give the details that do not fit in a row. All numbers are read from the
+result files (\ev{MV}).
+
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{1.45cm}L{5.9cm}L{1.85cm}L{5.0cm}@{}}
+\caption{Every criterion of the numerical experiments, met and not met. ``Outcome'' is the outcome
+against the criterion fixed before the run. Simulations are of the two-dimensional Boussinesq system
+unless the row says otherwise.}\label{tab:gates}\\
+\toprule
+run & criterion and measured value & outcome & what follows \\
+\midrule
+\endfirsthead
+\toprule
+run & criterion and measured value & outcome & what follows \\
+\midrule
+\endhead
+\midrule\multicolumn{4}{r}{continued on the next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+EXP-002 & Peak growth rate on a vertical stratification: $1.999828$ against $2$ at $\varphi=\pi/2$ (relative error $8.6\times10^{-5}$) and $1.414272$ against $1.414214$ at $\varphi=\pi/4$ ($4.1\times10^{-5}$); over the window where the background is flat to ten per cent the maximum relative error is $1.9\times10^{-2}$ and $2.5\times10^{-2}$ & met &
+The amplitude system predicts the rate of one layer to the per cent over the flat part of the band and to $10^{-4}$ at its peak. \\
+EXP-002 & Band structure: the unstable band is amplified by $3.32$ and the stable band ends at $0.570$ of its amplitude & met & The sign change of $J\zeta\cdot G$ is present in the simulation. \\
+EXP-002 & Frequency independence: peak rate across $\lambda=20,40,80,160$ spread $2.7\times10^{-4}$ & met & The rate carries no $\lambda$; \eqref{eq:growth} compares a $\lambda$-free growth with a $\lambda$-dependent damping. \\
+EXP-002 & Damping term at $\alpha\in\{1/4,1/2,1\}$, $\nu\in\{10^{-5},10^{-4}\}$: absolute error $\le2.6\times10^{-4}$ over six cases, the largest shifting the rate by $0.16$ & met & Equation~\eqref{eq:diss} is the damping law of a plane wave in the nonlinear equations (Figure~\ref{fig:damping}). \\
+EXP-002 & Corrupted models at $\varphi=\pi/4$ must fail: relative error $0.310$ (drop $\zeta_{1}$), $0.845$ (drop the inverse norm), unbounded (flip the sign). At $\varphi=\pi/2$ the drop-$\zeta_{1}$ model coincides with the correct one since $\zeta_{1}=1$ & controls fail as required & The controls are reported at $\varphi=\pi/4$ because at $\varphi=\pi/2$ one of them cannot discriminate. Validity: scale separation at least $20$, $\Theta_{0}=10^{-6}$, one layer, a short horizon. \\
+EXP-003 & Cascade model, $10^{6}$ schedules: exponent $\gamma/(2p)$ to $2.6\times10^{-6}$ against the horizon-corrected prediction, zero violations; the hold-damping constraint binds while growth positivity holds in $0$ of $2304$ schedules & met & The time budget and the damping of the holds do not move the exponent. The relation $p=11/4+\sqrt7$ at the threshold holds along the whole family and is not evidence about the threshold (Section~\ref{sec:scope}). \\
+EXP-004, frozen & Correlation of the local rate of a fine wave with the total two-scale gradient $0.99945$ (RMSE $0.188$) against $0.212$ for the base stratification alone (RMSE $0.808$); background drift $1.45\times10^{-15}$ over $200$ steps & met & A layer responds to the accumulated low-frequency gradient and not to the base, the premise of Theorem~\ref{thm:class}. \\
+EXP-004, frozen & Slope of measured against predicted rate within $15\%$ of $1$: measured $1.358$ & \textbf{not met} (all criteria jointly: false) &
+The pattern holds and the calibration does not: the estimator reads $1.36$ times the prediction in this geometry. The factor is already $1.35$ at $A_{1}=0$, and falls to $1.36$, $1.29$, $1.24$ as the mask fraction goes $0.35$, $0.7$, $0.9$, so it belongs to the measurement and not to the handoff; no bound of this paper uses the slope. \\
+EXP-004, dynamical & Correlation with the total gradient $0.274$ against $0.222$ for the base: the control does not discriminate & inconclusive & The layer being grown is still deforming, outside the frozen background the reduction assumes; the run proves nothing and motivates the frozen run and the steered one. \\
+EXP-005 A & Every assertion of Lemma~3.7 of~\cite{ab-boussinesq} on the admissible design $c_{p}=3$, $\Lambda=12$ & met & The transcribed control law does what its lemma states. \\
+EXP-005 B.1 & Steered cycle at the first chosen parameters ($k=(4,31)$, $\sin s=0.128$, $\Lambda=2.5$, $36.7$ time units, $N=512$): all six criteria fail; the amplitude grows $726$-fold during the hold and changes sign & \textbf{refuted} &
+The background is Rayleigh-Taylor unstable at rate $\sqrt A=2.0$ while the layer grows at $\sqrt A\sin s=0.256$: modes at more favourable angles gain $1/\sin s$ times as many $e$-foldings, about $72$ over the schedule, and $\max|\theta|$ goes from $4.0$ to $10.0$. The constructions are unaffected, since each layer is localized and the force controls the exterior; a periodic box has neither. \\
+EXP-005 B.2 & Repaired schedule ($k=(15,26)$, $\sin s=0.4997$, $\Lambda=1$, about $10$ time units), flattened background: $7$ of $7$ criteria met: landing $3.67\times10^{-4}$ of the peak, steering gain $3.06\times10^{-6}$, hold drift $0.36\%$ over three growth times, endpoint map $4.7\times10^{-4}$; sine background: $4$ of $7$, landing $1.57\times10^{-2}$, gain $1.80\times10^{-2}$, hold drift $14.7\%$ & met on the flattened background, $4$ of $7$ on the sine & The two columns differ only in the curvature of the background across the layer's support, which is the whole residual. Controls without the pulse and without steering fail as required (landing $0.99985$ and $1.0$). \\
+EXP-005 C & Dissipation factorizes as $e^{-dt}$ times the inviscid cycle at $\alpha=1/2$, $d=0.2\Gamma$: landing $4.1\times10^{-4}$, hold decay within $0.97\%$ of $d$, rescaled viscous run within $0.24\%$ of the inviscid one & met & The inviscid steering is reusable under dissipation, and a hold costs $\exp(-\nu\lambda^{2\alpha}T)$. \\
+EXP-005 D & Stage~1 at $0.92$ of the background gradient (landing $3.8\times10^{-4}$) & met & The cycle is not a small-amplitude effect. \\
+EXP-005 D1 & Correlation of the rate of layer~2 with the total gradient above $0.9$: best $0.808$ ($\lambda_{2}=360$, $N=1536$, window $3\lambda_{1}$); $0.676$, $0.755$, $0.327$ at $\lambda_{2}=192$ for windows $1.5$, $3$, $4.5\lambda_{1}$; $0.509$ at separation $17$ ($\lambda_{2}=512$, $N=2048$) & \textbf{not met} in all five runs &
+The handoff pattern is reproduced at $0.808$ and not at the correlation the criterion asked for; the residual slope is $1.26$, the systematic of EXP-004. Both the window and the separation have an interior optimum, which attributes the shortfall to the measurement and not to the handoff, an attribution that is supported by this sweep and not proved. \\
+EXP-005 D2 & The base-only control must be worse by more than $0.3$ in correlation and in RMSE: $0.808$ against $0.392$ & met in three of five runs; failed at window $4.5\lambda_{1}$ (control $0.667$ against $0.327$) and at separation $17$ (control $0.314$ against $0.509$) & The control discriminates where the measurement is well conditioned and not elsewhere. \\
+EXP-007 & Localized layers, $N=4096$: error of the plane-wave damping law falls with slope $-0.9863$ in $\log(\ell\lambda)$; coefficient between $0.180$ and $3.606$, linear in $\alpha$; control at $\ell\lambda=1.4$ has error $1.90$ & met (three of three) & The cost of localization is $3.6\,\alpha/(\ell\lambda)$ and depends on the ratio alone (Figure~\ref{fig:localization}). \\
+EXP-008 & Critical exponent against $\gamma/(2p)$ for both growth laws and $p=1.5,2,3,5$: relative error $1.1\times10^{-7}$ and $1.8\times10^{-9}$; ratio of the two laws $2$ & met (three of three) & Theorem~\ref{thm:class} has numerical support in both cases. The experiment measures the cascade model and not the partial differential equations (Figure~\ref{fig:ceiling}). \\
+\end{longtable}
+\endgroup
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig-damping.pdf}
+\caption{The damping term of~\eqref{eq:diss} against direct simulation, six configurations
+$\alpha\in\{1/4,1/2,1\}$, $\nu\in\{10^{-5},10^{-4}\}$. Left: measured decrement of the peak growth
+rate (the inviscid measured peak minus the viscous one) against the predicted damping
+$\nu(\lambda|\zeta|)^{2\alpha}$, with $\lambda=40$; the line is equality. Right: absolute error of the
+predicted rate, at most $2.6\times10^{-4}$. Source: \fp{EXP-002-reduction-control/result.json}.}
+\label{fig:damping}
+\end{figure}
 
 \paragraph{The amplitude system.} On the stratification $\theta=-(A/\lambda_{0})\sin(\lambda_{0}x_{2})$
-the measured peak growth rate matches $\sqrt A\sin\varphi$ to $4\times10^{-5}$ relative at two
-insertion angles; the predicted independence of the rate from $\lambda$ holds to $2.7\times10^{-4}$
-across an eightfold range; and the damping term of~\eqref{eq:diss} tracks the measured rate to
-$2.6\times10^{-4}$ absolute across $\alpha\in\{1/4,1/2,1\}$ and $\nu\in\{10^{-5},10^{-4}\}$.
+the measured peak growth rate matches $\sqrt A\sin\varphi$ to $8.6\times10^{-5}$ relative at
+$\varphi=\pi/2$ and to $4.1\times10^{-5}$ at $\varphi=\pi/4$; the predicted independence of the rate from
+$\lambda$ holds to $2.7\times10^{-4}$ across an eightfold range; and the damping term of~\eqref{eq:diss}
+tracks the measured rate to $2.6\times10^{-4}$ absolute across $\alpha\in\{1/4,1/2,1\}$ and
+$\nu\in\{10^{-5},10^{-4}\}$ \ev{MV}.
 
 \paragraph{The cascade premise.} On a two-scale background that is an exact steady state, with drift
 $1.45\times10^{-15}$, the local growth rate of a fine wave follows the total gradient at correlation
 $0.99945$ and the base stratification alone at $0.212$: a layer responds to the accumulated
-low-frequency gradient rather than to the base.
+low-frequency gradient rather than to the base. The slope of the fit is $1.358$ against a criterion
+of $1\pm0.15$, which is not met (Table~\ref{tab:gates}), and the run in which the earlier layer is
+still evolving does not discriminate between the two predictions (correlations $0.274$ and $0.222$)
+\ev{MV}.
 
 \paragraph{The growth, steering and holding cycle.} The control that returns a grown layer to rest
 rotates the background gradient and the phase direction together, so that the laboratory component
 $\zeta_{1}$ changes sign while $J\zeta\cdot G$ and $|\zeta|$ are preserved. In the co-rotating frame it
-becomes a rotating gravity direction, with the stratification held by a low-frequency force. On a
-background whose gradient is affine to fourth order the cycle reproduces the amplitude system to
+becomes a rotating gravity direction, with the stratification held by a low-frequency force. At the
+first chosen parameters the cycle fails: the amplitude grows $726$-fold during the hold, because the
+background is Rayleigh-Taylor unstable at rate $\sqrt A$ and the layer grows at the smaller rate
+$\sqrt A\sin s$ (Table~\ref{tab:gates}). On the repaired schedule and on a background whose gradient
+is affine to fourth order the cycle reproduces the amplitude system to
 $3.06\times10^{-6}$ in the steering gain and returns the vorticity amplitude to $3.67\times10^{-4}$ of
 its peak, where it holds to $0.36\%$ over three growth times; on a plain sinusoidal background the
 same quantities are $1.80\times10^{-2}$ and $1.57\times10^{-2}$, the difference being the curvature of
 the background over the layer's support. Under dissipation the cycle factorizes as $e^{-dt}$ times the
 inviscid cycle with $d=\nu\lambda^{2\alpha}$: a holding interval decays at $d$ to within $0.97\%$, and
-the rescaled viscous run reproduces the inviscid one to $0.24\%$.
+the rescaled viscous run reproduces the inviscid one to $0.24\%$ \ev{MV}. The dynamical handoff with
+steering, a layer grown, steered to rest and then used as the background of the next, reaches a
+correlation $0.808$ with the total gradient at best, against the $0.9$ the criterion required, and
+$0.509$ at the largest separation tried; it is not met, and the control discriminates in three of the
+five runs \ev{MV}.
 
 \paragraph{Localization.} Since the constructions localize each layer, \eqref{eq:diss} is applied to
 a band rather than to a single frequency. For an envelope of radius $\ell$ on a wave of frequency
@@ -496,44 +864,89 @@ $\lambda$ the relative error of the damping law is
 \]
 first order in the bandwidth ratio, with measured slope $-0.9863$, and depending on that ratio alone:
 configurations sharing $\ell\lambda$ but splitting it differently between frequency and envelope agree
-to four digits. The coefficient is linear in $\alpha$, as the symbol expansion predicts. At the
-separations the constructions use, $\ell_{q}^{-1}=\lambda_{q-1}^{3}$ against
+to four digits. The coefficient is linear in $\alpha$, as the symbol expansion predicts; the factor
+$1.80$ that remains is the shape constant of the one envelope used, a compactly supported
+$C^{\infty}$ bump. At the separations the constructions use, $\ell_{q}^{-1}=\lambda_{q-1}^{3}$ against
 $\lambda_{q}=\lambda_{q-1}^{Q_{q}}$ with $Q_{q}\ge201$, the error is $\lambda_{q-1}^{3-Q_{q}}$, so
-localization does not affect the bounds above.
+localization does not affect the bounds above \ev{MV}. The test concerns the damping term and not the
+inviscid residual of a localized ansatz, which is what the force estimates of the designs control. A
+construction that shrinks the separation between envelope and wave is not covered: at $\ell\lambda$ of
+order ten the law is already wrong by tens of per cent, and at $\ell\lambda=1.4$ by $190\%$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.62\textwidth]{figures/fig-localization.pdf}
+\caption{Relative error of the plane-wave damping law for a localized wave against the bandwidth ratio
+$\ell\lambda$, $\alpha=1/2$, twelve configurations at four frequencies (circles, squares, triangles,
+diamonds) on a $4096^{2}$ grid; the line is $3.6\,\alpha/(\ell\lambda)$. The cross is the control at
+$\ell\lambda=1.4$, where the error is $1.90$. Configurations that share $\ell\lambda$ share their
+error. Source: \fp{EXP-007-localized-dissipation/result.json}.}
+\label{fig:localization}
+\end{figure}
 
 \paragraph{A property of the mechanism in an unforced periodic setting.} The stratification these
 layers grow on is Rayleigh-Taylor unstable at rate $\sqrt A$, while a layer inserted at angle $s$
 grows at $\sqrt A\sin s$. Perturbations at more favourable angles therefore gain $1/\sin s$ times as
-many e-foldings as the layer. The constructions are unaffected, since each layer is localized and the
+many e-foldings as the layer. This is the cause of the refuted run of Table~\ref{tab:gates}, and the
+effect is measured and not only estimated: neighbouring modes grow from $1.0\times10^{-7}$ to
+$3.3\times10^{-2}$ during the run. The constructions are unaffected, since each layer is localized and the
 force controls the exterior, but any realization without that control must keep its schedule short
-enough for the layer to stay ahead.
+enough for the layer to stay ahead \ev{MV}.
 
-\section{The status of the announced results}
+\section{The status of the announced results}\label{sec:status}
 
 The two September 2026 announcements~\cite{openai-ns,openai-euler} are accompanied by
-machine-checked certificates. For the
-Navier-Stokes and Euler development, the headline statements match the forced alternatives of the
-official problem statement~\cite{fefferman} clause by clause; the development builds with no incomplete proofs and
-its four headline theorems depend only on the three standard axioms; and every constant in the closure
-of both root modules replays through the Lean kernel from an empty environment at the pinned toolchain
-version. The reference statement is adapted from an independently maintained collection of formalized
-conjectures, so the definitions that determine whether the formalized statement is the intended one
-predate the claim. None of this speaks to the mathematics outside the formalization, and kernel replay
-detects environment manipulation rather than serving as an external verifier.
+machine-checked certificates, published as the repository \fp{openai/NavierStokesAndEuler}
+(Apache-2.0; \fp{https://github.com/openai/NavierStokesAndEuler}), which at the last push we read,
+2026-09-10 15:14 UTC, holds $2{,}659$ Lean files and $641{,}332$ lines, with no \fp{sorry}
+outside the reference-statement stubs and no axiom added by the project \ev{V}. The checks below are
+ours, on an independent machine.
+
+For the Navier-Stokes and Euler development, the headline statements match the forced alternatives of the
+official problem statement~\cite{fefferman} clause by clause, and the unforced Euler statement is
+faithful to the same adapted reference \ev{V}. The development builds with no incomplete proofs at the pinned
+Lean toolchain release \fp{4.34.0-rc2} (\fp{leanprover/lean4}): the full build completes in $11{,}424$ jobs (the
+Navier-Stokes comparator module alone, $9{,}371$), with zero occurrences of \fp{sorryAx} \ev{MV}. Its
+four headline theorems, listed below, each depend only on the three standard axioms
+\fp{propext}, \fp{Classical.choice} and \fp{Quot.sound} \ev{MV}.
+\begin{center}\footnotesize
+\begin{tabular}{l}
+\fp{NavierStokes.Comparator.navier_stokes_breakdown_R3}\\
+\fp{NavierStokes.Comparator.navier_stokes_breakdown_periodic}\\
+\fp{Euler.euler_breakdown_R3}\\
+\fp{Euler.exists_compact_smooth_euler_singularity}
+\end{tabular}
+\end{center}
+Every constant in the closure of both root modules replays through the
+Lean kernel from an empty environment, with the checker \texttt{leanchecker --fresh} shipped with the
+toolchain: the \fp{NavierStokes} closure in $2{,}972$~s ($49.5$ minutes) and the \fp{Euler}
+closure in $1{,}588$~s ($26.5$ minutes), both with exit status $0$, at a peak of $6.4$~GB resident
+memory \ev{MV}. A mistyped target and a missing project environment fail as they should (exit $1$).
+
+\begin{sloppy}
+The reference statement is adapted from an entry of an independently maintained collection of
+formalized conjectures (Google DeepMind), \fp{FormalConjectures/Millenium/NavierStokes.lean}, so the
+definitions that determine whether the formalized statement is the intended one predate the claim
+\ev{V}. None of this speaks to the mathematics outside the formalization, and kernel replay
+detects environment manipulation rather than serving as an external verifier: the checker's own
+documentation says so. The external re-checkers named by the certificate (\fp{Comparator} with
+\fp{lean4export} and \fp{nanoda_bin}) was not exercised \ev{U}.
+\end{sloppy}
 
 These checks concern the formal statements and the integrity of the formal proof. They do not establish
 that the formal proof follows the written argument. Bastounis, Circelli and Hansen~\cite{bch} report
 that the Lean proof of the Navier-Stokes announcement does not correspond to its natural-language proof,
 exhibiting places where the text states a stronger bound than the cited Lean declaration proves; they do
-not claim the written argument is false. Their finding is consistent with ours: a formal proof of a
+not claim the written argument is false \ev{V}. Their finding is consistent with ours: a formal proof of a
 faithful statement establishes that statement, while the correctness of the written argument, and of
-any result that cites it rather than the formal development, remains a separate question.
+any result that cites it rather than the formal development, remains a separate question. The
+Alpog\'e-Buckmaster formalization (\fp{tristanbuckmaster/fluid_lean}) was not examined \ev{U}.
 
-\section{Scope}
+\section{Scope}\label{sec:scope}
 
 The bound of Section~\ref{sec:class} is a necessary condition for growth in the layer mechanism,
 derived from the amplitude system, the amplification identity and the dissipative
-term~\eqref{eq:diss}. The bounds of Section~\ref{sec:design} concern what the estimates of two designs
+term~\eqref{eq:diss}, under hypotheses (A0) to (A5). The bounds of Section~\ref{sec:design} concern what the estimates of two designs
 can certify: they track each design's corrections through the exponents of its published estimates,
 but not constants or logarithmic factors, and they assume the most favourable insertion angle. Neither
 bound affects the published inviscid results, which carry no dissipation. The mechanism is due to C\'ordoba
@@ -541,41 +954,179 @@ and Mart\'inez-Zoroa~\cite{clsmz,cmz}, extended to smooth forcing by Alpog\'e an
 Buckmaster~\cite{ab-boussinesq,ab-euler,ab-ipm}; nothing in this paper
 establishes blowup for any equation or improves any published threshold.
 
-Evaluating the relation $\alpha_{c}=1/(4p)$ at the published threshold gives $p=11/4+\sqrt7$. This
+Evaluating the relation $\alpha_{c}=1/(4p)$ at the published threshold gives $p=11/4+\sqrt7$, in our
+convention with $\alpha_{c}=0.04633$. This
 value carries no information about the threshold: the relation is constraint \textbf{D} saturated,
 which the construction saturates at every $\alpha$, so the identity holds along the whole family,
 and its algebraic form is automatic because $\alpha_{0}\in\Q(\sqrt7)$ and the norm of
-$22-8\sqrt7$ is a perfect square.
+$22-8\sqrt7$ is a perfect square \ev{D}. The value $0.04633$ in this relation is our convention's form of the value
+$0.09267$ of Section~\ref{sec:budget}; the two differ by the factor $2$ of Section~\ref{sec:question}.
 
 \section*{Data and code}
 
 The numerical data, the simulations, the exact-arithmetic verifications of
 Propositions~\ref{prop:threshold} and~\ref{prop:ratios}, and the computations behind
 Theorems~\ref{thm:class}, \ref{thm:design} and~\ref{thm:euler} are public at \href{\recordurl}{the project repository}.
+Result files and the settings of each run are in \fp{experiments/EXP-00N-*/}; the library is
+\fp{code/nslib/}, with \fp{ab_force_budget.py} and \fp{ab_euler_budget.py} for
+Section~\ref{sec:design}, \fp{class_ceiling.py} for Section~\ref{sec:class},
+\fp{cmz_budget.py} for Section~\ref{sec:budget} and \fp{boussinesq.py}, \fp{corotating.py}
+and \fp{steering.py} for Section~\ref{sec:method}. The archived copies of the sources, with their
+retrieval URLs and SHA-256 hashes, are in \fp{references/}. The figures of this paper are
+regenerated from the result files by \fp{figures/make_figures.py} next to the source of the paper.
 
+Every number quoted in this paper is checked in continuous integration against the result files and
+the code it came from, by \fp{tests/test_navier_stokes_quoted_numbers.py}, which compares the
+formatted strings of the text with the artifacts: the rows of Table~\ref{tab:boussinesq}, the factors
+$175$, $21$ and $10$, the exponents $-7.00$, $-10.75$ and $-1.75$ and the ceilings of
+Theorem~\ref{thm:euler}, together with the numbers of the verifications of Section~\ref{sec:validation}
+that the test pins, among them the correlation $0.808$ of the handoff and the report that its
+criterion is not met. The rerun harness is \fp{code/reproduce_all.py}.
+
+\appendix
+\section{Transcription of the force estimates}\label{app:force}
+
+The two design bounds of Section~\ref{sec:design} are computed from the following inputs. Page numbers are
+the printed page numbers of the archived PDFs, which coincide with the PDF pages; equation and
+theorem numbers are those of the papers. The two archives, both retrieved on 2026-09-11, dated
+2026-09-07, and carrying neither an arXiv identifier nor a DOI, are the following.
+\begin{center}\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{3.1cm}L{4.6cm}r L{5.6cm}@{}}
+\toprule
+archive & retrieved from & bytes & SHA-256 \\
+\midrule
+\fp{references/ab-boussinesq.pdf} & \fp{https://cims.nyu.edu/~tristanb/boussinesq.pdf} & $846{,}615$ &
+\texttt{895a628d1783bcb039374686f50b895b}\allowbreak\texttt{5f450f53b8ef8aa173523487a7a4a21b}\\
+\fp{references/ab-euler.pdf} & \fp{https://cims.nyu.edu/~tristanb/euler.pdf} & $1{,}105{,}306$ &
+\texttt{97ef408bff09b4f6ed9f3867734d1eb2}\allowbreak\texttt{245f3f34e6334b28136c84c02d0ae8d8}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The sizes and hashes were recomputed from the archived files. The code is \fp{code/nslib/ab_force_budget.py}
+and \fp{ab_euler_budget.py}, with the tests \fp{code/tests/test_ab_force_budget.py} and
+\fp{test_ab_euler_budget.py}. All entries are \ev{V} for the transcription; the exponent forms in the
+last column are \ev{D}.
+
+
+\subsection{Boussinesq design}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{3.1cm}L{4.7cm}L{3.5cm}L{3.6cm}@{}}
+\toprule
+object & statement & equation, page & exponent form used \\
+\midrule
+amplitude & $Y\le C_{Y}\lambda^{-7/8}$ & Def.~7.1(iii), (7.6), p.~58 & $-(1-m)$, $m=1/8$ \\
+frequencies, envelope & $\lambda_{q}=\lambda_{q-1}^{Q_{q}}$, $Q_{q}=Q_{*}+q$, $Q_{*}\ge200$; $\ell_{q}=\lambda_{q-1}^{-3}$; $\Pi_{q}=\lambda_{q-1}^{4}(\log\lambda_{q})^{10}$ & (3.7), p.~9; $x_{q}=Q_{q}x_{q-1}$, Lemma~8.1, p.~67 & $Q$, $\ell^{-1}=\lambda^{3/Q}$ \\
+seed and gains & $\Theta^{\mathrm{seed}}_{q}=-\lambda_{q}^{-k_{q}-6}$, $L_{q}=(k_{q}+5+\beta)\log\lambda_{q}$, $\lvert\Theta^{\mathrm{seed}}_{q}\rvert e^{L_{q}}=\lambda_{q}^{-7/8}$, $\beta=1/8$; $k_{q}=\max\{k:120k\le Q_{q},\ \mathcal K(k)\le\log\lambda_{q}\}$, $J_{q}=2k_{q}+8$ & (3.8), p.~9; p.~57 & $J=2d+8$ \\
+coefficient scale & $\Pi\le\lambda^{5/Q}$, $1\le\ell^{-1}\le\Pi$, $Q\ge201$, $120d\le Q$ & (7.4), p.~58 & $\pi=5/Q$ \\
+per-level parameter & $\delta=\Pi^{5}\lambda^{-7/8}\le\lambda^{-7/8+25/Q}\le\lambda^{-3/4}\le\tfrac12$ & Subsection~7.1.1, p.~59; p.~69; (7.25), p.~64 & $\delta=\Pi^{e}Y$, $e=5$ \\
+remainder grades & first grade $J+1=2d+9$, last $2J+4$ & p.~60; p.~61; p.~64 & $\delta^{2d+9}$ \\
+parities & scalar means vanish at even grades, vorticity means at odd; first means at grades $1$ and $2$; higher scalar means from grade $3$, vorticity from grade $4$ & (7.16), p.~61; (7.17), p.~62 & $\delta^{3}$, $\delta^{4}$ \\
+physical evaluation & cost $(\lambda\Pi^{2})^{r}$ for an oscillatory profile, $\Pi^{2r}$ for a phase-independent one & (7.19), p.~62 & $k(1+2\pi)$, $2k\pi$ \\
+derivative range & $r_{*}=9d+41\le\tfrac{3}{40}Q+41\le Q-1$ & (7.15), p.~61 & $Q\ge9d+42$ \\
+why $Q-1$ & coefficient bounds uniform in the layer only for orders $b\le Q_{q}$; profile norms through $b+2$ & Lemma~5.4, p.~48; Thm~5.5, p.~49; p.~61 & range of $r_{*}$ \\
+scale quotients & $z_{1},z_{2},b_{1},\dots,b_{6}$ with upper bounds $\Pi^{-3}\lambda^{-1/8}$, $\Pi^{-7}\lambda^{-1/4}$, $\lambda^{-1/8}$, $C_{Y}\Pi^{-2}$, $C_{Y}\Pi^{-6}\lambda^{-1/8}$, $\lambda^{-1/8}$, $\Pi^{-4}\lambda^{-1/4}$, $\sigma\Pi^{-1}\lambda^{-1/8}$ & (7.14), p.~60 & rows $b_{1}$, $b_{2}$ fix $e\ge3$ in case (iii) \\
+activation & $[\dot w\Theta Fg]_{k}\le c\,\Pi\lambda^{-d-6}$, vorticity $\Pi\lambda^{-d-5}$ & p.~64, with (7.6), p.~58 & $-d-6+\pi+k(1+2\pi)$ \\
+leading means & $[\langle S_{1}^{\theta}\rangle]_{k}\le c\,\Pi\lambda^{-7/4}$, $[\langle S_{2}^{\omega}\rangle]_{k}\le c\,\Pi^{3}\lambda^{-7/4}$, evaluated at cost $\Pi^{2k}$ with no $\lambda^{k}$ & p.~64; (7.17), p.~62 & $(2k+3)\pi-2(1-m)$ \\
+higher means & $\sum_{n\ge3}\lVert\langle S_{n}^{\theta}\rangle\rVert\le2C\mathcal M Y\Pi^{2k-2}\delta^{3}$; $\sum_{n\ge4}\lVert\langle S_{n}^{\omega}\rangle\rVert\le2C\mathcal M\lambda Y\Pi^{2k-2}\delta^{4}$ & p.~64 & $(2k-2)\pi-4(1-m)+3e\pi$ and $m+(2k-2)\pi-4(1-m)+4e\pi$ \\
+remainders & $\lVert R_{>J_{q}}\rVert\le2C\mathcal M(\lambda\Pi^{2})^{k}\lambda Y\delta^{2d+9}$ & p.~64 & $k(1+2\pi)+m-(2d+9)(1-m-e\pi)$ \\
+joint target & each of the eight contributions at most $\lambda^{-3/2}$, total $\le\lambda^{-1/2}$; $\Pi^{2d+3}\le\lambda^{1/4}$ & (7.25), p.~64; (7.26), p.~65; (7.24), p.~63 & $\tau=3/2$ \\
+\bottomrule
+\end{tabular}
+\caption{Inputs of the Boussinesq design bound and their location in~\cite{ab-boussinesq}.}\label{tab:ab-bous}
+\end{table}
+
+\subsection{Euler design}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{3.1cm}L{5.6cm}L{3.2cm}L{3.0cm}@{}}
+\toprule
+object & statement & equation, page & use \\
+\midrule
+amplitude law & $\partial_{t}(T,\widehat\Omega)^{T}=\mathcal B(T,\widehat\Omega)^{T}$, with $\mathcal B$ of zero diagonal and off-diagonal entries $-d/(\sigma\kappa)$ and $\sigma c\zeta_{1}$ & (3.4), p.~7 & pendulum class, $\gamma=1/2$ \\
+order-one coupling & $2W'\Gamma'\in[\tfrac12c_{\mathrm{geom}}^{-2},\tfrac32c_{\mathrm{geom}}^{-2}]$ & (2.12), p.~5 & $c$ bounded above and below \\
+blowup variable & norm of $\nabla\Gamma$ diverges & (1.3), p.~2 & $\gamma$ is taken in $\nabla\Gamma$ \\
+growth scale & $\sigma_{i}\asymp N_{i}^{\beta/2}$, deposit $N_{i}Y_{i}=N_{i}^{\beta}$ & p.~97 (prescribed intervals) & $\alpha<\beta/(4Q)$ \\
+constants & $\beta=1/8$, $\bar\beta=h=7/8$, $a=4$, $p=8$, $q=10$, $r=40$, $\mathsf d=16$, $e=8$ & (12.1), p.~95 & published design \\
+frequencies & $Q_{i}=q_{0}+i$, $q_{0}\ge2^{20}$, $c_{Q}\ge2^{18}$, $v=q/Q_{i}$, $u=q/c_{Q}$ & p.~95 & first-stage bound \\
+side inequalities & $\mathsf dv<1/16$, $8u+100v<1/16$, $9/c_{Q}+51/(q_{0}+1)<1$ & (12.2), p.~95 & published design \\
+scales & $\Pi_{i}=N_{i-1}^{p}(\log N_{i})^{r}$, $\ell_{i}=N_{i-1}^{-a}$, $\delta_{i}=\Pi_{i}^{\mathsf d}N_{i}^{-h}$ & (12.3), p.~95 & $v=p/Q$ \\
+decay rows & positive exponents, among them $a-2\beta$, $c=a-5\beta/2$, $a-3\beta/2$, $a-\beta/2$, $2h_{*}-\beta/2$, $2h_{*}-v$ & (12.7), p.~98; $c$ defined p.~95 & side conditions \\
+coefficient quotients & thirteen rows, Table~\ref{tab:euler-quot} & (12.13), p.~102 & side conditions \\
+derivative range & $B+3=9k_{m}+51\le Q_{m}$ & p.~101, with (12.2) & $Q\ge9k+51$ \\
+force exponents & activation $1-e+2u+v$, terminal $-(2h_{*}-1)k_{m}+\beta-9h_{*}+2u+v$, means $-2h+3u+6v$, below $-6$, $-6$, $-3/2$ & (12.15), p.~104 & Theorem~\ref{thm:euler} \\
+joint bound & $\mathfrak F_{m,k}\le N_{m}^{-1/2}$ & (12.16), p.~104 & summability \\
+\bottomrule
+\end{tabular}
+\caption{Inputs of the Euler design bound and their location in~\cite{ab-euler}.}\label{tab:ab-euler}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{rllc}
+\toprule
+\# & term & quotient (12.13) & $(A,B,n)$ \\
+\midrule
+1 & $Z^{\flat}$, first & $\Pi^{3-\mathsf d}N^{h-1}$ & $(3,1,1)$ \\
+2 & $Z^{\flat}$, second & $\Pi^{4-2\mathsf d}N^{2h-2}$ & $(4,2,2)$ \\
+3 & $\{U,q\}$ & $\Pi^{4-\mathsf d}N^{h-1}$ & $(4,1,1)$ \\
+4 & $\partial_{t}Z^{\flat}$, first & $\Pi^{5-\mathsf d}N^{h-1}$ & $(5,1,1)$ \\
+5 & $\partial_{t}Z^{\flat}$, second & $\Pi^{6-2\mathsf d}N^{2h-2}$ & $(6,2,2)$ \\
+6 & $b$ gradient, fast & $\Pi^{4-\mathsf d}N^{h-1}$ & $(4,1,1)$ \\
+7 & $b$ gradient, slow & $\Pi^{5-2\mathsf d}N^{2h-2}$ & $(5,2,2)$ \\
+8 & $c\,h\cdot\nabla_{a}V$ & $\Pi^{4-\mathsf d}N^{h-1}$ & $(4,1,1)$ \\
+9 & $2\varpi V\,h\cdot\nabla_{a}q$ & $\Pi^{5-\mathsf d}N^{h-1}$ & $(5,1,1)$ \\
+10 & fast transport & $\Pi^{2-\mathsf d}$ & $(2,1,0)$ \\
+11 & slow transport & $\Pi^{3-2\mathsf d}N^{h-1}$ & $(3,2,1)$ \\
+12 & fast circulation square & $\Pi^{2-\mathsf d}$ & $(2,1,0)$ \\
+13 & slow circulation square & $\Pi^{4-2\mathsf d}N^{h-1}$ & $(4,2,1)$ \\
+\bottomrule
+\end{tabular}
+\caption{The thirteen coefficient quotients of equation~(12.13), page~102 of~\cite{ab-euler}, each
+required to be at most one. Here $h=\bar\beta=1-\beta$, so $N^{h-1}=N^{-\beta}$ and $N^{2h-2}=N^{-2\beta}$;
+the last column gives $(A,B,n)$ in $\Pi^{A-B\mathsf d}N^{-n\beta}$. With $\Pi\le N^{v}$ each row is
+$(A-B\mathsf d)v-n\beta\le0$, and the rows with $n=0$ force $\mathsf d\ge2$. \ev{V}}\label{tab:euler-quot}
+\end{table}
+
+\sloppy
+\emergencystretch=8em
 \begin{thebibliography}{9}
 \bibitem{fefferman} C. L. Fefferman, \emph{Existence and smoothness of the Navier-Stokes equation},
-Clay Mathematics Institute Millennium Prize problem description.
+Clay Mathematics Institute Millennium Prize problem description,
+\url{https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf}.
 \bibitem{bch} A. Bastounis, F. Circelli and A. C. Hansen, \emph{Navier-Stokes lost in translation: why
 Lean verification of AI autoformalisation does not guarantee correct natural language proofs},
 \href{https://arxiv.org/abs/2610.08144}{arXiv:2610.08144}, 2026.
 \bibitem{cmz} D. C\'ordoba, L. Mart\'inez-Zoroa and F. Zheng, \emph{Finite time blow-up for the
 hypodissipative Navier Stokes equations with a force in $L^{1}_{t}C^{1,\epsilon}_{x}$ and
-$L^{\infty}_{t}L^{2}_{x}$}, Arch. Ration. Mech. Anal. \textbf{250} (2026), article 38;
+$L^{\infty}_{t}L^{2}_{x}$}, Arch. Ration. Mech. Anal. \textbf{250} (2026), article 38,
+\href{https://doi.org/10.1007/s00205-026-02198-0}{doi:10.1007/s00205-026-02198-0};
 \href{https://arxiv.org/abs/2407.06776}{arXiv:2407.06776}.
-\bibitem{clsmz} D. C\'ordoba, C. La\'in-Sanclemente and L. Mart\'inez-Zoroa, \emph{Blowup for the
-Boussinesq equations with an infinite chain of degenerate pendula}, Adv. Math. \textbf{480} (2026);
+\bibitem{clsmz} D. C\'ordoba, A. La\'in-Sanclemente and L. Mart\'inez-Zoroa, \emph{Finite-time
+singularity via multi-layer degenerate pendula for the 2D Boussinesq equation with uniform
+$C^{1,\sqrt{4/3}-1-\epsilon}$ and $L^{2}$ force}, Adv. Math. \textbf{480}, Part A (2025), article 110480,
+\href{https://doi.org/10.1016/j.aim.2025.110480}{doi:10.1016/j.aim.2025.110480};
 \href{https://arxiv.org/abs/2505.20988}{arXiv:2505.20988}.
 \bibitem{ab-boussinesq} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the Boussinesq equations with
-smooth forcing}, preprint, 2026.
-\bibitem{ab-euler} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the three-dimensional Euler
-equations with smooth forcing}, preprint, 2026.
-\bibitem{ab-ipm} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the incompressible porous media
-equation with smooth forcing}, preprint, 2026.
-\bibitem{openai-ns} OpenAI, \emph{Finite-time blowup for forced three-dimensional Navier-Stokes},
-manuscript, 2026.
-\bibitem{openai-euler} OpenAI, \emph{Finite-time blowup for three-dimensional Euler}, manuscript,
-2026.
+smooth forcing}, preprint dated 2026-09-07, no arXiv identifier or DOI,
+\url{https://cims.nyu.edu/~tristanb/boussinesq.pdf}.
+\bibitem{ab-euler} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the Euler equations with
+smooth forcing}, preprint dated 2026-09-07, no arXiv identifier or DOI,
+\url{https://cims.nyu.edu/~tristanb/euler.pdf}.
+\bibitem{ab-ipm} L. Alpog\'e, T. Buckmaster and M. P. Coiculescu, \emph{Extending the
+C\'ordoba-Mart\'inez-Zoroa IPM blow-up to uniformly space-time smooth forcing}, preprint dated 2026-09-07,
+no arXiv identifier or DOI in the archived copy,
+\url{https://cims.nyu.edu/~tristanb/ipm.pdf}.
+\bibitem{openai-ns} OpenAI, \emph{Finite time blowup for Navier-Stokes}, manuscript dated 2026-09-08; Lean certificates
+\url{https://github.com/openai/NavierStokesAndEuler}; manuscript PDF
+\url{https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf}.
+\bibitem{openai-euler} OpenAI, \emph{Finite time blowup for the Euler equation}, manuscript dated 2026-09-08,
+\url{https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf}.
 \end{thebibliography}
 
 \end{document}
