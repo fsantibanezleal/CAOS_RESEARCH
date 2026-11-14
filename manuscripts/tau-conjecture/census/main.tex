@@ -87,8 +87,8 @@ exact integer arithmetic. The least number of gates for $3$, $4$, $5$, $6$ and $
 integer roots is $3$, $5$, $6$, $8$ and $10$. The search constructs $1{,}048{,}460{,}912$ reached
 states at depth $7$, decides one depth further by a last-gate lemma, and excludes seven roots at
 nine gates with a window-free $2$-adic and $3$-adic divisibility criterion applied to
-$4.19 \times 10^{12}$ additive candidates. Two elementary stall theorems close the iterated-map and
-quadratic-family constructions ($c \le 200$). Measured on the same programs, the maximum over
+$4.19 \times 10^{12}$ additive candidates. Two elementary stall theorems bound each iterated map, and an exhaustive measurement
+bounds the quadratic family for $c \le 200$. Measured on the same programs, the maximum over
 $\mathbb{F}_p$ is exactly $2^{\tau-1}$ (proved), over $\mathbb{R}$ it is $1,2,3,4,6,8$
 through $\tau = 6$, and over $\mathbb{Q}$ it equals $\zmax$ through $\tau = 6$. The census values are
 exact counts and carry no statistical uncertainty. The work decides nothing about the conjecture
@@ -492,13 +492,14 @@ confidence intervals, and a reported value is either decided or not. The two exc
 where they occur, the classification of $6{,}400{,}000$ additive candidates by what decides
 them (Table~\ref{tab:window}) and the known-answer gates of the window-free filter in
 Section~\ref{sec:seven:free}, both samples whose shares are estimates. The work is organized as fifteen experiment
-records, \texttt{EXP-001} to \texttt{EXP-015}, each with a hypothesis file, the run code, the artifacts and a
-closing note with a prediction scorecard. The scorecards record refutations as well as confirmations:
+records, \texttt{EXP-001} to \texttt{EXP-015}; each holds a hypothesis file, the run code, the artifacts and a
+closing note with a prediction scorecard, except \texttt{EXP-014}, whose folder holds only its closing note and whose
+code is \texttt{exp014.py} in the folder of \texttt{EXP-013}. The scorecards record refutations as well as confirmations:
 the prediction that the five-rooters of $\tau \le 7$ all share the root set $\{0,\pm1,\pm2\}$
 was refuted by the census (seven root-set patterns, Section~\ref{sec:window}), the prediction of
 zero tower yield off the series $c = m(m+1)$ was refuted by the second series of
-Section~\ref{sec:family}, and the pre-registered growth rhythm $\zmax(9) = 7$ was refuted by the
-windowed scan.
+Section~\ref{sec:family}, and the pre-registered growth rhythm $\zmax(9) = 7$ was refuted in the windowed sense by
+\texttt{EXP-013} and outright by the window-free scan.
 
 \textbf{Instruments, by stage.} Every root count reported here is exact, and the results that
 rest on an evaluation window are identified:
@@ -1946,8 +1947,9 @@ $3$, $5$, $6$, $8$ and $10$. These are exact, decision-complete counts of a fini
 statistical uncertainty; the only quantities in the paper that are estimates from samples are the class shares of
 Table~\ref{tab:window} and the known-answer gates, and they are reported without intervals. Over $\mathbb{F}_p$ the maximum is
 exactly $2^{\tau-1}$, over $\mathbb{R}$ it reaches $8$ at six gates, and over $\mathbb{Q}$ it equals the integer ladder
-through $\tau = 6$. The stall theorems and the family measurement show that iterating one map, or one
-quadratic family with a built constant, cannot beat a bounded yield over $\Z$. Over the range computed the integer ladder is consistent with a linear rate, which is a statement about
+through $\tau = 6$. The stall theorems show that iterating one map cannot beat a bounded yield over $\Z$, and
+the exhaustive measurement of Section~\ref{sec:family} shows the same for the quadratic family with a built constant
+$c \le 200$; beyond that range the family is not decided here. Over the range computed the integer ladder is consistent with a linear rate, which is a statement about
 nine points and not a bound. The next steps are the
 eight-root threshold in $\{10,11\}$, a depth-$8$ frontier that would decide the tenth gate, and an
 independent re-implementation of the last-gate scan; none changes a value reported here.
@@ -1960,7 +1962,8 @@ All code, run artifacts, experiment records and the problem wiki are available a
 \path{problems/computation-complexity/tau-conjecture/}, together with the package
 \texttt{tclib} and its test suite. The computations are archived there as the
 experiment records \texttt{EXP-001}--\texttt{EXP-015} (folder \path{experiments/});
-each record holds the code, the artifacts and the result.\par}
+each record holds the code, the artifacts and the result, except \texttt{EXP-014}, which holds its result and
+whose code is \texttt{exp014.py} in the folder of \texttt{EXP-013}.\par}
 
 The census enumerator and all integer root counting (Algorithm~\ref{alg:roots}) are exact integer
 arithmetic in the Python standard library; Section~\ref{sec:design} states which instrument is
