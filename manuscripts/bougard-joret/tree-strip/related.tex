@@ -1,0 +1,66 @@
+\section{Related work and position of the results}\label{sec:related}
+
+\subsection{The proved cases of Bougard and Joret}\label{sec:rel-bj}
+
+Bougard and Joret \cite{BJ} study $f(n,\alpha,k)$ for $n\ge\alpha+k$; the case $k=1$ is an old question of Ore \cite{Ore} [V, as stated in \cite{BJ} and \cite{DG}; the original was not read, U].
+For $k=1$ the value $f(n,\alpha,1)=t(n,\alpha)+\alpha-1$ was obtained independently by Christophe et al.\ \cite{Graphedron} and by Gitler and Valencia \cite{GitlerValencia}; Bougard and Joret give a short proof together with a description of the extremal graphs as tree-linkings of a twisted Tur\'an graph [V].
+For $k=2$ and $n\ge2\alpha+1$ they prove $f(n,\alpha,2)=t(n,\alpha)+\alpha-1$ when $\alpha=1$ or $n-2\alpha=1$, and $t(n,\alpha)+\alpha$ otherwise, and they describe all extremal graphs (cycle-linkings of a twisted Tur\'an graph, odd subdivisions of $K_4$, and one exceptional graph obtained by pasting two copies of $K_4$) [V].
+Their Proposition~7 states that a connected graph with $n\ge3\alpha$ and at most $t(n,\alpha)+\lfloor n/\alpha\rfloor+\alpha-4$ edges has a partition of its vertex set into $\alpha$ cliques, and Proposition~8 gives the same conclusion for $2$-connected graphs with $n\ge3\alpha\ge9$ and at most $t(n,\alpha)+\lfloor n/\alpha\rfloor+\alpha-3$ edges [V].
+These two propositions improve a theorem of Brouwer \cite{Brouwer}, which states that for $n>2\alpha$ a graph of independence number $\alpha$ with at most $t(n,\alpha)+\lfloor n/\alpha\rfloor-2$ edges has a partition of its vertex set into $\alpha$ cliques; Brouwer's theorem implies their Propositions~5 and~6 (the cases $k=1$ and $k=2$) for $n\ge\alpha(\alpha+1)$ and $n\ge\alpha(\alpha+2)$ respectively, and also follows from a result of Hanson and Toft \cite{HansonToft}.
+Their proofs use Brooks' theorem \cite{Brooks} and, for $2$-connected edge-critical graphs, Wessel's description by pasting \cite{Wessel} [V, as stated in \cite{BJ}; the original articles were not reopened here, U].
+
+For $k\ge3$ the cases they prove, read on the author version of their Section~6 [V], are the following.
+\begin{enumerate}
+\item $n\le2\alpha$: a $k$-connected graph is extremal exactly when it is bipartite with $k\alpha$ edges, so $f=k\alpha$.
+\item $n=k\alpha$: the two lines of \eqref{eq:conj} coincide, $t(n,\alpha)+\lceil k\alpha/2\rceil=\lceil nk/2\rceil$, and the value follows from the degree-sum lower bound and the construction below.
+\item The construction: for $n\ge k\alpha$ the graph $T(n,\alpha)$ becomes $k$-connected after the addition of $\lceil k\alpha/2\rceil$ edges without lowering the independence number, so $f(n,\alpha,k)\le t(n,\alpha)+\lceil k\alpha/2\rceil$.
+\item Large order: with $\alpha\ge3$ the second line holds when $\lfloor n/\alpha\rfloor\ge\lceil k\alpha/2\rceil-\alpha+2$. Their argument is Proposition~8: a graph with at most $t(n,\alpha)+\lceil k\alpha/2\rceil-1$ edges has such a clique partition, and $k$-connectivity then forces $\lceil k\alpha/2\rceil$ edges between the cliques. Bougard and Joret state the threshold as $n\ge\alpha(\lceil(k-2)\alpha/2\rceil+2)$ [V], which is the same condition because $\lceil k\alpha/2\rceil-\alpha=\lceil(k-2)\alpha/2\rceil$.
+\item $\alpha=2$ and $n\ge2k$: $n=2k$ is the case $n=k\alpha$; $n\ge2k+2$ follows from Proposition~7; $n=2k+1$ is a direct argument with Brooks' theorem.
+\end{enumerate}
+Inside the first regime $\alpha+k\le n\le k\alpha$ these cases cover only the line $n=2\alpha$ and the points $n=k\alpha$.
+For $\alpha\ge3$ the shell order $n=\alpha+k+1$ lies below the large-order threshold, because $\alpha(\lceil(k-2)\alpha/2\rceil+2)-(\alpha+k+1)\ge\alpha\cdot\frac{(k-2)\alpha}2+\alpha-k-1\ge4.5(k-2)+3-k-1=3.5k-7>0$ for $k\ge3$ and $\alpha\ge3$ [D].
+For $\alpha=2$ the shell order $k+3$ is below $2k$ for every $k\ge4$.
+The overlaps of the shell with the proved cases are therefore only these: $\alpha=k+1$ has $n=2\alpha$ and gives the bipartite value $k(k+1)$, and the triple $(6,2,3)$ has $n=k\alpha$.
+Of the 75 triples with $3\le k\le12$ that Section~\ref{sec:results} verifies, 11 overlap the proved cases (ten with $\alpha=k+1$ and the triple $(6,2,3)$); the other 64 are new values of $f$ to the extent that targeted searches can show; absence from search results is not a claim of priority.
+Harary's connectivity constructions \cite{Harary} are classical ingredients of the shell proof and are credited to him; the full text of that article was not accessible in preparing this work [U], and Section~\ref{sec:shell} therefore proves every connectivity property it uses.
+
+\subsection{The boundary and the residual viewpoint}\label{sec:rel-dg}
+
+Das and Gupta \cite{DG} prove, for $\alpha\ge2$, $k\ge3$ and $k\ge\alpha$, that $f(\alpha+k,\alpha,k)=k\alpha+m(k,k-\alpha)$, where $m(p,d)$ is the least size of a $d$-connected graph of order $p$: zero for $d=0$, $p-1$ for $d=1$, and $\lceil pd/2\rceil$ for $2\le d\le p-1$ by Harary's theorem [V].
+Equivalently $f=k^2$ for $\alpha=k$, $f=k^2-1$ for $\alpha=k-1$, and $f=\lceil k(\alpha+k)/2\rceil$ for $2\le\alpha\le k-2$.
+Their equality classification (Corollary~3.2) shows that every extremal graph is the join of an independent set of size $\alpha$ with a graph $H$ on $k$ vertices that is $(k-\alpha)$-connected with the least size [V].
+They also exhibit $f(7,3,4)=15$ as the smallest counterexample and record that the second line of \eqref{eq:conj} remains a separate question [V].
+
+The viewpoint of Section~\ref{sec:formulation} separates the two orders.
+On the boundary the residual graph has order $k$ and every vertex of the independent set is joined to all of it; the residual graph alone must supply the $(k-\alpha)$-connectivity, and at $\alpha=k-1$ it must be connected on $k$ vertices, which costs $k-1$ edges where the degree sum accounts for only $\lceil k/2\rceil$.
+On the shell the residual graph has order $k+1$ and each independent vertex misses one residual vertex; the misses relieve the residual graph of its degree requirement exactly where the independent vertices are not adjacent, and the degree sum can be met.
+At $\alpha=k-1$ the one-vertex gain turns the connected spanning requirement $k-1$ on $k$ vertices into a tree on $k+1$ vertices with fibers, and the size rises from $k^2-1$ to $k^2$ while the order rises by one, so the excess over the degree-sum bound vanishes (Corollary~\ref{cor:transition}).
+
+\subsection{The second line and the next-matching value}\label{sec:rel-second}
+
+Didin states, as Theorem~9 of a preprint under review, that every $b$-connected graph with $b\ge3$, independence number $\alpha>1$ and $n>b\alpha$ has at least $t(n,\alpha)+\lceil b\alpha/2\rceil$ edges, which with the construction of Bougard and Joret would settle the second line \cite{Didin,DidinMalyshev}; the statements were read on the preprint, and the correctness of the proof is not confirmed here [V for the statements, U for the correctness].
+The companion computation \cite{Second} checks the second line independently at every triple with $\alpha\ge3$, $k\ge3$ and $n\le24$ outside the large-order range, and lists the extremal graphs at 35 triples.
+These results concern $n>k\alpha$; the whole shell has $n\le k\alpha$, so they do not bear on the values determined here, and conversely the shell result does not bear on the second line.
+
+The next-matching paper \cite{Next} proves $f(2d+3,2,d+2)=d^2+4d+2$ for every $d\ge7$.
+In the notation of this paper this is the triple $(2k-1,2,k)$ with $k=d+2\ge9$, which lies just below the proved range $n\ge2k$ for $\alpha=2$ (Section~\ref{sec:rel-bj}) and far above the shell order $k+3$.
+There the minimum exceeds the degree-sum bound by $\lfloor d/2\rfloor-1$, so the extremizers cannot be regular, while on the shell with $\alpha=2$ the extremizers are regular and are exactly the complements of unions of cycles (Theorem~\ref{thm:cycles}).
+The two results sit at different distances from the boundary: $n-(\alpha+k)=1$ on the shell and $k-3$ for the next-matching value.
+
+\input{table-positions.tex}
+
+Table~\ref{tab:positions} compares the excess over the degree-sum bound at the three positions for $4\le k\le12$.
+At order $2k-1$ with $\alpha=k-1$ the excess is $\lfloor k/2\rfloor-1$, growing without bound (boundary theorem).
+At order $2k$ with $\alpha=k-1$ it is zero for every $k$ (Theorem~\ref{thm:main}).
+At order $2k-1$ with $\alpha=2$ it is $\lfloor(k-2)/2\rfloor-1$ for $k\ge9$, again growing.
+The excess is therefore not monotone in the distance from the boundary, and a formula valid on all of the first regime must account for positions where the degree sum is exceeded as well as positions where it is attained.
+
+\subsection{Other work}\label{sec:rel-other}
+
+Wang and Wu recorded that the conjecture for $k\ge3$ was still unsettled, and Liu and Ning reproduced it as an open conjecture, both as quoted by Das and Gupta \cite{WangWu,LiuNing,DG} [V for the quotation, U for the originals].
+Wang uses the $2$-connected case of Bougard and Joret to compare balanced cycle-linkings with other $2$-connected graphs by their numbers of independent sets \cite{Wang}; it is cited for completeness [U].
+Yuan gave a short argument for the connected case \cite{Yuan} [U, via \cite{DG}].
+Harary's theorem on the maximum connectivity of a graph with given order and size gives the least size of a $k$-connected graph with no independence constraint as $\lceil kn/2\rceil$ for $k\ge2$, as Das and Gupta use it (their Proposition~2.1) \cite{Harary,DG}; this is the degree-sum bound used throughout this paper.
+Theorem~\ref{thm:shell} therefore says that on the shell the independence number can be prescribed at any admissible value without enlarging the least size of a $k$-connected graph, which is not true on the boundary at $\alpha=k-1$.
+Targeted searches on the exact title, on $f(\alpha+k+1,\alpha,k)$, on the tree strip and on the corrected boundary found only the original paper and the boundary theorem as direct matches, and a bibliographic search on the minimum size of $k$-connected graphs with given independence number returned no further source.
+No formula for the entire shell was located; this is bounded search evidence, not a claim of priority.

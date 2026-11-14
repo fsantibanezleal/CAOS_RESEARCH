@@ -1,0 +1,23 @@
+{
+  "release_ready": true,
+  "record_id": 24232301,
+  "version": "0.05",
+  "version_doi": "10.5281/zenodo.24232301",
+  "concept_doi": "10.5281/zenodo.22315251",
+  "scope": "Revision of the first interior shell note: related work with the proved cases, the computations as algorithms with commands, versions and run times from a reproduction run, results tables and figures generated from the EXP-001 and EXP-002 certificates, ablation and limitations; proofs unchanged in substance (EXP-001, EXP-002).",
+  "bytes": 699507,
+  "md5": "803fd392dfb24cae5e0b6b8696515682",
+  "sha256": "b20e124c0fef963a5f8d1820958b9cea5486c31e616c1012ffc41fe33b7ecd78",
+  "tex_sha256": "ad4bc47f6a86bf5fe94d245e77bf63c706ec6642ac65f5878203fa6637f53b64",
+  "metadata_sha256": "38311ef4e2063efe7f0364abf220dbcb7fe7ac042166c43a53094d5461febef8",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 30,
+  "rendered_pages_reviewed": 30,
+  "qa_date": "2026-11-14",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246",
+  "independent_review": "wip/caos-research/bj-tree-strip-v05-review-2026-11-14.md (CAOS_MANAGE): CHANGES REQUIRED (ablation row, run times), then APPROVE at 18ed438f; figure minors applied in 93535d11"
+}

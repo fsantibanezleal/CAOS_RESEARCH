@@ -1,0 +1,23 @@
+\begin{table}[ht]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{$(2k-1,k-1,k)$} & \multicolumn{2}{c}{$(2k,k-1,k)$} & \multicolumn{2}{c}{$(2k-1,2,k)$} & \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+$k$ & $f$ & excess & $f$ & excess & $f$ & excess & $\lceil k(2k-1)/2\rceil$\\
+\midrule
+4 & 15 & 1 & 16 & 0 & -- & -- & 14\\
+5 & 24 & 1 & 25 & 0 & -- & -- & 23\\
+6 & 35 & 2 & 36 & 0 & -- & -- & 33\\
+7 & 48 & 2 & 49 & 0 & -- & -- & 46\\
+8 & 63 & 3 & 64 & 0 & -- & -- & 60\\
+9 & 80 & 3 & 81 & 0 & 79 & 2 & 77\\
+10 & 99 & 4 & 100 & 0 & 98 & 3 & 95\\
+11 & 120 & 4 & 121 & 0 & 119 & 3 & 116\\
+12 & 143 & 5 & 144 & 0 & 142 & 4 & 138\\
+\bottomrule
+\end{tabular}
+\caption{Excess of the exact minimum size over the degree-sum bound $\lceil nk/2\rceil$ at three positions, computed from the theorems they come from: the boundary value $k^2-1$ of Das and Gupta, the strip value $k^2$ proved here, and $d^2+4d+2$ with $d=k-2$ for $\alpha=2$ at order $2k-1$ (proved for $d\ge7$, hence $k\ge9$). The last column is the degree-sum bound at order $2k-1$; at order $2k$ it is $k^2$, so the strip excess is zero.}
+\label{tab:positions}
+\end{table}

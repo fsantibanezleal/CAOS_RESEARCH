@@ -185,3 +185,16 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
   round-trip check failed until it was written as &lt;); 28 pages, 774,952 bytes, SHA-256
   9216fc30312a6cd9055481212c8e5cf78e9379e20c31e4238ba6f78b000137db.
 
+## 2026-11-14 - tree-strip (first interior shell) v0.05 published (10.5281/zenodo.24232301)
+
+- Revision from the independent audit (CAOS_MANAGE wip/caos-research/msaudit-bj-2026-11-10.md, D3): related work with
+  the proved cases of Bougard-Joret and Das-Gupta; the EXP-001 and EXP-002 computations as five algorithms with commands
+  and versions; run times from a reproduction run of 2026-11-14 (artifacts/rerun-2026-11-14.txt in both experiments:
+  the EXP-002 certificate and audit byte-identical, the EXP-001 certificate identical after line-ending normalisation);
+  tables and figures generated from the certificates; ablation and limitations; title re-derived. Proofs unchanged in
+  substance.
+- Independent review (CAOS_MANAGE wip/caos-research/bj-tree-strip-v05-review-2026-11-14.md): CHANGES REQUIRED (a false
+  ablation row, missing run times), then APPROVE; figure minors applied.
+- Release: 39 gates passed; 30 pages, 699,507 bytes, SHA-256
+  b20e124c0fef963a5f8d1820958b9cea5486c31e616c1012ffc41fe33b7ecd78.
+
