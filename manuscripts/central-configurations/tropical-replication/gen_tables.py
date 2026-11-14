@@ -83,7 +83,9 @@ def parse_screening():
         label = parts[0]
         fvec = parts[1].split(":", 1)[1].split()
         secs = int(parts[-1].rstrip("s"))
-        rows[label] = {"fvec": fvec, "secs": secs}
+        m = re.search(r"rays: (\d+), unbounded directions: (\d+), with a positive coordinate: (\d+)", line)
+        rows[label] = {"fvec": fvec, "secs": secs,
+                       "rays": int(m.group(1)), "unb": int(m.group(2)), "pos": int(m.group(3))}
     return rows
 
 
@@ -261,6 +263,90 @@ def fmt_int(n):
     return f"{n:,}".replace(",", "{,}")
 
 
+def table_rays(scr):
+    """Unbounded directions of the twelve n = 5 prevarieties (EXP-004 screening-table.txt)."""
+    out = [r"\begin{tabular}{@{}llrrr@{}}", r"\toprule",
+           r"System & Valuations & rays & unbounded directions & with a positive coordinate \\", r"\midrule"]
+    for sysname in ("S1", "S2"):
+        for key, (vals, name) in VAL_N5.items():
+            r = scr[f"n5-{sysname}-{key}"]
+            out.append(f"{sysname} & {vals} {name} & {r['rays']} & {r['unb']} & {r['pos']} \\\\")
+        if sysname == "S1":
+            out.append(r"\midrule")
+    out += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(out)
+
+
+# Failed boxes per chart and disposition, transcribed from the assembly record
+# (CC/context/2026-08-20-stratum-theorem-assembly.md, section 6b table, lines 218-244, and sections 6c, 8, 9).
+ATLAS_ASSEMBLY = [
+    ("bicorner-opp", "0", "complete"), ("bicorner-same", "0", "complete"), ("collapse", "0", "complete"),
+    ("deep-L", "0", "complete"), ("deep-R", "0", "complete"), ("fa1", "0", "complete"),
+    ("fartube", "0", "complete"), ("m1", "0", "complete"), ("m1vert-S", "0", "complete"),
+    ("tube-L", "0", "complete"), ("tube-R", "0", "complete"), ("tubeext-L", "0", "complete"),
+    ("tubeext-R", "0", "complete"), ("ulow", "0", "complete"), ("uplow", "0", "complete"),
+    ("cb1", "5", "all face-touching, closed by piece 10"),
+    ("cb1f", "2", "all face-touching, closed by piece 10"),
+    ("band", "44", "the cross point; 44 and 48 boxes trapped"),
+    ("fa2b", "200", "discharged by the depth-76 re-run (1544 boxes, zero failures)"),
+    ("m2-L", "5824", "open: the quadruple corner"),
+    ("m2-R", "5683", "open: the quadruple corner"),
+    ("fa2", "280140", "retired, superseded by fa2b"),
+    ("m1vert-N", "7144", "retired, superseded by per-entry guards"),
+]
+
+
+def atlas_table_rows():
+    rows = []
+    for chart, rec, disp in ATLAS_ASSEMBLY:
+        f = Path(E22) / "artifacts" / f"{chart}-summary.json"
+        if f.exists():
+            d = json.loads(f.read_text())
+            c = d["counters"]
+            rows.append((chart, rec, "yes" if d["ok"] else "no", str(c["failed"]), fmt_int(c["processed"]), disp))
+        else:
+            rows.append((chart, rec, "--", "--", "--", disp))
+    return rows
+
+
+def table_atlas():
+    out = [r"\begin{tabular}{@{}L{2.1cm}rcrrL{4.2cm}@{}}", r"\toprule",
+           r"Chart & record & ok & stored failed & stored processed & disposition in the record \\",
+           r"\midrule"]
+    for r in atlas_table_rows():
+        out.append(f"{r[0]} & {fmt_int(int(r[1]))} & {r[2]} & {r[3] if r[3] == '--' else fmt_int(int(r[3]))} & {r[4]} & {r[5]} \\\\")
+        if r[0] in ("uplow", "m2-R"):
+            out.append(r"\midrule")
+    out += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(out)
+
+
+def atlas_counts():
+    rows = atlas_table_rows()[:15]
+    zero = sum(1 for r in rows if r[2] == "yes" and r[3] == "0")
+    fail = [(r[0], r[3]) for r in rows if r[3] not in ("--", "0")]
+    none = [r[0] for r in rows if r[3] == "--"]
+    assert zero == 7 and len(fail) == 7 and none == ["m1vert-S"], (zero, fail, none)
+    return zero, fail, none
+
+
+def farkas_only():
+    """Comets of the twelve stored EXP-008 cells that the decider calls pointed without a vector."""
+    total = farkas = 0
+    for vkey in ("equal", "pow2", "arith"):
+        for sysname in ("A1", "A2", "A3", "A4"):
+            path = Path(E8) / "artifacts" / f"out-n4-{sysname}-{vkey}.out"
+            rays, cones = CA.parse_sections(str(path))
+            for comp in CA.components(rays, cones):
+                gens = [[Fraction(x) for x in rays[i][1:]] for i in comp if rays[i][0] == 0]
+                total += 1
+                if gens:
+                    r = LP.decide_pointed(gens)
+                    if r.pointed and r.certificate is None:
+                        farkas += 1
+    return farkas, total
+
+
 def count_polys(path):
     """Number of polynomials of a gfan system file: top-level commas inside the braces plus one."""
     t = Path(path).read_text()
@@ -426,7 +512,13 @@ def macros(scr, summ):
     tmax = max(runs, key=lambda r: share(r, "trapped"))
     cmin = min(runs, key=lambda r: share(r, "certified"))
     cmax = max(runs, key=lambda r: share(r, "certified"))
+    zero, fail, none = atlas_counts()
+    fk, ftot = farkas_only()
+    disc = sum(r[3]["discarded"] for r in runs)
     items = [
+        ("numAtlasStoredZero", str(zero)), ("numAtlasStoredFail", str(len(fail))),
+        ("numAtlasDiscarded", fmt_int(disc)),
+        ("numFarkasOnly", str(fk)), ("numFarkasTotal", str(ftot)),
         ("numAtlasTrapMax", f"{share(tmax, 'trapped'):.0f}"), ("numAtlasTrapRun", tmax[0]),
         ("numAtlasCertMin", f"{share(cmin, 'certified'):.0f}"), ("numAtlasCertMinRun", cmin[0]),
         ("numAtlasCertMax", f"{share(cmax, 'certified'):.0f}"), ("numAtlasCertMaxRun", cmax[0]),
@@ -474,6 +566,8 @@ def build_regions():
         "fig-atlas-mv": fig_atlas()[1]["mv_certified"],
         "fig-atlas-trap": fig_atlas()[1]["trapped"],
         "fig-atlas-disc": fig_atlas()[1]["discarded"],
+        "table-atlas": table_atlas(),
+        "table-rays": table_rays(scr),
         "macros": macros(scr, summ),
     }
 
