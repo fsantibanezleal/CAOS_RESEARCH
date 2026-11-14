@@ -11,7 +11,7 @@ Didin's theorem are conditional on it.
 ## Theorem
 
 Assume Didin's Theorem 3. Let (n, alpha, 3) be in the second regime, alpha >= 3, and let G be a 3-connected graph with
-n vertices, independence number alpha, c = t(n, alpha) + (3 alpha + 1)/2 edges and p(G) >= 2, without a partition of
+n vertices, independence number alpha, c = t(n, alpha) + ceil(3 alpha / 2) edges and p(G) >= 2, without a partition of
 V(G) into alpha cliques (case (a) of Proposition prop:where). Then G is a graph of Theorem thm:construction: alpha is
 odd, 3 alpha < n <= 4 alpha - 1, V(G) splits into alpha - 2 cliques of orders 3 and 4 and one block X isomorphic to X6
 or X7, the edges between parts form a matching, three at each part, along a 3-edge-connected loopless cubic quotient,
@@ -27,8 +27,7 @@ floor(n/alpha) = 3. Let H be an alpha-core with p = alpha - 1 components V_1, ..
 between different V_i. The proof of prop:where(a) gives
 c >= e(H) + q >= (t(n + 1, alpha) - 1) + ceil(3p/2) = t(n, alpha) + 3 - 1 + (3 alpha - 3)/2 = c,
 using t(n+1, alpha) - t(n, alpha) = floor(n/alpha) = 3 (Lemma lem:tshift) and p = alpha - 1 even. So every inequality
-is an equality: e(H) = t(n + 1, alpha) - 1, q = (3 alpha - 3)/2, every V_i sends exactly 3 of the q edges (each sends
-at least kappa(G) = 3 and they sum to 2q = 3p), and e(G) = e(H) + q, so G[V_i] = H[V_i] for every i.
+is an equality: e(H) = t(n + 1, alpha) - 1, q = (3 alpha - 3)/2, every V_i sends exactly 3 of the q edges (each sends at least lambda(G) >= kappa(G) >= 3 and they sum to 2q = 3p), and e(G) = e(H) + q, so G[V_i] = H[V_i] for every i.
 
 Step 2 (the parts) [D]. The independence numbers of the components of H sum to alpha(H) = alpha over alpha - 1
 components, each at least 1, so exactly one component X has alpha(X) = 2 and the others have independence number 1,
@@ -50,7 +49,7 @@ Step 4 (attachment) [D]. Let A_P be the set of vertices of a part P that carry a
 (there are alpha - 2 >= 1 others), a vertex cut of size at most 2: impossible. So |A_P| = 3, every vertex of A_P
 carries exactly one of the three edges, and the edges between parts form a matching. The quotient Q (parts as
 vertices, these edges as edges) is a loopless cubic multigraph. It is 3-edge-connected: a cut of at most two edges of
-Q gives, by taking one end of each cut edge, a vertex cut of G of size at most 2 with both sides nonempty. For the block
+Q gives, by taking one end of each cut edge, a vertex cut of G of size at most 2 with both sides nonempty, because each side holds a part of at least 3 vertices, which loses at most 2. For the block
 X with A = A_X: a vertex outside A has all its neighbours in X, so its degree in X is at least 3; a vertex of A has
 degree at least 2 in X; and for every set T of at most two vertices of X, every component of X - T meets A \ T,
 since otherwise T separates that component from the other parts.
@@ -75,7 +74,11 @@ Step 4 and Step 6, G is the graph of the construction with this X, its attaching
 ## Consequence for BJB-026
 
 Together with Proposition prop:where(b) and the complete enumeration at its six triples (EXP-011: case (b) is realised
-only at (10,3,3), by 8 graphs), the extremal graphs of the second regime without a partition into alpha cliques are,
-conditional on Didin's Theorem 3, exactly the construction graphs (k = 3, alpha odd, 3 alpha < n <= 4 alpha - 1, when
-they are extremal) and the 8 graphs at (10,3,3). Those with a partition are the Bougard-Joret graphs
+only at (10,3,3), by 8 graphs), the extremal graphs of the second regime with alpha >= 3 and k >= 3 without a
+partition into alpha cliques are, conditional on Didin's Theorem 3, exactly the construction graphs (k = 3, alpha odd,
+3 alpha < n <= 4 alpha - 1) and the 8 graphs at (10,3,3). Here extremal means f(n, alpha, k) = c edges: Didin's
+Theorem 9, which he derives from his Theorem 3, gives f = c for every n > k alpha, and the enumeration gives it for
+n <= 24 without condition. The restriction alpha >= 3 is needed: at (7,2,3), f = 12 = c and the extremal graph
+`FL~Cg` is 3-connected with independence number 2 and no partition into 2 cliques (independent review,
+CAOS_MANAGE wip/caos-research/bj-exp014-proof-review-2026-11-14.md); Proposition prop:where assumes alpha >= 3. Those with a partition are the Bougard-Joret graphs
 (Lemma lem:partition-structure, unconditional).

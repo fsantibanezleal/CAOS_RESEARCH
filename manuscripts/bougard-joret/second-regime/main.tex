@@ -62,7 +62,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 Let $f(n,\alpha,k)$ be the least number of edges of a $k$-connected graph with $n$ vertices and independence number
 $\alpha$. Bougard and Joret conjectured $f(n,\alpha,k)=t(n,\alpha)+\lceil k\alpha/2\rceil$ for $n>k\alpha$, where
 $t(n,\alpha)$ counts the edges of $\alpha$ disjoint balanced cliques, and Didin has announced a proof of the lower
-bound. We give an independent exhaustive check. \abstractvalues, by complete enumeration of \ngraphs\ candidate
+bound. We give an independent exhaustive check. \abstractvalues, by enumerating \ngraphs\ candidate
 graphs with nauty's generator, an independence prune proved sound, and an exact filter. For seven pairs
 $(\alpha,k)$, including $(5,3)$, $(4,4)$ and $(3,6)$, this settles the conjectured value for every $n>k\alpha$. A
 validation suite checks every component: rebuilt binaries are byte-identical to the production ones,
@@ -71,10 +71,10 @@ independent implementation, and the generator's splitting and counts agree with 
 \nextremal\ extremal graphs at \nexttriples\ triples. Those that split into $\alpha$ cliques have Bougard and Joret's
 structure; the other \nnopart\ do not, and all have $k=3$ and $\alpha$ odd. Conditional on Didin's main theorem, we
 prove that such graphs occur only at $k=3$ with $\alpha$ odd and $n\le4\alpha-1$, or at six small triples, as the
-data show. Two blocks recovered from the data give, for every odd $\alpha$ and $3\alpha<n\le4\alpha-1$, an explicit
+data show. Two blocks recovered from the data give, for every odd $\alpha$ and $3\alpha<n\le4\alpha-1$, a
 $3$-connected graph with the conjectured number of edges, independence number $\alpha$ and no partition into
-$\alpha$ cliques, extremal at order 24 and below. Given Didin's theorem, these graphs and eight graphs at $(10,3,3)$
-are all the extremal graphs without such a partition.
+$\alpha$ cliques, extremal at order 24 and below. Given Didin's theorem, for $\alpha\ge3$ these graphs and eight graphs at
+$(10,3,3)$ are all the extremal graphs without such a partition.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}

@@ -31,7 +31,7 @@ Proposition~\ref{prop:where}(a) gives the chain
 \[
 \e(G)\ \ge\ \e(H)+q\ \ge\ t(n+1,\alpha)-1+\tfrac{3\alpha-3}{2}\ =\ t(n,\alpha)+2+\tfrac{3\alpha-3}{2}\ =\ \e(G),
 \]
-using \eqref{eq:didin} for $H$, $|\partial V_i|\ge\lambda(G)\ge\kappa(G)=3$ with $\sum_i|\partial V_i|=2q$, and
+using \eqref{eq:didin} for $H$, $|\partial V_i|\ge\lambda(G)\ge\kappa(G)\ge3$ with $\sum_i|\partial V_i|=2q$, and
 Lemma~\ref{lem:tshift}. Every inequality is therefore an equality: $\e(H)=t(n+1,\alpha)-1$, every component sends
 exactly three edges, and $G$ has no edge inside a component outside $H$. The independence numbers of the
 $\alpha-1$ components sum to $\alpha(H)=\alpha$ and are at least one each, so exactly one is two; a connected graph
@@ -52,7 +52,7 @@ hence in $\{3,4\}$ since $3\alpha+2\le n+1\le4\alpha$; so $m+1\in\{6,7,8\}$.
 neighbour outside $P$. If $|A_P|\le2$, then $A_P$ separates $P-A_P\neq\emptyset$ from the other components, a vertex
 cut of size at most two. So $|A_P|=3$, and by (i) each vertex of $A_P$ carries exactly one of the three edges. A cut of
 at most two edges of $Q$ yields, by taking one end of each cut edge, a vertex cut of $G$ of size at most two with both
-sides nonempty, so $Q$ is $3$-edge-connected.
+sides nonempty, since each side holds a component of at least three vertices; so $Q$ is $3$-edge-connected.
 
 (iv) A vertex of $X-A$ has all its neighbours in $X$, and $\delta(G)\ge3$; a vertex of $A$ has exactly one neighbour
 outside. If a component of $X-T$ misses $A\setminus T$, then $T$ separates it from the other components. If
@@ -99,9 +99,10 @@ the matching and the quotient, and Proposition~\ref{prop:where} gives $n\le4\alp
 \end{proof}
 
 \begin{corollary}[conditional on {\cite[Theorem~3]{Didin}}]\label{cor:characterise}
-The extremal graphs of the second regime without a partition into $\alpha$ cliques are exactly the graphs of
-Theorem~\ref{thm:construction}, at the triples where they are extremal ($n\le24$ by Theorem~\ref{thm:values}, and every
-admissible $n$ if Didin's Theorem~9 holds), and the \ntenthreeb\ graphs at $(10,3,3)$.
+For $\alpha\ge3$ and $k\ge3$, the extremal graphs of the second regime without a partition into $\alpha$ cliques are
+exactly the graphs of Theorem~\ref{thm:construction} and the \ntenthreeb\ graphs at $(10,3,3)$. Here the extremal
+graphs have $f(n,\alpha,k)=t(n,\alpha)+\ceil{k\alpha/2}$ edges, which Theorem~\ref{thm:values} gives for $n\le24$ and
+Didin's Theorem~9, derived from his Theorem~3, for every $n>k\alpha$.
 \end{corollary}
 
 \begin{proof}
@@ -109,5 +110,10 @@ By Proposition~\ref{prop:where}, such a graph is in case (a), covered by Theorem
 (b) at one of six triples, all with $n\le16$, where the enumeration of Section~\ref{sec:extremal} lists every extremal
 graph and finds case (b) only at $(10,3,3)$.
 \end{proof}
+
+The restriction $\alpha\ge3$ cannot be dropped. At $(7,2,3)$ the conjectured value $t(7,2)+3=12$ is the least size,
+and an extremal graph (\texttt{graph6} \texttt{FL\textasciitilde Cg}) is $3$-connected with independence number $2$ and
+no partition into two cliques; it is neither a graph of Theorem~\ref{thm:construction} nor one of those at
+$(10,3,3)$. Proposition~\ref{prop:where}, on which the corollary rests, assumes $\alpha\ge3$.
 
 All four structural claims that the data suggested rest on Didin's Theorem~3: the matching and the cubic, $3$-edge-connected quotient through the equalities of Proposition~\ref{prop:where}(a), and the clique orders and the two blocks through his theorem applied once more, to the block.
