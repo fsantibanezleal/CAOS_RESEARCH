@@ -34,9 +34,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.04}
-\newcommand{\docdate}{20 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22859408}
+\newcommand{\docversion}{v0.05}
+\newcommand{\docdate}{14 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.24228302}
 \newcommand{\conceptdoi}{10.5281/zenodo.22342975}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
@@ -1075,8 +1075,9 @@ For $r\in\{1,2\}$, put
 \end{align*}
 Then, for every $p\geq8$,
 \begin{equation}\label{eq:mask58-endpoints}
- \Pi_{58}M_ps_{p,r}=-x_{(0,r,p-2-r)}.
+ \Pi_{58}M_ps_{p,r}=(-1)^{p+1}x_{(0,r,p-2-r)},
 \end{equation}
+that is, minus the unsigned $K$ row that underlies $x_{(0,r,p-2-r)}$ in~\eqref{eq:erow}.
 Thus the two endpoint triangle rows vanish integrally in
 $\coker(\Pi_{58}M_p)$, each with a one-column source of coefficient height one.
 \end{theorem}
@@ -1100,12 +1101,13 @@ face contributes nothing. Deleting $10p$ gives coefficient $11p-2\in
 \mathrm C_2$ and normalized counts
 $(-1,-3,1,0,0,0,0,0,0,0)$, hence type $R_5$. The generator $10p$ is
 last in a $2p-2$ element exterior set, at zero-based position $2p-3$,
-so its sign is $-1$. Its face is precisely the row
-$x_{(0,r,p-2-r)}$ by the triangle-row definition.
+so its sign is $-1$. Its face is the unsigned row
+$K[(L\setminus\{p-r,3p,3p+r\})\cup\{6p\};11p-2]$, which by~\eqref{eq:erow} with $u=0$, $v=r$ equals
+$(-1)^{p+2r}x_{(0,r,p-2-r)}=(-1)^p x_{(0,r,p-2-r)}$.
 
 The complete nonzero boundary therefore consists of $p-3$ rows of type
-$R_0$, $p-3$ rows of type $R_2$, and the single negative $R_5$ row in
-\eqref{eq:mask58-endpoints}. The projection discards the first two types
+$R_0$, $p-3$ rows of type $R_2$, and the single $R_5$ row with coefficient $-1$ on the
+unsigned row, which is~\eqref{eq:mask58-endpoints}. The projection discards the first two types
 and retains the last one.
 \end{proof}
 
@@ -1114,8 +1116,8 @@ in the full original presentation before contraction. It is also narrower
 than an identification of presentations: no uniform isomorphism between this
 semantic projection and a persistent isolated component is asserted. At the
 locked parameter $p=11$, the frozen component contains unique matching source
-columns 210 and 308, whose retained entries are respectively $-1$ in rows
-12559 and 12560 [MV]. This exact finite agreement does not extend the scope of
+columns 210 and 308, whose retained entries are respectively $-1$ in the
+unsigned rows 12559 and 12560 [MV], as~\eqref{eq:mask58-endpoints} predicts. This exact finite agreement does not extend the scope of
 Theorem~\ref{thm:mask58-endpoints} to a uniform component reconstruction.
 
 In particular there are at least $3,4,5,7$ independent integral
@@ -1301,7 +1303,8 @@ and the uniform proof remain separate layers of evidence.
 \subsection{Uniform endpoint projection certificate}
 
 Computation EXP-066 evaluates the two identities of
-Theorem~\ref{thm:mask58-endpoints} for every $p=8,\ldots,300$, giving 586
+Theorem~\ref{thm:mask58-endpoints}, in their unsigned-row form, for
+every $p=8,\ldots,300$, giving 586
 exact endpoint checks, and rejects 2,930 altered sources, target rows and
 projection masks [MV]. An independent implementation reconstructs the interval
 types and normalized counts in reverse parameter order and recovers the same
@@ -1407,6 +1410,7 @@ accompanying tests also verify deterministic gzip replay, all stored source
 hashes, and the original $b_p$ source transfer at $p=8$.
 
 \begin{thebibliography}{9}
+\raggedright
 \bibitem{CAOSMain}
 F.~Santib\'a\~nez-Leal,
 \emph{Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family

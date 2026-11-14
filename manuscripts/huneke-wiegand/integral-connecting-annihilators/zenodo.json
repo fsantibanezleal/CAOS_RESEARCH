@@ -41,9 +41,9 @@
         "resource_type": "software"
       }
     ],
-    "version": "0.04",
+    "version": "0.05",
     "language": "eng",
     "publication_date": "2026-09-20",
-    "version_notes": "Adds a uniform support-one source theorem for two endpoint triangle rows in the four-type semantic projection, with a locked p=11 frozen-carrier comparison, independent audit, and exact regression checks through p=300. The scope boundary is explicit: no uniform isolated-component identification or complete projected cokernel is claimed."
+    "version_notes": "Correction: Theorem 9.1 (support-one endpoint sources) displayed Pi_58 M_p s_(p,r) = -x_(0,r,p-2-r), which holds for even p only in the paper's sign convention; the identity is (-1)^(p+1) x_(0,r,p-2-r), minus the unsigned K row. The vanishing of the two endpoint rows and every other result are unchanged. Found by an independent audit (2026-11-11)."
   }
 }
