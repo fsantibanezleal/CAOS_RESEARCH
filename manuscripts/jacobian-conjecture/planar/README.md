@@ -1,7 +1,7 @@
 # manuscript-planar/ - the PLANAR PROGRAM paper (B of three)
 
-`main.tex` / `main.pdf`: "Planar Keller Maps after the Counterexample: Machine-Certified
-Newton-Polygon Exclusions, the Staircase Transport, and the Recalibrated Frontier". The
+`main.tex` / `main.pdf`: "Planar Keller Maps after the Counterexample: Weight-Class Exclusions, a Chart
+Atlas for the (72,108) Reduction, and Independent Checks of Cases 1 and 2". The
 ACTIVE paper: the JC(2) machine (uniform closure, forced tops, descent), the four
 unconditional exclusion theorems plus the annihilation lemma, the diagonal corner and the
 staircase transport (with the fifth exclusion in window form and its cleared certificates),
@@ -72,12 +72,13 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.32** (2026-08-01). Substantive revisions are published
-as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Canonical/latest version 0.32 DOI: `10.5281/zenodo.21740213`. Its public PDF
-matches the visually verified local artifact: 419223 bytes, MD5
-`3c4c4a0c4f96a634de4018410b5871c3` and SHA-256
-`2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
-The prior canonical v0.31 DOI is `10.5281/zenodo.21739069`; immutable record
-`10.5281/zenodo.21739032` contains identical v0.31 bytes and remains a
-superseded duplicate created by a concurrent publication race.
+Current manuscript version: **v0.37** (2026-11-14), the source of the full revision (methods with six
+algorithms, complete proofs, related work, the atlas, exclusion and frontier tables, six figures, and the
+(72,108) part restructured around GGHV Proposition 4.3 with Cases 1 and 2). The published preprint is
+v0.36, version DOI `10.5281/zenodo.24226225`, concept DOI `10.5281/zenodo.21503367`; v0.37 is a draft until
+the release tool builds the PDF and reserves its DOI. Substantive revisions are published as new Zenodo
+versions under the concept DOI.
+
+Generated pieces: `make_tables.py` writes `tab_atlas.tex`, `tab_repro.tex` and `fig_times.tex` from the
+experiment records (it refuses a cell whose quotation is absent from its record); run it before building.
+Build with three `pdflatex` passes.
