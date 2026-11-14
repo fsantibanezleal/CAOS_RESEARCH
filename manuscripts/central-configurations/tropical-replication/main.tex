@@ -278,7 +278,7 @@ Symbol & Meaning \\
 $n$, $m_i$, $M$ & number of bodies, positive mass of body $i$, total mass $\sum_i m_i$ \\
 $r_{ij}$, $S_{ij}$ & mutual distance of bodies $i,j$; $S_{ij}=r_{ij}^{-3}-1$, $S_{ii}=0$ \\
 $\lambda$ & force constant, fixed to $M$ \\
-$U$, $I$, $J$ & potential, moment of inertia, scale-free invariant $UI^{1/2}/M^{5/2}$ (equations~\eqref{eq:eiu}, \eqref{eq:J}) \\
+$U$, $I$, $\mathsf J$ & potential, moment of inertia, scale-free invariant $\mathsf J=UI^{1/2}/M^{5/2}$ (equations~\eqref{eq:eiu}, \eqref{eq:J}) \\
 $g_{ij}$, $f_{ij}$ & asymmetric and symmetric Albouy--Chenciner polynomials, $f_{ij}=g_{ij}+g_{ji}$ \\
 $K$, $v_i$ & field of Puiseux series in $t$; valuation of the mass $m_i=t^{v_i}$ \\
 $F$, $V(F)$ & polynomial system over $K$ and its zero set \\
@@ -289,7 +289,7 @@ $\mathrm{S1}$, $\mathrm{S2}$ & equation systems with and without the symmetric A
 $\mathrm{A1}$ to $\mathrm{A4}$ & the $n=4$ enrichment systems of Section~\ref{sec:ablation} \\
 $\mathcal S$, $X^{+}$ & open stratum of the two-pair configurations and the closure of its shape variety \\
 $J(u,v,p,q)$ & $6\times4$ mass-coefficient matrix of the stratum, equation~\eqref{eq:kernel} \\
-$R_j$, $I$ & rank-at-most-$j$ locus of $J$; incidence variety of pairs (shape, mass kernel vector) \\
+$R_j$, $\mathcal I$ & rank-at-most-$j$ locus of $J$; incidence variety of pairs (shape, mass kernel vector) \\
 \bottomrule
 \end{tabular}
 \caption{Notation: the symbols of the distance formulation, of the tropical certificate and of the six-body stratum, with the
@@ -522,7 +522,7 @@ ours (the unexplained boxes) must be zero\MV. Algorithm~\ref{alg:census} states 
 
 \subsection{Section probes and the partial Gr\"obner bound}
 
-The probe asks whether the variety $V$ of a system has dimension at most $d$. Integer
+Algorithm~\ref{alg:probe} states both instruments. The probe asks whether the variety $V$ of a system has dimension at most $d$. Integer
 coefficients are drawn uniformly from $[-10^6,10^6]$ by a seeded generator, the draws are archived
 verbatim, and $d+1$ random affine-linear equations are adjoined; \texttt{msolve} then decides
 the zero-dimensional or empty system under a time cap. An empty answer (dimension $-1$) is
@@ -625,8 +625,7 @@ EXP-005 ($n=6$, 0.7) & \texttt{-{}-bits 64}; arbitrary precision & overflow abor
 The overflow-checked rerun of the $n=5$ computation that \cite{JL25} describe (about ten times slower) was
 not repeated, and the full arbitrary-precision rerun of the positive $n=5$ cells was queued as hardening
 and no record shows that it ran. The $n=5$ certificates therefore rest on the fast path alone\Dm. Two facts
-bound the risk: on the fast path an arithmetic overflow is detected and aborts the run, so a silent wrong
-answer is not the failure mode (the $n=6$ attempts of Section~\ref{sec:six} aborted in exactly this way)\Dm;
+bound the risk: the failures observed on the fast path, in the $n=6$ attempts of Section~\ref{sec:six}, were detected aborts, an observation and not a guarantee that every overflow is detected\Dm;
 and the arbitrary-precision run of the enrichment grid reproduces the $n=4$ $f$-vectors of the fast-path
 screening exactly at the three shared valuations, $(1,49,66,18)$, $(63,119,82,19)$ and $(83,164,108,23)$\MV.
 That agreement is a partial validation at $n=4$ only. The arbitrary-precision rerun of the $n=5$
@@ -731,9 +730,9 @@ U=\sum_{i<j}\frac{m_im_j}{r_{ij}},\qquad I=\frac1M\sum_{i<j}m_im_jr_{ij}^2,\qqua
 \end{equation}
 the last relation being a consequence of the symmetric equations under the normalization $S_{ij}=r_{ij}^{-3}-1$
 (\path{CC/code/cclib/__init__.py}, function \texttt{e\_iu}; equation~(7) of \cite{HJ11}). % voice-ok
-We record the scale-free invariant $J=UI^{1/2}/M^{5/2}$ at both anchors:
+We record the scale-free invariant $\mathsf J=UI^{1/2}/M^{5/2}$ at both anchors:
 \begin{equation}\label{eq:J}
-J_{\square}=\tfrac1{16}+\tfrac{\sqrt2}{8},\qquad J_{\mathrm{tet}}=\tfrac{3\sqrt6}{32}
+\mathsf J_{\square}=\tfrac1{16}+\tfrac{\sqrt2}{8},\qquad \mathsf J_{\mathrm{tet}}=\tfrac{3\sqrt6}{32}
 \end{equation}
 (both exact)\MV.
 
@@ -895,10 +894,9 @@ certify at $n=5$ (266 of 266 and 250 of 250 comets pointed, Table~\ref{tab:n5});
 two families were known to work. Since
 the certificate is a statement about one point of the valuation space, each working family is an independent verification of generic finiteness for $n=5$ on the fast path,
 and the enlarged pool is what makes an $n=6$ attempt a design choice rather than
-a lottery\Dm. This matters operationally: powers of three reach $t^{243}$ at $n=6$
-and exceed \texttt{gfan}'s machine-integer fast path (our first $n=6$ attempt
-aborted on a detected overflow after six minutes), whereas powers of two reach
-only $t^{32}$.
+a lottery\Dm. This matters operationally at $n=6$: powers of three reach $t^{243}$, and the first $n=6$
+attempt, with powers of three on the machine-integer fast path of \texttt{gfan}~0.7, aborted on a detected overflow after six minutes; the
+powers-of-two variant, with exponents up to $t^{32}$, aborted the same way, so the abort is not a matter of the size of the exponents (Section~\ref{sec:six}).
 
 \emph{(b) The dependent symmetric equations are essential.} Every S2 cell at the five
 other valuations has a larger $f$-vector in every entry than its S1 counterpart, the S2 cell at repeated
@@ -1188,7 +1186,7 @@ two grids (Section~\ref{sec:ablation-bits}). The baseline is system S1 at $n=5$ 
 
 System S2 omits the $\binom{n}{2}$ symmetric equations, each of which is the sum of two asymmetric ones and is therefore a consequence of the others in the ideal.
 Figure~\ref{fig:profiles} shows, on the left, the $f$-vector profiles of the six S1 cells and, on the right, the comet counts of S1 and S2 by valuation family: S2
-has fewer comets in every valuation family, and the comets it keeps are larger. Table~\ref{tab:rays} gives the unbounded directions of the twelve prevarieties,
+has fewer comets in every valuation family, and its one unpointed comet is larger (Figure~\ref{fig:gens}). Table~\ref{tab:rays} gives the unbounded directions of the twelve prevarieties,
 which is where the failure appears: every S1 cell at a geometric valuation family has at most two unbounded directions with a positive coordinate (zero for powers of 3, which is globally
 pointed), while every S2 cell has 316 or more, up to 1895 at repeated valuations. The one comet that remains unpointed in each failing S2 cell has between \numGenStwoMin\ and
 \numGenStwoMax\ recession generators against \numGenSoneMin\ to \numGenSoneMax\ in the S1 controls (Figure~\ref{fig:gens}). The reading is that equations that are algebraically redundant in the ideal are
@@ -1333,7 +1331,7 @@ A3 and A4 are not claimed as full certificates, since the A1 cells already provi
 
 \begin{figure}[t]\centering
 \begin{tikzpicture}
-\begin{axis}[width=0.6\linewidth, height=5cm, ylabel={comets}, symbolic x coords={A1,A2,A3,A4},
+\begin{axis}[cycle list name=black white, width=0.6\linewidth, height=5cm, ylabel={comets}, symbolic x coords={A1,A2,A3,A4},
 xtick=data, legend style={font=\scriptsize, at={(1.03,0.5)}, anchor=west},
 tick label style={font=\scriptsize}, label style={font=\scriptsize}, ymin=0, ymax=11, mark size=1.5pt]
 % BEGIN GENERATED fig-enrich
@@ -1426,30 +1424,30 @@ by an independent count over six random shapes\MV.
 
 \subsection{The fibre-dimension count}
 
-Let $R_j=\{\operatorname{rank}J\le j\}\cap X^{+}$ and $I=\{(x,m):x\in X^{+},\ m\in\ker J(x),\ m\ne0\}$ with
-projection $\pi:I\to\mathbb{R}^4$ to mass space. Over the locus of rank exactly $r$ the fibre of $I\to X^{+}$ is
+Let $R_j=\{x\in\mathcal S:\operatorname{rank}J(x)\le j\}$ and $\mathcal I=\{(x,m):x\in\mathcal S,\ m\in\ker J(x),\ m\ne0\}$ with
+projection $\pi:\mathcal I\to\mathbb{R}^4$ to mass space; both are taken over the open stratum $\mathcal S$, which holds every central configuration of the stratum by definition, and
+$\mathcal S$ is a nonempty open subset of the irreducible variety $X^{+}$, hence irreducible of dimension 4. Over the locus of rank exactly $r$ the fibre of $\mathcal I\to\mathcal S$ is
 the kernel, of dimension $4-r$, so
 \begin{equation}\label{eq:count}
-\dim I=\max_{r}\bigl[\dim\{\operatorname{rank}J=r\}+(4-r)\bigr].
+\dim\mathcal I=\max_{r}\bigl[\dim\{\operatorname{rank}J=r\}+(4-r)\bigr].
 \end{equation}
 
 \begin{proposition}\label{prop:count}
-If $\dim R_0\le0$, $\dim R_1\le1$, $\dim R_2\le2$ and $R_3\ne X^{+}$, then $\dim I\le4$.
+If $\dim R_0\le0$, $\dim R_1\le1$, $\dim R_2\le2$ and $R_3\ne\mathcal S$, then $\dim\mathcal I\le4$.
 \end{proposition}
 \begin{proof}
-Term by term in \eqref{eq:count}: for $r=4$ the term is at most $4+0$; for $r=3$, irreducibility of $X^{+}$ and
-$R_3\ne X^{+}$ give $\dim R_3\le3$, so the term is at most $3+1$; for $r=2$ it is at most $2+2$, for $r=1$ at
+Term by term in \eqref{eq:count}: for $r=4$ the term is at most $4+0$; for $r=3$, irreducibility of $\mathcal S$ and
+$R_3\ne\mathcal S$ give $\dim R_3\le3$, so the term is at most $3+1$; for $r=2$ it is at most $2+2$, for $r=1$ at
 most $1+3$ and for $r=0$ at most $0+4$.
 \end{proof}
 
-From $\dim I\le 4=\dim\mathbb{R}^4$ the projection $\pi$ has finite generic fibres, or is not dominant, in which
+From $\dim\mathcal I\le 4=\dim\mathbb{R}^4$ the projection $\pi$ has finite generic fibres, or is not dominant, in which
 case generic masses admit no configuration of the stratum at all; this is the fibre-dimension argument of
 the Dias--Pan pattern \cite{DP18} (the record's section~2 of
 \path{CC/context/2026-08-20-stratum-theorem-assembly.md}, lines 26--62). % voice-ok
-The lemmas below are proved on the open stratum $\mathcal S$, a nonempty open subset of the irreducible variety $X^{+}$ and
-therefore dense in it; the extension of the rank bounds to the boundary $X^{+}\setminus\mathcal S$, where pairs collide or collapse, is the role of the
-certified atlas and its face analysis, whose status is stated in Section~\ref{sec:atlas-status}. The four hypotheses are the \emph{ladder}. Following the case numbering of the records, case $k$ is the statement
-$\dim R_{k-1}\le k-1$ (for $k=1,2,3$) and $R_3\ne X^{+}$ (for $k=4$). The centred pentagon below shows that
+The lemmas below are proved on $\mathcal S$, so the count needs nothing on the boundary $X^{+}\setminus\mathcal S$, where pairs collide or collapse; the certified atlas and its face
+analysis (Section~\ref{sec:atlas-status}) concern rank conditions near that boundary, a different statement. The four hypotheses are the \emph{ladder}. Following the case numbering of the records, case $k$ is the statement
+$\dim R_{k-1}\le k-1$ (for $k=1,2,3$) and $R_3\ne\mathcal S$ (for $k=4$). The centred pentagon below shows that
 $\dim R_2=2$ is attained, so the bound for $k=3$ is sharp.
 
 \subsection{The proved cases and their pointers}
@@ -1463,7 +1461,7 @@ $k$ & Statement & Status & Written proof in the records \\
 1 & $\dim R_0\le 0$ & proved\Dm\MV & piece 5, \path{CC/context/2026-08-02-rank-floor-lemma-dossier.md} lines 199--236 \\ % voice-ok
 2 & $\dim R_1\le 1$ & proved\Dm\MV & pieces 1 to 4, same file, lines 8--155 (Lemma~\ref{lem:piece1} gives piece 1) \\ % voice-ok
 3 & $\dim R_2\le 2$ & reduced to four bilinear conditions\Dm & piece 7b, same file, lines 313--341; certified covering below \\ % voice-ok
-4 & $R_3\ne X^{+}$ & proved\Dm\MV & Proposition~\ref{prop:k4} below; same file, lines 270--289 \\ % voice-ok
+4 & $R_3\ne\mathcal S$ & proved\Dm\MV & Proposition~\ref{prop:k4} below; same file, lines 270--289 \\ % voice-ok
 \bottomrule
 \end{tabular}
 \caption{Status of the cases of the ladder. A case is called proved only with a written proof in this paper
@@ -1497,14 +1495,14 @@ so $f=v-q=0$, contradicting $q\ne v$ on $\mathcal S$.
 \end{proof}
 
 \begin{proposition}[$k=4$]\label{prop:k4}
-$R_3\ne X^{+}$, hence $\dim R_3\le3$.
+$R_3\ne\mathcal S$, hence $\dim R_3\le3$.
 \end{proposition}
 \begin{proof}
 At $W_1$ the matrix has rank 4, by exact radical arithmetic, so some $4\times4$ minor $g_4$ satisfies $g_4(W_1)\ne0$
-exactly. The point $W_1$ is a parametrized geometry, hence a point of $X^{+}$; it is not in the gauge $a_1=1$, $a_2=-1$, but a similarity
+exactly. The point $W_1$ is a parametrized geometry, hence a point of $\mathcal S$ (distinct heights, no collision); it is not in the gauge $a_1=1$, $a_2=-1$, but a similarity
 (translation and scale) maps it there and multiplies $J$ by a nonzero factor, so the rank is unchanged. On $R_3$ every $4\times4$ minor
-vanishes, so $R_3\subset\{g_4=0\}\cap X^{+}$. Since $X^{+}$ is irreducible of dimension 4 and $g_4$ does not vanish
-identically on it, Krull's principal ideal theorem gives $\dim(\{g_4=0\}\cap X^{+})\le3$.
+vanishes, so $R_3\subset\{g_4=0\}\cap\mathcal S$. Since $\mathcal S$ is irreducible of dimension 4 and $g_4$ does not vanish
+identically on it, Krull's principal ideal theorem gives $\dim(\{g_4=0\}\cap\mathcal S)\le3$.
 \end{proof}
 
 The cases $k=1$ and $k=2$ combine closed-form minors with exact witnesses. Four minors of the catalogue factor into
@@ -1529,7 +1527,7 @@ b_{13}J[L_{15}][c]=b_{15}J[L_{13}][c],\qquad a_{23}J[L_{25}][c]=a_{25}J[L_{23}][
 \end{equation}
 where $a_{23}=s(r_{12},d_{1A})\,u\,e_{12}$, $b_{13}=-s(r_{12},d_{2A})\,u\,e_{12}$, $b_{15}=-s(r_{12},d_{2B})\,p\,e_{12}$ and
 $a_{25}=s(r_{12},d_{1B})\,p\,e_{12}$ are the clean entries\MV. All four conditions are exactly nonzero at $W_1$, $W_2$ and the
-hexagon, so by irreducibility and Krull each cuts $X^{+}$ in dimension at most 3, and $\dim R_2\le 3$ follows on the good region;
+hexagon, so by irreducibility and Krull each cuts $\mathcal S$ in dimension at most 3, and $\dim R_2\le 3$ follows on the good region;
 the case needs $\dim R_2\le2$, that is a second cut that is not identically zero on any 3-dimensional component of
 the first, and that statement has no written proof in the records\Dm. The routes tried to close it are
 the computational ones of Table~\ref{tab:stratum}: the single-minor Gr\"obner cuts (EXP-019), the sign-chamber relaxation
@@ -1603,7 +1601,7 @@ verified to eight significant digits at $\varepsilon=10^{-7}$ on three rational 
 (\path{CC/context/2026-08-02-rank-floor-lemma-dossier.md}, piece~11, lines 782--830). % voice-ok
 It vanishes only on a curve of the height plane that does not depend on $a$ and $b$, and on six points of that curve a
 $3\times3$ minor with a nonzero limit carries the rank floor\MV; the floor is checked at these six points, and its uniformity along the whole curve is not proved. Limited resolution is the second origin: in the record's measurement of the residues, every chart with failures has failures of exactly one box
-width, the width reached at the shared depth cap, and a deeper cap discharged the residue that was re-run (fa2b)\MV. The third origin is mathematics,
+width, the width reached at the shared depth cap, and a deeper cap discharged the fa2b residue (re-run at depth 76), whereas the m2-R residue, re-seeded at depth 84, produced no certificate in its first 102 boxes\MV. The third origin is mathematics,
 once: the cross point below. The face table of the record is complete in the sense that every chart's matrix evaluated on its own face is
 either full rank or treated by pieces 10 to 12\MV, with the limit on piece 11 just stated.
 \label{sec:atlas-status}
@@ -1813,8 +1811,7 @@ The screening of Section~\ref{sec:screening} turns the $n=6$ question into a
 design problem with two dials. What we have measured is a \emph{tooling}
 barrier, characterized on four attempts with \texttt{gfan}~0.7. On the
 machine-integer fast path the computation aborts within minutes on a
-\emph{detected} overflow (the benign failure mode: \texttt{gfan} raises rather
-than returning a wrong answer), and it does so for powers of three and for
+\emph{detected} overflow (the failure observed in these attempts: \texttt{gfan} aborted and returned no answer), and it does so for powers of three and for
 powers of two alike, although the latter caps the valuation exponents at 32
 instead of 243, so the failure is not a matter of valuation magnitude. On the
 arbitrary-precision path, the powers-of-two run died after fifteen wall-hours
@@ -1836,8 +1833,9 @@ wrote a checkpoint (\path{CC/experiments/EXP-005-n6-prevariety-pow3/PAUSE-NOTE.m
 (fifteen wall-hours, the assertion location) are kept only in the history log of the problem, as the experiment folder
 has no result file. The case $n=6$ therefore remains open here: a completed run would
 either extend generic-mass finiteness to $n=6$ or localize the obstruction to
-specific comets, data that has not been published for any failed attempt. The choice of the two variants, powers of two on the fast path and powers of three in arbitrary precision, follows from the screening: four valuation families certify at $n=5$, and the
-magnitude of the exponents is an operational constraint at $n=6$ (Section~\ref{sec:discussion})\Dm. Resuming it is the only open case of the programme,
+specific comets, data that has not been published for any failed attempt. The order of events is that powers of three on the fast path overflowed first, powers of two on the fast path overflowed as well, regardless of the magnitude of the exponents, and the
+runs were then repeated with the 0.8beta release (powers of two on the fast path) and in arbitrary precision (powers of three); that powers of two and primes certify at $n=5$ (Section~\ref{sec:screening})
+made those variants available as designed choices. Resuming it is the only open case of the programme,
 and needs a fresh hypothesis and a budget before any run.
 
 \FloatBarrier
@@ -1883,14 +1881,14 @@ The open case for this programme is $n=6$.
 \paragraph{What the screening shows about the certificate.}
 The certificate of \cite{JL25} is a statement about one point of the valuation space, and the screening turns the choice of that point into a designed variable.
 Four valuation families certify at $n=5$ where two were published, the arithmetic and repeated controls fail in exactly one comet each, and the
-equal-valuation case at $n=4$ fails as the literature predicts. The magnitude of the exponents is an operational constraint beyond the mathematics: powers of three
-reach $t^{243}$ at $n=6$ and left the machine-integer fast path, whereas powers of two reach $t^{32}$. This is why the attempt at $n=6$ runs powers of two on the fast
-path and powers of three in arbitrary precision (Section~\ref{sec:six}).
+equal-valuation case at $n=4$ fails as the literature predicts. At $n=6$ the record is that powers of three overflowed on the machine-integer fast path of \texttt{gfan}~0.7 and powers of two (exponents up to $t^{32}$) overflowed too, so the
+overflow is not explained by the magnitude of the exponents; the runs were then repeated on the 0.8beta release (powers of two, fast path) and in arbitrary precision
+(powers of three), and the screening supplied the valuation families to choose from (Section~\ref{sec:six}).
 
 \paragraph{Dependence in the ideal and relevance in the tropical computation.}
 Two ablations show that algebraic dependence does not predict tropical relevance in either direction. The symmetric equations are sums of asymmetric ones and their
 removal destroys the certificate at every tested valuation; the energy--inertia relation is a consequence of the symmetric equations and its adjunction changes the comet count in
-no cell. The equations of Dziobek are new information on the noncollinear stratum and cut the prevariety, merging comets, yet they do not make the equal-valuation comet pointed. The
+no cell. The equations of Dziobek are new information on the noncollinear stratum and cut the prevariety and lower the comet count, yet they do not make the equal-valuation comet pointed. The
 enrichment that rescued the algebraic proof of Hampton and Moeckel \cite{HM06} therefore does not rescue the tropical certificate at the same specialization: the two roles come apart.
 
 \paragraph{Engines and costs.}
@@ -1941,7 +1939,7 @@ corner, so the corner is reported as open and the runs are not used.
 The study is replication-first. The finiteness theorems replicated are due
 to Hampton--Moeckel, Albouy--Kaloshin, and Jensen--Leykin; the equal-mass
 censuses to Moczurad--Zgliczy\'nski. Our measurements (the dimension-blindness
-anchors with their exact minimal polynomials and $J$-invariants; the
+anchors with their exact minimal polynomials and $mathsf J$-invariants; the
 enrichment law at affine and prevariety level; the screening tables) are
 machine facts about known objects, stated with their provenance. The
 censuses for two integer-separated mass vectors, which our sympy engine does not
