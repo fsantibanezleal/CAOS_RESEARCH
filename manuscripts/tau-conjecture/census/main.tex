@@ -10,10 +10,12 @@
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 \usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
 \pgfplotsset{compat=1.17}
 \usepackage{caption}
 \usepackage{array}
 \captionsetup{font=small, labelfont=bf}
+\input{figures/partition-stats.tex}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -502,6 +504,38 @@ $\zmax$ & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
 \end{tabular}
 \end{table}
 
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=6.4cm, ymode=log,
+  xlabel={gates $\tau$ (depth)}, ylabel={count},
+  xmin=0.7, xmax=7.3, ymin=3, ymax=4e9, xtick={1,...,7},
+  ytick={1e1,1e2,1e3,1e4,1e5,1e6,1e7,1e8,1e9},
+  grid=both, minor grid style={draw=none}, legend pos=north west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[color=blue!70!black, mark=*, thick] table[x=depth, y=states]{figures/fig-counts.dat};
+\addlegendentry{reached-set states at depth $\tau$}
+\addplot[color=red!70!black, mark=square*, thick] table[x=depth, y=newpolys]{figures/fig-counts.dat};
+\addlegendentry{polynomials first seen at depth $\tau$}
+\end{axis}
+\end{tikzpicture}
+\caption{Size of the exhaustive census by depth on a logarithmic axis: the number of reached-set
+states (blue) and the number of polynomials first computed at that depth (red), from the census
+artifacts of \texttt{EXP-002}, \texttt{EXP-003} and \texttt{EXP-004} and the depth-$7$ frontier build of \texttt{EXP-011}. Values:
+Table~\ref{tab:counts}.}
+\label{fig:counts}
+\end{figure}
+
+Figure~\ref{fig:counts} shows the cost of the exhaustive method: on the logarithmic axis the
+curves bend upward instead of settling on straight lines. The ratio of the state counts between
+consecutive depths grows with the depth ($10.9, 14.9, 20.2, 26.4, 33.2, 40.6$ for
+$\tau = 1 \to 2$ up to $6 \to 7$), and so does the ratio of the new polynomials ($3.8, 5.2, 7.1,
+9.1, 11.8, 15.0$) [D from Table~\ref{tab:counts}]. Six ratios do not support an extrapolation, and
+none is made; the reading is only that the growth of the frontier is faster than exponential
+over this range, which is why depth $8$ is decided by the last-gate scan and the depth-$8$
+frontier is never stored. The figure also shows that the new polynomials are a small and
+shrinking share of the states ($0.35$ at depth $2$, $0.0019$ at depth $7$).
+
 Depth $7$ was decided by Lemma~\ref{lem:lastgate} over the exhausted depth-$6$
 frontier; among its $2{,}013{,}706$ new polynomials, the histogram of distinct
 integer roots is $742{,}635$ rootless, $904{,}421$ with one, $299{,}488$ with two,
@@ -658,7 +692,8 @@ $68.2$ GB ($63.5$ GiB) before deduplication against $29.36$ GB ($27.3$ GiB) afte
 it, which is why the rows are partitioned on disk rather than held in a hash set [D from the
 row counts]. A partition holds on average $2{,}434{,}020{,}495/256 \approx 9.5$ million raw
 rows, about $266$ MB, so the deduplication step needs memory for one partition at a time; the
-largest partition is not recorded [U]. The build ran in $10{,}179$\,s ($2$h$50$m), and the same
+raw size of the largest partition is not recorded [U], while the distinct states per partition are
+(Figure~\ref{fig:partitions}). The build ran in $10{,}179$\,s ($2$h$50$m), and the same
 code path run one level down (depth $5$ to depth $6$, $55{,}358{,}618$ raw rows) reproduces
 $25{,}844{,}905$ states and $134{,}494$ new polynomials in $185$\,s. The scan applies
 $200$ gates to every one of the $1{,}048{,}460{,}912$ states, at most $209{,}692{,}182{,}400$
@@ -668,6 +703,44 @@ partitions is independent, so the scan parallelizes over processes without commu
 it took $6$h$48$m with $20$ processes. Each worker holds the interned table, an operation
 cache of at most $4$ million entries and a root-count memo of at most $2$ million entries;
 the peak resident memory of the whole run was about $12$ GB.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=7.0cm, ymode=log,
+  xlabel={number of distinct integer roots $z$}, ylabel={share of the histogram (\%)},
+  xmin=-0.3, xmax=6.3, ymin=1e-8, ymax=200, xtick={0,...,6},
+  ytick={1e-8,1e-6,1e-4,1e-2,1,100},
+  grid=both, minor grid style={draw=none}, legend pos=south west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[color=blue!70!black, mark=*, thick] table[x=z, y=p6]{figures/fig-zhist.dat};
+\addlegendentry{$\tau = 6$: $134{,}494$ new polynomials}
+\addplot[color=red!70!black, mark=square*, thick, dashed, mark options={solid}] table[x=z, y=p7]{figures/fig-zhist.dat};
+\addlegendentry{$\tau = 7$: $2{,}013{,}706$ new polynomials}
+\addplot[color=green!45!black, mark=triangle*, thick] table[x=z, y=p8]{figures/fig-zhist.dat};
+\addlegendentry{$\tau = 8$: $2.08 \times 10^{11}$ last-gate applications}
+\end{axis}
+\end{tikzpicture}
+\caption{Distribution of the number of distinct integer roots as a percentage of each histogram
+total, on a logarithmic axis. The first two curves count distinct new polynomials at $\tau = 6$
+and $\tau = 7$ (\texttt{EXP-003}, \texttt{EXP-004}); the third counts nonzero last-gate
+applications over the depth-$7$ frontier (\texttt{EXP-011}), which may repeat a polynomial.
+A missing point is an empty bucket: no polynomial at $\tau = 6$ or $7$ has six roots.}
+\label{fig:zhist}
+\end{figure}
+
+Figure~\ref{fig:zhist} reads the three exhaustive histograms side by side. The distributions at
+$\tau = 6$ and $\tau = 7$ are nearly the same, about $37\%$ rootless, $44$ to $45\%$ with one root,
+$15\%$ with two and $3.2\%$ with three ($4$ roots: $0.14\%$ and $0.16\%$; $5$ roots:
+$0.0030\%$ and $0.0031\%$). Each further root costs a larger factor than the one before: from
+one root to two, two to three, three to four and four to five the counts fall by $3.0, 4.7, 22$
+and $49$ at $\tau = 6$, and by $3.0, 4.7, 20$ and $51$ at $\tau = 7$. The depth-$8$ curve of
+last-gate applications falls faster in the tail: the factors are $3.0, 7.0, 27, 168$ and then
+$2{,}835$ for the step from five roots ($929{,}780$ applications) to six ($328$
+applications, $1.6 \times 10^{-7}\%$ of the histogram) [D from the three histograms]. The
+figure does not say that a seven-root polynomial is rarer still; that is
+the content of Theorem~\ref{thm:depth8}, an exhaustive absence and not an extrapolation of
+the tail.
 
 \subsection{The digit-restricted census}\label{sec:digit}
 
@@ -802,6 +875,37 @@ yield is bounded by $5$ while building $c$ costs $\tau(c) \sim \log c$ gates,
 measured exactly against our anchored integer census): within this family, the
 ``parameterized loophole'' left open by Theorem~\ref{thm:stall} is empty [MV for
 $c \le 200$; C beyond].
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.9\textwidth, height=6.4cm, xmode=log,
+  xlabel={constant $c$ of the map $h_c = x^2 - c$}, ylabel={integer roots, or gates},
+  xmin=0.8, xmax=260, ymin=-0.4, ymax=8.2, ytick={0,...,7},
+  xtick={1,2,5,10,20,50,100,200}, xticklabels={1,2,5,10,20,50,100,200},
+  grid=both, minor grid style={draw=none}, legend pos=north west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[only marks, mark=*, mark size=2pt, color=blue!70!black] table[x=c, y=yield]{figures/fig-family.dat};
+\addlegendentry{best tower yield $\max_{\mathrm{shapes}} z$}
+\addplot[only marks, mark=square*, mark size=2pt, color=red!70!black] table[x=c, y=tauc]{figures/fig-family.dat};
+\addlegendentry{gates $\tau(c)$ to build the constant $c$}
+\end{axis}
+\end{tikzpicture}
+\caption{The quadratic family $h_c = x^2 - c$ for the $27$ values of $c \le 200$ whose towers have
+at least one integer root: the best number of distinct integer roots over all tower shapes (blue
+circles) and the exact number of gates $\tau(c)$ needed to compute the integer $c$ (red squares),
+from the \texttt{EXP-005} family artifact. All other $c \le 200$ have zero yield.}
+\label{fig:family}
+\end{figure}
+
+Figure~\ref{fig:family} puts Theorem~\ref{thm:family} next to the price of the parameter. The
+yield is flat: it is $4$ at every point of the two series ($c = m(m+1)$ and $c = m^2+m+1$),
+$3$ at $c = 1$ and $5$ only at $c = 2$, while the cost of the constant rises from $1$ gate at
+$c = 2$ to $4$ at $c = 7$ and $c = 12$ and to $7$ gates at $c = 133$, $157$ and $183$. Only $27$ of
+the $200$ constants have any yield. The gap between the two kinds of marker is the price of
+the parameter, and it widens with $c$ while the blue markers do not move; that is the measured
+content of the statement that the yield per gate decreases in $c$ [MV for $c \le 200$]. The
+figure says nothing about $c > 200$ or about tower shapes beyond four iterations.
 
 \section{The seven-root threshold}\label{sec:seven}
 
@@ -1192,6 +1296,77 @@ $92{,}943{,}826$ candidates of the second indented row: the eighth gate is the z
 are dropped without a root count and the drop is sound: $b$ is a value of a program of at
 most $7$ gates, so $z(b) \le \zmax(7) = 5 < 7$ by Theorem~\ref{thm:census}.
 
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.5\textwidth, scale only axis, height=6.2cm, xbar, xmode=log,
+  xmin=1e7, xmax=1e14, y dir=reverse, ytick={0,...,6},
+  yticklabels={all candidates, degree survivors, pass the $2$-adic block, pass the $3$-adic block,
+  built exactly and root-counted, eighth gate $t \equiv 0$, suspects tested exactly},
+  yticklabel style={font=\small, align=right}, bar width=9pt,
+  xlabel={candidates (logarithmic axis)}, grid=major, enlarge y limits=0.1,
+  nodes near coords, point meta=rawx,
+  nodes near coords style={font=\scriptsize, anchor=west, fill=white, inner sep=1pt,
+    /pgf/number format/.cd, fixed, precision=0, 1000 sep={\,}}]
+\addplot[fill=blue!35!white, draw=blue!70!black] table[x=count, y=idx]{figures/fig-funnel.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Stage counters of the window-free additive scan of the ninth gate on a logarithmic axis,
+summed over the $256$ partitions (\texttt{EXP-015}, \texttt{final.json}). The last three bars
+partition the survivors of the $3$-adic block; the scan found no polynomial with seven distinct
+integer roots, a count of zero that a logarithmic axis cannot show.}
+\label{fig:funnel}
+\end{figure}
+
+Figure~\ref{fig:funnel} shows where the work goes. The degree test alone removes $96.0\%$
+of the $4.19 \times 10^{12}$ candidates, leaving $1.67 \times 10^{11}$; the $2$-adic block keeps
+$2.3\%$ of these and the $3$-adic block keeps $76.5\%$ of what remains, so that after both layers
+$2.94 \times 10^{9}$ candidates survive, $0.070\%$ of the candidates [D from the counters]. Of those, $79.9\%$
+are built exactly and root-counted, $17.0\%$ are the suspects whose residues vanish at all
+$25$ points and $3.2\%$ have $t \equiv 0$. The two filters therefore decide most of the
+space cheaply, while the exact build stays the dominant cost, and the figure shows that the
+number of exact builds is $2.3 \times 10^{9}$ against $4.2 \times 10^{12}$ candidates, a ratio of
+$5.6 \times 10^{-4}$. What the figure does not show is soundness: the filters drop a candidate
+only by the proven criterion of Lemma~\ref{lem:padic}, and the soundness argument is the one given
+above, not the bar lengths.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=1 by 2, vertical sep=1.7cm},
+  width=0.9\textwidth, height=4.6cm, xmin=-5, xmax=260, xlabel={partition index $h$},
+  grid=major, scaled y ticks=false,
+  yticklabel style={/pgf/number format/.cd, fixed, precision=0, 1000 sep={\,}}]
+\nextgroupplot[ylabel={distinct states}, ymin=4088000, ymax=4104000,
+  ytick={4090000,4095000,4100000}, title={\small depth-$7$ frontier, states per partition (\texttt{EXP-011})}]
+\addplot[only marks, mark=*, mark size=1.1pt, color=blue!70!black] table[x=part, y=states]{figures/fig-partitions.dat};
+\nextgroupplot[ylabel={wall-clock seconds}, ymode=log, ymin=500, ymax=40000,
+  title={\small window-free scan, run time per partition (\texttt{EXP-015})}]
+\addplot[only marks, mark=*, mark size=1.1pt, color=red!70!black] table[x=part, y=seconds]{figures/fig-partitions.dat};
+\end{groupplot}
+\end{tikzpicture}
+\caption{Load balance over the $256$ hash partitions of the depth-$7$ frontier. Top: the number of
+distinct states in each partition file. Bottom: the wall-clock time each partition took in the
+window-free scan of the ninth gate, on a logarithmic axis. Both panels come from the per-partition
+records of the experiments, whose totals are $1{,}048{,}460{,}912$ states and $4.19 \times 10^{12}$ candidates.}
+\label{fig:partitions}
+\end{figure}
+
+Figure~\ref{fig:partitions} separates two properties of the partitioning. The hash spreads the
+states almost evenly: the partitions hold between $\PartStatesMin$ and $\PartStatesMax$ states,
+a spread of $\PartStatesSpread\%$ of the mean, so no partition is a memory outlier [D from the
+partition records]. The run times are not even: the same partitions took between $\PartSecMin$ and
+$\PartSecMax$ seconds (median $\PartSecMedian$), $\PartSecOver$ of them more than $10{,}000$
+seconds, and their sum is about $\PartSecHours$ process-hours, the figure quoted above. The work
+that the run times could reflect is nearly constant: the number of candidates built exactly per
+partition lies between $\PartExactMin$ and $\PartExactMax$ ($\PartExactSpread\%$ of its mean), and
+its correlation with the elapsed time over the $256$ partitions is $\PartCorr$ [D from the
+partition records]. The spread of the times therefore does not come from the mathematics of the
+partitions; that it comes from the scheduling of the processes on a shared machine is a likely
+reading that the records, which keep only the elapsed times, cannot confirm [U]. The wall-clock
+time of the scan is a property of the run and not of the algorithm, and the per-candidate cost
+of Algorithm~\ref{alg:filter} is the quantity to compare across implementations.
+
 Before production, the engine at thresholds $k = 4, 5, 6$ was compared with
 building \emph{every} candidate exactly, with no filter, on samples of $150$ to
 $3{,}000$ states from five partitions: the counts agree in every case ($1535$,
@@ -1310,7 +1485,7 @@ $\zpmax(\tau)$    & 1 & 2 & 4 & 8 & 16 & 32 & 64 & 128\\
   xlabel={gates $\tau$}, ylabel={maximum number of roots},
   xmin=0.7, xmax=9.3, ymin=0.8, ymax=300, xtick={1,...,9},
   ytick={1,2,4,8,16,32,64,128,256}, yticklabels={1,2,4,8,16,32,64,128,256},
-  grid=both, minor grid style={draw=none}, legend pos=south east,
+  grid=both, minor grid style={draw=none}, legend pos=north west,
   legend cell align=left, legend style={font=\small}]
 \addplot[color=blue!70!black, mark=*, thick] coordinates {(1,1)(2,2)(3,4)(4,8)(5,16)(6,32)(7,64)(8,128)(9,256)};
 \addlegendentry{$\mathbb{F}_p$: $2^{\tau-1}$ (proved)}
@@ -1393,6 +1568,39 @@ real roots & 4 & 8 & 16 & 28 & 48\\
 \end{tabular}
 \end{table}
 
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=6.8cm, ymode=log, log basis y=2,
+  xlabel={gates}, ylabel={distinct real roots, or degree},
+  xmin=2.5, xmax=12.5, ymin=1.5, ymax=100, xtick={3,4,...,12},
+  ytick={2,4,8,16,32,64}, yticklabels={2,4,8,16,32,64},
+  grid=both, minor grid style={draw=none}, legend pos=north west,
+  legend cell align=left, legend style={font=\small}]
+\addplot[color=black, mark=o, thick, dashed, mark options={solid}] table[x=gates, y=degree]{figures/fig-doubling.dat};
+\addlegendentry{degree of the doubling iterate}
+\addplot[color=red!70!black, mark=square*, thick] table[x=gates, y=real]{figures/fig-doubling.dat};
+\addlegendentry{real roots, $g \mapsto g\,(g - x^2)$}
+\addplot[color=blue!70!black, mark=triangle*, thick] table[x=gates, y=real]{figures/fig-chebyshev.dat};
+\addlegendentry{real roots, Chebyshev tower $T_{2^k}$}
+\end{axis}
+\end{tikzpicture}
+\caption{Real roots against gates for the two doubling constructions, on a base-$2$ logarithmic
+axis: the iterate of $g \mapsto g\,(g - x^2)$ from the $\tau = 4$ real record (red squares,
+with its degree dashed) and the Chebyshev tower $T_{2^k}$, which costs three gates per doubling
+(blue triangles). Distinct real roots counted exactly by Sturm sequences.}
+\label{fig:doubling}
+\end{figure}
+
+Figure~\ref{fig:doubling} shows both effects of the paragraph above. The doubling step
+runs at two gates per doubling for three iterations: its real-root curve lies on the degree
+curve at $4, 8, 16$ real roots for $4, 6, 8$ gates, against $2, 4, 8, 16$ for the Chebyshev
+tower at $3, 6, 9, 12$ gates; at $8$ gates the step has $16$ real roots and the tower $4$ (it has
+$8$ at $9$ gates). The red curve then leaves the degree curve ($28$ against $32$ at $10$ gates,
+$48$ against $64$ at $12$), and at $12$ gates it holds $48$ real roots against the tower's $16$.
+The figure is a statement about these two constructions and these gate counts; the real ladder
+$\zrmax$ is exhaustive only through $\tau = 6$ (Table~\ref{tab:ladders}).
+
 We claim no rate for $\zrmax$: six points cannot distinguish
 $\Theta(2^{\tau/2})$ from anything nearby, the family's own rate decays past
 $\tau = 8$, and the paper needs only the known failure of the real analogue.
@@ -1453,7 +1661,12 @@ integer roots outright. A six-gate program for it, with the value of each gate, 
   g_6 = g_2\cdot g_5 ,
 \end{gathered}
 \]
-and $g_6 = 2x^2(4x^4 - 5x^2 + 1) = 2x^2(4x^2-1)(x^2-1)$ is the record [MV]. Half-integer
+and $g_6 = 2x^2(4x^4 - 5x^2 + 1) = 2x^2(4x^2-1)(x^2-1)$ is the record [MV: the six gates are replayed in exact integer arithmetic by
+\path{scripts/replay_rational_tau6.py}, and the command and its output are stored in
+\path{context/2026-11-14-rational-tau6-program.md}, both in the problem folder of the repository]. The replay shows that
+the program computes the record, so $\tau \le 6$ for it; that $\tau$ is not smaller, and that no
+polynomial of at most six gates has more than five rational roots, is the classification of the
+rational census, not of the replay. Half-integer
 roots are cheap here, since the doubled square $2x^2$ is a single gate, and they still do not
 raise the ceiling.
 
