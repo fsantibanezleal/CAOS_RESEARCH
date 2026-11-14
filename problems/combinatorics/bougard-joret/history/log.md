@@ -156,3 +156,18 @@ f(2d+3,2,d+2) = d^2+4d+2 (EXP-004) or the second-regime values (EXP-005) found [
 - With prop:where(b) and EXP-011, the extremal graphs without a clique partition are characterised (conditional on
   Didin's Theorem 3). BJB-026 done; BJB-027 opened (note v0.04).
 
+## 2026-11-14 - second-regime v0.04 published (10.5281/zenodo.24231735)
+
+- Adds the EXP-014 characterisation (Lemma lem:block-reduction, Proposition prop:blockcheck, Theorem thm:characterise,
+  Corollary cor:characterise): for alpha >= 3 and conditional on Didin's Theorem 3, the extremal graphs without a
+  partition into alpha cliques are exactly the X6/X7 construction graphs and the 8 graphs at (10,3,3); Lemma lem:fc
+  derives f = c from Didin's Theorem 3 alone; the alpha = 2 remark is backed by EXP-014 check_alpha2.py. Also the
+  experimental design, ablation (the prune: candidates down by factors 324 to 73,297 at the four edge counts both
+  generators ran) and limitations sections, and the growth factor with its standard deviation; the printed abstract
+  is 226 words (v0.03 printed about 270, which the depth checker undercounted).
+- Independent review (CAOS_MANAGE wip/caos-research/bj-exp014-proof-review-2026-11-14.md): proof CORRECT WITH FIXES
+  (alpha >= 3 needed); manuscript CHANGES REQUIRED (R1 to R9), then N1 to N6 at the re-check, all applied.
+- Release: 39 gates passed; 37 pages, 809,752 bytes, SHA-256
+  17167eb8af5ab3d89d942587e9aab7c51072d2b62298ee143c836e9f3c2da17a; a fresh unauthenticated download equals the frozen
+  file.
+
