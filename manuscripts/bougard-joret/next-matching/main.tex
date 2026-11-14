@@ -679,7 +679,7 @@ The universal statements are Theorems~\ref{thm:main}, \ref{thm:bjexact} and~\ref
 
 \subsection{Deviation: the global lazy-cut search}
 
-The statements to be checked, and the proofs of Theorems~\ref{thm:main} and~\ref{thm:k2d}, were fixed in the records before the computations of this section were run; the one planned computation that did not finish is reported next.
+The statements to be checked were frozen in the records before the computations (the EXP-003 and EXP-004 hypotheses), and the proof of Theorem~\ref{thm:k2d} was committed before the EXP-004 computations; the proof of Theorem~\ref{thm:main} was committed together with its certificate. The one planned computation that did not finish is reported next.
 
 The first search planned for Theorem~\ref{thm:k2d} was a global one: for $d=7$ and $d=8$, ask the solver for a triangle-free graph of maximum degree at most $d$ with at least $d^2+d+2$ edges and a fixed five-cycle whose complement is $(d+2)$-connected, and add a cut constraint lazily for each model whose complement had a small vertex cut. That search did not finish. At $d=7$ the known-answer gate (target $d^2+d+1$, where such graphs exist) and the search itself, with and without the clauses forbidding $K_{2,d}$, produced no output within their caps (50 minutes without the clauses, two hours with them; the process was stopped by its time limit, exit status 124). The configuration split of Section~\ref{sec:satenc} replaced it, and its results (Table~\ref{tab:sat}) are the only satisfiability evidence reported here. It is a different encoding with the same target, which exploits the structure facts that the proof establishes, and it affects only the finite corroboration: no result of this paper depends on the global search.
 
