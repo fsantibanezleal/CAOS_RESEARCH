@@ -70,48 +70,23 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \headerblock
 
 \begin{abstract}
-Multiscale layer constructions produce finite-time blowup for several fluid equations: for the
-incompressible porous media equation, for the two-dimensional Boussinesq system, for
-three-dimensional Euler, and, with fractional dissipation $|\nabla|^{\alpha}$ of order
-$\alpha<(22-8\sqrt7)/9$, for the forced Navier-Stokes equations. The exponent in the last of these is
-small, and it is natural to ask what limits it. Exponents in this abstract are in the $|\nabla|^{\alpha}$
-convention, in which classical viscosity is $\alpha=2$.
-
-We give two upper bounds on the dissipation exponent such constructions can carry. The first is
-independent of every design constant: a cascade whose layers grow at rate $\sqrt A$ on a background
-gradient $A$ cannot exceed $\alpha=1/2$, and one whose layers grow at rate $A$ cannot exceed
-$\alpha=1$. Neither mechanism reaches classical viscosity, by factors of four and two respectively. The second
-bound applies to the smooth-forcing designs used for the inviscid Boussinesq and Euler results:
-both are of the pendulum class, and transcribing the exponent content of their force estimates, with
-the equation and page of every estimate, we show that they certify dissipation only up to
-$\alpha\le5.3\times10^{-4}$ (Boussinesq) and
-$\alpha\le6\times10^{-8}$ (Euler) at the published choices, and only up to
-$\alpha\le9.0\times10^{-3}$ and $\alpha\le7.5\times10^{-3}$ when every constant of the design is
-retuned in its favour, at least ten times below the exponent already achieved with a force of
-finite regularity. In every reading the ceiling is highest when the
-fewest derivatives of the force are controlled.
-
-Both bounds follow from the amplitude system of the construction together with one additional
-ingredient, the effect of fractional dissipation on a single layer, which we derive and then test
-against direct simulation of the nonlinear equations, including the effect of the spatial
-localization the constructions use. The simulations meet most of their criteria and miss three, which
-are reported with their numbers: the local growth rate in a two-scale background has a slope $1.36$
-times the prediction; the handoff from a steered layer to the next reaches a correlation of $0.808$
-against a criterion of $0.9$, and $0.509$ at the largest scale separation; and the run at the first
-chosen parameters grows $726$-fold and is refuted by the instability of its own background. We also
-reconstruct the exponent budget behind the published hypodissipative threshold, identify the
-constraint that determines it, and show that the admissible frequency ratios form an interval that
-closes exactly at that threshold, so that cascades with geometrically growing frequencies are
-excluded at every positive dissipation.
-
-The machine-checked status of the two announced results is reported at the level a kernel replay
-establishes: the statements and the integrity of the formal proof, not that the formal proof follows
-the written argument, which Bastounis, Circelli and Hansen report it does not. The mechanism is due to
-C\'ordoba and Mart\'inez-Zoroa, extended to smooth forcing by Alp\"oge and Buckmaster; nothing here
-establishes blowup for any equation or improves any published threshold.
+Multiscale layer constructions give finite-time blowup for the porous media, Boussinesq and Euler equations with
+smooth forcing and, with fractional dissipation $|\nabla|^{\alpha}$ of order $\alpha<(22-8\sqrt7)/9$, for the
+forced Navier-Stokes equations. Exponents here are in the $|\nabla|^{\alpha}$ convention, where classical
+viscosity is $\alpha=2$. We give two upper bounds on the exponent. The first holds for every design constant:
+layers growing at rate $\sqrt A$ on a background gradient $A$ cannot carry more than $\alpha=1/2$, and layers growing
+at rate $A$ no more than $\alpha=1$. The second transcribes, with equation and page, the force estimates of the
+smooth-forcing Boussinesq and Euler designs: they certify only $5.3\times10^{-4}$ and $6\times10^{-8}$ at the
+published choices, and at most $9.0\times10^{-3}$ and $7.5\times10^{-3}$ when every constant is retuned, over ten
+times below the exponent reached with a rough force. Both rest on the amplitude system and one derived ingredient,
+the damping of a single layer, tested against nonlinear simulation. Seven criteria are not met and one run is
+inconclusive: the window error of the single-layer rate at one angle and the growth of its unstable band; the
+two-scale slope; the steered cycle at its first parameters and on a curved background; and the two-layer handoff
+(correlation $0.808$ against $0.9$). We also reconstruct the exponent budget behind the published threshold.
+Nothing here establishes blowup for any equation or improves any published threshold.
 \end{abstract}
 
-\section{The question}\label{sec:question}
+\section{Introduction: the question and the work it rests on}\label{sec:question}
 
 Let $\theta$ and $u$ solve the forced two-dimensional Boussinesq system, or let $u$ solve the forced
 three-dimensional Navier-Stokes equations with fractional dissipation. Multiscale constructions in the
@@ -125,6 +100,24 @@ background gradient alone. Frequency therefore buys gradient but not growth, and
 much dissipation a cascade tolerates becomes a question about the exponents relating amplitude,
 frequency and gradient. This paper answers it at two levels: for the mechanism classes
 (Section~\ref{sec:class}) and for two published designs (Section~\ref{sec:design}).
+
+The contributions are the following.
+\begin{enumerate}
+\item A ceiling on the dissipation exponent of a layer cascade that involves no design constant: $\alpha\le\gamma/(2p)$
+for layers growing at the rate $A^{\gamma}$ on a background gradient $A$ with frequencies $\lambda=A^{p}$
+(Theorem~\ref{thm:class}), which excludes classical viscosity for both growth laws.
+\item Bounds on what the force estimates of the two smooth-forcing designs can certify, computed from the estimates
+transcribed with equation and page (Theorems~\ref{thm:design} and~\ref{thm:euler}).
+\item The exponent budget behind the published hypodissipative threshold, with the constraint that fixes it and the
+interval of admissible frequency ratios (Section~\ref{sec:budget}).
+\item A record of the dissipative extension against direct simulation of the nonlinear equations, criteria met and
+not met (Section~\ref{sec:validation}), and the status of the announced formal certificates
+(Section~\ref{sec:status}).
+\end{enumerate}
+Section~\ref{sec:mechanism} formulates the problem, Sections~\ref{sec:class} to~\ref{sec:budget} give the theory and
+the method, Sections~\ref{sec:method} and~\ref{sec:validation} the numerical methods, the experimental design and the
+results, Section~\ref{sec:ablation} the ablations, and Sections~\ref{sec:discussion} to~\ref{sec:conclusions} the
+discussion, the limitations, the reproducibility and the conclusions.
 
 \subsection{Related work: the claims examined, their hypotheses and conclusions}\label{sec:related}
 
@@ -263,13 +256,13 @@ the equation or page cited; the read depth of each source is recorded in the rep
 references, and a source read only in part is not marked \ev{V} for the parts not read. \ev{D}: derived here
 from stated hypotheses, with the derivation given or a calculation that can be repeated by hand.
 \ev{MV}: checked by machine, meaning a kernel replay of a formal development, an exact symbolic
-computation, or a numerical run whose recorded values are pinned by a repository test; a numerical run
+computation, or a numerical run whose recorded values are stored in a result file and, where the text says so, pinned by a repository test; a numerical run
 supports a statement and does not prove it, and the text says which kind of check is meant.
 \ev{U}: unverified, stated but not checked on a primary source or by machine. \ev{C}: conjecture, an
 interpretation or an expectation that the paper does not establish. Marks follow the statement they
 qualify; a theorem is marked by the kind of argument that proves it.
 
-\section{The layer mechanism and its dissipative extension}\label{sec:mechanism}
+\section{Problem formulation: the layer mechanism and its dissipative extension}\label{sec:mechanism}
 
 On a background that is affine near the origin, $u_{\mathrm{old}}=D(t)x$ and
 $\theta_{\mathrm{old}}=G(t)\cdot x$, a temperature wave and a vorticity wave sharing one phase
@@ -285,7 +278,7 @@ page~8, for a general odd periodic profile $F$ and its even mean-zero primitive 
 written as a sine and a cosine in Subsection~1.2, pages~3--4. The wave velocity is perpendicular to
 $\zeta$ while both wave gradients are parallel to it, so the wave does not advect itself and the ansatz
 is exact where the envelope is one and the profile is linear. In the frozen configuration $D=0$,
-$G=-Ae_{2}$, $\zeta=re(\varphi)$, the growth rate is $\sqrt A\sin\varphi$: it carries no $\lambda$,
+$G=-Ae_{2}$, $\zeta=re(\varphi)$ with $e(\varphi)=(\sin\varphi,\cos\varphi)$, the choice of the code, the growth rate is $\sqrt A\sin\varphi$: it carries no $\lambda$,
 because the frequency in $\dot\Omega$ cancels the reciprocal frequency in $\dot\Theta$ \ev{V}
 (page~4). The gradient the layer deposits is governed by the amplification identity
 \begin{equation}\label{eq:amp}
@@ -337,7 +330,7 @@ constraint \textbf{D}). The swirl layers of the axisymmetric
 Euler construction obey the pendulum law, with the circulation gradient in place of the temperature
 gradient (Section~\ref{sec:euler}) \ev{V}. Both laws are treated below.
 
-\section{A bound independent of design constants}\label{sec:class}
+\section{Theory: a bound independent of design constants}\label{sec:class}
 
 \begin{theorem}[\ev{D}; numerical support \ev{MV} from the cascade model of Section~\ref{sec:validation}]\label{thm:class}
 Consider a layer cascade with the following structure:
@@ -398,9 +391,10 @@ design.
 exponent $p$, for the pendulum growth law ($\gamma=1/2$) and the stretching law ($\gamma=1$), our
 convention. Markers: bisection on the model, $60$ iterations, $200$ stages, $\nu=10^{-10}$. Dashed
 curves: the asymptotic ceiling $\gamma/(2p)$ of Theorem~\ref{thm:class}. The markers lie above the
-curves by the finite-horizon factor $1+2\log(1/\nu)/\bigl(g(Q-1)\gamma\bigr)$ and match the
+curves by the finite-horizon factor $1+\log(1/\nu)/\bigl(\gamma g(Q-1)\bigr)$ and match the
 horizon-corrected prediction to $1.1\times10^{-7}$ (pendulum) and $1.8\times10^{-9}$ (stretching);
-the ratio of the two laws at equal $p$ is exactly $2$. Source: \fp{EXP-008-growth-law-ceiling/result.json}.}
+the measured ratio of the two laws at equal $p$ is $1.812$, below the factor $2$ of the closed forms because of
+the horizon term. Source: \fp{EXP-008-growth-law-ceiling/result.json}.}
 \label{fig:ceiling}
 \end{figure}
 
@@ -430,7 +424,7 @@ number stays of order one while the angular one grows without bound \ev{V} (Sect
 page~4).
 \end{remark}
 
-\section{Bounds for the smooth-forcing designs}\label{sec:design}
+\section{Method: bounds from the force estimates of the smooth-forcing designs}\label{sec:design}
 
 Every input of this section is transcribed from the two papers of Alp\"oge and
 Buckmaster~\cite{ab-boussinesq,ab-euler}, archived in the repository with the hashes recorded in
@@ -635,7 +629,7 @@ is defined on page~95, with $p\ge a$ because $\Pi$ dominates $\ell^{-1}$; the ce
 $2h_{*}>\beta/2$ and the row $2h_{*}>v$ of~(12.7); and coefficient derivatives through the orders the
 correction recursion consumes, which are available uniformly only when $9k+51\le Q$ (page~101) \ev{V}.
 The construction chooses $\beta=1/8$, $\mathsf d=16$, $p=8$, $a=4$ and $Q_{i}=q_{0}+i$ with
-$q_{0}\ge2^{20}$ (equations~(12.1) and~(12.2), page~95); with these choices the three exponents are
+$q_{0}\ge2^{20}$ (equations~(12.1) and~(12.2), page~95); with these choices, at the derivative order $k_{m}=4$ that the code evaluates, the three exponents are
 $-7.00$, $-10.75$ and $-1.75$, within its targets $-6$, $-6$ and $-3/2$ (page~104), and every side
 condition holds \ev{MV}.
 
@@ -712,7 +706,7 @@ corresponding exponent in our convention, and $a$, $b$, $R$ and $s$ are the expo
 frequency of layer $n$ is $M_{n}=N^{R^{n}}$, the amplitude $A_{n}=N^{aR^{n}}$, the localization scale
 $L_{n}=N^{bR^{n}}$, and $s>0$ is the H\"older margin of the force. Its force estimates give four
 constraints, read in Subsections~4.3.2 to~4.3.5 (pages~28 to~30) and Subsection~1.2.4 (page~5) of the
-source \ev{V}:
+source \ev{V}, listed in Table~\ref{tab:constraints} with the subsection of each:
 
 \begin{table}[t]
 \centering
@@ -772,6 +766,12 @@ $0.10$ & empty & none \\
 exponent in the $|\nabla|^{\alpha}$ convention, from Proposition~\ref{prop:ratios}. \ev{MV}}\label{tab:ratios}
 \end{table}
 
+Table~\ref{tab:ratios} evaluates the interval at five values of the dissipation exponent. At $\alpha=0.001$ the
+admissible ratios are $(1.002,\,285.1)$ with optimum $16.90$; the interval narrows as the exponent rises, to
+$(1.143,\,5.000)$ at $0.05$, and closes to the single point $1.7559$ at the threshold, above which no ratio is
+admissible. Read the other way, the table says that raising the dissipation costs the construction both the freedom
+to choose a ratio and the room between the lower end, always above one, and the upper end \ev{MV}.
+
 \begin{corollary}[\ev{D}]
 Cascades with geometrically growing frequencies, the case $R=1$, are inadmissible at every positive
 dissipation: localization requires $b\ge a+1+s$ while self-interaction permits only $b\le1-a-s$,
@@ -784,7 +784,7 @@ frequencies used for the inviscid construction produces no meaningful growth in 
 diffusion of any order \ev{V}; we read this as the case $R=1$ of the corollary \ev{C}. Propositions~\ref{prop:threshold}
 and~\ref{prop:ratios} are verified in exact arithmetic by computer
 algebra in the accompanying repository (\fp{tests/test_navier_stokes_threshold.py}), and
-numerically in \fp{nslib/cmz_budget.py} with its tests, in continuous integration \ev{MV}.
+numerically in \fp{nslib/cmz_budget.py} with its tests, which are run locally with pytest \ev{MV}.
 
 \section{Numerical methods and reproducibility}\label{sec:method}
 
@@ -914,7 +914,7 @@ number gated at $10^{-3}$ \ev{MV}.
 \Require state $(\hat\theta,\hat\omega)$, wavevector $k$ of the layer, step $\Delta t$, settling steps $s$, measuring steps $n$, samples $S=30$, demodulation radius $r$, gradient cutoff $\rho$, mask fraction $f$
 \For{$j=1,\dots,s$} \State advance one step (Algorithm~\ref{alg:ifrk4}) \EndFor \Comment{discarded: the settling interval}
 \For{$i=0,\dots,n$}
-  \If{$i\bmod\lceil n/S\rceil=0$} \State store $t_{m}\gets i\Delta t$ and $y_{m}(x)\gets\log\bigl|\mathcal F^{-1}[\,\mathrm{roll}(\hat\theta,-k)\cdot\mathbf 1(|\kappa|\le r)\,]\bigr|$ \EndIf
+  \If{$i\bmod\lfloor n/S\rfloor=0$} \State store $t_{m}\gets i\Delta t$ and $y_{m}(x)\gets\log\bigl|\mathcal F^{-1}[\,\mathrm{roll}(\hat\theta,-k)\cdot\mathbf 1(|\kappa|\le r)\,]\bigr|$ \EndIf
   \State advance one step
 \EndFor
 \State $\sigma_{\mathrm{meas}}(x)\gets\sum_{m}(t_{m}-\bar t)\bigl(y_{m}(x)-\bar y(x)\bigr)\big/\sum_{m}(t_{m}-\bar t)^{2}$
@@ -1046,10 +1046,10 @@ system~\eqref{eq:mod}, with the damping term of~\eqref{eq:diss}, predicts the no
 layer. The background is $\theta=-(A/\lambda_{0})\sin\lambda_{0}x_{2}$ with zero vorticity, an exact steady
 state of the unforced system, so any motion is the wave. Three predictions are committed. The local rate is
 $\sqrt{A\cos\lambda_{0}x_{2}}\,\sin\varphi-\nu|k|^{2\alpha}$, checked where $\cos\lambda_{0}x_{2}\ge0.9$, with a
-pass criterion of $2\%$ relative error; where the cosine is negative the wave must oscillate, and the criterion
+pass criterion of $2\%$ relative error, with the statistic left open by the runner (it is applied below to the maximum over the window, the strictest reading, and the peak error is reported beside it); where the cosine is negative the wave must oscillate, and the criterion
 is that the stable-band envelope never exceeds twice its initial value (the committed text adds that the
 unstable band grows by orders of magnitude, whereas the horizon of $0.6$ time units gives the factor $3.32$ of
-Table~\ref{tab:gates}, which meets the criterion on its stable-band bound); and the peak rate must not depend on $\lambda$, with a spread of at most $2\%$. Three corrupted
+Table~\ref{tab:gates}, so that this second clause is not met while the stable-band bound is); and the peak rate must not depend on $\lambda$, with a spread of at most $2\%$. Three corrupted
 models, dropping $\zeta_{1}$, dropping the inverse norm and flipping the sign, must fail the rate criterion, and
 a failure of the rate or band prediction would void every statement built on the reduction. The outcomes are in
 Table~\ref{tab:gates}; the first attempt of the corrupted-model control was run at $\varphi=\pi/2$, where
@@ -1116,17 +1116,25 @@ as the wave the error must be of order one, here above $0.1$, since a small erro
 measurement does not feel localization at all. H4: at the construction's own separations the error is
 $\lambda_{q-1}^{3-Q_{q}}$. EXP-008 asks whether the critical exponent follows $\gamma/(2p)$ for both growth
 laws. The prediction of Theorem~\ref{thm:class} was committed before the run, and the
-gates are agreement within a tolerance of $10^{-5}$ for the pendulum law, the same for the stretching law, and an
-exact ratio of two between them at equal $p$.
+two gates are agreement within a tolerance of $10^{-5}$ for the pendulum law and for the stretching law. The runner
+also computes the ratio of the two laws from the closed forms $\gamma/(2p)$, which is two by construction and cannot
+fail; it is a consistency check of the code and not a gate, and the measured ratio is reported next to it
+(Section~\ref{sec:validation}).
 
-\subsection{Outcomes against the criteria}
+\subsection{Results: the outcomes against the criteria}
+
+Table~\ref{tab:gates} reports seven criteria as not met, namely the window maximum of the single-layer rate at
+$\varphi=\pi/4$, the growth clause of the band prediction, the slope of the frozen handoff, the steered cycle at its first
+parameters (refuted), the steered cycle on the sine background ($4$ of $7$ gates), the correlation criterion of the
+two-layer handoff and its control in two of five runs, and one run, the dynamical handoff without steering, as
+inconclusive; the abstract and the conclusions give the same count.
 
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3pt}
 \begin{longtable}{@{}L{1.45cm}L{5.9cm}L{1.85cm}L{5.0cm}@{}}
 \caption{Every criterion of the numerical experiments, met and not met. ``Outcome'' is the outcome
 against the criterion fixed before the run. Simulations are of the two-dimensional Boussinesq system
-unless the row says otherwise.}\label{tab:gates}\\
+unless the row says otherwise. The last sentence of each row names the folder of \fp{experiments/} that holds the result files and the written outcome of the run.}\label{tab:gates}\\
 \toprule
 run & criterion and measured value & outcome & what follows \\
 \midrule
@@ -1139,28 +1147,29 @@ run & criterion and measured value & outcome & what follows \\
 \endfoot
 \bottomrule
 \endlastfoot
-EXP-002 & Peak growth rate on a vertical stratification: $1.999828$ against $2$ at $\varphi=\pi/2$ (relative error $8.6\times10^{-5}$) and $1.414272$ against $1.414214$ at $\varphi=\pi/4$ ($4.1\times10^{-5}$); over the window where the background is flat to ten per cent the maximum relative error is $1.9\times10^{-2}$ and $2.5\times10^{-2}$ & met &
-The amplitude system predicts the rate of one layer to the per cent over the flat part of the band and to $10^{-4}$ at its peak. \\
-EXP-002 & Band structure: the unstable band is amplified by $3.32$ and the stable band ends at $0.570$ of its amplitude & met & The sign change of $J\zeta\cdot G$ is present in the simulation. \\
-EXP-002 & Frequency independence: peak rate across $\lambda=20,40,80,160$ spread $2.7\times10^{-4}$ & met & The rate carries no $\lambda$; \eqref{eq:growth} compares a $\lambda$-free growth with a $\lambda$-dependent damping. \\
-EXP-002 & Damping term at $\alpha\in\{1/4,1/2,1\}$, $\nu\in\{10^{-5},10^{-4}\}$: absolute error $\le2.6\times10^{-4}$ over six cases, the largest shifting the rate by $0.16$ & met & Equation~\eqref{eq:diss} is the damping law of a plane wave in the nonlinear equations (Figure~\ref{fig:damping}). \\
-EXP-002 & Corrupted models at $\varphi=\pi/4$ must fail: relative error $0.310$ (drop $\zeta_{1}$), $0.845$ (drop the inverse norm), unbounded (flip the sign). At $\varphi=\pi/2$ the drop-$\zeta_{1}$ model coincides with the correct one since $\zeta_{1}=1$ & controls fail as required & The controls are reported at $\varphi=\pi/4$ because at $\varphi=\pi/2$ one of them cannot discriminate. Validity: scale separation at least $20$, $\Theta_{0}=10^{-6}$, one layer, a short horizon. \\
-EXP-003 & Cascade model, $10^{6}$ schedules: exponent $\gamma/(2p)$ to $2.6\times10^{-6}$ against the horizon-corrected prediction, zero violations; the hold-damping constraint binds while growth positivity holds in $0$ of $2304$ schedules & met & The time budget and the damping of the holds do not move the exponent. The relation $p=11/4+\sqrt7$ at the threshold holds along the whole family and is not evidence about the threshold (Section~\ref{sec:scope}). \\
-EXP-004, frozen & Correlation of the local rate of a fine wave with the total two-scale gradient $0.99945$ (RMSE $0.188$) against $0.212$ for the base stratification alone (RMSE $0.808$); background drift $1.45\times10^{-15}$ over $200$ steps & met & A layer responds to the accumulated low-frequency gradient and not to the base, the premise of Theorem~\ref{thm:class}. \\
+EXP-002 & Peak growth rate on a vertical stratification: $1.999828$ against $2$ at $\varphi=\pi/2$ (relative error $8.6\times10^{-5}$) and $1.414272$ against $1.414214$ at $\varphi=\pi/4$ ($4.1\times10^{-5}$) & met & The amplitude system predicts the peak rate of one layer to $10^{-4}$. Record: \fp{EXP-002-reduction-control/}. \\
+EXP-002 & Rate over the window where the background is flat to ten per cent, criterion $2\%$ relative error: maximum $1.9\times10^{-2}$ at $\varphi=\pi/2$ and $2.47\times10^{-2}$ at $\varphi=\pi/4$ (medians $4.7\times10^{-3}$ and $6.1\times10^{-3}$) & met at $\pi/2$; \textbf{not met} at $\pi/4$ &
+The runner does not say which statistic is gated; the written outcome of the run records a pass, reading it at the peak. Read as the maximum over the window, the criterion is missed at $\pi/4$, at the edge of the window where the local approximation is weakest. Record: \fp{EXP-002-reduction-control/}. \\
+EXP-002 & Band structure: the stable band ends at $0.570$ of its amplitude (bound $2$) and the unstable band is amplified by $3.32$ over the $0.6$ time units, where the committed text asks for growth by orders of magnitude & stable-band bound met; growth clause \textbf{not met} & The sign change of $J\zeta\cdot G$ is present in the simulation, and the unstable band grows by a factor $3.32$ and not by orders of magnitude at this horizon. Record: \fp{EXP-002-reduction-control/}. \\
+EXP-002 & Frequency independence: peak rate across $\lambda=20,40,80,160$ spread $2.7\times10^{-4}$ & met & The rate carries no $\lambda$; \eqref{eq:growth} compares a $\lambda$-free growth with a $\lambda$-dependent damping. Record: \fp{EXP-002-reduction-control/}. \\
+EXP-002 & Damping term at $\alpha\in\{1/4,1/2,1\}$, $\nu\in\{10^{-5},10^{-4}\}$: absolute error $\le2.6\times10^{-4}$ over six cases, the largest shifting the rate by $0.16$ & met & Equation~\eqref{eq:diss} is the damping law of a plane wave in the nonlinear equations (Figure~\ref{fig:damping}). Record: \fp{EXP-002-reduction-control/}. \\
+EXP-002 & Corrupted models at $\varphi=\pi/4$ must fail: relative error $0.310$ (drop $\zeta_{1}$), $0.845$ (drop the inverse norm), unbounded (flip the sign). At $\varphi=\pi/2$ the drop-$\zeta_{1}$ model coincides with the correct one since $\zeta_{1}=1$ & controls fail as required & The controls are reported at $\varphi=\pi/4$ because at $\varphi=\pi/2$ one of them cannot discriminate. Validity: scale separation at least $20$, $\Theta_{0}=10^{-6}$, one layer, a short horizon. Record: \fp{EXP-002-reduction-control/}. \\
+EXP-003 & Cascade model, $10^{6}$ schedules: exponent $\gamma/(2p)$ to $2.6\times10^{-6}$ against the horizon-corrected prediction, zero violations; the hold-damping constraint binds while growth positivity holds in $0$ of $2304$ schedules & met & The time budget and the damping of the holds do not move the exponent. The relation $p=11/4+\sqrt7$ at the threshold holds along the whole family and is not evidence about the threshold (Section~\ref{sec:scope}). Record: \fp{EXP-003-threshold-sweep/}. \\
+EXP-004, frozen & Correlation of the local rate of a fine wave with the total two-scale gradient $0.99945$ (RMSE $0.188$) against $0.212$ for the base stratification alone (RMSE $0.808$); background drift $1.45\times10^{-15}$ over $200$ steps & met & A layer responds to the accumulated low-frequency gradient and not to the base, the premise of Theorem~\ref{thm:class}. Record: \fp{EXP-004-multilayer-handoff/}. \\
 EXP-004, frozen & Slope of measured against predicted rate within $15\%$ of $1$: measured $1.358$ & \textbf{not met} (all criteria jointly: false) &
-The pattern holds and the calibration does not: the estimator reads $1.36$ times the prediction in this geometry. The factor is already $1.35$ at $A_{1}=0$, and falls to $1.36$, $1.29$, $1.24$ as the mask fraction goes $0.35$, $0.7$, $0.9$, so it belongs to the measurement and not to the handoff; no bound of this paper uses the slope. \\
-EXP-004, dynamical & Correlation with the total gradient $0.274$ against $0.222$ for the base: the control does not discriminate & inconclusive & The layer being grown is still deforming, outside the frozen background the reduction assumes; the run proves nothing and motivates the frozen run and the steered one. \\
-EXP-005 A & Every assertion of Lemma~3.7 of~\cite{ab-boussinesq} on the admissible design $c_{p}=3$, $\Lambda=12$ & met & The transcribed control law does what its lemma states. \\
+The pattern holds and the calibration does not: the estimator reads $1.36$ times the prediction in this geometry. The factor is already $1.35$ at $A_{1}=0$, and falls to $1.36$, $1.29$, $1.24$ as the mask fraction goes $0.35$, $0.7$, $0.9$, so it belongs to the measurement and not to the handoff; no bound of this paper uses the slope. Record: \fp{EXP-004-multilayer-handoff/}. \\
+EXP-004, dynamical & Correlation with the total gradient $0.274$ against $0.222$ for the base: the control does not discriminate & inconclusive & The layer being grown is still deforming, outside the frozen background the reduction assumes; the run proves nothing and motivates the frozen run and the steered one. Record: \fp{EXP-004-multilayer-handoff/}. \\
+EXP-005 A & Every assertion of Lemma~3.7 of~\cite{ab-boussinesq} on the admissible design $c_{p}=3$, $\Lambda=12$ & met & The transcribed control law does what its lemma states. Record: \fp{EXP-005-steered-cycle/}. \\
 EXP-005 B.1 & Steered cycle at the first chosen parameters ($k=(4,31)$, $\sin s=0.128$, $\Lambda=2.5$, $36.7$ time units, $N=512$): all six criteria fail; the amplitude grows $726$-fold during the hold and changes sign & \textbf{refuted} &
-The background is Rayleigh-Taylor unstable at rate $\sqrt A=2.0$ while the layer grows at $\sqrt A\sin s=0.256$: modes at more favourable angles gain $1/\sin s$ times as many $e$-foldings, about $72$ over the schedule, and $\max|\theta|$ goes from $4.0$ to $10.0$. The constructions are unaffected, since each layer is localized and the force controls the exterior; a periodic box has neither. \\
-EXP-005 B.2 & Repaired schedule ($k=(15,26)$, $\sin s=0.4997$, $\Lambda=1$, about $10$ time units), flattened background: $7$ of $7$ criteria met: landing $3.67\times10^{-4}$ of the peak, steering gain $3.06\times10^{-6}$, hold drift $0.36\%$ over three growth times, endpoint map $4.7\times10^{-4}$; sine background: $4$ of $7$, landing $1.57\times10^{-2}$, gain $1.80\times10^{-2}$, hold drift $14.7\%$ & met on the flattened background, $4$ of $7$ on the sine & The two columns differ only in the curvature of the background across the layer's support, which is the whole residual. Controls without the pulse and without steering fail as required (landing $0.99985$ and $1.0$). \\
-EXP-005 C & Dissipation factorizes as $e^{-dt}$ times the inviscid cycle at $\alpha=1/2$, $d=0.2\Gamma$: landing $4.1\times10^{-4}$, hold decay within $0.97\%$ of $d$, rescaled viscous run within $0.24\%$ of the inviscid one & met & The inviscid steering is reusable under dissipation, and a hold costs $\exp(-\nu\lambda^{2\alpha}T)$. \\
-EXP-005 D & Stage~1 at $0.92$ of the background gradient (landing $3.8\times10^{-4}$) & met & The cycle is not a small-amplitude effect. \\
+The background is Rayleigh-Taylor unstable at rate $\sqrt A=2.0$ while the layer grows at $\sqrt A\sin s=0.256$: modes at more favourable angles gain $1/\sin s$ times as many $e$-foldings, about $72$ over the schedule, and $\max|\theta|$ goes from $4.0$ to $10.0$. The constructions are unaffected, since each layer is localized and the force controls the exterior; a periodic box has neither. Record: \fp{EXP-005-steered-cycle/}. \\
+EXP-005 B.2 & Repaired schedule ($k=(15,26)$, $\sin s=0.4997$, $\Lambda=1$, about $10$ time units), flattened background: $7$ of $7$ criteria met: landing $3.67\times10^{-4}$ of the peak, steering gain $3.06\times10^{-6}$, hold drift $0.36\%$ over three growth times, endpoint map $4.7\times10^{-4}$; sine background: $4$ of $7$, landing $1.57\times10^{-2}$, gain $1.80\times10^{-2}$, hold drift $14.7\%$ & met on the flattened background; \textbf{not met} on the sine ($4$ of $7$ gates) & The two columns differ only in the curvature of the background across the layer's support, which is the whole residual. Controls without the pulse and without steering fail as required (landing $0.99985$ and $1.0$). Record: \fp{EXP-005-steered-cycle/}. \\
+EXP-005 C & Dissipation factorizes as $e^{-dt}$ times the inviscid cycle at $\alpha=1/2$, $d=0.2\Gamma$: landing $4.1\times10^{-4}$, hold decay within $0.97\%$ of $d$, rescaled viscous run within $0.24\%$ of the inviscid one & met & The inviscid steering is reusable under dissipation, and a hold costs $\exp(-\nu\lambda^{2\alpha}T)$. Record: \fp{EXP-005-steered-cycle/}. \\
+EXP-005 D & Stage~1 at $0.92$ of the background gradient (landing $3.8\times10^{-4}$) & met & The cycle is not a small-amplitude effect. Record: \fp{EXP-005-steered-cycle/}. \\
 EXP-005 D1 & Correlation of the rate of layer~2 with the total gradient above $0.9$: best $0.808$ ($\lambda_{2}=360$, $N=1536$, window $3\lambda_{1}$); $0.676$, $0.755$, $0.327$ at $\lambda_{2}=192$ for windows $1.5$, $3$, $4.5\lambda_{1}$; $0.509$ at separation $17$ ($\lambda_{2}=512$, $N=2048$) & \textbf{not met} in all five runs &
-The handoff pattern is reproduced at $0.808$ and not at the correlation the criterion asked for; the residual slope is $1.26$, the systematic of EXP-004. Both the window and the separation have an interior optimum, which attributes the shortfall to the measurement and not to the handoff, an attribution that is supported by this sweep and not proved. \\
-EXP-005 D2 & The base-only control must be worse by more than $0.3$ in correlation and in RMSE: $0.808$ against $0.392$ & met in three of five runs; failed at window $4.5\lambda_{1}$ (control $0.667$ against $0.327$) and at separation $17$ (control $0.314$ against $0.509$) & The control discriminates where the measurement is well conditioned and not elsewhere. \\
-EXP-007 & Localized layers, $N=4096$: error of the plane-wave damping law falls with slope $-0.9863$ in $\log(\ell\lambda)$; coefficient between $0.180$ and $3.606$, linear in $\alpha$; control at $\ell\lambda=1.4$ has error $1.90$ & met (three of three) & The cost of localization is $3.6\,\alpha/(\ell\lambda)$ and depends on the ratio alone (Figure~\ref{fig:localization}). \\
-EXP-008 & Critical exponent against $\gamma/(2p)$ for both growth laws and $p=1.5,2,3,5$: relative error $1.1\times10^{-7}$ and $1.8\times10^{-9}$; ratio of the two laws $2$ & met (three of three) & Theorem~\ref{thm:class} has numerical support in both cases. The experiment measures the cascade model and not the partial differential equations (Figure~\ref{fig:ceiling}). \\
+The handoff pattern is reproduced at $0.808$ and not at the correlation the criterion asked for; the residual slope is $1.26$, the systematic of EXP-004. Both the window and the separation have an interior optimum, which attributes the shortfall to the measurement and not to the handoff, an attribution that is supported by this sweep and not proved. Record: \fp{EXP-005-steered-cycle/}. \\
+EXP-005 D2 & The base-only control must be worse by more than $0.3$ in correlation and in RMSE: $0.808$ against $0.392$ & \textbf{not met} in two of five runs (window $4.5\lambda_{1}$ (control $0.667$ against $0.327$) and separation $17$ (control $0.314$ against $0.509$)); met in the other three & The control discriminates where the measurement is well conditioned and not elsewhere. Record: \fp{EXP-005-steered-cycle/}. \\
+EXP-007 & Localized layers, $N=4096$: error of the plane-wave damping law falls with slope $-0.9863$ in $\log(\ell\lambda)$; coefficient between $0.180$ and $3.606$, linear in $\alpha$; control at $\ell\lambda=1.4$ has error $1.90$ & met (three of three) & The cost of localization is $3.6\,\alpha/(\ell\lambda)$ and depends on the ratio alone (Figure~\ref{fig:localization}). Record: \fp{EXP-007-localized-}\allowbreak\fp{dissipation/}. \\
+EXP-008 & Critical exponent against $\gamma/(2p)$ for both growth laws and $p=1.5,2,3,5$: relative error $1.1\times10^{-7}$ and $1.8\times10^{-9}$; measured ratio of the two laws $1.812$ at every $p$, against $2$ for the closed forms (the factor $2$ is a property of the closed forms, computed and not measured) & met (two of two gates) & Theorem~\ref{thm:class} has numerical support in both cases. The measured ratio is $(1/2+\varepsilon)/(1/4+\varepsilon)$ with $\varepsilon=\log(1/\nu)/(2g(Q-1))=0.0579$: the horizon term is the same additive amount for both laws, so the ratio lies below two and tends to two as $Q$ grows. The experiment measures the cascade model and not the partial differential equations (Figure~\ref{fig:ceiling}). Record: \fp{EXP-008-growth-law-ceiling/}. \\
 \end{longtable}
 \endgroup
 
@@ -1187,9 +1196,9 @@ bisection on a run of $Q$ stages, and a supercritical schedule does not stall at
 positive until stage $q^{*}=\log(1/\nu)/\bigl(g(2\alpha p-\tfrac12)\bigr)$, so a run of $Q$ stages reports a
 threshold too high by the factor $1+2\log(1/\nu)/\bigl(g(Q-1)\bigr)$ \ev{D}. Figure~\ref{fig:horizon} shows
 the consequence in the results of EXP-003: the largest gap between the measured critical exponent and the closed
-form $1/(4p)$, over $p\in[1.5,12]$, is $0.009618$, $0.004803$ and $0.002400$ at $400$, $800$ and $1600$ stages,
+form $1/(4p)$, over the three probe values $p=3$, $5.396$ ($=11/4+\sqrt7$) and $9.5$, is $0.009618$, $0.004803$ and $0.002400$ at $400$, $800$ and $1600$ stages,
 a halving at each doubling (ratios $2.00$ and $2.00$), which is the $1/Q$ law and the evidence that the excess
-is a horizon artefact and not a different exponent. Against the horizon-corrected prediction the largest
+is a horizon artefact and not a different exponent. Against the horizon-corrected prediction, over $64$ values of $p$ in $[1.5,12]$, the largest
 relative error is $2.59\times10^{-6}$, and the million-schedule ensemble shows no violation of the bound, the
 tightest closing schedule lying $2.7\times10^{-6}$ below it. The bound was first written with $Q$ in place of
 $Q-1$, which left $47$ apparent violations and a residual of $2.56\times10^{-4}$; the correction, which is the
@@ -1200,7 +1209,7 @@ partial differential equations: it measures the bookkeeping and nothing else \ev
 \centering
 \includegraphics[width=0.58\textwidth]{figures/fig-horizon.pdf}
 \caption{Largest gap between the critical exponent measured by bisection on the cascade model and the closed
-form $1/(4p)$, over $p\in[1.5,12]$, against the number of stages $Q$ inspected by each run (circles), with a
+form $1/(4p)$, over the probe values $p=3$, $5.396$ and $9.5$, against the number of stages $Q$ inspected by each run (circles), with a
 line proportional to $1/Q$ through the first point. The gap halves at each doubling. Source:
 \fp{EXP-003-threshold-sweep/result.json}.}
 \label{fig:horizon}
@@ -1340,10 +1349,59 @@ error. Source: \fp{EXP-007-localized-dissipation/result.json}.}
 layers grow on is Rayleigh-Taylor unstable at rate $\sqrt A$, while a layer inserted at angle $s$
 grows at $\sqrt A\sin s$. Perturbations at more favourable angles therefore gain $1/\sin s$ times as
 many e-foldings as the layer. This is the cause of the refuted run of Table~\ref{tab:gates}, and the
-effect is measured and not only estimated: neighbouring modes grow from $1.0\times10^{-7}$ to
-$3.3\times10^{-2}$ during the run. The constructions are unaffected, since each layer is localized and the
+effect is measured and not only estimated: neighbouring modes grow from $1.0\times10^{-7}$ (the starting level quoted in the outcome table of EXP-005, not stored in the series of Figure~\ref{fig:rt}) to
+$3.3\times10^{-2}$ (the end value of that stored series) during the run. The constructions are unaffected, since each layer is localized and the
 force controls the exterior, but any realization without that control must keep its schedule short
 enough for the layer to stay ahead \ev{MV}.
+
+\section{Ablation: which choice moves which result}\label{sec:ablation}
+
+The results of this paper depend on a short list of choices, in the designs it bounds and in the checks it runs.
+Table~\ref{tab:ablation} removes or releases one choice at a time and reports the quantity that moves, from the
+computations of Sections~\ref{sec:design} to~\ref{sec:validation}; the exponents are in our convention.
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{4.3cm}L{3.6cm}L{2.5cm}L{3.6cm}@{}}
+\toprule
+choice released or removed & quantity & with the choice & without it \\
+\midrule
+force decay target $\tau=3/2$ and ratio floor $Q\ge\max(201,120d)$ (Boussinesq, $d=0$) & certified exponent $\alpha$ & $2.65\times10^{-4}$ & $2.22\times10^{-3}$ \\
+coefficient scale $\Pi\le\lambda^{5/Q}$ and $\delta=\Pi^{5}Y$ (Boussinesq, $d=0$) & certified exponent $\alpha$ & $2.22\times10^{-3}$ & $4.48\times10^{-3}$ \\
+published constants and unbounded $Q_{i}$ (Euler) & exponent at the first stage, then at every stage & $2.98\times10^{-8}$, none & $3.64\times10^{-3}$ ($k=0$, $Q=51$) \\
+rows of~(12.7) that involve $a$ (Euler) & certified exponent $\alpha$ & $3.64\times10^{-3}$ & $3.77\times10^{-3}$ \\
+outer-velocity constraint \textbf{O} (threshold budget, $|\nabla|^{\alpha}$ convention) & exponent at which the force margin vanishes & $0.09267$ & $0.10102$ \\
+hold damping and time budget, constraints C3 and C4 (cascade model) & schedules where C4 binds while C2 holds & $0$ of $2304$ & not applicable \\
+localization of the layer, $\ell\lambda=102.4$ against $1.4$ & relative error of the damping law & $1.7\times10^{-2}$ & $1.90$ \\
+flat background across the layer, flattened against sine (steered cycle) & landing of the vorticity amplitude & $3.67\times10^{-4}$ & $1.57\times10^{-2}$ \\
+steering pulse, $\mu=\mu^{*}$ against $\mu=0$ (steered cycle, flattened) & landing of the vorticity amplitude & $3.67\times10^{-4}$ & $0.99985$ \\
+accumulated gradient in the prediction, total against base only (frozen handoff) & correlation of the local rate & $0.99945$ & $0.212$ \\
+\bottomrule
+\end{tabular}
+\caption{Ablation of the choices of the designs and of the checks: the quantity that moves when each choice is released
+or removed, with the value at the choice and without it. The first four rows are the exponent ceilings of
+Theorems~\ref{thm:design} and~\ref{thm:euler}, the fifth the threshold budget of Section~\ref{sec:budget}, the sixth and
+seventh the cascade model and the localization test, and the last three the steered cycle and the handoff of
+Section~\ref{sec:validation}. Sources: Tables~\ref{tab:boussinesq} and~\ref{tab:gates} and the result files.}\label{tab:ablation}
+\end{table}
+
+The first four rows show that the certified exponent is set by the estimates of the designs and not by the growth law:
+releasing the force decay target and the ratio floor of the Boussinesq design multiplies the exponent by $8.4$, shrinking
+the coefficient scale to the previous wavelength doubles it again, and in the Euler design the published constants give
+$2.98\times10^{-8}$ at the first stage and nothing at every stage until the free choices are released
+(Section~\ref{sec:euler}). Dropping the rows of~(12.7) that involve $a$ raises the Euler value by only $4\%$, so those rows
+are not what binds. The fifth row isolates the constraint that fixes the published threshold: with the outer velocity
+acting on the inner layer the margin vanishes at $0.09267$, and a budget that omits it reaches $0.10102$, which is why
+constraint \textbf{O} and not the dissipation constraint is the active one (Section~\ref{sec:budget}). The sixth row is the
+ablation of the two repairs of the cascade model: charging dissipation during the holds and requiring a finite total time do
+not move the critical exponent, since the survival constraint never binds ahead of growth positivity. The remaining rows
+are ablations of the checks. Localization costs the damping law $3.6\,\alpha/(\ell\lambda)$, negligible at the separations
+of the constructions and of order one when the envelope is as wide as the wave; the curvature of the background across the
+layer, and not the steering law, accounts for the difference between the two columns of the steered cycle; the pulse is
+necessary, since without it the amplitude is still at $0.99985$ of its peak when the steering ends; and the prediction
+from the base stratification alone loses the handoff, with a correlation of $0.212$ against $0.99945$ \ev{MV}. Each row
+varies one choice and holds the others, and no row varies two at once, so interactions between the choices are not measured.
 
 \section{The status of the announced results}\label{sec:status}
 
@@ -1394,9 +1452,77 @@ faithful statement establishes that statement, while the correctness of the writ
 any result that cites it rather than the formal development, remains a separate question. The
 Alp\"oge-Buckmaster formalization (\fp{tristanbuckmaster/fluid_lean}) was not examined \ev{U}.
 
-\section{Scope}\label{sec:scope}
 
-The bound of Section~\ref{sec:class} is a necessary condition for growth in the layer mechanism,
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{Why the bounds take the form they do.} The growth rate of a layer carries no frequency, because the
+frequency in the vorticity equation cancels the reciprocal frequency in the temperature equation (equation~\eqref{eq:mod}
+and its test in EXP-002, a spread of $2.7\times10^{-4}$ across an eightfold range of $\lambda$), while the damping grows as
+$\lambda^{2\alpha}$. A layer buys gradient with frequency, through the amplification identity~\eqref{eq:amp}, and not
+growth; the cascade must raise the frequency faster than the gradient it produces, $p>1$ by the summability of the
+amplitudes, and a damping that rises as a power $2\alpha p$ of the gradient then overtakes a growth that rises as a power
+$\gamma$. That is the whole content of Theorem~\ref{thm:class}, and it is why neither growth law reaches classical
+viscosity: the pendulum law gives $1/4$ and the stretching law $1/2$ against $1$ in our convention.
+
+\paragraph{Why the designs sit far below their class ceilings.} The published hypodissipative threshold lies a factor
+$10.8$ below the ceiling of its class and the Boussinesq design, at its published choices, a factor $945$. For the
+Boussinesq design the reason is architectural: the derivative range $Q\ge9d+42$ forces the frequency ratio up with the
+regularity of the force, and the leading phase means, which are quadratic in the amplitude and gain nothing from the
+correction hierarchy, hold the margin near $1/4$ however many levels are added (Section~\ref{sec:boussinesq}). For the
+published threshold the active constraint is not the dissipation one, which the construction saturates at every
+exponent, but the action of the outer velocity on the inner layer, and the admissible frequency ratios close at the
+threshold to the single value $1.7559$ (Section~\ref{sec:budget}).
+
+\paragraph{Where the numerical tests agree with the theory, and where they do not.} The single-layer reduction is
+quantitatively right in its regime: peak rates to $10^{-4}$, the damping term to $2.6\times10^{-4}$, the steered cycle to
+$3\times10^{-6}$ in the gain on a background whose gradient is affine to fourth order. The disagreements are as
+informative. The window maximum of the rate error at $\pi/4$ exceeds its criterion and the unstable band does not grow by
+orders of magnitude at the horizon of the run; the slope of the two-scale handoff is $1.36$ in a geometry where it is
+already $1.35$ with one scale, so it belongs to the estimator; and the two-layer correlation stays at $0.808$ at best. The
+attribution of that shortfall to the measurement rests on the interior optima in the demodulation window and in the scale
+separation, and it is supported by that sweep and not proved. The dynamical handoff without steering was inconclusive for a
+reason of design: its control did not discriminate, with correlations $0.274$ and $0.222$, since the earlier layer was
+still deforming. The run at the first chosen parameters was refuted by the instability of the background itself, and
+that failure is a result about the mechanism: the cascade always runs against a faster instability of its own
+background, by the factor $1/\sin s$ in the exponent, and what protects the constructions is the localization of each
+layer and the control of the force outside it.
+
+\paragraph{Negative results.} Two expected effects did not appear. Charging the damping of the holds and requiring a finite
+total time did not lower the critical exponent of the cascade model, although the first-pass estimate expected both to push
+it down. And the relation $p=11/4+\sqrt7$ at the published threshold, first read as a calibration, carries no information
+about the threshold, because the construction saturates its dissipation constraint at every exponent.
+
+\paragraph{What follows for a dissipative design.} A dissipative version of either smooth-forcing design has to change the range of uniform
+coefficient bounds, the treatment of the nonoscillatory phase means, or the growth law (Remark~\ref{rem:levers}). The
+localization test adds one prohibition: a design must not shrink the separation between envelope and wave, since at
+$\ell\lambda$ of order ten the damping law is wrong by tens of per cent. None of this says that blowup with dissipation is
+impossible; the bounds concern what the layer constructions and their estimates can certify, and a different correction
+scheme is not covered.
+
+\section{Limitations and scope}\label{sec:scope}
+
+\paragraph{Threats to validity.} The internal threats concern the computations. The design bounds follow the exponents of the
+published estimates and not their constants or logarithmic factors, and assume the most favourable insertion angle. Cases
+(iii) of Theorems~\ref{thm:design} and~\ref{thm:euler} are bounds on what retuning could reach and not designs that anyone
+has proposed; the claim that nothing smaller than the previous wavelength can be nested, from Lemma~4.3 of the Boussinesq
+paper, was not re-derived \ev{U}. The numerical runs are single deterministic evaluations in double precision on one
+device, with a PyTorch version that is not recorded, so no run-to-run variation is measured, and the commands of experiment~5
+are reconstructed from the stored arguments and not part of the rerun harness. The external threats concern the scope of the
+equations. The simulations are of the two-dimensional Boussinesq system on a periodic box with one envelope shape, and a
+layer is tested alone or in pairs, never in a cascade of many layers where the time compression that fits infinitely many
+stages into finite time matters; the swirl layers of the Euler design were not simulated, and the lower-order geometric terms of
+the damping of a localized swirl layer were not measured \ev{U}. The cascade model of EXP-003 and EXP-008 is a bookkeeping of
+exponents and not the partial differential equations. The construct threats concern what is called a criterion: the
+correlation criterion of the handoff is attached to an estimator with a measured scale bias, the pass criteria were fixed
+before each run but the statistic of the rate criterion of EXP-002 was left open, and the evidence marks separate what was
+read, derived, machine-checked, unverified and conjectured without making a derivation into a measurement. The use of the
+single-mode identity for a multi-harmonic layer is a conjecture \ev{C}.
+
+\paragraph{The formal checks.} The kernel replay detects environment manipulation and is not an external verifier; the
+external re-checkers named by the certificate and the Alp\"oge-Buckmaster formalization were not exercised \ev{U}. The
+analysis of the Lean development by Bastounis, Circelli and Hansen~\cite{bch} is not re-examined here.
+
+\paragraph{What the paper does not claim.} The bound of Section~\ref{sec:class} is a necessary condition for growth in the layer mechanism,
 derived from the amplitude system, the amplification identity and the dissipative
 term~\eqref{eq:diss}, under hypotheses (A0) to (A5). The bounds of Section~\ref{sec:design} concern what the estimates of two designs
 can certify: they track each design's corrections through the exponents of its published estimates,
@@ -1414,7 +1540,7 @@ and its algebraic form is automatic because $\alpha_{0}\in\Q(\sqrt7)$ and the no
 $22-8\sqrt7$ is a perfect square \ev{D}. The value $0.04633$ in this relation is our convention's form of the value
 $0.09267$ of Section~\ref{sec:budget}; the two differ by the factor $2$ of Section~\ref{sec:question}.
 
-\section*{Data and code}
+\section{Reproducibility: data and code}\label{sec:reproducibility}
 
 The numerical data, the simulations, the exact-arithmetic verifications of
 Propositions~\ref{prop:threshold} and~\ref{prop:ratios}, and the computations behind
@@ -1425,15 +1551,44 @@ Section~\ref{sec:design}, \fp{class_ceiling.py} for Section~\ref{sec:class},
 \fp{cmz_budget.py} for Section~\ref{sec:budget} and \fp{boussinesq.py}, \fp{corotating.py}
 and \fp{steering.py} for Section~\ref{sec:method}. The archived copies of the sources, with their
 retrieval URLs and SHA-256 hashes, are in \fp{references/}. The figures of this paper are
-regenerated from the result files by \fp{figures/make_figures.py} next to the source of the paper.
+regenerated from the result files and from the library by \fp{figures/make_figures.py} next to the source of the paper.
+Each run of Table~\ref{tab:runs} is rebuilt from the \fp{args} block of its result file by \fp{code/reproduce_all.py}
+for experiments~2, 3, 4, 7 and~8, with the wall times of that table; the commands of experiment~5 are given in
+Section~\ref{sec:method}.
 
-Every number quoted in this paper is checked in continuous integration against the result files and
-the code it came from, by \fp{tests/test_navier_stokes_quoted_numbers.py}, which compares the
-formatted strings of the text with the artifacts: the rows of Table~\ref{tab:boussinesq}, the factors
-$175$, $21$ and $10$, the exponents $-7.00$, $-10.75$ and $-1.75$ and the ceilings of
-Theorem~\ref{thm:euler}, together with the numbers of the verifications of Section~\ref{sec:validation}
-that the test pins, among them the correlation $0.808$ of the handoff and the report that its
-criterion is not met. The rerun harness is \fp{code/reproduce_all.py}.
+What checks the quoted numbers, and what does not. The test file \fp{tests/test_navier_stokes_quoted_numbers.py}
+compares strings of this text with the code for the design bounds of Section~\ref{sec:design}: the rows of
+Table~\ref{tab:boussinesq}, the factors $175$, $21$ and $10$, the factors by which the published designs sit below their
+class ceilings, and the Euler exponents and ceilings of Theorem~\ref{thm:euler}. For the experiments of
+Section~\ref{sec:validation} the same file compares the stored result files and the written outcomes with each other
+(among them the correlation $0.808$ of the handoff and the report that its criterion is not met); it does not read
+those numbers from this text, so the figures quoted in Table~\ref{tab:gates} are checked against the result files by
+the generation of the table and by the review of the draft, not by the test. The test is run locally with pytest; the
+continuous integration workflow of the repository does not run it, so no check of these numbers runs on a push.
+The exact-arithmetic tests of the threshold budget are run in the same way.
+
+
+\section{Conclusions}\label{sec:conclusions}
+
+A layer cascade whose layers grow at the rate $\sqrt A$ cannot carry a dissipation exponent above $1/4$ in our
+convention, and one whose layers grow at the rate $A$ none above $1/2$, under the hypothesis that the background gradients
+are unbounded; neither reaches classical viscosity, which is $1$ in that convention (Theorem~\ref{thm:class}). The force
+estimates of the two smooth-forcing designs certify at most $2.65\times10^{-4}$ (Boussinesq) and $2.98\times10^{-8}$
+(Euler) at the published choices, and at most $4.48\times10^{-3}$ and $3.77\times10^{-3}$ when every constant is retuned
+in their favour, which is more than ten times below the threshold $0.04633$ reached with a rough force. The published
+threshold is the zero of the force margin under the outer-velocity constraint, and the admissible frequency ratios form an
+interval that closes at it, so that geometrically growing frequencies are excluded at every positive dissipation.
+
+The dissipative extension of the amplitude system agrees with the nonlinear equations for a single layer, to $10^{-4}$ in the
+peak rate and $2.6\times10^{-4}$ in the damping term, and the localization the constructions use costs
+$3.6\,\alpha/(\ell\lambda)$. Seven criteria are not met and one run is inconclusive, and they are the open part of the
+verification: the window error of the rate at one angle, the growth of the unstable band at the horizon of the run, the
+slope of the two-scale handoff, the steered cycle on a curved background and at its first parameters, and the two-layer
+correlation and its control. The next steps are a cascade of many layers with steering, which would test the time
+compression that no run here touches, and a measurement of the inviscid residual of a localized layer, which is the part of
+the force budget that the localization test leaves open. Nothing in the paper establishes blowup for any equation or improves
+a published threshold.
+
 
 \appendix
 \section{Transcription of the force estimates}\label{app:force}
@@ -1463,6 +1618,19 @@ last column are \ev{D}.
 
 \subsection{Boussinesq design}
 
+Table~\ref{tab:ab-bous} lists the inputs of Theorem~\ref{thm:design}, each with the statement read in~\cite{ab-boussinesq},
+its equation and page, and the exponent form that the computation uses. The rows fall in three groups. The first
+(amplitude, frequencies, envelope, seed, coefficient scale and per-level parameter) fixes the size of each quantity as
+a power of the layer frequency $\lambda$. The second (remainder grades, parities, physical evaluation, derivative range
+and the reason for the range $Q-1$) fixes how many correction levels are needed, which mean terms survive at which
+grade, what a physical derivative of each kind of profile costs, and the order up to which the coefficient bounds are
+uniform in the layer. The third (scale quotients, activation, leading means, higher means, remainders and the joint
+target) lists the contributions to the force and the target $\lambda^{-3/2}$ that each must meet. Two rows carry
+the conclusions of Section~\ref{sec:boussinesq}: the derivative range $r_{*}=9d+41\le Q-1$ ties the frequency ratio
+to the number of controlled derivatives, and the leading means, which cost $\Pi^{2k}$ without a factor $\lambda^{k}$ and
+are quadratic in the amplitude, are the contribution that binds at the published choices. The statements are \ev{V};
+the exponent forms are \ev{D}.
+
 \begin{table}[t]
 \centering\footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -1488,10 +1656,24 @@ remainders & $\lVert R_{>J_{q}}\rVert\le2C\mathcal M(\lambda\Pi^{2})^{k}\lambda 
 joint target & each of the eight contributions at most $\lambda^{-3/2}$, total $\le\lambda^{-1/2}$; $\Pi^{2d+3}\le\lambda^{1/4}$ & (7.25), p.~64; (7.26), p.~65; (7.24), p.~63 & $\tau=3/2$ \\
 \bottomrule
 \end{tabular}
-\caption{Inputs of the Boussinesq design bound and their location in~\cite{ab-boussinesq}.}\label{tab:ab-bous}
+\caption{Inputs of the Boussinesq design bound: the object, the statement read in the archived paper, the equation and
+page where it is stated, and the exponent form of the layer frequency used in the computation of Theorem~\ref{thm:design}.
+Source: \cite{ab-boussinesq}.}\label{tab:ab-bous}
 \end{table}
 
 \subsection{Euler design}
+
+Table~\ref{tab:ab-euler} gives the corresponding inputs of Theorem~\ref{thm:euler}, read in~\cite{ab-euler}, and
+Table~\ref{tab:euler-quot} the thirteen coefficient quotients of its equation~(12.13). The first rows establish the
+growth class: the amplitude law~(3.4), the order-one coupling of~(2.12) that bounds $c$ above and below, the blowup
+variable $\nabla\Gamma$ of~(1.3) and the prescribed growth scale, which together give the pendulum law and the
+constraint $\alpha<\beta/(4Q)$. The next rows fix the published constants of~(12.1) to~(12.3), among them
+$\beta=1/8$, $\mathsf d=16$, $p=8$, $a=4$ and the frequencies $Q_{i}=q_{0}+i$ with $q_{0}\ge2^{20}$, whose unboundedness is
+what excludes any positive exponent at every stage. The decay rows of~(12.7), the thirteen quotients and the derivative
+range $9k_{m}+51\le Q_{m}$ are the side conditions that the released readings of Theorem~\ref{thm:euler} keep or drop,
+and the last rows give the force exponents of~(12.15) and the joint bound of~(12.16). The recomputation of every
+quotient from the displayed rows, with the rows that carry no power of $N$ forcing $\mathsf d\ge2$, is the content of
+Table~\ref{tab:euler-quot}. The statements are \ev{V}; the use column is \ev{D}.
 
 \begin{table}[t]
 \centering\footnotesize
@@ -1515,7 +1697,9 @@ force exponents & activation $1-e+2u+v$, terminal $-(2h_{*}-1)k_{m}+\beta-9h_{*}
 joint bound & $\mathfrak F_{m,k}\le N_{m}^{-1/2}$ & (12.16), p.~104 & summability \\
 \bottomrule
 \end{tabular}
-\caption{Inputs of the Euler design bound and their location in~\cite{ab-euler}.}\label{tab:ab-euler}
+\caption{Inputs of the Euler design bound: the object, the statement read in the archived paper, the equation and page
+where it is stated, and the way the statement is used in the computation of Theorem~\ref{thm:euler}.
+Source: \cite{ab-euler}.}\label{tab:ab-euler}
 \end{table}
 
 \begin{table}[t]
@@ -1545,6 +1729,7 @@ the last column gives $(A,B,n)$ in $\Pi^{A-B\mathsf d}N^{-n\beta}$. With $\Pi\le
 $(A-B\mathsf d)v-n\beta\le0$, and the rows with $n=0$ force $\mathsf d\ge2$. \ev{V}}\label{tab:euler-quot}
 \end{table}
 
+\clearpage
 \sloppy
 \emergencystretch=8em
 \raggedright
@@ -1562,7 +1747,7 @@ $L^{\infty}_{t}L^{2}_{x}$}, Arch. Ration. Mech. Anal. \textbf{250} (2026), artic
 \href{https://arxiv.org/abs/2407.06776}{arXiv:2407.06776}.
 \bibitem{clsmz} D. C\'ordoba, A. La\'in-Sanclemente and L. Mart\'inez-Zoroa, \emph{Finite-time
 singularity via multi-layer degenerate pendula for the 2D Boussinesq equation with uniform
-$C^{1,\sqrt{4/3}-1-\epsilon}$ and $L^{2}$ force}, Adv. Math. \textbf{480} (2025), article 110480,
+$C^{1,\sqrt{4/3}-1-\epsilon}$ and $L^{2}$ force}, Adv. Math. \textbf{480}, Part A (2025), article 110480,
 \href{https://doi.org/10.1016/j.aim.2025.110480}{\fp{doi:10.1016/j.aim.2025.110480}};
 \href{https://arxiv.org/abs/2505.20988}{arXiv:2505.20988}.
 \bibitem{ab-boussinesq} L. Alp\"oge and T. Buckmaster, \emph{Blowup for the Boussinesq equations with
