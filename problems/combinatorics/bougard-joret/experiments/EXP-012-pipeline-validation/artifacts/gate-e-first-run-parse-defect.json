@@ -1,0 +1,50 @@
+{
+ "cases": [
+  {
+   "oeis": "A001349",
+   "index": 9,
+   "geng": "geng -u -c 9",
+   "count": -1,
+   "oeis_value": 261080,
+   "equal": false,
+   "seconds": 0.6
+  },
+  {
+   "oeis": "A001349",
+   "index": 10,
+   "geng": "geng -u -c 10",
+   "count": -1,
+   "oeis_value": 11716571,
+   "equal": false,
+   "seconds": 1.6
+  },
+  {
+   "oeis": "A002851",
+   "index": 8,
+   "geng": "geng -u -c -d3 -D3 16",
+   "count": -1,
+   "oeis_value": 4060,
+   "equal": false,
+   "seconds": 0.8
+  },
+  {
+   "oeis": "A002851",
+   "index": 9,
+   "geng": "geng -u -c -d3 -D3 18",
+   "count": -1,
+   "oeis_value": 41301,
+   "equal": false,
+   "seconds": 7.8
+  },
+  {
+   "oeis": "A002851",
+   "index": 10,
+   "geng": "geng -u -c -d3 -D3 20",
+   "count": -1,
+   "oeis_value": 510489,
+   "equal": false,
+   "seconds": 86.0
+  }
+ ],
+ "disagreements": 5
+}

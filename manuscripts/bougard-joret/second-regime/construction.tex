@@ -1,0 +1,116 @@
+\section{Extremal graphs without a clique partition for every odd \texorpdfstring{$\alpha$}{alpha}}\label{sec:construction}
+
+\subsection{Two building blocks}
+
+The \nsone\ enumerated extremal graphs with $s(G)=1$ share one shape. Take a partition attaining $p(G)=\alpha-1$
+(Lemma~\ref{lem:p}). In every one of them, $\alpha-2$ of its parts are cliques of orders $3$ and $4$, and the last part
+$X$ has independence number $2$. Moreover $X$ is one of only two graphs:
+\begin{itemize}
+\item $X_6$ (\texttt{graph6} \texttt{ETxO}): six vertices and $8$ edges, two more than $K_3+K_3$;
+\item $X_7$ (\texttt{graph6} \texttt{FQjRo}): seven vertices and $11$ edges, two more than $K_3+K_4$.
+\end{itemize}
+Both are complements of maximal triangle-free graphs. Every part sends exactly three edges to the others, from three
+distinct vertices, so the edges between parts form a matching, $(3\alpha-3)/2$ edges in all, and the quotient is a
+cubic multigraph on the $\alpha-1$ parts. $X_6$ attaches at one triple of its vertices up to automorphism, and $X_7$ at
+three (Figure~\ref{fig:blocks}).
+
+The count explains why these graphs are extremal. $X$ spends two more edges than the two cliques it replaces, and the
+quotient on $\alpha-1$ parts needs $(3\alpha-3)/2$ edges instead of $\ceil{3\alpha/2}=(3\alpha+1)/2$. That is two fewer,
+so the total is again
+\begin{equation}\label{eq:count}
+t(n,\alpha)+2+\frac{3\alpha-3}{2}=t(n,\alpha)+\ceil{\frac{3\alpha}{2}}.
+\end{equation}
+The \ntenthreeb\ graphs with $s(G)=2$ at $(10,3,3)$ have a connected $\alpha$-core, the case (b) of
+Proposition~\ref{prop:where}. They are $3$-connected graphs on ten vertices with independence number $3$ and $17$
+edges, and none of their spanning subgraphs with the same independence number splits into components.
+
+\begin{figure}[t]
+\centering
+\input{blocks.tex}
+\caption{The two building blocks, $X_6$ (left) and $X_7$ (right), each the complement of a maximal triangle-free graph,
+with independence number $2$ and clique cover number $3$. Navy vertices with a stub: an attaching triple (for
+$X_7$, one of three up to automorphism, the others being $\{1,2,3\}$ and $\{1,2,6\}$). Open vertices $3,4$ of $X_6$ and
+$3,4$ of $X_7$: an independent pair with no neighbour outside the block. Grey vertices: the remaining vertices.}
+\label{fig:blocks}
+\end{figure}
+
+\subsection{The construction}
+
+Let $\alpha\ge3$ be odd and $3\alpha<n\le4\alpha-1$, and write $n=3\alpha+r$ with $1\le r\le\alpha-1$; $T(n,\alpha)$
+has $r$ cliques of order $4$ and $\alpha-r$ of order $3$. Replace two cliques of order $3$ by $X_6$ (possible when
+$\alpha-r\ge2$), or a clique of order $3$ and one of order $4$ by $X_7$ (possible when $r\ge1$); since $r\ge1$, at least
+one replacement is always available, and the data use both. Take a loopless cubic multigraph $Q$ on the
+resulting $\alpha-1$ parts that is $3$-edge-connected. Such a $Q$ exists because $\alpha-1$ is even: the triple edge on
+two parts, $K_4$ on four, and the prism $C_h\square K_2$ on $2h\ge6$. Map the three edges of $Q$ at each part
+injectively to vertices of the part: any three vertices of a clique, and an attaching triple $A$ for $X$. Each edge
+$PR$ of $Q$ becomes an edge of $G$ between the images of its ends. We call these edges \emph{cross edges}; every vertex
+carries at most one.
+
+\begin{theorem}\label{thm:construction}
+The graph $G$ has $n$ vertices, $t(n,\alpha)+\ceil{3\alpha/2}$ edges, independence number $\alpha$, connectivity
+$\kappa(G)\ge3$ and clique cover number $\theta(G)=\alpha+1$. In particular $V(G)$ has no partition into $\alpha$
+cliques, and $s(G)=1$.
+\end{theorem}
+
+The proof uses six facts about the two blocks, each checked exhaustively by a short program (EXP-013,
+\texttt{check\_lemmas.py}): for $X\in\{X_6,X_7\}$ and each attaching triple $A$,
+\begin{enumerate}
+\item[(F1)] $\alpha(X)=2$ and $\theta(X)=3$;
+\item[(F2)] $X-A$ contains two non-adjacent vertices;
+\item[(F3)] $\theta(X-S)+|S|/2\ge5/2$ for every nonempty $S\subseteq A$;
+\item[(F4)] $X_6$ has $8=\e(K_3+K_3)+2$ edges and $X_7$ has $11=\e(K_3+K_4)+2$;
+\item[(F5)] for every set $T$ of at most two vertices, every component of $X-T$ meets $A\setminus T$;
+\item[(F6)] $X$ is $2$-connected.
+\end{enumerate}
+
+\begin{proof}
+\emph{Edges.} The cliques of $G$ span $t(n,\alpha)$ minus the edges of the replaced pair, $X$ spans those edges plus
+two (F4), and there are $3(\alpha-1)/2$ cross edges, which gives~\eqref{eq:count}.
+
+\emph{Independence number.} An independent set meets each clique part in at most one vertex and $X$ in at most two
+(F1), so $\alpha(G)\le\alpha$. For the converse, F2 gives non-adjacent $x,y\in X\setminus A$; neither carries a cross
+edge, so neither has a neighbour outside $X$. The cross edges between clique parts form a graph of maximum degree at
+most one whose vertex classes, the clique parts, have at least $3\ge2$ vertices; by Haxell's theorem \cite{Haxell}
+there is a transversal of the clique parts with no cross edge inside it. With $x$ and $y$ it is an independent set of
+size $\alpha$.
+
+\emph{Connectivity.} Let $S$ be a set of at most two vertices. Every part keeps a vertex, and every clique part minus
+$S$ is a nonempty clique. If $X-S$ is connected and $G-S$ were not, the parts would split into two nonempty sides with
+every edge of $Q$ between them destroyed. But $Q$ has at least three such edges, and each vertex of $S$ destroys at most
+its own cross edge. If $X-S$ is disconnected, then $S\subseteq V(X)$ by F6, so every other part and every cross edge
+not at $X$ survives. Moreover $Q-X$ is connected: a cut vertex $v$ of a $3$-edge-connected cubic multigraph would leave
+a side joined to the rest by at most one of the three edges at $v$. So the parts other than $X$ lie in one component.
+By F5 each component of $X-S$ contains a vertex of $A\setminus S$, whose cross edge leads to a part other than
+$X$, and so into the single component that holds those parts.
+
+\emph{Clique cover number.} The $\alpha-2$ cliques and three cliques covering $X$ (F1) give $\theta(G)\le\alpha+1$. A
+clique of $G$ that meets two parts is a single cross edge, since a third vertex would need a second cross edge at one
+of its ends. Take a partition of $V(G)$ into cliques, let $M'$ be the set of cross edges it uses as cliques, and charge
+each of them $1/2$ to each of its two parts. A part $P$ then carries
+\[
+c(P)=\theta\bigl(P-V(M')\bigr)+\tfrac12\,|P\cap V(M')|.
+\]
+A clique part carries at least $1$: either some vertex is left, needing one more clique, or all of its at least three
+vertices are covered, giving at least $3/2$. For $X$, the covered vertices form a set $S\subseteq A$, and
+$c(X)=\theta(X)=3$ when $S$ is empty and $c(X)\ge5/2$ otherwise, by F3. The partition has $\sum_Pc(P)\ge\alpha-2+5/2$
+cliques, so at least $\alpha+1$.
+
+\emph{Core parameter.} The parts of $G$ have independence numbers summing to $\alpha$, so $p(G)\ge\alpha-1$ by
+Lemma~\ref{lem:p}, and $p(G)\ne\alpha$ because $\theta(G)>\alpha$.
+\end{proof}
+
+\begin{corollary}\label{cor:construction}
+At each of the nine triples with $n\le24$ that it covers, $(10,3,3)$, $(11,3,3)$, $(16,5,3)$ to $(19,5,3)$ and
+$(22,7,3)$ to $(24,7,3)$, the graph $G$ is extremal by Theorem~\ref{thm:values}, without any condition, and has no
+partition into $\alpha$ cliques. If Didin's Theorem~9 holds, $G$ is extremal for every odd $\alpha\ge3$ and $3\alpha<n\le4\alpha-1$;
+then case (a) of Proposition~\ref{prop:where} occurs at every triple where it is allowed, and the bound $n\le4\alpha-1$
+there is sharp.
+\end{corollary}
+
+A program that builds $G$ with the triple edge ($\alpha=3$), $K_4$ ($\alpha=5$) or the prism $C_h\square K_2$
+($\alpha\ge7$) as quotient and checks every property of
+Theorem~\ref{thm:construction} exactly confirms it for every odd $\alpha\le11$ and every admissible order
+(EXP-013, \nconstructed\ graphs). It also confirms that a quotient which is not $3$-edge-connected can fail: the
+circular ladder on four parts, two double edges joined by two single edges, has a cut of two edges, and all
+\nladder\ graphs built on it at $\alpha=5$, twenty random attachments at each order from $16$ to $19$, have the
+conjectured number of edges and independence number $5$ but connectivity $2$ (EXP-013, \texttt{probe\_ladder.py}).

@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Exact values of the Bougard-Joret function in its open second regime up to order 23",
+    "title": "The second Bougard-Joret line to order 24: an exhaustive check, the extremal graphs at 35 triples, and a construction without a clique partition for every odd alpha",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -10,14 +10,15 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Let f(n, α, k) be the minimum number of edges of a k-connected graph of order n with independence number α. Bougard and Joret conjectured f(n, α, k) = t(n, α) + ⌈kα/2⌉ when n &gt; kα, where t(n, α) is the size of the balanced union of α cliques. Das and Gupta disproved the other line of the conjecture and left this second regime open. Bougard and Joret proved the second line only when ⌊n/α⌋ ≥ ⌈kα/2⌉ − α + 2 (for α ≥ 3).</p><p>We compute f exactly at every triple outside that range with α ≥ 3, k ≥ 3 and n ≤ 23: 47 triples. At every one of them the value equals the conjectured one, by complete enumeration of every candidate graph below it (6,224,502,963 candidate graphs in all). The enumeration uses nauty with two pruning rules that are proved sound, and an exact filter checked against an independent implementation. The data support the second line of the conjecture in its smallest open cases; they do not prove it in general.</p><p>Version 0.02 adds the eight open triples of order 23 (7,304,488 candidate graphs).</p><p>Source code, enumeration records and the extremal graphs: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/bougard-joret, experiments EXP-005 to EXP-008).</p>",
+    "description": "<p>Let f(n, α, k) be the least number of edges of a k-connected graph with n vertices and independence number α. Bougard and Joret conjectured f(n, α, k) = t(n, α) + ⌈kα/2⌉ for n &gt; kα, where t(n, α) counts the edges of α disjoint balanced cliques, and Didin has announced a proof of the lower bound. We give an independent exhaustive check.</p><p>At every one of the 53 triples with α ≥ 3, k ≥ 3 and n ≤ 24 outside the range that Bougard and Joret's Proposition 8 settles, f equals the conjectured value, by complete enumeration of 6,223,452,780 candidate graphs with nauty's generator, an independence prune proved sound and an exact filter. For seven pairs (α, k), including (5, 3), (4, 4) and (3, 6), this settles the conjectured value for every n &gt; kα. A validation suite checks every component: rebuilt binaries are byte-identical to the production ones, 26,005 filter decisions on graphs up to order 24 and 27,132 prune decisions agree with an independent implementation, and the generator's splitting and counts agree with known values.</p><p>We list all 246 extremal graphs at 35 triples. Those that split into α cliques have Bougard and Joret's structure; the other 40 do not, and all have k = 3 and α odd. Conditional on Didin's main theorem, we prove that such graphs occur only at k = 3 with α odd and n ≤ 4α − 1, or at six small triples, as the data show. Two blocks recovered from the data give, for every odd α and 3α &lt; n ≤ 4α − 1, an explicit 3-connected graph with the conjectured number of edges, independence number α and no partition into α cliques; it is extremal at order 24 and below, and everywhere if Didin's theorem holds.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/bougard-joret/experiments, EXP-005 to EXP-013).</p>",
     "keywords": [
-      "extremal graph theory",
-      "vertex connectivity",
-      "independence number",
       "Bougard-Joret conjecture",
+      "clique cover number",
       "exhaustive enumeration",
-      "nauty"
+      "extremal graph theory",
+      "independence number",
+      "nauty",
+      "vertex connectivity"
     ],
     "license": "cc-by-4.0",
     "related_identifiers": [
@@ -52,8 +53,9 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.02",
+    "version": "0.03",
     "language": "eng",
-    "publication_date": "2026-11-08"
+    "publication_date": "2026-11-14",
+    "version_notes": "Full rewrite. Order 24 completed (all 53 open-window triples with n <= 24 equal the conjectured value); seven pairs (alpha, k) settled for every n; methods with algorithms and soundness proofs; a validation suite at the production parameters; the complete extremal graphs at 35 triples, 40 of them without a partition into alpha cliques; a proposition, conditional on Didin's main theorem, locating such graphs; and an explicit construction of them for every odd alpha. Correction: versions 0.01 and 0.02 described the second line as open outside Bougard and Joret's range without citing Didin's preprint (Zenodo 10.5281/zenodo.22831382, under review), which claims its lower bound for every n > k alpha; this version cites it and positions the enumeration as an independent check."
   }
 }

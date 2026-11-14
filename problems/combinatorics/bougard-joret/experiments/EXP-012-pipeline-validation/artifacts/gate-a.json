@@ -1,0 +1,954 @@
+{
+ "graphs": 3519,
+ "decisions": 26005,
+ "kept": 5703,
+ "disagreements": 0,
+ "max_k": 9,
+ "groups": [
+  {
+   "a": 1,
+   "k": 1,
+   "graphs": 15,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 15 kept 0"
+  },
+  {
+   "a": 1,
+   "k": 2,
+   "graphs": 22,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 22 kept 0"
+  },
+  {
+   "a": 1,
+   "k": 3,
+   "graphs": 40,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 40 kept 0"
+  },
+  {
+   "a": 1,
+   "k": 4,
+   "graphs": 61,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 61 kept 0"
+  },
+  {
+   "a": 1,
+   "k": 5,
+   "graphs": 94,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 94 kept 0"
+  },
+  {
+   "a": 1,
+   "k": 6,
+   "graphs": 127,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 127 kept 0"
+  },
+  {
+   "a": 1,
+   "k": 7,
+   "graphs": 148,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 148 kept 0"
+  },
+  {
+   "a": 1,
+   "k": 8,
+   "graphs": 144,
+   "kept": 13,
+   "expected": 13,
+   "disagreements": 0,
+   "stderr": "read 144 kept 13"
+  },
+  {
+   "a": 1,
+   "k": 9,
+   "graphs": 104,
+   "kept": 13,
+   "expected": 13,
+   "disagreements": 0,
+   "stderr": "read 104 kept 13"
+  },
+  {
+   "a": 2,
+   "k": 1,
+   "graphs": 57,
+   "kept": 10,
+   "expected": 10,
+   "disagreements": 0,
+   "stderr": "read 57 kept 10"
+  },
+  {
+   "a": 2,
+   "k": 2,
+   "graphs": 120,
+   "kept": 18,
+   "expected": 18,
+   "disagreements": 0,
+   "stderr": "read 120 kept 18"
+  },
+  {
+   "a": 2,
+   "k": 3,
+   "graphs": 201,
+   "kept": 34,
+   "expected": 34,
+   "disagreements": 0,
+   "stderr": "read 201 kept 34"
+  },
+  {
+   "a": 2,
+   "k": 4,
+   "graphs": 289,
+   "kept": 49,
+   "expected": 49,
+   "disagreements": 0,
+   "stderr": "read 289 kept 49"
+  },
+  {
+   "a": 2,
+   "k": 5,
+   "graphs": 338,
+   "kept": 72,
+   "expected": 72,
+   "disagreements": 0,
+   "stderr": "read 338 kept 72"
+  },
+  {
+   "a": 2,
+   "k": 6,
+   "graphs": 362,
+   "kept": 100,
+   "expected": 100,
+   "disagreements": 0,
+   "stderr": "read 362 kept 100"
+  },
+  {
+   "a": 2,
+   "k": 7,
+   "graphs": 361,
+   "kept": 103,
+   "expected": 103,
+   "disagreements": 0,
+   "stderr": "read 361 kept 103"
+  },
+  {
+   "a": 2,
+   "k": 8,
+   "graphs": 334,
+   "kept": 76,
+   "expected": 76,
+   "disagreements": 0,
+   "stderr": "read 334 kept 76"
+  },
+  {
+   "a": 2,
+   "k": 9,
+   "graphs": 257,
+   "kept": 43,
+   "expected": 43,
+   "disagreements": 0,
+   "stderr": "read 257 kept 43"
+  },
+  {
+   "a": 3,
+   "k": 1,
+   "graphs": 160,
+   "kept": 36,
+   "expected": 36,
+   "disagreements": 0,
+   "stderr": "read 160 kept 36"
+  },
+  {
+   "a": 3,
+   "k": 2,
+   "graphs": 312,
+   "kept": 88,
+   "expected": 88,
+   "disagreements": 0,
+   "stderr": "read 312 kept 88"
+  },
+  {
+   "a": 3,
+   "k": 3,
+   "graphs": 495,
+   "kept": 135,
+   "expected": 135,
+   "disagreements": 0,
+   "stderr": "read 495 kept 135"
+  },
+  {
+   "a": 3,
+   "k": 4,
+   "graphs": 602,
+   "kept": 166,
+   "expected": 166,
+   "disagreements": 0,
+   "stderr": "read 602 kept 166"
+  },
+  {
+   "a": 3,
+   "k": 5,
+   "graphs": 625,
+   "kept": 171,
+   "expected": 171,
+   "disagreements": 0,
+   "stderr": "read 625 kept 171"
+  },
+  {
+   "a": 3,
+   "k": 6,
+   "graphs": 575,
+   "kept": 142,
+   "expected": 142,
+   "disagreements": 0,
+   "stderr": "read 575 kept 142"
+  },
+  {
+   "a": 3,
+   "k": 7,
+   "graphs": 567,
+   "kept": 135,
+   "expected": 135,
+   "disagreements": 0,
+   "stderr": "read 567 kept 135"
+  },
+  {
+   "a": 3,
+   "k": 8,
+   "graphs": 486,
+   "kept": 126,
+   "expected": 126,
+   "disagreements": 0,
+   "stderr": "read 486 kept 126"
+  },
+  {
+   "a": 3,
+   "k": 9,
+   "graphs": 375,
+   "kept": 82,
+   "expected": 82,
+   "disagreements": 0,
+   "stderr": "read 375 kept 82"
+  },
+  {
+   "a": 4,
+   "k": 1,
+   "graphs": 305,
+   "kept": 85,
+   "expected": 85,
+   "disagreements": 0,
+   "stderr": "read 305 kept 85"
+  },
+  {
+   "a": 4,
+   "k": 2,
+   "graphs": 609,
+   "kept": 167,
+   "expected": 167,
+   "disagreements": 0,
+   "stderr": "read 609 kept 167"
+  },
+  {
+   "a": 4,
+   "k": 3,
+   "graphs": 803,
+   "kept": 234,
+   "expected": 234,
+   "disagreements": 0,
+   "stderr": "read 803 kept 234"
+  },
+  {
+   "a": 4,
+   "k": 4,
+   "graphs": 849,
+   "kept": 206,
+   "expected": 206,
+   "disagreements": 0,
+   "stderr": "read 849 kept 206"
+  },
+  {
+   "a": 4,
+   "k": 5,
+   "graphs": 701,
+   "kept": 160,
+   "expected": 160,
+   "disagreements": 0,
+   "stderr": "read 701 kept 160"
+  },
+  {
+   "a": 4,
+   "k": 6,
+   "graphs": 585,
+   "kept": 134,
+   "expected": 134,
+   "disagreements": 0,
+   "stderr": "read 585 kept 134"
+  },
+  {
+   "a": 4,
+   "k": 7,
+   "graphs": 559,
+   "kept": 125,
+   "expected": 125,
+   "disagreements": 0,
+   "stderr": "read 559 kept 125"
+  },
+  {
+   "a": 4,
+   "k": 8,
+   "graphs": 472,
+   "kept": 112,
+   "expected": 112,
+   "disagreements": 0,
+   "stderr": "read 472 kept 112"
+  },
+  {
+   "a": 4,
+   "k": 9,
+   "graphs": 368,
+   "kept": 59,
+   "expected": 59,
+   "disagreements": 0,
+   "stderr": "read 368 kept 59"
+  },
+  {
+   "a": 5,
+   "k": 1,
+   "graphs": 419,
+   "kept": 130,
+   "expected": 130,
+   "disagreements": 0,
+   "stderr": "read 419 kept 130"
+  },
+  {
+   "a": 5,
+   "k": 2,
+   "graphs": 667,
+   "kept": 277,
+   "expected": 277,
+   "disagreements": 0,
+   "stderr": "read 667 kept 277"
+  },
+  {
+   "a": 5,
+   "k": 3,
+   "graphs": 825,
+   "kept": 260,
+   "expected": 260,
+   "disagreements": 0,
+   "stderr": "read 825 kept 260"
+  },
+  {
+   "a": 5,
+   "k": 4,
+   "graphs": 794,
+   "kept": 119,
+   "expected": 119,
+   "disagreements": 0,
+   "stderr": "read 794 kept 119"
+  },
+  {
+   "a": 5,
+   "k": 5,
+   "graphs": 630,
+   "kept": 99,
+   "expected": 99,
+   "disagreements": 0,
+   "stderr": "read 630 kept 99"
+  },
+  {
+   "a": 5,
+   "k": 6,
+   "graphs": 478,
+   "kept": 89,
+   "expected": 89,
+   "disagreements": 0,
+   "stderr": "read 478 kept 89"
+  },
+  {
+   "a": 5,
+   "k": 7,
+   "graphs": 464,
+   "kept": 89,
+   "expected": 89,
+   "disagreements": 0,
+   "stderr": "read 464 kept 89"
+  },
+  {
+   "a": 5,
+   "k": 8,
+   "graphs": 353,
+   "kept": 79,
+   "expected": 79,
+   "disagreements": 0,
+   "stderr": "read 353 kept 79"
+  },
+  {
+   "a": 5,
+   "k": 9,
+   "graphs": 259,
+   "kept": 33,
+   "expected": 33,
+   "disagreements": 0,
+   "stderr": "read 259 kept 33"
+  },
+  {
+   "a": 6,
+   "k": 1,
+   "graphs": 405,
+   "kept": 100,
+   "expected": 100,
+   "disagreements": 0,
+   "stderr": "read 405 kept 100"
+  },
+  {
+   "a": 6,
+   "k": 2,
+   "graphs": 554,
+   "kept": 111,
+   "expected": 111,
+   "disagreements": 0,
+   "stderr": "read 554 kept 111"
+  },
+  {
+   "a": 6,
+   "k": 3,
+   "graphs": 616,
+   "kept": 128,
+   "expected": 128,
+   "disagreements": 0,
+   "stderr": "read 616 kept 128"
+  },
+  {
+   "a": 6,
+   "k": 4,
+   "graphs": 560,
+   "kept": 117,
+   "expected": 117,
+   "disagreements": 0,
+   "stderr": "read 560 kept 117"
+  },
+  {
+   "a": 6,
+   "k": 5,
+   "graphs": 423,
+   "kept": 101,
+   "expected": 101,
+   "disagreements": 0,
+   "stderr": "read 423 kept 101"
+  },
+  {
+   "a": 6,
+   "k": 6,
+   "graphs": 328,
+   "kept": 83,
+   "expected": 83,
+   "disagreements": 0,
+   "stderr": "read 328 kept 83"
+  },
+  {
+   "a": 6,
+   "k": 7,
+   "graphs": 307,
+   "kept": 62,
+   "expected": 62,
+   "disagreements": 0,
+   "stderr": "read 307 kept 62"
+  },
+  {
+   "a": 6,
+   "k": 8,
+   "graphs": 207,
+   "kept": 44,
+   "expected": 44,
+   "disagreements": 0,
+   "stderr": "read 207 kept 44"
+  },
+  {
+   "a": 6,
+   "k": 9,
+   "graphs": 137,
+   "kept": 9,
+   "expected": 9,
+   "disagreements": 0,
+   "stderr": "read 137 kept 9"
+  },
+  {
+   "a": 7,
+   "k": 1,
+   "graphs": 331,
+   "kept": 50,
+   "expected": 50,
+   "disagreements": 0,
+   "stderr": "read 331 kept 50"
+  },
+  {
+   "a": 7,
+   "k": 2,
+   "graphs": 305,
+   "kept": 58,
+   "expected": 58,
+   "disagreements": 0,
+   "stderr": "read 305 kept 58"
+  },
+  {
+   "a": 7,
+   "k": 3,
+   "graphs": 349,
+   "kept": 56,
+   "expected": 56,
+   "disagreements": 0,
+   "stderr": "read 349 kept 56"
+  },
+  {
+   "a": 7,
+   "k": 4,
+   "graphs": 326,
+   "kept": 50,
+   "expected": 50,
+   "disagreements": 0,
+   "stderr": "read 326 kept 50"
+  },
+  {
+   "a": 7,
+   "k": 5,
+   "graphs": 316,
+   "kept": 53,
+   "expected": 53,
+   "disagreements": 0,
+   "stderr": "read 316 kept 53"
+  },
+  {
+   "a": 7,
+   "k": 6,
+   "graphs": 225,
+   "kept": 40,
+   "expected": 40,
+   "disagreements": 0,
+   "stderr": "read 225 kept 40"
+  },
+  {
+   "a": 7,
+   "k": 7,
+   "graphs": 184,
+   "kept": 19,
+   "expected": 19,
+   "disagreements": 0,
+   "stderr": "read 184 kept 19"
+  },
+  {
+   "a": 7,
+   "k": 8,
+   "graphs": 95,
+   "kept": 9,
+   "expected": 9,
+   "disagreements": 0,
+   "stderr": "read 95 kept 9"
+  },
+  {
+   "a": 7,
+   "k": 9,
+   "graphs": 56,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 56 kept 0"
+  },
+  {
+   "a": 8,
+   "k": 1,
+   "graphs": 219,
+   "kept": 47,
+   "expected": 47,
+   "disagreements": 0,
+   "stderr": "read 219 kept 47"
+  },
+  {
+   "a": 8,
+   "k": 2,
+   "graphs": 201,
+   "kept": 50,
+   "expected": 50,
+   "disagreements": 0,
+   "stderr": "read 201 kept 50"
+  },
+  {
+   "a": 8,
+   "k": 3,
+   "graphs": 231,
+   "kept": 54,
+   "expected": 54,
+   "disagreements": 0,
+   "stderr": "read 231 kept 54"
+  },
+  {
+   "a": 8,
+   "k": 4,
+   "graphs": 202,
+   "kept": 51,
+   "expected": 51,
+   "disagreements": 0,
+   "stderr": "read 202 kept 51"
+  },
+  {
+   "a": 8,
+   "k": 5,
+   "graphs": 173,
+   "kept": 32,
+   "expected": 32,
+   "disagreements": 0,
+   "stderr": "read 173 kept 32"
+  },
+  {
+   "a": 8,
+   "k": 6,
+   "graphs": 101,
+   "kept": 14,
+   "expected": 14,
+   "disagreements": 0,
+   "stderr": "read 101 kept 14"
+  },
+  {
+   "a": 8,
+   "k": 7,
+   "graphs": 67,
+   "kept": 5,
+   "expected": 5,
+   "disagreements": 0,
+   "stderr": "read 67 kept 5"
+  },
+  {
+   "a": 8,
+   "k": 8,
+   "graphs": 24,
+   "kept": 3,
+   "expected": 3,
+   "disagreements": 0,
+   "stderr": "read 24 kept 3"
+  },
+  {
+   "a": 8,
+   "k": 9,
+   "graphs": 12,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 12 kept 0"
+  },
+  {
+   "a": 9,
+   "k": 1,
+   "graphs": 170,
+   "kept": 32,
+   "expected": 32,
+   "disagreements": 0,
+   "stderr": "read 170 kept 32"
+  },
+  {
+   "a": 9,
+   "k": 2,
+   "graphs": 149,
+   "kept": 39,
+   "expected": 39,
+   "disagreements": 0,
+   "stderr": "read 149 kept 39"
+  },
+  {
+   "a": 9,
+   "k": 3,
+   "graphs": 172,
+   "kept": 46,
+   "expected": 46,
+   "disagreements": 0,
+   "stderr": "read 172 kept 46"
+  },
+  {
+   "a": 9,
+   "k": 4,
+   "graphs": 133,
+   "kept": 29,
+   "expected": 29,
+   "disagreements": 0,
+   "stderr": "read 133 kept 29"
+  },
+  {
+   "a": 9,
+   "k": 5,
+   "graphs": 100,
+   "kept": 4,
+   "expected": 4,
+   "disagreements": 0,
+   "stderr": "read 100 kept 4"
+  },
+  {
+   "a": 9,
+   "k": 6,
+   "graphs": 40,
+   "kept": 1,
+   "expected": 1,
+   "disagreements": 0,
+   "stderr": "read 40 kept 1"
+  },
+  {
+   "a": 9,
+   "k": 7,
+   "graphs": 20,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 20 kept 0"
+  },
+  {
+   "a": 9,
+   "k": 8,
+   "graphs": 5,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 5 kept 0"
+  },
+  {
+   "a": 9,
+   "k": 9,
+   "graphs": 3,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 3 kept 0"
+  },
+  {
+   "a": 10,
+   "k": 1,
+   "graphs": 110,
+   "kept": 22,
+   "expected": 22,
+   "disagreements": 0,
+   "stderr": "read 110 kept 22"
+  },
+  {
+   "a": 10,
+   "k": 2,
+   "graphs": 108,
+   "kept": 21,
+   "expected": 21,
+   "disagreements": 0,
+   "stderr": "read 108 kept 21"
+  },
+  {
+   "a": 10,
+   "k": 3,
+   "graphs": 120,
+   "kept": 10,
+   "expected": 10,
+   "disagreements": 0,
+   "stderr": "read 120 kept 10"
+  },
+  {
+   "a": 10,
+   "k": 4,
+   "graphs": 70,
+   "kept": 5,
+   "expected": 5,
+   "disagreements": 0,
+   "stderr": "read 70 kept 5"
+  },
+  {
+   "a": 10,
+   "k": 5,
+   "graphs": 44,
+   "kept": 2,
+   "expected": 2,
+   "disagreements": 0,
+   "stderr": "read 44 kept 2"
+  },
+  {
+   "a": 10,
+   "k": 6,
+   "graphs": 8,
+   "kept": 2,
+   "expected": 2,
+   "disagreements": 0,
+   "stderr": "read 8 kept 2"
+  },
+  {
+   "a": 10,
+   "k": 7,
+   "graphs": 4,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 4 kept 0"
+  },
+  {
+   "a": 11,
+   "k": 1,
+   "graphs": 78,
+   "kept": 24,
+   "expected": 24,
+   "disagreements": 0,
+   "stderr": "read 78 kept 24"
+  },
+  {
+   "a": 11,
+   "k": 2,
+   "graphs": 60,
+   "kept": 24,
+   "expected": 24,
+   "disagreements": 0,
+   "stderr": "read 60 kept 24"
+  },
+  {
+   "a": 11,
+   "k": 3,
+   "graphs": 59,
+   "kept": 10,
+   "expected": 10,
+   "disagreements": 0,
+   "stderr": "read 59 kept 10"
+  },
+  {
+   "a": 11,
+   "k": 4,
+   "graphs": 21,
+   "kept": 6,
+   "expected": 6,
+   "disagreements": 0,
+   "stderr": "read 21 kept 6"
+  },
+  {
+   "a": 11,
+   "k": 5,
+   "graphs": 14,
+   "kept": 2,
+   "expected": 2,
+   "disagreements": 0,
+   "stderr": "read 14 kept 2"
+  },
+  {
+   "a": 11,
+   "k": 6,
+   "graphs": 4,
+   "kept": 1,
+   "expected": 1,
+   "disagreements": 0,
+   "stderr": "read 4 kept 1"
+  },
+  {
+   "a": 11,
+   "k": 7,
+   "graphs": 3,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 3 kept 0"
+  },
+  {
+   "a": 12,
+   "k": 1,
+   "graphs": 38,
+   "kept": 4,
+   "expected": 4,
+   "disagreements": 0,
+   "stderr": "read 38 kept 4"
+  },
+  {
+   "a": 12,
+   "k": 2,
+   "graphs": 33,
+   "kept": 4,
+   "expected": 4,
+   "disagreements": 0,
+   "stderr": "read 33 kept 4"
+  },
+  {
+   "a": 12,
+   "k": 3,
+   "graphs": 33,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 33 kept 0"
+  },
+  {
+   "a": 12,
+   "k": 4,
+   "graphs": 11,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 11 kept 0"
+  },
+  {
+   "a": 12,
+   "k": 5,
+   "graphs": 7,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 7 kept 0"
+  },
+  {
+   "a": 12,
+   "k": 6,
+   "graphs": 2,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 2 kept 0"
+  },
+  {
+   "a": 12,
+   "k": 7,
+   "graphs": 1,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 1 kept 0"
+  },
+  {
+   "a": 13,
+   "k": 1,
+   "graphs": 12,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 12 kept 0"
+  },
+  {
+   "a": 13,
+   "k": 2,
+   "graphs": 4,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 4 kept 0"
+  },
+  {
+   "a": 13,
+   "k": 3,
+   "graphs": 4,
+   "kept": 0,
+   "expected": 0,
+   "disagreements": 0,
+   "stderr": "read 4 kept 0"
+  }
+ ]
+}

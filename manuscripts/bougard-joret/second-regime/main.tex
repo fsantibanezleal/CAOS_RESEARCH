@@ -1,24 +1,35 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1.05in,headheight=14pt]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,longtable,array}
 \usepackage{xcolor}
 \definecolor{linknavy}{RGB}{25,55,125}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
-\usepackage{orcidlink,fancyhdr}
+\usepackage{orcidlink,fancyhdr,placeins}
 \newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newcommand{\e}{\mathrm{e}}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
 \input{numbers.tex}
 
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.02}
-\newcommand{\docdate}{8 November 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.24059677}
+\newcommand{\docversion}{v0.03}
+\newcommand{\docdate}{14 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.24229265}
 \newcommand{\conceptdoi}{10.5281/zenodo.24044537}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -36,10 +47,10 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research \doctype}
-\fancyhead[R]{\small Second regime\textperiodcentered\ \docversion}
+\fancyhead[R]{\small The second Bougard--Joret line\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
-\title{Exact values of the Bougard--Joret function\\in its open second regime up to order 23}
+\title{\papertitle}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
@@ -48,153 +59,996 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \maketitle
 \headerblock
 \begin{abstract}
-Let $f(n,\alpha,k)$ be the minimum number of edges of a $k$-connected graph of order $n$ with independence number
-$\alpha$. Bougard and Joret conjectured $f(n,\alpha,k)=t(n,\alpha)+\lceil k\alpha/2\rceil$ when $n>k\alpha$,
-where $t(n,\alpha)$ is the size of the balanced union of $\alpha$ cliques. Das and Gupta disproved the other line
-of the conjecture and left this second regime open. Bougard and Joret proved the second line only when
-$\lfloor n/\alpha\rfloor\ge\lceil k\alpha/2\rceil-\alpha+2$ (for $\alpha\ge3$). We compute $f$ exactly at every
-triple outside that range with $\alpha\ge3$, $k\ge3$ and $n\le23$: \ntriples\ triples. At every one of them the
-value equals the conjectured one, by complete enumeration of every candidate graph below it
-(\ngraphs\ candidate graphs in all). The enumeration uses nauty with two pruning rules that are proved sound, and an exact filter checked
-against an independent implementation. The data support the second line of the conjecture in its smallest open
-cases; they do not prove it in general.
+Let $f(n,\alpha,k)$ be the least number of edges of a $k$-connected graph with $n$ vertices and independence number
+$\alpha$. Bougard and Joret conjectured $f(n,\alpha,k)=t(n,\alpha)+\lceil k\alpha/2\rceil$ for $n>k\alpha$, where
+$t(n,\alpha)$ counts the edges of $\alpha$ disjoint balanced cliques, and Didin has announced a proof of the lower
+bound. We give an independent exhaustive check. \abstractvalues, by complete enumeration of \ngraphs\ candidate
+graphs with nauty's generator, an independence prune proved sound, and an exact filter. For seven pairs
+$(\alpha,k)$, including $(5,3)$, $(4,4)$ and $(3,6)$, this settles the conjectured value for every $n>k\alpha$. A
+validation suite checks every component: rebuilt binaries are byte-identical to the production ones,
+\gateAdecisions\ filter decisions on graphs up to order 24 and \gateCdecisions\ prune decisions agree with an
+independent implementation, and the generator's splitting and counts agree with known values. We list all
+\nextremal\ extremal graphs at \nexttriples\ triples. Those that split into $\alpha$ cliques have Bougard and Joret's
+structure; the other \nnopart\ do not, and all have $k=3$ and $\alpha$ odd. Conditional on Didin's main theorem, we
+prove that such graphs occur only at $k=3$ with $\alpha$ odd and $n\le4\alpha-1$, or at six small triples, as the
+data show. Two blocks recovered from the data give, for every odd $\alpha$ and $3\alpha<n\le4\alpha-1$, an explicit
+$3$-connected graph with the conjectured number of edges, independence number $\alpha$ and no partition into
+$\alpha$ cliques; it is extremal at order 24 and below, and everywhere if Didin's theorem holds.
 \end{abstract}
 
-\section{Problem and prior work}
+\section{Introduction}\label{sec:intro}
 
-All graphs are finite and simple. Write $\e(G)$ for the number of edges, $\alpha(G)$ for the independence number
-and $\kappa(G)$ for the vertex connectivity. For $n\ge2\alpha$, $n\ge\alpha+k$, $\alpha\ge2$ and $k\ge3$, Bougard
-and Joret conjectured \cite[Conjecture 1]{BJ}
-\[
-f(n,\alpha,k)=\begin{cases}\lceil nk/2\rceil,&n\le k\alpha,\\ t(n,\alpha)+\lceil k\alpha/2\rceil,&n>k\alpha.\end{cases}
-\]
-The upper bound in the second regime holds by their construction: the balanced union of $\alpha$ cliques
-$T(n,\alpha)$ becomes $k$-connected after adding $\lceil k\alpha/2\rceil$ edges without raising the independence
-number \cite[Section 6]{BJ}. Das and Gupta determined the boundary $n=\alpha+k$, which disproves the first line
-(the smallest counterexample is $f(7,3,4)=15$), and left the second regime open \cite{DG}. The first interior shell
-$n=\alpha+k+1$ \cite{Shell} and the value $f(2d+3,2,d+2)=d^2+4d+2$ \cite{Next} lie in the first regime.
-
-\paragraph{What is proved in the second regime.} Bougard and Joret's Proposition 8 states that a 2-connected graph
-with $n\ge3\alpha\ge9$ and at most $t(n,\alpha)+\lfloor n/\alpha\rfloor+\alpha-3$ edges has a vertex partition into
-$\alpha$ cliques \cite{BJ}. A $k$-connected graph with such a partition has at least
-$t(n,\alpha)+\lceil k\alpha/2\rceil$ edges (each clique sends at least $k$ edges out of it). Hence the second line
-holds whenever $\lceil k\alpha/2\rceil-1\le\lfloor n/\alpha\rfloor+\alpha-3$, that is
-\begin{equation}\label{eq:proved}
-\lfloor n/\alpha\rfloor\ \ge\ \lceil k\alpha/2\rceil-\alpha+2\qquad(\alpha\ge3),
+All graphs are finite and simple. For a graph $G$ write $\e(G)$ for its number of edges, $\alpha(G)$ for its
+independence number, $\kappa(G)$ for its vertex connectivity and $\theta(G)$ for its clique cover number, the least
+number of cliques whose vertex sets partition $V(G)$. For integers $n,\alpha,k$ let $f(n,\alpha,k)$ be the least
+number of edges of a $k$-connected graph with $n$ vertices and independence number exactly $\alpha$, and let
+\begin{equation}\label{eq:turan}
+t(n,\alpha)=r\binom{q+1}{2}+(\alpha-r)\binom{q}{2},\qquad n=q\alpha+r,\ 0\le r<\alpha,
 \end{equation}
-and also for $\alpha=2$, $n\ge2k$ \cite{BJ}. The \emph{open window} is the set of second-regime triples with
-$\alpha\ge3$ violating \eqref{eq:proved}. Its smallest members are $(10,3,3)$ and $(11,3,3)$.
+be the number of edges of the Tur\'an-type graph $T(n,\alpha)$, the disjoint union of $\alpha$ cliques whose orders
+differ by at most one. By Tur\'an's theorem \cite{Turan} in its complementary form, every graph with $n$ vertices and
+independence number at most $\alpha$ has at least $t(n,\alpha)$ edges, with equality only for $T(n,\alpha)$.
 
-\section{Method}
+Ore asked for the least size of a connected graph with given order and independence number. Christophe et al.\
+\cite{Graphedron} and Gitler and Valencia \cite{GitlerValencia} settled it independently; Bougard and Joret gave a
+short proof with a description of all extremal graphs, and answered the $2$-connected question in the same way
+\cite[Propositions~5 and~6]{BJ}. For $k\ge3$ they conjectured \cite[Conjecture~1]{BJ} that, for $n\ge2\alpha$,
+$n\ge\alpha+k$, $\alpha\ge2$ and $k\ge3$,
+\begin{equation}\label{eq:conj}
+f(n,\alpha,k)=\begin{cases}\ceil{nk/2},& n\le k\alpha,\\[2pt] t(n,\alpha)+\ceil{k\alpha/2},& n>k\alpha.\end{cases}
+\end{equation}
+The first line is the degree lower bound $\ceil{nk/2}$. The second is an upper bound by construction:
+$T(n,\alpha)$ becomes $k$-connected after adding
+$\ceil{k\alpha/2}$ edges between its cliques without lowering the independence number (Section~\ref{sec:prior}).
+Das and Gupta determined $f$ on the boundary $n=\alpha+k$ and found that the first line fails there, the smallest
+failure being $f(7,3,4)=15>14$ \cite{DG}. The second line is the subject of this paper; we call it the \emph{second
+line} and the triples with $n>k\alpha$ the \emph{second regime}.
 
-For a triple $(n,\alpha,k)$ with conjectured value $c=t(n,\alpha)+\lceil k\alpha/2\rceil$ we decide, for every
-edge count $E<c$ that can occur, whether some graph on $n$ vertices with $E$ edges has independence number
-exactly $\alpha$ and connectivity at least $k$. If none does, $f(n,\alpha,k)\ge c$, and with the construction,
-$f(n,\alpha,k)=c$. Two classical facts bound the edge counts: minimum degree at least $k$ gives
-$E\ge\lceil nk/2\rceil$, and Tur\'an's theorem applied to the complement gives $E\ge t(n,\alpha)$ for independence
-number at most $\alpha$ \cite{Turan}. So only $\lceil k\alpha/2\rceil$ edge counts per triple need to be searched.
+Bougard and Joret proved the second line when $n$ is large compared with $k\alpha^2$: their Proposition~8 forces a
+partition into $\alpha$ cliques below a size threshold, and $k$-connectivity then forces $\ceil{k\alpha/2}$ edges
+between the cliques \cite[p.~12]{BJ}. The triples of the second regime outside that range form what we call the
+\emph{open window}. Didin has since announced a proof of the lower bound $f(n,\alpha,k)\ge t(n,\alpha)+\ceil{k\alpha/2}$
+for every $n>k\alpha$ and $k\ge3$ \cite[Theorem~9]{Didin}, as a consequence of a general Tur\'an-type inequality for
+graphs with a prescribed independence number \cite[Theorem~3]{Didin}; the preprint is under review, and a short
+announcement appears in \cite{DidinMalyshev}. With Bougard and Joret's construction, a correct proof settles the
+second line.
 
-Every graph with $n$ vertices, $E$ edges and minimum degree at least $k$ is generated up to isomorphism by
-\texttt{geng} from nauty~2.8.9 \cite{nauty}, split into disjoint parts. Each graph is tested by an exact filter:
-the independence number by branch and bound on bit sets, and connectivity at least $k$ by deleting every vertex set
-of size less than $k$. Two refinements were added during the work; each is proved sound and was gated before use.
+\paragraph{Contributions.} This paper gives an independent, exhaustive and validated computational check of the
+second line on every open-window triple with $n\le24$, and determines the extremal graphs.
+\begin{enumerate}
+\item \emph{Values.} For every one of the \ntriples\ open-window triples with $\alpha\ge3$, $k\ge3$ and $n\le24$ we
+decide $f(n,\alpha,k)$ by enumerating every candidate graph with fewer edges than the conjectured value
+(Theorem~\ref{thm:values}). The search examines \ngraphs\ graphs in \nhours\ hours of wall-clock time, summed over the edge counts. For
+\nfullpairs\ pairs $(\alpha,k)$ the window ends by order 24, so the second line holds there for every $n>k\alpha$
+(Corollary~\ref{cor:fullpairs}).
+\item \emph{Method and soundness.} The search is a finite decision procedure (Proposition~\ref{prop:finite}) built
+from nauty's generator \texttt{geng} \cite{nauty,McKay98}, a pruning hook that discards partial graphs with too large
+an independent set (Lemma~\ref{lem:prune}), and an exact filter (Algorithms~\ref{alg:mis} and~\ref{alg:kconn}).
+\item \emph{Validation.} Every component is tested against an independent implementation, known counts or a
+byte-for-byte rebuild of the binaries, on slices of the production streams up to order 23 and on constructed graphs up
+to order 24 (Section~\ref{sec:validation}).
+\item \emph{Extremal graphs.} At \nexttriples\ triples we list every extremal graph. A short lemma shows that an
+extremal graph that splits into $\alpha$ cliques has exactly Bougard and Joret's structure
+(Lemma~\ref{lem:partition-structure}); \nnopart\ of the \nextremal\ extremal graphs do not split, and have
+$\theta(G)=\alpha+1$.
+\item \emph{Where the other extremal graphs live.} Conditional on Didin's main theorem, an extremal graph without a
+partition into $\alpha$ cliques exists only for $k=3$, $\alpha$ odd and $n\le4\alpha-1$, or at six triples with
+$n=k\alpha+1$ or $n=k\alpha+2$ (Proposition~\ref{prop:where}). Every observed one lies in that set, and the
+prediction was frozen before the last \nphasetwotriples\ triples were analysed.
+\item \emph{A construction for every odd $\alpha$.} The enumerated graphs without a partition consist of
+$\alpha-2$ cliques and one of two small blocks of independence number $2$. Gluing them along a
+$3$-edge-connected cubic quotient gives, for every odd $\alpha\ge3$ and $3\alpha<n\le4\alpha-1$, a $3$-connected
+graph with $t(n,\alpha)+\ceil{3\alpha/2}$ edges, independence number $\alpha$ and clique cover number $\alpha+1$
+(Theorem~\ref{thm:construction}). It is extremal, without condition, at the nine such triples with $n\le24$, and at
+all of them if Didin's Theorem~9 holds.
+\end{enumerate}
 
-\begin{lemma}[early stop]\label{lem:early}
-Rejecting a graph as soon as the search finds an independent set of size $\alpha+1$ leaves the decision
-``$\alpha(G)=\alpha$'' unchanged.
-\end{lemma}
-\begin{proof}
-Such a graph has $\alpha(G)\ge\alpha+1$ and is rejected by the full computation as well; otherwise the search
-runs to the end and computes $\alpha(G)$ exactly.
-\end{proof}
+\paragraph{Organisation.} Section~\ref{sec:prior} states the prior results we use. Section~\ref{sec:window} derives
+the open window. Section~\ref{sec:method} describes the search and proves it sound and complete.
+Section~\ref{sec:validation} reports the validation. Section~\ref{sec:values} gives the values and the cost.
+Section~\ref{sec:extremal} studies the extremal graphs, and Section~\ref{sec:construction} builds them for every odd
+$\alpha$. Section~\ref{sec:discussion} discusses limitations and open questions, Section~\ref{sec:conclusions} concludes,
+and Section~\ref{sec:repro} gives the data and the commands.
 
-\begin{lemma}[independence prune]\label{lem:prune}
-During generation, a partial graph that already contains an independent set of size $\alpha+1$ can be discarded
-with all its extensions.
-\end{lemma}
-\begin{proof}
-\texttt{geng} extends a graph by adding vertices only, so the partial graph is an induced subgraph of each of its
-completions. The independence number of an induced subgraph never exceeds that of the graph, so every completion
-has independence number at least $\alpha+1$ and is rejected.
-\end{proof}
+\section{Prior results}\label{sec:prior}
 
-With Lemma~\ref{lem:prune}, the $(17,5,3)$ search at $E=27$ dropped from $1{,}040$ seconds
-($35{,}329{,}226$ candidates) to under a second ($482$ candidates), with the same answer.
-
-\section{Validation}
-
+\paragraph{Bougard and Joret.} A \emph{tree-linking} of a family of graphs adds edges between them along a tree;
+a \emph{cycle-linking} adds them along a cycle. For $k\in\{1,2\}$ Bougard and Joret determined $f$ and all extremal
+graphs: $f(n,\alpha,1)=t(n,\alpha)+\alpha-1$ for $n\ge\alpha+1$ \cite[Proposition~5]{BJ}, and
+$f(n,\alpha,2)=t(n,\alpha)+\alpha$ for $n\ge2\alpha+1$ outside two exceptional cases \cite[Proposition~6]{BJ}.
+The step to $k\ge3$ rests on two partition statements.
 \begin{itemize}
-\item The filter agrees with an independent implementation (networkx) on all $12{,}346$ graphs on 8 vertices, for
-  every $\alpha\le6$ and $k\le5$, before and after Lemma~\ref{lem:early}.
-\item Known values are reproduced: $f(7,3,4)=15$ \cite{DG}, $f(6,2,3)=9$, $f(6,2,4)=12$, and the second-regime
-  value $f(12,3,3)=23$ inside the proved range \eqref{eq:proved}.
-\item The generator with Lemma~\ref{lem:prune} reproduces the numbers of qualifying graphs found without it at
-  twelve known cases, from $(7,3,4)$ to $(17,5,3)$.
-\item Connected-graph counts of \texttt{geng} agree with OEIS A001349 where checked, and the 4,207 graphs at
-  $(16,5,3)$, $E=24$ are the cubic graphs on 16 vertices (OEIS A005638).
+\item \cite[Proposition~7]{BJ}: a connected graph $G$ with $n\ge3\alpha$ and
+$\e(G)\le t(n,\alpha)+\floor{n/\alpha}+\alpha-4$, where $\alpha=\alpha(G)$, has a partition of $V(G)$ into $\alpha$
+cliques.
+\item \cite[Proposition~8]{BJ}: a $2$-connected graph $G$ with $n\ge3\alpha\ge9$ and
+$\e(G)\le t(n,\alpha)+\floor{n/\alpha}+\alpha-3$ has a partition of $V(G)$ into $\alpha$ cliques. The bound is best
+possible: Bougard and Joret modify $T(n,\alpha)$ into a graph $\widetilde T(n,\alpha)$ by joining a new vertex to
+every vertex of a smallest clique and pasting a second clique onto the result along one of its edges, and every
+cycle-linking of $\widetilde T(n,\alpha)$ has one more edge and no such partition \cite[pp.~10--11]{BJ}.
 \end{itemize}
+The upper bound of the second line is Bougard and Joret's remark that for $n>k\alpha$ the graph $T(n,\alpha)$ can be
+made $k$-connected by adding $\ceil{k\alpha/2}$ edges without decreasing its independence number
+\cite[Section~6]{BJ}. We call the graphs obtained this way \emph{Bougard--Joret graphs}: a balanced union of
+$\alpha$ cliques with $\ceil{k\alpha/2}$ edges between them, $k$-connected and with independence number $\alpha$.
+Explicit examples at every triple of Table~\ref{tab:structure} are among the extremal graphs listed there.
 
-\section{Results}
+\paragraph{Das and Gupta.} For $\alpha\ge2$ and $k\ge\max(3,\alpha)$, $f(\alpha+k,\alpha,k)=\alpha k+m(k,k-\alpha)$,
+where $m(p,d)$ is the least size of a $d$-connected graph on $p$ vertices \cite[Theorem~3.1]{DG}; in particular
+$f(2k-1,k-1,k)=k^2-1$ for $k\ge4$, which refutes the first line \cite[Corollary~3.3]{DG}. They also note that a
+$k$-connected graph with a partition into $\alpha$ cliques has at least $t(n,\alpha)+\ceil{k\alpha/2}$ edges
+\cite[Proposition~4.2]{DG}, and that a proof of the second line must either establish such a partition or bound the
+size without it.
 
-\begin{theorem}[MV]
-At each of the \ntriples\ triples of the open window with $n\le23$ (Table~\ref{tab:values}), no graph with fewer
-edges than the conjectured value has independence number $\alpha$ and connectivity at least $k$; hence
-$f(n,\alpha,k)=t(n,\alpha)+\lceil k\alpha/2\rceil$ at every one of them.
-\end{theorem}
+\paragraph{Didin.} For a graph $G$ with independence number $\alpha$, an \emph{$\alpha$-core} is a spanning subgraph
+$H$ with $\alpha(H)=\alpha$ in which every edge is critical (deleting it raises the independence number). Let $p(G)$
+be the largest number of components of an $\alpha$-core of $G$ and $s(G)=\alpha-p(G)$. Didin's main theorem
+\cite[Theorem~3]{Didin} states that every graph $G$ with $n\ge\max(\alpha+1,p(G))$ vertices satisfies
+\begin{equation}\label{eq:didin}
+\e(G)\ \ge\ t\bigl(n+s(G),\alpha\bigr)-s(G),
+\end{equation}
+and his Theorem~9 derives the lower bound of the second line for $b$-connected graphs, $b\ge3$, through an edge-cut
+form with two tight exceptions, $\alpha=2$, $n=2b+1$ and $(b,\alpha,n)=(3,3,10)$, which he shows have $2$-vertex cuts
+\cite[Theorem~10, Lemmas~17 and~18]{Didin}. The preprint does not characterise the graphs that attain Theorem~9.
+We use only the statements, which we did not audit; every result below that depends on them is marked as conditional.
 
-\begin{table}[p]
-\centering\footnotesize
-\input{table.tex}
-\caption{The open window up to order 23. Column $f$: the exact value (the conjectured value when the search below it
-is complete). ``Edges searched'': the edge counts below the conjectured value that can occur. ``Graphs below'': the
-candidate graphs generated at those edge counts (with the generator in use; the counts after
-Lemma~\ref{lem:prune} are smaller). ``Extremal graphs'': the qualifying graphs at the conjectured value when that edge
-count was also enumerated; otherwise the attaining construction \cite{BJ}.}
-\label{tab:values}
+\paragraph{Didin's method.} Didin's proof of his main theorem moves a graph, step by step, towards its associated
+Tur\'an graph $T(n+s,\alpha)$ by \emph{appropriate transformations}, which preserve $\alpha$ and $n-p$ and never
+increase a cost $x(G)$; the theorem is the statement $x(G)\ge0$, with equality exactly for the graphs he calls tight
+\cite[Theorem~3]{Didin}. The basic step splits a connected $\alpha$-critical graph at a vertex, adding a simple vertex
+for each component of the $\alpha$-core of what remains \cite[Theorem~5]{Didin}, and a series of splits ends at a
+disjoint union of cliques \cite[Lemma~1]{Didin}. Tight graphs are rebuilt from $T(n+s,\alpha)$ by a pasting move
+\cite[Lemma~2]{Didin} that goes back to Wessel's description of edge-critical graphs with connectivity two
+\cite{Wessel}. For $b$-connected graphs he adds that the $p$ components of an $\alpha$-core are joined by at least
+$\ceil{bp/2}$ edges, which is the inequality chain used in Proposition~\ref{prop:where} below.
+
+\paragraph{Other work.} The second line is recorded as open in \cite{LiuNing}. Wang uses the $2$-connected case of
+Bougard and Joret to compare balanced cycle-linkings with other $2$-connected graphs by their numbers of independent
+sets \cite{Wang}. The tree strip $n=2k$, $\alpha=k-1$, and the first interior shell $n=\alpha+k+1$ \cite{Shell}, and the bracket $f(2d+3,2,d+2)=d^2+4d+2$ \cite{Next} lie in the first regime. The extremal problem without
+connectivity is Tur\'an's theorem \cite{Turan}; Brouwer showed that a graph with independence number
+$\alpha$ and at most $t(n,\alpha)+\floor{n/\alpha}-2$ edges has a partition of its vertex set into $\alpha$ cliques,
+when $n>2\alpha$ \cite{Brouwer}; Bougard and Joret restate the theorem in \cite[Section~5]{BJ} and note
+that the result follows from a theorem of Hanson and Toft \cite{HansonToft}. Bougard and Joret improve this
+bound for connected and $2$-connected graphs (their Propositions~7 and~8), and their proofs use Brooks' theorem
+\cite{Brooks}, Wessel's structure of edge-critical graphs with connectivity two \cite{Wessel} and bounds of
+Erd\H{o}s and Gallai \cite{ErdosGallai}.
+
+Exhaustive generation has settled other small extremal values, for instance the Ramsey number $R(4,5)=25$
+\cite{McKayRadziszowski}. Dedicated generators, such as the one for cubic graphs \cite{BGMcubic}, and searches for large
+independent sets in cubic graphs \cite{CGJcubic} follow the same pattern: a complete generator, a pruning rule proved
+sound, and an exact test. The search here is an instance of that pattern, built on nauty's general generator.
+
+\section{The open window}\label{sec:window}
+
+\begin{lemma}\label{lem:window}
+Let $\alpha\ge3$, $k\ge3$ and $n>k\alpha$. If $\floor{n/\alpha}\ge\ceil{k\alpha/2}-\alpha+2$, then
+$f(n,\alpha,k)=t(n,\alpha)+\ceil{k\alpha/2}$.
+\end{lemma}
+
+\begin{proof}
+The upper bound is the construction of Section~\ref{sec:prior}. For the lower bound let $G$ be $k$-connected with
+$n$ vertices, $\alpha(G)=\alpha$ and $\e(G)\le t(n,\alpha)+\ceil{k\alpha/2}-1$. The hypothesis gives
+$\ceil{k\alpha/2}-1\le\floor{n/\alpha}+\alpha-3$, so $\e(G)\le t(n,\alpha)+\floor{n/\alpha}+\alpha-3$; since
+$n>k\alpha\ge3\alpha\ge9$ and $G$ is $2$-connected, Proposition~8 of \cite{BJ} gives a partition of $V(G)$ into
+$\alpha$ cliques $C_1,\dots,C_\alpha$, all nonempty because $\alpha(G)=\alpha$. The edges inside the cliques number
+$\sum_i\binom{|C_i|}{2}\ge t(n,\alpha)$, because $x\mapsto\binom{x}{2}$ is convex and the sizes sum to $n$, so the sum
+is least when the sizes are balanced. Each $C_i$ is a proper subset of $V(G)$, so the set $\partial C_i$ of edges
+with exactly one end in $C_i$ has $|\partial C_i|\ge\kappa(G)\ge k$ (the edge connectivity of a graph is at least its vertex connectivity, by Whitney's
+inequality $\lambda(G)\ge\kappa(G)$ \cite{Whitney}). Every
+edge between cliques lies in exactly two of the sets $\partial C_i$, so there are at least $\ceil{k\alpha/2}$ of them.
+Hence $\e(G)\ge t(n,\alpha)+\ceil{k\alpha/2}$, a contradiction.
+\end{proof}
+
+Bougard and Joret note this consequence of Proposition~8 \cite[p.~12]{BJ}. The \emph{open window} is the set of
+triples $(n,\alpha,k)$ with $\alpha\ge3$, $k\ge3$, $n>k\alpha$, $n\ge2\alpha$, $n\ge\alpha+k$ and
+\begin{equation}\label{eq:window}
+\floor{n/\alpha}\ \le\ \ceil{k\alpha/2}-\alpha+1 .
+\end{equation}
+For fixed $(\alpha,k)$ the window is the finite interval $k\alpha<n<\alpha(\ceil{k\alpha/2}-\alpha+2)$. It is
+nonempty for all $\alpha,k\ge3$: at $n=k\alpha+1$ condition~\eqref{eq:window} reads
+$k\le\ceil{k\alpha/2}-\alpha+1$, and $\ceil{k\alpha/2}-\alpha+1-k=\ceil{((k-2)(\alpha-2)-2)/2}\ge0$. Its length grows like $(k-2)\alpha^2/2$, so the window is infinite in total. Table~\ref{tab:window} and Figure~\ref{fig:window} list it by order up to $n=30$: it has \nwindowthirty\ triples there, and
+it grows roughly linearly with $n$. Didin's Theorem~9, if correct, closes it entirely.
+
+The extent of the window grows quickly with $\alpha$. For $(\alpha,k)=(3,3)$ it is the two orders $10$ and $11$; for
+$(4,3)$ the orders $13$ to $15$; for $(3,4)$ the orders $13$ and $14$; for $(3,5)$ the orders $16$ to $20$; for $(5,3)$
+the orders $16$ to $24$, so that this pair is closed by the present enumeration. For $(7,3)$ the window runs from $22$
+to $41$, and only its first three orders are decided here; in general its length is
+\begin{equation}\label{eq:windowlength}
+\alpha\Bigl(\ceil{\frac{k\alpha}{2}}-\alpha+2\Bigr)-k\alpha-1,
+\end{equation}
+which is of order $(k-2)\alpha^2/2$. The window is therefore not a finite list of exceptions that a computation can exhaust:
+every pair $(\alpha,k)$ contributes, and the pairs with larger $\alpha$ contribute longer intervals. For seven pairs the window ends by order 24
+(Corollary~\ref{cor:fullpairs}). What a computation
+can do is decide its first orders, test the conjecture where the margin between Proposition~8 and the conjectured
+value is widest relative to the order, and recover the extremal graphs there, which is the purpose of the following
+sections.
+
+\begin{table}[t]
+\centering\small
+\caption{The open window by order $n$: the number of open-window triples, the number decided in this paper, and the
+pairs $(\alpha,k)$. Every triple with $n\le24$ is decided except where the last column of Table~\ref{tab:values} gives
+a bound.}
+\label{tab:window}
+\input{window.tex}
 \end{table}
 
-\section{Scope}
+\begin{figure}[t]
+\centering
+\input{window-map.tex}
+\caption{The open window up to order 30. Each mark is a triple $(n,\alpha,k)$ with $n>k\alpha$ outside the range of
+Lemma~\ref{lem:window}; filled marks are decided in this paper. For fixed $(\alpha,k)$ the window is an interval of
+orders starting at $k\alpha+1$.}
+\label{fig:window}
+\end{figure}
 
-The open window is infinite; these computations cover its members of order at most 23 and nothing beyond. The
-results are exact finite statements, verified by machine; the general second line of the conjecture remains open.
-The extremal graphs found at the conjectured values are listed in the computational record \cite{Record}.
+\section{Method}\label{sec:method}
 
-\paragraph{Data availability.}
-Code, records and the lists of extremal graphs are in the repository \cite{Record}, experiments EXP-005 to EXP-008
-under \path{problems/combinatorics/bougard-joret/experiments/}.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[node distance=4mm,box/.style={draw,rounded corners,align=center,font=\footnotesize,
+  minimum height=9mm,inner sep=3pt},arr/.style={-latex,thick}]
+\node[box] (t) {triple $(n,\alpha,k)$\\ $c$, $\ell$};
+\node[box,right=of t] (g) {\texttt{geng\_a$\alpha$}\\ $-d k$, $E{:}E$, $r/M$};
+\node[box,right=of g] (h) {hook: drop\\ $\alpha(\text{partial})>\alpha$};
+\node[box,right=of h] (f) {\texttt{filter2}: $\alpha(G)=\alpha$\\ and $\kappa(G)\ge k$};
+\node[box,right=of f] (r) {record\\ \texttt{enum.jsonl}};
+\draw[arr] (t) -- (g); \draw[arr] (g) -- (h); \draw[arr] (h) -- (f); \draw[arr] (f) -- (r);
+\node[box,below=8mm of f] (x) {extremal graphs\\ at $E=c$};
+\node[box,left=of x] (a) {NetworkX recheck,\\ partitions, $p(G)$};
+\node[box,right=of x] (v) {validation\\ Gates A to F};
+\draw[arr] (f) -- (x); \draw[arr] (x) -- (a); \draw[arr,dashed] (v) -- (f);
+\end{tikzpicture}
+\caption{The search and its checks. For each edge count $E$ from $\ell$ to $c-1$, $M$ parts of the pruned generator
+stream into the exact filter; a kept graph would decide $f=E$. The extremal graphs at $E=c$ are regenerated and
+analysed by code independent of the C programs, and Gates A to F test every component at the production
+parameters.}
+\label{fig:pipeline}
+\end{figure}
 
-\paragraph{Declaration of generative AI use.} Generative AI tools were used for literature triage, derivation
-exploration, code drafting and internal review of the text. The author reviewed and verified all content and takes
-full responsibility for the work.
+Figure~\ref{fig:pipeline} shows the pieces and how they connect.
 
-{\small
-\begin{thebibliography}{9}
-\bibitem{BJ} N. Bougard and G. Joret.
-\emph{Tur\'an's theorem and $k$-connected graphs}.
-Journal of Graph Theory 58 (2008), 1--13.
-\href{https://doi.org/10.1002/jgt.20289}{doi:10.1002/jgt.20289}.
-\bibitem{DG} J. Das and S. Gupta.
-\emph{Counterexample to the Bougard--Joret Conjecture}.
-\href{https://arxiv.org/abs/2608.18828}{arXiv:2608.18828v1}, 2026.
-\bibitem{Shell} F. Santib\'a\~nez-Leal.
-\emph{The first interior shell of the Bougard--Joret extremal problem}.
-CAOS Research preprint, 2026.
-\href{https://doi.org/10.5281/zenodo.22315251}{doi:10.5281/zenodo.22315251}.
-\bibitem{Next} F. Santib\'a\~nez-Leal.
-\emph{The next matching level for triangle-free graphs with bounded degree and an exact Bougard--Joret value}.
-CAOS Research preprint, 2026.
-\href{https://doi.org/10.5281/zenodo.22343021}{doi:10.5281/zenodo.22343021}.
-\bibitem{Turan} P. Tur\'an.
-\emph{Eine Extremalaufgabe aus der Graphentheorie}.
-Matematikai \'es Fizikai Lapok 48 (1941), 436--452.
-\bibitem{nauty} B. D. McKay and A. Piperno.
-\emph{Practical graph isomorphism, II}.
-Journal of Symbolic Computation 60 (2014), 94--112.
-\href{https://doi.org/10.1016/j.jsc.2013.09.003}{doi:10.1016/j.jsc.2013.09.003}.
-\bibitem{Record} F. Santib\'a\~nez-Leal.
-\emph{CAOS Research, Bougard--Joret EXP-005 to EXP-008: the open second regime}.
-Code, enumeration records and extremal graphs, 2026.
-\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/combinatorics/bougard-joret/experiments}{Public experiment records}.
-\end{thebibliography}
+\subsection{A finite decision procedure}
+
+\begin{proposition}\label{prop:finite}
+Let $(n,\alpha,k)$ be in the second regime, and let
+\begin{equation}\label{eq:range}
+c=t(n,\alpha)+\ceil{\frac{k\alpha}{2}},\qquad \ell=\max\Bigl(\ceil{\frac{nk}{2}},\ t(n,\alpha)\Bigr).
+\end{equation}
+Then $f(n,\alpha,k)=c$ if and only if, for every $E\in\{\ell,\dots,c-1\}$, no graph exists with $n$ vertices, $E$
+edges, minimum degree at least $k$, independence number exactly $\alpha$ and connectivity at least $k$. Otherwise
+$f(n,\alpha,k)$ is the least such $E$.
+\end{proposition}
+
+\begin{proof}
+A $k$-connected graph has minimum degree at least $k$, hence at least $\ceil{nk/2}$ edges; a graph with independence
+number $\alpha$ has at least $t(n,\alpha)$ edges by Tur\'an's theorem. So every qualifying graph has at least $\ell$
+edges, and the construction of Section~\ref{sec:prior} gives one with $c$ edges. The least qualifying size is
+therefore either some $E\in[\ell,c-1]$ or $c$.
+\end{proof}
+
+The number of edge counts to search is $c-\ell$, at most $\ceil{k\alpha/2}$; it ranges from one, at $(13,4,3)$
+and $(19,6,3)$, to eleven, at $(24,3,7)$, in the window up to order 24 (Table~\ref{tab:values}).
+Proposition~\ref{prop:finite} turns the conjecture at one triple into finitely many existence questions, one per edge
+count, each answered by a complete list of candidate graphs. A negative answer at every count below $c$ is a proof
+that $f=c$, given the completeness of that list; no sampling or heuristic enters. The count $E=c$ itself is not needed
+for the value, but the same pipeline run at $E=c$ lists the extremal graphs (Section~\ref{sec:extremal}).
+
+\subsection{Generation}
+
+The candidate graphs come from \texttt{geng} of nauty 2.8.9 \cite{nauty}, which generates one representative of every
+isomorphism class of graphs with given order, by canonical construction path \cite{McKay98}. We call it as
+\texttt{geng -q -d$k$ $n$ $E$:$E$ $r$/$M$}: \texttt{-d$k$} restricts the output to minimum degree at least $k$,
+\texttt{$E$:$E$} to exactly $E$ edges, and \texttt{$r$/$M$} to the $r$-th of $M$ disjoint parts. \texttt{geng}
+builds a graph by adding vertices $0,1,2,\dots$ in order; in the words of its documentation, ``each graph in the
+sequence is an induced subgraph of all later graphs in the sequence'' (\texttt{geng.c}, version~3.7). The parts are
+formed at a fixed splitting level of the generation tree, where each node is assigned to one of $M$ classes and only
+the descendants of class $r$ are expanded; the union over $r=0,\dots,M-1$ is the complete output, each graph appearing
+in exactly one part. Gate~D of Section~\ref{sec:validation} confirms this at production parameters. The number $M$ affects only the
+running time: the parts are disjoint and their union is the whole output, so no value depends on $M$. Many small parts
+balance the load across processes, at the price of repeating in every part the work above the splitting level.
+
+\subsection{The independence prune}
+
+\texttt{geng} accepts a compile-time hook \texttt{PRUNE(g,n,maxn)}, called for every intermediate and final graph; a
+nonzero return discards the graph and its whole subtree.
+
+\begin{lemma}\label{lem:prune}
+Let $\mathrm{prune}_A(g)$ return $1$ exactly when the graph $g$ has an independent set of $A+1$ vertices. Adding this
+hook to \texttt{geng} with $A=\alpha$ removes from the output exactly the graphs with independence number greater than
+$\alpha$.
+\end{lemma}
+
+\begin{proof}
+Every intermediate graph on vertices $0,\dots,j-1$ is an induced subgraph of each of its descendants. An independent
+set of an induced subgraph is independent in the whole graph, so $\alpha$ never decreases along a generation path. If
+the hook fires at an intermediate graph, every descendant has independence number greater than $\alpha$ and would be
+rejected by the filter anyway; if a final graph has independence number at most $\alpha$, no ancestor has an
+independent set of size $\alpha+1$ and the hook never fires on its path. The final graphs with independence number
+greater than $\alpha$ are discarded by the call on themselves.
+\end{proof}
+
+The hook is a branch-and-bound search for an independent set of size $A+1$ on $64$-bit masks
+(\texttt{prune\_alpha.c}, Section~\ref{sec:repro}). It cuts the search drastically when $\alpha$ is small relative to
+$n$: at $(17,5,3)$ with $27$ edges the plain generator produces $35{,}329{,}226$ graphs in $1{,}040$ seconds, and the
+pruned one $482$ graphs in $0.4$ seconds, with the same $0$ qualifying graphs.
+
+\subsection{The exact filter}
+
+Each generated graph, read as a \texttt{graph6} line, is kept exactly when its independence number equals $\alpha$ and
+its connectivity is at least $k$. The independence number is computed by Algorithm~\ref{alg:mis}, an exact
+branch-and-bound search on $32$-bit vertex masks in the spirit of the maximum-clique algorithms of Carraghan and
+Pardalos \cite{CarraghanPardalos} and \"Osterg\aa rd \cite{Ostergard}, applied to the complement implicitly. It stops
+as soon as an independent set of size $\alpha+1$ is found, because the graph is then rejected regardless of the exact
+value.
+
+\begin{algorithm}[t]
+\caption{Independence number with early stop (\texttt{filter2.c}, function \texttt{mis})}\label{alg:mis}
+\KwIn{adjacency masks $N(v)$, candidate set $C$, current size $s$; global best $b$, cap $\alpha+1$}
+\lIf{$b\ge\alpha+1$}{\Return}
+\lIf{$C=\emptyset$}{$b\leftarrow\max(b,s)$; \Return}
+\lIf{$s+|C|\le b$}{\Return\tcp*{bound: cannot beat $b$}}
+$v\leftarrow$ lowest vertex of $C$\;
+$\textsc{Mis}(C\setminus(\{v\}\cup N(v)),\,s+1)$\tcp*{take $v$}
+$\textsc{Mis}(C\setminus\{v\},\,s)$\tcp*{skip $v$}
+\end{algorithm}
+
+\begin{lemma}\label{lem:mis}
+Started with $C=V(G)$, $s=0$, $b=0$, Algorithm~\ref{alg:mis} ends with $b=\alpha(G)$ when $\alpha(G)\le\alpha$, and
+with $b\ge\alpha+1$ otherwise. Hence the test $b=\alpha$ decides $\alpha(G)=\alpha$ exactly.
+\end{lemma}
+
+\begin{proof}
+The two branches partition the independent sets contained in $C\cup$ (the current set) into those containing $v$ and
+those not containing $v$, so without the cuts the recursion visits every maximal independent set and $b$ ends at
+$\alpha(G)$. The bound cut discards only branches whose every completion has at most $b$ vertices, so it never
+discards a strictly larger set. The early stop fires only once $b\ge\alpha+1$, and before that the search is exact. So a
+graph with $\alpha(G)>\alpha$ ends with $b\ge\alpha+1$; the value may exceed $\alpha+1$, because $b$ is updated only at
+the leaves of the recursion, where the whole current set is counted. A graph with $\alpha(G)\le\alpha$ never triggers
+the stop and ends with $b=\alpha(G)$. The filter keeps a graph only when $b=\alpha$.
+\end{proof}
+
+Connectivity is tested by Algorithm~\ref{alg:kconn}: a graph with more than $k$ vertices is $k$-connected exactly when
+it stays connected after the deletion of every vertex set of size at most $k-1$ (the definition of vertex connectivity).
+Each test is a breadth-first search on masks. The number of deleted sets is $\sum_{j=0}^{k-1}\binom{n}{j}$, at most
+$190{,}051$ for $n=24$, $k=7$; the test runs only on graphs whose independence number is exactly $\alpha$, a small
+fraction of the stream. Asymptotically faster algorithms exist \cite{EvenTarjan,EsfahanianHakimi}; the exhaustive one
+is preferred here because its correctness is immediate.
+
+\begin{algorithm}[t]
+\caption{$k$-connectivity by exhaustive deletion (\texttt{filter2.c}, function \texttt{kconnected})}\label{alg:kconn}
+\KwIn{adjacency masks of $G$ on $n\le32$ vertices, $k\le9$}
+\lIf{$n\le k$}{\Return false}
+\lIf{$G$ is not connected}{\Return false}
+\For{$j=1$ \KwTo $k-1$}{
+\ForEach{$j$-subset $S\subseteq V(G)$ in lexicographic order}{
+\lIf{$G-S$ is not connected (breadth-first search on masks)}{\Return false}
+}}
+\Return true\;
+\end{algorithm}
+
+\begin{lemma}\label{lem:kconn}
+Algorithm~\ref{alg:kconn} returns true exactly when $\kappa(G)\ge k$.
+\end{lemma}
+
+\begin{proof}
+By definition $\kappa(G)\ge k$ means $n>k$ and no set of fewer than $k$ vertices disconnects $G$; the algorithm tests
+exactly these sets, including the empty one.
+\end{proof}
+
+\subsection{The decision procedure}
+
+Algorithm~\ref{alg:decide} combines the pieces. Each part is a pipe from the pruned generator into the filter; parts
+run in parallel, and a triple's value is decided by the first edge count with a kept graph, or by the exhaustion of
+all counts below $c$.
+
+\begin{algorithm}[t]
+\caption{Deciding $f(n,\alpha,k)$ on an open-window triple (\texttt{run\_enum.py})}\label{alg:decide}
+\KwIn{$(n,\alpha,k)$; number of parts $M$; number of processes $J$; optional time cap per edge count}
+$c\leftarrow t(n,\alpha)+\ceil{k\alpha/2}$; $\ell\leftarrow\max(\ceil{nk/2},t(n,\alpha))$\;
+\For{$E=\ell$ \KwTo $c-1$}{
+run, on $J$ processes, the $M$ pipes \texttt{geng\_a$\alpha$ -q -d$k$ $n$ $E$:$E$ $r$/$M$ | filter2 $\alpha$ $k$}\;
+record the number of generated graphs, kept graphs, the first kept examples and the wall-clock time\;
+\lIf{a graph is kept}{\Return $f=E$}
+\lIf{the cap is reached}{\Return $f\ge E$}
 }
+\Return $f=c$\;
+\end{algorithm}
+
+\begin{theorem}[soundness]\label{thm:sound}
+Assume that \texttt{geng} outputs one representative of every isomorphism class it is asked for, and that its
+split into $M$ parts partitions that output. If Algorithm~\ref{alg:decide} returns $f=c$, then $f(n,\alpha,k)=c$; if it returns $f=E<c$, then $f(n,\alpha,k)=E$.
+\end{theorem}
+
+\begin{proof}
+By the assumption, which Gates~D and~E test but do not prove, the generator without the hook outputs one
+representative of every isomorphism class with $n$ vertices, $E$ edges and minimum degree at least $k$. By
+Lemma~\ref{lem:prune} the hook removes only graphs with independence number greater than $\alpha$. By
+Lemmas~\ref{lem:mis} and~\ref{lem:kconn} the filter keeps exactly the graphs with independence number $\alpha$ and
+connectivity at least $k$. The claim follows from Proposition~\ref{prop:finite}.
+\end{proof}
+
+Algorithm~\ref{alg:decide} ran with $M=56$ parts on $J=28$ processes from EXP-007 on; EXP-005 and the first runs of
+EXP-006 used the generator without the hook and $M\in\{48,96,224,448,896,1792\}$. The decisions recorded for a triple use the
+pruned generator whenever both exist; where both exist they agree on the number of kept graphs at every edge count
+(Section~\ref{sec:validation}). A cap of four hours per edge count applied at order 24 in EXP-009; EXP-010 reran
+the two capped counts with a cap of twenty hours.
+
+
+\subsection{Cost}
+
+The time of one edge count is, to first order,
+\begin{equation}\label{eq:cost}
+T(E)\ \approx\ N(E)\,\bigl(\tau_{\mathrm{gen}}+\tau_{\alpha}\bigr)\ +\ N_\alpha(E)\,\tau_{\mathrm{bfs}}
+\sum_{j=0}^{k-1}\binom{n}{j},
+\end{equation}
+where $N(E)$ is the number of graphs the pruned generator outputs, $N_\alpha(E)$ the number among them with
+independence number exactly $\alpha$, $\tau_{\mathrm{gen}}$ and $\tau_\alpha$ the per-graph costs of generation and of
+Algorithm~\ref{alg:mis}, and $\tau_{\mathrm{bfs}}$ the cost of one breadth-first search. The hook removes every graph
+with independence number above $\alpha$, and Tur\'an's theorem removes most of those below it: a graph with
+independence number at most $\alpha-1$ has at least $t(n,\alpha-1)$ edges, so
+\begin{equation}\label{eq:allalpha}
+t(n,\alpha-1)\ \ge\ c\quad\Longrightarrow\quad N_\alpha(E)=N(E)\ \text{ for every } E<c .
+\end{equation}
+The condition holds at \nturancond\ of the \ntriples\ triples. There the independence test never rejects, and the
+filter's work is the connectivity test; Gate~B observes $N_\alpha=N$ on every sampled slice, including the triples
+with $\alpha=7$, where the condition fails. The connectivity test dominates for large $k$: at $n=24$, $k=7$ the sum in
+\eqref{eq:cost} is $190{,}051$, against $1+24+276=301$ at $k=3$. The per-graph generation cost $\tau_{\mathrm{gen}}$ is
+not a constant either: when $k$ is large, most partial graphs admit no completion with minimum degree $k$, and the
+generator spends most of its time on them, so the cost per output graph grows (Section~\ref{sec:values} gives the case
+of $(22,3,7)$).
+
+\subsection{Structure of the extremal graphs}\label{sec:structure-method}
+
+For the extremal graphs (those with $c$ edges) we regenerate the complete list at $E=c$ with the same pipeline,
+keeping every qualifying \texttt{graph6} line, and analyse each graph with code that shares nothing with the C
+programs (NetworkX 3.4.1 \cite{NetworkX}). Three quantities are computed exactly.
+\begin{itemize}
+\item \emph{Recheck.} The edge count, the independence number as a maximum clique of the complement, and the vertex
+connectivity by NetworkX's flow-based routine.
+\item \emph{Clique partition.} Whether $V(G)$ splits into $\alpha$ cliques, by an exact backtracking $\alpha$-colouring
+of the complement with the usual symmetry breaking (a new colour only as the next unused one); and, independently,
+whether $\alpha$ maximal cliques cover $V(G)$, by listing the maximal cliques (Bron--Kerbosch with pivoting
+\cite{BronKerbosch,Tomita}) and searching their $\alpha$-subsets with mask unions. Both return the clique cover number
+$\theta(G)$ when it is at most $\alpha+2$.
+\item \emph{Didin's core parameter.} $p(G)$ by Lemma~\ref{lem:p} below and $s(G)=\alpha-p(G)$.
+\end{itemize}
+
+\begin{lemma}\label{lem:p}
+$p(G)$ is the largest $q$ for which $V(G)$ has a partition into $q$ nonempty parts $V_1,\dots,V_q$ with
+$\sum_i\alpha(G[V_i])\le\alpha(G)$. In particular $p(G)=\alpha(G)$ exactly when $V(G)$ splits into $\alpha(G)$
+cliques, that is, when $\theta(G)=\alpha(G)$.
+\end{lemma}
+
+\begin{proof}
+For every partition, $\alpha(G)\le\sum_i\alpha(G[V_i])$, since an independent set of $G$ meets each part in an
+independent set. If equality holds, the disjoint union $G'$ of the $G[V_i]$ is a spanning subgraph with
+$\alpha(G')=\alpha(G)$; deleting non-critical edges of $G'$ one at a time keeps the independence number and ends at an
+$\alpha$-core of $G$ whose components refine the partition, so $p(G)\ge q$. Conversely, the components of an
+$\alpha$-core $H$ partition $V(G)$, and $\sum\alpha(\text{component})=\alpha(H)=\alpha(G)$, while
+$\alpha(G[V_i])\le\alpha(H[V_i])$ because $H[V_i]$ is a spanning subgraph of $G[V_i]$. For the last claim, a part has
+$\alpha(G[V_i])\ge1$, so $q\le\alpha$, and $q=\alpha$ forces every part to have independence number one, that is, to be
+a clique.
+\end{proof}
+
+The search for $p(G)$ assigns vertices in order to at most $q$ parts, opens a new part only as the next index, keeps
+each part's independence number exactly (memoised on masks) and cuts a branch as soon as the sum exceeds $\alpha$; it
+decides each $q$ from $\alpha$ down. On 400 random graphs with $4$ to $9$ vertices it agrees with a brute force over all
+set partitions.
+
+\section{Validation}\label{sec:validation}
+
+Table~\ref{tab:validation} lists every check, its scope and its outcome. We summarise the ones that bear on the
+production parameters.
+
+The gates target distinct ways the search could go wrong. Gate~F checks that the binaries that ran are the committed
+sources. Gates~A and~B check that the filter's two tests are exact at the parameters used, including the connectivity
+test at $k=6,7$, which the earlier check at order~8 never reached. Gate~C checks that the hook rejects exactly the
+graphs it should, the only way it could lose a qualifying graph. Gate~D checks that splitting the generator into
+parts loses or duplicates nothing when the hook is active. Gate~E checks the generator itself at orders beyond the
+earlier checks. Two defects of the validation harness, not of the search, were found and fixed on the way. Parallel
+parts writing into one pipe can interleave lines, which made a first Gate~D run report different hashes for equal
+counts; with one file per part the outputs agree byte for byte. A quoting error emptied the first Gate~E counts. The
+records of both first runs are kept with the experiment.
+
+\begin{itemize}
+\item \emph{Gate F, provenance.} The production filter rebuilt from its committed source with the recorded build line
+is byte-identical to the binary that ran (SHA-256 \texttt{\shafilter}). The five pruned generators rebuilt from nauty
+2.8.9's \texttt{geng.c} (SHA-256 \texttt{\shageng}) and the committed hook with nauty's makefile flags
+(\texttt{-O4 -mpopcnt -march=native}) are byte-identical to the production ones. The build line written in the
+hook's source header uses \texttt{-O3} without \texttt{-mpopcnt} and \texttt{-march=native} and gives other bytes; Section~\ref{sec:repro} states the line that
+reproduces the binaries.
+\item \emph{Gate A, filter on graphs with known answers.} \gateAgraphs\ graphs of orders $10$ to $24$ from seven
+families (Harary graphs $H_{k,n}$ \cite{Harary}, circulants, random regular graphs, complements of sparse random graphs, unions of
+cliques with random cross edges, random graphs, and the extremal graphs of Section~\ref{sec:extremal}), with
+independence numbers from $1$ to $12$ and connectivity from $0$ to $22$. Each graph is decided at every
+$(a,k')\in\{\alpha-1,\alpha,\alpha+1\}\times\{\kappa-1,\kappa,\kappa+1\}$ with $1\le k'\le9$: \gateAdecisions\
+decisions in \gateAgroups\ groups, \gateAkept\ of them keeps, and no disagreement with NetworkX.
+\item \emph{Gate B, filter on production streams.} For each production triple with $k\ge6$ or $\alpha=7$, slices of
+the pruned generator's output at $E\in\{c-1,c,c+1\}$, at most $3{,}000$ graphs each: \gateBgraphs\ graphs in
+\gateBslices\ slices, no graph with independence number above the bound, and no disagreement. A slice is a fixed
+part of the generation tree, so \gateBempty\ slices are empty; the nonempty ones are \gateBnonempty. No slice at order
+24 and no production edge count with $k=7$ is covered, so the filter at those parameters rests on its proofs and on
+Gate~A.
+\item \emph{Gate C, the hook alone.} A harness calls the production hook on whole graphs at bounds $A=2,\dots,8$:
+\gateCgraphs\ graphs, \gateCdecisions\ decisions, no disagreement with NetworkX.
+\item \emph{Gate D, the split under the hook.} \gateDsummary
+\item \emph{Gate E, the generator's counts.} \gateEsummary
+\end{itemize}
+
+The families of Gate~A are chosen to stress the two tests where they could fail. Harary graphs attain the least number
+of edges for a given connectivity, so they sit exactly at $\kappa=k$, where an off-by-one error in the deletion loop
+would show. Unions of cliques with random cross edges have the shape of the extremal graphs, with small $\alpha$ and
+connectivity decided by a few cross edges. Complements of sparse random graphs give small independence numbers with
+high connectivity, up to $22$, beyond any production value. Random regular graphs and circulants give every
+connectivity up to their degree, and random graphs of every density cover what remains. The decisions at
+$a=\alpha\pm1$ and $k'=\kappa\pm1$ test both sides of each threshold.
+
+\begin{table}[t]
+\centering\footnotesize\setlength{\tabcolsep}{2.5pt}
+\caption{Validation of the search: each check, the experiment that holds its record, its scope, the number of
+items checked and the outcome. Independent implementation: NetworkX 3.4.1. Every row passed.}
+\label{tab:validation}
+\input{validation.tex}
+\end{table}
+
+\section{Values and cost}\label{sec:values}
+
+\begin{theorem}\label{thm:values}
+\valuestheorem
+\end{theorem}
+
+\begin{corollary}\label{cor:fullpairs}
+For each of the \nfullpairs\ pairs $(\alpha,k)\in\{$\fullpairs$\}$, $f(n,\alpha,k)=t(n,\alpha)+\ceil{k\alpha/2}$ for
+every $n>k\alpha$.
+\end{corollary}
+
+\begin{proof}
+For these pairs the whole open window, the orders $k\alpha<n<\alpha(\ceil{k\alpha/2}-\alpha+2)$, has $n\le24$ and is
+covered by Theorem~\ref{thm:values}; the larger orders are covered by Lemma~\ref{lem:window}.
+\end{proof}
+
+For these pairs the second line is settled independently of Didin's argument, by Bougard and Joret's Proposition~8
+above the window and by exhaustive enumeration inside it. The next pairs whose windows are only partly covered are
+$(6,3)$, $(4,5)$, $(5,4)$, $(3,7)$ and $(7,3)$, decided up to order 24.
+
+Table~\ref{tab:values} lists every open-window triple with $n\le24$: $t(n,\alpha)$, the conjectured value $c$, the
+value found, the edge counts searched, the graphs examined below $c$, the wall-clock seconds, and, where the
+enumeration also covered $E=c$, the number of extremal graphs. Appendix~\ref{app:records} lists every enumeration
+record, one row per triple, edge count and run.
+
+All \ntriples\ values equal the conjectured ones. The two order-24 edge counts left open by the first pass at
+order~24 were the largest single computations: $23{,}556{,}793$ graphs at $(24,7,3)$ with $E=40$, in $11.9$ hours on
+$14$ processes, and $569{,}264$ graphs at $(24,3,7)$ with $E=94$, in $10.8$ hours. Almost all of the plain generator's
+share of the total comes from $(14,3,4)$ and $(15,4,3)$ in the first experiment, before the hook existed; with the
+hook, no single edge count produced more than a few tens of millions of graphs.
+
+\input{table.tex}
+
+\paragraph{Cost.} The search examined \ngraphs\ graphs below the conjectured values: \ngraphsplain\ with the plain
+generator in EXP-005 and EXP-006 and \ngraphspruned\ with the pruned one. The wall-clock times of the edge counts sum to \nhours\ hours on an
+Intel Core i9-14900HX under Ubuntu~24.04 in WSL2, with 28 processes per edge count, except the two counts of EXP-010,
+which ran at the same time on 14 processes each. Figure~\ref{fig:growth} shows how the number of
+candidates and the time grow with the edge count for five triples. Within a triple, once the counts exceed a
+thousand, each added edge multiplies the number of candidates by a factor between \growthlow\ and \growthhigh\ on
+the plotted triples, and the factor itself rises slowly with $E$; the time follows the count, above a floor of a
+few seconds set by process start-up. Summed over the decided triples of one order, the time below $c$ was
+\secorderxxi\ seconds at order 21, \secorderxxii\ at order 22 and \secorderxxiii\ at order 23, factors of
+\ratioxxii\ and \ratioxxiii; at order 24 two edge counts needed more than four hours each. The pruned generator's
+advantage is largest when $\alpha$ is small relative to $n/k$: the hook then fires early in the generation tree.
+
+The cost is not spread evenly. Where $k$ is large, the generator's search dominates: at $(22,3,7)$ only $782$ graphs
+were output below $c$, but the search took $1{,}716$ seconds, spent mostly in partial graphs that admit no completion
+with minimum degree $7$. Where $\alpha$ is large and $k=3$, the output itself is large: $(23,7,3)$ produced
+$1{,}456{,}747$ graphs in $6{,}526$ seconds, and the last edge count of $(24,7,3)$ produced $23{,}556{,}793$. Between these
+extremes, triples with $\alpha=5$ and $k=3$ are cheap, a few hundred seconds even at order 24, because the hook
+removes most partial graphs early and the filter needs only pairs and single vertices for the connectivity test.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{semilogyaxis}[width=0.48\textwidth,height=6cm,xlabel={edges $E$},ylabel={graphs generated},
+legend style={font=\scriptsize,at={(0.5,1.03)},anchor=south,legend columns=3},grid=major,
+grid style={gray!25}]
+\growthplotsgraphs
+\end{semilogyaxis}
+\end{tikzpicture}\hfill
+\begin{tikzpicture}
+\begin{semilogyaxis}[width=0.48\textwidth,height=6cm,xlabel={edges $E$},ylabel={seconds (28 processes)},
+grid=major,grid style={gray!25}]
+\growthplotsseconds
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Candidates generated (left) and wall-clock seconds (right) per edge count below the conjectured value, for
+five triples, with the pruned generator. Each curve ends at $c-1$.}
+\label{fig:growth}
+\end{figure}
+
+\section{The extremal graphs}\label{sec:extremal}
+
+At the \nexttriples\ triples where the enumeration covered $E=c$, we regenerated every extremal graph. In every case
+the count matches the earlier enumeration, and every graph passes the independent recheck (edges, independence number,
+connectivity). Table~\ref{tab:structure} gives, per triple, the number of extremal graphs, how many split into $\alpha$
+cliques, and the distribution of Didin's parameter $s$; Figure~\ref{fig:partition} shows the split.
+
+\begin{lemma}\label{lem:partition-structure}
+Let $(n,\alpha,k)$ be in the second regime and $G$ a $k$-connected graph with $n$ vertices, independence number
+$\alpha$ and $t(n,\alpha)+\ceil{k\alpha/2}$ edges. If $V(G)$ splits into $\alpha$ cliques $C_1,\dots,C_\alpha$, then
+the clique orders are $\floor{n/\alpha}$ or $\ceil{n/\alpha}$, the cliques span exactly $t(n,\alpha)$ edges, and
+exactly $\ceil{k\alpha/2}$ edges join different cliques, every clique sending at least $k$ of them.
+\end{lemma}
+
+\begin{proof}
+As in the proof of Lemma~\ref{lem:window}, the edges inside the cliques number $\sum_i\binom{|C_i|}{2}\ge t(n,\alpha)$
+and the edges between them at least $\ceil{k\alpha/2}$. Their sum is the number of edges, so both inequalities are
+equalities. Equality in the first holds only for balanced orders, because $\binom{x}{2}$ is strictly convex on the
+integers.
+\end{proof}
+
+So every extremal graph is either a Bougard--Joret graph, a balanced union of cliques with $\ceil{k\alpha/2}$ edges
+between them, or a graph with $\theta(G)>\alpha$. The second kind exists: \nnopart\ of the \nextremal\ extremal graphs
+have no partition into $\alpha$ cliques, both methods of Section~\ref{sec:structure-method} agree on each, and all have
+$\theta(G)=\alpha+1$. They occur only at $k=3$ with $\alpha$ odd, at $(10,3,3)$, $(11,3,3)$ and $(16,5,3)$ to
+$(19,5,3)$; at $(20,5,3)$, $(21,5,3)$ and $(22,5,3)$ every extremal graph is a Bougard--Joret graph. Figure~\ref{fig:graphs}
+draws one of each kind.
+
+All \nextremal\ extremal graphs have connectivity exactly $k$. The Bougard--Joret graphs have automorphism groups of
+orders from $1$ to $1{,}296$, depending on how symmetric the arrangement of the $\ceil{k\alpha/2}$ edges between the
+cliques is. The graphs with $s(G)=1$ have automorphism groups of order $1$ or $2$, and those with $s(G)=2$ of order at
+most $4$; their clique numbers are $3$ or $4$, against $4$ to $8$ for the Bougard--Joret graphs.
+
+\begin{table}[p]
+\centering\small
+\caption{The extremal graphs at the conjectured value. Graphs: all extremal graphs (each rechecked independently).
+Partition: those with a partition into $\alpha$ cliques, all of Bougard--Joret structure. $s$: the distribution of
+Didin's parameter $s(G)=\alpha-p(G)$. Allowed: the values of $s$ that Proposition~\ref{prop:where} permits.}
+\label{tab:structure}
+\input{structure.tex}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\input{partition-chart.tex}
+\caption{Extremal graphs at the conjectured value, per triple: with a partition into $\alpha$ cliques (grey, all of
+Bougard--Joret structure) and with clique cover number $\alpha+1$ (dark). The dark bars occur only at $k=3$ with
+$\alpha$ odd and $n\le4\alpha-1$.}
+\label{fig:partition}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\input{graphs.tex}
+\caption{Two extremal graphs for $(10,3,3)$, $17$ edges. Left: a Bougard--Joret graph, cliques of orders $4,3,3$ (shaded)
+with $5$ edges between them. Right: an extremal graph with $\theta(G)=4$ and $s(G)=1$, drawn by the two parts of a
+partition attaining $p(G)=2$ (Lemma~\ref{lem:p}): a triangle and the block $X_7$ of Section~\ref{sec:construction},
+joined by $3$ edges.}
+\label{fig:graphs}
+\end{figure}
+
+The location of these graphs is explained by Didin's inequality~\eqref{eq:didin} and the cut counting in the proof of
+his Theorem~10. We first record an elementary fact, which is his Lemma~19 \cite{Didin}.
+
+\begin{lemma}\label{lem:tshift}
+For $N\ge\alpha$, $t(N+1,\alpha)-t(N,\alpha)=\floor{N/\alpha}$. Hence for $n>k\alpha$ and $s\ge0$,
+$t(n+s,\alpha)-t(n,\alpha)=\sum_{i=0}^{s-1}\floor{(n+i)/\alpha}\ge ks$, with equality for $s\ge1$ exactly when
+$\floor{(n+s-1)/\alpha}=k$.
+\end{lemma}
+
+\begin{proof}
+Adding a vertex to $T(N,\alpha)$ in a smallest clique, of order $\floor{N/\alpha}$, gives $T(N+1,\alpha)$ and adds
+$\floor{N/\alpha}$ edges. The terms of the sum are nondecreasing and each is at least $\floor{n/\alpha}\ge k$.
+\end{proof}
+
+\begin{proposition}[conditional on {\cite[Theorem~3]{Didin}}]\label{prop:where}
+Let $(n,\alpha,k)$ be in the second regime with $\alpha\ge3$, and let $G$ be $k$-connected with $n$ vertices,
+independence number $\alpha$, $t(n,\alpha)+\ceil{k\alpha/2}$ edges and no partition into $\alpha$ cliques. Then either
+\begin{enumerate}
+\item[(a)] $p(G)\ge2$, $k=3$, $\alpha$ is odd, $s(G)=1$ and $n\le4\alpha-1$; or
+\item[(b)] $p(G)=1$ and $(n,\alpha,k)$ is one of $(10,3,3)$, $(11,3,3)$, $(13,4,3)$, $(16,5,3)$, $(13,3,4)$,
+$(16,3,5)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Write $p=p(G)$, $s=s(G)\ge1$ (Lemma~\ref{lem:p}) and $m=t(n,\alpha)+\ceil{k\alpha/2}$. Let $H$ be an $\alpha$-core
+with $p$ components on vertex sets $V_1,\dots,V_p$. Then $H$ is $\alpha$-critical with $p(H)=p$, so
+\eqref{eq:didin} applied to $H$ gives $\e(H)\ge t(n+s,\alpha)-s$.
+
+(a) Suppose $p\ge2$. The $q$ edges of $G$ between different sets $V_i$ are not in $H$, and each $V_i$ is a proper
+nonempty subset, so $|\partial V_i|\ge k$ as in Lemma~\ref{lem:window} and $q\ge\ceil{kp/2}$. With
+Lemma~\ref{lem:tshift}, writing $\Delta=t(n+s,\alpha)-t(n,\alpha)-ks\ge0$,
+\[
+m\ \ge\ \e(H)+q\ \ge\ t(n,\alpha)+(k-1)s+\Delta+\ceil{k(\alpha-s)/2}.
+\]
+Since $\ceil{k\alpha/2}\le k\alpha/2+1/2$ and $\ceil{k(\alpha-s)/2}\ge k(\alpha-s)/2$, this needs
+$(k/2-1)s+\Delta\le1/2$. For $k\ge4$ the left side is at least $s\ge1$, a contradiction. For $k=3$ it needs $s=1$ and
+then $2+\Delta+\ceil{3(\alpha-1)/2}\le\ceil{3\alpha/2}$: for even $\alpha$ the left side is $(3\alpha+2)/2+\Delta$,
+too large; for odd $\alpha$ it is $(3\alpha+1)/2+\Delta$, which forces $\Delta=0$, that is, $\floor{n/\alpha}=3$ by
+Lemma~\ref{lem:tshift}, so $n\le4\alpha-1$.
+
+(b) Suppose $p=1$, so $s=\alpha-1$ and $m\ge t(n+\alpha-1,\alpha)-(\alpha-1)$. By Lemma~\ref{lem:tshift},
+$(k-1)(\alpha-1)\le\ceil{k\alpha/2}$, which holds only for $(\alpha,k)\in\{(3,3),(4,3),(5,3),(3,4),(3,5)\}$ when
+$\alpha,k\ge3$. For each of these pairs the inequality
+\begin{equation}\label{eq:pone}
+\sum_{i=0}^{\alpha-2}\floor{\frac{n+i}{\alpha}}\ \le\ \ceil{\frac{k\alpha}{2}}+\alpha-1,\qquad n>k\alpha,
+\end{equation}
+leaves exactly the orders listed: $n\in\{10,11\}$ for $(\alpha,k)=(3,3)$, $n=13$ for $(4,3)$, $n=16$ for $(5,3)$,
+$n=13$ for $(3,4)$ and $n=16$ for $(3,5)$.
+\end{proof}
+
+\begin{corollary}[conditional on {\cite[Theorem~3]{Didin}}]\label{cor:where}
+For $k\ge4$ every extremal graph of the second regime splits into $\alpha$ cliques, and so is a Bougard--Joret graph,
+except possibly at $(13,3,4)$ and $(16,3,5)$, where $p(G)=1$. For $k=3$ the same holds when $\alpha$ is even, except
+possibly at $(13,4,3)$, and when $\alpha$ is odd and $n\ge4\alpha$, without exception.
+\end{corollary}
+
+The data match Proposition~\ref{prop:where} exactly (Table~\ref{tab:structure}): every observed graph without a
+partition has $s=1$ and lies in case (a), or has $s=2$ at $(10,3,3)$, which is case (b). Every extremal graph also
+satisfies~\eqref{eq:didin} with $s$ computed exactly, none of them with equality, and the prediction that none of the
+\nphasetwotriples\ triples analysed last has a graph without a partition was frozen before they were analysed
+(EXP-011, second addendum). Case (a) is realised at every triple where it is allowed and where we enumerated $E=c$;
+case (b) is realised only at $(10,3,3)$, by \ntenthreeb\ graphs, not at $(11,3,3)$, $(13,4,3)$, $(13,3,4)$,
+$(16,3,5)$ or $(16,5,3)$. Section~\ref{sec:construction} shows that case (a) is realised at every triple where it
+is allowed.
+
+\input{construction.tex}
+
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{Relation to Didin's proof.} Our computation is independent of Didin's argument: it does not use
+inequality~\eqref{eq:didin} or its proof. On every open-window triple with $n\le24$ \independentphrase. It cannot
+prove the general statement, and its agreement is evidence about a finite range only. Conversely,
+Proposition~\ref{prop:where} uses Didin's main theorem and shows that his inequality, if correct, already confines the
+non-Bougard--Joret extremal graphs to a thin family; the data neither contradict the inequality nor reach its equality
+case on these graphs.
+
+\paragraph{Why a proof by clique partition cannot work at equality.} Proposition~8 of Bougard and Joret and
+Proposition~4.2 of Das and Gupta reduce the second line to the existence of a partition into $\alpha$ cliques below
+the conjectured size. The graphs with $\theta(G)=\alpha+1$ show that the reduction cannot be pushed to the conjectured
+size itself: at $k=3$ and odd $\alpha$ there are extremal graphs without such a partition. A proof must therefore bound
+the size strictly below $c$ only, as Lemma~\ref{lem:window} does, or proceed without the partition, as Didin's does.
+
+
+
+The \ntenthreeb\ graphs with $s(G)=2$ at $(10,3,3)$ form the only case (b) found. Their clique number is $3$, their
+degrees are $3$ to $5$, and their automorphism groups have order at most $4$; none of them splits into two parts whose
+independence numbers sum to $3$, so each has a connected $\alpha$-core. None is tight in Didin's sense: each has
+strictly more than $t(n+s,\alpha)-s=t(12,3)-2=16$ edges. This agrees with his Lemma~18, which shows that the tight
+graphs with $(b,\alpha,n)=(3,3,10)$ have a $2$-vertex cut and so are not $3$-connected.
+
+\paragraph{The graphs attaining the second line.} Didin's preprint characterises the graphs attaining his main
+inequality, but not those attaining Theorem~9. In the range enumerated here, the extremal graphs are of three kinds:
+the Bougard--Joret graphs; the graphs of Theorem~\ref{thm:construction}, which account for every extremal graph with
+$s(G)=1$ (a $2$-edge cut of the quotient would contradict $3$-connectivity); and \ntenthreeb\ graphs at $(10,3,3)$
+with a connected $\alpha$-core. Whether this list is complete for every order is a natural conjecture. Given Didin's theorem, Lemma~\ref{lem:partition-structure}
+and Proposition~\ref{prop:where} prove part of it outside case (b). An extremal graph without a partition into
+$\alpha$ cliques has $k=3$, $\alpha$ odd, $s(G)=1$ and $n\le4\alpha-1$, and equality throughout the proof of
+Proposition~\ref{prop:where}(a) forces three more facts: the $\alpha$-core $H$ attains~\eqref{eq:didin}, so it is
+tight in Didin's sense; exactly $(3\alpha-3)/2$ edges join its $\alpha-1$ components; and every component sends exactly
+three of them. The proof does not show that the components with independence number $1$ are cliques of orders $3$ and
+$4$, that the edges between components form a matching, that the component with independence number $2$ is $X_6$ or
+$X_7$, or that it attaches only at the observed triples. These four claims hold for every enumerated graph and are
+open in general.
+
+\paragraph{Open questions.} Theorem~\ref{thm:construction} realises case (a) of Proposition~\ref{prop:where}
+everywhere. Two questions remain. First, whether the four structural claims above hold for every odd $\alpha$, in particular whether $X_6$ and
+$X_7$ are the only blocks, which the enumeration shows for $n\le22$ only. Second, whether case (b) is realised beyond $(10,3,3)$, which the enumeration
+rules out at the other five triples it allows. The value of $f$ beyond order 24 is decided by Didin's theorem if it is correct. For the
+enumeration, the factors of Section~\ref{sec:values} between consecutive orders, if they persisted, would put
+order 25 at several days of the machine used here; this is an extrapolation, not a measurement.
+
+
+\paragraph{What the validation does not cover.} The gates sample the production streams; they do not re-run them.
+Gate~B covers \gateBgraphs\ graphs in slices, not the billions of the full search, and \gateBempty\ of its
+\gateBslices\ slices are empty, including every slice at order 24 and every production edge count with $k=7$. At those
+parameters the filter is covered by Lemmas~\ref{lem:mis} and~\ref{lem:kconn} and by Gate~A, on constructed graphs up to
+order 24 with $k'\le9$, not by production streams. Gate~E checks the generator's counts for
+connected, cubic and quartic graphs up to order 22 with known values; no published count exists for the restricted
+classes the search enumerates (minimum degree $k$, independence number at most $\alpha$, a fixed number of edges), so
+the completeness of those streams rests on the generator's correctness and on the soundness of the hook
+(Lemma~\ref{lem:prune}), which Gate~C tests directly.
+
+\paragraph{Limitations.} The values rest on the correctness of \texttt{geng} and of the split into parts, which we test
+but do not prove (Gates D and E); on the filter, which we prove (Lemmas~\ref{lem:mis} and~\ref{lem:kconn}) and test
+(Gates A and B); and on the hook, which we prove (Lemma~\ref{lem:prune}) and test (Gate C). The binaries are built for
+the processor they ran on (\texttt{-march=native}); a rebuild elsewhere gives other bytes with the same source.
+Didin's results are used as stated, without an audit of their proofs.
+
+\section{Conclusions}\label{sec:conclusions}
+
+The second line of the Bougard--Joret conjecture holds on every open-window triple with $n\le24$: \ntriples\
+triples, decided by complete enumeration of \ngraphs\ candidate graphs and an exact filter, with no triple left
+undecided and no edge count left capped. For seven pairs $(\alpha,k)$ the open window ends by order 24, so the
+conjectured value holds there for every order, independently of Didin's argument. The search is a finite decision
+procedure with five components. Three of them, the prune, the independence test and the connectivity test, are proved
+correct and also tested against an independent implementation. The other two, the generator and its split into parts,
+are tested and not proved: the generator against known counts up to order 22, and the split at three triples of orders
+17 to 20. The binaries that ran are reproduced byte for byte from the committed sources.
+
+The values carry no statistical uncertainty. Every number in Theorem~\ref{thm:values} and in
+Tables~\ref{tab:values} and~\ref{tab:structure} is an exact count from a complete enumeration or an exact test, and
+the run-to-run variation of the wall-clock times does not enter any value. The residual risk is of a different kind: a
+defect in \texttt{geng} or in its split into parts would lose graphs silently. Gate~E tests the generator on the
+classes with published counts, up to order 22, and Gate~D tests the split at orders 17 to 20 with the hook active;
+neither reaches orders 23 and 24 on the restricted classes the search enumerates, and Section~\ref{sec:discussion}
+lists what the gates do not cover.
+
+At the conjectured value the extremal graphs are not all of Bougard and Joret's form. At \nexttriples\ triples, \nnopart\
+of the \nextremal\ extremal graphs have no partition into $\alpha$ cliques; all of them have $k=3$ and $\alpha$ odd.
+Didin's inequality, if correct, confines such graphs to $n\le4\alpha-1$ or six small triples, and the data agree with
+that prediction, which was frozen before the last \nphasetwotriples\ triples were analysed. The two blocks $X_6$ and
+$X_7$ found in the data give a construction for every odd $\alpha$ and every $3\alpha<n\le4\alpha-1$, proved with six
+finite facts checked exactly. A proof of the second line through a partition into $\alpha$ cliques therefore cannot
+reach the conjectured size itself, and the structure of the extremal graphs beyond the enumerated range rests on the
+four open claims of Section~\ref{sec:discussion} and on Didin's theorem.
+
+\section{Data, code and reproducibility}\label{sec:repro}
+
+All code and records are in the repository \texttt{\docrepo}, under \texttt{problems/combinatorics/bougard-joret/
+experiments/}, experiments EXP-005 to EXP-013. Each experiment holds its question and predictions, fixed in a
+commit before its computation, its scripts, the raw records (\texttt{artifacts/enum.jsonl}: order, $\alpha$, $k$,
+edge count, graphs generated, graphs kept, up to five kept examples, number of parts, seconds) and a written
+statement of its result. The extremal graphs are in
+\texttt{EXP-011-extremal-structure/artifacts/extremal/}, one \texttt{graph6} file per triple, with the per-graph
+analysis in \texttt{structure.jsonl}, \texttt{verify.jsonl} and \texttt{didin.jsonl}.
+
+
+\paragraph{Experiments.} Table~\ref{tab:exps} lists, for each experiment, the commit that fixed its question and
+predictions before the computation.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{The experiments behind this paper, with the commit that froze each hypothesis before any computation (the
+hypothesis of EXP-011 carries two addenda, each frozen before the analysis it predicts).}
+\label{tab:exps}
+\begin{tabular}{lll}
+\toprule
+experiment & frozen at & content \\
+\midrule
+EXP-005 & \texttt{ad34cd90} & the seven smallest open triples, plain generator \\
+EXP-006 & \texttt{c04a8a8f} & the hook and the early-stopping filter; four triples \\
+EXP-007 & \texttt{f85ce6b9} & every open triple up to order 22 \\
+EXP-008 & \texttt{19125234} & order 23 \\
+EXP-009 & \texttt{153f1166} & order 24, four of six triples \\
+EXP-010 & \texttt{084e0874} & the two remaining order-24 edge counts \\
+EXP-011 & \texttt{47c86e8f}, \texttt{a480c533}, \texttt{e552f1c6} & every extremal graph at $35$ triples; structure; $p(G)$ \\
+EXP-012 & \texttt{78cc42fb} & validation at the production parameters \\
+EXP-013 & \texttt{15a64e33} & the construction for odd $\alpha$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A failed or partial outcome stays in the record with its experiment: the first-pass caps of EXP-009, the harness
+defects of the first Gate~D and Gate~E runs in EXP-012, and the refuted structural prediction of EXP-011 (that every
+extremal graph splits into $\alpha$ cliques).
+
+
+\paragraph{Reproducing one value.} The value $f(16,5,3)=26$ is a short example. Here $t(16,5)=18$, $c=26$ and
+$\ell=\max(24,18)=24$, so two edge counts are searched. With the pruned generator, $E=24$ yields $13$ candidates and
+$E=25$ yields $531$, none of them qualifying, in under a second; the plain generator yields $4{,}207$ and $927{,}968$
+candidates at the same counts, again none qualifying. At $E=c=26$ the pruned generator yields $18{,}979$ candidates,
+of which exactly $18$ qualify; these are the extremal graphs of Table~\ref{tab:structure}, $13$ of them Bougard--Joret
+graphs and $5$ with $s(G)=1$.
+
+\paragraph{Binaries.} SHA-256 of the binaries that ran, each reproduced byte for byte by Gate~F:
+\begin{quote}\footnotesize\ttfamily
+filter2 ebbfd34da19290f5f08b0c1b5e2441eab89a7a3d36894933be2f2e490269b02f\\
+geng\_a3 43259cfa498b57af9bacea605cd7b7517361d908b4650d6f55631b3b0c4b53c9\\
+geng\_a4 124d5588886dcbfd4fa837573bc02e65a2a7ccbb3497fdface3855e233aea9fa\\
+geng\_a5 d3bf334991bf37ffb5428a5bc43b6ad2191e70f4c87e52a136b8787e77e61419\\
+geng\_a6 69e35a9660ce409ab2fbbe043aaca82196580e284dda13aa64d3dd64846b290c\\
+geng\_a7 b98aac98b1645dadf0bfb6fe68aab2b467f83a264ed8751316a3bde84a9413f9
+\end{quote}
+
+\paragraph{Software.} nauty 2.8.9 (\texttt{geng.c} 3.7), gcc 13.3.0, Ubuntu 24.04 under WSL2, Python 3.12 in
+WSL and Python 3.13 with NetworkX 3.4.1 on Windows. Build lines:
+\begin{quote}\small\ttfamily
+gcc -O2 -o filter2 filter2.c\\
+gcc -O4 -mpopcnt -march=native -o geng\_a$A$ -DMAXN=WORDSIZE -DWORDSIZE=32\\
+\quad -DPRUNE=prune\_alpha -DALPHA\_BOUND=$A$ geng.c prune\_alpha.c\\
+\quad gtoolsW.o nautyW1.o nautilW1.o naugraphW1.o schreier.o naurng.o
+\end{quote}
+
+\paragraph{Commands.} One edge count of one triple, for example $(22,5,3)$ at $E=45$:
+\begin{quote}\small\ttfamily
+python3 run\_enum.py <nauty>/geng\_a5 <bin>/filter2 22 5 3 45 45\\
+\quad -{}-jobs 28 -{}-mod 56
+\end{quote}
+The extremal graphs and their analysis: \texttt{collect.py}, then \texttt{analyze.py}, \texttt{verify.py} and
+\texttt{didin.py} in EXP-011; the validation: \texttt{build.sh} and \texttt{validate.py} in EXP-012. The tables and
+figures of this paper are generated from the records by \texttt{make\_tables.py} in the manuscript folder.
+
+\paragraph{Evidence marks.} Values and counts are machine-verified exhaustive computations; the lemmas, propositions
+and theorems are proved here; Proposition~\ref{prop:where} and Corollary~\ref{cor:where} are conditional on Didin's
+Theorem~3; Didin's statements were read on the primary source and not audited.
+
+\begin{thebibliography}{99}\small
+\bibitem{BGMcubic} G. Brinkmann, J. Goedgebeur and B. D. McKay. \emph{Generation of cubic graphs}. Discrete
+Mathematics and Theoretical Computer Science 13(2) (2011), 69--80.
+\href{https://doi.org/10.46298/dmtcs.551}{doi:10.46298/dmtcs.551}.
+\bibitem{BJ} N. Bougard and G. Joret. \emph{Tur\'an's theorem and $k$-connected graphs}. Journal of Graph Theory 58
+(2008), 1--13. \href{https://doi.org/10.1002/jgt.20289}{doi:10.1002/jgt.20289}.
+\bibitem{Brooks} R. L. Brooks. \emph{On colouring the nodes of a network}. Proc. Cambridge Philos. Soc. 37 (1941),
+194--197.
+\bibitem{Brouwer} A. E. Brouwer. \emph{Some lotto numbers from an extension of Tur\'an's theorem}. Afdeling Zuivere
+Wiskunde, vol.~152, Mathematisch Centrum, Amsterdam, 1981.
+\bibitem{BronKerbosch} C. Bron and J. Kerbosch. \emph{Algorithm 457: finding all cliques of an undirected graph}.
+Communications of the ACM 16 (1973), 575--577. \href{https://doi.org/10.1145/362342.362367}{doi:10.1145/362342.362367}.
+\bibitem{CGJcubic} W. Cames van Batenburg, J. Goedgebeur and G. Joret. \emph{Large independent sets in
+triangle-free cubic graphs: beyond planarity}. Advances in Combinatorics (2020), paper 7.
+\href{https://doi.org/10.19086/aic.13667}{doi:10.19086/aic.13667}.
+\bibitem{CarraghanPardalos} R. Carraghan and P. M. Pardalos. \emph{An exact algorithm for the maximum clique problem}.
+Operations Research Letters 9 (1990), 375--382.
+\href{https://doi.org/10.1016/0167-6377(90)90057-C}{doi:10.1016/0167-6377(90)90057-C}.
+\bibitem{Graphedron} J. Christophe, S. Dewez, J.-P. Doignon, S. Elloumi, G. Fasbender, P. Gr\'egoire, D. Huygens,
+M. Labb\'e, H. M\'elot and H. Yaman. \emph{Linear inequalities among graph invariants: using GraPHedron to uncover
+optimal relationships}. Networks 52 (2008), 287--298.
+\href{https://doi.org/10.1002/net.20250}{doi:10.1002/net.20250}.
+\bibitem{DG} J. Das and S. Gupta. \emph{Counterexample to the Bougard--Joret conjecture}.
+\href{https://arxiv.org/abs/2608.18828}{arXiv:2608.18828v1}, 2026.
+\bibitem{Didin} M. Didin. \emph{A generalization of Tur\'an's theorem for graphs with a given independence number}.
+Preprint, under review, 2026. \href{https://doi.org/10.5281/zenodo.22831382}{doi:10.5281/zenodo.22831382}.
+\bibitem{DidinMalyshev} M. A. Didin and D. S. Malyshev. \emph{Generalization of Tur\'an's theorem and some of its
+corollaries}. Uspekhi Mat. Nauk 81(5) (2026), 181--182. \href{https://doi.org/10.4213/rm10305}{doi:10.4213/rm10305}.
+\bibitem{ErdosGallai} P. Erd\H{o}s and T. Gallai. \emph{On the minimal number of vertices representing the edges of a
+graph}. Magyar Tud. Akad. Mat. Kutat\'o Int. K\"ozl. 6 (1961), 181--203.
+\bibitem{EsfahanianHakimi} A. H. Esfahanian and S. L. Hakimi. \emph{On computing the connectivities of graphs and
+digraphs}. Networks 14 (1984), 355--366. \href{https://doi.org/10.1002/net.3230140211}{doi:10.1002/net.3230140211}.
+\bibitem{EvenTarjan} S. Even and R. E. Tarjan. \emph{Network flow and testing graph connectivity}. SIAM Journal on
+Computing 4 (1975), 507--518. \href{https://doi.org/10.1137/0204043}{doi:10.1137/0204043}.
+\bibitem{GitlerValencia} I. Gitler and C. E. Valencia. \emph{On bounds for some graph invariants}.
+\href{https://arxiv.org/abs/math/0510387}{arXiv:math/0510387}.
+\bibitem{NetworkX} A. A. Hagberg, D. A. Schult and P. J. Swart. \emph{Exploring network structure, dynamics, and
+function using NetworkX}. Proceedings of the 7th Python in Science Conference (SciPy 2008), 11--15.
+\bibitem{HansonToft} D. Hanson and B. Toft. \emph{$k$-saturated graphs of chromatic number at least $k$}. Ars
+Combinatoria 31 (1991), 159--164.
+\bibitem{Haxell} P. E. Haxell. \emph{A note on vertex list colouring}. Combinatorics, Probability and
+Computing 10 (2001), 345--347. \href{https://doi.org/10.1017/S0963548301004758}{doi:10.1017/S0963548301004758}.
+\bibitem{Harary} F. Harary. \emph{The maximum connectivity of a graph}. Proc. Natl. Acad. Sci. USA 48 (1962),
+1142--1146. \href{https://doi.org/10.1073/pnas.48.7.1142}{doi:10.1073/pnas.48.7.1142}.
+\bibitem{LiuNing} L. Liu and B. Ning. \emph{A spectral analogue of Ore's problem on Tur\'an theorem}. Linear Algebra
+and its Applications 735 (2026), 112--122. \href{https://doi.org/10.1016/j.laa.2026.01.012}{doi:10.1016/j.laa.2026.01.012}.
+\bibitem{McKayRadziszowski} B. D. McKay and S. P. Radziszowski. \emph{$R(4,5)=25$}. Journal of Graph Theory 19
+(1995), 309--322. \href{https://doi.org/10.1002/jgt.3190190304}{doi:10.1002/jgt.3190190304}.
+\bibitem{McKay98} B. D. McKay. \emph{Isomorph-free exhaustive generation}. Journal of Algorithms 26 (1998), 306--324.
+\href{https://doi.org/10.1006/jagm.1997.0898}{doi:10.1006/jagm.1997.0898}.
+\bibitem{nauty} B. D. McKay and A. Piperno. \emph{Practical graph isomorphism, II}. Journal of Symbolic Computation 60
+(2014), 94--112. \href{https://doi.org/10.1016/j.jsc.2013.09.003}{doi:10.1016/j.jsc.2013.09.003}.
+\bibitem{OEIS} OEIS Foundation. \emph{The On-Line Encyclopedia of Integer Sequences}, sequences A001349, A002851,
+A005638 and A006820. \url{https://oeis.org}.
+\bibitem{Ostergard} P. R. J. \"Osterg\aa rd. \emph{A fast algorithm for the maximum clique problem}. Discrete Applied
+Mathematics 120 (2002), 197--207. \href{https://doi.org/10.1016/S0166-218X(01)00290-6}{doi:10.1016/S0166-218X(01)00290-6}.
+\bibitem{Next} F. Santib\'a\~nez-Leal. \emph{The next matching level for triangle-free graphs with bounded degree and an
+exact Bougard--Joret value}. CAOS Research preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.22343021}{doi:10.5281/zenodo.22343021}.
+\bibitem{Shell} F. Santib\'a\~nez-Leal. \emph{The first interior shell of the Bougard--Joret extremal problem}. CAOS
+Research preprint, 2026. \href{https://doi.org/10.5281/zenodo.22315251}{doi:10.5281/zenodo.22315251}.
+\bibitem{Tomita} E. Tomita, A. Tanaka and H. Takahashi. \emph{The worst-case time complexity for generating all maximal
+cliques and computational experiments}. Theoretical Computer Science 363 (2006), 28--42.
+\href{https://doi.org/10.1016/j.tcs.2006.06.015}{doi:10.1016/j.tcs.2006.06.015}.
+\bibitem{Turan} P. Tur\'an. \emph{Eine Extremalaufgabe aus der Graphentheorie}. Matematikai \'es Fizikai Lapok 48
+(1941), 436--452.
+\bibitem{Wang} S. Wang. \emph{Independent sets and balanced cycle-linkings in 2-connected graphs}.
+\href{https://arxiv.org/abs/2609.15637}{arXiv:2609.15637}, 2026.
+\bibitem{Wessel} W. Wessel. \emph{Kanten-kritische Graphen mit der Zusammenhangszahl 2}. Manuscripta Mathematica 2
+(1970), 309--334. \href{https://doi.org/10.1007/BF01719589}{doi:10.1007/BF01719589}.
+\bibitem{Whitney} H. Whitney. \emph{Congruent graphs and the connectivity of graphs}. American Journal
+of Mathematics 54 (1932), 150--168. \href{https://doi.org/10.2307/2371086}{doi:10.2307/2371086}.
+\end{thebibliography}
+
+\FloatBarrier
+\appendix
+\section{Every enumeration record}\label{app:records}
+Table~\ref{tab:percount} lists every record of EXP-005 to EXP-010, one row per triple, edge count and run, with the
+generator, the number of parts, the graphs generated and kept, and the wall-clock seconds. A triple appears more than
+once when an edge count was run with both generators or rerun after a cap. The totals of Section~\ref{sec:values} are
+sums over these rows. The rows are ordered by triple and edge count, and each one is a line of the file
+\texttt{artifacts/enum.jsonl} of the experiment named in its record column, written by that experiment's
+\texttt{run\_enum.py} when the edge count finished. A row below the conjectured value with no kept graph is the
+evidence for one step of Algorithm~\ref{alg:decide}. A row at $E=c$, where an experiment ran that count, gives the
+number of extremal graphs, and the regeneration of Section~\ref{sec:extremal} reproduces it (the column ``recorded''
+of Table~\ref{tab:structure}). Seconds are wall-clock times of the whole edge count over all its parts, so rows run on
+different numbers of processes are not comparable as CPU time.
+{\scriptsize\setlength{\tabcolsep}{4pt}
+\input{percount.tex}}
+
 \end{document}
