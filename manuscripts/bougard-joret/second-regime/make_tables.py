@@ -229,6 +229,40 @@ def main():
     # ------------------------------------------------------------- drawings of two extremal graphs
     write("graphs.tex", drawings(di, st))
     write("blocks.tex", blocks())
+    e14 = exp / "EXP-014-block-uniqueness" / "artifacts" / "check-blocks.json"
+    if not e14.exists():
+        raise SystemExit(f"missing EXP-014 record: {e14}")
+    bc = json.loads(e14.read_text(encoding="utf-8"))
+    if not (bc["atlas_matches_A000088"] and bc["P1"] and bc["P2_P3"] and bc["method_disagreements"] == 0):
+        raise SystemExit("EXP-014 record does not support Proposition prop:blockcheck")
+    write("blockcheck.tex", blockcheck(bc))
+    a2p = exp / "EXP-014-block-uniqueness" / "artifacts" / "alpha2.json"
+    if not a2p.exists():
+        raise SystemExit(f"missing EXP-014 record: {a2p}")
+    a2 = json.loads(a2p.read_text(encoding="utf-8"))
+    if not (a2["least_edges"] == a2["conjectured"] == 12
+            and any(not g["partition_into_2_cliques"] for g in a2["graphs_at_least"])):
+        raise SystemExit("EXP-014 alpha2 record does not support the alpha = 2 remark")
+    # ablation of the prune: edge counts run by both generators
+    abl = []
+    for key, rs in sorted(recs.items()):
+        if len({r["generator"] for r in rs}) == 2:
+            pl = min((r for r in rs if r["generator"] == "plain"), key=lambda r: r["seconds"])
+            pr = [r for r in rs if r["generator"] == "pruned"][-1]
+            abl.append((key, pl, pr))
+    if not abl:
+        raise SystemExit("no edge count was run by both generators: the ablation has no data")
+    arows = []
+    for (n_, a_, k_, E_), pl, pr in abl:
+        arows.append(f"$({n_},{a_},{k_})$ & {E_} & {fmt(pl['generated'])} & {pl['seconds']:.1f} & "
+                     f"{fmt(pr['generated'])} & {pr['seconds']:.1f} & {pl['kept']} & {pr['kept']} & "
+                     f"{fmt(round(pl['generated'] / pr['generated']))} & {fmt(round(pl['seconds'] / pr['seconds']))} \\\\")
+    write("ablation.tex", "\\begin{tabular}{lrrrrrrrrr}\n\\toprule\n & & \\multicolumn{2}{c}{plain} & "
+          "\\multicolumn{2}{c}{pruned} & \\multicolumn{2}{c}{kept} & \\multicolumn{2}{c}{factor} \\\\\n"
+          "triple & $E$ & graphs & s & graphs & s & plain & pruned & graphs & time \\\\\n\\midrule\n"
+          + "\n".join(arows) + "\n\\bottomrule\n\\end{tabular}\n")
+    gen_f = [pl["generated"] / pr["generated"] for _, pl, pr in abl]
+    sec_f = [pl["seconds"] / pr["seconds"] for _, pl, pr in abl]
     write("partition-chart.tex", partition_chart(per))
     write("window-map.tex", window_map(by_n, decision))
     e13 = jl(exp / "EXP-013-odd-alpha-construction" / "artifacts" / "construct.jsonl")
@@ -329,6 +363,7 @@ def main():
         "nfullpairs": len(full_pairs(decision)),
         "nturancond": sum(1 for n, al, k in triples if t(n, al - 1) >= cval(n, al, k)),
         "nconstructed": sum(1 for r in e13 if r.get("found")),
+        "nblockatlas": fmt(sum(bc["atlas_counts"].values())),
         "gateAgraphs": fmt(ga["graphs"]) if ga else "pending", "gateAdecisions": fmt(ga["decisions"]) if ga else "pending",
         "gateAgroups": ga and len(ga["groups"]) or "pending", "gateAkept": fmt(ga["kept"]) if ga else "pending",
         "gateBgraphs": fmt(gb["graphs"]) if gb else "pending", "gateBslices": len(gb["slices"]) if gb else "pending",
@@ -339,6 +374,11 @@ def main():
         "shafilter": sha_f.group(2)[:16] + "\\ldots" if sha_f else "pending",
         "shageng": sha_g.group(1)[:16] + "\\ldots" if sha_g else "pending",
         "growthlow": f"{min(ratios):.1f}" if ratios else "pending", "growthhigh": f"{max(ratios):.1f}" if ratios else "pending",
+        "growthmean": f"{statistics.mean(ratios):.1f}", "growthsd": f"{statistics.stdev(ratios):.1f}",
+        "growthn": len(ratios),
+        "nablation": len(abl), "abgenlow": fmt(round(min(gen_f))), "abgenhigh": fmt(round(max(gen_f))),
+        "abseclow": fmt(round(min(sec_f))), "absechigh": fmt(round(max(sec_f))),
+        "nalphatwo": a2["qualifying"],
         "secorderxxi": fmt(round(per_order[21])), "secorderxxii": fmt(round(per_order[22])),
         "secorderxxiii": fmt(round(per_order[23])),
         "ratioxxii": f"{per_order[22] / per_order[21]:.1f}", "ratioxxiii": f"{per_order[23] / per_order[22]:.1f}",
@@ -424,6 +464,24 @@ def blocks():
         lines.append("\\end{tikzpicture}")
         out.append("\n".join(lines))
     return out[0] + "\\qquad\\qquad\n" + out[1] + "\n"
+
+
+def blockcheck(bc):
+    """Table of the EXP-014 finite check: survivors per condition, then the surviving marked classes."""
+    st = bc["stages"]
+    rows = [("graphs on $5$ to $7$ vertices", st["graphs"]), ("(ii): order and size", st["C1"]),
+            ("(i), (ii): connected, $\\alpha=2$, every edge critical", st["C2"]), ("(iv): $\\theta\\ge3$", st["C3"]),
+            ("(iv): degrees, pairs $(X,A)$", st["C4 pairs"]),
+            ("(iv): components of $X-T$, pairs $(X,A)$", st["C5 pairs"])]
+    lines = ["\\begin{tabular}{lr}", "\\toprule", "condition & survivors \\\\", "\\midrule"]
+    lines += [f"{a} & {fmt(b)} \\\\" for a, b in rows]
+    lines += ["\\midrule", "surviving class (order, members) & equals \\\\", "\\midrule"]
+    for c in bc["classes"]:
+        name = ", ".join(m.replace("X6", "$X_6$").replace("X7", "$X_7$").replace("[", "$\\{").replace("]", "\\}$")
+                         for m in c["matches_observed"])
+        lines.append(f"$m={c['m']}$, {c['members']} triples & {name} \\\\")
+    lines += ["\\bottomrule", "\\end{tabular}"]
+    return "\n".join(lines) + "\n"
 
 
 def partition_chart(per):
