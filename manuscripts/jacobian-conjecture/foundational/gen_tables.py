@@ -14,9 +14,11 @@ expects is absent.
   EXP-010 artifacts/output-2026-07-21.txt        rigidity sweeps
   EXP-011 artifacts/output-2026-07-21.txt        real census
   EXP-012 artifacts/output-{AB,C,D,E}-2026-07-21.txt and verdict.md   weighted landscape
+  EXP-145 artifacts/results.json                 image of F, fibers over C = 0 (stops unless verdict PASS)
 
 Written files (next to main.tex): numbers.tex, tab-instances.tex, tab-collisions.tex,
-tab-census.tex, tab-landscape.tex, fig-degrees.tex, fig-fiber.tex, fig-wall.tex.
+tab-census.tex, tab-landscape.tex, fig-degrees.tex, fig-fiber.tex, fig-wall.tex,
+fig-window.tex, fig-plane.tex.
 
 Usage:
     python gen_tables.py            rewrite the generated files
@@ -510,7 +512,7 @@ def build_fig_window():
         r"\addplot[only marks, mark=square*, mark size=3.2pt, black] coordinates {" + found + "};",
     ]
     for a, b1, b2, df, dg in shapes:
-        out.append(r"\node[font=\scriptsize, anchor=west] at (axis cs:" + f"{a + 0.08},{b1 + 0.0}) {{$(\\deg f,\\deg g)=({df},{dg})$}};")
+        out.append(r"\node[font=\scriptsize, anchor=west] at (axis cs:" + f"{a + 0.08},{b1 + 0.0}) {{$({df},{dg})$}};")
     return "\n".join(out) + "\n"
 
 

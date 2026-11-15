@@ -84,20 +84,19 @@ the Discriminant Wall of Non-Properness,\\ and Planar Equivariant Rigidity}
 \begin{abstract}
 On 2026-07-20, Levent Alp\"oge announced (crediting the language model Claude Fable 5) % voice-ok: external attribution, as the announcement states it
 a polynomial map $F : \C^3 \to \C^3$ with constant Jacobian determinant $-2$
-and a repeated value, refuting the Jacobian conjecture for every $N \ge 3$. In exact
-arithmetic, the fiber over the announced target consists of exactly the three announced points.
+and a repeated value, refuting the Jacobian conjecture for every $N \ge 3$. The
+fiber over the announced target consists of exactly the three announced points.
 The map is a weighted skew product over the invariants $v = xy$, $t = x^2 z$; its Keller property is a
-two-variable identity and its fibers are governed by a cubic. We prove a
+two-variable identity. We prove a
 constructor: every admissible seed polynomial $p$, scale $k$ and section $q$ gives a Keller map of
-determinant $-k\,p(1)^2$ and generic fiber degree $\deg p + 1$, with rational collisions in fiber
-degrees $3$ to $6$. The degree law $(5d-3, 5d-4, 4)$ is machine-verified on four seeds; its extension
+determinant $-k\,p(1)^2$ and generic fiber degree $\deg p + 1$. The degree law $(5d-3, 5d-4, 4)$ is machine-verified on four seeds; its extension
 to every seed and the minimality of the announced map within the family are conjectural.
 The asymptotic variety of $F$ is the discriminant surface $27A^2C^2 - 18ABC + 16A + B^3C - B^2 = 0$
-and the plane $C = 0$ is not asymptotic; the image of $F$ is the complement of an explicit curve, and over
-$\R$ the surface separates three real preimages from one. In dimension two, equivariant
+alone. $F$ is not surjective, over $\C$ or $\R$: its image omits an explicit curve, and the fibers over $C = 0$ have three points
+off $B^2 = 16A$ (computation EXP-145). Version 0.14 stated a surjective real restriction and an asymptotic plane $C = 0$, both false, and the minimality of the announced map as proved, which is conjectural. % voice-ok: correction notice required for a published statement
+In dimension two, equivariant
 Keller maps are linear for opposite-sign weights and affine, $(f_0 x,\, g_0 y + c)$ or its swap, for one
-zero weight, so a planar counterexample must be non-equivariant; this agrees with Shaska's independent
-classification. Computations are exact; each result is marked machine-verified, derived or conjectural.
+zero weight, so a planar counterexample must be non-equivariant.
 \end{abstract}
 
 \section{Introduction}
@@ -150,6 +149,9 @@ and notation (Section~\ref{sec:problem}), the computational methods (Section~\re
 experimental design (Section~\ref{sec:design}), the results on the map and its family
 (Sections~\ref{sec:valid} to~\ref{sec:asymptotic}), the two-dimensional results (Section~\ref{sec:planar}), the ablation, the validation, the
 discussion and the limitations.
+
+\paragraph{Correction of version 0.14.}% voice-ok: correction notice required for a published statement
+Version 0.14 stated three results that are corrected here. (i) It stated that the announced map restricts to a surjective real Keller map; this is false, because the fiber over every point of the curve $\Gamma$ of \eqref{eq:gamma} is empty, over $\C$ and over $\R$, and the image is $\C^3 \setminus \Gamma$ (Theorem~\ref{thm:realcensus}). (ii) It stated that the plane $C = 0$ is part of the asymptotic variety and that a generic fiber over it is a single point; this is false, because the fiber over $(A,B,0)$ has three points when $B^2 \neq 16A$ and the asymptotic variety is the surface $\{\Sigma = 0\}$ alone (Theorems~\ref{thm:cplane} and~\ref{thm:asymptotic}). (iii) It stated that the announced map is the smallest member of its family; this is now Conjecture~\ref{conj:degrees}, since the degree law is machine-verified on four seeds only. Computation EXP-145 certifies (i) and (ii). % voice-ok: correction notice required for a published statement
 
 \section{Related work}\label{sec:related}
 
@@ -268,7 +270,7 @@ reductions of Section~\ref{sec:family}, in $\mathbb{F}_\ell$; no floating-point 
 whose version $1.14$ is named in the archived description of computation EXP-001; the other archived descriptions name sympy without a version. Gr\"obner
 bases are computed for the lexicographic order. Univariate real roots are isolated by Sturm sequences, so a root count is a certified integer and not a floating-point estimate. Polynomiality of a rational function is decided by exact cancellation of its numerator and denominator, and identities with symbolic coefficients are decided by expansion to a canonical form and a test for the zero polynomial. The figures of this paper are drawn
 from the exact polynomials by the script \texttt{gen\_tables.py}, which also writes every table and every number quoted from an archived output.
-The archived outputs record no wall times; the costs stated below are operation counts.
+The archived outputs record no wall times except that of EXP-145 (sympy $1.14.0$, \numExpSeconds{} seconds); the costs stated below are operation counts.
 
 \subsection{Algorithm A1: exact validation and the full fiber}
 
@@ -365,8 +367,7 @@ produced no instance; the valuation conditions are therefore built into the ansa
 \end{algorithmic}
 \end{algorithm}
 
-Cost: the dominant steps are the coefficient solve (polynomial system, at most $8$ unknowns) and the 
-umEnumFibers{}-fold fiber computation; the window gives \numBranches{} branches,
+Cost: the dominant steps are the coefficient solve (polynomial system, at most $8$ unknowns) and the \numEnumFibers{}-fold fiber computation; the window gives \numBranches{} branches,
 \numEnumInst{} instances and \numEnumFibers{} fibers. With three parameter samples per branch, the archived counts satisfy $\numBranches \cdot 3 = \numEnumInst + \numBadResidual$ (branches times samples equals instances plus discards).
 
 \subsection{Check of the image and of the plane fibers (EXP-145)}
@@ -392,7 +393,7 @@ predictions and the acceptance criteria are as follows.
 
 \textbf{Weight systems (EXP-012).} The determinant lemma for the weights $(1,-1,-m)$, $m \in \{1,2,3,4\}$, and the pairing reductions are predicted; a family at $m = 4$ is predicted by a parity law and refuted by an emptiness certificate.
 
-The arithmetic domain and software of Section~\ref{sec:methods} apply to all of them. The sample targets of the census and the grid are fixed rational points; no random seeds are involved, and the only random choice, the target at which the fiber degree of an instance is checked, is the fixed rational point $(\tfrac37, -\tfrac25, \tfrac13)$.
+The arithmetic domain and software of Section~\ref{sec:methods} apply to all of them. The sample targets of the census and the grid of EXP-011 are fixed rational points; EXP-145 draws its random targets with the fixed seed $20261114$; and the target at which the fiber degree of an instance is checked is the fixed rational point $(\tfrac37, -\tfrac25, \tfrac13)$.
 
 \section[Exact validation and the full fiber (EXP-001)]{Exact validation and the full fiber\\ (EXP-001)}\label{sec:valid}
 
@@ -523,10 +524,10 @@ b_1 = k\,u\,r(w) + m, \qquad a_1 = u^2\bigl(r(w) - \rho(w)\bigr) + \tfrac{m}{k}\
 both polynomials in $(v,t)$. For the announced seed these closed forms reproduce, on $t = 0$, the polynomials $b_1 = v + 12v^2 + 9v^3$ and $a_1 = u(4v^2 + 3v^3)$ of Theorem~\ref{thm:structure}.
 
 \emph{Step 2: polynomiality in $(x,y,z)$ and the admissibility conditions.} A monomial $v^i t^j$ of $a_1$ becomes $x^{i+2j-2}y^iz^j$ in $a_1/x^2$ and one of $b_1$ becomes $x^{i+2j-1}y^iz^j$ in $b_1/x$. Hence the map is polynomial exactly when $a_1$ has no monomial $1$ or $v$ and $b_1$ has no constant term. At the origin $s = q(0) = k$, $u = 1$, $w = 1$. Then $b_1(0,0) = k\,p(1) + m$ vanishes if and only if $m = -k\,p(1)$. With this value $V'(0,0) = k^2p(1) + mk = 0$, so $T'(0,0) = -k^2\Phi(1)$ and $a_1(0,0) = -\Phi(1)$, which vanishes if and only if $\int_0^1 p = 0$. Given these, $\partial_v a_1(0,0) = T'_v(0,0)/k^2$; the differential of $T'$ at the origin equals $k^2\bigl(p'(1) - p(1)\bigr)\,dw + m\,ds$ with $w_v = (k + q'(0))/k$ and $s_v = q'(0)$, so
-\[
+\begin{equation}\label{eq:tv}
 T'_v(0,0) = k\bigl[(p'(1) - p(1))\,k + q'(0)\,(p'(1) - 2p(1))\bigr],
-\]
-which vanishes if and only if $q'(0) = k\,(p(1) - p'(1))/(p'(1) - 2p(1))$. If $p'(1) = 2p(1)$ the condition would read $p(1)\,k = 0$, impossible since $p(1) \neq 0$ and $k \ne 0$: the fourth admissibility condition is necessary. The three conditions are therefore equivalent to the polynomiality of the lifted map, and they are exactly the conditions at weights $0$ and $1$ at the origin. The third component $x c_1 = x(q(v) - t)$ is a polynomial.
+\end{equation}
+which vanishes if and only if $q'(0) = k\,(p(1) - p'(1))/(p'(1) - 2p(1))$. If $p'(1) = 2p(1)$ the condition would read $p(1)\,k = 0$, impossible since $p(1) \neq 0$ and $k \ne 0$: the fourth admissibility condition is necessary. The conditions are therefore equivalent to the polynomiality of the lifted map, and they are exactly the conditions at weights $0$ and $1$ at the origin. The third component $x c_1 = x(q(v) - t)$ is a polynomial.
 
 \emph{Step 3: the determinant.} From $T' = wV' - k^2\Phi(w)$ one gets $dT' = (V' - k^2p(w))\,dw + w\,dV' = m s\,dw + w\,dV'$ because $V' - k^2p(w) = ms$, and $dV' = k^2p'(w)\,dw + m\,ds$. Therefore $dV'\wedge dT' = ms\,dV'\wedge dw = -m^2 s\,dw\wedge ds$. For the change of variables $(v,t)\mapsto(w,s)$, $s_v = q'$, $s_t = -1$, $w_v = (s + uq')/k$, $w_t = -u/k$, so $\partial(w,s)/\partial(v,t) = w_v s_t - w_t s_v = -s/k$. Hence $J_2 = (-m^2s)(-s/k) = m^2 s^2/k$, and Lemma~\ref{lem:skew} with $c_1 = s$ gives $\det J F_{p,k,q} = -J_2/c_1^2 = -m^2/k = -k\,p(1)^2$.
 
@@ -575,7 +576,7 @@ The instance $G_3$ reduces modulo $\ell = 13$ and $\ell = 101$ to explicit non-i
 \end{figure}
 
 \begin{theorem}[Degree law on four seeds, {\MV}]\label{thm:degrees}
-For the four seeds of $F$, $G_3$, $G_4$ and $G_5$ (Table~\ref{tab:instances}) with affine sections, the component total degrees are exactly $(5d - 3,\, 5d - 4,\, 4)$ for $d = 2, 3, 4, 5$. At $d = 2$ the scale $k$ does not change them ($k = 7$ gives $(7,6,4)$), and the section tails $v^2$ and $v^3$ give $(8,7,5)$ and $(10,9,7)$, strictly larger in every component. A seed of degree $1$ is impossible: $p = p_1 w$ and $\int_0^1 p = p_1/2 = 0$ force $p = 0$, so the fiber degree in the family is at least $3$. Among the instances of Table~\ref{tab:instances} the minimal degree vector is $(7,6,4)$, attained at the announced map. Globally only Wang's theorem constrains $\C^3$; the existence of a counterexample of total degree $3$ to $6$ is open.
+For the four seeds of $F$, $G_3$, $G_4$ and $G_5$ (Table~\ref{tab:instances}) with affine sections, the component total degrees are exactly $(5d - 3,\, 5d - 4,\, 4)$ for $d = 2, 3, 4, 5$. At $d = 2$ the scale $k = 7$ gives the same degrees $(7,6,4)$, and the section tails $v^2$ and $v^3$ give $(8,7,5)$ and $(10,9,7)$, strictly larger in every component. A seed of degree $1$ is impossible: $p = p_1 w$ and $\int_0^1 p = p_1/2 = 0$ force $p = 0$, so the fiber degree in the family is at least $3$. Among the instances of Table~\ref{tab:instances} the minimal degree vector is $(7,6,4)$, attained at the announced map. Globally only Wang's theorem constrains $\C^3$; the existence of a counterexample of total degree $3$ to $6$ is open~\UU{} (no source in the literature read for this work settles it).
 \end{theorem}
 
 The theorem is a statement about the four seeds that were computed: the machine verification covers one seed per degree $d$, the scale $k = 7$ at $d = 2$ and the tails $v^2$, $v^3$ at $d = 2$ (Figure~\ref{fig:degrees}). It does not cover other seeds of the same degree, other scales at $d \ge 3$, or tails at $d \ge 3$.
@@ -588,7 +589,7 @@ The evidence is the machine verification above and the structure of \eqref{eq:cl
 
 \section{The asymptotic variety: where sheets merge}\label{sec:asymptotic}
 
-\begin{theorem}[Escape and the discriminant wall, {\DD}, certified {\MV} on $F$ and $G_3$]\label{thm:asymptotic}
+\begin{theorem}[Escape and the discriminant wall; part 1 {\DD}, certified {\MV} on $F$ and $G_3$ (EXP-007); part 2 {\DD}, with the plane samples {\MV} (EXP-145)]\label{thm:asymptotic}
 Let $F$ be the announced map, $W(w) = 4(w^2 - w^3) - wBC + AC^2$ its fiber polynomial, $D$ the discriminant of $W$ in $w$ and
 \begin{equation}\label{eq:sigma}
 \Sigma(A,B,C) = 27A^2C^2 - 18ABC + 16A + B^3C - B^2, \qquad D = -16\,C^2\,\Sigma .
@@ -620,7 +621,7 @@ At $(A,B) = (-\tfrac14, 0)$ one has $B^2 - 16A = 4$, $x = \pm 1$, $y = \mp\tfrac
 \emph{Targets on the surface.} If $C_0 \neq 0$ and $\Sigma(t_0) = 0$, choose targets $t_n \to t_0$ off the surface; $W_{t_n}$ has simple roots $w_n$ converging to a multiple root $w_0$ of $W_{t_0}$, so $s_n = -W'_{t_n}(w_n)/m \to 0$ and the reconstructed preimage has $x_n = C_n/s_n \to \infty$ while $F(p_n) = t_n \to t_0$. If $C_0 = 0$ and $B_0^2 = 16A_0$, choose $(A_n, B_n) \to (A_0, B_0)$ with $B_n^2 - 16A_n \to 0$ and $\neq 0$: the points of Theorem~\ref{thm:cplane} with $x_n = 2/\sqrt{B_n^2 - 16A_n} \to \infty$ map to $(A_n, B_n, 0) \to t_0$.
 \end{proof}
 
-Verified end to end \MV: the target $(0, 1, 1)$ lies on the surface and its exact rational fiber is the single point $(2, -\tfrac12, \tfrac98)$ (a double root and a simple root of $W$: two sheets escaped); the collision target $(-16, -16, 1)$ has $D = \numDcollision{} \neq 0$ and a full three-point rational fiber, whose third point is $(\tfrac{1}{24}, -28, -10656)$. Collisions are generic; escapes are of codimension one. Kraus' ``ramification at infinity'' is, for this family, the discriminant of a univariate polynomial. An enumeration that keeps only the rational solutions of the fiber system sees one point over a generic rational target $(A,B,0)$, because the two points of \eqref{eq:cplane} are irrational unless $B^2 - 16A$ is a rational square; computation EXP-145 recomputes the two rational targets of the enumeration of EXP-007 on the plane, finds three points over each with exactly one rational, and so supersedes the statement of EXP-007 that the plane $C = 0$ is asymptotic with a single-point fiber.
+Verified end to end \MV: the target $(0, 1, 1)$ lies on the surface and its exact fiber is the single point $(2, -\tfrac12, \tfrac98)$ (a double root and a simple root of $W$: two sheets escaped; computation EXP-145 confirms a fiber ideal of quotient dimension $1$ at this target, so no irrational point is missed); the collision target $(-16, -16, 1)$ has $D = \numDcollision{} \neq 0$ and a full three-point rational fiber, whose third point is $(\tfrac{1}{24}, -28, -10656)$. Collisions are generic; escapes are of codimension one. Kraus' ``ramification at infinity'' is, for this family, the discriminant of a univariate polynomial. An enumeration that keeps only the rational solutions of the fiber system sees one point over a generic rational target $(A,B,0)$, because the two points of \eqref{eq:cplane} are irrational unless $B^2 - 16A$ is a rational square; computation EXP-145 recomputes the two rational targets of the enumeration of EXP-007 on the plane, finds three points over each with exactly one rational, and so supersedes, in part, the characterization of the asymptotic variety in EXP-007 (item 2, which includes the plane $C = 0$) and its statement that the plane is asymptotic with a single-point fiber (item 4); items 1, 3 and 5 of EXP-007 are not affected.
 
 \section{Real fibers and the image of the map}\label{sec:real}
 
@@ -633,7 +634,7 @@ over $\C$ and, with $c$ real, over $\R$: $F$ is not surjective, and every other 
 \end{theorem}
 
 \begin{proof}
-For $C \neq 0$ the fiber is in bijection with the simple roots of $W$ (Theorem~\ref{thm:family}), and a real target gives a cubic $W$ with real coefficients and leading coefficient $-4$. If $D > 0$ it has three distinct real roots; if $D < 0$ it has one real root and two complex roots, all simple; if $D = 0$ it has a double root and a simple root, both real, or a triple root. A triple root occurs exactly when $W'' = -24w + 8$ and $W'$ vanish together with $W$ at $w = \tfrac13$, that is when $BC = \tfrac43$ and $AC^2 = \tfrac{4}{27}$: the curve $\Gamma$. In that case $W = -4(w - \tfrac13)^3$ has no simple root and the fiber is empty. In every other case with $C \ne 0$ a simple real root exists. Over $C = 0$ the flat-sheet point $(0, B, A - 4B^2)$ is real and Theorem~\ref{thm:cplane} gives the count.
+For $C \neq 0$ the fiber is in bijection with the simple roots of $W$ (Theorem~\ref{thm:family}), and a real target gives a cubic $W$ with real coefficients and leading coefficient $-4$. If $D > 0$ it has three distinct real roots; if $D < 0$ it has one real root and two complex roots, all simple; if $D = 0$ it has a double root and a simple root, both real, or a triple root. A triple root occurs exactly when $W'' = -24w + 8$ and $W'$ vanish together with $W$ at $w = \tfrac13$, that is when $BC = \tfrac43$ and $AC^2 = \tfrac{4}{27}$: the curve $\Gamma$. In that case $W = -4(w - \tfrac13)^3$ has no simple root and the fiber is empty. In every other case with $C \ne 0$ a simple real root exists. Over $\C$ the same argument holds: a cubic with constant leading coefficient $-4$ has no simple root exactly when it equals $-4(w - r)^3$, and the coefficient of $w$ and the constant term of $W$ then force $r = \tfrac13$ and the target to lie on $\Gamma$, so the image of $F$ is $\C^3 \setminus \Gamma$ over $\C$ as well. Over $C = 0$ the flat-sheet point $(0, B, A - 4B^2)$ is real and Theorem~\ref{thm:cplane} gives the count.
 \end{proof}
 
 \begin{table}[t]\centering\small
@@ -642,7 +643,7 @@ For $C \neq 0$ the fiber is in bijection with the simple roots of $W$ (Theorem~\
 \label{tab:census}
 \end{table}
 
-The counts $\numCensusThree$ target with three real preimages and $\numCensusOne$ with one occur among the six sampled targets of Table~\ref{tab:census}, so both regions are inhabited. A grid of \numGrid{} rational targets (three values for each of $A$ and $B$ and four for $C$) contains no target with an empty real fiber: for the \numGridNoPlane{} targets with $C \neq 0$ the census is computed, and for the \numGridPlane{} targets on $C = 0$ the explicit flat-sheet point is real. The grid does not meet the curve $\Gamma$, so it could not show the gap in the image; the image statement of Theorem~\ref{thm:realcensus} is the derivation above, certified by computation EXP-145 in three ways. The lexicographic Gr\"obner basis of the fiber ideal over $\Gamma(c)$ with $c$ inverted is $[1]$, so no point of $\C^3$ maps to $\Gamma$; the same construction with $\tfrac{5}{27}$ in place of $\tfrac{4}{27}$ does not give $[1]$, which excludes an artifact of the construction; and at \numImgTargets{} sampled targets with $C \neq 0$ off $\Gamma$ (\numImgRandom{} random, \numImgSigma{} on the surface $\Sigma = 0$ and \numImgNear{} within $10^{-3}$ of $\Gamma$ in each coordinate) the fiber ideal is proper, its quotient dimension equals the number of simple roots of $W$, and a real preimage exists. The reconstruction identity is exact modulo $W$. That every target off $\Gamma$ with $C \neq 0$ has a preimage is the simple-root argument, with the samples as evidence and not as a proof. Computation EXP-145 supersedes the surjectivity statements of EXP-011 (items 3 and 4) and the single-point reading of the plane $C = 0$ in EXP-007 (item 4), where they disagree with it. The constant-Jacobian \emph{real} statement in dimension three falls with the same example; Pinchuk's planar counterexample \cite{Pinchuk1994} concerned the non-constant case.
+The counts $\numCensusThree$ target with three real preimages and $\numCensusOne$ with one occur among the six sampled targets of Table~\ref{tab:census}, so both regions are inhabited. A grid of \numGrid{} rational targets (three values for each of $A$ and $B$ and four for $C$) contains no target with an empty real fiber: for the \numGridNoPlane{} targets with $C \neq 0$ the census is computed, and for the \numGridPlane{} targets on $C = 0$ the explicit flat-sheet point is real. The grid does not meet the curve $\Gamma$, so it could not show the gap in the image; the image statement of Theorem~\ref{thm:realcensus} is the derivation above, certified by computation EXP-145 in three ways. The lexicographic Gr\"obner basis of the fiber ideal over $\Gamma(c)$ with $c$ inverted is $[1]$, so no point of $\C^3$ maps to $\Gamma$; the same construction with $\tfrac{5}{27}$ in place of $\tfrac{4}{27}$ does not give $[1]$, which excludes an artifact of the construction; and at \numImgTargets{} sampled targets with $C \neq 0$ off $\Gamma$ (\numImgRandom{} random, \numImgSigma{} on the surface $\Sigma = 0$ and \numImgNear{} within $10^{-3}$ of $\Gamma$ in each coordinate) the fiber ideal is proper, its quotient dimension equals the number of simple roots of $W$, and a real preimage exists. The reconstruction identity is exact modulo $W$. That every target off $\Gamma$ with $C \neq 0$ has a preimage is the simple-root argument, with the samples as evidence and not as a proof. Computation EXP-145 supersedes the surjectivity statements of EXP-011 (items 3 and 4) and the readings of the plane $C = 0$ in EXP-007 (items 2 and 4), where they disagree with it. The constant-Jacobian \emph{real} statement in dimension three falls with the same example; Pinchuk's planar counterexample \cite{Pinchuk1994} concerned the non-constant case.
 
 \begin{figure}[t]\centering
 \begin{tikzpicture}
@@ -736,7 +737,7 @@ The independent enumeration of Algorithm~\ref{alg:enum} (\numEnumInst{} polynomi
 \input{fig-window.tex}
 \end{axis}
 \end{tikzpicture}
-\caption{Cells $(a, b_1)$ of the enumeration window (small dots) and the cells in which polynomial equivariant Keller maps of $\C^2$ exist (squares), read from the stored output of EXP-006, with the degrees of $f$ and $g$ of the instance shape; every instance is linear, so the squares are the diagonal and swap shapes of Theorem~\ref{thm:rigidity}.}
+\caption{Cells $(a, b_1)$ of the enumeration window (small dots) and the cells in which polynomial equivariant Keller maps of $\C^2$ exist (squares), read from the stored output of EXP-006, each labeled with the degrees $(\deg f, \deg g)$ of the instance shape; every instance is linear, so the squares are the diagonal and swap shapes of Theorem~\ref{thm:rigidity}.}
 \label{fig:window}
 \end{figure}
 
@@ -757,7 +758,7 @@ Four ingredients make the family work, and each one has been removed in an exact
 \item \emph{The second weight-zero invariant.} With a single invariant the reduced pair depends on one variable and $J_2 \equiv 0$ (Proposition~\ref{prop:collapse}): no Keller map arises. This is the planar case.
 \item \emph{The potential form.} Replacing it by the first constructor (Proposition~\ref{prop:first}) leaves one rigid shape at degree two and no instance at degrees three and four.
 \item \emph{The admissibility conditions.} They are necessary and sufficient for the polynomiality of the lifted map (Step~2 of the proof of Theorem~\ref{thm:family}); a seed that violates one gives a rational map that is not a polynomial map.
-\item \emph{The scale and the section tail.} They do not enter the determinant $-k\,p(1)^2$ beyond the factor $k$, and they change only the degrees: $k$ leaves them unchanged at $d = 2$, a tail raises them (Theorem~\ref{thm:degrees}).
+\item \emph{The scale and the section tail.} They do not enter the determinant $-k\,p(1)^2$ beyond the factor $k$, and they change only the degrees: $k = 7$ leaves them unchanged at $d = 2$, a tail raises them (Theorem~\ref{thm:degrees}).
 \end{enumerate}
 The result is that the weight system and the potential form carry the mechanism, while the seed degree, the scale and the tail are free axes of a single family.
 
@@ -809,9 +810,9 @@ Finally, the numbers quoted in the text are not typed by hand. The script \textt
 
 \textbf{Why the conjecture is false.} In the equivariant class, being Keller is a two-variable potential identity, satisfiable for free at any fiber degree $\ge 3$; nothing in the determinant sees properness. \textbf{What is essential.} Two independent weight-zero invariants, the potential form and the valuation conditions at the origin (Section~\ref{sec:ablation}).
 
-\textbf{Consequences for related conjectures.} The cascade paper \cite{SLcascade} tabulates, for each neighbouring conjecture, the implication with its dimension index, the evidence mark and an explicit witness; it is cited here by content. Three facts from the current table bear on this paper. (a) The Mathieu conjecture is false for $SU(N)$ for every $N \ge 15$: at fixed $N$ Mathieu's argument, as rendered in Zwart's review \cite{Zwart2025}~\VV{}, makes every Keller map $x - h$ of $\C^N$ with $h$ homogeneous invertible under the conjecture for $SU(N)$, and de Bondt's homogenization of the counterexample \cite{deBondt2026} gives such a non-invertible map on $\C^{15}$, of degree $7$, verified exactly in EXP-138 \MV; Mathieu's 1997 paper itself was not located \cite{Mathieu1997}~\UU{}. An explicit counterexample for $SU(2)$ is due to Long \cite{LongSU2}~\VV{}, with the identities checked exactly for the first twelve powers. For $3 \le N \le 14$ the question is open, since $F$ is not affinely of the form $x - h$; the abelian case is due to Duistermaat and van der Kallen \cite{DvdK1998}. (b) The Poisson conjecture is false for every index $n \ge 2$: Long gives explicit polynomials with Poisson brackets $\{D,R\} = \{S,T\} = 1$ and all other brackets zero that define a Poisson endomorphism of the canonical algebra in four variables that is not an automorphism, built from the announced map \cite{LongPoisson}~\VV{}; the index $1$ remains open, and because the implication $PC(n) \Rightarrow DC(n)$ runs from a false premise it gives no information on the Dixmier conjecture of rank $2$ \cite{AvdE2007}. (c) The smallest dimensions known for witnesses are those of de Bondt \cite{deBondt2026}~\VV{}: counterexamples to the homogeneous Jacobian conjecture in dimension $15$, to Zhao's vanishing conjecture in dimension $28$ and to its homogeneous form in dimension $30$, over the Gaussian integers; they supersede in dimension the $48$-variable symmetric witness of \cite{SLcascade}, which remains the independently verified one. The Gaussian moments conjecture is false in every dimension $n \ge 3$ \cite{DEZ2017, LongGMC} (a proof for $n = 2$ is claimed \cite{Wilson2026}~\UU{}); the full Dixmier conjecture is false ($\mathrm{Dixmier}(n)$ implies $JC(n)$, and the converse $JC(2n) \Rightarrow \mathrm{Dixmier}(n)$ \cite{BKK2007, Tsuchimoto2005} gives only stable equivalence, with ranks $1$ and $2$ open and a proof for rank $1$ claimed \cite{Zheglov2024}~\UU{}); Zhao's vanishing conjecture is false, being equivalent to $JC$; and the Image conjecture is false in some dimension, since it implies the vanishing conjecture \cite{vdE2010}.
+\textbf{Consequences for related conjectures.} The cascade paper \cite{SLcascade} tabulates, for each neighbouring conjecture, the implication with its dimension index, the evidence mark and an explicit witness; it is cited here by content. Three facts from the current table bear on this paper. (a) The Mathieu conjecture is false for $SU(N)$ for every $N \ge 15$: at fixed $N$ Mathieu's argument, as rendered in Zwart's review \cite{Zwart2025}~\VV{}, makes every Keller map $x - h$ of $\C^N$ with $h$ homogeneous invertible under the conjecture for $SU(N)$, and de Bondt's homogenization of the counterexample \cite{deBondt2026} gives such a non-invertible map on $\C^{15}$, of degree $7$, verified exactly in EXP-138 \MV; Mathieu's 1997 paper itself was not located \cite{Mathieu1997}~\UU{}. An explicit counterexample for $SU(2)$ is due to Long \cite{LongSU2}~\VV{}, with the identities checked exactly for the first twelve powers. For $3 \le N \le 14$ the question is open, since $F$ is not affinely of the form $x - h$; the abelian case is due to Duistermaat and van der Kallen \cite{DvdK1998}. (b) The Poisson conjecture is false for every index $n \ge 2$: Long gives explicit polynomials with Poisson brackets $\{D,R\} = \{S,T\} = 1$ and all other brackets zero that define a Poisson endomorphism of the canonical algebra in four variables that is not an automorphism, built from the announced map \cite{LongPoisson}~\VV{}; the index $1$ remains open, and because the implication $PC(n) \Rightarrow DC(n)$ runs from a false premise it gives no information on the Dixmier conjecture of rank $2$ \cite{AvdE2007}. (c) The smallest dimensions known for witnesses are those of de Bondt \cite{deBondt2026}~\VV{}: counterexamples to the homogeneous Jacobian conjecture in dimension $15$, to Zhao's vanishing conjecture in dimension $28$ and to its homogeneous form in dimension $30$, over the integers (the homogeneous Jacobian conjecture in dimension $15$) and over the Gaussian integers (dimensions $28$ and $30$); they supersede in dimension the $48$-variable symmetric witness of \cite{SLcascade}, which remains the independently verified one. The Gaussian moments conjecture is false in every dimension $n \ge 3$ \cite{DEZ2017, LongGMC} (a proof for $n = 2$ is claimed \cite{Wilson2026}~\UU{}); the full Dixmier conjecture is false ($\mathrm{Dixmier}(n)$ implies $JC(n)$, and the converse $JC(2n) \Rightarrow \mathrm{Dixmier}(n)$ \cite{BKK2007, Tsuchimoto2005} gives only stable equivalence, with ranks $1$ and $2$ open and a proof for rank $1$ claimed \cite{Zheglov2024}~\UU{}); Zhao's vanishing conjecture is false, being equivalent to $JC$; and the Image conjecture is false in some dimension, since it implies the vanishing conjecture \cite{vdE2010}.
 
-\textbf{Open problems.} In the plane, the companion paper \cite{SLplanar} treats the transport closure of the fifth exclusion, the $B = 16$ normal form and the $(72,108)$ system. In dimension three, global minimality remains open: it is not known whether a Keller counterexample of total degree $3$ to $6$ exists, and within the family the degree law and minimality are Conjecture~\ref{conj:degrees}. The image of $F$ omits the curve $\Gamma$; whether a Keller map of $\C^3$ can have a complement of the image of dimension $2$ is not addressed here.
+\textbf{Open problems.} In the plane, the companion paper \cite{SLplanar} treats the transport closure of the fifth exclusion, the $B = 16$ normal form and the $(72,108)$ system. In dimension three, global minimality remains open: it is not known to the author whether a Keller counterexample of total degree $3$ to $6$ exists~\UU{}, and within the family the degree law and minimality are Conjecture~\ref{conj:degrees}. The image of $F$ omits the curve $\Gamma$, which has the maximal dimension allowed: for a dominant quasi-finite polynomial map of $\C^3$ the complement of the image has dimension at most $1$, because a dense open part of an irreducible surface $\{h = 0\}$ in the complement would give a hypersurface $F^{-1}\{h = 0\}$ (as $h \circ F$ is nonconstant) whose image is dense in $\{h = 0\}$, a contradiction.
 
 \section{Limitations}\label{sec:limitations}
 
@@ -824,7 +825,7 @@ The limits of the evidence are the following.
 \item The determinant value $-k\,p(1)^2$ shows that every negative rational occurs; it gives no information on the size of the coefficients needed for a counterexample of small degree, and the degree vectors of Table~\ref{tab:instances} grow with the seed degree.
 \item Fibers computed as the rational solutions of a Gr\"obner system omit irrational and complex points; the fiber over a generic rational target $(A,B,0)$ shows that this matters, and the statements about $C = 0$ above use the full solution set.
 \item Mathieu's 1997 paper was not located, so the Mathieu implication is checked in Zwart's review only; the proofs of Wilson and Zheglov are not verified, and Long's Poisson counterexample is read in the primary text but not re-verified here.
-\item The only software is sympy; versions are recorded for one computation; no wall times are archived. Non-coordinate planar slices of $F$ are not excluded from being planar Keller maps.
+\item The only software is sympy; versions are recorded for EXP-001 and EXP-145; the only archived wall time is that of EXP-145. Non-coordinate planar slices of $F$ are not excluded from being planar Keller maps.
 \item The real census samples six targets and a grid; it certifies that the two routes agree there and that both census values occur, while the structure of the regions and of the image is established by the argument of Theorem~\ref{thm:realcensus} and not by sampling.
 \item The figures plot exact polynomials with floating-point coordinates for display; they carry no result that the text does not derive.
 \end{enumerate}
@@ -843,43 +844,43 @@ The announced map has determinant $-2$ and a fiber of exactly three points over 
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
 2026-07-20; question posed by Akhil, map produced with Claude Fable 5. Independent press % voice-ok: external attribution, as the announcement states it
 coverage: M. Sparkes, \emph{New Scientist}, 2026-07-20.
-\bibitem{Wang1980} S. S.-S. Wang, theorem on polynomial maps of degree 2, 1980
-(bibliographic details not confirmed against a primary source).
+\bibitem{Wang1980} S. S.-S. Wang, A Jacobian criterion for separability, \emph{J. Algebra} \textbf{65} (1980), 453--494.
+doi:10.1016/0021-8693(80)90233-1 (bibliographic data from Crossref; the degree-two theorem is attributed to this work in the literature read, and its text was not read).
 \bibitem{BCW1982} H. Bass, E. H. Connell, D. Wright, The Jacobian conjecture: reduction of
 degree and formal expansion of the inverse, \emph{Bull. Amer. Math. Soc. (N.S.)} \textbf{7}
-(1982), 287--330.
+(1982), 287--330. doi:10.1090/s0273-0979-1982-15032-7.
 \bibitem{Druzkowski1983} L. M. Dru\.zkowski, An effective approach to Keller's Jacobian
 conjecture, \emph{Math. Ann.} \textbf{264} (1983), 303--313.
 \bibitem{Keller1939} O.-H. Keller, Ganze Cremona-Transformationen, \emph{Monatsh. Math. Phys.}
 \textbf{47} (1939), 299--306. doi:10.1007/BF01695502.
 \bibitem{Pinchuk1994} S. Pinchuk, A counterexample to the strong real Jacobian conjecture,
-\emph{Math. Z.} \textbf{217} (1994), 1--4.
+\emph{Math. Z.} \textbf{217} (1994), 1--4. doi:10.1007/bf02571929.
 \bibitem{Rodriguez2026} L. O. Rodr\'iguez D\'iaz, On the origin of the Jacobian conjecture,
-\emph{C. R. Math.} \textbf{364} (2026), 363--370. arXiv:2512.23614.
+\emph{C. R. Math.} \textbf{364} (2026), 363--370. arXiv:2512.23614; doi:10.5802/crmath.831.
 \bibitem{Smale1998} S. Smale, Mathematical problems for the next century, \emph{Math.
-Intelligencer} \textbf{20} (1998), 7--15.
+Intelligencer} \textbf{20} (1998), 7--15. doi:10.1007/bf03025291.
 \bibitem{vdEssen2000} A. van den Essen, \emph{Polynomial Automorphisms and the Jacobian
 Conjecture}, Progress in Mathematics 190, Birkh\"auser, 2000.
 \bibitem{dBvdE2005} M. de Bondt, A. van den Essen, A reduction of the Jacobian conjecture to
-the symmetric case, \emph{Proc. Amer. Math. Soc.} \textbf{133} (2005), 2201--2205.
+the symmetric case, \emph{Proc. Amer. Math. Soc.} \textbf{133} (2005), 2201--2205. doi:10.1090/s0002-9939-05-07570-2.
 \bibitem{Zhao2004} W. Zhao, Hessian nilpotent polynomials and the Jacobian conjecture,
-arXiv:math/0409534; \emph{Trans. Amer. Math. Soc.} \textbf{359} (2007).
+arXiv:math/0409534; \emph{Trans. Amer. Math. Soc.} \textbf{359} (2007), 249--274. doi:10.1090/s0002-9947-06-03898-0.
 \bibitem{Zhao2007} W. Zhao, A vanishing conjecture on differential operators with constant
-coefficients, arXiv:0704.1691.
+coefficients, arXiv:0704.1691; \emph{Acta Math. Vietnam.} \textbf{32} (2007), no. 3, 107--134.
 \bibitem{Magnus1955} A. Magnus, On polynomial solutions of a differential equation,
-\emph{Math. Scand.} \textbf{3} (1955), 255--260.
+\emph{Math. Scand.} \textbf{3} (1955), 255--260. doi:10.7146/math.scand.a-10443.
 \bibitem{AppelgateOnishi1985} H. Appelgate, H. Onishi, The Jacobian conjecture in two
-variables, \emph{J. Pure Appl. Algebra} \textbf{37} (1985), 215--227.
+variables, \emph{J. Pure Appl. Algebra} \textbf{37} (1985), 215--227. doi:10.1016/0022-4049(85)90099-4.
 \bibitem{Nagata1989} M. Nagata, Some remarks on the two-dimensional Jacobian conjecture,
 \emph{Chinese J. Math.} \textbf{17} (1989), 1--7.
 \bibitem{Heitmann1990} R. Heitmann, On the Jacobian conjecture, \emph{J. Pure Appl.
-Algebra} \textbf{64} (1990), 35--72.
+Algebra} \textbf{64} (1990), 35--72. doi:10.1016/0022-4049(90)90005-3.
 \bibitem{Abhyankar2008} S. S. Abhyankar, Some thoughts on the Jacobian conjecture, Parts
-II--III, \emph{J. Algebra} \textbf{319} (2008), 1154--1248; \textbf{320} (2008),
-2720--2826.
+II--III, \emph{J. Algebra} \textbf{319} (2008), 1154--1248, doi:10.1016/j.jalgebra.2007.02.056; \textbf{320} (2008),
+2720--2826, doi:10.1016/j.jalgebra.2008.05.025.
 \bibitem{GGV2017} J. A. Guccione, J. J. Guccione, C. Valqui, On the shape of possible
 counterexamples to the Jacobian conjecture, \emph{J. Algebra} \textbf{471} (2017), 13--74;
-arXiv:1401.1784.
+arXiv:1401.1784; doi:10.1016/j.jalgebra.2016.08.039.
 \bibitem{Moh1983} T.-T. Moh, On the Jacobian conjecture and the configurations of roots,
 \emph{J. Reine Angew. Math.} \textbf{340} (1983), 140--213. doi:10.1515/crll.1983.340.140.
 \bibitem{GGHV2017} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui, Some
@@ -891,7 +892,7 @@ arXiv:2204.14178.
 two-dimensional Jacobian problem, version 1.0.1, 2026, doi:10.5281/zenodo.21479814.
 \bibitem{MakarLimanov2021} L. Makar-Limanov, On the Newton polyhedron of a Jacobian pair,
 \emph{Izv. Math.} \textbf{85} (2021), 457--467. doi:10.1070/IM9067.
-\bibitem{KanelBelovFedorov2026} Kanel-Belov and Fedorov, The generalized Dixmier conjecture
+\bibitem{KanelBelovFedorov2026} A. Kanel-Belov, T. Fedorov, The generalized Dixmier conjecture
 and the two-dimensional Jacobian conjecture, arXiv:2610.33919, 2026.
 \bibitem{Miyanishi2023} M. Miyanishi, Equivariant Jacobian Conjecture in dimension two,
 \emph{Transform. Groups} \textbf{28} (2023), 951--971. doi:10.1007/s00031-022-09727-7.
@@ -899,7 +900,7 @@ and the two-dimensional Jacobian conjecture, arXiv:2610.33919, 2026.
 pseudo-planes, \emph{Adv. Math.} \textbf{339} (2018), 248--284. doi:10.1016/j.aim.2018.09.020.
 \bibitem{Shaska2026} T. Shaska, Graded Keller maps and the Jacobian Conjecture,
 arXiv:2607.20210v1, 2026.
-\bibitem{vdEssen2026} van den Essen, An elementary way to find a counterexample to the
+\bibitem{vdEssen2026} A. van den Essen, An elementary way to find a counterexample to the
 Jacobian Conjecture, arXiv:2609.17795v1, 2026.
 \bibitem{deBondt2026} M. de Bondt, Alp\"oge's counterexample to the JC, economic stabilization,
 and Zhao's vanishing conjecture, arXiv:2610.24889, 2026.
@@ -912,7 +913,7 @@ applications, in \emph{Alg\`ebre non commutative, groupes quantiques et invarian
 \bibitem{Zwart2025} K. Zwart, Mathieu's approach to the Jacobian Conjecture (review),
 arXiv:2511.16561.
 \bibitem{DvdK1998} J. J. Duistermaat, W. van der Kallen, Constant terms in powers of a Laurent
-polynomial, \emph{Indag. Math.} \textbf{9} (1998), 221--231.
+polynomial, \emph{Indag. Math.} \textbf{9} (1998), 221--231. doi:10.1016/s0019-3577(98)80020-7.
 \bibitem{LongSU2} C. D. Long, Counterexamples to the $xz$-conjecture and the Mathieu conjecture
 for $SU(2)$, arXiv:2607.19012, 2026.
 \bibitem{LongPoisson} C. D. Long, An explicit counterexample to the rank-two Poisson conjecture,
@@ -924,12 +925,12 @@ the Jacobian conjecture, \emph{Israel J. Math.} \textbf{219} (2017), 917--928; a
 \bibitem{Wilson2026} M. Wilson, A face-isolation proof of the two-variable Gaussian moments
 conjecture, arXiv:2607.23887, 2026.
 \bibitem{BKK2007} A. Belov-Kanel, M. Kontsevich, The Jacobian conjecture is stably equivalent
-to the Dixmier conjecture, arXiv:math/0512171; \emph{Mosc. Math. J.} \textbf{7} (2007).
+to the Dixmier conjecture, arXiv:math/0512171; \emph{Mosc. Math. J.} \textbf{7} (2007), no. 2, 209--218. doi:10.17323/1609-4514-2007-7-2-209-218.
 \bibitem{Tsuchimoto2005} Y. Tsuchimoto, Endomorphisms of Weyl algebra and $p$-curvatures,
 \emph{Osaka J. Math.} \textbf{42} (2005), 435--452.
 \bibitem{AvdE2007} P. K. Adjamagbo, A. van den Essen, On the equivalence of the Jacobian,
 Dixmier and Poisson conjectures in any characteristic, arXiv:math/0608009; \emph{Acta Math.
-Vietnam.} \textbf{32} (2007), 209--218.
+Vietnam.} \textbf{32} (2007) (page range not confirmed against the journal).
 \bibitem{Zheglov2024} A. Zheglov, The conjecture of Dixmier for the first Weyl algebra is true,
 arXiv:2410.06959, 2024 (revised 2026).
 \bibitem{vdE2010} A. van den Essen, The amazing Image conjecture, arXiv:1006.5801.

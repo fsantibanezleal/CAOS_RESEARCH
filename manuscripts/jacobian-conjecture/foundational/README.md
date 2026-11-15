@@ -21,7 +21,7 @@ python gen_tables.py          # rewrite from the stored experiment outputs
 python gen_tables.py --check  # exit 1 when a generated file is out of date
 ```
 
-from the outputs of EXP-001, EXP-004, EXP-006 to EXP-012 under
+from the outputs of EXP-001, EXP-004, EXP-006 to EXP-012 and EXP-145 under
 `problems/algebraic-geometry/jacobian-conjecture/experiments/`.
 
 Build (MiKTeX or any TeX distribution; three passes, delete `main.aux` and `main.out` first):
