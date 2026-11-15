@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
 REPO = HERE.parents[2]
 EXPS = REPO / "problems" / "algebraic-geometry" / "jacobian-conjecture" / "experiments"
 
@@ -61,7 +62,7 @@ ROWS = [
      "integer Bezout identity, 61-digit constant", "29 exact determinants, 2 controls", NR,
      ["29 interpolation", "3036277895244878564727703434378848855121939007419328699039744"]),
     ("110", "pinned point, three random rational points", NR, "rank $124$, augmented rank $125$",
-     "none (audit)", "generic rank only", "exact rational run exceeded 20 min", ">20 min",
+     "none (audit)", "generic rank only", "exact rational run exceeded 20 min", "$>$20 min",
      ["20-minute"]),
     ("111", "forced-only 289 rows against the complete 302 rows", NR, "rank bound from $[P,1]=0$",
      "none (audit)", "rank profile $124/125$ in both systems", "4 points, 2 primes", "3.6 s",
@@ -75,7 +76,7 @@ ROWS = [
      ["4.1 seconds", "SCC compression"]),
     ("114", "pinned chart on $T_A$ and $T_B$", "36",
      "$T_A$: degrees $3,12,6$; $T_B$: $G_{54}H_{63}$", "residual factor loci", "none",
-     "exact", NR,
+     "exact", "143.3 s",
      ["T_B"]),
     ("115", "good-prime alternative minors replace 68, 34, 34 pinned rows", NR,
      "$G_{54}$ irreducible; $H_{63}=LQ$", "$G$, $L$, $Q$ (proper intersections)",
@@ -90,7 +91,7 @@ ROWS = [
      "exact", "212.2 s",
      ["212.2 seconds", "five direct 124-by-124 determinant controls"]),
     ("118", "alternative 124-row basis", NR, "$a^{107}$ (quotient); $b^{95}$ on $a=0$",
-     "none ($d=0$ plane closed)", "12 component controls at good primes", "two primes", NR,
+     "none ($d=0$ plane closed)", "12 component controls at good primes", "two primes", "9.97 s",
      ["1,293 support equations", "12 independent component controls"]),
     ("119", "first alternative basis on $d=1$ (302-by-125)", "26",
      "$B^{36}K(X,B)\\prod(cX+78125B^7)$, 114 monomials", "three finite intersections",
@@ -125,7 +126,7 @@ ROWS = [
     ("128", "none (quotient algebra)", NR, "five factors of degrees $9,15,18,30,3$",
      "75 points, not 102", "CRT idempotents", "exact", NR,
      ["9,\\ 15,\\ 18,\\ 30,\\ 3", "not 102"]),
-    ("129", "two bases on $F_7$", NR, "two sections $k_1,k_2$", "none ($AS\\ne0$ closed)",
+    ("129", "two bases on $F_7$", "32 and 31", "two sections $k_1,k_2$", "none ($AS\\ne0$ closed)",
      "norm gcds and Bezout identities", "two probes per block", NR,
      ["no single sampled row basis covers all", "two exact maximal-minor sections"]),
     ("130", "$F_3$ basis with one row replaced", "33", "$A^{86}H(X,B,Y)$, $\\deg_YH=2$",
@@ -156,7 +157,7 @@ HEADERS = ["EXP", "row basis", "largest SCC", "determinant", "residual left", "c
 
 REPRO = [
     # algorithm, experiment, entry point, artifact (relative to the experiment folder), hash-in-record
-    ("A1", "EXP-020", "run.py", None, None),
+    ("A1", "EXP-020", "run.py", "artifacts/output-A-2026-07-21.txt", None),
     ("A2", "EXP-042", "run.py", "artifacts/output-AB-2026-07-22.txt", None),
     ("A3", "EXP-037", "run.py", "artifacts/output-AB-2026-07-22.txt", None),
     ("A4", "EXP-103", "run.py", "artifacts/results.json", "1DF6079D51ADF46D"),
@@ -166,8 +167,8 @@ REPRO = [
     ("A4", "EXP-107", "run.py", "artifacts/results.json", "40583A2BB6343A63"),
     ("A4", "EXP-108", "exact\\_lift.py", "artifacts/exact-results.json", "E2613D21D333CA6A"),
     ("A5", "EXP-135", "certificate.py", "artifacts/certificate.json", "B426FE41C7DC835D"),
-    ("A6", "EXP-141", "cert.py (run, verify)", None, None),
-    ("A6", "EXP-142", "branches.py, gates.py", None, None),
+    ("A6", "EXP-141", "cert.py (run, verify)", "artifacts/gates-output.txt", None),
+    ("A6", "EXP-142", "branches.py, gates.py", "artifacts/gates-output.txt", None),
 ]
 
 SCRIPT_FILES = {
@@ -205,6 +206,29 @@ def verify_rows():
         for q in quotes:
             if norm(q) not in text:
                 bad.append((num, q))
+    return bad
+
+
+ARTCHECK = [
+    # (exp, artifact, description, predicate on the parsed json)
+    ("114", "artifacts/results.json", "elapsed 143.3 s", lambda d: abs(d["elapsed_seconds"] - 143.3) < 0.05),
+    ("118", "artifacts/results.json", "elapsed 9.97 s", lambda d: abs(d["elapsed_seconds"] - 9.97) < 0.005),
+    ("129", "artifacts/results.json", "largest SCC 32 and 31",
+     lambda d: d["exact_atlas"][0]["cyclic_component_sizes"][0] == 32 and d["exact_atlas"][1]["cyclic_component_sizes"][0] == 31),
+]
+
+
+def verify_artifacts():
+    import json
+    bad = []
+    for num, art, desc, pred in ARTCHECK:
+        d = json.loads((exp_dir(num) / art).read_text(encoding="utf-8"))
+        if not pred(d):
+            bad.append((num, desc))
+    # EXP-118: the file must be the one the verdict names as final
+    v = norm((exp_dir("118") / "verdict.md").read_text(encoding="utf-8")).upper()
+    if sha(exp_dir("118") / "artifacts/results.json") not in v:
+        bad.append(("118", "results.json hash is not the one the verdict names"))
     return bad
 
 
@@ -304,10 +328,113 @@ def tex_repro(rows):
     return "\n".join(lines) + "\n"
 
 
+
+def simple_table(d, placement="tbp"):
+    head = " & ".join(h if h.startswith("\\textbf") else "\\textbf{%s}" % h for h in d["head"])
+    lines = ["% generated by make_tables.py; do not edit",
+             "\\begin{table}[%s]" % placement, "\\centering",
+             "\\caption{%s}\\label{%s}" % (d["caption"], d["label"]),
+             "{\\footnotesize", "\\begin{tabular}{@{}%s@{}}" % d["spec"], "\\toprule", head + " \\\\", "\\midrule"]
+    for r in d["rows"]:
+        lines.append(" & ".join(r) + " \\\\")
+    lines += ["\\bottomrule", "\\end{tabular}}", "\\end{table}"]
+    return "\n".join(lines) + "\n"
+
+
+ABLATION = dict(
+    label="tab:ablation",
+    caption="Ablation of the ingredients: what each one buys, from the records. Each row compares the ingredient with the alternative the record measured.",
+    spec="P{2.1cm}P{2.3cm}P{2.4cm}P{5.4cm}P{1.5cm}",
+    head=["Ingredient", "Kept", "Removed or replaced", "Measured effect", "Records"],
+    rows=[
+        ["similarity filter", "filtered window", "full window", "$(48,64)$: $111$ against $2142$ unknowns; $2.4$ to $3.6$ s per sample", "045, 047"],
+        ["similarity filter", "open pair, $N=108$", "unfiltered histogram", "$143$ unknowns and about $320$ equations, $1.2$ to $1.4$ s, against $5992$ unknowns in $535$ classes", "043, 050"],
+        ["pair shape", "$Q$ constrained", "$Q$ free", "same first inconsistent window $N=3$ on four samples; unknowns $7$ to $3$--$4$", "038"],
+        ["classwise transport", "minimal $P$-class diagonal", "monolithic test", "same outcome on every tested sample", "037"],
+        ["half-plane restriction", "$H$-certificate", "full-window certificate", "at $(2,2,2)$, $N=9$: left-null space of dimension $20$, two pairing-nonzero certificates, one kills the odd resonance", "048"],
+        ["SCC block product", "block product", "dense pullback", "$5.3$ s for the $125\\times125$ determinant against a dense pullback of rank $121$ that passed $5$ min", "102, 112"],
+        ["graded reduction", "mod-$9$ weights removed", "dense three-variable expansion", "width $14$ in $z=u^9$; a $16\\times64$ transform grid", "106, 107"],
+        ["exact interpolation", "$100$ integer points", "modular support", "$[1628,1646]$ against bounds $[1547,1646]$: an $81$-degree cancellation", "103, 104"],
+        ["basis choice", "basis chosen on the residual", "inherited basis", "inherited bases vanish on $A=0$; one basis cannot cover $F_7$ (two sections needed); a default targeted basis passed $300$ s against largest block $33$ after one row replaced", "129, 130, 132"],
+        ["low-rank transfer", "rank factorization, CRT", "dense $33\\times33$ symbolic determinant", "the dense route reached its $240$ s limit; the transfer proves the identity", "134, 135"],
+        ["subfield reduction", "quintic subfield", "degree-$35$ field", "both unknown at six hours; certificates still above $94{,}000$ digits", "139, 140, 143"],
+    ])
+
+NOTATION = dict(
+    label="tab:notation",
+    caption="Notation. The symbol $L$ is the operator $J(P,\\cdot)$ in Sections~\\ref{sec:theory} and~\\ref{sec:design} and a number field in Sections~\\ref{sec:methods} and~\\ref{sec:helali}.",
+    spec="P{4.6cm}P{9.0cm}",
+    head=["Symbol", "Meaning"],
+    rows=[
+        ["$J(P,Q)$", "Jacobian determinant $P_xQ_y-P_yQ_x$; a Keller pair has $J(P,Q)\\in\\C^\\times$"],
+        ["$L$, $L_{\\mathrm{top}}$", "the operator $J(P,\\cdot)$ and its top-weight part $J(P_{\\mathrm{top}},\\cdot)$"],
+        ["$N(P)$", "Newton polygon: convex hull of the support of $P$ with the origin"],
+        ["$(u,v,d)$, $a$, $b$", "shape $P=x+a\\,x^uy^v+b\\,x^d$ and its coefficients"],
+        ["$w=(v,1-u)$", "weights of $(x,y)$; $P=x+a\\,x^uy^v$ is homogeneous of weight $v$"],
+        ["$T$", "total-degree top form of $P$"],
+        ["$M_N$, $c$, $\\pi$", "completion matrix at window $N$, a left-null covector, and its pairing $c^Te$ with the constant right-hand side"],
+        ["$B=\\gcd(\\deg P,\\deg Q)$", "gcd of the degrees of a counterexample (Table~\\ref{tab:ladder}); also the coordinate $B$ of the atlas"],
+        ["$H$", "$y$-heavy half-plane $\\{i\\le j\\}$ of rows; also the eliminant $H(a_7)$ in Section~\\ref{sec:helali}"],
+        ["$\\varepsilon$, $[M\\mid b]$", "the $51$ interior coefficients and the augmented matrix ($302\\times125$) of the Case 1 system"],
+        ["$A,B,C,X,Y,d$", "normalized parameters of the atlas: $X=A^3$, $Y=A^2C$, $d=1+\\varepsilon_{(1,0)}$"],
+        ["$R,S,F_3,F_6,F_7$", "polynomials of the shared determinant $A^{87}(R+YS)$ and the factors of the graph numerator"],
+        ["$K$, $L$, $P$", "$K=\\Q[a_7]/(H)$ (degree $35$); $L=\\Q[y]/(P)$ with $P=y^5-y^4+3y^3+3y^2+26$ (Section~\\ref{sec:helali})"],
+        ["{[MV]}, [D], [C], [U]", "machine-verified, derived, conjectural, not confirmed on a primary source"],
+    ])
+
+WINDOW = [(5, 420), (6, 1260), (7, 13860), (8, 180180), (9, 180180), (10, 3063060), (11, 58198140)]
+CHAIN = [121, 111, 101, 91, 81, 74, 67, 60, 54, 49, 45, 42, 40, 39, 39]
+
+
+def tex_window():
+    import math
+    pts = [(n, math.log10(c)) for n, c in WINDOW]
+    path = "--".join("(%d,%.3f)" % p for p in pts)
+    lines = ["% generated by make_tables.py; do not edit",
+             "\\begin{tikzpicture}[x=1.2cm,y=0.55cm,font=\\scriptsize]",
+             "  \\draw[->] (4.6,0)--(11.6,0) node[right]{$N$};",
+             "  \\draw[->] (4.6,0)--(4.6,8.4) node[above]{$\\log_{10}c_N$};"]
+    for n, _ in WINDOW:
+        lines.append("  \\draw (%d,0)--(%d,-0.15) node[below]{%d};" % (n, n, n))
+    for k in (2, 4, 6, 8):
+        lines.append("  \\draw (4.6,%d)--(4.45,%d) node[left]{%d};" % (k, k, k))
+    lines.append("  \\draw[thick,blue!60!black] %s;" % path)
+    for n, y in pts:
+        lines.append("  \\fill[blue!60!black] (%d,%.3f) circle (0.07);" % (n, y))
+    lines.append("\\end{tikzpicture}")
+    return "\n".join(lines) + "\n"
+
+
+def tex_chain():
+    path = "--".join("(%d,%d)" % (i + 1, d) for i, d in enumerate(CHAIN))
+    lines = ["% generated by make_tables.py; do not edit",
+             "\\begin{tikzpicture}[x=0.55cm,y=0.036cm,font=\\scriptsize]",
+             "  \\draw[->] (0,0)--(16,0) node[right]{step};",
+             "  \\draw[->] (0,0)--(0,130) node[above]{dimension};"]
+    for s_ in (1, 3, 5, 7, 9, 11, 13, 15):
+        lines.append("  \\draw (%d,0)--(%d,-3) node[below]{%d};" % (s_, s_, s_))
+    for d_ in (0, 39, 80, 121):
+        lines.append("  \\draw (0,%d)--(-0.15,%d) node[left]{%d};" % (d_, d_, d_))
+    lines.append("  \\draw[thick,blue!60!black] %s;" % path)
+    lines.append("  \\draw[dashed,gray] (0,39)--(15.6,39);")
+    lines.append("\\end{tikzpicture}")
+    return "\n".join(lines) + "\n"
+
+
+def write_generated():
+    import tables_data as td
+    for name, d in (("tab_exclusions.tex", td.EXCLUSIONS), ("tab_ladder.tex", td.LADDER), ("tab_cost.tex", td.COST),
+                    ("tab_ablation.tex", ABLATION), ("tab_notation.tex", NOTATION)):
+        (HERE / name).write_text(simple_table(d), encoding="utf-8")
+    (HERE / "fig_window.tex").write_text(tex_window(), encoding="utf-8")
+    (HERE / "fig_chain.tex").write_text(tex_chain(), encoding="utf-8")
+
+
 def main():
     check_only = "--check" in sys.argv
     bad = verify_rows()
     bad2, repro = verify_repro()
+    bad2 = bad2 + verify_artifacts()
     for item in bad + bad2:
         print("FAIL", item)
     if bad or bad2:
@@ -321,6 +448,7 @@ def main():
     (HERE / "tab_atlas.tex").write_text(tex_atlas(), encoding="utf-8")
     (HERE / "tab_repro.tex").write_text(tex_repro(repro), encoding="utf-8")
     (HERE / "fig_times.tex").write_text(tex_times(run_times()), encoding="utf-8")
+    write_generated()
     print("wrote tab_atlas.tex and tab_repro.tex")
 
 

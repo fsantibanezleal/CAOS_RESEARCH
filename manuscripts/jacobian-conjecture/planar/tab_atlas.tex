@@ -18,15 +18,15 @@
 106 & no new basis & n/r & grading $w_{p,q}\equiv q-p+1 \pmod 9$ & none (no certificate) & grading of 23 directions & modulus $998244353$ (ranks) & n/r \\
 107 & same two charts, third direction $(0,7)$ & n/r & chart of bidegree $(14,12)$, 45 terms; $G$ unchanged & degree-12 fibre $Q(y)$ at $z=-1/8$ & modular pilot only & modulus $998244353$; off-grid checks & n/r \\
 108 & third 125-row chart at the fibre & n/r & $H(y)$ of degree 13 (four factors) & none (slice closed) & integer Bezout identity, 61-digit constant & 29 exact determinants, 2 controls & n/r \\
-110 & pinned point, three random rational points & n/r & rank $124$, augmented rank $125$ & none (audit) & generic rank only & exact rational run exceeded 20 min & >20 min \\
+110 & pinned point, three random rational points & n/r & rank $124$, augmented rank $125$ & none (audit) & generic rank only & exact rational run exceeded 20 min & $>$20 min \\
 111 & forced-only 289 rows against the complete 302 rows & n/r & rank bound from $[P,1]=0$ & none (audit) & rank profile $124/125$ in both systems & 4 points, 2 primes & 3.6 s \\
 112 & pinned 125-row chart, constant column removed & 36 & $\det A_0(1+\varepsilon_{(1,0)})^3\det C_{36}$ & 24 parameters in $C_{36}$ & none (compression) & exact & 5.3 s \\
 113 & pinned chart & 36 & triples $T_A$, $T_B$ generate the graph & none (audit) & positive and negative controls & exact & 4.1 s \\
-114 & pinned chart on $T_A$ and $T_B$ & 36 & $T_A$: degrees $3,12,6$; $T_B$: $G_{54}H_{63}$ & residual factor loci & none & exact & n/r \\
+114 & pinned chart on $T_A$ and $T_B$ & 36 & $T_A$: degrees $3,12,6$; $T_B$: $G_{54}H_{63}$ & residual factor loci & none & exact & 143.3 s \\
 115 & good-prime alternative minors replace 68, 34, 34 pinned rows & n/r & $G_{54}$ irreducible; $H_{63}=LQ$ & $G$, $L$, $Q$ (proper intersections) & none contained in the rank-deficient locus & $p=1009$ & 2.7 s \\
 116 & 302-by-124 quotient (kernel $[P,P]=0$) & 51 (blocks 51, 11, 10, 9, 8, 7) & rank profile $112/113$ at the origin & 51-block determinant & none & exact & about 210 s (exploratory) \\
 117 & quotient chart & 51 & $b^{32}F_{28}\prod_{c}(ca^3+78125b^7)$ & $b=0$ and nine points & five direct $124\times124$ controls & exact & 212.2 s \\
-118 & alternative 124-row basis & n/r & $a^{107}$ (quotient); $b^{95}$ on $a=0$ & none ($d=0$ plane closed) & 12 component controls at good primes & two primes & n/r \\
+118 & alternative 124-row basis & n/r & $a^{107}$ (quotient); $b^{95}$ on $a=0$ & none ($d=0$ plane closed) & 12 component controls at good primes & two primes & 9.97 s \\
 119 & first alternative basis on $d=1$ (302-by-125) & 26 & $B^{36}K(X,B)\prod(cX+78125B^7)$, 114 monomials & three finite intersections & five direct $125\times125$ controls & exact & 93.75 s \\
 120 & independent $G$-basis & 25 & $X^{30}LQR$, 21 monomials & $L$ and $Q$ zero-dimensional & $G$ closed by four unit ideals; five direct controls & exact & 28.85 s \\
 121 & shared $L/Q$ basis, 68 rows from the pinned one & 26 & $A^{87}R_{\mathrm{fin}}(A^3,B)$, 23 monomials & none ($T_B$ closed) & unit ideals on $L$ and $Q$ (gcd certificates) & $p=1013$ ($L$), $p=1033$ ($Q$) & 44.57 s \\
@@ -37,7 +37,7 @@
 126 & $F_6$ basis (equal to $F_3$ basis) & 32 & norm of degree 74: $D_2D_3^4D_6^2Q_{18}Q_{30}$ & $Q_{18}Q_{30}=0$, 48 values & Sylvester resultant and multiplication norm & exact & 5.78 s \\
 127 & new basis on $F_7$ & 31 & norm of degree 58: $B^{16}E_3E_9E_{12}E_{18}$ & $E_3E_9E_{18}=0$, 30 values & resultant and quotient determinant agree & exact & n/r \\
 128 & none (quotient algebra) & n/r & five factors of degrees $9,15,18,30,3$ & 75 points, not 102 & CRT idempotents & exact & n/r \\
-129 & two bases on $F_7$ & n/r & two sections $k_1,k_2$ & none ($AS\ne0$ closed) & norm gcds and Bezout identities & two probes per block & n/r \\
+129 & two bases on $F_7$ & 32 and 31 & two sections $k_1,k_2$ & none ($AS\ne0$ closed) & norm gcds and Bezout identities & two probes per block & n/r \\
 130 & $F_3$ basis with one row replaced & 33 & $A^{86}H(X,B,Y)$, $\deg_YH=2$ & none ($A\ne0$ closed) & Bezout identities, resultants, norms, direct determinant & two primes per block & n/r \\
 131 & two bases of the $302\times125$ matrix at $A=0$ & n/r & $(5B+4)^3(25B^2-20B+16)^3$ and $B^{95}(\cdots)$ & none ($A=0$ closed) & extended Euclid, identity of $\mathbb Q[B,C]$ & $p=1009$; four rational controls & n/r \\
 132 & three sections on $A=0,d=1$ with $T=\varepsilon_{(2,8)}$ & 106 singleton blocks & $P$, $Q$, $R=B^{105}C$ & none (direct $A=0$ boundary) & Bezout identity in $\mathbb Q[B]$ & $p=1009,1153$; $109,127$ & 116.18 s \\
