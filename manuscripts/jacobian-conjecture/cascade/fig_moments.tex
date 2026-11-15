@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[name=a, width=0.46\textwidth, height=5cm, ymin=-0.45, ymax=0.6,xlabel={$n$}, ylabel={$\int F^nG\,dg$}, tick label style={font=\scriptsize}, xtick={1,3,5,7,9,11}, axis lines=left]
+\addplot[only marks, mark=*, mark size=2pt, color=stcurve] coordinates {(1,0.500000) (2,-0.333333) (3,0.250000) (4,-0.200000) (5,0.166667) (6,-0.142857) (7,0.125000) (8,-0.111111) (9,0.100000) (10,-0.090909) (11,0.083333) (12,-0.076923)};
+\addplot[domain=1:12, samples=12, dashed, color=stline] {0};
+\end{axis}
+\begin{axis}[at={(a.east)}, anchor=west, xshift=1.9cm, width=0.46\textwidth, height=5cm, xlabel={$m$}, ylabel={$E(Q_3P_3^m)$}, ymode=log, tick label style={font=\scriptsize}, xtick={1,3,5,7,9}, axis lines=left]
+\addplot[only marks, mark=square*, mark size=2pt, color=stpoint] coordinates {(1,1) (2,2) (3,6) (4,24) (5,120) (6,720) (7,5040) (8,40320) (9,362880) (10,3628800)};
+\end{axis}
+\end{tikzpicture}

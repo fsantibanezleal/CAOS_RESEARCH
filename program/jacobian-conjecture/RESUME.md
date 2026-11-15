@@ -8,6 +8,9 @@ remain the evidence.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 5 with a redirect; strategic review (JCB-098), then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 (JCB-099); the transverse Fitting atlas is parked.
 
+2026-11-15: cascade v0.09 published (10.5281/zenodo.24239949): the full revision from the independent audit, with the
+Poisson row machine-verified at n = 2 by EXP-144 (Long's map recomputed exactly from arXiv:2608.23777v1).
+
 2026-11-14: correction versions published after an independent audit and review: cascade v0.08 (10.5281/zenodo.24226220, Poisson(2) false), foundational v0.14 (10.5281/zenodo.24226224, rigidity affine for one zero weight), planar v0.36 (10.5281/zenodo.24226225, fifth exclusion on its certified grid, tower lemma for non-proper-power tops, modular covector exclusions). Errata in EXP-010, EXP-044, EXP-046. The full revisions the audit asks for (methods, tables, related work) remain to be done.
 
 ## Current checkpoint, 2026-11-08
