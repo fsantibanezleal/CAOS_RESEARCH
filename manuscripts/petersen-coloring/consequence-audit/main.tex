@@ -488,15 +488,15 @@ computation & hypothesis and predictions & outcome\\
 \bottomrule
 \endfoot
 EXP-001 (\texttt{fa6910e}) & Do encoders that share no code with the public ones certify, with checked DRAT proofs, that $\Gmain$, $\Gsym$, $\Gfty$ have neither a Petersen coloring nor a normal 5-edge-coloring, while accepting colorable controls and rejecting corrupted input? P1 structure and digests; P2 controls satisfiable; P3 six refutations verified; P4 Putman's four proofs accepted; P5 corrupted witness rejected, symmetry units removable; P6 cyclic cuts. & P1 to P6 held (Section~\ref{sec:certify}, Section~\ref{sec:validation}).\\
-EXP-002 (\texttt{4ea64f5}) & Do the three graphs have a Berge--Fulkerson cover, a Berge cover by five matchings, Fan--Raspaud, and a cover by four? P1 controls (Petersen index 5); P2 to P4 covers and index exactly 4 or 5, \emph{expectation 4}; P5 corrupted witness. & P1 to P5 held; index 4 on all three.\\
-EXP-003 (\texttt{e1e7a3b}) & Do the graphs have a 5-cycle double cover, a 5-flow, no 4-flow, and what are their oddness and resistance? P2, P3 covers and flows; P4 oddness, \emph{expectation 2}; P5 resistance, \emph{expectation 2}; P6 corrupted witnesses. & P2, P3, P6 held; P4 and P5 refuted for $\Gmain$, $\Gsym$ (oddness 4, resistance 3), held for $\Gfty$.\\
-EXP-004 (\texttt{e1e7a3b}) & Normal 6 and strong normal 6; normal-5 defect, \emph{expectation 1}; Petersen defect, \emph{expectation 1}. P1 controls; P2, P3 normal 6; P4, P5 defects; P6 corrupted witness. & P1 to P3, P6 held; P4 undecided (bound 1 reached the cap); P5 decided for $\Gfty$ only and refuted (defect 2).\\
+EXP-002 (\texttt{9821fbf4}) & Do the three graphs have a Berge--Fulkerson cover, a Berge cover by five matchings, Fan--Raspaud, and a cover by four? P1 controls (Petersen index 5); P2 to P4 covers and index exactly 4 or 5, \emph{expectation 4}; P5 corrupted witness. & P1 to P5 held; index 4 on all three.\\
+EXP-003 (\texttt{ecd3bb3d}) & Do the graphs have a 5-cycle double cover, a 5-flow, no 4-flow, and what are their oddness and resistance? P1 controls with known values; P2, P3 covers and flows; P4 oddness, \emph{expectation 2}; P5 resistance, \emph{expectation 2}; P6 corrupted witnesses. & P1, P2, P3, P6 held; P4 and P5 refuted for $\Gmain$, $\Gsym$ (oddness 4, resistance 3), held for $\Gfty$.\\
+EXP-004 (\texttt{571d9fe4}) & Normal 6 and strong normal 6; normal-5 defect, \emph{expectation 1}; Petersen defect, \emph{expectation 1}. P1 controls; P2, P3 normal 6; P4, P5 defects; P6 corrupted witness. & P1 to P3, P6 held; P4 undecided (bound 1 reached the cap); P5 decided for $\Gfty$ only and refuted (defect 2).\\
 EXP-005 (\texttt{817afdb}) & Does a graph in a class $\mathcal C(k,m)$ with $38 \le 8k+m \le 50$ lack a Petersen coloring? P1 controls exhaust; P2 six disjoint copies of $F$ in $\Gfty$; P3 \emph{low confidence: none, each class exhausting in budget}; P4 learned clauses re-verify. & P1 partial ($(2,0)$ exhausted, $(3,2)$ at the budget); P2 first half held; P3 undecided; P4 held.\\
-EXP-006 (\texttt{cd4df4a}, \texttt{4dc402d}, \texttt{fd6eb2d}) & Designated relaxation instead of a cardinality counter. P1 a critical vertex of $\Gfty$, \emph{defect 1}; P2 critical vertices in the free vertices of the 112-vertex graphs; P3 a non-critical vertex; P4 a critical edge; P5 corrupted witness; P6 some pair of $\Gfty$ critical; P7 the 120 free-vertex pairs of $\Gmain$; P8 normal-5 defect by edges; P9 every pair of $\Gmain$, $\Gsym$; P10 edge orbits; P11 two-abnormal-edge colorings. & P1, P2 refuted (all singles unsatisfiable); P3, P5, P6, P7, P9, P10, P11 held, P6 and P9 in the stronger form (every pair); P4, P8 closed by P10 and P11.\\
+EXP-006 (\texttt{e96f2bbd}; addenda \texttt{cd4df4a}, \texttt{4dc402d}, \texttt{fd6eb2d}) & Designated relaxation instead of a cardinality counter. P1 a critical vertex of $\Gfty$, \emph{defect 1}; P2 critical vertices in the free vertices of the 112-vertex graphs; P3 a non-critical vertex; P4 a critical edge; P5 corrupted witness; P6 some pair of $\Gfty$ critical; P7 the 120 free-vertex pairs of $\Gmain$; P8 normal-5 defect by edges; P9 every pair of $\Gmain$, $\Gsym$; P10 edge orbits; P11 two-abnormal-edge colorings. & P1, P2, P4 refuted (all singles unsatisfiable; the normal-5 defect of $\Gfty$ is 2, not 1); P3, P5, P6, P7, P9, P10, P11 held, P6 and P9 in the stronger form (every pair); P8 closed by P10 and P11 (value 2).\\
 EXP-008 (\texttt{dd82817d}) & Do $\Gftyb$ and $\Gsix$ have the same invariants as $\Gfty$? P1 covers; P2 cycles and flows; P3 oddness and resistance 2 (\emph{moderate, low for $\Gsix$}); P4 normal 6; P5 defect 2 with every pair critical (\emph{moderate}); P6 two abnormal edges. & P1 to P5 held, including the low-confidence expectation for $\Gsix$; P6 held (lower bound by theorem).\\
 EXP-009 (\texttt{efed046b}) & Are the ring and frame defect bounds attained on the smallest instances? P1 controls from $J_5$ colorable; P2 structure; P3 $\pd(C_t) = t$, $\pd(K_4[\Gfty]) = 4$ (\emph{moderate}); P4 $\ab = t$ (\emph{low}); P5 twenty same-copy relaxations of $C_2$ unsatisfiable. & P1, P2, P3, P5 held; P4 undecided ($2 \le \ab(C_2) \le 4$).\\
 EXP-010 (\texttt{5bbe3661}) & Is some 4-pole $G - e_1 - e_2$ of the counterexamples not colorable (statement (e))? P1 control; P2 patterns; P3 \emph{about one half: some pair gives a non-colorable 4-pole}; P6 \emph{one third} for adjacent-vertex 4-poles; P7 dot products; P8 \emph{one quarter} and P9 \emph{one fifth} for two disjoint distance sets. & P1, P2 held; P3 refuted for $\Gfty$, $\Gftyb$, $\Gsix$; P6 refuted; P7 all ten dot products counterexamples of defect 2; P8, P9 refuted on all 546 decided sets.\\
-EXP-011 (recorded 2026-09-18) & Is every adjacent pair of the ten dot products critical? P1 control $\Gfty$; P2 \emph{three quarters: every pair critical}; P3 each witness has exactly the two relaxed vertices bad. & P1 to P3 held (1{,}530 of 1{,}530).\\
+EXP-011 (\texttt{8107fe71}) & Is every adjacent pair of the ten dot products critical? P1 control $\Gfty$; P2 \emph{three quarters: every pair critical}; P3 each witness has exactly the two relaxed vertices bad. & P1 to P3 held (1{,}530 of 1{,}530).\\
 \end{longtable}}
 
 \section{Results: independent certification}\label{sec:certify}
@@ -1014,7 +1014,7 @@ $\Gfty$ is 3-connected without a normal 5-edge-coloring (Theorem~\ref{thm:certif
 
 Thus statements (c) and (d) of~\cite{MMM2021} are false, and their conjectured equivalence now
 amounts to the falsity of (e): by their Theorem~4, whose proof uses their Proposition~2 (stated without
-proof), to the existence of a cyclically 4-edge-connected cubic graph with $\ab \ge 10$. All five known counterexamples are
+proof), to the existence of a cyclically 4-edge-connected cubic graph with $\ab \ge 10$. All five retrievable counterexamples are
 cyclically 4-edge-connected with $\ab = 2$. A much smaller defect would suffice.
 
 \begin{proposition}[\dd; conditional on Proposition~2 of~\cite{MMM2021}]\label{prop:threshold}
@@ -1355,7 +1355,7 @@ sweep. Every time quoted is the wall-clock time of a single run, several of whic
 other computations; the spread over instances is shown in Table~\ref{tab:pairs}, and no instance was
 timed repeatedly.
 
-Theorem~\ref{thm:twodefect} and Corollary~\ref{cor:mmm} are conditional on Proposition~2
+Proposition~\ref{prop:threshold}, Theorem~\ref{thm:twodefect} and Corollary~\ref{cor:mmm} are conditional on Proposition~2
 of~\cite{MMM2021}, whose proof is omitted there. The statement that the conjectured equivalence
 holds rests on the unconditional result of~\cite{UD2026}, not on that proposition. The cited
 background results (Jaeger's two papers, the generation of snarks, Hagglund and Steffen, the
@@ -1410,7 +1410,7 @@ threshold of Proposition~\ref{prop:threshold}.
 
 \section{Conclusions}\label{sec:conclusions}
 
-The five known counterexamples to the Petersen coloring conjecture, of orders 52, 52, 68, 112 and 112,
+The five retrievable counterexamples to the Petersen coloring conjecture, of orders 52, 52, 68, 112 and 112,
 have been audited with encodings that share no variable scheme with the published ones. The results
 are of three kinds. Machine-verified, with checked proofs or re-verified witnesses: none of the five
 graphs has a Petersen coloring or a normal 5-edge-coloring; each has a Berge--Fulkerson cover, perfect
