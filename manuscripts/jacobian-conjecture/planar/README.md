@@ -3,8 +3,10 @@
 `main.tex` / `main.pdf`: "Planar Keller Maps after the Counterexample: Weight-Class Exclusions, a Chart
 Atlas for the (72,108) Reduction, and Independent Checks of Cases 1 and 2". The
 ACTIVE paper: the JC(2) machine (uniform closure, forced tops, descent), the four
-unconditional exclusion theorems plus the annihilation lemma, the diagonal corner and the
-staircase transport (with the fifth exclusion in window form and its cleared certificates),
+unconditional exclusion theorems (with complete proofs, and the scope of each stated) plus the
+annihilation lemma, the diagonal corner and the staircase transport (with the fifth exclusion in window
+form, at all partner degrees on its six certified grid shapes, and the half-plane certificates as window
+results with propagation conjectured),
 the matched-pair law and the x^m-anchored edge operator, and the source-audited frontier
 (gcd coverage; Moh/GGHV floors; the B = 16 normal form and the (72, 108) pair as live
 targets), including the EXP-095/096 original-pair gates (seven possible nonzero inner
