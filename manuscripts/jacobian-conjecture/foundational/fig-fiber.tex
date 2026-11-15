@@ -1,0 +1,7 @@
+\addplot[thick, solid, domain=-1.6:2.0, samples=90] {4*(x^2-x^3) - x*(-16.0)*(1.0) + (-16.0)*(1.0)^2};
+\addlegendentry{$(-16,-16,1)$: three real roots}
+\addplot[thick, dashed, domain=-1.6:2.0, samples=90] {4*(x^2-x^3) - x*(0.0)*(1.0) + (10.0)*(1.0)^2};
+\addlegendentry{$(10,0,1)$: one real root}
+\addplot[thick, dashdotted, domain=-1.6:2.0, samples=90] {4*(x^2-x^3) - x*(1)*(1) + (0)*(1)^2};
+\addlegendentry{$(0,1,1)$: a double root}
+\addplot[black, forget plot, domain=-1.6:2.0, samples=2] {0};

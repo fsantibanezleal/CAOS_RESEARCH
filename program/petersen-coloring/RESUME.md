@@ -18,8 +18,8 @@ Published CAOS manuscripts (all Zenodo, CC BY 4.0, not peer reviewed):
 
 | manuscript | version | DOI | result |
 |---|---|---|---|
-| consequence-audit | v0.06 (2026-10-06) | 10.5281/zenodo.23195171 | five graphs: covers, index 4, 5-CDC, flows, oddness, resistance, normal 6, parity theorem, defect 2 with all pairs critical, abnormal edges, statements (c), (d) false, Theorem 5.9 |
-| unbounded-defect | v0.02 (2026-10-06) | 10.5281/zenodo.23196817 | statement (e) of the Mattiolo-Mazzuoccolo-Mkrtchyan conjecture false (rings on 102t vertices, defect at least t, `pd(R_3) = 3`); Section 6: transfer semigroups of 6-poles, every ring of claws and Petersen superedges colorable |
+| consequence-audit | v0.07 (2026-11-15) | 10.5281/zenodo.24239715 | five graphs: covers, index 4, 5-CDC, flows, oddness, resistance, normal 6, parity theorem, defect 2 with all pairs critical, abnormal edges, statements (c), (d) false, Theorem 5.9 |
+| unbounded-defect | v0.03 (2026-11-15) | 10.5281/zenodo.24239832 | statement (e) of the Mattiolo-Mazzuoccolo-Mkrtchyan conjecture false (rings on 102t vertices, defect at least t, `pd(R_3) = 3`); Section 6: transfer semigroups of 6-poles, every ring of claws and Petersen superedges colorable |
 | colorable-only-by-itself | v0.02 (2026-11-14) | 10.5281/zenodo.24230853 | both 52-vertex counterexamples are colorable only by themselves (members of H_3) if no counterexample has at most 38 vertices (Observation 10 of v4), answering v4 Section 5.4 |
 
 Focus record (strategic review 2026-10-06): F0, F1, F3, F4 closed; F2 dormant; F5 gated (G68 and

@@ -47,7 +47,8 @@ source hash are in
 
 ## The real picture of the 3D map (EXP-011)
 
-Over $\mathbb{R}$, the announced $F$ restricts to a surjective, orientation-reversing
+Over $\mathbb{R}$, the announced $F$ restricts to a non-surjective (its image omits the curve
+$\Gamma = \{(4/(27c^2), 4/(3c), c)\}$, EXP-145), orientation-reversing
 ($\det = -2$), non-proper, non-injective real Keller map. The census: 1 or 3 real preimages,
 separated by the discriminant wall ($D > 0$: three sheets; $D < 0$: one), with escapes exactly
 on the wall. This also records that the constant-Jacobian REAL statement in dimension 3 falls

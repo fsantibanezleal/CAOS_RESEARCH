@@ -1,0 +1,11 @@
+\begin{table}[t]\centering\small
+\begin{tabular}{lcccc}
+\toprule
+4-pole & $d = 0$ & $d = 1$ & $d = 2$ & $d = 3$ \\
+\midrule
+$A = \Gfty - \{0,3\} - \{1,9\}$ & refuted (7.7\,s) & map (0.5\,s) & refuted (2.7\,s) & refuted (2.1\,s) \\
+$B = \Gfty - \{2,7\}$ & map (0.2\,s) & refuted (2.8\,s) & refuted (2.2\,s) & refuted (2.1\,s) \\
+\bottomrule
+\end{tabular}
+\caption{Transmitted distances of the two 4-poles. ``Map'': a map with every vertex good and the first connector at distance $d$, accepted by the checker (the second connector is then at the same distance). ``Refuted'': unsatisfiable, with a DRAT proof accepted by \texttt{drat-trim}. Times are solver times of computation EXP-012 (\texttt{conduction-A.json}, \texttt{ring.json}).}\label{tab:sets}
+\end{table}

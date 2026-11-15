@@ -1,0 +1,17 @@
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,every node/.style={font=\small}]
+\def\lay{1,4,8,2}
+\node[draw,rounded corners,minimum width=2.2cm,minimum height=1.1cm,fill=red!25] (L0) at (0.0,0) {1 edge};
+\node[font=\scriptsize,above=0.55cm of L0] {distance 0};
+\node[draw,rounded corners,minimum width=2.2cm,minimum height=1.1cm,fill=blue!25] (L1) at (3.2,0) {4 edges};
+\node[font=\scriptsize,above=0.55cm of L1] {distance 1};
+\node[draw,rounded corners,minimum width=2.2cm,minimum height=1.1cm,fill=gray!30] (L2) at (6.4,0) {8 edges};
+\node[font=\scriptsize,above=0.55cm of L2] {distance 2};
+\node[draw,rounded corners,minimum width=2.2cm,minimum height=1.1cm,fill=gray!30] (L3) at (9.6,0) {2 edges};
+\node[font=\scriptsize,above=0.55cm of L3] {distance 3};
+\draw[thick] (L0) -- (L1);
+\draw[thick] (L1) -- (L2);
+\draw[thick] (L2) -- (L3);
+\node[draw=red!70!black,thick,rounded corners,fit=(L0),inner sep=3pt,label={[font=\scriptsize,red!50!black]below:$D(B)=\{0\}$}] {};
+\node[draw=blue!70!black,thick,rounded corners,fit=(L1),inner sep=3pt,label={[font=\scriptsize,blue!50!black]below:$D(A)=\{1\}$}] {};
+\node[font=\scriptsize,text width=9.5cm,align=center] at (4.8,-2.3) {from a fixed edge, the numbers of edges of $\PG$ at line-graph distance $0,1,2,3$ ($1+4+8+2=15$)};
+\end{tikzpicture}

@@ -42,3 +42,14 @@ both test shapes at full column sweeps.
   non-top monomials fall outside and keep Theorem 6 or full-window towers.
 - Frontier pairings are parameter-free constants because the samples were numeric; the
   parametrized sweep should re-derive them with symbolic coefficients.
+
+## Erratum (2026-11-15)
+
+The half-plane tower lemma is not established for all partner degrees. Proof ingredient (b) above ("non-T-power kernel
+resonances have x-heavy sources with EMPTY H-part") holds for `T = a(xy)^2` (EXP-048), but fails for the planar paper's own
+samples: for `P32 = x + (x(xy^4 - 1)^3)^2 + x^2` (top `(xy^3)^8`) the resonances `(xy^3)^s`, `s = 4..7`, satisfy `J(T, .) = 0`
+and their sources lie entirely in `H = {i <= j}` (independent review of planar v0.37, CAOS_MANAGE
+`wip/caos-research/jc-planar-v037-review-2026-11-14.md`, with a sympy check); the same holds for `P72`. The machine-verified
+part stands on the windows the certificates cover; the all-degree statement is a conjecture. Planar v0.37 states it so
+(conjecture `conj:halfplane`), and its version notes record that v0.36 stated it as proved.
+
