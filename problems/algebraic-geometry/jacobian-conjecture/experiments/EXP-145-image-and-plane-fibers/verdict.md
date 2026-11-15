@@ -62,8 +62,7 @@ with samples, as stated above.
 
 - Route 1 (symbolic identities): P2(a), P3(a), the reconstruction identity and the triple-root factorization are polynomial or
   rational-function identities, not samples.
-- Route 2 (control): C1 changes one coefficient (`4/27 -> 5/27`) and the basis stops being `[1]`; the
-  4 basis elements, so the unit ideal at `4/27` is a property of `Gamma`.
+- Route 2 (control): C1 changes one coefficient (`4/27 -> 5/27`) and the basis stops being `[1]` (4 basis elements), so the unit ideal at `4/27` is a property of `Gamma`.
 - Route 3 (two independent routes): the quotient dimension from the Groebner staircase equals the number of simple roots of `W` at
   all 40 P2(b) targets; the radicality at the C = 0 targets is checked by distinct exact points and by a squarefree eliminant.
 - Route 4 (adversarial targets): 10 targets within `1e-3` of `Gamma` (where the three roots of `W` nearly coincide and `x = C/s`
