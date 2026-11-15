@@ -95,11 +95,11 @@ mapped 4-pole carries one class through both connectors, the line-graph distance
 vertices has defect exactly 3. For rings of 6-poles joined along three edges, the 64 classes form six
 orbits and a block's transfer relation splits into six sector matrices of order at most 67. The
 colorability of every ring of a finite block family reduces to a semigroup closure with an
-integer-checked certificate. Over 81 computed blocks, every ring of claws, of
+integer-checked certificate. For 81 computed blocks, every ring of claws, of
 Petersen superedges or of both is colorable; the junctions of the flower snarks $J_5$, $J_7$, $J_9$
-carry antipodal triples, and odd rings of at least five superedges are cyclically 5-edge-connected
-snarks of girth 5. Closures of larger families stay undecided. A control on the 52-vertex graph shows
-that classes alone miss non-colorability.
+carry antipodal triples, and odd rings of at least five superedges with the identity at every junction are
+cyclically 5-edge-connected snarks of girth 5. Larger closures stay undecided. A control on the 52-vertex graph shows
+classes alone miss non-colorability.
 \end{abstract}
 
 \section{Introduction}
@@ -282,7 +282,7 @@ Sections~\ref{sec:construction} and~\ref{sec:fourpoles}.
 The line graph of $\PG$ has diameter 3: from a fixed edge, four edges are at distance 1, eight at
 distance 2 and two at distance 3 (Figure~\ref{fig:linegraph}). We write $d(x, y)$ for this distance. The count is
 elementary: a fixed edge has two further edges at each of its two ends, which gives four; each of these four has two further edges at its far end,
-and none of the eight is adjacent to the fixed edge because $\PG$ has no triangle, nor shared between two of the four neighbours because $\PG$ has no 4-cycle;
+and none of the eight is adjacent to the fixed edge because $\PG$ has no triangle, nor shared between two of the four neighbours because that would close a 4-cycle (or, at a common end, a triangle); both are excluded by the girth 5 of $\PG$;
 the remaining $15 - 1 - 4 - 8 = 2$ edges are at distance 3, the diameter.
 Three facts about cuts of $\PG$ and about its symmetry are used throughout.
 
