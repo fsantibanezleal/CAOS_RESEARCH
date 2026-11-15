@@ -268,7 +268,7 @@ rows = [
 expect(p4["perturbed_hw"] is True and p4["extension_test_true_ideal"] and not p4["extension_test_perturbed"], "perturbed control")
 expect(pham["ideal_generators"] == [0, 784, 798, 1582] and mixed["ideal_generators"] == [0, 1344, 2136, 3480], "example generators")
 write("tab-examples.tex",
-      "\\begin{tabular}{lcrlcrc}\n\\toprule\ninstance & $(a_1,a_2)$ & Frobenius number (measured) & symmetry (measured) & minimal generators of the ideal & $\\mu$ & HW\\\\\n"
+      "\\begin{tabular}{lcrlcrc}\n\\toprule\ninstance & $(a_1,a_2)$ & $F(\\Gamma)$ & symmetric & generators of the ideal & $\\mu$ & HW\\\\\n"
       "\\midrule\n" + table_rows(rows) + "\\bottomrule\n\\end{tabular}\n")
 
 # ------------------------------------------------------------------------------------------------ table: controls

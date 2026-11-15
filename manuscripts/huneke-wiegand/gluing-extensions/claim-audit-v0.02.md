@@ -17,8 +17,8 @@ that the length law equals the direct torsion length.
 | 5 | Corollary 1.2: four-generated counterexamples, `2^r` generators | [D] | 167, 700-712 | Corollary 7.4 plus Corollary 7.2 (symmetry); existence of gluing parameters argued in 3.3 |
 | 6 | Lemma 4.1 (Apery basis), Props 4.2, 4.3, Lemma 5.1 | [D] | 370-430 | unchanged from v0.01; EXP-068 `proof.md` Lemma A, Props 1, 2, Lemma B |
 | 7 | Lemma 6.1 degree bound (`M = maxgen + c(Gamma) + c(A*)`) | [D] | 510 | new proof from the `tensor_torsion` docstring, `code/hwcert/gluing.py:175-187`; needs reviewer check |
-| 8 | torsion equals kernel of multiplication; degree-wise formula (5.2) | [D] | 495-508 | Leamer arXiv:1211.2896v1 p.2 and Remark 2.6 (read on arxiv.org); argument written here |
-| 9 | Jordan-type recursion (5.3) | [D] | 545-566 | `tensor_torsion` rank loop, `gluing.py:206-219`; derivation written here |
+| 8 | torsion equals kernel of multiplication; degree-wise formula (5) | [D] | 495-508 | Leamer arXiv:1211.2896v1 p.2 and Remark 2.6 (read on arxiv.org); argument written here |
+| 9 | Jordan-type recursion (7) | [D] | 545-566 | `tensor_torsion` rank loop, `gluing.py:206-219`; derivation written here |
 | 10 | Lemma 6.2 cost of the partition criterion | [D] | 610 | `is_huneke_wiegand`, `gluing.py:126-146`; derivation written here |
 | 11 | Lemma 7.1 and Corollary 7.2: Frobenius number and symmetry of a gluing | [D], [MV] | 651-690 | derived here from Proposition 4.2; measured on 48 + 2 glued semigroups (`frobenius_matches`, `p3_instances`) |
 | 12 | Corollaries 7.3, 7.4, 7.5: Propositions 9 and 10 re-derived, open case, invariance for extensions | [D] | 700-722 | `proof.md` Corollaries; GSL Propositions 9, 10 read on arxiv.org |
