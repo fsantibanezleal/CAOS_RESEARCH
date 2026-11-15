@@ -369,6 +369,10 @@ Cost: the dominant steps are the coefficient solve (polynomial system, at most $
 umEnumFibers{}-fold fiber computation; the window gives \numBranches{} branches,
 \numEnumInst{} instances and \numEnumFibers{} fibers. With three parameter samples per branch, the archived counts satisfy $\numBranches \cdot 3 = \numEnumInst + \numBadResidual$ (branches times samples equals instances plus discards).
 
+\subsection{Check of the image and of the plane fibers (EXP-145)}
+
+Computation EXP-145 checks the statements of Sections~\ref{sec:asymptotic} and~\ref{sec:real} that go beyond the earlier computations. It has four parts, all in exact arithmetic over $\Q$ with sympy $1.14.0$ and a fixed seed for the random targets. First, it verifies the premises: $\det JF = -2$, the discriminant $D = -16C^2\Sigma$, the factorization $W = -4(w - \tfrac13)^3$ on $\Gamma$, and the reconstruction identity as a zero remainder modulo $W$ over the field of rational functions in $(A,B,C)$. Second, it computes the reduced lexicographic Gr\"obner basis of the fiber ideal over $\Gamma(c)$ with the auxiliary variable $c$ inverted, and repeats it for a perturbed curve as a control. Third, for each sampled target with $C \neq 0$ it computes the Gr\"obner staircase of the fiber ideal, compares its dimension with the number of simple roots of $W$ (a second route), and reconstructs a real preimage by exact root counting and a high-precision residual. Fourth, for each target on $C = 0$ it computes the dimension of the fiber ideal, substitutes the three points exactly into $F$, and checks that the eliminant is squarefree of the same degree. The costs are small: the whole computation takes \numExpSeconds{} seconds of wall time. Its limits are those of a sample: it certifies the identities and the listed targets, not every target.
+
 \section{Experimental design}\label{sec:design}
 
 Each computation states its predictions before it is run and fails if one prediction fails; the outcomes, including the predictions that failed, are reported in the results sections. The
@@ -383,6 +387,8 @@ predictions and the acceptance criteria are as follows.
 \textbf{Dimension two (EXP-005, EXP-006, EXP-010).} The determinant identity for equivariant planar maps is predicted with generic symbolic $f, g$; the one-invariant collapse is predicted; an exhaustive bounded enumeration is predicted to produce only injective maps; and the classification is predicted by emptiness of constrained polynomial systems over $\Q$ with the nondegeneracy conditions imposed as equations. The first enumeration returned no instance and so proved nothing; the enumeration of Algorithm~\ref{alg:enum} replaces it.
 
 \textbf{Geometry (EXP-007, EXP-011).} The identity $W'(w) = k^2p(w) - BC$, a target on the discriminant surface with a one-point fiber, targets on the plane $C = 0$, and a collision target off the surface are predicted; for the real census, agreement of two exact routes at sample targets and a nonempty real fiber at every point of a rational grid.
+
+\textbf{Image and plane fibers (EXP-145).} Predicted before the run: the fiber over the curve $\Gamma$ of \eqref{eq:gamma} is empty (a unit Gr\"obner ideal), with a control that changes one coefficient of $\Gamma$ and must lose the unit ideal; $F(0,y,z) = (z + 4y^2, y, 0)$; the parametrization of Theorem~\ref{thm:cplane} maps to $(A,B,0)$; targets off $\Gamma$ have a fiber of the size predicted by the simple roots of $W$ and a real preimage; targets on $C = 0$ have three points off $B^2 = 16A$ and one on it. Acceptance: exact identities, and agreement of the quotient dimension with the root count at every sampled target.
 
 \textbf{Weight systems (EXP-012).} The determinant lemma for the weights $(1,-1,-m)$, $m \in \{1,2,3,4\}$, and the pairing reductions are predicted; a family at $m = 4$ is predicted by a parity law and refuted by an emptiness certificate.
 
@@ -595,7 +601,7 @@ Let $F$ be the announced map, $W(w) = 4(w^2 - w^3) - wBC + AC^2$ its fiber polyn
 
 Part 1 is Step 4 of the proof of Theorem~\ref{thm:family}, with the machine-verified identities $W' = k^2p - BC$ and $s = -W'/m$ for $F$ and $G_3$ (EXP-007), and the discriminant $D = -16C^2\Sigma$ computed by sympy \MV. Part 2 depends on the fibers over the plane $C = 0$, which Theorem~\ref{thm:cplane} gives; its proof is at the end of this section. In the chart $C = 1$ the factor $C^2$ of $D$ records the degeneration of the reconstruction at $C = 0$, where $x = C/s$ is no longer determined, and not an asymptotic locus.
 
-\begin{theorem}[Fibers over the plane $C = 0$, {\DD}, certified {\MV} at $(-\tfrac14, 0, 0)$]\label{thm:cplane}
+\begin{theorem}[Fibers over the plane $C = 0$, {\DD}; the parametrization identity and \numPlaneTargets{} sampled targets {\MV}, EXP-145]\label{thm:cplane}
 Since $F(0,y,z) = (z + 4y^2,\, y,\, 0)$, the fiber of $F$ over $(A,B,0)$ contains the flat-sheet point $(0, B, A - 4B^2)$. A preimage with $x \neq 0$ has $c_1 = 0$, hence $b_1 = 6 + 4v = Bx$ and $a_1 = (1+v)(2+v) = Ax^2$, which are equivalent to
 \begin{equation}\label{eq:cplane}
 x^2\,(B^2 - 16A) = 4, \qquad y = \frac{Bx - 6}{4x}, \qquad z = \frac{26 - 3Bx}{4x^2}.
@@ -607,18 +613,18 @@ If $B^2 \neq 16A$ the fiber therefore has exactly three points, the flat-sheet p
 On $c_1 = 0$ one has $t = 2 - 3v$ and, from the formulas of Theorem~\ref{thm:structure}, $b_1 = 3(2-3v)u^2 + 9v^3 + 12v^2 + v = 6 + 4v$ and $a_1 = (v+1)\bigl((2-3v)u^2 + 3v^3 + 4v^2\bigr) = (1+v)(2+v)$. With $u = 1 + v$ the first equation gives $u = (Bx - 2)/4$ and the second becomes $Ax^2 = u(u+1) = (B^2x^2 - 4)/16$, which is the first relation of \eqref{eq:cplane}; $y = v/x$ and $z = t/x^2$ give the others.
 \end{proof}
 
-At $(A,B) = (-\tfrac14, 0)$ one has $B^2 - 16A = 4$, $x = \pm 1$, $y = \mp\tfrac32$ and $z = \tfrac{13}{2}$: the three announced points of Theorem~\ref{thm:valid}. A second instance is the target $(0,1,0)$, with $B^2 - 16A = 1$: the fiber contains $(0, 1, -4)$, $(2, -\tfrac12, \tfrac54)$ and $(-2, 1, 2)$, which all map to $(0,1,0)$ by direct substitution.
+At $(A,B) = (-\tfrac14, 0)$ one has $B^2 - 16A = 4$, $x = \pm 1$, $y = \mp\tfrac32$ and $z = \tfrac{13}{2}$: the three announced points of Theorem~\ref{thm:valid}. A second instance is the target $(0,1,0)$, with $B^2 - 16A = 1$: the fiber contains $(0, 1, -4)$, $(2, -\tfrac12, \tfrac54)$ and $(-2, 1, 2)$, which all map to $(0,1,0)$ by direct substitution; computation EXP-145 solves this fiber and that of the announced target from their Gr\"obner bases and verifies the images exactly. It verifies symbolically that $F(0,y,z) = (z + 4y^2, y, 0)$ and that the points of \eqref{eq:cplane} map to $(A,B,0)$ on $x^2(B^2 - 16A) = 4$, and it finds \numPlaneThree{} sampled targets with $B^2 \neq 16A$ whose fibers have exactly three distinct points (\numPlaneNonreal{} of them with non-real points) and \numPlaneOne{} with $B^2 = 16A$ whose fibers have one point (Figure~\ref{fig:plane}).
 
 \begin{proof}[Proof of Theorem~\ref{thm:asymptotic}, part 2]
 \emph{Targets off the surface.} Let $t_0 = (A_0,B_0,C_0)$ with $\Sigma(t_0) \neq 0$. If $C_0 \neq 0$, $W_{t_0}$ has three simple roots, which depend continuously on the target; by Part 1 the preimages of every nearby target are the three reconstructions of Theorem~\ref{thm:family}, with $s = -W'(w)/m$ bounded away from zero, so they stay bounded. If $C_0 = 0$, then $B_0^2 \neq 16A_0$, and by Theorem~\ref{thm:cplane} the fiber over $t_0$ has three distinct points, at each of which $F$ is a local biholomorphism ($\detJ = -2$). Let $U_1, U_2, U_3$ be disjoint neighborhoods of these points mapped onto a common neighborhood $N$ of $t_0$. For $t \in N$ with $C \ne 0$ the three preimages in the $U_i$ are all the preimages, since there are at most three; for $t \in N$ with $C = 0$ the fiber has exactly three points by Theorem~\ref{thm:cplane}. So all preimages of targets in $N$ lie in $U_1 \cup U_2 \cup U_3$, and no sequence $p_n \to \infty$ has $F(p_n) \to t_0$.
 \emph{Targets on the surface.} If $C_0 \neq 0$ and $\Sigma(t_0) = 0$, choose targets $t_n \to t_0$ off the surface; $W_{t_n}$ has simple roots $w_n$ converging to a multiple root $w_0$ of $W_{t_0}$, so $s_n = -W'_{t_n}(w_n)/m \to 0$ and the reconstructed preimage has $x_n = C_n/s_n \to \infty$ while $F(p_n) = t_n \to t_0$. If $C_0 = 0$ and $B_0^2 = 16A_0$, choose $(A_n, B_n) \to (A_0, B_0)$ with $B_n^2 - 16A_n \to 0$ and $\neq 0$: the points of Theorem~\ref{thm:cplane} with $x_n = 2/\sqrt{B_n^2 - 16A_n} \to \infty$ map to $(A_n, B_n, 0) \to t_0$.
 \end{proof}
 
-Verified end to end \MV: the target $(0, 1, 1)$ lies on the surface and its exact rational fiber is the single point $(2, -\tfrac12, \tfrac98)$ (a double root and a simple root of $W$: two sheets escaped); the collision target $(-16, -16, 1)$ has $D = \numDcollision{} \neq 0$ and a full three-point rational fiber, whose third point is $(\tfrac{1}{24}, -28, -10656)$. Collisions are generic; escapes are of codimension one. Kraus' ``ramification at infinity'' is, for this family, the discriminant of a univariate polynomial. An enumeration that keeps only the rational solutions of the fiber system sees one point over a generic rational target $(A,B,0)$, because the two points of \eqref{eq:cplane} are irrational unless $B^2 - 16A$ is a rational square.
+Verified end to end \MV: the target $(0, 1, 1)$ lies on the surface and its exact rational fiber is the single point $(2, -\tfrac12, \tfrac98)$ (a double root and a simple root of $W$: two sheets escaped); the collision target $(-16, -16, 1)$ has $D = \numDcollision{} \neq 0$ and a full three-point rational fiber, whose third point is $(\tfrac{1}{24}, -28, -10656)$. Collisions are generic; escapes are of codimension one. Kraus' ``ramification at infinity'' is, for this family, the discriminant of a univariate polynomial. An enumeration that keeps only the rational solutions of the fiber system sees one point over a generic rational target $(A,B,0)$, because the two points of \eqref{eq:cplane} are irrational unless $B^2 - 16A$ is a rational square; computation EXP-145 recomputes the two rational targets of the enumeration of EXP-007 on the plane, finds three points over each with exactly one rational, and so supersedes the statement of EXP-007 that the plane $C = 0$ is asymptotic with a single-point fiber.
 
 \section{Real fibers and the image of the map}\label{sec:real}
 
-\begin{theorem}[Real census and image, {\DD}; census {\MV} at the targets of Table~\ref{tab:census}]\label{thm:realcensus}
+\begin{theorem}[Real census and image, {\DD}; the census {\MV} at the targets of Table~\ref{tab:census}; the emptiness over $\Gamma$ and the sampled fibers {\MV}, EXP-145]\label{thm:realcensus}
 Over $\R$, the announced $F$ restricts to an orientation-reversing ($\det = -2$), non-proper, non-injective real Keller map. For real targets with $C \ne 0$ off the surface $\Sigma = 0$ the number of real preimages is $3$ (region $D > 0$, that is $\Sigma < 0$, which contains the collision targets) or $1$ (region $D < 0$); two independent exact routes (Sturm isolation of the fiber cubic plus reconstruction, versus Gr\"obner elimination) agree at all sampled targets. The image of $F$ is the complement of the curve
 \begin{equation}\label{eq:gamma}
 \Gamma = \Bigl\{\bigl(\tfrac{4}{27\,c^2},\ \tfrac{4}{3c},\ c\bigr) : c \neq 0\Bigr\},
@@ -636,7 +642,7 @@ For $C \neq 0$ the fiber is in bijection with the simple roots of $W$ (Theorem~\
 \label{tab:census}
 \end{table}
 
-The counts $\numCensusThree$ target with three real preimages and $\numCensusOne$ with one occur among the six sampled targets of Table~\ref{tab:census}, so both regions are inhabited. A grid of \numGrid{} rational targets (three values for each of $A$ and $B$ and four for $C$) contains no target with an empty real fiber: for the \numGridNoPlane{} targets with $C \neq 0$ the census is computed, and for the \numGridPlane{} targets on $C = 0$ the explicit flat-sheet point is real. The grid does not meet the curve $\Gamma$; the image statement of Theorem~\ref{thm:realcensus} is the derivation above, not a grid property. The constant-Jacobian \emph{real} statement in dimension three falls with the same example; Pinchuk's planar counterexample \cite{Pinchuk1994} concerned the non-constant case.
+The counts $\numCensusThree$ target with three real preimages and $\numCensusOne$ with one occur among the six sampled targets of Table~\ref{tab:census}, so both regions are inhabited. A grid of \numGrid{} rational targets (three values for each of $A$ and $B$ and four for $C$) contains no target with an empty real fiber: for the \numGridNoPlane{} targets with $C \neq 0$ the census is computed, and for the \numGridPlane{} targets on $C = 0$ the explicit flat-sheet point is real. The grid does not meet the curve $\Gamma$, so it could not show the gap in the image; the image statement of Theorem~\ref{thm:realcensus} is the derivation above, certified by computation EXP-145 in three ways. The lexicographic Gr\"obner basis of the fiber ideal over $\Gamma(c)$ with $c$ inverted is $[1]$, so no point of $\C^3$ maps to $\Gamma$; the same construction with $\tfrac{5}{27}$ in place of $\tfrac{4}{27}$ does not give $[1]$, which excludes an artifact of the construction; and at \numImgTargets{} sampled targets with $C \neq 0$ off $\Gamma$ (\numImgRandom{} random, \numImgSigma{} on the surface $\Sigma = 0$ and \numImgNear{} within $10^{-3}$ of $\Gamma$ in each coordinate) the fiber ideal is proper, its quotient dimension equals the number of simple roots of $W$, and a real preimage exists. The reconstruction identity is exact modulo $W$. That every target off $\Gamma$ with $C \neq 0$ has a preimage is the simple-root argument, with the samples as evidence and not as a proof. Computation EXP-145 supersedes the surjectivity statements of EXP-011 (items 3 and 4) and the single-point reading of the plane $C = 0$ in EXP-007 (item 4), where they disagree with it. The constant-Jacobian \emph{real} statement in dimension three falls with the same example; Pinchuk's planar counterexample \cite{Pinchuk1994} concerned the non-constant case.
 
 \begin{figure}[t]\centering
 \begin{tikzpicture}
@@ -655,7 +661,18 @@ The counts $\numCensusThree$ target with three real preimages and $\numCensusOne
 \label{fig:wall}
 \end{figure}
 
-Figure~\ref{fig:fiber} shows the cubic behind the census, and Figure~\ref{fig:wall} the wall that separates the regions. The cusp of the wall at $(\tfrac{4}{27}, \tfrac43)$ is the point of $\Gamma$ in the chart $C = 1$, where the three roots of $W$ coalesce.
+Figure~\ref{fig:fiber} shows the cubic behind the census, Figure~\ref{fig:wall} the wall that separates the regions, and Figure~\ref{fig:plane} the fibers over the plane $C = 0$. The cusp of the wall at $(\tfrac{4}{27}, \tfrac43)$ is the point of $\Gamma$ in the chart $C = 1$, where the three roots of $W$ coalesce.
+
+\begin{figure}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.7\linewidth, height=6.4cm, xlabel={$A$}, ylabel={$B$}, xmin=-7, xmax=9, ymin=-10.5, ymax=10.5,
+ tick label style={font=\scriptsize}, label style={font=\small}]
+\input{fig-plane.tex}
+\end{axis}
+\end{tikzpicture}
+\caption{The \numPlaneTargets{} sampled targets $(A,B,0)$ of computation EXP-145 and the parabola $B^2 = 16A$ (curve). Triangles: $B^2 > 16A$, three real preimages; squares: $B^2 < 16A$, one real and two non-real preimages; stars: $B^2 = 16A$, the single flat-sheet point. Each marker is the fiber size reported in the stored output, three off the parabola and one on it.}
+\label{fig:plane}
+\end{figure}
 
 \section{The two-dimensional frontier}\label{sec:planar}
 
@@ -772,8 +789,8 @@ Theorem~\ref{thm:structure} and Lemma~\ref{lem:skew} & determinant by $3\times 3
 Theorem~\ref{thm:family}, Theorem~\ref{thm:instances} & determinant computed in $(x,y,z)$ and from $J_2 = m^2c_1^2/k$; collisions by exact substitution into the full components, independent of the reconstruction; proof of Section~\ref{sec:constructor} & 5 instances; determinants $-2,-3,-350,-20,-2$ \\
 Theorem~\ref{thm:degrees} & degrees by total degree of the expanded components; $k = 7$ and two tails & 4 seeds; 2 tails \\
 Remark~\ref{rem:charp} & two primes; exact images in characteristic $0$, reduction with modular inverses, distinctness in $\mathbb{F}_\ell^3$ & $\ell = 13, 101$; degree $12$ \\
-Theorems~\ref{thm:asymptotic}, \ref{thm:cplane} & polynomial identity, then fibers on and off the surface by Gr\"obner basis; fiber over $C = 0$ at the announced target; hand substitution at $(0,1,0)$ & $D(-16,-16,1) = \numDcollision$; 3 and 1 point fibers \\
-Theorem~\ref{thm:realcensus} & Sturm route versus Gr\"obner route; grid of \numGrid{} targets; triple-root argument for $\Gamma$ & 6 targets, 2 regions \\
+Theorems~\ref{thm:asymptotic}, \ref{thm:cplane} & polynomial identity, then fibers on and off the surface by Gr\"obner basis; fiber over $C = 0$ at the announced target and at $(0,1,0)$; symbolic parametrization and \numPlaneTargets{} plane targets with radicality by a squarefree eliminant (EXP-145) & $D(-16,-16,1) = \numDcollision$; 3 and 1 point fibers \\
+Theorem~\ref{thm:realcensus} & Sturm route versus Gr\"obner route; grid of \numGrid{} targets; triple-root argument for $\Gamma$; unit Gr\"obner ideal over $\Gamma$ with a control; quotient dimension against simple-root count (EXP-145) & 6 targets, 2 regions; \numImgTargets{} targets \\
 Theorem~\ref{thm:2d}, \ref{thm:rigidity} & symbolic identity with free $f,g$; enumeration of \numEnumInst{} instances against sweeps; the classification of \cite{Shaska2026}; the proof of Section~\ref{sec:rigidity} & \numRigCases{} cases, \numWeightPairs{} weight pairs; \numEnumFibers{} fibers \\
 Table~\ref{tab:landscape} & Gr\"obner and valuation certificates for the empty classes; scans with in-image targets & \numBridgeInst{}, \numRigidInst{} instances; 5 conditions \\
 \bottomrule
@@ -782,7 +799,7 @@ Table~\ref{tab:landscape} & Gr\"obner and valuation certificates for the empty c
 \label{tab:validation}
 \end{table}
 
-Two observations bound the evidence. First, the identities certified with generic symbolic coefficients (the determinant lemma, the planar determinant factorization, the one-variable fiber identity) cover whole families, while the instance certificates (Table~\ref{tab:collisions}) cover specific maps and the proofs of Theorems~\ref{thm:family}, \ref{thm:cplane} and~\ref{thm:realcensus} cover the general case by argument. Second, the only software is sympy, so a defect in one library would affect every route that uses it; the hand-checkable substitutions \eqref{eq:hand}, the closed forms \eqref{eq:closed} at $t = 0$ and the fibers over $C = 0$ reduce that dependence at the points where it matters most. The mixed-route design is the same throughout: each exact statement is established by a computation of one kind and checked by a computation of another kind, or by a proof.
+Two observations bound the evidence. First, the identities certified with generic symbolic coefficients (the determinant lemma, the planar determinant factorization, the one-variable fiber identity) cover whole families, while the instance certificates (Table~\ref{tab:collisions}) cover specific maps and the proofs of Theorems~\ref{thm:family}, \ref{thm:cplane} and~\ref{thm:realcensus} cover the general case by argument. Second, the only software is sympy, so a defect in one library would affect every route that uses it; the exact-substitution checks of computation EXP-145, which do not depend on the Gr\"obner routine, the hand-checkable substitutions \eqref{eq:hand}, the closed forms \eqref{eq:closed} at $t = 0$ and the fibers over $C = 0$ reduce that dependence at the points where it matters most. The mixed-route design is the same throughout: each exact statement is established by a computation of one kind and checked by a computation of another kind, or by a proof.
 
 The negative controls and the failed predictions are part of the validation. The first constructor fails for seeds of degree three and four, and the failure is an exact emptiness statement (Proposition~\ref{prop:first}). The first planar enumeration returned no instance, which proved nothing, and the valuation-aware enumeration of Algorithm~\ref{alg:enum} replaced it, with every discard counted. The parity law for weight systems predicted a family at $m = 4$ and was refuted by a Gr\"obner certificate, so the landscape of Table~\ref{tab:landscape} was shaped by a prediction that failed. The determinant lemma and the pairing reductions were checked in all \numLemmaCases{} cases before any scan relied on them.
 
@@ -801,7 +818,7 @@ Finally, the numbers quoted in the text are not typed by hand. The script \textt
 The limits of the evidence are the following.
 \begin{enumerate}
 \item The degree law and the minimality of the announced map rest on four seeds, one scale and two tails; the general statement is Conjecture~\ref{conj:degrees}.
-\item The structure of the fibers over $C = 0$ (Theorem~\ref{thm:cplane}), the asymptotic variety as $\{\Sigma = 0\}$ and the image $\C^3 \setminus \Gamma$ (Theorem~\ref{thm:realcensus}) are derived by proof, with machine certification at $(-\tfrac14, 0, 0)$ for the fiber and at the targets of Table~\ref{tab:census}; the fiber over $(0,1,0)$ and the emptiness of the fiber over $\Gamma$ are derived and hand-checkable but are not covered by an archived computation.
+\item The structure of the fibers over $C = 0$ (Theorem~\ref{thm:cplane}), the asymptotic variety as $\{\Sigma = 0\}$ and the image $\C^3 \setminus \Gamma$ (Theorem~\ref{thm:realcensus}) are derived by proof. Computation EXP-145 certifies the symbolic identities, the emptiness over $\Gamma$ exactly and \numImgTargets{} plus \numPlaneTargets{} sampled targets; it does not enumerate every target, so the statement that every target off $\Gamma$ has a preimage, and the asymptotic variety as a whole, rest on the proofs.
 \item The weight-system survey is a sparse bounded scan; the uniqueness of the mechanism is a statement about the scanned landscape, with seed degree at most \numSeedDegMax{} for $m = 4$, specific output weights and specific pairings. A non-potential map at $m = 4$ is not excluded.
 \item The planar results concern $\Gm$-equivariant maps only; non-equivariant planar Keller maps are untouched. The enumeration window is $a \le 3$, $|b_1| \le 3$, degrees at most $3$, and the sweeps cover \numWeightPairs{} weight pairs and bidegrees up to \numSweepDeg{}; the arbitrary-weight statement rests on the proof of Section~\ref{sec:rigidity}.
 \item The determinant value $-k\,p(1)^2$ shows that every negative rational occurs; it gives no information on the size of the coefficients needed for a counterexample of small degree, and the degree vectors of Table~\ref{tab:instances} grow with the seed degree.
@@ -815,7 +832,7 @@ These limits do not affect the validation of the announced map (Theorem~\ref{thm
 
 \section{Reproducibility and data availability}\label{sec:repro}
 
-{\sloppy Every result labeled \MV{} is an exact sympy computation, over $\Q$ or, for the characteristic-$p$ statements (EXP-009), over $\mathbb{F}_\ell$, whose script and output are archived in the repository \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}. An identifier EXP-$nnn$ denotes one archived computation in the experiment folders of the problem, \nolinkurl{problems/algebraic-geometry/jacobian-conjecture/experiments/}; each states its question, method and result, with the script and output of any computation. The results of this paper rest on EXP-001 through EXP-012 and, for the discussion, on EXP-016 (the cited implications checked against their primary sources, except Mathieu's 1997 paper, which was not located), EXP-041 (the $48$-variable witness), EXP-136 (the dimension indices) and EXP-138 (the dimension-$15$ homogeneous witness). The tables, the numbers quoted from outputs and the data of the figures are regenerated from the stored outputs by the script \texttt{gen\_tables.py} in the manuscript folder (\texttt{python gen\_tables.py}, with \texttt{--check} to compare against the committed files), and the source builds with three runs of \texttt{pdflatex}.\par}
+{\sloppy Every result labeled \MV{} is an exact sympy computation, over $\Q$ or, for the characteristic-$p$ statements (EXP-009), over $\mathbb{F}_\ell$, whose script and output are archived in the repository \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}. An identifier EXP-$nnn$ denotes one archived computation in the experiment folders of the problem, \nolinkurl{problems/algebraic-geometry/jacobian-conjecture/experiments/}; each states its question, method and result, with the script and output of any computation. The results of this paper rest on EXP-001 through EXP-012, on EXP-145 (the image and the fibers over $C = 0$) and, for the discussion, on EXP-016 (the cited implications checked against their primary sources, except Mathieu's 1997 paper, which was not located), EXP-041 (the $48$-variable witness), EXP-136 (the dimension indices) and EXP-138 (the dimension-$15$ homogeneous witness). The tables, the numbers quoted from outputs and the data of the figures are regenerated from the stored outputs by the script \texttt{gen\_tables.py} in the manuscript folder (\texttt{python gen\_tables.py}, with \texttt{--check} to compare against the committed files), and the source builds with three runs of \texttt{pdflatex}.\par}
 
 \section{Conclusions}\label{sec:conclusions}
 
@@ -864,7 +881,7 @@ II--III, \emph{J. Algebra} \textbf{319} (2008), 1154--1248; \textbf{320} (2008),
 counterexamples to the Jacobian conjecture, \emph{J. Algebra} \textbf{471} (2017), 13--74;
 arXiv:1401.1784.
 \bibitem{Moh1983} T.-T. Moh, On the Jacobian conjecture and the configurations of roots,
-\emph{J. Reine Angew. Math.} \textbf{340} (1983), 140--212. doi:10.1515/crll.1983.340.140.
+\emph{J. Reine Angew. Math.} \textbf{340} (1983), 140--213. doi:10.1515/crll.1983.340.140.
 \bibitem{GGHV2017} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui, Some
 algorithms related to the Jacobian Conjecture, arXiv:1708.07936.
 \bibitem{GGHV2022} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui, Increasing
@@ -872,7 +889,7 @@ the degree of a possible counterexample to the Jacobian Conjecture from 100 to 1
 arXiv:2204.14178.
 \bibitem{Helali2026} B. Helali, Exact computer-assisted exclusion of the $(72,108)$ frontier in the
 two-dimensional Jacobian problem, version 1.0.1, 2026, doi:10.5281/zenodo.21479814.
-\bibitem{MakarLimanov2021} L. Makar-Limanov, On the Newton polytope of a Jacobian pair,
+\bibitem{MakarLimanov2021} L. Makar-Limanov, On the Newton polyhedron of a Jacobian pair,
 \emph{Izv. Math.} \textbf{85} (2021), 457--467. doi:10.1070/IM9067.
 \bibitem{KanelBelovFedorov2026} Kanel-Belov and Fedorov, The generalized Dixmier conjecture
 and the two-dimensional Jacobian conjecture, arXiv:2610.33919, 2026.

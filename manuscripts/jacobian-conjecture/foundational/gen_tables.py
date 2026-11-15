@@ -265,6 +265,23 @@ def build_numbers(inst):
     c2w, c1w, c0w = coeffs_w(bstar_w)
     mac("numWallCuspA", f"{-c1w / (2 * c2w):.4f}")
     mac("numWallCuspB", f"{bstar_w:.4f}")
+    r145 = load145()
+    p2 = r145["predictions"]["P2b"]["targets"]
+    kinds = {}
+    for t in p2:
+        kinds[t["kind"]] = kinds.get(t["kind"], 0) + 1
+    mac("numImgTargets", r145["predictions"]["P2b"]["n_targets"])
+    mac("numImgPass", r145["predictions"]["P2b"]["n_pass"])
+    for k, nm in (("random", "numImgRandom"), ("on-Sigma", "numImgSigma"), ("near-Gamma", "numImgNear")):
+        if k not in kinds:
+            sys.exit("gen_tables: EXP-145 target kind missing: " + k + " in " + str(sorted(kinds)))
+        mac(nm, kinds[k])
+    p3 = r145["predictions"]["P3"]["targets"]
+    mac("numPlaneTargets", len(p3))
+    mac("numPlaneThree", sum(1 for t in p3 if t["quotient_dim"] == 3))
+    mac("numPlaneOne", sum(1 for t in p3 if t["quotient_dim"] == 1))
+    mac("numPlaneNonreal", sum(1 for t in p3 if t["quotient_dim"] == 3 and Fraction(t["B2_minus_16A"]) < 0))
+    mac("numExpSeconds", f"{r145['total_seconds']:.1f}")
     return "\n".join(out) + "\n"
 
 
@@ -438,6 +455,44 @@ def build_fig_wall():
     return glob + "\n" + r"\hfill" + "\n" + zoom + "\n"
 
 
+def load145():
+    import json
+    hits = sorted(glob.glob(str(EXPS / "EXP-145-*" / "artifacts" / "results.json")))
+    if len(hits) != 1:
+        sys.exit("gen_tables: EXP-145 results.json not found")
+    d = json.loads(Path(hits[0]).read_text(encoding="utf-8"))
+    if d.get("verdict") != "PASS":
+        sys.exit("gen_tables: EXP-145 verdict is not PASS")
+    return d
+
+
+def build_fig_plane():
+    d = load145()
+    tg = d["predictions"]["P3"]["targets"]
+    pts = {"three_real": [], "three_nonreal": [], "one": []}
+    for t in tg:
+        A, B, _ = [float(Fraction(x)) for x in t["target"]]
+        disc = Fraction(t["B2_minus_16A"])
+        if t["quotient_dim"] == 1:
+            pts["one"].append((A, B))
+        elif disc > 0:
+            pts["three_real"].append((A, B))
+        else:
+            pts["three_nonreal"].append((A, B))
+    xs = [a for k in pts for a, b in pts[k]]
+    lo, hi = min(xs) - 1, max(xs) + 1
+    ys = [b for k in pts for a, b in pts[k]]
+    out = []
+    n = 120
+    curve = " ".join(f"({B * B / 16:.4f},{B:.4f})" for B in [min(ys) - 1 + (max(ys) - min(ys) + 2) * i / n for i in range(n + 1)])
+    out.append(r"\addplot[thick, black] coordinates {" + curve + "};")
+    for key, mk, fill in (("three_real", "triangle*", "black"), ("three_nonreal", "square*", "white"), ("one", "star", "black")):
+        if pts[key]:
+            sel = " ".join(f"({a:.4f},{b:.4f})" for a, b in pts[key])
+            out.append(r"\addplot[only marks, mark=" + mk + r", mark size=3pt, mark options={fill=" + fill + r"}, draw=black] coordinates {" + sel + "};")
+    return "\n".join(out) + "\n", (lo, hi, min(ys) - 1, max(ys) + 1)
+
+
 def build_fig_window():
     t6 = art("EXP-006", "artifacts/output-2026-07-20.txt")
     v6 = art("EXP-006", "verdict.md")
@@ -461,6 +516,7 @@ def build_fig_window():
 
 FILES = {
     "fig-window.tex": lambda inst: build_fig_window(),
+    "fig-plane.tex": lambda inst: build_fig_plane()[0],
     "numbers.tex": lambda inst: build_numbers(inst),
     "tab-instances.tex": lambda inst: build_tab_instances(inst),
     "tab-collisions.tex": lambda inst: build_tab_collisions(inst),
