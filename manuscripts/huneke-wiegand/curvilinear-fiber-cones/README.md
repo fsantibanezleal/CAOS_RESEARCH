@@ -58,3 +58,15 @@ Frozen version 0.01:
   DOI now resolves to editorial v0.04
 - QA: after DOI insertion, the clean two-pass build, complete final 150-DPI six-page inspection,
   claim audit, identity, sole-authorship, public metadata, and fresh-download gates all pass
+
+## Draft in preparation: v0.05
+
+The source `main.tex` on the branch `work/huneke-wiegand/curvilinear-revision-20261114` is the draft of
+v0.05 (14 November 2026). It applies the independent audit of 2026-11-10 (plan items 1 to 9): evidence
+marks, the 16 Presburger obligations printed and decided by a second solver (EXP-069), exact pointers
+into the consolidated paper, the Betti entries and characteristic dependence (EXP-027 to EXP-035), the
+algorithms with costs, results tables with full hashes, the controls of EXP-026, the degree-five case,
+and related work. The correct Huneke-Wiegand 1994 DOI (10.1007/BF01459794) is used. The committed PDF,
+the version DOI and the Zenodo release remain those of v0.04 until the release tool publishes v0.05.
+`claim-audit-v0.05.md` lists every statement with its mark and evidence; `gen_artifacts.py` writes the
+files of `generated/` from the committed artifacts of EXP-025, EXP-026 and EXP-069.
