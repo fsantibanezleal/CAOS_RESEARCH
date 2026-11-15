@@ -45,10 +45,12 @@ $W(w) = k^2\Phi(w) - wBC + AC^2$ satisfies $W'(w) = k^2 p(w) - BC$ identically, 
 reconstruction scale is $s = -W'(w)/m$: **a preimage escapes to infinity precisely when its
 fiber root is a multiple root of $W$**. Sheets merge exactly at infinity, never at finite
 points. For the announced $F$:
-$$A(F) = \{C = 0\} \;\cup\; \{\,27 A^2 C^2 - 18 A B C + 16 A + B^3 C - B^2 = 0\,\}$$
-(the discriminant surface of the fiber cubic). Verified end to end: the target $(0, 1, 1)$ lies
+$$A(F) = \{\,27 A^2 C^2 - 18 A B C + 16 A + B^3 C - B^2 = 0\,\}$$
+(the discriminant surface of the fiber cubic; EXP-145 corrects EXP-007, which also listed the plane $C = 0$). Verified end to end: the target $(0, 1, 1)$ lies
 on the surface and its exact fiber is the single point $(2, -\tfrac12, \tfrac98)$ (two sheets
-escaped); over generic $(A, B, 0)$ the fiber is the single flat-sheet point $(0, B, A - 4B^2)$;
+escaped); over $(A, B, 0)$ the fiber has three points when $B^2 \ne 16A$ (the flat-sheet point
+$(0, B, A - 4B^2)$ and two points with $x^2(B^2 - 16A) = 4$) and the flat-sheet point only on $B^2 = 16A$ (EXP-145);
+the image of $F$ is $\mathbb{C}^3$ minus the curve $\Gamma$ of triple roots of $W$ (EXP-145);
 the collision target $(-16, -16, 1)$ lies OFF the surface with a full 3-point rational fiber:
 collisions are generic, escapes are codimension 1.
 

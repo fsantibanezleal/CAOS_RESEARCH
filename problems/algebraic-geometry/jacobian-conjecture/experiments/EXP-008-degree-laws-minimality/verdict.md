@@ -40,3 +40,11 @@ Output: `artifacts/output-2026-07-20.txt`. All five predictions verified exactly
 - The global-minimality gap (degrees 3..6 in C^3) is a sharply defined open target for a
   future search experiment (JC-P3 continuation; the 2-variable-style ansatz enumeration with
   symbolic pruning, GPU-widened).
+
+## Erratum (2026-11-15)
+
+The sentence saying that a symbolic proof of the degree law for arbitrary d "is written analytically in the wiki" points to no
+recorded derivation: no all-d proof is recorded (independent review of foundational v0.15, CAOS_MANAGE
+`wip/caos-research/jc-foundational-v015-review-2026-11-14.md`). The statement holds on the computed degrees; beyond them it
+is conjectural, as foundational v0.15 states.
+

@@ -29,7 +29,8 @@ $$F_{p,k,q} = \left(\frac{a_1}{x^2},\ \frac{b_1}{x},\ x\,c_1\right)\bigg|_{v = x
 - **Exact reconstruction inverse:** from a root $w$:
   $s = (BC - k^2 p(w))/m$, $u = kw/s$, $x = C/s$, $v = u - 1$, $t = q(v) - s$, $y = v/x$,
   $z = t/x^2$ (verified as an identity modulo the fiber polynomial).
-- **The announced map is the minimal instance** $p = 2w - 3w^2$, $k = 2$, $q$ affine; at $d = 2$
+- **The announced map is minimal among the computed instances** (minimality in the whole family is conjectural:
+  the degree law is verified on four seeds, EXP-008) $p = 2w - 3w^2$, $k = 2$, $q$ affine; at $d = 2$
   the shape is rigid (EXP-003: unique up to $k$).
 
 ## New explicit counterexamples (ours, with rational collision certificates)
@@ -47,7 +48,7 @@ For affine sections $q$ the component degrees are exactly $(5d - 3,\, 5d - 4,\, 
 $d = 2..5$); the scale $k$ never changes degrees; $q$-tails strictly increase them; and degree-1
 seeds are impossible (the integral condition kills them), so the fiber-degree floor is 3.
 Consequently the minimum degree vector over the whole family is $(7, 6, 4)$, attained exactly at
-the announced map $F$: **the July 2026 counterexample is THE smallest instance of its own
+the announced map $F$: **the July 2026 counterexample is the smallest computed instance of its own
 family.** Whether any $\mathbb{C}^3$ counterexample of total degree 3 to 6 exists (outside the
 family) is open; Wang's theorem excludes degree 2 only.
 

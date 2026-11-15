@@ -1,10 +1,10 @@
 # EXP-145 - Verdict: CONFIRMED (2026-11-14). The image of F misses exactly the curve Gamma; the plane C = 0 carries three-point fibers off B^2 = 16A
 
 Hypothesis: [`hypothesis.md`](hypothesis.md) (frozen before any code). Code: [`run.py`](run.py), run from the repository root with the research
-venv (sympy 1.14.0), one process, exit 0, 4.9 s of wall time (kill criterion: 600 s per Groebner basis; none came near it).
+venv (sympy 1.14.0), one process, exit 0, 5.8 s of wall time (as the run log records) (kill criterion: 600 s per Groebner basis; none came near it).
 Artifacts: [`artifacts/results.json`](artifacts/results.json) (every prediction with its bases, quotient dimensions, points, residuals
-and times), [`artifacts/run-log.txt`](artifacts/run-log.txt). Tests: `tests/test_jacobian_exp145.py` (3 tests, red before `run.py`
-existed, green after). Seed 20261114 for the random targets; all arithmetic is exact over Q (sympy `Rational`), except one
+and times), [`artifacts/run-log.txt`](artifacts/run-log.txt). Tests: `tests/test_jacobian_exp145.py` (3 tests, committed with `run.py` in
+`52126d0a`; no failing run was recorded before the instrument existed; green after). Seed 20261114 for the random targets; all arithmetic is exact over Q (sympy `Rational`), except one
 80-digit residual check that is a sanity sample next to the exact identity (see the record below).
 
 ## Prediction table
@@ -45,7 +45,7 @@ existed, green after). Seed 20261114 for the random targets; all arithmetic is e
   Over generic `(A, B, 0)` the exact fiber is exactly one point ... both curved sheets escape"): restated as three points over
   generic `(A, B, 0)` (the flat-sheet point and two with `x^2 (B^2 - 16A) = 4`), one point only on `B^2 = 16A`. The recorded single
   point is the one rational point (C2): the `fiber_points` filter of EXP-007 `run.py` kept `is_rational` solutions only.
-  The plane `C = 0` is therefore not asymptotic away from `B^2 = 16A`; the asymptotic variety there is the line `{C = 0, B^2 = 16A}`
+  The plane `C = 0` is therefore not asymptotic away from `B^2 = 16A`; the asymptotic variety there is the parabola `{C = 0, B^2 = 16A}`
   (limits of the points with `x = 2/sqrt(B^2 - 16A) -> infinity`).
 - EXP-007 item 2 is superseded in part: it gives `A(F) = {C = 0} union {Sigma = 0}`; by the fibers over `C = 0` above, the
   plane `C = 0` is not asymptotic, so `A(F) = {Sigma = 0}` (the factor `C^2` of the discriminant records where the

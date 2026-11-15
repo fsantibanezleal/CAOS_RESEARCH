@@ -6,9 +6,9 @@
   EXP-004 confirmed (constructor v2; new counterexamples P3/P4/P5 with rational collisions).
   EXP-005 confirmed with caveats (2D reduction; caveats honest). EXP-006 confirmed (2D scan
   non-vacuous: 216 instances, all LINEAR, all injective). EXP-007 confirmed (asymptotic variety
-  explicit: A(F) = {C=0} union discriminant surface; escape = multiple fiber root). EXP-008
+  explicit: A(F) = discriminant surface (EXP-145 corrects the plane C=0, which EXP-007 also listed); escape = multiple fiber root). EXP-008
   confirmed (degree law (5d-3, 5d-4, 4); fiber floor 3; NEW fiber-degree-6 instance; F minimal
-  within family). EXP-009 confirmed (char-p certificates: degree 12 < ell for ell = 13, 101).
+  among the computed instances, conjectural for the whole family). EXP-009 confirmed (char-p certificates: degree 12 < ell for ell = 13, 101).
   Wiki 01-05 current; manuscript v0.02 (LaTeX + PDF) built.
 - **Also done (2026-07-21, session 4):** EXP-012 confirmed 1-4 / refuted 5: landscape mapped;
   the m = 2 mechanism is UNIQUE among scanned weighted systems (m = 1 = JC(2) bridge; m = 3
