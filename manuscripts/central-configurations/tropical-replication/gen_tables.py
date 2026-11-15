@@ -277,57 +277,122 @@ def table_rays(scr):
     return "\n".join(out)
 
 
-# Failed boxes per chart and disposition, transcribed from the assembly record
-# (CC/context/2026-08-20-stratum-theorem-assembly.md, section 6b table, lines 218-244, and sections 6c, 8, 9).
+# Time budgets of the covering runs, transcribed from the chart scripts (the value used by the resumed run where there is one);
+# each value is checked against the `budget=` text of the script, so a changed script stops the generator.
+ATLAS_BUDGET = {
+    "collapse": ("collapse.py", 43200), "deep-L": ("deep.py", 21600), "deep-R": ("deep.py", 21600),
+    "bicorner-same": ("bicorner-same.py", 10800), "fartube": ("fartube.py", 43200), "m1": ("m1chart.py", 10800),
+    "uplow": ("uplow.py", 43200), "fa2b": ("fa2b.py", 10800), "m2-L": ("m2chart.py", 21600), "m2-R": ("m2chart.py", 21600),
+    "m1vert-N": ("m1vert.py", 21600), "band": ("band.py", 43200), "cb1": ("cb1.py", 43200), "cb1f": ("cb1f.py", 43200),
+}
+
+# Unprocessed share of each seed, from the CCB-042 verdict (experiments/EXP-022-collar-coverings/verdict-atlas-2026-11-14.md and
+# the review wip/caos-research/cc-m2w-verdict-2026-11-14.md, section D3): exact box volumes of the checkpoint stacks over the seeds
+# of the chart scripts, computed in the review; transcribed, not recomputed here.
+ATLAS_UNPROCESSED = {
+    "collapse": "39.6% (0% after the mirror)", "deep-L": "68.7% (37.3% after the mirror)",
+    "deep-R": "73.4% (46.7% after the mirror)", "bicorner-same": "98.0%", "fartube": "98.4% (before any symmetry reduction)", "m1": "99.96%",
+    "uplow": "89.3% (69.5% after the symmetry group)", "fa2b": "88.3%", "m2-L": "tt < 1/2 half: 100%",
+    "m2-R": "tt < 1/2 half: 100%", "m1vert-S": "100% (never ran)",
+}
+
+# Rows: chart, failed boxes in the assembly record (section 6b), note.
 ATLAS_ASSEMBLY = [
-    ("bicorner-opp", "0", "complete"), ("bicorner-same", "0", "complete"), ("collapse", "0", "complete"),
-    ("deep-L", "0", "complete"), ("deep-R", "0", "complete"), ("fa1", "0", "complete"),
-    ("fartube", "0", "complete"), ("m1", "0", "complete"), ("m1vert-S", "0", "complete"),
-    ("tube-L", "0", "complete"), ("tube-R", "0", "complete"), ("tubeext-L", "0", "complete"),
-    ("tubeext-R", "0", "complete"), ("ulow", "0", "complete"), ("uplow", "0", "complete"),
-    ("cb1", "5", "all face-touching, closed by piece 10"),
-    ("cb1f", "2", "all face-touching, closed by piece 10"),
-    ("band", "44", "the cross point; 44 and 48 boxes trapped"),
-    ("fa2b", "200", "discharged by the depth-76 re-run (1544 boxes, zero failures)"),
-    ("m2-L", "5824", "open: the quadruple corner"),
-    ("m2-R", "5683", "open: the quadruple corner"),
-    ("fa2", "280140", "retired, superseded by fa2b"),
-    ("m1vert-N", "7144", "retired, superseded by per-entry guards"),
+    ("bicorner-opp", "0"), ("bicorner-same", "0"), ("collapse", "0"), ("deep-L", "0"), ("deep-R", "0"), ("fa1", "0"),
+    ("fartube", "0"), ("m1", "0"), ("m1vert-S", "0"), ("tube-L", "0"), ("tube-R", "0"), ("tubeext-L", "0"),
+    ("tubeext-R", "0"), ("ulow", "0"), ("uplow", "0"), ("cb1", "5"), ("cb1f", "2"), ("band", "44"), ("fa2b", "200"),
+    ("m2-L", "5824"), ("m2-R", "5683"), ("fa2", "280140"), ("m1vert-N", "7144"), ("m2w-P", "--"), ("m2w-N", "--"),
 ]
+ATLAS_RETIRED = {"fa2", "m1vert-N"}
+ATLAS_NEVER_RAN = {"m1vert-S"}
+# Status transcribed from the verdict where the stored files do not decide it: collapse is complete only modulo the mirror.
+ATLAS_VERDICT_CLASS = {"collapse": "complete modulo the mirror, conditional"}
+ATLAS_NOTE = {"m2-L": "half tt < 1/2 unprocessed; its part with c_s < 1/32 is in no other chart's domain", "m2-R": "half tt < 1/2 unprocessed; its part with c_s < 1/32 is in no other chart's domain",
+              "m2w-P": "own domain only", "m2w-N": "own domain only"}
 
 
-def atlas_table_rows():
+def _atlas_budget(chart):
+    script, budget = ATLAS_BUDGET[chart]
+    text = (Path(E22) / script).read_text(encoding="utf8")
+    assert re.search(r"budget\s*=[^\n]*\b%d\b" % budget, text, re.I), (chart, script, budget)
+    return budget
+
+
+def atlas_status():
+    """Per chart: (chart, record, summary failed, class, checkpoint genuine failures, checkpoint stack boxes, unprocessed, note)."""
     rows = []
-    for chart, rec, disp in ATLAS_ASSEMBLY:
-        f = Path(E22) / "artifacts" / f"{chart}-summary.json"
-        if f.exists():
-            d = json.loads(f.read_text())
-            c = d["counters"]
-            rows.append((chart, rec, "yes" if d["ok"] else "no", str(c["failed"]), fmt_int(c["processed"]), disp))
+    art = Path(E22) / "artifacts"
+    for chart, rec in ATLAS_ASSEMBLY:
+        sf = art / f"{chart}-summary.json"
+        cf = art / f"{chart}-checkpoint.json"
+        summ = json.loads(sf.read_text()) if sf.exists() else None
+        ck = json.loads(cf.read_text()) if cf.exists() else None
+        sfail = str(summ["counters"]["failed"]) if summ else "--"
+        cfail = str(ck["counters"]["failed"]) if ck else "--"
+        cstack = "--"  # set below, for the runs that stopped at their budget only
+        if chart in ATLAS_NEVER_RAN:
+            assert summ is None and ck is None, chart
+            cls = "never ran"
+        elif chart in ATLAS_RETIRED:
+            cls = "retired"
         else:
-            rows.append((chart, rec, "--", "--", "--", disp))
+            assert summ is not None, f"missing summary of {chart}"
+            if summ["ok"] and summ["counters"]["failed"] == 0:
+                cls = "complete"
+            else:
+                budget = _atlas_budget(chart)
+                wall = summ.get("wall_s")
+                if wall is not None and wall >= budget:
+                    cls = "incomplete: budget stop"
+                    if ck is not None and ck["counters"]["failed"] > 0:
+                        cls += ", genuine failures"
+                    if ck is not None and ck["counters"]["failed"] == 0 and chart in ATLAS_VERDICT_CLASS:
+                        cls = ATLAS_VERDICT_CLASS[chart]
+                else:
+                    pp = art / f"{chart}-failed-postprocess.json"
+                    if pp.exists():
+                        p = json.loads(pp.read_text())
+                        done = p["still_failed"] == 0 and p["trapped"] == p["failed"] == summ["counters"]["failed"]
+                    else:
+                        done = False
+                    cls = "finished, failures dispositioned" if done else "finished, failures not dispositioned"
+        if ck is not None and (cls.startswith("incomplete") or cls.startswith("complete modulo")):
+            cstack = str(len(ck["stack"]))
+        rows.append((chart, rec, sfail, cls, cfail, cstack, ATLAS_UNPROCESSED.get(chart, "--"), ATLAS_NOTE.get(chart, "")))
     return rows
 
 
 def table_atlas():
-    out = [r"\begin{tabular}{@{}L{2.1cm}rcrrL{4.2cm}@{}}", r"\toprule",
-           r"Chart & record & ok & stored failed & stored processed & disposition in the record \\",
+    out = [r"\begin{tabular}{@{}L{1.5cm}rrL{3.5cm}rrL{3.0cm}@{}}", r"\toprule",
+           r"Chart & record & summary failed & status class & checkpoint failed & stack boxes & unprocessed share of the seed \\",
            r"\midrule"]
-    for r in atlas_table_rows():
-        out.append(f"{r[0]} & {fmt_int(int(r[1]))} & {r[2]} & {r[3] if r[3] == '--' else fmt_int(int(r[3]))} & {r[4]} & {r[5]} \\\\")
-        if r[0] in ("uplow", "m2-R"):
+    for chart, rec, sf, cls, cf, cs, un, note in atlas_status():
+        def num(x):
+            return x if x == "--" else fmt_int(int(x))
+        extra = f" ({note})" if note else ""
+        extra = extra.replace("tt < 1/2", "$t_t<1/2$").replace("c_s < 1/32", "$c_s<1/32$")
+        un = un.replace("%", r"\%").replace("tt < 1/2", "$t_t<1/2$")
+        out.append(f"{chart} & {num(rec)} & {num(sf)} & {cls}{extra} & {num(cf)} & {cs} & {un} \\\\")
+        if chart in ("uplow", "m2-R", "m1vert-N"):
             out.append(r"\midrule")
     out += [r"\bottomrule", r"\end{tabular}"]
     return "\n".join(out)
 
 
 def atlas_counts():
-    rows = atlas_table_rows()[:15]
-    zero = sum(1 for r in rows if r[2] == "yes" and r[3] == "0")
-    fail = [(r[0], r[3]) for r in rows if r[3] not in ("--", "0")]
-    none = [r[0] for r in rows if r[3] == "--"]
-    assert zero == 7 and len(fail) == 7 and none == ["m1vert-S"], (zero, fail, none)
-    return zero, fail, none
+    rows = {r[0]: r for r in atlas_status()}
+    first15 = [r for r in atlas_status()[:15]]
+    complete = [r[0] for r in first15 if r[3] == "complete"]
+    stopped = [r[0] for r in first15 if r[3].startswith("incomplete") or r[3].startswith("complete modulo")]
+    assert complete == ["bicorner-opp", "fa1", "tube-L", "tube-R", "tubeext-L", "tubeext-R", "ulow"], complete
+    assert stopped == ["bicorner-same", "collapse", "deep-L", "deep-R", "fartube", "m1", "uplow"], stopped
+    assert rows["m1vert-S"][3] == "never ran"
+    assert rows["band"][3] == "finished, failures dispositioned", rows["band"]
+    assert rows["cb1"][3] == "finished, failures not dispositioned" and rows["cb1f"][3] == "finished, failures not dispositioned"
+    assert rows["m2w-P"][3] == "complete" and rows["m2w-N"][3] == "complete"
+    inc = [r[0] for r in atlas_status() if r[3].startswith("incomplete")]
+    assert inc == ["bicorner-same", "deep-L", "deep-R", "fartube", "m1", "uplow", "fa2b", "m2-L", "m2-R"], inc
+    return len(complete), len(stopped), len(inc)
 
 
 def farkas_only():
@@ -512,11 +577,11 @@ def macros(scr, summ):
     tmax = max(runs, key=lambda r: share(r, "trapped"))
     cmin = min(runs, key=lambda r: share(r, "certified"))
     cmax = max(runs, key=lambda r: share(r, "certified"))
-    zero, fail, none = atlas_counts()
+    n_complete, n_stopped, n_inc = atlas_counts()
     fk, ftot = farkas_only()
     disc = sum(r[3]["discarded"] for r in runs)
     items = [
-        ("numAtlasStoredZero", str(zero)), ("numAtlasStoredFail", str(len(fail))),
+        ("numAtlasComplete", str(n_complete)), ("numAtlasStopped", str(n_stopped)), ("numAtlasIncomplete", str(n_inc)),
         ("numAtlasDiscarded", fmt_int(disc)),
         ("numFarkasOnly", str(fk)), ("numFarkasTotal", str(ftot)),
         ("numAtlasTrapMax", f"{share(tmax, 'trapped'):.0f}"), ("numAtlasTrapRun", tmax[0]),

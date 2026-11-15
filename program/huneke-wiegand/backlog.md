@@ -19,6 +19,8 @@
 | HWB-100 | 0 | done | publish `gluing-extensions` v0.01 on Zenodo | DOI 10.5281/zenodo.23821498 reserved and PDF frozen 2026-10-30; `release.py publish` with the approval record passed every dry-run gate; the publish call needs Felipe's permission |
 | HWB-101 | 1 | todo | non-extension ideals of a gluing of two semigroups whose non-principal ideals all have the Huneke-Wiegand property | the remaining part of the García-Sánchez and Leamer invariance question after EXP-068; requires a new focus admission |
 | HWB-102 | 2 | todo | module version of EXP-068 (`Hom` of `M1 (x)_(k[y]) M2` factoring) | answers the ring-level Future Work question beyond monomial ideals; theorem preflight first |
+| HWB-103 | 0 | done | EXP-069: second-solver check of the EXP-026 Presburger certificate (curvilinear Theorem 7.2) | CONFIRMED 2026-11-14: cvc5 1.4.2 `unsat` on 16 of 16 identical queries, four `sat` controls verified exactly |
+| HWB-104 | 0 | done | EXP-070: the EXP-068 gluing law on factors that are counterexamples | CONFIRMED 2026-11-14: 48 of 48 cases by producer and independent auditor; 18 extensions are themselves counterexamples |
 
 EXP-067 is CONFIRMED. The first executable action is the `HWB-094` novelty
 assessment. No broader Kunz sweep is authorized. The full focus definitions, stop
