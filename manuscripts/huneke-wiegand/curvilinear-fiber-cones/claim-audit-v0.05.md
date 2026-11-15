@@ -48,8 +48,8 @@ No statement carries [D] while resting on a solver answer: the solver-based stat
 Theorem 5.3(b), (c) and the two [MV] clauses of Corollary 5.4. Abstract, Introduction, Table 8
 (`tab:marks`) and Conclusions describe the evidence in the same terms (review item M3). The quadratic
 zero-relation count is displayed block pair by block pair in Appendix C (Table 13, review minor m2): the
-three-line derivation by interval structure and the quadratic fit was cross-checked by enumeration at
-`p=4..39`; the polynomials are the writer's tabulation and need the reviewer's check.
+derivation in Appendix C is by completeness of the 21 pairs, 19 full products and two threshold counts
+(re-check item R-B1), valid for every `p>=4`; enumeration at `p=4..39` is a cross-check only.
 
 ## What EXP-069 established (EXP-069 `verdict.md`, `artifacts/results.json`)
 
