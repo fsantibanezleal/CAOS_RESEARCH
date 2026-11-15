@@ -80,8 +80,9 @@ fiber-cone literature comparison, and candidate C remains significance-gated.
 
 ### Focused companion: Integral connecting annihilators
 
-- Current public version: v0.05 (2026-11-14, sign correction of Theorem 9.1).
-- Version DOI: `10.5281/zenodo.24228302`.
+- Current public version: v0.06 (2026-11-15, full revision from the independent audit; v0.05 of
+  2026-11-14, 10.5281/zenodo.24228302, corrected the sign of Theorem 9.1, now Theorem 11.1).
+- Version DOI: `10.5281/zenodo.24239899`.
 - Concept DOI: `10.5281/zenodo.22342975`.
 - Coverage: EXP-054--066, with the main theorem owned by EXP-060--062 and the
   projected endpoint strengthening owned by EXP-065--066.
