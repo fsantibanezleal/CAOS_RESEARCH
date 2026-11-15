@@ -1793,3 +1793,20 @@ review approved the corrections before release.
   degree 3 are modular (infeasible modulo two primes), so d0 >= 4 in that sense; the pinned ladder does not
   terminate (EXP-064).
 - Errata appended to the EXP-010, EXP-044 and EXP-046 verdicts.
+
+## 2026-11-15 - EXP-144 and cascade v0.09 (10.5281/zenodo.24239949)
+
+- EXP-144 PASS (hypothesis 13068989): Long's rank-two Poisson map, transcribed from the arXiv v1 PDF and checked
+  against its printed size table, is a Poisson endomorphism of P_2 (the six bracket identities symbolically and at 50
+  random rational points), has det JF = 1, its fiber over (0, 1/8, 0, 0) is exactly the three printed points (lex
+  Groebner basis, quotient dimension 3), and R = x(2 - 3xq) is reducible; two perturbation controls fail the checker. The
+  v0.09 review planted seven wrong polynomials, all caught.
+- Cascade v0.09: revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-jac-2026-11-10.md`, D1): a
+  status table of seven neighbouring conjectures with located implications, indices and evidence marks (derived steps
+  marked [D]; the Image conjecture credited to Zhao, its implication to the generalized vanishing conjecture [U]), the
+  Poisson row [MV] at n = 2 through EXP-144, five algorithms with soundness propositions, validation, ablation, 43
+  references including the Markus-Yamabe counterexample (Cima et al., Adv. Math. 131, 1997). Independent review: CHANGES
+  REQUIRED (2 blockers), re-check APPROVE. Follow-ups: JCB-105.
+- Release: 39 gates passed; 32 pages, 590,456 bytes, SHA-256
+  abae32480123a9eef3b2d29ad4d1bcce2394766b1ce962583886a9c7531728e5.
+
