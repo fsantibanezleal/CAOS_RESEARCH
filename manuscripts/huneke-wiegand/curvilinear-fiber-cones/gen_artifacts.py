@@ -131,7 +131,9 @@ def main() -> None:
     write("table-aggregates.tex", "\n".join(lines) + "\n")
 
     files = [(E25 / "artifacts/results.json", "EXP-025 results.json"),
+             (E25 / "artifacts/audit.json", "EXP-025 audit.json"),
              (E26 / "artifacts/results.json", "EXP-026 results.json"),
+             (E26 / "artifacts/attempt-1-budget.json", "EXP-026 attempt-1-budget.json"),
              (E26 / "artifacts/audit.json", "EXP-026 audit.json"),
              (E26 / "artifacts/symbolic-certificate.json", "EXP-026 symbolic-certificate.json"),
              (E69 / "artifacts/results.json", "EXP-069 results.json")]
@@ -241,7 +243,7 @@ def main() -> None:
 
     s26t = {leaf["label"]: leaf["elapsed_seconds"] for leaf in s26["leaves"]}
     body = [f"\\begin{{tikzpicture}}\\begin{{axis}}[ybar, width=\\linewidth, height=7.2cm, symbolic x coords={{{symx}}}, "
-            "xtick=data, x tick label style={rotate=60,anchor=east,font=\\scriptsize}, ymode=log, ymin=0.0008, "
+            "xtick=data, x tick label style={rotate=60,anchor=east,font=\\scriptsize}, ymode=log, log origin=infty, ymin=0.0008, "
             "ymax=100, bar width=3.2pt, enlarge x limits=0.04, ylabel={seconds}, ymajorgrids, "
             "legend style={at={(0.5,1.02)},anchor=south,legend columns=3,font=\\footnotesize}]"]
     body.append("\\addplot+[draw=none] coordinates {" + " ".join(f"({l},{tm(s26t[l])})" for l in labs) + "};")
