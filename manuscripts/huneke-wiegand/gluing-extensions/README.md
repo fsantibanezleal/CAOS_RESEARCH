@@ -10,6 +10,8 @@ Focused companion of the Huneke-Wiegand programme (focus `HW-F8`).
   credit; the case they leave open; four-generated counterexamples over symmetric semigroups
   (Frobenius numbers 23645 and 53599); EXP-067 as a credited corollary.
 - Build: three-pass `pdflatex main.tex`; voice gate `scripts/check_manuscript_voice.py`; tables and figures regenerate with `python make_results.py` (reads the EXP-068 and EXP-070 artifacts).
+- v0.02 (current): version DOI [10.5281/zenodo.24240435](https://doi.org/10.5281/zenodo.24240435), published 2026-11-15; 27 pages, 773,736 bytes,
+  SHA-256 `1e20b8d6f1d4540e6b08d9f637d592c5ce0afaaa2f271ea364a17e086c572acb`.
 - v0.01: version DOI [10.5281/zenodo.23821498](https://doi.org/10.5281/zenodo.23821498), concept DOI
   [10.5281/zenodo.23821497](https://doi.org/10.5281/zenodo.23821497). Reserved 2026-10-30 and the PDF frozen
   (sha256 `730e7ae0651b95ee9def05ed98556f67611e1fe9be476ac96464b175e7087fa1`); published 2026-11-01, public download verified against the frozen file.
