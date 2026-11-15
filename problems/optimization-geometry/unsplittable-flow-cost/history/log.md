@@ -219,3 +219,15 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   instances; a 108,000-point grid with optimal pricing tops at 69/64.
 - So alpha* >= 9/8 and alpha*_planar in [9/8, 2]; our 16/15 is the 2026 instance's own value, no longer the best
   bound. EXP-004's family reading is withdrawn in an addendum. Preprint follow-up: UFB-066.
+
+## 2026-11-15 - EXP-006: the odd-cycle family on C5 does not reach 9/8 (UFB-065)
+
+- EXP-006 CONFIRMED (hypothesis frozen b3aea839): with the exact cutting-plane evaluator of PR #425, Afrasyab's uniform
+  C5 members have frontier value exactly 2/3 - eps at five eps (his pricing is optimal there); 572 symmetric members,
+  2,000 random non-uniform members (9,382,017 invalid draws rejected) and ten local searches (1,124 evaluations) all
+  have frontier value at most 1, the largest 42/43, so none reaches alpha* >= 9/8 (EXP-005). UFB-065 done.
+- The climbs end at values n/(n+1) with single-arc witness pricings, three still improving at their budget: whether the
+  family's supremum is 1 is UFB-067.
+- The BCD run was restarted at 19:38 as one resumable ABCD run so that stage D could finish inside its time limit; no
+  evaluation was lost (records resume by key).
+
