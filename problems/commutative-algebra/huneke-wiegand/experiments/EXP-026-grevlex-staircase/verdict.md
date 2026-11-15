@@ -29,7 +29,7 @@ The `5p-1` cubics are exactly six uniform families, including the EXP-023 isolat
 - Mandatory `p=4` smoke: PASS; profile `(732,19,2,0,0)` through degree six.
 - Full exact campaign: PASS at all 297 values `p=4,...,300` in 8.474 seconds; aggregate
   `63af8f734afc8c057751d7633f63eec6d1df83472d494dbad6ada19e4365a218`.
-- Independent clique audit: PASS at `p=4,5,6,17,73,151,300` in 0.598 seconds; it enumerates
+- Independent clique audit: PASS at `p=4,5,6,17,73,151,300` in 0.819 seconds (`artifacts/audit.json` `elapsed_seconds` 0.8190650999895297, generated 2026-08-18T20:06:07Z; corrected 2026-11-15, the earlier figure appears in no committed artifact); it enumerates
   canonical pairs directly, reconstructs higher clique boundaries without Route A state, rehashes
   every campaign row, and has aggregate
   `401c4807cc0a29a67a42c0d84ca8f235c86a271fe93bf1a2d2df586766e41373`.
