@@ -1,7 +1,7 @@
 # central-configurations / tropical-replication
 
 LaTeX source of the preprint "Replication and screening of tropical finiteness certificates for central
-configurations, with exact comet decisions and the status of a six-body symmetric stratum" (source version 0.12,
+configurations, with exact comet decisions and the status of a six-body symmetric stratum" (source version 0.13,
 14 November 2026). The release and the publication gate are separate steps.
 
 Files:

@@ -1,0 +1,24 @@
+\begin{tikzpicture}[x=1cm,y=1cm,v/.style={circle,fill=black,inner sep=1.4pt},s/.style={dashed,gray}]
+\node[v] (o1) at (-1.902,0.618) {};
+\node[v] (i1) at (-0.951,0.309) {};
+\node[v] (o2) at (-1.176,-1.618) {};
+\node[v] (i2) at (-0.588,-0.809) {};
+\node[v] (o3) at (1.176,-1.618) {};
+\node[v] (i3) at (0.588,-0.809) {};
+\node[v] (o4) at (1.902,0.618) {};
+\node[v] (i4) at (0.951,0.309) {};
+\draw (o1) -- (o2);
+\draw (o2) -- (o3);
+\draw (o3) -- (o4);
+\draw (o1) -- (i1);
+\draw (o2) -- (i2);
+\draw (o3) -- (i3);
+\draw (o4) -- (i4);
+\draw (i1) -- (i3);
+\draw (i2) -- (i4);
+\draw (i4) -- (i1);
+\draw[s] (o1) -- ++(0.728,0.529);
+\draw[s] (o4) -- ++(-0.728,0.529);
+\draw[s] (i2) -- ++(0.278,0.856);
+\draw[s] (i3) -- ++(-0.278,0.856);
+\end{tikzpicture}

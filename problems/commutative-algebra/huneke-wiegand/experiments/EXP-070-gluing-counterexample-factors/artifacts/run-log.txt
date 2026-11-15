@@ -1,0 +1,55 @@
+19:35:53 controls: {'c2': {'minimal_generators': [0, 28], 'perturbed_generators': [0, 29], 'true_ideal_is_extension': True, 'perturbed_is_extension': False, 'perturbed_mu': 2, 'perturbed_hw': True, 'status': 'completed', 'wall_seconds': 1.5}, 'c1|B1': {'base': 'B1', 'a1_true': 2, 'a1_gap': 1, 'a2': 57, 'refused': False, 'hilbert_identity_holds': False, 'broken': True, 'status': 'completed', 'wall_seconds': 3.0}, 'c1|B2': {'base': 'B2', 'a1_true': 2, 'a1_gap': 1, 'a2': 97, 'refused': False, 'hilbert_identity_holds': False, 'broken': True, 'status': 'completed', 'wall_seconds': 32.5}}
+19:35:53 factor jobs for ['B1', 'B2', 'B3']: 17
+19:36:09 case jobs for ['B1', 'B2', 'B3']: 36 cases, producer and auditor
+19:39:27 B1 x <2,3> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=171300 window=[-36, 1393] t=4.03s
+19:39:27 B1 x <2,3> ideal (0, 1): law=114 direct=114 audit=114 hw=True mu=[2, 2, 4] hilbert=True pairs=198546 window=[-93, 1564] t=5.13s
+19:39:27 B1 x <2,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=255033 window=[-36, 1871] t=7.75s
+19:39:27 B1 x <2,5> ideal (0, 1): law=228 direct=228 audit=228 hw=True mu=[2, 2, 4] hilbert=True pairs=275781 window=[-93, 2042] t=8.67s
+19:39:27 B1 x <3,4> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=581334 window=[-50, 2281] t=19.37s
+19:39:27 B1 x <3,4> ideal (0, 1): law=112 direct=112 audit=112 hw=True mu=[2, 2, 4] hilbert=True pairs=622074 window=[-106, 2449] t=19.98s
+19:39:27 B1 x <3,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=722398 window=[-50, 2393] t=24.33s
+19:39:27 B1 x <3,5> ideal (0, 1): law=224 direct=224 audit=224 hw=True mu=[2, 2, 4] hilbert=True pairs=750594 window=[-106, 2561] t=24.21s
+19:39:27 B1 x <3,4,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=355654 window=[-50, 2113] t=9.27s
+19:39:27 B1 x <3,4,5> ideal (0, 1): law=168 direct=168 audit=168 hw=True mu=[2, 2, 4] hilbert=True pairs=396394 window=[-106, 2281] t=10.59s
+19:39:27 B1 x <4,5,6,7> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=614228 window=[-64, 2887] t=18.71s
+19:39:27 B1 x <4,5,6,7> ideal (0, 1): law=228 direct=228 audit=228 hw=True mu=[2, 2, 4] hilbert=True pairs=670202 window=[-121, 3058] t=20.91s
+19:39:27 B2 x <2,3> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=498992 window=[-56, 2393] t=23.24s
+19:39:27 B2 x <2,3> ideal (0, 1): law=194 direct=194 audit=194 hw=True mu=[2, 2, 4] hilbert=True pairs=578338 window=[-153, 2684] t=28.24s
+19:39:27 B2 x <2,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=742365 window=[-56, 3191] t=39.97s
+19:39:27 B2 x <2,5> ideal (0, 1): law=388 direct=388 audit=388 hw=True mu=[2, 2, 4] hilbert=True pairs=802893 window=[-153, 3482] t=42.82s
+19:39:27 B2 x <3,4> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=1721524 window=[-80, 3929] t=97.86s
+19:39:27 B2 x <3,4> ideal (0, 1): law=194 direct=194 audit=194 hw=True mu=[2, 2, 4] hilbert=True pairs=1842774 window=[-177, 4220] t=109.79s
+19:39:27 B2 x <3,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=2142795 window=[-80, 4123] t=127.97s
+19:39:27 B2 x <3,5> ideal (0, 1): law=388 direct=388 audit=388 hw=True mu=[2, 2, 4] hilbert=True pairs=2226409 window=[-177, 4414] t=135.97s
+19:39:27 B2 x <3,4,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=1048344 window=[-80, 3638] t=54.44s
+19:39:27 B2 x <3,4,5> ideal (0, 1): law=291 direct=291 audit=291 hw=True mu=[2, 2, 4] hilbert=True pairs=1169594 window=[-177, 3929] t=62.69s
+19:39:27 B2 x <4,5,6,7> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=1792716 window=[-104, 4927] t=103.76s
+19:39:27 B2 x <4,5,6,7> ideal (0, 1): law=388 direct=388 audit=388 hw=True mu=[2, 2, 4] hilbert=True pairs=1955870 window=[-201, 5218] t=114.8s
+19:39:27 B3 x <2,3> ideal (0,): law=28 direct=28 audit=28 hw=True mu=[2, 1, 2] hilbert=True pairs=158379 window=[-10, 1315] t=2.48s
+19:39:27 B3 x <2,3> ideal (0, 1): law=170 direct=170 audit=170 hw=True mu=[2, 2, 4] hilbert=True pairs=184143 window=[-67, 1486] t=3.02s
+19:39:27 B3 x <2,5> ideal (0,): law=28 direct=28 audit=28 hw=True mu=[2, 1, 2] hilbert=True pairs=239148 window=[-10, 1793] t=5.3s
+19:39:27 B3 x <2,5> ideal (0, 1): law=284 direct=284 audit=284 hw=True mu=[2, 2, 4] hilbert=True pairs=258414 window=[-67, 1964] t=6.0s
+19:39:27 B3 x <3,4> ideal (0,): law=42 direct=42 audit=42 hw=True mu=[2, 1, 2] hilbert=True pairs=544842 window=[-11, 2164] t=16.88s
+19:39:27 B3 x <3,4> ideal (0, 1): law=182 direct=182 audit=182 hw=True mu=[2, 2, 4] hilbert=True pairs=583398 window=[-67, 2332] t=18.45s
+19:39:27 B3 x <3,5> ideal (0,): law=42 direct=42 audit=42 hw=True mu=[2, 1, 2] hilbert=True pairs=681538 window=[-11, 2276] t=23.74s
+19:39:27 B3 x <3,5> ideal (0, 1): law=294 direct=294 audit=294 hw=True mu=[2, 2, 4] hilbert=True pairs=707550 window=[-67, 2444] t=24.34s
+19:39:27 B3 x <3,4,5> ideal (0,): law=42 direct=42 audit=42 hw=True mu=[2, 1, 2] hilbert=True pairs=327898 window=[-11, 1996] t=8.71s
+19:39:27 B3 x <3,4,5> ideal (0, 1): law=252 direct=252 audit=252 hw=True mu=[2, 2, 4] hilbert=True pairs=366454 window=[-67, 2164] t=11.03s
+19:39:27 B3 x <4,5,6,7> ideal (0,): law=56 direct=56 audit=56 hw=True mu=[2, 1, 2] hilbert=True pairs=565638 window=[-12, 2731] t=17.79s
+19:39:27 B3 x <4,5,6,7> ideal (0, 1): law=340 direct=340 audit=340 hw=True mu=[2, 2, 4] hilbert=True pairs=618648 window=[-69, 2902] t=19.18s
+19:39:27 premises recomputed: {'B1': {'hw': False, 'length': 0, 'frobenius': 181, 'multiplicity': 56}, 'B2': {'hw': False, 'length': 0, 'frobenius': 311, 'multiplicity': 96}, 'B3': {'hw': True, 'length': 14, 'frobenius': 181, 'multiplicity': 56}}
+19:39:27 factor jobs for ['B4']: 13
+19:40:15 case jobs for ['B4']: 12 cases, producer and auditor
+19:46:28 B4 x <2,3> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=777908 window=[-68, 2993] t=58.41s
+19:46:28 B4 x <2,3> ideal (0, 1): law=242 direct=242 audit=242 hw=True mu=[2, 2, 4] hilbert=True pairs=901570 window=[-189, 3356] t=70.86s
+19:46:28 B4 x <2,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=1157001 window=[-68, 3983] t=96.2s
+19:46:28 B4 x <2,5> ideal (0, 1): law=484 direct=484 audit=484 hw=True mu=[2, 2, 4] hilbert=True pairs=1251381 window=[-189, 4346] t=108.95s
+19:46:28 B4 x <3,4> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=2683758 window=[-98, 4913] t=236.08s
+19:46:28 B4 x <3,4> ideal (0, 1): law=242 direct=242 audit=242 hw=True mu=[2, 2, 4] hilbert=True pairs=2872760 window=[-219, 5276] t=251.78s
+19:46:28 B4 x <3,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=3339941 window=[-98, 5155] t=288.24s
+19:46:28 B4 x <3,5> ideal (0, 1): law=484 direct=484 audit=484 hw=True mu=[2, 2, 4] hilbert=True pairs=3470379 window=[-219, 5518] t=296.63s
+19:46:28 B4 x <3,4,5> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=1634930 window=[-98, 4550] t=127.21s
+19:46:28 B4 x <3,4,5> ideal (0, 1): law=363 direct=363 audit=363 hw=True mu=[2, 2, 4] hilbert=True pairs=1823932 window=[-219, 4913] t=148.74s
+19:46:28 B4 x <4,5,6,7> ideal (0,): law=0 direct=0 audit=0 hw=False mu=[2, 1, 2] hilbert=True pairs=2796372 window=[-128, 6151] t=224.95s
+19:46:28 B4 x <4,5,6,7> ideal (0, 1): law=484 direct=484 audit=484 hw=True mu=[2, 2, 4] hilbert=True pairs=3050714 window=[-249, 6514] t=241.6s
+19:46:28 done: {"P1_torsion_length_law": true, "P2_characterization": true, "P3_independent_route_agrees": true, "P4_hilbert_identity": true, "frobenius_formula_confirmed": true, "C1_not_a_gluing_breaks": true, "C2_not_an_extension": true, "cases_completed_by_producer": 48, "cases_required": 36, "required_cases_completed": 36, "cases_audited": 48, "cases_audit_not_completed": [], "cases_not_completed": [], "cases_with_counterexample_factor": 36, "counterexample_factor_with_principal_partner_ideal": 18, "extension_is_itself_counterexample": 18, "cases_with_nonzero_torsion": 30, "b4_run": true, "b4_reason": null, "max_workers": 10, "wall_seconds": 668.2}
