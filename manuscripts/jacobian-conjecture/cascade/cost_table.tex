@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lL{0.11\textwidth}L{0.17\textwidth}L{0.15\textwidth}L{0.12\textwidth}L{0.24\textwidth}@{}}
+\toprule
+Algorithm & Record & Input & Arithmetic domain & Software & Measured cost \\
+\midrule
+A1 & EXP-001, EXP-144 & polynomials, target point & $\Q$ & sympy 1.14 (lex Gr\"obner basis) & basis of 4 elements in 3 variables; 5 elements in 4 variables in 0.29 s \\[2pt]
+A2 & EXP-136 B & components of a map & $\Q$ & sympy (grevlex Gr\"obner basis) & 13 nonzero second partials; time not recorded \\[2pt]
+A3 & EXP-041 & $H$ on $\Q^{24}$, collision pair & $\Q(i)$, sparse \texttt{Fraction} dictionaries & sympy, standard library & 6 products of sparse matrices (squarings up to $(JH)^{16}$, then two multiplications by $JH$); the printed powers of $JH$ have at most 5{,}030 terms \\[2pt]
+A4 & EXP-138 & $F$ on $\Q^3$, two points & $\Q$ & sympy & 7.4 s for the construction and the nilpotency chain, dimension 15 \\[2pt]
+A5 & EXP-144 & seven polynomials of Long & $\Q$ (\texttt{Fraction} for the second route) & sympy 1.14.0 & 77.12 s in all: brackets 7.02 s, determinant 60.82 s \\[2pt]
+\bottomrule
+\end{tabular}
+\caption{The five procedures of Section~\ref{sec:methods}, with the computation that ran each, its input, the arithmetic domain, the software and the cost measured in that run. The version of the algebra system is stated in the method plan of EXP-001 (1.14) and pinned in the requirements file of EXP-144 (1.14.0); no artifact of any run records it.}
+\label{tab:cost}
+\end{table}

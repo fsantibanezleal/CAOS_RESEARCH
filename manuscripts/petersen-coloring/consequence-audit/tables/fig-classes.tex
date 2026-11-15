@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+\begin{axis}[ybar, bar width=18pt, width=0.8\textwidth, height=5.2cm, ymode=log, log origin=infty, ymin=0.5, ymax=3000,
+ symbolic x coords={E,D2,D3,T2}, xtick=data, xlabel={charge class of the two bad vertices}, ylabel={witnesses of $\Gfty$},
+ nodes near coords, nodes near coords align={vertical}, enlarge x limits=0.12, ymajorgrids]
+\addplot coordinates {(E,1279) (D2,37) (D3,8) (T2,2)};
+\end{axis}
+\end{tikzpicture}

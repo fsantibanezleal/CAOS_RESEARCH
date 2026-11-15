@@ -35,8 +35,8 @@ did not find the results below elsewhere; specialist confirmation is still requi
 
 | slug | version | version DOI | concept DOI | central question |
 |---|---|---|---|---|
-| `consequence-audit` | v0.06 | [10.5281/zenodo.23195171](https://doi.org/10.5281/zenodo.23195171) | [10.5281/zenodo.22285164](https://doi.org/10.5281/zenodo.22285164) | what survives on the counterexamples, and how far they are from colorable |
-| `unbounded-defect` | v0.02 | [10.5281/zenodo.23196817](https://doi.org/10.5281/zenodo.23196817) | [10.5281/zenodo.22847192](https://doi.org/10.5281/zenodo.22847192) | is the defect bounded on cyclically 4-edge-connected cubic graphs (statement (e)), and how far conduction reaches for 6-poles |
+| `consequence-audit` | v0.07 | [10.5281/zenodo.24239715](https://doi.org/10.5281/zenodo.24239715) | [10.5281/zenodo.22285164](https://doi.org/10.5281/zenodo.22285164) | what survives on the counterexamples, and how far they are from colorable |
+| `unbounded-defect` | v0.03 | [10.5281/zenodo.24239832](https://doi.org/10.5281/zenodo.24239832) | [10.5281/zenodo.22847192](https://doi.org/10.5281/zenodo.22847192) | is the defect bounded on cyclically 4-edge-connected cubic graphs (statement (e)), and how far conduction reaches for 6-poles |
 | `colorable-only-by-itself` | v0.02 | [10.5281/zenodo.24230853](https://doi.org/10.5281/zenodo.24230853) | [10.5281/zenodo.22859074](https://doi.org/10.5281/zenodo.22859074) | are the 52-vertex counterexamples colorable only by themselves |
 
 Split decision (2026-10-06 review): the three papers have different central questions and proof
@@ -57,7 +57,7 @@ repeats their proofs beyond Section 5.3.
 
 ## Open obligations
 
-- `unbounded-defect`: v0.02 published 2026-10-06 (Proposition 5.3, Section 6); the exact abnormal-edge numbers of the rings remain open.
+- `unbounded-defect`: v0.03 published 2026-11-15 (10.5281/zenodo.24239832; v0.02 2026-10-06 added Proposition 5.3 and Section 6); the exact abnormal-edge numbers of the rings remain open.
 - `colorable-only-by-itself`: the unconditional form needs orders 6 to 22 (`G52`) and 2 to 38
   (`G52b`); the 68-vertex graph needs orders 40 to 60.
 - `consequence-audit`: none beyond corrections.

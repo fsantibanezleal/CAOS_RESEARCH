@@ -4,6 +4,12 @@
 \usepackage[margin=1.05in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs,array}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
 \usepackage{microtype}
 \microtypesetup{expansion=false}
 \usepackage{xcolor}
@@ -12,9 +18,9 @@
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
 \hypersetup{
-  pdftitle={A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation},
+  pdftitle={A quadratic family of integral two-torsion classes in the cokernel of an explicit Koszul-strand presentation},
   pdfauthor={Felipe Santibáñez-Leal},
-  pdfsubject={Explicit integral two-torsion, independent triangle classes, and a direct summand of a Koszul cokernel},
+  pdfsubject={Explicit integral two-torsion, independent triangle classes, and a direct summand of the cokernel of a Koszul-strand connecting map},
   pdfkeywords={Koszul differential, integral cokernel, two-torsion, direct summand, numerical semigroups, exact certificates}
 }
 \newtheorem{theorem}{Theorem}[section]
@@ -29,14 +35,15 @@
 \newcommand{\coker}{\operatorname{coker}}
 \newcommand{\supp}{\operatorname{supp}}
 \newcommand{\src}[3]{#1[#2;#3]}
+\newcommand{\N}{\mathbb N}
 
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.05}
-\newcommand{\docdate}{14 November 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.24228302}
+\newcommand{\docversion}{v0.06}
+\newcommand{\docdate}{15 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.24239899}
 \newcommand{\conceptdoi}{10.5281/zenodo.22342975}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
@@ -64,7 +71,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
 
 \title{A quadratic family of integral two-torsion classes\\
-in a Huneke--Wiegand Koszul presentation}
+in the cokernel of an explicit Koszul-strand presentation}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research programme, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -75,29 +82,27 @@ in a Huneke--Wiegand Koszul presentation}
 \headerblock
 
 \begin{abstract}
-We study an explicit integral Koszul presentation arising in the graded-syzygy
-analysis of a previously constructed Huneke--Wiegand family. For every integer
-$p\geq8$, its cokernel contains a direct summand isomorphic to
-$(\Z/2)^{\lfloor((p-2)^2+3)/12\rfloor}$. The classes are indexed by all
-strictly increasing nonnegative triples of sum $p-2$. Reflection-symmetric
-interval potentials give explicit original integral sources for twice each
-class. Relative parity functionals, supported on ten to twelve original rows,
-detect the classes independently and vanish on every complete connecting
-image; extension over the remaining target gives a nonconstructive retraction.
-A previously tracked four-row vector is integrally congruent to one selected
-class, with an explicit source for the difference. We also give its full
-twice-source, two short kernel-domain corrections, and a neighboring integral
-potential basis of rank $\binom{p-1}{2}$ with at most seven-row images.
-Independent finite computations check the signed identities and complete-sector
-parity certificates, preserving all tested sources in lossless archives.
-A failed local search yields an exact locality obstruction.
-For a semantic row projection retaining four of the six recurring row types,
-we give support-one integral sources that kill two endpoint triangle rows for
-every $p\geq8$; the proof is a direct face classification before contraction.
-The uniform theorem follows from signed reconstruction, exhaustive source
-classification, and an elementary counting recurrence, not finite rank
-extrapolation. The full cokernel, an upper bound, and identification with
-earlier isolated subpresentations remain unresolved.
+Let $M_p$ be an explicit integral matrix, defined for every $p\geq8$ and
+proposed as the matrix of the connecting map in a lower Koszul strand of the
+quadratic part of the presentation ideal of the fiber cone of the conductor, in
+a family of Huneke--Wiegand counterexamples. For every
+integer $p\geq8$ we prove that its cokernel contains a direct summand
+$(\Z/2)^{\lfloor((p-2)^2+3)/12\rfloor}$, indexed by the strictly increasing
+nonnegative triples of sum $p-2$. Reflection-symmetric interval potentials give
+explicit integral sources for twice each class; relative parity functionals
+supported on ten to twelve rows detect each class independently over
+$\mathbb F_2$, and their extension gives a nonconstructive splitting. A
+previously tracked four-row vector is integrally congruent to one triangle
+class. For a semantic projection retaining four of six recurring row types, a
+face classification of one source column proves that two endpoint triangle rows
+vanish for every $p\geq8$. Exact computations test each identity: complete
+$\mathbb F_2$ row-span certificates for all 27 triangles at $p=8,\ldots,12$,
+586 endpoint identities through $p=300$, and a finite carrier comparison at
+$p=8,\ldots,11$. That $M_p$ is the matrix of that strand is a premise: it is
+verified at $p=8$ by an independent reconstruction, at $p=9,10$ by agreement with
+one canonical program, and conjectural for larger $p$. The complete cokernel,
+an upper bound, and a uniform comparison with isolated subpresentations remain
+open.
 \end{abstract}
 
 \section{Introduction and scope}
@@ -112,12 +117,16 @@ classes. Their subgroup is a direct summand, although its complement remains
 undetermined.
 
 The underlying family and its conductor-fiber-cone and graded-syzygy context
-were developed in \cite{CAOSMain}. We make
-the present matrix problem self-contained by defining its complete integral
-presentation below. The new result is therefore checkable without reproducing
-the semigroup construction. Its application to that family uses the
-presentation identified in \cite{CAOSMain}; it neither repeats nor claims
-priority for the discovery of the original public Huneke--Wiegand
+were developed in \cite{CAOSMain}; Section~\ref{sec:context} states the problem,
+the complex, the strand and the module that the matrix below is meant to
+present. We make the present matrix problem self-contained by defining its
+complete integral presentation in Section~\ref{sec:matrix}. Every theorem about
+that matrix is therefore checkable without reproducing the semigroup
+construction. That the matrix presents the stated Koszul strand for every
+$p\geq8$ is a premise (Section~\ref{sec:premise}), verified at $p=8$ by an
+independent reconstruction, at $p=9,10$ only by agreement with one canonical
+program, and conjectural beyond; the paper neither repeats nor
+claims priority for the discovery of the original public Huneke--Wiegand
 counterexample.
 
 Signed Koszul strands admit useful combinatorial descriptions. For semigroup
@@ -132,14 +141,19 @@ complete relative functionals. The general fact that vector-space functionals
 extend is used only to deduce splitting; it is not claimed as a new method.
 
 Statements proved deductively are marked [D]; finite exact checks are marked
-[MV]. Remaining research questions are marked [C]. The annihilator theorem
+[MV]. Remaining research questions and every statement that needs the premise
+for all $p$ are marked [C]. The annihilator theorem
 alone says \emph{order dividing two}. The additional nonvanishing proof in
 Section~\ref{sec:parity} upgrades the tracked class to order exactly two.
 Section~\ref{sec:family} constructs all triangle classes, proves their exact
 relation lattice and count, and derives the direct-summand corollary.
 Section~\ref{sec:projection} gives a separate constructive comparison with a
 four-type semantic row projection and identifies two uniformly vanishing
-endpoint rows.
+endpoint rows. Section~\ref{sec:related} places the construction among the
+adjacent methods, Section~\ref{sec:algorithms} gives the verification
+algorithms with their cost and reproduction data, and
+Section~\ref{sec:validation} reports the finite results, including the carrier
+comparison at $p=8,\ldots,11$.
 These are lower-bound and partial-decomposition results, not the whole quotient.
 
 \paragraph{Deductive proofs and finite certificates.}
@@ -148,6 +162,264 @@ An independent full-sector recomputation also certifies all 27 triangles at
 the five parameters $p=8,\ldots,12$.
 Section~\ref{sec:validation} distinguishes these finite certificates from
 the exhaustive all-parameter proof; no finite rank pattern is extrapolated.
+
+\section{Problem and context}\label{sec:context}
+
+\subsection{The conjecture and its disproofs}
+
+Let $R$ be a one-dimensional Gorenstein local domain and let $M$ be a nonzero
+finitely generated nonfree $R$-module. The Huneke--Wiegand conjecture predicted
+that $M\otimes_R\operatorname{Hom}_R(M,R)$ has nontrivial torsion
+\cite{HunekeWiegand}. For a numerical semigroup $\Gamma\subseteq\N$ the
+semigroup ring is Gorenstein exactly when $\Gamma$ is symmetric, and this
+specialization turns part of the module problem into finite additive
+combinatorics. Garc\'ia-S\'anchez and Leamer proved the conjecture for monomial ideals
+over free numerical semigroup rings and for two-generated monomial ideals over
+complete intersection numerical semigroup rings, and checked by computer that
+two-generated ideals satisfy it for every symmetric semigroup with Frobenius
+number below $69$ \cite{GarciaSanchezLeamer}. Landeros, O'Neill, Pelayo, Pe\~na, Ren and Wissman
+proved the positive case of two-generated monomial ideals for generalized
+arithmetic-sequence semigroups \cite{Landeros}. Goto, Takahashi, Taniguchi and
+Le Truong study the conjecture through a change of rings to a ring between $R$
+and $I{:}I$ \cite{Goto}.
+
+The conjecture is false. Son Pham published a symmetric numerical semigroup of
+Frobenius number $181$ and the ideal $(t^{56},t^{70})$ for which the predicted
+torsion is absent, with the verification materials in a public repository
+\cite{PhamRepo}; an independent verification by C.~Huneke is archived with that
+candidate record. A later preprint of the same author \cite{Pham} gives a
+numerical-semigroup counterexample that is independent of the characteristic,
+reduces its finite core to a sumset identity, and records the trace ideal, the
+endomorphism ring, the completion and a direct graded tensor verification.
+Christensen, Gerko and Iyengar \cite{CGI} give an independent construction
+through a field extension: their criterion is a statement about subspace
+multiplication in a field extension of degree $24$, and it differs structurally
+from the semigroup family. Priority for the first public counterexample belongs
+to Pham, and the present paper claims none.
+
+The preprint \cite{CAOSMain} continues the analysis of Pham's example in two
+directions. The Frobenius number $181$ is the least possible in the class of
+two-generated monomial ideals over symmetric numerical semigroup rings, and the
+same class contains an explicit family $\Gamma_p$, $p\geq4$, of multiplicity
+$24p$, embedding dimension $11p$ and conductor $78p$, with the nonprincipal
+rigid ideal $(t^{24p},t^{30p})$. After the disproofs the question is no longer
+whether the conjecture holds. It is how the counterexample family behaves
+homologically, and in particular which integral phenomena produce the
+characteristic dependence of its graded Betti numbers.
+
+\subsection{The complex, the strand and the module}
+
+For each $p\geq4$ the conductor $T_p$ of the semigroup ring of $\Gamma_p$ has
+reduction number four \cite{NorthcottRees}, and its tangent cone has depth zero
+with a Valabrega--Valla defect \cite{ValabregaValla} of length $p$
+\cite{CAOSMain}. The tangent cone is Buchsbaum without being Cohen--Macaulay, by the
+dimension-one local-cohomology criterion of \cite{DAnnaMezzasalma,DAnnaMicale}, and its
+complete graded module over the Noether normalization follows the graded-module framework of
+\cite{CortadellasZarzuelaA,CortadellasZarzuelaB}. The endomorphism ring of the ideal
+$(t^{24p},t^{30p})$ is strictly larger than the semigroup ring, with $10p$ pseudo-Frobenius elements
+and reduced type $10p$ \cite{MaitraMukundan}; its failure of reflexivity and of the Ext and Tor
+conditions follows from \cite{DeyLyle}; and the equality of the two colengths, both $p+1$, of the
+trace and conductor is the duality identity of \cite{HerzogKumashiro}. Its special fiber, the fiber cone $\mathcal C_p$, is a quotient
+$P_p/J_p$ of a polynomial ring $P_p$ in $10p$ degree-one variables $X_g$, where
+the index $g$ is the semigroup offset of the variable. The defining ideal is
+$J_p=(Q_p,f_p)$: $Q_p$ is generated by $50p^2-17p$ quadrics and
+$f_p=X_0^2X_{3p}-X_p^3$ is the single further minimal equation, so that the fiber
+cone is not Koszul; the computation of the equations uses the defining-ideal
+construction of \cite{AbdolmalekiKumashiro}. The quadratic quotient
+$\mathcal A_p=P_p/Q_p$ has depth one and regularity two. It sits in an exact
+sequence
+\begin{equation}\label{eq:ses}
+ 0\longrightarrow\mathcal K_p\longrightarrow\mathcal A_p\longrightarrow
+ \mathcal D_p\longrightarrow0,
+\end{equation}
+where $\mathcal D_p=P_p/(Q_p{:}f_p)$ is the canonical idealization of the
+Veronese rational normal curve ring of degree $p$, and $\mathcal K_p$ is the
+high-variable kernel, with Hilbert numerator $8pz+10pz^2$. The variable offsets
+are the $10p-1$ nonzero elements of $L\cup H$, with $L=[1,p]\cup[3p,4p-2]$ the
+low offsets and $H=\{g\geq6p\}$ the $8p$ high offsets, in the notation of
+Section~\ref{sec:matrix}. The $10p$ degree-two offsets of $\mathcal K_p$ form
+the set $\mathcal B$ of that section. The ring $\mathcal C_p$ is a quotient of
+$\mathcal A_p$, and the minimal cubic mapping cone relates their graded Betti
+numbers by
+$B_{\mathcal C_p}(x,z)=B_{\mathcal A_p}(x,z)+xz^3B_{\mathcal D_p}(x,z)$
+\cite{CAOSMain}.
+
+Write $\mathcal V$ for the free module on the positive degree-one offsets, with
+basis $e_g$, and $u_h$, $v_b$ for the bases of the degree-one and degree-two
+parts of $\mathcal K_p/X_0\mathcal K_p$, where $h\in H$ and $b\in\mathcal B$.
+Multiplication is $X_gu_h=v_{g+h}$ when $g+h\in\mathcal B$ and zero otherwise,
+and the Koszul complex of this module has, in each standard internal degree, the
+single integral incidence map
+\begin{equation}\label{eq:koszul-incidence}
+ \delta(e_F\otimes u_h)=\sum_{\substack{g\in F\\h+g\in\mathcal B}}
+ (-1)^{\mathrm{pos}(g,F)}\,e_{F\setminus\{g\}}\otimes v_{h+g},
+\end{equation}
+with $\mathrm{pos}(g,F)$ the zero-based position of $g$ in $F$
+\cite{CAOSMain}. The two Betti strands of $\mathcal K_p$ are the kernels and
+cokernels of these maps; the lower strand, whose cokernel is the object of this
+paper, is the one of regularity two. In the long exact $\operatorname{Tor}$
+sequence of \eqref{eq:ses} the connecting map sends cycles of the Koszul
+complex of $\mathcal D_p$ into that cokernel. Let $d_D$ be the Koszul boundary on
+the degree-one chains of $\mathcal D_p/X_0\mathcal D_p$, $J$ the connecting chain
+map, $\delta_K$ the incidence map \eqref{eq:koszul-incidence}, and
+\begin{equation}\label{eq:blockmatrix}
+ \mathbf M=\begin{pmatrix}d_D&0\\J&\delta_K\end{pmatrix}.
+\end{equation}
+Then the dimension over a field $k$ of the quotient of
+$\operatorname{coker}\delta_K$ by the image of the connecting map is
+$\operatorname{rows}(\delta_K)+\operatorname{rank}d_D-\operatorname{rank}\mathbf M$:
+the image of $\mathbf M$ projects onto $\operatorname{im}d_D$, and the kernel of
+that projection is $\operatorname{im}\delta_K+J(\ker d_D)$ \cite{CAOSMain}. This
+identity is linear algebra and holds for every $p$ once $\mathbf M$ is given.
+
+The multidegrees of interest are the cells $(p,t)$, $2\leq t\leq p-2$, with
+target offset $b_{p,t}=10p+t$, exterior set
+$F_{p,t}=[3p,4p-2]\cup\{t\}\cup[t+2,p]$, homological degree $i_{p,t}=2p-t-1$
+and total offset $\tau_{p,t}=4p^2+6p-t(t-1)/2$. At $t=2$ these are
+$|F_{p,2}|=2p-3$ and $\tau_{p,2}=4p^2+6p-1$, the offset $\tau$ of
+Section~\ref{sec:matrix}. The matrix $M_p$ below is meant to be $\mathbf M$ in this cell; Section~\ref{sec:premise} gives the status of that identification.
+Table~\ref{tab:dictionary} gives the dictionary between its labels and the
+chains of the Koszul complexes.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.42\textwidth}>{\raggedright\arraybackslash}p{0.48\textwidth}}
+\toprule
+Label in Section~\ref{sec:matrix} & Chain of the Koszul complexes\\
+\midrule
+$S[E;c]$, $E\subseteq L\cup H$, $|E|=2p-2$, $c\in L$ &
+degree-one chain $e_E\otimes X_c$ of $\mathcal D_p/X_0\mathcal D_p$, the column space of $d_D$ and $J$\\[3pt]
+$D[E;\mathsf A_d]$, $D[E;\mathsf B_d]$, $|E|=2p-3$ &
+degree-two chain of $\mathcal D_p/X_0\mathcal D_p$ from the product of two low generators, in the first
+low block (type $\mathsf A$) or across the two blocks (type $\mathsf B$)\\[3pt]
+$K[E;c]$, $c\in H$ & chain $e_E\otimes u_c$, the column space of $\delta_K$\\[3pt]
+$K[E;b]$, $b\in\mathcal B$ & chain $e_E\otimes v_b$, the row space of $\delta_K$ and $J$\\[3pt]
+$M_p$ & $\mathbf M$ of \eqref{eq:blockmatrix} in the multidegree $(2p-3,\,4p^2+6p-1)$ (a premise, Table~\ref{tab:premise})\\
+\bottomrule
+\end{tabular}
+\caption{Dictionary between the labels of the explicit matrix $M_p$ and the chains of the
+Koszul complexes of the exact sequence \eqref{eq:ses} in the cell $(p,2)$.}
+\label{tab:dictionary}
+\end{table}
+
+\subsection{What integral two-torsion in this cokernel says}
+
+Betti numbers over a field $k$ are dimensions of cokernels of $\mathbf M\otimes k$.
+For a finitely generated abelian group $C\cong\Z^r\oplus\bigoplus_i\Z/n_i$
+the dimension of $C\otimes k$ is $r$ plus the number of indices with
+$\operatorname{char}k\mid n_i$. A change of the Betti number with the
+characteristic therefore detects integral torsion: the number of even cyclic
+factors minus the number of cyclic factors divisible by three is the excess
+$\dim_{\mathbb F_2}-\dim_{\mathbb F_3}$ of the quotient. At the first cell with a
+surviving connecting map, $(p,t)=(4,2)$, the multigraded Betti number of
+$\mathcal A_4$ and of $\mathcal C_4$ is $4$ over $\mathbb F_2$ and $3$ over
+$\mathbb F_3$, and the integral cokernel of $\delta_K$ is $\Z^4\oplus\Z/2$
+\cite{CAOSMain}. The characteristic dependence persists on the diagonal $t=2$:
+the excess takes the values $1,4,9,18,31,49,72$ for $p=4,\ldots,10$
+(\cite{CAOSMain} through $p=9$, and the computation \Exp{EXP-037-connecting-quasipolynomial}{EXP-037}
+at $p=10$). For $5\leq p\leq10$ it is created entirely by the connecting-image
+quotient, since the kernel cokernel has the same dimension over the two fields.
+The values do not fit $(p-3)^2$ or $2p^2-17p+39$, and a period-six cubic
+generating function matched to the first six values predicts $73$ at $p=10$
+against the exact $72$. No formula for the excess is known.
+
+Under the premise of Section~\ref{sec:premise}, the groups behind these numbers
+are the cokernels of the integral matrices $M_p$, and their structure is the
+question of this paper.
+Table~\ref{tab:excess} compares the lower bound proved in
+Section~\ref{sec:family} with the exact excess at the three parameters
+$p\geq8$ where both are available. Under the premise of
+Section~\ref{sec:premise} the family gives at least $q(p)$ even cyclic factors,
+a small part of the excess. The complement $\mathcal C'_p$ of
+Corollary~\ref{cor:splitting} therefore carries most of the characteristic-two
+behavior, and the number of its cyclic factors divisible by three is unknown.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{rrr}
+\toprule
+$p$ & $q(p)=\lfloor((p-2)^2+3)/12\rfloor$ & exact excess $\dim_{\mathbb F_2}-\dim_{\mathbb F_3}$\\
+\midrule
+8 & 3 & 31\\
+9 & 4 & 49\\
+10 & 5 & 72\\
+\bottomrule
+\end{tabular}
+\caption{The number of proved $\Z/2$ summands $q(p)$ against the exact characteristic-two
+excess of the full target at $t=2$, for the three parameters $p\geq8$ at which the target was
+computed exactly.}
+\label{tab:excess}
+\end{table}
+
+\section{Related work and adjacent methods}\label{sec:related}
+
+Five families of methods are adjacent to the matching problem posed by the
+matrices $M_p$, namely cancelling unit entries until a torsion core remains and
+reading its structure uniformly in $p$. Each gives something, and none settles
+the matching.
+
+\paragraph{Algebraic Morse theory.} Sk\"oldberg \cite{Skoldberg} and Chen, Liu and
+Zhou \cite{ChenLiuZhou} justify unit cancellation and perturbative reconstruction
+of chain maps. The finite carrier comparison of Section~\ref{sec:carrier} relies on
+exactly this elementary step: a unit pivot gives an integral equivalence
+$M\sim[\pm1]\oplus C$ with the Schur complement $C$, and a reduced source lifts
+through the ordered pivots. The cited theory does not provide the
+problem-specific matching. The actionable target is an explicit parametric
+matching or rewrite system for the labels of Section~\ref{sec:matrix}, not a
+further appeal to Morse theory.
+
+\paragraph{Matroids over rings.} Fink and Moci \cite{FinkMoci} package deletion,
+contraction and torsion data over Dedekind domains. The six recurring row types
+of Section~\ref{sec:projection} suggest this language, but the row projections
+used here have not been proved to form the required matroid minors, so the
+framework applies only after explicit maps are built.
+
+\paragraph{Representation stability.} Church and Ellenberg \cite{ChurchEllenberg}
+supply integral stable-range machinery for finitely generated FI-modules. The
+labels of $M_p$ depend on affine intervals and on distinguished endpoints, so
+ordinary FI-functoriality is not established; an ordered-injection or
+finite-state rewrite model would have to be proved first.
+
+\paragraph{Smith forms of structured matrices.} Alfaro and coauthors
+\cite{Alfaro} obtain exact Smith forms for Laplacian matrices of simplicial
+annuli and high-dimensional trees through graph and sandpile models. The matrices
+$M_p$ are not known to be Laplacians, so this is an analogy and a recognition
+target rather than evidence. Lu, Ruan, Wang and Xiao \cite{LuRuan} study the
+equivalence of multivariate polynomial matrices to a Smith form through
+determinantal ideals; the size of $M_p$ changes with $p$, so a polynomial-matrix
+model would first require a finite-state block encoding.
+
+\paragraph{Relative simplicial and graded methods.} Bruns and Herzog
+\cite{BrunsHerzog} describe relative squarefree-divisor complexes of semigroup
+quotients, the framework in which the incidence map
+\eqref{eq:koszul-incidence} is read, and Stamate \cite{Stamate} treats Betti
+numbers of numerical semigroup rings. The positive results for generalized arithmetic-sequence
+semigroups \cite{Landeros} classify semigroup families; they do not address the
+integer presentation once the counterexample is fixed.
+
+\paragraph{Positive cases and counterexamples.} Garc\'ia-S\'anchez and Leamer
+\cite{GarciaSanchezLeamer} prove the conjecture for monomial ideals over free
+numerical semigroup rings and for two-generated monomial ideals over complete
+intersection rings, and Landeros and coauthors \cite{Landeros} treat the
+generalized arithmetic-sequence semigroups. Goto, Takahashi, Taniguchi and Le Truong
+\cite{Goto} pass to a ring between $R$ and $I{:}I$. Pham \cite{Pham,PhamRepo} and
+Christensen, Gerko and Iyengar \cite{CGI} give the counterexamples recalled in
+Section~\ref{sec:context}. None of these works computes the integral Koszul-strand
+matrices studied here, and none addresses their torsion.
+
+\paragraph{Tools for the tangent cone and the fiber cone.} The family is analysed
+with the reduction number \cite{NorthcottRees}, the Valabrega--Valla criterion
+\cite{ValabregaValla}, the Buchsbaum criterion for the associated graded ring
+\cite{DAnnaMezzasalma,DAnnaMicale}, the graded-module framework over a Noether
+normalization \cite{CortadellasZarzuelaA,CortadellasZarzuelaB} and the
+defining-ideal construction for Cohen--Macaulay fiber cones
+\cite{AbdolmalekiKumashiro}. These fix the ring-theoretic setting of
+Section~\ref{sec:context}; they do not bear on the integral cokernel of $M_p$.
+
+What the present construction adds is complementary: explicit integral sources
+and detectors, with an exact count of independent order-two classes, but no
+matching that exhausts the matrix. The complement $\mathcal C'_p$ is the part
+that a matching theorem would have to describe.
 
 \section{The complete integral presentation}\label{sec:matrix}
 
@@ -215,7 +487,130 @@ Thus $M_p:\mathcal S_p\oplus\mathcal K_p\longrightarrow
 There is no implicit projection in these definitions. Our quotient is
 $\coker_{\Z}M_p$, and a source identity always refers to this entire map.
 
+
+The map $M_p$ is bipartite in the sense that every column has a source type
+(an $S$ column or a $K$ column) and every row has a target type (a $D$ row or a
+$K$ row), and every nonzero entry is $+1$ or $-1$ by construction: each face of a
+column deletes one exterior element, and the sign is the position parity of that
+element. An $S$ column has a $D$ part, produced when the deleted low element
+multiplies the low coefficient into a degree-two symbol, and a $K$ part,
+produced when the deleted element is a high variable whose sum with the low
+coefficient is a degree-two offset. A $K$ column has only the $K$ part. The $K$
+rows with coefficient in $\mathrm C_0$ and $\mathrm C_2$ carry the combinatorics
+of the sections below, because the high set $H$ leaves exactly these two
+families of degree-two offsets reachable from the low block. The size of the
+matrix grows rapidly with $p$ (the visible high sectors alone hold $1{,}690$
+sources at $p=8$, Table~\ref{tab:sectors}), and the proofs therefore never work
+with a global basis. They use the coordinates of the labels above.
+
+Table~\ref{tab:notation} collects the notation of the explicit presentation and of the
+sections that use it.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}}
+\toprule
+Symbol & Meaning\\
+\midrule
+$L_0=[1,p]$, $L_1=[3p,4p-2]$, $L=L_0\cup L_1$ & low offsets: first and second low block\\[2pt]
+$H_0,\ldots,H_7$, $H$, $G=L\cup H$ & the eight high intervals, their union, and all degree-one offsets\\[2pt]
+$\mathcal B=[6p,24p-1]\setminus H$ & degree-two high coefficient set\\[2pt]
+$\mathrm C_0=\{8p-1\}$, $\mathrm C_2=[10p+1,11p-2]$ & coefficient subsets of $\mathcal B$ carrying the two row families\\[2pt]
+$\mu(a,c)$ & low product with values $\mathsf A_{a+c}$, $\mathsf B_{a+c}$ or $0$\\[2pt]
+$S[E;c]$, $K[E;c]$ & source labels with $c\in L$ and $c\in H$; $E\subseteq G$ is an exterior set\\[2pt]
+$D[E;\mathsf A_d]$, $D[E;\mathsf B_d]$, $K[E;b]$ & target labels, $b\in\mathcal B$\\[2pt]
+$\tau=4p^2+6p-1$ & total offset of every label\\[2pt]
+$e(r;u,v)$, $x_{uv}$, $x_T$ & signed $K$ row, its diagonal case $r=u+v$, and the row selected for the triangle $T$\\[2pt]
+$\eta_p$ & the tracked four-row vector\\[2pt]
+$P(f)$, $\lambda_T$ & the potential operator and the reflection functional of the triple $T$\\[2pt]
+$\mathcal T_p$, $q(p)$ & the triangles of sum $p-2$ and their number $\lfloor((p-2)^2+3)/12\rfloor$\\[2pt]
+$\mathcal C_p=\operatorname{coker}_{\Z}M_p$, $\mathcal C'_p$ & the cokernel and the unspecified complement of the direct summand\\[2pt]
+$\nu(E)$, $R_0,\ldots,R_5$, $\Pi_{58}$ & the count vector, the six row types and the projection retaining $R_1,R_3,R_4,R_5$\\
+\bottomrule
+\end{tabular}
+\caption{Notation of the explicit presentation: label sets and offsets, the two source and target families, the tracked vector, the operators, and the row types of the semantic projection.}
+\label{tab:notation}
+\end{table}
+
+\subsection{The identification with the Koszul strand}\label{sec:premise}
+
+The theorems below concern the explicit matrix $M_p$. Their application to the
+fiber-cone family requires that $M_p$ equal the block matrix \eqref{eq:blockmatrix}
+in the cell $(p,2)$ of Section~\ref{sec:context}. Table~\ref{tab:premise} gives
+the status of each component of that identification. The block identity and the
+description of the incidence map $\delta_K$ are derived for every $p$ in
+\cite{CAOSMain}. The formulas \eqref{eq:lowproduct}--\eqref{eq:MS} for the
+product table of $\mathcal D_p/X_0\mathcal D_p$ and for the connecting chain map
+$J$ are the entries of the matrices that the computations build, and the
+low-product table agrees with the program that builds them
+(\Exp{EXP-036-factor-two-torsion-anatomy}{EXP-036}). No derivation for every $p$
+that these entries are the connecting chain map and the Koszul boundary of
+$\mathcal D_p$ appears in \cite{CAOSMain} or in the computation records:
+the exact cells are computed, and the propagation of the structure to all $p$ is
+unresolved.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.37\textwidth}}
+\toprule
+Component of the identification & Mark & Evidence\\
+\midrule
+Quotient dimension $=\operatorname{rows}(\delta_K)+\operatorname{rank}d_D-\operatorname{rank}\mathbf M$ & [D], all $p$ &
+linear algebra on \eqref{eq:blockmatrix} \cite{CAOSMain}\\[3pt]
+Incidence map $\delta_K$ of \eqref{eq:MK} equals \eqref{eq:koszul-incidence} & [D], all $p$ &
+\cite[Theorem~15.14 and its proof]{CAOSMain}\\[3pt]
+Offset sets and zero rows at every cell $(p,t)$; cubic-source exclusion at every cell & [D], all $p$ &
+the zero-row classification of \cite[Theorem~15.15]{CAOSMain} and the cubic-source exclusion of
+\cite[Theorem~15.16]{CAOSMain}, whose finite tables are [MV]\\[3pt]
+$D$ product table \eqref{eq:lowproduct} and face rules \eqref{eq:MS} agree with the matrices
+at $(p,2)$, $p=8$ & [MV], independent reconstruction &
+exact cell $(8,2)$ rebuilt independently from numerical-semigroup ideal powers, with
+matching bases and ranks, in \cite{CAOSMain}\\[3pt]
+The same agreement at $p=9,10$ & [MV], one canonical route &
+exact cells $(9,2)$ in \cite{CAOSMain} and $(10,2)$ in
+\Exp{EXP-037-connecting-quasipolynomial}{EXP-037}; a second encoding of the original
+map agrees with the frozen component matrices on all $15{,}405$ retained rows at $p=8,9,10$
+(\Exp{EXP-054-full-source-boundary}{EXP-054}), but it is built from the same coefficient-module
+definition, and the independent reconstruction did not complete at $(9,2)$\\[3pt]
+The same agreement for every $p\geq8$, that is, $M_p=\mathbf M$ in the cell $(p,2)$ & [C] &
+no derivation for all $p$ is available\\
+\bottomrule
+\end{tabular}
+\caption{Status of the identification of the explicit matrix $M_p$ with the Koszul-strand block
+matrix $\mathbf M$ in the cell $(p,2)$, component by component, with the source of each mark.}
+\label{tab:premise}
+\end{table}
+
+Two limits of the finite evidence matter. The independent reconstruction of the
+bases from numerical-semigroup ideal powers matches the primary matrices through
+the cell $(8,2)$ only; the cell $(9,2)$ rests on one route in which two odd
+characteristics agree, because the independent route exceeded a memory limit of
+$47.5$ GB before returning a rank. The second encoding of the original map in the
+projected comparison is built from the same persisted coefficient-module
+definition, so it tests the implementation and not the algebra that the
+definition encodes.
+
+Consequently every theorem stated for $M_p$ below holds for every $p\geq8$ as a
+statement about the explicit matrix [D]. Reading $\operatorname{coker}_{\Z}M_p$ as
+the integral group behind the characteristic dependence of the Betti numbers of
+$\mathcal A_p$ and $\mathcal C_p$ in the cell $(p,2)$ is [MV] at $p=8$ by an independent
+reconstruction, [MV] at $p=9,10$ by one canonical route only, and
+[C] for every other $p\geq8$. Statements of the paper that use this reading are
+marked accordingly, and the abstract and the title claim only the explicit
+matrix.
+
 \section{The four-row target and its earlier representative}\label{sec:eta}
+
+The class that first motivated the construction is a vector of four original
+$K$ rows, recorded in the earlier finite computations as a sparse
+representative of a connecting image. This section fixes its coordinates in the
+labels of Section~\ref{sec:matrix}, and then gives an explicit original source
+$s_p+q_p$ whose boundary differs from it by a second representative $b_p$. The
+transfer is an identity of integral vectors, not a rank statement, so it
+survives to the cokernel with no division and no field reduction. The two
+representatives are later shown to have the same class up to sign
+(Proposition~\ref{prop:transfer}), and the order of that class is the subject of
+Sections~\ref{sec:annihilator} and~\ref{sec:parity}.
 
 Set
 \[
@@ -231,7 +626,13 @@ The tracked endpoint vector is
 These are four distinct original rows. Their coefficient offsets are
 $11p-3,11p-2,11p-3,11p-4$, all in $\mathrm C_2$.
 Exactly one row coefficient is odd. This is a statement about a vector,
-not a nonvanishing result in the cokernel.
+not a nonvanishing result in the cokernel. The two representatives of the class
+differ in size: $\eta_p$ has four rows with coefficients of height two, whereas
+the second representative $b_p$ below is spread over a number of $D$ and $K$ rows that
+grows with $p$, because its weights run over $a=1,\ldots,p-4$. The transfer
+therefore allows the compact vector to stand in for $b_p$. The single odd
+coefficient is what the parity functional of Section~\ref{sec:parity} pairs with, so
+the vector $\eta_p$ is also the natural carrier of the nonvanishing proof.
 
 For completeness, define the larger D representative without a choice of
 quotient coordinates. Put
@@ -239,7 +640,9 @@ quotient coordinates. Put
  T(a,j)=S[(L\setminus\{a,3p,3p+j\})\cup\{6p,10p\};a+j-2]
 \]
 and set $s_p=\sum w_j(a)T(a,j)$, with the only nonzero weights
-\begin{center}
+of Table~\ref{tab:weights}.
+\begin{table}[t]
+\centering
 \begin{tabular}{lll}
 \toprule
 $j$ & $a$ & $w_j(a)$\\
@@ -250,7 +653,10 @@ $j$ & $a$ & $w_j(a)$\\
 1 & $a=p-3$ & $2(-1)^p$\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{The only nonzero weights $w_j(a)$ of the source $s_p=\sum w_j(a)T(a,j)$ that represents the
+four-row target, as a function of the second index $j$ and the omitted first-low index $a$.}
+\label{tab:weights}
+\end{table}
 Let $b_p^A$ and $b_p^B$ be respectively the type-A and type-B parts of
 $M_ps_p$, and write $b_p=b_p^A+b_p^B$. This defines them explicitly
 through \eqref{eq:lowproduct}--\eqref{eq:MS}; it is the representative
@@ -410,7 +816,15 @@ where $R=u+v$, $F=f_u-f_v$, and
  \beta_r(u,v)=\begin{cases}F(r)-F(R+1),&R\leq p-2,\\F(r),&R\geq p-1.
  \end{cases}
 \end{equation}
-The coefficient offset is now the omitted-low sum minus $4p$, so all
+Compared with the fixed-high sector of Section~\ref{sec:basis}, the last high
+variable moves from $8p-4$ to $8p-2$. This shifts every admissibility window by
+two units and changes the surviving faces: in the fixed-high sector the
+negative $8p-4$ face survives for first-low coefficient $3$, whereas here
+it survives for first-low coefficient $1$, and the C2 family of rows appears
+with a diagonal structure that Lemma~\ref{lem:shift} makes explicit. In the shifted
+sector the surviving faces lie at the coefficients $8p-1$ (the C0 row) and $11p-2$
+(the C2 offset of the rows $x_{uv}$), which is the pair of rows on which the
+annihilator of Section~\ref{sec:annihilator} is built. The coefficient offset is now the omitted-low sum minus $4p$, so all
 labels have total offset $\tau$. The bounds put their coefficients in
 $L_0$ and $L_1$, respectively. Moving the last high variable does not
 change the exterior ordering sign. We assert a construction for these
@@ -655,7 +1069,8 @@ distinct C2 rows, so the exact support size is
  |\supp\lambda_T|=12-\mathbf1_{j=i+1}-\mathbf1_{k=j+1}.
 \end{equation}
 It ranges from ten to twelve; for example $T=\{1,2,3\}$ at $p=8$ has
-ten rows. No numerical support count is assumed in this argument.
+ten rows. Figure~\ref{fig:support}(a) draws the twelve-row case. No numerical
+support count is assumed in this argument.
 
 For the tracked class choose $T=\{0,2,k\}$, where $k=p-4$, and write
 $\lambda_K=\lambda_T$. Its six C2 rows are
@@ -721,8 +1136,9 @@ This exhausts every original K source.
 An S source can reach the functional only by deleting a high variable
 from an exterior high set $\{6p,h\}$. If $b$ is a supported target
 coefficient and $c\in L$ the source coefficient, then $h=b-c\in H$.
-The complete intersection calculation is
-\begin{center}\small
+The complete intersection calculation is given in Table~\ref{tab:visible}.
+\begin{table}[t]
+\centering\small
 \begin{tabular}{lll}
 \toprule
 $b$ & $c\in L_0$ & $c\in L_1$\\
@@ -732,7 +1148,10 @@ $11p-2$ & $\{10p-2,10p\}$ & $[7p,8p-2]$\\
 $11p-3$ & $\{10p-3,10p-2,10p\}$ & $[7p-1,8p-3]$\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{For each supported target coefficient $b$ and each block of the source coefficient $c$, the
+high variables $h=b-c$ that can reach the functional; only these high sectors need a pairing check.}
+\label{tab:visible}
+\end{table}
 Thus only
 \begin{equation}\label{eq:visible-highs}
  h\in[7p-1,8p-2]\cup\{10p-3,10p-2,10p\}
@@ -902,7 +1321,7 @@ therefore exactly two. Proposition~\ref{prop:transfer} transfers the
 conclusion to $[b_p]=-[\eta_p]$.
 \end{proof}
 
-\section{The quadratic triangle family and its splitting}\label{sec:family}
+\section{Theory of the quadratic triangle family and its splitting}\label{sec:family}
 
 Return to integral coefficients for source identities, and put $n=p-2$.
 Let
@@ -1048,8 +1467,11 @@ unit contraction or component selection. For an exterior set $E$, write
  \nu(E)=(|E\cap L_0|-p,|E\cap L_1|-p,
           |E\cap H_0|,\ldots,|E\cap H_7|).
 \]
-The six recurring row types used here are
-\begin{center}\small
+The six recurring row types used here are listed in Table~\ref{tab:rowtypes}
+and drawn, together with the support of one triangle functional, in
+Figure~\ref{fig:support}.
+\begin{table}[t]
+\centering\small
 \begin{tabular}{cll}
 \toprule
 Type & Target family & $\nu(E)$\\
@@ -1062,7 +1484,74 @@ $R_4$ & $K[E;b]$, $b\in\mathrm C_0$ & $(-2,-2,1,0,0,0,0,0,0,0)$\\
 $R_5$ & $K[E;b]$, $b\in\mathrm C_2$ & $(-1,-3,1,0,0,0,0,0,0,0)$\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{The six recurring row types of the original target, with the target family of each and the
+normalized exterior count vector $\nu(E)$ that identifies it.}
+\label{tab:rowtypes}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[scale=0.9, transform shape, font=\small, x=1cm, y=1cm,
+  c0row/.style={rectangle, draw, fill=black!8, minimum size=3.2mm, inner sep=0pt},
+  c2row/.style={circle, draw, fill=black!55, minimum size=3.2mm, inner sep=0pt},
+  vtx/.style={circle, draw, thick, fill=white, minimum size=6.5mm, inner sep=0pt},
+  kept/.style={draw, thick, fill=black!8},
+  dropped/.style={draw, dashed, thick}]
+% panel (a): the support of one triangle functional
+\node[anchor=west] at (0,5.55) {\textbf{(a)} Support of the functional $\lambda_T$ for $T=\{i<j<k\}$, $i+j+k=p-2$};
+\coordinate (I) at (1.2,0.6);
+\coordinate (J) at (9.6,0.6);
+\coordinate (K) at (5.4,4.4);
+\draw[thick] (I)--(J)--(K)--cycle;
+\node[vtx] at (I) {$i$};
+\node[vtx] at (J) {$j$};
+\node[vtx] at (K) {$k$};
+% C2 rows: two per edge
+\node[c2row] (xij) at ($(I)!0.5!(J)+(-0.18,0)$) {};
+\node[c2row] at ($(I)!0.5!(J)+(0.18,0)$) {};
+\node[c2row] at ($(I)!0.5!(K)+(-0.13,0.10)$) {};
+\node[c2row] at ($(I)!0.5!(K)+(0.13,-0.10)$) {};
+\node[c2row] at ($(J)!0.5!(K)+(-0.13,-0.10)$) {};
+\node[c2row] at ($(J)!0.5!(K)+(0.13,0.10)$) {};
+\draw[thick] (xij) circle (3.3mm);
+% C0 rows: two per vertex
+\node[c0row] at ($(I)+(-0.62,0.55)$) {};
+\node[c0row] at ($(I)+(-0.62,-0.20)$) {};
+\node[c0row] at ($(J)+(0.62,0.55)$) {};
+\node[c0row] at ($(J)+(0.62,-0.20)$) {};
+\node[c0row] at ($(K)+(-0.30,0.62)$) {};
+\node[c0row] at ($(K)+(0.30,0.62)$) {};
+% labels
+\node[anchor=north] at ($(I)!0.5!(J)+(0,-0.35)$) {$e(i{+}j;i,j)$ and $e(i{+}j{+}1;i,j)$; the circled row is $x_T=x_{ij}$};
+\node[anchor=east, align=right] at ($(I)!0.5!(K)+(-0.30,0.35)$) {edge $\{i,k\}$};
+\node[anchor=west, align=left] at ($(J)!0.5!(K)+(0.30,0.35)$) {edge $\{j,k\}$};
+\node[anchor=east, align=right] at ($(I)+(-0.95,0.20)$) {$(i{+}j,\,i{+}k{+}1;\,i)$\\$(i{+}j{+}1,\,i{+}k;\,i)$};
+\node[anchor=west, align=left] at ($(J)+(0.95,0.20)$) {pairs $(r,s;u)$\\at $u=j$ and $u=k$\\likewise};
+% legend
+\node[c0row] at (11.3,4.7) {};
+\node[anchor=west] at (11.55,4.7) {row of type $R_4$ (C0)};
+\node[c2row] at (11.3,4.1) {};
+\node[anchor=west] at (11.55,4.1) {row of type $R_5$ (C2)};
+% panel (b): the six row types and the face count of the endpoint source
+\node[anchor=west] at (0,-1.55) {\textbf{(b)} The six row types, the four retained by $\Pi_{58}$, and the faces of $s_{p,r}$};
+\foreach \n/\fam/\x/\sty in {0/{$D$, type $\mathsf A$}/0.0/dropped, 1/{$D$, type $\mathsf A$}/2.35/kept, 2/{$D$, type $\mathsf B$}/4.7/dropped,
+   3/{$D$, type $\mathsf B$}/7.05/kept, 4/{$K$, C0}/9.4/kept, 5/{$K$, C2}/11.75/kept}{
+  \node[\sty, minimum width=2.0cm, minimum height=0.95cm, align=center] (R\n) at (\x+1.0,-3.0) {$R_\n$\\[-1pt]\scriptsize\fam};
+}
+\node[draw, rounded corners, minimum height=0.8cm, inner sep=4pt] (src) at (6.2,-5.7) {source column $s_{p,r}=S[E_{p,r};p-2]$};
+\draw[-{Stealth[length=2mm]}, thick] (src.north west) -- node[left, pos=0.7, font=\scriptsize] {$p-3$ rows} (R0.south);
+\draw[-{Stealth[length=2mm]}, thick] (src.north) -- node[right, pos=0.7, font=\scriptsize] {$p-3$ rows} (R2.south);
+\draw[-{Stealth[length=2mm]}, thick] (src.north east) -- node[right, pos=0.4, xshift=1mm, font=\scriptsize, align=left] {one row,\\coefficient $-1$} (R5.south);
+\node[anchor=west, font=\scriptsize] at (0.0,-6.7) {dashed: discarded by $\Pi_{58}$};
+\node[anchor=west, font=\scriptsize] at (4.2,-6.7) {shaded: retained};
+\end{tikzpicture}
+\caption{One triangle and the row types it meets. Panel (a) shows, for a triple $T=\{i,j,k\}$ of sum $p-2$, the twelve rows of
+the reflection functional $\lambda_T$: two $R_5$ rows on each of the three edges and two $R_4$ rows at each of the three
+vertices, with the selected class $x_T$ circled. Panel (b) shows the six row types of Table~\ref{tab:rowtypes}, the four
+retained by the projection $\Pi_{58}$, and the faces of the endpoint source of Theorem~\ref{thm:mask58-endpoints}.}
+\label{fig:support}
+\end{figure}
+
 Let $\Pi_{58}$ be the coordinate projection that retains all rows of types
 $R_1,R_3,R_4,R_5$ and discards every other target row. The numeral is only a
 stable name for this four-type mask; it is not a modulus.
@@ -1120,7 +1609,7 @@ columns 210 and 308, whose retained entries are respectively $-1$ in the
 unsigned rows 12559 and 12560 [MV], as~\eqref{eq:mask58-endpoints} predicts. This exact finite agreement does not extend the scope of
 Theorem~\ref{thm:mask58-endpoints} to a uniform component reconstruction.
 
-In particular there are at least $3,4,5,7$ independent integral
+By Theorem~\ref{thm:quadratic} there are at least $3,4,5,7$ independent integral
 two-torsion classes at $p=8,9,10,11$, respectively, and their number
 is quadratically unbounded. If two is invertible in a coefficient ring,
 each selected class vanishes with source $W_T/2$; this gives no vanishing
@@ -1128,7 +1617,366 @@ claim for the complementary quotient. Agreement of these lower bounds
 with earlier finite isolated ranks does not identify that isolated object
 with $\mathcal C_p$, nor does it establish an upper bound.
 
-\section{Local obstruction and exact validation}\label{sec:validation}
+\section{Algorithms and reproducibility}\label{sec:algorithms}
+
+The deductive results of Sections~\ref{sec:basis}--\ref{sec:projection} are
+independent of any program. The finite results of Section~\ref{sec:validation}
+come from four procedures, each written twice in the computation records, once
+for the primary computation and once for the independent recomputation that does
+not import the primary formulas. This section gives each procedure as
+pseudocode, with the quantities it reads and writes, its cost in the parameter
+$p$, and the commands, software and measured times that reproduce it. Every
+number in the cost tables is read from a stored artifact of the cited
+computation, and every operation count is read from the loop structure of its
+program.
+
+\subsection{Potential-chain construction}
+
+The operator $P$ of Section~\ref{sec:shift} maps a potential, that is, an
+integral weight $f(u,r)$ on pairs with $r>u$, to an original source. The
+primary program is a direct transcription of \eqref{eq:Palpha} and
+\eqref{eq:Pbeta}. Algorithm~\ref{alg:potential} lists it for the shifted
+sector with exterior high set $\{6p,8p-2\}$. Each emitted label has exterior set
+of size $2p-2$ and total offset $\tau$ by the grading argument of
+Section~\ref{sec:shift}, which the program asserts for every term. All indices
+are explicit, so a term can be regenerated from $(p,u,r)$ without reading any
+other term, which is what the independent recomputation relies on.
+
+\begin{algorithm}[t]
+\caption{Potential chain $P(f)$ in the sector with exterior high set $\{6p,8p-2\}$.}
+\label{alg:potential}
+\begin{algorithmic}[1]
+\Require $p\geq8$; a potential $f$, an integer-valued map on pairs $(u,r)$, $0\leq u\leq p-2$, $0\leq r\leq p-1$, zero for $r\leq u$
+\Ensure a multiset of weighted source labels $S[E;c]$
+\State $\mathrm{active}\gets\{u:\ f(u,r)\ne0\text{ for some }r\}$; $\ \mathrm{low}\gets[1,p]\cup[3p,4p-2]$; $\ \mathrm{high}\gets\{6p,8p-2\}$
+\For{$u\in\mathrm{active}$, $0\leq r<s\leq p-1$ with $u\leq r+s\leq p+u-1$}
+  \State $w\gets(-1)^{p+r+s+u}\,(f(u,s)-f(u,r))$
+  \State emit $w\cdot S[(\mathrm{low}\setminus\{p-r,p-s,3p+u\})\cup\mathrm{high};\ p+u-r-s]$
+\EndFor
+\For{each unordered pair $\{u,v\}$ with $u\in\mathrm{active}$, $v\in[0,p-2]$, $v\ne u$, taken once; $\ u<v$, $R\gets u+v$}
+  \State $\sigma\gets f(u,R+1)-f(v,R+1)$ if $R\leq p-2$, else $0$
+  \For{$r=\max(0,R-p+2),\ldots,\min(p-1,R)$}
+    \State $w\gets(-1)^{p+r+u+v}\,(f(u,r)-f(v,r)-\sigma)$
+    \State emit $w\cdot S[(\mathrm{low}\setminus\{p-r,3p+u,3p+v\})\cup\mathrm{high};\ 3p+R-r]$
+  \EndFor
+\EndFor
+\State combine equal labels and discard zero weights
+\end{algorithmic}
+\end{algorithm}
+
+The first loop tests at most $\binom p2$ pairs for each active index and the
+second loop at most $p-1$ partner indices with at most $p$ values of $r$ each, so
+one call costs $O(|\mathrm{active}|\,p^2)$ elementary steps, with $|\mathrm{active}|\leq3$
+for the potentials of Section~\ref{sec:annihilator}. The source
+$V_p$ of Theorem~\ref{thm:main} has $32p-146$ terms at every one of the 18
+checked parameters, from $110$ at $p=8$ to $3054$ at $p=100$ [MV]. This linear
+law is an observation of the stored sources, not a proved formula, and the
+theorem does not use it.
+
+\subsection{Bitset differential}
+
+The independent recomputation evaluates the full original differential with
+exterior sets encoded as integers, so that deleting an element is one exclusive-or.
+Algorithm~\ref{alg:bitset} accumulates all faces of all terms before it decodes
+any nonzero label. It does not use the potential formulas, the face
+classification or the boundary formulas of the proofs, and it is the second of the
+two encodings in every identity check of Section~\ref{sec:validation}.
+
+\begin{algorithm}[t]
+\caption{Bitset differential of a source support, in exact integer arithmetic.}
+\label{alg:bitset}
+\begin{algorithmic}[1]
+\Require $p$; a support: terms $(w,E,c)$ with $E$ increasing, $|E|=2p-2$, $\sum E+c=\tau$
+\Ensure the complete boundary as a map from target rows to nonzero integers
+\State $\mathrm{acc}\gets\emptyset$
+\For{each term $(w,E,c)$}
+  \State $\mathrm{bits}\gets\sum_{e\in E}2^{e}$; $\ \sigma\gets-1$
+  \For{$x\in E$ in decreasing order}
+    \State $t\gets x+c$
+    \If{$x$ is a low offset}
+      \State $\kappa\gets\mathsf A$ if $x,c\in L_0$ and $t>p$; $\ \mathsf B$ if $x,c$ lie in different low blocks and $t\geq4p-1$; else none
+      \State row $\gets(D,\ \mathrm{bits}\oplus2^{x},\ \kappa,\ t)$ if $\kappa$ is defined, else none
+    \Else
+      \State row $\gets(K,\ \mathrm{bits}\oplus2^{x},\ t)$ if $t\in\mathcal B$, else none
+    \EndIf
+    \State if row is defined, $\mathrm{acc}[\text{row}]\gets\mathrm{acc}[\text{row}]+\sigma w$, deleting the entry when it becomes zero
+    \State $\sigma\gets-\sigma$
+  \EndFor
+\EndFor
+\State decode each key's bit pattern into its increasing exterior set; \Return acc
+\end{algorithmic}
+\end{algorithm}
+
+The sign $\sigma$ starts at $-1$ because the last of the $2p-2$ positions has odd
+zero-based index $2p-3$; the same rule gives the negative sign of the $10p$ face in
+Theorem~\ref{thm:mask58-endpoints}. Equal labels are merged before any label is decoded,
+so the accumulated boundary is the boundary of the sum of the terms and cancellations
+between terms are exact. A term has $2p-2$ faces, each costing a constant number of operations on integers of at
+most $24p$ bits, so a support of $T$ terms costs $O(Tp)$ face evaluations. For $V_p$
+this is $110\cdot14=1540$ faces at $p=8$ and $3054\cdot198=604{,}692$ at $p=100$.
+The $525$ small cases of the potential basis are additionally cross-checked
+against a literal left-to-right differential.
+
+\subsection{Row-span certificate over \texorpdfstring{$\mathbb F_2$}{F2}}
+
+A relative functional is certified without any potential formula by enumerating
+every source of a high sector and testing membership in a row space.
+Algorithm~\ref{alg:rowspan} takes the sector with last high variable $h$, builds the
+complete original $D$ matrix of all its sources, and decides by exact elimination
+over $\mathbb F_2$ whether the pairing vector of the functional lies in the span of
+the $D$ rows. If it does, the provenance of the elimination lists the original $D$
+rows that sum to the pairing vector, and the pairing therefore vanishes on the whole
+kernel, which is computed explicitly and checked row by row. If it does not, a
+kernel vector with pairing one refutes the functional.
+
+\begin{algorithm}[t]
+\caption{Row-span certificate for one sector $(p,h)$ and one functional $\lambda$.}
+\label{alg:rowspan}
+\begin{algorithmic}[1]
+\Require $p$; a last high variable $h$; the support of $\lambda$ as a set of $K$ rows
+\Ensure a certificate that $\lambda\,d^S_K$ vanishes on $\ker d_D$, or a kernel vector with $\lambda\,d^S_K\neq0$
+\State sources $\gets$ all $S[(L\setminus\mathrm{missing})\cup\{6p,h\};\ c]$ over triples $\mathrm{missing}\subset L$ with $c=\sum\mathrm{missing}+4p-2-h\in L$
+\For{each source $j$}
+  \State $\partial_j\gets$ original boundary of source $j$ (a literal face loop or Algorithm~\ref{alg:bitset}), reduced mod $2$
+  \State record the $D$ rows of $\partial_j$; set pairing bit $j\gets|\partial_j\cap\lambda|\bmod2$
+\EndFor
+\State for every $D$ row $\rho$ form the row vector $R_\rho\in\mathbb F_2^{|\mathrm{sources}|}$ whose bit $j$ is set when $\rho\in\partial_j$
+\State eliminate: for each $R_\rho$, reduce by the pivot table, keeping a provenance mask of the original rows used; install a new pivot when the reduction is nonzero
+\State reduce the pairing vector $t$ the same way, with provenance $\pi$
+\State compute a basis of the kernel from the free columns; assert that every $R_\rho$ and $t$ vanish on each kernel vector, or locate a kernel vector $z$ with $t\cdot z=1$
+\If{the residual of $t$ is zero}
+  \State assert $t=\sum_{\rho\in\pi}R_\rho$; \Return (rank, kernel basis, dual rows $\pi$)
+\Else
+  \State \Return a refutation: the kernel vector $z$
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+The enumeration tests $\binom{2p-1}{3}$ triples per sector. Elimination costs
+$O(n_D\cdot r)$ exclusive-ors of $n_S$-bit integers, where $n_D$ is the number of
+$D$ rows, $n_S$ the number of sources and $r$ the rank. Table~\ref{tab:sectors}
+gives the measured sizes of the reachable high sectors for the twelve-row
+functional of the tracked class at $p=8,\ldots,12$.
+
+% BEGIN GENERATED tab:sectors
+\begin{table}[t]
+\centering\small
+\begin{tabular}{rrrrrr}
+\toprule
+$p$ & Sectors & S sources & D rows & D incidences & Largest sector\\
+\midrule
+8 & 11 & 1,690 & 5,663 & 12,183 & 252\\
+9 & 12 & 2,738 & 10,404 & 22,344 & 372\\
+10 & 13 & 4,210 & 17,861 & 38,303 & 525\\
+11 & 14 & 6,209 & 29,063 & 62,262 & 715\\
+12 & 15 & 8,848 & 45,270 & 96,894 & 946\\
+\midrule
+total & 65 & 23,695 & 108,261 & 231,986 & \\
+\bottomrule
+\end{tabular}
+\caption{Size of the reachable high sectors of the twelve-row functional at $p=8,\ldots,12$: number of sectors, original S
+sources, original D rows, D incidences, and the number of sources of the largest sector, read from the stored independent
+recomputation.}
+\label{tab:sectors}
+\end{table}
+% END GENERATED tab:sectors
+
+Figure~\ref{fig:sectorsize} shows the growth of the number of sources and of $D$ rows with $p$, on a logarithmic scale; the sources rise from 1,690 at $p=8$ to 8,848 at $p=12$ and the $D$ rows from 5,663 to 45,270, which is why the certificates use bitset rows and never a dense matrix.
+
+% BEGIN GENERATED fig:sectorsize
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={count}, ymode=log, legend pos=south east, xtick={8,9,10,11,12}]
+\addplot[only marks, mark=*, mark size=1.8pt] coordinates {(8,1690) (9,2738) (10,4210) (11,6209) (12,8848)};
+\addplot[only marks, mark=square*, mark size=1.8pt] coordinates {(8,5663) (9,10404) (10,17861) (11,29063) (12,45270)};
+\legend{original S sources, original D rows}
+\end{axis}
+\end{tikzpicture}
+\caption{Number of original S sources and of original D rows summed over the reachable high sectors of the twelve-row functional at $p=8,\ldots,12$, read from the independent full-sector recomputation, on a logarithmic vertical scale.}
+\label{fig:sectorsize}
+\end{figure}
+% END GENERATED fig:sectorsize
+
+\subsection{Neighbourhood expansion}
+
+The local obstruction of Section~\ref{sec:validation} uses the inverse
+incidence: a coefficient-first enumeration of every source column incident to a
+row, with no assumption about which columns matter.
+Algorithm~\ref{alg:expand} expands a target vector by alternating row and
+column rounds, and then solves for the target over $\mathbb Q$ with source
+provenance, retaining every additional boundary row with right-hand side zero.
+
+\begin{algorithm}[t]
+\caption{Radius-$R$ neighbourhood of a target and its rational solve.}
+\label{alg:expand}
+\begin{algorithmic}[1]
+\Require $p$; a target vector $y$ with support $\mathrm{supp}(y)$; $R\geq1$; caps on columns and nonzeros
+\Ensure a classification: integral witness, rational inconsistency with an integer dual, or rational section
+\State columns $\gets\emptyset$; frontier $\gets\mathrm{supp}(y)$; expanded $\gets\emptyset$
+\For{$r=1,\ldots,R$}
+  \For{each row $\rho$ in frontier, with kind $\kappa$, exterior $E$ and offset $t$}
+    \For{each variable $x\in L\cup H$ with $x\notin E$}
+      \State $c\gets t-x$
+      \State source kind $\gets K$ if $\kappa=K$ and $c\in H$; $\ S$ if $\kappa=K$, $x\in H$, $c\in L$; $\ S$ if $\kappa=D$, $x,c\in L$ and the low product of $x,c$ equals the type and offset of $\rho$
+      \If{a source kind is defined and the source $(E\cup\{x\};c)$ is new}
+        \State sign $\gets(-1)^{|\{e\in E:\ e<x\}|}$; boundary $\gets$ the original boundary of the source (Algorithm~\ref{alg:bitset} or the program's multiplication)
+        \State assert that the boundary contains $\rho$ with that sign; stop with an inconclusive cap if a cap is exceeded
+        \State store the column
+      \EndIf
+    \EndFor
+  \EndFor
+  \State solve $A z=y$ over $\mathbb Q$ by elimination with unit-first pivots and source provenance
+  \If{an integral solution exists} \Return it, after multiplying it by the original map
+  \ElsIf{no rational solution exists} record an integer dual $\lambda$ with $\lambda A=0$, $\lambda y\ne0$
+  \EndIf
+  \State expanded $\gets$ expanded $\cup$ frontier; frontier $\gets$ (rows of stored columns) $\setminus$ expanded
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+Each frontier row tests the $10p-1$ variables of $L\cup H$ and pays one
+Algorithm~\ref{alg:bitset} boundary per accepted column, that is, $O(p)$. At $p=8$
+the radius-one neighbourhood of the four endpoint rows has $47$ columns and $240$ rows and the
+radius-two neighbourhood has $330$ columns and $1803$ rows (Section~\ref{sec:validation}).
+The programs cap a neighbourhood at $1200$ columns and $20{,}000$ nonzero entries, and
+a cap is reported as inconclusive, never as a refutation. The constant-time
+face classification of Section~\ref{sec:projection} needs no search. It keeps one
+count vector $\nu$ of the source and updates it in constant time for each of
+the $O(p)$ deletions, so one pair $(p,r)$ costs $O(p)$; the sweep over $p=8,\ldots,300$ is
+$293\cdot2=586$ checks, each with five altered cases rejected: three altered
+source columns and two altered projection masks.
+
+\subsection{Cost, commands, software and run times}
+
+Table~\ref{tab:runs} lists the command that reproduces each computation from the
+repository root, its declared caps, and the run time where the stored artifact
+records one. Only the carrier comparison artifacts store an elapsed time: the
+primary computation of the carrier comparison took $297.93$ s and its independent
+recomputation $284.70$ s for $p=8,\ldots,11$, and the exact-rank certificates took
+$199.27$ s and $20.74$ s. The identity checks and the sector certificates of
+Sections~\ref{sec:annihilator}--\ref{sec:family} finish within the caps of
+Table~\ref{tab:runs} in one process, but no elapsed time is stored for them, so none
+is claimed. All programs use the Python standard library only (\texttt{hashlib},
+\texttt{json}, \texttt{fractions}, \texttt{gzip}, \texttt{itertools}); the repository pins Python~3.12, and
+the patch level of the interpreter used for each stored run is not recorded in the
+artifacts. The sector and triangle programs abort a run that exceeds their private-memory cap.
+
+% BEGIN GENERATED tab:runs
+\begin{table}[t]
+\centering\scriptsize
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.08\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}}
+\toprule
+Record & Command (producer and independent audit) & Caps (time, memory) & Elapsed (producer / audit)\\
+\midrule
+EXP-058 & \texttt{\scriptsize EXP-058-local-endpoint-source/run.py} and \texttt{audit.py} & 60 s, 1 GiB, 1200 columns, 20,000 nonzeros & not stored\\[2pt]
+EXP-059 & \texttt{\scriptsize EXP-059-potential-connecting-map/run.py} and \texttt{audit.py} & 60 s, 1 GiB & not stored\\[2pt]
+EXP-060 & \texttt{\scriptsize EXP-060-uniform-endpoint-annihilator/run.py} and \texttt{audit.py} & 60 s, 1 GiB & not stored\\[2pt]
+EXP-061 & \texttt{\scriptsize EXP-061-uniform-parity-functional/run.py} and \texttt{audit.py} & 120 s, 1 GiB & not stored\\[2pt]
+EXP-062 & \texttt{\scriptsize EXP-062-triangle-torsion-family/run.py} and \texttt{audit.py} & 120 s, 1 GiB & not stored\\[2pt]
+EXP-063 & \texttt{\scriptsize EXP-063-triangle-isolated-comparison/run.py} \texttt{--p-min 8 --p-max 11 --budget-seconds 900 --memory-gib 12} and \texttt{audit.py} & 900 s, 12 GiB & 297.93 s / 284.70 s\\[2pt]
+EXP-064 & \texttt{\scriptsize EXP-064-exact-carrier-two-primary/run.py} \texttt{--p-min 8 --p-max 11 --budget-seconds 1200 --memory-gib 12} and \texttt{audit.py} & 1200 s, 12 GiB & 199.27 s / 20.74 s\\[2pt]
+EXP-066 & \texttt{\scriptsize EXP-066-uniform-endpoint-face-collapse/run.py} and \texttt{audit.py} & 120 s, 1 GiB & not stored\\[2pt]
+\bottomrule
+\end{tabular}
+\caption[Reproduction commands, caps and elapsed times]{Commands that reproduce each computation, run from the repository root with the repository interpreter (the folder path
+is under \path{problems/commutative-algebra/huneke-wiegand/experiments/}), the declared time and memory caps, and the elapsed
+times stored in the artifacts; a record without a stored time is marked.}
+\label{tab:runs}
+\end{table}
+% END GENERATED tab:runs
+
+Table~\ref{tab:cost} collects the cost of each procedure in $p$ with the measured
+sizes at the smallest and largest parameter of the stored computation.
+
+% BEGIN GENERATED tab:cost
+\begin{table}[t]
+\centering\scriptsize
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.43\textwidth}}
+\toprule
+Procedure & Cost in $p$ (from the loop structure) & Measured size in the stored artifacts\\
+\midrule
+Potential chain (Alg.~\ref{alg:potential}) & $O(|\mathrm{active}|\,p^2)$ steps per call & source $V_p$: 110 terms at $p=8$, 3,054 at $p=100$ (all 18 parameters: $32p-146$)\\[2pt]
+Bitset differential (Alg.~\ref{alg:bitset}) & $O(Tp)$ face evaluations for $T$ terms & $V_p$: 1,540 faces at $p=8$, 604,692 at $p=100$\\[2pt]
+Row-span certificate (Alg.~\ref{alg:rowspan}) & $O(n_D r)$ word operations on $n_S$-bit integers per sector & $p=8$: 11 sectors, 1,690 sources, 5,663 D rows; $p=12$: 15 sectors, 8,848 sources, 45,270 D rows\\[2pt]
+Neighborhood expansion (Alg.~\ref{alg:expand}) & $\le 10p-1$ candidate variables per frontier row, one $O(p)$ boundary per accepted column & $p=8$, radius 1: 47 columns, 240 rows, 306 incidences; radius 2: 330 columns, 1803 rows, 2669 incidences\\[2pt]
+Face classification (Section~\ref{sec:projection}) & $O(p)$ per pair $(p,r)$, one count vector with constant-time updates & 586 endpoint checks over $p=8,\ldots,300$, 2,930 altered cases rejected\\
+\bottomrule
+\end{tabular}
+\caption{Cost of the verification procedures in the parameter $p$, with the sizes measured in the stored artifacts at the smallest and
+largest parameter of each computation; the cost column is an operation count read from the loops of the programs, not a timing.}
+\label{tab:cost}
+\end{table}
+% END GENERATED tab:cost
+
+The two archives of full source labels are deterministic gzip streams with zero
+timestamp and empty embedded filename. Table~\ref{tab:hashes} gives the full
+64-digit SHA-256 digests stored in the manifests, and the digests of the result
+and audit files. A reproduction first compares these digests, then reruns the
+commands of Table~\ref{tab:runs}, and then compares the regenerated canonical
+digests.
+
+% BEGIN GENERATED tab:hashes
+\begin{table}[t]
+\centering\scriptsize
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.30\textwidth}rl>{\raggedright\arraybackslash}p{0.40\textwidth}}
+\toprule
+Artifact & Bytes & Source & SHA-256 (64 digits)\\
+\midrule
+EXP-060 source archive (compressed) & 80,250 & manifest & \texttt{\scriptsize 85f8ea0800f0e8b6\allowbreak 5dbc5bcad226477b\allowbreak d00b9d64b3d80b50\allowbreak 909e8c9f0753c5c6}\\[2pt]
+EXP-060 source archive (raw) & 4,508,227 & manifest & \texttt{\scriptsize d70c6ce4d7b331ef\allowbreak 305862747ed7d5b1\allowbreak f4d817f2a8213e18\allowbreak f9d95c6ae6f5786e}\\[2pt]
+EXP-060 result manifest & 462,616 & file & \texttt{\scriptsize f57fa704d045a8a8\allowbreak 7d77497e0a18c198\allowbreak fa24585ce754ab04\allowbreak 3acc11e6d9671bc4}\\[2pt]
+EXP-060 independent recomputation & 80,322 & file & \texttt{\scriptsize 3bcf3cabe5b0330f\allowbreak a48bdc206d2220e4\allowbreak 165508937a42cd63\allowbreak cd21ee636d90fa1e}\\[2pt]
+EXP-062 source archive (compressed) & 252,812 & manifest & \texttt{\scriptsize 8475ffb305c1567e\allowbreak b68f99f675413be9\allowbreak f6afeb8bce5b0a9c\allowbreak e50b7a2484f7cb0d}\\[2pt]
+EXP-062 source archive (raw) & 17,253,771 & manifest & \texttt{\scriptsize af39d545d2f664de\allowbreak dbd0b90ac4b18c40\allowbreak ad88863b06d8c12a\allowbreak 1f355f4a4e0472db}\\[2pt]
+EXP-062 result manifest & 7,571,724 & file & \texttt{\scriptsize 09aef05e577e58b1\allowbreak 1c4ccc363ed47ccf\allowbreak 1ed1598deb1b156a\allowbreak 33bb3b6e49ae638d}\\[2pt]
+EXP-062 independent recomputation & 6,514,088 & file & \texttt{\scriptsize 854405294fab1d88\allowbreak 81c76b58c30dc412\allowbreak 0748e4f059ea8ae6\allowbreak 14e3b9619560a7ef}\\[2pt]
+EXP-063 results & 26,218 & file & \texttt{\scriptsize c219ce4c4549d970\allowbreak 063a787227793bb5\allowbreak f7141e8f4d6e14c6\allowbreak 14f62085ecc8059a}\\[2pt]
+EXP-063 independent recomputation & 6,500 & file & \texttt{\scriptsize e3560323a54ace1c\allowbreak 7ef8aa31919535e0\allowbreak 856098216784a004\allowbreak ce11f7413a83c675}\\[2pt]
+EXP-064 results & 152,913 & file & \texttt{\scriptsize 9304c81487b29688\allowbreak c9fcf3524998db15\allowbreak f6faf7b50a9448cf\allowbreak f197b6177bc4f5c4}\\[2pt]
+EXP-064 independent recomputation & 7,091 & file & \texttt{\scriptsize 3a4b4308073bd452\allowbreak 1f300aaea3d42116\allowbreak 1c7442e0b6cd2b06\allowbreak 8fe8320195f1ff61}\\[2pt]
+\bottomrule
+\end{tabular}
+\caption{Full SHA-256 digests of the stored archives and result files: the two deterministic source archives in their compressed and
+raw forms (read from the manifests) and the result and independent-recomputation files of the four computations that pin them
+(computed over the stored bytes).}
+\label{tab:hashes}
+\end{table}
+% END GENERATED tab:hashes
+
+\section{Experimental design and results: local obstruction and exact validation}\label{sec:validation}
+
+Every computation of this section tests a statement fixed before it is run, and
+Table~\ref{tab:hypotheses} lists, for each computation record, the statement tested and
+its outcome as the record states it. Every number reported below is an exact integer
+or an exact finite-field result, so no statistical interval, standard deviation or
+confidence level applies to any of them; the only quantity with run-to-run variation is the
+elapsed time of Table~\ref{tab:runs}, which is a single stored run. A statement that fails
+is reported with the same weight as one that holds: the local search of
+EXP-058 is a refutation, and it is kept because it shows that no integral source for
+$2\eta_8$ exists in the radius-two neighborhood.
+
+\begin{table}[t]
+\centering\scriptsize
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.09\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}}
+\toprule
+Record & Statement tested & Outcome\\
+\midrule
+EXP-058 & an integral source for $2\eta_p$ within radius two and the stated caps at $p=8,9,10$; any retained witness satisfies its full boundary & refuted at $p=8$: the radius-two span excludes $2\eta_8$ over $\mathbb Q$\\[2pt]
+EXP-059 & the unit-potential chains are $\ker_{\Z}d_D$ in the fixed-high sector, of rank $\binom{p-1}{2}$, coefficients of absolute value one, support at most $3p-5$, boundary with no $D$ rows and at most seven $K$ rows & confirmed (Theorem~\ref{thm:basis})\\[2pt]
+EXP-060 & $P(f)$ has zero $D$ boundary; $M_pP(F_j)=2x_{0j}$; $M_pV_p=2\eta_p$ for every $p\geq8$ & confirmed (Lemma~\ref{lem:shift}, Proposition~\ref{prop:twiceedge}, Theorem~\ref{thm:main})\\[2pt]
+EXP-061 & $\lambda_K(\eta_p)=1$ and $\lambda_K$ annihilates every $K$-source boundary and the connecting image of every $D$ cycle, so $\eta_p$ is nonzero modulo two & confirmed (Theorem~\ref{thm:exact-order})\\[2pt]
+EXP-062 & every triangle source has integral boundary $2x_T$, $\lambda_T(x_U)=\delta_{TU}$, and the count is $\lfloor((p-2)^2+3)/12\rfloor$ & confirmed (Theorem~\ref{thm:quadratic})\\[2pt]
+EXP-063 & each $x_T$ survives the unit cancellations in the unique isolated component; triangle-span ranks $3,4,5,7$ in masks $59$, $62$, $1,2,3,5$ in mask $58$, $0,0,0,1$ in mask $56$ & confirmed finitely, $p=8,\ldots,11$\\[2pt]
+EXP-064 & rational ranks of the 16 carrier matrices by modular Hadamard certificates; complete $2$-primary types; integral vanishing of the endpoint triangles in mask $58$ & confirmed finitely, $p=8,\ldots,11$\\[2pt]
+EXP-065 & dual-guided column generation finds integral witnesses within six rounds and 900 carrier columns at $p=8,9,10$, with bounded coefficients and support & supported on the training range\\[2pt]
+EXP-066 & $\Pi_{58}M_ps_{p,r}$ is one row of coefficient $-1$ at $p=11$ on an untouched component, and for every $p\geq8$, $r=1,2$, with every face of one of the stated types & proved (Theorem~\ref{thm:mask58-endpoints})\\
+\bottomrule
+\end{tabular}
+\caption{The statement each computation record tests and its outcome, transcribed from the hypothesis and conclusion files of the records, in the order in which the results are used in this paper.}
+\label{tab:hypotheses}
+\end{table}
+
 
 \subsection{A radius-two locality obstruction}
 
@@ -1136,8 +1984,10 @@ Computation EXP-058 explores original source columns
 incident to the four endpoint rows, retaining all their boundary rows.
 Each row-column-row round gives the next radius. At $p=8$, the complete
 radius-two span excludes $2\eta_8$ even over $\mathbb Q$ [MV].
-The decisive certificates are integer row functionals:
-\begin{center}
+The decisive certificates are integer row functionals, whose sizes are in
+Table~\ref{tab:radius}.
+\begin{table}[t]
+\centering
 \begin{tabular}{rrrrr}
 \toprule
 Radius & Source columns & Boundary rows & Incidences & Dual support\\
@@ -1146,7 +1996,10 @@ Radius & Source columns & Boundary rows & Incidences & Dual support\\
 2 & 330 & 1803 & 2669 & 40\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Neighborhoods of the four endpoint rows at $p=8$ after one and two row-column-row rounds:
+source columns, boundary rows, incidences, and the support size of the stored integer dual.}
+\label{tab:radius}
+\end{table}
 For each selected matrix $M_{\mathrm{loc}}$, the stored functional satisfies
 $\lambda M_{\mathrm{loc}}=0$ and $\lambda(2\eta_8)=4$.
 The radius-two functional has 35 D rows and five K rows, all nonzero
@@ -1187,11 +2040,43 @@ An independent re-implementation reconstructs all source labels and coefficients
 verifies the full boundary by a separately encoded bitset method, and
 performs 25 literal differential crosschecks on five sources at each
 $p=8,\ldots,12$. The complete boundary has four K rows and no D rows.
-Observed source support is 110 at $p=8$ and 3054 at $p=100$, with
+Observed source support is 110 at $p=8$ and 3054 at $p=100$, and it equals
+$32p-146$ at all 18 values, with
 coefficient height five at each checked value. These are finite support
 observations, not a separately proved uniform counting formula.
 
-Wrong signs and single-coefficient changes are rejected. Two variants of
+Each computation and its independent recomputation completes within an enforced cap of 60
+seconds in one CPU process with at most 1~GiB of private memory. These
+verification runs perform no new HNF, Smith-form or full ambient-basis
+computation. No old labelled HNF source, including the one at $p=11$, is
+an input, and the check of the new formula at $p=11$ is not an untouched
+held-out test.
+
+Figure~\ref{fig:supportlaw} plots the stored support of $V_p$ against $p$: the 18 points lie on the line $32p-146$, which the generating program asserts at every stored parameter. The line is read from the data and carries no proof.
+
+% BEGIN GENERATED fig:supportlaw
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={terms of $V_p$}, legend pos=north west]
+\addplot[only marks, mark=*, mark size=1.8pt] coordinates {(8,110) (9,142) (10,174) (11,206) (12,238) (13,270) (14,302) (15,334) (16,366) (17,398) (18,430) (19,462) (20,494) (25,654) (32,878) (50,1454) (64,1902) (100,3054)};
+\addplot[domain=8:100, thick, no marks] {32*x-146};
+\legend{stored support, $32p-146$}
+\end{axis}
+\end{tikzpicture}
+\caption{Number of terms of the stored source $V_p$ at the 18 checked parameters of the annihilator computation, with the line $32p-146$ that passes through every stored point.}
+\label{fig:supportlaw}
+\end{figure}
+% END GENERATED fig:supportlaw
+
+\subsection{Ablation of the corrections in \texorpdfstring{$V_p$}{V\_p}}
+
+The source $V_p$ of Theorem~\ref{thm:main} has three ingredients beyond the
+twice-edge sources of Proposition~\ref{prop:twiceedge}: the shifted potentials
+$P(\delta_{03})$ and $P(\delta_{02})$ together with their short $K$-source
+corrections $Q_3$ and $Q_2$, and the sign of $P(F_1)$. Two of them are ablated in the stored computation (the $\delta_{03}/Q_3$ correction is not), and in addition a sign and a single
+coefficient of the stored source are mutated, with the full boundary compared with $2\eta_p$ at
+every one of the 18 checked parameters. The mutated sources are rejected at each of them [MV]. Two variants of
 $V_p$ fail uniformly. Omitting the $\delta_{02}/Q_2$
 correction gives $V_{\mathrm{omit}}=V_p+4D$ and
 \[
@@ -1202,14 +2087,13 @@ $V_{\mathrm{early}}=V_{\mathrm{omit}}-4P(F_1)$ and
 \[
  M_pV_{\mathrm{early}}-2\eta_p=4(e(2;0,1)-x_{01})\ne0.
 \]
-The rows are distinct, so both failures hold uniformly.
-
-Each computation and its independent recomputation runs in under 60
-seconds in one CPU process with at most 1~GiB of private memory. These
-verification runs perform no new HNF, Smith-form or full ambient-basis
-computation. No old labelled HNF source, including the one at $p=11$, is
-an input, and the check of the new formula at $p=11$ is not an untouched
-held-out test.
+The second residual is the first minus $8x_{01}$, because
+$M_pP(F_1)=2x_{01}$. The rows $x_{01}$ and $e(2;0,1)$ are distinct, so both failures hold uniformly.
+The variant $V_{\mathrm{early}}$ is the literal combination
+$P(F_2-2F_1-4\delta_{03})+4Q_3$ stored in the computation, and the full boundary rejects it. The term
+$4D$ contributes exactly the boundary $4(x_{01}+e(2;0,1))$ of Lemma~\ref{lem:corrections}, so omitting it
+leaves that residual, and the sign of $F_1$ changes the coefficient of $x_{01}$ by $8$ because
+$M_pP(F_1)=2x_{01}$. Reversing the sign of $F_1$ alone gives $M_p(V_p-4P(F_1))-2\eta_p=-8x_{01}\neq0$, an immediate consequence of Proposition~\ref{prop:twiceedge} that is not itself a stored computation. The $\delta_{02}/Q_2$ correction and the sign of $F_1$ are therefore each needed.
 
 \subsection{Full-sector parity verification}
 
@@ -1240,7 +2124,7 @@ All 20 independent negative controls pass. They include removal of the
 odd eta-pairing row, mutation of a support index, an explicit diagnostic
 for the otherwise omitted $h=10p-3$ sector, and a functional that passes
 a proper local column subset but fails an added original column. The
-primary computation and the independent recomputation each run in under
+primary computation and the independent recomputation each complete within an enforced cap of
 120 seconds in one process with at most 1~GiB of memory. These finite
 checks test the
 full-sector argument, not just a local span; the proof of
@@ -1264,8 +2148,9 @@ transfers, the pairings, counts and mutation controls without importing
 formulas from the primary computation. For every one of the 27 triangles at
 $p=8,\ldots,12$, it additionally enumerates all original S columns
 in every reachable high sector and gives exact $\mathbb F_2$ row-span
-certificates on the complete D matrix. The totals are
-\begin{center}\small
+certificates on the complete D matrix. The totals are in Table~\ref{tab:sectorcert}.
+\begin{table}[t]
+\centering\small
 \begin{tabular}{lr}
 \toprule
 Full-sector certificate quantity & Count\\
@@ -1279,7 +2164,10 @@ D incidences across certificates & 1,528,426\\
 Labelled original D-row dual terms & 5,550\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Totals of the independent full-sector certificates for all $27$ triangles at $p=8,\ldots,12$;
+instance counts repeat a physical sector once for each triangle functional.}
+\label{tab:sectorcert}
+\end{table}
 Instance counts repeat a physical sector for different triangle functionals;
 they are not counts of distinct matrices or columns. All original D rows
 are retained in each certificate. This tests complete-kernel annihilation,
@@ -1295,23 +2183,178 @@ recomputation replays byte for byte.
 Observed source support ranges from 38 to 13,594, with coefficient height
 two throughout these computations. These are finite observations, whereas
 \eqref{eq:template-support} proves the ten-to-twelve-row functional bound
-uniformly. Both computations run in under 120 seconds in one process
+uniformly. Both computations complete within an enforced cap of 120 seconds in one process
 with at most 1~GiB of memory. No dense full ambient matrix, integral
 HNF/SNF or old labelled $p=11$ HNF source is used. Finite certification
 and the uniform proof remain separate layers of evidence.
 
+Figure~\ref{fig:trianglecount} compares the triangle counts of the 93 count identities, $p=8,\ldots,100$, with the closed form $\lfloor((p-2)^2+3)/12\rfloor$ of Theorem~\ref{thm:quadratic}; the stored comparison flag is true at every parameter.
+
+% BEGIN GENERATED fig:trianglecount
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={number of triangles}, legend pos=north west]
+\addplot[only marks, mark=*, mark size=1.4pt] coordinates {(8,3) (9,4) (10,5) (11,7) (12,8) (13,10) (14,12) (15,14) (16,16) (17,19) (18,21) (19,24) (20,27) (21,30) (22,33) (23,37) (24,40) (25,44) (26,48) (27,52) (28,56) (29,61) (30,65) (31,70) (32,75) (33,80) (34,85) (35,91) (36,96) (37,102) (38,108) (39,114) (40,120) (41,127) (42,133) (43,140) (44,147) (45,154) (46,161) (47,169) (48,176) (49,184) (50,192) (51,200) (52,208) (53,217) (54,225) (55,234) (56,243) (57,252) (58,261) (59,271) (60,280) (61,290) (62,300) (63,310) (64,320) (65,331) (66,341) (67,352) (68,363) (69,374) (70,385) (71,397) (72,408) (73,420) (74,432) (75,444) (76,456) (77,469) (78,481) (79,494) (80,507) (81,520) (82,533) (83,547) (84,560) (85,574) (86,588) (87,602) (88,616) (89,631) (90,645) (91,660) (92,675) (93,690) (94,705) (95,721) (96,736) (97,752) (98,768) (99,784) (100,800)};
+\addplot[domain=8:100, samples=93, thick, no marks] {floor(((x-2)^2+3)/12)};
+\legend{enumerated triangles, $\lfloor((p-2)^2+3)/12\rfloor$}
+\end{axis}
+\end{tikzpicture}
+\caption{Number of strictly increasing nonnegative triples of sum $p-2$ enumerated at the 93 parameters $p=8,\ldots,100$ of the count identities, with the closed form of the quadratic count drawn through them.}
+\label{fig:trianglecount}
+\end{figure}
+% END GENERATED fig:trianglecount
+
+\subsection{Finite carrier comparison at \texorpdfstring{$p=8,\ldots,11$}{p = 8 to 11}}\label{sec:carrier}
+
+The presentation $M_p$ was compared with the earlier persistent finite carrier
+matrices, which are the isolated components obtained by exact unit contraction
+of the original map and then projected by one of the masks of
+Section~\ref{sec:projection}. A mask is the set of retained row types read as
+a binary number with the bit $n$ standing for $R_n$, so that mask $58$ retains
+$R_1,R_3,R_4,R_5$ and masks $56$, $59$, $62$ retain $R_3,R_4,R_5$, then
+$R_0,R_1,R_3,R_4,R_5$ and $R_1,\ldots,R_5$. The comparison has two parts, and
+Table~\ref{tab:carrier} reports both for every parameter and mask.
+
+The first part is a labelled comparison [MV]. All $19$ triangle rows of
+Section~\ref{sec:family}, three, four, five and seven at $p=8,\ldots,11$,
+survive the unit contraction, occur exactly once in the persistent component, are
+rows of type $R_5$, and are carried to the literal same target coordinate. In the
+full carrier masks $59$ and $62$ the quotient rank of the triangle span modulo two is
+the whole count $3,4,5,7$ and no triangle relation occurs. In mask $58$ the span has
+rank $1,2,3,5$, and its complete relation space is spanned, throughout the tested
+range, by the two endpoint triangles $(0,1,p-3)$ and $(0,2,p-4)$. In mask $56$ the ranks
+are $0,0,0,1$, and $(2,3,4)$ is the only surviving direction, at $p=11$. These ranks
+reproduce the independent Bockstein ranks of the carriers, and a separate recomputation
+rebuilds the four labelled components, checks all $19$ stored boundaries $\pm2x_T$,
+exhausts every triangle combination in all $16$ mask cases and rejects $12$ mutated cases.
+
+The second part determines the exact $2$-primary structure [MV]. Exact certificates
+modulo products of word-size primes, with the squared column norms bounded by the Hadamard
+inequality, fix the rational rank of each of the $16$ carrier matrices. In every case the gap between
+the rational rank and the rank modulo two equals the first integral Bockstein rank, so every
+even Smith factor has $2$-adic valuation exactly one and the complete $2$-primary
+type is elementary. The types are $(\Z/2)^{3,4,5,7}$ for masks $59$ and $62$,
+$(\Z/2)^{1,2,3,5}$ for mask $58$, and $0,0,0,(\Z/2)^1$ for mask $56$. An independent
+recomputation repeats $1{,}100$ prime-rank pairs, tests $16$ minimally sufficient prime
+prefixes, $16$ entry mutations and $2$ synthetic exponent cases, and checks the triangle consequences.
+
+Combined with the twice-sources of Proposition~\ref{prop:all-triangle-sources}, which are
+exact integral identities, the elementary exponent gives an exact integral finite result: the
+endpoint triangles $(0,1,p-3)$ and $(0,2,p-4)$ vanish integrally in mask $58$, all remaining
+triangle images form the complete $2$-primary subgroup, and all triangles generate it in
+masks $59$ and $62$. The limits are as follows. The comparison is finite, for $p=8,\ldots,11$.
+The integral vanishings follow from finite exponent certificates and not from explicit
+all-parameter sources, which Theorem~\ref{thm:mask58-endpoints} supplies afterwards for
+the two endpoint rows only. A mod-two-zero class of order two can still be twice a class of
+order four, and only the exponent certificates exclude that. No complementary upper bound and no
+uniform isomorphism between a carrier and $\mathcal C_p$ follows.
+
+% BEGIN GENERATED tab:carrier
+\begin{table}[t]
+\centering\scriptsize
+\begin{tabular}{rrrrrrrll}
+\toprule
+$p$ & Mask & Rows & Nonzeros & $\operatorname{rank}_{\mathbb Q}$ & $\operatorname{rank}_{\mathbb F_2}$ & Bockstein rank & 2-primary type & Triangle span\\
+\midrule
+8 & 56 & 1,769 & 4,733 & 963 & 963 & 0 & $(Z/2)^0$ & 0 of 3\\
+ & 58 & 2,596 & 6,586 & 980 & 979 & 1 & $(Z/2)^1$ & 1 of 3\\
+ & 59 & 2,624 & 6,642 & 993 & 990 & 3 & $(Z/2)^3$ & 3 of 3\\
+ & 62 & 2,647 & 6,691 & 1,002 & 999 & 3 & $(Z/2)^3$ & 3 of 3\\
+\addlinespace
+9 & 56 & 3,176 & 8,341 & 1,561 & 1,561 & 0 & $(Z/2)^0$ & 0 of 4\\
+ & 58 & 4,653 & 11,638 & 1,581 & 1,579 & 2 & $(Z/2)^2$ & 2 of 4\\
+ & 59 & 4,689 & 11,710 & 1,596 & 1,592 & 4 & $(Z/2)^4$ & 4 of 4\\
+ & 62 & 4,721 & 11,777 & 1,607 & 1,603 & 4 & $(Z/2)^4$ & 4 of 4\\
+\addlinespace
+10 & 56 & 5,354 & 13,855 & 2,397 & 2,397 & 0 & $(Z/2)^0$ & 0 of 5\\
+ & 58 & 7,841 & 19,387 & 2,420 & 2,417 & 3 & $(Z/2)^3$ & 3 of 5\\
+ & 59 & 7,886 & 19,477 & 2,437 & 2,432 & 5 & $(Z/2)^5$ & 5 of 5\\
+ & 62 & 7,928 & 19,564 & 2,450 & 2,445 & 5 & $(Z/2)^5$ & 5 of 5\\
+\addlinespace
+11 & 56 & 8,580 & 21,939 & 3,526 & 3,525 & 1 & $(Z/2)^1$ & 1 of 7\\
+ & 58 & 12,548 & 30,744 & 3,552 & 3,547 & 5 & $(Z/2)^5$ & 5 of 7\\
+ & 59 & 12,603 & 30,854 & 3,571 & 3,564 & 7 & $(Z/2)^7$ & 7 of 7\\
+ & 62 & 12,656 & 30,963 & 3,586 & 3,579 & 7 & $(Z/2)^7$ & 7 of 7\\
+\bottomrule
+\end{tabular}
+\caption{Finite carrier comparison at $p=8,\ldots,11$ for the four projection masks $56$, $58$, $59$ and $62$: the number of rows and nonzeros
+of the carrier matrix (it has $1094$, $1729$, $2607$ and $3785$ columns at $p=8,\ldots,11$), its rational rank certified by modular
+Hadamard bounds, its rank modulo two, the first integral Bockstein rank (equal to the rank gap), the complete $2$-primary type, and the
+rank of the span of the triangle classes modulo two out of the number of triangles.}
+\label{tab:carrier}
+\end{table}
+% END GENERATED tab:carrier
+
+Figure~\ref{fig:bockstein} plots the first Bockstein rank of each carrier against $p$ together with the number of triangles: masks $59$ and $62$ follow the triangle count exactly, mask $58$ stays two below it, and mask $56$ is zero until $p=11$.
+
+% BEGIN GENERATED fig:bockstein
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={rank}, legend pos=outer north east, width=0.68\textwidth, xtick={8,9,10,11}]
+\addplot[thick, dashed, no marks] coordinates {(8,3) (9,4) (10,5) (11,7)};
+\addplot[only marks, mark=triangle*, mark size=2.4pt] coordinates {(8,0) (9,0) (10,0) (11,1)};
+\addplot[only marks, mark=square*, mark size=2.4pt] coordinates {(8,1) (9,2) (10,3) (11,5)};
+\addplot[only marks, mark=diamond*, mark size=2.4pt] coordinates {(8,3) (9,4) (10,5) (11,7)};
+\addplot[only marks, mark=o, mark size=2.4pt] coordinates {(8,3) (9,4) (10,5) (11,7)};
+\legend{triangles, mask 56, mask 58, mask 59, mask 62}
+\end{axis}
+\end{tikzpicture}
+\caption{First integral Bockstein rank of the four carrier masks at $p=8,\ldots,11$, with the number of triangle rows as a dashed line; the rank of mask $62$ coincides with that of mask $59$ and with the triangle count.}
+\label{fig:bockstein}
+\end{figure}
+% END GENERATED fig:bockstein
+
 \subsection{Uniform endpoint projection certificate}
 
-Computation EXP-066 evaluates the two identities of
+Computation \Exp{EXP-066-uniform-endpoint-face-collapse}{EXP-066} evaluates the two identities of
 Theorem~\ref{thm:mask58-endpoints}, in their unsigned-row form, for
-every $p=8,\ldots,300$, giving 586
+every $p=8,\ldots,300$ and $r=1,2$, giving 586
 exact endpoint checks, and rejects 2,930 altered sources, target rows and
-projection masks [MV]. An independent implementation reconstructs the interval
+projection masks [MV]. For each pair $(p,r)$ the program classifies every face of
+the source column $s_{p,r}$ into one of the types $R_0,\ldots,R_5$ by its normalized count
+vector $\nu$, and compares the complete projected boundary, which has $p-3$ rows of
+type $R_0$, $p-3$ of type $R_2$ and one of type $R_5$, with the unsigned row of coefficient $-1$.
+The five altered cases of each check are three altered source columns, two exchanging an exterior
+generator with a neighbour and one replacing $10p$ by $10p-2$, and two altered projection masks
+that retain $R_0$ or $R_2$ as well; none reproduces the expected projected boundary.
+An independent implementation reconstructs the interval
 types and normalized counts in reverse parameter order and recovers the same
-two locked $p=11$ component columns. The all-parameter conclusion comes from
+two locked $p=11$ component columns, $210$ and $308$, whose retained entries lie in the
+unsigned rows $12559$ and $12560$. The all-parameter conclusion comes from
 the preceding interval inequalities and face count, not from this finite sweep.
 
-\section{Remaining obligations}
+Figure~\ref{fig:facecount} shows the classified faces of the endpoint source $s_{p,1}$ for $p=8,\ldots,300$: the numbers of rows of types $R_0$ and $R_2$ equal $p-3$ at every parameter and the single $R_5$ row is present throughout, as the face count of Theorem~\ref{thm:mask58-endpoints} predicts.
+
+% BEGIN GENERATED fig:facecount
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.86\textwidth, height=5.4cm, grid=major, tick label style={font=\small}, label style={font=\small}, legend style={font=\scriptsize}, xlabel={$p$}, ylabel={faces}, legend pos=north west]
+\addplot[only marks, mark=*, mark size=0.9pt] coordinates {(8,5) (9,6) (10,7) (11,8) (12,9) (13,10) (14,11) (15,12) (16,13) (17,14) (18,15) (19,16) (20,17) (21,18) (22,19) (23,20) (24,21) (25,22) (26,23) (27,24) (28,25) (29,26) (30,27) (31,28) (32,29) (33,30) (34,31) (35,32) (36,33) (37,34) (38,35) (39,36) (40,37) (41,38) (42,39) (43,40) (44,41) (45,42) (46,43) (47,44) (48,45) (49,46) (50,47) (51,48) (52,49) (53,50) (54,51) (55,52) (56,53) (57,54) (58,55) (59,56) (60,57) (61,58) (62,59) (63,60) (64,61) (65,62) (66,63) (67,64) (68,65) (69,66) (70,67) (71,68) (72,69) (73,70) (74,71) (75,72) (76,73) (77,74) (78,75) (79,76) (80,77) (81,78) (82,79) (83,80) (84,81) (85,82) (86,83) (87,84) (88,85) (89,86) (90,87) (91,88) (92,89) (93,90) (94,91) (95,92) (96,93) (97,94) (98,95) (99,96) (100,97) (101,98) (102,99) (103,100) (104,101) (105,102) (106,103) (107,104) (108,105) (109,106) (110,107) (111,108) (112,109) (113,110) (114,111) (115,112) (116,113) (117,114) (118,115) (119,116) (120,117) (121,118) (122,119) (123,120) (124,121) (125,122) (126,123) (127,124) (128,125) (129,126) (130,127) (131,128) (132,129) (133,130) (134,131) (135,132) (136,133) (137,134) (138,135) (139,136) (140,137) (141,138) (142,139) (143,140) (144,141) (145,142) (146,143) (147,144) (148,145) (149,146) (150,147) (151,148) (152,149) (153,150) (154,151) (155,152) (156,153) (157,154) (158,155) (159,156) (160,157) (161,158) (162,159) (163,160) (164,161) (165,162) (166,163) (167,164) (168,165) (169,166) (170,167) (171,168) (172,169) (173,170) (174,171) (175,172) (176,173) (177,174) (178,175) (179,176) (180,177) (181,178) (182,179) (183,180) (184,181) (185,182) (186,183) (187,184) (188,185) (189,186) (190,187) (191,188) (192,189) (193,190) (194,191) (195,192) (196,193) (197,194) (198,195) (199,196) (200,197) (201,198) (202,199) (203,200) (204,201) (205,202) (206,203) (207,204) (208,205) (209,206) (210,207) (211,208) (212,209) (213,210) (214,211) (215,212) (216,213) (217,214) (218,215) (219,216) (220,217) (221,218) (222,219) (223,220) (224,221) (225,222) (226,223) (227,224) (228,225) (229,226) (230,227) (231,228) (232,229) (233,230) (234,231) (235,232) (236,233) (237,234) (238,235) (239,236) (240,237) (241,238) (242,239) (243,240) (244,241) (245,242) (246,243) (247,244) (248,245) (249,246) (250,247) (251,248) (252,249) (253,250) (254,251) (255,252) (256,253) (257,254) (258,255) (259,256) (260,257) (261,258) (262,259) (263,260) (264,261) (265,262) (266,263) (267,264) (268,265) (269,266) (270,267) (271,268) (272,269) (273,270) (274,271) (275,272) (276,273) (277,274) (278,275) (279,276) (280,277) (281,278) (282,279) (283,280) (284,281) (285,282) (286,283) (287,284) (288,285) (289,286) (290,287) (291,288) (292,289) (293,290) (294,291) (295,292) (296,293) (297,294) (298,295) (299,296) (300,297)};
+\addplot[only marks, mark=square*, mark size=0.9pt] coordinates {(8,1) (9,1) (10,1) (11,1) (12,1) (13,1) (14,1) (15,1) (16,1) (17,1) (18,1) (19,1) (20,1) (21,1) (22,1) (23,1) (24,1) (25,1) (26,1) (27,1) (28,1) (29,1) (30,1) (31,1) (32,1) (33,1) (34,1) (35,1) (36,1) (37,1) (38,1) (39,1) (40,1) (41,1) (42,1) (43,1) (44,1) (45,1) (46,1) (47,1) (48,1) (49,1) (50,1) (51,1) (52,1) (53,1) (54,1) (55,1) (56,1) (57,1) (58,1) (59,1) (60,1) (61,1) (62,1) (63,1) (64,1) (65,1) (66,1) (67,1) (68,1) (69,1) (70,1) (71,1) (72,1) (73,1) (74,1) (75,1) (76,1) (77,1) (78,1) (79,1) (80,1) (81,1) (82,1) (83,1) (84,1) (85,1) (86,1) (87,1) (88,1) (89,1) (90,1) (91,1) (92,1) (93,1) (94,1) (95,1) (96,1) (97,1) (98,1) (99,1) (100,1) (101,1) (102,1) (103,1) (104,1) (105,1) (106,1) (107,1) (108,1) (109,1) (110,1) (111,1) (112,1) (113,1) (114,1) (115,1) (116,1) (117,1) (118,1) (119,1) (120,1) (121,1) (122,1) (123,1) (124,1) (125,1) (126,1) (127,1) (128,1) (129,1) (130,1) (131,1) (132,1) (133,1) (134,1) (135,1) (136,1) (137,1) (138,1) (139,1) (140,1) (141,1) (142,1) (143,1) (144,1) (145,1) (146,1) (147,1) (148,1) (149,1) (150,1) (151,1) (152,1) (153,1) (154,1) (155,1) (156,1) (157,1) (158,1) (159,1) (160,1) (161,1) (162,1) (163,1) (164,1) (165,1) (166,1) (167,1) (168,1) (169,1) (170,1) (171,1) (172,1) (173,1) (174,1) (175,1) (176,1) (177,1) (178,1) (179,1) (180,1) (181,1) (182,1) (183,1) (184,1) (185,1) (186,1) (187,1) (188,1) (189,1) (190,1) (191,1) (192,1) (193,1) (194,1) (195,1) (196,1) (197,1) (198,1) (199,1) (200,1) (201,1) (202,1) (203,1) (204,1) (205,1) (206,1) (207,1) (208,1) (209,1) (210,1) (211,1) (212,1) (213,1) (214,1) (215,1) (216,1) (217,1) (218,1) (219,1) (220,1) (221,1) (222,1) (223,1) (224,1) (225,1) (226,1) (227,1) (228,1) (229,1) (230,1) (231,1) (232,1) (233,1) (234,1) (235,1) (236,1) (237,1) (238,1) (239,1) (240,1) (241,1) (242,1) (243,1) (244,1) (245,1) (246,1) (247,1) (248,1) (249,1) (250,1) (251,1) (252,1) (253,1) (254,1) (255,1) (256,1) (257,1) (258,1) (259,1) (260,1) (261,1) (262,1) (263,1) (264,1) (265,1) (266,1) (267,1) (268,1) (269,1) (270,1) (271,1) (272,1) (273,1) (274,1) (275,1) (276,1) (277,1) (278,1) (279,1) (280,1) (281,1) (282,1) (283,1) (284,1) (285,1) (286,1) (287,1) (288,1) (289,1) (290,1) (291,1) (292,1) (293,1) (294,1) (295,1) (296,1) (297,1) (298,1) (299,1) (300,1)};
+\legend{rows of type $R_0$ and of type $R_2$, rows of type $R_5$}
+\end{axis}
+\end{tikzpicture}
+\caption{Classified faces of the endpoint source $s_{p,1}$ at the 293 parameters $p=8,\ldots,300$ of the sweep: rows of types $R_0$ and $R_2$ (equal in number, $p-3$) and the single row of type $R_5$.}
+\label{fig:facecount}
+\end{figure}
+% END GENERATED fig:facecount
+
+\section{Discussion, limitations and remaining obligations}\label{sec:discussion}
+
+The results fit together in one chain. The explicit matrix $M_p$ has a quadratically
+growing direct summand of order-two classes, with explicit sources for twice each class and
+explicit detectors over $\mathbb F_2$ for each class independently
+(Theorems~\ref{thm:main}, \ref{thm:exact-order} and~\ref{thm:quadratic}). The tracked
+four-row vector of the earlier finite computations is one of these classes up to the
+congruence of Proposition~\ref{prop:eta-edge}. A semantic projection of four of the six row
+types kills two endpoint triangle rows for every $p$ by a face count that needs no search
+(Theorem~\ref{thm:mask58-endpoints}), and the finite carrier comparison of
+Section~\ref{sec:carrier} agrees with this and with the count of independent classes at
+$p=8,\ldots,11$. Each exact identity is also tested by two independent encodings of the
+differential (Section~\ref{sec:algorithms}).
 
 The uniform twice-source, nonvanishing and independent-family obligations
 are closed: Theorem~\ref{thm:quadratic} and Corollary~\ref{cor:splitting}
@@ -1320,7 +2363,11 @@ The tracked endpoint class is explicitly identified with one selected
 triangle class. What remains [C] is the complementary group: the complete
 cokernel, a matching upper bound, its free rank and any additional torsion
 are not determined. The functionals are not asserted to exhaust the full
-dual space. In particular, the theorem does not identify the full
+dual space. At $p=8,9,10$ the proved summand has $3,4,5$ factors against an
+exact characteristic-two excess of $31,49,72$ [MV] (Table~\ref{tab:excess}), so most of the
+characteristic-two behavior sits in the complement $\mathcal C'_p$, whose
+structure, including any three-torsion that would change the excess, is open.
+In particular, the theorem does not identify the full
 presentation with an earlier isolated component or relative-completion
 quotient, and it does not prove a lower-strand recurrence.
 Theorem~\ref{thm:mask58-endpoints} gives explicit sources for two endpoint
@@ -1328,16 +2375,48 @@ rows after one semantic projection. It does not prove independence or an upper
 bound for the other projected triangle rows, nor that this projection agrees
 uniformly with the earlier persistent isolated component.
 
-The mathematical premise imported from the earlier family is the integral
-coefficient presentation itself. Independent encodings test for implementation,
-sign and boundary errors but do not rederive that family-to-presentation
-identification. Within the explicit presentation of Section~\ref{sec:matrix},
-the proofs above are self-contained. The new potential basis, signed
+\paragraph{Limitations.}
+Three limits bound the scope. First, the application to the fiber-cone family
+depends on the premise of Section~\ref{sec:premise}: the matrix $M_p$ is
+the Koszul-strand block matrix at $p=8$ by an independent reconstruction and at $p=9,10$
+by agreement with one canonical program, and for larger $p$
+that equality is not derived. The proofs concerning $M_p$ do not use it, and they
+are self-contained within the explicit presentation of Section~\ref{sec:matrix}.
+Independent encodings test for implementation,
+sign and boundary errors but do not rederive that identification. Second, the finite
+certificates and the carrier comparison are exact but finite, and no all-parameter
+statement is extrapolated from them. The new potential basis, signed
 interval triangle and relative parity proof provide explicit sources and
 detectors for further reductions. The parity argument exhausts the sectors
 visible to each functional; it does not assert that those sectors exhaust
-the whole map. The splitting is a proved existence result, but computing
-a uniform global D-row retraction remains a separate constructive task.
+the whole map. Third, the splitting is a proved existence result, but computing
+a uniform global D-row retraction remains a separate constructive task. The
+computations are exact integer and finite-field computations, so they carry no
+statistical uncertainty; the only variability is the elapsed time of the carrier
+comparison, which is a single stored run.
+
+\paragraph{Next obligations.} The route that would settle the matching is an explicit
+parametric matching or a finite-state rewrite system for the labels of
+Section~\ref{sec:matrix}, as described in Section~\ref{sec:related}; it would construct
+both the sources and a free complement. Until then, an integral map from the triangle
+family to the isolated carriers for every $p$, a bound on $\mathcal C'_p$ and an
+explanation of the excess of Table~\ref{tab:excess} are open.
+
+\section{Conclusions}\label{sec:conclusions}
+
+For every $p\geq8$ the cokernel of the explicit integral matrix $M_p$ contains a direct summand
+$(\Z/2)^{\lfloor((p-2)^2+3)/12\rfloor}$ generated by the triangle classes $x_T$, with explicit integral
+sources for twice each class and $\mathbb F_2$ functionals that detect each class independently. The
+tracked four-row vector is one of these classes, and a four-type semantic projection kills two endpoint triangle rows
+uniformly. Four verification procedures with their cost, commands, run times and full digests are given in
+Section~\ref{sec:algorithms}, and the finite carrier comparison at $p=8,\ldots,11$ is in
+Section~\ref{sec:carrier}. The identification of $M_p$ with the Koszul-strand matrix is a premise,
+verified at $p=8$ independently, at $p=9,10$ on one canonical route, and open beyond, and the complete
+cokernel is not determined.
+The results are lower-bound and partial-decomposition statements. The complement of the direct summand,
+an upper bound for the whole cokernel, the odd torsion and the free rank, an explicit retraction, and an
+all-parameter map to the isolated carriers are the open obligations, and a matching theorem for the
+labels of $M_p$ is the route that would settle them.
 
 \appendix
 \section{Computation records and archived sources}
@@ -1346,9 +2425,10 @@ All computations are archived in the public \Repo\ repository. The EXP
 identifiers used in this paper denote the computation records in its folder
 \path{problems/commutative-algebra/huneke-wiegand/experiments/}; each record
 contains the proofs, source code and exact artifacts of that computation.
-The following table links each result to its records.
+Table~\ref{tab:records} links each result to its records.
 
-\begin{center}\small
+\begin{table}[t]
+\centering\small
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}}
 \toprule
 Result & Computation record\\
@@ -1371,12 +2451,18 @@ Complete relative parity proof and Theorem~\ref{thm:exact-order} &
 Theorem~\ref{thm:quadratic}, Corollary~\ref{cor:splitting},
 Proposition~\ref{prop:eta-edge} and complete triangle certificates &
 \Exp{EXP-062-triangle-torsion-family}{EXP-062}\\[3pt]
+Finite carrier comparison at $p=8,\ldots,11$ (Table~\ref{tab:carrier}): labelled triangle rows
+and exact $2$-primary types &
+\Exp{EXP-063-triangle-isolated-comparison}{EXP-063},
+\Exp{EXP-064-exact-carrier-two-primary}{EXP-064}\\[3pt]
 Theorem~\ref{thm:mask58-endpoints}, locked holdout and reverse-order audit &
 \Exp{EXP-065-dual-guided-endpoint-decoder}{EXP-065},
 \Exp{EXP-066-uniform-endpoint-face-collapse}{EXP-066}\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Each result of the paper with the computation records that hold its proof, source code and exact artifacts.}
+\label{tab:records}
+\end{table}
 
 The full EXP-060 source archive retains every original exterior label and
 integer coefficient for all 18 parameters. The EXP-062 archive
@@ -1385,43 +2471,169 @@ Both deterministic gzip encodings have zero timestamp and empty embedded
 filename. Their compact manifests store compressed and raw SHA-256 hashes,
 byte counts, parameter counts, and per-source hashes. The independent
 recomputations decompress the archives and reconstruct all labels; no
-mathematical information is discarded by compression.
-
-\begin{center}\small
-\begin{tabular}{lrrl}
-\toprule
-Artifact & Raw bytes & Stored bytes & SHA-256 prefix\\
-\midrule
-EXP-060 source archive & 4,508,227 & 80,250 & \texttt{85f8ea0800f0e8b6}\dots\\
-EXP-060 result manifest & 462,616 & 462,616 & \texttt{f57fa704d045a8a8}\dots\\
-EXP-060 independent recomputation & \multicolumn{2}{c}{exact JSON certificate} & \texttt{3bcf3cabe5b0330f}\dots\\
-EXP-062 source archive & 17,253,771 & 252,812 & \texttt{8475ffb305c1567e}\dots\\
-EXP-062 independent recomputation & \multicolumn{2}{c}{exact JSON certificate} & \texttt{854405294fab1d88}\dots\\
-\bottomrule
-\end{tabular}
-\end{center}
-Archive prefixes in this table identify the compressed bytes.
-The EXP-060 raw digest starts with \texttt{d70c6ce4}\allowbreak\texttt{d7b331ef};
-the EXP-062 raw digest starts with \texttt{af39d545}\allowbreak\texttt{d2f664de}.
-Prefixes are navigation aids,
-not sufficient integrity checks. Reproduction must verify the full 64-digit
-hashes in the manifest and in the independent-recomputation certificate. The
-accompanying tests also verify deterministic gzip replay, all stored source
+mathematical information is discarded by compression. Table~\ref{tab:hashes}
+lists the stored sizes (EXP-060: 4,508,227 raw and 80,250 stored bytes; EXP-062:
+17,253,771 raw and 252,812 stored bytes) and the full 64-digit digests.
+Reproduction must verify these full digests in the manifests and in the
+independent-recomputation certificates, and the accompanying tests also verify deterministic gzip replay, all stored source
 hashes, and the original $b_p$ source transfer at $p=8$.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \raggedright
 \bibitem{CAOSMain}
 F.~Santib\'a\~nez-Leal,
 \emph{Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family
-of Huneke--Wiegand Counterexamples}, CAOS Research preprint,
-2026. \href{https://doi.org/10.5281/zenodo.21763582}{doi:10.5281/zenodo.21763582}.
+of Huneke--Wiegand Counterexamples}, CAOS Research preprint, version 0.25, 2026.
+\href{https://doi.org/10.5281/zenodo.22835108}{doi:10.5281/zenodo.22835108}
+(concept \href{https://doi.org/10.5281/zenodo.21763582}{doi:10.5281/zenodo.21763582}).
+Theorem numbers cited here are those of version 0.25.
+
+\bibitem{HunekeWiegand}
+C.~Huneke and R.~Wiegand,
+\emph{Tensor products of modules and the rigidity of Tor},
+Math.\ Ann.\ \textbf{299} (1994), 449--476.
+\href{https://doi.org/10.1007/BF01459794}{doi:10.1007/BF01459794}.
+
+\bibitem{GarciaSanchezLeamer}
+P.~A. Garc\'ia-S\'anchez and M.~J. Leamer,
+\emph{Huneke--Wiegand conjecture for complete intersection numerical semigroup rings},
+J.\ Algebra \textbf{391} (2013), 114--124.
+\href{https://doi.org/10.1016/j.jalgebra.2013.06.007}{doi:10.1016/j.jalgebra.2013.06.007}.
+
+\bibitem{Landeros}
+M.~Landeros, C.~O'Neill, R.~Pelayo, K.~Pe\~na, J.~Ren, and B.~Wissman,
+\emph{Families of numerical semigroups and a special case of the Huneke--Wiegand conjecture},
+Commun.\ Algebra \textbf{52} (2024), no.~12, 5043--5048.
+\href{https://doi.org/10.1080/00927872.2024.2362934}{doi:10.1080/00927872.2024.2362934};
+arXiv:2404.12519.
+
+\bibitem{Goto}
+S.~Goto, R.~Takahashi, N.~Taniguchi, and H.~Le Truong,
+\emph{Huneke--Wiegand conjecture and change of rings},
+J.\ Algebra \textbf{422} (2015), 33--52.
+\href{https://doi.org/10.1016/j.jalgebra.2014.09.006}{doi:10.1016/j.jalgebra.2014.09.006};
+\href{https://arxiv.org/abs/1305.4238}{arXiv:1305.4238}.
+
+\bibitem{PhamRepo}
+S.~Pham,
+\emph{Huneke--Wiegand candidate verification}, public software and certificate repository (2026).
+\url{https://github.com/sonpham-org/huneke-wiegand-candidate-verification}.
+
+\bibitem{Pham}
+S.~Pham,
+\emph{A Counterexample to the Huneke--Wiegand Conjecture},
+\href{https://arxiv.org/abs/2609.07615}{arXiv:2609.07615} (2026).
+
+\bibitem{CGI}
+L.~W. Christensen, A.~Gerko, and S.~B. Iyengar,
+\emph{Some non-principal rigid ideals in Gorenstein domains of dimension one},
+\href{https://arxiv.org/abs/2608.21666}{arXiv:2608.21666} (2026).
+
+\bibitem{NorthcottRees}
+D.~G. Northcott and D.~Rees,
+\emph{Reductions of ideals in local rings},
+Proc.\ Cambridge Philos.\ Soc.\ \textbf{50} (1954), 145--158.
+\href{https://doi.org/10.1017/S0305004100029194}{doi:10.1017/S0305004100029194}.
+
+\bibitem{ValabregaValla}
+P.~Valabrega and G.~Valla,
+\emph{Form rings and regular sequences},
+Nagoya Math.\ J.\ \textbf{72} (1978), 93--101.
+\href{https://doi.org/10.1017/S0027763000018225}{doi:10.1017/S0027763000018225}.
+
+\bibitem{DAnnaMezzasalma}
+M.~D'Anna, M.~Mezzasalma, and V.~Micale,
+\emph{On the Buchsbaumness of the associated graded ring of a one-dimensional local ring},
+Commun.\ Algebra \textbf{37} (2009), 1594--1603.
+\href{https://doi.org/10.1080/00927870802116521}{doi:10.1080/00927870802116521}.
+
+\bibitem{DAnnaMicale}
+M.~D'Anna, V.~Micale, and A.~Sammartano,
+\emph{On the associated graded ring of a semigroup ring},
+J.\ Commut.\ Algebra \textbf{3} (2011), 147--168.
+\href{https://doi.org/10.1216/JCA-2011-3-2-147}{doi:10.1216/JCA-2011-3-2-147}.
+
+\bibitem{CortadellasZarzuelaA}
+T.~Cortadellas and S.~Zarzuela,
+\emph{On the structure of the fiber cone of ideals with analytic spread one},
+J.\ Algebra \textbf{317} (2007), 759--785.
+\href{https://doi.org/10.1016/j.jalgebra.2007.02.044}{doi:10.1016/j.jalgebra.2007.02.044}.
+
+\bibitem{CortadellasZarzuelaB}
+T.~Cortadellas and S.~Zarzuela,
+\emph{Tangent cones of numerical semigroup rings},
+\href{https://arxiv.org/abs/0906.0911}{arXiv:0906.0911} (2009).
+
+\bibitem{AbdolmalekiKumashiro}
+R.~Abdolmaleki and S.~Kumashiro,
+\emph{Defining ideals of Cohen--Macaulay fiber cones},
+Int.\ J.\ Algebra Comput.\ \textbf{34} (2024), no.~7, 1099--1109.
+\href{https://doi.org/10.1142/S0218196724500437}{doi:10.1142/S0218196724500437}.
+
+\bibitem{MaitraMukundan}
+S.~Maitra and V.~Mukundan,
+\emph{Extremal behavior of reduced type of one dimensional rings},
+\href{https://arxiv.org/abs/2306.17069v1}{arXiv:2306.17069v1} (2023).
+
+\bibitem{DeyLyle}
+S.~Dey and J.~Lyle,
+\emph{Centers of endomorphism rings and reflexivity},
+\href{https://arxiv.org/abs/2510.02210v2}{arXiv:2510.02210v2} (2025).
+
+\bibitem{HerzogKumashiro}
+J.~Herzog and S.~Kumashiro,
+\emph{Upper bound on the colength of the trace of the canonical module in dimension one},
+Arch.\ Math.\ \textbf{119} (2022), 237--246.
+\href{https://doi.org/10.1007/s00013-022-01764-8}{doi:10.1007/s00013-022-01764-8}.
 
 \bibitem{BrunsHerzog}
 W.~Bruns and J.~Herzog,
 \emph{Semigroup rings and simplicial complexes},
-Journal of Pure and Applied Algebra \textbf{122} (1997), 185--208.
+J.\ Pure Appl.\ Algebra \textbf{122} (1997), 185--208.
 \href{https://doi.org/10.1016/S0022-4049(97)00051-0}{doi:10.1016/S0022-4049(97)00051-0}.
 \href{https://www.home.uni-osnabrueck.de/wbruns/brunsw/pdf-article/SimpSemi.published.pdf}{Author-hosted published paper}.
+
+\bibitem{Stamate}
+D.~I. Stamate,
+\emph{Betti numbers for numerical semigroup rings},
+in \emph{Multigraded Algebra and Applications}, Springer Proc.\ Math.\ Stat.\ \textbf{238} (2018), 133--157.
+\href{https://doi.org/10.1007/978-3-319-90493-1_8}{doi:10.1007/978-3-319-90493-1\_8};
+\href{https://arxiv.org/abs/1801.00153}{arXiv:1801.00153v2}.
+
+\bibitem{Skoldberg}
+E.~Sk\"oldberg,
+\emph{Algebraic Morse theory and homological perturbation theory},
+\href{https://arxiv.org/abs/1311.5803}{arXiv:1311.5803} (2013).
+
+\bibitem{ChenLiuZhou}
+J.~Chen, Y.~Liu, and G.~Zhou,
+\emph{Algebraic Morse theory via Homological Perturbation Lemma},
+J.\ Pure Appl.\ Algebra \textbf{230} (2026), 108371.
+\href{https://doi.org/10.1016/j.jpaa.2026.108371}{doi:10.1016/j.jpaa.2026.108371};
+\href{https://arxiv.org/abs/2404.10165}{arXiv:2404.10165}.
+
+\bibitem{FinkMoci}
+A.~Fink and L.~Moci,
+\emph{Matroids over a ring},
+J.\ Eur.\ Math.\ Soc.\ \textbf{18} (2016), 681--731.
+\href{https://doi.org/10.4171/jems/600}{doi:10.4171/jems/600};
+\href{https://arxiv.org/abs/1209.6571}{arXiv:1209.6571}.
+
+\bibitem{ChurchEllenberg}
+T.~Church and J.~S. Ellenberg,
+\emph{Homology of FI-modules},
+Geom.\ Topol.\ \textbf{21} (2017), 2373--2418.
+\href{https://doi.org/10.2140/gt.2017.21.2373}{doi:10.2140/gt.2017.21.2373};
+\href{https://arxiv.org/abs/1506.01022}{arXiv:1506.01022}.
+
+\bibitem{Alfaro}
+C.~A. Alfaro, J.~U. Medrano, J.~P. Serrano, I.~T\'ellez T\'ellez, and R.~R. Villagr\'an,
+\emph{The Smith normal form of Laplacian matrices of simplicial annuli and high dimensional trees},
+\href{https://arxiv.org/abs/2607.23506}{arXiv:2607.23506} (2026).
+
+\bibitem{LuRuan}
+D.~Lu, Y.~Ruan, D.~Wang, and F.~Xiao,
+\emph{Matrix equivalence to Smith normal form: new theoretical results for multivariate polynomial matrices},
+\href{https://arxiv.org/abs/2605.09286}{arXiv:2605.09286} (2026).
 \end{thebibliography}
 \end{document}
