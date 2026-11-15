@@ -16,6 +16,10 @@ half-plane theorem, stated as proved for all partner degrees in v0.36, holds on 
 is a conjecture beyond them (errata on EXP-051 and EXP-048); the incidence-map description is credited to
 T. Tao's public post of 2026-07-21.
 
+2026-11-15: foundational v0.15 published (10.5281/zenodo.24240161): it corrects v0.14, which stated that the
+announced map is surjective over R and that the plane C = 0 is asymptotic; the image is the complement of the
+curve Gamma of triple roots of W, and the fibers over (A, B, 0) have three points off B^2 = 16A (EXP-145).
+
 2026-11-14: correction versions published after an independent audit and review: cascade v0.08 (10.5281/zenodo.24226220, Poisson(2) false), foundational v0.14 (10.5281/zenodo.24226224, rigidity affine for one zero weight), planar v0.36 (10.5281/zenodo.24226225, fifth exclusion on its certified grid, tower lemma for non-proper-power tops, modular covector exclusions). Errata in EXP-010, EXP-044, EXP-046. The full revisions the audit asks for (methods, tables, related work) remain to be done.
 
 ## Current checkpoint, 2026-11-08
