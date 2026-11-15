@@ -148,9 +148,13 @@ archived records state them, are listed in Section~\ref{sec:methods}.
 Two structural inputs from the companion are used freely. First, every $\Gm$-equivariant
 Keller map of $\C^2$ is an automorphism; on the opposite-sign scope relevant to the
 three-dimensional mechanism it is linear, and with one zero weight it is affine
-(independently classified for all signatures by Shaska \cite{Shaska2026}). Second, at every
+(Shaska \cite{Shaska2026} proposes a classification by the signature of the weights and shows the positive-weight case for every sign pattern in dimension two). Second, at every
 weight ray the leading pair of a planar Keller map is Jacobian-dependent (the tropical bridge,
 EXP-013), which is the entry point of all edge analyses below.
+
+Table~\ref{tab:notation} fixes the notation used throughout.
+
+\input{tab_notation.tex}
 
 \section{Related work}\label{sec:related}
 
@@ -206,8 +210,8 @@ verification of Helali's equations and certificates.
 \'etale endomorphism of $\mathbb A^2$ under a small finite group of even order is an automorphism.
 Dubouloz and Palka \cite{DuboulozPalka2018} show that the equivariant statement fails for $\Gm$ on
 $\mathbb Q$-acyclic pseudo-planes, so torus-equivariance does not rigidify \'etale maps on general
-surfaces; the plane-specific statement is the one used here, with Shaska's classification
-\cite{Shaska2026} as independent confirmation. Three 2026 papers bear on the programme without
+surfaces; the plane-specific statement is the one used here, with Shaska's classification by the signature of the weights
+\cite{Shaska2026} as a parallel treatment. Three 2026 papers bear on the programme without
 changing the planar status: Long \cite{Long2026} gives an explicit counterexample to the rank-two
 Poisson conjecture, built from the three-dimensional counterexample; van den Essen \cite{vdEssen2026}
 recovers that counterexample by an elementary search and recalls the Magnus criterion for planar maps;
@@ -240,8 +244,8 @@ the moduli $998244353$ and $1004535809$ for interpolation of determinants (EXP-1
 and exact integer determinants where an endpoint of a support must be proved over characteristic
 zero (EXP-104, EXP-105, EXP-108). Singular supplies the standard bases and unit-ideal tests of
 EXP-137, EXP-139 and EXP-140 and the exact check of EXP-141; the Gr\"obner calculations of the atlas (for example
-EXP-120) run in sympy. The Singular version number is not recorded in
-the archived outputs of those experiments [U]. The Case 1 certificate attempts use PARI/GP
+EXP-120) run in sympy. The archived outputs of EXP-137 and EXP-139 to EXP-141 do not record the Singular version; the version installed on the device that ran them was
+Singular 4.3.2 when checked on 2026-11-14. The Case 1 certificate attempts use PARI/GP
 (\texttt{polredabs}, \texttt{nffactor}), python-flint over FLINT 3.0.1, Singular, and a C
 program for Chinese-remainder and rational reconstruction, run in WSL Ubuntu-24.04 (EXP-141,
 EXP-142). Singular is invoked as an external program on exported ideals, with the exact input and the printed output archived next to the record. The covector exclusions of Section~\ref{sec:ladder} use the primes $2147483629$ and
@@ -478,9 +482,9 @@ spanned by the ray $g_s = x^{ks}y^{ms+1}$, $s\ge0$, since $w(x^iy^j)=1-u$ means 
 $e_s=x^{ks}y^{ms}$. Then $J(x,g_s)=(ms+1)\,e_s$, and
 $J(x^uy^v,g_s)=x^{ks+u-1}y^{ms+v}\,[u(ms+1)-vks]=(ms+u)\,e_{s+d}$, because $ks+u-1=k(s+d)$,
 $ms+v=m(s+d)$ and $u(ms+1)-vks=ms+u$ (use $u-1=kd$, $v=md$) [D]. So
-\[
+\begin{equation}\label{eq:band}
 L(g_s)=(ms+1)\,e_s+a\,(ms+u)\,e_{s+d},
-\]
+\end{equation}
 with $B_s=ms+u$ a positive integer (this matches the exact banded formula verified on the grid
 $u\in\{2..7\}$, $v\in\{1..7\}$, $s\le5$ in EXP-029). Write the class of $Q$ as $\sum_{s=0}^{S}c_sg_s$.
 The row of $e_0$ gives $c_0=1$. For every $j\ge1$ the row of $e_{jd}$ gives
@@ -498,19 +502,26 @@ $(v, 1-u)$-weight strictly below $v$: $P = x + a\,x^u y^v + R$ is not a Keller c
 \end{theorem}
 
 \begin{proof}
-Write $P=P_{\mathrm{top}}+R$ with $P_{\mathrm{top}}=x+a\,x^uy^v$ and $L=L_{\mathrm{top}}+L_R$. The proof has
-five steps. (i) Every lower-weight monomial of $R$ feeds the constant's row only from classes strictly above
-the class of $y$; the shift formulas are exact (EXP-030, symbolic). (ii) On the classes of weight $kv$ the
-kernel of $L_{\mathrm{top}}$ is exactly the line spanned by $P_{\mathrm{top}}^k$, since
-$J(P_{\mathrm{top}},P_{\mathrm{top}}^k)=0$; this was refuted as an injectivity statement and repaired as a kernel
-statement, and it is machine-checked coefficient by coefficient on the grids $(2,2)$, $(3,2)$, $(4,6)$ with
-$k\le3$ (EXP-030, EXP-031). (iii) Absorb the kernel: $Q=H(P_{\mathrm{top}})+Q''$, which moves the sources
-$J(R,P_{\mathrm{top}}^k)$ into the class equation of $y$. (iv) The annihilation lemma below shows that every
-such source is the $L$-image of an explicit polynomial, hence is killed by every left-null covector of the
-completion matrix. (v) The class equation of $y$ then reduces to the pure chain of Theorem~\ref{thm:t1}, which
-has no solution at any truncation. The kernel identification is [MV] at the instances above and the remaining
-steps are exact identities, so the statement is marked [MV/D]; the danger tails $xy^3$, $y^3$ and their
-combination give pairings that are pure powers of $a$ over $\Q(a,b)$ and $\Q(a,b,c)$ at window $\le10$.
+Write $P=P_{\mathrm{top}}+R$ with $P_{\mathrm{top}}=x+a\,x^uy^v$, $w=(v,1-u)$, $L=J(P,\cdot)$ and $L_{\mathrm{top}}=J(P_{\mathrm{top}},\cdot)$;
+$P_{\mathrm{top}}$ is homogeneous of weight $v$.
+
+\emph{Shifts.} $L_{\mathrm{top}}$ raises weight by $u-1$, and $J(R,\cdot)$ raises it by less than $u-1$ because the monomials of $R$ have weight below $v$.
+
+\emph{Kernel.} $P_{\mathrm{top}}$ is not composite (not of the form $g(h)$ with $\deg g\ge2$): $P_{\mathrm{top}}(x,0)=x$ has degree one, whereas $g(h)(x,0)$ has a
+degree that is a multiple of $\deg g$ unless $h(x,0)$ is constant. For a non-composite polynomial the ring of constants of $J(P_{\mathrm{top}},\cdot)$ is
+$\C[P_{\mathrm{top}}]$ (Zaks; Nowicki's monograph on rings of constants of derivations; the reference is a pointer that was not read on a primary source [U]).
+Hence the kernel of $L_{\mathrm{top}}$ on the class of weight $kv$ is the line spanned by $P_{\mathrm{top}}^k$. The kernel statement is also
+machine-checked coefficient by coefficient on the grids $(2,2)$, $(3,2)$, $(4,6)$ with $k\le3$ (EXP-030, EXP-031); the first derivation, which asserted
+injectivity on every class, was refuted by the machine and repaired as a kernel statement.
+
+\emph{Top-down.} Suppose $J(P,Q)=1$ and let $Q_{\max}$ be the top weight component of $Q$, of weight $\sigma>1-u$. The top weight component of
+$J(P,Q)$ is $L_{\mathrm{top}}(Q_{\max})$, of weight $\sigma+u-1>0$, so it vanishes and $Q_{\max}=c\,P_{\mathrm{top}}^k$. Since $J(P,P^k)=0$, the polynomial
+$Q-cP^k$ solves the same equation, and its top weight is strictly smaller because $P^k$ has top weight component $P_{\mathrm{top}}^k$. Weights are
+integers, so after finitely many steps every class has weight at most $1-u$. The weight-$0$ component of $J(P,Q)$ is then $L_{\mathrm{top}}(Q_{1-u})$, since
+the contributions of $R$ and of lower classes have negative weight, and $L_{\mathrm{top}}(Q_{1-u})=1$ is impossible by Theorem~\ref{thm:t1}, whose proof
+uses only the class of weight $1-u$. The annihilation lemma is not needed for this all-degree statement; it is what makes a window covector kill the tail sources
+(danger tails $xy^3$, $y^3$ and their combination give pairings that are pure powers of $a$ over $\Q(a,b)$ and $\Q(a,b,c)$ at window $\le10$, EXP-031). The statement is
+[D] in general, with the kernel identification resting on the reference marked [U] and on the checked instances.
 \end{proof}
 
 \begin{theorem}[{[MV/D]}; every $x$-anchored edge falls (EXP-032)]\label{thm:t3}
@@ -527,17 +538,17 @@ Take $z$ primitive (otherwise write $z=z_0^e$ with $z_0$ primitive and apply the
 gives $J(E,y)=\varphi+kz\varphi'$ and $J(E,z)=mz\varphi/y$, hence $J(E,z^sy)=[(ms+1)\varphi+kz\varphi']z^s$,
 the formula the record verifies in symbolic coefficients for all $k,m,g\le3$ [MV]. For a class component
 $y\,f(z)$ of $Q$ the equation $J(E,yf)=1$ reads
-\[
+\begin{equation}\label{eq:classode}
 m\,z\,\varphi\,f'+(\varphi+k\,z\,\varphi')\,f=1 .
-\]
+\end{equation}
 If $f=\sum_{i\le D}f_iz^i$ with $f_D\ne0$, the coefficient of $z^{D+g}$ on the left is
 $(mD+kg+1)\,\varphi_g\,f_D$; every factor is nonzero and $D+g\ge1$, while the right side has degree $0$, so
 $f_D=0$, a contradiction; thus $f=0$ and the left side is $0\ne1$. The univariate kill is confirmed on $12$ configurations,
 with certificates that are pure powers of the top coefficient, and full windows are empty for binomial and
-trinomial edges including perfect-square and perfect-cube $\varphi$. The statement with a tail $R$ of strictly
-lower weight inherits steps (ii) to (v) of the proof of Theorem~\ref{thm:t2}: the kernels on the classes of
-weight $kv$ are exactly the powers $E^j$ (checked), the sources are absorbed, and Lemma~\ref{lem:annihilation}
-annihilates them.
+trinomial edges including perfect-square and perfect-cube $\varphi$. The statement with a tail $R$ of strictly lower weight follows from the top-down argument in the proof of Theorem~\ref{thm:t2} with the
+weights $(m,-k)$: $J(E,\cdot)$ raises weight by $k\ge1$ and $J(R,\cdot)$ by less than $k$; the ring of constants of $J(E,\cdot)$ is $\C[E]$ because $E$ is
+not composite ($E(x,0)=\varphi(0)\,x$ has degree one); each step subtracts $c\,P^j$; and the weight-$0$ component is $J(E,Q_{-k})=1$, excluded by the
+computation above. Instances: the kernels on the classes of weight $jm$ are exactly the powers $E^j$ (checked, EXP-032).
 \end{proof}
 
 \begin{theorem}[{[MV/D]}; the vertex dichotomy (EXP-033)]\label{thm:t4}
@@ -546,21 +557,17 @@ with the origin) of a Keller component with linear part $x$, then $P = x + f(y)$
 \end{theorem}
 
 \begin{proof}
-The record closes the edge fan axis by axis and then combines the cases. If $P=x\,\varphi(y)$ (direction $(0,1)$), grade by
-$(1,0)$: the operator preserves each $x$-degree and $L(x^sq)=x^s(\varphi q'-s\varphi'q)$, so the class equation
-of the constant is $\varphi(y)h'(y)=1$, which has no polynomial solution once $\deg\varphi\ge1$; the
-class-$s$ kernels are exactly $(x\varphi)^s$, full windows are empty including pure-$y$ tails, and the
-certificate for $x(1+c_1y)$ pairs to $-c_1^6$ (EXP-033). If $P=x\,\varphi(x)$, then $J(P,Q)=(x\varphi)'(x)\,Q_y$, so $Q_y=1/(x\varphi)'$ is not a polynomial
-unless $\varphi$ is constant. Finally let $(i,j)\ne(1,0)$ be the other endpoint of the boundary edge of $N(P)$
-that leaves $(1,0)$ away from the segment to the origin. If $i\ge1$ every lattice point of this edge is
-divisible by $x$, so the edge is an $x$-anchored edge $x\varphi(z)$ with an interior direction
-(Theorem~\ref{thm:t3}) or with $i=1$ the first case; either way it is excluded for a Keller component with
-tail [D, elementary polygon combinatorics]. The case $j=0$ is impossible, since then $(i,0)$ with $i\ge2$ would make
-$x$ a non-vertex. So $i=0$: the edge joins $(1,0)$ to a pure-$y$ vertex $(0,d)$, contains no further lattice points, and
-every other support point $(a,b)$ lies on the origin side of that edge, which for $a\ge1$ forces $(a,b)=(1,0)$. Hence the support is
-$\{x\}\cup\{y^b\}$ and $P=x+f(y)$. Machine verification on all three sides: samples with vertex $x$ and mixed
-support are all inconsistent; triangular samples are consistent (they are components); $x$-swallowed samples such as
-$x+(x+y)^2$ and $x+(x+2y)^3$ are consistent, which is the escape route the next section studies.
+Let $(i,j)$ be the other endpoint of the boundary edge of $N(P)$ that leaves the vertex $(1,0)$ away from the segment to the origin. The case $j=0$ is impossible,
+since then $(i,0)$ with $i\ge2$ would make $x$ a non-vertex. If $i\ge2$, every lattice point of the edge is divisible by $x$, so the edge is an $x$-anchored edge
+$x\varphi(z)$ with interior direction $(i-1,j)$, $i-1,j\ge1$, and it is the top edge for the weight $(j,-(i-1))$; Theorem~\ref{thm:t3} excludes $P$ [D, elementary polygon
+combinatorics]. If $i=0$, the edge joins $(1,0)$ to a pure-$y$ vertex $(0,d)$, contains no further lattice points, and every other support point $(a,b)$ lies on the
+origin side of that edge, which for $a\ge1$ forces $(a,b)=(1,0)$; hence the support is $\{x\}\cup\{y^b\}$ and $P=x+f(y)$. If $i=1$, the support lies in $\{i\le1\}$, so
+$P=x\,\varphi(y)+f(y)$ with $\deg\varphi\ge1$. Grade by the $x$-degree. For $Q$ with top $x$-degree $s\ge1$ and top coefficient $q_s(y)$, the component of $J(P,Q)$
+of $x$-degree $s$ is $x^s(\varphi q_s'-s\varphi'q_s)=x^s\varphi^{s+1}(q_s/\varphi^s)'$, because the part $f(y)$ of $P$ lowers the $x$-degree. If $J(P,Q)=1$ this component
+vanishes, so $q_s=c\,\varphi^s$, and $Q-cP^s$ solves the same equation with smaller top $x$-degree, since $P^s=x^s\varphi^s+(\text{lower }x\text{-degree})$. At $s=0$ the equation
+is $J(P,q(y))=\varphi\,q'=1$, which has no polynomial solution for $\deg\varphi\ge1$. So this case does not occur. Machine verification on all three sides: samples with vertex
+$x$ and mixed support are all inconsistent (the certificate for $x(1+c_1y)$ pairs to $-c_1^6$, EXP-033); triangular samples are consistent (they are components);
+$x$-swallowed samples such as $x+(x+y)^2$ and $x+(x+2y)^3$ are consistent, which is the escape route the next section studies.
 \end{proof}
 
 \begin{lemma}[Annihilation (EXP-036)]\label{lem:annihilation}
@@ -574,9 +581,9 @@ pairings for out-of-window preimages) reproduces the computed values exactly.
 
 \begin{proof}
 Since $J(f,f)=0$ one has $J(f,f^{k-1}g)=f^{k-1}J(f,g)$. Therefore
-\[
+\begin{equation}\label{eq:leibniz}
 J(m,P^k)=kP^{k-1}J(m,P)=-kP^{k-1}J(P,m)=-kJ(P,P^{k-1}m)=-kL(P^{k-1}m).
-\]
+\end{equation}
 A left-null covector of the completion matrix
 kills every $L(m')$ with $m'$ in the ansatz, hence every source whose preimage $P^{k-1}m$ lies in it. The pairing of a
 source is zero exactly when $\deg(P^{k-1}m)\le N$; the nonzero pairings of a first run with fixed windows ($15$, $30a$, $30$, $45$
@@ -593,7 +600,7 @@ core is therefore precise: components whose polygon swallows $x$ with a mixed st
 \begin{proposition}[{[MV]}; the diagonal corner (EXP-035)]
 For $B = x^i y^j$, $i, j \ge 1$:
 $J(B^p, x^a y^b) = p (ib - ja)\, x^{ip + a - 1} y^{jp + b - 1}$, with kernel exactly the
-powers of $B$; no monomial gives $J(B^p, \cdot)$ a constant term. The mixed corner is clean;
+powers of $B$ when $B$ is primitive; no monomial gives $J(B^p, \cdot)$ a constant term. The mixed corner is clean;
 the obstruction lives on the staircase of Newton vertices joining the swallowed linear
 vertex to the corner.
 \end{proposition}
@@ -666,7 +673,7 @@ columns) exists iff the right side vanishes on $\ker B$; on the resonance this i
 injective. The right-hand side of the Keller equation, the constant, sits in an old row, so the pairing does not change.
 Across the active resonance step $8\to9$ at $(2,1,2)$ the window-$9$ certificate restricts to the window-$8$ one on all $52$
 common rows with a single ratio $2$ and pairing ratio $2$ (EXP-046); the measured window law, with pairings $-c_Na^N$ and
-odd-prime $2N-3$ ratios from $N=7$, is this tower seen through the clearing normalization (EXP-044).
+ratios $2N-3$ up to the clearing content (a prime at $N=7,8,10,11$), is this tower seen through the clearing normalization (EXP-044).
 \end{proof}
 
 \begin{remark}
@@ -705,7 +712,7 @@ $x+a\,x^2y+b\,x^2+c\,x^3y^2$ of Theorem~\ref{thm:t6}: the pure power $x^2$ makes
 polygon, and the points $x$, $x^2y$, $x^3y^2$ form an $x$-anchored edge $x\,\varphi(xy)$ of the kind excluded by Theorem~\ref{thm:t3} when
 it is the top edge; the staircase transport has to carry the Keller constant from that edge down to the constant's row. Figure~\ref{fig:window}
 shows the clearing law of the window certificates at $(2,1,2)$: the integer $c_N$ in the pairing $-c_Na^N$ grows by a positive rational ratio at each window,
-the ratios from $N=7$ on being odd primes $2N-3$ up to the normalization.
+the ratios from $N=7$ on being $2N-3$ up to the clearing content (a prime at $N=7,8,10,11$).
 
 \begin{figure}[t]
 \centering
@@ -725,14 +732,7 @@ the ratios from $N=7$ on being odd primes $2N-3$ up to the normalization.
 
 \begin{figure}[t]
 \centering
-\begin{tikzpicture}[x=1.2cm,y=0.55cm,font=\scriptsize]
-  \draw[->] (4.6,0)--(11.6,0) node[right]{$N$};
-  \draw[->] (4.6,0)--(4.6,8.4) node[above]{$\log_{10}c_N$};
-  \foreach \n in {5,6,7,8,9,10,11} \draw (\n,0)--(\n,-0.15) node[below]{\n};
-  \foreach \k in {2,4,6,8} \draw (4.6,\k)--(4.45,\k) node[left]{\k};
-  \draw[thick,blue!60!black] (5,2.623)--(6,3.100)--(7,4.142)--(8,5.256)--(9,5.256)--(10,6.486)--(11,7.765);
-  \foreach \p in {(5,2.623),(6,3.100),(7,4.142),(8,5.256),(9,5.256),(10,6.486),(11,7.765)} \fill[blue!60!black] \p circle (0.07);
-\end{tikzpicture}
+\input{fig_window.tex}
 \caption{The clearing law at $(u,v,d)=(2,1,2)$: $\log_{10}c_N$ against the window $N$ for $c_N=420,1260,13860,180180,180180,3063060,58198140$ (EXP-044). Consecutive ratios are $3,11,13,1,17,19$; the exponent of $a$ in the pairing equals $N$ at every certified window.}\label{fig:window}
 \end{figure}
 
@@ -755,17 +755,26 @@ sampled degree-72 shapes with the GGHV corner $(16, 56)$ have empty filtered win
 $N = 108$ in about one second each (EXP-050).
 \end{theorem}
 
-\begin{theorem}[{[MV/D]}; the half-plane tower (EXP-051)]\label{thm:halfplane}
-Let $P = x + R$ whose total-degree top form attains $\min\{p - q\}$ over the support
+\begin{theorem}[{[MV]}; half-plane certificates at the sampled windows (EXP-051)]\label{thm:halfplane}
+Let $P = x + R$ have a total-degree top form that attains $\min\{p - q\}$ over the support
 (the swallowed-staircase geometry), and let $H$ be the $y$-heavy half-plane of rows
-$\{i \le j\}$. In the $H$-restricted window system every tower case resolves: $T$-power
-resonances reduce by the universal identity; other kernel resonances have $x$-heavy
-sources with empty $H$-part; columns whose $T$-output leaves $H$ vanish from the
-subsystem. Hence \emph{one} $H$-certificate at one window excludes $P$ at \emph{all} partner degrees,
-proper-power tops included. At the frontier, the degree-32 $B = 16$-flavor sample and
-the degree-72 corner-$(16, 56)$ sample carry $H$-certificates (pairings $-256$, $-32$)
-and are excluded at all partner degrees.
+$\{i \le j\}$. The $H$-restricted window systems carry certificates with nonzero pairing at the following samples and
+windows: $(u,v,d)=(2,2,2)$ at $N=7,\dots,10$ (pairings $-32a^4$, $-64a^4$, $-64a^5$, $-512a^5$); the degree-$32$ sample
+$x+R_0(1)^2+x^2$ of $B=16$ flavor at $N=14$ ($380$ $H$-rows, pairing $-256$); and the degree-$72$ sample
+$x+2(x^2y^7)^8+x^2$ with the corner $(16,56)$ at $N=12$ ($135$ $H$-rows, pairing $-32$). Each certificate excludes the partners of the sample
+of degree at most $N$.
 \end{theorem}
+
+\begin{conjecture}[{[C]}; propagation of $H$-certificates]\label{conj:halfplane}
+An $H$-certificate at one window $N\ge\deg P-1$ excludes $P$ at every partner degree, proper-power tops included.
+\end{conjecture}
+
+The recorded argument for this propagation (EXP-051) rests on three ingredients: the resonances that are powers of $T$ reduce by the universal
+identity, the columns whose $T$-output leaves $H$ vanish, and the kernel resonances that are not powers of $T$ have $x$-heavy sources with
+empty $H$-part. The last ingredient holds for $T=a(xy)^2$ (the sources are $x^sy^{s-1}$) but not for the two frontier samples: for the degree-$32$ sample, with top
+$(xy^3)^8$, the resonances $(xy^3)^s$, $s=4,\dots,7$, lie in the kernel of $J(T,\cdot)$ and their sources $L(\kappa)$ lie entirely in $H$ [D]; for the degree-$72$
+sample $J(x,(x^2y^7)^s)=7s\,x^{2s}y^{7s-1}$ also lies in $H$ [D]. The degree-$32$ and degree-$72$ samples are therefore excluded
+only at the windows computed, and the propagation is open; the odd-resonance derivation for proper-power tops is open problem (5) of Section~\ref{sec:limits}.
 
 Two instrument-level results complete the toolkit. The \emph{matched-pair law} (EXP-038):
 for cornered pairs $P = \alpha B^p + P_{\mathrm{sub}}$, $Q = \beta B^q + Q_{\mathrm{sub}}$,
@@ -812,8 +821,9 @@ Chinese-remainder representative error before production) are part of every run.
 \emph{Statistics.} The results are exact; no random sampling decides a statement. Sampling enters in two places and is labelled
 where it does: the sampled shapes at the open degree pair (EXP-050, EXP-051) and the sampled points on residual curves (EXP-125, EXP-132),
 which select a chart and never certify it; the certificate is the exact computation that follows. Modular statements carry their
-caveat in the text: an infeasible system modulo one prime is conclusive over $\Q$ for an all-integer system, while a bound over the
-rationals needs a height argument, which is what Algorithm~\ref{alg:crt} supplies.
+caveat in the text: an infeasible system modulo a prime $p$ excludes over $\Q$ every solution whose denominators are prime to $p$, and
+it excludes all rational solutions when $p$ is good for the coefficient matrix (equal rank over $\mathbb F_p$ and over $\Q$); a statement over $\Q$
+from modular vanishing needs a height argument, which is what Algorithm~\ref{alg:crt} supplies.
 
 \emph{Time limits and outcomes.} An exact step that does not finish inside its time limit is reported as unknown, never as a
 result: the third chart of EXP-102 stopped at $304$ s, an exact standard basis over $\Q$ with the field polynomial adjoined stopped at $374$ minutes
@@ -825,28 +835,7 @@ and reports when a deterministic choice fails (for example, no single sampled ba
 each exclusion result, the scope the computation verified, the window, the pairing or certificate and the record, so that a
 theorem and its verified scope are read together.
 
-\begin{table}[t]
-\centering
-\caption{Exclusion results with the scope the computations verified. The pairing is the nonzero monomial that the cleared certificate produces; $c_N$ is the clearing integer of the window law; a shape marked ``all degrees'' is covered by Lemma~\ref{lem:tower} or Theorem~\ref{thm:t6} from the window shown.}\label{tab:exclusions}
-{\footnotesize
-\begin{tabular}{@{}P{2.4cm}P{3.6cm}P{2.4cm}P{4.4cm}P{1.3cm}@{}}
-\toprule
-\textbf{Result} & \textbf{Verified scope} & \textbf{Window} & \textbf{Pairing or certificate} & \textbf{Records}\\
-\midrule
-Theorem~\ref{thm:t1}, two-term shapes & $u\in\{2..7\}$, $v\in\{1..7\}$, $s\le5$; $h$-form $p,q\le4$; $P=x+ax^{54}y^{81}$ to $S\le8$ & ray truncation $S$ & chain products, seven measured pairings with $a$-exponents $2$, $4$, $5$, $6$; $2$; $2$; $3$ & 029\\
-Theorem~\ref{thm:t2}, lower-weight tails & grids $(2,2),(3,2),(4,6)$, $k\le3$; danger tails $xy^3$, $y^3$ & window $\le10$ & pure powers of $a$, free of $b,c$ & 030, 031\\
-Theorem~\ref{thm:t3}, $x$-anchored edges & $k,m,g\le3$ symbolic; $12$ univariate configurations & class ODE & $60a^3$ for the binomial edge; pure powers of the top coefficient & 032\\
-Theorem~\ref{thm:t4}, vertex $x$ & axis cases, mixed and triangular samples & full windows & $-c_1^6$ at $x(1+c_1y)$ & 033\\
-Theorem~\ref{thm:t5}, window form & the eight points of $\{2,3\}\times\{1,2\}\times\{2,3\}$ & $N=7$ & $-13860a^7$, $-4620a^7b$, $-32a^4$, $-81b^4$, $-630a^4$, $-2730a^7$, $-1155a^3$, $-165a^4$ at $(2,1,2)$, $(2,1,3)$, $(2,2,2)$, $(2,2,3)$, $(3,1,2)$, $(3,1,3)$, $(3,2,2)$, $(3,2,3)$ in turn & 042\\
-Window law at $(2,1,2)$ & $N=5..9$ & $5..9$ & $-c_Na^N$, $c_N=420$, $1260$, $13860$, $180180$, $180180$ & 042\\
-Tower and clearing law & $N=5..11$ at $(2,1,2)$ & $6\to7$, $7\to8$, $8\to9$ & $c_N=420$, $1260$, $13860$, $180180$, $180180$, $3063060$, $58198140$; ratios $3$, $11$, $13$, $1$, $17$, $19$ & 044, 046\\
-Theorem~\ref{thm:t5all}, all degrees & six shapes with a non-proper-power top & $N=7$ base & see the order of Theorem~\ref{thm:t5all} & 042, 046\\
-Theorem~\ref{thm:t6}, universal tower & $x+ax^2y+bx^3$; $x+ax^2y+bx^2+cx^3y^2$ & one cleared window & $-4620a^7b$; $-4620c^4$ & 049\\
-Theorem~\ref{thm:halfplane}, half-plane tower & $(2,2,2)$ at $N=7..10$; degree-$32$ sample; degree-$72$ sample & $N=7..10$; $14$; $12$ & $-32a^4$, $-64a^4$, $-64a^5$, $-512a^5$; $-256$ ($380$ rows); $-32$ ($135$ rows) & 051\\
-Sampled degree-72 shapes & two shapes with corner $(16,56)$ & $N=108$ & empty filtered windows, $143$ unknowns, $1.2$ to $1.4$ s each & 050\\
-\bottomrule
-\end{tabular}}
-\end{table}
+\input{tab_exclusions.tex}
 
 \section{Results}\label{sec:results}
 
@@ -897,29 +886,7 @@ in $535$ classes with largest diagonal block $22$ before filtering: sampled shap
 the transport (EXP-050); the open territory is the twenty-three configurations of maximal degree in $[125,150]$ below, the larger
 degrees, and $(72, 108)$ itself, whose cost for the whole family is measured in Section~\ref{sec:helali}.
 
-\begin{table}[t]
-\centering
-\caption{The frontier ladder: gcd and degree floors for a counterexample, with the source theorem and the evidence behind the reading. P: read in the primary text of the paper that states or reproves it. S: stated by a primary text that was read and that attributes it to another work (the cited original was not read for the statement).}\label{tab:ladder}
-{\footnotesize
-\begin{tabular}{@{}P{3.3cm}P{4.0cm}P{3.3cm}P{1.6cm}@{}}
-\toprule
-\textbf{Constraint} & \textbf{Statement} & \textbf{Source} & \textbf{Evidence}\\
-\midrule
-$B=1$ & excluded & Magnus \cite{Magnus1955} & S\\
-$B\le2$ & excluded & Nakai--Baba \cite{NakaiBaba1977} & S\\
-$B\le8$ or $B$ prime & excluded & Appelgate--Onishi \cite{AppelgateOnishi1985}, Nagata \cite{Nagata1989} & S\\
-$B\ne p$; $B\ge9$ & Lemma 6.1 (part II); Corollary 8.9 (part III) & Abhyankar \cite{Abhyankar2008} & S\\
-$B\ge16$ & Heitmann's bound; elementary reproof & \cite{Heitmann1990}, \cite{GGV2017} & P (reproof)\\
-$B\ne2p$; $B=16$ or $B>20$ & Corollary 7.12 & \cite{GGV2017} & P\\
-$B=16$ normal form & forced directions, $l_{4,-1}(P)=\lambda R_0^m$, $R_0=x(xy^4-\lambda_0)^3$ & \cite{GGV2017}, Cor.\ 7.13, Thm.\ 8.12 & P\\
-$\max\deg\ge101$ & degrees $\le100$ discarded; detail only for the smallest case & Moh \cite{Moh1983}, as read in \cite{GGHV2022} & S\\
-$\max\deg\le150$ & $34$ possible configurations enumerated & \cite{GGHV2017} & P\\
-$\max\deg\ge125$ or $(\deg P,\deg Q)\in\{(72,108),(108,72)\}$ & Theorem 2.1 & \cite{GGHV2022} & P\\
-Chain of maximal degree $144$ & excluded by the closing remark ($A_0'=(8,4)$ is not a possible last lower corner) & \cite{GGV2}; EXP-082 & P\\
-Other $23$ configurations in $[125,150]$ & undecided by these sources (four share a corner with the remark but fail its hypotheses) & EXP-083, EXP-094 & P\\
-\bottomrule
-\end{tabular}}
-\end{table}
+\input{tab_ladder.tex}
 
 \emph{Beyond degree 125.} The chain $(8,40)/(8,28)/(11/4,7)$, of maximal degree $144$,
 is already excluded in the published literature: the closing remark of \cite{GGV2} states
@@ -938,8 +905,8 @@ Guccione--Guccione--Horruitiner--Valqui \cite{GGHV2022} (transcription verified 
 sources). The proof starts from the hypothetical pair with corner data $A_0=(8,28)$ and $(m,n)=(3,2)$, swaps the
 coordinates, cuts the lower edge of the polygon, cuts the top edge, and applies the Laurent morphism
 $(x,y)\mapsto(x^{-1},x^4y)$, which is not an automorphism and turns the bracket $1$ into $x^2$. The lower-edge step has
-three outcomes, the \emph{branches} a), b) and c): a lower side with corners $(-2,0),(0,0),(28,8)$, or
-$(-3,0),(0,0),(28,8)$, or $(-3,0),(0,0),(16,4),(28,8)$ (each times $(m,n)$). After the final inversion, branches a) and b) give
+three outcomes, the \emph{branches} a), b) and c): a lower side with corners $(-2,0),(0,0),(28,8),(0,1)$, or
+$(-3,0),(0,0),(28,8),(0,1)$, or $(-3,0),(0,0),(16,4),(28,8),(0,1)$ (each times $(m,n)$). After the final inversion, branches a) and b) give
 the polygons of \emph{Case 2} and branch c) gives those of \emph{Case 1}: the existence of a pair with
 $[P,Q]=x^2$ in $K[x,x^{-1},y]$ supported in
 \[
@@ -968,8 +935,8 @@ that Helali treats are exactly these two cases. The original paper's unsolved sy
   \fill[red!70!black] (12,21) circle (0.12) node[right]{\tiny $(12,21)$};
   \fill[red!70!black] (12,24) circle (0.12) node[above]{\tiny $(12,24)$};
   \fill[red!70!black] (0,12) circle (0.12) node[left]{\tiny $(0,12)$};
-  \node[blue!60!black] at (4.2,5) {$N(P)$};
-  \node[red!70!black] at (9.3,14) {$N(Q)$};
+  \node[blue!60!black] at (3,3) {$N(P)$};
+  \node[red!70!black] at (4.5,15) {$N(Q)$};
 \end{tikzpicture}
 \caption{The polygons of Proposition~4.3 for the open pair. Case 1: $N(P)$ (blue, $61$ lattice points) and $N(Q)$ (red, $125$ lattice points). Case 2 removes the vertices $(0,8)$ and $(0,12)$: its polygons are bounded by the dashed segments from $(8,16)$ and $(12,24)$ to the origin. Vertices are those printed in the proposition.}\label{fig:polygons}
 \end{figure}
@@ -1031,8 +998,8 @@ annihilation lemma $J(m, P^k) = -k\,L(P^{k-1} m)$ of Section~\ref{sec:staircase}
 $\varepsilon$-degree $d$ exists iff a finite linear system over the interior
 coefficients is feasible. We find [MV]: \textbf{no covector of degree $1$}
 (EXP-067; eight ``diagonal'' operators obstruct, the full system infeasible modulo
-two independent primes; over $\mathbb{Q}$ this excludes every covector whose denominators are prime
-to both, and no good-prime argument is given for the rest); and \textbf{no covector of
+the prime $2147483629$; over $\mathbb{Q}$ this excludes every covector whose denominators are prime
+to it, and no good-prime argument is given for the rest); and \textbf{no covector of
 degree $2$} (EXP-072; the support $\{(0,1),(1,0),(3,5)\}$ obstructs, again
 conclusive modulo two primes). At degree $3$ no obstruction is found through the
 pair and all triple supports (EXP-071, EXP-073), but the quadruple support
@@ -1094,14 +1061,7 @@ stabilizes at a nonzero space and the ladder does not terminate.
 
 \begin{figure}[t]
 \centering
-\begin{tikzpicture}[x=0.55cm,y=0.036cm,font=\scriptsize]
-  \draw[->] (0,0)--(16,0) node[right]{step};
-  \draw[->] (0,0)--(0,130) node[above]{dimension};
-  \foreach \s in {1,3,5,7,9,11,13,15} \draw (\s,0)--(\s,-3) node[below]{\s};
-  \foreach \d in {0,39,80,121} \draw (0,\d)--(-0.15,\d) node[left]{\d};
-  \draw[thick,blue!60!black] (1,121)--(2,111)--(3,101)--(4,91)--(5,81)--(6,74)--(7,67)--(8,60)--(9,54)--(10,49)--(11,45)--(12,42)--(13,40)--(14,39)--(15,39);
-  \draw[dashed,gray] (0,39)--(15.6,39);
-\end{tikzpicture}
+\input{fig_chain.tex}
 \caption{Dimension of the descending chain $W_{k+1}=\sum_iA_iW_k$ of the pinned corrector ladder: $121$, $111$, $101$, $91$, $81$, $74$, $67$, $60$, $54$, $49$, $45$, $42$, $40$, $39$, $39$ (EXP-064). The dashed line is the stable dimension $39$.}\label{fig:chain}
 \end{figure}
 \subsection{Necessary conditions from the original pair (EXP-095/096)}\label{sec:necessary}
@@ -1225,7 +1185,7 @@ by their time limit (EXP-102 at $304$ s, EXP-134 at $240$ s) and are not results
 \begin{figure}[t]
 \centering
 \input{fig_times.tex}
-\caption{Run time in seconds of the atlas records that state one (log scale); labels are experiment numbers (EXP-$nnn$). Red: runs stopped by their time limit. The values are read from Table~\ref{tab:atlas}.}\label{fig:times}
+\caption{Run time in seconds of the atlas records that state one (log scale); labels are experiment numbers (EXP-$nnn$). Red: runs stopped by their time limit. EXP-110 (more than $20$ min) is not drawn. The values are read from Table~\ref{tab:atlas}.}\label{fig:times}
 \end{figure}
 
 \begin{landscape}
@@ -1999,7 +1959,8 @@ programmes are two attacks on one system, one modular and total, the other exact
 
 \emph{Attempts at an exact Case 1 certificate} (EXP-139 to EXP-143). The aim is a proof that Case~1 is empty: a unit-ideal
 certificate for the $13$ equations over $K$ on both branches. The gates pass in every run: with the branch parameter kept as a variable the equations reduce to the unit ideal at the five primes above (EXP-139), and the upper-layer control is non-unit of
-dimension $4$ at each. The exact computations did not finish.
+dimension $4$ at each. The exact computations did not finish; Table~\ref{tab:cost} collects their costs.
+\input{tab_cost.tex}
 \begin{itemize}
 \item An exact Singular standard basis over $\Q$ of the $13$ equations together with $H(u)$, in the unknowns $q_0,\dots,q_5,u$, ran for
 $374$ minutes and was stopped by its six-hour limit (EXP-139).
@@ -2030,32 +1991,20 @@ Conditionally on \cite[Proposition~4.3]{GGHV2022} being exhaustive, the exclusio
 has an independent proof of its second half (Case 2) and independent verification and evidence for its first
 half (Case 1). Priority for the exclusion is Helali's.
 
-\begin{table}[t]
-\centering
-\caption{Measured costs of the exact attempts on Cases 1 and 2. ``Unknown'' means the computation reached its limit without a conclusion.}\label{tab:cost}
-{\footnotesize
-\begin{tabular}{@{}P{1.4cm}P{3.5cm}P{3.6cm}P{2.7cm}P{2.3cm}@{}}
-\toprule
-\textbf{Record} & \textbf{Method} & \textbf{Object} & \textbf{Budget used} & \textbf{Outcome}\\
-\midrule
-EXP-137 & Singular \texttt{std} over $K$ & Case 2: $25$ equations, $3$ parameters & $3$ s & unit ideal\\
-EXP-137 & unit test modulo five primes & Case 1: $13$ equations, both branches & n/r & unit at every prime\\
-EXP-139 & Singular \texttt{std} over $\Q$ & $E_1..E_{13}$ and $H(u)$ in $q_0..q_5,u$ & $374$ min (six-hour limit) & unknown\\
-EXP-140 & Singular \texttt{std} over $\Q$ & quintic subfield, $E'_1..E'_{13}$, $h(v)$ & $23{,}611$ s & unknown\\
-EXP-141 & multi-modular cofactors & $13$ equations over $L$, unsplit & $6{,}049$ primes & unknown, $>28{,}000$ digits\\
-EXP-142 & multi-modular cofactors & nine equations per branch & $6{,}085$ and $6{,}069$ primes & unknown, $>28{,}000$ digits\\
-EXP-143 & same, continued & same & $20{,}217$ and $20{,}134$ primes & unknown, $>94{,}000$ digits\\
-\bottomrule
-\end{tabular}}
-\end{table}
+
 
 \subsection{The counterexample as an incidence map, and its exclusion in the plane}\label{sec:incidence}
 
 A complementary lens sharpens why the two-variable case resists the very mechanism
-that settled dimension three. The identification below, of the 2026 counterexample with a
-coefficient map, is this programme's own derivation, re-verified identity by identity in EXP-086 to EXP-090;
-every [MV] of this subsection is an identity or an invariant computed in those records, and no external derivation is
-cited for it. The 2026 counterexample is not an arbitrary polynomial
+that settled dimension three. The identification below is not ours. T.~Tao describes the 2026 counterexample as the multiplication map $(L,Q)\mapsto LQ$ of a
+linear and a quadratic polynomial, restricted by $\operatorname{Res}(L,Q)=1$ and one coefficient fixed to $1$; he shows that the
+scaling $(L,Q)\mapsto(\lambda L,\lambda^{-1}Q)$ that the product forgets is detected by the resultant, so the restricted map is
+locally injective (in fact \'etale), that it is generically three-to-one, that its domain is an affine space, and that it is the
+announced example up to trivial changes of variable \cite{Tao2026}; the post states that an AI chatbot was used to discuss the
+problem and to confirm calculations. This programme re-verified each of these identities in exact arithmetic (EXP-086 to
+EXP-090), and every [MV] of this subsection cites the record that computes it. The extension to the incidence family across
+$n$ (the normalized slice $X_n$, its Danielewski core $\{x^{n-2}W=B^{n-2}-1\}$, and the resultant weight $n-2$ as the invariant
+that decides $X_n\cong\mathbb A^n$) and its consequences in dimension two are the programme's own (EXP-087 to EXP-090). The 2026 counterexample is not an arbitrary polynomial
 map: it is the coefficient map of the product of a linear and a quadratic binary
 form, restricted to a normalized slice. Concretely, on
 $V_1\times V_2\to V_3\times\mathbb{A}^1$, $(L,Q)\mapsto(LQ,\operatorname{Res}(L,Q))$,
@@ -2085,11 +2034,11 @@ hence not $\mathbb{A}^2$; and in the finite-root chart the source is $\mathbb{A}
 equation is a nonconstant unit, while $\mathcal{O}(\mathbb{A}^2)^*=\C^*$. For $n=3$ the weight is $1$, the unique value that is both
 nonzero and linear, giving $X_n\cong\mathbb{A}^n$; for $n\ge4$ it is $\ge2$, the core has $n-2$ boundary components and the
 class group is obstructed (rank about $n-3$ in the record, derived [D] from the component count). Thus the exact structure of the known
-counterexample cannot occur in the plane [MV], a conclusion consistent with the
+counterexample cannot occur in the plane [D], a conclusion consistent with the
 $\mathbb{G}_m$-equivariant rigidity theorem of the companion paper \cite{SLfoundational},
 which forbids the torus-graded planar
 analog independently. This excludes the incidence/root-selection class, the structure
-of every constant-Jacobian noninvertible map known to date; it is strong structural
+of the known counterexample family; it is strong structural
 evidence for $JC(2)$, not a proof, since a planar counterexample of some entirely
 different structure is not addressed. A naive lowering to two dimensions (a linear form times a linear form) is also degenerate
 for the same reason: it forces $ad=1$, $bc=0$, a singular coordinate hyperplane (EXP-086).
@@ -2113,7 +2062,11 @@ the minimal $P$-class as the diagonal block: genuine components carry classes be
 
 \emph{The tower against window growth.} A window certificate settles one window. The tower lemma turns it into an all-degree statement, but only when the top form is not a
 proper power. For a proper-power top, the left-null space at window $9$ of $(2,2,2)$ has dimension $20$, two certificates have nonzero pairing, and only one kills the odd resonance; the
-supported-in-the-half-plane certificate does, which is why the half-plane tower is a separate result (EXP-048, EXP-051).
+certificate supported in the half-plane does, which is why half-plane certificates are reported separately (EXP-048, EXP-051).
+
+Table~\ref{tab:ablation} collects the comparisons, each read from the records named in its row.
+
+\input{tab_ablation.tex}
 
 \emph{Strongly connected blocks against dense determinants.} The dense pullback of the third minor of EXP-101, of combined direction rank $121$, exceeded its five-minute time limit (EXP-102); the
 block product over the cyclic components of the support graph computes the selected $125\times125$ determinant in $5.3$ s (EXP-112), and the largest block of the $d=1$ chart takes $6.75$ s
@@ -2138,7 +2091,7 @@ exceeded $20{,}000$ primes (EXP-143). The obstacle is the height of the certific
 A search of the literature (the sources of Section~\ref{sec:frontier}) found no prior
 statement of Theorems~\ref{thm:t1} or \ref{thm:t2}. For the equivariant rigidity theorem of
 the companion paper \cite{SLfoundational}, Shaska \cite{Shaska2026}, in work submitted on
-2026-07-22, independently proves the full all-signature classification.
+2026-07-22, treats the same question by the signature of the weights; the body of that paper was not read for the zero-weight case [U].
 Same-sign actions may give nonlinear triangular automorphisms, one zero weight gives affine
 maps, and opposite-sign actions give a linear map. No priority or novelty claim is made for that classification.
 Theorem~\ref{thm:t3} was not found as stated, but its
@@ -2174,10 +2127,10 @@ has no recorded proof and is not claimed.
 \item \emph{The covector exclusions are modular.} Degrees $1$, $2$ and $3$ are excluded by infeasibility modulo two primes (one prime at degree $1$) of all-integer systems; over $\Q$ this
 excludes every covector whose denominators are prime to those primes, and no good-prime argument is given for the rest. The sweeps are one-sided: a feasible support does not establish existence.
 \item \emph{The atlas is partial.} It closes sub-families of the $51$ interior coefficients (a four-coefficient restriction, with the transverse coefficient $(2,8)$ closed only on the direct $A=0$ boundary
-and on one section), not the family. Of $238$ cells of Table~\ref{tab:atlas}, $29$ are not recorded. The closures are exact inside the persisted $302$-row model, whose row pool was audited (EXP-111).
+and on one section), not the family. Of $238$ cells of Table~\ref{tab:atlas}, $26$ are not recorded. The closures are exact inside the persisted $302$-row model, whose row pool was audited (EXP-111).
 \item \emph{Case 1 is not closed.} The independent evidence is modular at five primes, the exact attempts did not finish, and the reduction from the $13$ equations to the systems of Helali's identities was not reproduced. The
 whole exclusion of $(72,108)$ is conditional on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the transcription of its polygons.
-\item \emph{Software.} The Singular version is not recorded in the archived outputs [U], and the run times of several records are not recorded (n/r in Table~\ref{tab:atlas}).
+\item \emph{Software.} The archived outputs do not record the Singular version (4.3.2 on the device when checked), and the run times of several records are not recorded (n/r in Table~\ref{tab:atlas}).
 \item \emph{Literature.} The statements about published work were checked against the cited sources as of 2026-07-22; several classical statements were read through a source that attributes them (marked S in Table~\ref{tab:ladder}),
 and the second claimed exclusion of $(72,108)$ is recorded without a reference [U].
 \end{itemize}
@@ -2225,12 +2178,14 @@ Section~\ref{sec:methods} are in Table~\ref{tab:repro}, and each of the costs qu
 \path{manuscripts/jacobian-conjecture/planar/make_tables.py} builds Tables~\ref{tab:atlas} and~\ref{tab:repro} from the records and refuses to write a cell whose quotation is absent from its
 record; the experiment tests of the repository, such as \path{tests/test_jacobian_exp137.py}, check the structural statements of the independent verification. The large intermediate residues of the
 Case 1 certificate runs are kept outside the repository, in the data root of the programme, and the records list how to continue them. Software: sympy (version recorded in EXP-001), Singular (version not
-recorded), PARI/GP, python-flint over FLINT 3.0.1 and a C reconstruction program, run in WSL Ubuntu-24.04 for the Case 1 certificates.\par}
+recorded in the outputs; 4.3.2 when checked), PARI/GP, python-flint over FLINT 3.0.1 and a C reconstruction program, run in WSL Ubuntu-24.04 for the Case 1 certificates.\par}
 
 \small
 \begin{thebibliography}{99}
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
-2026-07-20; map produced with Claude Fable 5 (Anthropic); question posed by Akhil. % voice-ok: external attribution, as the announcement states it
+2026-07-20; map produced with Claude Fable 5 (Anthropic); question posed by Akhil. The post itself was not fetched and no address is recorded [U]. % voice-ok: external attribution, as the announcement states it
+\bibitem{Tao2026} \raggedright T. Tao, A digestion of the Jacobian conjecture counterexample, \emph{What's new} (blog), 21 July
+2026, \url{https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/}.
 \bibitem{Magnus1955} A. Magnus, On polynomial solutions of a differential equation,
 \emph{Math. Scand.} \textbf{3} (1955), 255--260. (The gcd $=1$ theorem; Magnus' formula is
 in \emph{Proc. Amer. Math. Soc.} \textbf{5} (1954), 256--266.)
@@ -2281,21 +2236,21 @@ arXiv:2607.20210v1, 2026.
 three-dimensional counterexample: exact validation, a general seed family, the geometry of
 non-properness, and two-dimensional equivariant rigidity, preprint, 2026.
 \href{https://doi.org/10.5281/zenodo.21503365}{doi:10.5281/zenodo.21503365}.
-\bibitem{NakaiBaba1977} Y. Nakai, K. Baba, \emph{Osaka J. Math.} \textbf{14} (1977); title and page range not
-confirmed on a primary source [U].
+\bibitem{NakaiBaba1977} Y. Nakai, K. Baba, A generalization of Magnus' theorem, \emph{Osaka J. Math.} \textbf{14} (1977), no.~2,
+403--409, doi:10.18910/8846.
 \bibitem{Zoladek2008} H. Zoladek, An application of Newton--Puiseux charts to the Jacobian problem,
 \emph{Topology} \textbf{47} (2008), 431--469.
 \bibitem{Xu2016} Y. Xu, Intersection numbers and split of minor roots, arXiv:1604.07683.
 \bibitem{Abhyankar1977} S. S. Abhyankar, \emph{Lectures on expansion techniques in algebraic geometry}, Tata
 Institute of Fundamental Research Lectures on Mathematics and Physics 57, TIFR, Bombay, 1977 (notes by B. Singh).
-\bibitem{HurstLeeLiNasr2022} Hurst, Lee, Li, Nasr, On the two-dimensional Jacobian conjecture: Magnus' formula
-revisited, arXiv:2201.06613, 2022.
+\bibitem{HurstLeeLiNasr2022} W. E. Hurst, K. Lee, L. Li, G. D. Nasr, On the two-dimensional Jacobian conjecture: Magnus' formula
+revisited, I, arXiv:2201.06613, 2022.
 \bibitem{Orevkov2001} S. Yu. Orevkov, Counterexamples to the ``Jacobian conjecture at infinity'',
 \emph{Proc. Steklov Inst. Math.} \textbf{235} (2001), 173--201.
-\bibitem{Long2026} Long, An explicit counterexample to the rank-two Poisson conjecture, arXiv:2608.23777v1, 2026.
+\bibitem{Long2026} C. D. Long, An explicit counterexample to the rank-two Poisson conjecture, arXiv:2608.23777v1, 2026.
 \bibitem{vdEssen2026} A. van den Essen, An elementary way to find a counterexample to the Jacobian Conjecture,
 arXiv:2609.17795v1, 2026.
-\bibitem{KanelBelovFedorov2026} Kanel-Belov, Fedorov, The generalized Dixmier conjecture and the two-dimensional
+\bibitem{KanelBelovFedorov2026} A. Kanel-Belov, T. Fedorov, The generalized Dixmier conjecture and the two-dimensional
 Jacobian conjecture, arXiv:2610.33919v1, 2026.
 \end{thebibliography}
 
