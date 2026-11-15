@@ -1826,3 +1826,21 @@ review approved the corrections before release.
 - Release: 39 gates passed; 51 pages, 722,853 bytes, SHA-256
   f8fea6a7ba16ddf43e51133de4097416633e6a33d9b0c2785ca06313f06f3dd4.
 
+## 2026-11-15 - correction: the announced map is not surjective; EXP-145; foundational v0.15 (10.5281/zenodo.24240161)
+
+- The foundational v0.15 writer derived, and EXP-145 (hypothesis 46aea773, CONFIRMED) checked exactly, that the fiber of
+  F over every point of Gamma = {(4/(27c^2), 4/(3c), c) : c != 0} is empty (W has a triple root there; Groebner basis [1]
+  with c inverted), so the image of F is C^3 minus Gamma and F is not surjective over C or over R; and that the fibers over
+  (A, B, 0) have three points when B^2 != 16A, so the plane C = 0 is not asymptotic (A(F) is the surface Sigma = 0).
+  EXP-007 item 4 (one point over generic (A, B, 0)) kept only rational solutions; EXP-011 item 4 (surjective over R) did
+  not meet Gamma on its grid. Both verdicts and item 2 of EXP-007 are superseded in part by EXP-145 (not edited); the
+  entries of this log on 2026-07-20 that state them stand as records of that day.
+- Foundational v0.15: the correction stated in the abstract, the introduction and the Zenodo record; the full revision
+  from the independent audit (D2): related work, methods with four algorithms, the constructor proof, the degree law and
+  the minimality restricted to the verified seeds, tables and figures generated from the artifacts, validation. Independent
+  review (CAOS_MANAGE `wip/caos-research/jc-foundational-v015-review-2026-11-14.md`): CHANGES REQUIRED (the correction was
+  not communicated), re-check APPROVE. The wiki pages 02 to 05, `state.md` and the backlog were corrected; errata on EXP-004
+  and EXP-008 record that no all-d derivation exists. The published v0.14 record stands as published.
+- Release: 39 gates passed; 30 pages, 670,311 bytes, SHA-256
+  aa7de7e613b5c57dca56507786706bd493d459c21d1ff1f38cf85cfb547199bc.
+

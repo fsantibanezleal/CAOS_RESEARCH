@@ -1,0 +1,13 @@
+\addplot+[only marks, mark=square*, mark size=2.4pt] coordinates {(2,7) (3,12) (4,17) (5,22)};
+\addlegendentry{first component}
+\addplot+[only marks, mark=triangle*, mark size=2.4pt] coordinates {(2,6) (3,11) (4,16) (5,21)};
+\addlegendentry{second component}
+\addplot+[only marks, mark=o, mark size=2.4pt] coordinates {(2,4) (3,4) (4,4) (5,4)};
+\addlegendentry{third component}
+\addplot[dashed, domain=2:5, samples=2, gray] {5*x-3};
+\addplot[dashed, domain=2:5, samples=2, gray] {5*x-4};
+\addplot[dashed, domain=2:5, samples=2, gray] {4};
+\addplot+[only marks, mark=diamond*, mark size=3pt, black] coordinates {(2,8) (2,7) (2,5)};
+\node[font=\scriptsize, anchor=west] at (axis cs:2.08,8) {tail $v^2$: $8$};
+\addplot+[only marks, mark=diamond*, mark size=3pt, black] coordinates {(2,10) (2,9) (2,7)};
+\node[font=\scriptsize, anchor=west] at (axis cs:2.08,10) {tail $v^3$: $10$};

@@ -54,3 +54,11 @@ Output: `artifacts/output-2026-07-20.txt`. All five predictions verified exactly
 - det JF = -k p(1)^2 shows every negative rational is realized as a determinant (scaling); with
   p(1) fixed, det tracks k linearly: no obstruction lives in the determinant value.
 - EXP-005 uses this structure to formalize why N = 2 resists the mechanism.
+
+## Erratum (2026-11-15)
+
+The sentence saying that a symbolic proof of the general-d sufficiency of the constructor's admissibility conditions "is written analytically in the wiki" points to no
+recorded derivation: no all-d proof is recorded (independent review of foundational v0.15, CAOS_MANAGE
+`wip/caos-research/jc-foundational-v015-review-2026-11-14.md`). The statement holds on the computed degrees; beyond them it
+is conjectural, as foundational v0.15 states.
+
