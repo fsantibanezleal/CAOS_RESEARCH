@@ -176,3 +176,17 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
 - Release: 39 gates passed; 35 pages, 677,106 bytes, SHA-256
   12f8c16fbdd11b56bf43591d4984993d2fb4d882162a93c793a29f909a44f067.
 
+## 2026-11-15 - unbounded-defect v0.03 published (10.5281/zenodo.24239832)
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-pc-2026-11-10.md`, D3): Algorithms for
+  the sector matrices, the exact and antichain closures with certificate and the certificate check, with costs; F1 to F5
+  reported, F4 and F5 undecided; the 203-ring comparison stated as one-sided, with the block re-check status (46 of 81)
+  and the G52 control; generated tables of the 1,890 six-pole splits, the G52 charge spectrum, the ring computations and
+  the transmitted sets (546 of 949 decided); the transitivity proof for distances 0 to 3; the flower-snark corollary
+  machine-verified for k = 5, 7, 9 with the periodicity beyond marked conjectural; superedge rings stated with the
+  identity at every junction. Title: "Conduction of cut-space classes through multipoles: unbounded Petersen defect on cyclically 4-edge-connected cubic graphs and transfer semigroups of rings of 6-poles".
+- Independent review (CAOS_MANAGE `wip/caos-research/pc-unbounded-defect-v03-review-2026-11-14.md`): CHANGES REQUIRED,
+  re-check CHANGES REQUIRED (abstract scope), second fix pass applied as specified.
+- Release: 39 gates passed; 35 pages, 805,518 bytes, SHA-256
+  0eedaae3e928469738e585a97bf76e545ec07c3209fa67b6e5527febefa54417.
+
