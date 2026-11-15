@@ -1,11 +1,11 @@
 # Quadratic integral two-torsion companion
 
 <!-- current:start -->
-- **Current version**: v0.04, published 2026-09-20
-- **Title**: A quadratic family of integral two-torsion classes in a Huneke–Wiegand Koszul presentation
-- **Version DOI**: [10.5281/zenodo.22859408](https://doi.org/10.5281/zenodo.22859408)
+- **Current version**: v0.06, published 2026-11-15
+- **Title**: A quadratic family of integral two-torsion classes in the cokernel of an explicit Koszul-strand presentation
+- **Version DOI**: [10.5281/zenodo.24239899](https://doi.org/10.5281/zenodo.24239899)
 - **Concept DOI (always latest)**: [10.5281/zenodo.22342975](https://doi.org/10.5281/zenodo.22342975)
-- **Record**: <https://zenodo.org/records/22859408> (file `huneke-wiegand-integral-connecting-annihilators-v0.04.pdf`)
+- **Record**: <https://zenodo.org/records/24239899> (file `huneke-wiegand-integral-connecting-annihilators-v0.06.pdf`)
 <!-- current:end -->
 
 - Title: A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation
@@ -46,9 +46,7 @@ affecting these claims, or a material reproducibility improvement. Priorities
 are explicit integral maps to the isolated/relative presentations, then a
 primitive complement or upper bound, then recurrence. Additional finite ranks
 alone do not meet this gate. A new paper is unnecessary until the mathematical
-scope genuinely separates from this source/dual theory. The authoritative
-current scope audit is `claim-audit-v0.04.md`; research focus `HW-F5` is gated
-by `program/huneke-wiegand/research-governance.json`.
+scope genuinely separates from this source/dual theory.
 
 The DOI was reserved under an earlier annihilator-only draft title. The title
 and scope were strengthened before initial publication; the reservation receipt
@@ -67,3 +65,5 @@ Fresh unauthenticated metadata and PDF verification on 2026-09-20 matched the
 committed 516,963-byte PDF at SHA-256
 `1570bf3c3f48d6949cda18a32b1ba6ebd63dc9a674ce074d88c42926f284e5bf`;
 see `public-verification-v0.04.json`.
+- v0.05 = [10.5281/zenodo.24228302](https://doi.org/10.5281/zenodo.24228302), published 2026-11-14 (v0.05 (2026-11-14): correction; Theorem 9.1 sign (-1)^(p+1) on the signed row)
+- v0.06 = [10.5281/zenodo.24239899](https://doi.org/10.5281/zenodo.24239899), published 2026-11-15 (v0.06 is the revision from the independent audit: problem and context, related work, the identification with the Koszul-strand block stated as a premise with its evidence split, algorithms and reproducibility, notation and hypotheses tables, six figures from the artifacts and a re-derived title; independent review with a re-check (APPROVE); the uncertainty finding is waived because every result is exact.)
