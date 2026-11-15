@@ -4,6 +4,8 @@
 \usepackage[margin=1.05in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{array}
 \usepackage{microtype}
 \microtypesetup{expansion=false}
 \usepackage{xcolor}
@@ -11,11 +13,21 @@
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \hypersetup{
   pdfauthor={Felipe Santibáñez-Leal},
-  pdftitle={Tensor Factorization of Extension Ideals under Gluing and Huneke--Wiegand Counterexamples with Many Generators},
+  pdftitle={Tensor Factorization of Extension Ideals under Gluing: a Torsion-Length Law and Huneke--Wiegand Counterexamples with Many Generators},
   pdfsubject={Gluings of numerical semigroups, torsion in tensor products, the Huneke-Wiegand conjecture},
   pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, gluing, semigroup rings, torsion, tensor products, relative ideals}
 }
 \usepackage{orcidlink}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+\input{generated/numbers.tex}
+\input{generated/numbers-ablation.tex}
+\input{generated/numbers-cost.tex}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -33,12 +45,16 @@
 \newcommand{\Ap}{\operatorname{Ap}}
 \newcommand{\tor}{\tau}
 \newcommand{\len}{\ell}
+\newcommand{\cond}{\operatorname{c}}
+\newcommand{\mD}{\emph{[D]}}
+\newcommand{\mMV}{\emph{[MV]}}
+\newcommand{\mC}{\emph{[C]}}
 
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.01}
-\newcommand{\docdate}{30 October 2026}
+\newcommand{\docversion}{v0.02}
+\newcommand{\docdate}{14 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.23821498}
 \newcommand{\conceptdoi}{10.5281/zenodo.23821497}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -55,8 +71,9 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \end{center}
 \vspace{4pt}}
 
-\title{Tensor Factorization of Extension Ideals under Gluing\\
-and Huneke--Wiegand Counterexamples with Many Generators}
+\title{Tensor Factorization of Extension Ideals under Gluing:\\
+a Torsion-Length Law and Huneke--Wiegand\\
+Counterexamples with Many Generators}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research programme, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -67,50 +84,71 @@ and Huneke--Wiegand Counterexamples with Many Generators}
 
 \begin{abstract}
 Let $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ be a gluing of numerical semigroups, $\kk$ a field, and
-$A=a_1A_1+a_2A_2$ the extension of relative ideals $A_i$ of $\Gamma_i$. With $y$ acting on
-$\kk[\Gamma_1]$ as $t^{a_2}$ and on $\kk[\Gamma_2]$ as $t^{a_1}$, we prove that
-$I_A\otimes_{\kk[\Gamma]} I_{A^*}\cong T_1\otimes_{\kk[y]}T_2$, where
-$T_i=I_{A_i}\otimes I_{A_i^*}$. Consequently the torsion lengths satisfy
-\[
- \len(\tor(I_A\otimes I_{A^*}))=a_1\len(\tor(T_1))+a_2\len(\tor(T_2))+\sum_{j\ge1}b_1(j)\,b_2(j),
-\]
-where $b_i(j)$ counts the Jordan blocks of size at least $j$ of $y$ on $\tor(T_i)$, and the numbers of
-minimal generators multiply. Hence $A$ has the Huneke--Wiegand property if and only if $A_1$ or $A_2$
-is a non-principal ideal with that property. This re-proves the two gluing propositions of
-Garc\'{\i}a-S\'anchez and Leamer and settles the case they leave open: when both factors are
-non-principal and the tensor product of each with its dual is torsion-free, so is the tensor product for
-the extension. Since the Huneke--Wiegand conjecture is now known to be false, this produces
-counterexample ideals with $2^r$ minimal generators over symmetric numerical semigroup rings. We give
-two explicit four-generated examples, over symmetric semigroups with Frobenius numbers $23645$ and
-$53599$, built from Pham's counterexample and from an infinite family of counterexamples. Exact
-computations by two independent routes, the definition of the tensor product and Leamer's partition
-criterion, confirm the length law on 200 seeded gluings.
+$A=a_1A_1+a_2A_2$ the extension of relative ideals $A_i$ of $\Gamma_i$. With $y$ acting as $t^{a_2}$ on
+$\kk[\Gamma_1]$ and as $t^{a_1}$ on $\kk[\Gamma_2]$, we prove $I_A\otimes I_{A^*}\cong T_1\otimes_{\kk[y]}T_2$,
+where $T_i=I_{A_i}\otimes I_{A_i^*}$. The torsion lengths satisfy
+$\len(\tor(T))=a_1\len(\tor(T_1))+a_2\len(\tor(T_2))+\sum_{j\ge1}b_1(j)b_2(j)$, with $b_i(j)$ the number of Jordan
+blocks of size at least $j$ of $y$ on $\tor(T_i)$; the numbers of minimal generators multiply, and $A$ has the
+Huneke--Wiegand property exactly when a factor is a non-principal ideal with it. This re-proves two propositions of
+Garc\'{\i}a-S\'anchez and Leamer and settles the case they leave open. Because the conjecture is false in
+dimension one, it yields counterexample ideals with $2^r$ minimal generators over symmetric numerical semigroup
+rings, among them four-generated examples with Frobenius numbers $23645$ and $53599$. Exact computation, by the
+definition of the tensor product and by Leamer's partition criterion, confirms the law on \NSeeded{} seeded
+gluings and on \NHard{} gluings with a counterexample factor, \NHardCEItself{} of whose extensions are themselves
+counterexamples; an independent implementation agrees on every audited case. The two four-generated examples rest
+on the proof and the partition criterion, since their direct torsion is not computed. The results concern
+monomial ideals.
 \end{abstract}
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 
-Let $R$ be a one-dimensional Gorenstein local domain. Huneke and Wiegand asked whether a finitely
-generated torsion-free $R$-module $M$ with $M\otimes_R\operatorname{Hom}_R(M,R)$ torsion-free must be
-free \cite{HunekeWiegand1994}. For numerical semigroup rings and monomial ideals, Leamer reduced the
-question to arithmetic of relative ideals \cite{Leamer2012}, and Garc\'{\i}a-S\'anchez and Leamer
-proved it for monomial ideals of free numerical semigroup rings and for two-generated monomial ideals
-over complete intersections \cite{GarciaSanchezLeamer2013}. Their method rests on gluings
-$\Gamma=a_1\Gamma_1+a_2\Gamma_2$: for an extension $a_1A_1+a_2A_2$ they show that it inherits the
-Huneke--Wiegand property from a non-principal factor (their Proposition~9), and that
-$a_1A_1+a_2\Gamma_2$ has the property exactly when $A_1$ does (their Proposition~10). In their final
-section they ask whether the property for ideals with more generators is invariant under gluing, and
-whether their Proposition~9 extends to rings of the form
-$(R_1\otimes_\kk R_2)/(f\otimes1-1\otimes g)$.
+Let $R$ be a one-dimensional Gorenstein local domain. Huneke and Wiegand asked whether a finitely generated
+torsion-free $R$-module $M$ with $M\otimes_R\operatorname{Hom}_R(M,R)$ torsion-free must be free
+\cite{HunekeWiegand1994}. Over a one-dimensional integrally closed local domain the answer is yes, by a
+theorem of Auslander and by the structure of modules over a principal ideal domain \cite{Auslander1961,GarciaSanchezLeamer2013}.
+For numerical semigroup rings, Leamer reduced the question for monomial ideals to arithmetic of relative ideals
+\cite{Leamer2012}. Garc\'{\i}a-S\'anchez and Leamer then proved it for monomial ideals of free numerical semigroup
+rings and for two-generated monomial ideals over complete intersections \cite{GarciaSanchezLeamer2013}. Their
+method rests on gluings $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ of numerical semigroups: an extension $a_1A_1+a_2A_2$ of
+relative ideals inherits the Huneke--Wiegand property from a non-principal factor that has it (their Proposition~9),
+and $a_1A_1+a_2\Gamma_2$ has the property exactly when $A_1$ does (their Proposition~10). In their final section they
+ask whether the property for ideals with more than two generators is invariant under gluing, and whether their
+Proposition~9 extends to rings of the form $(R_1\otimes_\kk R_2)/(f\otimes1-1\otimes g)$.
 
-The conjecture is now known to be false in dimension one. Christensen, Gerko and Iyengar gave a
-non-principal rigid ideal in a one-dimensional Gorenstein domain \cite{ChristensenGerkoIyengar2026},
-and Pham gave a two-generated monomial counterexample over a symmetric numerical semigroup of
-multiplicity $56$ and Frobenius number $181$ \cite{Pham2026}. An infinite family of two-generated
-counterexamples of multiplicity $24p$, $p\ge4$, is constructed in \cite{SantibanezLeal2026}.
+The conjecture is now known to be false in dimension one. Christensen, Gerko and Iyengar gave a non-principal
+rigid ideal in a one-dimensional Gorenstein domain \cite{ChristensenGerkoIyengar2026}, and Pham gave a
+two-generated monomial counterexample over a symmetric numerical semigroup of multiplicity $56$, embedding
+dimension $26$ and Frobenius number $181$ \cite{Pham2026}. An infinite family of two-generated counterexamples of
+multiplicity $24p$, $p\ge4$, is constructed in \cite{SantibanezLeal2026}. In the presence of counterexamples the
+case of an extension whose two factors are both non-principal and both fail the property is no longer vacuous,
+and the propositions of \cite{GarciaSanchezLeamer2013} do not cover it. Two questions follow. What is the torsion
+of the tensor product $I_A\otimes I_{A^*}$ of an extension in terms of its factors, and does a computation that
+reaches factors with counterexample ideals agree with that answer?
 
-In the presence of counterexamples, the case of an extension whose two factors are both non-principal
-and both fail the Huneke--Wiegand property is no longer vacuous, and it is not covered by the
-propositions above. We prove a tensor factorization that decides every extension.
+\paragraph{The method in one paragraph.}
+For a gluing, the semigroup ring $\kk[\Gamma]$ is the tensor product $\kk[\Gamma_1]\otimes_{\kk[y]}\kk[\Gamma_2]$
+over a polynomial ring in one variable, and an extension ideal is the tensor product of its factors over the same
+ring (Proposition~\ref{prop:iso}). Tensor products of the form $I\otimes I^{*}$ then factor over $\kk[y]$
+(Proposition~\ref{prop:tensor}). Over a principal ideal domain the factors split into a free part and a torsion
+part, and the torsion of the product is read from the Jordan types of $y$ on the torsion of the factors. The
+computational check uses two routes that share no code: the torsion is computed from the definition of the tensor
+product, degree by degree, and the Huneke--Wiegand property is decided by Leamer's partition criterion.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+\item A tensor factorization, a torsion-length law, multiplicativity of minimal generators and a characterization
+of the Huneke--Wiegand property for every extension ideal of a gluing (Theorem~\ref{thm:main}), with proofs.
+\item The case left open by Proposition~9 of \cite{GarciaSanchezLeamer2013}, both factors counterexamples, decided in
+favour of a counterexample (Corollary~\ref{cor:open}), and counterexample ideals with $2^r$ minimal generators over
+symmetric numerical semigroup rings (Corollary~\ref{cor:many}), including two explicit four-generated examples.
+\item A derivation of the Frobenius number and of symmetry for the gluings used, from the Ap\'ery decomposition
+of Proposition~\ref{prop:iso} (Corollary~\ref{cor:frobsym}), and a proof that the two-parameter family obtained from the
+family of \cite{SantibanezLeal2026} has embedding dimension $11p$ (Proposition~\ref{prop:embdim}).
+\item Algorithms with a proof of the degree bound that makes the direct torsion computation finite
+(Lemma~\ref{lem:bound}), their cost, and an independent implementation.
+\item Exact validation on \NSeeded{} seeded gluings and on \NHard{} gluings in which a factor is a counterexample
+ideal, the case the theorem is about, together with controls that remove each hypothesis.
+\end{enumerate}
 
 \begin{theorem}\label{thm:main}
 Let $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ be a gluing, $A_i$ relative ideals of $\Gamma_i$, and
@@ -122,7 +160,7 @@ $\kk[\Gamma_1]$ as $t^{a_2}$ and on $\kk[\Gamma_2]$ as $t^{a_1}$. Then
 the number of Jordan blocks of size at least $j$ of $y$ acting on $\tor(T_i)$;
 \item $\mu(A)=\mu(A_1)\mu(A_2)$;
 \item $A$ has the Huneke--Wiegand property if and only if $A_1$ or $A_2$ is a non-principal ideal with
-that property.
+that property. \mD{}
 \end{enumerate}
 \end{theorem}
 
@@ -131,44 +169,208 @@ If $A_1$ and $A_2$ are two-generated counterexample ideals over symmetric numeri
 $\Gamma_1$ and $\Gamma_2$, and $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ is a gluing, then $a_1A_1+a_2A_2$ is a
 four-generated counterexample ideal over the symmetric semigroup $\Gamma$. Iterating, for every $r\ge1$
 there are counterexample ideals with $2^r$ minimal generators over symmetric numerical semigroup
-rings.
+rings. \mD{}
 \end{corollary}
 
-Section~\ref{sec:prelim} fixes notation. Section~\ref{sec:factor} proves part~(1), and
-Section~\ref{sec:length} parts (2) to (4). Section~\ref{sec:consequences} derives the propositions of
-\cite{GarciaSanchezLeamer2013}, Corollary~\ref{cor:many}, two explicit examples and a partial answer to
-their invariance question. Section~\ref{sec:computation} reports exact computations, and
-Section~\ref{sec:scope} states the limits of the results.
+Section~\ref{sec:related} places the result among the published work. Section~\ref{sec:prelim} fixes notation and
+states the problem with the exact pointers to the sources it uses. Section~\ref{sec:factor} proves part~(1) of the
+theorem and Section~\ref{sec:length} parts (2) to (4). Section~\ref{sec:algorithms} gives the algorithms.
+Section~\ref{sec:theory} derives the consequences. Sections~\ref{sec:design} to~\ref{sec:ablation} report the experimental design, the
+results and the ablation. Sections~\ref{sec:discussion} to~\ref{sec:conclusions} discuss the limits and
+conclude.
 
-\section{Preliminaries}\label{sec:prelim}
+\section{Related work}\label{sec:related}
 
-A numerical semigroup $\Lambda\subseteq\N$ is a submonoid with finite complement; $F(\Lambda)$ is its
-Frobenius number. A relative ideal is a non-empty set $B\subseteq\Z$, bounded below, with
-$B+\Lambda\subseteq B$. Its dual is $B^*=\Lambda-B=\{z:z+B\subseteq\Lambda\}$, and $B$ is principal if
-$B=x+\Lambda$. The fractional ideal $I_B$ of $\kk[\Lambda]$ is spanned by the monomials $t^b$, $b\in B$,
-and $I_{B^*}\cong\operatorname{Hom}(I_B,\kk[\Lambda])$ \cite[Remark~1.7]{Leamer2012}. Following
-\cite{GarciaSanchezLeamer2013}, a non-principal $B$ has the \emph{Huneke--Wiegand property} if
-$I_B\otimes I_{B^*}$ has non-zero torsion; by \cite[Theorem~1.4]{Leamer2012} this holds iff the
-minimal generators of $B$ split into two non-empty sets generating $P$ and $Q$ with
-$(P+B^*)\cap(Q+B^*)\ne(P\cap Q)+B^*$. A \emph{counterexample ideal} is a non-principal $B$ without the
-property. We write $\mu(B)$ for the number of minimal generators and
-$\Ap(B,c)=\{b\in B:b-c\notin B\}$ for $c\in\Lambda$, $c>0$.
+The literature around the Huneke--Wiegand conjecture falls into four groups: positive results for classes of
+ideals and rings, the recent counterexamples, the combinatorics of numerical semigroups and of gluing, and the
+Kunz-cone literature that organizes numerical semigroups by multiplicity. Each group is characterised below by what it
+assumes and what it gives, and the last paragraph says where the factorization stands.
 
-$\Gamma$ is the \emph{gluing} of $\Gamma_1$ and $\Gamma_2$ if $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ with
-$a_1\in\Gamma_2$, $a_2\in\Gamma_1$ and $\gcd(a_1,a_2)=1$; then $F(\Gamma)=a_1F(\Gamma_1)+a_2F(\Gamma_2)+a_1a_2$,
-and $\Gamma$ is symmetric when $\Gamma_1$ and $\Gamma_2$ are \cite{Delorme1976,RosalesGarciaSanchez2009}.
-The \emph{extension} of $A_i\subseteq\Gamma_i$ is $A=a_1A_1+a_2A_2$; it is a relative ideal of $\Gamma$,
-generated by $a_1x+a_2z$ over generators $x$ of $A_1$ and $z$ of $A_2$, and
-$A^*=a_1A_1^*+a_2A_2^*$ \cite[Lemma~8]{GarciaSanchezLeamer2013}. Throughout, $R_i=\kk[\Gamma_i]$,
-$R=\kk[\Gamma]$, $S=\kk[y]$ with $y\mapsto t^{a_2}$ in $R_1$ and $y\mapsto t^{a_1}$ in $R_2$. All rings
-and modules are graded by the exponent; for graded modules of finite length, $\len=\dim_\kk$.
+\subsection{Positive results}
 
-\section{Extensions are tensor products}\label{sec:factor}
+The conjecture was posed in \cite{HunekeWiegand1994}. Celikbas and Takahashi showed that the version for
+modules over one-dimensional Gorenstein local domains implies the version for Gorenstein domains of any
+dimension, as quoted in \cite{GarciaSanchezLeamer2013}; the equivalence is their Proposition~5.6, which the
+present paper takes from the quotations in \cite{Leamer2012} and does not re-read \cite{CelikbasTakahashi2011}. Over rings of small
+multiplicity, Goto, Takahashi, Taniguchi and Truong prove that a faithful ideal with
+$I\otimes I^{\vee}$ torsion-free is isomorphic to the ring or its canonical module when the multiplicity is at
+most six, by a change of rings to rings between $R$ and $I:I$ \cite{GotoTakahashiTaniguchiTruong2013}.
+Celikbas, Goto, Takahashi and Taniguchi establish the ideal case for a large class of ideals over arbitrary
+one-dimensional local domains \cite{CelikbasGotoTakahashiTaniguchi2017}. Huneke, Iyengar and Wiegand study rigid
+ideals, those with $\operatorname{Ext}^1_R(I,I)=0$, in one-dimensional Gorenstein local rings
+\cite{HunekeIyengarWiegand2018}, and their colon criterion is the tool through which Pham's example is analysed
+\cite{Pham2026}. Dey and Kobayashi introduce Burch and weakly $\mathfrak m$-full submodules and obtain a new class
+of rings over which the conjecture holds \cite{DeyKobayashi2022}. Celikbas, Le, Matsui and Sadeghi prove the
+conjecture for two periodic modules through Hochster's theta invariant \cite{CelikbasLeMatsuiSadeghi2022}, and Dey
+and Lyle give criteria, in terms of centers of endomorphism rings, that force a nonzero free summand
+\cite{DeyLyle2025}. These results hypothesize a property of the ideal or of the ring (a bound on multiplicity, a
+rigidity or Burch condition, periodicity). None of them factors the torsion of a tensor product across a
+decomposition of the ring, and an ideal built by gluing two counterexamples satisfies none of the hypotheses in
+general.
+
+\subsection{Counterexamples}
+
+Pham's counterexample lives over a symmetric numerical semigroup with $I=(t^{56},t^{70})$ in
+$\kk[t^{\Gamma}]_{\mathfrak m}$ for every field $\kk$, persists under completion, and is accompanied by exact
+verifiers \cite{Pham2026}. Christensen, Gerko and Iyengar construct a rigid non-principal ideal by a field
+extension in a Gorenstein domain of dimension one and prove the conjecture when the ring is equicharacteristic and
+its embedding dimension is at most three \cite{ChristensenGerkoIyengar2026}. That positive result bounds where a
+counterexample factor can occur: the semigroup rings used here have embedding dimension $26$ and $44$, far
+above three. The infinite family of \cite{SantibanezLeal2026} provides the second factor of the mixed example below. All
+three constructions give two-generated ideals; the factorization of this paper produces counterexamples with four,
+eight and in general $2^r$ generators from them. The three constructions are also of different kinds: the first is an
+explicit semigroup found by search and verified by a finite sumset identity, the second is a field-theoretic criterion, and the
+third is a parametric family whose members share a common structure and are indexed by one integer. A factor from either
+kind can be glued to a factor from another, which is what the mixed example below does.
+
+\subsection{Numerical semigroups, ideals and gluing}
+
+Leamer shows that torsion in $I\otimes J$ for monomial ideals is detected by a partition criterion on the
+generators of $I$, and computes the torsion degree by degree in terms of a semigroup tensor product
+\cite{Leamer2012}. Garc\'{\i}a-S\'anchez and Leamer introduce extensions of relative ideals along a gluing, prove
+Propositions~9 and~10, and verify by computer algebra that two-generated ideals of symmetric numerical semigroups
+with Frobenius number below $69$ have the property, using the \texttt{numericalsgps} package
+\cite{GarciaSanchezLeamer2013,DelgadoGarciaSanchezMorais}. Landeros, O'Neill, Pelayo, Pe\~na, Ren and Wissman use that
+approach to prove the conjecture for two-generated monomial ideals when the semigroup is generated by a generalized
+arithmetic sequence \cite{Landeros2024}. Roy treats one-dimensional graded complete intersections, which include numerical semigroup rings of embedding dimension at least
+three, through Auslander--Reiten sequences whose middle term has at least two non-free summands \cite{Roy2018}. Herzinger
+proved the conjecture for two-generated ideals whose dual is also two-generated
+\cite{Herzinger1999}. For free numerical semigroups in the sense of Bertin and Carbonne \cite{BertinCarbonne1977}
+the conjecture holds for monomial ideals \cite{GarciaSanchezLeamer2013}. Gluing itself goes back to Delorme, who
+characterised complete intersection numerical semigroups as iterated gluings \cite{Delorme1976}, with the
+standard exposition in \cite{RosalesGarciaSanchez2009}. Gimenez and Srinivasan study gluing for semigroups in
+$\N^n$, where two semigroups can be glued only under conditions, in contrast to $n=1$ \cite{GimenezSrinivasan2022}.
+Casabella, D'Anna and Garc\'{\i}a-S\'anchez relate ideals of a numerical semigroup with smallest element $0$ to
+Ap\'ery sets and Kunz coordinates \cite{CasabellaDAnnaGarciaSanchez2023}.
+
+\subsection{Kunz cones and the place of the present result}
+
+A numerical semigroup of multiplicity $m$ is a point of the Kunz cone $\mathcal C_m$, and points in one face
+share properties such as the number of minimal generators \cite{Borevitz2023}; the faces are walked and organized
+by the Kunz fan in \cite{BrowerMcDonoughONeill2024}. The family of \cite{SantibanezLeal2026} has multiplicity
+$24p$, so its members lie in different cones and no single face contains the family. The simple gluing of
+Section~\ref{sec:theory} produces the two-parameter family with $24p$ fixed and the second parameter $q$ free, a
+construction on the semigroup side that the Kunz literature does not address.
+
+None of the sources above states the factorization $T\cong T_1\otimes_{\kk[y]}T_2$, the length law, or the
+decision of the case left open by Proposition~9 of \cite{GarciaSanchezLeamer2013}; the sources searched for
+these statements were \cite{GarciaSanchezLeamer2013,GotoTakahashiTaniguchiTruong2013,Leamer2012,Roy2018}. This
+is a negative search and not a proof of novelty. The present result lies at the intersection of the second and
+third groups: it takes the counterexamples of the second as inputs and the extension calculus of the third as its
+tool, and it proves what happens to the Huneke--Wiegand property when they are combined.
+
+\section{Preliminaries and problem formulation}\label{sec:prelim}
+
+\subsection{Semigroups, relative ideals and duals}
+
+A numerical semigroup $\Lambda\subseteq\N$ is a submonoid with finite complement; $F(\Lambda)$ is its Frobenius
+number, the largest integer not in $\Lambda$ (so $F(\N)=-1$), and $\cond(\Lambda)=F(\Lambda)+1$ is its conductor. A
+relative ideal is a non-empty set $B\subseteq\Z$, bounded below, with $B+\Lambda\subseteq B$; it has a unique
+minimal generating set, and every relative ideal is a finite union $\bigcup_i(x_i+\Lambda)$
+\cite[Section~1]{GarciaSanchezLeamer2013}. Its dual is $B^*=\Lambda-B=\{z\in\Z:z+B\subseteq\Lambda\}$, and $B$ is
+principal if $B=x+\Lambda$. The fractional ideal $I_B$ of $\kk[\Lambda]$ is spanned by the monomials $t^b$,
+$b\in B$. We write $\cond(B)$ for the least integer $c$ with $[c,\infty)\subseteq B$, $\mu(B)$ for the number of
+minimal generators, and $\Ap(B,c)=\{b\in B:b-c\notin B\}$ for $c\in\Lambda$, $c>0$, as in
+\cite[Section~2]{GarciaSanchezLeamer2013}. The sum and the intersection of relative ideals are relative ideals, and the sum of ideals
+generated by $X$ and $Y$ is generated by the sums $x+y$; these elementary facts are listed in \cite[Section~1]{GarciaSanchezLeamer2013} and are used without comment.
+
+The monomial ideal $I_{B^*}$ is the inverse $(\kk[\Lambda]:_KI_B)$ in the field of fractions $K$, and for a
+domain $R$ and a finitely generated submodule $M$ of $K^n$ the inverse $M^{-1}$ is naturally isomorphic to
+$\operatorname{Hom}_R(M,R)$ \cite[Definition~1.6 and Lemma~1.8]{Leamer2012}. Hence
+$I_{B^*}\cong\operatorname{Hom}_{\kk[\Lambda]}(I_B,\kk[\Lambda])$. This is the statement that
+\cite[Corollary~7]{GarciaSanchezLeamer2013} uses with the pointer to Remark~1.7 of \cite{Leamer2012}; in the
+numbering of arXiv:1211.2896v1 that remark concerns inverses of sums and the duality is Lemma~1.8.
+
+\subsection{The Huneke--Wiegand property and its criterion}
+
+Following \cite[Section~1]{GarciaSanchezLeamer2013}, a relative ideal $A$ is \emph{Huneke--Wiegand} if it is
+principal or if there are relative ideals $P,Q$ with $P\cup Q=A$ and $(P+A^*)\cap(Q+A^*)\ne(P\cap Q)+A^*$. For a
+non-principal $A$, \cite[Theorem~6]{GarciaSanchezLeamer2013} (which restates \cite[Theorem~1.4]{Leamer2012})
+says that $I_A\otimes I_{A^*}$ has non-zero torsion if and only if $A$ is Huneke--Wiegand. In this paper the
+\emph{Huneke--Wiegand property} is that torsion condition for a non-principal ideal, and a \emph{counterexample
+ideal} is a non-principal $A$ without it, so that $I_A\otimes I_{A^*}$ is torsion-free.
+
+The criterion used by the computations is the generator form. By \cite[Remark~3]{GarciaSanchezLeamer2013}, if
+$A=(x_1,\dots,x_n)$ with the $x_i$ its minimal generators, then $A$ is Huneke--Wiegand if and only if there is a
+partition $\{S,S'\}$ of $\{1,\dots,n\}$ with $P=(x_i:i\in S)$ and $Q=(x_j:j\in S')$ such that
+$(P+A^*)\cap(Q+A^*)\ne(P\cap Q)+A^*$. It is the equivalence of conditions (1) and (3) of
+\cite[Theorem~1.4]{Leamer2012} with $J=I_{A^*}$: condition (3) is the equality
+\begin{equation}\label{eq:partition}
+\bigl((a_i:i\in S)\cap(a_j:j\notin S)\bigr)J=(a_i:i\in S)J\cap(a_j:j\notin S)J
+\end{equation}
+for every subset $S$ of the generators, and the torsion vanishes exactly when it holds for all $S$.
+The ideal-level criterion over all pairs $P,Q$ with $P+Q=I$ is condition (2) of the same theorem, and the
+generator form is the one the algorithms use. The hypotheses of that theorem cover the graded ring $\kk[\Gamma]$ and
+also analytically irreducible residually rational local rings with maximal ideal generated by monomials, so they
+cover the localization and the completion; this is used in Section~\ref{sec:theory}.
+
+\subsection{Gluings and extensions}
+
+Following \cite[Section~2]{GarciaSanchezLeamer2013}, $\Gamma$ is the \emph{gluing} of numerical semigroups
+$\Gamma_1$ and $\Gamma_2$ if $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ with $a_1\in\Gamma_2$ and $a_2\in\Gamma_1$. Because
+$\N\setminus\Gamma$ is finite, $\gcd(a_1,a_2)=1$ follows. The definition does not require $a_1,a_2$ to be non-generators:
+in Example~\ref{ex:pham} below $a_1=56$ and $a_2=57$ are minimal generators of $\Gamma_P$. For any numerical
+semigroups $\Gamma_1,\Gamma_2$ gluing parameters exist: take any positive $a_1\in\Gamma_2$ and any $a_2\in\Gamma_1$
+with $a_2\equiv1\pmod{a_1}$, which exists because $\Gamma_1$ contains every integer above its conductor. The Frobenius number and symmetry of
+a gluing are derived in Corollary~\ref{cor:frobsym}; they are not taken from the literature, so that they cover the definition as stated, including gluings with $a_1,a_2$ minimal generators such as the examples below. The extension of ideals, written next, is the construction on which the whole paper rests, and
+it is defined for every pair of relative ideals, principal or not.
+
+The \emph{extension} of $A_i\subseteq\Gamma_i$ is $A=a_1A_1+a_2A_2$; it is a relative ideal of $\Gamma$, and
+\begin{equation}\label{eq:extension}
+A=\bigl(a_1x+a_2z:\ x\in X_1,\ z\in X_2\bigr),\qquad A^*=a_1A_1^*+a_2A_2^*,
+\end{equation}
+where $X_i$ generates $A_i$ \cite[Lemma~8(1) and Lemma~8(9)]{GarciaSanchezLeamer2013}. Throughout, $R_i=\kk[\Gamma_i]$,
+$R=\kk[\Gamma]$ and $S=\kk[y]$, with $y\mapsto t^{a_2}$ in $R_1$ and $y\mapsto t^{a_1}$ in $R_2$. All rings and
+modules are graded by the exponent, and for graded modules of finite length, $\len=\dim_\kk$.
+
+\subsection{Problem and assumptions}
+
+\emph{Problem.} For a gluing $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ and relative ideals $A_i$ of $\Gamma_i$, determine the
+length of the torsion submodule of $T=I_A\otimes_{\kk[\Gamma]}I_{A^*}$, the number $\mu(A)$ and the
+Huneke--Wiegand status of $A$ from invariants of $(\Gamma_1,A_1)$ and $(\Gamma_2,A_2)$ alone, and decide the status
+of the extension when both factors are counterexample ideals. \emph{Assumptions.} The ideals are monomial (relative
+ideals), the field $\kk$ is arbitrary, and the rings are graded by the exponent. Only extension ideals are treated;
+relative ideals of $\Gamma$ that are not extensions are outside the problem. The answer is sought as a formula, so that it can be checked against a direct computation that does not use it:
+the torsion length of the extension must be a function of the torsion lengths of the factors and of the action of $y$ on them, and the
+number of generators and the Huneke--Wiegand status must be functions of those of the factors. The problem is posed for relative
+ideals and not for arbitrary modules, because the duality used in Section~\ref{sec:prelim} identifies $I_{A^*}$ with the Hom module only for monomial ideals
+with the pointers given there. The notation is collected in
+Table~\ref{tab:notation}.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{ll}
+\toprule
+symbol & meaning\\
+\midrule
+$\Gamma=a_1\Gamma_1+a_2\Gamma_2$ & the gluing, with $a_1\in\Gamma_2$, $a_2\in\Gamma_1$\\
+$A=a_1A_1+a_2A_2$, $A^*=\Gamma-A$ & the extension and its dual\\
+$R_i=\kk[\Gamma_i]$, $R=\kk[\Gamma]$, $S=\kk[y]$ & semigroup rings and the one-variable base\\
+$T=I_A\otimes_RI_{A^*}$, $T_i=I_{A_i}\otimes_{R_i}I_{A_i^*}$ & the tensor products whose torsion is studied\\
+$\tor(M)$, $\len(M)$ & torsion submodule and length of a module\\
+$b_i(j)$ & blocks of size at least $j$ of $y$ on $\tor(T_i)$\\
+$\mu(B)$, $\Ap(B,c)$, $\cond(B)$ & minimal generators, Ap\'ery set, conductor\\
+\bottomrule
+\end{tabular}
+\caption{Notation used throughout; the Jordan type of $y$ on a torsion module is recorded by the numbers $b(j)$ of
+blocks of size at least $j$, which determine the block sizes.}\label{tab:notation}
+\end{table}
+
+\section{Method: extensions are tensor products}\label{sec:factor}
+
+The method has three steps: an extension ideal is a tensor product over $S$ of its factors, tensor products of the
+form $I\otimes I^*$ then factor over $S$, and torsion over $S$ is computed from the structure of finitely generated
+modules over a principal ideal domain. The first step rests on the Ap\'ery decomposition.
+Throughout this section $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ is a gluing and $A_i$ are relative ideals of $\Gamma_i$; no assumption of symmetry or of the
+Huneke--Wiegand property is made until the consequences of Section~\ref{sec:theory}. The statements are proved for graded modules over the semigroup rings, with
+every module spanned by monomials, and each proof is a short computation on bases: the content is that the bases of the two sides are indexed by the same set.
+The three results are used in sequence, and none of them uses the next. The proofs are given in full because they are short and because the theorem is stated for every field and for every pair of relative ideals, so that no step is delegated to a citation. Lemma~\ref{lem:apery} gives a basis of a fractional monomial ideal over a polynomial subring, Proposition~\ref{prop:iso} compares the two bases through
+the exponents, and Proposition~\ref{prop:tensor} transports the comparison to the tensor products of ideals with their duals.
 
 \begin{lemma}\label{lem:apery}
 Let $B$ be a relative ideal of $\Lambda$ and $c\in\Lambda$, $c>0$. Then $I_B$ is a free
 $\kk[t^c]$-module with basis $\{t^b:b\in\Ap(B,c)\}$, and $\Ap(B,c)$ has exactly one element in each
-residue class modulo $c$.
+residue class modulo $c$. \mD{}
 \end{lemma}
 
 \begin{proof}
@@ -179,7 +381,7 @@ adding $c$. With $b_r$ its least element, the class is $b_r+c\N$, so $I_B=\bigop
 \begin{proposition}\label{prop:iso}
 The assignment $t^x\otimes t^z\mapsto t^{a_1x+a_2z}$ defines an isomorphism of
 $R_1\otimes_SR_2$-modules $I_{A_1}\otimes_SI_{A_2}\to I_A$. For $A_i=\Gamma_i$ it is a ring isomorphism
-$R_1\otimes_SR_2\cong R$, and $I_{A^*}\cong I_{A_1^*}\otimes_SI_{A_2^*}$.
+$R_1\otimes_SR_2\cong R$, and $I_{A^*}\cong I_{A_1^*}\otimes_SI_{A_2^*}$. \mD{}
 \end{proposition}
 
 \begin{proof}
@@ -191,18 +393,20 @@ $x'=x+ia_2$ and $z'=z+ja_1$ for Ap\'ery elements $x,z$ and $i,j\ge0$, hence equa
 $a_1x+a_2z+(i+j)a_1a_2$; so the map is onto. If $a_1x+a_2z+na_1a_2=a_1x'+a_2z'+n'a_1a_2$, reduction
 modulo $a_1$ gives $z\equiv z'$, hence $z=z'$ by Lemma~\ref{lem:apery}; likewise $x=x'$, and then
 $n=n'$. Distinct basis vectors therefore go to distinct monomials. The last statement follows from
-$A^*=a_1A_1^*+a_2A_2^*$.
+$A^*=a_1A_1^*+a_2A_2^*$ \cite[Lemma~8(9)]{GarciaSanchezLeamer2013}.
 \end{proof}
 
 \begin{proposition}\label{prop:tensor}
-$T\cong T_1\otimes_ST_2$ as modules over $R\cong R_1\otimes_SR_2$.
+$T\cong T_1\otimes_ST_2$ as modules over $R\cong R_1\otimes_SR_2$. \mD{}
 \end{proposition}
 
 \begin{proof}
 For commutative $S$-algebras $R_i$ and $R_i$-modules $M_i,N_i$ the assignment
 $(m_1\otimes m_2)\otimes(n_1\otimes n_2)\mapsto(m_1\otimes n_1)\otimes(m_2\otimes n_2)$ gives an
 isomorphism
-$(M_1\otimes_SM_2)\otimes_{R_1\otimes_SR_2}(N_1\otimes_SN_2)\cong(M_1\otimes_{R_1}N_1)\otimes_S(M_2\otimes_{R_2}N_2)$:
+\[
+(M_1\otimes_SM_2)\otimes_{R_1\otimes_SR_2}(N_1\otimes_SN_2)\cong(M_1\otimes_{R_1}N_1)\otimes_S(M_2\otimes_{R_2}N_2):
+\]
 both sides are the quotient of $M_1\otimes_SM_2\otimes_SN_1\otimes_SN_2$ by the relations
 $r_im_i\otimes n_i=m_i\otimes r_in_i$, and the inverse assignment is well defined on them. Apply it with
 $M_i=I_{A_i}$, $N_i=I_{A_i^*}$ and Proposition~\ref{prop:iso}.
@@ -210,10 +414,14 @@ $M_i=I_{A_i}$, $N_i=I_{A_i^*}$ and Proposition~\ref{prop:iso}.
 
 \section{The torsion-length law}\label{sec:length}
 
+The law is a statement about lengths of finite graded modules, and it is derived from the decomposition of $T$ over the principal ideal domain $S$.
+The only input beyond Section~\ref{sec:factor} is that torsion over $R$ and torsion over $S$ coincide, which is Lemma~\ref{lem:torsion}; the rest is the structure theorem
+for finitely generated graded modules over $\kk[y]$ and the tensor product of cyclic modules over it. The proof of Theorem~\ref{thm:main} follows the lemma.
+
 \begin{lemma}\label{lem:torsion}
 $S$ embeds in $R$ by $y\mapsto t^{a_1a_2}$, $R$ is a finite $S$-module, and $R_1$ and $R_2$ are free over
 $S$ of ranks $a_2$ and $a_1$. For a finitely generated module over $R$, $R_1$ or $R_2$, the torsion
-submodule equals the $S$-torsion submodule.
+submodule equals the $S$-torsion submodule. \mD{}
 \end{lemma}
 
 \begin{proof}
@@ -228,14 +436,18 @@ Part~(1) is Proposition~\ref{prop:tensor}. For (2), each $T_i$ is finitely gener
 rank one over $R_i$, so over the graded principal ideal domain $S$ we have
 $T_1\cong S^{a_2}\oplus\tor_1$ and $T_2\cong S^{a_1}\oplus\tor_2$ with $\tor_i=\tor(T_i)$ by
 Lemma~\ref{lem:torsion}. Then
-\[
+\begin{equation}\label{eq:decomp}
 T\cong S^{a_1a_2}\oplus\tor_1^{\,a_1}\oplus\tor_2^{\,a_2}\oplus(\tor_1\otimes_S\tor_2).
-\]
+\end{equation}
 The last three summands are $S$-torsion and the first is free, so their sum is $\tor(T)$. Each $\tor_i$
 has finite length and $y$ raises degree, so $y$ is nilpotent on it:
 $\tor_1\cong\bigoplus S/(y^{e_i})$ and $\tor_2\cong\bigoplus S/(y^{f_j})$ up to shifts. Since
 $S/(y^e)\otimes_SS/(y^f)\cong S/(y^{\min(e,f)})$, the length of $\tor_1\otimes_S\tor_2$ is
-$\sum_{i,j}\min(e_i,f_j)=\sum_{j\ge1}b_1(j)b_2(j)$.
+\begin{equation}\label{eq:cross}
+\sum_{i,j}\min(e_i,f_j)=\sum_{j\ge1}b_1(j)b_2(j).
+\end{equation}
+The identity in~\eqref{eq:cross} holds because $\min(e,f)$ counts the integers $j\ge1$ with $j\le e$ and $j\le f$,
+so each pair of blocks contributes once for every $j$ at which both have size at least $j$.
 
 For (3), let $\mathfrak m$ be the graded maximal ideal. Then $R/\mathfrak m=\kk=(R_1/\mathfrak m_1)\otimes_S(R_2/\mathfrak m_2)$
 with $y$ acting by zero, and the isomorphism of Proposition~\ref{prop:tensor} applied to $N_i=\kk$ gives
@@ -248,97 +460,651 @@ $\tor(T)\ne0$ iff $\tor(T_1)\ne0$ or $\tor(T_2)\ne0$, and part~(3) gives that $A
 factor is.
 \end{proof}
 
-\section{Consequences}\label{sec:consequences}
+Figure~\ref{fig:decomposition} shows the decomposition~\eqref{eq:decomp} and where each term of the length law
+comes from. The cross term vanishes when either factor is torsion-free, which is the case for a counterexample
+factor, and it is the only term that depends on the action of $y$ and not only on the lengths.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[node distance=5mm, every node/.style={font=\small}, box/.style={draw, rounded corners=2pt, inner sep=4pt, align=center}]
+\node[box] (top) {$T\cong T_1\otimes_ST_2$};
+\node[box, below=9mm of top, xshift=-34mm] (free) {$S^{a_1a_2}$\\ free, no torsion};
+\node[box, right=of free] (t1) {$\tor_1^{\,a_1}$\\ length $a_1\len(\tor_1)$};
+\node[box, right=of t1] (t2) {$\tor_2^{\,a_2}$\\ length $a_2\len(\tor_2)$};
+\node[box, right=of t2] (cr) {$\tor_1\otimes_S\tor_2$\\ length $\sum_jb_1(j)b_2(j)$};
+\draw[-{Stealth}] (top) -- (free);
+\draw[-{Stealth}] (top) -- (t1);
+\draw[-{Stealth}] (top) -- (t2);
+\draw[-{Stealth}] (top) -- (cr);
+\end{tikzpicture}
+\caption{Decomposition of $T=I_A\otimes I_{A^*}$ over $S=\kk[y]$ from the proof of Theorem~\ref{thm:main}: the free
+summand carries no torsion, the two torsion summands contribute $a_1\len(\tor_1)$ and $a_2\len(\tor_2)$, and the
+tensor product of the two torsion modules contributes the cross term, which is zero when either factor is
+torsion-free.}\label{fig:decomposition}
+\end{figure}
+
+\section{Algorithms and implementation}\label{sec:algorithms}
+
+The theorem is proved, and the computations of Sections~\ref{sec:design} and~\ref{sec:results} test it and its
+transcription. This section states the algorithms the computations use, with the proof that makes the direct
+torsion computation finite, their cost, and the code that implements them.
+
+\subsection{Degree-wise component count}
+
+For a relative ideal $A$ of a numerical semigroup $\Lambda$ with a generating set $G$ of $\Lambda$, in degree $d$ the
+module $T=I_A\otimes_{\kk[\Lambda]}I_{A^*}$ is spanned by the symbols $e_x\otimes e_z$ with $x\in A$, $z\in A^*$ and
+$x+z=d$, subject to the relations $e_{x+g}\otimes e_z=e_x\otimes e_{z+g}$ for $g\in G$ (for every $g\in\Lambda$ the
+relation holds, because $t^g$ acts on both factors, and the generators suffice). Every relation identifies two basis
+symbols, so a basis of $T_d$ is indexed by the connected components of the graph on the pairs $(x,z)$ with $x+z=d$ whose
+edges join $(x,z)$ to $(x-g,z+g)$ when $x-g\in A$. Let $\mu\colon T\to K$ be the multiplication map into the field
+of fractions. Its image is the product ideal $I_AI_{A^*}\subseteq K$, which is torsion-free, so $\tor(T)\subseteq\ker\mu$;
+conversely $T$ has rank one, the image has rank one, so $\ker\mu$ has rank zero and is torsion. Hence
+$\tor(T)=\ker\mu$, in agreement with \cite[Section~1]{Leamer2012}, and the image in degree $d$ is the line spanned by $t^d$
+whenever the degree has a pair. Therefore
+\begin{equation}\label{eq:components}
+\dim_\kk\tor(T)_d=\max\{0,\,\kappa_d-1\},
+\end{equation}
+where $\kappa_d$ is the number of connected components in degree $d$; this is the torsion number of
+\cite[Definition~2.5 and Remark~2.6]{Leamer2012}. The remaining question is where to stop.
+
+\begin{lemma}[degree bound]\label{lem:bound}
+Let $x_1,\dots,x_\mu$ generate $A$ and put $M=\max_ix_i+\cond(\Lambda)+\cond(A^*)$. For every degree $d\ge M$ all pairs
+$(x,z)\in A\times A^*$ with $x+z=d$ lie in one connected component, so $\tor(T)_d=0$. \mD{}
+\end{lemma}
+
+\begin{proof}
+Let $(x,z)$ be a pair in degree $d$. Since $A=\bigcup_i(x_i+\Lambda)$ we have $x=x_i+\gamma$ with $\gamma\in\Lambda$, and
+$z+\gamma\in A^*$ because $A^*+\Lambda\subseteq A^*$. The relation with $g=\gamma$ gives
+$e_x\otimes e_z=e_{x_i}\otimes e_{z+\gamma}$, so every pair is joined to an anchor $(x_i,d-x_i)$. Put
+$w=\max_jx_j+\cond(\Lambda)$. Then $w-x_i\ge\cond(\Lambda)$, so $g_i=w-x_i\in\Lambda$ and $w=x_i+g_i\in A$. Moreover
+$d-w\ge\cond(A^*)$, so $d-w\in A^*$. The relation with $g=g_i$ gives
+\[
+e_{x_i}\otimes e_{d-x_i}=e_{x_i}\otimes e_{(d-w)+g_i}=e_{x_i+g_i}\otimes e_{d-w}=e_w\otimes e_{d-w},
+\]
+so every anchor is joined to the pair $(w,d-w)$. All pairs of degree $d$ lie in one component.
+\end{proof}
+
+By Lemma~\ref{lem:bound} and equation~\eqref{eq:components}, only the degrees from $a_{\min}+s_{\min}$ to $M-1$ contribute,
+where $a_{\min}$ and $s_{\min}$ are the least elements of $A$ and $A^*$. This is the bound maxgen$(A)+\cond(\Lambda)+\cond(A^*)$
+that the implementation scans up to. Algorithm~\ref{alg:components} implements it with a union--find structure.
+
+\begin{algorithm}[t]
+\caption{Degree-wise torsion length of $I_A\otimes I_{A^*}$ from the definition.}\label{alg:components}
+\begin{algorithmic}[1]
+\Require generators $G$ of $\Lambda$; generators $X=\{x_1,\dots,x_\mu\}$ of $A$
+\State compute $A^*=\bigcap_{x\in X}(\Lambda-x)$, $\cond(\Lambda)$, $\cond(A^*)$, $a_{\min}$, $s_{\min}$; $M\gets\max X+\cond(\Lambda)+\cond(A^*)$
+\State $\text{length}\gets0$
+\For{$d=a_{\min}+s_{\min},\dots,M$}
+  \State $P_d\gets\{(x,d-x):x\in A,\ d-x\in A^*\}$; make each pair of $P_d$ a singleton class
+  \For{$(x,z)\in P_d$ and $g\in G$}
+    \If{$x-g\in A$} unite the classes of $(x,z)$ and $(x-g,z+g)$ \EndIf
+  \EndFor
+  \State $\text{length}\gets\text{length}+\max\{0,\#\text{classes of }P_d-1\}$
+\EndFor
+\State \Return length
+\end{algorithmic}
+\end{algorithm}
+
+The cost is governed by the number of pairs. If $N_{\mathrm{pairs}}$ is the number of $(x,z)\in A\times A^*$ with $x+z\le M$,
+the algorithm performs at most $e\,N_{\mathrm{pairs}}$ membership tests and unions, where $e=|G|$:
+\begin{equation}\label{eq:cost}
+N_{\mathrm{pairs}}=\#\{(x,z)\in A\times A^*:\ x+z\le M\},\qquad \text{work}\le e\,N_{\mathrm{pairs}}.
+\end{equation}
+The pairs grow
+quadratically with $M$, and Section~\ref{sec:results} measures $N_{\mathrm{pairs}}/M^2$ between \HardRatioMin{} and
+\HardRatioMax{} on \NHard{} instances. Membership is a bit test in a mask over a window $[\mathrm{lo},\mathrm{hi})$ in which every
+integer $\ge\mathrm{hi}$ is a member; the window is checked to contain a full tail of the semigroup and of $A^*$, and the
+implementation raises an error otherwise, so a window that is too small cannot produce a silent wrong value.
+
+\subsection{Jordan type of \texorpdfstring{$y$}{y}}
+
+The cross term of the law needs the numbers $b_i(j)$. Let $r_k=\dim_\kk y^k\tor(T_i)$. A Jordan block of size $s$ contributes
+$\max\{0,s-k\}$ to $r_k$, so
+\begin{equation}\label{eq:jordan}
+b_i(j)=r_{j-1}-r_j,\qquad r_0=\len(\tor(T_i)).
+\end{equation}
+In degree $d$ the torsion is spanned by the differences of the component classes. Multiplication by $y^k$ sends a class
+$[(x,z)]$ in degree $d$ to the class $[(x+ka,z)]$ in degree $d+ka$, where $a$ is the degree of $y$ ($a_2$ on $R_1$,
+$a_1$ on $R_2$), and the image of the differences in degree $d+ka$ has dimension (number of distinct image classes)
+$-1$ when that is positive. Summing over the degrees at most $M$ gives $r_k$ and Algorithm~\ref{alg:jordan} stops when $r_k=0$. The restriction to degrees at most $M$ is justified by Lemma~\ref{lem:bound}: the
+torsion vanishes in every degree $d\ge M$, so the images in those degrees contribute nothing. The recursion terminates because $y$ is nilpotent on a module of finite length, with at most as many
+steps as the length of the longest block. The block sizes are recovered from the differences of the numbers $b(j)$, and equation~\eqref{eq:cross} uses only these numbers.
+
+\begin{algorithm}[t]
+\caption{Jordan type of $y$ on $\tor(I_A\otimes I_{A^*})$ from the classes of Algorithm~\ref{alg:components}.}\label{alg:jordan}
+\begin{algorithmic}[1]
+\Require the classes of every degree $d\le M$, and the degree $a$ of $y$
+\State $r_0\gets$ length from Algorithm~\ref{alg:components}; $k\gets0$
+\While{$r_k>0$}
+  \State $k\gets k+1$; $r_k\gets0$
+  \For{each degree $d$ with at least two classes and $d+ka\le M$}
+    \State $I\gets\{\text{class of }(x+ka,z):(x,z)\text{ a representative of a class of degree }d\}$
+    \State $r_k\gets r_k+|I|-1$
+  \EndFor
+\EndWhile
+\State \Return $b(j)=r_{j-1}-r_j$ for $j=1,\dots,k$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{The partition criterion and its cost}
+
+Algorithm~\ref{alg:partition} implements the generator form of the criterion of Section~\ref{sec:prelim}. A non-principal
+ideal has $\mu\ge2$ minimal generators; fixing $x_1$ in the first block removes the symmetry between $S$ and $S'$, and the
+proper subsets of the remaining generators that can join it number $2^{\mu-1}-1$.
+
+\begin{algorithm}[t]
+\caption{Generator form of the Huneke--Wiegand criterion for a non-principal relative ideal $A=(x_1,\dots,x_\mu)$.}\label{alg:partition}
+\begin{algorithmic}[1]
+\Require generators $G$ of $\Lambda$; minimal generators $x_1<\dots<x_\mu$ of $A$, $\mu\ge2$
+\State compute $A^*$
+\For{each proper subset $C\subsetneq\{x_2,\dots,x_\mu\}$}
+  \State $P\gets\{x_1\}\cup C$; $Q\gets\{x_2,\dots,x_\mu\}\setminus C$
+  \State $L\gets(P+A^*)\cap(Q+A^*)$ with $P,Q$ read as the ideals they generate
+  \State $\text{meet}\gets$ minimal generators of the ideal $(P)\cap(Q)$; $L'\gets\text{meet}+A^*$
+  \If{$L\ne L'$} \Return \textsc{true} \EndIf
+\EndFor
+\State \Return \textsc{false}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{lemma}[cost of the partition criterion]\label{lem:cost}
+Algorithm~\ref{alg:partition} runs through at most $2^{\mu-1}-1$ splits. Each split performs $O(\mu+e+m)$ shifts and unions of
+window masks, where $e=|G|$ and $m$ is the multiplicity of $\Lambda$; the number of splits is exact when no split breaks the
+equality. \mD{}
+\end{lemma}
+
+\begin{proof}
+The subsets $C$ of $\{x_2,\dots,x_\mu\}$ other than the whole set number $2^{\mu-1}-1$. Per split, building the ideals $P$
+and $Q$ and the two sums with $A^*$ takes $O(\mu)$ shifts, and the minimal generators of $(P)\cap(Q)$ take $O(e)$ shifts
+to find; their number is at most $m$, because two minimal generators of a relative ideal cannot be congruent modulo $m$ (their
+difference would be a positive multiple of $m$, which lies in $\Lambda$ and makes the larger one redundant), and the sum with
+$A^*$ takes one shift per such generator.
+\end{proof}
+
+For the gluings of this paper the criterion is exponential only in $\mu$, and $\mu(A)=\mu(A_1)\mu(A_2)$ by
+Theorem~\ref{thm:main}(3); the two-generated factors give $\mu=4$ and $2^{3}-1=7$ splits.
+
+\subsection{Implementation and the independent route}
+
+\begingroup\raggedright
+The producer is \url{code/hwcert/gluing.py}, with the functions \texttt{tensor\_torsion} (Algorithms~\ref{alg:components}
+and~\ref{alg:jordan}), \texttt{is\_huneke\_wiegand} (Algorithm~\ref{alg:partition}), \texttt{glue\_generators},
+\texttt{extension\_generators}, \texttt{predicted\_length} (the law), \texttt{hilbert\_identity\_holds} and
+\texttt{is\_extension}; its tests are \url{tests/test_huneke_wiegand_exp068.py}. The seeded driver is
+\texttt{run.py} of the first experiment (seed \Seed), and the counterexample-factor driver is \texttt{run.py},
+\texttt{gluing\_cases.py} and \texttt{auditor.py} of the second.
+\par\endgroup
+
+The independent route is \texttt{audit.py} of the first experiment. It uses plain integer sets and breadth-first search over the
+monomial relation graph, and it imports neither \texttt{hwcert.gluing} nor the producer; the second experiment's
+\texttt{auditor.py} imports only the standard library and that file, and a unit test checks that neither imports the producer.
+It re-implements membership, minimal generators, the dual, the partition criterion and the degree scan with its own bound. For each
+case of the second experiment it rebuilds the glued generators, the extension generators, the minimal generators and the
+Frobenius number from the declared inputs and not from the producer. Agreement of the two routes is therefore evidence
+against an implementation error. It is not evidence against a flaw in the bound of Lemma~\ref{lem:bound}, which both
+routes use; that bound is proved above.
+
+\section{Theory: consequences and properties}\label{sec:theory}
+
+\subsection{Frobenius number and symmetry of a gluing}
+
+\begin{lemma}\label{lem:frob}
+Let $\Lambda$ be a numerical semigroup (possibly $\N$) and $c\in\Lambda$, $c>0$. Then $\max\Ap(\Lambda,c)=F(\Lambda)+c$. If
+$\Lambda$ is symmetric, that is, $x\in\Lambda\iff F(\Lambda)-x\notin\Lambda$ for every integer $x$, then
+$x\mapsto F(\Lambda)+c-x$ is an involution of $\Ap(\Lambda,c)$. \mD{}
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:apery} with $B=\Lambda$, the class of $r$ modulo $c$ meets $\Lambda$ in $w_r+c\N$, so the integers of that class
+outside $\Lambda$ are $w_r-jc$ with $j\ge1$, and the largest integer outside $\Lambda$ is $\max_rw_r-c$. For the second
+claim let $x\in\Ap(\Lambda,c)$ and put $F=F(\Lambda)$. Symmetry gives $F-x\notin\Lambda$ because $x\in\Lambda$, and
+$F+c-x\in\Lambda$ because $x-c\notin\Lambda$. Hence $F+c-x\in\Lambda$ and $(F+c-x)-c\notin\Lambda$, so it lies in $\Ap(\Lambda,c)$.
+\end{proof}
+
+\begin{corollary}\label{cor:frobsym}
+Let $\Gamma=a_1\Gamma_1+a_2\Gamma_2$ be a gluing. Every integer $n$ has a unique representation
+$n=a_1x+a_2z+ka_1a_2$ with $x\in\Ap(\Gamma_1,a_2)$, $z\in\Ap(\Gamma_2,a_1)$ and $k\in\Z$, and $n\in\Gamma$ if and only if $k\ge0$.
+Consequently
+\begin{equation}\label{eq:frob}
+F(\Gamma)=a_1F(\Gamma_1)+a_2F(\Gamma_2)+a_1a_2,
+\end{equation}
+and $\Gamma$ is symmetric when $\Gamma_1$ and $\Gamma_2$ are. \mD{}
+\end{corollary}
+
+\begin{proof}
+Given $n$, the residue of $x$ modulo $a_2$ is that of $n a_1^{-1}$, so $x$ is unique by Lemma~\ref{lem:apery}; likewise $z$ modulo $a_1$.
+The integer $n-a_1x-a_2z$ is divisible by $a_1$ and by $a_2$, hence by $a_1a_2$, which defines $k$. If $n\in\Gamma$,
+write $n=a_1\gamma_1+a_2\gamma_2$ and $\gamma_1=x'+ia_2$, $\gamma_2=z'+ja_1$ with Ap\'ery elements $x',z'$ and $i,j\ge0$; then
+$n=a_1x'+a_2z'+(i+j)a_1a_2$, and uniqueness gives $k=i+j\ge0$. Conversely $k\ge0$ gives $n=a_1(x+ka_2)+a_2z\in\Gamma$.
+The largest integer outside $\Gamma$ has $k=-1$ and maximal $x,z$, so by Lemma~\ref{lem:frob}
+\[
+F(\Gamma)=a_1(F(\Gamma_1)+a_2)+a_2(F(\Gamma_2)+a_1)-a_1a_2,
+\]
+which is~\eqref{eq:frob}. For symmetry write $x^*=F(\Gamma_1)+a_2$ and $z^*=F(\Gamma_2)+a_1$, so $F(\Gamma)=a_1x^*+a_2z^*-a_1a_2$. For $n=a_1x+a_2z+ka_1a_2$,
+\[
+F(\Gamma)-n=a_1(x^*-x)+a_2(z^*-z)+(-k-1)a_1a_2,
+\]
+and $x^*-x$ and $z^*-z$ are Ap\'ery elements by Lemma~\ref{lem:frob}. By uniqueness the coefficient of $F(\Gamma)-n$ is $-k-1$,
+so $n\in\Gamma$ iff $k\ge0$ iff $-k-1<0$ iff $F(\Gamma)-n\notin\Gamma$.
+\end{proof}
+
+This covers the definition of Section~\ref{sec:prelim}, which does not require $a_1,a_2$ to be non-generators. The converse (a
+gluing is symmetric only when each factor is) is credited to Delorme in \cite{GarciaSanchezLeamer2013} and is not needed here.
+The decomposition of Corollary~\ref{cor:frobsym} with $k=0$ is the equality $\Ap(\Gamma,a_1a_2)=a_1\Ap(\Gamma_1,a_2)+a_2\Ap(\Gamma_2,a_1)$,
+recorded as Remark~18 of \cite{GarciaSanchezLeamer2013} with a pointer to \cite{RosalesGarciaSanchez2009} that was not consulted here.
+
+\subsection{Consequences of the theorem}
 
 \begin{corollary}[{\cite[Propositions 9 and 10]{GarciaSanchezLeamer2013}}]
 If $A_1$ is a non-principal ideal with the Huneke--Wiegand property, every extension $a_1A_1+a_2B$ has
-it. The extension $a_1A_1+a_2\Gamma_2$ has it if and only if $A_1$ has.
+it. The extension $a_1A_1+a_2\Gamma_2$ has it if and only if $A_1$ has. \mD{}
 \end{corollary}
 
 \begin{corollary}\label{cor:open}
 If $A_1$ and $A_2$ are both counterexample ideals, then $a_1A_1+a_2A_2$ is a counterexample ideal with
-$\mu(A_1)\mu(A_2)$ minimal generators.
+$\mu(A_1)\mu(A_2)$ minimal generators. \mD{}
 \end{corollary}
 
-Corollary~\ref{cor:many} follows from Corollary~\ref{cor:open} and the symmetry of gluings of symmetric
-semigroups. For the simple gluings $m\N+q\Gamma$ with $\gcd(q,m)=1$ and $m$ the multiplicity of
-$\Gamma$, the case $\Gamma_2=\N$, $A_2=\N$ of Theorem~\ref{thm:main}, already given by
-\cite[Proposition~10]{GarciaSanchezLeamer2013}, turns the family of \cite{SantibanezLeal2026} into a
-two-parameter family of symmetric counterexamples of multiplicity $24p$ and embedding dimension $11p$,
-for every $p\ge4$ and every $q\ge1$ coprime to $24p$.
+The first is parts (2) and (4) of the theorem with a non-principal factor that has the property, and with $A_2=\Gamma_2$
+principal. The second is part (4) read for two factors without it, together with part~(3). Corollary~\ref{cor:many} follows
+from Corollary~\ref{cor:open} and Corollary~\ref{cor:frobsym}. For the iteration, let $\Gamma_1$ be the semigroup obtained at
+stage $r$ and $\Gamma_2=\Gamma_P$; gluing parameters exist by the remark in Section~\ref{sec:prelim}, and the extension of the
+stage-$r$ ideal with $2^r$ generators and a two-generated counterexample of $\Gamma_P$ has $2^{r+1}$ generators.
+
+\begin{corollary}\label{cor:invariance}
+If every non-principal relative ideal of $\Gamma_1$ and of $\Gamma_2$ has the Huneke--Wiegand property,
+then so does every non-principal extension ideal of $a_1\Gamma_1+a_2\Gamma_2$. \mD{}
+\end{corollary}
+
+This answers the invariance question of \cite[Section~4]{GarciaSanchezLeamer2013} for extension ideals. Relative ideals of
+$\Gamma$ that are not extensions are not covered. For monomial ideals, the module
+$(I_{A_1}\otimes_\kk I_{A_2})/(t^{a_2}\otimes1-1\otimes t^{a_1})$ of the ring-level question in
+\cite[Section~4]{GarciaSanchezLeamer2013} is $I_{A_1}\otimes_SI_{A_2}=I_A$, so Theorem~\ref{thm:main} answers that question
+for monomial ideals. A statement for arbitrary modules would need the dual of $M_1\otimes_SM_2$ to factor over $S$, which is
+not established here.
+
+\subsection{Hilbert series and the two explicit examples}
+
+\begin{corollary}\label{cor:hilbert}
+With $H_B(z)=\sum_{b\in B}z^b$, the Hilbert series of an extension satisfies
+\begin{equation}\label{eq:hilbert}
+H_A(z)=H_{A_1}(z^{a_1})\,H_{A_2}(z^{a_2})\,(1-z^{a_1a_2}).
+\end{equation}
+\mD{}
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:iso} the monomials $t^{a_1x+a_2z'+na_1a_2}$ with $x\in\Ap(A_1,a_2)$, $z'\in\Ap(A_2,a_1)$ and $n\ge0$ are
+the monomials of $I_A$, each once. So $H_A(z)=\bigl(\sum z^{a_1x}\bigr)\bigl(\sum z^{a_2z'}\bigr)/(1-z^{a_1a_2})$, while
+$H_{A_1}(z^{a_1})=\sum_{x\in\Ap(A_1,a_2)}z^{a_1x}/(1-z^{a_1a_2})$ and likewise for $A_2$. Dividing gives~\eqref{eq:hilbert}.
+\end{proof}
+
+Identity~\eqref{eq:hilbert} is the invariant that the computations of Section~\ref{sec:results} check coefficientwise and that
+fails without the gluing hypothesis. It decides that an ideal has the extension structure, but not its torsion, so it complements and does not replace the length law.
+The two examples that follow are the instances the theorem was built to reach.
 
 \begin{example}\label{ex:pham}
-Let $\Gamma_P$ be Pham's semigroup, minimally generated by $56$, $57$, $58$, $63$, $64$, the integers from $70$ to $83$, and $87$, $89$,
-$90$, $93$, $95$, $96$, $97$ (multiplicity $56$, Frobenius number $181$), with the counterexample ideal $(0,14)$ \cite{Pham2026}. For
-the gluing $\Gamma=56\Gamma_P+57\Gamma_P$, the extension $56(0,14)+57(0,14)$ is the relative ideal with
-minimal generators $0,784,798,1582$. $\Gamma$ is symmetric with Frobenius number
-$56\cdot181+57\cdot181+56\cdot57=23645$, and the extension is a four-generated counterexample.
+Let $\Gamma_P$ be Pham's semigroup, minimally generated by $56$, $57$, $58$, $63$, $64$, the integers from $70$ to $83$, and
+$87$, $89$, $90$, $93$, $95$, $96$, $97$ (multiplicity $56$, embedding dimension $26$, Frobenius number $181$), with the counterexample
+ideal $(0,14)$ \cite{Pham2026}. For the gluing $\Gamma=56\Gamma_P+57\Gamma_P$, the extension $56(0,14)+57(0,14)$ is the relative ideal
+with minimal generators $0,784,798,1582$. By Corollary~\ref{cor:frobsym}, $\Gamma$ is symmetric with Frobenius number
+$56\cdot181+57\cdot181+56\cdot57=23645$, and by Corollary~\ref{cor:open} the extension is a four-generated counterexample. \mD{}
 \end{example}
 
 \begin{example}\label{ex:mixed}
 Let $C_4$ be the member $p=4$ of the family of \cite{SantibanezLeal2026}, of multiplicity $96$ and
 Frobenius number $311$, with counterexample ideal $(0,24)$. For $\Gamma=96\Gamma_P+89C_4$, the extension
 $96(0,14)+89(0,24)$ has minimal generators $0,1344,2136,3480$, and $\Gamma$ is symmetric with Frobenius
-number $96\cdot181+89\cdot311+96\cdot89=53599$.
+number $96\cdot181+89\cdot311+96\cdot89=53599$. \mD{}
 \end{example}
 
-\begin{corollary}
-If every non-principal relative ideal of $\Gamma_1$ and of $\Gamma_2$ has the Huneke--Wiegand property,
-then so does every non-principal extension ideal of $a_1\Gamma_1+a_2\Gamma_2$.
-\end{corollary}
+\subsection{The two-parameter family}
 
-This answers the invariance question of \cite[Section~4]{GarciaSanchezLeamer2013} for extension ideals.
-Relative ideals of $\Gamma$ that are not extensions are not covered.
+For the simple gluings $m\N+q\Gamma$ with $\gcd(q,m)=1$ and $m$ the multiplicity of $\Gamma$, the case $\Gamma_2=\N$, $A_2=\N$ of
+Theorem~\ref{thm:main}, already given by \cite[Proposition~10]{GarciaSanchezLeamer2013}, turns the family of
+\cite{SantibanezLeal2026} into a two-parameter family of symmetric counterexamples. The statement needs the embedding
+dimension, which the following proposition proves.
 
-\begin{remark}
-For monomial ideals, the module $(I_{A_1}\otimes_\kk I_{A_2})/(t^{a_2}\otimes1-1\otimes t^{a_1})$ of the
-ring-level question in \cite[Section~4]{GarciaSanchezLeamer2013} is $I_{A_1}\otimes_SI_{A_2}=I_A$, so
-Theorem~\ref{thm:main} answers that question for monomial ideals. A statement for arbitrary modules would
-need the dual of $M_1\otimes_SM_2$ to factor over $S$, which is not established here.
-\end{remark}
+\begin{proposition}\label{prop:embdim}
+Let $\Gamma_p$ be the symmetric semigroup of the family of \cite{SantibanezLeal2026}, $m=24p$ its multiplicity, $p\ge4$, with embedding
+dimension $11p$, Frobenius number $78p-1$ and the counterexample ideal $(0,6p)$, and let $q\ge1$ be coprime to $m$. Then $\Gamma_{p,q}=m\N+q\Gamma_p$ is a
+symmetric numerical semigroup of multiplicity $24p$, embedding dimension $11p$ and Frobenius number $q(102p-1)-24p$, and
+$(0,6pq)$ is a counterexample ideal of $\Gamma_{p,q}$. \mD{}
+\end{proposition}
 
-\section{Computational checks}\label{sec:computation}
+\begin{proof}
+Apply Theorem~\ref{thm:main} and Corollary~\ref{cor:frobsym} with $\Gamma_1=\Gamma_p$, $a_1=q$, $\Gamma_2=\N$, $a_2=m\in\Gamma_p$,
+$A_1=(0,6p)$ and $A_2=\N$. Symmetry holds since $\N$ and $\Gamma_p$ are symmetric. With $F(\Gamma_p)=78p-1$ and $F(\N)=-1$,
+equation~\eqref{eq:frob} gives $q(78p-1)-m+qm=q(102p-1)-24p$. The ideal is a counterexample by Proposition~10 of
+\cite{GarciaSanchezLeamer2013}, since $A_2=\Gamma_2$. For the embedding dimension, $\Gamma_{p,q}$ is generated by $m$ and the
+numbers $qg$ for the generators $g\ne m$ of $\Gamma_p$ (the multiple $qm$ is redundant). If some $qg_i$ were a combination of the others, then
+$qg_i=cm+q\sum_{j\ne i}n_jg_j$ with $n_j\ge0$, and reducing modulo $q$ with $\gcd(q,m)=1$ gives $q\mid c$; dividing by $q$ gives
+$g_i=(c/q)m+\sum_{j\ne i}n_jg_j$, a redundancy among the generators of $\Gamma_p$, which is impossible. The generator $m$ is not
+redundant since every other generator is at least $qm>m$ when $q\ge2$, and for $q=1$ the semigroup is $\Gamma_p$.
+\end{proof}
 
-The statements above are proved; the computations below test them and their transcription. All
-arithmetic is exact.
+The argument for the embedding dimension is the one of the simple-gluing transfer in the CAOS Research programme (EXP-067, proof section~4). For every fixed
+$p$ infinitely many $q$ are coprime to $24p$, so the family has two free parameters.
 
-\emph{Two routes.} The torsion of $I_B\otimes I_{B^*}$ is computed from the definition: in degree $d$
-the module is spanned by $e_x\otimes e_z$ with $x\in B$, $z\in B^*$, $x+z=d$, modulo
-$e_{x+g}\otimes e_z=e_x\otimes e_{z+g}$ for generators $g$, so its dimension is the number of connected
-components of a finite graph and the torsion in degree $d$ has one dimension fewer. Every pair joins a
-pair $(x_i,d-x_i)$ with $x_i$ a generator of $B$, and two such pairs join through $w=\max_ix_i+F(\Lambda)+1$
-once $d-w$ exceeds the conductor of $B^*$, which bounds the degrees to scan. Independently, the
-Huneke--Wiegand property is decided by the partition criterion of \cite{Leamer2012}.
+\subsection{Scope, completion and what is not covered}
 
-\emph{Seeded family.} For 200 gluings with random factors of Frobenius number at most $10$, gluing
-parameters at most $7$ and ideals with at most three generators, the directly computed torsion length of
-the extension equals part~(2) of Theorem~\ref{thm:main} computed from the factors alone, including the
-Jordan types of $y$; in 33 of the cases both factors have torsion, so the cross term is non-zero. The
-partition criterion agrees with part~(4), and part~(3) and the Hilbert series identity
-$H_{I_A}(z)=H_{I_{A_1}}(z^{a_1})H_{I_{A_2}}(z^{a_2})(1-z^{a_1a_2})$ hold in every case.
+\begin{proposition}\label{prop:completion}
+For the localization and for the completion of $\kk[\Gamma]$ at its graded maximal ideal, a monomial ideal $I_A$ is
+Huneke--Wiegand (in the torsion sense) if and only if it is over $\kk[\Gamma]$. Hence parts~(3) and (4) of
+Theorem~\ref{thm:main}, and the corollaries that depend on them, hold over the graded ring, its localization and its
+completion. \mD{}
+\end{proposition}
 
-\emph{Examples and controls.} The partition criterion confirms Examples~\ref{ex:pham} and~\ref{ex:mixed},
-and that $(0,14)$ and $(0,24)$ are counterexample ideals of $\Gamma_P$ and $C_4$. Replacing the second
-factor of Example~\ref{ex:pham} by the ideal $(0,1)$ of $\Gamma_P$, which has the property, yields an
-extension with the property. For 30 random pairs with $a_1\notin\Gamma_2$ the Hilbert series identity
-fails, as it must without the gluing hypothesis. A second implementation sharing no code with the first
-recomputes Example~\ref{ex:pham} and the torsion lengths of 25 of the 200 cases, with full agreement. The
-code and data are in the repository named on the first page.
+\begin{proof}
+Condition (3) of \cite[Theorem~1.4]{Leamer2012} is a statement about ideals generated by monomials and does not refer to the ring,
+while the theorem is stated for graded subalgebras of polynomial rings and for analytically irreducible residually rational
+local rings whose maximal ideal is generated by monomials in the integral closure. The localization and the completion of
+$\kk[\Gamma]$ at the graded maximal ideal are such rings, with the dual $I_{A^*}$ the monomial ideal of
+\cite[Lemma~1.8]{Leamer2012}. The equivalence of (1) and (3) therefore gives the same criterion in all three rings.
+\end{proof}
 
-\section{Scope}\label{sec:scope}
+The length law and part~(2) of the theorem are statements for the graded ring, where the torsion is a graded module of finite
+length. Pham's counterexample persists under completion by \cite{Pham2026}. What is not covered is stated in
+Section~\ref{sec:limitations}: relative ideals of $\Gamma$ that are not extensions, and arbitrary modules.
 
-The results concern monomial (relative) ideals of numerical semigroup rings over any field, graded or
-completed. Theorem~\ref{thm:main} decides extension ideals of a gluing only; whether the gluing of two
-semigroups whose non-principal ideals all have the Huneke--Wiegand property can carry a counterexample
-ideal that is not an extension remains open. The sources consulted for the factorization and the length
-law were \cite{GarciaSanchezLeamer2013,GotoTakahashiTaniguchiTruong2013,Leamer2012,Roy2018}; none of them
-states these results, which is not a proof that they are new.
+\section{Experimental design}\label{sec:design}
 
-\section*{Acknowledgments}
+The computations test the written proof and its transcription; they do not replace it. Four predictions and two controls are
+stated for them.
 
-The author thanks Son Pham for making the first numerical-semigroup counterexample and its verification
-materials public. Neither he nor the other authors cited is an author of this paper, and this
-acknowledgment does not imply endorsement of the present results.
+\subsection{Predictions and controls}
+
+\begin{itemize}
+\item[P1] \emph{Length law.} On every case the torsion length of $T$ computed directly on the glued semigroup equals
+$a_1\len(\tor(T_1))+a_2\len(\tor(T_2))+\sum_jb_1(j)b_2(j)$ computed from the factors alone; for a counterexample factor
+$\len(\tor(T_i))=0$ and the prediction is $a_{3-i}\len(\tor(T_{3-i}))$.
+\item[P2] \emph{Characterization.} The partition-criterion predicate of $A$ equals the factor rule of part~(4), agrees with
+$\len(\tor(T))>0$ for non-principal $A$, and $\mu(A)=\mu(A_1)\mu(A_2)$. In particular a counterexample factor with a
+principal partner ideal gives a counterexample extension, and a non-principal partner ideal with the property gives an
+extension with the property.
+\item[P3] \emph{Independent route.} The auditor of Section~\ref{sec:algorithms} agrees with the producer on the torsion
+length, the predicate, $\mu(A)$ and the Frobenius number.
+\item[P4] \emph{Hilbert identity.} Identity~\eqref{eq:hilbert} holds coefficientwise, and the Frobenius number measured on the glued semigroup
+equals~\eqref{eq:frob}. This prediction checks the derivation of Corollary~\ref{cor:frobsym} on every case, in addition to the extension structure.
+\item[C1] \emph{Not a gluing.} Replacing $a_1$ by a gap of $\Gamma_2$ coprime to $a_2$ breaks identity~\eqref{eq:hilbert}.
+\item[C2] \emph{Not an extension.} A perturbed generator makes the ideal fail the extension test, and its Huneke--Wiegand
+status is reported and not assumed.
+\end{itemize}
+
+\subsection{The seeded family}
+
+The seeded family is the broad test: it samples many small gluings so that every combination of numbers of generators and every combination of torsion in the factors
+occurs, and it is the only place where the cross term is exercised many times. Its factors are small on purpose, because the direct computation on the glued semigroup must finish for every case.
+The seeded family has \NSeeded{} gluings drawn with seed \Seed{} by the function \texttt{small\_case} of the first experiment. Each semigroup has
+two to four generators sampled from $\{3,\dots,13\}$ with $\gcd=1$ and Frobenius number at most $10$; the multipliers $a_1,a_2$ are
+chosen among the integers from $2$ to $7$ lying in the other factor and coprime to each other (the recorded values lie between
+\SeededAMin{} and \SeededAMax{}); each ideal is $(0)$ or $(0,u)$ or $(0,u,v)$ with $u,v\in\{1,\dots,10\}$, reduced to its minimal generators.
+Such small factors contain no counterexample ideal, as Section~\ref{sec:results} shows by direct classification; the family tests the law, the
+characterization and the Jordan-type cross term where both factors carry torsion.
+
+\subsection{The counterexample-factor family}
+
+The second family is built from the published counterexamples. The large factors are Pham's semigroup $\Gamma_P$ with the ideal $(0,14)$
+(B1, counterexample), the member $C_4$ of the family of \cite{SantibanezLeal2026} with the ideal $(0,24)$ (B2, counterexample, $44$ generators,
+multiplicity \MultCfour, Frobenius number \FrobCfour), $\Gamma_P$ with the ideal $(0,1)$ (B3, a non-principal ideal with the property, the
+control), and $C_5$ with the ideal $(0,30)$ (B4, counterexample, $55$ generators, multiplicity $120$, Frobenius number $389$). The small partners are
+$\langle2,3\rangle$, $\langle2,5\rangle$, $\langle3,4\rangle$, $\langle3,5\rangle$, $\langle3,4,5\rangle$ and $\langle4,5,6,7\rangle$, each with the principal ideal $(0)$ and
+with the ideal $(0,1)$, which has the property in each of the six partners. The gluing parameters are $a_1$ the least nonzero element of the
+partner and $a_2$ the least element of the large factor coprime to $a_1$, so $a_1\in S$, $a_2\in\Gamma_B$ and $\gcd=1$. This gives $36$ cases for B1 to B3 and $12$
+for B4. The status of every ideal, counterexample or not, is recomputed in the run, by the partition criterion and by the torsion length of the factor, and the run stops if a status differs from the one assumed for it. The Frobenius numbers and multiplicities of the large factors are recomputed in the same way.
+
+\subsection{Metrics and statistics}
+
+Every comparison is an exact equality of integers or of Boolean values, so there is no sampling error and no confidence interval
+applies to a pass. The seeded family fixes the seed, and the counterexample-factor family has no random choice. Run times vary between executions and are
+reported as mean $\pm$ standard deviation over the cases. The cost of the direct route is measured by the number of pairs $N_{\mathrm{pairs}}$ and by the
+window $[\mathrm{lo},\mathrm{hi})$ of each case, so that the cost model of Section~\ref{sec:algorithms} can be checked against the measurement.
+The comparisons made are of three kinds. The first is the equality of the directly computed torsion length with the law, case by case. The second is the agreement of two implementations that
+share no code, on the same cases, for the torsion length, the predicate, the number of generators and the Frobenius number. The third is the failure of the controls, which must fail in the way the theorem
+predicts and not merely fail. A control that passed would show a defect in the instrument, and one that failed in an unpredicted way would show a defect in the theorem.
+No test of significance is applied: a single disagreement of the first kind would refute the law, and the number of cases measures only how many places it was looked for.
+
+\section{Results}\label{sec:results}
+
+Every number below is read by \texttt{make\_results.py} from the artifacts named in Section~\ref{sec:reproducibility}, and the script asserts the
+identity $a_1\len(\tor_1)+a_2\len(\tor_2)+\sum_jb_1(j)b_2(j)=$ direct length on every case before it writes a table.
+
+\subsection{The seeded family}
+
+Figure~\ref{fig:law} plots the directly computed length against the law for every case of both families, and Figure~\ref{fig:classes} shows how the cases divide by class of factor pair. On all \NSeeded{} seeded cases the directly computed torsion length of the extension equals the law, the partition-criterion predicate equals the factor rule,
+$\mu(A)=\mu(A_1)\mu(A_2)$, and identity~\eqref{eq:hilbert} holds. \mMV{} Table~\ref{tab:seeded} gives the distribution of the cases by the number of minimal generators: the
+most frequent type is $(1,1,1)$ with $81$ cases, and the types with a factor of three generators are rare. The torsion lengths range from \SeededMinTorsion{} to
+\SeededMaxTorsion{} with mean \SeededMeanTorsion{}, and \NSeededNonzero{} extensions have torsion. In \NSeededCross{} cases both factors have torsion, so the cross term is
+non-zero; Table~\ref{tab:cross} lists them with the Jordan types, and Figure~\ref{fig:cross} shows the share of the cross term in each total.
+
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{\input{generated/tab-seeded.tex}}
+\caption{The \NSeeded{} seeded gluings by the numbers of minimal generators of the two factors and of the extension: cases, cases with non-zero torsion, range
+and mean of the directly computed torsion length, cases with torsion in both factors, and cases where the law and the factor rule hold. Source: EXP-068 results.}\label{tab:seeded}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{\input{generated/tab-classes.tex}}
+\caption{Cases by class of the two factor ideals, for both families: principal, with the Huneke--Wiegand property, or counterexample. The seeded family has no counterexample
+factor; the second family has $36$, and its \NHardCEItself{} extensions with a principal partner are themselves counterexamples. No case has two counterexample factors.}\label{tab:classes}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.62\textwidth,height=6.4cm,xlabel={torsion length from the law},ylabel={directly computed torsion length},grid=major,
+legend pos=north west,legend cell align=left,legend style={font=\footnotesize}]
+\addplot[only marks,mark=*,mark size=1.3pt,color=blue!60!black] table[x=law,y=direct]{generated/fig-law-068.dat};
+\addplot[only marks,mark=square*,mark size=1.6pt,color=orange!85!black] table[x=law,y=direct]{generated/fig-law-070.dat};
+\addplot[black,dashed,no markers] table[x=x,y=y]{generated/fig-law-max.dat};
+\legend{seeded family (\NSeeded),counterexample-factor family (\NHard),identity}
+\end{axis}
+\end{tikzpicture}
+\caption{Torsion length computed directly on the glued semigroup against the length computed from the factors by the law, for the \NSeeded{} seeded gluings and the \NHard{}
+gluings with large factors; every point lies on the identity line and none is an exception.}\label{fig:law}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar,width=0.84\textwidth,height=6.2cm,bar width=11pt,ylabel={cases},xtick=data,xticklabels={both principal,one with property and one principal,both with property,counterexample and principal,counterexample and property},
+x tick label style={font=\scriptsize,rotate=20,anchor=east},ymin=0,enlarge x limits=0.15,legend pos=north east,legend style={font=\footnotesize}]
+\addplot[fill=blue!55!black,draw=none] table[x=idx,y=seeded]{generated/fig-classes.dat};
+\addplot[fill=orange!85!black,draw=none] table[x=idx,y=hard]{generated/fig-classes.dat};
+\legend{seeded family,counterexample-factor family}
+\end{axis}
+\end{tikzpicture}
+\caption{Number of cases by class of the factor pair in the two families: the seeded family never contains a counterexample factor, and the second family
+is built from counterexample factors, so the two families together cover the classes the theorem distinguishes except two counterexample factors.}\label{fig:classes}
+\end{figure}
+
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{\input{generated/tab-cross.tex}}
+\caption{The \NSeededCross{} seeded cases in which both factors have torsion. For each case the multipliers, the torsion length and Jordan type of $y$ on each factor
+(the numbers $b(1),b(2),\dots$ of blocks of size at least $j$), the part of the law from the factors alone, the cross term $\sum_jb_1(j)b_2(j)$ and the directly computed length, which is their sum.}\label{tab:cross}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar stacked,width=0.96\textwidth,height=6.2cm,bar width=4pt,xlabel={cross-term case (order of Table~\ref{tab:cross})},ylabel={torsion length},
+legend pos=north west,legend style={font=\footnotesize},ymin=0,enlarge x limits=0.03]
+\addplot[fill=blue!55!black,draw=none] table[x=idx,y=own]{generated/fig-cross.dat};
+\addplot[fill=red!70!black,draw=none] table[x=idx,y=cross]{generated/fig-cross.dat};
+\legend{$a_1\len(\tor_1)+a_2\len(\tor_2)$,cross term}
+\end{axis}
+\end{tikzpicture}
+\caption{For each of the \NSeededCross{} seeded cases with torsion in both factors, the part of the directly computed torsion length given by the factors alone and the cross term; the cross term is
+a minority of the total in every case but is needed for equality.}\label{fig:cross}
+\end{figure}
+
+The auditor recomputed the torsion length of every eighth case, \NAudited{} in all, from plain integer sets; Table~\ref{tab:audited} shows full agreement with the producer's direct value and with the law.
+\mMV{}
+
+\begin{table}[t]
+\centering\footnotesize
+\input{generated/tab-audited.tex}
+\caption{The \NAudited{} seeded cases (every eighth case) whose torsion length was recomputed by the independent implementation: auditor value, producer direct value and the value from the law, which agree in every row.}\label{tab:audited}
+\end{table}
+
+\subsection{Gluings with a counterexample factor}
+
+Over the \NHard{} gluings built from counterexample and control factors, the law holds by the producer's direct tensor computation on the glued semigroup, the predicate follows the factor rule,
+$\mu(A)=\mu(A_1)\mu(A_2)$, identity~\eqref{eq:hilbert} holds, and the measured Frobenius number equals~\eqref{eq:frob}. \mMV{} \NHardCE{} cases have a counterexample factor, \NHardNonzero{} cases have
+non-zero torsion, and in the \NHardCEPrincipal{} cases with a counterexample factor and the principal partner ideal the extension is non-principal with torsion length $0$, that is, itself a counterexample
+(Corollary~\ref{cor:open}, row `counterexample factor, principal partner' of Table~\ref{tab:classes}). In the remaining counterexample-factor cases the partner ideal $(0,1)$ has the property and the torsion
+length is $a_2\len(\tor(T_S))$, the value of the law with a vanishing cross term; for example B1 with $\langle2,3\rangle$ and $(0,1)$ gives $114=57\cdot2$.
+Six cases, those of B3 with the partner ideal $(0,1)$, have torsion in both factors and exercise the cross term. Tables~\ref{tab:harda} and~\ref{tab:hardb} list the cases. The independent
+route completed all \NHard{} cases, the slowest in \HardAuditMax{} seconds, and agrees with the producer on the torsion length, the predicate, $\mu$ and the Frobenius number in every case. \mMV{}
+
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{\input{generated/tab-hard-a.tex}}
+\caption{The $24$ gluings with large factor B1 (Pham, ideal $(0,14)$, counterexample) or B3 (Pham, ideal $(0,1)$, with the property): partner semigroup and ideal, multipliers, torsion length from the law, directly computed length, independent auditor value, whether the extension has the property (HW; ``no'' is a counterexample), $\mu(A)$, pairs scanned and seconds of the direct computation.}\label{tab:harda}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{\input{generated/tab-hard-b.tex}}
+\caption{The $24$ gluings with large factor B2 ($C_4$, ideal $(0,24)$) or B4 ($C_5$, ideal $(0,30)$), both counterexamples: the same columns as Table~\ref{tab:harda}. Every row with the partner ideal $(0)$ is an extension that is itself a counterexample, with torsion length zero.}\label{tab:hardb}
+\end{table}
+
+\subsection{The explicit examples and the controls}
+
+Table~\ref{tab:examples} gives the two four-generated examples and the controls. For the examples the Frobenius number measured on the glued semigroup equals the value from~\eqref{eq:frob}, the
+semigroup is symmetric by direct check, and the partition criterion finds no partition that breaks the equality, so the four-generated ideals are counterexamples. \mMV{} The partition criterion
+was run for the first example by the producer (\PhamSeconds{} s) and by the auditor, and for the second by the producer (\MixedSeconds{} s). The direct torsion of these two instances is not computed.
+Replacing the second factor of the first example by $(0,1)$ gives the generators $0,57,784,841$ and an extension with the property, and the perturbed ideal with generators $0,784,798,1583$, which
+is not an extension, has the property although the true ideal does not. Table~\ref{tab:controls} lists all controls.
+
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{\input{generated/tab-examples.tex}}
+\caption{The two four-generated counterexamples, the control with a factor that has the property, and the perturbed ideal: multipliers, the measured Frobenius number and symmetry, the minimal generators of the ideal, $\mu$, and whether the ideal has the Huneke--Wiegand property.}\label{tab:examples}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\input{generated/tab-controls.tex}
+\caption{The controls that remove or replace a hypothesis, with the instance and the outcome: without the gluing hypothesis the Hilbert identity fails, without the extension structure the
+extension test rejects, and with a factor that has the property the extension has the property.}\label{tab:controls}
+\end{table}
+
+\subsection{Cost of the direct route}
+
+The pairs scanned by the direct computation range from \HardPairsMin{} to \HardPairsMax{} over the \NHard{} cases, with window lower ends down to $\HardWindowLo{}$ and upper ends up to \HardWindowHi{}, and scan limits $M$
+from \HardTopMin{} to \HardTopMax{}. The ratio $N_{\mathrm{pairs}}/M^2$ lies between \HardRatioMin{} and \HardRatioMax{} (median \HardRatioMedian{}), which supports the quadratic cost model of Section~\ref{sec:algorithms}
+(Figure~\ref{fig:pairs}). The time per pair lies between \HardMicroMin{} and \HardMicroMax{} microseconds, so the time is roughly linear in the number of pairs
+(Figure~\ref{fig:time}); the direct computation takes \HardTimeMin{} to \HardTimeMax{} seconds per case (mean $\pm$ standard deviation $\HardTimeMean\pm\HardTimeSd$ seconds), and the independent route
+\HardAuditMean{}$\,\pm\,$\HardAuditSd{} seconds. The seeded family finished in \SeededSeconds{} seconds in all and the second family in \HardWall{} seconds with at most \HardWorkers{} worker processes.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.7\textwidth,height=6.4cm,xmode=log,ymode=log,xlabel={pairs scanned},ylabel={seconds},grid=major,legend pos=south east,legend style={font=\footnotesize},legend cell align=left]
+\addplot[only marks,mark=*,mark size=1.6pt,color=blue!60!black] table[x=pairs,y=producer]{generated/fig-cost-B1.dat};
+\addplot[only marks,mark=square*,mark size=1.8pt,color=orange!85!black] table[x=pairs,y=producer]{generated/fig-cost-B2.dat};
+\addplot[only marks,mark=triangle*,mark size=2pt,color=green!50!black] table[x=pairs,y=producer]{generated/fig-cost-B3.dat};
+\addplot[only marks,mark=diamond*,mark size=2pt,color=red!70!black] table[x=pairs,y=producer]{generated/fig-cost-B4.dat};
+\foreach \b in {B1,B2,B3,B4}{\addplot[only marks,mark=o,mark size=1.2pt,color=gray,forget plot] table[x=pairs,y=auditor]{generated/fig-cost-\b.dat};}
+\legend{B1,B2,B3,B4}
+\end{axis}
+\end{tikzpicture}
+\caption{Seconds of the direct torsion computation (filled markers, by large factor) against the pairs scanned, on logarithmic axes, for the \NHard{} gluings with large factors; the open gray markers are the seconds of the independent implementation on the same cases.}\label{fig:time}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.7\textwidth,height=6.4cm,xmode=log,ymode=log,xlabel={scan limit $M$},ylabel={pairs scanned},grid=major,legend pos=south east,legend style={font=\footnotesize},legend cell align=left]
+\addplot[only marks,mark=*,mark size=1.6pt,color=blue!60!black] table[x=top,y=pairs]{generated/fig-cost-B1.dat};
+\addplot[only marks,mark=square*,mark size=1.8pt,color=orange!85!black] table[x=top,y=pairs]{generated/fig-cost-B2.dat};
+\addplot[only marks,mark=triangle*,mark size=2pt,color=green!50!black] table[x=top,y=pairs]{generated/fig-cost-B3.dat};
+\addplot[only marks,mark=diamond*,mark size=2pt,color=red!70!black] table[x=top,y=pairs]{generated/fig-cost-B4.dat};
+\addplot[black,dashed,no markers] table[x=top,y=pairs]{generated/fig-cost-line.dat};
+\legend{B1,B2,B3,B4,median ratio times $M^2$}
+\end{axis}
+\end{tikzpicture}
+\caption{Pairs scanned by the direct computation against the scan limit $M=\max X+\cond(\Lambda)+\cond(A^*)$ on logarithmic axes, for the \NHard{} gluings with large factors; the dashed line is the median ratio times $M^2$, which the points follow with slope two.}\label{fig:pairs}
+\end{figure}
+
+\section{Ablation of the hypotheses and of the law}\label{sec:ablation}
+
+An ablation asks what each part of a result contributes. Here the parts are the hypotheses of the theorem, which the controls remove, and the terms of the length law, which are removed in turn from the formula and counted against the direct computation.
+The controls of Table~\ref{tab:controls} remove the hypotheses of the theorem one at a time, and each fails in the way the theorem predicts: a gap in place of $a_1$ breaks identity~\eqref{eq:hilbert} in every one of the
+$30+2$ cases, a perturbed generator is rejected as a non-extension, and a factor with the property makes the extension have the property. The second ablation removes parts of the length law and counts, over all
+cases computed directly, how often the weakened formula still equals the direct length. Table~\ref{tab:ablation} gives the counts.
+
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{\input{generated/tab-ablation.tex}}
+\caption{Ablation of the length law on the cases computed directly: the number of cases in which each weakened formula equals the direct torsion length, for the seeded family, the counterexample-factor family and both.}\label{tab:ablation}
+\end{table}
+
+Without the cross term the formula fails on \AblNoCrossSeeded{} seeded cases and \AblNoCrossHard{} cases of the second family, exactly the cases with torsion in both factors. With the multipliers replaced by $1$ it
+fails on \AblOnesSeeded{} and \AblOnesHard{} cases, which are all those with non-zero torsion, so the multipliers $a_1,a_2$ carry real information. Exchanging them fails on \AblSwapSeeded{} and \AblSwapHard{} cases, so the assignment of
+$a_1$ to the first factor and $a_2$ to the second is also tested. Using only the blocks of size one in the cross term fails on \AblBlockOneSeeded{} seeded case and \AblBlockOneHard{} cases of the second family, so the Jordan type beyond
+the number of blocks matters in the seeded case $29$ of Table~\ref{tab:cross} and in no other recorded case. Replacing the cross term by the product of the two lengths fails on \AblProductSeeded{} and \AblProductHard{} cases.
+Table~\ref{tab:ablation} also shows that the largest drop comes from the multipliers and that the cross term is the term most easily lost, since dropping it costs few cases. The ablation shows which parts of the law the data constrain; it does not show that a part the data do not constrain is absent from the truth, and the proof is what establishes the full law.
+
+\section{Discussion}\label{sec:discussion}
+
+The factorization explains why the property travels along a gluing in one direction and why the counterexamples travel in the other. Over $S$ a torsion-free module is free, so the torsion of $T_1\otimes_ST_2$ is the torsion of one
+factor tensored with a free module of the rank of the other, plus the tensor product of the two torsion parts. If neither factor has torsion there is nothing for either term to carry, and the extension is torsion-free. That is
+the case left open by Proposition~9 of \cite{GarciaSanchezLeamer2013}, and it is the situation created by the counterexamples of \cite{Pham2026,ChristensenGerkoIyengar2026,SantibanezLeal2026}.
+
+The results of Section~\ref{sec:results} bear on this in three ways. The seeded family, whose factors are all small, never contains a counterexample ideal (Table~\ref{tab:classes}), so by itself it could not have caught an error confined to
+the case the paper settles. The second family closes that gap for one-factor counterexamples: the law holds on $36$ gluings with a counterexample factor, with the extension itself a counterexample in \NHardCEItself{} of them, by a direct
+computation on the glued semigroup that does not use the theorem. What remains uncomputed directly is the case with two counterexample factors, the case of the two four-generated examples. There the evidence is the proof, together with the
+partition criterion, which is a different characterization of the same property and agrees with the factor rule on all \NHard{} cases of the second family.
+
+The failure cases are the controls and the ablation. Without the gluing hypothesis the identity that underlies Proposition~\ref{prop:iso} fails at once, and the extension test detects an ideal that is not an extension; the perturbed ideal $(0,784,798,1583)$ shows that
+the Huneke--Wiegand status is not stable under such a perturbation, since it has the property while the true ideal does not. No negative result arose in the comparisons: no case disagrees with the law or with the factor rule, in either family, by either route.
+
+The theorem implies that counterexamples with $2^r$ generators exist for every $r$, which is a statement about the structure of the set of counterexample ideals and not about the conjecture, which is already refuted. Whether
+every counterexample ideal of a gluing of two semigroups whose non-principal ideals all have the property is an extension is open (Section~\ref{sec:limitations}).
+
+\section{Limitations}\label{sec:limitations}
+
+\emph{Internal validity.} The computations share two ingredients: the inputs of the two routes (the generators of both factors and the gluing parameters) and the bound of Lemma~\ref{lem:bound}. An error in the choice of inputs would
+affect both routes, which is why the controls check that a violation of the gluing hypothesis is detected. The bound is proved, so an implementation fault in it is the remaining risk; the cost model is checked against a brute-force enumeration of the
+loops by a unit test. A pass on \NSeeded{}$+$\NHard{} cases is evidence for the transcription and not a proof; the proof is Section~\ref{sec:length}.
+
+\emph{External validity.} The factors of the second family are small partners, at most four generators, and four large counterexample factors with Frobenius numbers up to $389$; the cross term is exercised in only
+six cases of that family and in \NSeededCross{} seeded cases, and the Jordan blocks of size larger than one matter in a single recorded case. Gluings with larger Frobenius numbers are not computed directly: the two explicit examples have
+Frobenius numbers $23645$ and $53599$, and the cost model of Section~\ref{sec:algorithms} puts the scan beyond the cost of the recorded cases. At the ratio of \HardRatioMin{} the examples would need more than $7\cdot10^{7}$ pairs, since
+the scan limit is at least $\max X+\cond(\Lambda)\ge25228$ for the first one; this is an extrapolation and not a measurement. A prior estimate, made before the second family was computed, put the scan for these instances at more than $10^{9}$ pairs; it was not computed either.
+
+\emph{Construct validity.} The Huneke--Wiegand property is used in the torsion sense for non-principal ideals, and a counterexample ideal is a non-principal ideal whose tensor product with its dual is torsion-free. Under the definition
+of \cite{GarciaSanchezLeamer2013} a principal ideal also counts as Huneke--Wiegand; the two conventions differ only on principal ideals, which the theorem treats separately.
+
+\emph{Scope.} The results concern monomial (relative) ideals of numerical semigroup rings over any field, graded, localized or completed (Proposition~\ref{prop:completion}). Theorem~\ref{thm:main} decides extension ideals of a gluing only. Whether the gluing of two
+semigroups whose non-principal ideals all have the Huneke--Wiegand property can carry a counterexample ideal that is not an extension is open, as is a module version for arbitrary modules, for which the dual of $M_1\otimes_SM_2$ would need to factor over $S$.
+
+\section{Reproducibility}\label{sec:reproducibility}
+
+All code, artifacts and proofs are in the repository named on the first page. The theorem and its proof are in the folder of the first experiment (\texttt{proof.md}); the seeded run is reproduced from the repository root by its
+\texttt{run.py} with seed \Seed{} in \SeededSeconds{} seconds on commodity CPU, and the counterexample-factor run by its \texttt{run.py} in about \HardWall{} seconds with at most \HardWorkers{} worker processes (only the times vary). The tables and figures of this paper
+are regenerated by \texttt{make\_results.py} in the folder of the paper, which reads the artifacts listed in Table~\ref{tab:provenance}, asserts the identities between them and writes the files under \texttt{generated/}; the PDF is built by three \texttt{pdflatex} passes.
+Exact integer arithmetic is used throughout.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{generated/tab-provenance.tex}
+\caption{Code and artifact files behind the results, with the SHA-256 of each committed file: the producer library and its tests, the drivers and independent auditors of both experiments, and the results and logs from which every table and figure is generated.}\label{tab:provenance}
+\end{table}
+
+\section{Conclusions}\label{sec:conclusions}
+
+For a gluing of numerical semigroups, the tensor product $I_A\otimes I_{A^*}$ of an extension ideal factors over $\kk[y]$, its torsion has length $a_1\len(\tor(T_1))+a_2\len(\tor(T_2))+\sum_jb_1(j)b_2(j)$, the number of minimal generators multiplies, and the
+Huneke--Wiegand property holds exactly when a factor is a non-principal ideal with it. The case both factors are counterexamples gives a counterexample, which yields counterexample ideals with $2^r$ minimal generators and two explicit four-generated examples with Frobenius numbers $23645$ and $53599$.
+The law was checked directly on \NSeeded{} seeded gluings and on \NHard{} gluings with a counterexample factor, with \NHardCEItself{} extensions that are counterexamples, by two routes that share no code, and no case disagrees. The next steps are the non-extension ideals of a gluing and a module version of the factorization.
+
+\medskip
+\noindent\textbf{Acknowledgments.} The author thanks Son Pham for making the first numerical-semigroup counterexample and its verification materials public. Neither he nor the other authors cited is an author of this paper, and this acknowledgment does not imply endorsement of the present results.
 
 \medskip
 \noindent\textbf{Declaration of generative AI use.} Generative AI tools were used in the
@@ -350,36 +1116,111 @@ responsibility for the work.
 \setlength{\itemsep}{0.25em}
 \setlength{\parsep}{0pt}
 
+\bibitem{Auslander1961}
+M. Auslander,
+\emph{Modules over unramified regular local rings},
+Illinois J. Math. 5 (1961), 631--647.
+
+\bibitem{BertinCarbonne1977}
+J. Bertin and P. Carbonne,
+\emph{Semi-groupes d'entiers et application aux branches},
+J. Algebra 49 (1977), 81--95.
+
+\bibitem{Borevitz2023}
+L. Borevitz, T. Gomes, J. Ma, H. Niergarth, C. O'Neill, D. Pocklington, R. Stolk, J. Wang and S. Xue,
+\emph{On faces of the Kunz cone and the numerical semigroups within them},
+preprint (2023), \href{https://arxiv.org/abs/2309.07793}{arXiv:2309.07793}.
+
+\bibitem{BrowerMcDonoughONeill2024}
+C. Brower, J. McDonough and C. O'Neill,
+\emph{Numerical semigroups, polyhedra, and posets IV: walking the faces of the Kunz cone},
+preprint (2024), \href{https://arxiv.org/abs/2401.06025}{arXiv:2401.06025}.
+
+\bibitem{CasabellaDAnnaGarciaSanchez2023}
+L. Casabella, M. D'Anna and P. A. Garc\'{\i}a-S\'anchez,
+\emph{Ap\'ery sets and the ideal class monoid of a numerical semigroup},
+preprint (2023), \href{https://arxiv.org/abs/2302.09647}{arXiv:2302.09647}.
+
+\bibitem{CelikbasGotoTakahashiTaniguchi2017}
+O. Celikbas, S. Goto, R. Takahashi and N. Taniguchi,
+\emph{On the ideal case of a conjecture of Huneke and Wiegand},
+preprint (2017), \href{https://arxiv.org/abs/1710.07398}{arXiv:1710.07398}.
+
+\bibitem{CelikbasLeMatsuiSadeghi2022}
+O. Celikbas, U. Le, H. Matsui and A. Sadeghi,
+\emph{Remarks on a conjecture of Huneke and Wiegand and the vanishing of (co)homology},
+preprint (2022), \href{https://arxiv.org/abs/2202.04792}{arXiv:2202.04792}.
+
+\bibitem{CelikbasTakahashi2011}
+O. Celikbas and R. Takahashi,
+\emph{Auslander--Reiten conjecture and Auslander--Reiten duality},
+preprint (2011), \href{https://arxiv.org/abs/1112.6201}{arXiv:1112.6201}.
+
 \bibitem{ChristensenGerkoIyengar2026}
 L. W. Christensen, A. Gerko and S. B. Iyengar,
 \emph{Some non-principal rigid ideals in Gorenstein domains of dimension one},
 preprint (2026), \href{https://arxiv.org/abs/2608.21666}{arXiv:2608.21666}.
+
+\bibitem{DelgadoGarciaSanchezMorais}
+M. Delgado, P. A. Garc\'{\i}a-S\'anchez and J. Morais,
+\emph{``numericalsgps'': a GAP package on numerical semigroups},
+\url{http://www.gap-system.org/Packages/numericalsgps.html}.
 
 \bibitem{Delorme1976}
 C. Delorme,
 \emph{Sous-mono\"ides d'intersection compl\`ete de $\N$},
 Ann. Sci. \'Ec. Norm. Sup\'er. (4) 9 (1976), 145--154.
 
+\bibitem{DeyKobayashi2022}
+S. Dey and T. Kobayashi,
+\emph{Vanishing of (co)homology of Burch and related submodules},
+preprint (2022), \href{https://arxiv.org/abs/2201.01023}{arXiv:2201.01023}.
+
+\bibitem{DeyLyle2025}
+S. Dey and J. Lyle,
+\emph{Centers of endomorphism rings and reflexivity},
+preprint (2025), \href{https://arxiv.org/abs/2510.02210}{arXiv:2510.02210}.
+
 \bibitem{GarciaSanchezLeamer2013}
 P. A. Garc\'{\i}a-S\'anchez and M. J. Leamer,
 \emph{Huneke--Wiegand conjecture for complete intersection numerical semigroup rings},
-J. Algebra 391 (2013), 114--124; \href{https://arxiv.org/abs/1211.4554}{arXiv:1211.4554}.
+preprint (2012), \href{https://arxiv.org/abs/1211.4554}{arXiv:1211.4554v1}; numbering of lemmas, propositions and theorems as in that version.
+
+\bibitem{GimenezSrinivasan2022}
+P. Gimenez and H. Srinivasan,
+\emph{On gluing semigroups in $\N^n$ and the consequences},
+preprint (2022), \href{https://arxiv.org/abs/2202.01189}{arXiv:2202.01189}.
 
 \bibitem{GotoTakahashiTaniguchiTruong2013}
 S. Goto, R. Takahashi, N. Taniguchi and H. Le Truong,
 \emph{Huneke--Wiegand conjecture and change of rings},
 preprint (2013), \href{https://arxiv.org/abs/1305.4238}{arXiv:1305.4238}.
 
+\bibitem{Herzinger1999}
+K. Herzinger,
+\emph{The number of generators for an ideal and its dual in a numerical semigroup},
+Comm. Algebra 27 (1999), 4673--4689.
+
+\bibitem{HunekeIyengarWiegand2018}
+C. Huneke, S. B. Iyengar and R. Wiegand,
+\emph{Rigid ideals in Gorenstein rings of dimension one},
+preprint (2018), \href{https://arxiv.org/abs/1804.00939}{arXiv:1804.00939}.
+
 \bibitem{HunekeWiegand1994}
 C. Huneke and R. Wiegand,
 \emph{Tensor products of modules and the rigidity of Tor},
 Math. Ann. 299 (1994), 449--476.
-\href{https://doi.org/10.1007/BF01459793}{doi:10.1007/BF01459793}.
+\href{https://doi.org/10.1007/BF01459794}{doi:10.1007/BF01459794}.
+
+\bibitem{Landeros2024}
+M. Landeros, C. O'Neill, R. Pelayo, K. Pe\~na, J. Ren and B. Wissman,
+\emph{Families of numerical semigroups and a special case of the Huneke--Wiegand conjecture},
+preprint (2024, revised 2026), \href{https://arxiv.org/abs/2404.12519}{arXiv:2404.12519}.
 
 \bibitem{Leamer2012}
 M. J. Leamer,
 \emph{Torsion and tensor products over domains and specializations to semigroup rings},
-preprint (2012), \href{https://arxiv.org/abs/1211.2896}{arXiv:1211.2896}.
+preprint (2012), \href{https://arxiv.org/abs/1211.2896}{arXiv:1211.2896v1}; numbering as in that version.
 
 \bibitem{Pham2026}
 S. Pham,

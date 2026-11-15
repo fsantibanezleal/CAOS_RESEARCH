@@ -9,8 +9,9 @@ Focused companion of the Huneke-Wiegand programme (focus `HW-F8`).
 - Corollaries: Propositions 9 and 10 of García-Sánchez and Leamer (arXiv:1211.4554), re-proved with
   credit; the case they leave open; four-generated counterexamples over symmetric semigroups
   (Frobenius numbers 23645 and 53599); EXP-067 as a credited corollary.
-- Build: two-pass `pdflatex main.tex`; voice gate `scripts/check_manuscript_voice.py`.
+- Build: three-pass `pdflatex main.tex`; voice gate `scripts/check_manuscript_voice.py`; tables and figures regenerate with `python make_results.py` (reads the EXP-068 and EXP-070 artifacts).
 - v0.01: version DOI [10.5281/zenodo.23821498](https://doi.org/10.5281/zenodo.23821498), concept DOI
   [10.5281/zenodo.23821497](https://doi.org/10.5281/zenodo.23821497). Reserved 2026-10-30 and the PDF frozen
   (sha256 `730e7ae0651b95ee9def05ed98556f67611e1fe9be476ac96464b175e7087fa1`); published 2026-11-01, public download verified against the frozen file.
 - Approval record: [`publication-gate.json`](publication-gate.json).
+- v0.02 (draft source, not released): validation on gluings with a counterexample factor (EXP-070), algorithms and degree-bound lemma, results tables, re-pointed citations, extended related work, derived Frobenius and symmetry, embedding-dimension proof, completion argument; claim audit in [`claim-audit-v0.02.md`](claim-audit-v0.02.md). The committed `main.pdf` is the v0.01 file until the release builds the new one.
