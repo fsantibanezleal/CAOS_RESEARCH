@@ -45,7 +45,7 @@ cotangent and tangent dimensions remain one in every characteristic.
 
 ## Why the verdict is theorem-level
 
-- EXP-023's frozen value-congruence theorem identifies the kernel of the truncated monomial map
+- The value-congruence theorem, derived in EXP-022 `proof.md` section 1 and frozen here through the EXP-023 premise, identifies the kernel of the truncated monomial map
   degree by degree.
 - The offset-one generator expresses every dehomogenized coordinate as a power of `X_1`.
 - EXP-021's frozen rank-`q` freeness proves that the resulting surjection from `k[y]/(y^q)` is an
@@ -92,8 +92,7 @@ Artifact manifest:
 
 The finite campaign validates implementations; it does not prove the statement for untested
 parameters. The symbolic proof in `proof.md` is load-bearing and imports only hash-frozen
-EXP-021/023/024 premises. EXP-023's all-parameter value-congruence theorem retains its disclosed
-solver/encoding boundary. No claim is made for arbitrary conductor ideals, arbitrary fiber cones,
+EXP-021/023/024 premises. The value congruence used here is derived (EXP-022 `proof.md` section 1, independent of computation); EXP-023's disclosed solver/encoding boundary covers only its degree 3 to 5 connectivity, that is the one-cubic presentation and relation type three, which this proof does not use (correction 2026-11-15). The same attribution in `proof.md` section 6 is kept unchanged because that file is a hash-frozen premise of EXP-026 and EXP-027. No claim is made for arbitrary conductor ideals, arbitrary fiber cones,
 or arbitrary Huneke--Wiegand counterexamples.
 
 ## Manuscript decision

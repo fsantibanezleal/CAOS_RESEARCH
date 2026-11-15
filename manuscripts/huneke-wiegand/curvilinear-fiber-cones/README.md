@@ -1,6 +1,8 @@
 # Curvilinear conductor fiber cones
 
-Current public version: v0.04, published 2026-09-18 at
+Current public version: v0.05, published 2026-11-15 at
+[10.5281/zenodo.24240593](https://doi.org/10.5281/zenodo.24240593) (32 pages, 752,762 bytes,
+SHA-256 `47db8722e14c67f3ad5edbce09da3247a9335449fd6724e0178fc7c13271b9b2`; the revision from the independent audit). v0.04, published 2026-09-18 at
 [10.5281/zenodo.22835118](https://doi.org/10.5281/zenodo.22835118), under
 concept DOI [10.5281/zenodo.21997377](https://doi.org/10.5281/zenodo.21997377).
 The 453,812-byte committed PDF has SHA-256
@@ -58,3 +60,15 @@ Frozen version 0.01:
   DOI now resolves to editorial v0.04
 - QA: after DOI insertion, the clean two-pass build, complete final 150-DPI six-page inspection,
   claim audit, identity, sole-authorship, public metadata, and fresh-download gates all pass
+
+## Draft in preparation: v0.05
+
+The source `main.tex` on the branch `work/huneke-wiegand/curvilinear-revision-20261114` is the draft of
+v0.05 (14 November 2026). It applies the independent audit of 2026-11-10 (plan items 1 to 9): evidence
+marks, the 16 Presburger obligations printed and decided by a second solver (EXP-069), exact pointers
+into the consolidated paper, the Betti entries and characteristic dependence (EXP-027 to EXP-035), the
+algorithms with costs, results tables with full hashes, the controls of EXP-026, the degree-five case,
+and related work. The correct Huneke-Wiegand 1994 DOI (10.1007/BF01459794) is used. The committed PDF,
+the version DOI and the Zenodo release remain those of v0.04 until the release tool publishes v0.05.
+`claim-audit-v0.05.md` lists every statement with its mark and evidence; `gen_artifacts.py` writes the
+files of `generated/` from the committed artifacts of EXP-025, EXP-026 and EXP-069.

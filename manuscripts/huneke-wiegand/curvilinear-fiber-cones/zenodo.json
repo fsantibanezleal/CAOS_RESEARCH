@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Curvilinear Geometry, Primary Structure, and Gröbner Degenerations of Conductor Fiber Cones in a Huneke–Wiegand Family",
+    "title": "Curvilinear Geometry, Primary Structure, and a Gröbner Degeneration of Conductor Fiber Cones in a Huneke–Wiegand Family",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>For every integer p&gt;=4, a previously constructed symmetric numerical semigroup ring R_p and rigid two-generated monomial ideal determine a conductor ideal T_p whose special fiber C_p = F(T_p) is one-dimensional Cohen-Macaulay, generated in degree one by 10p monomials, and has multiplicity 24p. We prove that this fiber cone admits the explicit standard-graded parametrization C_p ≅ 𝕜[xy^a : a ∈ G_p] ⊆ 𝕜[x,y]/(y^24p), with deg(xy^a) = 1, where G_p is the exact degree-one offset set.</p><p>If P_p = 𝕜[X_a : a ∈ G_p] and J_p is the defining ideal, then √J_p = L_p = (X_a : a &gt; 0), J_p is L_p-primary. Thus the complete primary decomposition has one component. The nilradical of C_p has sharp nilpotency index 24p: its (24p-1)st power is nonzero, while its 24p-th power vanishes.</p><p>Dehomogenization at X_0 gives C_p/(X_0-1) ≅ 𝕜[y]/(y^24p). Consequently Proj(C_p) is a saturated length-24p curvilinear fat point with one-dimensional Zariski tangent space. It is locally Gorenstein, although its homogeneous coordinate ring has Cohen-Macaulay type 10p+1 and is neither level nor Gorenstein. We also compute its affine Kähler differential module, including the exact characteristic split. The proof is deductive from previously proved offset-basis and Cohen-Macaulay input theorems.</p><p>We further give the complete reduced Gröbner basis for graded reverse lexicographic order with X_0 last. Its degree profile is (50p^2-17p, 5p-1, p-2) in degrees two, three, and four, with no later elements. No minimal leading monomial contains X_0, yielding a flat Cohen-Macaulay monomial degeneration. Exact parameter sweeps, an independently encoded clique-based recomputation, and an all-parameter Presburger boundary certificate validate the formulas and run negative controls, but do not replace the deductive arguments.</p><p>The results concern the conductor fiber cones of this explicit family; they do not assert that arbitrary monomial fiber cones are primary, curvilinear, Cohen-Macaulay or locally Gorenstein.</p><p>Source code, compact artifacts, premise hashes and proofs: https://github.com/fsantibanezleal/CAOS_RESEARCH .</p>",
+    "description": "<p>For every integer p&gt;=4, a previously constructed symmetric numerical semigroup ring R_p and rigid two-generated monomial ideal determine a conductor ideal T_p whose special fiber C_p = F(T_p) is one-dimensional Cohen-Macaulay, generated in degree one by 10p monomials, with multiplicity 24p. Taking the imported offset bases as input, we prove that C_p ≅ k[xy^a : a ∈ G_p] ⊆ k[x,y]/(y^24p), that its defining ideal J_p is primary to the ideal of positive offsets, with nilpotency index 24p, and that Proj(C_p) is a saturated length-24p curvilinear fat point, locally Gorenstein although the coordinate ring has Cohen-Macaulay type 10p+1. The Kähler differentials split by characteristic.</p><p>We then determine the reduced Gröbner basis for graded reverse lexicographic order with X_0 last. Its degree profile is (50p^2-17p, 5p-1, p-2) and no minimal leading monomial contains X_0, which gives a flat Cohen-Macaulay monomial degeneration. The quadratic part, the stabilization of the staircase, the absence of elements in degree five and higher, the absence of X_0 from the leading monomials and the flatness are derived from derived imported input; the imported relation type three is machine-verified. The cubic and quartic classification, for all p, is machine-verified and not derived: 16 Presburger obligations are decided unsatisfiable by Z3 and by cvc5 on identical queries, with no checked proof object. Exact sweeps at every p=4,...,300, an independent clique recomputation and negative controls validate the formulas.</p><p>The results concern the conductor fiber cones of this explicit family; they do not assert that arbitrary monomial fiber cones are primary, curvilinear, Cohen-Macaulay or locally Gorenstein.</p><p>Source code, compact artifacts, premise hashes and proofs: https://github.com/fsantibanezleal/CAOS_RESEARCH .</p>",
     "keywords": [
       "Huneke-Wiegand conjecture",
       "numerical semigroups",
@@ -25,7 +25,9 @@
       "Gorenstein schemes",
       "Cohen-Macaulay rings",
       "monomial algebras",
-      "experimental mathematics"
+      "experimental mathematics",
+      "Presburger arithmetic",
+      "Groebner degeneration"
     ],
     "subjects": [
       {
@@ -43,7 +45,7 @@
       },
       {
         "relation": "isDerivedFrom",
-        "identifier": "10.5281/zenodo.21995498",
+        "identifier": "10.5281/zenodo.22835108",
         "resource_type": "publication-preprint"
       },
       {
@@ -65,11 +67,21 @@
         "relation": "cites",
         "identifier": "https://arxiv.org/abs/2302.11903",
         "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2609.07615",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2608.21666",
+        "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.04",
+    "version": "0.05",
     "language": "eng",
-    "publication_date": "2026-09-18",
-    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
+    "publication_date": "2026-11-14",
+    "version_notes": "Revision of the evidence classes and the computations. Every result carries a mark (derived or machine-verified). Only the cubic and quartic classification and its tails, the imported relation type three and the clause that the basis reaches degree four are machine-verified; everything else is derived from derived imported input, including the sumset identity (now derived), the value congruence, the absence of X_0 from the leading monomials and the flat degeneration. The sixteen Presburger obligations are printed as formulas and were decided by a second solver (cvc5 1.4.2) on queries identical to those certified with Z3 4.16.0; Z3 and cvc5 are cited. The imported input is stated with exact theorem pointers. The degree-five-and-later argument covers monomials of offset at least q. New sections: related work, algorithms with pseudocode and costs, experimental design, results tables with full hashes, ablation, discussion of the graded Betti entries and their characteristic dependence, limitations, and an appendix on the zero-relation count. The title is singular (one degeneration). The Huneke-Wiegand and Landeros et al. references carry their corrected bibliographic data."
   }
 }

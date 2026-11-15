@@ -2213,3 +2213,17 @@ other result are unchanged; EXP-066 checks the unsigned-row form. Re-checked by 
   validation count), re-check APPROVE.
 - Release: 39 gates passed; 27 pages, 773,736 bytes, SHA-256 1e20b8d6f1d4540e6b08d9f637d592c5ce0afaaa2f271ea364a17e086c572acb.
 
+## 2026-11-15 - curvilinear-fiber-cones v0.05 published (10.5281/zenodo.24240593)
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-hw-other-2026-11-10.md`, D1): the evidence
+  classes made exact: the cubic and quartic classification of the grevlex staircase is machine-verified by Z3 and cvc5 on
+  identical queries (EXP-026, EXP-069); the sumset identity, the value congruence (EXP-022 proof section 1) and the
+  zero-relation counts of Appendix C are derived for every p >= 4; the 16 Presburger obligations are printed; the imported
+  input points at exact theorems of the consolidated paper; the Betti section is updated from EXP-027 to EXP-035; five
+  algorithms with costs and hashes, results tables, controls, related work, a singular title.
+- Independent review (CAOS_MANAGE `wip/caos-research/hw-curvilinear-v05-review-2026-11-15.md`): CHANGES REQUIRED (evidence
+  labels), re-check CHANGES REQUIRED (the Appendix C justification), re-check 2 APPROVE. Records corrected in the EXP-026
+  and EXP-025 verdicts (audit time 0.819 s from its artifact; the value congruence attributed to EXP-022); the hash-frozen
+  proof.md premises are unchanged.
+- Release: 39 gates passed; 32 pages, 752,762 bytes, SHA-256 47db8722e14c67f3ad5edbce09da3247a9335449fd6724e0178fc7c13271b9b2.
+

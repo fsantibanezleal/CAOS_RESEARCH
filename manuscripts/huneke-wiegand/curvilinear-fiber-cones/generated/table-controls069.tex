@@ -1,0 +1,10 @@
+\begin{tabular}{@{}llllll@{}}
+\toprule
+control & obligation perturbed & cvc5 model & Z3 & evaluator, perturbed & same model, original\\
+\midrule
+C1 & \texttt{cubic-completeness} & cubic a=4, cubic b=4, cubic c=4, p=4 & sat & true & false\\
+C2 & \texttt{cubic-soundness} & cubic a=0, cubic b=0, cubic c=0, p=8 & sat & true & false\\
+C3 & \texttt{tail-c1-first} & p=4, tail index=1 & sat & true & false\\
+C4 & \texttt{tail-quartic} & p=4, tail index=1 & sat & true & false\\
+\bottomrule
+\end{tabular}
