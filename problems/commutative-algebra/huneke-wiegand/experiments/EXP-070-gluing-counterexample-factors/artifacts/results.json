@@ -1,0 +1,8387 @@
+{
+ "summary": {
+  "P1_torsion_length_law": true,
+  "P2_characterization": true,
+  "P3_independent_route_agrees": true,
+  "P4_hilbert_identity": true,
+  "frobenius_formula_confirmed": true,
+  "C1_not_a_gluing_breaks": true,
+  "C2_not_an_extension": true,
+  "cases_completed_by_producer": 48,
+  "cases_required": 36,
+  "required_cases_completed": 36,
+  "cases_audited": 48,
+  "cases_audit_not_completed": [],
+  "cases_not_completed": [],
+  "cases_with_counterexample_factor": 36,
+  "counterexample_factor_with_principal_partner_ideal": 18,
+  "extension_is_itself_counterexample": 18,
+  "cases_with_nonzero_torsion": 30,
+  "b4_run": true,
+  "b4_reason": null,
+  "premises": {
+   "B1": {
+    "hw": false,
+    "length": 0,
+    "frobenius": 181,
+    "multiplicity": 56
+   },
+   "B2": {
+    "hw": false,
+    "length": 0,
+    "frobenius": 311,
+    "multiplicity": 96
+   },
+   "B3": {
+    "hw": true,
+    "length": 14,
+    "frobenius": 181,
+    "multiplicity": 56
+   }
+  },
+  "max_workers": 10,
+  "wall_seconds": 668.2
+ },
+ "cases": [
+  {
+   "label": "B1 x <2,3> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 0.98,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 1,
+     "multiplicity": 2,
+     "window": [
+      -4,
+      118
+     ],
+     "pairs": {
+      "pairs": 8,
+      "degrees": [
+       0,
+       4
+      ],
+      "top": 4
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <2,3> ideal (0,)",
+    "base": "B1",
+    "partner": "<2,3>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 2,
+    "a2": 57,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     28
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 533,
+    "frobenius_measured": 533,
+    "frobenius_matches": true,
+    "window": [
+     -36,
+     1393
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -4,
+      21
+     ]
+    ],
+    "pairs_scanned": 171300,
+    "degree_range": [
+     112,
+     1096
+    ],
+    "torsion_seconds": 4.02,
+    "seconds": 4.03,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 4.7
+   },
+   "audit": {
+    "label": "B1 x <2,3> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     28
+    ],
+    "frobenius": 533,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 1.49,
+    "status": "completed",
+    "wall_seconds": 2.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <2,3> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 0.98,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 2,
+     "jordan": {
+      "1": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 1,
+     "multiplicity": 2,
+     "window": [
+      -5,
+      124
+     ],
+     "pairs": {
+      "pairs": 10,
+      "degrees": [
+       2,
+       5
+      ],
+      "top": 5
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <2,3> ideal (0, 1)",
+    "base": "B1",
+    "partner": "<2,3>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 2,
+    "a2": 57,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     2
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2
+     }
+    ],
+    "torsion_law": 114,
+    "torsion_direct": 114,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     28,
+     57,
+     85
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 533,
+    "frobenius_measured": 533,
+    "frobenius_matches": true,
+    "window": [
+     -93,
+     1564
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -5,
+      22
+     ]
+    ],
+    "pairs_scanned": 198546,
+    "degree_range": [
+     226,
+     1153
+    ],
+    "torsion_seconds": 5.12,
+    "seconds": 5.13,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 5.7
+   },
+   "audit": {
+    "label": "B1 x <2,3> ideal (0, 1)",
+    "torsion": 114,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     28,
+     57,
+     85
+    ],
+    "frobenius": 533,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 1.42,
+    "status": "completed",
+    "wall_seconds": 1.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <2,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 0.98,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 3,
+     "multiplicity": 2,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 21,
+      "degrees": [
+       0,
+       8
+      ],
+      "top": 8
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <2,5> ideal (0,)",
+    "base": "B1",
+    "partner": "<2,5>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 2,
+    "a2": 57,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     28
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 647,
+    "frobenius_measured": 647,
+    "frobenius_matches": true,
+    "window": [
+     -36,
+     1871
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -4,
+      25
+     ]
+    ],
+    "pairs_scanned": 255033,
+    "degree_range": [
+     112,
+     1324
+    ],
+    "torsion_seconds": 7.74,
+    "seconds": 7.75,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 8.2
+   },
+   "audit": {
+    "label": "B1 x <2,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     28
+    ],
+    "frobenius": 647,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 1.97,
+    "status": "completed",
+    "wall_seconds": 2.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <2,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 0.98,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 2,
+      "2": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 3,
+     "multiplicity": 2,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 21,
+      "degrees": [
+       4,
+       9
+      ],
+      "top": 9
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <2,5> ideal (0, 1)",
+    "base": "B1",
+    "partner": "<2,5>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 2,
+    "a2": 57,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2,
+      "2": 2
+     }
+    ],
+    "torsion_law": 228,
+    "torsion_direct": 228,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     28,
+     57,
+     85
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 647,
+    "frobenius_measured": 647,
+    "frobenius_matches": true,
+    "window": [
+     -93,
+     2042
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -5,
+      26
+     ]
+    ],
+    "pairs_scanned": 275781,
+    "degree_range": [
+     340,
+     1381
+    ],
+    "torsion_seconds": 8.66,
+    "seconds": 8.67,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 9.2
+   },
+   "audit": {
+    "label": "B1 x <2,5> ideal (0, 1)",
+    "torsion": 228,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     28,
+     57,
+     85
+    ],
+    "frobenius": 647,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 2.29,
+    "status": "completed",
+    "wall_seconds": 2.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <3,4> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 1.0,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 5,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      160
+     ],
+     "pairs": {
+      "pairs": 38,
+      "degrees": [
+       0,
+       12
+      ],
+      "top": 12
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <3,4> ideal (0,)",
+    "base": "B1",
+    "partner": "<3,4>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     42
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 991,
+    "frobenius_measured": 991,
+    "frobenius_matches": true,
+    "window": [
+     -50,
+     2281
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -4,
+      26
+     ]
+    ],
+    "pairs_scanned": 581334,
+    "degree_range": [
+     168,
+     2026
+    ],
+    "torsion_seconds": 19.36,
+    "seconds": 19.37,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 19.9
+   },
+   "audit": {
+    "label": "B1 x <3,4> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     42
+    ],
+    "frobenius": 991,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 5.41,
+    "status": "completed",
+    "wall_seconds": 5.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <3,4> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 1.0,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 2,
+     "jordan": {
+      "1": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 5,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      166
+     ],
+     "pairs": {
+      "pairs": 40,
+      "degrees": [
+       3,
+       13
+      ],
+      "top": 13
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <3,4> ideal (0, 1)",
+    "base": "B1",
+    "partner": "<3,4>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     2
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2
+     }
+    ],
+    "torsion_law": 112,
+    "torsion_direct": 112,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     42,
+     56,
+     98
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 991,
+    "frobenius_measured": 991,
+    "frobenius_matches": true,
+    "window": [
+     -106,
+     2449
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -5,
+      27
+     ]
+    ],
+    "pairs_scanned": 622074,
+    "degree_range": [
+     336,
+     2082
+    ],
+    "torsion_seconds": 19.98,
+    "seconds": 19.98,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 20.4
+   },
+   "audit": {
+    "label": "B1 x <3,4> ideal (0, 1)",
+    "torsion": 112,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     42,
+     56,
+     98
+    ],
+    "frobenius": 991,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 5.85,
+    "status": "completed",
+    "wall_seconds": 6.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <3,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 1.0,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 7,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 61,
+      "degrees": [
+       0,
+       16
+      ],
+      "top": 16
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <3,5> ideal (0,)",
+    "base": "B1",
+    "partner": "<3,5>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     42
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1103,
+    "frobenius_measured": 1103,
+    "frobenius_matches": true,
+    "window": [
+     -50,
+     2393
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -4,
+      29
+     ]
+    ],
+    "pairs_scanned": 722398,
+    "degree_range": [
+     168,
+     2250
+    ],
+    "torsion_seconds": 24.32,
+    "seconds": 24.33,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 24.9
+   },
+   "audit": {
+    "label": "B1 x <3,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     42
+    ],
+    "frobenius": 1103,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 6.44,
+    "status": "completed",
+    "wall_seconds": 6.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <3,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 1.0,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 2,
+      "2": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 7,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 59,
+      "degrees": [
+       5,
+       17
+      ],
+      "top": 17
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <3,5> ideal (0, 1)",
+    "base": "B1",
+    "partner": "<3,5>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2,
+      "2": 2
+     }
+    ],
+    "torsion_law": 224,
+    "torsion_direct": 224,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     42,
+     56,
+     98
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1103,
+    "frobenius_measured": 1103,
+    "frobenius_matches": true,
+    "window": [
+     -106,
+     2561
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -5,
+      30
+     ]
+    ],
+    "pairs_scanned": 750594,
+    "degree_range": [
+     448,
+     2306
+    ],
+    "torsion_seconds": 24.2,
+    "seconds": 24.21,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 24.4
+   },
+   "audit": {
+    "label": "B1 x <3,5> ideal (0, 1)",
+    "torsion": 224,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     42,
+     56,
+     98
+    ],
+    "frobenius": 1103,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 6.53,
+    "status": "completed",
+    "wall_seconds": 7.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <3,4,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 1.0,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 2,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 10,
+      "degrees": [
+       0,
+       6
+      ],
+      "top": 6
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <3,4,5> ideal (0,)",
+    "base": "B1",
+    "partner": "<3,4,5>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     42
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 823,
+    "frobenius_measured": 823,
+    "frobenius_matches": true,
+    "window": [
+     -50,
+     2113
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -4,
+      24
+     ]
+    ],
+    "pairs_scanned": 355654,
+    "degree_range": [
+     168,
+     1690
+    ],
+    "torsion_seconds": 9.27,
+    "seconds": 9.27,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 9.7
+   },
+   "audit": {
+    "label": "B1 x <3,4,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     42
+    ],
+    "frobenius": 823,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 2.31,
+    "status": "completed",
+    "wall_seconds": 2.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <3,4,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 1.0,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 3,
+     "jordan": {
+      "1": 3
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 2,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 12,
+      "degrees": [
+       3,
+       7
+      ],
+      "top": 7
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <3,4,5> ideal (0, 1)",
+    "base": "B1",
+    "partner": "<3,4,5>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     3
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 3
+     }
+    ],
+    "torsion_law": 168,
+    "torsion_direct": 168,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     42,
+     56,
+     98
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 823,
+    "frobenius_measured": 823,
+    "frobenius_matches": true,
+    "window": [
+     -106,
+     2281
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -5,
+      25
+     ]
+    ],
+    "pairs_scanned": 396394,
+    "degree_range": [
+     336,
+     1746
+    ],
+    "torsion_seconds": 10.59,
+    "seconds": 10.59,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 11.2
+   },
+   "audit": {
+    "label": "B1 x <3,4,5> ideal (0, 1)",
+    "torsion": 168,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     42,
+     56,
+     98
+    ],
+    "frobenius": 823,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 2.7,
+    "status": "completed",
+    "wall_seconds": 3.0
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <4,5,6,7> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 0.98,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 3,
+     "multiplicity": 4,
+     "window": [
+      -4,
+      358
+     ],
+     "pairs": {
+      "pairs": 12,
+      "degrees": [
+       0,
+       8
+      ],
+      "top": 8
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <4,5,6,7> ideal (0,)",
+    "base": "B1",
+    "partner": "<4,5,6,7>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 4,
+    "a2": 57,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     56
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1123,
+    "frobenius_measured": 1123,
+    "frobenius_matches": true,
+    "window": [
+     -64,
+     2887
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -4,
+      27
+     ]
+    ],
+    "pairs_scanned": 614228,
+    "degree_range": [
+     224,
+     2304
+    ],
+    "torsion_seconds": 18.7,
+    "seconds": 18.71,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 19.3
+   },
+   "audit": {
+    "label": "B1 x <4,5,6,7> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     56
+    ],
+    "frobenius": 1123,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 5.18,
+    "status": "completed",
+    "wall_seconds": 5.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B1 x <4,5,6,7> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      14
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -18,
+      56602
+     ],
+     "pairs": {
+      "pairs": 20809,
+      "degrees": [
+       56,
+       378
+      ],
+      "top": 378
+     },
+     "seconds": 0.98,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 4
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 3,
+     "multiplicity": 4,
+     "window": [
+      -5,
+      364
+     ],
+     "pairs": {
+      "pairs": 14,
+      "degrees": [
+       4,
+       9
+      ],
+      "top": 9
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B1 x <4,5,6,7> ideal (0, 1)",
+    "base": "B1",
+    "partner": "<4,5,6,7>",
+    "ideal_b": [
+     0,
+     14
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 4,
+    "a2": 57,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 4
+     }
+    ],
+    "torsion_law": 228,
+    "torsion_direct": 228,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     56,
+     57,
+     113
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1123,
+    "frobenius_measured": 1123,
+    "frobenius_matches": true,
+    "window": [
+     -121,
+     3058
+    ],
+    "factor_windows": [
+     [
+      -18,
+      309
+     ],
+     [
+      -5,
+      28
+     ]
+    ],
+    "pairs_scanned": 670202,
+    "degree_range": [
+     452,
+     2361
+    ],
+    "torsion_seconds": 20.9,
+    "seconds": 20.91,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 21.3
+   },
+   "audit": {
+    "label": "B1 x <4,5,6,7> ideal (0, 1)",
+    "torsion": 228,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     56,
+     57,
+     113
+    ],
+    "frobenius": 1123,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      14
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 6.13,
+    "status": "completed",
+    "wall_seconds": 6.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <2,3> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 1,
+     "multiplicity": 2,
+     "window": [
+      -4,
+      118
+     ],
+     "pairs": {
+      "pairs": 8,
+      "degrees": [
+       0,
+       4
+      ],
+      "top": 4
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <2,3> ideal (0,)",
+    "base": "B2",
+    "partner": "<2,3>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 2,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     48
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 913,
+    "frobenius_measured": 913,
+    "frobenius_matches": true,
+    "window": [
+     -56,
+     2393
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -4,
+      21
+     ]
+    ],
+    "pairs_scanned": 498992,
+    "degree_range": [
+     192,
+     1876
+    ],
+    "torsion_seconds": 23.24,
+    "seconds": 23.24,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 23.8
+   },
+   "audit": {
+    "label": "B2 x <2,3> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     48
+    ],
+    "frobenius": 913,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 5.06,
+    "status": "completed",
+    "wall_seconds": 5.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <2,3> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 2,
+     "jordan": {
+      "1": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 1,
+     "multiplicity": 2,
+     "window": [
+      -5,
+      124
+     ],
+     "pairs": {
+      "pairs": 10,
+      "degrees": [
+       2,
+       5
+      ],
+      "top": 5
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <2,3> ideal (0, 1)",
+    "base": "B2",
+    "partner": "<2,3>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 2,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     2
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2
+     }
+    ],
+    "torsion_law": 194,
+    "torsion_direct": 194,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     48,
+     97,
+     145
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 913,
+    "frobenius_measured": 913,
+    "frobenius_matches": true,
+    "window": [
+     -153,
+     2684
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -5,
+      22
+     ]
+    ],
+    "pairs_scanned": 578338,
+    "degree_range": [
+     386,
+     1973
+    ],
+    "torsion_seconds": 28.23,
+    "seconds": 28.24,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 28.8
+   },
+   "audit": {
+    "label": "B2 x <2,3> ideal (0, 1)",
+    "torsion": 194,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     48,
+     97,
+     145
+    ],
+    "frobenius": 913,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 6.55,
+    "status": "completed",
+    "wall_seconds": 7.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <2,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 3,
+     "multiplicity": 2,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 21,
+      "degrees": [
+       0,
+       8
+      ],
+      "top": 8
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <2,5> ideal (0,)",
+    "base": "B2",
+    "partner": "<2,5>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 2,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     48
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1107,
+    "frobenius_measured": 1107,
+    "frobenius_matches": true,
+    "window": [
+     -56,
+     3191
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -4,
+      25
+     ]
+    ],
+    "pairs_scanned": 742365,
+    "degree_range": [
+     192,
+     2264
+    ],
+    "torsion_seconds": 39.96,
+    "seconds": 39.97,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 40.4
+   },
+   "audit": {
+    "label": "B2 x <2,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     48
+    ],
+    "frobenius": 1107,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 9.11,
+    "status": "completed",
+    "wall_seconds": 9.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <2,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 2,
+      "2": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 3,
+     "multiplicity": 2,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 21,
+      "degrees": [
+       4,
+       9
+      ],
+      "top": 9
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <2,5> ideal (0, 1)",
+    "base": "B2",
+    "partner": "<2,5>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 2,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2,
+      "2": 2
+     }
+    ],
+    "torsion_law": 388,
+    "torsion_direct": 388,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     48,
+     97,
+     145
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1107,
+    "frobenius_measured": 1107,
+    "frobenius_matches": true,
+    "window": [
+     -153,
+     3482
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -5,
+      26
+     ]
+    ],
+    "pairs_scanned": 802893,
+    "degree_range": [
+     580,
+     2361
+    ],
+    "torsion_seconds": 42.81,
+    "seconds": 42.82,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 43.4
+   },
+   "audit": {
+    "label": "B2 x <2,5> ideal (0, 1)",
+    "torsion": 388,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     48,
+     97,
+     145
+    ],
+    "frobenius": 1107,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 10.33,
+    "status": "completed",
+    "wall_seconds": 10.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <3,4> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 5,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      160
+     ],
+     "pairs": {
+      "pairs": 38,
+      "degrees": [
+       0,
+       12
+      ],
+      "top": 12
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <3,4> ideal (0,)",
+    "base": "B2",
+    "partner": "<3,4>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     72
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1709,
+    "frobenius_measured": 1709,
+    "frobenius_matches": true,
+    "window": [
+     -80,
+     3929
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -4,
+      26
+     ]
+    ],
+    "pairs_scanned": 1721524,
+    "degree_range": [
+     288,
+     3492
+    ],
+    "torsion_seconds": 97.84,
+    "seconds": 97.86,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 98.3
+   },
+   "audit": {
+    "label": "B2 x <3,4> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     72
+    ],
+    "frobenius": 1709,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 23.98,
+    "status": "completed",
+    "wall_seconds": 24.2
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <3,4> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 2,
+     "jordan": {
+      "1": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 5,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      166
+     ],
+     "pairs": {
+      "pairs": 40,
+      "degrees": [
+       3,
+       13
+      ],
+      "top": 13
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <3,4> ideal (0, 1)",
+    "base": "B2",
+    "partner": "<3,4>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     2
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2
+     }
+    ],
+    "torsion_law": 194,
+    "torsion_direct": 194,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     72,
+     97,
+     169
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1709,
+    "frobenius_measured": 1709,
+    "frobenius_matches": true,
+    "window": [
+     -177,
+     4220
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -5,
+      27
+     ]
+    ],
+    "pairs_scanned": 1842774,
+    "degree_range": [
+     579,
+     3589
+    ],
+    "torsion_seconds": 109.76,
+    "seconds": 109.79,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 111.9
+   },
+   "audit": {
+    "label": "B2 x <3,4> ideal (0, 1)",
+    "torsion": 194,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     72,
+     97,
+     169
+    ],
+    "frobenius": 1709,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 26.41,
+    "status": "completed",
+    "wall_seconds": 26.7
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <3,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 7,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 61,
+      "degrees": [
+       0,
+       16
+      ],
+      "top": 16
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <3,5> ideal (0,)",
+    "base": "B2",
+    "partner": "<3,5>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     72
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1903,
+    "frobenius_measured": 1903,
+    "frobenius_matches": true,
+    "window": [
+     -80,
+     4123
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -4,
+      29
+     ]
+    ],
+    "pairs_scanned": 2142795,
+    "degree_range": [
+     288,
+     3880
+    ],
+    "torsion_seconds": 127.96,
+    "seconds": 127.97,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 128.2
+   },
+   "audit": {
+    "label": "B2 x <3,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     72
+    ],
+    "frobenius": 1903,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 29.69,
+    "status": "completed",
+    "wall_seconds": 30.2
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <3,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 2,
+      "2": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 7,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 59,
+      "degrees": [
+       5,
+       17
+      ],
+      "top": 17
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <3,5> ideal (0, 1)",
+    "base": "B2",
+    "partner": "<3,5>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2,
+      "2": 2
+     }
+    ],
+    "torsion_law": 388,
+    "torsion_direct": 388,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     72,
+     97,
+     169
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1903,
+    "frobenius_measured": 1903,
+    "frobenius_matches": true,
+    "window": [
+     -177,
+     4414
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -5,
+      30
+     ]
+    ],
+    "pairs_scanned": 2226409,
+    "degree_range": [
+     773,
+     3977
+    ],
+    "torsion_seconds": 135.96,
+    "seconds": 135.97,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 136.2
+   },
+   "audit": {
+    "label": "B2 x <3,5> ideal (0, 1)",
+    "torsion": 388,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     72,
+     97,
+     169
+    ],
+    "frobenius": 1903,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 32.54,
+    "status": "completed",
+    "wall_seconds": 32.7
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <3,4,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 2,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 10,
+      "degrees": [
+       0,
+       6
+      ],
+      "top": 6
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <3,4,5> ideal (0,)",
+    "base": "B2",
+    "partner": "<3,4,5>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     72
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1418,
+    "frobenius_measured": 1418,
+    "frobenius_matches": true,
+    "window": [
+     -80,
+     3638
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -4,
+      24
+     ]
+    ],
+    "pairs_scanned": 1048344,
+    "degree_range": [
+     288,
+     2910
+    ],
+    "torsion_seconds": 54.43,
+    "seconds": 54.44,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 54.9
+   },
+   "audit": {
+    "label": "B2 x <3,4,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     72
+    ],
+    "frobenius": 1418,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 13.85,
+    "status": "completed",
+    "wall_seconds": 14.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <3,4,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 3,
+     "jordan": {
+      "1": 3
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 2,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 12,
+      "degrees": [
+       3,
+       7
+      ],
+      "top": 7
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <3,4,5> ideal (0, 1)",
+    "base": "B2",
+    "partner": "<3,4,5>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     3
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 3
+     }
+    ],
+    "torsion_law": 291,
+    "torsion_direct": 291,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     72,
+     97,
+     169
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1418,
+    "frobenius_measured": 1418,
+    "frobenius_matches": true,
+    "window": [
+     -177,
+     3929
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -5,
+      25
+     ]
+    ],
+    "pairs_scanned": 1169594,
+    "degree_range": [
+     579,
+     3007
+    ],
+    "torsion_seconds": 62.68,
+    "seconds": 62.69,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 63.0
+   },
+   "audit": {
+    "label": "B2 x <3,4,5> ideal (0, 1)",
+    "torsion": 291,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     72,
+     97,
+     169
+    ],
+    "frobenius": 1418,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 16.46,
+    "status": "completed",
+    "wall_seconds": 16.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <4,5,6,7> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 3,
+     "multiplicity": 4,
+     "window": [
+      -4,
+      358
+     ],
+     "pairs": {
+      "pairs": 12,
+      "degrees": [
+       0,
+       8
+      ],
+      "top": 8
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <4,5,6,7> ideal (0,)",
+    "base": "B2",
+    "partner": "<4,5,6,7>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 4,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     96
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1923,
+    "frobenius_measured": 1923,
+    "frobenius_matches": true,
+    "window": [
+     -104,
+     4927
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -4,
+      27
+     ]
+    ],
+    "pairs_scanned": 1792716,
+    "degree_range": [
+     384,
+     3944
+    ],
+    "torsion_seconds": 103.74,
+    "seconds": 103.76,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 104.0
+   },
+   "audit": {
+    "label": "B2 x <4,5,6,7> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     96
+    ],
+    "frobenius": 1923,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 26.78,
+    "status": "completed",
+    "wall_seconds": 27.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B2 x <4,5,6,7> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      24
+     ],
+     "frobenius": 311,
+     "multiplicity": 96,
+     "window": [
+      -28,
+      167542
+     ],
+     "pairs": {
+      "pairs": 60367,
+      "degrees": [
+       96,
+       648
+      ],
+      "top": 648
+     },
+     "seconds": 14.74,
+     "status": "completed",
+     "wall_seconds": 15.3
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 4
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 3,
+     "multiplicity": 4,
+     "window": [
+      -5,
+      364
+     ],
+     "pairs": {
+      "pairs": 14,
+      "degrees": [
+       4,
+       9
+      ],
+      "top": 9
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B2 x <4,5,6,7> ideal (0, 1)",
+    "base": "B2",
+    "partner": "<4,5,6,7>",
+    "ideal_b": [
+     0,
+     24
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 4,
+    "a2": 97,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 4
+     }
+    ],
+    "torsion_law": 388,
+    "torsion_direct": 388,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     96,
+     97,
+     193
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1923,
+    "frobenius_measured": 1923,
+    "frobenius_matches": true,
+    "window": [
+     -201,
+     5218
+    ],
+    "factor_windows": [
+     [
+      -28,
+      519
+     ],
+     [
+      -5,
+      28
+     ]
+    ],
+    "pairs_scanned": 1955870,
+    "degree_range": [
+     772,
+     4041
+    ],
+    "torsion_seconds": 114.78,
+    "seconds": 114.8,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 115.0
+   },
+   "audit": {
+    "label": "B2 x <4,5,6,7> ideal (0, 1)",
+    "torsion": 388,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     96,
+     97,
+     193
+    ],
+    "frobenius": 1923,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      24
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 29.75,
+    "status": "completed",
+    "wall_seconds": 30.2
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <2,3> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.83,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 1,
+     "multiplicity": 2,
+     "window": [
+      -4,
+      118
+     ],
+     "pairs": {
+      "pairs": 8,
+      "degrees": [
+       0,
+       4
+      ],
+      "top": 4
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <2,3> ideal (0,)",
+    "base": "B3",
+    "partner": "<2,3>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 2,
+    "a2": 57,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_torsion": [
+     14,
+     0
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {}
+    ],
+    "torsion_law": 28,
+    "torsion_direct": 28,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     2
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 533,
+    "frobenius_measured": 533,
+    "frobenius_matches": true,
+    "window": [
+     -10,
+     1315
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -4,
+      21
+     ]
+    ],
+    "pairs_scanned": 158379,
+    "degree_range": [
+     112,
+     1070
+    ],
+    "torsion_seconds": 2.48,
+    "seconds": 2.48,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 3.0
+   },
+   "audit": {
+    "label": "B3 x <2,3> ideal (0,)",
+    "torsion": 28,
+    "hw": true,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     2
+    ],
+    "frobenius": 533,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 0.9,
+    "status": "completed",
+    "wall_seconds": 1.0
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <2,3> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.83,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 2,
+     "jordan": {
+      "1": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 1,
+     "multiplicity": 2,
+     "window": [
+      -5,
+      124
+     ],
+     "pairs": {
+      "pairs": 10,
+      "degrees": [
+       2,
+       5
+      ],
+      "top": 5
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <2,3> ideal (0, 1)",
+    "base": "B3",
+    "partner": "<2,3>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 2,
+    "a2": 57,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_torsion": [
+     14,
+     2
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {
+      "1": 2
+     }
+    ],
+    "torsion_law": 170,
+    "torsion_direct": 170,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     2,
+     57,
+     59
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 533,
+    "frobenius_measured": 533,
+    "frobenius_matches": true,
+    "window": [
+     -67,
+     1486
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -5,
+      22
+     ]
+    ],
+    "pairs_scanned": 184143,
+    "degree_range": [
+     226,
+     1127
+    ],
+    "torsion_seconds": 3.01,
+    "seconds": 3.02,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 3.5
+   },
+   "audit": {
+    "label": "B3 x <2,3> ideal (0, 1)",
+    "torsion": 170,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     2,
+     57,
+     59
+    ],
+    "frobenius": 533,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 1.12,
+    "status": "completed",
+    "wall_seconds": 1.5
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <2,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.83,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 3,
+     "multiplicity": 2,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 21,
+      "degrees": [
+       0,
+       8
+      ],
+      "top": 8
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <2,5> ideal (0,)",
+    "base": "B3",
+    "partner": "<2,5>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 2,
+    "a2": 57,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_torsion": [
+     14,
+     0
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {}
+    ],
+    "torsion_law": 28,
+    "torsion_direct": 28,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     2
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 647,
+    "frobenius_measured": 647,
+    "frobenius_matches": true,
+    "window": [
+     -10,
+     1793
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -4,
+      25
+     ]
+    ],
+    "pairs_scanned": 239148,
+    "degree_range": [
+     112,
+     1298
+    ],
+    "torsion_seconds": 5.29,
+    "seconds": 5.3,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 5.6
+   },
+   "audit": {
+    "label": "B3 x <2,5> ideal (0,)",
+    "torsion": 28,
+    "hw": true,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     2
+    ],
+    "frobenius": 647,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 1.47,
+    "status": "completed",
+    "wall_seconds": 2.0
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <2,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.83,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 2,
+      "2": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 3,
+     "multiplicity": 2,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 21,
+      "degrees": [
+       4,
+       9
+      ],
+      "top": 9
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <2,5> ideal (0, 1)",
+    "base": "B3",
+    "partner": "<2,5>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 2,
+    "a2": 57,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_torsion": [
+     14,
+     4
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {
+      "1": 2,
+      "2": 2
+     }
+    ],
+    "torsion_law": 284,
+    "torsion_direct": 284,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     2,
+     57,
+     59
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 647,
+    "frobenius_measured": 647,
+    "frobenius_matches": true,
+    "window": [
+     -67,
+     1964
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -5,
+      26
+     ]
+    ],
+    "pairs_scanned": 258414,
+    "degree_range": [
+     340,
+     1355
+    ],
+    "torsion_seconds": 5.99,
+    "seconds": 6.0,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 6.6
+   },
+   "audit": {
+    "label": "B3 x <2,5> ideal (0, 1)",
+    "torsion": 284,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     2,
+     57,
+     59
+    ],
+    "frobenius": 647,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 1.59,
+    "status": "completed",
+    "wall_seconds": 2.0
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <3,4> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.82,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 5,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      160
+     ],
+     "pairs": {
+      "pairs": 38,
+      "degrees": [
+       0,
+       12
+      ],
+      "top": 12
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <3,4> ideal (0,)",
+    "base": "B3",
+    "partner": "<3,4>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_torsion": [
+     14,
+     0
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {}
+    ],
+    "torsion_law": 42,
+    "torsion_direct": 42,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     3
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 991,
+    "frobenius_measured": 991,
+    "frobenius_matches": true,
+    "window": [
+     -11,
+     2164
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -4,
+      26
+     ]
+    ],
+    "pairs_scanned": 544842,
+    "degree_range": [
+     168,
+     1987
+    ],
+    "torsion_seconds": 16.87,
+    "seconds": 16.88,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 17.2
+   },
+   "audit": {
+    "label": "B3 x <3,4> ideal (0,)",
+    "torsion": 42,
+    "hw": true,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     3
+    ],
+    "frobenius": 991,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 4.26,
+    "status": "completed",
+    "wall_seconds": 4.5
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <3,4> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.82,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 2,
+     "jordan": {
+      "1": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 5,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      166
+     ],
+     "pairs": {
+      "pairs": 40,
+      "degrees": [
+       3,
+       13
+      ],
+      "top": 13
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <3,4> ideal (0, 1)",
+    "base": "B3",
+    "partner": "<3,4>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_torsion": [
+     14,
+     2
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {
+      "1": 2
+     }
+    ],
+    "torsion_law": 182,
+    "torsion_direct": 182,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     3,
+     56,
+     59
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 991,
+    "frobenius_measured": 991,
+    "frobenius_matches": true,
+    "window": [
+     -67,
+     2332
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -5,
+      27
+     ]
+    ],
+    "pairs_scanned": 583398,
+    "degree_range": [
+     336,
+     2043
+    ],
+    "torsion_seconds": 18.45,
+    "seconds": 18.45,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 20.2
+   },
+   "audit": {
+    "label": "B3 x <3,4> ideal (0, 1)",
+    "torsion": 182,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     3,
+     56,
+     59
+    ],
+    "frobenius": 991,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 5.01,
+    "status": "completed",
+    "wall_seconds": 5.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <3,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.82,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 7,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 61,
+      "degrees": [
+       0,
+       16
+      ],
+      "top": 16
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <3,5> ideal (0,)",
+    "base": "B3",
+    "partner": "<3,5>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_torsion": [
+     14,
+     0
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {}
+    ],
+    "torsion_law": 42,
+    "torsion_direct": 42,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     3
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1103,
+    "frobenius_measured": 1103,
+    "frobenius_matches": true,
+    "window": [
+     -11,
+     2276
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -4,
+      29
+     ]
+    ],
+    "pairs_scanned": 681538,
+    "degree_range": [
+     168,
+     2211
+    ],
+    "torsion_seconds": 23.73,
+    "seconds": 23.74,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 24.4
+   },
+   "audit": {
+    "label": "B3 x <3,5> ideal (0,)",
+    "torsion": 42,
+    "hw": true,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     3
+    ],
+    "frobenius": 1103,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 5.61,
+    "status": "completed",
+    "wall_seconds": 6.0
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <3,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.82,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 2,
+      "2": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 7,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 59,
+      "degrees": [
+       5,
+       17
+      ],
+      "top": 17
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <3,5> ideal (0, 1)",
+    "base": "B3",
+    "partner": "<3,5>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_torsion": [
+     14,
+     4
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {
+      "1": 2,
+      "2": 2
+     }
+    ],
+    "torsion_law": 294,
+    "torsion_direct": 294,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     3,
+     56,
+     59
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1103,
+    "frobenius_measured": 1103,
+    "frobenius_matches": true,
+    "window": [
+     -67,
+     2444
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -5,
+      30
+     ]
+    ],
+    "pairs_scanned": 707550,
+    "degree_range": [
+     448,
+     2267
+    ],
+    "torsion_seconds": 24.33,
+    "seconds": 24.34,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 24.9
+   },
+   "audit": {
+    "label": "B3 x <3,5> ideal (0, 1)",
+    "torsion": 294,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     3,
+     56,
+     59
+    ],
+    "frobenius": 1103,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 6.31,
+    "status": "completed",
+    "wall_seconds": 8.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <3,4,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.82,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 2,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 10,
+      "degrees": [
+       0,
+       6
+      ],
+      "top": 6
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <3,4,5> ideal (0,)",
+    "base": "B3",
+    "partner": "<3,4,5>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_torsion": [
+     14,
+     0
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {}
+    ],
+    "torsion_law": 42,
+    "torsion_direct": 42,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     3
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 823,
+    "frobenius_measured": 823,
+    "frobenius_matches": true,
+    "window": [
+     -11,
+     1996
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -4,
+      24
+     ]
+    ],
+    "pairs_scanned": 327898,
+    "degree_range": [
+     168,
+     1651
+    ],
+    "torsion_seconds": 8.71,
+    "seconds": 8.71,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 9.1
+   },
+   "audit": {
+    "label": "B3 x <3,4,5> ideal (0,)",
+    "torsion": 42,
+    "hw": true,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     3
+    ],
+    "frobenius": 823,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 2.69,
+    "status": "completed",
+    "wall_seconds": 3.0
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <3,4,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.82,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 3,
+     "jordan": {
+      "1": 3
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 2,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 12,
+      "degrees": [
+       3,
+       7
+      ],
+      "top": 7
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <3,4,5> ideal (0, 1)",
+    "base": "B3",
+    "partner": "<3,4,5>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 56,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_torsion": [
+     14,
+     3
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {
+      "1": 3
+     }
+    ],
+    "torsion_law": 252,
+    "torsion_direct": 252,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     3,
+     56,
+     59
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 823,
+    "frobenius_measured": 823,
+    "frobenius_matches": true,
+    "window": [
+     -67,
+     2164
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -5,
+      25
+     ]
+    ],
+    "pairs_scanned": 366454,
+    "degree_range": [
+     336,
+     1707
+    ],
+    "torsion_seconds": 11.02,
+    "seconds": 11.03,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 11.2
+   },
+   "audit": {
+    "label": "B3 x <3,4,5> ideal (0, 1)",
+    "torsion": 252,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     3,
+     56,
+     59
+    ],
+    "frobenius": 823,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 3.12,
+    "status": "completed",
+    "wall_seconds": 3.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <4,5,6,7> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.83,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 3,
+     "multiplicity": 4,
+     "window": [
+      -4,
+      358
+     ],
+     "pairs": {
+      "pairs": 12,
+      "degrees": [
+       0,
+       8
+      ],
+      "top": 8
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <4,5,6,7> ideal (0,)",
+    "base": "B3",
+    "partner": "<4,5,6,7>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 4,
+    "a2": 57,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_torsion": [
+     14,
+     0
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {}
+    ],
+    "torsion_law": 56,
+    "torsion_direct": 56,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     4
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1123,
+    "frobenius_measured": 1123,
+    "frobenius_matches": true,
+    "window": [
+     -12,
+     2731
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -4,
+      27
+     ]
+    ],
+    "pairs_scanned": 565638,
+    "degree_range": [
+     224,
+     2252
+    ],
+    "torsion_seconds": 17.79,
+    "seconds": 17.79,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 18.2
+   },
+   "audit": {
+    "label": "B3 x <4,5,6,7> ideal (0,)",
+    "torsion": 56,
+    "hw": true,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     4
+    ],
+    "frobenius": 1123,
+    "factor_hw": [
+     true,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 5.38,
+    "status": "completed",
+    "wall_seconds": 5.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B3 x <4,5,6,7> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 14,
+     "jordan": {
+      "1": 14
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 181,
+     "multiplicity": 56,
+     "window": [
+      -5,
+      56524
+     ],
+     "pairs": {
+      "pairs": 18674,
+      "degrees": [
+       56,
+       365
+      ],
+      "top": 365
+     },
+     "seconds": 0.83,
+     "status": "completed",
+     "wall_seconds": 1.2
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 4
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 3,
+     "multiplicity": 4,
+     "window": [
+      -5,
+      364
+     ],
+     "pairs": {
+      "pairs": 14,
+      "degrees": [
+       4,
+       9
+      ],
+      "top": 9
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B3 x <4,5,6,7> ideal (0, 1)",
+    "base": "B3",
+    "partner": "<4,5,6,7>",
+    "ideal_b": [
+     0,
+     1
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 4,
+    "a2": 57,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_torsion": [
+     14,
+     4
+    ],
+    "factor_jordan": [
+     {
+      "1": 14
+     },
+     {
+      "1": 4
+     }
+    ],
+    "torsion_law": 340,
+    "torsion_direct": 340,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     4,
+     57,
+     61
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1123,
+    "frobenius_measured": 1123,
+    "frobenius_matches": true,
+    "window": [
+     -69,
+     2902
+    ],
+    "factor_windows": [
+     [
+      -5,
+      296
+     ],
+     [
+      -5,
+      28
+     ]
+    ],
+    "pairs_scanned": 618648,
+    "degree_range": [
+     452,
+     2309
+    ],
+    "torsion_seconds": 19.17,
+    "seconds": 19.18,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 19.6
+   },
+   "audit": {
+    "label": "B3 x <4,5,6,7> ideal (0, 1)",
+    "torsion": 340,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     4,
+     57,
+     61
+    ],
+    "frobenius": 1123,
+    "factor_hw": [
+     true,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 5.74,
+    "status": "completed",
+    "wall_seconds": 6.0
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <2,3> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 1,
+     "multiplicity": 2,
+     "window": [
+      -4,
+      118
+     ],
+     "pairs": {
+      "pairs": 8,
+      "degrees": [
+       0,
+       4
+      ],
+      "top": 4
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <2,3> ideal (0,)",
+    "base": "B4",
+    "partner": "<2,3>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 2,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     60
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1141,
+    "frobenius_measured": 1141,
+    "frobenius_matches": true,
+    "window": [
+     -68,
+     2993
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -4,
+      21
+     ]
+    ],
+    "pairs_scanned": 777908,
+    "degree_range": [
+     240,
+     2344
+    ],
+    "torsion_seconds": 58.4,
+    "seconds": 58.41,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 58.9
+   },
+   "audit": {
+    "label": "B4 x <2,3> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     60
+    ],
+    "frobenius": 1141,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 15.44,
+    "status": "completed",
+    "wall_seconds": 15.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <2,3> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 2,
+     "jordan": {
+      "1": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 1,
+     "multiplicity": 2,
+     "window": [
+      -5,
+      124
+     ],
+     "pairs": {
+      "pairs": 10,
+      "degrees": [
+       2,
+       5
+      ],
+      "top": 5
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <2,3> ideal (0, 1)",
+    "base": "B4",
+    "partner": "<2,3>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 2,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     2
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2
+     }
+    ],
+    "torsion_law": 242,
+    "torsion_direct": 242,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     60,
+     121,
+     181
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1141,
+    "frobenius_measured": 1141,
+    "frobenius_matches": true,
+    "window": [
+     -189,
+     3356
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -5,
+      22
+     ]
+    ],
+    "pairs_scanned": 901570,
+    "degree_range": [
+     482,
+     2465
+    ],
+    "torsion_seconds": 70.85,
+    "seconds": 70.86,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 71.4
+   },
+   "audit": {
+    "label": "B4 x <2,3> ideal (0, 1)",
+    "torsion": 242,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     60,
+     121,
+     181
+    ],
+    "frobenius": 1141,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 18.37,
+    "status": "completed",
+    "wall_seconds": 18.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <2,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 3,
+     "multiplicity": 2,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 21,
+      "degrees": [
+       0,
+       8
+      ],
+      "top": 8
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <2,5> ideal (0,)",
+    "base": "B4",
+    "partner": "<2,5>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 2,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     60
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1383,
+    "frobenius_measured": 1383,
+    "frobenius_matches": true,
+    "window": [
+     -68,
+     3983
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -4,
+      25
+     ]
+    ],
+    "pairs_scanned": 1157001,
+    "degree_range": [
+     240,
+     2828
+    ],
+    "torsion_seconds": 96.18,
+    "seconds": 96.2,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 96.5
+   },
+   "audit": {
+    "label": "B4 x <2,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     60
+    ],
+    "frobenius": 1383,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 23.95,
+    "status": "completed",
+    "wall_seconds": 24.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <2,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 2,
+      "2": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 3,
+     "multiplicity": 2,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 21,
+      "degrees": [
+       4,
+       9
+      ],
+      "top": 9
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <2,5> ideal (0, 1)",
+    "base": "B4",
+    "partner": "<2,5>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 2,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2,
+      "2": 2
+     }
+    ],
+    "torsion_law": 484,
+    "torsion_direct": 484,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     60,
+     121,
+     181
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1383,
+    "frobenius_measured": 1383,
+    "frobenius_matches": true,
+    "window": [
+     -189,
+     4346
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -5,
+      26
+     ]
+    ],
+    "pairs_scanned": 1251381,
+    "degree_range": [
+     724,
+     2949
+    ],
+    "torsion_seconds": 108.93,
+    "seconds": 108.95,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 109.5
+   },
+   "audit": {
+    "label": "B4 x <2,5> ideal (0, 1)",
+    "torsion": 484,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     60,
+     121,
+     181
+    ],
+    "frobenius": 1383,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 25.83,
+    "status": "completed",
+    "wall_seconds": 26.2
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <3,4> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 5,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      160
+     ],
+     "pairs": {
+      "pairs": 38,
+      "degrees": [
+       0,
+       12
+      ],
+      "top": 12
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <3,4> ideal (0,)",
+    "base": "B4",
+    "partner": "<3,4>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     90
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 2135,
+    "frobenius_measured": 2135,
+    "frobenius_matches": true,
+    "window": [
+     -98,
+     4913
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -4,
+      26
+     ]
+    ],
+    "pairs_scanned": 2683758,
+    "degree_range": [
+     360,
+     4362
+    ],
+    "torsion_seconds": 236.05,
+    "seconds": 236.08,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 236.4
+   },
+   "audit": {
+    "label": "B4 x <3,4> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     90
+    ],
+    "frobenius": 2135,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 56.03,
+    "status": "completed",
+    "wall_seconds": 56.3
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <3,4> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 2,
+     "jordan": {
+      "1": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 5,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      166
+     ],
+     "pairs": {
+      "pairs": 40,
+      "degrees": [
+       3,
+       13
+      ],
+      "top": 13
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <3,4> ideal (0, 1)",
+    "base": "B4",
+    "partner": "<3,4>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     2
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2
+     }
+    ],
+    "torsion_law": 242,
+    "torsion_direct": 242,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     90,
+     121,
+     211
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 2135,
+    "frobenius_measured": 2135,
+    "frobenius_matches": true,
+    "window": [
+     -219,
+     5276
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -5,
+      27
+     ]
+    ],
+    "pairs_scanned": 2872760,
+    "degree_range": [
+     723,
+     4483
+    ],
+    "torsion_seconds": 251.75,
+    "seconds": 251.78,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 252.4
+   },
+   "audit": {
+    "label": "B4 x <3,4> ideal (0, 1)",
+    "torsion": 242,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     90,
+     121,
+     211
+    ],
+    "frobenius": 2135,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 60.48,
+    "status": "completed",
+    "wall_seconds": 60.8
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <3,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 7,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 61,
+      "degrees": [
+       0,
+       16
+      ],
+      "top": 16
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <3,5> ideal (0,)",
+    "base": "B4",
+    "partner": "<3,5>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     90
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 2377,
+    "frobenius_measured": 2377,
+    "frobenius_matches": true,
+    "window": [
+     -98,
+     5155
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -4,
+      29
+     ]
+    ],
+    "pairs_scanned": 3339941,
+    "degree_range": [
+     360,
+     4846
+    ],
+    "torsion_seconds": 288.22,
+    "seconds": 288.24,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 288.8
+   },
+   "audit": {
+    "label": "B4 x <3,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     90
+    ],
+    "frobenius": 2377,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 68.12,
+    "status": "completed",
+    "wall_seconds": 68.7
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <3,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 2,
+      "2": 2
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 7,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 59,
+      "degrees": [
+       5,
+       17
+      ],
+      "top": 17
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <3,5> ideal (0, 1)",
+    "base": "B4",
+    "partner": "<3,5>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 2,
+      "2": 2
+     }
+    ],
+    "torsion_law": 484,
+    "torsion_direct": 484,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     90,
+     121,
+     211
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 2377,
+    "frobenius_measured": 2377,
+    "frobenius_matches": true,
+    "window": [
+     -219,
+     5518
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -5,
+      30
+     ]
+    ],
+    "pairs_scanned": 3470379,
+    "degree_range": [
+     965,
+     4967
+    ],
+    "torsion_seconds": 296.6,
+    "seconds": 296.63,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 297.2
+   },
+   "audit": {
+    "label": "B4 x <3,5> ideal (0, 1)",
+    "torsion": 484,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     90,
+     121,
+     211
+    ],
+    "frobenius": 2377,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 70.43,
+    "status": "completed",
+    "wall_seconds": 70.8
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <3,4,5> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 2,
+     "multiplicity": 3,
+     "window": [
+      -4,
+      214
+     ],
+     "pairs": {
+      "pairs": 10,
+      "degrees": [
+       0,
+       6
+      ],
+      "top": 6
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <3,4,5> ideal (0,)",
+    "base": "B4",
+    "partner": "<3,4,5>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 3,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     90
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1772,
+    "frobenius_measured": 1772,
+    "frobenius_matches": true,
+    "window": [
+     -98,
+     4550
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -4,
+      24
+     ]
+    ],
+    "pairs_scanned": 1634930,
+    "degree_range": [
+     360,
+     3636
+    ],
+    "torsion_seconds": 127.19,
+    "seconds": 127.21,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 127.4
+   },
+   "audit": {
+    "label": "B4 x <3,4,5> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     90
+    ],
+    "frobenius": 1772,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 31.04,
+    "status": "completed",
+    "wall_seconds": 31.6
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <3,4,5> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 3,
+     "jordan": {
+      "1": 3
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 2,
+     "multiplicity": 3,
+     "window": [
+      -5,
+      220
+     ],
+     "pairs": {
+      "pairs": 12,
+      "degrees": [
+       3,
+       7
+      ],
+      "top": 7
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.5
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <3,4,5> ideal (0, 1)",
+    "base": "B4",
+    "partner": "<3,4,5>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 3,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     3
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 3
+     }
+    ],
+    "torsion_law": 363,
+    "torsion_direct": 363,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     90,
+     121,
+     211
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 1772,
+    "frobenius_measured": 1772,
+    "frobenius_matches": true,
+    "window": [
+     -219,
+     4913
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -5,
+      25
+     ]
+    ],
+    "pairs_scanned": 1823932,
+    "degree_range": [
+     723,
+     3757
+    ],
+    "torsion_seconds": 148.72,
+    "seconds": 148.74,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 149.0
+   },
+   "audit": {
+    "label": "B4 x <3,4,5> ideal (0, 1)",
+    "torsion": 363,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     90,
+     121,
+     211
+    ],
+    "frobenius": 1772,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 36.66,
+    "status": "completed",
+    "wall_seconds": 37.1
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <4,5,6,7> ideal (0,)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 0,
+     "jordan": {},
+     "hw": null,
+     "gens": [
+      0
+     ],
+     "frobenius": 3,
+     "multiplicity": 4,
+     "window": [
+      -4,
+      358
+     ],
+     "pairs": {
+      "pairs": 12,
+      "degrees": [
+       0,
+       8
+      ],
+      "top": 8
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <4,5,6,7> ideal (0,)",
+    "base": "B4",
+    "partner": "<4,5,6,7>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0
+    ],
+    "a1": 4,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_torsion": [
+     0,
+     0
+    ],
+    "factor_jordan": [
+     {},
+     {}
+    ],
+    "torsion_law": 0,
+    "torsion_direct": 0,
+    "hw": false,
+    "hw_rule": false,
+    "mu": [
+     2,
+     1,
+     2
+    ],
+    "ideal_generators": [
+     0,
+     120
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 2403,
+    "frobenius_measured": 2403,
+    "frobenius_matches": true,
+    "window": [
+     -128,
+     6151
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -4,
+      27
+     ]
+    ],
+    "pairs_scanned": 2796372,
+    "degree_range": [
+     480,
+     4928
+    ],
+    "torsion_seconds": 224.93,
+    "seconds": 224.95,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 225.5
+   },
+   "audit": {
+    "label": "B4 x <4,5,6,7> ideal (0,)",
+    "torsion": 0,
+    "hw": false,
+    "mu": 2,
+    "minimal_generators": [
+     0,
+     120
+    ],
+    "frobenius": 2403,
+    "factor_hw": [
+     false,
+     null
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0
+     ]
+    ],
+    "seconds": 57.88,
+    "status": "completed",
+    "wall_seconds": 58.2
+   },
+   "audit_agrees": true
+  },
+  {
+   "label": "B4 x <4,5,6,7> ideal (0, 1)",
+   "spec_factors": {
+    "b": {
+     "length": 0,
+     "jordan": {},
+     "hw": false,
+     "gens": [
+      0,
+      30
+     ],
+     "frobenius": 389,
+     "multiplicity": 120,
+     "window": [
+      -34,
+      262330
+     ],
+     "pairs": {
+      "pairs": 94021,
+      "degrees": [
+       120,
+       810
+      ],
+      "top": 810
+     },
+     "seconds": 46.46,
+     "status": "completed",
+     "wall_seconds": 46.7
+    },
+    "s": {
+     "length": 4,
+     "jordan": {
+      "1": 4
+     },
+     "hw": true,
+     "gens": [
+      0,
+      1
+     ],
+     "frobenius": 3,
+     "multiplicity": 4,
+     "window": [
+      -5,
+      364
+     ],
+     "pairs": {
+      "pairs": 14,
+      "degrees": [
+       4,
+       9
+      ],
+      "top": 9
+     },
+     "seconds": 0.0,
+     "status": "completed",
+     "wall_seconds": 0.6
+    }
+   },
+   "producer_status": "completed",
+   "audit_status": "completed",
+   "producer": {
+    "label": "B4 x <4,5,6,7> ideal (0, 1)",
+    "base": "B4",
+    "partner": "<4,5,6,7>",
+    "ideal_b": [
+     0,
+     30
+    ],
+    "ideal_s": [
+     0,
+     1
+    ],
+    "a1": 4,
+    "a2": 121,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_torsion": [
+     0,
+     4
+    ],
+    "factor_jordan": [
+     {},
+     {
+      "1": 4
+     }
+    ],
+    "torsion_law": 484,
+    "torsion_direct": 484,
+    "hw": true,
+    "hw_rule": true,
+    "mu": [
+     2,
+     2,
+     4
+    ],
+    "ideal_generators": [
+     0,
+     120,
+     121,
+     241
+    ],
+    "hilbert_identity": true,
+    "frobenius_formula": 2403,
+    "frobenius_measured": 2403,
+    "frobenius_matches": true,
+    "window": [
+     -249,
+     6514
+    ],
+    "factor_windows": [
+     [
+      -34,
+      645
+     ],
+     [
+      -5,
+      28
+     ]
+    ],
+    "pairs_scanned": 3050714,
+    "degree_range": [
+     964,
+     5049
+    ],
+    "torsion_seconds": 241.57,
+    "seconds": 241.6,
+    "p1": true,
+    "p2": true,
+    "p2_special_rule": true,
+    "p4": true,
+    "status": "completed",
+    "wall_seconds": 241.9
+   },
+   "audit": {
+    "label": "B4 x <4,5,6,7> ideal (0, 1)",
+    "torsion": 484,
+    "hw": true,
+    "mu": 4,
+    "minimal_generators": [
+     0,
+     120,
+     121,
+     241
+    ],
+    "frobenius": 2403,
+    "factor_hw": [
+     false,
+     true
+    ],
+    "factor_minimal_generators": [
+     [
+      0,
+      30
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "seconds": 64.25,
+    "status": "completed",
+    "wall_seconds": 64.7
+   },
+   "audit_agrees": true
+  }
+ ],
+ "controls": {
+  "c1": [
+   {
+    "base": "B1",
+    "a1_true": 2,
+    "a1_gap": 1,
+    "a2": 57,
+    "refused": false,
+    "hilbert_identity_holds": false,
+    "broken": true,
+    "status": "completed",
+    "wall_seconds": 3.0
+   },
+   {
+    "base": "B2",
+    "a1_true": 2,
+    "a1_gap": 1,
+    "a2": 97,
+    "refused": false,
+    "hilbert_identity_holds": false,
+    "broken": true,
+    "status": "completed",
+    "wall_seconds": 32.5
+   }
+  ],
+  "c2": {
+   "minimal_generators": [
+    0,
+    28
+   ],
+   "perturbed_generators": [
+    0,
+    29
+   ],
+   "true_ideal_is_extension": true,
+   "perturbed_is_extension": false,
+   "perturbed_mu": 2,
+   "perturbed_hw": true,
+   "status": "completed",
+   "wall_seconds": 1.5
+  }
+ },
+ "factors": {
+  "4-4-7|(0,)|4": {
+   "length": 0,
+   "jordan": {},
+   "hw": null,
+   "gens": [
+    0
+   ],
+   "frobenius": 3,
+   "multiplicity": 4,
+   "window": [
+    -4,
+    358
+   ],
+   "pairs": {
+    "pairs": 12,
+    "degrees": [
+     0,
+     8
+    ],
+    "top": 8
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.6
+  },
+  "4-4-7|(0, 1)|4": {
+   "length": 4,
+   "jordan": {
+    "1": 4
+   },
+   "hw": true,
+   "gens": [
+    0,
+    1
+   ],
+   "frobenius": 3,
+   "multiplicity": 4,
+   "window": [
+    -5,
+    364
+   ],
+   "pairs": {
+    "pairs": 14,
+    "degrees": [
+     4,
+     9
+    ],
+    "top": 9
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.6
+  },
+  "2-2-5|(0,)|2": {
+   "length": 0,
+   "jordan": {},
+   "hw": null,
+   "gens": [
+    0
+   ],
+   "frobenius": 3,
+   "multiplicity": 2,
+   "window": [
+    -4,
+    214
+   ],
+   "pairs": {
+    "pairs": 21,
+    "degrees": [
+     0,
+     8
+    ],
+    "top": 8
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.6
+  },
+  "2-2-5|(0, 1)|2": {
+   "length": 4,
+   "jordan": {
+    "1": 2,
+    "2": 2
+   },
+   "hw": true,
+   "gens": [
+    0,
+    1
+   ],
+   "frobenius": 3,
+   "multiplicity": 2,
+   "window": [
+    -5,
+    220
+   ],
+   "pairs": {
+    "pairs": 21,
+    "degrees": [
+     4,
+     9
+    ],
+    "top": 9
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.6
+  },
+  "3-2-5|(0,)|3": {
+   "length": 0,
+   "jordan": {},
+   "hw": null,
+   "gens": [
+    0
+   ],
+   "frobenius": 7,
+   "multiplicity": 3,
+   "window": [
+    -4,
+    214
+   ],
+   "pairs": {
+    "pairs": 61,
+    "degrees": [
+     0,
+     16
+    ],
+    "top": 16
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.6
+  },
+  "56-26-97|(0, 14)|57": {
+   "length": 0,
+   "jordan": {},
+   "hw": false,
+   "gens": [
+    0,
+    14
+   ],
+   "frobenius": 181,
+   "multiplicity": 56,
+   "window": [
+    -18,
+    56602
+   ],
+   "pairs": {
+    "pairs": 20809,
+    "degrees": [
+     56,
+     378
+    ],
+    "top": 378
+   },
+   "seconds": 0.98,
+   "status": "completed",
+   "wall_seconds": 1.2
+  },
+  "56-26-97|(0, 14)|56": {
+   "length": 0,
+   "jordan": {},
+   "hw": false,
+   "gens": [
+    0,
+    14
+   ],
+   "frobenius": 181,
+   "multiplicity": 56,
+   "window": [
+    -18,
+    56602
+   ],
+   "pairs": {
+    "pairs": 20809,
+    "degrees": [
+     56,
+     378
+    ],
+    "top": 378
+   },
+   "seconds": 1.0,
+   "status": "completed",
+   "wall_seconds": 1.2
+  },
+  "56-26-97|(0, 1)|57": {
+   "length": 14,
+   "jordan": {
+    "1": 14
+   },
+   "hw": true,
+   "gens": [
+    0,
+    1
+   ],
+   "frobenius": 181,
+   "multiplicity": 56,
+   "window": [
+    -5,
+    56524
+   ],
+   "pairs": {
+    "pairs": 18674,
+    "degrees": [
+     56,
+     365
+    ],
+    "top": 365
+   },
+   "seconds": 0.83,
+   "status": "completed",
+   "wall_seconds": 1.2
+  },
+  "56-26-97|(0, 1)|56": {
+   "length": 14,
+   "jordan": {
+    "1": 14
+   },
+   "hw": true,
+   "gens": [
+    0,
+    1
+   ],
+   "frobenius": 181,
+   "multiplicity": 56,
+   "window": [
+    -5,
+    56524
+   ],
+   "pairs": {
+    "pairs": 18674,
+    "degrees": [
+     56,
+     365
+    ],
+    "top": 365
+   },
+   "seconds": 0.82,
+   "status": "completed",
+   "wall_seconds": 1.2
+  },
+  "3-2-5|(0, 1)|3": {
+   "length": 4,
+   "jordan": {
+    "1": 2,
+    "2": 2
+   },
+   "hw": true,
+   "gens": [
+    0,
+    1
+   ],
+   "frobenius": 7,
+   "multiplicity": 3,
+   "window": [
+    -5,
+    220
+   ],
+   "pairs": {
+    "pairs": 59,
+    "degrees": [
+     5,
+     17
+    ],
+    "top": 17
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.5
+  },
+  "3-3-5|(0,)|3": {
+   "length": 0,
+   "jordan": {},
+   "hw": null,
+   "gens": [
+    0
+   ],
+   "frobenius": 2,
+   "multiplicity": 3,
+   "window": [
+    -4,
+    214
+   ],
+   "pairs": {
+    "pairs": 10,
+    "degrees": [
+     0,
+     6
+    ],
+    "top": 6
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.5
+  },
+  "3-3-5|(0, 1)|3": {
+   "length": 3,
+   "jordan": {
+    "1": 3
+   },
+   "hw": true,
+   "gens": [
+    0,
+    1
+   ],
+   "frobenius": 2,
+   "multiplicity": 3,
+   "window": [
+    -5,
+    220
+   ],
+   "pairs": {
+    "pairs": 12,
+    "degrees": [
+     3,
+     7
+    ],
+    "top": 7
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.5
+  },
+  "3-2-4|(0,)|3": {
+   "length": 0,
+   "jordan": {},
+   "hw": null,
+   "gens": [
+    0
+   ],
+   "frobenius": 5,
+   "multiplicity": 3,
+   "window": [
+    -4,
+    160
+   ],
+   "pairs": {
+    "pairs": 38,
+    "degrees": [
+     0,
+     12
+    ],
+    "top": 12
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.5
+  },
+  "3-2-4|(0, 1)|3": {
+   "length": 2,
+   "jordan": {
+    "1": 2
+   },
+   "hw": true,
+   "gens": [
+    0,
+    1
+   ],
+   "frobenius": 5,
+   "multiplicity": 3,
+   "window": [
+    -5,
+    166
+   ],
+   "pairs": {
+    "pairs": 40,
+    "degrees": [
+     3,
+     13
+    ],
+    "top": 13
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.5
+  },
+  "2-2-3|(0,)|2": {
+   "length": 0,
+   "jordan": {},
+   "hw": null,
+   "gens": [
+    0
+   ],
+   "frobenius": 1,
+   "multiplicity": 2,
+   "window": [
+    -4,
+    118
+   ],
+   "pairs": {
+    "pairs": 8,
+    "degrees": [
+     0,
+     4
+    ],
+    "top": 4
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.5
+  },
+  "2-2-3|(0, 1)|2": {
+   "length": 2,
+   "jordan": {
+    "1": 2
+   },
+   "hw": true,
+   "gens": [
+    0,
+    1
+   ],
+   "frobenius": 1,
+   "multiplicity": 2,
+   "window": [
+    -5,
+    124
+   ],
+   "pairs": {
+    "pairs": 10,
+    "degrees": [
+     2,
+     5
+    ],
+    "top": 5
+   },
+   "seconds": 0.0,
+   "status": "completed",
+   "wall_seconds": 0.5
+  },
+  "96-44-167|(0, 24)|97": {
+   "length": 0,
+   "jordan": {},
+   "hw": false,
+   "gens": [
+    0,
+    24
+   ],
+   "frobenius": 311,
+   "multiplicity": 96,
+   "window": [
+    -28,
+    167542
+   ],
+   "pairs": {
+    "pairs": 60367,
+    "degrees": [
+     96,
+     648
+    ],
+    "top": 648
+   },
+   "seconds": 14.74,
+   "status": "completed",
+   "wall_seconds": 15.3
+  },
+  "120-55-209|(0, 30)|121": {
+   "length": 0,
+   "jordan": {},
+   "hw": false,
+   "gens": [
+    0,
+    30
+   ],
+   "frobenius": 389,
+   "multiplicity": 120,
+   "window": [
+    -34,
+    262330
+   ],
+   "pairs": {
+    "pairs": 94021,
+    "degrees": [
+     120,
+     810
+    ],
+    "top": 810
+   },
+   "seconds": 46.46,
+   "status": "completed",
+   "wall_seconds": 46.7
+  }
+ }
+}

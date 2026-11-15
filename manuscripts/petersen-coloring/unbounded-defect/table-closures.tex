@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrrrrrrrl}
+\toprule
+ & & \multicolumn{3}{c}{exact closure} & \multicolumn{3}{c}{antichain certificate} & & \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+family & gen. & elements & word & s & elements & word & s & zero trace & status \\
+\midrule
+$F_1 = \{Y\}$ & 6 & 30 & 6 & 0.0 & 12 & 3 & 0.3 & 0 & closed, checked \\
+$F_2 = \{S\}$ & 6 & 19{,}005 & 12 & 27.1 & 276 & 5 & 5.0 & 0 & closed, checked \\
+$F_3 = \{Y, S\}$ & 12 & 116{,}463 & 13 & 344.6 & 2{,}454 & 6 & 349.4 & 0 & closed, checked \\
+$F_4$ (40 blocks of $\PG$) & 336 & 200{,}070 & 3 & 93.4 & n/a & n/a & 3{,}600 & none found & undecided \\
+$F_5$ (all 81 blocks) & 684 & n/a & n/a & n/a & n/a & n/a & 3{,}600 & none found & undecided \\
+\bottomrule
+\end{tabular}
+\caption{The closures of the block families $F_1$ to $F_5$ (computation EXP-014, \texttt{closure-F*.json}, \texttt{certificate-check-antichain.json}): the distinct generators, the elements of the exact closure of products of at least two generators with the longest new word and time, and the antichain certificate with its longest word and time. The exact closure of $F_4$ stopped at the cap of 200{,}000 elements (200{,}070 stored, word length 3) with no zero-trace element among them. The antichain closures of $F_4$ and $F_5$ reached their one-hour limit inside the products of two generators; the generators and limit of $F_5$ are those of the experiment record, which keeps no artifact for it. Both are undecided.}\label{tab:closures}
+\end{table}

@@ -158,3 +158,35 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   f7393db50890501728c04ba1fb57177a05f667b5dfd367bb23e43df3473f9c39; a fresh unauthenticated download equals the frozen
   file.
 
+## 2026-11-15 - consequence-audit v0.07 published (10.5281/zenodo.24239715)
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-pc-2026-11-10.md`, D2): encodings and
+  certification as algorithms with formula sizes checked by `make_tables.py --check`, consolidated tables of the
+  invariants, pair sweeps, rings and four-poles generated from the artifacts, a validation section, conditional
+  statements marked (MMM Proposition 2 and Theorem 4), a proof of the 3-connectivity of frames, citations updated
+  (arXiv:2608.10028 v4, Theorem 8 for the even orders), the rings of copies of G52 renamed C_t, and the title
+  re-derived: "Exact Invariants of Five Counterexamples to the Petersen Coloring Conjecture: Covers, Flows, Defect Two
+  and Unbounded Abnormal Edges". Independent review (CAOS_MANAGE `wip/caos-research/pc-consequence-audit-v07-review-2026-11-14.md`):
+  CHANGES REQUIRED, re-check CHANGES REQUIRED (commit hashes), second fix pass verified.
+- Record errata found by the review (the verdicts are not edited; the paper uses the artifact values): the GJMMMU author
+  is Nikolay Ulyanov (corrected in `context/references.md`); EXP-008 `verdict.md` says "four instances" where its
+  artifacts give five timeouts; EXP-010 `verdict.md` says "7 complete, 5 partial" where its artifacts give six and six;
+  the hypothesis commits printed in the EXP-002, EXP-003 and EXP-004 verdicts (4ea64f5, e1e7a3b) do not exist in the
+  repository; the commits that add those hypothesis files are 9821fbf4, ecd3bb3d and 571d9fe4.
+- Release: 39 gates passed; 35 pages, 677,106 bytes, SHA-256
+  12f8c16fbdd11b56bf43591d4984993d2fb4d882162a93c793a29f909a44f067.
+
+## 2026-11-15 - unbounded-defect v0.03 published (10.5281/zenodo.24239832)
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-pc-2026-11-10.md`, D3): Algorithms for
+  the sector matrices, the exact and antichain closures with certificate and the certificate check, with costs; F1 to F5
+  reported, F4 and F5 undecided; the 203-ring comparison stated as one-sided, with the block re-check status (46 of 81)
+  and the G52 control; generated tables of the 1,890 six-pole splits, the G52 charge spectrum, the ring computations and
+  the transmitted sets (546 of 949 decided); the transitivity proof for distances 0 to 3; the flower-snark corollary
+  machine-verified for k = 5, 7, 9 with the periodicity beyond marked conjectural; superedge rings stated with the
+  identity at every junction. Title: "Conduction of cut-space classes through multipoles: unbounded Petersen defect on cyclically 4-edge-connected cubic graphs and transfer semigroups of rings of 6-poles".
+- Independent review (CAOS_MANAGE `wip/caos-research/pc-unbounded-defect-v03-review-2026-11-14.md`): CHANGES REQUIRED,
+  re-check CHANGES REQUIRED (abstract scope), second fix pass applied as specified.
+- Release: 39 gates passed; 35 pages, 805,518 bytes, SHA-256
+  0eedaae3e928469738e585a97bf76e545ec07c3209fa67b6e5527febefa54417.
+

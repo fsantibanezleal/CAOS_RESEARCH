@@ -2166,3 +2166,37 @@ An independent audit (2026-11-11) found that Theorem 9.1 displayed Pi_58 M_p s_(
 even p only: by the signed-row definition, x_(0r) = (-1)^p times the unsigned K row, and the face is minus the unsigned
 row. v0.05 (10.5281/zenodo.24228302) states (-1)^(p+1) x_(0,r,p-2-r); the vanishing of the two endpoint rows and every
 other result are unchanged; EXP-066 checks the unsigned-row form. Re-checked by the auditor before release.
+
+## 2026-11-14 - EXP-069 and EXP-070: validations asked by the independent manuscript audit
+
+- EXP-069 CONFIRMED (hypothesis frozen a1974bc0): the 16 Presburger obligations of EXP-026, rebuilt by EXP-026's own
+  code with query digests equal to the certified ones (16 of 16), are decided `unsat` by cvc5 1.4.2 (13.98 s in all)
+  and again by Z3 on the exported SMT-LIB text; four perturbed controls are `sat` for both solvers, and an exact
+  evaluator accepts each cvc5 model. Theorem 7.2 of the curvilinear paper is machine-verified by two independent solvers
+  (no proof object checked, so not derived).
+- EXP-070 CONFIRMED: the EXP-068 gluing law, characterization and Hilbert identity hold on 48 gluings of Pham's
+  semigroup with `(0,14)`, `C_4` with `(0,24)`, `C_5` with `(0,30)` and the control Pham `(0,1)` with six small
+  partners; 36 cases have a counterexample factor, and in the 18 with a principal partner ideal the extension is itself
+  a counterexample (torsion length 0); the independent auditor (no shared code) agrees on all 48; both controls pass.
+  The counterexample-by-counterexample gluings stay out of direct reach (declared in the hypothesis).
+- Audit: CAOS_MANAGE `wip/caos-research/msaudit-hw-other-2026-11-10.md` (D1 plan item 2, D2 plan item 1); delegation
+  report `wip/caos-research/hw-exp069-exp070-2026-11-14.md`, re-checked by the coordinating session (EXP-069 rerun
+  reproduces P1 to P4; nine tests pass).
+
+## 2026-11-15 - integral-connecting-annihilators v0.06 published (10.5281/zenodo.24239899)
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-hw-other-2026-11-10.md`, D3): a problem
+  and context section (the conjecture, its disproofs by Pham and by Christensen-Gerko-Iyengar), related work, the
+  identification of the explicit matrix with the Koszul-strand block stated as a premise (reconstructed independently at
+  p = 8, computed by one canonical program at p = 9 and 10, conjectural beyond), algorithms with costs and commands,
+  notation and hypotheses tables, the p = 8 to 11 carrier comparison, six figures generated from the artifacts, and the
+  title "A quadratic family of integral two-torsion classes in the cokernel of an explicit Koszul-strand presentation". Theorem 9.1 of v0.05 is Theorem 11.1.
+- Independent review (CAOS_MANAGE `wip/caos-research/hw-integral-v06-review-2026-11-14.md`): CHANGES REQUIRED (2
+  blockers: the printed title, the Huneke-Wiegand 1994 DOI, which is 10.1007/BF01459794), re-check APPROVE. The same
+  wrong DOI is in the consolidated frobenius-minimality record (frozen) and was corrected in the curvilinear and gluing
+  revisions.
+- The depth checker's uncertainty finding is waived in the release record: every reported number is an exact integer or
+  finite-field result.
+- Release: 39 gates passed; 39 pages, 832,113 bytes, SHA-256
+  dbd075381b284484cfe5f4c015fba8dba6944441917013193a8ac925f92102e6.
+
