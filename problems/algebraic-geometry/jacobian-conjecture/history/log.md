@@ -1810,3 +1810,19 @@ review approved the corrections before release.
 - Release: 39 gates passed; 32 pages, 590,456 bytes, SHA-256
   abae32480123a9eef3b2d29ad4d1bcce2394766b1ce962583886a9c7531728e5.
 
+## 2026-11-15 - planar v0.37 (10.5281/zenodo.24240037); errata on EXP-051 and EXP-048
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-jac-2026-11-10.md`, D3): the fifth
+  exclusion restricted to the six certified grid shapes, the unproved `T = b x^d` case removed from the tower lemma, the
+  truncation ladder from the current verdicts, the (72,108) part around GGHV Proposition 4.3 with the Case 1 certificate
+  attempts (EXP-139 to EXP-143) and their cost, atlas, exclusion and frontier tables generated from the records, six
+  algorithms, full proofs of the window theorems, an ablation and a notation table.
+- Independent review (CAOS_MANAGE `wip/caos-research/jc-planar-v037-review-2026-11-14.md`): CHANGES REQUIRED with two
+  blockers, re-check APPROVE. (1) The incidence-map description of the 2026 counterexample is credited to T. Tao's
+  public post "A digestion of the Jacobian conjecture counterexample" (2026-07-21); the programme's re-verification
+  (EXP-086 to EXP-090) and its extension across n are its own. (2) The half-plane theorem was stated in v0.36 as proved
+  for every partner degree; one ingredient of its record fails at the paper's degree-32 and degree-72 samples, so v0.37
+  states it on the certified windows and as a conjecture beyond; errata appended to the EXP-051 and EXP-048 verdicts.
+- Release: 39 gates passed; 51 pages, 722,853 bytes, SHA-256
+  f8fea6a7ba16ddf43e51133de4097416633e6a33d9b0c2785ca06313f06f3dd4.
+

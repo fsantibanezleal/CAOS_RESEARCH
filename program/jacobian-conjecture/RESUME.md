@@ -11,6 +11,11 @@ remain the evidence.
 2026-11-15: cascade v0.09 published (10.5281/zenodo.24239949): the full revision from the independent audit, with the
 Poisson row machine-verified at n = 2 by EXP-144 (Long's map recomputed exactly from arXiv:2608.23777v1).
 
+2026-11-15: planar v0.37 published (10.5281/zenodo.24240037): the full revision from the independent audit; the
+half-plane theorem, stated as proved for all partner degrees in v0.36, holds on its certified windows and
+is a conjecture beyond them (errata on EXP-051 and EXP-048); the incidence-map description is credited to
+T. Tao's public post of 2026-07-21.
+
 2026-11-14: correction versions published after an independent audit and review: cascade v0.08 (10.5281/zenodo.24226220, Poisson(2) false), foundational v0.14 (10.5281/zenodo.24226224, rigidity affine for one zero weight), planar v0.36 (10.5281/zenodo.24226225, fifth exclusion on its certified grid, tower lemma for non-proper-power tops, modular covector exclusions). Errata in EXP-010, EXP-044, EXP-046. The full revisions the audit asks for (methods, tables, related work) remain to be done.
 
 ## Current checkpoint, 2026-11-08
