@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation",
+    "title": "A quadratic family of integral two-torsion classes in the cokernel of an explicit Koszul-strand presentation",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -10,10 +10,11 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>We study an explicit integral Koszul presentation arising in the graded-syzygy analysis of a previously constructed Huneke-Wiegand family. For every integer p&gt;=8, its cokernel contains a direct summand isomorphic to (Z/2)^floor(((p-2)^2+3)/12). The classes are indexed by strictly increasing nonnegative triples of sum p-2. Reflection-symmetric interval potentials give explicit original integral sources for twice each class, while relative parity functionals detect them independently.</p><p>For a semantic row projection retaining four of six recurring row types, we prove a new uniform constructive identity: two endpoint triangle rows vanish for every p&gt;=8, each by a single explicitly labelled source column of coefficient height one. The proof classifies every face before contraction. A locked p=11 frozen-carrier comparison and independent exact sweeps through p=300 validate the implementation without replacing the symbolic proof.</p><p>A tracked four-row vector is integrally congruent to one selected triangle class. We also give its full twice-source, two short kernel-domain corrections, and an integral potential basis of rank binomial(p-1,2). The complete cokernel, a matching upper bound, and a uniform identification with earlier isolated subpresentations remain unresolved.</p><p>The family-to-presentation identification is an imported premise. Son Pham retains priority for the original public Huneke-Wiegand counterexample. Source code, computation records and archived sources: https://github.com/fsantibanezleal/CAOS_RESEARCH .</p>",
+    "description": "<p>Let M_p be an explicit integral matrix, defined for every p&gt;=8 and proposed as the matrix of the connecting map in a lower Koszul strand of the quadratic part of the presentation ideal of the fiber cone of the conductor, in a family of Huneke-Wiegand counterexamples. For every integer p&gt;=8 we prove that its cokernel contains a direct summand (Z/2)^floor(((p-2)^2+3)/12), indexed by the strictly increasing nonnegative triples of sum p-2. Reflection-symmetric interval potentials give explicit integral sources for twice each class; relative parity functionals supported on ten to twelve rows detect each class independently over F_2, and their extension gives a nonconstructive splitting. A previously tracked four-row vector is integrally congruent to one triangle class.</p><p>For a semantic projection retaining four of six recurring row types, a face classification of one source column proves that two endpoint triangle rows vanish for every p&gt;=8. Exact computations test each identity: complete F_2 row-span certificates for all 27 triangles at p=8,...,12, 586 endpoint identities through p=300, and a finite carrier comparison at p=8,...,11. That M_p is the matrix of that strand is a premise: it is verified at p=8 by an independent reconstruction, at p=9,10 by agreement with one canonical program, and conjectural for larger p. The complete cokernel, an upper bound, and a uniform comparison with isolated subpresentations remain open.</p><p>Son Pham retains priority for the original public Huneke-Wiegand counterexample. Source code, computation records and archived sources: https://github.com/fsantibanezleal/CAOS_RESEARCH .</p>",
     "keywords": [
       "Huneke-Wiegand conjecture",
       "Koszul homology",
+      "Koszul strand",
       "integral connecting maps",
       "uniform annihilators",
       "integral two-torsion",
@@ -27,7 +28,12 @@
     "related_identifiers": [
       {
         "relation": "isSupplementTo",
-        "identifier": "10.5281/zenodo.22181972",
+        "identifier": "10.5281/zenodo.21763582",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "references",
+        "identifier": "10.5281/zenodo.22835108",
         "resource_type": "publication-preprint"
       },
       {
@@ -39,11 +45,21 @@
         "relation": "references",
         "identifier": "https://github.com/sonpham-org/huneke-wiegand-candidate-verification",
         "resource_type": "software"
+      },
+      {
+        "relation": "references",
+        "identifier": "https://arxiv.org/abs/2609.07615",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "references",
+        "identifier": "https://arxiv.org/abs/2608.21666",
+        "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.05",
+    "version": "0.06",
     "language": "eng",
     "publication_date": "2026-09-20",
-    "version_notes": "Correction: Theorem 9.1 (support-one endpoint sources) displayed Pi_58 M_p s_(p,r) = -x_(0,r,p-2-r), which holds for even p only in the paper's sign convention; the identity is (-1)^(p+1) x_(0,r,p-2-r), minus the unsigned K row. The vanishing of the two endpoint rows and every other result are unchanged. Found by an independent audit (2026-11-11)."
+    "version_notes": "Revision. New: a problem-and-context section (the conjecture and its disproofs by Pham and by Christensen-Gerko-Iyengar, the Koszul complex, strand and module that the matrix presents, and what integral two-torsion says about the characteristic dependence of the Betti numbers); a related-work section on algebraic Morse theory, matroids over rings, FI-modules and Smith forms of structured matrices; the identification of the explicit matrix with the Koszul-strand block matrix stated as a premise: reconstructed independently at p=8, computed by one canonical program at p=9 and p=10, and conjectural for larger p, with the title and abstract restricted to the explicit matrix; an algorithms-and-reproducibility section with pseudocode for the potential chain, the bitset differential, the F2 row-span certificate and the neighbourhood expansion, the cost per p, commands, run times and full SHA-256 digests; the finite carrier comparison of p=8..11 (two computations) in the results and the appendix table; one figure of a triangle's support and the six row types; a single abstract; ablation of the source corrections; discussion, limitations and conclusions. Theorem numbering changes because of the new sections: Theorem 9.1 of version 0.05 is Theorem 11.1 of version 0.06. Five figures drawn from the stored computation artifacts, a notation table, a table of the statements each computation tests, and completed bibliographic data are added; the Huneke-Wiegand 1994 DOI is corrected to 10.1007/BF01459794, the Garcia-Sanchez and Leamer check is stated for two-generated ideals, and the premise is marked [MV] at p=8 (independent reconstruction), [MV] on one canonical route at p=9,10, and [C] beyond. No theorem statement and no proof of the previous version is altered."
   }
 }

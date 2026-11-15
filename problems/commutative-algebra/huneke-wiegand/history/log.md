@@ -2183,3 +2183,33 @@ other result are unchanged; EXP-066 checks the unsigned-row form. Re-checked by 
   report `wip/caos-research/hw-exp069-exp070-2026-11-14.md`, re-checked by the coordinating session (EXP-069 rerun
   reproduces P1 to P4; nine tests pass).
 
+## 2026-11-15 - integral-connecting-annihilators v0.06 published (10.5281/zenodo.24239899)
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-hw-other-2026-11-10.md`, D3): a problem
+  and context section (the conjecture, its disproofs by Pham and by Christensen-Gerko-Iyengar), related work, the
+  identification of the explicit matrix with the Koszul-strand block stated as a premise (reconstructed independently at
+  p = 8, computed by one canonical program at p = 9 and 10, conjectural beyond), algorithms with costs and commands,
+  notation and hypotheses tables, the p = 8 to 11 carrier comparison, six figures generated from the artifacts, and the
+  title "A quadratic family of integral two-torsion classes in the cokernel of an explicit Koszul-strand presentation". Theorem 9.1 of v0.05 is Theorem 11.1.
+- Independent review (CAOS_MANAGE `wip/caos-research/hw-integral-v06-review-2026-11-14.md`): CHANGES REQUIRED (2
+  blockers: the printed title, the Huneke-Wiegand 1994 DOI, which is 10.1007/BF01459794), re-check APPROVE. The same
+  wrong DOI is in the consolidated frobenius-minimality record (frozen) and was corrected in the curvilinear and gluing
+  revisions.
+- The depth checker's uncertainty finding is waived in the release record: every reported number is an exact integer or
+  finite-field result.
+- Release: 39 gates passed; 39 pages, 832,113 bytes, SHA-256
+  dbd075381b284484cfe5f4c015fba8dba6944441917013193a8ac925f92102e6.
+
+## 2026-11-15 - gluing-extensions v0.02 published (10.5281/zenodo.24240435)
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-hw-other-2026-11-10.md`, D2): the
+  validation now includes counterexample factors (EXP-070: 48 gluings with large factors, 36 with a counterexample factor,
+  18 extensions themselves counterexamples); algorithms with the degree bound proved; results tables and figures generated
+  from the EXP-068 and EXP-070 artifacts; every citation pointer checked on arXiv:1211.2896v1 and arXiv:1211.4554v1; the
+  gluing definition with Frobenius number and symmetry derived; the completed case by flat base change; the ring-level
+  claim restricted to R_i = k[Gamma_i]; a claim audit with evidence marks; the Huneke-Wiegand 1994 DOI corrected to
+  10.1007/BF01459794. The counterexample-by-counterexample gluings (Examples 5.4, 5.5) are not computed directly.
+- Independent review (CAOS_MANAGE `wip/caos-research/hw-gluing-v02-review-2026-11-14.md`): CHANGES REQUIRED (the
+  validation count), re-check APPROVE.
+- Release: 39 gates passed; 27 pages, 773,736 bytes, SHA-256 1e20b8d6f1d4540e6b08d9f637d592c5ce0afaaa2f271ea364a17e086c572acb.
+

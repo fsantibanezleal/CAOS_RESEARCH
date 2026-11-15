@@ -166,8 +166,8 @@
     {
       "slug": "integral-connecting-annihilators",
       "path": "manuscripts/huneke-wiegand/integral-connecting-annihilators",
-      "version": "0.05",
-      "version_doi": "10.5281/zenodo.24228302",
+      "version": "0.06",
+      "version_doi": "10.5281/zenodo.24239899",
       "concept_doi": "10.5281/zenodo.22342975",
       "status": "published-focused-gated",
       "split_action": "Keep intact. Publish another version only for a canonical comparison, complete quotient, or reusable general theorem."
@@ -175,8 +175,8 @@
     {
       "slug": "gluing-extensions",
       "path": "manuscripts/huneke-wiegand/gluing-extensions",
-      "version": "0.01",
-      "version_doi": "10.5281/zenodo.23821498",
+      "version": "0.02",
+      "version_doi": "10.5281/zenodo.24240435",
       "concept_doi": "10.5281/zenodo.23821497",
       "status": "published-focused",
       "split_action": "Focused companion owning EXP-068 (main theorem) and EXP-067 (credited corollary of García-Sánchez and Leamer 2012). Published 2026-11-01 (version DOI 10.5281/zenodo.23821498)."

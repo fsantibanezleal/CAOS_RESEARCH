@@ -70,7 +70,8 @@ fiber-cone literature comparison, and candidate C remains significance-gated.
 
 ### Focused companion: Gluing extensions
 
-- Version: v0.01, version DOI `10.5281/zenodo.23821498`, concept DOI `10.5281/zenodo.23821497`
+- Version: v0.02 (2026-11-15), version DOI `10.5281/zenodo.24240435` (revision from the independent audit, with EXP-070);
+  v0.01, version DOI `10.5281/zenodo.23821498`, concept DOI `10.5281/zenodo.23821497`
   (reserved 2026-10-30; PDF frozen, sha256 `730e7ae0651b95ee9def05ed98556f67611e1fe9be476ac96464b175e7087fa1`;
   published 2026-11-01; a fresh public download equals the frozen file).
 - Coverage: EXP-068 (main theorem: tensor factorization, torsion-length law, characterization of
@@ -80,8 +81,9 @@ fiber-cone literature comparison, and candidate C remains significance-gated.
 
 ### Focused companion: Integral connecting annihilators
 
-- Current public version: v0.05 (2026-11-14, sign correction of Theorem 9.1).
-- Version DOI: `10.5281/zenodo.24228302`.
+- Current public version: v0.06 (2026-11-15, full revision from the independent audit; v0.05 of
+  2026-11-14, 10.5281/zenodo.24228302, corrected the sign of Theorem 9.1, now Theorem 11.1).
+- Version DOI: `10.5281/zenodo.24239899`.
 - Concept DOI: `10.5281/zenodo.22342975`.
 - Coverage: EXP-054--066, with the main theorem owned by EXP-060--062 and the
   projected endpoint strengthening owned by EXP-065--066.

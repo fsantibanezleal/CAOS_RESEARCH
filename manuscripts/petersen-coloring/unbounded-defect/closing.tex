@@ -1,0 +1,143 @@
+\section{Discussion}\label{sec:discussion}
+
+\subsection{Other 4-poles and the choice of the blocks}\label{sec:fourpoles}
+
+\input{table-fourpoles.tex}
+
+The computation behind Proposition~\ref{prop:sets} was carried out for a wider set of 4-poles (computation EXP-012), listed in Table~\ref{tab:fourpoles}. The Petersen graph minus two adjacent vertices, and
+the Petersen graph minus two edges at distance 2 or 3, transmit distance 1 under every pairing of
+their dangling ends. For $\Gfty$ minus two adjacent vertices, with the pairing of
+Lemma~\ref{lem:restore}(b), the transmitted set is $\{0\}$ for eleven of the fourteen edge orbits
+of the automorphism group of $\Gfty$, $\{0, 3\}$ for two and $\{0, 2\}$ for one; it never contains
+1, as Lemma~\ref{lem:restore}(b) requires. Under the two other pairings every such 4-pole
+transmits distance 1 (28 cases, in 20 of which the set is $\{0,1,2\}$ and in 8 it is $\{0,1,2,3\}$). Among the 4-poles $\Gfty - ab - cd$ with the connectors of
+Lemma~\ref{lem:restore}(a), the computation EXP-010 decided \nDistDecided{} of \nDistTotal{} distance sets of edge pairs: \nDistOne{} of them are $\{1\}$, 232 are $\{1,2\}$, 27 are
+$\{1,2,3\}$ and 5 are $\{1,3\}$, and every one contains 1. The other \nDistUndecided{} reached the time limit and are not decided, so the statement that 282 pairs have $D = \{1\}$ is a count among
+the decided pairs only. Many rings with the property of Theorem~\ref{thm:ring} can therefore be built from $\Gfty$ alone, and the blocks of the construction are not special:
+$A$ is one of five pairs computed in detail, and $B$ one of fourteen edge orbits.
+
+The same table shows why the construction needs two different blocks. Every transmitted set of a block of the first kind, $\Gfty - ab - cd$, contains 1, and
+every set of a block of the second kind, $\Gfty - \{u, v\}$ under the $u|v$ pairing, contains 0; the ring theorem needs a block of each kind whose sets are
+disjoint. Singletons are not required: the table gives disjoint pairs of non-singleton sets, such as the $B$-type sets $\{0,3\}$ (two orbits) with an $A$-type set $\{1\}$ or $\{1,2\}$
+(\nDistOne{} and 232 pairs), and $\{0,2\}$ with $\{1\}$ or $\{1,3\}$. Among the computed 4-poles, $A$ with $B$ is one such pair, and so is every other
+$\Gfty - \{u, v\}$ with $D = \{0\}$ (eleven orbits) paired with any $A$-type block whose set is $\{1\}$.
+Dot products of $\Gfty$ with itself, computed in EXP-010, give ten further graphs on 102 vertices with girth 5 and edge connectivity 3, none Petersen colorable, each with defect 2:
+these are not rings of the present kind.
+
+\subsection{Criticality}\label{sec:criticality}
+
+A pair of vertices of a graph without a Petersen coloring is \emph{critical}
+if some map has exactly these two vertices bad. In every one of fifteen cyclically
+4-edge-connected counterexamples examined in~\cite{Audit2026} every pair of adjacent vertices is
+critical. By Theorem~\ref{thm:ring} the two bad vertices of a map of $R_2$ lie in two
+non-consecutive blocks, so two adjacent vertices of one block of $R_2$ form a non-critical pair,
+and in $R_t$ with $t \ge 3$ no pair is critical. Universal 2-criticality is therefore not a
+property of the cyclically 4-edge-connected class: the inference from fifteen graphs to the class fails on the first
+ring. The witness of Proposition~\ref{prop:rings} puts the two bad vertices of $R_2$ in the two copies of $B$, which are not consecutive. For $t \ge 3$ no map of $R_t$ has two bad vertices at all,
+because $\pd(R_t) \ge t \ge 3$ by Theorem~\ref{thm:ring}; a critical pair is a pair that some map leaves as the only bad vertices, so the class has no critical pair for $t \ge 3$, which is the
+sense in which the ring family contradicts a conjectured universal property.
+
+\subsection{The semigroup method}\label{sec:semigroup}
+
+The transfer relation over sectors turns a question about all rings of a family into a finite computation, and it makes the failure of the charge argument precise.
+In the language of Section~\ref{sec:theory6} the charge sectors are superselection sectors: a block is block diagonal over them, and the ring is colorable if and only if
+some sector product has a nonzero diagonal. Charges alone see only which sectors a block is nonzero in (its conducted set), and the ring theorem is the case in which
+a product vanishes identically in every sector. The semigroup sees more, because a sector product can be nonzero and still have a zero diagonal. The consequence for
+the cyclically 5-edge-connected class is a reduction: a ring of 6-poles without a Petersen coloring needs a block family whose semigroup
+contains an element with a zero diagonal in every sector, and Section~\ref{sec:results6} shows that no such element exists among the products of claws, of superedges and of both
+(Table~\ref{tab:closures}) nor among the 200 random rings of the cross-check. The method is not specific to these blocks: any finite family of 6-poles can be tested, at the cost of
+Equation~\eqref{eq:cost}.
+
+\section{Limitations}\label{sec:limitations}
+
+\paragraph{Undecided closures.} The closures of the families $F_4$ and $F_5$ are undecided (Table~\ref{tab:closures}): no zero-trace element was found among the products computed, and the
+exact closure of $F_4$ stopped at the cap after word length 3. The statement that no ring of blocks cut from $\PG$, $J_5$, $J_7$ and the dodecahedron lacks a Petersen coloring is therefore not
+proved; only the families of claws and superedges are settled.
+
+\paragraph{Partial re-check of the matrices.} Only the claw and the superedge were recomputed by three methods. Of the 81 blocks, 46 were recomputed by a second encoding and a second solver, all equal, and
+35 were not reached: 2 blocks of $\PG$, 1 of the dodecahedron, 11 of $J_5$ and all 21 of $J_7$. The positive claims do not depend on these blocks, because they rest on soundness
+(Lemma~\ref{lem:soundness}); the closures of $F_4$ and $F_5$, which use them, are undecided anyway.
+
+\paragraph{One-directional cross-check.} All 203 rings of the cross-check were colorable, so the comparison with the solver tests that the matrices miss no entry these rings need and does not test that a zero trace corresponds
+to non-colorability; ten cases of that direction exist, all on $\Gfty$ (Section~\ref{sec:ablation-direction}). A two-sided test would need random words that include a known non-colorable gluing.
+
+\paragraph{Evidence not archived with the repository.} The formulas, the DRAT proofs and the stored sector matrices and certificates are produced under a data root outside the repository, and the proofs of
+the computations of Section~\ref{sec:construction} (Proposition~\ref{prop:sets}, the refutation on $R_1$, the cardinality bound on $R_3$) are not archived there. What the repository holds are the runners, the
+checkers, the artifacts that record every answer, time and SHA-256 digest of each formula and proof, and the commands of Section~\ref{sec:repro}, which regenerate every proof and check it again. Verifying a proof
+without solving requires an archive of the proofs, which is not part of the repository. The solving times of the long runs, about 97 minutes of solving and 38 of checking for the proof on $R_3$, make regeneration costly rather than impossible.
+
+\paragraph{Scope of the 6-pole results.} The 6-poles come from four sources that are cyclically 5-edge-connected and are Petersen colorable; the statements about conducted sets and
+closures are statements about those sources. The question whether a cyclically 5-edge-connected snark of larger order, or a 6-pole of another shape, has a zero-trace element is open
+(Section~\ref{sec:questions}). No hardware or solver build is part of any claim: solver times size the work and are not a comparison of methods.
+
+\paragraph{Cross-references to companion work.} The companion paper on the colorability of the 52-vertex counterexamples is conditional on a statement about orders up to 38~\cite{COBI2026}; the present paper uses
+one of the two counterexamples only through its edge list and its non-colorability and is independent of that conditional statement.
+
+\section{Conclusions and questions}\label{sec:questions}
+
+Rings that alternate two 4-poles cut from a 52-vertex counterexample give cyclically 4-edge-connected cubic graphs of girth 5 on $102t$ vertices whose Petersen defect is at least $t$; the defect is exactly $t$ for $t = 2, 3$. Statement
+(e) of the conjecture of Mattiolo, Mazzuoccolo and Mkrtchyan is therefore false, all five statements are false and the conjectured equivalence holds. For rings of 6-poles the transfer relation is block diagonal over six charge sectors, and
+for finite families a semigroup closure with an integer-checked certificate decides every ring length at once: every ring of claws, of Petersen superedges or of both is Petersen colorable, with the junction classes of the flower snarks $J_5$, $J_7$, $J_9$, and
+the closures of the larger families are undecided. The classes alone cannot detect non-colorability, while the transfer relation does.
+
+\paragraph{Questions.}
+\begin{enumerate}
+\item What are the exact abnormal-edge numbers of the rings? The bound $\ab(R_t) \ge \pd(R_t) \ge t$ holds, with equality of $\pd$ at $t = 2, 3$; no upper bound for $\ab(R_t)$ is recorded. For the rings $C_t$ of copies of $\Gfty$ joined through 2-edge cuts, $\ab(C_2)$ lies between 2 and 4 and the larger rings are undecided.
+\item Which 6-poles cut from cyclically 5-edge-connected snarks of small order (the next computation considers those of order up to 28) have a transfer semigroup with a zero-trace element? A ring of such blocks would be a cyclically 5-edge-connected cubic graph without a Petersen coloring (Problem~11 of~\cite{GJMMMU2026}).
+\item Is the Petersen defect bounded on cyclically 5-edge-connected cubic graphs?
+\item What is the largest constant $c$ such that cubic graphs with $\pd \ge c\,n$ exist in the cyclically 4-edge-connected class? The rings give $c \ge 1/102$.
+\item Does the closure of $F_4$ or of $F_5$ contain a zero-trace element? A faster containment test for Algorithm~\ref{alg:closure} is a possible route \claim{C}.
+\item For $k = 3$ and $k = 4$, which sectors have a nonzero diagonal in the product $(Y\,\mathrm{id})^{k-1}(Y\,\tau)$ (Remark~\ref{rem:kthree})? The stored artifacts do not say.
+\item Has the transfer-matrix reading over cut-space sectors, with a finite-semigroup certificate for rings of multipoles of snark families, been used before? The sources we hold do not answer (Section~\ref{sec:related}, \claim{U}).
+\end{enumerate}
+
+\section{Reproducibility and data availability}\label{sec:repro}
+
+The edge list of $\Gfty$, the encoders, the checkers, the ring construction, the cut searches and
+the artifacts of every computation, with the SHA-256 digests of every formula and proof, are in the repository
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH}~\cite{CAOSrepo}, under
+\path{problems/combinatorics/petersen-coloring/}. Proofs were produced by CaDiCaL~\cite{CaDiCaL} and checked with
+\texttt{drat-trim}~\cite{DRATtrim}; the sector matrices were enumerated with the CaDiCaL 1.5.3 interface of PySAT and re-enumerated with MiniSat 2.2. The CaDiCaL build that produced the DRAT proofs is the one reported by \path{solver.tool_versions}; the records of computation EXP-001 give 1.7.3 for the same installation, and no artifact of computation EXP-012 records it \claim{U}.
+Each result is reproduced by the commands below, run from the repository root with the project environment and with CaDiCaL and \texttt{drat-trim}
+installed as the library module \path{code/pcclib/solver.py} expects. The formulas, proofs, sector matrices and certificates are written under a data root
+outside the repository (Section~\ref{sec:limitations}).
+
+\begin{itemize}
+\item Proposition~\ref{prop:sets}: the 4-poles $A$ and the first pairs of computation EXP-010 (runner~1); $D(B)$, the cut-routine comparison, $R_1$, $R_2$ and $R_3$ (runner~2). The other 4-poles of Table~\ref{tab:fourpoles} use runner~1 with the families listed there, and the distance sets of $\Gfty - e_0 - e$ are those of runner~7.
+\item Proposition~\ref{prop:r3}: runners~3, 4 and~5; the exhaustive cut search is the probe \path{code/probes/ring_cuts_exhaustive.py}.
+\item Proposition~\ref{prop:core} and Table~\ref{tab:g52}: runner~6, once per source and shape, with the library module \path{code/pcclib/charges.py}.
+\item Algorithms~\ref{alg:sector} to~\ref{alg:check}: runner~8 with its subcommands, then the checker, with the library module \path{code/pcclib/transfer.py}, the probes \path{code/probes/superedge_ring_*.py} and \path{code/probes/cut_code_cosets.py}, and the theory notes \path{context/2026-10-06-charges.md}.
+\item Every table, figure fragment and quoted number of this paper: \path{make_tables.py} in the paper folder, which reads the committed artifacts and stops with a message when a consistency condition fails.
+\end{itemize}
+
+{\footnotesize
+\begin{verbatim}
+EXP=problems/combinatorics/petersen-coloring/experiments
+runner 1: python $EXP/EXP-012-conduction-rings/run.py --family A    (W, Pe2, Pe3, G52uv)
+runner 2: python $EXP/EXP-012-conduction-rings/run_ring.py
+runner 3: python $EXP/EXP-012-conduction-rings/run_r3_checks.py
+runner 4: python $EXP/EXP-012-conduction-rings/run_r3_pairs.py
+runner 5: python $EXP/EXP-012-conduction-rings/run_r3_upper.py
+runner 6: python $EXP/EXP-013-six-pole-charges/run.py --source <S> --shape <H>
+          for (S, H) in (P, a) (P, b) (Dodeca, a) (Dodeca, b) (J5, a) (J5, b)
+                         (J7, a) (G52, a)
+runner 7: python $EXP/EXP-010-sublinear-approximation/run_dist.py
+runner 8: R=$EXP/EXP-014-transfer-semigroups
+          python $R/run.py blocks
+          python $R/run.py closure --family F1   (exact; also F2, F3, F4)
+          python $R/run.py closure --family F1 --antichain
+                                                  (also F2, F3, F4, F5)
+          python $R/check_certificate.py --family F1 --family F2 --family F3
+          python $R/check_certificate.py --antichain F1 --antichain F2 \
+              --antichain F3 --out certificate-check-antichain.json
+          python $R/check_certificate.py --blocks
+          python $R/run.py crosscheck
+          python $R/run_g52_control.py
+check:    python make_tables.py --verify-cnf   (in the paper folder)
+\end{verbatim}
+}
+
+The closure table (Table~\ref{tab:closures}) is rebuilt by the exact and the antichain closure commands of runner 8; the exact runs of $F_1$ to $F_4$ write
+the exact-closure artifacts, and the antichain runs write the certificates of $F_1$, $F_2$ and $F_3$ that \path{check_certificate.py --antichain} reads. The runs of $F_4$ and $F_5$ stop
+at the cap or at the one-hour limit; no command in the repository imposes that limit, it was applied to the process, and no antichain artifact of $F_4$ or $F_5$ exists. The shell variable \texttt{\$R} is used for brevity only.
+The exact-closure check of the generators (\path{check_certificate.py --family}) is the one stored command for the exact certificates; its output is not among the committed artifacts.

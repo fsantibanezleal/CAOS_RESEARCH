@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+\begin{axis}[ybar,width=0.9\textwidth,height=5.8cm,ymode=log,bar width=9pt,ymin=5,ymax=6000000,symbolic x coords={F1,F2,F3,F4},xtick=data,ylabel={elements},tick label style={font=\scriptsize},label style={font=\small},legend style={font=\scriptsize,at={(0.5,-0.14)},anchor=north,legend columns=2},enlarge x limits=0.18,ymajorgrids=true,grid style={dotted},nodes near coords,nodes near coords style={font=\tiny,rotate=90,anchor=west,/pgf/number format/.cd,fixed,precision=0,1000 sep={\,}},point meta=rawy]
+\addplot coordinates {(F1,30) (F2,19005) (F3,116463) (F4,200070)};
+\addplot coordinates {(F1,12) (F2,276) (F3,2454)};
+\legend{exact closure (F4: stopped at the cap),antichain certificate}
+\end{axis}
+\end{tikzpicture}

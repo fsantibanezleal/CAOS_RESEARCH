@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+\begin{axis}[width=0.78\textwidth, height=5.2cm, xlabel={power $k$}, ylabel={terms of $(JH)^k$}, ymode=log, xmin=0, xmax=19, ymin=2, ymax=12000,
+  tick label style={font=\scriptsize}, xtick={1,2,4,8,16,17,18}, nodes near coords style={font=\tiny, above}]
+\addplot[only marks, mark=*, mark size=2pt, color=stcurve, nodes near coords, point meta=explicit symbolic] coordinates {(1,137) [137] (2,643) [643] (4,2423) [2423] (8,5030) [5030] (16,91) [91] (17,6) [6]};
+\addplot[thick, color=stcurve, dashed] coordinates {(1,137) [137] (2,643) [643] (4,2423) [2423] (8,5030) [5030] (16,91) [91] (17,6) [6]};
+\end{axis}
+\end{tikzpicture}
