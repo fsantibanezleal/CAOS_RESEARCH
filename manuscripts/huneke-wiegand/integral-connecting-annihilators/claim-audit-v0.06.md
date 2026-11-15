@@ -32,7 +32,7 @@ build (sections 5 to 11 renumber because of the new sections 2 and 3, and the nu
 
 | statement | mark | evidence | audit boundary |
 |---|---|---|---|
-| `M_p` equals the Koszul-strand block matrix `[d_D 0; J delta_K]` in the cell `(p,2)` | [MV] for p=8,9,10; [C] for every other p | EXP-036 cells (8,2), (9,2) and EXP-037 cell (10,2); EXP-054 regression on 15,405 retained rows | no all-parameter derivation was found; the abstract and the title claim only the explicit matrix |
+| `M_p` equals the Koszul-strand block matrix `[d_D 0; J delta_K]` in the cell `(p,2)` | [MV] at p=8 (independent reconstruction); [MV] on one canonical route at p=9,10; [C] for every other p | EXP-036 cells (8,2), (9,2) and EXP-037 cell (10,2); EXP-054 regression on 15,405 retained rows | no all-parameter derivation was found; the abstract and the title claim only the explicit matrix |
 | Block identity `dim = rows(delta_K) + rank d_D - rank M` and the incidence map `delta_K` | [D] | v0.25 of the consolidated preprint (DOI 10.5281/zenodo.22835108), Theorem 15.14 and its proof, and the EXP-035 block identity | holds for every p once `M` is given |
 | Zero-row classification and cubic-source exclusion at every cell `(p,t)` | [D] | the same preprint, Theorems 15.15 and 15.16 | kernel side only |
 | Finite carrier comparison at p=8..11, masks 56, 58, 59, 62 | [MV] | EXP-063 (19 triangle rows, 12 mutation controls), EXP-064 (16 carriers, 1,100 prime-rank pairs) | finite; integral vanishings follow from exponent certificates, not from explicit sources |
@@ -56,7 +56,7 @@ a free rank, an exclusion of odd torsion, or a full Smith form.
 | audit item | place in v0.06 |
 |---|---|
 | 1, problem and context | Section 2 (conjecture and disproofs, the complex and strand and module, what integral two-torsion says) and Section 3 (related work) |
-| 2, derivation or premise of `M_p` | Section 4.1 and Table 3: premise, [MV] for p=8,9,10, [C] otherwise; abstract and title restricted to the explicit matrix |
+| 2, derivation or premise of `M_p` | Section 4.1 and Table 3: premise, [MV] independent at p=8, [MV] one canonical route at p=9,10, [C] otherwise; abstract and title restricted to the explicit matrix |
 | 3, sign of Theorem 11.1 | kept as published in v0.05; the p=11 entries are on unsigned rows (Section 11 and Section 13.7) |
 | 4, algorithms and reproducibility | Section 12: Algorithms 1 to 4, Tables 7 to 10 |
 | 5, EXP-063 and EXP-064 in the appendix table | Appendix Table 14 (records) and Section 13.6 with the generated Table 13 |
@@ -79,3 +79,7 @@ a free rank, an exclusion of odd torsion, or a full Smith form.
 The manuscript remains one source/duality paper. A later version requires a derivation of the premise for all `p`, a
 canonical comparison, a complete kernel or quotient theorem, a reusable integral matching theorem, a correction, or a
 material reproducibility change. The route is governed as `HW-F5` and is gated.
+
+## Review fix pass (2026-11-15)
+
+The printed title is the title of `zenodo.json`; the Huneke-Wiegand 1994 DOI is 10.1007/BF01459794; the premise is stated with its status wherever it appears; Algorithm 1 takes each unordered pair once; a notation table and a table of the statement each computation tests are added; the bibliography data are completed. Every reported number is an exact integer or finite-field result, so no statistical interval applies (stated in Section 13).

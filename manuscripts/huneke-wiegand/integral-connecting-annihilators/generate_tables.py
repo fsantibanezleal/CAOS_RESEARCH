@@ -312,7 +312,7 @@ def fig_bockstein() -> str:
     body += "\\legend{triangles, mask 56, mask 58, mask 59, mask 62}\n"
     cap = ("First integral Bockstein rank of the four carrier masks at $p=8,\\ldots,11$, with the number of triangle rows as a dashed line; "
            "the rank of mask $62$ coincides with that of mask $59$ and with the triangle count.")
-    return plot_figure("xlabel={$p$}, ylabel={rank}, legend pos=north west, xtick={8,9,10,11}", body, cap, "fig:bockstein")
+    return plot_figure("xlabel={$p$}, ylabel={rank}, legend pos=outer north east, width=0.68\\textwidth, xtick={8,9,10,11}", body, cap, "fig:bockstein")
 
 
 def fig_facecount() -> str:
