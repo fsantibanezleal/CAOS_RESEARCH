@@ -62,8 +62,8 @@ fiber-cone literature comparison, and candidate C remains significance-gated.
 
 ### Focused companion: Curvilinear fiber cones
 
-- Current public version: v0.04.
-- Version DOI: `10.5281/zenodo.22835118`.
+- Current public version: v0.05 (2026-11-15, full revision from the independent audit, with EXP-069).
+- Version DOI: `10.5281/zenodo.24240593` (v0.04: `10.5281/zenodo.22835118`).
 - Concept DOI: `10.5281/zenodo.21997377`.
 - Coverage: EXP-025--026, importing only the required special-fiber premises.
 - Decision: coherent and complete; no split.

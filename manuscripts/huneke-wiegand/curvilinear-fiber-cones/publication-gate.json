@@ -1,0 +1,23 @@
+{
+  "release_ready": true,
+  "record_id": 24240593,
+  "version": "0.05",
+  "version_doi": "10.5281/zenodo.24240593",
+  "concept_doi": "10.5281/zenodo.21997377",
+  "scope": "Revision from the independent audit: evidence classes made exact (the cubic and quartic classification machine-verified by Z3 and cvc5 through EXP-026 and EXP-069, the sumset identity, the value congruence and the zero-relation counts derived), the 16 obligations printed, exact pointers for the imported input, the Betti section from EXP-027 to EXP-035, five algorithms with costs and hashes, results tables, controls, related work, re-derived title",
+  "bytes": 752762,
+  "md5": "5200c7c2ad42709b5c69ee0321a47864",
+  "sha256": "47db8722e14c67f3ad5edbce09da3247a9335449fd6724e0178fc7c13271b9b2",
+  "tex_sha256": "fc8ee476b85990bc542d421067cd0e458cddac5920cc34b8585419164dc37622",
+  "metadata_sha256": "04152840651cc48683b88a610f5ec6d8994171d046f8382ad25fe012731df7a3",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 32,
+  "rendered_pages_reviewed": 32,
+  "qa_date": "2026-11-15",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246",
+  "independent_review": "CAOS_MANAGE wip/caos-research/hw-curvilinear-v05-review-2026-11-15.md (reviewer, opus): CHANGES REQUIRED (evidence labels), re-check CHANGES REQUIRED (Appendix C proof), re-check 2 APPROVE; EXP-025 and EXP-026 verdict corrections filed"
+}

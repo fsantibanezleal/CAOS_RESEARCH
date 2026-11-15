@@ -1,6 +1,8 @@
 # Curvilinear conductor fiber cones
 
-Current public version: v0.04, published 2026-09-18 at
+Current public version: v0.05, published 2026-11-15 at
+[10.5281/zenodo.24240593](https://doi.org/10.5281/zenodo.24240593) (32 pages, 752,762 bytes,
+SHA-256 `47db8722e14c67f3ad5edbce09da3247a9335449fd6724e0178fc7c13271b9b2`; the revision from the independent audit). v0.04, published 2026-09-18 at
 [10.5281/zenodo.22835118](https://doi.org/10.5281/zenodo.22835118), under
 concept DOI [10.5281/zenodo.21997377](https://doi.org/10.5281/zenodo.21997377).
 The 453,812-byte committed PDF has SHA-256
