@@ -1,0 +1,27 @@
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.85cm}*{5}{>{\raggedright\arraybackslash}p{1.95cm}}>{\raggedright\arraybackslash}p{1.8cm}}
+\toprule
+invariant & $\Gmain$ & $\Gsym$ & $\Gfty$ & $\Gftyb$ & $\Gsix$ & computation\\
+\midrule
+order $n$ / edges & 112 / 168 & 112 / 168 & 52 / 78 & 52 / 78 & 68 / 102 & EXP-001, EXP-007, EXP-008\\
+automorphism group order & 1 & 6 & 6 & 6 & 1 & EXP-006, EXP-008\\
+cycle-separating 4-cut (edge indices) & \multicolumn{2}{c}{$\{2,6,9,12\}$} & $\{2,3,8,14\}$ & $\{0,11,70,71\}$ & $\{2,11,90,97\}$ & EXP-001, EXP-007, EXP-008 (re-checked here)\\
+Petersen coloring / normal 5 & no (U) / no (U) & no (U) / no (U) & no (U) / no (U) & no (U) / no (U) & no (U) / no (U) & EXP-001, EXP-007\\
+Berge--Fulkerson cover & yes (S) & yes (S) & yes (S) & yes (S) & yes (S) & EXP-002, EXP-008\\
+cover by 5 / by 4 perfect matchings & yes / yes (S) & yes / yes (S) & yes / yes (S) & yes / yes (S) & yes / yes (S) & EXP-002, EXP-008\\
+cover by 3 perfect matchings & not computed$^{a}$ & not computed$^{a}$ & not computed$^{a}$ & no (U) & no (U) & EXP-008\\
+perfect matching index & 4 & 4 & 4 & 4 & 4 & EXP-002, EXP-008\\
+Fan--Raspaud triple & yes (S) & yes (S) & yes (S) & yes (S) & yes (S) & EXP-002, EXP-008\\
+5-cycle double cover & yes (S) & yes (S) & yes (S) & yes (S) & yes (S) & EXP-003, EXP-008\\
+nowhere-zero $\mathbb Z_5$-flow & yes (S) & yes (S) & yes (S) & yes (S) & yes (S) & EXP-003, EXP-008\\
+nowhere-zero $\mathbb Z_4$-flow & no (U) & no (U) & no (U) & no (U) & no (U) & EXP-003, EXP-008\\
+oddness (bounds refuted U / witness S) & 4 (1..3 U, 4 S) & 4 (1..3 U, 4 S) & 2 (1..1 U, 2 S) & 2 (1..1 U, 2 S) & 2 (1..1 U, 2 S) & EXP-003, EXP-008\\
+resistance (bounds refuted U / witness S) & 3 (1..2 U, 3 S) & 3 (1..2 U, 3 S) & 2 (1..1 U, 2 S) & 2 (1..1 U, 2 S) & 2 (1..1 U, 2 S) & EXP-003, EXP-008\\
+normal 6 / strong normal 6 & yes / yes (S) & yes / yes (S) & yes / yes (S) & yes / yes (S) & yes / yes (S) & EXP-004, EXP-008\\
+normal chromatic index & 6 & 6 & 6 & 6 & 6 & EXP-001, EXP-004, EXP-007, EXP-008\\
+Petersen defect pd & 2 & 2 & 2 & 2 & 2 & EXP-006, EXP-008\\
+abnormal edges: coloring with $\ab=2$ (S, seconds) & 1.9 & 43.8 & 2.6 & 3.6 & 33.0 & EXP-006, EXP-008\\
+$\ab$ lower bound 2 (no coloring with 1) & theorem & theorem & orbit sweep (U) & theorem & theorem & EXP-006\\
+critical vertex pairs, all SAT (S) & 6{,}216 & 6{,}216 & 1{,}326 & 1{,}326 & 2{,}278 & EXP-006, EXP-008\\
+slowest pair instance (s) & 20.0 & 17.4 & 0.73 & 28.5 & 29.2 & EXP-006, EXP-008\\
+\bottomrule
+\end{tabular}

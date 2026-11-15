@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\small
+\begin{tabular}{lccc}
+\toprule
+formula & variables & clauses & closed form \\
+\midrule
+$A$, one distance & 1{,}200 & 34{,}222 & \multirow{2}{*}{$15 q,\ 106 q + 495 n + 2$} \\
+$B$, one distance & 1{,}155 & 32{,}914 & \\
+$R_1$, Petersen coloring & 2{,}295 & 66{,}710 & $15 m,\ 106 m + 495 n + 2$ \\
+$R_2$, defect $\le 2$ & 5{,}202 & 134{,}433 & \multirow{2}{*}{$15 m + 3n,\ 106 m + 495 n + 5n - 3$} \\
+$R_3$, defect $\le 2$ & 7{,}803 & 201{,}651 & \\
+\bottomrule
+\end{tabular}
+\caption{Sizes of the propositional formulas of the 4-pole and ring computations. For a 4-pole, $q$ is the number of its internal edges plus dangling ends and $n$ its vertices ($q = 80$, $n = 52$ for $A$; $q = 77$, $n = 50$ for $B$); for a ring, $n$ and $m = 3n/2$ are its vertices and edges. The counts are the closed forms of the encoders and were checked against the formulas the encoders build (variables and clauses of the defect formulas include the counter of the cardinality bound).}\label{tab:sizes}
+\end{table}

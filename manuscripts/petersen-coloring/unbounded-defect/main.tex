@@ -1,16 +1,22 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[margin=1.1in]{geometry}
+\usepackage{lmodern,microtype}
+\usepackage[margin=1.1in,headheight=14pt]{geometry}
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage{booktabs}
+\usepackage{booktabs,multirow,array}
 \usepackage{xcolor}
 \definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage{tikz}
+\usetikzlibrary{fit,positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\SetKwComment{Comment}{$\triangleright$\ }{}
 \usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
 \hypersetup{
-  pdftitle={Cyclically 4-edge-connected cubic graphs of unbounded Petersen defect},
+  pdftitle={Conduction of Cut-Space Classes through Multipoles: Unbounded Petersen Defect on Cyclically 4-Edge-Connected Cubic Graphs and Transfer Semigroups of Rings of 6-Poles},
   pdfauthor={Felipe Santibáñez-Leal},
-  pdfkeywords={Petersen coloring conjecture, normal edge-coloring, abnormal edges, sublinear approximation, cyclically 4-edge-connected cubic graphs, snarks, SAT, DRAT}
+  pdfkeywords={Petersen coloring conjecture, normal edge-coloring, abnormal edges, sublinear approximation, cyclically 4-edge-connected cubic graphs, snarks, multipoles, transfer semigroups, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -30,11 +36,19 @@
 \newcommand{\ab}{\mathrm{ab}}
 \newcommand{\Gfty}{G_{52}}
 \newcommand{\Cut}{\mathrm{Cut}}
+\newcommand{\claim}[1]{\textup{[#1]}}
+\newcommand{\Oz}{\mathsf{0}}
+\newcommand{\OEc}{\mathsf{E}}
+\newcommand{\ODthree}{\mathsf{D}_3}
+\newcommand{\ODtwo}{\mathsf{D}_2}
+\newcommand{\OTone}{\mathsf{T}_1}
+\newcommand{\OTtwo}{\mathsf{T}_2}
+\input{numbers.tex}
 
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.02}
-\newcommand{\docdate}{6 October 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.23196817}
+\newcommand{\docversion}{v0.03}
+\newcommand{\docdate}{15 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.24239832}
 \newcommand{\conceptdoi}{10.5281/zenodo.22847192}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -49,8 +63,9 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \end{center}
 \vspace{4pt}}
 
-\title{Cyclically 4-Edge-Connected Cubic Graphs\\
-of Unbounded Petersen Defect}
+\title{Conduction of Cut-Space Classes through Multipoles:\\
+Unbounded Petersen Defect on Cyclically 4-Edge-Connected\\
+Cubic Graphs and Transfer Semigroups of Rings of 6-Poles}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -58,7 +73,7 @@ of Unbounded Petersen Defect}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research \doctype}
-\fancyhead[R]{\small Unbounded Petersen Defect \textperiodcentered\ \docversion}
+\fancyhead[R]{\small Conduction through Multipoles \textperiodcentered\ \docversion}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -68,37 +83,23 @@ of Unbounded Petersen Defect}
 \headerblock
 
 \begin{abstract}
-The Petersen defect of a cubic graph is the least number of vertices at which an edge map into
-the Petersen graph fails to send the vertex star onto a vertex star; it is zero exactly for the
-graphs with a Petersen coloring, and it bounds from below the least number of abnormal edges of a
-proper 5-edge-coloring. Mattiolo, Mazzuoccolo and Mkrtchyan conjectured that five statements are
-equivalent: the Petersen coloring conjecture, and the existence of a sublinear bound on the number
-of abnormal edges for all bridgeless, all 2-connected, all 3-connected, and all cyclically
-4-edge-connected cubic graphs. After the refutation of the Petersen coloring conjecture in 2026,
-the first two statements are false, ring and frame constructions show that the third and fourth
-are false too, and the conjecture reduces to the last one. We show that it is false as well: for every $t \ge 2$ there is a cyclically 4-edge-connected cubic
-graph of girth 5 on $102t$ vertices whose Petersen defect is at least $t$, so every proper
-5-edge-coloring of it has at least $t$ abnormal edges. Hence all five statements are false and the
-conjectured equivalence holds. The graphs are rings that alternate two 4-poles cut from a
-52-vertex counterexample of Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo, Mazzuoccolo and
-Ulyanov. The argument rests on a conservation law: modulo the cut space of the Petersen graph, a
-4-pole whose vertices are all correctly mapped transmits the same class through both of its
-connectors, and the class of a pair of labels is their distance in the line graph of the Petersen
-graph. One 4-pole transmits only distance 1, the other only distance 0, so no two consecutive
-blocks of a ring can both be free of bad vertices. The two transmitted sets and the non-colorability
-of the smallest ring are certified by SAT refutations with DRAT proofs checked by
-\texttt{drat-trim}, and the cyclic 4-edge-connectivity of all rings follows from that of the
-four-block ring, verified by two independent exhaustive searches. The ring on 306 vertices has
-Petersen defect exactly 3. For rings joined along 3-edge connectors, the class of a vertex modulo
-the cut space is one of 64 cosets of the cut code of the Petersen graph, in six orbits under its
-automorphism group, and the transfer relation of a 6-pole is block diagonal over these classes; so
-the Petersen colorability of every ring built from a finite family of 6-poles, of every length, is
-decided by a finite semigroup computation with a re-checkable certificate. Every ring of claws, of
-Petersen superedges, or of both, is Petersen colorable. This covers the flower snarks, whose
-junctions always receive three pairwise antipodal edges of the Petersen graph, and an infinite
-family of cyclically 5-edge-connected snarks of girth 5. Splitting a 52-vertex counterexample along
-a 6-edge cut gives two colorable 6-poles that conduct the same classes, so the classes alone do not
-detect its non-colorability, while the transfer relation does.
+Mattiolo, Mazzuoccolo and Mkrtchyan conjectured that five statements are equivalent: the Petersen
+coloring conjecture and four sublinear bounds on abnormal edges, for bridgeless, 2-connected,
+3-connected and cyclically 4-edge-connected cubic graphs. Four are false after the 2026 disproof and
+ring and frame constructions. We prove that the fifth is false too: for every $t \ge 2$ there is a
+cyclically 4-edge-connected cubic graph of girth 5 on $102t$ vertices whose Petersen defect is at
+least $t$, hence at least $t$ abnormal edges. The graphs are rings of two
+4-poles cut from a 52-vertex counterexample. Modulo the cut space of the Petersen graph, a correctly
+mapped 4-pole carries one class through both connectors, the line-graph distance of two labels; the two
+4-poles transmit disjoint distances, certified by DRAT-checked SAT refutations. The ring on 306
+vertices has defect exactly 3. For rings of 6-poles joined along three edges, the 64 classes form six
+orbits and a block's transfer relation splits into six sector matrices of order at most 67. The
+colorability of every ring of a finite block family reduces to a semigroup closure with an
+integer-checked certificate. For 81 computed blocks, every ring of claws, of
+Petersen superedges or of both is colorable; the junctions of the flower snarks $J_5$, $J_7$, $J_9$
+carry antipodal triples, and odd rings of at least five superedges with the identity at every junction are
+cyclically 5-edge-connected snarks of girth 5. Larger closures stay undecided. A control on the 52-vertex graph shows
+classes alone miss non-colorability.
 \end{abstract}
 
 \section{Introduction}
@@ -111,7 +112,7 @@ only if it has a \emph{normal} proper 5-edge-coloring, one in which every edge i
 end stars together see three colors) or rich (they see five)~\cite{Jaeger1985}. The conjecture was
 refuted in August 2026 by Putman~\cite{Putman2026}, with a human-checkable proof by
 Jooken~\cite{Jooken2026}; Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo, Mazzuoccolo and
-Ulyanov~\cite{GJMMMU2026} found two counterexamples on 52 vertices and cyclically
+Ulyanov~\cite{GJMMMU2026, GJMMM2026zen} found two counterexamples on 52 vertices and cyclically
 4-edge-connected counterexamples of every even order at least 60.
 
 An edge of a proper 5-edge-coloring that is neither poor nor rich is \emph{abnormal}; write
@@ -127,23 +128,23 @@ sublinear function $f$ with $\ab(G) \le f(|V(G)|)$ for (b) all bridgeless, (c) a
 
 They proved that (a) and (b) are equivalent, and that on each of the last three classes a
 sublinear bound exists if and only if $\ab$ is bounded by 5, 7 and 9
-respectively~\cite[Theorems~1--4]{MMM2021}. After the disproof, (a) and (b) are false. Rings of
-counterexamples joined through 2-edge cuts, and cubic frames whose vertices are replaced by
-counterexamples minus a vertex, have one bad vertex in every block, so (c) and (d) are false as
-well~\cite{Audit2026}. The same work shows that, given a proposition of~\cite{MMM2021} on
-cyclic joins, (e) is equivalent to every cyclically 4-edge-connected cubic graph admitting a map
+respectively~\cite[Theorems~1--4]{MMM2021}. After the disproof, (a) and (b) are false. Rings $C_t$ of
+copies of the 52-vertex counterexamples joined through 2-edge cuts, and cubic frames whose vertices
+are replaced by counterexamples minus a vertex, have one bad vertex in every block, so (c) and (d)
+are false as well~\cite{Audit2026}. The same work shows that, given a proposition of~\cite{MMM2021}
+on cyclic joins, (e) is equivalent to every cyclically 4-edge-connected cubic graph admitting a map
 into $E(\PG)$ with at most two bad vertices, and it records that in fifteen cyclically
 4-edge-connected counterexamples every pair of adjacent vertices is critical. The conjecture
 therefore turned on statement (e). We settle it; the proof does not use that proposition.
 
-\begin{theorem}\label{thm:main}
+\begin{theorem}[\claim{D}, \claim{MV}]\label{thm:main}
 For every $t \ge 2$ there is a cyclically 4-edge-connected cubic graph $R_t$ of girth~5 on $102t$
 vertices such that every map $E(R_t) \to E(\PG)$ has at least $t$ vertices at which the star
 condition fails. Consequently every proper 5-edge-coloring of $R_t$ has at least $t$ abnormal
 edges.
 \end{theorem}
 
-\begin{corollary}\label{cor:e}
+\begin{corollary}[\claim{D}, \claim{MV}]\label{cor:e}
 No sublinear function bounds the number of abnormal edges on cyclically 4-edge-connected cubic
 graphs. Hence all five statements of Conjecture~\ref{conj:mmm} are false, and the conjecture
 holds.
@@ -151,25 +152,50 @@ holds.
 
 The graphs $R_t$ are rings of $2t$ blocks that alternate two 4-poles, $A$ and $B$, both cut from
 the first 52-vertex counterexample $\Gfty$ of~\cite{GJMMMU2026}: $A$ is $\Gfty$ with two
-independent edges removed, and $B$ is $\Gfty$ with two adjacent vertices removed. The proof uses a
-conservation law. Modulo the cut space of $\PG$, a 4-pole whose vertices all satisfy the star
-condition transmits the same class through its two connectors (Lemma~\ref{lem:conduction}), and
-the class carried by a pair of edges is the distance of their labels in the line graph of $\PG$
-(Lemma~\ref{lem:distance}). The 4-pole $A$ transmits only distance~1 and $B$ only distance~0
-(Proposition~\ref{prop:sets}), so two consecutive blocks of a ring cannot both be free of bad
-vertices (Theorem~\ref{thm:ring}). Two small restoration arguments (Lemma~\ref{lem:restore}) show
-that each of the two computed restrictions is enough on its own. The rings are cyclically
-4-edge-connected because the four-block ring is (Lemma~\ref{lem:c4ec}).
+independent edges removed, and $B$ is $\Gfty$ with two adjacent vertices removed
+(Figure~\ref{fig:ring}). The proof uses a conservation law. Modulo the cut space of $\PG$, a 4-pole
+whose vertices all satisfy the star condition transmits the same class through its two connectors
+(Lemma~\ref{lem:conduction}), and the class carried by a pair of edges is the distance of their
+labels in the line graph of $\PG$ (Lemma~\ref{lem:distance}, Figure~\ref{fig:linegraph}). The 4-pole
+$A$ transmits only distance~1 and $B$ only distance~0 (Proposition~\ref{prop:sets}), so two
+consecutive blocks of a ring cannot both be free of bad vertices (Theorem~\ref{thm:ring}). Two small
+restoration arguments (Lemma~\ref{lem:restore}) show that each of the two computed restrictions is
+enough on its own. The rings are cyclically 4-edge-connected because the ring $R_2$ of four blocks is
+(Lemma~\ref{lem:c4ec}).
+
+\begin{figure}[t]\centering
+\input{fig-ring.tex}
+\caption{The ring $R_3$ of six blocks: blocks $A$ (blue, $\Gfty$ minus two independent edges, 52 vertices) and $B$
+(red, $\Gfty$ minus two adjacent vertices, 50 vertices) alternate around a cycle, and consecutive blocks are
+joined by the two edges of a connector. The vertex counts are those of the constructed graphs.}\label{fig:ring}
+\end{figure}
+
+\begin{figure}[t]\centering
+\input{fig-linegraph.tex}
+\caption{Distance layers of the line graph of the Petersen graph around a fixed edge, with the sets transmitted by the two blocks:
+the 4-pole $A$ transmits only the four edges at distance 1 (blue) and $B$ only the edge at distance 0 (red), so no label pair
+can be carried through both.}\label{fig:linegraph}
+\end{figure}
 
 The rings have 4-edge cuts, and every known counterexample to the Petersen coloring conjecture
 does; whether a cyclically 5-edge-connected one exists is Problem~11 of~\cite{GJMMMU2026}.
-Section~\ref{sec:sixpoles} examines the natural analogue of the construction for that class, rings
+Section~\ref{sec:theory6} examines the natural analogue of the construction for that class, rings
 of 6-poles joined along 3-edge connectors. The class of a connector modulo the cut space is still
 conserved, but on the 6-poles of the Petersen graph, the flower snarks $J_5$, $J_7$ and the
 dodecahedron it never separates two blocks. The exact transfer relation is block diagonal over the
 64 classes, and the colorability of every ring of a finite family of blocks reduces to a finite
-semigroup. For the claw and the Petersen superedge every ring is colorable
-(Theorem~\ref{thm:ringsY}).
+semigroup, computed by the algorithms of Section~\ref{sec:methods} (three algorithms, with their
+parameters and costs) and measured in Section~\ref{sec:results6}. For the claw and the Petersen
+superedge every ring is colorable (Theorem~\ref{thm:ringsY}); the closures of the two largest
+families are undecided (Table~\ref{tab:closures}).
+
+\paragraph{Claim status.} Every result carries one of three marks. \claim{MV}: machine-verified, a
+computation whose answers are accepted by an independent checker or a proof checker, with the command
+that reproduces it named in Section~\ref{sec:repro}. \claim{D}: derived, a proof written in the text.
+\claim{C}: conjectural, stated without proof or computation. A statement with two marks has a derived
+part and a verified part.
+
+\input{related.tex}
 
 \section{Preliminaries}\label{sec:prelim}
 
@@ -185,14 +211,20 @@ bad vertices over all maps; $\pd(G) = 0$ exactly when $G$ has a Petersen colorin
 $\chi_v \in \mathbb{F}_2^{E(\PG)}$ be the sum of the indicator vectors of the three labels at $v$,
 and let $\Cut(\PG)$ be the cut space of $\PG$. The star of a vertex is a cut, so $\chi_v \in
 \Cut(\PG)$ when $v$ is good; for every map the sum of $\chi_v$ over all vertices is zero, because
-every edge is counted at both ends. The parity theorem of~\cite{Audit2026} follows: the number of
-bad vertices is never exactly one, so every graph without a Petersen coloring has $\pd \ge 2$.
+every edge is counted at both ends:
+\begin{equation}\label{eq:gauss}
+\sum_{v \in V(G)} \chi_v \;=\; \sum_{e \in E(G)} 2\cdot\mathbf{1}_{\sigma(e)} \;=\; 0 \quad\text{in } \mathbb{F}_2^{E(\PG)} .
+\end{equation}
+The parity theorem of~\cite{Audit2026} follows. A bad vertex has $\chi_v \notin \Cut(\PG)$: three distinct labels
+have weight 3 and form a cut only if they are a star (Lemma~\ref{lem:smallcuts}), and a repeated label leaves a vector of weight 1.
+So by Equation~\eqref{eq:gauss} the number of bad vertices is never exactly one, and
+every graph without a Petersen coloring has $\pd \ge 2$.
 
 \paragraph{Abnormal edges.} We use the Kneser model of $\PG$: its vertices are the 2-subsets of
 $\{1, \dots, 5\}$, two of them adjacent when disjoint, and the edge $\{X, Y\}$ has the color that
 lies outside $X \cup Y$, so the three edges at $X$ carry the three colors outside $X$.
 
-\begin{lemma}[\cite{Audit2026}]\label{lem:pdab}
+\begin{lemma}[\claim{D}, \cite{Audit2026}]\label{lem:pdab}
 $\pd(G) \le \ab(G)$ for every cubic graph $G$.
 \end{lemma}
 
@@ -209,14 +241,52 @@ vertices are among the ends not chosen of the abnormal edges.
 and edges so that exactly four \emph{dangling ends} remain: an edge removed with one end kept, or
 kept at one end only, becomes a dangling end at the kept vertex. The dangling ends are grouped into
 two \emph{connectors} of two ends each. A map of a 4-pole assigns a label to every edge and to
-every dangling end; the star condition is required at the vertices of the 4-pole.
+every dangling end; the star condition is required at the vertices of the 4-pole. A 6-pole is
+defined in the same way with six dangling ends and two connectors of three; it is cut from $G$ by
+removing two non-adjacent vertices $u$, $w$ (shape~(a), the connectors being the three ends at $u$
+and the three at $w$) or three pairwise disjoint edges (shape~(b), with any split of the six ends).
 
-\section{Classes of pairs of labels}\label{sec:classes}
+\begin{table}[t]\centering\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{9cm}}
+\toprule
+symbol & meaning \\
+\midrule
+$\PG$, $\Gfty$ & the Petersen graph; the 52-vertex counterexample \\
+$\pd$, $\ab$ & Petersen defect; least number of abnormal edges \\
+$\chi_v$, $\Cut(\PG)$ & indicator sum of the three labels at $v$; cut space of $\PG$ \\
+$d(x,y)$, $D(M)$ & line-graph distance; transmitted set of a 4-pole (conducted set of a 6-pole) \\
+$A$, $B$, $R_t$, $C_t$ & the two 4-poles; the ring of $2t$ blocks; the ring of copies of $\Gfty$ through 2-edge cuts \\
+$Q$, $S_q$ & the 64 classes; ordered label triples of class $q$ \\
+$\Oz,\OEc,\ODthree,\ODtwo,\OTone,\OTtwo$ & the six orbits of classes \\
+$T_M$, $n_o$ & transfer relation of a block; order of the sector matrix of orbit $o$ \\
+$Y$, $S$, $J_k$ & claw; Petersen superedge; flower snark \\
+$F_1,\dots,F_5$ & the block families whose closures are computed \\
+\bottomrule
+\end{tabular}
+\caption{Notation used in the paper: the symbol and its meaning, in the order in which the objects are introduced.}\label{tab:notation}
+\end{table}
+
+\paragraph{Propositional encodings.} Every computed statement is a satisfiability question on a CNF
+formula that has one Boolean variable $y_{\iota,s}$ for every item $\iota$ (an internal edge or a
+dangling end) and every label $s \in E(\PG)$, exactly one label per item, and, at every vertex of the
+multipole, the pairwise constraints that the labels of any two of its three items are distinct and
+adjacent in the line graph of $\PG$. Because $\PG$ has no triangle, three pairwise adjacent and
+distinct edges of $\PG$ form a star, so these pairwise constraints are equivalent to the star
+condition. A satisfiable formula yields a map that an independent program accepts by testing the
+star condition from the definition; an unsatisfiable one is refuted with a DRAT proof checked by
+\texttt{drat-trim}. Table~\ref{tab:notation} lists the notation. Table~\ref{tab:sizes} gives the sizes of the formulas of
+Sections~\ref{sec:construction} and~\ref{sec:fourpoles}.
+
+\section{Theory of conduction: classes of pairs of labels}\label{sec:classes}
 
 The line graph of $\PG$ has diameter 3: from a fixed edge, four edges are at distance 1, eight at
-distance 2 and two at distance 3. We write $d(x, y)$ for this distance.
+distance 2 and two at distance 3 (Figure~\ref{fig:linegraph}). We write $d(x, y)$ for this distance. The count is
+elementary: a fixed edge has two further edges at each of its two ends, which gives four; each of these four has two further edges at its far end,
+and none of the eight is adjacent to the fixed edge because $\PG$ has no triangle, nor shared between two of the four neighbours because that would close a 4-cycle (or, at a common end, a triangle); both are excluded by the girth 5 of $\PG$;
+the remaining $15 - 1 - 4 - 8 = 2$ edges are at distance 3, the diameter.
+Three facts about cuts of $\PG$ and about its symmetry are used throughout.
 
-\begin{lemma}\label{lem:smallcuts}
+\begin{lemma}[\claim{D}]\label{lem:smallcuts}
 The cuts of $\PG$ with at most four edges are the empty cut, the ten stars, and the fifteen sets of
 four edges adjacent to one edge.
 \end{lemma}
@@ -228,7 +298,7 @@ only for a single vertex and 4 only for two adjacent vertices; if both sides con
 cut has at least five edges.
 \end{proof}
 
-\begin{lemma}\label{lem:distance}
+\begin{lemma}[\claim{D}]\label{lem:distance}
 Let $x, y, x', y'$ be edges of $\PG$. If $\mathbf{1}_x + \mathbf{1}_y$ and $\mathbf{1}_{x'} +
 \mathbf{1}_{y'}$ lie in the same class modulo $\Cut(\PG)$, then $d(x, y) = d(x', y')$.
 \end{lemma}
@@ -243,32 +313,69 @@ end of $st$, and both pairs are at distance 1, or each pair has one edge at $s$ 
 and both pairs are at distance 2 because $\PG$ has no triangle.
 \end{proof}
 
-\begin{lemma}[conduction]\label{lem:conduction}
+\begin{lemma}[transitivity, \claim{D}]\label{lem:transitive}
+For each $d \in \{0, 1, 2, 3\}$ the automorphism group of $\PG$ is transitive on the ordered pairs of edges
+at distance $d$ in the line graph.
+\end{lemma}
+
+\begin{proof}
+The permutations of $\{1, \dots, 5\}$ act on the Kneser model by automorphisms, so it suffices to show
+that they are transitive on the ordered pairs at each distance.
+\emph{Distance 0.} The ordered pairs $(x, x)$ correspond to the edges, and every edge is the first edge of an ordered pair of
+adjacent edges, so transitivity on the pairs at distance 1 (next case) gives transitivity on the edges.
+\emph{Distance 1.} An ordered pair of adjacent edges is a path $X_1 X_2 X_3$ of length 2 (the ordered pair of
+its two edges): there are $10 \cdot 3 \cdot 2 = 60$ of them. The permutations fixing the three 2-subsets
+$X_1 = \{a,b\}$, $X_2 = \{c,d\}$, $X_3 = \{a,e\}$ fix $a$, $b$ and $e$ and may swap $c$ and $d$, so the stabilizer
+has order 2 and the orbit has $120/2 = 60$ elements: all of them.
+\emph{Distance 2.} Two edges at distance 2 have a unique edge $g$ adjacent to both: two such edges $g \ne g'$
+would either share an end and form a triangle with the third edge, or join the same two edges at four distinct
+ends and form a 4-cycle, and $\PG$ has girth 5. An ordered pair at distance 2 is therefore the ordered pair of
+end edges of a path $X_1 X_2 X_3 X_4$ of length 3, and conversely every such path gives one. There are
+$10 \cdot 3 \cdot 2 \cdot 2 = 120$ paths. A permutation fixing $X_1 = \{a,b\}$, $X_2 = \{c,d\}$,
+$X_3 = \{a,e\}$ and $X_4 = \{b,c\}$ fixes $a$ (the common element of $X_1$ and $X_3$), hence $b$, and $c$ (common to
+$X_2$ and $X_4$), hence $d$, and $e$: it is the identity. The orbit has $120$ elements, so the permutations
+are transitive on paths of length 3 and on ordered pairs at distance 2.
+\emph{Distance 3.} The edges of one color $x$ are the three perfect matchings of the 4-set $\{1, \dots, 5\} \setminus
+\{x\}$; the three edges of one color are pairwise at distance 3, and each edge has exactly two edges at distance 3
+(Section~\ref{sec:classes}, first paragraph), so the pairs at distance 3 are exactly the ordered pairs of distinct edges of one color. The
+permutations are transitive on colors, and the stabilizer $S_4$ of $x$ acts on the three perfect matchings of the
+4-set through the surjection $S_4 \to S_3$, which is transitive on ordered pairs of distinct matchings.
+\end{proof}
+
+The lemma justifies every formula that fixes the labels of two ends. The decision of $d \in D(M)$ fixes the labels of a connector to one pair at distance $d$
+(by the cases $d = 0, 1, 2, 3$, including $d = 0$ for the refutation of distance 0 for $A$), and the symmetry-breaking of the formula of $R_1$
+pins the image of one edge to a fixed edge ($d = 0$) and of an adjacent edge to a fixed adjacent edge ($d = 1$).
+
+\begin{lemma}[conduction, \claim{D}]\label{lem:conduction}
 Let $M$ be a 4-pole with connectors $\{p, q\}$ and $\{r, s\}$, and let $\sigma$ be a map of $M$ in
 which every vertex of $M$ is good. Then $d(\sigma(p), \sigma(q)) = d(\sigma(r), \sigma(s))$.
 \end{lemma}
 
 \begin{proof}
 The sum of $\chi_v$ over the vertices of $M$ is a sum of stars, hence a cut. An edge of $M$ is
-counted at both of its ends, so the sum equals $\mathbf{1}_{\sigma(p)} + \mathbf{1}_{\sigma(q)} +
-\mathbf{1}_{\sigma(r)} + \mathbf{1}_{\sigma(s)}$. The two connectors therefore carry the same class,
+counted at both of its ends, so the sum is
+\begin{equation}\label{eq:local}
+\sum_{v \in V(M)} \chi_v \;=\; \mathbf{1}_{\sigma(p)} + \mathbf{1}_{\sigma(q)} + \mathbf{1}_{\sigma(r)} + \mathbf{1}_{\sigma(s)} \;\in\; \Cut(\PG),
+\end{equation}
+the local form of Equation~\eqref{eq:gauss}. The two connectors therefore carry the same class,
 and Lemma~\ref{lem:distance} gives the claim.
 \end{proof}
 
 For a 4-pole $M$ with its connectors, the \emph{transmitted set} $D(M) \subseteq \{0, 1, 2, 3\}$ is
 the set of distances $d(\sigma(p), \sigma(q))$ over all maps $\sigma$ of $M$ with every vertex
-good. By Lemma~\ref{lem:conduction} it does not depend on which connector is read. Because the
-automorphism group of $\PG$ is transitive on ordered pairs of edges at a given distance, $d \in
-D(M)$ can be decided by one formula in which the labels of $p$ and $q$ are fixed to one such pair.
+good. By Lemma~\ref{lem:conduction} it does not depend on which connector is read. By
+Lemma~\ref{lem:transitive}, $d \in D(M)$ can be decided by one formula in which the labels of $p$ and $q$ are
+fixed to one pair at distance $d$; the formula has the size of the closed form in Table~\ref{tab:sizes}
+plus two unit clauses, one per fixed label.
 
-\section{Rings of 4-poles}\label{sec:rings}
+\section{Theory of rings of 4-poles}\label{sec:rings}
 
 Let $A$ and $B$ be 4-poles, each with a first and a second connector. The ring $R_t(A, B)$ consists
 of $t$ copies of $A$ and $t$ copies of $B$ placed alternately around a cycle, the second connector
 of each block joined by two edges to the first connector of the next block. It is cubic. The two
 edges that join consecutive blocks form a connector of both blocks.
 
-\begin{theorem}\label{thm:ring}
+\begin{theorem}[\claim{D}]\label{thm:ring}
 If $D(A) \cap D(B) = \emptyset$, then every map of $R_t(A, B)$ has bad vertices in at least $t$ of
 its $2t$ blocks. In particular $\ab(R_t(A, B)) \ge \pd(R_t(A, B)) \ge t$.
 \end{theorem}
@@ -280,7 +387,7 @@ bad vertices are pairwise non-consecutive, and at most $t$ of the $2t$ blocks ar
 last inequality is Lemma~\ref{lem:pdab}.
 \end{proof}
 
-\begin{lemma}[restoration]\label{lem:restore}
+\begin{lemma}[restoration, \claim{D}]\label{lem:restore}
 Let $G$ be a cubic graph without a Petersen coloring.
 \begin{enumerate}
 \item[\textup{(a)}] If $ab$ and $cd$ are independent edges and $M = G - ab - cd$ has connectors
@@ -301,9 +408,11 @@ makes $u$ and $v$ good, which gives a Petersen coloring of $G$.
 \end{proof}
 
 So for $A = G - ab - cd$ and $B = G' - \{u, v\}$ with $G$, $G'$ without Petersen colorings, the sets
-$D(A)$ and $D(B)$ are disjoint as soon as $D(A) \subseteq \{1\}$ or $D(B) \subseteq \{0\}$.
+$D(A)$ and $D(B)$ are disjoint as soon as $D(A) \subseteq \{1\}$ or $D(B) \subseteq \{0\}$. This is the
+form in which the computed restrictions enter: either of the two suffices, so the second is a second
+proof of the same disjointness, as Section~\ref{sec:ablation} uses.
 
-\begin{lemma}\label{lem:c4ec}
+\begin{lemma}[\claim{D}]\label{lem:c4ec}
 Let $G$ be a cyclically 4-edge-connected cubic graph, $A = G - ab - cd$ and $B = G - \{u, v\}$ as in
 Lemma~\ref{lem:restore}, with $A$ joined through its connector $\{c, d\}$ to the connector $\{u_1,
 u_2\}$ of the next $B$, and $B$ through $\{v_1, v_2\}$ to the connector $\{a, b\}$ of the next $A$.
@@ -333,48 +442,46 @@ most three blocks with at least one further block around it, so it contains the 
 contradicting the hypothesis.
 \end{proof}
 
-\section{The construction}\label{sec:construction}
+\section{Construction and results for the rings of 4-poles}\label{sec:construction}
 
 Let $\Gfty$ be the 52-vertex counterexample of~\cite{GJMMMU2026} (House of Graphs entry 57244), with
 its vertices numbered $0, \dots, 51$ as in the edge list of the repository (SHA-256 of the sorted
 edge list \texttt{27db5d3b\ldots}); it is cyclically 4-edge-connected with girth~5 and has no
 Petersen coloring~\cite{GJMMMU2026, Audit2026}. Let
-\[
+\begin{equation}\label{eq:blocks}
 A = \Gfty - \{0,3\} - \{1,9\}, \qquad B = \Gfty - \{2, 7\},
-\]
+\end{equation}
 where $\{0, 3\}$, $\{1, 9\}$ are independent edges and $\{2, 7\}$ is an edge, with connectors as in
 Lemma~\ref{lem:restore}: $\{0, 3\}$ and $\{1, 9\}$ for $A$, the two other neighbors of $2$ and the
 two other neighbors of $7$ for $B$. Let $R_t = R_t(A, B)$, joined as in Lemma~\ref{lem:c4ec}; it has
-$52t + 50t = 102t$ vertices.
+\begin{equation}\label{eq:order}
+|V(R_t)| \;=\; t\,|V(A)| + t\,|V(B)| \;=\; 52\,t + 50\,t \;=\; 102\,t
+\end{equation}
+vertices (Figure~\ref{fig:ring}).
 
-\begin{proposition}[machine-verified]\label{prop:sets}
+\begin{proposition}[\claim{MV}]\label{prop:sets}
 $D(A) = \{1\}$ and $D(B) = \{0\}$.
 \end{proposition}
 
 \begin{proof}
 For each distance $d$ one propositional formula states that the 4-pole has a map with every vertex
-good and the first connector labelled by a fixed pair at distance $d$. The satisfiable formulas
+good and the first connector labelled by a fixed pair at distance $d$. The formula of $A$ has
+\nVarsA{} variables and \nClausesA{} clauses, that of $B$ has \nVarsB{} variables and \nClausesB{} clauses
+(Table~\ref{tab:sizes}). The satisfiable formulas
 give maps that an independent checker accepts; the others are refuted with DRAT proofs accepted by
 \texttt{drat-trim} (Table~\ref{tab:sets}). Distance 0 for $A$ and distance 1 for $B$ are also
 excluded by Lemma~\ref{lem:restore}.
 \end{proof}
 
-\begin{table}[h]\centering\small
-\begin{tabular}{lcccc}
-\toprule
-4-pole & $d = 0$ & $d = 1$ & $d = 2$ & $d = 3$ \\
-\midrule
-$A = \Gfty - \{0,3\} - \{1,9\}$ & refuted (7.7 s) & map (0.5 s) & refuted (2.7 s) & refuted (2.1 s) \\
-$B = \Gfty - \{2,7\}$ & map (0.2 s) & refuted (2.8 s) & refuted (2.2 s) & refuted (2.1 s) \\
-\bottomrule
-\end{tabular}
-\caption{Transmitted distances of the two 4-poles. ``Map'': a map with every vertex good and the
-first connector at distance $d$, accepted by the checker (the second connector is then at the same
-distance). ``Refuted'': unsatisfiable, with a DRAT proof accepted by \texttt{drat-trim}. Times are
-solver times.}\label{tab:sets}
-\end{table}
+\input{table-sets.tex}
 
-\begin{proposition}[machine-verified]\label{prop:rings}
+Table~\ref{tab:sets} reads as follows. For $A$ only the formula at distance 1 is satisfiable (solved in half a
+second), and the three refutations take between 2.1 and 7.7 seconds; for $B$ only distance 0 is satisfiable
+and the refutations take between 2.1 and 2.8 seconds. The two exclusions that the restoration lemma
+gives in advance, distance 0 for $A$ and distance 1 for $B$, are thus confirmed by independent proofs,
+which is the ablation of Section~\ref{sec:ablation}.
+
+\begin{proposition}[\claim{MV}]\label{prop:rings}
 The graphs $R_1$ and $R_2$ are simple cubic graphs of girth~5 without cycle-separating edge cuts of
 at most three edges, and the four edges joining one block to the rest form a cycle-separating
 cut, so their cyclic edge connectivity is exactly~4. $R_1$ has no Petersen coloring, and
@@ -383,12 +490,12 @@ $\pd(R_2) = 2$.
 
 \begin{proof}
 The cut searches are exhaustive: for every pair of edges, the bridges of the graph without that
-pair are computed, and every edge set of size at most three found in this way is tested for
+pair are computed ($\binom{m}{2}$ pairs for $m$ edges: 11,628 for $R_1$, 46,665 for $R_2$, 105,111 for $R_3$), and every edge set of size at most three found in this way is tested for
 leaving two sides that contain cycles; the same routine applied to $\Gfty$, to a ring of two copies
 of $\Gfty$ opened at one edge, and to the cubic graph $K_4$ with its vertices replaced by copies of
 $\Gfty$ minus a vertex returns no cut, 2-edge cuts, and 3-edge cuts respectively, in agreement with
 an enumeration of all edge sets of size at most three. That enumeration, run on $R_1$ and $R_2$
-themselves, finds no cycle-separating cut either. The Petersen coloring formula of
+themselves, finds no cycle-separating cut either (Table~\ref{tab:rings}). The Petersen coloring formula of
 $R_1$ is refuted with a DRAT proof accepted by \texttt{drat-trim}. For $R_2$, a map with exactly two
 bad vertices, both in the two copies of $B$, is accepted by the checker; two is the least possible
 by the parity theorem.
@@ -401,264 +508,69 @@ cyclically 4-edge-connected for every $t \ge 2$. A cycle of length at most four 
 two consecutive blocks and their joining edges, so it would occur in $R_2$, which has girth 5.
 \end{proof}
 
-\begin{proposition}[machine-verified]\label{prop:r3}
+\begin{proposition}[\claim{MV}]\label{prop:r3}
 $\pd(R_3) = 3$.
 \end{proposition}
 
 \begin{proof}
 The lower bound is Theorem~\ref{thm:ring}; it was also tested directly on the 306 vertices of $R_3$:
-the formula stating that some map has at most two bad vertices is unsatisfiable, with a DRAT proof
-accepted by \texttt{drat-trim} ($5{,}802$ seconds of solving and $2{,}265$ seconds of checking).
+the formula stating that some map has at most two bad vertices (\nVarsRthreeC{} variables,
+\nClausesRthreeC{} clauses) is unsatisfiable, with a DRAT proof
+accepted by \texttt{drat-trim} (\nRthreeSolve{} seconds of solving and \nRthreeCheck{} seconds of checking).
 For the upper bound, the star condition is relaxed at one vertex in each of the three copies of
 $B$, the vertex at the position (within its copy) of one of the two bad vertices of a two-defect
-map of $R_2$; the relaxed formula is satisfiable (169 seconds), and the checker finds exactly these
+map of $R_2$; the relaxed formula is satisfiable (\nRthreeUpper{} seconds), and the checker finds exactly these
 three vertices bad.
 \end{proof}
 
+\input{table-sizes.tex}
+\input{table-rings.tex}
+
+Table~\ref{tab:sizes} gives the sizes of the formulas. A formula for a 4-pole with $q$ items (internal
+edges plus dangling ends) and $n$ vertices has
+\begin{equation}\label{eq:size-pole}
+15\,q \text{ variables and } 106\,q + 495\,n + 2 \text{ clauses,}
+\end{equation}
+because each item contributes one at-least-one clause and $\binom{15}{2} = 105$ at-most-one clauses, each
+vertex contributes $3 \cdot 165$ forbidden label pairs (the 165 ordered pairs of labels that are equal or not
+adjacent in the line graph, for each of its three item pairs), and two unit clauses fix the labels of
+the first connector (Lemma~\ref{lem:transitive}). The formula of $R_1$ has the same two clauses for another reason: they are the symmetry-breaking units
+of the Petersen coloring encoder, which pin the image of one edge and of an adjacent edge and are justified by the cases $d = 0, 1$ of Lemma~\ref{lem:transitive}. The defect formulas of the rings add one indicator variable per vertex and a sequential counter
+for the cardinality bound $k$, which for $k = 2$ adds $2n$ variables and $5n - 3$ clauses, giving
+\begin{equation}\label{eq:size-ring}
+15\,m + 3\,n \text{ variables and } 106\,m + 500\,n - 3 \text{ clauses}
+\end{equation}
+for a ring of $n$ vertices and $m = 3n/2$ edges. The formulas of Table~\ref{tab:rings} are the largest of the
+computations on 4-poles, and the longest solving time, \nRthreeSolve{} seconds, is that of the cardinality
+bound on the 306-vertex ring. Table~\ref{tab:rings} also lists the ten sampled pair relaxations of $R_3$. Each pair relaxation of $R_3$ is a special case of the cardinality bound 2, so its
+unsatisfiability follows from the refutation of that bound; the ten smaller formulas are an independent check of the
+encoder of the cardinality bound. Ten pairs were drawn at random, five inside one block and five across two, and all
+ten are refuted with verified proofs (Figure~\ref{fig:pairs}). A single satisfiable answer among these eleven instances
+(the cardinality bound and the ten pairs) would have refuted the ring theorem or the construction.
+
+\begin{figure}[t]\centering
+\input{fig-pairs.tex}
+\caption{Solver times of the ten sampled pair relaxations of $R_3$, each refuted with a verified proof, in two runs of the same
+formulas (computation EXP-012, \texttt{r3-pairs.json} and \texttt{r3-checks.json}); the parallel run shared the machine among ten solvers.}\label{fig:pairs}
+\end{figure}
+
 \begin{proof}[Proof of Corollary~\ref{cor:e}]
-The graphs $R_t$ have $n = 102t$ vertices and $\ab(R_t) \ge n/102$, so no sublinear function bounds
+The graphs $R_t$ have $n = 102t$ vertices and
+\begin{equation}\label{eq:linear}
+\ab(R_t) \;\ge\; \pd(R_t) \;\ge\; t \;=\; \frac{n}{102},
+\end{equation}
+so no sublinear function bounds
 $\ab$ on cyclically 4-edge-connected cubic graphs, and (e) is false; for $t \ge 10$ they also
 violate the bound 9 of~\cite[Theorem~4]{MMM2021}. Statements (a) to (d) are false, as recalled in
 the introduction, so the five statements are equivalent.
 \end{proof}
 
-\section{6-poles: classes and transfer relations}\label{sec:sixpoles}
-
-\paragraph{The 64 classes.} Write $Q = \mathbb{F}_2^{E(\PG)}/\Cut(\PG)$, and call the class in $Q$ of
-the sum of the indicator vectors of a multiset of labels the class of that multiset. The cut space
-is a binary $[15, 9, 3]$ code (its nonzero words of weight at most 4 are those of
-Lemma~\ref{lem:smallcuts}), so $Q$ has 64 elements. A vertex is good exactly when the class of its
-three labels is $0$ and they are distinct. The automorphism group of $\PG$ acts on $Q$ with six
-orbits (Table~\ref{tab:classes}); we call them $\mathsf{0}$, $\mathsf{E}$, $\mathsf{D}_3$,
-$\mathsf{D}_2$, $\mathsf{T}_1$, $\mathsf{T}_2$. The orbit $\mathsf{T}_1$ is the class of the
-all-ones vector: removing from $E(\PG)$ the twelve edges at the four 2-subsets containing a fixed
-element of $\{1, \dots, 5\}$ leaves three pairwise antipodal edges (at distance 3 in the line graph),
-and these five \emph{antipodal triples} partition $E(\PG)$.
-
-\begin{table}[h]\centering\small
-\begin{tabular}{lccl}
-\toprule
-orbit & classes & least weight & elements of least weight \\
-\midrule
-$\mathsf{0}$ & 1 & 0 & the cut space, containing the ten stars \\
-$\mathsf{E}$ & 15 & 1 & one edge; also two edges at distance 1 \\
-$\mathsf{D}_3$ & 15 & 2 & two edges at distance 3 \\
-$\mathsf{D}_2$ & 30 & 2 & two edges at distance 2 (two such pairs per class) \\
-$\mathsf{T}_1$ & 1 & 3 & the five antipodal triples \\
-$\mathsf{T}_2$ & 2 & 3 & triples of pairwise distance-2 edges (ten per class) \\
-\bottomrule
-\end{tabular}
-\caption{The orbits of $\mathrm{Aut}(\PG)$ on the 64 classes modulo the cut space (computed and
-checked against Lemma~\ref{lem:distance}).}\label{tab:classes}
-\end{table}
-
-\paragraph{6-poles.} A \emph{6-pole} has six dangling ends, split into two connectors of three. The
-proof of Lemma~\ref{lem:conduction} shows that a map with every vertex good puts the same class on
-both connectors, and the \emph{conducted set} $D(M) \subseteq Q$ is the set of these classes; it
-is invariant under $\mathrm{Aut}(\PG)$, hence a union of orbits. Theorem~\ref{thm:ring} holds
-verbatim for rings of 6-poles joined along their connectors by three edges, and such rings can be
-cyclically 5-edge-connected, since two arcs of a ring are separated by six edges. For a graph $G$
-without a Petersen coloring and non-adjacent vertices $u$, $w$, the 6-pole $G - u - w$ with the
-ends at $u$ and at $w$ as connectors does not conduct $\mathsf{0}$, by the argument of
-Lemma~\ref{lem:restore}: class $\mathsf{0}$ at the ends of $u$ means three labels forming a star.
-
-\begin{proposition}[machine-verified]\label{prop:core}
-Let $H$ be the Petersen graph, the flower snark $J_5$ or $J_7$, or the dodecahedron. Every 6-pole
-$H - u - w$ ($u$, $w$ non-adjacent, connectors at $u$ and at $w$), and, for $H \ne J_7$, every
-6-pole $H - e_1 - e_2 - e_3$ ($e_1, e_2, e_3$ pairwise disjoint, any split of the six ends) conducts
-$\mathsf{0}$, $\mathsf{E}$ and $\mathsf{D}_2$; the set $\{\mathsf{0}, \mathsf{E}, \mathsf{D}_2\}$
-itself is conducted by $\PG - u - w$.
-\end{proposition}
-
-\begin{proof}
-One formula for each 6-pole up to automorphisms of $H$, each split and each orbit, with the class of
-the first connector fixed to a representative of the orbit (1,890 splits, 11,340 formulas). The
-satisfiable ones give maps accepted by the checker, the others are refuted with DRAT proofs
-accepted by \texttt{drat-trim}; none of the four graphs has a cycle-separating cut of at most four
-edges.
-\end{proof}
-
-So no two of these 6-poles have disjoint conducted sets, and Theorem~\ref{thm:ring} cannot show
-that a ring of them has no Petersen coloring. The exact obstruction is the following relation.
-
-\paragraph{Transfer relations.} A \emph{block} is a 6-pole whose connectors $L$ and $R$ are ordered.
-Its transfer relation is the set $T_M$ of pairs $(\sigma(L), \sigma(R)) \in E(\PG)^3 \times E(\PG)^3$
-over all maps $\sigma$ with every vertex good. In a ring of blocks $M_1, \dots, M_t$, end $j$ of $R_i$
-is joined to end $\pi_i(j)$ of $L_{i+1}$ (indices modulo $t$). Every vertex of the ring lies in one
-block, so a Petersen coloring of the ring is a labelling of the $3t$ joining edges accepted by
-every block: the ring is Petersen colorable if and only if the boolean matrix product $T_{M_1}
-\Pi_1 T_{M_2} \Pi_2 \cdots T_{M_t} \Pi_t$ has a nonzero diagonal entry, where $\Pi_i$ is the
-permutation matrix of $\pi_i$.
-
-\begin{proposition}\label{prop:sectors}
-For $q \in Q$ let $S_q$ be the set of ordered label triples of class $q$.
-\begin{enumerate}
-\item[\textup{(a)}] $T_M \subseteq \bigcup_{q \in Q} S_q \times S_q$, and every $\Pi_i$ maps each $S_q$
-onto itself, so every product of transfer relations and junctions is block diagonal over $Q$.
-\item[\textup{(b)}] The diagonal blocks of such a product over two classes of one orbit are conjugate,
-so they have the same trace.
-\end{enumerate}
-Hence a ring is Petersen colorable if and only if, for some orbit, the product of the restrictions
-to $S_q \times S_q$, for one fixed class $q$ of that orbit, has a nonzero diagonal. These six
-\emph{sector matrices} have orders $60, 67, 48, 48, 30, 60$.
-\end{proposition}
-
-\begin{proof}
-(a) is the conduction property, and the class of a triple does not depend on the order of its
-entries. (b) An automorphism $\alpha$ of $\PG$ maps a map $\sigma$ of $M$ to the map $\alpha \circ
-\sigma$, so $(x, y) \in T_M$ if and only if $(\alpha x, \alpha y) \in T_M$; $\alpha$ acts on labels
-and $\Pi_i$ on positions, so they commute, and $\alpha$ conjugates the block over $q$ to the block
-over $\alpha(q)$. The sector orders add up to $60 + 15 \cdot 67 + 15 \cdot 48 + 30 \cdot 48 + 30 + 2
-\cdot 60 = 15^3$.
-\end{proof}
-
-\begin{corollary}\label{cor:semigroup}
-Let $\mathcal{F}$ be a finite set of blocks and $\mathcal{G}$ the set of six-tuples of sector
-matrices of $T_M \Pi$, for $M \in \mathcal{F}$ in either orientation and $\pi$ any bijection. Every
-ring of at least two blocks of $\mathcal{F}$ is Petersen colorable if and only if every product of at
-least two elements of $\mathcal{G}$ has a nonzero diagonal in some sector. This holds if there is a
-set $\mathcal{C}$ of six-tuples of boolean matrices such that every product of two elements of
-$\mathcal{G}$ contains an element of $\mathcal{C}$ entrywise, every product $cg$ with $c \in
-\mathcal{C}$ and $g \in \mathcal{G}$ contains an element of $\mathcal{C}$, and every element of
-$\mathcal{C}$ has a nonzero diagonal in some sector; and such a set exists whenever the condition
-holds (take all products).
-\end{corollary}
-
-\begin{proof}
-The first statement is Proposition~\ref{prop:sectors}. For the second, boolean products are
-monotone under entrywise containment, so by induction on the length every product of at least two
-elements of $\mathcal{G}$ contains an element of $\mathcal{C}$, and its diagonal is nonzero where
-that element's is. The set of all products is finite, which gives the converse.
-\end{proof}
-
-A set $\mathcal{C}$ as in Corollary~\ref{cor:semigroup} is a certificate that anyone can check by
-products of boolean matrices of order at most 67. Entries of computed sector matrices are maps
-accepted by the checker, so a computed matrix can only miss entries; missing entries can only
-lower diagonals, and a certificate built from computed matrices is a certificate for the exact
-ones.
-
-\paragraph{Claws and Petersen superedges.} The \emph{claw} $Y$ is the block with a center joined to
-three vertices, each of which carries one dangling end in $L$ and one in $R$. The \emph{Petersen
-superedge} $S$ is $\PG - u - w$ with $u$, $w$ at distance 2, $L$ the three ends at $u$ and $R$ the
-three ends at $w$; it is the superedge $(P_{10})_{u,v}$ of Sedlar and \v{S}krekovski~\cite{SS2023}.
-The rings of claws contain the flower snarks of Isaacs~\cite{Isaacs1975}: $J_k$ for odd $k$ is the
-ring of $k$ claws with the identity at $k - 1$ junctions and a transposition at the last one.
-
-\begin{theorem}[machine-verified]\label{thm:ringsY}
-Every ring of at least two blocks, each a claw or a Petersen superedge in either orientation, joined
-through arbitrary bijections, has a Petersen coloring. A ring of Petersen superedges always has one
-whose joining edges carry classes of the orbit $\mathsf{E}$.
-\end{theorem}
-
-\begin{proof}
-The sector matrices of $Y$ and $S$ were computed by enumerating the models of a SAT formula
-projected to the dangling ends, each model accepted by the checker, and recomputed by exhaustive
-enumeration of maps and by a second encoding with a second solver, with identical results. The set
-of all products of at least two generators was closed exhaustively for $\{Y\}$, $\{S\}$ and
-$\{Y, S\}$: it has $30$, $19{,}005$ and $116{,}463$ elements, all with a nonzero diagonal; for
-$\{S\}$ every element has a nonzero diagonal in the sector $\mathsf{E}$. Certificates in the sense of
-Corollary~\ref{cor:semigroup}, kept minimal under containment, have $12$, $276$ and $2{,}454$
-elements and were re-verified by a separate program with a different matrix product.
-\end{proof}
-
-\begin{corollary}[flower snarks]\label{cor:flower}
-For every odd $k \ge 3$, every Petersen coloring of $J_k$ maps the three edges joining two
-consecutive claws onto an antipodal triple of $\PG$.
-\end{corollary}
-
-\begin{proof}
-The products $(Y\,\mathrm{id})^{k-1}(Y\,\tau)$ are periodic in $k$ from $k = 5$ with period 2,
-and for odd $k$ only the sector $\mathsf{T}_1$ has a nonzero diagonal (for even $k$ only
-$\mathsf{E}$). By conduction all junctions of a coloring carry one class, which is therefore
-$\mathsf{T}_1$, and the 30 ordered triples of class $\mathsf{T}_1$ are the orderings of the five
-antipodal triples.
-\end{proof}
-
-Hägglund and Steffen showed that flower snarks have Petersen colorings~\cite{HS2014};
-Corollary~\ref{cor:flower} describes all of them at the junctions.
-
-\begin{proposition}\label{prop:superedgerings}
-Let $S^t$ be the ring of $t$ Petersen superedges with the identity at every junction.
-\begin{enumerate}
-\item[\textup{(a)}] For $t \ge 3$, $S^t$ is a simple cubic graph, and it is 3-edge-colorable if and
-only if $t$ is even.
-\item[\textup{(b)}] For $t \ge 5$, $S^t$ has girth 5 and is cyclically 5-edge-connected.
-\end{enumerate}
-So for every odd $t \ge 5$, $S^t$ is a cyclically 5-edge-connected snark of girth 5 on $8t$ vertices,
-and by Theorem~\ref{thm:ringsY} it has a Petersen coloring.
-\end{proposition}
-
-\begin{proof}
-(a) The same reduction applies to 3-edge-colorings, with the 27 color triples of a connector as
-states: the boundary relation of $S$, enumerated exhaustively, has powers of period 2, and the odd
-powers have a zero diagonal. (b) An exhaustive search finds no cycle-separating cut with at most
-four edges in $S^5$, whose girth is 5. $\PG - u - w$ is connected, and restoring $u$ and $w$ gives
-$\PG$, which is 3-edge-connected, so a ring carries six edge-disjoint paths between any two blocks.
-The argument of Lemma~\ref{lem:c4ec}, with cuts of at most four edges, at most four split blocks
-and runs of at most four consecutive blocks (all of which occur in $S^5$), shows that $S^t$ has no
-cycle-separating cut with at most four edges for $t \ge 5$, and a cycle of length at most four would
-lie in such a run.
-\end{proof}
-
-\begin{remark}[the classes are not enough]\label{rem:control}
-$\Gfty$ has a 6-edge cut with sides of 18 and 34 vertices. For each of the ten splits of the cut
-into two triples, the two sides are 6-poles with Petersen colorings whose conducted sets share
-$\mathsf{0}$, $\mathsf{E}$ and $\mathsf{D}_2$, so no argument by classes separates them; their ring
-of length 2 is $\Gfty$, and the product of their sector matrices has a zero diagonal in all six
-sectors, as it must. In a further test, 203 rings (the flower snarks $J_5$, $J_7$, $J_9$ and 200
-random words of length 2 to 6 over 81 blocks, with 18 to 132 vertices) were decided both by the
-sector matrices and by a SAT solver on the graph, with the same answer every time.
-\end{remark}
-
-\section{Remarks and questions}\label{sec:remarks}
-
-\emph{Other 4-poles.} The computation behind Proposition~\ref{prop:sets} was carried out for a
-wider set of 4-poles (computation EXP-012). The Petersen graph minus two adjacent vertices, and
-the Petersen graph minus two edges at distance 2 or 3, transmit distance 1 under every pairing of
-their dangling ends. For $\Gfty$ minus two adjacent vertices, with the pairing of
-Lemma~\ref{lem:restore}(b), the transmitted set is $\{0\}$ for eleven of the fourteen edge orbits
-of the automorphism group of $\Gfty$, $\{0, 3\}$ for two and $\{0, 2\}$ for one; it never contains
-1, as Lemma~\ref{lem:restore}(b) requires. Under the two other pairings every such 4-pole
-transmits distance 1. Among the 4-poles $\Gfty - ab - cd$ with the connectors of
-Lemma~\ref{lem:restore}(a), 282 of the 546 edge pairs examined have $D = \{1\}$ (computation
-EXP-010). Many rings with the property of Theorem~\ref{thm:ring} can therefore be built from
-$\Gfty$ alone.
-
-\emph{Criticality.} A pair of vertices of a graph without a Petersen coloring is \emph{critical}
-if some map has exactly these two vertices bad. In every one of fifteen cyclically
-4-edge-connected counterexamples examined in~\cite{Audit2026} every pair of adjacent vertices is
-critical. By Theorem~\ref{thm:ring} the two bad vertices of a map of $R_2$ lie in two
-non-consecutive blocks, so two adjacent vertices of one block of $R_2$ form a non-critical pair,
-and in $R_t$ with $t \ge 3$ no pair is critical. Universal 2-criticality is therefore not a
-property of the cyclically 4-edge-connected class.
-
-\emph{Questions.} The rings have 4-edge cuts, and no cyclically 5-edge-connected counterexample to
-the Petersen coloring conjecture is known~\cite[Problem~11]{GJMMMU2026}. A ring of 6-poles without
-a Petersen coloring needs blocks whose semigroup in Corollary~\ref{cor:semigroup} contains a
-product with a zero diagonal in every sector; which 6-poles without small internal cuts have this
-property? Is the Petersen defect bounded on cyclically 5-edge-connected cubic graphs? What is the
-largest constant $c$ such that cubic graphs with $\pd \ge c\,n$ exist in the cyclically
-4-edge-connected class? The rings give $c \ge 1/102$.
-
-\section*{Data availability}
-
-{\raggedright
-The edge list of $\Gfty$, the encoders, the checkers, the ring construction, the cut searches and
-all results, with the SHA-256 digests of every formula and proof, are in the repository
-\url{https://github.com/fsantibanezleal/CAOS_RESEARCH}, under
-\path{problems/combinatorics/petersen-coloring/}. The computations of this paper are archived in the
-folder \path{experiments/EXP-012-conduction-rings} of that directory (runners \path{run.py} and
-\path{run_ring.py}; library modules \path{code/pcclib/poles.py} and \path{code/pcclib/rings.py}),
-with the distance sets of~\cite{Audit2026} in \path{experiments/EXP-010-sublinear-approximation}.
-The upper bound of Proposition~\ref{prop:r3} is in the same folder (\path{run_r3_upper.py}).
-Section~\ref{sec:sixpoles} is archived in \path{experiments/EXP-013-six-pole-charges} (conducted
-sets) and \path{experiments/EXP-014-transfer-semigroups} (sector matrices, closures, certificates
-and their checker \path{check_certificate.py}, the control on $\Gfty$), with the library modules
-\path{code/pcclib/charges.py} and \path{code/pcclib/transfer.py} and the probes
-\path{code/probes/superedge_ring_*.py}; the theory notes are in
-\path{context/2026-10-06-charges.md}. Proofs were produced by CaDiCaL~\cite{CaDiCaL} and checked with
-\texttt{drat-trim}~\cite{DRATtrim}.
-\par}
+\input{theory6.tex}
+\input{methods.tex}
+\input{design.tex}
+\input{results6.tex}
+\input{ablation.tex}
+\input{closing.tex}
 
 \begin{thebibliography}{99}
 \bibitem{Jaeger1988} F.~Jaeger, Nowhere-zero flow problems, in: L.~W. Beineke, R.~J. Wilson
@@ -669,27 +581,58 @@ problems, Ars Combinatoria 20-B (1985), 229--244.
 Zenodo v1.1.0 (2026), \href{https://doi.org/10.5281/zenodo.21845291}{doi:10.5281/zenodo.21845291};
 arXiv:2608.10012.
 \bibitem{Jooken2026} J.~Jooken, A human-checkable proof of the 112-vertex counterexample to the
-Petersen coloring conjecture, arXiv:2608.10028v2 (2026).
+Petersen coloring conjecture, arXiv:2608.10028v2 (2026); later versions of the same identifier are~\cite{GJMMMU2026}.
 \bibitem{GJMMMU2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
 S.~Ulyanov, Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite
 family of counterexamples, arXiv:2608.10028v4 (2026).
+\bibitem{GJMMM2026zen} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
+A smaller counterexample and infinite family of counterexamples to the Petersen Coloring Conjecture,
+Zenodo record 21933786 (2026), concept \href{https://doi.org/10.5281/zenodo.21933785}{doi:10.5281/zenodo.21933785}.
 \bibitem{HS2014} J.~H\"agglund, E.~Steffen, Petersen-colorings and some families of snarks, Ars
-Math. Contemp. 7 (2014), 161--173.
+Math. Contemp. 7 (2014), 161--173, \href{https://doi.org/10.26493/1855-3974.288.11a}{doi:10.26493/1855-3974.288.11a}.
 \bibitem{Isaacs1975} R.~Isaacs, Infinite families of nontrivial trivalent graphs which are not Tait
 colorable, Amer. Math. Monthly 82 (1975), 221--239.
 \bibitem{SS2023} J.~Sedlar, R.~\v{S}krekovski, Normal 5-edge-coloring of some snarks
-superpositioned by the Petersen graph, arXiv:2305.05981 (2023).
+superpositioned by the Petersen graph, Appl. Math. Comput. 467 (2024), 128493; arXiv:2305.05981 (2023). The DOI of the journal version is not confirmed.
 \bibitem{MMM2021} D.~Mattiolo, G.~Mazzuoccolo, V.~Mkrtchyan, On sublinear approximations for the
-Petersen coloring conjecture, Bull. Inst. Combin. Appl. 92 (2021), 78--90; arXiv:2104.09241.
-\bibitem{Audit2026} F.~Santib\'a\~nez-Leal, Berge--Fulkerson covers, cycle double covers, flows and
-exact normality defects of the first counterexamples to the Petersen coloring conjecture,
-preprint v0.06 (2026), \href{https://doi.org/10.5281/zenodo.23195171}{doi:10.5281/zenodo.23195171}.
+Petersen coloring conjecture, arXiv:2104.09241 (2021); the journal reference Bull. Inst. Combin. Appl. 92 (2021), 78--90 is not confirmed \claim{U}.
+\bibitem{MM2020} G.~Mazzuoccolo, V.~V. Mkrtchyan, Normal edge-colorings of cubic graphs, J. Graph
+Theory 94 (2020), 75--91, \href{https://doi.org/10.1002/jgt.22507}{doi:10.1002/jgt.22507}; arXiv:1804.09449.
+\bibitem{MM2020b} G.~Mazzuoccolo, V.~V. Mkrtchyan, Normal 6-edge-colorings of some bridgeless cubic
+graphs, Discrete Appl. Math. 277 (2020), 252--262, \href{https://doi.org/10.1016/j.dam.2019.09.019}{doi:10.1016/j.dam.2019.09.019}.
+\bibitem{MMSW2025} Y.~Ma, D.~Mattiolo, E.~Steffen, I.~H. Wolf, Sets of $r$-graphs that color all
+$r$-graphs, Combinatorica 45 (2025), Article 16,
+\href{https://doi.org/10.1007/s00493-025-00144-4}{doi:10.1007/s00493-025-00144-4}; arXiv:2305.08619.
+\bibitem{MSWZ2024} Y.~Ma, E.~Steffen, I.~H. Wolf, S.~Zhang, Some conjectures on $r$-graphs and
+equivalences, arXiv:2411.01753v2 (2026).
+\bibitem{Brinkmann2013} G.~Brinkmann, J.~Goedgebeur, J.~H\"agglund, K.~Markstr\"om, Generation and
+properties of snarks, J. Combin. Theory Ser. B 103 (2013), 468--488,
+\href{https://doi.org/10.1016/j.jctb.2013.05.001}{doi:10.1016/j.jctb.2013.05.001}; arXiv:1206.6690.
+\bibitem{GMS2019} J.~Goedgebeur, E.~M\'a\v{c}ajov\'a, M.~\v{S}koviera, Smallest snarks with oddness 4
+and cyclic connectivity 4 have order 44, Ars Math. Contemp. 16 (2019), 277--298, \href{https://doi.org/10.26493/1855-3974.1601.e75}{doi:10.26493/1855-3974.1601.e75}.
+\bibitem{Inoue2026} Y.~Inoue, K.~Kawarabayashi, R.~Matsuo, A.~Miyashita, B.~Mohar, T.~Sonobe,
+Three-edge-coloring apex cubic graphs, arXiv:2608.22870 (2026).
+\bibitem{HoG2023} K.~Coolsaet, S.~D'hondt, J.~Goedgebeur, House of Graphs 2.0: a database of
+interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107, \href{https://doi.org/10.1016/j.dam.2022.10.013}{doi:10.1016/j.dam.2022.10.013}, \url{https://houseofgraphs.org}.
+\bibitem{Ferrarini2026} L.~Ferrarini, V.~Mkrtchyan, Some new results on Sylvester colorings of cubic
+graphs, arXiv:2607.06396 (2026).
+\bibitem{COBI2026} F.~Santib\'a\~nez-Leal, The two 52-vertex counterexamples to the Petersen coloring
+conjecture are colorable only by themselves if no counterexample has at most 38 vertices, preprint (2026),
+concept \href{https://doi.org/10.5281/zenodo.22859074}{doi:10.5281/zenodo.22859074}.
+\bibitem{Audit2026} F.~Santib\'a\~nez-Leal, Exact invariants of five counterexamples to the Petersen
+coloring conjecture: covers, flows, defect two and unbounded abnormal edges,
+preprint v0.07 (2026), \href{https://doi.org/10.5281/zenodo.24239715}{doi:10.5281/zenodo.24239715}; concept \href{https://doi.org/10.5281/zenodo.22285164}{doi:10.5281/zenodo.22285164}, which resolves to the latest version.
 \bibitem{CaDiCaL} A.~Biere, T.~Faller, K.~Fazekas, M.~Fleury, N.~Froleyks, F.~Pollitt, CaDiCaL 2.0,
 in: Computer Aided Verification (CAV 2024), Lecture Notes in Comput. Sci. 14681, Springer, 2024,
-133--152.
+133--152, \href{https://doi.org/10.1007/978-3-031-65627-9_7}{doi:10.1007/978-3-031-65627-9\_7}.
 \bibitem{DRATtrim} N.~Wetzler, M.~J.~H. Heule, W.~A. Hunt Jr., DRAT-trim: efficient checking and
 trimming using expressive clausal proofs, in: Theory and Applications of Satisfiability Testing
-(SAT 2014), Lecture Notes in Comput. Sci. 8561, Springer, 2014, 422--429.
+(SAT 2014), Lecture Notes in Comput. Sci. 8561, Springer, 2014, 422--429, \href{https://doi.org/10.1007/978-3-319-09284-3_31}{doi:10.1007/978-3-319-09284-3\_31}.
+\bibitem{OPG} Open Problem Garden, Petersen coloring conjecture,
+\url{https://www.openproblemgarden.org/op/petersen_coloring_conjecture}.
+\bibitem{CAOSrepo} F.~Santib\'a\~nez-Leal, CAOS Research open-problems programme: the computations
+EXP-009 to EXP-014 and the library pcclib of the Petersen coloring problem, repository
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH} (2026).
 \end{thebibliography}
 
 \end{document}

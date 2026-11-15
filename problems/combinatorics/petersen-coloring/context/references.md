@@ -28,7 +28,7 @@ Status marks: `[V]` read in the primary source; `[U]` cited only through another
   Combinatorica 45 (2025), Article 16, doi:10.1007/s00493-025-00144-4, arXiv:2305.08619.
   `[V, Sections 1 and 3.2 read 2026-09-18]` (Theorems 3.4 and 3.7; used by Putman Corollary 5.1 and
   by EXP-007)
-- J. Goedgebeur, J. Jooken, E. Macajova, D. Mattiolo, G. Mazzuoccolo, S. Ulyanov, Disproving the
+- J. Goedgebeur, J. Jooken, E. Macajova, D. Mattiolo, G. Mazzuoccolo, N. Ulyanov, Disproving the
   Petersen Coloring Conjecture: Theoretical Analysis and an Infinite Family of Counterexamples,
   arXiv:2608.10028v3 (2026-09-11). `[V, read in full 2026-09-18]` (supersedes Jooken's v2 note;
   lower bound 40; Section 5.4 question attacked by EXP-007; House of Graphs entries 57244, 57278,
