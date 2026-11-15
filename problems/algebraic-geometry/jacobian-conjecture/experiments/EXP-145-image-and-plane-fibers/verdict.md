@@ -47,8 +47,12 @@ existed, green after). Seed 20261114 for the random targets; all arithmetic is e
   point is the one rational point (C2): the `fiber_points` filter of EXP-007 `run.py` kept `is_rational` solutions only.
   The plane `C = 0` is therefore not asymptotic away from `B^2 = 16A`; the asymptotic variety there is the line `{C = 0, B^2 = 16A}`
   (limits of the points with `x = 2/sqrt(B^2 - 16A) -> infinity`).
-- EXP-007 items 1 to 3 and 5 (discriminant characterization, the escape at `(0, 1, 1)`, collisions off the variety) are not contested;
-  the premise block re-checks `D = -16 C^2 Sigma` and the reconstruction.
+- EXP-007 item 2 is superseded in part: it gives `A(F) = {C = 0} union {Sigma = 0}`; by the fibers over `C = 0` above, the
+  plane `C = 0` is not asymptotic, so `A(F) = {Sigma = 0}` (the factor `C^2` of the discriminant records where the
+  reconstruction degenerates, not an asymptotic locus; foundational v0.15, theorem on the asymptotic variety, part 2).
+- EXP-007 items 1, 3 and 5 (multiple roots as the escape mechanism over `C != 0`, the escape at `(0, 1, 1)`, collisions
+  off the variety) are not contested; the premise block re-checks `D = -16 C^2 Sigma` and the reconstruction.
+  (Correction of 2026-11-15, before this experiment was merged: an earlier wording listed item 2 as not contested.)
 
 ## Consequence for the foundational paper
 
