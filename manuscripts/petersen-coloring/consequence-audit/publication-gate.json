@@ -1,0 +1,23 @@
+{
+  "release_ready": true,
+  "record_id": 24239715,
+  "version": "0.07",
+  "version_doi": "10.5281/zenodo.24239715",
+  "concept_doi": "10.5281/zenodo.22285164",
+  "scope": "Revision from the independent audit: encodings and certification as algorithms with sizes, consolidated invariant, sweep, ring and four-pole tables generated from the artifacts, validation section, citations updated, conditional statements marked, 3-connectivity proof of frames, re-derived title",
+  "bytes": 677106,
+  "md5": "fbc9a4e8dd28ccb17e5a7c31ab73be78",
+  "sha256": "12f8c16fbdd11b56bf43591d4984993d2fb4d882162a93c793a29f909a44f067",
+  "tex_sha256": "9a4223aa8e9759419c5b1b7347d8cac4eab9ce6ef820a7a7e4dee61734b856e5",
+  "metadata_sha256": "a566ba1fd54821c724693f8fbb5853b2d2396a197b7c28c1a2254e0e0e377c8d",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 35,
+  "rendered_pages_reviewed": 35,
+  "qa_date": "2026-11-15",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246",
+  "independent_review": "CAOS_MANAGE wip/caos-research/pc-consequence-audit-v07-review-2026-11-14.md (reviewer, opus): CHANGES REQUIRED (4 majors), re-check CHANGES REQUIRED (R1 hashes), second fix pass verified by diff (every cited commit resolves)"
+}
