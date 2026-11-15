@@ -164,8 +164,8 @@
     {
       "slug": "consequence-audit",
       "path": "manuscripts/petersen-coloring/consequence-audit",
-      "version": "0.06",
-      "version_doi": "10.5281/zenodo.23195171",
+      "version": "0.07",
+      "version_doi": "10.5281/zenodo.24239715",
       "concept_doi": "10.5281/zenodo.22285164",
       "status": "published",
       "split_action": "Already split: the H_3 result and the statement (e) result have their own manuscripts. Keep this one as the consequence audit (five graphs, parity theorem, statements (c), (d), Theorem 5.9). No further split unless the audit grows a new central question."
