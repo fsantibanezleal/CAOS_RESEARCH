@@ -169,8 +169,8 @@ and~\ref{sec:theory-b} contain the theory. Section~\ref{sec:algorithms} describe
 computation as an algorithm with its cost, and Section~\ref{sec:design} the experimental design.
 Sections~\ref{sec:results} and~\ref{sec:ablation} give the results and the controls, and
 Section~\ref{sec:discussion} reads them against the known Betti entries of $\Cfiber_p$. The
-limits, the means of reproduction and the conclusions follow, and two appendices print the
-solver obligations as formulas.
+limits, the means of reproduction and the conclusions follow, and three appendices print the
+solver obligations as formulas, the perturbed obligations and the zero-relation count.
 
 \section{Related work}\label{sec:related}
 
@@ -294,7 +294,7 @@ Put $q=24p$.
 where $|G_p|=10p$ and
 \begin{align}
 G_p={}&\{0\}\cup[1,p]\cup[3p,4p-2]\cup[6p,8p-2]\cup[8p,10p-2]
-\cup\{10p\}\\
+\cup\{10p\}\notag\\
 &\cup[11p-1,12p-1]\cup[13p+1,14p-2]\cup[14p,15p-1]
 \cup\{16p\}\cup[17p-1,18p-1].\label{eq:generators}
 \end{align}
@@ -727,7 +727,7 @@ divisors are all standard. The argument above treats it through Part (e), which 
 monomial divisible by $X_0$, and the parity of $6p-1$ is what excludes the last candidate, the
 fifth power $X_a^5$.
 
-\begin{corollary}[Flat Cohen--Macaulay degeneration, \mD; the last clause \mMV]\label{cor:degeneration}
+\begin{corollary}[Flat Cohen--Macaulay degeneration, \mD; the last two clauses \mMV]\label{cor:degeneration}
 The initial algebra $S_p=P_p/\operatorname{in}_\prec(J_p)$ is Cohen--Macaulay, $X_0$ is a nonzerodivisor
 on it, and its Artinian reduction by $X_0$ has Hilbert function
 \[
@@ -1340,8 +1340,9 @@ algebra.
 Two features stand out. First, the whole projective geometry of $\Cfiber_p$ is one-variable, while
 its algebra has $10p$ generators and a Gr\"obner basis of $50p^2$ elements; the singularity of the
 scheme is a fat point of length $24p$, so everything that is complicated about $\Cfiber_p$ lies in its embedding.
-Second, the proof architecture isolates a very small unproved core. Parts (a) and (d) of
-Theorem~\ref{thm:groebner} and all of Section~\ref{sec:theory-a} are written arguments over the input of
+Second, the proof architecture isolates a very small unproved core. Parts (a), (d) and (e) of
+Theorem~\ref{thm:groebner}, Corollary~\ref{cor:degeneration} apart from its last two clauses, Lemmas~\ref{lem:staircase}
+and~\ref{lem:x0} and all of Section~\ref{sec:theory-a} are written arguments over the derived input of
 Proposition~\ref{prop:input}; the machine-verified part is a set of sixteen quantified
 inequalities about interval blocks. A reader who trusts neither the imported input nor the solvers
 still has exact agreement of independently encoded computations at every parameter up to $300$
@@ -1567,11 +1568,35 @@ eleven blocks of $G_p$ that contains at least one such pair, as polynomials in $
 blocks whose largest possible sum is below $24p$ contributes nothing, and every pair not listed is of
 this kind: for example $[6p,8p-2]$ with $\{16p\}$ has largest sum $24p-2$, and $[13p+1,14p-2]$ with
 itself is listed because its largest sum is $28p-4$, whereas $[11p-1,12p-1]$ with itself has largest
-sum $24p-2$ and is not. Each count is the number of lattice points of a
-product of two intervals above the line $a+b=24p$, hence a polynomial of degree at most two in $p$
-for $p\geq4$; the polynomials listed agree with direct enumeration at every $p=4,\ldots,39$. The sum of
-the twenty-one entries is $(23p^2+15p-2)/2$. The pairs inside one block count each unordered pair
-once.
+sum $24p-2$ and is not. The counts follow for every $p\geq4$ from three observations. Write
+$B_4=[6p,8p-2]$, $B_5=[8p,10p-2]$, $B_6=\{10p\}$, $B_7=[11p-1,12p-1]$, $B_8=[13p+1,14p-2]$,
+$B_9=[14p,15p-1]$, $B_{10}=\{16p\}$ and $B_{11}=[17p-1,18p-1]$, the blocks of $G_p$ that occur in
+the table. The sizes of $B_5$ to $B_{11}$ are $2p-1$, $1$, $p+1$, $p-2$, $p$, $1$ and $p+1$.
+
+\emph{The list is complete.} A pair of blocks contributes only if the sum of its two largest
+elements is at least $24p$. The twenty-one listed pairs are those: $B_4$ with $B_{11}$ ($26p-3$);
+$B_5$ with $B_9$, $B_{10}$, $B_{11}$ ($25p-3$ and more); $B_6$ with $B_9$, $B_{10}$, $B_{11}$
+($25p-1$ and more); $B_7$ with $B_8$ ($26p-3$), $B_9$, $B_{10}$, $B_{11}$; $B_8$ with $B_8$
+($28p-4$), $B_9$, $B_{10}$, $B_{11}$; $B_9$ with $B_9$, $B_{10}$, $B_{11}$; $B_{10}$ with $B_{10}$,
+$B_{11}$; and $B_{11}$ with $B_{11}$. Every other pair has largest sum at most $24p-2$: $B_4$ with
+$B_{10}$ gives $24p-2$, $B_5$ with $B_8$ gives $24p-4$, $B_6$ with $B_8$ and $B_7$ with itself give
+$24p-2$, and every pair that uses one of the blocks $\{0\}$, $[1,p]$, $[3p,4p-2]$ gives at most
+$22p-3$.
+
+\emph{Nineteen entries count a full product.} In each of them the smallest sum is already at least
+$24p$ (for example $B_7$ with $B_8$ gives $11p-1+13p+1=24p$, $B_5$ with $B_{10}$ gives $8p+16p$ and
+$B_6$ with $B_9$ gives $10p+14p$), so the count is the product of the two block sizes, or
+$m(m+1)/2$ for a block of size $m$ with itself. This gives every entry of the table except the
+first and the second.
+
+\emph{Two entries need a threshold.} For $B_4$ with $B_{11}$, an element $a\in[6p,7p]$ has $a-6p$
+partners at least $24p-a$ in $B_{11}$, and an element $a\in[7p+1,8p-2]$ has all $p+1$; the count
+is $p(p+1)/2+(p-2)(p+1)=(3p^2-p-4)/2$. For $B_5$ with $B_9$, an element $a\in[9p+1,10p-2]$ has
+$a-9p$ partners and an element $a\leq9p$ has none; the count is $(p-2)(p-1)/2$. Both splits need
+only $7p+1\leq8p-2$ and $9p+1\leq10p-2$, which hold for $p\geq3$. Hence the table holds for every
+$p\geq4$, and the sum of its twenty-one entries is $(23p^2+15p-2)/2$. Direct enumeration of all
+sixty-six block pairs agrees at every $p=4,\ldots,39$ and is kept as a cross-check, not as the
+justification.
 
 \begin{table}[ht]
 \centering
@@ -1605,7 +1630,8 @@ $[17p-1,18p-1]$ & $[17p-1,18p-1]$ & $(p^2+3p+2)/2$\\
 \end{tabular}
 \caption{Number of unordered pairs $\{a\leq b\}\subseteq G_p$ with $a+b\geq24p$ for each pair of blocks of
 $G_p$ with at least one such pair, as a polynomial in $p$; the entries sum to $(23p^2+15p-2)/2$. The
-polynomials were checked against direct enumeration at $p=4,\ldots,39$.}
+counts are derived in the text of Appendix~\ref{app:zero} for every $p\geq4$ and cross-checked by
+enumeration at $p=4,\ldots,39$.}
 \label{tab:zeropairs}
 \end{table}
 
