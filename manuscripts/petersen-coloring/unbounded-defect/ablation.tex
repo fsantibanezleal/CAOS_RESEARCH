@@ -1,0 +1,67 @@
+\section{Ablation: what each ingredient contributes}\label{sec:ablation}
+
+The argument has four removable ingredients: the restoration lemma, each of the two computed transmitted sets, the transfer relation
+over the charge classes, and the antichain form of the closure. Table~\ref{tab:ablation} states what remains when each is removed; the subsections
+below read the table.
+
+\begin{table}[t]\centering\footnotesize
+\begin{tabular}{p{4.2cm}p{8.2cm}}
+\toprule
+ingredient removed & what remains \\
+\midrule
+restoration Lemma~\ref{lem:restore} & the theorem still holds: the refutations of distance 0 for $A$ (\nAtZero{} s) and of distance 1 for $B$ (\nBtOne{} s) replace it \\
+computation on $B$ & $D(A) \subseteq \{1\}$ by Lemma~\ref{lem:restore}(a) and two refutations (\nAtTwo{} s, \nAtThree{} s), and $1 \notin D(B)$ by Lemma~\ref{lem:restore}(b): disjoint \\
+computation on $A$ & $D(B) \subseteq \{0\}$ by Lemma~\ref{lem:restore}(b) and two refutations (\nBtTwo{} s, \nBtThree{} s), and $0 \notin D(A)$ by Lemma~\ref{lem:restore}(a): disjoint \\
+transfer relation, classes only & the conducted sets of the two sides of the 6-edge cut of $\Gfty$ share $\{\Oz,\OEc,\ODtwo\}$ in all ten splits, so no argument by classes separates them \\
+antichain form, exact closure instead & $F_2$: \nElemFtwo{} elements instead of \nCertFtwo{} (a factor of about \nRatioFtwo); $F_3$: \nElemFthree{} instead of \nCertFthree{} (about \nRatioFthree); $F_4$: stopped at the cap \\
+\bottomrule
+\end{tabular}
+\caption{Ablation of the argument: the ingredient removed and what remains, from the transmitted sets of Table~\ref{tab:sets}, the control of Table~\ref{tab:control} and the closure sizes of Table~\ref{tab:closures}. Times are solver times of computation EXP-012.}\label{tab:ablation}
+\end{table}
+
+\subsection{The two transmitted sets and the restoration lemma}\label{sec:ablation-sets}
+
+The disjointness $D(A) \cap D(B) = \emptyset$ is proved three times over. The restoration lemma excludes distance 0 for $A$ and distance 1 for $B$
+(Lemma~\ref{lem:restore}); computation excludes the same two distances by refutations of \nAtZero{} and \nBtOne{} seconds; and computation
+excludes the two remaining distances for each block. Any one of the three subsets of the argument that removes one ingredient still proves
+Theorem~\ref{thm:main}, as Table~\ref{tab:ablation} shows. This redundancy is a check on the encoder: the computation could have
+returned a map for distance 0 on $A$ or for distance 1 on $B$, which would have contradicted the restoration lemma and exposed an error in the lemma or
+in the formula. It did not. The three refutations for $A$ take \nSumAref{} seconds in total and the three for $B$ \nSumBref{} seconds; the smallest set of computations that proves
+the theorem together with the restoration lemma is the pair of refutations of one block, \nPairA{} seconds for $A$ (distances 2 and 3) or \nPairB{} seconds for $B$, so each pair is by itself a complete second proof of the disjointness.
+
+\subsection{Classes without the transfer relation}\label{sec:ablation-control}
+
+The graph $\Gfty$ has a 6-edge cut with sides of 18 and 34 vertices (cut edges 8, 26, 39, 40, 48, 59). For each of the ten splits of the cut into two triples,
+the two sides are 6-poles with Petersen colorings whose conducted sets share $\Oz$, $\OEc$ and $\ODtwo$, so no argument by classes separates them
+(Table~\ref{tab:control}). Their ring of length 2 is $\Gfty$, which has no Petersen coloring, and the product of their sector matrices has a zero diagonal in all six
+sectors in every split. The classes therefore do not detect the non-colorability of $\Gfty$, while the transfer relation does: this is the evidence that the
+semigroup test is not vacuous, in the sense that it returns a zero diagonal on a gluing of two colorable 6-poles that is known not to be colorable.
+
+\input{table-control.tex}
+
+\subsection{What the two comparisons with the graphs test}\label{sec:ablation-direction}
+
+A computed sector matrix contains only entries that are checked maps, so by Lemma~\ref{lem:soundness} a nonzero diagonal of a product is
+always correct. The comparison with the solver can therefore expose a missing entry (a zero trace on a ring for which the solver finds a coloring) or an error in the
+construction of the ring graph (a nonzero trace on a ring that the solver finds not colorable). The \nCrossRings{} agreements of Section~\ref{sec:crosscheck} are all of the kind ``nonzero trace and
+coloring found'', since every ring was colorable; they show that the computed matrices miss nothing that these rings need, and they cannot test the converse
+direction, a zero trace on a ring that the solver finds not colorable, because no such ring occurred. The control of Table~\ref{tab:control}
+supplies ten cases of that converse direction, all on the one graph $\Gfty$. The two comparisons together cover both directions only on those cases. We therefore state
+which claims need which direction.
+
+\begin{itemize}
+\item Claims that rest on soundness only: every ring of claws, of superedges and of both is colorable (Theorem~\ref{thm:ringsY}); every ring of the
+$\PG$, $J_5$, $J_7$ and dodecahedron blocks that has a nonzero trace is colorable.
+\item Claims that rest on the completeness of the computed matrices: the sector of the flower snark rings $J_5$, $J_7$, $J_9$ (Corollary~\ref{cor:flower}), which is supported for the claw by the exhaustive
+enumeration and the second encoding and for these $k$ by the explicit rings (the periodicity for larger $k$ is conjectural); the zero diagonals of the control, which are consistent with the known
+non-colorability of $\Gfty$ but would also appear if matrices were incomplete; and any statement that a sector is not conducted, which for the 6-poles of Table~\ref{tab:splits} is
+decided by the formulas of computation EXP-013 and not by the matrices.
+\item Claims that no computation settles: the existence of a zero-trace element in the closures of $F_4$ and $F_5$ (Table~\ref{tab:closures}).
+\end{itemize}
+
+\subsection{Exact closure against antichain}\label{sec:ablation-closure}
+
+The antichain form changes the cost differently by family. For $F_2$ the certificate has \nCertFtwo{} elements against \nElemFtwo{} and is computed in \nTimeCertFtwo{} seconds against \nTimeExactFtwo{}; for
+$F_3$ the certificate is \nRatioFthree{} times smaller (\nCertFthree{} against \nElemFthree{}) but takes \nTimeCertFthree{} seconds against \nTimeExactFthree{}, so the containment tests offset the saving, whose cost is not measured separately; for $F_1$ both take under a second. For $F_4$ the exact closure stopped at the cap after \nTimeFfour{} seconds and the antichain closure was stopped at the one-hour limit; the 336 generators give $336^2 = \nFfourPairs$ candidate products of two generators, so at least $\nElemFfour - \nFfourPairs = \nFfourLenThree$ of the stored elements are words of length 3, which is how far the exact closure advanced before the cap. So on the
+larger families the exact closure was stopped by the cap and the antichain closure by time. A faster containment test, for example by indexing the kept elements,
+is a possible route to the two undecided families \claim{C}, and is not part of this work. All these comparisons are made on the same generators, the same cap of 200{,}000 elements.
