@@ -55,7 +55,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \end{center}
 \vspace{4pt}}
 
-\title{Consequences of the Three-Dimensional Jacobian Counterexample\\ for Seven Neighbouring Conjectures:\\ Located Implications and Exactly Checked Witnesses}
+\title{Consequences of the Three-Dimensional Jacobian\\ Counterexample for Seven Neighbouring Conjectures:\\ Implications with Their Indices and Exactly Checked Witnesses}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -73,7 +73,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \headerblock
 
 \begin{abstract}
-Alp\"oge's explicit Keller map on $\C^3$, with a three-point fibre, refutes the Jacobian conjecture in every dimension $N\ge3$. Seven neighbouring conjectures are tied to it by published implications whose dimension indices decide what the map refutes. We locate each implication in a primary text, record its theorem and index, and close the implications under composition into a status table with an evidence mark per entry. Exact computations over $\Q$ and $\Q(i)$ check the map and its fibre, a homogeneous-type test, a dimension-15 homogeneous witness, a dimension-48 gradient witness whose Hessian-nilpotent quartic has \npotentialmon\ monomials, and Long's rank-two Poisson map. The Dixmier and Poisson conjectures fail at every index $n\ge3$, and the Poisson conjecture also at $n=2$. The Mathieu conjecture fails for $SU(N)$ with $N\ge15$ and, by Long, for $SU(2)$. The Gaussian moments conjecture fails for $n\ge3$, and the vanishing, Hessian and symmetric forms fail with explicit witnesses. Every check is exact, so no interval applies, and each negative control fires. Mathieu's original paper was not located, so that row rests on an expository rendering. Dixmier at ranks 1 and 2, Poisson at index 1, Mathieu for $3\le N\le14$ and the two-variable Jacobian conjecture stay open.
+Alp\"oge's explicit Keller map on $\C^3$, with a three-point fibre, refutes the Jacobian conjecture in every dimension $N\ge3$. Seven neighbouring conjectures are tied to it by published implications whose dimension indices decide what the map refutes. We record each implication with its theorem and index, locate all but two in a primary text, and close the implications under composition into a status table with an evidence mark per entry. Exact computations over $\Q$ and $\Q(i)$ check the map and its fibre, a homogeneous-type test, a dimension-15 homogeneous witness, a dimension-48 gradient witness whose Hessian-nilpotent quartic has \npotentialmon\ monomials, and Long's rank-two Poisson map. The Dixmier and Poisson conjectures fail at every index $n\ge3$, and the Poisson conjecture also at $n=2$. The Mathieu conjecture fails for $SU(N)$ with $N\ge15$ and, by Long, for $SU(2)$. The Gaussian moments conjecture fails for $n\ge3$, and the vanishing, Hessian and symmetric forms fail with explicit witnesses. Every check is exact, so no interval applies, and each negative control fires. Mathieu's original paper was not located, so that row rests on an expository rendering, and the Image implication was read only in an abstract. Dixmier at ranks 1 and 2, Poisson at index 1, Mathieu for $3\le N\le14$ and the two-variable Jacobian conjecture stay open.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -96,7 +96,7 @@ The contributions are the following.
 \item A scope statement for the Mathieu row: the located proofs do not reach $SU(N)$ for $3\le N\le14$ through the counterexample, and the failure for $N\ge15$ rests on an explicit homogeneous map.
 \end{enumerate}
 
-The main result is the status table. The Dixmier and Poisson conjectures are false at every index $n\ge3$, the Poisson conjecture is false at $n=2$ as well, and only index 1 remains open there. The Mathieu conjecture is false for $SU(N)$ with $N\ge\nhomdim$ and for $SU(2)$. The Gaussian moments conjecture is false for $n\ge3$. The vanishing, Image, Hessian and symmetric forms are false, with explicit witnesses in dimension \nwitnessdim\ for the vanishing and Hessian forms. All exact checks pass, and every negative control fails as it must.
+The main result is the status table. The Dixmier and Poisson conjectures are false at every index $n\ge3$, the Poisson conjecture is false at $n=2$ as well, and only index 1 remains open there. The Mathieu conjecture is false for $SU(N)$ with $N\ge\nhomdim$ and for $SU(2)$. The Gaussian moments conjecture is false for $n\ge3$. The vanishing, Hessian and symmetric forms are false, with explicit witnesses in dimension \nwitnessdim, and the Image conjecture is false in some dimension if its implication to the generalized vanishing conjecture holds as read in an abstract [U]. All exact checks pass, and every negative control fails as it must.
 
 \section{Related work}\label{sec:related}
 
@@ -106,11 +106,11 @@ The related work falls into six groups: the conjecture and its classical reducti
 
 \paragraph{Symmetric and Hessian formulations.} De Bondt and van den Essen reduce the conjecture to maps $x+H$ with symmetric nilpotent $JH$, equivalently to gradients of Hessian-nilpotent quartics, through a construction that doubles the dimension and preserves non-invertibility in both directions \cite{dBvdE2005} [V]. Their companion papers formulate the symmetric dependence problems and prove the symmetric case for $n\le4$ without homogeneity and for $n=5$ with $H$ homogeneous \cite{dBvdE2004, dBvdE2005b} [U]; van den Essen and Washburn treat $n\le4$ with $H$ homogeneous \cite{vdEW2004} [U]. Meng obtained a near-simultaneous reduction to gradient maps $\nabla f$ with $\det h(f)\in\C^\times$; the version of de Bondt and van den Essen is sharper because it preserves nilpotency, and neither lowers the dimension \cite{Meng2006} [U]. De Bondt later strengthened the structural target to maps whose Jacobian has all the dihedral symmetries of the square \cite{dBSym2014} [U]. Zhao proved that the vanishing conjecture for homogeneous Hessian-nilpotent quartics is equivalent to the Jacobian conjecture in all dimensions (Theorem~7.2 of \cite{Zhao2004} [V]) and extended the program to generalized vanishing statements \cite{Zhao2007} [U]. The symmetric positive results fix the smallest dimension in which a witness can live; they do not construct one.
 
-\paragraph{Weyl-algebra and Poisson formulations.} Tsuchimoto and, independently with a different proof, Belov-Kanel and Kontsevich proved that $JC(2n)$ implies the Dixmier conjecture of index $n$ \cite{Tsuchimoto2005, BKK2007} [U] [V]. Adjamagbo and van den Essen placed the Poisson conjecture between them, $JC(2n)\Rightarrow PC(n)\Rightarrow DC(n)\Rightarrow JC(n)$, in every characteristic \cite{AvdE2007} [V]. Zheglov claims a proof of the Dixmier conjecture for the first Weyl algebra \cite{Zheglov2024} [U]. Kanel-Belov and Fedorov prove that $JC(2)$ implies the generalized Dixmier statement for the first Weyl algebra, and that the converse holds under an additional hypothesis on holonomic lifts; they announce no counterexample to $DC(2)$ or $JC(2)$ \cite{KBF2026} [V]. Long's rank-two Poisson map is the first explicit failure of the Poisson conjecture below the chain's reach \cite{LongPoisson2026} [V].
+\paragraph{Weyl-algebra and Poisson formulations.} Tsuchimoto and, independently with a different proof, Belov-Kanel and Kontsevich proved that $JC(2n)$ implies the Dixmier conjecture of index $n$ \cite{Tsuchimoto2005} [U], \cite{BKK2007} [V]. Adjamagbo and van den Essen placed the Poisson conjecture between them, $JC(2n)\Rightarrow PC(n)\Rightarrow DC(n)\Rightarrow JC(n)$, in every characteristic \cite{AvdE2007} [V]. Zheglov claims a proof of the Dixmier conjecture for the first Weyl algebra \cite{Zheglov2024} [U]. Kanel-Belov and Fedorov prove that $JC(2)$ implies the generalized Dixmier statement for the first Weyl algebra, and that the converse holds under an additional hypothesis on holonomic lifts; they announce no counterexample to $DC(2)$ or $JC(2)$ \cite{KBF2026} [V]. Long's rank-two Poisson map is an explicit failure of the Poisson conjecture at two canonical pairs, where the chain decides nothing \cite{LongPoisson2026} [V].
 
 \paragraph{The Mathieu conjecture.} Mathieu proved that his conjecture, taken for all compact connected Lie groups, implies the Jacobian conjecture \cite{Mathieu1997} [U]; the paper was not located. Duistermaat and van der Kallen proved the abelian case \cite{DvdK1998} [U]. Five later texts state the implication without a fixed dimension \cite{vdEMathieu, vdEWZ, DingsKoelink, Zhao2009, MuegerTuset} [V]. Zwart's review is the only located proof of a fixed-dimensional form, and only for maps $x-h$ with $h$ homogeneous \cite{Zwart2025} [V]. Long gave explicit functions on $SU(2)$ that violate the conjecture \cite{LongSU2} [V]; Dings and Koelink and M\"uger and Tuset had studied the $SU(2)$ case before \cite{DingsKoelink, MuegerTuset} [V].
 
-\paragraph{Gaussian moments and Image conjectures.} Derksen, van den Essen and Zhao proved that the Gaussian moments conjecture for all $n$ implies the Jacobian conjecture and that it holds for $n=1$ \cite{DEZ2017} [V]. Long gave explicit polynomials in three variables that violate it, so it fails for every $n\ge3$ \cite{Long2026} [V], and Wilson claims a proof for $n=2$ \cite{Wilson2026} [U]. Van den Essen introduced the Image conjecture, which implies the vanishing conjecture \cite{vdE2010} [U].
+\paragraph{Gaussian moments and Image conjectures.} Derksen, van den Essen and Zhao proved that the Gaussian moments conjecture for all $n$ implies the Jacobian conjecture and that it holds for $n=1$ \cite{DEZ2017} [V]. Long gave explicit polynomials in three variables that violate it, so it fails for every $n\ge3$ \cite{Long2026} [V], and Wilson claims a proof for $n=2$ \cite{Wilson2026} [U]. The Image conjecture was proposed by Zhao \cite{Zhao2010}; van den Essen's exposition states that it implies the generalized vanishing conjecture and hence the Jacobian conjecture \cite{vdE2010} [U], and Zhao's abstract states that the vanishing conjecture is equivalent to special cases of it \cite{Zhao2010} [U]. Only the abstracts were read.
 
 \paragraph{After the counterexample.} The announcement \cite{Alpoge2026} [U] is not a paper; the map in it is checked here [MV]. Thompson published an explicit cubic homogeneous form in dimension 24, with a collision pair, which supplies the input of Section~\ref{sec:fortyeight} \cite{Thompson2026} [MV]. De Bondt gave homogeneous and vanishing-conjecture counterexamples in smaller dimensions, among them a homogeneous map in dimension 15 and vanishing-conjecture failures in dimensions 28 and 30 over the Gaussian integers \cite{deBondt2026} [V]. Van den Essen recovers the map, up to linear changes, by an elementary search guided by a reducible third component, and recalls Magnus's criterion that a planar Keller map with a component of prime degree is invertible \cite{vdE2026} [V]. The first list of consequences is a web note \cite{Zhang2026} [U]. The companion papers treat the three-dimensional structure and the planar case \cite{FoundationalPaper, PlanarPaper}.
 
@@ -130,7 +130,33 @@ A Keller map with two distinct points of equal image has no inverse of any kind,
 \end{equation}
 so that $\{p,x\}=\{z,q\}=1$ \cite{LongPoisson2026}. The Mathieu conjecture $MC(K)$ concerns regular functions $F,G$ on a compact connected Lie group $K$ with Haar measure $dg$: in Long's counterexample on $SU(2)$ the functions satisfy $\int F^n\,dg=0$ and $\int F^nG\,dg\ne0$ for every $n\ge1$, which contradicts the conjecture \cite{LongSU2}. The full statement of the conjecture is not transcribed in the computations of this paper and is not used beyond the implications below. The Gaussian moments conjecture $GMC(n)$ concerns polynomials $P,Q$ in $n$ independent standard real Gaussian variables: the conjecture is that $E(P^m)=0$ for all $m\ge1$ forces $E(QP^m)=0$ for large $m$ \cite{DEZ2017}, and Long's polynomials have $E(P^m)=0$ and $E(QP^m)=m!\ne0$ for every $m\ge1$, which contradicts it for $n=3$ \cite{Long2026}.
 
-For the vanishing conjecture let $\Delta=\sum_i\partial_i^2$. A polynomial $P$ is Hessian nilpotent (HN) when its Hessian matrix is nilpotent. Zhao's Conjecture~7.1 states that for every HN polynomial $P$ the deformed inversion pair $Q_t$ is a polynomial in $t$ and $z$, more precisely that $\Delta^kP^{k+1}=0$ for $k\gg0$ \cite{Zhao2004}. The Hessian conjecture $HC(n)$ of de Bondt and van den Essen states that for $f\in\C[x]$ with nilpotent Hessian $h(f)$ the map $(x_1+f_{x_1},\dots,x_n+f_{x_n})$ is invertible \cite{dBvdE2005}. The Image conjecture is used only through its implication to the vanishing conjecture \cite{vdE2010}. The dimension index of each statement is its rank $n$ for $DC$, its number $n$ of canonical pairs (so $2n$ variables) for $PC$, the group $SU(N)$ for $MC$, and the number of Gaussian variables for $GMC$.
+For the vanishing conjecture let $\Delta=\sum_i\partial_i^2$. A polynomial $P$ is Hessian nilpotent (HN) when its Hessian matrix is nilpotent. Zhao's Conjecture~7.1 states that for every HN polynomial $P$ the deformed inversion pair $Q_t$ is a polynomial in $t$ and $z$, more precisely that $\Delta^kP^{k+1}=0$ for $k\gg0$ \cite{Zhao2004}. The Hessian conjecture $HC(n)$ of de Bondt and van den Essen states that for $f\in\C[x]$ with nilpotent Hessian $h(f)$ the map $(x_1+f_{x_1},\dots,x_n+f_{x_n})$ is invertible \cite{dBvdE2005}. The Image conjecture of Zhao \cite{Zhao2010} is used only through its implication to the generalized vanishing conjecture, which contains the vanishing conjecture \cite{vdE2010}. The dimension index of each statement is its rank $n$ for $DC$, its number $n$ of canonical pairs (so $2n$ variables) for $PC$, the group $SU(N)$ for $MC$, and the number of Gaussian variables for $GMC$.
+
+Table~\ref{tab:notation} lists the notation used in the rest of the paper.
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{0.27\textwidth}L{0.68\textwidth}@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$JF$, $\det JF$ & Jacobian matrix of a polynomial map $F$ and its determinant \\
+$JC(N)$, $DC(n)$, $PC(n)$ & Jacobian, Dixmier and Poisson conjectures of dimension, rank and index $N$, $n$ \\
+$MC(K)$, $GMC(n)$ & Mathieu conjecture for the group $K$; Gaussian moments conjecture in $n$ variables \\
+$HC(n)$, $h(f)$ & Hessian conjecture; Hessian matrix of $f$ \\
+$H$, $JH$, $\nu$ & Higher-order part of a map $x+H$, its Jacobian matrix and the nilpotency index of $JH$ \\
+$f_H$, $S$, $\widetilde F$ & Potential, linear change of variables and symmetric map $\mathrm{id}+\nabla f_H$ of the symmetrization \\
+$P_\star=-f_H$ & Hessian-nilpotent quartic that falsifies the vanishing conjecture \\
+$\Pi$, $\{\cdot,\cdot\}$ & Matrix of the brackets of the coordinates; the Poisson bracket~\eqref{eq:bracket} \\
+$J_2(F)$ & Ideal of all second partial derivatives of the components of $F$ \\
+A1 to A5, EXP-$nnn$ & The five procedures of Section~\ref{sec:methods}; an archived computation \\
+{[MV], [D], [C], [V], [U]} & Evidence marks of Section~\ref{sec:marks} \\
+\bottomrule
+\end{tabular}
+\caption{Notation of the paper: the symbols for the conjectures, the maps of the symmetrization, the ideal of second partial derivatives, the procedures and the evidence marks, each with its meaning as used in Sections~\ref{sec:problem} to~\ref{sec:results}.}
+\label{tab:notation}
+\end{table}
 
 \subsection{Evidence marks}\label{sec:marks}
 
@@ -221,7 +247,7 @@ The map $\widetilde F=\mathrm{id}+\nabla f_H$ is then a symmetric Keller map. A 
 \begin{equation}\label{eq:collision}
 w=i\,\big(I+JH(v)^{t}\big)^{-1}(u-v),\qquad p_1=(u,0),\qquad p_2=(v-iw,\,w),
 \end{equation}
-where the inverse is the finite Neumann sum $\sum_{k=0}^{\nu-1}(-JH(v)^t)^k$ and $\nu$ is the nilpotency index of $JH$. Nilpotency of $JH$ is established by exact powers: the powers $(JH)^k$ are computed as sparse matrices of polynomials stored as dictionaries of \texttt{Fraction} coefficients, and the traces $\mathrm{Tr}(JH^k)$ are checked as an independent consistency test through the Newton identities. Algorithm~\ref{alg:a3} lists the steps.
+where the matrix $(I+JH(v)^t)^{-1}$ is computed as a direct inverse over $\Q(i)$ (it equals the finite Neumann sum $\sum_{k=0}^{\nu-1}(-JH(v)^t)^k$, with $\nu$ the nilpotency index of $JH$). Nilpotency of $JH$ is established by exact powers: the powers $(JH)^k$ are computed as sparse matrices of polynomials stored as dictionaries of \texttt{Fraction} coefficients, by repeated squaring to $(JH)^2$, $(JH)^4$, $(JH)^8$ and $(JH)^{16}$ and then two multiplications by $JH$, six matrix products in all, and the traces $\mathrm{Tr}(JH^k)$ at $k=1,2,4,8$ are checked as an independent consistency test through the Newton identities. Algorithm~\ref{alg:a3} lists the steps.
 
 The input is Thompson's cubic homogeneous form on $\Q^{24}$ with 54 monomials and a rational collision pair, matched to its SHA-256 digest before use (Table~\ref{tab:hashes}). The arithmetic domain is $\Q(i)$ for the potential and the collision and $\Q$ for the powers of $JH$. The chain of products had term counts \njhone, \njhtwo, \njhfour, \njheight, \njhsixteen\ and \njhseventeen\ for the powers $k=1,2,4,8,16,17$; the power $(JH)^{\nnilindex}$ vanishes (Figure~\ref{fig:chain}). The potential $f_H$ has \npotentialmon\ monomials over $\Q(i)$, and $\Delta P_\star^2$ for $P_\star=-f_H$ has \ndeltaterms\ terms.
 
@@ -230,10 +256,10 @@ The input is Thompson's cubic homogeneous form on $\Q^{24}$ with 54 monomials an
 \begin{algorithmic}[1]
 \Require $H$ on $\Q^n$ with every component homogeneous, and $u\ne v$ with $u+H(u)=v+H(v)$
 \State check the SHA-256 digests of the input files; check homogeneity and the collision exactly
-\State $P\gets I$; \textbf{for} $k=1,2,\dots$ \textbf{do} $P\gets P\cdot JH$ (sparse, exact), recording the number of terms and, at selected $k$, $\mathrm{Tr}\,P$; \textbf{until} $P=0$; let $\nu\gets k$
+\State compute $(JH)^2,(JH)^4,(JH)^8,(JH)^{16}$ by repeated squaring, then $(JH)^{17}$ and $(JH)^{18}$ by multiplication by $JH$ (sparse, exact), recording the number of terms and $\mathrm{Tr}$ at $k=1,2,4,8$; stop at the first zero power and let $\nu$ be its exponent
 \State $f\gets-i\sum_jH_j(x+iy)y_j$ expanded over $\Q(i)$; check that $f$ is a homogeneous quartic when $H$ is cubic
 \State check the identity~\eqref{eq:conj} in all $2n$ components
-\State $B\gets\sum_{k=0}^{\nu-1}(-JH(v)^t)^k$; $\;w\gets i\,B\,(u-v)$; $\;p_1\gets(u,0)$; $\;p_2\gets(v-iw,w)$
+\State $B\gets(I+JH(v)^t)^{-1}$ by a direct inverse over $\Q(i)$; $\;w\gets i\,B\,(u-v)$; $\;p_1\gets(u,0)$; $\;p_2\gets(v-iw,w)$
 \State check $p_1\ne p_2$ and $\widetilde F(p_1)=\widetilde F(p_2)$ in all $2n$ components, exactly over $\Q(i)$
 \State $P_\star\gets-f$; count its monomials and the terms of $\Delta P_\star^2$
 \end{algorithmic}
@@ -317,11 +343,11 @@ For the counterexample, $d=\max_i\deg F_i=7\ge3$, so Proposition~\ref{prop:homty
 Let $H:\C^n\to\C^n$ be polynomial with $JH$ nilpotent. Then $\widetilde F=\mathrm{id}+\nabla f_H$ satisfies the conjugation identity~\eqref{eq:conj}, $\det J\widetilde F=1$, and $\widetilde F$ is injective if and only if $x+H$ is. If $u+H(u)=v+H(v)$ with $u\ne v$, then the points $p_1,p_2$ of~\eqref{eq:collision} are distinct and $\widetilde F(p_1)=\widetilde F(p_2)$.
 \end{proposition}
 \begin{proof}
-The identity~\eqref{eq:conj} and the characteristic-polynomial identity $\det(zI-h(f_H))\big|_{S(x,y)}=\det(zI-JH)\det(zI-JH^{t})$ are proved in \cite{dBvdE2005} for every $H$ with nilpotent $JH$, and computation \EXP{041} checks the first identically in all 48 components for the $H$ of this paper. The Hessian of $f_H$ is then nilpotent, so $\det J\widetilde F=\det(I+h(f_H))=1$. In the conjugated form the first block is $x+H(x)$ and the second is affine in $y$ with matrix $I+JH(x)^t$, invertible for every $x$ because $JH(x)$ is nilpotent; a map of this triangular shape is injective exactly when its first block is. For the collision, the first block takes the value $u+H(u)=v+H(v)$ at $(u,0)$ and $(v,w)$. The second block takes $-iH(u)$ at $(u,0)$ and $w+JH(v)^tw-iH(v)$ at $(v,w)$, which are equal because $(I+JH(v)^t)w=i(u-v)=i\,(H(v)-H(u))$ by the definition of $w$ and the equality of the images. Since $S$ is a bijection, $p_1=S(u,0)$ and $p_2=S(v,w)$ are distinct and collide. \qedhere
+The identity~\eqref{eq:conj} and the characteristic-polynomial identity $\det(zI-h(f_H))\big|_{S(x,y)}=\det(zI-JH)\det(zI-JH^{t})$ are proved in \cite{dBvdE2005} for every $H$ with nilpotent $JH$, and computation \EXP{041} checks the first identically in all 48 components for the $H$ of this paper. The Hessian of $f_H$ is then nilpotent, so $\det J\widetilde F=\det(I+h(f_H))=1$. An elementary route gives the same nilpotency from two checked facts: by~\eqref{eq:conj} the matrix $J(S^{-1}\circ\widetilde F\circ S)-I$ is block lower triangular with diagonal blocks $JH(x)$ and $JH(x)^t$, hence nilpotent, and $h(f_H)=J\widetilde F-I$ is similar to it through the constant linear map $S$. In the conjugated form the first block is $x+H(x)$ and the second is affine in $y$ with matrix $I+JH(x)^t$, invertible for every $x$ because $JH(x)$ is nilpotent; a map of this triangular shape is injective exactly when its first block is. For the collision, the first block takes the value $u+H(u)=v+H(v)$ at $(u,0)$ and $(v,w)$. The second block takes $-iH(u)$ at $(u,0)$ and $w+JH(v)^tw-iH(v)$ at $(v,w)$, which are equal because $(I+JH(v)^t)w=i(u-v)=i\,(H(v)-H(u))$ by the definition of $w$ and the equality of the images. Since $S$ is a bijection, $p_1=S(u,0)$ and $p_2=S(v,w)$ are distinct and collide. \qedhere
 \end{proof}
 
 \begin{proposition}[Mathieu transfer and padding]\label{prop:mathieu}
-Suppose Theorems~4.23 and~4.16 of \cite{Zwart2025} hold as stated: $MC(SU(N))$ implies that every Keller map $x-h$ of $\C^N$ with $h$ homogeneous is invertible. If $G=x-h$ is a non-injective Keller map of $\C^N$ with $h$ homogeneous, then $MC(SU(N'))$ is false for every $N'\ge N$.
+Suppose Zwart's reading holds \cite{Zwart2025}: Conjecture~4.15 is stated for $SL(N,\C)$ at a fixed $N$, Theorem~4.23 derives it from $MC(SU(N))$, and the proof of Theorem~4.16 uses it for the module of the map's own dimension. Then $MC(SU(N))$ implies that every Keller map $x-h$ of $\C^N$ with $h$ homogeneous is invertible. If $G=x-h$ is a non-injective Keller map of $\C^N$ with $h$ homogeneous, then $MC(SU(N'))$ is false for every $N'\ge N$.
 \end{proposition}
 \begin{proof}
 The contrapositive of the implication gives $MC(SU(N))$ false. For $N'>N$ the map $G'=(G,x_{N+1},\dots,x_{N'})=x-h'$ with $h'=(h,0,\dots,0)$ has the same degree of homogeneity, with the zero polynomial taken as homogeneous of every degree, as the computations do. Its Jacobian determinant is $\det JG=1$ and it is non-injective, so the implication at $N'$ fails. \qedhere
@@ -408,7 +434,7 @@ Mathieu proved that his conjecture, taken for all compact connected Lie groups, 
 \end{corollary}
 
 \begin{corollary}[Dixmier conjecture, 1968]
-$JC(2n)$ implies $\mathrm{Dixmier}(n)$, and $\mathrm{Dixmier}(n)$ implies $JC(n)$ \cite{BKK2007, Tsuchimoto2005} [V]. Since $JC(n)$ is false for every $n \ge 3$, the second implication gives that $\mathrm{Dixmier}(n)$ is false for every $n \ge 3$ [D]: the \textbf{full Dixmier conjecture is false}. Ranks $1$ (Dixmier's original question) and $2$ remain open [C]; the first implication gives no information on rank $2$, because it runs from $JC(4)$ to $\mathrm{Dixmier}(2)$. A proof of rank $1$ is claimed in \cite{Zheglov2024} [U].
+$JC(2n)$ implies $\mathrm{Dixmier}(n)$, and $\mathrm{Dixmier}(n)$ implies $JC(n)$ \cite{BKK2007} [V], \cite{Tsuchimoto2005} [U]. Since $JC(n)$ is false for every $n \ge 3$, the second implication gives that $\mathrm{Dixmier}(n)$ is false for every $n \ge 3$ [D]: the \textbf{full Dixmier conjecture is false}. Ranks $1$ (Dixmier's original question) and $2$ remain open [C]; the first implication gives no information on rank $2$, because it runs from $JC(4)$ to $\mathrm{Dixmier}(2)$. A proof of rank $1$ is claimed in \cite{Zheglov2024} [U].
 \end{corollary}
 
 \begin{corollary}[Poisson conjecture, 2007]\label{res:poisson}
@@ -420,11 +446,11 @@ $GMC(n)$ for all $n$ implies $JC$ \cite{DEZ2017} [V]; hence \textbf{GMC is false
 \end{corollary}
 
 \begin{corollary}[Zhao's vanishing conjecture]
-The vanishing conjecture for Hessian-nilpotent polynomials is equivalent to JC \cite{Zhao2004, Zhao2007} [V]; hence it is \textbf{false}: there exists a Hessian-nilpotent quartic $P$ with $\Delta^m P^m = 0$ for all $m$ but $\Delta^m P^{m+1} \ne 0$ for infinitely many $m$ [D]. An explicit witness is given in Section~\ref{sec:fortyeight} [MV].
+The vanishing conjecture for Hessian-nilpotent polynomials is equivalent to JC \cite{Zhao2004} [V], \cite{Zhao2007} [U]; hence it is \textbf{false}: there exists a Hessian-nilpotent quartic $P$ with $\Delta^m P^m = 0$ for all $m$ but $\Delta^m P^{m+1} \ne 0$ for infinitely many $m$ [D]. An explicit witness is given in Section~\ref{sec:fortyeight}: its collision is [MV], and its failure of the vanishing conjecture is [D] by Zhao's Theorems~3.4 and~6.2 \cite{Zhao2004} [V].
 \end{corollary}
 
 \begin{corollary}[Image conjecture]
-The Image conjecture implies the vanishing conjecture \cite{vdE2010} [U]; hence it is \textbf{false in some dimension} [D].
+The Image conjecture, proposed by Zhao \cite{Zhao2010}, implies the generalized vanishing conjecture, which contains the vanishing conjecture \cite{vdE2010}; the implication was read only in the abstracts [U], so the failure of the Image conjecture in some dimension is [D] on a [U] implication.
 \end{corollary}
 
 \begin{corollary}[Symmetric / gradient Jacobian conjecture]
@@ -445,9 +471,9 @@ As of 2026-07-22 no explicit symmetric, gradient, or Hessian-nilpotent witness h
 
 \emph{Input.} W. Thompson's explicit Bass--Connell--Wright cubic-homogeneous form of the counterexample \cite{Thompson2026}: $G = U + H$ on $\Q^{24}$, $H$ cubic homogeneous with \nthompsonmon\ monomials, with a published rational collision pair. We verified this form independently (homogeneity; the exact collision; nilpotency of $JH$ by an exact sparse chain). The nilpotency index is $\nnilindex$, not $17$ as stated there: $(JH)^{\nnilindex} = 0$ while $(JH)^{17}$ retains \njhseventeen\ terms [MV].
 
-\emph{Construction} (de Bondt--van den Essen \cite{dBvdE2005}). The potential $f = -i \sum_{j=1}^{24} H_j(x + iy)\, y_j$ is a homogeneous quartic in 48 variables (\npotentialmon\ monomials over $\Q(i)$) with nilpotent Hessian (their characteristic-polynomial identity reduces this to the nilpotency of $JH$). The triangular conjugation~\eqref{eq:conj} was verified identically in all 48 components, so $\widetilde F = \mathrm{id} + \nabla f$ is a symmetric Keller map ($\det J\widetilde F = 1$) [MV].
+\emph{Construction} (de Bondt--van den Essen \cite{dBvdE2005}). The potential $f = -i \sum_{j=1}^{24} H_j(x + iy)\, y_j$ is a homogeneous quartic in 48 variables (\npotentialmon\ monomials over $\Q(i)$) with nilpotent Hessian (their characteristic-polynomial identity reduces this to the nilpotency of $JH$). The triangular conjugation~\eqref{eq:conj} was verified identically in all 48 components, so $\widetilde F = \mathrm{id} + \nabla f$ is a symmetric Keller map ($\det J\widetilde F = 1$): the conjugation is [MV], the nilpotency of the Hessian and so the determinant are [D] from it and from $(JH)^{\nnilindex}=0$ (Proposition~\ref{prop:sym}).
 
-\emph{The collision.} With $(u, v)$ Thompson's collision pair and $w = i\,(I + JH(v)^t)^{-1}(u - v)$, the points $p_1 = (u, 0)$ and $p_2 = (v - iw,\, w)$ are distinct and satisfy $\widetilde F(p_1) = \widetilde F(p_2)$ exactly over $\Q(i)$. \textbf{Hence the Hessian conjecture fails in dimension 48 with an explicit witness}, and $P_\star = -f$ is an explicit homogeneous Hessian-nilpotent quartic falsifying the vanishing conjecture [MV]. The finite certificate of failure is the collision itself; the consistency check $\Delta P_\star^2 \ne 0$, forced by Zhao's Corollary~3.9 for any failing potential, holds with \ndeltaterms\ terms [MV]. The reality obstruction is intrinsic: a nonzero real Hessian-nilpotent polynomial does not exist \cite{Zhao2004} [V], so the $\Q(i)$ coefficients are unavoidable. The symmetric positive results, dimension $\le 4$ nonhomogeneous and $\le 5$ homogeneous \cite{dBvdE2005b, vdEW2004} [U], leave the minimal witness dimension open between those bounds and the failing dimensions of \cite{deBondt2026}, 28 and 30 [V], and 48 for the witness checked here.
+\emph{The collision.} With $(u, v)$ Thompson's collision pair and $w = i\,(I + JH(v)^t)^{-1}(u - v)$, the points $p_1 = (u, 0)$ and $p_2 = (v - iw,\, w)$ are distinct and satisfy $\widetilde F(p_1) = \widetilde F(p_2)$ exactly over $\Q(i)$. \textbf{Hence the Hessian conjecture fails in dimension 48 with an explicit witness} [D], the collision being [MV], and $P_\star = -f$ is an explicit homogeneous Hessian-nilpotent quartic that falsifies the vanishing conjecture [D] by Zhao's Theorems~3.4 and~6.2 \cite{Zhao2004} [V]. The finite certificate of failure is the collision itself; the consistency check $\Delta P_\star^2 \ne 0$, forced by Zhao's Corollary~3.9 for any failing potential, holds with \ndeltaterms\ terms [MV]. The reality obstruction is intrinsic: a nonzero real Hessian-nilpotent polynomial does not exist \cite{Zhao2004} [V], so the $\Q(i)$ coefficients are unavoidable. The symmetric positive results, dimension $\le 4$ nonhomogeneous and $\le 5$ homogeneous \cite{dBvdE2005b, vdEW2004} [U], leave the minimal witness dimension open between those bounds and the failing dimensions of \cite{deBondt2026}, 28 and 30 [V], and 48 for the witness checked here.
 
 \begin{figure}[t]
 \centering
@@ -456,11 +482,11 @@ As of 2026-07-22 no explicit symmetric, gradient, or Hessian-nilpotent witness h
 \label{fig:chain}
 \end{figure}
 
-Figure~\ref{fig:chain} shows the chain of exact products that certifies nilpotency. It does not show the traces, which vanish for $k=2,4,8$ in the same run, and the figure alone does not distinguish index 17 from 18: the six surviving terms of $(JH)^{17}$ do.
+Figure~\ref{fig:chain} shows the chain of exact products that certifies nilpotency. It does not show the traces, which vanish for $k=1,2,4,8$ in the same run, and the figure alone does not distinguish index 17 from 18: the six surviving terms of $(JH)^{17}$ do.
 
 \subsection{Long's Poisson map (EXP-144)}\label{sec:poissonresult}
 
-Algorithm~A5 recomputes Long's map from the printed formulas and finds every identity that Long states. The map $(x,q,p,z)\mapsto(R,T,D,S)$ satisfies $\{D,R\}=\{S,T\}=1$ and the four other brackets vanish [MV]; $\det JF=1$ [MV]; $R=x(2-3xq)$ is reducible [MV]; and the fibre over $(R,T,D,S)=(0,\tfrac18,0,0)$ consists of exactly three rational points, with quotient dimension \npoissonquot\ equal to the number of solutions, so the ideal is radical [MV]:
+Algorithm~\ref{alg:a5} (A5) recomputes Long's map from the printed formulas and finds every identity that Long states. The map $(x,q,p,z)\mapsto(R,T,D,S)$ satisfies $\{D,R\}=\{S,T\}=1$ and the four other brackets vanish [MV]; $\det JF=1$ [MV]; $R=x(2-3xq)$ is reducible [MV]; and the fibre over $(R,T,D,S)=(0,\tfrac18,0,0)$ consists of exactly three rational points, with quotient dimension \npoissonquot\ equal to the number of solutions, so the ideal is radical [MV]:
 \begin{equation}\label{eq:longfibre}
 (x,q,p,z)\in\Big\{(-1,-\tfrac23,\tfrac{247}{96},-\tfrac{89}{64}),\ (0,0,\tfrac1{24},-\tfrac18),\ (1,\tfrac23,\tfrac{247}{96},-\tfrac{89}{64})\Big\}.
 \end{equation}
@@ -488,7 +514,7 @@ Table~\ref{tab:validation} lists, for each load-bearing fact, the independent ro
 
 The source-attack route of \EXP{136} reads each index from the statement in the body of the paper and not from an abstract alone. For Mathieu it collects seven statements of the implication. Six state it without a fixed dimension (``for all compact connected Lie groups'', ``for all $n$''). Zwart's Theorem~2.2 and Corollary~4.24 state the fixed-dimensional form for general maps, and the secondary note \cite{Zhang2026} cites that theorem. Zwart's proof supplies the fixed-dimensional statement only for maps $x-h$ with $h$ homogeneous, and passes to general maps through Theorem~4.4, whose Bass--Connell--Wright reduction adds variables. The route therefore restricts the located proof to the homogeneous form, and the dimension-15 witness of that form is the basis of the Mathieu failure for $N\ge15$. A bounded literature search of 2026-09-18 on Dixmier ranks 1 and 2, $GMC(2)$ and $SU(N)$ found Long's $SU(2)$ paper, Wilson's and Zheglov's preprints, and nothing on $SU(N)$ for $3\le N\le23$ at that date; it did not locate Long's rank-two Poisson paper, which a later reading of the recent literature supplied. A bounded search is not exhaustive.
 
-The nilpotency of the Hessian of the 48-variable potential is deduced, not checked directly: computation \EXP{041} verifies that $JH$ is nilpotent of index \nnilindex\ and that the conjugation identity~\eqref{eq:conj} holds, and the characteristic-polynomial identity of \cite{dBvdE2005} then gives the nilpotency of $h(f_H)$. No independent route computes powers of $h(f_H)$ itself. The consistency check $\Delta P_\star^2\ne0$ with \ndeltaterms\ terms is a necessary condition for a failing potential and is not a disproof by itself.
+The nilpotency of the Hessian of the 48-variable potential is derived [D], not checked directly: computation \EXP{041} verifies that $JH$ is nilpotent of index \nnilindex\ and that the conjugation identity~\eqref{eq:conj} holds, and either the characteristic-polynomial identity of \cite{dBvdE2005} or the block-triangular argument of Proposition~\ref{prop:sym} then gives the nilpotency of $h(f_H)$. No independent route computes powers of $h(f_H)$ itself. The consistency check $\Delta P_\star^2\ne0$ with \ndeltaterms\ terms is a necessary condition for a failing potential and is not a disproof by itself.
 
 \section{Ablation: the negative controls}\label{sec:ablation}
 
@@ -531,13 +557,13 @@ The two negative results of the paper are the homogeneous-type obstruction of $F
 
 \section{Limitations}\label{sec:limitations}
 
-\paragraph{Internal validity.} Every computation uses the same algebra system, sympy, for Gr\"obner bases, determinants and expansions; the second routes reduce but do not remove the risk of a library defect. The fibre of $F$ in \EXP{001} is read off one lex basis without the radical certificate that \EXP{144} adds. The formulas of Long's map were transcribed from the page images of one arXiv version (v1), and the transcription test of term counts and degrees, the Poisson identities and the controls make an undetected error implausible without excluding it. The Bass--Connell--Wright ladder from the three-dimensional map to Thompson's 24-variable form was not rerun, so that form is an input verified for homogeneity, collision and nilpotency and not a derived object. The version of the algebra system is recorded for \EXP{001} and \EXP{144} only; the sizes and times of the other runs are those of the archived artifacts. The time of the homogeneous-type test is not recorded.
+\paragraph{Internal validity.} Every computation uses the same algebra system, sympy, for Gr\"obner bases, determinants and expansions; the second routes reduce but do not remove the risk of a library defect. The fibre of $F$ in \EXP{001} is read off one lex basis without the radical certificate that \EXP{144} adds. The formulas of Long's map were transcribed from the page images of one arXiv version (v1), and the transcription test of term counts and degrees, the Poisson identities and the controls make an undetected error implausible without excluding it. The Bass--Connell--Wright ladder from the three-dimensional map to Thompson's 24-variable form was not rerun, so that form is an input verified for homogeneity, collision and nilpotency and not a derived object. The version of the algebra system is stated in the method plan of \EXP{001} and pinned in the requirements file of \EXP{144}; no artifact of any run records it, and the sizes and times of the runs are those of the archived artifacts. The time of the homogeneous-type test is not recorded.
 
-\paragraph{External validity.} Mathieu's 1997 paper was not located, so the Mathieu row rests on Zwart's expository rendering of Theorems~5.3 and~5.4 at fixed $N$, marked [V], and on the original, marked [U]. If the original contains a dimension-preserving argument for general Keller maps, the counterexample would decide $SU(N)$ for $3\le N\le14$ and the row would change. Wilson's and Zheglov's proofs are preprints and are not checked here [U]. De Bondt's dimensions 28 and 30 are read in the primary text and not re-verified [V]. The page numbers of the located theorems were not recorded, except for the polynomials of Long's map, so the table gives theorem numbers and not pages for the other rows. The symmetric positive results for small dimensions are quoted as stated in the primary papers that cite them, whose full texts were not fetched [U].
+\paragraph{External validity.} Mathieu's 1997 paper was not located, so the Mathieu row rests on Zwart's Theorems~4.16 and~4.23, which render Mathieu's Theorems~5.3 and~5.4, at fixed $N$, marked [V], and on the original, marked [U]. If the original contains a dimension-preserving argument for general Keller maps, the counterexample would decide $SU(N)$ for $3\le N\le14$ and the row would change. Wilson's and Zheglov's proofs are preprints and are not checked here [U]. De Bondt's dimensions 28 and 30 are read in the primary text and not re-verified [V]. The page numbers of the located theorems were not recorded, except for the polynomials of Long's map, so the table gives theorem numbers and not pages for the other rows. The symmetric positive results for small dimensions are quoted as stated in the primary papers that cite them, whose full texts were not fetched [U].
 
-\paragraph{Construct validity.} The marks separate what was computed from what was derived or read. The padding steps (dummy variables for $JC$, identity coordinates for Mathieu, identity canonical pairs for Poisson) are proved in Section~\ref{sec:theory} but not computed beyond the cases listed, so they are [D]. The closure was computed for $n\le\nclosuremax$ and the all-$n$ statement is [D]: the rules do not depend on $n$. The Markus--Yamabe conjecture and the factorial conjecture are excluded from the table because the implication direction of the located statements does not carry the failure of the Jacobian conjecture to them; for the Markus--Yamabe conjecture the date of an independent earlier refutation is recorded without a primary source [U].
+\paragraph{Construct validity.} The marks separate what was computed from what was derived or read. The padding steps (dummy variables for $JC$, identity coordinates for Mathieu, identity canonical pairs for Poisson) are proved in Section~\ref{sec:theory} but not computed beyond the cases listed, so they are [D]. The closure was computed for $n\le\nclosuremax$ and the all-$n$ statement is [D]: the rules do not depend on $n$. The Markus--Yamabe conjecture and the factorial conjecture are excluded from the table because the implication direction of the located statements does not carry the failure of the Jacobian conjecture to them; the Markus--Yamabe conjecture was refuted independently in 1997 by a polynomial counterexample \cite{Cima1997} [V] (its dimension was not read).
 
-\paragraph{Scope.} The paper covers seven conjectures and the indices that the located implications and the explicit witnesses decide. It does not resolve the two-variable Jacobian conjecture, the Dixmier conjecture at ranks 1 and 2, or the Poisson conjecture at index 1. It does not decide $SU(N)$ for $3\le N\le14$ or the other compact groups, and it gives no witness for the Image conjecture.
+\paragraph{Scope.} The paper covers seven conjectures and the indices that the located implications and the explicit witnesses decide. It does not resolve the two-variable Jacobian conjecture, the Dixmier conjecture at ranks 1 and 2, or the Poisson conjecture at index 1. It does not decide $SU(N)$ for $3\le N\le14$ or the other compact groups, and it gives no witness for the Image conjecture, whose implication was read only in an abstract.
 
 \section{Reproducibility and data availability}\label{sec:repro}
 
@@ -552,62 +578,64 @@ The next steps are a search for a non-invertible Keller map of homogeneous type 
 
 \begin{thebibliography}{99}\raggedright
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
-2026-07-20; found working with Claude Fable 5 (Anthropic); question posed by Akhil. % voice-ok: external attribution, as the announcement states it
+2026-07-20; found working with Claude Fable 5 (Anthropic); question posed by Akhil Mathew. % voice-ok: external attribution, as the announcement states it
 \bibitem{Keller1939} O.-H. Keller, Ganze Cremona-Transformationen, \emph{Monatsh. Math. Phys.} 47 (1939), 299--306, doi:10.1007/BF01695502.
-\bibitem{RodriguezDiaz2026} L. O. Rodriguez Diaz, On the origin of the Jacobian conjecture, \emph{C. R. Math.} 364 (2026), 363--370, arXiv:2512.23614.
-\bibitem{Wang1980} S. S.-S. Wang, the case of maps of degree two, 1980 (title and journal not recorded).
-\bibitem{Moh1983} T.-T. Moh, the two-variable case up to degree 100, \emph{J. reine angew. Math.} 340 (1983), 140--212 (title not recorded).
+\bibitem{Cima1997} A. Cima, A. van den Essen, A. Gasull, E. Hubbers, F. Ma\~nosas, A polynomial counterexample to the Markus--Yamabe conjecture, \emph{Adv. Math.} 131 (1997), no. 2, 453--457, doi:10.1006/aima.1997.1673.
+\bibitem{RodriguezDiaz2026} L. O. Rodriguez Diaz, On the origin of the Jacobian conjecture, \emph{C. R. Math.} 364 (2026), 363--370, arXiv:2512.23614, doi:10.5802/crmath.831.
+\bibitem{Wang1980} S. S.-S. Wang, A Jacobian criterion for separability, \emph{J. Algebra} 65 (1980), 453--494, doi:10.1016/0021-8693(80)90233-1.
+\bibitem{Moh1983} T.-T. Moh, On the Jacobian conjecture and the configurations of roots, \emph{J. reine angew. Math.} 340 (1983), 140--212, doi:10.1515/crll.1983.340.140.
 \bibitem{BCW1982} H. Bass, E. H. Connell, D. Wright, The Jacobian conjecture: reduction of
 degree and formal expansion of the inverse, \emph{Bull. Amer. Math. Soc. (N.S.)} 7 (1982),
-287--330.
-\bibitem{Druzkowski1983} L. M. Druzkowski, An effective approach to Keller's Jacobian conjecture, \emph{Math. Ann.} 264 (1983), 303--313.
-\bibitem{GorniZampieri1997} G. Gorni, G. Zampieri, On cubic-linear polynomial mappings, \emph{Indag. Math. (N.S.)} 8 (1997), 471--492.
-\bibitem{Pinchuk1994} S. Pinchuk, A counterexample to the strong real Jacobian conjecture, \emph{Math. Z.} 217 (1994), 1--4.
+287--330, doi:10.1090/S0273-0979-1982-15032-7.
+\bibitem{Druzkowski1983} L. M. Druzkowski, An effective approach to Keller's Jacobian conjecture, \emph{Math. Ann.} 264 (1983), 303--313, doi:10.1007/BF01459126.
+\bibitem{GorniZampieri1997} G. Gorni, G. Zampieri, On cubic-linear polynomial mappings, \emph{Indag. Math. (N.S.)} 8 (1997), 471--492, doi:10.1016/S0019-3577(97)81552-2.
+\bibitem{Pinchuk1994} S. Pinchuk, A counterexample to the strong real Jacobian conjecture, \emph{Math. Z.} 217 (1994), 1--4, doi:10.1007/BF02571929.
 \bibitem{vdE2000} A. van den Essen, \emph{Polynomial Automorphisms and the Jacobian Conjecture}, Progress in Mathematics 190, Birkh\"auser, 2000.
 \bibitem{dBvdE2005} M. de Bondt, A. van den Essen, A reduction of the Jacobian conjecture to
-the symmetric case, \emph{Proc. Amer. Math. Soc.} 133 (2005), 2201--2205.
-\bibitem{dBvdE2004} M. de Bondt, A. van den Essen, Nilpotent symmetric Jacobian matrices and the Jacobian conjecture, \emph{J. Pure Appl. Algebra} 193 (2004), 61--70.
-\bibitem{dBvdE2005b} M. de Bondt, A. van den Essen, Nilpotent symmetric Jacobian matrices and the Jacobian conjecture II, \emph{J. Pure Appl. Algebra} 196 (2005), 135--148.
-\bibitem{vdEW2004} A. van den Essen, S. Washburn, The Jacobian conjecture for symmetric Jacobian matrices, \emph{J. Pure Appl. Algebra} 189 (2004), 123--133.
-\bibitem{Meng2006} G. Meng, Legendre transform, Hessian conjecture and tree formula, arXiv:math-ph/0308035; \emph{Appl. Math. Lett.} 19 (2006), 503--510.
-\bibitem{dBSym2014} M. de Bondt, Symmetric Jacobians, arXiv:1206.2865; \emph{Cent. Eur. J. Math.} (2014).
+the symmetric case, \emph{Proc. Amer. Math. Soc.} 133 (2005), 2201--2205, doi:10.1090/S0002-9939-05-07570-2.
+\bibitem{dBvdE2004} M. de Bondt, A. van den Essen, Nilpotent symmetric Jacobian matrices and the Jacobian conjecture, \emph{J. Pure Appl. Algebra} 193 (2004), 61--70, doi:10.1016/j.jpaa.2004.03.003.
+\bibitem{dBvdE2005b} M. de Bondt, A. van den Essen, Nilpotent symmetric Jacobian matrices and the Jacobian conjecture II, \emph{J. Pure Appl. Algebra} 196 (2005), 135--148, doi:10.1016/j.jpaa.2004.08.030.
+\bibitem{vdEW2004} A. van den Essen, S. Washburn, The Jacobian conjecture for symmetric Jacobian matrices, \emph{J. Pure Appl. Algebra} 189 (2004), 123--133, doi:10.1016/j.jpaa.2003.10.020.
+\bibitem{Meng2006} G. Meng, Legendre transform, Hessian conjecture and tree formula, arXiv:math-ph/0308035; \emph{Appl. Math. Lett.} 19 (2006), 503--510, doi:10.1016/j.aml.2005.07.006.
+\bibitem{dBSym2014} M. de Bondt, Symmetric Jacobians, arXiv:1206.2865; \emph{Cent. Eur. J. Math.} 12 (2014), no. 6, doi:10.2478/s11533-013-0393-7.
 \bibitem{Zhao2004} W. Zhao, Hessian nilpotent polynomials and the Jacobian conjecture,
 arXiv:math/0409534; \emph{Trans. Amer. Math. Soc.} 359 (2007), 249--274.
 \bibitem{Zhao2007} W. Zhao, A vanishing conjecture on differential operators with constant
-coefficients, arXiv:0704.1691.
+coefficients, arXiv:0704.1691; \emph{Acta Math. Vietnam.} 32 (2007), no. 3, 107--134.
 \bibitem{BKK2007} A. Belov-Kanel, M. Kontsevich, The Jacobian conjecture is stably equivalent
-to the Dixmier conjecture, arXiv:math/0512171; \emph{Mosc. Math. J.} 7 (2007).
+to the Dixmier conjecture, arXiv:math/0512171; \emph{Mosc. Math. J.} 7 (2007), no. 2, 209--218.
 \bibitem{Tsuchimoto2005} Y. Tsuchimoto, Endomorphisms of Weyl algebra and $p$-curvatures,
 \emph{Osaka J. Math.} 42 (2005), 435--452.
 \bibitem{AvdE2007} P. K. Adjamagbo, A. van den Essen, On the equivalence of the Jacobian,
-Dixmier and Poisson conjectures in any characteristic, arXiv:math/0608009; \emph{Acta Math.
-Vietnam.} 32 (2007), 209--218.
+Dixmier and Poisson conjectures in any characteristic, arXiv:math/0608009; published as ``A proof of the equivalence of the Dixmier, Jacobian and Poisson conjectures'', \emph{Acta Math.
+Vietnam.} 32 (2007), no. 2--3, 205--214 (pages and title as listed in a secondary reference; the publisher page was not read).
 \bibitem{Zheglov2024} A. Zheglov, The conjecture of Dixmier for the first Weyl algebra is true,
 arXiv:2410.06959, 2024 (revised 2026).
-\bibitem{KBF2026} A. Kanel-Belov, R. Fedorov, The generalized Dixmier conjecture and the two-dimensional Jacobian conjecture, arXiv:2610.33919, 2026.
+\bibitem{KBF2026} A. Kanel-Belov, T. Fedorov, The generalized Dixmier conjecture and the two-dimensional Jacobian conjecture, arXiv:2610.33919, 2026.
 \bibitem{LongPoisson2026} C. D. Long, An explicit counterexample to the rank-two Poisson conjecture,
 arXiv:2608.23777v1, 22 July 2026.
 \bibitem{Mathieu1997} O. Mathieu, Some conjectures about invariant theory and their
 applications, in \emph{Alg\`ebre non commutative, groupes quantiques et invariants} (Reims,
 1995), S\'emin. Congr. 2, Soc. Math. France, 1997, 263--279.
 \bibitem{DvdK1998} J. J. Duistermaat, W. van der Kallen, Constant terms in powers of a Laurent
-polynomial, \emph{Indag. Math.} 9 (1998), 221--231.
+polynomial, \emph{Indag. Math.} 9 (1998), 221--231, doi:10.1016/S0019-3577(98)80020-7.
 \bibitem{Zwart2025} K. Zwart, Mathieu's approach to the Jacobian Conjecture (review),
-arXiv:2511.16561.
+arXiv:2511.16561v2, 2025.
 \bibitem{LongSU2} C. D. Long, Counterexamples to the $xz$-conjecture and the Mathieu conjecture
 for $SU(2)$, arXiv:2607.19012, 2026.
-\bibitem{DingsKoelink} T. Dings, E. Koelink, On the Mathieu conjecture for $SU(2)$, arXiv:1404.4215.
-\bibitem{MuegerTuset} M. M\"uger, L. Tuset, The Mathieu conjecture for $SU(2)$ reduced to an abelian conjecture, arXiv:2210.06582.
-\bibitem{vdEMathieu} A. van den Essen, An introduction to Mathieu subspaces, arXiv:1907.06107.
-\bibitem{vdEWZ} A. van den Essen, D. Wright, W. Zhao, On the Image conjecture, arXiv:1008.3962.
-\bibitem{Zhao2009} W. Zhao, Generalizations of the Image conjecture and the Mathieu conjecture, arXiv:0902.0212.
+\bibitem{DingsKoelink} T. Dings, E. Koelink, On the Mathieu conjecture for $SU(2)$, arXiv:1404.4215; \emph{Indag. Math.} 26 (2015), 219--224.
+\bibitem{MuegerTuset} M. M\"uger, L. Tuset, The Mathieu conjecture for $SU(2)$ reduced to an abelian conjecture, arXiv:2210.06582; \emph{Indag. Math.} 35 (2024), 114--118, doi:10.1016/j.indag.2023.10.001.
+\bibitem{vdEMathieu} A. van den Essen, An introduction to Mathieu subspaces, arXiv:1907.06107, 2019.
+\bibitem{vdEWZ} A. van den Essen, D. Wright, W. Zhao, On the Image conjecture, arXiv:1008.3962; \emph{J. Algebra} 340 (2011), 211--224.
+\bibitem{Zhao2009} W. Zhao, Generalizations of the Image conjecture and the Mathieu conjecture, arXiv:0902.0212; \emph{J. Pure Appl. Algebra} 214 (2010), 1200--1216.
+\bibitem{Zhao2010} W. Zhao, Images of commuting differential operators of order one with constant leading coefficients, arXiv:0902.0210; \emph{J. Algebra} 324 (2010), no. 2, 231--247.
 \bibitem{DEZ2017} H. Derksen, A. van den Essen, W. Zhao, The Gaussian moments conjecture and
 the Jacobian conjecture, \emph{Israel J. Math.} 219 (2017), 917--928; arXiv:1506.05192.
 \bibitem{Long2026} C. D. Long, Small counterexamples to the Gaussian moments conjecture,
 arXiv:2607.18186, 2026.
 \bibitem{Wilson2026} M. Wilson, A face-isolation proof of the two-variable Gaussian moments
 conjecture, arXiv:2607.23887, 2026.
-\bibitem{vdE2010} A. van den Essen, The amazing Image conjecture, arXiv:1006.5801.
+\bibitem{vdE2010} A. van den Essen, The amazing Image conjecture, arXiv:1006.5801, 2010.
 \bibitem{deBondt2026} M. de Bondt, Alp\"oge's counterexample to the JC, economic stabilization,
 and Zhao's vanishing conjecture, arXiv:2610.24889, 2026.
 \bibitem{vdE2026} A. van den Essen, An elementary way to find a counterexample to the Jacobian conjecture, arXiv:2609.17795, 2026.
@@ -615,7 +643,7 @@ and Zhao's vanishing conjecture, arXiv:2610.24889, 2026.
 (Bass--Connell--Wright form of the Alp\"oge map, dimension 24), 2026-07-21;
 \path{github.com/wtho704/explicit-cubic-homogeneous-jacobian-counterexample}; Zenodo
 record 21466221.
-\bibitem{Zhang2026} Z. Zhang, Direct consequences of the three-dimensional counterexample to the Jacobian conjecture, web note, 2026-07-20.
+\bibitem{Zhang2026} Z. Zhang, Direct consequences of the three-dimensional counterexample to the Jacobian conjecture, web note, 2026-07-20, \path{zzhang-iu.github.io/papers/direct-consequences-jacobian/}.
 \bibitem{FoundationalPaper} F. Santib\'a\~nez-Leal, The Jacobian conjecture after the three-dimensional counterexample, preprint, concept DOI 10.5281/zenodo.21503365.
 \bibitem{PlanarPaper} F. Santib\'a\~nez-Leal, Planar Keller maps after the counterexample: machine-certified Newton-polygon exclusions, the staircase transport, and the recalibrated frontier, preprint, concept DOI 10.5281/zenodo.21503367.
 \end{thebibliography}
