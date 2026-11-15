@@ -1,6 +1,6 @@
 \begin{tikzpicture}
 \begin{axis}[ybar, width=0.80\textwidth, height=5.2cm, ymode=log, ymin=1, ymax=400, bar width=14pt, symbolic x coords={beta,y,R,S,T,H,D},
-  xtick=data, ylabel={nonzero terms}, tick label style={font=\scriptsize}, nodes near coords, point meta=explicit symbolic, nodes near coords style={font=\tiny}]
+  xtick=data, xticklabels={$\beta$,$y$,$R$,$S$,$T$,$H$,$D$}, ylabel={nonzero terms}, tick label style={font=\scriptsize}, nodes near coords, point meta=explicit symbolic, nodes near coords style={font=\tiny}]
 \addplot[fill=stwit, draw=black!60] coordinates {(beta,4) [4] (y,5) [5] (R,2) [2] (S,22) [22] (T,47) [47] (H,137) [137] (D,139) [139]};
 \end{axis}
 \end{tikzpicture}

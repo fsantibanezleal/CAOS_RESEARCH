@@ -10,8 +10,11 @@ Inputs (read-only, under the experiments folder of the problem, `--exp`):
 Outputs (next to this script): numbers.tex, status_table.tex, implication_graph.tex, index_map.tex, hash_table.tex,
 validation_table.tex, cost_table.tex, fig_fibre.tex, fig_chain.tex, fig_poisson.tex, fig_moments.tex.
 
-Every number printed in the paper is read here from an artifact; a value that differs from the one the text relies on
-stops the script with exit 1, so the paper cannot drift from the records. With `--check` nothing is written and the
+The numbers printed through numbers.tex, the tables and the figures are read here from the artifacts; a value that differs
+from the one the text relies on stops the script with exit 1. Hard-coded in this script, and so not read from an artifact:
+the evidence-mark strings of the status table, the node and edge data of the graph, the Poisson, Mathieu and Gaussian-moment
+cells of the index map, and the values 3 (fibre points), 7 and 48, which the assertions cross-check against the artifacts
+where an artifact holds them. Literal numbers inside main.tex (for example the 54 monomials) are checked by hand. With `--check` nothing is written and the
 script exits 1 when a committed output differs from a fresh one.
 
 Usage: python make_status.py [--exp <experiments folder>] [--check]
@@ -192,8 +195,8 @@ def status_rows(r, n):
              opn=r"$N=2$ [C]"),
         dict(key="MC", stmt=r"Mathieu conjecture for $SU(N)$",
              impl=r"$MC(SU(N))\Rightarrow$ every Keller map $x-h$ of $\C^N$, $h$ homogeneous, is invertible",
-             src=r"Zwart, Thms~4.23 and 4.16 [V] \cite{Zwart2025}; Mathieu, Thms~5.3 and 5.4, not located [U] \cite{Mathieu1997}",
-             marks=r"chain [V], original [U]; $N\ge%s$ [MV]; $SU(2)$ [V], $n\le%s$ [MV]" % (hd, n["suthreemax"]),
+             src=r"Zwart, Conj.~4.15 and Thm~4.23, proof of Thm~4.16 [V] \cite{Zwart2025}; Mathieu, Thms~5.3 and 5.4, not located [U] \cite{Mathieu1997}",
+             marks=r"chain [V], original [U]; $N=%s$ witness [MV]; $MC(SU(N))$ false for $N\ge%s$ [D] on Zwart [V]; $SU(2)$ [V], $n\le%s$ [MV]" % (hd, hd, n["suthreemax"]),
              wit=r"$N=%s$, degree %s (EXP-138); $N=%s$ (EXP-041 input); $SU(2)$: Long's $F,G$ \cite{LongSU2}" % (hd, hdeg, n["thompsondim"]),
              opn=r"$SU(N)$, $3\le N\le14$; other compact groups [C]"),
         dict(key="DC", stmt=r"Dixmier conjecture $DC(n)$",
@@ -204,8 +207,8 @@ def status_rows(r, n):
              opn=r"$n=1,2$ [C]"),
         dict(key="PC", stmt=r"Poisson conjecture $PC(n)$ ($2n$ variables)",
              impl=r"$JC(2n)\Rightarrow PC(n)\Rightarrow DC(n)\Rightarrow JC(n)$",
-             src=r"Adjamagbo and van den Essen, Thm~7 [V] \cite{AvdE2007}; Long, Thm~1.1 and eqs.~(12)--(19), pp.~4--5 [V] \cite{LongPoisson2026}",
-             marks=r"$n=2$ [MV] (EXP-144); $n\ge2$ [D]; closure $n\ge3$, $n\le%s$ [MV]" % n["closuremax"],
+             src=r"Adjamagbo and van den Essen, Thm~7 [V] \cite{AvdE2007}; Long, Thm~1.1 (pp.~2--3), eqs.~(12)--(19) (p.~4), size table (p.~5) [V] \cite{LongPoisson2026}",
+             marks=r"identities of Long's map [MV] (EXP-144); $PC(2)$ false [D] from them (Prop.~\ref{prop:poisson}); $n\ge2$ [D]; closure $n\ge3$, $n\le%s$ [MV]" % n["closuremax"],
              wit=r"$R,T,D,S\in\Q[x,q,p,z]$ (4 variables), $\{D,R\}=\{S,T\}=1$, fibre of %s points" % pk,
              opn=r"$n=1$ [C]"),
         dict(key="GMC", stmt=r"Gaussian moments conjecture $GMC(n)$",
@@ -216,20 +219,20 @@ def status_rows(r, n):
              opn=r"$n=2$ [C] (proof claimed \cite{Wilson2026})"),
         dict(key="VC", stmt=r"Zhao's vanishing conjecture",
              impl=r"vanishing (all $n$) $\Leftrightarrow JC$ (all $n$); homogeneous Hessian-nilpotent quartics suffice",
-             src=r"Zhao, Thm~7.2 [V] \cite{Zhao2004}; de Bondt, dimensions 28 and 30 [V] \cite{deBondt2026}",
-             marks=r"explicit witness [MV]; de Bondt's dimensions [V], not re-verified",
+             src=r"Zhao, Thms~7.2, 3.4 and 6.2 [V] \cite{Zhao2004}; de Bondt, dimensions 28 and 30 [V] \cite{deBondt2026}",
+             marks=r"collision and conjugation [MV]; Hessian nilpotency [D]; failure of the vanishing conjecture [D] by Zhao [V]; de Bondt's dimensions [V], not re-verified",
              wit=r"$P_\star=-f_H$, homogeneous quartic in %s variables, %s monomials over $\Q(i)$" % (n["witnessdim"], n["potentialmon"]),
              opn=r"minimal failing dimension [C]"),
-        dict(key="IC", stmt=r"Image conjecture",
-             impl=r"Image $\Rightarrow$ vanishing",
-             src=r"van den Essen \cite{vdE2010} [U]",
-             marks=r"[D]",
+        dict(key="IC", stmt=r"Image conjecture (Zhao)",
+             impl=r"Image $\Rightarrow$ generalized vanishing conjecture, which contains the vanishing conjecture",
+             src=r"van den Essen, abstract only [U] \cite{vdE2010}; proposed in \cite{Zhao2010}",
+             marks=r"implication [U]; falsity [D] on a [U] implication",
              wit=r"none explicit: false in some dimension",
              opn=r"minimal failing dimension [C]"),
         dict(key="HC", stmt=r"Symmetric (gradient) Jacobian conjecture, Hessian conjecture $HC$",
              impl=r"$HC(2n)\Rightarrow$ $x+H$ invertible whenever $JH$ is nilpotent; $JC\Leftrightarrow HC$",
              src=r"de Bondt and van den Essen, Thm~1.1 and Cor.~1.3 [V] \cite{dBvdE2005}",
-             marks=r"explicit witness [MV]",
+             marks=r"collision and conjugation [MV]; Hessian nilpotency [D]; $HC$ false [D]",
              wit=r"$\mathrm{id}+\nabla f_H$ on $\C^{%s}$, 2-point collision over $\Q(i)$" % n["witnessdim"],
              opn=r"dimensions below %s [C]; positive results \cite{dBvdE2005b, vdEW2004} [U]" % n["witnessdim"]),
     ]
@@ -281,7 +284,7 @@ GRAPH_EDGES = [
     ("VC", "JC", r"", "bend right=20"),
     ("JC", "HC", r"dBvdE Thm 1.1", "bend left=20"),
     ("HC", "JC", r"", "bend left=20"),
-    ("IC", "VC", r"vdE [U]", "bend left=6"),
+    ("IC", "VC", r"vdE abstract [U]", "bend left=6"),
 ]
 
 
@@ -385,7 +388,7 @@ def validation_table(r, n):
         (r"Input of the 24-variable form", "EXP-136 C, EXP-041 A",
          r"both SHA-256 digests match; $H$ homogeneous cubic with %s monomials; the published collision is exact" % n["thompsonmon"]),
         (r"Nilpotency of $JH$, two routes", "EXP-041 D",
-         r"$(JH)^{%s}=0$ while $(JH)^{17}$ keeps %s terms; $\mathrm{Tr}(JH^k)=0$ for $k=2,4,8$ (and the chain terms %s, %s, %s, %s, %s, %s for $k=1,2,4,8,16,17$)" % (n["nilindex"], n["jhseventeen"], n["jhone"], n["jhtwo"], n["jhfour"], n["jheight"], n["jhsixteen"], n["jhseventeen"])),
+         r"$(JH)^{%s}=0$ while $(JH)^{17}$ keeps %s terms; $\mathrm{Tr}(JH^k)=0$ for $k=1,2,4,8$ (and the chain terms %s, %s, %s, %s, %s, %s for $k=1,2,4,8,16,17$)" % (n["nilindex"], n["jhseventeen"], n["jhone"], n["jhtwo"], n["jhfour"], n["jheight"], n["jhsixteen"], n["jhseventeen"])),
         (r"Potential and collision", "EXP-041 B, C, E",
          r"$f_H$ has %s monomials; the conjugation identity holds in all %s components; $\Delta P_\star^2$ has %s terms" % (n["potentialmon"], n["witnessdim"], n["deltaterms"])),
         (r"Dimension-15 witness and control", "EXP-138",
@@ -413,7 +416,7 @@ def cost_table(r, n):
         ("A2", "EXP-136 B", r"components of a map", r"$\Q$", r"sympy (grevlex Gr\"obner basis)",
          r"%s nonzero second partials; time not recorded" % n["secondgens"]),
         ("A3", "EXP-041", r"$H$ on $\Q^{24}$, collision pair", r"$\Q(i)$, sparse \texttt{Fraction} dictionaries", r"sympy, standard library",
-         r"%s products of sparse matrices; the printed powers of $JH$ have at most %s terms" % (n["nilindex"], n["jheight"])),
+         r"6 products of sparse matrices (squarings up to $(JH)^{16}$, then two multiplications by $JH$); the printed powers of $JH$ have at most %s terms" % n["jheight"]),
         ("A4", "EXP-138", r"$F$ on $\Q^3$, two points", r"$\Q$", r"sympy",
          r"%s s for the construction and the nilpotency chain, dimension %s" % (n["homseconds"], n["homdim"])),
         ("A5", "EXP-144", r"seven polynomials of Long", r"$\Q$ (\texttt{Fraction} for the second route)", r"sympy 1.14.0",
@@ -425,7 +428,7 @@ def cost_table(r, n):
     for row in rows:
         out.append(" & ".join(row) + r" \\[2pt]")
     out += [r"\bottomrule", r"\end{tabular}",
-            r"\caption{The five procedures of Section~\ref{sec:methods}, with the computation that ran each, its input, the arithmetic domain, the software and the cost measured in that run. The version of the algebra system is recorded for computations EXP-001 and EXP-144 only; the other runs used the same environment but do not state the version in their artifacts.}",
+            r"\caption{The five procedures of Section~\ref{sec:methods}, with the computation that ran each, its input, the arithmetic domain, the software and the cost measured in that run. The version of the algebra system is stated in the method plan of EXP-001 (1.14) and pinned in the requirements file of EXP-144 (1.14.0); no artifact of any run records it.}",
             r"\label{tab:cost}", r"\end{table}"]
     return "\n".join(out) + "\n"
 
@@ -444,8 +447,8 @@ def fig_fibre():
            r"\addplot[dashed, color=stline] coordinates {(0,-1.5) (0,9.5)};",
            r"\addplot[only marks, mark=*, mark size=2.2pt, color=stpoint] coordinates {(0,-0.25) (-1.5,6.5) (1.5,6.5)};",
            r"\node[font=\scriptsize, anchor=west] at (axis cs:0.12,-0.25) {$(0,0,-\tfrac14)$};",
-           r"\node[font=\scriptsize, anchor=south east] at (axis cs:-1.5,6.7) {$(1,-\tfrac32,\tfrac{13}{2})$};",
-           r"\node[font=\scriptsize, anchor=south west] at (axis cs:1.5,6.7) {$(-1,\tfrac32,\tfrac{13}{2})$};",
+           r"\node[font=\scriptsize, anchor=south east] at (axis cs:-1.7,7.4) {$(1,-\tfrac32,\tfrac{13}{2})$};",
+           r"\node[font=\scriptsize, anchor=south west] at (axis cs:1.7,7.4) {$(-1,\tfrac32,\tfrac{13}{2})$};",
            r"\legend{$12y^2=4z+1$, $z=\tfrac{13}{2}$, $y=0$, fibre}",
            r"\end{axis}", r"\end{tikzpicture}"]
     return "\n".join(out) + "\n"
@@ -470,7 +473,7 @@ def fig_poisson(r):
     coords = " ".join(f"({names[k]},{sz[k][0]}) [{sz[k][0]}]" for k in order)
     out = [r"\begin{tikzpicture}",
            r"\begin{axis}[ybar, width=0.80\textwidth, height=5.2cm, ymode=log, ymin=1, ymax=400, bar width=14pt, symbolic x coords={" + ",".join(names[k] for k in order) + r"},",
-           r"  xtick=data, ylabel={nonzero terms}, tick label style={font=\scriptsize}, nodes near coords, point meta=explicit symbolic, nodes near coords style={font=\tiny}]",
+           r"  xtick=data, xticklabels={$\beta$,$y$,$R$,$S$,$T$,$H$,$D$}, ylabel={nonzero terms}, tick label style={font=\scriptsize}, nodes near coords, point meta=explicit symbolic, nodes near coords style={font=\tiny}]",
            rf"\addplot[fill=stwit, draw=black!60] coordinates {{{coords}}};",
            r"\end{axis}", r"\end{tikzpicture}"]
     return "\n".join(out) + "\n"
