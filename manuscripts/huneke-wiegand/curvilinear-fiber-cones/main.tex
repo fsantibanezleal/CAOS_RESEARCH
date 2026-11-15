@@ -4,18 +4,33 @@
 \usepackage[margin=1.05in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{microtype}
 \microtypesetup{expansion=false}
 \usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \definecolor{linknavy}{RGB}{25,55,125}
+\definecolor{layerA}{RGB}{90,90,90}
+\definecolor{layerB}{RGB}{31,119,180}
+\definecolor{layerC}{RGB}{214,39,40}
+\definecolor{layerD}{RGB}{44,160,44}
+\definecolor{layerE}{RGB}{255,127,14}
+\definecolor{stripcol}{RGB}{31,119,180}
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \hypersetup{
   pdfauthor={Felipe Santibáñez-Leal},
-  pdftitle={Curvilinear Geometry, Primary Structure, and Groebner Degenerations of Conductor Fiber Cones in a Huneke--Wiegand Family},
-  pdfsubject={Truncated monomial parametrizations, primary decomposition, curvilinear geometry, and explicit Groebner bases},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, conductor ideals, fiber cones, primary ideals, curvilinear schemes, fat points, Groebner bases, monomial degenerations, Kahler differentials}
+  pdftitle={Curvilinear Geometry, Primary Structure, and a Groebner Degeneration of Conductor Fiber Cones in a Huneke--Wiegand Family},
+  pdfsubject={Truncated monomial parametrizations, primary decomposition, curvilinear geometry, and an explicit Groebner basis},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, conductor ideals, fiber cones, primary ideals, curvilinear schemes, fat points, Groebner bases, monomial degeneration, Kahler differentials, Presburger arithmetic}
 }
 \usepackage{orcidlink}
+\input{generated/numbers.tex}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -30,13 +45,16 @@
 \newcommand{\kfield}{\Bbbk}
 \newcommand{\Cfiber}{\mathcal{C}}
 \newcommand{\Fcone}{\mathcal{F}}
+\newcommand{\mD}{\textbf{[D]}}
+\newcommand{\mMV}{\textbf{[MV]}}
+\newcommand{\mDc}{\textbf{[D] conditional on [MV] input}}
 
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.04}
-\newcommand{\docdate}{18 September 2026}
+\newcommand{\docversion}{v0.05}
+\newcommand{\docdate}{14 November 2026}
 \newcommand{\versiondoi}{10.5281/zenodo.22835118}
 \newcommand{\conceptdoi}{10.5281/zenodo.21997377}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
@@ -53,8 +71,8 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \end{center}
 \vspace{4pt}}
 
-\title{Curvilinear Geometry, Primary Structure, and Gr\"obner\\
-Degenerations of Conductor Fiber Cones\\ in a Huneke--Wiegand Family}
+\title{Curvilinear Geometry, Primary Structure, and a Gr\"obner\\
+Degeneration of Conductor Fiber Cones\\ in a Huneke--Wiegand Family}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research programme, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -67,72 +85,150 @@ Degenerations of Conductor Fiber Cones\\ in a Huneke--Wiegand Family}
 For every integer $p\geq4$, a previously constructed symmetric numerical semigroup ring $R_p$
 and rigid two-generated monomial ideal determine a conductor ideal $T_p$ whose special fiber
 $\Cfiber_p=\Fcone(T_p)$ is one-dimensional Cohen--Macaulay, generated in degree one by $10p$
-monomials, and has multiplicity $24p$. We prove that this fiber cone admits the explicit
-standard-graded parametrization
-\[
- \Cfiber_p\cong
- \kfield[xy^a:a\in G_p]\subseteq \kfield[x,y]/(y^{24p}),
- \qquad \deg(xy^a)=1,
-\]
-where $G_p$ is the exact degree-one offset set. If
-$P_p=\kfield[X_a:a\in G_p]$ and $J_p$ is the defining ideal, then
-\[
- \sqrt{J_p}=L_p=(X_a:a>0),\qquad J_p\text{ is }L_p\text{-primary}.
-\]
-Thus the complete primary decomposition has one component. The nilradical of $\Cfiber_p$ has
-sharp nilpotency index $24p$: its $(24p-1)$st power is nonzero, while its $24p$th power vanishes.
-Dehomogenization at $X_0$ gives
-\[
- \Cfiber_p/(X_0-1)\cong\kfield[y]/(y^{24p}).
-\]
-Consequently $\operatorname{Proj}(\Cfiber_p)$ is a saturated length-$24p$ curvilinear fat point
-with one-dimensional Zariski tangent space. It is locally Gorenstein, although its homogeneous
-coordinate ring has Cohen--Macaulay type $10p+1$ and is neither level nor Gorenstein. We also
-compute its affine K\"ahler differential module, including the exact characteristic split. The
-proof is deductive from previously proved offset-basis and Cohen--Macaulay input theorems. We
-further give the complete reduced Gr\"obner basis for graded reverse lexicographic order with
-$X_0$ last. Its degree profile is
-\[
- (50p^2-17p,\;5p-1,\;p-2)
-\]
-in degrees two, three, and four, with no later elements. No minimal leading monomial contains
-$X_0$, yielding a flat Cohen--Macaulay monomial degeneration. Exact parameter sweeps, an
-independently encoded clique-based recomputation, and an all-parameter Presburger boundary
-certificate validate the formulas and run negative controls, but do not replace the deductive
-arguments.
+monomials, with multiplicity $24p$. Taking the imported offset bases as input, we prove that
+$\Cfiber_p\cong\kfield[xy^a:a\in G_p]\subseteq\kfield[x,y]/(y^{24p})$, that its defining ideal
+$J_p$ is primary to the ideal of positive offsets, with nilpotency index $24p$, and that
+$\operatorname{Proj}(\Cfiber_p)$ is a saturated length-$24p$ curvilinear fat point, locally
+Gorenstein although the coordinate ring has Cohen--Macaulay type $10p+1$. The
+K\"ahler differentials split by characteristic. We then determine the reduced Gr\"obner basis for
+graded reverse lexicographic order with $X_0$ last. Its degree profile is $(50p^2-17p,5p-1,p-2)$
+and no minimal leading monomial contains $X_0$, which gives a flat Cohen--Macaulay monomial
+degeneration. The quadratic part, the stabilization of the staircase and the absence of elements
+in degree five and higher are derived. The classification of the cubic and quartic part, for
+all $p$, rests on 16 Presburger obligations decided unsatisfiable by two solvers (Z3 and cvc5)
+on identical queries; it is machine-verified and not derived. Exact sweeps at every
+$p=4,\ldots,300$, an independent clique recomputation and negative controls validate the
+formulas. We place the results beside the known graded Betti entries of $\Cfiber_p$ and the
+characteristic dependence found there.
 \end{abstract}
 
 \section{Introduction}
 
-Fiber cones encode the number and relations of generators of powers of an ideal. Even for
-monomial ideals, their reducedness and projective geometry can vary sharply. Explicit defining
-ideals are known for several convex, concave, symmetric, and low-generator classes
-\cite{HerzogQureshiSaem2017,HerzogZhu2019}; in particular, nonradical monomial fiber cones occur
-naturally. Curvilinear zero-dimensional schemes provide a complementary geometric language: their
-local maximal ideals are generated by one element, and their differential modules give effective
-signatures of this property \cite{KreuzerLinhLong2023}.
+The Huneke--Wiegand conjecture asks whether, over a one-dimensional Gorenstein local domain $R$,
+a nonzero finitely generated nonfree module $M$ always has $M\otimes_R\operatorname{Hom}_R(M,R)$
+with nontrivial torsion \cite{HunekeWiegand1994}. For numerical semigroup rings the question
+becomes a problem of finite additive combinatorics, and in 2026 it received negative answers
+\cite{Pham2026,PhamArxiv2026,CGI2026}. One of them is an infinite family of symmetric numerical
+semigroups with a rigid two-generated monomial ideal, constructed after Pham's first public
+example \cite{SantibanezLeal2026}. The family is indexed by an integer $p\geq4$, and its
+multiplicity is $24p$.
 
-This paper brings those two viewpoints together for the conductor fiber cones attached to an
-explicit infinite family of Huneke--Wiegand counterexamples. The family was constructed in
-\cite{SantibanezLeal2026} after Son Pham's discovery of a first public counterexample
-\cite{Pham2026}, which Craig Huneke independently verified; the discovery priority and the
-present contribution are distinct. The same earlier work determines the conductor fiber cone,
-its complete degreewise offset bases, its
-Cohen--Macaulay type, its defining ideal, and exact edges of its graded resolution. Here we use
-that information from a different angle. The presence of offsets $0$ and $1$, combined with a
-hard truncation at $24p$, makes the entire projective scheme one-variable after dehomogenization.
+Once a counterexample family exists, the useful questions concern its structure. What is the
+conductor of the endomorphism ring of the rigid ideal, and what algebra does its powers generate?
+The special fiber $\Cfiber_p$ of that conductor is a standard graded algebra with $10p$
+generators in degree one, one-dimensional and Cohen--Macaulay, and the defining ideal of its
+presentation needs $50p^2-17p+1$ generators. Such an algebra invites three kinds of questions.
+Algebraic: what is its primary decomposition and its nilradical? Geometric: what is the
+projective scheme it defines, and how does that scheme sit between local and arithmetic
+Gorenstein properties? Computational: is there a term order whose initial ideal is as simple as
+possible, and does it give a flat degeneration to a monomial Cohen--Macaulay algebra?
 
-The main result is stronger than a radical calculation. It gives a concrete truncated monomial
-model, a complete one-component primary decomposition, the exact nilpotency exponent, and the
-scheme-theoretic affine chart. It also separates two notions that are easy to conflate: the
-projective scheme is locally Gorenstein, while its given homogeneous embedding is not
-arithmetically Gorenstein.
+This paper answers these questions for every $p\geq4$. The presence of offsets $0$ and $1$ in
+the degree-one generators, combined with a hard truncation at $q=24p$, makes the whole
+projective scheme one-variable after dehomogenization. The consequences are a truncated monomial
+model, a one-component primary decomposition with sharp nilpotency index $24p$, a curvilinear
+fat point that is locally Gorenstein while its homogeneous coordinate ring is neither level nor
+Gorenstein, and a differential module whose dimension depends on the characteristic. A second
+group of results concerns the reduced Gr\"obner basis for the graded reverse lexicographic order
+with $X_0$ last: its degree profile is $(50p^2-17p,5p-1,p-2)$ in degrees two, three and four,
+and no later element exists.
 
-Throughout, derived theorem statements are marked [D] by convention, while finite exact
-computations and solver outcomes are machine-verified [MV]. No [MV] result is used as an
-extrapolation principle.
+The evidence behind these statements has two classes, and the paper keeps them apart. Each
+result carries a mark: \mD{} for a statement derived by a written argument, \mMV{} for a
+statement established by exact machine computation, and \mDc{} for a derived statement whose
+proof uses a machine-verified premise. Two premises are machine-verified and enter every
+theorem: the value-congruence description of the fiber cone, imported from the paper that
+constructs the family, and the classification of the cubic and quartic boundary of the
+Gr\"obner basis, which here rests on 16 Presburger obligations decided by two independent
+solvers but with no checked proof object. The abstract and the theorem statements reflect this
+split, and Section~\ref{sec:results} summarizes it in Table~\ref{tab:marks}.
 
-\section{The conductor family and imported input}
+The remaining sections are organized as follows. Section~\ref{sec:related} places the work among
+the literature on the conjecture, fiber cones and curvilinear schemes. Section~\ref{sec:problem}
+fixes the objects and states the imported input with exact pointers. Sections~\ref{sec:theory-a}
+and~\ref{sec:theory-b} contain the theory. Section~\ref{sec:algorithms} describes every
+computation as an algorithm with its cost, and Section~\ref{sec:design} the experimental design.
+Sections~\ref{sec:results} and~\ref{sec:ablation} give the results and the controls, and
+Section~\ref{sec:discussion} reads them against the known Betti entries of $\Cfiber_p$. The
+limits, the means of reproduction and the conclusions follow, and two appendices print the
+solver obligations as formulas.
+
+\section{Related work}\label{sec:related}
+
+\paragraph{The conjecture and its counterexamples.}
+Huneke and Wiegand predicted nontrivial torsion in $M\otimes_R\operatorname{Hom}_R(M,R)$ for
+nonfree modules over one-dimensional Gorenstein local domains \cite{HunekeWiegand1994}.
+Garc\'ia-S\'anchez and Leamer proved positive results for complete intersection numerical
+semigroup rings and reported a computer check of every symmetric numerical semigroup with
+Frobenius number below $69$ \cite{GarciaSanchezLeamer2013}. Landeros, O'Neill, Pelayo, Pe\~na,
+Ren and Wissman proved the case of two-generated monomial ideals over rings of generalized
+arithmetic sequence semigroups \cite{Landeros2024}. Pham then published a symmetric numerical
+semigroup and a two-generated monomial ideal for which the predicted torsion is absent
+\cite{Pham2026}, and a preprint that reduces the verification to a finite sumset identity,
+checked with the Huneke--Iyengar--Wiegand colon criterion and Leamer's tensor-torsion formula,
+and that computes the trace ideal, the endomorphism ring and its conductor and shows that the
+example persists under completion \cite{PhamArxiv2026}. Christensen, Gerko and Iyengar gave an
+independent construction from a field extension, a rigid nonprincipal ideal in a
+one-dimensional Gorenstein domain, together with a proof of the conjecture for equal
+characteristic and embedding dimension at most three \cite{CGI2026}. The family of
+\cite{SantibanezLeal2026} extends the numerical-semigroup example to every $p\geq4$ and proves
+that the minimal Frobenius number is attained by Pham's semigroup; Pham's discovery priority is
+preserved. The present paper does not bear on the truth of the conjecture. It studies the
+algebra attached to the family after the counterexample is fixed.
+
+\paragraph{Algebraic structure of the family.}
+The same family has a body of structural results. Rigidity descends to the endomorphism ring
+by results of Dey and Lyle \cite{DeyLyle2025}. The colengths of the trace and the conductor are
+computed in the pattern of Herzog and Kumashiro \cite{HerzogKumashiro2022}. The conductor is not
+stable, in agreement with Dey's criterion \cite{Dey2022}, and the equality of two traces is
+consistent with the reflexive-trace criterion of Lindo, Maitra and Zhang \cite{LindoMaitraZhang2026}.
+The reduced type is $10p$ in the sense of Maitra and Mukundan \cite{MaitraMukundan2023}. Blanco and
+Rosales supply the tree of irreducible numerical semigroups used to show minimality of the
+Frobenius number \cite{BlancoRosales2013}. Tangent-cone depth and Buchsbaumness of the conductor
+follow the Valabrega--Valla criterion \cite{ValabregaValla1978} and the local-cohomology
+criterion of D'Anna, Mezzasalma, Micale and Sammartano
+\cite{DAnnaMezzasalmaMicale2009,DAnnaMicaleSammartano2011}. Every one of these statements is
+about the family and is proved in \cite{SantibanezLeal2026}; this paper uses only the fiber
+cone results listed in Proposition~\ref{prop:input}.
+
+\paragraph{Fiber cones of monomial ideals.}
+Herzog, Qureshi and Mohammadi Saem determine the depth of the fiber cone and its relation
+ideal for classes of monomial ideals in two variables, among them concave, convex and symmetric
+ideals \cite{HerzogQureshiSaem2017}. Herzog and Zhu show that the fiber cone of a three-generated
+height-two monomial ideal in $\kfield[x,y]$ is a hypersurface ring, that certain four-generated
+classes have positive depth, and that for those classes the fiber cone is Cohen--Macaulay
+exactly when its defining ideal has at most three generators \cite{HerzogZhu2019}. The fiber
+cone here differs in three respects. It belongs to an ideal of a numerical semigroup ring, not
+to a monomial ideal of $\kfield[x,y]$; it has $10p$ generators, far beyond the three or four of
+those classes; and its defining ideal has $50p^2-17p+1$ minimal generators, so it lies far from
+the hypersurface and few-generator regimes. The general framework for fiber cones of ideals of
+analytic spread one is due to Cortadellas and Zarzuela \cite{CortadellasZarzuela2007}, and for
+tangent cones of numerical semigroup rings to the same authors \cite{CortadellasZarzuela2009}.
+Abdolmaleki and Kumashiro give the construction of defining ideals of Cohen--Macaulay fiber
+cones, whose Theorem~2.8 bounds the degrees of the equations through the reduction number
+\cite{AbdolmalekiKumashiro2024}; the conductor has a principal reduction, in the sense of
+Northcott and Rees \cite{NorthcottRees1954}, of reduction number four \cite{SantibanezLeal2026}.
+
+\paragraph{Curvilinear schemes and differentials.}
+Kreuzer, Linh and Long characterize weakly curvilinear zero-dimensional schemes in projective
+space over a perfect field by the Hilbert polynomials of their K\"ahler differential modules,
+without a primary decomposition, and compute those modules for fat point schemes
+\cite{KreuzerLinhLong2023}. Our scheme is a length-$24p$ curvilinear fat point and the
+differential module of its affine chart is computed here directly in every characteristic,
+including the characteristic split that depends on whether the characteristic divides $24p$.
+
+\paragraph{Gr\"obner bases and semigroup algebras.}
+Gr\"obner methods for projective monomial curves and for associated graded rings of semigroup
+algebras are developed by Bhardwaj, Chau and Javadekar and by Saha, Sengupta and Srivastava
+\cite{BhardwajChauJavadekar2025,SahaSenguptaSrivastava2022}. The last-variable order and the use
+of standard-monomial counts here are in the same spirit; the staircase and the formulas are
+specific to the truncated conductor family. The graded Betti numbers of $\Cfiber_p$ discussed
+in Section~\ref{sec:discussion} were computed with relative squarefree-divisor complexes, a
+standard device for affine semigroup quotients by monomial ideals
+\cite{BrunsHerzog1997}, and the semigroup-ring Betti framework of Stamate
+\cite{Stamate2018}, whose warning about characteristic dependence is borne out there.
+
+\section{Problem formulation and imported input}\label{sec:problem}
 
 Fix $p\geq4$ and put $s=6p$ and $q=4s=24p$. Define residue sets in $[0,s-1]$ by
 \begin{align*}
@@ -146,20 +242,31 @@ The numerical semigroup $\Gamma_p$ contains
 \{0\},\quad 4s+A_p,\quad [5s,6s-1],\quad 6s+B_p,\quad 8s+D_p,
 \quad [9s,13s-2],\quad [13s,\infty),
 \]
-and no other nonnegative integers. The earlier family theorem proves that $\Gamma_p$ is symmetric,
-with multiplicity $24p$ and Frobenius number $78p-1$, and that
-$I_p=(t^{24p},t^{30p})$ is a nonprincipal rigid ideal in the localization of
-$\kfield[t^{\Gamma_p}]$ at its positive-degree maximal ideal \cite{SantibanezLeal2026}.
+and no other nonnegative integers. The family theorem \cite[Theorem~9.2]{SantibanezLeal2026}
+proves that $\Gamma_p$ is symmetric, with multiplicity $24p$ and Frobenius number $78p-1$, and that
+$I_p=(t^{24p},t^{30p})$ is a nonprincipal rigid ideal in the localization $R_p$ of
+$\kfield[t^{\Gamma_p}]$ at its positive-degree maximal ideal $\mathfrak m_p$.
 
-Let $E_p=\operatorname{End}_{R_p}(I_p)$ and let $T_p=R_p:E_p$ be the conductor. The object studied
-here is its special fiber
+Let $E_p=\operatorname{End}_{R_p}(I_p)$ and let $T_p=R_p:E_p$ be the conductor. The object
+studied is its special fiber
 \[
 \Cfiber_p=\Fcone(T_p)=\bigoplus_{n\geq0}T_p^n/\mathfrak m_pT_p^n.
 \]
-We recall the exact input in the form needed below.
+\textbf{Problem.} For every $p\geq4$, describe $\Cfiber_p$ as a graded algebra over a field
+$\kfield$ of arbitrary characteristic; determine the primary decomposition of its defining
+ideal, the projective scheme it defines and the K\"ahler differentials of that scheme; find the
+reduced Gr\"obner basis for the graded reverse lexicographic order with $X_0$ last and decide
+whether it gives a flat Cohen--Macaulay monomial degeneration; and state for every result
+whether it is derived or machine-verified.
+
+The imported input is the following. Each item names the theorem of \cite{SantibanezLeal2026}
+(the consolidated paper, section numbering of its current text) and the archived computation
+that supports it, and each carries the mark under which it is imported.
 
 \begin{proposition}[Imported offset-basis input]\label{prop:input}
-There is a presentation
+Put $q=24p$.
+\begin{enumerate}
+\item[\textup{(I1)}] \mD{} \emph{Presentation and offset bases.} There is a presentation
 \[
  P_p=\kfield[X_a:a\in G_p]\longrightarrow\Cfiber_p,
  \qquad X_a\longmapsto[t^{q+a}],
@@ -171,35 +278,95 @@ G_p={}&\{0\}\cup[1,p]\cup[3p,4p-2]\cup[6p,8p-2]\cup[8p,10p-2]
 &\cup[11p-1,12p-1]\cup[13p+1,14p-2]\cup[14p,15p-1]
 \cup\{16p\}\cup[17p-1,18p-1].
 \end{align*}
-If $J_p$ is the kernel, a degree-$n$ monomial is zero precisely when its total offset is absent
-from $E_n$, and two nonzero monomials have the same class precisely when their total offsets
-agree. The cumulative bases are
+The offset basis of $(\Cfiber_p)_n$ is the set $E_n$ with
 \begin{align*}
 E_1&=G_p,\\
 E_2&=[0,2p]\cup[3p,5p-2]\cup[6p,q-1],\\
 E_3&=[0,q-1]\setminus\{6p-1\},\\
 E_n&=[0,q-1]\qquad(n\geq4).
 \end{align*}
-Moreover, $\Cfiber_p$ is a one-dimensional Cohen--Macaulay standard graded algebra, free of rank
-$q$ over $\kfield[X_0]$, and has Cohen--Macaulay type $10p+1$. Its Artinian reduction by $X_0$
-has socle in two degrees, so $\Cfiber_p$ is neither level nor Gorenstein.
+Source: Theorem~15.4 and its proof, the displayed offset equations of the subsection ``The
+defining ideal of the special fiber'' of Section~15, and the value blocks of Theorems~12.1 and~13.1
+of \cite{SantibanezLeal2026}; computation EXP-021.
+\item[\textup{(I2)}] \mMV{} \emph{Value congruence.} A degree-$n$ monomial of $P_p$ is zero in
+$\Cfiber_p$ exactly when its total offset is absent from $E_n$, and two nonzero monomials of
+the same degree have the same class exactly when their total offsets agree. Source: the proof
+of Theorem~15.5 of \cite{SantibanezLeal2026}; computation EXP-023.
+\item[\textup{(I3)}] \mMV{} \emph{Sumset identity.} For $n\geq1$, $E_n$ equals the $n$-fold
+sumset of $G_p$ truncated below $q$. Source: the exact power calculation of Theorem~15.4;
+verified degree by degree up to six at every $p=4,\ldots,300$ by computations EXP-025 and
+EXP-026.
+\item[\textup{(I4)}] \mD{} \emph{Structure.} $\Cfiber_p$ is a one-dimensional Cohen--Macaulay
+standard graded algebra, free of rank $q$ over $\kfield[X_0]$, of Cohen--Macaulay type $10p+1$;
+its Artinian reduction by $X_0$ has socle in two degrees, so $\Cfiber_p$ is neither level nor
+Gorenstein. Source: Theorem~15.4 and, for the socle count $10p+1$ in the last Betti row,
+Theorem~15.6 of \cite{SantibanezLeal2026}; computations EXP-021 and EXP-024.
+\item[\textup{(I5)}] \mMV{} \emph{Relation type.} The defining ideal has relation type three:
+it is generated by its quadrics and the single cubic $X_0^2X_{3p}-X_p^3$. Source: Theorem~15.5 of
+\cite{SantibanezLeal2026}; computation EXP-023.
+\end{enumerate}
 \end{proposition}
 
-\begin{remark}
-Proposition~\ref{prop:input} packages the previously proved conductor, fiber-cone, presentation,
-and offset-congruence theorems. The present paper does not infer it from the finite computations
-below. Its exact all-parameter component step retains the solver/encoding boundary disclosed in
-\cite{SantibanezLeal2026}.
+The marks need explanation. Items (I1) and (I4) are derived in the cited paper from exact value
+blocks and the structure of the Noether normalization. Items (I2) and (I5) are conclusions of
+Theorem~15.5 there, which rests on an all-parameter Presburger computation: the exact solver
+closed $133$ terminal formulas as unsatisfiable after four affine-cell bisections, and no
+checked proof object was produced. The statement (I2) is, taken alone, a consequence of the
+linear independence of semigroup monomials together with the bases of (I1), as the proof of
+Theorem~15.5 observes; the archived record of the computation that uses it nonetheless attributes
+the solver boundary to it, and this paper follows the record by marking it \mMV{}. Item (I3) is
+verified by exact sweeps and not derived for all $p$ in a record; Remark~\ref{rem:sumset} derives
+its two nontrivial cases from the shape of $E_2$.
+
+\begin{remark}[The sumset identity]\label{rem:sumset}
+Given $E_2$ as displayed, the case $n=3$ of (I3) is interval arithmetic. The set $E_2+G_p$
+contains $E_2$ because $0\in G_p$. The values of $[0,6p-1]\setminus E_2$ are
+$[2p+1,3p-1]\cup[5p-1,6p-1]$. The first interval lies in $[0,2p]+[1,p]$, and
+$[5p-1,6p-2]$ lies in $[3p,5p-2]+[1,p]$. The value $6p-1$ is not attained: writing it as $x+g$
+with $x\in[0,2p]$ needs $g\in[4p-1,6p-1]$, and with $x\in[3p,5p-2]$ needs $g\in[p+1,3p-1]$, and
+$G_p$ meets neither interval. Hence $(E_2+G_p)\cap[0,q-1]=[0,q-1]\setminus\{6p-1\}=E_3$. For
+$n=4$, every value except $6p-1$ lies in $E_3$, and $6p-1=(6p-2)+1$ with $6p-2\in E_3$ and
+$1\in G_p$, so the sumset is $[0,q-1]$ and all later ones are equal. The case $n=2$ is the
+identity $(G_p+G_p)\cap[0,q-1]=E_2$ of the cited paper's Minkowski computation and is verified
+for $p=4,\ldots,300$.
 \end{remark}
 
-\section{The truncated monomial model}
+\begin{remark}[What is not claimed]
+The result concerns the conductor fiber cones of the explicit family recalled in this section.
+It does not assert that arbitrary monomial fiber cones are primary, curvilinear,
+Cohen--Macaulay or locally Gorenstein, and it does not strengthen the underlying
+Huneke--Wiegand counterexample theorem for arbitrary modules or arbitrary one-dimensional
+Gorenstein domains.
+\end{remark}
+
+\section{Theory I: truncated model, primary structure and geometry}\label{sec:theory-a}
+
+All results of this section are \mDc{}: their proofs are written arguments, and each uses the
+value congruence (I2) or the bases (I1) as stated in Proposition~\ref{prop:input}.
+
+\subsection{The truncated monomial model}
 
 Assign standard degree one to each monomial $xy^a$ and define
 \[
  \mathcal A_p=\kfield[xy^a:a\in G_p]\subseteq\kfield[x,y]/(y^q).
 \]
+Figure~\ref{fig:strips} shows the bases $E_1,\ldots,E_4$ at $p=4$, where $q=96$. The set $E_1=G_4$
+has $40$ elements in eleven blocks, $E_2$ has $88$, $E_3$ has $95$ and $E_4$ is the full window of $96$
+offsets. The single hole of $E_3$ at $6p-1=23$ is the only place where the strips of degrees
+three and four differ, and it is the reason that degree four, not three, is the first degree in
+which the truncated algebra is full.
 
-\begin{theorem}[Truncated parametrization]\label{thm:parametrization}
+\begin{figure}[ht]
+\centering
+\input{generated/fig-strips.tex}
+\caption{Offset bases $E_1$ to $E_4$ at $p=4$ on the window $[0,95]$: a filled cell marks an offset
+that survives in the given degree. The dashed line marks the hole $6p-1=23$ of $E_3$. The bases
+are drawn from the closed formulas of Proposition~\ref{prop:input}, and their sizes
+$40,88,95,96$ are the entries of the Hilbert function in the $p=4$ row of computation EXP-026.}
+\label{fig:strips}
+\end{figure}
+
+\begin{theorem}[Truncated parametrization, \mDc]\label{thm:parametrization}
 For every $p\geq4$, the homomorphism
 \[
  P_p\longrightarrow\mathcal A_p,
@@ -210,13 +377,21 @@ induces a standard-graded isomorphism $\Cfiber_p\cong\mathcal A_p$.
 
 \begin{proof}
 A degree-$n$ monomial with total offset $b$ maps to $x^ny^b$. This is zero exactly when
-$b\geq q$, and distinct surviving offsets give linearly independent monomials. By
-Proposition~\ref{prop:input}, the corresponding class in $(\Cfiber_p)_n$ is zero precisely when
-the offset is absent from $E_n$, and otherwise depends only on the offset. The achieved surviving
-offsets are exactly $E_n$ in both quotients. Hence the two kernels agree in every graded degree.
+$b\geq q$, and distinct surviving offsets give linearly independent monomials of the truncated
+polynomial ring. By (I2), the corresponding class in $(\Cfiber_p)_n$ is zero precisely when the
+offset is absent from $E_n$, and otherwise depends only on the offset. The offsets that survive
+in $\mathcal A_p$ are exactly the $n$-fold sums of elements of $G_p$ below $q$, which by (I3) is
+$E_n$; the offsets that survive in $\Cfiber_p$ are $E_n$ by definition. Hence the two kernels
+agree in every graded degree.
 \end{proof}
 
-\begin{corollary}[Exact dehomogenization]\label{cor:dehom}
+The proof uses two facts of different kind. Linear independence of the monomials $x^ny^b$ in the
+truncated ring is elementary. The identification of the surviving offsets of $\Cfiber_p$ with
+the truncated sumsets uses (I3), which is the premise added to the input because the proof
+cannot do without it: the ring $\mathcal A_p$ knows nothing about $T_p$, and only (I3) says that
+the powers of the conductor realize every truncated sum.
+
+\begin{corollary}[Exact dehomogenization, \mDc]\label{cor:dehom}
 There is an isomorphism
 \[
  \Cfiber_p/(X_0-1)\cong\kfield[y]/(y^q),
@@ -227,15 +402,18 @@ There is an isomorphism
 \begin{proof}
 The offsets $0$ and $1$ belong to $G_p$. For every positive $a\in G_p$, the two degree-$a$
 monomials $X_0^{a-1}X_a$ and $X_1^a$ have the same surviving offset $a<q$, so
-\[
- X_0^{a-1}X_a=X_1^a.
-\]
-After setting $X_0=1$, every generator is a power of $X_1$, and $X_1^q=0$. This gives a
-surjection from $\kfield[y]/(y^q)$. Freeness of rank $q$ over $\kfield[X_0]$ shows that the target
-also has vector-space dimension $q$, hence the surjection is an isomorphism.
+$X_0^{a-1}X_a=X_1^a$. After setting $X_0=1$, every generator is a power of $X_1$, and
+$X_1^q=0$. This gives a surjection from $\kfield[y]/(y^q)$. Freeness of rank $q$ over
+$\kfield[X_0]$ in (I4) shows that the target also has vector-space dimension $q$, hence the
+surjection is an isomorphism.
 \end{proof}
 
-\section{Primary decomposition and sharp nilpotence}
+At $p=4$ the corollary says, for instance, that $X_0^{11}X_{12}=X_1^{12}$ in $\Cfiber_4$ and that
+the $40$ generators become the monomials $y^a$ with $a$ in the eleven blocks of $G_4$, all
+inside the one-variable algebra $\kfield[y]/(y^{96})$. The surviving offset $12=3p$ lies in
+$E_{12}=[0,95]$, so the relation is not vacuous.
+
+\subsection{Primary decomposition and sharp nilpotence}
 
 Let
 \[
@@ -243,7 +421,7 @@ Let
  \qquad N_p=L_p/J_p\subseteq\Cfiber_p.
 \]
 
-\begin{theorem}[One primary component]\label{thm:primary}
+\begin{theorem}[One primary component, \mDc]\label{thm:primary}
 For every $p\geq4$,
 \[
  \sqrt{J_p}=L_p,\qquad J_p\text{ is }L_p\text{-primary}.
@@ -263,20 +441,21 @@ unique minimal prime. The element $X_1^{q-1}$ maps to $x^{q-1}y^{q-1}$ and is no
 the sharp exponent.
 
 The unique-minimal-prime statement alone would not prove primaryness. Here the
-Cohen--Macaulay hypothesis is essential: a one-dimensional Cohen--Macaulay ring has no embedded
-associated primes. Therefore $\operatorname{Ass}(\Cfiber_p)=\{N_p\}$, so the zero ideal is
-$N_p$-primary. Taking its inverse image in $P_p$ proves the assertion about $J_p$.
+Cohen--Macaulay hypothesis in (I4) is essential: a one-dimensional Cohen--Macaulay ring has no
+embedded associated primes. Therefore $\operatorname{Ass}(\Cfiber_p)=\{N_p\}$, so the zero ideal
+is $N_p$-primary. Taking its inverse image in $P_p$ proves the assertion about $J_p$.
 \end{proof}
 
 \begin{remark}[Why Cohen--Macaulayness is load-bearing]
-The ring $\kfield[u,v]/(u^2,uv)$ has a unique minimal prime but also an embedded associated prime;
-its zero ideal is not primary. This example shows that the associated-prime argument cannot be
-replaced by a radical-only inference.
+The ring $\kfield[u,v]/(u^2,uv)$ has a unique minimal prime but also an embedded associated
+prime; its zero ideal is not primary. This example shows that the associated-prime argument
+cannot be replaced by a radical-only inference, and the computations of
+Section~\ref{sec:ablation} include it as a negative control.
 \end{remark}
 
-\section{Curvilinear geometry and Gorenstein separation}
+\subsection{Curvilinear geometry and the Gorenstein separation}
 
-\begin{theorem}[The projective fat point]\label{thm:geometry}
+\begin{theorem}[The projective fat point, \mDc]\label{thm:geometry}
 The ideal $J_p$ is saturated for the irrelevant ideal. The projective scheme
 $\operatorname{Proj}(\Cfiber_p)$ is supported at $[1:0:\cdots:0]$ and is a length-$q$
 curvilinear fat point. Its Zariski tangent space has dimension one. The scheme is locally
@@ -288,11 +467,11 @@ Because $\Cfiber_p$ is one-dimensional Cohen--Macaulay, its zeroth local cohomol
 irrelevant ideal vanishes. The identity
 $J_p^{\mathrm{sat}}/J_p=H^0_{P_{p,+}}(\Cfiber_p)$ gives saturation. Theorem~\ref{thm:primary}
 shows that the support is the single coordinate point and hence lies entirely in $D_+(X_0)$.
-Corollary~\ref{cor:dehom} identifies its affine coordinate ring with
-$\kfield[y]/(y^q)$. This has length $q$ and principal maximal ideal $(y)$, so the scheme is
-curvilinear and its tangent space $(y)/(y^2)$ is one-dimensional. Its socle is generated by
-$y^{q-1}$, proving local Gorensteinness. Proposition~\ref{prop:input} gives type $10p+1$ and
-nonlevelness for the homogeneous coordinate ring, proving the arithmetic contrast.
+Corollary~\ref{cor:dehom} identifies its affine coordinate ring with $\kfield[y]/(y^q)$. This
+has length $q$ and principal maximal ideal $(y)$, so the scheme is curvilinear and its tangent
+space $(y)/(y^2)$ is one-dimensional. Its socle is generated by $y^{q-1}$, proving local
+Gorensteinness. Item (I4) gives type $10p+1$ and nonlevelness for the homogeneous coordinate
+ring, proving the arithmetic contrast.
 \end{proof}
 
 \begin{remark}
@@ -301,15 +480,16 @@ This example makes the embedding distinction concrete:
  \text{locally Gorenstein}\quad\not\Rightarrow\quad\text{arithmetically Gorenstein}.
 \]
 The local scheme is always the one-variable truncation, while the standard grading retains the
-nonlevel offset-layer structure.
+nonlevel offset-layer structure: the socle of the Artinian reduction lies in degree two with
+dimension $10p$ and in degree four with dimension one.
 \end{remark}
 
-\section{K\"ahler differentials}
+\subsection{K\"ahler differentials}
 
-The curvilinear chart has a short differential fingerprint which also records the ground-field
-characteristic.
+The curvilinear chart has a short differential fingerprint which also records the
+characteristic of the ground field.
 
-\begin{proposition}[Differential signature]\label{prop:differentials}
+\begin{proposition}[Differential signature, \mDc]\label{prop:differentials}
 Let $B_p=\Cfiber_p/(X_0-1)$. Then
 \[
  \Omega^1_{B_p/\kfield}
@@ -329,56 +509,75 @@ The cotangent space at the closed point has dimension one in every characteristi
 \end{proposition}
 
 \begin{proof}
-Apply the conormal sequence to $B_p=\kfield[y]/(y^q)$. Differentiating the defining equation gives
-$q y^{q-1}dy=0$, which proves the presentation and the characteristic split. The differential
-module is cyclic, so every exterior power of degree at least two vanishes. Tensoring with
-$B_p/(y)$ leaves the single generator $dy$.
+Apply the conormal sequence to $B_p=\kfield[y]/(y^q)$ from Corollary~\ref{cor:dehom}.
+Differentiating the defining equation gives $q y^{q-1}dy=0$, which proves the presentation
+and the characteristic split. The differential module is cyclic, so every exterior power of
+degree at least two vanishes. Tensoring with $B_p/(y)$ leaves the single generator $dy$.
 \end{proof}
 
-This agrees with the general differential characterization of weakly curvilinear schemes in
-\cite{KreuzerLinhLong2023}, while the exact truncation and characteristic formula here come from
-the conductor-family parametrization.
+The characteristic split is concrete. Since $q=24p=2^3\cdot3\cdot p$, the dimension is $q$ in
+characteristic two and three and in every prime characteristic dividing $p$, and $q-1$ in all
+other characteristics. At $p=4$, where $q=96=2^5\cdot3$, the dimension is $96$ over fields of characteristic two or three and $95$ over every other field, and the cotangent space of the closed point is the one-dimensional space spanned by $dy$ in all of them. This agrees with the general differential characterization of weakly
+curvilinear schemes in \cite{KreuzerLinhLong2023}, while the exact truncation and the
+characteristic formula come from the conductor-family parametrization.
 
-\section{The canonical grevlex degeneration}
+\section{Theory II: the canonical grevlex degeneration}\label{sec:theory-b}
 
-Order the variables by decreasing offset and use graded reverse lexicographic order $\prec$; thus
-$X_a\succ X_b$ exactly when $a>b$, and $X_0$ is last. If a monomial is written as a
+Order the variables by decreasing offset and use graded reverse lexicographic order $\prec$;
+thus $X_a\succ X_b$ exactly when $a>b$, and $X_0$ is last. If a monomial is written as a
 nondecreasing tuple of offsets, then the $\prec$-smallest monomial in a fixed degree and offset
-fiber is the lexicographically smallest tuple. Write it as $N_{n,b}$.
-This last-parameter order and the use of finite standard-monomial counts are consistent with
-Gr\"obner methods for projective monomial curves and associated graded semigroup algebras
-\cite{BhardwajChauJavadekar2025,SahaSenguptaSrivastava2022}; the staircase and formulas below are
-specific to the present truncated conductor family.
+fiber is the lexicographically smallest tuple. Write it as $N_{n,b}$. Both facts hold because
+a larger offset in an earlier coordinate makes the monomial larger in the last-variable order.
 
-\begin{lemma}[Canonical staircase]\label{lem:staircase}
-In each surviving bidegree $(n,b)$, the unique standard monomial of
-$P_p/\operatorname{in}_{\prec}(J_p)$ is $N_{n,b}$. A monomial is a minimal generator of the
-initial ideal exactly when it is noncanonical and every one-variable divisor is canonical.
+\begin{lemma}[Canonical staircase, \mDc]\label{lem:staircase}
+In each surviving bidegree $(n,b)$ with $b\in E_n$, the unique standard monomial of
+$P_p/\operatorname{in}_{\prec}(J_p)$ is $N_{n,b}$, and $\operatorname{in}_\prec(J_p)$ is spanned by
+all other monomials. A monomial is a minimal generator of the initial ideal exactly when it is
+nonstandard and every one-variable divisor is standard.
 \end{lemma}
 
 \begin{proof}
-Theorem~\ref{thm:parametrization} shows that two nonzero degree-$n$ monomials agree precisely when
-their total offsets agree, and that all monomials of offset at least $q$ vanish. Every surviving
-fiber therefore contributes its unique $\prec$-smallest monomial to the standard basis. The last
-assertion is the minimal-boundary criterion for a monomial ideal.
+The ideal $J_p$ is bihomogeneous for degree and offset. By (I2), the quotient has dimension one
+in every bidegree $(n,b)$ with $b\in E_n$ and zero in every other, and in every surviving
+fiber all monomials have the same class. Hence $J_p$ is spanned by the differences of two
+monomials in the same fiber and by the monomials of absent fibers. Its initial ideal contains
+every monomial of an absent fiber and every non-smallest monomial of a surviving fiber, and the
+smallest monomial of each surviving fiber is not in the initial ideal because the quotient
+is one-dimensional there. The last assertion is the minimal-boundary criterion for a monomial
+ideal.
+\end{proof}
+
+\begin{lemma}[Adding $X_0$, \mDc]\label{lem:x0}
+For $n\geq1$ and $b\in E_n$, one has $N_{n+1,b}=X_0N_{n,b}$. Consequently, a standard
+monomial of degree $n$ and offset $b$ contains $X_0$ if and only if $b\in E_{n-1}$, and for
+$n\geq4$ and $0\leq b<q$,
+\[
+ N_{n,b}=X_0^{n-4}N_{4,b}.
+\]
+\end{lemma}
+
+\begin{proof}
+Since $0\in G_p$, $E_n\subseteq E_{n+1}$, so $N_{n+1,b}$ exists. Let $(a_1\leq\cdots\leq a_{n+1})$ be
+a degree-$(n+1)$ tuple of offset $b$. If $a_1=0$, removing it leaves a degree-$n$ tuple of
+offset $b$, which is lexicographically at least $N_{n,b}$; hence the tuple is at least
+$(0,N_{n,b})$. If $a_1>0$, the tuple exceeds $(0,N_{n,b})$ in its first coordinate. So
+$X_0N_{n,b}$ is the smallest. The second assertion follows because a standard monomial
+containing $X_0$ yields, after removal of $X_0$, a degree-$(n-1)$ monomial of the same offset,
+and conversely. The last follows by induction from $E_n=[0,q-1]$ for $n\geq4$.
 \end{proof}
 
 \begin{theorem}[Explicit reduced Gr\"obner basis]\label{thm:groebner}
-For every $p\geq4$, the reduced Gr\"obner basis of $J_p$ has degree profile
-\[
- \bigl(50p^2-17p,\;5p-1,\;p-2\bigr)
-\]
-in degrees two, three, and four. There are no basis elements in degree at least five.
-
-The quadratic part contains one relation for every noncanonical quadratic monomial $M$ of total
-offset $b$:
+For every $p\geq4$, the reduced Gr\"obner basis of $J_p$ for $\prec$ has the following
+structure.
+\begin{enumerate}
+\item[\textup{(a)}] \mDc{} Degree profile in degrees two: $50p^2-17p$ elements, one for every
+noncanonical quadratic monomial $M$ of total offset $b$:
 \[
  M-N_{2,b}\quad(b<q),\qquad M\quad(b\geq q).
 \]
 Among these, $(77p^2-49p+2)/2$ are binomials and $(23p^2+15p-2)/2$ are monomial
 zero-relations.
-
-The cubic leading monomials are
+\item[\textup{(b)}] \mMV{} The minimal cubic leading monomials are exactly
 \begin{align*}
 A_i&=X_iX_pX_{12p-1} &&(1\leq i\leq p),\\
 B_i&=X_iX_pX_{15p-1} &&(1\leq i\leq p),\\
@@ -386,7 +585,9 @@ C_i&=X_iX_pX_{18p-1} &&(1\leq i\leq p),\\
 D_i&=X_iX_{4p-2}X_{16p} &&(1\leq i\leq p-2),\\
 E_i&=X_iX_{4p-2}X_{18p-1} &&(1\leq i\leq p),
 \end{align*}
-together with $X_p^3$. Their reduced tails are
+together with $X_p^3$; there are $5p-1$ of them. The minimal quartic leading monomials are exactly
+$X_iX_p^2X_{4p-2}$ for $2\leq i\leq p-1$, so there are $p-2$.
+\item[\textup{(c)}] \mMV{} The reduced tails are
 \begin{align*}
 A_1&\longmapsto X_0X_{3p}X_{10p},&
 A_i&\longmapsto X_0^2X_{13p+i-1} &&(2\leq i\leq p-1),\\
@@ -398,123 +599,882 @@ C_p&\longmapsto X_0X_{3p}X_{17p-1},&
 D_i&\longmapsto X_0X_{3p}X_{17p+i-2},\\
 E_i&\longmapsto X_0X_{7p+i-2}X_{15p-1} &&&&(i=1,2),\\
 E_i&\longmapsto X_0X_{6p+i-3}X_{16p} &&&&(3\leq i\leq p),\\
-X_p^3&\longmapsto X_0^2X_{3p}.&&
+X_p^3&\longmapsto X_0^2X_{3p},&&
 \end{align*}
-Finally, the quartics are
-\[
- X_iX_p^2X_{4p-2}-X_0^3X_{6p+i-2},\qquad 2\leq i\leq p-1.
-\]
-No minimal leading monomial is divisible by $X_0$.
+and the quartic tails are $X_0^3X_{6p+i-2}$.
+\item[\textup{(d)}] \mDc{} There is no element of degree at least five.
+\item[\textup{(e)}] \mMV{} No minimal leading monomial is divisible by $X_0$.
+\end{enumerate}
+The degree profile is therefore $(50p^2-17p,\;5p-1,\;p-2)$ in degrees two, three and four.
+Parts (b), (c) and (e) are the machine-verified core of the theorem, decided for all $p$ by two
+solvers (Section~\ref{sec:algorithms}, Appendix~\ref{app:obligations}); parts (a) and (d) are
+derived from the bases of Proposition~\ref{prop:input}.
 \end{theorem}
 
 \begin{proof}
-There are $\binom{10p+1}{2}=50p^2+5p$ quadratic monomials and $|E_2|=22p$ canonical
-ones, giving $50p^2-17p$ quadratic boundary elements. Summing the unordered pairs from the eleven
-blocks of $G_p$ whose offset is at least $q$ gives $(23p^2+15p-2)/2$ zero-relations; subtraction
-gives the stated binomial count.
+\emph{Part (a).} There are $\binom{10p+1}{2}=50p^2+5p$ quadratic monomials and $|E_2|=22p$
+canonical ones, since each surviving offset of $E_2$ contributes exactly one standard
+quadratic by Lemma~\ref{lem:staircase}. This gives $50p^2-17p$ quadratic boundary elements; each
+is a minimal generator because no variable is a nonzero-fiber failure ($0\in G_p$ and the
+maximal generator $18p-1<q$ make every variable standard). Summing the unordered pairs from
+the eleven blocks of $G_p$ whose offset is at least $q$ gives $(23p^2+15p-2)/2$ zero-relations;
+subtraction gives the stated binomial count $(77p^2-49p+2)/2$.
 
-For the nonquadratic boundary, Lemma~\ref{lem:staircase} turns completeness into Presburger
-arithmetic over the eleven interval blocks of $G_p$. The exact certificate proves, for all
-integers $p\geq4$, that the five indexed cubic groups plus $X_p^3$ are both sound and complete,
-that the displayed quartic family is sound and complete, and that all twelve endpoint/interior
-tail cases are canonical and have the correct offset. Its 16 negated obligations are UNSAT. The
-family sizes give $p+p+p+(p-2)+p+1=5p-1$ cubics and $p-2$ quartics.
+\emph{Parts (b), (c), (e).} By Lemma~\ref{lem:staircase}, completeness and soundness of the
+families are statements about the Presburger-definable predicates of Appendix~\ref{app:obligations}
+over the eleven interval blocks of $G_p$. The obligations are: no minimal cubic boundary lies
+outside the declared families; every declared cubic is a minimal boundary; the same two
+statements for the quartic family; and, for each of the twelve endpoint and interior cases of
+Table~\ref{tab:tails}, the declared tail is standard, has the offset of its leading monomial and is
+lexicographically smaller. The negation of each is unsatisfiable for all integers $p\geq4$
+(Table~\ref{tab:obligations}). The family sizes give $p+p+p+(p-2)+p+1=5p-1$ cubics and $p-2$
+quartics, because the leading monomials of different families are distinct (they differ in
+their second or third coordinate). No leading monomial or tail of the cubic and quartic families
+has a coordinate equal to $0$ among its leading variables, which is (e); for the quadratics,
+$X_0X_a$ is canonical for every $a\in G_p$, because $(0,a)$ is the lexicographically smallest
+pair of offset $a$, and $X_0^2$ is canonical.
 
-It remains to close the infinite degree tail without solver extrapolation. Since $E_4=[0,q-1]$
-and $E_n=[0,q-1]$ for $n\geq4$, the last-variable order forces
-\[
- N_{n,b}=X_0^{n-4}N_{4,b}\qquad(n\geq4,\ 0\leq b<q).
-\]
-The staircase therefore stabilizes in degree four, so no later minimal boundary can occur. The
-listed polynomials are monic with distinct minimal leading monomials and canonical tails; hence
-they form the reduced Gr\"obner basis.
+\emph{Part (d).} Let $M$ be a minimal generator of the initial ideal of degree $n\geq5$ and offset
+$b$. Suppose $X_0\mid M$. Then $M/X_0$ is standard, so $b<q$, $b\in E_{n-1}$ and
+$M/X_0=N_{n-1,b}$; by Lemma~\ref{lem:x0}, $M=X_0N_{n-1,b}=N_{n,b}$ is standard, which is a
+contradiction. (If $b\geq q$, the divisor $M/X_0$ already has offset $b\geq q$ and is not
+standard.) Suppose $X_0\nmid M$. For every variable $X_a$ dividing $M$, the divisor $M/X_a$ is
+a standard monomial of degree $n-1\geq4$ without $X_0$; by Lemma~\ref{lem:x0} its offset
+$b-a$ is not in $E_{n-2}$, and $b-a<q$. For $n\geq6$, $E_{n-2}\supseteq E_4=[0,q-1]$, which is
+impossible. For $n=5$, $b-a\notin E_3$ forces $b-a=6p-1$ for every variable $X_a$ dividing $M$,
+so all the variables are equal, $M=X_a^5$ and $4a=6p-1$. The left side is even and the right
+side odd, a contradiction. This covers both the case of offset below $q$ and that of offset at
+least $q$ with no hypothesis on the divisors beyond minimality.
+
+\emph{Conclusion.} The listed polynomials are monic, have pairwise distinct minimal leading
+monomials, and have standard tails (the tails are standard by (c)); each lies in $J_p$ because both
+of its monomials lie in the same fiber (or its monomial lies in an absent fiber). By
+Lemma~\ref{lem:staircase} the leading monomials are the minimal generators of the initial ideal.
+Hence they form the reduced Gr\"obner basis.
 \end{proof}
 
-\begin{corollary}[Flat Cohen--Macaulay degeneration]\label{cor:degeneration}
-The initial algebra is Cohen--Macaulay, $X_0$ is regular on it, and its Artinian reduction has
-Hilbert function
+The proof of part (d) closes a case that a direct appeal to the formula $N_{n,b}=X_0^{n-4}N_{4,b}$
+leaves open: a monomial of degree at least five whose offset is at least $q$ and whose proper
+divisors are all standard. The argument above treats it through the dichotomy on $X_0$, and the
+parity of $6p-1$ is what excludes the last candidate, the fifth power $X_a^5$.
+
+\begin{corollary}[Flat Cohen--Macaulay degeneration, \mMV]\label{cor:degeneration}
+The initial algebra $S_p=P_p/\operatorname{in}_\prec(J_p)$ is Cohen--Macaulay, $X_0$ is a nonzerodivisor
+on it, and its Artinian reduction by $X_0$ has Hilbert function
 \[
  (1,\;10p-1,\;12p,\;2p-1,\;1).
 \]
-The defining ideal has relation type three, while this reduced Gr\"obner basis reaches degree
-four.
+The defining ideal has relation type three by (I5), while the reduced Gr\"obner basis reaches
+degree four.
 \end{corollary}
 
 \begin{proof}
-No minimal initial generator contains $X_0$, so multiplication by $X_0$ is injective on standard
-monomials. The successive offset layers from Proposition~\ref{prop:input} have the displayed
-sizes. Their sum is $24p$, and adjoining powers of $X_0$ recovers the stabilized staircase.
-Relation type three was established by the earlier minimal-presentation theorem, whereas
-Theorem~\ref{thm:groebner} has $p-2>0$ quartics.
+By Theorem~\ref{thm:groebner}(e), no minimal generator of the initial ideal contains $X_0$,
+so $S_p$ is $\kfield[X_0]\otimes_\kfield P_p'/I'$ with $P_p'=\kfield[X_a:a>0]$ and $I'$ the monomial
+ideal generated by the same monomials. Multiplication by $X_0$ is injective, and $S_p$ is flat
+over $\kfield[X_0]$. By Lemma~\ref{lem:x0}, a standard monomial of degree $n$ contains no $X_0$ exactly when its
+offset lies in $E_n\setminus E_{n-1}$, and the layers of the bases have sizes
+$1,10p-1,12p,2p-1,1$, which sum to $24p$. So $P_p'/I'$ is Artinian of length $24p$ and $S_p$ is
+one-dimensional Cohen--Macaulay. The Gr\"obner degeneration is flat. Relation type three is
+(I5), whereas Theorem~\ref{thm:groebner} has $p-2>0$ quartics.
 \end{proof}
 
-\section{Computational verification}
+\section{Algorithms and implementation}\label{sec:algorithms}
 
-The symbolic proofs above use the imported results in Proposition~\ref{prop:input}. Computation is
-used to validate their translation into the new parametrization and to exercise negative controls.
-The primary-structure sweep computes truncated sumsets directly from $G_p$ for every
-$p=4,\ldots,300$. An independent recomputation starts from the five disjoint Artinian layers. The
-Gr\"obner sweep independently checks all families listed in Theorem~\ref{thm:groebner}, canonical
-tails, divisor minimality, Hilbert values, and controls at the same 297 parameters. A separately
-encoded clique-based recomputation enumerates canonical pairs and reconstructs factorization
-complexes through degree six at \mbox{$p=4,5,6,17,73,151,300$}.
+Every computation of this paper is an exact computation with integers and finite sets, with no
+randomness and no floating point in any decision. The archived programs are Python scripts
+whose paths are listed in Section~\ref{sec:repro}. This section describes each algorithm, its
+cost in $p$, and the artifacts it produces. Costs are derived from the structure of the
+algorithms; the measured run times are in Section~\ref{sec:results}.
 
-\begin{center}
+Throughout, $G=G_p$ is built from its eleven blocks, $q=24p$, and sets of offsets below $q$ are held as
+$q$-bit integers whose bit $i$ is set when offset $i$ belongs to the set.
+
+\begin{algorithm}[ht]
+\caption{Truncated sumset sweep for one parameter $p$ (computations EXP-025 and EXP-026).}
+\label{alg:sumset}
+\begin{algorithmic}[1]
+\Require integer $p\geq4$
+\State $q\gets24p$; $G\gets$ blocks of $G_p$; $B_1\gets$ bits of $G$
+\For{$n=2,\ldots,6$ (EXP-026) or $n=2,\ldots,5$ (EXP-025)}
+  \State $B_n\gets\bigl(\bigvee_{g\in G}(B_{n-1}\ll g)\bigr)\wedge(2^q-1)$
+  \State compare the set of $B_n$ with the closed formula $E_n$ of Proposition~\ref{prop:input}
+\EndFor
+\State check $\dim=(1,10p,22p,q-1,q,q,q)$ and the layer sizes $(1,10p-1,12p,2p-1,1)$
+\State \textbf{for each} positive $a\in G$: check $a\in E_{\min(a,4)}$ (the relation $X_0^{a-1}X_a=X_1^a$ exists)
+\State count the zero pairs $\{a\leq b\}\subseteq G$ with $a+b\geq q$ by bisection; the binomials are the other non-canonical pairs
+\State evaluate the mutation controls and write the row with its SHA-256 row hash
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:sumset} costs $|G|=10p$ shifts and ORs of $q$-bit integers per degree, that is
+$O(5\cdot10p\cdot q/w)=O(p^2/w)$ word operations for machine word size $w$, plus $O(p\log p)$
+for the zero-pair count; a sweep over $p\leq P$ costs $O(P^3/w)$. Its output is, per parameter,
+the dimensions, the layer sizes, the quadratic split and a canonical-JSON SHA-256 row hash; the
+aggregate over all rows is the SHA-256 of the list of row hashes.
+
+\begin{algorithm}[ht]
+\caption{Independent recomputation from the disjoint layers (computation EXP-025 audit).}
+\label{alg:layers}
+\begin{algorithmic}[1]
+\Require integer $p\geq4$; no use of Algorithm~\ref{alg:sumset} state
+\State write the five layers $\ell_0=\{0\}$, $\ell_1=G\setminus\{0\}$, $\ell_2$, $\ell_3$, $\ell_4$ as explicit unions of intervals
+\State $E_n\gets\ell_0\cup\cdots\cup\ell_n$ and $E_5\gets E_4$
+\State assert that the layers are pairwise disjoint and partition $[0,q-1]$
+\State assert $a\in E_{\min(a,4)}$ for every positive $a\in G$
+\State assert $q-1\in E_4$ and $q\notin E_4$ (sharp nilpotence)
+\State compare dimensions and hashes with the stored row; rehash every stored row and the aggregate
+\end{algorithmic}
+\end{algorithm}
+
+The layers are $\ell_3=[2p+1,3p-1]\cup[5p-1,6p-2]$, $\ell_4=\{6p-1\}$ and
+\begin{align*}
+\ell_2={}&[p+1,2p]\cup[4p-1,5p-2]\cup\{8p-1,10p-1\}\cup[10p+1,11p-2]\cup[12p,13p]\\
+&\cup\{14p-1\}\cup[15p,16p-1]\cup[16p+1,17p-2]\cup[18p,24p-1],
+\end{align*}
+which has $12p$ elements. The cost of Algorithm~\ref{alg:layers} is $O(p)$ interval operations per parameter plus the
+rehash of all rows.
+
+\begin{algorithm}[ht]
+\caption{Cached quadratic oracle and boundary-divisibility test (computation EXP-026, sweep).}
+\label{alg:oracle}
+\begin{algorithmic}[1]
+\Require integer $p\geq4$; the declared cubic leads $\mathcal L_3$ and quartic leads $\mathcal L_4$ with their tails
+\Function{Canon}{$t$} \Comment{lexicographically smallest pair of $G$ with sum $t$, cached}
+  \State \Return $(\ell,t-\ell)$ with the smallest $\ell\in G$, $\ell\leq t/2$, $t-\ell\in G$; none if $t\geq q$
+\EndFunction
+\Function{Standard}{$M$}
+  \State \Return $\sum M<q$ and every pair $\{u,v\}\subseteq M$ equals \Call{Canon}{$u+v$} and no triple of $M$ is in $\mathcal L_3$ and no quadruple in $\mathcal L_4$
+\EndFunction
+\For{each relation (lead, tail)}
+  \State check lead and tail have equal degree and offset, lead $\succ$ tail
+  \State check \Call{Standard}{tail}, not \Call{Standard}{lead}, and every one-variable divisor of lead is standard
+\EndFor
+\State check $|\mathcal L_3|=5p-1$, $|\mathcal L_4|=p-2$, no lead contains $0$, and the total size $50p^2-11p-3$
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:oracle} replaced a first implementation that repeated a recursive search for
+canonical factorizations. The cache makes each call to \textsc{Canon} cost $O(\log p)$ after its
+first evaluation, each standardness test cost $O(1)$ lookups for a monomial of degree at most five,
+and the validation of one parameter cost $O(p)$ relations times a constant. The sweep therefore
+establishes, at every $p=4,\ldots,300$, that every declared lead is a minimal boundary element
+with a standard tail of the right offset: the soundness of the families. It does not by itself
+enumerate all boundary monomials; completeness at the sampled parameters comes from
+Algorithm~\ref{alg:clique}, and completeness for all $p$ from the solver obligations.
+
+\begin{algorithm}[ht]
+\caption{Clique reconstruction of the staircase (computation EXP-026, independent recomputation).}
+\label{alg:clique}
+\begin{algorithmic}[1]
+\Require integer $p\in\{4,5,6,17,73,151,300\}$; the generators rebuilt from the eleven blocks, not from the sweep
+\State enumerate all $\binom{10p+1}{2}$ unordered pairs; keep for each total $<q$ the first pair in increasing order (canonical pairs); count zero pairs
+\State $\mathrm{Adj}\gets$ adjacency of the graph whose edges are the canonical pairs
+\State triples: for each canonical pair $(u,m)$ and $r\in\mathrm{Adj}(u)\cap\mathrm{Adj}(m)$, $r\geq m$, form $(u,m,r)$
+\State standard triples: the lexicographically smallest triple per total $<q$; cubic boundary $=$ triples minus standard triples
+\For{degree $d=4,5,6$}
+  \State candidates: extend each standard $(d-1)$-tuple by a common neighbour such that every distinct divisor is standard
+  \State standard $d$-tuples: smallest per total; boundary $=$ candidates minus standard
+\EndFor
+\State assert the counts $22p$, $q-1$, $q$, $q$, $q$ of standard monomials in degrees two to six and the boundary counts $(5p-1,p-2,0,0)$
+\State assert no boundary monomial contains $0$; compare hashes with the sweep row
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:clique} treats the term order only through ``lexicographically smallest'' and
+shares no code with Algorithm~\ref{alg:oracle}. The pair enumeration costs $O(p^2)$, the
+adjacency lists have size $O(p)$ per vertex, and each degree adds one pass over the standard
+tuples of the previous degree; it enumerates every candidate boundary monomial, so it decides
+completeness at the sampled parameters. It stops at degree six, one above the proved last degree.
+
+\begin{algorithm}[ht]
+\caption{Decision of the Presburger obligations by two solvers (computations EXP-026 and EXP-069).}
+\label{alg:solvers}
+\begin{algorithmic}[1]
+\Require the 16 obligations of Appendix~\ref{app:obligations}, each built by the program of EXP-026 in a fresh process
+\For{each obligation $\Phi$}
+  \State build the formula $p\geq4\wedge\Phi$; run the Z3 check (limit $120$~s) and require \texttt{unsat}
+  \State take the SHA-256 of the printed query \emph{after} that check, as EXP-026 did, and require equality with the stored digest
+  \State export the query as SMT-LIB text; decide it with cvc5 (logic LIA, limit $600$~s) and require \texttt{unsat}
+  \State decide the exported text with Z3 (limit $600$~s) and require \texttt{unsat}
+\EndFor
+\For{each perturbed obligation $C_1,\ldots,C_4$}
+  \State require \texttt{sat} from cvc5 and from Z3; evaluate the cvc5 model with an exact integer evaluator on the perturbed formula (true) and on the original (false)
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+The solver time is not bounded by a polynomial in $p$: the obligations are formulas over all
+integers $p\geq4$ and the cost is that of the quantifier procedures of the solvers, which the
+experiment measures in Table~\ref{tab:obligations}. Quantified linear integer arithmetic is
+decided by Z3 through model-based quantifier instantiation and by cvc5 through
+counterexample-guided instantiation, two procedures with no shared code, which is why
+agreement between them is evidence of a different kind than a repeated run of one solver.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[node distance=7mm and 9mm, box/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, inner sep=4pt, minimum width=2.6cm}, >=Stealth]
+\node[box] (input) {imported input\\(I1)--(I5)};
+\node[box, right=of input] (theory) {derived theory\\Sections 4--5};
+\node[box, below=of input] (sweep) {sumset sweep\\$p=4,\ldots,300$};
+\node[box, right=of sweep] (layers) {disjoint layers\\recomputation};
+\node[box, right=of layers] (oracle) {canonical oracle\\and boundary test};
+\node[box, below=of sweep] (clique) {clique recomputation\\7 parameters};
+\node[box, right=of clique] (zthree) {16 obligations\\Z3};
+\node[box, right=of zthree] (cvc) {16 obligations\\cvc5 and controls};
+\draw[->] (input) -- (theory);
+\draw[->] (input) -- (sweep);
+\draw[->] (sweep) -- (layers);
+\draw[->] (sweep) -- (oracle);
+\draw[->] (oracle) -- (clique);
+\draw[->] (zthree) -- (cvc);
+\draw[->] (clique) -- (zthree);
+\end{tikzpicture}
+\caption{Architecture of the verification: the imported input feeds the derived theory and
+the exact sweeps; the sweeps are recomputed independently (layers, clique reconstruction), and the
+all-parameter classification passes through Z3 and then cvc5 on identical queries. The drawing
+shows the order of dependence of the computations EXP-025, EXP-026 and EXP-069.}
+\label{fig:pipeline}
+\end{figure}
+
+Figure~\ref{fig:pipeline} summarizes the dependence among the five algorithms. The sweep
+(Algorithms~\ref{alg:sumset} and~\ref{alg:oracle}) is the only one that covers every parameter
+up to $300$; the clique reconstruction (Algorithm~\ref{alg:clique}) covers seven parameters but
+enumerates every boundary monomial; the layer recomputation (Algorithm~\ref{alg:layers}) is an
+independent encoding of the bases; and the solver obligations (Algorithm~\ref{alg:solvers})
+cover all $p\geq4$ but only through formulas whose encoding is a premise.
+
+\section{Experimental design}\label{sec:design}
+
+The experiments test one family of hypotheses: that the formulas of Theorems~\ref{thm:parametrization}
+to~\ref{thm:groebner} and Corollary~\ref{cor:degeneration} hold with no exception at every
+parameter at which they can be exactly decided, and that the classification of the cubic and
+quartic boundary holds for all integers $p\geq4$. Each computation is a test that can fail. A
+mismatch of a boundary, tail, count, order or Hilbert value at any parameter refutes the
+affected statement and stops the run; an exhausted time budget is recorded as inconclusive and is
+never read as a negative mathematical result.
+
+\paragraph{Data and parameters.} The input is the family itself, generated from its eleven
+interval blocks. The sweeps cover all $297$ parameters $p=4,\ldots,300$. The independent
+recomputations cover the spaced sample $p=4,5,6,17,73,151,300$ (seven parameters in EXP-026,
+six in EXP-025), chosen to include the smallest parameter, consecutive small parameters, a
+prime ($17$, $73$, $151$) and the largest swept value. The solver obligations are the 16
+formulas of Appendix~\ref{app:obligations}.
+
+\paragraph{Baselines.} The sweep is the principal computation. Its baselines are three
+recomputations that are encoded separately: Algorithm~\ref{alg:layers}, which starts from the
+five disjoint layers and not from sumsets; Algorithm~\ref{alg:clique}, which enumerates canonical
+pairs and rebuilds higher boundaries from cliques without any state of the sweep; and the
+second solver, which decides the same obligations that the first solver decided. A finite
+computation validates the implementation and the encoding at the tested parameters; it cannot
+replace the argument for all $p$, and no finite sweep is used as an extrapolation principle.
+
+\paragraph{Premises.} The sweeps are run only if the SHA-256 hashes of four premise files
+(Table~\ref{tab:premises}) equal the hashes recorded when the experiments were designed;
+a mismatch stops the run. The solver experiment is run only if the rebuilt queries equal the
+stored ones: the SHA-256 of each rebuilt query must equal the digest stored by the original
+certificate, which is the identity test of Algorithm~\ref{alg:solvers}.
+
+\paragraph{Controls.} Two kinds of control are used. In the sweeps, ten (EXP-025) and eight
+(EXP-026) mutation predicates are evaluated in every row; they are described in
+Section~\ref{sec:ablation} together with their limits. In the solver experiment, four obligations
+are perturbed so that a counterexample exists, and both solvers must find it.
+
+\paragraph{Metrics and statistics.} The metrics are exact: integer dimensions, counts, equality of
+SHA-256 hashes, and solver answers. Every computation is deterministic, so there is no
+sampling error, and no confidence interval or standard deviation applies to a count or a
+hash; the only variable quantity is the solver wall-clock time, which is reported as a single
+measurement per query and carries the machine's scheduling noise. The two executions of Z3 in
+Table~\ref{tab:obligations}, the original and the one on the exported text, give an indication of
+that noise.
+
+\paragraph{Budget.} The sweep of computation EXP-026 was limited to $120$~s and the
+recomputation to $120$~s; the solver experiment limited each query to $600$~s with a three-hour
+total. Atomic checkpoints are written after every parameter.
+
+\begin{table}[ht]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{generated/table-premises.tex}}
+\caption{Hash-checked premise files of the sweeps (SHA-256, full digests, read from the
+artifact of computation EXP-026). A sweep refuses to run when any of the four hashes differs
+from the value recorded when the experiment was designed.}
+\label{tab:premises}
+\end{table}
+
+\section{Results}\label{sec:results}
+
+\subsection{The sweeps}
+
+The sweep of computation EXP-025 completed all $297$ parameters in \ExpTwentyFiveSweepSeconds{}~s and
+the sweep of EXP-026 in \ExpTwentySixSweepSeconds{}~s. In every row the truncated sumsets equal
+the closed bases $E_n$, the layers have sizes $(1,10p-1,12p,2p-1,1)$ and partition $[0,24p-1]$,
+the dehomogenization relations exist, and every declared Gr\"obner element is a valid minimal
+boundary element with a standard tail. Table~\ref{tab:results} shows the exact values at the
+seven parameters of the independent recomputation. For example, at $p=4$ the algebra has $40$
+generators, Hilbert function $(1,40,88,95,96,96,96)$, a reduced Gr\"obner basis of $732$ quadrics
+($519$ binomials and $213$ monomials), $19$ cubics and $2$ quartics, so $753$ elements in all;
+the closed formula gives $50\cdot16-11\cdot4-3=753$. At $p=300$ the basis has $4{,}496{,}697$ elements
+of which $4{,}494{,}900$ are quadrics.
+
+\begin{table}[ht]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{generated/table-results.tex}}
+\caption{Exact values of the sweep of computation EXP-026 at the seven parameters of the
+independent recomputation: the number $q=24p$ of offsets, the number $|G_p|$ of generators, the
+dimensions of $(\Cfiber_p)_2$ and $(\Cfiber_p)_3$ (the Hilbert function is $q$ from degree four on),
+the number of reduced quadrics with their split into binomials and monomial zero-relations, and
+the numbers of cubics and quartics. Every entry equals the closed formula of
+Theorem~\ref{thm:groebner} and Proposition~\ref{prop:input}.}
+\label{tab:results}
+\end{table}
+
+Reading Table~\ref{tab:results}: the number of quadrics grows as $50p^2$, whereas the cubics grow
+linearly as $5p$ and the quartics as $p$. At $p=300$ the cubics and quartics together are
+$1{,}797$ of $4{,}496{,}697$ elements, about $0.04\%$. The degree-three Hilbert dimension is
+$q-1$ at every row, which is the hole at $6p-1$, and the degree-two dimension is $22p$.
+
+\begin{figure}[ht]
+\centering
+\input{generated/fig-profile.tex}
+\caption{Degree profile of the reduced Gr\"obner basis against $p$ on logarithmic axes: the
+numbers of quadrics, cubics and quartics at the seven parameters of Table~\ref{tab:results}.
+The quadrics follow $50p^2-17p$ (slope two), the cubics $5p-1$ and the quartics $p-2$
+(slope one). The data are the profile entries of the rows of computation EXP-026.}
+\label{fig:profile}
+\end{figure}
+
+Figure~\ref{fig:profile} reads the same data as growth rates: the quadrics have slope two on the
+log-log plot, and the two higher degrees have slope one. The nonquadratic part of the basis,
+which the solver certifies, is therefore of linear size, while the quadratic part, which is
+derived, carries the quadratic growth.
+
+\begin{figure}[ht]
+\centering
+\input{generated/fig-split.tex}
+\caption{Share of binomials and of monomial zero-relations among the reduced quadrics at the
+seven parameters of Table~\ref{tab:results}, with the dashed limits $77/100$ and $23/100$ given by the
+leading coefficients of $(77p^2-49p+2)/2$ and $(23p^2+15p-2)/2$ over $50p^2$. The data are the
+quadratic-profile entries of computation EXP-026.}
+\label{fig:split}
+\end{figure}
+
+Figure~\ref{fig:split} shows the split of the quadrics. The binomial share is $0.709$ at $p=4$
+($519/732$) and $0.769$ at $p=300$, approaching $0.77$ from below, while the share of zero-relations
+decreases towards $0.23$. The approach is monotone at the seven parameters, as the closed
+formulas predict: $(77p^2-49p+2)/2$ over $50p^2-17p$ increases to $77/100$.
+
+\begin{figure}[ht]
+\centering
+\input{generated/fig-layers.tex}
+\caption{Share of $24p$ taken by each layer of the Artinian reduction at the seven parameters of
+Table~\ref{tab:results}: the layer in degree $n$ has $\lvert E_n\setminus E_{n-1}\rvert$ elements, namely
+$(1,10p-1,12p,2p-1,1)$. The shares tend to $(0,5/12,1/2,1/12,0)$. The data are the Hilbert
+dimensions of computation EXP-026.}
+\label{fig:layers}
+\end{figure}
+
+Figure~\ref{fig:layers} shows that the layers in degrees one, two and three take about
+$41.7\%$, $50\%$ and $8.3\%$ of the $24p$ offsets as $p$ grows, while the two end layers
+(of size one) vanish. This is the Hilbert function of Corollary~\ref{cor:degeneration}; at
+$p=4$ the layers $(1,39,48,7,1)$ are those of the artifact of computation EXP-025.
+
+\begin{table}[ht]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{generated/table-aggregates.tex}}
+\caption{Aggregate SHA-256 digests of the five exact computations, in full: the digest of a
+computation is the SHA-256 of the list of its row hashes (or, for the Presburger obligations, of the
+list of the query digests). Two computations of the same quantity were encoded independently in
+each pair of rows (primary and recomputation).}
+\label{tab:aggregates}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\small
+\input{generated/table-rowhashes.tex}
+\caption{Size of the reduced Gr\"obner basis and the first sixteen hex digits of the row hash at
+the seven parameters of the independent recomputation (computation EXP-026). The row hash is
+the SHA-256 of the canonical JSON of the row, so a change of any entry of the row changes the
+hash.}
+\label{tab:rowhashes}
+\end{table}
+
+Table~\ref{tab:aggregates} lists the full aggregates, and Table~\ref{tab:rowhashes} the row hashes
+at the sampled parameters. The independent recomputation of EXP-025 rehashed all rows and rebuilt
+six parameters; that of EXP-026 rehashed all $297$ rows to the aggregate and rebuilt the seven
+parameters by clique reconstruction in \ExpTwentySixAuditSeconds{}~s. At each sample it found the
+boundary profile $(5p-1,p-2,0,0)$ in degrees three to six, the same standard-monomial counts,
+and no boundary monomial containing $X_0$. The sample includes $p=300$, where the clique
+enumeration visits all $\binom{3001}{2}=4{,}501{,}500$ unordered pairs.
+
+\subsection{Capped first attempt}
+
+The first implementation of the sweep, which repeated recursive searches for canonical
+factorizations, reached $p=\FirstAttemptLastP$ (\FirstAttemptRows{} rows) when the declared cap of
+$120$~s stopped it, after \FirstAttemptSeconds{}~s. The rows computed before the stop were
+identical to those of the later implementation, whose caching of the quadratic oracle and
+divisibility test (Algorithm~\ref{alg:oracle}) reproduced the earlier row hashes and completed
+the sweep. The stop is a statement about the cost of the first implementation and is not
+evidence for or against any formula. It is reported because a sweep that stops at a budget has
+checked fewer parameters than it was asked to check, and a reader comparing the two
+implementations should know that repeated recursive searches for canonical factorizations were
+the dominant cost of the first one. The checks themselves were the same in both implementations:
+the bases, the layer sizes, the quadratic split, the cubic and quartic families with their tails,
+and the controls. Only the way of finding canonical factorizations changed.
+
+\subsection{The Presburger obligations and the second solver}
+
+Z3 \SolverZthree{} decided the 16 obligations unsatisfiable in \ExpTwentySixCertificateSeconds{}~s in
+all, each in a fresh process; the query aggregate is in Table~\ref{tab:aggregates}.
+Computation EXP-069 rebuilt the 16 queries with the same program and found each query digest
+equal to the stored one. cvc5 \SolverCvc{} (logic LIA, limit \SolverLimit{}~s per query, default
+options) decided all 16 unsatisfiable in \CvcTotalSeconds{}~s in all, and Z3 decided the exported
+SMT-LIB texts unsatisfiable in \ZthreeRoundTripSeconds{}~s. The whole experiment took
+\SolverWallSeconds{}~s of wall-clock time.
+
+\begin{table}[ht]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{generated/table-obligations.tex}}
+\caption{The 16 Presburger obligations of Appendix~\ref{app:obligations}: the original Z3 time
+of computation EXP-026, the Z3 time on the exported text and the cvc5 time of computation EXP-069,
+and the first twelve hex digits of the query digest. Every entry is unsatisfiable for each solver,
+and every query digest equals the stored one. The totals are the elapsed times recorded in the
+artifacts.}
+\label{tab:obligations}
+\end{table}
+
+Table~\ref{tab:obligations} shows where the cost lies. The 12 tail obligations take hundredths of
+a second for each solver. The cubic and quartic classification obligations carry the nested
+quantifier of the \emph{standard} predicate and are expensive for Z3: \texttt{quartic-completeness}
+took $51.0$~s in the original run, which is $81.6\%$ of its total, whereas cvc5 decided it in $10.95$~s.
+The ratio of the totals is $62.505/13.98\approx4.5$.
+
+\begin{figure}[ht]
+\centering
+\input{generated/fig-times.tex}
+\caption{Solver time per obligation, logarithmic scale: the original Z3 run of computation EXP-026,
+Z3 on the exported text, and cvc5, both of computation EXP-069. Times below one millisecond are drawn
+at one millisecond. The four classification obligations dominate; the twelve tail obligations are
+below $0.02$~s for every solver.}
+\label{fig:times}
+\end{figure}
+
+Figure~\ref{fig:times} makes the same point on a logarithmic scale and adds that
+\texttt{quartic-completeness} is the slowest of the four classification obligations in all three
+runs. The order of the other three differs between solvers: for Z3, on the original and on the
+export, \texttt{cubic-soundness} comes next, then \texttt{quartic-soundness} and
+\texttt{cubic-completeness}; for cvc5, \texttt{cubic-soundness} and \texttt{cubic-completeness}
+take about $1.3$ to $1.4$~s and \texttt{quartic-soundness} $0.13$~s.
+
+\begin{table}[ht]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{generated/table-controls069.tex}}
+\caption{The four perturbed obligations of computation EXP-069. C1 removes $X_p^3$ from the cubic
+candidates, C2 adds the triple $(0,0,0)$, C3 replaces the tail $(0,3p,10p)$ by $(0,3p,10p+1)$ and
+C4 widens the quartic index range to include $i=1$. Both solvers answer satisfiable; the model of cvc5
+satisfies the perturbed formula under an exact integer evaluator and fails the original obligation.}
+\label{tab:controls069}
+\end{table}
+
+Table~\ref{tab:controls069} shows the controls. Each perturbation makes a counterexample
+exist, and cvc5 finds it: the model $p=4$, $(4,4,4)$ for C1 is the triple $X_4^3$, which is a
+minimal boundary element missing from the perturbed candidate set; the model $(0,0,0)$ with
+$p=8$ for C2 is the standard monomial $X_0^3$ wrongly listed as a boundary element. Their
+evaluation by a program that is not a solver confirms both models.
+
+\subsection{Evidence classes}
+
+Table~\ref{tab:marks} states, for each result, what it rests on. The statements marked
+\mDc{} are derived; the statements marked \mMV{} rest on the two solvers or on exact computation.
+The table has a practical reading. If the item (I2) of Proposition~\ref{prop:input} were removed
+from the input, every row marked \mDc{} would lose its hypothesis, and only the finite sweeps would
+remain as evidence of their formulas for $p\leq300$. If instead the solver answers were discarded,
+the rows marked \mMV{} for the cubic and quartic classification would reduce to the sweep and the
+clique enumeration at the sampled parameters, while parts (a) and (d) of
+Theorem~\ref{thm:groebner} would stand.
+
+\begin{table}[ht]
+\centering
+\small
 \begin{tabular}{@{}lll@{}}
 \toprule
-computation & coverage & SHA-256 aggregate\\
+statement & class & rests on\\
 \midrule
-primary sweep & all $p=4,\ldots,300$ & \texttt{f3373f4f58287fd3...f9d6b39b6}\\
-primary recomputation & all rows; six detailed rebuilds & \texttt{84c00be8ff64002...f5b6c8f143e}\\
-Gr\"obner sweep & all $p=4,\ldots,300$ & \texttt{63af8f734afc8c05...9e4365a218}\\
-clique recomputation & seven detailed rebuilds & \texttt{401c4807cc0a29a6...586766e41373}\\
-Presburger boundary & all integers $p\geq4$ & \texttt{10c66bbcaa56108f...e046f9dd5fa}\\
+Theorem~\ref{thm:parametrization}, Corollary~\ref{cor:dehom} & \mDc & (I2), (I3), (I4)\\
+Theorem~\ref{thm:primary}, \ref{thm:geometry} & \mDc & above and Cohen--Macaulayness\\
+Proposition~\ref{prop:differentials} & \mDc & Corollary~\ref{cor:dehom}\\
+Lemmas~\ref{lem:staircase} and~\ref{lem:x0} & \mDc & (I2)\\
+Theorem~\ref{thm:groebner}(a), (d) & \mDc & Lemmas~\ref{lem:staircase}, \ref{lem:x0}\\
+Theorem~\ref{thm:groebner}(b), (c), (e) & \mMV & 16 obligations, two solvers\\
+Corollary~\ref{cor:degeneration} & \mMV & Theorem~\ref{thm:groebner}(e) and (I5)\\
+finite sweeps, $p\leq300$ & \mMV & exact integer computation\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Evidence class of each result of the paper and the premises on which it rests. The class
+\mDc{} means that the proof is a written argument that uses a machine-verified item of
+Proposition~\ref{prop:input}; the class \mMV{} means that the statement for all $p$ is decided by solvers or
+that it is an exact finite computation. No statement rests on a solver answer and carries the mark \mD{} alone.}
+\label{tab:marks}
+\end{table}
 
-The negative controls delete offset $1$, perturb the truncation and nilpotency exponents, corrupt
-the degree-three hole, omit a radical coordinate, conflate local and arithmetic Gorensteinness,
-erase the differential characteristic split, and remove the no-embedded-primes premise. Every
-mutation is rejected. Exact scripts, artifacts, premise hashes, and proofs are archived in the
-public repository as the computation records \path{EXP-025-curvilinear-primary-structure} and
-\path{EXP-026-grevlex-staircase}, in the folder
-\path{problems/commutative-algebra/huneke-wiegand/experiments/}.
+\section{Ablation of premises and controls}\label{sec:ablation}
 
-The finite sweep does not prove the theorem for all $p$. The infinite conclusion is supplied by
-Theorems~\ref{thm:parametrization}--\ref{thm:geometry} and
-Proposition~\ref{prop:differentials}. A defect in an imported input theorem would propagate even
-if both implementations agreed. The Presburger boundary certificate uses Z3 4.16.0 and does not
-emit independently checked UNSAT proof objects; the canonical-staircase and stabilization
-arguments remain separate deductive steps.
+An ablation here asks what each premise buys: which statement fails when a premise is removed,
+and whether the computations detect the failure.
 
-\section{Scope and further questions}
+\paragraph{Without the Cohen--Macaulay hypothesis.} Theorem~\ref{thm:primary} needs
+$\operatorname{Ass}(\Cfiber_p)=\{N_p\}$. Without Cohen--Macaulayness, a unique minimal prime does not
+make the zero ideal primary: the quotient of $\kfield[u,v]$ by $(u^2,uv)$ is the standard example. The computation of
+EXP-025 carries this as a control and the proof does not use the inference.
 
-The result concerns the conductor fiber cones of the explicit family recalled in Section~2. It
-does not assert that arbitrary monomial fiber cones are primary, curvilinear, Cohen--Macaulay, or
-locally Gorenstein. It does not strengthen the underlying Huneke--Wiegand counterexample theorem
-for arbitrary modules or arbitrary one-dimensional Gorenstein domains.
+\paragraph{Without offset one.} Corollary~\ref{cor:dehom} uses $1\in G_p$ to write every generator as
+a power of $X_1$. Deleting offset $1$ from the generators breaks the surjection from
+$\kfield[y]/(y^q)$, and the control for it is evaluated in every row.
 
-With the primary decomposition and the reduced Gr\"obner basis determined, one major algebraic
-question remains open for this family:
-\begin{enumerate}
-  \item Can the unresolved interior of the graded Betti table be expressed by closed formulas,
-  or does it exhibit parameter-dependent combinatorial phases?
-\end{enumerate}
-The monomial degeneration may help by replacing value-semigroup products with the combinatorics
-of one explicit finite staircase.
+\paragraph{Without the exact truncation.} Replacing $q$ by $q-1$ or $q+1$ changes the length of the scheme and the
+nilpotency index; the controls for the truncation and for the exponents $q\pm1$ compare the predicted
+exponent with the wrong one in every row.
+
+\paragraph{Without the characteristic split.} A characteristic-free differential length would claim
+$q-1$ everywhere; the control compares $q-1$ with $q$.
+
+\paragraph{Mutations of the Gr\"obner data (EXP-026).} Table~\ref{tab:controls026} lists the
+eight mutations of the staircase computation and what each exercises.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+\toprule
+control & mutation & rejected because\\
+\midrule
+reversed order & $X_0$ not last, order reversed & the canonical pair of $4p$ changes\\
+deleted cubic member & one member of an indexed group removed & the count $5p-2$ differs from $5p-1$\\
+shifted quartic endpoint & range $2..p$ instead of $2..p-1$ & the count $p-1$ differs from $p-2$\\
+corrupted tail & tail $(0,1,3p)$ for $(p,p,p)$ & its offset $3p+1$ differs from $3p$\\
+wrong total offset & $(p,p,p)$ against $(0,1,3p)$ & offsets $3p$ and $3p+1$ differ\\
+$X_0$-leading generator & a lead divisible by $X_0$ & no declared lead contains $X_0$\\
+false degree-five standard & $(p,p,p,p,p)$ declared standard & the boundary test rejects it\\
+eventual Hilbert function only & $(q,q,q,q)$ for $(1,10p,22p,q-1)$ & the first dimensions differ\\
+\bottomrule
+\end{tabular}
+\caption{The eight mutation predicates evaluated in every row of the sweep of computation EXP-026,
+the mutation applied and the reason it is rejected. The first and the seventh run the canonical
+oracle and the boundary test on mutated data; the others compare a mutated count, offset or dimension
+with the predicted one.}
+\label{tab:controls026}
+\end{table}
+
+Table~\ref{tab:controls026} must be read with its limits. Controls two to five and eight compare a
+mutated number with the predicted number and require inequality; they test that the quantities
+are not trivially equal, not that the pipeline detects a corrupted input. Only the reversed
+order and the false degree-five standard monomial rerun the oracle on altered data. The controls
+of EXP-025 are of the same kind. This is why the solver experiment adds four perturbations that rerun
+the full decision procedure of two solvers and the exact evaluator on altered formulas
+(Table~\ref{tab:controls069}), which test detection in the strong sense: a solver that answered
+\texttt{unsat} indiscriminately would fail every one of them.
+
+\paragraph{The second solver.} The second solver is the ablation of the solver premise. If only Z3
+had decided the obligations, a defect of its quantifier instantiation would be undetectable. The
+agreement of cvc5 on queries with equal digests, with no use of a Z3 answer in its input, removes
+a single-implementation failure from the premises, and leaves the encoding and the shared reading of
+the text as the remaining ones (Section~\ref{sec:limits}).
+
+\section{Discussion}\label{sec:discussion}
+
+\subsection{The degeneration and the Betti table}
+
+The degeneration of Corollary~\ref{cor:degeneration} gives $\Cfiber_p$ the Hilbert function of an
+Artinian monomial algebra on the $10p-1$ variables of positive offset, with layers
+$(1,10p-1,12p,2p-1,1)$, and it explains two numbers of the presentation. The relation type is three
+but the natural Gr\"obner degree is four, because the single cubic obstruction at total $3p$
+is a minimal relation, while the quartic family $X_iX_p^2X_{4p-2}$ is a boundary of the
+staircase that is a consequence of lower relations. The two measures of complexity need not
+agree, and here they do not.
+
+The graded Betti numbers $\beta_{i,j}=\beta^{P_p}_{i,j}(\Cfiber_p)$ of $\Cfiber_p$ over the presentation
+ring were determined in part by computations EXP-024 and EXP-027 to EXP-035, with the proofs in
+\cite{SantibanezLeal2026}. Table~\ref{tab:betti} lists the known entries and their classes.
+Put $c=10p-1$. The projective dimension is $c$, the regularity is four and the Betti polynomial is
+$(1-z)^c(1+(10p-1)z+12pz^2+(2p-1)z^3+z^4)$; the polynomial depends only on the Hilbert function
+and is the same for the degeneration.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.42\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}l@{}}
+\toprule
+entry & value & source & class\\
+\midrule
+$\operatorname{pd}$, regularity, $\beta_{2,3}$, last row & $c$, $4$, $2p(500p^2-330p+31)/3$, $\beta_{c,c+2}=10p$, $\beta_{c,c+4}=1$, $\beta_{c-1,c+3}=8p$ & EXP-024, Thm 15.6 & \mD\\
+$\beta_{2,4}$, $\beta_{3,4}$ & $8p$, $p(5p-1)(500p^2-440p+47)/2$ & EXP-027, Thm 15.7 & \mD\\
+$\beta_{2,5}$, $\beta_{2,6}$ & $p(2p-3)$, $0$ & EXP-028, Thm 15.8 & \mD\\
+$\beta_{3,5}$, $\beta_{4,5}$ & $4p(8p-1)$, $2p(5p-1)(10p-3)(100p^2-110p+13)/3$ & EXP-029, Thm 15.9 & \mD\\
+$\beta_{3,6}$ & $8p(7p^2-12p+2)/3$ & EXP-030, Thm 15.10 & \mD\\
+$\beta_{3,7}$, third row & $0$; $\beta_3=p(7500p^3-7988p^2+2025p-133)/6$ & EXP-031, Thm 15.11 & \mD\\
+cubic-colon quotient & complete Betti polynomial, total rank $2^{8p}((2p-4)2^{2p-2}+4)$ & EXP-032, Thm 15.12 & \mD\\
+quadratic quotient and strands $i+3$, $i+4$ & $\operatorname{depth}=1$, $\operatorname{reg}=2$, minimal cubic mapping cone & EXP-033, Thm 15.13 & \mD\\
+first surviving lower class & $\beta_{p,(p+2,\tau_p)}=1$, $\tau_p=8p-1+p(p+1)/2$ & EXP-034, Thm 15.14 & \mD\\
+characteristic dependence & $\beta_{5,(7,87)}(\Cfiber_4)=4$ over $\mathbf F_2$, $3$ over $\mathbf F_3$ & EXP-035, Thm 15.15 & D/MV\\
+\bottomrule
+\end{tabular}
+\caption{Known graded Betti entries of $\Cfiber_p$ over $P_p$, read from the records of computations
+EXP-024 and EXP-027 to EXP-035 and from the theorems of \cite{SantibanezLeal2026} that prove them; $c=10p-1$.
+The class D/MV of the last row is that of the cited theorem: the structure of the entry is derived and the
+finite values are machine-verified.}
+\label{tab:betti}
+\end{table}
+
+Reading Table~\ref{tab:betti}. The second row of the Betti table is complete: $\beta_{2,3}$, $\beta_{2,4}=8p$,
+$\beta_{2,5}=p(2p-3)$ and $\beta_{2,6}=0$ over every field. The third row is complete too, with
+$\beta_{3,4},\ldots,\beta_{3,7}$ given, and the total $\beta_3$ is a polynomial of degree four in $p$. The two
+highest regularity strands, $\beta_{i,i+3}$ and $\beta_{i,i+4}$, are known for all $i$ through the minimal
+mapping cone of the cubic: their total ranks are $2^{8p}((2p-4)2^{2p-2}+2)$ and $2^{8p}$. What remains
+are the two lowest regularity strands $\beta_{i,i+1}$ and $\beta_{i,i+2}$. Their alternating
+sums are fixed by the Betti polynomial, but the ranks are not, and the entry of the last row
+shows that individual multigraded entries depend on the characteristic: in the multidegree
+$(7,87)$ at $p=4$ the entry is $4$ over $\mathbf F_2$ and $3$ over $\mathbf F_3$, with the integral
+cokernel containing $2$-torsion. A repeated computation of the same kind through $p=9$ confirms the
+dependence on the characteristic in further cells \cite{SantibanezLeal2026}.
+
+\subsection{The open question}
+
+The question that remains for this family is therefore sharper than the one it replaces. The two lowest
+regularity strands of $\Cfiber_p$ and of the quadratic quotient $P_p/(J_p)_2$ are not determined, and
+at least some multigraded entries depend on the characteristic. Two precise questions follow.
+(Q1) Do the ordinary graded Betti numbers $\beta_{i,i+1}$ and $\beta_{i,i+2}$ of $\Cfiber_p$ have
+closed formulas in $p$, valid over every field, or do they exhibit parameter-dependent
+combinatorial phases? (Q2) Can the parity-sensitive connecting quotient that creates the
+characteristic dependence be identified by an integral or topological complex, so as to prove or
+refute infinitely many characteristic-dependent cells without extrapolating finite
+multiplicities? Both questions concern integral chain complexes of the relative divisor type used
+for the computed entries, and (Q1) is the one whose answer would complete the minimal resolution.
+A possible route, not pursued here and not claimed, replaces value-semigroup
+products by the combinatorics of the single finite staircase of Section~\ref{sec:theory-b}: the
+degeneration has no $X_0$ in its generators, and its Artinian part is an explicit monomial
+algebra.
+
+\subsection{Reading the results as a whole}
+
+Two features stand out. First, the whole projective geometry of $\Cfiber_p$ is one-variable, while
+its algebra has $10p$ generators and a Gr\"obner basis of $50p^2$ elements; the singularity of the
+scheme is a fat point of length $24p$, so everything that is complicated about $\Cfiber_p$ lies in its embedding.
+Second, the proof architecture isolates a very small unproved core. Parts (a) and (d) of
+Theorem~\ref{thm:groebner} and all of Section~\ref{sec:theory-a} are written arguments over the input of
+Proposition~\ref{prop:input}; the machine-verified part is a set of sixteen quantified
+inequalities about interval blocks. A reader who trusts neither the imported input nor the solvers
+still has exact agreement of independently encoded computations at every parameter up to $300$
+and, at seven parameters, a complete enumeration of the boundary monomials. A reader who trusts the
+solvers has in addition the classification for every $p$, and a reader who trusts the cited paper
+has the geometry of Section~\ref{sec:theory-a} as derived consequences. The marks of
+Table~\ref{tab:marks} say which of these readers each statement serves.
+
+\section{Limitations}\label{sec:limits}
+
+\paragraph{The evidence class.} The cubic and quartic classification (Theorem~\ref{thm:groebner}(b),
+(c), (e)) is machine-verified by two solvers, not derived. No proof object was checked by either
+solver, so the soundness of Z3 and of cvc5 in quantified linear integer arithmetic is a premise.
+The two solvers use different procedures, and a defect would have to coincide in two unrelated
+implementations, but this is an argument about independence, not a proof. A derivation by case analysis over
+the eleven blocks would remove the solvers from the trusted base and would make Theorem~\ref{thm:groebner}(b), (c), (e) a derived statement; it is feasible, since the twelve tails are
+short interval computations, and it is not done here.
+
+\paragraph{The encoding.} The obligations encode Theorem~\ref{thm:groebner} through the formulas of
+Appendix~\ref{app:obligations}. Both solvers read the same text, and an error in the encoding
+(for example a wrong candidate family) would be shared by them. The exact evaluator and the controls test the
+reading of the text on four satisfiable instances, not on the sixteen unsatisfiable ones, since an
+unsatisfiable formula has no model to evaluate. The finite sweep up to $p=300$ and the clique
+enumeration at seven parameters are the independent checks of the encoding.
+
+\paragraph{The imported input.} Every theorem inherits the solver boundary of
+(I2) and (I5), which were established in \cite{SantibanezLeal2026} by an all-parameter computation without a
+checked proof object. A defect in the imported input would propagate even if all implementations agreed. The
+sumset identity (I3) is verified for $4\leq p\leq300$ and derived here only for $n\geq3$ from the
+shape of $E_2$.
+
+\paragraph{The controls.} Most mutation controls of the sweeps compare a predicted number with a wrong
+one and do not test detection by the pipeline (Section~\ref{sec:ablation}).
+
+\paragraph{Scope.} The results concern one explicit family, indexed by one integer parameter, and say
+nothing about other conductor ideals or about fiber cones of other counterexamples. The finite sweeps cover $p\leq300$ and
+validate the implementations; they do not prove any statement for larger $p$. Only
+the solver obligations and the written arguments reach every $p\geq4$. The Betti entries of
+Section~\ref{sec:discussion} are imported with the classes of the cited paper and are not reproved here; they are reported for
+context, and no result of Sections~\ref{sec:theory-a} and~\ref{sec:theory-b} depends on them. The
+original conjecture is false in general by \cite{Pham2026,PhamArxiv2026,CGI2026}, and nothing in this
+paper addresses the classification of rigid ideals.
+
+\section{Reproducibility and availability}\label{sec:repro}
+
+All sources, scripts and artifacts are in the public repository named on the first page, in the
+experiments folder of the problem:
+\begin{verbatim}
+problems/commutative-algebra/huneke-wiegand/experiments/
+\end{verbatim}
+The computations are the following folders:
+\begin{verbatim}
+EXP-025-curvilinear-primary-structure
+    run.py  audit.py
+EXP-026-grevlex-staircase
+    run.py  audit.py  symbolic_certificate.py  requirements.txt
+EXP-069-staircase-certificate-second-solver
+    run.py  second_solver.py  exact_eval.py  artifacts/smt2/
+\end{verbatim}
+The exported queries are under artifacts/smt2/ of the last folder. The
+solver versions are Z3 \SolverZthree{} (package \texttt{z3-solver} 4.16.0.0) and cvc5 \SolverCvc{}
+(package \texttt{cvc5} 1.4.2). The archived artifacts do not record the interpreter version or the
+hardware, so those are not reported.
+
+The commands, run from the repository root, are:
+\begin{verbatim}
+python <EXP-025>/run.py            # default range 4..300, budget 60 s
+python <EXP-025>/audit.py
+python <EXP-026>/run.py            # default range 4..300, budget 120 s
+python <EXP-026>/audit.py          # samples 4,5,6,17,73,151,300
+python <EXP-026>/symbolic_certificate.py   # 16 obligations, one process each
+python <EXP-069>/run.py            # both solvers, 600 s per query
+\end{verbatim}
+The tables and figures of this paper are written from the artifacts by
+\texttt{gen\_artifacts.py} in the folder of the manuscript, which reads the files below and
+performs no mathematical computation. Table~\ref{tab:manifest} lists the artifacts that it
+reads with their sizes and SHA-256 hashes. The solver times are the only nondeterministic
+numbers; every count, dimension and hash is reproduced exactly.
+
+\begin{table}[ht]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{generated/table-manifest.tex}}
+\caption{Artifact manifest: size in bytes and full SHA-256 of the artifact files read to produce
+the tables and figures of the paper. The files are those committed in the repository under the
+experiment folders named in the text.}
+\label{tab:manifest}
+\end{table}
+
+\section{Conclusions}\label{sec:conclusions}
+
+For every $p\geq4$, the conductor fiber cone of the family is the truncated monomial algebra
+$\kfield[xy^a:a\in G_p]\subseteq\kfield[x,y]/(y^{24p})$. Its defining ideal is primary with the
+ideal of positive offsets as radical, and the nilradical has sharp nilpotency index $24p$. The
+projective scheme is a saturated curvilinear fat point of length $24p$, locally Gorenstein
+although the coordinate ring is neither level nor Gorenstein, and its differential module has
+dimension $q-1$ or $q$ according to the characteristic. The reduced Gr\"obner basis for the
+grevlex order with $X_0$ last has degree profile $(50p^2-17p,5p-1,p-2)$ and gives a flat
+Cohen--Macaulay degeneration with Artinian Hilbert function $(1,10p-1,12p,2p-1,1)$. All of this is
+derived from the imported offset bases except the classification of the cubic and quartic part,
+which is machine-verified by two solvers. What the remaining Betti question requires is the
+integral structure of the two lowest strands, where the characteristic enters. The evidence classes
+stay apart throughout: the geometry is derived from the imported bases, and the cubic and quartic
+part of the basis is machine-verified for all $p$ by two solvers.
 
 \section*{Acknowledgments}
 
 The author thanks Son Pham for making the first counterexample and its verification materials
 public, and Craig Huneke for the independent verification recorded with that release. Neither is
 an author of this paper, and this acknowledgment does not imply endorsement of the present
-theorem.
+theorem. The author also thanks the developers of the Z3 and cvc5 solvers, whose software decided
+the obligations of Appendix~\ref{app:obligations}, and the authors of the cited works on fiber cones
+and curvilinear schemes, whose published results fixed the context of this study. The computations
+ran on the author's own equipment, and the paper reports no external funding. The author
+reviewed every formula and every number of the paper against the archived artifacts named in
+Section~\ref{sec:repro} and is responsible for any error that remains.
 
 \medskip
 \noindent\textbf{Declaration of generative AI use.} Generative AI tools were used in the
 preparation of this paper. The author reviewed and verified all content and takes full
 responsibility for the work.
+
+\appendix
+
+\section{The sixteen Presburger obligations}\label{app:obligations}
+
+All formulas are over the integers, with the parameter $p\geq4$ free. The obligations are
+transcribed from the program \texttt{symbolic\_certificate.py} of computation EXP-026; each is the
+negation of a property, so that its unsatisfiability proves the property for every $p\geq4$.
+
+The generator predicate is the eleven-block formula of Proposition~\ref{prop:input}:
+\begin{align*}
+\mathrm{gen}_p(v)\;:=\;& v=0\;\vee\;1\leq v\leq p\;\vee\;3p\leq v\leq4p-2\;\vee\;6p\leq v\leq8p-2\;\vee\;8p\leq v\leq10p-2\\
+&\vee\;v=10p\;\vee\;11p-1\leq v\leq12p-1\;\vee\;13p+1\leq v\leq14p-2\\
+&\vee\;14p\leq v\leq15p-1\;\vee\;v=16p\;\vee\;17p-1\leq v\leq18p-1.
+\end{align*}
+For a tuple $v=(v_1,\ldots,v_n)$ put
+\begin{align*}
+\mathrm{valid}(v)\;:=\;&\bigwedge_{k}\mathrm{gen}_p(v_k)\;\wedge\;v_1\leq\cdots\leq v_n\;\wedge\;\textstyle\sum_kv_k<24p,\\
+v<_{\mathrm{lex}}w\;:=\;&\bigvee_{k}\bigl(v_1=w_1\wedge\cdots\wedge v_{k-1}=w_{k-1}\wedge v_k<w_k\bigr),\\
+\mathrm{standard}(v)\;:=\;&\mathrm{valid}(v)\;\wedge\;\neg\exists w\,\bigl(\mathrm{valid}(w)\wedge\textstyle\sum w=\sum v\wedge w<_{\mathrm{lex}}v\bigr),\\
+\mathrm{minbd}(v)\;:=\;&\bigwedge_k\mathrm{gen}_p(v_k)\;\wedge\;v_1\leq\cdots\leq v_n\;\wedge\;\neg\mathrm{standard}(v)\\
+&\wedge\;\bigwedge_{k}\mathrm{standard}(v\setminus v_k),
+\end{align*}
+where $v\setminus v_k$ deletes the $k$th entry and $w$ ranges over tuples of the same length as $v$.
+The two candidate predicates are
+\begin{align*}
+\mathrm{cub}(a,b,c)\;:=\;&(a,b,c)=(p,p,p)\;\vee\;\exists i\,\bigl(1\leq i\leq p\wedge\bigl[(a,b,c)=(i,p,12p-1)\\
+&\vee(a,b,c)=(i,p,15p-1)\vee(a,b,c)=(i,p,18p-1)\\
+&\vee(i\leq p-2\wedge(a,b,c)=(i,4p-2,16p))\vee(a,b,c)=(i,4p-2,18p-1)\bigr]\bigr),\\
+\mathrm{qua}(a,b,c,d)\;:=\;&\exists i\,\bigl(2\leq i\leq p-1\wedge(a,b,c,d)=(i,p,p,4p-2)\bigr).
+\end{align*}
+The first four obligations are the unsatisfiability, together with $p\geq4$, of
+\begin{align*}
+&\mathrm{minbd}(a,b,c)\wedge\neg\mathrm{cub}(a,b,c)&&\texttt{cubic-completeness},\\
+&\mathrm{cub}(a,b,c)\wedge\neg\mathrm{minbd}(a,b,c)&&\texttt{cubic-soundness},\\
+&\mathrm{minbd}(a,b,c,d)\wedge\neg\mathrm{qua}(a,b,c,d)&&\texttt{quartic-completeness},\\
+&\mathrm{qua}(a,b,c,d)\wedge\neg\mathrm{minbd}(a,b,c,d)&&\texttt{quartic-soundness}.
+\end{align*}
+Each of the remaining twelve is the unsatisfiability, together with $p\geq4$, of
+\[
+ \mathrm{region}(i,p)\;\wedge\;\neg\bigl(\mathrm{standard}(\mathrm{tail})\wedge\textstyle\sum\mathrm{lead}=\sum\mathrm{tail}\wedge\mathrm{tail}<_{\mathrm{lex}}\mathrm{lead}\bigr),
+\]
+with the region, the leading monomial and the tail of Table~\ref{tab:tails}. Table~\ref{tab:tails}
+reads as the reduced tails of Theorem~\ref{thm:groebner}(c) written as offset tuples.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+obligation & region & lead $(\text{offsets})$ & tail\\
+\midrule
+\texttt{tail-c1-first} & $i=1$ & $(i,p,12p-1)$ & $(0,3p,10p)$\\
+\texttt{tail-c1-interior} & $2\leq i\leq p-1$ & $(i,p,12p-1)$ & $(0,0,13p+i-1)$\\
+\texttt{tail-c1-last} & $i=p$ & $(i,p,12p-1)$ & $(0,1,14p-2)$\\
+\texttt{tail-c2-main} & $1\leq i\leq p-1$ & $(i,p,15p-1)$ & $(0,i-1,16p)$\\
+\texttt{tail-c2-last} & $i=p$ & $(i,p,15p-1)$ & $(0,0,17p-1)$\\
+\texttt{tail-c3-main} & $1\leq i\leq p-1$ & $(i,p,18p-1)$ & $(0,3p+i-1,16p)$\\
+\texttt{tail-c3-last} & $i=p$ & $(i,p,18p-1)$ & $(0,3p,17p-1)$\\
+\texttt{tail-c4} & $1\leq i\leq p-2$ & $(i,4p-2,16p)$ & $(0,3p,17p+i-2)$\\
+\texttt{tail-c5-first-two} & $1\leq i\leq2$ & $(i,4p-2,18p-1)$ & $(0,7p+i-2,15p-1)$\\
+\texttt{tail-c5-rest} & $3\leq i\leq p$ & $(i,4p-2,18p-1)$ & $(0,6p+i-3,16p)$\\
+\texttt{tail-c6-isolated} & true & $(p,p,p)$ & $(0,0,3p)$\\
+\texttt{tail-quartic} & $2\leq i\leq p-1$ & $(i,p,p,4p-2)$ & $(0,0,0,6p+i-2)$\\
+\bottomrule
+\end{tabular}
+\caption{The twelve tail obligations of the Presburger certificate: for each, the region of the
+index $i$, the leading monomial and the reduced tail as sorted offset tuples. The tail must be a standard
+tuple of the same total offset and lexicographically smaller than the lead. These are the tails of
+Theorem~\ref{thm:groebner}(c) in the notation $X_{a_1}\cdots X_{a_n}\leftrightarrow(a_1,\ldots,a_n)$.}
+\label{tab:tails}
+\end{table}
+
+\section{The perturbed obligations}\label{app:controls}
+
+The four perturbations of computation EXP-069 are built from the same program as the
+obligations. C1 replaces $\mathrm{cub}$ in \texttt{cubic-completeness} by the candidate predicate without
+its first disjunct $(a,b,c)=(p,p,p)$; since $X_p^3$ is a minimal boundary element, the perturbed
+formula has a model, and cvc5 returns $p=4$ and $(4,4,4)$. C2 adds the triple $(0,0,0)$ to
+the candidates in \texttt{cubic-soundness}; $X_0^3$ is standard and is not a boundary element, so a model
+exists, and cvc5 returns $p=8$ and $(0,0,0)$. C3 replaces the tail $(0,3p,10p)$ of
+\texttt{tail-c1-first} by $(0,3p,10p+1)$, whose total differs from that of the lead, and C4 widens the
+index range of \texttt{tail-quartic} to include $i=1$, for which the tail offset $6p-1$ is not in $G_p$.
+Both solvers return a model at $p=4$, $i=1$ in both cases. The exact evaluator parses the exported
+text with its own parser and enumerates bounded quantifiers; it raises an error on an unbounded one,
+so it cannot accept a formula that it did not fully evaluate. The model that satisfies each
+perturbed formula fails the original obligation, which shows that the evaluator tells the perturbed
+formula from the original one.
 
 {\footnotesize
 \begin{thebibliography}{99}
@@ -525,18 +1485,97 @@ responsibility for the work.
 C. Huneke and R. Wiegand,
 \emph{Tensor products of modules and the rigidity of Tor},
 Math. Ann. 299 (1994), 449--476.
-\href{https://doi.org/10.1007/BF01459793}{doi:10.1007/BF01459793}.
+\href{https://doi.org/10.1007/BF01459794}{doi:10.1007/BF01459794}.
+
+\bibitem{GarciaSanchezLeamer2013}
+P. A. Garc\'ia-S\'anchez and M. J. Leamer,
+\emph{Huneke--Wiegand conjecture for complete intersection numerical semigroup rings},
+J. Algebra 391 (2013), 114--124.
+\href{https://doi.org/10.1016/j.jalgebra.2013.06.007}{doi:10.1016/j.jalgebra.2013.06.007}.
+
+\bibitem{Landeros2024}
+M. Landeros, C. O'Neill, R. Pelayo, K. Pe\~na, J. Ren, and B. Wissman,
+\emph{Families of numerical semigroups and a special case of the Huneke--Wiegand conjecture},
+Commun. Algebra 52 (2024), 5196--5206.
+\href{https://doi.org/10.1080/00927872.2024.2362934}{doi:10.1080/00927872.2024.2362934}.
 
 \bibitem{Pham2026}
 S. Pham,
 \emph{Huneke--Wiegand candidate verification}, public software and certificate repository (2026).
 \url{https://github.com/sonpham-org/huneke-wiegand-candidate-verification}.
 
+\bibitem{PhamArxiv2026}
+S. Pham,
+\emph{A counterexample to the Huneke--Wiegand conjecture}, arXiv:2609.07615 (2026).
+\url{https://arxiv.org/abs/2609.07615}.
+
+\bibitem{CGI2026}
+L. W. Christensen, A. Gerko, and S. B. Iyengar,
+\emph{Some non-principal rigid ideals in Gorenstein domains of dimension one},
+arXiv:2608.21666 (2026).
+\url{https://arxiv.org/abs/2608.21666}.
+
 \bibitem{SantibanezLeal2026}
 F. Santib\'a\~nez-Leal,
 \emph{Frobenius minimality, minimum-layer uniqueness, and an infinite family of
-Huneke--Wiegand counterexamples}, CAOS Research preprint (2026).
+Huneke--Wiegand counterexamples}, CAOS Research preprint, version 0.25 (2026),
+\href{https://doi.org/10.5281/zenodo.22835108}{doi:10.5281/zenodo.22835108}; concept record
 \href{https://doi.org/10.5281/zenodo.21763582}{doi:10.5281/zenodo.21763582}.
+Theorem numbers in the text are those of this version.
+
+\bibitem{DeyLyle2025}
+S. Dey and J. Lyle,
+\emph{Centers of endomorphism rings and reflexivity},
+arXiv:2510.02210v2 (2025).
+\url{https://arxiv.org/abs/2510.02210v2}.
+
+\bibitem{HerzogKumashiro2022}
+J. Herzog and S. Kumashiro,
+\emph{Upper bound on the colength of the trace of the canonical module in dimension one},
+Arch. Math. 119 (2022), 237--246.
+\href{https://doi.org/10.1007/s00013-022-01764-8}{doi:10.1007/s00013-022-01764-8}.
+
+\bibitem{Dey2022}
+S. Dey,
+\emph{Finite birational extension with stable conductor},
+arXiv:2212.09087v1 (2022).
+\url{https://arxiv.org/abs/2212.09087v1}.
+
+\bibitem{LindoMaitraZhang2026}
+H. Lindo, S. Maitra, and W. Zhang,
+\emph{Trace does not preserve reflexivity},
+Collect. Math. (2026).
+\url{https://doi.org/10.1007/s13348-026-00515-0}.
+
+\bibitem{MaitraMukundan2023}
+S. Maitra and V. Mukundan,
+\emph{Extremal behavior of reduced type of one dimensional rings},
+arXiv:2306.17069v1 (2023).
+\url{https://arxiv.org/abs/2306.17069v1}.
+
+\bibitem{BlancoRosales2013}
+V. Blanco and J. C. Rosales,
+\emph{The tree of irreducible numerical semigroups with fixed Frobenius number},
+Forum Math. 25 (2013), 1249--1261.
+\href{https://doi.org/10.1515/form.2011.151}{doi:10.1515/form.2011.151}.
+
+\bibitem{ValabregaValla1978}
+P. Valabrega and G. Valla,
+\emph{Form rings and regular sequences},
+Nagoya Math. J. 72 (1978), 93--101.
+\href{https://doi.org/10.1017/S0027763000018225}{doi:10.1017/S0027763000018225}.
+
+\bibitem{DAnnaMezzasalmaMicale2009}
+M. D'Anna, M. Mezzasalma, and V. Micale,
+\emph{On the Buchsbaumness of the associated graded ring of a one-dimensional local ring},
+Commun. Algebra 37 (2009), 1594--1603.
+\href{https://doi.org/10.1080/00927870802116521}{doi:10.1080/00927870802116521}.
+
+\bibitem{DAnnaMicaleSammartano2011}
+M. D'Anna, V. Micale, and A. Sammartano,
+\emph{On the associated graded ring of a semigroup ring},
+J. Commut. Algebra 3 (2011), 147--168.
+\href{https://doi.org/10.1216/JCA-2011-3-2-147}{doi:10.1216/JCA-2011-3-2-147}.
 
 \bibitem{HerzogQureshiSaem2017}
 J. Herzog, A. A. Qureshi, and M. Mohammadi Saem,
@@ -547,6 +1586,29 @@ J. Herzog, A. A. Qureshi, and M. Mohammadi Saem,
 J. Herzog and G. Zhu,
 \emph{On the fiber cone of monomial ideals}, arXiv:1904.04988 (2019).
 \url{https://arxiv.org/abs/1904.04988}.
+
+\bibitem{CortadellasZarzuela2007}
+T. Cortadellas and S. Zarzuela,
+\emph{On the structure of the fiber cone of ideals with analytic spread one},
+J. Algebra 317 (2007), 759--785.
+\href{https://doi.org/10.1016/j.jalgebra.2007.02.044}{doi:10.1016/j.jalgebra.2007.02.044}.
+
+\bibitem{CortadellasZarzuela2009}
+T. Cortadellas and S. Zarzuela,
+\emph{Tangent cones of numerical semigroup rings},
+\href{https://arxiv.org/abs/0906.0911}{arXiv:0906.0911} (2009).
+
+\bibitem{AbdolmalekiKumashiro2024}
+R. Abdolmaleki and S. Kumashiro,
+\emph{Defining ideals of Cohen--Macaulay fiber cones},
+Int. J. Algebra Comput. 34 (2024), no.~7, 1099--1109.
+\href{https://doi.org/10.1142/S0218196724500437}{doi:10.1142/S0218196724500437}.
+
+\bibitem{NorthcottRees1954}
+D. G. Northcott and D. Rees,
+\emph{Reductions of ideals in local rings},
+Proc. Cambridge Philos. Soc. 50 (1954), 145--158.
+\href{https://doi.org/10.1017/S0305004100029194}{doi:10.1017/S0305004100029194}.
 
 \bibitem{KreuzerLinhLong2023}
 M. Kreuzer, T. N. K. Linh, and L. N. Long,
@@ -563,6 +1625,18 @@ width $e-1$, and embedding dimension $e-2$}, arXiv:2511.06482 (2025).
 J. Saha, I. Sengupta, and P. Srivastava,
 \emph{On the associated graded ring of semigroup algebras}, arXiv:2210.07520 (2022).
 \url{https://arxiv.org/abs/2210.07520}.
+
+\bibitem{BrunsHerzog1997}
+W. Bruns and J. Herzog,
+\emph{Semigroup rings and simplicial complexes},
+J. Pure Appl. Algebra 122 (1997), no.~3, 185--208.
+\href{https://doi.org/10.1016/S0022-4049(97)00051-0}{doi:10.1016/S0022-4049(97)00051-0}.
+
+\bibitem{Stamate2018}
+D. I. Stamate,
+\emph{Betti numbers for numerical semigroup rings},
+in \emph{Multigraded Algebra and Applications}, Springer Proc. Math. Stat. 238 (2018), 133--157.
+\href{https://arxiv.org/abs/1801.00153}{arXiv:1801.00153v2}.
 
 \end{thebibliography}
 }
