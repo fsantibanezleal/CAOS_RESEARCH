@@ -70,7 +70,8 @@ fiber-cone literature comparison, and candidate C remains significance-gated.
 
 ### Focused companion: Gluing extensions
 
-- Version: v0.01, version DOI `10.5281/zenodo.23821498`, concept DOI `10.5281/zenodo.23821497`
+- Version: v0.02 (2026-11-15), version DOI `10.5281/zenodo.24240435` (revision from the independent audit, with EXP-070);
+  v0.01, version DOI `10.5281/zenodo.23821498`, concept DOI `10.5281/zenodo.23821497`
   (reserved 2026-10-30; PDF frozen, sha256 `730e7ae0651b95ee9def05ed98556f67611e1fe9be476ac96464b175e7087fa1`;
   published 2026-11-01; a fresh public download equals the frozen file).
 - Coverage: EXP-068 (main theorem: tensor factorization, torsion-length law, characterization of

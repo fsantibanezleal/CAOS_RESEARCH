@@ -2200,3 +2200,16 @@ other result are unchanged; EXP-066 checks the unsigned-row form. Re-checked by 
 - Release: 39 gates passed; 39 pages, 832,113 bytes, SHA-256
   dbd075381b284484cfe5f4c015fba8dba6944441917013193a8ac925f92102e6.
 
+## 2026-11-15 - gluing-extensions v0.02 published (10.5281/zenodo.24240435)
+
+- Revision from the independent audit (CAOS_MANAGE `wip/caos-research/msaudit-hw-other-2026-11-10.md`, D2): the
+  validation now includes counterexample factors (EXP-070: 48 gluings with large factors, 36 with a counterexample factor,
+  18 extensions themselves counterexamples); algorithms with the degree bound proved; results tables and figures generated
+  from the EXP-068 and EXP-070 artifacts; every citation pointer checked on arXiv:1211.2896v1 and arXiv:1211.4554v1; the
+  gluing definition with Frobenius number and symmetry derived; the completed case by flat base change; the ring-level
+  claim restricted to R_i = k[Gamma_i]; a claim audit with evidence marks; the Huneke-Wiegand 1994 DOI corrected to
+  10.1007/BF01459794. The counterexample-by-counterexample gluings (Examples 5.4, 5.5) are not computed directly.
+- Independent review (CAOS_MANAGE `wip/caos-research/hw-gluing-v02-review-2026-11-14.md`): CHANGES REQUIRED (the
+  validation count), re-check APPROVE.
+- Release: 39 gates passed; 27 pages, 773,736 bytes, SHA-256 1e20b8d6f1d4540e6b08d9f637d592c5ce0afaaa2f271ea364a17e086c572acb.
+
