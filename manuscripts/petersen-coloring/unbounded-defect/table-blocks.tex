@@ -1,0 +1,18 @@
+\begin{table}[t]\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+family & blocks & vertices & time, max (s) & time, mean (s) & entries, mean & re-checked \\
+\midrule
+claw $Y$ & 1 & 4 & 0.2 & 0.2 & 432 & 1 of 1 \\
+superedge $S$ & 1 & 8 & 1.1 & 1.1 & 424 & 1 of 1 \\
+$\PG$, shape b & 40 & 10 & 1.5 & 0.5 & 881 & 38 of 40 \\
+dodecahedron, shape a & 4 & 18 & 5.8 & 4.3 & 1{,}208 & 3 of 4 \\
+$J_5$, shape a & 14 & 18 & 16.3 & 11.3 & 1{,}547 & 3 of 14 \\
+$J_7$, shape a & 21 & 26 & 202.3 & 83.3 & 2{,}706 & 0 of 21 \\
+\midrule
+all & 81 & & 202.3 & 24.0 $\pm$ 41.0 & & 46 of 81 \\
+\bottomrule
+\end{tabular}
+\caption{The 81 blocks whose six sector matrices were computed (computation EXP-014, \texttt{blocks.json}, \texttt{block-recheck.json}): per family the number of blocks, the vertices of each, the maximal and mean computation time, the mean number of nonzero matrix entries over the six sectors, and the number recomputed with the second encoding and second solver. The claw and the superedge were also recomputed by exhaustive enumeration of maps. Not reached: 2 of the 40 $\PG$ blocks, 1 of the 4 dodecahedron blocks, 11 of the 14 $J_5$ blocks and all 21 $J_7$ blocks. The $\pm$ value is the sample standard deviation of the 81 times.}\label{tab:blocks}
+\end{table}

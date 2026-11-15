@@ -37,3 +37,11 @@ Artifacts: `artifacts/output-2026-07-22.txt`.
 - The half-plane cutoff choice ({i < j} here) may need shape-dependent tilting for
   general proper-power tops (the correct general statement is likely "the transport
   band's half-plane").
+
+## Erratum (2026-11-15)
+
+"Theorem 5's proper-power case stands [D]" rests on propagating the half-plane argument of this verdict beyond
+`T = a(xy)^2`; that propagation is not derived (this verdict already notes that the half-plane inconsistency is measured,
+not derived) and fails for the planar paper's degree-32 and degree-72 samples (EXP-051 erratum of 2026-11-15). The
+proper-power case holds on the certified windows only; beyond them it is a conjecture, as planar v0.37 states.
+

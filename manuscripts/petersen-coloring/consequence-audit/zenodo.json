@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Exact Invariants of Five Counterexamples to the Petersen Coloring Conjecture: Covers, Flows, Defect Two and Unbounded Abnormal Edges",
+    "creators": [
+      {
+        "name": "Santibáñez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>Jaeger's Petersen coloring conjecture, the strongest known sufficient condition for the Berge-Fulkerson and 5-cycle double cover conjectures, was refuted in 2026 by cubic graphs on 112 and 52 vertices. We determine, by proof-carrying computation, what survives on the five retrievable counterexamples, of orders 52, 52, 68, 112 and 112.</p><p>Independent encodings refute Petersen colorings and normal 5-edge-colorings of all five, with proofs checked by drat-trim. Explicit witnesses give each graph a Berge-Fulkerson cover, perfect matching index exactly 4, a Fan-Raspaud triple, a 5-cycle double cover and a nowhere-zero 5-flow; none has a nowhere-zero 4-flow. Oddness and resistance are 4 and 3 on the two 112-vertex graphs and 2 and 2 on the others, and the normal chromatic index is exactly 6. We prove that no edge map into the Petersen graph has exactly one bad vertex, and all five graphs have Petersen defect 2 with every vertex pair critical (17,362 witnesses). The defect is at most the least number of abnormal edges, and both equal 2.</p><p>Rings and frames assembled from counterexamples need one bad vertex per block, so no sublinear function bounds the abnormal edges of 2-connected or 3-connected cubic graphs, and two statements of a conjecture of Mattiolo, Mazzuoccolo and Mkrtchyan are false. A fifth statement is equivalent to a defect bound of 2, conditionally on a proposition of that paper that is stated there without proof. Every computation is propositional; the formulas, encodings, counts and commands are given, and each proof is reproduced by re-running its command.</p><p>Source code, data, computational records and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/petersen-coloring).</p>",
+    "keywords": [
+      "Petersen coloring conjecture",
+      "normal edge-coloring",
+      "normal chromatic index",
+      "abnormal edges",
+      "sublinear approximation",
+      "cyclically 4-edge-connected",
+      "Petersen defect",
+      "Berge-Fulkerson conjecture",
+      "Berge conjecture",
+      "perfect matching index",
+      "Fan-Raspaud conjecture",
+      "cycle double cover",
+      "nowhere-zero flows",
+      "oddness",
+      "resistance",
+      "snarks",
+      "cubic graphs",
+      "counterexamples",
+      "SAT",
+      "DRAT",
+      "proof-carrying computation",
+      "experimental mathematics"
+    ],
+    "subjects": [
+      {
+        "term": "Coloring of graphs and hypergraphs",
+        "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=05C15",
+        "scheme": "url"
+      }
+    ],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.21845291",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2608.10028",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.21933785",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1002/jgt.22507",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1016/j.jctb.2013.05.001",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.26493/1855-3974.1601.e75",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s00493-025-00144-4",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.22847192",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.22859074",
+        "resource_type": "publication-preprint"
+      }
+    ],
+    "version": "0.07",
+    "language": "eng",
+    "publication_date": "2026-11-14",
+    "version_notes": "Revision. Adds a section on the encodings with an algorithm for each invariant, variable and clause counts per graph, solver settings, caps and commands; the hypotheses and predictions of the computations with their outcomes; consolidated tables of the invariants of the five graphs, the pair-relaxation sweeps with the cut-space classes of the 17,362 witnesses, the rings and frames, and the 4-poles, all generated from the archived computations by a script; a validation section (controls, corrupted witnesses, ablation of the symmetry units, independent routes); related work, discussion, limitations and conclusions; six figures; claim marks on every result statement. Corrections: a proof of the 3-connectivity of frames; the rings of copies of G52 renamed C_t; the single-vertex refutation times stated as 0.8 to 5.4 s; the threshold proposition, the equivalence theorem on statement (e), its corollary and the sentences resting on Theorem 4 of Mattiolo, Mazzuoccolo and Mkrtchyan stated as conditional on their Proposition 2, which is stated there without proof; citations updated (arXiv:2608.10028 v4 numbering, Theorem 8 of that record for counterexamples of every even order at least 60, the unbounded-defect and colorable-only-by-itself preprints by concept DOI, the weak-snark claim of Goedgebeur, Macajova and Skoviera cited through Goedgebeur et al., the Jooken note and the extended account stated as one arXiv record, author and DOI details completed); abstract shortened; title re-derived to name the five counterexamples computed. The results of the previous version are unchanged."
+  }
+}

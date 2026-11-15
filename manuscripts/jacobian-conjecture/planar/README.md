@@ -1,10 +1,12 @@
 # manuscript-planar/ - the PLANAR PROGRAM paper (B of three)
 
-`main.tex` / `main.pdf`: "Planar Keller Maps after the Counterexample: Machine-Certified
-Newton-Polygon Exclusions, the Staircase Transport, and the Recalibrated Frontier". The
+`main.tex` / `main.pdf`: "Planar Keller Maps after the Counterexample: Weight-Class Exclusions, a Chart
+Atlas for the (72,108) Reduction, and Independent Checks of Cases 1 and 2". The
 ACTIVE paper: the JC(2) machine (uniform closure, forced tops, descent), the four
-unconditional exclusion theorems plus the annihilation lemma, the diagonal corner and the
-staircase transport (with the fifth exclusion in window form and its cleared certificates),
+unconditional exclusion theorems (with complete proofs, and the scope of each stated) plus the
+annihilation lemma, the diagonal corner and the staircase transport (with the fifth exclusion in window
+form, at all partner degrees on its six certified grid shapes, and the half-plane certificates as window
+results with propagation conjectured),
 the matched-pair law and the x^m-anchored edge operator, and the source-audited frontier
 (gcd coverage; Moh/GGHV floors; the B = 16 normal form and the (72, 108) pair as live
 targets), including the EXP-095/096 original-pair gates (seven possible nonzero inner
@@ -72,12 +74,13 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.32** (2026-08-01). Substantive revisions are published
-as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Canonical/latest version 0.32 DOI: `10.5281/zenodo.21740213`. Its public PDF
-matches the visually verified local artifact: 419223 bytes, MD5
-`3c4c4a0c4f96a634de4018410b5871c3` and SHA-256
-`2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
-The prior canonical v0.31 DOI is `10.5281/zenodo.21739069`; immutable record
-`10.5281/zenodo.21739032` contains identical v0.31 bytes and remains a
-superseded duplicate created by a concurrent publication race.
+Current manuscript version: **v0.37**, published 2026-11-15 at version DOI `10.5281/zenodo.24240037`
+(concept DOI `10.5281/zenodo.21503367`; 51 pages, 722,853 bytes, SHA-256
+`f8fea6a7ba16ddf43e51133de4097416633e6a33d9b0c2785ca06313f06f3dd4`): the full revision (methods with six
+algorithms, complete proofs, related work, the atlas, exclusion and frontier tables, six figures, and the
+(72,108) part restructured around GGHV Proposition 4.3 with Cases 1 and 2). v0.36: `10.5281/zenodo.24226225`. Substantive revisions are published as new Zenodo
+versions under the concept DOI.
+
+Generated pieces: `make_tables.py` writes `tab_atlas.tex`, `tab_repro.tex` and `fig_times.tex` from the
+experiment records (it refuses a cell whose quotation is absent from its record); run it before building.
+Build with three `pdflatex` passes.

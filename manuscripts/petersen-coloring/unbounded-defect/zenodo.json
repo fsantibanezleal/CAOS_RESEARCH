@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Conduction of Cut-Space Classes through Multipoles: Unbounded Petersen Defect on Cyclically 4-Edge-Connected Cubic Graphs and Transfer Semigroups of Rings of 6-Poles",
+    "creators": [
+      {
+        "name": "Santibáñez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>Mattiolo, Mazzuoccolo and Mkrtchyan conjectured that five statements are equivalent: the Petersen coloring conjecture and four sublinear bounds on abnormal edges, for bridgeless, 2-connected, 3-connected and cyclically 4-edge-connected cubic graphs. Four are false after the 2026 disproof and ring and frame constructions. We prove that the fifth is false too: for every t &ge; 2 there is a cyclically 4-edge-connected cubic graph of girth 5 on 102t vertices whose Petersen defect is at least t, hence at least t abnormal edges. The graphs are rings of two 4-poles cut from a 52-vertex counterexample. Modulo the cut space of the Petersen graph, a correctly mapped 4-pole carries one class through both connectors, the line-graph distance of two labels; the two 4-poles transmit disjoint distances, certified by DRAT-checked SAT refutations. The ring on 306 vertices has defect exactly 3.</p><p>For rings of 6-poles joined along three edges, the 64 classes form six orbits and a block's transfer relation splits into six sector matrices of order at most 67. The colorability of every ring of a finite block family reduces to a semigroup closure with an integer-checked certificate. For 81 computed blocks, every ring of claws, of Petersen superedges or of both is colorable; the junctions of the flower snarks J5, J7, J9 carry antipodal triples, and odd rings of at least five superedges with the identity at every junction are cyclically 5-edge-connected snarks of girth 5. Larger closures stay undecided. A control on the 52-vertex graph shows classes alone miss non-colorability.</p><p>Source code, data, computational records and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/petersen-coloring, computations EXP-009 to EXP-014).</p>",
+    "keywords": [
+      "Petersen coloring conjecture",
+      "normal edge-coloring",
+      "abnormal edges",
+      "sublinear approximation",
+      "Petersen defect",
+      "cyclically 4-edge-connected",
+      "cubic graphs",
+      "snarks",
+      "multipoles",
+      "cut space",
+      "SAT",
+      "DRAT",
+      "proof-carrying computation",
+      "transfer matrix",
+      "semigroup closure"
+    ],
+    "subjects": [
+      {
+        "term": "Coloring of graphs and hypergraphs",
+        "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=05C15",
+        "scheme": "url"
+      }
+    ],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2104.09241",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2608.10028",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.21845291",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "references",
+        "identifier": "10.5281/zenodo.22285164",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "references",
+        "identifier": "10.5281/zenodo.22859074",
+        "resource_type": "publication-preprint"
+      }
+    ],
+    "version": "0.03",
+    "language": "eng",
+    "publication_date": "2026-11-14",
+    "version_notes": "New version. Adds three algorithms with parameters and costs (sector matrices of a block by projected model enumeration, antichain closure of a block family with a certificate, integer-product certificate check), the closures of the five block families with the undecided closures of the two largest reported, the re-check status of the block matrices (46 of 81 recomputed with a second encoding and solver, all equal; the 35 not reached named by family), and tables of the conducted sets of the 1,890 six-pole splits, the charge spectrum of the 212 six-poles of the 52-vertex graph, the ring computations with formula sizes, and the transmitted sets of other 4-poles (546 of 949 distance sets decided). Corrections: the comparison of 203 rings with a SAT solver tested one direction only, since every ring was colorable, and is stated as such with the control on the 52-vertex graph as the converse evidence; the refuted prediction that a 6-pole of a cyclically 5-edge-connected source fails to conduct class 0 is reported as a result; the corollary on flower snarks is stated as machine-verified for k = 5, 7, 9 and as conjectural for larger odd k, the periodicity of the products being recorded but not computed by a stored program, and the abstract states odd rings of at least five superedges with the identity at every junction, since the ring of three has girth 3 and other uniform junctions give 3-edge-colorable rings; the count of 282 pairs with transmitted set {1} is stated among the 546 decided pairs. Adds a proof of the transitivity of the automorphism group of the Petersen graph on pairs of edges at a given distance, claim-status marks on every result, figures, a Related work section, a limitations section, the open questions on the exact abnormal-edge numbers and on the next computation, and a title that covers both parts of the results. The notation R_t is kept for the rings of 4-poles."
+  }
+}
