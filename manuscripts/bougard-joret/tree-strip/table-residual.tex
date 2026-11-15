@@ -1,0 +1,15 @@
+\begin{table}[ht]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrrrrrrr}
+\toprule
+$k$ & Edge sets & Residuals & Assignments & Nonstar trees & Stars & Disconnected & Labeled trees\\
+\midrule
+3 & 20 & 16 & 28 & 12 & 4 & 0 & 16\\
+4 & 210 & 135 & 605 & 120 & 5 & 10 & 125\\
+5 & 3{,}003 & 1{,}581 & 22{,}986 & 1{,}290 & 6 & 285 & 1{,}296\\
+\bottomrule
+\end{tabular}
+\caption{Exact labeled residual enumeration [MV]. Edge sets: all $k$-edge subsets of the pairs of $k+1$ labeled vertices; residuals: those without an isolated vertex; assignments: all missing-neighbor assignments of the $k-1$ labeled vertices of $S$, summed over residuals, including rejected ones (they do not count unmarked extremal graphs); the last column is $(k+1)^{k-1}$, the number of labeled trees, which equals the nonstar trees plus the stars.}
+\label{tab:residual}
+\end{table}

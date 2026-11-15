@@ -1,0 +1,135 @@
+\section{Results of the exact computations}\label{sec:results}
+
+Every number in this section is read from the saved certificates of EXP-001 and EXP-002 and from the output of the independent recomputation, by the script \texttt{make\_tables.py} that writes the tables and figure fragments of the paper and asserts each consistency condition the text uses.
+All counts are exact integers; no sampling is involved, so no confidence interval is reported.
+
+\subsection{The 75 shell constructions}\label{sec:res-shell}
+
+The grid contains every $k=3,\ldots,12$ and every $a=2,\ldots,k+1$, which is $\sum_{k=3}^{12}k=\NGraphs$ graphs, of orders $\NOrderMin$ to $\NOrderMax$ and sizes $\NEdgeMin$ to $\NEdgeMax$.
+Table~\ref{tab:shell75} lists each one.
+All \NGraphs\ graphs have $\e(G)=\lceil kn/2\rceil$ and the predicted degree pattern, all have independence number $a$ and connectivity exactly $k$ in the independent recomputation, and each of the first-implementation checks (degree, edge count, recursive independence number, vertex-split flow connectivity) passed.
+For the \NDirect\ graphs of order at most 16 the direct subset enumeration of $\alpha$ and the exhaustive vertex-deletion test of $\kappa$ agree with these checks.
+
+\needspace{10\baselineskip}
+\input{table-shell.tex}
+
+Figure~\ref{fig:grid} shows which construction covers each parameter pair.
+The generic Harary rows are the largest block, \NCaseHarary\ of the \NGraphs\ pairs (those with $a\ge3$ and $k-a\ge2$); the four explicit families have \NCaseCycle\ (complements of cycles, $a=2$), \NCaseMatching\ (residual matching, $a=k$), \NCasePath\ (path residual, $a=k-1$ with $k\ge4$) and \NCaseCrown\ (crown graphs, $a=k+1$) pairs.
+The \NOdd\ pairs with an odd degree sum, marked with a dot, are exactly those with $n$ and $k$ both odd: \NOddMatching\ lie in the matching family and \NOddHarary\ in the Harary family, and none occurs in the cycle, path or crown families, where $kn$ equals $k(k+3)$, $2k^2$ or $2k(k+1)$ and is always even.
+Each of them has exactly one vertex of degree $k+1$, as Section~\ref{sec:formulation} requires of a size-minimal graph.
+In the 36 Harary rows the recomputed connectivity of the starting graph and of the augmented residual graph both equal $g=k-a$, so the complement matching does not change the residual connectivity; the lift lemma needs only that it is at least $g$.
+
+\begin{figure}[ht]
+\centering
+\input{fig-grid.tex}
+\caption{The construction used at each parameter pair $(k,a)$ of the shell grid, $3\le k\le12$ and $2\le a\le k+1$: C complement of a cycle, H Harary residual, M residual matching, P path residual, W crown graph. A black dot marks the 15 pairs with an odd degree sum, where one vertex has degree $k+1$. The letters carry the information, so the figure reads in grayscale.}
+\label{fig:grid}
+\end{figure}
+
+\subsection{Negative controls}\label{sec:res-controls}
+
+A control that cannot fail is worth nothing, so each family of positive checks has a negative counterpart (Tables~\ref{tab:controls} and~\ref{tab:damaged}).
+The damaged-edge control deletes one edge at a vertex of degree $k$ from each of the \NDamaged\ constructions; the recomputed connectivity falls by exactly one in all of them, and the direct deletion test rejects all \NDirect\ small graphs.
+Because the degree-$k$ vertex then has degree $k-1$, the rejection is predicted by the degree bound, and the control confirms that the checkers detect it, which would fail if a checker only compared edge counts.
+
+\input{table-controls.tex}
+
+The \NCycleControls\ complement-cycle controls test the classification of Theorem~\ref{thm:cycles} on its two failure modes: complements of triangles have independence number three, since a triangle is an independent triple in the complement, and complements of unions containing a $4$-cycle are not $(n-3)$-connected, since the four vertices of the $4$-cycle leave two disjoint edges after deleting the rest.
+The other five controls are the complements of $5+5$, $5+6$ and of the cycles $C_6$, $C_7$, $C_8$, and all five pass.
+Both implementations agree on every row of Table~\ref{tab:controls}, and the pattern of the last two columns is the theorem's condition that all lengths be at least five.
+
+\input{table-damaged.tex}
+
+The two order-six censuses visit all 32,768 labeled graphs on six vertices.
+EXP-001 finds \NExtremalSix\ graphs of size nine with independence number two and connectivity three, and for every maximum independent set in each the residual graph is a nonstar tree; no graph with fewer than nine edges qualifies.
+EXP-002 finds \NExtremalSix\ extremal graphs among the cubic graphs on six vertices and shows that they are exactly the complements of six-cycles, whose number is $6!/12=60$ [D]; the two counts agree.
+The two censuses share the graph-checking routines of EXP-001 (the second imports them), so the second is a regeneration of the count and not an independent implementation.
+
+\subsection{Trees and labeled residual graphs}\label{sec:res-trees}
+
+Leaf augmentation produces \NTrees\ trees of orders four to nine: $2,3,6,11,23,47$ per order, matching the number of unlabeled trees [V, OEIS A000055].
+In each order exactly one is a star, so \NStars\ stars are rejected and \NNonstar\ nonstar trees pass (Figure~\ref{fig:trees}).
+Every one of them yields a $k$-regular graph of order $2k$ with independence number $k-1$ and connectivity $k$ under both connectivity tests, and the deletion of an edge makes the flow test fail.
+The star is the control for the nonstar condition of Theorem~\ref{thm:main}: its construction has independence number $k$, not $k-1$.
+
+\begin{figure}[ht]
+\centering
+\input{fig-trees.tex}
+\caption{Trees generated by leaf augmentation for orders $k+1=4,\ldots,9$ (EXP-001): the number of unlabeled trees, the nonstar trees that pass every check, and the single star per order (a bar of height one) that fails the independence target. The vertical axis is logarithmic, and the totals 2, 3, 6, 11, 23, 47 are the known counts of unlabeled trees.}
+\label{fig:trees}
+\end{figure}
+
+The labeled residual enumeration of Table~\ref{tab:residual} tests the claim that the residual graph is a tree without assuming it.
+For $k=3,4,5$ there are 20, 210 and 3,003 edge sets, of which 16, 135 and 1,581 have no isolated vertex.
+In each case the residual graph is classified as a nonstar tree, a star or a disconnected graph, and the three counts sum to the number of residual graphs.
+The accepted graphs, those with $\kappa\ge k$ and $\alpha=k-1$ in the lift, are exactly the connected nonstar residual graphs, as the assertion of Algorithm~\ref{alg:residual} requires; since a connected graph with $k$ edges on $k+1$ vertices is a tree, they are the nonstar trees.
+The counts of trees and stars are consistent with Cayley's formula [D]: the labeled trees on $k+1$ vertices number $(k+1)^{k-1}=16,125,1296$ [V, OEIS A000272], and $16=12+4$, $125=120+5$, $1296=1290+6$ split into the nonstar trees and the $k+1$ labeled stars, which is the last column of Table~\ref{tab:residual}.
+The disconnected counts are 0, 10 and 285; a disconnected graph with $k$ edges on $k+1$ vertices and no isolated vertex contains a cycle, since a forest with $c\ge2$ components has only $k+1-c<k$ edges, and none of these residual graphs gives a $k$-connected lift.
+
+\input{table-residual.tex}
+
+\begin{figure}[ht]
+\centering
+\input{fig-residual.tex}
+\caption{Outcomes of the labeled residual enumeration for $k=3,4,5$ on a logarithmic axis: residual graphs without an isolated vertex, missing-neighbor assignments summed over them, nonstar trees (accepted) and disconnected residual graphs (rejected); the disconnected count for $k=3$ is zero and has no bar; bars are drawn up from the axis floor. Stars are $k+1$ per row and are listed in Table~\ref{tab:residual}.}
+\label{fig:residual}
+\end{figure}
+
+Figure~\ref{fig:residual} shows how fast the assignment count grows against the number of residual graphs, which is why the expensive checks are done once per residual graph rather than once per assignment (Section~\ref{sec:comp-residual}).
+The assignment totals include assignments on rejected residuals, so they do not count unmarked extremal graphs.
+
+\subsection{The second-line expression on the shell}\label{sec:res-second}
+
+The second line of \eqref{eq:conj} is $t(n,a)+\lceil ka/2\rceil$.
+On the grid $3\le k\le12$ it is never above the degree-sum bound: Figure~\ref{fig:shortfall} plots $\lceil kn/2\rceil-t(n,a)-\lceil ka/2\rceil$ over the grid, and the script asserts that it is nonnegative and vanishes only at $(k,a)=(3,2)$, where $n=6=ka$ and the second line equals $f(6,2,3)=9$ [MV for the grid, not proved for larger $k$].
+Because $f\ge\lceil kn/2\rceil$ for every $k$-connected graph, the second-line expression is below a valid lower bound at 74 of the 75 pairs of the grid and cannot be the value there.
+This is the reason the two-line form of the conjecture \eqref{eq:conj} is needed.
+It also shows that the graph $T(n,a)$ with $\lceil ka/2\rceil$ added edges, the construction behind the second line, cannot be $k$-connected on the shell, since it has fewer edges than the degree-sum bound requires; the shell graphs have a different shape, a Harary-type residual graph plus an independent set joined through missing neighbors.
+On the grid the shortfall grows with both parameters; at $k=12$ it ranges from 29 at $a=2$ to 65 at $a=13$.
+
+\begin{figure}[ht]
+\centering
+\input{fig-shortfall.tex}
+\caption{Shortfall of the second-line expression $t(n,a)+\lceil ka/2\rceil$ below the degree-sum bound $\lceil kn/2\rceil$ on the shell $n=a+k+1$, one curve per $k=3,\ldots,12$ against the prescribed independence number $a$. Every plotted value is nonnegative and zero only at $(k,a)=(3,2)$, where the second line equals $f(6,2,3)=9$; at the other 74 pairs of the grid the second line cannot hold. Each curve is labeled with its $k$ and has its own mark and line style.}
+\label{fig:shortfall}
+\end{figure}
+
+\subsection{Ablation of the construction}\label{sec:res-ablation}
+
+Table~\ref{tab:ablation} lists what each ingredient contributes by removing or altering it and stating the consequence.
+Rows marked [D] follow from the proofs, and rows marked [MV] are the negative controls above.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{p{0.28\textwidth}p{0.46\textwidth}p{0.17\textwidth}}
+\toprule
+Ingredient removed or altered & Consequence & Evidence\\
+\midrule
+Complement matching in the generic residual graph & Vertices of $M$ keep residual degree $g$, so their total degree is $g+a-1=k-1<k$, and the graph cannot be $k$-connected & [D], Lemma~\ref{lem:lift}\\
+Two vertices of $S$ miss the same $t\in M$ (same $H$) & $t$ has total degree $g+a-1=k-1<k$, so $G$ is not $k$-connected; the bound of two on mixed independent sets and the two-survivor argument also fail. Non-injective misses can work with a different residual degree profile, as in Section~\ref{sec:strip} & [D], Lemma~\ref{lem:lift}\\
+Antipodal matching for odd $g$ & The cycle power alone is only $2r$-connected, and two blocks of $r$ deleted vertices disconnect it, so the residual graph is not $g$-connected & [D], Lemma~\ref{lem:harary}\\
+One edge deleted at a vertex of degree $k$ & The connectivity falls from $k$ to $k-1$ in all 75 constructions & [MV], Table~\ref{tab:damaged}\\
+Star residual graph at $a=k-1$ & The independent set of the $k$ leaves has size $k$, not $k-1$; all 6 stars fail & [MV], Section~\ref{sec:res-trees}\\
+Disconnected residual graph at $a=k-1$ & No lift is $k$-connected; 10 and 285 residual graphs for $k=4,5$ fail & [MV], Table~\ref{tab:residual}\\
+A triangle or a $4$-cycle in the cycle union at $a=2$ & Independence number three, or a cut of size $k-1$ & [MV], Table~\ref{tab:controls}\\
+\bottomrule
+\end{tabular}
+\caption{Ablation of the shell construction: each row removes or alters one ingredient and states the consequence and where it is established. The first three rows are consequences of the proofs of Lemmas~\ref{lem:lift} and~\ref{lem:harary}; the last four are exact negative controls recorded in the certificates.}
+\label{tab:ablation}
+\end{table}
+
+The first three rows are not exhaustive tests of every alternative construction, which could still succeed by a different route; they show that, within the proofs, each ingredient is used.
+The last four rows are the converse: the properties the theorems assert are lost, as predicted, when the structure is altered, and the loss is detected by both connectivity tests and by both independence computations.
+The damaged-edge row is the strictest, because it removes a single edge from a graph that has no spare edge: the constructions have exactly the degree-sum number of edges and at most one vertex of degree $k+1$, so every edge has an endpoint of degree $k$ and its deletion leaves a vertex of degree $k-1$, and every edge is needed [D, from the degree pattern].
+The computation confirms the consequence for one edge in each of the 75 graphs, the first edge at the first vertex of degree $k$.
+
+\subsection{Independent recomputation and digests}\label{sec:res-audit}
+
+The recomputation with NetworkX \cite{NetworkX} reproduces the sizes, the connectivities and the independence numbers of all \NGraphs\ graphs, the \NHarary\ pairs of residual connectivities, the \NDamaged\ damaged-graph connectivities and the \NCycleControls\ cycle controls without a disagreement; it did not import either checker of the experiments.
+Its source and the sources it checks are bound to the certificate by SHA-256 digests (Table~\ref{tab:digests}).
+The script that generates the tables of this paper recomputes each digest from the file it names and stops on a mismatch.
+The recomputation's summary reports \NGraphs\ graphs, \NHarary\ Harary bases, \NOdd\ cases with an odd degree sum, \NDamaged\ damaged-edge controls and \NCycleControls\ cycle controls, the same counts as the first implementation's summary, and for every one of the \NHarary\ Harary rows the connectivity of the starting graph equals $g=k-a$ exactly.
+A mismatch between the two implementations on any graph would have stopped the recomputation, since each comparison is an assertion, so the agreement reported here is complete and not a sample.
+Both summaries bind the proof, the certificate and the sources of the verifiers by digest, which fixes the files that the reported numbers describe.
+
+\input{table-digests.tex}

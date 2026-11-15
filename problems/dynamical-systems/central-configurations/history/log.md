@@ -897,3 +897,15 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   `ofReduceBool`, `unsafe` or `skipKernelTC`. The 863 CPU-hour rebuild was not done.
 - Strategic review: the n = 5 atlas and the tropical n = 5 work are retired as routes to the theorem; the
   open case is n = 6 (CCB-041). Tropical-replication v0.11 published, 10.5281/zenodo.23887585.
+
+## Round 56 (2026-11-14): manuscript revisions v0.12 and v0.13; the atlas verdict
+
+- Tropical-replication v0.12 (10.5281/zenodo.24232033): revision from the independent audit (the six-body stratum section at
+  the state of the records, methods, generated tables, required sections, evidence marks).
+- CCB-042 verdict (independent reviewer with a CPU rerun of m2w; EXP-022 verdict-atlas-2026-11-14.md): m2w is sound and
+  reproduces, but the quadruple corner is not closed, and the "failed" counters of collapse, bicorner-same, fartube, m1
+  and uplow are unprocessed stacks of runs stopped at their time budget.
+- Tropical-replication v0.13 (10.5281/zenodo.24232708): the atlas described by the corrected status of every chart, generated
+  from the summaries and checkpoints (CCB-044); independent review CHANGES REQUIRED, then APPROVE after two re-checks.
+  41 pages, 780,540 bytes, SHA-256 2cf06b0a10712b392baad297b921357d82688b937fe1e590f38e5436cfb9f455.
+

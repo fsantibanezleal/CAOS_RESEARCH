@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Exact replication and screening of tropical finiteness certificates for central configurations",
+    "title": "Replication and screening of tropical finiteness certificates for central configurations, with exact comet decisions and the status of a six-body symmetric stratum",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>We report an exact, fully reproducible replication and screening study around Smale's 6th problem (finiteness of planar central configurations), with the following contributions: (i) an exact calibration of the Albouy–Chenciner mutual-distance equations in open tooling, including a machine rediscovery of their dimension-blindness (the regular tetrahedron coexists with the square in the equal-mass rhombus stratum of the 4-body distance system until the Cayley–Menger equation is adjoined, after which the square, with side a satisfying a^3 = (4 + √2)/8, the larger of the two positive roots of 32a^6 - 32a^3 + 7 = 0, is the unique positive point of the stratum); (ii) a machine measurement of the enrichment law: adjoining the asymmetric (Roberts) equations and the energy–inertia relation renders the n = 3 distance ideal zero-dimensional directly, eliminating the coordinate-line components of the bare symmetric system; (iii) an independent, exact reproduction of the Jensen–Leykin tropical prevariety certificate of generic-mass finiteness for n = 5 (arXiv:2301.02305v2): both published f-vectors match digit for digit and the pointedness of the recession cone is verified by an independent exact parser; and (iv) a screening study over mass-valuation families and equation-system variants at n = 4, 5 which finds two new working valuation families beyond the two published, replicates generic-mass finiteness for n = 4 purely polyhedrally in seconds, and shows that removing the ten dependent symmetric Albouy–Chenciner equations destroys the certificate at every tested valuation: the \"redundant\" equations carry essential tropical information.</p><p>Every comet of every screened cell is then decided exactly by a rational-arithmetic feasibility certificate, which upgrades the negative half of the screening from absence of a certificate to proof; adding further valid equations is measured separately, showing Dziobek's equations to be tropically active but not decisive at the hard case and the energy–inertia relation to be tropically inert; and two censuses that defeated our own engine are closed by an independent solver with exact cross-verification.</p><p>All computations are exact (rational or integer arithmetic, or certified polyhedral computation); every stated number is reproducible from the released code and recorded hashes. The finiteness theorems replicated are due to Hampton–Moeckel, Albouy–Kaloshin, and Jensen–Leykin; the measurements in (i), (ii) and (iv) are, to our knowledge, new at this level of explicitness.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/dynamical-systems/central-configurations).</p><p>v0.11 adds a section on the October 2026 claims that the planar five-body problem has finitely many central configurations for every positive mass vector (Tomar, with a Lean formalization; Chen and Tong; Liu and Liu), and an audit of the Lean formalization: its main theorem states exactly the classical claim, and none of its 2,751 stored and 85,756 generated modules contains a construct that bypasses the kernel. Priority for the five-body theorem belongs to those authors; the open case here is n = 6.</p>",
+    "description": "<p>We report a replication and screening study around Smale's 6th problem (finiteness of planar central configurations). Conclusions rest on exact rational or integer arithmetic, with three exceptions: the gfan prevariety runs use the machine-integer fast path (the overflow-checked rerun is not made), the section probes are probabilistic, and the modular Gröbner screens serve triage only. Results: (i) an exact calibration of the Albouy–Chenciner distance equations, which reproduces their dimension-blindness; (ii) the enrichment law at n = 3; (iii) the published f-vectors of the Jensen–Leykin n = 5 prevariety certificate, on the fast path; (iv) a 16-cell screening of valuation families and equation systems, which finds two new working valuation families, shows that removing the ten dependent symmetric equations destroys the certificate at every tested valuation, and decides every comet exactly (pointed by phase-I infeasibility, unpointed by a verified zero combination); (v) for the two-pair symmetric stratum of the six-body problem, proofs of the fibre-dimension cases k = 0, 1, 2, 4, a reduction of k = 3, finiteness of the degenerate set of the doubly symmetric cross family, and no finiteness statement for the stratum; its interval atlas is not established: of fifteen charts listed as complete, seven stopped at their time budget with part of the seed unprocessed, one never ran, and the quadruple corner is open; (vi) an audit of the Lean statement of the 2026 five-body claims, which finds the classical statement and none of nine kernel-bypass patterns.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/dynamical-systems/central-configurations).</p>",
     "keywords": [
       "central configurations",
       "relative equilibria",
@@ -70,11 +70,121 @@
         "relation": "cites",
         "identifier": "10.5281/zenodo.23202861",
         "resource_type": "dataset"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1002/asna.19001520302",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/proc/13427",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2601.07962",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2601.01165",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s10569-020-09993-1",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/978-3-031-64529-7_34",
+        "resource_type": "publication-conferencepaper"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1515/crll.1984.347.168",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s00209-008-0374-x",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/gsm/161",
+        "resource_type": "publication-book"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1145/2331130.2331136",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1145/3580277",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/BF01228714",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/conm/198/02494",
+        "resource_type": "publication-section"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s10569-010-9328-9",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1016/j.jsc.2023.102277",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1090/s0002-9947-01-02828-8",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s002220050200",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.2307/2007159",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s10569-019-9920-6",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1016/s0167-2789(98)00315-7",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/bf03025291",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s10884-019-09765-y",
+        "resource_type": "publication-article"
       }
     ],
-    "version": "0.11",
+    "version": "0.13",
     "language": "eng",
-    "publication_date": "2026-11-02",
-    "version_notes": "New section on the October 2026 claims of five-body finiteness for all positive masses and an audit of the Lean formalization (EXP-024): faithful statement, no kernel bypass in 2,751 stored and 85,756 generated modules."
+    "publication_date": "2026-11-14",
+    "version_notes": "Correction: the description of the interval atlas of the two-pair symmetric stratum is corrected. Version 0.12 read the stored counter named failed of five covering runs (collapse, bicorner-same, fartube, m1, uplow) as boxes that failed at the depth cap; for these runs it is the unprocessed stack of a run stopped at its time budget, with most of the seed unprocessed (98.0, 98.4, 99.96 and 89.3 percent for four of them; collapse is complete modulo the mirror, conditionally). deep-L, deep-R, fa2b and the m2 charts are incomplete with genuine failures, cb1 and cb1f have failures with no stored disposition, and m1vert-S never ran. The quadruple corner is not closed (no certificate below the lower bound of m2w, an uncovered sliver in the band that m2w discards, and unprocessed delegate charts), and the m2w chart itself is sound and reproduces. The atlas table now gives the status class of every chart, computed from the stored summaries and checkpoints; the abstract, the atlas subsection, the discussion, the limitations and the conclusions are corrected. The earlier notes of version 0.12 still apply to the rest of the paper. Corrections and additions: the six-body two-pair stratum section is rewritten to the state of the records (cases k = 0, 1, 2, 4 proved with pointers, k = 3 reduced to four bilinear conditions, the interval atlas, the cross point and the finiteness of its family, the dropped draft statement and three open questions, EXP-019 to EXP-023); statements are marked [MV], [D], [V] or [U] and called proved only with a written proof; a methods section with five algorithm blocks, tool releases and hashes; complete result tables (S1 and S2 at n = 5, n = 4, the twelve-cell enrichment grid) and two figures generated from the stored artifacts; bit-width provenance (the prevariety runs use the fast path, the overflow-checked rerun is an open item) replacing the claim of certified polyhedral computation; the 25 percent reduction replaced by the entries; the normalization behind the larger root of the square; the n = 6 pause and parking facts; the EXP-024 statements restated as a scan of nine patterns. Second pass of the same version: the title no longer says \"Exact\" and now names the exact comet decisions and the six-body stratum status; 13 display equations added (the asymmetric and energy-inertia equations, the Cayley-Menger determinant, the system size, the tropical prevariety and dimension statements, the valuation shift, the Farkas alternative, the rhombus roots, the mass-kernel condition, the sign coupling of the chamber relaxation, the pair-collapse coefficient and the degree bound of the cross family); five figures generated from the stored records (sizes of the unpointed comets, decider time against gfan time, Singular job times, residual assignments per orientation chamber, certificates of the covering runs); 15 references added, each cited where the text uses it; a subsection on what a pointed prevariety certifies. Review fixes: the atlas statement is restated against the stored run summaries (seven charts with failed boxes, one without a summary) and the assembly record; the exactness wording of the comet decision (pointed without a vector is possible and uncounted); the corner rank, the m2 box counts and the cross point are stated as measured or numerical; the abstract names the doubly symmetric cross family and has 242 printed words (232 by the checker's rule); the sections of the content bar for a manuscript are added (related work, problem formulation and notation, methods, theory, experimental design, results, ablation, discussion, conclusions) with the earlier short sections merged; the notation table, the unbounded-directions table and the atlas table generated from the records; DOIs added to the earlier references."
   }
 }
