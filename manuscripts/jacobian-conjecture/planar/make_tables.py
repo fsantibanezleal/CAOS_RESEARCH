@@ -390,7 +390,7 @@ ABLATION = dict(
 
 NOTATION = dict(
     label="tab:notation",
-    caption="Notation. The symbol $L$ is the operator $J(P,\\cdot)$ in Sections~\\ref{sec:theory} and~\\ref{sec:design} and the number field $\\Q[y]/(P)$ in Sections~\\ref{sec:methods}, \\ref{sec:chaintheory} and~\\ref{sec:helali}; the symbol $R$ has the per-section meanings of its rows.",
+    caption="Notation. The symbol $L$ is the operator $J(P,\\cdot)$ in Sections~\\ref{sec:machine} to~\\ref{sec:staircase} and in Section~\\ref{sec:design} and the number field $\\Q[y]/(P)$ in Sections~\\ref{sec:a7}, \\ref{sec:chaintheory} and~\\ref{sec:helali}; the symbol $R$ has the per-section meanings of its rows.",
     spec="P{4.6cm}P{9.0cm}",
     head=["Symbol", "Meaning"],
     rows=[
@@ -405,9 +405,9 @@ NOTATION = dict(
         ["$H$", "$y$-heavy half-plane $\\{i\\le j\\}$ of rows; also the eliminant $H(a_7)$ in Section~\\ref{sec:helali}"],
         ["$\\varepsilon$, $[M\\mid b]$", "the $51$ interior coefficients and the augmented matrix ($302\\times125$) of the Case 1 system"],
         ["$A,B,C,X,Y,d$", "normalized parameters of the atlas: $X=A^3$, $Y=A^2C$, $d=1+\\varepsilon_{(1,0)}$"],
-        ["$R,S,F_3,F_6,F_7$", "polynomials of the shared determinant $A^{87}(R+YS)$ and the factors of the graph numerator (Section~\\ref{sec:atlas}; in Section~\\ref{sec:theory} $R$ is the tail $P-P_{\\mathrm{top}}$)"],
+        ["$R,S,F_3,F_6,F_7$", "polynomials of the shared determinant $A^{87}(R+YS)$ and the factors of the graph numerator (Section~\\ref{sec:atlas}; in Sections~\\ref{sec:machine} to~\\ref{sec:staircase} $R$ is the tail $P-P_{\\mathrm{top}}$)"],
         ["$K$, $L$, $P$", "$K=\\Q[a_7]/(H)$ (degree $35$); $L=\\Q[y]/(P)$ with $P=y^5-y^4+3y^3+3y^2+26$ (Section~\\ref{sec:helali})"],
-        ["$R$, $\\phi$, $(p,r)$", "in Sections~\\ref{sec:methods}, \\ref{sec:chaintheory} and~\\ref{sec:helali}: $R=\\mathbb Z[y]/(P)$ (not the tail, nor the polynomial $R$ of the atlas); the ring map $\\phi_{p,r}:R\\to\\mathbb F_p$, $y\\mapsto r$, with $P(r)=0$ modulo $p$ (Section~\\ref{sec:chaintheory})"],
+        ["$R$, $\\phi$, $(p,r)$", "in Sections~\\ref{sec:a7}, \\ref{sec:chaintheory} and~\\ref{sec:helali}: $R=\\mathbb Z[y]/(P)$ (not the tail, nor the polynomial $R$ of the atlas); the ring map $\\phi_{p,r}:R\\to\\mathbb F_p$, $y\\mapsto r$, with $P(r)=0$ modulo $p$ (Section~\\ref{sec:chaintheory})"],
         ["$I_\\pm$", "the branch ideals $q_1=\\pm c$ of Case 1 in $L[q_0,q_2,q_3,q_4,q_5]$, nine equations each"],
         ["$\\operatorname{Res}_{x;m,n}$", "the Sylvester resultant for the formal degrees $m,n$ in $x$, a determinant of the coefficients"],
         ["$B_h(w)$, $W$", "the proven bound $\\max_{a\\in\\operatorname{supp}h}w\\cdot a\\le B_h(w)$ for a weight $w$ of the weight set $W$ (components in $\\{0,..,3\\}$, the split variable in $\\{-3,..,3\\}$)"],
@@ -619,7 +619,7 @@ def tex_consts(res):
              "\\begin{table}[tbp]", "\\centering",
              "\\caption{The final constants of the leaves at three primes. $p_1=536870909$ is the prime of the tree and $p_2=536870879$ the prime of the replay "
              "(both read from the record); $p_3$ is a third prime at which the leaves were recomputed by scripts that do not use the experiment's code "
-             "(plus branch $p_3=268435399$, minus branch $p_3=399999949$; n/r marks a leaf that was not recomputed). The pair "
+             "(plus branch $p_3=268435399$, minus branch $p_3=399999949$; n/r marks a leaf that was not recomputed; the scripts and their outputs are in the folder \\texttt{independent-checks/third-prime} of EXP-146). The pair "
              "$(V_{l_{3.4}},V_{l_{3.0}})$ of the node \\texttt{t.z.nz} gives zero at every prime, consistent with an exact zero; the last column counts the primes at which the constant is nonzero.}"
              "\\label{tab:consts}",
              "{\\footnotesize", "\\begin{tabular}{@{}llrrrr@{}}", "\\toprule",
@@ -683,13 +683,48 @@ def verify_exp146():
             if [i for i, _ in pairs] != [p["i"] for p in node["last"]["pairs"]]:
                 bad.append(("146", "%s %s: pair ids of the third-prime list differ" % (b, nid)))
     arch = exp_dir("146") / "independent-checks" / "third-prime"
-    texts = {"plus": (arch / "plus" / "out-p3.txt").read_text(encoding="utf-8") + (arch / "plus" / "out-tnz-p3.txt").read_text(encoding="utf-8"),
-             "minus": (arch / "minus" / "run4.txt").read_text(encoding="utf-8")}
+    import json as _json
+    import re as _re
+
+    def plus_summary(*names):
+        """Parse the SUMMARY JSON line of each plus output: leaf -> {pair id: constant}."""
+        out = {}
+        for name in names:
+            found = [ln for ln in (arch / "plus" / name).read_text(encoding="utf-8").splitlines() if ln.startswith("SUMMARY ")]
+            if len(found) != 1:
+                bad.append(("146", "%s: expected one SUMMARY line, found %d" % (name, len(found))))
+                continue
+            for leaf, d in _json.loads(found[0][len("SUMMARY "):]).items():
+                out[leaf] = {i: c for i, c in d["constants"]}
+        return out
+
+    def minus_lists(tag):
+        """Parse the '[leaf] constants at <tag>:' lists of minus/run4.txt: leaf -> list of constants in pair order."""
+        out = {}
+        for ln in (arch / "minus" / "run4.txt").read_text(encoding="utf-8").splitlines():
+            mt = _re.match(r"^\[(t\.z\.nz|t\.z\.z)\] constants at %s: \[([0-9, ]*)\]" % _re.escape(tag), ln)
+            if mt:
+                out[mt.group(1)] = [int(x) for x in mt.group(2).split(",")]
+        return out
+
+    got3 = {"plus": plus_summary("out-p3.txt", "out-tnz-p3.txt"), "minus": minus_lists("p3")}
     for b in ("plus", "minus"):
         for nid, pairs in td.THIRD[b]["leaves"].items():
-            for pid, v in pairs:
-                if v != 0 and str(v) not in texts[b]:
-                    bad.append(("146", "%s %s %s: p3 constant %d not in the archived third-prime output" % (b, nid, pid, v)))
+            if b == "plus":
+                have = got3[b].get(nid, {})
+                for pid, v in pairs:
+                    if have.get(pid) != v:
+                        bad.append(("146", "%s %s %s: p3 constant %d differs from the archived output (%r)" % (b, nid, pid, v, have.get(pid))))
+            else:
+                if got3[b].get(nid) != [v for _, v in pairs]:
+                    bad.append(("146", "%s %s: p3 constants differ from the archived run4.txt list" % (b, nid)))
+    # the plus recomputation at p1 equals the recorded constants of results.json, leaf by leaf and pair by pair
+    got1 = plus_summary("out-p1.txt", "out-tnz-p1.txt")
+    for nid, vals in td.THIRD_P1["plus"].items():
+        node = [n for n in res["branches"]["plus"]["nodes"] if n["id"] == nid][0]
+        rec = {p["i"]: p["c"] for p in node["last"]["pairs"]}
+        if got1.get(nid) != rec:
+            bad.append(("146", "plus %s: the archived p1 recomputation differs from results.json" % nid))
     g = res["gates"]
     if not all(g[k]["pass"] for k in ("G0", "G1", "G2_random", "G2_composition", "G3", "G4", "G2_real_system", "G5")):
         bad.append(("146", "a gate did not pass"))

@@ -180,7 +180,9 @@ COST = {'caption': "Measured costs of the exact attempts on Cases 1 and 2, endin
 # problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-146-case1-chain-certificate/independent-checks/third-prime/
 # and make_tables.py --check refuses a constant below that does not appear in the archived output of its branch.
 # Keys: branch -> leaf -> (list of (pair id, constant at p3)).
-# The p1 values the same outputs print for the same pairs are in THIRD_P1 and are compared with results.json.
+# The p1 values in THIRD_P1 are the ones the p3 outputs print as "(recorded at p1: ...)", read from the SLP and not recomputed there;
+# the recomputation at p1 and at p2 is in plus/out-p1.txt, plus/out-tnz-p1.txt, plus/out-p2.txt, plus/out-tnz-p2.txt and minus/run4.txt,
+# and THIRD_P1 is compared with results.json.
 THIRD = {
     "plus": {"p": 268435399, "r": 174414054,
              "leaves": {"t.nz": [("l4.1", 105243149), ("l4.2", 212674548)],
