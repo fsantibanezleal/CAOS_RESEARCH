@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "problem": "tau-conjecture",
+  "updated": "2026-11-16",
+  "original_problem": {
+    "status": "open (Shub-Smale tau conjecture, Smale's fourth problem; open since 1995, even for exponent kappa = 1)",
+    "statement": "For a nonzero f in Z[x] computed by a constant-free straight-line program of length tau(f) (gates +, -, x; free constants -1, 0, 1; input x), the conjecture asserts z(f) <= (1 + tau(f))^c for a universal c, where z(f) is the number of distinct integer roots. It implies P_C != NP_C in the Blum-Shub-Smale model (Shub-Smale) and VP^0 != VNP^0 (Buergisser 2009); the real-zeros analogue is false (program/tau-conjecture/plan.md section 1; RESUME.md section 1).",
+    "priority": "External status checked 2026-10-30 and 2026-11-07: open; the newest tau-conjecture item on arXiv is arXiv:1905.00091 (2019) and no later item bears on z_max or the seven-root threshold [V]; no public census of integer roots of short straight-line programs and no overlap with EXP-015 or census v0.06 was found [U as to exhaustive priority] (history/log.md, entries 2026-10-30 and 2026-11-07; program/tau-conjecture/plan.md, External status review). The integer-target census of Markstroem (arXiv:1306.3091, length up to 11) is a different object (complexity of integers, not root counts of polynomials) and is the external anchor the CAOS enumerator reproduces (EXP-001, 14 of 14 anchor values per the backlog). The CAOS census of z_max(tau) is described in the published paper as, to our knowledge, the first exact census of the growth function; external novelty is not confirmed.",
+    "prohibited_reframing": "No CAOS result may be described as proving, disproving or deciding the tau conjecture, as a bound on z(f) in terms of tau(f) for a general family, or as evidence that settles the exponent. No finite computation decides the conjecture (plan.md, Non-claims); a proof is not a promised deliverable. The census values z_max(tau) for tau <= 9 are exact finite statements; a plateau or a linear stretch at the bottom of the ladder is a measurement, read two-sidedly (plan.md section 6), never an asymptotic claim."
+  },
+  "mission": "Establish, with exact, exhaustively enumerated and independently cross-checked computation, the growth function z_max(tau) of the Shub-Smale tau conjecture at the bottom of its ladder, with the cost thresholds for k distinct integer roots and the record witnesses, and read the mechanisms that realize the records, without claiming anything about the conjecture itself (program/tau-conjecture/plan.md sections 1 and 2; null results are valid products).",
+  "current_focus": "TC-F4",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "TC-F0",
+      "title": "Census instrument and the external anchor",
+      "status": "closed",
+      "priority": 0,
+      "target": "Build an exact enumerator of constant-free straight-line programs over Z[x] with dedup and exact integer-root counting, and gate it on an independent published computation before any polynomial output is trusted.",
+      "value": "Every later census value rests on an enumerator whose integer restriction reproduces Markstroem's published exact values; a mismatch would have stopped the programme (plan.md section 6, external anchor).",
+      "success_gate": "The integer restriction reproduces arXiv:1306.3091v4 Figure 1 at every compared depth (EXP-001 verdict, Stage A: all seven anchors, k = 1 to 7) and the census is exact for tau <= 4.",
+      "stop_conditions": [
+        "A mismatch with Markstroem's published values (his data or our code is wrong; decide with the printed witnesses in his Figures 2-5) stops the programme (plan.md section 6).",
+        "Met and closed: the gate passed (EXP-001 verdict, Stage A), so the stop condition did not trigger."
+      ],
+      "novelty_status": "Replication of Markstroem's exhaustive integer census as the regression gate; the polynomial census built on it is new data (focus TC-F4). No novelty claim for the instrument.",
+      "manuscript_route": "census",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001"
+      ],
+      "sources": [
+        "program/tau-conjecture/plan.md sections 4 (TC-P0), 5, 6",
+        "program/tau-conjecture/backlog.md TCB-001",
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-001-small-tau-census/verdict.md"
+      ]
+    },
+    {
+      "id": "TC-F1",
+      "title": "Composition towers and the parameterized-family loophole",
+      "status": "closed",
+      "priority": 1,
+      "target": "Decide whether iterating a single inner map, or the parameterized family x^2 - c, can beat a constant yield of integer roots per tower, and prove the stall theorems that explain the observed record mechanism.",
+      "value": "The record polynomials of the census are splittings on the Chebyshev-conjugate map x^2 - 2; a proved stall of every monic tower closes the iteration route to superlinear root counts and explains why the census records stop where they do.",
+      "success_gate": "A proved tower lemma and a monic stall theorem (any monic h of degree >= 2: tower root counts independent of depth), the family measurement over x^2 - c with c <= 200, and the cycle-length ceiling closing the 2-cycle series (EXP-005 verdict; TCB-016, TCB-020, TCB-023).",
+      "stop_conditions": [
+        "The family maximum grows with c faster than the cost tau(c) of the constant (it did not: maximum 5, attained only at c = 2; EXP-005 verdict).",
+        "Closed: the loophole is empty for x^2 - c on the measured range, and the classical cycle-length <= 2 ceiling closes the iteration flank."
+      ],
+      "novelty_status": "The stall theorems are the programme's own proofs, stated in the paper as elementary; the cycle-length <= 2 fact is classical and is cited without attribution found (Narkiewicz, Polynomial Mappings, LNM 1600, not reachable: TCB-023); Doyle-Poonen read at abstract level only (TCB-024); external novelty is not confirmed.",
+      "manuscript_route": "census",
+      "first_bounded_action": "TCB-016",
+      "evidence": [
+        "EXP-005",
+        "TCB-016",
+        "TCB-020",
+        "TCB-023",
+        "TCB-024"
+      ],
+      "sources": [
+        "program/tau-conjecture/backlog.md TCB-016, TCB-020, TCB-023, TCB-024",
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-005-family-towers/verdict.md",
+        "problems/computation-complexity/tau-conjecture/context/2026-08-01-monic-stall-theorem.md (listed, not re-read for this record)",
+        "program/tau-conjecture/RESUME.md section 1"
+      ]
+    },
+    {
+      "id": "TC-F2",
+      "title": "The neighbouring worlds: finite fields, reals and rationals",
+      "status": "dormant",
+      "priority": 2,
+      "target": "Measure the analogous growth functions of the integer census over F_p, over R (exact Sturm counting) and over Q on the same enumerated programs, so that the integer ladder is read against its two neighbours.",
+      "value": "Shows where the difficulty of the conjecture lives at the bottom of the ladder: over F_p the maximum is exactly 2^(tau-1) for every tau (proved), over R the ladder leaves the integer one at tau = 4 without saturating the degree ceiling, and over Q it equals the integer ladder through tau = 6.",
+      "success_gate": "Exact ladders to the depth the frontier allows, each gated on the integer maximum of the same set (TCB-027, TCB-037, TCB-038; shipped as sections of census v0.04).",
+      "stop_conditions": [
+        "Depth 7 and beyond need the 25.8M-state or larger frontier; deferred and not scheduled (TCB-037 and TCB-038 notes).",
+        "No rate is claimed for the real ladder (TCB-037 note); no further instrumentation is queued."
+      ],
+      "novelty_status": "The F_p theorem z^p_max(tau) = 2^(tau-1) is proved in the programme (Dirichlet, p = 1 mod 2^k); the real and rational ladders are exhaustive measurements to depth 6; external novelty is not confirmed.",
+      "manuscript_route": "census",
+      "first_bounded_action": "TCB-027",
+      "evidence": [
+        "TCB-027",
+        "TCB-037",
+        "TCB-038"
+      ],
+      "sources": [
+        "program/tau-conjecture/backlog.md TCB-027, TCB-037, TCB-038",
+        "manuscripts/tau-conjecture/census/zenodo.json (description: F_p, R and Q ladders)",
+        "problems/computation-complexity/tau-conjecture/context/2026-08-25-three-worlds-measured.md (listed, not re-read for this record)"
+      ]
+    },
+    {
+      "id": "TC-F3",
+      "title": "The solver lane for the depth-8 residual",
+      "status": "closed",
+      "priority": 3,
+      "target": "Decide whether an 8-gate 7-rooter with a final addition or subtraction exists, by SMT (nonlinear integer arithmetic, then bit-vectors), and measure whether a symmetry quotient of the frontier is a sound shortcut.",
+      "value": "Either route would have decided z_max(8) without building the depth-7 frontier of about 10^9 states.",
+      "success_gate": "A decision of the final-pm residual at 8 gates by a solver, or a measured reason to leave the route (EXP-008, EXP-010); the symmetry quotient measured (EXP-009).",
+      "stop_conditions": [
+        "Both solver backends validated their semantics on a pinned witness but could not complete the smallest known-answer search within their caps (EXP-008, EXP-010 verdicts): the lane is closed.",
+        "The census route EXP-011 decides z_max(8) exactly and unconditionally and subsumes the question."
+      ],
+      "novelty_status": "No novelty claim: the lane is a negative record (INCONCLUSIVE, engine-bound) kept as method notes (encodings, the f != 0 column, the CEGAR harness, the incident lessons).",
+      "manuscript_route": "none (research-record); the census paper states the solver lane as a method comparison",
+      "first_bounded_action": "EXP-008",
+      "evidence": [
+        "EXP-008",
+        "EXP-009",
+        "EXP-010"
+      ],
+      "sources": [
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-008-sat-depth8/verdict.md",
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-009-symmetry-audit/verdict.md",
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-010-bv-residual/verdict.md",
+        "program/tau-conjecture/backlog.md TCB-029"
+      ]
+    },
+    {
+      "id": "TC-F4",
+      "title": "The exact census z_max(tau) through tau = 9 and the seven-root threshold",
+      "status": "active-success-gate-met",
+      "priority": 4,
+      "target": "Determine exactly z_max(tau) = max{z(f) : tau(f) <= tau} for the constant-free straight-line programs over Z[x], and the least number of gates for k distinct integer roots, by exhaustive exact enumeration, with the extremal witnesses verified.",
+      "value": "The exact growth function at the bottom of the ladder is the experimental image of the conjecture: it shows plateaus (tau = 4, 7 and 9) where an extra gate buys no extra root, fixes the cost of 4, 5, 6 and 7 roots at 5, 6, 8 and 10 gates, and supplies the record witnesses whose mechanisms the anatomy focus reads.",
+      "success_gate": "z_max(tau) decision-complete through tau = 9 and the seven-root threshold exactly 10, every stage known-answer-gated, carried by a published paper. Met on 2026-11-05 by EXP-011 to EXP-015: EXP-011 (z_max(8) = 6 from the full depth-7 frontier of 1,048,460,912 states), EXP-012 (no multiplicative ninth gate), EXP-015 (no additive ninth gate anywhere in Z; all 4,193,843,648,000 candidates; audit 6 of 6 PASS), giving z_max(9) = 6; carried by census v0.07 (10.5281/zenodo.24231299, 2026-11-14). It stays the current focus until the strategic review with Felipe.",
+      "stop_conditions": [
+        "A known-answer gate or a completeness audit fails and cannot be repaired.",
+        "The next depth (z_max(10)) needs the depth-8 frontier of about 4 x 10^10 states and 1.1 TB of shards, out of scope on the disks used so far (EXP-011 verdict, Consequences): no further census depth is started without a costed frontier plan."
+      ],
+      "novelty_status": "To our knowledge the first exact census of the conjecture's growth function; no tau-conjecture item after 2019 on arXiv bears on z_max and no overlap with EXP-015 was found in the searches of 2026-10-30 and 2026-11-07 [V/U]; the search is not proof of novelty and external novelty is not confirmed. The enumerator is anchored to Markstroem 14 of 14 and to sympy on 284 and 228 polynomials.",
+      "manuscript_route": "census (published; v0.07 carries EXP-001 to EXP-015)",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001",
+        "EXP-002",
+        "EXP-003",
+        "EXP-004",
+        "EXP-006",
+        "EXP-007",
+        "EXP-011",
+        "EXP-012",
+        "EXP-013",
+        "EXP-014",
+        "EXP-015",
+        "TCB-005",
+        "TCB-021",
+        "TCB-025",
+        "TCB-029",
+        "TCB-032",
+        "TCB-035",
+        "TCB-039"
+      ],
+      "sources": [
+        "program/tau-conjecture/state.md (2026-11-05 and 2026-11-14 entries)",
+        "program/tau-conjecture/backlog.md TCB-001 to TCB-005, TCB-019, TCB-021, TCB-025, TCB-029, TCB-032, TCB-035, TCB-039",
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-011-depth8-pipeline/verdict.md",
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-012-window-9-10/verdict.md",
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-015-unwindowed-additive/verdict.md",
+        "manuscripts/tau-conjecture/census/publication-gate.json"
+      ]
+    },
+    {
+      "id": "TC-F5",
+      "title": "Witness anatomy: the record mechanisms per tau and rate lemmas for candidate infinite families",
+      "status": "proposed",
+      "priority": 5,
+      "target": "Classify the mechanism that realizes the record at each tau of the census (difference-of-squares splittings on x^2 - 2, the multiply-by-x move, chained subtraction sharing, two-center punctured products, the folding and squaring parities) and, for each candidate infinite family built from a mechanism, prove or refute a linear upper bound on z in tau.",
+      "value": "The census gives finitely many values; a rate lemma per family is the reading of those values as a growth law (the plan's two-sided reading: failure to beat linear-rate records at exhausted lengths is evidence for the conjecture at the bottom of the ladder). The records of the census (EXP-002 to EXP-007, TCB-026, TCB-034) already name the mechanisms; the focus would organize them and attach lemmas.",
+      "success_gate": "A classification of every census record by mechanism for tau = 1 to 9 from the stored witness galleries, and at least one rate theorem for a named family (the plan's example: any family of shifted-linear products has z <= a tau + b), stated with its proof (plan.md, TC-P2, anatomy lens). Proposed from the plan text; the exact gate is to be confirmed at the review.",
+      "stop_conditions": [
+        "Every record of the census falls into a family already bounded by an existing lemma (the monic stall theorem, TCB-020; the square-tower upper bound, TCB-034), so the classification adds no new lemma.",
+        "A candidate family beats a linear rate at the exhausted depths (a measurement against the two-sided reading, to be reported, not suppressed); the review then re-ranks. Proposed from the plan text; to be confirmed at the review."
+      ],
+      "novelty_status": "Not started. No literature pass specific to witness anatomy is recorded; the literature checks of 2026-10-30 and 2026-11-07 found no post-2019 tau-conjecture item bearing on the census (history/log.md). A focused pass is required before any claim.",
+      "manuscript_route": "a new section or companion of the census paper only if the lemmas form a coherent theorem with their own toolkit (methodology 13, split rule); trigger not met yet",
+      "first_bounded_action": "TCB-007: read the stored witness galleries of EXP-002 to EXP-007 and EXP-011 (census5.json and the scan records) and tabulate each record polynomial with its program, its root set and its mechanism, before any new enumeration.",
+      "evidence": [
+        "TCB-007",
+        "TCB-026",
+        "TCB-034"
+      ],
+      "sources": [
+        "program/tau-conjecture/plan.md section 2 item 3, section 4 (TC-P2), section 3 (lens 2)",
+        "program/tau-conjecture/backlog.md TCB-007, TCB-026, TCB-034",
+        "program/tau-conjecture/research-lines-2026-08-01.md (RL-4, RL-8, RL-9)"
+      ]
+    },
+    {
+      "id": "TC-F6",
+      "title": "The integer census past Markstroem's length 11",
+      "status": "proposed",
+      "priority": 6,
+      "target": "Extend the exact tau and tau-prime tables for n! and p# past length 11, where Markstroem's exhaustive computation stops (2014 hardware), and probe his open Problem 2.1 (monotonicity of tau(n!)).",
+      "value": "Extends an external exact table by the machinery built for the polynomial census; a counterexample or an exact value for Problem 2.1 would be a result about integer complexity, which is a different object from the polynomial census.",
+      "success_gate": "Exact tables past length 11 reproducing Markstroem through 11, with checkpointed runs and the monotonicity question decided on the extended range. Proposed from plan.md section 2 item 2 and TCB-006; to be confirmed at the review.",
+      "stop_conditions": [
+        "The extension needs hardware or storage beyond the disks used so far without a costed plan.",
+        "The extended range shows no new exact value of tau(n!) or tau-prime(n!) relevant to Problem 2.1."
+      ],
+      "novelty_status": "Not started. The integer-complexity census is Markstroem's; an extension would be new data over his published range; a literature refresh (including the OEIS Mahler-Popken entry the census paper cites) precedes any claim.",
+      "manuscript_route": "a new paper only on a coherent theorem about integer complexity; the census paper does not carry it",
+      "first_bounded_action": "TCB-006: port the checkpointed enumerator to the integer restriction and rerun through length 11 as the regression gate before extending.",
+      "evidence": [
+        "TCB-006"
+      ],
+      "sources": [
+        "program/tau-conjecture/plan.md section 2 item 2, section 4 (TC-P1)",
+        "program/tau-conjecture/backlog.md TCB-006",
+        "program/tau-conjecture/research-lines-2026-08-01.md RL-5"
+      ]
+    },
+    {
+      "id": "TC-F7",
+      "title": "Ceiling checks against Rojas: additive-complexity co-census",
+      "status": "proposed",
+      "priority": 7,
+      "target": "Compute additive complexity alongside tau in the census and compare the measured record root counts with the e^(O(s log s)) 2-adic rational-root ceiling and the pinned constants of Rojas (math/0304100).",
+      "value": "Places the measured records against the best published upper bounds of the same quantity (Rojas read in full, constants pinned: TCB-003) and shows how far the census sits below the ceiling.",
+      "success_gate": "A co-census table pairing tau and additive complexity per record, with the Rojas ceiling evaluated at each, and a stated reading. Proposed from plan.md section 2 item 4 (TC-P3); to be confirmed at the review.",
+      "stop_conditions": [
+        "The ceilings are so far above the measured records at every exhausted depth that the comparison discriminates nothing.",
+        "The additive-complexity computation is not decidable on the stored frontier without a new enumeration."
+      ],
+      "novelty_status": "Not started; the Rojas bounds are read on the primary source (TCB-003 [V]); Kaltofen-Pinar-Tavenas, Hrubes and Dutta are not read in full (TCB-008 todo).",
+      "manuscript_route": "census paper (a section) or a companion, to be decided at the review",
+      "first_bounded_action": "TCB-008 reads (KPT15, Hrubes 2013, Dutta 2021), then an invariant-first count of additive complexity on the stored witness galleries.",
+      "evidence": [
+        "TCB-003",
+        "TCB-008"
+      ],
+      "sources": [
+        "program/tau-conjecture/plan.md section 2 item 4, section 4 (TC-P3)",
+        "program/tau-conjecture/backlog.md TCB-003, TCB-008"
+      ]
+    },
+    {
+      "id": "TC-F8",
+      "title": "The valuation-spectrum record hunt",
+      "status": "proposed",
+      "priority": 8,
+      "target": "Hunt for records of the 2-adic valuation spectrum N_2(s) against Rojas's window [s, s(s+1)/2], over the enumerated additive-complexity classes, and measure its growth.",
+      "value": "Rojas Theorem 2 bounds the spectrum quadratically and its growth is open; the census records so far have 2-adic spectra {0, 1}, and the digit ladders are measured through tau = 7 (EXP-007).",
+      "success_gate": "A measured record table of N_2(s) over the enumerated classes, compared with the window. Proposed from TCB-017 and research line RL-2; to be confirmed at the review.",
+      "stop_conditions": [
+        "Records stay at the bottom of the window at every exhausted depth (a measurement, reported two-sidedly).",
+        "The hunt needs enumerations beyond the stored frontier."
+      ],
+      "novelty_status": "Not started; the statement of Rojas's digit conjecture is marked unverified in the census paper (v0.07 version notes).",
+      "manuscript_route": "census paper (a section) or a companion, to be decided at the review",
+      "first_bounded_action": "TCB-017: instrumentation on the stored frontier for the valuation spectrum of record polynomials (digit ladders already measured through tau = 7 in EXP-007).",
+      "evidence": [
+        "TCB-017"
+      ],
+      "sources": [
+        "program/tau-conjecture/backlog.md TCB-017",
+        "program/tau-conjecture/research-lines-2026-08-01.md RL-2",
+        "program/tau-conjecture/plan.md section 2 (items 3 and 4)"
+      ]
+    },
+    {
+      "id": "TC-F9",
+      "title": "The next census depth: z_max(10) and the eight-root threshold",
+      "status": "gated",
+      "priority": 9,
+      "target": "Decide z_max(10) and the least number of gates for 8 distinct integer roots, which the state record places in {10..13} (program/tau-conjecture/state.md, 2026-11-05).",
+      "value": "The next step of the exact growth function; it would test whether the plateau at 8 and 9 breaks at 10.",
+      "success_gate": "z_max(10) decided exactly with the same known-answer gates as EXP-011 to EXP-015. Recorded from state.md; to be confirmed at the review.",
+      "stop_conditions": [
+        "The depth-8 frontier (about 4 x 10^10 states, about 1.1 TB of shards per the EXP-011 verdict) cannot be stored or replaced by a sound reduction on the disks available."
+      ],
+      "novelty_status": "Not started. Gated on the depth-8 frontier (EXP-011 verdict, Consequences: out of scope on the disk used then).",
+      "manuscript_route": "census (a new version with the next depth)",
+      "first_bounded_action": "A costed frontier plan: storage, time and a sound reduction for depth 8, before any run (invariant-first).",
+      "evidence": [
+        "EXP-011"
+      ],
+      "sources": [
+        "program/tau-conjecture/state.md (2026-11-05 entry)",
+        "problems/computation-complexity/tau-conjecture/experiments/EXP-011-depth8-pipeline/verdict.md (Consequences)"
+      ]
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "census",
+      "path": "manuscripts/tau-conjecture/census",
+      "version": "0.07",
+      "version_doi": "10.5281/zenodo.24231299",
+      "concept_doi": "10.5281/zenodo.21753438",
+      "status": "published",
+      "split_action": "One paper, the census (EXP-001 to EXP-015); versions v0.01 to v0.07 are immutable Zenodo versions of one concept. Decided at the 2026-11-16 review: no split, because its parts answer one central question (the exact census, its thresholds and mechanisms). A new version only for corrections or when a focus (TC-F5 to TC-F9) yields a result; a separate paper only for a coherent theorem with a different central question."
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 7,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "census"
+      ]
+    },
+    {
+      "start": 8,
+      "end": 10,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 11,
+      "end": 12,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "census"
+      ]
+    },
+    {
+      "start": 13,
+      "end": 14,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 15,
+      "end": 15,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "census"
+      ]
+    }
+  ]
+}
