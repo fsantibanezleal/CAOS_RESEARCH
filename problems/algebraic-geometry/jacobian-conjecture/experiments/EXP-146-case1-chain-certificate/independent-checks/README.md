@@ -16,6 +16,11 @@ the review's recorded outputs:
 - plus: t.nz 2 of 2 constants nonzero (105243149, 212674548), t.z.nz 3 of 4, t.z.z 6 of 6 (`plus/out-tnz-p3.txt`, `plus/out-p3.txt`);
 - minus: t.z.nz 3 of 4, t.z.z 6 of 6 nonzero at p3, constants at p1 equal to the record, 0 problems (`minus/run4.txt`).
 
+The plus scripts were also run at p1 = 536870909 (r1 = 505390653) and p2 = 536870879 (r2 = 12005842) on 2026-11-16
+(`plus/out-p1.txt`, `plus/out-tnz-p1.txt`, `plus/out-p2.txt`, `plus/out-tnz-p2.txt`): at p1 every constant of the three plus
+leaves equals the recorded one, and at p2 every constant equals the replay constant of `artifacts/results.json`
+(`replay.plus`).
+
 Commands, from a folder holding a copy of the experiment files (`exp/` for plus, `src/` for minus) and the data root inputs:
 
     python -I recompute_plus.py exp/artifacts/slp-plus.json <data root>/jacobian-conjecture/exp142-143-branch-plus/eqs.json 268435399 174414054 t.z.nz t.z.z
@@ -25,6 +30,10 @@ Commands, from a folder holding a copy of the experiment files (`exp/` for plus,
 ## Certificate inputs (`../inputs/`)
 
 `eqs-plus.json` and `eqs-minus.json` are the two branch systems of EXP-142 (nine equations each over L), with the SHA-256
-G0 checks: bd227b53...849424a and 0a3a3905...aae76e9. They are committed so the certificate reproduces from the repository;
-`gates.py` reads them from the data root (`BRANCH`), and G0 regenerates them from EXP-141's `eqs.json` with EXP-142's
-`branches.py`. To rerun on a device without that data root, copy them to the paths `gates.py` names.
+G0 checks: bd227b53...849424a and 0a3a3905...aae76e9. `eqs-exp141-main.json` is the system of EXP-141 (SHA-256
+bbe1d91e...474290db), from which gate G0 regenerates the two branch files with EXP-142's `branches.py`; without it G0
+stops the run (exit 3). All three are committed so the certificate reproduces from the repository. `gates.py` reads them
+from the data root: to rerun on a device without it, copy `eqs-exp141-main.json` to `<data root>/jacobian-conjecture/
+exp141-main/eqs.json`, `eqs-plus.json` to `<data root>/jacobian-conjecture/exp142-143-branch-plus/eqs.json` and
+`eqs-minus.json` to `<data root>/jacobian-conjecture/exp142-143-branch-minus/eqs.json` (the paths `gates.py` names in
+`EXP141` and `BRANCH`), then run `run.py` from the repository root.
