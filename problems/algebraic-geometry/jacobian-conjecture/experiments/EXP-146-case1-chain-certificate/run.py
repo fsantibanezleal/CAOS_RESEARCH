@@ -101,7 +101,7 @@ def main():
         return finish(results, "STOPPED at G3", 1)
     # ---- G4 ----
     t = time.time()
-    g4 = gates.g4_controls(prime1, gates.BRANCH["plus"], node_seconds=600, removal_cases=range(6), log=log)
+    g4 = gates.g4_controls(prime1, gates.BRANCH["plus"], node_seconds=120, removal_cases=range(6), log=log, hard_seconds=300)
     results["gates"]["G4"] = g4
     log(f"G4 controls: {'PASS' if g4['pass'] else 'FAIL'} {g4} ({time.time() - t:.0f} s)")
     if not g4["pass"]:

@@ -386,7 +386,7 @@ def univariate(F, xi):
 def poly_digest(F, pts):
     """(terms, degrees, values at the given points): comparison key for the second implementation."""
     vals = [int(F(*pt)) for pt in pts]
-    return {"terms": len(F), "degrees": list(F.degrees()), "eval": vals}
+    return {"terms": len(F), "degrees": [int(e) for e in F.degrees()], "eval": vals}
 
 
 def digest_points(nvars, p):
@@ -426,7 +426,7 @@ def chain_node(ring, inputs, split, prime, exact_levels=2, K=KMAX, log=None, pts
     order = ring.order
     ctx = ring.mod(p)
     pts = pts or digest_points(n, p)
-    rec = {"order": order, "split": None if split is None else order[split], "inputs": [], "dropped_inputs": [],
+    rec = {"order": order, "inputs": [], "dropped_inputs": [],
            "steps": [], "last": None, "exact_levels": exact_levels, "members": {}}
     exact = {}
     lcs = []
@@ -435,7 +435,7 @@ def chain_node(ring, inputs, split, prime, exact_levels=2, K=KMAX, log=None, pts
 
     def note(mid, level, g, extra=None):
         d = {"level": level, "exact": g.ex is not None, "terms": len(g.img),
-             "img_degrees": list(g.img.degrees()), "bound_deg": [g.B.deg(i) for i in range(n)],
+             "img_degrees": [int(e) for e in g.img.degrees()], "bound_deg": [g.B.deg(i) for i in range(n)],
              "digest": poly_digest(g.img, pts)}
         if extra:
             d.update(extra)
@@ -549,8 +549,8 @@ def chain_node(ring, inputs, split, prime, exact_levels=2, K=KMAX, log=None, pts
                 raise BoundViolation(f"image degree {V.degrees()[xi]} above the formal degree {d}")
             U.append({"id": g.id, "L": L, "d": d, "V": V, "mem": g,
                       "attained": V.degrees()[xi] == d})
-            last["members"].append({"id": g.id, "L": L, "d": d, "img_deg": V.degrees()[xi],
-                                    "img_order": min(mo[xi] for mo in V.monoms())})
+            last["members"].append({"id": g.id, "L": L, "d": d, "img_deg": int(V.degrees()[xi]),
+                                    "img_order": int(min(mo[xi] for mo in V.monoms()))})
     out["V"] = U
     cands = [u for u in U if u["attained"]]
     if not cands:

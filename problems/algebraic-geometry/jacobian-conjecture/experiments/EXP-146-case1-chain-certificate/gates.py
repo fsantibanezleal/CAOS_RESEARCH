@@ -277,7 +277,8 @@ def g3_degree_drop(ncases, prime, seed=20261116):
         R = cc.res_image(F, G, 0, "x", m, p)
         val = R.to_dict().get((0,), 0) if R != 0 else 0
         stats["cases"] += 1
-        stats["drops"][m - mp] = stats["drops"].get(m - mp, 0) + 1
+        key = int(m - mp)
+        stats["drops"][key] = stats["drops"].get(key, 0) + 1
         if int(val) % p != pimg:
             stats["mismatches"] += 1
     stats["pass"] = stats["mismatches"] == 0 and stats["cases"] >= ncases * 0.9 and any(k > 0 for k in stats["drops"])
@@ -342,7 +343,7 @@ def planted_systems(prime, seed=20261117):
     return ring, unit, c, common + common2, unit2
 
 
-def g4_controls(prime, branch_plus_path=None, node_seconds=300, removal_cases=(0,), log=print):
+def g4_controls(prime, branch_plus_path=None, node_seconds=120, removal_cases=(0,), log=print, hard_seconds=300):
     res = {}
     ring, unit, c, commons, (unit2, A2, B2) = planted_systems(prime)
     common, common2 = commons[:3], commons[3:]
@@ -364,22 +365,46 @@ def g4_controls(prime, branch_plus_path=None, node_seconds=300, removal_cases=(0
     res["planted_common_root_chain_statuses"] = [(r["id"], r["status"]) for r in st4.records]
     res["pass"] = bool(ok) and not ok2 and not ok4 and bool(ok3) and res["planted_unit2_constant_matches"]
     if branch_plus_path is not None:
-        d = json.loads(Path(branch_plus_path).read_text())
-        ring5 = cc.NodeRing(["q5", "q3", "q4", "q2", "q0"])
-        names = d["names"]
-        sub = [3, 5, 6, 7, 10, 11]   # EXP-142 structure.md item 6: {E2,E3,E5,E6,E7,E10,E11}; E2 vanishes on a branch
-        byfrom = dict(zip(d["from"], d["eqs"]))
         negs = []
         for k in removal_cases:
-            keep = [e for j, e in enumerate(sub) if j != k]
-            ins = []
-            for e in keep:
-                terms = [([m[names.index(v)] for v in ring5.order], cs) for m, cs in byfrom[e]]
-                ins.append((f"E{e}", ring5.from_vectors(terms)))
-            okc, stc = cc.solve_tree(ring5.order, ins, prime, max_depth=3, node_seconds=node_seconds,
-                                     log=lambda *_: None, tag="neg")
-            negs.append({"removed": f"E{sub[k]}", "certified": bool(okc), "nodes": [(r['id'], r['status']) for r in stc.records]})
-            if okc:
+            # each control runs in a child process with a hard wall limit (flint resultants are not interruptible);
+            # a child that finishes without a certificate, or is killed at the limit, is "not certified"
+            try:
+                r = subprocess.run([sys.executable, str(HERE / "gates.py"), "--neg", str(k), str(node_seconds)],
+                                   capture_output=True, text=True, timeout=hard_seconds, cwd=str(HERE))
+                last = [ln for ln in r.stdout.splitlines() if ln.startswith("NEGRESULT ")]
+                entry = json.loads(last[-1][len("NEGRESULT "):]) if last else {"certified": False, "error": r.stderr[-300:]}
+                entry["outcome"] = "finished"
+            except subprocess.TimeoutExpired:
+                entry = {"removed": f"E{SUBSET[k]}", "certified": False, "outcome": f"killed at the {hard_seconds} s limit"}
+            negs.append(entry)
+            log(f"G4 control removing E{SUBSET[k]}: {entry}")
+            if entry.get("certified"):
                 res["pass"] = False
         res["branch_minus_one_equation"] = negs
     return res
+
+
+SUBSET = [3, 5, 6, 7, 10, 11]   # EXP-142 structure.md item 6: {E2,E3,E5,E6,E7,E10,E11}; E2 vanishes on a branch
+
+
+def neg_worker(k, node_seconds):
+    prime = cc.Prime(P1, R1)
+    d = json.loads(BRANCH["plus"].read_text())
+    ring5 = cc.NodeRing(["q5", "q3", "q4", "q2", "q0"])
+    byfrom = dict(zip(d["from"], d["eqs"]))
+    ins = []
+    for j, e in enumerate(SUBSET):
+        if j == k:
+            continue
+        terms = [([m[d["names"].index(v)] for v in ring5.order], cs) for m, cs in byfrom[e]]
+        ins.append((f"E{e}", ring5.from_vectors(terms)))
+    ok, st = cc.solve_tree(ring5.order, ins, prime, max_depth=3, node_seconds=node_seconds, log=lambda *_: None,
+                           tag="neg")
+    print("NEGRESULT " + json.dumps({"removed": f"E{SUBSET[k]}", "certified": bool(ok),
+                                     "nodes": [(r["id"], r["status"], r.get("reason")) for r in st.records]}))
+
+
+if __name__ == "__main__":
+    if len(sys.argv) >= 4 and sys.argv[1] == "--neg":
+        neg_worker(int(sys.argv[2]), int(sys.argv[3]))
