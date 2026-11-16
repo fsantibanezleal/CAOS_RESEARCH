@@ -66,3 +66,18 @@ least counterexample order is open in [8, 56]; Zhan's Questions 2-4 are open; no
   universal vertex, and every one satisfies Hoa's conjecture (verified independently).
 - Case-A counts at orders 10 to 13: 27, 57, 114, 286. Order 13 is settled for Hoa's conjecture except case B.
 
+## 2026-11-16 - EXP-008: no middle gadget from the order-13 MNH graphs with a universal vertex (HMB-007, step 1)
+
+- EXP-003's gadget mechanism on the 286 order-13 MNH graphs with a universal vertex (EXP-007): 3,304 gadgets of order 12,
+  all traceable; in none does a longest middle path omit a non-clique set, so Q1 is negative and no Zhan-type
+  counterexample has a middle gadget from these graphs. Every one of these gadgets has a universal vertex in G[N], so by
+  condition (iii) at most one of them could enter a triple anyway.
+- Validation: gates 1 (Zhan's A_18) and 2 (EXP-003's 2,796 order-12 gadgets reproduced) pass; dynamic programming and a
+  transposition-table search agree on all 3,304, EXP-003's plain backtracking on the 3,071 with at most 40 edges (a
+  deviation from the hypothesis for the 233 denser ones, stated in the verdict). An independent verification
+  (CAOS_MANAGE `wip/caos-research/hoa-exp008-verify-2026-11-16.md`: a fixed-start bitmask dynamic program with its own
+  decoding and clique test) reproduces all 3,304 records with 0 mismatches, the 233 included; its five record findings
+  were applied to the verdict, with a positive-control test of the transposition-table method on Zhan's B_17.
+- Consequence: the middle of a Zhan-type counterexample needs an order-13 MNH graph without a universal vertex (case B,
+  HMB-006, not yet enumerated) or order at least 14.
+

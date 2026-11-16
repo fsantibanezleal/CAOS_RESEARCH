@@ -92,3 +92,27 @@ def test_memoized_backtracking_equals_plain_backtracking_on_order_11_and_12_gadg
         plain, d2 = MODULE.gadgets_of(g6, MODULE.bt_invariants)
         assert d1 == 0 and d2 == 0
         assert memo == plain
+
+
+def test_transposition_table_method_finds_zhans_known_positive() -> None:
+    """Zhan's B_17 = A_18 - 18 (arXiv:2608.00957v3, built as in EXP-003 gate_zhan.py): d = 2, non-clique omitted set."""
+    gamma = {1: [2, 3, 11, 15, 18], 2: [3, 14, 16], 3: [4, 5], 4: [5, 12, 17], 5: [6, 7, 11, 15], 6: [7],
+             9: [10, 11], 10: [11], 11: [12, 13], 12: [13, 17], 13: [14, 15], 14: [15, 16], 15: [18]}
+    verts = list(range(1, 19))
+    edges = {(a, b) for a, bs in gamma.items() for b in bs} | {(8, v) for v in verts if v != 8}
+    x = 18
+    rest = [v for v in verts if v != x]
+    idx = {v: i for i, v in enumerate(rest)}
+    adj = [set() for _ in rest]
+    for a, b in edges:
+        if x in (a, b):
+            continue
+        adj[idx[a]].add(idx[b])
+        adj[idx[b]].add(idx[a])
+    n_set = sorted(idx[a if b == x else b] for a, b in edges if x in (a, b))
+    assert sorted(rest[i] for i in n_set) == [1, 8, 15]
+    memo = MODULE.bt_memo_invariants(len(rest), adj, n_set)
+    dp = MODULE.dp_invariants(len(rest), adj, n_set)
+    traceable, homog, _starts, d, nonclique = memo
+    assert traceable and homog and d == 2 and nonclique is True
+    assert tuple(memo) == tuple(dp)
