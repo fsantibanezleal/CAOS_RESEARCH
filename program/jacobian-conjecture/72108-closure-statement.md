@@ -91,3 +91,19 @@ families.
 - Task 8 DISCLOSED: GGHV Thm 2.1's own published record carries a bridging gap at
   (66,99) (per the audit's tex-line read); our claim inherits Thm 2.1 as published.
 - Task 9 (outreach): LAST, gated on Felipe.
+
+## Update 2026-11-16: an independent proof by another route (EXP-137, EXP-146)
+
+The hardening queue above belongs to the July route (forced-edge families, the corrector ladder); that route was parked
+(JCB-098, 2026-11-02). The exclusion now rests on a different chain: GGHV Proposition 4.3 as transcribed (EXP-137 derives
+the band equations independently and reproduces Helali's eliminant); Case 2 empty by a Singular standard basis (EXP-137);
+Case 1 empty by certificate (EXP-146: single-prime resultant-chain trees with proven degree bounds on both branches of
+EXP-142's exact split, a second prime, Singular, third primes in the review, adversarial review and final check). The
+claim, stated exactly: conditionally on Proposition 4.3 being exhaustive and on the encoding of its polygons, no Keller
+pair has degrees (72,108) or (108,72); with GGHV Theorem 2.1, a counterexample to JC(2) has max deg >= 125. Helali holds
+priority (first claim, conditional on the same reduction); Task 8's disclosure (Theorem 2.1 inherited as published)
+still applies.
+
+Felipe decides, as item 1 of the proposed next steps says: the phrasing above before planar v0.38 carries it on Zenodo.
+GGHV contact (item 2, the old task 9) stays last and gated on him.
+

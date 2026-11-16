@@ -1,0 +1,545 @@
+{
+  "schema_version": 1,
+  "problem": "jacobian-conjecture",
+  "updated": "2026-11-16",
+  "original_problem": {
+    "status": "disproved externally for every n >= 3; open for n = 2",
+    "statement": "The Jacobian conjecture (Keller 1939): a polynomial map F: C^n -> C^n whose Jacobian determinant is a nonzero constant is a polynomial automorphism. It is false in every dimension n >= 3 since the counterexample announced on 2026-07-20; the planar case JC(2) is open.",
+    "priority": "Alpoge announced the three-dimensional counterexample on 2026-07-20 (question posed by Akhil, map produced with Claude Fable 5; press coverage New Scientist, 2026-07-20). The degree reduction of the planar case and the floor max deg >= 125 except the pair (72,108) are Guccione, Guccione, Horruitiner and Valqui's (arXiv:2204.14178, Theorem 2.1, Proposition 4.3). The exclusion of (72,108), conditional on that reduction, was claimed first by Helali (Zenodo 10.5281/zenodo.21479814, 2026-07-21) and then by Guo (2026-08-10). The lower-dimension counterexamples to the homogeneous and vanishing variants are de Bondt's (arXiv:2610.24889), as the cascade paper states them.",
+    "prohibited_reframing": "No CAOS result may be described as disproving the Jacobian conjecture, as finding or re-finding the counterexample, or as deciding JC(2). CAOS work validates the public counterexample, states its structure and the consequence cascade at the level of dimension indices, and proves exact results about the planar case. The exclusion of (72,108) is Helali's first; the CAOS certificates (EXP-137 for Case 2, EXP-146 for Case 1) are an independent proof of both cases of GGHV Proposition 4.3, conditional on that proposition being exhaustive and on the encoding of its polygons."
+  },
+  "mission": "Establish with exact, archived and independently checked certificates what the 2026 counterexample is and what it implies (validation, structure, the cascade of implied and equivalent conjectures at the level of their dimension indices), and advance the planar case JC(2) at its sharpest published frontier, the degree floor, without claiming JC(2).",
+  "current_focus": "JC-F4",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "JC-F0",
+      "title": "Independent validation and structure of the three-dimensional counterexample",
+      "status": "closed",
+      "priority": 0,
+      "target": "Verify the announced map exactly (Jacobian determinant, non-injectivity) and determine its structure: the seed family and its degree laws, the geometry of non-properness, characteristic-p reductions, the image and its fibers, and two-dimensional equivariant rigidity.",
+      "value": "A trusted, exactly checked baseline for every later statement, and the structural facts (non-properness locus, image, rigidity) that separate the three-dimensional mechanism from the plane.",
+      "success_gate": "Every structural statement of the foundational paper machine-verified or derived, with the image of the map and its fibers decided exactly.",
+      "stop_conditions": [
+        "A structural statement fails its exact check and cannot be repaired (it is then corrected in a new version, as EXP-145 corrected the image statement).",
+        "Further structure adds no statement used by the planar or cascade work."
+      ],
+      "novelty_status": "Validation is replication, not novelty. The structural results (seed family and degree laws, char-p reductions, the image as C^3 minus the curve Gamma of EXP-145, two-dimensional equivariant rigidity) are our computations and proofs; their related work is stated in the foundational paper, and external novelty is not confirmed.",
+      "manuscript_route": "foundational",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001",
+        "EXP-002",
+        "EXP-003",
+        "EXP-004",
+        "EXP-005",
+        "EXP-006",
+        "EXP-007",
+        "EXP-008",
+        "EXP-009",
+        "EXP-010",
+        "EXP-011",
+        "EXP-012",
+        "EXP-145"
+      ]
+    },
+    {
+      "id": "JC-F1",
+      "title": "The consequence cascade at the level of dimension indices",
+      "status": "closed",
+      "priority": 1,
+      "target": "For every conjecture implied by or equivalent to the Jacobian conjecture (Dixmier, Poisson, Mathieu, Gaussian moments, vanishing, Image, symmetric forms), state with its primary source which dimension indices the counterexample settles and which stay open.",
+      "value": "The counterexample settles a family of conjectures only through index-specific implications; a table with indices and located sources prevents overclaiming and shows exactly where the open cases are.",
+      "success_gate": "Every implication located in its primary source with its index (Mathieu 1997 excepted, not located), and machine-verified wherever an explicit object exists (EXP-041, EXP-138, EXP-144).",
+      "stop_conditions": [
+        "Rows can be decided only by new mathematics beyond the cited implications (then a new focus is admitted, not a table extension).",
+        "A row is decided first in the literature (it is then cited, as de Bondt's dimensions were)."
+      ],
+      "novelty_status": "A located transcription of published implications with exact checks of explicit objects (the dimension-48 Hessian-nilpotent witness, de Bondt's HJC(15) witness behind the Mathieu bound SU(N), N >= 15, Long's rank-two Poisson map); the implications are others' results, and external novelty of the index-level table is not confirmed.",
+      "manuscript_route": "cascade",
+      "first_bounded_action": "EXP-016",
+      "evidence": [
+        "EXP-016",
+        "EXP-018",
+        "EXP-041",
+        "EXP-136",
+        "EXP-138",
+        "EXP-144"
+      ]
+    },
+    {
+      "id": "JC-F2",
+      "title": "Planar exclusions from the weight-class calculus, the staircase transport and the covector ladder",
+      "status": "dormant",
+      "priority": 2,
+      "target": "Exclude shapes of Keller components in the plane uniformly in the partner degree: two-term components and their lower-weight perturbations, anchored top edges, the linear vertex, the staircase that swallows the linear vertex, and simultaneous covectors of bounded degree.",
+      "value": "Uniform exclusion theorems shrink the planar search space for every degree at once, unlike window certificates.",
+      "success_gate": "A uniform theorem for the staircase at every grid shape (the fifth exclusion beyond its six certified shapes) or a terminating covector ladder.",
+      "stop_conditions": [
+        "The extension beyond the certified grid has no base certificate or closed form of the transport chain (the case since EXP-049; a conjecture in planar v0.37).",
+        "The covector ladder does not terminate (EXP-064: it stabilizes at dimension 39; EXP-078 refuted the finite ceiling)."
+      ],
+      "novelty_status": "Four exclusion theorems with complete proofs and the fifth on six certified shapes are ours; their related work is stated in the planar paper, and external novelty is not confirmed.",
+      "manuscript_route": "planar",
+      "first_bounded_action": "EXP-013",
+      "evidence": [
+        "EXP-013",
+        "EXP-017",
+        "EXP-021",
+        "EXP-029",
+        "EXP-032",
+        "EXP-033",
+        "EXP-037",
+        "EXP-042",
+        "EXP-049",
+        "EXP-064",
+        "EXP-075",
+        "EXP-078"
+      ]
+    },
+    {
+      "id": "JC-F3",
+      "title": "Chart atlas of the (72,108) Case 1 system",
+      "status": "closed",
+      "priority": 3,
+      "target": "Close the Case 1 system of GGHV Proposition 4.3 (302 equations in 51 interior coefficients) by a constructible atlas of determinantal strata.",
+      "value": "An exact, sub-family-by-sub-family route to the last open degree pair below 125.",
+      "success_gate": "Every stratum of the 51-parameter family closed by an exact certificate.",
+      "stop_conditions": [
+        "The atlas grows by finite sections without a uniform closure (parked by the strategic review JCB-098, 2026-11-02).",
+        "Case 1 is closed by another route (done by EXP-146, which makes the atlas unnecessary for the exclusion)."
+      ],
+      "novelty_status": "The exact sub-family closures (three- and four-coefficient restrictions, the direct A = 0 boundary, EXP-135's inert section) are ours; superseded as a route by JC-F4.",
+      "manuscript_route": "planar",
+      "first_bounded_action": "EXP-050",
+      "evidence": [
+        "EXP-050",
+        "EXP-098",
+        "EXP-112",
+        "EXP-118",
+        "EXP-121",
+        "EXP-131",
+        "EXP-132",
+        "EXP-135"
+      ]
+    },
+    {
+      "id": "JC-F4",
+      "title": "Independent proof that Case 1 of GGHV Proposition 4.3 for (72,108) is empty",
+      "status": "active-success-gate-met",
+      "priority": 4,
+      "target": "Prove that the 13 compatibility equations of Case 1 over K = Q[a7]/(H) have no common solution on either branch q1 = +c, -c, independently of Helali's computation.",
+      "value": "With Case 2 (EXP-137) it gives an independent proof that no Keller pair has degrees (72,108) or (108,72), conditional on GGHV Proposition 4.3 being exhaustive and on the encoding of its polygons; with GGHV Theorem 2.1 a counterexample to JC(2) then has max deg >= 125. The certificate method (single-prime resultant chains with support-proven degree bounds and monomial Rabinowitsch splits) needs no coefficient reconstruction, where exact standard bases and multi-modular certificates failed (EXP-139 to EXP-143).",
+      "success_gate": "A unit-ideal certificate for both branches, checked at a second prime and by a second implementation, accepted after an adversarial review, and carried by the planar paper. Met on 2026-11-16 by EXP-146 (three-leaf trees at p1 = 536870909, replay at p2, Singular digests, third primes in the review); the planar revision v0.38 is drafted and its publication waits for Felipe's validation of the closure phrasing (program/jacobian-conjecture/72108-closure-statement.md).",
+      "stop_conditions": [
+        "The certificate fails at a second prime or in the second implementation.",
+        "A gap is found in the bound proofs (rules M4, M5) that the gates cannot close."
+      ],
+      "novelty_status": "Priority for the exclusion is Helali's (first claim, conditional on the same reduction) and Guo's (second claim). The independent proof and the certificate method are not found elsewhere in the searches of 2026-11; external novelty of the method is not confirmed.",
+      "manuscript_route": "planar (Section sec:helali, v0.38); a separate methods paper only if the method is reused on a second system (proposed focus JC-F6)",
+      "first_bounded_action": "EXP-137",
+      "evidence": [
+        "EXP-137",
+        "EXP-139",
+        "EXP-140",
+        "EXP-141",
+        "EXP-142",
+        "EXP-143",
+        "EXP-146"
+      ]
+    },
+    {
+      "id": "JC-F5",
+      "title": "The configurations of maximal degree in [125,150] that the published sources leave undecided",
+      "status": "proposed",
+      "priority": 5,
+      "target": "Decide, for the twenty-three configurations of maximal degree in [125,150] that the published sources do not decide (EXP-083), whether each reduces to coefficient systems that can be certified empty, raising the floor beyond 125 conditionally on the reductions used.",
+      "value": "After (72,108), these configurations are the next gap of the degree floor; a certified closure of the smallest ones would be the first floor statement beyond GGHV's published one.",
+      "success_gate": "For at least the configurations of the smallest maximal degree, an exact reduction to coefficient systems (derived and checked, not assumed) and a certificate of emptiness or an explicit solution.",
+      "stop_conditions": [
+        "No configuration admits a reduction to a finite coefficient system with the planar machine (EXP-017 to EXP-022) or the GGHV Newton-polygon analysis within a bounded preflight.",
+        "The reductions need unpublished GGHV steps that cannot be re-derived exactly."
+      ],
+      "novelty_status": "Not started; GGHV 2022 decide every case below 125 except (72,108) and leave these configurations open; a literature refresh is the first step.",
+      "manuscript_route": "planar (a new section), or a new paper on the floor if the results form a coherent theorem",
+      "first_bounded_action": "Preflight: list the twenty-three configurations from EXP-083 with their polygons, and for the one of smallest maximal degree derive the coefficient system and price it with the EXP-146 certificate method.",
+      "evidence": [
+        "EXP-083"
+      ]
+    },
+    {
+      "id": "JC-F6",
+      "title": "Single-prime resultant-chain certificates as a method",
+      "status": "proposed",
+      "priority": 6,
+      "target": "Determine whether certificates of emptiness by resultant chains with support-proven degree bounds, evaluated at one prime and one root of the defining polynomial, apply beyond the Case 1 system, and state the method with its proofs and its cost.",
+      "value": "The method certified both branches in about six minutes of tree computation (1,854 s with every gate, EXP-146) where multi-modular certificates stayed unknown with coordinates above about 94,000 digits (EXP-143); if it transfers, it is a reusable tool for emptiness proofs over number fields.",
+      "success_gate": "A second, independent system (published or from JC-F5) certified by the same method, and a methods paper meeting the content bar.",
+      "stop_conditions": [
+        "No second system on which the method beats standard bases or multi-modular certificates.",
+        "The method is found in the literature (then cited, not published as new)."
+      ],
+      "novelty_status": "Resultants, Rabinowitsch splits and modular evaluation are classical; the combination with proven support bounds and exact w^L division was not found in the searches so far; a literature pass is required before any claim.",
+      "manuscript_route": "companion methods paper (new) only after the planar v0.38 revision and a second system",
+      "first_bounded_action": "Literature pass on certified emptiness by resultant chains over number fields; then one second system.",
+      "evidence": [
+        "EXP-146"
+      ]
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "foundational",
+      "path": "manuscripts/jacobian-conjecture/foundational",
+      "version": "0.15",
+      "version_doi": "10.5281/zenodo.24240161",
+      "concept_doi": "10.5281/zenodo.21503365",
+      "status": "published",
+      "split_action": "Paper A (validation, structure, rigidity). A new version for corrections, and one sentence pointing to the planar certificate when planar v0.38 is published."
+    },
+    {
+      "slug": "planar",
+      "path": "manuscripts/jacobian-conjecture/planar",
+      "version": "0.37",
+      "version_doi": "10.5281/zenodo.24240037",
+      "concept_doi": "10.5281/zenodo.21503367",
+      "status": "published",
+      "split_action": "Paper B (planar exclusions, the (72,108) system, the degree frontier). v0.38 carries EXP-146; a methods paper splits off only under JC-F6."
+    },
+    {
+      "slug": "cascade",
+      "path": "manuscripts/jacobian-conjecture/cascade",
+      "version": "0.10",
+      "version_doi": "10.5281/zenodo.24269044",
+      "concept_doi": "10.5281/zenodo.21503371",
+      "status": "published",
+      "split_action": "Paper C (the consequence cascade). A new version only for corrections or a decided row."
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 1,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "foundational",
+        "planar",
+        "cascade"
+      ]
+    },
+    {
+      "start": 2,
+      "end": 12,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "foundational"
+      ]
+    },
+    {
+      "start": 13,
+      "end": 14,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 15,
+      "end": 15,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 16,
+      "end": 16,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "foundational",
+        "cascade"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 17,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 18,
+      "end": 18,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar",
+        "cascade"
+      ]
+    },
+    {
+      "start": 19,
+      "end": 22,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 23,
+      "end": 23,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 24,
+      "end": 24,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 25,
+      "end": 28,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 29,
+      "end": 38,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 39,
+      "end": 40,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 41,
+      "end": 41,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "foundational",
+        "cascade"
+      ]
+    },
+    {
+      "start": 42,
+      "end": 51,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 52,
+      "end": 53,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 54,
+      "end": 55,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 56,
+      "end": 58,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 59,
+      "end": 59,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 60,
+      "end": 60,
+      "classification": "superseded",
+      "manuscripts": []
+    },
+    {
+      "start": 61,
+      "end": 63,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 64,
+      "end": 64,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 65,
+      "end": 66,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 67,
+      "end": 68,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 69,
+      "end": 69,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 70,
+      "end": 70,
+      "classification": "superseded",
+      "manuscripts": []
+    },
+    {
+      "start": 71,
+      "end": 75,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 76,
+      "end": 76,
+      "classification": "superseded",
+      "manuscripts": []
+    },
+    {
+      "start": 77,
+      "end": 77,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 78,
+      "end": 83,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 84,
+      "end": 85,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 86,
+      "end": 90,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 91,
+      "end": 91,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 94,
+      "end": 95,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 96,
+      "end": 96,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 97,
+      "end": 135,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 136,
+      "end": 136,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "foundational",
+        "cascade"
+      ]
+    },
+    {
+      "start": 137,
+      "end": 137,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 138,
+      "end": 138,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "foundational",
+        "cascade"
+      ]
+    },
+    {
+      "start": 139,
+      "end": 143,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    },
+    {
+      "start": 144,
+      "end": 144,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "cascade"
+      ]
+    },
+    {
+      "start": 145,
+      "end": 145,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "foundational"
+      ]
+    },
+    {
+      "start": 146,
+      "end": 146,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "planar"
+      ]
+    }
+  ]
+}

@@ -65,11 +65,11 @@ def test_control_C2_constant_126_makes_P2_checker_fail(lg):
 
 
 # ---- fix pass (verification findings F1 to F4) ------------------------------------------------------
-import hashlib
-import json
-import os
-import shutil
-import subprocess
+import hashlib  # noqa: E402
+import json  # noqa: E402
+import os  # noqa: E402
+import shutil  # noqa: E402
+import subprocess  # noqa: E402
 
 RUN_PY = "run.py"
 ARTIFACT_FILES = ("results.json", "run-log.txt", "addendum-1.json", "polynomials.txt")
