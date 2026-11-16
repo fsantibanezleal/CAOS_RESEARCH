@@ -186,19 +186,19 @@
     {
       "start": 1,
       "end": 37,
-      "classification": "primary-manuscript-or-essential-context",
+      "classification": "primary-manuscript",
       "manuscripts": ["frobenius-minimality", "curvilinear-fiber-cones"]
     },
     {
       "start": 38,
       "end": 53,
-      "classification": "research-record-and-bridge-evidence",
+      "classification": "research-record",
       "manuscripts": []
     },
     {
       "start": 54,
       "end": 66,
-      "classification": "primary-manuscript-or-essential-context",
+      "classification": "primary-manuscript",
       "manuscripts": ["integral-connecting-annihilators"]
     },
     {
@@ -210,7 +210,7 @@
     {
       "start": 69,
       "end": 69,
-      "classification": "primary-manuscript-or-essential-context",
+      "classification": "primary-manuscript",
       "manuscripts": ["curvilinear-fiber-cones"]
     },
     {
