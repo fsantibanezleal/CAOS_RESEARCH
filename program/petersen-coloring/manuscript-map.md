@@ -1,6 +1,6 @@
 # Petersen coloring: result and manuscript map
 
-Updated 2026-10-06. This map separates mathematical evidence, strategic value, manuscript
+Updated 2026-11-16. This map separates mathematical evidence, strategic value, manuscript
 coverage and external novelty (methodology 13). Experiment verdicts remain the authority for
 proofs and refutations.
 
@@ -30,6 +30,7 @@ did not find the results below elsewhere; specialist confirmation is still requi
 | Statement (e) false: cyclically 4-edge-connected graphs of unbounded defect | EXP-012 | proved (conduction lemma, alternating rings, certificates) | settles MMM Conjecture 3 | `unbounded-defect` |
 | Exact defect of the conduction ring `R_3` | EXP-012 addendum 4 | `pd(R_3) = 3` (designated relaxation, checker) | closes an open obligation | `unbounded-defect` v0.02, Proposition 5.3 |
 | 6-poles: the 64 classes, the core `{0, E, D2}`, transfer semigroups | EXP-013, EXP-014 | measured on 1,890 splits; ring theorems for claws, Petersen superedges and both with re-checked certificates; flower-snark junctions; cyclically 5-edge-connected snarks among the superedge rings; G52 control | negative theorem for the route to Problem 11 of v4, and an exact method for any finite block family | `unbounded-defect` v0.02, Section 6 |
+| Rings of superedge blocks from the cyclically 5-edge-connected snarks of order at most 28 | EXP-015 | no zero-trace ring: 591,009,390 pairs of generators of F and 68,808,751 cyclic triples over F22 (exhaustive; independently verified) | closes the 6-pole ring route of PCC-F6 on these blocks | research record (no manuscript version: none of the unbounded-defect triggers) |
 
 ## Manuscripts
 
@@ -50,10 +51,11 @@ repeats their proofs beyond Section 5.3.
 - Dormant: PCC-F2 (composition search non-convergent).
 - Gated: PCC-F5 (G68 and the unconditional H_3 form; only portfolio runs at the most informative
   orders, starting with target order 52).
-- Active: **PCC-F6**, cut-space charges and cyclically 5-edge-connected cubic graphs (Problem 11 of
+- Current: **PCC-F6**, cut-space charges and cyclically 5-edge-connected cubic graphs (Problem 11 of
   arXiv:2608.10028v4). EXP-013 and EXP-014 met the negative branch of its success gate (theorems
-  for claws and Petersen superedges, published in `unbounded-defect` v0.02); one more bounded action
-  (EXP-015, a search for zero-trace 6-poles) before it closes.
+  for claws and Petersen superedges, published in `unbounded-defect` v0.02); its last bounded action,
+  EXP-015 (2026-11-16), found no zero-trace ring, so the focus closes at the strategic review that chooses
+  the next one with Felipe (proposed: PCC-F5's first bounded action, G68 at target order 52).
 
 ## Open obligations
 
