@@ -1,0 +1,20 @@
+{
+ "gadgets": 3304,
+ "dp_backtracking_disagreements": 0,
+ "plain_cross_checked": 3071,
+ "plain_cross_check_mismatches": 0,
+ "d_histogram": {
+  "1": 3031,
+  "2": 173,
+  "3": 51,
+  "4": 15,
+  "5": 8,
+  "6": 12,
+  "7": 5,
+  "8": 4,
+  "9": 3,
+  "10": 2
+ },
+ "middle_candidates_nonclique": 0,
+ "q1_positive": false
+}
