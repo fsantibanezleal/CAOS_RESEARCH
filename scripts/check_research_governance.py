@@ -15,6 +15,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROGRAM_ROOT = ROOT / "program"
 GLOBAL_MANUSCRIPT_INDEX = ROOT / "manuscripts" / "README.md"
+PORTFOLIO = PROGRAM_ROOT / "portfolio.yaml"
+
+# Methodology 13, "Result and manuscript routing": the four dispositions.
+CLASSIFICATIONS = {"primary-manuscript", "companion-manuscript", "research-record", "superseded"}
+# Portfolio states of a long-running problem (methodology 01) for which a record is expected.
+LONG_RUNNING_STATES = {"exploring", "analyzing", "consolidating", "published", "dormant"}
+VERSION_RE = re.compile(r"\bv\d+\.\d+(?:\.\d+)?\b")
+DOI_RE = re.compile(r"10\.\d{4,9}/[^\s)\]`>,;]*[^\s)\]`>,;.]")
 
 TOP_LEVEL_KEYS = {
     "schema_version",
@@ -58,6 +66,69 @@ def text(path: Path, errors: list[str], label: str) -> str:
         errors.append(f"{label}: missing {path.relative_to(ROOT)}")
         return ""
     return path.read_text(encoding="utf-8")
+
+
+CURRENT_MARKER_RE = re.compile(r"\b(current|latest|public version|version on record)\b", re.IGNORECASE)
+
+
+def current_version_statement(readme: str) -> tuple[str, str | None] | None:
+    """Locate the README's current-version line.
+
+    The phrasing varies across manuscripts, so the rule is: the first line (the title excluded)
+    that carries a version token (v0.25) and either a currency marker ("current", "latest",
+    "public version", "version on record") or opens with the word "Version". History lines
+    are never reached first because the current statement precedes them. A README with no such
+    line (a per-version folder) falls back to its first heading that names a version. Returns
+    the line and the version DOI of that statement: the first DOI of the line's paragraph (up
+    to the next blank line), else the first DOI of the first later line that names a
+    "version DOI" or starts with "Published". None when no version line exists.
+    """
+    lines = readme.splitlines()
+    # Pass 1: a statement line; pass 2 (a per-version folder README): the heading that names the version.
+    candidates = [
+        index
+        for index, line in enumerate(lines)
+        if not line.startswith("#")
+        and VERSION_RE.search(line)
+        and (CURRENT_MARKER_RE.search(line) or line.lstrip("-* ").startswith("Version"))
+    ] or [
+        index for index, line in enumerate(lines) if line.startswith("#") and VERSION_RE.search(line)
+    ]
+    if not candidates:
+        return None
+    start = candidates[0]
+    line = lines[start]
+    paragraph = []
+    for item in lines[start:]:
+        if not item.strip():
+            break
+        paragraph.append(item)
+    match = DOI_RE.search(chr(10).join(paragraph))
+    if match is None:
+        for item in lines[start:]:
+            lowered = item.lower()
+            if ("version doi" in lowered or lowered.startswith("published")) and DOI_RE.search(item):
+                match = DOI_RE.search(item)
+                break
+    return line, (match.group(0) if match else None)
+
+
+def own_index_rows(index: str, rel_path: str) -> list[str]:
+    """The lines of the global index that link this manuscript's own folder (a versions/ tail is dropped)."""
+    prefix = "manuscripts/"
+    folder = rel_path[len(prefix):] if rel_path.startswith(prefix) else rel_path
+    folder = folder.split("/versions/")[0].strip("/") + "/"
+    return [line for line in index.splitlines() if f"]({folder})" in line]
+
+
+def unadopted_problems(portfolio: str, adopted: set[str]) -> list[str]:
+    """Long-running portfolio problems without a governance record (information only)."""
+    found = []
+    for match in re.finditer(r"slug:\s*([\w-]+)[^}\n]*?state:\s*([\w-]+)", portfolio):
+        slug, state = match.groups()
+        if state in LONG_RUNNING_STATES and slug not in adopted:
+            found.append(slug)
+    return found
 
 
 def require_keys(
@@ -188,16 +259,49 @@ def validate_record(path: Path, global_index: str, errors: list[str]) -> None:
             (main_text, rf"\newcommand{{\docversion}}{{{expected_version}}}", "main.tex version"),
             (main_text, rf"\newcommand{{\versiondoi}}{{{version_doi}}}", "main.tex version DOI"),
             (main_text, rf"\newcommand{{\conceptdoi}}{{{concept_doi}}}", "main.tex concept DOI"),
-            (readme_text, expected_version, "README version"),
-            (readme_text, version_doi, "README version DOI"),
-            (global_index, expected_version, "global manuscript index version"),
-            (global_index, version_doi, "global manuscript index DOI"),
             (map_text, slug, "manuscript map slug"),
             (map_text, version_doi, "manuscript map DOI"),
         )
         for haystack, needle, field in checks:
             if needle not in haystack:
                 errors.append(f"{label}: {slug} missing {field}: {needle}")
+
+        # README: the version and version DOI of the current-version statement only.
+        statement = current_version_statement(readme_text) if readme_text else None
+        if readme_text and statement is None:
+            errors.append(f"{label}: {slug} README has no current-version line (a line with a version and 'Current', 'Latest', 'Public version' or a leading 'Version')")
+        elif statement is not None:
+            line, readme_doi = statement
+            first_version = VERSION_RE.search(line)
+            if first_version is None or first_version.group(0) != expected_version:
+                errors.append(
+                    f"{label}: {slug} README current version is "
+                    f"{first_version.group(0) if first_version else 'absent'}, expected {expected_version}"
+                )
+            if readme_doi != version_doi:
+                errors.append(
+                    f"{label}: {slug} README current version DOI is {readme_doi or 'absent'}, expected {version_doi}"
+                )
+
+        # Global index: the manuscript's own row only; its first version and first DOI.
+        rows = own_index_rows(global_index, rel_path)
+        if not rows:
+            errors.append(f"{label}: {slug} has no row in the global manuscript index for {rel_path}")
+        else:
+            if len(rows) > 1:
+                errors.append(f"{label}: {slug} has {len(rows)} rows in the global manuscript index")
+            row_version = VERSION_RE.search(rows[0])
+            row_doi = DOI_RE.search(rows[0])
+            if row_version is None or row_version.group(0) != expected_version:
+                errors.append(
+                    f"{label}: {slug} global manuscript index row version is "
+                    f"{row_version.group(0) if row_version else 'absent'}, expected {expected_version}"
+                )
+            if row_doi is None or row_doi.group(0) != version_doi:
+                errors.append(
+                    f"{label}: {slug} global manuscript index row DOI is "
+                    f"{row_doi.group(0) if row_doi else 'absent'}, expected {version_doi}"
+                )
 
     dispositions_value = record.get("experiment_dispositions")
     if not isinstance(dispositions_value, list) or not dispositions_value:
@@ -211,6 +315,12 @@ def validate_record(path: Path, global_index: str, errors: list[str]) -> None:
         disposition = require_keys(
             value, DISPOSITION_KEYS, f"{label}: experiment_dispositions[{index}]", errors
         )
+        classification = disposition.get("classification")
+        if classification not in CLASSIFICATIONS:
+            errors.append(
+                f"{label}: disposition {index} classification {classification!r} is not one of "
+                f"{sorted(CLASSIFICATIONS)}"
+            )
         start = disposition.get("start")
         end = disposition.get("end")
         routed = disposition.get("manuscripts")
@@ -249,6 +359,14 @@ def main() -> int:
         return 1
 
     print(f"research governance: OK: {len(records)} governed program(s)")
+    adopted = {path.parent.name for path in records}
+    if PORTFOLIO.is_file():
+        pending = unadopted_problems(PORTFOLIO.read_text(encoding="utf-8"), adopted)
+        if pending:
+            print(
+                "  info: long-running problems that have not adopted methodology 13 "
+                f"(a record is due at the next strategic review): {', '.join(pending)}"
+            )
     return 0
 
 
