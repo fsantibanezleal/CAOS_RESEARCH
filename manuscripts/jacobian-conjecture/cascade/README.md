@@ -1,7 +1,7 @@
 # manuscript-cascade/ - the consequences paper (C of three)
 
 `main.tex` / `main.pdf`: "Consequences of the Three-Dimensional Jacobian Counterexample for Seven Neighbouring
-Conjectures: Implications with Their Indices and Exactly Checked Witnesses". Version 0.10, published 2026-11-16 at [10.5281/zenodo.24269044](https://doi.org/10.5281/zenodo.24269044) (concept
+Conjectures: Implications with Their Indices and Exactly Checked Witnesses". Current version: v0.10, published 2026-11-16 at [10.5281/zenodo.24269044](https://doi.org/10.5281/zenodo.24269044) (concept
 [10.5281/zenodo.21503371](https://doi.org/10.5281/zenodo.21503371)); 35 pages, 616,102 bytes, SHA-256
 `2df59a7f76061b3def880dddec6dc820afb7b493e46df90d3b537ce661586416`. v0.10 adds the page of each located primary statement, corrects four citations and states de Bondt's
 dimension results with their definitions and evidence marks. Version 0.09, published 2026-11-15 at
