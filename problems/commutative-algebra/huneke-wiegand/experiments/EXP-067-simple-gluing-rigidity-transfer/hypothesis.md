@@ -159,3 +159,40 @@ The correction was committed together with the results in `db5f4179`, not
 before the run, so the record does not show that it preceded the producer. The
 question, the exponent-set formulas, and the kill criteria are unchanged. The
 verdict evaluates P2 against the corrected statement.
+
+## Addendum 1 (2026-11-15): validation hardening (HWB-095)
+
+Declared before any code of the addendum runs. It changes no prediction of the experiment; it strengthens the evidence
+for P2 and P4, which the pre-merge review (verdict, 2026-09-24) found weaker than recorded: the auditor did not recompute
+the `E` and `D` transfer sets or rerun the controls, and the five noncoprime controls recorded `gcd(24p, q) > 1` for pairs
+chosen with that property without exercising any rejection path.
+
+A new independent script (`audit_v2.py`, which must not import the producer `run.py` or its artifacts, only EXP-009's
+base construction through the same loader the existing auditor uses) checks the same 72 cases (`p = 4, ..., 12`, the
+first eight admissible `q` for each) and the controls:
+
+- **H1 (E and D recomputed).** For each case, the complete nonnegative exponent sets `E^(q)` and `D^(q)` of the glued
+  semigroup `Delta = 24p*N + q*Gamma_p` at the shift `q*s` are computed directly from a membership bitset of `Delta` up to
+  its conductor plus `2*q*s` (beyond the conductor every element is in), and compared, element by element, with
+  `24p*N + q*E` and `24p*N + q*D` computed from the base sets. Prediction: equal in all 72 cases.
+- **H2 (rigidity recomputed).** `D^(q) = E^(q) + E^(q)` is checked directly on the recomputed sets (complete sumset up
+  to the same bound). Prediction: holds in all 72 cases.
+- **H3 (base premise by full masks).** The base semigroup `Gamma_p` reconstructed by the auditor is compared with
+  EXP-009's by the full membership mask up to the conductor, not by summary invariants. Prediction: equal for
+  `p = 4, ..., 12`.
+- **H4 (embedding dimension by minimality).** The minimal generating set of `Delta` is computed as the nonzero elements
+  that are not a sum of two nonzero elements; its size equals `11p`. Prediction: holds in all 72 cases.
+- **H5 (the shift is a gap, recorded).** For each case, whether `q*s` is a gap of `Delta` is recorded as a field; a
+  non-gap is a recorded failure, not an exception. Prediction: `q*s` is a gap in all 72 cases.
+- **H6 (controls rerun).** (a) `Gamma = <4,5>`, `s = 1`: nonrigid for `q = 1, 3, 5, 7`, recomputed by the auditor.
+  (b) Real rejection: for the five noncoprime pairs of the original run and five more chosen with `gcd(q, 24p) > 1`, the
+  auditor computes the gcd of the generators of `24p*N + q*Gamma_p` and confirms it is greater than 1, so the set is not a
+  numerical semigroup (its complement is infinite: the auditor exhibits an integer above any proposed conductor bound that
+  is not in it), and confirms that the producer's entry point refuses these inputs (the refusal is observed, not
+  assumed). (c) The perturbed shift `q*s + 1` is evaluated and reported only as data, never as a consequence.
+
+Artifacts: `artifacts/audit-v2.json` with every case's fields and a SHA-256 aggregate, and a verdict section
+"Addendum 1" with the outcome. A FAIL of H1, H2 or H4 is a counterexample to the recorded result and is reported as
+found; the verdict word changes only if a prediction of the experiment fails.
+
+Compute budget: CPU only, exact integers, at most 10 minutes and 2 GiB.

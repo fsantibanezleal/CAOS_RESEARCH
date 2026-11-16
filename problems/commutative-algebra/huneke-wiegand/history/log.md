@@ -2227,3 +2227,18 @@ other result are unchanged; EXP-066 checks the unsigned-row form. Re-checked by 
   proof.md premises are unchanged.
 - Release: 39 gates passed; 32 pages, 752,762 bytes, SHA-256 47db8722e14c67f3ad5edbce09da3247a9335449fd6724e0178fc7c13271b9b2.
 
+## 2026-11-15 - EXP-067 addendum 1: validation hardening (HWB-095)
+
+- The pre-merge review of 2026-09-24 found that EXP-067's auditor did not recompute the `E` and `D` transfer sets or rerun
+  the controls, and that the noncoprime controls exercised no rejection path. Addendum 1 (declared in `hypothesis.md`,
+  commit 08fccb93, before any of its code ran) adds an independent audit `audit_v2.py`: complete `E^(q)` and `D^(q)`
+  recomputed and compared element by element with `24p*N + q*E` and `24p*N + q*D`, rigidity recomputed, the base premise by
+  full membership masks, the embedding dimension by minimality, the gap status of `q*s` recorded, the `<4,5>` control
+  rerun, and the producer's real refusal of ten noncoprime pairs observed. All predictions hold in the 72 cases; the
+  verdict stays CONFIRMED.
+- Verification (CAOS_MANAGE `wip/caos-research/hw-hwb095-verify-2026-11-15.md`): an independent recomputation with its own
+  code reproduces H1, H2, H4 and H5 in all 72 cases with 0 mismatches; five findings (F1 major: the refusal gate accepted
+  any exception; F2 to F5 minor) closed by a fix pass with tests that fail before the fix, and a re-check (CAOS_MANAGE
+  `wip/caos-research/hw-hwb095-recheck-2026-11-15.md`, verdict CLOSED). Artifact aggregate SHA-256
+  856212806bef7fa24e8c2ceaad28004528dffc08f7225d4d327a506fa61966d1.
+
