@@ -1860,3 +1860,14 @@ review approved the corrections before release.
 - Release: release.py set-doi, build (0 warnings, 0 overfull, 0 underfull), render (35 pages reviewed), approve (measured
   approval record), freeze, publish: 39 gates passed; 35 pages, 616,102 bytes, SHA-256 2df59a7f76061b3def880dddec6dc820afb7b493e46df90d3b537ce661586416.
 
+## 2026-11-16 - EXP-144 addendum 1: reproducibility hardening (JCB-105)
+
+- Declared in EXP-144 `hypothesis.md` before its code ran (commit 327d7171): the source PDF read from a data-root argument
+  (no drive path in the code; a missing data root exits 2 and writes nothing), the box of the P4 standard-monomial count
+  checked against the pure powers of the lex basis (k = [1, 2, 1, 2] within the box [8, 8, 8, 8]), the Python and sympy
+  versions recorded, two tests (the P2 bracket matrix pinned; control C2 is exactly 125 to 126), and a rerun compared key
+  by key with a pinned copy of the pre-addendum results (19 keys, all reproduce).
+- Verification (CAOS_MANAGE `wip/caos-research/jc-exp144-addendum-verify-2026-11-15.md`): independent reruns reproduce every
+  value; five findings (F1 major: the comparison baseline was the live file) closed by a fix pass with tests and mutation
+  checks; re-check CLOSED (`wip/caos-research/jc-exp144-addendum-recheck-2026-11-16.md`). The verdict word is unchanged.
+
