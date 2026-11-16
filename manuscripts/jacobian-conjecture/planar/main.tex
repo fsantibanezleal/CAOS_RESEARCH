@@ -89,7 +89,7 @@ Rabinowitsch splits on each of two branches, checked at a second prime, in Singu
 third primes, where exact standard bases and multi-modular certificates had not finished.
 A chart atlas closes four-coefficient sub-families of Case 1. Conditionally on their
 Proposition~4.3 being exhaustive and on our encoding of its polygons, no Keller pair has
-degrees $(72,108)$ or $(108,72)$, so by their Theorem~2.1, whose $(9,24)$ step we check against their Theorem~5.1 (EXP-147), a counterexample has maximal degree at least $125$;
+degrees $(72,108)$ or $(108,72)$, so by their Theorem~2.1, whose $(9,24)$ step we check against the hypotheses of their Theorem~5.1 (EXP-147), a counterexample has maximal degree at least $125$;
 priority is Helali's. $JC(2)$ remains open.
 \end{abstract}
 
@@ -167,7 +167,7 @@ Table~\ref{tab:notation} fixes the notation used throughout.
 
 \section{Related work}\label{sec:related}
 
-The published methods on the planar conjecture fall into five groups. Each is characterized
+The published methods on the planar conjecture fall into six groups. Each is characterized
 here by what it proves and under which hypotheses, as the programme's literature records read
 it; a statement taken from a source that was read only through another source is marked as such.
 
@@ -215,6 +215,8 @@ as a preprint in August 2026; the programme's records name it but hold no title,
 neither cited as a work nor used here [U]. Section~\ref{sec:helali} reports the independent
 derivation of Helali's equations and an independent proof, by a different method, that both systems are empty, computed from our own equations.
 
+\emph{Certificates for unit ideals and elimination.} The certificate of Section~\ref{sec:chaintheory} rests on classical tools, each cited here for what its source states and not for novelty. Rabinowitsch \cite{Rabinowitsch1930} turns the statement that a polynomial $f$ vanishes on the zeros of the ideal $(f_1,\dots,f_r)$ into the statement that the ideal $(f_1,\dots,f_r,x_0f-1)$ has no zero and is therefore the unit ideal; the construction with $x_0f-1$ is the one used here with the variable $s$ of Lemma~\ref{lem:split}, whereas his note says nothing about the two-sided split of that lemma or about how the unit ideal is detected. For resultants, the lecture notes of Winkler \cite{Winkler2012} define the resultant as the determinant of the Sylvester matrix, show over an integral domain that it equals $pf+qg$ for polynomials $p,q$ over that domain (Theorem 4.3), and give its evaluation $\phi(\operatorname{res}_x(a,b))=\phi(\operatorname{lc}(a))^k\operatorname{res}_x(\phi a,\phi b)$ when the degree of $b$ drops by $k$ under $\phi$ (Lemma 4.4); the notes of Enescu \cite{Enescu2010} give the product formula for the resultant (Theorem 1.5). Those are the facts behind Lemma~\ref{lem:res} and Proposition~\ref{prop:drop}; both sources are open lecture notes and not a standard text, which was not read. Collins \cite{Collins1971} is cited by its title and bibliographic data only: its content was not read, so nothing is said here about its method. For the bound of Proposition~\ref{prop:bound}, Ollivier \cite{Ollivier2010} states, in a setting of linear differential systems, that the degree of a determinant is at most the maximum over the permutations of the sum of the entry degrees, with equality under a nonvanishing condition, and the abstract of Murota \cite{Murota1995} states that the degree of the determinant of a polynomial matrix is bounded by the maximum weight of a perfect matching of an associated graph (its body was not read); as read, neither applies the bound to resultant chains, and Proposition~\ref{prop:bound} proves it for the Sylvester matrix with entry bounds. Arnold \cite{Arnold2003} tests primes before lifting a Gr\"obner basis from modular images, provides a check of the lifted result and characterizes the unlucky primes; the certificate of this paper works at one prime and one root of $P$ and concludes that the ideal is the unit ideal from a nonzero image, with no lifted basis. Koll\'ar \cite{Kollar1988} bounds the degrees of the cofactors $g_i$ in $1=\sum_ig_if_i$ for polynomials without a common zero, and De Loera, Lee, Malkin and Margulies \cite{DeLoera2008} find a Nullstellensatz certificate of a fixed degree by linear algebra over a field, over $\mathbb F_2$ for their combinatorial systems; Algorithm~\ref{alg:chain} instead eliminates by resultants under the assignment bound and searches for no cofactor degree. No novelty is claimed for any of these steps.
+
 \emph{Equivariant and structural results.} Miyanishi \cite{Miyanishi2023} shows that an equivariant
 \'etale endomorphism of $\mathbb A^2$ under a small finite group of even order is an automorphism.
 Dubouloz and Palka \cite{DuboulozPalka2018} show that the equivariant statement fails for $\Gm$ on
@@ -251,14 +253,14 @@ $\Q(a,b)$; the first validation record names sympy 1.14 (EXP-001). The long cert
 incremental elimination in place of repeated rank calls (EXP-064), number-theoretic transforms at
 the moduli $998244353$ and $1004535809$ for interpolation of determinants (EXP-103, EXP-104),
 and exact integer determinants where an endpoint of a support must be proved over characteristic
-zero (EXP-104, EXP-105, EXP-108). Singular supplies the standard bases and unit-ideal tests of
+zero (EXP-104, EXP-105, EXP-108). Singular \cite{Singular432} supplies the standard bases and unit-ideal tests of
 EXP-137, EXP-139 and EXP-140 and the exact check of EXP-141; the Gr\"obner calculations of the atlas (for example
 EXP-120) run in sympy. The archived outputs of EXP-137 and EXP-139 to EXP-141 do not record the Singular version; the version installed on the device that ran them was
-Singular 4.3.2 when checked on 2026-11-14. The Case 1 certificate attempts use PARI/GP
-(\texttt{polredabs}, \texttt{nffactor}), python-flint over FLINT 3.0.1, Singular, and a C
+Singular 4.3.2 when checked on 2026-11-14. The Case 1 certificate attempts use PARI/GP 2.15.4 \cite{PARI2}
+(\texttt{polredabs}, \texttt{nffactor}; the version installed in WSL Ubuntu-24.04 when checked on 2026-11-16, not recorded in the archived outputs), python-flint over FLINT 3.0.1 (as the record of EXP-141 states), Singular, and a C
 program for Chinese-remainder and rational reconstruction, run in WSL Ubuntu-24.04 (EXP-141,
 EXP-142). Singular is invoked as an external program on exported ideals, with the exact input and the printed output archived next to the record. The covector exclusions of Section~\ref{sec:ladder} use the primes $2147483629$ and
-$2147483587$ (EXP-067, EXP-072). The certificate trees of Case 1 (EXP-146) run in python-flint 0.9.0 (exact arithmetic in $\mathbb Z[y]/(P)$ with $y$ adjoined as a variable of
+$2147483587$ (EXP-067, EXP-072). The certificate trees of Case 1 (EXP-146) run in python-flint 0.9.0 \cite{pythonflint}, which bundles FLINT 3.6.0 \cite{FLINT} (exact arithmetic in $\mathbb Z[y]/(P)$ with $y$ adjoined as a variable of
 \texttt{fmpz\_mpoly}, and single-prime arithmetic in $\mathbb F_p[x]$), with the integer assignment problem of the degree bounds solved in numpy on
 64-bit integers (the pins of the record are python-flint 0.9.0, numpy 2.5.1 and sympy 1.14.0), and Singular 4.3.2 under WSL as the second implementation; the
 record states these versions, so that experiment is not subject to the caveat on the earlier ones.
@@ -459,7 +461,7 @@ subcommands \texttt{build}, \texttt{gate1}, \texttt{planted}, \texttt{gate3}, \t
 \texttt{verify-singular} with a work directory outside the repository. The generator
 \texttt{make\_tables.py} of this paper's folder reads the records to produce Tables~\ref{tab:atlas}
 and~\ref{tab:repro}, refuses to write a cell whose quotation is absent from its record, and compares each
-checksum with the file on disk. The Case 1 certificate (EXP-146) has its entry point \texttt{run.py} with no arguments, run from the repository root. Its inputs are two branch files that \texttt{gates.py} reads from the data root; copies are in the repository (the folder \texttt{inputs} of that experiment, tied to their SHA-256 by gate G0, which also regenerates them with \texttt{branches.py} of EXP-142 from the system of EXP-141 kept in the data root), and a device without that data root copies them to the paths set in \texttt{gates.py}. The same generator builds Tables~\ref{tab:tree},
+checksum with the file on disk. The Case 1 certificate (EXP-146) has its entry point \texttt{run.py} with no arguments, run from the repository root. Its inputs are the two branch files and the system of EXP-141, which \texttt{gates.py} reads from the data root; copies of all three are in the repository (the folder \texttt{inputs} of that experiment: the two branch files, tied to their SHA-256 by gate G0, and the system of EXP-141, from which G0 regenerates them with \texttt{branches.py} of EXP-142); a device without that data root copies the three files to the paths set in \texttt{gates.py} (the README of \texttt{independent-checks} of that experiment), because G0 stops the run (exit 3) when one of them is missing. The same generator builds Tables~\ref{tab:tree},
 \ref{tab:gates}, \ref{tab:mutants} and~\ref{tab:consts} from its \texttt{results.json} and \texttt{mutants.json}, and checks a fixed list of the figures the text quotes against that record (the primes, the total, branch and Singular run times, the gate time in \texttt{run-log.txt}, the degree shape of the tree nodes, the counts of nonzero constants, of resultants and of exact polynomials, and the Singular digest and constant counts); the other figures of the prose, such as the times of single nodes, are not checked by it.
 
 \begin{table}[tbp]
@@ -474,7 +476,7 @@ This section states the theorems with their proofs. The machine of Algorithm~\re
 $\min\deg\le2$ and the forced tops; the weight-class calculus gives the four exclusions; the staircase transport and the certificate tower
 give the fifth; the last subsection proves the correctness of the resultant-chain certificate whose instance closes Case~1 of the open degree pair. The marks [MV], [D] and [C] qualify each statement as in the introduction, and a proof that rests on instances says so.
 
-\subsection{The planar machine}
+\subsection{The planar machine}\label{sec:machine}
 
 The Keller condition is bilinear in the coefficient vectors of $P$ and $Q$, hence
 \emph{linear in $Q$ given $P$}. In the affine gauge (identity linear parts) this yields a
@@ -864,7 +866,7 @@ Let $A$ be a commutative ring, $f,g\in A[x]$ with $\deg_xf\le m$ and $\deg_xg\le
 constant of $A$ when $f,g$ have coefficients in $A$. (b) A ring map $\psi\colon A\to A'$ commutes with $\operatorname{Res}_{x;m,n}$ for fixed $m,n$. (c) If $c\in R$ and $\phi(c)\ne0$, then $c$ is a unit of $L$, and an ideal of $L[X]$ that contains $c$ is $(1)$.
 \end{lemma}
 \begin{proof}
-(a) Let $S$ be the Sylvester matrix and $v=(x^{m+n-1},\dots,x,1)^{\mathsf T}$. Row $k$ of $S$ lists the coefficients of $x^{n-1-k}f$ (for $k<n$) or of $x^{m-1-(k-n)}g$ in the basis $v$, so $Sv$ is the column of the shifted multiples of
+(a) (This is Theorem 4.3 of \cite{Winkler2012} over an integral domain.) Let $S$ be the Sylvester matrix and $v=(x^{m+n-1},\dots,x,1)^{\mathsf T}$. Row $k$ of $S$ lists the coefficients of $x^{n-1-k}f$ (for $k<n$) or of $x^{m-1-(k-n)}g$ in the basis $v$, so $Sv$ is the column of the shifted multiples of
 $f$ and $g$. The adjugate gives $\det S\cdot v=\operatorname{adj}(S)\,Sv$ and the last coordinate of $v$ is $1$, so $\det S=af+bg$ with $a,b$ polynomials in $x$ whose coefficients are polynomials in the entries of $S$. (b) The determinant is a polynomial with integer coefficients in the entries of $S$, which are coefficients of $f$ and $g$ or $0$.
 (c) $\phi(0)=0$, so $c\ne0$ in $R$, hence in the field $L$, hence a unit; an ideal that contains a unit is $(1)$.
 \end{proof}
@@ -880,7 +882,7 @@ which for $m'=m$ reads $\operatorname{Res}_{x;m,n}(\phi f,\phi g)$.
 \end{proposition}
 \begin{proof}
 By Lemma~\ref{lem:res}(b) the left side is $\operatorname{Res}_{x;m,n}(\phi f,\phi g)$. Put $F=\phi f$ and $G=\phi g=g_n\prod_{j=1}^n(x-\beta_j)$ over an algebraic closure of the fraction field of the coefficient ring, $g_n\ne0$. For $F$ of exact degree $m$
-the classical identity $\operatorname{Res}_{x;m,n}(F,G)=(-1)^{mn}g_n^{\,m}\prod_jF(\beta_j)$ holds (with the rows of $F$ first); both sides are polynomials in the coefficients of $F$, so the identity holds for every $F$ of formal degree $m$, the leading coefficient
+the classical identity $\operatorname{Res}_{x;m,n}(F,G)=(-1)^{mn}g_n^{\,m}\prod_jF(\beta_j)$ holds (with the rows of $F$ first; the product formula of Theorem 1.5 of \cite{Enescu2010}, and for the evaluation compare Lemma 4.4 of \cite{Winkler2012}); both sides are polynomials in the coefficients of $F$, so the identity holds for every $F$ of formal degree $m$, the leading coefficient
 being allowed to vanish. The same identity at the formal degree $m'$ gives $\operatorname{Res}_{x;m',n}(F,G)=(-1)^{m'n}g_n^{\,m'}\prod_jF(\beta_j)$. The quotient of the two is $(-1)^{(m-m')n}g_n^{\,m-m'}$.
 \end{proof}
 
@@ -909,7 +911,7 @@ over the permutations $\sigma$ with no excluded entry is a bound of $h$, and $h=
 (ii) $\deg_{kw}h=k\deg_wh$ and $w\cdot a$ is an integer. (iii) For $(a',c)\in\operatorname{supp}f$ with $a'$ the exponent of the variables other than $x$ and for each admissible $s$, $w\cdot a'+s\,c\le\deg_{w+s\,e_x}f\le B_f(w+s\,e_x)$, so
 $w\cdot a'\le B_f(w+s\,e_x)-s\,c$ for every such $s$, and this is the minimum. A nonzero polynomial has degree $0$ at the weight $0$, so $e_c(0)<0$ forces $f_c=0$; the formal degree is then at most $B_f(e_x)$ and no coefficient above it is nonzero. (iv) By the Leibniz expansion $\det S=\sum_\sigma\operatorname{sgn}\sigma\prod_i S_{i\sigma(i)}$. The $w$-degree of a product is at most the sum of the $w$-degrees of the factors and the $w$-degree of a sum is at most the largest
 one, so $\deg_w\det S\le\max_\sigma\sum_i\deg_wS_{i\sigma(i)}$ and the entry bounds $\varepsilon_{ij}$ replace the entry degrees. The argument holds word for word for a weight with a negative component, since the Laurent degree of a product is the sum and that of a sum is at most the largest. The maximum is an assignment problem, solved exactly in integer
-arithmetic by the Hungarian algorithm. A nonzero polynomial has degree $0$ at $w=0$, which justifies the entry $0$ there.
+arithmetic by the Hungarian algorithm; bounding the degree of a determinant by an optimal assignment is the idea of \cite{Ollivier2010, Murota1995}, proved here for the Sylvester matrix with entry bounds. A nonzero polynomial has degree $0$ at $w=0$, which justifies the entry $0$ there.
 \end{proof}
 
 Proposition~\ref{prop:bound} is used in two ways. At levels $1$ and $2$ of every node (the first two resultant steps), the members are computed exactly over $R$, so their bound is their exact support, and gate G5 compares the image of each exact member with the image the chain at $p$ computes
@@ -921,7 +923,7 @@ $V\in I A[s]+(ws-1)$. (c) If $w$ is a variable of $A$ and $B_U$ is a bound of $U
 $f$ the polynomial $b^{\deg_vf}f((w-a)/b)$ is a polynomial that equals the image of $f$ times a unit.
 \end{lemma}
 \begin{proof}
-(a) Necessity is clear. If $w=0$ the statement holds trivially, since then $I+(ws-1)=(1)$ and $I+(w)=I$; let $w\ne0$, so $w$ is not a zero divisor of the domain $A$. Conversely, from $1=i(s)+t(s)(ws-1)$ with $i\in I[s]$, substitution of $s=1/w$ in $A[w^{-1}]$ gives $1=i(1/w)$, so $w^N=w^Ni(1/w)\in I$ for $N\ge\deg_si$, and the equality holds in $A$ because $A\to A[w^{-1}]$ is injective. From $I+(w)=(1)$ we get $1=h+wg$ with $h\in I$,
+(a) Necessity is clear; the construction with the variable $s$ and $ws-1$ is that of Rabinowitsch \cite{Rabinowitsch1930}. If $w=0$ the statement holds trivially, since then $I+(ws-1)=(1)$ and $I+(w)=I$; let $w\ne0$, so $w$ is not a zero divisor of the domain $A$. Conversely, from $1=i(s)+t(s)(ws-1)$ with $i\in I[s]$, substitution of $s=1/w$ in $A[w^{-1}]$ gives $1=i(1/w)$, so $w^N=w^Ni(1/w)\in I$ for $N\ge\deg_si$, and the equality holds in $A$ because $A\to A[w^{-1}]$ is injective. From $I+(w)=(1)$ we get $1=h+wg$ with $h\in I$,
 and $1=(h+wg)^N\in I$ because the expansion has the terms $h\cdot(\ast)$ and $w^Ng^N$. (b) $V=s^{\ell}U+(1-(ws)^{\ell})V$ because $U=w^{\ell}V$, and $1-(ws)^{\ell}$ is a multiple of $ws-1$. (c) Apply Proposition~\ref{prop:bound} to the weight $-e_w$: for each monomial $a$ of $U$, $-a_w\le B_U(-e_w)$. (d) $b\in R\setminus\{0\}$ is a unit of $L$, so
 the map is invertible, with inverse $w\mapsto a+bv$, and $b^{\deg_vf}$ is a unit.
 \end{proof}
@@ -1029,8 +1031,8 @@ reduces to Cases 1 and 2 (Section~\ref{sec:prop43}). Section~\ref{sec:helali} pr
 and, by their Theorem 2.1 as published, a counterexample has $\max\deg\ge125$. The statement of the floor is the one of Theorem 2.1 with that pair removed, and no other.
 
 \emph{The $(9,24)$ step of the floor.} The read of the LaTeX source of \cite{GGHV2022} recorded in the programme's audit found that the proof of Theorem 2.1 depends on the discard of the pair $(66,99)$ (corner $A_0=(9,24)$), and that no printed corollary specializes
-their Theorem 5.1 to the three polygon classes of their Proposition~4.2. Experiment EXP-147 closes that bridge: for each of the three classes, the polygons of Proposition~4.2 satisfy the three hypotheses of Theorem 5.1 as printed (the bracket $[P,Q]=x$ is of the form $x+g(y)$ with $g=0$, the supports lie in $K[x,y]$, and the starting and end points are the required ones, computed by exact integer geometry on the counterclockwise walk of the Newton polygons),
-so that theorem excludes every class and the $(9,24)$ case of Theorem 2.1 rests on a printed theorem and needs no unprinted bridge. The scope of the check is the hypotheses of Theorem 5.1 for the three printed classes. The proof of Theorem 5.1, the exhaustiveness of Proposition~4.2 and of their case table, the polygons as printed (they are not re-derived from the proof) and every other step of Theorem 2.1 are not re-verified here.
+their Theorem 5.1 to the three polygon classes of their Proposition~4.2. Experiment EXP-147 closes that bridge: for each of the three classes, a pair $(P,Q)$ with the polygons of Proposition~4.2 satisfies the three hypotheses of Theorem 5.1 as printed (the bracket $[P,Q]=x$ is of the form $x+g(y)$ with $g=0$, the supports lie in $K[x,y]$, and the starting and end points are the required ones, computed by exact integer geometry on the counterclockwise walk of the Newton polygons),
+so that theorem excludes every class and the $(9,24)$ case of Theorem 2.1 rests on a printed theorem and needs no unprinted bridge. The scope of the check is the hypotheses of Theorem 5.1 for the three printed classes. The starting and end points are read on the counterclockwise walk, the reading under which their Corollary~5.7 and their note on the order of directions hold; the record of EXP-147 tests that reading with controls. The proof of Theorem 5.1, the exhaustiveness of Proposition~4.2 and of their case table, the polygons as printed (they are not re-derived from the proof) and every other step of Theorem 2.1 are not re-verified here.
 The sources are arXiv:2204.14178, arXiv:1401.1784 and arXiv:1708.07936, archived in the data root with their SHA-256 list, which the record of EXP-147 names. The floor $125$ stated here is Theorem 2.1 as published, a human proof read in the primary text (P), with this step checked, and it keeps the two conditions of the exclusion.
 
 \emph{The open targets.} (i) The $B = 16$ case comes with a forced direction set and
@@ -2182,7 +2184,7 @@ A bound lowered by one at every entry raises $30{,}314$ violations on the $1{,}8
 it took about $3$ s. Second, Singular 4.3.2 reads the exact inputs and the recorded program and computes the images at $(p_1,r_1)$ by its own evaluation, coordinate changes, resultants, degree-drop factors and divisions; its digests of $153$ members and univariates and its $18$ constants per branch agree with python-flint's, with no mismatch and no sign flip (the two resultants use the same sign convention).
 The Singular check evaluates the same recorded structure, the pivots, formal degrees, orders and split data, so it validates the images and not the bounds; the bounds rest on Proposition~\ref{prop:bound} and on the gates. Third, a recomputation at third primes by scripts written without the experiment's code (archived with their outputs in the folder \texttt{independent-checks/third-prime} of EXP-146). For the plus branch, at $p_3=268435399$ (the largest prime below $2^{28}$ at which $P$ has a root) and its only root $r_3=174414054$, the scripts recompute the exact levels with their own resultant code,
 re-derive every pivot bound from the exact supports by a plain Sylvester assignment, confirm that every pivot attains its bound and that every order $\ell_i$ is the exact order of the image, and certify all three leaves. For the minus branch, at $p_3=399999949$ (the largest prime at or below $4\cdot10^8$ with a root) and its only root $r_3=61040865$, they do the same for the two leaves below the second split; the root and the leaf $w_1\ne0$ of the minus branch were not recomputed.
-At $p_1$ the same scripts reproduce every recorded constant of the leaves they recompute; at $p_2$ they reproduce every replay constant of the plus branch and those of the minus leaf $(w_1=0,w_2\ne0)$ (\texttt{t.z.nz}). Table~\ref{tab:consts} lists the constants of the leaves at the three primes. The minus branch behaves as the image of the plus branch under a sign change of some of the variables (observed: the split roots add up to $p_1$ and the constants of the leaf $w_1\ne0$ are equal), so the two trees are proofs for two related ideals and not two independent samples of one.
+At $p_1$ the same scripts reproduce every recorded constant of the leaves they recompute; at $p_2$ they reproduce every replay constant of the plus branch and those of the minus leaf $(w_1=0,w_2\ne0)$ (\texttt{t.z.nz}) (the logs \texttt{out-p1.txt}, \texttt{out-tnz-p1.txt}, \texttt{out-p2.txt} and \texttt{out-tnz-p2.txt} of the folder \texttt{third-prime/plus} and \texttt{run4.txt} of the folder \texttt{third-prime/minus}). Table~\ref{tab:consts} lists the constants of the leaves at the three primes. The minus branch behaves as the image of the plus branch under a sign change of some of the variables (observed: the split roots add up to $p_1$ and the constants of the leaf $w_1\ne0$ are equal), so the two trees are proofs for two related ideals and not two independent samples of one.
 
 \input{tab_consts.tex}
 
@@ -2330,7 +2332,7 @@ On that system the outputs are of different strength. The chart atlas is exact a
 closure is a statement a reader can re-derive from a determinant and a Bezout identity. The five-prime unit ideal is evidence over the whole system and not a proof. The cofactor certificate has a measured cost: its coordinates are above about $94{,}000$ digits,
 which excludes that approach. The chain certificate is total and exact: it proves Case 1 empty with the degrees of the univariate members and a nonzero constant at one prime, and what it asks of a reader is the proof of Section~\ref{sec:chaintheory} and the exact levels, not a certificate of that height.
 Where the method can fail is visible in the record: a node is left unknown when no pivot attains its bound or when no pivot leading coefficient of the form $a+b\,x_n$ matches a root of the gcd (the controls with one equation removed end in such a node), and a zero image certifies nothing, so an unlucky prime costs a node and never a false certificate.
-The exclusion of $(72,108)$ therefore has an independent proof of both of its halves, conditional on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons; priority belongs to Helali \cite{Helali2026}, and the floor $125$ rests on Theorem 2.1 as published, whose $(9,24)$ step is checked against their Theorem 5.1 (EXP-147).
+The exclusion of $(72,108)$ therefore has an independent proof of both of its halves, conditional on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons; priority belongs to Helali \cite{Helali2026}, and the floor $125$ rests on Theorem 2.1 as published, whose $(9,24)$ step is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}).
 
 The incidence analysis of Section~\ref{sec:incidence} gives structural evidence for the conjecture: the only known mechanism for a constant-Jacobian noninvertible map cannot occur in dimension two, and
 the invariant that decides this, the resultant weight $n-2$, is one number. It is not a proof, and it does not address a planar counterexample of a different structure.
@@ -2350,7 +2352,7 @@ and on one section), not the family. Of $238$ cells of Table~\ref{tab:atlas}, $2
 while in the two lowest upper bands of Case 1 they differ by the cross terms of the negative bands; the reduction from the $13$ equations to the systems of his identities was not reproduced). (b) The reduction of the $13$ equations from the degree-$35$ field to its quintic subfield (EXP-140), the exact identification of that subfield with $L$ and the irreducibility of $P$ (EXP-141), and the exact reduction of EXP-142 of Case 1 to the two branch ideals are premises of the certificate and are not re-derived in it; the inputs are tied to their SHA-256 by gate G0.
 (c) The proofs of Proposition~\ref{prop:bound} and Proposition~\ref{prop:drop}; the code applies two rules that go beyond the first wording of the method, the entry $0$ at $w=0$ of every resultant table (included in Proposition~\ref{prop:bound}(iv)) and a rule for a member free of the eliminated variable, which the run never used. (d) The software: python-flint 0.9.0 for the exact arithmetic and the images, and Singular 4.3.2 for the second implementation, which evaluates the same
 recorded structure and so validates the images and not the bounds; its digests compare term counts, degrees and the values at two points of $\mathbb F_p$, not every coefficient. (e) The bounds of levels three and four are never exact; the level-four bounds of the nodes $t$ and $w_1\ne0$ rest on two propagated steps, which the composed gate tests on random pairs and not on these objects. (f) Four of the six branch controls reached their time limit and are inconclusive,
-so the negative evidence on the real system is weak; the proof does not depend on it. (g) The exact levels ($145$ MB), the system of EXP-141 from which the branch files are regenerated and the file \texttt{caseL\_Q.sing} of EXP-140 are in the data root and not in the repository; the two branch files themselves are in it, in the folder \texttt{inputs} of EXP-146. (h) The floor $125$ rests on Theorem 2.1 of \cite{GGHV2022} as published, a human proof; its $(9,24)$ step is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}) for the hypotheses of that theorem on the three printed polygon classes, and neither the proof of Theorem 5.1 nor the exhaustiveness of their Proposition~4.2 is re-verified.
+so the negative evidence on the real system is weak; the proof does not depend on it. (g) The exact levels ($145$ MB) are in the data root and not in the repository; the system of EXP-141 and the two branch files are in the repository, in the folder \texttt{inputs} of EXP-146 (the data root holds the system of EXP-141 as well); the file \texttt{caseL\_Q.sing} of EXP-140, from which the system of EXP-141 is built, is not kept and is regenerated by \texttt{transform.py} of EXP-140. (h) The floor $125$ rests on Theorem 2.1 of \cite{GGHV2022} as published, a human proof; its $(9,24)$ step is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}) for the hypotheses of that theorem on the three printed polygon classes, and neither the proof of Theorem 5.1 nor the exhaustiveness of their Proposition~4.2 is re-verified.
 \item \emph{Software.} The archived outputs of the earlier records do not record the Singular version (4.3.2 on the device when checked), and the run times of several records are not recorded (n/r in Table~\ref{tab:atlas}).
 \item \emph{Literature.} The statements about published work were checked against the cited sources as of 2026-07-22; several classical statements were read through a source that attributes them (marked S in Table~\ref{tab:ladder}),
 and the second claimed exclusion of $(72,108)$ is recorded without a reference [U].
@@ -2383,8 +2385,8 @@ The truncation ladder for a simultaneous covector excludes degrees $1$, $2$ and 
 stabilizes at dimension $39$), the finite ceiling it was meant to give is not established, and the natural $\mathfrak{sl}_2$ premise is refuted at its invariant test. The incidence analysis shows that the structure of the known
 counterexample cannot occur in the plane, because the resultant weight $n-2$ vanishes at $n=2$.
 
-Together with the emptiness of Case 2, the emptiness of Case 1 excludes the degree pairs $(72,108)$ and $(108,72)$ conditionally on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons by our equations (Theorem~\ref{thm:exclusion}), so that by Theorem 2.1 of that paper a counterexample has
-maximal degree at least $125$, whose $(9,24)$ step is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}). Priority for the exclusion is Helali's \cite{Helali2026}; both halves are proved here independently. None of this decides $JC(2)$, which stays open, and nothing above degree $125$ is settled.
+Together with the emptiness of Case 2, the emptiness of Case 1 excludes the degree pairs $(72,108)$ and $(108,72)$ conditionally on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons by our equations (Theorem~\ref{thm:exclusion}), so that by Theorem 2.1 of that paper, whose $(9,24)$ step is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}), a counterexample has
+maximal degree at least $125$. Priority for the exclusion is Helali's \cite{Helali2026}; both halves are proved here independently. None of this decides $JC(2)$, which stays open, and nothing above degree $125$ is settled.
 What the paper establishes is a set of exact, archived and scoped statements, with the certificate method and its proof, the certificates themselves and the measured cost of the route that failed. The gcd and degree floors that remain
 binding are those of Table~\ref{tab:ladder}.
 
@@ -2402,7 +2404,7 @@ Section~\ref{sec:methods} are in Table~\ref{tab:repro}, and each of the costs qu
 \path{manuscripts/jacobian-conjecture/planar/make_tables.py} builds Tables~\ref{tab:atlas} and~\ref{tab:repro} from the records and refuses to write a cell whose quotation is absent from its
 record, and builds Tables~\ref{tab:tree} to~\ref{tab:consts} from the artifacts of EXP-146 and checks a fixed list of the figures the text quotes from that record (primes, run times of the whole run, the branches and the Singular checks, node shapes and counts) against it, the remaining prose figures not being checked by the generator; the experiment tests of the repository, such as \path{tests/test_jacobian_exp137.py} and
 \path{tests/test_jacobian_exp146.py}, check the structural statements of the independent verification and of the certificate method. The large intermediate residues of the
-Case 1 multi-modular runs and the exact levels of the certificate trees are kept outside the repository, in the data root of the programme, together with the system of EXP-141 and the file \texttt{caseL\_Q.sing} of EXP-140 that regenerate the branch inputs of the certificate (the two branch files are in the repository, in the folder \texttt{inputs} of EXP-146), and the records list how to continue or regenerate them. Software: sympy (version recorded in EXP-001; pinned at 1.14.0 in EXP-146), Singular (version not
+Case 1 multi-modular runs and the exact levels of the certificate trees are kept outside the repository, in the data root of the programme, together with the system of EXP-141 from which the branch inputs of the certificate are regenerated (that system and the two branch files are also in the repository, in the folder \texttt{inputs} of EXP-146; the file \texttt{caseL\_Q.sing} of EXP-140 from which the system is built is not kept and is regenerated by \texttt{transform.py} of that experiment), and the records list how to continue or regenerate them. Software: sympy (version recorded in EXP-001; pinned at 1.14.0 in EXP-146), Singular (version not
 recorded in the outputs of the earlier records; 4.3.2 when checked, and 4.3.2 for EXP-146), PARI/GP, python-flint over FLINT 3.0.1 for the multi-modular runs and python-flint 0.9.0 for EXP-146, numpy 2.5.1 as pinned in EXP-146, and a C reconstruction program; the multi-modular runs used WSL Ubuntu-24.04 and the Singular checks of EXP-146 ran under WSL.\par}
 
 \small
@@ -2477,6 +2479,29 @@ revisited, I, arXiv:2201.06613, 2022.
 arXiv:2609.17795v1, 2026.
 \bibitem{KanelBelovFedorov2026} A. Kanel-Belov, T. Fedorov, The generalized Dixmier conjecture and the two-dimensional
 Jacobian conjecture, arXiv:2610.33919v1, 2026.
+\bibitem{Rabinowitsch1930} J. L. Rabinowitsch, Zum Hilbertschen Nullstellensatz, \emph{Math. Ann.} \textbf{102} (1930), 520
+(received 1929), doi:10.1007/BF01782361.
+\bibitem{Winkler2012} F. Winkler, \emph{Computer Algebra}, lecture notes, Chapter 4, Resultants, RISC, Johannes Kepler University Linz,
+winter term 2012/13, \url{https://www3.risc.jku.at/education/courses/ws2012/ca/4-res.pdf}.
+\bibitem{Enescu2010} F. Enescu, Polynomials: lecture notes, week 10, Georgia State University, fall 2010,
+\url{https://math.gsu.edu/fenescu/fall2010/lec10-polyn-2010.pdf}.
+\bibitem{Collins1971} G. E. Collins, The calculation of multivariate polynomial resultants, \emph{J. ACM} \textbf{18}(4) (1971),
+515--532, doi:10.1145/321662.321666.
+\bibitem{Ollivier2010} F. Ollivier, Jacobi's bound and normal forms computations. A historical survey, arXiv:0911.2674v2, 2010.
+\bibitem{Murota1995} K. Murota, Computing the degree of determinants via combinatorial relaxation, \emph{SIAM J. Comput.}
+\textbf{24}(4) (1995), 765--796, doi:10.1137/S0097539791201897.
+\bibitem{Arnold2003} E. A. Arnold, Modular algorithms for computing Gr\"obner bases, \emph{J. Symbolic Comput.} \textbf{35} (2003),
+403--419, doi:10.1016/S0747-7171(02)00140-2.
+\bibitem{Kollar1988} J. Koll\'ar, Sharp effective Nullstellensatz, \emph{J. Amer. Math. Soc.} \textbf{1}(4) (1988), 963--975,
+doi:10.1090/S0894-0347-1988-0944576-7.
+\bibitem{DeLoera2008} De Loera, Lee, Malkin, Margulies, Hilbert's Nullstellensatz and an algorithm for proving combinatorial
+infeasibility, arXiv:0801.3788v1, 2008.
+\bibitem{Singular432} W. Decker, G.-M. Greuel, G. Pfister, H. Sch\"onemann, \textsc{Singular} 4-3-2: a computer algebra system for
+polynomial computations, 2023, \url{http://www.singular.uni-kl.de}.
+\bibitem{FLINT} The FLINT team, FLINT: Fast Library for Number Theory, 2026, version 3.6.0, \url{https://flintlib.org}.
+\bibitem{pythonflint} F. Johansson, O. Benjamin, python-flint, version 0.9.0, Python package index,
+\url{https://pypi.org/project/python-flint/0.9.0/}.
+\bibitem{PARI2} The PARI Group, PARI/GP version 2.15.4, Univ. Bordeaux, 2023, available from \url{http://pari.math.u-bordeaux.fr/}.
 \end{thebibliography}
 
 \normalsize
