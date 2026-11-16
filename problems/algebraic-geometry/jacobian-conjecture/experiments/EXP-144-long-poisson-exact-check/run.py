@@ -68,6 +68,8 @@ def compare():
 
 
 def flush(code):
+    results["elapsed_seconds"] = round(time.time() - T0, 2)
+    results["failures"] = failures  # same list: a failure appended below is recorded
     if code != 2 and OLD is not None:
         cmp_ = compare()
         (ART / "addendum-1.json").write_text(json.dumps(cmp_, indent=2), encoding="utf-8")
@@ -75,8 +77,6 @@ def flush(code):
         if not cmp_["all_reproduce"] and not failures:
             failures.append("addendum 1: recorded values not reproduced")
             code = 1
-    results["elapsed_seconds"] = round(time.time() - T0, 2)
-    results["failures"] = failures
     (ART / "results.json").write_text(json.dumps(results, indent=2, default=str), encoding="utf-8")
     (ART / "run-log.txt").write_text("\n".join(LOG) + "\n", encoding="utf-8")
     sys.exit(code)
