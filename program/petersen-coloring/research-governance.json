@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "petersen-coloring",
-  "updated": "2026-10-06",
+  "updated": "2026-11-16",
   "original_problem": {
     "status": "disproved externally",
     "statement": "Jaeger's Petersen coloring conjecture (1988), that every bridgeless cubic graph admits a Petersen coloring, is false.",
@@ -140,7 +140,7 @@
     {
       "id": "PCC-F6",
       "title": "Cut-space charges and cyclically 5-edge-connected cubic graphs",
-      "status": "active",
+      "status": "active-success-gate-met",
       "priority": 1,
       "target": "Is there a cyclically 5-edge-connected cubic graph without a Petersen coloring (Problem 11 of arXiv:2608.10028v4), and is the Petersen defect bounded on cyclically 5-edge-connected cubic graphs?",
       "value": "Problem 11 is the main structural question left by the disproof: all known counterexamples are built on 4-edge cuts around the Petersen 4-pole. A charge formulation (a bad vertex is a nonzero class of F_2^E(P) modulo the cut space; the total charge is zero; multipoles conduct classes between connectors) turned 4-pole data into unbounded defect in the cyclically 4-edge-connected class, and its 6-pole analogue is a concrete route to the 5-connected class.",
@@ -152,12 +152,14 @@
       ],
       "novelty_status": "Problem 11 open in arXiv:2608.10028v4 (2026-09-30). The charge formulation, the core {0, E, D2} of 6-poles, the block diagonal transfer relation and the ring theorems for claws and Petersen superedges are CAOS (context/2026-10-06-charges.md, EXP-013, EXP-014); Petersen colorability of flower snarks is Hagglund and Steffen 2014; the junction description of their colorings and the superedge-ring family were not found in the literature searched; not independently confirmed.",
       "manuscript_route": "New manuscript only on a success gate; a negative structural theorem would go to unbounded-defect as a new version.",
-      "first_bounded_action": "Done: EXP-013 (conducted charge orbits of 6-poles: every 6-pole of P, J5, J7 and the dodecahedron conducts the core {0, E, D2}) and EXP-014 (exact transfer semigroups: every ring of claws, of Petersen superedges or of both is Petersen colorable, with re-checked certificates). Next bounded action: EXP-015, a search for 6-poles without small internal cuts whose transfer semigroup contains a zero-trace element, over 6-poles cut from the cyclically 5-edge-connected snarks of order at most 28 (House of Graphs lists), declared before it runs.",
+      "first_bounded_action": "Done: EXP-013, EXP-014 and EXP-015 (no zero-trace ring among the rings of two superedge blocks of F, 591,009,390 pairs, and of three over F22, 68,808,751 cyclic triples; independently verified).",
       "evidence": [
         "EXP-013",
-        "EXP-014"
+        "EXP-014",
+        "EXP-015"
       ],
-      "review_2026_10_06": "Success gate met in its negative branch: theorems rule out the ring-of-6-poles route for the claws, the Petersen superedge and their mixtures (EXP-014 F1 to F3). Stop condition 1 met in substance: no two measured 6-poles of colorable cyclically 5-edge-connected sources have disjoint conducted sets. Focus stays active for one more bounded action (EXP-015) because the transfer semigroup, unlike charges, is exact and detects the non-colorability of G52 split along a 6-edge cut; if EXP-015 finds no zero-trace block, the focus closes."
+      "review_2026_10_06": "Success gate met in its negative branch: theorems rule out the ring-of-6-poles route for the claws, the Petersen superedge and their mixtures (EXP-014 F1 to F3). Stop condition 1 met in substance: no two measured 6-poles of colorable cyclically 5-edge-connected sources have disjoint conducted sets. Focus stays active for one more bounded action (EXP-015) because the transfer semigroup, unlike charges, is exact and detects the non-colorability of G52 split along a 6-edge cut; if EXP-015 finds no zero-trace block, the focus closes.",
+      "review_2026_11_16": "EXP-015 found no zero-trace block, so by the 2026-10-06 rule the focus closes. It stays the current focus only until the strategic review with Felipe chooses the next one (methodology 13: the changed target is shown first). Proposed next: PCC-F5's first bounded action, G68 at target order 52 (by PCC-F5's value statement, a satisfiable order would give a new counterexample on 40 to 60 vertices, possibly below 52). EXP-015 is a research record: unbounded-defect takes a new version only for a correction, a ring of 6-poles without a Petersen coloring, or the exact abnormal-edge numbers."
     }
   ],
   "manuscripts": [
@@ -246,6 +248,12 @@
       "manuscripts": [
         "unbounded-defect"
       ]
+    },
+    {
+      "start": 15,
+      "end": 15,
+      "classification": "research-record",
+      "manuscripts": []
     }
   ]
 }
