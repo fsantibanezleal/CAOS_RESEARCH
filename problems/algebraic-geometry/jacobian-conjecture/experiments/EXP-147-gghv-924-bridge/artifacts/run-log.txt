@@ -1,0 +1,5 @@
+class 1: A1 True A3 True A4 True cross-rule True successor of (1,0): P (-1, 1) Q (-1, 1)
+class 2: A1 True A3 True A4 True cross-rule True successor of (1,0): P (-2, 1) Q (-2, 1)
+class 3: A1 True A3 True A4 True cross-rule True successor of (1,0): P (-3, 1) Q (-3, 1)
+controls: {'K1_cor57_unshifted': True, 'K2_line380_st': True, 'K3_clockwise_mutant': True, 'K4_planted': True}
+VERDICT CONFIRMED

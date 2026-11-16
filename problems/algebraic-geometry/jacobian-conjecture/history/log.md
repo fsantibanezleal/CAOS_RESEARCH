@@ -1895,3 +1895,17 @@ review approved the corrections before release.
   planar v0.38 carries the result; its publication waits for Felipe's validation of the closure phrasing
   (`program/jacobian-conjecture/72108-closure-statement.md`).
 
+## 2026-11-16 - EXP-147: the (9,24) case of the floor is discarded by GGHV's printed Theorem 5.1 (JCB-107 closed)
+
+- Hypothesis frozen (4d26fbdf) before any code: GGHV 2022 Theorem 5.1 against the three polygon classes of Proposition 4.2.
+- Result (CONFIRMED): in every class [P,Q] = x (g = 0), P and Q are polynomials (all corners in the first quadrant), and the
+  starting and end points required by Theorem 5.1 hold under GGV1's counterclockwise definition: en_{3,-1} = st_{1,0} = (6,16)
+  and en_{1,0} = st_{-1,1} = (6,18) for P, the same with (9,24) and (9,27) for Q; the edge after (6,18) has normal (-1,1),
+  (-2,1) or (-3,1), so no shift is needed (Corollary 5.7 needed one for (9,27)). Controls: the unshifted Corollary 5.7
+  polygon fails, the paper's usage at line 380 is reproduced, the clockwise mutant fails in every class, a planted polygon
+  fails. Sources archived with SHA-256 in the data root (`sources/gghv/`: arXiv:2204.14178, 1401.1784, 1708.07936, e-prints,
+  extracted TeX and PDFs).
+- Consequence: the floor statement no longer inherits the (66,99) bridging gap of the 2026-07-22 audit (D1, item 6): with
+  EXP-137 and EXP-146, a counterexample to JC(2) has max deg >= 125, conditional on Proposition 4.3 being exhaustive, on the
+  encoding of its polygons and on the rest of GGHV's printed argument.
+

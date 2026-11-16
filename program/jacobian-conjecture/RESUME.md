@@ -8,6 +8,11 @@ remain the evidence.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 5 with a redirect; strategic review (JCB-098), then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 (JCB-099); the transverse Fitting atlas is parked.
 
+2026-11-16: EXP-147 CONFIRMED (JCB-107 closed): GGHV Theorem 5.1 applies to the three polygon classes of Proposition 4.2
+as printed, so the (9,24) case (max deg 99) of the floor is discarded by a printed theorem and the floor 125 no longer
+inherits the bridging gap the July audit found. Pending: the planar v0.38 draft still discloses the gap; its fix pass
+replaces that disclosure with EXP-147 before release.
+
 2026-11-16: EXP-146 CONFIRMED (JCB-103 closed): Case 1 of GGHV Proposition 4.3 for (72,108) is empty. Both branch ideals
 (q1 = +c, -c over L = Q[y]/(y^5 - y^4 + 3y^3 + 3y^2 + 26)) are certified as the unit ideal by single-prime resultant-chain
 trees with support-proven degree bounds and monomial Rabinowitsch splits, at p1 = 536870909, replayed at p2 = 536870879
