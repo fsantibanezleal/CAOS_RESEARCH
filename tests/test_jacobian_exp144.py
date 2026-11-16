@@ -45,3 +45,17 @@ def test_printed_fiber_point_satisfies_four_equations(lg):
     pt = {lg.x: 1, lg.q: sp.Rational(2, 3), lg.p: sp.Rational(247, 96), lg.z: -sp.Rational(89, 64)}
     vals = [lg.R.subs(pt), (lg.T - sp.Rational(1, 8)).subs(pt), lg.D.subs(pt), lg.S.subs(pt)]
     assert vals == [0, 0, 0, 0]
+
+
+def test_P2_symbolic_bracket_matrix_of_RTDS_equals_canonical(lg):
+    got = lg.bracket_matrix((lg.R, lg.T, lg.D, lg.S))
+    want = lg.target_matrix()
+    assert all(sp.expand(got[i][j] - want[i][j]) == 0 for i in range(4) for j in range(4))
+    ok, bad = lg.poisson_symbolic(lg.R, lg.T, lg.D, lg.S)
+    assert ok is True and bad == []
+
+
+def test_control_C2_constant_126_makes_P2_checker_fail(lg):
+    assert lg.D_C2 != lg.D
+    ok, bad = lg.poisson_symbolic(lg.R, lg.T, lg.D_C2, lg.S)
+    assert ok is False and len(bad) > 0
