@@ -2242,3 +2242,17 @@ other result are unchanged; EXP-066 checks the unsigned-row form. Re-checked by 
   `wip/caos-research/hw-hwb095-recheck-2026-11-15.md`, verdict CLOSED). Artifact aggregate SHA-256
   856212806bef7fa24e8c2ceaad28004528dffc08f7225d4d327a506fa61966d1.
 
+## 2026-11-16 - HWB-096: the research governance guard checks each manuscript's own records
+
+- `scripts/check_research_governance.py` matched versions and DOIs as substrings of whole files, so another manuscript's row
+  or an old history line could satisfy a check, and it accepted any classification text. It now checks each manuscript's
+  own row of `manuscripts/README.md` and its README's current-version statement (the first version line must state it; a
+  `/versions/vX` record also checks its parent README), requires the four methodology 13 classifications, and prints the
+  long-running problems without a governance record as information. The HW record's compound classifications were mapped
+  (3 rows to primary-manuscript, 1 to research-record); no other record was stale.
+- Decision: the guard keeps its adoption-based scope; bougard-joret, central-configurations, hoa-mnh, jacobian-conjecture,
+  navier-stokes, tau-conjecture and unsplittable-flow-cost adopt methodology 13 at their next strategic review.
+- Verification (CAOS_MANAGE `wip/caos-research/hw-hwb096-verify-2026-11-16.md`): every planted defect fails the new guard,
+  five of them passed the old one; four minor findings closed by a fix pass and re-checked CLOSED
+  (`wip/caos-research/hw-hwb096-recheck-2026-11-16.md`).
+
