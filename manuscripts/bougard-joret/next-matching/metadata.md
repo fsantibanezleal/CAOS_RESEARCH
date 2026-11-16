@@ -1,6 +1,11 @@
 # Triangle-free next-matching preprint
 
-## Current version: v0.04 (2026-11-04)
+## Current version: v0.05 (2026-11-14)
+
+Version DOI [10.5281/zenodo.24232146](https://doi.org/10.5281/zenodo.24232146); concept DOI
+[10.5281/zenodo.22343021](https://doi.org/10.5281/zenodo.22343021). The changes of v0.05 are in the history below.
+
+## Previous version: v0.04 (2026-11-04)
 
 Title: The next matching level for triangle-free graphs with bounded degree and an exact Bougard-Joret value.
 Version DOI [10.5281/zenodo.23965193](https://doi.org/10.5281/zenodo.23965193); concept DOI

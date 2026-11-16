@@ -1,0 +1,55 @@
+prime p = 536870909, root r = 505390653; P(r) mod p = 0; recorded primes {'p': 536870909, 'r': 505390653} {'p': 536870879, 'r': 12005842}
+inputs: 9 equations from eqs.json, identical to the SLP inputs: ['E3', 'E5', 'E6', 'E7', 'E9', 'E10', 'E11', 'E12', 'E13']
+
+===== leaf t.z.nz (kind w!=0, order ['q5', 'q3', 'q4', 'w2'], split var w2)
+  split of t: w1 = lc_q5(E3) = a + b q0 exactly: True
+  split of t.z: w2 = lc_q3(E3) = a + b q2 exactly: True
+ level 1 (q5): pivot E5 exact degree 1, recorded n 1, image degree at this prime 1
+   exact members after level 1: ['E13', 'E3', 'E7', 'l1.0', 'l1.1', 'l1.2', 'l1.3', 'l1.4'] (0.1 s)
+ level 2 (q3): pivot E3 exact degree 1, recorded n 1, image degree at this prime 1
+   exact members after level 2: ['l2.0', 'l2.1', 'l2.2', 'l2.3', 'l2.4', 'l2.5', 'l2.6'] (0.4 s)
+ level 3 (q4): pivot l2.1 exact degree 2, recorded n 2
+   pivot leading coefficient image nonzero at this prime (degree attained)
+   l3.0 = Res_q4;2,2(l2.0, l2.1): own bound deg <= 14, order >= 2; image at this prime: degree 14, order 2
+   l3.1 = Res_q4;3,2(l2.2, l2.1): own bound deg <= 17, order >= 3; image at this prime: degree 17, order 3
+   l3.2 = Res_q4;3,2(l2.3, l2.1): own bound deg <= 17, order >= 3; image at this prime: degree 17, order 3
+   l3.3 = Res_q4;3,2(l2.4, l2.1): own bound deg <= 17, order >= 3; image at this prime: degree 17, order 3
+   l3.4 = Res_q4;3,2(l2.5, l2.1): own bound deg <= 15, order >= 3; image at this prime: degree 15, order 3
+ last variable w2 (recorded pivot l3.0, n 12)
+   l3.0: own D = 14, own L = 2; recorded L = 2, d = 12; V image degree 12 (<= d: True)
+   l3.1: own D = 17, own L = 3; recorded L = 3, d = 14; V image degree 14 (<= d: True)
+   l3.2: own D = 17, own L = 3; recorded L = 3, d = 14; V image degree 14 (<= d: True)
+   l3.3: own D = 17, own L = 3; recorded L = 3, d = 14; V image degree 14 (<= d: True)
+   l3.4: own D = 15, own L = 3; recorded L = 3, d = 12; V image degree 12 (<= d: True)
+   final pivot l3.0: image degree 12 = proven 12 (attained at this prime)
+   constant Res_{14,12}(V_l3.1, V_l3.0) mod p = 34853305   (recorded at p1: 34853305)
+   constant Res_{14,12}(V_l3.2, V_l3.0) mod p = 492668574   (recorded at p1: 492668574)
+   constant Res_{14,12}(V_l3.3, V_l3.0) mod p = 306155930   (recorded at p1: 306155930)
+   constant Res_{12,12}(V_l3.4, V_l3.0) mod p = 0   (recorded at p1: 0)
+ leaf t.z.nz: 3 of 4 constants nonzero at p = 536870909 (0.4 s)
+
+===== leaf t.z.z (kind w=0, order ['q5', 'q3', 'q4'], split var None)
+  split of t.z: w2 = lc_q3(E3) = a + b q2 exactly: True
+ level 1 (q5): pivot E5 exact degree 1, recorded n 1, image degree at this prime 1
+   exact members after level 1: ['E13', 'E3', 'E7', 'l1.0', 'l1.1', 'l1.2', 'l1.3', 'l1.4'] (0.0 s)
+ level 2 (q3): pivot l1.0 exact degree 2, recorded n 2, image degree at this prime 2
+   exact members after level 2: ['E13', 'E3', 'E7', 'l2.0', 'l2.1', 'l2.2', 'l2.3'] (15.2 s)
+ last variable q4 (recorded pivot E3, n 1)
+   E3: exact degree 1 = recorded d 1; image degree 1
+   E7: exact degree 2 = recorded d 2; image degree 2
+   l2.0: exact degree 6 = recorded d 6; image degree 6
+   l2.1: exact degree 6 = recorded d 6; image degree 6
+   l2.2: exact degree 6 = recorded d 6; image degree 6
+   l2.3: exact degree 6 = recorded d 6; image degree 6
+   E13: exact degree 2 = recorded d 2; image degree 2
+   final pivot E3: image degree 1 = proven 1 (attained at this prime)
+   constant Res_{2,1}(V_E7, V_E3) mod p = 39203000   (recorded at p1: 39203000)
+   constant Res_{6,1}(V_l2.0, V_E3) mod p = 72530766   (recorded at p1: 72530766)
+   constant Res_{6,1}(V_l2.1, V_E3) mod p = 463386644   (recorded at p1: 463386644)
+   constant Res_{6,1}(V_l2.2, V_E3) mod p = 75030777   (recorded at p1: 75030777)
+   constant Res_{6,1}(V_l2.3, V_E3) mod p = 87453970   (recorded at p1: 87453970)
+   constant Res_{2,1}(V_E13, V_E3) mod p = 191661876   (recorded at p1: 191661876)
+ leaf t.z.z: 6 of 6 constants nonzero at p = 536870909 (15.3 s)
+
+SUMMARY {"t.z.nz": {"nonzero": 3, "total": 4, "constants": [["l3.1", 34853305], ["l3.2", 492668574], ["l3.3", 306155930], ["l3.4", 0]]}, "t.z.z": {"nonzero": 6, "total": 6, "constants": [["E7", 39203000], ["l2.0", 72530766], ["l2.1", 463386644], ["l2.2", 75030777], ["l2.3", 87453970], ["E13", 191661876]]}}
+exit 0

@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "problem": "bougard-joret",
+  "updated": "2026-11-16",
+  "original_problem": {
+    "status": "partly disproved externally, partly claimed proved externally (preprint), general first regime open",
+    "statement": "Bougard and Joret's Conjecture 1 (J. Graph Theory 58 (2008), Section 6) for f(n, alpha, k), the minimum number of edges of a k-connected graph of order n and independence number alpha (n >= 2 alpha, n >= alpha + k, alpha >= 2, k >= 3): f(n, alpha, k) = ceil(n k / 2) in the first regime (n <= k alpha) and f(n, alpha, k) = t(n, alpha) + ceil(k alpha / 2) in the second regime (n > k alpha), where t(n, alpha) is the number of edges of alpha disjoint balanced cliques. The first line is false (Das and Gupta, arXiv:2608.18828v1, 2026-08-19: they determine f at n = alpha + k and the smallest counterexample is (7, 3, 4)). For the second line, Didin (Zenodo 10.5281/zenodo.22831382, preprint under review, not audited here) claims the lower bound for every n > k alpha (his Theorem 9), and the Bougard-Joret clique construction gives the upper bound. Source: program/bougard-joret/plan.md (external status review 2026-10-30); problems/combinatorics/bougard-joret/context/references.md; wiki/01-statement.md.",
+    "priority": "Bougard and Joret hold the conjecture and its proved ranges (k at most 2, n = k alpha, the large-order range, alpha = 2 with n >= 2k, and Proposition 8 for the second line when floor(n / alpha) >= ceil(k alpha / 2) - alpha + 2). Das and Gupta hold the disproof of the first line and the boundary n = alpha + k. Didin holds the claimed proof of the second-line lower bound (statements read [V], correctness [U]). Banak, Ekim and Taskin hold the attaining construction and the finite values of T(d, m) through d = 12 and Ahanjideh, Ekim and Yildiz the matching conjecture that the next-matching paper uses; Harary holds the connectivity construction used in the shell.",
+    "prohibited_reframing": "No CAOS result may be described as disproving or re-disproving the Bougard-Joret conjecture (the first line is Das and Gupta's), nor as proving the second line (Didin's claim): the programme's enumeration through order 24 is an independent exhaustive check of that claim at 53 triples, and the characterisation of the extremal graphs without a clique partition is conditional on Didin's Theorem 3. The values f(2d + 3, 2, d + 2) = d^2 + 4d + 2 and the first-shell formula are results about the function, not a settlement of the conjecture, and the matching results (T(d, d + 1)) do not settle the Ahanjideh-Ekim-Yildiz conjecture. The general first regime is not solved."
+  },
+  "mission": "Determine, with written proofs and exact certificates, the minimum size f(n, alpha, k) of a k-connected graph with independence number alpha beyond the cases settled by Bougard and Joret, Das and Gupta and Didin, and the extremal graphs that attain it, keeping every extension distinct from the original conjecture. Source: program/bougard-joret/plan.md (scope and assumptions), RESUME.md section 1.",
+  "current_focus": "BJ-F3",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "BJ-F1",
+      "title": "The adjacent tree strip and the full first interior shell",
+      "status": "closed",
+      "priority": 0,
+      "target": "Determine f(2k, k-1, k) (the diagonal one vertex above Das and Gupta's boundary) and, for every k >= 3 and 2 <= alpha <= k + 1, f(alpha + k + 1, alpha, k), with the extremal graphs wherever they can be classified. Reconstructed from the records on 2026-11-16; the focus was admitted before methodology 13 was adopted.",
+      "value": "The first exact values above the boundary n = alpha + k that Das and Gupta left; f = k^2 at alpha = k - 1 is one more than the boundary value k^2 - 1, and the shell value is the degree-sum bound ceil(k (alpha + k + 1) / 2). Source: plan-2026-09-05.md; verdicts of EXP-001 and EXP-002; tree-strip zenodo.json.",
+      "success_gate": "Met 2026-09-05: EXP-001 proves f(2k, k-1, k) = k^2 for every k >= 3 with every extremal graph built on a nonstar tree with fibers of size deg_T(t) - 1; EXP-002 proves f(alpha + k + 1, alpha, k) = ceil(k (alpha + k + 1) / 2) for every k >= 3 and 2 <= alpha <= k + 1 and classifies the alpha = 2 extremizers as the complements of disjoint cycles of length at least five. Independent proof audits and exact certificates passed (EXP-001: 86 nonstar tree controls; EXP-002: 75 graphs, 45 direct checks, order-six census of 32,768 graphs). No classification of the other shell extremizers is claimed.",
+      "stop_conditions": [
+        "A counterexample to the predicted value or to the extremal characterization at any k (EXP-001 hypothesis: it refutes the prediction).",
+        "A proof step that fails its adversarial audit and cannot be repaired (the two-surviving-tree-vertices gap was found and repaired in EXP-001).",
+        "Finite controls offered in place of the universal proof (the plan: no numerical census can certify an unbounded theorem)."
+      ],
+      "novelty_status": "Primary sources read 2026-09-04 and 2026-09-05: Bougard-Joret 2008 and Das-Gupta v1 (Section 4 leaves the second regime unresolved); only these two were direct matches; the alpha = k + 1 case overlaps the original paper (n = 2 alpha), (6, 2, 3) lies on n = k alpha, and alpha = k - 1 is EXP-001; Harary's construction is credited. No matching full-shell formula located; absence from search results is not proof of novelty. Source: context/references.md. External novelty not independently confirmed.",
+      "manuscript_route": "tree-strip",
+      "first_bounded_action": "EXP-001 hypothesis committed 2026-09-04 (0c14bf1) before any run; EXP-002 preflight committed 2026-09-05 (d15f240).",
+      "evidence": [
+        "EXP-001",
+        "EXP-002",
+        "BJB-002",
+        "BJB-003",
+        "BJB-004",
+        "BJB-005",
+        "BJB-008"
+      ]
+    },
+    {
+      "id": "BJ-F2",
+      "title": "The next matching level for triangle-free graphs and the exact Bougard-Joret value at (2d + 3, 2, d + 2)",
+      "status": "closed",
+      "priority": 0,
+      "target": "Determine T(d, d + 1), the maximum number of edges of a triangle-free graph with maximum degree at most d and matching number at most d + 1, for every d >= 7, and the endpoint of the bracket d^2 + 4d + 1 <= f(2d + 3, 2, d + 2) <= d^2 + 4d + 2 that its complement translation leaves. Reconstructed from the records on 2026-11-16.",
+      "value": "Settles the m = d + 1 slice of Ahanjideh, Ekim and Yildiz's Conjecture 6.1 and the benchmark T(13, 14) (184, not 185); the exact value f(2d + 3, 2, d + 2) = d^2 + 4d + 2 shows the first line of the conjecture fails by floor(d / 2) - 1, an unbounded amount, at these parameters. Source: EXP-003 and EXP-004 verdicts; RESUME.md section 1.",
+      "success_gate": "Met: EXP-003 (2026-09-05) proves T(d, d + 1) = d^2 + d + 2 for every d >= 7 (uniform upper bound; the attaining graph is Banak, Ekim and Taskin's); EXP-004 (2026-11-04) proves f(2d + 3, 2, d + 2) = d^2 + 4d + 2 for every d >= 7 (every extremal triangle-free graph on 2d + 3 vertices has two vertices with the same d neighbours). Independent audits PASS (EXP-004: Opus adversarial audit, 0 blockers); finite certificates agree (48 graphs, 287,564 five-type candidates with no survivor, configuration-split satisfiability at d = 7 and d = 8).",
+      "stop_conditions": [
+        "A prior publication that already contains the uniform theorem (EXP-003: targeted searches reduce but cannot remove this risk).",
+        "A failed intermediate route is retained, not hidden: the complement of the known maximizer has connectivity d + 1, so it cannot give the Bougard bracket (EXP-003); the global lazy-cut search of EXP-004 did not finish within its cap and was superseded by the configuration split."
+      ],
+      "novelty_status": "Banak, Ekim and Taskin (arXiv:2304.01729, Proposition 4.1 and Table 3) already supply the attaining graph and the values through d = 12; Caro and Tuza and Cambie et al. hold the regular prior art; the uniform upper bound and T(13, 14) = 184 are the new claims. Overlap searches 2026-09-05, 2026-10-30 and 2026-11-07 found none for T(d, d + 1) or f(2d + 3, 2, d + 2) [U as to exhaustive priority]. External novelty not independently confirmed. Source: context/references.md; history/log.md.",
+      "manuscript_route": "next-matching",
+      "first_bounded_action": "EXP-003 preflight committed 2026-09-05 (f3fdda6); EXP-004 hypothesis and proof frozen 2026-11-04 (29a8840c) before computation (BJB-014).",
+      "evidence": [
+        "EXP-003",
+        "EXP-004",
+        "BJB-011",
+        "BJB-012",
+        "BJB-013",
+        "BJB-014"
+      ]
+    },
+    {
+      "id": "BJ-F3",
+      "title": "The second regime n > k alpha at small orders, with the extremal structure",
+      "status": "active-success-gate-met",
+      "priority": 1,
+      "target": "Does the second line of Bougard and Joret's conjecture, f(n, alpha, k) = t(n, alpha) + ceil(k alpha / 2) for n > k alpha, hold at every triple outside their proved range at small orders, and which graphs attain it (in particular, do all of them split into alpha cliques)?",
+      "value": "Independent exhaustive evidence on the second line against Didin's claimed, unaudited proof (53 triples with n <= 24; for seven pairs (alpha, k) the window closes by order 24, so the line holds for every n there by Proposition 8), and structure Didin's paper does not give: the extremal graphs, among them graphs with no partition into alpha cliques, which shows that a proof of the second line through a clique partition cannot reach the conjectured size. Source: program/bougard-joret/RESUME.md (2026-11-14 state); references.md (Didin section); EXP-011 verdict.",
+      "success_gate": "Met 2026-11-14 (focus stays current until the strategic review with Felipe): the second line holds at all 53 open-window triples with n <= 24 (EXP-005 to EXP-010: 7, 4 and 28 triples up to order 22, 8 at order 23, 6 at order 24, the last two closed by EXP-010); all 246 extremal graphs at 35 triples are listed and rechecked, 206 with the Bougard-Joret structure and 40 with clique cover number alpha + 1, all at k = 3 with alpha odd (EXP-011); the pipeline is exact at the production parameters (EXP-012); the X6/X7 construction gives such graphs for every odd alpha and 3 alpha < n <= 4 alpha - 1, proved (EXP-013); for alpha >= 3 and conditional on Didin's Theorem 3, they are exactly the construction graphs and the 8 graphs at (10, 3, 3) (EXP-014). Published as second-regime v0.01 to v0.04.",
+      "stop_conditions": [
+        "An exhaustive search finds a qualifying graph below the conjectured value at some triple (it would refute the line there and contradict Didin's claimed theorem); a triple that reaches its wall-clock cap is reported open, never as evidence (EXP-005 and EXP-009 hypotheses).",
+        "No finite sweep without a uniform target (stop_policy): orders above 24 are not scheduled without a theorem-shaped reason.",
+        "The characterisation stays conditional on Didin's Theorem 3: if that theorem is found wrong, the conditional results are withdrawn or restated, not extended."
+      ],
+      "novelty_status": "Das and Gupta (v1, still v1 at the 2026-10-30 and 2026-11-07 checks) leave the second regime open [V]; Didin's preprint (read 2026-11-11) claims the lower bound for every n > k alpha [V as to the statements, U as to correctness], so the enumeration is an independent check and not a first result (second-regime v0.01 and v0.02 called the line open outside the proved range; this was missed and corrected in v0.03); the extremal graphs, the odd-alpha construction and the block characterisation are not in Didin's paper; no overlap found elsewhere [U as to exhaustive priority]. External novelty not independently confirmed. Source: references.md; history/log.md (2026-11-07, 2026-11-14).",
+      "manuscript_route": "second-regime",
+      "first_bounded_action": "EXP-005 (BJB-016): the seven smallest open triples by complete nauty geng enumeration and an exact filter, hypothesis committed before computation (2026-11-06).",
+      "evidence": [
+        "EXP-005",
+        "EXP-006",
+        "EXP-007",
+        "EXP-008",
+        "EXP-009",
+        "EXP-010",
+        "EXP-011",
+        "EXP-012",
+        "EXP-013",
+        "EXP-014",
+        "BJB-016",
+        "BJB-017",
+        "BJB-018",
+        "BJB-019",
+        "BJB-021",
+        "BJB-022",
+        "BJB-023",
+        "BJB-025",
+        "BJB-026",
+        "BJB-027"
+      ]
+    },
+    {
+      "id": "BJ-F4",
+      "title": "The triangle-free matching upper bound beyond the solved level m = d + 1",
+      "status": "proposed",
+      "priority": 2,
+      "target": "Extend a uniform upper bound for T(d, m), the maximum number of edges of a triangle-free graph with maximum degree at most d and matching number at most m, beyond the solved level m = d + 1 into the range d < m < Z(d) of the Ahanjideh-Ekim-Yildiz conjecture. Source: backlog BJB-015; wiki/05-open-questions.md (first item).",
+      "value": "EXP-003 settles one level of the conjecture only; the full conjecture is open (backlog, RESUME.md section 5). Proposed value, to be shown to Felipe before any work: a further level extends the one theorem of this programme that is a uniform statement for an unbounded parameter.",
+      "success_gate": "A uniform proof of the value of T(d, m) at a further matching level or range (stated before work, with the level chosen by the first bounded action), or a counterexample to the conjecture at a computed level. Which level is next is not in the records (UNVERIFIED; decided at the review).",
+      "stop_conditions": [
+        "The invariant-first step finds no uniform bound for the next level (the route of EXP-003: shortest-odd-cycle deficit, five-type equality exclusion, Tutte-Berge reduction, does not extend).",
+        "Banak, Ekim and Taskin or Ahanjideh, Ekim and Yildiz publish the level first (a literature refresh is part of the first action).",
+        "Three consecutive finite-only or refuted rounds (methodology 13, review boundary 3)."
+      ],
+      "novelty_status": "Not started. The prior art to refresh first: Ahanjideh, Ekim and Yildiz (2024 final article, doi 10.1007/s10878-024-01123-z, Conjecture 6.1 and Corollary 3.5) and Banak, Ekim and Taskin (arXiv:2304.01729, Table 3); no result for a level above m = d + 1 is recorded in the programme (UNVERIFIED beyond the 2026-11-07 searches).",
+      "manuscript_route": "next-matching (a new version) if the result extends its theorem; a new paper only if it forms a coherent separate theorem (the 2026-09-05 plan created next-matching as its own paper for the first level).",
+      "first_bounded_action": "Read the EXP-003 proof and the AEY Section 6 range and decide, without computation, whether the shortest-odd-cycle deficit argument extends to m = d + 2; a new committed hypothesis precedes any computation (RESUME.md section 5)."
+    },
+    {
+      "id": "BJ-F5",
+      "title": "Classify the first-shell extremizers beyond alpha two and the tree strip",
+      "status": "proposed",
+      "priority": 3,
+      "target": "For f(alpha + k + 1, alpha, k) = ceil(k (alpha + k + 1) / 2), classify the extremal graphs at the parameters other than alpha = 2 and alpha = k - 1 (the two classifications EXP-001 and EXP-002 prove). Source: backlog BJB-009; wiki/05-open-questions.md (third item). The alpha = k + 1 case (n = 2 alpha) overlaps the original paper (references.md).",
+      "value": "EXP-002 gives the value everywhere and classifications at two parameter lines only; a unified classification is an open question recorded in the wiki. Proposed value, to be shown to Felipe: it would turn the shell from a value into a structure theorem.",
+      "success_gate": "A classification theorem of the extremal graphs for a stated class of (alpha, k), proved and checked, or a proof that no uniform description exists for it.",
+      "stop_conditions": [
+        "The degree-sum equality conditions (regularity, residual cyclomatic number) leave no parametrizable structure at the first parameter examined, so only finite lists would result (no finite sweep without a uniform target).",
+        "Another group publishes the classification first (a literature refresh is part of the first action)."
+      ],
+      "novelty_status": "Not started. EXP-002 states that no classification of the other shell extremizers is claimed; no external classification is recorded (UNVERIFIED beyond the 2026-11-07 searches).",
+      "manuscript_route": "tree-strip (a new version) if a classification theorem is proved; otherwise a research record.",
+      "first_bounded_action": "From the EXP-002 proof, state which equality conditions remain at alpha = 3 and what the target class is, before any enumeration; a new committed hypothesis precedes any computation."
+    },
+    {
+      "id": "BJ-F6",
+      "title": "When different maximum independent sets give different tree representations",
+      "status": "proposed",
+      "priority": 4,
+      "target": "For the extremal graphs of the tree strip (alpha = k - 1), determine when different maximum independent sets give different (nonisomorphic) tree representations, and so how to count the unmarked isomorphism classes of extremal graphs. Source: backlog BJB-006; wiki/05-open-questions.md (fifth item).",
+      "value": "EXP-001 classifies the extremal graphs relative to a chosen maximum independent set; the representation does not automatically count unmarked isomorphism classes (RESUME.md section 7). Proposed value, to be shown to Felipe: it completes the classification of the strip.",
+      "success_gate": "A theorem relating the representations across maximum independent sets, giving the number of isomorphism classes of extremal graphs for each k, or a proof that no simple description exists.",
+      "stop_conditions": [
+        "The check over the strip's small cases (the small cases of the strip) shows the representation is unique up to isomorphism, so the question has a trivial answer.",
+        "The answer is only a finite table with no uniform statement."
+      ],
+      "novelty_status": "Not started; no external work on the strip beyond Das and Gupta's boundary is recorded (references.md).",
+      "manuscript_route": "tree-strip (a new version) if a theorem is proved.",
+      "first_bounded_action": "Invariant-first: from the EXP-001 proof, state how a second maximum independent set of G(T, (S_t)) relates to the residual tree T, before any enumeration; a new committed hypothesis precedes any computation."
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "tree-strip",
+      "path": "manuscripts/bougard-joret/tree-strip",
+      "version": "0.05",
+      "version_doi": "10.5281/zenodo.24232301",
+      "concept_doi": "10.5281/zenodo.22315251",
+      "status": "published",
+      "split_action": "Focused paper on the first interior shell (value for every k >= 3 and 2 <= alpha <= k + 1, the alpha = 2 and alpha = k - 1 extremizers). A new version only for a proved extension beyond n = alpha + k + 1, a further classification (BJ-F5, BJ-F6) or a correction (manuscripts metadata: next-version trigger)."
+    },
+    {
+      "slug": "next-matching",
+      "path": "manuscripts/bougard-joret/next-matching",
+      "version": "0.05",
+      "version_doi": "10.5281/zenodo.24232146",
+      "concept_doi": "10.5281/zenodo.22343021",
+      "status": "published",
+      "split_action": "Focused paper on T(d, d + 1) and the exact value f(2d + 3, 2, d + 2). A new version only for a wider uniform matching range (BJ-F4), a classification of the attaining graphs or a correction (metadata: next-version trigger)."
+    },
+    {
+      "slug": "second-regime",
+      "path": "manuscripts/bougard-joret/second-regime",
+      "version": "0.04",
+      "version_doi": "10.5281/zenodo.24231735",
+      "concept_doi": "10.5281/zenodo.24044537",
+      "status": "published",
+      "split_action": "Focused note on the second line: the exhaustive check to order 24, the validation, the extremal graphs, the odd-alpha construction and the conditional characterisation (EXP-005 to EXP-014). A new version only for a correction, a change in the status of Didin's Theorem 3 (the premise of the characterisation) or a further result of the second regime."
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 2,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "tree-strip"
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "next-matching"
+      ]
+    },
+    {
+      "start": 5,
+      "end": 11,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "second-regime"
+      ]
+    },
+    {
+      "start": 12,
+      "end": 12,
+      "classification": "research-record",
+      "manuscripts": [
+        "second-regime"
+      ]
+    },
+    {
+      "start": 13,
+      "end": 14,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "second-regime"
+      ]
+    }
+  ]
+}
