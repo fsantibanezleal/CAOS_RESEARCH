@@ -42,7 +42,7 @@ pivot (the attained-bound rule). Constants: nonzero final images over the pairs 
 The split roots at p1: 302286424 (plus) and 234584485 (minus) for w1; 306016849 for w2 on both. Members whose image is
 zero were dropped and are recorded in results.json (`members.<id>.dropped`): l3.5 and l4.3 at the root and at t.nz,
 l3.5 at t.z and t.z.nz. No input was dropped. The exact levels 1 and 2 of every node are in the data root
-(`exp146/exact-levels-plus.json`, `-minus.json`, 139 MB in all, not in the repository).
+(`exp146/exact-levels-plus.json`, `-minus.json`, 145 MB in all (144,964,257 bytes), not in the repository).
 
 ## Gates
 
@@ -51,7 +51,7 @@ l3.5 at t.z and t.z.nz. No input was dropped. The exact levels 1 and 2 of every 
 | G0 | PASS | `branches.py` rerun on EXP-141's `eqs.json`: both outputs have the SHA-256 of the data-root files and of the hypothesis |
 | G1 | PASS | P(r1) = 0 mod p1, P(r2) = 0 mod p2, both primes below 2^29, integer coordinates |
 | G2 random | PASS | `G2_random`: 2,000 pairs drawn, 1,862 kept (the rest had a free or constant x). On all 1,862: 551 proven-zero coefficients checked, all zero. 560 of them have a zero formal resultant (skipped for weights); on the other 1,302 pairs (`weight_checked_pairs`) 54,390 weights were checked, 0 violations, and the order lower bound equals the true order in 543. Planted: cancellations 2,002, monomial factors 1,513, formal degree above the true degree in 926 cases, x as split variable in 338 |
-| G2 composed | PASS | `G2_composition`: 272 pairs of two composed steps (elimination of x, then of a), 131 with a zero final resultant (order checked on those, 131), 197 skipped; 3,557 weights compared with the exact formal Sylvester resultant of the second step, 0 violations; 180 proven-zero coefficients, 0 violations; the inline mutant raises 2,336 violations. Only the level-4 members of t and t.nz rest on a bound that passes through two propagated steps (every other bound is one step from exact supports): that is the kind of bound this family tests |
+| G2 composed | PASS | `G2_composition` (`run.py` calls `gates.g2_composition(600)`): 600 pairs of two composed steps (elimination of x, then of a) drawn; 197 skipped; 131 with a zero resultant at either step, excluded from the weight and order checks; 272 kept, on which 3,557 weights were compared with the exact formal Sylvester resultant of the second step, 0 violations; the order lower bound of the split variable checked in 131 of the 179 kept split cases, 0 violations; 180 proven-zero coefficients, 0 violations. The gate's inline mutant (every entry lowered by 1) fires at w = 0 by construction (`chaincert.py:257` sets the bound to 0 at w = 0, where the exact maximum is also 0), so its 2,336 violations are not evidence; the composed-bound mutant is M1b in `artifacts/mutants.json` (every entry of the second-step bound lowered by 1: 2,381 violations of 3,557 weight checks on the 272 kept cases, the gate fails). Only the level-4 members of t and t.nz rest on a bound that passes through two propagated steps (every other bound is one step from exact supports): that is the kind of bound this family tests |
 | G2 real | PASS | 118 exact polynomials (59 per branch: levels 1 and 2 of the 5 nodes of each branch): the propagated M4 bound is at least the exact-support bound at every weight, 0 violations |
 | G3 | PASS | 500 cases, leading coefficients of f vanishing at r (drop 1 in 269, drop 2 in 231), phi(exact formal resultant) equals the M5 image: 0 mismatches |
 | G4 | PASS | planted unit (3 variables) certified; planted unit with a known exact final constant certified and the constant equals phi(exact) up to sign; planted systems with a common root (a point; a point surviving the chain) not certified; a planted nonempty system that splits (`planted_split_common`: 4 generators in 2 variables) not certified: its nodes psc and psc.nz are nonempty (Singular dim 0, vdim 1 each) with 2 final pairs each, both zero, and psc.z is empty (dim -1) and certified by the constant member f1. Branch plus with one equation removed from {E3, E5, E6, E7, E10, E11}: 2 of 6 controls finished (E10 and E11: the tree finished, node neg.nz UNKNOWN, not certified), 4 of 6 are inconclusive (E3, E5, E6, E7: child killed at its 300 s wall limit, so no certificate appeared but no evidence either way), 0 crashed. Singular nonemptiness of the drop-one systems (`branch_subset_nonemptiness`, pass true): at p1 and p2 each of the six drop-one ideals has dim 0 with vdim 146, 120, 120, 122, 104, 104 (removal of E3, E5, E6, E7, E10, E11) and the full subset has dim -1. Extended controls with n + 2 = 7 generators (drop E10 or E11 plus two of the subset's own ideal members, `branch_extended_controls`): finished, not certified, on nonempty nodes neg and neg.nz (dim 0, vdim 104) but with 1 final pair each. `final_pair_summary`: `nonempty_nodes_with_two_zero_pairs` = 2, both from `planted_split_common`; no branch-derived control with n + 2 generators reaches two final pairs on a nonempty node. The per-node generator and variable counts (psc 4 and 2, psc.nz 5 and 3, as Singular sees them) are recorded by `gates.prove_nonempty` since the rerun and are in `artifacts/g4-planted-generator-counts.json` (the planted part of G4 rerun alone; the branch controls of results.json predate the field) |
@@ -81,7 +81,8 @@ and constants. The argument has four links.
    B'(w) = min over s of B(w + s e_x) (`drop_var`), valid because (w + s e_x).a = w.a for every monomial a of a
    polynomial free of x and every s; the pass route also checks that the image (and the exact support when known) is
    free of x and raises otherwise. Neither the pass route nor `drop_var` was used in this run (member kinds per branch: 91 res, 0 pass, counted in the SLP steps).
-   Checks: G2 random, G2 composition (two composed steps, with a mutant that must fail) and G2 real; the bound-lowered
+   Checks: G2 random, G2 composition (two composed steps; its inline mutant is vacuous, see the G2 composed row, and the
+   composed-bound mutant is M1b in `artifacts/mutants.json`) and G2 real; the bound-lowered
    and degree-drop mutants and their measured failures are recorded in `artifacts/mutants.json` (`mutants.py`).
    Composed bounds: only the level-4 step of the root t and of t.nz propagates a bound through two steps from exact
    supports; `G2_composition` (above) compares that step with the exact formal Sylvester resultant at every weight.
@@ -128,9 +129,11 @@ member digests and 23 digests of the final univariates).
 - **Controls (G4):** nonempty systems never certified: planted common roots, the planted split-common system, and the
   branch systems with one equation of the minimal unit subset removed. Singular shows that each of the six drop-one
   ideals is zero-dimensional and nonempty at p1 and p2 (a point set, dim 0), but only 2 of the 6 controls finished
-  (E10, E11); the other 4 were killed at their limit and are inconclusive. The evidence that the final-pair test can
-  see a nonempty node is the planted split-common system (two nonempty nodes with two zero final pairs each, Singular
-  dim 0); no branch-derived control with n + 2 generators reaches two final pairs on a nonempty node. A certificate on
+  (E10, E11); the other 4 were killed at their limit and are inconclusive. The only evidence with two or more zero
+  final pairs on a nonempty node is the planted split-common system (two nonempty nodes with two zero final pairs each,
+  Singular dim 0); the two extended controls (nodes neg and neg.nz, Singular dim 0, `G4.branch_extended_controls`) and
+  the review's planted system common2 add one zero final pair each on nonempty nodes; no branch-derived control with
+  n + 2 generators reaches two final pairs on a nonempty node. A certificate on
   a nonempty system would have stopped the experiment.
 
 ## How could this be wrong?
@@ -146,8 +149,9 @@ member digests and 23 digests of the final univariates).
 - The negative controls on the branch with one equation removed are weak in four of six cases: the child process was
   killed at its 300 s limit (E3, E5, E6, E7), so those controls show only that no certificate appeared in that time
   (inconclusive); 2 of 6 finished (E10, E11). The extended controls with n + 2 generators cover only drop E10 and drop
-  E11, not E3, E5, E6, E7, and reach one final pair on their nonempty nodes. The final-pair negative evidence is the
-  planted split-common system alone (two nonempty nodes, two zero pairs each, Singular dim 0); G4 passes when every
+  E11, not E3, E5, E6, E7, and reach one final pair on their nonempty nodes. The only final-pair negative evidence with two or
+  more zero pairs on a nonempty node is the planted split-common system (two nonempty nodes, two zero pairs each,
+  Singular dim 0); the extended controls and the review's common2 add one zero final pair each on nonempty nodes; G4 passes when every
   branch control is killed, by design (a kill is inconclusive, never a pass of its own).
 - The irreducibility of P (L a field) and EXP-142's reduction are premises; this experiment does not re-derive them
   beyond G0.
@@ -168,8 +172,10 @@ rerun with the corrected code (`artifacts/results.json`, `run-log.txt`). What ch
   hypothesis is not edited. The fact is now measured here: Singular at p1 and p2 gives dim 0 for each of the six
   drop-one ideals (vdim 146, 120, 120, 122, 104, 104) and dim -1 for the full subset
   (`G4.branch_subset_nonemptiness`; a planted unit drop-one ideal makes that check, and G4, fail: `tests/test_jacobian_exp146.py`).
-- **Controls.** The first record called the six drop-one controls "real negative evidence" and said the two finished
-  controls were the real negative evidence; only 2 of 6 finished and 4 were killed (inconclusive). No branch-derived
+- **Controls.** The first record (99ebd728) called each of the six drop-one systems "a zero-dimensional ideal with
+  points" (not measured then; measured now at p1 and p2, above) and called "the planted common root systems and the two
+  finished controls" "the real negative evidence"; only 2 of the 6 drop-one controls finished and 4 were killed
+  (inconclusive). No branch-derived
   control with n + 2 generators reaches two final pairs on a nonempty node; the final-pair evidence is
   `planted_split_common`.
 - **Counts.** Digests: 153 per branch (130 member digests plus 23 digests of the final univariates), not 130.
