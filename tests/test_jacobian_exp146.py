@@ -100,7 +100,6 @@ def test_constant_member_needs_proven_zero_degree_bounds_not_a_constant_image():
 # Fix pass 2026-11-16 (review findings F1 to F14)
 # ---------------------------------------------------------------------------------------------------------
 
-import json  # noqa: E402
 import subprocess  # noqa: E402
 
 singular_eval = importlib.import_module("singular_eval")
@@ -334,7 +333,6 @@ def test_f4_planted_split_exact_transform_project_and_replay():
     status = {r["id"]: r["status"] for r in st.records}
     assert status == {"s": "split", "s.nz": "certified", "s.z": "certified"}
     sp = st.records[0]["split"]
-    ring2 = st.nodes["s.nz"]["ring"]
     y = ring.ex.gen(0)
     a = sum(c * y**i for i, c in enumerate(sp["a"]))
     b = sum(c * y**i for i, c in enumerate(sp["b"]))
