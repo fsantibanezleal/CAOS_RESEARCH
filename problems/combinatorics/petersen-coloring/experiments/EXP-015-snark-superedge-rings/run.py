@@ -809,7 +809,8 @@ def second_encoding_matrices(block: transfer.Block) -> dict[str, np.ndarray]:
     """Sector matrices by the second encoding and the second solver (EXP-014 check_certificate.py, same encoding). The left triple
     is fixed by unit clauses in a fresh solver per left state instead of by assumptions: in python-sat 1.9.dev22 on
     Windows MiniSat 2.2 raises an access violation (exit code 0xC0000005) in `solve` under assumptions, with or without
-    `solve_limited`; without assumptions it is stable (checked on an order 20 block against CaDiCaL)."""
+    `solve_limited`, and also with the left triple fixed by unit clauses (28 of 30 G1 blocks, run-log 23:04), so
+    SECOND_SOLVER (default glucose4) is used; no stability of MiniSat 2.2 is claimed on any order."""
     from pysat.solvers import Solver
 
     clauses, pool, lab = second_encoding(block.pole)
@@ -865,6 +866,8 @@ def gate_g1(table: dict, workers: int) -> dict:
     reps, _ = orbit_pairs(p)
     mats = transfer.sector_matrices(superedge_block(p, reps[0][0], reps[0][1], "P"))
     ones = {o: int(m.sum()) for o, m in mats.items()}
+    # EXP-014 stores only entry counts for S, so this compares counts per sector (results key P_block_equals_EXP014_S);
+    # entry by entry the block equals S up to the ordering of the ends (2 of 36 orderings, verification of 2026-11-16).
     p_ok = ones == {"0": 120, "E": 296, "D3": 0, "D2": 8, "T1": 0, "T2": 0}
     rng = random.Random(SEED)
     sample = rng.sample(table["blocks"], 30)
@@ -1055,7 +1058,8 @@ def ensure_drat_trim() -> dict:
 
 
 def decide_noncolorable(g: graphs.Graph, stem: str, limit_s: int = 7200) -> dict:
-    """Non-colorability by CaDiCaL (DRAT proof checked by drat-trim) and by MiniSat 2.2 on the second encoding;
+    """Non-colorability by CaDiCaL (DRAT proof checked by drat-trim) and by SECOND_SOLVER (Glucose 4 by default; see the
+    comment at the SECOND_SOLVER setting) on the second encoding;
     then the structure (simple, cubic, girth, exact cyclic edge connectivity, order)."""
     tool = ensure_drat_trim()
     pl = poles.pole(g)

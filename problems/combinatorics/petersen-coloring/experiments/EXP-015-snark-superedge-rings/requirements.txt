@@ -1,4 +1,5 @@
-# versions used for the EXP-015 run (venv of CAOS_RESEARCH, 2026-11-15); CaDiCaL 1.5.3 and MiniSat 2.2 come with python-sat
+# versions used for the EXP-015 run (venv of CAOS_RESEARCH, 2026-11-15); CaDiCaL 1.5.3 and Glucose 4 (the second solver
+# used, `glucose4`) come with python-sat; MiniSat 2.2 (`minisat22`) crashes on this device
 python==3.13.14
 python-sat==1.9.dev22
 networkx==3.4.1

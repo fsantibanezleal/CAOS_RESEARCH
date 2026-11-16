@@ -1,4 +1,4 @@
-# EXP-015 verdict - CONFIRMED: every simple ring of two superedge blocks cut from the 91 cyclically 5-edge-connected snarks of order at most 28 (blocks of F), and every ring of three over F22, is Petersen colorable
+# EXP-015 verdict - CONFIRMED: every simple ring of two superedge blocks of F (every block of the 16 cyclically 5-edge-connected snarks of order at most 26, and the distance-5 blocks of the 75 of order 28), and every ring of three over F22, is Petersen colorable
 
 Date: 2026-11-16 (run 2026-11-15 22:51 to 2026-11-16 04:15). Hypothesis frozen at `90040939` before any code ran; instrument
 `run.py` (`gates`, `blocks`, `rings2`, `rings3`, `crosscheck`, `describe`, `zero`, `all`), tests `tests/test_petersen_exp015.py`.
@@ -36,7 +36,7 @@ with the library product on 200,000 random triples of R2 (0 mismatches).
 sides colorable (recomputed here, 26 to 42 s).
 
 **Descriptive.** Sectors conducted by the 3,057 blocks: `{0,E,D3,D2}` 940, `{0,E,D3,D2,T2}` 1,002, `{0,E,D2}` 538, `{0,E,D2,T2}` 434,
-`{0,E,D3,D2,T1,T2}` 67, and 8 smaller sets (every block conducts `0` and `E`; the full list is in `results.json`, `blocks`). Sample of
+`{0,E,D3,D2,T1,T2}` 67, and 7 rarer sets (76 blocks) (every block conducts `0` and `E`; the full list is in `results.json`, `blocks`). Sample of
 200 random rings of two (orders 42 to 52, seed 20261126): girth 3 in 2, 4 in 7, 5 in 191; exact cyclic edge connectivity 3 in 2,
 4 in 10, at least 5 in 188 (exact search for a cycle-separating cut of at most four edges). So the colorable rings found are
 mostly cyclically 5-edge-connected themselves, and none is a counterexample.
@@ -45,7 +45,10 @@ mostly cyclically 5-edge-connected themselves, and none is a counterexample.
 
 - **G0 PASS.** SHA-256 of the six files match `SHA256SUMS`; 91 graphs in the listed counts (1, 1, 2, 2, 10, 75), each cubic, simple,
   girth at least 5, cyclically 5-edge-connected (exact), not 3-edge-colorable (SAT).
-- **G1 PASS.** The block of `P` has 120, 296, 8 entries in `0`, `E`, `D2` and none elsewhere (EXP-014's `S`); 30 random blocks of F
+- **G1 PASS.** The block of `P` has 120, 296, 8 entries in `0`, `E`, `D2` and none elsewhere, the entry counts of EXP-014's `S`
+  (EXP-014 stores only counts; the gate and `results.json` `G1.P_block_equals_EXP014_S` compare counts per sector, and entry by
+  entry the block equals `S` up to the ordering of the ends, in 2 of the 36 orderings, by the independent verification of
+  2026-11-16); 30 random blocks of F
   (seed 20261115, orders 24 to 28) recomputed with the second encoding and a second solver equal entry by entry.
   **Deviation:** the second solver is Glucose 4, not MiniSat 2.2 (see Limitations).
 - **G2 PASS** (= R4).
@@ -105,7 +108,10 @@ of the six dangling ends (the 10 splits), and superedge blocks cut from order-30
   it still crashed on 28 of 30 blocks (23:04). Glucose 4 (a MiniSat derivative, code independent of CaDiCaL) was used instead
   (`EXP015_SECOND_SOLVER` selects another); the same encoding and the same G1 and zero-trace procedures. The hypothesis names MiniSat 2.2, so this
   is a deviation to be accepted or rerun on a device where `minisat22` is stable. The unit test of `second_encoding_matrices` uses
-  the default solver.
+  the default solver. `run-log.txt` lines 1 to 21 come before the production run: three gate runs (22:51 to 22:57 on code
+  committed afterwards as cbad1710 at 22:53, then 23:01 to 23:04 and 23:08 to 23:20 while the second solver was being changed) and
+  one ad hoc probe, line 16 "t13: 24/24", which no committed subcommand or test writes; what that probe ran is not recorded. The
+  `run.py all` production run starts at line 22 (23:20:44, commit c704fc3d).
 - The data manifest lists the top-level files of the data root; the `zero/` folder (the `G52` CNF and DRAT proof) holds the hashes
   above and is not listed there.
 - The blocks run took 2 h 8 min on a loaded machine; the final `all` run took 4 h 55 min (23:20 to 04:15).

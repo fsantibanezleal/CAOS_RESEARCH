@@ -67,7 +67,7 @@ def test_orbits_of_pairs_of_the_petersen_graph(run):
     assert len(reps) == 1 and reps[0][2] == 2  # all 30 pairs at distance 2 form one orbit; none at distance 3 or more
 
 
-def test_superedge_block_of_p_equals_the_exp014_s_entries(petersen_block):
+def test_superedge_block_of_p_has_the_exp014_s_entry_counts(petersen_block):
     blk, mats = petersen_block
     assert len(blk.pole.kept) == 8
     ones = {o: int(m.sum()) for o, m in mats.items()}
