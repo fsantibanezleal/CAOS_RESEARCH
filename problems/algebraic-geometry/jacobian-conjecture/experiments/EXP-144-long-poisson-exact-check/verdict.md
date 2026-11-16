@@ -59,3 +59,23 @@ P5 are [D].
   than arXiv v1.
 - The radical claim uses the quotient-dimension count; it is a finite exact computation, but its code is sympy's, trusted
   as in the other experiments.
+
+## Addendum 1 (2026-11-15): reproducibility hardening (JCB-105)
+
+Declared in `hypothesis.md` at commit 327d7171 before any addendum code ran. The verdict word does not change.
+
+- **Data root.** `run.py` takes `--data-root` (default: `CAOS_RESEARCH_DATA_ROOT`); with neither it prints a message and exits 2
+  (observed). `git grep -n "E:/" run.py` prints nothing. Evidence: `run.py` (argument parsing before the PDF pin); SHA-256 of
+  the PDF re-matched on the run.
+- **Box sufficiency.** Pure-power exponents of the lex basis `k = [1, 2, 1, 2]` (x, q, p, z) against box bounds `[8, 8, 8, 8]`:
+  every `k_i <= 8`, so the box holds every standard monomial; the quotient dimension 3 equals the 3 solutions. Recorded as
+  `P4_pure_power_exponents`, `P4_box_bounds`, `P4_box_sufficient` in `artifacts/results.json`.
+- **Versions.** `python_version` and `sympy_version` (1.14.0) in `artifacts/results.json`.
+- **Tests.** `tests/test_jacobian_exp144.py` gained the P2 bracket-matrix test and the C2 test; both pass against the existing
+  helpers (they needed no new helper code, so there was no red state).
+- **Comparison.** `artifacts/addendum-1.json`: 19 keys of the pre-addendum `results.json` compared, 19 match, none differ
+  (timings reported apart; the rerun took 77.5 s against 77.1 s recorded). Every prediction and control passes; exit 0.
+
+How could this be wrong? The comparison is of the file the same code wrote before, so it shows determinism and absence of
+drift, not independent correctness (that stays with the P2 and P4 checks). The box check relies on `is_zero_dimensional`
+and the leading monomials of sympy's lex basis. Timings vary by machine load and are not part of the claim.
