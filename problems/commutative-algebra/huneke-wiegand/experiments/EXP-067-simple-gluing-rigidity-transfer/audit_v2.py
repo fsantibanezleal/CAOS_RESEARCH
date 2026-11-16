@@ -1,9 +1,13 @@
 """EXP-067 addendum 1 (HWB-095): independent audit_v2.
 
 Exact integers and Python bitsets only. The script does not import the producer
-`run.py` as a library and does not read its results: it reads the (p, q) list of
-`artifacts/results.json` and loads `run.py` only to observe the producer refuse
-the noncoprime inputs of H6(b). The base semigroup comes from EXP-009's
+`run.py` as a library and uses none of its results. It reads the (p, q) list of
+`artifacts/results.json` (the case list only) and executes `run.py` as a module for
+two observations: the ten H6(b) refusal calls, and one specificity call on the
+coprime pair (4, 5) that must return without raising. No producer return value
+enters any gate; H6(b) counts a refusal only when the producer raises
+ValueError with one of run.py's two refusal messages (any other exception is
+recorded as `producer_unexpected_error` and fails H6(b)). The base semigroup comes from EXP-009's
 `audit.py` (the loader the existing EXP-067 auditor uses) and is rebuilt here
 from its generators.
 
@@ -21,7 +25,9 @@ conductor of Gamma.
 With T = max(c, q*(cG + m)) all of E^(q), D^(q), their predictions and
 E^(q) + E^(q) contain every integer >= 2T. Each comparison runs over [0, B]
 with B = 2T + 2, which is at least "the conductor plus 2*q*s" of the addendum,
-and the script also records that the tails inside the window are full.
+and the script records `tail_bound` (T), `base_conductor` (cG) and
+`window_covers_2T` (B >= 2T + 1); H1 requires the last, and an empty tail range
+counts as not full, so a window that is too short fails instead of passing vacuously.
 Equality on [0, B] is therefore equality of the complete sets. Delta is
 tabulated up to B + 2*(q*s + 1), the most any shifted membership test reads.
 
@@ -49,6 +55,10 @@ PRODUCER = HERE / "run.py"
 
 P_RANGE = range(4, 13)
 Q_PER_P = 8
+REFUSAL_MESSAGES = (
+    "generators do not define a numerical semigroup",  # run.py: apery_set
+    "q must be coprime to the multiplicity",  # run.py: predicted_glued_apery
+)
 ORIGINAL_NONCOPRIME = ((4, 2), (5, 3), (6, 2), (7, 7), (8, 2))
 EXTRA_NONCOPRIME = ((9, 2), (10, 5), (11, 11), (12, 3), (4, 6))
 
@@ -133,6 +143,11 @@ def minimal_generators(bits: int, limit: int) -> list[int]:
     return positions(nonzero & ~sums)
 
 
+def range_full(bits: int, low: int, high: int) -> bool:
+    """Every position of [low, high] is set; an empty range is not full."""
+    return low <= high and all(bits >> a & 1 for a in range(low, high + 1))
+
+
 def first_difference(left: int, right: int) -> int | None:
     diff = left ^ right
     return (diff & -diff).bit_length() - 1 if diff else None
@@ -162,17 +177,20 @@ def shift_record(
         "first_sumset_difference": first_difference(sums, d_bits),
     }
     if with_tail:
-        record["tail_e_full"] = all(e_bits >> a & 1 for a in range(conductor, bound + 1))
-        record["tail_d_full"] = all(d_bits >> a & 1 for a in range(conductor, bound + 1))
-        record["tail_sum_full"] = all(
-            sums >> a & 1 for a in range(2 * conductor, bound + 1)
-        )
+        record["tail_e_full"] = range_full(e_bits, conductor, bound)
+        record["tail_d_full"] = range_full(d_bits, conductor, bound)
+        record["tail_sum_full"] = range_full(sums, 2 * conductor, bound)
     return record
 
 
 def audit_case(
-    p: int, q: int, base_gens: tuple[int, ...], base_frob: int
+    p: int,
+    q: int,
+    base_gens: tuple[int, ...],
+    base_frob: int,
+    bound: int | None = None,
 ) -> dict[str, object]:
+    """One (p, q) case. `bound` overrides the comparison window (tests only)."""
     multiplicity = 24 * p
     base_shift = 6 * p
     base_conductor = base_frob + 1
@@ -193,7 +211,9 @@ def audit_case(
     conductor = frobenius + 1
 
     tail = max(conductor, q * (base_conductor + multiplicity))
-    bound = 2 * tail + 2
+    if bound is None:
+        bound = 2 * tail + 2
+    window_covers_2t = bound >= 2 * tail + 1
     limit = bound + 2 * (scaled + 1)
     base_limit = limit // q + 2 * base_shift + 2
     base_bits = semigroup_bitset(base_gens, base_limit)
@@ -224,10 +244,10 @@ def audit_case(
         main["tail_e_full"]
         and main["tail_d_full"]
         and main["tail_sum_full"]
-        and all(e_predicted >> a & 1 for a in range(tail, bound + 1))
-        and all(d_predicted >> a & 1 for a in range(tail, bound + 1))
+        and range_full(e_predicted, tail, bound)
+        and range_full(d_predicted, tail, bound)
     )
-    h1 = e_equal and d_equal and tails_ok
+    h1 = e_equal and d_equal and tails_ok and window_covers_2t
     h2 = bool(main["rigid"]) and sum_of_predicted == d_predicted
     h4 = len(generators) == 11 * p
     failures = [
@@ -247,6 +267,9 @@ def audit_case(
         "scaled_shift": scaled,
         "frobenius": frobenius,
         "conductor": conductor,
+        "tail_bound": tail,
+        "base_conductor": base_conductor,
+        "window_covers_2T": window_covers_2t,
         "comparison_bound": bound,
         "positions_compared": bound + 1,
         "h1_e_equal": e_equal,
@@ -309,9 +332,13 @@ def control_45(q: int) -> dict[str, object]:
     }
 
 
-def noncoprime_record(p: int, q: int) -> dict[str, object]:
+def noncoprime_record(
+    p: int, q: int, producer: ModuleType | None = None
+) -> dict[str, object]:
     """H6(b): gcd of the generators, an integer above the bound outside the set,
-    and the producer's refusal observed by calling it."""
+    and the producer's refusal observed by calling it. A refusal is a ValueError
+    carrying one of run.py's two refusal messages; any other exception is
+    recorded in `producer_unexpected_error` and is not a refusal."""
     multiplicity = 24 * p
     exp009 = load_module(EXP009_AUDIT, "exp009_audit_v2_noncoprime")
     _, base_frob, base_gens = exp009.independent_mask(p)
@@ -327,12 +354,17 @@ def noncoprime_record(p: int, q: int) -> dict[str, object]:
     base_bits = semigroup_bitset(tuple(base_gens), limit // q + 1)
     delta_bits = glued_bitset(multiplicity, q, base_bits, limit)
     stray = [value for value in positions(delta_bits) if value % divisor != 0]
-    producer = load_module(PRODUCER, "exp067_producer_refusal_probe")
+    if producer is None:
+        producer = load_module(PRODUCER, "exp067_producer_refusal_probe")
+    refused, error_type, error, unexpected = False, "", "", ""
     try:
         producer.case_record(p, q)
-        refused, error_type, error = False, "", ""
-    except Exception as exc:  # the refusal is the observation
-        refused, error_type, error = True, type(exc).__name__, str(exc)
+    except Exception as exc:  # the exception is the observation; only a refusal counts
+        error_type, error = type(exc).__name__, str(exc)
+        if isinstance(exc, ValueError) and error in REFUSAL_MESSAGES:
+            refused = True
+        else:
+            unexpected = f"{error_type}: {error}"
     return {
         "p": p,
         "q": q,
@@ -348,13 +380,20 @@ def noncoprime_record(p: int, q: int) -> dict[str, object]:
         "producer_refused": refused,
         "producer_error_type": error_type,
         "producer_error": error,
+        "producer_unexpected_error": unexpected,
     }
 
 
-def producer_accepts_coprime() -> bool:
-    """The refusal is specific: the producer accepts a coprime pair."""
-    producer = load_module(PRODUCER, "exp067_producer_acceptance_probe")
-    return bool(producer.case_record(4, 5)["accepted"])
+def producer_does_not_refuse_coprime(producer: ModuleType | None = None) -> bool:
+    """The refusal is specific: the producer returns without raising on the coprime
+    pair (4, 5). Only whether it raised is read, never a returned value."""
+    if producer is None:
+        producer = load_module(PRODUCER, "exp067_producer_acceptance_probe")
+    try:
+        producer.case_record(4, 5)
+    except Exception:
+        return False
+    return True
 
 
 def first_q_values(multiplicity: int, count: int = Q_PER_P) -> tuple[int, ...]:
@@ -389,16 +428,17 @@ def main() -> int:
     controls_b = [
         noncoprime_record(p, q) for p, q in ORIGINAL_NONCOPRIME + EXTRA_NONCOPRIME
     ]
-    coprime_accepted = producer_accepts_coprime()
+    coprime_not_refused = producer_does_not_refuse_coprime()
 
     h3 = all(bool(b["mask_equal"]) for b in bases.values())
     h6a = all(bool(c["nonrigid"]) and bool(c["shift_is_gap"]) for c in controls_a)
-    h6b = coprime_accepted and all(
+    h6b = coprime_not_refused and all(
         bool(c["gcd_exceeds_one"])
         and bool(c["witness_above_bound"])
         and bool(c["witness_not_in_semigroup"])
         and c["elements_not_divisible_by_gcd"] == 0
         and bool(c["producer_refused"])
+        and not c["producer_unexpected_error"]
         for c in controls_b
     )
     summary = {
@@ -407,7 +447,10 @@ def main() -> int:
         "H1": sum(
             1
             for c in cases
-            if c.get("h1_e_equal") and c.get("h1_d_equal") and c.get("h1_tails_full")
+            if c.get("h1_e_equal")
+            and c.get("h1_d_equal")
+            and c.get("h1_tails_full")
+            and c.get("window_covers_2T")
         ),
         "H2": sum(1 for c in cases if c.get("h2_rigid")),
         "H3": sum(1 for b in bases.values() if b["mask_equal"]),
@@ -446,7 +489,7 @@ def main() -> int:
         "base_semigroups": [bases[p] for p in P_RANGE],
         "controls_h6a": controls_a,
         "controls_h6b": controls_b,
-        "producer_accepts_coprime_pair": coprime_accepted,
+        "producer_does_not_refuse_coprime_pair": coprime_not_refused,
         "case_aggregate_sha256": hashlib.sha256(canonical.encode("utf-8")).hexdigest(),
         "accepted": accepted,
     }
