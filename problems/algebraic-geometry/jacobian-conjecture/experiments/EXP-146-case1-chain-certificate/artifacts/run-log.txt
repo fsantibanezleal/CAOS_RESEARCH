@@ -1,0 +1,37 @@
+[00:07:20] (p1, r1) = (536870909, 505390653); (p2, r2) = (536870879, 12005842)
+[00:07:21] G0 inputs: PASS {'pass': True, 'branches_py_stdout': ['E2 = a2 (q1^2 - c^2)^2 in L[q1]: True; a2 != 0 and c != 0: True', 'branch q1 = +1c: equations kept [3, 5, 6, 7, 9, 10, 11, 12, 13] (vanishing: [1, 2, 4, 8]); terms [22, 35, 35, 23, 52, 52, 52, 45, 23]; max digits [126, 300, 300, 139, 477, 479, 477, 315, 138]', 'branch q1 = -1c: equations kept [3, 5, 6, 7, 9, 10, 11, 12, 13] (vanishing: [1, 2, 4, 8]); terms [22, 35, 35, 23, 52, 52, 52, 45, 23]; max digits [126, 300, 300, 139, 477, 479, 477, 315, 138]'], 'sha_rerun_plus': 'bd227b531c813586f60b1792b90ef7595d19d226b7ab2d380b3125250849424a', 'sha_dataroot_plus': 'bd227b531c813586f60b1792b90ef7595d19d226b7ab2d380b3125250849424a', 'sha_expected_plus': 'bd227b531c813586f60b1792b90ef7595d19d226b7ab2d380b3125250849424a', 'sha_rerun_minus': '0a3a390581c4f44c06907a61022069f7d704283e3b1def8947bb44cafaae76e9', 'sha_dataroot_minus': '0a3a390581c4f44c06907a61022069f7d704283e3b1def8947bb44cafaae76e9', 'sha_expected_minus': '0a3a390581c4f44c06907a61022069f7d704283e3b1def8947bb44cafaae76e9'}
+[00:07:21] G1 ring maps: PASS
+[00:08:12] G2 random pairs: PASS {'cases': 1862, 'resultant_zero': 560, 'dead_bound': 0, 'weights_checked': 54390, 'violations': 0, 'proven_zero_checked': 551, 'proven_zero_violations': 0, 'planted_cancel': 2002, 'planted_monomial': 1513, 'split_cases': 1539, 'low_tight': 543, 'formal_degree_above_actual': 926, 'x_split_cases': 338, 'pass': True} (51 s)
+[00:08:13] G3 degree-drop formula: PASS {'cases': 500, 'mismatches': 0, 'drops': {2: 231, 1: 269}, 'pass': True} (1 s)
+[00:13:14] G4 control removing E3: {'removed': 'E3', 'certified': False, 'outcome': 'killed at the 300 s limit'}
+[00:18:14] G4 control removing E5: {'removed': 'E5', 'certified': False, 'outcome': 'killed at the 300 s limit'}
+[00:23:14] G4 control removing E6: {'removed': 'E6', 'certified': False, 'outcome': 'killed at the 300 s limit'}
+[00:28:14] G4 control removing E7: {'removed': 'E7', 'certified': False, 'outcome': 'killed at the 300 s limit'}
+[00:28:37] G4 control removing E10: {'removed': 'E10', 'certified': False, 'nodes': [['neg', 'split', None], ['neg.nz', 'unknown', 'no pivot leading coefficient a + b v matches a root of the gcd'], ['neg.z', 'split', None], ['neg.z.nz', 'certified', None], ['neg.z.z', 'certified', None]], 'outcome': 'finished'}
+[00:28:59] G4 control removing E11: {'removed': 'E11', 'certified': False, 'nodes': [['neg', 'split', None], ['neg.nz', 'unknown', 'no pivot leading coefficient a + b v matches a root of the gcd'], ['neg.z', 'split', None], ['neg.z.nz', 'certified', None], ['neg.z.z', 'certified', None]], 'outcome': 'finished'}
+[00:28:59] G4 controls: PASS {'planted_unit_certified': True, 'planted_common_root_certified': False, 'planted_common_root_statuses': ['unknown'], 'planted_unit2_certified': True, 'planted_unit2_constant_matches': True, 'planted_common_root_chain_certified': False, 'planted_common_root_chain_statuses': [('common2', 'unknown')], 'pass': True, 'branch_minus_one_equation': [{'removed': 'E3', 'certified': False, 'outcome': 'killed at the 300 s limit'}, {'removed': 'E5', 'certified': False, 'outcome': 'killed at the 300 s limit'}, {'removed': 'E6', 'certified': False, 'outcome': 'killed at the 300 s limit'}, {'removed': 'E7', 'certified': False, 'outcome': 'killed at the 300 s limit'}, {'removed': 'E10', 'certified': False, 'nodes': [['neg', 'split', None], ['neg.nz', 'unknown', 'no pivot leading coefficient a + b v matches a root of the gcd'], ['neg.z', 'split', None], ['neg.z.nz', 'certified', None], ['neg.z.z', 'certified', None]], 'outcome': 'finished'}, {'removed': 'E11', 'certified': False, 'nodes': [['neg', 'split', None], ['neg.nz', 'unknown', 'no pivot leading coefficient a + b v matches a root of the gcd'], ['neg.z', 'split', None], ['neg.z.nz', 'certified', None], ['neg.z.z', 'certified', None]], 'outcome': 'finished'}]} (1246 s)
+[00:28:59] branch plus: tree at (p1, r1)
+[00:29:13] [t] split on q5-pivot leading coefficient (a + b q0), gcd {'gcd_degree': 212, 'gcd_factors': [(1, 212)]}
+[00:30:20] [t.nz] certified (2 nonzero of 2) in 66.75 s
+[00:30:21] [t.z] split on q3-pivot leading coefficient (a + b q2), gcd {'gcd_degree': 2, 'gcd_factors': [(1, 2)]}
+[00:30:23] [t.z.nz] certified (3 nonzero of 4) in 2.11 s
+[00:30:34] [t.z.z] certified (6 nonzero of 6) in 11.03 s
+[00:30:34] branch plus: CERTIFIED in 95 s
+[00:30:39] branch minus: tree at (p1, r1)
+[00:30:48] [t] split on q5-pivot leading coefficient (a + b q0), gcd {'gcd_degree': 212, 'gcd_factors': [(1, 212)]}
+[00:31:39] [t.nz] certified (2 nonzero of 2) in 50.47 s
+[00:31:40] [t.z] split on q3-pivot leading coefficient (a + b q2), gcd {'gcd_degree': 2, 'gcd_factors': [(1, 2)]}
+[00:31:41] [t.z.nz] certified (3 nonzero of 4) in 1.39 s
+[00:31:49] [t.z.z] certified (6 nonzero of 6) in 7.66 s
+[00:31:49] branch minus: CERTIFIED in 70 s
+[00:31:52] G2 real system: 118 exact levels, 0 violations; G5: 118 exact levels, 0 mismatches
+[00:31:53] replay plus t.nz at p2: certified=True problems=[]
+[00:31:53] replay plus t.z.nz at p2: certified=True problems=[]
+[00:31:53] replay plus t.z.z at p2: certified=True problems=[]
+[00:31:54] replay minus t.nz at p2: certified=True problems=[]
+[00:31:54] replay minus t.z.nz at p2: certified=True problems=[]
+[00:31:55] replay minus t.z.z at p2: certified=True problems=[]
+[00:31:55] Singular check plus: running
+[00:32:07] Singular plus: pass=True digests=130 constants=18
+[00:32:07] Singular check minus: running
+[00:32:09] Singular minus: pass=True digests=130 constants=18
