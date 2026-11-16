@@ -84,10 +84,11 @@
       "positions_compared": 1512
     }
   ],
-  "case_aggregate_sha256": "8f5df5c579a49f8311b54cb88ca5961d000fded05e6ad28d35b03f7ba197b747",
+  "case_aggregate_sha256": "856212806bef7fa24e8c2ceaad28004528dffc08f7225d4d327a506fa61966d1",
   "cases": [
     {
       "accepted": true,
+      "base_conductor": 312,
       "comparison_bound": 818,
       "conductor": 312,
       "failures": [],
@@ -116,10 +117,13 @@
       "p": 4,
       "positions_compared": 819,
       "q": 1,
-      "scaled_shift": 24
+      "scaled_shift": 24,
+      "tail_bound": 408,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 312,
       "comparison_bound": 4082,
       "conductor": 1940,
       "failures": [],
@@ -148,10 +152,13 @@
       "p": 4,
       "positions_compared": 4083,
       "q": 5,
-      "scaled_shift": 120
+      "scaled_shift": 120,
+      "tail_bound": 2040,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 312,
       "comparison_bound": 5714,
       "conductor": 2754,
       "failures": [],
@@ -180,10 +187,13 @@
       "p": 4,
       "positions_compared": 5715,
       "q": 7,
-      "scaled_shift": 168
+      "scaled_shift": 168,
+      "tail_bound": 2856,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 312,
       "comparison_bound": 8978,
       "conductor": 4382,
       "failures": [],
@@ -212,10 +222,13 @@
       "p": 4,
       "positions_compared": 8979,
       "q": 11,
-      "scaled_shift": 264
+      "scaled_shift": 264,
+      "tail_bound": 4488,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 312,
       "comparison_bound": 10610,
       "conductor": 5196,
       "failures": [],
@@ -244,10 +257,13 @@
       "p": 4,
       "positions_compared": 10611,
       "q": 13,
-      "scaled_shift": 312
+      "scaled_shift": 312,
+      "tail_bound": 5304,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 312,
       "comparison_bound": 13874,
       "conductor": 6824,
       "failures": [],
@@ -276,10 +292,13 @@
       "p": 4,
       "positions_compared": 13875,
       "q": 17,
-      "scaled_shift": 408
+      "scaled_shift": 408,
+      "tail_bound": 6936,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 312,
       "comparison_bound": 15506,
       "conductor": 7638,
       "failures": [],
@@ -308,10 +327,13 @@
       "p": 4,
       "positions_compared": 15507,
       "q": 19,
-      "scaled_shift": 456
+      "scaled_shift": 456,
+      "tail_bound": 7752,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 312,
       "comparison_bound": 18770,
       "conductor": 9266,
       "failures": [],
@@ -340,10 +362,13 @@
       "p": 4,
       "positions_compared": 18771,
       "q": 23,
-      "scaled_shift": 552
+      "scaled_shift": 552,
+      "tail_bound": 9384,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 390,
       "comparison_bound": 1022,
       "conductor": 390,
       "failures": [],
@@ -372,10 +397,13 @@
       "p": 5,
       "positions_compared": 1023,
       "q": 1,
-      "scaled_shift": 30
+      "scaled_shift": 30,
+      "tail_bound": 510,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 390,
       "comparison_bound": 7142,
       "conductor": 3444,
       "failures": [],
@@ -404,10 +432,13 @@
       "p": 5,
       "positions_compared": 7143,
       "q": 7,
-      "scaled_shift": 210
+      "scaled_shift": 210,
+      "tail_bound": 3570,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 390,
       "comparison_bound": 11222,
       "conductor": 5480,
       "failures": [],
@@ -436,10 +467,13 @@
       "p": 5,
       "positions_compared": 11223,
       "q": 11,
-      "scaled_shift": 330
+      "scaled_shift": 330,
+      "tail_bound": 5610,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 390,
       "comparison_bound": 13262,
       "conductor": 6498,
       "failures": [],
@@ -468,10 +502,13 @@
       "p": 5,
       "positions_compared": 13263,
       "q": 13,
-      "scaled_shift": 390
+      "scaled_shift": 390,
+      "tail_bound": 6630,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 390,
       "comparison_bound": 17342,
       "conductor": 8534,
       "failures": [],
@@ -500,10 +537,13 @@
       "p": 5,
       "positions_compared": 17343,
       "q": 17,
-      "scaled_shift": 510
+      "scaled_shift": 510,
+      "tail_bound": 8670,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 390,
       "comparison_bound": 19382,
       "conductor": 9552,
       "failures": [],
@@ -532,10 +572,13 @@
       "p": 5,
       "positions_compared": 19383,
       "q": 19,
-      "scaled_shift": 570
+      "scaled_shift": 570,
+      "tail_bound": 9690,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 390,
       "comparison_bound": 23462,
       "conductor": 11588,
       "failures": [],
@@ -564,10 +607,13 @@
       "p": 5,
       "positions_compared": 23463,
       "q": 23,
-      "scaled_shift": 690
+      "scaled_shift": 690,
+      "tail_bound": 11730,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 390,
       "comparison_bound": 29582,
       "conductor": 14642,
       "failures": [],
@@ -596,10 +642,13 @@
       "p": 5,
       "positions_compared": 29583,
       "q": 29,
-      "scaled_shift": 870
+      "scaled_shift": 870,
+      "tail_bound": 14790,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 468,
       "comparison_bound": 1226,
       "conductor": 468,
       "failures": [],
@@ -628,10 +677,13 @@
       "p": 6,
       "positions_compared": 1227,
       "q": 1,
-      "scaled_shift": 36
+      "scaled_shift": 36,
+      "tail_bound": 612,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 468,
       "comparison_bound": 6122,
       "conductor": 2912,
       "failures": [],
@@ -660,10 +712,13 @@
       "p": 6,
       "positions_compared": 6123,
       "q": 5,
-      "scaled_shift": 180
+      "scaled_shift": 180,
+      "tail_bound": 3060,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 468,
       "comparison_bound": 8570,
       "conductor": 4134,
       "failures": [],
@@ -692,10 +747,13 @@
       "p": 6,
       "positions_compared": 8571,
       "q": 7,
-      "scaled_shift": 252
+      "scaled_shift": 252,
+      "tail_bound": 4284,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 468,
       "comparison_bound": 13466,
       "conductor": 6578,
       "failures": [],
@@ -724,10 +782,13 @@
       "p": 6,
       "positions_compared": 13467,
       "q": 11,
-      "scaled_shift": 396
+      "scaled_shift": 396,
+      "tail_bound": 6732,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 468,
       "comparison_bound": 15914,
       "conductor": 7800,
       "failures": [],
@@ -756,10 +817,13 @@
       "p": 6,
       "positions_compared": 15915,
       "q": 13,
-      "scaled_shift": 468
+      "scaled_shift": 468,
+      "tail_bound": 7956,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 468,
       "comparison_bound": 20810,
       "conductor": 10244,
       "failures": [],
@@ -788,10 +852,13 @@
       "p": 6,
       "positions_compared": 20811,
       "q": 17,
-      "scaled_shift": 612
+      "scaled_shift": 612,
+      "tail_bound": 10404,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 468,
       "comparison_bound": 23258,
       "conductor": 11466,
       "failures": [],
@@ -820,10 +887,13 @@
       "p": 6,
       "positions_compared": 23259,
       "q": 19,
-      "scaled_shift": 684
+      "scaled_shift": 684,
+      "tail_bound": 11628,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 468,
       "comparison_bound": 28154,
       "conductor": 13910,
       "failures": [],
@@ -852,10 +922,13 @@
       "p": 6,
       "positions_compared": 28155,
       "q": 23,
-      "scaled_shift": 828
+      "scaled_shift": 828,
+      "tail_bound": 14076,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 546,
       "comparison_bound": 1430,
       "conductor": 546,
       "failures": [],
@@ -884,10 +957,13 @@
       "p": 7,
       "positions_compared": 1431,
       "q": 1,
-      "scaled_shift": 42
+      "scaled_shift": 42,
+      "tail_bound": 714,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 546,
       "comparison_bound": 7142,
       "conductor": 3398,
       "failures": [],
@@ -916,10 +992,13 @@
       "p": 7,
       "positions_compared": 7143,
       "q": 5,
-      "scaled_shift": 210
+      "scaled_shift": 210,
+      "tail_bound": 3570,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 546,
       "comparison_bound": 15710,
       "conductor": 7676,
       "failures": [],
@@ -948,10 +1027,13 @@
       "p": 7,
       "positions_compared": 15711,
       "q": 11,
-      "scaled_shift": 462
+      "scaled_shift": 462,
+      "tail_bound": 7854,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 546,
       "comparison_bound": 18566,
       "conductor": 9102,
       "failures": [],
@@ -980,10 +1062,13 @@
       "p": 7,
       "positions_compared": 18567,
       "q": 13,
-      "scaled_shift": 546
+      "scaled_shift": 546,
+      "tail_bound": 9282,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 546,
       "comparison_bound": 24278,
       "conductor": 11954,
       "failures": [],
@@ -1012,10 +1097,13 @@
       "p": 7,
       "positions_compared": 24279,
       "q": 17,
-      "scaled_shift": 714
+      "scaled_shift": 714,
+      "tail_bound": 12138,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 546,
       "comparison_bound": 27134,
       "conductor": 13380,
       "failures": [],
@@ -1044,10 +1132,13 @@
       "p": 7,
       "positions_compared": 27135,
       "q": 19,
-      "scaled_shift": 798
+      "scaled_shift": 798,
+      "tail_bound": 13566,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 546,
       "comparison_bound": 32846,
       "conductor": 16232,
       "failures": [],
@@ -1076,10 +1167,13 @@
       "p": 7,
       "positions_compared": 32847,
       "q": 23,
-      "scaled_shift": 966
+      "scaled_shift": 966,
+      "tail_bound": 16422,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 546,
       "comparison_bound": 35702,
       "conductor": 17658,
       "failures": [],
@@ -1108,10 +1202,13 @@
       "p": 7,
       "positions_compared": 35703,
       "q": 25,
-      "scaled_shift": 1050
+      "scaled_shift": 1050,
+      "tail_bound": 17850,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 624,
       "comparison_bound": 1634,
       "conductor": 624,
       "failures": [],
@@ -1140,10 +1237,13 @@
       "p": 8,
       "positions_compared": 1635,
       "q": 1,
-      "scaled_shift": 48
+      "scaled_shift": 48,
+      "tail_bound": 816,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 624,
       "comparison_bound": 8162,
       "conductor": 3884,
       "failures": [],
@@ -1172,10 +1272,13 @@
       "p": 8,
       "positions_compared": 8163,
       "q": 5,
-      "scaled_shift": 240
+      "scaled_shift": 240,
+      "tail_bound": 4080,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 624,
       "comparison_bound": 11426,
       "conductor": 5514,
       "failures": [],
@@ -1204,10 +1307,13 @@
       "p": 8,
       "positions_compared": 11427,
       "q": 7,
-      "scaled_shift": 336
+      "scaled_shift": 336,
+      "tail_bound": 5712,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 624,
       "comparison_bound": 17954,
       "conductor": 8774,
       "failures": [],
@@ -1236,10 +1342,13 @@
       "p": 8,
       "positions_compared": 17955,
       "q": 11,
-      "scaled_shift": 528
+      "scaled_shift": 528,
+      "tail_bound": 8976,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 624,
       "comparison_bound": 21218,
       "conductor": 10404,
       "failures": [],
@@ -1268,10 +1377,13 @@
       "p": 8,
       "positions_compared": 21219,
       "q": 13,
-      "scaled_shift": 624
+      "scaled_shift": 624,
+      "tail_bound": 10608,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 624,
       "comparison_bound": 27746,
       "conductor": 13664,
       "failures": [],
@@ -1300,10 +1412,13 @@
       "p": 8,
       "positions_compared": 27747,
       "q": 17,
-      "scaled_shift": 816
+      "scaled_shift": 816,
+      "tail_bound": 13872,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 624,
       "comparison_bound": 31010,
       "conductor": 15294,
       "failures": [],
@@ -1332,10 +1447,13 @@
       "p": 8,
       "positions_compared": 31011,
       "q": 19,
-      "scaled_shift": 912
+      "scaled_shift": 912,
+      "tail_bound": 15504,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 624,
       "comparison_bound": 37538,
       "conductor": 18554,
       "failures": [],
@@ -1364,10 +1482,13 @@
       "p": 8,
       "positions_compared": 37539,
       "q": 23,
-      "scaled_shift": 1104
+      "scaled_shift": 1104,
+      "tail_bound": 18768,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 702,
       "comparison_bound": 1838,
       "conductor": 702,
       "failures": [],
@@ -1396,10 +1517,13 @@
       "p": 9,
       "positions_compared": 1839,
       "q": 1,
-      "scaled_shift": 54
+      "scaled_shift": 54,
+      "tail_bound": 918,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 702,
       "comparison_bound": 9182,
       "conductor": 4370,
       "failures": [],
@@ -1428,10 +1552,13 @@
       "p": 9,
       "positions_compared": 9183,
       "q": 5,
-      "scaled_shift": 270
+      "scaled_shift": 270,
+      "tail_bound": 4590,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 702,
       "comparison_bound": 12854,
       "conductor": 6204,
       "failures": [],
@@ -1460,10 +1587,13 @@
       "p": 9,
       "positions_compared": 12855,
       "q": 7,
-      "scaled_shift": 378
+      "scaled_shift": 378,
+      "tail_bound": 6426,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 702,
       "comparison_bound": 20198,
       "conductor": 9872,
       "failures": [],
@@ -1492,10 +1622,13 @@
       "p": 9,
       "positions_compared": 20199,
       "q": 11,
-      "scaled_shift": 594
+      "scaled_shift": 594,
+      "tail_bound": 10098,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 702,
       "comparison_bound": 23870,
       "conductor": 11706,
       "failures": [],
@@ -1524,10 +1657,13 @@
       "p": 9,
       "positions_compared": 23871,
       "q": 13,
-      "scaled_shift": 702
+      "scaled_shift": 702,
+      "tail_bound": 11934,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 702,
       "comparison_bound": 31214,
       "conductor": 15374,
       "failures": [],
@@ -1556,10 +1692,13 @@
       "p": 9,
       "positions_compared": 31215,
       "q": 17,
-      "scaled_shift": 918
+      "scaled_shift": 918,
+      "tail_bound": 15606,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 702,
       "comparison_bound": 34886,
       "conductor": 17208,
       "failures": [],
@@ -1588,10 +1727,13 @@
       "p": 9,
       "positions_compared": 34887,
       "q": 19,
-      "scaled_shift": 1026
+      "scaled_shift": 1026,
+      "tail_bound": 17442,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 702,
       "comparison_bound": 42230,
       "conductor": 20876,
       "failures": [],
@@ -1620,10 +1762,13 @@
       "p": 9,
       "positions_compared": 42231,
       "q": 23,
-      "scaled_shift": 1242
+      "scaled_shift": 1242,
+      "tail_bound": 21114,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 780,
       "comparison_bound": 2042,
       "conductor": 780,
       "failures": [],
@@ -1652,10 +1797,13 @@
       "p": 10,
       "positions_compared": 2043,
       "q": 1,
-      "scaled_shift": 60
+      "scaled_shift": 60,
+      "tail_bound": 1020,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 780,
       "comparison_bound": 14282,
       "conductor": 6894,
       "failures": [],
@@ -1684,10 +1832,13 @@
       "p": 10,
       "positions_compared": 14283,
       "q": 7,
-      "scaled_shift": 420
+      "scaled_shift": 420,
+      "tail_bound": 7140,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 780,
       "comparison_bound": 22442,
       "conductor": 10970,
       "failures": [],
@@ -1716,10 +1867,13 @@
       "p": 10,
       "positions_compared": 22443,
       "q": 11,
-      "scaled_shift": 660
+      "scaled_shift": 660,
+      "tail_bound": 11220,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 780,
       "comparison_bound": 26522,
       "conductor": 13008,
       "failures": [],
@@ -1748,10 +1902,13 @@
       "p": 10,
       "positions_compared": 26523,
       "q": 13,
-      "scaled_shift": 780
+      "scaled_shift": 780,
+      "tail_bound": 13260,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 780,
       "comparison_bound": 34682,
       "conductor": 17084,
       "failures": [],
@@ -1780,10 +1937,13 @@
       "p": 10,
       "positions_compared": 34683,
       "q": 17,
-      "scaled_shift": 1020
+      "scaled_shift": 1020,
+      "tail_bound": 17340,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 780,
       "comparison_bound": 38762,
       "conductor": 19122,
       "failures": [],
@@ -1812,10 +1972,13 @@
       "p": 10,
       "positions_compared": 38763,
       "q": 19,
-      "scaled_shift": 1140
+      "scaled_shift": 1140,
+      "tail_bound": 19380,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 780,
       "comparison_bound": 46922,
       "conductor": 23198,
       "failures": [],
@@ -1844,10 +2007,13 @@
       "p": 10,
       "positions_compared": 46923,
       "q": 23,
-      "scaled_shift": 1380
+      "scaled_shift": 1380,
+      "tail_bound": 23460,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 780,
       "comparison_bound": 59162,
       "conductor": 29312,
       "failures": [],
@@ -1876,10 +2042,13 @@
       "p": 10,
       "positions_compared": 59163,
       "q": 29,
-      "scaled_shift": 1740
+      "scaled_shift": 1740,
+      "tail_bound": 29580,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 858,
       "comparison_bound": 2246,
       "conductor": 858,
       "failures": [],
@@ -1908,10 +2077,13 @@
       "p": 11,
       "positions_compared": 2247,
       "q": 1,
-      "scaled_shift": 66
+      "scaled_shift": 66,
+      "tail_bound": 1122,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 858,
       "comparison_bound": 11222,
       "conductor": 5342,
       "failures": [],
@@ -1940,10 +2112,13 @@
       "p": 11,
       "positions_compared": 11223,
       "q": 5,
-      "scaled_shift": 330
+      "scaled_shift": 330,
+      "tail_bound": 5610,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 858,
       "comparison_bound": 15710,
       "conductor": 7584,
       "failures": [],
@@ -1972,10 +2147,13 @@
       "p": 11,
       "positions_compared": 15711,
       "q": 7,
-      "scaled_shift": 462
+      "scaled_shift": 462,
+      "tail_bound": 7854,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 858,
       "comparison_bound": 29174,
       "conductor": 14310,
       "failures": [],
@@ -2004,10 +2182,13 @@
       "p": 11,
       "positions_compared": 29175,
       "q": 13,
-      "scaled_shift": 858
+      "scaled_shift": 858,
+      "tail_bound": 14586,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 858,
       "comparison_bound": 38150,
       "conductor": 18794,
       "failures": [],
@@ -2036,10 +2217,13 @@
       "p": 11,
       "positions_compared": 38151,
       "q": 17,
-      "scaled_shift": 1122
+      "scaled_shift": 1122,
+      "tail_bound": 19074,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 858,
       "comparison_bound": 42638,
       "conductor": 21036,
       "failures": [],
@@ -2068,10 +2252,13 @@
       "p": 11,
       "positions_compared": 42639,
       "q": 19,
-      "scaled_shift": 1254
+      "scaled_shift": 1254,
+      "tail_bound": 21318,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 858,
       "comparison_bound": 51614,
       "conductor": 25520,
       "failures": [],
@@ -2100,10 +2287,13 @@
       "p": 11,
       "positions_compared": 51615,
       "q": 23,
-      "scaled_shift": 1518
+      "scaled_shift": 1518,
+      "tail_bound": 25806,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 858,
       "comparison_bound": 56102,
       "conductor": 27762,
       "failures": [],
@@ -2132,10 +2322,13 @@
       "p": 11,
       "positions_compared": 56103,
       "q": 25,
-      "scaled_shift": 1650
+      "scaled_shift": 1650,
+      "tail_bound": 28050,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 936,
       "comparison_bound": 2450,
       "conductor": 936,
       "failures": [],
@@ -2164,10 +2357,13 @@
       "p": 12,
       "positions_compared": 2451,
       "q": 1,
-      "scaled_shift": 72
+      "scaled_shift": 72,
+      "tail_bound": 1224,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 936,
       "comparison_bound": 12242,
       "conductor": 5828,
       "failures": [],
@@ -2196,10 +2392,13 @@
       "p": 12,
       "positions_compared": 12243,
       "q": 5,
-      "scaled_shift": 360
+      "scaled_shift": 360,
+      "tail_bound": 6120,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 936,
       "comparison_bound": 17138,
       "conductor": 8274,
       "failures": [],
@@ -2228,10 +2427,13 @@
       "p": 12,
       "positions_compared": 17139,
       "q": 7,
-      "scaled_shift": 504
+      "scaled_shift": 504,
+      "tail_bound": 8568,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 936,
       "comparison_bound": 26930,
       "conductor": 13166,
       "failures": [],
@@ -2260,10 +2462,13 @@
       "p": 12,
       "positions_compared": 26931,
       "q": 11,
-      "scaled_shift": 792
+      "scaled_shift": 792,
+      "tail_bound": 13464,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 936,
       "comparison_bound": 31826,
       "conductor": 15612,
       "failures": [],
@@ -2292,10 +2497,13 @@
       "p": 12,
       "positions_compared": 31827,
       "q": 13,
-      "scaled_shift": 936
+      "scaled_shift": 936,
+      "tail_bound": 15912,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 936,
       "comparison_bound": 41618,
       "conductor": 20504,
       "failures": [],
@@ -2324,10 +2532,13 @@
       "p": 12,
       "positions_compared": 41619,
       "q": 17,
-      "scaled_shift": 1224
+      "scaled_shift": 1224,
+      "tail_bound": 20808,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 936,
       "comparison_bound": 46514,
       "conductor": 22950,
       "failures": [],
@@ -2356,10 +2567,13 @@
       "p": 12,
       "positions_compared": 46515,
       "q": 19,
-      "scaled_shift": 1368
+      "scaled_shift": 1368,
+      "tail_bound": 23256,
+      "window_covers_2T": true
     },
     {
       "accepted": true,
+      "base_conductor": 936,
       "comparison_bound": 56306,
       "conductor": 27842,
       "failures": [],
@@ -2388,7 +2602,9 @@
       "p": 12,
       "positions_compared": 56307,
       "q": 23,
-      "scaled_shift": 1656
+      "scaled_shift": 1656,
+      "tail_bound": 28152,
+      "window_covers_2T": true
     }
   ],
   "controls_h6a": [
@@ -2436,6 +2652,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 814,
       "q": 2,
       "witness": 1629,
@@ -2452,6 +2669,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 1527,
       "q": 3,
       "witness": 3055,
@@ -2468,6 +2686,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 1222,
       "q": 2,
       "witness": 2445,
@@ -2484,6 +2703,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 4991,
       "q": 7,
       "witness": 9983,
@@ -2500,6 +2720,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 1630,
       "q": 2,
       "witness": 3261,
@@ -2516,6 +2737,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 1834,
       "q": 2,
       "witness": 3669,
@@ -2532,6 +2754,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 5095,
       "q": 5,
       "witness": 10191,
@@ -2548,6 +2771,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 12331,
       "q": 11,
       "witness": 24663,
@@ -2564,6 +2788,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 3669,
       "q": 3,
       "witness": 7339,
@@ -2580,6 +2805,7 @@
       "producer_error": "generators do not define a numerical semigroup",
       "producer_error_type": "ValueError",
       "producer_refused": true,
+      "producer_unexpected_error": "",
       "proposed_bound": 2442,
       "q": 6,
       "witness": 4885,
@@ -2589,7 +2815,7 @@
   ],
   "experiment": "EXP-067",
   "method": "membership bitsets of Delta, recomputed E and D, direct sumsets, minimal generators, rerun controls",
-  "producer_accepts_coprime_pair": true,
+  "producer_does_not_refuse_coprime_pair": true,
   "summary": {
     "H1": 72,
     "H2": 72,
