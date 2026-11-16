@@ -43,7 +43,7 @@ N(Q) gives (9,24) and (9,27). This is exactly what Corollary 5.7 had to establis
 |---|---|---|
 | A1 to A4 in all three classes (prediction, confidence 0.95) | CONFIRMED | `classes.<k>.theorem_5_1_applies` true for k = 1, 2, 3 |
 | K1: Corollary 5.7's polygon before its shift fails A3 with st_{-1,1}(P) = (0,18) | behaves as declared | `controls.K1_cor57_unshifted` |
-| K2: the paper's usage at line 380, st_{1,0} = (8,28) on the face from (8,28) to (8,32) | behaves as declared | `controls.K2_line380_st` |
+| K2: the paper's usage at line 381 (the statement after the note of line 380), st_{1,0} = (8,28) on the face from (8,28) to (8,32), on a stand-in polygon with that (1,0)-face | behaves as declared | `controls.K2_line380_st` (key name kept) |
 | K3: the clockwise walk (orientation mutant) fails A3 and A4 in every class | behaves as declared | `controls.K3_clockwise_mutant` |
 | K4: a planted polygon whose (-1,1)-face is the vertex (2,18) fails A3 | behaves as declared | `controls.K4_planted` |
 
@@ -69,12 +69,13 @@ The PDFs and the gzip e-prints are archived next to the extracted sources, all h
   directions changes how directions are compared, not which point of a face is met first on the counterclockwise walk; the
   paper's own statements (Theorem 5.1 for Corollary 5.7, line 380) hold only under the counterclockwise reading (K1, K2,
   K3). A different reading would make Theorem 5.1 vacuous for the case it was written for.
-- The polygons are those printed in Proposition 4.2; a transcription error there would change nothing here only if the
-  printed corners are what the proof produces, which this experiment does not re-derive.
+- The polygons are taken as printed in Proposition 4.2; this experiment does not re-derive them from the proof, so an
+  error in the printed corners would not be detected here.
 
 ## Consequences
 
-JCB-107 is closed: the floor statement no longer inherits the (66,99) bridging gap recorded by the audit of 2026-07-22
+JCB-107 is closed (independent review, CAOS_MANAGE `wip/caos-research/jc-exp147-review-2026-11-16.md`: the bridge holds; the
+convention is confirmed by the paper's own usages at lines 375 to 383, 616 to 618, 721 and 723 and by GGHV17 lines 398 and 1246): the floor statement no longer inherits the (66,99) bridging gap recorded by the audit of 2026-07-22
 (dossier `context/2026-07-22-beyond125-and-audit-dossier.md`, D1 and item 6). The exclusion of (72,108) (EXP-137, EXP-146) and
 GGHV Theorem 2.1 then give max deg >= 125 for a counterexample to JC(2), conditional on Proposition 4.3 being exhaustive and
 on the encoding of its polygons, and on the rest of GGHV's printed argument.

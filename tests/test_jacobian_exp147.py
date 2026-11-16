@@ -58,4 +58,4 @@ def test_controls_fail_or_hold_as_declared():
         assert not r.all_hold(r.conditions(r.measure(np_, clockwise=True), r.TARGET_P))
         assert not r.all_hold(r.conditions(r.measure(nq, clockwise=True), r.TARGET_Q))
     k4 = r.conditions(r.measure([(0, 0), (1, 1), (6, 16), (6, 18), (2, 18)]), r.TARGET_P)
-    assert not r.all_hold(k4)
+    assert not r.all_hold(k4) and k4["st_-1,1"]["value"] == [2, 18]

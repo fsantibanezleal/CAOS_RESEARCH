@@ -142,7 +142,8 @@ def main(argv=None):
     res["controls"]["K1_cor57_unshifted"] = {"conditions": k1, "fails": not all_hold(k1),
                                              "st_-1,1": k1["st_-1,1"]["value"], "expected_st_-1,1": [0, 18]}
     k1_ok = (not all_hold(k1)) and k1["st_-1,1"]["value"] == [0, 18]
-    # K2: the paper's usage at line 380: the (1,0)-face from (8,28) to (8,32) starts at (8,28).
+    # K2: the paper's usage at line 381 (after the note of line 380): the (1,0)-face from (8,28) to (8,32) starts at (8,28);
+    # the polygon is a stand-in with that (1,0)-face (the key name K2_line380_st is kept).
     m2 = measure([(0, 0), (1, 0), (8, 28), (8, 32), (0, 8)])
     k2_ok = m2["faces"]["1,0"]["st"] == (8, 28) and m2["faces"]["1,0"]["en"] == (8, 32)
     res["controls"]["K2_line380_st"] = {"st_1,0": list(m2["faces"]["1,0"]["st"]), "en_1,0": list(m2["faces"]["1,0"]["en"]),
