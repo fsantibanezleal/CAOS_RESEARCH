@@ -8,6 +8,14 @@ remain the evidence.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 5 with a redirect; strategic review (JCB-098), then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 (JCB-099); the transverse Fitting atlas is parked.
 
+2026-11-16: cascade v0.10 published (10.5281/zenodo.24269044): every located primary statement now carries its page (the arXiv
+versions read, with the stated journal and author-copy exceptions); four citations corrected (Tsuchimoto's priority in
+Belov-Kanel and Kontsevich's Remark 3; Long's remark after Corollary 5.2; the source of Wilson's wording; Zhao's
+Eq. (3.20) and Proposition 3.8 behind the potential check, Corollary 3.9 being misprinted); de Bondt's JC(12,3) [V] and
+HJC(18,3), VC(34,4), HVC(36,4), the dimension-90 cubic-linear map and dimensions 28 and 30 [U] (a claimed counterexample
+whose object is neither displayed in the source nor run here is [U]). Review by five lenses with adversarial
+verification (44 of 46 findings confirmed), fix pass, re-check, release with the measured approval record (JCB-105).
+
 2026-11-15: cascade v0.09 published (10.5281/zenodo.24239949): the full revision from the independent audit, with the
 Poisson row machine-verified at n = 2 by EXP-144 (Long's map recomputed exactly from arXiv:2608.23777v1).
 

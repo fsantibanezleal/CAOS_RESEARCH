@@ -1,0 +1,6 @@
+gate 1 (Zhan A_18): PASS; N(18) = [1, 8, 15] (Zhan: [1, 8, 15]) | |B_17| = 17, traceable True, homogeneously traceable True, d = 2, non-clique omitted set True | 16 ~ 17: False (Zhan: nonadjacent) | GATE PASS
+gate 2 (order-12 reproduction): PASS; {"recomputed": 2796, "reference": 2796, "identical_records_plain": true, "identical_records_memo": true, "method_disagreements_plain": 0, "method_disagreements_memo": 0, "pass": true}
+input check: {"graphs": 286, "distinct_strings": 286, "all_order_13": true, "pairwise_non_isomorphic": true, "all_have_universal_vertex": true, "all_mnh": true}
+Q1: 3304 gadgets, method disagreements 0, traceable 3304, d histogram {"1": 3031, "2": 173, "3": 51, "4": 15, "5": 8, "6": 12, "7": 5, "8": 4, "9": 3, "10": 2}, gadgets with a non-clique omitted set 0
+plain backtracking cross-check on gadgets with at most 40 edges: 3071 checked, 0 mismatches
+done in 1035 s; Q1 NEGATIVE

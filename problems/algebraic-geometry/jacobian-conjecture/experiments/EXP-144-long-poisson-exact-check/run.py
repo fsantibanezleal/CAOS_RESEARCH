@@ -1,14 +1,22 @@
 # EXP-144: exact in-house check of Long's rank-two Poisson counterexample (arXiv:2608.23777v1).
 # CPU only; exact rationals (sympy Rational, Fraction); one process; seed 20261114 for the random-point route.
-# Run from the repo root:
-#   .venv/Scripts/python.exe problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-144-long-poisson-exact-check/run.py
+# Run from the repo root (the data root holds caos-research/jacobian-conjecture/sources/jcb102/2608.23777.pdf):
+#   .venv/Scripts/python.exe problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-144-long-poisson-exact-check/run.py --data-root <data root>
+# or set CAOS_RESEARCH_DATA_ROOT. Addendum 1 (JCB-105): data-root argument, P4 box sufficiency, versions, comparison file.
 # Predictions P1..P5 and controls C1, C2 as frozen in hypothesis.md. Writes artifacts/{results.json,run-log.txt,polynomials.txt}.
-# Exits 1 if any prediction or control fails, 2 if the source PDF is missing or its hash differs.
+# Exits 1 if any prediction or control fails or a recorded value does not reproduce, 2 if the data root is not given,
+# the source PDF is missing or its hash differs, or the pinned comparison baseline is missing or differs.
+# An exit 2 writes nothing under artifacts/.
+import argparse
 import hashlib
+import os
+import platform
 import json
 import random
 import sys
 import time
+
+import sympy
 from fractions import Fraction
 from pathlib import Path
 
@@ -18,10 +26,16 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import exp144_long as L  # noqa: E402
 
-PDF = Path("E:/_Datos/caos-research/jacobian-conjecture/sources/jcb102/2608.23777.pdf")
+PDF_REL = Path("caos-research/jacobian-conjecture/sources/jcb102/2608.23777.pdf")
+BOX = 8  # P4 counting box: exponents in range(BOX) per variable
 PDF_SHA = "5dd5861194bfea9130cddc10919510b060dab663f3a00222e57014125db5051a"
 ART = HERE / "artifacts"
 ART.mkdir(exist_ok=True)
+# Comparison baseline: the results.json of commit 331fa7fe (before addendum 1), committed byte for byte and pinned by hash.
+BASELINE = ART / "results-pre-addendum-1.json"
+BASELINE_SHA = "0146f849fb771c8ba7027595fa8d60ef07a1de1b1ad0b8577508cb3e6a874e91"
+BASELINE_NON_TIMING_KEYS = 19
+OLD = None  # loaded by load_baseline() before anything is written
 LOG = []
 failures = []
 results = {}
@@ -39,23 +53,79 @@ def check(name, ok, detail=""):
         failures.append(name)
 
 
-def flush(code):
+TIMING_KEYS = {"elapsed_seconds", "P2_symbolic_seconds", "P3_seconds", "P4_groebner_seconds"}
+NEW_KEYS = {"python_version", "sympy_version", "P4_pure_power_exponents", "P4_box_bounds", "P4_box_sufficient"}
+
+
+def compare():
+    """Per key of the pre-addendum results.json: recorded value against rerun value (timings reported apart)."""
+    rows, timings = {}, {}
+    for k, v in OLD.items():
+        new = json.loads(json.dumps(results.get(k, "<absent>"), default=str))
+        if k in TIMING_KEYS:
+            timings[k] = {"recorded": v, "rerun": new}
+        else:
+            rows[k] = {"recorded": v, "rerun": new, "match": v == new}
+    mism = [k for k, r in rows.items() if not r["match"]]
+    return {"keys_compared": len(rows), "mismatched_keys": mism, "all_reproduce": not mism,
+            "new_keys_added": sorted(NEW_KEYS & set(results)), "per_key": rows, "timings_reported_apart": timings}
+
+
+def stop2(msg):
+    """Exit 2 (a missing input): print the reason and write nothing under artifacts/."""
+    print(msg)
+    sys.exit(2)
+
+
+def load_baseline():
+    """The pinned pre-addendum record; exit 2 when it is missing, differs from its hash or has the wrong key set."""
+    if not BASELINE.exists():
+        stop2(f"MISSING comparison baseline {BASELINE.name}")
+    raw = BASELINE.read_bytes().replace(b"\r\n", b"\n")
+    got = hashlib.sha256(raw).hexdigest()
+    if got != BASELINE_SHA:
+        stop2(f"comparison baseline {BASELINE.name} differs: {got} != {BASELINE_SHA}")
+    old = json.loads(raw.decode("utf-8"))
+    n = len(set(old) - TIMING_KEYS)
+    if n != BASELINE_NON_TIMING_KEYS:
+        stop2(f"comparison baseline {BASELINE.name} has {n} non-timing keys, expected {BASELINE_NON_TIMING_KEYS}")
+    return old
+
+
+def finish():
+    """Compare against the pinned baseline, log the verdict lines last, write the artifacts and exit 0 or 1."""
+    results["elapsed_seconds"] = round(time.time() - T0, 2)  # compared with the recorded elapsed time (reported apart)
+    results["failures"] = failures  # same list: a failure appended below is recorded
+    cmp_ = compare()
+    (ART / "addendum-1.json").write_text(json.dumps(cmp_, indent=2), encoding="utf-8")
+    log(f"addendum 1 comparison: {cmp_['keys_compared']} keys, mismatched={cmp_['mismatched_keys'] or 'none'}")
+    if not cmp_["all_reproduce"]:
+        failures.append("addendum 1: recorded values not reproduced")
+    log(f"elapsed {time.time() - T0:.1f}s; failures: {failures or 'none'}")
+    log("RESULT: " + ("PASS" if not failures else "FAIL"))
     results["elapsed_seconds"] = round(time.time() - T0, 2)
-    results["failures"] = failures
     (ART / "results.json").write_text(json.dumps(results, indent=2, default=str), encoding="utf-8")
     (ART / "run-log.txt").write_text("\n".join(LOG) + "\n", encoding="utf-8")
-    sys.exit(code)
+    sys.exit(0 if not failures else 1)
 
 
 # ---- source pin ---------------------------------------------------------------------------------
+ap = argparse.ArgumentParser()
+ap.add_argument("--data-root", default=os.environ.get("CAOS_RESEARCH_DATA_ROOT"),
+                help="the device's data root (default: env CAOS_RESEARCH_DATA_ROOT)")
+args = ap.parse_args()
+if not args.data_root:
+    stop2("no data root: pass --data-root or set CAOS_RESEARCH_DATA_ROOT")
+OLD = load_baseline()
+PDF = Path(args.data_root) / PDF_REL
+results["python_version"] = platform.python_version()
+results["sympy_version"] = sympy.__version__
 if not PDF.exists():
-    log(f"MISSING source PDF {PDF}")
-    flush(2)
+    stop2(f"MISSING source PDF {PDF}")
 sha = hashlib.sha256(PDF.read_bytes()).hexdigest()
 results["pdf_sha256"] = sha
 if sha != PDF_SHA:
-    log(f"PDF hash differs: {sha} != {PDF_SHA}")
-    flush(2)
+    stop2(f"PDF hash differs: {sha} != {PDF_SHA}")
 log(f"source PDF hash matches {sha}")
 
 x, q, p, z = L.GENS
@@ -185,7 +255,19 @@ results["P4_lex_basis"] = [str(g) for g in G.exprs]
 check("P4 ideal zero-dimensional", G.is_zero_dimensional)
 lms = [Poly(g, x, q, p, z).monoms(order="lex")[0] for g in G.exprs]
 results["P4_leading_monomials"] = [list(m) for m in lms]
-rng6 = range(8)
+# box sufficiency: the lex basis of a zero-dimensional ideal has a pure power of each variable among its leading
+# monomials; every standard monomial then has exponent below that k_i in variable i, so the box must contain [0, k_i)
+pure = []
+for i in range(4):
+    ks = [lm[i] for lm in lms if all(lm[j] == 0 for j in range(4) if j != i) and lm[i] > 0]
+    pure.append(min(ks) if ks else None)
+results["P4_pure_power_exponents"] = pure
+results["P4_box_bounds"] = [BOX] * 4
+box_ok = all(k is not None and k <= BOX for k in pure)
+results["P4_box_sufficient"] = box_ok
+check("P4 box range(8)^4 contains every standard monomial (k_i <= 8 for each variable)", box_ok,
+      f"pure-power exponents k_i={pure} box bounds={[BOX] * 4}")
+rng6 = range(BOX)
 std = [(a, b, c, d) for a in rng6 for b in rng6 for c in rng6 for d in rng6
        if not any(all((a, b, c, d)[i] >= lm[i] for i in range(4)) for lm in lms)]
 results["P4_quotient_dimension"] = len(std)
@@ -238,6 +320,4 @@ rb2, _ = random_route((L.R, L.T, L.D_C2, L.S), n=5)
 results["C2"]["random_route_nonzero_entries_5_points"] = rb2
 check("C2 the random-point route also detects the changed H", rb2 > 0, f"nonzero entries={rb2}")
 
-log(f"elapsed {time.time() - T0:.1f}s; failures: {failures or 'none'}")
-log("RESULT: " + ("PASS" if not failures else "FAIL"))
-flush(0 if not failures else 1)
+finish()

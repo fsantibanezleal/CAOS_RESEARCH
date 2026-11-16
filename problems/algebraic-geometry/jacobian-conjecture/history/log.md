@@ -1844,3 +1844,30 @@ review approved the corrections before release.
 - Release: 39 gates passed; 30 pages, 670,311 bytes, SHA-256
   aa7de7e613b5c57dca56507786706bd493d459c21d1ff1f38cf85cfb547199bc.
 
+## 2026-11-16 - cascade v0.10 published (10.5281/zenodo.24269044)
+
+- JCB-105 (literature part): every located primary statement carries its page in the version read (CAOS_MANAGE
+  `wip/caos-research/jcb105-sources-2026-11-15.md`, all 13 EXP-136 source digests equal); four citation corrections; de
+  Bondt's arXiv:2610.24889 indices JC(12,3), HJC(18,3), VC(34,4), HVC(36,4) defined from page 1 and marked under the rule
+  that a claimed counterexample whose object is neither displayed in the source nor run here is [U] (JC(12,3) [V]: its
+  maps are displayed, pp. 24 to 27); Zhao's Corollary 3.9 found misprinted (Delta^2 P for Delta(P^2)), the potential check
+  now cites Eq. (3.20) and Proposition 3.8; EXP-136 `sources.md` Wilson wording corrected with a dated note.
+- Review (CAOS_MANAGE `wip/caos-research/jc-cascade-v010-review-2026-11-15.md`): five lenses, every blocker or major
+  finding verified by three skeptics, 44 of 46 findings confirmed, RELEASE AFTER FIXES (two blockers in the first draft's
+  de Bondt paragraph: the Theorem 5.1 hypotheses and the AI-authorship sentence); fix pass and re-check
+  (`wip/caos-research/jc-cascade-v010-recheck-2026-11-15.md`): 20 of 21 fixes correct, the remaining version_notes change
+  and three recommended text fixes applied before release.
+- Release: release.py set-doi, build (0 warnings, 0 overfull, 0 underfull), render (35 pages reviewed), approve (measured
+  approval record), freeze, publish: 39 gates passed; 35 pages, 616,102 bytes, SHA-256 2df59a7f76061b3def880dddec6dc820afb7b493e46df90d3b537ce661586416.
+
+## 2026-11-16 - EXP-144 addendum 1: reproducibility hardening (JCB-105)
+
+- Declared in EXP-144 `hypothesis.md` before its code ran (commit 327d7171): the source PDF read from a data-root argument
+  (no drive path in the code; a missing data root exits 2 and writes nothing), the box of the P4 standard-monomial count
+  checked against the pure powers of the lex basis (k = [1, 2, 1, 2] within the box [8, 8, 8, 8]), the Python and sympy
+  versions recorded, two tests (the P2 bracket matrix pinned; control C2 is exactly 125 to 126), and a rerun compared key
+  by key with a pinned copy of the pre-addendum results (19 keys, all reproduce).
+- Verification (CAOS_MANAGE `wip/caos-research/jc-exp144-addendum-verify-2026-11-15.md`): independent reruns reproduce every
+  value; five findings (F1 major: the comparison baseline was the live file) closed by a fix pass with tests and mutation
+  checks; re-check CLOSED (`wip/caos-research/jc-exp144-addendum-recheck-2026-11-16.md`). The verdict word is unchanged.
+
