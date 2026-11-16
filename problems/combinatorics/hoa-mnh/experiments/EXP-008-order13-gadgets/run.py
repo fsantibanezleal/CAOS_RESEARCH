@@ -26,6 +26,7 @@ ART = HERE / "artifacts"
 INPUT13 = EXPS / "EXP-007-order-13-universal-last" / "artifacts" / "mnh-n13-caseA.txt"
 CENSUS_DIRS = [EXPS / "EXP-001-mnh-census" / "artifacts", EXPS / "EXP-002-order-12" / "artifacts"]
 PROCESSES = 4
+PLAIN_EDGE_LIMIT = 40  # order-13 gadgets up to this many edges are also run through the plain backtracking
 
 sys.path.insert(0, str(EXP003))
 from gadgets import bt_invariants, connected, decode, dp_invariants, is_clique  # noqa: E402
@@ -115,7 +116,60 @@ def input_check(g6s: list[str]) -> dict:
 
 
 # --- gadgets --------------------------------------------------------------------------------------------
-def gadgets_of(g6: str):
+def bt_memo_invariants(m, adj, N):
+    """Method 2 at order 13: backtracking over simple paths with a transposition table on (visited set, last
+    vertex). It returns exactly what EXP-003's plain backtracking (bt_invariants) returns, but plain
+    backtracking enumerates every simple path and is too slow on the dense order-13 gadgets (one gadget did
+    not finish in two minutes). Equivalence with the plain method is checked on all 2,796 order-12 gadgets
+    (gate 2) and on every order-13 gadget with at most PLAIN_EDGE_LIMIT edges (plain_cross_check)."""
+    Nset = set(N)
+
+    def explore(start, on_state):
+        seen_states = set()
+        stack = [(1 << start, start)]
+        seen_states.add(stack[0])
+        while stack:
+            mask, v = stack.pop()
+            on_state(mask, v)
+            for w in adj[v]:
+                if not (mask >> w) & 1:
+                    st = (mask | (1 << w), w)
+                    if st not in seen_states:
+                        seen_states.add(st)
+                        stack.append(st)
+
+    full = (1 << m) - 1
+    starts = 0
+    for s in range(m):
+        found = []
+
+        def hit(mask, v):
+            if mask == full:
+                found.append(1)
+
+        explore(s, hit)
+        if found:
+            starts |= 1 << s
+    best, omitted = 0, set()
+    order = sorted(N)
+    for i, p in enumerate(order):
+        ends = set(order[i + 1:])  # path (p, q) and (q, p) cover the same vertex sets
+
+        def hit(mask, v):
+            nonlocal best, omitted
+            if v in ends:
+                size = bin(mask).count("1")
+                if size > best:
+                    best, omitted = size, {mask}
+                elif size == best:
+                    omitted.add(mask)
+
+        explore(p, hit)
+    nonclique = any(not is_clique(adj, [u for u in range(m) if not (S >> u) & 1]) for S in omitted)
+    return bool(starts), starts == full, starts, m - best, nonclique
+
+
+def gadgets_of(g6: str, bt=bt_memo_invariants):
     """Every gadget (X, x) of the graph (EXP-003's admissibility and record format); both methods run."""
     n, adjX = decode(g6)
     out, disagreements = [], 0
@@ -128,7 +182,7 @@ def gadgets_of(g6: str):
         if not connected(adj, range(m)) or is_clique(adj, range(m)) or len(N) == m or len(N) < 2:
             continue
         a = dp_invariants(m, adj, N)
-        b = bt_invariants(m, adj, N)
+        b = bt(m, adj, N)
         if a != b:
             disagreements += 1
         traceable, homog, starts, d, nonclique = a
@@ -139,12 +193,36 @@ def gadgets_of(g6: str):
     return out, disagreements
 
 
-def all_gadgets(g6s: list[str], processes: int = PROCESSES):
+def plain_cross_check(g6: str):
+    """(checked, mismatches): plain backtracking against the transposition-table method on the sparse gadgets."""
+    n, adjX = decode(g6)
+    checked = mismatches = 0
+    for x in range(n):
+        rest = [v for v in range(n) if v != x]
+        idx = {v: i for i, v in enumerate(rest)}
+        m = n - 1
+        adj = [set(idx[w] for w in adjX[v] if w != x) for v in rest]
+        N = sorted(idx[w] for w in adjX[x])
+        if not connected(adj, range(m)) or is_clique(adj, range(m)) or len(N) == m or len(N) < 2:
+            continue
+        if sum(len(a) for a in adj) // 2 > PLAIN_EDGE_LIMIT:
+            continue
+        checked += 1
+        mismatches += bt_invariants(m, adj, N) != bt_memo_invariants(m, adj, N)
+    return checked, mismatches
+
+
+def _gadgets_plain(g6: str):
+    return gadgets_of(g6, bt_invariants)
+
+
+def all_gadgets(g6s: list[str], processes: int = PROCESSES, plain: bool = False):
+    fn = _gadgets_plain if plain else gadgets_of
     if processes > 1:
         with Pool(processes) as pool:
-            parts = pool.map(gadgets_of, g6s, chunksize=4)
+            parts = pool.map(fn, g6s, chunksize=1)
     else:
-        parts = [gadgets_of(g) for g in g6s]
+        parts = [fn(g) for g in g6s]
     recs, dis = [], 0
     for r, d in parts:
         recs.extend(r)
@@ -166,10 +244,14 @@ def census_g6s(max_order: int) -> list[str]:
 
 
 def gate2() -> dict:
-    recs, dis = all_gadgets(census_g6s(12))
+    g6s = census_g6s(12)
     ref = json.loads((EXP003 / "artifacts" / "gadgets-to12.json").read_text(encoding="utf-8"))
-    return {"recomputed": len(recs), "reference": len(ref), "identical_records": recs == ref,
-            "method_disagreements": dis, "pass": recs == ref and len(recs) == 2796 and dis == 0}
+    recs, dis = all_gadgets(g6s, plain=True)       # EXP-003's own two methods, plain backtracking
+    recs_m, dis_m = all_gadgets(g6s)               # the transposition-table backtracking used at order 13
+    ok = recs == ref and recs_m == ref and len(recs) == 2796 and dis == 0 and dis_m == 0
+    return {"recomputed": len(recs), "reference": len(ref), "identical_records_plain": recs == ref,
+            "identical_records_memo": recs_m == ref, "method_disagreements_plain": dis,
+            "method_disagreements_memo": dis_m, "pass": ok}
 
 
 # --- triple search (Q2) and direct verification ---------------------------------------------------------
@@ -315,10 +397,16 @@ def main() -> int:
     dh = {str(k): sum(g["d"] == k for g in recs) for k in sorted({g["d"] for g in recs})}
     say(f"Q1: {len(recs)} gadgets, method disagreements {dis}, traceable {sum(g['traceable'] for g in recs)}, "
         f"d histogram {json.dumps(dh)}, gadgets with a non-clique omitted set {len(nonclique)}")
-    if dis:
+    with Pool(PROCESSES) as pool:
+        cc = pool.map(plain_cross_check, g6s, chunksize=1)
+    checked, mism = sum(c for c, _ in cc), sum(m for _, m in cc)
+    say(f"plain backtracking cross-check on gadgets with at most {PLAIN_EDGE_LIMIT} edges: "
+        f"{checked} checked, {mism} mismatches")
+    if dis or mism:
         flush_log()
         return 1
-    summary = {"gadgets": len(recs), "dp_backtracking_disagreements": dis, "d_histogram": dh,
+    summary = {"gadgets": len(recs), "dp_backtracking_disagreements": dis, "plain_cross_checked": checked,
+               "plain_cross_check_mismatches": mism, "d_histogram": dh,
                "middle_candidates_nonclique": len(nonclique), "q1_positive": bool(nonclique)}
     if nonclique:
         pool_, _ = all_gadgets(census_g6s(12))

@@ -83,3 +83,12 @@ def test_verification_helpers_on_known_small_graphs() -> None:
 def test_dp_and_backtracking_agree_on_every_gadget_of_one_graph() -> None:
     _, disagreements = MODULE.gadgets_of(MODULE.load_order13()[5])
     assert disagreements == 0
+
+
+def test_memoized_backtracking_equals_plain_backtracking_on_order_11_and_12_gadgets() -> None:
+    lines = MODULE.read_graph6(MODULE.census_file(11))[:12] + MODULE.read_graph6(MODULE.census_file(12))[:12]
+    for g6 in lines:
+        memo, d1 = MODULE.gadgets_of(g6)
+        plain, d2 = MODULE.gadgets_of(g6, MODULE.bt_invariants)
+        assert d1 == 0 and d2 == 0
+        assert memo == plain
