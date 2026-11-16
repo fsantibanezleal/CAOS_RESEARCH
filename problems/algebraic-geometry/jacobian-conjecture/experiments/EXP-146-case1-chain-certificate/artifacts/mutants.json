@@ -15,6 +15,13 @@
    "cases": 272,
    "gate_fails": true
   },
+  "M1c_res_bound_minus_1_second_step_w0_kept": {
+   "mutation": "as M1b, with the entry at w = 0 left unlowered (it is 0 by construction, chaincert.py, so lowering it fails in every kept case whatever the bound engine does)",
+   "weights_checked": 3557,
+   "violations": 2109,
+   "cases": 272,
+   "gate_fails": true
+  },
   "M2_degree_drop_factor_removed_G3_60": {
    "mutation": "res_image without the factor (-1)^(n (m - m')) lc(phi g)^(m - m')",
    "cases": 60,
@@ -78,7 +85,7 @@
    "pass": true
   }
  },
- "seconds": 209.0,
+ "seconds": 86.1,
  "all_mutants_caught": true,
  "baseline_clean": true
 }

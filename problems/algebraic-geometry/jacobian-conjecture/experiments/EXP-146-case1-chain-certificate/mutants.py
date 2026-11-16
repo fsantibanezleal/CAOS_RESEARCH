@@ -7,6 +7,10 @@ result is written to artifacts/mutants.json. Run from the repository root:
   M1  res_bound output lowered: every entry of the returned table B_h(w) is replaced by B_h(w) - 1 (all weights, w = 0
       included); checked by G2 random (2,000 pairs, as in run.py).
   M1b the same lowering applied only to the second step of the composition family (600 cases, as in run.py).
+  M1c as M1b with the entry at w = 0 left unlowered (added 2026-11-16 after the final check): chaincert.py sets that
+      entry to 0, where the exact maximum is 0, so lowering it raises one violation in every kept case whatever the
+      bound engine does; M1c measures what the mutant raises elsewhere.
+  The `violations` of M1, M1b and M1c count weight checks and order-lower-bound checks together (the gates' counters).
   M2  degree-drop factor removed: res_image returns Res(phi f, phi g) without the factor (-1)^(n (m - m')) lc(phi g)^(m - m');
       checked by G3 (500 cases, as in run.py) and by its first 60 cases.
 The unmutated gates are run first on the same inputs as the baseline (0 violations, 0 mismatches expected).
@@ -25,13 +29,15 @@ import gates  # noqa: E402
 ART = HERE / "artifacts"
 
 
-def lowered(orig, delta=1, only_xi=None):
-    """res_bound with every table entry lowered by delta (only for the elimination variable index only_xi, if given)."""
+def lowered(orig, delta=1, only_xi=None, keep_zero=False):
+    """res_bound with every table entry lowered by delta (only for the elimination variable index only_xi, if given;
+    the entry at w = 0 left as it is when keep_zero)."""
     def res_bound_lowered(*a, **k):
         B = orig(*a, **k)
         if B is None or (only_xi is not None and a[6] != only_xi):
             return B
-        return cc.Bd(B.vs, {key: v - delta for key, v in B.tab.items()})
+        zero = tuple(0 for _ in B.vs)
+        return cc.Bd(B.vs, {key: (v if keep_zero and key == zero else v - delta) for key, v in B.tab.items()})
     return res_bound_lowered
 
 
@@ -62,6 +68,13 @@ def main():
                         "(elimination of a), the first step (elimination of x) unchanged",
             "weights_checked": comp["composition_weights"], "violations": comp["composition_violations"],
             "cases": comp["composition_cases"], "gate_fails": not comp["pass"]}
+        cc.res_bound = lowered(orig_bound, only_xi=1, keep_zero=True)
+        comp0 = gates.g2_composition(600)
+        out["mutants"]["M1c_res_bound_minus_1_second_step_w0_kept"] = {
+            "mutation": "as M1b, with the entry at w = 0 left unlowered (it is 0 by construction, chaincert.py, so lowering "
+                        "it fails in every kept case whatever the bound engine does)",
+            "weights_checked": comp0["composition_weights"], "violations": comp0["composition_violations"],
+            "cases": comp0["composition_cases"], "gate_fails": not comp0["pass"]}
     finally:
         cc.res_bound = orig_bound
     try:
