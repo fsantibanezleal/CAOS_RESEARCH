@@ -148,10 +148,17 @@ Algebre non commutative, groupes quantiques et invariants, Seminaires et Congres
   checks m = 1..10.
 - M. Wilson, "A face-isolation proof of the two-variable Gaussian Moments Conjecture",
   arXiv:2607.23887v1 (26 Jul 2026). PDF SHA-256
-  `0f70a4a1a5cceca0ea2d9bba2aa6d1c120da4980cddf4c105a55db97f85f257a`. Abstract: "This proves
-  the two-variable Gaussian Moments Conjecture with the explicit threshold m >= deg Q + 1. ...
+  `0f70a4a1a5cceca0ea2d9bba2aa6d1c120da4980cddf4c105a55db97f85f257a`. arXiv listing abstract
+  (https://arxiv.org/abs/2607.23887; not the wording of the PDF): "This proves the
+  two-variable Gaussian Moments Conjecture with the explicit threshold m >= deg Q + 1. ...
   Combined with the known one-variable case and counterexamples in dimensions (n >= 3), this
-  determines the dimensions in which the Gaussian Moments Conjecture holds." Not verified here.
+  determines the dimensions in which the Gaussian Moments Conjecture holds." Abstract printed
+  on p.1 of the PDF: "... Consequently E(QP^m) = 0 for every Q in C[X, Y] and every m > deg Q,
+  which is the two-variable Gaussian Moments Conjecture with an explicit threshold. Combined
+  with the known case n = 1 and Long's counterexamples for n >= 3, this completes the
+  classification of the dimensions in which the conjecture holds." (corrected 2026-11-15: the
+  text above gave the listing wording as "Abstract"; the listing abstract and the PDF abstract
+  differ in wording and agree in content.) Not verified here.
 - A. Zheglov, "The Conjecture of Dixmier for the first Weyl algebra is true",
   arXiv:2410.06959v5 (19 Jan 2026; first version 9 Oct 2024; 78 pages). PDF SHA-256
   `897913ef95e011332e86e348803c6c9da5dbd196db17a04f8f951110e9b095e3`. Abstract: "In this
