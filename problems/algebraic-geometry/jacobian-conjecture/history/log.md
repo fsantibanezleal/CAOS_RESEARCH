@@ -1844,3 +1844,54 @@ review approved the corrections before release.
 - Release: 39 gates passed; 30 pages, 670,311 bytes, SHA-256
   aa7de7e613b5c57dca56507786706bd493d459c21d1ff1f38cf85cfb547199bc.
 
+## 2026-11-16 - cascade v0.10 published (10.5281/zenodo.24269044)
+
+- JCB-105 (literature part): every located primary statement carries its page in the version read (CAOS_MANAGE
+  `wip/caos-research/jcb105-sources-2026-11-15.md`, all 13 EXP-136 source digests equal); four citation corrections; de
+  Bondt's arXiv:2610.24889 indices JC(12,3), HJC(18,3), VC(34,4), HVC(36,4) defined from page 1 and marked under the rule
+  that a claimed counterexample whose object is neither displayed in the source nor run here is [U] (JC(12,3) [V]: its
+  maps are displayed, pp. 24 to 27); Zhao's Corollary 3.9 found misprinted (Delta^2 P for Delta(P^2)), the potential check
+  now cites Eq. (3.20) and Proposition 3.8; EXP-136 `sources.md` Wilson wording corrected with a dated note.
+- Review (CAOS_MANAGE `wip/caos-research/jc-cascade-v010-review-2026-11-15.md`): five lenses, every blocker or major
+  finding verified by three skeptics, 44 of 46 findings confirmed, RELEASE AFTER FIXES (two blockers in the first draft's
+  de Bondt paragraph: the Theorem 5.1 hypotheses and the AI-authorship sentence); fix pass and re-check
+  (`wip/caos-research/jc-cascade-v010-recheck-2026-11-15.md`): 20 of 21 fixes correct, the remaining version_notes change
+  and three recommended text fixes applied before release.
+- Release: release.py set-doi, build (0 warnings, 0 overfull, 0 underfull), render (35 pages reviewed), approve (measured
+  approval record), freeze, publish: 39 gates passed; 35 pages, 616,102 bytes, SHA-256 2df59a7f76061b3def880dddec6dc820afb7b493e46df90d3b537ce661586416.
+
+## 2026-11-16 - EXP-144 addendum 1: reproducibility hardening (JCB-105)
+
+- Declared in EXP-144 `hypothesis.md` before its code ran (commit 327d7171): the source PDF read from a data-root argument
+  (no drive path in the code; a missing data root exits 2 and writes nothing), the box of the P4 standard-monomial count
+  checked against the pure powers of the lex basis (k = [1, 2, 1, 2] within the box [8, 8, 8, 8]), the Python and sympy
+  versions recorded, two tests (the P2 bracket matrix pinned; control C2 is exactly 125 to 126), and a rerun compared key
+  by key with a pinned copy of the pre-addendum results (19 keys, all reproduce).
+- Verification (CAOS_MANAGE `wip/caos-research/jc-exp144-addendum-verify-2026-11-15.md`): independent reruns reproduce every
+  value; five findings (F1 major: the comparison baseline was the live file) closed by a fix pass with tests and mutation
+  checks; re-check CLOSED (`wip/caos-research/jc-exp144-addendum-recheck-2026-11-16.md`). The verdict word is unchanged.
+
+## 2026-11-16 - EXP-146: Case 1 of GGHV Proposition 4.3 certified empty (JCB-103 closed)
+
+- Hypothesis frozen 2026-11-15 (8133b594) before any code: single-prime resultant-chain certificates with support-proven
+  degree bounds (rules M1 to M5 with proofs), Rabinowitsch splits in monomial coordinates w = a + b v with exact division
+  by w^L, the tree rule, gates G0 to G5, a second prime and Singular as the second implementation.
+- Result (verdict CONFIRMED): both branch ideals I_+ and I_- of EXP-142 (q1 = +c, -c over L = Q[y]/(P)) are the unit
+  ideal, each certified by the same three-leaf tree at (p1, r1) = (536870909, 505390653), every degree proven by M4,
+  replayed at (p2, r2) = (536870879, 12005842); Singular digests agree (153 per branch, 18 constants, 0 mismatches). With
+  EXP-142's exact reduction, Case 1 has no solution over the algebraic closure of Q. With Case 2 (EXP-137) and
+  conditionally on Proposition 4.3 being exhaustive and on the encoding of its polygons, no Keller pair has degrees
+  (72,108) or (108,72); by GGHV Theorem 2.1 a counterexample to JC(2) then has max deg >= 125. Priority for the
+  exclusion is Helali's (first claim, conditional on the same reduction) and Guo's.
+- Validation: an adversarial review in five lenses with skeptics (CAOS_MANAGE `wip/caos-research/jc-exp146-review-2026-11-15.md`;
+  among its checks one leaf set per branch recomputed at third primes, 268435399 and 399999949, by scripts that do not
+  import the experiment's code), a fix pass in code and tests (5f6d6a75), a full rerun with the strengthened gates by the
+  coordinating session (1,854 s; 0 differences against the first certificates, `compare_slp.py`), a records pass, a final
+  check in three lenses (`jc-exp146-final-check-2026-11-16.md`: artifacts and reproduction recordable, five text fixes in
+  the verdict), and two re-checks of those fixes (`jc-exp146-vfix-recheck-2026-11-16.md`: RECORDABLE at 67f9d0e9). The
+  mutant M1c (the composed-bound mutant with the w = 0 entry unlowered, 2,109 violations) was added on the way.
+- Strategic review (methodology 13): this success gate triggers the review; the program adopts methodology 13 with its
+  governance record and manuscript map (`program/jacobian-conjecture/research-governance.json`, `manuscript-map.md`). Next:
+  planar v0.38 carries the result; its publication waits for Felipe's validation of the closure phrasing
+  (`program/jacobian-conjecture/72108-closure-statement.md`).
+

@@ -1,4 +1,6 @@
 {
+  "python_version": "3.13.14",
+  "sympy_version": "1.14.0",
   "pdf_sha256": "5dd5861194bfea9130cddc10919510b060dab663f3a00222e57014125db5051a",
   "P1_sizes_measured": {
     "beta": [
@@ -94,7 +96,7 @@
     "{D,S}": "0",
     "{D,T}": "0"
   },
-  "P2_symbolic_seconds": 7.02,
+  "P2_symbolic_seconds": 14.96,
   "P2_random_route": {
     "points": 50,
     "seed": 20261114,
@@ -104,8 +106,8 @@
     ]
   },
   "P3_detJF_symbolic": "1",
-  "P3_seconds": 60.82,
-  "P4_groebner_seconds": 0.29,
+  "P3_seconds": 136.68,
+  "P4_groebner_seconds": 0.52,
   "P4_kill_criterion_triggered": false,
   "P4_lex_basis": [
     "-3*q/2 + x",
@@ -146,6 +148,19 @@
       2
     ]
   ],
+  "P4_pure_power_exponents": [
+    1,
+    2,
+    1,
+    2
+  ],
+  "P4_box_bounds": [
+    8,
+    8,
+    8,
+    8
+  ],
+  "P4_box_sufficient": true,
   "P4_quotient_dimension": 3,
   "P4_solutions": [
     [
@@ -256,6 +271,6 @@
     ],
     "random_route_nonzero_entries_5_points": 20
   },
-  "elapsed_seconds": 77.12,
+  "elapsed_seconds": 173.08,
   "failures": []
 }

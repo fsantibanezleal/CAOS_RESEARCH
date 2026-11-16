@@ -7,7 +7,7 @@ skew-product structure, the seed family with the proof of its Keller property an
 the verified seeds, the asymptotic variety and the image of the map, the real census, characteristic
 p, the weight-system survey, and planar equivariant rigidity as the bridge out.
 
-Version 0.15, published 2026-11-15 at [10.5281/zenodo.24240161](https://doi.org/10.5281/zenodo.24240161) (concept
+Current version: v0.15, published 2026-11-15 at [10.5281/zenodo.24240161](https://doi.org/10.5281/zenodo.24240161) (concept
 [10.5281/zenodo.21503365](https://doi.org/10.5281/zenodo.21503365)); 30 pages, 670,311 bytes, SHA-256
 `aa7de7e613b5c57dca56507786706bd493d459c21d1ff1f38cf85cfb547199bc`. It corrects v0.14: the announced map is not
 surjective and the plane C = 0 is not asymptotic (EXP-145).

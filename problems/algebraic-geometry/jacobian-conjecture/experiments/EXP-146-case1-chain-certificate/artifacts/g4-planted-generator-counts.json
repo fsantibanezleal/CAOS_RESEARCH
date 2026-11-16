@@ -1,0 +1,78 @@
+{
+ "experiment": "EXP-146",
+ "note": "planted_split_common part of G4 rerun alone (g4_controls(prime, branch_plus_path=None, nonempty=True)) after the per-node generator and variable record was added to gates.prove_nonempty (review F1 item 3); the branch controls are in results.json",
+ "pass": true,
+ "planted_split_common": {
+  "generators": 4,
+  "variables": 2,
+  "certified": false,
+  "statuses": [
+   [
+    "psc",
+    "split"
+   ],
+   [
+    "psc.nz",
+    "unknown"
+   ],
+   [
+    "psc.z",
+    "certified"
+   ]
+  ],
+  "extended_ok": true,
+  "nodes": {
+   "psc": {
+    "final_pairs": 2,
+    "nonzero_pairs": 0,
+    "constant_member": null,
+    "certified": false,
+    "status": "split",
+    "dim": 0,
+    "vdim": 1,
+    "nonempty": true,
+    "generators": 4,
+    "variables": 2
+   },
+   "psc.nz": {
+    "final_pairs": 2,
+    "nonzero_pairs": 0,
+    "constant_member": null,
+    "certified": false,
+    "status": "unknown",
+    "dim": 0,
+    "vdim": 1,
+    "nonempty": true,
+    "generators": 5,
+    "variables": 3
+   },
+   "psc.z": {
+    "final_pairs": 0,
+    "nonzero_pairs": 0,
+    "constant_member": "f1",
+    "certified": true,
+    "status": "certified",
+    "dim": -1,
+    "vdim": 0,
+    "nonempty": false,
+    "generators": 1,
+    "variables": 1
+   }
+  }
+ },
+ "final_pair_summary": {
+  "controls": [
+   "planted_split_common"
+  ],
+  "violations": {
+   "planted_split_common": []
+  },
+  "qualifying": {
+   "planted_split_common": [
+    "psc",
+    "psc.nz"
+   ]
+  },
+  "nonempty_nodes_with_two_zero_pairs": 2
+ }
+}

@@ -195,46 +195,46 @@ def status_rows(r, n):
              opn=r"$N=2$ [C]"),
         dict(key="MC", stmt=r"Mathieu conjecture for $SU(N)$",
              impl=r"$MC(SU(N))\Rightarrow$ every Keller map $x-h$ of $\C^N$, $h$ homogeneous, is invertible",
-             src=r"Zwart, Conj.~4.15 and Thm~4.23, proof of Thm~4.16 [V] \cite{Zwart2025}; Mathieu, Thms~5.3 and 5.4, not located [U] \cite{Mathieu1997}",
+             src=r"Zwart, Conj.~4.15 (p.~39) and Thm~4.23 (p.~43), proof of Thm~4.16 (pp.~39--40) [V] \cite{Zwart2025}; Mathieu, Thms~5.3 and 5.4, not located [U] \cite{Mathieu1997}",
              marks=r"chain [V], original [U]; $N=%s$ witness [MV]; $MC(SU(N))$ false for $N\ge%s$ [D] on Zwart [V]; $SU(2)$ [V], $n\le%s$ [MV]" % (hd, hd, n["suthreemax"]),
              wit=r"$N=%s$, degree %s (EXP-138); $N=%s$ (EXP-041 input); $SU(2)$: Long's $F,G$ \cite{LongSU2}" % (hd, hdeg, n["thompsondim"]),
              opn=r"$SU(N)$, $3\le N\le14$; other compact groups [C]"),
         dict(key="DC", stmt=r"Dixmier conjecture $DC(n)$",
              impl=r"$DC(n)\Rightarrow JC(n)$; $JC(2n)\Rightarrow DC(n)$",
-             src=r"Belov-Kanel and Kontsevich, introduction and Thm~1 [V] \cite{BKK2007}; Tsuchimoto [U] \cite{Tsuchimoto2005}",
+             src=r"Belov-Kanel and Kontsevich, introduction (pp.~1--2) and Thm~1 (p.~2) [V] \cite{BKK2007}; Tsuchimoto [U] \cite{Tsuchimoto2005}",
              marks=r"closure $n\le%s$ [MV], all $n$ [D]; rank-1 proof claimed [U]" % n["closuremax"],
              wit=r"none explicit: $DC(n)\Rightarrow JC(n)$ carries the failure",
              opn=r"$n=1,2$ [C]"),
         dict(key="PC", stmt=r"Poisson conjecture $PC(n)$ ($2n$ variables)",
              impl=r"$JC(2n)\Rightarrow PC(n)\Rightarrow DC(n)\Rightarrow JC(n)$",
-             src=r"Adjamagbo and van den Essen, Thm~7 [V] \cite{AvdE2007}; Long, Thm~1.1 (pp.~2--3), eqs.~(12)--(19) (p.~4), size table (p.~5) [V] \cite{LongPoisson2026}",
+             src=r"Adjamagbo and van den Essen, Thm~7 (p.~14) [V] \cite{AvdE2007}; Long, Thm~1.1 (pp.~2--3), eqs.~(12)--(19) (p.~4), size table (p.~5) [V] \cite{LongPoisson2026}",
              marks=r"identities of Long's map [MV] (EXP-144); $PC(2)$ false [D] from them (Prop.~\ref{prop:poisson}); $n\ge2$ [D]; closure $n\ge3$, $n\le%s$ [MV]" % n["closuremax"],
              wit=r"$R,T,D,S\in\Q[x,q,p,z]$ (4 variables), $\{D,R\}=\{S,T\}=1$, fibre of %s points" % pk,
              opn=r"$n=1$ [C]"),
         dict(key="GMC", stmt=r"Gaussian moments conjecture $GMC(n)$",
              impl=r"$GMC(n)$ for all $n$ $\Rightarrow JC$",
-             src=r"Derksen, van den Essen and Zhao, Thm~1.6 and Prop.~4.2 [V] \cite{DEZ2017}; Long, Thm~5.1 [V] \cite{Long2026}",
+             src=r"Derksen, van den Essen and Zhao, Thm~1.6 (p.~2) and Prop.~4.2 (p.~6) [V] \cite{DEZ2017}; Long, Thm~5.1 (p.~6) [V] \cite{Long2026}",
              marks=r"$n\ge3$ [V], $m\le%s$ [MV]; $n=1$ true [V]; $n=2$ proof claimed [U]" % n["gmcmax"],
              wit=r"$P_3$ of five terms and degree 4, $Q_3=Z$, in 3 variables",
-             opn=r"$n=2$ [C] (proof claimed \cite{Wilson2026})"),
+             opn=r"$n=2$ [C] (proof claimed \cite[abstract, p.~1]{Wilson2026})"),
         dict(key="VC", stmt=r"Zhao's vanishing conjecture",
              impl=r"vanishing (all $n$) $\Leftrightarrow JC$ (all $n$); homogeneous Hessian-nilpotent quartics suffice",
-             src=r"Zhao, Thms~7.2, 3.4 and 6.2 [V] \cite{Zhao2004}; de Bondt, dimensions 28 and 30 [V] \cite{deBondt2026}",
-             marks=r"collision and conjugation [MV]; Hessian nilpotency [D]; failure of the vanishing conjecture [D] by Zhao [V]; de Bondt's dimensions [V], not re-verified",
+             src=r"Zhao, Thms~7.2 (p.~30), 3.4 (p.~12) and 6.2 (p.~25) [V] \cite{Zhao2004}; de Bondt, dimensions 28 and 30 (abstract, p.~1; table, p.~29) [U] \cite{deBondt2026}",
+             marks=r"collision and conjugation [MV]; Hessian nilpotency [D]; failure of the vanishing conjecture [D] by Zhao [V]; de Bondt's dimensions [U]",
              wit=r"$P_\star=-f_H$, homogeneous quartic in %s variables, %s monomials over $\Q(i)$" % (n["witnessdim"], n["potentialmon"]),
              opn=r"minimal failing dimension [C]"),
         dict(key="IC", stmt=r"Image conjecture (Zhao)",
              impl=r"Image $\Rightarrow$ generalized vanishing conjecture, which contains the vanishing conjecture",
-             src=r"van den Essen, abstract only [U] \cite{vdE2010}; proposed in \cite{Zhao2010}",
+             src=r"van den Essen, abstract only (p.~1) [U] \cite{vdE2010}; proposed in \cite{Zhao2010}",
              marks=r"implication [U]; falsity [D] on a [U] implication",
              wit=r"none explicit: false in some dimension",
              opn=r"minimal failing dimension [C]"),
         dict(key="HC", stmt=r"Symmetric (gradient) Jacobian conjecture, Hessian conjecture $HC$",
              impl=r"$HC(2n)\Rightarrow$ $x+H$ invertible whenever $JH$ is nilpotent; $JC\Leftrightarrow HC$",
-             src=r"de Bondt and van den Essen, Thm~1.1 and Cor.~1.3 [V] \cite{dBvdE2005}",
+             src=r"de Bondt and van den Essen, Thm~1.1 (p.~2202) and Cor.~1.3 (p.~2203) [V] \cite{dBvdE2005}",
              marks=r"collision and conjugation [MV]; Hessian nilpotency [D]; $HC$ false [D]",
              wit=r"$\mathrm{id}+\nabla f_H$ on $\C^{%s}$, 2-point collision over $\Q(i)$" % n["witnessdim"],
-             opn=r"dimensions below %s [C]; positive results \cite{dBvdE2005b, vdEW2004} [U]" % n["witnessdim"]),
+             opn=r"minimal dimension of a nilpotent-Hessian witness [C]; failures stated by de Bondt in dimensions 28 and 30 for the vanishing conjecture [U] \cite{deBondt2026}; positive results \cite{dBvdE2005b, vdEW2004} [U]"),
     ]
     return rows
 
@@ -246,8 +246,10 @@ def status_table(rows):
            r"reaches, one row each. The columns give the statement, the published implication with the dimension index as its "
            r"source states it, the theorem located in that source, the evidence marks (Section~\ref{sec:marks}), the explicit "
            r"witness with its dimension, and the indices that remain open. Built by \texttt{make\_status.py} from the closure "
-           r"and the exact checks of computations EXP-001, EXP-041, EXP-136, EXP-138 and EXP-144; page numbers of the source "
-           r"theorems were not recorded except for Long's polynomials.}\label{tab:status}\\")
+           r"and the exact checks of computations EXP-001, EXP-041, EXP-136, EXP-138 and EXP-144; the table gives theorem "
+           r"numbers, and the page of each, in the version named in Section~\ref{sec:inputs}, is given where the theorem is cited in "
+           r"Sections~\ref{sec:related} and~\ref{sec:cascade}, except for the texts that Section~\ref{sec:inputs} lists as "
+           r"carrying no page.}\label{tab:status}\\")
     out = [r"\clearpage", r"\begin{landscape}", r"\footnotesize", r"\setlength{\tabcolsep}{3pt}",
            r"\begin{longtable}{@{}L{0.11\textheight}L{0.17\textheight}L{0.19\textheight}L{0.14\textheight}L{0.19\textheight}L{0.12\textheight}@{}}",
            cap, r"\toprule", head, r"\midrule", r"\endfirsthead", r"\toprule", head, r"\midrule", r"\endhead",
@@ -390,7 +392,7 @@ def validation_table(r, n):
         (r"Nilpotency of $JH$, two routes", "EXP-041 D",
          r"$(JH)^{%s}=0$ while $(JH)^{17}$ keeps %s terms; $\mathrm{Tr}(JH^k)=0$ for $k=1,2,4,8$ (and the chain terms %s, %s, %s, %s, %s, %s for $k=1,2,4,8,16,17$)" % (n["nilindex"], n["jhseventeen"], n["jhone"], n["jhtwo"], n["jhfour"], n["jheight"], n["jhsixteen"], n["jhseventeen"])),
         (r"Potential and collision", "EXP-041 B, C, E",
-         r"$f_H$ has %s monomials; the conjugation identity holds in all %s components; $\Delta P_\star^2$ has %s terms" % (n["potentialmon"], n["witnessdim"], n["deltaterms"])),
+         r"$f_H$ has %s monomials; the conjugation identity holds in all %s components; $\Delta(P_\star^2)$ has %s terms" % (n["potentialmon"], n["witnessdim"], n["deltaterms"])),
         (r"Dimension-15 witness and control", "EXP-138",
          r"$(JH)^{%s}=0$; equal images at two distinct integer points; adding $x_2^2$ to $F_2$ gives a non-constant determinant; %s s" % (n["homnil"], n["homseconds"])),
         (r"Long's Poisson map, two routes", "EXP-144 P1 to P5",

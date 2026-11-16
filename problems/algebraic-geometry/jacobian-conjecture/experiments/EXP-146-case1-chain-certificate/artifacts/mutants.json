@@ -1,0 +1,91 @@
+{
+ "experiment": "EXP-146",
+ "mutants": {
+  "M1_res_bound_minus_1_G2_random": {
+   "mutation": "every entry of the table returned by res_bound lowered by 1",
+   "weights_checked": 54390,
+   "violations": 30314,
+   "pairs_kept": 1862,
+   "gate_fails": true
+  },
+  "M1b_res_bound_minus_1_second_step_composition": {
+   "mutation": "every entry of the table returned by res_bound lowered by 1 in the second composed step (elimination of a), the first step (elimination of x) unchanged",
+   "weights_checked": 3557,
+   "violations": 2381,
+   "cases": 272,
+   "gate_fails": true
+  },
+  "M1c_res_bound_minus_1_second_step_w0_kept": {
+   "mutation": "as M1b, with the entry at w = 0 left unlowered (it is 0 by construction, chaincert.py, so lowering it fails in every kept case whatever the bound engine does)",
+   "weights_checked": 3557,
+   "violations": 2109,
+   "cases": 272,
+   "gate_fails": true
+  },
+  "M2_degree_drop_factor_removed_G3_60": {
+   "mutation": "res_image without the factor (-1)^(n (m - m')) lc(phi g)^(m - m')",
+   "cases": 60,
+   "mismatches": 60,
+   "gate_fails": true
+  },
+  "M2_degree_drop_factor_removed_G3_500": {
+   "mutation": "res_image without the factor (-1)^(n (m - m')) lc(phi g)^(m - m')",
+   "cases": 500,
+   "mismatches": 500,
+   "gate_fails": true
+  }
+ },
+ "baseline": {
+  "G2_random_2000": {
+   "cases": 1862,
+   "resultant_zero": 560,
+   "dead_bound": 0,
+   "weights_checked": 54390,
+   "violations": 0,
+   "proven_zero_checked": 551,
+   "proven_zero_violations": 0,
+   "planted_cancel": 2002,
+   "planted_monomial": 1513,
+   "split_cases": 1539,
+   "low_tight": 543,
+   "formal_degree_above_actual": 926,
+   "weight_checked_pairs": 1302,
+   "x_split_cases": 338,
+   "pass": true
+  },
+  "G2_composition_600": {
+   "composition_cases": 272,
+   "composition_zero_resultant": 131,
+   "composition_skipped": 197,
+   "composition_weights": 3557,
+   "composition_violations": 0,
+   "composition_mutant_violations": 2336,
+   "composition_proven_zero_checked": 180,
+   "composition_proven_zero_violations": 0,
+   "composition_split_cases": 179,
+   "composition_order_checked": 131,
+   "pass": true
+  },
+  "G3_500": {
+   "cases": 500,
+   "mismatches": 0,
+   "drops": {
+    "2": 231,
+    "1": 269
+   },
+   "pass": true
+  },
+  "G3_60": {
+   "cases": 60,
+   "mismatches": 0,
+   "drops": {
+    "2": 31,
+    "1": 29
+   },
+   "pass": true
+  }
+ },
+ "seconds": 86.1,
+ "all_mutants_caught": true,
+ "baseline_clean": true
+}

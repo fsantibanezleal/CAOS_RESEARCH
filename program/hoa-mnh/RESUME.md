@@ -4,6 +4,9 @@ Updated 2026-11-06 (opened). First read for any session, per methodology 07. Der
 
 ## 1. State in one screen
 
+2026-11-16: EXP-008 found no middle gadget among the 3,304 gadgets of the 286 order-13 MNH graphs with a universal
+vertex (independently verified); a Zhan-type middle needs order-13 case B or order >= 14.
+
 Maximal non-Hamiltonian (MNH): G is not Hamiltonian and G + e is Hamiltonian for every nonedge e. Hoa's
 conjecture (1994): for every MNH graph G and every longest cycle C, G - V(C) is complete. Zhan
 (arXiv:2608.00957v3) disproves it at every order n >= 56 (residual 2K_1, toughness 1, circumference n - 2) and
