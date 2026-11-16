@@ -113,6 +113,26 @@ def current_version_statement(readme: str) -> tuple[str, str | None] | None:
     return line, (match.group(0) if match else None)
 
 
+def readme_version_problem(readme: str, name: str) -> str | None:
+    """An error when the README's first version line has no currency marker but a later line does.
+
+    The statement search (pass 1) takes the first marker line anywhere, so a stale lead line
+    without a marker would be skipped. When pass 1 matches, that line must be the first
+    non-heading line that has a version token; the heading fallback is not checked.
+    """
+    lines = readme.splitlines()
+    body = [(i, l) for i, l in enumerate(lines) if not l.startswith("#") and VERSION_RE.search(l)]
+    if not body:
+        return None
+    first_index, first_line = body[0]
+    if CURRENT_MARKER_RE.search(first_line) or first_line.lstrip("-* ").startswith("Version"):
+        return None
+    return (
+        f"{name} README: the first version line (line {first_index + 1}: '{first_line.strip()}') "
+        "has no currency marker; state the current version there"
+    )
+
+
 def own_index_rows(index: str, rel_path: str) -> list[str]:
     """The lines of the global index that link this manuscript's own folder (a versions/ tail is dropped)."""
     prefix = "manuscripts/"
@@ -266,21 +286,34 @@ def validate_record(path: Path, global_index: str, errors: list[str]) -> None:
             if needle not in haystack:
                 errors.append(f"{label}: {slug} missing {field}: {needle}")
 
-        # README: the version and version DOI of the current-version statement only.
-        statement = current_version_statement(readme_text) if readme_text else None
-        if readme_text and statement is None:
-            errors.append(f"{label}: {slug} README has no current-version line (a line with a version and 'Current', 'Latest', 'Public version' or a leading 'Version')")
-        elif statement is not None:
+        # README: the version and version DOI of the current-version statement only; for a
+        # versions/ record the parent folder's README states the public version too.
+        readmes = [(readme_text, f"{slug} README", "README")]
+        if "/versions/" in rel_path:
+            parent_path = ROOT / (rel_path.split("/versions/")[0].strip("/") + "/README.md")
+            parent_text = text(parent_path, errors, f"{label}: {slug} parent README")
+            readmes.append((parent_text, f"{slug} parent README", "parent README"))
+        for body, name, kind in readmes:
+            if not body:
+                continue
+            statement = current_version_statement(body)
+            if statement is None:
+                errors.append(f"{label}: {name} has no current-version line (a line with a version and 'Current', 'Latest', 'Public version' or a leading 'Version')")
+                continue
+            problem_text = readme_version_problem(body, name)
+            if problem_text is not None and not statement[0].startswith("#"):
+                errors.append(f"{label}: {problem_text}")
+                continue
             line, readme_doi = statement
             first_version = VERSION_RE.search(line)
             if first_version is None or first_version.group(0) != expected_version:
                 errors.append(
-                    f"{label}: {slug} README current version is "
+                    f"{label}: {name} current version is "
                     f"{first_version.group(0) if first_version else 'absent'}, expected {expected_version}"
                 )
             if readme_doi != version_doi:
                 errors.append(
-                    f"{label}: {slug} README current version DOI is {readme_doi or 'absent'}, expected {version_doi}"
+                    f"{label}: {name} current version DOI is {readme_doi or 'absent'}, expected {version_doi}"
                 )
 
         # Global index: the manuscript's own row only; its first version and first DOI.
@@ -352,21 +385,27 @@ def main() -> int:
     for path in records:
         validate_record(path, global_index, errors)
 
-    if errors:
-        print("research governance: FAIL")
-        for error in errors:
-            print(f"  - {error}")
-        return 1
-
-    print(f"research governance: OK: {len(records)} governed program(s)")
     adopted = {path.parent.name for path in records}
-    if PORTFOLIO.is_file():
-        pending = unadopted_problems(PORTFOLIO.read_text(encoding="utf-8"), adopted)
+    pending = (
+        unadopted_problems(PORTFOLIO.read_text(encoding="utf-8"), adopted) if PORTFOLIO.is_file() else []
+    )
+
+    def print_information() -> None:
         if pending:
             print(
                 "  info: long-running problems that have not adopted methodology 13 "
                 f"(a record is due at the next strategic review): {', '.join(pending)}"
             )
+
+    if errors:
+        print("research governance: FAIL")
+        for error in errors:
+            print(f"  - {error}")
+        print_information()
+        return 1
+
+    print(f"research governance: OK: {len(records)} governed program(s)")
+    print_information()
     return 0
 
 

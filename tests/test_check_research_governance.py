@@ -31,11 +31,14 @@ def index_row(slug: str, version: str, doi: str) -> str:
     return f"| [prog](prog/) | [{slug}/](prog/{slug}/) | [{doi}](https://doi.org/{doi}) (v{version}) | summary |\n"
 
 
-def build(tmp_path: Path, monkeypatch, *, readme_text: str, index_text: str, classification="primary-manuscript"):
+def build(tmp_path: Path, monkeypatch, *, readme_text: str, index_text: str, classification="primary-manuscript",
+          sub="", parent_readme=None):
     prog = tmp_path / "program" / "prob"
     prog.mkdir(parents=True)
-    mdir = tmp_path / "manuscripts" / "prog" / "a"
+    mdir = tmp_path / "manuscripts" / "prog" / "a" / sub if sub else tmp_path / "manuscripts" / "prog" / "a"
     mdir.mkdir(parents=True)
+    if parent_readme is not None:
+        (tmp_path / "manuscripts" / "prog" / "a" / "README.md").write_text(parent_readme, encoding="utf-8")
     tex = "".join(
         "%snewcommand{%s%s}{%s}%s" % (BS, BS, name, value, NL)
         for name, value in (("docversion", "v0.02"), ("versiondoi", DOI_A), ("conceptdoi", CONCEPT))
@@ -50,7 +53,7 @@ def build(tmp_path: Path, monkeypatch, *, readme_text: str, index_text: str, cla
         "schema_version": 1, "problem": "prob", "updated": "x", "original_problem": {}, "mission": "m",
         "current_focus": "F1", "stop_policy": {},
         "focuses": [{k: "x" for k in guard.FOCUS_KEYS} | {"id": "F1", "status": "active", "stop_conditions": ["s"]}],
-        "manuscripts": [{"slug": "a", "path": "manuscripts/prog/a", "version": "0.02", "version_doi": DOI_A,
+        "manuscripts": [{"slug": "a", "path": "manuscripts/prog/a" + ("/" + sub if sub else ""), "version": "0.02", "version_doi": DOI_A,
                          "concept_doi": CONCEPT, "status": "s", "split_action": "s"}],
         "experiment_dispositions": [{"start": 1, "end": 1, "classification": classification, "manuscripts": ["a"]}],
     }
@@ -141,3 +144,46 @@ def test_version_line_with_later_version_doi_line(tmp_path, monkeypatch):
 def test_index_row_of_versions_folder_path():
     rows = guard.own_index_rows(index_row("a", "0.02", DOI_A), "manuscripts/prog/a/versions/v0.02")
     assert len(rows) == 1
+
+
+def test_failing_run_still_prints_information(monkeypatch, capsys):
+    monkeypatch.setattr(guard, "validate_record", lambda path, index, errors: errors.append("planted error"))
+    code = guard.main()
+    out = capsys.readouterr().out
+    assert code == 1
+    assert "FAIL" in out
+    assert "not adopted methodology 13" in out
+
+
+def test_marker_less_stale_statement_before_later_planned_line_fails(tmp_path, monkeypatch):
+    text = f"# m\n\nPublic record v0.01 {DOI_B}.\n\nLatest planned version v0.02: {DOI_A} (reserved).\n"
+    errors = build(tmp_path, monkeypatch, readme_text=text, index_text=GOOD_INDEX)
+    assert any("first version line" in e and "no currency marker" in e for e in errors)
+    assert not any("README current version is" in e for e in errors)
+
+
+def test_current_line_under_early_heading_passes(tmp_path, monkeypatch):
+    text = f"# m\n\n## Status\n\nCurrent public version: v0.02, published at [{DOI_A}](https://doi.org/{DOI_A}).\n"
+    assert build(tmp_path, monkeypatch, readme_text=text, index_text=GOOD_INDEX) == []
+
+
+def test_marker_removed_from_lead_statement_gives_new_message(tmp_path, monkeypatch):
+    text = f"# m\n\nPublic record v0.02 {DOI_A}.\n\n## History\n\n- v0.01 (current in its day): {DOI_B}\n"
+    errors = build(tmp_path, monkeypatch, readme_text=text, index_text=GOOD_INDEX)
+    assert any("first version line (line 3" in e for e in errors)
+    assert not any("README current version is v0.01" in e for e in errors)
+
+
+def test_versions_folder_parent_readme_is_checked(tmp_path, monkeypatch):
+    own = readme("0.02", DOI_A)
+    ok = build(tmp_path / "ok", monkeypatch, readme_text=own, index_text=GOOD_INDEX, sub="versions/v0.02",
+               parent_readme=readme("0.02", DOI_A))
+    assert ok == []
+    stale = build(tmp_path / "stale", monkeypatch, readme_text=own, index_text=GOOD_INDEX, sub="versions/v0.02",
+                  parent_readme=readme("0.01", DOI_B))
+    assert any("parent README" in e and "version" in e for e in stale)
+
+
+def test_versions_folder_missing_parent_readme_names_path(tmp_path, monkeypatch):
+    errors = build(tmp_path, monkeypatch, readme_text=readme("0.02", DOI_A), index_text=GOOD_INDEX, sub="versions/v0.02")
+    assert any("parent README" in e and "manuscripts/prog/a/README.md" in e.replace(BS, "/") for e in errors)
