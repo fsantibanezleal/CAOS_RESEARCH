@@ -1,5 +1,5 @@
 == branch plus: returncode 0, seconds 12.4
-digests compared 130, mismatches [], constants compared 18, mismatches [], sign flips 0, missing [], flags []
+digests compared 153, mismatches [], constants compared 18, mismatches [], sign flips 0, missing [], flags []
 --- Singular output ---
 DIG t E3 22 1,1,1,2,5 75779628 249318855
 DIG t E5 35 1,2,2,3,6 -252204909 -91367922
@@ -179,8 +179,8 @@ CONST t.z.z l2.2 75030777
 CONST t.z.z l2.3 87453970
 CONST t.z.z E13 191661876
 
-== branch minus: returncode 0, seconds 2.2
-digests compared 130, mismatches [], constants compared 18, mismatches [], sign flips 0, missing [], flags []
+== branch minus: returncode 0, seconds 3.5
+digests compared 153, mismatches [], constants compared 18, mismatches [], sign flips 0, missing [], flags []
 --- Singular output ---
 DIG t E3 22 1,1,1,2,5 -31479498 -42409341
 DIG t E5 35 1,2,2,3,6 -142447302 -217133672

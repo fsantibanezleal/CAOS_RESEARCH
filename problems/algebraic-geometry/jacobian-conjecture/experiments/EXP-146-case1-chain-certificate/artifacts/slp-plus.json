@@ -5663,21 +5663,63 @@
       "L": 0,
       "d": 688,
       "img_deg": 688,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 689,
+       "degrees": [
+        0,
+        0,
+        0,
+        0,
+        688
+       ],
+       "eval": [
+        127589144,
+        394833258
+       ]
+      }
      },
      {
       "id": "l4.1",
       "L": 0,
       "d": 688,
       "img_deg": 688,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 689,
+       "degrees": [
+        0,
+        0,
+        0,
+        0,
+        688
+       ],
+       "eval": [
+        398598068,
+        297548090
+       ]
+      }
      },
      {
       "id": "l4.2",
       "L": 0,
       "d": 688,
       "img_deg": 688,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 689,
+       "degrees": [
+        0,
+        0,
+        0,
+        0,
+        688
+       ],
+       "eval": [
+        404839456,
+        513377878
+       ]
+      }
      }
     ],
     "pivot": "l4.0",
@@ -6776,7 +6818,7 @@
     "g5_checked": 13,
     "g5_mismatches": 0
    },
-   "seconds": 14.13,
+   "seconds": 15.63,
    "gcd": {
     "gcd_degree": 212,
     "gcd_factors": [
@@ -7029,21 +7071,63 @@
       "L": 212,
       "d": 476,
       "img_deg": 476,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 477,
+       "degrees": [
+        0,
+        0,
+        0,
+        0,
+        476
+       ],
+       "eval": [
+        163486557,
+        87298837
+       ]
+      }
      },
      {
       "id": "l4.1",
       "L": 212,
       "d": 476,
       "img_deg": 476,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 477,
+       "degrees": [
+        0,
+        0,
+        0,
+        0,
+        476
+       ],
+       "eval": [
+        189577654,
+        134993556
+       ]
+      }
      },
      {
       "id": "l4.2",
       "L": 212,
       "d": 476,
       "img_deg": 476,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 477,
+       "degrees": [
+        0,
+        0,
+        0,
+        0,
+        476
+       ],
+       "eval": [
+        197761731,
+        260900219
+       ]
+      }
      }
     ],
     "pivot": "l4.0",
@@ -8142,7 +8226,7 @@
     "g5_checked": 13,
     "g5_mismatches": 0
    },
-   "seconds": 66.75,
+   "seconds": 178.8,
    "status": "certified"
   },
   {
@@ -8327,35 +8411,100 @@
       "L": 0,
       "d": 14,
       "img_deg": 14,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 15,
+       "degrees": [
+        0,
+        0,
+        0,
+        14
+       ],
+       "eval": [
+        256302034,
+        351157923
+       ]
+      }
      },
      {
       "id": "l3.1",
       "L": 0,
       "d": 17,
       "img_deg": 17,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 18,
+       "degrees": [
+        0,
+        0,
+        0,
+        17
+       ],
+       "eval": [
+        407840226,
+        360807821
+       ]
+      }
      },
      {
       "id": "l3.2",
       "L": 0,
       "d": 17,
       "img_deg": 17,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 18,
+       "degrees": [
+        0,
+        0,
+        0,
+        17
+       ],
+       "eval": [
+        523631272,
+        88646624
+       ]
+      }
      },
      {
       "id": "l3.3",
       "L": 0,
       "d": 17,
       "img_deg": 17,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 18,
+       "degrees": [
+        0,
+        0,
+        0,
+        17
+       ],
+       "eval": [
+        20136617,
+        81623432
+       ]
+      }
      },
      {
       "id": "l3.4",
       "L": 0,
       "d": 15,
       "img_deg": 15,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 16,
+       "degrees": [
+        0,
+        0,
+        0,
+        15
+       ],
+       "eval": [
+        151774078,
+        444086672
+       ]
+      }
      }
     ],
     "pivot": "l3.0",
@@ -9241,7 +9390,7 @@
     "g5_checked": 12,
     "g5_mismatches": 0
    },
-   "seconds": 0.87,
+   "seconds": 3.73,
    "gcd": {
     "gcd_degree": 2,
     "gcd_factors": [
@@ -9456,35 +9605,100 @@
       "L": 2,
       "d": 12,
       "img_deg": 12,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 13,
+       "degrees": [
+        0,
+        0,
+        0,
+        12
+       ],
+       "eval": [
+        61608878,
+        499801066
+       ]
+      }
      },
      {
       "id": "l3.1",
       "L": 3,
       "d": 14,
       "img_deg": 14,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 15,
+       "degrees": [
+        0,
+        0,
+        0,
+        14
+       ],
+       "eval": [
+        514127585,
+        215129779
+       ]
+      }
      },
      {
       "id": "l3.2",
       "L": 3,
       "d": 14,
       "img_deg": 14,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 15,
+       "degrees": [
+        0,
+        0,
+        0,
+        14
+       ],
+       "eval": [
+        313772935,
+        413331762
+       ]
+      }
      },
      {
       "id": "l3.3",
       "L": 3,
       "d": 14,
       "img_deg": 14,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 15,
+       "degrees": [
+        0,
+        0,
+        0,
+        14
+       ],
+       "eval": [
+        8548212,
+        239148615
+       ]
+      }
      },
      {
       "id": "l3.4",
       "L": 3,
       "d": 12,
       "img_deg": 12,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 13,
+       "degrees": [
+        0,
+        0,
+        0,
+        12
+       ],
+       "eval": [
+        233375221,
+        105092074
+       ]
+      }
      }
     ],
     "pivot": "l3.0",
@@ -10370,7 +10584,7 @@
     "g5_checked": 12,
     "g5_mismatches": 0
    },
-   "seconds": 2.11,
+   "seconds": 9.77,
    "status": "certified"
   },
   {
@@ -10493,49 +10707,133 @@
       "L": 0,
       "d": 1,
       "img_deg": 1,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 2,
+       "degrees": [
+        0,
+        0,
+        1
+       ],
+       "eval": [
+        13242017,
+        349366786
+       ]
+      }
      },
      {
       "id": "E7",
       "L": 0,
       "d": 2,
       "img_deg": 2,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 3,
+       "degrees": [
+        0,
+        0,
+        2
+       ],
+       "eval": [
+        131520927,
+        308615671
+       ]
+      }
      },
      {
       "id": "l2.0",
       "L": 0,
       "d": 6,
       "img_deg": 6,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 7,
+       "degrees": [
+        0,
+        0,
+        6
+       ],
+       "eval": [
+        336197032,
+        476681157
+       ]
+      }
      },
      {
       "id": "l2.1",
       "L": 0,
       "d": 6,
       "img_deg": 6,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 7,
+       "degrees": [
+        0,
+        0,
+        6
+       ],
+       "eval": [
+        522213260,
+        76493349
+       ]
+      }
      },
      {
       "id": "l2.2",
       "L": 0,
       "d": 6,
       "img_deg": 6,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 7,
+       "degrees": [
+        0,
+        0,
+        6
+       ],
+       "eval": [
+        58571169,
+        77999689
+       ]
+      }
      },
      {
       "id": "l2.3",
       "L": 0,
       "d": 6,
       "img_deg": 6,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 7,
+       "degrees": [
+        0,
+        0,
+        6
+       ],
+       "eval": [
+        462621492,
+        77037929
+       ]
+      }
      },
      {
       "id": "E13",
       "L": 0,
       "d": 2,
       "img_deg": 2,
-      "img_order": 0
+      "img_order": 0,
+      "digest": {
+       "terms": 3,
+       "degrees": [
+        0,
+        0,
+        2
+       ],
+       "eval": [
+        167954097,
+        143117104
+       ]
+      }
      }
     ],
     "pivot": "E3",
@@ -11112,7 +11410,7 @@
     "g5_checked": 9,
     "g5_mismatches": 0
    },
-   "seconds": 11.03,
+   "seconds": 42.59,
    "status": "certified"
   }
  ],
