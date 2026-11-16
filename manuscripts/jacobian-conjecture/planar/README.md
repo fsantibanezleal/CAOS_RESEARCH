@@ -74,7 +74,7 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.37**, published 2026-11-15 at version DOI `10.5281/zenodo.24240037`
+Manuscript version in preparation: **v0.38** (2026-11-16; its version DOI and checksum are set at release). Last published version: **v0.37**, published 2026-11-15 at version DOI `10.5281/zenodo.24240037`
 (concept DOI `10.5281/zenodo.21503367`; 51 pages, 722,853 bytes, SHA-256
 `f8fea6a7ba16ddf43e51133de4097416633e6a33d9b0c2785ca06313f06f3dd4`): the full revision (methods with six
 algorithms, complete proofs, related work, the atlas, exclusion and frontier tables, six figures, and the
