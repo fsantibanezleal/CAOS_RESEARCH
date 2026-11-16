@@ -1,0 +1,44 @@
+eqs sha256 0a3a390581c4f44c06907a61022069f7d704283e3b1def8947bb44cafaae76e9 match
+p3 = 399999949, roots of P mod p3 = [61040865], r3 = 61040865
+slp inputs equal data-root eqs: True
+split1 (a1,b1) = E3 q5-leading coefficient, deg_q5 E3 = 1 : True
+split1 image root at p1: 234584485 recorded 234584485
+t.z inputs exact in 0.0 s; zero inputs: []
+split2 (a2,b2) = E3 q3-leading coefficient at t.z, deg_q5 E3 = 0 deg_q3 = 1 : True
+  split2 at p1: phi(b2) = 38056482, root = 306016849
+  split2 at p3: phi(b2) = 386030565, root = 203604988
+t.z.nz and t.z.z inputs exact in 0.1 s
+[t.z.nz] inputs ['E3', 'E5', 'E6', 'E7', 'E9', 'E10', 'E11', 'E12', 'E13']: p1 digest mismatches 0
+[t.z.nz] level 1 x=q5 pivot E5: recorded n=1, exact degree 1, image degree at p3 1, at p1 1
+[t.z.nz] level 2 x=q3 pivot E3: recorded n=1, exact degree 1, image degree at p3 1, at p1 1
+[t.z.nz] level 3 x=q4 pivot l2.1: recorded n=2, exact degree 2, image degree at p3 2, at p1 2
+[t.z.nz] own Sylvester bound against the exact levels: 36 (member, variable) pairs, 0 invalid unless a PROBLEM is printed, 36 tight in both degree and order
+[t.z.nz] exact levels computed: 12; p1 digests of every member compared
+[t.z.nz] l3.0: Sylvester bound of Res_q4(l2.0,l2.1; 2,2): deg bound 14, order bound 2; recorded L=2 d=12; image at p3: order 2, degree 14
+[t.z.nz] l3.1: Sylvester bound of Res_q4(l2.2,l2.1; 3,2): deg bound 17, order bound 3; recorded L=3 d=14; image at p3: order 3, degree 17
+[t.z.nz] l3.2: Sylvester bound of Res_q4(l2.3,l2.1; 3,2): deg bound 17, order bound 3; recorded L=3 d=14; image at p3: order 3, degree 17
+[t.z.nz] l3.3: Sylvester bound of Res_q4(l2.4,l2.1; 3,2): deg bound 17, order bound 3; recorded L=3 d=14; image at p3: order 3, degree 17
+[t.z.nz] l3.4: Sylvester bound of Res_q4(l2.5,l2.1; 3,2): deg bound 15, order bound 3; recorded L=3 d=12; image at p3: order 3, degree 15
+[t.z.nz] final pivot l3.0: recorded n=12, own formal degree 12, image degree at p3 12
+[t.z.nz] constants at p3: [13527734, 367937690, 40575756, 0] (recorded at p1: [34853305, 492668574, 306155930, 0])
+[t.z.nz] constants at p2 (this script, flint form): [110107971, 120485716, 54040500, 0] recorded replay: [110107971, 120485716, 54040500, 0]
+[t.z.z] inputs ['E3', 'E5', 'E6', 'E7', 'E9', 'E10', 'E11', 'E12', 'E13']: p1 digest mismatches 0
+[t.z.z] level 1 x=q5 pivot E5: recorded n=1, exact degree 1, image degree at p3 1, at p1 1
+[t.z.z] level 2 x=q3 pivot l1.0: recorded n=2, exact degree 2, image degree at p3 2, at p1 2
+[t.z.z] own Sylvester bound against the exact levels: 18 (member, variable) pairs, 0 invalid unless a PROBLEM is printed, 18 tight in both degree and order
+[t.z.z] exact levels computed: 9; p1 digests of every member compared
+[t.z.z] E3: exact: deg bound 1, order bound 0; recorded L=0 d=1; image at p3: order 0, degree 1
+[t.z.z] E7: exact: deg bound 2, order bound 0; recorded L=0 d=2; image at p3: order 0, degree 2
+[t.z.z] l2.0: exact: deg bound 6, order bound 0; recorded L=0 d=6; image at p3: order 0, degree 6
+[t.z.z] l2.1: exact: deg bound 6, order bound 0; recorded L=0 d=6; image at p3: order 0, degree 6
+[t.z.z] l2.2: exact: deg bound 6, order bound 0; recorded L=0 d=6; image at p3: order 0, degree 6
+[t.z.z] l2.3: exact: deg bound 6, order bound 0; recorded L=0 d=6; image at p3: order 0, degree 6
+[t.z.z] E13: exact: deg bound 2, order bound 0; recorded L=0 d=2; image at p3: order 0, degree 2
+[t.z.z] final pivot E3: recorded n=1, own formal degree 1, image degree at p3 1
+[t.z.z] constants at p3: [386223456, 362929585, 97413426, 172069309, 245121334, 71474855] (recorded at p1: [39203000, 72530766, 463386644, 75030777, 87453970, 345209033])
+[t.z.nz] constants at p1 (this script, flint form): [34853305, 492668574, 306155930, 0] recorded: [34853305, 492668574, 306155930, 0] EQUAL
+[t.z.z] constants at p1 (this script, flint form): [39203000, 72530766, 463386644, 75030777, 87453970, 345209033] recorded: [39203000, 72530766, 463386644, 75030777, 87453970, 345209033] EQUAL
+PROBLEMS: 0
+t.z.nz constants at p3 (formal Sylvester det): [13527734, 367937690, 40575756, 0] nonzero 3 of 4
+t.z.z constants at p3 (formal Sylvester det): [386223456, 362929585, 97413426, 172069309, 245121334, 71474855] nonzero 6 of 6
+exit 0

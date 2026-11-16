@@ -1,0 +1,32 @@
+prime p = 268435399, root r = 174414054
+own Hungarian vs brute force on 3000 random matrices: agree
+split of t: w1 = lc_q5(E3) = a + b q0 exactly: True
+inputs transformed to (q5, q3, q4, q2, w1) in 0.0 s
+(2,2) closed formula equals the Leibniz Sylvester determinant on a random example: True
+ level 1 (q5): pivot E3 exact degree 1, recorded 1, image degree 1
+   exact members: ['l1.0', 'l1.1', 'l1.2', 'l1.3', 'l1.4', 'l1.5', 'l1.6', 'l1.7'] (0.1 s)
+ level 2 (q3): pivot l1.0 exact degree 2, recorded 2, image degree 2
+   exact members: ['l1.2', 'l1.7', 'l2.0', 'l2.1', 'l2.2', 'l2.3', 'l2.4'] (8.6 s)
+   own bound l3.0 = Res_q4;4,2: deg_q2 <= 14, deg_w1 <= 36, ord_w1 >= 8
+   own bound l3.1 = Res_q4;4,2: deg_q2 <= 16, deg_w1 <= 40, ord_w1 >= 6
+   own bound l3.2 = Res_q4;4,2: deg_q2 <= 16, deg_w1 <= 40, ord_w1 >= 6
+   own bound l3.3 = Res_q4;4,2: deg_q2 <= 16, deg_w1 <= 40, ord_w1 >= 6
+   own bound l3.4 = Res_q4;4,2: deg_q2 <= 14, deg_w1 <= 36, ord_w1 >= 8
+ level 4 (q2): pivot l3.0, recorded n 14; own proven q2-degree bound 14, own formal degree 14
+   l3.1: own formal q2-degree 16, recorded m 16 (recorded >= own: True)
+   own bound l4.0 = Res_q2;16,14(l3.1, l3.0): deg_w1 <= 688, ord_w1 >= 212
+   l3.2: own formal q2-degree 16, recorded m 16 (recorded >= own: True)
+   own bound l4.1 = Res_q2;16,14(l3.2, l3.0): deg_w1 <= 688, ord_w1 >= 212
+   l3.3: own formal q2-degree 16, recorded m 16 (recorded >= own: True)
+   own bound l4.2 = Res_q2;16,14(l3.3, l3.0): deg_w1 <= 688, ord_w1 >= 212
+ evaluating at 696 points of w1 x 20 points of q2
+   done in 5 s; pivot l3.0 q2^14 coefficient nonzero as a poly in w1: True
+   l4.0: own D = 688, own L = 212; recorded L = 212, d = 476; image degree 688, order 212; V degree 476
+   l4.1: own D = 688, own L = 212; recorded L = 212, d = 476; image degree 688, order 212; V degree 476
+   l4.2: own D = 688, own L = 212; recorded L = 212, d = 476; image degree 688, order 212; V degree 476
+   final pivot l4.0: V image degree 476 = own proven bound 688 - 212 (attained)
+   constant Res_{476,476}(V_l4.1, V_l4.0) mod p = 105243149   (recorded at p1: 237645314)
+   constant Res_{476,476}(V_l4.2, V_l4.0) mod p = 212674548   (recorded at p1: 102108884)
+ leaf t.nz: 2 of 2 constants nonzero at p = 268435399 (19 s)
+SUMMARY {"t.nz": {"nonzero": 2, "total": 2, "constants": [["l4.1", 105243149], ["l4.2", 212674548]]}}
+exit 0
