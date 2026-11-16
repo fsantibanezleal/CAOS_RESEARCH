@@ -24,9 +24,9 @@ import singular_eval as se  # noqa: E402
 
 ART = HERE / "artifacts"
 DATA = Path("E:/_Datos/caos-research/jacobian-conjecture/exp146")
-TEMP = Path("D:/_Temp/jc-exp146-2026-11-15")
+TEMP = gates.temp_root()   # EXP146_TEMP overrides the default scratch folder
 BUDGET_SECONDS = 6 * 3600
-ORDER = ["q5", "q3", "q4", "q2", "q0"]
+ORDER = gates.ORDER
 LOG = []
 
 
@@ -39,12 +39,7 @@ def log(msg=""):
 def load_branch(tag):
     d = json.loads(gates.BRANCH[tag].read_text())
     ring = cc.NodeRing(ORDER)
-    terms, ins = {}, []
-    for frm, eq in zip(d["from"], d["eqs"]):
-        mid = f"E{frm}"
-        tl = [([m[d["names"].index(v)] for v in ORDER], cs) for m, cs in eq]
-        terms[mid] = tl
-        ins.append((mid, ring.from_vectors(tl)))
+    terms, ins = gates.branch_inputs(d, ring)   # refuses a changed variable set, a non-integer or a repeated monomial
     return ring, ins, terms
 
 
@@ -62,6 +57,8 @@ def finish(results, verdict, code):
 
 
 def main():
+    if not __debug__:
+        sys.exit("run without -O: the checks must stay on")
     t_start = time.time()
     deadline = t_start + BUDGET_SECONDS
     ART.mkdir(exist_ok=True)
@@ -92,6 +89,13 @@ def main():
     log(f"G2 random pairs: {'PASS' if g2['pass'] else 'FAIL'} {g2} ({time.time() - t:.0f} s)")
     if not g2["pass"]:
         return finish(results, "STOPPED at G2", 1)
+    # ---- G2 composition (review F4) ----
+    t = time.time()
+    g2c = gates.g2_composition(600)
+    results["gates"]["G2_composition"] = g2c
+    log(f"G2 composed bounds: {'PASS' if g2c['pass'] else 'FAIL'} {g2c} ({time.time() - t:.0f} s)")
+    if not g2c["pass"]:
+        return finish(results, "STOPPED at G2 composition", 1)
     # ---- G3 ----
     t = time.time()
     g3 = gates.g3_degree_drop(500, prime1)
@@ -101,7 +105,8 @@ def main():
         return finish(results, "STOPPED at G3", 1)
     # ---- G4 ----
     t = time.time()
-    g4 = gates.g4_controls(prime1, gates.BRANCH["plus"], node_seconds=120, removal_cases=range(6), log=log, hard_seconds=300)
+    g4 = gates.g4_controls(prime1, gates.BRANCH["plus"], node_seconds=120, removal_cases=range(6), log=log, hard_seconds=300,
+                              prime2=prime2)
     results["gates"]["G4"] = g4
     log(f"G4 controls: {'PASS' if g4['pass'] else 'FAIL'} {g4} ({time.time() - t:.0f} s)")
     if not g4["pass"]:

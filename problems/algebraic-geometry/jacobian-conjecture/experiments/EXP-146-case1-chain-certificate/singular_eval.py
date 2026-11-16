@@ -133,6 +133,7 @@ def build_script(records, root_terms, root_order, prime):
             continue
         PV = _sid(k, "V_" + last["pivot"])
         nn = last["n"]
+        L.append(f"if (deg({PV}, wv_{x}) != {nn}) {{ print(\"BAD_PIVOT_DEGREE {r['id']} V_{last['pivot']}\"); }}")
         L.append(f"matrix cv_{k} = coeffs({PV}, {x}); poly lcV_{k} = cv_{k}[nrows(cv_{k}),1];")
         for pr in last["pairs"]:
             F = _sid(k, "V_" + pr["i"])
@@ -182,6 +183,24 @@ def compare(records, output, prime):
             flags.append(line.strip())
     stats = {"digests_compared": 0, "digest_mismatches": [], "constants_compared": 0, "constant_mismatches": [],
              "singular_flags": flags, "sign_flips": 0, "missing": []}
+    def cmp_digest(key, dg):
+        """Compare one Singular digest with python-flint's, up to sign; counts it and records a mismatch."""
+        if key not in sing_dig:
+            stats["missing"].append(list(key))
+            return
+        terms, degs, e1, e2 = sing_dig[key]
+        same = terms == dg["terms"] and degs == dg["degrees"]
+        f1, f2 = dg["eval"]
+        if same and (e1, e2) == (f1 % p, f2 % p):
+            pass
+        elif same and (e1, e2) == ((-f1) % p, (-f2) % p):
+            stats["sign_flips"] += 1
+        else:
+            same = False
+        stats["digests_compared"] += 1
+        if not same:
+            stats["digest_mismatches"].append(list(key))
+
     for r in records:
         if r.get("last") is None:
             continue
@@ -189,23 +208,14 @@ def compare(records, output, prime):
         for mid, d in mem.items():
             if d.get("dropped"):
                 continue
-            key = (r["id"], mid)
-            if key not in sing_dig:
+            cmp_digest((r["id"], mid), d["digest"])
+        # the post-division univariates V_i (review F9): compared like every member
+        for u in r["last"]["members"]:
+            key = (r["id"], "V_" + u["id"])
+            if "digest" not in u:
                 stats["missing"].append(list(key))
                 continue
-            terms, degs, e1, e2 = sing_dig[key]
-            dg = d["digest"]
-            same = terms == dg["terms"] and degs == dg["degrees"]
-            f1, f2 = dg["eval"]
-            if same and (e1, e2) == (f1 % p, f2 % p):
-                pass
-            elif same and (e1, e2) == ((-f1) % p, (-f2) % p):
-                stats["sign_flips"] += 1
-            else:
-                same = False
-            stats["digests_compared"] += 1
-            if not same:
-                stats["digest_mismatches"].append(list(key))
+            cmp_digest(key, u["digest"])
         for pr in r["last"]["pairs"]:
             key = (r["id"], pr["i"])
             if key not in sing_const:
@@ -218,7 +228,16 @@ def compare(records, output, prime):
                 stats["constant_mismatches"].append(list(key))
         cm = r["last"]["constant_member"]
         if cm is not None:
-            stats["constants_compared"] += 1
+            # the member is a nonzero constant: Singular's CONST line must exist, be nonzero and equal python's value
+            key = (r["id"], cm)
+            if key not in sing_const:
+                stats["missing"].append(list(key))
+            else:
+                stats["constants_compared"] += 1
+                c = mem[cm]["digest"]["eval"][0] % p
+                s = sing_const[key]
+                if s == 0 or s not in (c, (-c) % p):
+                    stats["constant_mismatches"].append(list(key))
     stats["pass"] = (not flags and not stats["digest_mismatches"] and not stats["constant_mismatches"]
                      and not stats["missing"] and stats["digests_compared"] > 0)
     return stats

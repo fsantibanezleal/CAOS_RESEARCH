@@ -55,7 +55,14 @@ def max_assignment(M):
     n = M.shape[0]
     if n == 0:
         return 0
-    assert np.abs(M[M > NEG // 2]).max(initial=0) < ENTRY_LIMIT, "entry too large for the int64 Hungarian"
+    finite = np.abs(M[M > NEG // 2]).max(initial=0)
+    if not finite < ENTRY_LIMIT:
+        raise BoundViolation("entry too large for the int64 Hungarian")
+    # the proven-zero test val < DEAD_BELOW is valid only while no permutation sum of finite entries reaches the
+    # threshold: n * E < 4e8 (E the largest finite |entry|), so a feasible permutation never looks dead and a
+    # permutation through a forbidden (NEG) cell never wins (review F11)
+    if not n * int(finite) < 4 * 10**8:
+        raise BoundViolation("matrix size times the largest entry reaches the proven-zero threshold")
     a = -M
     u = np.zeros(n + 1, dtype=np.int64)
     v = np.zeros(n + 1, dtype=np.int64)
@@ -269,6 +276,17 @@ def drop_var(B, xi, split, K=KMAX):
     return Bd(vs, tab)
 
 
+def pass_member(g, xi, split, K=KMAX):
+    """A member whose formal x-degree is 0 (every coefficient of x^c, c >= 1, proven zero by its bound) passes the
+    step with a table that forgets x. The image (and the exact support when known) must really be free of x
+    (review F7); a bound that is wrong would otherwise travel on unchecked."""
+    if g.img.degrees()[xi] != 0:
+        raise BoundViolation(f"member {g.id} has formal degree 0 but its image contains x")
+    if g.ex is not None and any(mono[1 + xi] != 0 for mono in g.ex.monoms()):
+        raise BoundViolation(f"member {g.id} has formal degree 0 but its exact polynomial contains x")
+    return Mem(g.id, g.ex, g.img, drop_var(g.B, xi, split, K), g.level)
+
+
 def bound_dominates(Bprop, Bex, split, K=KMAX):
     """True if Bprop(w) >= Bex(w) for every weight of W(Bprop.vs) (Bex lives on a subset of the variables)."""
     for key in weight_keys(Bprop.vs, split, K):
@@ -286,7 +304,8 @@ def bound_dominates(Bprop, Bex, split, K=KMAX):
 class Prime:
     def __init__(self, p, r):
         self.p, self.r = p, r % p
-        assert sum(c * pow(self.r, i, p) for i, c in enumerate(P_COEFFS)) % p == 0, "P(r) != 0 mod p"
+        if sum(c * pow(self.r, i, p) for i, c in enumerate(P_COEFFS)) % p != 0:
+            raise BoundViolation("P(r) != 0 mod p")
 
     def __repr__(self):
         return f"Prime({self.p}, {self.r})"
@@ -315,10 +334,19 @@ class NodeRing:
     def from_vectors(self, terms):
         """terms: [(exponents over self.order, 5 integer coordinates)] -> exact polynomial (already reduced)."""
         d = {}
+        seen = set()
         for ex, cs in terms:
+            if len(cs) != 5:
+                raise ValueError(f"a coordinate vector has {len(cs)} entries, not 5")
+            key = tuple(ex)
+            if key in seen:
+                raise ValueError(f"repeated monomial {key}")
+            seen.add(key)
             for i, c in enumerate(cs):
+                if type(c) is not int:
+                    raise ValueError(f"coordinate {c!r} is not an integer")
                 if c:
-                    d[(i,) + tuple(ex)] = int(c)
+                    d[(i,) + key] = c
         return self.ex.from_dict(d)
 
 
@@ -347,11 +375,20 @@ def lc_img(F, xi):
     return F.context().from_dict(dd)
 
 
+def constant_value(C, n):
+    """The integer value of a nonzero image that must be a constant (a final resultant of two univariates)."""
+    dct = C.to_dict()
+    if set(dct) != {tuple(0 for _ in range(n))}:
+        raise BoundViolation("final resultant is not a constant")
+    return int(dct[tuple(0 for _ in range(n))])
+
+
 def res_image(F, G, xi, xname, m, p):
     """Image of Res_{x; m, n}(f, g) for phi f = F (x-degree m' <= m), phi g = G of x-degree n exactly (M5)."""
     n = G.degrees()[xi]
     mp = F.degrees()[xi]
-    assert mp <= m, "image degree above the formal degree"
+    if mp > m:
+        raise BoundViolation("image degree above the formal degree")
     R = F.resultant(G, xname)
     if mp < m:
         R = R * (lc_img(G, xi) ** (m - mp))
@@ -482,8 +519,7 @@ def chain_node(ring, inputs, split, prime, exact_levels=2, K=KMAX, log=None, pts
                 continue
             mg, zf = formal_degree(g.B, xi, split, K)
             if mg == 0:
-                B2 = drop_var(g.B, xi, split, K)
-                newmem.append(Mem(g.id, g.ex, g.img, B2, g.level))
+                newmem.append(pass_member(g, xi, split, K))
                 step["members"].append({"id": g.id, "kind": "pass", "m": 0, "out": g.id})
                 continue
             R_img = res_image(g.img, piv.img, xi, x, mg, p)
@@ -550,7 +586,8 @@ def chain_node(ring, inputs, split, prime, exact_levels=2, K=KMAX, log=None, pts
             U.append({"id": g.id, "L": L, "d": d, "V": V, "mem": g,
                       "attained": V.degrees()[xi] == d})
             last["members"].append({"id": g.id, "L": L, "d": d, "img_deg": int(V.degrees()[xi]),
-                                    "img_order": int(min(mo[xi] for mo in V.monoms()))})
+                                    "img_order": int(min(mo[xi] for mo in V.monoms())),
+                                    "digest": poly_digest(V, pts)})
     out["V"] = U
     cands = [u for u in U if u["attained"]]
     if not cands:
@@ -574,9 +611,7 @@ def chain_node(ring, inputs, split, prime, exact_levels=2, K=KMAX, log=None, pts
         Cimg = res_image(u["V"], ub["V"], xi, x, u["d"], p)
         c = 0
         if Cimg != 0:
-            dct = Cimg.to_dict()
-            assert set(dct) == {tuple(0 for _ in range(n))}, "final resultant is not a constant"
-            c = int(dct[tuple(0 for _ in range(n))])
+            c = constant_value(Cimg, n)
             nz += 1
         last["pairs"].append({"i": u["id"], "m": u["d"], "n": nn, "constant": False, "c": c})
     rec["certified"] = nz > 0
