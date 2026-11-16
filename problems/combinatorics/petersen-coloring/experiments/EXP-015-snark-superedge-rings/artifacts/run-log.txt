@@ -1,0 +1,90 @@
+[22:51:37] order 10: 1 graphs, block table now 1
+[22:51:37] order 20: 1 graphs, block table now 15
+[22:51:37] order 22: 2 graphs, block table now 59
+[22:51:37] order 24: 2 graphs, block table now 198
+[22:51:37] order 26: 10 graphs, block table now 1684
+[22:51:42] order 28: 75 graphs, block table now 3057
+[22:52:38] G0: PASS (91 graphs)
+[22:53:20] G2/R4: 10/10 done in 42 s (eta 0 s)
+[22:53:20] G2 (R4): PASS
+[22:57:09] G1: FAIL (0 of 30 blocks equal under the second encoding)
+[23:01:33] G0: PASS (91 graphs)
+[23:02:11] G2/R4: 10/10 done in 38 s (eta 0 s)
+[23:02:11] G2 (R4): PASS
+[23:04:20] G1: 30/30 done in 128 s (eta 0 s)
+[23:04:20] G1: FAIL (2 of 30 blocks equal under the second encoding)
+[23:07:41] t13: 24/24 done in 40 s (eta 0 s)
+[23:08:43] G0: PASS (91 graphs)
+[23:09:09] G2/R4: 10/10 done in 26 s (eta 0 s)
+[23:09:09] G2 (R4): PASS
+[23:20:36] G1: 30/30 done in 687 s (eta 0 s)
+[23:20:36] G1: PASS (30 of 30 blocks equal under the second encoding)
+[23:20:44] == gates
+[23:21:12] G0: PASS (91 graphs)
+[23:21:40] G2/R4: 10/10 done in 27 s (eta 0 s)
+[23:21:40] G2 (R4): PASS
+[23:41:14] G1: 30/30 done in 1174 s (eta 0 s)
+[23:41:14] G1: PASS (30 of 30 blocks equal under the second encoding)
+[23:41:14] == blocks
+[23:41:14] blocks: 3057 in F, 0 already recorded, 3057 to compute
+[23:43:15] blocks: 100/3057 done in 121 s (eta 3591 s)
+[23:46:08] blocks: 200/3057 done in 294 s (eta 4198 s)
+[23:49:15] blocks: 300/3057 done in 481 s (eta 4420 s)
+[23:54:14] blocks: 400/3057 done in 780 s (eta 5181 s)
+[23:59:01] blocks: 500/3057 done in 1067 s (eta 5455 s)
+[00:02:42] blocks: 600/3057 done in 1289 s (eta 5277 s)
+[00:06:53] blocks: 700/3057 done in 1539 s (eta 5181 s)
+[00:12:32] blocks: 800/3057 done in 1878 s (eta 5297 s)
+[00:18:39] blocks: 900/3057 done in 2245 s (eta 5379 s)
+[00:24:33] blocks: 1000/3057 done in 2599 s (eta 5347 s)
+[00:28:51] blocks: 1100/3057 done in 2857 s (eta 5083 s)
+[00:32:37] blocks: 1200/3057 done in 3083 s (eta 4771 s)
+[00:35:22] blocks: 1300/3057 done in 3248 s (eta 4390 s)
+[00:37:51] blocks: 1400/3057 done in 3397 s (eta 4020 s)
+[00:41:04] blocks: 1500/3057 done in 3591 s (eta 3727 s)
+[00:43:24] blocks: 1600/3057 done in 3730 s (eta 3396 s)
+[00:45:55] blocks: 1700/3057 done in 3881 s (eta 3098 s)
+[00:49:18] blocks: 1800/3057 done in 4084 s (eta 2852 s)
+[00:52:11] blocks: 1900/3057 done in 4257 s (eta 2592 s)
+[00:55:04] blocks: 2000/3057 done in 4430 s (eta 2341 s)
+[00:58:06] blocks: 2100/3057 done in 4612 s (eta 2102 s)
+[01:00:39] blocks: 2200/3057 done in 4765 s (eta 1856 s)
+[01:03:10] blocks: 2300/3057 done in 4916 s (eta 1618 s)
+[01:05:55] blocks: 2400/3057 done in 5081 s (eta 1391 s)
+[01:09:36] blocks: 2500/3057 done in 5302 s (eta 1181 s)
+[01:15:14] blocks: 2600/3057 done in 5640 s (eta 991 s)
+[01:22:32] blocks: 2700/3057 done in 6078 s (eta 804 s)
+[01:29:18] blocks: 2800/3057 done in 6484 s (eta 595 s)
+[01:39:13] blocks: 2900/3057 done in 7079 s (eta 383 s)
+[01:45:21] blocks: 3000/3057 done in 7447 s (eta 142 s)
+[01:49:20] blocks: 3057/3057 done in 7686 s (eta 0 s)
+[01:49:22] blocks done: 3057 computed, 0 not computed
+[01:49:22] == rings2
+[01:49:42] R1: 3057 of 3057 blocks computed, 36684 generator triples, 34380 distinct generators, 591009390 unordered pairs
+[01:55:13] R1: bulk trace test done in 351 s
+[01:56:03] R1: zero-trace pairs 0 (simple realization: 0); non-simple pairs of triples 1836486; mismatches 0; seconds 400.5
+[01:56:04] == rings3
+[01:56:04] R2: 59 of 59 blocks of F22, 591 distinct generators, 206425071 ordered triples
+[01:57:19] R2: row 100/591, zero cyclic triples so far 0
+[01:58:33] R2: row 200/591, zero cyclic triples so far 0
+[01:59:42] R2: row 300/591, zero cyclic triples so far 0
+[02:00:47] R2: row 400/591, zero cyclic triples so far 0
+[02:02:01] R2: row 500/591, zero cyclic triples so far 0
+[02:06:11] R2: zero-trace cyclic triples 0; mismatches 0; seconds 607.4
+[02:06:11] == crosscheck
+[02:06:40] R3: 50 rings, agreements 50
+[02:06:48] R3: 100 rings, agreements 100
+[02:06:56] R3: 150 rings, agreements 150
+[02:07:04] R3: 200 rings, agreements 200
+[02:07:13] R3: 250 rings, agreements 250
+[02:07:22] R3: 300 rings, agreements 300
+[02:07:31] R3: 350 rings, agreements 350
+[02:07:40] R3: 400 rings, agreements 400
+[02:07:49] R3: 450 rings, agreements 450
+[02:07:58] R3: 500 rings, agreements 500
+[02:07:58] R3: 500 of 500 agree; colorable 500
+[02:07:58] == describe
+[02:45:56] describe: girth {'3': 2, '4': 7, '5': 191}, cyclic edge connectivity {'3': 2, '4': 10, 'at least 5': 188}
+[02:45:56] == zero
+[04:15:33] zero: 0 zero-trace rings checked; G52 self-test True
+[04:15:33] all done: {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'blocks_not_computed': 0, 'decided': True}

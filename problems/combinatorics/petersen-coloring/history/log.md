@@ -190,3 +190,24 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
 - Release: 39 gates passed; 35 pages, 805,518 bytes, SHA-256
   0eedaae3e928469738e585a97bf76e545ec07c3209fa67b6e5527febefa54417.
 
+## 2026-11-16 - EXP-015: no zero-trace ring of two superedge blocks of F, or of three over F22 (F: every block of the cyclically 5-edge-connected snarks of order at most 26, the distance-5 blocks at order 28) (PCB-034)
+
+- Hypothesis frozen 2026-11-15 (90040939) before any code: the six sector matrices of every superedge block G - u - w of F
+  (every block of the 16 cyclically 5-edge-connected snarks of order at most 26, and the distance-5 blocks of the 75 of
+  order 28; House of Graphs lists with SHA-256 sums), rings of two generators of F (R1) and cyclic rings of three over F22
+  (R2) tested for a zero diagonal in all six sectors; R3 the trace against CaDiCaL on 500 random rings; R4 the G52 control.
+- Result (verdict CONFIRMED): 3,057 blocks computed; 591,009,390 unordered pairs of distinct generators with 0 zero-trace
+  (1,836,486 non-simple pairs of generator triples excluded); 206,425,071 ordered triples over F22 (68,808,751 cyclic triples of distinct
+  generators) with 0 zero-trace; R3 500 of 500; R4 holds. Every ring tested is Petersen colorable; no counterexample and no
+  answer to Problem 11 of arXiv:2608.10028v4 is claimed. The E sector has a nonzero diagonal for every pair although the
+  E matrices have an empty intersection and a full union over the blocks (open). Deviation: the second solver is Glucose 4
+  (MiniSat 2.2 of python-sat 1.9.dev22 crashes on this device).
+- Independent verification (CAOS_MANAGE `wip/caos-research/pc-exp015-verify-2026-11-16.md`): a SAT-free enumeration matched
+  all 3,057 packed blocks entry by entry; own trace code found 0 zero traces on 2,000,000 R1 pairs, every pair with the
+  order-10 block and 200,000 R2 triples; VERIFIED WITH CHANGES (six minor record fixes: C1, C3, C4, C6 and C7 applied in b6ddda57, C2 in the implementer report
+  in CAOS_MANAGE).
+- Focus: by the rule of the 2026-10-06 review, PCC-F6 closes because EXP-015 found no zero-trace block; the closure and
+  the next focus are decided at the strategic review (`research-governance.json`, PCC-F6 review note). Disposition:
+  research record (a finite negative result; `unbounded-defect` takes a new version only for a correction, a ring of
+  6-poles without a Petersen coloring, or the exact abnormal-edge numbers).
+

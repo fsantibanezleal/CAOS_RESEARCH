@@ -195,3 +195,11 @@ rerun with the corrected code (`artifacts/results.json`, `run-log.txt`). What ch
   unchanged"; neither drop_var nor the pass route was used in the run.
 - **Reproduction.** `compare_slp.py` against the 99ebd728 SLPs (`artifacts/rerun-comparison.json`): 0 differences in
   both branches; the only new fields are the 23 V digests per branch.
+
+## Addendum (2026-11-16): archived independent checks and inputs
+
+The review's third-prime scripts and their outputs are archived in `independent-checks/third-prime/` (rebuilt from the
+recorded edits after the review's scratch folder was deleted; each script has the SHA-256 printed in the review report; the
+outputs are a rerun with the review's commands and agree with its recorded outputs), and the two branch inputs are committed
+in `inputs/` (SHA-256 equal to G0's). See `independent-checks/README.md`. No verdict number changes.
+

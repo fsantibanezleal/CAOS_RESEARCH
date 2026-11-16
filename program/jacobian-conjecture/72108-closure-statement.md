@@ -102,8 +102,11 @@ EXP-142's exact split, a second prime, Singular, third primes in the review, adv
 claim, stated exactly: conditionally on Proposition 4.3 being exhaustive and on the encoding of its polygons, no Keller
 pair has degrees (72,108) or (108,72); with GGHV Theorem 2.1, a counterexample to JC(2) has max deg >= 125. Helali holds
 priority (first claim, conditional on the same reduction); Task 8's disclosure (Theorem 2.1 inherited as published)
-still applies.
+applied until EXP-147 closed it (update below).
 
 Felipe decides, as item 1 of the proposed next steps says: the phrasing above before planar v0.38 carries it on Zenodo.
 GGHV contact (item 2, the old task 9) stays last and gated on him.
+
+Update 2026-11-16 (later): Task 8 is closed by EXP-147: Theorem 5.1 of GGHV 2022 applies to the three classes of their
+Proposition 4.2 as printed, so the (9,24) = (66,99) discard behind Theorem 2.1 rests on a printed theorem.
 
