@@ -94,6 +94,7 @@ def load_baseline():
 
 def finish():
     """Compare against the pinned baseline, log the verdict lines last, write the artifacts and exit 0 or 1."""
+    results["elapsed_seconds"] = round(time.time() - T0, 2)  # compared with the recorded elapsed time (reported apart)
     results["failures"] = failures  # same list: a failure appended below is recorded
     cmp_ = compare()
     (ART / "addendum-1.json").write_text(json.dumps(cmp_, indent=2), encoding="utf-8")

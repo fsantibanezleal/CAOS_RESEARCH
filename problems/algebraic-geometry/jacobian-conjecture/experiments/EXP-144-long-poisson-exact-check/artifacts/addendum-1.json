@@ -581,19 +581,19 @@
   "timings_reported_apart": {
     "P2_symbolic_seconds": {
       "recorded": 7.02,
-      "rerun": 8.6
+      "rerun": 14.96
     },
     "P3_seconds": {
       "recorded": 60.82,
-      "rerun": 59.79
+      "rerun": 136.68
     },
     "P4_groebner_seconds": {
       "recorded": 0.29,
-      "rerun": 0.36
+      "rerun": 0.52
     },
     "elapsed_seconds": {
       "recorded": 77.12,
-      "rerun": 77.53
+      "rerun": 173.08
     }
   }
 }

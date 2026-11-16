@@ -96,7 +96,7 @@
     "{D,S}": "0",
     "{D,T}": "0"
   },
-  "P2_symbolic_seconds": 8.6,
+  "P2_symbolic_seconds": 14.96,
   "P2_random_route": {
     "points": 50,
     "seed": 20261114,
@@ -106,8 +106,8 @@
     ]
   },
   "P3_detJF_symbolic": "1",
-  "P3_seconds": 59.79,
-  "P4_groebner_seconds": 0.36,
+  "P3_seconds": 136.68,
+  "P4_groebner_seconds": 0.52,
   "P4_kill_criterion_triggered": false,
   "P4_lex_basis": [
     "-3*q/2 + x",
@@ -271,6 +271,6 @@
     ],
     "random_route_nonzero_entries_5_points": 20
   },
-  "elapsed_seconds": 77.53,
+  "elapsed_seconds": 173.08,
   "failures": []
 }
