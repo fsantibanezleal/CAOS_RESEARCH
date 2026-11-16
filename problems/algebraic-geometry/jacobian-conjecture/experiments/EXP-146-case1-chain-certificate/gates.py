@@ -598,7 +598,10 @@ def prove_nonempty(stats, st, prime, workdir=None, name="nodes"):
     systems = tree_node_systems(st)
     if systems:
         for nid, d in singular_dims(systems, prime, workdir=workdir, name=name).items():
-            stats[nid].update({"dim": d["dim"], "vdim": d["vdim"], "nonempty": d["dim"] >= 0})
+            ring, polys, w = systems[nid]
+            # the generator and variable counts of the system Singular sees (a w != 0 node adds s and s w - 1), review F1 item 3
+            stats[nid].update({"dim": d["dim"], "vdim": d["vdim"], "nonempty": d["dim"] >= 0,
+                               "generators": len(polys) + (w is not None), "variables": ring.n + (w is not None)})
     return stats
 
 

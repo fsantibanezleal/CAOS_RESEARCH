@@ -412,3 +412,37 @@ def test_f1_singular_nonemptiness_distinguishes_a_point_from_the_unit_ideal():
     assert d_point["p"]["dim"] == 0 and d_unit["u"]["dim"] == -1
     d_nz = gates.singular_dims({"z": (ring, [x1 - 1, x2 - 2], x1 - 1)}, PRIME)   # I + (w s - 1), w = x1 - 1
     assert d_nz["z"]["dim"] == -1
+
+
+# ---- F1 item 3, F3: planted_split_common end to end, per-node generator counts, a unit drop-one ideal fails G4 ----
+
+@requires_wsl
+def test_f1_planted_split_common_end_to_end_with_nonemptiness_and_generator_counts():
+    res = gates.g4_controls(PRIME, branch_plus_path=None, nonempty=True)
+    psc = res["planted_split_common"]
+    assert psc["generators"] >= psc["variables"] + 2 and psc["certified"] is False
+    assert psc["extended_ok"] is True and res["pass"] is True
+    nodes = psc["nodes"]
+    qualifying = gates.extended_control_qualifying(nodes)
+    assert "psc" in qualifying and "psc.nz" in qualifying       # nonempty nodes with two zero final pairs
+    for nid in qualifying:
+        s = nodes[nid]
+        assert s["nonempty"] is True and s["dim"] >= 0 and s["final_pairs"] >= 2 and s["nonzero_pairs"] == 0
+        # F1 item 3: the generator count is recorded at every node, with n + 2 generators on the qualifying ones
+        assert s["generators"] >= s["variables"] + 2, (nid, s)
+    assert nodes["psc.z"]["nonempty"] is False and nodes["psc.z"]["dim"] == -1
+    assert res["final_pair_summary"]["nonempty_nodes_with_two_zero_pairs"] >= 2
+
+
+@requires_wsl
+def test_f3_a_unit_drop_one_ideal_fails_the_nonemptiness_check_and_g4(monkeypatch, tmp_path):
+    # planted defect: E9 added to the subset, so dropping E9 leaves the (unit) minimal subset
+    monkeypatch.setattr(gates, "SUBSET", list(gates.SUBSET) + [9])
+    ne = gates.branch_subset_nonemptiness({"p1": PRIME}, workdir=tmp_path)
+    assert ne["pass"] is False and ne["p1"]["full"]["dim"] == -1
+    assert ne["p1"]["drop9"]["dim"] == -1
+    fake = [sys.executable, "-c", 'print("NEGRESULT " + \'{"removed": "E3", "certified": false, "nodes": []}\')']
+    res = gates.g4_controls(PRIME, branch_plus_path=gates.BRANCH["plus"], removal_cases=(0,), neg_argv=fake,
+                            extended_cases=[], nonempty=True, hard_seconds=60)
+    assert res["branch_subset_nonemptiness"]["pass"] is False
+    assert res["pass"] is False
