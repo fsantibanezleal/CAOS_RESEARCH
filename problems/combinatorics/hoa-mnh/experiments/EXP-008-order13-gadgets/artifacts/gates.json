@@ -1,0 +1,21 @@
+{
+ "gate1": {
+  "exit_code": 0,
+  "output": [
+   "N(18) = [1, 8, 15] (Zhan: [1, 8, 15])",
+   "|B_17| = 17, traceable True, homogeneously traceable True, d = 2, non-clique omitted set True",
+   "16 ~ 17: False (Zhan: nonadjacent)",
+   "GATE PASS"
+  ],
+  "pass": true
+ },
+ "gate2": {
+  "recomputed": 2796,
+  "reference": 2796,
+  "identical_records_plain": true,
+  "identical_records_memo": true,
+  "method_disagreements_plain": 0,
+  "method_disagreements_memo": 0,
+  "pass": true
+ }
+}
