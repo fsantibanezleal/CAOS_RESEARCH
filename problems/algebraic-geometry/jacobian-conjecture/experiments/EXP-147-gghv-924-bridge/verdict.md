@@ -2,7 +2,7 @@
 
 Date: 2026-11-16. Hypothesis frozen at `4d26fbdf` (pushed before any code of this experiment ran). Backlog JCB-107.
 Instrument: `run.py` (exact integer geometry, Python 3.13.14, standard library only); `run.py` exits 0;
-`artifacts/results.json` (SHA-256 17ae3e01...3b553171) and `artifacts/run-log.txt` carry every value.
+`artifacts/results.json` (SHA-256 268d3f86...24c4f676, LF line endings as committed) and `artifacts/run-log.txt` carry every value.
 
 ## Result
 

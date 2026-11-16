@@ -107,3 +107,6 @@ still applies.
 Felipe decides, as item 1 of the proposed next steps says: the phrasing above before planar v0.38 carries it on Zenodo.
 GGHV contact (item 2, the old task 9) stays last and gated on him.
 
+Update 2026-11-16 (later): Task 8 is closed by EXP-147: Theorem 5.1 of GGHV 2022 applies to the three classes of their
+Proposition 4.2 as printed, so the (9,24) = (66,99) discard behind Theorem 2.1 rests on a printed theorem.
+

@@ -165,7 +165,7 @@ def main(argv=None):
     res["verdict"] = "CONFIRMED" if (ok and controls_ok) else ("NO VERDICT (controls failed)" if not controls_ok else "REFUTED")
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(res, indent=1, default=list) + "\n", encoding="utf-8")
+    out.write_text(json.dumps(res, indent=1, default=list) + "\n", encoding="utf-8", newline="\n")
     for k, row in res["classes"].items():
         print(f"class {k}: A1 {row['A1_first_quadrant']} A3 {row['A3']} A4 {row['A4']} cross-rule {row['cross_rule_ok']} "
               f"successor of (1,0): P {row['P']['successor_of_1,0']} Q {row['Q']['successor_of_1,0']}")

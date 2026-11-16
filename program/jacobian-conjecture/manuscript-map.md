@@ -36,6 +36,7 @@ literature search is described as proof of novelty.
 | Independent checks of Helali's Cases 1 and 2 | EXP-137 | Case 2 empty (Singular std in 3 s); Case 1 identities verified, unit at five primes | half of an independent proof | `planar`, Section `sec:helali` |
 | Cost of exact and multi-modular Case 1 certificates | EXP-139 to EXP-143 | UNKNOWN at their budgets; heights above about 94,000 digits | measured cost; motivates EXP-146 | `planar`, Table `tab:cost` |
 | Case 1 certified empty | EXP-146 | CONFIRMED: both branches certified by three-leaf resultant-chain trees at one prime, replayed at a second, Singular digests, third primes in the review | completes the independent proof (conditional) | `planar` v0.38 (drafted; publication waits for Felipe's validation of the phrasing) |
+| The (9,24) case of the floor | EXP-147 | CONFIRMED: Theorem 5.1 of GGHV 2022 applies to the three classes of their Proposition 4.2 as printed (no unprinted bridge) | removes the gap the floor 125 inherited | `planar` v0.38 (Section `sec:frontier`) |
 
 Experiments outside these blocks are research records (calibration, superseded routes, finite or negative probes);
 EXP-060, EXP-070 and EXP-076 are superseded (`research-governance.json`, `experiment_dispositions`).
@@ -68,7 +69,7 @@ method).
 
 ## Open obligations
 
-- `planar`: v0.38 with EXP-146 (brief `jc-planar-v038-2026-11-16` in CAOS_MANAGE); the fifth exclusion beyond its grid
+- `planar`: v0.38 with EXP-146 and EXP-147 (brief `jc-planar-v038-2026-11-16` in CAOS_MANAGE); the fifth exclusion beyond its grid
   stays a conjecture; the twenty-three configurations in [125,150].
 - `foundational`: v0.16, one sentence pointing to the planar certificate, released with planar v0.38.
 - `cascade`: Mathieu for 3 <= N <= 14 (JCB-096); Wilson's GMC(2) proof (JCB-097).
