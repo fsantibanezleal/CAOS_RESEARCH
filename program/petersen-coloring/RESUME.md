@@ -6,7 +6,8 @@ strategic record is `research-governance.json` and `manuscript-map.md` in this f
 
 2026-11-16: EXP-015 CONFIRMED and independently verified (PCB-034 done): every ring of two superedge blocks of F (all blocks of the
 cyclically 5-edge-connected snarks of order at most 26, the distance-5 blocks at order 28; 591,009,390 pairs) and every cyclic ring
-of three over F22 has a nonzero trace, so no ring of these 6-poles lacks a Petersen coloring. PCC-F6 closes by the 2026-10-06 rule;
+of three over F22 has a nonzero trace, so none of these rings lacks a Petersen coloring (rings of other lengths or
+other mixtures are not decided). PCC-F6 closes by the 2026-10-06 rule;
 the next focus is proposed to Felipe at the strategic review (PCC-F6 review note in `research-governance.json`). EXP-015 is a
 research record; no manuscript version.
 
