@@ -17,8 +17,9 @@ P3 volume
 [PASS] P3 det JF = 1 identically (symbolic)  det=1
 [PASS] P3 det JF = 1 at the 50 random points (Fractions)  values={Fraction(1, 1)}
 P4 fiber over (0, 1/8, 0, 0)
-[PASS] P4 Groebner basis finished inside the 45 minute kill window  0.29s
+[PASS] P4 Groebner basis finished inside the 45 minute kill window  0.52s
 [PASS] P4 ideal zero-dimensional
+[PASS] P4 box range(8)^4 contains every standard monomial (k_i <= 8 for each variable)  pure-power exponents k_i=[1, 2, 1, 2] box bounds=[8, 8, 8, 8]
 [PASS] P4 quotient dimension equals the number of distinct solutions (ideal is radical)  dim=3 solutions=3
 [PASS] P4 solution set equals the three printed points of (7)
 [PASS] P4 printed point ('-1', '-2/3', '247/96', '-89/64') satisfies R=0, T=1/8, D=0, S=0
@@ -34,5 +35,6 @@ Controls
 [PASS] C1 the random-point route also detects D0  nonzero entries=20
 [PASS] C2 changing 125 to 126 in H makes P2 fail  failing entries=4
 [PASS] C2 the random-point route also detects the changed H  nonzero entries=20
-elapsed 77.1s; failures: none
+addendum 1 comparison: 19 keys, mismatched=none
+elapsed 173.1s; failures: none
 RESULT: PASS

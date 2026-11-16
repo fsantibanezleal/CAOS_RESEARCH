@@ -65,3 +65,24 @@ whose rational roots are counted; if neither finishes, P4 is reported undecided 
 The Jacobian determinant alone (P3) cannot decide the Poisson property (many volume-preserving maps are not
 symplectic); the bracket matrix (P2) is the deciding invariant, and the reducibility of `R` (P5) is the cheapest
 certificate of non-automorphism.
+
+## Addendum 1 (2026-11-15): reproducibility hardening (JCB-105)
+
+Declared before any code of the addendum runs. No prediction or control changes; the v0.09 cascade review asked for
+the following, and the rerun must reproduce every value recorded in `artifacts/results.json` before this addendum.
+
+1. **Data root.** `run.py` takes the source PDF location from a `--data-root` argument (default: the environment variable
+   `CAOS_RESEARCH_DATA_ROOT`; no drive letter or machine path in the code) and reads
+   `<data root>/caos-research/jacobian-conjecture/sources/jcb102/2608.23777.pdf`, checked against the recorded SHA-256.
+   A missing argument and variable is an error (exit 2), never a fallback path.
+2. **Box sufficiency recorded.** For P4, the run records, for each variable, the exponent `k_i` of the pure power among
+   the leading monomials of the lex basis (it exists because the ideal is zero-dimensional), and checks that the box
+   used to count standard monomials contains every exponent below `k_i` in each variable (otherwise the count would be
+   incomplete); the box bounds and the `k_i` go into `results.json`.
+3. **Versions.** `results.json` records the Python and sympy versions used.
+4. **Tests.** `tests/test_jacobian_exp144.py` gains a test that the symbolic P2 bracket matrix of `(R, T, D, S)` equals the
+   canonical one, and a test that control C2 (the constant `125` changed to `126` in `H`) makes the P2 checker fail.
+
+Outcome criterion: the rerun reproduces every recorded value (the comparison is written to `artifacts/addendum-1.json`),
+the box check passes, and the tests pass. The verdict gains a section `## Addendum 1` with the outcome; the verdict
+word does not change unless a recorded value fails to reproduce, which would be reported as found.
