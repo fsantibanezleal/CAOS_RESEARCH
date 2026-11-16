@@ -9,8 +9,8 @@ and its SHA-256 (first 16 hexadecimal digits); where the experiment record state
 script compares it with the file on disk.
 
 The tables of the Case 1 certificate (EXP-146: the tree, the gates, the planted defects, the constants at several primes) are
-generated from that record's artifacts/results.json and artifacts/mutants.json, and the numbers quoted in the text and in
-the cost row are compared with them.
+generated from that record's artifacts/results.json and artifacts/mutants.json, and a fixed list of the figures the text quotes
+(primes, total, branch and Singular times, node shapes and counts) is compared with them; the text itself is not read.
 
 Usage (from any directory):
     python make_tables.py            # writes tab_atlas.tex, tab_repro.tex and the generated tables next to this file
@@ -383,14 +383,14 @@ ABLATION = dict(
         ["low-rank transfer", "rank factorization, CRT", "dense $33\\times33$ symbolic determinant", "the dense route reached its $240$ s limit; the transfer proves the identity", "134, 135"],
         ["subfield reduction", "quintic subfield", "degree-$35$ field", "both unknown at six hours; certificates still above $94{,}000$ digits", "139, 140, 143"],
         ["exact chain levels", "levels $1$ and $2$ from exact supports", "bounds from the inputs alone", "bounds computed from the inputs alone are loose from level $1$ (a level-$1$ member of $q_0$-degree $7$ against a bound $8$); with two exact levels and weights in $\\{0,\\dots,3\\}$ every later pivot attains its bound ($688=688$)", "146"],
-        ["monomial coordinate", "$w_1=l$, the $q_5$ coefficient of $E_3$", "$q_0$ coordinates", "in $q_0$ coordinates the case $l\\ne0$ fails because the degree in the Rabinowitsch variable drops by $212$ unseen; in $w_1$ the shared factor is the monomial $w_1^{212}$, proven from supports and divided out exactly, so the node certifies at degree $476$ with two nonzero constants of two", "146"],
+        ["monomial coordinate", "$w_1=l$, the $q_5$ coefficient of $E_3$", "$q_0$ coordinates", "in $q_0$ coordinates the case $l\\ne0$ fails because the degree in the Rabinowitsch variable drops by $212$ unseen; in $w_1$ the shared factor is the monomial $w_1^{212}$, its order bounded below by the propagated (composed) bound and divided out exactly, so the node certifies at degree $476$ with two nonzero constants of two", "146"],
         ["second split", "$w_2$ at the node $w_1=0$", "one split only", "the node $w_1=0$ has $0$ of $4$ nonzero constants and a squared common factor; the split on $w_2$ certifies both children ($3$ of $4$ and $6$ of $6$ nonzero)", "146"],
         ["single prime", "one prime, a second prime and Singular as checks", "multi-modular cofactors", "trees of $252$ s and $102$ s against more than $20{,}000$ primes per branch with no coordinate reconstructible (above $94{,}000$ digits)", "143, 146"],
     ])
 
 NOTATION = dict(
     label="tab:notation",
-    caption="Notation. The symbol $L$ is the operator $J(P,\\cdot)$ in Sections~\\ref{sec:theory} and~\\ref{sec:design} and a number field in Sections~\\ref{sec:methods} and~\\ref{sec:helali}.",
+    caption="Notation. The symbol $L$ is the operator $J(P,\\cdot)$ in Sections~\\ref{sec:theory} and~\\ref{sec:design} and the number field $\\Q[y]/(P)$ in Sections~\\ref{sec:methods}, \\ref{sec:chaintheory} and~\\ref{sec:helali}; the symbol $R$ has the per-section meanings of its rows.",
     spec="P{4.6cm}P{9.0cm}",
     head=["Symbol", "Meaning"],
     rows=[
@@ -405,13 +405,16 @@ NOTATION = dict(
         ["$H$", "$y$-heavy half-plane $\\{i\\le j\\}$ of rows; also the eliminant $H(a_7)$ in Section~\\ref{sec:helali}"],
         ["$\\varepsilon$, $[M\\mid b]$", "the $51$ interior coefficients and the augmented matrix ($302\\times125$) of the Case 1 system"],
         ["$A,B,C,X,Y,d$", "normalized parameters of the atlas: $X=A^3$, $Y=A^2C$, $d=1+\\varepsilon_{(1,0)}$"],
-        ["$R,S,F_3,F_6,F_7$", "polynomials of the shared determinant $A^{87}(R+YS)$ and the factors of the graph numerator"],
+        ["$R,S,F_3,F_6,F_7$", "polynomials of the shared determinant $A^{87}(R+YS)$ and the factors of the graph numerator (Section~\\ref{sec:atlas}; in Section~\\ref{sec:theory} $R$ is the tail $P-P_{\\mathrm{top}}$)"],
         ["$K$, $L$, $P$", "$K=\\Q[a_7]/(H)$ (degree $35$); $L=\\Q[y]/(P)$ with $P=y^5-y^4+3y^3+3y^2+26$ (Section~\\ref{sec:helali})"],
-        ["$R$, $\\phi$, $(p,r)$", "$R=\\mathbb Z[y]/(P)$; the ring map $\\phi_{p,r}:R\\to\\mathbb F_p$, $y\\mapsto r$, with $P(r)=0$ modulo $p$ (Section~\\ref{sec:chaintheory})"],
+        ["$R$, $\\phi$, $(p,r)$", "in Sections~\\ref{sec:methods}, \\ref{sec:chaintheory} and~\\ref{sec:helali}: $R=\\mathbb Z[y]/(P)$ (not the tail, nor the polynomial $R$ of the atlas); the ring map $\\phi_{p,r}:R\\to\\mathbb F_p$, $y\\mapsto r$, with $P(r)=0$ modulo $p$ (Section~\\ref{sec:chaintheory})"],
         ["$I_\\pm$", "the branch ideals $q_1=\\pm c$ of Case 1 in $L[q_0,q_2,q_3,q_4,q_5]$, nine equations each"],
         ["$\\operatorname{Res}_{x;m,n}$", "the Sylvester resultant for the formal degrees $m,n$ in $x$, a determinant of the coefficients"],
         ["$B_h(w)$, $W$", "the proven bound $\\max_{a\\in\\operatorname{supp}h}w\\cdot a\\le B_h(w)$ for a weight $w$ of the weight set $W$ (components in $\\{0,..,3\\}$, the split variable in $\\{-3,..,3\\}$)"],
-        ["$V_i$, $L_i$", "the univariate member $U_i/w^{L_i}$ of a node and the proven lower bound $L_i=-B_{U_i}(-e_w)$ of its order in the split variable $w$"],
+        ["$V_i$, $\\ell_i$", "the univariate member $U_i/w^{\\ell_i}$ of a node and the proven lower bound $\\ell_i=-B_{U_i}(-e_w)$ of its order in the split variable $w$"],
+        ["\\texttt{t}, \\texttt{t.nz}, \\texttt{t.z}", "node ids of a branch tree: \\texttt{t} is the root; a split appends \\texttt{.nz} for the child $w\\ne0$ and \\texttt{.z} for the child $w=0$ (so \\texttt{t.z.nz} is the child $w_2\\ne0$ of the node $w_1=0$)"],
+        ["$E_k$", "the $k$-th equation of the Case 1 system of EXP-142"],
+        ["$l_{k.j}$", "the $j$-th member, counted from $0$, formed at resultant level $k$ of a node"],
         ["{[MV]}, [D], [C], [U]", "machine-verified, derived, conjectural, not confirmed on a primary source"],
     ])
 
@@ -499,14 +502,14 @@ def tex_tree(res):
     lines = ["% generated by make_tables.py from EXP-146 results.json; do not edit",
              "\\begin{table}[tbp]", "\\centering",
              "\\caption{The certificate trees of Case 1 (EXP-146), one row per node of each branch ideal. A pivot is written "
-             "variable, member, formal degree. The degrees are those of the univariate members $V_i$ after the division by $w^{L_i}$, "
-             "with $L_i$ the proven order, both listed in the member order of the node; a node is certified when one of its final constants is nonzero "
+             "variable, member, formal degree. The degrees are those of the univariate members $V_i$ after the division by $w^{\\ell_i}$, "
+             "with $\\ell_i$ the proven order, both listed in the member order of the node; the node ids are \\texttt{t} (root), \\texttt{t.nz} ($w_1\\ne0$), \\texttt{t.z} ($w_1=0$), \\texttt{t.z.nz} ($w_1=0$, $w_2\\ne0$) and \\texttt{t.z.z} ($w_1=0$, $w_2=0$); a node is certified when one of its final constants is nonzero "
              "modulo $p_1$. Both branches have the same shape; the split roots are those of the leading coefficient $w$ modulo $p_1$.}"
              "\\label{tab:tree}",
              "{\\scriptsize", "\\setlength{\\tabcolsep}{3pt}",
              "\\begin{tabular}{@{}P{1.4cm}P{3.8cm}P{2.7cm}P{1.4cm}P{1.3cm}P{2.6cm}P{0.9cm}@{}}",
              "\\toprule",
-             "\\textbf{Node} & \\textbf{Pivots} & \\textbf{Degrees of $V_i$ (last variable)} & \\textbf{$L_i$} & \\textbf{Nonzero} & "
+             "\\textbf{Node} & \\textbf{Pivots} & \\textbf{Degrees of $V_i$ (last variable)} & \\textbf{$\\ell_i$} & \\textbf{Nonzero} & "
              "\\textbf{Outcome} & \\textbf{Time (s)} \\\\", "\\midrule"]
     for b in ("plus", "minus"):
         for n in res["branches"][b]["nodes"]:
@@ -594,7 +597,7 @@ def tex_mutants():
     for key, what, where in desc:
         d = m[key]
         if "violations" in d:
-            rows.append((what, where, "%s of %s weights" % (n_(d["violations"]), n_(d["weights_checked"])), d["gate_fails"]))
+            rows.append((what, where, "%s (weight and order checks; %s weights checked)" % (n_(d["violations"]), n_(d["weights_checked"])), d["gate_fails"]))
         else:
             rows.append((what, where, "%d of %d cases" % (d["mismatches"], d["cases"]), d["gate_fails"]))
     lines = ["% generated by make_tables.py from EXP-146 mutants.json; do not edit",
@@ -668,7 +671,7 @@ def verify_exp146():
         if nzs != {"t": (0, 2), "t.nz": (2, 2), "t.z": (0, 4), "t.z.nz": (3, 4), "t.z.z": (6, 6)}:
             bad.append(("146", "%s nonzero-constant counts differ" % b))
         if sum(1 for n in res["branches"][b]["nodes"] for s in n["steps"] for m in s["members"] if m["kind"] == "res") != 91:
-            bad.append(("146", "%s resultant count differs from 91" % b))
+            bad.append(("146", "%s chain resultant count differs from 91" % b))
     for b, leaves in td.THIRD_P1.items():
         for nid, vals in leaves.items():
             node = [n for n in res["branches"][b]["nodes"] if n["id"] == nid][0]
@@ -679,6 +682,14 @@ def verify_exp146():
             node = [n for n in res["branches"][b]["nodes"] if n["id"] == nid][0]
             if [i for i, _ in pairs] != [p["i"] for p in node["last"]["pairs"]]:
                 bad.append(("146", "%s %s: pair ids of the third-prime list differ" % (b, nid)))
+    arch = exp_dir("146") / "independent-checks" / "third-prime"
+    texts = {"plus": (arch / "plus" / "out-p3.txt").read_text(encoding="utf-8") + (arch / "plus" / "out-tnz-p3.txt").read_text(encoding="utf-8"),
+             "minus": (arch / "minus" / "run4.txt").read_text(encoding="utf-8")}
+    for b in ("plus", "minus"):
+        for nid, pairs in td.THIRD[b]["leaves"].items():
+            for pid, v in pairs:
+                if v != 0 and str(v) not in texts[b]:
+                    bad.append(("146", "%s %s %s: p3 constant %d not in the archived third-prime output" % (b, nid, pid, v)))
     g = res["gates"]
     if not all(g[k]["pass"] for k in ("G0", "G1", "G2_random", "G2_composition", "G3", "G4", "G2_real_system", "G5")):
         bad.append(("146", "a gate did not pass"))

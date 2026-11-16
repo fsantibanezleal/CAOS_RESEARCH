@@ -75,7 +75,8 @@ LADDER = {'caption': 'The frontier ladder: gcd and degree floors for a counterex
             'the evidence behind the reading. P: read in the primary text of the paper that states or '
             'reproves it. S: stated by a primary text that was read and that attributes it to another work '
             '(the cited original was not read for the statement). M: machine-verified in this paper, conditional '
-            'as the row states.',
+            'as the row states. M + P: the exclusion of the pair is machine-verified in this paper, conditional as the row states; '
+            'the floor then follows from Theorem 2.1 as read in the primary text (P), whose $(9,24)$ step is checked in EXP-147.',
  'head': ['\\textbf{Constraint}', '\\textbf{Statement}', '\\textbf{Source}', '\\textbf{Evidence}'],
  'label': 'tab:ladder',
  'rows': [['$B=1$', 'excluded', 'Magnus \\cite{Magnus1955}', 'S'],
@@ -103,15 +104,15 @@ LADDER = {'caption': 'The frontier ladder: gcd and degree floors for a counterex
            'S'],
           ['$\\max\\deg\\le150$', '$34$ possible configurations enumerated', '\\cite{GGHV2017}', 'P'],
           ['$\\max\\deg\\ge125$ or $(\\deg P,\\deg Q)\\in\\{(72,108),(108,72)\\}$',
-           'Theorem 2.1',
+           'Theorem 2.1 (the $(9,24)$ step of its proof is checked against their Theorem 5.1; Section~\\ref{sec:frontier}, EXP-147)',
            '\\cite{GGHV2022}',
            'P'],
           ['$\\max\\deg\\ge125$ with no exception',
            'follows from Theorem 2.1 and the exclusion of $(72,108)$ and $(108,72)$, conditional on Proposition 4.3 '
-           'of \\cite{GGHV2022} being exhaustive and on the encoding of its polygons; the inherited gap at $(66,99)$ '
-           'applies',
-           'Section~\\ref{sec:helali}; EXP-137, EXP-146',
-           'M'],
+           'of \\cite{GGHV2022} being exhaustive and on the encoding of its polygons; the $(9,24)$ step of Theorem 2.1 '
+           'is checked against their Theorem 5.1 (EXP-147)',
+           'Section~\\ref{sec:helali}; EXP-137, EXP-146, EXP-147',
+           'M + P'],
           ['Chain of maximal degree $144$',
            "excluded by the closing remark ($A_0'=(8,4)$ is not a possible last lower corner)",
            '\\cite{GGV2}; EXP-082',
@@ -123,7 +124,7 @@ LADDER = {'caption': 'The frontier ladder: gcd and degree floors for a counterex
  'spec': 'P{3.3cm}P{4.2cm}P{3.1cm}P{1.6cm}'}
 
 COST = {'caption': "Measured costs of the exact attempts on Cases 1 and 2, ending with the certificate that closed Case 1. "
-            "``Unknown'' means the computation reached its limit without a conclusion; the last row is the only one that "
+            "``Unknown'' means the computation reached its limit without a conclusion; the two EXP-137 rows and the last row are the only ones that "
             'did not.',
  'head': ['\\textbf{Record}',
           '\\textbf{Method}',
@@ -175,9 +176,11 @@ COST = {'caption': "Measured costs of the exact attempts on Cases 1 and 2, endin
 
 
 
-# Independent recomputation at third primes, as the review record prints it (read there; the scripts that produced
-# it are not archived in the repository). Keys: branch -> leaf -> (list of (pair id, constant at p3)).
-# The p1 values the same record prints for the same pairs are in THIRD_P1 and are compared with results.json.
+# Independent recomputation at third primes. The scripts and their outputs are archived in
+# problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-146-case1-chain-certificate/independent-checks/third-prime/
+# and make_tables.py --check refuses a constant below that does not appear in the archived output of its branch.
+# Keys: branch -> leaf -> (list of (pair id, constant at p3)).
+# The p1 values the same outputs print for the same pairs are in THIRD_P1 and are compared with results.json.
 THIRD = {
     "plus": {"p": 268435399, "r": 174414054,
              "leaves": {"t.nz": [("l4.1", 105243149), ("l4.2", 212674548)],

@@ -56,7 +56,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 
 \title{Planar Keller Maps after the Counterexample:\\
 Weight-Class Exclusions, a Chart Atlas, and a Conditional Exclusion\\
-of the Degree Pair $(72,108)$ by Independent Certificates for Cases 1 and 2}
+of the Degree Pair $(72,108)$ by Independent Proofs of Cases 1 and 2}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -89,7 +89,7 @@ Rabinowitsch splits on each of two branches, checked at a second prime, in Singu
 third primes, where exact standard bases and multi-modular certificates had not finished.
 A chart atlas closes four-coefficient sub-families of Case 1. Conditionally on their
 Proposition~4.3 being exhaustive and on our encoding of its polygons, no Keller pair has
-degrees $(72,108)$ or $(108,72)$, so a counterexample has maximal degree at least $125$;
+degrees $(72,108)$ or $(108,72)$, so by their Theorem~2.1, whose $(9,24)$ step we check against their Theorem~5.1 (EXP-147), a counterexample has maximal degree at least $125$;
 priority is Helali's. $JC(2)$ remains open.
 \end{abstract}
 
@@ -143,7 +143,7 @@ premise both refuted (Section~\ref{sec:ladder}).
 \end{itemize}
 Conditionally on Proposition~4.3 of Guccione, Guccione, Horruitiner and Valqui \cite{GGHV2022} being exhaustive and on our encoding of its
 polygons by the equations of Cases 1 and 2, the paper excludes the degree pairs $(72,108)$ and $(108,72)$; by their Theorem 2.1 a
-counterexample then has maximal degree at least $125$, with the gap that Theorem 2.1 inherits (Section~\ref{sec:frontier}). Priority for the
+counterexample then has maximal degree at least $125$, where the $(9,24)$ step of that theorem is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}). Priority for the
 exclusion is Helali's \cite{Helali2026}; the proof here is independent for both cases. The paper does not decide $JC(2)$.
 
 Labels: \textbf{[MV]} machine-verified exact identity; \textbf{[D]} derived analytically and
@@ -167,7 +167,7 @@ Table~\ref{tab:notation} fixes the notation used throughout.
 
 \section{Related work}\label{sec:related}
 
-The published methods on the planar conjecture fall into four groups. Each is characterized
+The published methods on the planar conjecture fall into five groups. Each is characterized
 here by what it proves and under which hypotheses, as the programme's literature records read
 it; a statement taken from a source that was read only through another source is marked as such.
 
@@ -192,7 +192,7 @@ six configurations that Guccione, Guccione, Horruitiner and Valqui enumerate and
 \cite{GGHV2017, GGHV2022}. The first of these papers computes every possible corner and every
 pair of degrees with $\max\deg\le150$; the second raises the floor to $\max\deg\ge125$ with the
 single exception of $(72,108)$ and $(108,72)$, whose coefficient system the authors
-state they could not solve. A companion result on the lower side of the Newton polygon
+state they could not solve (the $(9,24)$ step of the proof of their Theorem 2.1 is checked in Section~\ref{sec:frontier}). A companion result on the lower side of the Newton polygon
 \cite{GGV2} discards corners and infinite families. Xu \cite{Xu2016} treats the
 split of minor roots for the degrees $(99,66)$ and leaves one split unknown; one of his formulas
 is obtained in \cite{GGHVApproxRoots} only as an inequality. Orevkov \cite{Orevkov2001}
@@ -423,45 +423,46 @@ polynomial $h$ of the computation (Section~\ref{sec:chaintheory}). The word \emp
 \State \textbf{procedure} \textsc{Node}(inputs, order $x_1,\dots,x_n$, split variable $w$ or none)
 \State \quad \textbf{for} $j=1,\dots,n-1$ \textbf{do} \Comment{chain: eliminate $x_j$}
 \State \quad\quad \emph{pivot}: a member whose image has $x_j$-degree equal to its proven bound $B(e_{x_j})$; take the lowest bound, then the fewest image terms, then the lowest index
-\State \quad\quad \textbf{for} every other member $f$ with $B_f(e_{x_j})>0$ \textbf{do} replace $f$ by $\operatorname{Res}_{x_j;m,n}(f,\text{pivot})$, with $m$ the formal degree of $f$ and $n$ that of the pivot
+\State \quad\quad \textbf{if} no member attains its bound \textbf{then} fail the node (see below)
+\State \quad\quad \textbf{for} every other member $f$ with $B_f(e_{x_j})>0$ \textbf{do} replace $f$ by $\operatorname{Res}_{x_j;m,n}(f,\text{pivot})$, with $m$ the formal degree of $f$ and $n$ that of the pivot; a member of formal degree $0$ passes unchanged, with the bound table $B'(w)=\min_s B_f(w+s\,e_{x_j})$
 \State \quad\quad\quad bound of the new member: maximal assignment on the Sylvester matrix (Proposition~\ref{prop:bound}); image: Proposition~\ref{prop:drop}
 \State \quad\quad\quad \textbf{if} the step is level $1$ or $2$ of the node \textbf{then} compute the member exactly over $R$, read its support, and check $\phi(\text{exact})=$ image
 \State \quad\quad drop the members whose image is zero; members free of $x_j$ pass unchanged
-\State \quad the remaining members $U_i$ are univariate in $x_n$. \textbf{if} $x_n=w$ \textbf{then} $L_i=-B_{U_i}(-e_w)$, $V_i=U_i/w^{L_i}$ (exact division) \textbf{else} $V_i=U_i$
-\State \quad pivot $V_\ast$ of the $V_i$ by the same rule; constants $c_i=\operatorname{Res}_{x_n;m_i,n_\ast}(V_i,V_\ast)\in R$ by their images
+\State \quad the remaining members $U_i$ are univariate in $x_n$. \textbf{if} $x_n=w$ \textbf{then} $\ell_i=-B_{U_i}(-e_w)$, $V_i=U_i/w^{\ell_i}$ (exact division) \textbf{else} $V_i=U_i$, with formal degree $m_i=B_{U_i}(e_{x_n})-\ell_i$ ($\ell_i=0$ when $x_n\ne w$)
+\State \quad pivot $V_\ast$ of the $V_i$ by the same rule; constants $c_i=\operatorname{Res}_{x_n;m_i,n_\ast}(V_i,V_\ast)\in R$ by their images; \textbf{if} no $V_i$ attains its formal degree \textbf{then} fail the node
 \State \quad \textbf{if} some $\phi(c_i)\ne0$, or a member is a constant with proven bound $0$ in every variable and nonzero image, \textbf{then return} \textsc{Certified}
-\State \quad $g\leftarrow\gcd$ of the images of the $V_i$; find the first pivot, in elimination order, whose leading coefficient is exactly $a+b\,x_n$ with $a,b\in R$, $b\ne0$ and $-\phi(a)/\phi(b)$ a root of $g$
+\State \quad $g\leftarrow\gcd$ of the images of the $V_i$; find the first pivot with an exact polynomial (an input or a member of an exact level), in elimination order, whose leading coefficient is exactly $a+b\,x_n$ with $a,b\in R$, $b\ne0$ and $-\phi(a)/\phi(b)$ a root of $g$
 \State \quad \textbf{if} none exists or the depth is $4$ \textbf{then return} \textsc{Unknown}
 \State \quad new coordinate $w'=a+b\,x_n$ applied exactly to the inputs ($f\mapsto b^{\deg_{x_n}f}f((w'-a)/b)$); children: $\textsc{Node}(\text{inputs},x_1..x_{n-1},w')$ in order $x_1..x_{n-1},w'$ with split variable $w'$ (the case $w'\ne0$), and $\textsc{Node}(\text{inputs}|_{w'=0},x_1..x_{n-1},\text{none})$ (the case $w'=0$)
 \State \quad \textbf{return} \textsc{Certified} \textbf{iff} both children are certified
-\Ensure \textsc{Certified} for the branch (a recorded program of exact inputs, pivots, formal degrees, orders $L_i$, split data and final constants), or the first \textsc{Unknown} node
+\State a failed node whose failure is at level $3$ or later is recomputed once with level $3$ also exact; a failure at level $1$ or $2$, or a second failure, \textbf{returns} \textsc{Unknown}
+\Ensure \textsc{Certified} for the branch (a recorded program of exact inputs, pivots, formal degrees, orders $\ell_i$, split data and final constants), or the first \textsc{Unknown} node
 \end{algorithmic}
 \end{algorithm}
 
 Algorithm~\ref{alg:chain} is the procedure whose correctness is Theorem~\ref{thm:chain}. Its parameters are the following. The inputs are the nine equations of each branch of
-Case 1 (EXP-142), $1{,}695$ integer coefficients per branch, between $22$ and $52$ terms per equation and up to $479$ digits per coefficient, written from the system of EXP-141 and
-archived with their SHA-256. The tree is built at $(p_1,r_1)=(536870909,505390653)$ and evaluated again at $(p_2,r_2)=(536870879,12005842)$, with $p_2$ the largest prime below $p_1$ at which $P$ has a root and
+Case 1 (EXP-142), $1{,}695$ integer coefficients per branch, between $22$ and $52$ terms per equation and up to $479$ digits per coefficient, written from the system of EXP-141; the two branch files are archived in the repository (the folder \texttt{inputs} of EXP-146) and tied to their SHA-256 by gate G0. The tree is built at $(p_1,r_1)=(536870909,505390653)$ and evaluated again at $(p_2,r_2)=(536870879,12005842)$, with $p_2$ the largest prime below $p_1$ at which $P$ has a root and
 $r_2$ its smallest root; both primes are below $2^{29}$, the limit of the second implementation. The weights of the bound table have components in $\{0,1,2,3\}$, except the component of the node's split variable, which ranges over
 $\{-3,\dots,3\}$; the bounds are normalized by $B_h(w)\leftarrow\min\{B_h(w),\lfloor B_h(kw)/k\rfloor\}$ for $k=2,3$. The nodes are limited to $30$ minutes and the whole run to six hours. The run executes the gates of
 Section~\ref{sec:helali} first, then the two trees at $(p_1,r_1)$, the replay of every leaf at $(p_2,r_2)$ and the second implementation. Singular 4.3.2 reads the exact inputs and the recorded program, computes the images at $(p_1,r_1)$ with its own evaluation of the coordinate
 vectors, its own coordinate changes, resultants, degree-drop factors and divisions, and prints a digest of every member (term count, degree in each variable, values at two fixed points of $\mathbb F_p$).
 
 The cost is read from the run. The whole run took $1{,}854$ s, of which the gate on controls took $1{,}392$ s (four branch controls killed at their $300$ s wall limit account for $1{,}200$ s); the plus tree took $252$ s and the minus tree $102$ s; the node $w_1\ne0$ alone took $178.8$ s of the $251.5$ s of the plus tree
-and $69.8$ s of the $102.3$ s of the minus tree, because its members have degree $476$ in $w_1$ after $688$ at the root; the replay at $(p_2,r_2)$ took about $3$ s and the Singular checks $12.4$ s and $3.5$ s. Each branch makes $91$ resultants. The exact levels $1$ and $2$ of the ten nodes ($118$ polynomials, $145$ MB) are kept outside the repository, in the data root,
+and $69.8$ s of the $102.3$ s of the minus tree, because its members have degree $476$ in $w_1$ after $688$ at the root; the replay at $(p_2,r_2)$ took about $3$ s and the Singular checks $12.4$ s and $3.5$ s. Each branch makes $109$ resultants: $91$ in its chains ($23$, $23$, $18$, $18$ and $9$ in the five nodes) and $18$ final resultants, the constants. The exact levels $1$ and $2$ of the ten nodes ($118$ polynomials, $145$ MB) are kept outside the repository, in the data root,
 and the repository keeps the recorded programs \texttt{slp-plus.json} and \texttt{slp-minus.json}. The entry points are \texttt{run.py} and \texttt{chaincert.py}; the checksums of the three artifacts are in Table~\ref{tab:repro}.
 
 \subsection{Commands and checksums}
 
-Each entry point is run from its experiment folder and writes its artifacts into the folder named \texttt{artifacts}; a run that needs scratch space
-takes a work directory outside the repository. A record that was repeated keeps the earlier attempts as files, so an artifact hash identifies the accepted run. The Case 1 certificate (EXP-141) takes the
+Each entry point except that of EXP-146 is run from its experiment folder and writes its artifacts into the folder named \texttt{artifacts}; a run that needs scratch space
+takes a work directory outside the repository. A record that was repeated keeps the earlier attempts as files, so an artifact hash identifies the accepted run. The multi-modular Case 1 attempt (EXP-141) takes the
 subcommands \texttt{build}, \texttt{gate1}, \texttt{planted}, \texttt{gate3}, \texttt{run}, \texttt{verify} and
 \texttt{verify-singular} with a work directory outside the repository. The generator
 \texttt{make\_tables.py} of this paper's folder reads the records to produce Tables~\ref{tab:atlas}
 and~\ref{tab:repro}, refuses to write a cell whose quotation is absent from its record, and compares each
-checksum with the file on disk. The Case 1 certificate (EXP-146) has its entry point \texttt{run.py} with no arguments, run from the repository root, and the same generator builds Tables~\ref{tab:tree},
-\ref{tab:gates}, \ref{tab:mutants} and~\ref{tab:consts} from its \texttt{results.json} and \texttt{mutants.json}, and compares the numbers quoted in the text with them.
+checksum with the file on disk. The Case 1 certificate (EXP-146) has its entry point \texttt{run.py} with no arguments, run from the repository root. Its inputs are two branch files that \texttt{gates.py} reads from the data root; copies are in the repository (the folder \texttt{inputs} of that experiment, tied to their SHA-256 by gate G0, which also regenerates them with \texttt{branches.py} of EXP-142 from the system of EXP-141 kept in the data root), and a device without that data root copies them to the paths set in \texttt{gates.py}. The same generator builds Tables~\ref{tab:tree},
+\ref{tab:gates}, \ref{tab:mutants} and~\ref{tab:consts} from its \texttt{results.json} and \texttt{mutants.json}, and checks a fixed list of the figures the text quotes against that record (the primes, the total, branch and Singular run times, the gate time in \texttt{run-log.txt}, the degree shape of the tree nodes, the counts of nonzero constants, of resultants and of exact polynomials, and the Singular digest and constant counts); the other figures of the prose, such as the times of single nodes, are not checked by it.
 
-\begin{table}[t]
+\begin{table}[tbp]
 \centering
 \caption{Entry points and artifact checksums of the procedures A1 to A7. A checksum is the first sixteen hexadecimal digits of the SHA-256 of the artifact file, compared with the digit string printed in the record where the record prints one; n/r marks an artifact whose checksum the record does not print.}\label{tab:repro}
 \input{tab_repro.tex}
@@ -851,11 +852,10 @@ case $m = 1$.
 
 The two subsections above prove statements about one polynomial shape. This subsection proves the correctness of the certificate that closes Case~1 of the
 reduction of Section~\ref{sec:prop43}; it sits in this section because it is a theorem with a proof, and its instance is reported in Section~\ref{sec:helali}.
-The setting is the one of Algorithm~\ref{alg:chain}. Let $P=y^5-y^4+3y^3+3y^2+26$, $R=\mathbb Z[y]/(P)$ and $L=\Q[y]/(P)$; $P$ is irreducible over $\Q$ (EXP-141), so $L$ is a field,
+The setting is the one of Algorithm~\ref{alg:chain}. The rule ids M1 to M7 in the headers below are the numbered frozen rules of the EXP-146 hypothesis (its \texttt{hypothesis.md}). Let $P=y^5-y^4+3y^3+3y^2+26$, $R=\mathbb Z[y]/(P)$ and $L=\Q[y]/(P)$; $P$ is irreducible over $\Q$ (EXP-141), so $L$ is a field,
 and $R\subset L$ because $P$ is monic. For a prime $p$ and an $r$ with $P(r)\equiv0\pmod p$ let
 $\phi=\phi_{p,r}\colon R\to\mathbb F_p$, $y\mapsto r$; it is a ring map, applied coefficient-wise to polynomials. The branch ideals $I_\pm\subset L[q_0,q_2,q_3,q_4,q_5]$ of Case~1 are generated by the nine
-equations of EXP-142 with coefficients in $R$. The reduction of EXP-142 (Case~1 is empty if and only if $I_+=(1)$ and $I_-=(1)$, because the first
-equation of the system is $E_2=a_2(q_1^2-c^2)^2$ with $a_2\ne0$ and $c\in L$) is a premise of this subsection [D] and is not re-derived here. A \emph{formal resultant} is the determinant of the
+equations of EXP-142 with coefficients in $R$. The reduction of EXP-142 (Case~1 is empty if and only if $I_+=(1)$ and $I_-=(1)$, because the equation $E_2$ (to which $E_1$ is proportional) is $E_2=a_2(q_1^2-c^2)^2$ with $a_2\ne0$ and $c\in L$) is a premise of this subsection [D] and is not re-derived here; it applies to the $13$ equations through two further premises [D], also not re-derived: the reduction of the equations from the degree-$35$ field $K$ to its quintic subfield (EXP-140) and the exact identification of that subfield with $L$ (EXP-141). A \emph{formal resultant} is the determinant of the
 Sylvester matrix for chosen degrees $m,n$ that are upper bounds, not necessarily the degrees: for $f,g\in A[x]$ with $\deg_xf\le m$ and $\deg_xg\le n$ it is the $(m+n)\times(m+n)$ determinant $\operatorname{Res}_{x;m,n}(f,g)$
 whose first $n$ rows hold the coefficients of $f$, shifted, and whose last $m$ rows hold those of $g$.
 
@@ -885,7 +885,7 @@ being allowed to vanish. The same identity at the formal degree $m'$ gives $\ope
 \end{proof}
 
 The hypothesis of Proposition~\ref{prop:drop} that $\phi(g)$ attains the formal degree $n$ is what makes the chain checkable: the pivot of every step is a member whose image degree equals its proven degree bound.
-Formula~\eqref{eq:drop} was checked against the exact formal resultant over $R$ on $500$ cases with leading coefficients vanishing at $r$ (gate G3, Table~\ref{tab:gates}), and the review of the record rederived it against an independently written Sylvester determinant at $p=10007$ with drops from $0$ to $5$ (8,999 evaluations, no mismatch).
+Formula~\eqref{eq:drop} was checked against the exact formal resultant over $R$ on $500$ cases with leading coefficients vanishing at $r$ (gate G3, Table~\ref{tab:gates}).
 
 The remaining ingredient is a proof that a formal degree is an upper bound. The degrees cannot be read from the images, since an image can have a lower degree than the exact polynomial, and cannot be read from the supports of the inputs alone, since exact cancellations make that bound loose from the first level
 (a member of $q_0$-degree $7$ against a bound $8$ appeared in the probes that preceded the experiment). The bound is therefore propagated through each resultant from the supports of the two polynomials it combines, in the following way. For a polynomial $h\in R[X]$ with variables $X$, a weight
@@ -898,7 +898,7 @@ $\min\{B(w),\lfloor B(kw)/k\rfloor\}$ is a bound. (iii) The table
 \begin{equation}\label{eq:ec}
 e_c(w)=\min_{s}\bigl(B_f(w+s\,e_x)-s\,c\bigr),
 \end{equation}
-over the integers $s$ with $w+s\,e_x\in W$, bounds $f_c$. If $e_c(0)<0$ then $f_c=0$, and the formal degree $m$ of $f$ in $x$, the largest $c\le B_f(e_x)$ with $f_c$ not proven zero, satisfies $\deg_xf\le m$. (iv) Let $h=\operatorname{Res}_{x;m,n}(f,g)$, and let $\varepsilon_{ij}(w)$ be $e_c(w)$ for the coefficient $f_c$ or $g_c$
+over the integers $s$ with $w+s\,e_x\in W$, bounds $f_c$ for a weight $w$ with $x$-component $0$ (a weight on the variables of $f_c$). If $e_c(0)<0$ then $f_c=0$, and the formal degree $m$ of $f$ in $x$, the largest $c\le B_f(e_x)$ with $f_c$ not proven zero, satisfies $\deg_xf\le m$. (iv) Let $h=\operatorname{Res}_{x;m,n}(f,g)$, and let $\varepsilon_{ij}(w)$ be $e_c(w)$ for the coefficient $f_c$ or $g_c$
 placed in the entry $(i,j)$ of the Sylvester matrix, with the entries that are zero by position or proven zero excluded. Then
 \begin{equation}\label{eq:assign}
 B_h(w)=\max_{\sigma}\sum_{i=1}^{m+n}\varepsilon_{i\sigma(i)}(w)
@@ -921,7 +921,7 @@ $V\in I A[s]+(ws-1)$. (c) If $w$ is a variable of $A$ and $B_U$ is a bound of $U
 $f$ the polynomial $b^{\deg_vf}f((w-a)/b)$ is a polynomial that equals the image of $f$ times a unit.
 \end{lemma}
 \begin{proof}
-(a) Necessity is clear. Conversely, from $1=i(s)+t(s)(ws-1)$ with $i\in I[s]$, substitution of $s=1/w$ in $A[w^{-1}]$ gives $1=i(1/w)$, so $w^N=w^Ni(1/w)\in I$ for $N\ge\deg_si$, and the equality holds in $A$ because $w$ is not a zero divisor. From $I+(w)=(1)$ we get $1=h+wg$ with $h\in I$,
+(a) Necessity is clear. If $w=0$ the statement holds trivially, since then $I+(ws-1)=(1)$ and $I+(w)=I$; let $w\ne0$, so $w$ is not a zero divisor of the domain $A$. Conversely, from $1=i(s)+t(s)(ws-1)$ with $i\in I[s]$, substitution of $s=1/w$ in $A[w^{-1}]$ gives $1=i(1/w)$, so $w^N=w^Ni(1/w)\in I$ for $N\ge\deg_si$, and the equality holds in $A$ because $A\to A[w^{-1}]$ is injective. From $I+(w)=(1)$ we get $1=h+wg$ with $h\in I$,
 and $1=(h+wg)^N\in I$ because the expansion has the terms $h\cdot(\ast)$ and $w^Ng^N$. (b) $V=s^{\ell}U+(1-(ws)^{\ell})V$ because $U=w^{\ell}V$, and $1-(ws)^{\ell}$ is a multiple of $ws-1$. (c) Apply Proposition~\ref{prop:bound} to the weight $-e_w$: for each monomial $a$ of $U$, $-a_w\le B_U(-e_w)$. (d) $b\in R\setminus\{0\}$ is a unit of $L$, so
 the map is invertible, with inverse $w\mapsto a+bv$, and $b^{\deg_vf}$ is a unit.
 \end{proof}
@@ -933,19 +933,18 @@ Let $I\subset L[X]$ be generated by $f_1,\dots,f_k\in R[X]$. Suppose a run of Al
 \end{theorem}
 \begin{proof}
 By induction on the tree. Let $N$ be a node with inputs $F_N$, ideal $I_N$ (the ideal generated by $F_N$, or the ideal plus $(ws-1)$ if $N$ is a node with split variable $w$) and let every member that the chain forms lie in $I_N$. This holds for the inputs; for a resultant it is Lemma~\ref{lem:res}(a), whose formal degrees are upper bounds by Proposition~\ref{prop:bound}(iii);
-dropping a member whose image is zero leaves a subset of the members and so keeps every member in $I_N$; and for the univariate members $V_i$ it is Lemma~\ref{lem:split}(b). Suppose $N$ is certified by a nonzero final constant $\phi(c_i)\ne0$. The constant $c_i=\operatorname{Res}(V_i,V_\ast)$ is a constant of $R$ in $I_N$.
+dropping a member whose image is zero leaves a subset of the members and so keeps every member in $I_N$; and for the univariate members $V_i$ it is Lemma~\ref{lem:split}(b); their images satisfy $\phi(V_i)=\phi(U_i)/w^{\ell_i}$, an exact division in the domain $\mathbb F_p[w]$, because $U_i=w^{\ell_i}V_i$ and $\phi$ is a ring map. Suppose $N$ is certified by a nonzero final constant $\phi(c_i)\ne0$. The constant $c_i=\operatorname{Res}(V_i,V_\ast)$ is a constant of $R$ in $I_N$.
 Its image is computed by formula~\eqref{eq:drop}, which applies because the pivot $V_\ast$, and every pivot of the chain, has an image degree equal to its proven bound: its exact degree is at most the bound (Proposition~\ref{prop:bound}), at least the image degree, hence equal to both, and the leading coefficient of the pivot has a nonzero image.
-Therefore $\phi(c_i)\ne0$ proves $c_i\ne0$, a unit of $L$ (Lemma~\ref{lem:res}(c)), and $I_N=(1)$. A member that is a constant with proven bound $0$ in every variable and nonzero image gives the same conclusion directly. Suppose $N$ is split by the polynomial $w'=a+b\,x_n$. By Lemma~\ref{lem:split}(d) the transformed inputs generate the same ideal up to a unit,
-and by Lemma~\ref{lem:split}(a) the ideal is $(1)$ if the ideal plus $(w')$ and the ideal plus $(w's-1)$ are $(1)$; these are the two children, the first (the inputs with $w'$ set to $0$) and the second (the inputs in the coordinate $w'$, with split variable $w'$). By the induction hypothesis both are certified, so $I_N=(1)$. The root is a node with no split variable.
+Therefore $\phi(c_i)\ne0$ proves $c_i\ne0$, a unit of $L$ (Lemma~\ref{lem:res}(c)), and $I_N=(1)$. A member that is a constant with proven bound $0$ in every variable and nonzero image gives the same conclusion directly. Suppose $N$ is split by the polynomial $w'=a+b\,x_n$. Let $J=(F_N)$ and let $\sigma$ be the automorphism of Lemma~\ref{lem:split}(d). The transformed inputs generate $\sigma(J)$, and $\sigma(J)=(1)$ if and only if $J=(1)$. By Lemma~\ref{lem:split}(a) applied to $\sigma(J)$, $\sigma(J)=(1)$ if $\sigma(J)+(w')=(1)$ and $\sigma(J)+(w's-1)=(1)$. These are the ideals of the two children, which are built from $F_N$ alone also when $N$ has a split variable: the first (the inputs with $w'$ set to $0$) and the second (the inputs in the coordinate $w'$, with split variable $w'$). By the induction hypothesis both are $(1)$, so $J=(1)$, and $J\subseteq I_N$ gives $I_N=(1)$. The root is a node with no split variable.
 \end{proof}
 
 \begin{corollary}[{[D]}; Case~1 of Proposition~4.3 from two certified roots]\label{cor:case1}
-If the roots of the trees of $I_+$ and of $I_-$ are certified, then $I_+=(1)$ and $I_-=(1)$, and by the reduction of EXP-142 the $13$ compatibility equations of Case~1 have no common solution over $\overline{\Q}$.
+If the roots of the trees of $I_+$ and of $I_-$ are certified, then $I_+=(1)$ and $I_-=(1)$, and by the reductions of EXP-140, EXP-141 and EXP-142 the $13$ compatibility equations of Case~1 have no common solution over $\overline{\Q}$.
 \end{corollary}
 
 The mark of the theorem is [D] because its proof is analytic; its instance, the recorded program of Section~\ref{sec:helali}, is an exact computation whose images are [MV]. The choice of the split polynomial is free for the soundness: the gcd of the images of the $V_i$ only selects a polynomial that is likely to
-make both children certifiable, and if no pivot of the form $a+b\,x_n$ matches the gcd the node is left unknown. A zero image never certifies anything, so an unlucky prime can make a node unknown and never certify a nonempty system. The only exact objects of the method are the supports and the first two levels of each node
-and the exact division by $w^{\ell}$, so no coefficient height enters the cost: the multi-modular route (Algorithm~\ref{alg:multimod}) pays for the height of a certificate, the chain pays for the degrees of the univariate members and for $|W|$ assignment problems per resultant, each of size $m+n$.
+make both children certifiable, and if no pivot of the form $a+b\,x_n$ matches the gcd the node is left unknown. A zero image never certifies anything, so an unlucky prime can make a node unknown and never certify a nonempty system. The exact objects of the method are the inputs of each node (the branch equations, their coordinate changes $f\mapsto b^{\deg_{x_n}f}f((w'-a)/b)$ and their restrictions to $w'=0$), the supports and the first two levels of each node; the division by $w^{\ell}$ is carried out on the images and is exact by Lemma~\ref{lem:split}(c), with the quotient in the ideal by Lemma~\ref{lem:split}(b). The coefficient height therefore enters the cost only through the exact inputs and the first two levels: the multi-modular route (Algorithm~\ref{alg:multimod}) pays for the height of a certificate, while the chain pays for the exact inputs and two exact levels, the degrees of the univariate members and $|W|$ assignment problems per resultant, each of size $m+n$.
+In numbers: the step that eliminates $x_j$ at a node with $n$ variables computes the bound of each new member on the weights of the $n-j$ variables that remain, $|W_j|=4^{\,n-j}$ weights at a node with no split variable and $|W_j|=4^{\,n-j-1}\cdot7$ at a node with split variable $x_n$, which is never eliminated (at the root, $256$, $64$, $16$ and $4$ for $j=1,\dots,4$). Each weight costs one maximal assignment on the $(m+n)\times(m+n)$ Sylvester entry matrix, solved by the Hungarian algorithm in $O((m+n)^3)$ integer operations; weights with identical entry vectors are solved once. The image of the same resultant at one prime costs one resultant over $\mathbb F_p$ in the remaining variables. A step therefore costs at most $|W_j|\,O((m+n)^3)$ for the bound plus one modular resultant per member, and a branch makes $109$ resultants.
 
 \section{Experimental design}\label{sec:design}
 
@@ -1019,19 +1018,20 @@ used. Consequently our machine certificates at $\gcd = 2, 9, 12, 18$ (EXP-024..0
 \emph{replications} of literature-covered territory: independent verifications, not new
 frontier results.
 
-\emph{Verified degree floor.} Moh's classical analysis discards $\max\deg \le 100$
+\emph{The degree floor and its conditional raise.} Moh's classical analysis discards $\max\deg \le 100$
 \cite{Moh1983}, with complete published detail only for the smallest case ($64$); the
 four exceptional cases correspond to six configurations in the modern corner terminology,
 which the algorithmic re-examination by Guccione--Guccione--Horruitiner--Valqui enumerates
 and discards \cite{GGHV2017, GGHV2022}. Theorem 2.1 of \cite{GGHV2022} (arXiv:2204.14178, p.~2) reads: ``If $(P,Q)$ is a counterexample to the Jacobian Conjecture, then we have either
 $\max\{\deg(P),\deg(Q)\}\ge125$, or $(\deg(P),\deg(Q))\in\{(72,108),(108,72)\}$.'' Their introduction states that, if one manages to discard this case, it would increase the lower bound from $108$ up to $125$.
 Two cases with degrees $(72,108)$ remain in their analysis; they discard the one with corner $A_0=(9,27)$ and write of the other that they could not solve the corresponding system of polynomial equations, which is the system that Proposition~4.3
-reduces to Cases 1 and 2 (Section~\ref{sec:prop43}). Section~\ref{sec:helali} proves both cases empty, so that, conditionally on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons by our equations, no Keller pair has degrees $(72,108)$ or $(108,72)$
-and, by their Theorem 2.1, a counterexample has $\max\deg\ge125$ [MV, conditional]. The statement of the floor is the one of Theorem 2.1 with that pair removed, and no other.
+reduces to Cases 1 and 2 (Section~\ref{sec:prop43}). Section~\ref{sec:helali} proves both cases empty, so that, conditionally on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons by our equations, no Keller pair has degrees $(72,108)$ or $(108,72)$ [MV, conditional],
+and, by their Theorem 2.1 as published, a counterexample has $\max\deg\ge125$. The statement of the floor is the one of Theorem 2.1 with that pair removed, and no other.
 
-\emph{A gap the floor inherits.} The read of the LaTeX source of \cite{GGHV2022} recorded in the programme's audit found that the proof of Theorem 2.1 depends on the discard of the pair $(66,99)$ (corner $A_0=(9,24)$), and that no printed corollary specializes
-their Theorem 5.1 to the three polygon classes of their Proposition~4.2; the bridging is claimed in the introduction and in a section title only. The floor $125$ stated here inherits Theorem 2.1 as published, with this gap, which the present paper does not close; checking the hypotheses of
-their Theorem 5.1 against the three polygon classes is among the open problems of Section~\ref{sec:limits}.
+\emph{The $(9,24)$ step of the floor.} The read of the LaTeX source of \cite{GGHV2022} recorded in the programme's audit found that the proof of Theorem 2.1 depends on the discard of the pair $(66,99)$ (corner $A_0=(9,24)$), and that no printed corollary specializes
+their Theorem 5.1 to the three polygon classes of their Proposition~4.2. Experiment EXP-147 closes that bridge: for each of the three classes, the polygons of Proposition~4.2 satisfy the three hypotheses of Theorem 5.1 as printed (the bracket $[P,Q]=x$ is of the form $x+g(y)$ with $g=0$, the supports lie in $K[x,y]$, and the starting and end points are the required ones, computed by exact integer geometry on the counterclockwise walk of the Newton polygons),
+so that theorem excludes every class and the $(9,24)$ case of Theorem 2.1 rests on a printed theorem and needs no unprinted bridge. The scope of the check is the hypotheses of Theorem 5.1 for the three printed classes. The proof of Theorem 5.1, the exhaustiveness of Proposition~4.2 and of their case table, the polygons as printed (they are not re-derived from the proof) and every other step of Theorem 2.1 are not re-verified here.
+The sources are arXiv:2204.14178, arXiv:1401.1784 and arXiv:1708.07936, archived in the data root with their SHA-256 list, which the record of EXP-147 names. The floor $125$ stated here is Theorem 2.1 as published, a human proof read in the primary text (P), with this step checked, and it keeps the two conditions of the exclusion.
 
 \emph{The open targets.} (i) The $B = 16$ case comes with a forced direction set and
 leading forms $l_{4,-1}(P) = \lambda_P R_0^m$, $R_0 = x (x y^4 - \lambda_0)^3$, and a
@@ -1147,7 +1147,7 @@ For Case 2 the independent exact computation of Section~\ref{sec:helali} superse
 proves Case 1 empty by a different method, an exact argument that does not use those families, and that proof supersedes the evidence-level statement above.
 \subsection{The truncation ladder for the simultaneous certificate}\label{sec:ladder}
 
-The certified statement above reduces raising the floor to one object: a covector
+Within the route of the forced-edge families, the certified statement above reduces closing Case 1 to one object: a covector
 $\Lambda(\varepsilon)$, polynomial in the interior coefficients $\varepsilon$,
 that closes the reduced system for \emph{all} interior values at once. The
 computations below decide this object degree by degree; every step is
@@ -1768,8 +1768,8 @@ higher-dimensional constructible reduction from the 24-parameter core [D].
 By itself it is not a four-parameter chart cover: alternative minors must
 cover the rational graph, the finite base locus, and the separate divisor
 \(A=0\). The graph and the base locus are closed below.
-The complete \((72,108)\) case, the planar degree floor, and \(JC(2)\) remain
-open.
+The atlas alone does not close the complete \((72,108)\) case or raise the planar degree floor, and \(JC(2)\) remains
+open; the pair \((72,108)\) is treated by the certificate of Section~\ref{sec:helali}.
 
 \subsubsection{Recursive atlas on the rational graph}
 
@@ -2158,7 +2158,7 @@ A chain evaluated at one prime proves something only when every degree it uses i
 \emph{The certificate of Case 1} (EXP-146) [MV]. Algorithm~\ref{alg:chain} is run on the nine equations of each branch ideal $I_+$ and $I_-$ (the branches $q_1=\pm c$, with $E_1,E_2,E_4,E_8$ vanishing on each), at $(p_1,r_1)=(536870909,505390653)$. The root node eliminates $q_5$, $q_3$, $q_4$ and $q_2$ in turn
 and ends in three univariate members in $q_0$ of degree $688$ each. Every pivot attains its proven degree bound: the pivots are $E_3$ in $q_5$ (degree $1$), the level-one member $l_{1.0}$ in $q_3$ (degree $2$), $l_{1.2}$ in $q_4$ (degree $2$) and the level-three member $l_{3.0}$ in $q_2$ (degree $14$).
 The two final constants of the root are zero modulo $p_1$, so the root is not certified. The gcd of the three images is $(q_0-\rho)^{212}$, where $\rho$ is the root of $l=\alpha+\beta q_0$, the $q_5$ coefficient of $E_3$, that is the leading coefficient of the pivot of the first step; the factor $l^{212}$ is the spurious component where that coefficient vanishes.
-The node therefore splits on the coordinate $w_1=\alpha+\beta q_0$. In the coordinate $w_1$ the common factor is the monomial $w_1^{212}$, whose order is proven from the supports with the weight $-e_{w_1}$, and in the case $w_1\ne0$ it is divided out exactly:
+The node therefore splits on the coordinate $w_1=\alpha+\beta q_0$. In the coordinate $w_1$ the common factor is the monomial $w_1^{212}$, whose order is bounded below by $-B_{U_i}(-e_{w_1})$, the propagated bound at the weight $-e_{w_1}$ (Proposition~\ref{prop:bound} and Lemma~\ref{lem:split}(c); for these level-four members the bound is a composed bound that passes through two propagated steps from the exact levels one and two, and each division by $w_1^{212}$ was also checked exact at the images), and in the case $w_1\ne0$ it is divided out exactly:
 \begin{equation}\label{eq:t-nz}
 \deg_{w_1}U_i=688,\qquad \ell_i=-B_{U_i}(-e_{w_1})=212,\qquad \deg V_i=688-212=476 .
 \end{equation}
@@ -2168,21 +2168,21 @@ and the fourth, the pair $(V_{l_{3.4}},V_{l_{3.0}})$, is zero at every prime tri
 
 \input{tab_tree.tex}
 
-\emph{Gates and controls} (Table~\ref{tab:gates}). The inputs are regenerated from the archived system and compared with their SHA-256 (G0), the ring maps are checked (G1), the bound engine is compared with exact resultants on random pairs with planted top-coefficient cancellations, zero leading coefficients and monomial factors and, separately, on two composed steps (G2, with
+\emph{Gates and controls} (Table~\ref{tab:gates}). The inputs are regenerated from the system of EXP-141, kept in the data root and compared with their SHA-256 (G0), the ring maps are checked (G1), the bound engine is compared with exact resultants on random pairs with planted top-coefficient cancellations, zero leading coefficients and monomial factors and, separately, on two composed steps (G2, with
 $54{,}390$ and $3{,}557$ weights and no violation), the degree-drop formula~\eqref{eq:drop} against the exact formal resultant (G3, $500$ cases with drops of $1$ and $2$, no mismatch), and, on the real system, every exact level-one and level-two polynomial ($59$ per branch, $118$ in all) against both the propagated bound and the image of the chain (G2 on the real system and G5, no violation, no mismatch).
 The only bounds that pass through two propagated steps are the level-four bounds of the nodes $t$ and $w_1\ne0$; every other bound is one step from exact supports, and the composed gate tests precisely that kind of bound, on random pairs and not on these objects. The negative controls (G4) are weaker than the positive ones, and this is stated here as a limit of the evidence: a planted unit system and a planted
 unit system with a known exact constant are certified, and planted systems with a common point are not; a planted split system (four generators in two variables) has two nonempty nodes with two zero final pairs each and one empty child certified; of the six branch systems with one equation removed from a minimal unit subset only two (removing $E_{10}$ or $E_{11}$) finished, both not certified, and the other four reached their $300$ s limit,
 which is inconclusive and recorded as such. Each of the six systems is zero-dimensional at $p_1$ and at $p_2$ (Singular) while the full subset has dimension $-1$, so the controls are nonempty systems. The planted defects of Table~\ref{tab:mutants} (every bound lowered by one, the degree-drop factor removed) each make their gate fail.
-A bound lowered by one at every entry is caught $30{,}314$ times in the $54{,}390$ weights of the random pairs and $2{,}381$ times in the $3{,}557$ weights of the composed step; the variant that leaves the entry at $w=0$, which is $0$ by construction, unlowered is caught $2{,}109$ times, so the detection does not rest on that entry.
+A bound lowered by one at every entry raises $30{,}314$ violations on the $1{,}862$ random pairs ($54{,}390$ weights checked) and $2{,}381$ on the $272$ composed cases ($3{,}557$ weights checked), weight and order-lower-bound checks counted together; the variant that leaves the entry at $w=0$, which is $0$ by construction, unlowered is caught $2{,}109$ times, so the detection does not rest on that entry.
 
 \input{tab_gates.tex}
 \input{tab_mutants.tex}
 
 \emph{Independent checks of the constants.} Three checks recompute the final constants, each by a route that does not share the evaluation of the first. First, the replay at the second prime $(p_2,r_2)=(536870879,12005842)$ evaluates the recorded program again, with the same exact objects and bounds and a different ring map $\phi$, and certifies all three leaves of each branch, with the same counts of nonzero constants ($2$ of $2$, $3$ of $4$, $6$ of $6$);
 it took about $3$ s. Second, Singular 4.3.2 reads the exact inputs and the recorded program and computes the images at $(p_1,r_1)$ by its own evaluation, coordinate changes, resultants, degree-drop factors and divisions; its digests of $153$ members and univariates and its $18$ constants per branch agree with python-flint's, with no mismatch and no sign flip (the two resultants use the same sign convention).
-The Singular check evaluates the same recorded structure, the pivots, formal degrees, orders and split data, so it validates the images and not the bounds; the bounds rest on Proposition~\ref{prop:bound} and on the gates. Third, a recomputation at third primes by scripts written without the experiment's code. For the plus branch, at $p_3=268435399$ (the largest prime below $2^{28}$ at which $P$ has a root) and its only root $r_3=174414054$, the scripts recompute the exact levels with their own resultant code,
+The Singular check evaluates the same recorded structure, the pivots, formal degrees, orders and split data, so it validates the images and not the bounds; the bounds rest on Proposition~\ref{prop:bound} and on the gates. Third, a recomputation at third primes by scripts written without the experiment's code (archived with their outputs in the folder \texttt{independent-checks/third-prime} of EXP-146). For the plus branch, at $p_3=268435399$ (the largest prime below $2^{28}$ at which $P$ has a root) and its only root $r_3=174414054$, the scripts recompute the exact levels with their own resultant code,
 re-derive every pivot bound from the exact supports by a plain Sylvester assignment, confirm that every pivot attains its bound and that every order $\ell_i$ is the exact order of the image, and certify all three leaves. For the minus branch, at $p_3=399999949$ (the largest prime at or below $4\cdot10^8$ with a root) and its only root $r_3=61040865$, they do the same for the two leaves below the second split; the root and the leaf $w_1\ne0$ of the minus branch were not recomputed.
-The same scripts reproduce every recorded constant at $p_1$ and every replay constant at $p_2$. Table~\ref{tab:consts} lists the constants of the leaves at the three primes. The minus ideal is the image of the plus ideal under $q_0\mapsto-q_0$ (the split roots add up to $p_1$ and the constants of the leaf $w_1\ne0$ are equal), so the two trees are proofs for two ideals and not two independent samples of one.
+At $p_1$ the same scripts reproduce every recorded constant of the leaves they recompute; at $p_2$ they reproduce every replay constant of the plus branch and those of the minus leaf $(w_1=0,w_2\ne0)$ (\texttt{t.z.nz}). Table~\ref{tab:consts} lists the constants of the leaves at the three primes. The minus branch behaves as the image of the plus branch under a sign change of some of the variables (observed: the split roots add up to $p_1$ and the constants of the leaf $w_1\ne0$ are equal), so the two trees are proofs for two related ideals and not two independent samples of one.
 
 \input{tab_consts.tex}
 
@@ -2191,17 +2191,17 @@ Both branch ideals $I_+$ and $I_-$ are the unit ideal of $L[q_0,q_2,q_3,q_4,q_5]
 \end{theorem}
 \begin{proof}
 Theorem~\ref{thm:chain} and Corollary~\ref{cor:case1} apply to the recorded programs: the inputs are the archived nine equations of each branch (G0, G1); every formal degree used in a resultant is an upper bound by Proposition~\ref{prop:bound}, whose application to the exact levels is checked (G2 on the real system, G5); every pivot has an image degree equal to its proven bound,
-so formula~\eqref{eq:drop} gives the image of every constant; every division by $w^{\ell_i}$ is by a proven order; and the three leaves of each branch have a nonzero constant at $p_1$ (Table~\ref{tab:tree}). The premises that the proof does not re-derive are the irreducibility of $P$ (EXP-141) and the exact reduction of Case~1 to the two branch ideals (EXP-142).
+so formula~\eqref{eq:drop} gives the image of every constant; every division by $w^{\ell_i}$ is by a proven order; and the three leaves of each branch have a nonzero constant at $p_1$ (Table~\ref{tab:tree}). The premises that the proof does not re-derive are the reduction of the degree-$35$ field to its quintic subfield (EXP-140), the exact identification of that subfield with $L$ and the irreducibility of $P$ (EXP-141), and the exact reduction of Case~1 to the two branch ideals (EXP-142).
 \end{proof}
 
 \begin{theorem}[{[MV], conditional}; the degree pair $(72,108)$ is excluded (EXP-137, EXP-146)]\label{thm:exclusion}
-Suppose that Proposition~4.3 of \cite{GGHV2022} is exhaustive and that our equations encode its polygons. Then no Keller pair has degrees $(72,108)$ or $(108,72)$, and, by Theorem 2.1 of \cite{GGHV2022}, every counterexample to $JC(2)$ has $\max\{\deg P,\deg Q\}\ge125$.
+Suppose that Proposition~4.3 of \cite{GGHV2022} is exhaustive and that our equations encode its polygons. Then no Keller pair has degrees $(72,108)$ or $(108,72)$, and, by Theorem 2.1 of \cite{GGHV2022} as published, whose $(9,24)$ step is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}), every counterexample to $JC(2)$ has $\max\{\deg P,\deg Q\}\ge125$.
 \end{theorem}
 \begin{proof}
-By Theorem~\ref{thm:case1} Case~1 has no solution, and by the computation of Case~2 above (EXP-137) Case~2 has none. The reduction of Proposition~4.3 maps a pair of degrees $(72,108)$, the case that was left open, to a solution of Case~1 or Case~2 (Section~\ref{sec:prop43}); the pair $(108,72)$ is the same pair with $P$ and $Q$ exchanged. The floor is Theorem 2.1 with that pair removed (Section~\ref{sec:frontier}).
+By Theorem~\ref{thm:case1} Case~1 has no solution, and by the computation of Case~2 above (EXP-137) Case~2 has none. GGHV leave two cases of degrees $(72,108)$. The case with corner $A_0=(9,27)$ is discarded in \cite{GGHV2022} (their Proposition~4.1, Theorem~5.1 and Corollary~5.7, printed). The reduction of Proposition~4.3 maps a pair in the other case, with corner $A_0=(8,28)$, the case that was left open, to a solution of Case~1 or Case~2 (Section~\ref{sec:prop43}); the pair $(108,72)$ is the same pair with $P$ and $Q$ exchanged. The floor is Theorem 2.1 with that pair removed (Section~\ref{sec:frontier}). The mark [MV] covers the exclusion; the floor adds Theorem 2.1 of \cite{GGHV2022}, which is read (P) and not machine-verified here.
 \end{proof}
 
-Both conditions, the exhaustiveness of Proposition~4.3 and the encoding of its polygons by our equations, are stated again in Section~\ref{sec:limits}, with the gap that Theorem 2.1 inherits. The conclusion is that the exclusion of $(72,108)$ has an independent proof of both of its halves, Case 2 by a standard basis and Case 1 by the certificate above, and $JC(2)$ stays open. Priority for the exclusion is Helali's \cite{Helali2026}: his claim, conditional on the same reduction, came first, and the proofs here are neither a first claim nor a replication of his certificates.
+Both conditions, the exhaustiveness of Proposition~4.3 and the encoding of its polygons by our equations, are stated again in Section~\ref{sec:limits}, with the scope of the check of the $(9,24)$ step of Theorem 2.1 (EXP-147). The conclusion is that the exclusion of $(72,108)$ has an independent proof of both of its halves, Case 2 by a standard basis and Case 1 by the certificate above, and $JC(2)$ stays open. Priority for the exclusion is Helali's \cite{Helali2026}: his claim, conditional on the same reduction, came first, and the proofs here are neither a first claim nor a replication of his certificates.
 
 
 
@@ -2301,7 +2301,7 @@ exceeded $20{,}000$ primes (EXP-143). The obstacle is the height of the certific
 \emph{The ingredients of the chain certificate.} Four choices separate the certificate of Section~\ref{sec:helali} from a plain chain, and the last four rows of Table~\ref{tab:ablation} give what the records measure for each. The plain chain with the pivots $q_5,q_3,q_4,q_2$ reaches univariate members of degree $688$ in $q_0$ in $0.3$ s at one prime (python-flint),
 but all of them share the factor $l^{212}$ and their resultants vanish; this and the probes below were run before the experiment, with scripts kept outside the repository, and are evidence and not archived results. Degree bounds computed from the inputs alone are loose from the first level (a level-one member of $q_0$-degree $7$ against a bound $8$), so the first two levels of each node are
 computed exactly ($118$ polynomials, $145$ MB in the data root); with them every later pivot attains its bound on the real system, and the gates compare the exact polynomials with the bounds and with the images. The Rabinowitsch split in the original coordinate $q_0$ fails under proven bounds, because $\operatorname{Res}(l,lt-1)$ is constant and the degree in the Rabinowitsch variable
-drops by $212$ without the bound seeing it; in the coordinate $w_1=l$ the common factor is the monomial $w_1^{212}$, its order is proven from the supports with a negative weight, and its division is exact, after which the node $w_1\ne0$ certifies at degree $476$. The node $w_1=0$ has no nonzero constant among four and a squared common factor, and a second split of the same kind on $w_2$ certifies both of its children.
+drops by $212$ without the bound seeing it; in the coordinate $w_1=l$ the common factor is the monomial $w_1^{212}$, its order is bounded below by the composed bound of two propagated steps at a negative weight (Lemma~\ref{lem:split}(c)), and its division is exact (also checked at the images), after which the node $w_1\ne0$ certifies at degree $476$. The node $w_1=0$ has no nonzero constant among four and a squared common factor, and a second split of the same kind on $w_2$ certifies both of its children.
 The single prime replaces the reconstruction that had not terminated at $20{,}000$ primes per branch; the second prime, the second implementation and the third primes serve as checks. No run removed an ingredient from the finished certificate; the comparisons are those of the probes and of the multi-modular route, which did not finish, and no further claim is made about which ingredient is necessary.
 
 \section{Discussion}\label{sec:positioning}
@@ -2330,7 +2330,7 @@ On that system the outputs are of different strength. The chart atlas is exact a
 closure is a statement a reader can re-derive from a determinant and a Bezout identity. The five-prime unit ideal is evidence over the whole system and not a proof. The cofactor certificate has a measured cost: its coordinates are above about $94{,}000$ digits,
 which excludes that approach. The chain certificate is total and exact: it proves Case 1 empty with the degrees of the univariate members and a nonzero constant at one prime, and what it asks of a reader is the proof of Section~\ref{sec:chaintheory} and the exact levels, not a certificate of that height.
 Where the method can fail is visible in the record: a node is left unknown when no pivot attains its bound or when no pivot leading coefficient of the form $a+b\,x_n$ matches a root of the gcd (the controls with one equation removed end in such a node), and a zero image certifies nothing, so an unlucky prime costs a node and never a false certificate.
-The exclusion of $(72,108)$ therefore has an independent proof of both of its halves, conditional on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons; priority belongs to Helali \cite{Helali2026}, and the floor $125$ keeps the gap that Theorem 2.1 inherits.
+The exclusion of $(72,108)$ therefore has an independent proof of both of its halves, conditional on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons; priority belongs to Helali \cite{Helali2026}, and the floor $125$ rests on Theorem 2.1 as published, whose $(9,24)$ step is checked against their Theorem 5.1 (EXP-147).
 
 The incidence analysis of Section~\ref{sec:incidence} gives structural evidence for the conjecture: the only known mechanism for a constant-Jacobian noninvertible map cannot occur in dimension two, and
 the invariant that decides this, the resultant weight $n-2$, is one number. It is not a proof, and it does not address a planar counterexample of a different structure.
@@ -2347,10 +2347,10 @@ excludes every covector whose denominators are prime to those primes, and no goo
 \item \emph{The atlas is partial.} It closes sub-families of the $51$ interior coefficients (a four-coefficient restriction, with the transverse coefficient $(2,8)$ closed only on the direct $A=0$ boundary
 and on one section), not the family. Of $238$ cells of Table~\ref{tab:atlas}, $26$ are not recorded. The closures are exact inside the persisted $302$-row model, whose row pool was audited (EXP-111).
 \item \emph{The exclusion of $(72,108)$ is conditional, and the trust base of its certificate is the following.} (a) Proposition~4.3 of \cite{GGHV2022} is exhaustive, and our band equations encode its polygons (the transcription was checked against its LaTeX sources, and the equations of Case 2 and the three top bands of Case 1 agree with Helali's displayed equations,
-while in the two lowest upper bands of Case 1 they differ by the cross terms of the negative bands; the reduction from the $13$ equations to the systems of his identities was not reproduced). (b) The exact reduction of EXP-142 of Case 1 to the two branch ideals, and the irreducibility of $P$ (EXP-141), are premises of the certificate and are not re-derived in it; the inputs are tied to their SHA-256 by gate G0.
+while in the two lowest upper bands of Case 1 they differ by the cross terms of the negative bands; the reduction from the $13$ equations to the systems of his identities was not reproduced). (b) The reduction of the $13$ equations from the degree-$35$ field to its quintic subfield (EXP-140), the exact identification of that subfield with $L$ and the irreducibility of $P$ (EXP-141), and the exact reduction of EXP-142 of Case 1 to the two branch ideals are premises of the certificate and are not re-derived in it; the inputs are tied to their SHA-256 by gate G0.
 (c) The proofs of Proposition~\ref{prop:bound} and Proposition~\ref{prop:drop}; the code applies two rules that go beyond the first wording of the method, the entry $0$ at $w=0$ of every resultant table (included in Proposition~\ref{prop:bound}(iv)) and a rule for a member free of the eliminated variable, which the run never used. (d) The software: python-flint 0.9.0 for the exact arithmetic and the images, and Singular 4.3.2 for the second implementation, which evaluates the same
 recorded structure and so validates the images and not the bounds; its digests compare term counts, degrees and the values at two points of $\mathbb F_p$, not every coefficient. (e) The bounds of levels three and four are never exact; the level-four bounds of the nodes $t$ and $w_1\ne0$ rest on two propagated steps, which the composed gate tests on random pairs and not on these objects. (f) Four of the six branch controls reached their time limit and are inconclusive,
-so the negative evidence on the real system is weak; the proof does not depend on it. (g) The exact levels ($145$ MB) are in the data root and not in the repository, and the scripts of the recomputation at third primes are not archived in it. (h) The floor $125$ inherits Theorem 2.1 of \cite{GGHV2022} as published, with the gap at $(66,99)$ of Section~\ref{sec:frontier}.
+so the negative evidence on the real system is weak; the proof does not depend on it. (g) The exact levels ($145$ MB), the system of EXP-141 from which the branch files are regenerated and the file \texttt{caseL\_Q.sing} of EXP-140 are in the data root and not in the repository; the two branch files themselves are in it, in the folder \texttt{inputs} of EXP-146. (h) The floor $125$ rests on Theorem 2.1 of \cite{GGHV2022} as published, a human proof; its $(9,24)$ step is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}) for the hypotheses of that theorem on the three printed polygon classes, and neither the proof of Theorem 5.1 nor the exhaustiveness of their Proposition~4.2 is re-verified.
 \item \emph{Software.} The archived outputs of the earlier records do not record the Singular version (4.3.2 on the device when checked), and the run times of several records are not recorded (n/r in Table~\ref{tab:atlas}).
 \item \emph{Literature.} The statements about published work were checked against the cited sources as of 2026-07-22; several classical statements were read through a source that attributes them (marked S in Table~\ref{tab:ladder}),
 and the second claimed exclusion of $(72,108)$ is recorded without a reference [U].
@@ -2360,7 +2360,7 @@ The open problems are the following. (1) Lift the fifth direction $(2,8)$ throug
 $d=0$ kernel quotient with its Fitting ideal; the complete-grid CRT argument of Proposition~\ref{prop:exp135-inert} applies wherever explicit degree and height bounds are available. (2) Transport the intersection number $21$ to the
 reduced system, which requires a complete account of the boundary divisors through the swap, the Laurent cuts and the final inversion. (3) Derive a condition beyond the first $D=72$ branch of the Newton-resolution list, which retains the
 GGHV branch. (4) A closed form of the transport chain for general $(u,v,d)$, and the derivation of the kill of odd resonances for proper-power tops. (5) The twenty-three configurations of maximal degree in $[125,150]$ that the
-published sources do not decide, and the larger degrees: the exclusion of $(72,108)$, conditional as stated, raises the floor only to $125$ and settles nothing above it. (6) A check of the hypotheses of Theorem 5.1 of \cite{GGHV2022} on the three polygon classes of their Proposition~4.2, which would remove the gap that the floor inherits. (7) $JC(2)$ itself, which stays open.
+published sources do not decide, and the larger degrees: the exclusion of $(72,108)$, conditional as stated, raises the floor only to $125$ and settles nothing above it. (6) A re-verification of the proof of Theorem 5.1 of \cite{GGHV2022} and of the exhaustiveness of their Proposition~4.2 and case table, which EXP-147 does not cover (it checks the hypotheses of Theorem 5.1 on the three printed polygon classes). (7) $JC(2)$ itself, which stays open.
 The properness reformulation ($JC(2)$ holds iff every planar Keller map has empty Jelonek set; exact certificates in EXP-014) provides an independent cross-check.
 
 \section{Conclusions}\label{sec:conclusions}
@@ -2383,8 +2383,8 @@ The truncation ladder for a simultaneous covector excludes degrees $1$, $2$ and 
 stabilizes at dimension $39$), the finite ceiling it was meant to give is not established, and the natural $\mathfrak{sl}_2$ premise is refuted at its invariant test. The incidence analysis shows that the structure of the known
 counterexample cannot occur in the plane, because the resultant weight $n-2$ vanishes at $n=2$.
 
-With Case 2, this excludes the degree pairs $(72,108)$ and $(108,72)$ conditionally on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons by our equations (Theorem~\ref{thm:exclusion}), so that by Theorem 2.1 of that paper a counterexample has
-maximal degree at least $125$, with the gap that the theorem inherits (Section~\ref{sec:frontier}). Priority for the exclusion is Helali's \cite{Helali2026}; both halves are proved here independently. None of this decides $JC(2)$, which stays open, and nothing above degree $125$ is settled.
+Together with the emptiness of Case 2, the emptiness of Case 1 excludes the degree pairs $(72,108)$ and $(108,72)$ conditionally on Proposition~4.3 of \cite{GGHV2022} being exhaustive and on the encoding of its polygons by our equations (Theorem~\ref{thm:exclusion}), so that by Theorem 2.1 of that paper a counterexample has
+maximal degree at least $125$, whose $(9,24)$ step is checked against their Theorem 5.1 (EXP-147, Section~\ref{sec:frontier}). Priority for the exclusion is Helali's \cite{Helali2026}; both halves are proved here independently. None of this decides $JC(2)$, which stays open, and nothing above degree $125$ is settled.
 What the paper establishes is a set of exact, archived and scoped statements, with the certificate method and its proof, the certificates themselves and the measured cost of the route that failed. The gcd and degree floors that remain
 binding are those of Table~\ref{tab:ladder}.
 
@@ -2400,9 +2400,9 @@ outputs of its computations, and the larger computations list SHA-256 hashes of 
 files. Every [MV] claim has an archived script and output. The entry points and checksums of the seven procedures of
 Section~\ref{sec:methods} are in Table~\ref{tab:repro}, and each of the costs quoted in Tables~\ref{tab:atlas} and~\ref{tab:cost} is read from the record named in its row. The generator
 \path{manuscripts/jacobian-conjecture/planar/make_tables.py} builds Tables~\ref{tab:atlas} and~\ref{tab:repro} from the records and refuses to write a cell whose quotation is absent from its
-record, and builds Tables~\ref{tab:tree} to~\ref{tab:consts} from the artifacts of EXP-146 and compares the numbers quoted in the text with them; the experiment tests of the repository, such as \path{tests/test_jacobian_exp137.py} and
+record, and builds Tables~\ref{tab:tree} to~\ref{tab:consts} from the artifacts of EXP-146 and checks a fixed list of the figures the text quotes from that record (primes, run times of the whole run, the branches and the Singular checks, node shapes and counts) against it, the remaining prose figures not being checked by the generator; the experiment tests of the repository, such as \path{tests/test_jacobian_exp137.py} and
 \path{tests/test_jacobian_exp146.py}, check the structural statements of the independent verification and of the certificate method. The large intermediate residues of the
-Case 1 multi-modular runs and the exact levels of the certificate trees are kept outside the repository, in the data root of the programme, and the records list how to continue or regenerate them. Software: sympy (version recorded in EXP-001; pinned at 1.14.0 in EXP-146), Singular (version not
+Case 1 multi-modular runs and the exact levels of the certificate trees are kept outside the repository, in the data root of the programme, together with the system of EXP-141 and the file \texttt{caseL\_Q.sing} of EXP-140 that regenerate the branch inputs of the certificate (the two branch files are in the repository, in the folder \texttt{inputs} of EXP-146), and the records list how to continue or regenerate them. Software: sympy (version recorded in EXP-001; pinned at 1.14.0 in EXP-146), Singular (version not
 recorded in the outputs of the earlier records; 4.3.2 when checked, and 4.3.2 for EXP-146), PARI/GP, python-flint over FLINT 3.0.1 for the multi-modular runs and python-flint 0.9.0 for EXP-146, numpy 2.5.1 as pinned in EXP-146, and a C reconstruction program; the multi-modular runs used WSL Ubuntu-24.04 and the Singular checks of EXP-146 ran under WSL.\par}
 
 \small
