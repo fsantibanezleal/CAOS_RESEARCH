@@ -59,6 +59,10 @@ SEED = 20261115
 BLOCK_TIMEOUT_S = 600
 SECOND_ENCODING_TIMEOUT_S = 7200
 MAX_WORKERS = 12
+# The second solver. The hypothesis names MiniSat 2.2, but in the python-sat 1.9.dev22 build of this device `minisat22` dies with an
+# access violation (exit code 0xC0000005) in `solve` at random, on 28 of 30 blocks of order 24 to 28 when run as a gate
+# (reproducer: G1 with EXP015_SECOND_SOLVER=minisat22). Glucose 4 (a MiniSat 2.2 derivative, other code than CaDiCaL) runs.
+SECOND_SOLVER = os.environ.get("EXP015_SECOND_SOLVER", "glucose4")
 
 
 def log(msg: str) -> None:
@@ -802,40 +806,39 @@ def second_encoding(pl: poles.Pole):
 
 
 def second_encoding_matrices(block: transfer.Block) -> dict[str, np.ndarray]:
-    """Sector matrices by the second encoding and MiniSat 2.2 (EXP-014 check_certificate.py, same encoding). `solve_limited`
-    replaces `solve`: in python-sat 1.9.dev22 on Windows `Solver(name="minisat22").solve` raises an access violation after
-    some UNSAT answers under assumptions, `solve_limited` does not."""
+    """Sector matrices by the second encoding and the second solver (EXP-014 check_certificate.py, same encoding). The left triple
+    is fixed by unit clauses in a fresh solver per left state instead of by assumptions: in python-sat 1.9.dev22 on
+    Windows MiniSat 2.2 raises an access violation (exit code 0xC0000005) in `solve` under assumptions, with or without
+    `solve_limited`; without assumptions it is stable (checked on an order 20 block against CaDiCaL)."""
     from pysat.solvers import Solver
 
     clauses, pool, lab = second_encoding(block.pole)
     states = transfer.sector_states()
     out = {}
-    with Solver(name="minisat22", bootstrap_with=clauses) as s:
-        for o in SECTORS:
-            st = states[o]
-            idx = {t: i for i, t in enumerate(st)}
-            m = np.zeros((len(st), len(st)), dtype=bool)
-            for i, a in enumerate(st):
-                assume = [lab(("d", block.left[k]), a[k]) for k in range(3)]
-                sel = pool.id(("sel", o, i))
-                while s.solve_limited(assumptions=assume + [sel]):
+    for o in SECTORS:
+        st = states[o]
+        idx = {t: i for i, t in enumerate(st)}
+        m = np.zeros((len(st), len(st)), dtype=bool)
+        for i, a in enumerate(st):
+            units = [[lab(("d", block.left[k]), a[k])] for k in range(3)]
+            with Solver(name=SECOND_SOLVER, bootstrap_with=clauses + units) as s:
+                while s.solve():
                     model = {lit for lit in s.get_model() if lit > 0}
                     b = tuple(next(t for t in range(15) if lab(("d", block.right[k]), t) in model) for k in range(3))
                     m[i, idx[b]] = True
-                    s.add_clause([-sel] + [-lab(("d", block.right[k]), b[k]) for k in range(3)])
-                s.add_clause([-sel])
-            out[o] = m
+                    s.add_clause([-lab(("d", block.right[k]), b[k]) for k in range(3)])
+        out[o] = m
     return out
 
 
-def colorable_by_minisat(g: graphs.Graph, limit_s: float) -> bool | None:
-    """Second solver, second encoding, on the explicit graph. None when the limit is reached."""
+def colorable_by_second_solver(g: graphs.Graph, limit_s: float) -> bool | None:
+    """Second solver (SECOND_SOLVER), second encoding, on the explicit graph. None when the limit is reached."""
     import threading
 
     from pysat.solvers import Solver
 
     clauses, _, _ = second_encoding(poles.pole(g))
-    with Solver(name="minisat22", bootstrap_with=clauses) as s:
+    with Solver(name=SECOND_SOLVER, bootstrap_with=clauses) as s:
         timer = threading.Timer(limit_s, s.interrupt)
         timer.start()
         try:
@@ -853,7 +856,7 @@ def _g1_job(rec: dict):
     second = second_encoding_matrices(blk)
     t2 = time.time()
     same = all(np.array_equal(first[o], second[o]) for o in SECTORS)
-    return {"same": same, "cadical_seconds": round(t1 - t0, 1), "minisat_seconds": round(t2 - t1, 1),
+    return {"same": same, "cadical_seconds": round(t1 - t0, 1), "second_solver_seconds": round(t2 - t1, 1),
             "ones": {o: int(first[o].sum()) for o in SECTORS}}
 
 
@@ -873,7 +876,7 @@ def gate_g1(table: dict, workers: int) -> dict:
     run_killable([(b["id"], b) for b in sample], _g1_job, workers, SECOND_ENCODING_TIMEOUT_S, on_result, "G1")
     equal = sum(1 for r in rows.values() if r["status"] == "ok" and r["same"])
     return {"P_block_entries": ones, "P_block_equals_EXP014_S": p_ok, "sampled_blocks": [b["id"] for b in sample],
-            "second_encoding_equal": equal, "second_encoding_total": len(sample), "rows": rows,
+            "second_solver": SECOND_SOLVER, "second_encoding_equal": equal, "second_encoding_total": len(sample), "rows": rows,
             "passed": p_ok and equal == len(sample)}
 
 
@@ -1061,7 +1064,7 @@ def decide_noncolorable(g: graphs.Graph, stem: str, limit_s: int = 7200) -> dict
     cnf.parent.mkdir(parents=True, exist_ok=True)
     f.write(cnf, [f"EXP-015 {stem}"])
     rec = solver.solve(cnf, cnf.with_suffix(".drat"), limit_s)
-    mini = colorable_by_minisat(g, limit_s)
+    mini = colorable_by_second_solver(g, limit_s)
     out = {"stem": stem, "order": g.n, "simple_cubic": g.is_cubic() and len(set(g.edges)) == len(g.edges), "girth": invariants.girth(g),
            "cyclic_edge_connectivity": cyclic_connectivity(g), "cadical_status": rec["status"],
            "drat_trim_verified": rec.get("drat_trim_verified"), "cnf_sha256": rec["cnf_sha256"], "proof_sha256": rec.get("proof_sha256"),

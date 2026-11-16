@@ -170,3 +170,9 @@ def test_cyclic_cut_helper_agrees_with_the_library(run):
     assert run.cyclic_connectivity(graphs.prism()) == 3  # the three rungs separate the two triangles
     assert run.cyclic_connectivity(cube) == 4  # the four edges between two opposite faces
     assert run.cyclic_connectivity(graphs.flower_snark(5)) == 5  # J5 is a cyclically 5-edge-connected snark
+
+
+def test_second_encoding_with_the_second_solver_equals_the_first_on_p(run, petersen_block):
+    blk, mats = petersen_block
+    second = run.second_encoding_matrices(blk)
+    assert all(np.array_equal(second[o], mats[o]) for o in run.SECTORS)
