@@ -7,7 +7,9 @@ not import `chaincert.py`: plus branch at p3 = 268435399, r3 = 174414054 (all th
 t.z.z, `recompute_plus_tnz.py` for t.nz); minus branch at p3 = 399999949, r3 = 61040865 (the two leaves below the second
 split, `recompute_minus.py`). The review's scratch folder was deleted on 2026-11-16 in a cleanup; the scripts were rebuilt
 by replaying their recorded edits, and each rebuilt file has the SHA-256 printed in the review report
-(`recompute_plus.py` 98a8e047...5932, `recompute_plus_tnz.py` 3431d049...50c0, `recompute_minus.py` 3855eed2...b081). The
+(`recompute_plus.py` 98a8e047...5932, `recompute_plus_tnz.py` 3431d049...50c0, `recompute_minus.py` 3855eed2...b081;
+those values are of the files with CRLF line endings as the review wrote them; the repository stores them with LF, whose
+SHA-256 are 3190d225...6503d562, 43bdc7b8...e9abb96d and 3c0abc35...1fb18936, the same text). The
 outputs here come from a rerun on 2026-11-16 with the review's commands on the first-record SLPs (99ebd728), and agree with
 the review's recorded outputs:
 
