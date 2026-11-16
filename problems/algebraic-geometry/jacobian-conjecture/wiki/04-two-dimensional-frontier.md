@@ -414,3 +414,31 @@ The immediate strategy is now source-first:
 
 The full adjudication is in
 `program/jacobian-conjecture/strategy-audit-2026-07-25.md`.
+
+## Cases 1 and 2 of Proposition 4.3 certified empty (EXP-137, EXP-146; 2026-11-16)
+
+The route above (the corrector ladder and the chart atlas on the reduced polygons) did not close the open pair: the
+ladder does not terminate (EXP-064) and the atlas closes sub-families only. The strategic review of 2026-11-02 (JCB-098)
+moved the work to Helali's formulation. GGHV Proposition 4.3 leaves two coefficient systems; after the first elimination,
+Case 1 is 13 compatibility equations over the degree-35 field K = Q[a7]/(H), and EXP-142 splits it exactly into two
+branch ideals in five unknowns over the quintic field L = Q[y]/(y^5 - y^4 + 3y^3 + 3y^2 + 26).
+
+- Case 2 is empty: a Singular standard basis over K is {1} in 3 seconds (EXP-137).
+- Case 1 is empty (EXP-146): on each branch a tree of resultant chains with three leaves ends in nonzero constants of
+  the ideal, evaluated at one prime p1 = 536870909 and one root r1 of the quintic. Every degree a resultant uses is a
+  proven upper bound (exact supports at the first two chain levels, then an assignment bound on the Sylvester matrix,
+  attained at every pivot), so the image of each constant is the image of an exact constant of the ideal, and a nonzero
+  image proves the ideal is (1). Splits on a pivot's leading coefficient w use I = (1) iff I + (w) = (1) and
+  I + (w t - 1) = (1), in coordinates where w is a variable, so the shared factor w^212 is proven and divided out exactly.
+  Checks: a second prime, Singular as a second implementation, third primes in the review, gates G0 to G5 with planted
+  controls and mutants.
+- Exact standard bases (EXP-139, EXP-140) and multi-modular certificates (EXP-141 to EXP-143, coordinates above about
+  94,000 digits) did not finish; the chain certificate needs no reconstruction at all.
+
+Consequence, with its conditions: if Proposition 4.3 is exhaustive and our encoding of its polygons is right (EXP-137
+derives the band equations independently and reproduces Helali's eliminant), no Keller pair has degrees (72,108) or
+(108,72), so by GGHV Theorem 2.1 every counterexample to JC(2) has max deg >= 125. Helali claimed this exclusion first
+(Zenodo 10.5281/zenodo.21479814, 2026-07-21), and Guo second; ours is an independent proof of both cases. JC(2) stays
+open. Next on the frontier: the configurations of maximal degree in [125,150] that the sources leave undecided (proposed
+focus JC-F5 in `program/jacobian-conjecture/manuscript-map.md`).
+

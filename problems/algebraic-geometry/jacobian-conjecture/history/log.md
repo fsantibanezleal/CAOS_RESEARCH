@@ -1871,3 +1871,27 @@ review approved the corrections before release.
   value; five findings (F1 major: the comparison baseline was the live file) closed by a fix pass with tests and mutation
   checks; re-check CLOSED (`wip/caos-research/jc-exp144-addendum-recheck-2026-11-16.md`). The verdict word is unchanged.
 
+## 2026-11-16 - EXP-146: Case 1 of GGHV Proposition 4.3 certified empty (JCB-103 closed)
+
+- Hypothesis frozen 2026-11-15 (8133b594) before any code: single-prime resultant-chain certificates with support-proven
+  degree bounds (rules M1 to M5 with proofs), Rabinowitsch splits in monomial coordinates w = a + b v with exact division
+  by w^L, the tree rule, gates G0 to G5, a second prime and Singular as the second implementation.
+- Result (verdict CONFIRMED): both branch ideals I_+ and I_- of EXP-142 (q1 = +c, -c over L = Q[y]/(P)) are the unit
+  ideal, each certified by the same three-leaf tree at (p1, r1) = (536870909, 505390653), every degree proven by M4,
+  replayed at (p2, r2) = (536870879, 12005842); Singular digests agree (153 per branch, 18 constants, 0 mismatches). With
+  EXP-142's exact reduction, Case 1 has no solution over the algebraic closure of Q. With Case 2 (EXP-137) and
+  conditionally on Proposition 4.3 being exhaustive and on the encoding of its polygons, no Keller pair has degrees
+  (72,108) or (108,72); by GGHV Theorem 2.1 a counterexample to JC(2) then has max deg >= 125. Priority for the
+  exclusion is Helali's (first claim, conditional on the same reduction) and Guo's.
+- Validation: an adversarial review in five lenses with skeptics (CAOS_MANAGE `wip/caos-research/jc-exp146-review-2026-11-15.md`;
+  among its checks one leaf set per branch recomputed at third primes, 268435399 and 399999949, by scripts that do not
+  import the experiment's code), a fix pass in code and tests (5f6d6a75), a full rerun with the strengthened gates by the
+  coordinating session (1,854 s; 0 differences against the first certificates, `compare_slp.py`), a records pass, a final
+  check in three lenses (`jc-exp146-final-check-2026-11-16.md`: artifacts and reproduction recordable, five text fixes in
+  the verdict), and two re-checks of those fixes (`jc-exp146-vfix-recheck-2026-11-16.md`: RECORDABLE at 67f9d0e9). The
+  mutant M1c (the composed-bound mutant with the w = 0 entry unlowered, 2,109 violations) was added on the way.
+- Strategic review (methodology 13): this success gate triggers the review; the program adopts methodology 13 with its
+  governance record and manuscript map (`program/jacobian-conjecture/research-governance.json`, `manuscript-map.md`). Next:
+  planar v0.38 carries the result; its publication waits for Felipe's validation of the closure phrasing
+  (`program/jacobian-conjecture/72108-closure-statement.md`).
+

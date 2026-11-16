@@ -8,6 +8,16 @@ remain the evidence.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 5 with a redirect; strategic review (JCB-098), then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 (JCB-099); the transverse Fitting atlas is parked.
 
+2026-11-16: EXP-146 CONFIRMED (JCB-103 closed): Case 1 of GGHV Proposition 4.3 for (72,108) is empty. Both branch ideals
+(q1 = +c, -c over L = Q[y]/(y^5 - y^4 + 3y^3 + 3y^2 + 26)) are certified as the unit ideal by single-prime resultant-chain
+trees with support-proven degree bounds and monomial Rabinowitsch splits, at p1 = 536870909, replayed at p2 = 536870879
+and by Singular, after an adversarial review, a fix pass, a full rerun, a final check and re-checks. With EXP-137 (Case 2)
+and conditionally on Proposition 4.3 being exhaustive and on the encoding of its polygons, no Keller pair has degrees
+(72,108) or (108,72), so a counterexample to JC(2) has max deg >= 125 (GGHV Theorem 2.1). Priority for the exclusion is
+Helali's. Methodology 13 adopted at this review (`research-governance.json`, `manuscript-map.md`; current focus JC-F4,
+success gate met; JC-F5 and JC-F6 proposed). Next: planar v0.38 (drafted in CAOS_MANAGE; publication waits for Felipe's
+validation of the closure phrasing) and foundational v0.16 (one pointer sentence).
+
 2026-11-16: cascade v0.10 published (10.5281/zenodo.24269044): every located primary statement now carries its page (the arXiv
 versions read, with the stated journal and author-copy exceptions); four citations corrected (Tsuchimoto's priority in
 Belov-Kanel and Kontsevich's Remark 3; Long's remark after Corollary 5.2; the source of Wilson's wording; Zhao's
