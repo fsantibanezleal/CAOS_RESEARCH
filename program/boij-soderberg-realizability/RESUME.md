@@ -36,6 +36,7 @@ every hit re-verified in Singular and over QQ.
 |---|---|---|---|
 | EXP-001-pure-ray-census | the d3 <= 12 table over S: census, obstructions at every m, closures, generic level modules and generic presentations over GF(32003), every hit rechecked in Singular and over QQ | hypothesis frozen 2026-11-19 | - |
 | EXP-002-heisenberg-primitive-points | the three S-obstructed parity-passing rays left open over U(H): (0,2,6,8), (0,3,9,12), (0,2,10,12); U/U(x^e, y^e); calibration on the Kostant modules; duality | CONFIRMED (2026-11-19) | all three realized over QQ: U/U(x^2, y^2), U/U(x^3, y^3), cokernels of 2 by 3 matrices of quadrics; U/U(x^e, y^e) pure for e <= 6; the pair (x^2, y^2) fails in characteristics 2 and 3; other pairs work in characteristic 3, none of 80 in characteristic 2; duality reverses tables on 20 of 20 examples; two instruments agree on 96 of 96 modules |
+| EXP-003-heisenberg-characteristic-two | characteristic 2 over U(H); the proof steps of U/U(x^e, y^e); genericity | CONFIRMED (2026-11-19) | no pair of quadrics has a finite length quotient in characteristic 2 (exhaustive over GF(2) and GF(4), with a proof for every field), so (1,2,2,1) on (0,2,6,8) is realizable over neither ring there: a counterexample with d3 = 8 in characteristic 2 on a ray realized in every other characteristic; the proof steps of the family hold for e <= 8 and the bad primes are exactly the predicted ones; a general pair is not pure for e >= 4; (0,1,5,6), (0,1,7,8), (0,1,9,10), (0,1,11,12), (0,3,5,8) realized in characteristic 2; (0,3,9,12) and (0,2,10,12) never in the searches |
 
 ## 4. In flight
 
@@ -50,7 +51,10 @@ d3 <= 12 that pass parity and are excluded over S is realized over U(H) in chara
 counterexample with d3 <= 12 lies on a parity-failing ray. Derived [D], to be reviewed: U/U(x^e, y^e) is pure of type
 (0,e,3e,4e) for every e in characteristic 0 (`context/2026-11-19-uh-power-family-proof-sketch.md`); in characteristic 2
 no cyclic module has the table (1,2,2,1) on (0,2,6,8), which would make that point a counterexample with d3 = 8 there
-(EXP-002 verdict, Consequences; EXP-003 to check). EXP-001 is running.
+(EXP-002 verdict, Consequences). EXP-003 CONFIRMED both the characteristic 2 statement (every subspace over GF(2) and
+GF(4)) and every machine-checkable step of the family's proof for e <= 8. EXP-001 (the table over S): stage 0, the
+known answers and the Soderberg family done; after the search 189 primitive points are realized, 12 excluded and 19
+open, all with d3 >= 10; every parity-failing ray with d3 <= 9 is realized (76 of 76); QQ rechecks in progress.
 
 ## 5. Next actions
 

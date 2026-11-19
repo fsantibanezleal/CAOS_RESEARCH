@@ -181,3 +181,35 @@ def make_field(char, degree=1):
     if char == 0:
         return QQ()
     return PrimeField(char) if degree == 1 else ExtField(char, degree)
+
+
+class CachedExtField(ExtField):
+    """GF(p^k) with memoized addition, multiplication and inversion (same elements and modulus as ExtField;
+    used where a field of 16 or 256 elements is hit millions of times)."""
+
+    def __init__(self, p, k):
+        super().__init__(p, k)
+        self._mul, self._add, self._inv = {}, {}, {}
+
+    def add(self, a, b):
+        key = (a, b)
+        r = self._add.get(key)
+        if r is None:
+            r = self._add[key] = ExtField.add(self, a, b)
+        return r
+
+    def sub(self, a, b):
+        return self.add(a, self.neg(b))
+
+    def mul(self, a, b):
+        key = (a, b)
+        r = self._mul.get(key)
+        if r is None:
+            r = self._mul[key] = ExtField.mul(self, a, b)
+        return r
+
+    def inv(self, a):
+        r = self._inv.get(a)
+        if r is None:
+            r = self._inv[a] = ExtField.inv(self, a)
+        return r

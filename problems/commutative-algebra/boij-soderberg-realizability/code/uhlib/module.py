@@ -213,7 +213,10 @@ def quotient_module(F, shifts, rels, maxdeg=24, name=""):
                 store.append(ech[d + 1].coordinates(v))
         X.append(rx)
         Y.append(ry)
-    return GradedModule(F, lo, dims, X, Y, finished=finished, name=name)
+    M = GradedModule(F, lo, dims, X, Y, finished=finished, name=name)
+    # labels[i][j] = (component, PBW monomial) of the j-th basis vector of degree lo + i (a monomial complement basis)
+    M.labels = [[basis[d][c] for c in nonpiv[d]] for d in range(lo, last + 1)]
+    return M
 
 
 def ideal_module(F, gens, maxdeg=24, name=""):

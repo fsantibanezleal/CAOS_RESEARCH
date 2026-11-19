@@ -41,3 +41,19 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   in characteristic 0 (context note), and that in characteristic 2 no pair of quadrics gives a finite length quotient,
   so (1,2,2,1) on (0,2,6,8) is realizable over neither ring there (EXP-002 verdict; EXP-003 next).
 
+## 2026-11-19 - EXP-003 CONFIRMED: characteristic 2, the proof steps of the family, genericity; EXP-001 search state
+
+- EXP-003 (hypothesis 8028f796): all 35 and 357 two-dimensional subspaces of U_2 over GF(2) and GF(4) (and 400 random ones
+  over GF(16), GF(256)) give a quotient nonzero in every degree up to 20, each with the central quadric of the derivation.
+  With the proof (x^2, y^2, z central in characteristic 2), the primitive point of (0,2,6,8) is realizable over neither S
+  nor U(H) in characteristic 2: a counterexample to Question 6.1 with d3 = 8 there, on a ray realized over U(H) in every
+  other characteristic.
+- The derivation for U/U(x^e, y^e) is confirmed step by step for e <= 8 (weight pieces, kernel of y, socle, Hilbert
+  series), with the k[z]-structure for e <= 5 and the bad primes for e <= 5 exactly as predicted. A general pair of forms
+  of degree e is not pure for e = 4, 5, 10. The substitution of x^e, y^e in the presentation of L(1,1) is pure for
+  e = 2, 3.
+- Characteristic 2 searches: the rays (0,1,2a+1,2a+2), a <= 5, and (0,3,5,8) are realized; (0,3,9,12) and (0,2,10,12)
+  are never of finite length (open, BSB-014).
+- EXP-001: 189 primitive points realized over GF(32003) or by constructions, 12 excluded, 19 open (d3 >= 10); 76 of 76
+  parity-failing rays with d3 <= 9 realized; 58 of 60 QQ rechecks passed, the rest running.
+
