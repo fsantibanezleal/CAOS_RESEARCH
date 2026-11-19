@@ -206,8 +206,10 @@
       ],
       "novelty_status": "Long's claim is his (arXiv:2609.16178 v1, dated 2026-07-30 in its PDF, unrefereed) [V]; an independent exact replay was not found in the searches of the 2026-11-19 refresh; the verification is attributable as such, not as new mathematics.",
       "manuscript_route": "cascade (v0.11)",
-      "first_bounded_action": "Preflight: read arXiv:2609.16178 in full, write A, P, Q explicitly for SU(2) and SU(3), and price exact Haar integration of their moments (Weyl integration formula or matrix-coefficient orthogonality) before declaring the experiment.",
-      "evidence": []
+      "first_bounded_action": "Done: the preflight (paper read in full, the pair made explicit) and EXP-148 (950 exact cells, N = 2..16, three integration routes and the constant-term route, six controls; CONFIRMED on the range). Next: review of the derivation for SU(N), then the cascade revision v0.11.",
+      "evidence": [
+        "EXP-148"
+      ]
     }
   ],
   "manuscripts": [
@@ -565,6 +567,14 @@
       "classification": "primary-manuscript",
       "manuscripts": [
         "planar"
+      ]
+    },
+    {
+      "start": 148,
+      "end": 148,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "cascade"
       ]
     }
   ]

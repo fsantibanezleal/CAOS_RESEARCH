@@ -19,6 +19,12 @@ I_G(Q^s P^m) = c_m binom(m-1, s-1) I_G(A^(4m+s)) > 0, c_m = 4^m (m!)^2/(2m+1)! [
 range SU(N), 3 <= N <= 14. New current focus JC-F7: an exact replay of the construction on SU(2) and SU(3), then
 cascade v0.11. JC-F5 stays proposed with its preflight (count the [125,150] configurations, derive one system).
 
+2026-11-19: EXP-148 CONFIRMED (JCB-108): on SU(N), N = 2..16, Long's P and Q (through the first column) have
+I(P^m) = 0 and I(Q^s P^m) = c_m binom(m-1, s-1) (2)_(4m+s)/(N)_(4m+s) exactly in 950 cells (m <= 8), by three
+integration routes independent of the paper's proof and the constant-term route, with six controls. The statement for
+every m rests on the derivation in the EXP-148 hypothesis (to be reviewed). Next: cascade v0.11, where the Mathieu row
+becomes false for every SU(N), N >= 2.
+
 2026-11-16: EXP-147 CONFIRMED (JCB-107 closed): GGHV Theorem 5.1 applies to the three polygon classes of Proposition 4.2
 as printed, so the (9,24) case (max deg 99) of the floor is discarded by a printed theorem and the floor 125 no longer
 inherits the bridging gap the July audit found. Pending: the planar v0.38 draft still discloses the gap; its fix pass
