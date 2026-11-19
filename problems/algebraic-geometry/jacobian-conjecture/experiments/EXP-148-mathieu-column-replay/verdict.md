@@ -85,3 +85,12 @@ here concerns groups other than SU(N), nor Sections 6 to 8 of the paper.
 - The functions are not of finite type: they are polynomials in g11, g21 and their conjugates.
 - The definition of the conjecture differs from the one used: the cascade paper's Section 2 statement is the one
   compared; a variant that restricts g or f further would need a separate reading.
+
+## Addendum 1 (2026-11-19): run times
+
+The run was executed three times with identical cells and outcomes: 3.9 s (the implementer's run), 4.4 s (the first
+rerun, quoted above) and 5.2 s (the rerun after a lint-only change of `run.py`, an inner lambda turned into a
+function). The committed `artifacts/results.json` and `artifacts/run.log` are those of the last run (5,192 ms in all),
+and that is the value the cascade paper quotes. The differences are machine load; no cell, control or identity
+changed between runs.
+
