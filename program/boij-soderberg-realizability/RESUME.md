@@ -52,15 +52,24 @@ counterexample with d3 <= 12 lies on a parity-failing ray. Derived [D], to be re
 (0,e,3e,4e) for every e in characteristic 0 (`context/2026-11-19-uh-power-family-proof-sketch.md`); in characteristic 2
 no cyclic module has the table (1,2,2,1) on (0,2,6,8), which would make that point a counterexample with d3 = 8 there
 (EXP-002 verdict, Consequences). EXP-003 CONFIRMED both the characteristic 2 statement (every subspace over GF(2) and
-GF(4)) and every machine-checkable step of the family's proof for e <= 8. EXP-001 (the table over S): stage 0, the
+GF(4)) and every machine-checkable step of the family's proof for e <= 8. Both derivations were reviewed on 2026-11-19 by
+a reader other than the writer (correct after minor fixes, applied; BSB-015): U/U(x^e, y^e) has the pure resolution of
+type (0,e,3e,4e) if and only if the characteristic is 0 or at least 2e; the point (1,2,2,1) of (0,2,6,8) is realized over
+U(H) in characteristic 0 and in every odd characteristic (an explicit pair in characteristic 3) and over neither ring in
+characteristic 2. Question 6.1 already has a negative answer over every field (arXiv:2605.25259, Theorem 3.7), so the
+result is the dependence of the answer on the characteristic. EXP-001 (the table over S): stage 0, the
 known answers and the Soderberg family done; after the search 189 primitive points are realized, 12 excluded and 19
 open, all with d3 >= 10; every parity-failing ray with d3 <= 9 is realized (76 of 76); QQ rechecks in progress.
 
 ## 5. Next actions
 
-1. EXP-001: census, gates, search, rechecks; the table state in the verdict.
-2. EXP-002: the three U(H) rays, U/U(x^e, y^e), calibration and duality; then a proof of the pattern for every e.
-3. With both: the smallest-counterexample statement (candidate B) and the first manuscript outline.
+1. EXP-001: the rechecks over QQ of every hit, the two hits that failed over QQ, then the verdict with the table state.
+2. With it: the smallest-counterexample statement in characteristic 0 (candidate B), reviewed (BSB-015, third item).
+3. The first manuscript (BSB-013): the family U/U(x^e, y^e) with its sharp characteristic condition, the characteristic 2
+   statement on (0,2,6,8), the table over U(H) for d3 <= 12 and the census over S; attribution to Erman and Sam, Sam,
+   Boocher, Huang and Wolf, and Jiang, Li, Sun, Wang, Xiao and Yu.
+4. Open questions: characteristic 2 on (0,3,9,12) and (0,2,10,12) (BSB-014); the substitution x^e, y^e in the Kostant
+   presentations (BSB-012).
 
 ## 6. Where everything lives
 

@@ -57,3 +57,17 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - EXP-001: 189 primitive points realized over GF(32003) or by constructions, 12 excluded, 19 open (d3 >= 10); 76 of 76
   parity-failing rays with d3 <= 9 realized; 58 of 60 QQ rechecks passed, the rest running.
 
+## 2026-11-19 - The two derivations reviewed: correct after minor fixes; the family is pure exactly for characteristic 0 or >= 2e
+
+- An independent reader re-derived the derivation of U/U(x^e, y^e) (steps 1a to 1g) and the characteristic 2 statement,
+  with its own computation (M_1 to M_5 over QQ, all 35 subspaces over GF(2) through degree 24, the primes up to 17 for
+  e <= 7). No blocker, no major finding; 13 minor ones, all applied: the context note is rewritten (normal ordering
+  proved, the column range of the scaling, the weights beyond e, the explicit last map of the resolution of the trivial
+  module, the semilinear symmetry) and the EXP-003 verdict has addendum 1.
+- New from the review: the converse. For every prime p <= 2e - 1 the module is nonzero in degree 4e - 2, so
+  U/U(x^e, y^e) has the pure resolution of type (0, e, 3e, 4e) if and only if the characteristic is 0 or at least 2e
+  (hook-content for the tableau counts; a zero column for the converse). Re-checked with `uhlib` for e <= 6, p <= 13.
+- Positioning: arXiv:2605.25259 Theorem 3.7 already answers Question 6.1 negatively over every field (parity test on
+  (0,6,20,21)); the result on (0,2,6,8) is the dependence of the answer on the characteristic. An explicit pair over
+  GF(3) with the pure table is recorded (f = x^2 + y^2 + yx, g = x^2 + yx - z).
+

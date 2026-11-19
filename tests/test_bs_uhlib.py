@@ -290,3 +290,42 @@ def test_numpy_quotient_equals_python_quotient():
             assert fast.labels == slow.labels
             nox = quotient_module_np(F_, shifts, rels, maxdeg=9, with_action=False)
             assert nox.dims == slow.dims
+
+
+def _review_poly(Fp, terms):
+    """A quadric written in the monomials x^2, y^2, yx, z; the library's basis is x^a y^b z^c with yx = xy - z."""
+    out = {}
+    for name, c in terms.items():
+        for m, k in {"xx": [((2, 0, 0), 1)], "yy": [((0, 2, 0), 1)], "z": [((0, 0, 1), 1)],
+                     "yx": [((1, 1, 0), 1), ((0, 0, 1), -1)]}[name]:
+            out[m] = Fp.add(out.get(m, Fp.zero), Fp.from_int(c * k))
+    return {m: v for m, v in out.items() if not Fp.is_zero(v)}
+
+
+def _betti_list(M):
+    return sorted((k, v) for k, v in tor.betti(M).items() if v)
+
+
+PURE_2 = [((0, 0), 1), ((1, 2), 2), ((2, 6), 2), ((3, 8), 1)]
+
+
+def test_explicit_pair_in_characteristic_three_is_pure_and_the_hilbert_function_does_not_certify_it():
+    F3 = make_field(3)
+    pure = ideal_module(F3, [_review_poly(F3, {"xx": 1, "yy": 1, "yx": 1}), _review_poly(F3, {"xx": 1, "yx": 1, "z": -1})],
+                        maxdeg=16)
+    other = ideal_module(F3, [_review_poly(F3, {"xx": 2, "yy": 2, "z": 1, "yx": 1}), _review_poly(F3, {"yy": 1, "z": 2})],
+                         maxdeg=16)
+    assert pure.finished and pure.hilbert_list() == [1, 2, 2, 2, 1] and _betti_list(pure) == PURE_2
+    assert other.finished and other.hilbert_list() == [1, 2, 2, 2, 1] and _betti_list(other) != PURE_2
+
+
+def test_power_pair_is_pure_exactly_from_characteristic_2e_on():
+    for e in (2, 3):
+        want = [((0, 0), 1), ((1, e), 2), ((2, 3 * e), 2), ((3, 4 * e), 1)]
+        for p in (2, 3, 5, 7):
+            Fp = make_field(p)
+            M = ideal_module(Fp, [{(e, 0, 0): Fp.one}, {(0, e, 0): Fp.one}], maxdeg=4 * e + 4)
+            is_pure = M.finished and _betti_list(M) == want
+            assert is_pure == (p >= 2 * e), (e, p)
+            if p <= 2 * e - 1:
+                assert M.dim(4 * e - 2) > 0, (e, p)
