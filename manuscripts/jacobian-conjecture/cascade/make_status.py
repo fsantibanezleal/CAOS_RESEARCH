@@ -6,14 +6,16 @@ Inputs (read-only, under the experiments folder of the problem, `--exp`):
   EXP-136 artifacts/result.json, sources.md       closure of the implications, homogeneous-type test, SU(2) and GMC(3) moments
   EXP-138 artifacts/results.json, run-log.txt     dimension-15 homogeneous witness
   EXP-144 artifacts/results.json, run-log.txt     Long's rank-two Poisson map
+  EXP-148 artifacts/results.json, hypothesis.md   exact Haar moments of Long's universal Mathieu pair on SU(N)
   EXP-041 data/README.md                          SHA-256 of the Thompson input
 Outputs (next to this script): numbers.tex, status_table.tex, implication_graph.tex, index_map.tex, hash_table.tex,
-validation_table.tex, cost_table.tex, fig_fibre.tex, fig_chain.tex, fig_poisson.tex, fig_moments.tex.
+validation_table.tex, cost_table.tex, mathieu_table.tex, fig_fibre.tex, fig_chain.tex, fig_poisson.tex, fig_moments.tex,
+fig_mathieu.tex.
 
 The numbers printed through numbers.tex, the tables and the figures are read here from the artifacts; a value that differs
 from the one the text relies on stops the script with exit 1. Hard-coded in this script, and so not read from an artifact:
 the evidence-mark strings of the status table, the node and edge data of the graph, the Poisson, Mathieu and Gaussian-moment
-cells of the index map, and the values 3 (fibre points), 7 and 48, which the assertions cross-check against the artifacts
+cells of the index map (the Mathieu cells are checked against the EXP-148 range, N = 2 to 16), and the values 3 (fibre points), 7 and 48, which the assertions cross-check against the artifacts
 where an artifact holds them. Literal numbers inside main.tex (for example the 54 monomials) are checked by hand. With `--check` nothing is written and the
 script exits 1 when a committed output differs from a fresh one.
 
@@ -21,6 +23,7 @@ Usage: python make_status.py [--exp <experiments folder>] [--check]
 """
 import argparse
 import json
+import math
 import re
 import sys
 from fractions import Fraction
@@ -82,6 +85,10 @@ def read_all(exp):
 
     r144 = json.loads(text(exp / "EXP-144-long-poisson-exact-check/artifacts/results.json"))
     r["r144"] = r144
+
+    d148 = exp / "EXP-148-mathieu-column-replay"
+    r["r148"] = json.loads(text(d148 / "artifacts/results.json"))
+    r["hyp148"] = text(d148 / "hypothesis.md")
     return r
 
 
@@ -162,6 +169,112 @@ def numbers(r):
     for k, v in r144["P1_sizes_measured"].items():
         n["size" + {"beta": "beta", "y": "y", "R": "R", "S": "S", "T": "T", "H": "H", "D": "D"}[k] + "terms"] = str(v[0])
         n["size" + k + "deg"] = str(v[1])
+    return exp148_numbers(r, n)
+
+
+# ------------------------------------------------------------------------------------------------ EXP-148 helpers
+def rising(x, k):
+    """The rising factorial (x)_k = x (x + 1) ... (x + k - 1)."""
+    out = 1
+    for j in range(k):
+        out *= x + j
+    return out
+
+
+def cm(m):
+    """c_m = 4^m (m!)^2 / (2m+1)! (Long, eq. (3.5))."""
+    return Fraction(4 ** m * math.factorial(m) ** 2, math.factorial(2 * m + 1))
+
+
+def cm_integral(m):
+    """The integral over [0, 1] of (1 - s^2)^m, expanded binomially and integrated term by term (exact)."""
+    return sum(Fraction((-1) ** k * math.comb(m, k), 2 * k + 1) for k in range(m + 1))
+
+
+def predicted(N, m, s):
+    """Long's closed form, eq. (5.9): c_m binom(m-1, s-1) (2)_(4m+s) / (N)_(4m+s); I(P^m) = 0 is the case s = 0."""
+    if s == 0 or s > m:
+        return Fraction(0)
+    return cm(m) * math.comb(m - 1, s - 1) * Fraction(rising(2, 4 * m + s), rising(N, 4 * m + s))
+
+
+WORD = {1: "one", 2: "two", 3: "three", 4: "four", 8: "eight", 14: "fourteen"}
+
+
+def route_map(r148, route):
+    return {(c["N"], c["m"], c["s"]): Fraction(c["value"]) for c in r148["routes"] if c["route"] == route}
+
+
+def exp148_numbers(r, n):
+    r148 = r["r148"]
+    summ = r148["summary"]
+    need(summ["failures"] == [] and summ["cross_route_disagreements"] == 0, "EXP-148 has no failure and no cross-route disagreement")
+    need(summ["mismatches"] == {"A": 0, "B": 0, "C": 0, "H": 0}, "EXP-148 has zero mismatches on every route")
+    cells = {k: sum(1 for c in r148["routes"] if c["route"] == k) for k in "ABCH"}
+    need(cells == summ["cells"] == {"A": 600, "B": 300, "C": 10, "H": 40}, "EXP-148 cell counts 600, 300, 10, 40")
+    total = sum(cells.values())
+    need(total == 950 and len(r148["routes"]) == 950, "EXP-148 has 950 cells")
+    # every stored value equals the closed form recomputed here, on every route
+    for c in r148["routes"]:
+        need(c["equal"] is True and Fraction(c["value"]) == predicted(c["N"], c["m"], c["s"]) == Fraction(c["predicted"]),
+             f"EXP-148 cell {c['route']} {c['N']} {c['m']} {c['s']} equals the closed form")
+    # ranges, as run
+    rng = {}
+    for k in "ABCH":
+        cs = [c for c in r148["routes"] if c["route"] == k]
+        rng[k] = (min(c["N"] for c in cs), max(c["N"] for c in cs), max(c["m"] for c in cs), max(c["s"] for c in cs))
+    need(rng["A"] == (2, 16, 8, 4) and rng["B"] == (2, 16, 5, 3) and rng["C"] == (2, 6, 1, 1) and rng["H"] == (2, 2, 8, 4),
+         "EXP-148 ranges of the four routes")
+    # the pure moments vanish and the marked moments of the s = 1 column are positive, on route A
+    a = route_map(r148, "A")
+    need(all(v == 0 for (N, m, s), v in a.items() if s == 0), "EXP-148 pure moments vanish on route A")
+    need(all(v > 0 for (N, m, s), v in a.items() if s == 1), "EXP-148 s = 1 column is positive on route A")
+    # the closed form of c_m against its defining integral, m = 1..8
+    need(all(cm(m) == cm_integral(m) for m in range(1, 9)), "c_m equals the integral of (1-s^2)^m, m = 1..8")
+    need(all(i["pass"] for i in r148["identities"] if not i.get("deviation")), "EXP-148 identity checks pass")
+    need(sum(1 for i in r148["identities"] if i.get("deviation")) == 1, "EXP-148 records one wording deviation")
+    for k in ("K1", "K2", "K3", "K4", "K5", "K6"):
+        need(r148["controls"][k]["behaved"] is True, f"EXP-148 control {k} behaved as stated")
+    n["mccells"] = str(total)
+    for k in "ABCH":
+        n["mccells" + k] = str(cells[k])
+    n["mcnmax"] = str(rng["A"][1])
+    n["mcmmax"] = str(rng["A"][2])
+    n["mcsmax"] = str(rng["A"][3])
+    n["mcBmmax"] = str(rng["B"][2])
+    n["mcBsmax"] = str(rng["B"][3])
+    n["mcCnmax"] = str(rng["C"][1])
+    n["mcpairs"] = f"{summ['route_C_sigma_tau_pairs_visited']:,}".replace(",", "{,}")
+    need(summ["route_C_sigma_tau_pairs_visited"] == 1198080, "EXP-148 route C pairs 1,198,080")
+    ms = summ["wall_ms"]
+    n["mcseconds"] = f"{ms['total'] / 1000:.1f}"
+    for k in "ABCH":
+        n["mcsec" + k] = f"{ms[k] / 1000:.2f}"
+    n["mccellsec"] = f"{sum(ms[k] for k in 'ABCH') / 1000:.2f}"
+    for (N, m, s) in ((2, 1, 1), (2, 2, 1), (3, 1, 1), (3, 2, 1), (3, 3, 1), (14, 1, 1), (14, 8, 1)):
+        n[f"mcval{WORD[N]}{WORD[m]}{WORD[s]}"] = tex_frac(a[(N, m, s)])
+    need(a[(3, 1, 1)] == Fraction(4, 21) and a[(3, 2, 1)] == Fraction(16, 165) and a[(3, 3, 1)] == Fraction(32, 525), "SU(3) values printed by Long, p. 8")
+    need(a[(2, 1, 1)] == Fraction(2, 3) and a[(2, 2, 1)] == Fraction(8, 15) and a[(2, 3, 1)] == Fraction(16, 35), "SU(2) values printed by Long, p. 8")
+    need(a[(4, 1, 1)] == Fraction(1, 14) and a[(4, 2, 1)] == Fraction(4, 165) and a[(4, 3, 1)] == Fraction(2, 175), "SU(4) values printed by Long, p. 8")
+    # controls, read from the observed strings
+    obs = {k: r148["controls"][k]["observed"] for k in ("K1", "K2", "K3", "K4", "K5", "K6")}
+    m1 = re.search(r"(\d+) of (\d+) removals", obs["K1"])
+    need(m1 is not None and m1.group(1) == m1.group(2) == "16", "EXP-148 K1: 16 of 16 removals")
+    n["mckoneremoved"] = m1.group(1) if m1 else "0"
+    m2 = re.search(r"computed \['([^']+)', '([^']+)'\] vs alternative \['([^']+)', '([^']+)'\]", obs["K2"])
+    need(m2 is not None and Fraction(m2.group(1)) == Fraction(8, 15) and Fraction(m2.group(3)) == Fraction(1, 3), "EXP-148 K2 values 8/15 and 1/3")
+    n["mckcomputed"] = tex_frac(Fraction(m2.group(1))) if m2 else "0"
+    n["mckalt"] = tex_frac(Fraction(m2.group(3))) if m2 else "0"
+    m3 = re.findall(r"\((\d), '([^']+)'\)", obs["K3"])
+    need([int(k) for k, _ in m3] == [1, 2, 3] and [Fraction(v) for _, v in m3] == [Fraction(1, 3), Fraction(-1, 15), Fraction(-1, 5)], "EXP-148 K3 values")
+    for nm, (_, v) in zip(("mckthreea", "mckthreeb", "mckthreec"), m3):
+        n[nm] = tex_frac(Fraction(v))
+    m4 = re.search(r"(\d+) monomials .*?(\d+) comparisons, 0 disagreements", obs["K4"])
+    need(m4 is not None and m4.group(1) == "200" and m4.group(2) == "600", "EXP-148 K4: 200 monomials, 600 comparisons")
+    n["mckfourmon"] = m4.group(1) if m4 else "0"
+    n["mckfourcmp"] = m4.group(2) if m4 else "0"
+    need(all(f"N={k}: " in obs["K5"] for k in range(2, 7)) and "N=3: 1/3, 1/6" in obs["K5"], "EXP-148 K5 values")
+    need("Q has 0 monomials" in obs["K6"], "EXP-148 K6: Q vanishes on z1 = 0")
     return n
 
 
@@ -194,11 +307,11 @@ def status_rows(r, n):
              wit=r"$F:\C^3\to\C^3$, $\det JF=%s$, fibre of %s points" % (n["detF"], n["fibrepoints"]),
              opn=r"$N=2$ [C]"),
         dict(key="MC", stmt=r"Mathieu conjecture for $SU(N)$",
-             impl=r"$MC(SU(N))\Rightarrow$ every Keller map $x-h$ of $\C^N$, $h$ homogeneous, is invertible",
-             src=r"Zwart, Conj.~4.15 (p.~39) and Thm~4.23 (p.~43), proof of Thm~4.16 (pp.~39--40) [V] \cite{Zwart2025}; Mathieu, Thms~5.3 and 5.4, not located [U] \cite{Mathieu1997}",
-             marks=r"chain [V], original [U]; $N=%s$ witness [MV]; $MC(SU(N))$ false for $N\ge%s$ [D] on Zwart [V]; $SU(2)$ [V], $n\le%s$ [MV]" % (hd, hd, n["suthreemax"]),
-             wit=r"$N=%s$, degree %s (EXP-138); $N=%s$ (EXP-041 input); $SU(2)$: Long's $F,G$ \cite{LongSU2}" % (hd, hdeg, n["thompsondim"]),
-             opn=r"$SU(N)$, $3\le N\le14$; other compact groups [C]"),
+             impl=r"direct: Long's pair $(P,Q)$ on $\C^2$ through the first column of $g\in SU(N)$; through the Jacobian conjecture: $MC(SU(N))\Rightarrow$ every Keller map $x-h$ of $\C^N$, $h$ homogeneous, is invertible",
+             src=r"Long, Thms~1.2 (p.~2), 3.1 (p.~4), 4.1 (p.~6) and Prop.~5.4, eq.~(5.9) (p.~8) [V] \cite{LongMathieu2026}; Zwart, Conj.~4.15 (p.~39) and Thm~4.23 (p.~43), proof of Thm~4.16 (pp.~39--40) [V] \cite{Zwart2025}; Mathieu, Thms~5.3 and 5.4, not located [U] \cite{Mathieu1997}",
+             marks=r"false for every $N\ge2$ [D] (Prop.~\ref{prop:longsun}), with the moments exact for $2\le N\le%s$, $m\le%s$ [MV] (EXP-148); second route, $N\ge%s$: witness [MV], failure [D] on Zwart [V]; $SU(2)$ also [V], $n\le%s$ [MV]; chain [V], original [U]" % (n["mcnmax"], n["mcmmax"], hd, n["suthreemax"]),
+             wit=r"$N=2,\dots,%s$: the pair $(P,Q)$ of Long (EXP-148); $N=%s$, degree %s (EXP-138); $N=%s$ (EXP-041 input); $SU(2)$: Long's $F,G$ \cite{LongSU2}" % (n["mcnmax"], hd, hdeg, n["thompsondim"]),
+             opn=r"none for $SU(N)$, $N\ge2$; every nonabelian compact connected group: Long's Thm~1.2 (p.~2) [V], not reproduced"),
         dict(key="DC", stmt=r"Dixmier conjecture $DC(n)$",
              impl=r"$DC(n)\Rightarrow JC(n)$; $JC(2n)\Rightarrow DC(n)$",
              src=r"Belov-Kanel and Kontsevich, introduction (pp.~1--2) and Thm~1 (p.~2) [V] \cite{BKK2007}; Tsuchimoto [U] \cite{Tsuchimoto2005}",
@@ -246,7 +359,7 @@ def status_table(rows):
            r"reaches, one row each. The columns give the statement, the published implication with the dimension index as its "
            r"source states it, the theorem located in that source, the evidence marks (Section~\ref{sec:marks}), the explicit "
            r"witness with its dimension, and the indices that remain open. Built by \texttt{make\_status.py} from the closure "
-           r"and the exact checks of computations EXP-001, EXP-041, EXP-136, EXP-138 and EXP-144; the table gives theorem "
+           r"and the exact checks of computations EXP-001, EXP-041, EXP-136, EXP-138, EXP-144 and EXP-148; the table gives theorem "
            r"numbers, and the page of each, in the version named in Section~\ref{sec:inputs}, is given where the theorem is cited in "
            r"Sections~\ref{sec:related} and~\ref{sec:cascade}, except for the texts that Section~\ref{sec:inputs} lists as "
            r"carrying no page.}\label{tab:status}\\")
@@ -267,7 +380,7 @@ GRAPH_NODES = [
     ("DC", r"$DC(n)$: false for $n\ge3$;\\ $n=1,2$ open", -5.2, 2.5, "imp"),
     ("PC", r"$PC(n)$: false for $n\ge2$;\\ $n=1$ open", -5.2, -2.5, "wit"),
     ("GMC", r"$GMC(n)$: false for $n\ge3$;\\ $n=2$ open", 5.2, 3.2, "wit"),
-    ("MC", r"$MC(SU(N))$: false for $N=2$\\ and $N\ge15$", 5.2, -2.1, "wit"),
+    ("MC", r"$MC(SU(N))$: false\\ for every $N\ge2$", 5.2, -2.1, "wit"),
     ("HX", r"$x-h$ invertible on $\C^N$,\\ $h$ homogeneous", 5.2, 0.5, "wit"),
     ("VC", r"vanishing conjecture:\\ false, witness in dim.~48", 3.6, -4.6, "wit"),
     ("IC", r"Image conjecture:\\ false in some dim.", 5.4, -6.1, "imp"),
@@ -320,7 +433,7 @@ def index_map(r):
         put("JC", i, "T" if st.get(f"JC({i})") == "true" else "I" if st.get(f"JC({i})") == "undecided" else "W")
         put("DC", i, "O" if st.get(f"DC({i})") == "undecided" else "I")
         put("PC", i, "O" if st.get(f"PC({i})") == "undecided" and i == 1 else "W")
-        put("MC", i, "X" if i == 1 else "W" if i == 2 or i >= 15 else "O")
+        put("MC", i, "X" if i == 1 else "W")
         put("GMC", i, "T" if i == 1 else "O" if i == 2 else "W")
     # the closure is tabulated to n = 8; the other cells follow from the same rules (the rule does not depend on n)
     put("JC", 2, "O")
@@ -360,12 +473,15 @@ def hash_table(r, n):
         ("Wilson", "2607.23887v1", "0f70a4a1a5cceca0ea2d9bba2aa6d1c120da4980cddf4c105a55db97f85f257a"),
         ("Zheglov", "2410.06959v5", "897913ef95e011332e86e348803c6c9da5dbd196db17a04f8f951110e9b095e3"),
         ("Long, Poisson", "2608.23777v1", r["r144"]["pdf_sha256"]),
+        ("Long, Mathieu property", "2609.16178v1", "1da42c2fddc0a0c559cfdac56514bcfb85c6f3454d4aa443bf8e170f9dbe178f"),
+        ("Collins, \\'Sniady, Weingarten formula", "math-ph/0402073v1", "d8984bb165ef0f18187101ab8ee15ca82bd5cfdd0122b2a12b17da8ee5ad38c4"),
         ("Thompson, \\texttt{cubic\\_map.txt}", "data file", r["thompson_sha"]),
         ("Thompson, \\texttt{collision\\_points.txt}", "data file", r["thompson_col_sha"]),
     ]
     for _, _, h in rows[:13]:
         need(h in s, f"hash {h[:12]} not in EXP-136 sources.md")
     need(r["r144"]["pdf_sha256"] == "5dd5861194bfea9130cddc10919510b060dab663f3a00222e57014125db5051a", "Long Poisson hash")
+    need("1da42c2fddc0a0c559cfdac56514bcfb85c6f3454d4aa443bf8e170f9dbe178f" in r["hyp148"], "Long Mathieu hash in the EXP-148 record")
     out = [r"\begin{table}[t]", r"\centering\scriptsize", r"\setlength{\tabcolsep}{3pt}",
            r"\begin{tabular}{@{}L{0.26\textwidth}L{0.16\textwidth}L{0.50\textwidth}@{}}", r"\toprule",
            r"Text or file & Read as & SHA-256 \\", r"\midrule"]
@@ -373,7 +489,7 @@ def hash_table(r, n):
         hh = "\\allowbreak ".join(h[i:i + 16] for i in range(0, 64, 16))
         out.append(rf"{a} & {b} & \texttt{{{hh}}} \\")
     out += [r"\bottomrule", r"\end{tabular}",
-            r"\caption{Primary texts and input files read for the status table, with the arXiv version of each text and the SHA-256 of the fetched PDF or file, as recorded by computations EXP-041, EXP-136 and EXP-144. A change of any digest would mean a different text from the one on which the transcribed statements rest.}",
+            r"\caption{Primary texts and input files read for the status table, with the arXiv version of each text and the SHA-256 of the fetched PDF or file, as recorded by computations EXP-041, EXP-136, EXP-144 and EXP-148 (for Collins and Sniady, the digest of the PDF read here). A change of any digest would mean a different text from the one on which the transcribed statements rest.}",
             r"\label{tab:hashes}", r"\end{table}"]
     return "\n".join(out) + "\n"
 
@@ -397,6 +513,8 @@ def validation_table(r, n):
          r"$(JH)^{%s}=0$; equal images at two distinct integer points; adding $x_2^2$ to $F_2$ gives a non-constant determinant; %s s" % (n["homnil"], n["homseconds"])),
         (r"Long's Poisson map, two routes", "EXP-144 P1 to P5",
          r"term counts and degrees match the printed table; symbolic brackets and %s random rational points (seed %s) give zero entries; $\det JF=1$ both ways; fibre of %s points; %s s in all" % (n["poissonpts"], n["poissonseed"], n["poissonquot"], n["poissonseconds"])),
+        (r"Long's pair on $SU(N)$, four routes", "EXP-148 A, B, C, H",
+         r"%s cells with no mismatch: complex sphere moments (%s cells, $N\le%s$, $m\le%s$), real-coordinate sphere moments (%s, $m\le%s$), Weingarten calculus on $U(N)$ with %s pairs of permutations (%s, $N\le%s$) and the constant-term reduction on $S^3$ (%s); no two routes differ on a shared cell; %s s in all" % (n["mccells"], n["mccellsA"], n["mcnmax"], n["mcmmax"], n["mccellsB"], n["mcBmmax"], n["mcpairs"], n["mccellsC"], n["mcCnmax"], n["mccellsH"], n["mcseconds"])),
         (r"Controls of the Poisson check", "EXP-144 C1, C2",
          r"the uncorrected $D_0$ and the changed coefficient $125\to126$ in $H$ fail the checker: %s and %s failing matrix entries symbolically, %s and %s nonzero entries at 5 points" % (n["controlonefail"], n["controltwofail"], n["controlonepoints"], n["controltwopoints"])),
     ]
@@ -423,6 +541,8 @@ def cost_table(r, n):
          r"%s s for the construction and the nilpotency chain, dimension %s" % (n["homseconds"], n["homdim"])),
         ("A5", "EXP-144", r"seven polynomials of Long", r"$\Q$ (\texttt{Fraction} for the second route)", r"sympy 1.14.0",
          r"%s s in all: brackets %s s, determinant %s s" % (n["poissonseconds"], n["poissonbrk"], n["poissondet"])),
+        ("A6", "EXP-148", r"the pair $(P,Q)$, $N$, $m$, $s$", r"$\Q(i)$ (\texttt{Fraction} pairs)", r"Python standard library",
+         r"%s s in all; the %s cells %s s: sphere moments %s s, real coordinates %s s, Weingarten %s s, reduction %s s" % (n["mcseconds"], n["mccells"], n["mccellsec"], n["mcsecA"], n["mcsecB"], n["mcsecC"], n["mcsecH"])),
     ]
     out = [r"\begin{table}[t]", r"\centering\footnotesize", r"\setlength{\tabcolsep}{3pt}",
            r"\begin{tabular}{@{}lL{0.11\textwidth}L{0.17\textwidth}L{0.15\textwidth}L{0.12\textwidth}L{0.24\textwidth}@{}}", r"\toprule",
@@ -430,7 +550,7 @@ def cost_table(r, n):
     for row in rows:
         out.append(" & ".join(row) + r" \\[2pt]")
     out += [r"\bottomrule", r"\end{tabular}",
-            r"\caption{The five procedures of Section~\ref{sec:methods}, with the computation that ran each, its input, the arithmetic domain, the software and the cost measured in that run. The version of the algebra system is stated in the method plan of EXP-001 (1.14) and pinned in the requirements file of EXP-144 (1.14.0); no artifact of any run records it.}",
+            r"\caption{The six procedures of Section~\ref{sec:methods}, with the computation that ran each, its input, the arithmetic domain, the software and the cost measured in that run. The version of the algebra system is stated in the method plan of EXP-001 (1.14) and pinned in the requirements file of EXP-144 (1.14.0); no artifact of any run records it. Computation EXP-148 uses no algebra system.}",
             r"\label{tab:cost}", r"\end{table}"]
     return "\n".join(out) + "\n"
 
@@ -502,6 +622,42 @@ def fig_moments(r):
     return "\n".join(out) + "\n"
 
 
+# ------------------------------------------------------------------------------------------------ Mathieu table and figure
+def mathieu_table(r, n):
+    a = route_map(r["r148"], "A")
+    rows = [(2, 1), (2, 2), (3, 1), (3, 2), (14, 1)]
+    ms = list(range(1, 7))
+    out = [r"\begin{table}[t]", r"\centering\footnotesize", r"\setlength{\tabcolsep}{5pt}", r"\renewcommand{\arraystretch}{2.2}",
+           r"\begin{tabular}{@{}l" + "c" * len(ms) + r"@{}}", r"\toprule",
+           r"$N$, $s$ & " + " & ".join(f"$m={m}$" for m in ms) + r" \\", r"\midrule"]
+    for N, sv in rows:
+        cells = []
+        for m in ms:
+            v = a[(N, m, sv)]
+            need(v == predicted(N, m, sv), f"table cell {N} {m} {sv}")
+            cells.append("$" + tex_frac(v).replace("tfrac", "dfrac") + "$")
+        out.append(rf"$N={N}$, $s={sv}$ & " + " & ".join(cells) + r" \\[2pt]")
+    out += [r"\bottomrule", r"\end{tabular}",
+            r"\caption{Exact values of $\int_{SU(N)}Q^sP^m\,dg$ for Long's pair, from the complex sphere moments of computation EXP-148 (route A): $N=2$ and $N=3$ with $s=1,2$, and $N=14$ with $s=1$, for $m=1,\dots,6$. Every value equals $c_m\binom{m-1}{s-1}(2)_{4m+s}/(N)_{4m+s}$ exactly, and the pure moments $\int P^m\,dg$ vanish in every cell. The entries with $s=2$ and $m=1$ are zero because $\binom{0}{1}=0$.}",
+            r"\label{tab:mathieu}", r"\end{table}"]
+    return "\n".join(out) + "\n"
+
+
+def fig_mathieu(r):
+    a = route_map(r["r148"], "A")
+    sty = {2: "mark=*, color=stcurve", 3: "mark=square*, color=stpoint", 8: "mark=triangle*, color=black!70",
+           14: "mark=diamond*, color=stline", 16: "mark=o, color=black"}
+    out = [r"\begin{tikzpicture}",
+           r"\begin{axis}[width=0.78\textwidth, height=6cm, ymode=log, xlabel={$m$}, ylabel={$\int_{SU(N)}Q\,P^m\,dg$}, xmin=0.7, xmax=8.3, ymin=1e-12, ymax=3, xtick={1,2,3,4,5,6,7,8},",
+           r"  tick label style={font=\scriptsize}, axis lines=left, legend style={font=\scriptsize, at={(0.02,0.03)}, anchor=south west}]"]
+    for N in (2, 3, 8, 14, 16):
+        coords = " ".join(f"({m},{float(a[(N, m, 1)]):.6e})" for m in range(1, 9))
+        out.append(rf"\addplot[{sty[N]}, thick, mark size=1.8pt] coordinates {{{coords}}};")
+        out.append(rf"\addlegendentry{{$N={N}$}}")
+    out += [r"\end{axis}", r"\end{tikzpicture}"]
+    return "\n".join(out) + "\n"
+
+
 # ------------------------------------------------------------------------------------------------ main
 def main():
     ap = argparse.ArgumentParser()
@@ -520,6 +676,8 @@ def main():
         "hash_table.tex": hash_table(r, n),
         "validation_table.tex": validation_table(r, n),
         "cost_table.tex": cost_table(r, n),
+        "mathieu_table.tex": mathieu_table(r, n),
+        "fig_mathieu.tex": fig_mathieu(r),
         "fig_fibre.tex": fig_fibre(),
         "fig_chain.tex": fig_chain(n),
         "fig_poisson.tex": fig_poisson(r),

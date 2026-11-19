@@ -195,7 +195,7 @@
     {
       "id": "JC-F7",
       "title": "Long's Mathieu construction on compact connected Lie groups: exact replay and the cascade revision",
-      "status": "active",
+      "status": "active-success-gate-met",
       "priority": 7,
       "target": "Is C. D. Long's claim (arXiv:2609.16178 v1) that the Mathieu conjecture fails on every nonabelian compact connected Lie group correct on the smallest groups, SU(2) and SU(3): do his polynomials A, P, Q have all pure moments of P zero and I_G(Q^s P^m) = c_m binom(m-1, s-1) I_G(A^(4m+s)) > 0 with c_m = 4^m (m!)^2/(2m+1)!, checked by exact Haar integration?",
       "value": "The cascade paper (v0.10, 10.5281/zenodo.24269044) states the Mathieu conjecture settled only for SU(N), N >= 15 (through de Bondt's HJC(15) witness), and open for 3 <= N <= 14. If Long's construction holds, every row of the Mathieu block of the cascade changes, and an exact independent replay is the evidence the cascade needs before it restates the status; if it fails, the gap is a result in itself.",
@@ -209,7 +209,8 @@
       "first_bounded_action": "Done: the preflight (paper read in full, the pair made explicit) and EXP-148 (950 exact cells, N = 2..16, three integration routes and the constant-term route, six controls; CONFIRMED on the range). Next: review of the derivation for SU(N), then the cascade revision v0.11.",
       "evidence": [
         "EXP-148"
-      ]
+      ],
+      "review_2026_11_19": "Success gate met on 2026-11-19: EXP-148 CONFIRMED and cascade v0.11 published (10.5281/zenodo.24382142) after an adversarial review with an independent re-derivation of the proofs. The focus stays current until the next strategic review chooses between JC-F5 (the [125,150] configurations, with its preflight) and JC-F6 (the certificate method)."
     }
   ],
   "manuscripts": [
@@ -234,11 +235,11 @@
     {
       "slug": "cascade",
       "path": "manuscripts/jacobian-conjecture/cascade",
-      "version": "0.10",
-      "version_doi": "10.5281/zenodo.24269044",
+      "version": "0.11",
+      "version_doi": "10.5281/zenodo.24382142",
       "concept_doi": "10.5281/zenodo.21503371",
       "status": "published",
-      "split_action": "Paper C (the consequence cascade). A new version only for corrections or a decided row."
+      "split_action": "Paper C (the consequence cascade). v0.11 (2026-11-19) carries the Mathieu row after Long's direct construction (EXP-148). A new version only for corrections or a decided row."
     }
   ],
   "experiment_dispositions": [

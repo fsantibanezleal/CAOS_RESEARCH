@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Alpöge's explicit Keller map on C^3, with a three-point fibre, refutes the Jacobian conjecture in every dimension N &gt;= 3. Seven neighbouring conjectures are tied to it by published implications whose dimension indices decide what the map refutes. We record each implication with its theorem and index, locate all but two in a primary text, and close the implications under composition into a status table with an evidence mark per entry. Exact computations over Q and Q(i) check the map and its fibre, a homogeneous-type test, a dimension-15 homogeneous witness, a dimension-48 gradient witness whose Hessian-nilpotent quartic has 382 monomials, and Long's rank-two Poisson map.</p><p>The Dixmier and Poisson conjectures fail at every index n &gt;= 3, and the Poisson conjecture also at n = 2. The Mathieu conjecture fails for SU(N) with N &gt;= 15 and, by Long, for SU(2). The Gaussian moments conjecture fails for n &gt;= 3, and the vanishing, Hessian and symmetric forms fail with explicit witnesses. Every check is exact, so no interval applies, and each negative control fires. Mathieu's original paper was not located, so that row rests on an expository rendering, and the Image implication was read only in an abstract. Dixmier at ranks 1 and 2, Poisson at index 1, Mathieu for 3 &lt;= N &lt;= 14 and the two-variable Jacobian conjecture stay open.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>Alpöge's explicit Keller map on C^3, with a three-point fibre, refutes the Jacobian conjecture in every dimension N &gt;= 3. Seven neighbouring conjectures are tied to it by published implications whose dimension indices decide what the map refutes. We record each implication with its theorem and index, locate all but two in a primary text, and close the implications under composition into a status table with an evidence mark per entry. Exact computations over Q and Q(i) check the map and its fibre, a homogeneous-type test, a dimension-15 homogeneous witness, a dimension-48 gradient witness, Long's rank-two Poisson map, and Long's universal pair of polynomials on SU(N) for 2 &lt;= N &lt;= 16 in 950 cells.</p><p>The Dixmier and Poisson conjectures fail at every index n &gt;= 3, and the Poisson conjecture also at n = 2. The Mathieu conjecture fails on SU(N) for every N &gt;= 2: we prove, following Long, that his pair has vanishing pure moments and positive marked moments, and the exact computation reproduces his closed forms; a homogeneous map on C^15 independently gives N &gt;= 15. His statement for every nonabelian compact connected Lie group is read, not reproduced. The Gaussian moments conjecture fails for n &gt;= 3, and the vanishing, Hessian and symmetric forms fail with explicit witnesses. Every check is exact, so no interval applies, and each negative control fires. The direction and index of Mathieu's implication rest on an expository rendering, and the Image implication was read only in an abstract. Dixmier at ranks 1 and 2, Poisson at index 1 and the two-variable Jacobian conjecture stay open.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "Hessian conjecture",
@@ -47,11 +47,21 @@
         "relation": "cites",
         "identifier": "https://arxiv.org/abs/2608.23777",
         "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2609.16178",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s00220-006-1554-3",
+        "resource_type": "publication-article"
       }
     ],
-    "version": "0.10",
+    "version": "0.11",
     "language": "eng",
     "publication_date": "2026-11-16",
-    "version_notes": "Revision. Adds the page, in the version read, of each located primary statement (arXiv versions; journal pages for the texts without an arXiv version; the authors' copy for Cima and coauthors; Alpoge's announcement, Zhang's web note, Thompson's data repository and the works cited without being read here (Mathieu's 1997 paper among them) carry no page); corrects four citations (the Tsuchimoto remark of Belov-Kanel and Kontsevich, the attribution of Long's remark after Corollary 5.2, the source of the Wilson wording, and the Zhao equation behind the potential check); states the definitions of de Bondt's indices JC(12,3), HJC(18,3), VC(34,4) and HVC(36,4) and the evidence mark of each statement ([V] for JC(12,3); [U] for HJC(18,3), VC(34,4), HVC(36,4), his dimensions 28 and 30 and his dimension-90 cubic-linear map, whose objects are neither displayed in the source nor run here)."
+    "version_notes": "Revision. The Mathieu row now states that the conjecture fails on SU(N) for every N >= 2, by C. D. Long's direct construction (arXiv:2609.16178): the first-column argument is proved for SU(N) in the paper and the moment identities are reproduced exactly in 950 cells for 2 <= N <= 16 (computation EXP-148). The route through the homogeneous map of dimension 15 is kept as a second route for N >= 15; the abstract, the index map, the discussion, the conclusions and the next steps are updated, and the range 3 <= N <= 14 does not carry the status of the conjecture. Adds the procedure for exact Haar moments (Algorithm 6), a table of exact values and a figure of the marked moments, and the statement of the conjecture as Long gives it; the run times of the Poisson-map check are those of its archived rerun (173.08 s)."
   }
 }

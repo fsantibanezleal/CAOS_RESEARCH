@@ -1936,3 +1936,16 @@ review approved the corrections before release.
   every m rests on the three-step derivation in the hypothesis (first column uniform, constant-term identity, radial
   transfer), to be reviewed before cascade v0.11.
 
+## 2026-11-19 - cascade v0.11 published
+
+- Cascade v0.11 (10.5281/zenodo.24382142; 45 pages, 716,901 bytes, SHA-256 23c0d679be77d22e21a01bf1f2ce75e4ec59668168ce16e9123c348e99aa754d): the Mathieu row is false for SU(N), every N >= 2. A new
+  subsection proves the moment identities of Long's pair for SU(N) (first column uniform on the sphere; laws on the
+  sphere; the constant-term identity on S^3; the transfer), EXP-148 reproduces them in 950 exact cells, and every
+  statement of the former open range 3 <= N <= 14 is rewritten as a statement about the located proofs. The Weingarten
+  formula is cited from Collins and Sniady (Proposition 2.3 and Corollary 2.4) and the source archived.
+- Review: an adversarial reviewer re-derived the four proof steps independently and recomputed three values; findings
+  (one blocker word on the scope of Long's theorem, three majors on what the routes do and do not use and on the
+  Weingarten citation, minors) fixed in one pass; re-check: approve, 0 blockers. release.py: build and render clean, 45
+  pages viewed, approval record, 39 gates.
+- JC-F7's success gate is met; JCB-108 done.
+

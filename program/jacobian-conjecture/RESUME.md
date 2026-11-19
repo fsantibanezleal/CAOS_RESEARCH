@@ -25,6 +25,10 @@ integration routes independent of the paper's proof and the constant-term route,
 every m rests on the derivation in the EXP-148 hypothesis (to be reviewed). Next: cascade v0.11, where the Mathieu row
 becomes false for every SU(N), N >= 2.
 
+2026-11-19: cascade v0.11 published (10.5281/zenodo.24382142; 45 pages): the Mathieu row is false for SU(N), every N >= 2, with the
+proof for SU(N) in the paper (reviewed by an independent re-derivation) and EXP-148 as its exact check. JC-F7's success
+gate is met; the next focus (JC-F5 with its preflight, or JC-F6) is chosen at the next strategic review.
+
 2026-11-16: EXP-147 CONFIRMED (JCB-107 closed): GGHV Theorem 5.1 applies to the three polygon classes of Proposition 4.2
 as printed, so the (9,24) case (max deg 99) of the floor is discarded by a printed theorem and the floor 125 no longer
 inherits the bridging gap the July audit found. Pending: the planar v0.38 draft still discloses the gap; its fix pass
