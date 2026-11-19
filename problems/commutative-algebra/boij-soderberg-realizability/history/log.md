@@ -27,3 +27,17 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - EXP-001 (the table over S) and EXP-002 (the three rays left open over U(H), the family U/U(x^e, y^e), calibration and
   duality) frozen before computation.
 
+## 2026-11-19 - EXP-002 CONFIRMED: the three open rays are realized over U(H); a family for every e; characteristic 2
+
+- EXP-002 (hypothesis ac4f4880): an exact U(H) library (`code/uhlib`: PBW arithmetic, graded quotients, Betti numbers by
+  the Tor complex) and Singular Plural, calibrated on 17 modules including the 15 Kostant modules L(p,q), p <= 4. Over QQ:
+  U/U(x^2, y^2) has Hilbert function (1,2,2,2,1) and the pure table (1,2,2,1) on (0,2,6,8), as derived by hand before the
+  run; U/U(x^e, y^e) is pure of type (0,e,3e,4e) for e = 3..6; cokernels of random 2 by 3 matrices of quadrics are pure
+  (2,3,3,2) on (0,2,10,12) (10 of 10, also lifted to QQ). So all ten parity-passing S-excluded rays with d3 <= 12 are
+  realized over U(H) in characteristic 0.
+- The pair (x^2, y^2) fails in characteristics 2 and 3 as predicted; in characteristic 3 other pairs work; in
+  characteristic 2 none of 80 random pairs gives a finite quotient. Duality reverses Betti tables on 20 of 20 modules.
+- Derived the same day [D], to be reviewed: the Hilbert series and the one-dimensional socle of U/U(x^e, y^e) for every e
+  in characteristic 0 (context note), and that in characteristic 2 no pair of quadrics gives a finite length quotient,
+  so (1,2,2,1) on (0,2,6,8) is realizable over neither ring there (EXP-002 verdict; EXP-003 next).
+

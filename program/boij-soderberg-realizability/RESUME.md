@@ -35,7 +35,7 @@ every hit re-verified in Singular and over QQ.
 | Experiment | Question | Verdict | Load-bearing result |
 |---|---|---|---|
 | EXP-001-pure-ray-census | the d3 <= 12 table over S: census, obstructions at every m, closures, generic level modules and generic presentations over GF(32003), every hit rechecked in Singular and over QQ | hypothesis frozen 2026-11-19 | - |
-| EXP-002-heisenberg-primitive-points | the three S-obstructed parity-passing rays left open over U(H): (0,2,6,8), (0,3,9,12), (0,2,10,12); U/U(x^e, y^e); calibration on the Kostant modules; duality | hypothesis frozen 2026-11-19 | - |
+| EXP-002-heisenberg-primitive-points | the three S-obstructed parity-passing rays left open over U(H): (0,2,6,8), (0,3,9,12), (0,2,10,12); U/U(x^e, y^e); calibration on the Kostant modules; duality | CONFIRMED (2026-11-19) | all three realized over QQ: U/U(x^2, y^2), U/U(x^3, y^3), cokernels of 2 by 3 matrices of quadrics; U/U(x^e, y^e) pure for e <= 6; the pair (x^2, y^2) fails in characteristics 2 and 3; other pairs work in characteristic 3, none of 80 in characteristic 2; duality reverses tables on 20 of 20 examples; two instruments agree on 96 of 96 modules |
 
 ## 4. In flight
 
@@ -45,7 +45,12 @@ over S the census is 68 realized, 12 obstructed, 140 undecided; c_d = 2 on the t
 U(H) Kostant's theorem for sp_4 realizes eleven primitive points in characteristic 0 and leaves (0,2,6,8), (0,3,9,12)
 and (0,2,10,12) among the S-obstructed parity-passing rays. Derived by hand on 2026-11-19 [D]: U(H)/U(H)(x^2, y^2) has
 Hilbert function (1,2,2,2,1) and realizes (1,2,2,1) on (0,2,6,8) in characteristic other than 2 and 3 (EXP-002
-hypothesis, to be machine-checked). EXP-001 and EXP-002 are frozen and running.
+hypothesis). EXP-002 CONFIRMED it and more (2026-11-19): with the Kostant modules, every one of the ten rays with
+d3 <= 12 that pass parity and are excluded over S is realized over U(H) in characteristic 0, so in characteristic 0 a
+counterexample with d3 <= 12 lies on a parity-failing ray. Derived [D], to be reviewed: U/U(x^e, y^e) is pure of type
+(0,e,3e,4e) for every e in characteristic 0 (`context/2026-11-19-uh-power-family-proof-sketch.md`); in characteristic 2
+no cyclic module has the table (1,2,2,1) on (0,2,6,8), which would make that point a counterexample with d3 = 8 there
+(EXP-002 verdict, Consequences; EXP-003 to check). EXP-001 is running.
 
 ## 5. Next actions
 

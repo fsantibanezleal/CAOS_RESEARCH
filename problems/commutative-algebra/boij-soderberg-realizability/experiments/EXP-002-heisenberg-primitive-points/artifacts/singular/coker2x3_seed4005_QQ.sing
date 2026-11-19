@@ -1,0 +1,41 @@
+ring r0 = 0,(x,y,z),wp(1,1,2);
+matrix D[3][3];
+D[1,2] = -z;
+def S = nc_algebra(1,D);
+setring S;
+module M = [(7620)*z^1+(30317)*y^2+(22589)*x^1*y^1+(24527)*x^2,(22613)*z^1+(22952)*y^2+(19265)*x^1*y^1+(19221)*x^2],[(4894)*z^1+(3752)*y^2+(30481)*x^1*y^1+(27083)*x^2,(19164)*z^1+(9899)*y^2+(276)*x^1*y^1+(18714)*x^2],[(11629)*z^1+(2390)*y^2+(5793)*x^1*y^1+(23897)*x^2,(1616)*z^1+(25749)*y^2+(4774)*x^1*y^1+(9317)*x^2];
+intvec sh0 = 0,0;
+proc vdeg(vector v, intvec sh)
+{
+  int i; intvec e;
+  for (i = 1; i <= size(sh); i++)
+  {
+    if (v[i] != 0)
+    {
+      e = leadexp(v[i]);
+      return(e[1] + e[2] + 2*e[3] + sh[i]);
+    }
+  }
+  return(-1000000);
+}
+list L = mres(M, 0);
+int i, j, n, t;
+intvec sh = sh0;
+intvec nsh;
+print("DEG 0 " + string(sh0));
+for (i = 1; i <= size(L); i++)
+{
+  n = 0;
+  for (j = 1; j <= ncols(L[i]); j++) { if (L[i][j] != 0) { n++; } }
+  if (n == 0) { print("DEG " + string(i)); break; }
+  nsh = 0:n;
+  t = 0;
+  for (j = 1; j <= ncols(L[i]); j++)
+  {
+    if (L[i][j] != 0) { t++; nsh[t] = vdeg(L[i][j], sh); }
+  }
+  print("DEG " + string(i) + " " + string(nsh));
+  sh = nsh;
+}
+print("END");
+quit;
