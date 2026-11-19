@@ -82,7 +82,7 @@
     {
       "id": "UF-F3",
       "title": "Independent exact re-verification of the current record instances",
-      "status": "active",
+      "status": "active-success-gate-met",
       "priority": 3,
       "target": "Do the record instances of Nikolenko and De la Fuente, re-entered from the papers and the repository certificates, force exactly the claimed values under the CAOS exact library; is each instance planar or non-planar as stated, with a checkable certificate; and is the pricing of each instance optimal (does the frontier value equal the claimed value or exceed it)?",
       "value": "Nikolenko's series (AI-assisted, self-corrected, no external reviewer named) holds the current lower bounds, certified only by the author's own verifiers; an instrument that predates the series and was written independently gives the first attributable external check, and it is the new content of the revision of the CAOS preprint, whose lower-bound statements are stale.",
@@ -96,9 +96,10 @@
       "manuscript_route": "the next version of counterexample-verification (backlog UFB-066: state the current bounds with their authors, credit 9/8 to Nikolenko, keep alpha_inst = 16/15, record that Conjecture 1.3 is false, carry the UFB-068 verification as new content)",
       "first_bounded_action": "EXP-007: the hypothesis is frozen (4f51d68b) and the run is in progress; R1 to R3 take minutes, R4 on the entries with at most 64 routings takes seconds, and the two K17 frontier runs have a 6-hour limit each.",
       "evidence": [
+        "EXP-007",
         "EXP-007 (hypothesis frozen, no verdict yet)"
       ],
-      "review_2026_11_19": "Current focus from the portfolio review of 2026-11-19 (decision 3; rank 7, verification 60 to 70 percent, a new record 10 to 15 percent): EXP-007 has no verdict and therefore no disposition below."
+      "review_2026_11_19": "EXP-007 CONFIRMED on 2026-11-19: all eleven record instances reproduce their claimed values, planarity is certified, and the authors' pricing is optimal on each. The focus stays current until the preprint revision (UFB-066) carries it."
     },
     {
       "id": "UF-F4",
@@ -168,6 +169,14 @@
       "end": 6,
       "classification": "research-record",
       "manuscripts": []
+    },
+    {
+      "start": 7,
+      "end": 7,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "counterexample-verification"
+      ]
     }
   ]
 }

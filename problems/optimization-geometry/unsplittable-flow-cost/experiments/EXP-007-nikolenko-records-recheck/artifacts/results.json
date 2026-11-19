@@ -1,0 +1,2082 @@
+{
+ "data": {
+  "file": "unsplittable-flow-cost/sources/nikolenko-2026/instances.json",
+  "sha256": "b52cf950cbe53cc2a55724b0dab25ec5fde46ceaa8452bb4059c9a1a9583adc9",
+  "sha256sums_line": "b52cf950cbe53cc2a55724b0dab25ec5fde46ceaa8452bb4059c9a1a9583adc9",
+  "matches_sha256sums": true,
+  "bytes": 107592
+ },
+ "summary": {
+  "R1": {
+   "entries": 11,
+   "all_equal": true
+  },
+  "R2": {
+   "all_equal": true,
+   "grid_interval_ok": true
+  },
+  "R3": {
+   "entries": 11,
+   "certificates_ok": true,
+   "as_predicted": true
+  },
+  "R4": {
+   "UF-4INT-n68": "equals claim",
+   "UF-4INT-n1000": "equals claim",
+   "UF-4INT-n67": "equals claim",
+   "UF-4INT-8867": "equals claim",
+   "UF-PLANAR-K6": "equals claim",
+   "UF-E3-TERNARY-eta1over10": "equals claim",
+   "UF-7VERTEX-16over15": "equals claim",
+   "UF-TRIANGLE-n2": "equals claim",
+   "UF-TRIANGLE-n68": "equals claim",
+   "UF-K17-RECORD": "equals claim",
+   "UF-K17-REFINED": "equals claim"
+  },
+  "controls": {
+   "c_foreign_certificate": true,
+   "a_demand_plus_one_unit": true,
+   "b_costs_zeroed": true
+  }
+ },
+ "environment": {
+  "python": "3.13.14",
+  "networkx": "3.4.1",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "ufclib": "problems\\optimization-geometry\\unsplittable-flow-cost\\code\\ufclib",
+  "float_policy": "no float: values are strings turned into Fraction; Instance refuses floats"
+ },
+ "R2": {
+  "builder_validation": {
+   "UF-4INT-n67": {
+    "ok": true,
+    "flow_scale": "10720000",
+    "cost_scale": "289",
+    "reason": ""
+   },
+   "UF-4INT-n68": {
+    "ok": true,
+    "flow_scale": "10880000",
+    "cost_scale": "289",
+    "reason": ""
+   },
+   "UF-4INT-n1000": {
+    "ok": true,
+    "flow_scale": "160000000",
+    "cost_scale": "289",
+    "reason": ""
+   },
+   "UF-E3-TERNARY-eta1over10": {
+    "ok": true,
+    "flow_scale": "1",
+    "cost_scale": "1",
+    "reason": ""
+   }
+  },
+  "n_series": [
+   {
+    "n": 67,
+    "alpha_inst": "12058053/10720000",
+    "expected": "12058053/10720000",
+    "equal": true,
+    "below_9_over_8": true,
+    "wall_s": 0.01
+   },
+   {
+    "n": 68,
+    "alpha_inst": "3060103/2720000",
+    "expected": "3060103/2720000",
+    "equal": true,
+    "below_9_over_8": false,
+    "wall_s": 0.0
+   },
+   {
+    "n": 100,
+    "alpha_inst": "180759/160000",
+    "expected": "180759/160000",
+    "equal": true,
+    "below_9_over_8": false,
+    "wall_s": 0.01
+   },
+   {
+    "n": 1000,
+    "alpha_inst": "182199/160000",
+    "expected": "182199/160000",
+    "equal": true,
+    "below_9_over_8": false,
+    "wall_s": 0.01
+   },
+   {
+    "n": 10000,
+    "alpha_inst": "182343/160000",
+    "expected": "182343/160000",
+    "equal": true,
+    "below_9_over_8": false,
+    "wall_s": 0.01
+   },
+   {
+    "n": 1000000,
+    "alpha_inst": "4558971/4000000",
+    "expected": "4558971/4000000",
+    "equal": true,
+    "below_9_over_8": false,
+    "wall_s": 0.01
+   }
+  ],
+  "grid": {
+   "eps": "1/1000000",
+   "points": 41,
+   "all_equal_closed_form": true,
+   "max_alpha_inst": "4558971/4000000",
+   "max_alpha_inst_decimal": "1.139742750000000000",
+   "argmax_k": [
+    60
+   ],
+   "argmax_t": [
+    "3/20"
+   ],
+   "argmax_in_{59,60}": true,
+   "sqrt41_lower": "6403124237/1000000000",
+   "sqrt41_upper": "3201562119/500000000",
+   "sqrt41_bounds_verified_by_squaring": true,
+   "c_star_lower_bound": "18235953121/16000000000",
+   "c_star_upper_bound": "36471906283/32000000000",
+   "c_star_lower_bound_decimal": "1.139747070062500000",
+   "c_star_upper_bound_decimal": "1.139747071343750000",
+   "max_below_c_star": true,
+   "max_above_c_star_minus_1e-4": true,
+   "gap_c_star_minus_max_lower": "69121/16000000000",
+   "gap_c_star_minus_max_upper": "138283/32000000000",
+   "rows": [
+    {
+     "k": 40,
+     "t": "1/10",
+     "alpha_inst": "1125899/1000000",
+     "closed_form": "1125899/1000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 41,
+     "t": "41/400",
+     "alpha_inst": "28858879039/25600000000",
+     "closed_form": "28858879039/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 42,
+     "t": "21/200",
+     "alpha_inst": "1805797119/1600000000",
+     "closed_form": "1805797119/1600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 43,
+     "t": "43/400",
+     "alpha_inst": "28924652399/25600000000",
+     "closed_form": "28924652399/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 44,
+     "t": "11/100",
+     "alpha_inst": "113103859/100000000",
+     "closed_form": "113103859/100000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 45,
+     "t": "9/80",
+     "alpha_inst": "1159302951/1024000000",
+     "closed_form": "1159302951/1024000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 46,
+     "t": "23/200",
+     "alpha_inst": "1813038959/1600000000",
+     "closed_form": "1813038959/1600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 47,
+     "t": "47/400",
+     "alpha_inst": "29032749919/25600000000",
+     "closed_form": "29032749919/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 48,
+     "t": "3/25",
+     "alpha_inst": "28373991/25000000",
+     "closed_form": "28373991/25000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 49,
+     "t": "49/400",
+     "alpha_inst": "29075287199/25600000000",
+     "closed_form": "29075287199/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 50,
+     "t": "1/8",
+     "alpha_inst": "72734311/64000000",
+     "closed_form": "72734311/64000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 51,
+     "t": "51/400",
+     "alpha_inst": "29110291599/25600000000",
+     "closed_form": "29110291599/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 52,
+     "t": "13/100",
+     "alpha_inst": "113769539/100000000",
+     "closed_form": "113769539/100000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 53,
+     "t": "53/400",
+     "alpha_inst": "29137868719/25600000000",
+     "closed_form": "29137868719/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 54,
+     "t": "27/200",
+     "alpha_inst": "1821806559/1600000000",
+     "closed_form": "1821806559/1600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 55,
+     "t": "11/80",
+     "alpha_inst": "1166324951/1024000000",
+     "closed_form": "1166324951/1024000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 56,
+     "t": "7/50",
+     "alpha_inst": "28481971/25000000",
+     "closed_form": "28481971/25000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 57,
+     "t": "57/400",
+     "alpha_inst": "29171161599/25600000000",
+     "closed_form": "29171161599/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 58,
+     "t": "29/200",
+     "alpha_inst": "1823437919/1600000000",
+     "closed_form": "1823437919/1600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 59,
+     "t": "59/400",
+     "alpha_inst": "29177086639/25600000000",
+     "closed_form": "29177086639/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 60,
+     "t": "3/20",
+     "alpha_inst": "4558971/4000000",
+     "closed_form": "4558971/4000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 61,
+     "t": "61/400",
+     "alpha_inst": "29176002959/25600000000",
+     "closed_form": "29176002959/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 62,
+     "t": "31/200",
+     "alpha_inst": "1823304079/1600000000",
+     "closed_form": "1823304079/1600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 63,
+     "t": "63/400",
+     "alpha_inst": "29168014239/25600000000",
+     "closed_form": "29168014239/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 64,
+     "t": "4/25",
+     "alpha_inst": "28477991/25000000",
+     "closed_form": "28477991/25000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 65,
+     "t": "13/80",
+     "alpha_inst": "1166128951/1024000000",
+     "closed_form": "1166128951/1024000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 66,
+     "t": "33/200",
+     "alpha_inst": "1821456879/1600000000",
+     "closed_form": "1821456879/1600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 67,
+     "t": "67/400",
+     "alpha_inst": "29131734479/25600000000",
+     "closed_form": "29131734479/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 68,
+     "t": "17/100",
+     "alpha_inst": "113744179/100000000",
+     "closed_form": "113744179/100000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 69,
+     "t": "69/400",
+     "alpha_inst": "29103648879/25600000000",
+     "closed_form": "29103648879/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 70,
+     "t": "7/40",
+     "alpha_inst": "72717911/64000000",
+     "closed_form": "72717911/64000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 71,
+     "t": "71/400",
+     "alpha_inst": "29069069119/25600000000",
+     "closed_form": "29069069119/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 72,
+     "t": "9/50",
+     "alpha_inst": "28368531/25000000",
+     "closed_form": "28368531/25000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 73,
+     "t": "73/400",
+     "alpha_inst": "29028096959/25600000000",
+     "closed_form": "29028096959/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 74,
+     "t": "37/200",
+     "alpha_inst": "1812827839/1600000000",
+     "closed_form": "1812827839/1600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 75,
+     "t": "3/16",
+     "alpha_inst": "1159233351/1024000000",
+     "closed_form": "1159233351/1024000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 76,
+     "t": "19/100",
+     "alpha_inst": "113104979/100000000",
+     "closed_form": "113104979/100000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 77,
+     "t": "77/400",
+     "alpha_inst": "28927380559/25600000000",
+     "closed_form": "28927380559/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 78,
+     "t": "39/200",
+     "alpha_inst": "1806147759/1600000000",
+     "closed_form": "1806147759/1600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 79,
+     "t": "79/400",
+     "alpha_inst": "28867837919/25600000000",
+     "closed_form": "28867837919/25600000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    },
+    {
+     "k": 80,
+     "t": "1/5",
+     "alpha_inst": "1126399/1000000",
+     "closed_form": "1126399/1000000",
+     "equal": true,
+     "eps_below_C_minus_1": true
+    }
+   ],
+   "interval_ok": true
+  },
+  "ternary": [
+   {
+    "eta": "1/2",
+    "alpha_inst": "25/32",
+    "expected": "25/32",
+    "equal": true,
+    "below_9_over_8": true
+   },
+   {
+    "eta": "1/10",
+    "alpha_inst": "841/800",
+    "expected": "841/800",
+    "equal": true,
+    "below_9_over_8": true
+   },
+   {
+    "eta": "1/100",
+    "alpha_inst": "89401/80000",
+    "expected": "89401/80000",
+    "equal": true,
+    "below_9_over_8": true
+   },
+   {
+    "eta": "1/1000",
+    "alpha_inst": "8994001/8000000",
+    "expected": "8994001/8000000",
+    "equal": true,
+    "below_9_over_8": true
+   }
+  ],
+  "all_equal": true
+ },
+ "R3": {
+  "UF-K17-REFINED": {
+   "id": "UF-K17-REFINED",
+   "vertices": 51,
+   "arcs": 67,
+   "simple_edges": 67,
+   "degree_test": null,
+   "solver_planar": false,
+   "certificate": "Kuratowski subgraph",
+   "certificate_ok": true,
+   "wall_s": 0.13,
+   "kuratowski_type": "K3,3",
+   "kuratowski_edges": 28,
+   "suppressed_vertices": 19,
+   "kuratowski_subgraph": [
+    [
+     "t13",
+     "v13"
+    ],
+    [
+     "t13",
+     "v30"
+    ],
+    [
+     "t14",
+     "v14"
+    ],
+    [
+     "t14",
+     "v25"
+    ],
+    [
+     "t15",
+     "v15"
+    ],
+    [
+     "t15",
+     "v29"
+    ],
+    [
+     "t16",
+     "v16"
+    ],
+    [
+     "t16",
+     "v33"
+    ],
+    [
+     "v13",
+     "v14"
+    ],
+    [
+     "v14",
+     "v15"
+    ],
+    [
+     "v15",
+     "v16"
+    ],
+    [
+     "v16",
+     "v17"
+    ],
+    [
+     "v17",
+     "v18"
+    ],
+    [
+     "v18",
+     "v19"
+    ],
+    [
+     "v19",
+     "v20"
+    ],
+    [
+     "v20",
+     "v21"
+    ],
+    [
+     "v21",
+     "v22"
+    ],
+    [
+     "v22",
+     "v23"
+    ],
+    [
+     "v23",
+     "v24"
+    ],
+    [
+     "v24",
+     "v25"
+    ],
+    [
+     "v25",
+     "v26"
+    ],
+    [
+     "v26",
+     "v27"
+    ],
+    [
+     "v27",
+     "v28"
+    ],
+    [
+     "v28",
+     "v29"
+    ],
+    [
+     "v29",
+     "v30"
+    ],
+    [
+     "v30",
+     "v31"
+    ],
+    [
+     "v31",
+     "v32"
+    ],
+    [
+     "v32",
+     "v33"
+    ]
+   ],
+   "hypothesis_expectation": "non-planar",
+   "agrees_with_hypothesis": true,
+   "degree_test_consistent": true
+  },
+  "UF-K17-RECORD": {
+   "id": "UF-K17-RECORD",
+   "vertices": 51,
+   "arcs": 67,
+   "simple_edges": 67,
+   "degree_test": null,
+   "solver_planar": false,
+   "certificate": "Kuratowski subgraph",
+   "certificate_ok": true,
+   "wall_s": 0.13,
+   "kuratowski_type": "K3,3",
+   "kuratowski_edges": 28,
+   "suppressed_vertices": 19,
+   "kuratowski_subgraph": [
+    [
+     "t13",
+     "v13"
+    ],
+    [
+     "t13",
+     "v30"
+    ],
+    [
+     "t14",
+     "v14"
+    ],
+    [
+     "t14",
+     "v25"
+    ],
+    [
+     "t15",
+     "v15"
+    ],
+    [
+     "t15",
+     "v29"
+    ],
+    [
+     "t16",
+     "v16"
+    ],
+    [
+     "t16",
+     "v33"
+    ],
+    [
+     "v13",
+     "v14"
+    ],
+    [
+     "v14",
+     "v15"
+    ],
+    [
+     "v15",
+     "v16"
+    ],
+    [
+     "v16",
+     "v17"
+    ],
+    [
+     "v17",
+     "v18"
+    ],
+    [
+     "v18",
+     "v19"
+    ],
+    [
+     "v19",
+     "v20"
+    ],
+    [
+     "v20",
+     "v21"
+    ],
+    [
+     "v21",
+     "v22"
+    ],
+    [
+     "v22",
+     "v23"
+    ],
+    [
+     "v23",
+     "v24"
+    ],
+    [
+     "v24",
+     "v25"
+    ],
+    [
+     "v25",
+     "v26"
+    ],
+    [
+     "v26",
+     "v27"
+    ],
+    [
+     "v27",
+     "v28"
+    ],
+    [
+     "v28",
+     "v29"
+    ],
+    [
+     "v29",
+     "v30"
+    ],
+    [
+     "v30",
+     "v31"
+    ],
+    [
+     "v31",
+     "v32"
+    ],
+    [
+     "v32",
+     "v33"
+    ]
+   ],
+   "hypothesis_expectation": "non-planar",
+   "agrees_with_hypothesis": true,
+   "degree_test_consistent": true
+  },
+  "UF-4INT-n68": {
+   "id": "UF-4INT-n68",
+   "vertices": 10,
+   "arcs": 13,
+   "simple_edges": 13,
+   "degree_test": null,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 10,
+   "E": 13,
+   "F": 5,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "planar",
+   "agrees_with_hypothesis": true,
+   "degree_test_consistent": true
+  },
+  "UF-4INT-n1000": {
+   "id": "UF-4INT-n1000",
+   "vertices": 10,
+   "arcs": 13,
+   "simple_edges": 13,
+   "degree_test": null,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 10,
+   "E": 13,
+   "F": 5,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "planar",
+   "agrees_with_hypothesis": true,
+   "degree_test_consistent": true
+  },
+  "UF-4INT-n67": {
+   "id": "UF-4INT-n67",
+   "vertices": 10,
+   "arcs": 13,
+   "simple_edges": 13,
+   "degree_test": null,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 10,
+   "E": 13,
+   "F": 5,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "planar",
+   "agrees_with_hypothesis": true,
+   "degree_test_consistent": true
+  },
+  "UF-4INT-8867": {
+   "id": "UF-4INT-8867",
+   "vertices": 10,
+   "arcs": 13,
+   "simple_edges": 13,
+   "degree_test": null,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 10,
+   "E": 13,
+   "F": 5,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "planar",
+   "agrees_with_hypothesis": true,
+   "degree_test_consistent": true
+  },
+  "UF-PLANAR-K6": {
+   "id": "UF-PLANAR-K6",
+   "vertices": 15,
+   "arcs": 20,
+   "simple_edges": 20,
+   "degree_test": null,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 15,
+   "E": 20,
+   "F": 7,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "planar",
+   "agrees_with_hypothesis": true,
+   "degree_test_consistent": true,
+   "repository_topology_certificate": {
+    "certificate_file": "part3_v2_planar_k6_edit_r1_topology_exact_20260810.json",
+    "certificate_edge_set_equals_instance_edge_set": false,
+    "certificate_edges_not_in_instance": [
+     [
+      "v8",
+      "v9"
+     ]
+    ],
+    "instance_edges_not_in_certificate": [],
+    "certificate_as_stored": {
+     "V": 16,
+     "E": 21,
+     "F": 7,
+     "ok": true,
+     "euler": 2,
+     "stored_counts": [
+      16,
+      21,
+      7
+     ],
+     "traced_faces_equal_stored_faces": true
+    },
+    "restricted_to_instance_edge_set": {
+     "V": 15,
+     "E": 20,
+     "F": 7,
+     "ok": true,
+     "euler": 2
+    },
+    "predicted_16_21_7": true
+   }
+  },
+  "UF-E3-TERNARY-eta1over10": {
+   "id": "UF-E3-TERNARY-eta1over10",
+   "vertices": 7,
+   "arcs": 9,
+   "simple_edges": 9,
+   "degree_test": true,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 7,
+   "E": 9,
+   "F": 4,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "none (not stated)",
+   "agrees_with_hypothesis": null,
+   "degree_test_consistent": true
+  },
+  "UF-7VERTEX-16over15": {
+   "id": "UF-7VERTEX-16over15",
+   "vertices": 7,
+   "arcs": 9,
+   "simple_edges": 9,
+   "degree_test": true,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 7,
+   "E": 9,
+   "F": 4,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "planar",
+   "agrees_with_hypothesis": true,
+   "degree_test_consistent": true
+  },
+  "UF-TRIANGLE-n2": {
+   "id": "UF-TRIANGLE-n2",
+   "vertices": 7,
+   "arcs": 9,
+   "simple_edges": 9,
+   "degree_test": true,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 7,
+   "E": 9,
+   "F": 4,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "none (not stated)",
+   "agrees_with_hypothesis": null,
+   "degree_test_consistent": true
+  },
+  "UF-TRIANGLE-n68": {
+   "id": "UF-TRIANGLE-n68",
+   "vertices": 7,
+   "arcs": 9,
+   "simple_edges": 9,
+   "degree_test": true,
+   "solver_planar": true,
+   "certificate": "rotation system",
+   "certificate_ok": true,
+   "wall_s": 0.0,
+   "V": 7,
+   "E": 9,
+   "F": 4,
+   "components": 1,
+   "euler": 2,
+   "hypothesis_expectation": "none (not stated)",
+   "agrees_with_hypothesis": null,
+   "degree_test_consistent": true
+  }
+ },
+ "controls": {
+  "c_foreign_certificate": {
+   "tests": {
+    "K6 rotation system offered for UF-4INT-n67": {
+     "accepted": false,
+     "reason": "rotation system and graph have different vertex sets"
+    },
+    "K6 rotation system offered for UF-7VERTEX-16over15": {
+     "accepted": false,
+     "reason": "rotation system and graph have different vertex sets"
+    },
+    "K6 rotation system offered for UF-E3-TERNARY-eta1over10": {
+     "accepted": false,
+     "reason": "rotation system and graph have different vertex sets"
+    },
+    "K17-RECORD Kuratowski subgraph offered for UF-PLANAR-K6": {
+     "accepted": false,
+     "reason": "edge ['v13', 'v14'] is not an edge of the graph"
+    },
+    "K17-RECORD Kuratowski subgraph offered for UF-4INT-n67": {
+     "accepted": false,
+     "reason": "edge ['v13', 'v14'] is not an edge of the graph"
+    },
+    "K6 rotation system offered for the K6 graph with one edge replaced (same vertices)": {
+     "accepted": false,
+     "reason": "rotation at t0 is not the neighbour set of the graph"
+    },
+    "K6 rotation with two neighbours swapped at v3": {
+     "accepted": false,
+     "reason": "V - E + F != 2 on a component (genus > 0)"
+    }
+   },
+   "fired": true,
+   "cross_validity_not_a_control": {
+    "K17-RECORD Kuratowski subgraph offered for UF-K17-REFINED": {
+     "accepted": true,
+     "reason": "subdivision of K3,3"
+    }
+   }
+  },
+  "a_demand_plus_one_unit": {
+   "entry": "UF-K17-RECORD",
+   "terminal": "t1",
+   "delta": "1/1000000000",
+   "variants": {
+    "on the early (paid) path": {
+     "alpha_inst": "125437085622269571/200000000000000000",
+     "equals_claim": false,
+     "difference_from_claim": "-327654684936747833/500000000000000000",
+     "wall_s": 164.4
+    },
+    "on the late (free) path": {
+     "alpha_inst": "1282494797348659243/1000000000000000000",
+     "equals_claim": false,
+     "difference_from_claim": "-318092139/500000000000000000",
+     "wall_s": 166.3
+    }
+   },
+   "fired": true
+  },
+  "b_costs_zeroed": {
+   "UF-4INT-n1000": {
+    "entry": "UF-4INT-n1000",
+    "alpha_inst_zero_costs": "48841/160000",
+    "all_early_alpha": "48841/160000",
+    "min_over_all_routings": "48841/160000",
+    "claim": "182199/160000",
+    "cost_good_routings": 16,
+    "routings": 16,
+    "fired": true
+   },
+   "UF-PLANAR-K6": {
+    "entry": "UF-PLANAR-K6",
+    "alpha_inst_zero_costs": "110740392013/250000000000",
+    "all_early_alpha": "138866607987/250000000000",
+    "min_over_all_routings": "110740392013/250000000000",
+    "claim": "58676765987259/50000000000000",
+    "cost_good_routings": 64,
+    "routings": 64,
+    "fired": true
+   },
+   "fired": true,
+   "UF-K17-RECORD": {
+    "entry": "UF-K17-RECORD",
+    "alpha_inst_zero_costs": "427438147/1000000000",
+    "all_early_alpha": "222144477/250000000",
+    "claim": "1282494797984843521/1000000000000000000",
+    "cost_good_routings": 131072,
+    "routings": 131072,
+    "fired": true
+   }
+  }
+ },
+ "R4": {
+  "UF-4INT-n68": {
+   "id": "UF-4INT-n68",
+   "routings": 16,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "3060103/2720000",
+   "alpha_max_decimal": "1.125037867647058823",
+   "claimed": "3060103/2720000",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "7337303/2720000",
+   "witness_cost_vector": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "289/1318",
+    "0",
+    "200/659",
+    "0",
+    "170/659",
+    "0",
+    "289/1318",
+    "0"
+   ],
+   "witness_arcs": [
+    "v0->v1",
+    "v1->v2",
+    "v2->v3",
+    "v3->v4",
+    "v4->v5",
+    "v0->t0",
+    "v3->t0",
+    "v0->t1",
+    "v5->t1",
+    "v1->t2",
+    "v5->t2",
+    "v2->t3",
+    "v4->t3"
+   ],
+   "witness_recheck_alpha_inst": "3060103/2720000",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 0.15
+  },
+  "UF-4INT-n1000": {
+   "id": "UF-4INT-n1000",
+   "routings": 16,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "182199/160000",
+   "alpha_max_decimal": "1.138743750000000000",
+   "claimed": "182199/160000",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "433799/160000",
+   "witness_cost_vector": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "289/1318",
+    "0",
+    "200/659",
+    "0",
+    "170/659",
+    "0",
+    "289/1318",
+    "0"
+   ],
+   "witness_arcs": [
+    "v0->v1",
+    "v1->v2",
+    "v2->v3",
+    "v3->v4",
+    "v4->v5",
+    "v0->t0",
+    "v3->t0",
+    "v0->t1",
+    "v5->t1",
+    "v1->t2",
+    "v5->t2",
+    "v2->t3",
+    "v4->t3"
+   ],
+   "witness_recheck_alpha_inst": "182199/160000",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 0.12
+  },
+  "UF-4INT-n67": {
+   "id": "UF-4INT-n67",
+   "routings": 16,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "12058053/10720000",
+   "alpha_max_decimal": "1.124818376865671641",
+   "claimed": "12058053/10720000",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "28915253/10720000",
+   "witness_cost_vector": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "289/1318",
+    "0",
+    "200/659",
+    "0",
+    "170/659",
+    "0",
+    "289/1318",
+    "0"
+   ],
+   "witness_arcs": [
+    "v0->v1",
+    "v1->v2",
+    "v2->v3",
+    "v3->v4",
+    "v4->v5",
+    "v0->t0",
+    "v3->t0",
+    "v0->t1",
+    "v5->t1",
+    "v1->t2",
+    "v5->t2",
+    "v2->t3",
+    "v4->t3"
+   ],
+   "witness_recheck_alpha_inst": "12058053/10720000",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 0.13
+  },
+  "UF-4INT-8867": {
+   "id": "UF-4INT-8867",
+   "routings": 16,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "8867/7800",
+   "alpha_max_decimal": "1.136794871794871794",
+   "claimed": "8867/7800",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "2683/975",
+   "witness_cost_vector": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "259/1164",
+    "0",
+    "175/582",
+    "0",
+    "74/291",
+    "0",
+    "259/1164",
+    "0"
+   ],
+   "witness_arcs": [
+    "v0->v1",
+    "v1->v2",
+    "v2->v3",
+    "v3->v4",
+    "v4->v5",
+    "v0->t0",
+    "v3->t0",
+    "v0->t1",
+    "v5->t1",
+    "v1->t2",
+    "v5->t2",
+    "v2->t3",
+    "v4->t3"
+   ],
+   "witness_recheck_alpha_inst": "8867/7800",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 0.14
+  },
+  "UF-PLANAR-K6": {
+   "id": "UF-PLANAR-K6",
+   "routings": 64,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "58676765987259/50000000000000",
+   "alpha_max_decimal": "1.173535319745180000",
+   "claimed": "58676765987259/50000000000000",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "184681142070759/50000000000000",
+   "witness_cost_vector": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "19502427836183437478250000/115476674021094409878634657",
+    "0",
+    "22016924744115143048850000/115476674021094409878634657",
+    "0",
+    "17544490921606516642600000/115476674021094409878634657",
+    "0",
+    "17571147818977260537750000/115476674021094409878634657",
+    "0",
+    "21298156725606223887000000/115476674021094409878634657",
+    "0",
+    "17543525974605828284184657/115476674021094409878634657",
+    "0"
+   ],
+   "witness_arcs": [
+    "v0->v1",
+    "v1->v2",
+    "v2->v3",
+    "v3->v4",
+    "v4->v5",
+    "v5->v6",
+    "v6->v7",
+    "v7->v8",
+    "v0->t0",
+    "v6->t0",
+    "v1->t1",
+    "v7->t1",
+    "v2->t2",
+    "v5->t2",
+    "v3->t3",
+    "v7->t3",
+    "v3->t4",
+    "v8->t4",
+    "v4->t5",
+    "v8->t5"
+   ],
+   "witness_recheck_alpha_inst": "58676765987259/50000000000000",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 46.48
+  },
+  "UF-E3-TERNARY-eta1over10": {
+   "id": "UF-E3-TERNARY-eta1over10",
+   "routings": 8,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "841/800",
+   "alpha_max_decimal": "1.051250000000000000",
+   "claimed": "841/800",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "1421/800",
+   "witness_cost_vector": [
+    "0",
+    "0",
+    "0",
+    "29/98",
+    "0",
+    "20/49",
+    "0",
+    "29/98",
+    "0"
+   ],
+   "witness_arcs": [
+    "v0->v1",
+    "v1->v2",
+    "v2->v3",
+    "v0->t0",
+    "v2->t0",
+    "v0->t1",
+    "v3->t1",
+    "v1->t2",
+    "v3->t2"
+   ],
+   "witness_recheck_alpha_inst": "841/800",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 0.01
+  },
+  "UF-7VERTEX-16over15": {
+   "id": "UF-7VERTEX-16over15",
+   "routings": 8,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "16/15",
+   "alpha_max_decimal": "1.066666666666666666",
+   "claimed": "16/15",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "26/15",
+   "witness_cost_vector": [
+    "2/7",
+    "3/7",
+    "0",
+    "2/7",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "witness_arcs": [
+    "s->t1",
+    "s->t2",
+    "s->u",
+    "u->t3",
+    "u->v",
+    "v->t1",
+    "v->w",
+    "w->t2",
+    "w->t3"
+   ],
+   "witness_recheck_alpha_inst": "16/15",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 0.01
+  },
+  "UF-TRIANGLE-n2": {
+   "id": "UF-TRIANGLE-n2",
+   "routings": 8,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "25/32",
+   "alpha_max_decimal": "0.781250000000000000",
+   "claimed": "25/32",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "45/32",
+   "witness_cost_vector": [
+    "5/18",
+    "4/9",
+    "0",
+    "5/18",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "witness_arcs": [
+    "s->t1",
+    "s->t2",
+    "s->u",
+    "u->t3",
+    "u->v",
+    "v->t1",
+    "v->w",
+    "w->t2",
+    "w->t3"
+   ],
+   "witness_recheck_alpha_inst": "25/32",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 0.01
+  },
+  "UF-TRIANGLE-n68": {
+   "id": "UF-TRIANGLE-n68",
+   "routings": 8,
+   "evaluator": "ufclib.frontier.frontier_value",
+   "alpha_max": "41209/36992",
+   "alpha_max_decimal": "1.113997621107266435",
+   "claimed": "41209/36992",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "ceiling": "68817/36992",
+   "witness_cost_vector": [
+    "203/678",
+    "136/339",
+    "0",
+    "203/678",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "witness_arcs": [
+    "s->t1",
+    "s->t2",
+    "s->u",
+    "u->t3",
+    "u->v",
+    "v->t1",
+    "v->w",
+    "w->t2",
+    "w->t3"
+   ],
+   "witness_recheck_alpha_inst": "41209/36992",
+   "witness_recheck_equals_alpha_max": true,
+   "wall_s": 0.01
+  },
+  "UF-K17-RECORD": {
+   "id": "UF-K17-RECORD",
+   "evaluator": "ufclib.cutting_plane.level_positive via cp_resumable.Run (the binary search of frontier_value_cp, logged and resumable)",
+   "claimed": "1282494797984843521/1000000000000000000",
+   "state": "complete",
+   "routings": 131072,
+   "levels": 7753,
+   "ceiling": "10120687854348659243/1000000000000000000",
+   "tested": [
+    {
+     "level": "3838930831348659243/1000000000000000000",
+     "positive": false,
+     "solves": 27,
+     "new_cuts": 26,
+     "seconds": 12.4
+    },
+    {
+     "level": "2701946680348659243/1000000000000000000",
+     "positive": false,
+     "solves": 28,
+     "new_cuts": 27,
+     "seconds": 23.3
+    },
+    {
+     "level": "1984757675348659243/1000000000000000000",
+     "positive": false,
+     "solves": 27,
+     "new_cuts": 26,
+     "seconds": 16.1
+    },
+    {
+     "level": "1424961711250198091/1000000000000000000",
+     "positive": false,
+     "solves": 25,
+     "new_cuts": 24,
+     "seconds": 18.8
+    },
+    {
+     "level": "1189337283102246891/1000000000000000000",
+     "positive": true,
+     "solves": 30,
+     "new_cuts": 29,
+     "seconds": 29.0
+    },
+    {
+     "level": "262732032622902627/200000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 8.0
+    },
+    {
+     "level": "1261502012348659243/1000000000000000000",
+     "positive": true,
+     "solves": 1,
+     "new_cuts": 0,
+     "seconds": 4.8
+    },
+    {
+     "level": "1282434527250198091/1000000000000000000",
+     "positive": true,
+     "solves": 1,
+     "new_cuts": 0,
+     "seconds": 4.9
+    },
+    {
+     "level": "256513885022902627/200000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 7.8
+    },
+    {
+     "level": "1282494799102246891/1000000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 7.0
+    },
+    {
+     "level": "256498959622269571/200000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 7.3
+    },
+    {
+     "level": "1282494797984843521/1000000000000000000",
+     "positive": true,
+     "solves": 1,
+     "new_cuts": 0,
+     "seconds": 5.4
+    },
+    {
+     "level": "1282494798083304673/1000000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 7.3
+    }
+   ],
+   "lower_bound": "1282494797984843521/1000000000000000000",
+   "upper_bound": "1282494798083304673/1000000000000000000",
+   "witness_cost": [
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "61091707967882699202669130112728603238827671310694022209811199767/1122888293456165391837195830832510242806848205010191548760139598136",
+    "0/1",
+    "8905779114501208164637188059954865560255217366373924530601562500/140361036682020673979649478854063780350856025626273943595017449767",
+    "0/1",
+    "61091707967882699202669130112728603238827671310694022209811199767/1122888293456165391837195830832510242806848205010191548760139598136",
+    "0/1",
+    "8905779114501208164637188059954865560255217366373924530601562500/140361036682020673979649478854063780350856025626273943595017449767",
+    "0/1",
+    "7654959124989649767484796632777717513133143228579346736375000000/140361036682020673979649478854063780350856025626273943595017449767",
+    "0/1",
+    "9600537744304319269116300533681911696391936245251244170046875000/140361036682020673979649478854063780350856025626273943595017449767",
+    "0/1",
+    "61091707967882699202669130112728603238827671310694022209811199767/1122888293456165391837195830832510242806848205010191548760139598136",
+    "0/1",
+    "8991413905736308709344662323427094157204205419287650967125000000/140361036682020673979649478854063780350856025626273943595017449767",
+    "0/1",
+    "25262811229249833205874509726071927409347505538249858096281250000/421083110046062021938948436562191341052568076878821830785052349301",
+    "0/1",
+    "61091707967882699202669130112728603238827671310694022209811199767/1122888293456165391837195830832510242806848205010191548760139598136",
+    "0/1",
+    "26744893941359093926550494137404982298828286862528878122375000000/421083110046062021938948436562191341052568076878821830785052349301",
+    "0/1",
+    "61091707967882699202669130112728603238827671310694022209811199767/1122888293456165391837195830832510242806848205010191548760139598136",
+    "0/1",
+    "9571463538650892475506642164435641087983815073297503617425000000/140361036682020673979649478854063780350856025626273943595017449767",
+    "0/1",
+    "8303494447918079182111903012610778300746222149490081426812500000/140361036682020673979649478854063780350856025626273943595017449767",
+    "0/1",
+    "61091707967882699202669130112728603238827671310694022209811199767/1122888293456165391837195830832510242806848205010191548760139598136",
+    "0/1",
+    "61091707967882699202669130112728603238827671310694022209811199767/1122888293456165391837195830832510242806848205010191548760139598136",
+    "0/1",
+    "61091707967882699202669130112728603238827671310694022209811199767/1122888293456165391837195830832510242806848205010191548760139598136",
+    "0/1"
+   ],
+   "seconds_this_process": 321.4,
+   "alpha_max": "1282494797984843521/1000000000000000000",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "witness_recheck_alpha_inst": "1282494797984843521/1000000000000000000",
+   "witness_recheck_equals_alpha_max": true
+  },
+  "UF-K17-REFINED": {
+   "id": "UF-K17-REFINED",
+   "evaluator": "ufclib.cutting_plane.level_positive via cp_resumable.Run (the binary search of frontier_value_cp, logged and resumable)",
+   "claimed": "160325086265636045340018727271/125000000000000000000000000000",
+   "state": "complete",
+   "routings": 131072,
+   "levels": 12253,
+   "ceiling": "5054491127374465558659358918089/500000000000000000000000000000",
+   "tested": [
+    {
+     "level": "3793957354180785805088091409097/1000000000000000000000000000000",
+     "positive": false,
+     "solves": 31,
+     "new_cuts": 30,
+     "seconds": 32.4
+    },
+    {
+     "level": "1352551151442639558659358918089/500000000000000000000000000000",
+     "positive": false,
+     "solves": 28,
+     "new_cuts": 27,
+     "seconds": 26.2
+    },
+    {
+     "level": "1041282007616524058659358918089/500000000000000000000000000000",
+     "positive": false,
+     "solves": 31,
+     "new_cuts": 30,
+     "seconds": 57.0
+    },
+    {
+     "level": "775334856326423596501962503849/500000000000000000000000000000",
+     "positive": false,
+     "solves": 31,
+     "new_cuts": 30,
+     "seconds": 44.4
+    },
+    {
+     "level": "647524365814040558659358918089/500000000000000000000000000000",
+     "positive": false,
+     "solves": 30,
+     "new_cuts": 29,
+     "seconds": 40.4
+    },
+    {
+     "level": "113260398623897358720935648313/100000000000000000000000000000",
+     "positive": true,
+     "solves": 35,
+     "new_cuts": 34,
+     "seconds": 55.1
+    },
+    {
+     "level": "121470636567302458720935648313/100000000000000000000000000000",
+     "positive": true,
+     "solves": 1,
+     "new_cuts": 0,
+     "seconds": 7.5
+    },
+    {
+     "level": "127143151471671658720935648313/100000000000000000000000000000",
+     "positive": true,
+     "solves": 1,
+     "new_cuts": 0,
+     "seconds": 9.4
+    },
+    {
+     "level": "1282600690125705131956056217873/1000000000000000000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 12.8
+    },
+    {
+     "level": "160325086265636045340018727271/125000000000000000000000000000",
+     "positive": true,
+     "solves": 1,
+     "new_cuts": 0,
+     "seconds": 7.9
+    },
+    {
+     "level": "641300345062795596501962503849/500000000000000000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 18.7
+    },
+    {
+     "level": "641300345062605058659358918089/500000000000000000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 13.5
+    },
+    {
+     "level": "160325086265636545340018727271/125000000000000000000000000000",
+     "positive": false,
+     "solves": 2,
+     "new_cuts": 1,
+     "seconds": 13.2
+    }
+   ],
+   "lower_bound": "160325086265636045340018727271/125000000000000000000000000000",
+   "upper_bound": "160325086265636545340018727271/125000000000000000000000000000",
+   "witness_cost": [
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "0/1",
+    "61423711382564024457004488981620521711849838895914550851175318663253682409206656693305525967999636855213984280219630658529721093793/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "71556558972108828122435345123022121189576429367492206829205407557854951919025439612771717205105655274238919913743766200000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "61423711382564024457004488981620521711849838895914550851175318663253682409206656693305525967999636855213984280219630658529721093793/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "71556558972108828122435345123022121189576429367492206829205407557854951919025439612771717205105655274238919913743766200000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "61423711382564024457004488981620521711849838895914550851175318663253682409206656693305525967999636855213984280219630658529721093793/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "77921392808636008972107162585390980810294755674988437534945708015914327202821715693812805386274197252057919193127622750000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "61423711382564024457004488981620521711849838895914550851175318663253682409206656693305525967999636855213984280219630658529721093793/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "72788793488503120854584936747774417010352430123323427922922792979688593644485185201341832482608594412241390113765173000000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "67994273174490478932484672857031486543307731566392517798291068049821979832738627513213348403235371591407249495881153000000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "61423711382564024457004488981620521711849838895914550851175318663253682409206656693305525967999636855213984280219630658529721093793/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "71699005223102848400188101691164038604972039519934413498541309167651038942444929507932746868577635956728777674275913000000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "61423711382594367770427490599299112892205892657683300562148214213731383627028239996817277918558064590505751964127340500000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "76783159246077305729207514039419766423969553176096534011126112476767197917961056496262845203552045304729406728860997000000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "66951495692821849998290288983238507295155337444685459671250631286299126126355864419718765706152625307508481985269419000000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "61423711382564024457004488981620521711849838895914550851175318663253682409206656693305525967999636855213984280219630658529721093793/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "61423711382564270151850019238701129111926793700430998558350120387247915809688205684968764720822376730272867569726551750000000000000/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1",
+    "61423711382564024457004488981620521711849838895914550851175318663253682409206656693305525967999636855213984280219630658529721093793/1130064640020956078253042299859407333054286264869921359174214002335607243806021300592750502875989679680427574514059117009708047656551",
+    "0/1"
+   ],
+   "seconds_this_process": 528.5,
+   "alpha_max": "160325086265636045340018727271/125000000000000000000000000000",
+   "outcome": "equals claim",
+   "excess_over_claim": "0",
+   "witness_recheck_alpha_inst": "160325086265636045340018727271/125000000000000000000000000000",
+   "witness_recheck_equals_alpha_max": true
+  }
+ },
+ "R1": {
+  "UF-K17-REFINED": {
+   "id": "UF-K17-REFINED",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t0": 2,
+    "t1": 2,
+    "t2": 2,
+    "t3": 2,
+    "t4": 2,
+    "t5": 2,
+    "t6": 2,
+    "t7": 2,
+    "t8": 2,
+    "t9": 2,
+    "t10": 2,
+    "t11": 2,
+    "t12": 2,
+    "t13": 2,
+    "t14": 2,
+    "t15": 2,
+    "t16": 2
+   },
+   "paths_expected_from": "entry paths list (compared, never used to build)",
+   "paths_match": true,
+   "paths_equal_json_paths": true,
+   "evaluator": "streaming loop over ufclib.all_routings / routing_load / alpha_for_routing (decide_instance would keep 131,072 load dictionaries); the loop is checked against decide_instance on every entry of at most 64 routings",
+   "routings": 131072,
+   "cost_good": 109294,
+   "minimizers": 7,
+   "alpha_inst": "160325086265636045340018727271/125000000000000000000000000000",
+   "alpha_inst_decimal": "1.282600690125088362",
+   "claimed": "160325086265636045340018727271/125000000000000000000000000000",
+   "equal": true,
+   "wall_s": 174.59
+  },
+  "UF-K17-RECORD": {
+   "id": "UF-K17-RECORD",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t0": 2,
+    "t1": 2,
+    "t2": 2,
+    "t3": 2,
+    "t4": 2,
+    "t5": 2,
+    "t6": 2,
+    "t7": 2,
+    "t8": 2,
+    "t9": 2,
+    "t10": 2,
+    "t11": 2,
+    "t12": 2,
+    "t13": 2,
+    "t14": 2,
+    "t15": 2,
+    "t16": 2
+   },
+   "paths_expected_from": "entry paths list (compared, never used to build)",
+   "paths_match": true,
+   "paths_equal_json_paths": true,
+   "evaluator": "streaming loop over ufclib.all_routings / routing_load / alpha_for_routing (decide_instance would keep 131,072 load dictionaries); the loop is checked against decide_instance on every entry of at most 64 routings",
+   "routings": 131072,
+   "cost_good": 109294,
+   "minimizers": 15,
+   "alpha_inst": "1282494797984843521/1000000000000000000",
+   "alpha_inst_decimal": "1.282494797984843521",
+   "claimed": "1282494797984843521/1000000000000000000",
+   "equal": true,
+   "wall_s": 159.2
+  },
+  "UF-4INT-n68": {
+   "id": "UF-4INT-n68",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t0": 2,
+    "t1": 2,
+    "t2": 2,
+    "t3": 2
+   },
+   "paths_expected_from": "hypothesis R1: two per terminal on the interval instances",
+   "paths_match": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 16,
+   "cost_good": 11,
+   "minimizers": 2,
+   "alpha_inst": "3060103/2720000",
+   "alpha_inst_decimal": "1.125037867647058823",
+   "claimed": "3060103/2720000",
+   "equal": true,
+   "wall_s": 0.01
+  },
+  "UF-4INT-n1000": {
+   "id": "UF-4INT-n1000",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t0": 2,
+    "t1": 2,
+    "t2": 2,
+    "t3": 2
+   },
+   "paths_expected_from": "hypothesis R1: two per terminal on the interval instances",
+   "paths_match": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 16,
+   "cost_good": 11,
+   "minimizers": 2,
+   "alpha_inst": "182199/160000",
+   "alpha_inst_decimal": "1.138743750000000000",
+   "claimed": "182199/160000",
+   "equal": true,
+   "wall_s": 0.01
+  },
+  "UF-4INT-n67": {
+   "id": "UF-4INT-n67",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t0": 2,
+    "t1": 2,
+    "t2": 2,
+    "t3": 2
+   },
+   "paths_expected_from": "hypothesis R1: two per terminal on the interval instances",
+   "paths_match": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 16,
+   "cost_good": 11,
+   "minimizers": 2,
+   "alpha_inst": "12058053/10720000",
+   "alpha_inst_decimal": "1.124818376865671641",
+   "claimed": "12058053/10720000",
+   "equal": true,
+   "wall_s": 0.03
+  },
+  "UF-4INT-8867": {
+   "id": "UF-4INT-8867",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t0": 2,
+    "t1": 2,
+    "t2": 2,
+    "t3": 2
+   },
+   "paths_expected_from": "hypothesis R1: two per terminal on the interval instances",
+   "paths_match": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 16,
+   "cost_good": 11,
+   "minimizers": 2,
+   "alpha_inst": "8867/7800",
+   "alpha_inst_decimal": "1.136794871794871794",
+   "claimed": "8867/7800",
+   "equal": true,
+   "wall_s": 0.01
+  },
+  "UF-PLANAR-K6": {
+   "id": "UF-PLANAR-K6",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t0": 2,
+    "t1": 2,
+    "t2": 2,
+    "t3": 2,
+    "t4": 2,
+    "t5": 2
+   },
+   "paths_expected_from": "entry paths list (compared, never used to build)",
+   "paths_match": true,
+   "paths_equal_json_paths": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 64,
+   "cost_good": 42,
+   "minimizers": 1,
+   "alpha_inst": "58676765987259/50000000000000",
+   "alpha_inst_decimal": "1.173535319745180000",
+   "claimed": "58676765987259/50000000000000",
+   "equal": true,
+   "wall_s": 0.04
+  },
+  "UF-E3-TERNARY-eta1over10": {
+   "id": "UF-E3-TERNARY-eta1over10",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t0": 2,
+    "t1": 2,
+    "t2": 2
+   },
+   "paths_expected_from": "entry paths list (compared, never used to build)",
+   "paths_match": true,
+   "paths_equal_json_paths": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 8,
+   "cost_good": 4,
+   "minimizers": 3,
+   "alpha_inst": "841/800",
+   "alpha_inst_decimal": "1.051250000000000000",
+   "claimed": "841/800",
+   "equal": true,
+   "wall_s": 0.0
+  },
+  "UF-7VERTEX-16over15": {
+   "id": "UF-7VERTEX-16over15",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t1": 2,
+    "t2": 2,
+    "t3": 2
+   },
+   "paths_expected_from": "extractor_check.simple_path_counts",
+   "paths_match": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 8,
+   "cost_good": 4,
+   "minimizers": 3,
+   "alpha_inst": "16/15",
+   "alpha_inst_decimal": "1.066666666666666666",
+   "claimed": "16/15",
+   "equal": true,
+   "wall_s": 0.0
+  },
+  "UF-TRIANGLE-n2": {
+   "id": "UF-TRIANGLE-n2",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t1": 2,
+    "t2": 2,
+    "t3": 2
+   },
+   "paths_expected_from": "extractor_check.simple_path_counts",
+   "paths_match": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 8,
+   "cost_good": 4,
+   "minimizers": 3,
+   "alpha_inst": "25/32",
+   "alpha_inst_decimal": "0.781250000000000000",
+   "claimed": "25/32",
+   "equal": true,
+   "wall_s": 0.0
+  },
+  "UF-TRIANGLE-n68": {
+   "id": "UF-TRIANGLE-n68",
+   "feasible": true,
+   "paths_per_terminal": {
+    "t1": 2,
+    "t2": 2,
+    "t3": 2
+   },
+   "paths_expected_from": "extractor_check.simple_path_counts",
+   "paths_match": true,
+   "evaluator": "ufclib.decide.decide_instance",
+   "stream_check_equal": true,
+   "routings": 8,
+   "cost_good": 4,
+   "minimizers": 3,
+   "alpha_inst": "41209/36992",
+   "alpha_inst_decimal": "1.113997621107266435",
+   "claimed": "41209/36992",
+   "equal": true,
+   "wall_s": 0.0
+  }
+ }
+}

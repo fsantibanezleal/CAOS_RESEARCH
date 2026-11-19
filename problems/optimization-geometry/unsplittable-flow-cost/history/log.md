@@ -243,3 +243,18 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
 - The lower-bound focus is closed as superseded (UFB-070). Next: EXP-007, an independent exact re-verification of the
   current records in ufclib with planarity tests (UFB-068), then the preprint revision (UFB-066).
 
+## 2026-11-19 - EXP-007 CONFIRMED: the record instances re-checked independently (UFB-068)
+
+- Hypothesis 4f51d68b, frozen before the run. The thirteen instance entries were transcribed from Nikolenko's three
+  Zenodo preprints and the repository certificates (the authors' code never run), and decided with ufclib.
+- All 11 concrete entries force exactly their claimed values, including the 17-terminal instances
+  (1282494797984843521/10^18 and De la Fuente's 160325086265636045340018727271/(125 x 10^27), 131,072 routings each) and
+  the planar record 58676765987259/(5 x 10^13). The four-interval family follows (1-t)^2 (1 + 4t - t^2) - eps on a
+  41-point grid and stays below (299 - 41 sqrt 41)/32; the ternary core follows (3 - eta)^2/8 below 9/8.
+- Planarity with certificates checked by separate code: the two 17-terminal instances are non-planar (K3,3
+  subdivisions); the four-interval, K6 and seven-vertex instances are planar; so are the triangle template and the
+  ternary core, which the papers do not state.
+- The frontier value equals the claimed value on every instance (the cutting-plane evaluator finished on both
+  17-terminal instances): the authors' pricing is optimal, and re-pricing gains nothing.
+- Methodology 13 adopted for this problem the same day (focus UF-F3); next: the preprint revision (UFB-066).
+
