@@ -1,0 +1,15 @@
+{
+  "out": "D:\\_Temp\\planar-v038-release\\render",
+  "dpi": 70,
+  "images": 68,
+  "sheets": [
+    "D:\\_Temp\\planar-v038-release\\render\\sheet-1.png",
+    "D:\\_Temp\\planar-v038-release\\render\\sheet-2.png",
+    "D:\\_Temp\\planar-v038-release\\render\\sheet-3.png",
+    "D:\\_Temp\\planar-v038-release\\render\\sheet-4.png",
+    "D:\\_Temp\\planar-v038-release\\render\\sheet-5.png",
+    "D:\\_Temp\\planar-v038-release\\render\\sheet-6.png"
+  ],
+  "pdf_sha256": "53db56c9c7d472235cd6f6be79a4a8f8bd827a03f14df1b4fb582c2bbfb36105",
+  "rendered_at": "2026-11-19T03:42:19Z"
+}

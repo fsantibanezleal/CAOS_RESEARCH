@@ -40,9 +40,9 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.15",
+    "version": "0.16",
     "language": "eng",
-    "publication_date": "2026-09-18",
-    "version_notes": "Correction of v0.14: v0.14 stated that the announced map restricts to a surjective real Keller map, that the plane C = 0 is part of the asymptotic variety (with a single-point generic fiber), and that the announced map is the smallest member of its family. The first two are false: the image of the map is the complement of the curve (4/(27c^2), 4/(3c), c), c nonzero, over the complex numbers and the reals; the fibers over (A,B,0) have three points when B^2 differs from 16A; the asymptotic variety is the discriminant surface alone (computation EXP-145). The third is now a conjecture: the degree law is machine-verified on four seeds. Full revision: adds a related-work section, a methods section with four algorithms and the check EXP-145, tables of the instances, the collisions, the census and the weight-system survey, six figures (the reduction chain, the degree law, the fiber polynomial, the discriminant wall, the plane fibers and the enumeration window) generated from the stored outputs, a validation section per result, proofs of the constructor theorem, the skew-product lemma and the planar equivariant classification (including the swapped affine form for one zero weight), and an updated discussion (Mathieu N ≥ 15, Poisson for n ≥ 2, smallest known witness dimensions)."
+    "publication_date": "2026-11-19",
+    "version_notes": "One sentence of the related work now states that the companion planar paper proves both cases of the (72,108) reduction empty independently, so that the exclusion holds conditionally on the reduction and the encoding; the reference to the companion planar paper now carries its current title; nothing else in the text changes."
   }
 }

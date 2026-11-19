@@ -8,6 +8,10 @@ remain the evidence.
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 5 with a redirect; strategic review (JCB-098), then an independent replay of the two Laurent/Newton systems of GGHV Proposition 4.3 (JCB-099); the transverse Fitting atlas is parked.
 
+2026-11-19: planar v0.38 (10.5281/zenodo.24358296) and foundational v0.16 (10.5281/zenodo.24358311) published: the Case 1 certificate,
+the conditional exclusion of (72,108), the (9,24) bridge of the floor, the related work on unit-ideal certificates.
+JC-F4's success gate is met in full; the next focus is decided at the portfolio review of 2026-11-19.
+
 2026-11-16: EXP-147 CONFIRMED (JCB-107 closed): GGHV Theorem 5.1 applies to the three polygon classes of Proposition 4.2
 as printed, so the (9,24) case (max deg 99) of the floor is discarded by a printed theorem and the floor 125 no longer
 inherits the bridging gap the July audit found. Pending: the planar v0.38 draft still discloses the gap; its fix pass

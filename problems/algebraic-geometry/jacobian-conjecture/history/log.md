@@ -1909,3 +1909,16 @@ review approved the corrections before release.
   EXP-137 and EXP-146, a counterexample to JC(2) has max deg >= 125, conditional on Proposition 4.3 being exhaustive, on the
   encoding of its polygons and on the rest of GGHV's printed argument.
 
+## 2026-11-19 - planar v0.38 and foundational v0.16 published
+
+- Planar v0.38 (10.5281/zenodo.24358296; 68 pages, 882,860 bytes, SHA-256 53db56c9c7d472235cd6f6be79a4a8f8bd827a03f14df1b4fb582c2bbfb36105): the EXP-146 certificate that
+  Case 1 is empty (Algorithm A7, its correctness theorem with proofs, the trees, gates and independent checks at a second
+  prime, in Singular and at third primes, archived in EXP-146 `independent-checks/` with the inputs), the conditional
+  exclusion of (72,108) and (108,72), the (9,24) step of the floor checked against GGHV Theorem 5.1 (EXP-147), and a
+  related-work group on unit-ideal certificates from verified primary sources. Review (four lenses, skeptics; APPROVE AFTER
+  FIXES, none refuted), two fix passes, two re-checks (RELEASABLE), precision fixes; release.py: build and render clean,
+  every page looked at, approval record, 39 gates.
+- Foundational v0.16 (10.5281/zenodo.24358311; 30 pages, SHA-256 74b0695d85c50a91ce9aa3262543117d58b92729a70c9e1cbf53042e027a0860): one sentence points to the planar certificate.
+- Felipe validated the closure phrasing on 2026-11-19 (in reply to the question with the abstract's exclusion sentence:
+  "update the manuscripts required"); recorded in `program/jacobian-conjecture/72108-closure-statement.md`.
+

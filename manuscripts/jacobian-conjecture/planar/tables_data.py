@@ -74,7 +74,9 @@ EXCLUSIONS = {'caption': 'Exclusion results with the scope the computations veri
 LADDER = {'caption': 'The frontier ladder: gcd and degree floors for a counterexample, with the source theorem and '
             'the evidence behind the reading. P: read in the primary text of the paper that states or '
             'reproves it. S: stated by a primary text that was read and that attributes it to another work '
-            '(the cited original was not read for the statement).',
+            '(the cited original was not read for the statement). M: machine-verified in this paper, conditional '
+            'as the row states. M + P: the exclusion of the pair is machine-verified in this paper, conditional as the row states; '
+            'the floor then follows from Theorem 2.1 as read in the primary text (P), whose $(9,24)$ step is checked in EXP-147.',
  'head': ['\\textbf{Constraint}', '\\textbf{Statement}', '\\textbf{Source}', '\\textbf{Evidence}'],
  'label': 'tab:ladder',
  'rows': [['$B=1$', 'excluded', 'Magnus \\cite{Magnus1955}', 'S'],
@@ -102,9 +104,15 @@ LADDER = {'caption': 'The frontier ladder: gcd and degree floors for a counterex
            'S'],
           ['$\\max\\deg\\le150$', '$34$ possible configurations enumerated', '\\cite{GGHV2017}', 'P'],
           ['$\\max\\deg\\ge125$ or $(\\deg P,\\deg Q)\\in\\{(72,108),(108,72)\\}$',
-           'Theorem 2.1',
+           'Theorem 2.1 (the $(9,24)$ step of its proof is checked against their Theorem 5.1; Section~\\ref{sec:frontier}, EXP-147)',
            '\\cite{GGHV2022}',
            'P'],
+          ['$\\max\\deg\\ge125$ with no exception',
+           'follows from Theorem 2.1 and the exclusion of $(72,108)$ and $(108,72)$, conditional on Proposition 4.3 '
+           'of \\cite{GGHV2022} being exhaustive and on the encoding of its polygons; the $(9,24)$ step of Theorem 2.1 '
+           'is checked against their Theorem 5.1 (EXP-147)',
+           'Section~\\ref{sec:helali}; EXP-137, EXP-146, EXP-147',
+           'M + P'],
           ['Chain of maximal degree $144$',
            "excluded by the closing remark ($A_0'=(8,4)$ is not a possible last lower corner)",
            '\\cite{GGV2}; EXP-082',
@@ -113,10 +121,11 @@ LADDER = {'caption': 'The frontier ladder: gcd and degree floors for a counterex
            'undecided by these sources (four share a corner with the remark but fail its hypotheses)',
            'EXP-083, EXP-094',
            'P']],
- 'spec': 'P{3.3cm}P{4.0cm}P{3.3cm}P{1.6cm}'}
+ 'spec': 'P{3.3cm}P{4.2cm}P{3.1cm}P{1.6cm}'}
 
-COST = {'caption': "Measured costs of the exact attempts on Cases 1 and 2. ``Unknown'' means the computation "
-            'reached its limit without a conclusion.',
+COST = {'caption': "Measured costs of the exact attempts on Cases 1 and 2, ending with the certificate that closed Case 1. "
+            "``Unknown'' means the computation reached its limit without a conclusion; the two EXP-137 rows and the last row are the only ones that "
+            'did not.',
  'head': ['\\textbf{Record}',
           '\\textbf{Method}',
           '\\textbf{Object}',
@@ -157,6 +166,38 @@ COST = {'caption': "Measured costs of the exact attempts on Cases 1 and 2. ``Unk
            'same, continued',
            'same',
            '$20{,}217$ and $20{,}134$ primes',
-           'unknown, $>94{,}000$ digits']],
+           'unknown, $>94{,}000$ digits'],
+          ['EXP-146',
+           'single-prime resultant chains (Algorithm~\\ref{alg:chain})',
+           'nine equations per branch',
+           '$252$ s and $102$ s (one prime)',
+           'unit ideal, both branches']],
  'spec': 'P{1.4cm}P{3.5cm}P{3.6cm}P{2.7cm}P{2.3cm}'}
 
+
+
+# Independent recomputation at third primes. The scripts and their outputs are archived in
+# problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-146-case1-chain-certificate/independent-checks/third-prime/
+# and make_tables.py --check refuses a constant below that does not appear in the archived output of its branch.
+# Keys: branch -> leaf -> (list of (pair id, constant at p3)).
+# The p1 values in THIRD_P1 are the ones the p3 outputs print as "(recorded at p1: ...)", read from the SLP and not recomputed there;
+# the recomputation at p1 and at p2 is in plus/out-p1.txt, plus/out-tnz-p1.txt, plus/out-p2.txt, plus/out-tnz-p2.txt and minus/run4.txt,
+# and THIRD_P1 is compared with results.json.
+THIRD = {
+    "plus": {"p": 268435399, "r": 174414054,
+             "leaves": {"t.nz": [("l4.1", 105243149), ("l4.2", 212674548)],
+                        "t.z.nz": [("l3.1", 176204013), ("l3.2", 93852423), ("l3.3", 10534029), ("l3.4", 0)],
+                        "t.z.z": [("E7", 221590403), ("l2.0", 30430585), ("l2.1", 11378977), ("l2.2", 179709768),
+                                  ("l2.3", 58772390), ("E13", 4258636)]}},
+    "minus": {"p": 399999949, "r": 61040865,
+              "leaves": {"t.z.nz": [("l3.1", 13527734), ("l3.2", 367937690),
+                                    ("l3.3", 40575756), ("l3.4", 0)],
+                         "t.z.z": [("E7", 386223456), ("l2.0", 362929585), ("l2.1", 97413426), ("l2.2", 172069309),
+                                   ("l2.3", 245121334), ("E13", 71474855)]}},
+}
+THIRD_P1 = {
+    "plus": {"t.nz": [237645314, 102108884], "t.z.nz": [34853305, 492668574, 306155930, 0],
+             "t.z.z": [39203000, 72530766, 463386644, 75030777, 87453970, 191661876]},
+    "minus": {"t.z.nz": [34853305, 492668574, 306155930, 0],
+              "t.z.z": [39203000, 72530766, 463386644, 75030777, 87453970, 345209033]},
+}

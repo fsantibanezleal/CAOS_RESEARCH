@@ -1,15 +1,16 @@
 # manuscript-planar/ - the PLANAR PROGRAM paper (B of three)
 
 `main.tex` / `main.pdf`: "Planar Keller Maps after the Counterexample: Weight-Class Exclusions, a Chart
-Atlas for the (72,108) Reduction, and Independent Checks of Cases 1 and 2". The
+Atlas, and a Conditional Exclusion of the Degree Pair (72,108) by Independent Proofs of Cases 1 and 2". The
 ACTIVE paper: the JC(2) machine (uniform closure, forced tops, descent), the four
 unconditional exclusion theorems (with complete proofs, and the scope of each stated) plus the
 annihilation lemma, the diagonal corner and the staircase transport (with the fifth exclusion in window
 form, at all partner degrees on its six certified grid shapes, and the half-plane certificates as window
 results with propagation conjectured),
 the matched-pair law and the x^m-anchored edge operator, and the source-audited frontier
-(gcd coverage; Moh/GGHV floors; the B = 16 normal form and the (72, 108) pair as live
-targets), including the EXP-095/096 original-pair gates (seven possible nonzero inner
+(gcd coverage; Moh/GGHV floors; the B = 16 normal form; the (72, 108) pair, excluded conditionally on GGHV
+Proposition 4.3 being exhaustive and on the encoding of its polygons, with the floor 125 resting on Theorem 2.1 as
+published, whose (9,24) step is checked against their Theorem 5.1 in EXP-147), including the EXP-095/096 original-pair gates (seven possible nonzero inner
 vertices and exact resultant intersection number 21 with root partition 84+24) and the
 EXP-097 transport audit (absolute degree is not typed after Laurent localization without
 a boundary-divisor ledger), and the EXP-098--108 constructible-certificate
@@ -68,19 +69,24 @@ validates the novelty phrasing before any submission.
 Build:
 
 ```powershell
-pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode main.tex
 ```
 
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.37**, published 2026-11-15 at version DOI `10.5281/zenodo.24240037`
+Current manuscript version: **v0.38**, published 2026-11-19 at version DOI `10.5281/zenodo.24358296` (concept DOI
+`10.5281/zenodo.21503367`; 68 pages, 882,860 bytes, SHA-256 `53db56c9c7d472235cd6f6be79a4a8f8bd827a03f14df1b4fb582c2bbfb36105`): Case 1 of the (72,108)
+reduction certified empty by single-prime resultant-chain certificates (EXP-146), the conditional exclusion of the degree
+pairs (72,108) and (108,72), the (9,24) step of the floor checked against GGHV Theorem 5.1 (EXP-147), and a related-work
+group on unit-ideal certificates, after an adversarial review, two fix passes and two re-checks. Previous version: **v0.37**, published 2026-11-15 at version DOI `10.5281/zenodo.24240037`
 (concept DOI `10.5281/zenodo.21503367`; 51 pages, 722,853 bytes, SHA-256
 `f8fea6a7ba16ddf43e51133de4097416633e6a33d9b0c2785ca06313f06f3dd4`): the full revision (methods with six
 algorithms, complete proofs, related work, the atlas, exclusion and frontier tables, six figures, and the
 (72,108) part restructured around GGHV Proposition 4.3 with Cases 1 and 2). v0.36: `10.5281/zenodo.24226225`. Substantive revisions are published as new Zenodo
 versions under the concept DOI.
 
-Generated pieces: `make_tables.py` writes `tab_atlas.tex`, `tab_repro.tex` and `fig_times.tex` from the
-experiment records (it refuses a cell whose quotation is absent from its record); run it before building.
+Generated pieces: `make_tables.py` writes `tab_atlas.tex`, `tab_repro.tex`, `tab_exclusions.tex`, `tab_ladder.tex`, `tab_cost.tex`,
+`tab_ablation.tex`, `tab_notation.tex`, `tab_tree.tex`, `tab_gates.tex`, `tab_mutants.tex`, `tab_consts.tex`, `fig_window.tex`,
+`fig_chain.tex` and `fig_times.tex` from the experiment records (it refuses a cell whose quotation is absent from its record); run it before building.
 Build with three `pdflatex` passes.
