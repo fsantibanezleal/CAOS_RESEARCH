@@ -9,7 +9,7 @@
     "prohibited_reframing": "No CAOS result may be described as disproving the Jacobian conjecture, as finding or re-finding the counterexample, or as deciding JC(2). CAOS work validates the public counterexample, states its structure and the consequence cascade at the level of dimension indices, and proves exact results about the planar case. The exclusion of (72,108) is Helali's first; the CAOS certificates (EXP-137 for Case 2, EXP-146 for Case 1) are an independent proof of both cases of GGHV Proposition 4.3, conditional on that proposition being exhaustive and on the encoding of its polygons."
   },
   "mission": "Establish with exact, archived and independently checked certificates what the 2026 counterexample is and what it implies (validation, structure, the cascade of implied and equivalent conjectures at the level of their dimension indices), and advance the planar case JC(2) at its sharpest published frontier, the degree floor, without claiming JC(2).",
-  "current_focus": "JC-F4",
+  "current_focus": "JC-F7",
   "stop_policy": {
     "review_after_consecutive_low_value_rounds": 3,
     "requires_user_visible_redirect": true,
@@ -131,7 +131,7 @@
     {
       "id": "JC-F4",
       "title": "Independent proof that Case 1 of GGHV Proposition 4.3 for (72,108) is empty",
-      "status": "active-success-gate-met",
+      "status": "closed",
       "priority": 4,
       "target": "Prove that the 13 compatibility equations of Case 1 over K = Q[a7]/(H) have no common solution on either branch q1 = +c, -c, independently of Helali's computation.",
       "value": "With Case 2 (EXP-137) it gives an independent proof that no Keller pair has degrees (72,108) or (108,72), conditional on GGHV Proposition 4.3 being exhaustive and on the encoding of its polygons; with GGHV Theorem 2.1 a counterexample to JC(2) then has max deg >= 125. The certificate method (single-prime resultant chains with support-proven degree bounds and monomial Rabinowitsch splits) needs no coefficient reconstruction, where exact standard bases and multi-modular certificates failed (EXP-139 to EXP-143).",
@@ -151,7 +151,8 @@
         "EXP-142",
         "EXP-143",
         "EXP-146"
-      ]
+      ],
+      "review_2026_11_19": "Closed at the portfolio review of 2026-11-19 (decision 2): success gate met in full, the planar paper carries the certificate since v0.38 (10.5281/zenodo.24358296). JC-F6 (the method) and JC-F5 (the [125,150] configurations) stay proposed; JC-F5 keeps its preflight before any certificate campaign."
     },
     {
       "id": "JC-F5",
@@ -190,6 +191,23 @@
       "evidence": [
         "EXP-146"
       ]
+    },
+    {
+      "id": "JC-F7",
+      "title": "Long's Mathieu construction on compact connected Lie groups: exact replay and the cascade revision",
+      "status": "active",
+      "priority": 7,
+      "target": "Is C. D. Long's claim (arXiv:2609.16178 v1) that the Mathieu conjecture fails on every nonabelian compact connected Lie group correct on the smallest groups, SU(2) and SU(3): do his polynomials A, P, Q have all pure moments of P zero and I_G(Q^s P^m) = c_m binom(m-1, s-1) I_G(A^(4m+s)) > 0 with c_m = 4^m (m!)^2/(2m+1)!, checked by exact Haar integration?",
+      "value": "The cascade paper (v0.10, 10.5281/zenodo.24269044) states the Mathieu conjecture settled only for SU(N), N >= 15 (through de Bondt's HJC(15) witness), and open for 3 <= N <= 14. If Long's construction holds, every row of the Mathieu block of the cascade changes, and an exact independent replay is the evidence the cascade needs before it restates the status; if it fails, the gap is a result in itself.",
+      "success_gate": "The construction replayed exactly on SU(2) and SU(3) (moments by exact Haar integration, independent of Long's own computation), or a located gap; the cascade revised to v0.11 after an adversarial review, citing Long's claim with its verification status.",
+      "stop_conditions": [
+        "The construction needs an object that cannot be made explicit on SU(2) or SU(3) within a bounded preflight (then the cascade cites the claim as unverified and the focus closes).",
+        "Long's paper is withdrawn or corrected (then the cascade records that instead)."
+      ],
+      "novelty_status": "Long's claim is his (arXiv:2609.16178 v1, dated 2026-07-30 in its PDF, unrefereed) [V]; an independent exact replay was not found in the searches of the 2026-11-19 refresh; the verification is attributable as such, not as new mathematics.",
+      "manuscript_route": "cascade (v0.11)",
+      "first_bounded_action": "Preflight: read arXiv:2609.16178 in full, write A, P, Q explicitly for SU(2) and SU(3), and price exact Haar integration of their moments (Weyl integration formula or matrix-coefficient orthogonality) before declaring the experiment.",
+      "evidence": []
     }
   ],
   "manuscripts": [

@@ -11,6 +11,10 @@ other mixtures are not decided). PCC-F6 closes by the 2026-10-06 rule;
 the next focus is proposed to Felipe at the strategic review (PCC-F6 review note in `research-governance.json`). EXP-015 is a
 research record; no manuscript version.
 
+2026-11-19: portfolio review ([program/portfolio-review-2026-11-19.md](../portfolio-review-2026-11-19.md), decision 4): no
+external change [V]; PCC-F6 closed; current focus PCC-F5 (rank 2, 50 to 60 percent, conditional), first action the G68
+order-52 portfolio (next action 2 below), after the Boij-Soderberg opening.
+
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): rank 1, plan unchanged; first action EXP-015 (6-poles from the cyclically 5-edge-connected snarks of order at most 28), PCC-F6 stays active.
 
 ## 1. State in one screen
