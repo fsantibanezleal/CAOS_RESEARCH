@@ -7,6 +7,15 @@ Labels: [MV] machine-verified in this repo, [D] derived by us on paper, [C] conj
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): hold; refresh the dossier before EXP-005 (UFB-061) and check the Conjecture 1.4 numbering (UFB-062).
 
+2026-11-19: portfolio review ([program/portfolio-review-2026-11-19.md](../portfolio-review-2026-11-19.md), decision 3).
+S. Nikolenko's three Zenodo preprints (2026-07-30 to 2026-08-13) and repository supersede our lower bounds [V]: general
+$\alpha^\* \ge 1.28260069$ (his 17-terminal instance, $1.2824948$, refined by A. De la Fuente, merged 2026-08-04), planar
+$\alpha^\*_{\text{planar}} \ge 1.17353531974518$ (Part III); his planar paper of 2026-07-30 already proves that $9/8$ is the
+exact supremum of the symmetric three-terminal template, whose limit point is the Muffatti family of EXP-005, a month
+before Muffatti's commit (2026-08-31). The lower-bound focus is closed as superseded; the credit of $9/8$ is corrected
+below; the next action is an independent exact re-verification of the current records in `ufclib` (UFB-068) and the
+preprint revision (UFB-066). Transcription: [2026-11-19 refresh](../../problems/optimization-geometry/unsplittable-flow-cost/context/2026-11-19-literature-refresh.md).
+
 ## 1. State in one screen
 
 The object. An SSUF instance is $(G=(V,A), s, T, d, x)$: digraph, source, terminals with
@@ -93,7 +102,7 @@ next-version trigger, not an edit.
 | congestion-good routing | $f^{\mathcal{P}}(a) \le x(a) + d_{\max}$ on every arc | `ufclib.decide` |
 | cost-good routing | $c^T f^{\mathcal{P}} \le c^T x$ | `ufclib.decide` |
 | $\alpha_{\mathrm{inst}}$ | $\min$ over cost-good routings of $\max_a (y_a - x_a)^+ / d_{\max}$: the violation an instance forces. Value $16/15$ on the 2026 instance | EXP-002 |
-| $\alpha^\*$ | the infimum over ALL instances: the frontier constant. Known $\ge 9/8$, also for planar instances (Muffatti's family, checked exactly by EXP-005 [MV]; the 2026 instance itself forces $16/15$), $\le 2$ for planar [VERIFIED], no finite bound in general | UF-P3 |
+| $\alpha^\*$ | the infimum over ALL instances: the frontier constant. Known $\ge 1.28260069$ in general and $\ge 1.17353531974518$ for planar instances (Nikolenko 2026, the general value refined by De la Fuente; author-side exact verifiers, not yet independently re-checked: UFB-068) [VERIFIED as statements]; $9/8$ is the supremum of the symmetric three-terminal template (Nikolenko, 2026-07-30), attained in the limit by the Muffatti family checked exactly by EXP-005 [MV]; the 2026 instance itself forces $16/15$; $\le 2$ for planar [VERIFIED], no finite bound in general | UF-P3 |
 | conflict graph $H$, selection point $\rho$ | the stable-set reading: nodes are cheap choices, edges are pairwise congestion incompatibility, $\rho_i = x(\text{choice } i)/d_i$ | EXP-002, to be promoted to the library (UFB-023) |
 | separation LP (SEP) | max $\delta$ s.t. $c^T(y - x) \ge \delta$ for all congestion-good $y$, $\sum c_a = 1$, $c \ge 0$; optimum $> 0$ iff some nonnegative cost makes the instance a counterexample. Re-derived and proved by us (both directions) in the EXP-003 hypothesis; implemented exactly in `ufclib.separation` | EXP-003 [MV] |
 | C1-C9 battery | the consistency tests any valid counterexample must survive | literature dossier section 5; all nine passed in EXP-002 |
@@ -106,7 +115,7 @@ next-version trigger, not an edit.
 | EXP-002 | Is the 2026 claimed counterexample valid, and what does it force? | CONFIRMED | Conj 1.2 FALSE; $\alpha_{\mathrm{inst}} = 16/15$; C1-C9 pass; structural route agrees with enumeration |
 | EXP-003 | Can we decide, without searching over cost vectors, whether an instance admits any counterexample cost vector? | CONFIRMED | The exact separation LP; optimum $2/7$ on the 2026 instance, attained by the published cost vector, so that vector is an OPTIMAL separator there; $k = 1$ theorem; the $k \le 2$ claim retracted and replaced |
 | EXP-004 | How much violation can an instance force, maximised over ALL cost vectors, and can any relative of the 2026 instance force more? | CONFIRMED instruments, F4 REFUTED (null) | The frontier value $\alpha_{\max}$, equal to $16/15$ on the 2026 instance; and over 3456 family parameter points the ONLY counterexample is that instance at its published parameters |
-| EXP-005 | Does Muffatti's planar family (Rybin's topology, demands (1, 3/4, 1), fractions near (1/4, 1/2, 1/4)) force $9/8$, and does optimal pricing give more? | CONFIRMED | $9/8 - (3/4)\varepsilon$ exactly at three values of $\varepsilon$, also as the frontier value (his pricing is optimal); planar, acyclic; grid of 108,000 points tops at $69/64$; so $\alpha^\* \ge 9/8$ and $\alpha^\*_{\text{planar}} \in [9/8, 2]$; EXP-004's family reading withdrawn |
+| EXP-005 | Does Muffatti's planar family (Rybin's topology, demands (1, 3/4, 1), fractions near (1/4, 1/2, 1/4)) force $9/8$, and does optimal pricing give more? | CONFIRMED | $9/8 - (3/4)\varepsilon$ exactly at three values of $\varepsilon$, also as the frontier value (his pricing is optimal); planar, acyclic; grid of 108,000 points tops at $69/64$; so $\alpha^\* \ge 9/8$ and $\alpha^\*_{\text{planar}} \in [9/8, 2]$; EXP-004's family reading withdrawn. Superseded as a bound on 2026-11-19 by Nikolenko's $1.28260069$ (general) and $1.17353531974518$ (planar); the $9/8$ value is Nikolenko's (2026-07-30, symmetric template supremum), the Muffatti family is its limit point |
 
 ## 3b. Lenses ledger (methodology/10)
 

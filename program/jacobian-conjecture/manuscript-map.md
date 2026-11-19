@@ -57,13 +57,14 @@ method).
 ## Focus record
 
 - Closed: JC-F0 (validation and structure), JC-F1 (cascade), JC-F3 (chart atlas; parked by JCB-098 on 2026-11-02 and made
-  unnecessary for the exclusion by EXP-146).
+  unnecessary for the exclusion by EXP-146), JC-F4 (the independent proof that Case 1 is empty: EXP-146, carried by
+  planar v0.38 since 2026-11-19; closed at the portfolio review of 2026-11-19).
 - Dormant: JC-F2 (planar exclusions; the extension beyond the certified grid and a terminating covector ladder have no
   route).
-- Active: **JC-F4**, the independent proof that Case 1 is empty. Its success gate was met on 2026-11-16 by EXP-146; it
-  stays active until the planar paper carries the result (v0.38), whose publication waits for Felipe's validation of
-  the closure phrasing (`72108-closure-statement.md`, "Proposed next steps (Felipe decides)").
-- Proposed, for Felipe at this review (methodology 13: a changed target is shown before it is treated as the
+- Current: **JC-F7**, C. D. Long's Mathieu construction on compact connected Lie groups (arXiv:2609.16178 v1, claimed
+  for every nonabelian group): an exact replay on SU(2) and SU(3), then the cascade revision v0.11 (portfolio review of
+  2026-11-19, decision 2). First bounded action: read the paper in full and price exact Haar integration of the moments.
+- Proposed (shown to Felipe in the portfolio reviews of 2026-11-16 and 2026-11-19 (methodology 13: a changed target is shown before it is treated as the
   continuation): JC-F5, the twenty-three configurations of maximal degree in [125,150] left undecided by the sources
   (the next gap of the floor); JC-F6, the certificate method on a second system and a methods paper.
 
@@ -72,4 +73,5 @@ method).
 - `planar`: v0.38 with EXP-146 and EXP-147 (brief `jc-planar-v038-2026-11-16` in CAOS_MANAGE); the fifth exclusion beyond its grid
   stays a conjecture; the twenty-three configurations in [125,150].
 - `foundational`: v0.16, one sentence pointing to the planar certificate, released with planar v0.38.
-- `cascade`: Mathieu for 3 <= N <= 14 (JCB-096); Wilson's GMC(2) proof (JCB-097).
+- `cascade`: Mathieu for 3 <= N <= 14 (JCB-096), now claimed settled for every nonabelian compact connected group by
+  Long (arXiv:2609.16178 v1, unrefereed); v0.11 after the exact replay of JC-F7; Wilson's GMC(2) proof (JCB-097).

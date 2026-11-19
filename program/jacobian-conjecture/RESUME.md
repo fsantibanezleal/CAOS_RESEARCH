@@ -12,6 +12,13 @@ remain the evidence.
 the conditional exclusion of (72,108), the (9,24) bridge of the floor, the related work on unit-ideal certificates.
 JC-F4's success gate is met in full; the next focus is decided at the portfolio review of 2026-11-19.
 
+2026-11-19: portfolio review ([program/portfolio-review-2026-11-19.md](../portfolio-review-2026-11-19.md), decision 2):
+JC-F4 closed. C. D. Long (arXiv:2609.16178 v1, unrefereed) claims that the Mathieu conjecture fails on every nonabelian
+compact connected Lie group: polynomials A, P, Q with all pure moments of P zero and
+I_G(Q^s P^m) = c_m binom(m-1, s-1) I_G(A^(4m+s)) > 0, c_m = 4^m (m!)^2/(2m+1)! [V]. The cascade (v0.10) states the open
+range SU(N), 3 <= N <= 14. New current focus JC-F7: an exact replay of the construction on SU(2) and SU(3), then
+cascade v0.11. JC-F5 stays proposed with its preflight (count the [125,150] configurations, derive one system).
+
 2026-11-16: EXP-147 CONFIRMED (JCB-107 closed): GGHV Theorem 5.1 applies to the three polygon classes of Proposition 4.2
 as printed, so the (9,24) case (max deg 99) of the floor is discarded by a printed theorem and the floor 125 no longer
 inherits the bridging gap the July audit found. Pending: the planar v0.38 draft still discloses the gap; its fix pass

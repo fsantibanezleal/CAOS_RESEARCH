@@ -49,13 +49,11 @@ repeats their proofs beyond Section 5.3.
 
 - Closed: PCC-F0, PCC-F1, PCC-F3, PCC-F4 (success gates met).
 - Dormant: PCC-F2 (composition search non-convergent).
-- Gated: PCC-F5 (G68 and the unconditional H_3 form; only portfolio runs at the most informative
-  orders, starting with target order 52).
-- Current: **PCC-F6**, cut-space charges and cyclically 5-edge-connected cubic graphs (Problem 11 of
-  arXiv:2608.10028v4). EXP-013 and EXP-014 met the negative branch of its success gate (theorems
-  for claws and Petersen superedges, published in `unbounded-defect` v0.02); its last bounded action,
-  EXP-015 (2026-11-16), found no zero-trace ring, so the focus closes at the strategic review that chooses
-  the next one with Felipe (proposed: PCC-F5's first bounded action, G68 at target order 52).
+- Closed on 2026-11-19: PCC-F6, cut-space charges and cyclically 5-edge-connected cubic graphs (Problem 11 of
+  arXiv:2608.10028v4). EXP-013 and EXP-014 met the negative branch of its success gate (theorems for claws and
+  Petersen superedges, published in `unbounded-defect` v0.02); EXP-015 (2026-11-16) found no zero-trace ring.
+- Current: **PCC-F5**, unconditional and extended H_3 membership (portfolio review of 2026-11-19, decision 4); first
+  bounded action G68 at target order 52 with the formula of EXP-007 addendum 7, after the Boij-Soderberg opening.
 
 ## Open obligations
 
