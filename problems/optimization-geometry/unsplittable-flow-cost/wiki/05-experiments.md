@@ -78,6 +78,10 @@ exhaustion (UFB-012).
   with demands $(1, 3/4, 1)$, free-path fractions $(1/4, 1/2 + \varepsilon, 1/4)$ and unit-cost paid paths forces
   exactly $9/8 - (3/4)\varepsilon$; checked with our exact instrument at three values of $\varepsilon$. The frontier
   value is the same, so his pricing is optimal on the family. With TVZ24, $9/8 \le \alpha^\*_{\text{planar}} \le 2$. [MV]
+  Superseded as a bound (2026-11-19): S. Nikolenko had proved on 2026-07-30 that $9/8$ is the supremum of this
+  symmetric three-terminal template (10.5281/zenodo.21701162), and his series gives $\alpha^\* \ge 1.28260069$ (with
+  A. De la Fuente's refinement) and $\alpha^\*_{\text{planar}} \ge 1.17353531974518$; EXP-005 remains an exact check
+  of the family.
 - **EXP-004's family reading was wrong.** Its box did not contain these parameters, and the bound needs
   $q > 1/2$ strictly, which no finite grid reaches; the family's ceiling looks like $9/8$ (Muffatti's symmetric
   analysis, our 108,000-point grid with optimal pricing tops at $69/64$). [MV on the grid; the ceiling is [D]]

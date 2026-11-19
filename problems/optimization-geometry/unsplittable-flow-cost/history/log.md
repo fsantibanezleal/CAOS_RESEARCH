@@ -231,3 +231,15 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
 - The BCD run was restarted at 19:38 as one resumable ABCD run so that stage D could finish inside its time limit; no
   evaluation was lost (records resume by key).
 
+## 2026-11-19 - Nikolenko's series supersedes the CAOS lower bounds; focus closed, re-verification next
+
+- External refresh (portfolio review of 2026-11-19, decision 3; [transcription](../context/2026-11-19-literature-refresh.md)):
+  S. Nikolenko's Zenodo series (2026-07-30 to 2026-08-13) gives alpha* >= 1.28260069 (with A. De la Fuente's refinement)
+  and alpha*_planar >= 1.17353531974518 [V]. His planar paper of 2026-07-30 proves that 9/8 is the supremum of the
+  symmetric three-terminal template, the template whose limit point is the Muffatti family checked by EXP-005, a month
+  before Muffatti's commit of 2026-08-31.
+- Records corrected: RESUME (objects table, experiment index, a dated note), backlog UFB-066 (preprint content and
+  credit). EXP-005's verdict stands as an exact check of the family; its bound is superseded.
+- The lower-bound focus is closed as superseded (UFB-070). Next: EXP-007, an independent exact re-verification of the
+  current records in ufclib with planarity tests (UFB-068), then the preprint revision (UFB-066).
+

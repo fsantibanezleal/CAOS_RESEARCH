@@ -65,7 +65,11 @@ The class picture that results is unusually sharp:
    is known outside planar graphs. This is the question the primary literature names as the
    breakthrough target, and a counterexample to the constant 1 does not touch it.
 2. What is the exact frontier constant $\alpha^\*$, in general and for planar graphs?
-   Known: $\alpha^\* \ge 9/8$ and $9/8 \le \alpha^\*_{\text{planar}}$ [MV, EXP-005: Muffatti's 2026 family, checked exactly; the 2026 instance itself forces $16/15$, EXP-002], $\alpha^\*_{\text{planar}} \le 2$ [VERIFIED,
+   Known: $\alpha^\* \ge 1.28260069$ and $\alpha^\*_{\text{planar}} \ge 1.17353531974518$ [VERIFIED as statements;
+   S. Nikolenko, Zenodo 10.5281/zenodo.21716713 refined by A. De la Fuente, and 10.5281/zenodo.21922203; author-side
+   exact verifiers, an independent CAOS re-check is UFB-068]; $9/8$ is the supremum of the symmetric three-terminal
+   template (Nikolenko, 10.5281/zenodo.21701162, 2026-07-30), whose limit point is the Muffatti family checked exactly
+   by EXP-005 [MV]; the 2026 instance itself forces $16/15$ (EXP-002); $\alpha^\*_{\text{planar}} \le 2$ [VERIFIED,
    TVZ24].
 3. Conj 1.3 (Morell-Skutella 2022 Conjecture 1), the cost-free two-sided statement: settled
    false by Bérczi et al. 2026 (Theorem 17). The open questions it leaves are the right
