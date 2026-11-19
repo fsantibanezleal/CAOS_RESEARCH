@@ -75,7 +75,11 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Manuscript version in preparation: **v0.38** (2026-11-16; its version DOI and checksum are set at release). Last published version: **v0.37**, published 2026-11-15 at version DOI `10.5281/zenodo.24240037`
+Current manuscript version: **v0.38**, published 2026-11-19 at version DOI `10.5281/zenodo.24358296` (concept DOI
+`10.5281/zenodo.21503367`; 68 pages, 882,860 bytes, SHA-256 `53db56c9c7d472235cd6f6be79a4a8f8bd827a03f14df1b4fb582c2bbfb36105`): Case 1 of the (72,108)
+reduction certified empty by single-prime resultant-chain certificates (EXP-146), the conditional exclusion of the degree
+pairs (72,108) and (108,72), the (9,24) step of the floor checked against GGHV Theorem 5.1 (EXP-147), and a related-work
+group on unit-ideal certificates, after an adversarial review, two fix passes and two re-checks. Previous version: **v0.37**, published 2026-11-15 at version DOI `10.5281/zenodo.24240037`
 (concept DOI `10.5281/zenodo.21503367`; 51 pages, 722,853 bytes, SHA-256
 `f8fea6a7ba16ddf43e51133de4097416633e6a33d9b0c2785ca06313f06f3dd4`): the full revision (methods with six
 algorithms, complete proofs, related work, the atlas, exclusion and frontier tables, six figures, and the

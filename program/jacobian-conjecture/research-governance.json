@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "jacobian-conjecture",
-  "updated": "2026-11-16",
+  "updated": "2026-11-19",
   "original_problem": {
     "status": "disproved externally for every n >= 3; open for n = 2",
     "statement": "The Jacobian conjecture (Keller 1939): a polynomial map F: C^n -> C^n whose Jacobian determinant is a nonzero constant is a polynomial automorphism. It is false in every dimension n >= 3 since the counterexample announced on 2026-07-20; the planar case JC(2) is open.",
@@ -135,7 +135,7 @@
       "priority": 4,
       "target": "Prove that the 13 compatibility equations of Case 1 over K = Q[a7]/(H) have no common solution on either branch q1 = +c, -c, independently of Helali's computation.",
       "value": "With Case 2 (EXP-137) it gives an independent proof that no Keller pair has degrees (72,108) or (108,72), conditional on GGHV Proposition 4.3 being exhaustive and on the encoding of its polygons; with GGHV Theorem 2.1 a counterexample to JC(2) then has max deg >= 125. The certificate method (single-prime resultant chains with support-proven degree bounds and monomial Rabinowitsch splits) needs no coefficient reconstruction, where exact standard bases and multi-modular certificates failed (EXP-139 to EXP-143).",
-      "success_gate": "A unit-ideal certificate for both branches, checked at a second prime and by a second implementation, accepted after an adversarial review, and carried by the planar paper. Met on 2026-11-16 by EXP-146 (three-leaf trees at p1 = 536870909, replay at p2, Singular digests, third primes in the review); the planar revision v0.38 is drafted and its publication waits for Felipe's validation of the closure phrasing (program/jacobian-conjecture/72108-closure-statement.md).",
+      "success_gate": "A unit-ideal certificate for both branches, checked at a second prime and by a second implementation, accepted after an adversarial review, and carried by the planar paper. Met on 2026-11-16 by EXP-146 (three-leaf trees at p1 = 536870909, replay at p2, Singular digests, third primes in the review); planar v0.38 carries it since 2026-11-19 (10.5281/zenodo.24358296), after Felipe's validation of the closure phrasing.",
       "stop_conditions": [
         "The certificate fails at a second prime or in the second implementation.",
         "A gap is found in the bound proofs (rules M4, M5) that the gates cannot close."
@@ -196,20 +196,20 @@
     {
       "slug": "foundational",
       "path": "manuscripts/jacobian-conjecture/foundational",
-      "version": "0.15",
-      "version_doi": "10.5281/zenodo.24240161",
+      "version": "0.16",
+      "version_doi": "10.5281/zenodo.24358311",
       "concept_doi": "10.5281/zenodo.21503365",
       "status": "published",
-      "split_action": "Paper A (validation, structure, rigidity). A new version for corrections, and one sentence pointing to the planar certificate when planar v0.38 is published."
+      "split_action": "Paper A (validation, structure, rigidity). v0.16 (2026-11-19) points to the planar certificate. A new version for corrections."
     },
     {
       "slug": "planar",
       "path": "manuscripts/jacobian-conjecture/planar",
-      "version": "0.37",
-      "version_doi": "10.5281/zenodo.24240037",
+      "version": "0.38",
+      "version_doi": "10.5281/zenodo.24358296",
       "concept_doi": "10.5281/zenodo.21503367",
       "status": "published",
-      "split_action": "Paper B (planar exclusions, the (72,108) system, the degree frontier). v0.38 carries EXP-146; a methods paper splits off only under JC-F6."
+      "split_action": "Paper B (planar exclusions, the (72,108) system, the degree frontier). v0.38 (2026-11-19) carries EXP-146 and EXP-147; a methods paper splits off only under JC-F6."
     },
     {
       "slug": "cascade",

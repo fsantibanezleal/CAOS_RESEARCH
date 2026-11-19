@@ -62,7 +62,7 @@
     ],
     "version": "0.38",
     "language": "eng",
-    "publication_date": "2026-11-14",
+    "publication_date": "2026-11-19",
     "version_notes": "A resultant-chain certificate that Case 1 of the (72,108) reduction is empty is added: a new algorithm (single-prime chains with proven degree bounds, Rabinowitsch splits and exact division), its correctness proof, the trees of both branches, the gates and the checks at a second prime, in Singular and at third primes. With the Case 2 result this excludes the degree pairs (72,108) and (108,72) conditionally on Proposition 4.3 of Guccione, Guccione, Horruitiner and Valqui being exhaustive and on the encoding of its polygons, so that by their Theorem 2.1, whose (9,24) step is checked here against the hypotheses of their Theorem 5.1 (EXP-147), a counterexample has maximal degree at least 125; priority for the exclusion is Helali's. The title, abstract, introduction, related work, methods (a seventh procedure and its software), experimental design, frontier section, the scope statements of the Proposition 4.3 and atlas sections, ablation, discussion, limitations, open problems, conclusions and data availability are rewritten accordingly; the cost, ablation, notation and reproducibility tables gain the certificate's rows, and the frontier ladder gains the conditional floor row."
   }
 }

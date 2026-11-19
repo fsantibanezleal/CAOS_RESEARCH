@@ -110,3 +110,10 @@ GGHV contact (item 2, the old task 9) stays last and gated on him.
 Update 2026-11-16 (later): Task 8 is closed by EXP-147: Theorem 5.1 of GGHV 2022 applies to the three classes of their
 Proposition 4.2 as printed, so the (9,24) = (66,99) discard behind Theorem 2.1 rests on a printed theorem.
 
+Update 2026-11-19: Felipe validated the phrasing. Asked whether planar v0.38 and foundational v0.16 could be published with
+the abstract's sentence ("Conditionally on their Proposition 4.3 being exhaustive and on our encoding of its polygons, no
+Keller pair has degrees (72,108) or (108,72), so by their Theorem 2.1, whose (9,24) step we check against the hypotheses of
+their Theorem 5.1 (EXP-147), a counterexample has maximal degree at least 125; priority is Helali's. JC(2) remains open."),
+he answered "update the manuscripts required". Both were published the same day (planar 10.5281/zenodo.24358296, foundational
+10.5281/zenodo.24358311). GGHV contact stays gated on him.
+

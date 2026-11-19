@@ -45,8 +45,8 @@ EXP-060, EXP-070 and EXP-076 are superseded (`research-governance.json`, `experi
 
 | slug | version | version DOI | concept DOI | central question |
 |---|---|---|---|---|
-| `foundational` | v0.15 | [10.5281/zenodo.24240161](https://doi.org/10.5281/zenodo.24240161) | [10.5281/zenodo.21503365](https://doi.org/10.5281/zenodo.21503365) | what the three-dimensional counterexample is: validation, structure, image, rigidity |
-| `planar` | v0.37 | [10.5281/zenodo.24240037](https://doi.org/10.5281/zenodo.24240037) | [10.5281/zenodo.21503367](https://doi.org/10.5281/zenodo.21503367) | what can be proved about planar Keller maps, and where the degree floor stands |
+| `foundational` | v0.16 | [10.5281/zenodo.24358311](https://doi.org/10.5281/zenodo.24358311) | [10.5281/zenodo.21503365](https://doi.org/10.5281/zenodo.21503365) | what the three-dimensional counterexample is: validation, structure, image, rigidity |
+| `planar` | v0.38 | [10.5281/zenodo.24358296](https://doi.org/10.5281/zenodo.24358296) | [10.5281/zenodo.21503367](https://doi.org/10.5281/zenodo.21503367) | what can be proved about planar Keller maps, and where the degree floor stands |
 | `cascade` | v0.10 | [10.5281/zenodo.24269044](https://doi.org/10.5281/zenodo.24269044) | [10.5281/zenodo.21503371](https://doi.org/10.5281/zenodo.21503371) | which implied and equivalent conjectures the counterexample settles, at which indices |
 
 Split decision (2026-11-16 review): the three papers have different central questions and toolkits (exact validation

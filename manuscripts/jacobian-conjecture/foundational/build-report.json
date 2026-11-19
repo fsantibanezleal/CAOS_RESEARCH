@@ -1,0 +1,13 @@
+{
+  "command": "pdflatex -interaction=nonstopmode -halt-on-error main.tex",
+  "pdflatex_version": "MiKTeX-pdfTeX 4.19 (MiKTeX 24.4)",
+  "passes": 3,
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 30,
+  "pdf_sha256": "74b0695d85c50a91ce9aa3262543117d58b92729a70c9e1cbf53042e027a0860",
+  "tex_sha256": "2669e8d70622f9db445fa7240e161e4308c3ef9acd3e38a7f2f78efa76d6cee4",
+  "metadata_sha256": "c50649e729e34293cc267c5dd4da4718bd5c25fba1bcb028d57e27d51ec2dedc",
+  "built_at": "2026-11-19T03:44:04Z"
+}
