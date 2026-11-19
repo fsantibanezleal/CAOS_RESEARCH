@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "problem": "hoa-mnh",
+  "updated": "2026-11-19",
+  "original_problem": {
+    "status": "disproved externally",
+    "statement": "Hoa's conjecture (a question posed by Vu Dinh Hoa as Problem 266, Discrete Math. 164 (1997); Zhan calls it a conjecture): for every maximal non-Hamiltonian (MNH) graph G and every longest cycle C of G, the graph G - V(C) is complete. It is false at every order n >= 56.",
+    "priority": "X. Zhan (arXiv:2608.00957v3, 2026-08-14) holds the disproof: counterexamples of every order n >= 56 with G - V(C) = 2K_1, toughness exactly 1 and circumference n - 2; he poses Questions 2 to 4 and makes no claim that 56 is least. Hoa proved the conjecture for toughness below 1 and for minimum degree at least n/3. No follow-up to Zhan was found in the searches of 2026-11-06 and the portfolio review of 2026-11-19.",
+    "prohibited_reframing": "No CAOS result may be described as disproving or re-disproving Hoa's conjecture, or as lowering Zhan's order 56 unless a counterexample below 56 is found and independently verified. CAOS results are exact census counts, the verification of the conjecture on bounded orders, and bounds on where a counterexample of Zhan's type can occur."
+  },
+  "mission": "Determine, by exact exhaustive classification, the least order at which Hoa's conjecture fails: every order either yields a counterexample (and then the least order is known) or raises the verified lower bound for it, currently 13 through order 12 and the order-13 case with a universal vertex; and decide where a counterexample of Zhan's type (a middle gadget from an MNH graph with a non-clique omitted set) can occur below 56.",
+  "current_focus": "HM-F1",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "HM-F0",
+      "title": "Exact census of maximal non-Hamiltonian graphs with every longest cycle to order 12",
+      "status": "closed",
+      "priority": 0,
+      "target": "Classify every MNH graph of order at most 12 up to isomorphism with every longest cycle and its residual, and decide Hoa's conjecture and Zhan's Questions 2 to 4 on that range.",
+      "value": "Raises the verified lower bound for the least counterexample order and extends OEIS A185306, which stopped at order 10 (31 graphs) since 2013; no counterexample or Questions 2 and 3 witness would have been decisive for the problem.",
+      "success_gate": "Every MNH graph of order at most 12 found with its complete longest-cycle residual data, the known-answer gate (A185306 for n <= 10) reproduced, generator counts equal to OEIS A001349, and an independent second implementation agreeing (EXP-001, EXP-002). Met 2026-11-07: Hoa holds through order 12, A185306(11) = 67 and A185306(12) = 151.",
+      "stop_conditions": [
+        "A generator count differs from OEIS A001349 or the known A185306 terms.",
+        "The independent re-check disagrees on a graph.",
+        "Order 13 and above need a structured generator (the plain generation is out of reach)."
+      ],
+      "novelty_status": "A185306(11) = 67 and A185306(12) = 151 are new terms relative to the OEIS entry (data to n = 10, checked 2026-11-07); Moulton's 2014 list (to order 20) was not located (HMB-004) and may already contain them [U]; the 1982 Jamrozik-Kalinowski-Skupien catalogue covers n <= 10; the platypus lists of Goedgebeur, Neyt and Zamfirescu are complete to n = 12. External novelty not independently confirmed.",
+      "manuscript_route": "census manuscript if the proposed focus HM-F2 is admitted (trigger: decision at the next review); until then research record",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001",
+        "EXP-002"
+      ]
+    },
+    {
+      "id": "HM-F1",
+      "title": "The least order of a counterexample to Hoa's conjecture",
+      "status": "active",
+      "priority": 1,
+      "target": "What is the least order n_0 at which a maximal non-Hamiltonian graph has a longest cycle whose residual is not complete: decide order 13 completely (case A with a universal vertex, case B without) and decide whether a counterexample of Zhan's type exists below order 56.",
+      "value": "The interval for n_0 is [13, 56] after the census; every decided order narrows it, and a counterexample below 56 would be the first one after Zhan's. The order-13 case B (maximum degree at most 9) is also the input the gadget mechanism needs for middles of Zhan-type counterexamples.",
+      "success_gate": "n_0 determined (a verified counterexample at the least order with every smaller order decided), or the bound n_0 >= 14 proved by completing order 13 (case A done: exactly 286 graphs with a universal vertex, all satisfying Hoa; case B open), or a proof that no Zhan-type counterexample exists below 56 from the gadget mechanism.",
+      "stop_conditions": [
+        "Order-13 case B exceeds its budget with the structured generator (the sizing probe of backlog HMB-006: about 10^12 graphs, 30 to 65 hours on 30 cores, an estimate and not a measurement).",
+        "Three consecutive experiments leave the interval for n_0 unchanged.",
+        "Zhan's Questions or the order of the least counterexample are settled externally."
+      ],
+      "novelty_status": "Not published elsewhere as of the searches of 2026-11-06 (arXiv, newest first, no follow-up to Zhan) and the portfolio review of 2026-11-19 (nothing new); Hoa 2005 (World Scientific, pp. 67-70) not obtained (HMB-003). No negative search is a novelty proof.",
+      "manuscript_route": "research records until the least order is decided or the census manuscript of HM-F2 is admitted; a counterexample would be a separate manuscript",
+      "first_bounded_action": "The order-13 case of maximum degree at most 9 (case B of backlog HMB-006; portfolio review rank 6, 25 to 35 percent): an MNH-restricted generator, with its gates at orders 10 to 12, before any production run.",
+      "evidence": [
+        "EXP-003",
+        "EXP-004",
+        "EXP-005",
+        "EXP-006",
+        "EXP-007",
+        "EXP-008"
+      ],
+      "review_2026_11_19": "Current focus from the portfolio review of 2026-11-19 (decision 5: the proposed focus stands, no external change; rank 6, order 13 case B, 25 to 35 percent)."
+    },
+    {
+      "id": "HM-F2",
+      "title": "A manuscript for the census results",
+      "status": "proposed",
+      "priority": 2,
+      "target": "Whether the census results (the new terms A185306(11) = 67 and A185306(12) = 151, Hoa's conjecture decided through order 12, the gadget bounds of EXP-003 and the order-13 universal-vertex case) have one central question and enough content to be a coherent manuscript.",
+      "value": "Every validated result needs a manuscript home (methodology 13), and the census extends a sequence stuck since 2013; the decision is deferred because the attribution and the prior list are not settled.",
+      "success_gate": "A decision at the next review, with a recorded coherence gate: a manuscript with its content bar met, or a recorded reason that the results stay research records.",
+      "stop_conditions": [
+        "Moulton's 2014 list or another source already contains the terms for orders 11 and 12.",
+        "Hoa 2005 is not obtained and the attribution cannot be settled (HMB-003)."
+      ],
+      "novelty_status": "Prerequisite open: Hoa 2005 not obtained (HMB-003); Moulton's list not located (HMB-004); no negative search is a novelty proof.",
+      "manuscript_route": "a new manuscript if admitted at the next review; no existing paper carries these results",
+      "first_bounded_action": "Decide at the next review; first obtain Hoa 2005 (HMB-003) and ask for Moulton's list (HMB-004).",
+      "evidence": []
+    }
+  ],
+  "manuscripts": [],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 8,
+      "classification": "research-record",
+      "manuscripts": []
+    }
+  ],
+  "no_manuscript_reason": "No manuscript yet: the census results (the new terms of OEIS A185306 at orders 11 and 12, Hoa's conjecture through order 12, the gadget bounds) wait for the order-13 case of maximum degree at most 9 (focus HM-F1); a manuscript is proposed as focus HM-F2 and decided at the next review."
+}

@@ -187,3 +187,40 @@ def test_versions_folder_parent_readme_is_checked(tmp_path, monkeypatch):
 def test_versions_folder_missing_parent_readme_names_path(tmp_path, monkeypatch):
     errors = build(tmp_path, monkeypatch, readme_text=readme("0.02", DOI_A), index_text=GOOD_INDEX, sub="versions/v0.02")
     assert any("parent README" in e and "manuscripts/prog/a/README.md" in e.replace(BS, "/") for e in errors)
+
+
+def _record_without_manuscript(tmp_path: Path, monkeypatch, reason):
+    prog = tmp_path / "program" / "prob"
+    prog.mkdir(parents=True)
+    (prog / "manuscript-map.md").write_text("F1" + NL, encoding="utf-8")
+    exp = tmp_path / "problems" / "area" / "prob" / "experiments" / "EXP-001-x"
+    exp.mkdir(parents=True)
+    (exp / "verdict.md").write_text("v", encoding="utf-8")
+    record = {
+        "schema_version": 1, "problem": "prob", "updated": "x", "original_problem": {}, "mission": "m",
+        "current_focus": "F1", "stop_policy": {},
+        "focuses": [{k: "x" for k in guard.FOCUS_KEYS} | {"id": "F1", "status": "active", "stop_conditions": ["s"]}],
+        "manuscripts": [],
+        "experiment_dispositions": [{"start": 1, "end": 1, "classification": "research-record", "manuscripts": []}],
+    }
+    if reason is not None:
+        record["no_manuscript_reason"] = reason
+    path = prog / "research-governance.json"
+    path.write_text(json.dumps(record), encoding="utf-8")
+    monkeypatch.setattr(guard, "ROOT", tmp_path)
+    monkeypatch.setattr(guard, "PROGRAM_ROOT", tmp_path / "program")
+    errors: list[str] = []
+    guard.validate_record(path, "", errors)
+    return errors
+
+
+def test_empty_manuscripts_with_a_reason_passes(tmp_path, monkeypatch):
+    assert _record_without_manuscript(tmp_path, monkeypatch, "no manuscript yet: decided at the next review") == []
+
+
+def test_empty_manuscripts_without_a_reason_fails(tmp_path, monkeypatch):
+    errors = _record_without_manuscript(tmp_path, monkeypatch, None)
+    assert any("no_manuscript_reason" in e for e in errors)
+    errors = _record_without_manuscript(tmp_path / "b", monkeypatch, "  ")
+    assert any("no_manuscript_reason" in e for e in errors)
+

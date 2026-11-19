@@ -243,9 +243,15 @@ def validate_record(path: Path, global_index: str, errors: list[str]) -> None:
         errors.append(f"{label}: manuscript-map.md does not name current focus {current_focus}")
 
     manuscripts_value = record.get("manuscripts")
-    if not isinstance(manuscripts_value, list) or not manuscripts_value:
-        errors.append(f"{label}: manuscripts must be a non-empty list")
+    no_manuscript_reason = record.get("no_manuscript_reason")
+    if manuscripts_value == [] and isinstance(no_manuscript_reason, str) and no_manuscript_reason.strip():
+        # A program with no manuscript yet states why; every disposition is then a research record.
         manuscripts: list[object] = []
+    elif not isinstance(manuscripts_value, list) or not manuscripts_value:
+        errors.append(
+            f"{label}: manuscripts must be a non-empty list, or an empty list with a non-empty no_manuscript_reason"
+        )
+        manuscripts = []
     else:
         manuscripts = manuscripts_value
 

@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "problem": "unsplittable-flow-cost",
+  "updated": "2026-11-19",
+  "original_problem": {
+    "status": "disproved externally",
+    "statement": "Goemans' conjecture on cost-preserving single-source unsplittable flow rounding (Conjecture 1.2 of STVZ25): for every single-source instance with a feasible fractional flow x there is an unsplittable flow with load at most x + d_max on every arc and cost at most the cost of x, is false.",
+    "priority": "The refutation is Rybin's seven-vertex planar instance (announced 2026-07-22/23 outside peer review; formalized in Isabelle/HOL as an AFP entry). The current lower bounds on the frontier constant belong to S. Nikolenko (three Zenodo preprints, 2026-07-30 to 2026-08-13, and the repository snikolenko/unsplittable-flows) and to A. De la Fuente (the refinement merged 2026-08-04). The value 9/8 as the supremum of the symmetric three-terminal template is Nikolenko's (2026-07-30); the Muffatti family (2026-08-31) is its limit point. Conjecture 1.3 (cost-free, two-sided, acyclic) is false by Berczi, Liu, Reis and Tarnawski (arXiv:2608.13983, Theorem 17).",
+    "prohibited_reframing": "No CAOS result may be described as the counterexample to Goemans' conjecture, as a lower bound on the frontier constant that CAOS found, or as the credit of 9/8. CAOS results are the independent exact verification of the counterexample and what it forces (16/15 on that instance), the exact instruments (separation LP, frontier value), exact checks of published families, and, once EXP-007 closes, the independent exact re-verification of the current record instances of Nikolenko and De la Fuente."
+  },
+  "mission": "Own, in exact rational arithmetic and independently of every author, the decision procedure for single-source unsplittable flow rounding with simultaneous congestion and cost constraints: verify the published counterexample and the current record instances, state precisely what each forces and whether its pricing is optimal, and keep every claim attributed to its author. The lower-bound record attempt is closed as superseded (UFB-070); no new record is pursued without a structural idea the Nikolenko series lacks.",
+  "current_focus": "UF-F3",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true,
+    "no_record_attempt_without_new_structural_idea": true
+  },
+  "focuses": [
+    {
+      "id": "UF-F0",
+      "title": "Independent exact verification of the 2026 counterexample and what it forces",
+      "status": "closed",
+      "priority": 0,
+      "target": "Decide, with an exact checker written from the conjecture statement and independent of the proposer's verifier, whether the 2026 claimed instance refutes Goemans' conjecture, what violation it forces (alpha_inst), and which proved results and neighbouring conjectures it leaves intact.",
+      "value": "A trusted baseline for the area: the claim was announced outside peer review with no expert confirmation found, and the quantitative content (a violation of exactly one unit over the allowed d_max, 16/15) was not stated in the announcement. No discovery priority is claimed.",
+      "success_gate": "A checker validated on hand-built instances with known answers (EXP-001), and the 2026 instance decided by exact enumeration with the nine-test consistency battery C1-C9 passing and an independent structural route agreeing (EXP-002). Met 2026-07-24: the instance verifies, alpha_inst = 16/15.",
+      "stop_conditions": [
+        "The independent enumeration disagrees with the claim (it did not: all nine tests pass).",
+        "The work only duplicates the proposer's verifier by shared code or by a supplied path list."
+      ],
+      "novelty_status": "Replication of an external claim, labelled as one. The quantitative content (alpha_inst = 16/15, the class-boundary placement on a K4 subdivision, the planar constant pinched between 1 and 2) was not stated in the announcement; the external status review of 2026-10-30 found that 16/15 and the separation LP optimum 2/7 are not stated in the sources then read. External novelty not independently confirmed.",
+      "manuscript_route": "counterexample-verification (published, v0.03)",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001",
+        "EXP-002"
+      ]
+    },
+    {
+      "id": "UF-F1",
+      "title": "The exact separation LP and the frontier value as instruments",
+      "status": "closed",
+      "priority": 1,
+      "target": "Decide, without searching over cost vectors, whether an instance admits any nonnegative cost vector that makes it a counterexample (the separation LP), and compute the largest violation any pricing can force on an instance (the frontier value), in exact rational arithmetic.",
+      "value": "The frontier constant is measurable per instance as an LP over prices, so every later search or verification can eliminate the cost vector; on the 2026 instance the published prices are optimal for the cost gap (2/7) and for the forced violation (16/15).",
+      "success_gate": "The separation LP derived and proved in both directions before the run and implemented exactly (EXP-003, optimum 2/7 on the 2026 instance, validated on 192 instances); the frontier value instrument with an exact Bland-rule simplex that cross-validates against sympy on every decidable case (EXP-004). Met 2026-07-25.",
+      "stop_conditions": [
+        "The exact simplex and the independent implementation disagree on a decidable case.",
+        "The instrument cannot be validated against hand-built or published instances."
+      ],
+      "novelty_status": "The separation LP re-derived by CAOS in its own words with proof (EXP-003 hypothesis); the frontier value instrument and the single-terminal minimality theorem (k = 1) are CAOS. The k <= 2 claim of round 1 was retracted in writing. Overlap with the threshold method of Afrasyab arXiv:2609.17568 noted as partly stylistic. External novelty not independently confirmed.",
+      "manuscript_route": "counterexample-verification: the separation-LP optimality and the single-terminal theorem are in v0.03; the frontier value (EXP-004) is a next-version trigger (UFB-066)",
+      "first_bounded_action": "EXP-003",
+      "evidence": [
+        "EXP-003",
+        "EXP-004"
+      ]
+    },
+    {
+      "id": "UF-F2",
+      "title": "Lower bounds on the frontier constant from the Muffatti family and the odd-cycle family",
+      "status": "closed as superseded 2026-11-19",
+      "priority": 2,
+      "target": "Find instances that force a violation above 16/15 (a lower bound on the frontier constant alpha*), first from the Muffatti planar family with demands (1, 3/4, 1) and then from odd-cycle conflict structures on C5.",
+      "value": "Was a lower bound on alpha* and on the planar constant; it is superseded because Nikolenko's series already holds larger bounds (general 1.28260069, planar 1.17353531974518).",
+      "success_gate": "An exact check of the Muffatti family at several parameters with optimal pricing (EXP-005, met 2026-11-07: 9/8 - (3/4) eps exactly), and an exact sweep of the C5 odd-cycle family against 9/8 (EXP-006, met 2026-11-15: all frontier values at most 1, largest 42/43).",
+      "stop_conditions": [
+        "Nikolenko's series supersedes the bound (met 2026-11-19, portfolio review decision 3, UFB-070).",
+        "No new record attempt without a structural idea the series lacks."
+      ],
+      "novelty_status": "Superseded: the value 9/8 was published by Nikolenko on 2026-07-30 as the exact supremum of the symmetric three-terminal template, a month before Muffatti's commit of 2026-08-31, so EXP-005 is an independent exact check of the family, not the source of the bound. The odd-cycle result of EXP-006 (Afrasyab's uniform C5 pricing is optimal with frontier 2/3 - eps) is a CAOS exact check on a sampled space; whether the family's supremum is 1 is open (UFB-067).",
+      "manuscript_route": "none: research records; Nikolenko's series holds the bounds and EXP-005 stays an exact check of the family",
+      "first_bounded_action": "EXP-005",
+      "evidence": [
+        "EXP-005",
+        "EXP-006"
+      ],
+      "review_2026_11_19": "Closed as superseded at the portfolio review of 2026-11-19 (decision 3; backlog UFB-070). EXP-005 and EXP-006 are research records; EXP-005's bound is credited to Nikolenko (9/8) and superseded by his records."
+    },
+    {
+      "id": "UF-F3",
+      "title": "Independent exact re-verification of the current record instances",
+      "status": "active",
+      "priority": 3,
+      "target": "Do the record instances of Nikolenko and De la Fuente, re-entered from the papers and the repository certificates, force exactly the claimed values under the CAOS exact library; is each instance planar or non-planar as stated, with a checkable certificate; and is the pricing of each instance optimal (does the frontier value equal the claimed value or exceed it)?",
+      "value": "Nikolenko's series (AI-assisted, self-corrected, no external reviewer named) holds the current lower bounds, certified only by the author's own verifiers; an instrument that predates the series and was written independently gives the first attributable external check, and it is the new content of the revision of the CAOS preprint, whose lower-bound statements are stale.",
+      "success_gate": "EXP-007: for the 11 concrete entries, alpha_inst equals the claimed value exactly (R1), the family closed forms hold on their grids (R2), the planarity statements are decided with checkable certificates (R3), and the frontier value of each entry is computed and compared with the claim, as an interval where a K17 run reaches its limit (R4). Two-sided per finite instance; the general theorems of the papers are not re-proved.",
+      "stop_conditions": [
+        "A value mismatch in R1 that survives a re-read of the primary page: reported with both readings of the definition, and the verification claim is withdrawn for that entry.",
+        "A K17 frontier run reaches its 6-hour limit: R4 is stated as the tested-level interval and the focus does not extend the run.",
+        "Three consecutive experiments after EXP-007 leave this success gate unchanged."
+      ],
+      "novelty_status": "A verification of others' results, attributable as such and credited to its authors; no CAOS bound is claimed. Primary sources read on 2026-11-19 (three Nikolenko preprints, the repository at HEAD a8324b3, the De la Fuente refinement); a skeptic re-ran the author-side verifier k17_refined.py, which is the author's check, not an independent one. A frontier value above a claim on a record instance would be a new lower bound, stated with the instance credited to its authors.",
+      "manuscript_route": "the next version of counterexample-verification (backlog UFB-066: state the current bounds with their authors, credit 9/8 to Nikolenko, keep alpha_inst = 16/15, record that Conjecture 1.3 is false, carry the UFB-068 verification as new content)",
+      "first_bounded_action": "EXP-007: the hypothesis is frozen (4f51d68b) and the run is in progress; R1 to R3 take minutes, R4 on the entries with at most 64 routings takes seconds, and the two K17 frontier runs have a 6-hour limit each.",
+      "evidence": [
+        "EXP-007 (hypothesis frozen, no verdict yet)"
+      ],
+      "review_2026_11_19": "Current focus from the portfolio review of 2026-11-19 (decision 3; rank 7, verification 60 to 70 percent, a new record 10 to 15 percent): EXP-007 has no verdict and therefore no disposition below."
+    },
+    {
+      "id": "UF-F4",
+      "title": "Is the factor-two merger constant of Nikolenko's Part III finite?",
+      "status": "proposed",
+      "priority": 4,
+      "target": "Open Problem 11.1 of Nikolenko's Part III: is the factor-two merger constant K finite (only K >= 2.5652 is known as a lower bound)?",
+      "value": "An open question stated by the author in the series that holds the current records; scoping whether the CAOS separation-LP instruments can bound K would show whether the instruments reach beyond verification.",
+      "success_gate": "A decision, after UF-F3, of whether the separation-LP and frontier-value instruments can bound K (a bounded scoping note); admission to experiments only with a theorem-sized target stated independently of a computation.",
+      "stop_conditions": [
+        "The scoping shows the instruments give no handle on K.",
+        "Open Problem 11.1 is settled externally."
+      ],
+      "novelty_status": "Open Problem 11.1 stated in Part III (Zenodo 10.5281/zenodo.21922203) as of the 2026-11-19 refresh; K >= 2.5652 is a lower bound only. No CAOS work on K exists; no negative search is a novelty proof.",
+      "manuscript_route": "none until a result exists; a result would be a note or a version of counterexample-verification, decided at its review",
+      "first_bounded_action": "Scoping of whether the CAOS instruments can bound K, after UFB-068 (backlog UFB-069).",
+      "evidence": []
+    },
+    {
+      "id": "UF-F5",
+      "title": "The smallest counterexample",
+      "status": "dormant",
+      "priority": 5,
+      "target": "How small can a counterexample be in terminals, vertices, arcs and d_max; in particular, is a counterexample with two terminals possible (the single-terminal case is a theorem; at two terminals a necessary condition holds and a 184-instance sweep found none)?",
+      "value": "Minimality was not published by anyone as of the recorded searches and was the first-ranked direction of the opening plan; it needs a canonical form and constraint generation before any exhaustion is honest.",
+      "success_gate": "An exhaustive search over small instances up to isomorphism, with an exact count and a provably complete reduction, deciding the 2026 instance's minimality in terminals, vertices, arcs and d_max; or a theorem for k = 2.",
+      "stop_conditions": [
+        "No canonical form with an exact completeness argument can be written (backlog UFB-011).",
+        "Constraint generation for the separation LP (UFB-034) does not scale to the exhaustion."
+      ],
+      "novelty_status": "Dormant: the opening plan (2026-07-24) records that nobody had published a minimality result and no later source read changes that; SSRN 7423078 (93 further arborescence shapes claimed) is unread (HTTP 403, UFB-064). External novelty not confirmed.",
+      "manuscript_route": "none until a result exists; k = 1 is already a theorem in counterexample-verification",
+      "first_bounded_action": "Declare the canonical form (UFB-011) with constraint generation (UFB-034), then the exhaustion (UFB-012).",
+      "evidence": []
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "counterexample-verification",
+      "path": "manuscripts/unsplittable-flow-cost/counterexample-verification",
+      "version": "0.03",
+      "version_doi": "10.5281/zenodo.22835200",
+      "concept_doi": "10.5281/zenodo.21554258",
+      "status": "published",
+      "split_action": "No split: one central question (the independent exact verification of the 2026 counterexample and what it forces). The next version (UFB-066) states the current lower bounds with their authors, credits 9/8 to Nikolenko, keeps alpha_inst = 16/15, records that Conjecture 1.3 is false, adds the frontier value of EXP-004 and carries the independent re-verification of EXP-007 as new content; a separate manuscript only if the lower-bound or minimality results become a central question of their own."
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 2,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "counterexample-verification"
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "counterexample-verification"
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "classification": "research-record",
+      "manuscripts": []
+    }
+  ]
+}

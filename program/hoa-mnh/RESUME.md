@@ -4,6 +4,8 @@ Updated 2026-11-06 (opened). First read for any session, per methodology 07. Der
 
 ## 1. State in one screen
 
+2026-11-19: methodology 13 adopted at the portfolio review (research-governance.json, manuscript-map.md; current focus HM-F1).
+
 2026-11-16: EXP-008 found no middle gadget among the 3,304 gadgets of the 286 order-13 MNH graphs with a universal
 vertex (independently verified); a Zhan-type middle needs order-13 case B or order >= 14.
 

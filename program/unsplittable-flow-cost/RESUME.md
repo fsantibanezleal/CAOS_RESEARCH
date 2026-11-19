@@ -5,6 +5,8 @@ The single first-read for a fresh session on this problem (methodology/07). Upda
 Labels: [MV] machine-verified in this repo, [D] derived by us on paper, [C] conjectural,
 [VERIFIED]/[CLAIMED]/[UNVERIFIED] as in the dossiers.
 
+2026-11-19: methodology 13 adopted at the portfolio review (research-governance.json, manuscript-map.md; current focus UF-F3).
+
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): hold; refresh the dossier before EXP-005 (UFB-061) and check the Conjecture 1.4 numbering (UFB-062).
 
 2026-11-19: portfolio review ([program/portfolio-review-2026-11-19.md](../portfolio-review-2026-11-19.md), decision 3).
