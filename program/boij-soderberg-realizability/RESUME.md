@@ -34,19 +34,24 @@ every hit re-verified in Singular and over QQ.
 
 | Experiment | Question | Verdict | Load-bearing result |
 |---|---|---|---|
-| EXP-001-pure-ray-census | the d3 <= 12 table: formula bounds, closures, random search; the d3 = 10 pair machine-checked | in preparation | - |
+| EXP-001-pure-ray-census | the d3 <= 12 table over S: census, obstructions at every m, closures, generic level modules and generic presentations over GF(32003), every hit rechecked in Singular and over QQ | hypothesis frozen 2026-11-19 | - |
+| EXP-002-heisenberg-primitive-points | the three S-obstructed parity-passing rays left open over U(H): (0,2,6,8), (0,3,9,12), (0,2,10,12); U/U(x^e, y^e); calibration on the Kostant modules; duality | hypothesis frozen 2026-11-19 | - |
 
 ## 4. In flight
 
-Opened 2026-11-19 (portfolio review of 2026-11-19, decision 1). Source-complete literature pass (level algebras, minimal
-multiples, U(H) and noncommutative Boij-Soderberg, follow-ups and tooling) running before the EXP-001 hypothesis is
-frozen; report in the private management mirror (`wip/caos-research/bs-source-complete-2026-11-19.md`).
+Opened 2026-11-19 (portfolio review of 2026-11-19, decision 1). The literature pass is done
+([context note](../../problems/commutative-algebra/boij-soderberg-realizability/context/2026-11-19-literature-pass.md)):
+over S the census is 68 realized, 12 obstructed, 140 undecided; c_d = 2 on the two d3 = 10 counterexample rays; over
+U(H) Kostant's theorem for sp_4 realizes eleven primitive points in characteristic 0 and leaves (0,2,6,8), (0,3,9,12)
+and (0,2,10,12) among the S-obstructed parity-passing rays. Derived by hand on 2026-11-19 [D]: U(H)/U(H)(x^2, y^2) has
+Hilbert function (1,2,2,2,1) and realizes (1,2,2,1) on (0,2,6,8) in characteristic other than 2 and 3 (EXP-002
+hypothesis, to be machine-checked). EXP-001 and EXP-002 are frozen and running.
 
 ## 5. Next actions
 
-1. Absorb the literature pass; freeze EXP-001's hypothesis; build and gate the census and the search driver.
-2. Run the search; re-verify every hit; publish the table state in the experiment verdict.
-3. Stage 4 (U(H)) on the S-obstructed parity-passing rays with d3 <= 9, toward the smallest counterexample (candidate B).
+1. EXP-001: census, gates, search, rechecks; the table state in the verdict.
+2. EXP-002: the three U(H) rays, U/U(x^e, y^e), calibration and duality; then a proof of the pattern for every e.
+3. With both: the smallest-counterexample statement (candidate B) and the first manuscript outline.
 
 ## 6. Where everything lives
 

@@ -12,3 +12,18 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   {6, 8, 3, 1}, `pureAll {0,4,9,10}` returns (70, 70, 15).
 - Plan: the realizability table of the 220 rays with d3 <= 12 (EXP-001: census, closures, random search), then U(H)
   toward the smallest counterexample to Question 6.1.
+
+## 2026-11-19 - literature pass absorbed; EXP-001 and EXP-002 frozen
+
+- Literature pass (four lanes, twelve items re-read by skeptics; [context note](../context/2026-11-19-literature-pass.md)):
+  16 primitive points of the dossier's undecided list are realized by printed sources or by scaling (Macaulay2
+  documentation outputs over ZZ/101; Soderberg's extremely compressed level modules); c_d = 2 on (0,4,9,10) and
+  (0,1,6,10); over U(H) the Kostant modules L(p,q) of sp_4 realize eleven primitive points in characteristic 0;
+  Boocher-Huang-Wolf (arXiv:2512.24320, December 2025) describe the rays with B1 = 2, of which (0,6,20,21) is the second.
+  Four claimed items did not survive the skeptics (Pieri candidates, a purity reading of relatively compressed
+  algebras, a tool limitation, a lane's reading of the gcd restriction).
+- Derived by hand, before any machine run: U(H)/U(H)(x^2, y^2) has Hilbert function (1,2,2,2,1) and the pure resolution
+  (1,2,2,1) of type (0,2,6,8) when 6 is invertible (written in the EXP-002 hypothesis).
+- EXP-001 (the table over S) and EXP-002 (the three rays left open over U(H), the family U/U(x^e, y^e), calibration and
+  duality) frozen before computation.
+
