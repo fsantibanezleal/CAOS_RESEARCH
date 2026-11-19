@@ -1,7 +1,8 @@
 # The modules U(H)/U(H)(x^e, y^e): a route to their Hilbert function for every e
 
-Date: 2026-11-19. Status: derivation [D] written before the machine results of EXP-002; to be compared with them
-(e <= 6) and then reviewed as a proof. Nothing here is a claim until both are done.
+Date: 2026-11-19. Status: derivation [D]. Steps 1 to 4 (the Hilbert series for every e, characteristic 0) are
+complete and agree with the machine results of EXP-002 for e <= 6; the socle step (purity for every e) is open. To be
+reviewed as a proof by a reader other than the writer before any claim.
 
 ## Setting
 
@@ -46,20 +47,40 @@ degree 2n + w. Hence
 
     HS(M_e)(t) = sum over w and n of ( |R_n| - rank T[R_n, C_n] ) t^(2n + w).
 
-## Step 3: ranks of contiguous blocks
+## Step 3: the ranks (complete)
 
-[binom(e, j - i)] is the Toeplitz matrix of the elementary symmetric polynomials e_k(1, ..., 1) (e ones). By the dual
-Jacobi-Trudi identity a minor with rows i_1 < ... < i_k and columns j_1 < ... < j_k is a skew Schur polynomial evaluated at
-e ones, which is nonzero (positive) exactly when i_s <= j_s <= i_s + e for every s. So the rank of T[R_n, C_n] is the size
-of a largest matching between rows a' and columns a with a' <= a <= a' + e, which for intervals is given by the greedy
-matching. [To be written with the exact reference for the non-vanishing criterion and checked against the machine
-ranks for e <= 6.]
+T = [binom(e, a - a')] has a nonzero entry exactly when 0 <= a - a' <= e. Only contiguous blocks occur, and only three
+kinds of minors are needed.
 
-## Step 4: the count
+- Weight w >= 0 (rows from 0, columns from e - w), n <= e - 1: rows 0..n, columns (e-w)..n. The square block on rows and
+  columns (e-w)..n is upper unitriangular, so the rank is the number of columns, n - e + w + 1 (zero when n < e - w).
+- Weight w >= 0, n >= e: rows 0..e-1; the columns beyond 2e - 1 vanish on these rows, so the usable columns are
+  (e-w)..min(n, 2e-1), in number U = min(n, 2e-1) - e + w + 1. The k by k block on rows 0..k-1 and columns
+  (e-w)..(e-w+k-1), k = min(e, U), is det[binom(e, (e-w) - s + s')], which by the dual Jacobi-Trudi identity is the Schur
+  polynomial of the rectangle with e - w rows and k columns evaluated at e ones: the number of semistandard tableaux of
+  that shape with entries at most e, positive because e - w <= e. So the rank is min(e, U).
+- Weight w = -q < 0 (rows from q, columns from e + q): for n < e + q there is no column; for n >= e + q the usable
+  columns are (e+q)..min(n, 2e-1) and the block on rows q..q+k-1 and columns (e+q)..(e+q+k-1) is lower unitriangular
+  (binom(e, e) on the diagonal, zero above), so the rank is min(e - q, U) with U = min(n, 2e-1) - e - q + 1.
 
-With the ranks of step 3, the sum of step 2 is a finite combinatorial expression in e; the claim is that it equals
-h_e(t). Checked by hand for e = 2: the blocks w = 1, 0, -1 contribute t + t^3, 1 + 2t^2 + t^4 and t + t^3, total
-1 + 2t + 2t^2 + 2t^3 + t^4. [General e: to be proved; EXP-002 gives the Hilbert functions for e <= 6 to compare.]
+In characteristic 0 these minors are nonzero, and the ranks cannot be larger (number of rows, number of nonzero
+columns). In characteristic p the condition is that p divides none of the row and column scalings a!/a'! (a <= 2e - 1)
+nor the tableau counts above; at e = 2 the counts are 2 and 3.
+
+## Step 4: the count (complete)
+
+Write q = |w| and n' = n - max(0, -w). From step 3 the dimension of the block of weight w in z-degree n is
+
+    D_q(n') = min(n' + 1, e - q) for 0 <= n' <= e - 1,    D_q(n') = max(0, 2e - 1 - q - n') for n' >= e,
+
+the same for w and -w. Its generating function in s is the trapezoid (1 + s + ... + s^(e-q-1)) (1 + s + ... + s^(e-1)). The
+class sits in total degree 2n + w = 2n' + q. Hence
+
+    HS(M_e)(t) = (1 + t^2 + ... + t^(2e-2)) * sum over w, |w| < e, of t^|w| (1 + t^2 + ... + t^(2(e-|w|-1))),
+
+and the last sum is (1 + t + ... + t^(e-1))^2 (group the monomials t^(a+b), a, b < e, by b - a). So
+HS(M_e)(t) = h_e(t) for every e, in characteristic 0. In particular M_e has finite length e^3. [Agrees with the machine
+Hilbert functions of EXP-002 for e = 2, ..., 6 over QQ, both instruments.]
 
 ## What the computation at e = 2 shows about the characteristic
 
