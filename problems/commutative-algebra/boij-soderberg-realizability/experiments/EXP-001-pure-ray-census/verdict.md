@@ -129,3 +129,19 @@ fails. Verdict: correct after fixes. The corrections to the text above:
 - Run notes: (0,2,3,6) was named as realized over every field by a formula; it is realized by a search hit rechecked
   over QQ (corrected in `artifacts/summary-notes.md`).
 
+## Addendum 2 (2026-11-19): the field scope after EXP-004, and a correction on the two rechecks recorded as failures
+
+- Prediction P4 and item 1 above say that the integer lifts of the hits on (0,3,8,10) and (0,3,11,12) are not pure over
+  QQ. That is wrong. The two rechecks were recorded as failures because their runs ended without a result line, after
+  about 110 s, when their stage was stopped; the script records such a run as a failure and did not keep the output.
+  Both modules are pure over QQ: resolved in Singular (tables (7,16,21,12) and (6,11,27,22), lengths 280 and 396), and
+  the first also by the recheck script run to the end (EXP-004, verdict and addendum 1). No hit of this experiment is
+  known not to lift.
+- With EXP-004 (maximal prime-field rank in every degree on all 130 verified hits, and the reviewed lift lemma), every
+  ray whose primitive point is realized here over GF(32003) is realized in characteristic 0. The table becomes: of the
+  220 rays, the primitive point is realized over k[x,y,z] in characteristic 0 on 193, excluded on 12 and open on 15.
+  The 57 rechecks over QQ that were not run and the 7 that reached the time limit are no longer needed for the field
+  scope.
+- Tooling: a run that ends without a result must be recorded as such, separately from a computed negative, with its
+  output kept (backlog BSB-022).
+

@@ -134,3 +134,13 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   length 396). The Macaulay2 results of EXP-001 on these two were false negatives; cause not established.
 - The lemma is a derivation and awaits review (BSB-020) before the table of EXP-001 is restated.
 
+## 2026-11-19 - The lift lemma reviewed: correct; 193 rays realized in characteristic 0
+
+- An independent reader derived the lemma in both forms and found it correct (two minor additions to the proof). On all
+  130 hits the prime-field rank is maximal in every needed degree, which forces the rational rank: the certificate
+  needs no computation over QQ.
+- The two rechecks that EXP-001 recorded as failures over QQ were runs cut short after about 110 s; the script recorded
+  a run without a result line as a failure. Both modules are pure over QQ (Singular; the recheck script run to the end
+  on one of them). Corrected in addenda of the EXP-001 and EXP-004 verdicts.
+- The table over k[x,y,z]: 193 rays realized in characteristic 0, 12 excluded, 15 open.
+

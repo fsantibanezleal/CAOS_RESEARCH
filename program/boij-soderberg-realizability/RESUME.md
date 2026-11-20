@@ -68,8 +68,10 @@ over QQ in a second system (addendum 1 of the EXP-001 verdict).
 
 ## 5. Next actions
 
-1. The review of the lift lemma of EXP-004 (BSB-020); then the field scope of the table of EXP-001 is updated in the
-   records and in the manuscript (193 rays realized in characteristic 0).
+1. The review, fixes and release of the first manuscript (BSB-013). The lift lemma of EXP-004 is reviewed (correct after
+   minor fixes): over k[x,y,z] the primitive point is realized in characteristic 0 on 193 of the 220 rays, excluded on
+   12 and open on 15; the two rechecks that EXP-001 recorded as failures over QQ were runs cut short, and both modules
+   are pure over QQ.
    Done on 2026-11-19: the general characteristic 2 statement is reviewed (in characteristic 2 a module with a generators
    and at most a + 1 relations of one degree e >= 2 never has finite length over U(H), so (1,2,2,1) on (0, e, 3e, 4e) is
    realized over neither ring for every e >= 2; context note `2026-11-19-characteristic-two-general.md`), and the rational
