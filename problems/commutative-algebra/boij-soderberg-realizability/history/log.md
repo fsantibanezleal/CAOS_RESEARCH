@@ -271,3 +271,8 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   exponent: pure pairs at (13,11), (13,7), (14,5) and six pairs with e = 15, 16). EXP-020 CONFIRMED (the members fixed by the
   exchange of x and y: pure pairs at (14,11), (15,11), (15,13), (15,17), (16,17), (16,19)). Every pair (e, p) with e <= 16 is
   settled except (11, 3). Backlog BSB-037 to BSB-039.
+- 2026-11-20: manuscript v0.03 published (10.5281/zenodo.24404456, concept 10.5281/zenodo.24385386): 156 pages, 56,564 words, 40 references. New title: the
+  point (1,2,2,1) on (0, e, 3e, 4e) fails only in characteristic 2 for 2 <= e <= 16 with e != 11 and is realized whenever an
+  odd prime p divides e(e - 1) or equals 2e - 1. It carries EXP-009 to EXP-020 and the ten derivations reviewed after v0.02
+  (Theorems E to P). Reviewed by a reader other than the writer: first review, fix pass, closing check, three further writing
+  passes, review of the additions, final confirmation (approve for release). Open: (11, 3), BSB-037, e >= 17.

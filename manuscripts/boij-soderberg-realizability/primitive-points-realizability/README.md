@@ -1,15 +1,16 @@
 # Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for 2 <= e <= 16 with e != 11, is realized whenever an odd prime p divides e(e-1) or equals 2e-1, and a census for d_3 <= 12
 
-Current public version: v0.02, published 2026-11-20 at
-[10.5281/zenodo.24388904](https://doi.org/10.5281/zenodo.24388904), under concept DOI
-[10.5281/zenodo.24385386](https://doi.org/10.5281/zenodo.24385386); 66 pages, 921,730 bytes, SHA-256
-`2ea9a3fab443b83b1edff39bff56e864f9a5c9fee244289b9e0e790f868a1f69`. The committed `main.pdf` is that published version.
-The source in this folder is v0.03, not released: it states the results obtained after v0.02 (listed below). The paper is
+Current public version: v0.03, published 2026-11-20 at
+[10.5281/zenodo.24404456](https://doi.org/10.5281/zenodo.24404456), under concept DOI
+[10.5281/zenodo.24385386](https://doi.org/10.5281/zenodo.24385386); 156 pages, 1,632,714 bytes, SHA-256
+`5e5faca593d00c89b506d111039283ffada858f7361335d5b689c74bcfebc055`. The committed `main.pdf` is that published version and
+the source in this folder is its source; it adds the results obtained after v0.02 (listed below). The paper is
 a preprint of the CAOS Research open-problems programme, problem `boij-soderberg-realizability`, written to the manuscript
-content bar (the source measures 56,564 words, 84 display equations, 11 figures, 62 tables, 40 references and 10 algorithms by
+content bar (v0.03 measures 56,564 words, 84 display equations, 11 figures, 62 tables, 40 references and 10 algorithms by
 `tools/zenodo/check_manuscript_depth.py`; v0.02 had 22,449 words, 22 display equations, 9 figures, 29 tables, 27 references
 and 7 algorithms). Version 0.01 was published on 2026-11-20 at
-[10.5281/zenodo.24385387](https://doi.org/10.5281/zenodo.24385387); v0.02 added the results on odd characteristic and on
+[10.5281/zenodo.24385387](https://doi.org/10.5281/zenodo.24385387); v0.02, published the same day at
+[10.5281/zenodo.24388904](https://doi.org/10.5281/zenodo.24388904), added the results on odd characteristic and on
 the family of pure pairs, the archived machine checks of the characteristic 2 theorem, and corrected the manifest table of
 v0.01 (it printed the size and hash of a copy of one file with CRLF line ends).
 
@@ -39,7 +40,7 @@ and reports, each result with an evidence mark ([MV] machine-verified, [D] prove
 - Theorem D: the pure pairs of forms of degree `e` are open in a determinantal locus and every component of the pure locus has dimension at least `4e - 4`; the published modules form a subfamily of dimension 2. The tangent space of the locus at `<x^e, y^e>` has dimension exactly `4e - 4` over the rationals for `e = 4, ..., 7`; explicit pure pairs over the rationals lie outside the orbit; a four-parameter linear family is proved to lie in the locus, with a pure general member, for every `e >= 4` in characteristic 0 or at least `2e` (EXP-007).
 - The machine checks of the characteristic 2 theorem and of the family at `e = 6, 7`, archived (EXP-005).
 
-The v0.03 source adds (each with its evidence mark and its limits):
+v0.03 adds (each with its evidence mark and its limits):
 
 - Theorem M (criterion): in characteristic `p >= 3`, for `f = A + b1 x + b2 y` and `g = B + d1 x + d2 y` with `A, B` of degree `e` and the `b`, `d` of degree `e - 1` in the centre `k[x^p, y^p, z]`, the commutator `gf - fg = -Dz` is central, and the pair is pure, with an explicit resolution, if and only if `U/(Uf + Ug)` has finite length, if and only if `zD`, `n(f)`, `n(g)` have no common zero other than the origin. Explicit pure pairs (cases A to D) exist for every `e >= 3` with `e = 0` or `1` modulo `p`, so `(1,2,2,1)` on `(0, e, 3e, 4e)` is realized whenever an odd prime `p` divides `e(e - 1)`. Theorem N: the elementary proof for an odd multiple of `p`, with arbitrary central forms. Machine checks: EXP-011 (16 central pairs up to `e = 15`, 5 pairs outside the hypotheses) and EXP-012 (11 explicit pairs up to `e = 13`, 1,600 random pairs of the class where the criterion and the pure Hilbert function agree, 3 pairs built to violate the criterion).
 - Theorems O and P: the explicit sequence of a pair is a complex exactly when the commutator commutes with the pair; those pairs are the images of `(x, y)` under graded endomorphisms of `U`; a nonzero such commutator is central (Theorem O, central or nothing); pure pairs of this kind exist only in characteristic `p` dividing `e(e - 1)`, never in characteristic 0 for `e >= 2`; pulling back along such an endomorphism of degree `d` multiplies every degree of every Betti table by `d` (Theorem P, scaling), so the set of `e` with `(1,2,2,1)` realized in characteristic `p` is closed under multiplication by `d >= 3` with `d = 0` or `1` modulo `p` (new pairs `(8,3)`, `(12,5)`, `(14,3)`, `(16,7)`). Proved on paper; ten pull-backs are checked by machine (EXP-013).
@@ -62,14 +63,14 @@ claims no priority; its literature searches are stated in the related work secti
 
 | File | What it is |
 |---|---|
-| `main.tex` | the paper (inline bibliography of 39 works); reads `numbers.tex`, the `tab_*.tex` and the `fig_*.tex` |
+| `main.tex` | the paper (inline bibliography of 40 works); reads `numbers.tex`, the `tab_*.tex` and the `fig_*.tex` |
 | `make_tables.py` | reads the archived artifacts of EXP-001 to EXP-020, recomputes the finite statements of the proofs, the Hilbert functions, ranks, commutators and orbit dimensions of the printed pairs, the admissible strata and the cells of the grid of pairs in exact arithmetic, stops with exit 1 when a value the text relies on differs, and writes `numbers.tex`, the tables and the figures (74 files); hashes of text artifacts are taken on LF-normalized bytes |
 | `numbers.tex` | every number of the text, as macros |
 | `tab_*.tex` | the tabular bodies of the tables (captions are in `main.tex`); the sources of the state are in `tab_statesrc.tex` (`e <= 10`), `tab_statesrcb.tex` (`11 <= e <= 14`) and `tab_statesrcc.tex` (`e = 15, 16`) |
 | `fig_*.tex` | the TikZ and pgfplots bodies of the figures, generated from the artifacts or, for the two diagrams, typed in `make_tables.py` |
 | `zenodo.json` | the deposit metadata of v0.03 for the release tool (title, creator, description, version notes, keywords, related identifiers, references); the references equal the bibliography of `main.tex` in the same order, and the related identifiers cite the works of the bibliography that print a DOI or an arXiv number |
-| `main.pdf` | the published PDF of v0.02 (the SHA-256 above); it is replaced at the release of v0.03 |
-| `build-report.json`, `render-report.json`, `publication-gate.json` | the measured build, the page renders that were read, and the approval record of the release of v0.02; they are replaced at the release of v0.03 |
+| `main.pdf` | the published PDF of v0.03 (the SHA-256 above) |
+| `build-report.json`, `render-report.json`, `publication-gate.json` | the measured build, the page renders that were read, and the approval record of the release of v0.03 |
 
 `main.pdf` is the published file; a rebuild is compared with it through the reports above.
 

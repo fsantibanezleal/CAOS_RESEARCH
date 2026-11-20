@@ -1,6 +1,6 @@
 # boij-soderberg-realizability: RESUME (session handoff)
 
-Updated 2026-11-20 (manuscript v0.02 published; EXP-009 to EXP-020 closed; ten derivations reviewed after v0.02; v0.03 in its last writing pass). First read for any session, per methodology 07. Derived view: experiment verdicts win.
+Updated 2026-11-20 (manuscript v0.03 published, 10.5281/zenodo.24404456; EXP-001 to EXP-020 closed; ten derivations reviewed after v0.02; next: the strategic review of BSR-F3). First read for any session, per methodology 07. Derived view: experiment verdicts win.
 
 ## 1. State in one screen
 
@@ -136,9 +136,10 @@ Published on 2026-11-20: the manuscript v0.02, [10.5281/zenodo.24388904](https:/
    proposition on the characteristic dividing the modulus. Working notes, not reviewed: one family of pairs
    x^e + alpha y^t, y^e + beta x^t governed by one form, with a filter of two congruences that matched every table
    computed (EXP-017).
-4. In flight: the manuscript v0.03 (BSB-030; plan in the coordination repository): last writing pass (items 3 and 5),
-   the review of its additions, release. Then the strategic review of the focus; backlog BSB-033, BSB-034, BSB-037 to
-   BSB-039, the 15 open rays with d3 >= 10, the substitution in the Kostant presentations (BSB-012), BSB-022.
+4. Published on 2026-11-20: the manuscript v0.03, [10.5281/zenodo.24404456](https://doi.org/10.5281/zenodo.24404456) (BSB-030 done): 156 pages,
+   everything in items 1 to 3 and 5, reviewed by a reader other than the writer (first review, fix pass, closing check,
+   review of the additions, final confirmation). Next: the strategic review of the focus; backlog BSB-033, BSB-034,
+   BSB-037 to BSB-039, the 15 open rays with d3 >= 10, the substitution in the Kostant presentations (BSB-012), BSB-022.
 5. Later on 2026-11-20. Two more derivations, each read by a reviewer other than the writer:
    `context/2026-11-20-pairs-with-exponent-t.md` (for the pairs x^e + alpha y^t, y^e + beta x^t the module splits over
    k[xy, z] and one form Delta governs the summands; under (C0), (F1), (F2), (F3) it has length e^3 and the pure Hilbert

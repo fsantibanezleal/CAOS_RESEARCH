@@ -77,8 +77,8 @@
         "A source is found that already contains the statement on odd characteristic: cite it and keep only what remains."
       ],
       "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
-      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (v0.02 published 2026-11-20)",
-      "first_bounded_action": "Done: EXP-005 to EXP-020 and the manuscript v0.02 (10.5281/zenodo.24388904); ten derivations reviewed after v0.02 (weight classes, central pairs, the criterion, endomorphisms, pull-back, pairs over the invariants, one congruence, the weight-zero projection, the pairs with exponent t, the explicit pairs of the linear family). In progress: the manuscript v0.03 (last writing pass, then the review of its additions by a reader other than the writer and the release). Next: the strategic review that closes this focus or renews it on BSB-037 and BSB-038.",
+      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (v0.02 and v0.03 published 2026-11-20)",
+      "first_bounded_action": "Done: EXP-005 to EXP-020; ten derivations reviewed after v0.02 (weight classes, central pairs, the criterion, endomorphisms, pull-back, pairs over the invariants, one congruence, the weight-zero projection, the pairs with exponent t, the explicit short pairs); the manuscript v0.03 reviewed by a reader other than the writer and published (10.5281/zenodo.24404456). Next: the strategic review that closes this focus or renews it on BSB-037 and BSB-038.",
       "evidence": [
         "EXP-005",
         "EXP-006",
@@ -108,27 +108,21 @@
     {
       "slug": "primitive-points-realizability",
       "path": "manuscripts/boij-soderberg-realizability/primitive-points-realizability",
-      "version": "0.02",
-      "version_doi": "10.5281/zenodo.24388904",
+      "version": "0.03",
+      "version_doi": "10.5281/zenodo.24404456",
       "concept_doi": "10.5281/zenodo.24385386",
       "status": "published",
-      "split_action": "No split: one central question (which primitive points of the pure rays of small degree are Betti tables of finite length modules over k[x,y,z] and over the Heisenberg enveloping algebra, and how the answer depends on the characteristic). v0.02 (2026-11-20) adds odd characteristic below 2e (EXP-006, EXP-008), the locus of pure pairs with its exact dimension at the power pair and the linear family (the two reviewed notes, EXP-007), the archived machine checks (EXP-005) and the correction of the manifest table. v0.03 (in writing, 2026-11-20): the criterion for pairs with a central commutator and its explicit pure pairs, the scaling of Betti tables by pull-back, the weight classes, the decomposition over k[xy, z] with one congruence, the weight-zero projection, the pairs with exponent t (two congruences give the pure Hilbert function, and a pure pair under one more coprimality), the explicit pairs of the linear family for p = 2e - 1 and p = 2e - 3, EXP-009 to EXP-020, and the new state of the characteristic question (e <= 16 settled except (11, 3)). No split: the same central question."
+      "split_action": "No split: one central question (which primitive points of the pure rays of small degree are Betti tables of finite length modules over k[x,y,z] and over the Heisenberg enveloping algebra, and how the answer depends on the characteristic). v0.02 (2026-11-20) adds odd characteristic below 2e (EXP-006, EXP-008), the locus of pure pairs with its exact dimension at the power pair and the linear family (the two reviewed notes, EXP-007), the archived machine checks (EXP-005) and the correction of the manifest table. v0.03 (2026-11-20) adds the criterion for pairs with a central commutator and its explicit pure pairs, the scaling of Betti tables by pull-back, the weight classes, the decomposition over k[xy, z] with one congruence, the weight-zero projection, the pairs with exponent t (coprimality conditions, two congruences and a scalar give the pure Hilbert function, and a pure pair under one more coprimality), the explicit short pairs for p = 2e - 1 and p = 2e - 3, EXP-009 to EXP-020, and the state of the characteristic question (e <= 16 settled except (11, 3)). No split: the same central question. A new version for corrections, for (11, 3), for the Betti table when Delta and A_(e-t) have a common factor, or for a decided open ray."
     }
   ],
   "experiment_dispositions": [
     {
       "start": 1,
-      "end": 8,
+      "end": 20,
       "classification": "primary-manuscript",
       "manuscripts": [
         "primitive-points-realizability"
       ]
-    },
-    {
-      "start": 9,
-      "end": 20,
-      "classification": "research-record",
-      "manuscripts": []
     }
   ]
 }
