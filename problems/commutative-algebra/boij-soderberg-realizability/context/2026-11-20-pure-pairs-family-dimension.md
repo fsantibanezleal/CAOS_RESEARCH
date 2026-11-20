@@ -104,9 +104,15 @@ excludes that case.)
   which is false). If the images of a basis of W in U/(z) = k[x, y] share a factor q of degree d, then M_W maps onto
   k[x, y]/(q), of dimension d in every degree from d - 1 on, so rank mu_(3e)(W) <= u(3e) - d. With d = h_e(3e) this puts
   the common-factor locus R_e inside D_e; R_e has codimension h_e(3e) in G_e, less than 2 h_e(3e), and its modules have
-  infinite length, so it contains no pure point. At e = 4 it is the resultant hypersurface. So D_e is reducible, it is
-  not empty in any characteristic, and a random W over GF(q) lies in D_4 with probability about 1/q, not q^(-2). None
-  of (a) to (d) is affected: W_0 is not in R_e, since x^e and y^e are coprime.
+  infinite length, so it contains no pure point. At e = 4 it is the resultant hypersurface. So D_e is not of the
+  expected codimension, it is not empty in any characteristic, and a random W over GF(q) lies in D_4 with probability
+  about 1/q, not q^(-2). D_e is reducible at e = 4 whenever it has a pure point (then D_4 is a proper closed set, of
+  dimension at most 13, that contains the irreducible hypersurface R_4 and a point outside it), and for e = 4 to 7
+  over the rationals, where the component through W_0 has dimension 4e - 4, less than the dimension of R_e
+  (EXP-007); for e >= 8 reducibility is not shown. (The first reviewed text said "D_e is reducible" for every
+  e >= 4; the review of the manuscript v0.02 pointed out that this does not follow, record
+  `bs-manuscript-v002-review-2026-11-20`, finding M2.) None of (a) to (d) is affected: W_0 is not in R_e, since x^e
+  and y^e are coprime.
 - The statement says nothing about odd characteristic below 2e: there P_e is open in D_e as well, but no pure point is
   known in advance. EXP-006 looks for one over small fields.
 - A count over a finite field tests (c): if a component of P_4 of dimension 12 is defined over GF(q) and geometrically

@@ -95,3 +95,13 @@ instrument and the run log are under the data root (`caos-research/boij-soderber
 - The manuscript v0.02 states items 1 to 3 and 6 with their marks, and items 4 and 5 as tested observations with the
   weight argument written out or cited as not proved.
 - A written proof of the weight argument for L_e, and the question whether L_e is in D_e for every e.
+
+## Addendum 1 (2026-11-20): two corrections from the review of the manuscript v0.02
+
+- The run time. The deviations above say that the whole run took 81 seconds; the artifact records 84.3 seconds
+  (`wall_seconds_total` in `artifacts/results.json`). The figure of the artifact stands.
+- Item 6 says that D_e "has a component that contains no pure point". That is established where the experiment and the
+  note show it: at e = 4 whenever a pure point exists, and for e = 4 to 7 over the rationals (the component through W_0
+  has dimension 4e - 4, less than the dimension of the common-factor locus). For other e the common-factor locus lies
+  in D_e, of codimension h_e(3e), and whether it is a component of its own is not shown.
+
