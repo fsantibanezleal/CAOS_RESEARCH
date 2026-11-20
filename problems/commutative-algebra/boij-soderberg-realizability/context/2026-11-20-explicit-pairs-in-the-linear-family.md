@@ -1,7 +1,8 @@
 # Explicit pure pairs in the linear family for p = 2e - 1 and p = 2e - 3
 
-Date: 2026-11-20. Status: derivation by the coordinating session, checked by machine (section 5); to be reviewed by
-a reader other than the writer. It depends on Theorem 2 and Corollary 3 of
+Date: 2026-11-20. Status: derivation by the coordinating session, checked by machine (section 5); reviewed by a
+reader other than the writer on 2026-11-20 (correct; seven minor repairs, applied here; the review recomputed both
+families on 194 primes each with its own code). It depends on Theorem 2 and Corollary 3 of
 `2026-11-20-pairs-with-exponent-t.md` (reviewed on 2026-11-20: correct, with eight minor repairs): every statement
 below rests on that note.
 
@@ -25,7 +26,8 @@ Facts from the note, for these pairs:
 - z does not divide Delta. (C1) holds: q(0, z) = q(-z, z) = - n z^2 is not zero.
 - If Delta is coprime to X and X', then (F1) and (F2) hold with forms c, c' of degree 1 (Corollary 3), and
   c c' = h (h + z) + mu Delta. Since c and c' are linear forms, mu = 0 exactly when c is a scalar multiple of h or of
-  h + z.
+  h + z (if mu = 0, by unique factorization of c c' = h (h + z); conversely, if c is a multiple of h or of h + z, that
+  form divides mu Delta, and it does not divide Delta by (C1)).
 - So by Theorem 2: if p = 0 or p >= 2e - 4, Delta is coprime to X and X', and c is a multiple of neither h nor h + z,
   then (f, g) is a pure pair: U/(Uf + Ug) has the Betti table (1, 2, 2, 1) on (0, e, 3e, 4e).
 
@@ -43,7 +45,8 @@ lambda = rho'(theta)/rho(theta) equals -2 or 2.
 c(0) (theta - theta') = theta c(theta') - theta' c(theta) and
 c(-1) (theta - theta') = theta c(theta) - theta' c(theta') (because -1 - theta' = theta and -1 - theta = theta').
 c is a multiple of h when c(0) = 0 and of h + 1 when c(-1) = 0. (ii) c = a (rho(theta) + rho'(theta)(h - theta)),
-the Taylor polynomial of a X'/X at theta, and rho(theta) is not zero; c(0) = 0 reads lambda = 1/theta = -2 and
+the Taylor polynomial of a X'/X at theta, and rho(theta) is not zero because X'(theta) is not zero (Delta is coprime
+to X'); c(0) = 0 reads lambda = 1/theta = -2 and
 c(-1) = 0 reads lambda = 1/(1 + theta) = 2. []
 
 ## 1. The prime p = 2e - 1
@@ -52,7 +55,8 @@ c(-1) = 0 reads lambda = 1/(1 + theta) = 2. []
 
     f = x^e + y^(e-2) z,      g = y^e + 2 x^(e-2) z
 
-is a pure pair, unless p = 11 or p = 43.
+is a pure pair for every such p other than 11 and 43. For p = 11 and p = 43, mu = 0 and Theorem 2 of the note does
+not apply (at p = 11 the pair is not pure, computed in U; at p = 43, e = 22, its Betti table is not known).
 
 *Proof.* n = 2 and q = (h - 1)(h + 2): theta = 1, theta' = -2, distinct because p is not 3. Modulo p, w = -1, so
 q(h + w) = q(h - 1) and q(h - w) = q(h + 1); and q(theta - 1) = - 2 theta, q(theta + 1) = 2 theta + 2 = - 2 theta'
@@ -79,7 +83,9 @@ for p = 11, e = 6, the pair with n = 3, f = x^6 + y^4 z, g = y^6 + 3 x^4 z (the 
 p = 43, e = 22, the pair with n = 1, f = x^22 + y^20 z, g = y^22 + x^20 z.
 
 **Corollary A.** For every prime p >= 5 the primitive point (1, 2, 2, 1) of the ray (0, e, 3e, 4e) with
-e = (p + 1)/2 is the Betti table of a module over U over GF(p), with an explicit pair of generators.
+e = (p + 1)/2 is the Betti table of a module over U over GF(p), with an explicit pair of generators: the pair of
+Theorem A, or the short pair with n = 3 (p = 11) or n = 1 (p = 43). (By Theorem 2 of the note on the pairs with
+exponent t, applied to these pairs.)
 
 (For p = 3, e = 2, the point is realized over GF(3) by the pair of EXP-003; that case is outside this note.)
 
@@ -89,7 +95,9 @@ e = (p + 1)/2 is the Betti table of a module over U over GF(p), with an explicit
 
     f = x^e + y^(e-2) z,      g = y^e - (1/4) x^(e-2) z
 
-is a pure pair, unless the Fermat quotient q_p(2) = (2^(p-1) - 1)/p is congruent to 1/2 or to 3/2 modulo p.
+is a pure pair whenever the Fermat quotient q_p(2) = (2^(p-1) - 1)/p is congruent neither to 1/2 nor to 3/2 modulo
+p. When it is congruent to 1/2 or to 3/2, mu = 0 and Theorem 2 of the note does not apply (at p = 5 the pair is not
+pure, computed in U).
 
 *Proof.* n = -1/4 and q = (h + 1/2)^2, theta = -1/2. Modulo p, w = 1, so q(h + w) = (h + 3/2)^2 and
 q(h - w) = (h - 1/2)^2, and - l = 2e - 3 - l gives
@@ -115,22 +123,27 @@ section 5).
 
 **Corollary B.** For every prime p with 5 <= p <= 2,000,000 the primitive point (1, 2, 2, 1) of the ray
 (0, e, 3e, 4e) with e = (p + 3)/2 is the Betti table of a module over U over GF(p), with an explicit pair of
-generators: the pair of Theorem B, or the short pair with n = 3 (p = 5) or n = 1 (p = 30577, 45827).
+generators: the pair of Theorem B, or the short pair with n = 3 (p = 5) or n = 1 (p = 30577, 45827). (By Theorem 2
+of the note on the pairs with exponent t, applied to these pairs.)
 
 ## 3. The rule of the linear family
 
 The note on the weight-zero projection proves that for an odd prime p <= 2e - 5 no member of the stratum of the
-linear family has finite length. Corollaries A and B give the other half of the rule "pure members exactly when
-2e - p <= 3" for p = 2e - 1 (every e) and for p = 2e - 3 (every e with p <= 2,000,000; beyond that bound, whenever
-q_p(2) is not 1/2 or 3/2, and otherwise as soon as one short pair satisfies the conditions).
+linear family has finite length. The rule read off the computations was: for e >= 4 and a prime p with e < p < 2e,
+the stratum holds pure members exactly when 2e - p <= 3. Corollaries A and B give the other half of it, resting on
+Theorem 2 of the note on the pairs with exponent t: for p = 2e - 1 (every e >= 4) and for p = 2e - 3 (every e >= 4
+with p <= 2,000,000; beyond that bound, whenever q_p(2) is not 1/2 or 3/2, and otherwise as soon as one short pair
+satisfies the conditions). The case e = 3, p = 5 of Corollary A is outside the linear family as it was defined
+(e >= 4).
 
 ## 4. What is not proved
 
 - That for a prime p = 2e - 3 above 2,000,000 with q_p(2) = 1/2 or 3/2 another member works (it does at the three
   exceptional primes found).
-- Anything for members of the linear family with alpha or beta not a multiple of z; the conditions of the note
-  apply to them, and about half of the products n = ab pass in every case computed (section 5), but no closed form
-  is given.
+- Anything for members of the linear family with alpha or beta not a multiple of z: the conditions of the note
+  apply to them, but (C1) is then no longer automatic and no closed form is given.
+- A closed form for a general product n = ab of a short pair: between one quarter and about one half of the
+  products n pass at every (e, p) computed (1 of 4 at (4, 5), 2 of 4 at (3, 5), 21 of 46 at (24, 47)).
 - The statements depend on Theorem 2 of the note on the pairs with exponent t.
 
 ## 5. Machine checks
