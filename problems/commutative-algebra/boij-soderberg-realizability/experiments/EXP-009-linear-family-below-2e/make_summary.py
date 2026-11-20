@@ -1,0 +1,194 @@
+"""EXP-009: totals per pair, the predictions as counts, and results-summary.md, all from results.json.
+
+Every number of results-summary.md is computed from the records of artifacts/results.json.  Counts and members only: no statement
+about realizability is made here (the coordinating session draws the conclusions).
+"""
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+import exp009_routine as X  # noqa: E402
+from exp009_routine import R  # noqa: E402
+
+P2_PAIRS = [(4, 5), (4, 7), (5, 7), (6, 7), (6, 11), (7, 11), (7, 13)]
+P3_PAIRS = [(4, 3), (5, 3), (5, 5), (6, 3), (6, 5), (7, 3), (7, 5), (7, 7)]
+
+
+def _merge(dst, src):
+    for k, v in src.items():
+        dst[k] = dst.get(k, 0) + v
+
+
+def compute_totals(res):
+    out = {}
+    for key, pr in sorted(res["pairs"].items(), key=lambda kv: (kv[1]["family"], kv[1]["e"], kv[1]["p"])):
+        e, p, fam = pr["e"], pr["p"], pr["family"]
+        r = R.target_rank(e)
+        ids = [c for c in pr.get("rank_chunk_ids", []) if c in res["rank_chunks"]]
+        recs = [res["rank_chunks"][c] for c in ids]
+        hist, above = {}, []
+        for c in recs:
+            _merge(hist, c["rank_hist"])
+            above += c["above"]
+        hist = {k: hist[k] for k in sorted(hist, key=int)}
+        n = sum(hist.values())
+        s2 = pr.get("s2")
+        t = {"key": key, "e": e, "p": p, "family": fam, "field": pr["field"], "target_rank": r, "members_planned": pr["n_members"],
+             "members": n, "rank_complete": n == pr["n_members"], "rank_hist": hist,
+             "rank_at_most_r": sum(v for k, v in hist.items() if int(k) <= r), "rank_exactly_r": hist.get(str(r), 0),
+             "rank_above_r": sum(v for k, v in hist.items() if int(k) > r), "above_members": above,
+             "rank_seconds": pr.get("rank_seconds")}
+        if s2:
+            t.update({"examined": s2["examined"], "pure_hilbert": s2["pure_hilbert"], "tables": s2["betti_computed"],
+                      "pure": s2["pure"], "s2_complete": s2["complete"], "stopped_early": s2["stopped_early"],
+                      "stopped_by_budget": s2["stopped_by_budget"], "tables_cap_reached": s2["tables_cap_reached"],
+                      "other_hilbert_members": len(s2["members_other_hilbert"]), "other_hilbert_classes": len(s2["hilbert_table"]),
+                      "nonpure_tables": s2["nonpure_tables"], "s2_seconds": s2["seconds"]})
+        else:
+            t.update({"examined": None, "pure_hilbert": None, "tables": None, "pure": None, "s2_complete": False,
+                      "stopped_early": False, "stopped_by_budget": False, "tables_cap_reached": False,
+                      "other_hilbert_members": None, "other_hilbert_classes": None, "nonpure_tables": {}, "s2_seconds": None})
+        out[key] = t
+    return out
+
+
+def predictions(totals):
+    """P1 to P3 as counts per pair."""
+    p1, p2, p3 = {}, {}, {}
+    for e, p in X.MAIN_PAIRS:
+        t = totals.get(X.pair_key(e, p, "X"))
+        if t:
+            p1["%d,%d" % (e, p)] = {"members": t["members"], "of": t["members_planned"], "rank_above_r": t["rank_above_r"],
+                                    "holds": t["rank_complete"] and t["rank_above_r"] == 0}
+    for name, pairs, d in (("P2", P2_PAIRS, p2), ("P3", P3_PAIRS, p3)):
+        for e, p in pairs:
+            t = totals.get(X.pair_key(e, p, "X"))
+            y = totals.get(X.pair_key(e, p, "Y"))
+            if not t or t["pure"] is None:
+                continue
+            row = {"pure_over_GF(p)": t["pure"], "examined_X": t["examined"], "of_rank_r_X": t["rank_exactly_r"],
+                   "complete_X": t["s2_complete"] or t["stopped_early"]}
+            if y and y["pure"] is not None:
+                row.update({"Y_pure_over_GF(p^2)": y["pure"], "Y_examined": y["examined"], "Y_rank_r": y["rank_exactly_r"]})
+            row["holds"] = (t["pure"] > 0) if name == "P2" else (t["pure"] > 0 or bool(y and y["pure"]))
+            d["%d,%d" % (e, p)] = row
+    return {"P1": p1, "P2": p2, "P3": p3}
+
+
+def totals_text(totals):
+    lines = ["%-8s %-8s %9s %9s %9s %7s %9s %8s %7s" % ("(e, p)", "field", "members", "rank<=r", "rank=r", "above", "examined",
+                                                     "pureHF", "pure")]
+    for t in totals.values():
+        lines.append("%-8s %-8s %9d %9d %9d %7d %9s %8s %7s" % (
+            "(%d, %d)" % (t["e"], t["p"]), t["field"], t["members"], t["rank_at_most_r"], t["rank_exactly_r"], t["rank_above_r"],
+            t["examined"], t["pure_hilbert"], t["pure"]))
+    return "\n".join(lines)
+
+
+def _table_text(rows):
+    return "none" if rows is None else "; ".join("b_%d,%d = %d" % tuple(r) for r in rows)
+
+
+def _fmt_secs(s):
+    return "n/a" if s is None else "%.0f" % s
+
+
+def write_summary(res, path):
+    T, P = res["totals"], res["predictions"]
+    L = ["# EXP-009 results summary", "",
+         "Generated by make_summary.py from artifacts/results.json; every number below is computed, none is typed.",
+         "Hypothesis: hypothesis.md (frozen). Counts and members only: no statement of realizability is made here.", "", "## Gates", ""]
+    for g in ("G1", "G2", "G3"):
+        r = res["gates"].get(g)
+        if r is None:
+            L.append("- %s: not run" % g)
+        elif r.get("blocked"):
+            L.append("- %s: BLOCKED, %s" % (g, r["reason"]))
+        else:
+            extra = ""
+            if g == "G1":
+                c = r.get("controls")
+                extra = " (direct part: %d cases, %s; control pairs: %s)" % (
+                    len(r["direct"]["cases"]), "passed" if r["direct"]["passed"] else "failed",
+                    "not checked" if c is None else ("passed" if c["passed"] else "failed"))
+            if g == "G2":
+                extra = " (%s; %d pure members in the sample, %d with the same pure table from both instruments)" % (
+                    r["singular"], r["sample_members"], r["agree_and_pure_in_I2"])
+            if g == "G3":
+                extra = " (%s)" % r["last_line"]
+            L.append("- %s: %s%s" % (g, "PASSED" if r["passed"] else "FAILED", extra))
+    for fam, title in (("X", "Family X: every member over GF(p)"), ("Y", "Family Y: 20,000 random members over GF(p^2)")):
+        rows = [t for t in T.values() if t["family"] == fam]
+        if not rows:
+            continue
+        L += ["", "## " + title, "",
+              "r = 2 u(2e) - 2 is %s. 'Examined' counts the members of rank r whose Hilbert function was computed; 'pure Hilbert "
+              "function' those with h_e; 'pure' those whose computed Betti table is (1, 2, 2, 1) in degrees (0, e, 3e, 4e)." % ", ".join(
+                  "%d (e = %d)" % (R.target_rank(e), e) for e in (4, 5, 6, 7)), "",
+              "| e | p | Field | Members | Rank at most r | Rank exactly r | Rank above r | Examined | Pure Hilbert function | Betti tables | Pure | Second stage | Seconds (rank, second stage) |",
+              "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+        for t in rows:
+            stage = "not run" if t["examined"] is None else (
+                "complete" if t["s2_complete"] else ("early stop" if t["stopped_early"] else (
+                    "Betti cap" if t["tables_cap_reached"] else ("BUDGET" if t["stopped_by_budget"] else "partial"))))
+            L.append("| %d | %d | %s | %d%s | %d | %d | %d | %s | %s | %s | %s | %s | %s, %s |" % (
+                t["e"], t["p"], t["field"], t["members"], "" if t["rank_complete"] else " of %d" % t["members_planned"],
+                t["rank_at_most_r"], t["rank_exactly_r"], t["rank_above_r"], t["examined"], t["pure_hilbert"], t["tables"], t["pure"],
+                stage, _fmt_secs(t["rank_seconds"]), _fmt_secs(t["s2_seconds"])))
+    L += ["", "## Distribution of rank mu_3e per pair", ""]
+    for t in T.values():
+        L.append("- (%d, %d) %s: %s" % (t["e"], t["p"], t["field"], ", ".join("%s: %d" % kv for kv in t["rank_hist"].items())))
+    L += ["", "## Members of rank above r", ""]
+    anyabove = False
+    for t in T.values():
+        if t["above_members"]:
+            anyabove = True
+            L.append("- (%d, %d) %s: %d members, first: %s" % (t["e"], t["p"], t["field"], len(t["above_members"]), "; ".join(
+                "params %s rank %d" % (m["params"], m["rank"]) for m in t["above_members"][:5])))
+    if not anyabove:
+        L.append("- none in any pair")
+    L += ["", "## Members of rank r with the pure Hilbert function but another Betti table, and with another Hilbert function", ""]
+    for t in T.values():
+        if t["examined"] is None:
+            continue
+        n_np = sum(t["nonpure_tables"].values())
+        L.append("- (%d, %d) %s: %d of %d members with the pure Hilbert function have another table (%d distinct); %d of %d examined "
+                 "members have another Hilbert function (%d distinct)" % (
+                     t["e"], t["p"], t["field"], n_np, t["pure_hilbert"], len(t["nonpure_tables"]), t["other_hilbert_members"],
+                     t["examined"], t["other_hilbert_classes"]))
+    L += ["", "## Predictions as counts", ""]
+    L.append("- P1 (every member of L_e over GF(p) has rank mu_3e at most r, the fifteen pairs with p < 2e): " + "; ".join(
+        "(%s) %d above r of %d members%s" % (k, v["rank_above_r"], v["members"], "" if v["holds"] else " [does not hold]")
+        for k, v in P["P1"].items()))
+    for name, desc in (("P2", "a pure member over GF(p), e < p < 2e"), ("P3", "a pure member over GF(p) or GF(p^2), p <= e")):
+        L.append("- %s (%s):" % (name, desc))
+        for k, v in P[name].items():
+            y = ("; over GF(p^2) %d pure in %d examined of %d of rank r" % (v["Y_pure_over_GF(p^2)"], v["Y_examined"], v["Y_rank_r"])
+                 if "Y_pure_over_GF(p^2)" in v else "")
+            L.append("    - (%s): %d pure over GF(p) (%d examined of %d of rank r)%s; prediction %s" % (
+                k, v["pure_over_GF(p)"], v["examined_X"], v["of_rank_r_X"], y, "holds" if v["holds"] else "does not hold"))
+    L += ["", "## Explicit pure members (PBW monomials x^i y^j z^k; y x = x y - z; coefficients as symmetric residues)", ""]
+    g2 = res["gates"].get("G2", {}).get("rows", [])
+    shown = {}
+    for r in g2:
+        if shown.get(r["pair"], 0) >= 3 or not r.get("agree"):
+            continue
+        e, p, fam = r["pair"].split("|")
+        pr = res["pairs"][r["pair"]]
+        m = next(mm for mm in pr["s2"]["members_pure_hilbert"] if mm["index"] == r["index"])
+        shown[r["pair"]] = shown.get(r["pair"], 0) + 1
+        F = R.make_field(pr["field"])
+        L.append("- (e, p) = (%s, %s), %s, member %d, (a, b, c, d) = %s: f = %s ; g = %s ; Betti table, uhlib: %s ; Singular: %s" % (
+            e, p, pr["field"], m["index"], m["params"], R.poly_text(F, m["basis"][0]), R.poly_text(F, m["basis"][1]),
+            _table_text(r["betti_I1"]), _table_text(r["betti_I2"])))
+    if not g2:
+        L.append("- G2 has not been run")
+    pairs_without = [t for t in T.values() if t["pure"] == 0]
+    L += ["", "Pairs with no pure member among the members examined: " + (", ".join(
+        "(%d, %d) over %s" % (t["e"], t["p"], t["field"]) for t in pairs_without) or "none"), ""]
+    L.append("Wall time of the commands: " + ", ".join("%s %.0f s" % (r["command"], r["seconds"]) for r in res["runs"])
+             + "; total %.0f s." % res.get("wall_seconds_total", 0))
+    L.append("")
+    Path(path).write_text("\n".join(L), encoding="utf-8", newline="\n")

@@ -225,3 +225,14 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - Records: governance (v0.02, EXP-001 to EXP-008 primary evidence, the gate of BSR-F3 met), map, RESUME, backlog
   BSB-024 and BSB-027 done, state. EXP-009 is running.
 
+## 2026-11-20 - EXP-009: the linear family below characteristic 2e
+
+- Every member of L_e over GF(p) for e = 4 to 7 and every odd p below 2e (fifteen pairs), with five controls and GF(p^2)
+  where no pure member was found. No member has rank above r in any pair.
+- Pure members at (4,5), (4,7), (5,7), (6,11), (7,11), (7,13), confirmed by Singular (55 of 55) and rebuilt by the
+  coordinating session: x^6 + y^4 z, y^6 + 3 x^4 z over GF(11); x^7 + y^5 z, y^7 + 3 x^5 z over GF(11);
+  x^7 + y^5 z, y^7 + x^5 z over GF(13). So e = 6 is realized in characteristic 11 and e = 7 in 11 and 13.
+- No pure member for p at most e (every member has rank below r), at (5,5) and at (6,7).
+- Open: e = 6 at p = 5, 7; e = 7 at p = 3, 5, 7; e >= 8 below 2e. Not in the manuscript v0.02 (published before this
+  run ended); backlog BSB-030.
+
