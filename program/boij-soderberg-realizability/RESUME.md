@@ -53,6 +53,7 @@ BSR-F3, proposed).
 | EXP-004-lift-certificates | do the prime-field realizations of EXP-001 lift to characteristic 0? A rank test per degree on the lifted integer matrices, with a lemma on flat lifts of pure resolutions, on the 130 verified hits (64 as known answers) | CONFIRMED (2026-11-19) | the rank test passes on all 130 hits (two instruments; one matrix by one instrument), reproduces the 64 known answers, and with the lift lemma makes every ray realized over GF(32003) a ray realized in characteristic 0 (193 of 193, 147 before); the two rechecks of EXP-001 that had failed over QQ were false negatives (both modules are pure over QQ in Singular); the lemma awaits review (BSB-020) |
 | EXP-005-characteristic-two-machine-checks | do the repository's instruments reproduce the reviewers' machine checks of the characteristic 2 theorem and of the family at e = 6, 7? Exhaustive quadrics and cubics over GF(2), random quartics to septics and matrices over GF(2), GF(4), GF(16), the sharpness shapes, 24 modules of the family | CONFIRMED (2026-11-20) | 0 finite length cases of 1,574 with b <= a + 1; every eventually constant case has the value (a(a+1)/2) L.L; b = a + 2 gives finite length in general; U/U(x^e, y^e) pure exactly for p >= 2e at e = 6, 7 (primes up to 31, and QQ) |
 | EXP-006-odd-characteristic-below-2e | is the point (1,2,2,1) of (0, e, 3e, 4e) realized over U in odd characteristic below 2e? Exhaustive cubics over GF(3); random cubics over GF(5), GF(9), GF(25), GF(27); random quartics over GF(3), GF(5), GF(7), GF(9) and, as controls with the orbit test, GF(11), GF(13); quintics over GF(3) | CONFIRMED on its question (2026-11-20); one prediction refuted | explicit pure pairs over GF(3), GF(5) at e = 3 and over GF(3), GF(5), GF(7) at e = 4, so for e = 2, 3, 4 the point fails only in characteristic 2; at e = 5 realized in characteristic 3; 217 pure spaces over GF(11), GF(13), none in the orbit of <x^4, y^4>; the locus of the rank condition is not of the expected codimension (it contains the resultant hypersurface) |
+| EXP-007-pure-family-at-the-power-pair | do the repository's instruments reproduce the review's computations on the family of pure pairs through <x^e, y^e>? The tangent space of the rank locus (e = 4 to 7; the rationals, GF(13), GF(17), GF(32003)), five explicit pairs over the rationals with controls, the linear family, a plane section, the common-factor locus | CONFIRMED (2026-11-20) | tangent dimension exactly 4e - 4 over the rationals (12, 16, 20, 24), so the pure locus is smooth of that dimension at <x^e, y^e> in characteristic 0; 22 at e = 6 over GF(13) and 26 at e = 7 over GF(17); explicit pure modules over the rationals outside the published family, for example U/U(x^4 + x y^3, y^4) |
 
 ## 4. In flight
 
@@ -97,12 +98,10 @@ State of the characteristic question for the point (1,2,2,1) of (0, e, 3e, 4e) o
 (Theorem C); always in characteristic 0 or at least 2e (Theorem A); for e = 2, 3, 4 also in every odd characteristic
 below 2e, by explicit pairs (EXP-003 at e = 2, EXP-006 at e = 3, 4); for e = 5 in characteristic 3, open in 5 and 7;
 open for e >= 6 below 2e. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e> in
-characteristic 0 or at least 2e (context note of 2026-11-20, reviewed: correct after fixes); the review reports the
-dimension exactly 4e - 4 at that point over QQ for e = 4 to 7 and explicit pure pairs over QQ outside the orbit, not
-yet archived.
+characteristic 0 or at least 2e (context note of 2026-11-20, reviewed: correct after fixes); at that point the
+dimension is exactly 4e - 4 over QQ for e = 4 to 7, and explicit pure pairs over QQ lie outside the orbit (EXP-007).
 
-1. BSB-025: one experiment that archives the review's computations (tangent space at <x^e, y^e>, explicit pairs over
-   QQ with two instruments, the common-factor locus), hypothesis frozen first.
+1. Done: BSB-025 (EXP-007 CONFIRMED: the review's computations archived with two instruments and a third computation).
 2. BSB-027: the manuscript v0.02 (odd characteristic for e = 3, 4; the family of pure pairs; EXP-005 cited for the
    machine claims; the correction BSB-024 of the manifest table), with a review by a reader other than the writer.
 3. BSB-026: the odd characteristics not yet searched (e = 5 at p = 5, 7; e = 6, 7), and whether a construction covers
