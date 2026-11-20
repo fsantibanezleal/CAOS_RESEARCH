@@ -146,6 +146,31 @@ What is missing for a statement: the cyclic summand and the generators of higher
 length N_u >= e (e - 1) for the converse, the case where Delta has roots in the prime field (pure members with such
 roots exist), and the socle for the Betti table.
 
+## One family for every exponent t (sketch)
+
+The linear family and the stratum of the central pairs are the two ends of one family. For t with the parity of e
+and 1 <= t <= e - 2, and d = (e - t)/2:
+
+    f = x^e + alpha(h, z) y^t,      g = y^e + beta(h, z) x^t,      alpha, beta forms of degree d
+
+(t = e - 2: the linear family; t = 1: the stratum of the central pairs; at e = 9, t = 5 is S(7; 0, 2) and t = 3 is
+S(6; 0, 3)). The products e_n f, e_n g link v_j and v_(j+e+t), and the same computation gives torsion relations
+T_j = - a_f(j + t) sigma^(j+t)(Delta_t) with
+
+    Delta_t = alpha sigma^(e-t)(beta) - A_(e-t)(h)        (degree e - t = 2d),
+
+which is - q for t = e - 2 and Delta for t = 1. There are 2t + 1 cyclic summands (indices -t, ..., t) and e - t - 1
+summands on two generators. Expected, by the count that works for t = 1: two congruences modulo Delta_t, each d - 1
+conditions, so e - t - 2 conditions on the e - t + 1 parameters of (alpha, beta) up to scaling, and a family of
+dimension 3 of members with the pure Hilbert function when it is not empty. The projection on the weight-zero summand
+(the reviewed half of this story) allows t only when 2t <= p - 1.
+
+This fits the counts seen so far without having been used to choose them: at (9, 11) and (9, 13) EXP-015 (running;
+counts read from its stored results before its verdict) holds members with the pure Hilbert function in S(7; 0, 2)
+(t = 5, two conditions: 19 among 8,000 and 38 among 24,000 members) and in S(6; 0, 3) (t = 3, four conditions: 2 and 4
+among 200,000), and none in the same strata at (9, 5), where 2t <= p - 1 fails. It suggests a method for a pair (e, p)
+with p > e: take the largest t allowed, where the number of conditions e - t - 2 is least. Backlog BSB-035.
+
 ## How could this be wrong?
 
 - Nothing here is proved in writing. The decomposition of the linear family is checked on complete lists at small
