@@ -47,6 +47,7 @@ E3 = PROBLEM / "experiments" / "EXP-003-heisenberg-characteristic-two"
 E5 = PROBLEM / "experiments" / "EXP-005-characteristic-two-machine-checks"
 E6 = PROBLEM / "experiments" / "EXP-006-odd-characteristic-below-2e"
 E7 = PROBLEM / "experiments" / "EXP-007-pure-family-at-the-power-pair"
+E8 = PROBLEM / "experiments" / "EXP-008-odd-characteristic-e5-e6"
 REFS = PROBLEM / "context" / "references.md"
 
 FAILS = []
@@ -597,6 +598,7 @@ MANIFEST = [  # (label printed, path relative to the repository root): the artif
     ("EXP-005/results.json", "experiments/EXP-005-characteristic-two-machine-checks/artifacts/results.json"),
     ("EXP-006/results.json", "experiments/EXP-006-odd-characteristic-below-2e/artifacts/results.json"),
     ("EXP-007/results.json", "experiments/EXP-007-pure-family-at-the-power-pair/artifacts/results.json"),
+    ("EXP-008/results.json", "experiments/EXP-008-odd-characteristic-e5-e6/artifacts/results.json"),
 ]
 PROBLEM_REL = "problems/commutative-algebra/boij-soderberg-realizability"
 
@@ -1110,7 +1112,7 @@ def procedures(d, N, cases):
          "%s hits, %s s of summed time; largest matrix $%s\\times%s$; longest rank over $\\mathbb{Q}$ %s s" % (N["fourHits"], N["fourTotalSec"], N["fourLargestRows"], N["fourLargestCols"], N["fourLongestSec"])],
         ["Characteristic 2 enumerations and searches", "$\\mathbb{F}_{2^r}$", "%s s of summed task time in total, %s s wall time" % (N["threeSecA"], N["threeWall"])],
         ["Archived checks of the characteristic 2 theorem", "$\\mathbb{F}_{2^r}$, $\\mathbb{F}_{32003}$, $\\mathbb{Q}$, $\\mathbb{F}_p$", "%s presentations and 24 modules; %s s wall time" % (N["fiveCasesAll"], N["fiveWall"])],
-        ["Search for pure pairs of forms (Algorithm~\\ref{alg:pairs})", "$\\mathbb{F}_q$, $q\\le27$", "%s spaces in 12 families and fields; %s s of summed process time, %s min wall time" % (N["sixSpacesTotal"], N["sixCpu"], N["sixWallMin"])],
+        ["Search for pure pairs of forms (Algorithm~\\ref{alg:pairs})", "$\\mathbb{F}_q$, $q\\le27$", "%s spaces in 12 families and fields, %s s of summed process time, %s min wall time (EXP-006); %s spaces in 3 families stopped early, %s s, %s min (EXP-008)" % (N["sixSpacesTotal"], N["sixCpu"], N["sixWallMin"], N["eightSpacesTotal"], N["eightCpu"], N["eightWallMin"])],
         ["Tangent space of the rank locus (Algorithm~\\ref{alg:tangent})", "$\\mathbb{Q}$, $\\mathbb{F}_p$", "all cases of Section~\\ref{sec:resfamily}: %s s wall time" % N["sevenWall"]],
     ]
     # the census runs in seconds: read from the experiment note of the hypothesis (stage 0 "seconds") -> not an artifact: keep the text
@@ -1163,7 +1165,20 @@ def fld_tex(name):
 
 
 def pct(x, nd=1):
-    return f"{100 * x:.{nd}f}"
+    """100 x with nd decimals, rounded half up on the decimal representation of x (43.55 prints 43.6, not 43.5)."""
+    from decimal import Decimal, ROUND_HALF_UP
+    return str((Decimal(repr(x)) * 100).quantize(Decimal(1).scaleb(-nd), rounding=ROUND_HALF_UP))
+
+
+def pctv(x):
+    """A share in percent with two decimals, three below 0.1 percent."""
+    return pct(x, 2) if x >= 0.001 else pct(x, 3)
+
+
+def heuristic(e, q):
+    """q^(-(dim G_e - (4e-4))) = q^(-2 h_e(3e)); None at e = 3, where the pure set is open in G_3 and no comparison is made."""
+    h = he_val(e, 3 * e)
+    return None if h == 0 else q ** (-2 * h)
 
 
 FAMW = {"A1": "AOne", "A2": "ATwo", "B1": "BOne", "B2": "BTwo", "B3": "BThree", "C": "C"}
@@ -1256,7 +1271,7 @@ def hilbert_pair(terms_pair, e, p, nmax):
 def read_artifacts(root):
     ex = Path(root) / "experiments"
     return (jload(ex / E5.name / "artifacts" / "results.json"), jload(ex / E6.name / "artifacts" / "results.json"),
-            jload(ex / E7.name / "artifacts" / "results.json"))
+            jload(ex / E7.name / "artifacts" / "results.json"), jload(ex / E8.name / "artifacts" / "results.json"))
 
 
 # ---- EXP-005 ----
@@ -1381,7 +1396,16 @@ def exp5(r5, N, out):
     # the case noted in the experiment: three quartics over GF(16) with eventual value 1
     odd = [c for c in cases.values() if c["family"] == "C3" and c["cls"] == "eventually constant"]
     need(len(odd) == 1 and odd[0]["value"] == 1 and (odd[0]["a"], odd[0]["b"], odd[0]["e"]) == (1, 3, 4), "EXP-005: the single C3 case without finite length")
-    N["fiveOddHilbert"] = ",".join(str(x) for x in odd[0]["hilbert"][:9])
+    N["fiveOddHilbert"] = ",".join(str(x) for x in odd[0]["hilbert"][:8])
+    # the printed case: its Hilbert function must be the one of the Singular Betti table of the second instrument
+    c = odd[0]
+    need(c["id"] == "C3|GF(2^4)|21" and c.get("hilbert_equals_I2") is True, "EXP-005: the printed C3 case and its second instrument")
+    num = [0] * (len(c["hilbert"]))
+    for i_, j_, b_ in c["betti_I2"]:
+        if j_ < len(num):
+            num[j_] += (-1) ** i_ * b_
+    need(series_div(num, [1, 1, 2], len(c["hilbert"])) == c["hilbert"], "EXP-005: the Hilbert function of the printed C3 case differs from its Singular Betti table")
+    need(all(x == 1 for x in c["hilbert"][8:]) and c["hilbert"][:8] == [1, 2, 4, 6, 6, 6, 4, 2], "EXP-005: the printed C3 case: 1,2,4,6,6,6,4,2 and then 1")
     # tables
     order = ["C1a", "C1b", "C1c", "C2a", "C2b", "C2c", "C2d", "C2e", "C2f", "C2g"]
     rows = []
@@ -1409,18 +1433,27 @@ def exp5(r5, N, out):
 # ---- EXP-006 ----
 
 FAM6 = {"A1": 3, "A2": 3, "B1": 4, "B2": 4, "B3": 4, "C": 5}
-PAIRS6 = [("A1", "GF(3)", "index", 91), ("A2", "GF(5)", "seed", 20261122), ("B1", "GF(3)", "seed", 20261137),
-          ("B1", "GF(5)", "seed", 20261156), ("B1", "GF(7)", "seed", 20261132), ("C", "GF(3)", "seed", 20263616)]
+PAIRS6 = [("6", "A1", "GF(3)", "index", 91), ("6", "A2", "GF(5)", "seed", 20261122), ("6", "B1", "GF(3)", "seed", 20261137),
+          ("6", "B1", "GF(5)", "seed", 20261156), ("6", "B1", "GF(7)", "seed", 20261132), ("6", "C", "GF(3)", "seed", 20263616),
+          ("8", "A", "GF(5)", "seed", 20267546), ("8", "B", "GF(7)", "seed", 20261985), ("8", "C", "GF(3)", "seed", 20264514)]
+FAM8 = {"A": (5, "GF(5)"), "B": (5, "GF(7)"), "C": (6, "GF(3)")}
+FAM8W = {"A": "AFive", "B": "BSeven", "C": "CThree"}
 
 
 def pure_table(e):
     return [[0, 0, 1], [1, e, 2], [2, 3 * e, 2], [3, 4 * e, 1]]
 
 
-def exp6(r6, N, out):
+def exp6(r6, r8, N, out, data_root=None):
     need(r6["experiment"] == "EXP-006", "EXP-006 results file")
     for g in ("G1", "G2", "G3", "G4"):
         need(r6["gates"][g]["passed"] is True, f"EXP-006 gate {g}")
+    fr = r6["full_results"]
+    need(re.fullmatch(r"[0-9a-f]{64}", fr["sha256"]) is not None and fr["sha256"] != "0" * 64 and fr["bytes"] > 0, "EXP-006: the recorded hash of the full results file")
+    if data_root is not None:
+        full = Path(data_root) / fr["file"].split(" (")[0]
+        if full.exists():
+            need(hashlib.sha256(full.read_bytes()).hexdigest() == fr["sha256"] and full.stat().st_size == fr["bytes"], "EXP-006: the full results file under the data root differs from its recorded hash")
     need(r6["gates"]["G3"]["sample_spaces"] == r6["gates"]["G3"]["agree_and_pure_in_I2"] == 270 and r6["gates"]["G3"]["failing_cases"] == [], "EXP-006 second instrument")
     pf = r6["totals"]["per_field"]
     chunks = r6["chunks"]
@@ -1455,6 +1488,8 @@ def exp6(r6, N, out):
         else:
             if fam in ("A1", "A2"):
                 fig["pure3"].append((q, x["share_pure"]))
+            if fam == "C":
+                fig["pure5"].append((q, x["share_pure"]))
         key = FAMW[fam] + (FLDW.get(fld) or fld)
         N["six%sSpaces" % key] = thousands(x["spaces"])
         N["six%sPure" % key] = thousands(x["pure"])
@@ -1463,15 +1498,18 @@ def exp6(r6, N, out):
         N["six%sSharePure" % key] = pct(x["share_pure"], 1) if x["share_pure"] >= 0.01 else pct(x["share_pure"], 2)
         N["six%sShareRank" % key] = pct(x["share_rank_le_target"], 1)
         N["six%sRatioRank" % key] = f"{ratio:.1f}"
-        N["six%sRatioPure" % key] = f"{x['share_pure'] / x['q_minus_2']:.2f}"
+        hq = heuristic(e, q)
+        N["six%sRatioPure" % key] = f"{x['share_pure'] / hq:.2f}" if hq else "--"
         N["six%sNonpure" % key] = thousands(nonpure)
         N["six%sTables" % key] = len(x["nonpure_tables"])
         rows3.append([str(e), fld_tex(fld), thousands(x["spaces"]), "%s (%s\\%%)" % (thousands(x["rank_le_target"]), pct(x["share_rank_le_target"], 1)),
-                      thousands(x["pure_hilbert"]), thousands(x["pure"]), pct(x["share_pure"], 2) + "\\%", pct(x["q_minus_2"], 2) + "\\%",
-                      f"{x['share_pure'] / x['q_minus_2']:.2f}"])
+                      thousands(x["pure_hilbert"]), thousands(x["pure"]), pctv(x["share_pure"]) + "\\%",
+                      ("$q^{-%d}$ = %s\\%%" % (2 * he_val(e, 3 * e), pctv(hq))) if hq else "--",
+                      f"{x['share_pure'] / hq:.2f}" if hq else "--"])
         rowsc.append([str(e), fld_tex(fld), thousands(x["pure_hilbert"]), thousands(x["pure"]), thousands(nonpure), str(len(x["nonpure_tables"])),
                       pct(nonpure / x["pure_hilbert"], 1) + "\\%"])
-    out["tab_sixcounts.tex"] = table("@{}rrrrrrrrr@{}", ["$e$", "field", "spaces", "rank$\\,\\mu_{3e}\\le r$", "pure Hilbert function", "pure", "share pure", "$q^{-2}$", "pure$/q^{-2}$"], rows3)
+    exp8(r8, N, fig, rows3, rowsc)
+    out["tab_sixcounts.tex"] = table("@{}rrrp{2.0cm}rrrp{1.9cm}r@{}", ["$e$", "field", "spaces", "rank$\\,\\mu_{3e}\\le r$", "pure Hilbert function", "pure", "share pure", "heuristic $q^{-2h_e(3e)}$", "pure / heuristic"], rows3)
     out["tab_sixcancel.tex"] = table("@{}rrp{2.2cm}rp{1.8cm}p{1.8cm}p{2.2cm}@{}", ["$e$", "field", "pure Hilbert function", "pure", "another table", "distinct tables", "share of another table"], rowsc)
     # predictions, as the artifacts state them
     pr = r6["predictions"]
@@ -1500,36 +1538,100 @@ def exp6(r6, N, out):
     need(t3 == want, "EXP-006: the three other tables over GF(3) at e = 3")
     # explicit pairs, printed from the stored bases and recomputed Hilbert function by this script's own arithmetic
     rows = []
-    for fam, fld, kind, val in PAIRS6:
-        e = FAM6[fam]
+    pair_rows = []
+    for src, fam, fld, kind, val in PAIRS6:
+        e = FAM6[fam] if src == "6" else FAM8[fam][0]
         pp, kk = fld_parse(fld)
         need(kk == 1, "explicit pairs are over prime fields")
-        found = [s for k, c in chunks.items() if k.startswith(f"{fam}|{fld}|") for s in c["spaces"] if s.get(kind) == val]
+        chs = chunks if src == "6" else r8["chunks"]
+        found = [s for k, c in chs.items() if k.startswith(f"{fam}|{fld}|" if src == "6" else f"{fam}|") for s in c["spaces"] if s.get(kind) == val]
         need(len(found) == 1, f"EXP-006 pair {fam}|{fld}|{kind} {val}: found {len(found)}")
         s = found[0]
         need(s["pure"] is True and s["betti"] == pure_table(e), f"EXP-006 pair {fam}|{fld}|{val}: Betti table")
         pair = [[(tuple(m), c) for m, c in f] for f in s["basis"]]
         hf = hilbert_pair(pair, e, pp, 4 * e - 3)
         need(hf == [he_val(e, n) for n in range(4 * e - 2)] and hf[-1] == 0 and sum(hf) == e ** 3, f"EXP-006 pair {fam}|{fld}|{val}: Hilbert function recomputed differs from h_e")
-        need(hf == s["hilbert"][:4 * e - 2], f"EXP-006 pair {fam}|{fld}|{val}: stored Hilbert function")
-        rows.append([str(e), fld_tex(fld), "$f=%s$\\newline $g=%s$" % (poly_tex(pair[0], pp), poly_tex(pair[1], pp)), str(e ** 3)])
+        need("hilbert" not in s or hf == s["hilbert"][:4 * e - 2], f"EXP-006 pair {fam}|{fld}|{val}: stored Hilbert function")
+        pair_rows.append((e, pp, [str(e), fld_tex(fld), "$f=%s$\\newline $g=%s$" % (poly_tex(pair[0], pp), poly_tex(pair[1], pp)), str(e ** 3)]))
         N["sixPairLength" + EW[e]] = e ** 3
+    rows = [r for _, _, r in sorted(pair_rows, key=lambda t: (t[0], t[1]))]
     out["tab_sixpairs.tex"] = table("@{}rrp{9.6cm}r@{}", ["$e$", "field", "forms of degree $e$", "length"], rows)
-    # figure: the share of pure spaces against q
+    # figure: the share of pure spaces against q, with the heuristic values q^(-2 h_e(3e))
     lines = ["\\begin{tikzpicture}",
-             "\\begin{axis}[xmode=log, ymode=log, width=0.88\\textwidth, height=7cm, xlabel={field size $q$}, ylabel={share of random spaces}, "
-             "xtick={3,5,7,9,11,13,25,27}, xticklabels={3,5,7,9,11,13,25,27}, minor xtick={}, ytick={0.001,0.01,0.1,1}, yticklabels={0.001,0.01,0.1,1}, minor ytick={}, "
-             "tick label style={font=\\scriptsize}, label style={font=\\small}, grid=major, grid style={gray!25}, legend style={font=\\scriptsize, at={(0.5,-0.22)}, anchor=north}, legend columns=2]"]
-    for key, mark, lab in (("pure3", "*", "pure, $e=3$"), ("pure4", "square*", "pure, $e=4$"), ("rank4", "triangle*", "rank$\\,\\mu_{12}\\le48$, $e=4$")):
-        pts = " ".join("(%d,%.5f)" % (q, v) for q, v in sorted(fig[key]))
+             "\\begin{axis}[xmode=log, ymode=log, width=0.92\\textwidth, height=8cm, xlabel={field size $q$}, ylabel={share of random spaces}, ymin=0.00001, ymax=1, "
+             "xtick={3,5,7,9,11,13,25,27}, xticklabels={3,5,7,9,11,13,25,27}, minor xtick={}, ytick={0.00001,0.0001,0.001,0.01,0.1,1}, yticklabels={$10^{-5}$,$10^{-4}$,$10^{-3}$,$10^{-2}$,$10^{-1}$,$1$}, minor ytick={}, "
+             "tick label style={font=\\scriptsize}, label style={font=\\small}, grid=major, grid style={gray!25}, legend style={font=\\scriptsize, at={(0.5,-0.2)}, anchor=north}, legend columns=3]"]
+    for key, mark, lab in (("pure3", "*", "pure, $e=3$"), ("pure4", "square*", "pure, $e=4$"), ("pure5", "diamond*", "pure, $e=5$"), ("pure6", "pentagon*", "pure, $e=6$"),
+                           ("rank4", "triangle*", "rank$\\,\\mu_{12}\\le48$, $e=4$")):
+        pts = " ".join("(%d,%.6f)" % (q, v) for q, v in sorted(fig[key]))
         lines.append("\\addplot[only marks, mark=%s, mark size=2pt] coordinates {%s};" % (mark, pts))
         lines.append("\\addlegendentry{%s}" % lab)
-    lines.append("\\addplot[dashed, thick] coordinates {(3,%.5f) (27,%.7f)};" % (1 / 9.0, 1 / 729.0))
-    lines.append("\\addlegendentry{$q^{-2}$}")
+    for ex, style in ((2, "dashed"), (4, "dash dot"), (8, "densely dashed")):
+        lines.append("\\addplot[%s, thick] coordinates {(3,%.9f) (27,%.15f)};" % (style, 3.0 ** (-ex), 27.0 ** (-ex)))
+        lines.append("\\addlegendentry{$q^{-%d}$}" % ex)
     lines.append("\\addplot[dotted, thick] coordinates {(3,%.5f) (27,%.6f)};" % (1 / 3.0, 1 / 27.0))
     lines.append("\\addlegendentry{$q^{-1}$}")
     lines += ["\\end{axis}", "\\end{tikzpicture}"]
     out["fig_sixshare.tex"] = "\n".join(lines) + "\n"
+
+
+def exp8(r8, N, fig, rows3, rowsc):
+    """EXP-008: pure pairs of quintics over GF(5) and GF(7) and of sextics over GF(3), each family stopped at 40 pure spaces."""
+    need(r8["experiment"] == "EXP-008", "EXP-008 results file")
+    g = r8["gates"]
+    need(g["G1"]["passed"] is True and len(g["G1"]["cases"]) == 9 and all(c["ok"] for c in g["G1"]["cases"]), "EXP-008 gate G1")
+    need(g["G2"]["passed"] is True and g["G2"]["sample_spaces"] == g["G2"]["agree_and_pure_in_I2"] == 60 and g["G2"]["failing_cases"] == [], "EXP-008 second instrument")
+    need(g["G3"]["passed"] is True, "EXP-008 gate G3")
+    pr = r8["predictions"]
+    need(pr["P1"]["holds"] and pr["P2"]["holds"] and pr["P3"]["holds"] and pr["P1_and_P2_hold"], "EXP-008 predictions")
+    need(sorted(r8["totals"]) == ["A", "B", "C"], "EXP-008 families")
+    wall = 0.0
+    for fam in ("A", "B", "C"):
+        x = r8["totals"][fam]
+        e, fld = FAM8[fam]
+        pp, kk = fld_parse(fld)
+        q = pp ** kk
+        need(x["e"] == e and x["field"] == fld and x["q"] == q, f"EXP-008 {fam}: e, field, q")
+        need(x["stopped_early"] is True and x["complete"] is False and x["pure"] >= 40 and x["spaces"] < x["planned"], f"EXP-008 {fam}: the early stop at 40 pure spaces")
+        need(x["target_rank"] == target_rank(e) and x["h_e_3e"] == he_val(e, 3 * e), f"EXP-008 {fam}: target rank and h_e(3e)")
+        hq = heuristic(e, q)
+        need(abs(x["q_minus_2h"] - hq) < 1e-12, f"EXP-008 {fam}: heuristic value q^(-2h)")
+        need(abs(x["share_pure"] - x["pure"] / x["spaces"]) < 1e-12 and abs(x["ratio_pure_to_q"] - x["share_pure"] / hq) < 1e-9, f"EXP-008 {fam}: share and ratio")
+        need(abs(x["share_rank_eq_target"] - x["rank_eq_target"] / x["spaces"]) < 1e-12, f"EXP-008 {fam}: share of the rank condition")
+        cs = [c for k, c in r8["chunks"].items() if k.startswith(fam + "|")]
+        need(len(cs) == x["chunks"] and sum(c["n"] for c in cs) == x["spaces"] and sum(c["pure"] for c in cs) == x["pure"] and sum(c["pure_hilbert"] for c in cs) == x["pure_hilbert"],
+             f"EXP-008 {fam}: chunk totals differ from the family totals")
+        need(sum(sum(1 for s_ in c["spaces"] if s_.get("pure")) for c in cs) == x["pure"], f"EXP-008 {fam}: stored pure spaces differ from the count")
+        need(sum(x["rank_hist"].values()) == x["spaces"] and x["rank_hist"][str(x["target_rank"])] == x["rank_eq_target"], f"EXP-008 {fam}: rank histogram")
+        nonpure = sum(x["nonpure_tables"].values())
+        need(nonpure == x["pure_hilbert"] - x["pure"], f"EXP-008 {fam}: spaces with the pure Hilbert function and another table")
+        wall += x["seconds_wall"]
+        key = FAM8W[fam]
+        N["eight%sSpaces" % key] = thousands(x["spaces"])
+        N["eight%sPlanned" % key] = thousands(x["planned"])
+        N["eight%sPure" % key] = x["pure"]
+        N["eight%sPureHF" % key] = x["pure_hilbert"]
+        N["eight%sRank" % key] = thousands(x["rank_eq_target"])
+        N["eight%sShareRank" % key] = pct(x["share_rank_eq_target"], 1)
+        N["eight%sSharePure" % key] = pctv(x["share_pure"])
+        N["eight%sHeur" % key] = pctv(hq)
+        N["eight%sRatio" % key] = f"{x['share_pure'] / hq:.2f}"
+        N["eight%sNonpure" % key] = nonpure
+        N["eight%sTables" % key] = len(x["nonpure_tables"])
+        N["eight%sWallMin" % key] = f"{x['seconds_wall'] / 60:.0f}"
+        fig["pure%d" % e].append((q, x["share_pure"]))
+        rows3.append([str(e), fld_tex(fld), thousands(x["spaces"]) + "$^\\dagger$", "%s (%s\\%%)" % (thousands(x["rank_eq_target"]), pct(x["share_rank_eq_target"], 1)),
+                      thousands(x["pure_hilbert"]), thousands(x["pure"]), pctv(x["share_pure"]) + "\\%", "$q^{-%d}$ = %s\\%%" % (2 * he_val(e, 3 * e), pctv(hq)),
+                      f"{x['share_pure'] / hq:.2f}"])
+        rowsc.append([str(e), fld_tex(fld), thousands(x["pure_hilbert"]), thousands(x["pure"]), thousands(nonpure), str(len(x["nonpure_tables"])),
+                      pct(nonpure / x["pure_hilbert"], 1) + "\\%"])
+    need(abs(wall - sum(r["seconds"] for r in r8["runs"] if r["command"] == "cases")) < 0.5, "EXP-008: wall times of the families")
+    N["eightSpacesTotal"] = thousands(sum(x["spaces"] for x in r8["totals"].values()))
+    N["eightCpu"] = thousands(int(sum(x["seconds_cpu"] for x in r8["totals"].values())))
+    N["eightSingularSample"] = g["G2"]["sample_spaces"]
+    N["eightGOneCases"] = len(g["G1"]["cases"])
+    N["eightWallMin"] = f"{r8['wall_seconds_total'] / 60:.0f}"
+    N["eightEarlyStop"] = 40
 
 
 # ---- EXP-007 ----
@@ -1650,6 +1752,7 @@ def exp7(r7, N, out):
         q, g = t4[e]["qq"], t4[e]["gf"]
         need(q["members"] == q["planned"] == 625 and q["rank_le_r"] == 625 and q["above_r"] == 0 and not q["unfinished"] and not q["failing"], f"EXP-007 T4 e={e} over Q")
         need(g["members"] == g["planned"] == 200 and g["pure_and_outside"] >= 190 and g["rank_le_r"] == 200 and not g["unfinished"], f"EXP-007 T4 e={e} over GF(32003)")
+        need(sum(q["rank_hist"].values()) == q["members"] and sum(g["rank_hist"].values()) == g["members"], f"EXP-007 T4 e={e}: a rank histogram does not sum to its member count")
         rr = q["rank_hist"][str(r)]
         N["sevenLQQAt%s" % ("Four" if e == "4" else "Five")] = rr
         N["sevenLGFPure%s" % ("Four" if e == "4" else "Five")] = g["pure_and_outside"]
@@ -1701,13 +1804,16 @@ def formula_checks(N):
     N["formulaMaxE"] = 12
 
 
-def build_new(root, N):
-    """Read the artifacts of EXP-005 to EXP-007 under `root`, check every value the text uses, and return the generated files."""
-    r5, r6, r7 = read_artifacts(root)
+def build_new(root, N, data_root=None):
+    """Read the artifacts of EXP-005 to EXP-008 under `root`, check every value the text uses, and return the generated files.
+    When `data_root` (or the environment variable CAOS_RESEARCH_DATA_ROOT) names the data root and the full results file of EXP-006
+    is there, its hash is checked against the recorded one."""
+    import os
+    r5, r6, r7, r8 = read_artifacts(root)
     out = {}
     formula_checks(N)
     exp5(r5, N, out)
-    exp6(r6, N, out)
+    exp6(r6, r8, N, out, data_root or os.environ.get("CAOS_RESEARCH_DATA_ROOT"))
     exp7(r7, N, out)
     return out
 

@@ -62,17 +62,17 @@ def test_check_reports_outputs_current():
 
 def _copy_problem(mt, tmp_path):
     root = tmp_path / "problem"
-    for d in (mt.E5, mt.E6, mt.E7):
+    for d in (mt.E5, mt.E6, mt.E7, mt.E8):
         dst = root / "experiments" / d.name / "artifacts"
         dst.mkdir(parents=True)
         (dst / "results.json").write_bytes((d / "artifacts" / "results.json").read_bytes())
     return root
 
 
-def _run(mt, root):
+def _run(mt, root, data_root=None):
     mt.FAILS.clear()
     try:
-        mt.build_new(root, {})
+        mt.build_new(root, {}, data_root)
         return list(mt.FAILS)
     finally:
         mt.FAILS.clear()
@@ -124,3 +124,52 @@ def test_guard_exp005_refuses_a_finite_length_case(mt, tmp_path):
     root = _copy_problem(mt, tmp_path)
     _edit(root, mt.E5, lambda d: d["totals"]["per_family_field"]["C1b|GF(2)"].__setitem__("finite_length", 1))
     assert any("C1b|GF(2)" in f for f in _run(mt, root))
+
+
+def test_guard_exp007_refuses_a_histogram_that_does_not_sum(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E7, lambda d: d["statements"]["T4"]["4"]["qq"]["rank_hist"].__setitem__("48", 568))
+    assert any("does not sum to its member count" in f for f in _run(mt, root))
+
+
+def test_guard_exp005_refuses_a_changed_printed_hilbert_function(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E5, lambda d: d["cases"]["C3|GF(2^4)|21"]["hilbert"].__setitem__(4, 7))
+    assert any("printed C3 case" in f for f in _run(mt, root))
+
+
+def test_guard_exp006_refuses_a_false_full_file_hash(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E6, lambda d: d["full_results"].__setitem__("sha256", "0" * 64))
+    assert any("recorded hash of the full results file" in f for f in _run(mt, root))
+
+
+def test_guard_exp006_hashes_the_full_file_when_present(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    data = tmp_path / "data"
+    full = data / "caos-research" / "boij-soderberg-realizability" / "EXP-006" / "results-full.json"
+    full.parent.mkdir(parents=True)
+    full.write_bytes(b"not the recorded file")
+    assert any("full results file under the data root" in f for f in _run(mt, root, data))
+    h = hashlib.sha256(full.read_bytes()).hexdigest()
+    _edit(root, mt.E6, lambda d: d["full_results"].update({"sha256": h, "bytes": len(b"not the recorded file")}))
+    assert _run(mt, root, data) == []
+
+
+def test_guard_exp008_refuses_a_changed_count(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E8, lambda d: d["totals"]["C"].__setitem__("pure", 41))
+    assert any("EXP-008 C" in f for f in _run(mt, root))
+
+
+def test_guard_exp008_refuses_a_changed_pair(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+
+    def mutate(d):
+        for k, c in d["chunks"].items():
+            if k.startswith("C|"):
+                for s in c["spaces"]:
+                    if s.get("seed") == 20264514:
+                        s["basis"][1] = [list(t) for t in s["basis"][0]]
+    _edit(root, mt.E8, mutate)
+    assert any("pair C|GF(3)" in f for f in _run(mt, root))
