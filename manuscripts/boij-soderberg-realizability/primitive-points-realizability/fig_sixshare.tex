@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[xmode=log, ymode=log, width=0.88\textwidth, height=7cm, xlabel={field size $q$}, ylabel={share of random spaces}, xtick={3,5,7,9,11,13,25,27}, xticklabels={3,5,7,9,11,13,25,27}, minor xtick={}, ytick={0.001,0.01,0.1,1}, yticklabels={0.001,0.01,0.1,1}, minor ytick={}, tick label style={font=\scriptsize}, label style={font=\small}, grid=major, grid style={gray!25}, legend style={font=\scriptsize, at={(0.5,-0.22)}, anchor=north}, legend columns=2]
+\addplot[only marks, mark=*, mark size=2pt] coordinates {(3,0.17655) (5,0.43550) (9,0.62250) (25,0.88350) (27,0.84300)};
+\addlegendentry{pure, $e=3$}
+\addplot[only marks, mark=square*, mark size=2pt] coordinates {(3,0.02100) (5,0.01635) (7,0.01180) (9,0.00840) (11,0.00690) (13,0.00395)};
+\addlegendentry{pure, $e=4$}
+\addplot[only marks, mark=triangle*, mark size=2pt] coordinates {(3,0.63280) (5,0.28460) (7,0.18425) (9,0.16020) (11,0.10965) (13,0.08570)};
+\addlegendentry{rank$\,\mu_{12}\le48$, $e=4$}
+\addplot[dashed, thick] coordinates {(3,0.11111) (27,0.0013717)};
+\addlegendentry{$q^{-2}$}
+\addplot[dotted, thick] coordinates {(3,0.33333) (27,0.037037)};
+\addlegendentry{$q^{-1}$}
+\end{axis}
+\end{tikzpicture}

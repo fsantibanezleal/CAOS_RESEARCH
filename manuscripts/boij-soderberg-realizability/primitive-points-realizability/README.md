@@ -1,4 +1,4 @@
-# Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the pure modules U/U(x^e,y^e), characteristic 2, and a census for d_3 <= 12
+# Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for e <= 4, the pure pairs of forms form a family, and a census for d_3 <= 12
 
 Current public version: v0.01, dated 19 November 2026 and published 2026-11-20 at
 [10.5281/zenodo.24385387](https://doi.org/10.5281/zenodo.24385387), under concept DOI
@@ -7,7 +7,7 @@ Current public version: v0.01, dated 19 November 2026 and published 2026-11-20 a
 open-problems programme, problem `boij-soderberg-realizability` (backlog item BSB-013, focus BSR-F2), written to the
 manuscript content bar (14,655 words, 15 display equations, 8 figures, 20 tables, 26 references, 5 algorithms). Before
 release it was read by a reader other than the writer (the proofs re-derived, the numbers checked against the
-artifacts, the attributions checked on the sources), with a fix pass, a closing check and a final confirmation.
+artifacts, the attributions checked on the sources), with a fix pass, a closing check and a final confirmation. The source in this folder is v0.02 in preparation (odd characteristic below 2e, the family of pure pairs of forms, the archived machine checks of the characteristic 2 theorem, and the corrected manifest table); v0.01 stays the public version until the release.
 
 ## What the manuscript is
 
@@ -28,6 +28,12 @@ and reports, each result with an evidence mark ([MV] machine-verified, [D] prove
 - In characteristic 0 no counterexample to the question has `d3 <= 9`; two dual rays with `d3 = 10` are counterexamples
   over every field.
 
+In the v0.02 source the paper also states (each with its evidence mark and its limits):
+
+- Odd characteristic below `2e`: explicit pure pairs of forms over `F_3`, `F_5` (`e = 3`) and `F_3`, `F_5`, `F_7` (`e = 4`), so that for `e = 2, 3, 4` the point `(1,2,2,1)` of `(0, e, 3e, 4e)` is realized over `U` exactly when the characteristic is not 2; a pair over `F_3` at `e = 5`; the cases `e = 5` at `p = 5, 7` and `e >= 6` below `2e` are open (EXP-006).
+- Theorem D: the pure pairs of forms of degree `e` are open in a determinantal locus and every component of the pure locus has dimension at least `4e - 4`; the published modules form a subfamily of dimension 2. The tangent space of the locus at `<x^e, y^e>` has dimension exactly `4e - 4` over the rationals for `e = 4, ..., 7`; explicit pure pairs over the rationals lie outside the orbit; a four-parameter linear family is proved to lie in the locus and to be pure in general for every `e >= 4` in characteristic 0 or at least `2e` (EXP-007).
+- The machine checks of the characteristic 2 theorem and of the family at `e = 6, 7`, archived (EXP-005).
+
 The paper credits the negative answer, the obstructions over `k[x,y,z]` and the Kostant modules to their authors and
 claims no priority; its literature searches are stated in the related work section.
 
@@ -35,13 +41,13 @@ claims no priority; its literature searches are stated in the related work secti
 
 | File | What it is |
 |---|---|
-| `main.tex` | the paper (inline bibliography of 26 works); reads `numbers.tex`, the `tab_*.tex` and the `fig_*.tex` |
-| `make_tables.py` | reads the archived artifacts of EXP-001 to EXP-003, recomputes the finite statements of the proofs in exact arithmetic, stops with exit 1 when a value the text relies on differs, and writes `numbers.tex`, the tables and the figures |
+| `main.tex` | the paper (inline bibliography of 27 works); reads `numbers.tex`, the `tab_*.tex` and the `fig_*.tex` |
+| `make_tables.py` | reads the archived artifacts of EXP-001 to EXP-007, recomputes the finite statements of the proofs and the Hilbert functions, ranks and orbit dimensions of the printed pairs in exact arithmetic, stops with exit 1 when a value the text relies on differs, and writes `numbers.tex`, the tables and the figures; hashes of text artifacts are taken on LF-normalized bytes |
 | `numbers.tex` | every number of the text, as macros |
 | `tab_*.tex` | the tabular bodies of the tables (captions are in `main.tex`) |
 | `fig_*.tex` | the TikZ and pgfplots bodies of the figures, generated from the artifacts or, for the two diagrams, typed in `make_tables.py` |
-| `zenodo.json` | the deposit metadata of v0.01 for the release tool (title, creator, description, keywords, related identifiers, references); the same file is kept in the programme's deposit records |
-| `main.pdf` | the published PDF of v0.01 (the SHA-256 above) |
+| `zenodo.json` | the deposit metadata of v0.02 for the release tool (title, creator, description, keywords, related identifiers, references); the same file is kept in the programme's deposit records |
+| `main.pdf` | the published PDF of v0.01 (the SHA-256 above); it is replaced at the release of v0.02 |
 | `build-report.json`, `render-report.json`, `publication-gate.json` | the measured build (three passes, no warning, no overfull or underfull box), the page renders that were read, and the approval record of the release |
 
 `main.pdf` is the published file; a rebuild is compared with it through the reports above.
@@ -55,6 +61,8 @@ python manuscripts/boij-soderberg-realizability/primitive-points-realizability/m
 python manuscripts/boij-soderberg-realizability/primitive-points-realizability/make_tables.py --check  # exit 1 if stale
 ```
 
-Then two passes of `pdflatex main.tex` in this folder (packages: amsmath, amsthm, booktabs, hyperref, orcidlink, newfloat,
+Then three passes of `pdflatex main.tex` in this folder (packages: amsmath, amsthm, booktabs, hyperref, orcidlink, newfloat,
 algpseudocode, tikz, pgfplots with the `groupplots` library; the algorithm float is declared with `newfloat`). No external
-image is used. The script also reads the rank certificates of EXP-004 (lift to characteristic 0) and its second-system file.
+image is used. The script also reads the rank certificates of EXP-004 (lift to characteristic 0) and its second-system file, and the results files of EXP-005, EXP-006 and EXP-007.
+
+The generator is tested by `tests/test_bs_manuscript_tables.py` (from the repository root: `python -m pytest tests/test_bs_manuscript_tables.py -q`): the printed bytes and SHA-256 of the manifest table equal those of the committed blobs, `make_tables.py --check` reports the outputs current, and the guards on the artifacts of EXP-005 to EXP-007 refuse mutated copies.

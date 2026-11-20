@@ -44,6 +44,9 @@ PROBLEM = REPO / "problems" / "commutative-algebra" / "boij-soderberg-realizabil
 E1 = PROBLEM / "experiments" / "EXP-001-pure-ray-census"
 E2 = PROBLEM / "experiments" / "EXP-002-heisenberg-primitive-points"
 E3 = PROBLEM / "experiments" / "EXP-003-heisenberg-characteristic-two"
+E5 = PROBLEM / "experiments" / "EXP-005-characteristic-two-machine-checks"
+E6 = PROBLEM / "experiments" / "EXP-006-odd-characteristic-below-2e"
+E7 = PROBLEM / "experiments" / "EXP-007-pure-family-at-the-power-pair"
 REFS = PROBLEM / "context" / "references.md"
 
 FAILS = []
@@ -60,8 +63,18 @@ def jload(p):
     return json.loads(Path(p).read_text(encoding="utf-8"))
 
 
+TEXT_SUFFIXES = {".json", ".md", ".txt", ".py", ".tex"}
+
+
+def norm_bytes(p):
+    """The bytes of an artifact as committed: for a text artifact CRLF line ends are replaced by LF (a working copy checked out
+    with CRLF hashes differently from the blob of the repository, whose line ends are LF)."""
+    b = Path(p).read_bytes()
+    return b.replace(b"\r\n", b"\n") if Path(p).suffix.lower() in TEXT_SUFFIXES else b
+
+
 def sha(p):
-    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+    return hashlib.sha256(norm_bytes(p)).hexdigest()
 
 
 def thousands(n):
@@ -578,6 +591,20 @@ def census(d, N, F):
     return rays
 
 
+MANIFEST = [  # (label printed, path relative to the repository root): the artifacts whose bytes and hash the paper prints
+    ("hits-manifest.json", "experiments/EXP-001-pure-ray-census/artifacts/hits-manifest.json"),
+    ("qq-modules.json", "experiments/EXP-001-pure-ray-census/artifacts/qq-modules.json"),
+    ("EXP-005/results.json", "experiments/EXP-005-characteristic-two-machine-checks/artifacts/results.json"),
+    ("EXP-006/results.json", "experiments/EXP-006-odd-characteristic-below-2e/artifacts/results.json"),
+    ("EXP-007/results.json", "experiments/EXP-007-pure-family-at-the-power-pair/artifacts/results.json"),
+]
+PROBLEM_REL = "problems/commutative-algebra/boij-soderberg-realizability"
+
+
+def manifest_files():
+    return [(lab, PROBLEM / rel) for lab, rel in MANIFEST]
+
+
 def hash_table(d, N):
     rows = []
     for line in d["refs"].splitlines():
@@ -597,12 +624,11 @@ def hash_table(d, N):
                      "\\texttt{\\scriptsize " + h[:32] + "\\allowbreak " + h[32:] + "}"])
     OUT["tab_sources.tex"] = table("@{}p{4.4cm}p{2.6cm}p{0.9cm}p{5.8cm}@{}", ["archived file", "arXiv", "read", "SHA-256"], body)
     # hashes of the manifests
-    mani = [("hits-manifest.json", E1 / "artifacts" / "hits-manifest.json"), ("qq-modules.json", E1 / "artifacts" / "qq-modules.json")]
     body = []
-    for n_, p_ in mani:
+    for n_, p_ in manifest_files():
         h = sha(p_)
-        body.append(["\\texttt{" + n_ + "}", str(p_.stat().st_size), "\\texttt{\\scriptsize " + h[:32] + "\\allowbreak " + h[32:] + "}"])
-    OUT["tab_manifests.tex"] = table("@{}p{3.4cm}rp{7cm}@{}", ["artifact", "bytes", "SHA-256"], body)
+        body.append(["\\texttt{" + n_ + "}", str(len(norm_bytes(p_))), "\\texttt{\\scriptsize " + h[:32] + "\\allowbreak " + h[32:] + "}"])
+    OUT["tab_manifests.tex"] = table("@{}p{4.2cm}rp{7cm}@{}", ["artifact", "bytes", "SHA-256"], body)
     hm = jload(E1 / "artifacts" / "hits-manifest.json")
     N["hitFiles"] = thousands(len(hm) if isinstance(hm, list) else len(hm.get("hits", hm)))
 
@@ -929,6 +955,12 @@ def static_tables(N):
         ["$C,\\ X,Y,Z$", "$k[X,Y,Z]$ with $X=x^2$, $Y=y^2$, $Z=z$ (characteristic 2)", "Theorem~\\ref{thm:B}"],
         ["$B,\\ \\Sigma$", "$C[t]/(t^2+Zt+XY)$ and $\\operatorname{Proj}B\\cong\\mathbb{P}^1\\times\\mathbb{P}^1$", "Theorem~\\ref{thm:C}"],
         ["$(a,b,e)$", "generators, relations and relation degree of a presentation", "Theorem~\\ref{thm:C}"],
+        ["$u(n)$", "$\\dim U_n=\\lfloor(n+2)^2/4\\rfloor$ for $n\\ge0$, and $0$ for $n<0$", "Section~\\ref{sec:pairsetting}"],
+        ["$G_e,\\ M_W$", "$\\operatorname{Gr}(2,U_e)$, of dimension $2(u(e)-2)$; the cyclic module $U/UW$ of $W\\in G_e$", "Section~\\ref{sec:pairsetting}"],
+        ["$\\mu_n(W)$", "left multiplication $U_{n-e}\\otimes W\\to U_n$; $\\dim(M_W)_n=u(n)-\\operatorname{rank}\\mu_n(W)$", "Section~\\ref{sec:pairsetting}"],
+        ["$h_e(n),\\ r$", "coefficient of $t^n$ in $h_e(t)$; $r=2u(2e)-2$", "Section~\\ref{sec:pairsetting}"],
+        ["$P_e,\\ D_e,\\ R_e$", "pure spaces; spaces with $\\operatorname{rank}\\mu_{3e}\\le r$; spaces whose forms have a common factor modulo $z$", "Section~\\ref{sec:pairsetting}, Theorem~\\ref{thm:family}"],
+        ["$W_0$, $S_e$", "$\\langle x^e,y^e\\rangle$; the span of the $e$-th powers of linear forms in $U_e$", "Theorem~\\ref{thm:family}"],
         ["{[MV]}, {[D]}, {[V]}, {[U]}, {[C]}", "machine-verified, proved here, read on the source, not confirmed, conjectural", "Section~\\ref{sec:results-list}"],
     ]
     OUT["tab_notation.tex"] = table("@{}p{2.7cm}p{9.2cm}l@{}", ["symbol", "meaning", "introduced in"], notation)
@@ -1077,9 +1109,607 @@ def procedures(d, N, cases):
         ["Rank certificate of a lift (Algorithm~\\ref{alg:rank})", "$\\mathbb{Q}$ and $\\mathbb{F}_{32003}$",
          "%s hits, %s s of summed time; largest matrix $%s\\times%s$; longest rank over $\\mathbb{Q}$ %s s" % (N["fourHits"], N["fourTotalSec"], N["fourLargestRows"], N["fourLargestCols"], N["fourLongestSec"])],
         ["Characteristic 2 enumerations and searches", "$\\mathbb{F}_{2^r}$", "%s s of summed task time in total, %s s wall time" % (N["threeSecA"], N["threeWall"])],
+        ["Archived checks of the characteristic 2 theorem", "$\\mathbb{F}_{2^r}$, $\\mathbb{F}_{32003}$, $\\mathbb{Q}$, $\\mathbb{F}_p$", "%s presentations and 24 modules; %s s wall time" % (N["fiveCasesAll"], N["fiveWall"])],
+        ["Search for pure pairs of forms (Algorithm~\\ref{alg:pairs})", "$\\mathbb{F}_q$, $q\\le27$", "%s spaces in 12 families and fields; %s s of summed process time, %s min wall time" % (N["sixSpacesTotal"], N["sixCpu"], N["sixWallMin"])],
+        ["Tangent space of the rank locus (Algorithm~\\ref{alg:tangent})", "$\\mathbb{Q}$, $\\mathbb{F}_p$", "all cases of Section~\\ref{sec:resfamily}: %s s wall time" % N["sevenWall"]],
     ]
     # the census runs in seconds: read from the experiment note of the hypothesis (stage 0 "seconds") -> not an artifact: keep the text
     OUT["tab_procedures.tex"] = table("@{}p{5.6cm}p{2.6cm}p{5.2cm}@{}", ["procedure", "arithmetic", "measured cost"], rows)
+
+
+# --------------------------------------------------------------------------------------------------------------------------
+# EXP-005 (characteristic 2 machine checks), EXP-006 (odd characteristic below 2e), EXP-007 (the family of pure pairs)
+# --------------------------------------------------------------------------------------------------------------------------
+
+def UN(n):
+    """u(n) = dim U_n = floor((n+2)^2/4) for n >= 0, and 0 for n < 0."""
+    return 0 if n < 0 else (n + 2) ** 2 // 4
+
+
+def he_val(e, n):
+    """The Hilbert function of the pure table (1,2,2,1) on (0,e,3e,4e): u(n) - 2u(n-e) + 2u(n-3e) - u(n-4e)."""
+    return UN(n) - 2 * UN(n - e) + 2 * UN(n - 3 * e) - UN(n - 4 * e)
+
+
+def target_rank(e):
+    """r = 2u(2e) - 2, the rank of left multiplication into degree 3e of a pure pair."""
+    return 2 * UN(2 * e) - 2
+
+
+EW = {3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven"}
+
+
+def fld_parse(name):
+    m = re.match(r"GF\((\d+)(?:\^(\d+))?\)$", name)
+    need(m is not None, f"field name {name}")
+    n, k = int(m.group(1)), m.group(2)
+    if k is not None:
+        return n, int(k)
+    # GF(n) with n the order of the field (GF(9), GF(25), GF(27)) or a prime
+    for pr in primes_upto(n):
+        if n % pr == 0:
+            kk, t = 0, n
+            while t % pr == 0:
+                t //= pr
+                kk += 1
+            need(t == 1, f"field order {n} is not a prime power")
+            return pr, kk
+    return n, 1
+
+
+def fld_tex(name):
+    p, k = fld_parse(name)
+    return "$\\F_{%d}$" % (p ** k)
+
+
+def pct(x, nd=1):
+    return f"{100 * x:.{nd}f}"
+
+
+FAMW = {"A1": "AOne", "A2": "ATwo", "B1": "BOne", "B2": "BTwo", "B3": "BThree", "C": "C"}
+FLDW = {"GF(3)": "Three", "GF(5)": "Five", "GF(7)": "Seven", "GF(9)": "Nine", "GF(11)": "Eleven", "GF(13)": "Thirteen",
+        "GF(25)": "TwentyFive", "GF(27)": "TwentySeven"}
+
+
+def mono_tex(i, j, k):
+    parts = []
+    for v, x in (("x", i), ("y", j), ("z", k)):
+        if x == 1:
+            parts.append(v)
+        elif x > 1:
+            parts.append("%s^{%d}" % (v, x))
+    return "".join(parts) or "1"
+
+
+def poly_tex(terms, p=None):
+    """terms: list of ((i, j, k), coefficient); the monomial x^i y^j z^k is the product in this order; coefficients modulo p
+    are printed as the representatives of least absolute value."""
+    items = []
+    for (i, j, k), c in sorted(terms, key=lambda t: (-t[0][0], -t[0][2], -t[0][1])):
+        c = int(c)
+        if p:
+            c %= p
+            if c > p // 2:
+                c -= p
+        if c == 0:
+            continue
+        m = mono_tex(i, j, k)
+        a = abs(c)
+        body = m if (a == 1 and m != "1") else (str(a) + m if m != "1" else str(a))
+        items.append(("-" if c < 0 else "+", body))
+    s = ""
+    for n, (sg, b) in enumerate(items):
+        s += (("-" if sg == "-" else "") + b) if n == 0 else " %s %s" % (sg, b)
+    return s
+
+
+def elt_from_terms(terms):
+    out = {}
+    for (i, j, k), c in terms:
+        for (b, a, cc), v in Pbw.word("x" * i + "y" * j, int(c)).items():
+            Pbw.add(out, (b, a, cc + k), v)
+    return out
+
+
+def mul_left(mono, elt):
+    b, a, c = mono
+    cur = {(bb, aa, cc + c): v for (bb, aa, cc), v in elt.items()}
+    for _ in range(a):
+        cur = Pbw.xleft(cur)
+    for _ in range(b):
+        cur = Pbw.yleft(cur)
+    return cur
+
+
+def basis_deg(d):
+    """The PBW monomials y^b x^a z^c of degree d, as (b, a, c)."""
+    return [(d - 2 * c - a, a, c) for c in range(d // 2 + 1) for a in range(d - 2 * c + 1)]
+
+
+def mu_rank(forms, e, n, p=None):
+    """Rank of left multiplication U_(n-e) tensor W -> U_n, W spanned by the elements `forms` (dictionaries in the PBW basis)."""
+    if n < e:
+        return 0
+    cols = {m: i for i, m in enumerate(basis_deg(n))}
+    rows = []
+    for mono in basis_deg(n - e):
+        for f in forms:
+            r = [0] * len(cols)
+            for key, v in mul_left(mono, f).items():
+                r[cols[key]] = v
+            rows.append(r)
+    return rank_p(rows, p) if p else rank_q(rows)
+
+
+_HF_CACHE = {}
+
+
+def hilbert_pair(terms_pair, e, p, nmax):
+    """Hilbert function of U/(U f + U g) in degrees 0..nmax by exact arithmetic of this script."""
+    key = (p, e, nmax, repr(terms_pair))
+    if key not in _HF_CACHE:
+        forms = [elt_from_terms(t) for t in terms_pair]
+        _HF_CACHE[key] = [UN(n) - mu_rank(forms, e, n, p) for n in range(nmax + 1)]
+    return _HF_CACHE[key]
+
+
+def read_artifacts(root):
+    ex = Path(root) / "experiments"
+    return (jload(ex / E5.name / "artifacts" / "results.json"), jload(ex / E6.name / "artifacts" / "results.json"),
+            jload(ex / E7.name / "artifacts" / "results.json"))
+
+
+# ---- EXP-005 ----
+
+FAM5 = {
+    "C1a": ((1, 2, 2), "all two-dimensional subspaces of $U_2$"),
+    "C1b": ((1, 2, 3), "all two-dimensional subspaces of $U_3$"),
+    "C1c": ((1, 1, 3), "all one-dimensional subspaces of $U_3$"),
+    "C2a": ((1, 2, 4), "random pairs of quartics"),
+    "C2b": ((1, 2, 5), "random pairs of quintics"),
+    "C2c": ((1, 2, 6), "random pairs of sextics"),
+    "C2d": ((1, 2, 7), "random pairs of septics"),
+    "C2e": ((2, 3, 3), "random $2\\times3$ matrices of cubics"),
+    "C2f": ((2, 3, 2), "random $2\\times3$ matrices of quadrics"),
+    "C2g": ((3, 4, 2), "random $3\\times4$ matrices of quadrics"),
+}
+SHAPES5 = [(1, 3, 2), (1, 3, 3), (1, 3, 4), (2, 4, 2)]
+
+
+def exp5(r5, N, out):
+    need(r5["experiment"] == "EXP-005", "EXP-005 results file")
+    for g in ("G1", "G2", "G3", "G4"):
+        need(r5["gates"][g]["passed"] is True, f"EXP-005 gate {g}")
+    cases = r5["cases"]
+    by = defaultdict(Counter)
+    for c in cases.values():
+        fam = c["family"]
+        need(c["status"] == "done", f"EXP-005 case {c['id']} unfinished")
+        if fam in FAM5:
+            need((c["a"], c["b"], c["e"]) == FAM5[fam][0], f"EXP-005 {c['id']}: shape differs from the family")
+        elif fam == "C3":
+            need((c["a"], c["b"], c["e"]) in SHAPES5, f"EXP-005 {c['id']}: shape of C3")
+        else:
+            need(False, f"EXP-005 unknown family {fam}")
+        k = (fam, c["field"])
+        by[k]["cases"] += 1
+        by[k][c["cls"]] += 1
+        if c["cls"] == "eventually constant":
+            by[k]["val%d" % c["value"]] += 1
+    pff = r5["totals"]["per_family_field"]
+    for (fam, fld), cnt in by.items():
+        if fam == "C3":
+            continue
+        t = pff[f"{fam}|{fld}"]
+        need(t["cases"] == cnt["cases"], f"EXP-005 {fam}|{fld}: case count {t['cases']} vs {cnt['cases']}")
+        need(t["growing"] == cnt["growing"], f"EXP-005 {fam}|{fld}: growing {t['growing']} vs {cnt['growing']}")
+        need(t["eventually_constant"] == cnt["eventually constant"], f"EXP-005 {fam}|{fld}: eventually constant")
+        need(t["finite_length"] == cnt["finite length"] == 0, f"EXP-005 {fam}|{fld}: a case of finite length")
+        need(t["unclassified"] == 0 and t["unfinished"] == 0, f"EXP-005 {fam}|{fld}: unclassified or unfinished")
+        vals = {int(v): n for v, n in t["constant_values"].items()}
+        need(all(cnt["val%d" % v] == n for v, n in vals.items()) and sum(vals.values()) == t["eventually_constant"], f"EXP-005 {fam}|{fld}: values")
+    # the eventual values predicted by the theorem: a(a+1)/2 L.L with L.L = 2m^2 (e = 2m) or 2m(m+1) (e = 2m+1)
+    def predicted(a, e):
+        m = e // 2
+        ll = 2 * m * m if e % 2 == 0 else 2 * m * (m + 1)
+        return a * (a + 1) // 2 * ll
+    for fam, ((a, b, e), _) in FAM5.items():
+        if b == a + 1:
+            for fld in {f for (f2, f) in by if f2 == fam}:
+                t = pff[f"{fam}|{fld}"]
+                need(set(map(int, t["constant_values"])) <= {predicted(a, e)}, f"EXP-005 {fam}|{fld}: eventual value differs from a(a+1)/2 L.L = {predicted(a, e)}")
+    need(set(map(int, pff["C1c|GF(2)"]["constant_values"])) == set() and pff["C1c|GF(2)"]["growing"] == 63, "EXP-005: every single cubic grows")
+    p = r5["totals"]["predictions"]
+    need(p["P1"]["holds"] and p["P4"]["holds"] and all(v["holds"] for v in p["P3"].values()), "EXP-005 predictions P1, P3, P4")
+    need(all(p["P2"][k] for k in ("holds_value", "holds_no_unclassified", "holds_gf16_share", "holds_c1c_all_grow")), "EXP-005 prediction P2")
+    done = sum(1 for c in cases.values() if c["family"] != "C3")
+    need(p["P1"]["cases_done"] == done and p["P1"]["finite_length"] == 0, "EXP-005: cases of C1 and C2 with finite length")
+    exh = sum(pff[k]["cases"] for k in ("C1a|GF(2)", "C1b|GF(2)", "C1c|GF(2)"))
+    ba1 = [k for k in pff if k.split("|")[0] in ("C1a", "C1b", "C2a", "C2b", "C2c", "C2d", "C2e", "C2f", "C2g")]
+    n_ba1 = sum(pff[k]["cases"] for k in ba1)
+    n_const = sum(pff[k]["eventually_constant"] for k in ba1)
+    n_grow = sum(pff[k]["growing"] for k in ba1)
+    need(p["P2"]["cases_b_eq_a_plus_1_done"] == n_ba1 and p["P2"]["eventually_constant"] == n_const, "EXP-005: counts of the cases with b = a + 1")
+    gr = p["P2"]["growing_by_field"]
+    need(sum(v[0] for v in gr.values()) == n_grow, "EXP-005: growing cases by field")
+    c3 = r5["totals"]["c3_per_shape"]
+    for sh in SHAPES5:
+        t = c3[str(sh)]
+        need(t["cases"] == 10 and t["finite_length"] >= 8 and t["unfinished"] == 0, f"EXP-005 C3 {sh}")
+    c4 = r5["c4"]
+    need(len(c4) == 24, "EXP-005 C4 modules")
+    c4rows = {}
+    for cid, c in c4.items():
+        e = c["e"]
+        fld = c["field"]
+        pr = 0 if fld == "QQ" else int(fld[3:-1])
+        should = fld == "QQ" or pr >= 2 * e
+        need(c["pure_table_I1"] == should and c["pure_table_I2"] == should and c["finite_length"] == should, f"EXP-005 C4 {cid}: purity differs from the rule char = 0 or >= 2e")
+        need(c["hilbert_equals_pure_prediction"] == should, f"EXP-005 C4 {cid}: Hilbert function")
+        if should:
+            need(c["tables_agree"] is True and c["betti_I1"] == [[0, 0, 1], [1, e, 2], [2, 3 * e, 2], [3, 4 * e, 1]], f"EXP-005 C4 {cid}: table")
+        c4rows.setdefault(e, {"pure": [], "other": []})["pure" if should else "other"].append(fld)
+    need(r5["gates"]["G3"]["c4_modules"] == 24 and r5["gates"]["G3"]["c4_failing"] == [], "EXP-005 G3 on the modules of the family")
+    # macros
+    N["fiveCasesAll"] = thousands(len(cases))
+    N["fiveDone"] = thousands(done)
+    N["fiveFinite"] = 0
+    N["fiveExhaustive"] = exh
+    N["fiveRandom"] = thousands(done - exh)
+    N["fiveBaOne"] = thousands(p["P2"]["cases_b_eq_a_plus_1_done"])
+    N["fiveConstant"] = thousands(n_const)
+    N["fiveGrowing"] = n_grow
+    N["fiveGrowGFtwo"] = gr["GF(2)"][0]
+    N["fiveGrowGFfour"] = gr["GF(2^2)"][0]
+    N["fiveGrowGFsixteen"] = gr["GF(2^4)"][0]
+    N["fiveGFsixteenCases"] = gr["GF(2^4)"][1]
+    N["fiveCThreeCases"] = r5["totals"]["per_family"]["C3"]["cases"]
+    N["fiveCThreeFinite"] = r5["totals"]["per_family"]["C3"]["finite_length"]
+    for name, key in (("Coa", "C1a|GF(2)"), ("Cob", "C1b|GF(2)")):
+        N["five%sConst" % name] = pff[key]["eventually_constant"]
+        N["five%sGrow" % name] = pff[key]["growing"]
+    N["fiveCoaCases"] = pff["C1a|GF(2)"]["cases"]
+    N["fiveCobCases"] = pff["C1b|GF(2)"]["cases"]
+    N["fiveCocCases"] = pff["C1c|GF(2)"]["cases"]
+    g = r5["gates"]
+    N["fiveGOneCompared"] = g["G1"]["compared"]
+    N["fiveGTwoCompared"] = g["G2"]["compared"]
+    N["fiveGThreeCompared"] = g["G3"]["sample_cases"]
+    N["fiveGThreeAgree"] = g["G3"]["agree"]
+    N["fiveFamilyTablesAgree"] = g["G3"]["c4_i1_i2_tables_agree"]
+    N["fiveWall"] = f"{r5['wall_seconds_total']:.0f}"
+    # the case noted in the experiment: three quartics over GF(16) with eventual value 1
+    odd = [c for c in cases.values() if c["family"] == "C3" and c["cls"] == "eventually constant"]
+    need(len(odd) == 1 and odd[0]["value"] == 1 and (odd[0]["a"], odd[0]["b"], odd[0]["e"]) == (1, 3, 4), "EXP-005: the single C3 case without finite length")
+    N["fiveOddHilbert"] = ",".join(str(x) for x in odd[0]["hilbert"][:9])
+    # tables
+    order = ["C1a", "C1b", "C1c", "C2a", "C2b", "C2c", "C2d", "C2e", "C2f", "C2g"]
+    rows = []
+    for fam in order:
+        (a, b, e), desc = FAM5[fam]
+        for fld in sorted((f for (f2, f) in by if f2 == fam), key=lambda f: fld_parse(f)):
+            t = pff[f"{fam}|{fld}"]
+            cv = ", ".join("%d (value %s)" % (n, v) for v, n in sorted(t["constant_values"].items(), key=lambda kv: int(kv[0]))) or "0"
+            rows.append(["$(%d,%d,%d)$" % (a, b, e), desc, fld_tex(fld), str(t["cases"]), "0", cv, str(t["growing"])])
+    out["tab_five.tex"] = table("@{}lp{4.4cm}rrrp{2.6cm}r@{}", ["$(a,b,e)$", "sample", "field", "cases", "finite", "eventually constant", "growing"], rows)
+    rows = []
+    for sh in SHAPES5:
+        t = c3[str(sh)]
+        rows.append(["$(%d,%d,%d)$" % sh, str(t["cases"]), str(t["finite_length"]), str(t["eventually_constant"]), str(t["growing"])])
+    out["tab_fivecthree.tex"] = table("@{}lrrrr@{}", ["$(a,b,e)$", "presentations", "finite length", "eventually constant", "growing"], rows)
+    rows = []
+    for e in sorted(c4rows):
+        pure = sorted(f for f in c4rows[e]["pure"] if f != "QQ")
+        other = sorted(c4rows[e]["other"], key=lambda f: int(f[3:-1]))
+        rows.append([str(e), "$(0,%d,%d,%d)$" % (e, 3 * e, 4 * e), "$\\Q$ and $p\\in\\{%s\\}$" % ",".join(f[3:-1] for f in sorted(pure, key=lambda f: int(f[3:-1]))),
+                     "$p\\in\\{%s\\}$" % ",".join(f[3:-1] for f in other), "%d" % sum(1 for c in c4.values() if c["e"] == e and c["tables_agree"] is True)])
+    out["tab_fivecfour.tex"] = table("@{}rlp{3.4cm}p{3.2cm}r@{}", ["$e$", "degrees", "pure table", "not pure", "tables agreeing"], rows)
+
+
+# ---- EXP-006 ----
+
+FAM6 = {"A1": 3, "A2": 3, "B1": 4, "B2": 4, "B3": 4, "C": 5}
+PAIRS6 = [("A1", "GF(3)", "index", 91), ("A2", "GF(5)", "seed", 20261122), ("B1", "GF(3)", "seed", 20261137),
+          ("B1", "GF(5)", "seed", 20261156), ("B1", "GF(7)", "seed", 20261132), ("C", "GF(3)", "seed", 20263616)]
+
+
+def pure_table(e):
+    return [[0, 0, 1], [1, e, 2], [2, 3 * e, 2], [3, 4 * e, 1]]
+
+
+def exp6(r6, N, out):
+    need(r6["experiment"] == "EXP-006", "EXP-006 results file")
+    for g in ("G1", "G2", "G3", "G4"):
+        need(r6["gates"][g]["passed"] is True, f"EXP-006 gate {g}")
+    need(r6["gates"]["G3"]["sample_spaces"] == r6["gates"]["G3"]["agree_and_pure_in_I2"] == 270 and r6["gates"]["G3"]["failing_cases"] == [], "EXP-006 second instrument")
+    pf = r6["totals"]["per_field"]
+    chunks = r6["chunks"]
+    rows3, rowsc, fig = [], [], defaultdict(list)
+    order = [("A1", "GF(3)"), ("A2", "GF(5)"), ("A2", "GF(9)"), ("A2", "GF(25)"), ("A2", "GF(27)"), ("B1", "GF(3)"), ("B1", "GF(5)"), ("B1", "GF(7)"),
+             ("B3", "GF(9)"), ("B2", "GF(11)"), ("B2", "GF(13)"), ("C", "GF(3)")]
+    need(sorted(f"{a}|{b}" for a, b in order) == sorted(pf), "EXP-006: families and fields")
+    ratios = []
+    for fam, fld in order:
+        x = pf[f"{fam}|{fld}"]
+        e = FAM6[fam]
+        pp, kk = fld_parse(fld)
+        q = pp ** kk
+        need(x["e"] == e and x["q"] == q and x["char"] == pp, f"EXP-006 {fam}|{fld}: e, q, characteristic")
+        need(x["complete"] is True and x["spaces"] == x["planned"], f"EXP-006 {fam}|{fld}: incomplete")
+        need(x["target_rank"] == target_rank(e), f"EXP-006 {fam}|{fld}: target rank {x['target_rank']} vs {target_rank(e)}")
+        need(abs(x["q_minus_2"] - 1.0 / q ** 2) < 1e-12, f"EXP-006 {fam}|{fld}: q^-2")
+        need(abs(x["share_pure"] - x["pure"] / x["spaces"]) < 1e-12, f"EXP-006 {fam}|{fld}: share of pure spaces")
+        need(abs(x["share_rank_le_target"] - x["rank_le_target"] / x["spaces"]) < 1e-12, f"EXP-006 {fam}|{fld}: share of the rank condition")
+        cs = [c for k, c in chunks.items() if k.startswith(f"{fam}|{fld}|")]
+        need(sum(c["n"] for c in cs) == x["spaces"] and sum(c["pure"] for c in cs) == x["pure"] and sum(c["pure_hilbert"] for c in cs) == x["pure_hilbert"],
+             f"EXP-006 {fam}|{fld}: chunk totals differ from the field totals")
+        need(sum(sum(1 for s in c["spaces"] if s.get("pure")) for c in cs) == x["pure"], f"EXP-006 {fam}|{fld}: stored pure spaces differ from the count")
+        nonpure = sum(x["nonpure_tables"].values())
+        need(nonpure == x["pure_hilbert"] - x["pure"], f"EXP-006 {fam}|{fld}: spaces with the pure Hilbert function and another table")
+        need(sum(v for k_, v in x["rank_hist"].items() if int(k_) <= x["target_rank"]) == x["rank_le_target"], f"EXP-006 {fam}|{fld}: rank histogram")
+        ratio = x["share_rank_le_target"] / x["q_minus_2"]
+        if fam in ("B1", "B2", "B3"):
+            ratios.append(ratio)
+            fig["rank4"].append((q, x["share_rank_le_target"]))
+            fig["pure4"].append((q, x["share_pure"]))
+        else:
+            if fam in ("A1", "A2"):
+                fig["pure3"].append((q, x["share_pure"]))
+        key = FAMW[fam] + (FLDW.get(fld) or fld)
+        N["six%sSpaces" % key] = thousands(x["spaces"])
+        N["six%sPure" % key] = thousands(x["pure"])
+        N["six%sPureHF" % key] = thousands(x["pure_hilbert"])
+        N["six%sRank" % key] = thousands(x["rank_le_target"])
+        N["six%sSharePure" % key] = pct(x["share_pure"], 1) if x["share_pure"] >= 0.01 else pct(x["share_pure"], 2)
+        N["six%sShareRank" % key] = pct(x["share_rank_le_target"], 1)
+        N["six%sRatioRank" % key] = f"{ratio:.1f}"
+        N["six%sRatioPure" % key] = f"{x['share_pure'] / x['q_minus_2']:.2f}"
+        N["six%sNonpure" % key] = thousands(nonpure)
+        N["six%sTables" % key] = len(x["nonpure_tables"])
+        rows3.append([str(e), fld_tex(fld), thousands(x["spaces"]), "%s (%s\\%%)" % (thousands(x["rank_le_target"]), pct(x["share_rank_le_target"], 1)),
+                      thousands(x["pure_hilbert"]), thousands(x["pure"]), pct(x["share_pure"], 2) + "\\%", pct(x["q_minus_2"], 2) + "\\%",
+                      f"{x['share_pure'] / x['q_minus_2']:.2f}"])
+        rowsc.append([str(e), fld_tex(fld), thousands(x["pure_hilbert"]), thousands(x["pure"]), thousands(nonpure), str(len(x["nonpure_tables"])),
+                      pct(nonpure / x["pure_hilbert"], 1) + "\\%"])
+    out["tab_sixcounts.tex"] = table("@{}rrrrrrrrr@{}", ["$e$", "field", "spaces", "rank$\\,\\mu_{3e}\\le r$", "pure Hilbert function", "pure", "share pure", "$q^{-2}$", "pure$/q^{-2}$"], rows3)
+    out["tab_sixcancel.tex"] = table("@{}rrp{2.2cm}rp{1.8cm}p{1.8cm}p{2.2cm}@{}", ["$e$", "field", "pure Hilbert function", "pure", "another table", "distinct tables", "share of another table"], rowsc)
+    # predictions, as the artifacts state them
+    pr = r6["predictions"]
+    need(pr["P1"]["holds"] and pr["P3"]["holds"] and pr["P4"]["holds"], "EXP-006 predictions P1, P3, P4")
+    need(pr["P2"]["holds"] is False and not any(v["in_interval_0.3_to_3"] for k, v in pr["P2"].items() if k != "holds"), "EXP-006: the share prediction P2 is refuted in all six fields")
+    need(len(ratios) == 6, "EXP-006: six fields with the rank condition")
+    N["sixRatioMin"] = f"{min(ratios):.1f}"
+    N["sixRatioMax"] = f"{max(ratios):.1f}"
+    orb = pr["P4"]
+    need(orb["B2|GF(11)"]["in_orbit"] == 0 and orb["B2|GF(13)"]["in_orbit"] == 0 and orb["B2|GF(11)"]["pure"] == orb["B2|GF(11)"]["outside_orbit"], "EXP-006 orbit test")
+    need(gauss_binomial(6, 2, 3) == pf["A1|GF(3)"]["spaces"] == 11011, "EXP-006: all two-dimensional subspaces of U_3 over GF(3)")
+    N["sixSpacesTotal"] = thousands(sum(x["spaces"] for x in pf.values()))
+    N["sixCpu"] = thousands(int(sum(x["seconds_cpu"] for x in pf.values())))
+    N["sixFullShaA"] = r6["full_results"]["sha256"][:32]
+    N["sixFullShaB"] = r6["full_results"]["sha256"][32:]
+    N["sixControlTotal"] = orb["B2|GF(11)"]["pure"] + orb["B2|GF(13)"]["pure"]
+    N["sixSingularSample"] = r6["gates"]["G3"]["sample_spaces"]
+    N["sixUnitTests"] = int(re.match(r"(\d+) passed", r6["gates"]["G4"]["last_line"]).group(1))
+    N["sixWallMin"] = f"{r6['wall_seconds_total'] / 60:.0f}"
+    N["sixFullBytes"] = thousands(r6["full_results"]["bytes"])
+    # the three tables with a cancelling pair at e = 3 over GF(3): degrees 10, 11, or both
+    t3 = set(pf["A1|GF(3)"]["nonpure_tables"])
+    base = [[0, 0, 1], [1, 3, 2], [2, 9, 2]]
+    want = {repr(base + [[2, 10, 1], [3, 10, 1], [3, 12, 1]]), repr(base + [[2, 11, 1], [3, 11, 1], [3, 12, 1]]),
+            repr(base + [[2, 10, 1], [2, 11, 1], [3, 10, 1], [3, 11, 1], [3, 12, 1]])}
+    need(t3 == want, "EXP-006: the three other tables over GF(3) at e = 3")
+    # explicit pairs, printed from the stored bases and recomputed Hilbert function by this script's own arithmetic
+    rows = []
+    for fam, fld, kind, val in PAIRS6:
+        e = FAM6[fam]
+        pp, kk = fld_parse(fld)
+        need(kk == 1, "explicit pairs are over prime fields")
+        found = [s for k, c in chunks.items() if k.startswith(f"{fam}|{fld}|") for s in c["spaces"] if s.get(kind) == val]
+        need(len(found) == 1, f"EXP-006 pair {fam}|{fld}|{kind} {val}: found {len(found)}")
+        s = found[0]
+        need(s["pure"] is True and s["betti"] == pure_table(e), f"EXP-006 pair {fam}|{fld}|{val}: Betti table")
+        pair = [[(tuple(m), c) for m, c in f] for f in s["basis"]]
+        hf = hilbert_pair(pair, e, pp, 4 * e - 3)
+        need(hf == [he_val(e, n) for n in range(4 * e - 2)] and hf[-1] == 0 and sum(hf) == e ** 3, f"EXP-006 pair {fam}|{fld}|{val}: Hilbert function recomputed differs from h_e")
+        need(hf == s["hilbert"][:4 * e - 2], f"EXP-006 pair {fam}|{fld}|{val}: stored Hilbert function")
+        rows.append([str(e), fld_tex(fld), "$f=%s$\\newline $g=%s$" % (poly_tex(pair[0], pp), poly_tex(pair[1], pp)), str(e ** 3)])
+        N["sixPairLength" + EW[e]] = e ** 3
+    out["tab_sixpairs.tex"] = table("@{}rrp{9.6cm}r@{}", ["$e$", "field", "forms of degree $e$", "length"], rows)
+    # figure: the share of pure spaces against q
+    lines = ["\\begin{tikzpicture}",
+             "\\begin{axis}[xmode=log, ymode=log, width=0.88\\textwidth, height=7cm, xlabel={field size $q$}, ylabel={share of random spaces}, "
+             "xtick={3,5,7,9,11,13,25,27}, xticklabels={3,5,7,9,11,13,25,27}, minor xtick={}, ytick={0.001,0.01,0.1,1}, yticklabels={0.001,0.01,0.1,1}, minor ytick={}, "
+             "tick label style={font=\\scriptsize}, label style={font=\\small}, grid=major, grid style={gray!25}, legend style={font=\\scriptsize, at={(0.5,-0.22)}, anchor=north}, legend columns=2]"]
+    for key, mark, lab in (("pure3", "*", "pure, $e=3$"), ("pure4", "square*", "pure, $e=4$"), ("rank4", "triangle*", "rank$\\,\\mu_{12}\\le48$, $e=4$")):
+        pts = " ".join("(%d,%.5f)" % (q, v) for q, v in sorted(fig[key]))
+        lines.append("\\addplot[only marks, mark=%s, mark size=2pt] coordinates {%s};" % (mark, pts))
+        lines.append("\\addlegendentry{%s}" % lab)
+    lines.append("\\addplot[dashed, thick] coordinates {(3,%.5f) (27,%.7f)};" % (1 / 9.0, 1 / 729.0))
+    lines.append("\\addlegendentry{$q^{-2}$}")
+    lines.append("\\addplot[dotted, thick] coordinates {(3,%.5f) (27,%.6f)};" % (1 / 3.0, 1 / 27.0))
+    lines.append("\\addlegendentry{$q^{-1}$}")
+    lines += ["\\end{axis}", "\\end{tikzpicture}"]
+    out["fig_sixshare.tex"] = "\n".join(lines) + "\n"
+
+
+# ---- EXP-007 ----
+
+POS_CHAR = [(4, "GF(13)"), (4, "GF(17)"), (4, "GF(32003)"), (5, "GF(13)"), (5, "GF(17)"), (5, "GF(32003)"), (6, "GF(13)"), (6, "GF(17)"), (6, "GF(32003)"),
+            (7, "GF(17)"), (7, "GF(32003)")]
+
+
+def powers_span_dim(e, forms):
+    """dim of the span of the e-th powers (x + t y)^e, t = 0..e-1, and y^e (dimension e+1 in characteristic 0), and of that span plus `forms`."""
+    gens = []
+    for t in list(range(e)) + [None]:
+        if t is None:
+            gens.append(elt_from_terms([((0, e, 0), 1)]))
+            continue
+        cur = {(0, 0, 0): 1}
+        for _ in range(e):
+            nxt = Pbw.xleft(cur)
+            for k, v in Pbw.yleft(cur).items():
+                Pbw.add(nxt, k, t * v)
+            cur = nxt
+        gens.append(cur)
+    keys = sorted({k for g in gens + forms for k in g})
+    idx = {k: i for i, k in enumerate(keys)}
+
+    def mat(es):
+        rows = []
+        for g in es:
+            r = [0] * len(keys)
+            for k, v in g.items():
+                r[idx[k]] = v
+            rows.append(r)
+        return rows
+    return rank_q(mat(gens)), rank_q(mat(gens + forms))
+
+
+def exp7(r7, N, out):
+    need(r7["experiment"] == "EXP-007", "EXP-007 results file")
+    for g in ("G1", "G2", "G3", "G4"):
+        need(r7["gates"][g]["passed"] is True, f"EXP-007 gate {g}")
+    st = r7["statements"]
+    pr = r7["predictions"]
+    need(all(pr[k]["holds"] for k in ("P1", "P2", "P3", "P4", "P5", "P6")), "EXP-007 predictions")
+    need(r7["gates"]["G3"]["spaces"] == r7["gates"]["G3"]["agree"] == 9 and r7["gates"]["G3"]["failing_cases"] == [], "EXP-007 second instrument")
+    # T1: the tangent space at W_0 over the rationals
+    t1 = {row["e"]: row for row in st["T1"]["rows"]}
+    need(sorted(t1) == [4, 5, 6, 7] and st["T1"]["complete"], "EXP-007 T1: e = 4..7")
+    for e, row in t1.items():
+        need(row["r"] == target_rank(e) and row["rank_A"] == row["r"], f"EXP-007 T1 e={e}: rank of A")
+        need(row["matrix"] == [2 * UN(2 * e), UN(3 * e)], f"EXP-007 T1 e={e}: matrix size")
+        need(row["dim_K"] == 2 and row["coker_dim"] == he_val(e, 3 * e) == row["coker_expected"], f"EXP-007 T1 e={e}: kernel and cokernel")
+        need(row["coordinates"] == 2 * (UN(e) - 2), f"EXP-007 T1 e={e}: chart coordinates")
+        need(row["bound"] == 4 * e - 4 == 2 * UN(e) - 4 - 2 * he_val(e, 3 * e), f"EXP-007 T1 e={e}: the bound 4e-4")
+        need(row["tangent_dim"] == row["coordinates"] - row["rank_T"] == 4 * e - 4, f"EXP-007 T1 e={e}: tangent dimension {row['tangent_dim']} vs {4 * e - 4}")
+        need(row["orbit_in_tangent"] is True and row["orbit_rank"] == 2, f"EXP-007 T1 e={e}: orbit directions")
+        N["sevenTangent" + EW[e]] = row["tangent_dim"]
+        N["sevenCoker" + EW[e]] = row["coker_dim"]
+        N["sevenRank" + EW[e]] = row["r"]
+        N["sevenCoords" + EW[e]] = row["coordinates"]
+    # T2
+    t2 = {(row["e"], row["field"]): row for row in st["T2"]["rows"]}
+    need(sorted(t2) == sorted(POS_CHAR) and st["T2"]["complete"], "EXP-007 T2: cases")
+    expected2 = {(4, "GF(13)"): 12, (4, "GF(17)"): 12, (4, "GF(32003)"): 12, (5, "GF(13)"): 16, (5, "GF(17)"): 16, (5, "GF(32003)"): 16,
+                 (6, "GF(13)"): 22, (6, "GF(17)"): 20, (6, "GF(32003)"): 20, (7, "GF(17)"): 26, (7, "GF(32003)"): 24}
+    for k, row in t2.items():
+        need(row["tangent_dim"] == expected2[k] and row["holds"], f"EXP-007 T2 {k}: tangent dimension {row['tangent_dim']}")
+        need(row["tangent_dim"] >= 4 * k[0] - 4, f"EXP-007 T2 {k}: below 4e-4")
+    # the table of tangent dimensions
+    rows = []
+    for e in (4, 5, 6, 7):
+        r = t1[e]
+        cells = [str(e), "%d$\\times$%d" % tuple(r["matrix"]), str(r["r"]), str(r["coker_dim"]), str(r["coordinates"]), str(r["rank_T"]), str(r["tangent_dim"]), str(4 * e - 4)]
+        for fld in ("GF(13)", "GF(17)", "GF(32003)"):
+            cells.append(str(t2[(e, fld)]["tangent_dim"]) if (e, fld) in t2 else "--")
+        rows.append(cells)
+    out["tab_seventangent.tex"] = table("@{}rlrrrrrrrrr@{}", ["$e$", "$A$", "$r$", "$h_e(3e)$", "chart", "rank $T$", "$\\Q$", "$4e-4$", "$\\F_{13}$", "$\\F_{17}$", "$\\F_{32003}$"], rows)
+    # T3: explicit pairs over the rationals and controls; the ranks and the orbit test by this script's own arithmetic
+    t3 = {row["name"]: row for row in st["T3"]["rows"]}
+    cases = r7["cases"]
+    rows = []
+    for name in ("W0_e4", "W0_e5", "P1", "P2", "P3", "P4", "P5", "C1", "C2"):
+        row = t3[name]
+        c = cases["T3|" + name]
+        e = c["e"]
+        need(row["rank_mu_3e"] == c["rank_mu_3e"] and row["r"] == target_rank(e) and c["target_rank_r"] == target_rank(e), f"EXP-007 {name}: rank")
+        pair = [[(tuple(m), int(v)) for m, v in f] for f in c["basis"]]
+        forms = [elt_from_terms(t) for t in pair]
+        rk = mu_rank(forms, e, 3 * e)
+        need(rk == c["rank_mu_3e"], f"EXP-007 {name}: rank of mu_3e recomputed {rk} vs stored {c['rank_mu_3e']}")
+        dS, dSW = powers_span_dim(e, forms)
+        need(dS == e + 1 == row["dim_S"] and dSW == row["dim_S_plus_W"], f"EXP-007 {name}: dimension of the span of the e-th powers and of its sum with W: {dS}, {dSW}")
+        need(row["outside_orbit"] == (dSW > e + 1), f"EXP-007 {name}: orbit test")
+        expect_pure = name in ("W0_e4", "W0_e5", "P1", "P2", "P3", "P4", "P5")
+        need(row["pure"] is expect_pure and row["holds_first"] and row["g3"]["agree"], f"EXP-007 {name}: purity and agreement of the two instruments")
+        if expect_pure:
+            need(row["betti_I1"] == pure_table(e) and rk == target_rank(e) and row["g3"]["betti_I2"] == pure_table(e), f"EXP-007 {name}: pure table")
+        need((name in ("W0_e4", "W0_e5")) == (not row["outside_orbit"]), f"EXP-007 {name}: inside or outside the orbit")
+        if name == "C1":
+            need(rk == 49 and row["betti_I1"] == [[0, 0, 1], [1, 4, 2], [2, 12, 1], [2, 13, 2], [3, 15, 2]], "EXP-007 C1 control")
+            tab = "$b_{2,12}=1$, $b_{2,13}=2$, $b_{3,15}=2$"
+        elif name == "C2":
+            need(rk == 46 and row["nonzero_to_24"] is True and row["finite_length"] is False, "EXP-007 C2 control")
+            tab = "infinite length"
+        else:
+            tab = "$(1,2,2,1)$ on $(0,%d,%d,%d)$" % (e, 3 * e, 4 * e)
+        lab = {"W0_e4": "$W_0$", "W0_e5": "$W_0$"}.get(name, "$%s$" % (name if not name.startswith("C") else name))
+        if name.startswith("P"):
+            lab = "$P_%s$" % name[1]
+        if name.startswith("C"):
+            lab = "$C_%s$" % name[1]
+        rows.append([lab, str(e), "$f=%s$\\newline $g=%s$" % (poly_tex(pair[0]), poly_tex(pair[1])), "%d / %d" % (rk, target_rank(e)), tab, "%d / %d" % (dSW, dS)])
+    out["tab_sevenpairs.tex"] = table("@{}lrp{4.9cm}p{1.9cm}p{2.8cm}p{2.2cm}@{}", ["space", "$e$", "forms over $\\Q$", "rank $\\mu_{3e}$ / $r$", "Betti table", "$\\dim(S_e{+}W)$ / $\\dim S_e$"], rows)
+    # T4, T5, T6
+    t4, t5, t6 = st["T4"], st["T5"], st["T6"]
+    rows = []
+    for e in ("4", "5"):
+        r = target_rank(int(e))
+        q, g = t4[e]["qq"], t4[e]["gf"]
+        need(q["members"] == q["planned"] == 625 and q["rank_le_r"] == 625 and q["above_r"] == 0 and not q["unfinished"] and not q["failing"], f"EXP-007 T4 e={e} over Q")
+        need(g["members"] == g["planned"] == 200 and g["pure_and_outside"] >= 190 and g["rank_le_r"] == 200 and not g["unfinished"], f"EXP-007 T4 e={e} over GF(32003)")
+        rr = q["rank_hist"][str(r)]
+        N["sevenLQQAt%s" % ("Four" if e == "4" else "Five")] = rr
+        N["sevenLGFPure%s" % ("Four" if e == "4" else "Five")] = g["pure_and_outside"]
+        N["sevenLQQMin%s" % ("Four" if e == "4" else "Five")] = min(int(k) for k in q["rank_hist"])
+        rows.append(["$L_%s$" % e, e, "$\\Q$, parameters in $\\{-2,\\dots,2\\}$", "625", "625", str(rr), "--"])
+        rows.append(["$L_%s$" % e, e, "$\\F_{32003}$, random", "200", "200", str(g["rank_hist"][str(r)]), "%d" % g["pure_and_outside"]])
+    gr = t5["grid"]
+    need(gr["spaces_done"] == gr["spaces_planned"] == 729 and gr["plane_points"] == 1 and gr["rank_le_48"] == 1 and gr["mismatches"] == [] and not gr["unfinished"] and gr["rank_hist"] == {"48": 1, "49": 728},
+         "EXP-007 T5 grid")
+    need(len(t5["pure"]) == 6 and all(x["pure"] and x["rank_mu_3e"] == 48 and x["equation_value"] == 0 for x in t5["pure"]), "EXP-007 T5 pure points on the plane")
+    rows.append(["section $\\Pi$", "4", "$\\Q$, grid $\\{-4,\\dots,4\\}^3$", "729", "1", "1", "--"])
+    for e in ("4", "5", "6"):
+        t = t6[e]
+        need(t["rank_le_r"] == t["spaces"] == t["planned"] == 20 and t["r"] == target_rank(int(e)) and t["holds"] and t["d"] == he_val(int(e), 3 * int(e)), f"EXP-007 T6 e={e}")
+        rows.append(["common factor of degree %d" % t["d"], e, "$\\F_{32003}$, random", "20", "20", str(t["rank_hist"][str(t["r"])]), "--"])
+    need(t6["4"]["infinite_length"] == 20, "EXP-007 T6: infinite length at e = 4")
+    out["tab_sevenfam.tex"] = table("@{}lrlrrrr@{}", ["family", "$e$", "field and sampling", "spaces", "rank $\\le r$", "rank $=r$", "pure, outside orbit"], rows)
+    N["sevenGridSpaces"] = gr["spaces_done"]
+    N["sevenGridOff"] = gr["rank_hist"]["49"]
+    N["sevenCommon"] = 20
+    N["sevenWall"] = f"{r7['wall_seconds_total']:.0f}"
+    N["sevenGThreeSpaces"] = r7["gates"]["G3"]["spaces"]
+
+
+def gauss_binomial(n, k, q):
+    num = den = 1
+    for i in range(k):
+        num *= q ** (n - i) - 1
+        den *= q ** (i + 1) - 1
+    return num // den
+
+
+def formula_checks(N):
+    """u(n), h_e(n), h_e(3e) and the bound 4e-4 against the Hilbert series of U and the closed forms used in the text."""
+    ser = series_div([1], [1, 1, 2], 80)
+    need(all(UN(n) == ser[n] for n in range(80)), "u(n) = floor((n+2)^2/4) differs from the Hilbert series of U")
+    for e in range(2, 13):
+        h = [he_val(e, n) for n in range(0, 5 * e + 3)]
+        need(h == (h_series(e) + [0] * (5 * e + 3))[:len(h)], f"e={e}: h_e(n) from u differs from the series h_e(t)")
+        need(sum(h) == e ** 3 and all(x >= 0 for x in h), f"e={e}: the pure Hilbert function")
+        h3 = he_val(e, 3 * e)
+        need(h3 == (((e - 2) // 2) ** 2 if e % 2 == 0 else (e - 1) * (e - 3) // 4), f"e={e}: closed form of h_e(3e)")
+        need(2 * UN(e) - 4 - 2 * h3 == 4 * e - 4, f"e={e}: 2u(e) - 4 - 2h_e(3e) = 4e - 4")
+        need(h3 == UN(3 * e) - 2 * UN(2 * e) + 2, f"e={e}: h_e(3e)")
+        # the maximal-rank function agrees with h_e except in the degrees 3e .. 4e-4 (and only for e >= 4)
+        mr = [max(0, UN(n) - 2 * UN(n - e)) for n in range(5 * e)]
+        diff = [n for n in range(5 * e) if mr[n] != he_val(e, n)]
+        need(diff == ([] if e <= 3 else list(range(3 * e, 4 * e - 3))), f"e={e}: degrees where the maximal-rank function differs from h_e: {diff}")
+    N["formulaMaxE"] = 12
+
+
+def build_new(root, N):
+    """Read the artifacts of EXP-005 to EXP-007 under `root`, check every value the text uses, and return the generated files."""
+    r5, r6, r7 = read_artifacts(root)
+    out = {}
+    formula_checks(N)
+    exp5(r5, N, out)
+    exp6(r6, N, out)
+    exp7(r7, N, out)
+    return out
 
 
 # --------------------------------------------------------------------------------------------------------------------------
@@ -1363,6 +1993,7 @@ def main():
     static_tables(N)
     lift_certificates(d, N, rays, F)
     controls(d, N)
+    OUT.update(build_new(PROBLEM, N))
     procedures(d, N, cases)
     byray = None
     lattice_s(F, N)
