@@ -74,12 +74,12 @@ exhaustion (UFB-012).
 
 ## What EXP-005 added (2026-11-07)
 
-- **$\alpha^\* \ge 9/8$, also on planar instances.** Muffatti's family (GitHub note, 2026-08-31): Rybin's topology
+- **$\alpha^\* \ge 9/8$, also on planar instances.** Muffatti's family (GitHub note dated 2026-07-24): Rybin's topology
   with demands $(1, 3/4, 1)$, free-path fractions $(1/4, 1/2 + \varepsilon, 1/4)$ and unit-cost paid paths forces
   exactly $9/8 - (3/4)\varepsilon$; checked with our exact instrument at three values of $\varepsilon$. The frontier
   value is the same, so his pricing is optimal on the family. With TVZ24, $9/8 \le \alpha^\*_{\text{planar}} \le 2$. [MV]
-  Superseded as a bound (2026-11-19): S. Nikolenko had proved on 2026-07-30 that $9/8$ is the supremum of this
-  symmetric three-terminal template (10.5281/zenodo.21701162), and his series gives $\alpha^\* \ge 1.28260069$ (with
+  Superseded as a bound (2026-11-19): Muffatti's note also proves that $9/8$ is the supremum of this symmetric family,
+  as does S. Nikolenko independently (2026-07-30, 10.5281/zenodo.21701162, Proposition 5.2), and Nikolenko's series gives $\alpha^\* \ge 1.28260069$ (with
   A. De la Fuente's refinement) and $\alpha^\*_{\text{planar}} \ge 1.17353531974518$; EXP-005 remains an exact check
   of the family.
 - **EXP-004's family reading was wrong.** Its box did not contain these parameters, and the bound needs

@@ -9,9 +9,9 @@ Goemans' cost-preserving unsplittable-flow conjecture (Conjecture 1.2 of STVZ25)
 Rybin's seven-vertex planar instance, announced on 2026-07-22/23 outside peer review (and formalized in Isabelle/HOL as an
 AFP entry); it is not ours. The current lower bounds on the frontier constant are not ours either: S. Nikolenko's three
 Zenodo preprints (2026-07-30 to 2026-08-13) and repository give the general bound 1.2824948, refined by A. De la Fuente to
-1.28260069 (merged 2026-08-04), the planar family (299 - 41 sqrt 41)/32, and the planar record 1.17353531974518; the value
-9/8 as the exact supremum of the symmetric three-terminal template is Nikolenko's (2026-07-30), and the Muffatti family
-(2026-08-31) is its limit point. Conjecture 1.3 is false by Berczi, Liu, Reis and Tarnawski (arXiv:2608.13983,
+1.28260069 (merged 2026-08-04), the planar family (299 - 41 sqrt 41)/32 (credited jointly to M. Protti, release of 2026-07-23, in Nikolenko's third
+preprint), and the planar record 1.17353531974518; the bound 9/8 and its status as the supremum of the symmetric
+three-terminal family are Muffatti's (note dated 2026-07-24) and, independently, Nikolenko's (2026-07-30, Proposition 5.2). Conjecture 1.3 is false by Berczi, Liu, Reis and Tarnawski (arXiv:2608.13983,
 Theorem 17).
 
 The CAOS contributions are: the independent exact verification of the 2026 counterexample and what it forces (alpha_inst =

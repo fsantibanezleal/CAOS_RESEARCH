@@ -258,3 +258,19 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   17-terminal instances): the authors' pricing is optimal, and re-pricing gains nothing.
 - Methodology 13 adopted for this problem the same day (focus UF-F3); next: the preprint revision (UFB-066).
 
+## 2026-11-19 - Correction: the credit and date of 9/8, and Protti's share of the planar four-terminal value
+
+- The review of the preprint revision found two misattributions in this programme's records, both re-read on the archived
+  sources. (1) Muffatti's note is dated 24 July 2026 and its Theorem states the bound 9/8 and that 9/8 is the supremum of
+  the symmetric family; the date 2026-08-31 used since 2026-11-07 is the date of the archived repository commit. The entry
+  of 2026-11-19 that gave the supremum to Nikolenko "a month before Muffatti" was wrong: Nikolenko's Proposition 5.2
+  (2026-07-30) is an independent proof, six days later. (2) Nikolenko's third preprint credits the planar value
+  (299 - 41 sqrt 41)/32 to "Protti [13] and our previous work [11]"; Protti's release is of 2026-07-23 and was not in our
+  records.
+- Corrected: RESUME, manuscript map, governance record, backlog UFB-066, wiki pages 04 and 05; addenda in the EXP-004 and
+  EXP-005 verdicts. The preprint revision carries the corrected credit (fix pass in progress); the dossier rows are
+  corrected in the same pass.
+- Cause: the archive record named the commit date as the date of the source, and the refresh compared that date with the
+  date of a preprint. A source's date is the date it prints, read on the source; the commit of the archive is recorded
+  separately.
+
