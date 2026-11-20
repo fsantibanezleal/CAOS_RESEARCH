@@ -105,7 +105,8 @@ The decomposition above for odd e was then compared with the computation in U (`
 on random members at (5, 3), (5, 5), (5, 7), (7, 3), (7, 5) (150, 150, 340, 80, 80 members), without a difference.
 
 In the normalized form (apply sigma^(u-1)): N_u is the quotient of the ideal (A_(u-1), alpha) of R = D/(Delta) by
-X A_(u-1) and X' alpha, where X = (h - 2z) tau^(e+1)(Delta) and X' = (h + e z) sigma^(e+1)(Delta) do not depend on u. For
+X A_(u-1) and X' alpha, where X = (h - 2z) tau^(e+1)(Delta) and X' = (h + e z) sigma^(e+1)(Delta) do not depend on u.
+For
 u = 1 and u = e the length e (e - 1) asks for
 
     (F1)  X' alpha = c X   modulo Delta,  c of degree at most s,
@@ -127,6 +128,23 @@ So the conjecture to prove (BSB-035) is the analogue of the two theorems for eve
 only if (F0) to (F3), with (F0) in the role of the hypothesis (C) and mu not zero in the role of lambda not zero.
 EXP-017 uses (F0) to (F3) as a filter for a random search at (9, 11), (9, 13), (11, 7), (13, 5) and checks in U what
 passes.
+
+Why (F3) appears (a computation by hand, to be written as a proof). Suppose Delta has no root among 0, -1, ...,
+-(e - 2), so that A_(u-1) and alpha are coprime to Delta. By (F1), X' alpha = c X in R, and X is not a zero divisor,
+so N_u is the quotient of I_u = (A_(u-1), alpha) by X K_u with K_u = (A_(u-1), c), and
+
+    length N_u = e (e - 1) + length R/K_u - length R/I_u.
+
+Now (Delta, A_(u-1), alpha) = (A_(u-1), alpha) because Delta = alpha sigma^(e-1)(beta) - A_(e-1) and A_(u-1) divides
+A_(e-1); its colength is (u - 1) s. If mu is not zero, Delta = (c c' - A_(e-1))/mu lies in (A_(u-1), c), so
+(Delta, A_(u-1), c) = (A_(u-1), c), of colength (u - 1) s as well, since c does not vanish at the points 0, ..., -(e
+- 2)
+(there (c/alpha)(c'/sigma^(e-1) beta) = mu). So every N_u has length e (e - 1), with (F1) and (F2) alone: the middle
+summands impose nothing more. If mu = 0, c divides A_(e-1) and shares a factor with A_(u-1) for some u unless
+c = sigma^s(A_s) (then use the mirror presentation for u > s + 1): this is the special factorization seen at (5, 7).
+What is missing for a statement: the cyclic summand and the generators of higher degree, the lower bound
+length N_u >= e (e - 1) for the converse, the case where Delta has roots in the prime field (pure members with such
+roots exist), and the socle for the Betti table.
 
 ## How could this be wrong?
 
