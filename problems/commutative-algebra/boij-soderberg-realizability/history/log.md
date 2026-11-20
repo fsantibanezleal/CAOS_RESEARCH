@@ -111,3 +111,15 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   prime-field presentation), d3 - d0, and the attribution of the exclusion over S to Erman 2009.
 - Open from the review: store the rational presentations and tables with the hits (BSB-019).
 
+## 2026-11-19 - The general characteristic 2 statement reviewed: correct; BSB-019 closed
+
+- An independent reader re-derived the four steps and found no error (5 minor, 7 notes; all applied in the note): the
+  quadric is P^1 x P^1 over k itself, so no extension of the field is needed; the hypotheses e >= 2 and b <= a + 1 are
+  both sharp; the eventual Hilbert function of a general presentation is (a(a+1)/2) L.L in every degree, by an
+  argument of the reviewer for the other parity.
+- Machine check with the reviewer's own code: no finite length module among all 651 two-dimensional spaces of cubics and
+  all 35 of quadrics over GF(2), 720 random pairs of quartics and quintics over GF(2), GF(4), GF(16), and 60 matrices of
+  2 by 3 cubics; eventual values 2, 4, 8, 12, 12 as predicted.
+- The modules over QQ of the rays with d3 <= 9 are stored with the experiment: the reviewer's Singular scripts (each
+  builds the module from the saved generator matrix) and their tables, with SHA-256 (`artifacts/qq-modules.json`).
+

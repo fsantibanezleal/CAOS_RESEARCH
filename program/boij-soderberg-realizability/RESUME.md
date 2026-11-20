@@ -68,8 +68,11 @@ over QQ in a second system (addendum 1 of the EXP-001 verdict).
 
 ## 5. Next actions
 
-1. The review of the general characteristic 2 statement (BSB-017) and the storage of the rational modules of the rays
-   with d3 <= 9 (BSB-019); EXP-004 (rank certificates for the lift to characteristic 0) and its verdict.
+1. EXP-004 (rank certificates for the lift to characteristic 0): its verdict and the review of its lemma.
+   Done on 2026-11-19: the general characteristic 2 statement is reviewed (in characteristic 2 a module with a generators
+   and at most a + 1 relations of one degree e >= 2 never has finite length over U(H), so (1,2,2,1) on (0, e, 3e, 4e) is
+   realized over neither ring for every e >= 2; context note `2026-11-19-characteristic-two-general.md`), and the rational
+   modules of the rays with d3 <= 9 are stored with hashes (`artifacts/qq-modules.json` of EXP-001).
 2. The remaining QQ rechecks (57 not run, 7 at the time limit) and the two hits that fail over QQ (BSB-016); the 15 open
    rays with d3 >= 10.
 3. The first manuscript (BSB-013): the family U/U(x^e, y^e) with its sharp characteristic condition, the characteristic 2
