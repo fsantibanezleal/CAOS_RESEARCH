@@ -25,29 +25,101 @@
       "network flows"
     ],
     "license": "cc-by-4.0",
-    "access_right": "open",
     "language": "eng",
     "version": "0.04",
     "publication_date": "2026-11-19",
     "version_notes": "Adds the independent verification of eleven instances of the 2026 lower-bound series (values, planarity certificates, optimality of the prices), the frontier value with its exact evaluators, and the exact checks of the symmetric three-terminal and odd-cycle families. States each result of the series with its author and date (Rybin, Muffatti, Protti, Nikolenko, De la Fuente, Afrasyab) and corrects the status of the cost-free two-sided conjecture.",
     "related_identifiers": [
-      {"relation": "isSupplementedBy", "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "resource_type": "software"},
-      {"relation": "cites", "identifier": "10.1007/s004930050043", "resource_type": "publication-article"},
-      {"relation": "cites", "identifier": "10.1007/978-3-540-75520-3_36", "resource_type": "publication-conferencepaper"},
-      {"relation": "cites", "identifier": "10.1007/s10107-021-01704-4", "resource_type": "publication-article"},
-      {"relation": "cites", "identifier": "10.1007/s10107-026-02365-x", "resource_type": "publication-article"},
-      {"relation": "cites", "identifier": "10.1007/s10107-026-02392-8", "resource_type": "publication-article"},
-      {"relation": "cites", "identifier": "10.1137/1.9781611978964.42", "resource_type": "publication-conferencepaper"},
-      {"relation": "cites", "identifier": "10.48550/arXiv.2510.21287", "resource_type": "publication-preprint"},
-      {"relation": "cites", "identifier": "10.48550/arXiv.1504.00627", "resource_type": "publication-preprint"},
-      {"relation": "cites", "identifier": "10.48550/arXiv.2608.13983", "resource_type": "publication-preprint"},
-      {"relation": "cites", "identifier": "10.48550/arXiv.2609.17568", "resource_type": "publication-preprint"},
-      {"relation": "cites", "identifier": "10.48550/arXiv.2610.16079", "resource_type": "publication-preprint"},
-      {"relation": "cites", "identifier": "10.5281/zenodo.21701162", "resource_type": "publication-preprint"},
-      {"relation": "cites", "identifier": "10.5281/zenodo.21716713", "resource_type": "publication-preprint"},
-      {"relation": "cites", "identifier": "10.5281/zenodo.21922203", "resource_type": "publication-preprint"},
-      {"relation": "cites", "identifier": "10.1287/moor.2.2.103", "resource_type": "publication-article"},
-      {"relation": "cites", "identifier": "10.4064/fm-15-1-271-283", "resource_type": "publication-article"}
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "10.5281/zenodo.22728167",
+        "resource_type": "software"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s004930050043",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/978-3-540-75520-3_36",
+        "resource_type": "publication-conferencepaper"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s10107-021-01704-4",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s10107-026-02365-x",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s10107-026-02392-8",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1137/1.9781611978964.42",
+        "resource_type": "publication-conferencepaper"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2510.21287",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.1504.00627",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2608.13983",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2609.17568",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2610.16079",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.21701162",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.21716713",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5281/zenodo.21922203",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1287/moor.2.2.103",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.4064/fm-15-1-271-283",
+        "resource_type": "publication-article"
+      }
     ],
     "references": [
       "Y. Dinitz, N. Garg, M. X. Goemans, On the single-source unsplittable flow problem, Combinatorica 19(1) (1999) 17-41. 10.1007/s004930050043",

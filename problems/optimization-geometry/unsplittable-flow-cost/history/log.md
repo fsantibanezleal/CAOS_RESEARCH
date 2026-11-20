@@ -274,3 +274,15 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
   date of a preprint. A source's date is the date it prints, read on the source; the commit of the archive is recorded
   separately.
 
+## 2026-11-19 - Preprint v0.04 published
+
+- `counterexample-verification` v0.04: 10.5281/zenodo.24384160 (38 pages, 677,983 bytes, SHA-256 e681d974abe714906a4c14ed41f20a0cba702e2de5efe0fd31e1feef070f88ec). Rewritten to the manuscript
+  content bar (12,900 words, 40 display equations, 7 figures, 12 tables, 34 references, 7 algorithms), with tables,
+  figures and numbers generated from the artifacts of EXP-001 to EXP-007 by a script that stops on a mismatch.
+- Review before release: an independent reader re-derived the seven proofs, checked 52 numbers against the artifacts and
+  recomputed three results with its own code; 10 blockers on attribution and on sentences that said more than the
+  evidence, 11 majors; a re-check found two more blockers on the order of dates (the library's first commit is of 25
+  July, after the first two public results of the series; Muffatti's note was public hours before Protti's release); a
+  closing check approved the text. The record carries its reference list, cites links and the software link.
+- The release build asked for a build with no underfull box: table cells and the bibliography are set ragged right.
+

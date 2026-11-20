@@ -191,7 +191,7 @@ def seven(d, N):
             return "both"
         return "congestion-good" if r.congestion_good else "cost-good only"
 
-    lines = [r"\begin{table}[t]", r"\centering\small", r"\begin{tabular}{@{}ccclllp{4.6cm}@{}}", r"\toprule",
+    lines = [r"\begin{table}[t]", r"\centering\small", r"\begin{tabular}{@{}ccclll>{\raggedright\arraybackslash}p{4.6cm}@{}}", r"\toprule",
              r"$t_1$ & $t_2$ & $t_3$ & cost & $\alpha$ & status & violated arcs\\", r"\midrule"]
     for key, r in table:
         lines.append(f"${key[0]}$ & ${key[1]}$ & ${key[2]}$ & {exact_int(r.cost)} & {exact_int(r.alpha)} & {status(r)} & {vtxt(r)}\\\\")
@@ -523,7 +523,7 @@ def exp007(d, N):
               r"Long exact values are in Table~\ref{tab:exact}.}", r"\label{tab:records}", r"\end{table}"]
     OUT["tab_records.tex"] = "\n".join(lines) + "\n"
     # exact values table
-    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\renewcommand{\arraystretch}{1.6}", r"\begin{tabular}{@{}lp{5.4cm}l@{}}", r"\toprule",
+    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\renewcommand{\arraystretch}{1.6}", r"\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{5.4cm}l@{}}", r"\toprule",
              r"instance & exact value $\alpha_{\mathrm{inst}}$ & decimal (next to the exact value)\\", r"\midrule"]
     for k, r1, r3, r4 in rows:
         q = fr(r4["alpha_max"])
@@ -831,7 +831,7 @@ def _running_best(tr):
 
 def tables_misc(d, N):
     # tab_sweep: the frontier value sweep and the family checks
-    lines = [r"\begin{table}[t]", r"\centering\small", r"\begin{tabular}{@{}p{5.6cm}rrp{3.4cm}@{}}", r"\toprule",
+    lines = [r"\begin{table}[t]", r"\centering\small", r"\begin{tabular}{@{}>{\raggedright\arraybackslash}p{5.6cm}rr>{\raggedright\arraybackslash}p{3.4cm}@{}}", r"\toprule",
              r"family and box & members & members with $\alpha_{\max}>1$ & largest $\alpha_{\max}$\\", r"\midrule"]
     lines.append(f"Spine family, $k=3$, $m=3$ & {N['nfamthree']} & {N['nfamthreece']} & $\\tfrac{{16}}{{15}}$ (the seven-vertex instance)\\\\")
     lines.append(f"Spine family, $k=4$, $m=4$ & {N['nfamfour']} & {N['nfamfource']} & $\\le 1$\\\\")
@@ -872,7 +872,7 @@ def tables_misc(d, N):
         (r"planarity certificate and checker, Algorithm~\ref{alg:planar}", r"face tracing visits each dart once; suppression of degree-two vertices repeats until none remains",
          f"{N['ncertsec']} s for the 17-terminal graphs ({N['nkverts']} vertices, {N['nkarcs']} arcs)"),
     ]
-    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}p{3.3cm}p{4.3cm}p{4.9cm}@{}}", r"\toprule",
+    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{4.9cm}@{}}", r"\toprule",
              r"procedure & cost in the size of the instance & measured on the instances of the series\\", r"\midrule"]
     for a, b, c in rows:
         lines.append(f"{a} & {b} & {c}\\\\[2pt]")
@@ -883,7 +883,7 @@ def tables_misc(d, N):
               r"\label{tab:procedures}", r"\end{table}"]
     OUT["tab_procedures.tex"] = "\n".join(lines) + "\n"
     # battery
-    lines = [r"\begin{table}[t]", r"\centering\small", r"\begin{tabular}{@{}p{4.6cm}p{4.8cm}p{3.2cm}@{}}", r"\toprule",
+    lines = [r"\begin{table}[t]", r"\centering\small", r"\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{4.8cm}>{\raggedright\arraybackslash}p{3.2cm}@{}}", r"\toprule",
              r"result (source) & test on the instance & outcome\\", r"\midrule",
              r"Dinitz--Garg--Goemans \cite{DGG99} & a congestion-good routing exists & " + f"{N['ngood']} exist\\\\",
              r"cost-free two-sided conjecture of Morell and Skutella \cite{MS22} & some routing meets $x_a-d_{\max}\le y_a\le x_a+d_{\max}$ & " + f"{N['ntwowitness']} witnesses\\\\",
@@ -903,7 +903,7 @@ def tables_misc(d, N):
     need(not ca["on the early (paid) path"]["equals_claim"] and not ca["on the late (free) path"]["equals_claim"],
          "control (a): the perturbed demand must not reproduce the claim in either variant")
     need(all(v["fired"] for v in cb.values()), "control (b): every zero-cost variant must fall below its claim")
-    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}p{1.2cm}p{5.7cm}p{5.3cm}@{}}", r"\toprule",
+    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{5.7cm}>{\raggedright\arraybackslash}p{5.3cm}@{}}", r"\toprule",
              r"record & what was perturbed & what fired\\", r"\midrule",
              r"EXP-001 & corrupted copy of $V_1$ (one arc load changed by $+1$) & conservation fails at $s$: divergence 3, expected 2\\",
              r"EXP-001 & parallel arcs ($V_2$) and a directed cycle ($V_5$) & a vertex-pair model would find one path on $V_2$; the arc-indexed model finds two; the cyclic instance gains a third path\\",
@@ -955,7 +955,7 @@ def tables_misc(d, N):
         (r"\cite{Nik3}", "record of 13 August 2026", nik["zenodo-21922203-ExactMean_Decompositions_SSUF_Nikolenko.pdf"]),
         (r"instances of the series (JSON of EXP-007)", "transcription of 19 November 2026", d["r7"]["data"]["sha256"]),
     ]
-    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}p{3.6cm}p{4.2cm}p{6.2cm}@{}}", r"\toprule", r"source & version & SHA-256\\", r"\midrule"]
+    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{6.2cm}@{}}", r"\toprule", r"source & version & SHA-256\\", r"\midrule"]
     for a, b, c in rows:
         lines.append(f"{a} & {b} & \\texttt{{{c[:32]}\\allowbreak {c[32:]}}}\\\\[2pt]")
     lines += [r"\bottomrule", r"\end{tabular}",

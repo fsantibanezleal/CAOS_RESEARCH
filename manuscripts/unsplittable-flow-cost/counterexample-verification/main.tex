@@ -44,7 +44,7 @@
 \newcommand{\doctype}{Preprint}
 \newcommand{\docversion}{v0.04}
 \newcommand{\docdate}{19 November 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.21554258}
+\newcommand{\versiondoi}{10.5281/zenodo.24384160}
 \newcommand{\conceptdoi}{10.5281/zenodo.21554258}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
@@ -339,7 +339,7 @@ which Section~\ref{sec:repro} explains once. Table~\ref{tab:notation} collects t
 
 \begin{table}[t]
 \centering\small
-\begin{tabular}{@{}lp{10.2cm}@{}}
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{10.2cm}@{}}
 \toprule
 symbol & meaning\\
 \midrule
@@ -871,7 +871,7 @@ nonnegative cost vectors, equals the same closed form at all three values, with 
 The exploration over the grid of \ngridpoints\ points has the largest frontier value \ngridmax, at $b=\tfrac34$, $d_3=1$, $(r_1,q,r_3)=(\tfrac14,\tfrac9{16},\tfrac14)$, which is the member of the family at $\varepsilon=\tfrac1{16}$, the closest the grid comes to its limit. No grid point exceeds $\tfrac98$; the next values, $\tfrac{17}{16}$ at $q=\tfrac12$ and $\tfrac{135}{128}$ at $b=\tfrac58$, lie below it. The value $\tfrac98$ is the supremum of the family and is not attained, since the bound requires $q>\tfrac12$ strictly.
 The value $\tfrac98$ and its status as the supremum of this family are due to \cite{Muf26}, and independently to \cite{Nik1}, Proposition~5.2 (the template with members $(3n-1)^2/(8n^2)$); the family checked here is the one-parameter subfamily $b=\tfrac34$, $r=\tfrac14$ of that template. What is added here is the exact computation of the family at three values of $\varepsilon$ and of its frontier value, and the grid.
 
-\subsection{The odd-cycle family on $C_5$}
+\subsection{The odd-cycle family on \texorpdfstring{$C_5$}{C5}}
 \label{sec:oddcycle}
 
 Table~\ref{tab:sweep} and Figure~\ref{fig:oddcycle} report the four stages. At stage A, the calibration, the frontier value equals $\tfrac23-\varepsilon$ at each of the five values of $\varepsilon$ (the values $\tfrac{79}{120}$, $\tfrac{13}{20}$, $\tfrac58$, $\tfrac{29}{48}$ and $\tfrac{23}{39}$), and the builder reproduces the uniform instance of \cite{Afr26} exactly, so Afrasyab's pricing is optimal across that family. No member of
@@ -965,7 +965,7 @@ There is no tunable method to ablate here, since every procedure is exact. The a
 
 \input{tab_controls.tex}
 
-Removing the arc index from the instance model would be silent on all of the instances of the series except one calibration instance [D]: with two parallel arcs a model keyed on pairs of endpoints finds one path and reports one routing, where the arc-indexed model finds two. A path enumerator without a vertex guard fails to terminate on the instance with a directed cycle, and one that guards on arcs terminates (a finite graph has finitely many trails) but enumerates walks that repeat vertices, which are not simple paths; the vertex guard terminates and returns the third simple path
+Removing the arc index from the instance model would be silent on all of the instances of the series and would show only on the calibration instance with two parallel arcs [D]: with two parallel arcs a model keyed on pairs of endpoints finds one path and reports one routing, where the arc-indexed model finds two. A path enumerator without a vertex guard fails to terminate on the instance with a directed cycle, and one that guards on arcs terminates (a finite graph has finitely many trails) but enumerates walks that repeat vertices, which are not simple paths; the vertex guard terminates and returns the third simple path
 that the cycle creates. An exclusive reading of the congestion inequality would misclassify the routing of the fourth calibration instance that loads an arc to exactly $x_a+\dmax$, and would have silently manufactured counterexamples [D]. Each of these is a plausible implementation error, and each is caught by one calibration instance; the consequences of the removals above are argued, not observed; what was observed is the path count of the library itself on the calibration instances (two paths on the instance with parallel arcs, and the third simple path on the instance with a directed cycle).
 
 Removing the exact simplex in favour of a single solver would leave the numbers resting on one implementation: sympy's rational simplex raised an oscillation error on a degenerate member of the spine family, and replacing it by the Bland-rule simplex, validated against sympy where both finish, removed the single point of failure. Removing the cuts' reuse or the monotone binary search from the cutting-plane evaluator would leave the enumerative evaluator,
@@ -1008,7 +1008,7 @@ The proof of the Dinitz--Garg--Goemans theorem is used as a statement and was no
 
 The source code, the experiment records and the artifacts are in the repository \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}. The experiments and the library are in the folder \path{problems/optimization-geometry/unsplittable-flow-cost/}. The identifiers \EXP{001} to \EXP{007} denote the archived computations in its subfolder \path{experiments/}; each holds its code, its artifacts and its statement of the prediction and the outcome. The library \texttt{ufclib} is in the subfolder \path{code/}, with its tests. The folder of this paper, \path{manuscripts/unsplittable-flow-cost/counterexample-verification/},
 holds the generator \path{make_tables.py}, which reads the artifacts, checks the values that the text relies on and writes \path{numbers.tex}, every table and every figure; with \texttt{-{}-check} it reports stale outputs. From the repository root, with the repository's Python environment, the commands are the following.
-\begin{itemize}\setlength{\itemsep}{1pt}
+\begin{itemize}\setlength{\itemsep}{1pt}\raggedright
 \item \texttt{python}\ \path{manuscripts/unsplittable-flow-cost/counterexample-verification/make_tables.py}\ \texttt{-{}-check}
 \item \texttt{python}\ \path{problems/optimization-geometry/unsplittable-flow-cost/experiments/EXP-00N-<name>/run.py}, the script of each experiment folder
 \item \texttt{python -m pytest}\ \path{problems/optimization-geometry/unsplittable-flow-cost/code/ufclib/tests/}
@@ -1028,6 +1028,7 @@ Muffatti's subfamily of the symmetric three-terminal template forces $\tfrac98-\
 
 Four questions remain open. Whether a counterexample with two terminals exists. Whether the factor-two merger constant of Open Problem~11.1 of \cite{Nik3} is finite, which would give a universal cost-preserving additive constant; only $K\ge2.5652$ is known. Where the planar constant lies in the interval from $1.1735$ to $2$. And whether the supremum of the odd-cycle family on $C_5$ is $1$. A new lower bound needs a new instance or a new family, since re-pricing the known instances gains nothing.
 
+{\raggedright
 \begin{thebibliography}{99}
 
 \bibitem{DGG99} Y.\ Dinitz, N.\ Garg, M.\ X.\ Goemans, \emph{On the single-source unsplittable flow problem}, Combinatorica \textbf{19}(1) (1999) 17--41. \doi{10.1007/s004930050043}
@@ -1099,5 +1100,6 @@ Four questions remain open. Whether a counterexample with two terminals exists. 
 \bibitem{Bra09} U.\ Brandes, \emph{The left-right planarity test}, manuscript (2009).
 
 \end{thebibliography}
+}
 
 \end{document}

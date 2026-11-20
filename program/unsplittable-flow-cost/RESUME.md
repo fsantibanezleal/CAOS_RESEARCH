@@ -9,6 +9,10 @@ Labels: [MV] machine-verified in this repo, [D] derived by us on paper, [C] conj
 
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): hold; refresh the dossier before EXP-005 (UFB-061) and check the Conjecture 1.4 numbering (UFB-062).
 
+2026-11-19: preprint v0.04 published, [10.5281/zenodo.24384160](https://doi.org/10.5281/zenodo.24384160) (38 pages): the independent exact verification of the
+counterexample and of eleven instances of the lower-bound series, with the instruments, their proofs and each result
+credited to its author and date; reviewed by an independent reader with two fix passes and a closing check.
+
 2026-11-19: portfolio review ([program/portfolio-review-2026-11-19.md](../portfolio-review-2026-11-19.md), decision 3).
 S. Nikolenko's three Zenodo preprints (2026-07-30 to 2026-08-13) and repository supersede our lower bounds [V]: general
 $\alpha^\* \ge 1.28260069$ (his 17-terminal instance, $1.2824948$, refined by A. De la Fuente, merged 2026-08-04), planar

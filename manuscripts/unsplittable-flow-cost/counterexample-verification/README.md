@@ -1,13 +1,15 @@
 # Independent exact verification of the counterexample to Goemans' unsplittable-flow cost conjecture and of the 2026 lower-bound instances, with certified planarity and optimal pricing
 
-Current public version: v0.03, published 2026-09-18 at
-[10.5281/zenodo.22835200](https://doi.org/10.5281/zenodo.22835200), under concept DOI
-[10.5281/zenodo.21554258](https://doi.org/10.5281/zenodo.21554258). The committed `main.pdf` is that published version.
+Current public version: v0.04, published 2026-11-19 at
+[10.5281/zenodo.24384160](https://doi.org/10.5281/zenodo.24384160), under concept DOI
+[10.5281/zenodo.21554258](https://doi.org/10.5281/zenodo.21554258); 38 pages, 677,983 bytes, SHA-256
+`e681d974abe714906a4c14ed41f20a0cba702e2de5efe0fd31e1feef070f88ec`. The committed `main.pdf` is that published version. It was reviewed by a reader other than the writer before release (proofs re-derived, 52 numbers checked against the
+artifacts, the credits and dates checked on the archived sources), with two fix passes and a closing check. Version 0.03
+was published on 2026-09-18 at [10.5281/zenodo.22835200](https://doi.org/10.5281/zenodo.22835200).
 
 ## What the source in this folder is
 
-`main.tex` is the source of the next version (v0.04, not yet released: the version DOI macro holds the concept DOI as a
-placeholder until the release tool reserves the DOI). It is a LaTeX preprint of the research programme, rewritten to the
+`main.tex` is the source of the published version v0.04. It is a LaTeX preprint of the research programme, rewritten to the
 manuscript content bar. It reports, from the archived computations EXP-001 to EXP-007 of
 `problems/optimization-geometry/unsplittable-flow-cost/experiments/`:
 

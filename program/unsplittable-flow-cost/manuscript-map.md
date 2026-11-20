@@ -34,13 +34,13 @@ theirs and, except where a row below says otherwise, not re-checked by CAOS.
 | Frontier value: 16/15 on the 2026 instance; it is the only counterexample over 3456 parameter points of its family | EXP-004 | instruments confirmed, F4 refuted (null result) | the published prices are optimal; extremal, not typical | `counterexample-verification`, next version (UFB-066) |
 | Muffatti planar family forces 9/8 - (3/4) eps exactly, with his pricing optimal | EXP-005 | confirmed as an exact check of the family; the bound 9/8 is Nikolenko's and is superseded by his records | none beyond the check | research record |
 | Afrasyab's odd-cycle family on C5: frontier value at most 1 on the sampled space (largest 42/43), uniform pricing optimal with frontier 2/3 - eps | EXP-006 | confirmed on the sampled space; whether the supremum is 1 is open (UFB-067) | exact check, negative on the route to 9/8 | research record |
-| Independent exact re-verification of the record instances (values, planarity with certificates, optimality of pricing) | EXP-007 | no verdict: hypothesis frozen (4f51d68b), run in progress; no disposition until it closes | verification attributable as such | `counterexample-verification`, next version (UFB-066, UFB-068) |
+| Independent exact re-verification of the record instances (values, planarity with certificates, optimality of pricing) | EXP-007 | confirmed (2026-11-19): eleven of eleven values, planarity certificates checked, the frontier value equal to the claim on each | verification attributable as such | `counterexample-verification` v0.04 |
 
 ## Manuscripts
 
 | slug | version | version DOI | concept DOI | central question |
 |---|---|---|---|---|
-| `counterexample-verification` | v0.03 | [10.5281/zenodo.22835200](https://doi.org/10.5281/zenodo.22835200) | [10.5281/zenodo.21554258](https://doi.org/10.5281/zenodo.21554258) | does the 2026 counterexample to Goemans' conjecture verify under an independent exact checker, and what does it force |
+| `counterexample-verification` | v0.04 | [10.5281/zenodo.24384160](https://doi.org/10.5281/zenodo.24384160) | [10.5281/zenodo.21554258](https://doi.org/10.5281/zenodo.21554258) | does the 2026 counterexample to Goemans' conjecture verify under an independent exact checker, and what does it force |
 
 Split decision (2026-11-19): one manuscript. The next version carries the stale-statement corrections (the current lower
 bounds with their authors, the credit of 9/8, Conjecture 1.3 false), the frontier value of EXP-004 and the verification of
@@ -61,9 +61,7 @@ EXP-007; a separate paper only if lower-bound or minimality results become a cen
 
 ## Open obligations
 
-- UFB-066: the next version of `counterexample-verification` states the current lower bounds with their authors, credits
-  9/8 to Nikolenko with the Muffatti family as its limit point, keeps alpha_inst = 16/15, records that Conjecture 1.3 is
-  false, and carries the verification of UFB-068 as new content.
-- UFB-068: EXP-007 closes (verdict pending), then its results enter the revision.
+- Done 2026-11-19: UFB-066 (preprint v0.04 published, with each result of the series credited to its author and date) and
+  UFB-068 (EXP-007 confirmed and carried by v0.04).
 - UFB-064: SSRN 7423078 unread (HTTP 403).
 - UFB-067: the supremum of the odd-cycle family on C5 (research record).
