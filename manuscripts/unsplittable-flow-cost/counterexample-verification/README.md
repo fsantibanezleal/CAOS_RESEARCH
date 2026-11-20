@@ -1,4 +1,4 @@
-# Independent exact verification of the counterexample to Goemans' unsplittable-flow cost conjecture and of the record lower-bound instances, with certified planarity and optimal pricing
+# Independent exact verification of the counterexample to Goemans' unsplittable-flow cost conjecture and of the 2026 lower-bound instances, with certified planarity and optimal pricing
 
 Current public version: v0.03, published 2026-09-18 at
 [10.5281/zenodo.22835200](https://doi.org/10.5281/zenodo.22835200), under concept DOI
@@ -15,12 +15,15 @@ manuscript content bar. It reports, from the archived computations EXP-001 to EX
   forces, the consistency battery against every proved result, the class boundary and the conflict triangle;
 - the separation linear program with its proof, the single-terminal theorem and the two-terminal necessary condition;
 - the frontier value, the exact Bland-rule simplex and the cutting-plane evaluator, with the proofs that justify the level search;
-- the independent re-check of the eleven record instances of S. Nikolenko and A. De la Fuente (values, planarity
-  certificates, optimality of their prices), credited to their authors;
-- the exact checks of Muffatti's symmetric three-terminal family and of Afrasyab's odd-cycle family on C5.
+- the independent re-check of eleven instances of the 2026 lower-bound series (values, planarity certificates,
+  optimality of their prices), among them the current general record of A. De la Fuente and the current planar record of
+  S. Nikolenko; the instances and their values are credited to their authors;
+- the exact checks of Muffatti's subfamily of the symmetric three-terminal template and of Afrasyab's odd-cycle family on C5.
 
-The paper claims no new bound and no priority: the lower bounds are Nikolenko's and De la Fuente's, 9/8 as the supremum of
-the symmetric three-terminal template is Nikolenko's, the family that approaches it is Muffatti's.
+The paper claims no new bound and no priority: the current lower bounds are De la Fuente's (general) and Nikolenko's
+(planar); the value 9/8, both as a lower bound and as the supremum of the symmetric three-terminal family, is Muffatti's
+(note of 24 July 2026) and, independently, Nikolenko's (Proposition 5.2 of his first preprint, 30 July 2026); the four-terminal
+value (299 - 41 sqrt 41)/32 is Protti's (release of 23 July 2026) and Nikolenko's.
 
 ## Files
 
@@ -36,5 +39,6 @@ the symmetric three-terminal template is Nikolenko's, the family that approaches
 
 ## Build
 
-`pdflatex main.tex` three times (packages: amsmath, booktabs, hyperref, orcidlink, algorithm, algpseudocode, tikz, pgfplots with
-the `groupplots` library). The figures are TikZ and pgfplots fragments generated from the artifacts; no external image is used.
+`pdflatex main.tex` three times (packages: amsmath, booktabs, hyperref, orcidlink, newfloat, algpseudocode, tikz, pgfplots with
+the `groupplots` library; the algorithm float is declared with `newfloat`, because the `algorithm` package makes hyperref
+write a second anchor for every table and figure). The figures are TikZ and pgfplots fragments generated from the artifacts; no external image is used.

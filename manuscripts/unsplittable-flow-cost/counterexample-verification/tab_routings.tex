@@ -4,14 +4,14 @@
 \toprule
 $t_1$ & $t_2$ & $t_3$ & cost & $\alpha$ & status & violated arcs\\
 \midrule
-$E_1$ & $E_2$ & $E_3$ & 90 & $\tfrac{1}{3}$ & congestion-good & --\\
-$E_1$ & $E_2$ & $Z_3$ & 60 & $\tfrac{2}{3}$ & congestion-good & --\\
-$E_1$ & $Z_2$ & $E_3$ & 60 & $\tfrac{2}{5}$ & congestion-good & --\\
-$E_1$ & $Z_2$ & $Z_3$ & 30 & $\tfrac{16}{15}$ & cost-good only & $v\to w$ by 1\\
-$Z_1$ & $E_2$ & $E_3$ & 60 & $\tfrac{2}{3}$ & congestion-good & --\\
-$Z_1$ & $E_2$ & $Z_3$ & 30 & $\tfrac{16}{15}$ & cost-good only & $u\to v$ by 1\\
-$Z_1$ & $Z_2$ & $E_3$ & 30 & $\tfrac{16}{15}$ & cost-good only & $s\to u$ by 1\\
-$Z_1$ & $Z_2$ & $Z_3$ & 0 & $\tfrac{26}{15}$ & cost-good only & $s\to u$ by 1, $u\to v$ by 11, $v\to w$ by 1\\
+$E_1$ & $E_2$ & $E_3$ & 90 & 1/3 & congestion-good & --\\
+$E_1$ & $E_2$ & $Z_3$ & 60 & 2/3 & congestion-good & --\\
+$E_1$ & $Z_2$ & $E_3$ & 60 & 2/5 & congestion-good & --\\
+$E_1$ & $Z_2$ & $Z_3$ & 30 & 16/15 & cost-good only & $v\to w$ by 1\\
+$Z_1$ & $E_2$ & $E_3$ & 60 & 2/3 & congestion-good & --\\
+$Z_1$ & $E_2$ & $Z_3$ & 30 & 16/15 & cost-good only & $u\to v$ by 1\\
+$Z_1$ & $Z_2$ & $E_3$ & 30 & 16/15 & cost-good only & $s\to u$ by 1\\
+$Z_1$ & $Z_2$ & $Z_3$ & 0 & 26/15 & cost-good only & $s\to u$ by 1, $u\to v$ by 11, $v\to w$ by 1\\
 \bottomrule
 \end{tabular}
 \caption{The eight unsplittable routings of the seven-vertex instance, recomputed with the exact library and equal, line by line, to the archived computation EXP-002. The column $\alpha$ is the least budget, in units of $d_{\max}$, at which the routing is congestion-good; the cost is the cost of the load of the routing under the cost vector of Table~\ref{tab:arcs7}, against $c^{\mathsf T}x=58$. No routing is both congestion-good and cost-good.}

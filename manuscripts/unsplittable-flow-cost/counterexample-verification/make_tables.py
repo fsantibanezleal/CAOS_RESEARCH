@@ -17,11 +17,22 @@ Outputs (next to this script): numbers.tex, tab_*.tex, fig_*.tex.
 
 Every number printed through numbers.tex, the tables and the figures is read from an artifact (or recomputed by ufclib and compared
 with the artifact); a value that differs from the one the text relies on stops the script with exit 1. Typed in this script, and so
-not read from an artifact: the arc table of the seven-vertex instance and its coordinates in the drawing (recomputed and compared with
-the EXP-002 log), the dates and authors of the ladder of bounds (compared, for the values, with the claims in EXP-007's results), the
-SHA-256 of three archived PDFs of the Nikolenko series (from the transcription report; they are re-hashed when --data-root or the
-environment variable CAOS_RESEARCH_DATA names the data root). With --check nothing is written and the script exits 1 when a committed
-output differs from a fresh one.
+not read from an artifact (the complete list; each item is compared with an artifact where one exists):
+  - the arc table of the seven-vertex instance (ARCS7, DEM7) and its coordinates in the drawing: recomputed with ufclib and compared
+    with the EXP-002 log; the drawing is checked for crossings with exact coordinates;
+  - the coordinates of the drawings of the four-interval instance and of the planar record (checked for crossings, and for the vertex
+    and edge counts of EXP-007's results);
+  - the dates, authors and labels of the ladder of bounds (LADDER and the labels in ladder()): the values are compared with the claims
+    in EXP-007's results; the dates are those of the sources (Rybin 22/23 July, Protti 23 July, Muffatti 24 July, Nikolenko 30 and
+    31 July and 13 August, De la Fuente 4 August 2026) and are not stored in any artifact;
+  - the SHA-256 of three archived PDFs of the Nikolenko series (from the transcription report; they are re-hashed when --data-root or
+    the environment variable CAOS_RESEARCH_DATA names the data root);
+  - the prose of the battery table (tab_battery.tex), of the controls table (tab_controls.tex) and of the procedures table
+    (tab_procedures.tex), whose figures are read from the logs and results except the cost formulas of the procedures column;
+  - the label of each record instance (LABEL) and its terminal count (TERMS), compared with the paths of EXP-007's results.
+The odd-cycle figure plots, for each of the ten local searches, the running best frontier value after each evaluation, computed here
+from the per-evaluation trace of stage-D.jsonl (the trace has one entry per evaluation, accepted or not). With --check nothing is
+written and the script exits 1 when a committed output differs from a fresh one.
 
 Usage (from the repository root, with the repository .venv):
   python manuscripts/unsplittable-flow-cost/counterexample-verification/make_tables.py [--check] [--data-root <dir>]
@@ -183,7 +194,7 @@ def seven(d, N):
     lines = [r"\begin{table}[t]", r"\centering\small", r"\begin{tabular}{@{}ccclllp{4.6cm}@{}}", r"\toprule",
              r"$t_1$ & $t_2$ & $t_3$ & cost & $\alpha$ & status & violated arcs\\", r"\midrule"]
     for key, r in table:
-        lines.append(f"${key[0]}$ & ${key[1]}$ & ${key[2]}$ & {exact_int(r.cost)} & ${tf(r.alpha)}$ & {status(r)} & {vtxt(r)}\\\\")
+        lines.append(f"${key[0]}$ & ${key[1]}$ & ${key[2]}$ & {exact_int(r.cost)} & {exact_int(r.alpha)} & {status(r)} & {vtxt(r)}\\\\")
     lines += [r"\bottomrule", r"\end{tabular}",
               r"\caption{The eight unsplittable routings of the seven-vertex instance, recomputed with the exact library and equal, line by line, "
               r"to the archived computation EXP-002. The column $\alpha$ is the least budget, in units of $d_{\max}$, at which the routing is "
@@ -251,7 +262,7 @@ def seven(d, N):
     fig = [r"\begin{tikzpicture}[>=Stealth, every node/.style={font=\small}, vtx/.style={circle,draw,inner sep=1.2pt,minimum size=6mm}]"]
     for v, (x, y) in coords.items():
         fig.append(r"\node[vtx] (%s) at (%s,%s) {$%s$};" % (v, x, y, v.replace("t", "t_")))
-    lblpos = {0: "above left", 1: "below left", 2: "above", 3: "below right", 4: "above", 5: "above right", 6: "above", 7: "below right", 8: "below left"}
+    lblpos = {0: "above left", 1: "below left", 2: "above", 3: "below left", 4: "above", 5: "above right", 6: "above", 7: "below right", 8: "above left"}
     for a in inst.arcs:
         style = "ultra thick" if a.cost > 0 else "thick"
         fig.append(r"\draw[->,%s] (%s) -- (%s) node[midway,%s,font=\scriptsize,fill=white,inner sep=1pt] {$%d;\,%d$};" %
@@ -349,18 +360,23 @@ def early_experiments(d, N):
     N["ntwoterm"] = int(m.group(1))
     N["nsingle"] = len(re.findall(r"\[PASS\] G5 \(SEP\) optimum", l3))
     need(N["nsingle"] == 6, "six single-terminal instances")
-    N["nsepgood"] = 4
-    N["nsepopt"] = r"\ensuremath{\tfrac{2}{7}}"
+    m = re.search(r"congestion-good routings: (\d+)\n\s+\(SEP\) optimum: ([\d/]+)", l3)
+    need(m is not None, "EXP-003 log states the number of congestion-good routings and the optimum")
+    N["nsepgood"] = int(m.group(1))
+    N["nsepopt"] = r"\ensuremath{%s}" % tf(fr(m.group(2)))
+    need(N["nsepgood"] == 4 and fr(m.group(2)) == Fraction(2, 7), "EXP-003: four congestion-good routings, optimum 2/7")
     # EXP-004
     need("alpha_max = 16/15" in l4, "EXP-004 frontier value 16/15")
     need("routing alphas: ['1/3', '2/5', '2/3', '2/3', '16/15', '16/15', '16/15', '26/15']" in l4, "EXP-004 routing alphas")
     need("ceiling (alpha of the cheapest routing): 26/15" in l4, "EXP-004 ceiling")
     m3 = re.search(r"k=3 sweep: (\d+) parameter points built, (\d+) feasible, (\d+) counterexamples, ([\d.]+) s", l4)
     m4 = re.search(r"k=4 sweep: (\d+) parameter points built, (\d+) feasible, (\d+) counterexamples, ([\d.]+) s", l4)
-    N["nfamthree"], N["nfamthreece"], N["nfamthreesec"] = int(m3.group(1)), int(m3.group(3)), m3.group(4)
-    N["nfamfour"], N["nfamfource"], N["nfamfoursec"] = int(m4.group(1)), int(m4.group(3)), m4.group(4)
+    d["famraw"] = (int(m3.group(1)), int(m4.group(1)))  # the integers; the macros carry the thousands separator
+    N["nfamthree"], N["nfamthreece"], N["nfamthreesec"] = commas(m3.group(1)), int(m3.group(3)), m3.group(4)
+    N["nfamfour"], N["nfamfource"], N["nfamfoursec"] = commas(m4.group(1)), int(m4.group(3)), m4.group(4)
     N["nfamtotal"] = commas(int(m3.group(1)) + int(m4.group(1)))
     need(int(m3.group(1)) + int(m4.group(1)) == 3456 and N["nfamthreece"] == 1 and N["nfamfource"] == 0, "3456 points, 1 counterexample")
+    need(d["famraw"] == (2448, 1008), "the sweep sizes 2448 and 1008 of the spine family")
     N["nxcheck"] = len(re.findall(r"\[PASS\] X1 .* the two solvers agree", l4))
     need(N["nxcheck"] == 6, "six instances cross-checked between two LP implementations")
     need("F4 (a family member beats 16/15): REFUTED (null result)" in l4, "EXP-004 F4 refuted")
@@ -406,15 +422,31 @@ def early_experiments(d, N):
         need(row["equal"] and row["builder_equals_afrasyab_uniform"], f"EXP-006 stage A row {i}")
     need(all(fr(r["alpha_max"]) == Fraction(2, 3) - fr(r["eps"]) for r in s6["A"]), "EXP-006 stage A equals 2/3 - eps")
     d["trace6"] = []
-    for r in d["j6"]["D"]:
-        d["trace6"].append([fr(t["alpha_max"]) for t in r["trace"]])
-        need(fr(r["best"]["alpha_max"]) == d["trace6"][-1][-1] or True, "stage D best")
+    for i, r in enumerate(d["j6"]["D"]):
+        tr = [fr(t["alpha_max"]) for t in r["trace"]]
+        d["trace6"].append(tr)
+        # the trace has one entry per evaluation, accepted or not, so the best is the maximum of the trace, not its last entry
+        need(len(tr) == r["evaluations"], f"stage D climb {i}: one trace entry per evaluation")
+        need(fr(r["best"]["alpha_max"]) == max(tr), f"stage D climb {i}: the best value is the maximum of the trace")
     N["nstartsd"] = len(d["j6"]["D"])
     ends = sorted(fr(r["best"]["alpha_max"]) for r in d["j6"]["D"])
     N["nsixdmax"] = r"\ensuremath{%s}" % tf(ends[-1])
     need(ends[-1] == Fraction(42, 43), "EXP-006 largest climb 42/43")
     N["nsixdbudget"] = sum(1 for r in d["j6"]["D"] if r["evaluations"] >= 150)
     need(N["nsixdbudget"] == 3, "three climbs stopped at the budget of 150 evaluations")
+    # which climbs stopped at the limit, and whether each was still improving (its last improvement within the last five evaluations)
+    atlimit = [i for i, r in enumerate(d["j6"]["D"]) if r["evaluations"] >= 150]
+    need(atlimit == [4, 8, 9], f"the climbs that stopped at the limit are the fifth, ninth and tenth, not {atlimit}")
+    for i in atlimit:
+        tr = d["trace6"][i]
+        best = max(tr)
+        last_improvement = 1 + min(k for k, v in enumerate(tr) if v == best)
+        need(last_improvement >= len(tr) - 5, f"climb {i} was still improving at the limit (last improvement at evaluation {last_improvement})")
+    # the shape of the ten ends: how many are n/(n+1), how many witnesses price a single arc
+    ends10 = [(fr(r["best"]["alpha_max"]), [fr(w) for w in r["best"]["witness_cost"]]) for r in d["j6"]["D"]]
+    N["nsixdnnp"] = sum(1 for a, _ in ends10 if a.numerator == a.denominator - 1)
+    N["nsixdsingle"] = sum(1 for _, w in ends10 if sum(1 for x in w if x != 0) == 1)
+    need((N["nsixdnnp"], N["nsixdsingle"]) == (8, 7), "eight of the ten climbs end at n/(n+1) and seven witnesses price one arc")
     N["nsixbrange"] = "%d" % len(set(fr(r["alpha_max"]) for r in d["j6"]["B"]))
     N["nsixcdistinct"] = "%d" % len(set(fr(r["alpha_max"]) for r in d["j6"]["C"]))
     N["nsixbzero"] = sum(1 for r in d["j6"]["B"] if fr(r["alpha_max"]) == 0)
@@ -463,7 +495,7 @@ def exp007(d, N):
         need(len(r1["paths_per_terminal"]) == TERMS[k], f"terminal count {k}")
         need(fr(r4["alpha_max"]) == fr(r4["claimed"]) == fr(r1["alpha_inst"]), f"frontier equals claim {k}")
         need(r3["certificate_ok"], f"certificate accepted {k}")
-        need(r4["witness_recheck_equals_alpha_max"] if "witness_recheck_equals_alpha_max" in r4 else True, f"witness re-check {k}")
+        need("witness_recheck_equals_alpha_max" in r4 and r4["witness_recheck_equals_alpha_max"] is True, f"witness re-check {k}")
         rows.append((k, r1, r3, r4))
     d["rows7"] = rows
     # the record table
@@ -479,17 +511,19 @@ def exp007(d, N):
         t = r1.get("wall_s")
         secs = r4.get("wall_s", r4.get("seconds_this_process"))
         amax = fr(r4['alpha_max'])
-        shown = tf(amax) if len(str(amax.denominator)) < 10 else '\\text{(see Table~\\ref{tab:exact})}'
-        lines.append(f"{LABEL[k]} & {TERMS[k]} & {r3['arcs']} & {commas(r1['routings'])} & {planar} & {ef} & ${shown}$ & {secs:g}\\\\")
+        shown = exact_int(amax) if len(str(amax.denominator)) < 10 else r'(see Table~\ref{tab:exact})'
+        lines.append(f"{LABEL[k]} & {TERMS[k]} & {r3['arcs']} & {commas(r1['routings'])} & {planar} & {ef} & {shown} & {secs:g}\\\\")
     lines += [r"\bottomrule", r"\end{tabular}",
-              r"\caption{The eleven record instances re-entered from the printed sources. For each: terminals, arcs, routings, planarity decided "
+              r"\caption{The eleven instances of the 2026 series, re-entered from the printed sources (one is Rybin's instance as restated in \cite{Nik1}; "
+              r"the current general record is the 17-terminal refinement and the current planar record is the $K_6$ instance). For each: terminals, arcs, routings, planarity decided "
               r"with a checked certificate, the Euler count $V-E+F$ of the checked rotation system (or the type of the Kuratowski subgraph for the "
               r"two non-planar graphs), the exact violation $\alpha_{\mathrm{inst}}$ forced under the authors' costs, which equals the claimed value "
               r"and the frontier value $\alpha_{\max}$ on every row, and the run time of the frontier evaluation (the seven-vertex row is the "
-              r"instance of Table~\ref{tab:routings}). Long exact values are in Table~\ref{tab:exact}.}", r"\label{tab:records}", r"\end{table}"]
+              r"instance of Table~\ref{tab:routings}). For the ternary core the costs are the series convention $1/d_i$, since the source prints none [U]. "
+              r"Long exact values are in Table~\ref{tab:exact}.}", r"\label{tab:records}", r"\end{table}"]
     OUT["tab_records.tex"] = "\n".join(lines) + "\n"
     # exact values table
-    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}lp{5.4cm}l@{}}", r"\toprule",
+    lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\renewcommand{\arraystretch}{1.6}", r"\begin{tabular}{@{}lp{5.4cm}l@{}}", r"\toprule",
              r"instance & exact value $\alpha_{\mathrm{inst}}$ & decimal (next to the exact value)\\", r"\midrule"]
     for k, r1, r3, r4 in rows:
         q = fr(r4["alpha_max"])
@@ -541,7 +575,9 @@ def exp007(d, N):
     ends = [fr(row["best"]["alpha_max"]) for row in d["j6"]["D"]]
     need(ends == [Fraction(23, 24), Fraction(23, 24), Fraction(12, 13), Fraction(13, 14), Fraction(71, 73), Fraction(13, 14), Fraction(14, 15),
                   Fraction(15, 16), Fraction(43, 45), Fraction(42, 43)], "the ends of the ten climbs printed in the text")
-    need([n["evaluations"] >= 150 and fr(n["best"]["alpha_max"]) for n in d["j6"]["D"]].count(False) == 7, "which climbs stopped at the evaluation limit")
+    need([i for i, n in enumerate(d["j6"]["D"]) if n["evaluations"] >= 150] == [4, 8, 9] and
+         [ends[i] for i in (4, 8, 9)] == [Fraction(71, 73), Fraction(43, 45), Fraction(42, 43)],
+         "the climbs that stopped at the evaluation limit end at 71/73, 43/45 and 42/43, as the text names them")
     need([fr(row["alpha_inst"]) for row in r["R2"]["n_series"]] == [Fraction(12058053, 10720000), Fraction(3060103, 2720000), Fraction(180759, 160000),
                                                                       Fraction(182199, 160000), Fraction(182343, 160000), Fraction(4558971, 4000000)],
          "the four-interval series printed in the text")
@@ -608,7 +644,8 @@ def exp007(d, N):
             if not pts_:
                 continue
             c = " ".join(f"({x},{y:.3e})" for x, y in pts_)
-            opts = f"only marks, mark={mark if filled else mark.replace('*', '')}, mark size=2pt, color={color}"
+            hollow = {"*": "o", "square*": "square"}[mark]  # a bare mark= (empty) is not a hollow marker in pgfplots
+            opts = f"only marks, mark={mark if filled else hollow}, mark size=2pt, color={color}"
             fig.append(r"\addplot[%s] coordinates {%s};" % (opts, c))
             fig.append(r"\addlegendentry{%s, %s}" % ("record" if key.endswith("RECORD") else "refinement", label))
     fig += [r"\end{axis}", r"\end{tikzpicture}"]
@@ -631,7 +668,7 @@ def exp007(d, N):
     d["ctrl_a"] = va
     d["ctrl_b"] = {k: v for k, v in c["b_costs_zeroed"].items() if isinstance(v, dict)}
     d["ctrl_c"] = c["c_foreign_certificate"]["tests"]
-    need(all(not v["accepted"] for v in d["ctrl_c"].values()) if all("accepted" in v for v in d["ctrl_c"].values()) else True, "all foreign certificates rejected")
+    need(len(d["ctrl_c"]) == 7 and all(v.get("accepted") is False for v in d["ctrl_c"].values()), "all seven foreign or tampered certificates are rejected")
     N["nctrlc"] = len(d["ctrl_c"])
 
 
@@ -686,10 +723,10 @@ def _faces(emb):
 # the ladder of bounds, the sources table, the controls, the procedures and the battery
 # ---------------------------------------------------------------------------------------------------
 
-LADDER = [  # (date as year fraction, label, value, kind), kind: g general, p planar
-    ("2026-07-23", "seven-vertex instance", Fraction(16, 15), "g"),
-    ("2026-07-30", "triangle template supremum", Fraction(9, 8), "g"),
-    ("2026-07-30", "four-terminal planar family", None, "p"),
+LADDER = [  # (date, label, value, kind); kind g: general series, p: planar series; a value None is the exact bracket of 299-41 sqrt 41 over 32
+    ("2026-07-23", "seven-vertex instance (Rybin)", Fraction(16, 15), "g"),
+    ("2026-07-23", "four-terminal planar family (Protti; Nikolenko, 30 July)", None, "p"),
+    ("2026-07-24", "planar symmetric family (Muffatti; Nikolenko, 30 July, Proposition 5.2)", Fraction(9, 8), "p"),
     ("2026-07-31", "17-terminal instance", Fraction(1282494797984843521, 10 ** 18), "g"),
     ("2026-08-04", "refinement", Fraction(160325086265636045340018727271, 125 * 10 ** 27), "g"),
     ("2026-08-13", "planar record", Fraction(58676765987259, 50 * 10 ** 12), "p"),
@@ -704,27 +741,31 @@ def day(s):
 
 def ladder(d, N):
     r = d["r7"]
-    need(LADDER[3][2] == fr(r["R1"]["UF-K17-RECORD"]["claimed"]), "ladder: 17-terminal value equals the claim")
-    need(LADDER[4][2] == fr(r["R1"]["UF-K17-REFINED"]["claimed"]), "ladder: refinement equals the claim")
-    need(LADDER[5][2] == fr(r["R1"]["UF-PLANAR-K6"]["claimed"]), "ladder: planar record equals the claim")
-    need(LADDER[0][2] == fr(r["R1"]["UF-7VERTEX-16over15"]["claimed"]), "ladder: 16/15")
+    by = {lab.split(" (")[0]: (a, v, k) for a, lab, v, k in LADDER}
+    need(by["17-terminal instance"][1] == fr(r["R1"]["UF-K17-RECORD"]["claimed"]), "ladder: 17-terminal value equals the claim")
+    need(by["refinement"][1] == fr(r["R1"]["UF-K17-REFINED"]["claimed"]), "ladder: refinement equals the claim")
+    need(by["planar record"][1] == fr(r["R1"]["UF-PLANAR-K6"]["claimed"]), "ladder: planar record equals the claim")
+    need(by["seven-vertex instance"][1] == fr(r["R1"]["UF-7VERTEX-16over15"]["claimed"]), "ladder: 16/15")
+    need(by["planar symmetric family"][1] == Fraction(9, 8) and by["planar symmetric family"][0] == "2026-07-24",
+         "ladder: the value 9/8 is plotted at the date of Muffatti's note, 24 July 2026 (the date on the archived note)")
+    need(by["four-terminal planar family"][0] == "2026-07-23", "ladder: the four-terminal family is plotted at the date of Protti's note, 23 July 2026")
     mid = float((fr(r["R2"]["grid"]["c_star_lower_bound"]) + fr(r["R2"]["grid"]["c_star_upper_bound"])) / 2)
     fig = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.95\textwidth, height=7cm, xlabel={date of the source (days after 20 July 2026)},",
            r"  ylabel={lower bound on the constant}, xmin=0, xmax=28, ymin=1.0, ymax=1.32, tick label style={font=\scriptsize},",
            r"  legend style={font=\scriptsize, at={(0.98,0.03)}, anchor=south east}]"]
-    gen = [(day(a), float(v)) for a, _, v, k in LADDER if k == "g"]
-    pl = [(day(a), float(v)) for a, _, v, k in LADDER if k == "p" and v is not None] + [(day("2026-07-30"), mid)]
-    pl.sort()
-    fig.append(r"\addplot[const plot, thick, color=stcurve, mark=*, mark size=2pt] coordinates {%s};" % " ".join(f"({x},{y:.8f})" for x, y in sorted(gen)))
+    gen = sorted((day(a), float(v)) for a, _, v, k in LADDER if k == "g")
+    # the planar series is not monotone (the planar family of 24 July is below the value of 23 July), so it is drawn as marks, not as a step line
+    pl = sorted((day(a), mid if v is None else float(v)) for a, _, v, k in LADDER if k == "p")
+    fig.append(r"\addplot[const plot, thick, color=stcurve, mark=*, mark size=2pt] coordinates {%s};" % " ".join(f"({x},{y:.8f})" for x, y in gen))
     fig.append(r"\addlegendentry{general instances}")
-    fig.append(r"\addplot[const plot, thick, color=stpoint, mark=square*, mark size=2pt] coordinates {%s};" % " ".join(f"({x},{y:.8f})" for x, y in pl))
-    fig.append(r"\addlegendentry{planar instances}")
+    fig.append(r"\addplot[only marks, color=stpoint, mark=square*, mark size=2.2pt] coordinates {%s};" % " ".join(f"({x},{y:.8f})" for x, y in pl))
+    fig.append(r"\addlegendentry{planar series}")
     notes = [("2026-07-23", 16 / 15, "Rybin: $\\tfrac{16}{15}$", "below right"),
-             ("2026-07-30", 9 / 8, "Nikolenko: $\\tfrac98$ (supremum)", "below left"),
-             ("2026-07-31", float(LADDER[3][2]), "Nikolenko: 1.28249", "left"),
-             ("2026-08-04", float(LADDER[4][2]), "De la Fuente: 1.28260", "above"),
-             ("2026-08-13", float(LADDER[5][2]), "Nikolenko: 1.17354", "above left"),
-             ("2026-07-30", mid, "Nikolenko: 1.13975", "above left")]
+             ("2026-07-23", mid, "Protti; Nikolenko: 1.13975", "above right"),
+             ("2026-07-24", 9 / 8, "Muffatti: $\\tfrac98$ (planar family)", "below right"),
+             ("2026-07-31", float(by["17-terminal instance"][1]), "Nikolenko: 1.28249", "left"),
+             ("2026-08-04", float(by["refinement"][1]), "De la Fuente: 1.28260", "above"),
+             ("2026-08-13", float(by["planar record"][1]), "Nikolenko: 1.17354", "above left")]
     for a, y, lab, pos_ in notes:
         fig.append(r"\node[font=\tiny, %s] at (axis cs:%d,%.6f) {%s};" % (pos_, day(a), y, lab))
     fig.append(r"\addplot[dashed, thick, color=stline] coordinates {(0,1.125) (28,1.125)};")
@@ -753,25 +794,38 @@ def odd_cycle_fig(d, N):
            r"\addplot[ybar, bar width=3pt, fill=stpoint!50, draw=stpoint] coordinates {%s};" % " ".join(f"({float(bins[i] + Fraction(1, 18)):.4f},{max(hc[i], 0.8)})" for i in range(12) if hc[i]),
            r"\addlegendentry{random}",
            r"\addplot[dashed, color=stline, thick] coordinates {(1,0.8) (1,3000)};"]
-    fig += [r"\nextgroupplot[xlabel={evaluation of the climb}, ylabel={frontier value of the current member}, xmin=0, xmax=150, ymin=0.9, ymax=1.0, title={\scriptsize ten local searches}]"]
+    fig += [r"\nextgroupplot[xlabel={evaluation of the climb}, ylabel={running best frontier value}, xmin=0, xmax=150, ymin=0.8, ymax=1.0, title={\scriptsize ten local searches}]"]
     for tr in d["trace6"]:
-        fig.append(r"\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {%s};" % " ".join(f"({i * (150 // max(len(tr) - 1, 1)) if False else i},{float(v):.6f})" for i, v in enumerate(_expand(tr, d))))
+        pts = _running_best(tr)
+        fig.append(r"\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {%s};" % " ".join(f"({i},{float(v):.6f})" for i, v in pts))
     fig += [r"\end{groupplot}", r"\end{tikzpicture}"]
     OUT["fig_oddcycle.tex"] = "\n".join(fig) + "\n"
     N["nhistbtop"] = max(range(12), key=lambda i: hb[i])
 
 
-def _expand(tr, d):
-    """The trace lists accepted members only; plot each improvement at its index in the list (the order of acceptance)."""
-    return tr
+def _running_best(tr):
+    """The running best of a climb, the value of the accepted member after each evaluation.
+
+    ``tr`` holds one frontier value per evaluation (accepted or not: its length equals the number of evaluations), so the
+    accepted member is the running maximum. The points returned are (evaluation number from 1, running best), one per
+    improvement, plus the last evaluation, so that a step line drawn through them is the running best at every evaluation.
+    """
+    pts, best = [], None
+    for i, v in enumerate(tr, 1):
+        if best is None or v > best:
+            best = v
+            pts.append((i, best))
+    if pts[-1][0] != len(tr):
+        pts.append((len(tr), best))
+    return pts
 
 
 def tables_misc(d, N):
     # tab_sweep: the frontier value sweep and the family checks
     lines = [r"\begin{table}[t]", r"\centering\small", r"\begin{tabular}{@{}p{5.6cm}rrp{3.4cm}@{}}", r"\toprule",
              r"family and box & members & members with $\alpha_{\max}>1$ & largest $\alpha_{\max}$\\", r"\midrule"]
-    lines.append(f"Spine family, $k=3$, $m=3$ & {commas(N['nfamthree'])} & {N['nfamthreece']} & $\\tfrac{{16}}{{15}}$ (the seven-vertex instance)\\\\")
-    lines.append(f"Spine family, $k=4$, $m=4$ & {commas(N['nfamfour'])} & {N['nfamfource']} & $\\le 1$\\\\")
+    lines.append(f"Spine family, $k=3$, $m=3$ & {N['nfamthree']} & {N['nfamthreece']} & $\\tfrac{{16}}{{15}}$ (the seven-vertex instance)\\\\")
+    lines.append(f"Spine family, $k=4$, $m=4$ & {N['nfamfour']} & {N['nfamfource']} & $\\le 1$\\\\")
     top = [ln for ln in text(EXP / "EXP-005-planar-nine-eighths/artifacts/grid-top.txt").splitlines() if ln.strip()]
     need(len(top) == 50 and all(fr(ln.split()[0]) > 1 for ln in top), "the 50 largest grid values are all above 1")
     lines.append(f"Symmetric three-terminal family, grid & {N['ngridpoints']} & at least {len(top)} (top {len(top)} listed) & {N['ngridmax']}\\\\")
@@ -789,6 +843,11 @@ def tables_misc(d, N):
     r7 = d["r7"]
     k17r1 = r7["R1"]["UF-K17-RECORD"]
     N["nkrecstream"] = f"{k17r1['wall_s']:g}"
+    # the two times that the procedures table quotes in words: read, not typed
+    need(r7["R1"]["UF-7VERTEX-16over15"]["wall_s"] < 0.01, "the seven-vertex decision takes under 0.01 s (EXP-007 R1)")
+    cert_times = {r7["R3"][k]["wall_s"] for k in ("UF-K17-RECORD", "UF-K17-REFINED")}
+    need(len(cert_times) == 1, "the two 17-terminal planarity checks have the same recorded time (EXP-007 R3 wall_s)")
+    N["ncertsec"] = f"{cert_times.pop():g}"
     rows = [
         (r"path and routing enumeration, Algorithm~\ref{alg:enum}",
          r"depth-first search per terminal; $\prod_t p_t$ routings, each a load vector of length $|A|$",
@@ -802,7 +861,7 @@ def tables_misc(d, N):
         (r"cutting-plane evaluator, Algorithm~\ref{alg:cp}", r"$O(\log L)$ level tests, each a loop of LPs on the cuts and a branch-and-bound over the terminals",
          f"{N['nkreclevels']} levels, {N['nkrectested']} tested, {N['nkrecsec']} s (record); {N['nkreflevels']} levels, {N['nkreftested']} tested, {N['nkrefsec']} s (refinement)"),
         (r"planarity certificate and checker, Algorithm~\ref{alg:planar}", r"face tracing visits each dart once; suppression of degree-two vertices repeats until none remains",
-         f"0.13 s for the 17-terminal graphs ({N['nkverts']} vertices, {N['nkarcs']} arcs)"),
+         f"{N['ncertsec']} s for the 17-terminal graphs ({N['nkverts']} vertices, {N['nkarcs']} arcs)"),
     ]
     lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}p{3.3cm}p{4.3cm}p{4.9cm}@{}}", r"\toprule",
              r"procedure & cost in the size of the instance & measured on the records\\", r"\midrule"]
@@ -822,7 +881,7 @@ def tables_misc(d, N):
              r"planar theorem \cite{TVZ24} & a cost-good routing within $2d_{\max}$ (the instance is planar) & " + f"{N['ncostgood']} cost-good routings, least $\\alpha=\\tfrac{{16}}{{15}}$\\\\",
              r"Skutella \cite{Sku02} & demands not all multiples of one another & $\{10,15\}$\\",
              r"Majthoub Almoghrabi et al.\ \cite{MSW25} & underlying graph not series-parallel & $K_4$ subdivision on $\{s,u,v,w\}$\\",
-             r"two-layer networks (cited in \cite{STVZ25}) & longest $s$--$t$ path has at least three arcs & " + f"{N['nmaxpathlen']} arcs\\\\",
+             r"two-layer networks (cited in \cite{TVZ24}) & longest $s$--$t$ path has at least three arcs & " + f"{N['nmaxpathlen']} arcs\\\\",
              r"nonnegative costs, feasible $x$ & conservation at all seven vertices; $c\ge0$ & holds\\",
              r"acyclicity (reduction of \cite{STVZ25}) & the digraph has no directed cycle & acyclic\\",
              r"\bottomrule", r"\end{tabular}",

@@ -6,7 +6,11 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{orcidlink}
 \usepackage{xcolor}
-\usepackage{algorithm}
+% The algorithm float comes from newfloat, not from the algorithm package: the latter redefines the
+% caption machinery of every float, and with hyperref it created a second anchor for each of the
+% twelve tables and seven figures (19 pdfTeX warnings, "destination with the same identifier").
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[name=Algorithm,fileext=loa]{algorithm}
 \usepackage[noend]{algpseudocode}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
@@ -58,7 +62,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \vspace{4pt}}
 
 \title{Independent exact verification of the counterexample to Goemans' unsplittable-flow
-cost conjecture and of the record lower-bound instances, with certified planarity and
+cost conjecture and of the 2026 lower-bound instances, with certified planarity and
 optimal pricing}
 \author{Felipe Santib\'a\~nez-Leal\orcidlink{0000-0002-0150-3246}%
 \thanks{CAOS open-research programme, Santiago, Chile. Code, experiment records
@@ -74,20 +78,21 @@ and artifacts: \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}, folder
 A seven-vertex instance announced in July 2026 refutes Goemans' conjecture that a
 feasible fractional single-source flow can be rounded to an unsplittable flow that
 loads no arc beyond $x_a+\dmax$ and costs no more than the fractional flow. We
-verify that instance, and the eleven instances that currently hold the lower bounds
-on the violation constant, by exact rational enumeration with a library written from
-the statement of the conjecture, without running any verifier of their authors. The
+verify that instance, and eleven instances of the 2026 lower-bound series (among them
+the current general record of De la Fuente and the current planar record of Nikolenko),
+by exact rational enumeration with a library written from the statement of the
+conjecture, without running any verifier of their authors. The
 seven-vertex instance forces a violation of exactly $\tfrac{16}{15}\dmax$. We prove
 that a separation linear program decides whether any nonnegative cost vector makes an
 instance a counterexample, that its optimum on the seven-vertex instance is
 $\tfrac27$ and is attained by the published prices, and that no single-terminal
 instance is a counterexample. A cutting-plane evaluator computes the frontier value,
 the violation forced by the best prices, exactly on instances with \nkroutings\
-routings. The eleven record instances of Nikolenko and De la Fuente reproduce their
+routings. The eleven instances reproduce their
 claimed values to the last digit; the two 17-terminal instances are non-planar and
 the others planar, each decided by a checked certificate; and re-pricing gains
-nothing on any of them. Exact checks of the symmetric three-terminal family of
-Muffatti, with forced violation $\tfrac98-\tfrac34\varepsilon$, and of Afrasyab's
+nothing on any of them. Exact checks of Muffatti's subfamily of the symmetric
+three-terminal template, with forced violation $\tfrac98-\tfrac34\varepsilon$, and of Afrasyab's
 odd-cycle family on $C_5$, whose \nsixtotal\ members all have frontier value at most 1,
 complete the computations. The theorems of the sources are not re-proved, and the
 two-terminal case remains open.
@@ -111,42 +116,51 @@ graphs \cite{TVZ24}.
 
 On 22 and 23 July 2026 a seven-vertex counterexample was announced publicly by Rybin \cite{Ryb26}, outside
 peer review, and a formal proof of its defining inequality was later added to the Archive of Formal Proofs
-\cite{AFP26}. In the following weeks the area produced a record of lower bounds on the violation constant: Nikolenko
-published three preprints \cite{Nik1,Nik2,Nik3} with a planar four-terminal family, a 17-terminal instance that
-De la Fuente refined \cite{DLF26}, and a planar instance, and he proved that the value $\tfrac98$ is the exact
-supremum of the symmetric three-terminal template underlying the counterexample \cite{Nik1}. Muffatti \cite{Muf26}
-gave a family on the topology of the counterexample whose forced violation approaches $\tfrac98$,
+\cite{AFP26}. In the following weeks the area produced a series of lower bounds on the violation constant. Muffatti
+\cite{Muf26} showed on 24 July 2026 that a symmetric family on the topology of the counterexample forces violations
+approaching $\tfrac98$, so that $\alpha^\star_{\mathrm{planar}}\ge\tfrac98$, and that $\tfrac98$ is the supremum over that family;
+Nikolenko \cite{Nik1} proved the same supremum for the symmetric three-terminal template (Proposition~5.2), with members
+$(3n-1)^2/(8n^2)$. Nikolenko published three preprints \cite{Nik1,Nik2,Nik3}: a planar four-terminal family, whose
+supremum $(299-41\sqrt{41})/32$ had been given by Protti \cite{Pro26} on 23 July and is credited jointly to both in
+\cite{Nik3}, a 17-terminal instance that De la Fuente refined \cite{DLF26}, and a planar instance.
 Afrasyab \cite{Afr26} realised any odd cycle of conflicts in an acyclic single-source instance, and Bérczi, Liu,
 Reis and Tarnawski \cite{BLRT26} disproved the cost-free two-sided conjecture of Morell and Skutella. Every
-new value in this series is certified by its author's own verifier, and none had been recomputed by an
-instrument written independently of the series.
+new value in this series is certified by its author's own verifier; we found no recomputation of the record values by an
+instrument written independently of the series (searches of 7 and 19 November 2026).
 
 This paper supplies that recomputation and the exact instruments it needs. We write the instance model
 and the decision procedure from the statement of the conjecture, in exact rational arithmetic, and use them
-to verify the seven-vertex instance (Section~\ref{sec:seven}) and the eleven record instances
-(Section~\ref{sec:records}). The contributions are:
+to verify the seven-vertex instance (Section~\ref{sec:seven}) and the eleven instances of the series
+(Section~\ref{sec:records}, Table~\ref{tab:records}); one of the eleven is Rybin's instance as restated in \cite{Nik1}, and four are
+members of families that lie below $\tfrac98$ (the triangle members $n=2$ and $n=68$, the ternary core and the four-interval member
+$n=67$; the triangle member $n=2$ is below $1$, so it is not a counterexample). The contributions are:
 \begin{enumerate}
 \item an independent exact verification of the seven-vertex instance by complete path enumeration, a battery of
 consistency tests against every proved result in the area, and the exact violation it forces,
-$\alpha_{\mathrm{inst}}=\tfrac{16}{15}$, which the announcement did not state;
-\item the separation linear program, with its proof in both directions, which removes the cost vector from any
+$\alpha_{\mathrm{inst}}=\tfrac{16}{15}$, computed by the exact library of this repository on 25 July 2026 and stated independently as
+Proposition~5.1 of \cite{Nik1} (the announcement did not state it);
+\item the separation linear program (a reduction that is stated in the proposer's working material, which was supplied
+privately and is not cited here), with its proof in both directions, which removes the cost vector from any
 search; its optimum $\tfrac27$ on the seven-vertex instance, attained by the published prices; a theorem that no
 single-terminal instance is a counterexample, and a necessary condition at two terminals;
 \item the frontier value, the violation that the best prices force on an instance, computed exactly by an
 anti-cycling simplex and by a cutting-plane evaluator that decides instances with $\nkroutings$ routings;
-\item the verification of the eleven record instances of Nikolenko and De la Fuente: every claimed value is
+\item the verification of the eleven instances of the series, among them the current general record of De la Fuente and the
+current planar record of Nikolenko: every claimed value is
 reproduced to the last digit, planarity or non-planarity is decided by a certificate that a separate checker
-accepts, and the frontier value equals the claimed value on every instance, so no re-pricing gains anything;
-\item exact checks of two published families: Muffatti's symmetric family, with forced violation exactly
+accepts, and the frontier value equals the claimed value on every instance, so no re-pricing gains anything; here
+optimal means best over all nonnegative cost vectors for the fixed graph, demands and fractional flow;
+\item exact checks of two published families: Muffatti's subfamily of the symmetric three-terminal template, with forced violation exactly
 $\tfrac98-\tfrac34\varepsilon$, and Afrasyab's odd-cycle family on $C_5$, on which the frontier value never exceeds 1
 over \nsixtotal\ members.
 \end{enumerate}
 
 The paper makes no claim of a new bound and none of priority. The counterexample is Rybin's; the current lower
-bounds on the violation constant are Nikolenko's and De la Fuente's; the value $\tfrac98$ as a supremum is
-Nikolenko's, and the family that approaches it exactly is Muffatti's; the realisation of odd cycles is
+bounds on the violation constant are De la Fuente's (general) and Nikolenko's (planar); the value $\tfrac98$, both as a lower bound
+and as the supremum of the symmetric three-terminal family, is Muffatti's and, independently, Nikolenko's; the four-terminal
+value $(299-41\sqrt{41})/32$ is Protti's and Nikolenko's; the realisation of odd cycles is
 Afrasyab's. What is ours is the verification, the exact instruments, the certificates and the optimality of the
-prices on each instance. The theorems of the three preprints (the suprema, the class results, the
+prices on each instance. The theorems of the sources (the suprema, the class results, the
 exact-mean characterisation) are not re-proved here; only the finite instances are decided. Section~\ref{sec:related}
 places the sources, Section~\ref{sec:problem} fixes the objects and the evidence marks, Section~\ref{sec:methods}
 gives the procedures, Section~\ref{sec:theory} their proofs, and Sections~\ref{sec:design} to \ref{sec:ablation}
@@ -199,15 +213,20 @@ counterexample must lie outside every class on which the conjecture is proved.
 $(15,10,15)$ and fractional cost 58 against a minimum of 60 for every congestion-good routing; the formal entry
 \cite{AFP26} proves that inequality in Isabelle/HOL for the nine arcs and the demands of that instance, and
 does not formalise the forced violation $\tfrac{16}{15}$, the separation optimum or the acyclicity corollaries.
-Nikolenko's first preprint \cite{Nik1} gives a planar four-terminal family with supremum
-$(299-41\sqrt{41})/32$ and proves that $\tfrac98$ is the exact supremum of the symmetric three-terminal
-template; the second \cite{Nik2} gives the 17-terminal instance and upper bounds below 2 on a family of extremal
+Protti's note \cite{Pro26} of 23 July 2026 (revision 5) gives a planar four-terminal family on a digraph of 10 vertices and 13 arcs, whose supremum is
+$(299-41\sqrt{41})/32$ (its Theorem~6), an integer certificate $\tfrac{335}{294}$, and a sharpness theorem for the fixed
+topology when every full expensive route has equal cost and cost feasibility forces two cheap choices (its Theorem~8) [V];
+it is an unrefereed disclosure whose own text states that a language model did most of the active mathematical work and that its
+novelty searches were targeted and not exhaustive. Nikolenko's first preprint \cite{Nik1} gives a planar four-terminal family with the same supremum
+$(299-41\sqrt{41})/32$, which \cite{Nik3} credits jointly to Protti and to Nikolenko's earlier work, and proves that $\tfrac98$ is the exact supremum of the symmetric three-terminal
+template (Proposition~5.2); the second \cite{Nik2} gives the 17-terminal instance and upper bounds below 2 on a family of extremal
 cells; the third \cite{Nik3} proves a mixture characterisation of the optimal constant by separation, exact-mean
 decompositions, a planar instance with value $1.17353531974518$, and an open problem on the factor-two merger
 constant. The repository of the series \cite{NikRepo} holds the verifiers and certificates on which the
 claimed values rest, and De la Fuente's refinement \cite{DLF26} of the 17-terminal instance was merged into it.
-Muffatti \cite{Muf26} proves in a research note that the topology of the counterexample, with demands
-$(1,\tfrac34,1)$, forces $\tfrac98-\tfrac34\varepsilon$; Afrasyab \cite{Afr26} shows that every finite loopless
+Muffatti \cite{Muf26} proves in a research note dated 24 July 2026 that the topology of the counterexample, with demands
+$(1,\tfrac34,1)$, forces $\tfrac98-\tfrac34\varepsilon$, and that $\tfrac98$ is the supremum of the symmetric family that the note
+parametrises [V]; Afrasyab \cite{Afr26} shows that every finite loopless
 independence system is realised by the zero-cost choices of an acyclic single-source instance and gives an exact
 cost-preserving threshold $1-bq$ on a uniform odd-cycle family. Bérczi, Liu, Reis and Tarnawski \cite{BLRT26}
 disprove Conjecture~1.3 of \cite{STVZ25} for every $k\ge4$ with a forced two-sided deviation
@@ -217,8 +236,8 @@ $L_e(x)+O(\rho_{\max}\sqrt{D})$ on directed multigraphs whose admissible paths h
 
 \paragraph{Where this paper stands.} Each of these sources states results about families, classes or constants, and
 certifies finite instances with the verifier of its author. This paper does none of the proving; it decides the finite
-instances again, with an instrument that was written before the series and from the statement of the conjecture,
-adds the certificates of planarity that the papers do not give, and reports whether the prices of each instance can be
+instances again, with an instrument whose core predates the series and was built from the statement of the conjecture (Section~\ref{sec:methods}),
+adds machine-checked planarity certificates for every instance (the sources give drawings and, for the planar record, a rotation system in the repository), and reports whether the prices of each instance can be
 improved. The seven-vertex instance and the instances of Muffatti and Afrasyab are also decided exactly under their
 own cost vectors and under the best cost vector.
 
@@ -229,7 +248,7 @@ own cost vectors and under the best cost vector.
 \label{sec:instances}
 
 An instance is a tuple $(G,s,T,d,x)$ with $G=(V,A)$ a digraph that may have parallel arcs, a source $s\in V$,
-terminals $T\subseteq V$, demands $d\in\Q_{\ge0}^T$, and a fractional flow $x\in\Q_{\ge0}^A$ that is feasible: its
+terminals $T\subseteq V$, demands $d\in\Q_{>0}^T$ (strictly positive, as in the sources), and a fractional flow $x\in\Q_{\ge0}^A$ that is feasible: its
 divergence is $\sum_t d_t$ at $s$, $-d_t$ at each terminal $t$ and $0$ elsewhere. Throughout this literature the
 capacity of an arc is taken to be $x(a)$ itself, so that violation is measured against the flow being rounded
 \cite{TVZ24}. Write $\dmax=\max_{t\in T}d_t$. An unsplittable flow, or routing, $\mathcal P=\{P^t\}_{t\in T}$ assigns one
@@ -286,8 +305,8 @@ the least $\alpha$ such that every instance and every cost vector admit a routin
 most $c^{\mathsf T}x$; its planar version $\alpha^\star_{\mathrm{planar}}$ takes the supremum over planar instances. Goemans'
 conjecture asserts $\alpha^\star\le1$, and an instance is a counterexample for some cost vector exactly when
 $\alpha_{\max}>1$ (Proposition~\ref{prop:frontier}). The constant normalised by Nikolenko is the same quantity
-\cite{Nik1,Nik2,Nik3} [V]. The only upper bound known is $\alpha^\star_{\mathrm{planar}}\le2$ \cite{TVZ24}, and no finite
-upper bound is known in general. The lower bounds that this paper checks are $\alpha^\star\ge\tfrac{16}{15}$ for the seven-vertex
+\cite{Nik1,Nik2,Nik3} [V]. The only upper bound on these constants stated in the sources read here is $\alpha^\star_{\mathrm{planar}}\le2$ \cite{TVZ24}, and none of those
+sources states a finite upper bound in general. The lower bounds that this paper checks are $\alpha^\star\ge\tfrac{16}{15}$ for the seven-vertex
 instance, $\alpha^\star\ge1.28260069\ldots$ for the 17-terminal refinement and $\alpha^\star_{\mathrm{planar}}\ge
 1.17353531974518$ for the planar record (Table~\ref{tab:records}). The value $\tfrac98$ and the value $(299-41\sqrt{41})/32$
 are suprema of families, not values of single instances.
@@ -348,10 +367,14 @@ costs. All quantities are exact rationals in the computations. The unit of every
 \section{Methods}
 \label{sec:methods}
 
-The procedures below are those of the exact library \texttt{ufclib} of the repository. They were written from the statement of the
-conjecture before the lower-bound series appeared, validated on hand-built instances (Section~\ref{sec:design}) and unchanged
-for the computations of Section~\ref{sec:results}. Every quantity is a \texttt{fractions.Fraction}; the instance constructor refuses
-floating-point input, and a token scan of the library and of the experiment code finds no float literal outside one negative control.
+The procedures below are those of the exact library \texttt{ufclib} of the repository. The instance model, the enumeration, the decision
+procedure, the separation program, the exact simplex and the enumerative frontier evaluator were written from the statement of the
+conjecture on 24 and 25 July 2026, before the lower-bound series appeared, validated on hand-built instances
+(Section~\ref{sec:design}) and are unchanged since (the export list of the package apart); the cutting-plane evaluator and the odd-cycle builder
+were added on 14 November 2026 and the planarity checker for the re-check of the records; none of them uses code of the series.
+Every quantity is a \texttt{fractions.Fraction}; the instance constructor refuses
+floating-point input, and a token scan of the library and of the experiment code finds no float literal in any arithmetic path; the only float literals
+are timing parameters of the run harness and one negative control.
 Table~\ref{tab:procedures} gives the cost of each procedure in the size of the instance and the time measured on the records.
 
 \subsection{Instance model and enumeration of paths and routings}
@@ -395,7 +418,7 @@ Algorithm~\ref{alg:decide} decides whether an instance, with its given cost vect
 the load, the violation of equation~\eqref{eq:congestion} on each arc, the budget of equation~\eqref{eq:alpha} and the cost of
 equation~\eqref{eq:cost}. The instance is a counterexample exactly when no routing is both congestion-good and cost-good; the library
 also returns the number of congestion-good routings, their least cost and $\alpha_{\mathrm{inst}}=\min\{\alpha(\mathcal P)\colon\mathcal P
-\text{ cost-good}\}$. The inequalities are inclusive, in agreement with the statement of the conjecture in \cite{STVZ25}: the validation instance $V_4$ has a routing that loads an arc to exactly
+\text{ cost-good}\}$. The inequalities are inclusive, in agreement with the statement of the conjecture in \cite{STVZ25}: the validation instance $V_4$ (Section~\ref{sec:design}) has a routing that loads an arc to exactly
 $x_a+\dmax$, and the decision classifies it as congestion-good. For the instances with $\nkroutings$ routings the decision is made by
 a streaming loop that uses the library's own routing, load and budget functions and keeps one load vector at a time; the loop agrees with
 \texttt{decide\_instance} on every instance of at most 64 routings.
@@ -439,7 +462,8 @@ exhaustive hunt for counterexamples ranges over graphs, demands and fractional f
 \begin{algorithmic}[1]
 \Require an instance $(G,s,T,d,x)$ with exact data
 \Ensure the optimum $\delta^\star$ of equation~\eqref{eq:sep} and a witness $c$
-\State rows $\gets\{\,y-x\colon y=\flow^{\mathcal P}\text{ for a congestion-good routing }\mathcal P\,\}$; \textbf{assert} rows $\neq\emptyset$
+\State rows $\gets\{\,y-x\colon y=\flow^{\mathcal P}\text{ for a congestion-good routing }\mathcal P\,\}$ (for a whole instance the set is nonempty by the theorem of Dinitz, Garg and Goemans; Algorithm~\ref{alg:cp} calls this procedure with a given set of rows, possibly empty)
+\State \textbf{if} rows $=\emptyset$ \textbf{then return} $\delta^\star=1$ and $c=(1/|A|,\dots,1/|A|)$ \Comment{convention of the implementation: with nothing to separate any price vector works}
 \State solve $\min\,-(\delta^+-\delta^-)$ subject to $\delta^+-\delta^--c^{\mathsf T}r\le0$ for each row $r$, $\sum_ac_a=1$, $\delta^\pm,c\ge0$ with Algorithm~\ref{alg:bland}
 \State \Return $\delta^\star=\delta^+-\delta^-$ and $c$; the instance admits a counterexample cost vector iff $\delta^\star>0$
 \end{algorithmic}
@@ -456,7 +480,7 @@ among the distinct budgets $\alpha(\mathcal P)$ for which the program
 \label{eq:levellp}
 \end{equation}
 has a positive optimum, and that the budget of a cheapest routing is a ceiling on it. Algorithm~\ref{alg:frontier} evaluates every distinct level in
-increasing order. The linear programs are solved by a two-phase simplex written for this work, Algorithm~\ref{alg:bland}, with Bland's rule: the entering
+increasing order. The linear programs are solved by a two-phase simplex written for this work, Algorithm~\ref{alg:bland}, with Bland's rule \cite{Bla77}: the entering
 variable is the one of smallest index with a negative reduced cost, and the leaving variable is the one of smallest basis index among the ties of the
 ratio test. The rule cannot cycle, so the solver terminates on degenerate programs by construction. It replaced the rational simplex of sympy, which raised
 an oscillation error on a degenerate member of the spine family of Section~\ref{sec:family}; the two solvers agree on every instance on which both finish
@@ -484,7 +508,7 @@ an oscillation error on a degenerate member of the spine family of Section~\ref{
 \Require rational matrices and vectors
 \Ensure the optimum and an optimal $z$, or a report of infeasibility or unboundedness
 \State add slack variables to the inequalities; negate every row with a negative right-hand side so that $b\ge0$
-\State \textbf{Phase I:} append one artificial variable per row, minimise their sum by steps 3--5; if the minimum is positive, report infeasibility; otherwise drive the artificials out of the basis
+\State \textbf{Phase I:} append one artificial variable per row, minimise their sum by steps 3--5; if the minimum is positive, report infeasibility; otherwise drive out of the basis every artificial whose row has a nonzero original entry (an artificial on a redundant row stays in the basis at value $0$, harmlessly)
 \State \textbf{pivot loop:} $j\gets\min\{\,j\colon r_j<0\,\}$ (smallest index with a negative reduced cost); if none, stop
 \State leaving row $\gets$ the row with $a_{ij}>0$ minimising $b_i/a_{ij}$, ties broken by the smallest basic variable index; if no row, report unboundedness
 \State pivot on $(i,j)$ over the rationals; return to step 3
@@ -503,7 +527,7 @@ giving a cost vector $c$; an oracle then returns the routing of least cost $c^{\
 separates every routing of $\mathcal U_A$ and the level is positive; otherwise the routing is a violated constraint and becomes a cut. If the program over the cuts has optimum at most $0$ the level is not positive,
 because the cuts are a subset of its constraints. The oracle is a branch and bound over the terminals, largest demand first. A branch is cut when a partial load already satisfies
 $y_a\ge x_a+A\,\dmax$ on some arc, since loads only grow as terminals are added and no completion can then lie below the level, or when the partial cost plus the cheapest remaining path of every undecided terminal
-cannot beat the best routing found. The cuts found at the highest positive level so far are reused at the next level, since they belong to the smaller set $\mathcal U_{A'}\subseteq\mathcal U_A$.
+cannot beat the best routing found. The cuts found at the highest positive level so far are reused at the next level, since they belong to the smaller set $\mathcal U_{A'}\subseteq\mathcal U_A$. The cuts of a level found not positive are discarded: they belong to $\mathcal U_A$ of that level and may lie outside the smaller set $\mathcal U_{A'}$ of the next lower level to be tested, where they would be invalid constraints.
 
 \begin{algorithm}[t]
 \caption{Cutting-plane evaluator of the frontier value: streaming levels, binary search over them and a loop of separation programs and an exact oracle at each level.}
@@ -512,7 +536,7 @@ cannot beat the best routing found. The cuts found at the highest positive level
 \Require an instance with exact data; \ \textbf{Ensure} $\alpha_{\max}$, witness, ceiling and the list of tested levels
 \State one pass over the routings: levels $A_1<\dots<A_L$ (distinct values of $\alpha$), ceiling; $\ell\gets1$, $h\gets L+1$, cuts $\gets\emptyset$ \Comment{$A_\ell$ positive, $A_{h}$ and above not positive}
 \While{$h-\ell>1$}
-  \State $\mu\gets\lfloor(\ell+h)/2\rfloor$; \ run \textsc{LevelPositive}$(A_\mu,\text{cuts})$; \textbf{if} positive \textbf{then} $\ell\gets\mu$, keep witness and cuts \textbf{else} $h\gets\mu$
+  \State $\mu\gets\lfloor(\ell+h)/2\rfloor$; \ run \textsc{LevelPositive}$(A_\mu,\text{cuts})$; \textbf{if} positive \textbf{then} $\ell\gets\mu$, keep witness and cuts \textbf{else} $h\gets\mu$ and discard the cuts of this level
 \EndWhile
 \State \Return $A_\ell$, witness, ceiling, tested levels
 \Statex
@@ -534,9 +558,11 @@ A solver (the left-right planarity test of Brandes \cite{Bra09} as implemented i
 calls the solver. For a planar answer the certificate is a rotation system, the clockwise order of the neighbours at each vertex. The checker traces the faces by the rule that
 from the dart $(u,v)$ the next dart is $(v,w)$ with $w$ the predecessor of $u$ in the clockwise rotation at $v$, counts the faces $F$, and accepts when $V-E+F=2$ on every connected component. For a
 non-planar answer the certificate is a Kuratowski subgraph; the checker verifies that it is a subgraph of the instance graph, suppresses its vertices of degree two, and accepts when the reduced graph
-is $K_5$ (five vertices, all of degree four) or $K_{3,3}$ (six vertices, all of degree three, bipartite). For the smallest instances a cheaper test settles planarity first: a graph with fewer than
+is $K_5$ (five vertices, all of degree four) or $K_{3,3}$ (six vertices, all of degree three, bipartite with parts of size three). The reduced graph is kept simple: a suppression that would create a parallel edge
+rejects the certificate, since the degree tests alone do not identify $K_5$ or $K_{3,3}$ in a multigraph (a doubled 5-cycle is 4-regular and planar); a simple 4-regular graph on five vertices is $K_5$ and a simple cubic bipartite graph with parts of
+size three is $K_{3,3}$. For the smallest instances a cheaper test settles planarity first: a graph with fewer than
 five vertices of degree at least four and fewer than six of degree at least three has no subdivision of $K_5$ or $K_{3,3}$, since the branch vertices of such a subdivision have those degrees, and is
-planar by Kuratowski's theorem. The test returns no answer when it cannot decide, and is recorded next to the certificate.
+planar by Kuratowski's theorem \cite{Kur30}. The test returns no answer when it cannot decide, and is recorded next to the certificate.
 
 \begin{algorithm}[t]
 \caption{Certified planarity: a solver proposes a rotation system or a Kuratowski subgraph, and an independent checker accepts only a valid certificate.}
@@ -546,7 +572,7 @@ planar by Kuratowski's theorem. The test returns no answer when it cannot decide
 \Ensure planar or non-planar, with an accepted certificate, or rejection
 \State $\Gamma\gets$ simple undirected graph of the arcs; ask the solver for $(\text{planar?},\text{certificate})$
 \If{planar} \State trace the faces of the rotation system; compute $V-E+F$ on each component; \textbf{accept} iff it equals $2$ on all components, and the rotation at each vertex is exactly the neighbour set
-\Else \State check that every edge of the subgraph is an edge of $\Gamma$; suppress degree-two vertices; \textbf{accept} iff the reduced graph is $K_5$ or $K_{3,3}$
+\Else \State check that every edge of the subgraph is an edge of $\Gamma$; suppress degree-two vertices, keeping the graph simple (a suppression that would create a parallel edge rejects the certificate); \textbf{accept} iff the reduced graph is $K_5$ or $K_{3,3}$
 \EndIf
 \State \Return the answer and the certificate that was accepted; a rejected certificate is reported and no planarity statement is made
 \end{algorithmic}
@@ -626,7 +652,7 @@ Conversely let $c\ge0$, $c\ne0$, make the instance a counterexample. Then $\min_
 $1/\sum_ac_a>0$ preserves that inequality and gives a feasible point of~\eqref{eq:sep} with a positive objective.
 \end{proof}
 
-Because $\mathcal U(x)$ does not depend on $c$, the reduction removes the cost vector from the search space. A reduction of this kind was sketched, without proof, in the material that accompanied the announcement; the proof above is
+The vector $c=0$ never makes an instance a counterexample, because every routing is then cost-good; this is why the converse direction takes $c\ne0$. Because $\mathcal U(x)$ does not depend on $c$, the reduction removes the cost vector from the search space. A reduction of this kind is stated in the proposer's working transcript, which was supplied to the author privately and is therefore not cited here; whether that material carries a proof is [U]. The proof above is
 written here, and the implementation is exact (Section~\ref{sec:sep}).
 
 \subsection{The frontier value and the validity of the level search}
@@ -637,7 +663,7 @@ written here, and the implementation is exact (Section~\ref{sec:sep}).
 Let $A_1<\dots<A_L$ be the distinct values of $\alpha(\mathcal P)$ over all routings. For a level $A$ let $\mathcal U_A$ be the loads of routings with $\alpha(\mathcal P)<A$. Then
 (i) there is a $c\ge0$ with $\alpha_{\mathrm{inst}}(c)\ge A$ if and only if the program~\eqref{eq:levellp} has a positive optimum, with the convention that an empty $\mathcal U_A$ is positive;
 (ii) $\alpha_{\max}=\max\{A_i\colon\eqref{eq:levellp}\text{ is positive at }A_i\}$;
-(iii) $\alpha_{\max}>1$ if and only if the instance is a counterexample for some $c\ge0$, and the program~\eqref{eq:sep} is the program~\eqref{eq:levellp} at the least level $A_i>1$.
+(iii) $\alpha_{\max}>1$ if and only if the instance is a counterexample for some $c\ge0$, and the program~\eqref{eq:sep} is the program~\eqref{eq:levellp} at the least level $A_i>1$ (when every budget is at most $1$ there is no such level, \eqref{eq:sep} is the program over all routings and its optimum is at most $0$ because no cost vector makes the instance a counterexample, by Proposition~\ref{prop:sep}).
 \end{proposition}
 
 \begin{proof}
@@ -650,7 +676,7 @@ no routing is both congestion-good ($\alpha\le1$) and cost-good for that $c$; co
 \begin{proposition}[the level search]
 \label{prop:cp}
 (i) If a level $A'$ is positive and $A\le A'$ then $A$ is positive, so positivity is monotone along the sorted levels and a binary search finds the largest positive level.
-(ii) Cuts that belong to $\mathcal U_{A'}$ belong to $\mathcal U_A$ for $A'\le A$, so the cuts of the highest positive level may be reused. (iii) If the program over a set of cuts has optimum $\le0$, the level is not positive.
+(ii) Cuts that belong to $\mathcal U_{A'}$ belong to $\mathcal U_A$ for $A'\le A$, so the cuts of the highest positive level may be reused; the cuts of a level found not positive are discarded, because for a lower level $A$ the set $\mathcal U_A$ is smaller and need not contain them. (iii) If the program over a set of cuts has optimum $\le0$, the level is not positive.
 (iv) If the program over the cuts has optimum $\delta>0$ with solution $c$, and the cheapest routing $y$ of $\mathcal U_A$ under $c$ satisfies $c^{\mathsf T}y>c^{\mathsf T}x$, the level is positive; otherwise $y$ is a new cut, and the loop terminates.
 \end{proposition}
 
@@ -675,7 +701,7 @@ rounds one of the stopping cases occurs.
 (i) A rotation system defines a cellular embedding of each connected component in a closed orientable surface; face tracing lists its faces, and the Euler characteristic of the surface satisfies $V-E+F=2-2g$ with $g$ the genus.
 A value of $2$ forces $g=0$, the sphere. (ii) A subdivision of a graph is planar if and only if the graph is, and a subgraph of a planar graph is planar. Hence it suffices that $K_5$ and $K_{3,3}$ are not planar. A simple planar graph with $V\ge3$ has
 $E\le3V-6$; $K_5$ has $V=5$ and $E=10>9$. A triangle-free simple planar graph has every face of length at least four, so $2E\ge4F$, and Euler's formula $V-E+F=2$ gives $E\le2V-4$; $K_{3,3}$ is bipartite with $V=6$ and
-$E=9>8$. (iii) By Kuratowski's theorem a nonplanar graph contains a subdivision of $K_5$, whose five branch vertices have degree at least four, or of $K_{3,3}$, whose six branch vertices have degree at least three. Neither
+$E=9>8$. (iii) By Kuratowski's theorem \cite{Kur30} a nonplanar graph contains a subdivision of $K_5$, whose five branch vertices have degree at least four, or of $K_{3,3}$, whose six branch vertices have degree at least three. Neither
 fits the hypothesis.
 \end{proof}
 
@@ -697,8 +723,8 @@ If a congestion-good routing selected two free choices in conflict, the paths of
 a contradiction. So the selected free choices are pairwise non-conflicting, that is, independent in $H$, and the other terminals use their paid paths, each of positive cost $\pi_i$.
 \end{proof}
 
-For three terminals with a triangle $H$ the bound gives $\pi_i+\pi_j$ for the two cheapest paid choices. With $\rho_i=x(Z_i)/d_i$, the fractional flow buys $\sum_i\rho_i$ units of free routing, while an independent set
-buys at most $\mathrm{ind}(H)$: when $\sum_i\rho_i>\mathrm{ind}(H)$ the fractional flow violates a stable-set inequality of $H$, and costs that make the paid paths dear separate it. Section~\ref{sec:seven} evaluates this
+For three terminals with a triangle $H$ the bound gives $\pi_i+\pi_j$ for the two cheapest paid choices. With $\rho_i=1-x(e_i)/d_i$, where $e_i$ is the paid arc of terminal $i$ (the arc that only $E_i$ uses), the fractional flow buys $\sum_i\rho_i$ units of free routing, while an independent set
+buys at most $\mathrm{ind}(H)$: when $\sum_i\rho_i>\mathrm{ind}(H)$ the fractional flow violates a stable-set inequality of $H$; that costs which make the paid paths dear separate it is conjectured, not proved here [C]. Section~\ref{sec:seven} evaluates this
 on the seven-vertex instance, where the bound reaches the minimum cost of a congestion-good routing exactly.
 
 \section{Experimental design}
@@ -725,7 +751,7 @@ to the decision procedure reproduces the decision that the instance is a counter
 demands $(2,3)$, $(3,5)$, $(4,5)$ and $(5,7)$, every integer split of each demand between its two choices and four cost pairs, \ntwoterm\ instances in all. The sweep is evidence over a bounded box, and its scope is fixed in advance as such.
 
 \paragraph{\EXP{004}: the frontier value and the spine family.} The family has a zero-cost spine $s=v_0\to v_1\to\dots\to v_m$. Terminal $i$ has demand $d_i$, a free exit at $v_{e_i}$ carrying the fraction $\rho_i$ of its demand at
-no cost, and a paid exit at $v_{f_i}$ with $f_i<e_i$, carrying $1-\rho_i$ at the unit cost $c_i$. Spine arc $r$ carries
+no cost, and a paid exit at $v_{f_i}$ with $f_i<e_i$, carrying $(1-\rho_i)d_i$ at the unit cost $c_i$. Spine arc $r$ carries
 \begin{equation}
 x(v_{r-1},v_r)\;=\;\sum_{i\colon e_i\ge r}\rho_id_i\;+\;\sum_{i\colon f_i\ge r}(1-\rho_i)d_i .
 \label{eq:spine}
@@ -741,12 +767,12 @@ the largest frontier value over the grid $d_1=1$, $b\in\{\tfrac18,\dots,\tfrac88
 
 \paragraph{\EXP{006}: the odd-cycle family on $C_5$.} Afrasyab's construction \cite{Afr26} realises an odd cycle by acyclic single-source gadgets, one per vertex of the cycle, each with five parameters that the library
 names $b$, $\delta$, $r$, $u$ and \emph{approach}; the realisation conditions of the construction are not imposed on the members, and a member is valid when the builder accepts it: acyclic, single source, nonnegative flows with exact
-conservation, and three simple paths per terminal. The frontier value is invariant under scaling every demand and flow by one factor, so members are normalised to $\dmax=1$. Stage A is the calibration on the uniform family at
+conservation, and three simple paths per terminal. The frontier value is invariant under scaling every demand and flow by one factor, so members are normalised to $\dmax=1$ at the start of each climb. Stage A is the calibration on the uniform family at
 $\varepsilon\in\{\tfrac1{120},\tfrac1{60},\tfrac1{24},\tfrac1{16},\tfrac1{13}\}$, where \cite{Afr26} gives the threshold $\tfrac23-\varepsilon$. Stage B takes the symmetric members, with every gadget equal, with $(b,\delta)\in\{(\tfrac13,1),(\tfrac23,1),(1,1),(1,\tfrac13),(1,\tfrac23)\}$ and $r,u$, approach in $\{0,\tfrac16,\dots,1\}$. Stage C draws random members,
 each gadget's five parameters independently ($b,\delta\in\{\tfrac16,\dots,1\}$; $r,u$, approach in $\{0,\tfrac1{12},\dots,1\}$), with seed $20261114$ and redrawing of invalid draws. Stage D is a local search from the ten best members of B and C, in steps of $\pm\tfrac1{24}$ on one parameter of one gadget, accepting strict improvements, with at most 150 evaluations per start.
 The predictions are that stage A equals $\tfrac23-\varepsilon$, that no member of B, C or D exceeds $\tfrac98$, and that no member exceeds $1$.
 
-\paragraph{\EXP{007}: the record instances.} The instances are read from a file of 13 entries, 11 concrete and two parametric, transcribed from the three preprints \cite{Nik1,Nik2,Nik3} and four certificate files of the repository \cite{NikRepo}, each entry with its page, theorem or file; the author's code was read as text and
+\paragraph{\EXP{007}: the instances of the series.} The instances are read from a file of 13 entries, 11 concrete and two parametric, transcribed from the three preprints \cite{Nik1,Nik2,Nik3} and four certificate files of the repository \cite{NikRepo}, each entry with its page, theorem or file; the author's code was read as text and
 never run or imported. The file has the SHA-256 digest \ninstdigest\ and \ninstbytes\ bytes. The predictions are: (R1) for each of the 11 concrete entries the flow is feasible, every terminal has exactly the paths the source describes, and $\alpha_{\mathrm{inst}}$ with the authors' prices equals the claimed value exactly;
 (R2) on the four-interval family at $t=\tfrac3{20}$, $\varepsilon=1/n$, $\alpha_{\mathrm{inst}}=\tfrac{182359}{160000}-\tfrac1n$ for six values of $n$, on the grid $t=k/400$, $40\le k\le80$, at $\varepsilon=10^{-6}$ the closed form of Lemma~4.6 of \cite{Nik1} holds, and on the ternary core
 $\alpha_{\mathrm{inst}}=(3-\eta)^2/8$; (R3) the two 17-terminal instances are non-planar and the four-interval, planar-record and seven-vertex instances are planar, each with a certificate checked by separate code, and the planarity of the triangle template and the ternary core, which the papers do not state, is determined without
@@ -787,7 +813,7 @@ bound on a single arc by $1$ ($v\to w$, $u\to v$, $s\to u$); the routing of thre
 
 \paragraph{An independent route to the same number.} The decision follows without costing the eight routings. Figure~\ref{fig:conflict} shows the conflict graph on the free choices, computed by code that does not use the cost of any routing: $Z_1$ and $Z_3$ conflict because $u\to v$
 carries $30>29$; $Z_2$ and $Z_3$ because $v\to w$ carries $25>24$; and $Z_1$ and $Z_2$ because $s\to u$ carries $40>39$, for either path of $t_3$, which enters through $s\to u$ on both of its paths. The third conflict is mediated, as defined in Section~\ref{sec:theory-conflict}. The graph is a triangle with
-independence number 1, so by Proposition~\ref{prop:conflict} every congestion-good routing pays for two of the three paid choices and costs at least $30+30=60>58$. The structural bound and the enumerated minimum are both \nmingood\ [MV]. In the language of the stable-set polytope of the triangle, the fractional flow
+independence number 1, so by Proposition~\ref{prop:conflict} every congestion-good routing pays for two of the three paid choices and costs at least $30+30=60>58$. The structural bound and the enumerated minimum are both \nmingood\ [MV]. This triangle reading is that of the proposer's certificate (as it appears in the working material supplied privately to the author) and of the triangle-facet mechanism of \cite{Muf26}; the computation here is independent of it. In the language of the stable-set polytope of the triangle, the fractional flow
 sends fractions $\rho=(\tfrac13,\tfrac25,\tfrac13)$ of the three demands on the free paths, so it buys $\sum_i\rho_i=\nrhosum>1$ units of free routing while any congestion-good routing buys at most one.
 
 \begin{figure}[t]
@@ -805,10 +831,10 @@ the instance is not a two-layer network.
 
 \input{tab_battery.tex}
 
-\paragraph{Consequences.} The digraph is acyclic (checked), so any routing satisfying Conjecture~1.4 would satisfy the conclusion of Goemans' conjecture, and Conjecture~1.4 is false as well. If $x$ were a convex combination of congestion-good unsplittable loads $y_i$, then $\min_ic^{\mathsf T}y_i\le c^{\mathsf T}x=58$ would give a congestion-good routing of cost at most $58$, so the convex-combination form is false \cite{MSS07,MSW25}. Conjecture~1.3
+\paragraph{Consequences.} The digraph is acyclic (checked), so any routing satisfying Conjecture~1.4 would satisfy the conclusion of Goemans' conjecture, and Conjecture~1.4 is false as well. If $x$ were a convex combination of congestion-good unsplittable loads $y_i$, then $\min_ic^{\mathsf T}y_i\le c^{\mathsf T}x=58$ would give a congestion-good routing of cost at most $58$, so the convex-combination form is false \cite{MSS07,MSW25}, as also noted in \cite{Muf26}. Conjecture~1.3
 survives this instance, but it is false by the cost-free instance of \cite{BLRT26}, which is independent of the one studied here. Conjecture~1.5 is untouched by this instance [D].
 
-\paragraph{The class boundary and planarity.} The branch vertices $\{s,u,v,w\}$ carry six internally disjoint connecting paths, so the underlying graph contains a subdivision of $K_4$ [MV]. Series-parallel digraphs have $K_4$-minor-free underlying graphs [D], and the conjecture is proved for them \cite{MSW25}; this instance lies outside that class by the smallest margin, that is, at the first structure past it. The graph has no vertex of degree four or more and four vertices of degree three, so by
+\paragraph{The class boundary and planarity.} The branch vertices $\{s,u,v,w\}$ carry six internally disjoint connecting paths, so the underlying graph contains a subdivision of $K_4$ [MV]. Series-parallel digraphs have $K_4$-minor-free underlying graphs [D], and the conjecture is proved for them \cite{MSW25}; this instance lies outside that class: its underlying graph is a subdivision of $K_4$, the smallest graph that is not series-parallel, as also noted in \cite{Muf26}. The graph has no vertex of degree four or more and four vertices of degree three, so by
 Proposition~\ref{prop:planar}\,(iii) it is planar; the certificate of Section~\ref{sec:records} confirms this with a rotation system. Hence $1<\alpha^\star_{\mathrm{planar}}\le2$ follows from this instance and \cite{TVZ24}; the bounds of Section~\ref{sec:records} supersede the lower end.
 
 \subsection{The separation optimum and the published prices}
@@ -843,7 +869,7 @@ nonnegative cost vectors, equals the same closed form at all three values, with 
 \input{tab_muffatti.tex}
 
 The exploration over the grid of \ngridpoints\ points has the largest frontier value \ngridmax, at $b=\tfrac34$, $d_3=1$, $(r_1,q,r_3)=(\tfrac14,\tfrac9{16},\tfrac14)$, which is the member of the family at $\varepsilon=\tfrac1{16}$, the closest the grid comes to its limit. No grid point exceeds $\tfrac98$; the next values, $\tfrac{17}{16}$ at $q=\tfrac12$ and $\tfrac{135}{128}$ at $b=\tfrac58$, lie below it. The value $\tfrac98$ is the supremum of the family and is not attained, since the bound requires $q>\tfrac12$ strictly.
-The value $\tfrac98$ is Nikolenko's: he proves in \cite{Nik1} that it is the exact supremum of the symmetric three-terminal template underlying the seven-vertex instance, and the family checked here is the limit point of that template. What is added here is the exact computation of the family at three values of $\varepsilon$ and of its frontier value, and the grid.
+The value $\tfrac98$ and its status as the supremum of this family are due to \cite{Muf26}, and independently to \cite{Nik1}, Proposition~5.2 (the template with members $(3n-1)^2/(8n^2)$); the family checked here is the one-parameter subfamily $b=\tfrac34$, $r=\tfrac14$ of that template. What is added here is the exact computation of the family at three values of $\varepsilon$ and of its frontier value, and the grid.
 
 \subsection{The odd-cycle family on $C_5$}
 \label{sec:oddcycle}
@@ -854,23 +880,23 @@ stages B, C or D has a frontier value above $1$, and a fortiori none above $\tfr
 \begin{figure}[t]
 \centering
 \input{fig_oddcycle.tex}
-\caption{The frontier values of the odd-cycle family on $C_5$. Left: the distribution of the \nsixbcount\ symmetric and \nsixccount\ random members in bins of width $\tfrac1{12}$ on a logarithmic count axis, with the line at 1. Right: the ten local searches, each plotted by the frontier value of the member accepted at each improvement; every member of every stage has a value at most $1$.}
+\caption{The frontier values of the odd-cycle family on $C_5$. Left: the distribution of the \nsixbcount\ symmetric and \nsixccount\ random members in bins of width $\tfrac1{12}$ on a logarithmic count axis, with the line at 1. Right: the ten local searches, each plotted as the running best frontier value (the value of the accepted member) after each evaluation; every member of every stage has a value at most $1$.}
 \label{fig:oddcycle}
 \end{figure}
 
-The ten climbs end at $\tfrac{23}{24}$, $\tfrac{23}{24}$, $\tfrac{12}{13}$, $\tfrac{13}{14}$, $\tfrac{71}{73}$, $\tfrac{13}{14}$, $\tfrac{14}{15}$, $\tfrac{15}{16}$, $\tfrac{43}{45}$ and $\tfrac{42}{43}$, and \nsixdbudget\ of them (those ending at $\tfrac{71}{73}$, $\tfrac{43}{45}$ and $\tfrac{42}{43}$) stopped at the limit of 150 evaluations while still improving. The values approach $1$ from below in steps of the form $n/(n+1)$, with a single arc of cost $1$ and every other arc of cost $0$ as the witness pricing. The computation does not decide whether the supremum of the family is $1$ or whether it is attained. The result is bounded to the sampled space: the family
-does not raise the known lower bounds there, and no sampled member is a counterexample instance at all [MV on the sampled space].
+The ten climbs end at $\tfrac{23}{24}$, $\tfrac{23}{24}$, $\tfrac{12}{13}$, $\tfrac{13}{14}$, $\tfrac{71}{73}$, $\tfrac{13}{14}$, $\tfrac{14}{15}$, $\tfrac{15}{16}$, $\tfrac{43}{45}$ and $\tfrac{42}{43}$, and \nsixdbudget\ of them (those ending at $\tfrac{71}{73}$, $\tfrac{43}{45}$ and $\tfrac{42}{43}$) stopped at the limit of 150 evaluations while still improving. The values approach $1$ from below; \nsixdnnp\ of the ten end at a value $n/(n+1)$, and \nsixdsingle\ of the ten witnesses price a single arc. The computation does not decide whether the supremum of the family is $1$ or whether it is attained. The result is bounded to the sampled space, and the mark [MV] claims no more than that: the family
+does not raise the known lower bounds there, and no sampled member is a counterexample instance at all [MV].
 
-\subsection{The record instances}
+\subsection{The instances of the series}
 \label{sec:records}
 
-\paragraph{Values.} Table~\ref{tab:records} lists the eleven concrete instances re-entered from the printed sources, and Table~\ref{tab:exact} gives their exact values. On all eleven, the flow is feasible, each terminal has exactly two simple paths (enumerated by the library and compared with, never built from, the paths of the transcription), and $\alpha_{\mathrm{inst}}$ under the authors' costs equals the claimed value exactly [MV]. The four-interval instances have 16 routings, of which \nfourgood\ are cost-good and \nfourmin\ attain the minimum; the three-terminal instances, the seven-vertex instance among them, have 8, of which \nsmallgood\ are cost-good and \nsmallmin\ attain it; the planar record has $\nksixroutings$, \nksixgood\ cost-good and \nksixmin\ minimiser; and the two 17-terminal instances have \nkroutings\ routings each, \nkcostgood\ cost-good, with \nkrecmin\ and \nkrefmin\ minimisers. The value of the 17-terminal record, $\tfrac{1282494797984843521}{10^{18}}=1.282494797984843521$, and of its refinement, $1.282600690125$ to twelve digits, are the current general lower bound of \cite{Nik2} and its refinement by \cite{DLF26}; the planar record is $\nksixval$ \cite{Nik3}.
+\paragraph{Values.} Table~\ref{tab:records} lists the eleven concrete instances re-entered from the printed sources, and Table~\ref{tab:exact} gives their exact values. On all eleven, the flow is feasible, each terminal has exactly two simple paths (enumerated by the library and compared with the transcribed path counts, and with the transcribed paths for the four entries that list them; never built from them), and $\alpha_{\mathrm{inst}}$ under the authors' costs equals the claimed value exactly [MV]. The four-interval instances have 16 routings, of which \nfourgood\ are cost-good and \nfourmin\ attain the minimum; the three-terminal instances, the seven-vertex instance among them, have 8, of which \nsmallgood\ are cost-good and \nsmallmin\ attain it; the planar record has $\nksixroutings$, \nksixgood\ cost-good and \nksixmin\ minimiser; and the two 17-terminal instances have \nkroutings\ routings each, \nkcostgood\ cost-good, with \nkrecmin\ and \nkrefmin\ minimisers. The value of the 17-terminal record, $\tfrac{1282494797984843521}{10^{18}}=1.282494797984843521$, and of its refinement, $1.282600690125$ to twelve digits, are the current general lower bound of \cite{Nik2} and its refinement by \cite{DLF26}; the planar record is $\nksixval$ \cite{Nik3}.
 
 \input{tab_records.tex}
 \input{tab_exact.tex}
 
 \paragraph{The families.} For the four-interval family at $t=\tfrac3{20}$ and $\varepsilon=1/n$ the forced violation is $\tfrac{182359}{160000}-\tfrac1n$ at $n=67,68,100,1000,10^4,10^6$, and exceeds $\tfrac98$ from $n=68$ on; at $n=67$ it is $\tfrac{12058053}{10720000}<\tfrac98$ [MV]. On the grid $t=k/400$, $40\le k\le80$, at $\varepsilon=10^{-6}$ (\ngridpts\ points), the value equals the closed form $(1-t)^2(1+4t-t^2)-\varepsilon$ at every point, as in Lemma~4.6 of \cite{Nik1} [V]. Figure~\ref{fig:grid} plots the grid against the closed form and the supremum. Its maximum is \ngridmaxalpha, that is, \ngridmaxdec, attained at $t=\tfrac3{20}$. The supremum of the family is
-$C^\star=(299-41\sqrt{41})/32$ at $t^\star=(7-\sqrt{41})/4$ \cite{Nik1}. Using the exact rational bounds $\nsqrtlo<\sqrt{41}<\tfrac{3201562119}{500000000}$, verified by squaring, we obtain $C^\star=\ncstarmid\pm\ncstarhalf$, and the maximum on the grid lies below $C^\star$ by $\ngaplo$ [MV]. On the ternary core, $\alpha_{\mathrm{inst}}=(3-\eta)^2/8$ at $\eta=\tfrac12,\tfrac1{10},\tfrac1{100},\tfrac1{1000}$, with values $\nterna$, $\nternb$, $\nternc$ and $\nternd$, each below $\tfrac98$. The suprema $\tfrac98$ and $C^\star$ are not attained by any member.
+$C^\star=(299-41\sqrt{41})/32$ at $t^\star=(7-\sqrt{41})/4$ \cite{Pro26,Nik1}. Using the exact rational bounds $\nsqrtlo<\sqrt{41}<\tfrac{3201562119}{500000000}$, verified by squaring, we obtain $C^\star=\ncstarmid\pm\ncstarhalf$, and the maximum on the grid lies below $C^\star$ by $\ngaplo$ [MV]. On the ternary core, $\alpha_{\mathrm{inst}}=(3-\eta)^2/8$ at $\eta=\tfrac12,\tfrac1{10},\tfrac1{100},\tfrac1{1000}$, with values $\nterna$, $\nternb$, $\nternc$ and $\nternd$, each below $\tfrac98$. The suprema $\tfrac98$ and $C^\star$ are not attained by any member.
 
 \paragraph{Planarity.} Table~\ref{tab:records} gives the Euler count of the checked rotation system of every planar instance and the Kuratowski type of the two non-planar ones. Both 17-terminal graphs, with \nkverts\ vertices and \nkarcs\ arcs, are non-planar: the certificate is a Kuratowski subgraph of \nkuratedges\ edges, a subdivision of $K_{3,3}$ with \nkuratsupp\ vertices of degree two suppressed, accepted by the separate checker. The four-interval instances (10 vertices, 13 edges, 5 faces), the planar record (15 vertices, 20 edges, 7 faces), and the seven-vertex instance (7 vertices, 9 edges, 4 faces) are planar with $V-E+F=2$ [MV]. The papers do not state the planarity of the triangle template or of the ternary core; both are planar (7 vertices, 9 edges, 4 faces).
 Figure~\ref{fig:draw} draws a four-interval instance and the planar record from their arc lists; the drawing of the first is on a line with the terminals above and below it, and that of the second is a straight-line grid drawing, with the coordinates typed in the generator. Both have no crossing, checked with exact coordinates, so each drawing is itself a planarity certificate.
@@ -891,26 +917,26 @@ The repository's topology certificate of the planar record stores a rotation sys
 \label{fig:grid}
 \end{figure}
 
-\paragraph{Pricing optimality.} The frontier value equals the claimed value on all eleven instances, so the cost vectors of the authors are optimal for their instances: re-pricing gains nothing on any of them. For the nine instances of at most 64 routings the frontier value is computed by Algorithm~\ref{alg:frontier} and the witness cost vector is re-checked by plain enumeration; on the planar record it takes $\nksixsec$ s. For the two 17-terminal instances, Algorithm~\ref{alg:cp} finishes: the record has \nkreclevels\ distinct levels and \nkrectested\ tested levels,
+\paragraph{Pricing optimality.} The frontier value equals the claimed value on all eleven instances, so the cost vectors of the authors are optimal for their instances, in the sense that no nonnegative cost vector for the fixed graph, demands and fractional flow forces more: re-pricing gains nothing on any of them. For the nine instances of at most 64 routings the frontier value is computed by Algorithm~\ref{alg:frontier} and the witness cost vector is re-checked by plain enumeration; on the planar record it takes $\nksixsec$ s. For the two 17-terminal instances, Algorithm~\ref{alg:cp} finishes: the record has \nkreclevels\ distinct levels and \nkrectested\ tested levels,
 in \nkrecsec\ s, and the refinement has \nkreflevels\ distinct levels and \nkreftested\ tested levels, in \nkrefsec\ s (Figure~\ref{fig:levels}, Table~\ref{tab:levels}). For the record, the largest positive level is the claimed value \nkreclow\ and the next level above it, \nkrecup, is not positive, a bracket of width $\nkrecgap$; for the refinement the bracket has width $\nkrefgap$, and the witness cost vector of each instance, re-checked by plain enumeration over \nkroutings\ routings, reproduces the frontier value.
-The frontier value is therefore not above the claim on any record instance, and a new lower bound cannot come from re-pricing the known instances.
+For the ternary core the pricing compared is the convention $1/d_i$ of the series, since \cite{Nik3} prints no costs for that figure [U]; the frontier value itself does not depend on the costs of the authors. The frontier value is therefore not above the claim on any of the eleven instances, and a new lower bound cannot come from re-pricing the known instances.
 
 \begin{figure}[t]
 \centering
 \input{fig_levels.tex}
-\caption{The level search on the two 17-terminal instances. Each point is a level tested by the cutting-plane evaluator, in the order of the binary search, plotted by its distance from the frontier value; filled markers are levels proved positive and hollow markers levels proved not positive. The distances shrink from above $2$ to the bracket of the final two levels; a level equal to the frontier value is drawn at the floor $10^{-13}$.}
+\caption{The level search on the two 17-terminal instances. Each point is a level tested by the cutting-plane evaluator, in the order of the binary search, plotted by its distance from the frontier value; filled markers are levels proved positive and hollow markers levels proved not positive. The distances shrink from above $2$ to the bracket of the final two levels; a level equal to the frontier value, and the last level of the refinement above it (at the distance $\nkrefgap$ from the frontier value, below the floor), are both drawn at the floor $10^{-13}$.}
 \label{fig:levels}
 \end{figure}
 
 \input{tab_levels.tex}
 
-\paragraph{The ladder of bounds.} Figure~\ref{fig:ladder} orders the sources by date. Rybin's seven-vertex instance forces $\tfrac{16}{15}$ on 22 and 23 July; Nikolenko's first preprint gives the supremum $\tfrac98$ and the planar family on 30 July; his second gives the 17-terminal value on 31 July; the refinement of De la Fuente is merged on 4 August; the planar record appears in the third preprint on 13 August. The values checked here are the plotted values of the seven-vertex instance, the 17-terminal instance, its refinement and the planar record, and the point of the
+\paragraph{The ladder of bounds.} Figure~\ref{fig:ladder} orders the sources by date. Rybin's seven-vertex instance forces $\tfrac{16}{15}$ on 22 and 23 July; Protti's note gives the planar four-terminal family, with the supremum $(299-41\sqrt{41})/32$, on 23 July; Muffatti's note of 24 July gives the planar family with the supremum $\tfrac98$; Nikolenko's first preprint of 30 July gives the same four-terminal supremum and proves, as Proposition~5.2, the same supremum $\tfrac98$ for the symmetric three-terminal template, independently of \cite{Muf26}; his second preprint gives the 17-terminal value on 31 July; the refinement of De la Fuente is merged on 4 August; the planar record appears in the third preprint on 13 August. The values checked here are the plotted values of the seven-vertex instance, the 17-terminal instance, its refinement and the planar record, and the point of the
 planar family is the exact bracket of its supremum.
 
 \begin{figure}[t]
 \centering
 \input{fig_ladder.tex}
-\caption{Lower bounds on the frontier constant by date and author, as verified in this paper: the general instances (blue) and the planar instances (red), with the line at $\tfrac98$. The planar family point is the bracket of the supremum $(299-41\sqrt{41})/32$ of the first preprint; the planar record of $1.17353531974518$ is the highest planar value, and the 17-terminal refinement of $1.28260069$ is the highest general value. The upper bound $2$ for planar instances is outside the plotted range.}
+\caption{Lower bounds on the frontier constant by date and author. The instance values ($\tfrac{16}{15}$, $1.28249$, $1.28260$, $1.17354$) are verified in this paper; the two family suprema, $\tfrac98$ and $(299-41\sqrt{41})/32$, are theorems of their sources [V], shown by the exact bracket of their value. General instances (blue, steps) and the planar series (red marks, one per source), with the line at $\tfrac98$. The planar family point is the bracket of the supremum $(299-41\sqrt{41})/32$ of the note of Protti and of the first preprint of Nikolenko; the point of $\tfrac98$ on 24 July is the planar family of Muffatti, a supremum below the value of the day before; the planar record of $1.17353531974518$ is the highest planar value, and the 17-terminal refinement of $1.28260069$ is the highest general value. The upper bound $2$ for planar instances is outside the plotted range.}
 \label{fig:ladder}
 \end{figure}
 
@@ -939,8 +965,8 @@ There is no tunable method to ablate here, since every procedure is exact. The a
 
 \input{tab_controls.tex}
 
-Removing the arc index from the instance model would be silent on all of the records except one calibration instance: with two parallel arcs a model keyed on pairs of endpoints finds one path and reports one routing, where the arc-indexed model finds two. A path enumerator that guards on arcs rather than vertices does not terminate on the instance with a directed cycle, and the vertex guard terminates and returns the third simple path
-that the cycle creates. An exclusive reading of the congestion inequality would misclassify the routing of the fourth calibration instance that loads an arc to exactly $x_a+\dmax$, and would have silently manufactured counterexamples. Each of these is a plausible implementation error, and each is caught by one calibration instance.
+Removing the arc index from the instance model would be silent on all of the records except one calibration instance [D]: with two parallel arcs a model keyed on pairs of endpoints finds one path and reports one routing, where the arc-indexed model finds two. A path enumerator without a vertex guard fails to terminate on the instance with a directed cycle, and one that guards on arcs terminates (a finite graph has finitely many trails) but enumerates walks that repeat vertices, which are not simple paths; the vertex guard terminates and returns the third simple path
+that the cycle creates. An exclusive reading of the congestion inequality would misclassify the routing of the fourth calibration instance that loads an arc to exactly $x_a+\dmax$, and would have silently manufactured counterexamples [D]. Each of these is a plausible implementation error, and each is caught by one calibration instance; the consequences of the removals above are argued, not observed; what was observed is the path count of the library itself on the calibration instances (two paths on the instance with parallel arcs, and the third simple path on the instance with a directed cycle).
 
 Removing the exact simplex in favour of a single solver would leave the numbers resting on one implementation: sympy's rational simplex raised an oscillation error on a degenerate member of the spine family, and replacing it by the Bland-rule simplex, validated against sympy where both finish, removed the single point of failure. Removing the cuts' reuse or the monotone binary search from the cutting-plane evaluator would leave the enumerative evaluator,
 which stores every load vector and one dense program per level, and which is used for the instances of at most 64 routings.
@@ -952,30 +978,30 @@ The planarity checker rejects the rotation system of the planar record offered f
 \label{sec:discussion}
 
 \paragraph{What the checks establish.} The seven-vertex instance is a counterexample to the conjecture. This is a finite arithmetic fact, established independently of the announcement, of its authors' code and of any reputation, and the origin of the instance has no bearing on it: the announcement credits a large language model with the discovery \cite{Ryb26}. The instance forces exactly $\tfrac{16}{15}$, which is a lower bound $\alpha^\star\ge\tfrac{16}{15}$ and no more.
-The eleven record instances force the values their authors state, are planar or not as stated, and are optimally priced. The checks decide instances; they do not re-prove the suprema, the class results, the mixture characterisation of \cite{Nik3} or the formula for the four-interval family beyond the instances and the grid computed.
+The eleven instances of the series force the values their authors state, are planar or non-planar as the sources state where they state it (the planarity of the seven-vertex instance, of the triangle template and of the ternary core is decided here), and are optimally priced. The checks decide instances; they do not re-prove the suprema, the class results, the mixture characterisation of \cite{Nik3} or the formula for the four-interval family beyond the instances and the grid computed.
 
-\paragraph{Pricing optimality.} The frontier value equals the claimed value on all eleven instances. For an author's instance this means that the prices were found by search and are the best that the instance admits: no re-pricing yields a larger forced violation. Any new lower bound must therefore come from a new instance or a new family, as the open direction of \cite{Nik3} also says, and the evaluators of this paper
+\paragraph{Pricing optimality.} Section~\ref{sec:records} shows that the frontier value equals the claimed value on all eleven instances; for an instance of the series this means that the prices of the source are the best that the instance admits. Any new lower bound must therefore come from a new instance or a new family, as the open direction of \cite{Nik3} also says, and the evaluators of this paper
 give an exact test of a candidate: its frontier value is one number, with a witness. On the seven-vertex instance the same statement holds for the cost gap, at $\tfrac27$.
 
 \paragraph{The extra arc of the planar record.} The topology certificate of the repository for the planar record lists an arc $v_8\to v_9$ with zero flow that the printed instance lacks. An arc without flow is not part of the instance, and removing it leaves the rotation system on the 20 edges of the instance at genus 0, so the planarity claim is unaffected by the discrepancy, which is a property of the certificate and not of the value. A certificate that carries an arc more than its instance proves the planarity of a larger graph, and the planarity of the instance follows because a subgraph of a planar graph is planar; the check on the printed graph confirms that conclusion directly.
 
-\paragraph{Suprema are not attained.} The values $\tfrac98$ and $(299-41\sqrt{41})/32$ are suprema of families and no member attains them. The members checked approach them from below: $\tfrac{4497}{4000}$ at $\varepsilon=10^{-3}$ for the first, and $4558971/4000000$ at $t=\tfrac3{20}$, $\varepsilon=10^{-6}$, below the second by $\ngaplo$. A universal constant must be at least each supremum. The value $\tfrac98$ is not a ceiling for single instances: the four-interval members from $n=68$ on exceed it, the member at $n=68$ with $\tfrac{3060103}{2720000}$ by a hair, and the first certified point $\tfrac{8867}{7800}$ by more. The supremum $\tfrac98$ concerns the symmetric three-terminal template only \cite{Nik1}.
+\paragraph{Suprema are not attained.} The values $\tfrac98$ and $(299-41\sqrt{41})/32$ are suprema of families and no member attains them. The members checked approach them from below: $\tfrac{4497}{4000}$ at $\varepsilon=10^{-3}$ for the first, and $4558971/4000000$ at $t=\tfrac3{20}$, $\varepsilon=10^{-6}$, below the second by $\ngaplo$. A universal constant must be at least each supremum. The value $\tfrac98$ is not a ceiling for single instances: the four-interval members from $n=68$ on exceed it, the member at $n=68$ with $\tfrac{3060103}{2720000}$ by a hair, and the first certified point $\tfrac{8867}{7800}$ by more. The supremum $\tfrac98$ concerns the symmetric three-terminal template only \cite{Muf26,Nik1}.
 
 \paragraph{Where the instruments could reach.} The separation program and the frontier value are instruments for instances. The open problems of the series, such as whether the factor-two merger constant of \cite{Nik3} is finite, are statements about all instances, and the instruments give a test for a candidate instance without a handle on them. Cherniavskii and coauthors \cite{CKMS26} prove a cost-preserving rounding with an additive $O(\rho_{\max}\sqrt D)$ on hop-bounded instances; the instances of this paper have longest paths of at most a few arcs, and the comparison of the two constants is left to an evaluation that this paper does not make.
 
 \section{Limitations and threats to validity}
 \label{sec:limits}
 
-\paragraph{Internal validity.} The record instances were read from a transcription of the printed sources that is common to the extraction and to this verification, so a transcription error shared by both would not be detected as a disagreement. The guards are that every value equals the printed claim to the last digit, that a change of one unit in the last printed digit of one demand is detected, and that the seven-vertex instance, decided separately,
+\paragraph{Internal validity.} The instances of the series were read from a transcription of the printed sources that is common to the extraction and to this verification, so a transcription error shared by both would not be detected as a disagreement. The guards are that every value equals the printed claim to the last digit, that a change of one unit in the last printed digit of one demand is detected, and that the seven-vertex instance, decided separately,
 gives $\tfrac{16}{15}$ through the same code. A shared misreading of the definition of the violation or of cost-goodness would affect the verification and the sources alike; the definitions follow \cite{TVZ24} and \cite{STVZ25}, and the normalisation of the constant of \cite{Nik1,Nik2,Nik3} is that of $\alpha^\star$ [V].
 The restriction to simple paths is argued in Section~\ref{sec:instances}, not machine-checked.
 
-\paragraph{External validity.} Every sweep is finite. The spine family was tested on a coarse box, the symmetric family on a grid with steps of $\tfrac1{16}$ in the fractions, the odd-cycle family on \nsixtotal\ members in three stages, and the two-terminal case on \ntwoterm\ instances of one shape. A member outside a box could behave differently, and no result is claimed outside the sampled space. The theorems of the sources are used as stated and were not re-proved. The refined 17-terminal instance is not printed in any of the three preprints; it was transcribed from the repository certificate that carries De la Fuente's refinement.
+\paragraph{External validity.} Every sweep is finite. The spine family was tested on a coarse box, the symmetric family on a grid with steps of $\tfrac1{16}$ in the fractions, the odd-cycle family on \nsixtotal\ members in three stages, and the two-terminal case on \ntwoterm\ instances of one shape. A member outside a box could behave differently, and no result is claimed outside the sampled space. The theorems of the sources are used as stated and were not re-proved. The refined 17-terminal instance is not printed in any of the three preprints; it was transcribed from the repository certificate that carries De la Fuente's refinement. Instances of the series that were not re-entered are not checked: the integer certificate $\tfrac{335}{294}$ and the family of \cite{Pro26}, the other certified members of \cite{Nik3} (for instance the $k=5$ instance with value $1.16798\ldots$ and the Pell families, which that preprint lists as certified non-planar members of the ladder), and the instance of \cite{BLRT26}.
 
 \paragraph{Construct validity and unconfirmed statements.} The cost convention of the figure of the ternary core in \cite{Nik3} is not printed in its caption; the convention of a unit cost $1/d_i$ on the early exit, used throughout the series, reproduces the printed value $(3-\eta)^2/8$, but the convention itself is [U] for that figure. The planarity of the instance of Figure~2 of \cite{BLRT26} was not checked [U]. A preprint on the discovery of the counterexample listed on SSRN under the identifier 7423078 could not be read (the host returned an access error), so it is not used.
 The proof of the Dinitz--Garg--Goemans theorem is used as a statement and was not read in its original; the equivalence of \cite{MSS07} between the cost form and the convex-combination form is used only in its easy direction. The note of \cite{Muf26} is not peer reviewed. The realisation conditions of the construction of \cite{Afr26} are not imposed on the odd-cycle members, and the dates printed on its first version and in its identifier do not agree [U].
 
-\paragraph{Scope of the computation.} The cutting-plane evaluator finished on instances of $\nkroutings$ routings in under nine minutes on one process; its behaviour on larger instances is not measured. The grid drawing of the planar record depends on the version of the graph library (\nnetworkx), and the drawing is re-checked for crossings at every build. Run times are those of one machine; the processor model was not recorded [U].
+\paragraph{Scope of the computation.} The cutting-plane evaluator finished on instances of $\nkroutings$ routings in under nine minutes on one process; its behaviour on larger instances is not measured. The grid drawing of the planar record depends on the version of the graph library (\nnetworkx), and the drawing is re-checked for crossings at every build. Run times are those of one machine; the processor model was not recorded [U]. The two 17-terminal evaluations ran concurrently on that machine (their logs show starts at 19:15:59 and 19:16:01), so each wall time is that of a process that shared the machine with the other.
 
 \section{Reproducibility and data availability}
 \label{sec:repro}
@@ -988,7 +1014,7 @@ holds the generator \path{make_tables.py}, which reads the artifacts, checks the
 \item \texttt{python -m pytest}\ \path{problems/optimization-geometry/unsplittable-flow-cost/code/ufclib/tests/}
 \end{itemize}
 
-The instance file of the record instances is held under the data root of the machine and is not in the repository; its SHA-256 digest is \ninstdigest\ (Table~\ref{tab:sources}), and the generator re-hashes the archived sources when the data root is given. The archived PDFs of the primary sources, their versions and their digests are in Table~\ref{tab:sources}.
+The instance file of the instances of the series is held under the data root of the machine and is not in the repository; its SHA-256 digest is \ninstdigest\ (Table~\ref{tab:sources}), and the generator re-hashes the archived sources when the data root is given. The archived PDFs of the primary sources, their versions and their digests are in Table~\ref{tab:sources}.
 The computations were run with Python \npython, networkx \nnetworkx\ and \nplatform. The run times are those of single processes, except for the grid of Section~\ref{sec:muffatti} (\ngridwall\ s on four processes) and the odd-cycle sweep (\nsixwall\ s on 14 processes); the sweeps of the spine family took \nfamthreesec\ s and \nfamfoursec\ s. The two 17-terminal evaluations took \nkrecsec\ s and \nkrefsec\ s.
 
 \input{tab_procedures.tex}
@@ -997,8 +1023,8 @@ The computations were run with Python \npython, networkx \nnetworkx\ and \nplatf
 \section{Conclusions}
 \label{sec:conclusions}
 
-The seven-vertex instance announced in 2026 is a counterexample to Goemans' unsplittable-flow cost conjecture, and it forces exactly $\tfrac{16}{15}\dmax$: the conjecture fails by one unit at $\dmax=15$. The separation program decides, for any instance, whether some nonnegative cost vector makes it a counterexample; on this instance its optimum is $\tfrac27$ and is attained by the published prices. No instance with one terminal is a counterexample, and a counterexample with two terminals would contain an arc of the cheapest paths whose flow is below the smaller demand. The frontier value, evaluated by an exact simplex and by a cutting-plane evaluator, shows that the published prices are optimal on all eleven record instances of Nikolenko and De la Fuente, whose values are reproduced to the last digit, and that two of them, the 17-terminal instances, are non-planar while the others are planar, each by a certificate that a separate checker accepts.
-The symmetric three-terminal family of Muffatti forces $\tfrac98-\tfrac34\varepsilon$ at every $\varepsilon$ tested, and Afrasyab's odd-cycle family on $C_5$ never exceeds $1$ on \nsixtotal\ members.
+The seven-vertex instance announced in 2026 is a counterexample to Goemans' unsplittable-flow cost conjecture, and it forces exactly $\tfrac{16}{15}\dmax$: the conjecture fails by one unit at $\dmax=15$. The separation program decides, for any instance, whether some nonnegative cost vector makes it a counterexample; on this instance its optimum is $\tfrac27$ and is attained by the published prices. No instance with one terminal is a counterexample, and a counterexample with two terminals would contain, for every choice of cheapest paths, an arc lying on both whose flow is below the smaller demand. The frontier value, evaluated by an exact simplex and by a cutting-plane evaluator, shows that the published prices are optimal on all eleven instances of the series, whose values are reproduced to the last digit, and that two of them, the 17-terminal instances, are non-planar while the others are planar, each by a certificate that a separate checker accepts.
+Muffatti's subfamily of the symmetric three-terminal template forces $\tfrac98-\tfrac34\varepsilon$ at every $\varepsilon$ tested, and Afrasyab's odd-cycle family on $C_5$ never exceeds $1$ on \nsixtotal\ members.
 
 Four questions remain open. Whether a counterexample with two terminals exists. Whether the factor-two merger constant of Open Problem~11.1 of \cite{Nik3} is finite, which would give a universal cost-preserving additive constant; only $K\ge2.5652$ is known. Where the planar constant lies in the interval from $1.1735$ to $2$. And whether the supremum of the odd-cycle family on $C_5$ is $1$. A new lower bound needs a new instance or a new family, since re-pricing the known instances gains nothing.
 
@@ -1038,11 +1064,11 @@ Four questions remain open. Whether a counterexample with two terminals exists. 
 
 \bibitem{LST90} J.\ K.\ Lenstra, D.\ B.\ Shmoys, \'E.\ Tardos, \emph{Approximation algorithms for scheduling unrelated parallel machines}, Mathematical Programming \textbf{46}(1--3) (1990) 259--271.
 
-\bibitem{STVZ25} C.\ Swamy, V.\ Traub, L.\ Vargas Koch, R.\ Zenklusen, \emph{Unsplittable cost flows from unweighted error-bounded variants}, preprint arXiv:2510.21287 (2025). \doi{10.48550/arXiv.2510.21287}
+\bibitem{STVZ25} C.\ Swamy, V.\ Traub, L.\ Vargas Koch, R.\ Zenklusen, \emph{Unsplittable cost flows from unweighted error-bounded variants}, Proceedings of the 2026 SIAM Symposium on Simplicity in Algorithms (SOSA), 512--523 (2026); preprint arXiv:2510.21287 (2025). \doi{10.1137/1.9781611978964.42}
 
 \bibitem{SV15} F.\ B.\ Shepherd, A.\ Vetta, \emph{The inapproximability of maximum single-sink unsplittable, priority and confluent flow problems}, preprint arXiv:1504.00627. \doi{10.48550/arXiv.1504.00627}
 
-\bibitem{Ryb26} D.\ Rybin, \emph{A counterexample to Goemans' cost-preserving unsplittable flow conjecture}, announcement of 22 July 2026; restatements at \url{https://mathlab.drummerduck.com/p/goemans-unsplittable-flow} and \url{https://vibemathed.com/problem/dinitz-garg-goemans-unsplittable-flow}.
+\bibitem{Ryb26} D.\ Rybin, \emph{A counterexample to Goemans' cost-preserving unsplittable flow conjecture}, announcement of 22 July 2026, \url{https://x.com/DmitryRybin1/status/2079904005652893709}; restatements at \url{https://mathlab.drummerduck.com/p/goemans-unsplittable-flow} and \url{https://vibemathed.com/problem/dinitz-garg-goemans-unsplittable-flow}.
 
 \bibitem{AFP26} A.\ Freitas Ramos, D.\ Barros Hulak, R.\ J.\ G.\ B.\ de Queiroz, \emph{A formal counterexample to the cost-preserving single-source unsplittable flow conjecture}, Archive of Formal Proofs, \url{https://isa-afp.org/entries/Dinitz_Garg_Goemans_Counterexample.html} (document of 26 October 2026).
 
@@ -1056,13 +1082,19 @@ Four questions remain open. Whether a counterexample with two terminals exists. 
 
 \bibitem{DLF26} A.\ De la Fuente, \emph{Exact 17-terminal common-point certificate for the lower bound 1.28260069\ldots}, merged pull request 1 to \cite{NikRepo}, \url{https://github.com/snikolenko/unsplittable-flows/pull/1} (merged 4 August 2026).
 
-\bibitem{Muf26} A.\ Muffatti, \emph{Consequences of Rybin's counterexample: convex-decomposition failure and a planar 9/8 lower bound}, research note (not peer reviewed), repository \texttt{terrorproforma/maths}, folder \texttt{planar-cost-lower-bound}, commit dbf9d2372773b219a5d5088862643431170c2c9f (31 August 2026).
+\bibitem{Muf26} A.\ Muffatti, \emph{Consequences of Rybin's counterexample: convex-decomposition failure and a planar 9/8 lower bound}, research note dated 24 July 2026 (not peer reviewed), repository \texttt{terrorproforma/maths}, folder \texttt{planar-cost-lower-bound}, commits of 23 and 24 July 2026; archived at commit dbf9d2372773b219a5d5088862643431170c2c9f.
 
-\bibitem{Afr26} K.\ Afrasyab, \emph{Independence-system realisations in single-source unsplittable flow}, preprint arXiv:2609.17568 (version 1). \doi{10.48550/arXiv.2609.17568}
+\bibitem{Afr26} K.\ Afrasyab, \emph{Independence-system realisations in single-source unsplittable flow}, preprint arXiv:2609.17568 (version 1, dated 27 July 2026 on its first page; the date is [U], see Section~\ref{sec:limits}). \doi{10.48550/arXiv.2609.17568}
 
 \bibitem{BLRT26} K.\ B\'erczi, S.\ Liu, V.\ Reis, J.\ Tarnawski, \emph{Weighted equitability and matroid-constrained discrepancy}, preprint arXiv:2608.13983 (version 1, 14 August 2026). \doi{10.48550/arXiv.2608.13983}
 
 \bibitem{CKMS26} M.\ Cherniavskii, A.\ Kupavskii, S.\ Moiseev, A.\ Shekhovtsov, \emph{Approximation algorithms via discrepancy with hard constraints}, preprint arXiv:2610.16079 (version 1, 12 October 2026). \doi{10.48550/arXiv.2610.16079}
+
+\bibitem{Pro26} M.\ Protti, \emph{A four-terminal planar lower bound and a sharp equal-cost gadget for cost-preserving unsplittable-flow rounding}, unrefereed research disclosure, revision 5 (23 July 2026), release v0.1.0 of \url{https://github.com/matthewprotti/planar-ssuf-four-terminal-bound} (published 23 July 2026; listed as ``Four-terminal planar case of the Dinitz--Garg--Goemans cost conjecture'' in \cite{Nik3}). The release has no DOI.
+
+\bibitem{Bla77} R.\ G.\ Bland, \emph{New finite pivoting rules for the simplex method}, Mathematics of Operations Research \textbf{2}(2) (1977) 103--107. \doi{10.1287/moor.2.2.103}
+
+\bibitem{Kur30} C.\ Kuratowski, \emph{Sur le probl\`eme des courbes gauches en topologie}, Fundamenta Mathematicae \textbf{15} (1930) 271--283. \doi{10.4064/fm-15-1-271-283}
 
 \bibitem{Bra09} U.\ Brandes, \emph{The left-right planarity test}, manuscript (2009).
 
