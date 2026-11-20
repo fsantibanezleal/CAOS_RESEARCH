@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "problem": "boij-soderberg-realizability",
+  "updated": "2026-11-19",
+  "original_problem": {
+    "status": "answered negatively externally",
+    "statement": "Erman and Sam, Questions about Boij-Soderberg theory (arXiv:1606.01867), Question 6.1: is every integral point of every pure ray in three variables the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U(H) of the Heisenberg Lie algebra? Question 6.2 is its analogue in four variables.",
+    "priority": "Jiang, Li, Sun, Wang, Xiao and Yu (arXiv:2605.25259, Theorems 3.7 and 3.8) answer both questions negatively over every field, with (1,2,9,8) on (0,6,20,21) and (1,2,5,6,2) on (0,1,4,5,6). Boocher, Huang and Wolf (arXiv:2512.24320) hold the polynomial-ring half of both examples and the classification of the rays with two generators. The pure modules over U(H) from Kostant's theorem are stated by Erman and Sam and announced by Sam. The obstructions over k[x,y,z] used here are those of Buchsbaum and Eisenbud, Erman, and Boij and Soderberg.",
+    "prohibited_reframing": "No CAOS result may be described as the first negative answer to Question 6.1 or 6.2, as a new obstruction over k[x,y,z], or as a result on the Kostant family. A realization found by a search over a prime field is a statement over that field until it is recomputed over the rationals."
+  },
+  "mission": "Decide, for the pure rays (0,d1,d2,d3) of small degree, which primitive points are Betti tables of finite length modules over k[x,y,z] and over U(H), with explicit modules and exact computations: the least d3 of a counterexample to Question 6.1, the least realizable multiple on each ray, and how the answers depend on the characteristic of the field.",
+  "current_focus": "BSR-F2",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "BSR-F1",
+      "title": "The realizability table for d3 <= 12 and the least counterexample to Question 6.1",
+      "status": "closed",
+      "priority": 0,
+      "target": "For the 220 pure rays with d3 <= 12: the primitive point realized, excluded or open over k[x,y,z], with the least realizable multiple; the parity-passing excluded rays over U(H); hence the least d3 of a counterexample in characteristic 0.",
+      "value": "The published counterexample has d3 = 21; the table shows where the question first fails and separates the two rings. The family U/U(x^e, y^e) and the characteristic 2 statement came out of it.",
+      "success_gate": "Every ray with d3 <= 9 decided in characteristic 0 by an explicit module, a cited construction or a cited obstruction, each hit recomputed in a second system (met 2026-11-19: EXP-001, EXP-002, EXP-003).",
+      "stop_conditions": [
+        "A hit on a point excluded by a published obstruction (a bug or a refuted proof): stop and explain.",
+        "The search budget of EXP-001 is reached with rays with d3 <= 9 still open."
+      ],
+      "novelty_status": "Not found in the searches of 2026-11-19 (the literature pass and the two reviews): the modules U/U(x^e, y^e), the dependence of Question 6.1 on the characteristic, a statement of the least d3 of a counterexample. The two rays with d3 = 10 were identified in the programme's dossier of 2026-09-02 from published obstructions. A negative search is not a proof of novelty.",
+      "manuscript_route": "the manuscript of focus BSR-F2",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001",
+        "EXP-002",
+        "EXP-003"
+      ]
+    },
+    {
+      "id": "BSR-F2",
+      "title": "First manuscript: pure resolutions over U(H), the characteristic, and the census",
+      "status": "active",
+      "priority": 1,
+      "target": "One manuscript with: the family U/U(x^e, y^e) and its sharp characteristic condition with full proofs; the characteristic 2 statement on (0,2,6,8) with its proof; the table over U(H) of the parity-passing rays excluded over k[x,y,z] for d3 <= 12; the census over k[x,y,z] for d3 <= 12; the least d3 of a counterexample in characteristic 0; the methods (exact linear algebra over U(H), the census, the search and its rechecks), the limits and the open rays.",
+      "value": "States a characteristic-dependent answer to Question 6.1 on a point that passes the known numerical test, an infinite family of pure modules over U(H) outside the Kostant family, and counterexamples with d3 = 10 against the published d3 = 21, with reproducible exact evidence.",
+      "success_gate": "A manuscript at the content bar, every statement traced to a proof or an artifact, read by a reviewer other than the writer with no blocker left, and published on Zenodo with its record metadata.",
+      "stop_conditions": [
+        "The review of the least-counterexample statement finds a failing case: the statement is narrowed to what holds before any text claims it.",
+        "A source is found that already contains the family, the characteristic dependence or the least counterexample: the manuscript cites it and keeps only what remains.",
+        "Two review rounds leave a blocker open: stop and bring the blocker to the next strategic review."
+      ],
+      "novelty_status": "As in BSR-F1; the manuscript states the searches made and claims no priority.",
+      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (not yet written)",
+      "first_bounded_action": "The review of the least-counterexample statement (backlog BSB-015, third item), then the writing brief (BSB-013).",
+      "evidence": [
+        "EXP-001",
+        "EXP-002",
+        "EXP-003"
+      ]
+    },
+    {
+      "id": "BSR-F3",
+      "title": "The open rays and the open characteristic questions",
+      "status": "proposed",
+      "priority": 2,
+      "target": "The 15 rays with d3 >= 10 whose primitive point is open over k[x,y,z]; characteristic 2 on (0,3,9,12) and (0,2,10,12) over U(H); the substitution of x^e, y^e in the Kostant presentations; the rational rechecks not run.",
+      "value": "Completes the table for d3 <= 12 and tests whether the characteristic dependence found on (0,2,6,8) is a family.",
+      "success_gate": "A proof or an explicit module for each question, or a recorded negative result with its method.",
+      "stop_conditions": [
+        "Three consecutive experiments decide no ray and no characteristic question."
+      ],
+      "novelty_status": "Open questions of this programme; not searched as such.",
+      "manuscript_route": "a later version of the manuscript of BSR-F2, or research records",
+      "first_bounded_action": "Backlog BSB-014 (pairs of cubics in characteristic 2)."
+    }
+  ],
+  "manuscripts": [],
+  "no_manuscript_reason": "No manuscript yet: the first one is the current focus BSR-F2 and is written after the review of the least-counterexample statement; until it exists every experiment is a research record.",
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 3,
+      "classification": "research-record",
+      "manuscripts": []
+    }
+  ]
+}
