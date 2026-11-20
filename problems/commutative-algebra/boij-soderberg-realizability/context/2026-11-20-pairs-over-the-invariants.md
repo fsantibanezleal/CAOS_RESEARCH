@@ -1,11 +1,14 @@
 # The pairs (x^e + b y^e, G(xy, z)) for even e: a decomposition over k[xy, z] and the conditions for the pure Hilbert function
 
-Date: 2026-11-20. Status: derivation [D] by the coordinating session. Reviewed on 2026-11-20 by a reader other than
-the writer (record `bs-pairs-over-invariants-review-2026-11-20` in the coordination repository): the two lemmas, the
+Date: 2026-11-20. Status: derivation [D] by the coordinating session. Later note
+`2026-11-20-one-congruence-and-the-betti-table.md` (reviewed): under (C) the conditions of part (c) of the Theorem all
+follow from those at r = 0 (one congruence), which replaces consequence 6 below, and the pure Hilbert function gives
+the pure Betti table, which proves the first half of consequence 5. Reviewed on 2026-11-20 by a reader other than the
+writer (record `bs-pairs-over-invariants-review-2026-11-20` in the coordination repository): the two lemmas, the
 proposition and the theorem hold, with nine minor repairs; two of the consequences of the first text were wrong as
-written (one overstated what the count of conditions gives, one was contradicted by the record of EXP-010) and a
-third mixed forms inside and outside the hypothesis of the theorem. This text applies every repair; the first text
-is in commit d4d5d811. Machine checks: by the coordinating session, the Hilbert function predicted by the proposition
+written (one overstated what the count of conditions gives, one was contradicted by the record of EXP-010) and a third
+mixed forms inside and outside the hypothesis of the theorem. This text applies every repair; the first text is in
+commit d4d5d811. Machine checks: by the coordinating session, the Hilbert function predicted by the proposition
 against the one computed in U on 627 forms at (e, p) = (4, 5), (4, 7), (4, 13), (6, 5), (6, 7), with no difference; by
 the review, with its own code, on every form at (4, 3), (4, 11), (4, 17), (8, 3), on 150 forms at (6, 11) and on 376
 forms in characteristic 0 for which the hypothesis of the theorem fails, with no difference (scripts and logs of the
@@ -66,11 +69,10 @@ Consequently the Hilbert function of M is
 and it does not depend on b. (For b = 0 the statement fails: the module is then not of finite dimension.)
 
 Proof. By Lemma 2 the left ideal I = Uf + Ug is the sum of the D e_n f and the D e_n g. By Lemma 1, e_n g = G_n e_n.
-For n >= 0, e_n f = x^(n+e) + b x^n y^e = e_(n+e) + b a(n) e_(n-e): x^n y^e = x^(n-e) A_e(h) = A_e(h + (n - e) z) x^(n-e)
-for n >= e and x^n y^e = A_n(h) y^(e-n) for n < e. For n < 0, with n = -m', e_n f = y^m' x^e + b y^(m'+e)
-= b(n) e_(n+e) + b e_(n-e): y^m' x^e = B_m'(h) x^(e-m') for m' <= e and
-y^m' x^e = y^(m'-e) B_e(h) = B_e(h - (m' - e) z) y^(m'-e) for m' > e. So M is the D-module on generators v_n (the
-classes of the e_n), n in Z, with the relations
+For n >= 0, e_n f = x^(n+e) + b x^n y^e = e_(n+e) + b a(n) e_(n-e): x^n y^e = x^(n-e) A_e(h) = A_e(h + (n - e) z)
+x^(n-e) for n >= e and x^n y^e = A_n(h) y^(e-n) for n < e. For n < 0, with n = -m', e_n f = y^m' x^e + b y^(m'+e) =
+b(n) e_(n+e) + b e_(n-e): y^m' x^e = B_m'(h) x^(e-m') for m' <= e and y^m' x^e = y^(m'-e) B_e(h) = B_e(h - (m' - e) z)
+y^(m'-e) for m' > e. So M is the D-module on generators v_n (the classes of the e_n), n in Z, with the relations
 
     v_(n+e) = - b a(n) v_(n-e)   (n >= 0),        v_(n-e) = - b^(-1) b(n) v_(n+e)   (n < 0),        G_n v_n = 0.
 
@@ -150,20 +152,23 @@ degree j for d_r <= j <= m + d_r - 2, so in degree m + e it has dimension m - |r
    G = (h + 4z)(h + z)(h - c z) at e = 6 (review, a computation at the generic point). In every case computed their
    Betti table is not pure.
 
-5. The Hilbert function and the Betti table. In every case computed (the review's forms at e = 4 for p = 7, 11, 13
-   and over the rationals; the members stored by EXP-010 and EXP-014), a form with (C) and the pure Hilbert function
-   has the pure Betti table, and a form without (C) and with the pure Hilbert function does not. This is an
-   observation, not a statement proved here. In particular the pure Hilbert function alone does not give a pure
-   pair in these strata (EXP-010 at (6, 11): most members of S(6; 0, 3) with the pure Hilbert function have another
-   table).
+5. The Hilbert function and the Betti table. In every case computed (the review's forms at e = 4 for p = 7, 11, 13 and
+   over the rationals; the members stored by EXP-010 and EXP-014), a form with (C) and the pure Hilbert function has
+   the pure Betti table, and a form without (C) and with the pure Hilbert function does not. This was an observation
+   when written; under (C) it is now Theorem 2 of the later note (the half about the forms without (C) stays an
+   observation). In particular the pure Hilbert function alone does not give a pure pair in these strata (EXP-010 at
+   (6, 11): most members of S(6; 0, 3) with the pure Hilbert function have another table).
 
-6. e >= 6: (m - 1)^2 polynomial conditions on the m parameters of G, more conditions than parameters. This is a
-   count, not a proof that forms with (C) and the pure Hilbert function are finite in number or absent: their
-   independence is not shown. What is known is by computation: at (6, 5) and at (6, 7) there are exactly two such
-   forms, irreducible cubics exchanged by the swap of x and y, and EXP-014 finds pure pairs of this shape at e = 8 over
-   GF(5), GF(7), GF(11) and GF(13) (rebuilt by the coordinating session; whether those forms satisfy (C) was not
-   examined). A lift of the forms found at three primes to the integers is not pure at larger primes
-   (checked at e = 8 for p = 17 to 29), so no single form with integer coefficients explains them.
+6. (Superseded by Theorem 1 and remark 2 of the later note: the conditions at r = 0 imply the others, and the forms
+   with (C) and the pure Hilbert function lie on a curve; the forms of EXP-014 at e = 8 are exactly the forms with (C)
+   and the congruence. The text as first written follows.) e >= 6: (m - 1)^2 polynomial conditions on the m parameters
+   of G, more conditions than parameters. This is a count, not a proof that forms with (C) and the pure Hilbert
+   function are finite in number or absent: their independence is not shown. What is known is by computation: at (6,
+   5) and at (6, 7) there are exactly two such forms, irreducible cubics exchanged by the swap of x and y, and EXP-014
+   finds pure pairs of this shape at e = 8 over GF(5), GF(7), GF(11) and GF(13) (rebuilt by the coordinating session;
+   whether those forms satisfy (C) was not examined). A lift of the forms found at three primes to the integers is not
+   pure at larger primes (checked at e = 8 for p = 17 to 29), so no single form with integer coefficients explains
+   them.
 
 7. The same method applies to every pair in which f = x^e + b y^e and g is a weight vector d(h, z) x^t or
    d(h, z) y^t (the strata S(e; 0, j) of the weight-class note): every relation coming from g involves one generator,

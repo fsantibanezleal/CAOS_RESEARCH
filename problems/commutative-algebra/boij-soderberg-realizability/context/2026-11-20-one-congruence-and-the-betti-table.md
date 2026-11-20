@@ -1,11 +1,16 @@
 # The pairs (x^e + b y^e, G(xy, z)) for even e: one congruence decides the pure Hilbert function, and it gives the pure Betti table
 
-Date: 2026-11-20. Status: derivation [D] by the coordinating session; NOT yet reviewed by a reader other than the
-writer. Machine checks by the coordinating session (scripts and logs under the data root,
-`caos-research/boij-soderberg-realizability/EXP-014/coordinator-run/`): Theorem 1 on every monic form over the prime
-field in eleven cases (55,595 forms, 23,490 of them with the hypothesis); Theorem 2 on the 42 forms with the
-hypothesis and the congruence in eight cases; Theorem 3 by power series in six cases over the rationals and five
-over prime fields. Details in the last section.
+Date: 2026-11-20. Status: derivation [D] by the coordinating session. Reviewed on 2026-11-20 by a reader other than
+the writer (record `bs-one-congruence-review-2026-11-20` in the coordination repository): Theorems 1, 2 and 3 hold; no
+blocker and no major finding; ten minor repairs, all applied in this text (the first text is in commit 49f99f13). The
+review found that the proof of Theorem 3 gives more than was stated (every prime p > 2e as well as p = 2e - 1), tried
+to refute Theorem 2 and found no counterexample (87 forms with the hypothesis and the pure Hilbert function, over
+prime fields, GF(9), GF(25), GF(49), GF(32003) and the rationals, all with the pure table), and built pure pairs over
+GF(7) and GF(49) from the construction of Theorem 3. Machine checks by the coordinating session (scripts and logs
+under the data root, `caos-research/boij-soderberg-realizability/EXP-014/coordinator-run/`): Theorem 1 on every monic
+form over the prime field in eleven cases (55,595 forms, 23,490 of them with the hypothesis); Theorem 2 on the 42
+forms with the hypothesis and the congruence in eight cases; Theorem 3 by power series in six cases over the rationals
+and five over prime fields. Details in the last section.
 
 This note continues `2026-11-20-pairs-over-the-invariants.md` (below: the first note) and uses its notation and its
 results: h = xy, D = k[h, z], A_n(h) = h (h + z) ... (h + (n - 1) z), B_n(h) = (h - z) ... (h - n z), Lemma 1
@@ -34,8 +39,9 @@ and for -e <= r <= -1,
 
     F_r = G_(r+2e) A_(e+r)(h),      H_r = G_(r-2e) B_e(h + r z);
 
-hypothesis (C) says that G_r and F_r have no common factor for -e <= r <= e - 1, where for r = 0 the form F_0 is
-P_plus or P_minus, either.
+hypothesis (C) says that G_r and F_r have no common factor for every r with 1 <= |r| <= e - 1 and for r = -e, and that
+G is coprime to P_plus or to P_minus (to at least one of the two); F_0 denotes one that is coprime to G and H_0 the
+other.
 
 Four identities are used throughout; each is read off the definitions of A_n and B_n:
 
@@ -71,8 +77,9 @@ Step 2. (a) implies (b). By the Theorem of the first note, (a) gives H_0 in (G, 
 {P_plus, P_minus} and F_0 is coprime to G. Both have degree m + e, so H_0 = a G + c F_0 with c a scalar, and c is
 not zero by Step 1. Whichever of the two is F_0, this is (b) with lambda = c or 1/c.
 
-Step 3. (b) implies (a). By the Theorem of the first note it is enough that H_r lies in (G_r, F_r) for every r with
-1 <= |r| <= e - 1 and for r = 0. For r = 0 this is (b). Let 1 <= r <= e - 1 and apply sigma^r to (b):
+Step 3. (b) implies (a). By the Theorem of the first note it is enough that H_r lies in (G_r, F_r) for |r| <= m - 2;
+the argument gives it for r = 0 and for every r with 1 <= |r| <= e - 1. For r = 0 this is (b). Let 1 <= r <= e - 1 and
+apply sigma^r to (b):
 
     G_(r-2e) B_e(h + r z) = lambda G_(r+2e) A_e(h + r z) = lambda H_r   modulo G_r.
 
@@ -92,16 +99,20 @@ Remarks.
 1. The first note counts (m - 1)^2 conditions for (a), m - |r| - 1 for each r with |r| <= m - 2. Theorem 1 says that
    the m - 1 conditions at r = 0 imply all the others: the conditions at r are the shifts of the condition at 0,
    multiplied by A_r or B_s. So consequence 6 of the first note (for e >= 6 "more conditions than parameters") is
-   superseded: under (C) the forms G with the pure Hilbert function are the solutions of m - 1 equations in the m
-   coefficients of a monic G.
+   superseded: under (C) the forms G with the pure Hilbert function are those for which the two remainders of P_minus
+   and P_plus modulo G, two vectors of k^m, are proportional. That is the vanishing of the 2 x 2 minors of a 2 x m
+   matrix, and locally m - 1 equations in the m coefficients of a monic G, since the remainder of P_plus is not zero
+   under (C) (Step 1).
 
-2. Dimension. Take G monic in h (under (C), z does not divide G). The pairs (G, lambda) with
-   P_minus = lambda P_plus modulo G are the zeros of m polynomials (the coefficients of the remainder of
-   P_minus - lambda P_plus modulo G) in the m + 1 unknowns (coefficients of G, lambda). By Krull's height theorem
-   every irreducible component of this zero set over an algebraically closed field has dimension at least 1, and (C)
-   with lambda not zero is an open condition. So over an algebraically closed field a form with (C) and the pure
-   Hilbert function is never isolated: it lies on a curve of such forms. For e = 4 this curve is the quintic of the
-   first note.
+2. Dimension. Take G monic in h (under (C), z does not divide G). The pairs (G, lambda) with P_minus = lambda P_plus
+   modulo G are the zeros of m polynomials (the coefficients of the remainder of P_minus - lambda P_plus modulo G) in
+   the m + 1 unknowns (coefficients of G, lambda). By Krull's height theorem every irreducible component of this zero
+   set over an algebraically closed field has dimension at least 1, and (C) with lambda not zero is an open condition;
+   on the component through a pair (G, lambda) with (C) the open set is not empty, since it contains that pair.
+   Forgetting lambda is injective on the open set, because lambda is the ratio of the two nonzero remainders, so the
+   image among the forms G still has dimension at least 1. So over an algebraically closed field a form with (C) and
+   the pure Hilbert function is never isolated: it lies on a curve of such forms. For e = 4 this curve is the quintic
+   of the first note.
 
 3. In terms of the roots. If G(h, 1) has m distinct roots rho_1, ..., rho_m in an extension of k, (b) says that the
    function
@@ -112,12 +123,15 @@ Remarks.
 
        prod_j (rho_i - rho_j - 2e)  prod_(k=1..e) (rho_i - k)  =  lambda  prod_j (rho_i - rho_j + 2e)  prod_(k=0..e-1) (rho_i + k)      (i = 1, ..., m).
 
-   Equivalently, there is a polynomial Q of degree at most e with
-   G(h - 2e) B_e(h) - lambda G(h + 2e) A_e(h) = Q(h) G(h). Equations of this shape (a second-order difference
-   equation with polynomial coefficients for a polynomial G, and the system for its roots) are those of the
-   algebraic Bethe ansatz for the rational six-vertex model, where they are called Baxter's T-Q equation and the
-   Bethe equations with a twist lambda [U: the identification is by the shape of the equations; the literature was
-   not read for this note, and nothing here depends on it].
+   Equivalently, there is a polynomial Q of degree at most e with G(h - 2e) B_e(h) - lambda G(h + 2e) A_e(h) = Q(h)
+   G(h). A relation of this shape (a second-order difference equation with polynomial coefficients for a polynomial G,
+   with the system for its roots) is a T-Q relation in the sense of the algebraic Bethe ansatz. The review compared it
+   with the equations of the rational (XXX) chain of spin s in Faddeev, How algebraic Bethe ansatz works for
+   integrable model, arXiv:hep-th/9605187, equations (225) to (228): the shape is that of a chain with e sites, shift
+   2e, inhomogeneities spaced by 1, spin 1/4 at every site (the zeros k of B_e pair with the zeros k - e of A_e, at
+   half the shift) and a twist; it is not the spin 1/2 (six-vertex) case, where the zeros would pair at the full shift
+   [V for the homogeneous chain without twist, read by the review; U for the twisted inhomogeneous form, not read in a
+   source]. Nothing here depends on it.
 
 4. The exchange of x and y (with z -> -z) sends G(h, 1) to (-1)^m G(1 - h, 1), so rho -> 1 - rho, and lambda to
    1/lambda.
@@ -150,13 +164,13 @@ and h divides a G_r. Now h does not divide G_r: that would mean G(r, 1) = 0; for
 1 <= k <= e - 1), and for r = 1 it contradicts Theorem 1 (h - z does not divide G). So h divides a, and
 d = (a/h) G_r + c F_r lies in J_r.
 
-Step 3: x is injective on the summand r for -e <= r <= -1. Let sigma(d) h lie in J_(r+1). Applying tau,
-d (h - z) lies in tau(J_(r+1)) = (G_r, tau(F_(r+1))). For r <= -2, tau(F_(r+1)) = G_(r+2e) A_(e+r+1)(h - z) = (h - z) F_r
-by (I4). For r = -1, J_0 = (G, P_plus) and tau(P_plus) = G_(2e-1) A_e(h - z) = (h - z) F_(-1) by (I4). So
-d (h - z) = a G_r + c (h - z) F_r and h - z divides a G_r. h - z does not divide G_r: that would mean G(1 + r, 1) = 0
-with 1 + r in {-(e - 1), ..., 0}; for 1 + r <= -1 this contradicts (C) for the index -1 (G_(-1) is coprime to F_(-1),
-which is divisible by A_(e-1)(h), so G(-1 - k, 1) is not zero for 0 <= k <= e - 2), and for r = -1 it contradicts
-Theorem 1 (h does not divide G). So d lies in J_r.
+Step 3: x is injective on the summand r for -e <= r <= -1. Let sigma(d) h lie in J_(r+1). Applying tau, d (h - z) lies
+in tau(J_(r+1)) = (G_r, tau(F_(r+1))). For r <= -2, tau(F_(r+1)) = G_(r+2e) A_(e+r+1)(h - z) = (h - z) F_r by (I4).
+For r = -1, J_0 = (G, P_plus) and tau(P_plus) = G_(2e-1) A_e(h - z) = (h - z) F_(-1) by (I4). So d (h - z) = a G_r + c
+(h - z) F_r and h - z divides a G_r. h - z does not divide G_r: that would mean G(1 + r, 1) = 0 with 1 + r in {-(e -
+1), ..., 0}; for 1 + r <= -1 this contradicts (C) for the index -1 (G_(-1) is coprime to F_(-1), which is divisible by
+A_(e-1)(h), so G(-1 - k, 1) is not zero for 0 <= k <= e - 2), and for r = -1 it contradicts Theorem 1 (h does not
+divide G). So d lies in J_r.
 
 Step 4: the socle lies in the summand 0. Let w be a homogeneous element of M with x w = y w = z w = 0, and write
 w as the sum of the d_r v_r. Since x and y permute the summands, x (d_r v_r) = 0 and y (d_r v_r) = 0 for every r. By
@@ -176,15 +190,15 @@ w has degree at least 4e - 4 in M. The pure Hilbert function is zero above 4e - 
 socle of M is M_(4e-4), of dimension 1.
 
 Step 6: the Betti numbers. Tor^U_i(k, M) is the homology of the Chevalley-Eilenberg complex of the Heisenberg Lie
-algebra <x, y, z> with coefficients in M (U is its enveloping algebra; Cartan and Eilenberg, Homological Algebra,
-Chapter XIII, the standard complex; Weibel, An Introduction to Homological Algebra, Section 7.7 [U: the section
-numbers are quoted from memory]), with x, y in degree 1 and z in degree 2. Its last differential sends
-x^y^z (x) w to y^z (x) x w - x^z (x) y w + x^y (x) z w (the terms with brackets vanish: [x, y] = z gives z^z = 0, and
-z is central). So Tor_3(k, M) in degree n is the socle of M in degree n - 4: b_3 = 1, in degree 4e, by Step 5.
-b_0 = 1 in degree 0. Tor_1(k, M) = I/(U_+ I) for I = Uf + Ug, generated by two linearly independent forms of degree
-e: b_1 = 2 in degree e. U has global dimension 3 and Hilbert series 1/((1 - t)^2 (1 - t^2)), so the alternating sum
-of the series of the b_i is the Hilbert series of M times (1 - t)^2 (1 - t^2), which for the pure Hilbert function
-is 1 - 2 t^e + 2 t^(3e) - t^(4e). Therefore the series of b_2 is 2 t^(3e). QED.
+algebra <x, y, z> with coefficients in M (U is its enveloping algebra; Weibel, An Introduction to Homological Algebra,
+Section 7.7, The Chevalley-Eilenberg complex [V: the section and its title, checked by the review]), with x, y in
+degree 1 and z in degree 2. Its last differential sends x^y^z (x) w to y^z (x) x w - x^z (x) y w + x^y (x) z w (the
+terms with brackets vanish: [x, y] = z gives z^z = 0, and z is central). So Tor_3(k, M) in degree n is the socle of M
+in degree n - 4: b_3 = 1, in degree 4e, by Step 5. b_0 = 1 in degree 0. Tor_1(k, M) = I/(U_+ I) for I = Uf + Ug,
+generated by two linearly independent forms of degree e: b_1 = 2 in degree e. U has global dimension 3 and Hilbert
+series 1/((1 - t)^2 (1 - t^2)), so the alternating sum of the series of the b_i is the Hilbert series of M times (1 -
+t)^2 (1 - t^2), which for the pure Hilbert function is 1 - 2 t^e + 2 t^(3e) - t^(4e). Therefore the series of b_2 is 2
+t^(3e). QED.
 
 Remarks.
 
@@ -202,10 +216,11 @@ Remarks.
 
 ## Theorem 3: existence
 
-Theorem 3. (i) Let e >= 4 be even and p = 2e - 1 a prime. There is a field K of characteristic p (the field
-GF(p)((lambda)) of Laurent series, and also a finite field) and a form G over K with (C) and the congruence (b). So
-by Theorem 2 the point (1, 2, 2, 1) of (0, e, 3e, 4e) is realized over U over a finite field of characteristic
-p = 2e - 1, and over every field containing it.
+Theorem 3. (i) Let e >= 4 be even and p a prime with p >= 2e - 1 (that is, p = 2e - 1 or p > 2e). There is a field K
+of characteristic p (the field GF(p)((lambda)) of Laurent series, and also a finite field) and a form G over K with
+(C) and the congruence (b). So by Theorem 2 the point (1, 2, 2, 1) of (0, e, 3e, 4e) is realized over U, by a pair of
+the shape (x^e + b y^e, G(xy, z)), over a finite field of characteristic p, and over every field containing it. (For p
+> 2e the power pair is already pure; the new case is p = 2e - 1.)
 
 (ii) Let k have characteristic 0, e >= 4 even, and S any subset of {1, ..., e} with m elements. There is a monic
 form G over k[[lambda]], with G = prod over k in S of (h - k z) at lambda = 0, which satisfies (C) and (b) over
@@ -229,45 +244,50 @@ term is
 
     rho_i = k_i + c_i lambda + ...,      c_i = G_S(k_i + 2e) A_e(k_i) / ( G_S(k_i - 2e) B_e'(k_i) ),   not zero.
 
-Put G = prod (h - rho_i). The E_i say that G(h - 2e) B_e(h) - lambda G(h + 2e) A_e(h) vanishes at the m distinct roots
-of G, so it is divisible by G: this is (b), with the nonzero scalar lambda of the field L = F((lambda)). And (C) holds
-over L: by remark 7 it fails only if a root lies in a finite set of elements of the prime field, which is impossible
-because c_i is not zero, or if rho_i - rho_j = 2e or -2e for some i, j, which is impossible because at lambda = 0 it
-would give G_S(k_i - 2e) = 0 or G_S(k_i + 2e) = 0 (and 2e is not zero in F by (H1) with i = j). (z does not divide G,
-which is monic in h.)
+Put G = prod (h - rho_i). The rho_i are distinct: by (H1) the k_i are simple roots of B_e in F, hence distinct in F,
+and rho_i = k_i modulo lambda. The E_i say that G(h - 2e) B_e(h) - lambda G(h + 2e) A_e(h) vanishes at the m distinct
+roots of G, so it is divisible by G: this is (b), with the nonzero scalar lambda of the field L = F((lambda)). And (C)
+holds over L: by remark 7 it fails only if a root lies in a finite set of elements of the prime field, which is
+impossible because c_i is not zero, or if rho_i - rho_j = 2e or -2e for some i, j, which is impossible because at
+lambda = 0 it would give G_S(k_i - 2e) = 0 or G_S(k_i + 2e) = 0 (and 2e is not zero in F by (H1) with i = j). (z does
+not divide G, which is monic in h.)
 
 (ii) In characteristic 0, (H1) holds for every S: |k_i - k_j| < e < 2e, A_e(k_i) > 0, and the roots of B_e are simple.
 
-(i) Let p = 2e - 1 and S = {1, 3, ..., e - 1}, the odd numbers below e. Modulo p, 2e = 1. G_S(k_i - 2e) is the
-product of the k_i - 1 - k_j and G_S(k_i + 2e) that of the k_i + 1 - k_j; these integers are odd, so not zero, and of
-absolute value at most e - 1 < p. A_e(k_i) is the product of the integers k_i, ..., k_i + e - 1, all between 1 and
-2e - 2 < p. B_e'(k_i) is the product of the k_i - k for k in {1, ..., e} other than k_i, of absolute value below
-e < p. So (H1) holds, and the pair is pure over GF(p)((lambda)).
+(i) Let p >= 2e - 1 and S = {1, 3, ..., e - 1}, the odd numbers below e. The integers k_i - k_j - 2e and k_i - k_j +
+2e are even, not zero, and of absolute value at most 3e - 2; a nonzero even multiple of the odd prime p has absolute
+value at least 2p >= 4e - 2. So G_S(k_i - 2e) and G_S(k_i + 2e) are not zero modulo p. A_e(k_i) is the product of the
+integers k_i, ..., k_i + e - 1, all between 1 and 2e - 2 < p. B_e'(k_i) is the product of the k_i - k for k in {1,
+..., e} other than k_i, of absolute value below e < p. So (H1) holds, and the pair is pure over GF(p)((lambda)).
 
-A finite field. The solution of Hensel's lemma already exists in the henselization of GF(p)[lambda] at lambda,
-whose elements are algebraic over GF(p)(lambda); by uniqueness the rho_i are algebraic over GF(p)(lambda). So G has
-its coefficients in a finite extension L' of GF(p)(lambda), the function field of a curve over a finite field. (C)
-and (b) hold for G over L'. (C) and lambda not zero say that finitely many elements of L' (the resultants of G_r and
-F_r, and lambda) are not zero, and (b) is a polynomial identity; so at all but finitely many places of L' the
-coefficients of G are regular and their residues give a form over the residue field, a finite field, with (C) and
-(b). QED.
+A finite field. A henselian local ring lifts a simple zero of a square system whose Jacobian determinant is a unit
+(for example the Stacks Project, More on Algebra, the sections on henselian local rings and on henselization [U: the
+tag was not looked up]). So the solution exists in the henselization of GF(p)[lambda] at lambda, which embeds in
+GF(p)[[lambda]] and whose elements are algebraic over GF(p)(lambda); by uniqueness it is the solution above, and the
+rho_i are algebraic over GF(p)(lambda). So G has its coefficients in a finite extension L' of GF(p)(lambda), the
+function field of a curve over a finite field. (C) and (b) hold for G over L'. (C) and lambda not zero say that
+finitely many elements of L' (the resultants of G_r and F_r, and lambda) are not zero, and (b) is a polynomial
+identity; so at all but finitely many places of L' (the places above lambda = 0 are among those left out) the
+coefficients of G are regular and their residues give a form with (C) and (b) over the residue field, a finite field
+of characteristic p which may be larger than GF(p). QED.
 
 Remarks.
 
-8. Why only p = 2e - 1 in (i). For e < p < 2e the argument needs S inside {1, ..., p - e} (the roots of B_e that are
-   not roots of A_e modulo p), with no two elements differing by d = 2e - p. Such a set with m = e/2 elements exists
-   only if each of the d classes modulo d of {1, ..., e - d} has odd size, which forces e - d = d q with q odd, and
-   then p = 2e - d = d (2q + 1) is a prime only for d = 1. A root placed at an integer that is a root of both A_e
-   and B_e modulo p satisfies its equation for every lambda and stays there, against (C). So for the other primes
-   below 2e this construction gives nothing, and existence is a matter of computation (remark 9); it is not a
-   statement that no pure pair of this shape exists there.
+8. Why no prime between e and 2e - 1. For e < p < 2e the argument needs S inside {1, ..., p - e} (the roots of B_e
+   that are not roots of A_e modulo p), with no two elements differing by d = 2e - p. Such a set with m = e/2 elements
+   exists only if each of the d classes modulo d of {1, ..., e - d} has odd size, which forces e - d = d q with q odd,
+   and then p = 2e - d = d (2q + 1) is a prime only for d = 1. A root placed at an integer that is a root of both A_e
+   and B_e modulo p satisfies its equation for every lambda; where the Jacobian is invertible it is therefore the
+   Hensel lift, and it stays there, against (C). (The review checked the count by brute force for every even e up to
+   40.) So for the primes between e and 2e - 1 this construction gives nothing, and existence is a matter of
+   computation (remark 9); it is not a statement that no pure pair of this shape exists there.
 
-9. Over a prime field. Theorem 3 gives a field of characteristic p, not the prime field. Over GF(p) the forms with
-   (C) and (b) can be listed: p^m monic forms, each tested by two reductions modulo G. Their number is small and
-   irregular in the cases listed so far (last section): 1, 1, 2, 16, 13 for e = 4 at p = 5, 7, 11, 13, 17 (the
-   quintic curve); 2, 2, 4, 0, 2 for e = 6 at p = 5, 7, 11, 13, 17; 1, 4, 1, 1 for e = 8 at p = 5, 7, 11, 13. At
-   (6, 13) there is none over GF(13), although 13 > 2e and the curve of Theorem 3 (ii) reduces modulo 13: a curve
-   over a finite field may have no point over the prime field with a given open condition.
+9. Over a prime field. Theorem 3 gives a field of characteristic p, not the prime field. Over GF(p) the forms with (C)
+   and (b) can be listed: p^m monic forms, each tested by two reductions modulo G. Their number is small and irregular
+   in the cases listed so far (last section): 1, 1, 2, 16, 13 for e = 4 at p = 5, 7, 11, 13, 17 (the quintic curve);
+   2, 2, 4, 0, 2 for e = 6 at p = 5, 7, 11, 13, 17; 1, 4, 1, 1 for e = 8 at p = 5, 7, 11, 13. At (6, 13) there is none
+   over GF(13) (the review confirmed it in U on all 969 forms with (C)), although by Theorem 3 (i) a form exists over
+   a finite field of characteristic 13: the curve has no point over the prime field in the open set.
 
 10. The primes p = 2e - 1 with e even are 7, 11, 19, 23, 31, 43, 47, 59, ... (e = 4, 6, 10, 12, 16, 22, 24, 30, ...).
     For e = 4 and 6 pure pairs over GF(7) and GF(11) were known from the linear family (EXP-009).
@@ -296,6 +316,14 @@ Remarks.
   rationals, and for (e, p) = (4, 7), (6, 11), (10, 19), (12, 23), (16, 31) with the odd numbers below e. For e = 4
   over the rationals the coefficients (alpha, gamma) of G = h^2 + alpha h + gamma satisfy the quintic
   P(alpha, gamma) = 0 of the first note to order 8, in the three cases.
+
+- Checks of the review, with its own code: Theorem 1 and the description of (C) by roots on every monic form in ten
+  cases; the length in U, without the decomposition, of all 2,190 forms with (C) at (4, 19), (4, 23), (6, 11), (6,
+  13), (8, 3) (length e^3 exactly for the forms with the congruence); 87 forms with (C) and the pure Hilbert function
+  tabled, over GF(p), GF(p^2) and the rationals, all pure, nine of them also in Singular; at (4, 7) the branch of
+  Theorem 3 lies on a quartic factor of the quintic modulo 7, which carries the form G = h^2 + 6 h + 4 over GF(7) (the
+  pair x^4 + y^4, x^2 y^2 + 5 x y z + 4 z^2) and 33 forms over GF(49), for example x^4 + y^4, x^2 y^2 + 4 a x y z + a
+  z^2 with a^2 = -1, both pure; (H1) for the odd numbers below e at all 499 pairs with e <= 40 and 2e < p < 8e.
 
 ## How could this be wrong?
 
