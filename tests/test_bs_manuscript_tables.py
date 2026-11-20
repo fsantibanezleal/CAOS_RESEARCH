@@ -64,7 +64,7 @@ def test_check_reports_outputs_current():
 
 def _copy_problem(mt, tmp_path):
     root = tmp_path / "problem"
-    for d in (mt.E5, mt.E6, mt.E7, mt.E8, mt.E9, mt.E11, mt.E12, mt.E10, mt.E13, mt.E14, mt.E15, mt.E17, mt.E16, mt.E18):
+    for d in (mt.E5, mt.E6, mt.E7, mt.E8, mt.E9, mt.E11, mt.E12, mt.E10, mt.E13, mt.E14, mt.E15, mt.E17, mt.E16, mt.E18, mt.E19, mt.E20):
         dst = root / "experiments" / d.name / "artifacts"
         dst.mkdir(parents=True)
         (dst / "results.json").write_bytes((d / "artifacts" / "results.json").read_bytes())
@@ -573,15 +573,77 @@ def test_stored_members_record_gives_the_counts_of_the_text(mt, tmp_path):
     assert (N["stmTabled"], N["stmPure"], N["stmOther"], N["stmFailFZero"], N["stmFailFThree"], N["stmPairs"]) == (130, 59, 71, 65, 6, 8)
 
 
-def test_the_open_pairs_up_to_e_14_are_the_five_named_in_the_text(mt):
+def test_the_only_open_pair_up_to_e_16_is_11_3(mt):
     r16 = mt.read_fourth(mt.PROBLEM)
     r10, r13, r14 = mt.read_second(mt.PROBLEM)
     r15, r17 = mt.read_third(mt.PROBLEM)
+    r19, r20 = mt.read_sixth(mt.PROBLEM)
     r9, _a, _b = mt.read_later(mt.PROBLEM)
     r5, r6, r7, r8 = mt.read_artifacts(mt.PROBLEM)
     w, mid, oth, flt, lst, detail = mt.search_sets_from_artifacts(r10, r14, r15, r17, r16)
     lg = set(mt.largest_pairs(mt.read_fifth(mt.PROBLEM)))
-    lin = mt.linear_from_artifacts(r9, r10, r14, r15)
-    cells = mt.grid_cells(14, mt.explicit_from_artifacts(r6, r8, 1), lin, (("W", w), ("M", mid), ("O", oth), ("F", flt), ("G", lst), ("H", lg)))
+    e19, x20, _d = mt.sixth_sets(r19, r20)
+    lin = set(mt.linear_from_artifacts(r9, r10, r14, r15)) | set(mt.short_pair_cells(16))
+    cells = mt.grid_cells(16, mt.explicit_from_artifacts(r6, r8, 1), lin, (("W", w), ("M", mid), ("O", oth), ("F", flt), ("G", lst), ("H", lg), ("E", e19), ("X", x20)))
     open_cells = sorted(k for k, v in cells.items() if v is None)
-    assert open_cells == [(11, 3), (13, 7), (13, 11), (14, 5), (14, 11)]
+    assert open_cells == [(11, 3)]
+    assert cells[(13, 7)] == "E" and cells[(14, 11)] == "X" and cells[(15, 29)] == "L" and cells[(16, 31)] == "L" and cells[(15, 11)] == "X"
+
+# ---- EXP-019 and EXP-020, the short-pair cells, the strata left at (11,3) ----
+
+def test_guard_exp019_refuses_a_passing_member_without_the_pure_hilbert_function(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E19, lambda d: d["totals"]["X|13|11"].__setitem__("pure_hilbert", 4))
+    assert any("EXP-019" in f for f in _run(mt, root))
+
+
+def test_guard_exp019_refuses_an_unfinished_case_declared_finished(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E19, lambda d: d["totals"]["X|14|11"].__setitem__("status", "early stop"))
+    assert any("EXP-019" in f for f in _run(mt, root))
+
+
+def test_guard_exp019_refuses_a_prediction_that_changes(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        for x in d["predictions"]["P1"]["rows"]:
+            if x["pair"] == [13, 11]:
+                x["outcome"] = "does not hold"
+    _edit(root, mt.E19, mutate)
+    assert any("EXP-019 P1" in f for f in _run(mt, root))
+
+
+def test_guard_exp020_refuses_a_member_where_the_two_congruences_differ(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E20, lambda d: d["totals"]["X|14|11"].__setitem__("differ", 1))
+    assert any("EXP-020" in f for f in _run(mt, root))
+
+
+def test_guard_exp020_refuses_a_changed_outcome_of_p4(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        for x in d["predictions"]["P4"]["rows"]:
+            if x["case"] == "X|15|11":
+                x["outcome"] = "holds"
+    _edit(root, mt.E20, mutate)
+    assert any("EXP-020 P4" in f for f in _run(mt, root))
+
+
+def test_the_exponent_of_each_case_is_the_largest_allowed(mt):
+    assert [mt.largest_allowed_t(e, p) for (e, p) in [(13, 11), (13, 7), (14, 5), (15, 19), (16, 31), (11, 3), (11, 13), (11, 17)]] == [5, 3, 2, 9, 14, None, 5, 7]
+
+
+def test_short_pair_cells_name_the_theorem_or_the_corollary(mt):
+    cells = mt.short_pair_cells(16)
+    assert (15, 29) in cells and (16, 29) in cells and (16, 31) in cells and (8, 13) in cells
+    assert "cor:exptexplA" in cells[(6, 11)] and "cor:exptexplB" in cells[(4, 5)]
+    assert (11, 3) not in cells and (14, 11) not in cells
+
+
+def test_the_strata_left_at_11_3(mt):
+    adm, ref = mt.strata_tables(11)
+    def keep(k):
+        return not (3 <= 11 and k[0] % 3 == 0) and not mt.cor5_excluded(11, 3, *k)
+
+    assert (len([k for k, ok in adm.items() if ok and keep(k)]), sorted(k for k, ok in ref.items() if ok and keep(k))) == (3, [(2, 0, 1), (5, 0, 1)])
+    assert mt.WZ_TABLE[(11, 3)] == (3, 2)

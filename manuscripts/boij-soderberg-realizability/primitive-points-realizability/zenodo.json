@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for 2 <= e <= 10, is realized whenever an odd prime p divides e(e-1), and a census for d_3 <= 12",
+    "title": "Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for 2 <= e <= 16 with e != 11, is realized whenever an odd prime p divides e(e-1) or equals 2e-1, and a census for d_3 <= 12",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Erman and Sam asked whether every integral point on a pure ray of the Boij-Söderberg cone is the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U of the Heisenberg Lie algebra; Jiang, Li, Sun, Wang, Xiao and Yu answered negatively in 2026.</p><p>We study the point (1, 2, 2, 1) on (0, e, 3e, 4e), excluded over k[x,y,z] and passing their parity test over U. It is realized by U/U(x^e, y^e) if and only if char k = 0 or char k >= 2e, and in characteristic 2 no module with a generators and at most a + 1 relations of one degree e >= 2 has finite length over U, so the point is realized over neither ring there.</p><p>In odd characteristic p we prove a criterion for pairs of forms with a central commutator, f and g in Z_e + Z_(e-1) x + Z_(e-1) y over the centre Z = k[x^p, y^p, z]: the module is pure if and only if it has finite length, if and only if zD, n(f) and n(g) have no common zero other than the origin. Explicit pure pairs exist for every e = 0 or 1 modulo p, so the point is realized whenever an odd prime p divides e(e-1). Such pairs are the images of (x, y) under graded endomorphisms of U, which exist only for p dividing e(e-1) and never in characteristic 0 for e >= 2, and pulling back along them multiplies every degree of every Betti table by d = 0 or 1 modulo p, d >= 3. A grading by weight classes gives a necessary condition for pure pairs and, in characteristic p <= e, excludes the strata whose modulus is divisible by p; a projection on the weight-zero summand proves that strata, in particular the stratum of the linear family when p <= 2e - 5, hold no pure pair; exact searches in the strata, a decomposition of the pairs (x^e + b y^e, G(xy, z)) over k[xy, z], the linear family and a filter read off computed cases (not proved), lists of forms by one congruence and the stratum with the largest exponent that a weight-zero projection allows give pure pairs over F_p for the other odd primes below 2e when e <= 10 and e = 12.</p><p>For 2 <= e <= 10 the point is realized over U if and only if char k is not 2; the pairs (e, p) (11,3), (13,7), (13,11), (14,5), (14,11) and those with e >= 15 stay open. The pure pairs of forms of degree e are open in a determinantal locus and every component of their locus has dimension at least 4e - 4, exactly 4e - 4 at (x^e, y^e) over the rationals for e = 4, ..., 7. The census over k[x,y,z] of the 220 rays with d_3 <= 12 realizes the primitive point on 193 rays, excludes it on 12 and leaves 15 open; ten such rays are realized over U in characteristic 0, and in characteristic 0 the least counterexample has d_3 = 10.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (branch develop). The paper does not claim a negative answer to Question 6.1 of Erman and Sam, which is due to Jiang, Li, Sun, Wang, Xiao and Yu, and claims no priority for any other result.</p>",
+    "description": "<p>Erman and Sam asked whether every integral point on a pure ray of the Boij-Söderberg cone is the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U of the Heisenberg Lie algebra; Jiang, Li, Sun, Wang, Xiao and Yu answered negatively. We study the point (1,2,2,1) on (0,e,3e,4e), excluded over k[x,y,z] and passing their test over U. It is realized by U/U(x^e,y^e) if and only if char k = 0 or char k >= 2e, and in characteristic 2 no module with at most one more relation than generators has finite length over U.</p><p>In odd characteristic p we prove a criterion for pairs of forms with a central commutator, with explicit pure pairs for e = 0 or 1 modulo p, and pull-backs along endomorphisms of U. For the pairs x^e + alpha y^t, y^e + beta x^t over k[xy,z] we prove that two congruences and one scalar condition give the pure Hilbert function, and the pure pair when one more coprimality holds; explicit pairs in the linear family are pure for p = 2e - 1 (every prime p >= 5) and for p = 2e - 3 (the primes below 2,000,000). Searches in weight-class strata, lists of forms, the filter for every exponent and the members fixed by the exchange of x and y settle the other pairs.</p><p>The point is realized in every characteristic other than 2 for 2 <= e <= 16 except e = 11, where characteristic 3 is open. A census of the 220 rays with d_3 <= 12 over k[x,y,z] realizes the primitive point on 193 and excludes it on 12; in characteristic 0 the least counterexample has d_3 = 10.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (branch develop). The paper does not claim a negative answer to Question 6.1 of Erman and Sam, which is due to Jiang, Li, Sun, Wang, Xiao and Yu, and claims no priority for any other result.</p>",
     "keywords": [
       "Boij-Soderberg theory",
       "pure free resolutions",
@@ -19,14 +19,14 @@
       "Erman-Sam question",
       "primitive points on pure rays",
       "characteristic 2",
-      "Kostant modules",
-      "census of pure rays",
       "central commutator",
       "weight-class strata",
       "pure pairs of forms",
       "positive characteristic",
       "generalized Weyl algebra",
-      "graded endomorphisms"
+      "graded endomorphisms",
+      "pairs over k[xy,z]",
+      "explicit pure pairs"
     ],
     "license": "cc-by-4.0",
     "language": "eng",
@@ -195,6 +195,6 @@
       "The Stacks Project, Chapter 10 (Commutative Algebra), Section 10.153 (Henselian local rings), Lemma 10.153.3, Tag 04GG: https://stacks.math.columbia.edu/tag/04GG (the page lists the equivalent conditions for a local ring to be henselian, among them the lifting of every simple root of the reduction of a polynomial), and Section 10.155, Lemma 10.155.1, Tag 04GN: https://stacks.math.columbia.edu/tag/04GN (the page states that a local ring has a henselization, a henselian local ring with the same residue field that is a filtered colimit of étale algebras).",
       "L. D. Faddeev, How algebraic Bethe ansatz works for integrable model, arXiv:hep-th/9605187, equations (225) to (228) (read for the homogeneous chain without twist)."
     ],
-    "version_notes": "Adds a criterion for the purity of pairs of forms with a central commutator in odd characteristic, with explicit pure pairs for every e = 0 or 1 modulo p, the endomorphisms of the enveloping algebra and the scaling of Betti tables, the weight-class necessary condition with exact searches in its strata, the decomposition of the pairs (x^e + b y^e, G(xy, z)) over k[xy, z], the linear family below 2e, the projection on the weight-zero summand with its exclusions, the rule of the stratum of the linear family, a filter in the stratum of the central pairs, lists of forms by one congruence that settle e = 12, and the stratum with the largest allowed exponent, which settles five more pairs. The point (1,2,2,1) on (0,e,3e,4e) is now realized in every characteristic other than 2 for 2 <= e <= 10 and in every odd characteristic p dividing e(e-1), with the open pairs listed; the machine checks of the new statements are archived."
+    "version_notes": "Adds to v0.02 a criterion for the purity of pairs of forms with a central commutator in odd characteristic, the endomorphisms of the enveloping algebra and the scaling of Betti tables, the weight-class and weight-zero-projection exclusions, the decomposition over k[xy,z] of the pairs x^e + alpha y^t, y^e + beta x^t with the theorems on the pure Hilbert function and on the pure Betti table, and explicit pairs of the linear family for p = 2e - 1 and p = 2e - 3, with the searches that use them (strata, lists of forms, the filter for every exponent, the members fixed by the exchange of x and y). The point (1,2,2,1) on (0,e,3e,4e) is now realized in every characteristic other than 2 for 2 <= e <= 16 except e = 11, where characteristic 3 is open; the machine checks of the new statements are archived."
   }
 }

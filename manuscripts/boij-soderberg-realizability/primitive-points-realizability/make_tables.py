@@ -616,6 +616,8 @@ MANIFEST = [  # (label printed, path relative to the repository root): the artif
     ("EXP-017/stored.json", "experiments/EXP-017-odd-stratum-filter/artifacts/stored-members-filter.json"),
     ("EXP-016/results.json", "experiments/EXP-016-congruence-lists/artifacts/results.json"),
     ("EXP-018/results.json", "experiments/EXP-018-largest-exponent-strata/artifacts/results.json"),
+    ("EXP-019/results.json", "experiments/EXP-019-filter-every-exponent/artifacts/results.json"),
+    ("EXP-020/results.json", "experiments/EXP-020-symmetric-members/artifacts/results.json"),
 ]
 PROBLEM_REL = "problems/commutative-algebra/boij-soderberg-realizability"
 
@@ -2329,7 +2331,7 @@ def grid_cells(emax, explicit, linear, extra=()):
     return cells
 
 
-CELL_COLOR = {"C": "blue!55", "P": "violet!50", "L": "teal!55", "S": "orange!65", "W": "red!45", "M": "yellow!70!orange", "O": "green!45", "F": "cyan!45", "G": "pink!70", "H": "lime!45", None: "white"}
+CELL_COLOR = {"C": "blue!55", "P": "violet!50", "L": "teal!55", "S": "orange!65", "W": "red!45", "M": "yellow!70!orange", "O": "green!45", "F": "cyan!45", "G": "pink!70", "H": "lime!45", "E": "brown!40", "X": "magenta!35", None: "white"}
 
 
 def cell_sources(e, p, lab, detail):
@@ -2350,11 +2352,11 @@ def state_outputs(N, out, explicit, linear, emax=16, extra=(), detail=None):
     cnt = Counter(v for v in cells.values())
     N["gridCells"] = len(cells)
     N["gridOpen"] = cnt[None]
-    for k in ("C", "L", "S", "P", "W", "M", "O", "F", "G", "H"):
+    for k in ("C", "L", "S", "P", "W", "M", "O", "F", "G", "H", "E", "X"):
         N["gridBy" + k] = cnt[k]
-    ps = [3, 5, 7, 11, 13, 17, 19]
+    ps = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
     body = []
-    for e in range(2, 11):
+    for e in range(2, 17):
         row = [str(e)]
         for p in ps:
             if p >= 2 * e:
@@ -2363,13 +2365,14 @@ def state_outputs(N, out, explicit, linear, emax=16, extra=(), detail=None):
                 v = cells[(e, p)]
                 row.append(v if v else "open")
         body.append(row)
-    out["tab_state.tex"] = table("@{}rccccccc@{}", ["$e$"] + ["$p=%d$" % p for p in ps], body)
+    out["tab_state.tex"] = table("@{}rcccccccccc@{}", ["$e$"] + ["$p=%d$" % p for p in ps], body)
     open_cells = sorted(k for k, v in cells.items() if v is None)
     N["gridOpenList"] = ", ".join("$(%d,%d)$" % k for k in open_cells) if open_cells else "none"
     N["gridOpenListSmall"] = ", ".join("$(%d,%d)$" % k for k in open_cells if k[0] <= 8) if any(k[0] <= 8 for k in open_cells) else "none"
-    open14 = [k for k in open_cells if k[0] <= 14]
-    need(open14 == [(11, 3), (13, 7), (13, 11), (14, 5), (14, 11)], f"grid: the open pairs with e <= 14 are not the five named in the text: {open14}")
-    N["gridOpenListFourteen"] = ", ".join("$(%d,%d)$" % k for k in open14)
+    open16 = [k for k in open_cells if k[0] <= 16]
+    need(open16 == [(11, 3)], f"grid: the open pairs with e <= 16 are not exactly (11,3): {open16}")
+    N["gridOpenListSixteen"] = ", ".join("$(%d,%d)$" % k for k in open16)
+    N["gridOpenListFourteen"] = ", ".join("$(%d,%d)$" % k for k in open_cells if k[0] <= 14)
     N["gridOpenListTwelve"] = ", ".join("$(%d,%d)$" % k for k in open_cells if k[0] <= 12)
     N["gridOpenNine"] = ", ".join("$(%d,%d)$" % k for k in open_cells if k[0] == 9)
     mx = 1
@@ -2380,12 +2383,13 @@ def state_outputs(N, out, explicit, linear, emax=16, extra=(), detail=None):
             break
     N["gridSettledMaxE"] = mx
     # the table of the sources for e <= 8
-    srows, srowsb = [], []
-    for e in range(2, 15):
+    srows, srowsb, srowsc = [], [], []
+    for e in range(2, 17):
         for p in [q for q in primes_upto(2 * e - 1) if q % 2 == 1]:
             lab = cells[(e, p)]
-            (srows if e <= 10 else srowsb).append(["$(%d,%d)$" % (e, p), lab if lab else "open", cell_sources(e, p, lab, detail) if lab else "no pure pair known"])
-    need(len(srows) == 36 and len(srowsb) == 31, f"the sources tables have {len(srows)} and {len(srowsb)} rows, not 36 and 31")
+            (srows if e <= 10 else (srowsb if e <= 14 else srowsc)).append(["$(%d,%d)$" % (e, p), lab if lab else "open", cell_sources(e, p, lab, detail) if lab else "no pure pair known"])
+    need(len(srows) == 36 and len(srowsb) == 31 and len(srowsc) == 19, f"the sources tables have {len(srows)}, {len(srowsb)} and {len(srowsc)} rows, not 36, 31 and 19")
+    out["tab_statesrcc.tex"] = table("@{}llp{9.8cm}@{}", ["$(e,p)$", "code", "what settles the pair"], srowsc)
     out["tab_statesrc.tex"] = table("@{}llp{9.8cm}@{}", ["$(e,p)$", "code", "what settles the pair"], srows)
     out["tab_statesrcb.tex"] = table("@{}llp{9.8cm}@{}", ["$(e,p)$", "code", "what settles the pair"], srowsb)
     cols = [p for p in primes_upto(2 * emax - 1) if p % 2 == 1]
@@ -2404,14 +2408,14 @@ def state_outputs(N, out, explicit, linear, emax=16, extra=(), detail=None):
             lines.append("\\node at (%d,%d) {%s};" % (ci, emax - e + 1, v if v else "?"))
     lines.append("\\node[anchor=east] at (-0.7,0) {$e$};")
     leg_x = len(cols) + 0.6
-    entries = [("C", "central commutator, $p\\mid e(e-1)$"), ("P", "pull-back, $e=de'$"), ("L", "stratum of the linear family"), ("S", "search, whole space"),
-               ("W", "search in weight-class strata"), ("M", "middle stratum"), ("O", "other strata at e = 9"), ("F", "filter, odd e"), ("G", "list of forms, even e"), ("H", "largest exponent stratum"), (None, "open")]
+    entries = [("C", "central commutator, $p\\mid e(e-1)$"), ("P", "pull-back, $e=de'$"), ("L", "short pair, linear family"), ("S", "search, whole space"),
+               ("W", "search in weight-class strata"), ("M", "middle stratum"), ("O", "other strata at e = 9"), ("F", "filter, odd e"), ("G", "list of forms, even e"), ("H", "largest exponent stratum"), ("E", "filter, every exponent"), ("X", "members fixed by exchange"), (None, "open")]
     for k, (code, nm) in enumerate(entries):
-        y = emax - 1.6 * k
+        y = emax - 1.15 * k
         lines.append("\\draw[fill=%s] (%.2f,%.2f) rectangle (%.2f,%.2f);" % (CELL_COLOR[code], leg_x, y - 0.4, leg_x + 0.8, y + 0.4))
         lines.append("\\node at (%.2f,%.2f) {%s};" % (leg_x + 0.4, y, code if code else "?"))
         lines.append("\\node[anchor=west] at (%.2f,%.2f) {%s};" % (leg_x + 1.0, y, nm))
-    y = emax - 1.6 * len(entries)
+    y = emax - 1.15 * len(entries)
     lines.append("\\fill[gray!12] (%.2f,%.2f) rectangle (%.2f,%.2f);" % (leg_x, y - 0.4, leg_x + 0.8, y + 0.4))
     lines.append("\\node[anchor=west] at (%.2f,%.2f) {Theorem A, $p\\ge2e$};" % (leg_x + 1.0, y))
     lines.append("\\end{tikzpicture}")
@@ -2827,7 +2831,7 @@ def cor5_excluded(e, p, m, i, j):
     return 2 * (min(hi) - max(lo)) >= p + 1
 
 
-WZ_TABLE = {(5, 3): (2, 1), (5, 5): (2, 2), (6, 3): (3, 3), (7, 3): (3, 2), (7, 5): (6, 3), (7, 7): (4, 4), (9, 3): (3, 3), (9, 5): (8, 5)}
+WZ_TABLE = {(5, 3): (2, 1), (5, 5): (2, 2), (6, 3): (3, 3), (7, 3): (3, 2), (7, 5): (6, 3), (7, 7): (4, 4), (9, 3): (3, 3), (9, 5): (8, 5), (11, 3): (3, 2)}
 
 
 def wz_outputs(r10, r14, r15, N, out):
@@ -3230,6 +3234,204 @@ def exp17_stored(root, N):
     N["stmPairs"] = len(r["pairs"])
 
 
+
+# ---- EXP-019 and EXP-020 ----
+
+E19 = PROBLEM / "experiments" / "EXP-019-filter-every-exponent"
+E20 = PROBLEM / "experiments" / "EXP-020-symmetric-members"
+PW.update({29: "TwentyNine", 31: "ThirtyOne"})
+EWL.update({15: "Fifteen"})
+E19_PAIRS = [(13, 11), (13, 7), (14, 5), (15, 19), (15, 23), (15, 29), (16, 23), (16, 29), (16, 31)]
+E19_NOT = {(14, 11): "not finished", (15, 17): "not finished", (16, 17): "not started", (16, 19): "not started"}
+E20_PAIRS = [(14, 11), (15, 11), (15, 13), (15, 17), (16, 17), (16, 19)]
+
+
+def read_sixth(root):
+    ex = Path(root) / "experiments"
+    return tuple(jload(ex / d.name / "artifacts" / "results.json") for d in (E19, E20))
+
+
+def largest_allowed_t(e, p):
+    """The largest t of the parity of e with t <= e - 2, 2t <= p - 1 and, when p <= e, p not dividing (e + t)/2."""
+    ok = [t for t in range(1, e - 1) if (t - e) % 2 == 0 and 2 * t <= p - 1 and not (p <= e and ((e + t) // 2) % p == 0)]
+    return max(ok) if ok else None
+
+
+def exp19(r19, N, out):
+    """EXP-019: the filter (F0) to (F3) for every exponent t, on random members of the stratum with the largest allowed t."""
+    need(r19["experiment"] == "EXP-019", "EXP-019 results file")
+    g = r19["gates"]
+    st = g["G1"]["stored"]
+    need(st["pure"] == 317 and st["other"] == 128 and st["pure_by_stage"] == [0, 0, 0, 0, 317] and st["other_by_stage"] == [108, 0, 0, 20, 0] and st["not_of_the_form"] == 0 and st["ok"] is True,
+         "EXP-019 gate G1 (a): the stored members and the filter")
+    need(g["G1"]["family"]["passed"] is True and all(x["ok"] for x in g["G1"]["family"]["rows"]), "EXP-019 gate G1 (b): the controls")
+    need(g["G2"]["passed"] is True and g["G2"]["sample_members"] == g["G2"]["agree_and_pure_in_I2"] == 39 and g["G2"]["failing_cases"] == [], "EXP-019 second instrument")
+    tot = r19["totals"]
+    need(len(tot) == 17 and sorted(k for k in tot if k[0] == "K") == ["K|11|17", "K|13|17", "K|9|11", "K|9|13"], "EXP-019: 17 cases")
+    rows, passed, tables, pure_tables = [], 0, 0, 0
+    for key in sorted(tot, key=lambda k: ("KXY".index(tot[k]["family"]), tot[k]["e"], tot[k]["p"])):
+        t_ = tot[key]
+        e, p, t = t_["e"], t_["p"], t_["t"]
+        need(t_["f0"] >= t_["f1"] >= t_["f2"] >= t_["f3"] == t_["pure_hilbert"] and t_["pure"] <= t_["tables"] <= t_["pure_hilbert"], f"EXP-019 {key}: counts")
+        need(2 * t <= p - 1, f"EXP-019 {key}: 2t <= p - 1")
+        if t_["family"] != "K":
+            need(t == largest_allowed_t(e, p), f"EXP-019 {key}: t is the largest allowed exponent")
+        need(t_["family"] == "K" or t_["status"] in ("early stop", "not finished", "not started"), f"EXP-019 {key}: status")
+        passed += t_["f3"]
+        tables += t_["tables"]
+        pure_tables += t_["pure"]
+        status = {"early stop": "5 pure members", "not finished": "not finished", "not started": "not started"}[t_["status"]]
+        rows.append([{"K": "K", "X": "X", "Y": "Y"}[t_["family"]], "$(%d,%d)$" % (e, p), str(t), str(e - t - 2), thousands(t_["examined"]), thousands(t_["f0"]), thousands(t_["f1"]), thousands(t_["f2"]),
+                     thousands(t_["f3"]), thousands(t_["pure_hilbert"]), str(t_["tables"]), str(t_["pure"]), status])
+    need(passed == 5387 and tables == 143 and pure_tables == 143, "EXP-019: 5,387 passing members and 143 tables, all pure")
+    out["tab_everyt.tex"] = table("@{}lllrrrrrrrrrl@{}", ["", "$(e,p)$", "$t$", "cond.", "examined", "(F0)", "(F1)", "(F2)", "(F3)", "pure $h_e$", "tables", "pure", "status"], rows)
+    for key, why in ((("X|14|11"), "not finished"), ("Y|15|17", "not finished"), ("Y|16|17", "not started"), ("Y|16|19", "not started")):
+        need(tot[key]["status"] == why and tot[key]["pure"] == 0 and tot[key]["f3"] == 0, f"EXP-019 {key}: {why}")
+    need(tot["X|14|11"]["examined"] == 380108800 and tot["X|14|11"]["f2"] == 10 and tot["Y|15|17"]["examined"] == 13107200, "EXP-019: the interrupted cases")
+    pr = r19["predictions"]
+    p1 = {tuple(x["pair"]): x["outcome"] for x in pr["P1"]["rows"]}
+    need(p1 == {(13, 11): "holds", (13, 7): "holds", (14, 5): "holds", (14, 11): "not decided"}, f"EXP-019 P1: {p1}")
+    p2 = {tuple(x["pair"]): x["outcome"] for x in pr["P2"]["rows"]}
+    need(sum(1 for v in p2.values() if v == "holds") == 6 and sum(1 for v in p2.values() if v == "not decided") == 3 and len(p2) == 9, f"EXP-019 P2: {p2}")
+    need(sum(1 for x in pr["P3"]["rows"] if x["outcome"] == "holds") == 13 and not any(x["outcome"] == "does not hold" for x in pr["P3"]["rows"]), "EXP-019 P3")
+    need(sum(1 for x in pr["P4"]["rows"] if x["outcome"] == "holds") == 13 and not any(x["outcome"] == "does not hold" for x in pr["P4"]["rows"]), "EXP-019 P4")
+    p5 = [x for x in pr["P5"]["rows"] if x["outcome"] == "holds"]
+    need(len(p5) == 7, "EXP-019 P5: holds in seven cases")
+    cs = r19["cases"]
+    prow = []
+    for (e, p) in E19_PAIRS:
+        fam = "X" if (e, p) in ((13, 11), (13, 7), (14, 5)) else "Y"
+        c = cs["%s|%d|%d" % (fam, e, p)]
+        mem = next(x for x in c["members"] if x["pure"])
+        tf, tg, ln = pair_row(f"EXP-019 pair {e},{p}", e, p, mem, tuple(c["stratum"]), check_length=False)
+        prow.append(["$(%d,%d)$" % (e, p), str(c["t"]), "$S(%d;%d,%d)$" % tuple(c["stratum"]), "$f=%s$\\newline $g=%s$" % (poly_tex(tf, p), poly_tex(tg, p)), str(ln)])
+    need(len(prow) == 9, "EXP-019: nine printed pairs")
+    out["tab_everytpairs.tex"] = table("@{}lllp{6.4cm}r@{}", ["$(e,p)$", "$t$", "stratum", "forms over $\\F_p$", "length"], prow)
+    N["evtPassed"] = thousands(passed)
+    N["evtTables"] = tables
+    N["evtSeconds"] = thousands(round(r19["budget"]["used_seconds"]))
+    N["evtLimit"] = thousands(r19["budget"]["limit_seconds"])
+    N["evtStored"] = st["pure"] + st["other"]
+    N["evtStoredPure"] = st["pure"]
+    N["evtStoredOther"] = st["other"]
+    N["evtFailFZero"] = st["other_by_stage"][0]
+    N["evtFailFThree"] = st["other_by_stage"][3]
+    N["evtSample"] = g["G2"]["sample_members"]
+    N["evtFourteenElevenExamined"] = thousands(tot["X|14|11"]["examined"])
+    N["evtFifteenSeventeenExamined"] = thousands(tot["Y|15|17"]["examined"])
+    N["evtFourteenElevenFTwo"] = tot["X|14|11"]["f2"]
+    N["evtCases"] = len(tot)
+    pt = r19["partial"]
+    N["evtWallFifteenSeventeen"] = thousands(round(pt["Y|15|17"]["wall_seconds"]))
+    N["evtWallFourteenEleven"] = thousands(round(pt["X|14|11"]["wall_seconds"]))
+    N["evtRateFifteenSeventeen"] = thousands(tot["Y|15|17"]["filter_members_per_second_per_worker"])
+    N["evtRateFourteenEleven"] = thousands(tot["X|14|11"]["filter_members_per_second_per_worker"])
+    N["evtRatioLow"] = "%.2f" % min(x["ratio"] for x in p5)
+    N["evtRatioHigh"] = "%.2f" % max(x["ratio"] for x in p5)
+    N["evtMaxTables"] = max(t_["tables"] for t_ in tot.values())
+    N["evtPassingCases"] = sum(1 for t_ in tot.values() if t_["f3"] > 0)
+    N["evtWorkersMax"] = max(x["workers"] for x in r19["runs"] if "workers" in x)
+    N["evtWorkersMin"] = min(x["workers"] for x in r19["runs"] if "workers" in x)
+
+
+def exp20(r20, N, out):
+    """EXP-020: the members x^e + alpha y^t, y^e + beta x^t with beta = c alpha^omega, enumerated completely."""
+    need(r20["experiment"] == "EXP-020", "EXP-020 results file")
+    g = r20["gates"]
+    need(g["G1"]["passed"] is True and g["G2"]["passed"] is True and g["G2"]["sample_members"] == g["G2"]["agree_and_pure_in_I2"] == 27 and g["G2"]["failing_cases"] == [], "EXP-020 gates")
+    tot = r20["totals"]
+    need(len(tot) == 9 and sorted(tot) == sorted(["K|9|13", "K|11|17", "K|13|11"] + ["X|%d|%d" % x for x in E20_PAIRS]), "EXP-020: nine cases")
+    members = f0 = passing = c1 = tables = pure_tables = 0
+    rows = []
+    for key in sorted(tot, key=lambda k: ("KX".index(tot[k]["family"]), tot[k]["e"], tot[k]["p"])):
+        t_ = tot[key]
+        e, p, t, d = t_["e"], t_["p"], t_["t"], t_["stratum"][2]
+        need(t_["status"] == "complete" and t_["examined"] == t_["members"] == 2 * (p ** (d + 1) - 1), f"EXP-020 {key}: complete list of 2 (p^(d+1) - 1) members")
+        need(2 * t <= p - 1, f"EXP-020 {key}: 2t <= p - 1")
+        need(t_["differ"] == 0, f"EXP-020 {key}: no member with (F0) where (F1) and (F2) differ")
+        need(t_["f0"] >= t_["f1"] >= t_["f3"] == t_["pure_hilbert"] and t_["f1"] == t_["f2"] and t_["c1"] <= t_["f3"] and t_["pure"] <= t_["tables"], f"EXP-020 {key}: counts")
+        need(t_["tables"] == t_["pure"] == 5, f"EXP-020 {key}: five tables, all pure")
+        members += t_["members"]
+        f0 += t_["f0"]
+        passing += t_["f3"]
+        c1 += t_["c1"]
+        tables += t_["tables"]
+        pure_tables += t_["pure"]
+        rows.append([t_["family"], "$(%d,%d)$" % (e, p), str(t), thousands(t_["members"]), thousands(t_["f0"]), thousands(t_["f1"]), thousands(t_["f2"]), str(t_["differ"]), thousands(t_["f3"]),
+                     thousands(t_["c1"]), thousands(t_["pure_hilbert"]), str(t_["tables"]), str(t_["pure"])])
+    need(members == 27760520 and f0 == 13011416 and passing == 2522 and c1 == 2436 and tables == 45 and pure_tables == 45, "EXP-020: totals of the nine lists")
+    out["tab_symm.tex"] = table("@{}llrrrrrrrrrrr@{}", ["", "$(e,p)$", "$t$", "members", "(F0)", "(F1)", "(F2)", "differ", "(F3)", "(C1)", "pure $h_e$", "tables", "pure"], rows)
+    pr = r20["predictions"]
+    need(all(x["outcome"] == "holds" for x in pr["P1"]["rows"]) and len(pr["P1"]["rows"]) == 6, "EXP-020 P1")
+    need(all(x["outcome"] == "holds" for x in pr["P2"]["rows"]) and len(pr["P2"]["rows"]) == 9, "EXP-020 P2")
+    need(all(x["outcome"] == "holds" for x in pr["P3"]["rows"]) and len(pr["P3"]["rows"]) == 9, "EXP-020 P3")
+    p4 = {x["case"]: x["outcome"] for x in pr["P4"]["rows"]}
+    need(p4 == {"X|14|11": "holds", "X|15|11": "does not hold", "X|15|13": "holds", "X|15|17": "does not hold", "X|16|17": "holds", "X|16|19": "holds"}, f"EXP-020 P4: {p4}")
+    p3 = {x["case"]: x for x in pr["P3"]["rows"]}
+    need(p3["X|14|11"]["tables_c1"] == 0 and p3["X|14|11"]["tables_no_c1"] == 5 and tot["X|14|11"]["c1"] == 48 and tot["X|14|11"]["f3"] == 84, "EXP-020: (14,11), five tables without (C1), 48 of 84 with (C1)")
+    tc1 = sum(x["tables_c1"] for x in p3.values())
+    tno = sum(x["tables_no_c1"] for x in p3.values())
+    need(tc1 == 31 and tno == 14, "EXP-020: 31 tables with (C1), 14 without")
+    cs = r20["cases"]
+    prow = []
+    for (e, p) in E20_PAIRS:
+        c = cs["X|%d|%d" % (e, p)]
+        mem = next(x for x in c["passing"] if x.get("pure"))
+        tf, tg, ln = pair_row(f"EXP-020 pair {e},{p}", e, p, mem, tuple(c["stratum"]), check_length=False)
+        need(mem["length"] == e ** 3, f"EXP-020 pair {e},{p}: stored length")
+        prow.append(["$(%d,%d)$" % (e, p), str(c["t"]), "$S(%d;%d,%d)$" % tuple(c["stratum"]), "$f=%s$\\newline $g=%s$" % (poly_tex(tf, p), poly_tex(tg, p)), str(ln)])
+    out["tab_symmpairs.tex"] = table("@{}lllp{6.4cm}r@{}", ["$(e,p)$", "$t$", "stratum", "forms over $\\F_p$", "length"], prow)
+    N["symMembers"] = thousands(members)
+    N["symFZero"] = thousands(f0)
+    N["symPassing"] = thousands(passing)
+    N["symCOne"] = thousands(c1)
+    N["symTables"] = tables
+    N["symTablesCOne"] = tc1
+    N["symTablesNoCOne"] = tno
+    N["symSeconds"] = thousands(round(r20["budget"]["used_seconds"]))
+    N["symWall"] = thousands(round(r20["wall_seconds_total"]))
+    N["symLimit"] = thousands(r20["budget"]["limit_seconds"])
+    N["symSample"] = g["G2"]["sample_members"]
+    N["symFourteenElevenPassing"] = tot["X|14|11"]["f3"]
+    N["symFourteenElevenCOne"] = tot["X|14|11"]["c1"]
+    N["symRatioFifteenEleven"] = "%.2f" % tot["X|15|11"]["ratio"]
+    N["symRatioFifteenSeventeen"] = "%.2f" % tot["X|15|17"]["ratio"]
+    N["symRatioLow"] = "%.2f" % min(tot[k]["ratio"] for k in tot if k.startswith("X") and p4["X|" + k.split("|", 1)[1]] == "holds")
+    N["symRatioHigh"] = "%.2f" % max(tot[k]["ratio"] for k in tot if k.startswith("X") and p4["X|" + k.split("|", 1)[1]] == "holds")
+
+
+def sixth_sets(r19, r20):
+    """The pairs settled by a pure member of EXP-019 (code E) and of EXP-020 (code X), with the stratum of the first."""
+    e19, x20, detail = set(), set(), {}
+    for k, t_ in r19["totals"].items():
+        if t_["family"] in "XY" and t_["pure"] > 0:
+            e19.add((t_["e"], t_["p"]))
+            detail[(t_["e"], t_["p"])] = "filter for every exponent, $S(%d;%d,%d)$ (EXP-019)" % tuple(t_["stratum"])
+    for k, t_ in r20["totals"].items():
+        if t_["family"] == "X" and t_["pure"] > 0:
+            x20.add((t_["e"], t_["p"]))
+            detail.setdefault((t_["e"], t_["p"]), "member fixed by the exchange, $S(%d;%d,%d)$ (EXP-020)" % tuple(t_["stratum"]))
+    return e19, x20, detail
+
+
+def short_pair_cells(emax):
+    """The pairs (e, p), 4 <= e <= emax, with p = 2e - 1 or p = 2e - 3 prime (p >= 5): settled by the short pair of Section exptexplicit, with the text of their source."""
+    cells = {}
+    for e in range(4, emax + 1):
+        for p, th in ((2 * e - 1, "A"), (2 * e - 3, "B")):
+            if p >= 5 and all(p % q for q in range(2, int(p ** 0.5) + 1)):
+                if (e, p) == (6, 11):
+                    txt = "short pair with $n=3$ (Corollary~\\ref{cor:exptexplA})"
+                elif (e, p) == (4, 5):
+                    txt = "short pair with $n=3$ (Corollary~\\ref{cor:exptexplB})"
+                elif th == "A":
+                    txt = "short pair of Theorem~\\ref{thm:exptexplA}"
+                else:
+                    txt = "short pair of Theorem~\\ref{thm:exptexplB}"
+                cells[(e, p)] = txt
+    return cells
+
+
 def build_new(root, N, data_root=None):
     """Read the artifacts of EXP-005 to EXP-009, EXP-011 and EXP-012 under `root`, check every value the text uses, and return the
     generated files. When `data_root` (or the environment variable CAOS_RESEARCH_DATA_ROOT) names the data root and the full results
@@ -3255,6 +3457,9 @@ def build_new(root, N, data_root=None):
     exp17_stored(root, N)
     exp16(read_fourth(root), N, out)
     exp18(read_fifth(root), N, out)
+    r19_, r20_ = read_sixth(root)
+    exp19(r19_, N, out)
+    exp20(r20_, N, out)
     wz_outputs(r10, r14, r15, N, out)
     rule_outputs(r9, r10, r14, r15, N, out)
     return out
@@ -3556,9 +3761,18 @@ def main():
         lg_.add((e_, p_))
         detail_.setdefault((e_, p_), "stratum with the largest exponent $S(%d;%d,%d)$ (EXP-018)" % s_)
     lin_ = linear_from_artifacts(r9_, r10_, r14_, r15_)
-    for (e_, p_) in lin_:
+    r19_, r20_ = read_sixth(PROBLEM)
+    e19_, x20_, d6_ = sixth_sets(r19_, r20_)
+    for k_, v_ in d6_.items():
+        detail_.setdefault(k_, v_)
+    computed_ = set(lin_)
+    short_ = short_pair_cells(16)
+    for (e_, p_) in computed_:
         detail_[(e_, p_)] = "stratum of the linear family $S(%d;0,1)$ (EXP-009, EXP-010, EXP-014 or EXP-015)" % (e_ - 1)
-    state_outputs(N, OUT, explicit_from_artifacts(r6_, r8_, N["gfThreeHits"]), lin_, 16, (("W", w_), ("M", mid_), ("O", oth_), ("F", flt_), ("G", lst_), ("H", lg_)), detail_)
+    for (e_, p_), txt_ in short_.items():
+        detail_[(e_, p_)] = txt_ + ("; computed members in $S(%d;0,1)$" % (e_ - 1) if (e_, p_) in computed_ else "")
+    lin_ = set(lin_) | set(short_)
+    state_outputs(N, OUT, explicit_from_artifacts(r6_, r8_, N["gfThreeHits"]), lin_, 16, (("W", w_), ("M", mid_), ("O", oth_), ("F", flt_), ("G", lst_), ("H", lg_), ("E", e19_), ("X", x20_)), detail_)
     procedures(d, N, cases)
     byray = None
     lattice_s(F, N)
