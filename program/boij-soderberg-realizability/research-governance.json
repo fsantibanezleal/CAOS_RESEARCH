@@ -9,7 +9,7 @@
     "prohibited_reframing": "No CAOS result may be described as the first negative answer to Question 6.1 or 6.2, as a new obstruction over k[x,y,z], or as a result on the Kostant family. A realization found by a search over a prime field is a statement over that field until it is recomputed over the rationals."
   },
   "mission": "Decide, for the pure rays (0,d1,d2,d3) of small degree, which primitive points are Betti tables of finite length modules over k[x,y,z] and over U(H), with explicit modules and exact computations: the least d3 of a counterexample to Question 6.1, the least realizable multiple on each ray, and how the answers depend on the characteristic of the field.",
-  "current_focus": "BSR-F2",
+  "current_focus": "BSR-F3",
   "stop_policy": {
     "review_after_consecutive_low_value_rounds": 3,
     "requires_user_visible_redirect": true,
@@ -42,7 +42,7 @@
     {
       "id": "BSR-F2",
       "title": "First manuscript: pure resolutions over U(H), the characteristic, and the census",
-      "status": "active-success-gate-met",
+      "status": "closed",
       "priority": 1,
       "target": "One manuscript with: the family U/U(x^e, y^e) and its sharp characteristic condition with full proofs; the characteristic 2 statement on (0,2,6,8) with its proof; the table over U(H) of the parity-passing rays excluded over k[x,y,z] for d3 <= 12; the census over k[x,y,z] for d3 <= 12; the least d3 of a counterexample in characteristic 0; the methods (exact linear algebra over U(H), the census, the search and its rechecks), the limits and the open rays.",
       "value": "States a characteristic-dependent answer to Question 6.1 on a point that passes the known numerical test, an infinite family of pure modules over U(H) outside the Kostant family, and counterexamples with d3 = 10 against the published d3 = 21, with reproducible exact evidence.",
@@ -60,22 +60,30 @@
         "EXP-002",
         "EXP-003",
         "EXP-004"
-      ]
+      ],
+      "review_2026_11_20": "Success gate met on 2026-11-20 (v0.01 published, 10.5281/zenodo.24385387). Strategic review of the same day, made under the standing instruction to choose and advance the case with the best prospects: the focus closes and BSR-F3 becomes current."
     },
     {
       "id": "BSR-F3",
-      "title": "The open rays and the open characteristic questions",
-      "status": "proposed",
-      "priority": 2,
-      "target": "The 15 rays with d3 >= 10 whose primitive point is open over k[x,y,z]; the point (1,2,2,1) on (0,2,6,8) and its analogues in odd characteristic below 2e; the substitution of x^e, y^e in the Kostant presentations; the archive of the machine checks that exist only in reviewers' runs (backlog BSB-021).",
-      "value": "Completes the table for d3 <= 12 and tests whether the characteristic dependence found on (0,2,6,8) is a family.",
-      "success_gate": "A proof or an explicit module for each question, or a recorded negative result with its method.",
+      "title": "The characteristic questions left open by the first manuscript, and the open rays",
+      "status": "active",
+      "priority": 0,
+      "target": "(1) The machine checks of the characteristic 2 theorem and of the family at e = 6, 7 archived with the repository's instrument (EXP-005). (2) The point (1,2,2,1) on (0, e, 3e, 4e) in odd characteristic below 2e, for e = 3 and 4: a pure pair of forms over GF(p), or a recorded negative with its method (EXP-006). (3) The 15 rays with d3 >= 10 whose primitive point is open over k[x,y,z]. (4) The substitution of x^e, y^e in the Kostant presentations.",
+      "value": "Item (2) decides whether characteristic 2 is the only characteristic in which the point fails for small e, and whether the family U/U(x^e, y^e) is part of a larger family of pure modules (the locus of the rank condition has dimension at least 12 in a Grassmannian of dimension 14 at e = 4, by a Thom-Porteous class computed before the run). Item (1) gives the manuscript an artifact for each machine claim.",
+      "success_gate": "EXP-005 confirmed with its four gates; for e = 3 and e = 4 and every odd prime below 2e, either a pure pair confirmed in a second system or a recorded negative with its method; the outcome reviewed by a reader other than the writer before the manuscript states it (v0.02).",
       "stop_conditions": [
-        "Three consecutive experiments decide no ray and no characteristic question."
+        "A finite length module with at most one more relation than generators in characteristic 2 (a defect or a refuted proof): stop and examine before anything else.",
+        "Three consecutive experiments decide no characteristic question and no ray.",
+        "A source is found that already contains the statement on odd characteristic: cite it and keep only what remains."
       ],
-      "novelty_status": "Open questions of this programme; not searched as such.",
-      "manuscript_route": "a later version of the manuscript of BSR-F2, or research records",
-      "first_bounded_action": "Backlog BSB-021 (one experiment with the instrument of EXP-002 and EXP-003 that archives the reviewer-only checks)."
+      "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
+      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability, version 0.02",
+      "first_bounded_action": "EXP-005 and EXP-006 CONFIRMED on 2026-11-20; the family-dimension derivation reviewed (correct after fixes). Next: BSB-025 (archive the review's tangent space computation and explicit pairs over QQ), then the manuscript v0.02 with its review.",
+      "evidence": [
+        "EXP-005",
+        "EXP-006"
+      ],
+      "review_2026_11_20": "Items (1) and (2) of the target are met for e = 3 and 4: the point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every odd characteristic below 2e by explicit pairs (two instruments and a rebuild by the coordinating session); at e = 5 it is realized in characteristic 3 and open in 5 and 7. The success gate still needs the review of the verdicts by a reader other than the writer, with the manuscript v0.02."
     }
   ],
   "manuscripts": [
@@ -97,6 +105,12 @@
       "manuscripts": [
         "primitive-points-realizability"
       ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "classification": "research-record",
+      "manuscripts": []
     }
   ]
 }
