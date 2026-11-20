@@ -68,7 +68,7 @@ claims no priority; its literature searches are stated in the related work secti
 | `numbers.tex` | every number of the text, as macros |
 | `tab_*.tex` | the tabular bodies of the tables (captions are in `main.tex`); the sources of the state are in `tab_statesrc.tex` (`e <= 10`), `tab_statesrcb.tex` (`11 <= e <= 14`) and `tab_statesrcc.tex` (`e = 15, 16`) |
 | `fig_*.tex` | the TikZ and pgfplots bodies of the figures, generated from the artifacts or, for the two diagrams, typed in `make_tables.py` |
-| `zenodo.json` | the deposit metadata of v0.03 for the release tool (title, creator, description, version notes, keywords, related identifiers, references); the references equal the bibliography of `main.tex` in the same order, and the related identifiers cite the works of the bibliography that print a DOI or an arXiv number |
+| `zenodo.json` | the deposit metadata of v0.03, equal to the published record (title, creator, description, version notes, keywords, related identifiers, references); the references are the bibliography of `main.tex` in the same order, a citation inside an entry written as the cited work, and the related identifiers cite the works of the bibliography that print a DOI or an arXiv number. After publication three references were written in that form and the DOI of Dixmier's paper was added as a link, so the hash of this file differs from the one in `publication-gate.json` |
 | `main.pdf` | the published PDF of v0.03 (the SHA-256 above) |
 | `build-report.json`, `render-report.json`, `publication-gate.json` | the measured build, the page renders that were read, and the approval record of the release of v0.03 |
 

@@ -157,6 +157,11 @@
         "relation": "cites",
         "identifier": "10.48550/arXiv.1207.5831",
         "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.24033/bsmf.1667",
+        "resource_type": "publication-article"
       }
     ],
     "references": [
@@ -174,7 +179,7 @@
       "D. A. Buchsbaum, D. Eisenbud, Algebra structures for finite free resolutions, and some structure theorems for ideals of codimension 3, Amer. J. Math. 99 (1977) 447-485.",
       "D. A. Buchsbaum, D. Eisenbud, Some structure theorems for finite free resolutions, Adv. Math. 12 (1974) 84-139.",
       "J. Söderberg, Graded Betti numbers and h-vectors of level modules, arXiv:math/0612047 (version 2).",
-      "M. Boij, Artin level modules, J. Algebra 226 (2000) 361-374 (reference [1] of [14]; not read).",
+      "M. Boij, Artin level modules, J. Algebra 226 (2000) 361-374 (reference [1] of J. Söderberg, arXiv:math/0612047; not read).",
       "S. V. Sam, Homology of analogues of Heisenberg Lie algebras, Math. Res. Lett. 22 (2015), no. 4, 1223-1241. arXiv:1307.1901.",
       "S. V. Sam, K. VandeBogert, From total positivity to pure free resolutions, arXiv:2408.10408.",
       "G. Fløystad, Boij-Söderberg theory: introduction and survey, in: Progress in Commutative Algebra 1, de Gruyter, 2012, 1-54. arXiv:1106.0381.",
@@ -188,13 +193,13 @@
       "Singular, version 4.3.2, subsystem Plural; manual pages on resolutions of modules over G-algebras: https://singular.mathematik.uni-kl.de/Manual/4-4/sing_480.htm.",
       "Rethlas_results, repository frenzymath/Rethlas_results, directory CommAlg/arxiv_1606_01867, files question_6_1.md and question_6_2.md: https://github.com/frenzymath/Rethlas_results.",
       "N. Jacobson, Lie Algebras, Chapter V, Section 7 (Jacobson's formula for the p-th power of a sum in an associative algebra of characteristic p); the statement was read in the Wikipedia article \"Restricted Lie algebra\", https://en.wikipedia.org/wiki/Restricted_Lie_algebra, and the book was not opened.",
-      "C. Peskine, L. Szpiro, Dimension projective finie et cohomologie locale, Publ. Math. IHES 42 (1973), Lemma 1.8 (the statement is taken from [30], which attributes it there; the paper was not opened).",
+      "C. Peskine, L. Szpiro, Dimension projective finie et cohomologie locale, Publ. Math. IHES 42 (1973), Lemma 1.8 (the statement is taken from The Stacks Project, which attributes it there; the paper was not opened).",
       "The Stacks Project, Lemma 10.102.8 (Acyclicity lemma), Tag 00N0: https://stacks.math.columbia.edu/tag/00N0.",
       "S. A. Amitsur, Commutative linear differential operators, Pacific J. Math. 8 (1958) 1-10, Theorem 1; https://msp.org/pjm/1958/8-1/pjm-v8-n1-p01-p.pdf (pages 1 to 3 read).",
       "J. Dixmier, Sur les algèbres de Weyl, Bull. Soc. Math. France 96 (1968) 209-242; https://www.numdam.org/item/10.24033/bsmf.1667.pdf (pages 209 and 210 read: over a field of characteristic 0 the Weyl algebra A_n is integral and simple with centre k).",
       "D. Rogalski, An introduction to noncommutative projective algebraic geometry, arXiv:1403.3065, exercise set 2 and its solutions (the cubic Artin-Schelter regular algebra U(H) and the resolution of its trivial module).",
       "The Stacks Project, Chapter 11 (Brauer groups), Lemma 11.5.4, Tag 074N: https://stacks.math.columbia.edu/tag/074N (the page states: for a finite central simple algebra A over a field k, [A:k] is a square).",
-      "The Stacks Project, Chapter 11 (Brauer groups), Theorem 11.7.1 (the centralizer theorem), Tag 074T: https://stacks.math.columbia.edu/tag/074T (the page states: for a finite central simple algebra A over k and a simple subalgebra B with centralizer C, C is simple, [A:k]=[B:k][C:k] and the centralizer of C in A is B).",
+      "The Stacks Project, Chapter 11 (Brauer groups), Theorem 11.7.1 (the centralizer theorem), Tag 074T: https://stacks.math.columbia.edu/tag/074T (the page states: for a finite central simple algebra A over k and a simple subalgebra B with centralizer C, C is simple, [A:k] = [B:k][C:k] and the centralizer of C in A is B).",
       "G. Benkart, M. Ondrus, Whittaker modules for generalized Weyl algebras, arXiv:0803.3570 (the structure of the enveloping algebra of the Heisenberg Lie algebra as a generalized Weyl algebra is stated there, as found by a search; the paper was not opened).",
       "C. A. Weibel, An Introduction to Homological Algebra, Cambridge University Press, Section 7.7, The Chevalley-Eilenberg complex (the section and its title were checked on the table of contents found by search; the book was not opened).",
       "The Stacks Project, Chapter 10 (Commutative Algebra), Section 10.153 (Henselian local rings), Lemma 10.153.3, Tag 04GG: https://stacks.math.columbia.edu/tag/04GG (the page lists the equivalent conditions for a local ring to be henselian, among them the lifting of every simple root of the reduction of a polynomial), and Section 10.155, Lemma 10.155.1, Tag 04GN: https://stacks.math.columbia.edu/tag/04GN (the page states that a local ring has a henselization, a henselian local ring with the same residue field that is a filtered colimit of étale algebras).",
