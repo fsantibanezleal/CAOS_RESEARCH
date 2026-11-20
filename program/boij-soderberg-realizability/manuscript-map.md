@@ -61,3 +61,4 @@ No split: the blocks answer one question (which primitive points are realized ov
 
 EXP-001 to EXP-020 are the primary evidence of `primitive-points-realizability` v0.03 (EXP-001 to EXP-004 since v0.01,
 EXP-005 to EXP-008 since v0.02, EXP-009 to EXP-020 with the ten derivations reviewed after v0.02 since v0.03).
+EXP-021 (the stratum S(5; 0, 1) at the open pair (11, 3)) is a research record until a version states its result.
