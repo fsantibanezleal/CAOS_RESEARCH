@@ -35,7 +35,8 @@
       "evidence": [
         "EXP-001",
         "EXP-002",
-        "EXP-003"
+        "EXP-003",
+        "EXP-004"
       ]
     },
     {
@@ -81,7 +82,7 @@
   "experiment_dispositions": [
     {
       "start": 1,
-      "end": 3,
+      "end": 4,
       "classification": "research-record",
       "manuscripts": []
     }

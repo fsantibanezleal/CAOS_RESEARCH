@@ -1,0 +1,94 @@
+{
+ "what": "Resolutions over QQ, in Singular 4.3.2, of the two lifted modules whose Macaulay2 recheck in EXP-001 was not pure; scripts built from the saved generator matrices by the generator of the independent review of EXP-001",
+ "data_root_subdir": "boij-soderberg-realizability/EXP-004/singular-qq",
+ "modules": [
+  {
+   "tag": "0-3-8-10_m1_module_s1_p32003",
+   "ray": [
+    0,
+    3,
+    8,
+    10
+   ],
+   "betti_table_over_QQ": [
+    [
+     0,
+     0,
+     7
+    ],
+    [
+     1,
+     3,
+     16
+    ],
+    [
+     2,
+     8,
+     21
+    ],
+    [
+     3,
+     10,
+     12
+    ]
+   ],
+   "length": 280,
+   "seconds": 426
+  },
+  {
+   "tag": "0-3-11-12_m1_module_s1_p32003",
+   "ray": [
+    0,
+    3,
+    11,
+    12
+   ],
+   "betti_table_over_QQ": [
+    [
+     0,
+     0,
+     6
+    ],
+    [
+     1,
+     3,
+     11
+    ],
+    [
+     2,
+     11,
+     27
+    ],
+    [
+     3,
+     12,
+     22
+    ]
+   ],
+   "length": 396,
+   "seconds": 375
+  }
+ ],
+ "files": [
+  {
+   "path": "0-3-11-12_m1_module_s1_p32003.out",
+   "bytes": 465,
+   "sha256": "0a8f151d075a9e295f1dc078e00810d0c29e311d611fcbb0b789b9f0f84035e5"
+  },
+  {
+   "path": "0-3-11-12_m1_module_s1_p32003.qq.sing",
+   "bytes": 7340,
+   "sha256": "462b817637c651176019528589efa96a1f05c347ab18c1aa236e26ebef8cde5f"
+  },
+  {
+   "path": "0-3-8-10_m1_module_s1_p32003.out",
+   "bytes": 403,
+   "sha256": "bfef83d34d2112079dc1bf331c39ba77b0a590f1f887ae7443c921f819ff3b6d"
+  },
+  {
+   "path": "0-3-8-10_m1_module_s1_p32003.qq.sing",
+   "bytes": 12276,
+   "sha256": "0ddd8e8f1b3edcc3385e3c0aad75d33efde835697e8a87cbe9655bfffe96b922"
+  }
+ ]
+}

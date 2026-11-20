@@ -123,3 +123,14 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - The modules over QQ of the rays with d3 <= 9 are stored with the experiment: the reviewer's Singular scripts (each
   builds the module from the saved generator matrix) and their tables, with SHA-256 (`artifacts/qq-modules.json`).
 
+## 2026-11-19 - EXP-004 CONFIRMED: rank certificates lift every prime-field realization to characteristic 0
+
+- Gates: the ranks over GF(32003) reproduce the pure Hilbert function on 1,087 matrices of 130 hits; the rank test
+  passes on the 64 known answers; python-flint and PARI/GP agree on 842 of 842 matrices.
+- All 130 hits pass (one matrix by PARI/GP alone). With the lift lemma, all 193 realized rays are realized in
+  characteristic 0 (147 before).
+- The prediction that the two hits not pure over QQ in EXP-001 would fail was refuted: both pass. Recomputed over QQ in
+  Singular with independent scripts: both are pure ((7,16,21,12) on (0,3,8,10), length 280; (6,11,27,22) on (0,3,11,12),
+  length 396). The Macaulay2 results of EXP-001 on these two were false negatives; cause not established.
+- The lemma is a derivation and awaits review (BSB-020) before the table of EXP-001 is restated.
+
