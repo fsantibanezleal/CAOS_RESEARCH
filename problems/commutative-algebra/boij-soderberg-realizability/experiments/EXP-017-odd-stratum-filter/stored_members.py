@@ -79,7 +79,7 @@ def main():
             return 1
         print("artifact current")
         return 0
-    OUT.write_text(json.dumps(data, indent=1) + "\n", encoding="utf-8")
+    OUT.write_text(json.dumps(data, indent=1) + "\n", encoding="utf-8", newline="\n")
     print("wrote", OUT.name)
     return 0
 
