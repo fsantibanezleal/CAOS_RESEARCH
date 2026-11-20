@@ -1,7 +1,8 @@
 # The pairs x^e + alpha(xy, z) y^t, y^e + beta(xy, z) x^t: the decomposition over k[xy, z], two congruences, and the pure Hilbert function
 
 Date: 2026-11-20. Status: derivation by the coordinating session, checked by machine on small cases (section 7);
-to be reviewed by a reader other than the writer before any use in a manuscript. It proves that the members that
+reviewed by a reader other than the writer on 2026-11-20 (correct; eight minor repairs, applied here; the review
+recomputed the statements with its own code on 1,250 members). It proves that the members that
 pass the filter of EXP-017 and EXP-019 have the pure Hilbert function (section 5) and, when Delta has no common
 factor with A_(e-t), the pure Betti table (section 5b); the Betti table without that condition is not proved
 (section 6).
@@ -45,6 +46,10 @@ The conditions:
 - (F1) X' alpha = c X modulo Delta for a form c in D_d.
 - (F2) X sigma^(e-t)(beta) = c' X' modulo Delta for a form c' in D_d.
 - (F3) c c' is not equal to A_(e-t).
+
+Two consequences of (C0). The first clause follows from the second: if z divides Delta it divides tau^w(Delta) and
+X. And p does not divide w = e + t: in characteristic p, sigma^p is the identity, so p dividing w would give
+tau^w(Delta) = Delta and X = L Delta.
 
 When z does not divide Delta and Delta is coprime to X and X', the forms c and c' are unique (if c_1 X = c_2 X modulo
 Delta then Delta divides c_1 - c_2, of smaller degree), and under (F1) and (F2)
@@ -195,6 +200,11 @@ induction for G-_k(j) is the same with i = j - (k-1)w and i'' = j - (k-2)w. So J
 that of a complete intersection of two forms of U-degrees 2(e - |j|) and 2e in two variables of degree 2, generated
 in degree |j|. []
 
+Remark (the condition on p is necessary). The proof of (c) uses (F1) and (F2) only. So if 0 < p < 2t and (F1), (F2)
+hold, then J_0 = (T_0, T'_0), which tau^t carries to (B_t Delta, L tau^w(Delta)) by Lemma 2 (iii); p divides one of
+the integers 1, ..., 2t - 1, so B_t (factors h - iz, 1 <= i <= t) and L (factors h - lz, t < l <= 2t) have a common
+factor, and M_0, hence M, has infinite length.
+
 ## 4. The summands on two generators
 
 For an automorphism phi of D and a D-module presented by a matrix, applying phi to the entries of the matrix gives a
@@ -249,8 +259,12 @@ Step 3. By step 2 the submodule D u + D v of E_m has the Hilbert series s^(2e) H
 N'_m is H_E(s) - s^(2e) H_E(s). Its value at s = 1 is the length: with N(s) = s^(m+t) + s^(e-m) - s^(e+m) -
 s^(2e-t-m), N(1) = 0 and N'(1) = - 4d, the series (1 - s^(2e)) N(s)/(1 - s^2)^2 tends to 2e 4d / 4 = e (e - t). []
 
-Remark. If mu = 0 the matrix Psi is singular and step 2 does not apply. The computations show that N_m is then longer
-than e (e - t) in general (section 7).
+Remark (mu = 0). If mu = 0 the matrix Psi is singular and step 2 does not apply; then c c' = A_(e-t), so c is a
+scalar multiple of a product of d of the factors l_i = h + iz, 0 <= i <= e - t - 1. Observed (section 7 and the
+checks of the review of this note): N_m is longer than e (e - t) unless c is a multiple of
+sigma^d(A_d) = l_d l_(d+1) ... l_(2d-1); in that case M has the pure Hilbert function and its Betti table is not
+pure (at (6, 7, 2) and (6, 11, 4), every member computed). So (F3) is not needed for the Hilbert function in that
+one case, and it is needed for the Betti table.
 
 ## 5. The theorem
 
@@ -283,7 +297,8 @@ exponent t that passes the tests (F0) to (F3) of EXP-017 and EXP-019 has the pur
 *Proof.* As in the proof of Theorem 2 of `2026-11-20-one-congruence-and-the-betti-table.md`: Tor_3(k, M) is the
 socle of M shifted by 4 (the Chevalley-Eilenberg complex), Tor_0 is k in degree 0 and Tor_1 is two-dimensional in
 degree e (f and g are independent of degree e), and the alternating sum of the graded Betti numbers is
-1 - 2 s^e + 2 s^(3e) - s^(4e) by the theorem. The top degree 4e - 4 of M lies in the socle and has dimension one.
+1 - 2 s^e + 2 s^(3e) - s^(4e) by the theorem, and Tor_i = 0 for i >= 4 (the Chevalley-Eilenberg resolution of k has
+length 3). The top degree 4e - 4 of M lies in the socle and has dimension one.
 If the socle has dimension one, Tor_3 is k in degree 4e and the alternating sum leaves Tor_2 = k^2 in degree 3e.
 Conversely the pure table has Tor_3 of dimension one. []
 
@@ -361,22 +376,23 @@ has dimension one, and M has the pure Betti table (1, 2, 2, 1) on (0, e, 3e, 4e)
 and y. x and y carry each summand of Proposition 1 into another one, so the socle is the sum of its parts in the
 summands.
 
-(i) -t <= j <= -1: x is injective on M_j. Here x (d v_j) = sigma(d) h v_(j+1), and by Lemma 2 (i)
+(i) -t <= j <= -1: x is injective on M_j. Here x (r v_j) = sigma(r) h v_(j+1) for r in D, and by Lemma 2 (i)
 T_(j+1) = h sigma(T_j) (A_(j+1+t) = h sigma(A_(j+t))) and T'_(j+1) = sigma(T'_j), so by Proposition 3 (c)
-J_(j+1) = (h sigma(T_j), sigma(T'_j)). If sigma(d) h = a h sigma(T_j) + b sigma(T'_j), then h divides b (h divides
-T_(j+1), which is coprime to T'_(j+1)), so sigma(d) lies in sigma(J_j) and d in J_j.
+J_(j+1) = (h sigma(T_j), sigma(T'_j)). If sigma(r) h = u_1 h sigma(T_j) + u_2 sigma(T'_j), then h divides u_2 (h
+divides T_(j+1), which is coprime to T'_(j+1)), so sigma(r) lies in sigma(J_j) and r in J_j.
 
-(ii) 1 <= j <= t: y is injective on M_j. Here y (d v_j) = tau(d)(h - z) v_(j-1), T_(j-1) = tau(T_j) and
+(ii) 1 <= j <= t: y is injective on M_j. Here y (r v_j) = tau(r)(h - z) v_(j-1), T_(j-1) = tau(T_j) and
 T'_(j-1) = (h - z) tau(T'_j) (B_(t-j+1) = (h - z) tau(B_(t-j))), and the same argument applies.
 
-(iii) j = 0. x (d v_0) = sigma(d) v_1 and J_1 = (sigma(T_0), sigma(T'_0)/h) (sigma(B_t) = h B_(t-1)), so the kernel
-of x on M_0 is (T_0, T'_0/(h - z))/J_0. y (d v_0) = tau(d) v_(-1) and J_(-1) = (tau(T_0)/(h - z), tau(T'_0))
+(iii) j = 0. x (r v_0) = sigma(r) v_1 and J_1 = (sigma(T_0), sigma(T'_0)/h) (sigma(B_t) = h B_(t-1)), so the kernel
+of x on M_0 is (T_0, T'_0/(h - z))/J_0. y (r v_0) = tau(r) v_(-1) and J_(-1) = (tau(T_0)/(h - z), tau(T'_0))
 (tau(A_t) = (h - z) A_(t-1)), so the kernel of y is (T_0/h, T'_0)/J_0. Put F = T_0/h and G = T'_0/(h - z); they are
-coprime, and h F, (h - z) G are coprime. If a h F + b G = c F + d (h - z) G then (a h - c) F = (d (h - z) - b) G, so
-a h - c = lambda G and the element is a h F + d (h - z) G - lambda F G: the intersection of the two kernels is
-generated by F G modulo J_0 = (h F, (h - z) G). h F G and (h - z) F G lie in J_0, and F G does not: if
-F G = a h F + b (h - z) G with forms a, b, then F (G - a h) = b (h - z) G, so G divides a h and hence a (h divides
-T_0, which is coprime to T'_0); but a has D-degree e - 2 and G has e - 1, so a = 0 and F = b (h - z), while h - z
+coprime, and h F, (h - z) G are coprime. If u_1 h F + u_2 G = u_3 F + u_4 (h - z) G then
+(u_1 h - u_3) F = (u_4 (h - z) - u_2) G, so u_1 h - u_3 = lambda G and the element is
+u_1 h F + u_4 (h - z) G - lambda F G: the intersection of the two kernels is generated by F G modulo
+J_0 = (h F, (h - z) G). h F G and (h - z) F G lie in J_0, and F G does not: if F G = u_1 h F + u_2 (h - z) G with
+forms u_1, u_2, then F (G - u_1 h) = u_2 (h - z) G, so G divides u_1 h and hence u_1 (h divides T_0, which is
+coprime to T'_0); but u_1 has D-degree e - 2 and G has e - 1, so u_1 = 0 and F = u_2 (h - z), while h - z
 divides T'_0, which is coprime to T_0 = h F. So this part of the socle is the line of F G, in degree
 2 (2e - 2) = 4e - 4.
 
@@ -393,8 +409,9 @@ So the socle has dimension one, and Corollary 2 gives the Betti table. []
   (F0) or (F3) (section 7), and no member examined that satisfies (C0) and fails (F1) or (F2) has the pure Hilbert
   function (more than 100 such members in the samples of section 7); but Proposition 3 (b) gives only that (F1) and (F2) are necessary for the two end summands to have their
   length, not that the Hilbert function of M sees it (a longer summand N_m could compensate in the length).
-- Members with z dividing Delta, or with Delta not coprime to X or X', are not covered; pure Hilbert functions occur
-  among them (the stored members with another table that fail (F0)).
+- Members with z dividing Delta have infinite length (by Lemma 2 (i) every generator of J_(-t) is then a multiple
+  of z). Members with Delta not coprime to X or X' are not covered, and pure Hilbert functions occur among them (the
+  stored members with another table that fail (F0)).
 - Existence: the theorem does not produce a member over a given field.
 
 ## 7. Machine checks
@@ -412,15 +429,17 @@ with `uhlib`.
   J_j = (T_j, T'_j) under (F1) and (F2); the series of every N_m of Proposition 4 and the pure Hilbert function on
   every member that passes the filter (105 members, of which 50 have a common root of Delta and A_(e-t), a case the
   proof does not treat apart); the identity of series of the theorem for 3 <= e <= 24 and every t. No failure.
-- `check_t_summands.py` at (6, 5, 2), (6, 11, 2), (7, 7, 1), (7, 7, 3): members sorted by the first test they fail. A
+- `check_t_summands.py` at (6, 5, 2), (6, 11, 2), (7, 7, 1), (7, 7, 3): members sorted by the first test they fail. At
+  these four triples (it is not general: the review found other behaviour at (9, 7, 3) and (8, 101, 4)) a
   member that fails (F1) or (F2) has cyclic summands shorter than their length (all of them when (F1) fails; those
   with j >= 0, and at (7, 7, 1) also the one with j = -1, when only (F2) fails); one that fails (F3) only has every
   cyclic summand of its length and summands N_m that are longer (with one exception at (7, 7, 3), a member with
   mu = 0 and the pure Hilbert function).
-- `check_t_structure.py` at (6, 5, 2), (6, 7, 4), (7, 5, 3), (7, 7, 1), 120 or 150 random members each: the Hilbert
-  function from the presentation equals the one computed in U on every member, also in the two cases with
-  2t >= p + 1, where (C0) fails and no member has the pure Hilbert function (at (6, 7, 4), 38 of the 144 members pass
-  (F0) to (F3) and none has it: the condition on p in (C0) cannot be dropped).
+- `check_t_structure.py` at (6, 5, 2), (6, 7, 4), (7, 5, 3), (7, 7, 1), on 148, 144, 118 and 120 members (120 or 150
+  draws, those with alpha = 0 skipped): the Hilbert function from the presentation equals the one computed in U on
+  every member. At (6, 7, 4), where 2t >= p + 1, 38 of the 144 members pass (F0) to (F3) and none has the pure
+  Hilbert function, as the remark after Proposition 3 proves. At (7, 5, 3) no member passes (F0), because p divides
+  e + t; that case says nothing about the condition on p.
 - The filter on the stored members of EXP-010, EXP-014, EXP-015, EXP-018 (probe of EXP-019, repeated as gate G1 (a)
   of EXP-019): 317 pure members pass; 128 members with the pure Hilbert function and another table fail, 108 at
   (F0) and 20 at (F3).

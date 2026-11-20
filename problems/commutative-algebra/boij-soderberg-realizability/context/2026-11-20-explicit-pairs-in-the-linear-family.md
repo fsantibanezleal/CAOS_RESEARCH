@@ -2,8 +2,8 @@
 
 Date: 2026-11-20. Status: derivation by the coordinating session, checked by machine (section 5); to be reviewed by
 a reader other than the writer. It depends on Theorem 2 and Corollary 3 of
-`2026-11-20-pairs-with-exponent-t.md` (under review when this note was written): every statement below is
-conditional on that note.
+`2026-11-20-pairs-with-exponent-t.md` (reviewed on 2026-11-20: correct, with eight minor repairs): every statement
+below rests on that note.
 
 ## 0. Setting
 
