@@ -1161,6 +1161,298 @@ The corollary bounds the exponent of the pairs $x^e+\alpha(xy,z)\,y^t$, $y^e+\be
 \label{tab:wzleft}
 \end{table}
 
+\subsection{The pairs with the monomials \texorpdfstring{$y^t$ and $x^t$}{y(t) and x(t)} over \texorpdfstring{$k[xy,z]$}{k[xy,z]}: the Hilbert function and the Betti table}
+\label{sec:expt}
+
+Section~\ref{sec:invariants} decomposes the module of a pair $(x^e+b\,y^e,\Gamma(\xi,z))$ over $R=k[\xi,z]$. This section does the same for the pairs $f=x^e+\alpha\,y^t$, $g=y^e+\beta\,x^t$ with $\alpha,\beta$ forms of $R$ and $t$ of the parity of $e$ (the stratum $S((e+t)/2;0,(e-t)/2)$ of Section~\ref{sec:strata}; $t=1$ is the stratum of the central pairs of Section~\ref{sec:resfilter}). It proves that the module splits into $2t+1$ cyclic summands and $e-t-1$ summands on two generators, and that under explicit coprimality conditions and two congruences the module has length $e^3$ and the Hilbert series of the pure table (Theorem~\ref{thm:expthf}); under one more coprimality it has the pure Betti table (Theorem~\ref{thm:exptpure}). The conditions are the tests of the filter of Section~\ref{sec:resfilter}, read with $z$ kept. All statements of the section are proved on paper [D]; what is not proved is listed at the end. The machine checks are in Section~\ref{sec:validation}.
+
+\paragraph{Setting and notation.} Let $k$ be a field of characteristic $p\ge0$. Keep $\xi=xy$, $R=k[\xi,z]$, the automorphism $\theta$ of $R$ with $\theta(\xi)=\xi+z$, $\theta(z)=z$, the forms $\pi_n(\xi)=\xi(\xi+z)\cdots(\xi+(n-1)z)=x^ny^n$ and $\kappa_n(\xi)=(\xi-z)(\xi-2z)\cdots(\xi-nz)=y^nx^n$ ($n\ge0$) and the elements $\epsilon_n$ of Lemma~\ref{lem:xi}, so that $U=\bigoplus_nR\,\epsilon_n$, $xd=\theta(d)x$, $yd=\theta^{-1}(d)y$ and $\epsilon_nd=\theta^n(d)\epsilon_n$ for $d\in R$. Write $R_n$ for the forms of degree $n$ of $R$ (elements of degree $2n$ of $U$). Then
+\[
+\pi_{a+b}=\pi_a\,\theta^a(\pi_b),\qquad\kappa_{a+b}=\kappa_a\,\theta^{-a}(\kappa_b),\qquad\theta^n(\kappa_n)=\pi_n,\qquad\theta^{-n}(\pi_n)=\kappa_n .
+\]
+At $z=1$ the form $\pi_n$ is the polynomial $A_n(\xi)$ of Section~\ref{sec:resfilter}. Put $\ell_i=\xi+iz$, so that $\pi_m=\ell_0\ell_1\cdots\ell_{m-1}$. Fix $e\ge3$ and $t$ with $1\le t\le e-2$ and $t\equiv e\pmod2$, and put $s=(e-t)/2$ (so $s=(e-1)/2$ for $t=1$) and $\varpi=e+t$. Fix $\alpha,\beta\in R_s$ and
+\[
+f=x^e+\alpha\,y^t,\qquad g=y^e+\beta\,x^t,\qquad M=U/(Uf+Ug).
+\]
+The elements $f$ and $g$ are homogeneous of degree $e$. The objects of the section, introduced here once (the letters are new in the paper where they do not occur in earlier sections; in this section they have only the meaning given):
+\begin{align*}
+\Delta&=\alpha\,\theta^{e-t}(\beta)-\pi_{e-t}\in R_{2s},\\
+\Lambda&=\theta^{-t}(\kappa_t)=(\xi-(t+1)z)\cdots(\xi-2tz),\\
+\Lambda'&=\theta^{e}(\pi_t)=(\xi+ez)(\xi+(e+1)z)\cdots(\xi+(e+t-1)z),\\
+X&=\Lambda\,\theta^{-\varpi}(\Delta),\qquad X'=\Lambda'\,\theta^{\varpi}(\Delta)\quad(\text{in }R_e),
+\end{align*}
+and, for $n,m\ge0$, the forms
+\begin{gather*}
+a_f(n)=\begin{cases}\pi_n&n\le t\\ \theta^{n-t}(\pi_t)&n\ge t\end{cases}\qquad
+a_g(n)=\begin{cases}\pi_n&n\le e\\ \theta^{n-e}(\pi_e)&n\ge e\end{cases}\\
+b_f(m)=\begin{cases}\kappa_m&m\le e\\ \theta^{-(m-e)}(\kappa_e)&m\ge e\end{cases}\qquad
+b_g(m)=\begin{cases}\kappa_m&m\le t\\ \theta^{-(m-t)}(\kappa_t)&m\ge t\end{cases}
+\end{gather*}
+of degrees $\min(n,t)$, $\min(n,e)$, $\min(m,e)$ and $\min(m,t)$. The conditions:
+\begin{description}
+\item[(F0)] $z$ does not divide $\Delta$, and $\Delta$ is coprime to $X$ and to $X'$;
+\item[(C0)] (F0), and $p=0$ or $p\ge2t$;
+\item[(F1)] $X'\alpha\equiv cX\pmod\Delta$ for a form $c\in R_s$;
+\item[(F2)] $X\,\theta^{e-t}(\beta)\equiv c'X'\pmod\Delta$ for a form $c'\in R_s$;
+\item[(F3)] $cc'\ne\pi_{e-t}$;
+\item[(C1)] $\Delta$ is coprime to $\pi_{e-t}$ (no $\ell_i$ with $0\le i\le e-t-1$ divides $\Delta$).
+\end{description}
+(F0) is the test (F0) of Section~\ref{sec:resfilter} with $z$ kept ($t=1$, and for every $t$ in the computation \EXP{019} cited there), where it reads ``$\Delta$ has degree $2s$ at $z=1$ and is coprime to $X$ and $X'$''; (C0) is (F0) with the condition $p=0$ or $p\ge2t$, which that test does not contain; (F1) to (F3) are the tests of the same name. Two consequences of (C0). The first clause of (F0) follows from the second: if $z$ divides $\Delta$ it divides $\theta^{-\varpi}(\Delta)$ and $X$. And $p$ does not divide $\varpi$: in characteristic $p$, $\theta^p$ is the identity, so $p\mid\varpi$ would give $\theta^{-\varpi}(\Delta)=\Delta$ and $X=\Lambda\Delta$, not coprime to $\Delta$. When (F0) holds the forms $c$ and $c'$ are unique: if $c_1X\equiv c_2X$ modulo $\Delta$ then $\Delta$ divides $c_1-c_2$, which has smaller degree. Under (F1) and (F2),
+\[
+XX'\alpha\,\theta^{e-t}(\beta)\equiv cc'\,XX'\pmod\Delta,\qquad\text{so}\qquad cc'\equiv\alpha\,\theta^{e-t}(\beta)\equiv\pi_{e-t}\pmod\Delta,
+\]
+hence $cc'-\pi_{e-t}=\varkappa\Delta$ for a scalar $\varkappa$ (both sides lie in $R_{2s}$). Condition (F3) says $\varkappa\ne0$.
+
+\begin{lemma}[Products]\label{lem:exptprod}
+For $n,m\ge0$,
+\[
+\epsilon_nf=\epsilon_{n+e}+\theta^n(\alpha)\,a_f(n)\,\epsilon_{n-t},\qquad\epsilon_{-m}g=\epsilon_{-m-e}+\theta^{-m}(\beta)\,b_g(m)\,\epsilon_{t-m},
+\]
+and for $m\ge1$ and $n\ge1$,
+\[
+\epsilon_{-m}f=b_f(m)\,\epsilon_{e-m}+\theta^{-m}(\alpha)\,\epsilon_{-m-t},\qquad\epsilon_ng=a_g(n)\,\epsilon_{n-e}+\theta^n(\beta)\,\epsilon_{n+t}.\quad[\mathrm D]
+\]
+\end{lemma}
+\begin{proof}
+$x^n\alpha y^t=\theta^n(\alpha)x^ny^t$, and $x^ny^t=\pi_ny^{t-n}$ for $n\le t$, while $x^ny^t=x^{n-t}\pi_t=\theta^{n-t}(\pi_t)x^{n-t}$ for $n\ge t$. Next $y^mx^e=\kappa_mx^{e-m}$ for $m\le e$ and $y^mx^e=y^{m-e}\kappa_e=\theta^{-(m-e)}(\kappa_e)y^{m-e}$ for $m\ge e$, and $y^m\alpha y^t=\theta^{-m}(\alpha)y^{m+t}$. The two formulas for $g$ are obtained in the same way.
+\end{proof}
+
+Write $v_j$ for the class of $\epsilon_j$ in $M$; it has degree $|j|$. Since $U$ is the direct sum of the $R\epsilon_n$, the left ideal $Uf+Ug$ is the $R$-span of the $\epsilon_nf$ and $\epsilon_ng$, so $M$ is the quotient of the free $R$-module on the $v_j$, $j\in\mathbb Z$, by the relations
+\begin{alignat*}{2}
+&R1(n),\ n\ge0:&\quad &v_{n+e}+\theta^n(\alpha)a_f(n)\,v_{n-t}=0,\\
+&R2(m),\ m\ge1:&\quad &b_f(m)\,v_{e-m}+\theta^{-m}(\alpha)\,v_{-m-t}=0,\\
+&R3(m),\ m\ge0:&\quad &v_{-m-e}+\theta^{-m}(\beta)b_g(m)\,v_{t-m}=0,\\
+&R4(n),\ n\ge1:&\quad &a_g(n)\,v_{n-e}+\theta^n(\beta)\,v_{n+t}=0.
+\end{alignat*}
+Every relation involves two indices that differ by $\varpi$. Put, for $j\ge-t$ and $i\le t$,
+\[
+\zeta^+(j)=\theta^{j+t}(\alpha)\,a_f(j+t),\qquad\zeta^-(i)=\theta^{i-t}(\beta)\,b_g(t-i),
+\]
+\[
+T_j=a_g(j+e)-\theta^{j+e}(\beta)\,\zeta^+(j),\qquad T'_i=b_f(e-i)-\theta^{i-e}(\alpha)\,\zeta^-(i),
+\]
+and $\Pi^+_k(j)=\zeta^+(j)\zeta^+(j+\varpi)\cdots\zeta^+(j+(k-1)\varpi)$, $\Pi^-_k(i)=\zeta^-(i)\zeta^-(i-\varpi)\cdots\zeta^-(i-(k-1)\varpi)$, with $\Pi^\pm_0=1$. (Here $\theta^{i-t}(\beta)$ stands for $\theta^{-(t-i)}(\beta)$ and $\theta^{i-e}(\alpha)$ for $\theta^{-(e-i)}(\alpha)$.)
+
+\begin{proposition}[Splitting]\label{prop:exptsplit}
+$M$ is, as a graded $R$-module, the direct sum of
+\begin{itemize}
+\item for $-t\le j\le t$, a cyclic module $M_{(j)}=(R/J_j)\,v_j$ with $v_j$ in degree $|j|$, where $J_j$ is the ideal generated by the forms $G^+_k(j)=T_{j+k\varpi}\,\Pi^+_k(j)$ and $G^-_k(j)=T'_{j-k\varpi}\,\Pi^-_k(j)$, $k\ge0$ (so $G^+_0=T_j$ and $G^-_0=T'_j$);
+\item for $1\le m\le e-t-1$, a module $N_m$ on two generators $a=v_{-m-t}$ (degree $m+t$) and $b=v_{e-m}$ (degree $e-m$) with the relations
+\begin{gather*}
+\theta^{-m}(\alpha)\,a+\kappa_m\,b=0,\qquad\pi_{e-t-m}\,a+\theta^{e-t-m}(\beta)\,b=0,\\
+G^-_k(-m-t)\,a=0,\qquad G^+_k(e-m)\,b=0\quad(k\ge0).
+\end{gather*}
+\end{itemize}
+[D]
+\end{proposition}
+\begin{proof}
+The relations link $v_j$ and $v_{j+\varpi}$ only, so $M$ is the direct sum over the classes of $j$ modulo $\varpi$. $R1(n)$ is $v_{n+e}=-\zeta^+(n-t)v_{n-t}$; it expresses every $v_j$ with $j\ge e$ through $v_{j-\varpi}$, and $j-\varpi\ge-t$. Repeating, for $j=j_0+k\varpi$ with $-t\le j_0<e$ and $k\ge1$, $v_j=(-1)^k\Pi^+_k(j_0)v_{j_0}$; each $R1(n)$ is used once, for the generator $v_{n+e}$. In the same way $R3(m)$ is $v_{-m-e}=-\zeta^-(t-m)v_{t-m}$, and for $i=i_0-k\varpi$ with $-e<i_0\le t$ and $k\ge1$, $v_i=(-1)^k\Pi^-_k(i_0)v_{i_0}$. So $M$ is the quotient of the free module on the $v_j$ with $|j|<e$ by the relations $R2$ and $R4$ after substitution.
+
+In $R4(n)$ put $j=n-e>-e$. If $j<-t$, then $j+\varpi$ lies between $t+1$ and $e-1$, both generators remain, and with $j=-m-t$ the relation is $\pi_{e-t-m}v_{-m-t}+\theta^{e-t-m}(\beta)v_{e-m}$ (here $n=e-t-m\le e$). If $j\ge-t$, write $j=j_0+k\varpi$ with $-t\le j_0<e$ and $k\ge0$; the relation becomes $(-1)^k\bigl(a_g(n)-\theta^n(\beta)\zeta^+(j)\bigr)\Pi^+_k(j_0)v_{j_0}=(-1)^kT_j\Pi^+_k(j_0)v_{j_0}=(-1)^kG^+_k(j_0)v_{j_0}$. In $R2(m)$ put $i=e-m<e$. If $i>t$, then $i-\varpi$ lies between $-e+1$ and $-t-1$, both generators remain and the relation is $\kappa_mv_{e-m}+\theta^{-m}(\alpha)v_{-m-t}$. If $i\le t$, write $i=i_0-k\varpi$ with $-e<i_0\le t$; the relation becomes $(-1)^kT'_i\Pi^-_k(i_0)v_{i_0}=(-1)^kG^-_k(i_0)v_{i_0}$. The indices $j_0$ with $-t\le j_0\le t$ carry both kinds of relations and no other generator of their class remains; the indices between $t+1$ and $e-1$ are paired with those between $-e+1$ and $-t-1$.
+\end{proof}
+
+
+\begin{lemma}[The forms]\label{lem:exptforms}
+(i) $T_j=-a_f(j+t)\,\theta^{j+t}(\Delta)$ for $j\ge-t$, and $T'_i=-b_g(t-i)\,\theta^{i-e}(\Delta)$ for $i\le t$.
+
+(ii) For $i\ge-t$: $T_{i+\varpi}\,\zeta^+(i)=-\theta^{i+t}(X'\alpha)\,a_f(i+t)$. For $i\le t$: $T'_{i-\varpi}\,\zeta^-(i)=-\theta^{i-e}\bigl(X\,\theta^{e-t}(\beta)\bigr)\,b_g(t-i)$.
+
+(iii) For $-t\le j\le0$: $\theta^{-(j+t)}(T_j)=-\kappa_{j+t}\,\Delta$ and $\theta^{-(j+t)}(T'_j)=-X$. For $0\le j\le t$: $\theta^{e-j}(T'_j)=-\theta^{e-t}(\pi_{t-j})\,\Delta$ and $\theta^{e-j}(T_j)=-X'$.
+
+(iv) For $1\le m\le e-t-1$: $\theta^m(T'_{-m-t})=-X$ and $\theta^m(T_{e-m})=-X'$. [D]
+\end{lemma}
+\begin{proof}
+(i) Let $j\ge0$. Then $a_g(j+e)=\theta^j(\pi_e)$ and $a_f(j+t)=\theta^j(\pi_t)$, and $\alpha\theta^{e-t}(\beta)=\Delta+\pi_{e-t}$, so
+\[
+T_j=\theta^j\bigl(\pi_e-\pi_t\theta^t(\Delta+\pi_{e-t})\bigr)=-\theta^j(\pi_t)\,\theta^{j+t}(\Delta),
+\]
+because $\pi_t\theta^t(\pi_{e-t})=\pi_e$. Let $-t\le j\le0$. Then $a_g(j+e)=\pi_{j+e}$, $a_f(j+t)=\pi_{j+t}$, and $\theta^{j+t}(\Delta)=\theta^{j+t}(\alpha)\theta^{j+e}(\beta)-\theta^{j+t}(\pi_{e-t})$, so $T_j=\pi_{j+e}-\pi_{j+t}\theta^{j+t}(\pi_{e-t})-\pi_{j+t}\theta^{j+t}(\Delta)=-\pi_{j+t}\theta^{j+t}(\Delta)$. For $T'_i$: $\theta^{i-e}(\Delta)=\theta^{i-e}(\alpha)\theta^{i-t}(\beta)-\theta^{i-e}(\pi_{e-t})$. For $i\le0$, $b_f(e-i)=\theta^{i}(\kappa_e)$ and $b_g(t-i)=\theta^{i}(\kappa_t)$, and $\kappa_t\,\theta^{-e}(\pi_{e-t})=\kappa_e$ (the factors $\xi-lz$, $t<l\le e$), so $T'_i=\theta^{i}\bigl(\kappa_e-\kappa_t\theta^{-e}(\alpha)\theta^{-t}(\beta)\bigr)=-\theta^{i}(\kappa_t)\,\theta^{i-e}(\Delta)$. For $0\le i\le t$, $b_f(e-i)=\kappa_{e-i}$, $b_g(t-i)=\kappa_{t-i}$ and $\kappa_{t-i}\,\theta^{i-e}(\pi_{e-t})=\kappa_{e-i}$, so $T'_i=-\kappa_{t-i}\theta^{i-e}(\Delta)$.
+
+(ii) For $i\ge-t$ we have $i+\varpi\ge0$, so by (i) $T_{i+\varpi}=-\theta^{i+\varpi}(\pi_t)\,\theta^{i+\varpi+t}(\Delta)$, and $\theta^{i+t}(X'\alpha)=\theta^{i+\varpi}(\pi_t)\,\theta^{i+t+\varpi}(\Delta)\,\theta^{i+t}(\alpha)$; multiply by $a_f(i+t)$. For $i\le t$ we have $i-\varpi\le0$, so $T'_{i-\varpi}=-\theta^{i-\varpi}(\kappa_t)\,\theta^{i-\varpi-e}(\Delta)$, and $\theta^{i-e}\bigl(X\theta^{e-t}(\beta)\bigr)=\theta^{i-\varpi}(\kappa_t)\,\theta^{i-e-\varpi}(\Delta)\,\theta^{i-t}(\beta)$; multiply by $b_g(t-i)$.
+
+(iii) and (iv) follow from (i): $\theta^{-(j+t)}(\pi_{j+t})=\kappa_{j+t}$; $\theta^{-(j+t)}\theta^{j}(\kappa_t)=\Lambda$ and $\theta^{-(j+t)}\theta^{j-e}=\theta^{-\varpi}$; $\theta^{e-j}\theta^{j}(\pi_t)=\Lambda'$ and $\theta^{e-j}\theta^{j+t}=\theta^{\varpi}$; $\theta^{e-j}(\kappa_{t-j})=(\xi+(e-t)z)\cdots(\xi+(e-j-1)z)=\theta^{e-t}(\pi_{t-j})$; $\theta^m\theta^{-m-t}(\kappa_t)=\Lambda$ and $\theta^m\theta^{-m-t-e}=\theta^{-\varpi}$; $\theta^m\theta^{e-m}(\pi_t)=\Lambda'$ and $\theta^m\theta^{e-m+t}=\theta^{\varpi}$.
+\end{proof}
+
+\begin{proposition}[The cyclic summands]\label{prop:exptcyclic}
+Assume (C0).
+
+(a) For $-t\le j\le t$ the forms $T_j$ and $T'_j$ are coprime, of degrees $e-\max(0,-j)$ and $e-\max(0,j)$. So $M_{(j)}$ has finite length at most $e(e-|j|)$, its Hilbert function is at most the one of a complete intersection of these degrees, and equality holds (for the length, or for the function) exactly when $J_j=(T_j,T'_j)$.
+
+(b) If $M_{(-t)}$ has length $e(e-t)$, then (F1) holds. If $M_{(t)}$ has length $e(e-t)$, then (F2) holds.
+
+(c) If (F1) and (F2) hold, then $J_j=(T_j,T'_j)$ for every $j$, and the Hilbert series of $M_{(j)}$ is
+\[
+q^{|j|}\,\frac{(1-q^{2(e-|j|)})(1-q^{2e})}{(1-q^2)^2}.\quad[\mathrm D]
+\]
+\end{proposition}
+\begin{proof}
+(a) By Lemma~\ref{lem:exptforms}(iii), an automorphism of $R$ carries $(T_j,T'_j)$ to $(\kappa_{j+t}\Delta,X)$ for $j\le0$ and to $(\theta^{e-t}(\pi_{t-j})\Delta,X')$ for $j\ge0$. The variable $z$ divides none of the four factors. $\Delta$ is coprime to $X=\Lambda\theta^{-\varpi}(\Delta)$ by (C0). $\kappa_{j+t}$ divides $\kappa_t$, whose factors are the $\xi-iz$ with $1\le i\le t$; they are coprime to $\Lambda$ (factors $\xi-lz$, $t<l\le2t$) because $p$ divides none of $1,\dots,2t-1$, and $\kappa_t$ is coprime to $\theta^{-\varpi}(\Delta)$ because $\theta^{\varpi}(\kappa_t)=\Lambda'$ is coprime to $\Delta$. For $j\ge0$: $\Delta$ is coprime to $X'$; $\theta^{e-t}(\pi_t)$ has the factors $\xi+iz$, $e-t\le i\le e-1$, coprime to $\Lambda'$ (factors $\xi+lz$, $e\le l\le e+t-1$) for the same reason, and coprime to $\theta^{\varpi}(\Delta)$ because $\theta^{-\varpi}\theta^{e-t}(\pi_t)=\theta^{-2t}(\pi_t)=\Lambda$ is coprime to $\Delta$. The degrees are those of $a_f(j+t)$ and $b_g(t-j)$ plus $2s$. A quotient of a complete intersection of finite length by a larger ideal is shorter.
+
+(b) For $j=-t$: $T_{-t}=-\Delta$, $T'_{-t}=-X$, and by Lemma~\ref{lem:exptforms}(ii) with $i=-t$, $G^+_1(-t)=-X'\alpha$. If the length is $e(e-t)$ then $J_{-t}=(\Delta,X)$ by (a), so $X'\alpha=cX+\varrho\Delta$ with forms $c,\varrho$; taking the homogeneous parts, $c$ lies in $R_s$. For $j=t$: $T'_t=-\theta^{-(e-t)}(\Delta)$, $T_t=-\theta^t(\pi_t)\theta^{2t}(\Delta)$, and by Lemma~\ref{lem:exptforms}(ii) with $i=t$, $G^-_1(t)=-\theta^{-(e-t)}\bigl(X\theta^{e-t}(\beta)\bigr)$. Applying $\theta^{e-t}$ to $J_t=(T_t,T'_t)$ gives $(X',\Delta)$, which then contains $X\theta^{e-t}(\beta)$.
+
+(c) Write (F1) as $X'\alpha=cX+\varrho\Delta$. By Lemma~\ref{lem:exptforms}(i) and (ii), for $i\ge-t$,
+\begin{equation}\label{eq:exptA}
+T_{i+\varpi}\,\zeta^+(i)=-\theta^{i+t}(c)\,\theta^{i+t}(X)\,a_f(i+t)+\theta^{i+t}(\varrho)\,T_i.
+\end{equation}
+Let $-t\le j\le t$. We show by induction on $k\ge1$ that $G^+_k(j)$ lies in $(T_j,T'_j)$. For $k=1$ take $i=j$ in \eqref{eq:exptA}: $\theta^{j+t}(X)=\theta^j(\kappa_t)\theta^{j-e}(\Delta)$; for $j\le0$ this is $-T'_j$, and for $j>0$ it is a multiple of $T'_j=-\kappa_{t-j}\theta^{j-e}(\Delta)$, because $\theta^j(\kappa_t)$ has the factors $\xi-lz$, $1-j\le l\le t-j$. For $k\ge2$ put $i=j+(k-1)\varpi$ and $i''=j+(k-2)\varpi$. Then $G^+_k(j)=T_{i+\varpi}\zeta^+(i)\Pi^+_{k-1}(j)$, the second term of \eqref{eq:exptA} gives $\theta^{i+t}(\varrho)G^+_{k-1}(j)$, and in the first term $\theta^{i+t}(X)$ is a multiple of $\theta^{i+t-\varpi}(\Delta)=\theta^{i''+t}(\Delta)$ while $\Pi^+_{k-1}(j)=\Pi^+_{k-2}(j)\zeta^+(i'')$ is a multiple of $\Pi^+_{k-2}(j)a_f(i''+t)$; their product is a multiple of $T_{i''}\Pi^+_{k-2}(j)=G^+_{k-2}(j)$. Symmetrically, write (F2) as $X\theta^{e-t}(\beta)=c'X'+\varrho'\Delta$; for $i\le t$,
+\begin{equation}\label{eq:exptB}
+T'_{i-\varpi}\,\zeta^-(i)=-\theta^{i-e}(c')\,\theta^{i-e}(X')\,b_g(t-i)+\theta^{i-e}(\varrho')\,T'_i,
+\end{equation}
+and $\theta^{j-e}(X')=\theta^j(\pi_t)\theta^{j+t}(\Delta)$, which is $-T_j$ for $j\ge0$ and a multiple of $T_j=-\pi_{j+t}\theta^{j+t}(\Delta)$ for $j<0$ ($\theta^j(\pi_t)$ has the factors $\xi+iz$, $j\le i\le j+t-1$); the induction for $G^-_k(j)$ is the same with $i=j-(k-1)\varpi$ and $i''=j-(k-2)\varpi$. So $J_j=(T_j,T'_j)$, and the series is that of a complete intersection of two forms of degrees $2(e-|j|)$ and $2e$ in two variables of degree $2$, generated in degree $|j|$.
+\end{proof}
+
+\begin{remark}[The condition on $p$ is necessary]\label{rem:exptp}
+The proof of Proposition~\ref{prop:exptcyclic}(c) uses (F1) and (F2) only. So if $0<p<2t$ and (F1), (F2) hold, then $J_0=(T_0,T'_0)$, which $\theta^{-t}$ carries to $(\kappa_t\Delta,\Lambda\theta^{-\varpi}(\Delta))$ by Lemma~\ref{lem:exptforms}(iii); $p$ divides one of the integers $1,\dots,2t-1$, so $\kappa_t$ (factors $\xi-iz$, $1\le i\le t$) and $\Lambda$ (factors $\xi-lz$, $t<l\le2t$) have a common factor, and $M_{(0)}$, hence $M$, has infinite length. [D]
+\end{remark}
+
+
+\paragraph{The summands on two generators.} For an automorphism $\phi$ of $R$ and an $R$-module presented by a matrix, applying $\phi$ to the entries of the matrix gives a module with the same Hilbert function ($\phi$ on the coordinates is a bijection of graded vector spaces that carries one module of relations onto the other). Apply $\theta^m$ to the presentation of $N_m$ in Proposition~\ref{prop:exptsplit}. With $\theta^m(\kappa_m)=\pi_m$ and Lemma~\ref{lem:exptforms}(iv), the result is the module $N'_m$ on $a,b$ (degrees $m+t$ and $e-m$) with the relations
+\begin{gather*}
+\chi_1=\alpha\,a+\pi_m\,b,\qquad\chi_2=\theta^m(\pi_{e-t-m})\,a+\theta^{e-t}(\beta)\,b,\\
+Xa,\qquad X'b,\qquad\theta^m\bigl(G^-_k(-m-t)\bigr)a,\qquad\theta^m\bigl(G^+_k(e-m)\bigr)b\quad(k\ge1).
+\end{gather*}
+Let $E_m$ be the module on $a,b$ with the relations $\chi_1,\chi_2$ alone. The determinant of $(\chi_1,\chi_2)$ is $\alpha\theta^{e-t}(\beta)-\pi_m\theta^m(\pi_{e-t-m})=\Delta$, not zero, so $\chi_1$ and $\chi_2$ are independent, $\Delta$ annihilates $E_m$, and the Hilbert series of $E_m$ is
+\[
+H_E(q)=\frac{q^{m+t}+q^{e-m}-q^{e+m}-q^{2e-t-m}}{(1-q^2)^2}
+\]
+($\chi_1$ has degree $e+m$ and $\chi_2$ degree $2e-t-m$).
+
+\begin{proposition}[The summands on two generators]\label{prop:expttwo}
+Assume that $z$ does not divide $\Delta$, that $\Delta$ is coprime to $X$ and to $X'$, and (F1), (F2), (F3). Then for $1\le m\le e-t-1$ the Hilbert series of $N_m$ is $(1-q^{2e})H_E(q)$; in particular $N_m$ has length $e(e-t)$. [D]
+\end{proposition}
+\begin{proof}
+\emph{Step 1: $N'_m=E_m/(RXa+RX'b)$.} By \eqref{eq:exptA} with $i=e-m$ and Lemma~\ref{lem:exptforms}(iv),
+\[
+\theta^m\bigl(G^+_1(e-m)\bigr)=-\theta^{\varpi}(c)\,\theta^{\varpi}(X)\,\theta^m\bigl(a_f(e-m+t)\bigr)-\theta^{\varpi}(\varrho)\,X',
+\]
+and $\theta^\varpi(X)=\theta^\varpi(\Lambda)\Delta$ annihilates $E_m$; so $\theta^m(G^+_1(e-m))\,b$ lies in $RX'b$. For $k\ge2$, with $i=e-m+(k-1)\varpi$ and $i''=e-m+(k-2)\varpi$, $G^+_k(e-m)=T_{i+\varpi}\zeta^+(i)\Pi^+_{k-1}(e-m)$; by \eqref{eq:exptA} it is $\theta^{i+t}(\varrho)G^+_{k-1}(e-m)$ plus a multiple of $\theta^{i''+t}(\Delta)a_f(i''+t)\Pi^+_{k-2}(e-m)=-G^+_{k-2}(e-m)$, so by induction $\theta^m(G^+_k(e-m))\,b$ lies in $RX'b$ (for $k=2$ the second term is a multiple of $\theta^m(T_{e-m})=-X'$). The same argument with \eqref{eq:exptB} shows that $\theta^m(G^-_k(-m-t))\,a$ lies in $RXa$.
+
+\emph{Step 2: the relations between $\bar a=Xa$ and $\bar b=X'b$ in $E_m$.} A pair $(r_1,r_2)\in R^2$ satisfies $r_1\bar a+r_2\bar b=0$ in $E_m$ exactly when $(r_1X,r_2X')=\lambda_1\chi_1+\lambda_2\chi_2$ with $\lambda_1,\lambda_2\in R$ (the coefficient vectors on $a,b$). Solving by Cramer's rule,
+\[
+\lambda_1=\frac{r_1X\,\theta^{e-t}(\beta)-r_2X'\,\theta^m(\pi_{e-t-m})}{\Delta},\qquad
+\lambda_2=\frac{r_2X'\alpha-r_1X\pi_m}{\Delta}.
+\]
+Modulo $\Delta$ the two numerators are $X'\bigl(r_1c'-r_2\theta^m(\pi_{e-t-m})\bigr)$ by (F2) and $X(r_2c-r_1\pi_m)$ by (F1), and $X$, $X'$ are coprime to $\Delta$. So $(r_1,r_2)$ is a relation exactly when $\Delta$ divides both entries of $(r_1,r_2)\Psi$, where
+\[
+\Psi=\begin{pmatrix}c'&-\pi_m\\-\theta^m(\pi_{e-t-m})&c\end{pmatrix},\qquad\det\Psi=cc'-\pi_m\theta^m(\pi_{e-t-m})=cc'-\pi_{e-t}=\varkappa\Delta.
+\]
+Since $\varkappa\ne0$, $(r_1,r_2)\Psi=\Delta(r_1',r_2')$ is equivalent to $(r_1,r_2)=\varkappa^{-1}(r_1',r_2')\operatorname{adj}(\Psi)$, with $\operatorname{adj}(\Psi)=\begin{pmatrix}c&\pi_m\\\theta^m(\pi_{e-t-m})&c'\end{pmatrix}$. So the module of relations between $\bar a$ and $\bar b$ is free on
+\[
+(c,\pi_m)\qquad\text{and}\qquad(\theta^m(\pi_{e-t-m}),c'),
+\]
+of degrees $2e+(e+m)$ and $2e+(2e-t-m)$ ($\bar a$ and $\bar b$ have degrees $2e+m+t$ and $2e+e-m$).
+
+\emph{Step 3.} By step 2 the submodule $R\bar a+R\bar b$ of $E_m$ has the Hilbert series $q^{2e}H_E(q)$, and by step 1 the series of $N'_m$ is $H_E(q)-q^{2e}H_E(q)$. Its value at $q=1$ is the length: with $\mathcal N(q)=q^{m+t}+q^{e-m}-q^{e+m}-q^{2e-t-m}$ one has $\mathcal N(1)=0$ and $\mathcal N'(1)=-4s$, so the series $(1-q^{2e})\mathcal N(q)/(1-q^2)^2$ tends to $2e\cdot4s/4=e(e-t)$.
+\end{proof}
+
+\begin{remark}[The case $\varkappa=0$]\label{rem:exptmu}
+If $\varkappa=0$ the matrix $\Psi$ is singular and step 2 does not apply; then $cc'=\pi_{e-t}$, so $c$ is a scalar multiple of a product of $s$ of the factors $\ell_i=\xi+iz$, $0\le i\le e-t-1$. Observed (the computations of Section~\ref{sec:validation} and the checks made independently of them): $N_m$ is longer than $e(e-t)$ unless $c$ is a multiple of $\theta^s(\pi_s)=\ell_s\ell_{s+1}\cdots\ell_{2s-1}$; in that case $M$ has the pure Hilbert function and its Betti table is not pure (at $(e,p,t)=(6,7,2)$ and $(6,11,4)$, every member computed) [U as archived evidence]. So (F3) is not needed for the Hilbert function in that one case, and it is needed for the Betti table. This is an observation, not a proved statement.
+\end{remark}
+
+\setcounter{thmletter}{12}
+\begin{thmletter}[The pure Hilbert function]\label{thm:expthf}
+Let $\alpha,\beta$ be forms of degree $s=(e-t)/2$ in $R$ with (C0), (F1), (F2) and (F3). Then $M=U/\bigl(U(x^e+\alpha y^t)+U(y^e+\beta x^t)\bigr)$ has finite length $e^3$ and the Hilbert series
+\[
+\frac{(1-q^e)^2(1-q^{2e})}{(1-q)^2(1-q^2)},
+\]
+the one of the pure Betti table $(1,2,2,1)$ on $(0,e,3e,4e)$. [D]
+\end{thmletter}
+\begin{proof}
+By Propositions~\ref{prop:exptsplit}, \ref{prop:exptcyclic}(c) and~\ref{prop:expttwo} the series of $M$ is $(1-q^{2e})/(1-q^2)^2$ times
+\[
+\sum_{-t\le j\le t}\bigl(q^{|j|}-q^{2e-|j|}\bigr)\;+\;\sum_{m=1}^{e-t-1}\bigl(q^{m+t}+q^{e-m}-q^{e+m}-q^{2e-t-m}\bigr).
+\]
+In the second sum, $q^{m+t}$ and $q^{e-m}$ each run once over the exponents $t+1,\dots,e-1$, and $q^{e+m}$, $q^{2e-t-m}$ each once over $e+1,\dots,2e-t-1$. With the first sum this is
+\[
+1+2(q+\cdots+q^{e-1})-2(q^{e+1}+\cdots+q^{2e-1})-q^{2e}=(1-q^e)(1+2q+\cdots+2q^{e-1}+q^e)=(1-q^e)^2\,\frac{1+q}{1-q},
+\]
+and $(1-q^{2e})(1-q^e)^2(1+q)/\bigl((1-q^2)^2(1-q)\bigr)$ is the series stated. Its value at $q=1$ is $e^3$.
+\end{proof}
+
+\begin{corollary}[The filter]\label{cor:exptfilter}
+Over a field of odd characteristic $p$, a member $(\alpha,\beta)$ of the family with exponent $t$ that passes the tests (F0) to (F3) of Section~\ref{sec:resfilter} (with $z$ kept) has the pure Hilbert function, provided $2t\le p-1$. In characteristic $0$ the same holds for every $t$. [D]
+\end{corollary}
+\begin{proof}
+For odd $p$, $p\ge2t$ is the same as $2t\le p-1$ ($2t$ is even), so (F0) and the condition on $p$ are (C0); apply Theorem~\ref{thm:expthf}. In characteristic $0$ the condition on $p$ is empty.
+\end{proof}
+
+\begin{corollary}[The Betti table, conditional]\label{cor:exptsocle}
+Under the hypotheses of Theorem~\ref{thm:expthf}, $M$ has the pure Betti table $(1,2,2,1)$ on $(0,e,3e,4e)$ if and only if its socle $\{u:xu=yu=zu=0\}$ has dimension one. [D]
+\end{corollary}
+\begin{proof}
+As in the proof of Theorem~\ref{thm:betti}: $\Tor_3(k,M)$ is the socle of $M$ shifted by $4$ (the Chevalley--Eilenberg complex), $\Tor_0$ is $k$ in degree $0$ and $\Tor_1$ is two-dimensional in degree $e$ ($f$ and $g$ are independent of degree $e$), and the alternating sum of the graded Betti numbers is $1-2q^e+2q^{3e}-q^{4e}$ by Theorem~\ref{thm:expthf}, and $\Tor_i=0$ for $i\ge4$ (the Chevalley--Eilenberg resolution of $k$ has length $3$). The top degree $4e-4$ of $M$ lies in the socle and has dimension one. If the socle has dimension one, $\Tor_3$ is $k$ in degree $4e$ and the alternating sum leaves $\Tor_2=k^2$ in degree $3e$. Conversely the pure table has $\Tor_3$ of dimension one.
+\end{proof}
+
+\begin{corollary}[The linear family]\label{cor:exptlinear}
+For $t=e-2$ ($s=1$; $f=x^e+\alpha y^{e-2}$, $g=y^e+\beta x^{e-2}$ with $\alpha,\beta$ linear forms) the conditions (F1) and (F2) hold whenever $z$ does not divide $\Delta$ and $\Delta$ is coprime to $X$ and $X'$: the quotient $R/(\Delta,X)$ is a complete intersection of degrees $2$ and $e$ and vanishes in degree $e+1$. So a member with (C0) and $\varkappa\ne0$ has the pure Hilbert function; (C0) asks $p=0$ or $p\ge2e-4$, that is $2e-p\le3$ for an odd prime $p<2e$. [D]
+\end{corollary}
+
+This is, for the Hilbert function, the half of the rule of the stratum of the linear family (Section~\ref{sec:reslinrule}) that Corollary~\ref{cor:linstratum} does not give: what remains for the rule itself is a member with (C0) and $\varkappa\ne0$ over $\F_p$ for every $e$ and $p=2e-3$ and $p=2e-1$ (found in every case computed), and the socle.
+
+
+\paragraph{The socle and the Betti table, under one more coprimality.} Throughout the rest of this subsection (C0), (F1), (F2), (F3) hold. For $0\le m\le e-t$ let $N'_m$ be the module on two generators $a,b$ with the relations
+\begin{gather*}
+\chi_1=\alpha\,a+\pi_m\,b,\qquad\chi_2=\theta^m(\pi_{e-t-m})\,a+\theta^{e-t}(\beta)\,b,\\
+Xa,\qquad X'b.
+\end{gather*}
+For $1\le m\le e-t-1$ this is the module of step 1 of Proposition~\ref{prop:expttwo}. For $m=0$, $\chi_1$ gives $b=-\alpha a$ and $N'_0=R/(\Delta,X,X'\alpha)=R/(\Delta,X)$, which is $M_{(-t)}$ (generators $a=v_{-t}$, $b=v_e$). For $m=e-t$, $\chi_2$ gives $a=-\theta^{e-t}(\beta)b$ and $N'_{e-t}=R/(\Delta,X',X\theta^{e-t}(\beta))=R/(\Delta,X')$, which is $M_{(t)}$ with its presentation twisted by $\theta^{e-t}$ (generators $a=v_{-e}$, $b=v_t$). So in every case $N'_m$ is the summand of $M$ that contains $v_{-m-t}$ and $v_{e-m}$, with the coordinates $r_1v_{-m-t}+r_2v_{e-m}$ replaced by $(\theta^m(r_1),\theta^m(r_2))$.
+
+\begin{lemma}[$x$ and $y$ along the chain]\label{lem:exptchain}
+In these coordinates the multiplication by $x$ from the summand of $v_{-m-t}$, $v_{e-m}$ to the summand of $v_{-m-t+1}$, $v_{e-m+1}$ is, for $1\le m\le e-t$, the $R$-linear map
+\[
+\mathsf X_m:N'_m\to N'_{m-1},\qquad a\mapsto\ell_{m-1}\,a,\quad b\mapsto b,
+\]
+and the multiplication by $y$ is, for $0\le m\le e-t-1$, the $R$-linear map
+\[
+\mathsf Y_m:N'_m\to N'_{m+1},\qquad a\mapsto a,\quad b\mapsto\ell_m\,b.\quad[\mathrm D]
+\]
+\end{lemma}
+\begin{proof}
+$xv_j=\xi\,v_{j+1}$ for $j<0$ and $xv_j=v_{j+1}$ for $j\ge0$ ($xy^n=\xi y^{n-1}$), and $x(rv)=\theta(r)\,xv$; so $r_1v_{-m-t}+r_2v_{e-m}$ goes to $\theta(r_1)\xi\,v_{-m-t+1}+\theta(r_2)\,v_{e-m+1}$, and in the coordinates of $N'_{m-1}$ this is $\bigl(\theta^{m-1}(\theta(r_1)\xi),\theta^m(r_2)\bigr)=\bigl(\ell_{m-1}\theta^m(r_1),\theta^m(r_2)\bigr)$. $yv_j=v_{j-1}$ for $j\le0$ and $yv_j=(\xi-z)\,v_{j-1}$ for $j>0$ ($yx^n=(\xi-z)x^{n-1}$), and $y(rv)=\theta^{-1}(r)\,yv$; so the element goes to $\theta^{-1}(r_1)\,v_{-m-t-1}+\theta^{-1}(r_2)(\xi-z)\,v_{e-m-1}$, which in the coordinates of $N'_{m+1}$ is $\bigl(\theta^m(r_1),\theta^m(r_2)\theta^{m+1}(\xi-z)\bigr)=\bigl(\theta^m(r_1),\ell_m\theta^m(r_2)\bigr)$.
+\end{proof}
+
+\begin{lemma}[Ideals]\label{lem:exptideals}
+Assume (C1). Let $\bar R=R/(\Delta)$, and for $0\le m\le e-t$ let $I_m=(\pi_m,\alpha)\bar R$ and $K_m=(\pi_m,c)\bar R$. Then $a\mapsto-\pi_m$, $b\mapsto\alpha$ induces an isomorphism of $N'_m$ with $I_m/(XK_m)$; under it $\mathsf X_m$ is the map induced by the inclusion of $I_m$ in $I_{m-1}$, and $\mathsf Y_m$ is the multiplication by $\ell_m$ from $I_m/(XK_m)$ to $I_{m+1}/(XK_{m+1})$. [D]
+\end{lemma}
+\begin{proof}
+The map $\vartheta_m$ from the module $E_m$ on $a,b$ with the relations $\chi_1,\chi_2$ to $\bar R$, $a\mapsto-\pi_m$, $b\mapsto\alpha$, is well defined ($\chi_1$ goes to $0$ and $\chi_2$ to $\Delta$) with image $I_m$. It is injective: if $-u\pi_m+v\alpha=\lambda\Delta$, subtract $\lambda\chi_2$, which satisfies the same equation; then $v'\alpha=u'\pi_m$ for the coefficients $(u',v')$ so obtained, and $\pi_m$ and $\alpha$ are coprime (a common factor $\ell_i$ would divide $\pi_{e-t}$ and $\alpha\theta^{e-t}(\beta)-\pi_{e-t}=\Delta$, against (C1)), so $(u',v')$ is a multiple of $(\alpha,\pi_m)$, that is, of $\chi_1$. $\vartheta_m$ sends $Xa$ to $-X\pi_m$ and $X'b$ to $X'\alpha=cX$ in $\bar R$, so the submodule generated by $Xa$ and $X'b$ goes onto $XK_m$. Finally $\vartheta_{m-1}(\mathsf X_m(a))=-\ell_{m-1}\pi_{m-1}=-\pi_m=\vartheta_m(a)$ and $\vartheta_{m-1}(\mathsf X_m(b))=\alpha=\vartheta_m(b)$; $\vartheta_{m+1}(\mathsf Y_m(a))=-\pi_{m+1}=\ell_m\vartheta_m(a)$ and $\vartheta_{m+1}(\mathsf Y_m(b))=\ell_m\alpha=\ell_m\vartheta_m(b)$.
+\end{proof}
+
+\begin{proposition}[Kernels]\label{prop:exptkernels}
+Assume (C1). For $1\le m\le e-t-1$ the kernels of $\mathsf X_m$ and $\mathsf Y_m$ meet in $0$. [D]
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:exptideals} an element of the kernel of $\mathsf X_m$ is the class of $u=Xk$ with $k\in K_{m-1}$, and $\mathsf Y_m(u)=0$ means $\ell_mXk\in XK_{m+1}$. $X$ is not a zero divisor of $\bar R$ ($\Delta$ is coprime to $X$), so $\ell_mk$ lies in $K_{m+1}$, that is, in $R$, in $(\pi_{m+1},c,\Delta)=(\pi_{m+1},c)$: $\Delta=(cc'-\pi_{e-t})/\varkappa$ and $\pi_{m+1}$ divides $\pi_{e-t}$. Write $k=g_1\pi_{m-1}+g_2c$. Then $g_1\ell_m\pi_{m-1}$ lies in $(\ell_{m-1}\ell_m\pi_{m-1},c)$. The forms $\ell_m\pi_{m-1}$ and $c$ are coprime (a common factor $\ell_i$ would divide $\pi_{e-t}$ and $cc'-\pi_{e-t}=\varkappa\Delta$, against (C1)), so writing $g_1\ell_m\pi_{m-1}=w_1\ell_{m-1}\ell_m\pi_{m-1}+w_2c$ one finds that $\ell_m\pi_{m-1}$ divides $w_2$, hence $g_1=w_1\ell_{m-1}+w_2'c$ lies in $(\ell_{m-1},c)$, $g_1\pi_{m-1}$ lies in $(\pi_m,c)$ and $k$ lies in $K_m$: the class of $u$ is $0$.
+\end{proof}
+
+\setcounter{thmletter}{13}
+\begin{thmletter}[The pure Betti table]\label{thm:exptpure}
+Let $\alpha,\beta$ be forms of degree $s$ in $R$ with (C0), (C1), (F1), (F2) and (F3). Then the socle of $M$ has dimension one, and $M$ has the pure Betti table $(1,2,2,1)$ on $(0,e,3e,4e)$. [D]
+\end{thmletter}
+\begin{proof}
+An element killed by $x$ and $y$ is killed by $z=xy-yx$, so the socle is the intersection of the kernels of $x$ and $y$. $x$ and $y$ carry each summand of Proposition~\ref{prop:exptsplit} into another one, so the socle is the sum of its parts in the summands.
+
+(i) $-t\le j\le-1$: $x$ is injective on $M_{(j)}$. Here $x(rv_j)=\theta(r)\xi\,v_{j+1}$ for $r\in R$, and by Lemma~\ref{lem:exptforms}(i) $T_{j+1}=\xi\,\theta(T_j)$ ($\pi_{j+1+t}=\xi\theta(\pi_{j+t})$) and $T'_{j+1}=\theta(T'_j)$, so by Proposition~\ref{prop:exptcyclic}(c) $J_{j+1}=(\xi\theta(T_j),\theta(T'_j))$. If $\theta(r)\xi=u_1\xi\theta(T_j)+u_2\theta(T'_j)$, then $\xi$ divides $u_2$ ($\xi$ divides $T_{j+1}$, which is coprime to $T'_{j+1}$), so $\theta(r)$ lies in $\theta(J_j)$ and $r$ in $J_j$.
+
+(ii) $1\le j\le t$: $y$ is injective on $M_{(j)}$. Here $y(rv_j)=\theta^{-1}(r)(\xi-z)\,v_{j-1}$, $T_{j-1}=\theta^{-1}(T_j)$ and $T'_{j-1}=(\xi-z)\theta^{-1}(T'_j)$ ($\kappa_{t-j+1}=(\xi-z)\theta^{-1}(\kappa_{t-j})$), and the same argument applies.
+
+(iii) $j=0$. $x(rv_0)=\theta(r)\,v_1$ and $J_1=(\theta(T_0),\theta(T'_0)/\xi)$ ($\theta(\kappa_t)=\xi\kappa_{t-1}$), so the kernel of $x$ on $M_{(0)}$ is $(T_0,T'_0/(\xi-z))/J_0$. $y(rv_0)=\theta^{-1}(r)\,v_{-1}$ and $J_{-1}=(\theta^{-1}(T_0)/(\xi-z),\theta^{-1}(T'_0))$ ($\theta^{-1}(\pi_t)=(\xi-z)\pi_{t-1}$), so the kernel of $y$ is $(T_0/\xi,T'_0)/J_0$. Put $\mathsf P=T_0/\xi$ and $\mathsf Q=T'_0/(\xi-z)$; they are coprime, and $\xi\mathsf P$, $(\xi-z)\mathsf Q$ are coprime. If $u_1\xi\mathsf P+u_2\mathsf Q=u_3\mathsf P+u_4(\xi-z)\mathsf Q$ then $(u_1\xi-u_3)\mathsf P=(u_4(\xi-z)-u_2)\mathsf Q$, so $u_1\xi-u_3=\lambda\mathsf Q$ and the element is $u_1\xi\mathsf P+u_4(\xi-z)\mathsf Q-\lambda\mathsf P\mathsf Q$: the intersection of the two kernels is generated by $\mathsf P\mathsf Q$ modulo $J_0=(\xi\mathsf P,(\xi-z)\mathsf Q)$. $\xi\mathsf P\mathsf Q$ and $(\xi-z)\mathsf P\mathsf Q$ lie in $J_0$, and $\mathsf P\mathsf Q$ does not: if $\mathsf P\mathsf Q=u_1\xi\mathsf P+u_2(\xi-z)\mathsf Q$ with forms $u_1,u_2$, then $\mathsf P(\mathsf Q-u_1\xi)=u_2(\xi-z)\mathsf Q$, so $\mathsf Q$ divides $u_1\xi$ and hence $u_1$ ($\xi$ divides $T_0$, which is coprime to $T'_0$); but $u_1$ has degree $e-2$ and $\mathsf Q$ has degree $e-1$, so $u_1=0$ and $\mathsf P=u_2(\xi-z)$, while $\xi-z$ divides $T'_0$, which is coprime to $T_0=\xi\mathsf P$. So this part of the socle is the line of $\mathsf P\mathsf Q$, in degree $2(2e-2)=4e-4$.
+
+(iv) The summands $N_m$, $1\le m\le e-t-1$, carry no socle, by Lemma~\ref{lem:exptchain} and Proposition~\ref{prop:exptkernels}.
+
+So the socle has dimension one, and Corollary~\ref{cor:exptsocle} gives the Betti table.
+\end{proof}
+\setcounter{thmletter}{8}
+
+\paragraph{What is proved and what is not.} Proved on paper [D]: the splitting of Proposition~\ref{prop:exptsplit}; the Hilbert function of $M$ under (C0), (F1), (F2), (F3) (Theorem~\ref{thm:expthf}), with the corollary for the filter of Section~\ref{sec:resfilter} when $2t\le p-1$ and the linear family ($t=e-2$); the necessity of $p\ge2t$ under (F1), (F2) (Remark~\ref{rem:exptp}); the infinite length of $M$ when $z$ divides $\Delta$ (by Lemma~\ref{lem:exptforms}(i) every generator of $J_{-t}$ is then a multiple of $z$); and the pure Betti table under (C1) in addition (Theorem~\ref{thm:exptpure}). The theorem allows $\alpha=\beta=0$ (the pair $x^e,y^e$): there (C0) and (F1) to (F3) hold with $\varkappa=1$ in the cases computed, $(e,p,t)=(7,101,3)$, $(6,101,2)$ and $(5,11,3)$, and $M$ has the pure Hilbert function and the pure Betti table, with (C1) failing; this is a check of the statements, not a further statement [U as archived evidence]. Not proved:
+\begin{itemize}
+\item The Betti table without (C1). In every case computed a member with (C0), (F1), (F2), (F3) has the pure table, with or without (C1) (Section~\ref{sec:validation}); Theorem~\ref{thm:exptpure} covers the members with (C1) only. When $\Delta$ and $\pi_{e-t}$ have a common factor the maps $\vartheta_m$ of Lemma~\ref{lem:exptideals} need not be injective and the argument of Proposition~\ref{prop:exptkernels} does not apply.
+\item The converse. Among the stored members with the pure Hilbert function and another Betti table, every one fails (F0) or (F3), and no member examined that satisfies (C0) and fails (F1) or (F2) has the pure Hilbert function (more than $100$ such members in the samples of Section~\ref{sec:validation}); but Proposition~\ref{prop:exptcyclic}(b) gives only that (F1) and (F2) are necessary for the two end summands to have their length, not that the Hilbert function of $M$ sees it (a longer summand $N_m$ could compensate in the length). [U as archived evidence]
+\item Members with $\Delta$ not coprime to $X$ or $X'$ are not covered, and pure Hilbert functions occur among them (the stored members with another table that fail (F0)).
+\item Existence: the theorem does not produce a member over a given field.
+\end{itemize}
+The Betti table with $\varkappa=0$ is the observation of Remark~\ref{rem:exptmu}. Theorem~\ref{thm:expthf} is a statement on the Hilbert function: without the socle it says nothing on the Betti table, and Corollary~\ref{cor:exptsocle} is where the socle enters.
+
 \subsection{Pairs with a central commutator: a criterion for purity}
 \label{sec:criterion}
 
@@ -2075,6 +2367,8 @@ Every load-bearing statement is checked along at least two routes that share no 
 \paragraph{The lists of forms.} Every one of the \nlstVerified{} listed forms checked in $U$ is pure with length $e^3$ in two instruments (Singular with Plural and the first instrument of the paper); the form of each of the \nlstEFourteenMembers{} pure members stored by \EXP{014} at the five pairs that the lists also cover lies in its list, so the lists are consistent with an independent search; for the first form of every list that is not empty, and for the second form at the pairs not settled before, a test of (C) by greatest common divisors, the congruence, a separate conversion of the polynomial and the Betti table by a second module construction were run without the routine of the computation, on $30$ forms at $21$ pairs, with no finding [U as archived evidence]. The theorem that the lists rest on (Theorem~\ref{thm:cong}) was checked independently on $87$ further forms [U as archived evidence].
 
 \paragraph{The strata with the largest exponent.} The five strata of family Z of \EXP{018}, where Corollary~\ref{cor:wzstrata} applies, were fixed before the run as a test of the corollary and hold no member with the pure Hilbert function among $50{,}000$ each; the $21$ members of the sample are pure in two instruments; and the first two pure members of each of the seven cases with a pure member were rebuilt from the stored coefficients with a separate parser, checked to lie in the stratum of their case and tabled by a second module construction ($14$ members, lengths $729$, $1331$, $2197$ and $2744$, no finding) [U as archived evidence].
+
+\paragraph{The pairs with the monomials $y^t$ and $x^t$.} The statements of Section~\ref{sec:expt} were checked by exact computation over $\F_p$ with $z=1$ and the degrees tracked, the Hilbert function of $M$ being computed in $U$ with the library of the paper. The scripts and logs are under the data root of the programme, not archived in the repository; the counts below are those of the logs and are not read by the script of the paper [U as archived evidence]. At the eight triples $(e,p,t)=(5,7,1)$, $(5,11,3)$, $(6,5,2)$, $(6,11,2)$, $(7,7,1)$, $(7,7,3)$, $(7,11,3)$, $(8,13,4)$, on $30$ or $40$ random members per case and further members that pass the filter ($388$ members in all, $6$ to $17$ of them passing per case): the identities of Lemma~\ref{lem:exptforms} hold on every member; the Hilbert function computed from the presentation of Proposition~\ref{prop:exptsplit} equals the one computed in $U$ on every member; Proposition~\ref{prop:exptcyclic}(a) holds on every member with (F0); ``all cyclic summands have their length exactly when (F1) and (F2) hold'' holds on every such member, with $J_j=(T_j,T'_j)$ under (F1) and (F2); the series of every $N_m$ of Proposition~\ref{prop:expttwo} and the pure Hilbert function hold on every member that passes the filter ($105$ members, of which $50$ have a common root of $\Delta$ and $\pi_{e-t}$, a case that the proof does not treat apart); and the identity of series of Theorem~\ref{thm:expthf} holds for $3\le e\le24$ and every admissible $t$. At the four triples $(6,5,2)$, $(6,11,2)$, $(7,7,1)$, $(7,7,3)$, with the members sorted by the first test they fail, a member that fails (F1) or (F2) has cyclic summands shorter than their length, and one that fails (F3) only has every cyclic summand of its length and summands $N_m$ that are longer (one exception, a member with $\varkappa=0$ and the pure Hilbert function); this is an observation at those four triples, and other behaviour was found at $(9,7,3)$ and $(8,101,4)$. At $(6,5,2)$, $(6,7,4)$, $(7,5,3)$, $(7,7,1)$, on $148$, $144$, $118$ and $120$ members examined, the Hilbert function from the presentation equals the one computed in $U$ on every member; at $(6,7,4)$, where $2t\ge p+1$, $38$ of the $144$ members pass (F0) to (F3) and none has the pure Hilbert function, as Remark~\ref{rem:exptp} proves, and at $(7,5,3)$ no member passes (F0) because $p$ divides $e+t$, so that case says nothing on the condition on $p$. On the members stored by \EXP{010}, \EXP{014}, \EXP{015} and \EXP{018}, the filter is passed by $317$ pure members and failed by $128$ members with the pure Hilbert function and another table ($108$ at (F0), $20$ at (F3)); of the $317$, $229$ satisfy (C1) and $88$ do not (the arithmetic of the logs was checked; the classification of the stored members was not rerun). The Betti table, computed with the library of the paper on members that pass the filter at $(5,7,1)$, $(5,11,3)$, $(6,5,2)$, $(6,11,2)$, $(7,7,1)$, $(7,7,3)$, $(7,11,3)$, is pure on $100$ members, $54$ with (C1) and $46$ without (none without (C1) was found at $(7,7,3)$ in $200{,}000$ draws). An independent check, with code written separately from that of the computations, recomputed the statements: Lemma~\ref{lem:exptprod} holds in $U$ over $\mathbb Z$ with $z$ kept, and Lemma~\ref{lem:exptforms} as identities of forms over $\mathbb Z$, on $48$ members for every $(e,t)$ with $e\le9$; on $7$ triples with $e\le9$ the $150$ members with (C0), (F1) to (F3) ($210$ with the members with $z$ dividing $\alpha$) all have the pure Hilbert function; the presentation of Proposition~\ref{prop:exptsplit} matches $U$ on each of $1{,}250$ members, in every class, and every summand has the series of Proposition~\ref{prop:exptcyclic}(c) or Proposition~\ref{prop:expttwo}; the Betti table is pure, with a socle of one line in degree $4e-4$ computed from the action matrices, on $32$ members with (C1) and $24$ without (C1) ($56$ members); the $45$ of $45$ members with $\varkappa=0$ and $c$ a multiple of $\theta^s(\pi_s)$ have the pure Hilbert function and a table that is not pure; and the $192$ members with $z$ dividing $\Delta$ that were computed are not zero up to degree $4e+2$. The Betti table without (C1) and the converse are not proved (end of Section~\ref{sec:expt}); the counts above are checks of the statements, and the proofs, not the machine, cover $e>8$.
 
 \paragraph{The rule and the filter.} The twelve pairs of \EXP{015} are recomputed by the script of the paper (the pairs by the instrument of the paper, the Hilbert function, the length and the rank of $\mu_{3e}$) and the exclusion half of the rule is also proved (Corollary~\ref{cor:linstratum}), so the computation and the proof agree on every pair with $2e-p\ge5$. For the filter, the control cases on settled pairs agree with the pairs found before, and all $\nfltTables{}$ tables computed are pure; the converse (that a member that fails the filter is not pure) is not tested here.
 
