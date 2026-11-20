@@ -613,6 +613,7 @@ MANIFEST = [  # (label printed, path relative to the repository root): the artif
     ("EXP-014/results.json", "experiments/EXP-014-middle-strata/artifacts/results.json"),
     ("EXP-015/results.json", "experiments/EXP-015-linear-rule-and-e9/artifacts/results.json"),
     ("EXP-017/results.json", "experiments/EXP-017-odd-stratum-filter/artifacts/results.json"),
+    ("EXP-017/stored.json", "experiments/EXP-017-odd-stratum-filter/artifacts/stored-members-filter.json"),
     ("EXP-016/results.json", "experiments/EXP-016-congruence-lists/artifacts/results.json"),
     ("EXP-018/results.json", "experiments/EXP-018-largest-exponent-strata/artifacts/results.json"),
 ]
@@ -2366,6 +2367,9 @@ def state_outputs(N, out, explicit, linear, emax=16, extra=(), detail=None):
     open_cells = sorted(k for k, v in cells.items() if v is None)
     N["gridOpenList"] = ", ".join("$(%d,%d)$" % k for k in open_cells) if open_cells else "none"
     N["gridOpenListSmall"] = ", ".join("$(%d,%d)$" % k for k in open_cells if k[0] <= 8) if any(k[0] <= 8 for k in open_cells) else "none"
+    open14 = [k for k in open_cells if k[0] <= 14]
+    need(open14 == [(11, 3), (13, 7), (13, 11), (14, 5), (14, 11)], f"grid: the open pairs with e <= 14 are not the five named in the text: {open14}")
+    N["gridOpenListFourteen"] = ", ".join("$(%d,%d)$" % k for k in open14)
     N["gridOpenListTwelve"] = ", ".join("$(%d,%d)$" % k for k in open_cells if k[0] <= 12)
     N["gridOpenNine"] = ", ".join("$(%d,%d)$" % k for k in open_cells if k[0] == 9)
     mx = 1
@@ -2376,12 +2380,14 @@ def state_outputs(N, out, explicit, linear, emax=16, extra=(), detail=None):
             break
     N["gridSettledMaxE"] = mx
     # the table of the sources for e <= 8
-    srows = []
+    srows, srowsb = [], []
     for e in range(2, 15):
         for p in [q for q in primes_upto(2 * e - 1) if q % 2 == 1]:
             lab = cells[(e, p)]
-            srows.append(["$(%d,%d)$" % (e, p), lab if lab else "open", cell_sources(e, p, lab, detail) if lab else "no pure pair known"])
-    out["tab_statesrc.tex"] = table("@{}llp{8.4cm}@{}", ["$(e,p)$", "code", "what settles the pair"], srows)
+            (srows if e <= 10 else srowsb).append(["$(%d,%d)$" % (e, p), lab if lab else "open", cell_sources(e, p, lab, detail) if lab else "no pure pair known"])
+    need(len(srows) == 36 and len(srowsb) == 31, f"the sources tables have {len(srows)} and {len(srowsb)} rows, not 36 and 31")
+    out["tab_statesrc.tex"] = table("@{}llp{9.8cm}@{}", ["$(e,p)$", "code", "what settles the pair"], srows)
+    out["tab_statesrcb.tex"] = table("@{}llp{9.8cm}@{}", ["$(e,p)$", "code", "what settles the pair"], srowsb)
     cols = [p for p in primes_upto(2 * emax - 1) if p % 2 == 1]
     lines = ["\\begin{tikzpicture}[x=0.62cm,y=0.5cm,font=\\scriptsize]"]
     for ci, p in enumerate(cols):
@@ -3201,6 +3207,29 @@ def largest_pairs(r18):
     return {(s["e"], s["p"]): (s["m"], s["i"], s["j"]) for s in r18["strata"].values() if s["family"] == "T" and s["pure"] > 0}
 
 
+
+def exp17_stored(root, N):
+    """The filter (F0) to (F3) on the members stored by EXP-010 and EXP-014 with a computed Betti table in S((e+1)/2; 0, (e-1)/2): the record
+    experiments/EXP-017-odd-stratum-filter/artifacts/stored-members-filter.json (written by stored_members.py from the committed artifacts)."""
+    r = jload(Path(root) / "experiments" / E17.name / "artifacts" / "stored-members-filter.json")
+    need(r["experiment"] == "EXP-017-odd-stratum-filter" and r["stages"] == ["fails F0", "fails F1", "fails F2", "fails F3", "passes"], "EXP-017 stored members: the record")
+    t = r["totals"]
+    need(t["tabled"] == 130 and t["pure"] == 59 and t["other"] == 71 and t["pure"] + t["other"] == t["tabled"] and t["not_of_the_form"] == 0, "EXP-017 stored members: the counts 130, 59 and 71")
+    need(t["pure_by_stage"] == [0, 0, 0, 0, 59], "EXP-017 stored members: every pure member passes the filter")
+    need(t["other_by_stage"][4] == 0 and t["other_by_stage"] == [65, 0, 0, 6, 0], "EXP-017 stored members: no other member passes the filter (65 fail F0, 6 fail F3)")
+    need(len(r["pairs"]) == 8 and sorted(map(tuple, r["pairs"])) == [(5, 5), (5, 7), (7, 3), (7, 5), (7, 7), (7, 11), (7, 13), (9, 7)], "EXP-017 stored members: the eight pairs")
+    for fld in ("tabled", "pure", "other"):
+        need(sum(x[fld] for x in r["rows"]) == t[fld], f"EXP-017 stored members: the rows sum to the total {fld}")
+    for st in ("pure_by_stage", "other_by_stage"):
+        need([sum(x[st][i] for x in r["rows"]) for i in range(5)] == t[st], f"EXP-017 stored members: the rows sum to the total {st}")
+    N["stmTabled"] = t["tabled"]
+    N["stmPure"] = t["pure"]
+    N["stmOther"] = t["other"]
+    N["stmFailFZero"] = t["other_by_stage"][0]
+    N["stmFailFThree"] = t["other_by_stage"][3]
+    N["stmPairs"] = len(r["pairs"])
+
+
 def build_new(root, N, data_root=None):
     """Read the artifacts of EXP-005 to EXP-009, EXP-011 and EXP-012 under `root`, check every value the text uses, and return the
     generated files. When `data_root` (or the environment variable CAOS_RESEARCH_DATA_ROOT) names the data root and the full results
@@ -3223,6 +3252,7 @@ def build_new(root, N, data_root=None):
     r15, r17 = read_third(root)
     exp15(r15, N, out)
     exp17(r17, N, out)
+    exp17_stored(root, N)
     exp16(read_fourth(root), N, out)
     exp18(read_fifth(root), N, out)
     wz_outputs(r10, r14, r15, N, out)

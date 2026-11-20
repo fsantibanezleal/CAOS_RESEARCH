@@ -68,6 +68,9 @@ def _copy_problem(mt, tmp_path):
         dst = root / "experiments" / d.name / "artifacts"
         dst.mkdir(parents=True)
         (dst / "results.json").write_bytes((d / "artifacts" / "results.json").read_bytes())
+        extra = d / "artifacts" / "stored-members-filter.json"
+        if extra.exists():
+            (dst / extra.name).write_bytes(extra.read_bytes())
     return root
 
 
@@ -531,3 +534,54 @@ def test_largest_exponent_is_the_largest_allowed_by_the_corollary(mt):
         assert 2 * t <= p - 1 and 2 * (t + 2) >= p + 1
         assert not mt.cor5_excluded(e, p, m_, i_, j_)
         assert mt.cor5_excluded(e, p, m_ + 1, 0, j_ - 1) or True
+
+
+# ---- the filter on the stored members (EXP-017 record) and the open pairs ----
+
+def _edit_stored(root, fn):
+    p = root / "experiments" / mt_name() / "artifacts" / "stored-members-filter.json"
+    data = json.loads(p.read_text(encoding="utf-8"))
+    fn(data)
+    p.write_text(json.dumps(data), encoding="utf-8", newline="\n")
+
+
+def mt_name():
+    return "EXP-017-odd-stratum-filter"
+
+
+def test_guard_stored_members_refuses_a_pure_member_that_fails_the_filter(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        d["totals"]["pure_by_stage"] = [1, 0, 0, 0, 58]
+    _edit_stored(root, mutate)
+    assert any("EXP-017 stored members" in f for f in _run(mt, root))
+
+
+def test_guard_stored_members_refuses_another_member_that_passes_the_filter(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        d["totals"]["other_by_stage"] = [64, 0, 0, 6, 1]
+    _edit_stored(root, mutate)
+    assert any("EXP-017 stored members" in f for f in _run(mt, root))
+
+
+def test_stored_members_record_gives_the_counts_of_the_text(mt, tmp_path):
+    N = {}
+    mt.FAILS.clear()
+    mt.exp17_stored(mt.PROBLEM, N)
+    assert not mt.FAILS
+    assert (N["stmTabled"], N["stmPure"], N["stmOther"], N["stmFailFZero"], N["stmFailFThree"], N["stmPairs"]) == (130, 59, 71, 65, 6, 8)
+
+
+def test_the_open_pairs_up_to_e_14_are_the_five_named_in_the_text(mt):
+    r16 = mt.read_fourth(mt.PROBLEM)
+    r10, r13, r14 = mt.read_second(mt.PROBLEM)
+    r15, r17 = mt.read_third(mt.PROBLEM)
+    r9, _a, _b = mt.read_later(mt.PROBLEM)
+    r5, r6, r7, r8 = mt.read_artifacts(mt.PROBLEM)
+    w, mid, oth, flt, lst, detail = mt.search_sets_from_artifacts(r10, r14, r15, r17, r16)
+    lg = set(mt.largest_pairs(mt.read_fifth(mt.PROBLEM)))
+    lin = mt.linear_from_artifacts(r9, r10, r14, r15)
+    cells = mt.grid_cells(14, mt.explicit_from_artifacts(r6, r8, 1), lin, (("W", w), ("M", mid), ("O", oth), ("F", flt), ("G", lst), ("H", lg)))
+    open_cells = sorted(k for k, v in cells.items() if v is None)
+    assert open_cells == [(11, 3), (13, 7), (13, 11), (14, 5), (14, 11)]
