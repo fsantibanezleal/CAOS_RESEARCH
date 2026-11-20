@@ -1,4 +1,4 @@
-# Pure resolutions over the Heisenberg enveloping algebra and the realizability of primitive Betti points
+# Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the pure modules U/U(x^e,y^e), characteristic 2, and a census for d_3 <= 12
 
 Version v0.01, 19 November 2026, not yet published: the version DOI and the concept DOI in the header block of `main.tex`
 are placeholders (`10.5281/zenodo.NNNNNNNN`) that the release tool sets when the version DOI is reserved. The paper is a

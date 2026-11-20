@@ -6,7 +6,9 @@
 \addlegendentry{not pure (experiment)}
 \addplot[dashed, thick, color=black] coordinates {(1.5,3) (8.5,17)};
 \addlegendentry{$p=2e$}
-\addplot[only marks, mark=o, mark size=1.8pt, color=gray] coordinates {(6,2) (6,3) (6,5) (6,7) (6,11) (6,13) (6,17) (6,19) (6,23) (7,2) (7,3) (7,5) (7,7) (7,11) (7,13) (7,17) (7,19) (7,23) (8,2) (8,3) (8,5) (8,7) (8,11) (8,13) (8,17) (8,19) (8,23)};
-\addlegendentry{$e\ge 6$: Theorem A, no run}
+\addplot[only marks, mark=*, mark size=2.2pt, color=blue!35] coordinates {(6,13) (6,17) (6,19) (6,23) (7,17) (7,19) (7,23) (8,17) (8,19) (8,23)};
+\addlegendentry{$e\ge 6$, $p\ge2e$: block check}
+\addplot[only marks, mark=x, mark size=3pt, thick, color=red!40] coordinates {(6,2) (6,3) (6,5) (6,7) (6,11) (7,2) (7,3) (7,5) (7,7) (7,11) (7,13) (8,2) (8,3) (8,5) (8,7) (8,11) (8,13)};
+\addlegendentry{$e\ge 6$, $p<2e$: block check}
 \end{axis}
 \end{tikzpicture}

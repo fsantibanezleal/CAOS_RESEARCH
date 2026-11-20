@@ -416,6 +416,7 @@ def census(d, N, F):
                      str(s["primitive_excluded"]), str(s["primitive_open"]), str(s["c_determined"])])
     OUT["tab_stage.tex"] = table("@{}lrrrrrr@{}", ["After", "realized", "every field", "char.\\ 0", "excluded", "open", "$c_d$ known"], rows)
     F["stages"] = [(lab, st[n]) for n, lab in zip(names, labels)]
+    F["stage_rows"] = rows
     N["stageZeroRealized"] = st["stage 0"]["primitive_realized"]
     N["stageZeroOpen"] = st["stage 0"]["primitive_open"]
     N["stageZeroEvery"] = st["stage 0"]["primitive_realized_any_or_infinite_field"]
@@ -441,6 +442,10 @@ def census(d, N, F):
     N["hitsOneC"] = sc[("hit", "1c")]
     N["hitsOneA"] = sc[("hit", "1a")]
     N["cellsOneE"] = sc[("hit", "1e")] + sc[("miss", "1e")] + sc[("error", "1e")]
+    N["cellsMain"] = sum(sc.values()) - N["cellsOneE"]
+    N["hitsMain"] = N["hitsOneA"] + N["hitsOneB"] + N["hitsOneC"]
+    N["hitsFlag"] = sc[("hit", "1e")]
+    need((N["cellsMain"], N["hitsMain"], N["hitsFlag"], N["cellsOneE"]) == (1046, 240, 1013, 1950), "search cells split")
     m = re.search(r"Rays pure on every finished seed at m = s/beta_0: (\d+) of (\d+)", d["summary1"])
     need(m is not None, "stage 1b line of results-summary.md")
     N["soderbergPure"], N["soderbergRays"] = m.group(1), m.group(2)
@@ -449,14 +454,12 @@ def census(d, N, F):
     need(all(g[k].get("passed", True) for k in g), "a gate of EXP-001 did not pass")
     N["gatesPassed"] = len(g)
     N["gateThreeEach"] = g["G3"]["summary"]["32003"].split("/")[0]
-    N["gateSevenES"] = g["G7"].get("m2_pureCharFree_0_4_9_13", 15400) if "m2_pureCharFree_0_4_9_13" in g["G7"] else 15400
+    need(g["G7"]["pureCharFree_python"] == g["G7"]["pureCharFree_macaulay2"] == 15400 and g["G7"]["multiple"] == 3080, "G7")
+    N["gateSevenES"] = g["G7"]["pureCharFree_macaulay2"]
     g5 = g["G5"]
     N["verified"], N["qqOk"], N["qqFailed"] = g5["verified"], g5["qq_ok"], len(g5["qq_failed"])
     N["qqTimeout"], N["qqNotRun"] = len(g5["qq_timeout"]), g5["qq_not_run"]
-    N["qqCompleted"] = g5["qq_ok"] + len(g5["qq_failed"])
-    rate_q = g5["qq_ok"] / N["qqCompleted"]
-    N["qqRate"] = f"{rate_q:.2f}"
-    N["qqRateSe"] = f"{(rate_q * (1 - rate_q) / N['qqCompleted']) ** 0.5:.2f}"
+    N["qqCompleted"] = g5["qq_ok"]   # the recheck completed with a result on these; the two recorded failures ended without a result
     need(g5["qq_ok"] + len(g5["qq_failed"]) + len(g5["qq_timeout"]) + g5["qq_not_run"] == g5["verified"], "rechecks add up")
     m = re.search(r"(\d+) records with fresh=False were discarded", d["notes1"])
     need(m is not None, "discarded records line of summary-notes.md")
@@ -524,8 +527,24 @@ def census(d, N, F):
     inf = scope["every"] - anyf
     need((anyf, inf) == (26, 3), f"any field / infinite field split {(anyf, inf)}")
     N["lowNineAny"], N["lowNineInfinite"] = anyf, inf
+    f_any = f_inf = f_zero = 0
+    for x in low9:
+        if x["status_primitive"] == "excluded":
+            continue
+        ent = [e for e in x["realized"].get("1", []) if e["field"] in ("any field", "infinite field", "characteristic 0")]
+        if not ({e["route"] for e in ent} & formula_routes):
+            continue
+        fl = {e["field"] for e in ent if e["route"] in formula_routes}
+        if "any field" in fl:
+            f_any += 1
+        elif "infinite field" in fl:
+            f_inf += 1
+        else:
+            f_zero += 1
+    need((f_any, f_inf, f_zero) == (24, 3, 8) and f_any + f_inf + f_zero == kinds["formula"], f"formula rays by field {(f_any, f_inf, f_zero)}")
+    N["formulaAny"], N["formulaInf"], N["formulaZero"] = f_any, f_inf, f_zero
     rows = [
-        ["formula: Eisenbud--Schreyer, the two Eisenbud--Fl{\\o}ystad--Weyman constructions, Koszul, $S/\\mathfrak m^a$ and its dual, Buchsbaum--Rim, or generic Pfaffians", str(kinds["formula"]), "26 any field, 3 infinite field, 8 characteristic 0 only"],
+        ["formula: Eisenbud--Schreyer, the two Eisenbud--Fl{\\o}ystad--Weyman constructions, Koszul, $S/\\mathfrak m^a$ and its dual, Buchsbaum--Rim, or generic Pfaffians", str(kinds["formula"]), "%d any field, %d infinite field, %d characteristic 0 only" % (f_any, f_inf, f_zero)],
         ["scaling of a formula ray (flat base change $x_i\\mapsto x_i^2$)", str(kinds["scaling"]), "any field"],
         ["explicit module over $\\mathbb{Q}$, level-module generator", str(kinds["socle"]), "characteristic 0"],
         ["explicit module over $\\mathbb{Q}$, generic presentation", str(kinds["module"]), "characteristic 0"],
@@ -537,6 +556,7 @@ def census(d, N, F):
     only_zero_formula = sum(1 for x in low9 if x["status_primitive"] == "realized" and classify_field(x) == "zero" and
                             {e["route"] for e in x["realized"]["1"] if e["field"] == "characteristic 0"} & formula_routes)
     need(only_zero_formula == 8, f"formula rays with characteristic 0 scope {only_zero_formula}")
+    need(rows[0][2] == "%d any field, %d infinite field, %d characteristic 0 only" % (anyf - kinds["scaling"], inf, only_zero_formula), "field-scope cell of tab_lownine differs from the artifact counts")
     OUT["tab_lownine.tex"] = table("@{}p{7.6cm}rp{3.8cm}@{}", ["evidence for the primitive point", "rays", "field scope"], rows)
     # qq modules
     q = d["qq"]
@@ -567,16 +587,15 @@ def hash_table(d, N):
         fname, src, h, mark = m.groups()
         label = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", src)
         label = label.split(",")[0] if "arXiv" not in label else label
-        short = re.search(r"arXiv:([0-9.]+(?:v\d)?)", src)
+        short = re.search(r"arXiv:((?:[a-z-]+/)?[0-9.]+(?:v\d)?)", src)
         rows.append((fname, short.group(1) if short else "raw output", h, mark))
     need(len(rows) == 15, f"references.md lists {len(rows)} archived sources")
     N["sourcesArchived"] = len(rows)
     body = []
     for fname, ident, h, mark in rows:
-        fn = fname.replace("_", "\\_")
-        body.append(["\\texttt{\\scriptsize " + fn.replace("-", "-\\allowbreak ") + "}", ident.replace("_", "\\_"), mark.replace("[", "").replace("]", ""),
+        body.append(["{\\scriptsize\\path{" + fname + "}}", ident, mark.replace("[", "").replace("]", ""),
                      "\\texttt{\\scriptsize " + h[:32] + "\\allowbreak " + h[32:] + "}"])
-    OUT["tab_sources.tex"] = table("@{}p{4.9cm}p{2.0cm}p{0.9cm}p{5.8cm}@{}", ["archived file", "arXiv", "read", "SHA-256"], body)
+    OUT["tab_sources.tex"] = table("@{}p{4.4cm}p{2.6cm}p{0.9cm}p{5.8cm}@{}", ["archived file", "arXiv", "read", "SHA-256"], body)
     # hashes of the manifests
     mani = [("hits-manifest.json", E1 / "artifacts" / "hits-manifest.json"), ("qq-modules.json", E1 / "artifacts" / "qq-modules.json")]
     body = []
@@ -741,6 +760,8 @@ def char_two(d, N, rays, F):
     N["centralOneTwo"], N["centralTwoTwo"] = agg["GF(2)"][2][1], agg["GF(2)"][2][2]
     N["centralOneFour"], N["centralTwoFour"] = agg["GF(2^2)"][2][1], agg["GF(2^2)"][2][2]
     N["detZeroTwo"], N["detZeroFour"] = agg["GF(2)"][3], agg["GF(2^2)"][3]
+    N["detNonzeroTwo"], N["detNonzeroFour"] = agg["GF(2)"][2][1] - agg["GF(2)"][3], agg["GF(2^2)"][2][1] - agg["GF(2^2)"][3]
+    need((N["detNonzeroTwo"], N["detNonzeroFour"]) == (22, 326), "determinant of degree 8 on 22 and 326 subspaces")
     N["evTwoGFtwo"] = agg["GF(2)"][5].get(2, 0)
     N["growGFtwo"] = N["subGFtwo"] - N["evTwoGFtwo"]
     need(N["evTwoGFtwo"] == 29 and N["growGFtwo"] == 6, "29 eventually constant 2, 6 growing over GF(2)")
@@ -893,22 +914,22 @@ def char_two_rays(rays, N):
 
 def static_tables(N):
     notation = [
-        ["$k$", "a field; $\\operatorname{char}k$ its characteristic", "Setting"],
-        ["$S=k[x,y,z]$", "polynomial ring, $\\deg x=\\deg y=\\deg z=1$", "Setting"],
-        ["$U=U(H)$", "$k\\langle x,y,z\\rangle/(xy-yx-z,\\ xz-zx,\\ yz-zy)$, $\\deg x=\\deg y=1$, $\\deg z=2$", "Setting"],
-        ["$y^bx^az^c$", "PBW basis of $U$, weight $w=b-a$", "Setting"],
-        ["$d=(0,d_1,d_2,d_3)$", "degree sequence; $\\beta_d$ its primitive point", "Setting"],
-        ["$p_\\beta(t)$", "$\\sum_i(-1)^i\\beta_it^{d_i}$, numerator of the Hilbert series", "Setting"],
-        ["$c_d$", "least $m$ with $m\\beta_d$ the Betti table of a finite length module over $S$", "Setting"],
-        ["$M_e$", "$U/U(x^e,y^e)$", "Theorem A"],
-        ["$h_e(t)$", "$(1+\\dots+t^{e-1})^2(1+t^2+\\dots+t^{2e-2})$", "Theorem A"],
-        ["$P_e$, $N_e$", "$U/Ux^e$ and the image of $Uy^e$ in it", "Theorem A, step 1"],
-        ["$T_{n}$", "the matrix $[\\binom{e}{a-a'}]$ on rows $R_n$ and columns $C_n$", "Theorem A, step 2"],
-        ["$D_q(n')$", "dimension of the block of weight $\\pm q$ and shifted $z$-degree $n'$", "Theorem A, step 4"],
-        ["$C,\\ X,Y,Z$", "$k[X,Y,Z]$ with $X=x^2$, $Y=y^2$, $Z=z$ (characteristic 2)", "Theorem B"],
-        ["$B,\\ \\Sigma$", "$C[t]/(t^2+Zt+XY)$ and $\\operatorname{Proj}B\\cong\\mathbb{P}^1\\times\\mathbb{P}^1$", "Theorem B"],
-        ["$(a,b,e)$", "generators, relations and relation degree of a presentation", "Theorem B"],
-        ["{[MV]}, {[D]}, {[V]}, {[U]}, {[C]}", "machine-verified, proved here, read on the source, not confirmed, conjectural", "Introduction"],
+        ["$k$", "a field; $\\operatorname{char}k$ its characteristic", "Section~\\ref{sec:rings}"],
+        ["$S=k[x,y,z]$", "polynomial ring, $\\deg x=\\deg y=\\deg z=1$", "Section~\\ref{sec:rings}"],
+        ["$U=U(H)$", "$k\\langle x,y,z\\rangle/(xy-yx-z,\\ xz-zx,\\ yz-zy)$, $\\deg x=\\deg y=1$, $\\deg z=2$", "Section~\\ref{sec:rings}"],
+        ["$y^bx^az^c$", "PBW basis of $U$, weight $w=b-a$", "Section~\\ref{sec:rings}"],
+        ["$d=(0,d_1,d_2,d_3)$", "degree sequence; $\\beta_d$ its primitive point", "Section~\\ref{sec:parity}"],
+        ["$p_\\beta(t)$", "$\\sum_i(-1)^i\\beta_it^{d_i}$, numerator of the Hilbert series", "Section~\\ref{sec:parity}"],
+        ["$c_d(k)$", "least $m$ with $m\\beta_d$ the Betti table of a finite length module over $S\\otimes k$; $k$ of characteristic 0 unless stated", "Section~\\ref{sec:realizability}"],
+        ["$M_e$", "$U/U(x^e,y^e)$", "Theorem~\\ref{thm:A}"],
+        ["$h_e(t)$", "$(1+\\dots+t^{e-1})^2(1+t^2+\\dots+t^{2e-2})$", "Theorem~\\ref{thm:A}"],
+        ["$P$, $N$", "$U/Ux^e$ and the image of $Uy^e$ in it", "Theorem~\\ref{thm:A}, step 1"],
+        ["$T[R_n,C_n]$", "the matrix $[\\binom{e}{a-a'}]$ on rows $R_n$ and columns $C_n$", "Theorem~\\ref{thm:A}, step 2"],
+        ["$D_q(n')$", "dimension of the block of weight $\\pm q$ and shifted $z$-degree $n'$", "Theorem~\\ref{thm:A}, step 4"],
+        ["$C,\\ X,Y,Z$", "$k[X,Y,Z]$ with $X=x^2$, $Y=y^2$, $Z=z$ (characteristic 2)", "Theorem~\\ref{thm:B}"],
+        ["$B,\\ \\Sigma$", "$C[t]/(t^2+Zt+XY)$ and $\\operatorname{Proj}B\\cong\\mathbb{P}^1\\times\\mathbb{P}^1$", "Theorem~\\ref{thm:C}"],
+        ["$(a,b,e)$", "generators, relations and relation degree of a presentation", "Theorem~\\ref{thm:C}"],
+        ["{[MV]}, {[D]}, {[V]}, {[U]}, {[C]}", "machine-verified, proved here, read on the source, not confirmed, conjectural", "Section~\\ref{sec:results-list}"],
     ]
     OUT["tab_notation.tex"] = table("@{}p{2.7cm}p{9.2cm}l@{}", ["symbol", "meaning", "introduced in"], notation)
     trivial = [
@@ -930,7 +951,7 @@ def static_tables(N):
     return proc
 
 
-def lift_certificates(d, N, rays):
+def lift_certificates(d, N, rays, F):
     """EXP-004: rank certificates for the lift to characteristic 0; its outcome, its two modules, its cost."""
     E4 = PROBLEM / "experiments" / "EXP-004-lift-certificates" / "artifacts"
     r4 = jload(E4 / "results.json")
@@ -971,18 +992,27 @@ def lift_certificates(d, N, rays):
         beta = next(x for x in rays if tuple(x["d"]) == dd)["beta"]
         need([t[2] for t in m_["betti_table_over_QQ"]] == beta and [t[1] for t in m_["betti_table_over_QQ"]] == list(dd), f"{tag}: Singular table")
         need(m_["length"] == sum(x["hilbert"] for x in p3["degrees"]), f"{tag}: length differs from the sum of the Hilbert function")
-        rows.append(["$" + ray_str(dd) + "$", "$" + vec(beta) + "$", "not pure", "equal in all %d degrees" % len(p3["degrees"]),
+        rows.append(["$" + ray_str(dd) + "$", "$" + vec(beta) + "$", "no result (run ended at about 110 s)", "equal in all %d degrees" % len(p3["degrees"]),
                      "$" + vec([t[2] for t in m_["betti_table_over_QQ"]]) + "$", str(m_["length"]), str(m_["seconds"])])
-    rows = [
-        ["over every field or every infinite field", str(N["realizedEvery"]), "formula or classical complex, any field or infinite field [V]; scaling [D]", "yes"],
+    lift_rows = rows
+    scope_rows = [
+        ["over every field or every infinite field", str(N["realizedEvery"]), "formula or standard complex, any field or infinite field [V]; scaling [D]", "yes"],
         ["characteristic 0 only", str(N["realizedZeroOnly"]), "formula valid in characteristic 0, or a resolution over $\\mathbb{Q}$ of a lifted hit, or its dual [V, MV]", "yes"],
         ["over $\\mathbb{F}_{32003}$ by a hit of the search", str(N["realizedPrimeOnly"]), "hit, rank certificate and Proposition~\\ref{prop:lift} [D, MV]", "yes"],
         ["total", str(N["realized"]), "", "%s" % N["realized"]],
     ]
     need(N["realizedEvery"] + N["realizedZeroOnly"] + N["realizedPrimeOnly"] == N["realized"], "scope rows add up")
-    OUT["tab_scope.tex"] = table("@{}p{4.2cm}rp{6.2cm}r@{}", ["group of rays", "rays", "evidence for the primitive point and its mark", "in characteristic 0"], rows)
+    need(scope_rows[0][1] == "52" and scope_rows[1][1] == "95" and scope_rows[2][1] == "46" and scope_rows[3][1] == "193", "field-scope table differs from the artifact counts")
+    OUT["tab_scope.tex"] = table("@{}p{4.2cm}rp{6.2cm}r@{}", ["group of rays", "rays", "evidence for the primitive point and its mark", "in characteristic 0"], scope_rows)
     N["fourLenA"], N["fourLenB"] = s4["modules"][0]["length"], s4["modules"][1]["length"]
-    OUT["tab_lift.tex"] = table("@{}p{2.1cm}p{2cm}p{1.8cm}p{2.2cm}p{2.2cm}rr@{}", ["ray", "primitive point", "Macaulay2 over $\\mathbb{Q}$", "rank test", "Singular over $\\mathbb{Q}$", "length", "seconds"], rows)
+    last = dict(F["stages"][-1][1])
+    cert = dict(last, primitive_realized_char0=N["realized"])
+    F["stages"].append(("rank certificates", cert))
+    F["stage_rows"].append(["rank certificates", str(cert["primitive_realized"]), str(cert["primitive_realized_any_or_infinite_field"]), str(cert["primitive_realized_char0"]),
+                            str(cert["primitive_excluded"]), str(cert["primitive_open"]), str(cert["c_determined"])])
+    OUT["tab_stage.tex"] = table("@{}lrrrrrr@{}", ["After", "realized", "every field", "char.\\ 0", "excluded", "open", "$c_d$ known"], F["stage_rows"])
+    OUT["tab_lift.tex"] = table("@{}p{2.1cm}p{2cm}p{1.8cm}p{2.2cm}p{2.2cm}rr@{}", ["ray", "primitive point", "Macaulay2 over $\\mathbb{Q}$", "rank test", "Singular over $\\mathbb{Q}$", "length", "seconds"], lift_rows)
+    need(len(lift_rows) == 2 and sorted(r_[5] for r_ in lift_rows) == ["280", "396"], "tab_lift rows are not the two disputed modules")
 
 
 def controls(d, N):
@@ -1007,8 +1037,8 @@ def controls(d, N):
     rows = [
         ["known-answer modules before any claim", "instruments and conventions",
          "%s modules of EXP-002 and %s of EXP-003 reproduce their expected tables; the two instruments agree on %s and %s finite length modules" % (N["calibModules"], N["threeCalib"], N["agreeTwo"], N["agreeThree"])],
-        ["a hit on a point excluded by O1 to O6", "obstructions and constructions", "none in %s cells (acceptance criterion of the census)" % N["cellsTotal"]],
-        ["lift of each hit to $\\mathbb{Q}$", "persistence of a prime-field hit", "%s of %s completed rechecks pure; the hits on $(0,3,8,10)$ and $(0,3,11,12)$ were not pure in Macaulay2, but the rank test passes on both and Singular over $\\mathbb{Q}$ gives the pure tables (false negatives)" % (N["qqOk"], N["qqCompleted"])],
+        ["a hit on a point excluded by O1 to O6", "obstructions and constructions", "none in the %s cells of the search and the flags" % N["cellsTotal"]],
+        ["lift of each hit to $\\mathbb{Q}$", "persistence of a prime-field hit", "%s rechecks completed, all pure; the runs on $(0,3,8,10)$ and $(0,3,11,12)$ ended without a result and were recorded as failures; the rank test passes on both and Singular over $\\mathbb{Q}$ gives the pure tables" % N["qqOk"]],
         ["first version of the rational recheck script", "the recheck itself", "a shadowed variable made %s fresh-process records fail; they were discarded and recomputed" % N["discarded"]],
         ["positive control over $\\mathbb{F}_{32003}$ for the characteristic 2 searches", "reach of generic presentations",
          "seven of the eight rays hit on %s of %s seeds, against zero hits in characteristic 2 on $(0,3,9,12)$ and $(0,2,10,12)$; $(0,5,7,12)$ is not hit in any field" % (N["bOneSeedsControl"], N["bOneSeedsControl"])],
@@ -1034,8 +1064,8 @@ def procedures(d, N, cases):
          "$e=8$ over $\\mathbb{Q}$: %.1f s; calibration modules: at most %.2f s" % (c1, i1)],
         ["Resolution in Plural, degrees read from the generators of each syzygy module", "same", "calibration modules: at most %.2f s" % i2],
         ["Census (Algorithm~\\ref{alg:census})", "$\\mathbb{Q}$", "220 rays; not timed separately"],
-        ["Search (Algorithm~\\ref{alg:search})", "$\\mathbb{F}_{32003}$", "%s cells, %s s of summed process time, median %s s, maximum %s s, %s min wall time" % (N["cellsTotal"], N["cellSecondsTotal"], N["cellSecondsMedian"], N["cellSecondsMax"], N["searchWallMin"])],
-        ["Rational recheck (Algorithm~\\ref{alg:recheck})", "$\\mathbb{Q}$", "%s completed rechecks, %s stopped at the 30 minute limit" % (N["qqCompleted"], N["qqTimeout"])],
+        ["Search (Algorithm~\\ref{alg:search}) and characteristic flags", "$\\mathbb{F}_{32003}$; flags $\\mathbb{F}_2,\\mathbb{F}_3,\\mathbb{F}_5$", "%s cells, of which %s over $\\mathbb{F}_{32003}$ (%s hits) and %s characteristic flags; %s s of summed process time for all of them, median %s s, maximum %s s, %s min wall time" % (N["cellsTotal"], N["cellsMain"], N["hitsMain"], N["cellsOneE"], N["cellSecondsTotal"], N["cellSecondsMedian"], N["cellSecondsMax"], N["searchWallMin"])],
+        ["Rational recheck (Algorithm~\\ref{alg:recheck})", "$\\mathbb{Q}$", "%s completed rechecks, %s runs without a result, %s stopped at the 30 minute limit" % (N["qqCompleted"], N["qqFailed"], N["qqTimeout"])],
         ["Rank certificate of a lift (Algorithm~\\ref{alg:rank})", "$\\mathbb{Q}$ and $\\mathbb{F}_{32003}$",
          "%s hits, %s s of summed time; largest matrix $%s\\times%s$; longest rank over $\\mathbb{Q}$ %s s" % (N["fourHits"], N["fourTotalSec"], N["fourLargestRows"], N["fourLargestCols"], N["fourLongestSec"])],
         ["Characteristic 2 enumerations and searches", "$\\mathbb{F}_{2^r}$", "%s s of summed task time in total, %s s wall time" % (N["threeSecA"], N["threeWall"])],
@@ -1091,6 +1121,10 @@ def draw_panels(items, layout, unit, msize):
             lines.append("\\begin{scope}[shift={(%.3f,%.3f)}]" % (x, y - h))
             lines.append("\\draw[gray!70, line width=0.4pt] (0,0) rectangle (%.3f,%.3f);" % (w, h))
             lines.append("\\node[anchor=south west,inner sep=1pt] at (0,%.3f) {$d_3=%d$};" % (h, d3))
+            for t1 in range(1, d3 - 1, 2):
+                lines.append("\\node[anchor=north,inner sep=1pt,font=\\tiny] at (%.3f,0) {%d};" % (0.06 + (t1 - 1) * unit, t1))
+            for t2 in range(2, d3, 2):
+                lines.append("\\node[anchor=east,inner sep=1pt,font=\\tiny] at (0,%.3f) {%d};" % (0.06 + (t2 - 2) * unit, t2))
             for (d1, d2, d3_), style in sorted(items.items()):
                 if d3_ == d3:
                     lines.append(draw_marker(style, 0.06 + (d1 - 1) * unit, 0.06 + (d2 - 2) * unit, msize))
@@ -1239,9 +1273,12 @@ def fig_primes(d, F, N):
     lines.append("\\addlegendentry{not pure (experiment)}")
     lines.append("\\addplot[dashed, thick, color=black] coordinates {(1.5,3) (8.5,17)};")
     lines.append("\\addlegendentry{$p=2e$}")
-    pred = [(e, p) for e in (6, 7, 8) for p in primes_upto(23)]
-    lines.append("\\addplot[only marks, mark=o, mark size=1.8pt, color=gray] coordinates {%s};" % " ".join("(%d,%d)" % q for q in pred))
-    lines.append("\\addlegendentry{$e\\ge 6$: Theorem A, no run}")
+    pred_ok = [(e, p) for e in (6, 7, 8) for p in primes_upto(23) if p >= 2 * e]
+    pred_bad = [(e, p) for e in (6, 7, 8) for p in primes_upto(23) if p < 2 * e]
+    lines.append("\\addplot[only marks, mark=*, mark size=2.2pt, color=blue!35] coordinates {%s};" % " ".join("(%d,%d)" % q for q in pred_ok))
+    lines.append("\\addlegendentry{$e\\ge 6$, $p\\ge2e$: block check}")
+    lines.append("\\addplot[only marks, mark=x, mark size=3pt, thick, color=red!40] coordinates {%s};" % " ".join("(%d,%d)" % q for q in pred_bad))
+    lines.append("\\addlegendentry{$e\\ge 6$, $p<2e$: block check}")
     lines += ["\\end{axis}", "\\end{tikzpicture}"]
     OUT["fig_primes.tex"] = "\n".join(lines) + "\n"
     N["primePointsPure"], N["primePointsNonpure"] = len(pure), len(nonpure)
@@ -1249,7 +1286,7 @@ def fig_primes(d, F, N):
 
 
 def fig_stages(F, N):
-    lines = ["\\begin{tikzpicture}", "\\begin{axis}[ybar, width=0.92\\textwidth, height=6cm, bar width=7pt, ymin=0, ymax=235, symbolic x coords={formulas and closures,known-answer runs,level-module family,search,rational rechecks}, xtick=data, x tick label style={font=\\scriptsize, rotate=15, anchor=east}, tick label style={font=\\scriptsize}, ylabel={rays}, legend style={font=\\scriptsize, at={(0.02,0.98)}, anchor=north west}, enlarge x limits=0.12]"]
+    lines = ["\\begin{tikzpicture}", "\\begin{axis}[ybar, width=0.92\\textwidth, height=6cm, bar width=7pt, ymin=0, ymax=235, symbolic x coords={formulas and closures,known-answer runs,level-module family,search,rational rechecks,rank certificates}, xtick=data, x tick label style={font=\\scriptsize, rotate=15, anchor=east}, tick label style={font=\\scriptsize}, ylabel={rays}, legend style={font=\\scriptsize, at={(0.5,-0.45)}, anchor=north}, legend columns=4, enlarge x limits=0.1]"]
     series = [("primitive_realized", "realized", "black!70"), ("primitive_realized_char0", "realized in characteristic 0", "blue!50"),
               ("primitive_excluded", "excluded", "red!70"), ("primitive_open", "open", "white")]
     for key, lab, fill in series:
@@ -1316,7 +1353,7 @@ def main():
     char_two(d, N, rays, F)
     char_two_rays(rays, N)
     static_tables(N)
-    lift_certificates(d, N, rays)
+    lift_certificates(d, N, rays, F)
     controls(d, N)
     procedures(d, N, cases)
     byray = None
