@@ -104,7 +104,7 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 ## 2026-11-19 - The least-counterexample statement reviewed: correct after fixes
 
 - An independent reader recomputed the evidence of all 84 rays with d3 <= 9: the formulas from the primary texts on 37
-  rays, all 29 explicit modules over QQ in Singular (pure, with the Herzog-Kuhl lengths), Ext^3 duals over QQ on 11 of
+  rays, all 29 explicit modules over QQ in Singular (pure, with the Herzog-Kuhl lengths), Ext^3 duals over QQ on 12 of
   13 rays, two Kostant modules over U(H), and the two exclusions at d3 = 10 from Erman's Proposition 3.1. No case fails.
 - Fixes applied in addendum 1 of the EXP-001 verdict: the direct-sum step for non-primitive points, the counts by
   evidence (35 + 2, 29 + 13, 5), how the modules over QQ are built (from the generator matrix, not from the lifted

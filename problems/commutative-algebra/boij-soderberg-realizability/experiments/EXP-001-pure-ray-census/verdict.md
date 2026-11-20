@@ -104,7 +104,7 @@ as a test that could fail, and did on two hits, which are reported as such.
 
 A reader other than the writer enumerated the 84 rays, recomputed the three formula constructions from the primary
 texts on all 37 formula rays, recomputed all 29 explicit modules over QQ in Singular (a second system for the rational
-tables), computed Ext^3 duals over QQ on 11 of the 13 duality rays, rebuilt two Kostant modules over U(H) and re-derived
+tables), computed Ext^3 duals over QQ on 12 of the 13 duality rays (the thirteenth, (0,2,6,9), stopped at the time limit and rests on the duality closure), rebuilt two Kostant modules over U(H) and re-derived
 the two exclusions (record `bs-smallest-counterexample-review-2026-11-19` in the coordination repository). No case
 fails. Verdict: correct after fixes. The corrections to the text above:
 
