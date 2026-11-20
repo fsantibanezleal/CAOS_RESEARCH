@@ -86,3 +86,18 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - Prediction P1's count was wrong (78 points at stage 0, not 52 to 56: the second Eisenbud-Floystad-Weyman formula adds
   26 in characteristic 0); P4 fails on 2 of 66 completed rechecks.
 
+## 2026-11-19 - Characteristic 2, the general statement [D]; EXP-004 frozen
+
+- Derived (context note `2026-11-19-characteristic-two-general.md`, not yet reviewed): in characteristic 2, a module
+  with a generators in degree 0 and at most a + 1 relations, all of one degree e >= 2, never has finite length over
+  U(H). Route: U is free of rank 4 over the central ring k[x^2, y^2, z]; each parity of U is a module over the quadric
+  t^2 + Z t + XY (t = left multiplication by yx), the even part free and the odd part a line bundle of bidegree (0,1);
+  a finite length quotient would give a surjection O^b to L^a with L ample, impossible for b <= a + 1 by Chern classes.
+- Consequences: the point (1,2,2,1) of (0, e, 3e, 4e) is realized over neither ring in characteristic 2 for every
+  e >= 2, while U/U(x^e, y^e) realizes it in characteristic 0 for every e; the points of (0,3,9,12) and (0,2,10,12) are
+  not realizable in characteristic 2 (BSB-014).
+- The derivation predicts the eventual Hilbert function of a general presentation: 2 for two quadrics, 4 for two
+  cubics, 6 for a 2 by 3 matrix of quadrics. The EXP-003 artifacts, read afterwards, show 2, 4 and 6.
+- EXP-004 frozen (e11af1f2): rank certificates for the lift of the prime-field realizations of EXP-001 to
+  characteristic 0, with a lemma on flat lifts of pure resolutions; the run is in progress.
+
