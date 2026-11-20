@@ -29,7 +29,7 @@
     "language": "eng",
     "version": "0.04",
     "publication_date": "2026-11-19",
-    "version_notes": "Adds the independent verification of eleven instances of the 2026 lower-bound series (values, planarity certificates, optimality of the prices), the frontier value with its exact evaluators, and the exact checks of the symmetric three-terminal and odd-cycle families. States each lower bound with its author and date (Rybin, Protti, Muffatti, Nikolenko, De la Fuente, Afrasyab) and corrects the status of the cost-free two-sided conjecture.",
+    "version_notes": "Adds the independent verification of eleven instances of the 2026 lower-bound series (values, planarity certificates, optimality of the prices), the frontier value with its exact evaluators, and the exact checks of the symmetric three-terminal and odd-cycle families. States each result of the series with its author and date (Rybin, Muffatti, Protti, Nikolenko, De la Fuente, Afrasyab) and corrects the status of the cost-free two-sided conjecture.",
     "related_identifiers": [
       {"relation": "isSupplementedBy", "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "resource_type": "software"},
       {"relation": "cites", "identifier": "10.1007/s004930050043", "resource_type": "publication-article"},

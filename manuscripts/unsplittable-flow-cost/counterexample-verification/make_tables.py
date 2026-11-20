@@ -7,7 +7,7 @@ Inputs (read-only), under problems/optimization-geometry/unsplittable-flow-cost/
   experiments/EXP-004/artifacts/run-log.txt          frontier value, cross-check of two LP solvers, family sweep
   experiments/EXP-005/artifacts/run-log.txt          the symmetric three-terminal family at three values of eps, grid maximum
   experiments/EXP-006/artifacts/summary.json, stage-{B,C,D}.jsonl   the odd-cycle family on C5
-  experiments/EXP-007/artifacts/results.json         the eleven record instances: values, planarity certificates, frontier values,
+  experiments/EXP-007/artifacts/results.json         the eleven instances of the series: values, planarity certificates, frontier values,
                                                      level searches, controls; the digest of the instance file
   code/ufclib/                                       rebuilds the seven-vertex instance (the arc table is typed below, from the
                                                      counterexample dossier) and recomputes its routing table, which must equal
@@ -29,7 +29,7 @@ not read from an artifact (the complete list; each item is compared with an arti
     the environment variable CAOS_RESEARCH_DATA names the data root);
   - the prose of the battery table (tab_battery.tex), of the controls table (tab_controls.tex) and of the procedures table
     (tab_procedures.tex), whose figures are read from the logs and results except the cost formulas of the procedures column;
-  - the label of each record instance (LABEL) and its terminal count (TERMS), compared with the paths of EXP-007's results.
+  - the label of each instance of the series (LABEL) and its terminal count (TERMS), compared with the paths of EXP-007's results.
 The odd-cycle figure plots, for each of the ten local searches, the running best frontier value after each evaluation, computed here
 from the per-evaluation trace of stage-D.jsonl (the trace has one entry per evaluation, accepted or not). With --check nothing is
 written and the script exits 1 when a committed output differs from a fresh one.
@@ -529,7 +529,7 @@ def exp007(d, N):
         q = fr(r4["alpha_max"])
         lines.append(f"{LABEL[k]} & {exact(q)} & {dec(q, 12)}\\\\[3pt]")
     lines += [r"\bottomrule", r"\end{tabular}",
-              r"\caption{The exact rational value $\alpha_{\mathrm{inst}}$ of each record instance, equal to the value claimed by its source, to the "
+              r"\caption{The exact rational value $\alpha_{\mathrm{inst}}$ of each instance of the series, equal to the value claimed by its source, to the "
               r"frontier value computed here, and to the streamed enumeration of all routings. The decimal expansion is given to twelve digits only "
               r"as a reading aid; the comparison is made on the exact fractions.}", r"\label{tab:exact}", r"\end{table}"]
     OUT["tab_exact.tex"] = "\n".join(lines) + "\n"
@@ -538,6 +538,15 @@ def exp007(d, N):
     N["nkrecmin"] = r["R1"]["UF-K17-RECORD"]["minimizers"]
     N["nkrefmin"] = r["R1"]["UF-K17-REFINED"]["minimizers"]
     N["nkroutings"] = commas(k17r["routings"])
+    starts = {}
+    for key in ("RECORD", "REFINED"):
+        first_line = text(EXP / f"EXP-007-nikolenko-records-recheck/artifacts/r4-UF-K17-{key}.log").splitlines()[0]
+        m = re.match(r"\[(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2})\] \+\s+0\.0s start pid=\d+ entry=UF-K17-" + key, first_line)
+        need(m is not None, f"the log of the {key} run starts with its start line")
+        starts[key] = m.groups()
+    need(starts["RECORD"][0] == starts["REFINED"][0] == "2026-11-19", "the two 17-terminal runs started on the same day (19 November 2026)")
+    N["nkrecstart"], N["nkrefstart"] = starts["RECORD"][1], starts["REFINED"][1]
+    need((N["nkrecstart"], N["nkrefstart"]) == ("19:15:59", "19:16:01"), "the two runs started two seconds apart, so they ran concurrently")
     N["nkcostgood"] = commas(r["R1"]["UF-K17-RECORD"]["cost_good"])
     need(r["R1"]["UF-K17-REFINED"]["cost_good"] == r["R1"]["UF-K17-RECORD"]["cost_good"], "equal number of cost-good routings on the two 17-terminal instances")
     N["nkreclevels"], N["nkreflevels"] = commas(k17r["levels"]), commas(k17f["levels"])
@@ -656,7 +665,7 @@ def exp007(d, N):
     for i, t in enumerate(k17r["tested"], 1):
         lines.append(f"{i} & {dec(fr(t['level']), 12)} & {'yes' if t['positive'] else 'no'} & {t['solves']} & {t['new_cuts']}\\\\")
     lines += [r"\bottomrule", r"\end{tabular}",
-              r"\caption{The levels tested by the cutting-plane evaluator on the 17-terminal record instance, in the order of the binary search over "
+              r"\caption{The levels tested by the cutting-plane evaluator on the 17-terminal instance of \cite{Nik2}, in the order of the binary search over "
               r"the " + commas(k17r["levels"]) + r" distinct values of $\alpha$ over " + commas(k17r["routings"]) + r" routings. A level is positive when "
               r"some nonnegative cost vector makes every routing below it dearer than the fractional flow. The largest positive level is the claimed "
               r"value and the next level above it is not positive, so the interval is closed. Exact levels are in the archived results.}",
@@ -726,7 +735,7 @@ def _faces(emb):
 LADDER = [  # (date, label, value, kind); kind g: general series, p: planar series; a value None is the exact bracket of 299-41 sqrt 41 over 32
     ("2026-07-23", "seven-vertex instance (Rybin)", Fraction(16, 15), "g"),
     ("2026-07-23", "four-terminal planar family (Protti; Nikolenko, 30 July)", None, "p"),
-    ("2026-07-24", "planar symmetric family (Muffatti; Nikolenko, 30 July, Proposition 5.2)", Fraction(9, 8), "p"),
+    ("2026-07-24", "planar symmetric family (Muffatti, note dated 24 July and public from 23 July 15:42 UTC; Nikolenko, 30 July, Proposition 5.2)", Fraction(9, 8), "p"),
     ("2026-07-31", "17-terminal instance", Fraction(1282494797984843521, 10 ** 18), "g"),
     ("2026-08-04", "refinement", Fraction(160325086265636045340018727271, 125 * 10 ** 27), "g"),
     ("2026-08-13", "planar record", Fraction(58676765987259, 50 * 10 ** 12), "p"),
@@ -747,8 +756,8 @@ def ladder(d, N):
     need(by["planar record"][1] == fr(r["R1"]["UF-PLANAR-K6"]["claimed"]), "ladder: planar record equals the claim")
     need(by["seven-vertex instance"][1] == fr(r["R1"]["UF-7VERTEX-16over15"]["claimed"]), "ladder: 16/15")
     need(by["planar symmetric family"][1] == Fraction(9, 8) and by["planar symmetric family"][0] == "2026-07-24",
-         "ladder: the value 9/8 is plotted at the date of Muffatti's note, 24 July 2026 (the date on the archived note)")
-    need(by["four-terminal planar family"][0] == "2026-07-23", "ladder: the four-terminal family is plotted at the date of Protti's note, 23 July 2026")
+         "ladder: the value 9/8 is plotted at the date printed on Muffatti's note, 24 July 2026 (the note was public from 23 July 2026, 15:42 UTC; see rehash)")
+    need(by["four-terminal planar family"][0] == "2026-07-23", "ladder: the four-terminal family is plotted at the date of Protti's release, 23 July 2026 (23:53 UTC; see rehash)")
     mid = float((fr(r["R2"]["grid"]["c_star_lower_bound"]) + fr(r["R2"]["grid"]["c_star_upper_bound"])) / 2)
     fig = [r"\begin{tikzpicture}", r"\begin{axis}[width=0.95\textwidth, height=7cm, xlabel={date of the source (days after 20 July 2026)},",
            r"  ylabel={lower bound on the constant}, xmin=0, xmax=28, ymin=1.0, ymax=1.32, tick label style={font=\scriptsize},",
@@ -864,12 +873,12 @@ def tables_misc(d, N):
          f"{N['ncertsec']} s for the 17-terminal graphs ({N['nkverts']} vertices, {N['nkarcs']} arcs)"),
     ]
     lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}p{3.3cm}p{4.3cm}p{4.9cm}@{}}", r"\toprule",
-             r"procedure & cost in the size of the instance & measured on the records\\", r"\midrule"]
+             r"procedure & cost in the size of the instance & measured on the instances of the series\\", r"\midrule"]
     for a, b, c in rows:
         lines.append(f"{a} & {b} & {c}\\\\[2pt]")
     lines += [r"\bottomrule", r"\end{tabular}",
               r"\caption{The procedures of Section~\ref{sec:methods}, with their cost as a function of the size of the instance and the run times measured "
-              r"on the records of Table~\ref{tab:records}. The times are those of single processes of one machine (the environment is recorded in "
+              r"on the instances of the series of Table~\ref{tab:records}. The times are those of single processes of one machine (the environment is recorded in "
               r"Section~\ref{sec:repro}); the library solves every linear program in exact rational arithmetic.}",
               r"\label{tab:procedures}", r"\end{table}"]
     OUT["tab_procedures.tex"] = "\n".join(lines) + "\n"
@@ -944,13 +953,13 @@ def tables_misc(d, N):
         (r"\cite{Nik1}", "record of 30 July 2026", nik["zenodo-21701162-Planar_Lower_Bound_1_1397_SSUF_Nikolenko.pdf"]),
         (r"\cite{Nik2}", "record of 31 July 2026", nik["zenodo-21716713-Lower_Bound_1_28249_SSUF_Deletion_Star_Nikolenko.pdf"]),
         (r"\cite{Nik3}", "record of 13 August 2026", nik["zenodo-21922203-ExactMean_Decompositions_SSUF_Nikolenko.pdf"]),
-        (r"record instances (JSON of EXP-007)", "transcription of 19 November 2026", d["r7"]["data"]["sha256"]),
+        (r"instances of the series (JSON of EXP-007)", "transcription of 19 November 2026", d["r7"]["data"]["sha256"]),
     ]
     lines = [r"\begin{table}[t]", r"\centering\footnotesize", r"\begin{tabular}{@{}p{3.6cm}p{4.2cm}p{6.2cm}@{}}", r"\toprule", r"source & version & SHA-256\\", r"\midrule"]
     for a, b, c in rows:
         lines.append(f"{a} & {b} & \\texttt{{{c[:32]}\\allowbreak {c[32:]}}}\\\\[2pt]")
     lines += [r"\bottomrule", r"\end{tabular}",
-              r"\caption{The primary sources read for this work and the instance file that the verification of the record instances reads, with the "
+              r"\caption{The primary sources read for this work and the instance file that the verification of the instances of the series reads, with the "
               r"SHA-256 digest of each archived file, so that a reader can confirm that the printed values were taken from these files.}",
               r"\label{tab:sources}", r"\end{table}"]
     OUT["tab_sources.tex"] = "\n".join(lines) + "\n"
@@ -965,6 +974,17 @@ def rehash(data_root, d):
             continue
         got = hashlib.sha256(p.read_bytes()).hexdigest()
         need(got == want, f"SHA-256 of {name}")
+    # the order of Muffatti's note and Protti's release, from the archived public commit and release listings
+    src = Path(data_root) / "unsplittable-flow-cost" / "sources"
+    cm, cr = src / "ufb063" / "commits-planar-cost-lower-bound.json", src / "protti-2026" / "releases-list.json"
+    cp = src / "protti-2026" / "commits-repo.json"
+    if cm.exists() and cr.exists() and cp.exists():
+        muf = min(c["commit"]["committer"]["date"] for c in json.loads(cm.read_text(encoding="utf-8")))
+        first = min(c["commit"]["committer"]["date"] for c in json.loads(cp.read_text(encoding="utf-8")))
+        rel = [x["published_at"] for x in json.loads(cr.read_text(encoding="utf-8")) if x["tag_name"] == "v0.1.0"][0]
+        need(muf == "2026-07-23T15:42:37Z", f"Muffatti's note first committed at {muf}")
+        need(first == "2026-07-23T23:01:40Z" and rel == "2026-07-23T23:53:09Z", f"Protti's first commit {first} and release {rel}")
+        need(muf < first < rel, "Muffatti's note is public before Protti's first commit and release")
     p = base / "instances.json"
     if p.exists():
         need(hashlib.sha256(p.read_bytes()).hexdigest() == d["r7"]["data"]["sha256"], "SHA-256 of instances.json")

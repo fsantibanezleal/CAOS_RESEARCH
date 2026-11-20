@@ -117,8 +117,8 @@ graphs \cite{TVZ24}.
 On 22 and 23 July 2026 a seven-vertex counterexample was announced publicly by Rybin \cite{Ryb26}, outside
 peer review, and a formal proof of its defining inequality was later added to the Archive of Formal Proofs
 \cite{AFP26}. In the following weeks the area produced a series of lower bounds on the violation constant. Muffatti
-\cite{Muf26} showed on 24 July 2026 that a symmetric family on the topology of the counterexample forces violations
-approaching $\tfrac98$, so that $\alpha^\star_{\mathrm{planar}}\ge\tfrac98$, and that $\tfrac98$ is the supremum over that family;
+\cite{Muf26} showed, in a note dated 24 July 2026 and committed to its public repository on 23 July 2026, that a symmetric family on the topology of the counterexample forces violations
+approaching $\tfrac98$, so that $\alpha^\star_{\mathrm{planar}}\ge\tfrac98$, and that $\tfrac98$ is the supremum of the lower bounds that the symmetric family of the note generates;
 Nikolenko \cite{Nik1} proved the same supremum for the symmetric three-terminal template (Proposition~5.2), with members
 $(3n-1)^2/(8n^2)$. Nikolenko published three preprints \cite{Nik1,Nik2,Nik3}: a planar four-terminal family, whose
 supremum $(299-41\sqrt{41})/32$ had been given by Protti \cite{Pro26} on 23 July and is credited jointly to both in
@@ -132,7 +132,7 @@ This paper supplies that recomputation and the exact instruments it needs. We wr
 and the decision procedure from the statement of the conjecture, in exact rational arithmetic, and use them
 to verify the seven-vertex instance (Section~\ref{sec:seven}) and the eleven instances of the series
 (Section~\ref{sec:records}, Table~\ref{tab:records}); one of the eleven is Rybin's instance as restated in \cite{Nik1}, and four are
-members of families that lie below $\tfrac98$ (the triangle members $n=2$ and $n=68$, the ternary core and the four-interval member
+members whose values lie below $\tfrac98$ (the triangle members $n=2$ and $n=68$, the ternary core and the four-interval member
 $n=67$; the triangle member $n=2$ is below $1$, so it is not a counterexample). The contributions are:
 \begin{enumerate}
 \item an independent exact verification of the seven-vertex instance by complete path enumeration, a battery of
@@ -225,8 +225,8 @@ decompositions, a planar instance with value $1.17353531974518$, and an open pro
 constant. The repository of the series \cite{NikRepo} holds the verifiers and certificates on which the
 claimed values rest, and De la Fuente's refinement \cite{DLF26} of the 17-terminal instance was merged into it.
 Muffatti \cite{Muf26} proves in a research note dated 24 July 2026 that the topology of the counterexample, with demands
-$(1,\tfrac34,1)$, forces $\tfrac98-\tfrac34\varepsilon$, and that $\tfrac98$ is the supremum of the symmetric family that the note
-parametrises [V]; Afrasyab \cite{Afr26} shows that every finite loopless
+$(1,\tfrac34,1)$, forces $\tfrac98-\tfrac34\varepsilon$, and that $\tfrac98$ is the supremum of the lower bounds that the symmetric family of the note generates
+[V]; Afrasyab \cite{Afr26} shows that every finite loopless
 independence system is realised by the zero-cost choices of an acyclic single-source instance and gives an exact
 cost-preserving threshold $1-bq$ on a uniform odd-cycle family. Bérczi, Liu, Reis and Tarnawski \cite{BLRT26}
 disprove Conjecture~1.3 of \cite{STVZ25} for every $k\ge4$ with a forced two-sided deviation
@@ -236,7 +236,7 @@ $L_e(x)+O(\rho_{\max}\sqrt{D})$ on directed multigraphs whose admissible paths h
 
 \paragraph{Where this paper stands.} Each of these sources states results about families, classes or constants, and
 certifies finite instances with the verifier of its author. This paper does none of the proving; it decides the finite
-instances again, with an instrument whose core predates the series and was built from the statement of the conjecture (Section~\ref{sec:methods}),
+instances again, with an instrument whose core was written from the statement of the conjecture by 25 July 2026, without code of the series (Section~\ref{sec:methods}),
 adds machine-checked planarity certificates for every instance (the sources give drawings and, for the planar record, a rotation system in the repository), and reports whether the prices of each instance can be
 improved. The seven-vertex instance and the instances of Muffatti and Afrasyab are also decided exactly under their
 own cost vectors and under the best cost vector.
@@ -369,13 +369,13 @@ costs. All quantities are exact rationals in the computations. The unit of every
 
 The procedures below are those of the exact library \texttt{ufclib} of the repository. The instance model, the enumeration, the decision
 procedure, the separation program, the exact simplex and the enumerative frontier evaluator were written from the statement of the
-conjecture on 24 and 25 July 2026, before the lower-bound series appeared, validated on hand-built instances
-(Section~\ref{sec:design}) and are unchanged since (the export list of the package apart); the cutting-plane evaluator and the odd-cycle builder
-were added on 14 November 2026 and the planarity checker for the re-check of the records; none of them uses code of the series.
+conjecture on 24 and 25 July 2026, without the code of any source of the series and before the preprints of Nikolenko, validated on hand-built instances
+(Section~\ref{sec:design}), and are unchanged since (the export list of the package apart); the cutting-plane evaluator and the odd-cycle builder
+were added on 14 November 2026 and the planarity checker on 19 November 2026, for the re-check of the instances of the series; none of them uses code of the series.
 Every quantity is a \texttt{fractions.Fraction}; the instance constructor refuses
 floating-point input, and a token scan of the library and of the experiment code finds no float literal in any arithmetic path; the only float literals
-are timing parameters of the run harness and one negative control.
-Table~\ref{tab:procedures} gives the cost of each procedure in the size of the instance and the time measured on the records.
+are timing parameters of the run harness and three negative controls that check that floating-point input is refused.
+Table~\ref{tab:procedures} gives the cost of each procedure in the size of the instance and the time measured on the instances of the series.
 
 \subsection{Instance model and enumeration of paths and routings}
 \label{sec:enum}
@@ -385,7 +385,7 @@ Indexing arcs rather than vertex pairs makes parallel arcs distinct paths: a mod
 where two exist, and the validation instance with two parallel arcs separates the two models (Section~\ref{sec:ablation}). The
 constructor checks flow conservation at every vertex and nonnegativity of $x$ and $c$, so an infeasible flow is rejected before any
 decision is made. Algorithm~\ref{alg:enum} enumerates the simple $s$--$t$ paths of every terminal by its own depth-first search,
-guarding on vertices rather than arcs so that the search terminates on digraphs with directed cycles. The enumeration never takes a
+guarding on vertices, so that it returns simple paths only and terminates on digraphs with directed cycles. The enumeration never takes a
 list of paths from the data. Its completeness is the failure mode of candidate counterexamples in this area, and for that reason
 every computation of Section~\ref{sec:results} asserts the path count per terminal against an independent count, and uses the
 theorem of Dinitz, Garg and Goemans as an oracle: an enumeration that reports no congestion-good routing signals an error in the data
@@ -527,7 +527,7 @@ giving a cost vector $c$; an oracle then returns the routing of least cost $c^{\
 separates every routing of $\mathcal U_A$ and the level is positive; otherwise the routing is a violated constraint and becomes a cut. If the program over the cuts has optimum at most $0$ the level is not positive,
 because the cuts are a subset of its constraints. The oracle is a branch and bound over the terminals, largest demand first. A branch is cut when a partial load already satisfies
 $y_a\ge x_a+A\,\dmax$ on some arc, since loads only grow as terminals are added and no completion can then lie below the level, or when the partial cost plus the cheapest remaining path of every undecided terminal
-cannot beat the best routing found. The cuts found at the highest positive level so far are reused at the next level, since they belong to the smaller set $\mathcal U_{A'}\subseteq\mathcal U_A$. The cuts of a level found not positive are discarded: they belong to $\mathcal U_A$ of that level and may lie outside the smaller set $\mathcal U_{A'}$ of the next lower level to be tested, where they would be invalid constraints.
+cannot beat the best routing found. The cuts found at the highest positive level so far are reused at the next level, since they belong to the smaller set $\mathcal U_{A'}\subseteq\mathcal U_A$. The cuts of a level found not positive are discarded: they belong to $\mathcal U_A$ of that level and may lie outside the smaller set $\mathcal U_{A''}$ of the next lower level to be tested, where they would be invalid constraints.
 
 \begin{algorithm}[t]
 \caption{Cutting-plane evaluator of the frontier value: streaming levels, binary search over them and a loop of separation programs and an exact oracle at each level.}
@@ -930,13 +930,13 @@ For the ternary core the pricing compared is the convention $1/d_i$ of the serie
 
 \input{tab_levels.tex}
 
-\paragraph{The ladder of bounds.} Figure~\ref{fig:ladder} orders the sources by date. Rybin's seven-vertex instance forces $\tfrac{16}{15}$ on 22 and 23 July; Protti's note gives the planar four-terminal family, with the supremum $(299-41\sqrt{41})/32$, on 23 July; Muffatti's note of 24 July gives the planar family with the supremum $\tfrac98$; Nikolenko's first preprint of 30 July gives the same four-terminal supremum and proves, as Proposition~5.2, the same supremum $\tfrac98$ for the symmetric three-terminal template, independently of \cite{Muf26}; his second preprint gives the 17-terminal value on 31 July; the refinement of De la Fuente is merged on 4 August; the planar record appears in the third preprint on 13 August. The values checked here are the plotted values of the seven-vertex instance, the 17-terminal instance, its refinement and the planar record, and the point of the
+\paragraph{The ladder of bounds.} Figure~\ref{fig:ladder} orders the sources by date. Rybin's seven-vertex instance forces $\tfrac{16}{15}$ on 22 and 23 July; Muffatti's note, dated 24 July and public in its repository from 23 July (15:42 UTC), gives the planar family with the supremum $\tfrac98$; Protti's release of 23 July (23:53 UTC) gives the planar four-terminal family, with the supremum $(299-41\sqrt{41})/32$; Nikolenko's first preprint of 30 July gives the same four-terminal supremum and proves, as Proposition~5.2, the same supremum $\tfrac98$ for the symmetric three-terminal template, independently of \cite{Muf26}; his second preprint gives the 17-terminal value on 31 July; the refinement of De la Fuente is merged on 4 August; the planar record appears in the third preprint on 13 August. The values checked here are the plotted values of the seven-vertex instance, the 17-terminal instance, its refinement and the planar record, and the point of the
 planar family is the exact bracket of its supremum.
 
 \begin{figure}[t]
 \centering
 \input{fig_ladder.tex}
-\caption{Lower bounds on the frontier constant by date and author. The instance values ($\tfrac{16}{15}$, $1.28249$, $1.28260$, $1.17354$) are verified in this paper; the two family suprema, $\tfrac98$ and $(299-41\sqrt{41})/32$, are theorems of their sources [V], shown by the exact bracket of their value. General instances (blue, steps) and the planar series (red marks, one per source), with the line at $\tfrac98$. The planar family point is the bracket of the supremum $(299-41\sqrt{41})/32$ of the note of Protti and of the first preprint of Nikolenko; the point of $\tfrac98$ on 24 July is the planar family of Muffatti, a supremum below the value of the day before; the planar record of $1.17353531974518$ is the highest planar value, and the 17-terminal refinement of $1.28260069$ is the highest general value. The upper bound $2$ for planar instances is outside the plotted range.}
+\caption{Lower bounds on the frontier constant by date and author. The instance values ($\tfrac{16}{15}$, $1.28249$, $1.28260$, $1.17354$) are verified in this paper; the two family suprema, $\tfrac98$ and $(299-41\sqrt{41})/32$, are theorems of their sources [V], shown by the exact bracket of their value. General instances (blue, steps) and the planar series (red marks, one per source), with the line at $\tfrac98$. The planar family point is the bracket of the supremum $(299-41\sqrt{41})/32$ of the note of Protti and of the first preprint of Nikolenko; the point of $\tfrac98$ is the planar family of Muffatti, plotted at the date printed on the note (24 July); the note was committed to its public repository on 23 July 2026 at 15:42 UTC, before the release of Protti (23 July 2026, 23:53 UTC); the planar record of $1.17353531974518$ is the highest planar value, and the 17-terminal refinement of $1.28260069$ is the highest general value. The upper bound $2$ for planar instances is outside the plotted range.}
 \label{fig:ladder}
 \end{figure}
 
@@ -949,7 +949,7 @@ Each result of Section~\ref{sec:results} is known to be correct by at least two 
 The enumeration is itself checked by the theorem of Dinitz, Garg and Goemans used as an oracle (a congestion-good routing exists, and \ngood\ do), by the conservation check on $x$, and by the path count of two per terminal against a count made by hand. The formal entry \cite{AFP26} proves the same inequality, $58$ against $60$ at load $x+15$, in a proof assistant for the same nine arcs [V]; it does not formalise the forced violation, the separation optimum or the acyclicity corollaries, which rest on the computations here.
 
 \paragraph{The linear programs.} The separation program and the enumeration agree on the seven-vertex instance in decision and in value: under the witness costs the decision procedure returns $c^{\mathsf T}x=\tfrac{58}{7}$, a least congestion-good cost $\tfrac{60}{7}$ and the gap $\tfrac27$ that equals the optimum. The exact simplex with Bland's rule and the rational simplex of sympy, which share no code, agree exactly on the \nxcheck\ instances on which sympy finishes.
-On every instance of the records the witness cost vector returned by the frontier evaluators is re-checked by pricing the instance with it and running the decision procedure, whose enumeration shares nothing with the linear program; the resulting $\alpha_{\mathrm{inst}}$ equals the frontier value in all eleven cases (Table~\ref{tab:records}). For the two 17-terminal instances the check enumerates all \nkroutings\ routings.
+On every instance of the series the witness cost vector returned by the frontier evaluators is re-checked by pricing the instance with it and running the decision procedure, whose enumeration shares nothing with the linear program; the resulting $\alpha_{\mathrm{inst}}$ equals the frontier value in all eleven cases (Table~\ref{tab:records}). For the two 17-terminal instances the check enumerates all \nkroutings\ routings.
 
 \paragraph{The record values.} The streaming loop that decides the 17-terminal instances uses the library's own routing, load and budget functions and is compared with \texttt{decide\_instance} on every instance of at most 64 routings, where they agree; each value equals the printed value to the last digit, and the controls of Section~\ref{sec:ablation} show that a change of $10^{-9}$ in one demand is detected. The values of the seven-vertex instance and of the symmetric family are consistent with the closed
 forms of \cite{Muf26} and with the supremum of \cite{Nik1}.
@@ -965,7 +965,7 @@ There is no tunable method to ablate here, since every procedure is exact. The a
 
 \input{tab_controls.tex}
 
-Removing the arc index from the instance model would be silent on all of the records except one calibration instance [D]: with two parallel arcs a model keyed on pairs of endpoints finds one path and reports one routing, where the arc-indexed model finds two. A path enumerator without a vertex guard fails to terminate on the instance with a directed cycle, and one that guards on arcs terminates (a finite graph has finitely many trails) but enumerates walks that repeat vertices, which are not simple paths; the vertex guard terminates and returns the third simple path
+Removing the arc index from the instance model would be silent on all of the instances of the series except one calibration instance [D]: with two parallel arcs a model keyed on pairs of endpoints finds one path and reports one routing, where the arc-indexed model finds two. A path enumerator without a vertex guard fails to terminate on the instance with a directed cycle, and one that guards on arcs terminates (a finite graph has finitely many trails) but enumerates walks that repeat vertices, which are not simple paths; the vertex guard terminates and returns the third simple path
 that the cycle creates. An exclusive reading of the congestion inequality would misclassify the routing of the fourth calibration instance that loads an arc to exactly $x_a+\dmax$, and would have silently manufactured counterexamples [D]. Each of these is a plausible implementation error, and each is caught by one calibration instance; the consequences of the removals above are argued, not observed; what was observed is the path count of the library itself on the calibration instances (two paths on the instance with parallel arcs, and the third simple path on the instance with a directed cycle).
 
 Removing the exact simplex in favour of a single solver would leave the numbers resting on one implementation: sympy's rational simplex raised an oscillation error on a degenerate member of the spine family, and replacing it by the Bland-rule simplex, validated against sympy where both finish, removed the single point of failure. Removing the cuts' reuse or the monotone binary search from the cutting-plane evaluator would leave the enumerative evaluator,
@@ -1001,7 +1001,7 @@ The restriction to simple paths is argued in Section~\ref{sec:instances}, not ma
 \paragraph{Construct validity and unconfirmed statements.} The cost convention of the figure of the ternary core in \cite{Nik3} is not printed in its caption; the convention of a unit cost $1/d_i$ on the early exit, used throughout the series, reproduces the printed value $(3-\eta)^2/8$, but the convention itself is [U] for that figure. The planarity of the instance of Figure~2 of \cite{BLRT26} was not checked [U]. A preprint on the discovery of the counterexample listed on SSRN under the identifier 7423078 could not be read (the host returned an access error), so it is not used.
 The proof of the Dinitz--Garg--Goemans theorem is used as a statement and was not read in its original; the equivalence of \cite{MSS07} between the cost form and the convex-combination form is used only in its easy direction. The note of \cite{Muf26} is not peer reviewed. The realisation conditions of the construction of \cite{Afr26} are not imposed on the odd-cycle members, and the dates printed on its first version and in its identifier do not agree [U].
 
-\paragraph{Scope of the computation.} The cutting-plane evaluator finished on instances of $\nkroutings$ routings in under nine minutes on one process; its behaviour on larger instances is not measured. The grid drawing of the planar record depends on the version of the graph library (\nnetworkx), and the drawing is re-checked for crossings at every build. Run times are those of one machine; the processor model was not recorded [U]. The two 17-terminal evaluations ran concurrently on that machine (their logs show starts at 19:15:59 and 19:16:01), so each wall time is that of a process that shared the machine with the other.
+\paragraph{Scope of the computation.} The cutting-plane evaluator finished on instances of $\nkroutings$ routings in under nine minutes on one process; its behaviour on larger instances is not measured. The grid drawing of the planar record depends on the version of the graph library (\nnetworkx), and the drawing is re-checked for crossings at every build. Run times are those of one machine; the processor model was not recorded [U]. The two 17-terminal evaluations ran concurrently on that machine (their logs show starts at \nkrecstart\ and \nkrefstart\ on 19 November 2026), so each wall time is that of a process that shared the machine with the other.
 
 \section{Reproducibility and data availability}
 \label{sec:repro}

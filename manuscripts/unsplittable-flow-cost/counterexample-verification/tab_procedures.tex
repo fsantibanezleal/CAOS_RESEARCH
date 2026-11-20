@@ -2,7 +2,7 @@
 \centering\footnotesize
 \begin{tabular}{@{}p{3.3cm}p{4.3cm}p{4.9cm}@{}}
 \toprule
-procedure & cost in the size of the instance & measured on the records\\
+procedure & cost in the size of the instance & measured on the instances of the series\\
 \midrule
 path and routing enumeration, Algorithm~\ref{alg:enum} & depth-first search per terminal; $\prod_t p_t$ routings, each a load vector of length $|A|$ & 131{,}072 routings of the 17-terminal record streamed in 159.2 s\\[2pt]
 decision of an instance, Algorithm~\ref{alg:decide} & one pass over the routings; $O(|T|\,|A|)$ per routing & eight routings of the seven-vertex instance in under 0.01 s; 131{,}072 routings in 159.2 s\\[2pt]
@@ -12,6 +12,6 @@ cutting-plane evaluator, Algorithm~\ref{alg:cp} & $O(\log L)$ level tests, each 
 planarity certificate and checker, Algorithm~\ref{alg:planar} & face tracing visits each dart once; suppression of degree-two vertices repeats until none remains & 0.13 s for the 17-terminal graphs (51 vertices, 67 arcs)\\[2pt]
 \bottomrule
 \end{tabular}
-\caption{The procedures of Section~\ref{sec:methods}, with their cost as a function of the size of the instance and the run times measured on the records of Table~\ref{tab:records}. The times are those of single processes of one machine (the environment is recorded in Section~\ref{sec:repro}); the library solves every linear program in exact rational arithmetic.}
+\caption{The procedures of Section~\ref{sec:methods}, with their cost as a function of the size of the instance and the run times measured on the instances of the series of Table~\ref{tab:records}. The times are those of single processes of one machine (the environment is recorded in Section~\ref{sec:repro}); the library solves every linear program in exact rational arithmetic.}
 \label{tab:procedures}
 \end{table}
