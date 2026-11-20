@@ -257,4 +257,9 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   repaired); a pure pair over the rationals at e = 4.
 - Running: the last pair and the exploratory family of EXP-010, EXP-014 (under amendment 1), the first pass of the
   manuscript v0.03.
-
+- 2026-11-20: EXP-010 CONFIRMED and EXP-014 PARTLY CONFIRMED (e = 6, 7, 8 complete). Note on one congruence for the pairs
+  (x^e + b y^e, G(xy, z)) reviewed (the pure Hilbert function, the pure Betti table, existence for p >= 2e - 1); note on the
+  projection on the weight-zero summand reviewed (the linear family has no pure member for p <= 2e - 5). EXP-015 CONFIRMED
+  (the rule of the linear family at e = 10 to 13; e = 9 complete), EXP-016 CONFIRMED with one case unfinished (lists by the
+  congruence; e = 10 and e = 12 complete), EXP-017 CONFIRMED (a filter of two congruences for the odd-e stratum; pure pairs
+  at (11,7), (13,5)). Working notes on the family x^e + alpha y^t, y^e + beta x^t; backlog BSB-035, BSB-036.

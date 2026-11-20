@@ -1,6 +1,6 @@
 # boij-soderberg-realizability: RESUME (session handoff)
 
-Updated 2026-11-20 (manuscript v0.02 published). First read for any session, per methodology 07. Derived view: experiment verdicts win.
+Updated 2026-11-20 (manuscript v0.02 published; EXP-009 to EXP-017 closed; v0.03 in its third pass). First read for any session, per methodology 07. Derived view: experiment verdicts win.
 
 ## 1. State in one screen
 
@@ -56,11 +56,14 @@ BSR-F3, proposed).
 | EXP-007-pure-family-at-the-power-pair | do the repository's instruments reproduce the review's computations on the family of pure pairs through <x^e, y^e>? The tangent space of the rank locus (e = 4 to 7; the rationals, GF(13), GF(17), GF(32003)), five explicit pairs over the rationals with controls, the linear family, a plane section, the common-factor locus | CONFIRMED (2026-11-20) | tangent dimension exactly 4e - 4 over the rationals (12, 16, 20, 24), so the pure locus is smooth of that dimension at <x^e, y^e> in characteristic 0; 22 at e = 6 over GF(13) and 26 at e = 7 over GF(17); explicit pure modules over the rationals outside the published family, for example U/U(x^4 + x y^3, y^4) |
 | EXP-008-odd-characteristic-e5-e6 | pure pairs of quintics over GF(5), GF(7) and of sextics over GF(3)? Random search with the rank filter first, early stop at 40 pure spaces | CONFIRMED (2026-11-20) | 43 pure of 86,250 over GF(5), 42 of 162,500 over GF(7), 40 of 289,000 sextic pairs over GF(3); so for e = 2, 3, 4, 5 the point (1,2,2,1) of (0, e, 3e, 4e) fails only in characteristic 2, and at e = 6 it is realized in characteristic 3; the shares are 0.31, 0.62, 0.91 times q^(-2 h_e(3e)) |
 | EXP-009-linear-family-below-2e | does the linear family L_e contain a pure member in odd characteristic below 2e? Every member over GF(p) for e = 4 to 7 (fifteen pairs, five controls); GF(p^2) where none is found | CONFIRMED in six pairs, REFUTED in nine (2026-11-20) | pure members at (4,5), (4,7), (5,7), (6,11), (7,11), (7,13): e = 6 is settled in characteristic 11 and e = 7 in 11 and 13 (x^6 + y^4 z, y^6 + 3 x^4 z over GF(11); x^7 + y^5 z, y^7 + x^5 z over GF(13)); no pure member for p <= e, at (5,5) and at (6,7); no member above the rank in any pair |
-| EXP-010-weight-class-strata | does an admissible stratum S(m; i, j) (f, g homogeneous for the weight modulo m) hold a pure pair in the open pairs (6,5), (6,7), (7,3), (7,5), (7,7)? Nine settled pairs as controls; e = 8 exploratory | families C and Q at four pairs accepted (2026-11-20); (7,7) and e = 8 running | pure pairs at (6,5), (6,7), (7,3), (7,5), for example x^6 + y^6, x^3 y^3 + x^2 y^2 z + 3 z^3 over GF(7); the necessary condition holds on 410 strata that are not admissible (785,982 members, none with the pure Hilbert function) |
+| EXP-010-weight-class-strata | does an admissible stratum S(m; i, j) (f, g homogeneous for the weight modulo m) hold a pure pair in the open pairs (6,5), (6,7), (7,3), (7,5), (7,7)? Nine settled pairs as controls; e = 8 exploratory | CONFIRMED (2026-11-20) | pure pairs over GF(p) in all five pairs (two instruments); none of the 410 strata that are not admissible holds a member with the pure Hilbert function; e = 8 by search over GF(3), GF(7), GF(13) |
 | EXP-011-central-pair-machine-checks | are the central pairs x^e + z^s l_1, y^e + z^s l_2 pure in characteristic p dividing an odd e? Sixteen cases, e up to 15, five cases outside the hypotheses | CONFIRMED (2026-11-20) | pure in all sixteen cases and both instruments; e = 7 in characteristic 7 (x^7 + y z^3, y^7 + x z^3), e = 9 in characteristic 3 |
 | EXP-012-central-commutator-criterion | are the explicit pairs of the criterion pure for e = 0 or 1 modulo p, and does the criterion agree with purity on random pairs of the class? Eleven explicit pairs, 1,600 random pairs, three built to fail | CONFIRMED (2026-11-20) | pure in all eleven cases and both instruments, among them x^6 + z^3, y^6 + z^3 over GF(5) and x^7 + y z^3 + x^3 z^2, y^7 + x z^3 over GF(3); the criterion equals purity on every random pair |
 | EXP-013-pull-back-scaling | does the pull-back along an endomorphism of degree d multiply the degrees of the Betti table by d? Seven pairs, three modules that are not pairs, two controls | CONFIRMED (2026-11-20) | the scaled table in all ten cases and both instruments; pure pairs of degree 8 over GF(3), 12 over GF(5), 16 and 24 over GF(7), where p divides neither e nor e - 1 |
-| EXP-014-middle-strata | do the strata S(e; 0, e/2), S((e + 1)/2; 0, (e - 1)/2) and S(e - 1; 0, 1) hold pure pairs at e = 8, 9, 10, 12? | running under amendment 1 (2026-11-20) | not yet accepted |
+| EXP-014-middle-strata | do the strata S(e; 0, e/2), S((e + 1)/2; 0, (e - 1)/2) and S(e - 1; 0, 1) hold pure pairs at e = 8, 9, 10, 12? | PARTLY CONFIRMED (2026-11-20; one amendment) | pure pairs (x^e + b y^e, G(xy, z)) at e = 8 for p = 5, 7, 11, 13, at e = 10 for p = 3, 7, 11, 13, at e = 12 for p = 5; degree 9 over GF(7) and GF(17); none found at (9,11), (9,13), (12,7) |
+| EXP-015-linear-rule-and-e9 | does the rule of the linear family (pure members exactly when 2e - p <= 3) hold for e = 10 to 13, and do other admissible strata hold a pure pair at (9,5), (9,11), (9,13)? | CONFIRMED (2026-11-20) | the rule in all twelve pairs (24 of 24 with the earlier ones; its 'none' half is now a proposition); pure pairs of degree 9 over GF(5), GF(11), GF(13): e = 9 complete |
+| EXP-016-congruence-lists | which forms G over GF(p) satisfy the hypothesis and the one congruence, for e = 10 to 16, and is every one a pure pair in U? | CONFIRMED (2026-11-20; one case unfinished) | pure pairs at (10,17), (10,19), (12,7), (12,13), (12,17), (12,19), (12,23), (14,17), (14,19), (16,11); (16,13) as well; e = 10 and e = 12 complete; empty lists at (14,5), (14,11) and over GF(9) |
+| EXP-017-odd-stratum-filter | does a member of the odd-e stratum that passes a filter of two congruences have the pure table, at (9,11), (9,13), (11,7), (13,5)? | CONFIRMED (2026-11-20) | pure pairs at the four pairs; all 1,699 members that pass have the pure Hilbert function and all 75 tables are pure; the filter is observed, not proved |
 
 ## 4. In flight
 
@@ -119,13 +122,20 @@ Published on 2026-11-20: the manuscript v0.02, [10.5281/zenodo.24388904](https:/
    pull-back, which multiplies the degrees of every Betti table by d = 0 or 1 modulo p. Then the decomposition over
    k[xy, z] of the pairs (x^e + b y^e, G(xy, z)), with a pure pair over the rationals at e = 4. EXP-011, EXP-012 and
    EXP-013 confirm the three theorems by machine; EXP-010 finds pure pairs at (6,5), (6,7), (7,3), (7,5).
-2. State of the point (1,2,2,1) of (0, e, 3e, 4e): for 2 <= e <= 7 it fails only in characteristic 2 (an explicit pure
-   pair in every odd characteristic). For every e it is realized in characteristic p dividing e(e - 1), and for
-   e = d e' with d = 0 or 1 modulo p and e' realized. Open: the other odd characteristics below 2e for e >= 8
-   (EXP-014 and family E of EXP-010 are running on e = 8, 9, 10, 12).
-3. In flight: the manuscript v0.03 (BSB-030; plan in the coordination repository), EXP-010 (last pair and e = 8),
-   EXP-014. Then the strategic review of the focus; backlog BSB-031 to BSB-034, the 15 open rays with d3 >= 10, the
-   substitution in the Kostant presentations (BSB-012), BSB-022.
+2. State of the point (1,2,2,1) of (0, e, 3e, 4e) (all on 2026-11-20, each with a verdict): for 2 <= e <= 10 and for e = 12
+   it fails only in characteristic 2: a pure pair over GF(p) for every odd prime p below 2e (EXP-006, EXP-008 to EXP-017 and
+   the criterion). For every e it is realized in characteristic p dividing e(e - 1), for e = d e' with d = 0 or 1 modulo p
+   and e' realized, and for even e over a finite field of characteristic p >= 2e - 1. Open: e = 11 at p = 3, 13, 17; e = 13
+   at p = 7, 11, 17, 19; e = 14 at p = 5, 11, 23; e >= 15.
+3. Three more derivations, each read by a reviewer other than the writer: for the pairs (x^e + b y^e, G(xy, z)) one
+   congruence decides the pure Hilbert function and gives the pure Betti table; the projection on the weight-zero
+   summand, which proves that the linear family has no pure member for p <= 2e - 5 and excludes weight-class strata; the
+   proposition on the characteristic dividing the modulus. Working notes, not reviewed: one family of pairs
+   x^e + alpha y^t, y^e + beta x^t governed by one form, with a filter of two congruences that matched every table
+   computed (EXP-017).
+4. In flight: the manuscript v0.03 (BSB-030; plan in the coordination repository): third pass, review, release. Then the
+   strategic review of the focus; backlog BSB-031, BSB-033 to BSB-036, the 15 open rays with d3 >= 10, the substitution in
+   the Kostant presentations (BSB-012), BSB-022.
 
 ## 6. Where everything lives
 

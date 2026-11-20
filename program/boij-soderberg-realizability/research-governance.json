@@ -78,7 +78,7 @@
       ],
       "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
       "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (v0.02 published 2026-11-20)",
-      "first_bounded_action": "Done: EXP-005 to EXP-009, the manuscript v0.02 (10.5281/zenodo.24388904); then EXP-011, EXP-012, EXP-013 confirmed and five derivations reviewed. Running: EXP-010 (its last pair and the exploratory family), EXP-014, the first pass of the manuscript v0.03. Next: the verdicts of EXP-010 and EXP-014, the second pass, the review and the release of v0.03, then the strategic review that closes this focus.",
+      "first_bounded_action": "Done: EXP-005 to EXP-017 and the manuscript v0.02 (10.5281/zenodo.24388904); eight derivations reviewed after v0.02 (weight classes, central pairs, the criterion, endomorphisms, pull-back, pairs over the invariants, one congruence, the weight-zero projection). In progress: the manuscript v0.03 (third pass of the writer, then the review by a reader other than the writer and the release). Next: the strategic review that closes this focus or renews it on BSB-035.",
       "evidence": [
         "EXP-005",
         "EXP-006",
@@ -88,11 +88,16 @@
         "EXP-010",
         "EXP-011",
         "EXP-012",
-        "EXP-013"
+        "EXP-013",
+        "EXP-014",
+        "EXP-015",
+        "EXP-016",
+        "EXP-017"
       ],
       "review_2026_11_20": "The point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every characteristic other than 2 for e = 2, 3, 4, 5 (explicit pairs, two instruments, rebuilt by the coordinating session; Theorems A and C); at e = 6 it is realized in characteristic 3 and open in 5, 7, 11. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e>, exactly 4e - 4 there over the rationals for e = 4 to 7, with an explicit four-parameter linear family for every e >= 4. The manuscript v0.02 was read by a reviewer other than the writer; the success gate is met once it is released.",
       "review_2026_11_20_exp009": "EXP-009 (after v0.02): the linear family contains pure members below 2e at (4,5), (4,7), (5,7), (6,11), (7,11), (7,13), so the point (1,2,2,1) is realized at e = 6 in every characteristic other than 2, 5, 7 and at e = 7 in every characteristic other than 2, 3, 5, 7. Not in the manuscript: it goes into the next version, with a decided open characteristic if one is decided.",
-      "review_2026_11_20_theorems": "After v0.02: (1) in characteristic p >= 3, pairs of forms with central coefficients, f = A + beta_1 x + beta_2 y, have a central commutator and are pure exactly when z D, n(f), n(g) have no common zero but the origin; explicit pure pairs for every e >= 3 with e = 0 or 1 modulo p (reviewed; EXP-011 and EXP-012, two instruments, e up to 15). (2) Such a pair makes U free over the image of an endomorphism, and the pull-back multiplies the degrees of every Betti table by d, so the set of realized e in characteristic p is closed under multiplication by d = 0 or 1 modulo p (reviewed; EXP-013). The mechanism exists only for a central commutator, hence only for p dividing d(d - 1), and never in characteristic 0. (3) A necessary condition for pure pairs homogeneous for the weight modulo m, tested on 410 strata (reviewed; EXP-010). (4) EXP-010 finds pure pairs at (6,5), (6,7), (7,3), (7,5); with (7,7) from the central pairs, every pair (e, p) with 2 <= e <= 7 and p odd has an explicit pure pair: the point (1,2,2,1) of (0, e, 3e, 4e) fails only in characteristic 2 for 2 <= e <= 7. (5) For even e the pairs (x^e + b y^e, G(xy, z)) decompose over k[xy, z]; a pure pair over the rationals at e = 4 with second form (xy)^2 - (xy) z + 9 z^2 (reviewed)."
+      "review_2026_11_20_theorems": "After v0.02: (1) in characteristic p >= 3, pairs of forms with central coefficients, f = A + beta_1 x + beta_2 y, have a central commutator and are pure exactly when z D, n(f), n(g) have no common zero but the origin; explicit pure pairs for every e >= 3 with e = 0 or 1 modulo p (reviewed; EXP-011 and EXP-012, two instruments, e up to 15). (2) Such a pair makes U free over the image of an endomorphism, and the pull-back multiplies the degrees of every Betti table by d, so the set of realized e in characteristic p is closed under multiplication by d = 0 or 1 modulo p (reviewed; EXP-013). The mechanism exists only for a central commutator, hence only for p dividing d(d - 1), and never in characteristic 0. (3) A necessary condition for pure pairs homogeneous for the weight modulo m, tested on 410 strata (reviewed; EXP-010). (4) EXP-010 finds pure pairs at (6,5), (6,7), (7,3), (7,5); with (7,7) from the central pairs, every pair (e, p) with 2 <= e <= 7 and p odd has an explicit pure pair: the point (1,2,2,1) of (0, e, 3e, 4e) fails only in characteristic 2 for 2 <= e <= 7. (5) For even e the pairs (x^e + b y^e, G(xy, z)) decompose over k[xy, z]; a pure pair over the rationals at e = 4 with second form (xy)^2 - (xy) z + 9 z^2 (reviewed).",
+      "review_2026_11_20_strata": "After the theorems: EXP-010 (weight-class strata) settles (6,5), (6,7), (7,3), (7,5), (7,7); EXP-014 settles e = 8 and finds pure pairs (x^e + b y^e, G(xy, z)) at e = 10, 12; a reviewed note shows that for those pairs, under a coprimality hypothesis, one congruence decides the pure Hilbert function and gives the pure Betti table, with existence over a finite field of characteristic p >= 2e - 1; EXP-016 lists the forms by that congruence and settles e = 10 and e = 12; a reviewed note (the projection on the weight-zero summand) proves that the linear family has no pure member for p <= 2e - 5 and excludes strata; EXP-015 confirms the rule of the linear family in twelve more pairs and settles e = 9; EXP-017 finds pure pairs at (11,7) and (13,5) through a filter of two congruences for the odd-e stratum, which is observed and not proved. State: for 2 <= e <= 10 and e = 12 the point (1,2,2,1) of (0, e, 3e, 4e) has a pure pair over GF(p) for every odd prime p below 2e; open at e = 11 (p = 3, 13, 17), e = 13 (7, 11, 17, 19), e = 14 (5, 11, 23)."
     }
   ],
   "manuscripts": [
@@ -117,7 +122,7 @@
     },
     {
       "start": 9,
-      "end": 14,
+      "end": 17,
       "classification": "research-record",
       "manuscripts": []
     }
