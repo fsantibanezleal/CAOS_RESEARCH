@@ -15,4 +15,8 @@ for e = 12 the point fails only in characteristic 2 (a pure pair over GF(p) for 
 characteristic p >= 3 it is realized for every e divisible by p or congruent to 1 modulo p, the realized e are closed
 under multiplication by such d, and for even e it is realized over a finite field of characteristic p >= 2e - 1. The
 linear family holds no pure member for p <= 2e - 5 (proved) and holds one for p = 2e - 3, 2e - 1 in the thirteen pairs
-computed. Open: 15 rays with d3 >= 10; e = 11 at p = 3; e = 13 at p = 7, 11; e = 14 at p = 5, 11; e >= 15.
+computed. Later on 2026-11-20 (two more reviewed derivations, EXP-019, EXP-020): for the pairs x^e + alpha y^t,
+y^e + beta x^t two congruences and a scalar give the pure Hilbert function, and a pure pair under one more coprimality;
+explicit pure pairs of the linear family exist for every prime p = 2e - 1 (p >= 5) and for every prime p = 2e - 3 up to
+2,000,000; every pair (e, p) with e <= 16 and p an odd prime below 2e is settled except (11, 3), so for 2 <= e <= 16
+with e not 11 the point fails only in characteristic 2. Open: 15 rays with d3 >= 10; e = 11 at p = 3; e >= 17.

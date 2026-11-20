@@ -265,3 +265,9 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   at (11,7), (13,5)). Working notes on the family x^e + alpha y^t, y^e + beta x^t; backlog BSB-035, BSB-036.
 - 2026-11-20: EXP-018 CONFIRMED (the largest exponent strata: pure pairs at (11,13), (11,17), (13,17), (13,19), (14,23); at e = 11 only
   p = 3 stays open).
+- 2026-11-20: two derivations reviewed (the pairs x^e + alpha y^t, y^e + beta x^t: two congruences and a scalar give the pure
+  Hilbert function, and a pure pair when Delta has no common factor with A_(e-t); explicit pure pairs of the linear family for
+  every prime p = 2e - 1 and for p = 2e - 3 up to 2,000,000). EXP-019 CONFIRMED on the cases finished (the filter for every
+  exponent: pure pairs at (13,11), (13,7), (14,5) and six pairs with e = 15, 16). EXP-020 CONFIRMED (the members fixed by the
+  exchange of x and y: pure pairs at (14,11), (15,11), (15,13), (15,17), (16,17), (16,19)). Every pair (e, p) with e <= 16 is
+  settled except (11, 3). Backlog BSB-037 to BSB-039.

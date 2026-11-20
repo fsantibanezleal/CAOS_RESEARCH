@@ -1,6 +1,6 @@
 # boij-soderberg-realizability: RESUME (session handoff)
 
-Updated 2026-11-20 (manuscript v0.02 published; EXP-009 to EXP-018 closed; v0.03 in its third pass). First read for any session, per methodology 07. Derived view: experiment verdicts win.
+Updated 2026-11-20 (manuscript v0.02 published; EXP-009 to EXP-020 closed; ten derivations reviewed after v0.02; v0.03 in its last writing pass). First read for any session, per methodology 07. Derived view: experiment verdicts win.
 
 ## 1. State in one screen
 
@@ -65,6 +65,8 @@ BSR-F3, proposed).
 | EXP-016-congruence-lists | which forms G over GF(p) satisfy the hypothesis and the one congruence, for e = 10 to 16, and is every one a pure pair in U? | CONFIRMED (2026-11-20; one case unfinished) | pure pairs at (10,17), (10,19), (12,7), (12,13), (12,17), (12,19), (12,23), (14,17), (14,19), (16,11); (16,13) as well; e = 10 and e = 12 complete; empty lists at (14,5), (14,11) and over GF(9) |
 | EXP-017-odd-stratum-filter | does a member of the odd-e stratum that passes a filter of two congruences have the pure table, at (9,11), (9,13), (11,7), (13,5)? | CONFIRMED (2026-11-20) | pure pairs at the four pairs; all 1,699 members that pass have the pure Hilbert function and all 75 tables are pure; the filter is observed, not proved |
 | EXP-018-largest-exponent-strata | does the stratum of the pairs x^e + alpha y^t, y^e + beta x^t with the largest t such that 2t <= p - 1 hold a pure pair at (11,13), (11,17), (13,17), (13,19), (14,23), and do the strata with t + 2 hold none? | CONFIRMED (2026-11-20) | pure pairs at the five pairs (two instruments); no member with the pure Hilbert function in the five excluded strata; the share of the pure Hilbert function is 0.2 to 0.7 times p^(-(e-t-2)) |
+| EXP-019-filter-every-exponent | does a member of the stratum with the largest allowed exponent t that passes the filter of two congruences (written for every t) have the pure table, at (13,11), (13,7), (14,5), (14,11) and nine pairs with e = 15, 16? Random members, four controls, a gate on 445 stored members | CONFIRMED on the cases finished (2026-11-20; two cases not finished, two not started) | pure pairs at (13,11), (13,7), (14,5), (15,19), (15,23), (15,29), (16,23), (16,29), (16,31) (two instruments); all 5,387 members that pass have the pure Hilbert function and all 143 tables are pure; at (14,11) no member passes among 380 million |
+| EXP-020-symmetric-members | do the members with beta = c alpha^omega (fixed by the exchange of x and y), listed completely, hold a pure pair at (14,11), (15,11), (15,13), (15,17), (16,17), (16,19)? Three controls with counts fixed before the run | CONFIRMED (2026-11-20; one prediction on the number of members failed at two pairs) | pure pairs at the six pairs (two instruments); 2,522 members pass in nine complete lists (27.8 million members), all with the pure Hilbert function, 2,436 of them pure by the theorem of the note; the two congruences hold together on every member; every pair with e <= 16 is settled except (11,3) |
 
 ## 4. In flight
 
@@ -126,17 +128,28 @@ Published on 2026-11-20: the manuscript v0.02, [10.5281/zenodo.24388904](https:/
 2. State of the point (1,2,2,1) of (0, e, 3e, 4e) (all on 2026-11-20, each with a verdict): for 2 <= e <= 10 and for e = 12
    it fails only in characteristic 2: a pure pair over GF(p) for every odd prime p below 2e (EXP-006, EXP-008 to EXP-018 and
    the criterion). For every e it is realized in characteristic p dividing e(e - 1), for e = d e' with d = 0 or 1 modulo p
-   and e' realized, and for even e over a finite field of characteristic p >= 2e - 1. Open: e = 11 at p = 3; e = 13 at p = 7, 11;
-   e = 14 at p = 5, 11; e >= 15.
+   and e' realized, and for even e over a finite field of characteristic p >= 2e - 1. Open at that point: e = 11 at p = 3;
+   e = 13 at p = 7, 11; e = 14 at p = 5, 11; e >= 15 (see item 5 for what was settled later the same day).
 3. Three more derivations, each read by a reviewer other than the writer: for the pairs (x^e + b y^e, G(xy, z)) one
    congruence decides the pure Hilbert function and gives the pure Betti table; the projection on the weight-zero
    summand, which proves that the linear family has no pure member for p <= 2e - 5 and excludes weight-class strata; the
    proposition on the characteristic dividing the modulus. Working notes, not reviewed: one family of pairs
    x^e + alpha y^t, y^e + beta x^t governed by one form, with a filter of two congruences that matched every table
    computed (EXP-017).
-4. In flight: the manuscript v0.03 (BSB-030; plan in the coordination repository): third pass, review, release. Then the
-   strategic review of the focus; backlog BSB-031, BSB-033 to BSB-036, the 15 open rays with d3 >= 10, the substitution in
-   the Kostant presentations (BSB-012), BSB-022.
+4. In flight: the manuscript v0.03 (BSB-030; plan in the coordination repository): last writing pass (items 3 and 5),
+   the review of its additions, release. Then the strategic review of the focus; backlog BSB-033, BSB-034, BSB-037 to
+   BSB-039, the 15 open rays with d3 >= 10, the substitution in the Kostant presentations (BSB-012), BSB-022.
+5. Later on 2026-11-20. Two more derivations, each read by a reviewer other than the writer:
+   `context/2026-11-20-pairs-with-exponent-t.md` (for the pairs x^e + alpha y^t, y^e + beta x^t the module splits over
+   k[xy, z] and one form Delta governs the summands; under (C0), (F1), (F2), (F3) it has length e^3 and the pure Hilbert
+   function, and it is a pure pair when Delta has no common factor with A_(e-t); the condition p >= 2t is necessary) and
+   `context/2026-11-20-explicit-pairs-in-the-linear-family.md` (the short pair with ab = 2 is pure for every prime
+   p = 2e - 1 other than 11 and 43; the short pair with ab = -1/4 for every prime p = 2e - 3 whose Fermat quotient of 2 is
+   not 1/2 or 3/2; so the point with e = (p + 1)/2 is realized over GF(p) for every prime p >= 5, and the point with
+   e = (p + 3)/2 for every prime 5 <= p <= 2,000,000). EXP-019 and EXP-020 settle every pair (e, p) with e <= 16 that was
+   open except (11, 3): for 2 <= e <= 16 with e not 11 the point fails only in characteristic 2. Open: (11, 3) (BSB-038),
+   the Betti table when Delta and A_(e-t) have a common factor and the converse of the filter (BSB-037), e >= 17
+   (BSB-039).
 
 ## 6. Where everything lives
 

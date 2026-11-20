@@ -56,4 +56,5 @@ No split: the blocks answer one question (which primitive points are realized ov
 ## Experiment dispositions
 
 EXP-001 to EXP-008 are the primary evidence of `primitive-points-realizability` v0.02 (EXP-001 to EXP-004 since v0.01).
-EXP-009 to EXP-014 are research records until v0.03 states their results.
+EXP-009 to EXP-020 are research records until v0.03 states their results (the manuscript v0.03, in its last writing pass on
+2026-11-20, carries all of them, with the ten derivations reviewed after v0.02).
