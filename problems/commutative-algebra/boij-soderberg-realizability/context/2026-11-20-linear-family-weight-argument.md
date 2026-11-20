@@ -110,8 +110,13 @@ W in the orbit.
   each e. Statement T3: L_4(1, 0, 0, 0) = <x^4 + x y^3, y^4>, L_4(2, -3, 5, 7) and L_5(2, -3, 5, 7) are pure over the
   rationals in two instruments. The review adds, from a scratch run that is not archived: the characters of step 2
   and the weights of step 3 read on the matrices for e = 4 to 7; no member of L_6 or L_7 with rank above r (2,000
-  random members each over GF(32003), 200 each over the rationals, all 28,561 members of L_6 over GF(13) and all
-  83,521 over GF(17)); every Betti table computed for a random member of L_6 or L_7 pure.
+  random members each over GF(32003), 200 each over the rationals, all 28,561 members of L_6 over GF(13), all 83,521
+  members of L_6 and of L_7 over GF(17), 5,000 random members over GF(19) and GF(23)); the 43 Betti tables computed
+  for random members over GF(32003) and the rationals all pure. Over the small fields a large share of the members
+  has rank below r and is not pure (28 percent over GF(13) at e = 6, 30 percent over GF(17) at e = 7; 4 of the 8
+  members whose table was computed over primes between 2e and 4e), which (ii) allows: the pure set is open, not
+  everything. On samples in characteristic below 2e (2,000 members of L_6 over GF(11) and of L_7 over GF(13)) no member
+  has rank above r either, although the weight argument does not apply there: an observation, not a statement.
 - L_e is the largest coordinate subspace of the chart to which the argument applies: it consists of the coordinates
   of extreme weight e - 1 and -(e - 1), and every other coordinate has a weight whose multiples meet the weights of
   the equations.
