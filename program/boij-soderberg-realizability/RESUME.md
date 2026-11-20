@@ -62,13 +62,14 @@ result is the dependence of the answer on the characteristic. EXP-001 (the table
 193 primitive points realized (147 in characteristic 0), 12 excluded, 15 open, all open ones with d3 >= 10. Every ray with
 d3 <= 9 is realized over S in characteristic 0 or is one of the five excluded parity-passing rays that U(H) realizes, so
 in characteristic 0 the least d3 of a counterexample to Question 6.1 is 10 ((0,4,9,10) and (0,1,6,10), excluded over S by
-published obstructions and over U(H) by parity, over every field); the published counterexample has d3 = 21. To be
-reviewed before it is claimed (BSB-015).
+Erman's 2009 obstructions and over U(H) by parity, over every field); the published counterexample has d3 = 21. Reviewed
+on 2026-11-19 by a reader other than the writer: correct after fixes, no case fails, the 29 explicit modules recomputed
+over QQ in a second system (addendum 1 of the EXP-001 verdict).
 
 ## 5. Next actions
 
-1. The review of the smallest-counterexample statement in characteristic 0 (EXP-001 verdict, items 2 and 3; BSB-015,
-   third item).
+1. The review of the general characteristic 2 statement (BSB-017) and the storage of the rational modules of the rays
+   with d3 <= 9 (BSB-019); EXP-004 (rank certificates for the lift to characteristic 0) and its verdict.
 2. The remaining QQ rechecks (57 not run, 7 at the time limit) and the two hits that fail over QQ (BSB-016); the 15 open
    rays with d3 >= 10.
 3. The first manuscript (BSB-013): the family U/U(x^e, y^e) with its sharp characteristic condition, the characteristic 2

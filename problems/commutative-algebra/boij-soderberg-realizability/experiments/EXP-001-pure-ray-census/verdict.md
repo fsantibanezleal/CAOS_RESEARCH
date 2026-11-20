@@ -99,3 +99,33 @@ as a test that could fail, and did on two hits, which are reported as such.
 - The review of items 2 and 3 by a reader other than the writer (BSB-015).
 - The two hits that fail over QQ: other lifts, other primes (BSB-016).
 - The first manuscript (BSB-013).
+
+## Addendum 1 (2026-11-19): items 2 and 3 after an independent review
+
+A reader other than the writer enumerated the 84 rays, recomputed the three formula constructions from the primary
+texts on all 37 formula rays, recomputed all 29 explicit modules over QQ in Singular (a second system for the rational
+tables), computed Ext^3 duals over QQ on 11 of the 13 duality rays, rebuilt two Kostant modules over U(H) and re-derived
+the two exclusions (record `bs-smallest-counterexample-review-2026-11-19` in the coordination repository). No case
+fails. Verdict: correct after fixes. The corrections to the text above:
+
+- Item 2, the step from primitive points to every integral point. Every integral point on a pure ray is m times the
+  primitive point, m >= 1, and the direct sum of m copies of a realization realizes it over the same ring. So every
+  integral point with d3 <= 9 is realized over k[x,y,z] or over U(H) in characteristic 0, and Question 6.1 has no
+  counterexample with d3 <= 9 there. The obstructions O1 to O6 carry nothing in item 2 (no parity-failing ray with
+  d3 <= 9 is excluded); they only say on which five rays U(H) is needed.
+- The counts by evidence: 35 rays by a formula and 2 by scaling a formula ray; 29 by an explicit module over QQ and 13
+  by the Ext^3 dual of one; 5 excluded over S and realized over U(H). ("37 with a formula construction" and "42 through
+  an explicit module" above are these sums.)
+- How the modules over QQ are built. For a hit of the level-module generator the module in characteristic 0 is the
+  image of the generator matrix lifted to integers inside the truncated ring, as the recheck script does; it is not
+  the cokernel of the saved GF(32003) presentation lifted to QQ, which is not pure (the reviewer's control on three
+  hits). The rational presentations and their Betti tables are not yet stored with the hits: backlog BSB-019.
+- Item 3, attribution and strength. The exclusion over S is in print: Erman 2009, Proposition 3.1(2), with the point
+  (6,8,3,1) of (0,1,6,10) as his example of the equality case (any field), and his Remark 3.2 carries it to the rotated
+  table (1,3,8,6) on (0,4,9,10). What this programme adds is the half over U(H) and the minimality. Both can be stated
+  without the finite length hypothesis: over S every module with either table has finite length, and over U(H) no
+  finitely generated graded module has either table (the coefficients of its Hilbert series would alternate in sign).
+- "The least d3 of a counterexample" is for sequences starting at 0; in general the invariant is d3 - d0.
+- Run notes: (0,2,3,6) was named as realized over every field by a formula; it is realized by a search hit rechecked
+  over QQ (corrected in `artifacts/summary-notes.md`).
+
