@@ -202,3 +202,14 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - Every value was also computed by a separate implementation of the coordinating session, written before the results
   were read. Backlog BSB-025 done; BSB-028 opened (a written proof of the weight argument).
 
+## 2026-11-20 - EXP-008 CONFIRMED: e = 5 settled in every characteristic; e = 6 in characteristic 3
+
+- Pure pairs of quintics over GF(5) (43 of 86,250 random spaces) and GF(7) (42 of 162,500); pure pairs of sextics over
+  GF(3) (40 of 289,000). Singular confirms 60 of 60 sampled tables; the coordinating session rebuilt fifteen stored
+  spaces and one printed pair per family.
+- For e = 2, 3, 4, 5 the point (1,2,2,1) of (0, e, 3e, 4e) is realized over U exactly in the characteristics other
+  than 2. At e = 6: characteristic 3 realized; 5, 7, 11 open.
+- The manuscript v0.02 was reviewed by a reader other than the writer (approve after fixes: two blockers and four
+  majors, all in the wording; the new mathematics holds). The linear family is proved for every e >= 4 (reviewed).
+- EXP-009 is frozen: the linear family in characteristic below 2e, exhaustive over GF(p).
+

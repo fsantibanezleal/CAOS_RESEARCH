@@ -78,13 +78,14 @@
       ],
       "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
       "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability, version 0.02",
-      "first_bounded_action": "EXP-005, EXP-006 and EXP-007 CONFIRMED on 2026-11-20; the family-dimension derivation reviewed. Next: the manuscript v0.02 (BSB-027) with its review, then its release.",
+      "first_bounded_action": "EXP-005 to EXP-008 CONFIRMED on 2026-11-20; two derivations reviewed; the manuscript v0.02 written and reviewed (approve after fixes). Next: the fix pass with the result of EXP-008, the closing check, the release; EXP-009 (frozen) on the linear family below 2e.",
       "evidence": [
         "EXP-005",
         "EXP-006",
-        "EXP-007"
+        "EXP-007",
+        "EXP-008"
       ],
-      "review_2026_11_20": "Items (1) and (2) of the target are met for e = 3 and 4: the point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every odd characteristic below 2e by explicit pairs (two instruments and a rebuild by the coordinating session); at e = 5 it is realized in characteristic 3 and open in 5 and 7. The success gate still needs the review of the verdicts by a reader other than the writer, with the manuscript v0.02."
+      "review_2026_11_20": "The point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every characteristic other than 2 for e = 2, 3, 4, 5 (explicit pairs, two instruments, rebuilt by the coordinating session; Theorems A and C); at e = 6 it is realized in characteristic 3 and open in 5, 7, 11. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e>, exactly 4e - 4 there over the rationals for e = 4 to 7, with an explicit four-parameter linear family for every e >= 4. The manuscript v0.02 was read by a reviewer other than the writer; the success gate is met once it is released."
     }
   ],
   "manuscripts": [
@@ -109,7 +110,7 @@
     },
     {
       "start": 5,
-      "end": 7,
+      "end": 8,
       "classification": "research-record",
       "manuscripts": []
     }
