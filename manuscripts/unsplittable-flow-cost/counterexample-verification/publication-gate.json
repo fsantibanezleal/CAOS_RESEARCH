@@ -1,0 +1,22 @@
+{
+  "release_ready": true,
+  "record_id": 24384160,
+  "version": "0.04",
+  "version_doi": "10.5281/zenodo.24384160",
+  "concept_doi": "10.5281/zenodo.21554258",
+  "scope": "v0.04: revision to the content bar; adversarial review, two fix passes, closing check APPROVE",
+  "bytes": 677983,
+  "md5": "f5bf365e8d33cd3b42d6ee71a9b3a7ba",
+  "sha256": "e681d974abe714906a4c14ed41f20a0cba702e2de5efe0fd31e1feef070f88ec",
+  "tex_sha256": "584ac1ab9b1f316e71d4a7362b599dc2dbd0fab43e5f26be0eb545548fb6a5ca",
+  "metadata_sha256": "64a1ecc2226d46e91ae145d574b5100c84f542ae80e52ccf4c850e5c6f93d1c0",
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "pages": 38,
+  "rendered_pages_reviewed": 38,
+  "qa_date": "2026-11-20",
+  "voice_gate": "clean",
+  "sole_human_author": "Felipe Santibanez-Leal",
+  "orcid": "0000-0002-0150-3246"
+}

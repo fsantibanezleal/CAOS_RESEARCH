@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=1.6cm}, width=0.5\textwidth, height=5.6cm, tick label style={font=\scriptsize}]
+\nextgroupplot[xlabel={frontier value (bins of width $\tfrac1{12}$)}, ylabel={members}, ymode=log, ymin=0.8, xmin=0, xmax=1.15, title={\scriptsize symmetric (572) and random (2000)}, legend style={font=\tiny, at={(0.03,0.97)}, anchor=north west}]
+\addplot[ybar, bar width=3pt, fill=stcurve!60, draw=stcurve] coordinates {(0.0278,29) (0.1944,9) (0.3611,11) (0.5278,87) (0.6944,188) (0.8611,248)};
+\addlegendentry{symmetric}
+\addplot[ybar, bar width=3pt, fill=stpoint!50, draw=stpoint] coordinates {(0.5556,1) (0.6389,27) (0.7222,119) (0.8056,420) (0.8889,672) (0.9722,761)};
+\addlegendentry{random}
+\addplot[dashed, color=stline, thick] coordinates {(1,0.8) (1,3000)};
+\nextgroupplot[xlabel={evaluation of the climb}, ylabel={running best frontier value}, xmin=0, xmax=150, ymin=0.8, ymax=1.0, title={\scriptsize ten local searches}]
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (19,0.958333) (61,0.958333)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (25,0.958333) (63,0.958333)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (18,0.920000) (35,0.923077) (79,0.923077)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (12,0.920000) (24,0.923077) (36,0.925926) (48,0.928571) (85,0.928571)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (4,0.920000) (7,0.923077) (10,0.925926) (13,0.928571) (16,0.931034) (19,0.933333) (22,0.935484) (25,0.937500) (28,0.939394) (31,0.941176) (34,0.942857) (37,0.944444) (40,0.945946) (43,0.947368) (46,0.948718) (49,0.950000) (52,0.951220) (55,0.952381) (58,0.953488) (61,0.954545) (64,0.955556) (67,0.956522) (70,0.957447) (73,0.958333) (76,0.959184) (79,0.960000) (82,0.960784) (85,0.961538) (88,0.962264) (91,0.962963) (94,0.963636) (97,0.964286) (100,0.964912) (103,0.965517) (106,0.966102) (109,0.966667) (112,0.967213) (115,0.967742) (118,0.968254) (121,0.968750) (124,0.969231) (127,0.969697) (130,0.970149) (133,0.970588) (136,0.971014) (139,0.971429) (142,0.971831) (145,0.972222) (148,0.972603) (150,0.972603)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (20,0.920000) (39,0.923077) (58,0.925926) (77,0.928571) (121,0.928571)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (14,0.920000) (27,0.923077) (40,0.925926) (53,0.928571) (66,0.931034) (79,0.933333) (124,0.933333)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (14,0.920000) (27,0.923077) (40,0.925926) (53,0.928571) (66,0.931034) (79,0.933333) (92,0.935484) (105,0.937500) (141,0.937500)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (8,0.920000) (15,0.923077) (22,0.925926) (29,0.928571) (36,0.931034) (43,0.933333) (50,0.935484) (57,0.937500) (64,0.939394) (71,0.941176) (78,0.942857) (85,0.944444) (92,0.945946) (99,0.947368) (106,0.948718) (113,0.950000) (120,0.951220) (127,0.952381) (134,0.953488) (141,0.954545) (148,0.955556) (150,0.955556)};
+\addplot[thick, color=stcurve!70, mark=none, const plot] coordinates {(1,0.916667) (17,0.958333) (24,0.960000) (31,0.961538) (38,0.962963) (45,0.964286) (52,0.965517) (59,0.966667) (66,0.967742) (73,0.968750) (80,0.969697) (87,0.970588) (94,0.971429) (101,0.972222) (108,0.972973) (115,0.973684) (122,0.974359) (129,0.975000) (136,0.975610) (143,0.976190) (150,0.976744)};
+\end{groupplot}
+\end{tikzpicture}

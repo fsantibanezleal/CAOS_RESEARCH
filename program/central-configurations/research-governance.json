@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "problem": "central-configurations",
+  "updated": "2026-11-19",
+  "program_status": "on hold (portfolio reviews of 2026-10-30 and 2026-11-19)",
+  "original_problem": {
+    "status": "open (Smale's sixth problem for every n); the planar n = 5 case is settled externally",
+    "statement": "Smale's sixth problem: for fixed positive masses m_1, ..., m_n, is the number of planar central configurations (relative equilibria), up to symmetry, finite?",
+    "priority": "n = 3: five central configurations (Euler and Lagrange). n = 4 planar: finite for all positive masses (Hampton-Moeckel 2006, computer-assisted; reproved without a computer by Albouy-Kaloshin 2012). n = 5 planar: finite except an explicit codimension-2 mass subvariety (Albouy-Kaloshin 2012); equal masses were settled separately (Moeckel-Zhao 2019); spatial n = 5: Moeckel 2001 generic and Hampton-Jensen 2011 exceptional list. Since October 2026 n = 5 finiteness for all positive masses is claimed and settled externally by Tomar (arXiv:2610.13100, with a Lean 4 formalization), Chen and Tong (arXiv:2610.16107) and Liu and Liu (arXiv:2610.28168); none refereed; the Lean statement was audited by EXP-024 (faithful, no kernel bypass; the 863 CPU-hour rebuild was not done). n = 6 planar: open, reduced by Chang and Chen (2023 to 2025) to 24 residual zw-diagram cases at mass codimension at least 2; no n = 6 result located [U]. n >= 7: open, even generically. With one negative mass a continuum exists (Roberts 1999), so positivity is necessary. The route to the n = 5 theorem is closed in this programme.",
+    "prohibited_reframing": "No CAOS result may be described as a proof, a new proof or progress toward finiteness for n = 5, which is settled by Tomar, Chen and Tong and Liu and Liu, nor as progress toward n = 6 unless a result on n = 6 is actually obtained. The tropical certificates reproduced here are Jensen and Leykin's, the n = 4 certificate objects are Hampton and Moeckel's, the zw-diagram machinery is Albouy and Kaloshin's and Chang and Chen's, and the Lean proof and certificates audited in EXP-024 are Tomar's. CAOS results are labelled replications, exact instruments, measured limits of routes and the audit of the stated claims."
+  },
+  "mission": "Build the exact, replayable machine pipeline for finiteness-of-central-configurations certificates, calibrate it on published answers, and state exactly what each route established and where it stopped; the programme is held, and it reopens only on a decided n = 6 focus with a fresh hypothesis and budget (CCB-041) or a decided replay of the Tomar certificates (CCB-040).",
+  "current_focus": "CC-F4",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true,
+    "no_run_without_frozen_hypothesis_and_budget": true,
+    "statement_level_claims_go_to_felipe_first": true
+  },
+  "focuses": [
+    {
+      "id": "CC-F0",
+      "title": "Calibration of the exact instruments on published answers",
+      "status": "closed",
+      "priority": 0,
+      "target": "Reproduce in an exact toolchain the n = 3 classification (Lagrange point and the Euler quintic per collinear ordering), assemble the n = 4 planar Hampton-Moeckel system, and decide which polynomial formulation can carry a count.",
+      "value": "Every instrument is validated against a published answer before it touches an open case (plan.md, strategy notes). The calibration refuted the bare symmetric Albouy-Chenciner distance system as dimension-blind (the regular tetrahedron and the square coexist) and established the enriched system and the eliminant census as the counting instrument of record.",
+      "success_gate": "The exact builder reproduces the Euler-Moulton counts and the Lagrange point, with run.py exiting nonzero on any mismatch (EXP-001), and the enriched system is zero-dimensional with decided censuses classical (EXP-002). Met 2026-07-24.",
+      "stop_conditions": [
+        "A published count fails exact reproduction (it did not on the decided samples).",
+        "Engine caps leave the unequal-mass saturation and the full census undecided: instrument upgrade, not more calibration (CCB-007)."
+      ],
+      "novelty_status": "Replication of published objects, labelled as such. The dimension-blindness of the bare system and the enrichment law have no recorded external novelty check: UNVERIFIED.",
+      "manuscript_route": "tropical-replication, sections on the calibration and the enrichment law",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001",
+        "EXP-002"
+      ]
+    },
+    {
+      "id": "CC-F1",
+      "title": "Replication of the n = 4 and n = 5 finiteness certificates and the limits of direct solving",
+      "status": "closed",
+      "priority": 1,
+      "target": "Reproduce the Jensen-Leykin n = 5 tropical prevariety certificate exactly, screen valuation and equation variants, decide every comet exactly, cross-check censuses between engines, and measure how far direct solves and Groebner dimension probes reach at n = 4 and n = 5.",
+      "value": "Opened the tropical lane on validated infrastructure: both published f-vectors reproduced digit for digit, two new working valuation families at n = 5 (powers of 2 and primes), the 257-component count reproduced, every comet decided exactly, and the comet count identified as the monotone invariant. The caps measured at n = 4 and n = 5 fix which routes are closed.",
+      "success_gate": "Both Jensen-Leykin n = 5 f-vectors reproduced digit for digit with pointedness verified independently (EXP-003). Met 2026-07-24. The n = 6 run of EXP-005 has no verdict.",
+      "stop_conditions": [
+        "gfan 0.7 fails at n = 6 in both arithmetic modes: an infrastructure barrier, not a budget question (RESUME section 4).",
+        "Direct msolve solves of the n = 4 torus census hit the 3600 second cap on both routes (EXP-009); the n = 5 Dziobek dimension stays 5 versus 4 undecided at the declared caps (EXP-013, EXP-014)."
+      ],
+      "novelty_status": "Reproduction of Jensen and Leykin (arXiv:2301.02305) and of Hampton-Moeckel objects, labelled as replication. The two new valuation families and the exact per-comet decision have no recorded external novelty check: UNVERIFIED. The value of the n = 5 tropical replication is superseded by the external n = 5 settlement (strategic review 2026-11-02).",
+      "manuscript_route": "tropical-replication v0.13",
+      "first_bounded_action": "EXP-003",
+      "evidence": [
+        "EXP-003",
+        "EXP-004",
+        "EXP-006",
+        "EXP-007",
+        "EXP-008",
+        "EXP-009",
+        "EXP-010",
+        "EXP-011",
+        "EXP-012",
+        "EXP-013",
+        "EXP-014"
+      ]
+    },
+    {
+      "id": "CC-F2",
+      "title": "Six-body symmetric stratum: dimension, rank chain, loci bounds and the interval covering atlas",
+      "status": "closed-gate-not-met",
+      "priority": 2,
+      "target": "Establish for the open gauged six-body mirror-symmetric stratum (two bodies on the axis, two mirror pairs) the ladder dim(R_j meet shape) <= j for j = 0, 1, 2 on the whole stratum, the step the stratum theorem needs (EXP-022 hypothesis).",
+      "value": "A completed chain is the stratum theorem, the nearest sharpening beyond the published n = 6 frontier (CCB-036). The shape variety has dimension 5 ungauged and 4 gauged and the generic rank is 4 (EXP-015, EXP-016); the interval coverings of EXP-021 closed the core with zero residual failures.",
+      "success_gate": "The ladder for j = 0, 1, 2 on the whole open gauged stratum, with certified coverings of every region. Not met: the quadruple corner is not closed and several charts are budget stops with unprocessed stacks (CCB-042 verdict, 2026-11-14).",
+      "stop_conditions": [
+        "The Groebner route to the loci bounds is closed at every granularity and characteristic tried (EXP-017, EXP-017b, EXP-017c, EXP-019).",
+        "The free-atom chamber relaxation retains 125,097,984 residual assignments and cannot close k = 3 (EXP-020).",
+        "The strategic review of 2026-11-02 retired the atlas of this programme as a route to the n = 5 theorem; the open case is n = 6."
+      ],
+      "novelty_status": "No published closure of this stratum surfaced in the recorded search of 2026-08-01; an unverifiable summary-level diagram count was not imported. External novelty not independently confirmed. Dias-Pan (arXiv:1811.08681) closes the cross strata generically; the relation of this stratum to the 2026-10-30 review's 'doubly symmetric five-body cross' wording is UNVERIFIED.",
+      "manuscript_route": "tropical-replication v0.13, the six-body stratum section, stated at the status of the records",
+      "first_bounded_action": "EXP-015",
+      "evidence": [
+        "EXP-015",
+        "EXP-016",
+        "EXP-017",
+        "EXP-017b",
+        "EXP-017c",
+        "EXP-018",
+        "EXP-019",
+        "EXP-020",
+        "EXP-021",
+        "EXP-022",
+        "EXP-023",
+        "CCB-042"
+      ]
+    },
+    {
+      "id": "CC-F3",
+      "title": "Audit of the external planar five-body finiteness claims",
+      "status": "closed",
+      "priority": 3,
+      "target": "Decide whether the Lean 4 theorem MainTheorem_holds of Tomar states the classical claim (finitely many planar five-body central configurations up to similarity for every positive mass vector) and whether any stored or generated source bypasses the kernel.",
+      "value": "n = 5 finiteness is claimed by three groups and none is refereed; the statement audit is the one check that can be done without the 863 CPU-hour rebuild, and it fixes what the claim says (CCB-038, CCB-039).",
+      "success_gate": "Statement compared with the classical claim and a scan of 2,751 stored source files and 85,756 generated modules for kernel-bypass constructs (EXP-024). Met 2026-11-02: statement faithful, no bypass found.",
+      "stop_conditions": [
+        "The rebuild of the formalization (the author reports about 863 CPU-hours) is not done and not a goal of this focus."
+      ],
+      "novelty_status": "An audit of another author's formalization, labelled as such; the proof is Tomar's. External confirmation of the five-body claims is not given by this audit.",
+      "manuscript_route": "tropical-replication v0.11 onward, the section on the five-body case (EXP-024)",
+      "first_bounded_action": "EXP-024",
+      "evidence": [
+        "EXP-024"
+      ]
+    },
+    {
+      "id": "CC-F4",
+      "title": "The replication paper at its published version with the corrected atlas status",
+      "status": "active-success-gate-met",
+      "priority": 4,
+      "target": "State in tropical-replication, at a published version, what the replications and the stratum work established and what they did not, with the atlas described by the status each chart actually has.",
+      "value": "The CCB-042 verdict found the quadruple corner not closed and that counters read as failed boxes were budget stops with unprocessed stacks; a paper that said otherwise would overstate the stratum work. The corrected statement is generated from the stored summaries and checkpoints.",
+      "success_gate": "Tropical-replication published with the chart status classes generated from the stored summaries and checkpoints, the quadruple corner stated as not closed, and an independent review approving. Met 2026-11-14: v0.13, 10.5281/zenodo.24232708, APPROVE after two re-checks (CCB-044).",
+      "stop_conditions": [
+        "No further version while the programme is on hold unless an experiment adds a result or a record changes a stated status.",
+        "A stale statement found in the paper (for example by a new external claim) triggers a correction version, not a new experiment."
+      ],
+      "novelty_status": "Replications and measured limits; the results are internally validated and persisted on Zenodo, which is not peer review. External novelty not independently confirmed.",
+      "manuscript_route": "tropical-replication, published v0.13",
+      "first_bounded_action": "CCB-042, then CCB-044",
+      "evidence": [
+        "EXP-022",
+        "EXP-024",
+        "CCB-042",
+        "CCB-044"
+      ]
+    },
+    {
+      "id": "CC-F5",
+      "title": "n = 6 generic-mass finiteness by the tropical route",
+      "status": "proposed",
+      "priority": 5,
+      "target": "Decide whether the planar six-body system with generic positive masses has a pointed tropical prevariety (every comet certified), by resuming the gfan 0.8beta computation of EXP-005 with checkpointing, or record a stop with the measured cost (CCB-041).",
+      "value": "n = 6 is the only open case left to the programme (backlog CCB-041). A pointed result would give generic-mass finiteness for n = 6, a statement-level result that goes to Felipe first (RESUME section 4).",
+      "success_gate": "All comets of the n = 6 prevariety certified pointed by the exact decider of EXP-007, followed by a hardening rerun before anything leaves the repository (RESUME section 4).",
+      "stop_conditions": [
+        "The infrastructure barrier persists: gfan 0.7 aborts in both arithmetic modes and the 0.8beta runs were killed several times.",
+        "The measured cost per valuation exceeds the budget declared with the fresh hypothesis."
+      ],
+      "novelty_status": "Chang and Chen reduce n = 6 to 24 residual diagrams; Jensen and Leykin report their own n = 6 tropical computation as inconclusive; no n = 6 result located in the 2026-10-30 external review [U]. External novelty of any n = 6 result is unconfirmed until searched again.",
+      "manuscript_route": "A pointed result enters tropical-replication as a new version; any other outcome is a research record or a stop record.",
+      "first_bounded_action": "Freeze a hypothesis and a budget for the 0.8beta pow2 run with checkpointing (written here; CCB-041 states 'needs a fresh hypothesis and a budget before any run')."
+    },
+    {
+      "id": "CC-F6",
+      "title": "Independent replay of the Tomar certificates and Lean proof",
+      "status": "proposed",
+      "priority": 6,
+      "target": "Rebuild the Lean 4 formalization of Tomar and its certificates independently (CCB-040; done in part by EXP-024).",
+      "value": "The rebuild would turn a statement audit into a checked build of an unrefereed n = 5 claim. The review of 2026-10-30 named it a candidate, not a decision.",
+      "success_gate": "A complete independent build of the formalization with the axiom check of its main theorem; the author reports about 863 CPU-hours.",
+      "stop_conditions": [
+        "The cost of the rebuild is judged out of proportion to a result that is already claimed by three groups (assessment, written here)."
+      ],
+      "novelty_status": "A verification of another author's claim, never a result of this programme.",
+      "manuscript_route": "A paragraph in the five-body section of tropical-replication in a later version; no paper of its own.",
+      "first_bounded_action": "Decide, at the next strategic review, whether to run the rebuild (written here; CCB-040 reads 'candidate, not decided')."
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "tropical-replication",
+      "path": "manuscripts/central-configurations/tropical-replication",
+      "version": "0.13",
+      "version_doi": "10.5281/zenodo.24232708",
+      "concept_doi": "10.5281/zenodo.21542483",
+      "status": "published v0.13 (2026-11-14), 41 pages; independent review APPROVE after two re-checks",
+      "split_action": "None decided in the records. The paper holds three questions (tropical screening and exact comet decisions, the six-body stratum status, the five-body claims audit); a split is to be considered at the next version review (written here)."
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 4,
+      "classification": "primary-manuscript",
+      "manuscripts": ["tropical-replication"]
+    },
+    {
+      "start": 5,
+      "end": 5,
+      "classification": "research-record",
+      "manuscripts": [],
+      "note": "No verdict.md: the n = 6 gfan runs have no output and the experiment is not closed."
+    },
+    {
+      "start": 6,
+      "end": 8,
+      "classification": "primary-manuscript",
+      "manuscripts": ["tropical-replication"]
+    },
+    {
+      "start": 9,
+      "end": 14,
+      "classification": "research-record",
+      "manuscripts": ["tropical-replication"],
+      "note": "Capped or inconclusive probes and bounds, reported in the paper as measured limits."
+    },
+    {
+      "start": 15,
+      "end": 21,
+      "classification": "research-record",
+      "manuscripts": ["tropical-replication"],
+      "note": "Six-body stratum chain; the stratum theorem was not reached. EXP-017b and EXP-017c are covered by the range of EXP-017."
+    },
+    {
+      "start": 22,
+      "end": 23,
+      "classification": "research-record",
+      "manuscripts": ["tropical-replication"],
+      "note": "No verdict.md: EXP-022 holds per-chart verdicts and the atlas verdict of 2026-11-14, EXP-023 holds FINDINGS.md; neither is closed as an experiment."
+    },
+    {
+      "start": 24,
+      "end": 24,
+      "classification": "primary-manuscript",
+      "manuscripts": ["tropical-replication"]
+    }
+  ]
+}

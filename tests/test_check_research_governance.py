@@ -120,10 +120,13 @@ def test_unadopted_problems_listed(tmp_path):
     assert guard.unadopted_problems(portfolio, {"gov"}) == ["open1", "sleep"]
 
 
-def test_main_prints_information_and_exit_code_unaffected(capsys):
+def test_main_prints_information_and_exit_code_unaffected(monkeypatch, capsys):
+    # independent of the state of the real records: no validation error, one planted problem without a record
+    monkeypatch.setattr(guard, "validate_record", lambda path, index, errors: None)
+    monkeypatch.setattr(guard, "unadopted_problems", lambda portfolio, adopted: ["planted-problem"])
     code = guard.main()
     out = capsys.readouterr().out
-    assert "not adopted methodology 13" in out
+    assert "not adopted methodology 13" in out and "planted-problem" in out
     assert code == 0
 
 
@@ -148,6 +151,7 @@ def test_index_row_of_versions_folder_path():
 
 def test_failing_run_still_prints_information(monkeypatch, capsys):
     monkeypatch.setattr(guard, "validate_record", lambda path, index, errors: errors.append("planted error"))
+    monkeypatch.setattr(guard, "unadopted_problems", lambda portfolio, adopted: ["planted-problem"])
     code = guard.main()
     out = capsys.readouterr().out
     assert code == 1
@@ -187,3 +191,56 @@ def test_versions_folder_parent_readme_is_checked(tmp_path, monkeypatch):
 def test_versions_folder_missing_parent_readme_names_path(tmp_path, monkeypatch):
     errors = build(tmp_path, monkeypatch, readme_text=readme("0.02", DOI_A), index_text=GOOD_INDEX, sub="versions/v0.02")
     assert any("parent README" in e and "manuscripts/prog/a/README.md" in e.replace(BS, "/") for e in errors)
+
+
+def _record_without_manuscript(tmp_path: Path, monkeypatch, reason):
+    prog = tmp_path / "program" / "prob"
+    prog.mkdir(parents=True)
+    (prog / "manuscript-map.md").write_text("F1" + NL, encoding="utf-8")
+    exp = tmp_path / "problems" / "area" / "prob" / "experiments" / "EXP-001-x"
+    exp.mkdir(parents=True)
+    (exp / "verdict.md").write_text("v", encoding="utf-8")
+    record = {
+        "schema_version": 1, "problem": "prob", "updated": "x", "original_problem": {}, "mission": "m",
+        "current_focus": "F1", "stop_policy": {},
+        "focuses": [{k: "x" for k in guard.FOCUS_KEYS} | {"id": "F1", "status": "active", "stop_conditions": ["s"]}],
+        "manuscripts": [],
+        "experiment_dispositions": [{"start": 1, "end": 1, "classification": "research-record", "manuscripts": []}],
+    }
+    if reason is not None:
+        record["no_manuscript_reason"] = reason
+    path = prog / "research-governance.json"
+    path.write_text(json.dumps(record), encoding="utf-8")
+    monkeypatch.setattr(guard, "ROOT", tmp_path)
+    monkeypatch.setattr(guard, "PROGRAM_ROOT", tmp_path / "program")
+    errors: list[str] = []
+    guard.validate_record(path, "", errors)
+    return errors
+
+
+def test_empty_manuscripts_with_a_reason_passes(tmp_path, monkeypatch):
+    assert _record_without_manuscript(tmp_path, monkeypatch, "no manuscript yet: decided at the next review") == []
+
+
+def test_empty_manuscripts_without_a_reason_fails(tmp_path, monkeypatch):
+    errors = _record_without_manuscript(tmp_path, monkeypatch, None)
+    assert any("no_manuscript_reason" in e for e in errors)
+    errors = _record_without_manuscript(tmp_path / "b", monkeypatch, "  ")
+    assert any("no_manuscript_reason" in e for e in errors)
+
+
+def test_lettered_experiment_folders_share_their_number(tmp_path, monkeypatch):
+    base = tmp_path / "problems" / "area" / "prob" / "experiments"
+    for name in ("EXP-017-first", "EXP-017b-second", "EXP-017c-third", "EXP-018-next"):
+        (base / name).mkdir(parents=True)
+        (base / name / "verdict.md").write_text("v", encoding="utf-8")
+    monkeypatch.setattr(guard, "ROOT", tmp_path)
+    errors: list[str] = []
+    assert guard.experiment_ids("prob", errors) == {17, 18}
+    assert errors == []
+    (base / "EXP-019_bad").mkdir()
+    (base / "EXP-019_bad" / "verdict.md").write_text("v", encoding="utf-8")
+    errors = []
+    guard.experiment_ids("prob", errors)
+    assert any("malformed" in e for e in errors)
+

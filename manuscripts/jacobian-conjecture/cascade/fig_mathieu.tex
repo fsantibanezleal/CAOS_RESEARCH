@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\begin{axis}[width=0.78\textwidth, height=6cm, ymode=log, xlabel={$m$}, ylabel={$\int_{SU(N)}Q\,P^m\,dg$}, xmin=0.7, xmax=8.3, ymin=1e-12, ymax=3, xtick={1,2,3,4,5,6,7,8},
+  tick label style={font=\scriptsize}, axis lines=left, legend style={font=\scriptsize, at={(0.02,0.03)}, anchor=south west}]
+\addplot[mark=*, color=stcurve, thick, mark size=1.8pt] coordinates {(1,6.666667e-01) (2,5.333333e-01) (3,4.571429e-01) (4,4.063492e-01) (5,3.694084e-01) (6,3.409923e-01) (7,3.182595e-01) (8,2.995384e-01)};
+\addlegendentry{$N=2$}
+\addplot[mark=square*, color=stpoint, thick, mark size=1.8pt] coordinates {(1,1.904762e-01) (2,9.696970e-02) (3,6.095238e-02) (4,4.277360e-02) (5,3.212247e-02) (6,2.525869e-02) (7,2.053287e-02) (8,1.711648e-02)};
+\addlegendentry{$N=3$}
+\addplot[mark=triangle*, color=black!70, thick, mark size=1.8pt] coordinates {(1,5.050505e-03) (2,4.662005e-04) (3,8.255934e-05) (4,2.113320e-05) (5,6.863775e-06) (6,2.634040e-06) (7,1.143765e-06) (8,5.462639e-07)};
+\addlegendentry{$N=8$}
+\addplot[mark=diamond*, color=stline, thick, mark size=1.8pt] coordinates {(1,4.668534e-04) (2,1.072199e-05) (3,6.153491e-07) (4,6.107461e-08) (5,8.757679e-09) (6,1.637282e-09) (7,3.741481e-10) (8,1.000755e-10)};
+\addlegendentry{$N=14$}
+\addplot[mark=o, color=black, thick, mark size=1.8pt] coordinates {(1,2.579979e-04) (2,4.079019e-06) (3,1.709303e-07) (4,1.292910e-08) (5,1.459613e-09) (6,2.204034e-10) (7,4.152807e-11) (8,9.315537e-12)};
+\addlegendentry{$N=16$}
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,9 @@
+\begin{tikzpicture}[>=Stealth, every node/.style={font=\small}]
+\node[circle,draw,minimum size=9mm] (z1) at (0,0) {$Z_1$};
+\node[circle,draw,minimum size=9mm] (z2) at (6,0) {$Z_2$};
+\node[circle,draw,minimum size=9mm] (z3) at (3,3) {$Z_3$};
+\draw[thick] (z1) -- (z2) node[midway,below,align=center,font=\footnotesize] {arc $s\to u$\\load $40>39$};
+\draw[thick] (z1) -- (z3) node[midway,above left,align=center,font=\footnotesize] {arc $u\to v$\\load $30>29$};
+\draw[thick] (z2) -- (z3) node[midway,above right,align=center,font=\footnotesize] {arc $v\to w$\\load $25>24$};
+\node[font=\footnotesize,align=center] at (3,-1.6) {fractional selection point $\rho=(\tfrac13,\tfrac25,\tfrac13)$, $\sum_i\rho_i=\tfrac{16}{15}>1$};
+\end{tikzpicture}

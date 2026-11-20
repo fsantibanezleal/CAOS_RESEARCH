@@ -2,6 +2,8 @@
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
+2026-11-19: methodology 13 adopted at the portfolio review (research-governance.json, manuscript-map.md; current focus CC-F4).
+
 2026-10-30: portfolio review ([program/portfolio-review-2026-10-30.md](../portfolio-review-2026-10-30.md)): hold; strategic review (CCB-039), candidate redirect to an independent replay of the Tomar certificates and Lean proof (CCB-040), or gate the problem.
 
 2026-11-02: n = 5 finiteness for all positive masses is settled externally (Tomar, with Lean; Chen and Tong;

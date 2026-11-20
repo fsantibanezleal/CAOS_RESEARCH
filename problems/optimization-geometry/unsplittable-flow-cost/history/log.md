@@ -243,3 +243,46 @@ Source: [portfolio review](../../../../program/portfolio-review-2026-10-30.md).
 - The lower-bound focus is closed as superseded (UFB-070). Next: EXP-007, an independent exact re-verification of the
   current records in ufclib with planarity tests (UFB-068), then the preprint revision (UFB-066).
 
+## 2026-11-19 - EXP-007 CONFIRMED: the record instances re-checked independently (UFB-068)
+
+- Hypothesis 4f51d68b, frozen before the run. The thirteen instance entries were transcribed from Nikolenko's three
+  Zenodo preprints and the repository certificates (the authors' code never run), and decided with ufclib.
+- All 11 concrete entries force exactly their claimed values, including the 17-terminal instances
+  (1282494797984843521/10^18 and De la Fuente's 160325086265636045340018727271/(125 x 10^27), 131,072 routings each) and
+  the planar record 58676765987259/(5 x 10^13). The four-interval family follows (1-t)^2 (1 + 4t - t^2) - eps on a
+  41-point grid and stays below (299 - 41 sqrt 41)/32; the ternary core follows (3 - eta)^2/8 below 9/8.
+- Planarity with certificates checked by separate code: the two 17-terminal instances are non-planar (K3,3
+  subdivisions); the four-interval, K6 and seven-vertex instances are planar; so are the triangle template and the
+  ternary core, which the papers do not state.
+- The frontier value equals the claimed value on every instance (the cutting-plane evaluator finished on both
+  17-terminal instances): the authors' pricing is optimal, and re-pricing gains nothing.
+- Methodology 13 adopted for this problem the same day (focus UF-F3); next: the preprint revision (UFB-066).
+
+## 2026-11-19 - Correction: the credit and date of 9/8, and Protti's share of the planar four-terminal value
+
+- The review of the preprint revision found two misattributions in this programme's records, both re-read on the archived
+  sources. (1) Muffatti's note is dated 24 July 2026 and its Theorem states the bound 9/8 and that 9/8 is the supremum of
+  the symmetric family; the date 2026-08-31 used since 2026-11-07 is the date of the archived repository commit. The entry
+  of 2026-11-19 that gave the supremum to Nikolenko "a month before Muffatti" was wrong: Nikolenko's Proposition 5.2
+  (2026-07-30) is an independent proof, six days later. (2) Nikolenko's third preprint credits the planar value
+  (299 - 41 sqrt 41)/32 to "Protti [13] and our previous work [11]"; Protti's release is of 2026-07-23 and was not in our
+  records.
+- Corrected: RESUME, manuscript map, governance record, backlog UFB-066, wiki pages 04 and 05; addenda in the EXP-004 and
+  EXP-005 verdicts. The preprint revision carries the corrected credit (fix pass in progress); the dossier rows are
+  corrected in the same pass.
+- Cause: the archive record named the commit date as the date of the source, and the refresh compared that date with the
+  date of a preprint. A source's date is the date it prints, read on the source; the commit of the archive is recorded
+  separately.
+
+## 2026-11-19 - Preprint v0.04 published
+
+- `counterexample-verification` v0.04: 10.5281/zenodo.24384160 (38 pages, 677,983 bytes, SHA-256 e681d974abe714906a4c14ed41f20a0cba702e2de5efe0fd31e1feef070f88ec). Rewritten to the manuscript
+  content bar (12,900 words, 40 display equations, 7 figures, 12 tables, 34 references, 7 algorithms), with tables,
+  figures and numbers generated from the artifacts of EXP-001 to EXP-007 by a script that stops on a mismatch.
+- Review before release: an independent reader re-derived the seven proofs, checked 52 numbers against the artifacts and
+  recomputed three results with its own code; 10 blockers on attribution and on sentences that said more than the
+  evidence, 11 majors; a re-check found two more blockers on the order of dates (the library's first commit is of 25
+  July, after the first two public results of the series; Muffatti's note was public hours before Protti's release); a
+  closing check approved the text. The record carries its reference list, cites links and the software link.
+- The release build asked for a build with no underfull box: table cells and the bibliography are set ragged right.
+

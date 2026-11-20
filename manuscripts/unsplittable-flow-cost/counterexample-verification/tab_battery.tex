@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{4.8cm}>{\raggedright\arraybackslash}p{3.2cm}@{}}
+\toprule
+result (source) & test on the instance & outcome\\
+\midrule
+Dinitz--Garg--Goemans \cite{DGG99} & a congestion-good routing exists & 4 exist\\
+cost-free two-sided conjecture of Morell and Skutella \cite{MS22} & some routing meets $x_a-d_{\max}\le y_a\le x_a+d_{\max}$ & 4 witnesses\\
+planar theorem \cite{TVZ24} & a cost-good routing within $2d_{\max}$ (the instance is planar) & 4 cost-good routings, least $\alpha=\tfrac{16}{15}$\\
+Skutella \cite{Sku02} & demands not all multiples of one another & $\{10,15\}$\\
+Majthoub Almoghrabi et al.\ \cite{MSW25} & underlying graph not series-parallel & $K_4$ subdivision on $\{s,u,v,w\}$\\
+two-layer networks (cited in \cite{TVZ24}) & longest $s$--$t$ path has at least three arcs & 4 arcs\\
+nonnegative costs, feasible $x$ & conservation at all seven vertices; $c\ge0$ & holds\\
+acyclicity (reduction of \cite{STVZ25}) & the digraph has no directed cycle & acyclic\\
+\bottomrule
+\end{tabular}
+\caption{The consistency battery applied to the seven-vertex instance: each proved result that the instance must not contradict, the test run on the instance, and its outcome in the archived computation EXP-002. All tests pass; the last two rows verify the hypotheses on which the corollaries of Section~\ref{sec:seven} rest.}
+\label{tab:battery}
+\end{table}

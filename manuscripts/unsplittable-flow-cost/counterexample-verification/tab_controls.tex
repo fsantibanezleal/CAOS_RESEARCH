@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{5.7cm}>{\raggedright\arraybackslash}p{5.3cm}@{}}
+\toprule
+record & what was perturbed & what fired\\
+\midrule
+EXP-001 & corrupted copy of $V_1$ (one arc load changed by $+1$) & conservation fails at $s$: divergence 3, expected 2\\
+EXP-001 & parallel arcs ($V_2$) and a directed cycle ($V_5$) & a vertex-pair model would find one path on $V_2$; the arc-indexed model finds two; the cyclic instance gains a third path\\
+EXP-003 & five validation instances and six single-terminal instances & $(\mathrm{SEP})$ optimum $0$ on each: no cost vector makes them counterexamples\\
+EXP-004 & the same exact simplex against a second implementation & the two agree on 6 instances\\
+EXP-006 & the builder against the uniform instance of \cite{Afr26} at five values of $\varepsilon$ & identical instances and values $\tfrac23-\varepsilon$\\
+EXP-007 (a) & one demand of the 17-terminal record changed in its last printed digit ($10^{-9}$), the flow kept feasible on the paid or the free path & the value no longer equals the claim in either variant\\
+EXP-007 (b) & costs set to zero on three records & the value falls to the least $\alpha$ over all routings ($\tfrac{48841}{160000}$, 0.442962, 0.427438) below each claim\\
+EXP-007 (c) & 7 certificates of another graph or tampered (a rotation with an edge replaced or two neighbours swapped; a Kuratowski subgraph of another graph) & all rejected by the checker\\
+\bottomrule
+\end{tabular}
+\caption{The negative controls of the archived computations: what was perturbed, and what fired. A control is passed when the perturbed input is rejected or no longer reproduces the claim; the unperturbed inputs reproduce their values in Tables~\ref{tab:routings} and \ref{tab:records}.}
+\label{tab:controls}
+\end{table}

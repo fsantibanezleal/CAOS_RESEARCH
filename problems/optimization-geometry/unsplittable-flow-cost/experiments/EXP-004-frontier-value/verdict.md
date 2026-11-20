@@ -136,3 +136,8 @@ interpretation [D] of the sweep, and it is false. EXP-005 checks exactly that Ry
 (1, 3/4, 1) and free-path fractions (1/4, 1/2 + eps, 1/4) forces 9/8 - (3/4) eps (Muffatti, 2026-08-31), so
 alpha* >= 9/8. The sweep above stands as computed: its box contained neither these demand ratios with these splits
 nor fractions approaching 1/2 from above.
+
+## Addendum: date of the source (2026-11-19)
+
+The correction above dates Muffatti's note 2026-08-31. That is the date of the repository commit that was archived;
+the note itself is dated 24 July 2026 (its LaTeX source in the archive). The credit is unchanged.

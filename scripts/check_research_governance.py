@@ -173,16 +173,20 @@ def experiment_ids(problem: str, errors: list[str]) -> set[int]:
         return set()
 
     ids: set[int] = set()
+    seen: set[tuple[int, str]] = set()
     for directory in matches[0].iterdir():
         if not directory.is_dir() or not (directory / "verdict.md").is_file():
             continue
-        match = re.match(r"EXP-(\d{3})-", directory.name)
+        # A lettered folder (EXP-017b-...) is a sub-experiment of its number: it shares the disposition of EXP-017.
+        match = re.match(r"EXP-(\d{3})([a-z]?)-", directory.name)
         if match is None:
             errors.append(f"{problem}: malformed experiment directory {directory.name}")
             continue
         experiment_id = int(match.group(1))
-        if experiment_id in ids:
-            errors.append(f"{problem}: duplicate closed experiment EXP-{experiment_id:03d}")
+        key = (experiment_id, match.group(2))
+        if key in seen:
+            errors.append(f"{problem}: duplicate closed experiment EXP-{experiment_id:03d}{match.group(2)}")
+        seen.add(key)
         ids.add(experiment_id)
     return ids
 
@@ -243,9 +247,15 @@ def validate_record(path: Path, global_index: str, errors: list[str]) -> None:
         errors.append(f"{label}: manuscript-map.md does not name current focus {current_focus}")
 
     manuscripts_value = record.get("manuscripts")
-    if not isinstance(manuscripts_value, list) or not manuscripts_value:
-        errors.append(f"{label}: manuscripts must be a non-empty list")
+    no_manuscript_reason = record.get("no_manuscript_reason")
+    if manuscripts_value == [] and isinstance(no_manuscript_reason, str) and no_manuscript_reason.strip():
+        # A program with no manuscript yet states why; every disposition is then a research record.
         manuscripts: list[object] = []
+    elif not isinstance(manuscripts_value, list) or not manuscripts_value:
+        errors.append(
+            f"{label}: manuscripts must be a non-empty list, or an empty list with a non-empty no_manuscript_reason"
+        )
+        manuscripts = []
     else:
         manuscripts = manuscripts_value
 

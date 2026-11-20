@@ -1,5 +1,9 @@
 # navier-stokes: how much dissipation can a multiscale layer cascade carry?
 
+Current public version: v0.10, published 2026-11-14 at
+[10.5281/zenodo.24231927](https://doi.org/10.5281/zenodo.24231927), under concept DOI
+[10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520).
+
 First paper of the navier-stokes research series. Theorem 3.1: a layer cascade growing at sqrt(A)
 cannot carry more than alpha = 1/2, and one growing at A no more than alpha = 1 (|grad|^alpha
 convention, classical viscosity 2), under the hypothesis that the background gradients are unbounded;
@@ -12,8 +16,8 @@ never from memory, per methodology 09.
 
 | | |
 |---|---|
-| source version | 0.10 (2026-11-14), built and not yet released; content-bar pass and review fixes applied (about 13,000 words, 8 figures, 28 references, 5 algorithms, the sections of the manuscript content bar; `tools/zenodo/check_manuscript_depth.py --research` exits 0) |
-| published version | 0.09 (2026-11-02), version DOI [10.5281/zenodo.23890775](https://doi.org/10.5281/zenodo.23890775), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
+| source version | 0.10 (2026-11-14), the published version; content-bar pass and review fixes applied (about 13,000 words, 8 figures, 28 references, 5 algorithms, the sections of the manuscript content bar; `tools/zenodo/check_manuscript_depth.py --research` exits 0) |
+| published version | 0.10 (2026-11-14), version DOI [10.5281/zenodo.24231927](https://doi.org/10.5281/zenodo.24231927), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest); 0.09 (2026-11-02): [10.5281/zenodo.23890775](https://doi.org/10.5281/zenodo.23890775) |
 | pages | 40 |
 | build | `pdflatex main.tex` three times, MiKTeX; zero errors, zero warnings, zero overfull or underfull boxes after three passes |
 | labels | `[V]` read on a primary source (equation or page cited), `[D]` derived, `[MV]` machine-verified (kernel replay, exact symbolic computation, or a recorded run stored in a result file, pinned by a test where the text says so), `[U]` unverified, `[C]` conjecture; used in the text after each statement |

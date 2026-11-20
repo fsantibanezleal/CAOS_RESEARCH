@@ -1,0 +1,19 @@
+\begin{tikzpicture}[>=Stealth, every node/.style={font=\small}, vtx/.style={circle,draw,inner sep=1.2pt,minimum size=6mm}]
+\node[vtx] (s) at (0,0) {$s$};
+\node[vtx] (u) at (2.5,0) {$u$};
+\node[vtx] (v) at (5,0) {$v$};
+\node[vtx] (w) at (7.5,0) {$w$};
+\node[vtx] (t1) at (2.5,2.2) {$t_1$};
+\node[vtx] (t2) at (3.75,-2.8) {$t_2$};
+\node[vtx] (t3) at (5,-1.2) {$t_3$};
+\draw[->,ultra thick] (s) -- (t1) node[midway,above left,font=\scriptsize,fill=white,inner sep=1pt] {$10;\,2$};
+\draw[->,ultra thick] (s) -- (t2) node[midway,below left,font=\scriptsize,fill=white,inner sep=1pt] {$6;\,3$};
+\draw[->,thick] (s) -- (u) node[midway,above,font=\scriptsize,fill=white,inner sep=1pt] {$24;\,0$};
+\draw[->,ultra thick] (u) -- (t3) node[midway,below left,font=\scriptsize,fill=white,inner sep=1pt] {$10;\,2$};
+\draw[->,thick] (u) -- (v) node[midway,above,font=\scriptsize,fill=white,inner sep=1pt] {$14;\,0$};
+\draw[->,thick] (v) -- (t1) node[midway,above right,font=\scriptsize,fill=white,inner sep=1pt] {$5;\,0$};
+\draw[->,thick] (v) -- (w) node[midway,above,font=\scriptsize,fill=white,inner sep=1pt] {$9;\,0$};
+\draw[->,thick] (w) -- (t2) node[midway,below right,font=\scriptsize,fill=white,inner sep=1pt] {$4;\,0$};
+\draw[->,thick] (w) -- (t3) node[midway,above left,font=\scriptsize,fill=white,inner sep=1pt] {$5;\,0$};
+\node[font=\footnotesize,align=left] at (9.4,1.7) {demands $d=(15,10,15)$,\\ $d_{\max}=15$,\\ label: $x_a;\,c_a$};
+\end{tikzpicture}

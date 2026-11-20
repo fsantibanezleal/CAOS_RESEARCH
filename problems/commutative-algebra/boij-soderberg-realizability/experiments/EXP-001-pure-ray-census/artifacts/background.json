@@ -1,0 +1,7 @@
+{
+ "state": "finished (no timeout; resumed once from the per-ray logs)",
+ "command": "run.py search --data-root <data root> --workers 10",
+ "last_start": "2026-11-19T20:18:03",
+ "finished": "2026-11-19T20:34:19",
+ "logs": "<data root>/boij-soderberg-realizability/EXP-001/rays/<ray>.jsonl"
+}

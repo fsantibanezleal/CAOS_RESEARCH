@@ -29,6 +29,7 @@ literature search is described as proof of novelty.
 | Image of the announced map and its fibers over C = 0 | EXP-145 | CONFIRMED: image is C^3 minus the curve Gamma; corrects foundational v0.14 | correction with exact proof | `foundational` v0.15 |
 | Two-dimensional equivariant rigidity | EXP-005, EXP-006, EXP-010 | proved (affine with one zero weight) | separates the mechanism from the plane | `foundational` |
 | Consequence cascade at the level of indices | EXP-016, EXP-018, EXP-041, EXP-136, EXP-138, EXP-144 | located in primary sources (Mathieu 1997 not located); explicit objects checked exactly | prevents overclaiming the cascade | `cascade` v0.10 |
+| The Mathieu conjecture on SU(N), every N >= 2 (Long's universal pair through the first column) | EXP-148 | proved for SU(N) following Long (arXiv:2609.16178 v1), 950 exact cells for N <= 16, m <= 8; Long's theorem for every nonabelian compact connected group cited, not reproduced | closes the open range 3 <= N <= 14 of the Mathieu row | `cascade` v0.11 |
 | Planar machine and weight-class exclusions | EXP-013 to EXP-049 (cited ones) | four theorems proved; the fifth on six certified shapes, a conjecture beyond | uniform planar exclusions | `planar`, Section `sec:theory` |
 | Truncation ladder for a simultaneous covector | EXP-055, EXP-064, EXP-067, EXP-068, EXP-071 to EXP-075, EXP-078, EXP-080 | degrees 1 to 3 excluded modulo primes; ceiling and sl2 premise refuted | negative, bounded | `planar`, Section `sec:ladder` |
 | Frontier recalibrated against primary sources | EXP-082, EXP-083, EXP-094 | the floor table with sources; twenty-three configurations in [125,150] undecided by the sources | the map of what is open | `planar`, Section `sec:frontier` |
@@ -47,7 +48,7 @@ EXP-060, EXP-070 and EXP-076 are superseded (`research-governance.json`, `experi
 |---|---|---|---|---|
 | `foundational` | v0.16 | [10.5281/zenodo.24358311](https://doi.org/10.5281/zenodo.24358311) | [10.5281/zenodo.21503365](https://doi.org/10.5281/zenodo.21503365) | what the three-dimensional counterexample is: validation, structure, image, rigidity |
 | `planar` | v0.38 | [10.5281/zenodo.24358296](https://doi.org/10.5281/zenodo.24358296) | [10.5281/zenodo.21503367](https://doi.org/10.5281/zenodo.21503367) | what can be proved about planar Keller maps, and where the degree floor stands |
-| `cascade` | v0.10 | [10.5281/zenodo.24269044](https://doi.org/10.5281/zenodo.24269044) | [10.5281/zenodo.21503371](https://doi.org/10.5281/zenodo.21503371) | which implied and equivalent conjectures the counterexample settles, at which indices |
+| `cascade` | v0.11 | [10.5281/zenodo.24382142](https://doi.org/10.5281/zenodo.24382142) | [10.5281/zenodo.21503371](https://doi.org/10.5281/zenodo.21503371) | which implied and equivalent conjectures the counterexample settles, at which indices |
 
 Split decision (2026-11-16 review): the three papers have different central questions and toolkits (exact validation
 and real geometry; Newton polygons, certificates and elimination; located implications), so they stay separate. A
@@ -62,8 +63,8 @@ method).
 - Dormant: JC-F2 (planar exclusions; the extension beyond the certified grid and a terminating covector ladder have no
   route).
 - Current: **JC-F7**, C. D. Long's Mathieu construction on compact connected Lie groups (arXiv:2609.16178 v1, claimed
-  for every nonabelian group): an exact replay on SU(2) and SU(3), then the cascade revision v0.11 (portfolio review of
-  2026-11-19, decision 2). First bounded action: read the paper in full and price exact Haar integration of the moments.
+  for every nonabelian group). Success gate met on 2026-11-19: EXP-148 (exact replay on SU(N), N = 2..16) and cascade
+  v0.11 (10.5281/zenodo.24382142). It stays current until the next strategic review chooses the next focus.
 - Proposed (shown to Felipe in the portfolio reviews of 2026-11-16 and 2026-11-19 (methodology 13: a changed target is shown before it is treated as the
   continuation): JC-F5, the twenty-three configurations of maximal degree in [125,150] left undecided by the sources
   (the next gap of the floor); JC-F6, the certificate method on a second system and a methods paper.
@@ -73,5 +74,5 @@ method).
 - `planar`: v0.38 with EXP-146 and EXP-147 (brief `jc-planar-v038-2026-11-16` in CAOS_MANAGE); the fifth exclusion beyond its grid
   stays a conjecture; the twenty-three configurations in [125,150].
 - `foundational`: v0.16, one sentence pointing to the planar certificate, released with planar v0.38.
-- `cascade`: Mathieu for 3 <= N <= 14 (JCB-096), now claimed settled for every nonabelian compact connected group by
-  Long (arXiv:2609.16178 v1, unrefereed); v0.11 after the exact replay of JC-F7; Wilson's GMC(2) proof (JCB-097).
+- `cascade`: Wilson's GMC(2) proof (JCB-097); the direction and index of Mathieu's original implication (the 1997 paper
+  is not located); Long's theorem for groups other than SU(N) is cited, not reproduced.

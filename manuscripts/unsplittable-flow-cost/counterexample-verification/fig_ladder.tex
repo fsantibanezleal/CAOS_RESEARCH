@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[width=0.95\textwidth, height=7cm, xlabel={date of the source (days after 20 July 2026)},
+  ylabel={lower bound on the constant}, xmin=0, xmax=28, ymin=1.0, ymax=1.32, tick label style={font=\scriptsize},
+  legend style={font=\scriptsize, at={(0.98,0.03)}, anchor=south east}]
+\addplot[const plot, thick, color=stcurve, mark=*, mark size=2pt] coordinates {(3,1.06666667) (11,1.28249480) (15,1.28260069)};
+\addlegendentry{general instances}
+\addplot[only marks, color=stpoint, mark=square*, mark size=2.2pt] coordinates {(3,1.13974707) (4,1.12500000) (24,1.17353532)};
+\addlegendentry{planar series}
+\node[font=\tiny, below right] at (axis cs:3,1.066667) {Rybin: $\tfrac{16}{15}$};
+\node[font=\tiny, above right] at (axis cs:3,1.139747) {Protti; Nikolenko: 1.13975};
+\node[font=\tiny, below right] at (axis cs:4,1.125000) {Muffatti: $\tfrac98$ (planar family)};
+\node[font=\tiny, left] at (axis cs:11,1.282495) {Nikolenko: 1.28249};
+\node[font=\tiny, above] at (axis cs:15,1.282601) {De la Fuente: 1.28260};
+\node[font=\tiny, above left] at (axis cs:24,1.173535) {Nikolenko: 1.17354};
+\addplot[dashed, thick, color=stline] coordinates {(0,1.125) (28,1.125)};
+\end{axis}
+\end{tikzpicture}

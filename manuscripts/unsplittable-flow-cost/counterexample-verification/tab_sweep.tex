@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{5.6cm}rr>{\raggedright\arraybackslash}p{3.4cm}@{}}
+\toprule
+family and box & members & members with $\alpha_{\max}>1$ & largest $\alpha_{\max}$\\
+\midrule
+Spine family, $k=3$, $m=3$ & 2{,}448 & 1 & $\tfrac{16}{15}$ (the seven-vertex instance)\\
+Spine family, $k=4$, $m=4$ & 1{,}008 & 0 & $\le 1$\\
+Symmetric three-terminal family, grid & 108{,}000 & at least 50 (top 50 listed) & \ensuremath{\tfrac{69}{64}}\\
+Odd-cycle family on $C_5$, uniform (calibration) & 5 & 0 & $\tfrac{79}{120}$\\
+Odd-cycle family on $C_5$, symmetric members & 572 & 0 & $\tfrac{5}{6}$\\
+Odd-cycle family on $C_5$, random members & 2{,}000 & 0 & $\tfrac{11}{12}$\\
+Odd-cycle family on $C_5$, local search & 1{,}124 & 0 & $\tfrac{42}{43}$\\
+\bottomrule
+\end{tabular}
+\caption{The families on which the frontier value was evaluated exactly, with the number of members and the largest value found. The spine family is that of Section~\ref{sec:family}; the symmetric three-terminal family is the grid of Section~\ref{sec:muffatti}; the odd-cycle rows are the four stages of Section~\ref{sec:oddcycle}. A member counts as a counterexample instance when its frontier value exceeds 1. Every largest value is an exact rational read from the archived records.}
+\label{tab:sweep}
+\end{table}

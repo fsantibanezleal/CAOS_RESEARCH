@@ -1,0 +1,37 @@
+\begin{tikzpicture}[x=0.58cm, y=0.58cm, vtx/.style={circle,draw,inner sep=0.6pt,minimum size=4.3mm,font=\tiny}]
+\node[vtx,fill=black!10] (t0) at (12,12) {$t_{0}$};
+\node[vtx,fill=black!10] (t1) at (5,1) {$t_{1}$};
+\node[vtx,fill=black!10] (t2) at (15,11) {$t_{2}$};
+\node[vtx,fill=black!10] (t3) at (21,3) {$t_{3}$};
+\node[vtx,fill=black!10] (t4) at (12,6) {$t_{4}$};
+\node[vtx,fill=black!10] (t5) at (11,7) {$t_{5}$};
+\node[vtx] (v0) at (0,0) {$v_{0}$};
+\node[vtx] (v1) at (26,0) {$v_{1}$};
+\node[vtx] (v2) at (17,9) {$v_{2}$};
+\node[vtx] (v3) at (21,4) {$v_{3}$};
+\node[vtx] (v4) at (11,8) {$v_{4}$};
+\node[vtx] (v5) at (14,10) {$v_{5}$};
+\node[vtx] (v6) at (13,11) {$v_{6}$};
+\node[vtx] (v7) at (5,2) {$v_{7}$};
+\node[vtx] (v8) at (9,5) {$v_{8}$};
+\draw[thick] (v0) -- (t0);
+\draw[thick] (v0) -- (v1);
+\draw[thick] (t0) -- (v6);
+\draw[thick] (v1) -- (t1);
+\draw[thick] (v1) -- (v2);
+\draw[thick] (t1) -- (v7);
+\draw[thick] (v2) -- (t2);
+\draw[thick] (v2) -- (v3);
+\draw[thick] (t2) -- (v5);
+\draw[thick] (v3) -- (t3);
+\draw[thick] (v3) -- (t4);
+\draw[thick] (v3) -- (v4);
+\draw[thick] (t3) -- (v7);
+\draw[thick] (t4) -- (v8);
+\draw[thick] (v4) -- (t5);
+\draw[thick] (v4) -- (v5);
+\draw[thick] (t5) -- (v8);
+\draw[thick] (v5) -- (v6);
+\draw[thick] (v6) -- (v7);
+\draw[thick] (v7) -- (v8);
+\end{tikzpicture}

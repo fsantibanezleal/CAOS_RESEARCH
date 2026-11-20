@@ -1922,3 +1922,30 @@ review approved the corrections before release.
 - Felipe validated the closure phrasing on 2026-11-19 (in reply to the question with the abstract's exclusion sentence:
   "update the manuscripts required"); recorded in `program/jacobian-conjecture/72108-closure-statement.md`.
 
+## 2026-11-19 - EXP-148 CONFIRMED: Long's universal pair violates the Mathieu conjecture on SU(N), 2 <= N <= 16 (JC-F7)
+
+- Portfolio review of 2026-11-19: JC-F4 closed; new focus JC-F7 on C. D. Long, arXiv:2609.16178 v1 (the Mathieu
+  conjecture claimed false on every nonabelian compact connected Lie group). Preflight: the paper read in full, the pair
+  P = (a + u)(a^2 v - (2a + u) tau^2), Q = u made explicit through the first column (z0 = g11, z1 = g21), nine possible
+  gaps listed, none an error.
+- EXP-148 (hypothesis f6aa87e6, frozen before the run): 950 exact cells, N = 2..16, m up to 8, by complex sphere moments,
+  real sphere moments, Weingarten calculus on U(N) (N <= 6, degree <= 5; 1,198,080 pairs of permutations) and the
+  constant-term reduction on S^3: I(P^m) = 0 and I(Q^s P^m) = c_m binom(m-1, s-1) (2)_(4m+s)/(N)_(4m+s) in every cell, no
+  disagreement between routes, six controls behaving as declared. 4.4 s.
+- The cascade's Mathieu row (v0.10: open for 3 <= N <= 14) is superseded by the direct construction; the statement for
+  every m rests on the three-step derivation in the hypothesis (first column uniform, constant-term identity, radial
+  transfer), to be reviewed before cascade v0.11.
+
+## 2026-11-19 - cascade v0.11 published
+
+- Cascade v0.11 (10.5281/zenodo.24382142; 45 pages, 716,901 bytes, SHA-256 23c0d679be77d22e21a01bf1f2ce75e4ec59668168ce16e9123c348e99aa754d): the Mathieu row is false for SU(N), every N >= 2. A new
+  subsection proves the moment identities of Long's pair for SU(N) (first column uniform on the sphere; laws on the
+  sphere; the constant-term identity on S^3; the transfer), EXP-148 reproduces them in 950 exact cells, and every
+  statement of the former open range 3 <= N <= 14 is rewritten as a statement about the located proofs. The Weingarten
+  formula is cited from Collins and Sniady (Proposition 2.3 and Corollary 2.4) and the source archived.
+- Review: an adversarial reviewer re-derived the four proof steps independently and recomputed three values; findings
+  (one blocker word on the scope of Long's theorem, three majors on what the routes do and do not use and on the
+  Weingarten citation, minors) fixed in one pass; re-check: approve, 0 blockers. release.py: build and render clean, 45
+  pages viewed, approval record, 39 gates.
+- JC-F7's success gate is met; JCB-108 done.
+
