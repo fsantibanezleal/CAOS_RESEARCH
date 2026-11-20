@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+arc $a$ & $x_a$ & $c_a$ & $x_a+d_{\max}$ & load of the arc under $Z_1Z_2Z_3$\\
+\midrule
+$s\to t_1$ & 10 & 2 & 25 & 0\\
+$s\to t_2$ & 6 & 3 & 21 & 0\\
+$s\to u$ & 24 & 0 & 39 & 40\\
+$u\to t_3$ & 10 & 2 & 25 & 0\\
+$u\to v$ & 14 & 0 & 29 & 40\\
+$v\to t_1$ & 5 & 0 & 20 & 15\\
+$v\to w$ & 9 & 0 & 24 & 25\\
+$w\to t_2$ & 4 & 0 & 19 & 10\\
+$w\to t_3$ & 5 & 0 & 20 & 15\\
+\bottomrule
+\end{tabular}
+\caption{The arc data of the seven-vertex instance: fractional load $x_a$, cost per unit of flow $c_a$, the congestion bound $x_a+d_{\max}$ with $d_{\max}=15$, and the load that the routing of three free choices puts on each arc. That routing exceeds the bound on $s\to u$ ($40>39$), on $u\to v$ ($40>29$) and on $v\to w$ ($25>24$), by 1, 11 and 1.}
+\label{tab:arcs7}
+\end{table}

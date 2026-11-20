@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[width=0.9\textwidth, height=6.2cm, xlabel={$t$}, ylabel={$\alpha_{\mathrm{inst}}$},
+  xmin=0.095, xmax=0.205, ymin=1.1235, ymax=1.1415, tick label style={font=\scriptsize}, legend style={font=\scriptsize, at={(0.5,0.05)}, anchor=south},
+  scaled y ticks=false, yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=4}]
+\addplot[only marks, mark=*, mark size=1.6pt, color=stcurve] coordinates {(0.10000,1.1258990) (0.10250,1.1273000) (0.10500,1.1286232) (0.10750,1.1298692) (0.11000,1.1310386) (0.11250,1.1321318) (0.11500,1.1331493) (0.11750,1.1340918) (0.12000,1.1349596) (0.12250,1.1357534) (0.12500,1.1364736) (0.12750,1.1371208) (0.13000,1.1376954) (0.13250,1.1381980) (0.13500,1.1386291) (0.13750,1.1389892) (0.14000,1.1392788) (0.14250,1.1394985) (0.14500,1.1396487) (0.14750,1.1397299) (0.15000,1.1397427) (0.15250,1.1396876) (0.15500,1.1395650) (0.15750,1.1393756) (0.16000,1.1391196) (0.16250,1.1387978) (0.16500,1.1384105) (0.16750,1.1379584) (0.17000,1.1374418) (0.17250,1.1368613) (0.17500,1.1362174) (0.17750,1.1355105) (0.18000,1.1347412) (0.18250,1.1339100) (0.18500,1.1330174) (0.18750,1.1320638) (0.19000,1.1310498) (0.19250,1.1299758) (0.19500,1.1288423) (0.19750,1.1276499) (0.20000,1.1263990)};
+\addlegendentry{$\alpha_{\mathrm{inst}}(t)$ at $\varepsilon=10^{-6}$}
+\addplot[dashed, color=stpoint, thick] coordinates {(0.095,1.1397471) (0.205,1.1397471)};
+\addlegendentry{$(299-41\sqrt{41})/32$}
+\addplot[dotted, thick, color=stline] coordinates {(0.095,1.125) (0.205,1.125)};
+\addlegendentry{$9/8$}
+\end{axis}
+\end{tikzpicture}

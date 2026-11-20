@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Independent exact verification of the counterexample to Goemans' unsplittable-flow cost conjecture and of the record lower-bound instances, with certified planarity and optimal pricing",
+    "creators": [
+      {
+        "name": "Santibáñez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>A seven-vertex instance announced in July 2026 refutes Goemans' conjecture that a feasible fractional single-source flow can be rounded to an unsplittable flow that loads no arc beyond x_a + d_max and costs no more than the fractional flow. We verify that instance, and the eleven instances that currently hold the lower bounds on the violation constant, by exact rational enumeration with a library written from the statement of the conjecture, without running any verifier of their authors. The seven-vertex instance forces a violation of exactly 16/15 of d_max.</p><p>We prove that a separation linear program decides whether any nonnegative cost vector makes an instance a counterexample, that its optimum on the seven-vertex instance is 2/7 and is attained by the published prices, and that no single-terminal instance is a counterexample. A cutting-plane evaluator computes the frontier value, the violation forced by the best prices, exactly on instances with 131,072 routings. The eleven record instances of Nikolenko and De la Fuente reproduce their claimed values to the last digit; the two 17-terminal instances are non-planar and the others planar, each decided by a checked certificate; and re-pricing gains nothing on any of them. Exact checks of the symmetric three-terminal family of Muffatti, with forced violation 9/8 - (3/4) eps, and of Afrasyab's odd-cycle family on C5, whose 3,696 members all have frontier value at most 1, complete the computations. The theorems of the sources are not re-proved, and the two-terminal case remains open.</p><p>The counterexample instance is Rybin's, the current lower bounds are Nikolenko's and De la Fuente's, the value 9/8 as the supremum of the symmetric three-terminal template is Nikolenko's, and no claim of priority or of a new bound is made. Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/optimization-geometry/unsplittable-flow-cost).</p>",
+    "keywords": [
+      "unsplittable flow",
+      "single-source unsplittable flow",
+      "Goemans conjecture",
+      "Dinitz-Garg-Goemans theorem",
+      "cost-preserving rounding",
+      "separation linear program",
+      "frontier value",
+      "exact rational arithmetic",
+      "planarity certificate",
+      "counterexample verification",
+      "network flows"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "language": "eng",
+    "version": "0.04",
+    "publication_date": "2026-11-19",
+    "version_notes": "Adds the independent verification of the eleven record instances of Nikolenko and De la Fuente (values, planarity certificates, optimality of the prices), the frontier value with its exact evaluators, and the exact checks of the symmetric three-terminal and odd-cycle families. States the current lower bounds with their authors and corrects the status of the cost-free two-sided conjecture and the credit of the value 9/8.",
+    "related_identifiers": [
+      {"relation": "isSupplementedBy", "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "resource_type": "software"},
+      {"relation": "cites", "identifier": "10.1007/s004930050043", "resource_type": "publication-article"},
+      {"relation": "cites", "identifier": "10.1007/978-3-540-75520-3_36", "resource_type": "publication-conferencepaper"},
+      {"relation": "cites", "identifier": "10.1007/s10107-021-01704-4", "resource_type": "publication-article"},
+      {"relation": "cites", "identifier": "10.1007/s10107-026-02365-x", "resource_type": "publication-article"},
+      {"relation": "cites", "identifier": "10.1007/s10107-026-02392-8", "resource_type": "publication-article"},
+      {"relation": "cites", "identifier": "10.48550/arXiv.2510.21287", "resource_type": "publication-preprint"},
+      {"relation": "cites", "identifier": "10.48550/arXiv.1504.00627", "resource_type": "publication-preprint"},
+      {"relation": "cites", "identifier": "10.48550/arXiv.2608.13983", "resource_type": "publication-preprint"},
+      {"relation": "cites", "identifier": "10.48550/arXiv.2609.17568", "resource_type": "publication-preprint"},
+      {"relation": "cites", "identifier": "10.48550/arXiv.2610.16079", "resource_type": "publication-preprint"},
+      {"relation": "cites", "identifier": "10.5281/zenodo.21701162", "resource_type": "publication-preprint"},
+      {"relation": "cites", "identifier": "10.5281/zenodo.21716713", "resource_type": "publication-preprint"},
+      {"relation": "cites", "identifier": "10.5281/zenodo.21922203", "resource_type": "publication-preprint"}
+    ],
+    "references": [
+      "Y. Dinitz, N. Garg, M. X. Goemans, On the single-source unsplittable flow problem, Combinatorica 19(1) (1999) 17-41. 10.1007/s004930050043",
+      "J. M. Kleinberg, Approximation algorithms for disjoint paths problems, PhD thesis, Massachusetts Institute of Technology (1996).",
+      "S. G. Kolliopoulos, C. Stein, Approximation algorithms for single-source unsplittable flow, SIAM Journal on Computing 31 (2002) 919-946.",
+      "M. Skutella, Approximating the single source unsplittable min-cost flow problem, Mathematical Programming 91 (2002) 493-514.",
+      "J. Du, S. Kolliopoulos, Implementing approximation algorithms for the single-source unsplittable flow problem, ACM Journal of Experimental Algorithmics 10(2) (2005) article 3.",
+      "P. Raghavan, C. D. Thompson, Randomized rounding: a technique for provably good algorithms and algorithmic proofs, Combinatorica 7 (1987) 365-374.",
+      "P. Raghavan, Probabilistic construction of deterministic algorithms: approximating packing integer programs, Journal of Computer and System Sciences 37 (1988) 130-143.",
+      "S. G. Kolliopoulos, Edge-disjoint paths and unsplittable flow, in T. F. Gonzalez (ed.), Handbook of Approximation Algorithms and Metaheuristics, Chapman and Hall/CRC (2007).",
+      "G. Baier, E. Köhler, M. Skutella, On the k-splittable flow problem, Algorithmica 42 (2005) 231-248.",
+      "S. G. Kolliopoulos, Minimum-cost single-source 2-splittable flow, Information Processing Letters 94 (2005) 15-18.",
+      "R. Koch, M. Skutella, I. Spenke, Maximum k-splittable s,t-flows, Theory of Computing Systems 43 (2008) 56-66.",
+      "F. Salazar, M. Skutella, Single-source k-splittable min-cost flows, Operations Research Letters 37 (2009) 71-74.",
+      "M. Martens, F. Salazar, M. Skutella, Convex combinations of single source unsplittable flows, Algorithms - ESA 2007, Lecture Notes in Computer Science 4698 (2007) 395-406. 10.1007/978-3-540-75520-3_36",
+      "S. Morell, M. Skutella, Single source unsplittable flows with arc-wise lower and upper bounds, Mathematical Programming 192 (2022) 477-496. 10.1007/s10107-021-01704-4",
+      "V. Traub, L. Vargas Koch, R. Zenklusen, Single-source unsplittable flows in planar and bounded-genus graphs, Mathematical Programming (2026); preprint arXiv:2308.02651. 10.1007/s10107-026-02365-x",
+      "M. Majthoub Almoghrabi, M. Skutella, P. Warode, Integer and unsplittable multiflows in series-parallel digraphs, IPCO 2025; Mathematical Programming (2026); preprint arXiv:2412.05182. 10.1007/s10107-026-02392-8",
+      "J. K. Lenstra, D. B. Shmoys, É. Tardos, Approximation algorithms for scheduling unrelated parallel machines, Mathematical Programming 46(1-3) (1990) 259-271.",
+      "C. Swamy, V. Traub, L. Vargas Koch, R. Zenklusen, Unsplittable cost flows from unweighted error-bounded variants, preprint arXiv:2510.21287 (2025). 10.48550/arXiv.2510.21287",
+      "F. B. Shepherd, A. Vetta, The inapproximability of maximum single-sink unsplittable, priority and confluent flow problems, preprint arXiv:1504.00627. 10.48550/arXiv.1504.00627",
+      "D. Rybin, A counterexample to Goemans' cost-preserving unsplittable flow conjecture, announcement of 22 July 2026; restatements at https://mathlab.drummerduck.com/p/goemans-unsplittable-flow and https://vibemathed.com/problem/dinitz-garg-goemans-unsplittable-flow.",
+      "A. Freitas Ramos, D. Barros Hulak, R. J. G. B. de Queiroz, A formal counterexample to the cost-preserving single-source unsplittable flow conjecture, Archive of Formal Proofs, https://isa-afp.org/entries/Dinitz_Garg_Goemans_Counterexample.html (document of 26 October 2026).",
+      "S. Nikolenko, A planar lower bound 1.1397... > 9/8 for cost-preserving single-source unsplittable flows, preprint (30 July 2026). 10.5281/zenodo.21701162",
+      "S. Nikolenko, Deletion-star ceilings and a 1.28249 lower bound for cost-preserving single-source unsplittable flows, preprint (31 July 2026). 10.5281/zenodo.21716713",
+      "S. Nikolenko, Exact-mean decompositions for cost-preserving single-source unsplittable flows: demand scales and local interaction structure, preprint (13 August 2026). 10.5281/zenodo.21922203",
+      "S. Nikolenko, repository snikolenko/unsplittable-flows, https://github.com/snikolenko/unsplittable-flows, commit a8324b31693619fd01554d98e16fca54ba7dabd3 (13 August 2026).",
+      "A. De la Fuente, Exact 17-terminal common-point certificate for the lower bound 1.28260069..., merged pull request 1 to snikolenko/unsplittable-flows, https://github.com/snikolenko/unsplittable-flows/pull/1 (merged 4 August 2026).",
+      "A. Muffatti, Consequences of Rybin's counterexample: convex-decomposition failure and a planar 9/8 lower bound, research note (not peer reviewed), repository terrorproforma/maths, folder planar-cost-lower-bound, commit dbf9d2372773b219a5d5088862643431170c2c9f (31 August 2026).",
+      "K. Afrasyab, Independence-system realisations in single-source unsplittable flow, preprint arXiv:2609.17568 (version 1). 10.48550/arXiv.2609.17568",
+      "K. Bérczi, S. Liu, V. Reis, J. Tarnawski, Weighted equitability and matroid-constrained discrepancy, preprint arXiv:2608.13983 (version 1, 14 August 2026). 10.48550/arXiv.2608.13983",
+      "M. Cherniavskii, A. Kupavskii, S. Moiseev, A. Shekhovtsov, Approximation algorithms via discrepancy with hard constraints, preprint arXiv:2610.16079 (version 1, 12 October 2026). 10.48550/arXiv.2610.16079",
+      "U. Brandes, The left-right planarity test, manuscript (2009)."
+    ]
+  }
+}

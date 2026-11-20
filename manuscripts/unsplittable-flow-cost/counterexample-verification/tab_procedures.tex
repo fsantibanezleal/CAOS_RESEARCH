@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering\footnotesize
+\begin{tabular}{@{}p{3.3cm}p{4.3cm}p{4.9cm}@{}}
+\toprule
+procedure & cost in the size of the instance & measured on the records\\
+\midrule
+path and routing enumeration, Algorithm~\ref{alg:enum} & depth-first search per terminal; $\prod_t p_t$ routings, each a load vector of length $|A|$ & 131{,}072 routings of the 17-terminal record streamed in 159.2 s\\[2pt]
+decision of an instance, Algorithm~\ref{alg:decide} & one pass over the routings; $O(|T|\,|A|)$ per routing & eight routings of the seven-vertex instance in under 0.01 s; 131{,}072 routings in 159.2 s\\[2pt]
+separation LP, Algorithm~\ref{alg:sep} & one simplex over $|\mathcal U|$ rows and $|A|+2$ columns, exact & 4 congestion-good routings on the seven-vertex instance; optimum $\tfrac27$\\[2pt]
+frontier value, Algorithm~\ref{alg:frontier} & one separation LP per distinct level of $\alpha$ & 64 routings of the planar record in 46.48 s\\[2pt]
+cutting-plane evaluator, Algorithm~\ref{alg:cp} & $O(\log L)$ level tests, each a loop of LPs on the cuts and a branch-and-bound over the terminals & 7{,}753 levels, 13 tested, 321.4 s (record); 12{,}253 levels, 13 tested, 528.5 s (refinement)\\[2pt]
+planarity certificate and checker, Algorithm~\ref{alg:planar} & face tracing visits each dart once; suppression of degree-two vertices repeats until none remains & 0.13 s for the 17-terminal graphs (51 vertices, 67 arcs)\\[2pt]
+\bottomrule
+\end{tabular}
+\caption{The procedures of Section~\ref{sec:methods}, with their cost as a function of the size of the instance and the run times measured on the records of Table~\ref{tab:records}. The times are those of single processes of one machine (the environment is recorded in Section~\ref{sec:repro}); the library solves every linear program in exact rational arithmetic.}
+\label{tab:procedures}
+\end{table}
