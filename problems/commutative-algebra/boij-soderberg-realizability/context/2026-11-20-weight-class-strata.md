@@ -192,59 +192,71 @@ e = 6); the section "Characteristic p dividing m" below explains it.
 
 Added on 2026-11-20 after the review of the rest of the note and after EXP-010 recorded, on more than ten million
 members, that in characteristic p no member of a stratum S(m; i, j) with p dividing m has the rank r. Derivation [D]
-by the coordinating session; this section was not part of the reviewed text.
+by the coordinating session. Checked on 2026-11-20 by the reader who reviewed the rest of the note (addendum of the
+same record): every step holds, no blocker and no major finding; six minor repairs, applied below (the first text of
+the section is in commit 7ab11132). The reader built the syzygy of the proof explicitly in four cases and checked the
+bound on 941 random pairs at (4, 3), (9, 3), (9, 5), (9, 7), (10, 7), (11, 11) and, for p = 2, at (4, 2), (5, 2), (6,
+2).
 
 Notation of the note `2026-11-20-pairs-over-the-invariants.md`: h = xy, D = k[h, z], x d(h, z) = d(h + z, z) x,
 y d(h, z) = d(h - z, z) y, x^n y^n = A_n(h), y^n x^n = B_n(h), and U is the direct sum of the D x^n (n >= 0) and the
 D y^n (n >= 1).
 
-Proposition. Let k have odd characteristic p and let f, g be nonzero forms of degree e, each homogeneous for the
-weight modulo p (f in U_(e, [i]), g in U_(e, [j]) for the modulus p). Then there are a, b in U, not both zero, with
-a f + b g = 0 and with a f of degree at most 2e + p - 1.
+Proposition. Let k have characteristic p > 0 and let f, g be nonzero forms of degree e, each homogeneous for the
+weight modulo p (f in U_(e, [i]), g in U_(e, [j]) for the modulus p). Then there are a, b in U, not both zero, with a
+f + b g = 0 and with a f of degree at most 2e + p - 1 when p is odd, and at most 2e + 2 when p = 2.
 
-Proof. Put X = x^p, Y = y^p, central in U, and C = k[h, z, X, Y], a commutative subalgebra of U. The monomial
-x^a y^b z^c lies in D x^(a-b) or in D y^(b-a), and its weight b + c and its degree a + b + 2c determine b - a, so a
-form of degree e whose weights are all congruent to i modulo p is a sum of terms d_n x^n and d'_n y^n with d_n, d'_n
-in D, where n runs over one residue class modulo p in the first sum and over the opposite class in the second. With
-n_0 in [0, p - 1] the residue of the first class, x^n = X^t x^(n_0) for n = n_0 + p t, and y^n = Y^t y^(p - n_0) for
-n = p - n_0 + p t when n_0 >= 1, y^n = Y^t for n = p t when n_0 = 0. So
+Proof. Put X = x^p, Y = y^p, central in U, and C = k[h, z, X, Y], a commutative subalgebra of U. The monomial x^a y^b
+z^c lies in D x^(a-b) or in D y^(b-a), and its weight b + c and its degree a + b + 2c determine b - a, so a form of
+degree e whose weights are all congruent to i modulo p is a sum of terms d_n x^n and d'_n y^n with d_n, d'_n in D,
+where n runs over one residue class modulo p in the first sum and over the opposite class in the second. With n_0 in
+[0, p - 1] the residue of the first class, n_0 = e - 2i modulo p, x^n = X^t x^(n_0) for n = n_0 + p t, and y^n = Y^t
+y^(p - n_0) for n = p - n_0 + p t when n_0 >= 1, y^n = Y^t for n = p t when n_0 = 0. So
 
     f = alpha x^(n_0) + alpha' y^(p - n_0)   with alpha, alpha' in C     (f = alpha + alpha' in C when n_0 = 0),
 
 and likewise g = beta x^(n_1) + beta' y^(p - n_1). If n_0 = 0 put m_f = 1. If 1 <= n_0 <= (p - 1)/2 put m_f = y^(n_0):
-then m_f f = alpha(h - n_0 z) B_(n_0)(h) + alpha'(h - n_0 z) Y. If n_0 > (p - 1)/2 put m_f = x^(p - n_0): then
-m_f f = alpha(h + (p - n_0) z) X + alpha'(h + (p - n_0) z) A_(p - n_0)(h). In each case c_f = m_f f lies in C, is not
-zero because U is a domain, and m_f has degree at most (p - 1)/2. Define m_g and c_g = m_g g in the same way. The
-elements of C commute, so
+then m_f f = alpha(h - n_0 z) B_(n_0)(h) + alpha'(h - n_0 z) Y. If n_0 > (p - 1)/2 put m_f = x^(p - n_0): then m_f f =
+alpha(h + (p - n_0) z) X + alpha'(h + (p - n_0) z) A_(p - n_0)(h). In each case c_f = m_f f lies in C, is not zero
+because U is a domain, and m_f has degree at most (p - 1)/2 for odd p (for p = 2 and n_0 = 1 take m_f = y, of degree
+1). Define m_g and c_g = m_g g in the same way. The elements of C commute, so
 
     (c_g m_f) f - (c_f m_g) g = c_g c_f - c_f c_g = 0,
 
-with c_g m_f not zero, and the degree of c_g m_f f is (e + deg m_g) + (e + deg m_f) <= 2e + p - 1. QED.
+with c_g m_f not zero, and the degree of c_g m_f f is (e + deg m_g) + (e + deg m_f), at most 2e + p - 1 for odd p and
+2e + 2 for p = 2. QED.
 
-Corollary. In odd characteristic p <= e no pair of forms of degree e that are both homogeneous for the weight modulo p is
-pure. In particular, for p <= e a stratum S(m; i, j) with p dividing m holds no pure pair, admissible or not.
+Corollary. In odd characteristic p <= e no pair of forms of degree e that are both homogeneous for the weight modulo p
+is pure. In particular, for p <= e a stratum S(m; i, j) with p dividing m holds no pure pair, admissible or not. (For
+p = 2 the same holds for e >= 3, in agreement with the theorem on characteristic 2.)
 
 Proof. A pure pair has no syzygy of degree below 3e, and 2e + p - 1 < 3e when p <= e. A form that is homogeneous for
 the weight modulo m is homogeneous modulo p when p divides m. QED.
 
 Remarks.
 
-1. The rank. A syzygy of degree n gives u(3e - n) independent syzygies of degree 3e, and u(3e - n) >= u(2) = 4 when
-   n <= 3e - 2. So for p <= e - 1 the rank of mu_(3e) is at most 2 u(2e) - 4, below r: this is the observation of
-   EXP-010. For p = e the bound of the proposition allows n = 3e - 1; in the strata with m = e and i = 0 the form f is
-   a combination of x^e and y^e, which are central, so g f - f g = 0 is a syzygy of degree 2e; the strata with m = e
-   and i, j >= 1 hold no pure pair by the containment remark.
-2. Degrees observed (four random members each): the first syzygy appears in degree 16 at (e, p) = (7, 5) in
-   S(5; 0, 2) (bound 18), in degrees 12 and 13 at (6, 3) in S(3; 0, 1) and S(3; 1, 2) (bound 14), in degree 10 at
-   (5, 5) and 14 at (7, 7) in strata with m = e (bound 2e + p - 1; the central case gives 2e).
-3. The pure pairs of the notes on the central commutator are not homogeneous for the weight modulo p (the forms
-   x^e + y z^s have weights 0 and s + 1, and p does not divide s + 1 = (e + 1)/2 when p divides e), in agreement with
-   the corollary.
-4. So in characteristic p the search for pure pairs with a cyclic symmetry can leave out every modulus divisible by
-   p. This sharpens the admissible list in a way that depends on the characteristic.
+1. The rank. A syzygy of degree n gives u(3e - n) independent syzygies of degree 3e, and u(3e - n) >= u(2) = 4 when n
+   <= 3e - 2. So for p <= e - 1 the rank of mu_(3e) is at most 2 u(2e) - 4, below r: this is the observation of
+   EXP-010. For p = e the bound of the proposition is 3e - 1 in general; it is at most 3e - 2 as soon as one of the
+   two forms needs no multiplier or a multiplier of degree below (p - 1)/2, for example in the strata with i = 0,
+   where the same conclusion follows. In the remaining strata with m = p = e (both forms need a multiplier of degree
+   (p - 1)/2; at e = p = 5 these are S(5; 1, 1), S(5; 1, 4), S(5; 4, 4)) the corollary still excludes a pure pair, and
+   the rank below r is a computed fact (EXP-010; confirmed by the reader at (5, 5)), not a consequence of the bound.
+2. Degrees observed (four random members each): the first syzygy appears in degree 16 at (e, p) = (7, 5) in S(5; 0, 2)
+   (bound 18), in degrees 12 and 13 at (6, 3) in S(3; 0, 1) and S(3; 1, 2) (bound 14), in degree 10 at (5, 5) and 14
+   at (7, 7) in strata with m = e (bound 2e + p - 1; the central case gives 2e).
+3. The pure pairs of the notes on the central commutator are not homogeneous for the weight modulo p, in agreement
+   with the corollary. Case A: x^e + y z^s has weights 0 and s + 1 = (e + 1)/2, and p divides e. Case B: x^e + z^(e/2)
+   has weights 0 and e/2, and p divides e - 1. Case C: x^e + z^(e/2) + y^(p+1) z^j has the weight (e + p + 1)/2, which
+   is 1/2 modulo p. Case D: x^e + y z^s + x^p z^j has the weight (e + 1)/2, which is 1 modulo p.
+4. So in characteristic p <= e the search for pure pairs with a cyclic symmetry can leave out every modulus divisible
+   by p (for p = e + 1 the bound is 3e and excludes nothing). This sharpens the admissible list in a way that depends
+   on the characteristic: with the containment remark, the strata left at the pairs of EXP-010 number 18 at (6, 5), 11
+   at (7, 3), 12 at (7, 5) and 6 at (7, 7), and the list at (6, 7) is not affected (count of the reader).
 5. Machine check of the bound (script and log under the data root, `caos-research/boij-soderberg-realizability/
    EXP-010-probe/`): on 1,239 random pairs homogeneous for the weight modulo p, at (e, p) = (5, 3), (6, 3), (7, 3),
-   (5, 5), (6, 5), (7, 5), (7, 7), (8, 5), every pair has a syzygy in degree at most 2e + p - 2.
+   (5, 5), (6, 5), (7, 5), (7, 7), (8, 5), every pair has a syzygy in degree at most 2e + p - 2. The value 2e + p - 2
+   is what was observed, not a proved bound; the reader found it reached at (4, 3) and (9, 3).
 
 ## How could this be wrong?
 
