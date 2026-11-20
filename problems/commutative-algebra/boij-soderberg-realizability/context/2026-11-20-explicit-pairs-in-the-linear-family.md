@@ -163,6 +163,10 @@ of sections 1 and 2.
 - Against the computation in U (the Betti table with `uhlib`) for e <= 8: the pairs with n = 2 at (3, 5), (4, 7),
   (7, 13) and with n = -1/4 at (5, 7), (7, 11), (8, 13) are pure; the pair with n = 2 at (6, 11) and the pair with
   n = -1/4 = 1 at (4, 5) are not; in the 19 pairs tabled, "passes with (C1)" and "pure in U" agree.
+- Against the computation in U for larger e, added after the review (`check_short_pairs_in_U.py`, logs
+  `short_in_U_a.log`, `short_in_U_b.log`; the pure Python module construction of `uhlib`): the pair of Theorem A is
+  pure at (9, 17), (10, 19) and (12, 23) (lengths 729, 1000, 1728), and the pair of Theorem B is pure at (10, 17),
+  (11, 19) and (13, 23) (n = 4, 14, 17; lengths 1000, 1331, 2197).
 - EXP-019 found pure pairs in the same stratum at (15, 29), (16, 29) and (16, 31) by a random search with the
   filter, confirmed in U by two instruments.
 
