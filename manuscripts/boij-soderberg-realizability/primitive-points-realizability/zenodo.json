@@ -27,7 +27,6 @@
       "commutative algebra"
     ],
     "license": "cc-by-4.0",
-    "access_right": "open",
     "language": "eng",
     "version": "0.01",
     "publication_date": "2026-11-19",
@@ -35,6 +34,11 @@
       {
         "relation": "isSupplementedBy",
         "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "10.5281/zenodo.22728167",
         "resource_type": "software"
       },
       {
@@ -145,12 +149,12 @@
       "J. Söderberg, Graded Betti numbers and h-vectors of level modules, arXiv:math/0612047 (version 2).",
       "M. Boij, Artin level modules, J. Algebra 226 (2000) 361-374 (reference [1] of Soderberg, arXiv:math/0612047; not read).",
       "S. V. Sam, Homology of analogues of Heisenberg Lie algebras, Math. Res. Lett. 22 (2015), no. 4, 1223-1241. arXiv:1307.1901.",
-      "S. V. Sam, VandeBogert, From total positivity to pure free resolutions, arXiv:2408.10408.",
+      "S. V. Sam, K. VandeBogert, From total positivity to pure free resolutions, arXiv:2408.10408.",
       "G. Fløystad, Boij-Söderberg theory: introduction and survey, in: Progress in Commutative Algebra 1, de Gruyter, 2012, 1-54. arXiv:1106.0381.",
       "H. Ananthnarayan, O. Javadekar, R. Kumar, Purity of extremal rays of Betti cones, arXiv:2607.06394 (July 2026).",
       "H. Ju et al., Automated Conjecture Resolution with Formal Verification, arXiv:2604.03789 (2026).",
-      "M. Kunte, Gorenstein modules of finite length, Math. Nachr. (2011). arXiv:0807.2956.",
-      "Lopes de Jesus, Schneider, on the centres of the enveloping algebras of nilpotent Lie algebras of dimension at most 6 in prime characteristic (description read from the abstract). arXiv:2111.13432.",
+      "M. Kunte, Gorenstein modules of finite length, arXiv:0807.2956.",
+      "V. Lopes de Jesus, C. Schneider, The center of the universal enveloping algebras of small-dimensional nilpotent Lie algebras in prime characteristic, arXiv:2111.13432 (read from the abstract).",
       "W. Fulton, Intersection Theory, Theorem 14.4 (the Thom-Porteous formula).",
       "Macaulay2, version 1.22, package BoijSoederberg (pureCharFree, pureTwoInvariant, pureWeyman, randomModule, randomSocleModule); file SHA-256 3ce45c08f73ea4c3fcc049f261d35c73b4b5a1afcf9c239a9806e2e0ed53b415.",
       "Singular, version 4.3.2, subsystem Plural; manual pages on resolutions of modules over G-algebras: https://singular.mathematik.uni-kl.de/Manual/4-4/sing_480.htm.",

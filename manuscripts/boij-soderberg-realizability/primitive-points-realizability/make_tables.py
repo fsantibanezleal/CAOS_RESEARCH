@@ -970,7 +970,15 @@ def lift_certificates(d, N, rays, F):
     N["fourRest"] = c["rest"]["pass"] + c["rest"]["undecided"]
     N["fourRestPass"] = c["rest"]["pass"]
     rr = r4["rays"]
-    N["fourRaysOnly"], N["fourRaysDirect"], N["fourRaysClosure"] = rr["only_gf32003_rays"], rr["become_char0_count"], rr["become_char0_with_closures_count"]
+    N["fourRaysOnly"] = rr["only_gf32003_rays"]
+    r1rays = {tuple(x["d"]): x for x in rays}
+    prime_rays = [dd for dd, x in r1rays.items() if x["status_primitive"] == "realized" and classify_field(x) == "prime"]
+    need(len(prime_rays) == N["fourRaysOnly"] == 46, "46 rays realized over GF(32003) only")
+    direct = {dd for dd in prime_rays if any(tuple(h["d"]) == dd and h["m"] == 1 and h["verdict_two_instruments"] == "pass" for h in r4["hits"])}
+    dual = [dd for dd in prime_rays if dd not in direct and tuple(r1rays[dd]["dual"]) in direct]
+    need(len(direct) + len(dual) == 46, "direct and dual rays sum to 46")
+    need((0, 3, 10, 12) in direct, "(0,3,10,12) has a passing hit on the ray")
+    N["fourDirect"], N["fourDual"] = len(direct), len(dual)
     N["fourCharZeroAfter"] = rr["census_closure"]["char0_after"]
     need(rr["census_closure"]["char0_before"] == N["realizedZero"] and rr["census_closure"]["realized_after"] == N["realized"], "EXP-004 census closure")
     need(N["fourCharZeroAfter"] + 2 == N["realized"], "191 plus the two rays decided by one matrix is 193")
@@ -1261,7 +1269,7 @@ def fig_weight(F, N):
 
 def fig_primes(d, F, N):
     c3 = F["c3"]
-    lines = ["\\begin{tikzpicture}", "\\begin{axis}[width=0.8\\textwidth, height=8cm, xlabel={$e$}, ylabel={prime $p$}, xmin=1.5, xmax=8.5, ymin=0, ymax=25, xtick={2,...,8}, ytick={2,5,11,17,23}, tick label style={font=\\scriptsize}, legend style={font=\\scriptsize, at={(0.5,-0.18)}, anchor=north}, legend columns=2]"]
+    lines = ["\\begin{tikzpicture}", "\\begin{axis}[width=0.8\\textwidth, height=8cm, xlabel={$e$}, ylabel={prime $p$}, xmin=1.5, xmax=8.5, ymin=0, ymax=25, xtick={2,...,8}, ytick={2,5,11,17,23}, tick label style={font=\\scriptsize}, legend style={font=\\scriptsize, at={(0.5,-0.18)}, anchor=north, /tikz/every even column/.append style={column sep=6pt}}, legend columns=2]"]
     pure, nonpure = [], []
     for e, v in sorted(c3.items()):
         for rec in v["per_prime"]:
