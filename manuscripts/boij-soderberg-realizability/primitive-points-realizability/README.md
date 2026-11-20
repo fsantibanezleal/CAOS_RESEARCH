@@ -6,7 +6,7 @@ Current public version: v0.02, published 2026-11-20 at
 `2ea9a3fab443b83b1edff39bff56e864f9a5c9fee244289b9e0e790f868a1f69`. The committed `main.pdf` is that published version.
 The source in this folder is v0.03, not released: it states the results obtained after v0.02 (listed below). The paper is
 a preprint of the CAOS Research open-problems programme, problem `boij-soderberg-realizability`, written to the manuscript
-content bar (the source measures 56,441 words, 84 display equations, 11 figures, 62 tables, 39 references and 10 algorithms by
+content bar (the source measures 56,564 words, 84 display equations, 11 figures, 62 tables, 40 references and 10 algorithms by
 `tools/zenodo/check_manuscript_depth.py`; v0.02 had 22,449 words, 22 display equations, 9 figures, 29 tables, 27 references
 and 7 algorithms). Version 0.01 was published on 2026-11-20 at
 [10.5281/zenodo.24385387](https://doi.org/10.5281/zenodo.24385387); v0.02 added the results on odd characteristic and on

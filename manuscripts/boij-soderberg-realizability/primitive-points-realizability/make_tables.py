@@ -3306,7 +3306,7 @@ def exp19(r19, N, out):
         tf, tg, ln = pair_row(f"EXP-019 pair {e},{p}", e, p, mem, tuple(c["stratum"]), check_length=False)
         prow.append(["$(%d,%d)$" % (e, p), str(c["t"]), "$S(%d;%d,%d)$" % tuple(c["stratum"]), "$f=%s$\\newline $g=%s$" % (poly_tex(tf, p), poly_tex(tg, p)), str(ln)])
     need(len(prow) == 9, "EXP-019: nine printed pairs")
-    out["tab_everytpairs.tex"] = table("@{}lllp{6.4cm}r@{}", ["$(e,p)$", "$t$", "stratum", "forms over $\\F_p$", "length"], prow)
+    out["tab_everytpairs.tex"] = table("@{}lllp{9.6cm}r@{}", ["$(e,p)$", "$t$", "stratum", "forms over $\\F_p$", "length"], prow)
     N["evtPassed"] = thousands(passed)
     N["evtTables"] = tables
     N["evtSeconds"] = thousands(round(r19["budget"]["used_seconds"]))
@@ -3380,7 +3380,7 @@ def exp20(r20, N, out):
         tf, tg, ln = pair_row(f"EXP-020 pair {e},{p}", e, p, mem, tuple(c["stratum"]), check_length=False)
         need(mem["length"] == e ** 3, f"EXP-020 pair {e},{p}: stored length")
         prow.append(["$(%d,%d)$" % (e, p), str(c["t"]), "$S(%d;%d,%d)$" % tuple(c["stratum"]), "$f=%s$\\newline $g=%s$" % (poly_tex(tf, p), poly_tex(tg, p)), str(ln)])
-    out["tab_symmpairs.tex"] = table("@{}lllp{6.4cm}r@{}", ["$(e,p)$", "$t$", "stratum", "forms over $\\F_p$", "length"], prow)
+    out["tab_symmpairs.tex"] = table("@{}lllp{9.6cm}r@{}", ["$(e,p)$", "$t$", "stratum", "forms over $\\F_p$", "length"], prow)
     N["symMembers"] = thousands(members)
     N["symFZero"] = thousands(f0)
     N["symPassing"] = thousands(passing)
