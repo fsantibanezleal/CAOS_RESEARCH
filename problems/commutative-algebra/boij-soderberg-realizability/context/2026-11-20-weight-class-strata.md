@@ -1,9 +1,14 @@
 # Pure pairs that are homogeneous for the weight modulo m: a necessary condition and the strata it leaves
 
-Date: 2026-11-20. Status: derivation [D] by the coordinating session, not yet read by a reviewer. The condition is
-elementary; its use is to say where a pure pair with a cyclic symmetry can lie, in every characteristic, and so where
-EXP-010 looks. The counts quoted in the last section come from a probe on settled cases only, run before EXP-010 was
-frozen (scripts and logs under the data root, `caos-research/boij-soderberg-realizability/EXP-010-probe/`).
+Date: 2026-11-20. Status: derivation [D] by the coordinating session. Reviewed on 2026-11-20 by a reader other than
+the writer (record `bs-weight-class-strata-review-2026-11-20` in the coordination repository): the grading, the
+proposition, the range of the definition and the table hold in every characteristic, with no blocker; one sharpening
+(a stratum contained in a stratum of another modulus that is not admissible holds no pure pair, which removes most
+strata with m = e) and nine minor repairs, all applied below. The first text is in commit 59aa24aa, the text EXP-010
+was frozen with. The condition is elementary; its use is to say where a pure pair with a cyclic symmetry can lie, in
+every characteristic, and so where EXP-010 looks. The counts quoted in the last section come from a probe on settled
+cases only, run before EXP-010 was frozen (scripts and logs under the data root,
+`caos-research/boij-soderberg-realizability/EXP-010-probe/`).
 
 ## Setting
 
@@ -18,8 +23,8 @@ x^(n - w - c) y^(w - c) z^c with 0 <= c <= min(w, n - w), so
 
     dim U_(n, w) = min(w, n - w) + 1    for 0 <= w <= n,  and 0 otherwise.
 
-This is the grading by the characters of the torus of graded automorphisms x -> s x, y -> t y (z -> s t z), taken
-modulo the scalars, which act on U_e by one character and so act trivially on G_e.
+This is the grading by the characters of the diagonal torus x -> s x, y -> t y (z -> s t z) of the group GL_2 of
+graded automorphisms, taken modulo the scalars, which act on U_e by one character and so act trivially on G_e.
 
 For m >= 1 and a class k modulo m write U_(n, [k]) for the sum of the U_(n, w) with w = k modulo m, and
 u_k(n) = dim U_(n, [k]) (the modulus m is understood). U is graded by the pairs (degree, class modulo m).
@@ -28,13 +33,14 @@ The strata. For m >= 2 and classes i, j modulo m,
 
     S(m; i, j) = { <f, g> in G_e :  f in U_(e, [i]),  g in U_(e, [j]) }.
 
-Over a field that contains the m-th roots of unity and whose characteristic does not divide m, the union of the
-S(m; i, j) is the fixed locus on G_e of the subgroup mu_m of the torus. The definition by supports needs neither
+Over a field that contains the m-th roots of unity and whose characteristic does not divide m, the union of the S(m;
+i, j) is the fixed locus on G_e of the group of points of the subgroup mu_m of the torus (for the group scheme mu_m no
+assumption is needed: a grading by classes modulo m is an action of mu_m). The definition by supports needs neither
 assumption and is the one used here. Examples: the power pair W_0 lies in S(m; 0, e mod m) for every m, since x^e has
 weight 0 and y^e has weight e; the four-parameter linear family of the note
-`2026-11-20-linear-family-weight-argument.md` is the affine chart "coefficient of x^e and of y^e equal to 1" of
-S(e - 1; 0, 1), because the monomials of degree e and weight 0 or e - 1 are x^e, x y^(e-1), y^(e-2) z, and those of
-weight 1 or e are x^(e-1) y, x^(e-2) z, y^e; S(e + 1; 0, e) is the single point W_0.
+`2026-11-20-linear-family-weight-argument.md` is the affine chart "coefficient of x^e and of y^e equal to 1" of S(e -
+1; 0, 1), because the monomials of degree e and weight 0 or e - 1 are x^e, x y^(e-1), y^(e-2) z, and those of weight 1
+or e are x^(e-1) y, x^(e-2) z, y^e; S(e + 1; 0, e) is the single point W_0.
 
 The swap x <-> y (with z -> -z) sends weight w to e - w on U_e, so it sends S(m; i, j) to S(m; e - i, e - j).
 
@@ -65,16 +71,29 @@ where U(-d)[s] is the free module on one generator of degree d and class s; its 
 dimension u_(k-s)(n - d). The complex is exact in each (degree, class), so the alternating sum of the dimensions is
 dim M_(n, [k]), which is not negative. QED.
 
-Definition. A stratum S(m; i, j) is admissible for e when some (s_1, s_2, t) makes H_k(n) >= 0 for all k and all
-0 <= n <= 4e + 6m + 2. The range is enough for every n: the total over k is h_e(n), which is 0 from n = 4e - 3 on, so
-on that range each H_k(n) that is not negative is 0; and for n >= 4e each u_k(n - d) in the formula is a
-quasi-polynomial in n of degree at most 2 whose period divides 2m, so H_k(n) is one too, and a quasi-polynomial of
-degree at most 2 and period 2m that vanishes at 6m consecutive integers vanishes at all later ones. By the proposition
-a pure pair lies in admissible strata only. The condition is a finite computation in the numbers min(w, n - w) + 1
-and does not involve the field.
+Definition. A stratum S(m; i, j) is admissible for e when some (s_1, s_2, t) makes H_k(n) >= 0 for all k and all 0 <=
+n <= 4e + 6m + 2. The range is enough for every n (4e + 6m - 1 would do): the total over k is h_e(n), which is 0 from
+n = 4e - 3 on, so on that range each H_k(n) that is not negative is 0; and for n >= 4e each u_k(n - d) in the formula
+is a quasi-polynomial in n of degree at most 2 whose period divides 2m, so H_k(n) is one too, and a quasi-polynomial
+of degree at most 2 and period 2m that vanishes at 6m consecutive integers vanishes at all later ones. By the
+proposition a pure pair lies in admissible strata only. The condition is a finite computation in the numbers min(w, n
+- w) + 1 and does not involve the field.
 
-The condition is necessary and not sufficient: it does not see the characteristic, and EXP-009 shows that
-S(e - 1; 0, 1) holds no pure pair over GF(p) for p <= e.
+The condition is necessary and not sufficient. It does not see the characteristic: EXP-009 shows that the
+four-parameter linear family, the chart of S(e - 1; 0, 1) in which x^e and y^e have coefficient 1, holds no pure
+pair over GF(p) in the eight pairs (e, p) with p <= e <= 7 it ran; and the rest of that stratum holds no pure pair
+in any characteristic (review: if f has no term x^e then f lies in Uy, and U/(Uy + Ug) is a quotient of M that
+contains k[x], so M is not of finite length; the same with x and y exchanged). And it is not sufficient in any
+characteristic: see the containment remark below.
+
+Containment (added after the review). A stratum is contained in strata of other moduli: if the weights in [0, e] of
+class i modulo m all lie in one class i' modulo m', and those of class j in one class j', then S(m; i, j) lies in
+S(m'; i', j'). A pure pair in S(m; i, j) therefore needs every such S(m'; i', j') to be admissible. Moduli above
+e + 1 add nothing. The main case: for m = e and 1 <= i, j <= e - 1 the class of i is the single weight i, so f and g
+are homogeneous for the integer weight and the pair lies in S(e + 1; i, j), which is not admissible (for m = e + 1
+only (0, e) is). So these strata hold no pure pair in any characteristic, and for e <= 10 the only pure pair that
+is homogeneous for the integer weight is the power pair, where it is pure. Call a stratum refined admissible when
+it and every stratum that contains it are admissible.
 
 ## The admissible strata for e = 4 to 8
 
@@ -114,7 +133,14 @@ Computed with a short script from the formula (EXP-010 recomputes the list under
 | 8 | 8 | all thirty-six | 36 |
 | 8 | 9 | (0,8) | 45 |
 
-Totals: 17 of 34 (e = 4), 19 of 55 (e = 5), 34 of 83 (e = 6), 34 of 119 (e = 7), 58 of 164 (e = 8).
+Totals: 17 of 34 (e = 4), 19 of 55 (e = 5), 34 of 83 (e = 6), 34 of 119 (e = 7), 58 of 164 (e = 8). The review
+reproduced the table stratum by stratum with its own code (and found 60 of 219 at e = 9, 83 of 285 at e = 10).
+
+Refined admissible strata (the containment remark): the table changes only in the rows m = e, which keep the strata
+(0, 0), (0, 1), ..., (0, e - 1) and lose every stratum with i, j >= 1. Totals: 11 (e = 4), 9 (e = 5), 19 (e = 6),
+13 (e = 7), 30 (e = 8). The review found no member with the pure Hilbert function among 2,500 random members of six
+of the strata that are lost, over GF(7), GF(11), GF(13) and GF(101). EXP-010 was frozen with the first list: in each
+open pair it also examines 15 (e = 6) or 21 (e = 7) strata that can hold no pure pair.
 
 What the table shows (observations on e = 4 to 8, no proof for general e):
 
@@ -122,20 +148,24 @@ What the table shows (observations on e = 4 to 8, no proof for general e):
   characteristic 0, where W_0 is pure).
 - For e = 5 and e = 7 it is the only admissible stratum for each m below e; for m = e + 1 it is the only one for every
   e in the table.
-- When m divides e the condition excludes nothing: the shifts by e, 3e and 4e do not move the classes.
-- For e = 4, 6, 8 and m not dividing e, either only the stratum of the power pair is admissible (e = 6 with m = 5;
-  e = 8 with m = 5, 7) or a few more are (e = 4 with m = 3; e = 6 with m = 4; e = 8 with m = 3, 6).
+- When m divides e the condition excludes nothing in the table (a computed fact for e = 4 to 10; the review found
+  the witness (s_1, s_2, t) = (i, j, 0) in every case; no proof for general e). By the containment remark most of
+  these strata still hold no pure pair.
+- For e = 4, 6, 8 and m not dividing e, either only the stratum of the power pair is admissible (m = e + 1; e = 6
+  with m = 5; e = 8 with m = 5, 7) or a few more are (e = 4 with m = 3; e = 6 with m = 4; e = 8 with m = 3, 6).
+- The second observation does not persist to e = 9 (review: there m = 3 admits all six strata and m = 6 three).
 - The admissible list is stable under the swap, as it must be.
 
-So the strata of the power pair form a chain of linear families through W_0, one for each m, that contains the
-four-parameter linear family (m = e - 1) and the point W_0 (m = e + 1): for m' dividing m the stratum of m lies in
-that of m'.
+So the strata of the power pair are linear families through W_0, one for each m, ordered by the divisibility of m
+(for m' dividing m the stratum of m lies in that of m'); among them are the stratum of the four-parameter linear
+family (m = e - 1) and the point W_0 (m = e + 1).
 
 ## What a probe on settled cases shows (before EXP-010)
 
-Random members of every stratum (3,000 to 4,000 each, or all members of a small stratum), the rank of mu_(3e) and the
-Hilbert function, over GF(5) and GF(7) at e = 5, over GF(3) at e = 4 and e = 6. Counts of members with the pure Hilbert
-function (the Betti table was not computed in the probe):
+Random coefficient vectors on the supports of every stratum (3,000 to 4,000 pairs each, zero and dependent vectors
+included, or all vectors of a small stratum), the rank of mu_(3e) and the Hilbert function, over GF(5) and GF(7) at e
+= 5, over GF(3) at e = 4 and e = 6. Counts of members with the pure Hilbert function (the Betti table was not computed
+in the probe):
 
 | (e, p) | Stratum | Members | Pure Hilbert function |
 |---|---|---|---|
@@ -153,13 +183,17 @@ function (the Betti table was not computed in the probe):
 The probe covered every stratum with 2 <= m <= e in the pairs (5, 5), (6, 3), (4, 3) and with m = 2, 3, 4 in (5, 7).
 No member of a stratum that is not admissible has the pure Hilbert function there (16 such strata at (5, 5), 16 at
 (5, 7), 22 at (6, 3), 3 at (4, 3)). Against a random search in the whole Grassmannian
-(EXP-008: 120 of 86,250 over GF(5) and 63 of 289,000 over GF(3) at e = 6 with the pure Hilbert function), the stratum
+(EXP-008: 120 of 86,250 over GF(5) at e = 5 and 63 of 289,000 over GF(3) at e = 6 with the pure Hilbert function), the
+stratum
 S(2; 0, 1) is 9 and 23 times denser. In characteristic 3 no member of a stratum with m = 3 has rank r (e = 4 and
 e = 6); this is not explained here.
 
 ## How could this be wrong?
 
 - The proposition uses only the existence of a minimal resolution that is homogeneous for the finer grading and the
-  uniqueness of the Betti numbers. If the reviewer finds a gap there, the admissible list is still a list of strata
-  to search, and EXP-010 tests the exclusion on settled pairs (its gate G4).
+  uniqueness of the Betti numbers; the review confirmed both steps. EXP-010 tests the exclusion on settled pairs (its
+  gate G4).
+- Two candidate strengthenings do not shrink the list (review): the nonnegativity of the image and syzygy modules
+  with a duality bound, and a symmetric Hilbert function per class, which is not a necessary condition (pure pairs
+  without it exist, for example in S(4; 0, 3) at e = 4 over GF(13)).
 - The table is computed, not proved for general e; the three observations are statements about e = 4 to 8.
