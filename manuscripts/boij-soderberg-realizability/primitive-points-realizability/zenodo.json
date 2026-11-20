@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for 2 <= e <= 5, the pure pairs of forms form a family, and a census for d_3 <= 12",
+    "title": "Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for 2 <= e <= 10, is realized whenever p divides e(e-1), and a census for d_3 <= 12",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Erman and Sam asked whether every integral point on a pure ray of the Boij-Söderberg cone is the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U of the Heisenberg Lie algebra; Jiang, Li, Sun, Wang, Xiao and Yu answered negatively in 2026.</p><p>We study the points that pass the Hilbert series parity test over U and are excluded over k[x,y,z], above all (1, 2, 2, 1) on (0, e, 3e, 4e). We prove that U/U(x^e, y^e) has this pure table if and only if char k = 0 or char k &gt;= 2e, and that in characteristic 2 no module with a generators and at most a + 1 relations of one degree e &gt;= 2 has finite length over U, so the point is realized over neither ring there. In odd characteristic below 2e explicit pairs of forms realize it, over F_3 and F_5 for e = 3, over F_3, F_5 and F_7 for e = 4 and 5, and over F_3 for e = 6; so for 2 &lt;= e &lt;= 5 it is realized over U if and only if char k is not 2, and for larger e the other odd characteristics below 2e stay open.</p><p>The pure pairs of forms of degree e are open in a determinantal locus, and every component of their locus has dimension at least 4e - 4; when char k = 0 or char k &gt;= 2e they form such a family through &lt;x^e, y^e&gt;, of dimension exactly 4e - 4 there over the rationals for e = 4, ..., 7, and a linear four-parameter family through that point is pure in general for every e &gt;= 4.</p><p>The census over k[x,y,z] of the 220 rays with d_3 &lt;= 12 realizes the primitive point on 193 rays, excludes it on 12 and leaves 15 open; ten such rays are realized over U in characteristic 0, and in characteristic 0 the least counterexample has d_3 = 10.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH. The paper does not claim a negative answer to Question 6.1 of Erman and Sam, which is due to Jiang, Li, Sun, Wang, Xiao and Yu, and claims no priority for any other result.</p>",
+    "description": "<p>Erman and Sam asked whether every integral point on a pure ray of the Boij-Söderberg cone is the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U of the Heisenberg Lie algebra; Jiang, Li, Sun, Wang, Xiao and Yu answered negatively in 2026.</p><p>We study the point (1, 2, 2, 1) on (0, e, 3e, 4e), excluded over k[x,y,z] and passing their parity test over U. It is realized by U/U(x^e, y^e) if and only if char k = 0 or char k >= 2e, and in characteristic 2 no module with a generators and at most a + 1 relations of one degree e >= 2 has finite length over U, so the point is realized over neither ring there.</p><p>In odd characteristic p we prove a criterion for pairs of forms with a central commutator, f and g in Z_e + Z_(e-1) x + Z_(e-1) y over the centre Z = k[x^p, y^p, z]: the module is pure if and only if it has finite length, if and only if zD, n(f) and n(g) have no common zero other than the origin. Explicit pure pairs exist for every e = 0 or 1 modulo p, so the point is realized whenever p divides e(e-1). Such pairs are the images of (x, y) under graded endomorphisms of U, which exist only for p dividing e(e-1) and never in characteristic 0 for e >= 2, and pulling back along them multiplies every degree of every Betti table by d = 0 or 1 modulo p, d >= 3. A grading by weight classes gives a necessary condition for pure pairs and, in characteristic p <= e, excludes the strata whose modulus is divisible by p; a projection on the weight-zero summand proves that strata, in particular the stratum of the linear family when p <= 2e - 5, hold no pure pair; exact searches in the strata, a decomposition of the pairs (x^e + b y^e, G(xy, z)) over k[xy, z], the linear family and a filter read off computed cases (not proved) lists of forms by one congruence and the stratum with the largest exponent that the projection allows give pure pairs over F_p for the other odd primes below 2e up to e = 10 and for e = 12.</p><p>For 2 <= e <= 10 the point is realized over U if and only if char k is not 2; the pairs (e, p) (11, 3), (14, 5), (14, 11) and those at larger e stay open. The pure pairs of forms of degree e are open in a determinantal locus and every component of their locus has dimension at least 4e - 4, exactly 4e - 4 at (x^e, y^e) over the rationals for e = 4, ..., 7. The census over k[x,y,z] of the 220 rays with d_3 <= 12 realizes the primitive point on 193 rays, excludes it on 12 and leaves 15 open; ten such rays are realized over U in characteristic 0, and in characteristic 0 the least counterexample has d_3 = 10.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH. The paper does not claim a negative answer to Question 6.1 of Erman and Sam, which is due to Jiang, Li, Sun, Wang, Xiao and Yu, and claims no priority for any other result.</p>",
     "keywords": [
       "Boij-Soderberg theory",
       "pure free resolutions",
@@ -23,14 +23,14 @@
       "characteristic 2",
       "Kostant modules",
       "census of pure rays",
-      "exact computation",
-      "commutative algebra",
+      "central commutator",
+      "weight-class strata",
       "odd characteristic",
       "pure pairs of forms"
     ],
     "license": "cc-by-4.0",
     "language": "eng",
-    "version": "0.02",
+    "version": "0.03",
     "publication_date": "2026-11-20",
     "related_identifiers": [
       {
@@ -168,6 +168,6 @@
       "Singular, version 4.3.2, subsystem Plural; manual pages on resolutions of modules over G-algebras: https://singular.mathematik.uni-kl.de/Manual/4-4/sing_480.htm.",
       "Rethlas_results, repository frenzymath/Rethlas_results, directory CommAlg/arxiv_1606_01867, files question_6_1.md and question_6_2.md: https://github.com/frenzymath/Rethlas_results."
     ],
-    "version_notes": "Adds the realization of (1,2,2,1) on (0,e,3e,4e) in odd characteristic below 2e by explicit pairs of forms (e = 3 and 4, e = 5 in characteristics 3, 5 and 7, and e = 6 in characteristic 3), so that the point fails only in characteristic 2 for 2 <= e <= 5; the theorem that the pure pairs of forms of degree e form, in characteristic 0 or at least 2e, a family of dimension at least 4e - 4 through (x^e, y^e), with its exact dimension at that pair over the rationals for e = 4 to 7 and a linear family; and the archived machine checks of the characteristic 2 theorem. Corrects the size and SHA-256 printed for one manifest file, which belonged to a copy with CRLF line ends."
+    "version_notes": "Adds a criterion for the purity of pairs of forms with a central commutator in odd characteristic, with explicit pure pairs for every e = 0 or 1 modulo p, the endomorphisms of the enveloping algebra and the scaling of Betti tables, the weight-class necessary condition with exact searches in its strata, the decomposition of the pairs (x^e + b y^e, G(xy, z)) over k[xy, z], the linear family below 2e, the projection on the weight-zero summand with its exclusions, the rule of the stratum of the linear family a filter in the stratum of the central pairs and lists of forms by one congruence that settle e = 12, and the stratum with the largest allowed exponent, which settles five more pairs. The point (1,2,2,1) on (0,e,3e,4e) is now realized in every characteristic other than 2 for 2 <= e <= 10 and whenever p divides e(e-1), with the open pairs listed; the machine checks of the new statements are archived."
   }
 }
