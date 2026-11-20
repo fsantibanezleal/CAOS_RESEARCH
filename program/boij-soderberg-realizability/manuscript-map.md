@@ -42,8 +42,8 @@ No split: the blocks answer one question (which primitive points are realized ov
 | focus | status | what it decides |
 |---|---|---|
 | BSR-F1 | closed (gate met 2026-11-19) | the table for d3 <= 12 and the least counterexample in characteristic 0 |
-| BSR-F2 | active, success gate met 2026-11-20 (current until the next strategic review) | the first manuscript, published as v0.01 |
-| BSR-F3 | proposed | the open rays and the open characteristic questions |
+| BSR-F2 | closed (gate met 2026-11-20; review of the same day) | the first manuscript, published as v0.01 |
+| BSR-F3 | active (current since 2026-11-20) | the archive of the machine checks (EXP-005), the odd characteristics below 2e for e = 3, 4 (EXP-006), the 15 open rays, the substitution in the Kostant presentations |
 
 ## Experiment dispositions
 

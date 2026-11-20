@@ -87,14 +87,21 @@ Theorem A (`U/U(x^e, y^e)` is pure of type (0, e, 3e, 4e) exactly in characteris
 characteristic 2 theorem (no finite length module with at most one more relation than generators in one degree e >= 2), the
 table over U(H), the census over k[x,y,z] (193 rays realized in characteristic 0, 12 excluded, 15 open), the rank
 certificates with the lift proposition, and the least counterexample in characteristic 0 (d3 = 10). The success gate of
-BSR-F2 is met; the focus stays current until the next strategic review names the following one.
+BSR-F2 is met and the focus is closed.
 
-1. The next strategic review: BSR-F3 (the 15 open rays with d3 >= 10, the odd characteristics below 2e, the substitution
-   of x^e, y^e in the Kostant presentations) or closing the programme at this manuscript.
-2. BSB-021: archive in the repository the machine checks that exist only in reviewers' runs (pairs of quartics and
-   quintics, the 651 spaces of cubics over GF(2), the sharpness examples, the family at e = 6, 7 over small primes).
+Strategic review of 2026-11-20: BSR-F2 is closed and BSR-F3 is the current focus.
+
+1. EXP-005 (hypothesis frozen 2026-11-20): the machine checks of the characteristic 2 theorem and of the family at
+   e = 6, 7, rerun with `uhlib` and Singular and archived (backlog BSB-021). In progress.
+2. EXP-006 (hypothesis frozen 2026-11-20): is (1,2,2,1) on (0, e, 3e, 4e) realized over U in odd characteristic below
+   2e, for e = 3 (p = 3, 5) and e = 4 (p = 3, 5, 7)? Derived before the run: for e = 3 the pure Hilbert function is
+   the generic one; for e = 4 a pure pair needs rank 48 for the multiplication map into degree 12, and the locus of
+   that condition is not empty and has dimension at least 12 in Gr(2, 9) in every characteristic (a Thom-Porteous
+   class). Backlog BSB-023.
 3. BSB-022: the census recheck must record a run that ends without a result separately from a computed negative.
-4. A new version of the manuscript only for corrections, a decided open ray or a decided characteristic question.
+4. The 15 open rays with d3 >= 10; the substitution of x^e, y^e in the Kostant presentations (BSB-012).
+5. Manuscript v0.02 after EXP-005 and EXP-006 are confirmed and reviewed: artifacts for each machine claim, and the
+   statement on odd characteristic.
 
 ## 6. Where everything lives
 

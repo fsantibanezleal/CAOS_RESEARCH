@@ -154,3 +154,14 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - Records: governance (manuscript entry, EXP-001 to EXP-004 as its primary evidence, the success gate of BSR-F2 met), the
   map, RESUME, backlog BSB-013 done, state.
 
+## 2026-11-20 - Strategic review: BSR-F2 closed, BSR-F3 current; EXP-005 and EXP-006 frozen
+
+- BSR-F2 met its gate with the publication of v0.01. BSR-F3 is the current focus: the characteristic questions the
+  manuscript leaves open, and the open rays.
+- EXP-005 (frozen): the reviewers' machine checks of the characteristic 2 theorem and of the family at e = 6, 7, rerun
+  with the repository's instrument and a second system, archived.
+- EXP-006 (frozen): odd characteristic below 2e for e = 3 and 4. Derived before the run: at e = 3 the pure Hilbert
+  function is the generic one; at e = 4 a pure pair must drop the rank of the multiplication map into degree 12 from 49
+  to 48, and the class 300 sigma_2 + 325 sigma_(1,1) of that locus in Gr(2, 9) is not zero, so the locus is not empty
+  and has dimension at least 12 in every characteristic.
+
