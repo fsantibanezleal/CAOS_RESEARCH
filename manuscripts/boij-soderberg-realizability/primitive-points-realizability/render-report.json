@@ -1,13 +1,15 @@
 {
-  "out": "D:\\_Temp\\zenodo-improve-2026-11-19\\bs-render",
+  "out": "D:\\_Temp\\bs-release-v002\\render",
   "dpi": 70,
-  "images": 45,
+  "images": 66,
   "sheets": [
-    "D:\\_Temp\\zenodo-improve-2026-11-19\\bs-render\\sheet-1.png",
-    "D:\\_Temp\\zenodo-improve-2026-11-19\\bs-render\\sheet-2.png",
-    "D:\\_Temp\\zenodo-improve-2026-11-19\\bs-render\\sheet-3.png",
-    "D:\\_Temp\\zenodo-improve-2026-11-19\\bs-render\\sheet-4.png"
+    "D:\\_Temp\\bs-release-v002\\render\\sheet-1.png",
+    "D:\\_Temp\\bs-release-v002\\render\\sheet-2.png",
+    "D:\\_Temp\\bs-release-v002\\render\\sheet-3.png",
+    "D:\\_Temp\\bs-release-v002\\render\\sheet-4.png",
+    "D:\\_Temp\\bs-release-v002\\render\\sheet-5.png",
+    "D:\\_Temp\\bs-release-v002\\render\\sheet-6.png"
   ],
-  "pdf_sha256": "7075a70f90c6f81d774a5e9822a7c086a0f909162cb6599ebad22e7f80b3d2e6",
-  "rendered_at": "2026-11-20T03:03:09Z"
+  "pdf_sha256": "2ea9a3fab443b83b1edff39bff56e864f9a5c9fee244289b9e0e790f868a1f69",
+  "rendered_at": "2026-11-20T06:29:17Z"
 }

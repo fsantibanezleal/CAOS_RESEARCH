@@ -1,13 +1,17 @@
 # Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for 2 <= e <= 5, the pure pairs of forms form a family, and a census for d_3 <= 12
 
-Current public version: v0.01, dated 19 November 2026 and published 2026-11-20 at
-[10.5281/zenodo.24385387](https://doi.org/10.5281/zenodo.24385387), under concept DOI
-[10.5281/zenodo.24385386](https://doi.org/10.5281/zenodo.24385386); 45 pages, 766,800 bytes, SHA-256
-`7075a70f90c6f81d774a5e9822a7c086a0f909162cb6599ebad22e7f80b3d2e6`. The committed `main.pdf` is that published version. The paper is a preprint of the CAOS Research
-open-problems programme, problem `boij-soderberg-realizability`, written to the
-manuscript content bar (14,655 words, 15 display equations, 8 figures, 20 tables, 26 references, 5 algorithms). Before
-release it was read by a reader other than the writer (the proofs re-derived, the numbers checked against the
-artifacts, the attributions checked on the sources), with a fix pass, a closing check and a final confirmation. The source in this folder is v0.02 in preparation (odd characteristic below 2e, the family of pure pairs of forms, the archived machine checks of the characteristic 2 theorem, and the corrected manifest table); v0.01 stays the public version until the release.
+Current public version: v0.02, published 2026-11-20 at
+[10.5281/zenodo.24388904](https://doi.org/10.5281/zenodo.24388904), under concept DOI
+[10.5281/zenodo.24385386](https://doi.org/10.5281/zenodo.24385386); 66 pages, 921,730 bytes, SHA-256
+`2ea9a3fab443b83b1edff39bff56e864f9a5c9fee244289b9e0e790f868a1f69`. The committed `main.pdf` is that published version. The paper is a preprint of the CAOS Research
+open-problems programme, problem `boij-soderberg-realizability`, written to the manuscript content bar (22,449 words,
+22 display equations, 9 figures, 29 tables, 27 references, 7 algorithms). Before release it was read by a reader other
+than the writer (the new proofs compared with their reviewed notes, 154 generated numbers checked against the
+artifacts, the printed pairs rebuilt from their text, the three experiment verdicts read against their results), with
+a fix pass, a closing check and a final confirmation. Version 0.01 was published on 2026-11-20 at
+[10.5281/zenodo.24385387](https://doi.org/10.5281/zenodo.24385387); v0.02 adds the results on odd characteristic and on the family of pure pairs, the
+archived machine checks of the characteristic 2 theorem, and corrects the manifest table of v0.01 (it printed the size
+and hash of a copy of one file with CRLF line ends).
 
 ## What the manuscript is
 

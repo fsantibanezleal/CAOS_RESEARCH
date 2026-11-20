@@ -213,3 +213,15 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   majors, all in the wording; the new mathematics holds). The linear family is proved for every e >= 4 (reviewed).
 - EXP-009 is frozen: the linear family in characteristic below 2e, exhaustive over GF(p).
 
+## 2026-11-20 - Manuscript v0.02 published: 10.5281/zenodo.24388904
+
+- 66 pages; SHA-256 of the PDF `2ea9a3fab443b83b1edff39bff56e864f9a5c9fee244289b9e0e790f868a1f69`; concept 10.5281/zenodo.24385386; v0.01 was 10.5281/zenodo.24385387.
+- New: odd characteristic below 2e (the point (1,2,2,1) fails only in characteristic 2 for 2 <= e <= 5; e = 6 realized
+  in characteristic 3); the locus of pure pairs (dimension at least 4e - 4, exactly 4e - 4 at <x^e, y^e> over the
+  rationals for e = 4 to 7, the linear family for every e >= 4); the archived machine checks of the characteristic 2
+  theorem; the corrected manifest table.
+- Review by a reader other than the writer: approve after fixes (two blockers and four majors in the wording), fix
+  pass, closing check (two one-line blockers), final confirmation: approve for release.
+- Records: governance (v0.02, EXP-001 to EXP-008 primary evidence, the gate of BSR-F3 met), map, RESUME, backlog
+  BSB-024 and BSB-027 done, state. EXP-009 is running.
+

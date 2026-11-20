@@ -132,6 +132,11 @@
         "relation": "cites",
         "identifier": "10.48550/arXiv.2111.13432",
         "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/BFb0080378",
+        "resource_type": "publication-article"
       }
     ],
     "references": [
@@ -158,7 +163,7 @@
       "M. Kunte, Gorenstein modules of finite length, arXiv:0807.2956.",
       "V. Lopes de Jesus, C. Schneider, The center of the universal enveloping algebras of small-dimensional nilpotent Lie algebras in prime characteristic, arXiv:2111.13432 (read from the abstract).",
       "W. Fulton, Intersection Theory, Theorem 14.4 (the Thom-Porteous formula).",
-      "W. Bruns, U. Vetter, Determinantal Rings, Lecture Notes in Mathematics 1327, Springer, 1988. doi:10.1007/BFb0080378 (general reference on determinantal varieties; the book was not opened).",
+      "W. Bruns, U. Vetter, Determinantal Rings, Lecture Notes in Mathematics 1327, Springer, 1988, doi:10.1007/BFb0080378 (general reference on determinantal varieties; the book was not opened).",
       "Macaulay2, version 1.22, package BoijSoederberg (pureCharFree, pureTwoInvariant, pureWeyman, randomModule, randomSocleModule); file SHA-256 3ce45c08f73ea4c3fcc049f261d35c73b4b5a1afcf9c239a9806e2e0ed53b415.",
       "Singular, version 4.3.2, subsystem Plural; manual pages on resolutions of modules over G-algebras: https://singular.mathematik.uni-kl.de/Manual/4-4/sing_480.htm.",
       "Rethlas_results, repository frenzymath/Rethlas_results, directory CommAlg/arxiv_1606_01867, files question_6_1.md and question_6_2.md: https://github.com/frenzymath/Rethlas_results."

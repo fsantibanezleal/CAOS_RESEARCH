@@ -1,6 +1,6 @@
 # boij-soderberg-realizability: RESUME (session handoff)
 
-Updated 2026-11-20 (first manuscript published). First read for any session, per methodology 07. Derived view: experiment verdicts win.
+Updated 2026-11-20 (manuscript v0.02 published). First read for any session, per methodology 07. Derived view: experiment verdicts win.
 
 ## 1. State in one screen
 
@@ -103,12 +103,13 @@ for e >= 7 below 2e. The pure pairs form a family of dimension at least 4e - 4 t
 characteristic 0 or at least 2e (context note of 2026-11-20, reviewed: correct after fixes); at that point the
 dimension is exactly 4e - 4 over QQ for e = 4 to 7, and explicit pure pairs over QQ lie outside the orbit (EXP-007).
 
-1. Done: BSB-025 (EXP-007 CONFIRMED: the review's computations archived with two instruments and a third computation).
-2. BSB-027: the manuscript v0.02 (odd characteristic for e = 3, 4; the family of pure pairs; EXP-005 cited for the
-   machine claims; the correction BSB-024 of the manifest table), with a review by a reader other than the writer.
-3. BSB-026: the odd characteristics not yet searched (e = 5 at p = 5, 7; e = 6, 7), and whether a construction covers
-   every e.
-4. The 15 open rays with d3 >= 10; the substitution of x^e, y^e in the Kostant presentations (BSB-012); BSB-022.
+Published on 2026-11-20: the manuscript v0.02, [10.5281/zenodo.24388904](https://doi.org/10.5281/zenodo.24388904), with everything above.
+
+1. EXP-009 (hypothesis frozen 2026-11-20, running): the linear family L_e in odd characteristic below 2e for e = 4 to
+   7, exhaustive over GF(p); one pure member settles that characteristic for that e (BSB-029).
+2. The strategic review after EXP-009: the open cases are e = 6 at p = 5, 7, 11 and e >= 7 below 2e; a construction
+   for every e; the 15 open rays with d3 >= 10; the substitution in the Kostant presentations (BSB-012); BSB-022.
+3. A new version of the manuscript only for corrections, a decided characteristic or a decided open ray.
 
 ## 6. Where everything lives
 
