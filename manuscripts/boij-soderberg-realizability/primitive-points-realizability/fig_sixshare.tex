@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+\begin{axis}[xmode=log, ymode=log, width=0.92\textwidth, height=8cm, xlabel={field size $q$}, ylabel={share of random spaces}, ymin=0.00001, ymax=1, xtick={3,5,7,9,11,13,25,27}, xticklabels={3,5,7,9,11,13,25,27}, minor xtick={}, ytick={0.00001,0.0001,0.001,0.01,0.1,1}, yticklabels={$10^{-5}$,$10^{-4}$,$10^{-3}$,$10^{-2}$,$10^{-1}$,$1$}, minor ytick={}, tick label style={font=\scriptsize}, label style={font=\small}, grid=major, grid style={gray!25}, legend style={font=\scriptsize, at={(0.5,-0.2)}, anchor=north}, legend columns=3]
+\addplot[only marks, mark=*, mark size=2pt] coordinates {(3,0.176551) (5,0.435500) (9,0.622500) (25,0.883500) (27,0.843000)};
+\addlegendentry{pure, $e=3$}
+\addplot[only marks, mark=square*, mark size=2pt] coordinates {(3,0.021000) (5,0.016350) (7,0.011800) (9,0.008400) (11,0.006900) (13,0.003950)};
+\addlegendentry{pure, $e=4$}
+\addplot[only marks, mark=diamond*, mark size=2pt] coordinates {(3,0.001260) (5,0.000499) (7,0.000258)};
+\addlegendentry{pure, $e=5$}
+\addplot[only marks, mark=pentagon*, mark size=2pt] coordinates {(3,0.000138)};
+\addlegendentry{pure, $e=6$}
+\addplot[only marks, mark=triangle*, mark size=2pt] coordinates {(3,0.632800) (5,0.284600) (7,0.184250) (9,0.160200) (11,0.109650) (13,0.085700)};
+\addlegendentry{rank$\,\mu_{12}\le48$, $e=4$}
+\addplot[dashed, thick] coordinates {(3,0.111111111) (27,0.001371742112483)};
+\addlegendentry{$q^{-2}$}
+\addplot[dash dot, thick] coordinates {(3,0.012345679) (27,0.000001881676423)};
+\addlegendentry{$q^{-4}$}
+\addplot[densely dashed, thick] coordinates {(3,0.000152416) (27,0.000000000003541)};
+\addlegendentry{$q^{-8}$}
+\addplot[dotted, thick] coordinates {(3,0.33333) (27,0.037037)};
+\addlegendentry{$q^{-1}$}
+\end{axis}
+\end{tikzpicture}

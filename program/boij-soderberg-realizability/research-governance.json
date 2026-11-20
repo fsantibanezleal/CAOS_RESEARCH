@@ -66,52 +66,47 @@
     {
       "id": "BSR-F3",
       "title": "The characteristic questions left open by the first manuscript, and the open rays",
-      "status": "active",
+      "status": "active-success-gate-met",
       "priority": 0,
       "target": "(1) The machine checks of the characteristic 2 theorem and of the family at e = 6, 7 archived with the repository's instrument (EXP-005). (2) The point (1,2,2,1) on (0, e, 3e, 4e) in odd characteristic below 2e, for e = 3 and 4: a pure pair of forms over GF(p), or a recorded negative with its method (EXP-006). (3) The 15 rays with d3 >= 10 whose primitive point is open over k[x,y,z]. (4) The substitution of x^e, y^e in the Kostant presentations.",
       "value": "Item (2) decides whether characteristic 2 is the only characteristic in which the point fails for small e, and whether the family U/U(x^e, y^e) is part of a larger family of pure modules (the locus of the rank condition has dimension at least 12 in a Grassmannian of dimension 14 at e = 4, by a Thom-Porteous class computed before the run). Item (1) gives the manuscript an artifact for each machine claim.",
-      "success_gate": "EXP-005 confirmed with its four gates; for e = 3 and e = 4 and every odd prime below 2e, either a pure pair confirmed in a second system or a recorded negative with its method; the outcome reviewed by a reader other than the writer before the manuscript states it (v0.02).",
+      "success_gate": "EXP-005 confirmed with its four gates; for e = 3 and e = 4 and every odd prime below 2e, either a pure pair confirmed in a second system or a recorded negative with its method; the outcome reviewed by a reader other than the writer before the manuscript states it (v0.02). Met 2026-11-20: v0.02 published (10.5281/zenodo.24388904) after a review by a reader other than the writer with a fix pass, a closing check and a final confirmation.",
       "stop_conditions": [
         "A finite length module with at most one more relation than generators in characteristic 2 (a defect or a refuted proof): stop and examine before anything else.",
         "Three consecutive experiments decide no characteristic question and no ray.",
         "A source is found that already contains the statement on odd characteristic: cite it and keep only what remains."
       ],
       "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
-      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability, version 0.02",
-      "first_bounded_action": "EXP-005, EXP-006 and EXP-007 CONFIRMED on 2026-11-20; the family-dimension derivation reviewed. Next: the manuscript v0.02 (BSB-027) with its review, then its release.",
+      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (v0.02 published 2026-11-20)",
+      "first_bounded_action": "Done: EXP-005 to EXP-008 confirmed, two derivations reviewed, the manuscript v0.02 reviewed and published (10.5281/zenodo.24388904). Running: EXP-009 (the linear family below 2e). Next: the strategic review after EXP-009.",
       "evidence": [
         "EXP-005",
         "EXP-006",
-        "EXP-007"
+        "EXP-007",
+        "EXP-008"
       ],
-      "review_2026_11_20": "Items (1) and (2) of the target are met for e = 3 and 4: the point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every odd characteristic below 2e by explicit pairs (two instruments and a rebuild by the coordinating session); at e = 5 it is realized in characteristic 3 and open in 5 and 7. The success gate still needs the review of the verdicts by a reader other than the writer, with the manuscript v0.02."
+      "review_2026_11_20": "The point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every characteristic other than 2 for e = 2, 3, 4, 5 (explicit pairs, two instruments, rebuilt by the coordinating session; Theorems A and C); at e = 6 it is realized in characteristic 3 and open in 5, 7, 11. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e>, exactly 4e - 4 there over the rationals for e = 4 to 7, with an explicit four-parameter linear family for every e >= 4. The manuscript v0.02 was read by a reviewer other than the writer; the success gate is met once it is released."
     }
   ],
   "manuscripts": [
     {
       "slug": "primitive-points-realizability",
       "path": "manuscripts/boij-soderberg-realizability/primitive-points-realizability",
-      "version": "0.01",
-      "version_doi": "10.5281/zenodo.24385387",
+      "version": "0.02",
+      "version_doi": "10.5281/zenodo.24388904",
       "concept_doi": "10.5281/zenodo.24385386",
       "status": "published",
-      "split_action": "No split: one central question (which primitive points of the pure rays of small degree are Betti tables of finite length modules over k[x,y,z] and over the Heisenberg enveloping algebra, and how the answer depends on the characteristic). v0.01 (2026-11-20) carries the family U/U(x^e, y^e) with its sharp characteristic condition, the general characteristic 2 theorem, the table over the enveloping algebra, the census over k[x,y,z] with the rank certificates and the lift proposition, and the least counterexample in characteristic 0 (EXP-001 to EXP-004). A new version for corrections, for a decided open ray or for a decided characteristic question."
+      "split_action": "No split: one central question (which primitive points of the pure rays of small degree are Betti tables of finite length modules over k[x,y,z] and over the Heisenberg enveloping algebra, and how the answer depends on the characteristic). v0.02 (2026-11-20) adds odd characteristic below 2e (EXP-006, EXP-008), the locus of pure pairs with its exact dimension at the power pair and the linear family (the two reviewed notes, EXP-007), the archived machine checks (EXP-005) and the correction of the manifest table. A new version for corrections, for a decided characteristic (e >= 6 below 2e) or a decided open ray."
     }
   ],
   "experiment_dispositions": [
     {
       "start": 1,
-      "end": 4,
+      "end": 8,
       "classification": "primary-manuscript",
       "manuscripts": [
         "primitive-points-realizability"
       ]
-    },
-    {
-      "start": 5,
-      "end": 7,
-      "classification": "research-record",
-      "manuscripts": []
     }
   ]
 }
