@@ -52,6 +52,7 @@ BSR-F3, proposed).
 | EXP-003-heisenberg-characteristic-two | characteristic 2 over U(H); the proof steps of U/U(x^e, y^e); genericity | CONFIRMED (2026-11-19) | no pair of quadrics has a finite length quotient in characteristic 2 (exhaustive over GF(2) and GF(4), with a proof for every field), so (1,2,2,1) on (0,2,6,8) is realizable over neither ring there: a counterexample with d3 = 8 in characteristic 2 on a ray realized in every other characteristic; the proof steps of the family hold for e <= 8 and the bad primes are exactly the predicted ones; a general pair is not pure for e >= 4; (0,1,5,6), (0,1,7,8), (0,1,9,10), (0,1,11,12), (0,3,5,8) realized in characteristic 2; (0,3,9,12) and (0,2,10,12) never in the searches |
 | EXP-004-lift-certificates | do the prime-field realizations of EXP-001 lift to characteristic 0? A rank test per degree on the lifted integer matrices, with a lemma on flat lifts of pure resolutions, on the 130 verified hits (64 as known answers) | CONFIRMED (2026-11-19) | the rank test passes on all 130 hits (two instruments; one matrix by one instrument), reproduces the 64 known answers, and with the lift lemma makes every ray realized over GF(32003) a ray realized in characteristic 0 (193 of 193, 147 before); the two rechecks of EXP-001 that had failed over QQ were false negatives (both modules are pure over QQ in Singular); the lemma awaits review (BSB-020) |
 | EXP-005-characteristic-two-machine-checks | do the repository's instruments reproduce the reviewers' machine checks of the characteristic 2 theorem and of the family at e = 6, 7? Exhaustive quadrics and cubics over GF(2), random quartics to septics and matrices over GF(2), GF(4), GF(16), the sharpness shapes, 24 modules of the family | CONFIRMED (2026-11-20) | 0 finite length cases of 1,574 with b <= a + 1; every eventually constant case has the value (a(a+1)/2) L.L; b = a + 2 gives finite length in general; U/U(x^e, y^e) pure exactly for p >= 2e at e = 6, 7 (primes up to 31, and QQ) |
+| EXP-006-odd-characteristic-below-2e | is the point (1,2,2,1) of (0, e, 3e, 4e) realized over U in odd characteristic below 2e? Exhaustive cubics over GF(3); random cubics over GF(5), GF(9), GF(25), GF(27); random quartics over GF(3), GF(5), GF(7), GF(9) and, as controls with the orbit test, GF(11), GF(13); quintics over GF(3) | CONFIRMED on its question (2026-11-20); one prediction refuted | explicit pure pairs over GF(3), GF(5) at e = 3 and over GF(3), GF(5), GF(7) at e = 4, so for e = 2, 3, 4 the point fails only in characteristic 2; at e = 5 realized in characteristic 3; 217 pure spaces over GF(11), GF(13), none in the orbit of <x^4, y^4>; the locus of the rank condition is not of the expected codimension (it contains the resultant hypersurface) |
 
 ## 4. In flight
 
@@ -90,19 +91,23 @@ table over U(H), the census over k[x,y,z] (193 rays realized in characteristic 0
 certificates with the lift proposition, and the least counterexample in characteristic 0 (d3 = 10). The success gate of
 BSR-F2 is met and the focus is closed.
 
-Strategic review of 2026-11-20: BSR-F2 is closed and BSR-F3 is the current focus.
+Strategic review of 2026-11-20: BSR-F2 is closed and BSR-F3 is the current focus. EXP-005 and EXP-006 are confirmed.
 
-1. EXP-005 CONFIRMED (2026-11-20): the machine checks of the characteristic 2 theorem and of the family at e = 6, 7,
-   rerun with `uhlib` and Singular and archived (1,614 cases, 24 modules; BSB-021 done).
-2. EXP-006 (hypothesis frozen 2026-11-20): is (1,2,2,1) on (0, e, 3e, 4e) realized over U in odd characteristic below
-   2e, for e = 3 (p = 3, 5) and e = 4 (p = 3, 5, 7)? Derived before the run: for e = 3 the pure Hilbert function is
-   the generic one; for e = 4 a pure pair needs rank 48 for the multiplication map into degree 12, and the locus of
-   that condition is not empty and has dimension at least 12 in Gr(2, 9) in every characteristic (a Thom-Porteous
-   class). Backlog BSB-023.
-3. BSB-022: the census recheck must record a run that ends without a result separately from a computed negative.
-4. The 15 open rays with d3 >= 10; the substitution of x^e, y^e in the Kostant presentations (BSB-012).
-5. Manuscript v0.02 after EXP-005 and EXP-006 are confirmed and reviewed: artifacts for each machine claim, and the
-   statement on odd characteristic.
+State of the characteristic question for the point (1,2,2,1) of (0, e, 3e, 4e) over U: never in characteristic 2
+(Theorem C); always in characteristic 0 or at least 2e (Theorem A); for e = 2, 3, 4 also in every odd characteristic
+below 2e, by explicit pairs (EXP-003 at e = 2, EXP-006 at e = 3, 4); for e = 5 in characteristic 3, open in 5 and 7;
+open for e >= 6 below 2e. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e> in
+characteristic 0 or at least 2e (context note of 2026-11-20, reviewed: correct after fixes); the review reports the
+dimension exactly 4e - 4 at that point over QQ for e = 4 to 7 and explicit pure pairs over QQ outside the orbit, not
+yet archived.
+
+1. BSB-025: one experiment that archives the review's computations (tangent space at <x^e, y^e>, explicit pairs over
+   QQ with two instruments, the common-factor locus), hypothesis frozen first.
+2. BSB-027: the manuscript v0.02 (odd characteristic for e = 3, 4; the family of pure pairs; EXP-005 cited for the
+   machine claims; the correction BSB-024 of the manifest table), with a review by a reader other than the writer.
+3. BSB-026: the odd characteristics not yet searched (e = 5 at p = 5, 7; e = 6, 7), and whether a construction covers
+   every e.
+4. The 15 open rays with d3 >= 10; the substitution of x^e, y^e in the Kostant presentations (BSB-012); BSB-022.
 
 ## 6. Where everything lives
 

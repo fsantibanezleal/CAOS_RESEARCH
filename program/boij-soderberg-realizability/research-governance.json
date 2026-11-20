@@ -78,10 +78,12 @@
       ],
       "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
       "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability, version 0.02",
-      "first_bounded_action": "EXP-005 CONFIRMED 2026-11-20 (the machine checks archived); EXP-006 (hypothesis frozen 2026-11-20) running.",
+      "first_bounded_action": "EXP-005 and EXP-006 CONFIRMED on 2026-11-20; the family-dimension derivation reviewed (correct after fixes). Next: BSB-025 (archive the review's tangent space computation and explicit pairs over QQ), then the manuscript v0.02 with its review.",
       "evidence": [
-        "EXP-005"
-      ]
+        "EXP-005",
+        "EXP-006"
+      ],
+      "review_2026_11_20": "Items (1) and (2) of the target are met for e = 3 and 4: the point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every odd characteristic below 2e by explicit pairs (two instruments and a rebuild by the coordinating session); at e = 5 it is realized in characteristic 3 and open in 5 and 7. The success gate still needs the review of the verdicts by a reader other than the writer, with the manuscript v0.02."
     }
   ],
   "manuscripts": [
@@ -106,7 +108,7 @@
     },
     {
       "start": 5,
-      "end": 5,
+      "end": 6,
       "classification": "research-record",
       "manuscripts": []
     }

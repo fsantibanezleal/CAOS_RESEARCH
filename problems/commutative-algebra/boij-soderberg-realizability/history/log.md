@@ -176,3 +176,18 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - Re-check by the coordinating session without the experiment's routine: counts re-tallied, 16 cases recomputed, no
   finding. Raw outputs of the second instrument and the run log are under the data root.
 
+## 2026-11-20 - EXP-006 CONFIRMED on its question: odd characteristic below 2e at e = 3 and 4
+
+- Pure pairs of cubics over GF(3) (1,944 of the 11,011 spaces, exhaustive) and GF(5); pure pairs of quartics over
+  GF(3), GF(5), GF(7); pure pairs of quintics over GF(3). Each sampled table confirmed by Singular (270 of 270), and
+  60 spaces and the quoted pairs rebuilt by the coordinating session.
+- So for e = 2, 3, 4 the point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every characteristic other than 2.
+- Over GF(11) and GF(13), 217 pure spaces at e = 4 and none in the orbit of <x^4, y^4>.
+- Refuted: the share of the rank condition (predicted near q^(-2), observed near 1/q). The derivation was wrong: the
+  locus contains the resultant hypersurface. The review of the family-dimension note found the same independently.
+- The family-dimension note is reviewed (correct after fixes): the pure pairs form a family of dimension at least
+  4e - 4 through <x^e, y^e>. The review's tangent space computation and explicit pairs over QQ wait for an archived
+  experiment (BSB-025).
+- Found while checking the generator: the manifest table of the published v0.01 prints the hash of a CRLF working copy
+  of one artifact (BSB-024).
+
