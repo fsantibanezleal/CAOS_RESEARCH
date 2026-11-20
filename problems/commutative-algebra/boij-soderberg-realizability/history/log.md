@@ -144,3 +144,13 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   on one of them). Corrected in addenda of the EXP-001 and EXP-004 verdicts.
 - The table over k[x,y,z]: 193 rays realized in characteristic 0, 12 excluded, 15 open.
 
+## 2026-11-20 - First manuscript published: v0.01, 10.5281/zenodo.24385387
+
+- `manuscripts/boij-soderberg-realizability/primitive-points-realizability`, 45 pages, concept 10.5281/zenodo.24385386; SHA-256 of the PDF
+  `7075a70f90c6f81d774a5e9822a7c086a0f909162cb6599ebad22e7f80b3d2e6`.
+- Before release: a review by a reader other than the writer (blockers on a generated table that printed another table,
+  a field-scope count, an attribution and the description of two rechecks, all fixed), a closing check and a final
+  confirmation; the release build has no warning and no overfull or underfull box; the 45 rendered pages were read.
+- Records: governance (manuscript entry, EXP-001 to EXP-004 as its primary evidence, the success gate of BSR-F2 met), the
+  map, RESUME, backlog BSB-013 done, state.
+

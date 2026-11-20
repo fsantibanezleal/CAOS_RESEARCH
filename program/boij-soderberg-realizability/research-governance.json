@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "boij-soderberg-realizability",
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "original_problem": {
     "status": "answered negatively externally",
     "statement": "Erman and Sam, Questions about Boij-Soderberg theory (arXiv:1606.01867), Question 6.1: is every integral point of every pure ray in three variables the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U(H) of the Heisenberg Lie algebra? Question 6.2 is its analogue in four variables.",
@@ -30,7 +30,7 @@
         "The search budget of EXP-001 is reached with rays with d3 <= 9 still open."
       ],
       "novelty_status": "Not found in the searches of 2026-11-19 (the literature pass and the two reviews): the modules U/U(x^e, y^e), the dependence of Question 6.1 on the characteristic, a statement of the least d3 of a counterexample. The two rays with d3 = 10 were identified in the programme's dossier of 2026-09-02 from published obstructions. A negative search is not a proof of novelty.",
-      "manuscript_route": "the manuscript of focus BSR-F2",
+      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (v0.01)",
       "first_bounded_action": "EXP-001",
       "evidence": [
         "EXP-001",
@@ -42,23 +42,24 @@
     {
       "id": "BSR-F2",
       "title": "First manuscript: pure resolutions over U(H), the characteristic, and the census",
-      "status": "active",
+      "status": "active-success-gate-met",
       "priority": 1,
       "target": "One manuscript with: the family U/U(x^e, y^e) and its sharp characteristic condition with full proofs; the characteristic 2 statement on (0,2,6,8) with its proof; the table over U(H) of the parity-passing rays excluded over k[x,y,z] for d3 <= 12; the census over k[x,y,z] for d3 <= 12; the least d3 of a counterexample in characteristic 0; the methods (exact linear algebra over U(H), the census, the search and its rechecks), the limits and the open rays.",
       "value": "States a characteristic-dependent answer to Question 6.1 on a point that passes the known numerical test, an infinite family of pure modules over U(H) outside the Kostant family, and counterexamples with d3 = 10 against the published d3 = 21, with reproducible exact evidence.",
-      "success_gate": "A manuscript at the content bar, every statement traced to a proof or an artifact, read by a reviewer other than the writer with no blocker left, and published on Zenodo with its record metadata.",
+      "success_gate": "A manuscript at the content bar, every statement traced to a proof or an artifact, read by a reviewer other than the writer with no blocker left, and published on Zenodo with its record metadata (met 2026-11-20: v0.01, 10.5281/zenodo.24385387).",
       "stop_conditions": [
         "The review of the least-counterexample statement finds a failing case: the statement is narrowed to what holds before any text claims it.",
         "A source is found that already contains the family, the characteristic dependence or the least counterexample: the manuscript cites it and keeps only what remains.",
         "Two review rounds leave a blocker open: stop and bring the blocker to the next strategic review."
       ],
       "novelty_status": "As in BSR-F1; the manuscript states the searches made and claims no priority.",
-      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (not yet written)",
-      "first_bounded_action": "The review of the least-counterexample statement (backlog BSB-015, third item), then the writing brief (BSB-013).",
+      "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (v0.01 published 2026-11-20)",
+      "first_bounded_action": "Done: the reviews of the three derivations and of the lift lemma, the writing, the review with its fix passes and the release. Next: the strategic review that names the following focus (BSR-F3 is proposed).",
       "evidence": [
         "EXP-001",
         "EXP-002",
-        "EXP-003"
+        "EXP-003",
+        "EXP-004"
       ]
     },
     {
@@ -66,7 +67,7 @@
       "title": "The open rays and the open characteristic questions",
       "status": "proposed",
       "priority": 2,
-      "target": "The 15 rays with d3 >= 10 whose primitive point is open over k[x,y,z]; characteristic 2 on (0,3,9,12) and (0,2,10,12) over U(H); the substitution of x^e, y^e in the Kostant presentations; the rational rechecks not run.",
+      "target": "The 15 rays with d3 >= 10 whose primitive point is open over k[x,y,z]; the point (1,2,2,1) on (0,2,6,8) and its analogues in odd characteristic below 2e; the substitution of x^e, y^e in the Kostant presentations; the archive of the machine checks that exist only in reviewers' runs (backlog BSB-021).",
       "value": "Completes the table for d3 <= 12 and tests whether the characteristic dependence found on (0,2,6,8) is a family.",
       "success_gate": "A proof or an explicit module for each question, or a recorded negative result with its method.",
       "stop_conditions": [
@@ -74,17 +75,28 @@
       ],
       "novelty_status": "Open questions of this programme; not searched as such.",
       "manuscript_route": "a later version of the manuscript of BSR-F2, or research records",
-      "first_bounded_action": "Backlog BSB-014 (pairs of cubics in characteristic 2)."
+      "first_bounded_action": "Backlog BSB-021 (one experiment with the instrument of EXP-002 and EXP-003 that archives the reviewer-only checks)."
     }
   ],
-  "manuscripts": [],
-  "no_manuscript_reason": "No manuscript yet: the first one is the current focus BSR-F2 and is written after the review of the least-counterexample statement; until it exists every experiment is a research record.",
+  "manuscripts": [
+    {
+      "slug": "primitive-points-realizability",
+      "path": "manuscripts/boij-soderberg-realizability/primitive-points-realizability",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.24385387",
+      "concept_doi": "10.5281/zenodo.24385386",
+      "status": "published",
+      "split_action": "No split: one central question (which primitive points of the pure rays of small degree are Betti tables of finite length modules over k[x,y,z] and over the Heisenberg enveloping algebra, and how the answer depends on the characteristic). v0.01 (2026-11-20) carries the family U/U(x^e, y^e) with its sharp characteristic condition, the general characteristic 2 theorem, the table over the enveloping algebra, the census over k[x,y,z] with the rank certificates and the lift proposition, and the least counterexample in characteristic 0 (EXP-001 to EXP-004). A new version for corrections, for a decided open ray or for a decided characteristic question."
+    }
+  ],
   "experiment_dispositions": [
     {
       "start": 1,
       "end": 4,
-      "classification": "research-record",
-      "manuscripts": []
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "primitive-points-realizability"
+      ]
     }
   ]
 }

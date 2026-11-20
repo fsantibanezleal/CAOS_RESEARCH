@@ -1,9 +1,13 @@
 # Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the pure modules U/U(x^e,y^e), characteristic 2, and a census for d_3 <= 12
 
-Version v0.01, 19 November 2026, not yet published: the version DOI and the concept DOI in the header block of `main.tex`
-are placeholders (`10.5281/zenodo.NNNNNNNN`) that the release tool sets when the version DOI is reserved. The paper is a
-preprint of the CAOS Research open-problems programme, problem `boij-soderberg-realizability` (backlog item BSB-013,
-focus BSR-F2), written to the manuscript content bar.
+Current public version: v0.01, dated 19 November 2026 and published 2026-11-20 at
+[10.5281/zenodo.24385387](https://doi.org/10.5281/zenodo.24385387), under concept DOI
+[10.5281/zenodo.24385386](https://doi.org/10.5281/zenodo.24385386); 45 pages, 766,800 bytes, SHA-256
+`7075a70f90c6f81d774a5e9822a7c086a0f909162cb6599ebad22e7f80b3d2e6`. The committed `main.pdf` is that published version. The paper is a preprint of the CAOS Research
+open-problems programme, problem `boij-soderberg-realizability` (backlog item BSB-013, focus BSR-F2), written to the
+manuscript content bar (14,655 words, 15 display equations, 8 figures, 20 tables, 26 references, 5 algorithms). Before
+release it was read by a reader other than the writer (the proofs re-derived, the numbers checked against the
+artifacts, the attributions checked on the sources), with a fix pass, a closing check and a final confirmation.
 
 ## What the manuscript is
 
@@ -36,9 +40,11 @@ claims no priority; its literature searches are stated in the related work secti
 | `numbers.tex` | every number of the text, as macros |
 | `tab_*.tex` | the tabular bodies of the tables (captions are in `main.tex`) |
 | `fig_*.tex` | the TikZ and pgfplots bodies of the figures, generated from the artifacts or, for the two diagrams, typed in `make_tables.py` |
-| `zenodo.json` | the deposit metadata of v0.01 for the release tool (title, creator, description, keywords, related identifiers, references) |
+| `zenodo.json` | the deposit metadata of v0.01 for the release tool (title, creator, description, keywords, related identifiers, references); the same file is kept in the programme's deposit records |
+| `main.pdf` | the published PDF of v0.01 (the SHA-256 above) |
+| `build-report.json`, `render-report.json`, `publication-gate.json` | the measured build (three passes, no warning, no overfull or underfull box), the page renders that were read, and the approval record of the release |
 
-`main.pdf` is not committed here; the release tool builds it.
+`main.pdf` is the published file; a rebuild is compared with it through the reports above.
 
 ## Regenerate and build
 

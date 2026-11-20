@@ -48,8 +48,8 @@
 \newcommand{\doctype}{Preprint}
 \newcommand{\docversion}{v0.01}
 \newcommand{\docdate}{19 November 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.NNNNNNNN}
-\newcommand{\conceptdoi}{10.5281/zenodo.NNNNNNNN}
+\newcommand{\versiondoi}{10.5281/zenodo.24385387}
+\newcommand{\conceptdoi}{10.5281/zenodo.24385386}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
 \newcommand{\headerblock}{%
@@ -703,7 +703,7 @@ Table~\ref{tab:ten} gives, for each of the ten rays with $d_3\le12$ that pass th
 \begin{table}[htbp]
 \centering\footnotesize
 \input{tab_stage.tex}
-\caption{The census of the \nrays{} rays with $d_3\le12$ after each stage: number of rays whose primitive point is realized in some field, realized over every field or every infinite field, realized in characteristic $0$, excluded, open, and number of rays on which the least multiple $c_d$ is known; the stage with rational rechecks gives the final table.}
+\caption{The census of the \nrays{} rays with $d_3\le12$ after each stage: number of rays whose primitive point is realized in some field, realized over every field or every infinite field, realized in characteristic $0$, excluded, open, and number of rays on which the least multiple $c_d$ is known; the stage with the rank certificates gives the final table.}
 \label{tab:stage}
 \end{table}
 
@@ -854,11 +854,11 @@ The statements are limited as follows. The structure of $M_e$ over $k[z]$ is ver
 
 The repository is \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}. The computations are archived under \path{problems/commutative-algebra/boij-soderberg-realizability/experiments/} in the folders \path{EXP-001-pure-ray-census}, \path{EXP-002-heisenberg-primitive-points}, \path{EXP-003-heisenberg-characteristic-two} and \path{EXP-004-lift-certificates}; the library is in \path{code/uhlib} of the same problem folder, and the manuscript in \path{manuscripts/boij-soderberg-realizability/primitive-points-realizability}. From the repository root, with the repository virtual environment (Python), the commands are as follows.
 \begin{itemize}\raggedright
-\item The census: \texttt{python} \path{EXP-001-pure-ray-census/run.py} with one of the stages \texttt{stage0}, \texttt{known}, \texttt{soderberg}, \texttt{search}, \texttt{verify}, \texttt{charflags}, \texttt{table}, and the option \texttt{--data-root} naming the data root.
+\item The census: \texttt{python} \path{EXP-001-pure-ray-census/run.py} with one of the stages \texttt{stage0}, \texttt{known}, \texttt{soderberg}, \texttt{search}, \texttt{verify}, \texttt{charflags}, \texttt{table}, and the option \texttt{--data-root} naming the folder for heavy outputs (the data root).
 \item The computations over $U$: \texttt{python} \path{EXP-002-heisenberg-primitive-points/run.py} and \texttt{python} \path{EXP-003-heisenberg-characteristic-two/run.py}.\item The rank certificates: \texttt{python} \path{EXP-004-lift-certificates/run.py} with one of the stages \texttt{gates}, \texttt{known}, \texttt{rest}, \texttt{second}, \texttt{table} and the option \texttt{--data-root}; the file \path{artifacts/second-system.json} records the two resolutions over $\Q$ in Singular.
 \item The numbers, tables and figures of the paper: \texttt{python} \path{manuscripts/boij-soderberg-realizability/primitive-points-realizability/make_tables.py}; with \texttt{--check} it reports stale outputs, and it stops with an error when a value that the text relies on differs from the artifacts.
 \end{itemize}
-The paper is built with two passes of \texttt{pdflatex}. Macaulay2 1.22 and Singular 4.3.2 run under WSL on the default device. Heavy outputs (per-ray logs of the search, saved presentations, rational scripts, the archived sources) are under the data root, in the folder \path{boij-soderberg-realizability}, never inside the repository; the artifacts that carry the results are in the experiment folders (\path{artifacts/results.json}, \path{results-summary.md}, and for the census \path{qq-modules.json}, \path{hits-manifest.json} and \path{table.md}). Run times: \nsearchWallMin{} minutes of wall time for the search of the census on parallel processes, \ntwoWall{} seconds for \EXP{002} and \nthreeWall{} seconds for \EXP{003}. Table~\ref{tab:manifests} gives the hashes of the two manifests that list the saved modules, and Table~\ref{tab:sources} the \nsourcesArchived{} archived sources with their hashes.
+The paper is built with two passes of \texttt{pdflatex}. Macaulay2 1.22 and Singular 4.3.2 run under WSL. Heavy outputs (per-ray logs of the search, saved presentations, rational scripts, the archived sources) are under the data root, in the folder \path{boij-soderberg-realizability}, never inside the repository; the artifacts that carry the results are in the experiment folders (\path{artifacts/results.json}, \path{results-summary.md}, and for the census \path{qq-modules.json}, \path{hits-manifest.json} and \path{table.md}). Run times: \nsearchWallMin{} minutes of wall time for the search of the census on parallel processes, \ntwoWall{} seconds for \EXP{002} and \nthreeWall{} seconds for \EXP{003}. Table~\ref{tab:manifests} gives the hashes of the two manifests that list the saved modules, and Table~\ref{tab:sources} the \nsourcesArchived{} archived sources with their hashes.
 \endgroup
 
 \begin{table}[htbp]
