@@ -78,16 +78,21 @@
       ],
       "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
       "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (v0.02 published 2026-11-20)",
-      "first_bounded_action": "Done: EXP-005 to EXP-009, two derivations reviewed, the manuscript v0.02 published (10.5281/zenodo.24388904). Next: the strategic review; the open characteristics are 5, 7 at e = 6 and 3, 5, 7 at e = 7.",
+      "first_bounded_action": "Done: EXP-005 to EXP-009, the manuscript v0.02 (10.5281/zenodo.24388904); then EXP-011, EXP-012, EXP-013 confirmed and five derivations reviewed. Running: EXP-010 (its last pair and the exploratory family), EXP-014, the first pass of the manuscript v0.03. Next: the verdicts of EXP-010 and EXP-014, the second pass, the review and the release of v0.03, then the strategic review that closes this focus.",
       "evidence": [
         "EXP-005",
         "EXP-006",
         "EXP-007",
         "EXP-008",
-        "EXP-009"
+        "EXP-009",
+        "EXP-010",
+        "EXP-011",
+        "EXP-012",
+        "EXP-013"
       ],
       "review_2026_11_20": "The point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every characteristic other than 2 for e = 2, 3, 4, 5 (explicit pairs, two instruments, rebuilt by the coordinating session; Theorems A and C); at e = 6 it is realized in characteristic 3 and open in 5, 7, 11. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e>, exactly 4e - 4 there over the rationals for e = 4 to 7, with an explicit four-parameter linear family for every e >= 4. The manuscript v0.02 was read by a reviewer other than the writer; the success gate is met once it is released.",
-      "review_2026_11_20_exp009": "EXP-009 (after v0.02): the linear family contains pure members below 2e at (4,5), (4,7), (5,7), (6,11), (7,11), (7,13), so the point (1,2,2,1) is realized at e = 6 in every characteristic other than 2, 5, 7 and at e = 7 in every characteristic other than 2, 3, 5, 7. Not in the manuscript: it goes into the next version, with a decided open characteristic if one is decided."
+      "review_2026_11_20_exp009": "EXP-009 (after v0.02): the linear family contains pure members below 2e at (4,5), (4,7), (5,7), (6,11), (7,11), (7,13), so the point (1,2,2,1) is realized at e = 6 in every characteristic other than 2, 5, 7 and at e = 7 in every characteristic other than 2, 3, 5, 7. Not in the manuscript: it goes into the next version, with a decided open characteristic if one is decided.",
+      "review_2026_11_20_theorems": "After v0.02: (1) in characteristic p >= 3, pairs of forms with central coefficients, f = A + beta_1 x + beta_2 y, have a central commutator and are pure exactly when z D, n(f), n(g) have no common zero but the origin; explicit pure pairs for every e >= 3 with e = 0 or 1 modulo p (reviewed; EXP-011 and EXP-012, two instruments, e up to 15). (2) Such a pair makes U free over the image of an endomorphism, and the pull-back multiplies the degrees of every Betti table by d, so the set of realized e in characteristic p is closed under multiplication by d = 0 or 1 modulo p (reviewed; EXP-013). The mechanism exists only for a central commutator, hence only for p dividing d(d - 1), and never in characteristic 0. (3) A necessary condition for pure pairs homogeneous for the weight modulo m, tested on 410 strata (reviewed; EXP-010). (4) EXP-010 finds pure pairs at (6,5), (6,7), (7,3), (7,5); with (7,7) from the central pairs, every pair (e, p) with 2 <= e <= 7 and p odd has an explicit pure pair: the point (1,2,2,1) of (0, e, 3e, 4e) fails only in characteristic 2 for 2 <= e <= 7. (5) For even e the pairs (x^e + b y^e, G(xy, z)) decompose over k[xy, z]; a pure pair over the rationals at e = 4 with second form (xy)^2 - (xy) z + 9 z^2 (reviewed)."
     }
   ],
   "manuscripts": [
@@ -98,7 +103,7 @@
       "version_doi": "10.5281/zenodo.24388904",
       "concept_doi": "10.5281/zenodo.24385386",
       "status": "published",
-      "split_action": "No split: one central question (which primitive points of the pure rays of small degree are Betti tables of finite length modules over k[x,y,z] and over the Heisenberg enveloping algebra, and how the answer depends on the characteristic). v0.02 (2026-11-20) adds odd characteristic below 2e (EXP-006, EXP-008), the locus of pure pairs with its exact dimension at the power pair and the linear family (the two reviewed notes, EXP-007), the archived machine checks (EXP-005) and the correction of the manifest table. A new version for corrections, for a decided characteristic (e >= 6 below 2e) or a decided open ray."
+      "split_action": "No split: one central question (which primitive points of the pure rays of small degree are Betti tables of finite length modules over k[x,y,z] and over the Heisenberg enveloping algebra, and how the answer depends on the characteristic). v0.02 (2026-11-20) adds odd characteristic below 2e (EXP-006, EXP-008), the locus of pure pairs with its exact dimension at the power pair and the linear family (the two reviewed notes, EXP-007), the archived machine checks (EXP-005) and the correction of the manifest table. v0.03 (in writing, 2026-11-20): the criterion for pairs with a central commutator and its explicit pure pairs, the scaling of Betti tables by pull-back, the weight classes, EXP-009 to EXP-014, and the new state of the characteristic question. No split: the same central question."
     }
   ],
   "experiment_dispositions": [
@@ -112,7 +117,7 @@
     },
     {
       "start": 9,
-      "end": 9,
+      "end": 14,
       "classification": "research-record",
       "manuscripts": []
     }

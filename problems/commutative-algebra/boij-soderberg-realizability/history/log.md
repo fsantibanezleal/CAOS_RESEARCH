@@ -236,3 +236,25 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - Open: e = 6 at p = 5, 7; e = 7 at p = 3, 5, 7; e >= 8 below 2e. Not in the manuscript v0.02 (published before this
   run ended); backlog BSB-030.
 
+## 2026-11-20 - Three theorems in positive characteristic; for 2 <= e <= 7 the point fails only in characteristic 2
+
+- EXP-010 frozen (weight-class strata). While it ran, a probe of binomial deformations of the power pair on settled
+  pairs showed x^p + b y z^((p-1)/2), y^p + d x z^((p-1)/2) pure for every nonzero b, d at p = 3, 5. Cause: in
+  characteristic p dividing e the forms x^e, y^e are central, so g f - f g is a power of z and lies in the ideal.
+- Central pairs (p dividing an odd e): proved with an elementary argument, reviewed (correct), EXP-011 CONFIRMED on
+  sixteen cases (e up to 15, two instruments). Settles (7,7).
+- The criterion for every pair with central coefficients (pure if and only if z D, n(f), n(g) have no common zero but
+  the origin), with explicit pure pairs for every e = 0 or 1 modulo p: proved through the fibres of U over its centre
+  and the acyclicity lemma, reviewed (correct), EXP-012 CONFIRMED on eleven explicit pairs and 1,600 random pairs.
+  Settles (6,5) and (7,3).
+- The mechanism: the explicit complex is the base change of the resolution of k along an endomorphism of U and exists
+  only for a central commutator; the pull-back multiplies the degrees of every Betti table by d. Reviewed (correct),
+  EXP-013 CONFIRMED on ten cases. New pure pairs at (8,3), (12,5), (16,7), (24,7).
+- EXP-010 (accepted for its controls and four of its five open pairs): pure pairs at (6,5), (6,7), (7,3), (7,5); the
+  necessary condition on strata holds on 410 strata. So for 2 <= e <= 7 the point (1,2,2,1) of (0, e, 3e, 4e) fails
+  only in characteristic 2.
+- The pairs (x^e + b y^e, G(xy, z)): decomposition over k[xy, z], reviewed (two blockers in the consequences,
+  repaired); a pure pair over the rationals at e = 4.
+- Running: the last pair and the exploratory family of EXP-010, EXP-014 (under amendment 1), the first pass of the
+  manuscript v0.03.
+
