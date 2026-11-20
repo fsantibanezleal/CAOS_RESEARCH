@@ -71,3 +71,18 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   (0,6,20,21)); the result on (0,2,6,8) is the dependence of the answer on the characteristic. An explicit pair over
   GF(3) with the pure table is recorded (f = x^2 + y^2 + yx, g = x^2 + yx - z).
 
+## 2026-11-19 - EXP-001 CONFIRMED: the table over S for d3 <= 12; no counterexample with d3 <= 9 in characteristic 0
+
+- The search ended (no timeout): of 220 rays the primitive point is realized over S on 193, excluded on 12 (twice the
+  primitive point is realized on each, so c_d = 2) and open on 15, all with d3 >= 10. c_d is determined on 205 rays.
+- Rechecks: 130 hits recomputed in a fresh Macaulay2 process and in Singular, none fails; over QQ 64 pass, 2 fail (the
+  integer lifts on (0,3,8,10) and (0,3,11,12)), 7 stop at the limit, 57 not run. The rechecks of (0,3,7,9), (0,4,7,9) and
+  (0,4,8,9) were run by ray and pass; with duality every realized ray with d3 <= 9 is realized in characteristic 0 (79).
+- With EXP-002 (the five excluded rays with d3 <= 9 are realized over U(H) in characteristic 0): Question 6.1 has no
+  counterexample with d3 <= 9 in characteristic 0; (0,4,9,10) and (0,1,6,10) are counterexamples with d3 = 10 over every
+  field (obstructions over S, parity over U(H)); the published one has d3 = 21. To be reviewed (BSB-015).
+- Flags over small fields (stage 1e): a generic module is pure for some seed on 98, 126 and 130 of 130 generators over
+  GF(2), GF(3) and GF(5).
+- Prediction P1's count was wrong (78 points at stage 0, not 52 to 56: the second Eisenbud-Floystad-Weyman formula adds
+  26 in characteristic 0); P4 fails on 2 of 66 completed rechecks.
+

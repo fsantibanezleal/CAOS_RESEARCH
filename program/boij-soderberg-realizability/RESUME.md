@@ -34,7 +34,7 @@ every hit re-verified in Singular and over QQ.
 
 | Experiment | Question | Verdict | Load-bearing result |
 |---|---|---|---|
-| EXP-001-pure-ray-census | the d3 <= 12 table over S: census, obstructions at every m, closures, generic level modules and generic presentations over GF(32003), every hit rechecked in Singular and over QQ | hypothesis frozen 2026-11-19 | - |
+| EXP-001-pure-ray-census | the d3 <= 12 table over S: census, obstructions at every m, closures, generic level modules and generic presentations over GF(32003), every hit rechecked in Singular and over QQ | CONFIRMED (2026-11-19) | over S, of 220 rays the primitive point is realized on 193 (147 in characteristic 0), excluded on 12 (c_d = 2 on each) and open on 15, all with d3 >= 10; c_d determined on 205; every ray with d3 <= 9 is realized in characteristic 0 (79) or is one of five excluded parity-passing rays that U(H) realizes (EXP-002), so no counterexample to Question 6.1 has d3 <= 9 in characteristic 0, and (0,4,9,10), (0,1,6,10) are counterexamples with d3 = 10 over every field; 64 of 66 completed QQ rechecks pass |
 | EXP-002-heisenberg-primitive-points | the three S-obstructed parity-passing rays left open over U(H): (0,2,6,8), (0,3,9,12), (0,2,10,12); U/U(x^e, y^e); calibration on the Kostant modules; duality | CONFIRMED (2026-11-19) | all three realized over QQ: U/U(x^2, y^2), U/U(x^3, y^3), cokernels of 2 by 3 matrices of quadrics; U/U(x^e, y^e) pure for e <= 6; the pair (x^2, y^2) fails in characteristics 2 and 3; other pairs work in characteristic 3, none of 80 in characteristic 2; duality reverses tables on 20 of 20 examples; two instruments agree on 96 of 96 modules |
 | EXP-003-heisenberg-characteristic-two | characteristic 2 over U(H); the proof steps of U/U(x^e, y^e); genericity | CONFIRMED (2026-11-19) | no pair of quadrics has a finite length quotient in characteristic 2 (exhaustive over GF(2) and GF(4), with a proof for every field), so (1,2,2,1) on (0,2,6,8) is realizable over neither ring there: a counterexample with d3 = 8 in characteristic 2 on a ray realized in every other characteristic; the proof steps of the family hold for e <= 8 and the bad primes are exactly the predicted ones; a general pair is not pure for e >= 4; (0,1,5,6), (0,1,7,8), (0,1,9,10), (0,1,11,12), (0,3,5,8) realized in characteristic 2; (0,3,9,12) and (0,2,10,12) never in the searches |
 
@@ -57,14 +57,19 @@ a reader other than the writer (correct after minor fixes, applied; BSB-015): U/
 type (0,e,3e,4e) if and only if the characteristic is 0 or at least 2e; the point (1,2,2,1) of (0,2,6,8) is realized over
 U(H) in characteristic 0 and in every odd characteristic (an explicit pair in characteristic 3) and over neither ring in
 characteristic 2. Question 6.1 already has a negative answer over every field (arXiv:2605.25259, Theorem 3.7), so the
-result is the dependence of the answer on the characteristic. EXP-001 (the table over S): stage 0, the
-known answers and the Soderberg family done; after the search 189 primitive points are realized, 12 excluded and 19
-open, all with d3 >= 10; every parity-failing ray with d3 <= 9 is realized (76 of 76); QQ rechecks in progress.
+result is the dependence of the answer on the characteristic. EXP-001 (the table over S) is CONFIRMED on its question:
+193 primitive points realized (147 in characteristic 0), 12 excluded, 15 open, all open ones with d3 >= 10. Every ray with
+d3 <= 9 is realized over S in characteristic 0 or is one of the five excluded parity-passing rays that U(H) realizes, so
+in characteristic 0 the least d3 of a counterexample to Question 6.1 is 10 ((0,4,9,10) and (0,1,6,10), excluded over S by
+published obstructions and over U(H) by parity, over every field); the published counterexample has d3 = 21. To be
+reviewed before it is claimed (BSB-015).
 
 ## 5. Next actions
 
-1. EXP-001: the rechecks over QQ of every hit, the two hits that failed over QQ, then the verdict with the table state.
-2. With it: the smallest-counterexample statement in characteristic 0 (candidate B), reviewed (BSB-015, third item).
+1. The review of the smallest-counterexample statement in characteristic 0 (EXP-001 verdict, items 2 and 3; BSB-015,
+   third item).
+2. The remaining QQ rechecks (57 not run, 7 at the time limit) and the two hits that fail over QQ (BSB-016); the 15 open
+   rays with d3 >= 10.
 3. The first manuscript (BSB-013): the family U/U(x^e, y^e) with its sharp characteristic condition, the characteristic 2
    statement on (0,2,6,8), the table over U(H) for d3 <= 12 and the census over S; attribution to Erman and Sam, Sam,
    Boocher, Huang and Wolf, and Jiang, Li, Sun, Wang, Xiao and Yu.

@@ -1,0 +1,250 @@
+{
+ "counts": {
+  "rays": 220,
+  "cyclic_B0_1": 44,
+  "parity_passing": 29,
+  "primitive_realized": 78,
+  "primitive_excluded": 12,
+  "primitive_open": 130,
+  "primitive_realized_char0": 78,
+  "primitive_realized_any_or_infinite_field": 52,
+  "primitive_realized_char0_or_one_prime_only": 26,
+  "c_determined": 86,
+  "rays_d3_le_9": 84,
+  "d3_le_9_primitive_open": 42,
+  "d3_le_9_primitive_open_parity_failing": 42,
+  "conflicts": 0
+ },
+ "G1": {
+  "rays_compared": 220,
+  "mismatches": [],
+  "rays": 220,
+  "cyclic": 44,
+  "parity_passing": 29,
+  "m2_pureCharFree_0_4_9_13": 15400,
+  "passed": true,
+  "m2_stderr_tail": ""
+ },
+ "G2": {
+  "rows": 220,
+  "beta_mismatch": [],
+  "es_mismatch": [],
+  "parity_mismatch": [],
+  "hf_mismatch": [],
+  "status_differences": [
+   {
+    "d": "(0,1,3,8)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,1,3,8): pureWeyman formula: beta_0 = 35 = 1 x 35"
+   },
+   {
+    "d": "(0,1,3,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,1,3,11): pureWeyman formula: beta_0 = 80 = 1 x 80"
+   },
+   {
+    "d": "(0,1,4,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,1,4,11): pureWeyman formula: beta_0 = 105 = 1 x 105"
+   },
+   {
+    "d": "(0,1,7,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,1,7,11): pureWeyman formula: beta_0 = 120 = 1 x 120"
+   },
+   {
+    "d": "(0,1,8,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,1,8,11): pureWeyman formula: beta_0 = 105 = 1 x 105"
+   },
+   {
+    "d": "(0,2,3,7)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,2,3,7): pureWeyman formula: beta_0 = 10 = 1 x 10"
+   },
+   {
+    "d": "(0,2,3,10)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,2,3,10): pureWeyman formula: beta_0 = 28 = 1 x 28"
+   },
+   {
+    "d": "(0,2,4,7)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,2,4,7): pureWeyman formula: beta_0 = 15 = 1 x 15"
+   },
+   {
+    "d": "(0,2,4,9)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,2,4,9): pureWeyman formula: beta_0 = 35 = 1 x 35"
+   },
+   {
+    "d": "(0,2,4,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,2,4,11): pureWeyman formula: beta_0 = 63 = 1 x 63"
+   },
+   {
+    "d": "(0,2,7,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,2,7,11): pureWeyman formula: beta_0 = 90 = 1 x 90"
+   },
+   {
+    "d": "(0,3,5,7)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,3,5,7): pureWeyman formula: beta_0 = 8 = 1 x 8"
+   },
+   {
+    "d": "(0,3,10,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,3,10,11): pureWeyman formula: beta_0 = 28 = 1 x 28"
+   },
+   {
+    "d": "(0,4,5,7)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,4,5,7): pureWeyman formula: beta_0 = 3 = 1 x 3"
+   },
+   {
+    "d": "(0,4,5,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,4,5,11): pureWeyman formula: beta_0 = 21 = 1 x 21"
+   },
+   {
+    "d": "(0,4,6,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,4,6,11): pureWeyman formula: beta_0 = 35 = 1 x 35"
+   },
+   {
+    "d": "(0,4,9,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,4,9,11): pureWeyman formula: beta_0 = 35 = 1 x 35"
+   },
+   {
+    "d": "(0,4,10,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,4,10,11): pureWeyman formula: beta_0 = 21 = 1 x 21"
+   },
+   {
+    "d": "(0,5,7,8)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,5,7,8): pureWeyman formula: beta_0 = 3 = 1 x 3"
+   },
+   {
+    "d": "(0,5,7,9)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,5,7,9): pureWeyman formula: beta_0 = 8 = 1 x 8"
+   },
+   {
+    "d": "(0,5,7,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,5,7,11): pureWeyman formula: beta_0 = 24 = 1 x 24"
+   },
+   {
+    "d": "(0,6,7,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,6,7,11): pureWeyman formula: beta_0 = 10 = 1 x 10"
+   },
+   {
+    "d": "(0,7,8,10)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,7,8,10): pureWeyman formula: beta_0 = 3 = 1 x 3"
+   },
+   {
+    "d": "(0,7,9,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,7,9,11): pureWeyman formula: beta_0 = 8 = 1 x 8"
+   },
+   {
+    "d": "(0,7,10,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,7,10,11): pureWeyman formula: beta_0 = 6 = 1 x 6"
+   },
+   {
+    "d": "(0,8,10,11)",
+    "dossier": "UNDECIDED",
+    "census": "realized",
+    "reason": "realized here by EFW Weyman (characteristic 0): (0,8,10,11): pureWeyman formula: beta_0 = 3 = 1 x 3"
+   }
+  ],
+  "status_agree": 194,
+  "passed": true
+ },
+ "G6_census_part": {
+  "passed": true,
+  "complete": false,
+  "details": {
+   "(0,4,9,10)": {
+    "beta": [
+     1,
+     3,
+     8,
+     6
+    ],
+    "p_minus_1": -16,
+    "m1_obstructions": [
+     "O1",
+     "O2",
+     "O5",
+     "O6"
+    ],
+    "m2_not_excluded": true,
+    "census_ok": true
+   },
+   "(0,1,6,10)": {
+    "beta": [
+     6,
+     8,
+     3,
+     1
+    ],
+    "p_minus_1": 16,
+    "m1_obstructions": [
+     "O2",
+     "O3",
+     "O6"
+    ],
+    "m2_not_excluded": true,
+    "census_ok": true
+   }
+  }
+ },
+ "G7": {
+  "ray": "(0,4,9,13)",
+  "beta": [
+   5,
+   13,
+   13,
+   5
+  ],
+  "pureCharFree_python": 15400,
+  "multiple": 3080,
+  "dossier_printed_example": 380,
+  "pureCharFree_macaulay2": 15400,
+  "passed": true
+ },
+ "m2_file_sha256": "3ce45c08f73ea4c3fcc049f261d35c73b4b5a1afcf9c239a9806e2e0ed53b415",
+ "time": "2026-11-19T20:15:42"
+}

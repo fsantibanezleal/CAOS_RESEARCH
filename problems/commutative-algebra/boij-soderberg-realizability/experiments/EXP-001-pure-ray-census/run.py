@@ -559,6 +559,9 @@ def cmd_verify(args) -> int:
                 hits.append((c, rec))
         elif rec is None:
             hits.append((c, None))
+    if args.rays:  # targeted rechecks: only the named rays
+        wanted = {tuple(int(x) for x in r.split(",")) for r in args.rays}
+        hits = [t for t in hits if tuple(t[0]["d"]) in wanted]
     hits.sort(key=lambda t: sum(C.primitive_point(tuple(t[0]["d"]))) * t[0]["m"])
     log(f"stage 1d: {len(hits)} hits to verify ({'QQ only' if args.qq_only else 'fresh and Singular'}"
         f"{'' if args.qq_only or not args.skip_qq else ', QQ skipped'}; {'all hits' if args.all else 'one per (ray, m)'})")
