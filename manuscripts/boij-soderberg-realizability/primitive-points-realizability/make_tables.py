@@ -1611,8 +1611,11 @@ def exp8(r8, N, fig, rows3, rowsc):
         N["eight%sPlanned" % key] = thousands(x["planned"])
         N["eight%sPure" % key] = x["pure"]
         N["eight%sPureHF" % key] = x["pure_hilbert"]
-        N["eight%sRank" % key] = thousands(x["rank_eq_target"])
-        N["eight%sShareRank" % key] = pct(x["share_rank_eq_target"], 1)
+        # the rank column of the paper counts rank at most r, as for the earlier search: summed from the stored histogram
+        rank_le = sum(v for k_, v in x["rank_hist"].items() if int(k_) <= x["target_rank"])
+        need(x["rank_eq_target"] <= rank_le <= x["spaces"], f"EXP-008 {fam}: rank at most r from the histogram")
+        N["eight%sRank" % key] = thousands(rank_le)
+        N["eight%sShareRank" % key] = pct(rank_le / x["spaces"], 1)
         N["eight%sSharePure" % key] = pctv(x["share_pure"])
         N["eight%sHeur" % key] = pctv(hq)
         N["eight%sRatio" % key] = f"{x['share_pure'] / hq:.2f}"
@@ -1620,7 +1623,7 @@ def exp8(r8, N, fig, rows3, rowsc):
         N["eight%sTables" % key] = len(x["nonpure_tables"])
         N["eight%sWallMin" % key] = f"{x['seconds_wall'] / 60:.0f}"
         fig["pure%d" % e].append((q, x["share_pure"]))
-        rows3.append([str(e), fld_tex(fld), thousands(x["spaces"]) + "$^\\dagger$", "%s (%s\\%%)" % (thousands(x["rank_eq_target"]), pct(x["share_rank_eq_target"], 1)),
+        rows3.append([str(e), fld_tex(fld), thousands(x["spaces"]) + "$^\\dagger$", "%s (%s\\%%)" % (thousands(rank_le), pct(rank_le / x["spaces"], 1)),
                       thousands(x["pure_hilbert"]), thousands(x["pure"]), pctv(x["share_pure"]) + "\\%", "$q^{-%d}$ = %s\\%%" % (2 * he_val(e, 3 * e), pctv(hq)),
                       f"{x['share_pure'] / hq:.2f}"])
         rowsc.append([str(e), fld_tex(fld), thousands(x["pure_hilbert"]), thousands(x["pure"]), thousands(nonpure), str(len(x["nonpure_tables"])),
