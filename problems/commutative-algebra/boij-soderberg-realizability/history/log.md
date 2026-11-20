@@ -165,3 +165,14 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   to 48, and the class 300 sigma_2 + 325 sigma_(1,1) of that locus in Gr(2, 9) is not zero, so the locus is not empty
   and has dimension at least 12 in every characteristic.
 
+## 2026-11-20 - EXP-005 CONFIRMED: the machine checks of the characteristic 2 theorem archived
+
+- Four gates passed (the 35 known answers of EXP-003; two code paths on 160 presentations; Singular on 75 sampled
+  Hilbert functions and on the 24 modules of the family; 13 unit tests).
+- 0 finite length cases among 1,574 presentations with at most one more relation than generators in characteristic 2;
+  the 1,372 that become constant all have the predicted value; over GF(2) 137 grow, over GF(4) 2, over GF(16) none.
+  With one more relation 39 of 40 have finite length.
+- U/U(x^e, y^e) at e = 6 and 7: pure exactly over QQ and for p >= 2e among the primes up to 31, two instruments.
+- Re-check by the coordinating session without the experiment's routine: counts re-tallied, 16 cases recomputed, no
+  finding. Raw outputs of the second instrument and the run log are under the data root.
+

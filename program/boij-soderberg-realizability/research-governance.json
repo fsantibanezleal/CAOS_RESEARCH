@@ -78,7 +78,10 @@
       ],
       "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
       "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability, version 0.02",
-      "first_bounded_action": "EXP-005 (hypothesis frozen 2026-11-20, running), then EXP-006 (hypothesis frozen 2026-11-20)."
+      "first_bounded_action": "EXP-005 CONFIRMED 2026-11-20 (the machine checks archived); EXP-006 (hypothesis frozen 2026-11-20) running.",
+      "evidence": [
+        "EXP-005"
+      ]
     }
   ],
   "manuscripts": [
@@ -100,6 +103,12 @@
       "manuscripts": [
         "primitive-points-realizability"
       ]
+    },
+    {
+      "start": 5,
+      "end": 5,
+      "classification": "research-record",
+      "manuscripts": []
     }
   ]
 }

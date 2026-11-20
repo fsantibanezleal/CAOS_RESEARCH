@@ -51,6 +51,7 @@ BSR-F3, proposed).
 | EXP-002-heisenberg-primitive-points | the three S-obstructed parity-passing rays left open over U(H): (0,2,6,8), (0,3,9,12), (0,2,10,12); U/U(x^e, y^e); calibration on the Kostant modules; duality | CONFIRMED (2026-11-19) | all three realized over QQ: U/U(x^2, y^2), U/U(x^3, y^3), cokernels of 2 by 3 matrices of quadrics; U/U(x^e, y^e) pure for e <= 6; the pair (x^2, y^2) fails in characteristics 2 and 3; other pairs work in characteristic 3, none of 80 in characteristic 2; duality reverses tables on 20 of 20 examples; two instruments agree on 96 of 96 modules |
 | EXP-003-heisenberg-characteristic-two | characteristic 2 over U(H); the proof steps of U/U(x^e, y^e); genericity | CONFIRMED (2026-11-19) | no pair of quadrics has a finite length quotient in characteristic 2 (exhaustive over GF(2) and GF(4), with a proof for every field), so (1,2,2,1) on (0,2,6,8) is realizable over neither ring there: a counterexample with d3 = 8 in characteristic 2 on a ray realized in every other characteristic; the proof steps of the family hold for e <= 8 and the bad primes are exactly the predicted ones; a general pair is not pure for e >= 4; (0,1,5,6), (0,1,7,8), (0,1,9,10), (0,1,11,12), (0,3,5,8) realized in characteristic 2; (0,3,9,12) and (0,2,10,12) never in the searches |
 | EXP-004-lift-certificates | do the prime-field realizations of EXP-001 lift to characteristic 0? A rank test per degree on the lifted integer matrices, with a lemma on flat lifts of pure resolutions, on the 130 verified hits (64 as known answers) | CONFIRMED (2026-11-19) | the rank test passes on all 130 hits (two instruments; one matrix by one instrument), reproduces the 64 known answers, and with the lift lemma makes every ray realized over GF(32003) a ray realized in characteristic 0 (193 of 193, 147 before); the two rechecks of EXP-001 that had failed over QQ were false negatives (both modules are pure over QQ in Singular); the lemma awaits review (BSB-020) |
+| EXP-005-characteristic-two-machine-checks | do the repository's instruments reproduce the reviewers' machine checks of the characteristic 2 theorem and of the family at e = 6, 7? Exhaustive quadrics and cubics over GF(2), random quartics to septics and matrices over GF(2), GF(4), GF(16), the sharpness shapes, 24 modules of the family | CONFIRMED (2026-11-20) | 0 finite length cases of 1,574 with b <= a + 1; every eventually constant case has the value (a(a+1)/2) L.L; b = a + 2 gives finite length in general; U/U(x^e, y^e) pure exactly for p >= 2e at e = 6, 7 (primes up to 31, and QQ) |
 
 ## 4. In flight
 
@@ -91,8 +92,8 @@ BSR-F2 is met and the focus is closed.
 
 Strategic review of 2026-11-20: BSR-F2 is closed and BSR-F3 is the current focus.
 
-1. EXP-005 (hypothesis frozen 2026-11-20): the machine checks of the characteristic 2 theorem and of the family at
-   e = 6, 7, rerun with `uhlib` and Singular and archived (backlog BSB-021). In progress.
+1. EXP-005 CONFIRMED (2026-11-20): the machine checks of the characteristic 2 theorem and of the family at e = 6, 7,
+   rerun with `uhlib` and Singular and archived (1,614 cases, 24 modules; BSB-021 done).
 2. EXP-006 (hypothesis frozen 2026-11-20): is (1,2,2,1) on (0, e, 3e, 4e) realized over U in odd characteristic below
    2e, for e = 3 (p = 3, 5) and e = 4 (p = 3, 5, 7)? Derived before the run: for e = 3 the pure Hilbert function is
    the generic one; for e = 4 a pure pair needs rank 48 for the multiplication map into degree 12, and the locus of
