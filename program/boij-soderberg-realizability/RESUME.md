@@ -1,6 +1,6 @@
 # boij-soderberg-realizability: RESUME (session handoff)
 
-Updated 2026-11-20 (manuscript v0.02 published; EXP-009 to EXP-017 closed; v0.03 in its third pass). First read for any session, per methodology 07. Derived view: experiment verdicts win.
+Updated 2026-11-20 (manuscript v0.02 published; EXP-009 to EXP-018 closed; v0.03 in its third pass). First read for any session, per methodology 07. Derived view: experiment verdicts win.
 
 ## 1. State in one screen
 
@@ -64,6 +64,7 @@ BSR-F3, proposed).
 | EXP-015-linear-rule-and-e9 | does the rule of the linear family (pure members exactly when 2e - p <= 3) hold for e = 10 to 13, and do other admissible strata hold a pure pair at (9,5), (9,11), (9,13)? | CONFIRMED (2026-11-20) | the rule in all twelve pairs (24 of 24 with the earlier ones; its 'none' half is now a proposition); pure pairs of degree 9 over GF(5), GF(11), GF(13): e = 9 complete |
 | EXP-016-congruence-lists | which forms G over GF(p) satisfy the hypothesis and the one congruence, for e = 10 to 16, and is every one a pure pair in U? | CONFIRMED (2026-11-20; one case unfinished) | pure pairs at (10,17), (10,19), (12,7), (12,13), (12,17), (12,19), (12,23), (14,17), (14,19), (16,11); (16,13) as well; e = 10 and e = 12 complete; empty lists at (14,5), (14,11) and over GF(9) |
 | EXP-017-odd-stratum-filter | does a member of the odd-e stratum that passes a filter of two congruences have the pure table, at (9,11), (9,13), (11,7), (13,5)? | CONFIRMED (2026-11-20) | pure pairs at the four pairs; all 1,699 members that pass have the pure Hilbert function and all 75 tables are pure; the filter is observed, not proved |
+| EXP-018-largest-exponent-strata | does the stratum of the pairs x^e + alpha y^t, y^e + beta x^t with the largest t such that 2t <= p - 1 hold a pure pair at (11,13), (11,17), (13,17), (13,19), (14,23), and do the strata with t + 2 hold none? | CONFIRMED (2026-11-20) | pure pairs at the five pairs (two instruments); no member with the pure Hilbert function in the five excluded strata; the share of the pure Hilbert function is 0.2 to 0.7 times p^(-(e-t-2)) |
 
 ## 4. In flight
 
@@ -123,10 +124,10 @@ Published on 2026-11-20: the manuscript v0.02, [10.5281/zenodo.24388904](https:/
    k[xy, z] of the pairs (x^e + b y^e, G(xy, z)), with a pure pair over the rationals at e = 4. EXP-011, EXP-012 and
    EXP-013 confirm the three theorems by machine; EXP-010 finds pure pairs at (6,5), (6,7), (7,3), (7,5).
 2. State of the point (1,2,2,1) of (0, e, 3e, 4e) (all on 2026-11-20, each with a verdict): for 2 <= e <= 10 and for e = 12
-   it fails only in characteristic 2: a pure pair over GF(p) for every odd prime p below 2e (EXP-006, EXP-008 to EXP-017 and
+   it fails only in characteristic 2: a pure pair over GF(p) for every odd prime p below 2e (EXP-006, EXP-008 to EXP-018 and
    the criterion). For every e it is realized in characteristic p dividing e(e - 1), for e = d e' with d = 0 or 1 modulo p
-   and e' realized, and for even e over a finite field of characteristic p >= 2e - 1. Open: e = 11 at p = 3, 13, 17; e = 13
-   at p = 7, 11, 17, 19; e = 14 at p = 5, 11, 23; e >= 15.
+   and e' realized, and for even e over a finite field of characteristic p >= 2e - 1. Open: e = 11 at p = 3; e = 13 at p = 7, 11;
+   e = 14 at p = 5, 11; e >= 15.
 3. Three more derivations, each read by a reviewer other than the writer: for the pairs (x^e + b y^e, G(xy, z)) one
    congruence decides the pure Hilbert function and gives the pure Betti table; the projection on the weight-zero
    summand, which proves that the linear family has no pure member for p <= 2e - 5 and excludes weight-class strata; the

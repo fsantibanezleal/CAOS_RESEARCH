@@ -263,3 +263,5 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   (the rule of the linear family at e = 10 to 13; e = 9 complete), EXP-016 CONFIRMED with one case unfinished (lists by the
   congruence; e = 10 and e = 12 complete), EXP-017 CONFIRMED (a filter of two congruences for the odd-e stratum; pure pairs
   at (11,7), (13,5)). Working notes on the family x^e + alpha y^t, y^e + beta x^t; backlog BSB-035, BSB-036.
+- 2026-11-20: EXP-018 CONFIRMED (the largest exponent strata: pure pairs at (11,13), (11,17), (13,17), (13,19), (14,23); at e = 11 only
+  p = 3 stays open).
