@@ -1,0 +1,927 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{orcidlink}
+\usepackage{xcolor}
+% The algorithm float comes from newfloat, as in the other manuscripts of the programme: the algorithm package redefines the
+% caption machinery of every float and doubles the hyperref anchors.
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[name=Algorithm,fileext=loa]{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.16}
+\emergencystretch=3em
+\setlength{\tabcolsep}{4pt}
+\makeatletter\g@addto@macro{\UrlBreaks}{\do\-\do\_}\makeatother
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
+\newcommand{\EXP}[1]{\mbox{EXP-#1}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\Hilb}{\operatorname{HS}}
+\newcommand{\ch}{\operatorname{char}}
+\input{numbers.tex}
+
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document macros are set by the publishing tool
+% when the version DOI is reserved; the version DOI and the concept DOI below are placeholders until the reservation.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.01}
+\newcommand{\docdate}{19 November 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.NNNNNNNN}
+\newcommand{\conceptdoi}{10.5281/zenodo.NNNNNNNN}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{boij-soderberg-realizability}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
+
+\title{Pure resolutions over the Heisenberg enveloping algebra and the realizability of primitive Betti points: the modules $U/U(x^e,y^e)$, the role of the characteristic, and a census for degrees at most twelve}
+\author{Felipe Santib\'a\~nez-Leal\orcidlink{0000-0002-0150-3246}%
+\thanks{\raggedright CAOS open-research programme, Santiago, Chile. Code, computational records and artifacts:
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH}, folder
+\texttt{problems/commutative-algebra/boij-soderberg-realizability/}.}}
+\date{\docdate}
+
+\begin{document}
+\maketitle
+\headerblock
+
+\begin{abstract}
+Erman and Sam asked whether every integral point on a pure ray of the Boij--S\"oderberg cone in three variables is the Betti table of a finite length module over $k[x,y,z]$ or over the enveloping algebra $U$ of the Heisenberg Lie algebra. Jiang, Li, Sun, Wang, Xiao and Yu answered the question negatively over every field in 2026. We study the primitive points that pass the Hilbert series parity test over $U$ and are excluded over $k[x,y,z]$. We prove that $M_e=U/U(x^e,y^e)$ has a pure resolution of type $(0,e,3e,4e)$ with Betti numbers $(1,2,2,1)$ if and only if $\ch k=0$ or $\ch k\ge 2e$. We prove that in characteristic $2$ no module with $a$ generators and at most $a+1$ relations of one degree $e\ge2$ has finite length over $U$, so the same point is realized over neither ring on the ray $(0,e,3e,4e)$ for every $e\ge2$. By exact computation, the ten rays with $d_3\le12$ that pass the parity test and are excluded over $k[x,y,z]$ are realized over $U$ in characteristic $0$. The census over $k[x,y,z]$ of the \nrays{} rays with $d_3\le12$ realizes the primitive point on \nrealized{} rays (\nrealizedZero{} in characteristic $0$ by a cited construction or a resolution over the rationals, all \nrealized{} by a rank certificate of the lift), excludes it on \nexcluded{} and leaves \nopen{} open. In characteristic $0$ no counterexample has $d_3\le9$, while two rays with $d_3=10$ are counterexamples over every field. The answer to the question thus depends on the characteristic on an infinite family of rays.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{Pure resolutions and the Boij--\texorpdfstring{S\"oderberg}{Soderberg} cone}
+
+Let $S=k[x,y,z]$ with the standard grading and let $M$ be a finitely generated graded $S$-module with minimal graded free resolution $F$. The graded Betti numbers $\beta_{i,j}(M)=\dim_k\Tor_i(M,k)_j$ form the Betti table of $M$. A resolution is pure of type $d=(d_0<d_1<d_2<d_3)$ when the $i$-th free module is generated in the single degree $d_i$. Herzog and K\"uhl showed that the Betti numbers of a finite length module with a pure resolution of type $d$ are proportional to $\prod_{j\ne i}|d_j-d_i|^{-1}$, so that the tables of type $d$ form a ray~\cite{HK84}; the least integral point on the ray is the primitive point $\beta_d$. Boij and S\"oderberg conjectured, and Eisenbud and Schreyer proved, that the Betti tables of finite length modules span a simplicial fan whose extremal rays are exactly these pure rays~\cite{BS08,ES09}; Eisenbud and Schreyer constructed a finite length module with a pure resolution of every type over every field~\cite[Theorem~5.1]{ES09}, and Eisenbud, Fl{\o}ystad and Weyman gave an equivariant construction in characteristic $0$~\cite{EFW11}. Which integral points of a ray occur as Betti tables of modules is a different question. Erman showed that the semigroup of Betti tables of modules is strictly smaller than the semigroup of integral points of the cone: on the ray of $(0,1,3,4)$ the primitive point is not a Betti table although every other integral point is~\cite[Theorem~1.6]{Erman09}.
+
+\subsection{The question of Erman and Sam and its published answer}
+
+Erman and Sam observed that the primitive point $(1,2,2,1)$ of the ray $(0,1,3,4)$ is realized by the residue field of a noncommutative ring. Let $H$ be the Heisenberg Lie algebra with basis $x,y,z$, bracket $[x,y]=z$, and grading $\deg x=\deg y=1$, $\deg z=2$; its enveloping algebra $U=U(H)$ has the minimal resolution $0\leftarrow U\leftarrow U(-1)^2\leftarrow U(-3)^2\leftarrow U(-4)\leftarrow 0$ of the trivial module, whose Betti table is $(1,2,2,1)$ on $(0,1,3,4)$. They asked~\cite[Question~6.1]{ES16}: \emph{for every degree sequence $(d_0,d_1,d_2,d_3)$ and every integral point on the corresponding ray, is there a finite length module either over $k[x,y,z]$ or over $U(H)$ whose Betti table is that integral point?} They noted that a representation-theoretic construction (Kostant's theorem for the symplectic Lie algebra $\mathfrak{sp}_4$, in which $H$ is the nilradical of a parabolic subalgebra) realizes more such points, with details to appear in forthcoming work of Sam~\cite[Section~6]{ES16}; Kostant's theorem in this setting is stated by Sam~\cite[Theorem~2.1]{Sam15}.
+
+In May 2026 Jiang, Li, Sun, Wang, Xiao and Yu answered the question negatively over every field~\cite[Theorem~3.7]{JLSWXY}. Their example is the degree sequence $(0,6,20,21)$ with the primitive point $(1,2,9,8)$. Over $S$ it is excluded by Krull's height theorem (a cyclic module with two relations has Krull dimension at least $1$). Over $U$ it is excluded by a Hilbert series parity test: the Hilbert series of $U$ is $1/((1-t)^2(1-t^2))$, a finite length module has a polynomial Hilbert series, so the numerator $p(t)=\sum_i(-1)^i\beta_it^{d_i}$ of a pure table must vanish at $t=-1$, and for $(1,2,9,8)$ it takes the value $16$. The polynomial ring half of this argument is an instance of the codimension obstruction of Erman~\cite[Proposition~3.1]{Erman09}, and Boocher, Huang and Wolf classify the rays with two generators over $S$ and place the polynomial ring half of the example in a Pell family~\cite{BHW}. The negative answer rests on the numerical parity test, which kills whole rays at once.
+
+\subsection{Results of this paper}
+\label{sec:results-list}
+
+The parity test is not the only obstruction to be understood over $U$. We study the primitive points that pass the parity test, that is, the rays on which the numerical test over $U$ is silent, and those among them that are excluded over $S$. The results carry an evidence mark: [MV] machine-verified in the repository by exact arithmetic, [D] derived on paper (here: proved in the paper), [V] read on the primary text, [U] not confirmed, [C] conjectural.
+\begin{enumerate}
+\item \textbf{A family of pure modules over $U$} (Theorem~\ref{thm:A}). For a field $k$ and $e\ge1$, $M_e=U/U(x^e,y^e)$ has the pure resolution of type $(0,e,3e,4e)$ with Betti numbers $(1,2,2,1)$ if and only if $\ch k=0$ or $\ch k\ge 2e$; then it has length $e^3$ and a one-dimensional socle in degree $4e-4$. [D]; [MV] for $e\le\nfamilyMaxE$ over $\Q$ and for the primes up to $23$ at $e\le5$.
+\item \textbf{The characteristic matters} (Theorems~\ref{thm:B} and~\ref{thm:C}). In characteristic $2$ no module over $U$ with $a$ generators in degree $0$ and at most $a+1$ relations, all of one degree $e\ge2$, has finite length. Hence $(1,2,2,1)$ on $(0,e,3e,4e)$ is realized over neither ring in characteristic $2$ for every $e\ge2$, while it is realized over $U$ in characteristic $0$ by $M_e$. [D]; [MV] by exhaustive enumeration over $\F_2$ and $\F_4$ for $e=2$ and by searches for $e=2,3$ and the ray $(0,2,10,12)$.
+\item \textbf{The ten rays over $U$} (Table~\ref{tab:ten}). Every one of the \ntenRays{} rays with $d_3\le12$ that pass the parity test and are excluded over $S$ has its primitive point realized over $U$ in characteristic $0$ by an explicit module. [MV]
+\item \textbf{The census over $S$} (Table~\ref{tab:stage}). Among the \nrays{} pure rays with $d_3\le12$, the primitive point is realized on \nrealized{} rays, excluded on \nexcluded{}, open on \nopen{}; the least realizable multiple is known on \ncDetermined{} rays. The point is realized in characteristic $0$ on \nrealizedZero{} rays by a cited construction or a resolution over $\Q$, and on all \nrealized{} by a rank certificate together with Proposition~\ref{prop:lift}. [MV] with [V] for the cited constructions and obstructions, [D] for the lift proposition.
+\item \textbf{The least counterexample} (Proposition~\ref{prop:least}). Over every field of characteristic $0$, every integral point on a pure ray with $d_3\le9$ is the Betti table of a finite length module over $S$ or $U$; on the two dual rays $(0,4,9,10)$ and $(0,1,6,10)$ the primitive point is realized over neither ring over any field. [MV] for the modules, [V] for the obstruction over $S$, [D] for the parity half.
+\end{enumerate}
+
+\subsection{What the paper does not claim}
+
+The negative answer to the question of Erman and Sam is that of Jiang, Li, Sun, Wang, Xiao and Yu~\cite{JLSWXY}, and the paper does not claim a negative answer, a new obstruction over $S$, or the modules of the Kostant family, which are stated by Erman and Sam and by Sam~\cite{ES16,Sam15}. The obstructions over $S$ used below are those of Buchsbaum and Eisenbud and of Erman~\cite{BE77,BE74,Erman09}. Searches in the literature for the modules $U/U(x^e,y^e)$, for pure resolutions over $U$ beyond the trivial module and the Kostant remark, for a dependence of Betti tables over $U$ on the characteristic, and for a stated least counterexample to the question found nothing (Section~\ref{sec:related}); a negative search is not evidence of priority and none is claimed. Finally, nothing is claimed about characteristic $p\ge3$ for $d_3\le9$, about rays with $d_3\ge13$, or about the fifteen open rays. The evidence marks say what each statement rests on: a statement marked [D] is proved in the paper, one marked [MV] rests on exact computation whose artifacts are archived, and one marked [V] is quoted from a source read on its primary text, so the reader can separate what the paper proves, what it computes and what it cites.
+
+\section{Related work}
+\label{sec:related}
+
+\subsection{Boij--\texorpdfstring{S\"oderberg}{Soderberg} theory, existence of pure resolutions and the semigroup of Betti tables}
+
+Boij and S\"oderberg formulated the conjectures on the cone of Betti tables of Cohen--Macaulay modules~\cite{BS08} and of arbitrary graded modules~\cite{BS12}; Eisenbud and Schreyer proved them by constructing, over any field, a finite length module with a pure resolution of each type through the direct image of a Koszul complex on a product of projective spaces~\cite[Theorem~5.1]{ES09}. The number of generators of the Eisenbud--Schreyer module is $\beta_0=\prod_{i=1}^{3}\binom{d_i-d_0-1}{d_i-d_{i-1}-1}$ in three variables. Fl{\o}ystad's survey collects the theory~\cite{Floystad12}. Herzog and K\"uhl proved the proportionality of pure tables~\cite{HK84}. Erman introduced the semigroup of Betti tables of modules and its saturation by integral points of the cone, proved that the two differ (Theorem~1.6), and asked for the least multiple $c_d$ with $c_d\beta_d$ a Betti table (Section~7, question~(2))~\cite{Erman09}. Eisenbud, Erman and Schreyer showed that the analogous statement for interior rays can fail~\cite{EES13}, which is why only extremal rays are in question here. Eisenbud, Fl{\o}ystad and Weyman conjectured that every sufficiently large integral point on an extremal ray is a Betti table (Conjecture~6.1)~\cite{EFW11}; Erman and Sam record it as open~\cite[Section~8]{ES16}. Ananthnarayan, Javadekar and Kumar study the purity of extremal rays of Betti cones of other rings, not integral points~\cite{AJK26}.
+
+\subsection{Constructions of pure modules in three variables}
+
+Besides the Eisenbud--Schreyer construction, which realizes a multiple of the primitive point, three constructions are used in the census. Eisenbud, Fl{\o}ystad and Weyman give equivariant complexes in characteristic $0$ whose ranks are dimensions of Schur functors, computed by the hook-content formula; the second family of their paper (Theorems~0.2 and~4.1) is supported on a maximal-minor locus and gives finite length modules after reduction by a general linear sequence over an infinite field~\cite{EFW11}. Berkesch, Erman, Kummini and Sam build pure resolutions in every characteristic as tensor complexes~\cite[Theorem~1.9]{BEKS13}. S\"oderberg showed that, for degree sequences $(0,a,a+1,d_3)$, an extremely compressed level module realizes a multiple of the primitive point, with $\binom{d_3-a}{2}$ generators and socle type $\binom{a+1}{2}$~\cite[Proposition~4.1]{SodLevel}; the existence statement behind it is that of Boij~\cite{Boij00}, which we did not read. Standard complexes (the Koszul complex, the powers of the maximal ideal and their duals, the Buchsbaum--Rim complex, and Pfaffians of generic skew matrices of odd size~\cite{BE77}) cover the remaining easy cases. The package \texttt{BoijSoederberg} of Macaulay2 implements the formulas and two random generators~\cite{M2BS}, and the Plural subsystem of Singular resolves modules over the enveloping algebra~\cite{Singular}.
+
+\subsection{Obstructions over the polynomial ring}
+
+Buchsbaum and Eisenbud proved that a Gorenstein ideal of codimension $3$ is generated by the sub-Pfaffians of an odd skew matrix, so a cyclic table $(1,n,n,1)$ with $n$ even is not realized~\cite{BE77}; and three generators of an ideal of height $3$ in the Cohen--Macaulay ring $S$ form a regular sequence, so a cyclic table with $\beta_1=3$ is a Koszul table. The structure theorems on multiplier ideals of Buchsbaum and Eisenbud~\cite{BE74} are the model of Erman's obstructions for non-pure diagrams. Erman's Proposition~3.1 gives the second syzygy obstruction, the codimension obstruction $b\ge e+a-1$ with the Buchsbaum--Rim complex in the equality case, and the regularity obstruction, and Remark~3.2 transports them to the rotated table~\cite{Erman09}. Applied to $m$ times the primitive point of a ray in three variables they yield lower bounds on the least multiple. Kunte showed that the monoid of Betti tables of Cohen--Macaulay modules depends on the characteristic of the base field, with an explicit table in five variables~\cite{Kunte}. Boocher, Huang and Wolf prove numerical lower bounds for the rays with two generators or two relations (their Theorems~3, 15 and~21), restricted to degree sequences with $\gcd(d_1,d_2,d_3)=1$~\cite{BHW}.
+
+\subsection{The Heisenberg enveloping algebra}
+
+Erman and Sam pose the question over $U$ and over enveloping algebras of other positively graded Lie algebras, remark that the Chevalley--Eilenberg complex of $H$ cancels to the resolution of length three, and state Remark~6.3 on other algebras that look like polynomial rings, such as Artin--Schelter algebras~\cite[Section~6]{ES16}. Sam's paper on the homology of analogues of Heisenberg Lie algebras contains the Kostant computation~\cite{Sam15}: applied to $H$ as the nilradical of a parabolic subalgebra of $\mathfrak{sp}_4$ (the realization recorded by Erman and Sam~\cite[Section~6]{ES16}), it gives that the module $L(p,q)$ has a pure resolution with Betti numbers $(q+1,p+2,p+2,q+1)$ on $(0,p-q+1,p+q+3,2p+4)$ in characteristic $0$; we use this as read and recompute the tables for $p\le4$. Sam and VandeBogert predict in their Remark~5.11 a symplectic version of their results with the quadric hypersurface replaced by the enveloping algebra of a Heisenberg algebra, and observe that for the Heisenberg algebra of dimension three a Jacobi--Trudi determinant equals $-2$, so only a partial structure can be expected~\cite{SVB}; their main theorems assume characteristic $0$.
+
+\subsection{The negative answer of 2026 and the searches made}
+
+The paper of Jiang, Li, Sun, Wang, Xiao and Yu states that its proofs were produced by the Rethlas automated reasoning system~\cite{Ju26} and verified by human experts~\cite{JLSWXY}. For Question~6.1 the proof is the combination of Krull's height theorem and the parity test described above; their Theorem~3.8 answers the analogous Question~6.2 in four variables with the primitive point $(1,2,5,6,2)$ on $(0,1,4,5,6)$. The raw system output is public~\cite{RethlasRes}. The paper does not discuss the least counterexample, other degree sequences, or multiples of the point. The searches we made (the literature, the archives of the cited sources, and the citing literature of~\cite{JLSWXY}) found no statement about the modules $U/U(x^e,y^e)$, about pure resolutions over $U$ beyond the trivial module and the Kostant remark, about the dependence on the characteristic, or about a least counterexample to the question; the centres of nilpotent enveloping algebras in prime characteristic were read only through the abstract of Lopes de Jesus and Schneider~\cite{LdJS}. The ingredients of the proofs below (the centre of $U$ in characteristic $2$, a quadric surface, Thom--Porteous) are standard~\cite{Fulton}.
+
+\section{Problem formulation and definitions}
+\label{sec:setting}
+
+Table~\ref{tab:notation} lists the symbols of the paper. Throughout, $k$ is a field, modules are graded and finitely generated, and a module over $U$ is a left module unless stated otherwise.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_notation.tex}
+\caption{Notation: each symbol, its meaning, and the section or statement where it is introduced; the five evidence marks are defined in Section~\ref{sec:results-list}.}
+\label{tab:notation}
+\end{table}
+
+\subsection{The rings, the grading, the weight and the centre}
+\label{sec:rings}
+
+The polynomial ring is $S=k[x,y,z]$ with $\deg x=\deg y=\deg z=1$. The enveloping algebra of the Heisenberg Lie algebra is
+\begin{equation}\label{eq:U}
+U=U(H)=k\langle x,y,z\rangle/(xy-yx-z,\ xz-zx,\ yz-zy),\qquad \deg x=\deg y=1,\ \deg z=2,
+\end{equation}
+so $z=xy-yx$ is central and is eliminated in the presentation $U=k\langle x,y\rangle/([x,[x,y]],[y,[x,y]])$ in every characteristic. The Poincar\'e--Birkhoff--Witt basis is formed by the monomials $y^bx^az^c$ with $a,b,c\ge0$, written with $x$ to the right; its degrees give
+\begin{equation}\label{eq:HSU}
+\Hilb_U(t)=\sum_{a,b,c\ge0}t^{a+b+2c}=\frac1{(1-t)^2(1-t^2)}.
+\end{equation}
+The grading with $\deg z=2$ is the one of Erman and Sam and is forced by $z=xy-yx$ if $x$ and $y$ have degree $1$~\cite[Section~6]{ES16}. A second grading by the \emph{weight} $w(y^bx^az^c)=b-a$ is compatible with the relations because $z$ has weight $0$; a module generated by weight-homogeneous elements modulo weight-homogeneous relations is bigraded by degree and weight, and $x$ and $y$ shift the weight by $-1$ and $+1$. The anti-automorphism $\tau$ of $U$ with $\tau(x)=x$, $\tau(y)=y$, $\tau(z)=-z$ turns left modules into right modules, and the automorphism $\sigma$ with $\sigma(x)=y$, $\sigma(y)=-x$, $\sigma(z)=z$ respects the relations because $\sigma(xy-yx)=-yx+xy=z$; its inverse is $x\mapsto-y$, $y\mapsto x$.
+
+In characteristic $2$ the elements $x^2$, $y^2$ and $z$ are central, since $x^2y-yx^2=2xz$ and $y^2x-xy^2=-2yz$ (Lemma~\ref{lem:normal}); they generate a polynomial subring $C=k[X,Y,Z]$ with $X=x^2$, $Y=y^2$, $Z=z$, over which $U$ is free with basis $1,x,y,yx$ (Section~\ref{sec:thmB}). In characteristic $p$ odd the elements $x^p$, $y^p$ and $z$ are central, but this does not give an exclusion (Section~\ref{sec:discussion}).
+
+\subsection{Betti tables over \texorpdfstring{$U$}{U}}
+\label{sec:bettiU}
+
+For a finitely generated graded left $U$-module $M$ the graded Betti numbers are $\beta_{i,j}(M)=\dim_k\Tor_i^U(k_U,M)_j$, where $k_U=U/(xU+yU)$ is the right trivial module. They are computed from the minimal resolution of $k_U$, which is the transport by $\tau$ of the minimal resolution of the left trivial module displayed in Table~\ref{tab:trivial} and Figure~\ref{fig:resolution}. Write $r_1=[x,[x,y]]=(yx-2xy)x+x^2y$ and $r_2=[y,[x,y]]=-y^2x+(2yx-xy)y$; these are the two defining relations of $k\langle x,y\rangle$ above.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_trivial.tex}
+\caption{The minimal graded free resolution of the left trivial module $k=U/(Ux+Uy)$ over $U$: free module, degree of its generators and the matrix of the map to the previous position; the Betti table of $k$ is $(1,2,2,1)$ on $(0,1,3,4)$.}
+\label{tab:trivial}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\input{fig_resolution.tex}
+\caption{The resolution of the trivial module over $U$ of Table~\ref{tab:trivial} as a complex of free modules, with the degrees of the generators below each term and the Euler series of the ranks below the complex; the global dimension of $U$ is $3$ and the table is read from left to right.}
+\label{fig:resolution}
+\end{figure}
+
+\begin{lemma}\label{lem:trivial}
+The complex $0\leftarrow U\leftarrow U(-1)^2\leftarrow U(-3)^2\leftarrow U(-4)\leftarrow0$ with maps $(u,v)\mapsto ux+vy$, $(s,t)\mapsto(s,t)A$ with $A=\begin{pmatrix}yx-2xy&x^2\\-y^2&2yx-xy\end{pmatrix}$, and $w\mapsto w(y,-x)$ is a resolution of the left trivial module. The anti-automorphism $\tau$ turns it into a resolution of $k_U$ whose last map is $w\mapsto(yw,-xw)$, and for every left module $M$
+\begin{equation}\label{eq:tor3}
+\Tor_3^U(k_U,M)\cong\{m\in M: xm=0=ym\}(-4)=\operatorname{soc}(M)(-4).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The Chevalley--Eilenberg complex of $H$ is a free resolution of $k$ and cancels to this minimal complex~\cite[Section~6]{ES16}. We check that the composites vanish: $y(yx-2xy)+xy^2=-r_2=0$ and $yx^2-x(2yx-xy)=r_1=0$ in $U$. The two identities are confirmed in the PBW basis by exact computation (Section~\ref{sec:expdesign}) [MV]. The anti-automorphism $\tau$ fixes $r_1$ and $r_2$, so it maps the complex to a complex of right free modules with the last map $w\mapsto(yw,-xw)$. Tensoring this complex with $M$ and reading the last term gives $\Tor_3=\ker(M\to M^2,\ m\mapsto(ym,-xm))$ shifted by $4$, which is~\eqref{eq:tor3}; no finiteness of $M$ is used.
+\end{proof}
+
+\subsection{Pure rays, primitive points and the parity test}
+\label{sec:parity}
+
+A degree sequence is $d=(0,d_1,d_2,d_3)$ with $0<d_1<d_2<d_3$; a shift of degrees changes nothing, so the invariant is $d_3-d_0$ and we take $d_0=0$. The Betti table of a finite length module over $S$ with a pure resolution of type $d$ satisfies the Herzog--K\"uhl equations
+\begin{equation}\label{eq:HK}
+\sum_{i=0}^{3}(-1)^i\beta_id_i^m=0\quad(m=0,1,2),\qquad\text{so}\qquad \beta_i\ \propto\ \prod_{j\ne i}\frac1{|d_j-d_i|},
+\end{equation}
+one equation for each of the first three coefficients of the Hilbert polynomial~\cite{HK84,ES09}. The solution space is a ray; its least integral point is the primitive point $\beta_d$, and every integral point is $m\beta_d$ with $m\ge1$. For $d=(0,e,3e,4e)$ the ratios are $1/(12e^3):1/(6e^3):1/(6e^3):1/(12e^3)$ and $\beta_d=(1,2,2,1)$. Put $p_\beta(t)=\sum_i(-1)^i\beta_it^{d_i}$.
+
+\begin{lemma}[Hilbert series over $S$ and over $U$]\label{lem:parity}
+A finitely generated graded $S$-module with Betti table $\beta$ has Hilbert series $p_\beta(t)/(1-t)^3$; a finitely generated graded $U$-module with Betti table $\beta$ has Hilbert series $p_\beta(t)/((1-t)^2(1-t^2))$. A finite length $U$-module with a pure table of type $d$ therefore has $p_\beta(-1)=0$.
+\end{lemma}
+\begin{proof}
+The alternating sum over the minimal free resolution of the Hilbert series of the free modules gives the formulas, with~\eqref{eq:HSU} for $U$. A finite length module has a polynomial Hilbert series; since $(1-t)^2(1-t^2)=(1-t)^3(1+t)$ the numerator $p_\beta$ is divisible by $1+t$, hence $p_\beta(-1)=0$.
+\end{proof}
+
+The parity value $p_\beta(-1)$ is homogeneous of degree one in $\beta$, so the test is a property of the ray: it excludes every multiple of $\beta_d$ at once or none. It is the numerical test of Jiang, Li, Sun, Wang, Xiao and Yu~\cite{JLSWXY}. Over $S$ the other classical restriction is Krull's: a cyclic module $S/I$ with $I$ generated by two forms has Krull dimension at least $1$, because every minimal prime of $I$ has height at most $2$; so $\beta_0=1$ and $\beta_1=2$ are impossible for finite length, whatever the degrees (Lemma~\ref{lem:krull} below uses the same argument for $a$ generators).
+
+\subsection{Realizability, scaling, duality and direct sums}
+\label{sec:realizability}
+
+\begin{definition}
+A point $\beta$ is \emph{realized} over $S$ (respectively $U$) over $k$ if some finite length graded module over $S\otimes k$ (respectively $U\otimes k$) has Betti table $\beta$; it is \emph{excluded} when no such module exists and \emph{open} when neither is known. For a ray, $c_d$ is the least $m\ge1$ such that $m\beta_d$ is realized over $S$ (Erman, question~(2) of Section~7~\cite{Erman09}).
+\end{definition}
+
+Four elementary facts are used. First, direct sums: if $\beta$ and $\beta'$ are realized on the same ray over the same ring, so is $\beta+\beta'$; hence if the primitive point is realized, every integral point of the ray is. Second, scaling over $S$: if $(d,\beta)$ is realized over $S$ then so is $(ed,\beta)$ for every $e\ge1$. Indeed, let $S'=k[u,v,w]$ with the three generators in degree $e$ and let $S'\to S$ send $u,v,w$ to $x^e,y^e,z^e$; $S$ is free over $S'$ on the monomials with exponents below $e$, so the map is flat, a minimal resolution over $S'$ base-changes to a minimal resolution over $S$ with the twists multiplied by $e$ and the ranks unchanged, and the module has finite length since $S$ is finite over $S'$ [D]. Third, duality over $S$: for a finite length module $M$ with a pure resolution $F$, the complex $\operatorname{Hom}(F,S)$ is exact except at the end and resolves $\Ext^3_S(M,S)$ with the reversed table and the degree sequence $(0,d_3-d_2,d_3-d_1,d_3)$ [D, standard; Erman~\cite[Remark~3.2]{Erman09}]. Fourth, over $U$ we use neither scaling nor duality for any claim: Experiment \EXP{002} tests the reversal of tables on \ndualCases{} random finite length modules, and the result is evidence only.
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Exact linear algebra over \texorpdfstring{$U$}{U}}
+\label{sec:exactU}
+
+\paragraph{Product.} Elements of $U$ are written in the PBW basis $y^bx^az^c$. Left multiplication by $y$ shifts the exponent of $y$; left multiplication by $x$ uses $xy=yx+z$ and the centrality of $z$,
+\[
+x\cdot y^bx^az^c=y^bx^{a+1}z^c+b\,y^{b-1}x^az^{c+1},
+\]
+and the product of two basis monomials is obtained by applying the letters of the left factor from right to left. All coefficients are integers, so the same code runs over $\Q$ (rational numbers), over a prime field $\F_p$ and over $\F_{2^r}$; the characteristic enters only through the arithmetic of the coefficients. Lemma~\ref{lem:normal} below is the closed form of the product that Theorem~A needs, and the script of the manuscript recomputes it from this rule for $a,e\le9$.
+
+\paragraph{Quotient modules.} A finite length module is given by a presentation $U^a/(U F_1+\dots+U F_b)$ with homogeneous $F_j\in(U_{e_j})^a$. Degree by degree, the submodule in degree $d$ is the span of the products $mF_j$ over PBW monomials $m$ of degree $d-e_j$, reduced by exact Gaussian elimination in the field; the dimension of the quotient in degree $d$ is $a\dim U_d$ minus the rank. The matrices of $x$ and $y$ on the quotient in the basis of standard monomials give the module as a graded vector space with the two actions. Algorithm~\ref{alg:module} states the procedure; the module has finite length if the quotient vanishes in consecutive degrees beyond the largest degree of a generator, and the algorithm stops at a stated degree bound otherwise and reports that the module is not known to be finite.
+
+\begin{algorithm}[t]
+\caption{Quotient of $U^a$ by a left submodule and its Betti table. Input: a field $\Q$, $\F_p$ or $\F_{2^r}$, the generator degrees and the homogeneous relations $F_1,\dots,F_b$, a degree bound $D$. Output: the Hilbert function, the length if finite, the Betti table.}
+\label{alg:module}
+\begin{algorithmic}[1]
+\For{$d=0,1,\dots,D$}
+  \State $R_d\gets$ rows $m\,F_j$ for every PBW monomial $m$ of degree $d-e_j$, in the basis of $(U^a)_d$
+  \State $\operatorname{rk}_d\gets\operatorname{rank}(R_d)$ by exact elimination; $h_d\gets a\dim U_d-\operatorname{rk}_d$
+  \State store the standard monomials of degree $d$ and the reduction map
+\EndFor
+\If{$h_d=0$ for two consecutive $d\le D$}\State finite length $\sum_dh_d$\Else\State report $h_0,\dots,h_D$ and stop\EndIf
+\State build the matrices of $x$ and $y$ on $M_d\to M_{d+1}$
+\State $T\gets$ the complex $M\otimes$ (resolution of $k_U$ of Lemma~\ref{lem:trivial}), computed degree by degree
+\State $\beta_{i,j}\gets\dim H_i(T)_j$; check $\sum_{i,j}(-1)^i\beta_{i,j}t^j=\Hilb_M(t)\,(1-t)^2(1-t^2)$
+\State \Return Hilbert function, length, table
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Betti numbers through the resolution of the trivial module, and the second system}
+\label{sec:tor}
+
+The Betti numbers are the homology of the complex $K=M\otimes_U(\text{resolution of }k_U)$ of Lemma~\ref{lem:trivial}, whose terms are $M$, $M(-1)^2$, $M(-3)^2$ and $M(-4)$. The complex is checked to be a complex (the composite maps are zero) and exact in degrees $0,\dots,10$ on the calibration modules by rank counts. The Betti table is then read from the ranks. As a second instrument, independent of the first in code and in algorithm, Singular 4.3.2 (Plural) resolves the same module presented over the Heisenberg algebra with the weight ordering $(1,1,2)$; the degree of each generator of each syzygy module gives the Betti table, the function \texttt{betti} of Singular being unreliable on algebras of this type~\cite{Singular}. A table is accepted only when both instruments agree, and for infinite modules the comparison is through the Hilbert function recomputed from the Singular table. The two instruments see the module through different data: the library works with the vector space and the matrices of $x$ and $y$, and Singular with a Gr\"obner basis of the relations, so a convention error shared by both (the sign of $z$, for example) would already fail on the trivial module and on the Kostant modules, whose tables are known in advance.
+
+\subsection{The census over \texorpdfstring{$S$}{S}}
+\label{sec:census}
+
+For each of the \nrays{} degree sequences with $d_3\le12$ the census computes, in exact rational arithmetic, the primitive point $\beta_d$ from~\eqref{eq:HK}, the parity value, and the Hilbert functions over $S$ and over $U$. It evaluates the numbers of generators of the three formula constructions (Eisenbud--Schreyer, the two Eisenbud--Fl{\o}ystad--Weyman constructions through the hook-content formula, and S\"oderberg's extremely compressed level modules) and of the standard families, and from them the multiples $m$ for which a construction hits $m\beta_d$. It evaluates six obstructions at every multiple $m\le12$ of the primitive point, with $B=m\beta_d$ (O1 the second syzygy bound $d_2\le(B_0+1)d_1$; O2 the codimension bound $B_1\ge B_0+2$ with the Buchsbaum--Rim table in the equality case; O3 the regularity bound $d_3\le(B_0+2)d_1$~\cite[Proposition~3.1]{Erman09}; O4 a cyclic point $(1,n,n,1)$ with $n$ even~\cite{BE77}; O5 a cyclic point with $B_1=3$, which forces $d=(0,a,2a,3a)$ because three generators of an ideal of height $3$ form a regular sequence; O6 the duals of the previous ones under the duality of Section~\ref{sec:realizability}). Both closures, scaling and duality, are applied, and the census checks that no realization contradicts an obstruction. The result for each ray is an interval $[\mathrm{low}_d,\mathrm{up}_d]$ for $c_d$. Algorithm~\ref{alg:census} states the procedure. The obstructions are never applied over $U$, where only the parity test and explicit modules are used.
+
+\begin{algorithm}[t]
+\caption{Census of one ray. Input: $d=(0,d_1,d_2,d_3)$, the multiple bound $12$. Output: $\beta_d$, the parity value, the interval $[\mathrm{low}_d,\mathrm{up}_d]$ for $c_d$ and the status of the primitive point.}
+\label{alg:census}
+\begin{algorithmic}[1]
+\State $\beta\gets$ primitive solution of~\eqref{eq:HK}; $\pi\gets p_\beta(-1)$
+\For{each construction $\kappa$ with a known number of generators $b_\kappa(d)$}
+  \If{$\beta_0\mid b_\kappa(d)$}\State record the realization of $m=b_\kappa(d)/\beta_0$ with its field \EndIf
+\EndFor
+\For{$m=1,\dots,12$ and each obstruction $O_1,\dots,O_6$}\State record every $O_r$ that excludes $m\beta$\EndFor
+\State close under direct sums, scaling and duality; stop with an error if a realized point is excluded
+\State $\mathrm{low}_d\gets$ least $m$ not excluded; $\mathrm{up}_d\gets$ least realized $m$
+\State status $\gets$ realized if $\mathrm{up}_d=1$, excluded if $\mathrm{low}_d>1$, open otherwise
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{The search and the rechecks}
+\label{sec:search}
+
+Over a prime field the search builds two kinds of random module with the generators of the Macaulay2 package~\cite{M2BS}: a generic level module (the submodule generated by $mB_0$ generic elements of $mB_3$ copies of the truncated injective hull, with the Hilbert function of the pure table), and a generic presentation (the cokernel of a generic $mB_0\times mB_1$ matrix of forms of degree $d_1$), over $\F_{32003}$. A cell is a ray, a multiple $m$, a generator and a seed; $m$ runs from $\mathrm{low}_d$ to $\min(\mathrm{up}_d-1,4)$, three seeds per cell, stopping at the first hit; a resolution that exceeds twenty minutes is recorded as a timeout, never as a miss. Algorithm~\ref{alg:search} states the search. A miss proves nothing, since families of level algebras can be reducible and a generic member need not have the pure table; only the obstructions exclude.
+
+\begin{algorithm}[t]
+\caption{Search on one open ray over $\F_{32003}$. Input: the ray, $\mathrm{low}_d<\mathrm{up}_d$. Output: a hit (an explicit presentation with the pure table $m\beta_d$) or the list of cells tried.}
+\label{alg:search}
+\begin{algorithmic}[1]
+\For{$m=\mathrm{low}_d,\dots,\min(\mathrm{up}_d-1,4)$}
+  \For{generator $\in\{$level module, presentation$\}$ and seed $\in\{1,2,3\}$}
+    \State build the random module over $\F_{32003}$; resolve with a time limit of twenty minutes
+    \If{the Betti table equals $m\beta_d$}\State save the presentation; \Return hit\EndIf
+  \EndFor
+\EndFor
+\State \Return open (a miss proves nothing)
+\end{algorithmic}
+\end{algorithm}
+
+Every hit is rechecked (Algorithm~\ref{alg:recheck}): in a fresh Macaulay2 process from the saved presentation, in Singular from the same presentation, and over the rationals. The rational module is not the lift of the saved prime-field presentation: for a generic presentation it is the cokernel of the generator matrix lifted to symmetric integer representatives, and for a level module it is the image of the lifted generator matrix inside the truncated ring. The lift of the presentation computed over $\F_{32003}$ for a level module is not pure in the controls we ran (Section~\ref{sec:ablation}), so the rational module is a new module that realizes the point over $\Q$ if and only if its own resolution over $\Q$ is pure with the right numbers; the reduction modulo $32003$ plays no logical role, and a hit that fails the rational recheck stays a realization over $\F_{32003}$ unless the rank certificate of Section~\ref{sec:rank} decides it (Section~\ref{sec:lift-results}).
+
+\begin{algorithm}[t]
+\caption{Recheck of one hit. Input: a saved hit (generator matrix over $\F_{32003}$, ray, multiple, generator type). Output: three results on the pure table, and the rational module with its table.}
+\label{alg:recheck}
+\begin{algorithmic}[1]
+\State resolve the saved presentation in a fresh Macaulay2 process; compare with $m\beta_d$
+\State resolve the same presentation in Singular (\texttt{mres}); compare
+\State lift the generator matrix to symmetric integer representatives modulo $32003$
+\If{generic presentation}\State $P\gets$ cokernel of the lifted $mB_0\times mB_1$ matrix over $\Q[x,y,z]$
+\Else\State $P\gets$ image of the lifted matrix in $(\Q[x,y,z]/(x^{r+1},y^{r+1},z^{r+1}))^{mB_3}$ with $r=d_3-3$
+\EndIf
+\State resolve $P$ over $\Q$ in Macaulay2 with a time limit of thirty minutes; classify: pure, not pure, time limit
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{The rank certificate of a lift}
+\label{sec:rank}
+
+A resolution over $\Q$ is expensive, and its failure to return the pure table says little, as Section~\ref{sec:lift-results} shows. Proposition~\ref{prop:lift} replaces it by a cheaper exact test on the same lifted module: for each degree $d$ build the integer matrix $A_d$ that defines the graded piece of the lifted module, from the saved generator matrix lifted to symmetric integer representatives, and compare its rank over $\Q$ with its rank over $\F_{32003}$. For a generic presentation (the cokernel form) $A_d$ has one row for each basis element of the target in degree $d$ and one column for each product of a monomial with a relation; for a level module (the image form) it is the matrix of the generator matrix between the corresponding pieces of the truncated ring $T$. Algorithm~\ref{alg:rank} states the procedure. Two instruments compute the ranks independently: python-flint on integer matrices (\texttt{fmpz\_mat.rank} over $\Q$, \texttt{nmod\_mat.rank} modulo $32003$), and PARI/GP (\texttt{matrank} on the same integer matrix and on its reduction) on every matrix of at most $2{,}000$ rows and on a sample of larger ones.
+
+\begin{algorithm}[t]
+\caption{Rank certificate for one hit. Input: a saved hit over $\F_{32003}$ with its pure table $m\beta_d$ and its generator matrix. Output: pass, fail or undecided, with the list of degrees where the ranks differ.}
+\label{alg:rank}
+\begin{algorithmic}[1]
+\State lift the generator matrix to symmetric integer representatives
+\For{each degree $d$ from $0$ to the top degree of the module over $\F_{32003}$}
+  \State build the integer matrix $A_d$ of the cokernel form or of the image form
+  \State $r_p\gets\operatorname{rank}_{\F_{32003}}(A_d)$; check that $\operatorname{rows}(A_d)-r_p$ equals the pure Hilbert function in degree $d$
+  \State $r_\Q\gets\operatorname{rank}_\Q(A_d)$ with a limit of twenty minutes; if the limit is reached, mark $d$ undecided
+\EndFor
+\If{$r_\Q=r_p$ in every degree}\State \Return pass: by Proposition~\ref{prop:lift} the lifted module has the pure table over $\Q$
+\ElsIf{$r_\Q>r_p$ in some degree}\State \Return fail (the lift is not flat at $32003$; nothing is said about the ray)
+\Else\State \Return undecided\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Costs}
+\label{sec:costs}
+
+Table~\ref{tab:procedures} gives the measured cost of each procedure, read from the records of the computations. The rational computations over $U$ are cheap (the module $M_8$ of length $512$ over $\Q$ takes \nfamilySecondsMax{} seconds), the Singular resolutions of the calibration modules take at most \ncalibMaxTwo{} seconds against \ncalibMaxOne{} seconds for the exact library, and the search is dominated by the long resolutions of a few cells: \ncellsTotal{} cells took \ncellSecondsTotal{} seconds of summed process time with a median of \ncellSecondsMedian{} seconds and a maximum of \ncellSecondsMax{} seconds, in \nsearchWallMin{} minutes of wall time on parallel processes. The census itself was not timed separately; the cost of the programme is that of the search and of the rational rechecks, the latter bounded by a thirty minute limit per hit, and the cost of a hit is dominated by the resolution of the module over $\Q$ and not by the generation of the random matrix.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_procedures.tex}
+\caption{Procedures of the methods section, the arithmetic domain of each, and the measured cost read from the archived records of the computations; the census was not timed separately and appears without a figure.}
+\label{tab:procedures}
+\end{table}
+
+\section{Theory}
+\label{sec:theory}
+
+\subsection{The modules \texorpdfstring{$U/U(x^e,y^e)$}{U/U(xe,ye)}: statement}
+\label{sec:thmA}
+
+For $e\ge1$ put $M_e=U/U(x^e,y^e)$, the quotient by the left ideal generated by $x^e$ and $y^e$, and
+\begin{equation}\label{eq:he}
+h_e(t)=\frac{1-2t^e+2t^{3e}-t^{4e}}{(1-t)^2(1-t^2)}=(1+t+\dots+t^{e-1})^2\,(1+t^2+\dots+t^{2e-2}).
+\end{equation}
+The pure ray $(0,e,3e,4e)$ has the primitive point $(1,2,2,1)$ by~\eqref{eq:HK}. Over $S$ this point is excluded for every $e$ and every field, since a cyclic module $S/I$ with $I$ generated by two forms has Krull dimension at least $1$. The case $e=1$ is the trivial module, and the case $e=2$ is checked by hand in the computation \EXP{002}: in degrees $2,\dots,5$ the left ideal $U(x^2,y^2)$ has dimensions $\noneIdealDims$, which are the ranks of explicit elements written in the PBW basis, so $M_2$ has the Hilbert function $(1,2,2,2,1)$ when $2$ and $3$ are invertible.
+
+\begin{theorem}[Theorem A]\label{thm:A}
+Let $k$ be a field and $e\ge1$. The module $M_e$ has the pure resolution
+\[
+0\leftarrow U\leftarrow U(-e)^2\leftarrow U(-3e)^2\leftarrow U(-4e)\leftarrow0
+\]
+(Betti table $(1,2,2,1)$ on $(0,e,3e,4e)$) if and only if $\ch k=0$ or $\ch k\ge 2e$. In that case $M_e$ has Hilbert series $h_e(t)$, length $e^3$, and a one-dimensional socle, sitting in degree $4e-4$ and weight $0$. For every prime $p\le2e-1$ and $\ch k=p$, the module $M_e$ is nonzero in degree $4e-2$ and does not have this resolution.
+\end{theorem}
+
+The proof occupies Sections~\ref{sec:proofA1} and~\ref{sec:proofA2}; it follows the seven steps of normal ordering, the cokernel over $k[z]$, the binomial blocks, their ranks through the dual Jacobi--Trudi identity and the hook-content formula, the count, the socle through the kernel of $y$ and the symmetry $\sigma$, the resolution, and the converse. Each step states the characteristic it needs, and the machine checks that confirm it are named where they apply [MV]. The argument is complete for every $e$; the finite computations are confirmations and not a part of the proof.
+
+\subsection{Proof of Theorem A, steps 1 to 4: the Hilbert series}
+\label{sec:proofA1}
+
+\begin{lemma}[Normal ordering]\label{lem:normal}
+For all $a,e\ge0$, in $U$ over every ring,
+\begin{equation}\label{eq:normal}
+x^ay^e=\sum_{j\ge0}j!\binom aj\binom ej\,z^j\,y^{e-j}x^{a-j}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+From $xy=yx+z$ and the centrality of $z$ one gets $xy^e=y^ex+e\,zy^{e-1}$ by induction on $e$: $xy^{e+1}=(y^ex+ezy^{e-1})y=y^e(yx+z)+ezy^e$. This is the case $a=1$. Assume the formula for $a$ and multiply on the left by $x$, using $x\,y^{e-j}=y^{e-j}x+(e-j)\,zy^{e-j-1}$. The coefficient of $z^jy^{e-j}x^{a+1-j}$ in the result is $j!\binom aj\binom ej+(j-1)!\binom a{j-1}\binom e{j-1}(e-j+1)$. Since $(e-j+1)\binom e{j-1}=j\binom ej$, this equals $j!\binom ej\big(\binom aj+\binom a{j-1}\big)=j!\binom{a+1}j\binom ej$. The coefficients are integers, so the identity holds over $\Z$ and in every characteristic; this is what makes the analysis in characteristic $p$ possible.
+\end{proof}
+
+\paragraph{Step 1: $M_e$ is a cokernel over $k[z]$.} Right multiplication by $x^e$ maps the PBW basis into itself, because $x$ is the rightmost letter: $(y^bx^az^c)x^e=y^bx^{a+e}z^c$. So $Ux^e$ is spanned by the monomials with $a\ge e$, and $P=U/Ux^e$ is a free $k[z]$-module, with $z$ acting by left multiplication, on the basis $y^bx^a$ with $0\le a<e$ and $b\ge0$. Let $N$ be the image of $Uy^e$ in $P$. Then $M_e=P/N$, and $N$ is the $k[z]$-span of the classes of $u_{a,b}=y^bx^ay^e$ for $a,b\ge0$. By Lemma~\ref{lem:normal} and the vanishing of the terms with $a-j\ge e$ in $P$, $N$ is the image of the $k[z]$-linear map
+\begin{equation}\label{eq:Phi}
+\Phi(u_{a,b})=\sum_{\substack{0\le j\le\min(a,e)\\ a-j<e}}j!\binom aj\binom ej\,z^j\,y^{b+e-j}x^{a-j}.
+\end{equation}
+Every term has $a-j<e$ and $j\le e$, so $\Phi(u_{a,b})=0$ for $a\ge2e$, since then $a-j\ge a-e\ge e$. The weight is preserved because $z$ has weight $0$: a source $u_{a,b}$ of weight $b-a+e$ goes to targets $y^{b'}x^{a'}$ with $b'-a'=b-a+e$. Thus $P$, $N$ and $M_e$ split into blocks indexed by the weight $w$.
+
+\paragraph{Step 2: the blocks are binomial Toeplitz matrices.} In the block of weight $w$ the rows are indexed by $a'\in[\max(0,-w),e-1]$ (with $b'=a'+w$) and the columns by $a\ge\max(0,e-w)$ (with $b=a+w-e$). Putting $j=a-a'$ in~\eqref{eq:Phi}, the entry at $(a',a)$ is $\frac{a!}{a'!}\binom e{a-a'}z^{a-a'}$. The class of $z^{n-a'}y^{a'+w}x^{a'}$ has total degree $2n+w$, and the column $a$, of degree $2a+w$, reaches it after multiplication by $z^{n-a}$. Hence, in every characteristic, the piece of $M_e$ of weight $w$ and degree $2n+w$ has dimension
+\begin{equation}\label{eq:dimblock}
+\dim(M_e)_{(w,\,2n+w)}=|R_n|-\operatorname{rank}\Big[\tfrac{a!}{a'!}\tbinom e{a-a'}\Big]_{a'\in R_n,\ a\in C_n},
+\end{equation}
+where $R_n=[\max(0,-w),\min(n,e-1)]$ and $C_n=[\max(0,e-w),n]$.
+The entries vanish unless $0\le a-a'\le e$, and $a'\le e-1$, so the columns with $a\ge2e$ are zero. Scaling the row $a'$ by $a'!$ ($a'\le e-1$) and the nonzero columns by $1/a!$ ($a\le2e-1$) turns the numeric matrix into
+\begin{equation}\label{eq:T}
+T[R_n,C_n]=\Big[\tbinom e{a-a'}\Big].
+\end{equation}
+The scalings are units exactly when $(2e-1)!$ is a unit of $k$, that is when $\ch k=0$ or $\ch k\ge2e$. Under that hypothesis the Hilbert series is $\Hilb(M_e)(t)=\sum_{w,n}\big(|R_n|-\operatorname{rank}T[R_n,C_n]\big)t^{2n+w}$.
+
+\paragraph{Step 3: the ranks.} The matrix $T$ has a nonzero entry exactly when $0\le a-a'\le e$, so only contiguous blocks occur.
+\begin{itemize}
+\item $0\le w\le e$ and $n\le e-1$: rows $0,\dots,n$, columns $e-w,\dots,n$. The square block on rows and columns $e-w,\dots,n$ is upper unitriangular (the diagonal entries are $\binom e0=1$ and the entries below the diagonal vanish), so the rank is the number of columns, $n-e+w+1$ (zero when $n<e-w$).
+\item $0\le w\le e$ and $n\ge e$: the rows are $0,\dots,e-1$ and the usable columns are $e-w,\dots,\min(n,2e-1)$, in number $\mathcal U=\min(n,2e-1)-e+w+1$. The $k\times k$ block on rows $0,\dots,k-1$ and columns $e-w,\dots,e-w+k-1$, with $k=\min(e,\mathcal U)$, has determinant $\det[e_{c-s+s'}](1^e)$ with $c=e-w$, where $e_m(1^e)=\binom em$ is the elementary symmetric polynomial at $e$ ones. By the dual Jacobi--Trudi identity $s_\lambda=\det[e_{\lambda'_i-i+j}]$ with $\lambda'=(c^k)$, this determinant is the Schur polynomial of the rectangle $\lambda=(k^c)$ with $c=e-w$ rows and $k$ columns evaluated at $e$ ones, that is the number of semistandard tableaux of that shape with entries at most $e$; it is positive because $c\le e$. So the rank is $\min(e,\mathcal U)$.
+\item $w=-q$ with $1\le q\le e-1$: the rows start at $q$ and the columns at $e+q$. For $n<e+q$ there is no column. For $n\ge e+q$ the usable columns are $e+q,\dots,\min(n,2e-1)$ and the block on rows $q,\dots,q+k-1$ and columns $e+q,\dots,e+q+k-1$ is lower unitriangular ($\binom ee=1$ on the diagonal, zero above), so the rank is $\min(e-q,\mathcal U)$ with $\mathcal U=\min(n,2e-1)-e-q+1$.
+\item $w\ge e$: the columns start at $0$ and the block on rows and columns $0,\dots,\min(n,e-1)$ is upper unitriangular, so the block is surjective and contributes nothing. $w\le-e$: there are no rows.
+\end{itemize}
+The ranks cannot be larger (the number of rows and of nonzero columns bounds them), so these are the ranks in characteristic $0$. In characteristic $p\ge2e$ the minors above are nonzero as well: the unitriangular ones trivially, and the tableau counts by the hook-content formula $s_{(k^c)}(1^e)=\prod_{\text{cells}}(e+\text{content})/\text{hook}$, in which every factor $e+\text{content}$ lies in $[e-c+1,e+k-1]\subseteq[1,2e-1]$ and every hook length is at most $c+k-1\le2e-1$; so the count is prime to $p$. Steps 2 to 4 therefore hold verbatim when $\ch k=0$ or $\ch k\ge2e$.
+
+\paragraph{Step 4: the count.} Write $q=|w|$ and $n'=n-\max(0,-w)$. By step 3 the dimension of the block of weight $w$ in $z$-degree $n$ is
+\begin{equation}\label{eq:Dq}
+D_q(n')=\begin{cases}\min(n'+1,\,e-q)&0\le n'\le e-1,\\ \max(0,\,2e-1-q-n')&n'\ge e,\end{cases}
+\end{equation}
+the same for $w$ and $-w$, and zero for $|w|\ge e$. Its generating function in $s$ is the trapezoid $(1+s+\dots+s^{e-q-1})(1+s+\dots+s^{e-1})$, and the class sits in total degree $2n+w=2n'+q$. Hence
+\begin{equation}\label{eq:HSMe}
+\Hilb(M_e)(t)=(1+t^2+\dots+t^{2e-2})\sum_{|w|<e}t^{|w|}\big(1+t^2+\dots+t^{2(e-|w|-1)}\big)=h_e(t),
+\end{equation}
+because the sum over $w$ equals $(1+t+\dots+t^{e-1})^2$: grouping the monomials $t^{a+b}$ with $a,b<e$ by $b-a$ gives, for $|b-a|=q$, the terms $t^q,t^{q+2},\dots,t^{2e-2-q}$, each once per sign. Moreover $(1-t^e)^2(1-t^{2e})=1-2t^e+2t^{3e}-t^{4e}$, which is the first form in~\eqref{eq:he}; in particular $M_e$ has finite length $h_e(1)=e^3$. Figure~\ref{fig:weight} shows the blocks for $e=4$, and Figure~\ref{fig:hilbert} the Hilbert functions and the decomposition by $|w|$.
+
+[MV] The exact computation of Section~\ref{sec:exactU} agrees with~\eqref{eq:dimblock} and~\eqref{eq:Dq}: for each $e\le\nfamilyMaxE$ the rank of every weight block (\nblocksChecked{} blocks in total) equals $D_q(n')$ over $\Q$, the resulting Hilbert function is $h_e$, and the Hilbert functions of the modules computed by the library with exact fractions in the experiments equal $h_e$ for $e=2,\dots,\nfamilyMaxE$ (Table~\ref{tab:blocks}, Table~\ref{tab:family}).
+
+\begin{figure}[t]
+\centering
+\input{fig_weight.tex}
+\caption{The dimension of each piece of $M_4=U/U(x^4,y^4)$ by weight $w$ (rows) and degree $d$ (columns), as computed exactly over $\Q$; the entries are the trapezoids $D_q(n')$ of equation~\eqref{eq:Dq}, with $q=|w|$, and they add up to the length $64=4^3$. Only pieces with $d\equiv w\pmod 2$ can be nonzero, and the shading follows the value.}
+\label{fig:weight}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\input{fig_hilbert.tex}
+\caption{Left: the Hilbert functions of $M_e$ for $e=2,\dots,6$ computed over $\Q$, which equal the coefficients of $h_e(t)$. Right: the Hilbert function of $M_4$ decomposed by $|w|$, each bar being the sum of the blocks of weight $w$ and $-w$ in that degree; the bars stack to $h_4=(1,2,4,6,7,8,8,8,7,6,4,2,1)$.}
+\label{fig:hilbert}
+\end{figure}
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_blocks.tex}
+\caption{Exact check of the proof of Theorem A for $e=2,\dots,8$: the number of weight blocks $(w,n)$ whose dimension was computed from the unscaled matrix of equation~\eqref{eq:dimblock} over $\Q$ and equal to $D_q$; the primes up to $31$ at which all blocks keep the closed form (exactly those with $p\ge2e$); and the primes at which the piece of weight $0$ in degree $4e-2$ is nonzero (exactly those with $p<2e$).}
+\label{tab:blocks}
+\end{table}
+
+\subsection{Proof of Theorem A, steps 5 to 7: socle, resolution and converse}
+\label{sec:proofA2}
+
+\paragraph{Step 5: the socle is one-dimensional.} Assume $\ch k=0$ or $\ch k\ge2e$. Left multiplication by $y$ on $P$ is the shift $y^bx^az^c\mapsto y^{b+1}x^az^c$: it is injective and its image $yP$ is spanned by the basis elements with $b\ge1$.
+
+\emph{The kernel of $y$ on $M_e$.} Let $m\in P$ with $ym\in N$, and write $ym=\sum c_{a,b}(z)\,[y^bx^ay^e]$. The terms with $b\ge1$ are $y$ times an element of $N$. For $b=0$: $x^ay^e$ vanishes in $P$ when $a\ge2e$; for $a<e$ it equals $yg_a$ with $g_a=\sum_{j\le a}j!\binom aj\binom ej z^jy^{e-j-1}x^{a-j}$, because every term of $x^ay^e$ has $y$-exponent $e-j\ge1$; for $e\le a\le2e-1$ its only term with $y$-exponent $0$ is the one with $j=e$, namely $e!\binom ae z^ex^{a-e}=\frac{a!}{(a-e)!}z^ex^{a-e}$, and these terms involve distinct basis elements $x^{a-e}$. Since $ym$ and all the other terms lie in $yP$, comparing the components of $y$-exponent $0$ gives $c_{a,0}(z)\frac{a!}{(a-e)!}z^e=0$ for $e\le a\le2e-1$; the integers $a!/(a-e)!$ are products of factors at most $2e-1$, hence units under the hypothesis, so these coefficients vanish. Injectivity of $y$ on $P$ then gives $m=\nu+\sum_{a<e}c_a(z)g_a$ with $\nu\in N$. Conversely $yg_a=x^ay^e$ lies in $N$. So $\ker(y|M_e)$ is the $k[z]$-span of the classes of $g_0,\dots,g_{e-1}$, and $g_a$ has weight $e-1-a\ge0$. [MV] For $e=2,\dots,\nfamilyMaxE$ over $\Q$ the kernel of $y$ equals the span of the classes $z^cg_a$ in every degree (Table~\ref{tab:family}).
+
+\emph{The symmetry.} The map $\sigma$ of Section~\ref{sec:rings} satisfies $\sigma(x^e)=y^e$ and $\sigma(y^e)=(-1)^ex^e$, so it preserves the left ideal $U(x^e,y^e)$ and induces a $\sigma$-semilinear bijection of $M_e$, $\sigma(um)=\sigma(u)\sigma(m)$. The module $M_e$ is graded by the weight because $x^e$ and $y^e$ are weight-homogeneous; the bijection sends weight $w$ to $-w$ and maps $\ker x$ onto $\ker y$ and $\ker y$ onto $\ker x$. So $\ker x$ lies in the weights $\le0$.
+
+\emph{The socle.} Since $x$ and $y$ are weight-homogeneous, every weight component of a socle element lies in the socle; by the two kernels, the socle lies in weight $0$, inside the weight $0$ part of $\ker y$, which is the cyclic $k[z]$-module generated by the class of $g_{e-1}$ (the summands $k[z][g_a]$ sit in distinct weights). A socle element is also killed by $z=xy-yx$, and the elements of a homogeneous cyclic torsion $k[z]$-module killed by $z$ form a space of dimension at most $1$. So the socle has dimension at most $1$; it is not zero, because $M_e$ is a nonzero module of finite length; and it contains the top degree $4e-4$ of $h_e$, which is one-dimensional. Hence the socle of $M_e$ is $(M_e)_{4e-4}$. [MV] The socle is of weight $0$, degree $4e-4$ and dimension $1$ for $e=2,\dots,\nfamilyMaxE$.
+
+\paragraph{Step 6: the resolution.} By Lemma~\ref{lem:trivial}, $\Tor_3^U(k_U,M_e)=\operatorname{soc}(M_e)(-4)=k(-4e)$ by step 5. $\Tor_0=k$ since $M_e$ is cyclic, and $\Tor_1=k(-e)^2$ since $x^e$ and $y^e$ are minimal generators of the left ideal, which has nothing below degree $e$. By Lemma~\ref{lem:parity} the alternating sum of the Betti series is $\Hilb(M_e)(t)(1-t)^2(1-t^2)=1-2t^e+2t^{3e}-t^{4e}$ by step 4. As $\Tor_0$, $\Tor_1$ and $\Tor_3$ are known exactly and the global dimension is $3$, the Euler identity $1-2t^e+B_2(t)-t^{4e}=1-2t^e+2t^{3e}-t^{4e}$ gives $B_2(t)=2t^{3e}$, where $B_2$ is the Betti series of $\Tor_2$: there is no room for cancellation, and $\Tor_2=k(-3e)^2$. The resolution is pure of type $(0,e,3e,4e)$.
+
+\paragraph{Step 7: the converse.} Let $p\le2e-1$ be a prime (so $e\ge2$) and $\ch k=p$. The integers $e,\dots,2e-1$ contain a multiple $m$ of $p$: if $p\le e$ any $e$ consecutive integers do, and if $e<p\le2e-1$ take $m=p$. Take the block of weight $0$ with $n=2e-1$: the rows are $0,\dots,e-1$ and the columns $e,\dots,2e-1$, an $e\times e$ matrix. The unscaled entries of the column $m$ are $\frac{m!}{a'!}\binom e{m-a'}$ with $a'\le e-1<m$, and $m!/a'!=(a'+1)(a'+2)\cdots m$ contains the factor $m$, so the whole column is $0$ in $k$. The rank is at most $e-1$, and by~\eqref{eq:dimblock}, which is characteristic-free, the piece of weight $0$ and degree $2(2e-1)=4e-2$ is not zero. A module with the resolution of the statement has Hilbert series $h_e$, of degree $4e-4$, so $M_e$ does not have that resolution in characteristic $p$. (The Betti numbers are forced: for a finite length module with a pure resolution of type $(0,e,3e,4e)$ whose table begins $1,2$, the numerator $1-2t^e+b_2t^{3e}-b_3t^{4e}$ vanishes to order at least $2$ at $t=1$, which gives $b_2-b_3=1$ and $3b_2-4b_3=2$, hence $b_2=2$ and $b_3=1$.) Together with steps 2 to 6, $M_e$ has the pure resolution with table $(1,2,2,1)$ if and only if $\ch k=0$ or $\ch k\ge2e$. This proves Theorem~\ref{thm:A}. \qed
+
+[MV] For $e=2,\dots,5$ the primes $p\le23$ at which $M_e$ is not pure over $\F_p$ are exactly $\{2,3\}$, $\{2,3,5\}$, $\{2,3,5,7\}$ and $\{2,3,5,7\}$, the primes below $2e$ (Figure~\ref{fig:primes}); this had been predicted before the computation from the factorials and the tableau counts, which give the same set. For $e=6,7,8$ the exact block computation over $\F_p$ for all primes up to $31$ gives the primes below $2e$ (Table~\ref{tab:blocks}).
+
+\begin{figure}[t]
+\centering
+\input{fig_primes.tex}
+\caption{Characteristics at which $M_e$ has the pure table $(1,2,2,1)$: for $e=2,\dots,5$ and every prime $p\le23$ the experiment gives either the pure table (filled circles) or a module that is not pure (crosses); the dashed line is $p=2e$, which separates the two sets exactly. The open circles are the primes for $e=6,7,8$ whose status is decided by Theorem~A and by the block computation, without a run of the module.}
+\label{fig:primes}
+\end{figure}
+
+\begin{remark}[{Structure over $k[z]$}]
+$M_e$ is not free over $k[z]/(z^e)$. For $e=2$, $M_2\cong k[z]/(z^3)\oplus(k[z]/(z^2))^2(-1)\oplus k[z]/(z)(-2)$, generated by the classes of $1$, $x$, $y$ and $xy-z/2$. For $e\le5$ the experiment finds one summand $k[z]/(z^{2e-1-a-b})$ generated in degree $a+b$ for each pair $a,b<e$, which has the Hilbert series $h_e$. The statement for every $e$ is not derived here and nothing above uses it [MV for $e\le5$, [U] beyond].
+\end{remark}
+
+\begin{remark}[{The pair $(x^e,y^e)$ is special for $e\ge4$}]
+The series $(1-2t^e)/((1-t)^2(1-t^2))$ of two general forms of degree $e$ has coefficient $-1$ in degree $4e-4$ for $e=4$ (the value is $49-50$, the dimension of $U_{12}$ minus twice that of $U_8$), while $M_e$ is one-dimensional there. So for $e\ge4$ a general pair of forms gives a smaller quotient than the pair $(x^e,y^e)$ and the family is realized by a special left ideal; the experiment confirms that a random pair is not pure for $e=4,5,10$ (Section~\ref{sec:ablation}) [MV].
+\end{remark}
+
+\begin{remark}[{Characteristic $3$ and $e=2$}]
+The pair $(x^2,y^2)$ gives the point exactly for $\ch k=0$ or $\ch k\ge5$. In characteristic $3$ other pairs realize it: random pairs of quadrics over $\F_3$, $\F_9$, $\F_{27}$ and $\F_{81}$ have the table $(1,2,2,1)$ on $(0,2,6,8)$ in \ngfThreeHits, \ngfNineHits, \ngfTwentySevenHits{} and \ngfEightyOneHits{} of $20$ cases (Table~\ref{tab:pairs}) [MV]; the table is stable under extension of the field, so a pair over $\F_q$ gives one over every field of characteristic $3$ containing $\F_q$.
+\end{remark}
+
+\subsection{Characteristic \texorpdfstring{$2$}{2} for pairs of quadrics: the elementary argument}
+\label{sec:thmB}
+
+\begin{theorem}[Theorem B]\label{thm:B}
+Let $k$ be a field of characteristic $2$. No finite length graded module over $U$ has the Betti table $(1,2,2,1)$ on $(0,2,6,8)$. Over $S$, over every field and for every $e$, no finite length module has the table $(1,2,2,1)$ on $(0,e,3e,4e)$.
+\end{theorem}
+\begin{proof}
+\emph{Step 1: the centre.} In characteristic $2$, $x^2y-yx^2=2xz=0$ and $y^2x-xy^2=-2yz=0$, so $X=x^2$, $Y=y^2$ and $Z=z$ are central. The monomials $y^{2j}x^{2i}z^c$ are distinct PBW basis elements, so $C=k[X,Y,Z]$ is a polynomial ring in three generators of degree $2$, and $y^{2j+\beta}x^{2i+\alpha}z^c=(y^{2j}x^{2i}z^c)\,y^\beta x^\alpha$ shows that $U$ is free over $C$ on $1,x,y,yx$ (equivalently $1,x,y,xy=yx+z$). Hence $U_2=C_2\oplus k\,xy$, of dimension $4=3+1$.
+
+\emph{Step 2: two quadrics always contain a central one.} A two-dimensional subspace $V\subset U_2$ meets $C_2$ in dimension at least $1$: either $V\subset C_2$ or $V=\operatorname{span}(c,f)$ with $c\in C_2$ nonzero and $f$ not central. In both cases the left ideal generated by $V$ is $Uc+Uf$ with $c,f\in V$.
+
+\emph{Step 3: $V\subset C_2$.} The ideal is two-sided and $U/U(f,g)=U\otimes_CC/(f,g)$ is free of rank $4$ over $C/(f,g)$, which has Krull dimension at least $3-2=1$ by Krull's height theorem in the polynomial ring $C$; so the quotient has infinite length.
+
+\emph{Step 4: $V=\operatorname{span}(c,f)$.} The ring $R=C/(c)$ is a polynomial ring in two generators, because $c$ is a nonzero linear form in $X,Y,Z$. $U/Uc=U\otimes_CR$ is free of rank $4$ over $R$. Right multiplication $\rho_f$ by $f$ is well defined on $U/Uc$ (since $ucf=ufc\in Uc$ as $c$ is central), it is $R$-linear for the action of $R$ by left multiplication (associativity), its image is $(Uf+Uc)/Uc$, and its cokernel is $U/(Uf+Uc)$. It is homogeneous of degree $2$, so $\det\rho_f$ is $0$ or a homogeneous element of degree $8$, a non-unit. If $\det\rho_f=0$, the map is not surjective after tensoring with the fraction field of $R$, and the cokernel has positive rank over $R$: infinite length. If $\det\rho_f\ne0$: for every prime $\mathfrak P$ of $R$ containing $\det\rho_f$, the localized map $\rho_f\otimes R_{\mathfrak P}$ is an endomorphism of $R_{\mathfrak P}^4$ with a non-unit determinant, hence not surjective, so $\mathfrak P$ lies in the support; the support of the cokernel is exactly $V(\det\rho_f)$, nonempty of dimension $1$, and the cokernel has Krull dimension $1$: infinite length. (The support equals $V(\det\rho_f)$ and not merely lies inside it, which is needed to rule out the zero module.)
+
+\emph{Step 5: the table.} A module with the table $(1,2,2,1)$ on $(0,2,6,8)$ has Hilbert series $(1-2t^2+2t^6-t^8)/((1-t)^2(1-t^2))=(1+t)^2(1+t^2)$ by Lemma~\ref{lem:parity}, a polynomial, so it has finite length. Since $\beta_0=1$ it is cyclic, $U/I$, and since $\beta_1=2$ in degree $2$, $I=Uf+Ug$ with $f,g$ linearly independent quadrics. By steps 2 to 4, $U/(Uf+Ug)$ has infinite length, a contradiction. Nothing uses the size of $k$: the statement holds over every field of characteristic $2$, finite or infinite. A non-cyclic module is excluded by $\beta_0=1$ (graded Nakayama); right modules give nothing new because $U$ is isomorphic to its opposite through $\tau$; the grading is that of Erman and Sam. The statement over $S$ is Krull's argument: $S/I$ with two generators of $I$ has Krull dimension at least $1$ for any $e$ and any field. \qedhere
+\end{proof}
+
+[MV] The case analysis of the proof is checked on every subspace: over $\F_2$ all $\nsubGFtwo$ two-dimensional subspaces of $U_2$ and over $\F_4$ all $\nsubGFfour$ (the Gaussian binomials $\binom42_2=35$ and $\binom42_4=357$, asserted by the code) give a quotient that is nonzero in every degree from $2$ to $20$; every subspace contains a nonzero central quadric (the central part has dimension $1$ for \ncentralOneTwo{} and \ncentralOneFour{} of them and $2$ for \ncentralTwoTwo{} and \ncentralTwoFour{}), and the determinant of $\rho_f$ is zero on \ndetZeroTwo{} and \ndetZeroFour{} of them and a form of degree $8$ on the others (Table~\ref{tab:char2}). Over $\F_{16}$ and $\F_{256}$ the same holds on \nsubGFsixteen{} random subspaces each. The machine shows nonzero pieces only up to degree $20$; infinite length rests on the proof.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_char2.tex}
+\caption{Two-dimensional subspaces of $U_2=\langle x^2,xy,y^2,z\rangle$ in characteristic $2$: all subspaces over $\F_2$ and $\F_4$ and $200$ random subspaces over $\F_{16}$ and $\F_{256}$; the dimension $c$ of the central part (0, 1 or 2), the number of subspaces with $\det\rho_f=0$, the degree of $\det\rho_f$ otherwise, and how many Hilbert functions are eventually constant equal to $2$ against growing; every quotient is nonzero in each degree from $2$ to $20$.}
+\label{tab:char2}
+\end{table}
+
+\subsection{Characteristic \texorpdfstring{$2$}{2} in general: presentations with at most one more relation than generators}
+\label{sec:thmC}
+
+\begin{theorem}[Theorem C]\label{thm:C}
+Let $k$ be a field of characteristic $2$, $e\ge2$, $a\ge1$ and $0\le b\le a+1$, and let $F_1,\dots,F_b\in(U_e)^a$ be arbitrary (possibly zero or dependent). Then $M=U^a/(UF_1+\dots+UF_b)$ has infinite length; more precisely, the part of $M$ of the parity of $e$ has Krull dimension at least $1$ over the centre. The same holds for right modules, through $\tau$.
+\end{theorem}
+
+\begin{corollary}\label{cor:C1}
+For every $e\ge2$ and every two forms $f,g$ of degree $e$, $U/(Uf+Ug)$ has infinite length. So over a field of characteristic $2$ the primitive point $(1,2,2,1)$ of the ray $(0,e,3e,4e)$ is the Betti table of no finite length module over $U$, for every $e\ge2$; it is the Betti table of no finite length module over $S$ in any characteristic; and in characteristic $0$ it is realized over $U$ by $M_e$ (Theorem~\ref{thm:A}). Question~6.1 already has a negative answer in general, by a parity obstruction on the Hilbert series~\cite[Theorem~3.7]{JLSWXY}; the points here pass that test, are realized in characteristic $0$, and are excluded in characteristic $2$ by the structure of $U$.
+\end{corollary}
+
+\begin{corollary}\label{cor:C2}
+In characteristic $2$ a primitive point with $\beta_1=\beta_0+1$ on a ray with $d_1\ge2$ is realized over neither ring (over $S$ a finite length module has $\beta_1\ge\beta_0+2$, Lemma~\ref{lem:krull}). Of the degree sequences with $d_3\le12$, \nbetaOneRays{} have a primitive point with $\beta_1=\beta_0+1$, all passing the parity test: \nbetaOneRaysDone{} with $d_1=1$ and the \nthmRays{} rays $(0,2,6,8)$, $(0,3,9,12)$ (table $(1,2,2,1)$) and $(0,2,10,12)$ (table $(2,3,3,2)$), which are exactly the three rays on which the searches never found a finite length module in characteristic $2$.
+\end{corollary}
+
+Both hypotheses are sharp. With $e=1$, $U/(Ux+Uy)=k$, and the points on the rays with $d_1=1$ are realized in characteristic $2$ (Section~\ref{sec:results}). With $b=a+2$, three general forms of degree $2$, or of degree $3$, give a finite length quotient in characteristic $2$ (Hilbert functions $(1,2,1)$ and $(1,2,4,3,3)$ over $\F_{16}$ in an independent run whose output is not archived in the repository [U]).
+
+\begin{lemma}\label{lem:krull}
+Over $S$, a finite length graded module with a minimal presentation $S^a\leftarrow S^b$ (with $a\ge1$) has $b\ge a+2$.
+\end{lemma}
+\begin{proof}
+The support of the module is $V(I_a)$, with $I_a$ the Fitting ideal generated by the $a\times a$ minors of the presentation matrix ($I_a=0$ if $b<a$). Finite length means $I_a$ is primary to the irrelevant ideal, of height $3$. A proper ideal generated by the maximal minors of an $a\times b$ matrix has height at most $b-a+1$ (the theorem of Eagon and Northcott, valid in any Noetherian ring), so $3\le b-a+1$. For $a=1$ this is Krull's height theorem.
+\end{proof}
+
+\paragraph{Step 1: the centre and the two parities.} Let $C=k[X,Y,Z]$ be as in Section~\ref{sec:thmB}; $U$ is free over $C$ on $1,x,y,yx$. Left multiplication on that basis, from $xy=yx+z$ and $\operatorname{char}k=2$, is
+\begin{equation}\label{eq:mult}
+\begin{array}{lll}
+x\cdot x=X,&x\cdot y=yx+Z,&x\cdot yx=Xy+Zx,\\
+y\cdot x=yx,&y\cdot y=Y,&y\cdot yx=Yx,\\
+yx\cdot x=Xy,&yx\cdot y=Yx+Zy,&yx\cdot yx=XY+Z\,yx.
+\end{array}
+\end{equation}
+Put $U^+=C\oplus C\,yx$ (the even part) and $U^-=Cx\oplus Cy$ (the odd part); $C$ lies in even degrees. Left multiplication by $yx$ preserves each part and left multiplication by $x$ or $y$ exchanges them. On $U^+$ in the basis $(1,yx)$, and on $U^-$ in the basis $(x,y)$, the left multiplication by $yx$ is the $C$-linear map with matrix (columns are the images of the basis vectors)
+\begin{equation}\label{eq:Tpm}
+T^+=\begin{pmatrix}0&XY\\1&Z\end{pmatrix},\qquad T^-=\begin{pmatrix}0&Y\\X&Z\end{pmatrix},
+\end{equation}
+and both satisfy $t^2=Zt+XY$. [MV] The table~\eqref{eq:mult} is recomputed from the rewriting rule in the exact PBW product of the manuscript's script.
+
+\paragraph{Step 2: one parity of $M$ is a module over a quadric.} Let $B=C[t]/(t^2+Zt+XY)$ and give $X,Y,Z,t$ degree $1$ (so the degree in $U$ is twice this degree plus the degree of the basis element). $B$ is a graded hypersurface domain of dimension $3$, free over $C$ on $1,t$. With $u=t$ and $v=t+Z$ the equation is $uv=XY$, so $\Sigma=\Proj B$ is $\mathbb P^1\times\mathbb P^1$ over $k$ itself (the Segre quadric; no extension of $k$ is needed), with $\mathcal O(1)=\mathcal O(1,1)$; it is smooth, since the partial derivatives of $t^2+Zt+XY$ are $Z,t,Y,X$, which vanish simultaneously only at the origin. Through the action of $yx$, $U^+$ and $U^-$ are graded $B$-modules. $U^+$ is free of rank $1$ on the vector $1$ ($T^+$ sends $(1,0)$ to $(0,1)$), with $\alpha+\beta yx$ corresponding to $\alpha+\beta t$. $U^-$ is not free. Right multiplication by $x$, $\phi(\alpha x+\beta y)=\alpha X+\beta yx=X\alpha+t\beta$, is a map of left $U^+$-modules, so it is $B$-linear; it is injective, with image the ideal $J=(X,t)=XC+tC$ (since $Xt\in tC$ and $t^2\in tC+XC$). Right multiplication by $y$ gives a second embedding $\alpha x+\beta y\mapsto(t+Z)\alpha+Y\beta$ with image $J'=(t+Z,Y)$. $J$ and $J'$ are the ideals of two disjoint lines of the same ruling of $\Sigma$ ($X=t=0$ and $Y=t+Z=0$ meet only at the origin), and $\phi$ raises the degree by $1$, so $U^-=J(1)$ and the sheaf $\mathcal N^-$ of $U^-$ on $\Sigma$ is the line bundle $\mathcal O(1)(-\ell)=\mathcal O(0,1)$ for that ruling, where $\ell$ is the line $X=t=0$ of class $(1,0)$ on the smooth surface; $\mathcal N^+=\mathcal O$. Figure~\ref{fig:char2} summarizes the structure.
+
+Let $e=2m$ (even) or $e=2m+1$ (odd); $m\ge1$ exactly when $e\ge2$. If $e$ is even every entry of $F_j$ lies in $U^+$ and has the form $\alpha+\beta yx$ with $\alpha$ of degree $m$ and $\beta$ of degree $m-1$ in $X,Y,Z$; if $e$ is odd every entry lies in $U^-$ and has the form $\alpha x+\beta y$ with $\alpha,\beta$ of degree $m$. Write $\mathcal P$ for the part of $U$ that contains the entries ($U^+$ or $U^-$) and $\mathcal P^a$ for the corresponding part of $U^a$. Since $C$ is central, $UF_j=CF_j+CxF_j+CyF_j+CyxF_j$; $F_j$ and $yxF_j$ lie in $\mathcal P^a$ and the other two in the other parity, so the part of $\sum_jUF_j$ in $\mathcal P^a$ is $\sum_jBF_j$, and $M$ is the direct sum, as a graded $C$-module, of $M_{\mathcal P}=\mathcal P^a/(BF_1+\dots+BF_b)$ and the quotient of the other parity. $M_{\mathcal P}$ is a graded $B$-module, and if $M$ has finite length so has $M_{\mathcal P}$.
+
+\begin{figure}[t]
+\centering
+\input{fig_char2.tex}
+\caption{The structure behind Theorem~C in characteristic $2$: the algebra $U$ splits as the even part $U^+$, free of rank one over $B=C[t]/(t^2+Zt+XY)$, and the odd part $U^-\cong J(1)$ with $J=(X,t)$; $\operatorname{Proj}B$ is the quadric surface $\mathbb P^1\times\mathbb P^1$, on which $U^+$ gives $\mathcal O$ and $U^-$ gives $\mathcal O(0,1)$; a presentation with $b\le a+1$ relations maps $\mathcal O^b$ to $L^{\oplus a}$ with $L$ ample, and the map is never onto.}
+\label{fig:char2}
+\end{figure}
+
+\paragraph{Step 3: $M_{\mathcal P}$ is not of finite length.} Write $L=\mathcal N(m)$, that is $L=\mathcal O(m,m)$ for $e$ even and $L=\mathcal O(m,m+1)$ for $e$ odd, and let $\psi:\mathcal O^b\to L^{\oplus a}$ be the map of sheaves on $\Sigma$ given by $F_1,\dots,F_b$. Its cokernel is the sheaf of $M_{\mathcal P}$ twisted by $m$, $\widetilde{M_{\mathcal P}}(m)$. A finitely generated graded $B$-module of finite length is killed by a power of the irrelevant ideal, so its sheaf is $0$. Hence if $M_{\mathcal P}$ has finite length, $\psi$ is surjective at every point of $\Sigma$. Both bidegrees of $L$ are positive because $m\ge1$, so $L$ is ample and $L\cdot L=2m^2$ ($e$ even) or $2m(m+1)$ ($e$ odd) is positive.
+\begin{itemize}
+\item $b<a$: a surjection from a bundle of smaller rank does not exist.
+\item $b=a$: $\psi$ is an isomorphism, since a surjection between locally free sheaves of equal rank is one, so its determinant gives $\mathcal O=L^{\otimes a}$, impossible for an ample $L$.
+\item $b=a+1$: the kernel $K$ of $\psi$ is a line bundle and $0\to K\to\mathcal O^{a+1}\to L^{\oplus a}\to0$ is exact, so $c(K)\,c(L^{\oplus a})=1$ with $c(L^{\oplus a})=1+aL+\binom a2L\cdot L$. In degree $1$, $c_1(K)=-aL$; in degree $2$, $\binom a2L\cdot L+(aL)\cdot(-aL)=-\tfrac{a(a+1)}2L\cdot L=0$, which is impossible since $L\cdot L>0$.
+\end{itemize}
+Hence $\psi$ is not surjective at some point of $\Sigma$, which can be taken over $k$; the sheaf of $M_{\mathcal P}$ is not zero, its Krull dimension is at least $1$, and $M$ is not of finite length. Nothing uses the size of $k$. For $a=1$ and $b=2$ this is the statement that two curves of the same ample class on $\mathbb P^1\times\mathbb P^1$ meet. For $e$ even there is a proof without sheaves: $M_{\mathcal P}=\operatorname{coker}(B(-m)^b\to B^a)$ has support $V(I_a)$ with $I_a$ the ideal of $a\times a$ minors ($0$ if $b<a$); $I_a$ is generated by forms of degree $am>0$, so it is proper and of height at most $\max(0,b-a+1)\le2<3=\operatorname{ht}B_+$ by Eagon and Northcott, so $I_a$ is not primary to the irrelevant ideal and $M_{\mathcal P}$ has infinite length. The argument stops where it must: with $e=1$ ($m=0$, odd) $L=\mathcal O(0,1)$ has $L\cdot L=0$ and two sections of it need not meet (the trivial module), and with $b=a+2$ the expected codimension of the degeneracy locus is $3$ and a general presentation has finite length.
+
+\paragraph{Step 4: the corollaries.} The polynomial $1-2t^e+2t^{3e}-t^{4e}$ vanishes to order $3$ at $t=1$ and vanishes at $t=-1$, so a module with Betti table $(1,2,2,1)$ on $(0,e,3e,4e)$ has a polynomial Hilbert series and finite length; it is cyclic with two relations of degree $e$, that is $U/(Uf+Ug)$, which Theorem~\ref{thm:C} excludes with $a=1$, $b=2$. In general a module with a pure table on $(0,d_1,d_2,d_3)$ with $\beta_0=a$ and $\beta_1=b$ is $U^a$ modulo $b$ elements of degree $d_1$. Over $S$ the Fitting ideal argument of Lemma~\ref{lem:krull} gives $\beta_1\ge\beta_0+2$, which proves Corollary~\ref{cor:C2}; the list of the eight rays is the enumeration of the degree sequences $0<d_1<d_2<d_3\le12$ with $\beta_1=\beta_0+1$, recomputed by the script [MV].
+
+\subsubsection*{The eventual Hilbert function of a general presentation}
+
+Let $\mathcal D$ be the locus where $\psi$ is not surjective. When $\mathcal D$ is finite and $\psi$ has corank at most $1$ at each of its points (automatic for $a=1$), the cokernel of $\psi$ is locally cyclic and its length is the degree of $\mathcal D$ with its determinantal structure: $L\cdot L$ for $a=1$, and by the Thom--Porteous formula for the corank-one locus of $\mathcal O^{a+1}\to L^{\oplus a}$ \cite{Fulton}, $c_1^2-c_2=\tfrac{a(a+1)}2L\cdot L$, the same number that obstructs surjectivity in step 3. Reducedness is not needed. So $\dim(M_{\mathcal P})_n=\frac{a(a+1)}2L\cdot L$ for large $n$ (Serre). The other parity has the same eventual dimension. The odd elements $x$, $y$ and $x+y$ have the central squares $X$, $Y$ and $X+Y+Z$, with no common zero on $\Proj C$. Each odd element $w$ satisfies $wt=(t+Z)w$ (by~\eqref{eq:mult}: $x\cdot yx=(yx+Z)x$ and $y\cdot yx=Yx=(yx+Z)y$), so $wb=\varsigma(b)w$ for the involution $\varsigma$ of $B$ that fixes $C$ and sends $t$ to $t+Z$, which exchanges the two rulings. Where $w^2$ does not vanish, left multiplication by $w$ is a $\varsigma$-semilinear isomorphism between the localizations of the two parities of any graded $U$-module, with inverse $w^{-2}w$. Hence the sheaves of the two parities have the same length and the Hilbert function of $M$ is eventually the number above in every degree. Table~\ref{tab:eventual} gives the predicted values.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_eventual.tex}
+\caption{Predicted eventual value of the Hilbert function in characteristic $2$ of a general presentation with $a$ generators and $a+1$ relations of degree $e=2m$ or $2m+1$: $\tfrac{a(a+1)}2L\cdot L$ with $L\cdot L=2m^2$ for even $e$ and $2m(m+1)$ for odd $e$; the values for two quadrics, two cubics and the $2\times3$ matrix of quadrics were derived before the experiment and are compared with it in Section~\ref{sec:results}.}
+\label{tab:eventual}
+\end{table}
+
+\subsection{Lifting a prime-field realization to characteristic \texorpdfstring{$0$}{0}}
+\label{sec:lift}
+
+The census realizes many primitive points by a module over $\F_{32003}$. The following proposition gives an exact criterion under which such a module lifts to a module over $\Q$ with the same Betti table. Let $p$ be a prime, $S_R=R[a,b,c]$ for a ring $R$, and let $A$ be a homogeneous matrix with integer coefficients.
+
+\begin{proposition}[Lift of a pure table]\label{prop:lift}
+\emph{(a) Cokernel form.} For a field $k$ let $M_k=\operatorname{coker}\big(A\otimes k:S_k(-d_1)^b\to S_k^a\big)$. The piece $(M_k)_d$ is the cokernel of an integer matrix $A_d$ reduced to $k$, so $\dim(M_\Q)_d=\operatorname{rows}(A_d)-\operatorname{rank}_\Q(A_d)\le\operatorname{rows}(A_d)-\operatorname{rank}_p(A_d)=\dim(M_{\F_p})_d$. Suppose $M_{\F_p}$ has finite length and a pure Betti table $\beta$, and $\operatorname{rank}_\Q(A_d)=\operatorname{rank}_p(A_d)$ for every $d$ up to the top degree of $M_{\F_p}$. Then $M_\Q$ has finite length and the same Betti table.
+
+\emph{(b) Image form.} Let $T_R=S_R/(a^{r+1},b^{r+1},c^{r+1})$, which is free over $R$, and let $N_k$ be the image of $A$ over $k$ between free $T_k$-modules. Then $\dim(N_k)_d$ is the rank over $k$ of an integer matrix $A_d$, so $\dim(N_\Q)_d\ge\dim(N_{\F_p})_d$. Suppose $N_{\F_p}$ has a pure Betti table $\beta$ as an $S$-module and $\operatorname{rank}_\Q(A_d)=\operatorname{rank}_p(A_d)$ for every $d$. Then $N_\Q$ has the same Betti table.
+\end{proposition}
+\begin{proof}
+Work over the local ring $\Z_{(p)}$. In (a) let $M=\operatorname{coker}(A\text{ over }\Z_{(p)})$; each $M_d$ is the cokernel of the integer matrix $A_d$, and equal ranks over $\Q$ and over $\F_p$ mean that $M_d$ has no $p$-torsion, so it is free of finite rank over $\Z_{(p)}$. In (b) let $N$ be the image of $A$ over $\Z_{(p)}$, torsion free in each degree; equal ranks mean that the cokernel of $A_d$ has no $p$-torsion, so $N_d\otimes\F_p$ injects into the target and equals the image of $A_d$ over $\F_p$. In both cases there is a graded $S_{(p)}$-module $X$, free of finite rank over $\Z_{(p)}$ in each degree, with $X\otimes\F_p$ the module over $\F_p$ and $X\otimes\Q$ the module over $\Q$. Take a minimal graded free resolution of $X\otimes\F_p$. Lift its generators to $X$ (Nakayama over $\Z_{(p)}$, degree by degree); the kernel $K$ of the resulting surjection $F_0\to X$ is again free over $\Z_{(p)}$ in each degree, and $K\otimes\F_p$ is the kernel over $\F_p$ because $\Tor_1^{\Z_{(p)}}(X_d,\F_p)$ vanishes. Repeating gives a graded free resolution of $X$ over $S_{(p)}$ whose reduction is the minimal resolution over $\F_p$. Tensoring with $\Q$ (flat) gives a free resolution of the module over $\Q$ with the same graded ranks, so $\beta_{ij}(\Q)\le\beta_{ij}(\F_p)$ for all $i,j$. The Hilbert functions are equal, so for each $j$ the alternating sums over $i$ agree; the table over $\F_p$ is pure, so for each $j$ at most one $i$ has $\beta_{ij}(\F_p)$ nonzero, and the inequality forces equality. In (a) $M_\Q$ vanishes in every degree where $M_{\F_p}$ does (it is generated in degree $0$ and its pieces are no larger), so it has finite length; in (b) $N_\Q$ is a submodule of a module of finite length.
+\end{proof}
+
+The converse is not claimed: unequal ranks say that this lift is not flat at $p$, and not that the ray fails over $\Q$. The proposition is derived on paper [D]; the rank test it requires is an exact computation [MV] (Section~\ref{sec:rank}). By base change from $\Q$, a pure table over $\Q$ is the table over every field of characteristic $0$. The statement on the rays with $d_3\le9$ (Proposition~\ref{prop:lownine}) does not use this proposition: every module on which it rests has a resolution over $\Q$ computed in two systems.
+
+\subsection{Consequences: the rays with \texorpdfstring{$d_3=10$}{d3=10} and the rays with \texorpdfstring{$d_3\le9$}{d3<=9}}
+\label{sec:consequences}
+
+\begin{proposition}\label{prop:least}
+Over every field, the primitive points $(1,3,8,6)$ on $(0,4,9,10)$ and $(6,8,3,1)$ on $(0,1,6,10)$ are the Betti table of no finitely generated graded module over $S$, and no multiple $m\ge1$ of either is the Betti table of a finitely generated graded module over $U$.
+\end{proposition}
+\begin{proof}
+\emph{Over $S$.} For $(1,3,8,6)$ on $(0,4,9,10)$: $a=1$, $b=3$, codimension $3$. The second syzygy obstruction fails, since $d_2=9>2\cdot4=8$. The codimension obstruction holds with equality ($3=3+1-1$), so the table would be that of the Buchsbaum--Rim complex of a $1\times3$ map of quartics, which is the Koszul table $(1,3,3,1)$ on $(0,4,8,12)$, not this one. Independently, $M=S/I$ with $I$ minimally generated by three quartics of height $3$ (finite length), and in the Cohen--Macaulay ring $S$ three elements generating an ideal of height $3$ form a regular sequence, so the resolution is the Koszul complex on $(0,4,8,12)$. For $(6,8,3,1)$ on $(0,1,6,10)$: the codimension obstruction holds with equality ($8=3+6-1$) and the Buchsbaum--Rim complex of a $6\times8$ linear map has the table $(6,8,8,6)$ on $(0,1,7,8)$, not $(6,8,3,1)$ on $(0,1,6,10)$; moreover $d_3=10$ exceeds the sum of the eight largest relation degrees, $8$, so the regularity obstruction fails. This second example is Erman's own example of the equality case~\cite[Proposition~3.1 and the discussion that follows]{Erman09}, and the first is its rotation by the duality of Remark~3.2 there; all arguments are valid over any field.
+
+\emph{Finite length is automatic.} A pure table on the ray satisfies~\eqref{eq:HK}, so $p_\beta(t)=(1-t)^3q(t)$ with $q$ a polynomial and every module with this table over $S$ has Hilbert series $q(t)$, a polynomial.
+
+\emph{Over $U$.} A finitely generated graded module $N$ with Betti table $m\beta$ has $\Hilb_N(t)=m\,p_\beta(t)/((1-t)^2(1-t^2))=m\,q(t)/(1+t)$ by Lemma~\ref{lem:parity}, with $q(-1)=p_\beta(-1)/8$. Here $p_\beta(-1)=-16$ and $16$, so $q(-1)=\mp2\neq0$. Writing $m\,q(t)/(1+t)=s(t)+m\,q(-1)/(1+t)$ with $s$ a polynomial, the coefficient of $t^n$ is $m\,q(-1)(-1)^n$ for $n>\deg s$, negative for half of all large $n$, which is impossible for a Hilbert function. So no finitely generated graded $U$-module of any length has such a table.
+\end{proof}
+
+\begin{remark}
+The finite length hypothesis is not needed for either half: over $S$ every module with such a table has finite length, and over $U$ no module of any length has it. The exclusion over $S$ is in print as an instance of the obstructions of Erman; the half over $U$ is the parity test of Jiang, Li, Sun, Wang, Xiao and Yu applied to these two rays. The two rays have $d_3=10$, whereas the example of~\cite{JLSWXY} has $d_3=21$.
+\end{remark}
+
+\begin{proposition}\label{prop:lownine}
+Let $k$ be a field of characteristic $0$. Every integral point on a pure ray with $d_3-d_0\le9$ is the Betti table of a finite length graded module over $S\otimes k$ or over $U\otimes k$.
+\end{proposition}
+\begin{proof}[Evidence]
+Every integral point on a pure ray is $m\beta_d$ with $m\ge1$, and the direct sum of $m$ copies of a realization of $\beta_d$ realizes it over the same ring; so it suffices to realize the primitive point of each of the $84=\binom93$ degree sequences with $0<d_1<d_2<d_3\le9$. The evidence for the primitive points is of five types (Table~\ref{tab:lownine}):
+\begin{enumerate}
+\item for \nlowNineFormula{} rays, a formula whose number of generators equals $\beta_0$: Eisenbud--Schreyer (Theorem~5.1, any field), Eisenbud--Fl{\o}ystad--Weyman (characteristic $0$), the Koszul complex, $S/\mathfrak m^a$ and its dual, Buchsbaum--Rim complexes and generic Pfaffians [V for the theorems; MV for the numbers of generators, which agree between the Python census and Macaulay2 on all \nrays{} rays];
+\item for \nlowNineScaling{} rays, the scaling of a formula ray (Section~\ref{sec:realizability}) [D];
+\item for \nlowNineSocle{} and \nlowNineModule{} rays, an explicit module over $\Q$, the image of an integer matrix inside a truncated ring or the cokernel of an integer matrix, whose Betti table over $\Q$ was computed in Macaulay2 and recomputed in Singular, with the length equal to the Herzog--K\"uhl length [MV];
+\item for \nlowNineDual{} rays, the $\Ext^3$ dual of a module of the previous type, by the duality of Section~\ref{sec:realizability} [D], with the table of the dual computed over $\Q$ on \nqqDualsDirect{} of them [MV];
+\item for the five rays $(0,1,3,4)$, $(0,1,5,6)$, $(0,1,7,8)$, $(0,2,6,8)$ and $(0,3,5,8)$ that are excluded over $S$ and pass the parity test, an explicit module over $U$ (Table~\ref{tab:ten}) [MV].
+\end{enumerate}
+Base change from $\Q$ to $k$ preserves Betti tables and finite length. These \nlowNineExcluded{} rays are the only rays with $d_3\le9$ excluded over $S$. \qedhere
+\end{proof}
+\section{Experimental design}
+\label{sec:expdesign}
+
+The computations behind the paper are archived in the repository under the identifiers \EXP{001}, \EXP{002} and \EXP{003}; these identifiers denote the archived computations and are used only as references to them. \EXP{001} is the census over $S$ of the \nrays{} pure rays with $d_3\le12$, with the formula constructions, the obstructions, the search and the rechecks. \EXP{002} is the study of the primitive points over $U$ on the rays that pass the parity test and are excluded over $S$, with the calibration on the Kostant modules and on the family $M_e$. \EXP{003} is the study of $U$ in characteristic $2$, of the proof steps of Theorem~A for $e\le8$, and of the genericity of the pair $(x^e,y^e)$.
+
+\subsection{Questions and predictions stated before the computations}
+
+Each computation poses its questions and states its predictions, with the probability the author assigned to each, in a file committed to the repository before the first run of that computation. The questions are: for every ray with $d_3\le12$, is the primitive point realized, excluded or open over $S$, and what is the least multiple $c_d$ (\EXP{001}); is the primitive point of each of the ten rays realized over $U$, and is $M_e$ pure for $e\le6$ (\EXP{002}); in characteristic $2$ does any pair of quadrics have a finite length quotient, which of the other nine rays are realized, do the intermediate statements of the proof of Theorem~A hold for $e\le8$ and for which primes is $M_e$ pure, and is a general pair of forms of degree $e$ pure (\EXP{003}). The predictions include: the stage-0 count of realized primitive points between $52$ and $56$ and exactly $12$ excluded (probability $0.85$); persistence over $\Q$ of every prime-field hit ($0.85$ per hit); $M_e$ pure for $e=3$ ($0.8$) and for $e=4,5,6$ ($0.7$ each); at least $9$ of $10$ random $2\times3$ matrices of quadrics giving the table $(2,3,3,2)$ ($0.6$); no pair of quadrics of finite length over $\F_{2^r}$ ($0.95$); the set of primes at which $M_e$ is not pure contained in the set predicted from factorials and tableau counts ($0.75$); and a non-pure table for a general pair of forms with $e=4,5,10$ ($0.85$). Section~\ref{sec:predfail} reports which predictions failed.
+
+\subsection{Known-answer checks, instruments and their independence}
+
+Before any claim, each computation reproduces known answers. For \EXP{001} these are \ngateThreeEach{} known answers, documented in the Macaulay2 package or in the literature, all reproduced over $\mathbb{Z}/101$, $\F_{32003}$ and $\Q$, and the values $(1,3,8,6)$ and $(6,8,3,1)$ with parities $-16$ and $16$ on the two rays with $d_3=10$. For \EXP{002} and \EXP{003} these are the trivial module, $U/U(x^2,y^2,xy+yx)$ and the Kostant modules: \ncalibModules{} modules in the first computation and \nthreeCalib{} cases (several fields) in the second, with known tables. The instruments are independent in code and in method. The first is the exact library of the repository (\texttt{uhlib}): the algebra $U$, quotient modules degree by degree, the Tor complex of Section~\ref{sec:tor}, over $\Q$, $\F_p$ and $\F_{2^r}$ with a verified irreducible modulus. The second is Singular 4.3.2 with Plural, reading the Betti table from the generators of each syzygy module. The census has two implementations, in Python with rational arithmetic and in Macaulay2, compared on all \nrays{} rays; the search uses the Macaulay2 package~\cite{M2BS}; the rechecks use a fresh process, Singular, and the rational lift (Section~\ref{sec:search}). A claim over $U$ is accepted only when both instruments agree.
+
+\subsection{Acceptance criteria, time limits and statistics}
+
+A hit is a module whose Betti table equals $m\beta_d$ exactly; a table of this shape satisfies the Herzog--K\"uhl equations, so the module has finite length. A search cell is three seeds per ray, multiple and generator; \EXP{003} uses $20$ seeds over $\F_{32003}$ and $40$ over each of $\F_2$, $\F_4$, $\F_{16}$ per ray, so that a hit rate is a binomial proportion reported with its standard error $\sqrt{\hat p(1-\hat p)/n}$. A resolution that exceeds twenty minutes in the search (thirty minutes in the rational recheck, thirty minutes in the experiments over $U$) is recorded as a timeout and never as a miss; a timeout counts as not decided. A miss of a generic module proves nothing about realizability: only an obstruction excludes. The characteristic $2$ computations show nonzero pieces up to a stated degree bound, and a finite quotient is recognized by two consecutive zero pieces below the bound; infinite length in characteristic $2$ rests on Theorems~B and~C and not on the bound. The exhaustive enumerations are checked against the Gaussian binomial counts of subspaces.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{The family \texorpdfstring{$M_e$}{Me} by machine}
+
+Table~\ref{tab:family} lists, for $e=2,\dots,\nfamilyMaxE$, the exact computation over $\Q$ with fractions: the Hilbert function equals the coefficients of $h_e$ (equation~\eqref{eq:he}), the length is $e^3$, the socle is one-dimensional in degree $4e-4$ and weight $0$, the kernel of $y$ is the span of the classes $z^cg_a$, and the number of nonzero (weight, degree) pieces is that of the closed form. The slowest computation ($e=8$, length $512$) takes \nfamilySecondsMax{} seconds. For $e\le5$ the $k[z]$-structure follows the pattern of Section~\ref{sec:proofA2} and the primes $p\le23$ at which the quotient is not pure over $\F_p$ are exactly those below $2e$. For $e=2,\dots,6$ the Betti table over $\Q$ is $(1,2,2,1)$ on $(0,e,3e,4e)$ by both instruments, with lengths $8,27,64,125,216$; in characteristic $3$ and $2$ the pair $(x^2,y^2)$ gives infinite quotients with $\dim M_5=2$ and $\dim M_4=2$ respectively.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_family.tex}
+\caption{The modules $M_e=U/U(x^e,y^e)$ computed exactly over $\Q$ for $e=2,\dots,8$: the length, the socle (degree, weight), the number of nonzero (weight, degree) pieces, the primes $p\le23$ at which the quotient over $\F_p$ is not pure for $e\le5$, the agreement of the $k[z]$-structure with the pattern for $e\le5$, and the computation time in seconds; dashes mark quantities computed only for $e\le5$.}
+\label{tab:family}
+\end{table}
+
+\subsection{Characteristic \texorpdfstring{$2$}{2}}
+
+\emph{Pairs of quadrics.} Over every field tested the quotient $U/(Uf+Ug)$ is nonzero in each degree from $2$ to $20$ (Table~\ref{tab:char2}); the Hilbert function is eventually constant equal to $2$ on \nevTwoGFtwo{} of the \nsubGFtwo{} subspaces over $\F_2$ and grows linearly on the other \ngrowGFtwo{}, which are those with $\det\rho_f=0$. Random pairs over $\F_{2^r}$, $r=1,\dots,4$, gave no finite quotient in \npairsCharTwo{} trials (Table~\ref{tab:pairs}); over $\F_{3^r}$, $r=1,\dots,4$, pairs with the table $(1,2,2,1)$ on $(0,2,6,8)$ occur in \npairsCharThreeHits{} of \npairsCharThree{} trials. The Hilbert function does not certify purity: \npairsRightHFWrongTable{} of the \npairsRightHF{} pairs with Hilbert function $(1,2,2,2,1)$ have extra Betti numbers in degree $7$ (Section~\ref{sec:ablation}).
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_pairs.tex}
+\caption{Random pairs of quadrics over $\F_{2^r}$ and $\F_{3^r}$ (20 seeds per field): how many give a finite length quotient, how many are still nonzero at degree $14$, and how many have the Betti table $(1,2,2,1)$ on $(0,2,6,8)$; in characteristic $2$ no pair is finite, in characteristic $3$ the table occurs on most pairs over the larger fields.}
+\label{tab:pairs}
+\end{table}
+
+\emph{Searches on the eight rays.} Generic presentations with $\beta_0$ generators and $\beta_1$ relations of degree $d_1$ were drawn over $\F_{2}$, $\F_4$, $\F_{16}$ and, as a positive control, over $\F_{32003}$ (Table~\ref{tab:b1}). The rays $(0,1,5,6)$, $(0,1,7,8)$, $(0,1,9,10)$, $(0,1,11,12)$ and $(0,3,5,8)$ are realized in characteristic $2$ (for example $(0,1,5,6)$ on \nbOneSixTwo{}, \nbOneSixFour{} and \nbOneSixSixteen{} of $40$ seeds over $\F_2$, $\F_4$ and $\F_{16}$, and $(0,3,5,8)$ on \nbOneFiveEightTwo{}, \nbOneFiveEightFour{} and \nbOneFiveEightSixteen{}), with both instruments agreeing on the hits. The rays $(0,3,9,12)$ and $(0,2,10,12)$ are never of finite length in $120$ seeds each in characteristic $2$, although they are pure on $20$ of $20$ seeds over $\F_{32003}$; these are the two rays that Theorem~C excludes (Corollary~\ref{cor:C2}). The ray $(0,5,7,12)$ is not reached by generic presentations over any field tried, $\F_{32003}$ included, so no outcome is interpreted for it.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_b1.tex}
+\caption{Generic presentations with $B_0$ generators and $B_1$ relations of degree $d_1$ for the eight rays of the characteristic $2$ study: pure hits out of the seeds, the hit rate and its binomial standard error, over $\F_{32003}$ (20 seeds) and over $\F_2$, $\F_4$ and $\F_{16}$ (40 seeds each); the presentation column reads generators times relations.}
+\label{tab:b1}
+\end{table}
+
+\emph{The eventual Hilbert function.} The values predicted by Section~\ref{sec:thmC} are observed. On the ray $(0,3,9,12)$ (two cubics, predicted value $4$) the Hilbert function of the random pairs is eventually $4$ on \nevCubicTwo{}, \nevCubicFour{} and \nevCubicSixteen{} of $40$ seeds over $\F_2$, $\F_4$ and $\F_{16}$, and on $(0,2,10,12)$ (a $2\times3$ matrix of quadrics, predicted value $6$) on \nevQuadTwo{}, \nevQuadFour{} and \nevQuadSixteen{} of $40$ seeds; the other seeds over $\F_2$ and $\F_4$ show growth, as the subspaces with $\det\rho_f=0$ do for $e=2$ (a positive-dimensional degeneracy locus is possible over a small field). No presentation of finite length was found. [MV for these counts; the value $2$ for two quadrics holds on \nevTwoGFtwo{} of \nsubGFtwo{} subspaces.]
+
+\subsection{The ten rays over \texorpdfstring{$U$}{U} in characteristic \texorpdfstring{$0$}{0}}
+
+Table~\ref{tab:ten} gives, for each of the ten rays with $d_3\le12$ that pass the parity test and are excluded over $S$, the module that realizes the primitive point over $\Q$ and hence over every field of characteristic $0$, with its length and Hilbert function; both instruments give the table, equal to the primitive point of the ray. Seven rays are realized by Kostant modules $L(p,q)$ (Table~\ref{tab:kostant} lists all \nkostantCount{} modules with $p\le4$ with the table $(q+1,p+2,p+2,q+1)$ on $(0,p-q+1,p+q+3,2p+4)$, each equal to the Weyl dimension and satisfying the relations of $U$), $(0,2,6,8)$ and $(0,3,9,12)$ by $M_2$ and $M_3$, and $(0,2,10,12)$ by the cokernel of a random $2\times3$ matrix of quadrics ($\nfourSeeds{}$ of $\nfourSeeds{}$ seeds over $\F_{32003}$ and over $\Q$ with the matrix lifted). The eleventh row, $L(3,1)$ on $(0,3,7,10)$, is not one of the ten: this ray is open over $S$ and passes the parity test, so over $U$ the primitive point is realized on the whole ray. Consequently, in characteristic $0$ with $d_3\le12$, a counterexample to the question can lie only on a ray that fails the parity test. Figure~\ref{fig:lattice-u} shows the $29$ rays that pass the parity test with their status over $S$, over $U$ and in characteristic $2$.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_ten.tex}
+\caption{The ten rays with $d_3\le12$ that pass the parity test and are excluded over $S$, each with the module that realizes the primitive point over $U$ in characteristic $0$, its length and Hilbert function; the last row is a ray that is open over $S$ and realized over $U$ by a Kostant module; both instruments give a table equal to the primitive point.}
+\label{tab:ten}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_kostant.tex}
+\caption{The \nkostantCount{} Kostant modules $L(p,q)$ with $p\le4$ built from the representations of $\mathfrak{sp}_4$ and recomputed by both instruments: length, Hilbert function, Betti numbers and the degrees $(d_0,d_1,d_2,d_3)=(0,p-q+1,p+q+3,2p+4)$; every table equals $(q+1,p+2,p+2,q+1)$.}
+\label{tab:kostant}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\input{fig_lattice_u.tex}
+\caption{The $29$ rays with $d_3\le12$ that pass the parity test, in the plane $(d_1,d_2)$ with one panel per $d_3$: circles are rays realized over $S$ (filled blue over every field or infinite field, gray otherwise), diamonds are rays excluded over $S$ and realized over $U$ in characteristic $0$ (teal: also in characteristic $2$; red with a cross: excluded over both rings in characteristic $2$ by Theorem~C; white: characteristic $2$ not decided), and the square is the ray $(0,3,7,10)$, open over $S$ and realized over $U$.}
+\label{fig:lattice-u}
+\end{figure}
+
+\subsection{The census over \texorpdfstring{$S$}{S}}
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_stage.tex}
+\caption{The census of the \nrays{} rays with $d_3\le12$ after each stage: number of rays whose primitive point is realized in some field, realized over every field or every infinite field, realized in characteristic $0$, excluded, open, and number of rays on which the least multiple $c_d$ is known; the stage with rational rechecks gives the final table.}
+\label{tab:stage}
+\end{table}
+
+Table~\ref{tab:stage} and Figure~\ref{fig:stages} give the census after each stage. The formulas and closures realize \nstageZeroRealized{} primitive points, of which \nstageZeroEvery{} over every field or every infinite field and \nstageZeroWeyman{} in characteristic $0$ by the second Eisenbud--Fl{\o}ystad--Weyman formula, and exclude $12$; the \nstageZeroOpen{} rays left open go to the search. The level-module family of S\"oderberg is pure on \nsoderbergPure{} of \nsoderbergRays{} rays at the predicted multiple. The search ran \ncellsTotal{} cells (\ncellsHit{} hits, \ncellsMiss{} misses, \ncellsErr{} errors in the stage that tests small characteristics, no timeouts) and leaves \nopen{} rays open; the final table has the primitive point realized on \nrealized{} rays, of which \nrealizedZero{} in characteristic $0$ (\nrealizedEvery{} over every field or every infinite field, \nrealizedZeroOnly{} in characteristic $0$ only) and \nrealizedPrimeOnly{} so far over $\F_{32003}$ only, all with $d_3\ge10$; the least multiple is $1$ on \nrealized{} rays and $2$ on the \nexcluded{} excluded rays, and is therefore known on \ncDetermined{} rays. Figure~\ref{fig:lattice-s} shows the status of every ray.
+
+\begin{figure}[t]
+\centering
+\input{fig_lattice_s.tex}
+\caption{Status of the primitive point over $S$ for the \nrays{} rays with $d_3\le12$, one panel per $d_3$ in the plane $(d_1,d_2)$: blue circles are realized over every field or every infinite field, teal diamonds in characteristic $0$, orange squares over $\F_{32003}$ only, red crosses excluded and open circles open; all open rays and all rays realized over a prime field only have $d_3\ge10$.}
+\label{fig:lattice-s}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\input{fig_stages.tex}
+\caption{The number of rays in each class after each stage of the census; the final stage adds the rational rechecks, which move rays from realized over a prime field to realized in characteristic $0$ without changing the total.}
+\label{fig:stages}
+\end{figure}
+
+\emph{The excluded rays.} Twelve primitive points are excluded (Table~\ref{tab:excluded}); on each of them twice the primitive point is realized, so $c_d=2$. Ten pass the parity test and are the rays of Table~\ref{tab:ten} (without $(0,3,7,10)$), and two fail it, $(0,4,9,10)$ and $(0,1,6,10)$, which are the rays of Proposition~\ref{prop:least}.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_excluded.tex}
+\caption{The \nexcluded{} rays with $d_3\le12$ whose primitive point is excluded over $S$: the primitive point, the parity value, the obstructions O1 to O6 that exclude it (with those of the dual ray), the least realizable multiple $c_d=2$ and the module over $U$ where the parity value is zero.}
+\label{tab:excluded}
+\end{table}
+
+\emph{The open rays.} The \nopen{} open rays all have $d_3\ge10$ (Table~\ref{tab:open}); the largest upper bound on $c_d$ among them is \nopenMaxUp{} and only one of them passes the parity test, $(0,3,7,10)$, which is realized over $U$. A miss of a generic module on these rays proves nothing.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_open.tex}
+\caption{The \nopen{} rays whose primitive point is open over $S$: the primitive point, the parity value, the bounds on the least multiple $c_d$ (the lower bound from the obstructions, the upper bound from the constructions) and the dual ray; the search over $\F_{32003}$ found no hit on any of them.}
+\label{tab:open}
+\end{table}
+
+\subsection{Rank certificates and the lift to characteristic \texorpdfstring{$0$}{0}}
+\label{sec:lift-results}
+
+The rank test was run on the \nfourHits{} verified hits of the census, with \nfourMatrices{} integer matrices in all. It reproduces the known answers: the pure Hilbert function over $\F_{32003}$ in every degree on every hit, the pass on \nfourKnown{} of \nfourKnown{} hits whose resolution over $\Q$ had given the pure table, \nfourAgree{} agreements of \nfourCompared{} between the two instruments on the matrices both computed (every matrix of at most $2{,}000$ rows and six larger ones), and \nfourUnitTests{} unit tests on modules with hand-computed Hilbert functions. The test passes with the first instrument on \nfourPassOne{} of the \nfourHits{} hits; on the last, the matrix of $\nfourOneRows\times\nfourOneCols$ in degree $10$ on $(0,3,10,12)$, python-flint reached its time limit and PARI/GP gave the full rank $\nfourOneRows$ in sixteen seconds, so that matrix has its rank over $\Q$ from one instrument only. Among the \nfourRest{} hits without a completed positive rational recheck, \nfourRestPass{} pass with the first instrument and the last with the second. The largest matrix is $\nfourLargestRows\times\nfourLargestCols$, the longest rank over $\Q$ takes \nfourLongestSec{} seconds, and the rank certificates of all \nfourHits{} hits take \nfourTotalSec{} seconds of summed time, against two to thirty minutes for a resolution over $\Q$ and seven stops at the time limit (Table~\ref{tab:procedures}).
+
+\emph{The two modules that had failed over $\Q$.} The rational rechecks of $(0,3,8,10)$ and $(0,3,11,12)$ in Macaulay2 had not given the pure table. The prediction for the rank test on these two was that it would fail as well; it did not. Both pass, with equal ranks in every degree, and then Proposition~\ref{prop:lift} says that the lifted modules are pure over $\Q$, in contradiction with the earlier recheck. The contradiction was settled by resolving both modules over $\Q$ in a second system, Singular 4.3.2, with scripts built from the saved generator matrices by code that shares nothing with the search code, the recheck script or the rank test: the table is $(7,16,21,12)$ on $(0,3,8,10)$ with length \nfourLenA{} and $(6,11,27,22)$ on $(0,3,11,12)$ with length \nfourLenB{}, both the primitive points, with lengths equal to the sums of the Hilbert functions computed by the rank test (Table~\ref{tab:lift}). So the rank test and the proposition are right on these two modules, and the two earlier failures were false negatives of the Macaulay2 recheck; their cause is not established (the run printed a table that was not the pure one, and whether the resolution it returned was not minimal was not examined). The earlier count of \nqqFailed{} failed rechecks among \nqqCompleted{} completed ones therefore does not measure non-persistence over $\Q$.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_lift.tex}
+\caption{The two hits whose Macaulay2 resolution over $\Q$ was not pure: the rank test gives equal ranks over $\Q$ and $\F_{32003}$ in every degree, and Singular over $\Q$ gives the primitive point on each ray, with the length equal to the sum of the Hilbert function of the rank test and the time of the resolution in seconds.}
+\label{tab:lift}
+\end{table}
+
+\emph{Field scope of the census.} Two numbers with their evidence give the scope (Table~\ref{tab:scope}). The primitive point is realized in characteristic $0$ on \nrealizedZero{} of the \nrealized{} rays by a cited construction or by a resolution over $\Q$ [V and MV]: \nrealizedEvery{} over every field or every infinite field, and \nrealizedZeroOnly{} in characteristic $0$. The other \nrealizedPrimeOnly{} rays are realized over $\F_{32003}$ by a hit of the search; with the rank certificate and Proposition~\ref{prop:lift} \nfourRaysDirect{} of them are realized in characteristic $0$ by a passing hit on the ray itself and \nfourRaysClosure{} when the duality closure of the census is applied, and the last two rays, $(0,3,10,12)$ and its dual, through the matrix decided by one instrument, so that all \nrealized{} realized rays are realized in characteristic $0$ [D with MV]. The \nexcluded{} excluded and the \nopen{} open rays are unchanged.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_scope.tex}
+\caption{Field scope of the \nrealized{} rays with $d_3\le12$ whose primitive point is realized over $S$, with the evidence for each group and its mark: the rays realized over every field or infinite field and in characteristic $0$ by a cited construction or a resolution over $\Q$ do not use the lift proposition, and the rays realized over $\F_{32003}$ only use it together with the rank certificate.}
+\label{tab:scope}
+\end{table}
+
+\subsection{The rays with \texorpdfstring{$d_3\le9$}{d3<=9} and the two rays with \texorpdfstring{$d_3=10$}{d3=10}}
+
+Table~\ref{tab:lownine} gives the evidence for the $84$ rays with $d_3\le9$: \nlowNineFormula{} by a formula, \nlowNineScaling{} by scaling, \nlowNineSocle{} and \nlowNineModule{} by explicit rational modules from the two generators, \nlowNineDual{} by $\Ext^3$ duals and \nlowNineExcluded{} over $U$; the field scope of the $79$ rays realized over $S$ is \nlowNineAny{} over every field, \nlowNineInfinite{} over every infinite field, and \nlowNineZero{} in characteristic $0$ only. The rational modules of the rays with $d_3\le9$ are archived: \nqqModules{} modules for \nqqRays{} rays, each pure over $\Q$ with the length equal to the Herzog--K\"uhl length, with the integer generator matrices, scripts and hashes (Table~\ref{tab:manifests}). The duals were computed directly over $\Q$ on \nqqDualsDirect{} of the $13$ duality rays; the other \nqqDualsClosure{} rest on the duality closure with the source module computed over $\Q$. Combined with the evidence for the five rays over $U$, this is Proposition~\ref{prop:lownine}, and with Proposition~\ref{prop:least} it gives the least counterexample: in characteristic $0$ none has $d_3\le9$, and the two dual rays $(0,4,9,10)$ and $(0,1,6,10)$ with $d_3=10$ are counterexamples over every field. In characteristic $2$ the ray $(0,2,6,8)$ has a counterexample with $d_3=8$ (Theorem~B); nothing is claimed for $d_3\le9$ in characteristic $p\ge3$.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_lownine.tex}
+\caption{Evidence for the primitive point on each of the $84$ rays with $d_3\le9$, with the number of rays of each type and its field scope; the rays realized by formulas carry the field of the weakest construction they need, and the explicit modules are archived over $\Q$ with their integer matrices.}
+\label{tab:lownine}
+\end{table}
+
+\subsection{Predictions that failed}
+\label{sec:predfail}
+
+Four predictions failed. The count of primitive points realized by formulas and closures at stage 0 was predicted between $52$ and $56$ and is \nstageZeroRealized{}: the $52$ realized over every field or every infinite field are as predicted, and the other \nstageZeroWeyman{} are rays where the second Eisenbud--Fl{\o}ystad--Weyman formula gives exactly $\beta_0$ in characteristic $0$, which the table that served as the starting point did not count. The persistence of prime-field hits over $\Q$ failed on \nqqFailed{} of \nqqCompleted{} completed rechecks ($\nqqRate\pm\nqqRateSe$ pure, a binomial standard error), the rays $(0,3,8,10)$ and $(0,3,11,12)$; these stay realizations over $\F_{32003}$ and are not statements about characteristic $0$ by that recheck alone. The prediction that the rank test would fail on these two hits as well also failed: both pass, and Singular over $\Q$ shows that the rechecks were false negatives (Section~\ref{sec:lift-results}). The prediction that the rays with odd $d_1$ are hit in characteristic $2$ failed on $(0,3,9,12)$, which generic pairs of cubics realize over $\F_{32003}$ on $20$ of $20$ seeds and never in characteristic $2$, a finding that led to Theorem~C; the other such ray, $(0,5,7,12)$, is not reached by generic presentations over any field, six general quintics giving a non-pure table, so its characteristic $2$ outcome is not interpreted. The other predictions of Section~\ref{sec:expdesign} held, among them the exact set of primes at which $M_e$ is not pure and the non-purity of a general pair for $e\ge4$.
+
+\section{Validation by independent routes}
+\label{sec:validation}
+
+Every load-bearing statement is checked along at least two routes that share no code, and the paper marks which.
+
+\paragraph{Two implementations of the census.} The census was implemented in Python with rational arithmetic and, independently, in Macaulay2; they agree on the primitive point and on the three construction numbers on all \nrays{} rays, with \ncyclic{} cyclic and \nparityPassing{} parity-passing rays, and reproduce the columns of the table that served as the starting point on every row, except for the $26$ rays where the second Eisenbud--Fl{\o}ystad--Weyman formula is counted. The Eisenbud--Schreyer number of $(0,4,9,13)$ is $15400$ in both, that is the multiple $3080$.
+
+\paragraph{Three systems for each hit.} Each of the \nverified{} verified hits (one per ray and multiple) was recomputed from its saved presentation in a fresh Macaulay2 process and in Singular, with no failure; for the rays with $d_3\le9$ the rational modules were recomputed in Singular by scripts written independently of the search code, which is how the archived file of rational modules was produced, and \nqqModules{} of \nqqModules{} are pure. A hit that failed one of the three systems would have been listed separately, and none did.
+
+\paragraph{Two instruments over $U$.} The exact library and Singular agree on $\nagreeTwo{}$ and $\nagreeThree{}$ modules in the two computations over $U$, with no disagreement; the Hilbert function recomputed from the Singular table equals the library's in every check. Neither route is a re-run of the other: the exact library builds the quotient by linear algebra in the PBW basis and the Tor complex from it, whereas Plural computes a Gr\"obner basis of the relations and a free resolution from that basis, and the two implementations of the census were written separately.
+
+\paragraph{Exact recomputation of the proof.} The proof of Theorem~A is checked by exact computation in this paper (Table~\ref{tab:blocks}): the normal-ordering identity for $a,e\le9$ (\nnormalOrderingCount{} identities), the numerator $1-2t^e+2t^{3e}-t^{4e}$ divided by $(1-t)^2(1-t^2)$ for $e\le\nnumeratorE$, the dimension of every weight block for $e\le8$ over $\Q$ and over the primes up to $31$, and the table of products~\eqref{eq:mult}. Also recomputed are the two relations of Lemma~\ref{lem:trivial}, the vanishing of $r_1$ and $r_2$, the commutators of $x^2$ and $y^2$ in characteristic $2$, and the entry $x\cdot yx$ of the table.
+
+\paragraph{Independent derivations.} The derivations of Theorems A, B and C were re-derived step by step by a reader other than the writer, who also ran independent code written from the relation $xy=yx+z$ alone, and the machine statements of Section~\ref{sec:results} were reproduced. These independent runs are not archived in the repository ([U] as archived evidence); the archived evidence for the statements is that of Section~\ref{sec:results}.
+
+\section{Ablation and negative controls}
+\label{sec:ablation}
+
+Table~\ref{tab:controls} lists the controls and what each one caught. The controls are the part of the design that could have failed.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_controls.tex}
+\caption{Controls and negative controls of the computations: what each one tested and the outcome, read from the archived records; the controls that failed (two lifts to $\Q$, one script defect) identify the claims that are weaker than a first reading.}
+\label{tab:controls}
+\end{table}
+
+\paragraph{The recheck over $\Q$ and its first script.} The first pass of the rational recheck used a script with a variable shadowed by a ring variable, which made the fresh-process checks fail on \ndiscarded{} records; they were discarded and recomputed after the repair, and the Singular results, which read the saved presentation, were unaffected. A first failure of the rational recheck of $(0,1,2,3)$ was a second defect of the script (integer entries not promoted to the ring), repaired and rerun. After the repair, \nqqOk{} of \nqqCompleted{} completed rechecks are pure over $\Q$ and \nqqFailed{} are not; $\nqqTimeout$ stopped at the thirty minute limit and \nqqNotRun{} were not reached. The two failures were false negatives of the Macaulay2 run: the rank test passes on both hits and Singular gives the pure tables over $\Q$ (Section~\ref{sec:lift-results}). The control could fail, and it failed in the direction that understated the result, so a single resolution over $\Q$ that is not pure is not evidence that a lift is not pure.
+
+\paragraph{Lifting the saved presentation is not the rational recheck.} For hits of the level-module generator the rational module is the image of the lifted generator matrix inside the truncated ring, as in Algorithm~\ref{alg:recheck}; the cokernel of the saved prime-field presentation lifted termwise to $\Q$ was not pure in the controls we ran on socle hits (this control was run by an independent reader and is not archived [U]). For this reason the rational modules of the rays with $d_3\le9$ are archived with their integer matrices and hashes (Table~\ref{tab:manifests}).
+
+\paragraph{The Hilbert function does not certify purity.} Over $\F_3,\dots,\F_{81}$, \npairsRightHFWrongTable{} of the \npairsRightHF{} pairs of quadrics with the Hilbert function $(1,2,2,2,1)$ have a table with extra Betti numbers in degree $7$; for example over $\F_9$ two pairs have the table $(0,0,1),(1,2,2),(2,6,2),(2,7,1),(3,7,1),(3,8,1)$ instead of $(0,0,1),(1,2,2),(2,6,2),(3,8,1)$. The socle in degree $3$ gives a $\Tor_3$ in degree $7$ (equation~\eqref{eq:tor3}), which is why the paper certifies purity through the socle and the Euler series and not through the Hilbert function.
+
+\paragraph{A general pair for $e\ge4$.} For $e=2,3$ a random pair of forms of degree $e$ over $\F_{32003}$ is pure on \ngeneralPureTwoThree{} of \ngeneralPairs{} pairs each; for $e=4,5,10$ it has the maximal-rank Hilbert function and is not pure on $0$ of \ngeneralPairs{} pairs each (Table~\ref{tab:controls}): the family $M_e$ is not found by a random search for $e\ge4$, as the Hilbert series predicts, and the pure points $(1,2,2,1)$ on $(0,e,3e,4e)$ are realized by a special left ideal. A random search is therefore not a valid test of realizability for these rays.
+
+\paragraph{The positive control over $\F_{32003}$.} The characteristic $2$ searches have a control: a ray not hit over $\F_{32003}$ is not reachable by generic presentations, and its characteristic $2$ outcome is not interpreted ($(0,5,7,12)$). The two rays hit over $\F_{32003}$ and never in characteristic $2$, $(0,3,9,12)$ and $(0,2,10,12)$, are the two where Theorem~C applies, which turns a pattern of misses into an exclusion.
+
+\paragraph{Characteristic flags.} Generic modules for the \nflagGen{} verified generators were redrawn over $\F_2$, $\F_3$ and $\F_5$ with five seeds each; at least one seed gives the pure table on \nflagTwo{}, \nflagThree{} and \nflagFive{} of them. The primitive point was never hit over $\F_2$ on \nflagRaysTwo{} rays and over $\F_3$ on \nflagRaysThree{} rays, among them $(0,1,2,6)$, which is realized over every field by a formula: a miss of a generic module over a small field is a flag and not a claim.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What the dependence on the characteristic means for the question}
+
+Question~6.1 is stated over a field $k$ without fixing the characteristic. The point $(1,2,2,1)$ on $(0,2,6,8)$ gives an answer that depends on $k$: realized over $U$ when $\ch k=0$ or $\ch k\ge5$ (by $U/U(x^2,y^2)$) and in characteristic $3$ (by explicit pairs), and realized over neither ring when $\ch k=2$. The same holds on $(0,e,3e,4e)$ for every $e\ge2$ in characteristic $0$ against characteristic $2$. This is a different phenomenon from the one used to answer the question negatively in 2026: the point of Jiang, Li, Sun, Wang, Xiao and Yu is excluded by a numerical test on the Hilbert series and so in every characteristic at once, whereas the points here pass that test and the exclusion comes from the structure of $U$, in a single characteristic. The consequence is that a negative answer to Question~6.1 does not settle which points are realized: the table of realizable points depends on the characteristic, as Kunte found for Betti tables of Cohen--Macaulay modules in five variables~\cite{Kunte}, and the census over $S$ already records the field scope of every realization.
+
+For odd characteristic the picture is open. In characteristic $p$ odd the elements $x^p$, $y^p$ and $z$ are central and $U$ has rank $p^2$ over the subring they generate, but no exclusion of the type of Theorem~C holds in general: pairs of quadrics with the pure table exist in characteristic $3$. For which pairs $(p,e)$ is the point $(1,2,2,1)$ of $(0,e,3e,4e)$ realized over $U$ is open; Theorem~A answers it for $p\ge2e$ and the characteristic $2$ theorem for $p=2$, which leaves $3\le p<2e$ with $e\ge3$ (the case $e=2$, $p=3$ is realized by a pair other than $(x^2,y^2)$).
+
+\subsection{Why the family is special}
+
+Three features make $(x^e,y^e)$ special. The pair is stable under the weight grading, so the quotient splits into blocks of a single weight, each a Toeplitz matrix of binomial coefficients over $k[z]$; this reduces the Hilbert function to ranks of matrices $[\binom e{a-a'}]$, whose minors are numbers of tableaux of rectangular shape. The symmetry $\sigma$ exchanges $x$ and $y$ and makes the socle one-dimensional by confining it to weight $0$. And the characteristic enters only through the units $(2e-1)!$ and the tableau counts, which explains the sharp boundary $p=2e$. The same structure explains why the pair is not found by a random search for $e\ge4$: the series of two general forms of degree $e$ is smaller than $h_e$ in degree $4e-4$ for $e=4$, so a general pair gives a quotient that is too small to be the pure module (Section~\ref{sec:proofA2}). The same pattern appears in Theorem~C, where the centre of $U$ in characteristic $2$ plays the role that the weight grading plays here: both reduce a noncommutative problem to a commutative one over a ring of small dimension, a polynomial ring in one variable for $M_e$ and a quadric surface in characteristic $2$.
+
+\subsection{The relation to the Kostant family}
+
+The Kostant modules $L(p,q)$ of Table~\ref{tab:kostant} realize the primitive point on the rays $(0,p-q+1,p+q+3,2p+4)$; they realize a multiple, not the primitive point, on three of the rays of the family: $L(2,1)$ gives $2\times$ the point $(1,2,2,1)$ on $(0,2,6,8)$, $L(4,2)$ gives $3\times$ on $(0,3,9,12)$ and $L(4,3)$ gives $2\times$ on $(0,2,10,12)$; these rays are the ones where $M_e$ and the matrices of quadrics realize the primitive point. So the family $M_e$ is outside the Kostant family: it realizes the primitive point where the Kostant modules realize only multiples. The two families share the rays $(0,1,3,4)$ ($M_1=L(0,0)$ is the trivial module) and are both limited to characteristic $0$ or large characteristic, with different bounds: the Kostant computation is a characteristic $0$ statement, $M_e$ is pure for $p\ge2e$. The experiment with the presentation of $L(1,1)$ with $x$ and $y$ replaced by $x^e$ and $y^e$ realizes $(2,3,3,2)$ on $(0,e,5e,6e)$ for $e=2,3$ over $\F_{32003}$, which suggests the same for every Kostant module and every $e$; this is an exploration, not a statement [C]. All the rays involved satisfy $d_1+d_2=d_3$, the rays fixed by the duality of Section~\ref{sec:realizability}, which is why both families produce the symmetric tables $(\beta_0,\beta_1,\beta_1,\beta_0)$.
+
+\section{Limitations}
+\label{sec:limitations}
+
+The rational recheck of the hits that carry the census is done in one system over $\Q$: Macaulay2 resolutions over $\Q$ for the \nqqOk{} rechecks that passed, and for the rays with $d_3\le9$ also Singular on the archived rational modules. An error in the resolutions over $\Q$ common to the runs of Macaulay2 would affect the explicit modules over $\Q$ on rays with $d_3\le9$ outside the formula rays. The \nrealizedPrimeOnly{} rays whose primitive point is realized over $\F_{32003}$ only are statements about characteristic $0$ through the rank certificate alone: that realization rests on Proposition~\ref{prop:lift}, which is derived on paper and not machine-checked, together with the rank certificate, and one matrix of the certificate (degree $10$ on $(0,3,10,12)$) has its rank over $\Q$ from one instrument only; the statement on $d_3\le9$ does not depend on the proposition, since every module on which it rests has a resolution over $\Q$ computed in two systems. The \nopen{} open rays are open, not excluded: a miss of a generic module proves nothing, since families of level algebras can be reducible. The cited theorems are used as read: the constructions of Eisenbud--Schreyer, Eisenbud--Fl{\o}ystad--Weyman and S\"oderberg, whose existence statement rests on a paper we did not read~\cite{Boij00}, the obstructions of Erman and of Buchsbaum and Eisenbud, the dual Jacobi--Trudi identity, the hook-content formula, Krull's height theorem and the theorem of Eagon and Northcott, and the Thom--Porteous formula, for which we checked the computation on two sections of a line bundle but not the statement in print.
+
+The statements are limited as follows. The structure of $M_e$ over $k[z]$ is verified for $e\le5$ and not proved. The eventual Hilbert function of Section~\ref{sec:thmC} is a statement about a general presentation whose degeneracy locus is finite and with corank at most one; it is compared with machine values and not used in any proof. The statement on $d_3\le9$ is a statement in characteristic $0$; nothing is claimed in positive characteristic beyond what Theorems A and C prove and what Tables~\ref{tab:b1} and~\ref{tab:pairs} report. The searches in characteristic $2$ show nonzero pieces up to degree $20$ only. Duality over $U$ is tested and not proved, and no claim uses it. The independent derivations and runs described in Section~\ref{sec:validation} are not archived in the repository. The literature searches are negative searches: the primary texts of the papers on the centres of nilpotent enveloping algebras in prime characteristic were not read beyond an abstract, and a negative search is not a proof of priority. No statement is made about modules that are not finitely generated, and none about non-primitive points over $U$ on the rays that fail the parity test beyond the parity argument itself.
+
+\section{Reproducibility}
+\label{sec:repro}
+\begingroup\raggedright
+
+The repository is \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}. The computations are archived under \path{problems/commutative-algebra/boij-soderberg-realizability/experiments/} in the folders \path{EXP-001-pure-ray-census}, \path{EXP-002-heisenberg-primitive-points} and \path{EXP-003-heisenberg-characteristic-two}; the library is in \path{code/uhlib} of the same problem folder, and the manuscript in \path{manuscripts/boij-soderberg-realizability/primitive-points-realizability}. From the repository root, with the repository virtual environment (Python), the commands are as follows.
+\begin{itemize}\raggedright
+\item The census: \texttt{python} \path{EXP-001-pure-ray-census/run.py} with one of the stages \texttt{stage0}, \texttt{known}, \texttt{soderberg}, \texttt{search}, \texttt{verify}, \texttt{charflags}, \texttt{table}, and the option \texttt{--data-root} naming the data root.
+\item The computations over $U$: \texttt{python} \path{EXP-002-heisenberg-primitive-points/run.py} and \texttt{python} \path{EXP-003-heisenberg-characteristic-two/run.py}.
+\item The numbers, tables and figures of the paper: \texttt{python} \path{manuscripts/boij-soderberg-realizability/primitive-points-realizability/make_tables.py}; with \texttt{--check} it reports stale outputs, and it stops with an error when a value that the text relies on differs from the artifacts.
+\end{itemize}
+The paper is built with two passes of \texttt{pdflatex}. Macaulay2 1.22 and Singular 4.3.2 run under WSL on the default device. Heavy outputs (per-ray logs of the search, saved presentations, rational scripts, the archived sources) are under the data root, in the folder \path{boij-soderberg-realizability}, never inside the repository; the artifacts that carry the results are in the experiment folders (\path{artifacts/results.json}, \path{results-summary.md}, and for the census \path{qq-modules.json}, \path{hits-manifest.json} and \path{table.md}). Run times: \nsearchWallMin{} minutes of wall time for the search of the census on parallel processes, \ntwoWall{} seconds for \EXP{002} and \nthreeWall{} seconds for \EXP{003}. Table~\ref{tab:manifests} gives the hashes of the two manifests that list the saved modules, and Table~\ref{tab:sources} the \nsourcesArchived{} archived sources with their hashes.
+\endgroup
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_manifests.tex}
+\caption{SHA-256 of the two manifests of the saved modules in the census: the file of the \nhitFiles{} search hits with the hash of each saved presentation, and the file of the \nqqModules{} modules over $\Q$ with the integer matrices, the Betti tables computed in Singular and the hash of each script.}
+\label{tab:manifests}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tab_sources.tex}
+\caption{The \nsourcesArchived{} archived sources of the paper with the identifier of the version read, the reading mark (V: primary text checked, V2: secondary or bibliographic reading) and the SHA-256 of the archived file.}
+\label{tab:sources}
+\end{table}
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+The modules $U/U(x^e,y^e)$ are pure of type $(0,e,3e,4e)$ with Betti table $(1,2,2,1)$ exactly in characteristic $0$ and in characteristic at least $2e$; the proof is a computation of ranks of binomial blocks and a socle argument, and the machine confirms it for $e\le8$. In characteristic $2$ the structure of $U$, through its centre and a quadric surface, forbids finite length for every presentation with at most one more relation than generators in a single degree, so the same primitive points are realized over neither ring there. On the ten rays with $d_3\le12$ that pass the parity test and are excluded over $k[x,y,z]$, the primitive point is realized over $U$ in characteristic $0$. The census over $k[x,y,z]$ realizes \nrealized{} of the \nrays{} primitive points with $d_3\le12$, excludes \nexcluded{} and leaves \nopen{} open; and the least $d_3$ of a counterexample to the question of Erman and Sam is $10$ in characteristic $0$, with two dual rays. The next steps are the open rays with $d_3\ge10$, the odd characteristics $p<2e$, and the proofs that remain computational. The rank certificate of Section~\ref{sec:rank} is the tool for the last of these: it decides a lift in seconds where a resolution over $\Q$ takes minutes or stops at the time limit, and a pass together with Proposition~\ref{prop:lift} turns a prime-field realization into a realization in characteristic $0$.
+
+
+\begingroup\raggedright
+\begin{thebibliography}{99}\small
+
+\bibitem{ES16} D. Erman, S. V. Sam, Questions about Boij--S\"oderberg theory, in: Surveys on Recent Developments in Algebraic Geometry, Proc. Sympos. Pure Math. 95, Amer. Math. Soc., 2017, 285--304. arXiv:1606.01867.
+
+\bibitem{JLSWXY} J. Jiang, Y. Li, Z. Sun, Y. Wang, L. Xiao, J. Yu, On some open problems in commutative algebra resolved by Rethlas, arXiv:2605.25259 (version 2, 28 May 2026).
+
+\bibitem{BHW} A. Boocher, N. Huang, H. Wolf, Arithmetic in the Boij--S\"oderberg cone, arXiv:2512.24320 (December 2025).
+
+\bibitem{Erman09} D. Erman, The semigroup of Betti diagrams, Algebra Number Theory 3 (2009) 341--365. arXiv:0806.4401.
+
+\bibitem{ES09} D. Eisenbud, F.-O. Schreyer, Betti numbers of graded modules and cohomology of vector bundles, J. Amer. Math. Soc. 22 (2009) 859--888. arXiv:0712.1843.
+
+\bibitem{EFW11} D. Eisenbud, G. Fl{\o}ystad, J. Weyman, The existence of equivariant pure free resolutions, Ann. Inst. Fourier 61 (2011) 905--926. doi:10.5802/aif.2632, arXiv:0709.1529.
+
+\bibitem{BS08} M. Boij, J. S\"oderberg, Graded Betti numbers of Cohen--Macaulay modules and the multiplicity conjecture, J. Lond. Math. Soc. (2) 78 (2008) 85--106. arXiv:math/0611081.
+
+\bibitem{BS12} M. Boij, J. S\"oderberg, Betti numbers of graded modules and the multiplicity conjecture in the non-Cohen--Macaulay case, Algebra Number Theory 6 (2012) 437--454. arXiv:0803.1645.
+
+\bibitem{BEKS13} C. Berkesch Zamaere, D. Erman, M. Kummini, S. V. Sam, Tensor complexes: multilinear free resolutions constructed from higher tensors, J. Eur. Math. Soc. 15 (2013) 2257--2295. arXiv:1101.4604.
+
+\bibitem{EES13} D. Eisenbud, D. Erman, F.-O. Schreyer, Filtering free resolutions, Compos. Math. 149 (2013) 754--772. arXiv:1001.0585.
+
+\bibitem{HK84} J. Herzog, M. K\"uhl, On the Betti numbers of finite pure and linear resolutions, Comm. Algebra 12 (1984) 1627--1646.
+
+\bibitem{BE77} D. A. Buchsbaum, D. Eisenbud, Algebra structures for finite free resolutions, and some structure theorems for ideals of codimension 3, Amer. J. Math. 99 (1977) 447--485.
+
+\bibitem{BE74} D. A. Buchsbaum, D. Eisenbud, Some structure theorems for finite free resolutions, Adv. Math. 12 (1974) 84--139.
+
+\bibitem{SodLevel} J. S\"oderberg, Graded Betti numbers and $h$-vectors of level modules, arXiv:math/0612047 (version 2).
+
+\bibitem{Boij00} M. Boij, Artin level modules, J. Algebra 226 (2000) 361--374 (reference~[1] of~\cite{SodLevel}; not read).
+
+\bibitem{Sam15} S. V. Sam, Homology of analogues of Heisenberg Lie algebras, Math. Res. Lett. 22 (2015). arXiv:1307.1901.
+
+\bibitem{SVB} S. V. Sam, VandeBogert, From total positivity to pure free resolutions, arXiv:2408.10408.
+
+\bibitem{Floystad12} G. Fl{\o}ystad, Boij--S\"oderberg theory: introduction and survey, in: Progress in Commutative Algebra 1, de Gruyter, 2012, 1--54. arXiv:1106.0381.
+
+\bibitem{AJK26} H. Ananthnarayan, O. Javadekar, R. Kumar, Purity of extremal rays of Betti cones, arXiv:2607.06394 (July 2026).
+
+\bibitem{Ju26} H. Ju et al., Automated Conjecture Resolution with Formal Verification, arXiv:2604.03789 (2026).
+
+\bibitem{Kunte} M. Kunte, Gorenstein modules of finite length, Math. Nachr. (2011). arXiv:0807.2956.
+
+\bibitem{LdJS} Lopes de Jesus, Schneider, on the centres of the enveloping algebras of nilpotent Lie algebras of dimension at most $6$ in prime characteristic (description read from the abstract). arXiv:2111.13432.
+
+\bibitem{Fulton} W. Fulton, Intersection Theory, Theorem 14.4 (the Thom--Porteous formula).
+
+\bibitem{M2BS} Macaulay2, version 1.22, package \texttt{BoijSoederberg} (\texttt{pureCharFree}, \texttt{pureTwoInvariant}, \texttt{pureWeyman}, \texttt{randomModule}, \texttt{randomSocleModule}); file SHA-256 \texttt{3ce45c08f73ea4c3fcc049f261d35c73b4b5a1afcf9c239a9806e2e0ed53b415}.
+
+\bibitem{Singular} Singular, version 4.3.2, subsystem Plural; manual pages on resolutions of modules over G-algebras: \url{https://singular.mathematik.uni-kl.de/Manual/4-4/sing_480.htm}.
+
+\bibitem{RethlasRes} Rethlas\_results, repository \texttt{frenzymath/Rethlas\_results}, directory \texttt{CommAlg/arxiv\_1606\_01867}, files \texttt{question\_6\_1.md} and \texttt{question\_6\_2.md}: \url{https://github.com/frenzymath/Rethlas_results}.
+
+\end{thebibliography}
+\endgroup
+
+\end{document}

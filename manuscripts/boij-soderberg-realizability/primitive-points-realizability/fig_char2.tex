@@ -1,0 +1,12 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Stealth]
+\node[draw,rounded corners,minimum width=2.9cm,minimum height=0.9cm] (U) at (0,2.4) {$U=U^+\oplus U^-$};
+\node[draw,rounded corners,minimum width=2.9cm,minimum height=0.9cm,align=center] (Up) at (-3.5,0.6) {$U^+=C\oplus C\,yx$\\ free of rank $1$ over $B$};
+\node[draw,rounded corners,minimum width=2.9cm,minimum height=0.9cm,align=center] (Um) at (3.5,0.6) {$U^-=Cx\oplus Cy$\\ $\cong J(1)$, $J=(X,t)$};
+\draw[->] (U) -- (Up); \draw[->] (U) -- (Um);
+\node[draw,rounded corners,minimum width=4.6cm,minimum height=0.9cm,align=center] (B) at (-3.5,-1.5) {$B=C[t]/(t^2+Zt+XY)$\\ $uv=XY$, $u=t$, $v=t+Z$};
+\node[draw,rounded corners,minimum width=4.6cm,minimum height=0.9cm,align=center] (S) at (3.5,-1.5) {$\Sigma=\operatorname{Proj}B=\mathbb{P}^1\times\mathbb{P}^1$\\ $\mathcal{O}(1)=\mathcal{O}(1,1)$};
+\draw[->] (Up) -- node[left,font=\scriptsize]{$yx\mapsto t$} (B);
+\draw[->] (Um) -- node[right,font=\scriptsize]{$\widetilde{\ \ }$} (S);
+\draw[->] (B) -- node[above,font=\scriptsize]{$\operatorname{Proj}$} (S);
+\node[font=\scriptsize,align=center,text width=13.4cm] at (0,-3.4) {$\widetilde{U^+}=\mathcal{O}$, $\widetilde{U^-}=\mathcal{O}(0,1)$ (twist by the line $X=t=0$ of class $(1,0)$);\\ for a presentation with $a$ generators and $b\le a+1$ relations of degree $e=2m$ or $2m+1$ the map $\psi:\mathcal{O}^b\to L^{\oplus a}$ with $L=\mathcal{O}(m,m)$ or $\mathcal{O}(m,m+1)$ is never onto.};
+\end{tikzpicture}

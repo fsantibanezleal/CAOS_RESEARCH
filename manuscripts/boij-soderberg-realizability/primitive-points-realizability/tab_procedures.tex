@@ -1,0 +1,13 @@
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{5.2cm}@{}}
+\toprule
+procedure & arithmetic & measured cost\\
+\midrule
+Exact quotient of $U$ by a left ideal, Tor complex (Algorithm~\ref{alg:module}) & $\mathbb{Q}$, $\mathbb{F}_p$, $\mathbb{F}_{2^r}$ & $e=8$ over $\mathbb{Q}$: 12.6 s; calibration modules: at most 0.12 s\\
+Resolution in Plural, degrees read from the generators of each syzygy module & same & calibration modules: at most 1.29 s\\
+Census (Algorithm~\ref{alg:census}) & $\mathbb{Q}$ & 220 rays; not timed separately\\
+Search (Algorithm~\ref{alg:search}) & $\mathbb{F}_{32003}$ & 2{,}996 cells, 20{,}089 s of summed process time, median 0.23 s, maximum 364 s, 16 min wall time\\
+Rational recheck (Algorithm~\ref{alg:recheck}) & $\mathbb{Q}$ & 66 completed rechecks, 7 stopped at the 30 minute limit\\
+Rank certificate of a lift (Algorithm~\ref{alg:rank}) & $\mathbb{Q}$ and $\mathbb{F}_{32003}$ & 130 hits, 1{,}085 s of summed time; largest matrix $2178\times2200$; longest rank over $\mathbb{Q}$ 647 s\\
+Characteristic 2 enumerations and searches & $\mathbb{F}_{2^r}$ & 488 s of summed task time in total, 151.5 s wall time\\
+\bottomrule
+\end{tabular}

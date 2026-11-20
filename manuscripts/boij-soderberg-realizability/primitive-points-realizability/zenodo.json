@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Pure resolutions over the Heisenberg enveloping algebra and the realizability of primitive Betti points: the modules U/U(x^e,y^e), the role of the characteristic, and a census for degrees at most twelve",
+    "creators": [
+      {
+        "name": "Santibáñez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>Erman and Sam asked whether every integral point on a pure ray of the Boij-Söderberg cone in three variables is the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U of the Heisenberg Lie algebra. Jiang, Li, Sun, Wang, Xiao and Yu answered the question negatively over every field in 2026.</p><p>We study the primitive points that pass the Hilbert series parity test over U and are excluded over k[x,y,z]. We prove that M_e = U/U(x^e, y^e) has a pure resolution of type (0, e, 3e, 4e) with Betti numbers (1, 2, 2, 1) if and only if char k = 0 or char k >= 2e. We prove that in characteristic 2 no module with a generators and at most a + 1 relations of one degree e >= 2 has finite length over U, so the same point is realized over neither ring on the ray (0, e, 3e, 4e) for every e >= 2. By exact computation, the ten rays with d_3 <= 12 that pass the parity test and are excluded over k[x,y,z] are realized over U in characteristic 0.</p><p>The census over k[x,y,z] of the 220 rays with d_3 <= 12 realizes the primitive point on 193 rays (147 in characteristic 0 by a cited construction or a resolution over the rationals, all 193 by a rank certificate of the lift), excludes it on 12 and leaves 15 open. In characteristic 0 no counterexample has d_3 <= 9, while two rays with d_3 = 10 are counterexamples over every field. The answer to the question thus depends on the characteristic on an infinite family of rays.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH. The paper does not claim a first negative answer to Question 6.1 of Erman and Sam, which is due to Jiang, Li, Sun, Wang, Xiao and Yu, and claims no priority for any other result.</p>",
+    "keywords": [
+      "Boij-Soderberg theory",
+      "pure free resolutions",
+      "Betti tables",
+      "Heisenberg Lie algebra",
+      "enveloping algebra",
+      "Erman-Sam question",
+      "primitive points on pure rays",
+      "Hilbert series parity test",
+      "characteristic 2",
+      "Kostant modules",
+      "census of pure rays",
+      "exact computation",
+      "commutative algebra"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "language": "eng",
+    "version": "0.01",
+    "publication_date": "2026-11-19",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.1606.01867",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2605.25259",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2512.24320",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.0806.4401",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.0712.1843",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.5802/aif.2632",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.math/0611081",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.0803.1645",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.1101.4604",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.1001.0585",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.math/0612047",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.1307.1901",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2408.10408",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.1106.0381",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2607.06394",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2604.03789",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.0807.2956",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2111.13432",
+        "resource_type": "publication-preprint"
+      }
+    ],
+    "references": [
+      "D. Erman, S. V. Sam, Questions about Boij-Söderberg theory, in: Surveys on Recent Developments in Algebraic Geometry, Proc. Sympos. Pure Math. 95, Amer. Math. Soc., 2017, 285-304. arXiv:1606.01867.",
+      "J. Jiang, Y. Li, Z. Sun, Y. Wang, L. Xiao, J. Yu, On some open problems in commutative algebra resolved by Rethlas, arXiv:2605.25259 (version 2, 28 May 2026).",
+      "A. Boocher, N. Huang, H. Wolf, Arithmetic in the Boij-Söderberg cone, arXiv:2512.24320 (December 2025).",
+      "D. Erman, The semigroup of Betti diagrams, Algebra Number Theory 3 (2009) 341-365. arXiv:0806.4401.",
+      "D. Eisenbud, F.-O. Schreyer, Betti numbers of graded modules and cohomology of vector bundles, J. Amer. Math. Soc. 22 (2009) 859-888. arXiv:0712.1843.",
+      "D. Eisenbud, G. Fløystad, J. Weyman, The existence of equivariant pure free resolutions, Ann. Inst. Fourier 61 (2011) 905-926. doi:10.5802/aif.2632, arXiv:0709.1529.",
+      "M. Boij, J. Söderberg, Graded Betti numbers of Cohen-Macaulay modules and the multiplicity conjecture, J. Lond. Math. Soc. (2) 78 (2008) 85-106. arXiv:math/0611081.",
+      "M. Boij, J. Söderberg, Betti numbers of graded modules and the multiplicity conjecture in the non-Cohen-Macaulay case, Algebra Number Theory 6 (2012) 437-454. arXiv:0803.1645.",
+      "C. Berkesch Zamaere, D. Erman, M. Kummini, S. V. Sam, Tensor complexes: multilinear free resolutions constructed from higher tensors, J. Eur. Math. Soc. 15 (2013) 2257-2295. arXiv:1101.4604.",
+      "D. Eisenbud, D. Erman, F.-O. Schreyer, Filtering free resolutions, Compos. Math. 149 (2013) 754-772. arXiv:1001.0585.",
+      "J. Herzog, M. Kühl, On the Betti numbers of finite pure and linear resolutions, Comm. Algebra 12 (1984) 1627-1646.",
+      "D. A. Buchsbaum, D. Eisenbud, Algebra structures for finite free resolutions, and some structure theorems for ideals of codimension 3, Amer. J. Math. 99 (1977) 447-485.",
+      "D. A. Buchsbaum, D. Eisenbud, Some structure theorems for finite free resolutions, Adv. Math. 12 (1974) 84-139.",
+      "J. Söderberg, Graded Betti numbers and h-vectors of level modules, arXiv:math/0612047 (version 2).",
+      "M. Boij, Artin level modules, J. Algebra 226 (2000) 361-374 (reference [1] of Soderberg, arXiv:math/0612047; not read).",
+      "S. V. Sam, Homology of analogues of Heisenberg Lie algebras, Math. Res. Lett. 22 (2015). arXiv:1307.1901.",
+      "S. V. Sam, VandeBogert, From total positivity to pure free resolutions, arXiv:2408.10408.",
+      "G. Fløystad, Boij-Söderberg theory: introduction and survey, in: Progress in Commutative Algebra 1, de Gruyter, 2012, 1-54. arXiv:1106.0381.",
+      "H. Ananthnarayan, O. Javadekar, R. Kumar, Purity of extremal rays of Betti cones, arXiv:2607.06394 (July 2026).",
+      "H. Ju et al., Automated Conjecture Resolution with Formal Verification, arXiv:2604.03789 (2026).",
+      "M. Kunte, Gorenstein modules of finite length, Math. Nachr. (2011). arXiv:0807.2956.",
+      "Lopes de Jesus, Schneider, on the centres of the enveloping algebras of nilpotent Lie algebras of dimension at most 6 in prime characteristic (description read from the abstract). arXiv:2111.13432.",
+      "W. Fulton, Intersection Theory, Theorem 14.4 (the Thom-Porteous formula).",
+      "Macaulay2, version 1.22, package BoijSoederberg (pureCharFree, pureTwoInvariant, pureWeyman, randomModule, randomSocleModule); file SHA-256 3ce45c08f73ea4c3fcc049f261d35c73b4b5a1afcf9c239a9806e2e0ed53b415.",
+      "Singular, version 4.3.2, subsystem Plural; manual pages on resolutions of modules over G-algebras: https://singular.mathematik.uni-kl.de/Manual/4-4/sing_480.htm.",
+      "Rethlas_results, repository frenzymath/Rethlas_results, directory CommAlg/arxiv_1606_01867, files question_6_1.md and question_6_2.md: https://github.com/frenzymath/Rethlas_results."
+    ]
+  }
+}

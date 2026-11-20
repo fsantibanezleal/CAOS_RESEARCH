@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=1.6cm}, width=7.4cm, height=5.6cm, tick label style={font=\scriptsize}, label style={font=\small}]
+\nextgroupplot[xlabel={degree $d$}, ylabel={$\dim (M_e)_d$}, legend style={font=\scriptsize, at={(0.5,-0.28)}, anchor=north}, xmin=0, ymin=0, legend columns=3]
+\addplot[color=black, mark=*, mark size=1.4pt, thick] coordinates {(0,1) (1,2) (2,2) (3,2) (4,1)};
+\addlegendentry{$e=2$}
+\addplot[color=blue!60!black, mark=square*, mark size=1.4pt, thick] coordinates {(0,1) (1,2) (2,4) (3,4) (4,5) (5,4) (6,4) (7,2) (8,1)};
+\addlegendentry{$e=3$}
+\addplot[color=red!75!black, mark=triangle*, mark size=1.4pt, thick] coordinates {(0,1) (1,2) (2,4) (3,6) (4,7) (5,8) (6,8) (7,8) (8,7) (9,6) (10,4) (11,2) (12,1)};
+\addlegendentry{$e=4$}
+\addplot[color=teal!70!black, mark=diamond*, mark size=1.4pt, thick] coordinates {(0,1) (1,2) (2,4) (3,6) (4,9) (5,10) (6,12) (7,12) (8,13) (9,12) (10,12) (11,10) (12,9) (13,6) (14,4) (15,2) (16,1)};
+\addlegendentry{$e=5$}
+\addplot[color=orange!85!black, mark=pentagon*, mark size=1.4pt, thick] coordinates {(0,1) (1,2) (2,4) (3,6) (4,9) (5,12) (6,14) (7,16) (8,17) (9,18) (10,18) (11,18) (12,17) (13,16) (14,14) (15,12) (16,9) (17,6) (18,4) (19,2) (20,1)};
+\addlegendentry{$e=6$}
+\nextgroupplot[xlabel={degree $d$}, ylabel={block dimension}, ybar stacked, bar width=4.5pt, xmin=-0.7, xmax=12.7, ymin=0, legend style={font=\scriptsize, at={(0.5,-0.28)}, anchor=north}, legend columns=4, xtick distance=2]
+\addplot[draw=black, fill=black!85] coordinates {(0,1) (1,0) (2,2) (3,0) (4,3) (5,0) (6,4) (7,0) (8,3) (9,0) (10,2) (11,0) (12,1)};
+\addlegendentry{$|w|=0$}
+\addplot[draw=black, fill=black!60] coordinates {(0,0) (1,2) (2,0) (3,4) (4,0) (5,6) (6,0) (7,6) (8,0) (9,4) (10,0) (11,2) (12,0)};
+\addlegendentry{$|w|=1$}
+\addplot[draw=black, fill=black!35] coordinates {(0,0) (1,0) (2,2) (3,0) (4,4) (5,0) (6,4) (7,0) (8,4) (9,0) (10,2) (11,0) (12,0)};
+\addlegendentry{$|w|=2$}
+\addplot[draw=black, fill=black!12] coordinates {(0,0) (1,0) (2,0) (3,2) (4,0) (5,2) (6,0) (7,2) (8,0) (9,2) (10,0) (11,0) (12,0)};
+\addlegendentry{$|w|=3$}
+\end{groupplot}
+\end{tikzpicture}
