@@ -236,3 +236,43 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - Open: e = 6 at p = 5, 7; e = 7 at p = 3, 5, 7; e >= 8 below 2e. Not in the manuscript v0.02 (published before this
   run ended); backlog BSB-030.
 
+## 2026-11-20 - Three theorems in positive characteristic; for 2 <= e <= 7 the point fails only in characteristic 2
+
+- EXP-010 frozen (weight-class strata). While it ran, a probe of binomial deformations of the power pair on settled
+  pairs showed x^p + b y z^((p-1)/2), y^p + d x z^((p-1)/2) pure for every nonzero b, d at p = 3, 5. Cause: in
+  characteristic p dividing e the forms x^e, y^e are central, so g f - f g is a power of z and lies in the ideal.
+- Central pairs (p dividing an odd e): proved with an elementary argument, reviewed (correct), EXP-011 CONFIRMED on
+  sixteen cases (e up to 15, two instruments). Settles (7,7).
+- The criterion for every pair with central coefficients (pure if and only if z D, n(f), n(g) have no common zero but
+  the origin), with explicit pure pairs for every e = 0 or 1 modulo p: proved through the fibres of U over its centre
+  and the acyclicity lemma, reviewed (correct), EXP-012 CONFIRMED on eleven explicit pairs and 1,600 random pairs.
+  Settles (6,5) and (7,3).
+- The mechanism: the explicit complex is the base change of the resolution of k along an endomorphism of U and exists
+  only for a central commutator; the pull-back multiplies the degrees of every Betti table by d. Reviewed (correct),
+  EXP-013 CONFIRMED on ten cases. New pure pairs at (8,3), (12,5), (16,7), (24,7).
+- EXP-010 (accepted for its controls and four of its five open pairs): pure pairs at (6,5), (6,7), (7,3), (7,5); the
+  necessary condition on strata holds on 410 strata. So for 2 <= e <= 7 the point (1,2,2,1) of (0, e, 3e, 4e) fails
+  only in characteristic 2.
+- The pairs (x^e + b y^e, G(xy, z)): decomposition over k[xy, z], reviewed (two blockers in the consequences,
+  repaired); a pure pair over the rationals at e = 4.
+- Running: the last pair and the exploratory family of EXP-010, EXP-014 (under amendment 1), the first pass of the
+  manuscript v0.03.
+- 2026-11-20: EXP-010 CONFIRMED and EXP-014 PARTLY CONFIRMED (e = 6, 7, 8 complete). Note on one congruence for the pairs
+  (x^e + b y^e, G(xy, z)) reviewed (the pure Hilbert function, the pure Betti table, existence for p >= 2e - 1); note on the
+  projection on the weight-zero summand reviewed (the linear family has no pure member for p <= 2e - 5). EXP-015 CONFIRMED
+  (the rule of the linear family at e = 10 to 13; e = 9 complete), EXP-016 CONFIRMED with one case unfinished (lists by the
+  congruence; e = 10 and e = 12 complete), EXP-017 CONFIRMED (a filter of two congruences for the odd-e stratum; pure pairs
+  at (11,7), (13,5)). Working notes on the family x^e + alpha y^t, y^e + beta x^t; backlog BSB-035, BSB-036.
+- 2026-11-20: EXP-018 CONFIRMED (the largest exponent strata: pure pairs at (11,13), (11,17), (13,17), (13,19), (14,23); at e = 11 only
+  p = 3 stays open).
+- 2026-11-20: two derivations reviewed (the pairs x^e + alpha y^t, y^e + beta x^t: two congruences and a scalar give the pure
+  Hilbert function, and a pure pair when Delta has no common factor with A_(e-t); explicit pure pairs of the linear family for
+  every prime p = 2e - 1 and for p = 2e - 3 up to 2,000,000). EXP-019 CONFIRMED on the cases finished (the filter for every
+  exponent: pure pairs at (13,11), (13,7), (14,5) and six pairs with e = 15, 16). EXP-020 CONFIRMED (the members fixed by the
+  exchange of x and y: pure pairs at (14,11), (15,11), (15,13), (15,17), (16,17), (16,19)). Every pair (e, p) with e <= 16 is
+  settled except (11, 3). Backlog BSB-037 to BSB-039.
+- 2026-11-20: manuscript v0.03 published (10.5281/zenodo.24404456, concept 10.5281/zenodo.24385386): 156 pages, 56,564 words, 40 references. New title: the
+  point (1,2,2,1) on (0, e, 3e, 4e) fails only in characteristic 2 for 2 <= e <= 16 with e != 11 and is realized whenever an
+  odd prime p divides e(e - 1) or equals 2e - 1. It carries EXP-009 to EXP-020 and the ten derivations reviewed after v0.02
+  (Theorems E to P). Reviewed by a reader other than the writer: first review, fix pass, closing check, three further writing
+  passes, review of the additions, final confirmation (approve for release). Open: (11, 3), BSB-037, e >= 17.

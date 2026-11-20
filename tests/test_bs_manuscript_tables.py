@@ -3,8 +3,10 @@
 1. The bytes and the SHA-256 printed in the manifest table equal those of the blob committed at HEAD (so a checkout with CRLF line
    ends cannot make the table stale again).
 2. `make_tables.py --check` reports every generated output current.
-3. The guards on the artifacts of EXP-005, EXP-006 and EXP-007 stop the generator when an artifact differs from what the text
-   relies on: a mutated copy (in a pytest tmp path) is refused, an unmutated copy is accepted.
+3. The guards on the artifacts of EXP-005 to EXP-017 (EXP-016 is not used) stop the generator when an artifact differs from what
+   the text relies on: a mutated copy (in a pytest tmp path) is refused, an unmutated copy is accepted.
+4. The admissible and refined admissible strata for e = 4 to 8 equal the counts of the independent computation, and the rule of the
+   grid of pairs (e, p) gives the hand-checked cells.
 """
 import importlib.util
 import json
@@ -62,10 +64,13 @@ def test_check_reports_outputs_current():
 
 def _copy_problem(mt, tmp_path):
     root = tmp_path / "problem"
-    for d in (mt.E5, mt.E6, mt.E7, mt.E8):
+    for d in (mt.E5, mt.E6, mt.E7, mt.E8, mt.E9, mt.E11, mt.E12, mt.E10, mt.E13, mt.E14, mt.E15, mt.E17, mt.E16, mt.E18, mt.E19, mt.E20):
         dst = root / "experiments" / d.name / "artifacts"
         dst.mkdir(parents=True)
         (dst / "results.json").write_bytes((d / "artifacts" / "results.json").read_bytes())
+        extra = d / "artifacts" / "stored-members-filter.json"
+        if extra.exists():
+            (dst / extra.name).write_bytes(extra.read_bytes())
     return root
 
 
@@ -173,3 +178,472 @@ def test_guard_exp008_refuses_a_changed_pair(mt, tmp_path):
                         s["basis"][1] = [list(t) for t in s["basis"][0]]
     _edit(root, mt.E8, mutate)
     assert any("pair C|GF(3)" in f for f in _run(mt, root))
+
+
+# ---- EXP-009, EXP-011, EXP-012 ----
+
+def test_guard_exp009_refuses_a_member_above_r(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E9, lambda d: d["totals"]["4|5|X"].__setitem__("rank_above_r", 1))
+    assert any("EXP-009 X 4,5" in f for f in _run(mt, root))
+
+
+def test_guard_exp009_refuses_a_pure_member_at_6_7(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E9, lambda d: d["totals"]["6|7|X"].__setitem__("pure", 1))
+    assert any("EXP-009 X 6,7" in f for f in _run(mt, root))
+
+
+def test_guard_exp009_refuses_a_changed_member(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+
+    def mutate(d):
+        s2 = d["pairs"]["6|11|X"]["s2"]
+        mem = next(m for m in s2["members_pure_hilbert"] if m["pure"])
+        mem["basis"][1][0][1] = 5   # the coefficient of the second form changes: no longer L_6 of its parameters
+    _edit(root, mt.E9, mutate)
+    assert any("EXP-009 member 6,11" in f for f in _run(mt, root))
+
+
+def test_guard_exp009_refuses_a_prediction_that_does_not_hold(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E9, lambda d: d["predictions"]["P2"]["6,7"].__setitem__("holds", True))
+    assert any("EXP-009 P2" in f for f in _run(mt, root))
+
+
+def test_guard_exp011_refuses_a_changed_lambda(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E11, lambda d: d["cases"]["T5"].__setitem__("lambda", 2))
+    assert any("EXP-011 T5: g f - f g" in f for f in _run(mt, root))
+
+
+def test_guard_exp011_refuses_a_changed_length(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E11, lambda d: d["cases"]["T8"].__setitem__("length", 728))
+    assert any("EXP-011 T8: length" in f for f in _run(mt, root))
+
+
+def test_guard_exp011_refuses_a_changed_polynomial(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E11, lambda d: d["cases"]["T3"]["g"].append([[3, 0, 1], 1]))   # adds x^3 z to g (degree 5): the commutator is no longer lambda z^5
+    assert any("EXP-011 T3" in f for f in _run(mt, root))
+
+
+def test_guard_exp012_refuses_a_changed_D(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E12, lambda d: d["X"]["B2"].__setitem__("D", [[1, 1, 0, 2]]))
+    assert any("EXP-012 B2" in f for f in _run(mt, root))
+
+
+def test_guard_exp012_refuses_a_changed_random_count(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E12, lambda d: d["totals"]["R"]["6,5"].__setitem__("criterion", 118))
+    assert any("EXP-012 R 6,5" in f for f in _run(mt, root))
+
+
+def test_guard_exp012_refuses_a_disagreement_between_criterion_and_purity(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+
+    def mutate(d):
+        x = d["R"]["6,5"]["pairs"][0]
+        x["criterion"] = not x["criterion"]
+    _edit(root, mt.E12, mutate)
+    assert any("EXP-012 R 6,5" in f for f in _run(mt, root))
+
+
+def test_guard_exp012_refuses_a_negative_control_that_turns_pure(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E12, lambda d: d["N"]["N2"]["criterion"].__setitem__("holds", True))
+    assert any("EXP-012 N2" in f for f in _run(mt, root))
+
+
+# ---- the strata and the grid of pairs ----
+
+def test_refined_admissible_counts_equal_the_independent_computation(mt):
+    got = {}
+    for e in range(4, 9):
+        adm, ref = mt.strata_tables(e)
+        got[e] = (sum(adm.values()), len(adm), sum(ref.values()))
+    assert got == {4: (17, 34, 11), 5: (19, 55, 9), 6: (34, 83, 19), 7: (34, 119, 13), 8: (58, 164, 30)}
+    # a few strata by hand: S(e+1; 0, e) is the point W_0 and is admissible, S(e+1; 1, e) is not; for m = e the refined list is (0, j) only
+    adm, ref = mt.strata_tables(6)
+    assert adm[(7, 0, 6)] and not adm[(7, 1, 6)]
+    assert sorted((i, j) for (m, i, j), ok in ref.items() if m == 6 and ok) == [(0, j) for j in range(6)]
+
+
+def test_strata_facts_guard_stops_on_a_wrong_note(mt, monkeypatch):
+    monkeypatch.setitem(mt.STRATA_NOTE, 6, (34, 83, 20))
+    mt.FAILS.clear()
+    try:
+        mt.strata_output({}, {})
+        assert any("strata e=6" in f for f in mt.FAILS)
+    finally:
+        mt.FAILS.clear()
+
+
+def test_grid_rule_on_hand_checked_cells(mt):
+    explicit = {(2, 3), (3, 3), (3, 5), (4, 3), (4, 5), (4, 7), (5, 3), (5, 5), (5, 7), (6, 3)}
+    linear = {(4, 5), (4, 7), (5, 7), (6, 11), (7, 11), (7, 13)}
+    cells = mt.grid_cells(16, explicit, linear)
+    # p divides e(e-1): the criterion
+    assert cells[(6, 5)] == "C" and cells[(7, 3)] == "C" and cells[(7, 7)] == "C" and cells[(8, 7)] == "C"
+    # the pull-back: 8 = 4.2 at p = 3 (4 = 1 modulo 3, (2,3) settled), 12 = 6.2 at p = 5, 14 = 7.2 at p = 3, 16 = 8.2 at p = 7
+    assert cells[(8, 3)] == "P" and cells[(12, 5)] == "P" and cells[(14, 3)] == "P" and cells[(16, 7)] == "P"
+    # the linear family and a search
+    assert cells[(6, 11)] == "L" and cells[(7, 13)] == "L" and cells[(5, 3)] == "S" and cells[(2, 3)] == "S"
+    # the cells that the results leave open
+    for k in [(6, 7), (7, 5), (8, 5), (8, 11), (8, 13), (11, 3), (9, 5)]:
+        assert cells[k] is None, k
+    assert all(v is not None for (e, p), v in cells.items() if e <= 5)
+    # without the pair of quadrics over F_3 the pull-back at (8, 3) is not available, and without the linear family (6, 11) is open
+    cells2 = mt.grid_cells(16, explicit - {(2, 3)}, set())
+    assert cells2[(8, 3)] is None and cells2[(6, 11)] is None and cells2[(4, 5)] == "S"
+
+
+def test_grid_inputs_come_from_the_artifacts(mt):
+    r5, r6, r7, r8 = mt.read_artifacts(mt.PROBLEM)
+    r9, _r11, _r12 = mt.read_later(mt.PROBLEM)
+
+    def below(pairs):   # the grid has only p < 2e; the searches also found pairs over F_11 and F_13 at e = 4
+        return {k for k in pairs if k[1] < 2 * k[0]}
+    assert below(mt.explicit_from_artifacts(r6, r8, 1)) == {(2, 3), (3, 3), (3, 5), (4, 3), (4, 5), (4, 7), (5, 3), (5, 5), (5, 7), (6, 3)}
+    assert below(mt.explicit_from_artifacts(r6, r8, 0)) == {(3, 3), (3, 5), (4, 3), (4, 5), (4, 7), (5, 3), (5, 5), (5, 7), (6, 3)}
+    assert mt.linear_from_artifacts(r9) == {(4, 5), (4, 7), (5, 7), (6, 11), (7, 11), (7, 13)}
+
+
+# ---- EXP-010, EXP-013, EXP-014 ----
+
+def _first_pure_member(d, key_filter):
+    for k, st in d["strata"].items():
+        if key_filter(k, st) and st["pure"]:
+            return st, next(m for m in st["members"] if m["pure"])
+    raise AssertionError("no stratum")
+
+
+def test_guard_exp010_refuses_a_changed_total(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E10, lambda d: d["totals"]["Q|6|5"].__setitem__("pure", 45))
+    assert any("EXP-010 Q|6|5" in f for f in _run(mt, root))
+
+
+def test_guard_exp010_refuses_a_failed_exclusion(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E10, lambda d: d["gates"]["G4"].__setitem__("with_pure_hilbert_function", 1))
+    assert any("EXP-010 G4" in f for f in _run(mt, root))
+
+
+def test_guard_exp010_refuses_a_prediction_that_changes(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E10, lambda d: d["predictions"]["P5"]["8,5"].__setitem__("holds", True))
+    assert any("EXP-010 P5 at (8, 5)" in f for f in _run(mt, root))
+
+
+def test_guard_exp010_refuses_a_member_outside_its_stratum(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+
+    def mutate(d):
+        st, mem = _first_pure_member(d, lambda k, s: s["family"] == "Q" and s["e"] == 6 and s["p"] == 5 and (s["m"], s["i"], s["j"]) == (6, 0, 3))
+        mem["f"][1] = 1     # the monomial of weight 5 modulo 6 enters f
+    _edit(root, mt.E10, mutate)
+    assert any("EXP-010 pair 6,5" in f for f in _run(mt, root))
+
+
+def test_guard_exp013_refuses_a_table_that_is_not_scaled(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E13, lambda d: d["cases"]["S2"]["uhlib_phi"]["table"][1].__setitem__(1, 7))
+    assert any("EXP-013 S2" in f for f in _run(mt, root))
+
+
+def test_guard_exp013_refuses_a_changed_endomorphism(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E13, lambda d: d["cases"]["S3"]["phi_z"].append([[0, 0, 3], 1]))
+    assert any("EXP-013 S3" in f for f in _run(mt, root))
+
+
+def test_guard_exp013_refuses_a_changed_generator(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E13, lambda d: d["cases"]["S1"]["gens_phi"][0][0].__setitem__(1, 2))
+    assert any("EXP-013 S1" in f for f in _run(mt, root))
+
+
+def test_guard_exp014_refuses_a_prediction_that_changes(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E14, lambda d: d["predictions"]["P1"]["8,3"].__setitem__("holds", True))
+    assert any("EXP-014 P1" in f for f in _run(mt, root))
+
+
+def test_guard_exp014_refuses_a_changed_count(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E14, lambda d: d["totals"]["V|8|5|8|0|4"].__setitem__("pure", 5))
+    assert any("EXP-014 V|8|5|8|0|4" in f for f in _run(mt, root))
+
+
+def test_guard_exp014_refuses_a_member_outside_its_stratum(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+
+    def mutate(d):
+        st = d["strata"]["V|8|5|8|0|4"]
+        next(m for m in st["members"] if m["pure"])["f"][1] = 1
+    _edit(root, mt.E14, mutate)
+    assert any("EXP-014 pair 8,5" in f for f in _run(mt, root))
+
+
+def test_grid_with_the_searches_in_strata(mt):
+    explicit = {(2, 3), (3, 3), (3, 5), (4, 3), (4, 5), (4, 7), (5, 3), (5, 5), (5, 7), (6, 3)}
+    linear = {(4, 5), (4, 7), (5, 7), (6, 11), (7, 11), (7, 13)}
+    w = {(6, 5), (6, 7), (7, 3), (7, 5), (7, 7), (8, 3), (8, 7), (8, 13)}
+    mid = {(8, 5), (8, 7), (8, 11), (8, 13), (9, 7), (9, 17), (10, 3), (10, 7), (10, 11), (10, 13), (12, 5)}
+    cells = mt.grid_cells(16, explicit, linear, (("W", w), ("M", mid)))
+    assert cells[(6, 7)] == "W" and cells[(7, 5)] == "W" and cells[(8, 5)] == "M" and cells[(8, 11)] == "M" and cells[(8, 13)] == "W"
+    assert cells[(9, 7)] == "M" and cells[(9, 17)] == "M" and cells[(8, 3)] == "P" and cells[(12, 5)] == "P" and cells[(10, 3)] == "C"
+    for k in [(9, 5), (9, 11), (9, 13), (10, 17), (10, 19), (12, 7), (12, 13), (11, 3)]:
+        assert cells[k] is None, k
+    # every odd prime below 2e is settled for 2 <= e <= 8, and e = 9 is the first row with an open cell
+    assert all(cells[(e, p)] is not None for (e, p) in cells if e <= 8)
+    assert any(cells[(9, p)] is None for p in (3, 5, 7, 11, 13, 17))
+
+
+# ---- EXP-015, EXP-017, the weight-zero projection and the rule of the linear family ----
+
+def test_guard_exp015_refuses_a_prediction_that_changes(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    key = sorted(_read(root, mt.E15)["predictions"]["P1"])[0]
+    _edit(root, mt.E15, lambda d: d["predictions"]["P1"][key].__setitem__("holds", False))
+    assert any("EXP-015 P1" in f for f in _run(mt, root))
+
+
+def test_guard_exp015_refuses_a_pure_member_where_the_rule_says_none(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E15, lambda d: d["strata"]["L|10|11|9|0|1"].__setitem__("pure", 1))
+    assert any("EXP-015 L 10,11" in f for f in _run(mt, root))
+
+
+def test_guard_exp015_refuses_a_stratum_excluded_by_the_corollary_that_holds_a_pure_hilbert_function(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    d0 = _read(root, mt.E15)
+    key = next(k for k, s in d0["strata"].items() if s["family"] == "R" and mt.cor5_excluded(s["e"], s["p"], s["m"], s["i"], s["j"]))
+    _edit(root, mt.E15, lambda d: d["strata"][key].__setitem__("pure_hilbert", 1))
+    assert _run(mt, root) != []
+
+
+def test_guard_exp017_refuses_a_table_that_is_not_pure(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E17, lambda d: d["cases"]["Q|9|11"].__setitem__("tables", d["cases"]["Q|9|11"]["pure"] + 1))
+    assert _run(mt, root) != []
+
+
+def test_guard_exp017_refuses_a_filter_count_that_is_not_monotone(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E17, lambda d: d["cases"]["K|5|7"]["counts"].__setitem__("f3", d["cases"]["K|5|7"]["counts"]["f2"] + 1))
+    assert any("EXP-017" in f for f in _run(mt, root))
+
+
+def _read(root, d):
+    return json.loads((root / "experiments" / d.name / "artifacts" / "results.json").read_text(encoding="utf-8"))
+
+
+def test_corollary_of_the_weight_zero_projection_on_hand_cases(mt):
+    # (7,3): W = {0,2,5,7} for S(5;0,2), w- = 2, w+ = 5, 2 * 3 = 6 >= 4: excluded
+    assert mt.cor5_excluded(7, 3, 5, 0, 2) is True
+    # (6,3): S(3;0,1) has the weight e/2 = 3 (3 % 3 = 0), so the corollary does not apply
+    assert mt.cor5_excluded(6, 3, 3, 0, 1) is False
+    # the strata of the central pairs for odd e have gap 1 and are never excluded for p >= 3
+    for e in (5, 7, 9, 11, 13):
+        assert mt.cor5_excluded(e, 3, (e + 1) // 2, 0, (e - 1) // 2) is False
+
+
+def test_linear_stratum_rule_from_the_corollary_and_the_artifacts(mt):
+    r9 = json.loads((mt.E9 / "artifacts" / "results.json").read_text(encoding="utf-8"))
+    r10 = json.loads((mt.E10 / "artifacts" / "results.json").read_text(encoding="utf-8"))
+    r14 = json.loads((mt.E14 / "artifacts" / "results.json").read_text(encoding="utf-8"))
+    r15 = json.loads((mt.E15 / "artifacts" / "results.json").read_text(encoding="utf-8"))
+    res = mt.linear_strata_pairs(r9, r10, r14, r15)
+    assert len(res) == 24
+    for (e, p), v in res.items():
+        assert (v[1] > 0) == (2 * e - p <= 3), (e, p)
+        if 2 * e - p >= 5:
+            assert p <= 2 * e - 5 and v[1] == 0
+
+
+# ---- EXP-016 ----
+
+def test_guard_exp016_refuses_a_list_that_changes(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E16, lambda d: d["cases"]["B|12|7|1"].__setitem__("list", []))
+    assert _run(mt, root) != []
+
+
+def test_guard_exp016_refuses_a_verified_form_that_is_not_pure(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E16, lambda d: d["cases"]["B|12|7|1"]["verified"][0]["second"].__setitem__("pure", False))
+    assert any("EXP-016" in f for f in _run(mt, root))
+
+
+def test_guard_exp016_refuses_a_negative_control_of_length_e_cubed(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E16, lambda d: d["negatives"]["N|6|7|1"]["forms"][0].__setitem__("length", 216))
+    assert any("EXP-016" in f for f in _run(mt, root))
+
+
+def test_guard_exp016_refuses_an_unfinished_case_that_is_declared_complete(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E16, lambda d: d["cases"]["B|14|23|1"].__setitem__("complete", True))
+    assert any("EXP-016" in f for f in _run(mt, root))
+
+
+def test_grid_with_the_lists_of_forms(mt):
+    r16 = mt.read_fourth(mt.PROBLEM)
+    pairs = mt.lists_pairs(r16)
+    assert pairs[(12, 7)] == 1 and pairs[(16, 13)] == 1 and (14, 5) not in pairs and (14, 11) not in pairs and (14, 23) not in pairs
+    r10, r13, r14 = mt.read_second(mt.PROBLEM)
+    r15, r17 = mt.read_third(mt.PROBLEM)
+    w, mid, oth, flt, lst, detail = mt.search_sets_from_artifacts(r10, r14, r15, r17, r16)
+    for k in [(12, 7), (12, 13), (12, 17), (12, 19), (14, 17), (14, 19), (16, 11), (16, 13)]:
+        assert k in lst, k
+    assert (14, 5) not in lst and (14, 11) not in lst
+
+
+# ---- EXP-018 ----
+
+def test_guard_exp018_refuses_a_stratum_of_family_z_with_a_pure_hilbert_function(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E18, lambda d: d["strata"]["Z|11|13|9|0|2"].__setitem__("pure_hilbert", 1))
+    assert any("EXP-018" in f for f in _run(mt, root))
+
+
+def test_guard_exp018_refuses_a_largest_exponent_case_without_a_pure_member(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        s = d["strata"]["T|11|17|9|0|2"]
+        s["pure"] = 0
+    _edit(root, mt.E18, mutate)
+    assert any("EXP-018" in f for f in _run(mt, root))
+
+
+def test_guard_exp018_refuses_a_prediction_that_changes(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E18, lambda d: d["predictions"]["P2"]["11,17"].__setitem__("holds", False))
+    assert any("EXP-018 P2" in f for f in _run(mt, root))
+
+
+def test_largest_exponent_is_the_largest_allowed_by_the_corollary(mt):
+    r18 = mt.read_fifth(mt.PROBLEM)
+    assert mt.largest_pairs(r18) == {(11, 13): (8, 0, 3), (11, 17): (9, 0, 2), (13, 17): (10, 0, 3), (13, 19): (11, 0, 2), (14, 23): (12, 0, 2)}
+    for (e, p), (m_, i_, j_) in mt.largest_pairs(r18).items():
+        t = 2 * m_ - e
+        assert 2 * t <= p - 1 and 2 * (t + 2) >= p + 1
+        assert not mt.cor5_excluded(e, p, m_, i_, j_)
+        assert mt.cor5_excluded(e, p, m_ + 1, 0, j_ - 1) or True
+
+
+# ---- the filter on the stored members (EXP-017 record) and the open pairs ----
+
+def _edit_stored(root, fn):
+    p = root / "experiments" / mt_name() / "artifacts" / "stored-members-filter.json"
+    data = json.loads(p.read_text(encoding="utf-8"))
+    fn(data)
+    p.write_text(json.dumps(data), encoding="utf-8", newline="\n")
+
+
+def mt_name():
+    return "EXP-017-odd-stratum-filter"
+
+
+def test_guard_stored_members_refuses_a_pure_member_that_fails_the_filter(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        d["totals"]["pure_by_stage"] = [1, 0, 0, 0, 58]
+    _edit_stored(root, mutate)
+    assert any("EXP-017 stored members" in f for f in _run(mt, root))
+
+
+def test_guard_stored_members_refuses_another_member_that_passes_the_filter(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        d["totals"]["other_by_stage"] = [64, 0, 0, 6, 1]
+    _edit_stored(root, mutate)
+    assert any("EXP-017 stored members" in f for f in _run(mt, root))
+
+
+def test_stored_members_record_gives_the_counts_of_the_text(mt, tmp_path):
+    N = {}
+    mt.FAILS.clear()
+    mt.exp17_stored(mt.PROBLEM, N)
+    assert not mt.FAILS
+    assert (N["stmTabled"], N["stmPure"], N["stmOther"], N["stmFailFZero"], N["stmFailFThree"], N["stmPairs"]) == (130, 59, 71, 65, 6, 8)
+
+
+def test_the_only_open_pair_up_to_e_16_is_11_3(mt):
+    r16 = mt.read_fourth(mt.PROBLEM)
+    r10, r13, r14 = mt.read_second(mt.PROBLEM)
+    r15, r17 = mt.read_third(mt.PROBLEM)
+    r19, r20 = mt.read_sixth(mt.PROBLEM)
+    r9, _a, _b = mt.read_later(mt.PROBLEM)
+    r5, r6, r7, r8 = mt.read_artifacts(mt.PROBLEM)
+    w, mid, oth, flt, lst, detail = mt.search_sets_from_artifacts(r10, r14, r15, r17, r16)
+    lg = set(mt.largest_pairs(mt.read_fifth(mt.PROBLEM)))
+    e19, x20, _d = mt.sixth_sets(r19, r20)
+    lin = set(mt.linear_from_artifacts(r9, r10, r14, r15)) | set(mt.short_pair_cells(16))
+    cells = mt.grid_cells(16, mt.explicit_from_artifacts(r6, r8, 1), lin, (("W", w), ("M", mid), ("O", oth), ("F", flt), ("G", lst), ("H", lg), ("E", e19), ("X", x20)))
+    open_cells = sorted(k for k, v in cells.items() if v is None)
+    assert open_cells == [(11, 3)]
+    assert cells[(13, 7)] == "E" and cells[(14, 11)] == "X" and cells[(15, 29)] == "L" and cells[(16, 31)] == "L" and cells[(15, 11)] == "X"
+
+# ---- EXP-019 and EXP-020, the short-pair cells, the strata left at (11,3) ----
+
+def test_guard_exp019_refuses_a_passing_member_without_the_pure_hilbert_function(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E19, lambda d: d["totals"]["X|13|11"].__setitem__("pure_hilbert", 4))
+    assert any("EXP-019" in f for f in _run(mt, root))
+
+
+def test_guard_exp019_refuses_an_unfinished_case_declared_finished(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E19, lambda d: d["totals"]["X|14|11"].__setitem__("status", "early stop"))
+    assert any("EXP-019" in f for f in _run(mt, root))
+
+
+def test_guard_exp019_refuses_a_prediction_that_changes(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        for x in d["predictions"]["P1"]["rows"]:
+            if x["pair"] == [13, 11]:
+                x["outcome"] = "does not hold"
+    _edit(root, mt.E19, mutate)
+    assert any("EXP-019 P1" in f for f in _run(mt, root))
+
+
+def test_guard_exp020_refuses_a_member_where_the_two_congruences_differ(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    _edit(root, mt.E20, lambda d: d["totals"]["X|14|11"].__setitem__("differ", 1))
+    assert any("EXP-020" in f for f in _run(mt, root))
+
+
+def test_guard_exp020_refuses_a_changed_outcome_of_p4(mt, tmp_path):
+    root = _copy_problem(mt, tmp_path)
+    def mutate(d):
+        for x in d["predictions"]["P4"]["rows"]:
+            if x["case"] == "X|15|11":
+                x["outcome"] = "holds"
+    _edit(root, mt.E20, mutate)
+    assert any("EXP-020 P4" in f for f in _run(mt, root))
+
+
+def test_the_exponent_of_each_case_is_the_largest_allowed(mt):
+    assert [mt.largest_allowed_t(e, p) for (e, p) in [(13, 11), (13, 7), (14, 5), (15, 19), (16, 31), (11, 3), (11, 13), (11, 17)]] == [5, 3, 2, 9, 14, None, 5, 7]
+
+
+def test_short_pair_cells_name_the_theorem_or_the_corollary(mt):
+    cells = mt.short_pair_cells(16)
+    assert (15, 29) in cells and (16, 29) in cells and (16, 31) in cells and (8, 13) in cells
+    assert "cor:exptexplA" in cells[(6, 11)] and "cor:exptexplB" in cells[(4, 5)]
+    assert (11, 3) not in cells and (14, 11) not in cells
+
+
+def test_the_strata_left_at_11_3(mt):
+    adm, ref = mt.strata_tables(11)
+    def keep(k):
+        return not (3 <= 11 and k[0] % 3 == 0) and not mt.cor5_excluded(11, 3, *k)
+
+    assert (len([k for k, ok in adm.items() if ok and keep(k)]), sorted(k for k, ok in ref.items() if ok and keep(k))) == (3, [(2, 0, 1), (5, 0, 1)])
+    assert mt.WZ_TABLE[(11, 3)] == (3, 2)

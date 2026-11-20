@@ -1,15 +1,19 @@
 {
-  "out": "D:\\_Temp\\bs-release-v002\\render",
+  "out": "D:\\_Temp\\bs-ms-v003-render-2026-11-20",
   "dpi": 70,
-  "images": 66,
+  "images": 156,
   "sheets": [
-    "D:\\_Temp\\bs-release-v002\\render\\sheet-1.png",
-    "D:\\_Temp\\bs-release-v002\\render\\sheet-2.png",
-    "D:\\_Temp\\bs-release-v002\\render\\sheet-3.png",
-    "D:\\_Temp\\bs-release-v002\\render\\sheet-4.png",
-    "D:\\_Temp\\bs-release-v002\\render\\sheet-5.png",
-    "D:\\_Temp\\bs-release-v002\\render\\sheet-6.png"
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-1.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-2.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-3.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-4.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-5.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-6.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-7.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-8.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-9.png",
+    "D:\\_Temp\\bs-ms-v003-render-2026-11-20\\sheet-10.png"
   ],
-  "pdf_sha256": "2ea9a3fab443b83b1edff39bff56e864f9a5c9fee244289b9e0e790f868a1f69",
-  "rendered_at": "2026-11-20T06:29:17Z"
+  "pdf_sha256": "5e5faca593d00c89b506d111039283ffada858f7361335d5b689c74bcfebc055",
+  "rendered_at": "2026-11-20T18:04:55Z"
 }

@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for 2 <= e <= 5, the pure pairs of forms form a family, and a census for d_3 <= 12",
+    "title": "Primitive Betti points over k[x,y,z] and the Heisenberg enveloping algebra: the point (1,2,2,1) on (0,e,3e,4e) fails only in characteristic 2 for 2 <= e <= 16 with e != 11, is realized whenever an odd prime p divides e(e-1) or equals 2e-1, and a census for d_3 <= 12",
     "creators": [
       {
         "name": "Santibáñez-Leal, Felipe",
@@ -10,27 +10,27 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Erman and Sam asked whether every integral point on a pure ray of the Boij-Söderberg cone is the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U of the Heisenberg Lie algebra; Jiang, Li, Sun, Wang, Xiao and Yu answered negatively in 2026.</p><p>We study the points that pass the Hilbert series parity test over U and are excluded over k[x,y,z], above all (1, 2, 2, 1) on (0, e, 3e, 4e). We prove that U/U(x^e, y^e) has this pure table if and only if char k = 0 or char k &gt;= 2e, and that in characteristic 2 no module with a generators and at most a + 1 relations of one degree e &gt;= 2 has finite length over U, so the point is realized over neither ring there. In odd characteristic below 2e explicit pairs of forms realize it, over F_3 and F_5 for e = 3, over F_3, F_5 and F_7 for e = 4 and 5, and over F_3 for e = 6; so for 2 &lt;= e &lt;= 5 it is realized over U if and only if char k is not 2, and for larger e the other odd characteristics below 2e stay open.</p><p>The pure pairs of forms of degree e are open in a determinantal locus, and every component of their locus has dimension at least 4e - 4; when char k = 0 or char k &gt;= 2e they form such a family through &lt;x^e, y^e&gt;, of dimension exactly 4e - 4 there over the rationals for e = 4, ..., 7, and a linear four-parameter family through that point is pure in general for every e &gt;= 4.</p><p>The census over k[x,y,z] of the 220 rays with d_3 &lt;= 12 realizes the primitive point on 193 rays, excludes it on 12 and leaves 15 open; ten such rays are realized over U in characteristic 0, and in characteristic 0 the least counterexample has d_3 = 10.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH. The paper does not claim a negative answer to Question 6.1 of Erman and Sam, which is due to Jiang, Li, Sun, Wang, Xiao and Yu, and claims no priority for any other result.</p>",
+    "description": "<p>Erman and Sam asked whether every integral point on a pure ray of the Boij-Söderberg cone is the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U of the Heisenberg Lie algebra; Jiang, Li, Sun, Wang, Xiao and Yu answered negatively. We study the point (1,2,2,1) on (0,e,3e,4e), excluded over k[x,y,z] and passing their test over U. It is realized by U/U(x^e,y^e) if and only if char k = 0 or char k >= 2e, and in characteristic 2 no module with at most one more relation than generators has finite length over U.</p><p>In odd characteristic p we prove a criterion for pairs of forms with a central commutator, with explicit pure pairs for e = 0 or 1 modulo p, and pull-backs along endomorphisms of U. For the pairs x^e + alpha y^t, y^e + beta x^t we prove that coprimality conditions, two congruences and one scalar condition give the pure Hilbert function when p >= 2t, and the pure pair when one more coprimality holds; explicit short pairs are pure for p = 2e - 1 (every prime p >= 5) and for p = 2e - 3 (the primes below 2,000,000). Searches in weight-class strata, lists of forms, the filter for every exponent and the members fixed by the exchange of x and y settle the other pairs.</p><p>The point is realized in every characteristic other than 2 for 2 <= e <= 16 except e = 11, where characteristic 3 is open. A census of the 220 rays with d_3 <= 12 over k[x,y,z] realizes the primitive point on 193 and excludes it on 12; in characteristic 0 the least counterexample has d_3 = 10.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (branch develop). The paper does not claim a negative answer to Question 6.1 of Erman and Sam, which is due to Jiang, Li, Sun, Wang, Xiao and Yu, and claims no priority for any other result.</p>",
     "keywords": [
       "Boij-Soderberg theory",
       "pure free resolutions",
-      "Betti tables",
       "Heisenberg Lie algebra",
       "enveloping algebra",
       "Erman-Sam question",
       "primitive points on pure rays",
-      "Hilbert series parity test",
       "characteristic 2",
-      "Kostant modules",
-      "census of pure rays",
-      "exact computation",
-      "commutative algebra",
-      "odd characteristic",
-      "pure pairs of forms"
+      "central commutator",
+      "weight-class strata",
+      "pure pairs of forms",
+      "positive characteristic",
+      "generalized Weyl algebra",
+      "graded endomorphisms",
+      "pairs over k[xy,z]",
+      "explicit pure pairs"
     ],
     "license": "cc-by-4.0",
     "language": "eng",
-    "version": "0.02",
+    "version": "0.03",
     "publication_date": "2026-11-20",
     "related_identifiers": [
       {
@@ -137,6 +137,26 @@
         "relation": "cites",
         "identifier": "10.1007/BFb0080378",
         "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.1403.3065",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.0803.3570",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.hep-th/9605187",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.1207.5831",
+        "resource_type": "publication-preprint"
       }
     ],
     "references": [
@@ -154,7 +174,7 @@
       "D. A. Buchsbaum, D. Eisenbud, Algebra structures for finite free resolutions, and some structure theorems for ideals of codimension 3, Amer. J. Math. 99 (1977) 447-485.",
       "D. A. Buchsbaum, D. Eisenbud, Some structure theorems for finite free resolutions, Adv. Math. 12 (1974) 84-139.",
       "J. Söderberg, Graded Betti numbers and h-vectors of level modules, arXiv:math/0612047 (version 2).",
-      "M. Boij, Artin level modules, J. Algebra 226 (2000) 361-374 (reference [1] of J. Söderberg, arXiv:math/0612047; not read).",
+      "M. Boij, Artin level modules, J. Algebra 226 (2000) 361-374 (reference [1] of [14]; not read).",
       "S. V. Sam, Homology of analogues of Heisenberg Lie algebras, Math. Res. Lett. 22 (2015), no. 4, 1223-1241. arXiv:1307.1901.",
       "S. V. Sam, K. VandeBogert, From total positivity to pure free resolutions, arXiv:2408.10408.",
       "G. Fløystad, Boij-Söderberg theory: introduction and survey, in: Progress in Commutative Algebra 1, de Gruyter, 2012, 1-54. arXiv:1106.0381.",
@@ -166,8 +186,21 @@
       "W. Bruns, U. Vetter, Determinantal Rings, Lecture Notes in Mathematics 1327, Springer, 1988, doi:10.1007/BFb0080378 (general reference on determinantal varieties; the book was not opened).",
       "Macaulay2, version 1.22, package BoijSoederberg (pureCharFree, pureTwoInvariant, pureWeyman, randomModule, randomSocleModule); file SHA-256 3ce45c08f73ea4c3fcc049f261d35c73b4b5a1afcf9c239a9806e2e0ed53b415.",
       "Singular, version 4.3.2, subsystem Plural; manual pages on resolutions of modules over G-algebras: https://singular.mathematik.uni-kl.de/Manual/4-4/sing_480.htm.",
-      "Rethlas_results, repository frenzymath/Rethlas_results, directory CommAlg/arxiv_1606_01867, files question_6_1.md and question_6_2.md: https://github.com/frenzymath/Rethlas_results."
+      "Rethlas_results, repository frenzymath/Rethlas_results, directory CommAlg/arxiv_1606_01867, files question_6_1.md and question_6_2.md: https://github.com/frenzymath/Rethlas_results.",
+      "N. Jacobson, Lie Algebras, Chapter V, Section 7 (Jacobson's formula for the p-th power of a sum in an associative algebra of characteristic p); the statement was read in the Wikipedia article \"Restricted Lie algebra\", https://en.wikipedia.org/wiki/Restricted_Lie_algebra, and the book was not opened.",
+      "C. Peskine, L. Szpiro, Dimension projective finie et cohomologie locale, Publ. Math. IHES 42 (1973), Lemma 1.8 (the statement is taken from [30], which attributes it there; the paper was not opened).",
+      "The Stacks Project, Lemma 10.102.8 (Acyclicity lemma), Tag 00N0: https://stacks.math.columbia.edu/tag/00N0.",
+      "S. A. Amitsur, Commutative linear differential operators, Pacific J. Math. 8 (1958) 1-10, Theorem 1; https://msp.org/pjm/1958/8-1/pjm-v8-n1-p01-p.pdf (pages 1 to 3 read).",
+      "J. Dixmier, Sur les algèbres de Weyl, Bull. Soc. Math. France 96 (1968) 209-242; https://www.numdam.org/item/10.24033/bsmf.1667.pdf (pages 209 and 210 read: over a field of characteristic 0 the Weyl algebra A_n is integral and simple with centre k).",
+      "D. Rogalski, An introduction to noncommutative projective algebraic geometry, arXiv:1403.3065, exercise set 2 and its solutions (the cubic Artin-Schelter regular algebra U(H) and the resolution of its trivial module).",
+      "The Stacks Project, Chapter 11 (Brauer groups), Lemma 11.5.4, Tag 074N: https://stacks.math.columbia.edu/tag/074N (the page states: for a finite central simple algebra A over a field k, [A:k] is a square).",
+      "The Stacks Project, Chapter 11 (Brauer groups), Theorem 11.7.1 (the centralizer theorem), Tag 074T: https://stacks.math.columbia.edu/tag/074T (the page states: for a finite central simple algebra A over k and a simple subalgebra B with centralizer C, C is simple, [A:k]=[B:k][C:k] and the centralizer of C in A is B).",
+      "G. Benkart, M. Ondrus, Whittaker modules for generalized Weyl algebras, arXiv:0803.3570 (the structure of the enveloping algebra of the Heisenberg Lie algebra as a generalized Weyl algebra is stated there, as found by a search; the paper was not opened).",
+      "C. A. Weibel, An Introduction to Homological Algebra, Cambridge University Press, Section 7.7, The Chevalley-Eilenberg complex (the section and its title were checked on the table of contents found by search; the book was not opened).",
+      "The Stacks Project, Chapter 10 (Commutative Algebra), Section 10.153 (Henselian local rings), Lemma 10.153.3, Tag 04GG: https://stacks.math.columbia.edu/tag/04GG (the page lists the equivalent conditions for a local ring to be henselian, among them the lifting of every simple root of the reduction of a polynomial), and Section 10.155, Lemma 10.155.1, Tag 04GN: https://stacks.math.columbia.edu/tag/04GN (the page states that a local ring has a henselization, a henselian local ring with the same residue field that is a filtered colimit of étale algebras).",
+      "L. D. Faddeev, How algebraic Bethe ansatz works for integrable model, arXiv:hep-th/9605187, equations (225) to (228) (read for the homogeneous chain without twist).",
+      "J. B. Dobson, On Eisenstein's formula for the Fermat quotient, arXiv:1207.5831 (version 2, 7 May 2013); cited for the attribution to Eisenstein (1850) of the representation of the Fermat quotient of base 2 as an alternating sum, read in the abstract of the paper; the paper was not opened beyond it, and the congruence used here is proved in the text."
     ],
-    "version_notes": "Adds the realization of (1,2,2,1) on (0,e,3e,4e) in odd characteristic below 2e by explicit pairs of forms (e = 3 and 4, e = 5 in characteristics 3, 5 and 7, and e = 6 in characteristic 3), so that the point fails only in characteristic 2 for 2 <= e <= 5; the theorem that the pure pairs of forms of degree e form, in characteristic 0 or at least 2e, a family of dimension at least 4e - 4 through (x^e, y^e), with its exact dimension at that pair over the rationals for e = 4 to 7 and a linear family; and the archived machine checks of the characteristic 2 theorem. Corrects the size and SHA-256 printed for one manifest file, which belonged to a copy with CRLF line ends."
+    "version_notes": "Adds to v0.02 a criterion for the purity of pairs of forms with a central commutator in odd characteristic, the endomorphisms of the enveloping algebra and the scaling of Betti tables, the weight-class and weight-zero-projection exclusions, the decomposition over k[xy,z] of the pairs x^e + alpha y^t, y^e + beta x^t with the theorems on the pure Hilbert function and on the pure Betti table, and explicit pairs of the linear family for p = 2e - 1 and p = 2e - 3, with the searches that use them (strata, lists of forms, the filter for every exponent, the members fixed by the exchange of x and y). The point (1,2,2,1) on (0,e,3e,4e) is now realized in every characteristic other than 2 for 2 <= e <= 16 except e = 11, where characteristic 3 is open; the machine checks of the new statements are archived."
   }
 }
