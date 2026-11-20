@@ -291,3 +291,16 @@ def test_the_fixed_member_of_g1_passes_the_filter():
     run = _load_run()
     out = run.fixed_member()
     assert out["filter_stage"] == 4 and out["ok"] is True, out
+
+
+def test_the_record_of_the_filter_on_the_stored_members_with_a_table():
+    spec = importlib.util.spec_from_file_location("exp017_stored_members", EXP17 / "stored_members.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    data = json.loads(json.dumps(mod.compute()))
+    assert data == json.loads(mod.OUT.read_text(encoding="utf-8"))
+    tot = data["totals"]
+    assert (tot["tabled"], tot["pure"], tot["other"], tot["not_of_the_form"]) == (130, 59, 71, 0)
+    assert tot["pure_by_stage"] == [0, 0, 0, 0, 59]
+    assert tot["other_by_stage"] == [65, 0, 0, 6, 0]
+    assert [tuple(q) for q in data["pairs"]] == [(5, 5), (5, 7), (7, 3), (7, 5), (7, 7), (7, 11), (7, 13), (9, 7)]

@@ -90,7 +90,11 @@ not settled. Exact arithmetic: the filter with python-flint, the rank routine of
 
 ## Artifacts
 
-`artifacts/results.json`, `artifacts/singular/*.sing`, `results-summary.md`. The outputs of the second instrument,
+`artifacts/results.json`, `artifacts/singular/*.sing`, `results-summary.md`. Added after the verdict (2026-11-20, on a
+finding of the review of the manuscript: the count of item 3 was in no artifact): `stored_members.py` recomputes the
+filter on the 130 members with a computed table that EXP-010 and EXP-014 stored in this stratum, at eight pairs, and
+writes `artifacts/stored-members-filter.json`: the 59 pure members pass; of the 71 others, 65 fail (F0) and 6 fail
+(F3); a unit test compares the artifact with a recomputation. The outputs of the second instrument,
 the logs of both parts of the run and the re-check are under the data root
 (`caos-research/boij-soderberg-realizability/EXP-017/`).
 
