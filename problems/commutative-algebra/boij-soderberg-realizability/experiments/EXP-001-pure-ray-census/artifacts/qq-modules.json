@@ -1,0 +1,2207 @@
+{
+ "what": "The modules over QQ that carry the characteristic 0 claims of EXP-001 on the rays with d3 <= 9: for each verified hit, a Singular script that builds the module over QQ from the saved generator matrix lifted to integers (cokernel for the generic presentation, image inside the truncated ring for the level module), and the graded Betti table Singular 4.3.2 computed for it; where present, the same for its Ext^3 dual.",
+ "computed_by": "the independent reviewer of 2026-11-19 (record bs-smallest-counterexample-review-2026-11-19 in the coordination repository), with scripts written independently of run.py and recheck.m2",
+ "data_root_subdir": "boij-soderberg-realizability/EXP-001",
+ "modules": [
+  {
+   "tag": "0-1-3-6_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    1,
+    3,
+    6
+   ],
+   "primitive_point": [
+    5,
+    9,
+    5,
+    1
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     9
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     5
+    ],
+    [
+     [
+      3,
+      6
+     ],
+     1
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 15,
+   "length_expected": 15,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-1-3-6_m1_socle_s1_p32003.qq.sing",
+     "bytes": 2138,
+     "sha256": "6cce6535d42e8902928cf892e9e0fa356c7c8e2576be1f57b84033895338e1f4"
+    }
+   ]
+  },
+  {
+   "tag": "0-1-3-7_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    1,
+    3,
+    7
+   ],
+   "primitive_point": [
+    8,
+    14,
+    7,
+    1
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     8
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     14
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     7
+    ],
+    [
+     [
+      3,
+      7
+     ],
+     1
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 28,
+   "length_expected": 28,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-1-3-7_m1_socle_s1_p32003.dual.qq.sing",
+     "bytes": 5522,
+     "sha256": "c0b178fc1ee2173a56e8484b59e9f3d7fba22f48efef88dc30c0470994784460"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     4,
+     6,
+     7
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      1
+     ],
+     [
+      [
+       1,
+       4
+      ],
+      7
+     ],
+     [
+      [
+       2,
+       6
+      ],
+      14
+     ],
+     [
+      [
+       3,
+       7
+      ],
+      8
+     ]
+    ],
+    "pure": true,
+    "length": 28
+   }
+  },
+  {
+   "tag": "0-1-3-9_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    1,
+    3,
+    9
+   ],
+   "primitive_point": [
+    16,
+    27,
+    12,
+    1
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     16
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     27
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     12
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     1
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 72,
+   "length_expected": 72,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-1-3-9_m1_socle_s1_p32003.dual.qq.sing",
+     "bytes": 22340,
+     "sha256": "d96231f627758c0fab79891b4a6f10aedf134a43531fa4f25df20e5821258356"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     6,
+     8,
+     9
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      1
+     ],
+     [
+      [
+       1,
+       6
+      ],
+      12
+     ],
+     [
+      [
+       2,
+       8
+      ],
+      27
+     ],
+     [
+      [
+       3,
+       9
+      ],
+      16
+     ]
+    ],
+    "pure": true,
+    "length": 72
+   }
+  },
+  {
+   "tag": "0-1-4-6_m1_module_s1_p32003",
+   "ray": [
+    0,
+    1,
+    4,
+    6
+   ],
+   "primitive_point": [
+    5,
+    8,
+    5,
+    2
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     8
+    ],
+    [
+     [
+      2,
+      4
+     ],
+     5
+    ],
+    [
+     [
+      3,
+      6
+     ],
+     2
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 20,
+   "length_expected": 20,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-1-4-6_m1_module_s1_p32003.qq.sing",
+     "bytes": 1143,
+     "sha256": "58c5f7bbcefe626bc54ea607e284226ac7f8af0788e51a92ecbe2e37b427b314"
+    },
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-1-4-6_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 1372,
+     "sha256": "2b9fafa43ac50b7c0ab5846cf84ae646b2220557fda1983b309ef4da8e8d6e43"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     2,
+     5,
+     6
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      2
+     ],
+     [
+      [
+       1,
+       2
+      ],
+      5
+     ],
+     [
+      [
+       2,
+       5
+      ],
+      8
+     ],
+     [
+      [
+       3,
+       6
+      ],
+      5
+     ]
+    ],
+    "pure": true,
+    "length": 20
+   }
+  },
+  {
+   "tag": "0-1-4-6_m1_module_s1_p32003",
+   "ray": [
+    0,
+    1,
+    4,
+    6
+   ],
+   "primitive_point": [
+    5,
+    8,
+    5,
+    2
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     8
+    ],
+    [
+     [
+      2,
+      4
+     ],
+     5
+    ],
+    [
+     [
+      3,
+      6
+     ],
+     2
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 20,
+   "length_expected": 20,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-1-4-6_m1_module_s1_p32003.qq.sing",
+     "bytes": 1143,
+     "sha256": "58c5f7bbcefe626bc54ea607e284226ac7f8af0788e51a92ecbe2e37b427b314"
+    },
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-1-4-6_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 1372,
+     "sha256": "2b9fafa43ac50b7c0ab5846cf84ae646b2220557fda1983b309ef4da8e8d6e43"
+    }
+   ]
+  },
+  {
+   "tag": "0-1-7-9_m1_module_s1_p32003",
+   "ray": [
+    0,
+    1,
+    7,
+    9
+   ],
+   "primitive_point": [
+    16,
+    21,
+    12,
+    7
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     16
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     21
+    ],
+    [
+     [
+      2,
+      7
+     ],
+     12
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     7
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 168,
+   "length_expected": 168,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-1-7-9_m1_module_s1_p32003.qq.sing",
+     "bytes": 7770,
+     "sha256": "96d705daf9108541f00badbcb40ca6355ef4b3b01ce23bbdeb6c3f9f015edb24"
+    }
+   ]
+  },
+  {
+   "tag": "0-2-3-6_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    2,
+    3,
+    6
+   ],
+   "primitive_point": [
+    2,
+    9,
+    8,
+    1
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     2
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     9
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     8
+    ],
+    [
+     [
+      3,
+      6
+     ],
+     1
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 12,
+   "length_expected": 12,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-2-3-6_m1_socle_s1_p32003.qq.sing",
+     "bytes": 1035,
+     "sha256": "e1890a5f27dc674cce041744dab49ed23ccec56fb3c303906e9a9b04d84ae298"
+    }
+   ]
+  },
+  {
+   "tag": "0-2-3-8_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    2,
+    3,
+    8
+   ],
+   "primitive_point": [
+    5,
+    20,
+    16,
+    1
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     20
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     16
+    ],
+    [
+     [
+      3,
+      8
+     ],
+     1
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 40,
+   "length_expected": 40,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-2-3-8_m1_socle_s1_p32003.qq.sing",
+     "bytes": 5077,
+     "sha256": "3e011e5efbc95654a18243106ed13cbdd76f3a9206d97d7cacac021bb107cbcc"
+    }
+   ]
+  },
+  {
+   "tag": "0-2-3-9_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    2,
+    3,
+    9
+   ],
+   "primitive_point": [
+    7,
+    27,
+    21,
+    1
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     7
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     27
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     21
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     1
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 63,
+   "length_expected": 63,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-2-3-9_m1_socle_s1_p32003.qq.sing",
+     "bytes": 9869,
+     "sha256": "f07ca9c872565bd6f6159ea584bcf1b4bd16f73465856343c284e18352bd5d5c"
+    }
+   ]
+  },
+  {
+   "tag": "0-2-5-6_m1_module_s1_p32003",
+   "ray": [
+    0,
+    2,
+    5,
+    6
+   ],
+   "primitive_point": [
+    2,
+    5,
+    8,
+    5
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     2
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     5
+    ],
+    [
+     [
+      2,
+      5
+     ],
+     8
+    ],
+    [
+     [
+      3,
+      6
+     ],
+     5
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 20,
+   "length_expected": 20,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-2-5-6_m1_module_s1_p32003.qq.sing",
+     "bytes": 803,
+     "sha256": "f0115a9c587c917e38dc4460f0db81e0fc1512470546b33c2785d2e7ed33591e"
+    }
+   ]
+  },
+  {
+   "tag": "0-2-5-7_m1_module_s1_p32003",
+   "ray": [
+    0,
+    2,
+    5,
+    7
+   ],
+   "primitive_point": [
+    3,
+    7,
+    7,
+    3
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     3
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     7
+    ],
+    [
+     [
+      2,
+      5
+     ],
+     7
+    ],
+    [
+     [
+      3,
+      7
+     ],
+     3
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 35,
+   "length_expected": 35,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-2-5-7_m1_module_s1_p32003.qq.sing",
+     "bytes": 1429,
+     "sha256": "3315f6a0654571f95b8b7586b83092d31a984a3e2833d1da82688efeb3a1d9d5"
+    }
+   ]
+  },
+  {
+   "tag": "0-2-7-9_m1_module_s1_p32003",
+   "ray": [
+    0,
+    2,
+    7,
+    9
+   ],
+   "primitive_point": [
+    5,
+    9,
+    9,
+    5
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     9
+    ],
+    [
+     [
+      2,
+      7
+     ],
+     9
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     5
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 105,
+   "length_expected": 105,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-2-7-9_m1_module_s1_p32003.qq.sing",
+     "bytes": 2785,
+     "sha256": "28345afae75201bf73daa61ded0cf86832bfb91dccaba84b640068ca3dc87e71"
+    }
+   ]
+  },
+  {
+   "tag": "0-2-8-9_m1_module_s1_p32003",
+   "ray": [
+    0,
+    2,
+    8,
+    9
+   ],
+   "primitive_point": [
+    7,
+    12,
+    21,
+    16
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     7
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     12
+    ],
+    [
+     [
+      2,
+      8
+     ],
+     21
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     16
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 168,
+   "length_expected": 168,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-2-8-9_m1_module_s1_p32003.qq.sing",
+     "bytes": 4977,
+     "sha256": "3029c6892ecba6bb1033b5a1096291ac50f4a820477c28ab1d79cfc047933003"
+    }
+   ]
+  },
+  {
+   "tag": "0-3-4-6_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    3,
+    4,
+    6
+   ],
+   "primitive_point": [
+    1,
+    8,
+    9,
+    2
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     1
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     8
+    ],
+    [
+     [
+      2,
+      4
+     ],
+     9
+    ],
+    [
+     [
+      3,
+      6
+     ],
+     2
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 12,
+   "length_expected": 12,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-3-4-6_m1_socle_s1_p32003.qq.sing",
+     "bytes": 1035,
+     "sha256": "c94274b41d71a2bf4f70988fc4fc44f5232c4e8bc0fcfd76a7ef09fee6f048ea"
+    }
+   ]
+  },
+  {
+   "tag": "0-3-4-8_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    3,
+    4,
+    8
+   ],
+   "primitive_point": [
+    5,
+    32,
+    30,
+    3
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     32
+    ],
+    [
+     [
+      2,
+      4
+     ],
+     30
+    ],
+    [
+     [
+      3,
+      8
+     ],
+     3
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 80,
+   "length_expected": 80,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-3-4-8_m1_socle_s1_p32003.dual.qq.sing",
+     "bytes": 14840,
+     "sha256": "c4a8b8d5150a0c9f26a365bdef19aca470765a74feb94b4b88a47edc738e522d"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     4,
+     5,
+     8
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      3
+     ],
+     [
+      [
+       1,
+       4
+      ],
+      30
+     ],
+     [
+      [
+       2,
+       5
+      ],
+      32
+     ],
+     [
+      [
+       3,
+       8
+      ],
+      5
+     ]
+    ],
+    "pure": true,
+    "length": 80
+   }
+  },
+  {
+   "tag": "0-3-4-9_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    3,
+    4,
+    9
+   ],
+   "primitive_point": [
+    5,
+    30,
+    27,
+    2
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     30
+    ],
+    [
+     [
+      2,
+      4
+     ],
+     27
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     2
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 90,
+   "length_expected": 90,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-3-4-9_m1_socle_s1_p32003.qq.sing",
+     "bytes": 13959,
+     "sha256": "8f5d35a2aed33c67264f2edd2403a28c7cc262be54d87263849d9d014dbc17a8"
+    }
+   ]
+  },
+  {
+   "tag": "0-3-5-6_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    3,
+    5,
+    6
+   ],
+   "primitive_point": [
+    1,
+    5,
+    9,
+    5
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     1
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     5
+    ],
+    [
+     [
+      2,
+      5
+     ],
+     9
+    ],
+    [
+     [
+      3,
+      6
+     ],
+     5
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 15,
+   "length_expected": 15,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-3-5-6_m1_socle_s1_p32003.qq.sing",
+     "bytes": 2138,
+     "sha256": "3ae2dcc4a6920667c808b978729b9d565112d631acb424e3e10864596bf04490"
+    }
+   ]
+  },
+  {
+   "tag": "0-3-5-9_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    3,
+    5,
+    9
+   ],
+   "primitive_point": [
+    8,
+    30,
+    27,
+    5
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     8
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     30
+    ],
+    [
+     [
+      2,
+      5
+     ],
+     27
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     5
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 180,
+   "length_expected": 180,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-3-5-9_m1_socle_s1_p32003.dual.qq.sing",
+     "bytes": 55066,
+     "sha256": "3c788fa64da52fa1e4c17e9e0560916bd832f345c914a452783749245c5bef51"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     4,
+     6,
+     9
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      5
+     ],
+     [
+      [
+       1,
+       4
+      ],
+      27
+     ],
+     [
+      [
+       2,
+       6
+      ],
+      30
+     ],
+     [
+      [
+       3,
+       9
+      ],
+      8
+     ]
+    ],
+    "pure": true,
+    "length": 180
+   }
+  },
+  {
+   "tag": "0-3-6-7_m1_module_s1_p32003",
+   "ray": [
+    0,
+    3,
+    6,
+    7
+   ],
+   "primitive_point": [
+    2,
+    7,
+    14,
+    9
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     2
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     7
+    ],
+    [
+     [
+      2,
+      6
+     ],
+     14
+    ],
+    [
+     [
+      3,
+      7
+     ],
+     9
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 42,
+   "length_expected": 42,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-3-6-7_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 1979,
+     "sha256": "9f96ccc301f8d063c6fdcbb5bda29cfd03345c13c2a7746a294bfb258fb8387a"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     1,
+     4,
+     7
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      9
+     ],
+     [
+      [
+       1,
+       1
+      ],
+      14
+     ],
+     [
+      [
+       2,
+       4
+      ],
+      7
+     ],
+     [
+      [
+       3,
+       7
+      ],
+      2
+     ]
+    ],
+    "pure": true,
+    "length": 42
+   }
+  },
+  {
+   "tag": "0-3-6-8_m1_module_s1_p32003",
+   "ray": [
+    0,
+    3,
+    6,
+    8
+   ],
+   "primitive_point": [
+    5,
+    16,
+    20,
+    9
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     16
+    ],
+    [
+     [
+      2,
+      6
+     ],
+     20
+    ],
+    [
+     [
+      3,
+      8
+     ],
+     9
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 120,
+   "length_expected": 120,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-3-6-8_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 9080,
+     "sha256": "2c659ad8e1639bb5f66c76b4dabaeacb93e4083f24234c40b3b63bb79a6eed45"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     2,
+     5,
+     8
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      9
+     ],
+     [
+      [
+       1,
+       2
+      ],
+      20
+     ],
+     [
+      [
+       2,
+       5
+      ],
+      16
+     ],
+     [
+      [
+       3,
+       8
+      ],
+      5
+     ]
+    ],
+    "pure": true,
+    "length": 120
+   }
+  },
+  {
+   "tag": "0-3-7-8_m1_module_s1_p32003",
+   "ray": [
+    0,
+    3,
+    7,
+    8
+   ],
+   "primitive_point": [
+    5,
+    14,
+    30,
+    21
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     14
+    ],
+    [
+     [
+      2,
+      7
+     ],
+     30
+    ],
+    [
+     [
+      3,
+      8
+     ],
+     21
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 140,
+   "length_expected": 140,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-3-7-8_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 8004,
+     "sha256": "a46f04e2d1a43ed24e1044b2ff49eb03bbbd9457bff1f88c33f7999bc906dbfd"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     1,
+     5,
+     8
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      21
+     ],
+     [
+      [
+       1,
+       1
+      ],
+      30
+     ],
+     [
+      [
+       2,
+       5
+      ],
+      14
+     ],
+     [
+      [
+       3,
+       8
+      ],
+      5
+     ]
+    ],
+    "pure": true,
+    "length": 140
+   }
+  },
+  {
+   "tag": "0-3-7-9_m1_module_s1_p32003",
+   "ray": [
+    0,
+    3,
+    7,
+    9
+   ],
+   "primitive_point": [
+    8,
+    21,
+    27,
+    14
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     8
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     21
+    ],
+    [
+     [
+      2,
+      7
+     ],
+     27
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     14
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 252,
+   "length_expected": 252,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-3-7-9_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 18484,
+     "sha256": "58c40afa0eab6564ba5f78e0caff63a53c9e17a6327aa8ffb9785b48873aab64"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     2,
+     6,
+     9
+    ],
+    "betti_table_over_QQ": null,
+    "pure": null,
+    "length": null
+   }
+  },
+  {
+   "tag": "0-3-8-9_m1_module_s1_p32003",
+   "ray": [
+    0,
+    3,
+    8,
+    9
+   ],
+   "primitive_point": [
+    5,
+    12,
+    27,
+    20
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     12
+    ],
+    [
+     [
+      2,
+      8
+     ],
+     27
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     20
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 180,
+   "length_expected": 180,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-3-8-9_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 6928,
+     "sha256": "f0573049c4aa70b77ffdfe09d53e4e8b2311f41cbe4ebc6480891cdecdf7c816"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     1,
+     6,
+     9
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      20
+     ],
+     [
+      [
+       1,
+       1
+      ],
+      27
+     ],
+     [
+      [
+       2,
+       6
+      ],
+      12
+     ],
+     [
+      [
+       3,
+       9
+      ],
+      5
+     ]
+    ],
+    "pure": true,
+    "length": 180
+   }
+  },
+  {
+   "tag": "0-4-7-8_m1_module_s1_p32003",
+   "ray": [
+    0,
+    4,
+    7,
+    8
+   ],
+   "primitive_point": [
+    3,
+    14,
+    32,
+    21
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     3
+    ],
+    [
+     [
+      1,
+      4
+     ],
+     14
+    ],
+    [
+     [
+      2,
+      7
+     ],
+     32
+    ],
+    [
+     [
+      3,
+      8
+     ],
+     21
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 112,
+   "length_expected": 112,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-4-7-8_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 7864,
+     "sha256": "d9bb0e220c5e5b2e8d180c579dcd8ff7bee7588bbd4e8ef4c31492e1ed5bd1f8"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     1,
+     4,
+     8
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      21
+     ],
+     [
+      [
+       1,
+       1
+      ],
+      32
+     ],
+     [
+      [
+       2,
+       4
+      ],
+      14
+     ],
+     [
+      [
+       3,
+       8
+      ],
+      3
+     ]
+    ],
+    "pure": true,
+    "length": 112
+   }
+  },
+  {
+   "tag": "0-4-7-9_m1_module_s1_p32003",
+   "ray": [
+    0,
+    4,
+    7,
+    9
+   ],
+   "primitive_point": [
+    5,
+    21,
+    30,
+    14
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      4
+     ],
+     21
+    ],
+    [
+     [
+      2,
+      7
+     ],
+     30
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     14
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 210,
+   "length_expected": 210,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-4-7-9_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 18890,
+     "sha256": "1025541e31ff80a10f3c67312c2401d9ec91d074788393cdc5e89758457ece60"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     2,
+     5,
+     9
+    ],
+    "betti_table_over_QQ": null,
+    "pure": null,
+    "length": null
+   }
+  },
+  {
+   "tag": "0-4-8-9_m1_module_s1_p32003",
+   "ray": [
+    0,
+    4,
+    8,
+    9
+   ],
+   "primitive_point": [
+    5,
+    18,
+    45,
+    32
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    [
+     [
+      1,
+      4
+     ],
+     18
+    ],
+    [
+     [
+      2,
+      8
+     ],
+     45
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     32
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 240,
+   "length_expected": 240,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-4-8-9_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 16279,
+     "sha256": "0381d0cfd8caf07b95be808ca050687c67d06e1b4c75b794b839c50351a9ba3a"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     1,
+     5,
+     9
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      32
+     ],
+     [
+      [
+       1,
+       1
+      ],
+      45
+     ],
+     [
+      [
+       2,
+       5
+      ],
+      18
+     ],
+     [
+      [
+       3,
+       9
+      ],
+      5
+     ]
+    ],
+    "pure": true,
+    "length": 240
+   }
+  },
+  {
+   "tag": "0-5-6-8_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    5,
+    6,
+    8
+   ],
+   "primitive_point": [
+    1,
+    16,
+    20,
+    5
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     1
+    ],
+    [
+     [
+      1,
+      5
+     ],
+     16
+    ],
+    [
+     [
+      2,
+      6
+     ],
+     20
+    ],
+    [
+     [
+      3,
+      8
+     ],
+     5
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 40,
+   "length_expected": 40,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-5-6-8_m1_socle_s1_p32003.qq.sing",
+     "bytes": 5077,
+     "sha256": "fcf2572c79e3ad4ebc8e655c68f87ce36e602c3feb19d47a1886e35baf47ac11"
+    }
+   ]
+  },
+  {
+   "tag": "0-5-6-9_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    5,
+    6,
+    9
+   ],
+   "primitive_point": [
+    2,
+    27,
+    30,
+    5
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     2
+    ],
+    [
+     [
+      1,
+      5
+     ],
+     27
+    ],
+    [
+     [
+      2,
+      6
+     ],
+     30
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     5
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 90,
+   "length_expected": 90,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-5-6-9_m1_socle_s1_p32003.qq.sing",
+     "bytes": 13959,
+     "sha256": "e82f91fa4b9b2ab75028f25ffc2a42cf0945adb375f7ecec203a73aa47342482"
+    }
+   ]
+  },
+  {
+   "tag": "0-5-8-9_m1_module_s1_p32003",
+   "ray": [
+    0,
+    5,
+    8,
+    9
+   ],
+   "primitive_point": [
+    1,
+    6,
+    15,
+    10
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     1
+    ],
+    [
+     [
+      1,
+      5
+     ],
+     6
+    ],
+    [
+     [
+      2,
+      8
+     ],
+     15
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     10
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 60,
+   "length_expected": 60,
+   "files": [
+    {
+     "role": "ext3_dual",
+     "path": "qq-singular/0-5-8-9_m1_module_s1_p32003.dual.qq.sing",
+     "bytes": 2046,
+     "sha256": "e8743fa70f1bfb8667b38c66326046505a3d4420648838868dfd5db2748e4943"
+    }
+   ],
+   "ext3_dual": {
+    "ray": [
+     0,
+     1,
+     4,
+     9
+    ],
+    "betti_table_over_QQ": [
+     [
+      [
+       0,
+       0
+      ],
+      10
+     ],
+     [
+      [
+       1,
+       1
+      ],
+      15
+     ],
+     [
+      [
+       2,
+       4
+      ],
+      6
+     ],
+     [
+      [
+       3,
+       9
+      ],
+      1
+     ]
+    ],
+    "pure": true,
+    "length": 60
+   }
+  },
+  {
+   "tag": "0-6-7-9_m1_socle_s1_p32003",
+   "ray": [
+    0,
+    6,
+    7,
+    9
+   ],
+   "primitive_point": [
+    1,
+    21,
+    27,
+    7
+   ],
+   "betti_table_over_QQ": [
+    [
+     [
+      0,
+      0
+     ],
+     1
+    ],
+    [
+     [
+      1,
+      6
+     ],
+     21
+    ],
+    [
+     [
+      2,
+      7
+     ],
+     27
+    ],
+    [
+     [
+      3,
+      9
+     ],
+     7
+    ]
+   ],
+   "equals_primitive_point": true,
+   "length": 63,
+   "length_expected": 63,
+   "files": [
+    {
+     "role": "module",
+     "path": "qq-singular/0-6-7-9_m1_socle_s1_p32003.qq.sing",
+     "bytes": 9869,
+     "sha256": "03873b975f5379848f7c8ff83ad6b6f145070b74a5940b8708e9f16e7649c33b"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "modules": 30,
+  "pure": 30,
+  "with_dual": 14,
+  "duals_pure": 12
+ }
+}

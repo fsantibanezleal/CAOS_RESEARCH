@@ -120,10 +120,13 @@ def test_unadopted_problems_listed(tmp_path):
     assert guard.unadopted_problems(portfolio, {"gov"}) == ["open1", "sleep"]
 
 
-def test_main_prints_information_and_exit_code_unaffected(capsys):
+def test_main_prints_information_and_exit_code_unaffected(monkeypatch, capsys):
+    # independent of the state of the real records: no validation error, one planted problem without a record
+    monkeypatch.setattr(guard, "validate_record", lambda path, index, errors: None)
+    monkeypatch.setattr(guard, "unadopted_problems", lambda portfolio, adopted: ["planted-problem"])
     code = guard.main()
     out = capsys.readouterr().out
-    assert "not adopted methodology 13" in out
+    assert "not adopted methodology 13" in out and "planted-problem" in out
     assert code == 0
 
 
@@ -148,6 +151,7 @@ def test_index_row_of_versions_folder_path():
 
 def test_failing_run_still_prints_information(monkeypatch, capsys):
     monkeypatch.setattr(guard, "validate_record", lambda path, index, errors: errors.append("planted error"))
+    monkeypatch.setattr(guard, "unadopted_problems", lambda portfolio, adopted: ["planted-problem"])
     code = guard.main()
     out = capsys.readouterr().out
     assert code == 1
@@ -223,4 +227,20 @@ def test_empty_manuscripts_without_a_reason_fails(tmp_path, monkeypatch):
     assert any("no_manuscript_reason" in e for e in errors)
     errors = _record_without_manuscript(tmp_path / "b", monkeypatch, "  ")
     assert any("no_manuscript_reason" in e for e in errors)
+
+
+def test_lettered_experiment_folders_share_their_number(tmp_path, monkeypatch):
+    base = tmp_path / "problems" / "area" / "prob" / "experiments"
+    for name in ("EXP-017-first", "EXP-017b-second", "EXP-017c-third", "EXP-018-next"):
+        (base / name).mkdir(parents=True)
+        (base / name / "verdict.md").write_text("v", encoding="utf-8")
+    monkeypatch.setattr(guard, "ROOT", tmp_path)
+    errors: list[str] = []
+    assert guard.experiment_ids("prob", errors) == {17, 18}
+    assert errors == []
+    (base / "EXP-019_bad").mkdir()
+    (base / "EXP-019_bad" / "verdict.md").write_text("v", encoding="utf-8")
+    errors = []
+    guard.experiment_ids("prob", errors)
+    assert any("malformed" in e for e in errors)
 

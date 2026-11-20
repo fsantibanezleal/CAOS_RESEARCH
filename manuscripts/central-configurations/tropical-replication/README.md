@@ -1,5 +1,9 @@
 # central-configurations / tropical-replication
 
+Current public version: v0.13, published 2026-11-14 at
+[10.5281/zenodo.24232708](https://doi.org/10.5281/zenodo.24232708), under concept DOI
+[10.5281/zenodo.21542483](https://doi.org/10.5281/zenodo.21542483).
+
 LaTeX source of the preprint "Replication and screening of tropical finiteness certificates for central
 configurations, with exact comet decisions and the status of a six-body symmetric stratum" (source version 0.13,
 14 November 2026). The release and the publication gate are separate steps.

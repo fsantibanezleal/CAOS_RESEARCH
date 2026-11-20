@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "problem": "navier-stokes",
+  "updated": "2026-11-19",
+  "program_status": "dormant (portfolio reviews of 2026-10-30 and 2026-11-19)",
+  "original_problem": {
+    "status": "open; the Clay Millennium problem is not attempted",
+    "statement": "Global regularity or finite-time blowup for the three-dimensional incompressible Navier-Stokes equations (Fefferman's Clay statement, alternatives (A) to (D)). This programme does not attempt it: numerical regularity cannot replace the required existence or breakdown argument (portfolio reviews of 2026-09-05, feasibility B).",
+    "priority": "The 2026 blowup results are not ours. Alpoge and Buckmaster posted forced finite-time blowup for the IPM equation, 2D inviscid Boussinesq and 3D incompressible Euler on 2026-09-07, with Lean formalizations, and state they believe they also have hypodissipative Navier-Stokes (unreleased at the last check, 2026-09-17). OpenAI announced on 2026-09-08 forced blowup for 3D Navier-Stokes for every positive viscosity, claiming Fefferman alternatives (C) and (D), and unforced 3D Euler blowup, with Lean certificates; neither proof is community-verified, the Clay Institute has not commented, and the announcement and the Buckmaster statement disagree about the history (both recorded, no position taken). Both extend the multiscale program of Cordoba and Martinez-Zoroa, who hold the credit for the layer mechanism. The hypodissipative threshold (22 - 8 sqrt 7)/9 with rough forcing is Cordoba, Martinez-Zoroa and Zheng's (arXiv:2407.06776, ARMA 250 (2026)). Bastounis, Circelli and Hansen (arXiv:2610.08144, 2026-10-06) report that the Lean proof does not correspond to the natural-language blowup proof. Zheng's unforced Euler and IPM claims (arXiv:2610.02509, arXiv:2610.06544) were read on the primary page at the 2026-11-19 review.",
+    "prohibited_reframing": "No CAOS result may be described as an attempt on, or progress toward, the Clay problem; as a proof, a refutation or a verification of the mathematics of any blowup claim; or as the layer or pulse mechanism, which belongs to Cordoba and Martinez-Zoroa. The blowup results audited belong to their authors (Alpoge and Buckmaster; the OpenAI announcement; the programme of Cordoba and Martinez-Zoroa). CAOS results are statement audits, replays of the Lean builds and kernel checks, a reduced-model validation, and the derived ceilings of a model class and of the published designs."
+  },
+  "mission": "Audit the 2026 blowup claims at the level a machine and a derivation can reach (statement, build and kernel replay, the reduced model against the equations it reduces, the exponent content of the published constructions), keep every claim attributed to its author, and hold the programme dormant until a reopening condition of state.md appears.",
+  "current_focus": "NS-F3",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true,
+    "attribution_is_a_gate": true,
+    "reopen_only_on_a_state_md_condition": true
+  },
+  "focuses": [
+    {
+      "id": "NS-F0",
+      "title": "Statement audit and Lean replay of the announced certificates",
+      "status": "closed",
+      "priority": 0,
+      "target": "Decide whether the OpenAI Lean certificate states Fefferman alternatives (C) and (D) and the unforced Euler theorem faithfully, whether the whole certificate builds with no sorryAx, and whether the Lean kernel, not only the elaborator, accepts it.",
+      "value": "The only verification anyone can do on the day of the announcement (plan.md, Control 2). The reference statement is adapted from DeepMind's Formal Conjectures, written by a third party before the claim existed.",
+      "success_gate": "Clause-by-clause statement audits of (C), (D) and the Euler theorem, a full build with zero sorryAx and the three standard axioms only (EXP-001: 11,424 jobs), and a clean replay of both halves by leanchecker from an empty environment (EXP-006: NavierStokes 2,972 s, Euler 1,588 s, exit 0). Met 2026-09-16.",
+      "stop_conditions": [
+        "A sorryAx or an added axiom in the closure (none found).",
+        "The audit would be read as verifying the mathematics: the later report of Bastounis, Circelli and Hansen (arXiv:2610.08144) shows that statement and build checks do not establish that the formal proof follows the written argument."
+      ],
+      "novelty_status": "An audit of other authors' certificates, labelled as such. The statement faithfulness is consistent with a proof-correspondence gap and does not exclude it. No external expert confirmation.",
+      "manuscript_route": "blowup-claims-audit, sections on machine verification, build and kernel replay",
+      "first_bounded_action": "EXP-001",
+      "evidence": [
+        "EXP-001",
+        "EXP-006",
+        "NS-004"
+      ]
+    },
+    {
+      "id": "NS-F1",
+      "title": "Reduced modulation model against the Boussinesq equations, and the dissipative extension",
+      "status": "closed",
+      "priority": 1,
+      "target": "Decide whether the exact four-dimensional modulation reduction of the Alpoge-Buckmaster mechanism, with a derived dissipative term, predicts the full nonlinear 2D Boussinesq equations through growth, steering and hold, and where the reduction stops tracking.",
+      "value": "A reduced model never checked against the equation it reduces is a picture, not an instrument (plan.md, Control 1). The growth rate carries no frequency, and the dissipative term and the localization cost were verified.",
+      "success_gate": "Peak rate to 4e-05 relative, frequency independence to 2.7e-04 and the dissipative term to 2.6e-04 absolute with three failing negative controls (EXP-002); the steered cycle reproducing the PDE (EXP-005 gates A, B, C); localization cost 3.6 alpha/(ell lambda) (EXP-007). Met in part: seven validation criteria were not met and are reported with their numbers, among them the slope of the two-scale rate (1.36 times the prediction), the committed parameters of the steered cycle (refuted by the background's own instability) and the two-layer handoff correlation (0.808 at best against a 0.9 gate).",
+      "stop_conditions": [
+        "The many-layer steered dynamical cascade is a larger open build and is not planned.",
+        "The handoff correlation limit lies in the measurement instrument (interior optimum of both knobs, EXP-005 part D rerun at separation 17: 0.509)."
+      ],
+      "novelty_status": "Writing the reduced model down is a control, not a result: it is in print as Subsection 1.2 and Lemma 3.1 of the Alpoge-Buckmaster Boussinesq paper. The dissipative extension and the localization cost have no recorded external novelty check: UNVERIFIED.",
+      "manuscript_route": "blowup-claims-audit, verification of the dissipative extension, numerical methods and ablation",
+      "first_bounded_action": "EXP-002",
+      "evidence": [
+        "EXP-002",
+        "EXP-004",
+        "EXP-005",
+        "EXP-007"
+      ]
+    },
+    {
+      "id": "NS-F2",
+      "title": "Class ceiling of layer cascades and the exponent content of the published designs",
+      "status": "closed",
+      "priority": 2,
+      "target": "Derive the largest dissipation exponent a layer cascade of a given growth law can carry, and the largest exponent the force estimates of the smooth-forcing Boussinesq design and of the Euler design certify.",
+      "value": "Neither the pendulum mechanism (alpha at most 1/2 in the |grad|^alpha convention) nor the stretching mechanism (at most 1) reaches classical viscosity 2; the published design estimates certify far below the proved rough-force threshold (at most 5.3e-04 as published and 9.0e-03 under any retuning for the Boussinesq design; 6e-08 and 7.5e-03 for the Euler design, |grad|^alpha convention, per the manuscript README).",
+      "success_gate": "Theorem 3.1 confirmed numerically for both growth laws (EXP-003 and EXP-008: pendulum to 1.1e-07, stretching to 1.8e-09), the published threshold (22 - 8 sqrt 7)/9 reconstructed from the construction's own exponent budget (NS-013), and Theorems 4.1 and 4.2 for the two designs (NS-016, NS-019). Met 2026-09-18; the comparison with the published threshold was closed by NS-021.",
+      "stop_conditions": [
+        "The ceiling is a statement about a model class, never about Navier-Stokes itself; it is unreachable by the real constructions (the schedules approaching it are excluded by the published force budget).",
+        "The Alpoge-Buckmaster hypodissipative paper (NS-010, blocked) may supersede the design bounds when it appears."
+      ],
+      "novelty_status": "No source states the class ceiling (2026-10-30 external review [U]); the nearest quantitative value is the threshold (22 - 8 sqrt 7)/9 of arXiv:2407.06776 [V2]. The round-1 calibration p = 11/4 + sqrt 7 was withdrawn as tautological. External novelty not independently confirmed; a negative search is not a proof of novelty.",
+      "manuscript_route": "blowup-claims-audit, Theorems 3.1, 4.1 and 4.2 and the threshold reconstruction",
+      "first_bounded_action": "EXP-003",
+      "evidence": [
+        "EXP-003",
+        "EXP-008",
+        "NS-013",
+        "NS-016",
+        "NS-017",
+        "NS-019",
+        "NS-021"
+      ]
+    },
+    {
+      "id": "NS-F3",
+      "title": "The audit paper at its published version with the scoping revisions",
+      "status": "active-success-gate-met",
+      "priority": 3,
+      "target": "State in blowup-claims-audit, at a published version, what the audit and the model-class analysis establish and what they do not, scoped against the proof-correspondence report of Bastounis, Circelli and Hansen and with every validation criterion reported with its outcome.",
+      "value": "A paper that read the statement audit as a verification of the blowup mathematics would overstate it; the revisions keep the claims at the level of the records and the attribution to the originators.",
+      "success_gate": "A published version scoped against arXiv:2610.08144 (v0.09, 10.5281/zenodo.23890775, 2026-11-02; NS-020) and revised from the independent audit with the failed criteria reported (v0.10, 10.5281/zenodo.24231927, 2026-11-14), the independent review approving. Met 2026-11-14.",
+      "stop_conditions": [
+        "No further version while the programme is dormant unless a reopening condition of state.md occurs.",
+        "A stale statement found in the paper by a new external claim triggers a correction version, not a new experiment."
+      ],
+      "novelty_status": "The audit and the class ceiling are internally validated and persisted on Zenodo, which is not peer review. The paper does not prove blowup for any equation, does not improve any published threshold and does not verify the mathematics of either announced proof.",
+      "manuscript_route": "blowup-claims-audit, published v0.10",
+      "first_bounded_action": "NS-020",
+      "evidence": [
+        "NS-020",
+        "EXP-001",
+        "EXP-002",
+        "EXP-003",
+        "EXP-004",
+        "EXP-005",
+        "EXP-006",
+        "EXP-007",
+        "EXP-008"
+      ]
+    },
+    {
+      "id": "NS-F4",
+      "title": "Reopening on an external change: corrected formalization, refutation of the forced blowup, or a dissipative construction above the class ceiling",
+      "status": "proposed",
+      "priority": 4,
+      "target": "Re-audit the claims when one of the three conditions of state.md occurs: a corrected formalization, a refutation of the forced blowup, or a dissipative construction above the class ceiling; and compare the Alpoge-Buckmaster hypodissipative paper with the recorded prediction when it posts (NS-010, NS-017).",
+      "value": "The recorded prediction (a hypodissipative Navier-Stokes on the Alpoge-Buckmaster architecture stays below about 7.5e-3, theirs) is falsifiable and dated before their paper appeared; checking it is the first action on reopening.",
+      "success_gate": "The outcome of the prediction check recorded either way, and the paper revised to the new status of the claims.",
+      "stop_conditions": [
+        "None of the three conditions occurs: the programme stays dormant.",
+        "A new item does not touch the class ceiling or the statement audits: record it as a citation and do not reopen."
+      ],
+      "novelty_status": "Not applicable before a trigger. The items read on 2026-11-19 (Zheng, arXiv:2610.02509 and arXiv:2610.06544) were rated minor, citations for the dormant audit paper (portfolio review of 2026-11-19).",
+      "manuscript_route": "blowup-claims-audit, a new version.",
+      "first_bounded_action": "Check whether the Alpoge-Buckmaster hypodissipative paper has posted and compare it with the NS-017 prediction (NS-010)."
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "blowup-claims-audit",
+      "path": "manuscripts/navier-stokes/blowup-claims-audit",
+      "version": "0.10",
+      "version_doi": "10.5281/zenodo.24231927",
+      "concept_doi": "10.5281/zenodo.22820520",
+      "status": "published v0.10 (2026-11-14), 40 pages; independent review APPROVE",
+      "split_action": "None. One paper whose central question is how much dissipation a layer cascade can carry, with the audit of the announced certificates as its scope section; the records give no reason to split."
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 3,
+      "classification": "primary-manuscript",
+      "manuscripts": ["blowup-claims-audit"]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "classification": "research-record",
+      "manuscripts": ["blowup-claims-audit"],
+      "note": "Reported in the paper with the unmet criteria: EXP-004 slope sub-gate, EXP-005 committed parameters refuted and handoff correlation below its gate."
+    },
+    {
+      "start": 6,
+      "end": 8,
+      "classification": "primary-manuscript",
+      "manuscripts": ["blowup-claims-audit"]
+    }
+  ]
+}
