@@ -1,8 +1,9 @@
 # The explicit complex comes from an endomorphism of U, and it exists only for a central commutator
 
-Date: 2026-11-21. Status: derivation [D] by the coordinating session, not yet read by a reviewer. It says what the
-mechanism of the notes `2026-11-20-central-pair-theorem.md` and `2026-11-20-central-commutator-criterion.md` is, and
-why it cannot reach the characteristics that do not divide e(e - 1). No experiment depends on it.
+Date: 2026-11-20 (the file name carries 2026-11-21 by a clerical error). Status: derivation [D] by the coordinating
+session, not yet read by a reviewer. It says what the mechanism of the notes `2026-11-20-central-pair-theorem.md` and
+`2026-11-20-central-commutator-criterion.md` is, and why it cannot reach the characteristics that do not divide e(e -
+1). No experiment depends on it.
 
 ## Setting
 

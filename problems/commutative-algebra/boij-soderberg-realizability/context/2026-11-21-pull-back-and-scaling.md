@@ -1,8 +1,9 @@
 # Pull-back along an endomorphism: in characteristic p the realized Betti tables are closed under multiplying the degrees by d = 0 or 1 modulo p
 
-Date: 2026-11-21. Status: derivation [D] by the coordinating session, not yet read by a reviewer. It rests on the
-criterion note `2026-11-20-central-commutator-criterion.md` (under review) and on the note
-`2026-11-21-endomorphisms-and-the-explicit-complex.md`. EXP-013 (frozen the same day) checks it by machine.
+Date: 2026-11-20 (the file name carries 2026-11-21 by a clerical error). Status: derivation [D] by the coordinating
+session, not yet read by a reviewer. It rests on the criterion note `2026-11-20-central-commutator-criterion.md`
+(under review) and on the note `2026-11-21-endomorphisms-and-the-explicit-complex.md`. EXP-013 (frozen the same day)
+checks it by machine.
 
 ## Setting
 

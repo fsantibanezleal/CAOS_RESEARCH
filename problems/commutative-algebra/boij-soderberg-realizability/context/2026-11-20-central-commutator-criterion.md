@@ -1,6 +1,6 @@
 # Pairs with a central commutator in characteristic p: a criterion for purity, and pure pairs for every e = 0 or 1 modulo p
 
-Date: 2026-11-20. Status: derivation [D] by the coordinating session. Reviewed on 2026-11-21 by a reader other than
+Date: 2026-11-20. Status: derivation [D] by the coordinating session. Reviewed on 2026-11-20 by a reader other than
 the writer (record `bs-central-commutator-criterion-review-2026-11-20` in the coordination repository): every step
 holds, the acyclicity lemma was checked against a source, no blocker and no major finding; twelve minor repairs,
 applied below (the first text is in commit 588d6bb1). The reviewer's own computations confirm the explicit pairs of
