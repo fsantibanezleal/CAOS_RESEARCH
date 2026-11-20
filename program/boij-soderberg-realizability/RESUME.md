@@ -1,20 +1,33 @@
 # boij-soderberg-realizability: RESUME (session handoff)
 
-Updated 2026-11-19 (opened). First read for any session, per methodology 07. Derived view: experiment verdicts win.
+Updated 2026-11-20 (first manuscript published). First read for any session, per methodology 07. Derived view: experiment verdicts win.
 
 ## 1. State in one screen
 
 Pure rays of the Boij-Soderberg cone in three variables are indexed by degree sequences d = (0,d1,d2,d3); their integral
 points are the multiples m beta_d of the primitive Herzog-Kuhl point. Erman-Sam Question 6.1 asked whether every integral
-point is realized by a finite length module over S = k[x,y,z] or over U(H) (Heisenberg, deg z = 2). Rethlas
-(arXiv:2605.25259v2) answered no with (0,6,20,21), beta (1,2,9,8): Krull over S, parity p(-1) = 16 over U(H) [V]. No
-follow-up in six months [V, 2026-11-19]. The 2026-09-02 dossier holds smaller counterexamples, (0,4,9,10) with
-(1,3,8,6) and its dual (0,1,6,10) with (6,8,3,1), d3 = 10, from published obstructions and the parity test [D, to be
-machine-checked], and a census of the 220 rays with d3 <= 12 (about 52 primitive points realized by formulas, 12
-obstructed, about 156 undecided) [D, scripts lost; recomputed in EXP-001].
+point is realized by a finite length module over S = k[x,y,z] or over U(H) (Heisenberg, deg z = 2). Jiang, Li, Sun, Wang,
+Xiao and Yu (the Rethlas paper, arXiv:2605.25259v2, Theorem 3.7) answered no with (0,6,20,21), beta (1,2,9,8): Krull over
+S, parity p(-1) = 16 over U(H) [V].
 
-First round: EXP-001, the exact census with formula bounds and closures, and a random-module search over GF(32003) with
-every hit re-verified in Singular and over QQ.
+What the programme has, all in the published manuscript v0.01 (section 5) and in the verdicts of EXP-001 to EXP-004:
+
+- U/U(x^e, y^e) has the pure resolution of type (0, e, 3e, 4e) with table (1,2,2,1) if and only if the characteristic is
+  0 or at least 2e [D, reviewed; MV for e <= 8].
+- In characteristic 2 a module over U(H) with a generators and at most a + 1 relations, all of one degree e >= 2, never
+  has finite length; so (1,2,2,1) on (0, e, 3e, 4e) is realized over neither ring there for every e >= 2, and (0,2,10,12)
+  is excluded there [D, reviewed; MV on the observed cases].
+- The ten rays with d3 <= 12 that pass the parity test and are excluded over S are realized over U(H) in characteristic 0
+  [MV, two instruments].
+- Over S, of the 220 rays with d3 <= 12 the primitive point is realized in characteristic 0 on 193, excluded on 12 (least
+  multiple 2 on each) and open on 15, all with d3 >= 10 [MV; the last 46 rays through rank certificates and a reviewed
+  lift lemma].
+- In characteristic 0 no counterexample to Question 6.1 has d3 <= 9; (0,4,9,10) and its dual (0,1,6,10) are
+  counterexamples with d3 = 10 over every field (the exclusion over S is Erman's, the half over U(H) is the parity test)
+  [MV plus cited results, reviewed].
+
+Open: the 15 rays, the odd characteristics below 2e, the substitution of x^e, y^e in the Kostant presentations (focus
+BSR-F3, proposed).
 
 ## 2. The objects table
 
@@ -34,7 +47,7 @@ every hit re-verified in Singular and over QQ.
 
 | Experiment | Question | Verdict | Load-bearing result |
 |---|---|---|---|
-| EXP-001-pure-ray-census | the d3 <= 12 table over S: census, obstructions at every m, closures, generic level modules and generic presentations over GF(32003), every hit rechecked in Singular and over QQ | CONFIRMED (2026-11-19) | over S, of 220 rays the primitive point is realized on 193 (147 in characteristic 0), excluded on 12 (c_d = 2 on each) and open on 15, all with d3 >= 10; c_d determined on 205; every ray with d3 <= 9 is realized in characteristic 0 (79) or is one of five excluded parity-passing rays that U(H) realizes (EXP-002), so no counterexample to Question 6.1 has d3 <= 9 in characteristic 0, and (0,4,9,10), (0,1,6,10) are counterexamples with d3 = 10 over every field; 64 of 66 completed QQ rechecks pass |
+| EXP-001-pure-ray-census | the d3 <= 12 table over S: census, obstructions at every m, closures, generic level modules and generic presentations over GF(32003), every hit rechecked in Singular and over QQ | CONFIRMED (2026-11-19) | over S, of 220 rays the primitive point is realized on 193 (147 in characteristic 0 by this experiment alone; all 193 after EXP-004, addendum 2 of the verdict), excluded on 12 (c_d = 2 on each) and open on 15, all with d3 >= 10; c_d determined on 205; every ray with d3 <= 9 is realized in characteristic 0 (79) or is one of five excluded parity-passing rays that U(H) realizes (EXP-002), so no counterexample to Question 6.1 has d3 <= 9 in characteristic 0, and (0,4,9,10), (0,1,6,10) are counterexamples with d3 = 10 over every field; 64 of 66 completed QQ rechecks pass |
 | EXP-002-heisenberg-primitive-points | the three S-obstructed parity-passing rays left open over U(H): (0,2,6,8), (0,3,9,12), (0,2,10,12); U/U(x^e, y^e); calibration on the Kostant modules; duality | CONFIRMED (2026-11-19) | all three realized over QQ: U/U(x^2, y^2), U/U(x^3, y^3), cokernels of 2 by 3 matrices of quadrics; U/U(x^e, y^e) pure for e <= 6; the pair (x^2, y^2) fails in characteristics 2 and 3; other pairs work in characteristic 3, none of 80 in characteristic 2; duality reverses tables on 20 of 20 examples; two instruments agree on 96 of 96 modules |
 | EXP-003-heisenberg-characteristic-two | characteristic 2 over U(H); the proof steps of U/U(x^e, y^e); genericity | CONFIRMED (2026-11-19) | no pair of quadrics has a finite length quotient in characteristic 2 (exhaustive over GF(2) and GF(4), with a proof for every field), so (1,2,2,1) on (0,2,6,8) is realizable over neither ring there: a counterexample with d3 = 8 in characteristic 2 on a ray realized in every other characteristic; the proof steps of the family hold for e <= 8 and the bad primes are exactly the predicted ones; a general pair is not pure for e >= 4; (0,1,5,6), (0,1,7,8), (0,1,9,10), (0,1,11,12), (0,3,5,8) realized in characteristic 2; (0,3,9,12) and (0,2,10,12) never in the searches |
 | EXP-004-lift-certificates | do the prime-field realizations of EXP-001 lift to characteristic 0? A rank test per degree on the lifted integer matrices, with a lemma on flat lifts of pure resolutions, on the 130 verified hits (64 as known answers) | CONFIRMED (2026-11-19) | the rank test passes on all 130 hits (two instruments; one matrix by one instrument), reproduces the 64 known answers, and with the lift lemma makes every ray realized over GF(32003) a ray realized in characteristic 0 (193 of 193, 147 before); the two rechecks of EXP-001 that had failed over QQ were false negatives (both modules are pure over QQ in Singular); the lemma awaits review (BSB-020) |
@@ -68,19 +81,20 @@ over QQ in a second system (addendum 1 of the EXP-001 verdict).
 
 ## 5. Next actions
 
-1. The review of the lift lemma of EXP-004 (BSB-020); then the field scope of the table of EXP-001 is updated in the
-   records and in the manuscript (193 rays realized in characteristic 0).
-   Done on 2026-11-19: the general characteristic 2 statement is reviewed (in characteristic 2 a module with a generators
-   and at most a + 1 relations of one degree e >= 2 never has finite length over U(H), so (1,2,2,1) on (0, e, 3e, 4e) is
-   realized over neither ring for every e >= 2; context note `2026-11-19-characteristic-two-general.md`), and the rational
-   modules of the rays with d3 <= 9 are stored with hashes (`artifacts/qq-modules.json` of EXP-001).
-2. The remaining QQ rechecks (57 not run, 7 at the time limit) and the two hits that fail over QQ (BSB-016); the 15 open
-   rays with d3 >= 10.
-3. The first manuscript (BSB-013): the family U/U(x^e, y^e) with its sharp characteristic condition, the characteristic 2
-   statement on (0,2,6,8), the table over U(H) for d3 <= 12 and the census over S; attribution to Erman and Sam, Sam,
-   Boocher, Huang and Wolf, and Jiang, Li, Sun, Wang, Xiao and Yu.
-4. Open questions: characteristic 2 on (0,3,9,12) and (0,2,10,12) (BSB-014); the substitution x^e, y^e in the Kostant
-   presentations (BSB-012).
+Published on 2026-11-20: the first manuscript, v0.01, [10.5281/zenodo.24385387](https://doi.org/10.5281/zenodo.24385387) (concept
+[10.5281/zenodo.24385386](https://doi.org/10.5281/zenodo.24385386)), `manuscripts/boij-soderberg-realizability/primitive-points-realizability`. It carries
+Theorem A (`U/U(x^e, y^e)` is pure of type (0, e, 3e, 4e) exactly in characteristic 0 or at least 2e), the general
+characteristic 2 theorem (no finite length module with at most one more relation than generators in one degree e >= 2), the
+table over U(H), the census over k[x,y,z] (193 rays realized in characteristic 0, 12 excluded, 15 open), the rank
+certificates with the lift proposition, and the least counterexample in characteristic 0 (d3 = 10). The success gate of
+BSR-F2 is met; the focus stays current until the next strategic review names the following one.
+
+1. The next strategic review: BSR-F3 (the 15 open rays with d3 >= 10, the odd characteristics below 2e, the substitution
+   of x^e, y^e in the Kostant presentations) or closing the programme at this manuscript.
+2. BSB-021: archive in the repository the machine checks that exist only in reviewers' runs (pairs of quartics and
+   quintics, the 651 spaces of cubics over GF(2), the sharpness examples, the family at e = 6, 7 over small primes).
+3. BSB-022: the census recheck must record a run that ends without a result separately from a computed negative.
+4. A new version of the manuscript only for corrections, a decided open ray or a decided characteristic question.
 
 ## 6. Where everything lives
 
@@ -93,6 +107,10 @@ over QQ in a second system (addendum 1 of the EXP-001 verdict).
 
 - Realizability depends on the field: a module found over GF(32003) realizes the point in characteristic 32003 only;
   the QQ re-verification gives characteristic 0; formula constructions state their own fields (EFW is characteristic 0).
+  A prime-field hit is carried to characteristic 0 by the rank certificate of EXP-004 (maximal prime-field rank in
+  every needed degree) with the lift lemma, without a resolution over QQ.
+- The census recheck of EXP-001 records a run over QQ that ends without a result line as a failure: two such
+  runs were read as modules that do not lift, and both lift (BSB-022).
 - `randomSocleModule` and `randomModule` default to `ZZ/101`; pass `CoefficientRing`.
 - A random miss proves nothing; only obstructions exclude.
 - The Rethlas raw output `question_6_1.md` misstates the survey ("dimension <= 3"); the paper's Question 2.7 is correct.

@@ -1,0 +1,19 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Stealth]
+\node (m0) at (0,0) {$U$};
+\node (m1) at (3.3,0) {$U(-1)^2$};
+\node (m2) at (6.9,0) {$U(-3)^2$};
+\node (m3) at (10.2,0) {$U(-4)$};
+\node (m4) at (12.4,0) {$0$};
+\node (k) at (-2.1,0) {$k$};
+\draw[<-] (k) -- node[above,font=\scriptsize]{$\varepsilon$} (m0);
+\draw[<-] (m0) -- node[above,font=\scriptsize]{$(x,\,y)^{\mathsf T}$} (m1);
+\draw[<-] (m1) -- node[above,font=\scriptsize]{$A$} (m2);
+\draw[<-] (m2) -- node[above,font=\scriptsize]{$(y,\,-x)^{\mathsf T}$} (m3);
+\draw[<-] (m3) -- (m4);
+\node[font=\scriptsize,anchor=north] at (0,-0.5) {degree $0$};
+\node[font=\scriptsize,anchor=north] at (3.3,-0.5) {generators in degree $1$};
+\node[font=\scriptsize,anchor=north] at (6.9,-0.5) {generators in degree $3$};
+\node[font=\scriptsize,anchor=north] at (10.2,-0.5) {generator in degree $4$};
+\node[font=\scriptsize,anchor=north] at (5.2,-1.35) {$A=\begin{pmatrix}yx-2xy&x^2\\-y^2&2yx-xy\end{pmatrix}$};
+\draw[thick] (-0.4,-2.05) -- node[below=4pt,font=\scriptsize]{Euler series $1-2t+2t^3-t^4=(1-t)^2(1-t^2)$} (10.8,-2.05);
+\end{tikzpicture}

@@ -85,3 +85,32 @@ a system and with scripts that share nothing with the instruments in dispute.
 
 - The review of the lemma (BSB-020); then the field scope of the table of EXP-001 in the records and the manuscript.
 - Why the Macaulay2 resolution over QQ gave another table on two modules (a note for the tooling records).
+
+## Addendum 1 (2026-11-19): the lemma and items 1 to 3 after an independent review
+
+A reader other than the writer derived the lemma independently in both forms, compared the constructions with the
+recheck script of EXP-001 and with its own Singular scripts (the Hilbert functions over QQ read from the ranks sum to the
+Singular lengths on 29 of 29 modules), re-read the evidence on the two disputed modules and recounted the rays (record
+`bs-lift-lemma-review-2026-11-19` in the coordination repository). Verdict: the lemma is correct after two minor wording
+fixes; items 1 to 3 are correct after fixes; no blocker. The hypothesis file is frozen; the corrections are recorded
+here.
+
+- The lemma, two points to add to its proof. In the image form the equality of ranks is needed for 0 <= d <= d3 - 3
+  only; outside that range both sides vanish. The lifted resolution stops at length 3: after three steps the next
+  kernel reduces to zero modulo p and, being free of finite rank over Z_(p) in each degree, is zero.
+- Item 1, restated. On all 130 hits the rank over GF(32003) is maximal (the smaller of the numbers of rows and columns)
+  in every degree the lemma needs. The rank over QQ of an integer matrix is at least its rank modulo p, so the rank over
+  QQ is forced to the same value. The certificate is therefore the maximal prime-field rank, which gate G1 reads; the
+  computations of the rank over QQ by python-flint and PARI/GP are a cross-check, and they agree.
+- Item 3, corrected. The matrix that python-flint left undecided on (0,3,10,12) is in degree d3 - 2, one degree beyond
+  what the lemma needs, and its prime-field rank is full (1,386, the number of rows; confirmed by PARI/GP and by the
+  reviewer's own elimination modulo two primes). So (0,3,10,12) and its dual do not rest on one instrument. All 193
+  realized rays are realized in characteristic 0: 147 before this experiment, 24 by a passing hit on the ray and 22 by
+  the Ext^3 dual of one (the reviewer's recount; the count of 23 and 21 above leaves these two rays aside).
+- The two disputed modules, corrected. The sentence above that the Macaulay2 run of EXP-001 "printed a table that was
+  not the pure one" is not supported by the records. The run script of EXP-001 records as a failure any run over QQ that
+  ends without a result line, and it did not keep the output. Both runs ended after about 110 s, when their stage was
+  stopped; rerun to the end by the reviewer, the same script prints the pure table (7,16,21,12) on (0,3,8,10) after 522 s
+  and had not finished after 900 s on (0,3,11,12). So neither run computed a table. With the two resolutions in Singular
+  above, both modules are pure over QQ. What ended the two runs is not established.
+
