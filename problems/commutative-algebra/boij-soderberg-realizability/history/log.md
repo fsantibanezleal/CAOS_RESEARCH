@@ -191,3 +191,14 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
 - Found while checking the generator: the manifest table of the published v0.01 prints the hash of a CRLF working copy
   of one artifact (BSB-024).
 
+## 2026-11-20 - EXP-007 CONFIRMED: the family of pure pairs at <x^e, y^e>
+
+- Tangent space of the rank locus at <x^e, y^e>: dimension 12, 16, 20, 24 over the rationals for e = 4 to 7, equal to
+  the lower bound 4e - 4 of the reviewed note, so the pure locus is smooth of that dimension there in characteristic
+  0. Larger by 2 at e = 6 over GF(13) and at e = 7 over GF(17).
+- Five explicit pure pairs over the rationals outside the orbit (two instruments), for example <x^4 + x y^3, y^4>;
+  controls as expected. The linear family L_e and the plane section hold on every member tested. The common-factor
+  locus lies in the rank locus.
+- Every value was also computed by a separate implementation of the coordinating session, written before the results
+  were read. Backlog BSB-025 done; BSB-028 opened (a written proof of the weight argument).
+
