@@ -9,7 +9,7 @@
   "md5": "789db54dd5354b92da38c047837d8117",
   "sha256": "5e5faca593d00c89b506d111039283ffada858f7361335d5b689c74bcfebc055",
   "tex_sha256": "60635d222e34c650a87a91e6095927131207d86bc262c78ccb2509b2a9b7d5bf",
-  "metadata_sha256": "03072962e455f13b7a1ea6dc53832a6a9ec113c3ca2b07ba089760d2ab5b67ae",
+  "metadata_sha256": "0e10d4907c9ca4750152c282ff5f1e0345eee1b9b11c6d2ad8baddd3f0f3cae1",
   "warnings": 0,
   "overfull": 0,
   "underfull": 0,
@@ -18,5 +18,6 @@
   "qa_date": "2026-11-20",
   "voice_gate": "clean",
   "sole_human_author": "Felipe Santibanez-Leal",
-  "orcid": "0000-0002-0150-3246"
+  "orcid": "0000-0002-0150-3246",
+  "metadata_note": "after the final confirmation the six comparison signs of the description were written as HTML entities (the form Zenodo stores); the unescaped description equals the reviewed one and no other key changed"
 }
