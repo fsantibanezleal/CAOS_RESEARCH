@@ -10,5 +10,6 @@
 Question 6.1 is answered negatively (Jiang, Li, Sun, Wang, Xiao and Yu, arXiv:2605.25259v2). Decided here for d3 <= 12:
 the least d3 of a counterexample in characteristic 0 (10), the table over both rings, and the least realizable multiple
 on 205 of the 220 rays; over the enveloping algebra the point (1,2,2,1) of (0, e, 3e, 4e) fails only in characteristic 2
-for 2 <= e <= 5, and the pure pairs form a family of dimension at least 4e - 4. Open: 15 rays with d3 >= 10; e = 6 in
-characteristics 5, 7, 11 and e >= 7 in odd characteristic below 2e.
+for 2 <= e <= 5, and the pure pairs form a family of dimension at least 4e - 4. After v0.02 (EXP-009, research record): e = 6 is
+realized in characteristic 11 and e = 7 in characteristics 11 and 13. Open: 15 rays with d3 >= 10; e = 6 in characteristics
+5, 7; e = 7 in characteristics 3, 5, 7; e >= 8 in odd characteristic below 2e.

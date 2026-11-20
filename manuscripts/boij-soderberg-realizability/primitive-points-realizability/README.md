@@ -38,6 +38,8 @@ In the v0.02 source the paper also states (each with its evidence mark and its l
 - Theorem D: the pure pairs of forms of degree `e` are open in a determinantal locus and every component of the pure locus has dimension at least `4e - 4`; the published modules form a subfamily of dimension 2. The tangent space of the locus at `<x^e, y^e>` has dimension exactly `4e - 4` over the rationals for `e = 4, ..., 7`; explicit pure pairs over the rationals lie outside the orbit; a four-parameter linear family is proved to lie in the locus, with a pure general member, for every `e >= 4` in characteristic 0 or at least `2e` (EXP-007).
 - The machine checks of the characteristic 2 theorem and of the family at `e = 6, 7`, archived (EXP-005).
 
+After v0.02, as a research record that the published version does not state (EXP-009): members of the four-parameter linear family are pure over `F_11` at `e = 6` and over `F_11`, `F_13` at `e = 7`, so the open characteristics are 5, 7 at `e = 6` and 3, 5, 7 at `e = 7`. It goes into the next version.
+
 The paper credits the negative answer, the obstructions over `k[x,y,z]` and the Kostant modules to their authors and
 claims no priority; its literature searches are stated in the related work section.
 

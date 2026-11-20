@@ -55,6 +55,7 @@ BSR-F3, proposed).
 | EXP-006-odd-characteristic-below-2e | is the point (1,2,2,1) of (0, e, 3e, 4e) realized over U in odd characteristic below 2e? Exhaustive cubics over GF(3); random cubics over GF(5), GF(9), GF(25), GF(27); random quartics over GF(3), GF(5), GF(7), GF(9) and, as controls with the orbit test, GF(11), GF(13); quintics over GF(3) | CONFIRMED on its question (2026-11-20); one prediction refuted | explicit pure pairs over GF(3), GF(5) at e = 3 and over GF(3), GF(5), GF(7) at e = 4, so for e = 2, 3, 4 the point fails only in characteristic 2; at e = 5 realized in characteristic 3; 217 pure spaces over GF(11), GF(13), none in the orbit of <x^4, y^4>; the locus of the rank condition is not of the expected codimension (it contains the resultant hypersurface) |
 | EXP-007-pure-family-at-the-power-pair | do the repository's instruments reproduce the review's computations on the family of pure pairs through <x^e, y^e>? The tangent space of the rank locus (e = 4 to 7; the rationals, GF(13), GF(17), GF(32003)), five explicit pairs over the rationals with controls, the linear family, a plane section, the common-factor locus | CONFIRMED (2026-11-20) | tangent dimension exactly 4e - 4 over the rationals (12, 16, 20, 24), so the pure locus is smooth of that dimension at <x^e, y^e> in characteristic 0; 22 at e = 6 over GF(13) and 26 at e = 7 over GF(17); explicit pure modules over the rationals outside the published family, for example U/U(x^4 + x y^3, y^4) |
 | EXP-008-odd-characteristic-e5-e6 | pure pairs of quintics over GF(5), GF(7) and of sextics over GF(3)? Random search with the rank filter first, early stop at 40 pure spaces | CONFIRMED (2026-11-20) | 43 pure of 86,250 over GF(5), 42 of 162,500 over GF(7), 40 of 289,000 sextic pairs over GF(3); so for e = 2, 3, 4, 5 the point (1,2,2,1) of (0, e, 3e, 4e) fails only in characteristic 2, and at e = 6 it is realized in characteristic 3; the shares are 0.31, 0.62, 0.91 times q^(-2 h_e(3e)) |
+| EXP-009-linear-family-below-2e | does the linear family L_e contain a pure member in odd characteristic below 2e? Every member over GF(p) for e = 4 to 7 (fifteen pairs, five controls); GF(p^2) where none is found | CONFIRMED in six pairs, REFUTED in nine (2026-11-20) | pure members at (4,5), (4,7), (5,7), (6,11), (7,11), (7,13): e = 6 is settled in characteristic 11 and e = 7 in 11 and 13 (x^6 + y^4 z, y^6 + 3 x^4 z over GF(11); x^7 + y^5 z, y^7 + x^5 z over GF(13)); no pure member for p <= e, at (5,5) and at (6,7); no member above the rank in any pair |
 
 ## 4. In flight
 
@@ -98,17 +99,20 @@ Strategic review of 2026-11-20: BSR-F2 is closed and BSR-F3 is the current focus
 State of the characteristic question for the point (1,2,2,1) of (0, e, 3e, 4e) over U: never in characteristic 2
 (Theorem C); always in characteristic 0 or at least 2e (Theorem A); for e = 2, 3, 4 also in every odd characteristic
 below 2e, by explicit pairs (EXP-003 at e = 2, EXP-006 at e = 3, 4, EXP-006 and EXP-008 at e = 5): for e = 2 to 5 the
-point fails only in characteristic 2. At e = 6 it is realized in characteristic 3 (EXP-008) and open in 5, 7, 11; open
-for e >= 7 below 2e. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e> in
+point fails only in characteristic 2. At e = 6 it is realized in characteristics 3 (EXP-008) and 11 (EXP-009) and open
+in 5, 7; at e = 7 it is realized in characteristics 11 and 13 (EXP-009) and open in 3, 5, 7; open for e >= 8 below 2e.
+The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e> in
 characteristic 0 or at least 2e (context note of 2026-11-20, reviewed: correct after fixes); at that point the
 dimension is exactly 4e - 4 over QQ for e = 4 to 7, and explicit pure pairs over QQ lie outside the orbit (EXP-007).
 
 Published on 2026-11-20: the manuscript v0.02, [10.5281/zenodo.24388904](https://doi.org/10.5281/zenodo.24388904), with everything above.
 
-1. EXP-009 (hypothesis frozen 2026-11-20, running): the linear family L_e in odd characteristic below 2e for e = 4 to
-   7, exhaustive over GF(p); one pure member settles that characteristic for that e (BSB-029).
-2. The strategic review after EXP-009: the open cases are e = 6 at p = 5, 7, 11 and e >= 7 below 2e; a construction
-   for every e; the 15 open rays with d3 >= 10; the substitution in the Kostant presentations (BSB-012); BSB-022.
+1. Done after v0.02: EXP-009 (the linear family below 2e): e = 6 realized in characteristic 11, e = 7 in 11 and 13.
+   The state of the point (1,2,2,1) of (0, e, 3e, 4e): for 2 <= e <= 5 it fails only in characteristic 2; at e = 6
+   open in 5, 7; at e = 7 open in 3, 5, 7; open for e >= 8 below 2e.
+2. The strategic review: the open characteristics above need a structured family other than L_e or a proof that no
+   pure pair exists; a construction for every e; the next version of the manuscript (BSB-030); the 15 open rays with
+   d3 >= 10; the substitution in the Kostant presentations (BSB-012); BSB-022.
 3. A new version of the manuscript only for corrections, a decided characteristic or a decided open ray.
 
 ## 6. Where everything lives

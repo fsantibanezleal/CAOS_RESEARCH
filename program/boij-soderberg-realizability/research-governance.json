@@ -78,14 +78,16 @@
       ],
       "novelty_status": "Open questions of this programme, stated in the limits section of the manuscript v0.01. Not searched as such beyond the literature pass of 2026-11-19; a search is due before any claim.",
       "manuscript_route": "manuscripts/boij-soderberg-realizability/primitive-points-realizability (v0.02 published 2026-11-20)",
-      "first_bounded_action": "Done: EXP-005 to EXP-008 confirmed, two derivations reviewed, the manuscript v0.02 reviewed and published (10.5281/zenodo.24388904). Running: EXP-009 (the linear family below 2e). Next: the strategic review after EXP-009.",
+      "first_bounded_action": "Done: EXP-005 to EXP-009, two derivations reviewed, the manuscript v0.02 published (10.5281/zenodo.24388904). Next: the strategic review; the open characteristics are 5, 7 at e = 6 and 3, 5, 7 at e = 7.",
       "evidence": [
         "EXP-005",
         "EXP-006",
         "EXP-007",
-        "EXP-008"
+        "EXP-008",
+        "EXP-009"
       ],
-      "review_2026_11_20": "The point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every characteristic other than 2 for e = 2, 3, 4, 5 (explicit pairs, two instruments, rebuilt by the coordinating session; Theorems A and C); at e = 6 it is realized in characteristic 3 and open in 5, 7, 11. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e>, exactly 4e - 4 there over the rationals for e = 4 to 7, with an explicit four-parameter linear family for every e >= 4. The manuscript v0.02 was read by a reviewer other than the writer; the success gate is met once it is released."
+      "review_2026_11_20": "The point (1,2,2,1) of (0, e, 3e, 4e) is realized over U in every characteristic other than 2 for e = 2, 3, 4, 5 (explicit pairs, two instruments, rebuilt by the coordinating session; Theorems A and C); at e = 6 it is realized in characteristic 3 and open in 5, 7, 11. The pure pairs form a family of dimension at least 4e - 4 through <x^e, y^e>, exactly 4e - 4 there over the rationals for e = 4 to 7, with an explicit four-parameter linear family for every e >= 4. The manuscript v0.02 was read by a reviewer other than the writer; the success gate is met once it is released.",
+      "review_2026_11_20_exp009": "EXP-009 (after v0.02): the linear family contains pure members below 2e at (4,5), (4,7), (5,7), (6,11), (7,11), (7,13), so the point (1,2,2,1) is realized at e = 6 in every characteristic other than 2, 5, 7 and at e = 7 in every characteristic other than 2, 3, 5, 7. Not in the manuscript: it goes into the next version, with a decided open characteristic if one is decided."
     }
   ],
   "manuscripts": [
@@ -107,6 +109,12 @@
       "manuscripts": [
         "primitive-points-realizability"
       ]
+    },
+    {
+      "start": 9,
+      "end": 9,
+      "classification": "research-record",
+      "manuscripts": []
     }
   ]
 }
