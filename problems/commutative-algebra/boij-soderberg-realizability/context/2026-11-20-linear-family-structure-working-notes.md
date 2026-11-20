@@ -98,6 +98,36 @@ conditions on the 2s + 2 = e + 1 coefficients, not the (e - 1)(e - 3)/4 of the c
 pure pairs of this stratum could be listed by a computation in D, as EXP-016 does for even e, and the pairs (9, 5),
 (9, 11), (9, 13) decided inside this stratum. Backlog BSB-035.
 
+### Added later on 2026-11-20: the decomposition is checked by machine, and a filter that matches every stored table
+
+The decomposition above for odd e was then compared with the computation in U (`check_odd_structure.py`, data root
+`caos-research/boij-soderberg-realizability/EXP-017-probe/`): the predicted Hilbert function equals the computed one
+on random members at (5, 3), (5, 5), (5, 7), (7, 3), (7, 5) (150, 150, 340, 80, 80 members), without a difference.
+
+In the normalized form (apply sigma^(u-1)): N_u is the quotient of the ideal (A_(u-1), alpha) of R = D/(Delta) by
+X A_(u-1) and X' alpha, where X = (h - 2z) tau^(e+1)(Delta) and X' = (h + e z) sigma^(e+1)(Delta) do not depend on u. For
+u = 1 and u = e the length e (e - 1) asks for
+
+    (F1)  X' alpha = c X   modulo Delta,  c of degree at most s,
+    (F2)  X sigma^(e-1)(beta) = c' X'   modulo Delta,  c' of degree at most s,
+
+which are s - 1 conditions each, e - 3 together. Then c c' = A_(e-1) + mu Delta for a scalar mu, and
+(c/alpha)(c'/sigma^(e-1) beta) = mu at the points h = 0, -1, ..., -(e - 2).
+
+Observed, on settled pairs (`probe_odd_ratios.py`, `probe_odd_filter_on_stored.py`):
+
+- at (5, 7), among 60 random members with Delta of degree 2s coprime to X and X' (F0) and with (F1), (F2): the Hilbert
+  function is pure exactly when mu is not zero (F3), or when mu = 0 with c proportional to sigma^s(A_s) and c' to A_s;
+  for the other factorizations c c' = A_(e-1) the middle summands N_u are too long;
+- on the 130 members of this stratum stored by EXP-010 and EXP-014 with a computed Betti table (seven settled pairs,
+  e = 5, 7, 9), the table is pure exactly when (F0), (F1), (F2), (F3) hold: 59 pure members, all passing; 71 members
+  with the pure Hilbert function and another table, 65 failing (F0) and 6 with mu = 0. No exception.
+
+So the conjecture to prove (BSB-035) is the analogue of the two theorems for even e: for these pairs, pure if and
+only if (F0) to (F3), with (F0) in the role of the hypothesis (C) and mu not zero in the role of lambda not zero.
+EXP-017 uses (F0) to (F3) as a filter for a random search at (9, 11), (9, 13), (11, 7), (13, 5) and checks in U what
+passes.
+
 ## How could this be wrong?
 
 - Nothing here is proved in writing. The decomposition of the linear family is checked on complete lists at small
