@@ -56,7 +56,12 @@ B. RH-F17, simple zeros in short intervals under the hypothesis (next focus; its
    Units, in order (backlog):
    1. Source preflight and the barrier note. Done 2026-11-21 (RH-057): Wang's c(theta) is the programme's closed
       form term by term; the items the preflight could not open are listed there.
-   2. The contour identity on a window and Gonek's lemma with two endpoints, every error term explicit (RH-058).
+   2. The contour identity on a window (RH-058). Done 2026-11-21 as a reduction, review pending
+      (`context/2026-11-21-window-moments-by-subtraction.md`): the published identities are additive in the height,
+      so every term of size T^(1/2) y passes by subtraction and no two-endpoint form of Gonek's lemma is needed.
+      T1 is reduced to three inputs: the mollified mean square of zeta and zeta' on the window, which is
+      unconditional and of the kind the programme already uses (RH-067); a pointwise bound for the twisted
+      coefficient sums under the two hypotheses (RH-062); the derivative of the main terms (RH-061).
    3. The principal-character terms of both moments as increments, under the Riemann hypothesis (RH-061). The unit
       where the route can fail: a term that is small as a sum up to T and not as an increment is written as an
       obstruction.

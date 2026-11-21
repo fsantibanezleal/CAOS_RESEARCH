@@ -34,8 +34,11 @@ Done on 2026-11-21 for RH-F17 (paper work, allowed before the gate): the pair co
 confirmed on Wang's text; the source preflight (no discrete moment of zeta' and no theorem on simple zeros on
 windows below T^0.5501 in the literature read); the target T1, 1 - 8/(2 theta + 1)^3 under the Riemann hypothesis
 and the hypothesis for Dirichlet L-functions, with its error budget and proof obligations
-(`context/2026-11-21-short-window-discrete-moments-target.md`). T1 is a target, not a theorem; the barrier note and
-the target note await a reviewer.
+(`context/2026-11-21-short-window-discrete-moments-target.md`); and a reduction of T1 to three named inputs
+(`context/2026-11-21-window-moments-by-subtraction.md`: the published identities are additive in the height, so
+only the mean square on the window, a pointwise bound for twisted coefficient sums under the two hypotheses, and
+the derivative of the main terms remain; backlog RH-067, RH-062, RH-061). T1 is a target, not a theorem; the
+barrier note and the target note are with a reviewer, and the reduction note awaits one.
 
 ## Correction, 2026-11-14
 
