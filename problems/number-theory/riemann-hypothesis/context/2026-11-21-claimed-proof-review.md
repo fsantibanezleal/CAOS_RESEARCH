@@ -116,6 +116,18 @@ normalization (PASS on 2026-11-21: the explicit formula agrees at 460 points, an
 0.0247 sqrt(x) of log 2 pi, with both signs). This is the one piece of the formal proof this programme has verified independently of a kernel;
 it is the easy end, and all the depth is upstream of it.
 
+[P] The link above it was read in the Lean source itself (`src/Formalism/GammaFactorNonvanishing/CritLine.lean`, 30
+lines). `Formalism.VW.critLine` takes a zero s of a primitive L(chi, s) with 0 < Re s < 1/2, uses Mathlib's
+functional equation (`IsPrimitive.completedLFunction_one_sub`) and the nonvanishing of the gamma factor to produce
+a zero of L(chi^-1, 1 - s) with real part above 1/2, against the half-plane statement; `Formalism.VW.rh_of_every`
+applies the half-plane statement to the character of modulus 1, whose L-function is the zeta function
+(`LFunction_modOne_eq`), and concludes through `rh_of_right`. This is the classical deduction of the line from the
+half-plane, written with Mathlib's lemmas; nothing in it depends on the archive's own definitions. So the chain
+reads, from the top: the hypothesis, from the half-plane statement for every Dirichlet character (functional
+equation; read); the half-plane statement, from a one-sided bound on windows (Landau's theorem on windows; proved
+on paper in the note); the one-sided bound, from the arithmetic geometry of the archive (not read by this
+programme).
+
 ## 6. Assessment
 
 - The evidence that the five formal statements are theorems of Lean with Mathlib is strong and of a new kind:
