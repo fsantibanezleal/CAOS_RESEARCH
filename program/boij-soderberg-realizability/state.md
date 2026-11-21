@@ -20,4 +20,6 @@ computed. Also in v0.03 (two more reviewed derivations, EXP-019, EXP-020): for t
 y^e + beta x^t two congruences and a scalar give the pure Hilbert function, and a pure pair under one more coprimality;
 explicit pure pairs of the linear family exist for every prime p = 2e - 1 (p >= 5) and for every prime p = 2e - 3 up to
 2,000,000; every pair (e, p) with e <= 16 and p an odd prime below 2e is settled except (11, 3), so for 2 <= e <= 16
-with e not 11 the point fails only in characteristic 2. Open: 15 rays with d3 >= 10; e = 11 at p = 3; e >= 17.
+with e not 11 the point fails only in characteristic 2. After v0.03 (2026-11-21): EXP-021 settles (11, 3) with pure pairs
+in the stratum S(5; 0, 1) over GF(3) (verdict CONFIRMED; two predictions on their place and number failed), so for
+2 <= e <= 16 the point fails only in characteristic 2; no version states it yet. Open: 15 rays with d3 >= 10; e >= 17.

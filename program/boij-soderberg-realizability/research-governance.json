@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "boij-soderberg-realizability",
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "original_problem": {
     "status": "answered negatively externally",
     "statement": "Erman and Sam, Questions about Boij-Soderberg theory (arXiv:1606.01867), Question 6.1: is every integral point of every pure ray in three variables the Betti table of a finite length module over k[x,y,z] or over the enveloping algebra U(H) of the Heisenberg Lie algebra? Question 6.2 is its analogue in four variables.",
