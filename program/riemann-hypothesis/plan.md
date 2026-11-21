@@ -47,6 +47,21 @@ B. RH-F17, simple zeros in short intervals under the hypothesis (next focus, ope
    4. Optimization of the mollifier and c(theta) with certified arithmetic.
    5. A manuscript of its own, only if 2 to 4 hold and a full primary-source search finds no prior theorem.
 
+   Tool spectrum for this target (Felipe, 2026-10-08: the scope can be narrow, the spectrum of tools cannot). Each
+   row is a way to reach 'simple zeros in (T, T + T^theta] below 0.5502', with what is known on 2026-11-21:
+
+   | Tool | What it would give | State |
+   |---|---|---|
+   | Pair correlation on the band, support in the band | onset 0.550194, proportion 2 - theta/2 - cot(theta/sqrt 2)/sqrt 2 | closed form derived (`context/2026-11-21-pair-correlation-band-barrier.md`); it is Wang's unconditional theorem |
+   | The same with the sign of the form factor outside the band (linear programming, needs the hypothesis) | onset about 0.5487, proportion about 0.005 higher | preflight probe done; small gain, certifiable later with a verified test function |
+   | The same with lower bounds for the form factor beyond the band (under GRH for Dirichlet L-functions, after Goldston, Gonek, Ozluk and Snyder) | a further small gain if a short-window form exists | not examined; source preflight |
+   | Mollified discrete moments of zeta'(rho) on the window (Conrey-Ghosh-Gonek, Bui-Heath-Brown) | a positive proportion for every theta > 1/2 if both moments can be evaluated with a mollifier T^nu, nu < theta - 1/2 | source preflight running; the main line of the focus |
+   | The Hilbert-parity product of the programme, (Q - S)(N - O) >= 2 (N - S)^2, with the Levinson detector on the window | the unconditional 0.534 (internally 0.5339; draft 0.527) | published; under the hypothesis its inputs can be re-optimized (the pair term takes the sign condition) |
+   | Zeros of zeta' near the line on the window (multiple zeros of zeta are the zeros of zeta' on the line under the hypothesis: Levinson-Montgomery; density estimates of Zhang, Feng, Ki) | an upper bound for the proportion of multiple zeros from a mollified moment of zeta' on the window | not examined; needs the short-window twisted moments the programme already has |
+   | Rank-trace and mixed-Gram inequalities of 2026 (Alpoge-Furman, Lamzouri, Knausgard) on windows | the same band limit as pair correlation unless a new local inequality helps | Wang did the first; the programme's distinct-zero machinery applies to the second |
+   | Longer mollifiers on short windows (shifted convolution sums, under GRH) | a larger nu for a given theta, feeding every row above | the internal (17/33)(2 theta - 1) of EXP-028; draft pull request 376 |
+   | Computed zeros at great height (tables near 10^12 to 10^22) | no proof; a check of every asymptotic and of the size of c(theta) to aim at | not used yet |
+
 C. RH-F4, the unconditional onset (held). The theorem of `short-interval-levinson` stays the only result below
    0.5501. Its paused items (pull request 376 with onset 0.527, EXP-023, the next version) wait for the gate of A
    and then pass the declared-experiment and review gates (backlog RH-060). If the proof is accepted their value

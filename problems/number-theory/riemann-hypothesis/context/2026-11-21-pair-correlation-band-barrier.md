@@ -102,6 +102,30 @@ Consequences for the programme.
   any positive length; with a mollifier T^nu, nu < theta - 1/2, they would reach every theta > 1/2. Whether the
   second discrete moment can be evaluated on a short window is the open point of focus RH-F17.
 
+## 4. With the sign of the form factor outside the band (a preflight probe, not a certified statement)
+
+Under the Riemann hypothesis the form factor of any finite set of ordinates is nonnegative for every alpha (it is
+a positive definite sum). So in (2) the test function need not have its transform supported in the band: it is
+enough that r^(alpha) <= 0 for |alpha| > lambda. This is the linear programme of Cohn and Elkies type that Chirre,
+Goncalves and de Laat solved for the full band (arXiv:1810.08843: 1.3208 in place of 1.3275). A probe with 25
+Laguerre-Gaussian basis functions and constraints on grids (script and log under the data root,
+`caos-research/riemann-hypothesis/claim-2026-11-20/coordinator/lp_band_probe.py`) gives:
+
+| band lambda | bound with support in the band, (3) | bound with the sign condition (probe) | simple zeros, (3) | simple zeros, probe |
+|---|---|---|---|---|
+| 1 | 1.327499 | 1.320918 | 0.672501 | 0.679082 |
+| 0.75 | 1.580925 | 1.575296 | 0.419075 | 0.424704 |
+| 0.6 | 1.865446 | 1.860687 | 0.134554 | 0.139313 |
+| 0.5502 | 1.999982 | 1.995535 | 0.000018 | 0.004465 |
+| 0.534 | 2.049802 | 2.045468 | negative | negative |
+
+The value at the full band agrees with the published 1.3208 to the precision of the probe. The zero of the
+proportion moves from 0.550194 to about 0.5487. So the sign condition, which is what the hypothesis adds to this
+method, gains about 0.005 in the proportion and 0.0015 in the onset: the pair correlation method stays above
+0.548 on short windows under the hypothesis, and above the programme's unconditional 0.534. These figures are
+estimates (constraints on grids, a finite basis); a statement would need a verified test function, and it is not
+worth a declared experiment by itself. It enters the tool spectrum of the plan as a small, cheap gain.
+
 ## How could this be wrong?
 
 - (2) is used in the shape stated; the precise form of the form factor on a band (the term at alpha = 0, uniformity)
