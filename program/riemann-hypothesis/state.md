@@ -37,8 +37,10 @@ and the hypothesis for Dirichlet L-functions, with its error budget and proof ob
 (`context/2026-11-21-short-window-discrete-moments-target.md`); and a reduction of T1 to three named inputs
 (`context/2026-11-21-window-moments-by-subtraction.md`: the published identities are additive in the height, so
 only the mean square on the window, a pointwise bound for twisted coefficient sums under the two hypotheses, and
-the derivative of the main terms remain; backlog RH-067, RH-062, RH-061). T1 is a target, not a theorem; the
-barrier note and the target note are with a reviewer, and the reduction note awaits one.
+the derivative of the main terms remain; backlog RH-067, RH-062, RH-061). T1 is a target, not a theorem. The
+barrier note and the target note were read by a reviewer and corrected (the barrier holds for test functions
+supported in the band; under the hypothesis a relaxation reaches about 0.5487, and inputs beyond the band under the
+hypothesis for Dirichlet L-functions are unexamined); the reduction note awaits a reviewer.
 
 ## Correction, 2026-11-14
 
