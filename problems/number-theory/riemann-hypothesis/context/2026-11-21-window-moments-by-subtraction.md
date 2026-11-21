@@ -5,13 +5,19 @@ the exact transcription of the two source papers made the same day
 (`wip/caos-research/rh-f17-contour-formulas-2026-11-21.md` of the coordination repository: Conrey, Ghosh and Gonek,
 Proc. London Math. Soc. (3) 76 (1998), cited as CGG with its equation numbers; Bui and Heath-Brown,
 arXiv:1302.5018v1, cited as BHB). Marks: [S] as printed in a source, with its number; [D] derived here; [I] an input
-that is named and not proved here. Not yet read by a reviewer other than the writer. It does not prove target T1 of
+that is named and not proved here. Read on 2026-11-21 by a reviewer other than the writer (second round of the report
+`wip/caos-research/rh-f17-notes-review-2026-11-21.md`): the additivity argument, formulas (1) to (7) and the
+arithmetic of Section 5 confirmed by hand and by symbolic computation, the reduction valid and the inputs well
+posed; six minor findings, applied here. It does not prove target T1 of
 `2026-11-21-short-window-discrete-moments-target.md`; it reduces T1 to three named inputs and says what each needs.
 
 Notation of CGG: L = log(T/2 pi); B(s) = sum over k <= y of b(k) k^(-s), b(k) = mu(k) P(log(y/k)/log y), y = T^nu
 (CGG write theta for nu); S_1(T) and S_2(T) the sums of B(rho) zeta'(rho) and of B(rho) zeta'(rho) B(1 - rho)
 zeta'(1 - rho) over the zeros with gamma <= T. Throughout, T_0 = T, T_1 = T + H, H = T^theta with 1/2 < theta < 1,
-and both T_0 and T_1 are at distance >> 1/L from every ordinate (CGG assume this of T, p. 501; see Section 5).
+and both T_0 and T_1 are at distance >> 1/L from every ordinate (CGG assume this of T, p. 501; see Section 5). The
+identities at the two heights are taken on one vertical line, with the abscissa c = 1 + 1/L(T_0) in both (CGG take
+c = 1 + 1/L at the height in question); the estimates of CGG Section 3 and their Lemmas 1 and 2 hold for it at both
+heights, since they are uniform for c in a fixed range and use only that c - 1 is of order 1/log T.
 
 ## 1. The published identities are additive in the height
 
@@ -47,7 +53,7 @@ version. The errors of (1) and (2) are o(H) exactly when nu < theta - 1/2.
 What does not pass by subtraction is every term whose published error is larger than T^(1/2) y: the first
 integral of S_1 (error O(T L) in (3.11)), the integrals M_1(T), M_2(T) (error O(T L^2 (log L)^5) in (3.26), (3.27)),
 and the coefficient sums C_nu(T) (error T exp(-C L^(1/2)) + T L^(-A') + (T^(3/4) y^(1/2) + T^(1/2) y) T^eps on p. 516,
-or O(y^(1/3) T^(5/6 + eps)) in BHB Lemma 2). These are Sections 2, 3 and 4.
+or O(y^(1/3) T^(5/6 + eps) + eta^(-1/2) T L^C) in BHB Lemma 2, eta a power of L). These are Sections 2, 3 and 4.
 
 ## 2. The first integral of S_1 on the window [D, complete]
 
@@ -81,9 +87,19 @@ stated for U = T L^(-10) and nu < 1/2 (and valid for nu < 4/7 by Conrey 1989, CG
 
 [I1] The same formula with U replaced by H = T^theta and nu < theta - 1/2, with an error o(H). This is the mollified
 mean square of zeta and of zeta' on a short interval; it is the kind of statement this programme uses for its
-Levinson detector on windows (mollifier T^nu, nu < theta - 1/2), there at the abscissa 1/2 - R/L. Matching the
-hypotheses of the programme's theorem to (3.24) at the abscissa 1/2, for Q(x) = 1 and Q(x) = -x, is backlog
-RH-067. It is unconditional.
+Levinson detector on windows (mollifier T^nu, nu < theta - 1/2), there at the abscissa 1/2 - R/L. It is expected
+to be unconditional (only zeta enters); backlog RH-067 decides.
+
+What the programme has [S, its own manuscript `short-interval-levinson`, theorem 'Mollified moment on a short
+window', marked there as derived; unrefereed]: for 0 < nu < theta - 1/2, R > 0, Q a real polynomial with Q(0) = 1,
+a smooth weight w equal to 1 on [T, T + H] and supported within H/L of it, and the mollifier at the abscissa
+1/2 - R/L, the integral of w |V psi|^2 is c(P, Q, R, nu) times the mass of w plus O(H/L), with
+c = 1 + (1/nu) * double integral of ( e^(Rv) Q(v) P'(u) + nu (e^(Rv) Q(v))' P(u) )^2. At R = 0 and with Q(0)^2 in
+place of 1 this is the bracket of (3.24). Its proof evaluates the twisted integral of zeta at two shifts,
+uniformly for the shifts on annuli of radius of order 1/L, without any hypothesis. So RH-067 is three checks, each
+to be written and reviewed: the proof read at R = 0; the constant term Q(0)^2 for a polynomial with Q(0) = 0 (the
+form is quadratic in Q); and the passage from the smooth weight to the sharp window, by two weights that
+sandwich it (the integrand is nonnegative), which costs O(H/L).
 
 [D] Given [I1], with Q = 1 for zeta and Q(x) = -x for zeta'/L (the integral of P P' is 1/2):
 
@@ -126,7 +142,7 @@ for each height. So, with R~_nu(T) = sum over k <= y of (b(k)/k) * sum over d | 
 
     D C_nu = R~_nu(T_1) - R~_nu(T_0) + O(y T^(1/2 + eps)).                                                           (6)
 
-R_nu(w, d) is w times a polynomial in log w (of degree at most 2 for nu = 1 and 3 for nu = 2), so R~_nu is a smooth
+R_nu(w, d) is w times a polynomial in log w (of degree at most 2 for nu = 1 and 4 for nu = 2: A_2 has a pole of order 5 at s = 1), so R~_nu is a smooth
 function of T and R~_nu(T_1) - R~_nu(T_0) = H R~_nu'(xi) for some xi in the window. [S] CGG Section 8 evaluates
 R~_nu(T): for nu = 1, (T/2 pi)((1/2) L^2 - L log y * integral of P), and for nu = 2 the bracket of BHB (8) times
 T L^3/2 pi, each 'asymptotically', with Lemmas 5 and 6 and Lemma A. The derivative replaces each polynomial p_d by
@@ -139,9 +155,10 @@ R~_nu'(xi) = R~_nu(T)/T * (1 + O(L^(-1 + eps))), and
     D C_1 = (H L^2/2 pi) ( 1/2 - nu * integral of P ) + o(H L^2) + O(y T^(1/2 + eps)),
     D C_2 = (H L^3/2 pi) ( 1/12 - (nu/2) I + (3 nu/2) * integral of P^2 - (nu^2/2) I^2 - (1/(24 nu)) * integral of P'^2 ) + o(H L^3) + O(y T^(1/2 + eps)),   (7)
 
-I the integral of P: the window forms of BHB (7), (8). This is backlog RH-061; it is the place where a term that
-is not smooth would show, and under the two hypotheses none is expected, because every oscillating term is inside
-the error of (5).
+I the integral of P: the window forms of BHB (7), (8). This is backlog RH-061. [R] R~_nu is an exact sum of
+residues and is smooth; the risk of [I2'] is in the evaluation of its derivative by the lemmas of CGG Section 8
+(their Lemmas 5, 6 and A, and the replacement of the sum of Lambda(d) log d), not in oscillating terms, which are
+inside the error of (5).
 
 ## 5. The reduction
 
@@ -168,8 +185,7 @@ is O(y^(1/2) T^eps), so D S_1 changes by O(y^(1/2) T^eps) and D S_2 by O(y T^eps
 written with the bound for zeta'(rho) made explicit; part of RH-063.)
 
 What the hypotheses are used for. The Riemann hypothesis: to write S_2 as a sum of squares (CGG p. 500), for [I2]
-and for the endpoint condition. The hypothesis for Dirichlet L-functions: for [I3] only. [I1] and Sections 1 and 2
-are unconditional.
+and for the endpoint condition. The hypothesis for Dirichlet L-functions: for [I3] only. Sections 1 and 2 are unconditional, and [I1] is expected to be.
 
 ## 6. What remains, as units
 
@@ -186,12 +202,13 @@ no two-endpoint version is needed.
 
 - Section 1 rests on the identities as transcribed. One term of CGG (3.16) could not be read on the page image; it
   is an intermediate display between (3.14) and (3.17), and (3.17) to (3.21), which are used here, were read.
+- The two identities must be written on one vertical line; with the abscissa fixed at 1 + 1/L(T_0) nothing changes.
 - A difference of two error terms is bounded by their sum; nothing in Section 1 uses cancellation. But it needs both
   heights to satisfy the assumption on the distance to the ordinates, and the bound (3.8) at both.
 - (5) is the main unproved statement. The uniformity in d and q, and the twist of the mollifier for nu = 2, are
   the points where a factor larger than T^eps could enter; if the bound were y^a T^(1/2 + eps) with a > 1 in total,
   the range of nu would shrink to (theta - 1/2)/a and the target would be weaker, not void.
 - [I2'] is asserted from the shape of the residues, not from a computation.
-- [I1] may hold in the programme's records only at the abscissa of the Levinson detector, or only for the
-  combinations of zeta and zeta' used there; RH-067 decides.
+- [I1]: the programme's theorem is stated at the abscissa of the Levinson detector, for Q(0) = 1 and with a smooth
+  weight; the three checks of Section 3 are not written yet, and that theorem is itself unrefereed.
 - The arithmetic check of Section 5 uses BHB (7), (8) and CGG (3.26), (3.27) as transcribed; it reproduces (2.7).

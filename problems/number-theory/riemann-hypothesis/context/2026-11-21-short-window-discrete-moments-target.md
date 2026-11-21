@@ -8,9 +8,10 @@ Section 2 is a short computation on formulas quoted from two papers; Sections 3 
 proved. Read on 2026-11-21 by a reviewer other than the writer (report
 `wip/caos-research/rh-f17-notes-review-2026-11-21.md` of the coordination repository): the target is stated as a
 target throughout, the proposition of Section 2 is correct and appears in neither paper, the sizes and places of
-the error budget are right; three major findings (the budget omitted the mean values of the mollified zeta and
-zeta' on the critical line; one sentence claimed every error was a power of T; one mark was wrong) and nine minor,
-applied here. The term-by-term treatment now lives in `2026-11-21-window-moments-by-subtraction.md`.
+the error budget are right; one blocker shared with the barrier note (the sentence on pair correlation said more
+than is proved), three major findings (the budget omitted the mean values of the mollified zeta and zeta' on the
+critical line; one sentence claimed every error was a power of T; one mark was wrong) and eight minor, applied
+here. The term-by-term treatment now lives in `2026-11-21-window-moments-by-subtraction.md`.
 
 ## 1. The target
 

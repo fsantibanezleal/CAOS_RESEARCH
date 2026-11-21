@@ -56,7 +56,7 @@ B. RH-F17, simple zeros in short intervals under the hypothesis (next focus; its
    Units, in order (backlog):
    1. Source preflight and the barrier note. Done 2026-11-21 (RH-057): Wang's c(theta) is the programme's closed
       form term by term; the items the preflight could not open are listed there.
-   2. The contour identity on a window (RH-058). Done 2026-11-21 as a reduction, review pending
+   2. The contour identity on a window (RH-058). Done 2026-11-21 as a reduction, reviewed the same day
       (`context/2026-11-21-window-moments-by-subtraction.md`): the published identities are additive in the height,
       so every term of size T^(1/2) y passes by subtraction and no two-endpoint form of Gonek's lemma is needed.
       T1 is reduced to three inputs: the mollified mean square of zeta and zeta' on the window, which is

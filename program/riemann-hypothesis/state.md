@@ -40,7 +40,9 @@ only the mean square on the window, a pointwise bound for twisted coefficient su
 the derivative of the main terms remain; backlog RH-067, RH-062, RH-061). T1 is a target, not a theorem. The
 barrier note and the target note were read by a reviewer and corrected (the barrier holds for test functions
 supported in the band; under the hypothesis a relaxation reaches about 0.5487, and inputs beyond the band under the
-hypothesis for Dirichlet L-functions are unexamined); the reduction note awaits a reviewer.
+hypothesis for Dirichlet L-functions are unexamined); the reduction note was read by the same reviewer (the
+additivity and its seven formulas confirmed; six minor findings applied). The first input was located in the
+programme's own manuscript (the mollified moment on a short window), up to three checks (backlog RH-067).
 
 ## Correction, 2026-11-14
 
