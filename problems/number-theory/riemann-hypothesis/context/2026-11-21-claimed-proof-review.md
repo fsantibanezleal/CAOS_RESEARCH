@@ -112,7 +112,8 @@ eta > 0 implies that zeta has no zero to the right of theta; the same for positi
 characters. The proof was written from the Lean statements (`Formalism.Gz`, `Deduction.landau_window`,
 `Deduction.zeroFree_of_rpow_window`), not from the proof terms. The explicit formula gives the converse size:
 under the hypothesis, |G(x) - log 2 pi| <= 0.0461915 sqrt(x) + 0.31/x^2. EXP-029 is the numerical control of the
-normalization. This is the one piece of the formal proof this programme has verified independently of a kernel;
+normalization (PASS on 2026-11-21: the explicit formula agrees at 460 points, and up to 10^8 the sum stays within
+0.0247 sqrt(x) of log 2 pi, with both signs). This is the one piece of the formal proof this programme has verified independently of a kernel;
 it is the easy end, and all the depth is upstream of it.
 
 ## 6. Assessment
@@ -158,6 +159,9 @@ From [R] `rh-open-space` (rows marked UNVERIFIED there are not used here):
   proportion for a mollifier of any positive length, so with the programme's short-window twisted moments
   (mollifier T^nu, nu < theta - 1/2; EXP-010, EXP-028) they are the natural route to every theta > 1/2 under the
   hypothesis. This is the research space the plan of 2026-11-21 opens (focus RH-F17).
+  The computation is written out in `2026-11-21-pair-correlation-band-barrier.md`: on a band lambda the method
+  gives simple zeros at least 2 - lambda/2 - cot(lambda/sqrt 2)/sqrt 2, which vanishes at 0.550194 and equals
+  0.41908 at 3/4, the two numbers of Wang's theorem.
 
 ## 8. New works since the last pass (2026-10-04), from [R] `rh-literature-refresh`
 
