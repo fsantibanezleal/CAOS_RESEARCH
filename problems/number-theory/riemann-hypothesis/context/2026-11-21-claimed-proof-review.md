@@ -110,7 +110,12 @@ repositories; all are unofficial readings, several made with AI assistance, none
 (1 + gamma) x, a bound G(x) <= Y^eta x^theta on windows [Y, Y^(1 + delta)] for arbitrarily large Y and every
 eta > 0 implies that zeta has no zero to the right of theta; the same for positive combinations over Dirichlet
 characters. The proof was written from the Lean statements (`Formalism.Gz`, `Deduction.landau_window`,
-`Deduction.zeroFree_of_rpow_window`), not from the proof terms. The explicit formula gives the converse size:
+`Deduction.zeroFree_of_rpow_window`), not from the proof terms. It was read twice by a reviewer other than the
+writer on 2026-11-21. The first reading found that the formal lemma asks less than the note assumed (a positive
+residue only at real poles, `PoleData`), and that the note's proof of the explicit formula gave a false reason; the
+second version proves the lemma under the formal hypothesis, and the second reading found it correct as written
+(fifteen findings in all, applied; report `wip/caos-research/rh-windowed-landau-review-2026-11-21.md` of the
+coordination repository). A proof read twice by one reviewer is not a refereed proof. The explicit formula gives the converse size:
 under the hypothesis, |G(x) - log 2 pi| <= 0.0461915 sqrt(x) + 0.31/x^2. EXP-029 is the numerical control of the
 normalization (PASS on 2026-11-21: the explicit formula agrees at 460 points, and up to 10^8 the sum stays within
 0.0247 sqrt(x) of log 2 pi, with both signs). This is the one piece of the formal proof this programme has verified independently of a kernel;
@@ -173,7 +178,16 @@ From [R] `rh-open-space` (rows marked UNVERIFIED there are not used here):
   hypothesis. This is the research space the plan of 2026-11-21 opens (focus RH-F17).
   The computation is written out in `2026-11-21-pair-correlation-band-barrier.md`: on a band lambda the method
   gives simple zeros at least 2 - lambda/2 - cot(lambda/sqrt 2)/sqrt 2, which vanishes at 0.550194 and equals
-  0.41908 at 3/4, the two numbers of Wang's theorem.
+  0.41908 at 3/4, the two numbers of Wang's theorem; the source preflight of the focus read Wang's formula and it
+  is the same, term by term.
+- [R, a target, not a theorem] `2026-11-21-short-window-discrete-moments-target.md`: the two mollified discrete
+  moments give, for a mollifier of length T^nu, the proportion 1 - 1/(1 + nu)^3 (a closed form derived from the
+  main terms of the two papers; 19/27 at nu = 1/2). If a window of length T^theta admits nu < theta - 1/2, the
+  proportion of simple zeros in it is at least 1 - 8/(2 theta + 1)^3 for every theta in (1/2, 1]. The preflight
+  found that the only step of the two papers without a short-window form under the Riemann hypothesis alone is the
+  bound for characters of large conductor, and that under the hypothesis for Dirichlet L-functions that step is
+  pointwise. So the target is stated under exactly the two statements of the formal proof. Its proof obligations
+  are the units of line B of the plan.
 
 ## 8. New works since the last pass (2026-10-04), from [R] `rh-literature-refresh`
 

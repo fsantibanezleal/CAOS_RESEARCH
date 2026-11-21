@@ -23,7 +23,19 @@ hypothesis is accepted, every global unconditional proportion is dominated by th
 (19/27 simple, 0.8477 distinct). No manuscript states anything false; no version is forced.
 
 Current focus: RH-F16 (review). Next: RH-F17 (simple zeros in short intervals under the hypothesis, every theta >
-1/2). RH-F4 is held. EXP-029 (a control of the normalization of the last step) is declared.
+1/2). RH-F4 is held.
+
+Done on 2026-11-21 under RH-F16: EXP-029 PASS (the explicit formula of the weighted sum at 460 points, the bound of
+the hypothesis up to 10^8); the note on the last step read twice by a reviewer other than the writer and corrected
+(version 2 proves the window form of Landau's theorem under positive residues at real poles only, the hypothesis of
+the formal lemma). Open under RH-F16: the watch readings of 2026-11-22, 2026-11-24 and 2026-11-28.
+
+Done on 2026-11-21 for RH-F17 (paper work, allowed before the gate): the pair correlation barrier in closed form,
+confirmed on Wang's text; the source preflight (no discrete moment of zeta' and no theorem on simple zeros on
+windows below T^0.5501 in the literature read); the target T1, 1 - 8/(2 theta + 1)^3 under the Riemann hypothesis
+and the hypothesis for Dirichlet L-functions, with its error budget and proof obligations
+(`context/2026-11-21-short-window-discrete-moments-target.md`). T1 is a target, not a theorem; the barrier note and
+the target note await a reviewer.
 
 ## Correction, 2026-11-14
 

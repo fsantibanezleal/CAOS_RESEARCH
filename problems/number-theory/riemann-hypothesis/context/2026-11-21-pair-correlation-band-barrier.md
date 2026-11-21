@@ -79,18 +79,22 @@ Put c(lambda) = 2 - J(lambda) = 2 - lambda/2 - 2^(-1/2) cot(lambda/sqrt 2). It i
 
 These are the numbers of Wang's short-interval theorem (arXiv:2609.07918v2: a positive proportion of simple
 critical zeros in (T, T + T^theta] for theta > 0.5501..., more than 41.9 percent at theta = 3/4), which is the
-unconditional form of this method with band lambda = theta. The agreement is a check of (3), read on the two
-numbers quoted from that paper by the report `rh-literature-refresh` of 2026-11-21; the paper's own formula for
-c(theta) is to be compared term by term in the source preflight of RH-F17.
+unconditional form of this method with band lambda = theta. The source preflight of RH-F17 read his text
+(page 2, before Theorem 1.1): 'c(theta) = 2 - theta/2 - (1/sqrt 2) cot(theta/sqrt 2)', strictly increasing, with a
+unique zero theta_0 = 0.5501...; his C_theta of Theorem 1.2 is J(theta) of (3). The two formulas are identical
+term by term, and the preflight recomputed c(1), c(3/4), c(0.552), c(0.534) and the root. (The formula for c(theta)
+written in the report `rh-literature-refresh` of 2026-11-21 was wrong and is superseded.)
 
 Why the band is theta on a window of length H = T^theta. The form factor on the window is the mean square over the
 window of a Dirichlet polynomial in the primes of length T^alpha; the mean value theorem on an interval of length H
 isolates the diagonal for lengths below H, that is for alpha < theta. Beyond that the off-diagonal terms are
 correlations of primes that no hypothesis on the zeros supplies. So on these windows the method has band theta
 whether or not the Riemann hypothesis holds: the hypothesis removes the words 'on the critical line' from the
-conclusion and does not move lambda_0. (This paragraph is the programme's reading of the method; the exact
-statement of what is proved on short windows, under the hypothesis and without it, is the first item of the
-source preflight.)
+conclusion and does not move lambda_0. (This paragraph is the programme's reading of the method. What is proved:
+Wang's Theorem 2.2 gives the form factor on the window for test functions supported in [-lambda, lambda] with
+lambda < theta, without any hypothesis, with error O(H + T^lambda L^2); the preflight found no statement with a
+larger band on a window under the hypothesis, and could not open Goldston and Montgomery (1987) or Goldston, Gonek
+and Montgomery (2001), which concern the form factor of all the zeros up to T.)
 
 Consequences for the programme.
 - Below theta = 0.5502 a positive proportion of simple zeros in (T, T + T^theta] needs an input other than pair
@@ -99,8 +103,10 @@ Consequences for the programme.
   correlation term alone is negative (c = -0.0498), which measures what the detector contributes.
 - Under the Riemann hypothesis the natural input is the mollified discrete moments of zeta'(rho) over the zeros of
   the window (Conrey, Ghosh and Gonek; Bui and Heath-Brown), which give a positive proportion for a mollifier of
-  any positive length; with a mollifier T^nu, nu < theta - 1/2, they would reach every theta > 1/2. Whether the
-  second discrete moment can be evaluated on a short window is the open point of focus RH-F17.
+  any positive length; with a mollifier T^nu, nu < theta - 1/2, they would reach every theta > 1/2, with the
+  proportion 1 - 8/(2 theta + 1)^3, larger than c(theta) on the whole range (note
+  `2026-11-21-short-window-discrete-moments-target.md`: a target under the Riemann hypothesis and the hypothesis
+  for Dirichlet L-functions, with its proof obligations).
 
 ## 4. With the sign of the form factor outside the band (a preflight probe, not a certified statement)
 
@@ -132,5 +138,6 @@ worth a declared experiment by itself. It enters the tool spectrum of the plan a
   is taken from the literature and re-read in the source preflight. The proposition itself is self-contained.
 - The reduction to phi real and even loses nothing (the functional is invariant under reflection and conjugation and
   convex on the constraint set for mu <= 1, by the second variation).
-- The identification of lambda_0 with Wang's onset rests on two quoted numbers, not yet on his formula.
+- The identification of lambda_0 with Wang's onset rests on his formula, read by the source preflight on the page
+  image of his paper; this note itself has not been read by a reviewer.
 - For lambda > 1 the form factor is not |alpha| and nothing here applies.
