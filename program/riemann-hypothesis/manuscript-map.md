@@ -223,3 +223,19 @@ A joint slack estimate is unproved and not admitted automatically. RH-F4 is
 retained because the signed moment estimate remains the substantive analytic
 obligation. Complete the shifted Voronoi normalization before using any
 inverse-phase cancellation estimate. EXP-026 is research-record only.
+
+## Focus and routing after the formal proof of 2026-11-20 (2026-11-21)
+
+Current focus: **RH-F16**, the review of the formal proof of the Riemann hypothesis released on 2026-11-20 and the
+re-aim of the programme. It has no manuscript route: the dossier, the note on the last step and EXP-029 are
+research records. RH-F4 is held with its success gate met; RH-F17 (simple zeros in short intervals under the
+hypothesis) is proposed and would have a manuscript of its own, separate from `short-interval-levinson`, whose
+theorem is unconditional.
+
+| Block | Evidence | Status | Manuscript home |
+|---|---|---|---|
+| The formal statements of the archive are the Riemann hypothesis and the hypothesis for Dirichlet L-functions as Mathlib defines them | statement check of 2026-11-21 against Mathlib `0df444a3` | read by the coordinating session; the same comparison by the verifiers and by Comparator | research record (RH-F16) |
+| A one-sided bound G(x) <= Y^eta x^theta on windows [Y, Y^(1 + delta)] excludes zeros to the right of theta | note `2026-11-21-windowed-landau-endgame.md` (version 2, under positive residues at real poles only); EXP-029 (PASS) | read twice by a reviewer other than the writer, fifteen findings applied | research record (RH-F16) |
+| Positioning of the four manuscripts after 2026-11-20 and after arXiv:2610.08965 | dossier sections 7 and 8 | no statement false; `distinct-zero-gram` superseded as a record | next versions (backlog RH-056) |
+| On a window of length T^theta the pair correlation method gives simple zeros at least 2 - theta/2 - cot(theta/sqrt 2)/sqrt 2 and nothing below 0.550194 | note `2026-11-21-pair-correlation-band-barrier.md`; Wang's formula read by the source preflight | derivation written, identical to Wang's theorem; not reviewed | research record (RH-F17); no claim |
+| The two mollified discrete moments give the proportion 1 - 1/(1 + nu)^3 for a mollifier T^nu; target T1: 1 - 8/(2 theta + 1)^3 on windows under the Riemann hypothesis and the hypothesis for Dirichlet L-functions | note `2026-11-21-short-window-discrete-moments-target.md`; source preflight of 2026-11-21 | the closed form is derived; T1 is a target with open proof obligations (backlog RH-058, RH-061 to RH-065); not reviewed | a manuscript of its own only if T1 is proved, reviewed, and the source search finds no prior theorem |

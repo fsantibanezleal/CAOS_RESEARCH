@@ -1,5 +1,124 @@
 # Riemann hypothesis: zero-proportion research program
 
+## Plan of 2026-11-21: after the formal proof of 2026-11-20
+
+Research reopened by Felipe on 2026-11-21: "review last claim fromanthopic, that they solver riemnann hypoteshis, read and research online on ma depth for allthe new works on thata proelm, and verify if any space o research is opn, work in maimum depth in all relevant remaining areas of the prolem.improve the plan for that prolean workin maimumdepth". This section replaces, for what is authorized and in which
+order, the pause of 2026-10-04 recorded below; the history below stays as written.
+
+### 1. Position
+
+- The claim and its verification: `context/2026-11-21-claimed-proof-review.md`. A Lean proof of the Riemann
+  hypothesis and of the hypothesis for Dirichlet L-functions was released on 2026-11-20; three independent kernel
+  designs accept it; there is no written proof and expert judgment on the mathematics is reserved. The programme
+  treats the hypothesis as a formally verified statement whose acceptance is in progress.
+- What the programme holds: four manuscripts with unconditional or explicitly conditional theorems; the
+  short-window Levinson detector and twisted moments (mollifier T^nu, nu < theta - 1/2, internally
+  nu < min(1/2, (17/33)(2 theta - 1))); certified-arithmetic practice.
+- What changes: 'on the critical line' becomes automatic if the proof is accepted, so the global unconditional
+  proportions lose their role (under the hypothesis: 19/27 simple, 0.8477 distinct); what stays open on the zeros is
+  simplicity, distinctness and multiplicity, and in short intervals nothing is known below T^0.5501 other than
+  this programme's unconditional 0.534.
+
+### 2. Lines of work, in order
+
+A. RH-F16, review (current focus).
+   1. Statement fidelity against Mathlib at the pinned commit. Done 2026-11-21.
+   2. The last analytic step proved on paper (`context/2026-11-21-windowed-landau-endgame.md`). Done 2026-11-21:
+      read twice by a reviewer other than the writer (ten findings, then five, all applied). Version 2 proves the
+      lemma under the hypothesis of the formal lemma itself (positive residues at the real poles only).
+   3. EXP-029, the numerical control of its normalization. Done 2026-11-21: PASS.
+   4. Watch list (backlog RH-055): fixed dates, the same four sources, each reading added to the dossier with its
+      time. It ends when the pending kernel runs are published and a written proof is refereed or generally
+      accepted, or when a defect is published.
+   5. Optional and bounded: one more link of the chain read on paper where the Lean statements are short (the
+      comparison statements `OCStep` of `Formalism/StatementOC.lean`; the passage from every Dirichlet character
+      to zeta was read on 2026-11-21, dossier section 5). Each is a note with a review. Stop at the first statement
+      that needs the archive's own definitions of classical objects: that audit belongs to specialists.
+   Gate: items 1 to 3 done and reviewed (met on 2026-11-21), and three watch readings recorded (2026-11-22,
+   2026-11-24, 2026-11-28). The watch readings cannot be brought forward, so the gate does not hold the paper work
+   of line B: source reading and derivation notes of B, each with its review, run now; the declared experiments
+   and any manuscript of B wait for the gate, when the focus changes to RH-F17.
+
+B. RH-F17, simple zeros in short intervals under the hypothesis (next focus; its paper work runs now).
+   Target T1 (`context/2026-11-21-short-window-discrete-moments-target.md`; a target, not a theorem): under the
+   Riemann hypothesis and the hypothesis for Dirichlet L-functions, the two statements of the formal proof, for
+   every fixed theta in (1/2, 1] the proportion of simple zeros in (T, T + T^theta] is at least
+   1 - 8/(2 theta + 1)^3: 19/27 at theta = 1, 0.488 at 3/4, 0.136 at 0.55, 0.095 at 0.534, positive on the whole
+   range. It comes from the proportion 1 - 1/(1 + nu)^3 that the two mollified discrete moments of zeta'(rho) give
+   for a mollifier of length T^nu (a closed form derived on 2026-11-21 from the main terms of Conrey, Ghosh and
+   Gonek and of Bui and Heath-Brown) and from the reading that a window of length T^theta admits nu < theta - 1/2.
+   What the source preflight of 2026-11-21 established (`wip/caos-research/rh-f17-source-preflight-2026-11-21.md`
+   of the coordination repository): no discrete moment of zeta' and no theorem on simple zeros is in the literature
+   for windows below T^0.5501; every error term of the two papers is of size y T^(1/2 + eps) except the characters
+   of large conductor, whose bound under the Riemann hypothesis alone (generalized Vaughan identity and hybrid
+   large sieve) does not shrink with the window, and whose bound under the hypothesis for Dirichlet L-functions is
+   pointwise and does.
+   Units, in order (backlog):
+   1. Source preflight and the barrier note. Done 2026-11-21 (RH-057): Wang's c(theta) is the programme's closed
+      form term by term; the items the preflight could not open are listed there.
+   2. The contour identity on a window and Gonek's lemma with two endpoints, every error term explicit (RH-058).
+   3. The principal-character terms of both moments as increments, under the Riemann hypothesis (RH-061). The unit
+      where the route can fail: a term that is small as a sum up to T and not as an increment is written as an
+      obstruction.
+   4. The non-principal characters under the hypothesis for Dirichlet L-functions, pointwise, with the terms of
+      common factor (RH-062).
+   5. Assembly of T1 with certified constants and the corollary for distinct zeros on windows (RH-063).
+   6. A declared numerical control on tabulated zeros at several heights (RH-064, after the gate of A).
+   7. A primary-source search for T1 and for the closed form, on the sources the preflight could not open, before
+      any claim (RH-065); a manuscript of its own only if units 2 to 5 hold, each reviewed, and the search finds no
+      prior theorem.
+   Stretch, weighed only after T1: a longer mollifier on the window (cancellation over the modulus in the character
+   sums, or smoothed endpoints), which would raise the proportion; and the Riemann hypothesis alone, which needs a
+   bound for the coefficients against primitive characters over a short range that is not in the literature.
+
+   Tool spectrum for this target (Felipe, 2026-10-08: the scope can be narrow, the spectrum of tools cannot). Each
+   row is a way to reach 'simple zeros in (T, T + T^theta] below 0.5502', with what is known on 2026-11-21:
+
+   | Tool | What it would give | State |
+   |---|---|---|
+   | Pair correlation on the band, support in the band | onset 0.550194, proportion 2 - theta/2 - cot(theta/sqrt 2)/sqrt 2 | closed form derived (`context/2026-11-21-pair-correlation-band-barrier.md`); it is Wang's unconditional theorem, confirmed term by term on his text; his form factor on a window has band lambda < theta without any hypothesis, and no form with a larger band under the hypothesis was found |
+   | The same with the sign of the form factor outside the band (linear programming, needs the hypothesis) | onset about 0.5487, proportion about 0.005 higher | preflight probe done; small gain, certifiable later with a verified test function |
+   | The same with lower bounds for the form factor beyond the band (under GRH for Dirichlet L-functions, after Goldston, Gonek, Ozluk and Snyder) | a further small gain if a short-window form exists | not examined; the sources on pair correlation and primes in short intervals were not opened by the preflight |
+   | Mollified discrete moments of zeta'(rho) on the window (Conrey-Ghosh-Gonek, Bui-Heath-Brown) | 1 - 8/(2 theta + 1)^3 for every theta > 1/2, under both hypotheses (target T1); larger than the pair correlation proportion on the whole range | the main line: preflight done, target and error budget written, units 2 to 5 open |
+   | The Hilbert-parity product of the programme, (Q - S)(N - O) >= 2 (N - S)^2, with the Levinson detector on the window | the unconditional 0.534 (internally 0.5339; draft 0.527) | published; under the hypothesis its inputs can be re-optimized (the pair term takes the sign condition) |
+   | Zeros of zeta' near the line on the window (multiple zeros of zeta are the zeros of zeta' on the line under the hypothesis: Levinson-Montgomery; density estimates of Zhang, Feng, Ki) | an upper bound for the proportion of multiple zeros from a mollified moment of zeta' on the window | not examined; needs the short-window twisted moments the programme already has |
+   | Rank-trace and mixed-Gram inequalities of 2026 (Alpoge-Furman, Lamzouri, Knausgard) on windows | the same band limit as pair correlation unless a new local inequality helps | Wang did the first; the programme's distinct-zero machinery applies to the second |
+   | Longer mollifiers on short windows (shifted convolution sums, under GRH) | a larger nu for a given theta, feeding every row above | the internal (17/33)(2 theta - 1) of EXP-028; draft pull request 376; for the discrete moments it is the stretch of line B |
+   | Computed zeros at great height (tables near 10^12 to 10^22) | no proof; a check of every asymptotic and of the size of c(theta) to aim at | unit 6 of line B |
+
+C. RH-F4, the unconditional onset (held). The theorem of `short-interval-levinson` stays the only result below
+   0.5501. Its paused items (pull request 376 with onset 0.527, EXP-023, the next version) wait for the gate of A
+   and then pass the declared-experiment and review gates (backlog RH-060). If the proof is accepted their value
+   is the unconditional method, and further unconditional refinement is weighed against B at that time.
+
+D. Publication record. No version is forced by the proof. `distinct-zero-gram` cites arXiv:2610.08965 and states
+   that its constants are no longer records at its next version (backlog RH-056). The other three keep their
+   positioning; a sentence on the status of the hypothesis is added when each is next revised.
+
+E. Other open areas, weighed and not opened (backlog RH-066). Each is a statement that stays open under the
+   hypothesis and that the programme's short-window tools touch; one is opened only after line B closes, with a
+   source preflight first.
+   - Gaps between consecutive zeros in short windows under the hypothesis (the method of Montgomery and Odlyzko and
+     of Conrey, Ghosh and Gonek uses mean values of Dirichlet polynomials over the zeros; on a window the
+     Landau-Gonek formula allows lengths below T^theta).
+   - The proportion of multiple zeros on a window through the zeros of zeta' (row 6 of the tool spectrum).
+   - Distinct zeros on windows: a corollary of T1 (unit 5 of line B), not a line of its own.
+   - Not pursued, with the reason: the hypothesis for Dedekind, Hecke, Artin and automorphic L-functions, which the
+     formal proof does not cover (outside the programme's methods; it is on the watch list); pair correlation and
+     the moment conjectures (no route from the programme's tools).
+
+### 3. Rules of this plan
+
+- One declared experiment at a time; every derivation read by a reviewer other than the writer before it is used.
+- Every statement either unconditional or explicitly 'under the Riemann hypothesis'; never 'because the hypothesis
+  was proved', until a refereed or generally accepted proof exists and the watch list says so.
+- No result of this programme is described as part of, or progress toward, the proof (governance, prohibited
+  reframing).
+- The archive is not rebuilt or replayed on this device: the published route needs 50 to 100 GB of memory and the
+  device has 47.7. The programme relies on the published checks, tracked by hash.
+- Defaults taken on 2026-11-21, kept unless Felipe changes them: the paused items of C resume after the gate of A;
+  the dossier stays a programme record and is not published as a note.
+
 ## Research paused by the user, 2026-10-04
 
 Riemann experimentation and the proposed research app release are stopped.

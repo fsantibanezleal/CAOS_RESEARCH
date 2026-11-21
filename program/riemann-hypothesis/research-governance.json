@@ -1,15 +1,16 @@
 {
   "schema_version": 1,
   "problem": "riemann-hypothesis",
-  "updated": "2026-10-04",
+  "updated": "2026-11-21",
   "original_problem": {
-    "status": "open",
+    "status": "formal proof released on 2026-11-20 (Lean, alpo.ge); accepted by three independent kernel designs per the public verification pages read on 2026-11-21; no written proof; acceptance by the mathematical community in progress",
     "statement": "The Riemann hypothesis: every nontrivial zero of the Riemann zeta function has real part 1/2.",
     "priority": "The 2026 unconditional simple-critical proportion is due to Alpoge-Furman (argument found by Claude, arXiv:2608.13637), with Lamzouri's direct proof (arXiv:2609.02882) and Wang's short-interval and global extensions (arXiv:2609.07918, arXiv:2609.24167).",
-    "prohibited_reframing": "No proportion theorem, finite certificate, DOI or release may be described as progress toward proving or disproving RH itself."
+    "prohibited_reframing": "No proportion theorem, finite certificate, DOI or release may be described as progress toward proving or disproving RH itself.",
+    "claim_record": "problems/number-theory/riemann-hypothesis/context/2026-11-21-claimed-proof-review.md"
   },
-  "mission": "Prove independently checkable improvements of zero-proportion theorems, chiefly positive proportions of simple critical zeros in short intervals (T,T+T^theta], with exact or certified arithmetic, attributed inputs kept explicit, and one manuscript home per validated theorem.",
-  "current_focus": "RH-F4",
+  "mission": "Prove independently checkable improvements of zero-proportion theorems, chiefly positive proportions of simple critical zeros in short intervals (T,T+T^theta], with exact or certified arithmetic, attributed inputs kept explicit, and one manuscript home per validated theorem. From 2026-11-21: keep an auditable review of the formal proof of the Riemann hypothesis released on 2026-11-20, and aim the short-interval work at statements that stay open under the hypothesis (simplicity of zeros in short intervals), each stated unconditionally or explicitly under the hypothesis.",
+  "current_focus": "RH-F16",
   "stop_policy": {
     "review_after_consecutive_low_value_rounds": 3,
     "requires_user_visible_redirect": true,
@@ -99,7 +100,7 @@
     {
       "id": "RH-F4",
       "title": "Short-interval onset toward theta>1/2",
-      "status": "active-success-gate-met",
+      "status": "held-success-gate-met",
       "priority": 4,
       "target": "Lower the simple-critical positivity onset below 0.534, ideally to every theta>1/2, or prove a documented barrier for the available methods.",
       "value": "Positivity for every theta>1/2 would close the short-interval question for these methods; a documented barrier prevents wasted rounds.",
@@ -112,7 +113,7 @@
       ],
       "novelty_status": "Primary-source overlap review through 2026-10-04 located no matching onset; internal derivations and independent arithmetic pass. External peer review and worldwide novelty remain unconfirmed.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "EXP-028 and published v0.02 close the original below-0.534 gate; app 0.76.000 is verified live. Retain RH-F4 for the source-complete rational-frequency Mellin preflight in strategy-review-20261004.md; declare a new experiment before controls. No new gain admitted.",
+      "first_bounded_action": "EXP-028 and published v0.02 close the original below-0.534 gate; app 0.76.000 is verified live. Retain RH-F4 for the source-complete rational-frequency Mellin preflight in strategy-review-20261004.md; declare a new experiment before controls. No new gain admitted. Held on 2026-11-21 behind RH-F16: the draft pull request 376 (rational-frequency moment, onset 0.527), EXP-023 (95 of 96 shards) and the next version of short-interval-levinson are not resumed before the gate of RH-F16; when resumed they pass the declared-experiment and review gates.",
       "evidence": [
         "EXP-010",
         "EXP-011",
@@ -348,6 +349,44 @@
         "EXP-026"
       ],
       "closure": "EXP-026 proves the retained remainder identity and refutes count-only and pressure-only positive gains using independently certified compact kernel-root isolation. No zero-bound improvement."
+    },
+    {
+      "id": "RH-F16",
+      "title": "Review of the formal proof of 2026-11-20 and re-aim of the programme",
+      "status": "active",
+      "priority": 0,
+      "target": "An auditable record of the formal proof of the Riemann hypothesis and of GRH for Dirichlet L-functions released on 2026-11-20: the claim on its primary source, the formal statements compared with Mathlib's definitions by this programme, the published kernel checks with their hashes, the last analytic step proved on paper and reviewed, a numerical control of its normalization (EXP-029), a dated watch list until the pending checks close and a written proof appears, and the catalogue of what stays open.",
+      "value": "The programme's baseline, its four manuscripts and its next focus all depend on the status of the hypothesis; a record that separates what a kernel checked, what third parties read and what this programme verified itself prevents both overclaiming and wasted rounds.",
+      "success_gate": "Dossier and source manifest committed; the note on the last step read by a reviewer other than the writer with its findings applied; EXP-029 with a verdict; plan, governance, backlog and manuscript map updated; the first three readings of the watch list recorded.",
+      "stop_conditions": [
+        "A kernel rejection, a statement defect or a withdrawal is published by anyone: record it the same day, return the framing of the programme to an open hypothesis and review RH-F17.",
+        "The units of the success gate are complete: close the focus and keep only the watch list as a backlog item.",
+        "A reading of the watch list shows a refereed or generally accepted written proof: record it and close the watch list."
+      ],
+      "novelty_status": "No novelty is claimed: the review reports third-party checks, and the last step is Landau's theorem on Dirichlet integrals of one sign in a window form, classical in kind.",
+      "manuscript_route": "none; research record of the programme (a published note only if Felipe asks for one)",
+      "first_bounded_action": "Done on 2026-11-21: three research reports accepted with their open items, the dossier, the statement check, the note on the last step read twice by a reviewer and corrected (version 2), EXP-029 PASS. Next: the watch readings of 2026-11-22, 2026-11-24 and 2026-11-28.",
+      "evidence": [
+        "EXP-029"
+      ]
+    },
+    {
+      "id": "RH-F17",
+      "title": "Simple zeros in short intervals under the Riemann hypothesis, for every theta > 1/2",
+      "status": "proposed",
+      "priority": 1,
+      "target": "Target T1 (a target, not a theorem): under the Riemann hypothesis and the Riemann hypothesis for Dirichlet L-functions, for every fixed theta in (1/2, 1] the proportion of simple zeros with ordinate in (T, T + T^theta] is at least 1 - 8/(2 theta + 1)^3 (19/27 at theta = 1), by the two mollified discrete moments of zeta'(rho) over the zeros of the window with a mollifier of length T^nu, nu < theta - 1/2, whose proportion is 1 - 1/(1 + nu)^3; or at least on a stated range that reaches below 0.5501.",
+      "value": "No theorem giving a positive proportion of simple zeros in windows shorter than T^0.5501 was found on 2026-11-21, with or without the hypothesis, other than this programme's unconditional 0.534; the pair correlation method stops near 0.55 even under the hypothesis. A theorem under the hypothesis is correct mathematics whatever the fate of the formal proof, and becomes unconditional if that proof is accepted.",
+      "success_gate": "A proved statement with certified constants on a range of theta below 0.5501, each derivation read by a reviewer other than the writer, with a primary-source search for prior work; or a written obstruction that names the missing mean-value input.",
+      "stop_conditions": [
+        "The second discrete moment in a short window needs an input that is not available even under the hypothesis and GRH for Dirichlet L-functions: write the obstruction and stop.",
+        "A source is found that already contains the theorem: cite it and keep only what remains.",
+        "Three consecutive units end without a proved statement."
+      ],
+      "novelty_status": "Searches of 2026-11-21 (reports rh-open-space and rh-f17-source-preflight) found no theorem on simple zeros and no discrete moment of zeta' on windows below T^0.5501; several primary sources could not be opened (listed in the preflight). No novelty is claimed until backlog RH-065 is done and the target is proved and reviewed.",
+      "manuscript_route": "a new manuscript if the theorem is proved (it is not a version of short-interval-levinson, whose theorem is unconditional)",
+      "first_bounded_action": "Done on 2026-11-21: the source preflight (accepted with one deliverable partial), the pair correlation barrier note (Wang's formula confirmed), the target note with the closed form and the error budget. Next, as paper work before the gate of RH-F16: backlog RH-058 (the contour identity on a window and Gonek's lemma with two endpoints), then RH-061, RH-062, RH-063; RH-065 (primary-source search) before any claim; the declared experiment RH-064 after the gate.",
+      "evidence": []
     }
   ],
   "manuscripts": [
@@ -508,9 +547,15 @@
       "manuscripts": [
         "short-interval-levinson"
       ]
+    },
+    {
+      "start": 29,
+      "end": 29,
+      "classification": "research-record",
+      "manuscripts": []
     }
   ],
-  "execution_state": "paused-by-user",
-  "current_work": "none",
+  "execution_state": "reopened-by-user-2026-11-21",
+  "current_work": "RH-F16",
   "publication_repair_delivery": "program\\riemann-hypothesis\\publication-correction-20261004\\delivery-verification.json"
 }
