@@ -1,5 +1,30 @@
 # Riemann hypothesis state
 
+## Research reopened by the user, 2026-11-21: the formal proof of 2026-11-20
+
+Felipe, 2026-11-21: "review last claim fromanthopic, that they solver riemnann hypoteshis, read and research online on ma depth for allthe new works on thata proelm, and verify if any space o research is opn, work in maimum depth in all relevant remaining areas of the prolem.improve the plan for that prolean workin maimumdepth". This lifts the pause of 2026-10-04 for the work named in the plan of 2026-11-21.
+
+On 2026-11-20 a Lean proof of the Riemann hypothesis and of the generalized hypothesis for Dirichlet L-functions was
+released (L. Alpoge with Claude, alpo.ge; 175,187 files, no written proof). As of the readings of 2026-11-21: three
+independent kernel designs accept it, two independent builds give the same export, the statements are Mathlib's own
+and only the three standard axioms are used; the reference-kernel run on the export, the end-to-end Comparator run
+and a sandboxed build are pending; experts reserve judgment on the mathematics. This programme checked itself the
+formal statements against Mathlib at the pinned commit and proved the last analytic step on paper. Record:
+`context/2026-11-21-claimed-proof-review.md`, `context/2026-11-21-windowed-landau-endgame.md`.
+
+Programme position: the hypothesis is treated as a formally verified statement whose acceptance is in progress.
+Every result is stated unconditionally or explicitly under the hypothesis. Nothing of this programme is part of,
+or progress toward, that proof.
+
+Effect on the published results. `short-interval-levinson` (0.534) is still the only theorem found below Wang's
+0.5501 for simple zeros in short intervals. The distinct-zero constants of `distinct-zero-gram` (0.8371747...,
+0.8373797...) are superseded as records by Knausgard, arXiv:2610.08965 (0.83900..., 2026-10-06), and, once the
+hypothesis is accepted, every global unconditional proportion is dominated by the results under the hypothesis
+(19/27 simple, 0.8477 distinct). No manuscript states anything false; no version is forced.
+
+Current focus: RH-F16 (review). Next: RH-F17 (simple zeros in short intervals under the hypothesis, every theta >
+1/2). RH-F4 is held. EXP-029 (a control of the normalization of the last step) is declared.
+
 ## Correction, 2026-11-14
 
 `sharp-three-point-kernel` v0.03, version DOI 10.5281/zenodo.24227401, concept

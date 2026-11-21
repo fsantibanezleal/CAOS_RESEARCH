@@ -1,5 +1,73 @@
 # Riemann hypothesis: zero-proportion research program
 
+## Plan of 2026-11-21: after the formal proof of 2026-11-20
+
+Research reopened by Felipe on 2026-11-21: "review last claim fromanthopic, that they solver riemnann hypoteshis, read and research online on ma depth for allthe new works on thata proelm, and verify if any space o research is opn, work in maimum depth in all relevant remaining areas of the prolem.improve the plan for that prolean workin maimumdepth". This section replaces, for what is authorized and in which
+order, the pause of 2026-10-04 recorded below; the history below stays as written.
+
+### 1. Position
+
+- The claim and its verification: `context/2026-11-21-claimed-proof-review.md`. A Lean proof of the Riemann
+  hypothesis and of the hypothesis for Dirichlet L-functions was released on 2026-11-20; three independent kernel
+  designs accept it; there is no written proof and expert judgment on the mathematics is reserved. The programme
+  treats the hypothesis as a formally verified statement whose acceptance is in progress.
+- What the programme holds: four manuscripts with unconditional or explicitly conditional theorems; the
+  short-window Levinson detector and twisted moments (mollifier T^nu, nu < theta - 1/2, internally
+  nu < min(1/2, (17/33)(2 theta - 1))); certified-arithmetic practice.
+- What changes: 'on the critical line' becomes automatic if the proof is accepted, so the global unconditional
+  proportions lose their role (under the hypothesis: 19/27 simple, 0.8477 distinct); what stays open on the zeros is
+  simplicity, distinctness and multiplicity, and in short intervals nothing is known below T^0.5501 other than
+  this programme's unconditional 0.534.
+
+### 2. Lines of work, in order
+
+A. RH-F16, review (current focus).
+   1. Statement fidelity against Mathlib at the pinned commit. Done 2026-11-21.
+   2. The last analytic step proved on paper (`context/2026-11-21-windowed-landau-endgame.md`), then read by a
+      reviewer other than the writer; findings applied.
+   3. EXP-029, the numerical control of its normalization (declared; run after the declaration is committed).
+   4. Watch list (backlog RH-055): fixed dates, the same four sources, each reading added to the dossier with its
+      time. It ends when the pending kernel runs are published and a written proof is refereed or generally
+      accepted, or when a defect is published.
+   5. Optional and bounded: one more link of the chain read on paper where the Lean statements are short (the
+      passage from every Dirichlet character to zeta, `Formalism.VW.rh_of_every`; the comparison statements
+      `OCStep` of `Formalism/StatementOC.lean`). Each is a note with a review. Stop at the first statement that
+      needs the archive's own definitions of classical objects: that audit belongs to specialists.
+   Gate: items 1 to 3 done and reviewed, three watch readings recorded.
+
+B. RH-F17, simple zeros in short intervals under the hypothesis (next focus, opened when the gate of A is met).
+   Target: under the Riemann hypothesis, and GRH for Dirichlet L-functions where needed, a positive proportion
+   c(theta) of the zeros in (T, T + T^theta] are simple for every fixed theta in (1/2, 1), with c(theta) explicit.
+   1. Source preflight and the barrier note (backlog RH-057): the pair correlation method on a window of length
+      T^theta sees the form factor for |alpha| < theta only and stops near 0.55; reproduce Wang's 0.5501.
+   2. The first discrete mollified moment over the zeros of a short window (backlog RH-058): derivation, a
+      declared numerical control on tabulated zeros.
+   3. The second discrete moment: name exactly the mean-value input it needs in a short window. This is the unit
+      where the route can fail; a failure is written as an obstruction.
+   4. Optimization of the mollifier and c(theta) with certified arithmetic.
+   5. A manuscript of its own, only if 2 to 4 hold and a full primary-source search finds no prior theorem.
+
+C. RH-F4, the unconditional onset (held). The theorem of `short-interval-levinson` stays the only result below
+   0.5501. Its paused items (pull request 376 with onset 0.527, EXP-023, the next version) wait for the gate of A
+   and then pass the declared-experiment and review gates (backlog RH-060). If the proof is accepted their value
+   is the unconditional method, and further unconditional refinement is weighed against B at that time.
+
+D. Publication record. No version is forced by the proof. `distinct-zero-gram` cites arXiv:2610.08965 and states
+   that its constants are no longer records at its next version (backlog RH-056). The other three keep their
+   positioning; a sentence on the status of the hypothesis is added when each is next revised.
+
+### 3. Rules of this plan
+
+- One declared experiment at a time; every derivation read by a reviewer other than the writer before it is used.
+- Every statement either unconditional or explicitly 'under the Riemann hypothesis'; never 'because the hypothesis
+  was proved', until a refereed or generally accepted proof exists and the watch list says so.
+- No result of this programme is described as part of, or progress toward, the proof (governance, prohibited
+  reframing).
+- The archive is not rebuilt or replayed on this device: the published route needs 50 to 100 GB of memory and the
+  device has 47.7. The programme relies on the published checks, tracked by hash.
+- Defaults taken on 2026-11-21, kept unless Felipe changes them: the paused items of C resume after the gate of A;
+  the dossier stays a programme record and is not published as a note.
+
 ## Research paused by the user, 2026-10-04
 
 Riemann experimentation and the proposed research app release are stopped.

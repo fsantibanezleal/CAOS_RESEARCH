@@ -1,5 +1,7 @@
 # Riemann hypothesis handoff
 
+2026-11-21: research reopened by Felipe after the formal proof of the Riemann hypothesis released on 2026-11-20. Read first `context/2026-11-21-claimed-proof-review.md` (the claim, the published kernel checks, what stays open), then the section 'Plan of 2026-11-21' of [plan.md](plan.md). Current focus RH-F16 (review: dossier done, the note on the last step awaits its review, EXP-029 declared, watch list dated); next focus RH-F17 (simple zeros in short intervals under the hypothesis for every theta > 1/2); RH-F4 held with its paused items (pull request 376, EXP-023, the next Levinson version). The older blocks below are history.
+
 2026-11-14: correction published: `sharp-three-point-kernel` v0.03 (10.5281/zenodo.24227401) claims only the sharp ratio theorem; the kernel-level inequality uses two steps of Wang's replaced arXiv:2609.24167v1 and is conditional, as are the proportions (independent audit and review). Research stays paused.
 
 2026-11-02: correction published: `sharp-three-point-kernel` v0.02 (10.5281/zenodo.23895875) keeps the sharp ratio theorem and states the global and short-interval proportions as conditional on Wang's arXiv:2609.24167v1, which its author replaced by a notice; RH-049 and RH-050 done (the arXiv:2609.07918v2 pair theorem is unchanged). Research stays paused.

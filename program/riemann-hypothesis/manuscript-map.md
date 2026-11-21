@@ -223,3 +223,17 @@ A joint slack estimate is unproved and not admitted automatically. RH-F4 is
 retained because the signed moment estimate remains the substantive analytic
 obligation. Complete the shifted Voronoi normalization before using any
 inverse-phase cancellation estimate. EXP-026 is research-record only.
+
+## Focus and routing after the formal proof of 2026-11-20 (2026-11-21)
+
+Current focus: **RH-F16**, the review of the formal proof of the Riemann hypothesis released on 2026-11-20 and the
+re-aim of the programme. It has no manuscript route: the dossier, the note on the last step and EXP-029 are
+research records. RH-F4 is held with its success gate met; RH-F17 (simple zeros in short intervals under the
+hypothesis) is proposed and would have a manuscript of its own, separate from `short-interval-levinson`, whose
+theorem is unconditional.
+
+| Block | Evidence | Status | Manuscript home |
+|---|---|---|---|
+| The formal statements of the archive are the Riemann hypothesis and the hypothesis for Dirichlet L-functions as Mathlib defines them | statement check of 2026-11-21 against Mathlib `0df444a3` | read by the coordinating session; the same comparison by the verifiers and by Comparator | research record (RH-F16) |
+| A one-sided bound G(x) <= Y^eta x^theta on windows [Y, Y^(1 + delta)] excludes zeros to the right of theta | note `2026-11-21-windowed-landau-endgame.md`; EXP-029 (declared) | derivation written; review pending | research record (RH-F16) |
+| Positioning of the four manuscripts after 2026-11-20 and after arXiv:2610.08965 | dossier sections 7 and 8 | no statement false; `distinct-zero-gram` superseded as a record | next versions (backlog RH-056) |

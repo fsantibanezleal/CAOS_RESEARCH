@@ -1,0 +1,291 @@
+{
+ "schema_version": 1,
+ "created": "2026-11-21",
+ "data_root_relative": "caos-research/riemann-hypothesis/claim-2026-11-20",
+ "purpose": "Sources of the review of the formal proof of the Riemann hypothesis released on 2026-11-20 (dossier 2026-11-21-claimed-proof-review.md).",
+ "primary": {
+  "note_url": "https://alpo.ge/remark.pdf",
+  "note_sha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
+  "archive_parts": "https://alpo.ge/lean.tar.gz.part01 to part14 (not downloaded by this programme)",
+  "archive_joined_bytes_reported": 239275554,
+  "archive_joined_sha256_reported": "9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc",
+  "export_sha256_reported": "5ea74b912147c5c93cc2b6d70cc727cf908df2f62ac6a20480a3fa02f6be244e",
+  "mirror": "https://github.com/leanprover-community/riemann-hypothesis (read at commit 23aebbb3)",
+  "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "verification_page": "https://math.mit.edu/~drew/grh/ (last updated 2026-11-20 22:05 UTC)"
+ },
+ "coordinator_files": [
+  {
+   "path": "coordinator/dl/drew_grh.html",
+   "bytes": 12782,
+   "sha256": "de7153ec1b22acab193a99824d427d41050e2c0d2c4374ec518d52fc0de62307"
+  },
+  {
+   "path": "coordinator/dl/drew_grh.txt",
+   "bytes": 7295,
+   "sha256": "662f9c69937b5c8e8bc8457596ea68a45f268a9d42c51254cea029c054354116"
+  },
+  {
+   "path": "coordinator/dl/index.html",
+   "bytes": 11625,
+   "sha256": "a7ee08f4821ec5bfdebbc8860730b497b3e252a49fadc14d0d888c9e38a25276"
+  },
+  {
+   "path": "coordinator/dl/remark.pdf",
+   "bytes": 245114,
+   "sha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+  },
+  {
+   "path": "coordinator/lean/Development_AutomorphicArithmetic_CharacterBoxes_RiemannHypothesisOfEveryCharacter.lean",
+   "bytes": 20673,
+   "sha256": "80d57d0936668a1cde784b87c67f680d017962b6cecf0710a51a32b9d8549880"
+  },
+  {
+   "path": "coordinator/lean/Development_AutomorphicArithmetic_CharacterBoxes_ZeroFreeAllOfTopG.lean",
+   "bytes": 1791,
+   "sha256": "349d9eafe63952c2fa4ccb2055bef7de0144d442c552196183fe48f01958f033"
+  },
+  {
+   "path": "coordinator/lean/Development_AutomorphicArithmetic_DedekindLFunctions_CharFamily.lean",
+   "bytes": 1636,
+   "sha256": "ca0ca8acb80ff4ffc36896204650f9ca16167193a22c36a140402b27cfc8c336"
+  },
+  {
+   "path": "coordinator/lean/Development_AutomorphicArithmetic_DedekindLFunctions_LandauTheorems_landauWindow.lean",
+   "bytes": 9681,
+   "sha256": "57f49606e6ffd8cab45672d8d4b9c7ded6c0b6b0d140821cc51b5baeb4f67ab5"
+  },
+  {
+   "path": "coordinator/lean/Development_AutomorphicArithmetic_DedekindLFunctions_LandauTheorems_LandauZeroFreeCriterion.lean",
+   "bytes": 14,
+   "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  },
+  {
+   "path": "coordinator/lean/Development_AutomorphicArithmetic_DedekindLFunctions_LandauTheorems_lemmaL.lean",
+   "bytes": 1053,
+   "sha256": "4ce94b876b46e0a3b038c4bfe9ade933c7225170bf07421109ee862fd5941e3d"
+  },
+  {
+   "path": "coordinator/lean/Development_AutomorphicArithmetic_DedekindLFunctions_LandauTheorems_ZeroFreeOfRpowWindow.lean",
+   "bytes": 668,
+   "sha256": "3252473ba2654b05e9d2ea0781ea91b4c7eadcca0def18b0f21d20212c2f0316"
+  },
+  {
+   "path": "coordinator/lean/Formalism_GammaFactorNonvanishing_CritLine.lean",
+   "bytes": 1825,
+   "sha256": "5b1552ac13442150f6900f37b9b44eff1491fad1bebe2ec07a959eecb9bcfe02"
+  },
+  {
+   "path": "coordinator/lean/Formalism_SharpRestriction_RamificationFrobenius_TotientGaloisClasses_TopWin.lean",
+   "bytes": 8117,
+   "sha256": "afbbf8ec0a8aca08b7935c6118c76eef06b2eee896805e7de277b9d4e09fc52b"
+  },
+  {
+   "path": "coordinator/lean/Formalism_SharpRestriction_RamificationFrobenius_TotientGaloisClasses_Window.lean",
+   "bytes": 1825,
+   "sha256": "882989a78da888b0462d17f285e42e44970a3dee70c1dc8c667fb5a3f985c2f7"
+  },
+  {
+   "path": "coordinator/lean/Formalism_StatementOC.lean",
+   "bytes": 3737,
+   "sha256": "0249562a8b70df61856f6fdce16afdf17fbe88c9945af4231700503d11027f8a"
+  },
+  {
+   "path": "coordinator/mathlib/DirichletContinuation.lean",
+   "bytes": 18979,
+   "sha256": "86d3aaad83e64cb64a24167fd4ddb2eeec5ca4a19a9298459e87a57fec151040"
+  },
+  {
+   "path": "coordinator/mathlib/HurwitzZeta.lean",
+   "bytes": 8543,
+   "sha256": "181fcf0d1e92ef1d38d1fccecf313d814b6511913aee8e6c4f2d720d0cb5220d"
+  },
+  {
+   "path": "coordinator/mathlib/Nonvanishing.lean",
+   "bytes": 21780,
+   "sha256": "945a2fd23ca9ebd2d48f101d771ef9117dd9847d48fd77ea2623d8c345f4f5a9"
+  },
+  {
+   "path": "coordinator/mathlib/RiemannZeta.lean",
+   "bytes": 12306,
+   "sha256": "db9f37f08bcce379c502549f604c0e98bf4a39b3a3440606861bbac847f2a1a9"
+  },
+  {
+   "path": "coordinator/mirrors/CocoSgt_riemann-hypothesis-lean.README.md",
+   "bytes": 8726,
+   "sha256": "2c613919744434c3499c5f75c8019f5686673bc85e2487189f619ca76980cf89"
+  },
+  {
+   "path": "coordinator/mirrors/Deicyde_comparator.json",
+   "bytes": 460,
+   "sha256": "8ea890e6ccda9cf3983ada343af18a41d12542036875a3936e7925ed5b1582ff"
+  },
+  {
+   "path": "coordinator/mirrors/Deicyde_README.md",
+   "bytes": 5044,
+   "sha256": "299a2a17efc7cfcf34349cf0e58d393905dd8b7f20fc78cf146b8902691bf7b9"
+  },
+  {
+   "path": "coordinator/mirrors/Deicyde_src_Challenge.lean",
+   "bytes": 1222,
+   "sha256": "a3cebbf30be6b9268a0ed413c9bbc256dfa9f4bfa04f1a75f144d135da5e21a5"
+  },
+  {
+   "path": "coordinator/mirrors/Deicyde_verification_NOTES.md",
+   "bytes": 15489,
+   "sha256": "a0b67cd13f99bb2c6de9a3ff569716f44fe732abaf31fe013a07434fb5dfcf2b"
+  },
+  {
+   "path": "coordinator/mirrors/Deicyde_verification_static-scan.txt",
+   "bytes": 2588,
+   "sha256": "0ed8c54b3bf5fb74cee073060b340abb758e7421bc3117fa48b0b0fa56bd830f"
+  },
+  {
+   "path": "coordinator/mirrors/issue_12.json",
+   "bytes": 8825,
+   "sha256": "f301bafa0d020c00ff5492af3049397958d28169ca342fcb34eba72d2c2e3f41"
+  },
+  {
+   "path": "coordinator/mirrors/issue_12.md",
+   "bytes": 6730,
+   "sha256": "fada09a08848bdd1a120fe1449dcbff582cca05199151f642c51df5fcf682e7e"
+  },
+  {
+   "path": "coordinator/mirrors/issue_12_comments.json",
+   "bytes": 2297,
+   "sha256": "6ddd2a140d6ac6536471243d54557a81711c6d23d35145e83e41862f5d6ba9ac"
+  },
+  {
+   "path": "coordinator/mirrors/issue_2.json",
+   "bytes": 4492,
+   "sha256": "0ad0767ef965ca2e08019c05052ebb8ccd8d09504d91151f20cdbdc46ff1327b"
+  },
+  {
+   "path": "coordinator/mirrors/issue_2.md",
+   "bytes": 2367,
+   "sha256": "e159af21e23263b447109726a78cfd772a9806ed470c2310cc66c0dfc9030864"
+  },
+  {
+   "path": "coordinator/mirrors/issue_2_comments.json",
+   "bytes": 1885,
+   "sha256": "3aca24bfd0655501052b367c7db5e052311b6ff5b26d774e0adeb74a97e41966"
+  },
+  {
+   "path": "coordinator/mirrors/issue_3.json",
+   "bytes": 5944,
+   "sha256": "5b39ee857bcfb74530837d22146603761148472fa922c15d3c757a06a4cb331a"
+  },
+  {
+   "path": "coordinator/mirrors/issue_3.md",
+   "bytes": 7297,
+   "sha256": "6e4cc08a72916fcf08a151d5cdead7b0bff85f32c0abed96cf82165da901a2fc"
+  },
+  {
+   "path": "coordinator/mirrors/issue_3_comments.json",
+   "bytes": 10419,
+   "sha256": "ff1a6395bfe5b3caf71f33fc2e526b89a12b76d6f035dd7a062739bcb20d550b"
+  },
+  {
+   "path": "coordinator/mirrors/issue_5.json",
+   "bytes": 46695,
+   "sha256": "f868741d9ac2a93ca090ffd2b6b8b81ea013de2b0c312943361be78975aa2b4d"
+  },
+  {
+   "path": "coordinator/mirrors/issue_5.md",
+   "bytes": 56486,
+   "sha256": "b2b73e6f7cc366255caa5f45336b60c4bd6ba6f1db061fbb02ca198ea7bafafd"
+  },
+  {
+   "path": "coordinator/mirrors/issue_5_comments.json",
+   "bytes": 22819,
+   "sha256": "825186abc24a3939d888a4429f2d50df99614516883635477e2be4e0335c7112"
+  },
+  {
+   "path": "coordinator/mirrors/jsmorph_rh.README.md",
+   "bytes": 2822,
+   "sha256": "03aaa993409888b68c8a502a4eeec717b8f428fb52ed8712058158e446aed19a"
+  },
+  {
+   "path": "coordinator/mirrors/lpc_README.md",
+   "bytes": 5044,
+   "sha256": "299a2a17efc7cfcf34349cf0e58d393905dd8b7f20fc78cf146b8902691bf7b9"
+  },
+  {
+   "path": "coordinator/mirrors/lpc_verification_NOTES.md",
+   "bytes": 15489,
+   "sha256": "a0b67cd13f99bb2c6de9a3ff569716f44fe732abaf31fe013a07434fb5dfcf2b"
+  },
+  {
+   "path": "coordinator/mirrors/omega_lake-manifest.json",
+   "bytes": 3221,
+   "sha256": "fee57ee9ed399d0a638ca955e5ad40a37a36eeb9b6dfd9f5964114fa7bbe4774"
+  },
+  {
+   "path": "coordinator/mirrors/omega_lakefile.toml",
+   "bytes": 1770,
+   "sha256": "32af981ad33964a949f3e4d1e188e4afd0f85fecf6bf86e8ed133f00f16727ca"
+  },
+  {
+   "path": "coordinator/mirrors/omega_lean-toolchain",
+   "bytes": 25,
+   "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  {
+   "path": "coordinator/mirrors/omega_src_Main.lean",
+   "bytes": 433,
+   "sha256": "017645ca448f2fd1f6fd5c4c2cb2c6e96e472725be13f6e180ca6e1574360939"
+  },
+  {
+   "path": "coordinator/mirrors/omega_src_Statements.lean",
+   "bytes": 783,
+   "sha256": "79ef7ca776e42abe1f46caee13ea09bd19f1e2d0b1620d8d5d200258f33b47bf"
+  },
+  {
+   "path": "coordinator/mirrors/omega_src_Supplements_Kernels_MainTheorems.lean",
+   "bytes": 740,
+   "sha256": "1e734200b9b6a6d2a968743bd0c433d614bd6606cf538ac6d4f0ff70044dde53"
+  },
+  {
+   "path": "coordinator/mirrors/omega_src_Supplements_Kernels_MainTheoremsAll.lean",
+   "bytes": 136,
+   "sha256": "a209a6a2f6ea1cc4abe865996b909bfeef391adcb89d3a948858874cb5956fec"
+  },
+  {
+   "path": "coordinator/mirrors/tamnd_riemann.README.md",
+   "bytes": 3246,
+   "sha256": "18e1c3520cd2d63fd027d7a1b2faba67a6985afde83579997ecae205f5c15770"
+  },
+  {
+   "path": "coordinator/mirrors/the-omega-institute_riemann-hypothesis.README.md",
+   "bytes": 10794,
+   "sha256": "882ad4e6124de27381f1fcb18fbba1ede0f6e2aebba39a068f53dd4aa461e82b"
+  },
+  {
+   "path": "coordinator/mirrors/TomasOrtega_RH.README.md",
+   "bytes": 296,
+   "sha256": "3d0957ad7c8e8ac811779c2cef6f706fb70ec8d8b2a5db1750938b9bbeb67143"
+  },
+  {
+   "path": "coordinator/mirrors/Tomodovodoo_Riemann.README.md",
+   "bytes": 817,
+   "sha256": "4737a74587aa12cf1d8ceadc6c44b2e6f4d38cbb158f56676378bc540e8f3eef"
+  }
+ ],
+ "research_reports": {
+  "rh-claim-reception": {
+   "folder": "rh-claim-reception",
+   "files": 57,
+   "sources_sha256_file": "842f65e2d976a11f527213e697f5c89a235aaa9a1ee8947d3eafd685039ae769"
+  },
+  "rh-literature-refresh": {
+   "folder": "rh-literature-refresh",
+   "files": 51,
+   "sources_sha256_file": "78642df5ac78248de98b545cc3a2873873c6ccf8509ed06891cb546bbd51ac75"
+  },
+  "rh-open-space": {
+   "folder": "rh-open-space",
+   "files": 28,
+   "sources_sha256_file": "73a02ccf3907707626c7db9a61b9b58fa8fd586b81a3718524920be85127a5ef"
+  }
+ }
+}
