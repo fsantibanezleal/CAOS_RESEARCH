@@ -1,6 +1,6 @@
 # boij-soderberg-realizability: RESUME (session handoff)
 
-Updated 2026-11-20 (manuscript v0.03 published, 10.5281/zenodo.24404456; EXP-001 to EXP-020 closed; ten derivations reviewed after v0.02; next: the strategic review of BSR-F3). First read for any session, per methodology 07. Derived view: experiment verdicts win.
+Updated 2026-11-21 (manuscript v0.03 published, 10.5281/zenodo.24404456; EXP-001 to EXP-021 closed; EXP-021 settles the last open pair (11, 3) with e <= 16, after v0.03; ten derivations reviewed after v0.02; next: the strategic review of BSR-F3, which also decides whether a version states the result of EXP-021). First read for any session, per methodology 07. Derived view: experiment verdicts win.
 
 ## 1. State in one screen
 
@@ -148,7 +148,7 @@ Published on 2026-11-20: the manuscript v0.02, [10.5281/zenodo.24388904](https:/
    p = 2e - 1 other than 11 and 43; the short pair with ab = -1/4 for every prime p = 2e - 3 whose Fermat quotient of 2 is
    not 1/2 or 3/2; so the point with e = (p + 1)/2 is realized over GF(p) for every prime p >= 5, and the point with
    e = (p + 3)/2 for every prime 5 <= p <= 2,000,000). EXP-019 and EXP-020 settle every pair (e, p) with e <= 16 that was
-   open except (11, 3): for 2 <= e <= 16 with e not 11 the point fails only in characteristic 2. Open: (11, 3) (BSB-038),
+   open except (11, 3): for 2 <= e <= 16 with e not 11 the point fails only in characteristic 2. EXP-021 (verdict CONFIRMED, 2026-11-21) settles (11, 3): the complete list of the 43,046,721 monic members of S(5; 0, 1) over GF(3) holds 42,930 with the block pattern and the pure Hilbert function, and pure pairs among them (5 in the first 16 tables, two instruments, rebuilt by the coordinating session), the first x^11 + x^5 y^4 z - x^4 y^3 z^2 + x^3 y^2 z^3 + x z^5, y^11 + x^5 y^6 - x^4 y^5 z - x^3 y^4 z^2 - x^2 y^3 z^3 - y z^5; so for 2 <= e <= 16 the point fails only in characteristic 2 (after v0.03, not yet in a version). Open:
    the Betti table when Delta and A_(e-t) have a common factor and the converse of the filter (BSB-037), e >= 17
    (BSB-039).
 

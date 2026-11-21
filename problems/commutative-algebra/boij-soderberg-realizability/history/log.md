@@ -276,3 +276,10 @@ v2 of 2026-05-28), with one primitive point each; no follow-up found in the exte
   odd prime p divides e(e - 1) or equals 2e - 1. It carries EXP-009 to EXP-020 and the ten derivations reviewed after v0.02
   (Theorems E to P). Reviewed by a reader other than the writer: first review, fix pass, closing check, three further writing
   passes, review of the additions, final confirmation (approve for release). Open: (11, 3), BSB-037, e >= 17.
+- 2026-11-21: EXP-021 closed, verdict CONFIRMED. The complete list of the 43,046,721 monic members of the stratum S(5; 0, 1) over GF(3) at
+  e = 11 (hypothesis frozen in b379589f): stages 35,798,729; 5,710,940; 1,494,122; 42,930; five pure pairs in the first 16 Betti tables,
+  three confirmed by Singular and all five rebuilt by the coordinating session with a separate parser and the pure Python module
+  construction. The pair (11, 3) is settled: for 2 <= e <= 16 the point (1,2,2,1) on (0, e, 3e, 4e) fails only in characteristic 2.
+  Predictions P2 (200 to 4,000 members of stage 3) and P4 (no pure pair with gamma = delta = 0) failed: the pure pairs found are of the
+  shape x^11 + alpha(xy, z) x, y^11 + beta(xy, z) y. The run was interrupted once and resumed from its stored blocks. Not yet in a
+  version of the manuscript (v0.03 states the exception e = 11).
