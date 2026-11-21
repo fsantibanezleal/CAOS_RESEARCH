@@ -166,8 +166,11 @@ From [R] `rh-open-space` (rows marked UNVERIFIED there are not used here):
 - Short intervals: no theorem was found, with or without the hypothesis, giving a positive proportion of simple
   zeros in (T, T + T^theta] for theta at or below 0.5501 (Wang, arXiv:2609.07918v2; before, Steuding, 0.552),
   except this programme's unconditional 0.534 (`short-interval-levinson` v0.02, unrefereed).
-- [D, a reading of this programme, to be written out and reviewed as the first unit of focus RH-F17] The pair
-  correlation method should not pass that point even under the hypothesis: on a window of length H = T^theta the
+- [D, written out in the barrier note and reviewed on 2026-11-21; the first wording here, that the pair correlation
+  method should not pass that point even under the hypothesis, said more than is proved] Pair correlation with test
+  functions supported in the band does not pass that point; under the hypothesis a relaxation lowers the onset to
+  about 0.5487 (a probe), and inputs beyond the band under the hypothesis for Dirichlet L-functions are unexamined on
+  windows. The reason for the band: on a window of length H = T^theta the
   mean value theorem for Dirichlet polynomials controls lengths up to about H, so the form factor is available for
   |alpha| < theta only, and the resulting bound for the sum of the multiplicities carries information only for
   theta above about 0.55 (with the Fejer kernel of that band, simple zeros at least 2 - 1/theta - theta/3,
@@ -187,7 +190,13 @@ From [R] `rh-open-space` (rows marked UNVERIFIED there are not used here):
   found that the only step of the two papers without a short-window form under the Riemann hypothesis alone is the
   bound for characters of large conductor, and that under the hypothesis for Dirichlet L-functions that step is
   pointwise. So the target is stated under exactly the two statements of the formal proof. Its proof obligations
-  are the units of line B of the plan.
+  are the units of line B of the plan. `2026-11-21-window-moments-by-subtraction.md` reduces it to three named
+  inputs: the identities of the two papers are additive in the height, so every term of size T^(1/2) y passes by
+  subtraction; what remains is the mean square of the mollified zeta and zeta' on the window (unconditional, of the
+  kind the programme already uses), a pointwise bound for twisted coefficient sums under the two hypotheses, and
+  the derivative of the main terms. The barrier note and the target note were read by a reviewer on 2026-11-21
+  (one blocker, the overclaim above; five major and twelve minor findings, applied); the reduction note is not yet
+  reviewed.
 
 ## 8. New works since the last pass (2026-10-04), from [R] `rh-literature-refresh`
 
