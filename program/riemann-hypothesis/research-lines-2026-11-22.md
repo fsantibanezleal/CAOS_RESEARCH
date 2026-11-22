@@ -209,6 +209,15 @@ Lean code, not for its size. [Q] Read the blueprint's chap-sha to see where the 
 the finiteness for e >= 1 is the point to check (Soule's results on H^2 with positive Tate twists; the
 Quillen-Lichtenbaum comparison, now a theorem by Voevodsky and Rost) [K].
 
+[P, the formal statement, read in the blueprint's index of declarations `lean-facts.json` (copy under the data root,
+`caos-research/riemann-hypothesis/line-f/blueprint/`)] The chain averaging is the theorem `Deduction.ch_core`
+(`src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean`, lines 343 to 442 of the
+archive). Its label group is `E0 x H` with `H` a finite `AddCommGroup`, and its characters are `AddChar (E0 x H) C`:
+the formal core is abelian by construction (the folder name is not about Dedekind zeta functions; the file
+`CharFamily.lean` of the same folder defines positive combinations of Dirichlet characters, read on 2026-11-21). So the
+compositum needs a version of `ch_core` over `G_0 x H` with class functions of the fixed non-abelian G_0 in place of the
+characters of the first factor; that statement is the first formal target of RH-073.
+
 ### 3.6 What the attempt established on 2026-11-22, and the next steps
 
 - [D] The Frobenius condition averages to class functions; subgroup-supported weights give Dedekind zeta functions
