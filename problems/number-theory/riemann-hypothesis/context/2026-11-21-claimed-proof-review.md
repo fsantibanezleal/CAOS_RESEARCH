@@ -7,7 +7,8 @@ max depth for all the new works on that problem, and verify if any space of rese
 delegated research report of 2026-11-21 (coordination repository, `wip/caos-research/rh-claim-reception`,
 `rh-literature-refresh`, `rh-open-space`, each accepted with its open items); [D] a derivation of this programme.
 This dossier reports who has shown what. It does not itself establish that the hypothesis is proved, and the
-programme's own theorems do not depend on it.
+programme's own theorems do not depend on it. Sections 1 to 9 are the reading of 2026-11-21; the dated readings of
+the watch list follow in section 10 (first reading: 2026-11-22).
 
 ## 1. The claim, on its primary source
 
@@ -29,7 +30,9 @@ programme's own theorems do not depend on it.
 - [R] The same author with R. Furman posted arXiv:2608.13637 in August 2026 (at least two thirds of the zeros simple
   and on the line, unconditionally; argument found by Claude; the baseline of this programme). The November proof
   is a different method; no source links the two. No official statement of Anthropic, of the Clay Mathematics
-  Institute or of the Lean FRO was found on 2026-11-21.
+  Institute or of the Lean FRO was found on 2026-11-21. On 2026-11-22 a joint statement of the Lean and Mathlib
+  communities, endorsed by the Lean FRO and the Mathlib Initiative and dated 2026-11-21 13:55, was read (section
+  10); there was still none of Anthropic or of the Clay Institute.
 
 ## 2. What is formally stated
 
@@ -53,7 +56,7 @@ programme's own theorems do not depend on it.
   reader, ishaan2006) and mechanically: Comparator's statement matching and `con-leche --compare` find the five
   theorems of the archive equal to the five of a challenge file that imports only Mathlib.
 
-## 3. What has been checked, by whom (as of 2026-11-21 08:33 UTC)
+## 3. What has been checked, by whom (as of 2026-11-21 08:33 UTC; the later state is in section 10)
 
 Source for every line unless said: `https://math.mit.edu/~drew/grh/` (A. Sutherland, MIT; last updated 2026-11-20
 22:05 UTC; unchanged at 08:33 UTC on the 21st) [T], and the verification notes of the mirror [T].
@@ -138,13 +141,19 @@ programme).
 - The evidence that the five formal statements are theorems of Lean with Mathlib is strong and of a new kind:
   three independent kernel designs accept the proof, two independent builds give the same export, the statements
   are Mathlib's own, and no axiom beyond the standard three is used. What remains pending is confirmatory (the
-  reference kernel on the export, the end-to-end Comparator run, a sandboxed build).
+  reference kernel on the export, the end-to-end Comparator run, a sandboxed build). Reading of 2026-11-22 (section
+  10): the sandboxed build is done and its export is byte-identical; a joint statement of the Lean and Mathlib
+  communities, endorsed by the Lean FRO and the Mathlib Initiative, certifies the statement and the proof of the
+  Riemann hypothesis; the MIT page still lists its own Lean-kernel run on the export and the end-to-end Comparator
+  run as running.
 - What is absent is understanding. No written proof exists, the author says he has not mastered parts of the
   argument, the experts quoted reserve judgment on the mathematics, and the new statements of the chain have not
   been read by referees. The rules of the Clay Mathematics Institute require publication in a refereed outlet, two
   years, and general acceptance, and say nothing about formal proofs [R].
 - For this programme the working position is: treat the Riemann hypothesis and the generalized hypothesis for
-  Dirichlet L-functions as formally verified statements whose acceptance is in progress; state every new result
+  Dirichlet L-functions as formally verified statements whose acceptance is in progress (since 2026-11-22: formal
+  verification certified for the Riemann hypothesis by the joint statement of section 10, acceptance as mathematics
+  still in progress); state every new result
   either unconditionally or explicitly "under the Riemann hypothesis" (which is correct mathematics whatever the
   outcome); never describe a result of this programme as part of, or progress toward, that proof.
 
@@ -195,8 +204,8 @@ From [R] `rh-open-space` (rows marked UNVERIFIED there are not used here):
   subtraction; what remains is the mean square of the mollified zeta and zeta' on the window (unconditional, of the
   kind the programme already uses), a pointwise bound for twisted coefficient sums under the two hypotheses, and
   the derivative of the main terms. The barrier note and the target note were read by a reviewer on 2026-11-21
-  (one blocker, the overclaim above; five major and twelve minor findings, applied); the reduction note is not yet
-  reviewed.
+  (one blocker, the overclaim above; five major and twelve minor findings, applied); the reduction note was read by
+  the same reviewer the same day (six minor findings, applied; no blocker, no major).
 
 ## 8. New works since the last pass (2026-10-04), from [R] `rh-literature-refresh`
 
@@ -220,6 +229,85 @@ note, the MIT page as text, the mirror's README, notes, issues 2, 3, 5, 12, the 
 files of the last step, the two Mathlib files at the pinned commit) and one folder per research report. Manifest:
 `source-manifest-claim-20261121.json`.
 
+## 10. Watch readings (backlog RH-055)
+
+### Reading 1: 2026-11-22, sources fetched 03:49 to 03:52 UTC (machine clock, within a second of the MIT server's)
+
+The four sources of the watch list, and the post that prompted the reading (sent by Felipe). Copies with SHA-256 under
+the data root, `caos-research/riemann-hypothesis/claim-2026-11-20/watch-2026-11-22/` (`SHA256SUMS.txt`).
+
+- [P] The joint statement "Lean verification of the Riemann Hypothesis" on the Lean community blog
+  (`https://leanprover-community.github.io/blog/posts/riemann-hypothesis/`, dated 2026-11-21 13:55; page
+  `f1bc87e6...9a35`, source `0742e573...eeea`), "by the Lean and Mathlib communities, endorsed by the Lean FRO and
+  the Mathlib Initiative". Its words: "We have full confidence that Alpöge's proof of the Riemann Hypothesis is
+  correct"; "We hereby certify that both the statement and the proof of the Riemann Hypothesis are correct. The
+  four criteria in [the Xena post below] are all satisfied." Its reasons: the statement is Mathlib's
+  `RiemannHypothesis`; "dozens of people have reported correct compilation of the codebase, reproducing the same
+  raw proof export file"; a file that states the theorem and imports only Mathlib was compared with the proved
+  theorem "using two independent tools (comparator and con-leche --compare)"; the export "has been checked by
+  several proof checkers, including Lean's official kernel, the con-leche and con-ron checkers, and several
+  independent checkers contributed by third parties and implemented in different programming languages"; "The
+  checkers con-leche and con-ron come with a formal proof, relative to set theory, that they cannot accept a false
+  proof"; the checks "ran on an inert export of the proof". It closes: "We look forward to all the activity in the
+  mathematical community that will help explain the new ideas in this proof." It names the Riemann hypothesis only
+  and says nothing of the three statements on Dirichlet L-functions, which the MIT page lists as checked by the
+  same runs. Its "17 million lines" agrees with the static scan of section 3 (17,374,215).
+- [P] The four criteria (Xena project, 2026-11-12, "...and the proof is checked in Lean", `f74a2a80...51ef1`):
+  (1) the Lean statement matches the informal statement; (2) the code compiles; (3) the code proves the theorem as
+  stated (`lake comparator`: the statement of a trusted file equals the one proved, with the standard axioms only);
+  (4) the proof does not exploit a bug of Lean's kernel (several independent kernels; `lake comparator
+  --paranoid`). The post adds that a Lean proof that passes all four says nothing on the correctness of a written
+  proof that accompanies it.
+- [T] The MIT page, "last updated 2026-11-22 03:50 UTC" (fetched 03:49:47; `c9f09ce1...d59d`). New since 2026-11-21 08:33: an
+  independent `lake build Main` in a bubblewrap sandbox (no network, source read-only, archive downloaded afresh),
+  on a separate machine, pass at 18:07 UTC on the 21st; the export made inside that sandbox is byte-identical to the
+  published one (61,570,595,788 bytes); 175,186 of its 175,187 compiled files equal the first build's, the
+  exception being one module whose output depends on a race in parallel elaboration (the name of a bound variable
+  in an automatically generated equation lemma that is not in the export; Lean issue 15498, fixed in v4.36.0);
+  Mathlib's files equal the official cache; con-leche built from master accepts the full export (1,468,418
+  declarations, `--verified` mode); con-ron, its Rust port, accepts in `--compare` mode with all five theorems
+  "justified by the solution"; the challenge export equals the one the mirror's CI publishes. A check that does not
+  rest on Mathlib's definition of the zeta function: with an independent formalization of the criteria of Robin and
+  of Lagarias (`kimihiro64/Robin1984`, commit `acab1a3`) the proof yields Robin's inequality for every n > 5040 and
+  Lagarias's inequality for every n >= 1, statements on the divisor sum alone, accepted by con-leche, con-ron and
+  nanoda (the Comparator run on that combined export still running). Still running at 03:50 UTC: "Lean default
+  kernel and Lean paranoid kernel on the export" and "lake comparator (Lean v4.36.0) end to end", whose statement
+  comparison and axiom check have passed and whose kernel stages are single-threaded on a 62 GB export.
+- [T] The mirror `leanprover-community/riemann-hypothesis` (head `f1f6d654`, 2026-11-22 03:33 UTC; the address
+  `Deicyde/riemann-hypothesis` now redirects to it). The Results section of its notes (`e6aef798...de45`) still
+  reads "The build is in progress." Since the 21st, cleanup pull requests 8, 45 and 57 removed 10,724 of the
+  175,187 files and edited 18 (the count of the notes; pull requests 60 and 65, merged after it on the 22nd, shorten
+  proof terms in further modules); the five statements are unchanged; commit `40e56bab` is the archive as published,
+  and every check above was run on the archive as published, not on the cleaned tree. The notes record that
+  con-leche and con-ron as bundled with Lean v4.36.0 exit 2 on a mutual inductive block with a reflexive member
+  (`PrincipalizationCertificate`), so the mirror's Comparator configuration names only Lean paranoid and nanoda;
+  the MIT page reports that both checkers built from master accept.
+- [P] arXiv (API, newest 60 abstracts with "Riemann hypothesis", and every listing of the author): no paper presents
+  or reviews the proof; the author's newest listing is of 2026-09-15; the newest abstract in the listing is of
+  2026-11-19. Read again on the 24th.
+- [P] Anthropic (news page) and the Clay Mathematics Institute (news page, newest item 2026-09-11; the page of the
+  problem unchanged): no statement on the claim. News reports found by a search say the same of Anthropic.
+- Not read: the Lean Zulip thread the statement links (an account is needed; the public archive has no copy).
+
+What the reading changes:
+
+- The four criteria, for the statement as written against Mathlib, are now certified by a joint statement that the
+  Lean FRO and the Mathlib Initiative endorse, not only reported by individual verifiers.
+- An unreconciled detail: the joint statement says Lean's official kernel checked the export; the MIT page, updated
+  later (03:50 UTC on the 22nd), still lists its own run of Lean's kernels on the export as running, and the run of Lean's kernel that
+  has passed there is the replay module by module (`leanchecker`, 175,187 of 175,187) on the compiled files. The
+  sources read do not say which run the statement means. It does not touch the verdicts of nanoda, con-leche and
+  con-ron on the export.
+- Of the confirmatory items of section 6, the sandboxed build is done; the Lean-kernel run on the export and the
+  end-to-end Comparator run stay open.
+- Still absent: a written proof, a referee, any statement by Anthropic or by the Clay Institute, and any reading of
+  the new mathematics beyond those of section 4; the joint statement itself leaves the explanation to "the
+  mathematical community". The end condition of the watch list (plan, line A, item 4) is not met.
+- The rule of the plan stands: every result of this programme is stated unconditionally or "under the Riemann
+  hypothesis", never "because the hypothesis was proved".
+
+Next readings: 2026-11-24 and 2026-11-28, then weekly.
+
 ## How could this be wrong?
 
 - A defect shared by the kernels that accepted the proof, or a flaw in Mathlib's definitions of the functions
@@ -229,3 +317,6 @@ files of the last step, the two Mathlib files at the pinned commit) and one fold
 - Sections 4, 7 and 8 rest on delegated reports with open items; their statements are marked [R] and the rows
   those reports call UNVERIFIED were left out.
 - The state of verification changes by the hour. The watch list of the plan fixes when it is read again.
+- The joint statement of 2026-11-22 (section 10) certifies a formal object: that the statements written against
+  Mathlib follow from the standard axioms according to the checkers named. It does not certify Mathlib's definitions
+  beyond the expert vetting it cites, and it says nothing of a written argument, which does not exist.

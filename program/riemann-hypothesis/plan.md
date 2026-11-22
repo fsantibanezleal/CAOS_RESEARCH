@@ -10,7 +10,10 @@ order, the pause of 2026-10-04 recorded below; the history below stays as writte
 - The claim and its verification: `context/2026-11-21-claimed-proof-review.md`. A Lean proof of the Riemann
   hypothesis and of the hypothesis for Dirichlet L-functions was released on 2026-11-20; three independent kernel
   designs accept it; there is no written proof and expert judgment on the mathematics is reserved. The programme
-  treats the hypothesis as a formally verified statement whose acceptance is in progress.
+  treats the hypothesis as a formally verified statement whose acceptance is in progress. Since the watch reading
+  of 2026-11-22 the formal verification of the Riemann hypothesis is certified by a joint statement of the Lean and
+  Mathlib communities endorsed by the Lean FRO and the Mathlib Initiative; acceptance as mathematics is still in
+  progress, so the rules of section 3 are unchanged.
 - What the programme holds: four manuscripts with unconditional or explicitly conditional theorems; the
   short-window Levinson detector and twisted moments (mollifier T^nu, nu < theta - 1/2, internally
   nu < min(1/2, (17/33)(2 theta - 1))); certified-arithmetic practice.
@@ -29,7 +32,10 @@ A. RH-F16, review (current focus).
    3. EXP-029, the numerical control of its normalization. Done 2026-11-21: PASS.
    4. Watch list (backlog RH-055): fixed dates, the same four sources, each reading added to the dossier with its
       time. It ends when the pending kernel runs are published and a written proof is refereed or generally
-      accepted, or when a defect is published.
+      accepted, or when a defect is published. Reading 1 done on 2026-11-22 (dossier section 10): the Lean and
+      Mathlib communities, with the endorsement of the Lean FRO and the Mathlib Initiative, certify the statement
+      and the proof of the Riemann hypothesis; the end condition is not met (two kernel runs on the MIT page still
+      running, no written proof).
    5. Optional and bounded: one more link of the chain read on paper where the Lean statements are short (the
       comparison statements `OCStep` of `Formalism/StatementOC.lean`; the passage from every Dirichlet character
       to zeta was read on 2026-11-21, dossier section 5). Each is a note with a review. Stop at the first statement
