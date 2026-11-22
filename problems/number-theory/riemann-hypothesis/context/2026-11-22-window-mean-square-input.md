@@ -5,7 +5,10 @@ programme's manuscript `manuscripts/riemann-hypothesis/short-interval-levinson/m
 with its line numbers) and on the reduction note `2026-11-21-window-moments-by-subtraction.md` (cited as WMS). Marks:
 [S] as printed in a source, with its place; [D] derived here; [C] checked by symbolic computation (script
 `verify_i1.py` and its log `verify_i1.log` under the data root, `caos-research/riemann-hypothesis/rh-067/`; SHA-256
-`7d98a61f...84eb` and `0cc810ca...2f72`). Not yet read by a reviewer. It proves nothing about target T1 beyond
+`7d98a61f...84eb` and `0cc810ca...2f72`). Read on 2026-11-22 by a reviewer other than the writer (report
+`wip/caos-research/rh-067-window-mean-square-review-2026-11-22.md` of the coordination repository): correct after
+fixes, one major and three minor findings (J1 to J4), applied here; the reviewer re-ran `verify_i1.py` to an identical
+log and made an independent symbolic check (P of degree 5, Q of degree 4). It proves nothing about target T1 beyond
 input [I1]; T1 stays a target.
 
 Notation as in WMS: B(s) = sum over k <= y of b(k) k^(-s), b(k) = mu(k) P(log(y/k)/log y), y = T^nu, P a real
@@ -65,8 +68,10 @@ function c is entire: with a = alpha L, b = beta L,
 
 (the removable singularity of c_1 at alpha + beta = 0 cancels between the two terms), and I is holomorphic in
 (alpha, beta) for |alpha|, |beta| <= 3/L because zeta is holomorphic away from 1 and t >= T/2 on the support of w.
-On the torus |alpha| = 3/L, |beta| = 1/L both variables are of order 1/L and |alpha + beta| >= 2/L, so the annulus
-estimate gives |E| <= C H/L there; the maximum modulus principle applied in one variable and then in the other gives
+On the torus |alpha| = 3/L, |beta| = 1/L both variables are of order 1/L and |alpha + beta| >= 2/L, and Young's
+Lemma 6 holds uniformly on any fixed annuli (the region SIL uses), so the annulus estimate gives |E| <= C H/L there
+(the swapped torus |alpha| = 1/L, |beta| = 3/L is used in the same way where the roles of the variables are
+exchanged); the maximum modulus principle applied in one variable and then in the other gives
 |E| <= C H/L on the closed polydisc |alpha| <= 3/L, |beta| <= 1/L. For R = 0 the operator acts at alpha = beta = 0.
 By Cauchy's formula on the circles |alpha| = |beta| = 1/(2L), which lie in that polydisc,
 d^j/d alpha^j d^k/d beta^k E(0, 0) << j! k! (2L)^(j + k) H/L, and the operator multiplies the term (j, k) by
@@ -103,7 +108,11 @@ CGG's bracket Q(0)^2 + nu * double integral of (P Q' + P' Q/nu)^2 [C, check 3]. 
 The error is the one of check (a): the Cauchy estimate uses no value of Q.
 
 The normalization of the logarithm. SIL writes Q(-(1/L) d/ds) with L = log T, CGG write Q(log m/L_C) with
-L_C = log(T/2 pi). For Q = 1 the two coincide. For Q(x) = -x, CGG's F is zeta'/L_C = lambda V with
+L_C = log(T/2 pi). For a general real Q, CGG's F is Q_lambda(-(1/L) d/ds) zeta with Q_lambda(x) = Q(lambda x) and
+lambda = L/L_C = 1 + O(1/L); the coefficients of Q_lambda differ from those of Q by O(1/L), the constant is a
+polynomial in them, and the error of the theorem is uniform for coefficients in a compact set (the Cauchy estimate
+of check (a) uses only their size), so the main term changes by O(1/L) relative to its size (correction J2). For
+Q = 1 the two coincide. For Q(x) = -x, CGG's F is zeta'/L_C = lambda V with
 lambda = L/L_C = 1 + O(1/L), so |B F|^2 = lambda^2 |B V|^2 and the main term changes by a factor 1 + O(1/L), inside
 the error O(H/L). The mollifier is the same in both (y = T^nu, b(k) = mu(k) P(log(y/k)/log y)).
 
@@ -116,17 +125,14 @@ w_+^(j) << Delta^(-j). Then the integral of f over [T, T + H] is at most the int
 c (integral of w_+) + O(H/L) = c H + O(H/L), since H <= integral of w_+ <= H + 2 Delta = H (1 + O(1/L)).
 
 Lower bound. Take w_- smooth, 0 <= w_- <= 1, w_- = 1 on [T + Delta/2, T + H - Delta/2], support in [T, T + H],
-w_-^(j) << Delta^(-j). Apply the theorem at T' = T + Delta/2 with H' = H - Delta: its transition length is
-Delta' = H'/log T' = Delta (1 + O(1/L)) >= Delta/2 for large T, so w_- = 1 on [T', T' + H'], its support
-[T' - Delta/2, T' + H' + Delta/2] lies in [T' - Delta', T' + H' + Delta'], and w_-^(j) << Delta'^(-j). Then the
-integral of f over [T, T + H] is at least the integral of w_- f, which is c (integral of w_-) + O(H/L) = c H + O(H/L).
-
-This applies the theorem with H' = H - Delta at the height T', that is with H' slightly different from T'^theta. The
-proof uses H only through bounds that hold uniformly for T^theta/2 <= H <= T^theta [D, read on SIL]: in the
-twisted-integral lemma (SIL 257-264) through 2 sqrt(hkmn)/Delta <= 2 y T^((1 + eps)/2) L/H, which gives
-4 L T^(-3 eta/4) instead of 2 L T^(-3 eta/4) when H >= T^theta/2; through H = o(T) for the support of w and the bound
-rho << H/T (SIL 271-272, 280-281, 342-343); and through the factor integral of w << H in the diagonal lemma (SIL
-302-308). None of these changes for H' = H - Delta at T' = T (1 + o(1)).
+w_-^(j) << Delta^(-j). SIL's proof (lines 205-337) never uses "w = 1 on [T, T + H]": the weight enters only through
+its support (of length at most 2H, inside [T - Delta, T + H + Delta]), the bounds w^(j) << Delta^(-j) (lines 249-250),
+and the integrals of w and of w g (lines 270-272, 302-305), exactly as in Young's conditions on the weight. So the
+proof runs unchanged for w_- at the same T, H, y = T^nu and L, and gives c (integral of w_-) + O(H/L) [D, read on
+SIL; correction J1 of the review: an earlier version applied the theorem at the height T + Delta/2, where the
+mollifier length and the logarithm of the theorem are not those of the sandwich]. Then the integral of f over
+[T, T + H] is at least the integral of w_- f, which is c (integral of w_-) + O(H/L) = c H + O(H/L), since
+integral of w_- >= H - Delta.
 
 So, for fixed theta in (1/2, 1), 0 < nu < theta - 1/2, P with P(0) = 0, P(1) = 1, and every real polynomial Q,
 
@@ -154,11 +160,12 @@ theorem of the programme, read here at the abscissa 1/2, for Q(0) = 0 and on a s
 
 - SIL's theorem is the programme's own and is unrefereed; its proof uses steps of Young's Theorem 2 verbatim, and a
   defect there carries over here. This note does not re-prove those steps.
-- The uniformity in H used in check (c) is read from the proof, not stated in SIL; the places where H enters are
-  listed. If some step used H = T^theta exactly, the lower bound would need the theorem at an exponent theta' with
-  |theta' - theta| = O(1/L^2), which the same reading covers.
 - The maximum modulus step needs the annulus estimate on the whole torus |alpha| = 3/L, |beta| = 1/L with constants
   uniform there; SIL states the estimate on the annuli of Young's Lemma 6 with that uniformity.
 - The symbolic checks cover P and Q of degree at most 3; the hand computation of check (b) covers every degree.
+- CGG (3.24) is compared through the transcription of 2026-11-21 (`wip/caos-research/rh-f17-contour-formulas-2026-11-21.md`
+  of the coordination repository), not re-read on the paper for this note (J4).
+- The passage from log T to log(T/2 pi) for a general Q uses the uniformity of the error in the coefficients of Q
+  (J2); for the two Q of the reduction it is explicit.
 - The error O(H/L) depends on P and Q; for target T1 only fixed P (the optimal quadratic of the target note) and the
   two fixed Q occur.
