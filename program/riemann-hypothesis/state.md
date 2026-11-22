@@ -28,7 +28,11 @@ Current focus: RH-F16 (review). Next: RH-F17 (simple zeros in short intervals un
 Done on 2026-11-21 under RH-F16: EXP-029 PASS (the explicit formula of the weighted sum at 460 points, the bound of
 the hypothesis up to 10^8); the note on the last step read twice by a reviewer other than the writer and corrected
 (version 2 proves the window form of Landau's theorem under positive residues at real poles only, the hypothesis of
-the formal lemma). Open under RH-F16: the watch readings of 2026-11-22, 2026-11-24 and 2026-11-28.
+the formal lemma). Watch reading 1 done on 2026-11-22 (dossier section 10: the Lean and Mathlib communities,
+endorsed by the Lean FRO and the Mathlib Initiative, certify the statement and the proof of the Riemann hypothesis;
+the sandboxed rebuild gives a byte-identical export; the MIT page's Lean-kernel run on the export and end-to-end
+Comparator run still running; no written proof; no statement of Anthropic or the Clay Institute). Open under RH-F16:
+the watch readings of 2026-11-24 and 2026-11-28.
 
 Done on 2026-11-21 for RH-F17 (paper work, allowed before the gate): the pair correlation barrier in closed form,
 confirmed on Wang's text; the source preflight (no discrete moment of zeta' and no theorem on simple zeros on

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "riemann-hypothesis",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "original_problem": {
     "status": "formal proof released on 2026-11-20 (Lean, alpo.ge); accepted by three independent kernel designs per the public verification pages read on 2026-11-21; no written proof; acceptance by the mathematical community in progress",
     "statement": "The Riemann hypothesis: every nontrivial zero of the Riemann zeta function has real part 1/2.",
@@ -365,7 +365,7 @@
       ],
       "novelty_status": "No novelty is claimed: the review reports third-party checks, and the last step is Landau's theorem on Dirichlet integrals of one sign in a window form, classical in kind.",
       "manuscript_route": "none; research record of the programme (a published note only if Felipe asks for one)",
-      "first_bounded_action": "Done on 2026-11-21: three research reports accepted with their open items, the dossier, the statement check, the note on the last step read twice by a reviewer and corrected (version 2), EXP-029 PASS. Next: the watch readings of 2026-11-22, 2026-11-24 and 2026-11-28.",
+      "first_bounded_action": "Done on 2026-11-21: three research reports accepted with their open items, the dossier, the statement check, the note on the last step read twice by a reviewer and corrected (version 2), EXP-029 PASS. Watch reading 1 done on 2026-11-22 (dossier section 10: joint statement of the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative, certifying the statement and the proof of the Riemann hypothesis; two kernel runs of the MIT page still running; no written proof). Next: the watch readings of 2026-11-24 and 2026-11-28.",
       "evidence": [
         "EXP-029"
       ]
@@ -385,7 +385,7 @@
       ],
       "novelty_status": "Searches of 2026-11-21 (reports rh-open-space and rh-f17-source-preflight) found no theorem on simple zeros and no discrete moment of zeta' on windows below T^0.5501; several primary sources could not be opened (listed in the preflight). No novelty is claimed until backlog RH-065 is done and the target is proved and reviewed.",
       "manuscript_route": "a new manuscript if the theorem is proved (it is not a version of short-interval-levinson, whose theorem is unconditional)",
-      "first_bounded_action": "Done on 2026-11-21: the source preflight, the pair correlation barrier note and the target note (both reviewed, findings applied), the transcription of the two source papers, and the reduction of the target to three named inputs (note 2026-11-21-window-moments-by-subtraction.md, not yet reviewed). Next, as paper work before the gate of RH-F16: the review of the reduction note; backlog RH-067 (the mollified mean square on the window), RH-062 (the pointwise bound under the two hypotheses), RH-061, then RH-063; RH-065 (primary-source search) before any claim; the declared experiment RH-064 after the gate.",
+      "first_bounded_action": "Done on 2026-11-21: the source preflight, the pair correlation barrier note and the target note (both reviewed, findings applied), the transcription of the two source papers, and the reduction of the target to three named inputs (note 2026-11-21-window-moments-by-subtraction.md, reviewed the same day, six minor findings applied). Next, as paper work before the gate of RH-F16: backlog RH-067 (the mollified mean square on the window), RH-062 (the pointwise bound under the two hypotheses), RH-061, then RH-063; RH-065 (primary-source search) before any claim; the declared experiment RH-064 after the gate.",
       "evidence": []
     }
   ],

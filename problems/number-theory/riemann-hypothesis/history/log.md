@@ -775,3 +775,24 @@ independent review of the correction. Only the sharp ratio theorem R(alpha,beta)
 inequality, the global proportions and the short-interval corollary are conditional. Title: "A sharp auxiliary ratio
 for a three-point kernel argument and its conditional consequences for zeta zeros". Research stays paused; no
 experiment was run.
+
+## 2026-11-21 - research reopened after the formal proof of 2026-11-20
+
+External status: a Lean proof of the Riemann hypothesis and of the hypothesis for Dirichlet L-functions was released
+by L. Alpoge on 2026-11-20 (no written proof); three independent kernel designs accepted it on 2026-11-21.
+Action (Felipe's order of 2026-11-21): dossier `context/2026-11-21-claimed-proof-review.md`; the last analytic step
+proved on paper and reviewed twice (`context/2026-11-21-windowed-landau-endgame.md`); EXP-029 PASS; the pair
+correlation barrier on windows in closed form, for test functions supported in the band; target T1 for simple zeros
+in short windows under the two hypotheses of the formal proof (a target, not a theorem) and its reduction to three
+inputs, each note reviewed. Plan of 2026-11-21: RH-F16 current, RH-F17 next, RH-F4 held. PRs 465, 466 and 467.
+
+## 2026-11-22 - watch reading 1 of the formal proof
+
+External status: a joint statement of the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib
+Initiative (dated 2026-11-21 13:55), certifies the statement and the proof of the Riemann hypothesis against the
+four criteria of the Xena post of 2026-11-12. The MIT page (03:50 UTC) adds a sandboxed rebuild with a byte-identical
+export, con-ron and con-leche from master accepting, and Robin's and Lagarias's inequalities derived with an
+independent formalization; its Lean-kernel run on the export and its end-to-end Comparator run are still running. No
+written proof on arXiv; no statement of Anthropic or of the Clay Institute.
+Action: dossier section 10; backlog RH-055 reading 1 of 3. The rules of the plan are unchanged: results are stated
+unconditionally or under the hypothesis.
