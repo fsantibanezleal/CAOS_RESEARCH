@@ -308,6 +308,28 @@ What the reading changes:
 
 Next readings: 2026-11-24 and 2026-11-28, then weekly.
 
+### Addendum to reading 1 (2026-11-22, later the same day): sources the reviews of 2026-11-21 and 2026-11-22 missed
+
+Three sources were not found by the searches of the two readings and were read after Felipe's correction of
+2026-11-22 (the programme had not explored the proof's own fields; `program/riemann-hypothesis/research-lines-2026-11-22.md`):
+
+- [P] R. Zhang (IHES), "A preliminary note on Alpoge's proposed proof of the generalized Riemann hypothesis", 73 pages,
+  dated 2026-11-21, `https://www.ihes.fr/~rzhang/files/GRH%20note.pdf` (SHA-256 `2cbd7e9b...2ad9`; copy under the data
+  root, `caos-research/millennium-review-2026-11-22/rh-anatomy/`). The first reading of the mathematics by a
+  mathematician: the author says he prompted an AI system to infer a readable proof from the Lean code, rewrote its
+  output, cannot claim the text is faithful to the code, and that most of Sections 2 to 6 were written by AI. Its
+  outline (nine steps, seven fields) is transcribed in Section 1 of the research-lines file. It states the exponent
+  1/2 as the balance of two errors of sizes x/m and m in the number m of theta lifts, which is the "chain of length
+  sqrt(X)" of the author's note.
+- [N] A second proposed proof, human, of GRH for the Hecke L-functions of all unitary Hecke characters of every number
+  field, by A. M. Masullo, announced on 2026-11-20 on R. Vakil's Math 216 site (cited by Zhang, footnote 1, as [Mas26]);
+  reported in news as reviewed for months by B. Conrad, with problems reported since; not read on its primary source.
+  If it holds, it covers what Section 7 lists as not covered by the formal proof.
+- [P] A community reading blueprint, `https://github.com/chrisflav/riemann-blueprint` (461 statements in four chapters,
+  each labelled published, modified from the literature, or new in the proof; made by static analysis of the source,
+  without a build; its README lists its known limits).
+
+
 ## How could this be wrong?
 
 - A defect shared by the kernels that accepted the proof, or a flaw in Mathlib's definitions of the functions

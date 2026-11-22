@@ -118,6 +118,14 @@ E. Other open areas, weighed and not opened (backlog RH-066). Each is a statemen
      formal proof does not cover (outside the programme's methods; it is on the watch list); pair correlation and
      the moment conjectures (no route from the programme's tools).
 
+F. Cross-field lines (from 2026-11-22; Felipe: "define a real path, exploring new fields, and try to solve the most
+   promising one"). `research-lines-2026-11-22.md`: the anatomy of the proof in nine steps across seven fields (from
+   R. Zhang's reading of 2026-11-21), a path map of eleven rows, and the attempt chosen as the most promising: the
+   extension of the mechanism from abelian to non-abelian Galois CM fields, toward the hypothesis for Dedekind zeta
+   functions (backlog RH-068 to RH-071). This line runs alongside B and is not held by the gate of A: it is reading and
+   derivation. Every round of this problem keeps one step from a non-native field (methodology 11, last section).
+   The Millennium review of the same day (`program/millennium-review-2026-11-22.md`) places it first of five paths.
+
 ### 3. Rules of this plan
 
 - One declared experiment at a time; every derivation read by a reviewer other than the writer before it is used.

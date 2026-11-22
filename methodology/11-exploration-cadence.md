@@ -48,3 +48,22 @@ running invariant-first probes (lens 4), turned a stalled exclusion sweep into a
 clean structural exclusion of the counterexample mechanism (EXP-089/090) and six
 new research lines - none of which were in the original plan. That is the yield the
 cadence rule institutionalises.
+
+## The cross-field path map comes first (Felipe, 2026-11-22, binding for every problem)
+
+Felipe, 2026-11-22, after the Riemann proof of 2026-11-20 came from fields the programme never opened: "I asked to
+explore the problem, you explored what you wanted instead"; "when I explicit required to explore new paths, new
+approaches, to take in consideration the most related fields or even not commonly related fields or methods"; "that
+is what is asked in any problems you are working at that repo".
+
+1. Before a problem chooses a target or a spine unit, and again whenever its field changes (a new proof, a new
+   claim, a new tool), it writes `program/<slug>/research-lines-<date>.md`: the anatomy of the strongest known
+   approaches, including the analogue where the problem is solved (function fields, lower dimension, a model
+   case); a path map of the commonly related fields AND of fields not commonly related, each row with a first
+   bounded step.
+2. Every round runs at least one step from a field that is not the problem's native one, and records it in the
+   ledger of that file. A spine with no running cross-field line is a defect, not a scope choice; the scope of a
+   target never narrows the toolbox (Felipe, 2026-10-08).
+3. When an order says "explore", the deliverable is the map and the steps actually run, never a target chosen from
+   the programme's existing tools.
+4. Model and counter-example: `program/riemann-hypothesis/research-lines-2026-11-22.md` and its Section 0.
