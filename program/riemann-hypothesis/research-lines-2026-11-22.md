@@ -117,16 +117,116 @@ F^2 x. Roth-type questions in non-abelian groups are studied in additive combina
 groups; quasirandom groups) [K]; [Q] which construction gives the size the proof needs, with |T2| measured against
 |G|/2.
 
-### 3.4 What the attempt established on 2026-11-22, and the next steps
+### 3.4 Reading of [Z] Section 6, and a reduction by a compositum [D, under the assumption of 3.2]
 
-- [D] The Frobenius condition averages to class functions, and subgroup-supported weights give Dedekind zeta
-  functions of subfields, with the positivity the zero-detection step needs.
-- [Q] Four inputs are open in the non-abelian case: the error separation of [Z] Section 6 with Artin L-functions as
-  errors; Colmez-type CM periods for non-abelian CM types (or a proof that the Galois average suffices); a bound for
-  #S(E, j) without mu = 0; an Euler system for the representations that occur.
-- Next, in order: read [Z] Section 6 (how the surviving characters are bounded) and Section 4.5 (which CM periods
-  enter); then the blueprint nodes for the same statements; then the four questions one by one, each as a note with a
-  review. The attempt stops with a written obstruction if one input is shown to be equivalent to an open conjecture.
+[Z] Section 6: the coefficient of G_chi(x) after the averages is proportional to t m b v2/n, and Lemma 6.1 needs the
+selected sets nearly full: t >= n x^(-delta/8) and n x^(-delta) <= v2 <= n, with n = |H| the size of the odd part of
+the label group. The characters that survive the averaging over H_0 and are not used in G_chi contribute at most
+4 r x^(1/2 + delta) "for the choices in [Alp26]" (Proposition 6.3); the note does not say how this bound is obtained.
+[Q] It is the step to read in the blueprint first (backlog RH-068): if those extra terms are bounded through the
+hypothesis for the extra characters themselves, the argument is an induction; if through zero-free regions at large
+arguments, it is not.
+
+Why the non-abelian part must stay fixed [K]: in quasirandom groups such as SL_2(F_q), dense sets contain many
+progressions x, xg, xg^2 (T. Tao, "Mixing for progressions in nonabelian groups", Forum Math. Sigma, 2013), so a
+place set of density x^(-delta) meeting every orbit segment in at most two points cannot be expected when the
+non-abelian part of the label group grows. The proof's own label group grows (the cyclotomic layers vary with x), so
+the growing part must be abelian.
+
+The compositum. Let E_0 be a Galois CM field with non-abelian group G_0, and A_x the abelian CM fields the proof
+uses, chosen linearly disjoint from E_0. Then E = E_0 A_x is a Galois CM field (a compositum of CM fields is CM) with
+Gal(E/Q) = G_0 x Gal(A_x/Q). Label the places by pairs (g_0, a); Frobenius acts by (F_0, F_A). Take the selected
+places T2 = {1} x B, with B a Behrend-type set in the abelian coordinate inside one CM type of A_x. Then:
+
+1. CM type: each pair {(g_0, a), (g_0 c_0, a c_A)} is separated by the abelian coordinate, so {1} x B lies in a CM type
+   of E whatever c_0 is.
+2. Sparsity: the orbit of (1, a) meets {1} x Gal(A_x/Q) only at the steps j that are multiples of the order of F_0,
+   where the abelian coordinates form an arithmetic progression; a Behrend set meets it in at most two points.
+   Density: |T2| = |B| out of |G_0| |A_x|/2 places, the density of B times the constant 2/|G_0|, absorbed by
+   x^(-delta).
+3. Arithmetic side: averaging over the primes above p conjugates only the G_0 coordinate; by 3.2 the weight 1_{1} on
+   G_0 averages to the regular character divided by |G_0|, the condition "p splits completely in E_0". With the abelian
+   coordinate expanded in Dirichlet characters chi of A_x, the identity carries the Hecke L-functions
+   L(s, chi o N_{E_0/Q}) of E_0, which for chi trivial is the Dedekind zeta function of E_0. These have no pole except
+   s = 1 for chi trivial, so a positive combination modelled on [Z] (1.1) has positive residues at every zero, as the
+   zero-detection step needs.
+4. Target, if the rest transfers: every zero of zeta_{E_0} in the critical strip on the line; hence, by
+   Aramata-Brauer (zeta_{E_0}/zeta_F entire for F inside E_0), the same for every subfield F of E_0: every field whose
+   Galois closure is CM, and every totally real Galois field (take E_0 = F(i)).
+
+What this reduction leaves [Q]: the transfer assumption of 3.2; the bound for the extra characters (RH-068); and the
+arithmetic inputs for E = E_0 A_x, which is not abelian: periods of its CM types (RH-069), the Iwasawa mu-invariant of
+its cyclotomic towers (RH-070), Euler systems and Galois representations for the lifts (RH-070). The combinatorial and
+character-theoretic layers stop being the obstruction (RH-071 reduced to the abelian Behrend construction).
+
+### 3.5 The three open inputs, read on the blueprint [B] (chrisflav/riemann-blueprint, nodes named; copies under the data root, `caos-research/riemann-hypothesis/line-f/blueprint/`)
+
+RH-068, the characters that are not used. [B, thm-chain-averaging and its proof; thm-core-inequality.proof;
+thm-auxiliary-fields; lem-good-auxiliary-primes] The auxiliary field is a Galois CM field E, abelian over Q, with
+Gal(E/Q) = {+-1}^2 x A, |A| = n, containing sqrt(-q) and sqrt(-d) for primes q = 3 mod 8, d = 7 mod 16, of degree about
+x^(2 + 8 eps), cut out of a cyclotomic field by conditions on psi, (./q), (./d). The other characters xi of Gal(E/Q)
+trivial on A_0 enter as the sum of |g_xi(x)|; they are bounded by 4 o x^(1/2 + eps) because q and d are chosen
+"good": for most primes q and d, every character involving (./q) or (./d) has L(s, chi) nonzero for
+Re s > 1 - 1/400, |L'/L(1, chi)| <= C log Y, and |g_chi(y)| <= y^(1/2 + tau) on the window, by a mean-square estimate
+over q (a large sieve for real characters) and Chebyshev's inequality, with the supply of primes from the prime number
+theorem in progressions (Deuring-Heilbronn, Turan). "The square-root bound for g_chi is the strength of the Riemann
+Hypothesis for chi, but only on [Y, X], and it is obtained for most q and d by averaging, not for each." So the extra
+characters are handled by unconditional averaging, not by induction. [D, plausible] In the compositum of 3.4 the
+analogous terms are Hecke L-functions of E_0 twisted by xi o N_{E_0/Q}; their Dirichlet coefficients are supported on
+norms and the same mean square over q applies to the sequence sum over N(a) = n of Lambda_{E_0}(a) (a large sieve over
+the quadratic characters (n/q)), with the zero-free region and the bound at 1 for Hecke L-functions of a fixed E_0.
+This input transfers, subject to writing it out.
+
+RH-069, the periods. [B, thm-chain-averaging] The main term is
+M(a, w) = a (log a - 1 - gamma + L'/L(1, chi_K) - (1/|Phi|) sum over rho in Phi of log w(rho)), with K = Q(sqrt(-d)),
+and the proof of the member bound uses Chowla-Selberg [B, thm-member-gap-bound.proof]. So the CM periods enter through
+one imaginary quadratic field, matched against L'/L(1, chi_K). [D] In the compositum, the arithmetic main term of the
+condition "p splits completely in E_0" carries the constant term of -zeta_{E_0}'/zeta_{E_0} at 1 (the Euler-Kronecker
+constant of E_0, a sum of log derivatives at 1 of the Artin L-functions of G_0), and the period side must reproduce
+it. That is a Chowla-Selberg formula for the non-abelian part: Colmez's conjecture, which relates Faltings heights of
+CM abelian varieties to log derivatives of Artin L-functions. [Q] Whether the averaged form, which is proved
+(Andreatta-Goren-Howard-Madapusi Pera; Yuan-Zhang, 2018), suffices depends on whether the construction can average its
+main term over the CM types of E_0; this is now the sharpest form of the question.
+[B, thm-member-gap-bound.proof and thm-chowla-selberg] How the period enters: in the upper bound for the slope,
+log Omega = gamma + log(pi/v) - L'/L(1, chi_K) is "the mean logarithm of the periods that the Chowla-Selberg formula
+gives", and the Chowla-Selberg node states it as the mean over the h ideal classes of K of
+log(4 pi Im(tau_c) |eta(tau_c)|^4). So the proof uses the average of the log-periods over the Galois orbit of CM
+points (the class group), not the period of one CM point. [D] This favours the averaged form of Colmez's formula for
+the compositum: what is needed is an average of log-periods over a Galois orbit of CM points, matched against the
+constant of the arithmetic main term. [Q] Which average the arithmetic side of the compositum produces (over the
+CM types of E_0 K, or over a smaller orbit), and whether it equals the one the averaged formula (Andreatta-Goren-
+Howard-Madapusi Pera; Yuan-Zhang) evaluates, which carries L'/L of the quadratic character of the CM extension.
+[B] The blueprint reads the whole step as "the arithmetic form of Stepanov's method": the factor m in the
+divisibility bound plays the multiplicity of the auxiliary function and the slope inequality plays the degree bound.
+
+RH-070, the Tate-Shafarevich bound. [B, def-sha-bound] For the psi-fields E and twists 0 < e < t = floor(x^401), the
+groups Sha^1(G_{E,S}, Q_l/Z_l(-e)) must be finite and sum over l in Sigma of log l times the sum over e of their
+lengths at most exp(x^eps/2), for every finite set Sigma. [D, tentative] The allowance exp(x^eps/2) is superpolynomial
+in x, while the degree of E is about x^(2 + 8 eps) and t is x^401: a growth of lengths that is polynomial in the
+degree and in e, such as a positive Iwasawa mu-invariant gives along the 2-power cyclotomic tower (length about
+mu 2^n), fits inside it. So Ferrero-Washington may be needed for finiteness or for the form of the bound proved in the
+Lean code, not for its size. [Q] Read the blueprint's chap-sha to see where the vanishing of mu is used; for E_0 A_x
+the finiteness for e >= 1 is the point to check (Soule's results on H^2 with positive Tate twists; the
+Quillen-Lichtenbaum comparison, now a theorem by Voevodsky and Rost) [K].
+
+### 3.6 What the attempt established on 2026-11-22, and the next steps
+
+- [D] The Frobenius condition averages to class functions; subgroup-supported weights give Dedekind zeta functions
+  of subfields, with the positivity the zero-detection step needs (3.2).
+- [D] With E = E_0 A_x (E_0 fixed, Galois CM, non-abelian; A_x the proof's abelian fields) and T2 = {1} x B, the
+  place selection reduces to the abelian Behrend construction and the arithmetic side becomes the Hecke L-functions
+  L(s, chi o N_{E_0/Q}) of E_0, among them its Dedekind zeta function (3.4). A growing non-abelian part is excluded
+  by Tao's mixing theorem.
+- [B, D] The characters that are not used are bounded in the proof by unconditional averaging over auxiliary primes,
+  which plausibly transfers to the compositum (RH-068, 3.5).
+- [Q] The input that remains sharp: the main term must be reproduced by periods; for E_0 this is a Chowla-Selberg
+  formula for the non-abelian part (Colmez's conjecture); open unless the construction can use the averaged form,
+  which is proved (RH-069). The Tate-Shafarevich bound has superpolynomial slack and may not need mu = 0 (RH-070,
+  tentative). The Euler-system input for the representations of the compositum is not yet read (RH-070).
+- Next, in order: the blueprint's proof of thm-member-gap-bound (how Chowla-Selberg enters and whether its
+  constant can be averaged over CM types); chap-sha (where mu = 0 is used); then a written note on the compositum
+  reduction with a review. The attempt stops with a written obstruction if the period input is shown to need
+  Colmez's conjecture for a single CM type.
 
 ## 4. Corollaries for abelian fields [K, classical; no novelty claimed]
 
@@ -149,3 +249,4 @@ and a zero in the critical strip is a zero of one factor, on the line by the for
   note, the blueprint, Masullo's draft), the spine of line B.
 - Exploration entry of this round: the non-abelian Frobenius average (3.2) and the non-abelian place-selection
   question (3.3), both new to the programme.
+- Second entry of the same day: the compositum reduction (3.4) and the three inputs read on the blueprint (3.5).
