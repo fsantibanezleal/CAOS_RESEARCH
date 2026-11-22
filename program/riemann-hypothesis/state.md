@@ -22,6 +22,8 @@ Effect on the published results. `short-interval-levinson` (0.534) is still the 
 hypothesis is accepted, every global unconditional proportion is dominated by the results under the hypothesis
 (19/27 simple, 0.8477 distinct). No manuscript states anything false; no version is forced.
 
+Since 2026-11-22: line F (cross-field lines; research-lines-2026-11-22.md) runs alongside line B; first attempt: the mechanism of the proof beyond abelian fields.
+
 Current focus: RH-F16 (review). Next: RH-F17 (simple zeros in short intervals under the hypothesis, every theta >
 1/2). RH-F4 is held.
 
