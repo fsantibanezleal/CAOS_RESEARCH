@@ -210,5 +210,6 @@ no two-endpoint version is needed.
   the range of nu would shrink to (theta - 1/2)/a and the target would be weaker, not void.
 - [I2'] is asserted from the shape of the residues, not from a computation.
 - [I1]: the programme's theorem is stated at the abscissa of the Levinson detector, for Q(0) = 1 and with a smooth
-  weight; the three checks of Section 3 are not written yet, and that theorem is itself unrefereed.
+  weight; the three checks of Section 3 are written in `2026-11-22-window-mean-square-input.md` (reviewed 2026-11-22,
+  correct after fixes): [I1] holds with error O(H/L); that theorem is itself unrefereed.
 - The arithmetic check of Section 5 uses BHB (7), (8) and CGG (3.26), (3.27) as transcribed; it reproduces (2.7).
