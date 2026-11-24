@@ -18,7 +18,7 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | Navier-Stokes regularity (September 2026 forced-blowup claims; mechanism and certificate audit) | analysis-pde | dormant | B | yes | [navier-stokes/plan.md](navier-stokes/plan.md) |
 | Yang-Mills mass gap | mathematical-physics | proposed | B | yes | |
 | Birch and Swinnerton-Dyer | number-theory | proposed | B | marginal | |
-| P vs NP | computation-complexity | proposed | C+ | partial | |
+| P vs NP (from the algebraic lower bound of 2026-11-23 towards Boolean circuits) | computation-complexity | opened | C+ | partial | [p-vs-np/plan.md](p-vs-np/plan.md) |
 | Centralizer density (Smale 12) | dynamical-systems | proposed | C+ | no | |
 | Hodge conjecture | algebraic-geometry | proposed | C+ | no | |
 | Huneke-Wiegand counterexample extensions | commutative-algebra | published | A | no | [huneke-wiegand/plan.md](huneke-wiegand/plan.md) |
