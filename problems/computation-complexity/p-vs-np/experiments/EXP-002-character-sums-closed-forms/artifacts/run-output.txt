@@ -1,0 +1,16 @@
+mu=2 j=1: counted p_1=4/9 S=-2 p_mu=2/3; closed p_1=4/9 S=-2 p_mu=2/3; agree=True
+mu=2 j=2: counted p_1=2/3 S=2 p_mu=1/3; closed p_1=2/3 S=2 p_mu=1/3; agree=True
+mu=3 j=1: counted p_1=16/49 S=-24 p_mu=4/7; closed p_1=16/49 S=-24 p_mu=4/7; agree=True
+mu=3 j=2: counted p_1=24/49 S=8 p_mu=10/21; closed p_1=24/49 S=8 p_mu=10/21; agree=True
+mu=3 j=3: counted p_1=4/7 S=-8 p_mu=11/21; closed p_1=4/7 S=-8 p_mu=11/21; agree=True
+mu=4 j=1: counted p_1=64/225 S=-1344 p_mu=8/15; closed p_1=64/225 S=-1344 p_mu=8/15; agree=True
+mu=4 j=2: counted p_1=32/75 S=192 p_mu=52/105; closed p_1=32/75 S=192 p_mu=52/105; agree=True
+mu=4 j=3: counted p_1=112/225 S=-64 p_mu=158/315; closed p_1=112/225 S=-64 p_mu=158/315; agree=True
+mu=4 j=4: counted p_1=8/15 S=64 p_mu=157/315; closed p_1=8/15 S=64 p_mu=157/315; agree=True
+mu=2: ratio at j=1 is 3/2 = 2 - 2^(1-mu): True; largest ratio at j>=2: 0.500000; inequality strict: True
+mu=3: ratio at j=1 is 7/4 = 2 - 2^(1-mu): True; largest ratio at j>=2: 0.972222; inequality strict: True
+mu=4: ratio at j=1 is 15/8 = 2 - 2^(1-mu): True; largest ratio at j>=2: 1.160714; inequality strict: True
+mu=5: ratio at j=1 is 31/16 = 2 - 2^(1-mu): True; largest ratio at j>=2: 1.248611; inequality strict: True
+mu=6: ratio at j=1 is 63/32 = 2 - 2^(1-mu): True; largest ratio at j>=2: 1.291331; inequality strict: True
+closed forms, mu = 2..40: inequality holds with equality only at j = 1: True; smallest gap 0.666667
+ALL CHECKS PASS

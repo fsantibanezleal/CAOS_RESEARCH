@@ -1,6 +1,6 @@
 # p-vs-np: RESUME (session handoff)
 
-Updated 2026-11-24 (opened; unit PNP-001 written and sent to review; EXP-001 closed).
+Updated 2026-11-24 (opened; PNP-001 written and in review; PNP-006 proved, review pending; EXP-001 and EXP-002 closed; PNP-003 literature read in flight).
 
 ## 1. State in one screen
 
@@ -49,11 +49,14 @@ price; the test of the proof against an oracle gate.
 | Experiment | Question | Verdict | Load-bearing result |
 |---|---|---|---|
 | EXP-001-rank-metric-finite-checks | the finite facts on Mat_mu(F_2), mu = 2, 3, 4, used by the note: character ratios, negative type, spanning sets, cliques, the transversality graph | CONFIRMED (2026-11-24) | ratios 3/2, 7/4, 15/8 = 2 - 2^(1-mu); rank is not of negative type; every spanning and connectivity fact used in Proposition 5.2 holds |
+| EXP-002-character-sums-closed-forms | do the closed forms of the character sums agree with exhaustive counts (mu <= 4) and satisfy the inequality (mu <= 40)? | CONFIRMED (2026-11-24) | D(mu)^2 <= (2 - 2^(1-mu)) D(1)^2 for maps into a Hilbert space, every mu >= 2, equality only for combinations of rank-one characters (proved in the note; the experiment guards the algebra) |
 
 ## 4. In flight
 
 - Review of PNP-001 by a reader other than the writer (reviewer on opus), ordered 2026-11-24; report in the
   coordination repository.
+- PNP-003, first step: a delegated reading of the paper's Appendices A and B and of the literature on conversions
+  of entanglement structures (is the Euclidean unit square a price on four parties?), ordered 2026-11-24.
 
 ## 5. Next actions
 
