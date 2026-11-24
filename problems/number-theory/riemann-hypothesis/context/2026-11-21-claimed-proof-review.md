@@ -330,6 +330,53 @@ Three sources were not found by the searches of the two readings and were read a
   without a build; its README lists its known limits).
 
 
+### Reading 2: 2026-11-24, sources fetched 17:48 to 17:55 UTC (machine clock)
+
+Copies with SHA-256 under the data root, `caos-research/riemann-hypothesis/claim-2026-11-20/watch-2026-11-24/`
+(`SHA256SUMS.txt`). Each page was compared line by line with the copy of reading 1.
+
+- [T] The MIT page, "last updated 2026-11-24 05:25 UTC" (`51d1d86a...`). New since the 22nd:
+  - Lean's default kernel (`leanchecker --from-export`, Lean v4.36.0) accepts the full export: exit 0 at 18:44:18 UTC
+    on the 22nd, 48 h 3 min on one thread, peak memory 82.6 GiB; a second run with one allocator setting changed
+    accepts in 9 h 8 min.
+  - Lean's paranoid kernel (`leanchecker-paranoid --from-export`) accepts the full export: exit 0 at 19:01:08 UTC on the
+    23rd, 72 h 20 min on one thread, peak memory 98.8 GiB; the run with the allocator setting accepts in 10 h.
+  - Comparator v4.33.0 (unmodified standalone binary, the repository's own `comparator.json`), end to end: statement
+    comparison and axiom check pass, nanoda accepts, Lean's default kernel accepts, "Your solution is okay!", exit 0 at
+    09:10:39 UTC on the 23rd after 64 h 8 min. The page says how it was run: on the files of the original build, its
+    `lake build` step satisfied by a stub, the `Challenge` module being the verifier's own compile.
+  - Still running: `lake comparator` of Lean v4.36.0 from exports; its paranoid-kernel and nanoda stages accepted on
+    the 23rd, and its last stage (Lean's default kernel, single-threaded, about 48 hours) started at about 21:31 UTC
+    that day.
+  - The consequences that do not mention zeros are now three, against a newer commit of `kimihiro64/Robin1984`
+    (`5ce18bf3`, 2026-11-23): Robin's inequality for n > 5040, Lagarias's inequality for n >= 1, and, from the
+    statement for Dirichlet L-functions, an inequality of Robin type for the ideals of every cyclotomic field
+    (`cyclotomic_corrected_ideal_robin`). All three are accepted by con-leche, con-ron, nanoda and both Lean kernels
+    through Comparator (exits on the 24th between 01:16 and 05:09 UTC). The page prints the elaborated statements of
+    the first two in full and counts the declarations their meaning depends on (2,050 and 1,801; 7,616 for the third).
+- [P] The joint statement on the Lean community blog (`000f82ac...`): the text is the same; the byline changed from
+  "by the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative" to "Joint statement by the
+  Lean FRO and the Mathlib Initiative".
+- [P] The Clay Mathematics Institute: the page of the problem (`ccfadec9...`) now carries the label **"Active"**; on
+  the 22nd it read "Unsolved". The text of the page is otherwise the same and names no claim. The news page
+  (`ffa0c534...`) has no new item (newest: 2026-09-11, the Navier-Stokes announcement). "Active" is the label the
+  Navier-Stokes page has carried since that announcement.
+- [T] The mirror `leanprover-community/riemann-hypothesis`: head `307cef33`, pushed 2026-11-24 17:32 UTC, pull
+  request numbers above 1,260 (57 on the 22nd), merged in batches; the work is cleanup and shortening of the archive,
+  and the mirror's notes now state the goal of making the proof buildable without large compute. The five statements
+  were not re-read in this reading.
+- [P] Anthropic (news page, `d99d3d9b...`): no item on the claim found by a text search of the page.
+- Not read: the arXiv listing (the API answered 429 twice; read again on the 28th); the Lean Zulip thread.
+
+What the reading changes:
+
+- The unreconciled detail of reading 1 is closed: Lean's own kernel, default and paranoid, has now checked the full
+  export on the MIT verifier's machine, and an end-to-end Comparator run has passed. Of the confirmatory items of
+  section 6, only the Comparator run of Lean v4.36.0 from exports is still in its last stage.
+- Clay's label moved from "Unsolved" to "Active". Under Clay's rules a prize follows publication in a refereed venue
+  and two years of acceptance, so the label is not a verdict; it records that Clay treats the claim as live.
+- Still absent: a written proof by the author, a refereed paper, a statement by Anthropic.
+
 ## How could this be wrong?
 
 - A defect shared by the kernels that accepted the proof, or a flaw in Mathlib's definitions of the functions
