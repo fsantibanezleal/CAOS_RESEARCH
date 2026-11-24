@@ -73,7 +73,7 @@ hypotheses holds and says "We do not know which of the two hypotheses holds, eve
 if the contracting hypothesis fails then, for every mu >= 3, the metric sqrt(rank(a - a')) on the mu x mu matrices
 over the field with two elements is a price (a limit of metrics coming from spectral points). Three remarks:
 
-- The converse is immediate, so the contracting hypothesis holds if and only if, for some mu, the metric
+- The converse is immediate, so the contracting hypothesis holds with a given mu >= 3 if and only if the metric
   sqrt(rank) on Mat_mu(F_2) is not a price.
 - Nonpositive curvature alone cannot decide it: the metric sqrt(rank) is realized in a CAT(0) space. The mu x mu
   matrices are the mu-dimensional subspaces of F_2^(2 mu) complementary to a fixed one (a matrix a goes to its graph),
@@ -81,15 +81,18 @@ over the field with two elements is a price (a limit of metrics coming from spec
   building of type A_(2 mu - 1) over F_2, where two of them at this relative position make the angle
   arccos(1 - 2 rank/mu); the Euclidean cone over the building is CAT(0) and the points at distance rho on these rays
   are at distance 2 rho sqrt(rank/mu) from each other. The paper does not mention buildings.
-- By Strassen's duality a metric is a price if and only if no asymptotic restriction between products of wires
-  shortens it. So the contracting hypothesis is equivalent to the existence of one asymptotic conversion between
-  networks of maximally entangled pairs on the parties Mat_mu(F_2) that is shorter in the metric sqrt(rank) on the
-  source side than on the target side. This is a question of quantum information theory (asymptotic conversion of
-  entanglement structures under stochastic local operations), with a finite first instance at mu = 2 (16 parties),
-  where the paper's argument does not force the metric (it needs mu >= 3) but the same question can be asked.
+- One direction of duality is available. A spectral point is monotone under restriction and subadditive, so an
+  asymptotic conversion between products of wires on the parties Mat_mu(F_2) whose source is shorter than its target
+  in the metric sqrt(rank) would prove the contracting hypothesis. The converse is not available, because prices do
+  not form a convex set (the sum of the cut metrics of two crossing cuts violates the quadrilateral inequality). This
+  is a question of quantum information theory (asymptotic conversion of entanglement structures), with a finite first
+  instance at mu = 2: sixteen parties, distances 1 and sqrt(2); the paper's argument is written for mu >= 3 and the
+  note of the programme extends it to mu = 2. (A first version of this item claimed an equivalence by duality; that
+  was wrong and was corrected on the day.)
 - For Euclidean metrics the contraction is true with room: for maps of Mat_mu(F_2) into a Hilbert space the ratio
-  D(mu)^2 / D(1)^2 is at most the largest ratio of the eigenvalues of the two Cayley graphs, which is 3/2 for mu = 2
-  and tends to 2, against mu for the metric sqrt(rank).
+  D(mu)^2 / D(1)^2 is at most the largest ratio of the eigenvalues of the two Cayley graphs, which is 3/2, 7/4 and
+  15/8 for mu = 2, 3 and 4 (computed exactly; the value 2 - 2^(1 - mu) of the characters of rank one), against mu for
+  the metric sqrt(rank).
 
 How the barriers apply. The Anthropic paper states that it has not analysed relativization and algebrization. The
 contracting case uses "no property of polynomials other than low degree" and ends in a diagonal argument, which is the
