@@ -22,6 +22,25 @@ Swinnerton-Dyer, Hodge, P vs NP, the Riemann hypothesis, Yang-Mills and the mass
 outlet and two years of acceptance [K, rules]. Three of the six have 2026 claims produced with AI systems; none is
 accepted by Clay.
 
+**Correction of 2026-11-24 (Felipe: "is the generalization part of the millennium problem?", "navier stokes is
+resolved too").** The last column of the table below mixes two things: what is open inside a prize statement and what
+is open around it. Read against the prize statements only [K, the official problem descriptions]:
+
+- The Riemann problem is the hypothesis for the Riemann zeta function. The generalized hypothesis (Dirichlet, Dedekind,
+  Hecke, Artin, automorphic L-functions) is context in the official description, not part of the prize statement. If
+  the certified Lean proof stands, the prize statement is settled.
+- The Navier-Stokes problem is settled by any one of four statements; C and D are breakdown with a smooth force. The
+  claim of 2026-09-08 is C and D. If it stands, the prize statement is settled. The unforced question is outside it.
+  Clay's page still said "Active" and named no claim when read again on 2026-11-24; arXiv:2610.08144 disputes the
+  faithfulness of the Lean formalization [N].
+- **Open inside their prize statements: four problems.** P vs NP, Hodge, Birch and Swinnerton-Dyer, and the mass gap
+  of Yang-Mills (its existence half is claimed and judged established by a committee [N]).
+
+Consequence for Section 8: ranks 1 and 3 (the non-abelian extension of the Riemann mechanism, the Navier-Stokes force
+budget) are not paths on an open Millennium problem. The decision of Section 8 is superseded: the target is chosen
+among the four problems above, after the cross-field path map of methodology 11 for each. Rank 1 (line F of the
+Riemann programme) continues only where its reading feeds the Birch and Swinnerton-Dyer path (rank 4).
+
 | Problem | Clay page, 2026-11-22 | 2026 claims | What stays open in any case |
 |---|---|---|---|
 | Riemann hypothesis | Unsolved | Alpoge with Claude, 2026-11-20: Lean proof of RH and of GRH for Dirichlet L-functions, certified by the Lean and Mathlib communities (2026-11-21); Masullo (human, 2026-11-20): draft claiming GRH for Hecke L-functions of every number field | the hypothesis for Dedekind zeta functions of non-abelian fields, Artin and automorphic L-functions (unless Masullo's draft holds); simplicity, pair correlation, moments |
@@ -70,7 +89,8 @@ Anthropic model, resolved the forced Euler problem first, and OpenAI recognizes 
 claim the Millennium Prize". Clay marks the problem "Active". arXiv:2610.08144 argues that the Lean formalization is
 not a faithful translation of the written proof [N here; read by the programme's Navier-Stokes scoping of 2026-11-02].
 
-What stays open: the unforced equations (global regularity or blow-up with f = 0), the physically central question;
+What stays open, outside the prize statement (correction of 2026-11-24 in Section 0): the unforced equations
+(global regularity or blow-up with f = 0), the physically central question;
 uniqueness of Leray solutions without force; the critical role of the force.
 
 Programme position: `program/navier-stokes/` is dormant (manuscript v0.10; its blow-up design class has a measured
@@ -168,7 +188,7 @@ arXiv:2609.33842 [N]. Nothing to do.
 | 4 | Bloch-Kato bounds inside the Riemann proof | shares its reading with rank 1 | Zhang Section 5 against the blueprint |
 | 5 | Yang-Mills gap via uniform lattice estimates; Hodge statement fidelity | low feasibility for this programme now | recorded |
 
-Decision: path 1 is attempted now (the order "try to solve the most promising one"); paths 2 to 4 get their first
+Superseded on 2026-11-24 (see the correction in Section 0). Decision of 2026-11-22: path 1 is attempted now (the order "try to solve the most promising one"); paths 2 to 4 get their first
 step in the following rounds; every round keeps a cross-field exploration entry (methodology 11).
 
 ## How could this be wrong?
