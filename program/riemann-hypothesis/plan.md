@@ -1,5 +1,10 @@
 # Riemann hypothesis: zero-proportion research program
 
+## Parked on 2026-11-24
+
+2026-11-24: Felipe: "but the Riemann hypothesis was resolved, what are you doing exactly"; "is the generalization part of the millennium problem" (it is not); "continue with the four open ones, dont stop". The effort moves to the four problems open inside their prize statements (P vs NP, Hodge, Birch and Swinnerton-Dyer, the Yang-Mills mass gap): `program/millennium-review-2026-11-22.md`, correction of 2026-11-24. This programme is parked: line F (the mechanism of the proof beyond abelian fields; RH-068 to RH-073) is outside the prize statement and continues only where its reading feeds the Birch and Swinnerton-Dyer path map (`program/bsd/`); line B (simple zeros in short intervals) is parked after RH-067, done and merged on 2026-11-22. Only the watch readings of the proof's verification (RH-055: 2026-11-24, 2026-11-28) stay scheduled.
+The plan of 2026-11-21 below stays as written and is not executed.
+
 ## Plan of 2026-11-21: after the formal proof of 2026-11-20
 
 Research reopened by Felipe on 2026-11-21: "review last claim fromanthopic, that they solver riemnann hypoteshis, read and research online on ma depth for allthe new works on thata proelm, and verify if any space o research is opn, work in maimum depth in all relevant remaining areas of the prolem.improve the plan for that prolean workin maimumdepth". This section replaces, for what is authorized and in which
