@@ -13,3 +13,12 @@
   holds. The sentence in the path map was corrected in the same change.
 - EXP-001 run and closed, CONFIRMED. Its script was run before its hypothesis file was written; the hypothesis file
   says so and records which values had been computed by hand beforehand.
+- PNP-001 reviewed by a reader other than the writer (reviewer on opus): correct after fixes. Two blockers: the
+  extension of the contracting case was stated over every field and holds over F_2 only (the paper's reduction puts
+  each clause weight minus one into the matrix, so the entries -1 and a - 1 appear; the coordinating session read
+  page 32 again and confirmed it); a sentence said that the top of the ladder does not follow from NP not inside
+  P/poly, and it does (Valiant and Vazirani). Two major and eight minor findings. All applied the same day.
+- PNP-006 proved: maps of Mat_mu(F_2) into a Hilbert space contract with the constant 2 - 2^(1-mu), for every mu.
+  EXP-002 CONFIRMED.
+- PNP-003, first step (delegated reading): nothing in the paper's Appendices A to C or in the literature read settles
+  whether the Euclidean unit square is a price on four parties.

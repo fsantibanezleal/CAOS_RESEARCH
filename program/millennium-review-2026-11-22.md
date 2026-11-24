@@ -239,8 +239,8 @@ each variable), with the first results of the coordinating session to be written
 question the paper leaves open, which of its two cases occurs, in the form "is the metric sqrt(rank) on the matrices
 over the field with two elements a price", with its first finite instance; (c) the written test of the proof against
 an oracle gate. Limits, stated here so that no later record overstates them: the claims of 2026-11-23 are one day
-old, unrefereed and unread by a human mathematician; the Boolean end of the ladder separates P from the counting
-classes, which the prize statement implies and which does not imply it; nothing in this decision is a claim of
+old, unrefereed and unread by a human mathematician; the Boolean end of the ladder is a statement on a counting class, which NP not inside P/poly implies and which is
+not known to imply it; nothing in this decision is a claim of
 progress on the prize statement. The other three problems keep their path maps and stay in the state "proposed".
 
 ## How could this be wrong?

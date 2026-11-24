@@ -32,33 +32,39 @@ connected to the problem:
    in each block of variables, the part of low degree) that a circuit correct only on inputs 0 and 1 need not have.
 
 What the prize statement needs and what these results give. The prize statement is P against NP for Turing machines
-(Section 1). A lower bound for Boolean circuits that compute the number of Hamiltonian cycles modulo 2, or over the
-integers, separates P from the counting classes (parity P, PP), which every proof of P != NP must also do, since NP is
-inside PP. It does not by itself separate P from NP. So the transfer of the algebraic bound to Boolean circuits is a
-necessary station on the route, not the prize statement. This limit is stated wherever a target of this file is named.
+(Section 1). A lower bound for Boolean circuits that compute the parity of the number of Hamiltonian cycles is a
+statement on a counting class (parity-P not inside P/poly). It is implied by NP not inside P/poly (Valiant and
+Vazirani, with the random bits fixed for each input length) and is not known to imply it. So the transfer of the
+algebraic bound to Boolean circuits is a necessary station on the route, not the prize statement. This limit is stated
+wherever a target of this file is named. (The first version of this paragraph said the implication from NP was not
+known; the review of 2026-11-24 corrected it.)
 
 The ladder between the algebraic theorem and the Boolean statement [D]. For a field k and an integer c >= 1 let S(c)
 be the statement: every arithmetic circuit over k that computes a polynomial g with g = HC_m on {0,1}^(m x m) and with
 degree at most c in each variable has more than quasi-polynomially many gates. Then:
 
-- S(1) is the theorem claimed on 2026-11-23, because a multilinear polynomial is determined by its values on the cube.
-- S(infinity) (no bound on the degree) over the field with two elements is a lower bound for Boolean circuits over the
-  basis AND, XOR that compute the parity of the number of Hamiltonian cycles; over the rationals with constants of
-  polynomial bit length it is a lower bound for the Boolean computation of the number itself.
+- S(1) follows from the theorem claimed on 2026-11-23, because a multilinear polynomial is determined by its values
+  on the cube.
+- S(infinity) (no bound on the degree) over the field with two elements says that the least size of Boolean circuits
+  over the basis AND, XOR for the parity of the number of Hamiltonian cycles exceeds every polynomial for all large
+  m.
 - The statements in between are new questions that the theorem of 2026-11-23 makes natural. Earlier functional lower
   bounds (Forbes, Kumar and Saptharishi, 2016) are for circuits of depth three and four with low individual degree.
 
-First results of the coordinating session on the ladder [D, unreviewed; the note with the proofs is the first unit of
-the programme, Section 12]:
+First results of the coordinating session on the ladder [D; reviewed on 2026-11-24 by a reader other than the
+writer, verdict "correct after fixes", twelve findings applied; the note with the proofs is
+`problems/computation-complexity/p-vs-np/context/2026-11-24-boolean-ladder-and-the-two-cases.md`]:
 
-- In the contracting case of the Anthropic proof, S(c) holds for every fixed c, and for c up to a small power of m.
-  Reason: the evaluation lemma (Lemma K.2 of the paper) evaluates the sum of the homogeneous parts of degree at most d
-  of the polynomial that ANY circuit computes, at the indicator assignment of a word, in about d polylog(L) steps; the
-  reduction to the Hamiltonian cycle polynomial (Proposition M.2) substitutes matrices whose entries are 0, 1 or
-  affine in one variable each, so a polynomial g of individual degree at most c that agrees with HC_m on 0/1 matrices
-  becomes a polynomial of degree at most c times the number of non-constant entries, which is of the order of the
-  length n of the word, and its values at indicator assignments are the sums the argument needs. The rest of the
-  contracting case uses the circuit only through this accelerator.
+- Over the field with two elements, if the contracting hypothesis holds for that field itself, S(c) holds for every
+  fixed c and for c up to a small power of m, provided the substituted matrix has O(n) non-constant entries (a count
+  the paper describes and does not print). Reason: the evaluation lemma (Lemma K.2 of the paper) evaluates the sum of
+  the homogeneous parts of degree at most d of the polynomial that ANY circuit computes, at the indicator assignment
+  of a word, in about d polylog(L) steps; the reduction to the Hamiltonian cycle polynomial substitutes matrices
+  whose entries are constant or affine in one variable each; over F_2 these matrices are 0/1 at indicator
+  assignments, so a polynomial g of individual degree at most c that agrees with HC_m on 0/1 matrices gives the
+  values the argument needs. The first version stated this over every field; the review found that over other fields
+  the substituted matrix has entries -1 and a - 1 (the paper's Corollary E.2 puts each clause weight minus one into
+  the matrix), where a functional circuit owes nothing. The statement over a general field is open.
 - In the flat case the decomposition lemma (`lem_balanced`) does not extend to c = 2 as it stands. After polarizing a
   component of block degree 2, a balanced cut of the parse tree separates copies of blocks, not blocks; a block with a
   copy on each side is wired to both hubs, and the comparison of lengths that gives the bound is then satisfied
@@ -373,7 +379,7 @@ between what is established and the prize statement; (2) reusable machinery prod
 
 | Criterion | Reading |
 |---|---|
-| 1 | Partly. The gap between the algebraic theorem and Boolean circuits is named by the paper itself (two lemmas), and the ladder S(c) of Section 0 cuts it into statements. The Boolean end of the ladder separates P from the counting classes, which the prize statement implies and does not follow from. |
+| 1 | Partly. The gap between the algebraic theorem and Boolean circuits is named by the paper itself (two lemmas), and the ladder S(c) of Section 0 cuts it into statements. The Boolean end of the ladder is a statement on a counting class that NP not inside P/poly implies and that is not known to imply it. |
 | 2 | The strongest of the four problems: two Lean-backed lower bounds one day old, two Lean-backed algorithms one month old, and a proof architecture with named lemmas. None is refereed or read by a human mathematician. |
 | 3 | Yes: finite linear algebra over small fields, eigenvalues of Cayley graphs on Mat_mu(F_2), searches for tensor identities, small circuits. |
 | 4 | Relativization, natural proofs and algebrization exclude classes of methods for the Boolean statements. The algebraic theorem is outside their scope; the transfer is inside it. This is the main reason the ladder may stop at a finite rung. |
@@ -389,8 +395,10 @@ route, and it is stated as such.
 |---|---|---|---|
 | 2026-11-24 | Path map (this file) | all rows of Section 5 | 18 rows, 11 cross-field; no step of Section 5 run by the agent |
 | 2026-11-24 | R1, consequence of the algorithms for circuits | algorithms to lower bounds | closed as a unit: already written by others |
-| 2026-11-24 | R2, where the proof stops for Boolean circuits | algebraic complexity | the ladder S(c); contracting case extends to bounded individual degree [D]; flat case blocked at c = 2 by shared blocks [D] |
-| 2026-11-24 | R5, which case occurs (cross-field: metric geometry, buildings, quantum information) | Strassen's spectrum, CAT(0) geometry | contracting if and only if sqrt(rank) on Mat_mu(F_2) is not a price for some mu [P for one direction, D for the packaging]; sqrt(rank) is a CAT(0) metric through the building of type A_(2 mu - 1) [D]; Euclidean maps contract with ratio at most 3/2 at mu = 2 [D] |
-| next | The note with the proofs of the three [D] rows, then a review by a reader other than the writer | | first unit of the programme `p-vs-np` |
+| 2026-11-24 | R2, where the proof stops for Boolean circuits | algebraic complexity | the ladder S(c); over F_2 the contracting case extends to bounded individual degree, under the contracting hypothesis for F_2 and an unverified count [D, reviewed]; flat case blocked at c = 2 by shared blocks [D, reviewed] |
+| 2026-11-24 | R5, which case occurs (cross-field: metric geometry, buildings, quantum information) | Strassen's spectrum, CAT(0) geometry | contracting with a given mu if and only if sqrt(rank) on Mat_mu(F_2) is not a price (the paper for mu >= 3, the note for mu = 2); sqrt(rank) is a CAT(0) metric through the building of type A_(2 mu - 1) [D, reviewed] |
+| 2026-11-24 | Review of the first note by a reader other than the writer | | correct after fixes: 2 blockers (the field of the extension; a false sentence on NP), 2 major, 8 minor, all applied |
+| 2026-11-24 | PNP-006, maps into a Hilbert space (cross-field: harmonic analysis on finite groups) | character sums over GL_mu(F_2) | D(mu)^2 <= (2 - 2^(1-mu)) D(1)^2 for every mu >= 2, equality only for rank-one characters [D, MV, review pending] |
+| 2026-11-24 | PNP-003, first step: is the Euclidean unit square a price? (cross-field: quantum information) | conversions of entanglement structures | not settled by the paper's Appendices A to C nor by the literature read; the square passes every four-point inequality found, is tight for the crossing inequality, and is a positive combination of the three 2 by 2 cut metrics, so no single-term restriction can exclude it (delegated reading, 4 of 5 deliverables done) |
 | next | R3, the written test against an oracle gate | logic | not started |
 | next | The first instance: is sqrt(rank) on Mat_2(F_2) a price? Search for an asymptotic conversion that shortens it | quantum information, tensors | not started |
