@@ -33,6 +33,7 @@ is open around it. Read against the prize statements only [K, the official probl
   claim of 2026-09-08 is C and D. If it stands, the prize statement is settled. The unforced question is outside it.
   Clay's page still said "Active" and named no claim when read again on 2026-11-24; arXiv:2610.08144 disputes the
   faithfulness of the Lean formalization [N].
+- Clay's page of the Riemann problem carried the label "Active" when read on 2026-11-24 (it read "Unsolved" on the 22nd); Lean's own kernels and an end-to-end Comparator run have accepted the proof (watch reading 2 in the Riemann claimed-proof review, Section 10).
 - **Open inside their prize statements: four problems.** P vs NP, Hodge, Birch and Swinnerton-Dyer, and the mass gap
   of Yang-Mills (its existence half is claimed and judged established by a committee [N]).
 
