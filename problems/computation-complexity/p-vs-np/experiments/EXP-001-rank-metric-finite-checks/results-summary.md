@@ -1,6 +1,6 @@
 # EXP-001 results
 
-Run: `python -I run.py 2 3 4` (CPython, standard library only), 2026-11-24. Log: `artifacts/run.log`.
+Run: `python -I run.py 2 3 4` (CPython, standard library only), 2026-11-24. Log: `artifacts/run-output.txt`.
 
 | mu | matrices by rank | p_mu/p_1 by rank of B | maximum | sum of rank times chi_B by rank of B |
 |---|---|---|---|---|
