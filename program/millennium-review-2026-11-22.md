@@ -192,6 +192,57 @@ arXiv:2609.33842 [N]. Nothing to do.
 Superseded on 2026-11-24 (see the correction in Section 0). Decision of 2026-11-22: path 1 is attempted now (the order "try to solve the most promising one"); paths 2 to 4 get their first
 step in the following rounds; every round keeps a cross-field exploration entry (methodology 11).
 
+## 9. Decision of 2026-11-24: the four path maps and the target
+
+Order (Felipe, 2026-11-24): "continue with the four open ones, dont stop". Each of the four problems open inside its
+prize statement now has its path map, written before any target was chosen (methodology 11):
+
+| Problem | Path map | Dossier status | Rows (cross-field) |
+|---|---|---|---|
+| P versus NP | `program/p-vs-np/research-lines-2026-11-24.md` | 7 of 8 deliverables done | 18 (11) |
+| Hodge | `program/hodge/research-lines-2026-11-24.md` | 7 of 8 | 18 (13) |
+| Birch and Swinnerton-Dyer | `program/bsd/research-lines-2026-11-24.md` | 4 of 8 | 18 (11) |
+| Yang-Mills mass gap | `program/yang-mills-mass-gap/research-lines-2026-11-24.md` | 7 of 8 | 16 (11) |
+
+Each dossier was written by a delegated research agent; the coordinating session re-read the four prize statements
+on Clay's official descriptions and re-checked the claims the choice rests on (Section 10 of each file). No step of
+any path map was run by the agents.
+
+Selection criteria, written in the coordination record before the dossiers were read. A problem ranks higher when
+(1) one named statement is missing between what is established and the prize statement; (2) machinery produced or
+formally checked in 2026 is reusable for it; (3) it has a surface where a step can fail visibly on one workstation;
+(4) no theorem excludes the class of methods the path uses; (5) a statement strictly on the route can be proved or
+refuted in days and checked by a reader other than the writer. The prior of the coordinating session before the
+dossiers was that Birch and Swinnerton-Dyer and the Yang-Mills gap ranked above Hodge and P versus NP.
+
+What the dossiers showed:
+
+- Birch and Swinnerton-Dyer. The machinery of the Riemann proof that looked native to it (Tate-Shafarevich bounds,
+  an Euler system) is for Tate twists of cyclotomic fields and for newforms of weight at least 3; weight 2 is
+  excluded. After the unrefereed claims of October 2026 the prize statement is open exactly on the curves whose
+  Selmer corank is at least 2 at every prime, and nothing constructs a class from a second derivative. Criteria 1, 2
+  and 5 fail.
+- Yang-Mills. The committee-checked construction takes the infinite-volume limit along a subsequence and proves no
+  decay. The missing statement is one in name (uniform exponential clustering) and is the infrared problem that the
+  official description says needs new ideas. Criterion 5 gives readings only.
+- Hodge. A theorem for abelian varieties with complex multiplication is claimed with a formal proof; the prize
+  statement is for every smooth projective variety and nothing reduces it to a family. Criterion 1 fails.
+- P versus NP. Two formal-proof-backed claims of 2026-11-23 give a superpolynomial lower bound for general arithmetic
+  circuits (the algebraic analogue of the problem), and one of the papers names the two lemmas at which its proof
+  stops for Boolean circuits. Criteria 2, 3 and 5 are met best here; criterion 1 is met in part; criterion 4 is the
+  known risk (relativization, natural proofs, algebrization).
+
+Decision. The prior is overturned: the target is P versus NP, through the transfer of the algebraic lower bound of
+2026-11-23 towards Boolean circuits. What is attempted, in this order: (a) the ladder of statements S(c) between the
+algebraic theorem and the Boolean one (circuits correct on inputs 0 and 1 whose polynomial has degree at most c in
+each variable), with the first results of the coordinating session to be written with proofs and reviewed; (b) the
+question the paper leaves open, which of its two cases occurs, in the form "is the metric sqrt(rank) on the matrices
+over the field with two elements a price", with its first finite instance; (c) the written test of the proof against
+an oracle gate. Limits, stated here so that no later record overstates them: the claims of 2026-11-23 are one day
+old, unrefereed and unread by a human mathematician; the Boolean end of the ladder separates P from the counting
+classes, which the prize statement implies and which does not imply it; nothing in this decision is a claim of
+progress on the prize statement. The other three problems keep their path maps and stay in the state "proposed".
+
 ## How could this be wrong?
 
 - Rows marked [N] rest on news reports; each is to be read on its primary source before it is used in an argument.
