@@ -1,8 +1,9 @@
 # EXP-002: the closed forms of the character sums on Mat_mu(F_2), against exhaustive counts
 
-Date: 2026-11-24. CPU only, exact integer and rational arithmetic, no randomness. Written before the run; the
-enumerated values for mu <= 4 were already known from EXP-001, the closed forms were derived on paper first (note
-`context/2026-11-24-hilbert-maps-contract-for-every-mu.md`).
+Date: 2026-11-24. CPU only, exact integer and rational arithmetic, no randomness. Honest order of events: the closed forms
+were derived on paper first (note `context/2026-11-24-hilbert-maps-contract-for-every-mu.md`) and checked by hand
+against the values of EXP-001; the script was then written and run; this file was written after the run. It is not a
+frozen preregistration.
 
 ## Question
 
